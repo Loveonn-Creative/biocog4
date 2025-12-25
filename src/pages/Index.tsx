@@ -5,14 +5,40 @@ import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
 import { ResultState } from "@/components/ResultState";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import senseibleLogo from "@/assets/senseible-logo.png";
 
 type State = "idle" | "processing" | "result";
+
+interface ExtractedItem {
+  description: string;
+  quantity?: number;
+  unitPrice?: number;
+  total?: number;
+  category?: string;
+}
+
+interface ExtractedData {
+  documentType: string;
+  vendor?: string;
+  date?: string;
+  invoiceNumber?: string;
+  amount?: number;
+  currency?: string;
+  items?: ExtractedItem[];
+  taxAmount?: number;
+  subtotal?: number;
+  emissionCategory?: string;
+  estimatedCO2Kg?: number;
+  confidence: number;
+}
 
 interface ProcessingResult {
   type: "revenue" | "compliance";
   amount: number;
   documentType: string;
+  extractedData?: ExtractedData;
 }
 
 const Index = () => {
@@ -20,41 +46,119 @@ const Index = () => {
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
 
-  const simulateProcessing = (inputType: string) => {
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result as string;
+        // Remove data URL prefix to get just base64
+        const base64 = result.split(',')[1];
+        resolve(base64);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const processDocument = async (file: File) => {
     setState("processing");
-    
-    // Simulate document types and outcomes
-    const outcomes: ProcessingResult[] = [
-      { type: "revenue", amount: 12450, documentType: "Electricity Invoice" },
-      { type: "revenue", amount: 8750, documentType: "Fuel Purchase Bill" },
-      { type: "revenue", amount: 15200, documentType: "Transport Receipt" },
-      { type: "compliance", amount: 0, documentType: "GSTIN Certificate" },
-      { type: "revenue", amount: 22100, documentType: "Manufacturing Invoice" },
-    ];
-    
-    const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
-    setDocumentType(outcome.documentType);
-    
-    // Simulate processing time (1.5-2.5 seconds)
-    setTimeout(() => {
-      setResult(outcome);
+    setDocumentType("Analyzing document...");
+
+    try {
+      const imageBase64 = await fileToBase64(file);
+      const mimeType = file.type || 'image/jpeg';
+
+      console.log("Sending document for OCR processing...");
+      
+      const { data, error } = await supabase.functions.invoke('extract-document', {
+        body: { imageBase64, mimeType }
+      });
+
+      if (error) {
+        console.error("OCR Error:", error);
+        toast.error("Failed to process document. Please try again.");
+        setState("idle");
+        return;
+      }
+
+      if (!data?.success || !data?.data) {
+        console.error("Invalid response:", data);
+        toast.error(data?.error || "Failed to extract data from document.");
+        setState("idle");
+        return;
+      }
+
+      const extractedData: ExtractedData = data.data;
+      console.log("Extracted data:", extractedData);
+
+      // Determine result type based on document
+      const isCompliance = extractedData.documentType === 'certificate' || 
+                          extractedData.emissionCategory === 'other';
+      
+      // Calculate revenue based on CO2 estimation (carbon credit pricing)
+      // Using approximate carbon credit price of ₹500-800 per ton
+      const co2Tons = (extractedData.estimatedCO2Kg || 0) / 1000;
+      const carbonCreditValue = Math.round(co2Tons * 650); // Average price per ton
+
+      const processingResult: ProcessingResult = {
+        type: isCompliance ? "compliance" : "revenue",
+        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+        documentType: formatDocumentType(extractedData.documentType, extractedData.emissionCategory),
+        extractedData
+      };
+
+      setDocumentType(processingResult.documentType);
+      setResult(processingResult);
       setState("result");
-    }, 1800 + Math.random() * 700);
+
+      if (extractedData.estimatedCO2Kg && extractedData.estimatedCO2Kg > 0) {
+        toast.success(`Extracted ${extractedData.estimatedCO2Kg.toFixed(2)} kg CO₂ from ${extractedData.documentType}`);
+      }
+
+    } catch (err) {
+      console.error("Processing error:", err);
+      toast.error("An error occurred while processing. Please try again.");
+      setState("idle");
+    }
+  };
+
+  const formatDocumentType = (docType: string, category?: string): string => {
+    const typeMap: Record<string, string> = {
+      'invoice': 'Invoice',
+      'bill': 'Bill',
+      'certificate': 'Certificate',
+      'receipt': 'Receipt',
+      'unknown': 'Document'
+    };
+    
+    const categoryMap: Record<string, string> = {
+      'electricity': 'Electricity',
+      'fuel': 'Fuel',
+      'transport': 'Transport',
+      'materials': 'Materials',
+      'waste': 'Waste',
+      'other': ''
+    };
+
+    const formattedType = typeMap[docType] || 'Document';
+    const formattedCategory = categoryMap[category || ''] || '';
+    
+    return formattedCategory ? `${formattedCategory} ${formattedType}` : formattedType;
   };
 
   const handleFileSelect = (file: File) => {
     console.log("File selected:", file.name);
-    simulateProcessing("document");
+    processDocument(file);
   };
 
   const handleVoiceInput = (transcript: string) => {
     console.log("Voice input:", transcript);
-    simulateProcessing("voice");
+    // Voice input would require additional processing
+    toast.info("Voice processing coming soon. Please upload a document for now.");
   };
 
   const handleConfirm = () => {
-    // In production, this would save to database or trigger next action
-    alert("Saved! In production, this would save to your account and initiate the monetization process.");
+    toast.success("Saved! Your carbon data has been recorded.");
     handleReset();
   };
 
