@@ -11,6 +11,11 @@ import Principles from "./pages/Principles";
 import CarbonCredits from "./pages/CarbonCredits";
 import ClimateFinance from "./pages/ClimateFinance";
 import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import History from "./pages/History";
+import Verify from "./pages/Verify";
+import Monetize from "./pages/Monetize";
+import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +41,11 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/monetize" element={<Monetize />} />
+            <Route path="/reports" element={<Reports />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/about" element={<About />} />
             <Route path="/principles" element={<Principles />} />

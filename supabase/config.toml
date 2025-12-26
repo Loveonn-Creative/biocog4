@@ -2,3 +2,9 @@ project_id = "kobsfphgfvyjozjwkuhp"
 
 [functions.extract-document]
 verify_jwt = false
+
+[functions.verify-carbon]
+verify_jwt = false
+
+[functions.calculate-monetization]
+verify_jwt = false
