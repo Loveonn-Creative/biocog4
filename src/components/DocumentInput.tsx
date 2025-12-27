@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Upload, Camera } from "lucide-react";
+import { Upload } from "lucide-react";
 
 interface DocumentInputProps {
   onFileSelect: (file: File) => void;
@@ -40,56 +40,46 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
   };
 
   return (
-    <div
-      onClick={handleClick}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
-      className={`
-        relative flex flex-col items-center justify-center
-        w-32 h-32 sm:w-36 sm:h-36
-        rounded-full cursor-pointer
-        transition-all duration-500 ease-out
-        ${isDragging 
-          ? "scale-105 bg-primary/10 border-primary/30" 
-          : "bg-secondary/50 border-border hover:bg-secondary hover:border-primary/20"
-        }
-        ${isProcessing ? "animate-gentle-pulse" : ""}
-        border-2 border-dashed
-        group
-      `}
-    >
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*,application/pdf"
-        onChange={handleFileChange}
-        className="hidden"
-      />
-      
-      <div className="flex flex-col items-center gap-3 transition-transform duration-300 group-hover:scale-105">
-        <div className="relative">
-          <Upload 
-            className={`
-              w-7 h-7 transition-all duration-300
-              ${isDragging ? "text-primary" : "text-muted-foreground group-hover:text-primary"}
-            `}
-          />
-          <Camera 
-            className={`
-              absolute -bottom-1 -right-1 w-4 h-4
-              transition-all duration-300
-              ${isDragging ? "text-primary" : "text-muted-foreground/60 group-hover:text-primary/60"}
-            `}
-          />
-        </div>
-        <span className="text-xs text-muted-foreground font-medium tracking-wide">
-          Document
-        </span>
+    <div className="flex flex-col items-center gap-3">
+      <div
+        onClick={handleClick}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        className={`
+          relative flex items-center justify-center
+          w-28 h-28 sm:w-32 sm:h-32
+          rounded-2xl cursor-pointer
+          transition-all duration-300 ease-out
+          ${isDragging 
+            ? "scale-105 bg-primary/5 border-primary/40" 
+            : "bg-background border-border/60 hover:border-primary/30 hover:bg-secondary/30"
+          }
+          ${isProcessing ? "animate-pulse" : ""}
+          border-2 border-dashed
+          group
+        `}
+      >
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*,application/pdf"
+          onChange={handleFileChange}
+          className="hidden"
+        />
+        
+        <Upload 
+          className={`
+            w-8 h-8 sm:w-10 sm:h-10 transition-all duration-300
+            ${isDragging ? "text-primary" : "text-muted-foreground group-hover:text-primary"}
+          `}
+          strokeWidth={1.5}
+        />
       </div>
       
-      {/* Subtle ring animation on hover */}
-      <div className="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/10 transition-all duration-500" />
+      <span className="text-sm text-muted-foreground font-medium tracking-wide">
+        Document
+      </span>
     </div>
   );
 };
