@@ -7,7 +7,7 @@ import { ResultState } from "@/components/ResultState";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import senseibleLogo from "@/assets/senseible-logo.png";
+
 
 type State = "idle" | "processing" | "result";
 
@@ -169,47 +169,33 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-background overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
       {/* Ambient particles */}
       <CarbonParticles />
       
-      {/* Subtle logo - visible on hover */}
-      <Link 
-        to="/" 
-        className="fixed top-6 left-6 z-50 opacity-0 hover:opacity-100 transition-opacity duration-500"
-      >
-        <img 
-          src={senseibleLogo} 
-          alt="Senseible" 
-          className="h-7 w-auto invert"
-        />
-      </Link>
-      
-      {/* Hidden nav access */}
-      <Link 
-        to="/mission"
-        className="fixed top-6 right-6 z-50 opacity-0 hover:opacity-100 transition-opacity duration-500 text-sm text-muted-foreground hover:text-foreground"
-      >
-        Explore
-      </Link>
+      {/* Header with brand */}
+      <header className="relative z-20 w-full pt-8 pb-4">
+        <Link to="/" className="block">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
+            senseible
+          </h1>
+        </Link>
+      </header>
 
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 py-20 w-full max-w-lg">
-        
+      {/* Main content - centered */}
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-16">
         {state === "idle" && (
-          <div className="flex flex-col items-center gap-12 animate-fade-in">
-            {/* Dual input - perfectly centered and symmetrical */}
-            <div className="flex items-center gap-8 sm:gap-12">
+          <div className="flex flex-col items-center gap-10 animate-fade-in">
+            {/* Dual input - properly aligned */}
+            <div className="flex items-start gap-6 sm:gap-10">
               <DocumentInput 
                 onFileSelect={handleFileSelect} 
                 isProcessing={false} 
               />
               
-              {/* Center divider with subtle "or" */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-px h-8 bg-border" />
-                <span className="text-xs text-muted-foreground/50 font-medium">or</span>
-                <div className="w-px h-8 bg-border" />
+              {/* Center divider */}
+              <div className="flex items-center h-28 sm:h-32">
+                <div className="w-px h-16 bg-border/60" />
               </div>
               
               <VoiceInput 
@@ -218,9 +204,9 @@ const Index = () => {
               />
             </div>
             
-            {/* Subtle instruction - appears after a moment */}
-            <p className="text-sm text-muted-foreground/60 text-center max-w-xs animate-fade-in delay-500" style={{ animationDelay: "1s" }}>
-              Upload an invoice or speak to convert carbon data into value
+            {/* Instruction text */}
+            <p className="text-sm sm:text-base text-muted-foreground text-center">
+              Upload a document or speak to begin
             </p>
           </div>
         )}
@@ -237,16 +223,43 @@ const Index = () => {
             onReset={handleReset}
           />
         )}
-      </div>
+      </main>
       
-      {/* Subtle footer - visible on hover */}
-      <div className="fixed bottom-6 left-0 right-0 flex justify-center opacity-0 hover:opacity-100 transition-opacity duration-500">
-        <div className="flex gap-6 text-xs text-muted-foreground/50">
-          <Link to="/mission" className="hover:text-muted-foreground transition-colors">Mission</Link>
-          <Link to="/principles" className="hover:text-muted-foreground transition-colors">Principles</Link>
-          <Link to="/carbon-credits" className="hover:text-muted-foreground transition-colors">Carbon Credits</Link>
-        </div>
-      </div>
+      {/* Footer navigation - always visible */}
+      <footer className="relative z-20 w-full pb-8 pt-4">
+        <nav className="flex items-center justify-center gap-6 sm:gap-8">
+          <Link 
+            to="/mission" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Mission
+          </Link>
+          <Link 
+            to="/about" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            About
+          </Link>
+          <Link 
+            to="/carbon-credits" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Carbon
+          </Link>
+          <Link 
+            to="/climate-finance" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Climate
+          </Link>
+          <Link 
+            to="/principles" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Principles
+          </Link>
+        </nav>
+      </footer>
     </div>
   );
 };

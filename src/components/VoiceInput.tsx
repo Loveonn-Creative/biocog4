@@ -13,7 +13,7 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
   useEffect(() => {
     if (isListening) {
       const interval = setInterval(() => {
-        setPulseScale(1 + Math.random() * 0.15);
+        setPulseScale(1 + Math.random() * 0.1);
       }, 150);
       return () => clearInterval(interval);
     } else {
@@ -44,49 +44,42 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
   };
 
   return (
-    <div
-      onClick={handleClick}
-      className={`
-        relative flex flex-col items-center justify-center
-        w-32 h-32 sm:w-36 sm:h-36
-        rounded-full cursor-pointer
-        transition-all duration-500 ease-out
-        ${isListening 
-          ? "bg-primary/10 border-primary/40" 
-          : "bg-secondary/50 border-border hover:bg-secondary hover:border-primary/20"
-        }
-        ${isProcessing ? "opacity-50 cursor-not-allowed" : ""}
-        border-2
-        group
-      `}
-      style={{ transform: isListening ? `scale(${pulseScale})` : "scale(1)" }}
-    >
-      <div className="flex flex-col items-center gap-3 transition-transform duration-300 group-hover:scale-105">
+    <div className="flex flex-col items-center gap-3">
+      <div
+        onClick={handleClick}
+        className={`
+          relative flex items-center justify-center
+          w-28 h-28 sm:w-32 sm:h-32
+          rounded-2xl cursor-pointer
+          transition-all duration-300 ease-out
+          ${isListening 
+            ? "bg-primary/5 border-primary/40" 
+            : "bg-background border-border/60 hover:border-primary/30 hover:bg-secondary/30"
+          }
+          ${isProcessing ? "opacity-50 cursor-not-allowed" : ""}
+          border-2
+          group
+        `}
+        style={{ transform: isListening ? `scale(${pulseScale})` : "scale(1)" }}
+      >
         {isListening ? (
-          <MicOff className="w-7 h-7 text-primary animate-pulse" />
+          <MicOff className="w-8 h-8 sm:w-10 sm:h-10 text-primary animate-pulse" strokeWidth={1.5} />
         ) : (
           <Mic 
-            className={`
-              w-7 h-7 transition-all duration-300
-              text-muted-foreground group-hover:text-primary
-            `}
+            className="w-8 h-8 sm:w-10 sm:h-10 transition-all duration-300 text-muted-foreground group-hover:text-primary"
+            strokeWidth={1.5}
           />
         )}
-        <span className="text-xs text-muted-foreground font-medium tracking-wide">
-          {isListening ? "Listening..." : "Voice"}
-        </span>
+        
+        {/* Listening ripple effect */}
+        {isListening && (
+          <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 animate-ping" />
+        )}
       </div>
       
-      {/* Listening ripple effect */}
-      {isListening && (
-        <>
-          <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping" />
-          <div className="absolute inset-2 rounded-full border border-primary/20 animate-pulse" />
-        </>
-      )}
-      
-      {/* Hover ring */}
-      <div className="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/10 transition-all duration-500" />
+      <span className="text-sm text-muted-foreground font-medium tracking-wide">
+        {isListening ? "Listening..." : "Voice"}
+      </span>
     </div>
   );
 };
