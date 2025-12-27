@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useSession } from "@/hooks/useSession";
 
 type AuthMode = "signin" | "signup" | "forgot";
 
 const Auth = () => {
+  const navigate = useNavigate();
+  const { isAuthenticated, isLoading: sessionLoading } = useSession();
   const [mode, setMode] = useState<AuthMode>("signin");
   const [isLoading, setIsLoading] = useState(false);
   
@@ -18,22 +22,129 @@ const Auth = () => {
   const [gstin, setGstin] = useState("");
   const [location, setLocation] = useState("");
 
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (!sessionLoading && isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, sessionLoading, navigate]);
+
+  const validateForm = (): boolean => {
+    if (!email || !email.includes('@')) {
+      toast.error('Please enter a valid email address');
+      return false;
+    }
+    
+    if (mode !== 'forgot' && password.length < 6) {
+      toast.error('Password must be at least 6 characters');
+      return false;
+    }
+    
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) return;
+    
     setIsLoading(true);
     
-    // Simulate auth process
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
       if (mode === "signin") {
-        toast.success("Welcome back! Redirecting to dashboard...");
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password
+        });
+        
+        if (error) {
+          if (error.message.includes('Invalid login credentials')) {
+            toast.error('Invalid email or password. Please try again.');
+          } else {
+            toast.error(error.message);
+          }
+          return;
+        }
+        
+        if (data.user) {
+          toast.success("Welcome back! Redirecting to dashboard...");
+          navigate('/dashboard');
+        }
       } else if (mode === "signup") {
-        toast.success("Account created! Please check your email to verify.");
+        const redirectUrl = `${window.location.origin}/`;
+        
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            emailRedirectTo: redirectUrl,
+            data: {
+              business_name: businessName,
+              phone: phone,
+              gstin: gstin,
+              location: location
+            }
+          }
+        });
+        
+        if (error) {
+          if (error.message.includes('already registered')) {
+            toast.error('This email is already registered. Please sign in instead.');
+            setMode('signin');
+          } else {
+            toast.error(error.message);
+          }
+          return;
+        }
+        
+        if (data.user) {
+          // Update profile with additional data
+          const { error: profileError } = await supabase
+            .from('profiles')
+            .update({
+              business_name: businessName,
+              phone: phone,
+              gstin: gstin,
+              location: location
+            })
+            .eq('id', data.user.id);
+          
+          if (profileError) {
+            console.error('Profile update error:', profileError);
+          }
+          
+          toast.success("Account created! Redirecting to dashboard...");
+          navigate('/dashboard');
+        }
       } else {
+        // Forgot password
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: `${window.location.origin}/auth`
+        });
+        
+        if (error) {
+          toast.error(error.message);
+          return;
+        }
+        
         toast.success("Password reset link sent to your email.");
+        setMode('signin');
       }
-    }, 1500);
+    } catch (err) {
+      console.error('Auth error:', err);
+      toast.error('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  if (sessionLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -130,6 +241,7 @@ const Auth = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  minLength={6}
                   className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 />
               </div>
@@ -151,7 +263,7 @@ const Auth = () => {
               className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-carbon text-carbon-foreground rounded-xl font-medium transition-all hover:bg-carbon/90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-carbon-foreground/30 border-t-carbon-foreground rounded-full animate-spin" />
+                <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
                 <>
                   {mode === "signin" && "Sign in"}

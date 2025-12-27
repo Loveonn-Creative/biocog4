@@ -4,10 +4,10 @@ import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
 import { ResultState } from "@/components/ResultState";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-
+import { useSession } from "@/hooks/useSession";
 
 type State = "idle" | "processing" | "result";
 
@@ -39,9 +39,13 @@ interface ProcessingResult {
   amount: number;
   documentType: string;
   extractedData?: ExtractedData;
+  documentId?: string;
+  emissionId?: string;
 }
 
 const Index = () => {
+  const navigate = useNavigate();
+  const { sessionId, user } = useSession();
   const [state, setState] = useState<State>("idle");
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
@@ -51,13 +55,80 @@ const Index = () => {
       const reader = new FileReader();
       reader.onload = () => {
         const result = reader.result as string;
-        // Remove data URL prefix to get just base64
         const base64 = result.split(',')[1];
         resolve(base64);
       };
       reader.onerror = reject;
       reader.readAsDataURL(file);
     });
+  };
+
+  const saveToDatabase = async (extractedData: ExtractedData): Promise<{ documentId: string; emissionId: string } | null> => {
+    try {
+      // Save document
+      const { data: docData, error: docError } = await supabase
+        .from('documents')
+        .insert({
+          session_id: sessionId,
+          user_id: user?.id || null,
+          document_type: extractedData.documentType,
+          vendor: extractedData.vendor,
+          invoice_date: extractedData.date ? new Date(extractedData.date).toISOString().split('T')[0] : null,
+          invoice_number: extractedData.invoiceNumber,
+          amount: extractedData.amount,
+          currency: extractedData.currency || 'INR',
+          tax_amount: extractedData.taxAmount,
+          subtotal: extractedData.subtotal,
+          confidence: extractedData.confidence,
+          raw_ocr_data: extractedData as any
+        })
+        .select()
+        .single();
+
+      if (docError) {
+        console.error('Document save error:', docError);
+        return null;
+      }
+
+      // Calculate scope based on category
+      const scopeMap: Record<string, number> = {
+        'fuel': 1,
+        'electricity': 2,
+        'transport': 3,
+        'materials': 3,
+        'waste': 3,
+        'other': 3
+      };
+
+      const scope = scopeMap[extractedData.emissionCategory || 'other'] || 3;
+
+      // Save emission
+      const { data: emissionData, error: emissionError } = await supabase
+        .from('emissions')
+        .insert({
+          document_id: docData.id,
+          session_id: sessionId,
+          user_id: user?.id || null,
+          scope: scope,
+          category: extractedData.emissionCategory || 'other',
+          co2_kg: extractedData.estimatedCO2Kg || 0,
+          data_quality: extractedData.confidence >= 0.8 ? 'high' : extractedData.confidence >= 0.5 ? 'medium' : 'low',
+          verified: false
+        })
+        .select()
+        .single();
+
+      if (emissionError) {
+        console.error('Emission save error:', emissionError);
+        return null;
+      }
+
+      console.log('Saved to database - Document:', docData.id, 'Emission:', emissionData.id);
+      return { documentId: docData.id, emissionId: emissionData.id };
+    } catch (error) {
+      console.error('Database save error:', error);
+      return null;
+    }
   };
 
   const processDocument = async (file: File) => {
@@ -91,20 +162,24 @@ const Index = () => {
       const extractedData: ExtractedData = data.data;
       console.log("Extracted data:", extractedData);
 
+      // Save to database
+      const savedIds = await saveToDatabase(extractedData);
+
       // Determine result type based on document
       const isCompliance = extractedData.documentType === 'certificate' || 
                           extractedData.emissionCategory === 'other';
       
-      // Calculate revenue based on CO2 estimation (carbon credit pricing)
-      // Using approximate carbon credit price of ₹500-800 per ton
+      // Calculate revenue based on CO2 estimation
       const co2Tons = (extractedData.estimatedCO2Kg || 0) / 1000;
-      const carbonCreditValue = Math.round(co2Tons * 650); // Average price per ton
+      const carbonCreditValue = Math.round(co2Tons * 650);
 
       const processingResult: ProcessingResult = {
         type: isCompliance ? "compliance" : "revenue",
         amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
         documentType: formatDocumentType(extractedData.documentType, extractedData.emissionCategory),
-        extractedData
+        extractedData,
+        documentId: savedIds?.documentId,
+        emissionId: savedIds?.emissionId
       };
 
       setDocumentType(processingResult.documentType);
@@ -153,13 +228,17 @@ const Index = () => {
 
   const handleVoiceInput = (transcript: string) => {
     console.log("Voice input:", transcript);
-    // Voice input would require additional processing
     toast.info("Voice processing coming soon. Please upload a document for now.");
   };
 
   const handleConfirm = () => {
     toast.success("Saved! Your carbon data has been recorded.");
-    handleReset();
+    // Navigate to verify page with the emission data
+    if (result?.emissionId) {
+      navigate(`/verify?emission=${result.emissionId}`);
+    } else {
+      navigate('/verify');
+    }
   };
 
   const handleReset = () => {
@@ -219,6 +298,7 @@ const Index = () => {
           <ResultState 
             type={result.type}
             amount={result.amount}
+            extractedData={result.extractedData}
             onConfirm={handleConfirm}
             onReset={handleReset}
           />
@@ -235,10 +315,10 @@ const Index = () => {
             Mission
           </Link>
           <Link 
-            to="/about" 
+            to="/dashboard" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            About
+            Dashboard
           </Link>
           <Link 
             to="/carbon-credits" 
@@ -247,16 +327,16 @@ const Index = () => {
             Carbon
           </Link>
           <Link 
-            to="/climate-finance" 
+            to="/monetize" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Climate
+            Monetize
           </Link>
           <Link 
-            to="/principles" 
+            to="/auth" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Principles
+            Sign In
           </Link>
         </nav>
       </footer>
