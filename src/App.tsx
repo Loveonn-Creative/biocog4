@@ -16,6 +16,7 @@ import History from "./pages/History";
 import Verify from "./pages/Verify";
 import Monetize from "./pages/Monetize";
 import Reports from "./pages/Reports";
+import MRVDashboard from "./pages/MRVDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/verify" element={<Verify />} />
             <Route path="/monetize" element={<Monetize />} />
             <Route path="/reports" element={<Reports />} />
+            <Route path="/mrv-dashboard" element={<MRVDashboard />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/about" element={<About />} />
             <Route path="/principles" element={<Principles />} />
