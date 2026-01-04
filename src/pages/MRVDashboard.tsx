@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -9,7 +10,6 @@ import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
-import senseibleLogo from '@/assets/senseible-logo.png';
 import {
   Shield, TrendingUp, Target, Award, FileCheck, AlertCircle,
   CheckCircle, Clock, ArrowRight, Leaf, Zap, Recycle, Sun,
@@ -230,28 +230,14 @@ const MRVDashboard = () => {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-background">
+    <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
         <title>MRV Dashboard — Senseible</title>
         <meta name="description" content="Transparent carbon MRV dashboard with progress-based scoring and monetization pathways." />
       </Helmet>
       
       <CarbonParticles />
-
-      {/* Header */}
-      <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/">
-            <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/dashboard" className="hover:text-foreground transition-colors">Overview</Link>
-            <Link to="/mrv-dashboard" className="text-foreground font-medium">MRV</Link>
-            <Link to="/reports" className="hover:text-foreground transition-colors">Reports</Link>
-            <Link to="/monetize" className="hover:text-foreground transition-colors">Monetize</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
         {/* Title Section */}

@@ -307,13 +307,7 @@ const Index = () => {
       
       {/* Footer navigation - always visible */}
       <footer className="relative z-20 w-full pb-8 pt-4">
-        <nav className="flex items-center justify-center gap-6 sm:gap-8">
-          <Link 
-            to="/mission" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            Mission
-          </Link>
+        <nav className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap px-4">
           <Link 
             to="/dashboard" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
@@ -321,10 +315,16 @@ const Index = () => {
             Dashboard
           </Link>
           <Link 
-            to="/carbon-credits" 
+            to="/mrv-dashboard" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Carbon
+            MRV
+          </Link>
+          <Link 
+            to="/verify" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Verify
           </Link>
           <Link 
             to="/monetize" 
@@ -333,10 +333,16 @@ const Index = () => {
             Monetize
           </Link>
           <Link 
-            to="/auth" 
+            to="/reports" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Sign In
+            Reports
+          </Link>
+          <Link 
+            to="/mission" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Mission
           </Link>
         </nav>
       </footer>
