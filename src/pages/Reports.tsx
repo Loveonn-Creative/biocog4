@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -15,7 +16,6 @@ import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
-import senseibleLogo from '@/assets/senseible-logo.png';
 
 interface Verification {
   id: string;
@@ -550,23 +550,10 @@ const Reports = () => {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-background">
+    <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Reports — Senseible</title></Helmet>
       <CarbonParticles />
-      
-      <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/">
-            <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/dashboard" className="hover:text-foreground transition-colors">Dashboard</Link>
-            <Link to="/mrv-dashboard" className="hover:text-foreground transition-colors">MRV</Link>
-            <Link to="/reports" className="text-foreground font-medium">Reports</Link>
-            <Link to="/monetize" className="hover:text-foreground transition-colors">Monetize</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">

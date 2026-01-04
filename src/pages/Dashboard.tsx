@@ -1,76 +1,70 @@
 import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
 import { EmissionsSummary } from '@/components/dashboard/EmissionsSummary';
 import { TrendChart } from '@/components/dashboard/TrendChart';
 import { RecentDocuments } from '@/components/dashboard/RecentDocuments';
 import { QuickActions } from '@/components/dashboard/QuickActions';
 import { MonetizationPanel } from '@/components/dashboard/MonetizationPanel';
+import { VerificationStatusCard } from '@/components/dashboard/VerificationStatusCard';
 import { Helmet } from 'react-helmet-async';
-import senseibleLogo from '@/assets/senseible-logo.png';
-import { Button } from '@/components/ui/button';
-import { LogOut, User } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated, signOut, isLoading: sessionLoading } = useSession();
-  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions } = useEmissions();
+  const { user, sessionId, isLoading: sessionLoading } = useSession();
+  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
+  const [verificationScore, setVerificationScore] = useState(0);
+  const [latestStatus, setLatestStatus] = useState<'verified' | 'needs_review' | 'pending' | null>(null);
+  const [eligibleCredits, setEligibleCredits] = useState(0);
 
   const isLoading = sessionLoading || emissionsLoading || docsLoading;
   const unverifiedEmissions = getUnverifiedEmissions();
+  const verifiedEmissions = getVerifiedEmissions();
 
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
+  useEffect(() => {
+    fetchVerificationData();
+  }, [sessionId, user?.id]);
+
+  const fetchVerificationData = async () => {
+    try {
+      let query = supabase
+        .from('carbon_verifications')
+        .select('verification_score, verification_status, ai_analysis')
+        .order('created_at', { ascending: false })
+        .limit(1);
+
+      if (user?.id) {
+        query = query.eq('user_id', user.id);
+      } else if (sessionId) {
+        query = query.eq('session_id', sessionId);
+      }
+
+      const { data } = await query;
+      if (data && data[0]) {
+        setVerificationScore(Math.round((data[0].verification_score || 0) * 100));
+        setLatestStatus(data[0].verification_status as any);
+        setEligibleCredits((data[0].ai_analysis as any)?.creditEligibility?.eligibleCredits || 0);
+      }
+    } catch (err) {
+      console.error('Error fetching verification data:', err);
+    }
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-background overflow-hidden">
+    <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
         <title>Dashboard — Senseible Carbon MRV</title>
         <meta name="description" content="View your carbon emissions summary, trends, and monetization opportunities." />
       </Helmet>
       
       <CarbonParticles />
-
-      {/* Header */}
-      <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
-          </Link>
-          
-          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/dashboard" className="text-foreground font-medium">Dashboard</Link>
-            <Link to="/history" className="hover:text-foreground transition-colors">History</Link>
-            <Link to="/verify" className="hover:text-foreground transition-colors">Verify</Link>
-            <Link to="/monetize" className="hover:text-foreground transition-colors">Monetize</Link>
-            <Link to="/reports" className="hover:text-foreground transition-colors">Reports</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {isAuthenticated && user && (
-              <>
-                <span className="text-sm text-muted-foreground hidden sm:inline">
-                  {user.email}
-                </span>
-                <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                  <LogOut className="h-4 w-4" />
-                </Button>
-              </>
-            )}
-            {!isAuthenticated && (
-              <Button variant="outline" size="sm" onClick={() => navigate('/auth')}>
-                <User className="h-4 w-4 mr-2" />
-                Sign In
-              </Button>
-            )}
-          </div>
-        </div>
-      </header>
+      <Navigation onSignOut={() => navigate('/')} />
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-8">
@@ -92,6 +86,15 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Summary & Trend */}
             <div className="lg:col-span-2 space-y-6">
+              {/* Verification Status Card - Prominent at top */}
+              <VerificationStatusCard
+                verificationScore={verificationScore}
+                totalEmissions={summary.total}
+                unverifiedCount={unverifiedEmissions.length}
+                hasVerifiedData={verifiedEmissions.length > 0}
+                latestStatus={latestStatus}
+                eligibleCredits={eligibleCredits}
+              />
               <EmissionsSummary summary={summary} />
               <TrendChart data={summary.monthlyTrend} />
             </div>
@@ -104,35 +107,13 @@ const Dashboard = () => {
               />
               <MonetizationPanel 
                 totalCO2={summary.total}
-                hasVerifiedData={emissions.some(e => e.verified)}
+                hasVerifiedData={verifiedEmissions.length > 0}
               />
               <RecentDocuments documents={documents.slice(0, 5)} />
             </div>
           </div>
         )}
       </main>
-
-      {/* Mobile Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm">
-        <div className="flex justify-around py-3">
-          <Link to="/" className="flex flex-col items-center text-xs text-muted-foreground">
-            <span className="text-lg mb-1">📤</span>
-            Upload
-          </Link>
-          <Link to="/dashboard" className="flex flex-col items-center text-xs text-foreground">
-            <span className="text-lg mb-1">📊</span>
-            Dashboard
-          </Link>
-          <Link to="/verify" className="flex flex-col items-center text-xs text-muted-foreground">
-            <span className="text-lg mb-1">✓</span>
-            Verify
-          </Link>
-          <Link to="/monetize" className="flex flex-col items-center text-xs text-muted-foreground">
-            <span className="text-lg mb-1">💰</span>
-            Monetize
-          </Link>
-        </div>
-      </nav>
     </div>
   );
 };

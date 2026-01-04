@@ -1,5 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -7,13 +8,13 @@ import { Label } from '@/components/ui/label';
 import { useEmissions } from '@/hooks/useEmissions';
 import { 
   CheckCircle, AlertTriangle, Shield, ArrowRight, Loader2, 
-  AlertCircle, TrendingUp, Leaf, Award, XCircle, Info
+  AlertCircle, TrendingUp, Leaf, Award, XCircle, Info,
+  Coins, FileBarChart, BarChart3
 } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
-import senseibleLogo from '@/assets/senseible-logo.png';
 import { Helmet } from 'react-helmet-async';
 
 interface VerificationResult {
@@ -108,22 +109,10 @@ const Verify = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-background">
+    <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Verify Emissions — Senseible</title></Helmet>
       <CarbonParticles />
-      
-      <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/">
-            <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/dashboard" className="hover:text-foreground transition-colors">Dashboard</Link>
-            <Link to="/verify" className="text-foreground font-medium">Verify</Link>
-            <Link to="/monetize" className="hover:text-foreground transition-colors">Monetize</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
@@ -393,17 +382,34 @@ const Verify = () => {
                   </div>
                 )}
 
-                {/* Action Button */}
-                {verificationResult.status === 'verified' && (
+                {/* Post-Verification Quick Actions */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <Button 
-                    className="w-full glow-success" 
+                    variant={verificationResult.status === 'verified' ? 'default' : 'outline'}
                     size="lg" 
                     onClick={() => navigate('/monetize')}
+                    className={verificationResult.status === 'verified' ? 'glow-success' : ''}
                   >
-                    Proceed to Monetization
-                    <ArrowRight className="h-4 w-4 ml-2" />
+                    <Coins className="h-4 w-4 mr-2" />
+                    Monetize
                   </Button>
-                )}
+                  <Button 
+                    variant="outline"
+                    size="lg" 
+                    onClick={() => navigate('/mrv-dashboard')}
+                  >
+                    <BarChart3 className="h-4 w-4 mr-2" />
+                    MRV Dashboard
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg" 
+                    onClick={() => navigate('/reports')}
+                  >
+                    <FileBarChart className="h-4 w-4 mr-2" />
+                    Reports
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
