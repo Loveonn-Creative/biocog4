@@ -40,23 +40,54 @@ const HSN_MASTER: Record<string, { productCategory: string; industryCode: string
   '99': { productCategory: 'SERVICES', industryCode: 'PROFESSIONAL', industryName: 'Professional & Business Services', defaultScope: 3 },
 };
 
-// ============= KEYWORD FALLBACK MAP (RULE-BASED - NO AI) =============
+// ============= EXPANDED KEYWORD FALLBACK MAP (RULE-BASED - NO AI) =============
 const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: string; scope: number; fuelType?: string }> = {
-  // Fuels - Scope 1
+  // Fuels - Scope 1 (including common OCR misreads and regional terms)
   diesel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  deisel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
+  disel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
+  'd1esel': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
+  hsd: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // High Speed Diesel
   petrol: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
+  petro: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // Truncated
+  petr0l: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // OCR misread
   gasoline: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
+  ms: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // Motor Spirit
   cng: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'CNG' },
   lpg: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
+  'l.p.g': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
   coal: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'COAL' },
   furnace: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
+  'furnace oil': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
+  fo: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
   naphtha: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'NAPHTHA' },
   png: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
-  // Electricity - Scope 2
+  'piped gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
+  'natural gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
+  kerosene: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  tel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // Hindi: oil
+  fuel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  // Electricity - Scope 2 (including regional terms)
   electricity: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  electy: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Truncated
+  elec: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  'elec bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   power: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   kwh: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  kw: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   'electric bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  'power bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  bijli: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Hindi
+  vidyut: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Hindi
+  discom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  msedcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Maharashtra
+  tpddl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Delhi
+  bses: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Delhi
+  cesc: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Kolkata
+  bescom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Bangalore
+  tneb: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Tamil Nadu
+  unit: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  units: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   // Transport - Scope 3
   freight: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
   transport: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
@@ -64,27 +95,47 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   courier: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
   shipping: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
   delivery: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  trucking: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  lorry: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  carrier: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  dhl: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  fedex: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  bluedart: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
+  delhivery: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
   // Raw Materials - Scope 3
   steel: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
   iron: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
+  tmt: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 }, // TMT bars
+  rebar: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
   plastic: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
   polymer: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
+  hdpe: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
+  ldpe: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
+  pvc: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
   paper: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
+  cardboard: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
+  carton: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
   cement: { productCategory: 'RAW_MATERIAL', industryCode: 'CEMENT', scope: 3 },
+  concrete: { productCategory: 'RAW_MATERIAL', industryCode: 'CEMENT', scope: 3 },
   aluminium: { productCategory: 'RAW_MATERIAL', industryCode: 'ALUMINIUM', scope: 3 },
   aluminum: { productCategory: 'RAW_MATERIAL', industryCode: 'ALUMINIUM', scope: 3 },
   copper: { productCategory: 'RAW_MATERIAL', industryCode: 'COPPER', scope: 3 },
   textile: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
   fabric: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
   cotton: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
+  yarn: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
   wood: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
   timber: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
+  plywood: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
   rubber: { productCategory: 'RAW_MATERIAL', industryCode: 'RUBBER', scope: 3 },
+  glass: { productCategory: 'RAW_MATERIAL', industryCode: 'GLASS', scope: 3 },
   // Waste - Scope 3
   waste: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   disposal: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   recycling: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   scrap: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
+  garbage: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
+  kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 }, // Hindi
 };
 
 // ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0) =============
@@ -124,20 +175,54 @@ const EMISSION_FACTORS = {
   },
 };
 
-// ============= UNIT DETECTION =============
+// ============= ENHANCED UNIT DETECTION =============
 function detectUnit(text: string): string | null {
   const unitPatterns: Record<string, RegExp> = {
-    'litre': /\b(litre|liter|ltr|l)\b/i,
-    'kg': /\b(kg|kilogram|kgs)\b/i,
-    'kWh': /\b(kwh|kilowatt|unit|units)\b/i,
-    'ton': /\b(ton|tonne|mt|tons)\b/i,
-    'km': /\b(km|kilometer|kilometres)\b/i,
-    'scm': /\b(scm|cubic\s*m)\b/i,
+    'litre': /\b(litre|liter|ltr|lt|l|l1tre|1itre)\b/i,
+    'kg': /\b(kg|kilogram|kgs|k\.g|k9)\b/i,
+    'kWh': /\b(kwh|kilowatt|unit|units|un1ts|kw\.h)\b/i,
+    'ton': /\b(ton|tonne|mt|tons|tonnes|metric\s*ton)\b/i,
+    'km': /\b(km|kilometer|kilometres|k\.m)\b/i,
+    'scm': /\b(scm|cubic\s*m|cu\.m|cbm)\b/i,
   };
   
   for (const [unit, pattern] of Object.entries(unitPatterns)) {
     if (pattern.test(text)) return unit;
   }
+  return null;
+}
+
+// ============= QUANTITY INFERENCE FROM CONTEXT =============
+function inferQuantityFromContext(text: string, amount?: number): number | null {
+  // Try to find numbers near unit keywords
+  const quantityPatterns = [
+    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:litre|liter|ltr|lt|l)\b/i,
+    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:kg|kilogram|kgs)\b/i,
+    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:kwh|unit|units)\b/i,
+    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:ton|tonne|mt)\b/i,
+    /qty[:\s]*(\d+(?:,\d{3})*(?:\.\d+)?)/i,
+    /quantity[:\s]*(\d+(?:,\d{3})*(?:\.\d+)?)/i,
+  ];
+  
+  for (const pattern of quantityPatterns) {
+    const match = text.match(pattern);
+    if (match) {
+      return parseFloat(match[1].replace(/,/g, ''));
+    }
+  }
+  
+  // If we have amount and it looks like a fuel bill, try to infer
+  // Average diesel price ~₹90/L, petrol ~₹100/L
+  if (amount && amount > 100) {
+    const lowerText = text.toLowerCase();
+    if (lowerText.includes('diesel') || lowerText.includes('hsd')) {
+      return Math.round(amount / 90 * 10) / 10;
+    }
+    if (lowerText.includes('petrol') || lowerText.includes('ms')) {
+      return Math.round(amount / 100 * 10) / 10;
+    }
+  }
+  
   return null;
 }
 
@@ -162,6 +247,7 @@ function classifyByHSN(hsnCode: string): { productCategory: string; industryCode
 function classifyByKeyword(text: string): { productCategory: string; industryCode: string; scope: number; fuelType?: string } | null {
   const lowerText = text.toLowerCase();
   
+  // Check for exact matches first, then partial matches
   for (const [keyword, classification] of Object.entries(KEYWORD_MAP)) {
     if (lowerText.includes(keyword)) {
       return classification;
@@ -284,6 +370,108 @@ interface ExtractedData {
   };
 }
 
+// ============= AI OCR EXTRACTION =============
+async function extractWithAI(imageBase64: string, mimeType: string, apiKey: string, model: string): Promise<any> {
+  // Enhanced prompt for old/unclear invoices
+  const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Extract data from invoices, bills, and receipts with MAXIMUM accuracy, even from old, faded, or unclear documents.
+
+CRITICAL EXTRACTION RULES:
+1. For FADED or UNCLEAR text:
+   - Look for patterns: numbers near "Qty", "Rate", "Amount" columns
+   - Infer values from context (e.g., if total is visible, work backwards)
+   - Check for common invoice layouts and extract accordingly
+
+2. GSTIN numbers: 15-character alphanumeric (e.g., 27AABCU9603R1ZM)
+   - Look in header, near "GSTIN", "GST No", "Tax ID"
+
+3. HSN codes: 4-8 digit codes (e.g., 2710, 84713010)
+   - Found in columns labeled "HSN", "HSN/SAC", "SAC Code"
+   - Or embedded in product descriptions
+
+4. Line items - Extract ALL visible items:
+   - description: Full product/service name
+   - hsn_code: 4-8 digit code if visible
+   - quantity: Numeric value (look near "Qty", "Quantity")
+   - unit: litre/kWh/kg/ton/km/scm/nos/pcs
+   - unitPrice: Per unit price (look near "Rate", "Price")
+   - total: Line total (look in last column)
+
+5. For FUEL/ELECTRICITY bills specifically:
+   - Look for consumption in litres/kWh/units
+   - Check meter readings if present
+   - Extract billing period dates
+
+6. DATES: Accept any format (DD/MM/YYYY, MM-DD-YYYY, DD-MMM-YY, etc.)
+   - Normalize to YYYY-MM-DD in output
+
+7. AMOUNTS: Remove commas, convert to numbers
+   - Handle both ₹ and Rs. prefixes
+
+Respond ONLY with valid JSON (no markdown, no explanation):
+{
+  "documentType": "invoice|bill|certificate|receipt|unknown",
+  "vendor": "vendor/supplier name",
+  "date": "YYYY-MM-DD",
+  "invoiceNumber": "invoice/bill number",
+  "supplierGstin": "15-char GSTIN or null",
+  "buyerGstin": "15-char GSTIN or null",
+  "amount": total amount as number,
+  "currency": "INR",
+  "lineItems": [
+    {
+      "description": "item description",
+      "hsn_code": "HSN code if found or null",
+      "quantity": number or null,
+      "unit": "unit or null",
+      "unitPrice": number or null,
+      "total": number or null
+    }
+  ],
+  "taxAmount": tax amount as number or null,
+  "subtotal": subtotal as number or null,
+  "confidence": 0.0 to 1.0 (your confidence in extraction accuracy)
+}`;
+
+  const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: 'Extract ALL data from this document. For old or unclear invoices, use context clues and common patterns to infer missing values. Pay special attention to HSN codes, GSTIN numbers, quantities, and units.'
+            },
+            {
+              type: 'image_url',
+              image_url: {
+                url: `data:${mimeType};base64,${imageBase64}`
+              }
+            }
+          ]
+        }
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const status = response.status;
+    const errorText = await response.text();
+    console.error(`AI Gateway error (${model}):`, status, errorText);
+    throw { status, message: errorText };
+  }
+
+  const aiResponse = await response.json();
+  return aiResponse.choices?.[0]?.message?.content;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -310,131 +498,88 @@ serve(async (req) => {
 
     console.log('Processing document with enhanced OCR extraction...');
 
-    // Enhanced prompt for HSN code extraction
-    const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Extract data from invoices, bills, and receipts with precision.
+    let content: string | null = null;
+    let usedModel = 'google/gemini-2.5-flash';
 
-CRITICAL: Extract these fields with maximum accuracy:
-1. GSTIN numbers (15-character alphanumeric)
-2. HSN codes (4-8 digit codes identifying products)
-3. Invoice/bill numbers
-4. Line items with quantities, units, and amounts
-5. Dates in any format
-
-For each line item, extract:
-- description (product/service name)
-- hsn_code (4-8 digit HSN code if present)
-- quantity (numeric value)
-- unit (litre/kWh/kg/ton/km/scm/nos)
-- unitPrice (per unit price)
-- total (line total amount)
-
-Look for HSN codes in columns labeled "HSN", "HSN/SAC", "SAC Code", or in the product description.
-
-Respond ONLY with valid JSON:
-{
-  "documentType": "invoice|bill|certificate|receipt|unknown",
-  "vendor": "vendor/supplier name",
-  "date": "YYYY-MM-DD",
-  "invoiceNumber": "invoice/bill number",
-  "supplierGstin": "15-char GSTIN or null",
-  "buyerGstin": "15-char GSTIN or null",
-  "amount": total amount as number,
-  "currency": "INR",
-  "lineItems": [
-    {
-      "description": "item description",
-      "hsn_code": "HSN code if found",
-      "quantity": number,
-      "unit": "litre|kWh|kg|ton|km|scm|nos",
-      "unitPrice": number,
-      "total": number
-    }
-  ],
-  "taxAmount": tax amount as number,
-  "subtotal": subtotal as number,
-  "confidence": 0.0 to 1.0
-}`;
-
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'text',
-                text: 'Extract all data from this document. Pay special attention to HSN codes, GSTIN numbers, quantities, and units.'
-              },
-              {
-                type: 'image_url',
-                image_url: {
-                  url: `data:${mimeType || 'image/jpeg'};base64,${imageBase64}`
-                }
-              }
-            ]
-          }
-        ],
-      }),
-    });
-
-    if (!response.ok) {
-      if (response.status === 429) {
+    // First attempt with flash model (faster)
+    try {
+      content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-flash');
+      console.log('Flash model extraction complete');
+    } catch (error: any) {
+      if (error.status === 429) {
         return new Response(
           JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }),
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      if (response.status === 402) {
+      if (error.status === 402) {
         return new Response(
           JSON.stringify({ error: 'AI usage limit reached. Please add credits to continue.' }),
           { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      const errorText = await response.text();
-      console.error('AI Gateway error:', response.status, errorText);
-      return new Response(
-        JSON.stringify({ error: 'Failed to process document' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      console.error('Flash model failed, will try pro model:', error);
     }
 
-    const aiResponse = await response.json();
-    const content = aiResponse.choices?.[0]?.message?.content;
-
-    if (!content) {
-      console.error('No content in AI response');
-      return new Response(
-        JSON.stringify({ error: 'Failed to extract data from document' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+    // Parse and check confidence
+    let ocrData: any = null;
+    if (content) {
+      try {
+        let jsonStr = content;
+        const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
+        if (jsonMatch) {
+          jsonStr = jsonMatch[1].trim();
+        }
+        ocrData = JSON.parse(jsonStr);
+      } catch (e) {
+        console.error('Failed to parse flash model response:', e);
+      }
     }
 
-    console.log('AI OCR Response received, applying rule-based classification...');
+    // Retry with pro model if confidence is low or extraction failed
+    const shouldRetryWithPro = !ocrData || 
+      (ocrData.confidence && ocrData.confidence < 0.6) ||
+      (ocrData.lineItems && ocrData.lineItems.length === 0);
 
-    // Parse AI response
-    let jsonStr = content;
-    const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (jsonMatch) {
-      jsonStr = jsonMatch[1].trim();
+    if (shouldRetryWithPro) {
+      console.log('Low confidence or failed extraction, retrying with pro model...');
+      try {
+        content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-pro');
+        usedModel = 'google/gemini-2.5-pro';
+        console.log('Pro model extraction complete');
+        
+        let jsonStr = content || '';
+        const jsonMatch = content?.match(/```(?:json)?\s*([\s\S]*?)```/);
+        if (jsonMatch) {
+          jsonStr = jsonMatch[1].trim();
+        }
+        ocrData = JSON.parse(jsonStr);
+      } catch (error: any) {
+        if (error.status === 429) {
+          return new Response(
+            JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }),
+            { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+        console.error('Pro model also failed:', error);
+        // Use whatever we got from flash model
+        if (!ocrData) {
+          return new Response(
+            JSON.stringify({ error: 'Failed to extract data from document. Please try a clearer image.' }),
+            { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+      }
     }
 
-    let ocrData: any;
-    try {
-      ocrData = JSON.parse(jsonStr);
-    } catch (parseError) {
-      console.error('Failed to parse AI response:', parseError);
+    if (!ocrData) {
       return new Response(
         JSON.stringify({ error: 'Failed to parse extracted data' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+
+    console.log(`AI OCR Response received (${usedModel}), applying rule-based classification...`);
 
     // ============= RULE-BASED CLASSIFICATION (NO AI GUESSING) =============
     const validationFlags: string[] = [];
@@ -451,6 +596,15 @@ Respond ONLY with valid JSON:
         unitPrice: item.unitPrice,
         total: item.total,
       };
+
+      // Try to infer quantity if missing
+      if (!classifiedItem.quantity && item.description) {
+        const inferredQty = inferQuantityFromContext(item.description, item.total);
+        if (inferredQty) {
+          classifiedItem.quantity = inferredQty;
+          console.log(`Inferred quantity ${inferredQty} for: ${item.description?.substring(0, 30)}`);
+        }
+      }
 
       // Step 1: Try HSN classification first
       if (item.hsn_code) {
@@ -544,6 +698,10 @@ Respond ONLY with valid JSON:
     if (validationFlags.length > 3) {
       finalConfidence -= 0.2;
     }
+    // Boost confidence if we used pro model
+    if (usedModel === 'google/gemini-2.5-pro') {
+      finalConfidence = Math.min(1, finalConfidence + 0.1);
+    }
     finalConfidence = Math.max(0, Math.min(1, finalConfidence));
 
     const extractedData: ExtractedData = {
@@ -572,7 +730,7 @@ Respond ONLY with valid JSON:
       },
     };
 
-    console.log(`Document processed: ${classificationStatus}, ${verifiedItems} verified, ${unverifiableItems} unverifiable, ${totalCO2Kg.toFixed(2)} kgCO₂e`);
+    console.log(`Document processed: ${classificationStatus}, ${verifiedItems} verified, ${unverifiableItems} unverifiable, ${totalCO2Kg.toFixed(2)} kgCO₂e (model: ${usedModel})`);
 
     return new Response(
       JSON.stringify({ 
