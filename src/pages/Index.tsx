@@ -4,6 +4,7 @@ import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
 import { ResultState } from "@/components/ResultState";
+import { OnboardingTour } from "@/components/OnboardingTour";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -249,6 +250,9 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
+      {/* Onboarding Tour */}
+      <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
+      
       {/* Ambient particles */}
       <CarbonParticles />
       
@@ -305,27 +309,9 @@ const Index = () => {
         )}
       </main>
       
-      {/* Footer navigation - always visible */}
+      {/* Footer navigation - simplified */}
       <footer className="relative z-20 w-full pb-8 pt-4">
-        <nav className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap px-4">
-          <Link 
-            to="/dashboard" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            Dashboard
-          </Link>
-          <Link 
-            to="/mrv-dashboard" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            MRV
-          </Link>
-          <Link 
-            to="/verify" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            Verify
-          </Link>
+        <nav className="flex items-center justify-center gap-6 sm:gap-8 flex-wrap px-4">
           <Link 
             to="/monetize" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
@@ -343,6 +329,12 @@ const Index = () => {
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
             Mission
+          </Link>
+          <Link 
+            to="/auth" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Sign In
           </Link>
         </nav>
       </footer>
