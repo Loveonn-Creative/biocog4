@@ -10,12 +10,18 @@ import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
-  Building2, Shield, CheckCircle, AlertCircle, Calendar
+  Building2, Shield, CheckCircle, AlertCircle, Calendar, Globe
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import { 
+  determineApplicableFrameworks, 
+  getDefaultMSMEProfile, 
+  getFrameworkDisclaimer,
+  FRAMEWORKS 
+} from '@/lib/reportFrameworks';
 
 interface Verification {
   id: string;
@@ -36,7 +42,7 @@ interface Verification {
   } | null;
 }
 
-const LEGAL_DISCLAIMER = "This report is generated based on data submitted by the user and verified through the BIOCOG MRV India v1.0 methodology. It complies with Indian carbon regulation standards including CPCB guidelines and is intended for informational and compliance purposes only. Senseible does not guarantee the accuracy of user-submitted data.";
+const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using the BIOCOG MRV India v1.0 methodology with emission factors from IND_EF_2025. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.";
 
 const Reports = () => {
   const { summary, emissions } = useEmissions();
@@ -76,6 +82,11 @@ const Reports = () => {
   const latestVerification = verifications[0];
   const analysis = latestVerification?.ai_analysis;
   
+  // Get applicable frameworks based on default MSME profile
+  const profile = getDefaultMSMEProfile();
+  const applicableFrameworks = determineApplicableFrameworks(profile);
+  const frameworkDisclaimer = getFrameworkDisclaimer(applicableFrameworks);
+  
   const formatNumber = (n: number) => n >= 1000 ? `${(n/1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
   const formatDate = (date: string) => new Date(date).toLocaleDateString('en-IN', { 
     day: 'numeric', 
@@ -104,7 +115,7 @@ const Reports = () => {
       
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
-      doc.text('ESG Compliance & Bank Disclosure Ready', margin, 33);
+      doc.text('Multi-Framework ESG Compliance Ready', margin, 33);
       
       yPos = 55;
       
@@ -195,20 +206,27 @@ const Reports = () => {
       
       yPos += 35;
       
-      // Methodology & Compliance Section
+      // Methodology & Compliance Section with Framework Coverage
       doc.setTextColor(0);
       doc.setFontSize(14);
       doc.setFont('helvetica', 'bold');
-      doc.text('Methodology & Compliance', margin, yPos);
+      doc.text('Framework Coverage & Methodology', margin, yPos);
       yPos += 10;
       
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);
       
+      // Show covered frameworks
+      const coveredFrameworks = applicableFrameworks
+        .map(fwId => FRAMEWORKS[fwId]?.shortName)
+        .filter(Boolean)
+        .join(' • ');
+      
       const complianceItems = [
+        `Frameworks: ${coveredFrameworks || 'GHG Protocol'}`,
         `Methodology: BIOCOG MRV India v1.0`,
-        `Emission Factor Version: IND_EF_2025`,
+        `Emission Factors: IND_EF_2025`,
         `Standards: GHG Protocol, ISO 14064`,
         `Data Quality: ${analysis?.dataQuality || 'Under review'}`,
         `CCTS Eligible: ${latestVerification?.ccts_eligible ? 'Yes' : 'No'}`,
@@ -319,7 +337,7 @@ const Reports = () => {
       
       doc.setFontSize(7);
       doc.setTextColor(120);
-      const splitDisclaimer = doc.splitTextToSize(LEGAL_DISCLAIMER, pageWidth - margin * 2);
+      const splitDisclaimer = doc.splitTextToSize(frameworkDisclaimer, pageWidth - margin * 2);
       doc.text(splitDisclaimer, margin, yPos);
       
       // Page number on each page
@@ -346,11 +364,18 @@ const Reports = () => {
     setIsGenerating(true);
     
     try {
+      // Get covered frameworks for Excel
+      const coveredFrameworksList = applicableFrameworks
+        .map(fwId => FRAMEWORKS[fwId]?.shortName)
+        .filter(Boolean)
+        .join(', ');
+      
       // Summary sheet data
       const summaryData = [
-        ['Carbon Accounting Report - ESG Compliance'],
+        ['Carbon Accounting Report - Multi-Framework ESG Compliance'],
         ['Generated:', formatDate(new Date().toISOString())],
         ['Methodology:', 'BIOCOG MRV India v1.0'],
+        ['Frameworks Covered:', coveredFrameworksList || 'GHG Protocol'],
         [''],
         ['EMISSIONS SUMMARY'],
         ['Scope', 'Description', 'CO₂ Emissions (kg)', 'Percentage'],
@@ -605,7 +630,8 @@ const Reports = () => {
                   <div className="flex items-center gap-2 mb-6 p-3 rounded-lg bg-secondary/50">
                     <Shield className="h-4 w-4 text-primary" />
                     <span className="text-sm">
-                      Compliant with CPCB guidelines, GHG Protocol & ISO 14064
+                      Aligned with {applicableFrameworks.slice(0, 3).map(fwId => FRAMEWORKS[fwId]?.shortName).filter(Boolean).join(', ')}
+                      {applicableFrameworks.length > 3 && ` +${applicableFrameworks.length - 3} more`}
                     </span>
                   </div>
                   

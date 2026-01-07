@@ -13,23 +13,56 @@ import { VerificationStatusCard } from '@/components/dashboard/VerificationStatu
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { Trash2, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, sessionId, isLoading: sessionLoading } = useSession();
-  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions } = useEmissions();
+  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
   const [latestStatus, setLatestStatus] = useState<'verified' | 'needs_review' | 'pending' | null>(null);
   const [eligibleCredits, setEligibleCredits] = useState(0);
 
+  const [isResetting, setIsResetting] = useState(false);
+
   const isLoading = sessionLoading || emissionsLoading || docsLoading;
   const unverifiedEmissions = getUnverifiedEmissions();
   const verifiedEmissions = getVerifiedEmissions();
+  const isGuestUser = !user && sessionId;
 
   useEffect(() => {
     fetchVerificationData();
   }, [sessionId, user?.id]);
+
+  const resetAllData = async () => {
+    if (!sessionId) return;
+    
+    setIsResetting(true);
+    try {
+      // Delete in order: verifications -> emissions -> documents (due to foreign keys)
+      await supabase.from('carbon_verifications').delete().eq('session_id', sessionId);
+      await supabase.from('emissions').delete().eq('session_id', sessionId);
+      await supabase.from('documents').delete().eq('session_id', sessionId);
+      
+      toast.success('All data cleared. Start fresh with a new upload!');
+      
+      // Refetch data
+      refetch();
+      fetchVerificationData();
+      setVerificationScore(0);
+      setLatestStatus(null);
+      setEligibleCredits(0);
+    } catch (error) {
+      console.error('Error resetting data:', error);
+      toast.error('Failed to reset data. Please try again.');
+    } finally {
+      setIsResetting(false);
+    }
+  };
 
   const fetchVerificationData = async () => {
     try {
@@ -69,13 +102,54 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-8">
         {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-semibold text-foreground mb-2">
-            Carbon Dashboard
-          </h1>
-          <p className="text-muted-foreground">
-            Track your emissions, verify data, and unlock monetization opportunities.
-          </p>
+        <div className="flex items-start justify-between mb-8">
+          <div>
+            <h1 className="text-2xl font-semibold text-foreground mb-2">
+              Carbon Dashboard
+            </h1>
+            <p className="text-muted-foreground">
+              Track your emissions, verify data, and unlock monetization opportunities.
+            </p>
+          </div>
+          
+          {/* Reset Data Button - Only for guest users */}
+          {isGuestUser && (documents.length > 0 || emissions.length > 0) && (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="text-destructive hover:text-destructive hover:bg-destructive/10 gap-2"
+                  disabled={isResetting}
+                >
+                  {isResetting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="h-4 w-4" />
+                  )}
+                  Reset Data
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Reset all data?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will permanently delete all your uploaded documents, emissions data, and verifications. 
+                    This action cannot be undone. You can start fresh with new uploads.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction 
+                    onClick={resetAllData}
+                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                  >
+                    Yes, reset everything
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
         </div>
 
         {isLoading ? (

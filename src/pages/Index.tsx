@@ -12,12 +12,21 @@ import { useSession } from "@/hooks/useSession";
 
 type State = "idle" | "processing" | "result";
 
-interface ExtractedItem {
+interface ExtractedLineItem {
   description: string;
+  hsn_code?: string;
   quantity?: number;
+  unit?: string;
   unitPrice?: number;
   total?: number;
-  category?: string;
+  productCategory?: string;
+  industryCode?: string;
+  scope?: number;
+  fuelType?: string;
+  co2Kg?: number;
+  emissionFactor?: number;
+  factorSource?: string;
+  classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
 }
 
 interface ExtractedData {
@@ -25,14 +34,23 @@ interface ExtractedData {
   vendor?: string;
   date?: string;
   invoiceNumber?: string;
+  supplierGstin?: string;
+  buyerGstin?: string;
   amount?: number;
   currency?: string;
-  items?: ExtractedItem[];
+  lineItems?: ExtractedLineItem[];
   taxAmount?: number;
   subtotal?: number;
+  // New fields from enhanced OCR
+  primaryScope?: number;
+  primaryCategory?: string;
+  totalCO2Kg?: number;
+  // Legacy fields for compatibility
   emissionCategory?: string;
   estimatedCO2Kg?: number;
   confidence: number;
+  validationFlags?: string[];
+  classificationStatus?: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
 }
 
 interface ProcessingResult {
@@ -43,6 +61,53 @@ interface ProcessingResult {
   documentId?: string;
   emissionId?: string;
 }
+
+// Helper to get category from OCR response
+const getCategoryFromOCR = (data: ExtractedData): string => {
+  // Map productCategory to our category format
+  const categoryMap: Record<string, string> = {
+    'FUEL': 'fuel',
+    'ELECTRICITY': 'electricity',
+    'TRANSPORT': 'transport',
+    'RAW_MATERIAL': 'materials',
+    'WASTE': 'waste',
+    'CHEMICALS': 'materials',
+    'CAPITAL_GOODS': 'materials',
+    'ELECTRICAL_EQUIPMENT': 'materials',
+    'TRANSPORT_EQUIPMENT': 'transport',
+    'SERVICES': 'other',
+  };
+  
+  if (data.primaryCategory && categoryMap[data.primaryCategory]) {
+    return categoryMap[data.primaryCategory];
+  }
+  
+  // Fallback to legacy field
+  if (data.emissionCategory) {
+    return data.emissionCategory;
+  }
+  
+  // Try to infer from line items
+  const firstItem = data.lineItems?.[0];
+  if (firstItem?.productCategory && categoryMap[firstItem.productCategory]) {
+    return categoryMap[firstItem.productCategory];
+  }
+  
+  return 'other';
+};
+
+// Helper to get scope from category
+const getScopeFromCategory = (category: string): number => {
+  const scopeMap: Record<string, number> = {
+    'fuel': 1,
+    'electricity': 2,
+    'transport': 3,
+    'materials': 3,
+    'waste': 3,
+    'other': 3
+  };
+  return scopeMap[category] || 3;
+};
 
 const Index = () => {
   const navigate = useNavigate();
@@ -91,17 +156,16 @@ const Index = () => {
         return null;
       }
 
-      // Calculate scope based on category
-      const scopeMap: Record<string, number> = {
-        'fuel': 1,
-        'electricity': 2,
-        'transport': 3,
-        'materials': 3,
-        'waste': 3,
-        'other': 3
-      };
-
-      const scope = scopeMap[extractedData.emissionCategory || 'other'] || 3;
+      // Get emission data from OCR response - use new fields with fallback to legacy
+      const co2Kg = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
+      const category = getCategoryFromOCR(extractedData);
+      const scope = extractedData.primaryScope ?? getScopeFromCategory(category);
+      
+      // Get activity data from first line item
+      const firstItem = extractedData.lineItems?.[0];
+      const activityData = firstItem?.quantity ?? null;
+      const activityUnit = firstItem?.unit ?? null;
+      const emissionFactor = firstItem?.emissionFactor ?? null;
 
       // Save emission
       const { data: emissionData, error: emissionError } = await supabase
@@ -111,8 +175,11 @@ const Index = () => {
           session_id: sessionId,
           user_id: user?.id || null,
           scope: scope,
-          category: extractedData.emissionCategory || 'other',
-          co2_kg: extractedData.estimatedCO2Kg || 0,
+          category: category,
+          co2_kg: co2Kg,
+          activity_data: activityData,
+          activity_unit: activityUnit,
+          emission_factor: emissionFactor,
           data_quality: extractedData.confidence >= 0.8 ? 'high' : extractedData.confidence >= 0.5 ? 'medium' : 'low',
           verified: false
         })
@@ -166,18 +233,22 @@ const Index = () => {
       // Save to database
       const savedIds = await saveToDatabase(extractedData);
 
+      // Get the calculated CO2 value
+      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
+      const emissionCat = getCategoryFromOCR(extractedData);
+      
       // Determine result type based on document
       const isCompliance = extractedData.documentType === 'certificate' || 
-                          extractedData.emissionCategory === 'other';
+                          emissionCat === 'other';
       
       // Calculate revenue based on CO2 estimation
-      const co2Tons = (extractedData.estimatedCO2Kg || 0) / 1000;
+      const co2Tons = calculatedCO2 / 1000;
       const carbonCreditValue = Math.round(co2Tons * 650);
 
       const processingResult: ProcessingResult = {
         type: isCompliance ? "compliance" : "revenue",
         amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
-        documentType: formatDocumentType(extractedData.documentType, extractedData.emissionCategory),
+        documentType: formatDocumentType(extractedData.documentType, emissionCat),
         extractedData,
         documentId: savedIds?.documentId,
         emissionId: savedIds?.emissionId
@@ -187,8 +258,8 @@ const Index = () => {
       setResult(processingResult);
       setState("result");
 
-      if (extractedData.estimatedCO2Kg && extractedData.estimatedCO2Kg > 0) {
-        toast.success(`Extracted ${extractedData.estimatedCO2Kg.toFixed(2)} kg CO₂ from ${extractedData.documentType}`);
+      if (calculatedCO2 > 0) {
+        toast.success(`Extracted ${calculatedCO2.toFixed(2)} kg CO₂ from ${extractedData.documentType}`);
       }
 
     } catch (err) {
