@@ -13,8 +13,13 @@ import { supabase } from '@/integrations/supabase/client';
 import {
   Shield, TrendingUp, Target, Award, FileCheck, AlertCircle,
   CheckCircle, Clock, ArrowRight, Leaf, Zap, Recycle, Sun,
-  ChevronRight, BarChart3, Lock, ExternalLink
+  ChevronRight, BarChart3, Lock, ExternalLink, Lightbulb, Activity
 } from 'lucide-react';
+import { 
+  generateIntelligentRecommendations, 
+  getTotalImpact,
+  IntelligenceRecommendation 
+} from '@/lib/intelligenceEngine';
 
 interface VerificationRecord {
   id: string;
@@ -420,31 +425,72 @@ const MRVDashboard = () => {
                   </CardContent>
                 </Card>
 
-                {/* Precise Recommendations */}
+                {/* Intelligence Recommendations */}
                 <Card>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Target className="h-5 w-5 text-accent" />
-                      Data-Driven Recommendations
+                      <Lightbulb className="h-5 w-5 text-accent" />
+                      Intelligence & Actions
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {latestAnalysis?.recommendations && latestAnalysis.recommendations.length > 0 ? (
-                      <ul className="space-y-3">
-                        {latestAnalysis.recommendations.map((rec, idx) => (
-                          <li key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors">
-                            <div className="mt-0.5 p-1 rounded-full bg-accent/10">
-                              <ChevronRight className="h-3 w-3 text-accent" />
+                    {(() => {
+                      const intelligentRecs = generateIntelligentRecommendations(emissions, summary);
+                      const impact = getTotalImpact(intelligentRecs);
+                      
+                      if (intelligentRecs.length > 0) {
+                        return (
+                          <div className="space-y-4">
+                            {/* Impact Summary */}
+                            <div className="grid grid-cols-3 gap-2 p-3 rounded-lg bg-success/5 border border-success/20">
+                              <div className="text-center">
+                                <div className="text-lg font-mono font-bold text-success">{formatNumber(impact.totalReduction)}</div>
+                                <div className="text-xs text-muted-foreground">Potential Reduction</div>
+                              </div>
+                              <div className="text-center border-x border-success/20">
+                                <div className="text-lg font-mono font-bold text-success">{formatCurrency(impact.totalSavings)}</div>
+                                <div className="text-xs text-muted-foreground">Annual Savings</div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-lg font-mono font-bold text-success">{impact.avgPayback}mo</div>
+                                <div className="text-xs text-muted-foreground">Avg Payback</div>
+                              </div>
                             </div>
-                            <p className="text-sm flex-1">{rec}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-sm text-muted-foreground text-center py-6">
-                        Complete verification to receive personalized recommendations.
-                      </p>
-                    )}
+                            
+                            {/* Recommendations */}
+                            <ul className="space-y-3">
+                              {intelligentRecs.slice(0, 4).map((rec) => (
+                                <li key={rec.id} className="p-3 rounded-lg bg-secondary/30 hover:bg-secondary/50 transition-colors">
+                                  <div className="flex items-start gap-3">
+                                    <div className={`mt-0.5 p-1.5 rounded-full ${
+                                      rec.priority === 'high' ? 'bg-destructive/10 text-destructive' :
+                                      rec.priority === 'medium' ? 'bg-warning/10 text-warning' : 'bg-muted'
+                                    }`}>
+                                      {rec.priority === 'high' ? <Zap className="h-3 w-3" /> : <Activity className="h-3 w-3" />}
+                                    </div>
+                                    <div className="flex-1">
+                                      <div className="font-medium text-sm mb-1">{rec.title}</div>
+                                      <p className="text-xs text-muted-foreground mb-2">{rec.insight}</p>
+                                      <div className="flex items-center gap-3 text-xs">
+                                        <span className="text-success font-medium">-{formatNumber(rec.impact.co2ReductionKg)}</span>
+                                        <span className="text-muted-foreground">|</span>
+                                        <span className="text-primary font-medium">{formatCurrency(rec.impact.costSavingsINR)}/yr</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      }
+                      
+                      return (
+                        <p className="text-sm text-muted-foreground text-center py-6">
+                          Upload invoices to receive personalized recommendations.
+                        </p>
+                      );
+                    })()}
                   </CardContent>
                 </Card>
 
