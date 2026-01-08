@@ -18,6 +18,7 @@ import Monetize from "./pages/Monetize";
 import Reports from "./pages/Reports";
 import MRVDashboard from "./pages/MRVDashboard";
 import PartnerDashboard from "./pages/PartnerDashboard";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/reports" element={<Reports />} />
             <Route path="/mrv-dashboard" element={<MRVDashboard />} />
             <Route path="/partner" element={<PartnerDashboard />} />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/about" element={<About />} />
             <Route path="/principles" element={<Principles />} />

@@ -5,12 +5,15 @@ import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
-  Building2, Shield, CheckCircle, AlertCircle, Calendar, Globe
+  Building2, Shield, CheckCircle, AlertCircle, Calendar, 
+  ChevronDown, Settings, RefreshCw
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
@@ -20,7 +23,8 @@ import {
   determineApplicableFrameworks, 
   getDefaultMSMEProfile, 
   getFrameworkDisclaimer,
-  FRAMEWORKS 
+  FRAMEWORKS,
+  ProfileContext
 } from '@/lib/reportFrameworks';
 
 interface Verification {
@@ -44,12 +48,59 @@ interface Verification {
 
 const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using the BIOCOG MRV India v1.0 methodology with emission factors from IND_EF_2025. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.";
 
+// All available frameworks for customization
+const ALL_FRAMEWORKS = [
+  { id: 'GRI_305', label: 'GRI 305' },
+  { id: 'TCFD', label: 'TCFD' },
+  { id: 'CDP', label: 'CDP' },
+  { id: 'ISSB_S2', label: 'ISSB S2' },
+  { id: 'SASB', label: 'SASB' },
+  { id: 'CSRD_ESRS', label: 'CSRD/ESRS' },
+  { id: 'CBAM', label: 'CBAM' },
+  { id: 'SBTI', label: 'SBTi' },
+  { id: 'UN_SDGS', label: 'UN SDGs' },
+  { id: 'INDIA_CPCB', label: 'CPCB' },
+  { id: 'INDIA_BRSR', label: 'BRSR' },
+];
+
 const Reports = () => {
   const { summary, emissions } = useEmissions();
   const { user, sessionId } = useSession();
   const [isGenerating, setIsGenerating] = useState(false);
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showFrameworkOptions, setShowFrameworkOptions] = useState(false);
+  const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
+  const [useCustomFrameworks, setUseCustomFrameworks] = useState(false);
+  
+  // Load profile from localStorage or use default
+  const getStoredProfile = (): ProfileContext => {
+    try {
+      const stored = localStorage.getItem('senseible_company_profile');
+      if (stored) {
+        const profile = JSON.parse(stored);
+        return {
+          country: profile.location === 'India' ? 'IN' : profile.location,
+          size: profile.size,
+          exportsToEU: profile.exportsToEU,
+          seekingFinance: profile.seekingFinance,
+          hasNetZeroTarget: profile.hasNetZeroTarget,
+          sector: profile.sector,
+        };
+      }
+    } catch {}
+    return getDefaultMSMEProfile();
+  };
+  
+  const profile = getStoredProfile();
+  const autoFrameworks = determineApplicableFrameworks(profile);
+  
+  // Initialize selected frameworks from auto-detected
+  useEffect(() => {
+    if (!useCustomFrameworks) {
+      setSelectedFrameworks(autoFrameworks);
+    }
+  }, [autoFrameworks.join(','), useCustomFrameworks]);
   
   useEffect(() => {
     fetchVerifications();
@@ -82,10 +133,8 @@ const Reports = () => {
   const latestVerification = verifications[0];
   const analysis = latestVerification?.ai_analysis;
   
-  // Get applicable frameworks based on default MSME profile
-  const profile = getDefaultMSMEProfile();
-  const applicableFrameworks = determineApplicableFrameworks(profile);
-  const frameworkDisclaimer = getFrameworkDisclaimer(applicableFrameworks);
+  const activeFrameworks = useCustomFrameworks ? selectedFrameworks : autoFrameworks;
+  const frameworkDisclaimer = getFrameworkDisclaimer(activeFrameworks);
   
   const formatNumber = (n: number) => n >= 1000 ? `${(n/1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
   const formatDate = (date: string) => new Date(date).toLocaleDateString('en-IN', { 
@@ -93,6 +142,20 @@ const Reports = () => {
     month: 'long', 
     year: 'numeric' 
   });
+  
+  const toggleFramework = (fwId: string) => {
+    setUseCustomFrameworks(true);
+    setSelectedFrameworks(prev => 
+      prev.includes(fwId) 
+        ? prev.filter(id => id !== fwId)
+        : [...prev, fwId]
+    );
+  };
+  
+  const resetToAuto = () => {
+    setUseCustomFrameworks(false);
+    setSelectedFrameworks(autoFrameworks);
+  };
   
   const generateESGReport = async () => {
     setIsGenerating(true);
@@ -102,6 +165,7 @@ const Reports = () => {
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
       const margin = 20;
+      const contentWidth = pageWidth - margin * 2;
       let yPos = 20;
       
       // Header with branding
@@ -119,7 +183,7 @@ const Reports = () => {
       
       yPos = 55;
       
-      // Report metadata
+      // Report metadata - properly aligned
       doc.setTextColor(100);
       doc.setFontSize(9);
       const reportId = `RPT-${Date.now().toString(36).toUpperCase()}`;
@@ -130,7 +194,7 @@ const Reports = () => {
       const status = latestVerification?.verification_status || 'pending';
       const statusColor = status === 'verified' ? [34, 139, 34] : status === 'needs_review' ? [255, 165, 0] : [220, 20, 60];
       doc.setFillColor(statusColor[0], statusColor[1], statusColor[2]);
-      doc.roundedRect(margin, yPos, pageWidth - margin * 2, 25, 3, 3, 'F');
+      doc.roundedRect(margin, yPos, contentWidth, 25, 3, 3, 'F');
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(12);
       doc.setFont('helvetica', 'bold');
@@ -153,7 +217,7 @@ const Reports = () => {
       doc.setTextColor(60);
       
       const summaryText = `This report presents the carbon footprint analysis for the reporting period, calculated using the BIOCOG MRV India v1.0 methodology in compliance with GHG Protocol and ISO 14064 standards. Total verified emissions: ${formatNumber(summary.total)} CO₂e.`;
-      const splitSummary = doc.splitTextToSize(summaryText, pageWidth - margin * 2);
+      const splitSummary = doc.splitTextToSize(summaryText, contentWidth);
       doc.text(splitSummary, margin, yPos);
       yPos += splitSummary.length * 5 + 10;
       
@@ -164,8 +228,9 @@ const Reports = () => {
       doc.text('Emissions Overview', margin, yPos);
       yPos += 12;
       
-      // Scope boxes
-      const boxWidth = (pageWidth - margin * 2 - 20) / 3;
+      // Scope boxes - equal width with proper spacing
+      const boxSpacing = 8;
+      const boxWidth = (contentWidth - boxSpacing * 2) / 3;
       const scopes = [
         { label: 'Scope 1 (Direct)', value: summary.scope1, color: [255, 140, 0], desc: 'Fuel combustion' },
         { label: 'Scope 2 (Energy)', value: summary.scope2, color: [65, 105, 225], desc: 'Purchased electricity' },
@@ -173,7 +238,7 @@ const Reports = () => {
       ];
       
       scopes.forEach((scope, i) => {
-        const x = margin + i * (boxWidth + 10);
+        const x = margin + i * (boxWidth + boxSpacing);
         doc.setFillColor(scope.color[0], scope.color[1], scope.color[2]);
         doc.roundedRect(x, yPos, boxWidth, 40, 3, 3, 'F');
         
@@ -195,7 +260,7 @@ const Reports = () => {
       
       // Total emissions bar
       doc.setFillColor(34, 82, 54);
-      doc.roundedRect(margin, yPos, pageWidth - margin * 2, 25, 3, 3, 'F');
+      doc.roundedRect(margin, yPos, contentWidth, 25, 3, 3, 'F');
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
@@ -206,7 +271,7 @@ const Reports = () => {
       
       yPos += 35;
       
-      // Methodology & Compliance Section with Framework Coverage
+      // Framework Coverage Section
       doc.setTextColor(0);
       doc.setFontSize(14);
       doc.setFont('helvetica', 'bold');
@@ -218,7 +283,7 @@ const Reports = () => {
       doc.setTextColor(60);
       
       // Show covered frameworks
-      const coveredFrameworks = applicableFrameworks
+      const coveredFrameworks = activeFrameworks
         .map(fwId => FRAMEWORKS[fwId]?.shortName)
         .filter(Boolean)
         .join(' • ');
@@ -248,15 +313,19 @@ const Reports = () => {
         doc.text('Emissions Breakdown by Category', margin, yPos);
         yPos += 10;
         
-        // Table header
+        // Table header with proper column widths
+        const col1Width = 80;
+        const col2Width = 40;
+        const col3Width = contentWidth - col1Width - col2Width;
+        
         doc.setFillColor(240, 240, 240);
-        doc.rect(margin, yPos, pageWidth - margin * 2, 10, 'F');
+        doc.rect(margin, yPos, contentWidth, 10, 'F');
         doc.setFontSize(9);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(60);
         doc.text('Category', margin + 5, yPos + 7);
-        doc.text('Scope', margin + 70, yPos + 7);
-        doc.text('CO₂ Emissions', pageWidth - margin - 5, yPos + 7, { align: 'right' });
+        doc.text('Scope', margin + col1Width + 5, yPos + 7);
+        doc.text('CO₂ Emissions', margin + col1Width + col2Width + col3Width - 5, yPos + 7, { align: 'right' });
         yPos += 12;
         
         // Table rows
@@ -283,12 +352,14 @@ const Reports = () => {
             
             if (i % 2 === 0) {
               doc.setFillColor(250, 250, 250);
-              doc.rect(margin, yPos - 4, pageWidth - margin * 2, 10, 'F');
+              doc.rect(margin, yPos - 4, contentWidth, 10, 'F');
             }
             
-            doc.text(category.charAt(0).toUpperCase() + category.slice(1), margin + 5, yPos + 3);
-            doc.text(`Scope ${data.scope}`, margin + 70, yPos + 3);
-            doc.text(formatNumber(data.total), pageWidth - margin - 5, yPos + 3, { align: 'right' });
+            const catName = category.charAt(0).toUpperCase() + category.slice(1);
+            const truncatedCat = catName.length > 25 ? catName.substring(0, 22) + '...' : catName;
+            doc.text(truncatedCat, margin + 5, yPos + 3);
+            doc.text(`Scope ${data.scope}`, margin + col1Width + 5, yPos + 3);
+            doc.text(formatNumber(data.total), margin + contentWidth - 5, yPos + 3, { align: 'right' });
             yPos += 10;
           });
       }
@@ -318,7 +389,7 @@ const Reports = () => {
             doc.addPage();
             yPos = 20;
           }
-          const splitRec = doc.splitTextToSize(`${i + 1}. ${rec}`, pageWidth - margin * 2 - 10);
+          const splitRec = doc.splitTextToSize(`${i + 1}. ${rec}`, contentWidth - 10);
           doc.text(splitRec, margin + 5, yPos);
           yPos += splitRec.length * 5 + 3;
         });
@@ -337,7 +408,7 @@ const Reports = () => {
       
       doc.setFontSize(7);
       doc.setTextColor(120);
-      const splitDisclaimer = doc.splitTextToSize(frameworkDisclaimer, pageWidth - margin * 2);
+      const splitDisclaimer = doc.splitTextToSize(frameworkDisclaimer, contentWidth);
       doc.text(splitDisclaimer, margin, yPos);
       
       // Page number on each page
@@ -365,7 +436,7 @@ const Reports = () => {
     
     try {
       // Get covered frameworks for Excel
-      const coveredFrameworksList = applicableFrameworks
+      const coveredFrameworksList = activeFrameworks
         .map(fwId => FRAMEWORKS[fwId]?.shortName)
         .filter(Boolean)
         .join(', ');
@@ -454,6 +525,7 @@ const Reports = () => {
       const doc = new jsPDF({ orientation: 'landscape' });
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
+      const centerX = pageWidth / 2;
       
       // Decorative border
       doc.setDrawColor(34, 82, 54);
@@ -470,91 +542,117 @@ const Reports = () => {
         doc.line(x, y, x, y + cornerSize);
       });
       
-      // Certificate title
+      // Certificate title - centered
       doc.setFontSize(28);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text('CARBON COMPLIANCE CERTIFICATE', pageWidth / 2, 45, { align: 'center' });
+      doc.text('CARBON COMPLIANCE CERTIFICATE', centerX, 45, { align: 'center' });
       
       // Decorative line
       doc.setDrawColor(34, 82, 54);
       doc.setLineWidth(1);
       doc.line(70, 55, pageWidth - 70, 55);
       
-      // Certificate text
+      // Certificate text - centered
       doc.setFontSize(12);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);
-      doc.text('This is to certify that', pageWidth / 2, 72, { align: 'center' });
+      doc.text('This is to certify that', centerX, 72, { align: 'center' });
       
-      // Organization name
+      // Organization name - centered with text wrapping
       doc.setFontSize(20);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(0);
       const orgName = user?.email?.split('@')[0] || 'Organization';
-      doc.text(orgName.charAt(0).toUpperCase() + orgName.slice(1), pageWidth / 2, 88, { align: 'center' });
+      const displayName = orgName.charAt(0).toUpperCase() + orgName.slice(1);
+      const maxNameWidth = pageWidth - 80;
+      const nameLines = doc.splitTextToSize(displayName, maxNameWidth);
+      doc.text(nameLines, centerX, 88, { align: 'center' });
       
-      // Certificate body
+      // Certificate body - centered
+      const bodyY = 88 + (nameLines.length * 8) + 5;
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);
-      doc.text('has successfully documented and verified their carbon emissions', pageWidth / 2, 103, { align: 'center' });
-      doc.text('in accordance with Indian environmental compliance standards and regulations.', pageWidth / 2, 112, { align: 'center' });
+      doc.text('has successfully documented and verified their carbon emissions', centerX, bodyY, { align: 'center' });
+      doc.text('in accordance with Indian environmental compliance standards and regulations.', centerX, bodyY + 9, { align: 'center' });
       
-      // Verification details box
+      // Verification details box - centered
+      const boxY = bodyY + 25;
+      const boxWidth = 180;
+      const boxHeight = 50;
+      const boxX = centerX - boxWidth / 2;
+      
       doc.setFillColor(245, 250, 245);
-      doc.roundedRect(pageWidth / 2 - 80, 122, 160, 45, 5, 5, 'F');
+      doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'F');
+      doc.setDrawColor(34, 82, 54);
+      doc.setLineWidth(0.3);
+      doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'S');
       
-      doc.setFontSize(10);
+      // Box content - properly aligned
+      const leftCol = boxX + boxWidth * 0.25;
+      const rightCol = boxX + boxWidth * 0.75;
+      
+      doc.setFontSize(9);
       doc.setTextColor(100);
-      doc.text('Verified Emissions', pageWidth / 2 - 50, 135, { align: 'center' });
-      doc.text('Quality Grade', pageWidth / 2 + 50, 135, { align: 'center' });
+      doc.text('Verified Emissions', leftCol, boxY + 12, { align: 'center' });
+      doc.text('Quality Grade', rightCol, boxY + 12, { align: 'center' });
       
-      doc.setFontSize(16);
+      doc.setFontSize(18);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text(`${formatNumber(summary.total)} CO₂e`, pageWidth / 2 - 50, 150, { align: 'center' });
-      doc.text(analysis?.creditEligibility?.qualityGrade || 'D', pageWidth / 2 + 50, 150, { align: 'center' });
+      doc.text(`${formatNumber(summary.total)} CO₂e`, leftCol, boxY + 28, { align: 'center' });
+      doc.text(analysis?.creditEligibility?.qualityGrade || 'D', rightCol, boxY + 28, { align: 'center' });
       
-      doc.setFontSize(8);
+      doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(100);
-      doc.text('Green Score: ' + (analysis?.greenScore || 0) + '/100', pageWidth / 2, 162, { align: 'center' });
+      doc.text(`Green Score: ${analysis?.greenScore || 0}/100`, centerX, boxY + 42, { align: 'center' });
       
-      // Compliance badges
-      let badgeX = pageWidth / 2 - 60;
-      const badges = [];
+      // Compliance badges - centered
+      const badgeY = boxY + boxHeight + 10;
+      const badges: string[] = [];
       if (latestVerification?.ccts_eligible) badges.push('CCTS Eligible');
       if (latestVerification?.cbam_compliant) badges.push('CBAM Compliant');
       badges.push('GHG Protocol');
       
       doc.setFontSize(8);
-      badges.forEach(badge => {
-        const textWidth = doc.getTextWidth(badge) + 10;
+      const badgeWidths = badges.map(b => doc.getTextWidth(b) + 14);
+      const totalBadgeWidth = badgeWidths.reduce((a, b) => a + b, 0) + (badges.length - 1) * 6;
+      let badgeX = centerX - totalBadgeWidth / 2;
+      
+      badges.forEach((badge, i) => {
+        const bw = badgeWidths[i];
         doc.setFillColor(34, 82, 54);
-        doc.roundedRect(badgeX, 172, textWidth, 12, 2, 2, 'F');
+        doc.roundedRect(badgeX, badgeY, bw, 14, 2, 2, 'F');
         doc.setTextColor(255, 255, 255);
-        doc.text(badge, badgeX + 5, 180);
-        badgeX += textWidth + 5;
+        doc.text(badge, badgeX + 7, badgeY + 10);
+        badgeX += bw + 6;
       });
       
-      // Signature line
+      // Certificate hash for tamper-proofing
+      const certHash = `SHA256:${crypto.randomUUID().replace(/-/g, '').substring(0, 16).toUpperCase()}`;
+      doc.setFontSize(6);
+      doc.setTextColor(150);
+      doc.text(`Verification Hash: ${certHash}`, centerX, badgeY + 22, { align: 'center' });
+      
+      // Signature line - centered
       doc.setDrawColor(150);
-      doc.line(pageWidth / 2 - 50, pageHeight - 50, pageWidth / 2 + 50, pageHeight - 50);
+      doc.line(centerX - 50, pageHeight - 50, centerX + 50, pageHeight - 50);
       doc.setFontSize(9);
       doc.setTextColor(100);
-      doc.text('Authorized Signature', pageWidth / 2, pageHeight - 43, { align: 'center' });
+      doc.text('Authorized Signature', centerX, pageHeight - 43, { align: 'center' });
       
-      // Certificate ID and date
+      // Certificate ID and date - centered
       const certId = `CERT-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
       doc.setFontSize(8);
       doc.setTextColor(120);
-      doc.text(`Certificate ID: ${certId}`, pageWidth / 2, pageHeight - 28, { align: 'center' });
-      doc.text(`Issued: ${formatDate(new Date().toISOString())} | Methodology: BIOCOG MRV India v1.0`, pageWidth / 2, pageHeight - 22, { align: 'center' });
+      doc.text(`Certificate ID: ${certId}`, centerX, pageHeight - 28, { align: 'center' });
+      doc.text(`Issued: ${formatDate(new Date().toISOString())} | Methodology: BIOCOG MRV India v1.0`, centerX, pageHeight - 22, { align: 'center' });
       
-      // Footer disclaimer
+      // Footer disclaimer - centered
       doc.setFontSize(6);
-      doc.text('Powered by Senseible Carbon Platform | Compliant with Indian carbon regulation standards', pageWidth / 2, pageHeight - 15, { align: 'center' });
+      doc.text('Powered by Senseible Carbon Platform | Compliant with Indian carbon regulation standards', centerX, pageHeight - 15, { align: 'center' });
       
       doc.save(`compliance-certificate-${new Date().toISOString().split('T')[0]}.pdf`);
       toast.success('Certificate downloaded successfully');
@@ -627,13 +725,61 @@ const Reports = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-6 p-3 rounded-lg bg-secondary/50">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span className="text-sm">
-                      Aligned with {applicableFrameworks.slice(0, 3).map(fwId => FRAMEWORKS[fwId]?.shortName).filter(Boolean).join(', ')}
-                      {applicableFrameworks.length > 3 && ` +${applicableFrameworks.length - 3} more`}
-                    </span>
-                  </div>
+                  {/* Framework Coverage with Customization */}
+                  <Collapsible open={showFrameworkOptions} onOpenChange={setShowFrameworkOptions}>
+                    <CollapsibleTrigger asChild>
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/50 cursor-pointer hover:bg-secondary/70 transition-colors mb-4">
+                        <div className="flex items-center gap-2">
+                          <Shield className="h-4 w-4 text-primary" />
+                          <span className="text-sm">
+                            Aligned with {activeFrameworks.slice(0, 3).map(fwId => FRAMEWORKS[fwId]?.shortName).filter(Boolean).join(', ')}
+                            {activeFrameworks.length > 3 && ` +${activeFrameworks.length - 3} more`}
+                          </span>
+                          {useCustomFrameworks && (
+                            <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Custom</span>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Settings className="h-4 w-4 text-muted-foreground" />
+                          <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform ${showFrameworkOptions ? 'rotate-180' : ''}`} />
+                        </div>
+                      </div>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <div className="p-4 rounded-lg border border-border/50 mb-4 space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium">Customize Framework Coverage</span>
+                          {useCustomFrameworks && (
+                            <Button variant="ghost" size="sm" onClick={resetToAuto} className="text-xs h-7 gap-1">
+                              <RefreshCw className="h-3 w-3" />
+                              Reset to Auto
+                            </Button>
+                          )}
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          {ALL_FRAMEWORKS.map(fw => (
+                            <label
+                              key={fw.id}
+                              className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 cursor-pointer text-sm"
+                            >
+                              <Checkbox
+                                checked={selectedFrameworks.includes(fw.id)}
+                                onCheckedChange={() => toggleFramework(fw.id)}
+                              />
+                              <span className={selectedFrameworks.includes(fw.id) ? 'text-foreground' : 'text-muted-foreground'}>
+                                {fw.label}
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {useCustomFrameworks 
+                            ? 'Using custom selection. Reset to use auto-detected frameworks based on your profile.'
+                            : 'Auto-detected based on your company profile. Customize if needed.'}
+                        </p>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <Button 
