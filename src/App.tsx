@@ -19,6 +19,7 @@ import Reports from "./pages/Reports";
 import MRVDashboard from "./pages/MRVDashboard";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import Settings from "./pages/Settings";
+import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/carbon-credits" element={<CarbonCredits />} />
             <Route path="/climate-finance" element={<ClimateFinance />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

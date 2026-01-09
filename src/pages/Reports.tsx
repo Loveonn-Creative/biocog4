@@ -9,11 +9,13 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
+import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { PremiumBadge } from '@/components/PremiumBadge';
 import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
   Building2, Shield, CheckCircle, AlertCircle, Calendar, 
-  ChevronDown, Settings, RefreshCw
+  ChevronDown, Settings, RefreshCw, Crown
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
@@ -66,6 +68,7 @@ const ALL_FRAMEWORKS = [
 const Reports = () => {
   const { summary, emissions } = useEmissions();
   const { user, sessionId } = useSession();
+  const { isPremium, canAccessFeature } = usePremiumStatus();
   const [isGenerating, setIsGenerating] = useState(false);
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
