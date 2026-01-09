@@ -9,6 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
+import { usePremiumStatus } from "@/hooks/usePremiumStatus";
+import { validateInvoiceForPremium, extractGstinFromInvoice } from "@/lib/gstinValidation";
 
 type State = "idle" | "processing" | "result";
 
@@ -112,9 +114,22 @@ const getScopeFromCategory = (category: string): number => {
 const Index = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  const { isPremium } = usePremiumStatus();
   const [state, setState] = useState<State>("idle");
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
+  
+  // Get stored profile GSTIN for premium validation
+  const getProfileGstin = (): string | undefined => {
+    try {
+      const stored = localStorage.getItem('senseible_company_profile');
+      if (stored) {
+        const profile = JSON.parse(stored);
+        return profile.gstin;
+      }
+    } catch {}
+    return undefined;
+  };
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {

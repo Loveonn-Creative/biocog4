@@ -4,9 +4,11 @@ import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useEmissions } from '@/hooks/useEmissions';
+import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
 import { 
   Coins, Building2, Gift, ExternalLink, CheckCircle, ArrowRight, 
-  Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp
+  Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp, Crown
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
@@ -49,6 +51,7 @@ const Monetize = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
   const { summary, getVerifiedEmissions } = useEmissions();
+  const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -238,8 +241,20 @@ const Monetize = () => {
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold mb-2 tracking-tight">Monetize Your Carbon Data</h1>
-          <p className="text-muted-foreground">Turn verified emissions into real climate value</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-semibold mb-2 tracking-tight">Monetize Your Carbon Data</h1>
+              <p className="text-muted-foreground">Turn verified emissions into real climate value</p>
+            </div>
+            {!isPremium && (
+              <Button variant="outline" asChild className="gap-2">
+                <Link to="/pricing">
+                  <Crown className="h-4 w-4 text-warning" />
+                  Upgrade to Pro
+                </Link>
+              </Button>
+            )}
+          </div>
         </div>
         
         {verified.length === 0 || verifications.length === 0 ? (
@@ -311,6 +326,7 @@ const Monetize = () => {
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
                             <h3 className="text-xl font-semibold">{p.title}</h3>
+                            {!canAccessFeature('carbonMonetization') && <PremiumBadge tier="pro" />}
                             {getStatusBadge(p.status)}
                           </div>
                           <p className="text-sm text-muted-foreground mb-3">{p.desc}</p>
@@ -334,20 +350,28 @@ const Monetize = () => {
                           <p className="text-xs text-muted-foreground">Estimated value</p>
                         </div>
                         {p.status === 'available' ? (
-                          <Button 
-                            onClick={() => handleApply(p.type, p.partner, p.value)}
-                            disabled={applyingPathway === p.type}
-                            className="min-w-[120px]"
-                          >
-                            {applyingPathway === p.type ? (
-                              <Loader2 className="h-4 w-4 animate-spin" />
-                            ) : (
-                              <>
-                                Apply Now
-                                <ExternalLink className="h-3 w-3 ml-2" />
-                              </>
-                            )}
-                          </Button>
+                          canAccessFeature('carbonMonetization') ? (
+                            <Button 
+                              onClick={() => handleApply(p.type, p.partner, p.value)}
+                              disabled={applyingPathway === p.type}
+                              className="min-w-[120px]"
+                            >
+                              {applyingPathway === p.type ? (
+                                <Loader2 className="h-4 w-4 animate-spin" />
+                              ) : (
+                                <>
+                                  Apply Now
+                                  <ExternalLink className="h-3 w-3 ml-2" />
+                                </>
+                              )}
+                            </Button>
+                          ) : (
+                            <Button variant="outline" asChild className="min-w-[120px]">
+                              <Link to="/pricing">
+                                Upgrade to Apply
+                              </Link>
+                            </Button>
+                          )
                         ) : (
                           <Button variant="outline" disabled className="min-w-[120px]">
                             {p.status === 'completed' ? 'Completed' : 'In Progress'}
