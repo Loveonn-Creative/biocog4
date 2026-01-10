@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.calculate-monetization]
 verify_jwt = false
+
+[functions.intelligence-chat]
+verify_jwt = false
