@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
 import { Button } from '@/components/ui/button';
-import { LogOut, User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3 } from 'lucide-react';
+import { LogOut, User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain } from 'lucide-react';
 import senseibleLogo from '@/assets/senseible-logo.png';
 
 interface NavigationProps {
@@ -12,6 +12,7 @@ const navItems = [
   { path: '/', label: 'Upload', icon: Upload },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/mrv-dashboard', label: 'MRV', icon: BarChart3 },
+  { path: '/intelligence', label: 'Intelligence', icon: Brain },
   { path: '/verify', label: 'Verify', icon: Shield },
   { path: '/monetize', label: 'Monetize', icon: Coins },
   { path: '/reports', label: 'Reports', icon: FileBarChart },
