@@ -6,9 +6,9 @@ import senseibleLogo from "@/assets/senseible-logo.png";
 const navLinks = [
   { path: "/mission", label: "Mission" },
   { path: "/about", label: "About" },
-  { path: "/principles", label: "Principles" },
-  { path: "/carbon-credits", label: "Carbon Credits" },
-  { path: "/climate-finance", label: "Climate Finance" },
+  { path: "/climate-intelligence", label: "Climate Intelligence" },
+  { path: "/contact", label: "Contact" },
+  { path: "/legal", label: "Legal" },
 ];
 
 export const MinimalNav = () => {

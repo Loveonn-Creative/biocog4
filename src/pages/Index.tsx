@@ -411,10 +411,16 @@ const Index = () => {
             Reports
           </Link>
           <Link 
-            to="/mission" 
+            to="/climate-intelligence" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Mission
+            Climate Intelligence
+          </Link>
+          <Link 
+            to="/contact" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Contact
           </Link>
           <Link 
             to="/auth" 
