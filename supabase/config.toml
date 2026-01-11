@@ -1,5 +1,8 @@
 project_id = "kobsfphgfvyjozjwkuhp"
 
+[functions.send-contact-notification]
+verify_jwt = false
+
 [functions.extract-document]
 verify_jwt = false
 

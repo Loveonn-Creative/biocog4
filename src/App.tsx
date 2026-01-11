@@ -21,6 +21,10 @@ import PartnerDashboard from "./pages/PartnerDashboard";
 import Settings from "./pages/Settings";
 import Pricing from "./pages/Pricing";
 import Intelligence from "./pages/Intelligence";
+import Legal from "./pages/Legal";
+import Contact from "./pages/Contact";
+import ClimateStack from "./pages/ClimateStack";
+import CMSArticle from "./pages/CMSArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,7 +43,7 @@ const App = () => (
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Senseible — Carbon to Revenue in Seconds" />
           <meta name="twitter:description" content="Turn your invoices into carbon credits and climate finance." />
-          <link rel="canonical" href="https://senseible.ai" />
+          <link rel="canonical" href="https://senseible.earth" />
         </Helmet>
         <Toaster />
         <Sonner />
@@ -62,6 +66,11 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/intelligence" element={<Intelligence />} />
+            <Route path="/legal" element={<Legal />} />
+            <Route path="/legal/:slug" element={<Legal />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/climate-intelligence" element={<ClimateStack />} />
+            <Route path="/climate-intelligence/:slug" element={<CMSArticle />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
