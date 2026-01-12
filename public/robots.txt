@@ -1,14 +1,51 @@
+# Senseible Carbon Intelligence Platform
+# https://senseible.earth
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /auth
+Disallow: /settings
+
+# Search Engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 2
 
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+# AI Assistants
+User-agent: GPTBot
+Allow: /climate-intelligence/
+Allow: /mission
+Allow: /about
+Allow: /pricing
+
+User-agent: Claude-Web
+Allow: /climate-intelligence/
+Allow: /mission
+Allow: /about
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /climate-intelligence/
+
+# Sitemap
+Sitemap: https://senseible.earth/sitemap.xml
+
+# Host
+Host: https://senseible.earth
