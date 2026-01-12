@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check, Phone } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -30,7 +32,8 @@ const Contact = () => {
     phone: '',
     company: '',
     category: 'general',
-    message: ''
+    message: '',
+    newsletter: false
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -55,7 +58,8 @@ const Contact = () => {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/919999999999?text=Hi%20Senseible%2C%20I%20have%20a%20query%20about%20carbon%20intelligence.', '_blank');
+    const message = encodeURIComponent("Hi Senseible, I have a query about carbon intelligence and ESG solutions.");
+    window.open(`https://wa.me/919999999999?text=${message}`, '_blank');
   };
 
   if (isSubmitted) {
@@ -74,10 +78,15 @@ const Contact = () => {
               <Check className="w-8 h-8 text-success" />
             </div>
             <h1 className="text-3xl font-semibold text-foreground mb-4">Message Sent</h1>
-            <p className="text-muted-foreground mb-8">We'll get back to you within 24 hours.</p>
-            <Link to="/">
-              <Button>Back to Home</Button>
-            </Link>
+            <p className="text-muted-foreground mb-8">We will get back to you within 24 hours.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/">
+                <Button>Back to Home</Button>
+              </Link>
+              <Link to="/climate-intelligence">
+                <Button variant="outline">Explore Climate Intelligence</Button>
+              </Link>
+            </div>
           </div>
         </main>
         
@@ -187,6 +196,23 @@ const Contact = () => {
                 />
               </div>
               
+              {/* Newsletter opt-in */}
+              <div className="flex items-start space-x-3">
+                <Checkbox
+                  id="newsletter"
+                  checked={form.newsletter}
+                  onCheckedChange={(checked) => setForm({...form, newsletter: checked as boolean})}
+                />
+                <div className="space-y-1">
+                  <Label htmlFor="newsletter" className="text-sm font-normal cursor-pointer">
+                    Subscribe to our climate intelligence newsletter
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    Weekly insights on carbon accounting, ESG compliance, and climate finance.
+                  </p>
+                </div>
+              </div>
+              
               <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto gap-2">
                 {isSubmitting ? 'Sending...' : 'Send Message'}
                 <Send className="w-4 h-4" />
@@ -195,16 +221,16 @@ const Contact = () => {
           </div>
           
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="p-6 rounded-xl border border-border bg-card">
               <h3 className="font-medium text-foreground mb-4">Quick Connect</h3>
               
               <div className="space-y-4">
                 <button
                   onClick={openWhatsApp}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg bg-success/10 hover:bg-success/20 transition-colors text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-lg bg-success/10 hover:bg-success/20 transition-colors text-left group"
                 >
-                  <MessageCircle className="w-6 h-6 text-success" />
+                  <MessageCircle className="w-6 h-6 text-success group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-medium text-foreground">WhatsApp</p>
                     <p className="text-sm text-muted-foreground">Chat with us instantly</p>
@@ -249,8 +275,17 @@ const Contact = () => {
                 <Link to="/mission" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                   Our Mission
                 </Link>
+                <Link to="/legal" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Legal & Privacy
+                </Link>
               </div>
             </div>
+            
+            {/* Newsletter */}
+            <NewsletterSignup 
+              title="Stay updated on climate tech"
+              subtitle="Join thousands of MSMEs getting weekly carbon insights."
+            />
           </div>
         </div>
       </main>

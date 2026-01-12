@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { Mic, MicOff } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { Mic, MicOff, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 interface VoiceInputProps {
   onVoiceInput: (transcript: string) => void;
@@ -8,12 +9,78 @@ interface VoiceInputProps {
 
 export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
   const [isListening, setIsListening] = useState(false);
+  const [isSupported, setIsSupported] = useState(true);
   const [pulseScale, setPulseScale] = useState(1);
+  const recognitionRef = useRef<any>(null);
 
+  useEffect(() => {
+    // Check for browser support
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      setIsSupported(false);
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.lang = 'en-IN'; // Default to Indian English
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => {
+      console.log('Voice recognition started');
+      setIsListening(true);
+    };
+
+    recognition.onend = () => {
+      console.log('Voice recognition ended');
+      setIsListening(false);
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error('Speech recognition error:', event.error);
+      setIsListening(false);
+      
+      if (event.error === 'not-allowed') {
+        toast.error('Microphone access denied. Please enable microphone permissions.');
+      } else if (event.error === 'no-speech') {
+        toast.info('No speech detected. Please try again.');
+      } else if (event.error !== 'aborted') {
+        toast.error('Voice recognition error. Please try again.');
+      }
+    };
+
+    recognition.onresult = (event: any) => {
+      const results = event.results;
+      let finalTranscript = '';
+      
+      for (let i = 0; i < results.length; i++) {
+        if (results[i].isFinal) {
+          finalTranscript += results[i][0].transcript;
+        }
+      }
+      
+      if (finalTranscript) {
+        console.log('Voice transcript:', finalTranscript);
+        onVoiceInput(finalTranscript.trim());
+        recognition.stop();
+      }
+    };
+
+    recognitionRef.current = recognition;
+
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+    };
+  }, [onVoiceInput]);
+
+  // Pulse animation when listening
   useEffect(() => {
     if (isListening) {
       const interval = setInterval(() => {
-        setPulseScale(1 + Math.random() * 0.1);
+        setPulseScale(1 + Math.random() * 0.15);
       }, 150);
       return () => clearInterval(interval);
     } else {
@@ -21,27 +88,39 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
     }
   }, [isListening]);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (isProcessing) return;
     
-    if (!isListening) {
-      setIsListening(true);
-      
-      // Simulated voice recognition
-      setTimeout(() => {
-        const sampleInputs = [
-          "I have an electricity bill for 15000 rupees from MSEDCL",
-          "Diesel purchase invoice from Indian Oil, 50 liters",
-          "Monthly transport expenses around 8000 rupees",
-        ];
-        const randomInput = sampleInputs[Math.floor(Math.random() * sampleInputs.length)];
-        onVoiceInput(randomInput);
-        setIsListening(false);
-      }, 2500);
-    } else {
-      setIsListening(false);
+    if (!isSupported) {
+      toast.error('Voice input is not supported in your browser. Try Chrome or Edge.');
+      return;
     }
-  };
+    
+    if (!isListening) {
+      try {
+        recognitionRef.current?.start();
+        toast.info('Listening... Speak now');
+      } catch (error) {
+        console.error('Failed to start recognition:', error);
+        toast.error('Failed to start voice input. Please try again.');
+      }
+    } else {
+      recognitionRef.current?.stop();
+    }
+  }, [isProcessing, isListening, isSupported]);
+
+  if (!isSupported) {
+    return (
+      <div className="flex flex-col items-center gap-3 opacity-50">
+        <div className="relative flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-border/60 bg-background cursor-not-allowed">
+          <MicOff className="w-8 h-8 sm:w-10 sm:h-10 text-muted-foreground" strokeWidth={1.5} />
+        </div>
+        <span className="text-sm text-muted-foreground font-medium tracking-wide">
+          Not supported
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center gap-3">
@@ -62,7 +141,9 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
         `}
         style={{ transform: isListening ? `scale(${pulseScale})` : "scale(1)" }}
       >
-        {isListening ? (
+        {isProcessing ? (
+          <Loader2 className="w-8 h-8 sm:w-10 sm:h-10 text-primary animate-spin" strokeWidth={1.5} />
+        ) : isListening ? (
           <MicOff className="w-8 h-8 sm:w-10 sm:h-10 text-primary animate-pulse" strokeWidth={1.5} />
         ) : (
           <Mic 
@@ -73,12 +154,15 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
         
         {/* Listening ripple effect */}
         {isListening && (
-          <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 animate-ping" />
+          <>
+            <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 animate-ping" />
+            <div className="absolute inset-2 rounded-xl border border-primary/20 animate-pulse" />
+          </>
         )}
       </div>
       
       <span className="text-sm text-muted-foreground font-medium tracking-wide">
-        {isListening ? "Listening..." : "Voice"}
+        {isProcessing ? "Processing..." : isListening ? "Listening..." : "Voice"}
       </span>
     </div>
   );

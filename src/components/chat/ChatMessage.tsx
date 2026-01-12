@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, memo, useMemo } from 'react';
 import { Volume2, VolumeX, User, Brain, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { formatContentForDisplay } from '@/lib/formatContent';
 
 export interface Message {
   id: string;
@@ -17,7 +18,7 @@ interface ChatMessageProps {
   onStopSpeaking?: () => void;
 }
 
-export const ChatMessage = ({ 
+export const ChatMessage = memo(({ 
   message, 
   onSpeak, 
   isSpeaking,
@@ -25,6 +26,12 @@ export const ChatMessage = ({
 }: ChatMessageProps) => {
   const [copied, setCopied] = useState(false);
   const isUser = message.role === 'user';
+
+  // Format content to remove markdown artifacts for AI responses
+  const displayContent = useMemo(() => {
+    if (isUser) return message.content;
+    return formatContentForDisplay(message.content);
+  }, [message.content, isUser]);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(message.content);
@@ -36,9 +43,15 @@ export const ChatMessage = ({
     if (isSpeaking) {
       onStopSpeaking?.();
     } else {
-      onSpeak?.(message.content);
+      // Speak the clean version without markdown
+      onSpeak?.(displayContent);
     }
   };
+
+  // Split content into paragraphs for better rendering
+  const paragraphs = useMemo(() => {
+    return displayContent.split('\n').filter(line => line.trim());
+  }, [displayContent]);
 
   return (
     <div
@@ -78,11 +91,27 @@ export const ChatMessage = ({
               : "bg-secondary/80 text-foreground rounded-tl-sm border border-border/50"
           )}
         >
-          {message.content.split('\n').map((line, i) => (
-            <p key={i} className={i > 0 ? 'mt-2' : ''}>
-              {line}
-            </p>
-          ))}
+          {paragraphs.map((paragraph, i) => {
+            // Check if it's a list item (starts with bullet or number)
+            const isList = paragraph.startsWith('• ') || paragraph.match(/^\d+\.\s/);
+            
+            if (isList) {
+              return (
+                <div key={i} className={cn("flex items-start gap-2", i > 0 && 'mt-2')}>
+                  <span className="text-primary mt-0.5 text-xs flex-shrink-0">
+                    {paragraph.match(/^\d+\./) ? paragraph.match(/^\d+\./)?.[0] : '•'}
+                  </span>
+                  <span>{paragraph.replace(/^[•\d.]+\s*/, '')}</span>
+                </div>
+              );
+            }
+            
+            return (
+              <p key={i} className={i > 0 ? 'mt-2' : ''}>
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
 
         {/* Actions */}
@@ -125,9 +154,11 @@ export const ChatMessage = ({
       </div>
     </div>
   );
-};
+});
 
-export const TypingIndicator = () => (
+ChatMessage.displayName = 'ChatMessage';
+
+export const TypingIndicator = memo(() => (
   <div className="flex gap-3 animate-in fade-in duration-300">
     <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-600">
       <Brain className="w-4 h-4" />
@@ -140,4 +171,6 @@ export const TypingIndicator = () => (
       </div>
     </div>
   </div>
-);
+));
+
+TypingIndicator.displayName = 'TypingIndicator';

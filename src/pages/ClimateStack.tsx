@@ -1,19 +1,59 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Search, ArrowRight } from "lucide-react";
+import { useState, useMemo, useCallback, memo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { ArrowLeft, Search, ArrowRight, Filter, X } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Input } from "@/components/ui/input";
-import { getFeaturedArticles, searchArticles, cmsCategories, type CMSArticle } from "@/data/cmsContent";
+import { Button } from "@/components/ui/button";
+import { getFeaturedArticles, searchArticles, getArticlesByCategory, cmsCategories, cmsArticles, type CMSArticle } from "@/data/cmsContent";
+import { extractPreview } from "@/lib/formatContent";
 
 const ClimateStack = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const featuredArticles = getFeaturedArticles(15);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialSearch = searchParams.get('search') || '';
+  const initialCategory = searchParams.get('category') || '';
   
-  const displayedArticles = searchQuery 
-    ? searchArticles(searchQuery) 
-    : featuredArticles;
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [showAllArticles, setShowAllArticles] = useState(false);
+  
+  const displayedArticles = useMemo(() => {
+    if (searchQuery) {
+      return searchArticles(searchQuery);
+    }
+    if (selectedCategory) {
+      return getArticlesByCategory(selectedCategory);
+    }
+    return showAllArticles ? cmsArticles : getFeaturedArticles(15);
+  }, [searchQuery, selectedCategory, showAllArticles]);
+  
+  const handleSearch = useCallback((value: string) => {
+    setSearchQuery(value);
+    setSelectedCategory('');
+    if (value) {
+      setSearchParams({ search: value });
+    } else {
+      setSearchParams({});
+    }
+  }, [setSearchParams]);
+  
+  const handleCategorySelect = useCallback((categoryId: string) => {
+    setSelectedCategory(categoryId === selectedCategory ? '' : categoryId);
+    setSearchQuery('');
+    if (categoryId && categoryId !== selectedCategory) {
+      setSearchParams({ category: categoryId });
+    } else {
+      setSearchParams({});
+    }
+  }, [selectedCategory, setSearchParams]);
+  
+  const clearFilters = useCallback(() => {
+    setSearchQuery('');
+    setSelectedCategory('');
+    setSearchParams({});
+  }, [setSearchParams]);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -32,7 +72,7 @@ const ClimateStack = () => {
         
         <div className="animate-fade-in">
           {/* Hero */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground mb-4">
               Climate Intelligence Core
             </h1>
@@ -42,18 +82,53 @@ const ClimateStack = () => {
           </div>
           
           {/* Search */}
-          <div className="max-w-xl mx-auto mb-16">
+          <div className="max-w-xl mx-auto mb-8">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search carbon accounting, CBAM, emissions..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearch(e.target.value)}
                 className="pl-12 h-12 text-base"
               />
+              {(searchQuery || selectedCategory) && (
+                <button
+                  onClick={clearFilters}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
             </div>
           </div>
+          
+          {/* Category filters */}
+          <div className="flex flex-wrap gap-2 justify-center mb-12">
+            {cmsCategories.map((category) => (
+              <Button
+                key={category.id}
+                variant={selectedCategory === category.id ? "default" : "outline"}
+                size="sm"
+                onClick={() => handleCategorySelect(category.id)}
+                className="gap-2"
+              >
+                <Filter className="w-3 h-3" />
+                {category.name}
+              </Button>
+            ))}
+          </div>
+          
+          {/* Results count */}
+          {(searchQuery || selectedCategory) && (
+            <div className="text-center mb-8">
+              <p className="text-sm text-muted-foreground">
+                {displayedArticles.length} article{displayedArticles.length !== 1 ? 's' : ''} found
+                {searchQuery && ` for "${searchQuery}"`}
+                {selectedCategory && ` in ${cmsCategories.find(c => c.id === selectedCategory)?.name}`}
+              </p>
+            </div>
+          )}
           
           {/* Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -64,9 +139,31 @@ const ClimateStack = () => {
           
           {displayedArticles.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No articles found for "{searchQuery}"</p>
+              <p className="text-muted-foreground mb-4">No articles found for "{searchQuery}"</p>
+              <Button variant="outline" onClick={clearFilters}>
+                Clear filters
+              </Button>
             </div>
           )}
+          
+          {/* Show all button */}
+          {!searchQuery && !selectedCategory && !showAllArticles && cmsArticles.length > 15 && (
+            <div className="text-center mt-12">
+              <Button 
+                variant="outline" 
+                onClick={() => setShowAllArticles(true)}
+                className="gap-2"
+              >
+                View all {cmsArticles.length} articles
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </div>
+          )}
+          
+          {/* Newsletter */}
+          <div className="mt-16 max-w-xl mx-auto">
+            <NewsletterSignup />
+          </div>
         </div>
       </main>
       
@@ -75,14 +172,14 @@ const ClimateStack = () => {
   );
 };
 
-const ArticleCard = ({ article, index }: { article: CMSArticle; index: number }) => {
-  const preview = article.content.substring(0, 150) + '...';
+const ArticleCard = memo(({ article, index }: { article: CMSArticle; index: number }) => {
+  const preview = useMemo(() => extractPreview(article.content, 120), [article.content]);
   
   return (
     <Link
       to={`/climate-intelligence/${article.slug}`}
-      className="group block p-6 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300"
-      style={{ animationDelay: `${index * 50}ms` }}
+      className="group block p-6 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-fade-in"
+      style={{ animationDelay: `${Math.min(index * 30, 300)}ms` }}
     >
       <span className="inline-block text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded mb-3">
         {article.subtitle}
@@ -101,6 +198,8 @@ const ArticleCard = ({ article, index }: { article: CMSArticle; index: number })
       </span>
     </Link>
   );
-};
+});
+
+ArticleCard.displayName = 'ArticleCard';
 
 export default ClimateStack;
