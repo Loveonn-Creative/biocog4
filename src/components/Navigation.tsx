@@ -1,6 +1,9 @@
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
+import { UserMenu } from '@/components/UserMenu';
 import { LogOut, User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain } from 'lucide-react';
 import senseibleLogo from '@/assets/senseible-logo.png';
 
@@ -21,6 +24,21 @@ const navItems = [
 export const Navigation = ({ onSignOut }: NavigationProps) => {
   const location = useLocation();
   const { user, isAuthenticated, signOut } = useSession();
+  const [businessName, setBusinessName] = useState<string>('');
+
+  // Fetch profile for business name
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!user?.id) return;
+      const { data } = await supabase
+        .from('profiles')
+        .select('business_name')
+        .eq('id', user.id)
+        .single();
+      if (data?.business_name) setBusinessName(data.business_name);
+    };
+    fetchProfile();
+  }, [user?.id]);
 
   const handleSignOut = async () => {
     await signOut();
@@ -58,17 +76,13 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
           </nav>
 
           <div className="flex items-center gap-3">
-            {isAuthenticated && user && (
-              <>
-                <span className="text-sm text-muted-foreground hidden sm:inline">
-                  {user.email}
-                </span>
-                <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                  <LogOut className="h-4 w-4" />
-                </Button>
-              </>
-            )}
-            {!isAuthenticated && (
+            {isAuthenticated && user ? (
+              <UserMenu 
+                email={user.email || ''} 
+                businessName={businessName}
+                onSignOut={handleSignOut} 
+              />
+            ) : (
               <Button variant="outline" size="sm" asChild>
                 <Link to="/auth">
                   <User className="h-4 w-4 mr-2" />

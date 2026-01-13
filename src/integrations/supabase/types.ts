@@ -70,6 +70,50 @@ export type Database = {
           },
         ]
       }
+      chat_history: {
+        Row: {
+          content: string
+          context_type: string | null
+          created_at: string | null
+          id: string
+          language: string | null
+          metadata: Json | null
+          role: string
+          session_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          content: string
+          context_type?: string | null
+          created_at?: string | null
+          id?: string
+          language?: string | null
+          metadata?: Json | null
+          role: string
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          content?: string
+          context_type?: string | null
+          created_at?: string | null
+          id?: string
+          language?: string | null
+          metadata?: Json | null
+          role?: string
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_history_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       documents: {
         Row: {
           amount: number | null
@@ -257,8 +301,12 @@ export type Database = {
           location: string | null
           phone: string | null
           preferred_language: string | null
+          razorpay_customer_id: string | null
+          razorpay_subscription_id: string | null
           sector: string | null
           size: string | null
+          subscription_expires_at: string | null
+          subscription_tier: string | null
           updated_at: string | null
         }
         Insert: {
@@ -269,8 +317,12 @@ export type Database = {
           location?: string | null
           phone?: string | null
           preferred_language?: string | null
+          razorpay_customer_id?: string | null
+          razorpay_subscription_id?: string | null
           sector?: string | null
           size?: string | null
+          subscription_expires_at?: string | null
+          subscription_tier?: string | null
           updated_at?: string | null
         }
         Update: {
@@ -281,8 +333,12 @@ export type Database = {
           location?: string | null
           phone?: string | null
           preferred_language?: string | null
+          razorpay_customer_id?: string | null
+          razorpay_subscription_id?: string | null
           sector?: string | null
           size?: string | null
+          subscription_expires_at?: string | null
+          subscription_tier?: string | null
           updated_at?: string | null
         }
         Relationships: []
@@ -361,6 +417,54 @@ export type Database = {
           device_fingerprint?: string | null
           id?: string
           last_active?: string | null
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          amount: number
+          created_at: string | null
+          currency: string | null
+          expires_at: string | null
+          id: string
+          razorpay_order_id: string | null
+          razorpay_payment_id: string | null
+          razorpay_signature: string | null
+          starts_at: string | null
+          status: string | null
+          tier: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          currency?: string | null
+          expires_at?: string | null
+          id?: string
+          razorpay_order_id?: string | null
+          razorpay_payment_id?: string | null
+          razorpay_signature?: string | null
+          starts_at?: string | null
+          status?: string | null
+          tier: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          currency?: string | null
+          expires_at?: string | null
+          id?: string
+          razorpay_order_id?: string | null
+          razorpay_payment_id?: string | null
+          razorpay_signature?: string | null
+          starts_at?: string | null
+          status?: string | null
+          tier?: string
+          updated_at?: string | null
+          user_id?: string
         }
         Relationships: []
       }

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2 } from "lucide-react";
+import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2, Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
+import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 
 type AuthMode = "signin" | "signup" | "forgot";
 
@@ -17,6 +18,7 @@ const Auth = () => {
   // Form fields
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [phone, setPhone] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [gstin, setGstin] = useState("");
@@ -35,7 +37,12 @@ const Auth = () => {
       return false;
     }
     
-    if (mode !== 'forgot' && password.length < 6) {
+    if (mode === 'signup' && !isPasswordStrong(password)) {
+      toast.error('Please create a stronger password');
+      return false;
+    }
+    
+    if (mode === 'signin' && password.length < 6) {
       toast.error('Password must be at least 6 characters');
       return false;
     }
@@ -233,17 +240,29 @@ const Auth = () => {
             </div>
             
             {mode !== "forgot" && (
-              <div className="relative">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  minLength={6}
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                />
+              <div className="space-y-2">
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={6}
+                    className="w-full pl-11 pr-12 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
+                {mode === "signup" && (
+                  <PasswordStrength password={password} />
+                )}
               </div>
             )}
             
