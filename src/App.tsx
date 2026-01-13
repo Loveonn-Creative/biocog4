@@ -1,31 +1,45 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Loader2 } from "lucide-react";
+
+// Eagerly load critical pages
 import Index from "./pages/Index";
-import Mission from "./pages/Mission";
-import About from "./pages/About";
-import Principles from "./pages/Principles";
-import CarbonCredits from "./pages/CarbonCredits";
-import ClimateFinance from "./pages/ClimateFinance";
 import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
-import History from "./pages/History";
-import Verify from "./pages/Verify";
-import Monetize from "./pages/Monetize";
-import Reports from "./pages/Reports";
-import MRVDashboard from "./pages/MRVDashboard";
-import PartnerDashboard from "./pages/PartnerDashboard";
-import Settings from "./pages/Settings";
-import Pricing from "./pages/Pricing";
-import Intelligence from "./pages/Intelligence";
-import Legal from "./pages/Legal";
-import Contact from "./pages/Contact";
-import ClimateStack from "./pages/ClimateStack";
-import CMSArticle from "./pages/CMSArticle";
-import NotFound from "./pages/NotFound";
+
+// Lazy load other pages for performance
+const Mission = lazy(() => import("./pages/Mission"));
+const About = lazy(() => import("./pages/About"));
+const Principles = lazy(() => import("./pages/Principles"));
+const CarbonCredits = lazy(() => import("./pages/CarbonCredits"));
+const ClimateFinance = lazy(() => import("./pages/ClimateFinance"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const History = lazy(() => import("./pages/History"));
+const Verify = lazy(() => import("./pages/Verify"));
+const Monetize = lazy(() => import("./pages/Monetize"));
+const Reports = lazy(() => import("./pages/Reports"));
+const MRVDashboard = lazy(() => import("./pages/MRVDashboard"));
+const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
+const Settings = lazy(() => import("./pages/Settings"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Intelligence = lazy(() => import("./pages/Intelligence"));
+const Legal = lazy(() => import("./pages/Legal"));
+const Contact = lazy(() => import("./pages/Contact"));
+const ClimateStack = lazy(() => import("./pages/ClimateStack"));
+const CMSArticle = lazy(() => import("./pages/CMSArticle"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Subscription = lazy(() => import("./pages/Subscription"));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -48,31 +62,35 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/verify" element={<Verify />} />
-            <Route path="/monetize" element={<Monetize />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/mrv-dashboard" element={<MRVDashboard />} />
-            <Route path="/partner" element={<PartnerDashboard />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/mission" element={<Mission />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/principles" element={<Principles />} />
-            <Route path="/carbon-credits" element={<CarbonCredits />} />
-            <Route path="/climate-finance" element={<ClimateFinance />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/intelligence" element={<Intelligence />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="/legal/:slug" element={<Legal />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/climate-intelligence" element={<ClimateStack />} />
-            <Route path="/climate-intelligence/:slug" element={<CMSArticle />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/history" element={<History />} />
+              <Route path="/verify" element={<Verify />} />
+              <Route path="/monetize" element={<Monetize />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/mrv-dashboard" element={<MRVDashboard />} />
+              <Route path="/partner" element={<PartnerDashboard />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/subscription" element={<Subscription />} />
+              <Route path="/mission" element={<Mission />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/principles" element={<Principles />} />
+              <Route path="/carbon-credits" element={<CarbonCredits />} />
+              <Route path="/climate-finance" element={<ClimateFinance />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/intelligence" element={<Intelligence />} />
+              <Route path="/legal" element={<Legal />} />
+              <Route path="/legal/:slug" element={<Legal />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/climate-intelligence" element={<ClimateStack />} />
+              <Route path="/climate-intelligence/:slug" element={<CMSArticle />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
