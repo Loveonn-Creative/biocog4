@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -15,9 +15,13 @@ import {
 import { 
   Check, Sparkles, Zap, Crown, Building2, ArrowRight,
   MessageCircle, FileText, Shield, Brain, TrendingUp,
-  Users, Phone, Mail, Headphones
+  Users, Phone, Mail, Headphones, Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useSession } from '@/hooks/useSession';
+import { useRazorpay } from '@/hooks/useRazorpay';
+import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { toast } from 'sonner';
 
 interface PricingTier {
   id: string;
@@ -35,10 +39,87 @@ interface PricingTier {
 }
 
 const Pricing = () => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated } = useSession();
+  const { initiatePayment, isLoading: isPaymentLoading, isReady: isRazorpayReady } = useRazorpay();
+  const { tier: currentTier, refreshTier } = usePremiumStatus();
+  
   const [teamSize, setTeamSize] = useState(50);
+  const [processingTier, setProcessingTier] = useState<string | null>(null);
+  
   const scaleBasePrice = 15000;
   const perEmployeePrice = 99;
   const scalePrice = scaleBasePrice + (teamSize * perEmployeePrice);
+
+  const handleSubscribe = async (tierId: string) => {
+    // Free tier - just navigate to auth
+    if (tierId === 'snapshot') {
+      navigate('/auth');
+      return;
+    }
+
+    // Scale tier - contact sales
+    if (tierId === 'scale') {
+      navigate('/contact');
+      return;
+    }
+
+    // Check authentication
+    if (!isAuthenticated || !user) {
+      toast.info('Please sign in to subscribe');
+      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId } });
+      return;
+    }
+
+    // Already on this tier
+    if (currentTier === tierId) {
+      toast.info(`You're already on the ${tierId.charAt(0).toUpperCase() + tierId.slice(1)} plan`);
+      return;
+    }
+
+    // Initiate payment
+    setProcessingTier(tierId);
+    
+    try {
+      await initiatePayment({
+        tier: tierId,
+        teamSize: tierId === 'scale' ? teamSize : undefined,
+        userId: user.id,
+        userEmail: user.email || '',
+        onSuccess: async (tier) => {
+          // Refresh tier from database
+          await refreshTier();
+          toast.success(`Welcome to Biocog ${tier.charAt(0).toUpperCase() + tier.slice(1)}!`);
+          navigate('/dashboard');
+        },
+        onFailure: (error) => {
+          toast.error(error || 'Payment failed. Please try again.');
+        },
+      });
+    } finally {
+      setProcessingTier(null);
+    }
+  };
+
+  const getButtonContent = (tier: { id: string; cta: string }) => {
+    const isCurrentPlan = currentTier === tier.id;
+    const isProcessing = processingTier === tier.id;
+    
+    if (isProcessing) {
+      return (
+        <>
+          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          Processing...
+        </>
+      );
+    }
+    
+    if (isCurrentPlan) {
+      return 'Current Plan';
+    }
+    
+    return tier.cta;
+  };
 
   const tiers: PricingTier[] = [
     {
@@ -295,13 +376,17 @@ const Pricing = () => {
                     variant={tier.ctaVariant}
                     className={cn(
                       "w-full mb-4",
-                      tier.popular && "bg-primary hover:bg-primary/90"
+                      tier.popular && "bg-primary hover:bg-primary/90",
+                      currentTier === tier.id && "opacity-60 cursor-default"
                     )}
-                    asChild
+                    onClick={() => handleSubscribe(tier.id)}
+                    disabled={
+                      processingTier !== null || 
+                      currentTier === tier.id ||
+                      (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
+                    }
                   >
-                    <Link to={tier.id === 'scale' ? '/contact' : '/auth'}>
-                      {tier.cta}
-                    </Link>
+                    {getButtonContent(tier)}
                   </Button>
 
                   {/* Subtext */}
