@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
 import { ChatMessage, Message, TypingIndicator } from '@/components/chat/ChatMessage';
@@ -10,12 +11,15 @@ import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { Language, detectBrowserLanguage, getLanguageByCode } from '@/lib/languages';
-import { Brain, Sparkles, Zap, Volume2, VolumeX, Info } from 'lucide-react';
+import { matchVoiceCommand, getCommandSuggestions } from '@/lib/voiceCommands';
+import { Brain, Sparkles, Zap, Volume2, VolumeX, Info, Mic, Navigation as NavIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 const TRIAL_DAYS = 15;
 
@@ -43,7 +47,8 @@ const WELCOME_MESSAGES: Record<string, string> = {
 };
 
 const Intelligence = () => {
-  const { tier, isPremium, canAccessFeature } = usePremiumStatus();
+  const navigate = useNavigate();
+  const { tier, isPremium, canAccessFeature, isAuthenticated } = usePremiumStatus();
   const { user } = useSession();
   const { emissions } = useEmissions();
   const trialStatus = getTrialStatus();
@@ -59,6 +64,7 @@ const Intelligence = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [speakingMessageId, setSpeakingMessageId] = useState<string | null>(null);
+  const [voiceNavEnabled, setVoiceNavEnabled] = useState(true);
   
   const scrollRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -71,18 +77,52 @@ const Intelligence = () => {
     }
   });
 
+  // Process voice commands for navigation
+  const processVoiceCommand = useCallback((transcript: string): boolean => {
+    if (!voiceNavEnabled) return false;
+    
+    const command = matchVoiceCommand(transcript);
+    if (!command) return false;
+
+    if (command.action === 'navigate' && command.route) {
+      toast.success(`Navigating: ${command.description}`);
+      speak(`Going to ${command.description}`);
+      setTimeout(() => navigate(command.route!), 500);
+      return true;
+    }
+
+    if (command.action === 'signout') {
+      if (isAuthenticated) {
+        toast.info('Signing out...');
+        speak('Signing you out');
+        supabase.auth.signOut().then(() => navigate('/'));
+        return true;
+      } else {
+        speak("You're not signed in");
+        return true;
+      }
+    }
+
+    return false;
+  }, [voiceNavEnabled, navigate, speak, isAuthenticated]);
+
   const handleVoiceResult = useCallback((transcript: string) => {
     if (transcript.trim()) {
-      handleSend(transcript.trim());
+      // First check for voice navigation commands
+      const isCommand = processVoiceCommand(transcript.trim());
+      if (!isCommand) {
+        // Not a command, treat as chat message
+        handleSend(transcript.trim());
+      }
     }
-  }, []);
+  }, [processVoiceCommand]);
 
   const { startListening, stopListening, isListening, isSupported: voiceSupported } = useVoiceInput({
     language,
     onResult: handleVoiceResult,
   });
 
-  // Calculate context from emissions
+  // Calculate context from emissions - different for guest vs authenticated
   const context = {
     scope1: emissions?.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
     scope2: emissions?.filter(e => e.scope === 2).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
@@ -90,6 +130,8 @@ const Intelligence = () => {
     totalEmissions: emissions?.reduce((sum, e) => sum + e.co2_kg, 0) || 0,
     greenScore: Math.min(100, Math.max(0, 100 - (emissions?.length || 0) * 2)),
     sector: 'MSME',
+    isAuthenticated,
+    userTier: tier,
   };
 
   // Save language preference
@@ -298,6 +340,23 @@ const Intelligence = () => {
               </Badge>
             )}
 
+            {/* Voice Navigation Toggle */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8"
+              onClick={() => {
+                setVoiceNavEnabled(!voiceNavEnabled);
+                toast.info(voiceNavEnabled ? 'Voice navigation disabled' : 'Voice navigation enabled');
+              }}
+              title={voiceNavEnabled ? 'Voice navigation on' : 'Voice navigation off'}
+            >
+              <NavIcon className={cn(
+                "w-4 h-4",
+                voiceNavEnabled ? "text-primary" : "text-muted-foreground"
+              )} />
+            </Button>
+
             {/* Auto-speak toggle */}
             <Button
               variant="ghost"
@@ -332,12 +391,31 @@ const Intelligence = () => {
           className="flex-1 px-4 py-6"
         >
           <div ref={chatContainerRef} className="space-y-6">
-            {/* Context info */}
-            {context.totalEmissions > 0 && (
+            {/* Context info - different for guest vs authenticated */}
+            {!isAuthenticated && (
+              <div className="flex items-center gap-2 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-sm">
+                <Info className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <span className="text-muted-foreground">
+                  <Link to="/auth" className="text-primary hover:underline">Sign in</Link> to save your conversation and get personalized insights based on your emission data.
+                </span>
+              </div>
+            )}
+
+            {isAuthenticated && context.totalEmissions > 0 && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 text-sm">
                 <Info className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                 <span className="text-muted-foreground">
                   Using your emission data: {context.totalEmissions.toFixed(1)} kg CO2e across {emissions?.length || 0} sources
+                </span>
+              </div>
+            )}
+
+            {/* Voice command hint */}
+            {voiceNavEnabled && (
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-primary/5 text-xs">
+                <Mic className="w-3 h-3 text-primary flex-shrink-0" />
+                <span className="text-muted-foreground">
+                  Voice commands: "{getCommandSuggestions().slice(0, 3).join('", "')}"...
                 </span>
               </div>
             )}
