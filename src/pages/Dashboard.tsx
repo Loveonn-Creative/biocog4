@@ -1,7 +1,8 @@
 import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
-import { useNavigate } from 'react-router-dom';
+import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { useNavigate, Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { EmissionsSummary } from '@/components/dashboard/EmissionsSummary';
@@ -14,13 +15,31 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
-import { Trash2, Loader2 } from 'lucide-react';
+import { Trash2, Loader2, Sparkles, Zap, Crown, Building2, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+
+const tierIcons = {
+  snapshot: Sparkles,
+  essential: Zap,
+  basic: Zap,
+  pro: Crown,
+  scale: Building2,
+};
+
+const tierLabels: Record<string, string> = {
+  snapshot: 'Snapshot',
+  essential: 'Essential',
+  basic: 'Essential',
+  pro: 'Pro',
+  scale: 'Scale',
+};
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, sessionId, isLoading: sessionLoading } = useSession();
+  const { tier, isPremium } = usePremiumStatus();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -101,27 +120,53 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-8">
-        {/* Welcome Section */}
-        <div className="flex items-start justify-between mb-8">
-          <div>
-            <h1 className="text-2xl font-semibold text-foreground mb-2">
-              Carbon Dashboard
-            </h1>
+        {/* Welcome Section - Personalized */}
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-8">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl font-semibold text-foreground">
+                {user ? `Welcome back${summary.total > 0 ? '!' : ', let\'s get started'}` : 'Carbon Dashboard'}
+              </h1>
+              {user && (
+                <Badge 
+                  variant="secondary" 
+                  className="flex items-center gap-1 text-xs"
+                >
+                  {(() => {
+                    const TierIcon = tierIcons[tier] || Sparkles;
+                    return <TierIcon className="w-3 h-3" />;
+                  })()}
+                  {tierLabels[tier] || 'Snapshot'}
+                </Badge>
+              )}
+            </div>
             <p className="text-muted-foreground">
               Track your emissions, verify data, and unlock monetization opportunities.
             </p>
           </div>
           
-          {/* Reset Data Button - Only for guest users */}
-          {isGuestUser && (documents.length > 0 || emissions.length > 0) && (
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="text-destructive hover:text-destructive hover:bg-destructive/10 gap-2"
-                  disabled={isResetting}
-                >
+          <div className="flex items-center gap-2">
+            {/* Upgrade CTA for free users */}
+            {user && tier === 'snapshot' && (
+              <Button variant="outline" size="sm" asChild className="gap-2">
+                <Link to="/pricing">
+                  <Zap className="w-4 h-4" />
+                  Upgrade
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </Button>
+            )}
+
+            {/* Reset Data Button - Only for guest users */}
+            {isGuestUser && (documents.length > 0 || emissions.length > 0) && (
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="text-destructive hover:text-destructive hover:bg-destructive/10 gap-2"
+                    disabled={isResetting}
+                  >
                   {isResetting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
@@ -147,9 +192,10 @@ const Dashboard = () => {
                     Yes, reset everything
                   </AlertDialogAction>
                 </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
-          )}
+                </AlertDialogContent>
+              </AlertDialog>
+            )}
+          </div>
         </div>
 
         {isLoading ? (

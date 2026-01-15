@@ -296,6 +296,7 @@ export type Database = {
         Row: {
           business_name: string | null
           created_at: string | null
+          data_consent: boolean | null
           gstin: string | null
           id: string
           location: string | null
@@ -303,6 +304,7 @@ export type Database = {
           preferred_language: string | null
           razorpay_customer_id: string | null
           razorpay_subscription_id: string | null
+          role: string | null
           sector: string | null
           size: string | null
           subscription_expires_at: string | null
@@ -312,6 +314,7 @@ export type Database = {
         Insert: {
           business_name?: string | null
           created_at?: string | null
+          data_consent?: boolean | null
           gstin?: string | null
           id: string
           location?: string | null
@@ -319,6 +322,7 @@ export type Database = {
           preferred_language?: string | null
           razorpay_customer_id?: string | null
           razorpay_subscription_id?: string | null
+          role?: string | null
           sector?: string | null
           size?: string | null
           subscription_expires_at?: string | null
@@ -328,6 +332,7 @@ export type Database = {
         Update: {
           business_name?: string | null
           created_at?: string | null
+          data_consent?: boolean | null
           gstin?: string | null
           id?: string
           location?: string | null
@@ -335,6 +340,7 @@ export type Database = {
           preferred_language?: string | null
           razorpay_customer_id?: string | null
           razorpay_subscription_id?: string | null
+          role?: string | null
           sector?: string | null
           size?: string | null
           subscription_expires_at?: string | null

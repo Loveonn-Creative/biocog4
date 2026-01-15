@@ -7,9 +7,10 @@ const corsHeaders = {
 };
 
 const PLAN_PRICES: Record<string, { amount: number; name: string }> = {
-  basic: { amount: 49900, name: 'Biocog Basic' },      // ₹499 in paise
-  pro: { amount: 499900, name: 'Biocog Pro' },         // ₹4,999 in paise
-  scale: { amount: 1500000, name: 'Biocog Scale' },    // ₹15,000 in paise (base)
+  essential: { amount: 49900, name: 'Biocog Essential' },  // ₹499 in paise
+  basic: { amount: 49900, name: 'Biocog Essential' },      // Legacy support
+  pro: { amount: 499900, name: 'Biocog Pro' },             // ₹4,999 in paise
+  scale: { amount: 1500000, name: 'Biocog Scale' },        // ₹15,000 in paise (base)
 };
 
 serve(async (req) => {
@@ -32,7 +33,9 @@ serve(async (req) => {
       );
     }
 
-    const { tier, teamSize, userId, userEmail } = await req.json();
+    let { tier, teamSize, userId, userEmail } = await req.json();
+    // Normalize tier name
+    if (tier === 'basic') tier = 'essential';
     console.log('Creating order for:', { tier, teamSize, userId, userEmail });
 
     // Validate tier

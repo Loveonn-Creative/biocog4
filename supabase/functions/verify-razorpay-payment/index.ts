@@ -45,13 +45,16 @@ serve(async (req) => {
       );
     }
 
-    const { 
+    let { 
       razorpay_order_id, 
       razorpay_payment_id, 
       razorpay_signature,
       userId,
       tier 
     } = await req.json();
+
+    // Normalize tier name
+    if (tier === 'basic') tier = 'essential';
 
     console.log('Verifying payment:', { razorpay_order_id, razorpay_payment_id, userId, tier });
 

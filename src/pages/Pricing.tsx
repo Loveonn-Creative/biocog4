@@ -142,8 +142,8 @@ const Pricing = () => {
       ],
     },
     {
-      id: 'basic',
-      name: 'Biocog Basic',
+      id: 'essential',
+      name: 'Biocog Essential',
       icon: Zap,
       tagline: 'Launch Price',
       price: 499,
@@ -213,13 +213,13 @@ const Pricing = () => {
   ];
 
   const comparisonFeatures = [
-    { name: 'GST → Carbon Automation', snapshot: 'Limited', basic: true, pro: true, scale: true },
-    { name: 'Green Loan Eligibility', snapshot: false, basic: true, pro: 'Priority', scale: 'Priority' },
-    { name: 'ESG Score', snapshot: 'Basic', basic: 'Verified', pro: 'Verified', scale: 'Certified' },
-    { name: 'Carbon Monetization', snapshot: false, basic: false, pro: true, scale: true },
-    { name: 'Reports', snapshot: 'Preview', basic: 'Basic', pro: 'Automated', scale: 'Custom' },
-    { name: 'Support', snapshot: 'Help Center', basic: 'Email', pro: 'Phone + Email', scale: 'Dedicated' },
-    { name: 'Team Members', snapshot: '1', basic: '3', pro: '10', scale: 'Unlimited' },
+    { name: 'GST → Carbon Automation', snapshot: 'Limited', essential: true, pro: true, scale: true },
+    { name: 'Green Loan Eligibility', snapshot: false, essential: true, pro: 'Priority', scale: 'Priority' },
+    { name: 'ESG Score', snapshot: 'Basic', essential: 'Verified', pro: 'Verified', scale: 'Certified' },
+    { name: 'Carbon Monetization', snapshot: false, essential: false, pro: true, scale: true },
+    { name: 'Reports', snapshot: 'Preview', essential: 'Basic', pro: 'Automated', scale: 'Custom' },
+    { name: 'Support', snapshot: 'Help Center', essential: 'Email', pro: 'Phone + Email', scale: 'Dedicated' },
+    { name: 'Team Members', snapshot: '1', essential: '3', pro: '10', scale: 'Unlimited' },
   ];
 
   const addons = [
@@ -420,7 +420,7 @@ const Pricing = () => {
                 <tr className="border-b">
                   <th className="text-left py-3 px-4 font-medium">Feature</th>
                   <th className="text-center py-3 px-4 font-medium">Snapshot</th>
-                  <th className="text-center py-3 px-4 font-medium">Basic</th>
+                  <th className="text-center py-3 px-4 font-medium">Essential</th>
                   <th className="text-center py-3 px-4 font-medium bg-primary/5 border-x border-primary/20">Pro</th>
                   <th className="text-center py-3 px-4 font-medium">Scale</th>
                 </tr>
@@ -429,7 +429,7 @@ const Pricing = () => {
                 {comparisonFeatures.map((feature, idx) => (
                   <tr key={idx} className="border-b border-border/50">
                     <td className="py-3 px-4 text-sm">{feature.name}</td>
-                    {['snapshot', 'basic', 'pro', 'scale'].map((tier) => (
+                    {['snapshot', 'essential', 'pro', 'scale'].map((tier) => (
                       <td 
                         key={tier} 
                         className={cn(

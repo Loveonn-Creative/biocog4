@@ -21,14 +21,16 @@ interface UserMenuProps {
 
 const tierColors: Record<string, string> = {
   snapshot: 'bg-muted text-muted-foreground',
-  basic: 'bg-blue-500/10 text-blue-600',
+  essential: 'bg-blue-500/10 text-blue-600',
+  basic: 'bg-blue-500/10 text-blue-600', // Legacy mapping
   pro: 'bg-primary/10 text-primary',
   scale: 'bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600',
 };
 
 const tierLabels: Record<string, string> = {
   snapshot: 'Free',
-  basic: 'Basic',
+  essential: 'Essential',
+  basic: 'Essential', // Legacy mapping
   pro: 'Pro',
   scale: 'Scale',
 };

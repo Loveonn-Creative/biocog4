@@ -8,29 +8,56 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Switch } from '@/components/ui/switch';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { 
-  User, Building, Phone, MapPin, CreditCard, Shield, 
-  Loader2, Save, Crown, Sparkles, Zap, Building2 
+  User, Building, Phone, MapPin, Shield, 
+  Loader2, Save, Crown, Sparkles, Zap, Building2,
+  ShieldCheck, FileCheck, AlertCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const tierIcons = {
   snapshot: Sparkles,
-  basic: Zap,
+  essential: Zap,
+  basic: Zap, // Legacy mapping
   pro: Crown,
   scale: Building2,
 };
 
 const tierColors = {
   snapshot: 'bg-muted',
-  basic: 'bg-blue-500/10 border-blue-500/20',
+  essential: 'bg-blue-500/10 border-blue-500/20',
+  basic: 'bg-blue-500/10 border-blue-500/20', // Legacy mapping
   pro: 'bg-primary/10 border-primary/20',
   scale: 'bg-amber-500/10 border-amber-500/20',
 };
+
+const tierLabels: Record<string, string> = {
+  snapshot: 'Snapshot',
+  essential: 'Essential',
+  basic: 'Essential', // Legacy mapping
+  pro: 'Pro',
+  scale: 'Scale',
+};
+
+const roleOptions = [
+  { value: 'business_owner', label: 'Business Owner' },
+  { value: 'operations_manager', label: 'Operations Manager' },
+  { value: 'finance_lead', label: 'Finance Lead' },
+  { value: 'sustainability_head', label: 'Sustainability Head' },
+  { value: 'other', label: 'Other' },
+];
 
 interface ProfileData {
   business_name: string;
@@ -39,6 +66,8 @@ interface ProfileData {
   location: string;
   sector: string;
   size: string;
+  role: string;
+  data_consent: boolean;
 }
 
 const Profile = () => {
@@ -53,9 +82,12 @@ const Profile = () => {
     location: '',
     sector: '',
     size: '',
+    role: '',
+    data_consent: false,
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [verificationStatus, setVerificationStatus] = useState<'verified' | 'pending' | 'unverified'>('unverified');
 
   // Redirect if not authenticated
   useEffect(() => {
@@ -64,12 +96,13 @@ const Profile = () => {
     }
   }, [isAuthenticated, sessionLoading, navigate]);
 
-  // Fetch profile data
+  // Fetch profile data and verification status
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchData = async () => {
       if (!user?.id) return;
       
       try {
+        // Fetch profile
         const { data, error } = await supabase
           .from('profiles')
           .select('*')
@@ -86,7 +119,28 @@ const Profile = () => {
             location: data.location || '',
             sector: data.sector || '',
             size: data.size || '',
+            role: data.role || '',
+            data_consent: data.data_consent || false,
           });
+        }
+
+        // Fetch latest verification status
+        const { data: verifications } = await supabase
+          .from('carbon_verifications')
+          .select('verification_status')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false })
+          .limit(1);
+
+        if (verifications && verifications.length > 0) {
+          const status = verifications[0].verification_status;
+          if (status === 'verified') {
+            setVerificationStatus('verified');
+          } else if (status === 'pending' || status === 'needs_review') {
+            setVerificationStatus('pending');
+          } else {
+            setVerificationStatus('unverified');
+          }
         }
       } catch (error) {
         console.error('Error fetching profile:', error);
@@ -95,7 +149,7 @@ const Profile = () => {
       }
     };
 
-    fetchProfile();
+    fetchData();
   }, [user?.id]);
 
   const handleSave = async () => {
@@ -105,7 +159,16 @@ const Profile = () => {
     try {
       const { error } = await supabase
         .from('profiles')
-        .update(profile)
+        .update({
+          business_name: profile.business_name,
+          phone: profile.phone,
+          gstin: profile.gstin,
+          location: profile.location,
+          sector: profile.sector,
+          size: profile.size,
+          role: profile.role,
+          data_consent: profile.data_consent,
+        })
         .eq('id', user.id);
 
       if (error) throw error;
@@ -127,7 +190,26 @@ const Profile = () => {
     );
   }
 
-  const TierIcon = tierIcons[tier];
+  const TierIcon = tierIcons[tier] || Sparkles;
+  const tierLabel = tierLabels[tier] || 'Snapshot';
+
+  const VerificationIcon = verificationStatus === 'verified' 
+    ? ShieldCheck 
+    : verificationStatus === 'pending' 
+    ? FileCheck 
+    : AlertCircle;
+
+  const verificationColors = {
+    verified: 'text-success bg-success/10',
+    pending: 'text-amber-500 bg-amber-500/10',
+    unverified: 'text-muted-foreground bg-muted',
+  };
+
+  const verificationLabels = {
+    verified: 'Verified',
+    pending: 'Pending Review',
+    unverified: 'Not Verified',
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-8">
@@ -146,7 +228,7 @@ const Profile = () => {
 
         <div className="grid gap-6">
           {/* Subscription Card */}
-          <Card className={`${tierColors[tier]} border`}>
+          <Card className={`${tierColors[tier] || tierColors.snapshot} border`}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -155,7 +237,7 @@ const Profile = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold flex items-center gap-2">
-                      Biocog {tier.charAt(0).toUpperCase() + tier.slice(1)}
+                      Biocog {tierLabel}
                       {isPremium && <Badge variant="secondary">Active</Badge>}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -179,7 +261,7 @@ const Profile = () => {
                 <User className="w-5 h-5" />
                 Account Information
               </CardTitle>
-              <CardDescription>Your login details</CardDescription>
+              <CardDescription>Your login and role details</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
@@ -188,6 +270,25 @@ const Profile = () => {
                 <p className="text-xs text-muted-foreground">
                   Email cannot be changed. Contact support if needed.
                 </p>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="role">Your Role</Label>
+                <Select
+                  value={profile.role}
+                  onValueChange={(value) => setProfile({ ...profile, role: value })}
+                >
+                  <SelectTrigger id="role">
+                    <SelectValue placeholder="Select your role" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {roleOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </CardContent>
           </Card>
@@ -273,8 +374,51 @@ const Profile = () => {
                   />
                 </div>
               </div>
+            </CardContent>
+          </Card>
 
-              <div className="flex justify-end pt-4">
+          {/* Data & Privacy */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                Data & Privacy
+              </CardTitle>
+              <CardDescription>Manage your data preferences</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Data Consent Toggle */}
+              <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
+                <div className="space-y-1">
+                  <Label htmlFor="data_consent" className="font-medium">
+                    AI Data Processing
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    Allow AI to analyze your business data for personalized insights
+                  </p>
+                </div>
+                <Switch
+                  id="data_consent"
+                  checked={profile.data_consent}
+                  onCheckedChange={(checked) => setProfile({ ...profile, data_consent: checked })}
+                />
+              </div>
+
+              {/* Verification Status */}
+              <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
+                <div className="space-y-1">
+                  <Label className="font-medium">Verification Status</Label>
+                  <p className="text-xs text-muted-foreground">
+                    Your carbon data verification status
+                  </p>
+                </div>
+                <Badge className={`${verificationColors[verificationStatus]} flex items-center gap-1.5`}>
+                  <VerificationIcon className="w-3.5 h-3.5" />
+                  {verificationLabels[verificationStatus]}
+                </Badge>
+              </div>
+
+              <div className="flex justify-end pt-2">
                 <Button onClick={handleSave} disabled={isSaving}>
                   {isSaving ? (
                     <>
