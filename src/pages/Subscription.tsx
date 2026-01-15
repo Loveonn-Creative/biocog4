@@ -17,14 +17,15 @@ import {
 
 const tiers = [
   { id: 'snapshot', name: 'Snapshot', icon: Sparkles, price: 0, color: 'bg-muted' },
-  { id: 'basic', name: 'Basic', icon: Zap, price: 499, color: 'bg-blue-500/10' },
+  { id: 'essential', name: 'Essential', icon: Zap, price: 499, color: 'bg-blue-500/10' },
   { id: 'pro', name: 'Pro', icon: Crown, price: 4999, color: 'bg-primary/10' },
   { id: 'scale', name: 'Scale', icon: Building2, price: 15000, color: 'bg-amber-500/10' },
 ];
 
 const usageLimits: Record<string, { invoices: number; reports: number; teamMembers: number }> = {
   snapshot: { invoices: 10, reports: 1, teamMembers: 1 },
-  basic: { invoices: 100, reports: 5, teamMembers: 3 },
+  essential: { invoices: 100, reports: 5, teamMembers: 3 },
+  basic: { invoices: 100, reports: 5, teamMembers: 3 }, // Legacy mapping
   pro: { invoices: 1000, reports: 50, teamMembers: 10 },
   scale: { invoices: 10000, reports: 500, teamMembers: 100 },
 };
@@ -187,7 +188,7 @@ const Subscription = () => {
                     AI ESG Head
                   </span>
                   <span className="font-medium">
-                    {tier === 'snapshot' ? 'Trial' : tier === 'basic' ? 'Limited' : 'Unlimited'}
+                    {tier === 'snapshot' ? 'Trial' : tier === 'essential' ? 'Limited' : 'Unlimited'}
                   </span>
                 </div>
               </div>

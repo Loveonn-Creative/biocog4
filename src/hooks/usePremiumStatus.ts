@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useSession } from './useSession';
 import { supabase } from '@/integrations/supabase/client';
 
-export type PremiumTier = 'snapshot' | 'basic' | 'pro' | 'scale';
+export type PremiumTier = 'snapshot' | 'essential' | 'pro' | 'scale';
 
 export interface PremiumFeatures {
   // Snapshot (Free)
@@ -13,7 +13,7 @@ export interface PremiumFeatures {
   voiceAiLite: boolean;
   helpCenterSupport: boolean;
   
-  // Basic
+  // Essential
   fullGstCarbonAutomation: boolean;
   verifiedClimateScore: boolean;
   greenLoanEligibility: boolean;
@@ -88,7 +88,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
     prioritySla: false,
     unlimitedTeam: false,
   },
-  basic: {
+  essential: {
     basicEmissionSnapshot: true,
     basicEsgScore: true,
     invoiceScansPerMonth: 100,
@@ -183,6 +183,14 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
   },
 };
 
+// Map legacy 'basic' tier to 'essential'
+const normalizeTier = (tier: string | null): PremiumTier => {
+  if (!tier) return 'snapshot';
+  if (tier === 'basic') return 'essential';
+  if (TIER_FEATURES[tier as PremiumTier]) return tier as PremiumTier;
+  return 'snapshot';
+};
+
 export const usePremiumStatus = (): PremiumStatus => {
   const { user } = useSession();
   const [tier, setTier] = useState<PremiumTier>('snapshot');
@@ -193,9 +201,9 @@ export const usePremiumStatus = (): PremiumStatus => {
   const fetchTierFromDatabase = useCallback(async () => {
     if (!user?.id) {
       // Check localStorage for demo/testing when not authenticated
-      const savedTier = localStorage.getItem('senseible_premium_tier') as PremiumTier | null;
-      if (savedTier && TIER_FEATURES[savedTier]) {
-        setTier(savedTier);
+      const savedTier = localStorage.getItem('senseible_premium_tier');
+      if (savedTier) {
+        setTier(normalizeTier(savedTier));
       }
       setIsLoading(false);
       return;
@@ -212,13 +220,13 @@ export const usePremiumStatus = (): PremiumStatus => {
       if (profileError) {
         console.error('Error fetching profile tier:', profileError);
         // Fall back to localStorage
-        const savedTier = localStorage.getItem('senseible_premium_tier') as PremiumTier | null;
-        if (savedTier && TIER_FEATURES[savedTier]) {
-          setTier(savedTier);
+        const savedTier = localStorage.getItem('senseible_premium_tier');
+        if (savedTier) {
+          setTier(normalizeTier(savedTier));
         }
       } else if (profile) {
         // Check if subscription is still valid
-        const dbTier = (profile.subscription_tier as PremiumTier) || 'snapshot';
+        const dbTier = normalizeTier(profile.subscription_tier);
         const expiry = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
         
         if (expiry && expiry < new Date()) {
@@ -246,17 +254,15 @@ export const usePremiumStatus = (): PremiumStatus => {
         .eq('status', 'active')
         .order('created_at', { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
 
       if (subscription && subscription.expires_at) {
         const subExpiry = new Date(subscription.expires_at);
         if (subExpiry > new Date()) {
-          const subTier = subscription.tier as PremiumTier;
-          if (TIER_FEATURES[subTier]) {
-            setTier(subTier);
-            setExpiresAt(subExpiry);
-            localStorage.setItem('senseible_premium_tier', subTier);
-          }
+          const subTier = normalizeTier(subscription.tier);
+          setTier(subTier);
+          setExpiresAt(subExpiry);
+          localStorage.setItem('senseible_premium_tier', subTier);
         }
       }
     } catch (error) {
@@ -279,6 +285,45 @@ export const usePremiumStatus = (): PremiumStatus => {
     const usedCount = parseInt(localStorage.getItem('senseible_invoices_used') || '0', 10);
     setInvoicesUsed(usedCount);
   }, [fetchTierFromDatabase]);
+
+  // Real-time subscription to profiles and subscriptions tables
+  useEffect(() => {
+    if (!user?.id) return;
+
+    const channel = supabase
+      .channel('subscription-updates')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'profiles',
+          filter: `id=eq.${user.id}`,
+        },
+        () => {
+          // Refresh tier when profile changes
+          fetchTierFromDatabase();
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'subscriptions',
+          filter: `user_id=eq.${user.id}`,
+        },
+        () => {
+          // Refresh tier when subscription changes
+          fetchTierFromDatabase();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user?.id, fetchTierFromDatabase]);
 
   const features = TIER_FEATURES[tier];
   const isPremium = tier !== 'snapshot';
