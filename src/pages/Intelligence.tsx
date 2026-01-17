@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
 import { ChatMessage, Message, TypingIndicator } from '@/components/chat/ChatMessage';
 import { ChatInput } from '@/components/chat/ChatInput';
 import { LanguageSelector } from '@/components/chat/LanguageSelector';
+import { VoiceAgent } from '@/components/chat/VoiceAgent';
 import { useVoiceOutput, useVoiceInput } from '@/components/VoiceOutput';
 import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
@@ -12,12 +13,11 @@ import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { Language, detectBrowserLanguage, getLanguageByCode } from '@/lib/languages';
 import { matchVoiceCommand, getCommandSuggestions } from '@/lib/voiceCommands';
-import { Brain, Sparkles, Zap, Volume2, VolumeX, Info, Mic, Navigation as NavIcon } from 'lucide-react';
+import { Brain, Sparkles, Zap, Volume2, VolumeX, Info, Mic, Navigation as NavIcon, Phone, PhoneOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -65,6 +65,7 @@ const Intelligence = () => {
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [speakingMessageId, setSpeakingMessageId] = useState<string | null>(null);
   const [voiceNavEnabled, setVoiceNavEnabled] = useState(true);
+  const [showVoiceAgent, setShowVoiceAgent] = useState(false);
   
   const scrollRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -340,6 +341,23 @@ const Intelligence = () => {
               </Badge>
             )}
 
+            {/* Voice Agent Toggle - Premium Feature */}
+            {isPremium && (
+              <Button
+                variant={showVoiceAgent ? "default" : "ghost"}
+                size="sm"
+                className={cn("h-8", showVoiceAgent && "bg-primary")}
+                onClick={() => setShowVoiceAgent(!showVoiceAgent)}
+                title="Real-time Voice AI"
+              >
+                {showVoiceAgent ? (
+                  <PhoneOff className="w-4 h-4" />
+                ) : (
+                  <Phone className="w-4 h-4" />
+                )}
+              </Button>
+            )}
+
             {/* Voice Navigation Toggle */}
             <Button
               variant="ghost"
@@ -391,6 +409,41 @@ const Intelligence = () => {
           className="flex-1 px-4 py-6"
         >
           <div ref={chatContainerRef} className="space-y-6">
+            {/* Voice Agent Panel - Premium Feature */}
+            {showVoiceAgent && isPremium && (
+              <div className="mb-6">
+                <VoiceAgent 
+                  onTranscript={(text, role) => {
+                    setMessages(prev => [...prev, {
+                      id: `voice-${role}-${Date.now()}`,
+                      role: role === 'user' ? 'user' : 'assistant',
+                      content: text,
+                      timestamp: new Date(),
+                    }]);
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Fallback message for non-premium users */}
+            {!isPremium && !trialStatus.inTrial && (
+              <div className="p-4 rounded-lg bg-gradient-to-r from-primary/10 to-emerald-500/10 border border-primary/20 text-sm">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-foreground mb-1">Unlock Real-time Voice AI</p>
+                    <p className="text-muted-foreground text-xs">
+                      For real-time voice conversations with your AI ESG Head, upload more invoices to unlock personalized guidance. 
+                      Your AI learns from your reports to provide founder-level precision.
+                    </p>
+                    <Link to="/pricing" className="text-primary text-xs hover:underline mt-2 inline-block">
+                      Upgrade to Pro →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Context info - different for guest vs authenticated */}
             {!isAuthenticated && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-sm">

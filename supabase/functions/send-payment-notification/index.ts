@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -140,6 +139,14 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    if (!RESEND_API_KEY) {
+      console.error("RESEND_API_KEY not configured");
+      return new Response(
+        JSON.stringify({ error: "Email service not configured" }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     const data: PaymentNotificationRequest = await req.json();
     
     console.log('Sending payment notification:', data.type, 'to:', data.email);
@@ -161,16 +168,31 @@ const handler = async (req: Request): Promise<Response> => {
         throw new Error('Invalid notification type');
     }
 
-    const emailResponse = await resend.emails.send({
-      from: "Senseible <noreply@senseible.earth>",
-      to: [data.email],
-      subject,
-      html,
+    // Use fetch to call Resend API directly
+    const emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Senseible <noreply@senseible.earth>",
+        to: [data.email],
+        subject,
+        html,
+      }),
     });
 
-    console.log("Payment notification sent:", emailResponse);
+    const emailResult = await emailResponse.json();
 
-    return new Response(JSON.stringify({ success: true, id: emailResponse.data?.id }), {
+    if (!emailResponse.ok) {
+      console.error("Resend API error:", emailResult);
+      throw new Error(emailResult.message || "Failed to send email");
+    }
+
+    console.log("Payment notification sent:", emailResult);
+
+    return new Response(JSON.stringify({ success: true, id: emailResult.id }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });

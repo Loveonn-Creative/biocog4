@@ -112,6 +112,31 @@ serve(async (req) => {
 
     console.log('Payment verified and subscription activated for user:', userId);
 
+    // Send payment success email notification
+    try {
+      // Get user email from auth
+      const { data: userData } = await supabase.auth.admin.getUserById(userId);
+      if (userData?.user?.email) {
+        await fetch(`${SUPABASE_URL}/functions/v1/send-payment-notification`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+          },
+          body: JSON.stringify({
+            type: 'payment_success',
+            email: userData.user.email,
+            tier,
+            amount: 0, // Amount would come from order details
+          }),
+        });
+        console.log('Payment notification email triggered');
+      }
+    } catch (emailError) {
+      console.error('Failed to send payment notification:', emailError);
+      // Don't fail the payment verification if email fails
+    }
+
     return new Response(
       JSON.stringify({
         success: true,
