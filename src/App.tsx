@@ -34,6 +34,8 @@ const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Profile = lazy(() => import("./pages/Profile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
+const Industries = lazy(() => import("./pages/Industries"));
+const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -88,6 +90,9 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/climate-intelligence" element={<ClimateStack />} />
               <Route path="/climate-intelligence/:slug" element={<CMSArticle />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/industries/:industry" element={<Industries />} />
+              <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

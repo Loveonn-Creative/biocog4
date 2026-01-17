@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Navigation } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  CheckCircle, Sparkles, ArrowRight, Upload, 
-  Brain, FileText, Zap, PartyPopper 
-} from 'lucide-react';
+import { Navigation } from '@/components/Navigation';
 import { cn } from '@/lib/utils';
-import confetti from 'canvas-confetti';
+import { 
+  CheckCircle, 
+  Sparkles, 
+  ArrowRight, 
+  FileText, 
+  Brain, 
+  Shield,
+  Loader2,
+  Upload,
+  Zap,
+  PartyPopper
+} from 'lucide-react';
 
 const PaymentSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -45,35 +52,48 @@ const PaymentSuccess = () => {
   };
 
   useEffect(() => {
-    // Trigger confetti celebration
+    // Dynamic import and trigger confetti celebration
     if (showConfetti) {
-      const duration = 3 * 1000;
-      const end = Date.now() + duration;
+      const launchConfetti = async () => {
+        try {
+          const confettiModule = await import('canvas-confetti');
+          const confetti = confettiModule.default;
+          
+          const duration = 3 * 1000;
+          const end = Date.now() + duration;
+          const colors = ['#22c55e', '#10b981', '#34d399', '#6ee7b7'];
 
-      const colors = ['#22c55e', '#10b981', '#34d399', '#6ee7b7'];
+          const frame = () => {
+            confetti({
+              particleCount: 3,
+              angle: 60,
+              spread: 55,
+              origin: { x: 0 },
+              colors: colors,
+            });
+            confetti({
+              particleCount: 3,
+              angle: 120,
+              spread: 55,
+              origin: { x: 1 },
+              colors: colors,
+            });
 
-      (function frame() {
-        confetti({
-          particleCount: 3,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 },
-          colors: colors,
-        });
-        confetti({
-          particleCount: 3,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 },
-          colors: colors,
-        });
-
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        } else {
+            if (Date.now() < end) {
+              requestAnimationFrame(frame);
+            } else {
+              setShowConfetti(false);
+            }
+          };
+          
+          frame();
+        } catch (e) {
+          console.warn('Confetti not available');
           setShowConfetti(false);
         }
-      })();
+      };
+      
+      launchConfetti();
     }
   }, [showConfetti]);
 
@@ -110,30 +130,30 @@ const PaymentSuccess = () => {
         {/* Success Animation */}
         <div className="relative mb-8">
           <div className={cn(
-            "w-24 h-24 rounded-full bg-success/20 flex items-center justify-center",
+            "w-24 h-24 rounded-full bg-emerald-500/20 flex items-center justify-center",
             "animate-in zoom-in-50 duration-500"
           )}>
-            <CheckCircle className="w-12 h-12 text-success animate-in zoom-in-75 duration-700 delay-200" />
+            <CheckCircle className="w-12 h-12 text-emerald-500 animate-in zoom-in-75 duration-700" />
           </div>
           <PartyPopper className="absolute -top-2 -right-2 w-8 h-8 text-amber-500 animate-bounce" />
         </div>
 
         {/* Success Message */}
-        <Badge variant="outline" className="mb-4 animate-in fade-in duration-500 delay-300">
+        <Badge variant="outline" className="mb-4 animate-in fade-in duration-500">
           <Sparkles className="h-3 w-3 mr-1" />
           Payment Confirmed
         </Badge>
 
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-2 animate-in fade-in-up duration-500 delay-400">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-2 animate-in fade-in duration-500">
           Welcome to {tierNames[tier]}! 🎉
         </h1>
 
-        <p className="text-lg text-muted-foreground text-center max-w-md mb-8 animate-in fade-in-up duration-500 delay-500">
+        <p className="text-lg text-muted-foreground text-center max-w-md mb-8 animate-in fade-in duration-500">
           Your sustainability journey just got supercharged. Here's what you've unlocked:
         </p>
 
         {/* Features Unlocked */}
-        <Card className="max-w-md w-full mb-8 animate-in fade-in-up duration-500 delay-600">
+        <Card className="max-w-md w-full mb-8 animate-in fade-in duration-500">
           <CardContent className="p-6">
             <h2 className="font-semibold mb-4 flex items-center gap-2">
               <Zap className="h-4 w-4 text-primary" />
@@ -142,7 +162,7 @@ const PaymentSuccess = () => {
             <ul className="space-y-3">
               {tierFeatures[tier]?.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3">
-                  <CheckCircle className="h-4 w-4 text-success shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
                   <span className="text-sm">{feature}</span>
                 </li>
               ))}
@@ -160,9 +180,8 @@ const PaymentSuccess = () => {
                 to={step.href}
                 className={cn(
                   "p-4 rounded-xl border bg-card hover:bg-muted/50 transition-all",
-                  "group animate-in fade-in-up duration-500",
+                  "group animate-in fade-in duration-500",
                 )}
-                style={{ animationDelay: `${700 + idx * 100}ms` }}
               >
                 <step.icon className="h-8 w-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="font-medium mb-1">{step.title}</h3>
@@ -173,7 +192,7 @@ const PaymentSuccess = () => {
         </div>
 
         {/* CTA Button */}
-        <Button size="lg" asChild className="animate-in fade-in-up duration-500 delay-1000">
+        <Button size="lg" asChild className="animate-in fade-in duration-500">
           <Link to="/dashboard">
             Go to Dashboard
             <ArrowRight className="h-4 w-4 ml-2" />
