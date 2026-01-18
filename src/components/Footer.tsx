@@ -39,6 +39,7 @@ const footerLinks = {
     { name: 'Terms of Service', path: '/legal/terms' },
     { name: 'Privacy Policy', path: '/legal/privacy' },
     { name: 'Data Processing', path: '/legal/dpa' },
+    { name: 'Industries', path: '/industries' },
   ],
 };
 

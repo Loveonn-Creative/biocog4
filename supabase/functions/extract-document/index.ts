@@ -5,6 +5,15 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// ============= METHODOLOGY VERSION (APPEND-ONLY VERSIONING) =============
+const METHODOLOGY_VERSION = {
+  name: 'BIOCOG_MVR_INDIA',
+  version: 'v1.0.1',
+  country: 'IN',
+  factorVersion: 'IND_EF_2025',
+  confidenceVersion: 'CONF_v1.0', // Deterministic confidence scoring
+};
+
 // ============= HSN CODE MASTER (RULE-BASED - NO AI) =============
 const HSN_MASTER: Record<string, { productCategory: string; industryCode: string; industryName: string; defaultScope: number }> = {
   // Fuel & Energy: Scope 1/2
@@ -44,15 +53,15 @@ const HSN_MASTER: Record<string, { productCategory: string; industryCode: string
 const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: string; scope: number; fuelType?: string }> = {
   // Fuels - Scope 1 (including common OCR misreads and regional terms)
   diesel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  deisel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
-  disel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
-  'd1esel': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // OCR misread
-  hsd: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // High Speed Diesel
+  deisel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  disel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  'd1esel': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
+  hsd: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
   petrol: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  petro: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // Truncated
-  petr0l: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // OCR misread
+  petro: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
+  petr0l: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
   gasoline: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  ms: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' }, // Motor Spirit
+  ms: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
   cng: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'CNG' },
   lpg: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
   'l.p.g': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
@@ -65,11 +74,11 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   'piped gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
   'natural gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
   kerosene: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  tel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' }, // Hindi: oil
+  tel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
   fuel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
   // Electricity - Scope 2 (including regional terms)
   electricity: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  electy: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Truncated
+  electy: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   elec: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   'elec bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   power: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
@@ -77,15 +86,15 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   kw: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   'electric bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   'power bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  bijli: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Hindi
-  vidyut: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Hindi
+  bijli: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  vidyut: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   discom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  msedcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Maharashtra
-  tpddl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Delhi
-  bses: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Delhi
-  cesc: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Kolkata
-  bescom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Bangalore
-  tneb: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 }, // Tamil Nadu
+  msedcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  tpddl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  bses: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  cesc: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  bescom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  tneb: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   unit: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   units: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   // Transport - Scope 3
@@ -105,7 +114,7 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   // Raw Materials - Scope 3
   steel: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
   iron: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
-  tmt: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 }, // TMT bars
+  tmt: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
   rebar: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
   plastic: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
   polymer: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
@@ -135,7 +144,7 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   recycling: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   scrap: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   garbage: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 }, // Hindi
+  kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
 };
 
 // ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0) =============
@@ -175,6 +184,109 @@ const EMISSION_FACTORS = {
   },
 };
 
+// ============= DETERMINISTIC CONFIDENCE SCORING (NO AI INFLUENCE) =============
+// Per BIOCOG MRV spec: Base 100, fixed penalties, same input = same output
+const CONFIDENCE_PENALTIES = {
+  // MANDATORY FIELD PENALTIES
+  MISSING_QUANTITY: 20,
+  MISSING_UNIT: 15,
+  MISSING_INVOICE_NUMBER: 10,
+  MISSING_SUPPLIER_GSTIN: 10,
+  MISSING_DATE: 5,
+  MISSING_AMOUNT: 5,
+  // CLASSIFICATION PENALTIES
+  UNVERIFIABLE_ITEM: 15, // Per item
+  MISSING_EMISSION_FACTOR: 10, // Per item
+  // OCR QUALITY PENALTIES
+  NO_LINE_ITEMS: 30,
+  LOW_EXTRACTION_RATE: 15, // Less than 50% fields
+  // ENHANCEMENT BONUSES (fixed, not random)
+  HSN_CLASSIFICATION_BONUS: 5, // Per HSN-classified item (max 10)
+} as const;
+
+function calculateDeterministicConfidence(params: {
+  hasQuantity: boolean;
+  hasUnit: boolean;
+  hasInvoiceNumber: boolean;
+  hasSupplierGstin: boolean;
+  hasDate: boolean;
+  hasAmount: boolean;
+  lineItemCount: number;
+  unverifiableCount: number;
+  missingEmissionFactorCount: number;
+  hsnClassifiedCount: number;
+  extractedFieldRatio: number; // 0 to 1
+}): number {
+  let confidence = 100;
+
+  // Apply mandatory field penalties
+  if (!params.hasQuantity) confidence -= CONFIDENCE_PENALTIES.MISSING_QUANTITY;
+  if (!params.hasUnit) confidence -= CONFIDENCE_PENALTIES.MISSING_UNIT;
+  if (!params.hasInvoiceNumber) confidence -= CONFIDENCE_PENALTIES.MISSING_INVOICE_NUMBER;
+  if (!params.hasSupplierGstin) confidence -= CONFIDENCE_PENALTIES.MISSING_SUPPLIER_GSTIN;
+  if (!params.hasDate) confidence -= CONFIDENCE_PENALTIES.MISSING_DATE;
+  if (!params.hasAmount) confidence -= CONFIDENCE_PENALTIES.MISSING_AMOUNT;
+
+  // Apply classification penalties
+  confidence -= params.unverifiableCount * CONFIDENCE_PENALTIES.UNVERIFIABLE_ITEM;
+  confidence -= params.missingEmissionFactorCount * CONFIDENCE_PENALTIES.MISSING_EMISSION_FACTOR;
+
+  // Apply OCR quality penalties
+  if (params.lineItemCount === 0) confidence -= CONFIDENCE_PENALTIES.NO_LINE_ITEMS;
+  if (params.extractedFieldRatio < 0.5) confidence -= CONFIDENCE_PENALTIES.LOW_EXTRACTION_RATE;
+
+  // Apply HSN classification bonus (capped)
+  const hsnBonus = Math.min(params.hsnClassifiedCount * CONFIDENCE_PENALTIES.HSN_CLASSIFICATION_BONUS, 10);
+  confidence += hsnBonus;
+
+  // Clamp to 0-100 range
+  return Math.max(0, Math.min(100, Math.round(confidence)));
+}
+
+// ============= DOCUMENT RELEVANCE CHECK =============
+const VALID_DOCUMENT_TYPES = ['invoice', 'bill', 'certificate', 'receipt'];
+const IRRELEVANT_DOCUMENT_KEYWORDS = [
+  'passport', 'aadhaar', 'aadhar', 'pan card', 'voter id', 'driving license',
+  'birth certificate', 'marriage certificate', 'degree', 'marksheet',
+  'resume', 'cv', 'curriculum vitae', 'photograph', 'selfie', 'photo'
+];
+
+function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string } {
+  const docType = (ocrData.documentType || '').toLowerCase();
+  
+  // Check if document type is valid
+  if (docType === 'unknown') {
+    // Check content for irrelevant keywords
+    const allText = JSON.stringify(ocrData).toLowerCase();
+    for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
+      if (allText.includes(keyword)) {
+        return {
+          relevant: false,
+          message: `This appears to be a ${keyword.replace('_', ' ')} or personal document. Please upload a business invoice, utility bill, or receipt for carbon accounting.`
+        };
+      }
+    }
+    
+    // If no line items and no amount, likely not an invoice
+    if ((!ocrData.lineItems || ocrData.lineItems.length === 0) && !ocrData.amount) {
+      return {
+        relevant: false,
+        message: "This document doesn't appear to contain invoice or billing data. Please upload a business invoice, fuel bill, electricity bill, or purchase receipt."
+      };
+    }
+  }
+  
+  // Check if explicitly non-invoice
+  if (docType && !VALID_DOCUMENT_TYPES.includes(docType) && docType !== 'unknown') {
+    return {
+      relevant: false,
+      message: `This document type (${docType}) is not supported for carbon accounting. Please upload an invoice, bill, or receipt.`
+    };
+  }
+  
+  return { relevant: true };
+}
+
 // ============= ENHANCED UNIT DETECTION =============
 function detectUnit(text: string): string | null {
   const unitPatterns: Record<string, RegExp> = {
@@ -194,7 +306,6 @@ function detectUnit(text: string): string | null {
 
 // ============= QUANTITY INFERENCE FROM CONTEXT =============
 function inferQuantityFromContext(text: string, amount?: number): number | null {
-  // Try to find numbers near unit keywords
   const quantityPatterns = [
     /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:litre|liter|ltr|lt|l)\b/i,
     /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:kg|kilogram|kgs)\b/i,
@@ -212,7 +323,6 @@ function inferQuantityFromContext(text: string, amount?: number): number | null 
   }
   
   // If we have amount and it looks like a fuel bill, try to infer
-  // Average diesel price ~₹90/L, petrol ~₹100/L
   if (amount && amount > 100) {
     const lowerText = text.toLowerCase();
     if (lowerText.includes('diesel') || lowerText.includes('hsd')) {
@@ -230,7 +340,6 @@ function inferQuantityFromContext(text: string, amount?: number): number | null 
 function classifyByHSN(hsnCode: string): { productCategory: string; industryCode: string; industryName: string; scope: number } | null {
   if (!hsnCode) return null;
   
-  // Try 2-digit prefix match
   const prefix2 = hsnCode.substring(0, 2);
   if (HSN_MASTER[prefix2]) {
     return {
@@ -247,7 +356,6 @@ function classifyByHSN(hsnCode: string): { productCategory: string; industryCode
 function classifyByKeyword(text: string): { productCategory: string; industryCode: string; scope: number; fuelType?: string } | null {
   const lowerText = text.toLowerCase();
   
-  // Check for exact matches first, then partial matches
   for (const [keyword, classification] of Object.entries(KEYWORD_MAP)) {
     if (lowerText.includes(keyword)) {
       return classification;
@@ -288,7 +396,7 @@ function calculateEmissions(
     };
   }
   
-  // Scope 3: Transport (simplified - assumes road heavy)
+  // Scope 3: Transport
   if (scope === 3 && productCategory === 'TRANSPORT') {
     return {
       co2Kg: quantity * EMISSION_FACTORS.scope3_transport.ROAD_HEAVY,
@@ -306,10 +414,9 @@ function calculateEmissions(
     };
   }
   
-  // Generic Scope 3 materials - use estimated factor
+  // Generic Scope 3 materials
   if (scope === 3 && productCategory === 'RAW_MATERIAL') {
-    // Use a conservative estimated factor for raw materials
-    const estimatedFactor = 0.5; // kgCO2e per kg of material (conservative)
+    const estimatedFactor = 0.5;
     return {
       co2Kg: quantity * estimatedFactor,
       emissionFactor: estimatedFactor,
@@ -327,17 +434,14 @@ interface LineItem {
   unit?: string;
   unitPrice?: number;
   total?: number;
-  // Classification results (rule-based)
   productCategory?: string;
   industryCode?: string;
   industryName?: string;
   scope?: number;
   fuelType?: string;
-  // Emission calculation
   co2Kg?: number;
   emissionFactor?: number;
   factorSource?: string;
-  // Status
   classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
 }
 
@@ -353,26 +457,23 @@ interface ExtractedData {
   lineItems: LineItem[];
   taxAmount?: number;
   subtotal?: number;
-  // Classification summary
   primaryScope?: number;
   primaryCategory?: string;
   totalCO2Kg?: number;
-  // Confidence & validation
   confidence: number;
   validationFlags: string[];
   classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
-  // Methodology
   methodology: {
     name: string;
     version: string;
     country: string;
     factorVersion: string;
+    confidenceVersion: string;
   };
 }
 
 // ============= AI OCR EXTRACTION =============
 async function extractWithAI(imageBase64: string, mimeType: string, apiKey: string, model: string): Promise<any> {
-  // Enhanced prompt for old/unclear invoices
   const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Extract data from invoices, bills, and receipts with MAXIMUM accuracy, even from old, faded, or unclear documents.
 
 CRITICAL EXTRACTION RULES:
@@ -407,6 +508,10 @@ CRITICAL EXTRACTION RULES:
 7. AMOUNTS: Remove commas, convert to numbers
    - Handle both ₹ and Rs. prefixes
 
+8. DOCUMENT TYPE DETECTION:
+   - If this is NOT an invoice/bill/receipt (e.g., ID card, photo, resume), set documentType to "unknown"
+   - Only set documentType to invoice/bill/receipt/certificate if it actually is one
+
 Respond ONLY with valid JSON (no markdown, no explanation):
 {
   "documentType": "invoice|bill|certificate|receipt|unknown",
@@ -428,8 +533,7 @@ Respond ONLY with valid JSON (no markdown, no explanation):
     }
   ],
   "taxAmount": tax amount as number or null,
-  "subtotal": subtotal as number or null,
-  "confidence": 0.0 to 1.0 (your confidence in extraction accuracy)
+  "subtotal": subtotal as number or null
 }`;
 
   const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
@@ -447,7 +551,7 @@ Respond ONLY with valid JSON (no markdown, no explanation):
           content: [
             {
               type: 'text',
-              text: 'Extract ALL data from this document. For old or unclear invoices, use context clues and common patterns to infer missing values. Pay special attention to HSN codes, GSTIN numbers, quantities, and units.'
+              text: 'Extract ALL data from this document. For old or unclear invoices, use context clues and common patterns to infer missing values. Pay special attention to HSN codes, GSTIN numbers, quantities, and units. If this is NOT a business document (invoice/bill/receipt), indicate documentType as "unknown".'
             },
             {
               type: 'image_url',
@@ -496,7 +600,7 @@ serve(async (req) => {
       );
     }
 
-    console.log('Processing document with enhanced OCR extraction...');
+    console.log('Processing document with deterministic MRV extraction...');
 
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
@@ -521,7 +625,7 @@ serve(async (req) => {
       console.error('Flash model failed, will try pro model:', error);
     }
 
-    // Parse and check confidence
+    // Parse response
     let ocrData: any = null;
     if (content) {
       try {
@@ -536,13 +640,12 @@ serve(async (req) => {
       }
     }
 
-    // Retry with pro model if confidence is low or extraction failed
+    // Retry with pro model if extraction failed or no line items
     const shouldRetryWithPro = !ocrData || 
-      (ocrData.confidence && ocrData.confidence < 0.6) ||
-      (ocrData.lineItems && ocrData.lineItems.length === 0);
+      (ocrData.lineItems && ocrData.lineItems.length === 0 && ocrData.documentType !== 'unknown');
 
     if (shouldRetryWithPro) {
-      console.log('Low confidence or failed extraction, retrying with pro model...');
+      console.log('Failed extraction, retrying with pro model...');
       try {
         content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-pro');
         usedModel = 'google/gemini-2.5-pro';
@@ -562,7 +665,6 @@ serve(async (req) => {
           );
         }
         console.error('Pro model also failed:', error);
-        // Use whatever we got from flash model
         if (!ocrData) {
           return new Response(
             JSON.stringify({ error: 'Failed to extract data from document. Please try a clearer image.' }),
@@ -579,13 +681,31 @@ serve(async (req) => {
       );
     }
 
-    console.log(`AI OCR Response received (${usedModel}), applying rule-based classification...`);
+    // ============= DOCUMENT RELEVANCE CHECK =============
+    const relevanceCheck = isDocumentRelevant(ocrData);
+    if (!relevanceCheck.relevant) {
+      console.log(`Document rejected as irrelevant: ${relevanceCheck.message}`);
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: relevanceCheck.message,
+          isIrrelevant: true 
+        }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log(`AI OCR Response received (${usedModel}), applying deterministic rule-based classification...`);
 
     // ============= RULE-BASED CLASSIFICATION (NO AI GUESSING) =============
     const validationFlags: string[] = [];
     let totalCO2Kg = 0;
     let verifiedItems = 0;
     let unverifiableItems = 0;
+    let missingEmissionFactorCount = 0;
+    let hsnClassifiedCount = 0;
+    let hasAnyQuantity = false;
+    let hasAnyUnit = false;
     
     const classifiedItems: LineItem[] = (ocrData.lineItems || []).map((item: any) => {
       const classifiedItem: LineItem = {
@@ -597,11 +717,16 @@ serve(async (req) => {
         total: item.total,
       };
 
+      // Track if we have quantity/unit
+      if (classifiedItem.quantity && classifiedItem.quantity > 0) hasAnyQuantity = true;
+      if (classifiedItem.unit) hasAnyUnit = true;
+
       // Try to infer quantity if missing
       if (!classifiedItem.quantity && item.description) {
         const inferredQty = inferQuantityFromContext(item.description, item.total);
         if (inferredQty) {
           classifiedItem.quantity = inferredQty;
+          hasAnyQuantity = true;
           console.log(`Inferred quantity ${inferredQty} for: ${item.description?.substring(0, 30)}`);
         }
       }
@@ -615,6 +740,7 @@ serve(async (req) => {
           classifiedItem.industryName = hsnClass.industryName;
           classifiedItem.scope = hsnClass.scope;
           classifiedItem.classificationMethod = 'HSN';
+          hsnClassifiedCount++;
         }
       }
 
@@ -654,7 +780,12 @@ serve(async (req) => {
           classifiedItem.emissionFactor = emissions.emissionFactor;
           classifiedItem.factorSource = emissions.factorSource;
           totalCO2Kg += emissions.co2Kg;
+        } else {
+          missingEmissionFactorCount++;
         }
+      } else if (classifiedItem.productCategory) {
+        // Has category but missing data for emission calculation
+        missingEmissionFactorCount++;
       }
 
       return classifiedItem;
@@ -672,17 +803,20 @@ serve(async (req) => {
     const primaryScope = Object.entries(scopeCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
     const primaryCategory = Object.entries(categoryCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
 
-    // Determine classification status
+    // Determine classification status (more lenient - don't reject normal invoices)
     let classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
-    if (unverifiableItems === 0 && classifiedItems.length > 0) {
+    if (unverifiableItems === 0 && classifiedItems.length > 0 && totalCO2Kg > 0) {
       classificationStatus = 'VERIFIED';
-    } else if (verifiedItems > 0) {
+    } else if (verifiedItems > 0 || totalCO2Kg > 0) {
+      classificationStatus = 'PARTIALLY_VERIFIED';
+    } else if (classifiedItems.length > 0 || ocrData.amount) {
+      // Has line items or amount - it's a valid invoice, just can't calculate emissions
       classificationStatus = 'PARTIALLY_VERIFIED';
     } else {
       classificationStatus = 'UNVERIFIABLE';
     }
 
-    // Additional validation
+    // Additional validation flags (informational, not rejection criteria)
     if (!ocrData.invoiceNumber) validationFlags.push('Missing invoice number');
     if (!ocrData.supplierGstin) validationFlags.push('Missing supplier GSTIN');
     if (!ocrData.date) validationFlags.push('Missing invoice date');
@@ -690,19 +824,31 @@ serve(async (req) => {
       validationFlags.push('Missing or invalid quantities');
     }
 
-    // Adjust confidence based on classification results
-    let finalConfidence = ocrData.confidence || 0.5;
-    if (unverifiableItems > 0) {
-      finalConfidence -= (unverifiableItems / Math.max(classifiedItems.length, 1)) * 0.3;
-    }
-    if (validationFlags.length > 3) {
-      finalConfidence -= 0.2;
-    }
-    // Boost confidence if we used pro model
-    if (usedModel === 'google/gemini-2.5-pro') {
-      finalConfidence = Math.min(1, finalConfidence + 0.1);
-    }
-    finalConfidence = Math.max(0, Math.min(1, finalConfidence));
+    // ============= DETERMINISTIC CONFIDENCE CALCULATION =============
+    // Count extracted fields for ratio
+    const totalPossibleFields = 7; // vendor, date, invoiceNumber, supplierGstin, buyerGstin, amount, lineItems
+    let extractedFields = 0;
+    if (ocrData.vendor) extractedFields++;
+    if (ocrData.date) extractedFields++;
+    if (ocrData.invoiceNumber) extractedFields++;
+    if (ocrData.supplierGstin) extractedFields++;
+    if (ocrData.buyerGstin) extractedFields++;
+    if (ocrData.amount) extractedFields++;
+    if (ocrData.lineItems && ocrData.lineItems.length > 0) extractedFields++;
+
+    const finalConfidence = calculateDeterministicConfidence({
+      hasQuantity: hasAnyQuantity,
+      hasUnit: hasAnyUnit,
+      hasInvoiceNumber: !!ocrData.invoiceNumber,
+      hasSupplierGstin: !!ocrData.supplierGstin,
+      hasDate: !!ocrData.date,
+      hasAmount: !!ocrData.amount,
+      lineItemCount: classifiedItems.length,
+      unverifiableCount: unverifiableItems,
+      missingEmissionFactorCount: missingEmissionFactorCount,
+      hsnClassifiedCount: hsnClassifiedCount,
+      extractedFieldRatio: extractedFields / totalPossibleFields,
+    });
 
     const extractedData: ExtractedData = {
       documentType: ocrData.documentType || 'unknown',
@@ -722,15 +868,10 @@ serve(async (req) => {
       confidence: finalConfidence,
       validationFlags,
       classificationStatus,
-      methodology: {
-        name: 'BIOCOG_MVR_INDIA',
-        version: 'v1.0',
-        country: 'IN',
-        factorVersion: 'IND_EF_2025',
-      },
+      methodology: METHODOLOGY_VERSION,
     };
 
-    console.log(`Document processed: ${classificationStatus}, ${verifiedItems} verified, ${unverifiableItems} unverifiable, ${totalCO2Kg.toFixed(2)} kgCO₂e (model: ${usedModel})`);
+    console.log(`Document processed: ${classificationStatus}, ${verifiedItems} verified, ${unverifiableItems} unverifiable, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}% (model: ${usedModel})`);
 
     return new Response(
       JSON.stringify({ 

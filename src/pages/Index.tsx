@@ -43,11 +43,9 @@ interface ExtractedData {
   lineItems?: ExtractedLineItem[];
   taxAmount?: number;
   subtotal?: number;
-  // New fields from enhanced OCR
   primaryScope?: number;
   primaryCategory?: string;
   totalCO2Kg?: number;
-  // Legacy fields for compatibility
   emissionCategory?: string;
   estimatedCO2Kg?: number;
   confidence: number;
@@ -64,52 +62,57 @@ interface ProcessingResult {
   emissionId?: string;
 }
 
+// ============= DETERMINISTIC SCOPE MAPPING =============
+// Per BIOCOG MRV spec: Category determines scope, not AI
+const SCOPE_MAP: Record<string, number> = {
+  'fuel': 1,          // Scope 1 - Direct emissions
+  'electricity': 2,   // Scope 2 - Purchased energy (FIXED: was sometimes 1)
+  'transport': 3,     // Scope 3 - Value chain
+  'materials': 3,
+  'waste': 3,
+  'other': 3
+};
+
+// Map productCategory to our category format
+const CATEGORY_MAP: Record<string, string> = {
+  'FUEL': 'fuel',
+  'ELECTRICITY': 'electricity',
+  'TRANSPORT': 'transport',
+  'RAW_MATERIAL': 'materials',
+  'WASTE': 'waste',
+  'CHEMICALS': 'materials',
+  'CAPITAL_GOODS': 'materials',
+  'ELECTRICAL_EQUIPMENT': 'materials',
+  'TRANSPORT_EQUIPMENT': 'transport',
+  'SERVICES': 'other',
+};
+
 // Helper to get category from OCR response
 const getCategoryFromOCR = (data: ExtractedData): string => {
-  // Map productCategory to our category format
-  const categoryMap: Record<string, string> = {
-    'FUEL': 'fuel',
-    'ELECTRICITY': 'electricity',
-    'TRANSPORT': 'transport',
-    'RAW_MATERIAL': 'materials',
-    'WASTE': 'waste',
-    'CHEMICALS': 'materials',
-    'CAPITAL_GOODS': 'materials',
-    'ELECTRICAL_EQUIPMENT': 'materials',
-    'TRANSPORT_EQUIPMENT': 'transport',
-    'SERVICES': 'other',
-  };
-  
-  if (data.primaryCategory && categoryMap[data.primaryCategory]) {
-    return categoryMap[data.primaryCategory];
+  if (data.primaryCategory && CATEGORY_MAP[data.primaryCategory]) {
+    return CATEGORY_MAP[data.primaryCategory];
   }
   
-  // Fallback to legacy field
   if (data.emissionCategory) {
     return data.emissionCategory;
   }
   
-  // Try to infer from line items
   const firstItem = data.lineItems?.[0];
-  if (firstItem?.productCategory && categoryMap[firstItem.productCategory]) {
-    return categoryMap[firstItem.productCategory];
+  if (firstItem?.productCategory && CATEGORY_MAP[firstItem.productCategory]) {
+    return CATEGORY_MAP[firstItem.productCategory];
   }
   
   return 'other';
 };
 
-// Helper to get scope from category
+// Helper to get scope from category (DETERMINISTIC)
+// This OVERRIDES any AI-provided scope to ensure correctness
 const getScopeFromCategory = (category: string): number => {
-  const scopeMap: Record<string, number> = {
-    'fuel': 1,
-    'electricity': 2,
-    'transport': 3,
-    'materials': 3,
-    'waste': 3,
-    'other': 3
-  };
-  return scopeMap[category] || 3;
+  return SCOPE_MAP[category] || 3;
 };
+
+// Fixed carbon credit rate (same as backend)
+const CARBON_CREDIT_RATE = 750;
 
 const Index = () => {
   const navigate = useNavigate();
@@ -119,7 +122,6 @@ const Index = () => {
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
   
-  // Get stored profile GSTIN for premium validation
   const getProfileGstin = (): string | undefined => {
     try {
       const stored = localStorage.getItem('senseible_company_profile');
@@ -146,7 +148,6 @@ const Index = () => {
 
   const saveToDatabase = async (extractedData: ExtractedData): Promise<{ documentId: string; emissionId: string } | null> => {
     try {
-      // Save document
       const { data: docData, error: docError } = await supabase
         .from('documents')
         .insert({
@@ -171,18 +172,19 @@ const Index = () => {
         return null;
       }
 
-      // Get emission data from OCR response - use new fields with fallback to legacy
+      // Get emission data - use new fields with fallback to legacy
       const co2Kg = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const category = getCategoryFromOCR(extractedData);
-      const scope = extractedData.primaryScope ?? getScopeFromCategory(category);
       
-      // Get activity data from first line item
+      // CRITICAL: Use our deterministic scope mapping, NOT the OCR's primaryScope
+      // This ensures electricity is always Scope 2, fuel is always Scope 1, etc.
+      const scope = getScopeFromCategory(category);
+      
       const firstItem = extractedData.lineItems?.[0];
       const activityData = firstItem?.quantity ?? null;
       const activityUnit = firstItem?.unit ?? null;
       const emissionFactor = firstItem?.emissionFactor ?? null;
 
-      // Save emission
       const { data: emissionData, error: emissionError } = await supabase
         .from('emissions')
         .insert({
@@ -195,7 +197,7 @@ const Index = () => {
           activity_data: activityData,
           activity_unit: activityUnit,
           emission_factor: emissionFactor,
-          data_quality: extractedData.confidence >= 0.8 ? 'high' : extractedData.confidence >= 0.5 ? 'medium' : 'low',
+          data_quality: extractedData.confidence >= 80 ? 'high' : extractedData.confidence >= 50 ? 'medium' : 'low',
           verified: false
         })
         .select()
@@ -206,7 +208,7 @@ const Index = () => {
         return null;
       }
 
-      console.log('Saved to database - Document:', docData.id, 'Emission:', emissionData.id);
+      console.log('Saved to database - Document:', docData.id, 'Emission:', emissionData.id, 'Scope:', scope);
       return { documentId: docData.id, emissionId: emissionData.id };
     } catch (error) {
       console.error('Database save error:', error);
@@ -235,6 +237,13 @@ const Index = () => {
         return;
       }
 
+      // Handle irrelevant document rejection
+      if (data?.isIrrelevant) {
+        toast.error(data.error || "This document is not supported for carbon accounting.");
+        setState("idle");
+        return;
+      }
+
       if (!data?.success || !data?.data) {
         console.error("Invalid response:", data);
         toast.error(data?.error || "Failed to extract data from document.");
@@ -245,20 +254,17 @@ const Index = () => {
       const extractedData: ExtractedData = data.data;
       console.log("Extracted data:", extractedData);
 
-      // Save to database
       const savedIds = await saveToDatabase(extractedData);
 
-      // Get the calculated CO2 value
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
       
-      // Determine result type based on document
       const isCompliance = extractedData.documentType === 'certificate' || 
                           emissionCat === 'other';
       
-      // Calculate revenue based on CO2 estimation
+      // DETERMINISTIC: CO2 × Fixed Rate = Carbon Credit Value
       const co2Tons = calculatedCO2 / 1000;
-      const carbonCreditValue = Math.round(co2Tons * 650);
+      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
 
       const processingResult: ProcessingResult = {
         type: isCompliance ? "compliance" : "revenue",
@@ -313,14 +319,64 @@ const Index = () => {
     processDocument(file);
   };
 
-  const handleVoiceInput = (transcript: string) => {
+  const handleVoiceInput = async (transcript: string) => {
     console.log("Voice input:", transcript);
-    toast.info("Voice processing coming soon. Please upload a document for now.");
+    setState("processing");
+    setDocumentType("Processing voice query...");
+    
+    try {
+      // Send to intelligence-chat for AI response
+      const response = await supabase.functions.invoke('intelligence-chat', {
+        body: { 
+          messages: [{ role: 'user', content: transcript }],
+          context: { isHomepage: true, type: 'voice_query' },
+          language: 'English'
+        }
+      });
+
+      setState("idle");
+
+      if (response.error) {
+        console.error("Voice AI error:", response.error);
+        toast.error("Voice processing unavailable. Please upload a document.");
+        return;
+      }
+
+      // Get the AI response
+      const data = response.data;
+      if (data) {
+        // Parse streaming response if needed
+        let responseText = '';
+        if (typeof data === 'string') {
+          responseText = data;
+        } else if (data.choices?.[0]?.message?.content) {
+          responseText = data.choices[0].message.content;
+        }
+
+        if (responseText) {
+          // Show response in toast
+          toast.info(responseText.substring(0, 200) + (responseText.length > 200 ? '...' : ''));
+          
+          // Use browser TTS to speak the response
+          if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(responseText);
+            utterance.lang = 'en-IN';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+          }
+        } else {
+          toast.info("I understood your query. For carbon accounting, please upload an invoice or bill.");
+        }
+      }
+    } catch (error) {
+      console.error("Voice processing error:", error);
+      setState("idle");
+      toast.error("Voice processing unavailable. Please upload a document.");
+    }
   };
 
   const handleConfirm = () => {
     toast.success("Saved! Your carbon data has been recorded.");
-    // Navigate to verify page with the emission data
     if (result?.emissionId) {
       navigate(`/verify?emission=${result.emissionId}`);
     } else {
@@ -336,13 +392,10 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
-      {/* Onboarding Tour */}
       <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
       
-      {/* Ambient particles */}
       <CarbonParticles />
       
-      {/* Header with brand */}
       <header className="relative z-20 w-full pt-8 pb-4">
         <Link to="/" className="block">
           <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
@@ -351,18 +404,15 @@ const Index = () => {
         </Link>
       </header>
 
-      {/* Main content - centered */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-16">
         {state === "idle" && (
           <div className="flex flex-col items-center gap-10 animate-fade-in">
-            {/* Dual input - properly aligned */}
             <div className="flex items-start gap-6 sm:gap-10">
               <DocumentInput 
                 onFileSelect={handleFileSelect} 
                 isProcessing={false} 
               />
               
-              {/* Center divider */}
               <div className="flex items-center h-28 sm:h-32">
                 <div className="w-px h-16 bg-border/60" />
               </div>
@@ -373,7 +423,6 @@ const Index = () => {
               />
             </div>
             
-            {/* Instruction text */}
             <p className="text-sm sm:text-base text-muted-foreground text-center">
               Upload a document or speak to begin
             </p>
@@ -395,7 +444,6 @@ const Index = () => {
         )}
       </main>
       
-      {/* Footer navigation - simplified */}
       <footer className="relative z-20 w-full pb-8 pt-4">
         <nav className="flex items-center justify-center gap-6 sm:gap-8 flex-wrap px-4">
           <Link 
