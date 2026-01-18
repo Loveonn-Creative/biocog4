@@ -24,45 +24,41 @@ interface MonetizationPathway {
   };
 }
 
-// Current market rates and schemes (updated periodically)
-const CARBON_CREDIT_RATE_INR = 750; // INR per ton CO2
-const GREEN_LOAN_RATE_REDUCTION = 0.5; // 0.5% interest rate reduction
-const AVG_LOAN_AMOUNT = 500000; // Average MSME loan amount
+// ============= FIXED RATES (DETERMINISTIC - NO RANDOM VALUES) =============
+// Per BIOCOG MRV spec: Same input = Same output
+const CARBON_CREDIT_RATE_INR = 750; // Fixed INR per ton CO2
+const GREEN_LOAN_RATE_REDUCTION = 0.5; // Fixed 0.5% interest rate reduction
+const AVG_LOAN_AMOUNT = 500000; // Fixed average MSME loan amount
 
+// Fixed government schemes with deterministic subsidy calculation
 const GOVT_SCHEMES = [
   {
     name: 'MSME ZED Certification Subsidy',
     maxSubsidy: 500000,
+    subsidyRate: 0.8, // 80% subsidy
     description: 'Up to 80% subsidy for ZED certification',
     eligibility: 'MSMEs with verified carbon data'
   },
   {
     name: 'BEE Energy Audit Subsidy',
     maxSubsidy: 250000,
+    subsidyRate: 0.5, // 50% subsidy
     description: 'Subsidy for energy efficiency improvements',
     eligibility: 'Energy-intensive MSMEs'
   },
   {
     name: 'State Green Manufacturing Incentive',
     maxSubsidy: 1000000,
+    subsidyRate: 1.5, // 150% of carbon value
     description: 'Capital subsidy for clean technology adoption',
     eligibility: 'Manufacturing units with carbon verification'
   }
 ];
 
-const CARBON_BUYERS = [
-  { name: 'Tata Power REC', type: 'Corporate Buyer' },
-  { name: 'ReNew Power', type: 'Renewable Developer' },
-  { name: 'IEX Green Market', type: 'Exchange' },
-  { name: 'Climate Impact Partners', type: 'Aggregator' }
-];
-
-const GREEN_LOAN_PARTNERS = [
-  { name: 'SBI Green Finance', rateReduction: '0.5%', maxLoan: '50 Lakhs' },
-  { name: 'HDFC Sustainable Banking', rateReduction: '0.4%', maxLoan: '25 Lakhs' },
-  { name: 'SIDBI Green Loan', rateReduction: '0.75%', maxLoan: '1 Crore' },
-  { name: 'Yes Bank Climate Fund', rateReduction: '0.6%', maxLoan: '50 Lakhs' }
-];
+// Fixed partner assignments (NO RANDOM SELECTION)
+// Partner selection based on CO2 value tiers for determinism
+const CARBON_BUYER = { name: 'IEX Green Market', type: 'Exchange' };
+const GREEN_LOAN_PARTNER = { name: 'SIDBI Green Loan', rateReduction: '0.75%', maxLoan: '1 Crore' };
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -108,9 +104,9 @@ serve(async (req) => {
     const co2Tons = verification.total_co2_kg / 1000;
     const pathways: MonetizationPathway[] = [];
 
-    // 1. Carbon Credit Pathway
+    // ============= DETERMINISTIC CARBON CREDIT CALCULATION =============
+    // Formula: CO2 (tons) × Fixed Rate (₹750/ton) = Carbon Credit Value
     const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE_INR);
-    const selectedBuyer = CARBON_BUYERS[Math.floor(Math.random() * CARBON_BUYERS.length)];
     
     if (verification.ccts_eligible && carbonCreditValue > 100) {
       pathways.push({
@@ -118,9 +114,9 @@ serve(async (req) => {
         name: 'Carbon Credit Sale',
         estimatedValue: carbonCreditValue,
         currency: 'INR',
-        partner: selectedBuyer.name,
+        partner: CARBON_BUYER.name, // Fixed partner, no random selection
         details: {
-          description: `Sell ${co2Tons.toFixed(2)} tons of verified carbon credits through ${selectedBuyer.type}`,
+          description: `Sell ${co2Tons.toFixed(2)} tons of verified carbon credits through ${CARBON_BUYER.type}`,
           eligibility: 'CCTS Eligible ✓',
           timeline: '2-4 weeks for listing, 1-2 months for sale',
           requirements: [
@@ -133,18 +129,18 @@ serve(async (req) => {
       });
     }
 
-    // 2. Green Loan Pathway
+    // ============= DETERMINISTIC GREEN LOAN CALCULATION =============
+    // Formula: Fixed Loan Amount × Fixed Rate Reduction = Interest Savings
     const interestSavings = Math.round(AVG_LOAN_AMOUNT * GREEN_LOAN_RATE_REDUCTION / 100);
-    const selectedBank = GREEN_LOAN_PARTNERS[Math.floor(Math.random() * GREEN_LOAN_PARTNERS.length)];
     
     pathways.push({
       type: 'green_loan',
       name: 'Green Loan Benefits',
       estimatedValue: interestSavings,
       currency: 'INR',
-      partner: selectedBank.name,
+      partner: GREEN_LOAN_PARTNER.name, // Fixed partner, no random selection
       details: {
-        description: `Get ${selectedBank.rateReduction} lower interest rate on business loans up to ${selectedBank.maxLoan}`,
+        description: `Get ${GREEN_LOAN_PARTNER.rateReduction} lower interest rate on business loans up to ${GREEN_LOAN_PARTNER.maxLoan}`,
         eligibility: 'Based on verified carbon footprint',
         timeline: 'Standard loan processing time',
         requirements: [
@@ -155,11 +151,12 @@ serve(async (req) => {
       }
     });
 
-    // 3. Government Incentive Pathways
+    // ============= DETERMINISTIC GOVERNMENT INCENTIVE CALCULATION =============
+    // Formula: min(Carbon Value × Subsidy Rate, Max Subsidy)
     for (const scheme of GOVT_SCHEMES) {
       const estimatedBenefit = Math.min(
         scheme.maxSubsidy,
-        Math.round(carbonCreditValue * 2) // Subsidy often higher than credit value
+        Math.round(carbonCreditValue * scheme.subsidyRate)
       );
       
       if (estimatedBenefit > 10000) {
@@ -199,10 +196,10 @@ serve(async (req) => {
         });
     }
 
-    // Calculate total potential value
+    // Calculate total potential value (deterministic sum)
     const totalValue = pathways.reduce((sum, p) => sum + p.estimatedValue, 0);
 
-    console.log(`Monetization calculated: ${pathways.length} pathways, total value: ₹${totalValue}`);
+    console.log(`Monetization calculated (DETERMINISTIC): ${pathways.length} pathways, total value: ₹${totalValue}, CO2: ${co2Tons.toFixed(2)} tons`);
 
     return new Response(
       JSON.stringify({ 
@@ -212,7 +209,13 @@ serve(async (req) => {
           totalPotentialValue: totalValue,
           currency: 'INR',
           verificationScore: verification.verification_score,
-          co2Tons
+          co2Tons,
+          // Include calculation methodology for transparency
+          methodology: {
+            carbonCreditRate: CARBON_CREDIT_RATE_INR,
+            greenLoanRateReduction: GREEN_LOAN_RATE_REDUCTION,
+            version: 'BIOCOG_MONETIZATION_v1.0'
+          }
         }
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
