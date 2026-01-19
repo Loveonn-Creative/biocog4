@@ -3,51 +3,89 @@
   <!-- Core Pages -->
   <url>
     <loc>https://senseible.earth/</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://senseible.earth/dashboard</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://senseible.earth/verify</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://senseible.earth/reports</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://senseible.earth/monetize</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://senseible.earth/intelligence</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://senseible.earth/pricing</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <!-- Industries Pages (Added for SEO) -->
+  <url>
+    <loc>https://senseible.earth/industries</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/industries/manufacturing</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/industries/logistics</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/industries/agriculture</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/industries/textile</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/industries/construction</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- Climate Intelligence CMS -->
   <url>
     <loc>https://senseible.earth/climate-intelligence</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -145,25 +183,25 @@
   <!-- About Pages -->
   <url>
     <loc>https://senseible.earth/mission</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://senseible.earth/about</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://senseible.earth/principles</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://senseible.earth/contact</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -171,37 +209,43 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://senseible.earth/legal</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://senseible.earth/legal/terms</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://senseible.earth/legal/privacy</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://senseible.earth/legal/dpa</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://senseible.earth/legal/sla</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://senseible.earth/legal/ai-policy</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://senseible.earth/legal/refund</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

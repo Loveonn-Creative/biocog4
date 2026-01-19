@@ -31,7 +31,7 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, context, language = 'English' }: ChatRequest = await req.json();
+    const { messages, context, language = 'English', stream = true }: ChatRequest & { stream?: boolean } = await req.json();
 
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
@@ -139,7 +139,7 @@ Respond in ${language}. Keep responses under 100 words unless the user asks to e
           { role: "system", content: systemPrompt },
           ...messages.slice(-10), // Keep last 10 messages for context
         ],
-        stream: true,
+        stream: stream,
       }),
     });
 
@@ -163,10 +163,18 @@ Respond in ${language}. Keep responses under 100 words unless the user asks to e
       throw new Error(`AI gateway error: ${response.status}`);
     }
 
-    // Stream the response
-    return new Response(response.body, {
-      headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
-    });
+    // Return streaming or non-streaming response based on request
+    if (stream) {
+      return new Response(response.body, {
+        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
+      });
+    } else {
+      // Non-streaming: return JSON directly (for voice queries)
+      const data = await response.json();
+      return new Response(JSON.stringify(data), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
   } catch (error) {
     console.error("Intelligence chat error:", error);

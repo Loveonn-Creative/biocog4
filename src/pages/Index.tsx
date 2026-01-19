@@ -146,8 +146,14 @@ const Index = () => {
     });
   };
 
-  const saveToDatabase = async (extractedData: ExtractedData): Promise<{ documentId: string; emissionId: string } | null> => {
+  const saveToDatabase = async (extractedData: ExtractedData, documentHash?: string, userTier?: string): Promise<{ documentId: string; emissionId: string } | null> => {
     try {
+      // Calculate cache expiration (30 days for paid users)
+      const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier || '');
+      const cacheExpiresAt = isPaidTier && user?.id
+        ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
+        : null;
+
       const { data: docData, error: docError } = await supabase
         .from('documents')
         .insert({
@@ -162,8 +168,11 @@ const Index = () => {
           tax_amount: extractedData.taxAmount,
           subtotal: extractedData.subtotal,
           confidence: extractedData.confidence,
-          raw_ocr_data: extractedData as any
-        })
+          raw_ocr_data: extractedData as any,
+          document_hash: documentHash || null,
+          cached_result: isPaidTier ? extractedData : null,
+          cache_expires_at: cacheExpiresAt,
+        } as any)
         .select()
         .single();
 
@@ -254,7 +263,7 @@ const Index = () => {
       const extractedData: ExtractedData = data.data;
       console.log("Extracted data:", extractedData);
 
-      const savedIds = await saveToDatabase(extractedData);
+      const savedIds = await saveToDatabase(extractedData, data.documentHash, data.userTier);
 
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
@@ -325,12 +334,13 @@ const Index = () => {
     setDocumentType("Processing voice query...");
     
     try {
-      // Send to intelligence-chat for AI response
+      // Send to intelligence-chat with stream: false for voice queries
       const response = await supabase.functions.invoke('intelligence-chat', {
         body: { 
           messages: [{ role: 'user', content: transcript }],
           context: { isHomepage: true, type: 'voice_query' },
-          language: 'English'
+          language: 'English',
+          stream: false  // Non-streaming for voice - returns JSON directly
         }
       });
 
@@ -342,26 +352,34 @@ const Index = () => {
         return;
       }
 
-      // Get the AI response
+      // Get the AI response from OpenAI-compatible format
       const data = response.data;
       if (data) {
-        // Parse streaming response if needed
         let responseText = '';
-        if (typeof data === 'string') {
-          responseText = data;
-        } else if (data.choices?.[0]?.message?.content) {
+        
+        // Handle OpenAI-compatible response format
+        if (data.choices?.[0]?.message?.content) {
           responseText = data.choices[0].message.content;
+        } else if (typeof data === 'string') {
+          responseText = data;
+        } else if (data.error) {
+          toast.error(data.error);
+          return;
         }
 
         if (responseText) {
-          // Show response in toast
+          // Show response in toast (truncated for UI)
           toast.info(responseText.substring(0, 200) + (responseText.length > 200 ? '...' : ''));
           
           // Use browser TTS to speak the response
           if ('speechSynthesis' in window) {
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+            
             const utterance = new SpeechSynthesisUtterance(responseText);
             utterance.lang = 'en-IN';
             utterance.rate = 0.9;
+            utterance.pitch = 1;
             window.speechSynthesis.speak(utterance);
           }
         } else {
