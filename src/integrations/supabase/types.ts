@@ -117,9 +117,12 @@ export type Database = {
       documents: {
         Row: {
           amount: number | null
+          cache_expires_at: string | null
+          cached_result: Json | null
           confidence: number | null
           created_at: string | null
           currency: string | null
+          document_hash: string | null
           document_type: string
           file_url: string | null
           id: string
@@ -134,9 +137,12 @@ export type Database = {
         }
         Insert: {
           amount?: number | null
+          cache_expires_at?: string | null
+          cached_result?: Json | null
           confidence?: number | null
           created_at?: string | null
           currency?: string | null
+          document_hash?: string | null
           document_type: string
           file_url?: string | null
           id?: string
@@ -151,9 +157,12 @@ export type Database = {
         }
         Update: {
           amount?: number | null
+          cache_expires_at?: string | null
+          cached_result?: Json | null
           confidence?: number | null
           created_at?: string | null
           currency?: string | null
+          document_hash?: string | null
           document_type?: string
           file_url?: string | null
           id?: string

@@ -1,9 +1,21 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// ============= DOCUMENT HASH GENERATION (DETERMINISTIC) =============
+async function generateDocumentHash(content: string, mimeType: string): Promise<string> {
+  // Use first 10KB of content for faster hashing while maintaining uniqueness
+  const hashInput = content.substring(0, 10000) + mimeType;
+  const encoder = new TextEncoder();
+  const data = encoder.encode(hashInput);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 // ============= METHODOLOGY VERSION (APPEND-ONLY VERSIONING) =============
 const METHODOLOGY_VERSION = {
@@ -600,7 +612,72 @@ serve(async (req) => {
       );
     }
 
-    console.log('Processing document with deterministic MRV extraction...');
+    // ============= DOCUMENT HASH FOR DUPLICATE DETECTION =============
+    const documentHash = await generateDocumentHash(imageBase64, mimeType || 'image/jpeg');
+    console.log(`Document hash generated: ${documentHash.substring(0, 16)}...`);
+
+    // Check for cached result (paid users only)
+    let userId: string | null = null;
+    let userTier: string = 'guest';
+    const authHeader = req.headers.get('Authorization');
+    
+    if (authHeader) {
+      const supabaseUrl = Deno.env.get('SUPABASE_URL');
+      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+      
+      if (supabaseUrl && supabaseKey) {
+        try {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          const token = authHeader.replace('Bearer ', '');
+          const { data: { user } } = await supabase.auth.getUser(token);
+          
+          if (user) {
+            userId = user.id;
+            
+            // Get user tier from profile
+            const { data: profile } = await supabase
+              .from('profiles')
+              .select('subscription_tier')
+              .eq('id', userId)
+              .single();
+            
+            userTier = profile?.subscription_tier || 'snapshot';
+            
+            // Check for cached result (paid users only - essential, pro, scale)
+            const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
+            
+            if (isPaidTier) {
+              const { data: cached } = await supabase
+                .from('documents')
+                .select('cached_result, cache_expires_at')
+                .eq('document_hash', documentHash)
+                .eq('user_id', userId)
+                .gte('cache_expires_at', new Date().toISOString())
+                .order('created_at', { ascending: false })
+                .limit(1)
+                .single();
+              
+              if (cached?.cached_result) {
+                console.log(`Returning cached result for hash: ${documentHash.substring(0, 16)}...`);
+                return new Response(
+                  JSON.stringify({ 
+                    success: true, 
+                    data: cached.cached_result,
+                    cached: true,
+                    documentHash 
+                  }),
+                  { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+                );
+              }
+            }
+          }
+        } catch (authError) {
+          console.log('Auth check failed, proceeding as guest:', authError);
+        }
+      }
+    }
+
+    console.log(`Processing document for ${userTier} user with deterministic MRV extraction...`);
 
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
@@ -876,7 +953,9 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: true, 
-        data: extractedData 
+        data: extractedData,
+        documentHash,
+        userTier
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );

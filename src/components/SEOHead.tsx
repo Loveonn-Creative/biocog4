@@ -6,6 +6,7 @@ interface SEOHeadProps {
   canonical?: string;
   type?: 'website' | 'article' | 'product';
   image?: string;
+  keywords?: string[];
   article?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -21,12 +22,23 @@ export const SEOHead = ({
   canonical,
   type = 'website',
   image = 'https://senseible.earth/og-image.png',
+  keywords = [],
   article,
   noIndex = false,
 }: SEOHeadProps) => {
   const fullTitle = title.includes('Senseible') ? title : `${title} | Senseible`;
   const siteUrl = 'https://senseible.earth';
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
+  
+  // Base keywords always included (helps with brand misspellings)
+  const baseKeywords = [
+    'senseible', 'sensible', 'senseible.earth', 'senseible carbon',
+    'carbon accounting', 'carbon MRV', 'carbon credits', 'climate finance',
+    'green loans', 'CBAM compliance', 'ESG reporting', 'MSME sustainability'
+  ];
+  
+  // Combine base keywords with page-specific keywords
+  const allKeywords = [...new Set([...baseKeywords, ...keywords])].join(', ');
 
   // Organization schema
   const organizationSchema = {
@@ -113,6 +125,7 @@ export const SEOHead = ({
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
+      <meta name="keywords" content={allKeywords} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
       
       {/* Canonical URL */}
