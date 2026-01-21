@@ -314,26 +314,26 @@ const Reports = () => {
         doc.setFontSize(14);
         doc.setFont('helvetica', 'bold');
         doc.text('Emissions Breakdown by Category', margin, yPos);
-        yPos += 10;
+        yPos += 12;
         
-        // Table header with proper column widths
-        const col1Width = 80;
-        const col2Width = 40;
-        const col3Width = contentWidth - col1Width - col2Width;
+        // Fixed column widths for consistent alignment
+        const col1Width = 90; // Category
+        const col2Width = 35; // Scope
+        const col3Width = 45; // Emissions (right-aligned)
         
-        doc.setFillColor(240, 240, 240);
-        doc.rect(margin, yPos, contentWidth, 10, 'F');
+        // Table header
+        doc.setFillColor(34, 82, 54);
+        doc.rect(margin, yPos, contentWidth, 12, 'F');
         doc.setFontSize(9);
         doc.setFont('helvetica', 'bold');
-        doc.setTextColor(60);
-        doc.text('Category', margin + 5, yPos + 7);
-        doc.text('Scope', margin + col1Width + 5, yPos + 7);
-        doc.text('CO₂ Emissions', margin + col1Width + col2Width + col3Width - 5, yPos + 7, { align: 'right' });
-        yPos += 12;
+        doc.setTextColor(255, 255, 255);
+        doc.text('Category', margin + 5, yPos + 8);
+        doc.text('Scope', margin + col1Width + 10, yPos + 8);
+        doc.text('CO₂ Emissions', margin + contentWidth - 5, yPos + 8, { align: 'right' });
+        yPos += 14;
         
         // Table rows
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(0);
         
         // Group by category
         const categories: Record<string, { scope: number; total: number }> = {};
@@ -344,27 +344,58 @@ const Reports = () => {
           categories[e.category].total += e.co2_kg;
         });
         
-        Object.entries(categories)
+        const sortedCategories = Object.entries(categories)
           .sort((a, b) => b[1].total - a[1].total)
-          .slice(0, 10)
-          .forEach(([category, data], i) => {
-            if (yPos > pageHeight - 40) {
-              doc.addPage();
-              yPos = 20;
-            }
-            
-            if (i % 2 === 0) {
-              doc.setFillColor(250, 250, 250);
-              doc.rect(margin, yPos - 4, contentWidth, 10, 'F');
-            }
-            
-            const catName = category.charAt(0).toUpperCase() + category.slice(1);
-            const truncatedCat = catName.length > 25 ? catName.substring(0, 22) + '...' : catName;
-            doc.text(truncatedCat, margin + 5, yPos + 3);
-            doc.text(`Scope ${data.scope}`, margin + col1Width + 5, yPos + 3);
-            doc.text(formatNumber(data.total), margin + contentWidth - 5, yPos + 3, { align: 'right' });
-            yPos += 10;
-          });
+          .slice(0, 10);
+        
+        sortedCategories.forEach(([category, data], i) => {
+          if (yPos > pageHeight - 40) {
+            doc.addPage();
+            yPos = 20;
+            // Repeat header on new page
+            doc.setFillColor(34, 82, 54);
+            doc.rect(margin, yPos, contentWidth, 12, 'F');
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(255, 255, 255);
+            doc.text('Category', margin + 5, yPos + 8);
+            doc.text('Scope', margin + col1Width + 10, yPos + 8);
+            doc.text('CO₂ Emissions', margin + contentWidth - 5, yPos + 8, { align: 'right' });
+            yPos += 14;
+            doc.setFont('helvetica', 'normal');
+          }
+          
+          // Alternating row background
+          if (i % 2 === 0) {
+            doc.setFillColor(248, 250, 248);
+            doc.rect(margin, yPos - 3, contentWidth, 10, 'F');
+          }
+          
+          // Category name with proper wrapping
+          doc.setTextColor(30, 30, 30);
+          const catName = category.charAt(0).toUpperCase() + category.slice(1);
+          const truncatedCat = catName.length > 30 ? catName.substring(0, 27) + '...' : catName;
+          doc.text(truncatedCat, margin + 5, yPos + 4);
+          
+          // Scope - left aligned in column
+          doc.setTextColor(80, 80, 80);
+          doc.text(`Scope ${data.scope}`, margin + col1Width + 10, yPos + 4);
+          
+          // Emissions - right aligned with proper number formatting
+          doc.setTextColor(30, 30, 30);
+          doc.setFont('helvetica', 'bold');
+          const emissionValue = data.total >= 1000 
+            ? `${(data.total / 1000).toFixed(2)} t` 
+            : `${data.total.toFixed(1)} kg`;
+          doc.text(emissionValue, margin + contentWidth - 5, yPos + 4, { align: 'right' });
+          doc.setFont('helvetica', 'normal');
+          
+          yPos += 10;
+        });
+        
+        // Add subtle bottom border
+        doc.setDrawColor(200, 200, 200);
+        doc.line(margin, yPos, margin + contentWidth, yPos);
       }
       
       // Add new page for recommendations if needed
@@ -580,81 +611,123 @@ const Reports = () => {
       doc.text('has successfully documented and verified their carbon emissions', centerX, bodyY, { align: 'center' });
       doc.text('in accordance with Indian environmental compliance standards and regulations.', centerX, bodyY + 9, { align: 'center' });
       
-      // Verification details box - centered
+      // Verification details box - centered with equal columns
       const boxY = bodyY + 25;
-      const boxWidth = 180;
-      const boxHeight = 50;
+      const boxWidth = 200;
+      const boxHeight = 55;
       const boxX = centerX - boxWidth / 2;
       
-      doc.setFillColor(245, 250, 245);
+      doc.setFillColor(248, 252, 248);
       doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'F');
       doc.setDrawColor(34, 82, 54);
-      doc.setLineWidth(0.3);
+      doc.setLineWidth(0.5);
       doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 5, 5, 'S');
       
-      // Box content - properly aligned
-      const leftCol = boxX + boxWidth * 0.25;
-      const rightCol = boxX + boxWidth * 0.75;
+      // Three equal columns for metrics
+      const colWidth = boxWidth / 3;
+      const col1Center = boxX + colWidth * 0.5;
+      const col2Center = boxX + colWidth * 1.5;
+      const col3Center = boxX + colWidth * 2.5;
       
-      doc.setFontSize(9);
+      // Column dividers
+      doc.setDrawColor(220, 230, 220);
+      doc.setLineWidth(0.3);
+      doc.line(boxX + colWidth, boxY + 8, boxX + colWidth, boxY + boxHeight - 8);
+      doc.line(boxX + colWidth * 2, boxY + 8, boxX + colWidth * 2, boxY + boxHeight - 8);
+      
+      // Column 1: Verified Emissions
+      doc.setFontSize(8);
       doc.setTextColor(100);
-      doc.text('Verified Emissions', leftCol, boxY + 12, { align: 'center' });
-      doc.text('Quality Grade', rightCol, boxY + 12, { align: 'center' });
-      
-      doc.setFontSize(18);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Verified Emissions', col1Center, boxY + 14, { align: 'center' });
+      doc.setFontSize(16);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text(`${formatNumber(summary.total)} CO₂e`, leftCol, boxY + 28, { align: 'center' });
-      doc.text(analysis?.creditEligibility?.qualityGrade || 'D', rightCol, boxY + 28, { align: 'center' });
+      const emissionText = summary.total >= 1000 
+        ? `${(summary.total / 1000).toFixed(2)} t` 
+        : `${summary.total.toFixed(1)} kg`;
+      doc.text(emissionText, col1Center, boxY + 32, { align: 'center' });
+      doc.setFontSize(7);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(120);
+      doc.text('CO₂ equivalent', col1Center, boxY + 42, { align: 'center' });
       
-      doc.setFontSize(9);
+      // Column 2: Quality Grade
+      doc.setFontSize(8);
+      doc.setTextColor(100);
+      doc.text('Quality Grade', col2Center, boxY + 14, { align: 'center' });
+      doc.setFontSize(24);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(34, 82, 54);
+      doc.text(analysis?.creditEligibility?.qualityGrade || 'D', col2Center, boxY + 35, { align: 'center' });
+      
+      // Column 3: Green Score
+      doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(100);
-      doc.text(`Green Score: ${analysis?.greenScore || 0}/100`, centerX, boxY + 42, { align: 'center' });
+      doc.text('Green Score', col3Center, boxY + 14, { align: 'center' });
+      doc.setFontSize(16);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(34, 82, 54);
+      doc.text(`${analysis?.greenScore || 0}`, col3Center, boxY + 32, { align: 'center' });
+      doc.setFontSize(7);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(120);
+      doc.text('out of 100', col3Center, boxY + 42, { align: 'center' });
       
-      // Compliance badges - centered
-      const badgeY = boxY + boxHeight + 10;
+      // Compliance badges - centered with consistent sizing
+      const badgeY = boxY + boxHeight + 12;
       const badges: string[] = [];
       if (latestVerification?.ccts_eligible) badges.push('CCTS Eligible');
       if (latestVerification?.cbam_compliant) badges.push('CBAM Compliant');
       badges.push('GHG Protocol');
+      badges.push('ISO 14064');
       
       doc.setFontSize(8);
-      const badgeWidths = badges.map(b => doc.getTextWidth(b) + 14);
-      const totalBadgeWidth = badgeWidths.reduce((a, b) => a + b, 0) + (badges.length - 1) * 6;
+      doc.setFont('helvetica', 'bold');
+      const badgePadding = 10;
+      const badgeHeight = 16;
+      const badgeGap = 8;
+      const badgeWidths = badges.map(b => doc.getTextWidth(b) + badgePadding * 2);
+      const totalBadgeWidth = badgeWidths.reduce((a, b) => a + b, 0) + (badges.length - 1) * badgeGap;
       let badgeX = centerX - totalBadgeWidth / 2;
       
       badges.forEach((badge, i) => {
         const bw = badgeWidths[i];
         doc.setFillColor(34, 82, 54);
-        doc.roundedRect(badgeX, badgeY, bw, 14, 2, 2, 'F');
+        doc.roundedRect(badgeX, badgeY, bw, badgeHeight, 3, 3, 'F');
         doc.setTextColor(255, 255, 255);
-        doc.text(badge, badgeX + 7, badgeY + 10);
-        badgeX += bw + 6;
+        doc.text(badge, badgeX + bw / 2, badgeY + 11, { align: 'center' });
+        badgeX += bw + badgeGap;
       });
       
       // Certificate hash for tamper-proofing
       const certHash = `SHA256:${crypto.randomUUID().replace(/-/g, '').substring(0, 16).toUpperCase()}`;
-      doc.setFontSize(6);
-      doc.setTextColor(150);
-      doc.text(`Verification Hash: ${certHash}`, centerX, badgeY + 22, { align: 'center' });
+      doc.setFontSize(7);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(140);
+      doc.text(`Verification Hash: ${certHash}`, centerX, badgeY + 26, { align: 'center' });
       
-      // Signature line - centered
-      doc.setDrawColor(150);
-      doc.line(centerX - 50, pageHeight - 50, centerX + 50, pageHeight - 50);
+      // Signature area - properly aligned
+      const sigY = pageHeight - 55;
+      doc.setDrawColor(34, 82, 54);
+      doc.setLineWidth(0.5);
+      doc.line(centerX - 60, sigY, centerX + 60, sigY);
       doc.setFontSize(9);
-      doc.setTextColor(100);
-      doc.text('Authorized Signature', centerX, pageHeight - 43, { align: 'center' });
+      doc.setTextColor(80);
+      doc.text('Authorized Signature', centerX, sigY + 8, { align: 'center' });
       
-      // Certificate ID and date - centered
+      // Certificate metadata - right aligned ID, centered date
       const certId = `CERT-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
       doc.setFontSize(8);
-      doc.setTextColor(120);
-      doc.text(`Certificate ID: ${certId}`, centerX, pageHeight - 28, { align: 'center' });
-      doc.text(`Issued: ${formatDate(new Date().toISOString())} | Methodology: BIOCOG MRV India v1.0`, centerX, pageHeight - 22, { align: 'center' });
+      doc.setTextColor(100);
+      doc.text(`Certificate ID: ${certId}`, pageWidth - 25, pageHeight - 30, { align: 'right' });
+      doc.text(`Issued: ${formatDate(new Date().toISOString())}`, 25, pageHeight - 30, { align: 'left' });
+      doc.text('Methodology: BIOCOG MRV India v1.0', centerX, pageHeight - 22, { align: 'center' });
       
       // Footer disclaimer - centered
       doc.setFontSize(6);
+      doc.setTextColor(130);
       doc.text('Powered by Senseible Carbon Platform | Compliant with Indian carbon regulation standards', centerX, pageHeight - 15, { align: 'center' });
       
       doc.save(`compliance-certificate-${new Date().toISOString().split('T')[0]}.pdf`);
