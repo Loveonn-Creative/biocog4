@@ -121,6 +121,12 @@ const CMSArticle = () => {
             />
           </div>
           
+          {/* Disclaimer */}
+          <p className="text-xs text-muted-foreground/70 mt-8 pt-4 border-t border-border/50 leading-relaxed">
+            This information may be outdated or contain errors at the time of reading. Please verify critical details independently. 
+            Content is reviewed periodically for accuracy but is not guaranteed. For official guidance, consult certified professionals.
+          </p>
+          
           {/* Tags - Clickable */}
           <div className="mt-12 pt-8 border-t border-border">
             <h3 className="text-sm font-medium text-muted-foreground mb-3 flex items-center gap-2">

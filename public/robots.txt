@@ -1,11 +1,29 @@
 # Senseible Carbon Intelligence Platform
 # https://senseible.earth
+# India's first AI-powered carbon MRV for MSMEs
 
 User-agent: *
 Allow: /
+Allow: /climate-intelligence/
+Allow: /industries/
+Allow: /mission
+Allow: /about
+Allow: /pricing
+Allow: /contact
+Allow: /principles
 Disallow: /api/
 Disallow: /auth
 Disallow: /settings
+Disallow: /profile
+Disallow: /subscription
+Disallow: /payment-success
+Disallow: /partner-dashboard
+Disallow: /dashboard
+Disallow: /reports
+Disallow: /verify
+Disallow: /monetize
+Disallow: /mrv-dashboard
+Disallow: /history
 
 # Search Engines
 User-agent: Googlebot
@@ -26,15 +44,19 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI Assistants
+# AI Assistants - Allow knowledge hub and public pages
 User-agent: GPTBot
 Allow: /climate-intelligence/
+Allow: /industries/
 Allow: /mission
 Allow: /about
 Allow: /pricing
+Disallow: /dashboard
+Disallow: /auth
 
 User-agent: Claude-Web
 Allow: /climate-intelligence/
+Allow: /industries/
 Allow: /mission
 Allow: /about
 
@@ -43,6 +65,13 @@ Allow: /
 
 User-agent: CCBot
 Allow: /climate-intelligence/
+
+User-agent: PerplexityBot
+Allow: /climate-intelligence/
+Allow: /industries/
+Allow: /mission
+Allow: /about
+Allow: /pricing
 
 # Sitemap
 Sitemap: https://senseible.earth/sitemap.xml
