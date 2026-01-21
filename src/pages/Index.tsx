@@ -5,6 +5,8 @@ import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
 import { ResultState } from "@/components/ResultState";
 import { OnboardingTour } from "@/components/OnboardingTour";
+import { HomeNavIcons } from "@/components/HomeNavIcons";
+import { UseCaseTyper } from "@/components/UseCaseTyper";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -368,12 +370,21 @@ const Index = () => {
         }
 
         if (responseText) {
+          // Clean response: remove markdown formatting for voice
+          responseText = responseText
+            .replace(/\*\*/g, '')
+            .replace(/\*/g, '')
+            .replace(/_/g, '')
+            .replace(/#{1,6}\s/g, '')
+            .replace(/\n- /g, '. ')
+            .replace(/\n\d+\. /g, '. ')
+            .trim();
+          
           // Show response in toast (truncated for UI)
           toast.info(responseText.substring(0, 200) + (responseText.length > 200 ? '...' : ''));
           
           // Use browser TTS to speak the response
           if ('speechSynthesis' in window) {
-            // Cancel any ongoing speech
             window.speechSynthesis.cancel();
             
             const utterance = new SpeechSynthesisUtterance(responseText);
@@ -414,7 +425,10 @@ const Index = () => {
       
       <CarbonParticles />
       
-      <header className="relative z-20 w-full pt-8 pb-4">
+      {/* Top-right navigation icons */}
+      <HomeNavIcons />
+      
+      <header className="relative z-20 w-full pt-5 pb-2">
         <Link to="/" className="block">
           <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
             senseible
@@ -422,17 +436,17 @@ const Index = () => {
         </Link>
       </header>
 
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-16">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-10">
         {state === "idle" && (
-          <div className="flex flex-col items-center gap-10 animate-fade-in">
-            <div className="flex items-start gap-6 sm:gap-10">
+          <div className="flex flex-col items-center gap-6 animate-fade-in">
+            <div className="flex items-start gap-4 sm:gap-6">
               <DocumentInput 
                 onFileSelect={handleFileSelect} 
                 isProcessing={false} 
               />
               
               <div className="flex items-center h-28 sm:h-32">
-                <div className="w-px h-16 bg-border/60" />
+                <div className="w-px h-14 bg-border/60" />
               </div>
               
               <VoiceInput 
@@ -441,7 +455,10 @@ const Index = () => {
               />
             </div>
             
-            <p className="text-sm sm:text-base text-muted-foreground text-center">
+            {/* Animated use case hints */}
+            <UseCaseTyper />
+            
+            <p className="text-xs text-muted-foreground/60 text-center">
               Upload a document or speak to begin
             </p>
           </div>
@@ -462,8 +479,8 @@ const Index = () => {
         )}
       </main>
       
-      <footer className="relative z-20 w-full pb-8 pt-4">
-        <nav className="flex items-center justify-center gap-6 sm:gap-8 flex-wrap px-4">
+      <footer className="relative z-20 w-full pb-6 pt-3">
+        <nav className="flex items-center justify-center gap-5 sm:gap-7 flex-wrap px-4">
           <Link 
             to="/monetize" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
@@ -471,10 +488,10 @@ const Index = () => {
             Monetize
           </Link>
           <Link 
-            to="/reports" 
+            to="/about" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
-            Reports
+            About
           </Link>
           <Link 
             to="/climate-intelligence" 
