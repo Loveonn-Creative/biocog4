@@ -136,7 +136,7 @@ const CarbonMarketplace = () => {
       
       return matchesSearch && matchesSector && matchesPrice;
     });
-  }, [searchQuery, selectedSector, selectedRegion, selectedPrice]);
+  }, [searchQuery, selectedSector, selectedPrice]);
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
@@ -273,7 +273,6 @@ const CarbonMarketplace = () => {
                       <Button 
                         className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
                         variant="outline"
-                        onClick={() => setSelectedCredit(credit)}
                       >
                         View Details
                         <ArrowRight className="w-4 h-4 ml-2" />
