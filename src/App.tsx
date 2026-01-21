@@ -36,6 +36,8 @@ const Profile = lazy(() => import("./pages/Profile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
 const Industries = lazy(() => import("./pages/Industries"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const CarbonMarketplace = lazy(() => import("./pages/CarbonMarketplace"));
+const CMSAdmin = lazy(() => import("./pages/CMSAdmin"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -93,6 +95,8 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/:industry" element={<Industries />} />
               <Route path="/payment-success" element={<PaymentSuccess />} />
+              <Route path="/marketplace" element={<CarbonMarketplace />} />
+              <Route path="/cms-admin" element={<CMSAdmin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
