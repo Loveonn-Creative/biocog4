@@ -438,7 +438,10 @@ const Index = () => {
 
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-10">
         {state === "idle" && (
-          <div className="flex flex-col items-center gap-6 animate-fade-in">
+          <div className="flex flex-col items-center gap-8 animate-fade-in">
+            {/* Animated use case headline - ABOVE icons for maximum impact */}
+            <UseCaseTyper className="mb-2" />
+            
             <div className="flex items-start gap-4 sm:gap-6">
               <DocumentInput 
                 onFileSelect={handleFileSelect} 
@@ -455,10 +458,7 @@ const Index = () => {
               />
             </div>
             
-            {/* Animated use case hints */}
-            <UseCaseTyper />
-            
-            <p className="text-xs text-muted-foreground/60 text-center">
+            <p className="text-xs text-muted-foreground/60 text-center mt-2">
               Upload a document or speak to begin
             </p>
           </div>
