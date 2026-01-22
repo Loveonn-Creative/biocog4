@@ -84,6 +84,16 @@ const Mission = () => {
             </div>
           </section>
           
+          {/* Founder's Statement - Key Quote */}
+          <section className="mb-12 p-8 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl border border-primary/10">
+            <p className="text-xl sm:text-2xl text-foreground leading-relaxed font-medium">
+              <span className="text-muted-foreground">Senseible exists to replace that infrastructure.</span>{' '}
+              To turn everyday business documents—<span className="text-primary font-semibold">invoices, bills, receipts</span>—into verified carbon signals.{' '}
+              To make compliance automatic. To make <span className="text-primary font-semibold">revenue from carbon</span> accessible to every business, not just large ones.
+            </p>
+            <p className="text-sm text-muted-foreground mt-6 italic">— Founder's Note</p>
+          </section>
+          
           {/* Founder's Voice */}
           <section className="mb-12">
             <p className="text-lg text-foreground leading-relaxed mb-6">

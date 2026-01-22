@@ -597,14 +597,33 @@ const Reports = () => {
       doc.setFontSize(20);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(0);
-      const orgName = user?.email?.split('@')[0] || 'Organization';
-      const displayName = orgName.charAt(0).toUpperCase() + orgName.slice(1);
+      // Get business name from stored profile (not hardcoded)
+      const storedProfile = localStorage.getItem('senseible_company_profile');
+      const companyProfile = storedProfile ? JSON.parse(storedProfile) : null;
+      const businessName = companyProfile?.business_name || 
+                           companyProfile?.businessName || 
+                           user?.email?.split('@')[0] || 
+                           'Your Business';
+      const gstin = companyProfile?.gstin;
+      const sector = companyProfile?.sector;
+      
+      const displayName = businessName.charAt(0).toUpperCase() + businessName.slice(1);
       const maxNameWidth = pageWidth - 80;
       const nameLines = doc.splitTextToSize(displayName, maxNameWidth);
       doc.text(nameLines, centerX, 88, { align: 'center' });
       
-      // Certificate body - centered
-      const bodyY = 88 + (nameLines.length * 8) + 5;
+      // Add GSTIN if available
+      let gstinOffset = 0;
+      if (gstin) {
+        gstinOffset = 8;
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(80);
+        doc.text(`GSTIN: ${gstin}`, centerX, 88 + (nameLines.length * 8) + 3, { align: 'center' });
+      }
+      
+      // Certificate body - centered (adjust for GSTIN if present)
+      const bodyY = 88 + (nameLines.length * 8) + 5 + gstinOffset;
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);

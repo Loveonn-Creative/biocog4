@@ -15,6 +15,9 @@ interface PaymentNotificationRequest {
   currency?: string;
   expiresAt?: string;
   userName?: string;
+  transactionId?: string;
+  invoiceNumber?: string;
+  orderId?: string;
 }
 
 const formatCurrency = (amount: number, currency: string = 'INR') => {
@@ -48,7 +51,28 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
   
   <p>Hi${data.userName ? ` ${data.userName}` : ''},</p>
   
-  <p>Your payment of <strong>${data.amount ? formatCurrency(data.amount, data.currency) : 'the subscription fee'}</strong> has been processed successfully.</p>
+  <p>Your payment has been processed successfully. Here are your invoice details:</p>
+  
+  <!-- Payment Receipt / Invoice Section -->
+  <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin: 20px 0;">
+    <h2 style="margin: 0 0 15px 0; color: #374151; font-size: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px;">Payment Receipt</h2>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+      ${data.invoiceNumber ? `<tr><td style="padding: 8px 0; color: #6b7280;">Invoice No:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${data.invoiceNumber}</td></tr>` : ''}
+      ${data.transactionId ? `<tr><td style="padding: 8px 0; color: #6b7280;">Transaction ID:</td><td style="padding: 8px 0; text-align: right; font-family: monospace; font-size: 12px;">${data.transactionId}</td></tr>` : ''}
+      <tr><td style="padding: 8px 0; color: #6b7280;">Plan:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${getTierName(data.tier)}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">Date:</td><td style="padding: 8px 0; text-align: right;">${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</td></tr>
+      ${data.amount ? `
+        <tr style="border-top: 1px solid #e5e7eb;">
+          <td style="padding: 12px 0 8px 0; color: #374151; font-weight: 600;">Amount Paid:</td>
+          <td style="padding: 12px 0 8px 0; text-align: right; font-weight: 700; font-size: 18px; color: #22c55e;">${formatCurrency(data.amount, data.currency)}</td>
+        </tr>
+        <tr>
+          <td style="padding: 4px 0; color: #9ca3af; font-size: 12px;">GST (18%):</td>
+          <td style="padding: 4px 0; text-align: right; color: #9ca3af; font-size: 12px;">Included</td>
+        </tr>
+      ` : ''}
+    </table>
+  </div>
   
   <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; padding: 20px; margin: 20px 0;">
     <h2 style="margin: 0 0 15px 0; color: #166534;">What's Unlocked:</h2>
@@ -93,6 +117,7 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
   
   <p style="color: #9ca3af; font-size: 12px; text-align: center;">
     Senseible by INSPYR FINNOVATION PRIVATE LIMITED<br>
+    CIN: U74999TG2024PTC182629 | GSTIN: On File<br>
     Turning carbon data into revenue for MSMEs
   </p>
 </body>
