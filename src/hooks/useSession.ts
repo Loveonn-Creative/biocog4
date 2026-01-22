@@ -121,36 +121,33 @@ export function useSession() {
     return () => subscription.unsubscribe();
   }, [initializeSession]);
 
-  // Merge anonymous session data to user account
+  // Securely merge anonymous session data to user account via edge function
   const mergeAnonymousSession = async (sessionId: string, userId: string) => {
     try {
-      // Update documents
-      await supabase
-        .from('documents')
-        .update({ user_id: userId })
-        .eq('session_id', sessionId);
+      // Get device fingerprint for server-side validation
+      const deviceFingerprint = navigator.userAgent;
+      
+      // Call secure server-side merge function
+      const { data, error } = await supabase.functions.invoke('merge-session', {
+        body: {
+          sessionId,
+          deviceFingerprint,
+        },
+      });
 
-      // Update emissions
-      await supabase
-        .from('emissions')
-        .update({ user_id: userId })
-        .eq('session_id', sessionId);
+      if (error) {
+        console.error('Session merge failed:', error);
+        // Don't expose error details to prevent information leakage
+        return;
+      }
 
-      // Update verifications
-      await supabase
-        .from('carbon_verifications')
-        .update({ user_id: userId })
-        .eq('session_id', sessionId);
-
-      // Update reports
-      await supabase
-        .from('reports')
-        .update({ user_id: userId })
-        .eq('session_id', sessionId);
-
-      // Clear anonymous session from storage
-      localStorage.removeItem(SESSION_STORAGE_KEY);
-      console.log('Session data merged to user account');
+      if (data?.success) {
+        // Clear anonymous session from storage only after successful merge
+        localStorage.removeItem(SESSION_STORAGE_KEY);
+        console.log('Session data merged securely:', data.merged);
+      } else {
+        console.error('Session merge returned unsuccessful');
+      }
     } catch (error) {
       console.error('Failed to merge session:', error);
     }
