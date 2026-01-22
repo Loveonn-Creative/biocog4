@@ -102,19 +102,27 @@ export const SEOHead = ({
     "@type": "Article",
     "headline": title,
     "description": description,
+    "image": image,
     "datePublished": article.publishedTime,
     "dateModified": article.modifiedTime || article.publishedTime,
     "author": {
       "@type": "Organization",
-      "name": "Senseible"
+      "name": article.author || "Senseible",
+      "url": siteUrl
     },
     "publisher": {
       "@type": "Organization",
       "name": "Senseible",
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`
+        "url": `${siteUrl}/logo.png`,
+        "width": 600,
+        "height": 60
       }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
     },
     "keywords": article.tags?.join(', ')
   } : null;
