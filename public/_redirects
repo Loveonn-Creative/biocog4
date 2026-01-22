@@ -1,1 +1,14 @@
-/*    /index.html   200
+# SPA Fallback - All routes serve index.html for client-side routing
+# This ensures React Router handles all paths including:
+# - /industries/:industry
+# - /climate-intelligence/:slug
+# - /legal/:slug
+# - Any other dynamic routes
+
+# Handle trailing slashes consistently
+/industries/*  /index.html  200
+/climate-intelligence/*  /index.html  200
+/legal/*  /index.html  200
+
+# Catch-all fallback for SPA routing
+/*  /index.html  200
