@@ -262,7 +262,9 @@ export type Database = {
           partner_details: Json | null
           partner_name: string | null
           pathway_type: string
+          session_id: string | null
           status: string | null
+          user_id: string | null
           verification_id: string | null
         }
         Insert: {
@@ -275,7 +277,9 @@ export type Database = {
           partner_details?: Json | null
           partner_name?: string | null
           pathway_type: string
+          session_id?: string | null
           status?: string | null
+          user_id?: string | null
           verification_id?: string | null
         }
         Update: {
@@ -288,7 +292,9 @@ export type Database = {
           partner_details?: Json | null
           partner_name?: string | null
           pathway_type?: string
+          session_id?: string | null
           status?: string | null
+          user_id?: string | null
           verification_id?: string | null
         }
         Relationships: [
