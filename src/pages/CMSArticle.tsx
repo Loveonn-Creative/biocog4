@@ -45,15 +45,32 @@ const CMSArticle = () => {
     navigate(`/climate-intelligence?category=${encodeURIComponent(article.category)}`);
   };
 
+  // Generate dynamic OG image URL using a service or fallback
+  const articleDescription = article.content
+    .substring(0, 155)
+    .replace(/\*\*/g, '')
+    .replace(/\n/g, ' ')
+    .trim() + '...';
+  
+  // Generate OG image URL - uses encoded title for dynamic image generation
+  const ogImageUrl = `https://og.senseible.earth/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.subtitle)}`;
+  
+  // Fallback to default if OG service unavailable
+  const defaultOgImage = 'https://storage.googleapis.com/gpt-engineer-file-uploads/VJmZI1VJuERoWC9J7JGR2gwtszU2/social-images/social-1768999036305-Climate finance shouldn\'t take months. Senseible turns bills into verified climate assets in seconds, not months. MSME data into verified carbon scores for climate finance, ESG lending, and faster credit access..png';
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEOHead 
         title={article.title}
-        description={article.content.substring(0, 160).replace(/\*\*/g, '')}
+        description={articleDescription}
         canonical={`/climate-intelligence/${slug}`}
         type="article"
+        image={defaultOgImage}
+        keywords={article.tags}
         article={{
           publishedTime: article.createdAt,
+          modifiedTime: article.createdAt,
+          author: 'Senseible',
           tags: article.tags
         }}
       />
