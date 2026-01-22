@@ -5,9 +5,6 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// ElevenLabs Agent ID - configured for Senseible ESG Head
-const ELEVENLABS_AGENT_ID = Deno.env.get('ELEVENLABS_AGENT_ID') || 'default-agent';
-
 serve(async (req) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
@@ -16,16 +13,28 @@ serve(async (req) => {
 
   try {
     const ELEVENLABS_API_KEY = Deno.env.get('ELEVENLABS_API_KEY');
+    const ELEVENLABS_AGENT_ID = Deno.env.get('ELEVENLABS_AGENT_ID');
     
     if (!ELEVENLABS_API_KEY) {
       console.error('ELEVENLABS_API_KEY is not configured');
       return new Response(
-        JSON.stringify({ error: 'Voice AI not configured' }),
+        JSON.stringify({ error: 'Voice AI not configured. Please add ELEVENLABS_API_KEY secret.' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    // Parse request for any custom context
+    if (!ELEVENLABS_AGENT_ID) {
+      console.error('ELEVENLABS_AGENT_ID is not configured');
+      return new Response(
+        JSON.stringify({ 
+          error: 'Voice agent not configured. Please add ELEVENLABS_AGENT_ID secret.',
+          details: 'Create a Conversational AI agent in ElevenLabs and add its ID as a secret.'
+        }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Parse request for any custom context (optional override)
     let agentId = ELEVENLABS_AGENT_ID;
     try {
       const body = await req.json();
@@ -33,7 +42,7 @@ serve(async (req) => {
         agentId = body.agentId;
       }
     } catch {
-      // No body or invalid JSON, use defaults
+      // No body or invalid JSON, use configured agent ID
     }
 
     console.log('Requesting ElevenLabs conversation token for agent:', agentId);

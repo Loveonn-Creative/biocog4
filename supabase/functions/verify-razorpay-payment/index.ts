@@ -112,7 +112,34 @@ serve(async (req) => {
 
     console.log('Payment verified and subscription activated for user:', userId);
 
-    // Send payment success email notification
+    // Fetch actual order details from Razorpay for accurate amount
+    let orderAmount = 0;
+    let orderCurrency = 'INR';
+    const RAZORPAY_KEY_ID = Deno.env.get('RAZORPAY_KEY_ID');
+    
+    try {
+      const orderResponse = await fetch(
+        `https://api.razorpay.com/v1/orders/${razorpay_order_id}`,
+        {
+          headers: {
+            'Authorization': 'Basic ' + btoa(`${RAZORPAY_KEY_ID}:${RAZORPAY_KEY_SECRET}`)
+          }
+        }
+      );
+      if (orderResponse.ok) {
+        const orderData = await orderResponse.json();
+        orderAmount = orderData.amount || 0;
+        orderCurrency = orderData.currency || 'INR';
+        console.log('Fetched order details:', { amount: orderAmount, currency: orderCurrency });
+      }
+    } catch (orderError) {
+      console.error('Failed to fetch order details:', orderError);
+    }
+
+    // Generate invoice number
+    const invoiceNumber = `INV-${Date.now().toString(36).toUpperCase()}`;
+
+    // Send payment success email notification with invoice details
     try {
       // Get user email from auth
       const { data: userData } = await supabase.auth.admin.getUserById(userId);
@@ -127,10 +154,14 @@ serve(async (req) => {
             type: 'payment_success',
             email: userData.user.email,
             tier,
-            amount: 0, // Amount would come from order details
+            amount: orderAmount,
+            currency: orderCurrency,
+            transactionId: razorpay_payment_id,
+            invoiceNumber,
+            orderId: razorpay_order_id,
           }),
         });
-        console.log('Payment notification email triggered');
+        console.log('Payment notification email triggered with invoice details');
       }
     } catch (emailError) {
       console.error('Failed to send payment notification:', emailError);
