@@ -458,18 +458,24 @@ export type Database = {
           created_at: string | null
           device_fingerprint: string | null
           id: string
+          ip_hash: string | null
+          is_active: boolean | null
           last_active: string | null
         }
         Insert: {
           created_at?: string | null
           device_fingerprint?: string | null
           id?: string
+          ip_hash?: string | null
+          is_active?: boolean | null
           last_active?: string | null
         }
         Update: {
           created_at?: string | null
           device_fingerprint?: string | null
           id?: string
+          ip_hash?: string | null
+          is_active?: boolean | null
           last_active?: string | null
         }
         Relationships: []
@@ -545,6 +551,19 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      create_secure_session: {
+        Args: { fingerprint: string; ip_hash?: string }
+        Returns: string
+      }
+      get_own_session: {
+        Args: { fingerprint: string; session_uuid: string }
+        Returns: {
+          created_at: string
+          id: string
+          is_active: boolean
+          last_active: string
+        }[]
+      }
       get_session_by_fingerprint: {
         Args: { fingerprint: string }
         Returns: string
@@ -557,6 +576,14 @@ export type Database = {
         Returns: boolean
       }
       owns_session: {
+        Args: { fingerprint: string; session_uuid: string }
+        Returns: boolean
+      }
+      update_session_activity: {
+        Args: { fingerprint: string; session_uuid: string }
+        Returns: boolean
+      }
+      validate_session_access: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
       }

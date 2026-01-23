@@ -12,6 +12,11 @@ interface SessionState {
   isAuthenticated: boolean;
 }
 
+// Get device fingerprint for secure session validation
+const getDeviceFingerprint = (): string => {
+  return navigator.userAgent;
+};
+
 export function useSession() {
   const [state, setState] = useState<SessionState>({
     sessionId: null,
@@ -21,7 +26,7 @@ export function useSession() {
     isAuthenticated: false
   });
 
-  // Initialize or get existing anonymous session
+  // Initialize or get existing anonymous session using secure RPC functions
   const initializeSession = useCallback(async () => {
     try {
       // Check for authenticated user first
@@ -40,41 +45,43 @@ export function useSession() {
 
       // Check for existing anonymous session
       let sessionId = localStorage.getItem(SESSION_STORAGE_KEY);
+      const fingerprint = getDeviceFingerprint();
       
       if (sessionId) {
-        // Verify session exists in DB
-        const { data: existingSession } = await supabase
-          .from('sessions')
-          .select('id')
-          .eq('id', sessionId)
-          .single();
+        // Verify session exists and belongs to this device via secure RPC
+        const { data: sessionData, error: sessionError } = await supabase
+          .rpc('get_own_session', {
+            session_uuid: sessionId,
+            fingerprint: fingerprint
+          });
         
-        if (!existingSession) {
+        if (sessionError || !sessionData || sessionData.length === 0) {
+          // Session doesn't exist or doesn't belong to this device
           sessionId = null;
           localStorage.removeItem(SESSION_STORAGE_KEY);
+        } else {
+          // Update session activity securely
+          await supabase.rpc('update_session_activity', {
+            session_uuid: sessionId,
+            fingerprint: fingerprint
+          });
         }
       }
 
-      // Create new session if needed
+      // Create new session if needed using secure RPC
       if (!sessionId) {
-        const { data: newSession, error } = await supabase
-          .from('sessions')
-          .insert({ device_fingerprint: navigator.userAgent })
-          .select()
-          .single();
+        const { data: newSessionId, error } = await supabase
+          .rpc('create_secure_session', {
+            fingerprint: fingerprint,
+            ip_hash: null // Could add IP hashing for extra security
+          });
 
         if (error) {
           console.error('Failed to create session:', error);
-        } else {
-          sessionId = newSession.id;
+        } else if (newSessionId) {
+          sessionId = newSessionId;
           localStorage.setItem(SESSION_STORAGE_KEY, sessionId);
         }
-      } else {
-        // Update last_active for existing session
-        await supabase
-          .from('sessions')
-          .update({ last_active: new Date().toISOString() })
-          .eq('id', sessionId);
       }
 
       setState({
@@ -122,10 +129,10 @@ export function useSession() {
   }, [initializeSession]);
 
   // Securely merge anonymous session data to user account via edge function
-  const mergeAnonymousSession = async (sessionId: string, userId: string) => {
+  const mergeAnonymousSession = async (sessionId: string, _userId: string) => {
     try {
       // Get device fingerprint for server-side validation
-      const deviceFingerprint = navigator.userAgent;
+      const deviceFingerprint = getDeviceFingerprint();
       
       // Call secure server-side merge function
       const { data, error } = await supabase.functions.invoke('merge-session', {
