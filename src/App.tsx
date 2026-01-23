@@ -41,6 +41,8 @@ const CMSAdmin = lazy(() => import("./pages/CMSAdmin"));
 const Billing = lazy(() => import("./pages/Billing"));
 const Team = lazy(() => import("./pages/Team"));
 const Partners = lazy(() => import("./pages/Partners"));
+const AcceptInvite = lazy(() => import("./pages/AcceptInvite"));
+const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -103,6 +105,8 @@ const App = () => (
               <Route path="/billing" element={<Billing />} />
               <Route path="/team" element={<Team />} />
               <Route path="/partners" element={<Partners />} />
+              <Route path="/accept-invite" element={<AcceptInvite />} />
+              <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
