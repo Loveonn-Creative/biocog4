@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { User, Settings, CreditCard, LogOut, ChevronDown, Crown } from 'lucide-react';
+import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -43,6 +43,8 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
     ? businessName.slice(0, 2).toUpperCase()
     : email.slice(0, 2).toUpperCase();
 
+  const canManageTeam = tier === 'pro' || tier === 'scale';
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
@@ -82,6 +84,15 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             Settings
           </Link>
         </DropdownMenuItem>
+        {canManageTeam && (
+          <DropdownMenuItem asChild>
+            <Link to="/team" className="flex items-center gap-2 cursor-pointer">
+              <Users className="w-4 h-4" />
+              Team
+            </Link>
+          </DropdownMenuItem>
+        )}
+        <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <Link to="/subscription" className="flex items-center gap-2 cursor-pointer">
             <CreditCard className="w-4 h-4" />
@@ -89,6 +100,12 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             {tier === 'snapshot' && (
               <Badge variant="secondary" className="ml-auto text-[10px]">Upgrade</Badge>
             )}
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/billing" className="flex items-center gap-2 cursor-pointer">
+            <Receipt className="w-4 h-4" />
+            Billing
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
