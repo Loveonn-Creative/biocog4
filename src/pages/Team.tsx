@@ -166,6 +166,31 @@ const Team = () => {
       
       if (error) throw error;
 
+      // Send invitation email via edge function
+      try {
+        await fetch(
+          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-team-invitation`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+            },
+            body: JSON.stringify({
+              invitationId: token,
+              email: inviteEmail,
+              role: inviteRole,
+              organizationName: activeOrganization.name,
+              inviterName: user?.email?.split('@')[0],
+              token,
+            }),
+          }
+        );
+      } catch (emailErr) {
+        console.error('Failed to send invitation email:', emailErr);
+        // Continue anyway - invitation was created
+      }
+
       toast.success(`Invitation sent to ${inviteEmail}`);
       setInviteDialogOpen(false);
       setInviteEmail('');

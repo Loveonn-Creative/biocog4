@@ -139,33 +139,33 @@ serve(async (req) => {
     // Generate invoice number
     const invoiceNumber = `INV-${Date.now().toString(36).toUpperCase()}`;
 
-    // Send payment success email notification with invoice details
+    // Generate and send invoice PDF via edge function
     try {
       // Get user email from auth
       const { data: userData } = await supabase.auth.admin.getUserById(userId);
       if (userData?.user?.email) {
-        await fetch(`${SUPABASE_URL}/functions/v1/send-payment-notification`, {
+        // Trigger invoice generation
+        await fetch(`${SUPABASE_URL}/functions/v1/generate-invoice-pdf`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
           },
           body: JSON.stringify({
-            type: 'payment_success',
+            userId,
             email: userData.user.email,
             tier,
             amount: orderAmount,
             currency: orderCurrency,
             transactionId: razorpay_payment_id,
-            invoiceNumber,
             orderId: razorpay_order_id,
           }),
         });
-        console.log('Payment notification email triggered with invoice details');
+        console.log('Invoice generation triggered for:', userData.user.email);
       }
-    } catch (emailError) {
-      console.error('Failed to send payment notification:', emailError);
-      // Don't fail the payment verification if email fails
+    } catch (invoiceError) {
+      console.error('Failed to generate invoice:', invoiceError);
+      // Don't fail the payment verification if invoice fails
     }
 
     return new Response(
