@@ -2,6 +2,7 @@ import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { usePersonalization } from '@/hooks/usePersonalization';
 import { useNavigate, Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -17,29 +18,14 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
-import { Trash2, Loader2, Sparkles, Zap, Crown, Building2, ArrowRight } from 'lucide-react';
+import { Trash2, Loader2, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
-
-const tierIcons = {
-  snapshot: Sparkles,
-  essential: Zap,
-  basic: Zap,
-  pro: Crown,
-  scale: Building2,
-};
-
-const tierLabels: Record<string, string> = {
-  snapshot: 'Snapshot',
-  essential: 'Essential',
-  basic: 'Essential',
-  pro: 'Pro',
-  scale: 'Scale',
-};
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, sessionId, isLoading: sessionLoading } = useSession();
-  const { tier, isPremium } = usePremiumStatus();
+  const { tier } = usePremiumStatus();
+  const { greeting, tierLabel, tierEmoji, isPersonalized } = usePersonalization();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -125,18 +111,15 @@ const Dashboard = () => {
           <div className="space-y-1">
             <div className="flex items-center gap-3">
               <h1 className="text-2xl font-semibold text-foreground">
-                {user ? `Welcome back${summary.total > 0 ? '!' : ', let\'s get started'}` : 'Carbon Dashboard'}
+                {isPersonalized ? greeting : user ? 'Welcome back!' : 'Carbon Dashboard'}
               </h1>
               {user && (
                 <Badge 
                   variant="secondary" 
                   className="flex items-center gap-1 text-xs"
                 >
-                  {(() => {
-                    const TierIcon = tierIcons[tier] || Sparkles;
-                    return <TierIcon className="w-3 h-3" />;
-                  })()}
-                  {tierLabels[tier] || 'Snapshot'}
+                  <span>{tierEmoji}</span>
+                  {tierLabel}
                 </Badge>
               )}
             </div>

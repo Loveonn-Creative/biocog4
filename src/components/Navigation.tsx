@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
+import { usePersonalization } from '@/hooks/usePersonalization';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { UserMenu } from '@/components/UserMenu';
-import { LogOut, User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain } from 'lucide-react';
+import { ContextSwitcher } from '@/components/ContextSwitcher';
+import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain } from 'lucide-react';
 import senseibleLogo from '@/assets/senseible-logo.png';
 
 interface NavigationProps {
@@ -24,6 +26,7 @@ const navItems = [
 export const Navigation = ({ onSignOut }: NavigationProps) => {
   const location = useLocation();
   const { user, isAuthenticated, signOut } = useSession();
+  const { greeting, isPersonalized } = usePersonalization();
   const [businessName, setBusinessName] = useState<string>('');
 
   // Fetch profile for business name
@@ -55,9 +58,17 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
       {/* Desktop Header */}
       <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/" className="flex items-center gap-3">
+              <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
+            </Link>
+            {/* Personalized Greeting - Desktop only */}
+            {isAuthenticated && isPersonalized && (
+              <span className="hidden lg:inline-block text-sm text-muted-foreground">
+                {greeting}
+              </span>
+            )}
+          </div>
           
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
@@ -76,6 +87,9 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
           </nav>
 
           <div className="flex items-center gap-3">
+            {/* Context Switcher - for users with multiple contexts */}
+            {isAuthenticated && <ContextSwitcher />}
+            
             {isAuthenticated && user ? (
               <UserMenu 
                 email={user.email || ''} 

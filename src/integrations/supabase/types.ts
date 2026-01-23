@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      billing_addresses: {
+        Row: {
+          address_line_1: string | null
+          address_line_2: string | null
+          city: string | null
+          country: string | null
+          created_at: string | null
+          gstin: string | null
+          id: string
+          is_default: boolean | null
+          name: string
+          postal_code: string | null
+          state: string | null
+          updated_at: string | null
+          use_company_address: boolean | null
+          user_id: string
+        }
+        Insert: {
+          address_line_1?: string | null
+          address_line_2?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          gstin?: string | null
+          id?: string
+          is_default?: boolean | null
+          name: string
+          postal_code?: string | null
+          state?: string | null
+          updated_at?: string | null
+          use_company_address?: boolean | null
+          user_id: string
+        }
+        Update: {
+          address_line_1?: string | null
+          address_line_2?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          gstin?: string | null
+          id?: string
+          is_default?: boolean | null
+          name?: string
+          postal_code?: string | null
+          state?: string | null
+          updated_at?: string | null
+          use_company_address?: boolean | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       carbon_verifications: {
         Row: {
           ai_analysis: Json | null
@@ -23,6 +74,7 @@ export type Database = {
           emission_ids: string[]
           greenwashing_risk: string | null
           id: string
+          organization_id: string | null
           session_id: string | null
           total_co2_kg: number
           user_id: string | null
@@ -38,6 +90,7 @@ export type Database = {
           emission_ids: string[]
           greenwashing_risk?: string | null
           id?: string
+          organization_id?: string | null
           session_id?: string | null
           total_co2_kg: number
           user_id?: string | null
@@ -53,6 +106,7 @@ export type Database = {
           emission_ids?: string[]
           greenwashing_risk?: string | null
           id?: string
+          organization_id?: string | null
           session_id?: string | null
           total_co2_kg?: number
           user_id?: string | null
@@ -61,6 +115,13 @@ export type Database = {
           verified_at?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "carbon_verifications_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "carbon_verifications_session_id_fkey"
             columns: ["session_id"]
@@ -128,6 +189,7 @@ export type Database = {
           id: string
           invoice_date: string | null
           invoice_number: string | null
+          organization_id: string | null
           raw_ocr_data: Json | null
           session_id: string | null
           subtotal: number | null
@@ -148,6 +210,7 @@ export type Database = {
           id?: string
           invoice_date?: string | null
           invoice_number?: string | null
+          organization_id?: string | null
           raw_ocr_data?: Json | null
           session_id?: string | null
           subtotal?: number | null
@@ -168,6 +231,7 @@ export type Database = {
           id?: string
           invoice_date?: string | null
           invoice_number?: string | null
+          organization_id?: string | null
           raw_ocr_data?: Json | null
           session_id?: string | null
           subtotal?: number | null
@@ -176,6 +240,13 @@ export type Database = {
           vendor?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "documents_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "documents_session_id_fkey"
             columns: ["session_id"]
@@ -196,6 +267,7 @@ export type Database = {
           document_id: string | null
           emission_factor: number | null
           id: string
+          organization_id: string | null
           scope: number
           session_id: string | null
           user_id: string | null
@@ -212,6 +284,7 @@ export type Database = {
           document_id?: string | null
           emission_factor?: number | null
           id?: string
+          organization_id?: string | null
           scope: number
           session_id?: string | null
           user_id?: string | null
@@ -228,6 +301,7 @@ export type Database = {
           document_id?: string | null
           emission_factor?: number | null
           id?: string
+          organization_id?: string | null
           scope?: number
           session_id?: string | null
           user_id?: string | null
@@ -243,10 +317,161 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "emissions_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "emissions_session_id_fkey"
             columns: ["session_id"]
             isOneToOne: false
             referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      invoices: {
+        Row: {
+          amount: number
+          billing_address_id: string | null
+          created_at: string | null
+          currency: string | null
+          due_date: string | null
+          id: string
+          invoice_number: string
+          paid_at: string | null
+          pdf_url: string | null
+          razorpay_payment_id: string | null
+          status: string | null
+          subscription_id: string | null
+          tax_amount: number | null
+          total_amount: number
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          billing_address_id?: string | null
+          created_at?: string | null
+          currency?: string | null
+          due_date?: string | null
+          id?: string
+          invoice_number: string
+          paid_at?: string | null
+          pdf_url?: string | null
+          razorpay_payment_id?: string | null
+          status?: string | null
+          subscription_id?: string | null
+          tax_amount?: number | null
+          total_amount: number
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          billing_address_id?: string | null
+          created_at?: string | null
+          currency?: string | null
+          due_date?: string | null
+          id?: string
+          invoice_number?: string
+          paid_at?: string | null
+          pdf_url?: string | null
+          razorpay_payment_id?: string | null
+          status?: string | null
+          subscription_id?: string | null
+          tax_amount?: number | null
+          total_amount?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "invoices_billing_address_id_fkey"
+            columns: ["billing_address_id"]
+            isOneToOne: false
+            referencedRelation: "billing_addresses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "invoices_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      marketplace_listings: {
+        Row: {
+          created_at: string | null
+          credits_available: number
+          currency: string | null
+          expires_at: string | null
+          id: string
+          is_active: boolean | null
+          listed_at: string | null
+          methodology: string | null
+          msme_hash: string
+          organization_id: string | null
+          price_per_tonne: number | null
+          region: string | null
+          sdg_alignment: number[] | null
+          sector: string | null
+          verification_id: string | null
+          verification_score: number | null
+          vintage: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          credits_available: number
+          currency?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          listed_at?: string | null
+          methodology?: string | null
+          msme_hash: string
+          organization_id?: string | null
+          price_per_tonne?: number | null
+          region?: string | null
+          sdg_alignment?: number[] | null
+          sector?: string | null
+          verification_id?: string | null
+          verification_score?: number | null
+          vintage?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          credits_available?: number
+          currency?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          listed_at?: string | null
+          methodology?: string | null
+          msme_hash?: string
+          organization_id?: string | null
+          price_per_tonne?: number | null
+          region?: string | null
+          sdg_alignment?: number[] | null
+          sector?: string | null
+          verification_id?: string | null
+          verification_score?: number | null
+          vintage?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "marketplace_listings_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "marketplace_listings_verification_id_fkey"
+            columns: ["verification_id"]
+            isOneToOne: false
+            referencedRelation: "carbon_verifications"
             referencedColumns: ["id"]
           },
         ]
@@ -306,6 +531,217 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      organization_members: {
+        Row: {
+          created_at: string | null
+          id: string
+          invite_expires_at: string | null
+          invite_token: string | null
+          invited_by: string | null
+          invited_email: string | null
+          joined_at: string | null
+          organization_id: string
+          role: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          invite_expires_at?: string | null
+          invite_token?: string | null
+          invited_by?: string | null
+          invited_email?: string | null
+          joined_at?: string | null
+          organization_id: string
+          role?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          invite_expires_at?: string | null
+          invite_token?: string | null
+          invited_by?: string | null
+          invited_email?: string | null
+          joined_at?: string | null
+          organization_id?: string
+          role?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organization_members_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organizations: {
+        Row: {
+          created_at: string | null
+          id: string
+          logo_url: string | null
+          max_members: number | null
+          metadata: Json | null
+          name: string
+          owner_id: string | null
+          subscription_tier: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          logo_url?: string | null
+          max_members?: number | null
+          metadata?: Json | null
+          name: string
+          owner_id?: string | null
+          subscription_tier?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          logo_url?: string | null
+          max_members?: number | null
+          metadata?: Json | null
+          name?: string
+          owner_id?: string | null
+          subscription_tier?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      partner_access: {
+        Row: {
+          expires_at: string | null
+          granted_at: string | null
+          granted_by: string | null
+          id: string
+          partner_id: string
+          role: string | null
+          user_id: string
+        }
+        Insert: {
+          expires_at?: string | null
+          granted_at?: string | null
+          granted_by?: string | null
+          id?: string
+          partner_id: string
+          role?: string | null
+          user_id: string
+        }
+        Update: {
+          expires_at?: string | null
+          granted_at?: string | null
+          granted_by?: string | null
+          id?: string
+          partner_id?: string
+          role?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "partner_access_partner_id_fkey"
+            columns: ["partner_id"]
+            isOneToOne: false
+            referencedRelation: "partner_organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      partner_organizations: {
+        Row: {
+          contact_email: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          logo_url: string | null
+          metadata: Json | null
+          name: string
+          supported_currencies: string[] | null
+          supported_languages: string[] | null
+          type: string
+          updated_at: string | null
+          verified: boolean | null
+          website: string | null
+        }
+        Insert: {
+          contact_email?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          logo_url?: string | null
+          metadata?: Json | null
+          name: string
+          supported_currencies?: string[] | null
+          supported_languages?: string[] | null
+          type: string
+          updated_at?: string | null
+          verified?: boolean | null
+          website?: string | null
+        }
+        Update: {
+          contact_email?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          logo_url?: string | null
+          metadata?: Json | null
+          name?: string
+          supported_currencies?: string[] | null
+          supported_languages?: string[] | null
+          type?: string
+          updated_at?: string | null
+          verified?: boolean | null
+          website?: string | null
+        }
+        Relationships: []
+      }
+      payment_methods: {
+        Row: {
+          card_brand: string | null
+          card_last_four: string | null
+          card_network: string | null
+          created_at: string | null
+          expires_month: number | null
+          expires_year: number | null
+          id: string
+          is_autopay_enabled: boolean | null
+          is_default: boolean | null
+          razorpay_token_id: string
+          user_id: string
+        }
+        Insert: {
+          card_brand?: string | null
+          card_last_four?: string | null
+          card_network?: string | null
+          created_at?: string | null
+          expires_month?: number | null
+          expires_year?: number | null
+          id?: string
+          is_autopay_enabled?: boolean | null
+          is_default?: boolean | null
+          razorpay_token_id: string
+          user_id: string
+        }
+        Update: {
+          card_brand?: string | null
+          card_last_four?: string | null
+          card_network?: string | null
+          created_at?: string | null
+          expires_month?: number | null
+          expires_year?: number | null
+          id?: string
+          is_autopay_enabled?: boolean | null
+          is_default?: boolean | null
+          razorpay_token_id?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       profiles: {
         Row: {
@@ -368,6 +804,7 @@ export type Database = {
         Row: {
           created_at: string | null
           id: string
+          organization_id: string | null
           pdf_url: string | null
           period_end: string | null
           period_start: string | null
@@ -383,6 +820,7 @@ export type Database = {
         Insert: {
           created_at?: string | null
           id?: string
+          organization_id?: string | null
           pdf_url?: string | null
           period_end?: string | null
           period_start?: string | null
@@ -398,6 +836,7 @@ export type Database = {
         Update: {
           created_at?: string | null
           id?: string
+          organization_id?: string | null
           pdf_url?: string | null
           period_end?: string | null
           period_start?: string | null
@@ -411,6 +850,13 @@ export type Database = {
           user_id?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "reports_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "reports_session_id_fkey"
             columns: ["session_id"]
@@ -528,6 +974,83 @@ export type Database = {
         }
         Relationships: []
       }
+      team_invitations: {
+        Row: {
+          accepted_at: string | null
+          created_at: string | null
+          email: string
+          expires_at: string
+          id: string
+          invited_by: string
+          organization_id: string
+          role: string | null
+          token: string
+        }
+        Insert: {
+          accepted_at?: string | null
+          created_at?: string | null
+          email: string
+          expires_at?: string
+          id?: string
+          invited_by: string
+          organization_id: string
+          role?: string | null
+          token: string
+        }
+        Update: {
+          accepted_at?: string | null
+          created_at?: string | null
+          email?: string
+          expires_at?: string
+          id?: string
+          invited_by?: string
+          organization_id?: string
+          role?: string | null
+          token?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_invitations_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_contexts: {
+        Row: {
+          context_id: string
+          context_name: string | null
+          context_type: string
+          created_at: string | null
+          id: string
+          is_active: boolean | null
+          last_accessed_at: string | null
+          user_id: string
+        }
+        Insert: {
+          context_id: string
+          context_name?: string | null
+          context_type: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_accessed_at?: string | null
+          user_id: string
+        }
+        Update: {
+          context_id?: string
+          context_name?: string | null
+          context_type?: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_accessed_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
@@ -555,6 +1078,14 @@ export type Database = {
         Args: { fingerprint: string; ip_hash?: string }
         Returns: string
       }
+      get_active_context: {
+        Args: never
+        Returns: {
+          context_id: string
+          context_name: string
+          context_type: string
+        }[]
+      }
       get_own_session: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: {
@@ -568,6 +1099,10 @@ export type Database = {
         Args: { fingerprint: string }
         Returns: string
       }
+      has_partner_access: {
+        Args: { _partner_id: string; _user_id: string }
+        Returns: boolean
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -575,8 +1110,24 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_org_admin: {
+        Args: { _org_id: string; _user_id: string }
+        Returns: boolean
+      }
+      is_org_member: {
+        Args: { _org_id: string; _user_id: string }
+        Returns: boolean
+      }
+      is_partner_admin: {
+        Args: { _partner_id: string; _user_id: string }
+        Returns: boolean
+      }
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
+        Returns: boolean
+      }
+      switch_user_context: {
+        Args: { p_context_id: string; p_context_type: string }
         Returns: boolean
       }
       update_session_activity: {
