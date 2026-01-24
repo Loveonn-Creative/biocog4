@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import { useSession } from "@/hooks/useSession";
 
 const socialLinks = [
   { 
@@ -44,6 +45,28 @@ const footerLinks = {
 };
 
 export const Footer = () => {
+  const { isAuthenticated, isLoading } = useSession();
+
+  // Derive authenticated links - show Dashboard instead of Sign In
+  const getAuthAwareLinks = () => {
+    if (isLoading) {
+      return footerLinks.platform;
+    }
+    
+    if (isAuthenticated) {
+      return [
+        { name: 'Dashboard', path: '/dashboard' },
+        { name: 'Climate Intelligence', path: '/climate-intelligence' },
+        { name: 'Pricing', path: '/pricing' },
+      ];
+    }
+    
+    return [
+      ...footerLinks.platform,
+      { name: 'Sign In', path: '/auth' },
+    ];
+  };
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="container max-w-6xl mx-auto px-6 py-12">
@@ -74,11 +97,11 @@ export const Footer = () => {
             </div>
           </div>
           
-          {/* Platform */}
+          {/* Platform - Auth-aware */}
           <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Platform</h4>
             <ul className="space-y-2">
-              {footerLinks.platform.map((link) => (
+              {getAuthAwareLinks().map((link) => (
                 <li key={link.path}>
                   <Link 
                     to={link.path}

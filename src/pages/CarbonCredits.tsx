@@ -1,4 +1,5 @@
 import { MinimalNav } from "@/components/MinimalNav";
+import { SecondaryFooter } from "@/components/SecondaryFooter";
 import { ArrowLeft, ArrowRight, Leaf, TrendingUp, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -119,6 +120,8 @@ const CarbonCredits = () => {
           </Link>
         </div>
       </main>
+      
+      <SecondaryFooter />
     </div>
   );
 };

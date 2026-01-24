@@ -1,4 +1,5 @@
 import { MinimalNav } from "@/components/MinimalNav";
+import { SecondaryFooter } from "@/components/SecondaryFooter";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -88,6 +89,8 @@ const Principles = () => {
           </Link>
         </div>
       </main>
+      
+      <SecondaryFooter />
     </div>
   );
 };
