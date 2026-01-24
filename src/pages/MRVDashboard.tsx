@@ -66,6 +66,31 @@ const MRVDashboard = () => {
     fetchVerifications();
   }, [sessionId, user?.id]);
 
+  // Real-time subscription for verifications
+  useEffect(() => {
+    if (!user?.id && !sessionId) return;
+
+    const channel = supabase
+      .channel('verifications-realtime')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'carbon_verifications',
+        },
+        (payload) => {
+          console.log('Verification update received:', payload.eventType);
+          fetchVerifications();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [sessionId, user?.id]);
+
   const fetchVerifications = async () => {
     try {
       let query = supabase

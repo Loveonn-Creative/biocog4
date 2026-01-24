@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Leaf } from "lucide-react";
+import { Check, ArrowRight, Leaf, AlertTriangle } from "lucide-react";
 
 interface ExtractedData {
   documentType: string;
@@ -9,7 +9,9 @@ interface ExtractedData {
   currency?: string;
   emissionCategory?: string;
   estimatedCO2Kg?: number;
+  totalCO2Kg?: number;
   confidence: number;
+  validationFlags?: string[];
 }
 
 interface ResultStateProps {
@@ -21,6 +23,8 @@ interface ResultStateProps {
 }
 
 export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }: ResultStateProps) => {
+  const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
+  const co2Value = extractedData?.totalCO2Kg ?? extractedData?.estimatedCO2Kg ?? 0;
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -63,6 +67,21 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         )}
       </div>
 
+      {/* Validation Warnings */}
+      {hasWarnings && (
+        <div className="w-full p-3 rounded-lg bg-warning/10 border border-warning/30 space-y-2">
+          <div className="flex items-center gap-2 text-sm font-medium text-warning">
+            <AlertTriangle className="w-4 h-4" />
+            <span>Data Extraction Warnings</span>
+          </div>
+          <ul className="text-xs text-muted-foreground space-y-1 pl-6">
+            {extractedData?.validationFlags?.map((flag, i) => (
+              <li key={i} className="list-disc">{flag}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Extracted data summary */}
       {extractedData && (
         <div className="w-full p-4 rounded-xl bg-secondary/50 border border-border/50 space-y-3">
@@ -84,10 +103,10 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
                 <p className="font-medium text-foreground capitalize">{extractedData.emissionCategory}</p>
               </div>
             )}
-            {extractedData.estimatedCO2Kg !== undefined && extractedData.estimatedCO2Kg > 0 && (
+            {co2Value > 0 && (
               <div>
                 <p className="text-muted-foreground text-xs">CO₂ Emissions</p>
-                <p className="font-medium text-success">{extractedData.estimatedCO2Kg.toFixed(2)} kg</p>
+                <p className="font-medium text-success">{co2Value.toFixed(2)} kg</p>
               </div>
             )}
             {extractedData.amount && (
@@ -98,15 +117,15 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
             )}
           </div>
           
-          {extractedData.confidence && (
+          {extractedData.confidence !== undefined && (
             <div className="pt-2 border-t border-border/50">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-muted-foreground">Confidence</span>
                 <span className={`font-medium ${
-                  extractedData.confidence >= 0.8 ? 'text-success' : 
-                  extractedData.confidence >= 0.5 ? 'text-yellow-600' : 'text-destructive'
+                  extractedData.confidence >= 80 ? 'text-success' : 
+                  extractedData.confidence >= 50 ? 'text-yellow-600' : 'text-destructive'
                 }`}>
-                  {Math.round(extractedData.confidence * 100)}%
+                  {Math.round(extractedData.confidence)}%
                 </span>
               </div>
             </div>

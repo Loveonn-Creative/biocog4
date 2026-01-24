@@ -265,7 +265,33 @@ const Index = () => {
       const extractedData: ExtractedData = data.data;
       console.log("Extracted data:", extractedData);
 
+      // Validation warnings for low-confidence or missing data
+      const warnings: string[] = [];
+      if (extractedData.confidence < 50) {
+        warnings.push('Low confidence extraction - please verify the data');
+      }
+      if (!extractedData.amount && !extractedData.totalCO2Kg && !extractedData.estimatedCO2Kg) {
+        warnings.push('Amount or CO₂ data could not be extracted');
+      }
+      if (!extractedData.vendor) {
+        warnings.push('Vendor name not detected');
+      }
+      if (!extractedData.date) {
+        warnings.push('Invoice date not detected');
+      }
+      
+      // Show warnings to user
+      if (warnings.length > 0) {
+        warnings.forEach(w => toast.warning(w, { duration: 4000 }));
+      }
+
       const savedIds = await saveToDatabase(extractedData, data.documentHash, data.userTier);
+
+      if (savedIds) {
+        toast.success('Data saved successfully!', { duration: 2000 });
+      } else {
+        toast.error('Failed to save data. Please try again.');
+      }
 
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
@@ -281,7 +307,10 @@ const Index = () => {
         type: isCompliance ? "compliance" : "revenue",
         amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
         documentType: formatDocumentType(extractedData.documentType, emissionCat),
-        extractedData,
+        extractedData: {
+          ...extractedData,
+          validationFlags: warnings,
+        },
         documentId: savedIds?.documentId,
         emissionId: savedIds?.emissionId
       };
@@ -292,6 +321,8 @@ const Index = () => {
 
       if (calculatedCO2 > 0) {
         toast.success(`Extracted ${calculatedCO2.toFixed(2)} kg CO₂ from ${extractedData.documentType}`);
+      } else if (warnings.length === 0) {
+        toast.info('Document processed. No carbon emissions detected.');
       }
 
     } catch (err) {

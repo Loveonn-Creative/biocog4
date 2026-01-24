@@ -118,9 +118,15 @@ const Intelligence = () => {
     }
   }, [processVoiceCommand]);
 
+  const handleVoiceError = useCallback((error: string) => {
+    console.error('Voice error:', error);
+    // Error is already shown via toast in the hook
+  }, []);
+
   const { startListening, stopListening, isListening, isSupported: voiceSupported } = useVoiceInput({
     language,
     onResult: handleVoiceResult,
+    onError: handleVoiceError,
   });
 
   // Calculate context from emissions - different for guest vs authenticated

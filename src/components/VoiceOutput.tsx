@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { Language } from '@/lib/languages';
+import { toast } from 'sonner';
 
 interface VoiceOutputProps {
   language: Language;
@@ -13,6 +14,7 @@ export const useVoiceOutput = ({ language, onSpeakingChange }: VoiceOutputProps)
   const speak = useCallback((text: string) => {
     if (!('speechSynthesis' in window)) {
       console.warn('Speech synthesis not supported');
+      toast.error('Speech synthesis not supported in this browser');
       return;
     }
 
@@ -43,7 +45,8 @@ export const useVoiceOutput = ({ language, onSpeakingChange }: VoiceOutputProps)
       onSpeakingChange?.(false);
     };
 
-    utterance.onerror = () => {
+    utterance.onerror = (event) => {
+      console.error('Speech synthesis error:', event.error);
       setIsSpeaking(false);
       onSpeakingChange?.(false);
     };
@@ -72,17 +75,28 @@ export const useVoiceOutput = ({ language, onSpeakingChange }: VoiceOutputProps)
   return { speak, stop, isSpeaking };
 };
 
-// Hook for voice input (speech recognition)
+// Hook for voice input (speech recognition) with improved error handling and feedback
 interface VoiceInputHookProps {
   language: Language;
   onResult: (transcript: string) => void;
   onListeningChange?: (isListening: boolean) => void;
+  onError?: (error: string) => void;
 }
 
-export const useVoiceInput = ({ language, onResult, onListeningChange }: VoiceInputHookProps) => {
+export const useVoiceInput = ({ language, onResult, onListeningChange, onError }: VoiceInputHookProps) => {
   const [isListening, setIsListening] = useState(false);
   const [isSupported, setIsSupported] = useState(true);
   const recognitionRef = useRef<any>(null);
+  const onResultRef = useRef(onResult);
+  const onListeningChangeRef = useRef(onListeningChange);
+  const onErrorRef = useRef(onError);
+
+  // Keep refs updated to avoid stale closures
+  useEffect(() => {
+    onResultRef.current = onResult;
+    onListeningChangeRef.current = onListeningChange;
+    onErrorRef.current = onError;
+  }, [onResult, onListeningChange, onError]);
 
   useEffect(() => {
     // Check for browser support
@@ -98,19 +112,36 @@ export const useVoiceInput = ({ language, onResult, onListeningChange }: VoiceIn
     recognition.lang = language.speechCode;
 
     recognition.onstart = () => {
+      console.log('Voice recognition started');
       setIsListening(true);
-      onListeningChange?.(true);
+      onListeningChangeRef.current?.(true);
+      toast.info('🎤 Listening...', { duration: 2000 });
     };
 
     recognition.onend = () => {
+      console.log('Voice recognition ended');
       setIsListening(false);
-      onListeningChange?.(false);
+      onListeningChangeRef.current?.(false);
     };
 
     recognition.onerror = (event: any) => {
       console.error('Speech recognition error:', event.error);
       setIsListening(false);
-      onListeningChange?.(false);
+      onListeningChangeRef.current?.(false);
+      
+      // User-friendly error messages
+      const errorMessages: Record<string, string> = {
+        'no-speech': 'No speech detected. Please try again.',
+        'audio-capture': 'Microphone not available. Please check permissions.',
+        'not-allowed': 'Microphone access denied. Please enable in browser settings.',
+        'network': 'Network error. Please check your connection.',
+        'aborted': 'Voice recognition was cancelled.',
+        'service-not-allowed': 'Voice service not available. Try again later.',
+      };
+      
+      const message = errorMessages[event.error] || `Voice error: ${event.error}`;
+      toast.error(message);
+      onErrorRef.current?.(message);
     };
 
     recognition.onresult = (event: any) => {
@@ -121,7 +152,13 @@ export const useVoiceInput = ({ language, onResult, onListeningChange }: VoiceIn
       
       // Check if this is a final result
       if (results[results.length - 1].isFinal) {
-        onResult(transcript);
+        console.log('Final transcript:', transcript);
+        if (transcript.trim()) {
+          toast.success(`Heard: "${transcript.slice(0, 50)}${transcript.length > 50 ? '...' : ''}"`, { duration: 2000 });
+          onResultRef.current(transcript);
+        } else {
+          toast.warning('No speech detected. Please try again.');
+        }
         recognition.stop();
       }
     };
@@ -131,7 +168,7 @@ export const useVoiceInput = ({ language, onResult, onListeningChange }: VoiceIn
     return () => {
       recognition.stop();
     };
-  }, [language.speechCode, onResult, onListeningChange]);
+  }, [language.speechCode]);
 
   // Update language when it changes
   useEffect(() => {
@@ -141,18 +178,25 @@ export const useVoiceInput = ({ language, onResult, onListeningChange }: VoiceIn
   }, [language.speechCode]);
 
   const startListening = useCallback(() => {
+    if (!isSupported) {
+      toast.error('Voice recognition is not supported in this browser');
+      return;
+    }
+    
     if (recognitionRef.current && !isListening) {
       try {
         recognitionRef.current.start();
       } catch (error) {
         console.error('Failed to start recognition:', error);
+        toast.error('Failed to start voice recognition. Please try again.');
       }
     }
-  }, [isListening]);
+  }, [isListening, isSupported]);
 
   const stopListening = useCallback(() => {
     if (recognitionRef.current && isListening) {
       recognitionRef.current.stop();
+      toast.info('Stopped listening');
     }
   }, [isListening]);
 
