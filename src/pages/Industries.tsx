@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
+import { SecondaryFooter } from '@/components/SecondaryFooter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -521,7 +521,7 @@ const Industries = () => {
         </section>
       </main>
 
-      <Footer />
+      <SecondaryFooter />
     </div>
   );
 };
