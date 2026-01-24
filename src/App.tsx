@@ -41,6 +41,7 @@ const CMSAdmin = lazy(() => import("./pages/CMSAdmin"));
 const Billing = lazy(() => import("./pages/Billing"));
 const Team = lazy(() => import("./pages/Team"));
 const Partners = lazy(() => import("./pages/Partners"));
+const Admin = lazy(() => import("./pages/Admin"));
 const AcceptInvite = lazy(() => import("./pages/AcceptInvite"));
 const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
 
@@ -107,6 +108,7 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/accept-invite" element={<AcceptInvite />} />
               <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

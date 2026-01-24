@@ -361,6 +361,34 @@ serve(async (req) => {
     const invoiceHTML = generateInvoiceHTML(invoiceData, invoiceNumber);
     const emailHTML = generateInvoiceEmailHTML(invoiceData, invoiceNumber);
 
+    // Store invoice HTML in storage bucket for download
+    let pdfUrl: string | null = null;
+    try {
+      const htmlBlob = new Blob([invoiceHTML], { type: 'text/html' });
+      const fileName = `invoices/${data.userId}/${invoiceNumber}.html`;
+      
+      const { error: uploadError } = await supabase.storage
+        .from('documents')
+        .upload(fileName, htmlBlob, {
+          contentType: 'text/html',
+          upsert: true,
+        });
+
+      if (!uploadError) {
+        // Create signed URL valid for 1 year
+        const { data: signedData } = await supabase.storage
+          .from('documents')
+          .createSignedUrl(fileName, 365 * 24 * 60 * 60);
+        
+        pdfUrl = signedData?.signedUrl || null;
+        console.log('Invoice stored with signed URL');
+      } else {
+        console.error('Failed to upload invoice:', uploadError);
+      }
+    } catch (storageError) {
+      console.error('Storage error:', storageError);
+    }
+
     // Store invoice in database
     const { error: invoiceError } = await supabase
       .from('invoices')
@@ -374,6 +402,7 @@ serve(async (req) => {
         status: 'paid',
         paid_at: new Date().toISOString(),
         razorpay_payment_id: data.transactionId,
+        pdf_url: pdfUrl,
       });
 
     if (invoiceError) {
