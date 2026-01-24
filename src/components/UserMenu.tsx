@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users } from 'lucide-react';
+import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -12,6 +12,8 @@ import {
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { supabase } from '@/integrations/supabase/client';
+import { useSession } from '@/hooks/useSession';
 
 interface UserMenuProps {
   email: string;
@@ -37,7 +39,23 @@ const tierLabels: Record<string, string> = {
 
 export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
   const { tier, isPremium } = usePremiumStatus();
+  const { user } = useSession();
   const [open, setOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const checkAdmin = async () => {
+      if (!user?.id) return;
+      const { data } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      setIsAdmin(!!data);
+    };
+    checkAdmin();
+  }, [user?.id]);
 
   const initials = businessName 
     ? businessName.slice(0, 2).toUpperCase()
@@ -108,8 +126,19 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             Billing
           </Link>
         </DropdownMenuItem>
+        {isAdmin && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem asChild>
+              <Link to="/admin" className="flex items-center gap-2 cursor-pointer text-primary">
+                <Shield className="w-4 h-4" />
+                Admin Dashboard
+              </Link>
+            </DropdownMenuItem>
+          </>
+        )}
         <DropdownMenuSeparator />
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onClick={onSignOut}
           className="text-destructive focus:text-destructive cursor-pointer"
         >
