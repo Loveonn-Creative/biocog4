@@ -130,6 +130,32 @@ export function useEmissions() {
     fetchEmissions();
   }, [fetchEmissions]);
 
+  // Real-time subscription for emissions updates
+  useEffect(() => {
+    if (sessionLoading) return;
+    if (!user && !sessionId) return;
+
+    const channel = supabase
+      .channel('emissions-realtime')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'emissions',
+        },
+        (payload) => {
+          console.log('Emissions update received:', payload.eventType);
+          fetchEmissions();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [sessionId, user, sessionLoading, fetchEmissions]);
+
   const saveEmission = async (emissionData: { scope: number; category: string; co2_kg: number; document_id?: string; activity_data?: number; activity_unit?: string; emission_factor?: number; data_quality?: string }): Promise<Emission | null> => {
     try {
       const insertData = {

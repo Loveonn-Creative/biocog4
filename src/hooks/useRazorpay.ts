@@ -59,6 +59,8 @@ export const useRazorpay = () => {
     setIsLoading(true);
 
     try {
+      console.log('[Razorpay] Creating order for tier:', tier, 'user:', userId);
+      
       // Create order
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-razorpay-order`,
@@ -72,12 +74,23 @@ export const useRazorpay = () => {
         }
       );
 
+      const responseData = await response.json();
+      console.log('[Razorpay] Order response:', response.status, responseData);
+
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to create order');
+        const errorMsg = responseData.error || 'Failed to create order';
+        console.error('[Razorpay] Order creation failed:', errorMsg);
+        throw new Error(errorMsg);
       }
 
-      const { orderId, amount, currency, keyId, planName } = await response.json();
+      const { orderId, amount, currency, keyId, planName } = responseData;
+      
+      if (!orderId || !keyId) {
+        console.error('[Razorpay] Missing order data:', { orderId, keyId });
+        throw new Error('Invalid order response from server');
+      }
+      
+      console.log('[Razorpay] Order created:', { orderId, amount, currency, planName });
 
       // Initialize Razorpay checkout
       const options = {
@@ -88,7 +101,15 @@ export const useRazorpay = () => {
         description: planName,
         order_id: orderId,
         handler: async (response: any) => {
+          console.log('[Razorpay] Payment completed, verifying...', {
+            order_id: response.razorpay_order_id,
+            payment_id: response.razorpay_payment_id,
+          });
+          
           try {
+            // Show processing toast
+            toast.loading('Verifying payment...', { id: 'payment-verify' });
+            
             // Verify payment
             const verifyResponse = await fetch(
               `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/verify-razorpay-payment`,
@@ -108,19 +129,25 @@ export const useRazorpay = () => {
               }
             );
 
+            const verifyData = await verifyResponse.json();
+            console.log('[Razorpay] Verification response:', verifyResponse.status, verifyData);
+            
+            toast.dismiss('payment-verify');
+
             if (!verifyResponse.ok) {
-              throw new Error('Payment verification failed');
+              console.error('[Razorpay] Verification failed:', verifyData);
+              throw new Error(verifyData.error || 'Payment verification failed');
             }
 
-            toast.success('Payment successful! Welcome to ' + planName);
+            toast.success('🎉 Payment successful! Welcome to ' + planName, { duration: 5000 });
             
             // Update local storage for immediate effect
             localStorage.setItem('biocog_tier', tier);
             
             onSuccess(tier);
           } catch (error) {
-            console.error('Verification error:', error);
-            toast.error('Payment verification failed. Please contact support.');
+            console.error('[Razorpay] Verification error:', error);
+            toast.error('Payment verification failed. Please contact support at billing@senseible.earth');
             onFailure?.('Verification failed');
           }
         },
