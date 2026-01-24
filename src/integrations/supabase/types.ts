@@ -653,6 +653,45 @@ export type Database = {
           },
         ]
       }
+      partner_applications: {
+        Row: {
+          contact_email: string
+          created_at: string | null
+          id: string
+          organization_name: string
+          organization_type: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string | null
+          user_id: string
+          website: string | null
+        }
+        Insert: {
+          contact_email: string
+          created_at?: string | null
+          id?: string
+          organization_name: string
+          organization_type: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string | null
+          user_id: string
+          website?: string | null
+        }
+        Update: {
+          contact_email?: string
+          created_at?: string | null
+          id?: string
+          organization_name?: string
+          organization_type?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string | null
+          user_id?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
       partner_organizations: {
         Row: {
           contact_email: string | null

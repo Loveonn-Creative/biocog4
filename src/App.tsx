@@ -101,7 +101,7 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/:industry" element={<Industries />} />
               <Route path="/payment-success" element={<PaymentSuccess />} />
-              <Route path="/marketplace" element={<CarbonMarketplace />} />
+              <Route path="/marketplace" element={<PartnerMarketplace />} />
               <Route path="/cms-admin" element={<CMSAdmin />} />
               <Route path="/billing" element={<Billing />} />
               <Route path="/team" element={<Team />} />

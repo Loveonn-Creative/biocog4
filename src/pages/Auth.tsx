@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2, Eye, EyeOff } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2, Eye, EyeOff, Globe, Briefcase } from "lucide-react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
+import { Badge } from "@/components/ui/badge";
 
 type AuthMode = "signin" | "signup" | "forgot";
 
 const Auth = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const isPartnerMode = searchParams.get('mode') === 'partner';
+  
   const { isAuthenticated, isLoading: sessionLoading } = useSession();
-  const [mode, setMode] = useState<AuthMode>("signin");
+  const [mode, setMode] = useState<AuthMode>(isPartnerMode ? "signup" : "signin");
   const [isLoading, setIsLoading] = useState(false);
   
   // Form fields
@@ -23,6 +27,10 @@ const Auth = () => {
   const [businessName, setBusinessName] = useState("");
   const [gstin, setGstin] = useState("");
   const [location, setLocation] = useState("");
+  
+  // Partner-specific fields
+  const [organizationType, setOrganizationType] = useState("");
+  const [website, setWebsite] = useState("");
 
   // Redirect if already authenticated
   useEffect(() => {
@@ -127,6 +135,28 @@ const Auth = () => {
             console.error('Profile update error:', profileError);
           }
           
+          // If partner mode, create partner application
+          if (isPartnerMode && organizationType) {
+            const { error: applicationError } = await supabase
+              .from('partner_applications')
+              .insert({
+                user_id: data.user.id,
+                organization_name: businessName || 'Unnamed Organization',
+                organization_type: organizationType,
+                contact_email: email,
+                website: website || null,
+                status: 'pending'
+              });
+            
+            if (applicationError) {
+              console.error('Partner application error:', applicationError);
+            } else {
+              toast.success("Partner application submitted! We'll review and contact you soon.");
+              navigate('/dashboard');
+              return;
+            }
+          }
+          
           toast.success("Account created! Redirecting to dashboard...");
           navigate('/dashboard');
         }
@@ -180,14 +210,23 @@ const Auth = () => {
         </Link>
         
         <div className="animate-fade-in">
+          {isPartnerMode && (
+            <Badge variant="secondary" className="mb-4">
+              <Briefcase className="w-3 h-3 mr-1" />
+              Partner Registration
+            </Badge>
+          )}
+          
           <h1 className="text-3xl font-semibold tracking-tight text-foreground mb-2">
             {mode === "signin" && "Sign in"}
-            {mode === "signup" && "Create account"}
+            {mode === "signup" && (isPartnerMode ? "Become a Partner" : "Create account")}
             {mode === "forgot" && "Reset password"}
           </h1>
           <p className="text-muted-foreground mb-8">
             {mode === "signin" && "Access your carbon data and saved reports."}
-            {mode === "signup" && "Start tracking and monetizing your carbon data."}
+            {mode === "signup" && (isPartnerMode 
+              ? "Register to access the partner marketplace and carbon credit purchasing." 
+              : "Start tracking and monetizing your carbon data.")}
             {mode === "forgot" && "We'll send you a reset link."}
           </p>
           
@@ -237,6 +276,39 @@ const Auth = () => {
                     className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>
+                
+                {/* Partner-specific fields */}
+                {isPartnerMode && (
+                  <>
+                    <div className="relative">
+                      <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <select
+                        value={organizationType}
+                        onChange={(e) => setOrganizationType(e.target.value)}
+                        required={isPartnerMode}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
+                      >
+                        <option value="">Select organization type</option>
+                        <option value="bank">Bank / Financial Institution</option>
+                        <option value="carbon_buyer">Carbon Credit Buyer</option>
+                        <option value="erp">ERP / Accounting Platform</option>
+                        <option value="climate_finance">Climate Finance Provider</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    
+                    <div className="relative">
+                      <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <input
+                        type="url"
+                        placeholder="Website (optional)"
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      />
+                    </div>
+                  </>
+                )}
               </>
             )}
             

@@ -132,7 +132,7 @@ const Partners = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Button size="lg" asChild>
-              <Link to="/contact">
+              <Link to="/auth?mode=partner">
                 Become a Partner
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>

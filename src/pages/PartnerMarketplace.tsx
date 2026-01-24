@@ -85,7 +85,7 @@ const SDG_GOALS: Record<number, { name: string; color: string }> = {
 };
 
 const PartnerMarketplace = () => {
-  const { isAuthenticated } = useSession();
+  const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
   const [listings, setListings] = useState<MarketplaceListing[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -95,6 +95,56 @@ const PartnerMarketplace = () => {
   const [minScore, setMinScore] = useState(0);
   const [selectedListing, setSelectedListing] = useState<MarketplaceListing | null>(null);
   const [purchaseAmount, setPurchaseAmount] = useState(1);
+  
+  // Role-based access
+  const [isPartner, setIsPartner] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAccess, setCheckingAccess] = useState(true);
+  
+  // Check user role/context
+  useEffect(() => {
+    const checkAccess = async () => {
+      if (!user?.id) {
+        setCheckingAccess(false);
+        return;
+      }
+      
+      try {
+        // Check for admin role
+        const { data: adminData } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', user.id)
+          .eq('role', 'admin');
+        
+        const hasAdmin = adminData && adminData.length > 0;
+        setIsAdmin(hasAdmin);
+        
+        // Check for partner context
+        const { data: contextData } = await supabase
+          .from('user_contexts')
+          .select('context_type')
+          .eq('user_id', user.id)
+          .eq('context_type', 'partner');
+        
+        const hasPartner = contextData && contextData.length > 0;
+        setIsPartner(hasPartner);
+        
+      } catch (err) {
+        console.error('Error checking access:', err);
+      } finally {
+        setCheckingAccess(false);
+      }
+    };
+    
+    if (isAuthenticated) {
+      checkAccess();
+    } else if (!sessionLoading) {
+      setCheckingAccess(false);
+    }
+  }, [user?.id, isAuthenticated, sessionLoading]);
+  
+  const canPurchase = isPartner || isAdmin;
 
   useEffect(() => {
     fetchListings();
@@ -191,12 +241,16 @@ const PartnerMarketplace = () => {
       toast.info('Please sign in to purchase carbon credits');
       return;
     }
+    if (!canPurchase) {
+      toast.info('Partner access required to purchase. Apply to become a partner.');
+      return;
+    }
     setSelectedListing(listing);
     setPurchaseAmount(1);
   };
 
   const handleSubmitPurchase = () => {
-    if (!selectedListing) return;
+    if (!selectedListing || !canPurchase) return;
     
     // In real implementation, this would create a purchase intent
     toast.success('Purchase request submitted! Our team will contact you shortly.');
@@ -216,7 +270,7 @@ const PartnerMarketplace = () => {
       <SEOHead
         title="Carbon Credit Marketplace — Verified MSME Credits"
         description="Browse and purchase verified carbon credits directly from Indian MSMEs. Transparent pricing, MRV-backed verification, and SDG-aligned projects."
-        canonical="/partner-marketplace"
+        canonical="/marketplace"
         keywords={['carbon credits', 'buy carbon credits', 'MSME carbon', 'India carbon market', 'verified credits']}
       />
       
@@ -224,6 +278,24 @@ const PartnerMarketplace = () => {
       <Navigation onSignOut={() => {}} />
 
       <main className="relative z-10 container mx-auto px-4 py-8">
+        {/* Partner CTA for non-partners */}
+        {!checkingAccess && isAuthenticated && !canPurchase && (
+          <Card className="mb-6 border-primary/20 bg-primary/5">
+            <CardContent className="py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <Info className="w-5 h-5 text-primary" />
+                <p className="text-sm">
+                  <span className="font-medium">Want to purchase credits directly?</span>{' '}
+                  <span className="text-muted-foreground">Become a partner to unlock full marketplace access.</span>
+                </p>
+              </div>
+              <Button size="sm" asChild>
+                <Link to="/partners">Apply Now</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+        
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
@@ -414,10 +486,19 @@ const PartnerMarketplace = () => {
                     <p className="text-xs text-muted-foreground">
                       MSME #{listing.msme_hash?.slice(0, 8)}
                     </p>
-                    <Button size="sm" onClick={() => handlePurchaseIntent(listing)}>
-                      <ShoppingCart className="w-4 h-4 mr-1" />
-                      Purchase
-                    </Button>
+                    {canPurchase ? (
+                      <Button size="sm" onClick={() => handlePurchaseIntent(listing)}>
+                        <ShoppingCart className="w-4 h-4 mr-1" />
+                        Purchase
+                      </Button>
+                    ) : (
+                      <Button size="sm" variant="outline" asChild>
+                        <Link to="/partners">
+                          <Info className="w-4 h-4 mr-1" />
+                          Contact
+                        </Link>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
