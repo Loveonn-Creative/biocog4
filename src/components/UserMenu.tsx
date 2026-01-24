@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users, Shield } from 'lucide-react';
+import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users, Shield, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -133,6 +133,12 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
               <Link to="/admin" className="flex items-center gap-2 cursor-pointer text-primary">
                 <Shield className="w-4 h-4" />
                 Admin Dashboard
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/cms-admin" className="flex items-center gap-2 cursor-pointer">
+                <FileText className="w-4 h-4" />
+                CMS Admin
               </Link>
             </DropdownMenuItem>
           </>

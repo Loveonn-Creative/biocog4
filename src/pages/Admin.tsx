@@ -12,16 +12,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Switch } from '@/components/ui/switch';
 import { 
   Shield, 
-  LayoutDashboard, 
   Leaf, 
-  ShoppingCart, 
   Users,
   Loader2,
   Lock,
   TrendingUp,
-  ToggleRight,
   ExternalLink,
-  RefreshCw
+  RefreshCw,
+  CheckCircle2,
+  XCircle,
+  Building2,
+  Clock
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -37,11 +38,13 @@ interface MarketplaceListing {
   msme_hash: string;
 }
 
-interface PurchaseRequest {
+interface PartnerApplication {
   id: string;
-  listing_id: string;
   user_id: string;
-  quantity: number;
+  organization_name: string;
+  organization_type: string;
+  contact_email: string;
+  website: string | null;
   status: string;
   created_at: string;
 }
@@ -53,6 +56,8 @@ interface DashboardStats {
   avgPrice: number;
   totalUsers: number;
   recentVerifications: number;
+  pendingApplications: number;
+  approvedPartners: number;
 }
 
 const Admin = () => {
@@ -61,6 +66,7 @@ const Admin = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState<MarketplaceListing[]>([]);
+  const [applications, setApplications] = useState<PartnerApplication[]>([]);
   const [stats, setStats] = useState<DashboardStats | null>(null);
 
   useEffect(() => {
@@ -75,7 +81,6 @@ const Admin = () => {
     if (!user?.id) return;
     
     try {
-      // Check if user has admin role
       const { data: roles } = await supabase
         .from('user_roles')
         .select('role')
@@ -85,7 +90,7 @@ const Admin = () => {
 
       if (roles) {
         setIsAdmin(true);
-        await Promise.all([fetchListings(), fetchStats()]);
+        await Promise.all([fetchListings(), fetchStats(), fetchApplications()]);
       } else {
         setIsAdmin(false);
       }
@@ -108,23 +113,41 @@ const Admin = () => {
     }
   };
 
+  const fetchApplications = async () => {
+    const { data, error } = await supabase
+      .from('partner_applications')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (!error && data) {
+      setApplications(data);
+    }
+  };
+
   const fetchStats = async () => {
     try {
-      // Get listing stats
       const { data: listingsData } = await supabase
         .from('marketplace_listings')
         .select('credits_available, price_per_tonne, is_active');
 
-      // Get user count (profiles)
       const { count: userCount } = await supabase
         .from('profiles')
         .select('*', { count: 'exact', head: true });
 
-      // Get recent verifications count
       const { count: verificationCount } = await supabase
         .from('carbon_verifications')
         .select('*', { count: 'exact', head: true })
         .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString());
+
+      const { count: pendingApps } = await supabase
+        .from('partner_applications')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+
+      const { count: approvedPartners } = await supabase
+        .from('partner_applications')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'approved');
 
       if (listingsData) {
         const activeListings = listingsData.filter(l => l.is_active);
@@ -137,10 +160,68 @@ const Admin = () => {
             : 0,
           totalUsers: userCount || 0,
           recentVerifications: verificationCount || 0,
+          pendingApplications: pendingApps || 0,
+          approvedPartners: approvedPartners || 0,
         });
       }
     } catch (err) {
       console.error('Error fetching stats:', err);
+    }
+  };
+
+  const handleApproveApplication = async (app: PartnerApplication) => {
+    try {
+      // Update application status
+      const { error: updateError } = await supabase
+        .from('partner_applications')
+        .update({ 
+          status: 'approved', 
+          reviewed_at: new Date().toISOString(),
+          reviewed_by: user?.id 
+        })
+        .eq('id', app.id);
+
+      if (updateError) throw updateError;
+
+      // Create partner context for user
+      const { error: contextError } = await supabase
+        .from('user_contexts')
+        .insert({
+          user_id: app.user_id,
+          context_type: 'partner',
+          context_id: app.id,
+          context_name: app.organization_name,
+          is_active: false
+        });
+
+      if (contextError) throw contextError;
+
+      toast.success(`Partner "${app.organization_name}" approved`);
+      await Promise.all([fetchApplications(), fetchStats()]);
+    } catch (err) {
+      console.error('Error approving application:', err);
+      toast.error('Failed to approve application');
+    }
+  };
+
+  const handleRejectApplication = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from('partner_applications')
+        .update({ 
+          status: 'rejected', 
+          reviewed_at: new Date().toISOString(),
+          reviewed_by: user?.id 
+        })
+        .eq('id', id);
+
+      if (error) throw error;
+
+      toast.success('Application rejected');
+      await Promise.all([fetchApplications(), fetchStats()]);
+    } catch (err) {
+      console.error('Error rejecting application:', err);
+      toast.error('Failed to reject application');
     }
   };
 
@@ -168,6 +249,16 @@ const Admin = () => {
       maximumFractionDigits: 0,
     }).format(amount);
   };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-IN', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  };
+
+  const pendingCount = applications.filter(a => a.status === 'pending').length;
 
   if (sessionLoading || isLoading) {
     return (
@@ -220,10 +311,10 @@ const Admin = () => {
               <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
             </div>
             <p className="text-muted-foreground">
-              Manage marketplace, users, and platform settings
+              Manage marketplace, partners, and platform settings
             </p>
           </div>
-          <Button variant="outline" onClick={() => Promise.all([fetchListings(), fetchStats()])}>
+          <Button variant="outline" onClick={() => Promise.all([fetchListings(), fetchStats(), fetchApplications()])}>
             <RefreshCw className="w-4 h-4 mr-2" />
             Refresh
           </Button>
@@ -231,7 +322,7 @@ const Admin = () => {
 
         {/* Stats Cards */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
             <Card>
               <CardContent className="pt-4 pb-3">
                 <p className="text-xs text-muted-foreground">Total Listings</p>
@@ -268,6 +359,20 @@ const Admin = () => {
                 <p className="text-2xl font-bold">{stats.recentVerifications}</p>
               </CardContent>
             </Card>
+            <Card className={stats.pendingApplications > 0 ? 'border-warning' : ''}>
+              <CardContent className="pt-4 pb-3">
+                <p className="text-xs text-muted-foreground">Pending Apps</p>
+                <p className={`text-2xl font-bold ${stats.pendingApplications > 0 ? 'text-warning' : ''}`}>
+                  {stats.pendingApplications}
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-4 pb-3">
+                <p className="text-xs text-muted-foreground">Partners</p>
+                <p className="text-2xl font-bold text-primary">{stats.approvedPartners}</p>
+              </CardContent>
+            </Card>
           </div>
         )}
 
@@ -277,6 +382,15 @@ const Admin = () => {
             <TabsTrigger value="listings" className="gap-1">
               <Leaf className="w-4 h-4" />
               Listings
+            </TabsTrigger>
+            <TabsTrigger value="applications" className="gap-1">
+              <Users className="w-4 h-4" />
+              Applications
+              {pendingCount > 0 && (
+                <Badge variant="destructive" className="ml-1 h-5 min-w-5 px-1.5 text-xs">
+                  {pendingCount}
+                </Badge>
+              )}
             </TabsTrigger>
             <TabsTrigger value="analytics" className="gap-1">
               <TrendingUp className="w-4 h-4" />
@@ -293,7 +407,7 @@ const Admin = () => {
                     <CardDescription>Manage carbon credit listings</CardDescription>
                   </div>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/partner-marketplace">
+                    <Link to="/marketplace">
                       View Marketplace
                       <ExternalLink className="w-3 h-3 ml-1" />
                     </Link>
@@ -347,6 +461,92 @@ const Admin = () => {
                     <div className="text-center py-8 text-muted-foreground">
                       <Leaf className="w-8 h-8 mx-auto mb-2 opacity-50" />
                       <p>No listings found</p>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="applications" className="mt-4">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Partner Applications</CardTitle>
+                <CardDescription>Review and approve partner registrations</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {applications.map(app => (
+                    <div 
+                      key={app.id}
+                      className="flex items-center justify-between p-4 rounded-lg border bg-card"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <Building2 className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-medium">{app.organization_name}</p>
+                          <p className="text-sm text-muted-foreground capitalize">{app.organization_type}</p>
+                          <p className="text-xs text-muted-foreground">{app.contact_email}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center gap-4">
+                        <div className="text-right text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {formatDate(app.created_at)}
+                          </div>
+                          {app.website && (
+                            <a 
+                              href={app.website} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline text-xs"
+                            >
+                              Website
+                            </a>
+                          )}
+                        </div>
+                        
+                        {app.status === 'pending' ? (
+                          <div className="flex gap-2">
+                            <Button 
+                              size="sm" 
+                              onClick={() => handleApproveApplication(app)}
+                              className="gap-1"
+                            >
+                              <CheckCircle2 className="w-4 h-4" />
+                              Approve
+                            </Button>
+                            <Button 
+                              size="sm" 
+                              variant="outline" 
+                              onClick={() => handleRejectApplication(app.id)}
+                              className="gap-1"
+                            >
+                              <XCircle className="w-4 h-4" />
+                              Reject
+                            </Button>
+                          </div>
+                        ) : (
+                          <Badge 
+                            variant={app.status === 'approved' ? 'default' : 'destructive'}
+                            className="capitalize"
+                          >
+                            {app.status}
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {applications.length === 0 && (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <Users className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                      <p>No applications yet</p>
+                      <p className="text-sm mt-1">Partner applications will appear here</p>
                     </div>
                   )}
                 </div>
