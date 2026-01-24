@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -16,11 +16,14 @@ import {
   FileCheck,
   Lock,
   ArrowLeft,
-  ExternalLink
+  ExternalLink,
+  ShieldAlert,
+  Loader2
 } from 'lucide-react';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { useSession } from '@/hooks/useSession';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, ComposedChart, Legend } from 'recharts';
 
 interface ClusterData {
@@ -49,6 +52,12 @@ interface BaselineData {
 }
 
 const PartnerDashboard = () => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
+  const [isPartner, setIsPartner] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAccess, setCheckingAccess] = useState(true);
+  
   const [clusterData, setClusterData] = useState<ClusterData>({
     totalMSMEs: 0,
     totalReductions: 0,
@@ -62,9 +71,56 @@ const PartnerDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [purchaseQuantity, setPurchaseQuantity] = useState(1);
 
+  // Check access
   useEffect(() => {
-    fetchPartnerData();
-  }, []);
+    const checkAccess = async () => {
+      if (!user?.id) {
+        setCheckingAccess(false);
+        return;
+      }
+      
+      try {
+        // Check for admin role
+        const { data: adminData } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', user.id)
+          .eq('role', 'admin');
+        
+        const hasAdmin = adminData && adminData.length > 0;
+        setIsAdmin(hasAdmin);
+        
+        // Check for partner context
+        const { data: contextData } = await supabase
+          .from('user_contexts')
+          .select('context_type')
+          .eq('user_id', user.id)
+          .eq('context_type', 'partner');
+        
+        const hasPartner = contextData && contextData.length > 0;
+        setIsPartner(hasPartner);
+        
+      } catch (err) {
+        console.error('Error checking access:', err);
+      } finally {
+        setCheckingAccess(false);
+      }
+    };
+    
+    if (isAuthenticated) {
+      checkAccess();
+    } else if (!sessionLoading) {
+      setCheckingAccess(false);
+    }
+  }, [user?.id, isAuthenticated, sessionLoading]);
+  
+  const hasAccess = isPartner || isAdmin;
+
+  useEffect(() => {
+    if (hasAccess) {
+      fetchPartnerData();
+    }
+  }, [hasAccess]);
 
   const fetchPartnerData = async () => {
     try {
@@ -165,6 +221,53 @@ const PartnerDashboard = () => {
     // - Reductions summary
     // - Hashed document IDs
   };
+
+  // Loading state
+  if (sessionLoading || checkingAccess) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Access denied for non-partners
+  if (!isAuthenticated || !hasAccess) {
+    return (
+      <div className="min-h-screen bg-background">
+        <CarbonParticles />
+        <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-4">
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </header>
+        
+        <main className="relative z-10 container mx-auto px-4 py-8 max-w-lg">
+          <Card className="border-primary/20">
+            <CardContent className="pt-8 text-center">
+              <ShieldAlert className="w-12 h-12 mx-auto mb-4 text-primary" />
+              <h1 className="text-2xl font-semibold mb-2">Partner Access Required</h1>
+              <p className="text-muted-foreground mb-6">
+                This dashboard is for verified partners only. Apply to become a partner to access cluster data and purchase carbon credits.
+              </p>
+              <div className="flex flex-col gap-3">
+                <Button asChild>
+                  <Link to="/partners">Become a Partner</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/marketplace">View Marketplace</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">

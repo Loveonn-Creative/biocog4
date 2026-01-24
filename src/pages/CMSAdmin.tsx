@@ -1,6 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { CarbonParticles } from "@/components/CarbonParticles";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -27,12 +27,14 @@ import {
 import { 
   Upload, Download, FileSpreadsheet, Check, AlertCircle, 
   Search, RefreshCw, Trash2, Eye, FileText, ArrowLeft,
-  Info, CheckCircle, XCircle
+  Info, CheckCircle, XCircle, ShieldAlert, Loader2
 } from "lucide-react";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
 import { cmsArticles, CMSArticle } from "@/data/cmsContent";
 import { allSEOFaqs, SEOFaq } from "@/data/seoFaqs";
+import { useSession } from "@/hooks/useSession";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ParsedRow {
   title: string;
@@ -59,11 +61,48 @@ const generateSlug = (title: string): string => {
 };
 
 const CMSAdmin = () => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAccess, setCheckingAccess] = useState(true);
+  
   const [uploadedData, setUploadedData] = useState<ParsedRow[]>([]);
   const [isUploading, setIsUploading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("faqs");
   const [previewItem, setPreviewItem] = useState<ParsedRow | CMSArticle | SEOFaq | null>(null);
+
+  // Check admin access
+  useEffect(() => {
+    const checkAdminAccess = async () => {
+      if (!user?.id) {
+        setCheckingAccess(false);
+        return;
+      }
+      
+      try {
+        const { data, error } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', user.id)
+          .eq('role', 'admin');
+        
+        if (error) throw error;
+        setIsAdmin(data && data.length > 0);
+      } catch (err) {
+        console.error('Error checking admin access:', err);
+        setIsAdmin(false);
+      } finally {
+        setCheckingAccess(false);
+      }
+    };
+    
+    if (isAuthenticated) {
+      checkAdminAccess();
+    } else if (!sessionLoading) {
+      setCheckingAccess(false);
+    }
+  }, [user?.id, isAuthenticated, sessionLoading]);
 
   // Validate FAQ word count (29-45 words)
   const validateFAQ = (content: string): { isValid: boolean; wordCount: number; error: string } => {
@@ -303,6 +342,41 @@ const CMSAdmin = () => {
     validUploads: uploadedData.filter(r => r.isValid).length,
     invalidUploads: uploadedData.filter(r => !r.isValid).length
   };
+
+  // Loading state
+  if (sessionLoading || checkingAccess) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Access denied for non-admins
+  if (!isAuthenticated || !isAdmin) {
+    return (
+      <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
+        <Helmet><title>Access Denied — Senseible</title></Helmet>
+        <CarbonParticles />
+        <Navigation />
+        
+        <main className="relative z-10 container mx-auto px-4 py-8 max-w-lg">
+          <Card className="border-destructive/20">
+            <CardContent className="pt-8 text-center">
+              <ShieldAlert className="w-12 h-12 mx-auto mb-4 text-destructive" />
+              <h1 className="text-2xl font-semibold mb-2">Access Denied</h1>
+              <p className="text-muted-foreground mb-6">
+                This page is restricted to administrators only.
+              </p>
+              <Button asChild>
+                <Link to="/dashboard">Return to Dashboard</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
