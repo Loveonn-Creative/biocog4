@@ -1,12 +1,11 @@
 import { useDocuments } from '@/hooks/useDocuments';
-import { useSession } from '@/hooks/useSession';
 import { Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
+import { Navigation } from '@/components/Navigation';
 import { Card, CardContent } from '@/components/ui/card';
 import { FileText, Calendar, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
-import senseibleLogo from '@/assets/senseible-logo.png';
 import { Helmet } from 'react-helmet-async';
 
 const History = () => {
@@ -25,17 +24,7 @@ const History = () => {
     <div className="relative min-h-screen w-full bg-background">
       <Helmet><title>Invoice History — Senseible</title></Helmet>
       <CarbonParticles />
-      <header className="relative z-10 border-b border-border/50 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/"><img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" /></Link>
-          <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/dashboard" className="hover:text-foreground">Dashboard</Link>
-            <Link to="/history" className="text-foreground font-medium">History</Link>
-            <Link to="/verify" className="hover:text-foreground">Verify</Link>
-            <Link to="/monetize" className="hover:text-foreground">Monetize</Link>
-          </nav>
-        </div>
-      </header>
+      <Navigation />
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between">
           <h1 className="text-2xl font-semibold">Invoice History</h1>

@@ -138,7 +138,8 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             <DropdownMenuItem asChild>
               <Link to="/cms-admin" className="flex items-center gap-2 cursor-pointer">
                 <FileText className="w-4 h-4" />
-                CMS Admin
+                Content Manager
+                <Badge variant="secondary" className="ml-auto text-[10px]">CMS</Badge>
               </Link>
             </DropdownMenuItem>
           </>

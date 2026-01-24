@@ -6,7 +6,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { UserMenu } from '@/components/UserMenu';
 import { ContextSwitcher } from '@/components/ContextSwitcher';
-import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain } from 'lucide-react';
+import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock } from 'lucide-react';
 import senseibleLogo from '@/assets/senseible-logo.png';
 
 interface NavigationProps {
@@ -16,6 +16,7 @@ interface NavigationProps {
 const navItems = [
   { path: '/', label: 'Upload', icon: Upload },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/history', label: 'History', icon: Clock },
   { path: '/mrv-dashboard', label: 'MRV', icon: BarChart3 },
   { path: '/intelligence', label: 'Intelligence', icon: Brain },
   { path: '/verify', label: 'Verify', icon: Shield },

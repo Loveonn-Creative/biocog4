@@ -536,12 +536,22 @@ const Index = () => {
           >
             Contact
           </Link>
-          <Link 
-            to="/auth" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            Sign In
-          </Link>
+          {/* Auth-aware: Dashboard for signed-in, Sign In for guests */}
+          {user ? (
+            <Link 
+              to="/dashboard" 
+              className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link 
+              to="/auth" 
+              className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+            >
+              Sign In
+            </Link>
+          )}
         </nav>
       </footer>
     </div>
