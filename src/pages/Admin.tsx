@@ -169,6 +169,17 @@ const Admin = () => {
     }
   };
 
+  const sendPartnerNotification = async (email: string, organization_name: string, decision: 'approved' | 'rejected') => {
+    try {
+      const { error } = await supabase.functions.invoke('send-partner-notification', {
+        body: { email, organization_name, decision }
+      });
+      if (error) console.error('Email notification failed:', error);
+    } catch (err) {
+      console.error('Failed to send notification:', err);
+    }
+  };
+
   const handleApproveApplication = async (app: PartnerApplication) => {
     try {
       // Update application status
@@ -196,7 +207,10 @@ const Admin = () => {
 
       if (contextError) throw contextError;
 
-      toast.success(`Partner "${app.organization_name}" approved`);
+      // Send approval notification email
+      await sendPartnerNotification(app.contact_email, app.organization_name, 'approved');
+
+      toast.success(`Partner "${app.organization_name}" approved — notification sent`);
       await Promise.all([fetchApplications(), fetchStats()]);
     } catch (err) {
       console.error('Error approving application:', err);
@@ -204,7 +218,7 @@ const Admin = () => {
     }
   };
 
-  const handleRejectApplication = async (id: string) => {
+  const handleRejectApplication = async (app: PartnerApplication) => {
     try {
       const { error } = await supabase
         .from('partner_applications')
@@ -213,11 +227,14 @@ const Admin = () => {
           reviewed_at: new Date().toISOString(),
           reviewed_by: user?.id 
         })
-        .eq('id', id);
+        .eq('id', app.id);
 
       if (error) throw error;
 
-      toast.success('Application rejected');
+      // Send rejection notification email
+      await sendPartnerNotification(app.contact_email, app.organization_name, 'rejected');
+
+      toast.success('Application rejected — notification sent');
       await Promise.all([fetchApplications(), fetchStats()]);
     } catch (err) {
       console.error('Error rejecting application:', err);
@@ -523,7 +540,7 @@ const Admin = () => {
                             <Button 
                               size="sm" 
                               variant="outline" 
-                              onClick={() => handleRejectApplication(app.id)}
+                              onClick={() => handleRejectApplication(app)}
                               className="gap-1"
                             >
                               <XCircle className="w-4 h-4" />
