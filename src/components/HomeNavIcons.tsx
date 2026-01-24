@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { HelpCircle, Sparkles, CreditCard, LogIn, Phone, Building2, Users, Scale } from 'lucide-react';
+import { HelpCircle, Sparkles, CreditCard, LogIn, Phone, Building2, Users, Scale, LayoutDashboard, User } from 'lucide-react';
+import { useSession } from '@/hooks/useSession';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,6 +10,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export const HomeNavIcons = () => {
+  const { isAuthenticated, isLoading } = useSession();
+
   return (
     <div className="absolute top-4 right-4 flex items-center gap-2 z-30">
       {/* Question mark dropdown */}
@@ -22,16 +25,35 @@ export const HomeNavIcons = () => {
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">
+          {/* Auth-aware: Show Dashboard for signed-in users, Sign In for guests */}
+          {!isLoading && isAuthenticated ? (
+            <>
+              <DropdownMenuItem asChild>
+                <Link to="/dashboard" className="flex items-center gap-2 cursor-pointer">
+                  <LayoutDashboard className="w-4 h-4" />
+                  Dashboard
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/profile" className="flex items-center gap-2 cursor-pointer">
+                  <User className="w-4 h-4" />
+                  Profile
+                </Link>
+              </DropdownMenuItem>
+            </>
+          ) : (
+            <DropdownMenuItem asChild>
+              <Link to="/auth" className="flex items-center gap-2 cursor-pointer">
+                <LogIn className="w-4 h-4" />
+                Sign In / Register
+              </Link>
+            </DropdownMenuItem>
+          )}
+          <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <Link to="/pricing" className="flex items-center gap-2 cursor-pointer">
               <CreditCard className="w-4 h-4" />
               Pricing
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link to="/auth" className="flex items-center gap-2 cursor-pointer">
-              <LogIn className="w-4 h-4" />
-              Sign In / Register
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
