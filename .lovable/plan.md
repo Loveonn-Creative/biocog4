@@ -1,282 +1,313 @@
 
-# Admin Dashboard Enhancement & Platform Access Control Improvements
+# Platform-Wide Role-Based UX, Personalization, and Footer Consistency Enhancement
 
-## Overview
+## Executive Summary
 
-This plan adds partner application approval functionality to the Admin Dashboard, updates the logo to the approved Senseible wordmark, and implements additional security/UX improvements while maintaining full page speed and existing functionality.
+This plan addresses systemic UX inconsistencies, implements role-based routing for partners, enhances personalization, standardizes footers across all pages, and adds intelligent OCR feedback for irrelevant images. All changes maintain existing page speed and core functionality.
 
 ---
 
 ## Current State Analysis
 
-### What Works Correctly
+### What Already Works Correctly
 
-1. **CMS Admin Access**: Already restricted to admin role only (verified in `CMSAdmin.tsx`)
-2. **Partner Dashboard Access**: Already restricted to partner context or admin role (verified in `PartnerDashboard.tsx`)
-3. **Marketplace Access**: Already role-aware with partner/admin purchase capability (verified in `PartnerMarketplace.tsx`)
-4. **Partner Signup Flow**: Already functional at `/auth?mode=partner` with `partner_applications` table
-5. **Marketplace Listings**: Database shows 7 active listings (Textiles, Manufacturing, Agriculture, Renewable Energy, Food Processing, Logistics, Construction)
-6. **User Menu**: Already shows admin links only to admins
+| Feature | Status | Location |
+|---------|--------|----------|
+| Auth-aware homepage footer | Implemented | `Index.tsx` lines 539-554 |
+| Auth-aware HomeNavIcons menu | Implemented | `HomeNavIcons.tsx` lines 28-51 |
+| Auth-aware main Footer | Implemented | `Footer.tsx` with `useSession()` |
+| Partner Dashboard access control | Implemented | `PartnerDashboard.tsx` |
+| CMS Admin access control | Implemented | `CMSAdmin.tsx` (admin-only) |
+| Personalization hook | Implemented | `usePersonalization.ts` |
+| Document relevance detection | Implemented | `extract-document/index.ts` lines 258-300 |
+| SecondaryFooter component | Implemented | `SecondaryFooter.tsx` |
 
-### Issues to Address
+### Issues Requiring Fixes
 
-| Issue | Solution |
-|-------|----------|
-| No partner application approval UI | Add to Admin Dashboard |
-| Logo shows old icon version | Replace with approved text-only logo |
-| Team page linked from menu without action context | Already gated by Pro/Scale tier - working as intended |
-| CMS export/import location unclear | Already in `/cms-admin` page (admin-only) - working |
+| Issue | Root Cause | Impact |
+|-------|-----------|--------|
+| Partners redirect to /dashboard not /partner-dashboard | Auth.tsx line 86, 155, 161 hardcodes `/dashboard` | Partners see MSME view after login |
+| Personalization not used in all headers | Only Navigation.tsx uses it | Inconsistent greeting experience |
+| SecondaryFooter missing from Pricing, Legal, Partners | Not imported in these pages | Inconsistent legal footer |
+| OCR lacks humorous feedback for irrelevant images | `isDocumentRelevant()` returns plain messages | Missed engagement opportunity |
+| Footer columns not organized (Industries under Legal) | `Footer.tsx` structure | Confusing navigation |
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: Update Logo Asset
+### Phase 1: Role-Based Login Redirect
 
-**Action**: Replace current logo with the approved Senseible text-only wordmark
+**File**: `src/pages/Auth.tsx`
 
-**File**: `src/assets/senseible-logo.png`
-- Copy uploaded logo from `user-uploads://senseiblelogo.png` to `src/assets/senseible-logo.png`
-- The logo is already imported in Navigation.tsx with `dark:invert` class for theme support
+Add context-aware redirect after sign-in that checks user's active context:
 
----
+```text
+After successful sign-in (line 84-87):
+1. Check user_contexts table for active partner context
+2. If partner context exists and is_active = true → redirect to /partner-dashboard  
+3. Otherwise → redirect to /dashboard
+```
 
-### Phase 2: Add Partner Applications Tab to Admin Dashboard
-
-**File**: `src/pages/Admin.tsx`
-
-Add a new "Applications" tab for partner application review:
+**Changes**:
+- Add helper function `getRedirectPath(userId)` that queries `user_contexts`
+- Update sign-in success handler to use dynamic redirect
+- Update sign-up success handler to use dynamic redirect
 
 ```typescript
-// Add new interface
-interface PartnerApplication {
-  id: string;
-  user_id: string;
-  organization_name: string;
-  organization_type: string;
-  contact_email: string;
-  website: string | null;
-  status: string;
-  created_at: string;
-}
-
-// Add state
-const [applications, setApplications] = useState<PartnerApplication[]>([]);
-
-// Add fetch function
-const fetchApplications = async () => {
+// New function to add
+const getRedirectPath = async (userId: string): Promise<string> => {
   const { data } = await supabase
-    .from('partner_applications')
-    .select('*')
-    .order('created_at', { ascending: false });
-  if (data) setApplications(data);
-};
-
-// Add approval function
-const handleApproveApplication = async (app: PartnerApplication) => {
-  // 1. Update application status
-  await supabase
-    .from('partner_applications')
-    .update({ 
-      status: 'approved', 
-      reviewed_at: new Date().toISOString(),
-      reviewed_by: user?.id 
-    })
-    .eq('id', app.id);
-  
-  // 2. Create partner context for user
-  await supabase
     .from('user_contexts')
-    .insert({
-      user_id: app.user_id,
-      context_type: 'partner',
-      context_id: app.id,
-      context_name: app.organization_name,
-      is_active: true
-    });
+    .select('context_type, is_active')
+    .eq('user_id', userId)
+    .eq('is_active', true)
+    .maybeSingle();
   
-  toast.success(`Partner ${app.organization_name} approved`);
-  fetchApplications();
+  if (data?.context_type === 'partner') {
+    return '/partner-dashboard';
+  }
+  return '/dashboard';
 };
 
-// Add reject function
-const handleRejectApplication = async (id: string) => {
-  await supabase
-    .from('partner_applications')
-    .update({ status: 'rejected', reviewed_at: new Date().toISOString() })
-    .eq('id', id);
-  
-  toast.success('Application rejected');
-  fetchApplications();
-};
-```
-
-Add new tab UI:
-
-```tsx
-<TabsTrigger value="applications" className="gap-1">
-  <Users className="w-4 h-4" />
-  Applications
-  {applications.filter(a => a.status === 'pending').length > 0 && (
-    <Badge variant="destructive" className="ml-1 h-5 w-5 p-0 text-xs">
-      {applications.filter(a => a.status === 'pending').length}
-    </Badge>
-  )}
-</TabsTrigger>
-
-<TabsContent value="applications">
-  <Card>
-    <CardHeader>
-      <CardTitle>Partner Applications</CardTitle>
-      <CardDescription>Review and approve partner registrations</CardDescription>
-    </CardHeader>
-    <CardContent>
-      {applications.map(app => (
-        <div key={app.id} className="flex items-center justify-between p-4 border rounded-lg">
-          <div>
-            <p className="font-medium">{app.organization_name}</p>
-            <p className="text-sm text-muted-foreground">{app.organization_type}</p>
-            <p className="text-sm">{app.contact_email}</p>
-          </div>
-          <div className="flex gap-2">
-            {app.status === 'pending' ? (
-              <>
-                <Button size="sm" onClick={() => handleApproveApplication(app)}>
-                  <CheckCircle2 className="w-4 h-4 mr-1" />
-                  Approve
-                </Button>
-                <Button size="sm" variant="outline" onClick={() => handleRejectApplication(app.id)}>
-                  Reject
-                </Button>
-              </>
-            ) : (
-              <Badge variant={app.status === 'approved' ? 'default' : 'destructive'}>
-                {app.status}
-              </Badge>
-            )}
-          </div>
-        </div>
-      ))}
-    </CardContent>
-  </Card>
-</TabsContent>
+// Update sign-in handler (around line 84)
+if (data.user) {
+  const redirectPath = await getRedirectPath(data.user.id);
+  toast.success("Welcome back! Redirecting...");
+  navigate(redirectPath);
+}
 ```
 
 ---
 
-### Phase 3: Add Partner Stats to Dashboard
+### Phase 2: Reorganize Footer Columns
 
-**File**: `src/pages/Admin.tsx`
+**File**: `src/components/Footer.tsx`
 
-Add to stats cards:
-- Pending Applications count
-- Approved Partners count
+Restructure footer links to have clearer columns:
 
-```typescript
-// Add to DashboardStats interface
-pendingApplications: number;
-approvedPartners: number;
+```text
+Current structure:
+- Platform: Climate Intelligence, Pricing, Contact, [Sign In/Dashboard]
+- Company: Mission, About, Principles
+- Legal: Terms, Privacy, DPA, Industries ← WRONG
 
-// Add to fetchStats
-const { count: pendingApps } = await supabase
-  .from('partner_applications')
-  .select('*', { count: 'exact', head: true })
-  .eq('status', 'pending');
+New structure:
+- Platform: Climate Intelligence, Marketplace, Pricing, [Sign In/Dashboard]
+- Solutions: Green Loans, Industries, Carbon Credits  
+- Company: Mission, About, Principles, Contact
+- Legal: Terms, Privacy, DPA
+```
 
-const { count: approvedPartners } = await supabase
-  .from('partner_applications')
-  .select('*', { count: 'exact', head: true })
-  .eq('status', 'approved');
+This removes Industries from Legal and creates a logical "Solutions" column.
+
+---
+
+### Phase 3: Add SecondaryFooter to Remaining Public Pages
+
+**Files to update**:
+- `src/pages/Pricing.tsx` - Add SecondaryFooter
+- `src/pages/Legal.tsx` - Add SecondaryFooter  
+- `src/pages/Partners.tsx` - Replace Footer with SecondaryFooter or add it
+- `src/pages/PaymentSuccess.tsx` - Add SecondaryFooter
+- `src/pages/ClimateStack.tsx` - Add SecondaryFooter
+
+**Pattern**:
+```tsx
+import { SecondaryFooter } from "@/components/SecondaryFooter";
+
+// At end of component JSX
+<SecondaryFooter />
 ```
 
 ---
 
-### Phase 4: Add CMS Admin Link to UserMenu
+### Phase 4: Extend Personalization to Dashboard Headers
 
-**File**: `src/components/UserMenu.tsx`
+**File**: `src/pages/Dashboard.tsx`
 
-Add CMS Admin link for admin users (alongside existing Admin Dashboard link):
+Already uses `usePersonalization()` but can be extended. Current implementation shows greeting in Navigation - this is already working.
+
+**File**: `src/pages/Intelligence.tsx`
+
+Add personalized greeting in chat header:
 
 ```tsx
-{isAdmin && (
-  <>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem asChild>
-      <Link to="/admin" className="flex items-center gap-2 cursor-pointer text-primary">
-        <Shield className="w-4 h-4" />
-        Admin Dashboard
-      </Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild>
-      <Link to="/cms-admin" className="flex items-center gap-2 cursor-pointer">
-        <FileText className="w-4 h-4" />
-        CMS Admin
-      </Link>
-    </DropdownMenuItem>
-  </>
+const { greeting, displayName, isPersonalized } = usePersonalization();
+
+// In header section, add:
+{isPersonalized && (
+  <span className="text-sm text-muted-foreground">
+    {greeting}
+  </span>
 )}
 ```
 
 ---
 
-## Files to Modify
+### Phase 5: Enhance OCR Irrelevant Image Detection with Humorous Feedback
 
-| File | Change |
-|------|--------|
-| `src/assets/senseible-logo.png` | Replace with text-only wordmark |
-| `src/pages/Admin.tsx` | Add Applications tab, approval/reject functionality, partner stats |
-| `src/components/UserMenu.tsx` | Add CMS Admin link for admins |
+**File**: `supabase/functions/extract-document/index.ts`
+
+Update `isDocumentRelevant()` function (lines 266-300) to return more engaging, humorous messages:
+
+```typescript
+// Enhanced irrelevant document responses
+const HUMOROUS_REJECTIONS: Record<string, string[]> = {
+  ceiling: [
+    "That's a lovely ceiling, but we can't find any carbon emissions there! Try uploading a fuel bill or invoice instead.",
+    "Great architectural shot! But for carbon accounting, we need business documents like invoices or utility bills."
+  ],
+  selfie: [
+    "Looking good! But we're more interested in your invoices than your selfies. Upload a business document to get started.",
+    "Nice photo! For carbon tracking though, we need to see your electricity bills or purchase invoices."
+  ],
+  nature: [
+    "Beautiful scenery! Trees do absorb carbon, but we need your business invoices to calculate emissions.",
+    "Love the nature shot! To track your carbon footprint though, please upload a fuel bill or invoice."
+  ],
+  food: [
+    "That looks delicious! But to calculate carbon, we need your business invoices, not your lunch.",
+    "Yum! For carbon accounting, please upload a utility bill or purchase invoice instead."
+  ],
+  default: [
+    "Hmm, this doesn't look like a business document. Try uploading an invoice, fuel bill, or electricity bill.",
+    "We're not quite sure what this is. For carbon MRV, please upload a business invoice or utility bill."
+  ]
+};
+
+// Detection patterns for humorous responses
+const IMAGE_CONTEXT_PATTERNS = {
+  ceiling: /ceiling|roof|light|fixture|fan|lamp|chandelier/i,
+  selfie: /face|person|portrait|selfie|photo|profile/i,
+  nature: /tree|plant|flower|garden|nature|landscape|sky|cloud/i,
+  food: /food|meal|dish|restaurant|menu|plate|eat/i
+};
+
+function getHumorousRejection(ocrText: string): string {
+  const text = ocrText.toLowerCase();
+  
+  for (const [category, pattern] of Object.entries(IMAGE_CONTEXT_PATTERNS)) {
+    if (pattern.test(text)) {
+      const messages = HUMOROUS_REJECTIONS[category] || HUMOROUS_REJECTIONS.default;
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+  }
+  
+  return HUMOROUS_REJECTIONS.default[Math.floor(Math.random() * HUMOROUS_REJECTIONS.default.length)];
+}
+```
+
+Integrate into `isDocumentRelevant()`:
+- If document type is "unknown" and no invoice-like data found
+- Use AI vision response to detect image context (ceiling, selfie, nature, food)
+- Return humorous, brand-aligned rejection message
 
 ---
 
-## What Remains Unchanged
+### Phase 6: Verify CMS Pipeline Access
 
-- **All 7 marketplace listings** - already in database and displaying correctly
-- **CMS import/export** - already functional at `/cms-admin` (admin-only access)
-- **Partner flow** - already functional (Partners page → `/auth?mode=partner` → creates application)
-- **Team page** - already gated by Pro/Scale subscription tier
-- **AcceptInvite page** - functional for team invitations
-- **Role-based access** - already implemented for all protected pages
-- **Page speed** - no new dependencies, minimal additions
+**Current Implementation** (already correct):
+- CMS Admin is at `/cms-admin` 
+- Access restricted to admin role via `user_roles` table check
+- Link visible in UserMenu for admins only ("Content Manager" with CMS badge)
+- Excel import/export functionality fully implemented
+
+**No changes needed** - just documentation clarity:
+- As a developer/admin, you access CMS via the user menu after signing in with an admin account
+- The Excel upload happens directly in the browser at `/cms-admin`
+- Data is stored in TypeScript files (`cmsContent.ts`, `seoFaqs.ts`) which requires code deployment
+- For database-backed CMS, a future migration would move content to Supabase tables
+
+---
+
+## Files to Modify
+
+| File | Change | Priority |
+|------|--------|----------|
+| `src/pages/Auth.tsx` | Add context-aware redirect logic | High |
+| `src/components/Footer.tsx` | Reorganize columns, add Solutions | Medium |
+| `src/pages/Pricing.tsx` | Add SecondaryFooter | Medium |
+| `src/pages/Legal.tsx` | Add SecondaryFooter | Medium |
+| `src/pages/Partners.tsx` | Add SecondaryFooter | Medium |
+| `src/pages/PaymentSuccess.tsx` | Add SecondaryFooter | Low |
+| `src/pages/ClimateStack.tsx` | Add SecondaryFooter | Low |
+| `src/pages/Intelligence.tsx` | Add personalized greeting | Low |
+| `supabase/functions/extract-document/index.ts` | Add humorous rejection messages | Medium |
+
+---
+
+## Technical Details
+
+### Context-Aware Redirect Flow
+
+```text
+User Signs In
+      ↓
+Query user_contexts WHERE user_id = ? AND is_active = true
+      ↓
+┌─────────────────────────────────────┐
+│ context_type = 'partner'?           │
+│     YES → /partner-dashboard        │
+│     NO  → /dashboard                │
+└─────────────────────────────────────┘
+```
+
+### Footer Architecture
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│ Primary Footer (Footer.tsx) - Full marketing pages             │
+│ ├─ Brand + Social                                              │
+│ ├─ Platform: Climate Intelligence, Marketplace, Pricing        │
+│ ├─ Solutions: Green Loans, Industries, Carbon Credits          │
+│ ├─ Company: Mission, About, Principles, Contact                │
+│ └─ Legal: Terms, Privacy, DPA                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ Secondary Footer (SecondaryFooter.tsx) - Minimal pages         │
+│ ├─ © 2026 Senseible | Terms | Privacy | DPA                    │
+│ └─ Social Icons (LinkedIn, X, Instagram, Facebook)             │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### OCR Feedback Tone Guidelines
+
+- Friendly, not condescending
+- Brief (1-2 sentences max)
+- Always includes guidance on what TO upload
+- Matches Senseible brand voice: calm, precise, helpful
 
 ---
 
 ## Security Verification
 
-| Check | Status |
-|-------|--------|
-| CMS Admin restricted to admin role | Already implemented |
-| Partner Dashboard restricted to partner/admin | Already implemented |
-| Marketplace purchase restricted to partner/admin | Already implemented |
-| MSME data not exposed to partners | Anonymized via hash IDs |
-| Partner applications visible only to admins | Via RLS policy |
+| Check | Approach |
+|-------|----------|
+| Partner context validated server-side | Query `user_contexts` with RLS |
+| Admin CMS access | `user_roles` table with `has_role()` function |
+| MSME data isolation | Anonymous hash IDs only in partner views |
+| No cross-role data leakage | RLS policies enforce ownership |
 
 ---
 
-## Technical Notes
+## Performance Impact
 
-### CMS Data Management
-The CMS Admin page (`/cms-admin`) already provides:
-- **Export**: Download current FAQs and articles as Excel
-- **Import**: Upload Excel files to preview/validate content
-- **Template**: Download blank template for content creation
-
-This is accessible only to admin users (you) via the UserMenu or direct URL.
-
-### Partner Context Flow
-1. Partner applies at `/auth?mode=partner`
-2. Application created in `partner_applications` table
-3. Admin reviews in Admin Dashboard → Applications tab
-4. On approval: `user_contexts` entry created with `context_type: 'partner'`
-5. Partner can now access Partner Dashboard and purchase credits
+- **Role-based redirect**: +1 database query on login (< 50ms)
+- **Footer changes**: No runtime impact (static restructure)
+- **SecondaryFooter additions**: Minimal (shared component already loaded)
+- **OCR humor**: No additional AI calls (uses existing response data)
+- **Personalization**: Already cached with 5-minute staleTime
 
 ---
 
 ## Success Criteria
 
-1. Admin Dashboard shows Applications tab with pending count badge
-2. Admins can approve/reject partner applications
-3. Approved partners automatically get partner context
-4. Logo displays as approved text-only wordmark
-5. CMS Admin accessible from user menu for admins
-6. No impact on page load speed or existing functionality
+1. Partners signing in are redirected to `/partner-dashboard`, partner sign-up verified and login saved
+2. MSMEs signing in are redirected to `/dashboard`
+3. All public pages show SecondaryFooter with legal + social links
+4. Footer columns are logically organized (Solutions, not Industries under Legal)
+5. Irrelevant image uploads receive friendly, humorous rejection messages
+6. Personalized greetings appear consistently for signed-in users
+7. No impact on page load speed (< 2 second first response)
