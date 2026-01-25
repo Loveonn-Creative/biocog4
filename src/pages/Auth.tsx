@@ -32,11 +32,33 @@ const Auth = () => {
   const [organizationType, setOrganizationType] = useState("");
   const [website, setWebsite] = useState("");
 
+  // Get context-aware redirect path
+  const getRedirectPath = async (userId: string): Promise<string> => {
+    const { data } = await supabase
+      .from('user_contexts')
+      .select('context_type, is_active')
+      .eq('user_id', userId)
+      .eq('is_active', true)
+      .maybeSingle();
+    
+    if (data?.context_type === 'partner') {
+      return '/partner-dashboard';
+    }
+    return '/dashboard';
+  };
+
   // Redirect if already authenticated
   useEffect(() => {
-    if (!sessionLoading && isAuthenticated) {
-      navigate('/dashboard');
-    }
+    const checkAndRedirect = async () => {
+      if (!sessionLoading && isAuthenticated) {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          const redirectPath = await getRedirectPath(user.id);
+          navigate(redirectPath);
+        }
+      }
+    };
+    checkAndRedirect();
   }, [isAuthenticated, sessionLoading, navigate]);
 
   const validateForm = (): boolean => {
@@ -82,8 +104,9 @@ const Auth = () => {
         }
         
         if (data.user) {
-          toast.success("Welcome back! Redirecting to dashboard...");
-          navigate('/dashboard');
+          const redirectPath = await getRedirectPath(data.user.id);
+          toast.success("Welcome back! Redirecting...");
+          navigate(redirectPath);
         }
       } else if (mode === "signup") {
         // Use production domain for email verification to avoid Lovable preview URLs
@@ -152,13 +175,14 @@ const Auth = () => {
               console.error('Partner application error:', applicationError);
             } else {
               toast.success("Partner application submitted! We'll review and contact you soon.");
-              navigate('/dashboard');
+              navigate('/partner-dashboard');
               return;
             }
           }
           
-          toast.success("Account created! Redirecting to dashboard...");
-          navigate('/dashboard');
+          const redirectPath = await getRedirectPath(data.user.id);
+          toast.success("Account created! Redirecting...");
+          navigate(redirectPath);
         }
       } else {
         // Forgot password - use production domain

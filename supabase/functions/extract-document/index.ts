@@ -263,18 +263,92 @@ const IRRELEVANT_DOCUMENT_KEYWORDS = [
   'resume', 'cv', 'curriculum vitae', 'photograph', 'selfie', 'photo'
 ];
 
+// ============= HUMOROUS REJECTION MESSAGES FOR IRRELEVANT IMAGES =============
+const HUMOROUS_REJECTIONS: Record<string, string[]> = {
+  ceiling: [
+    "That's a lovely ceiling, but we can't find any carbon emissions there! 😄 Try uploading a fuel bill or invoice instead.",
+    "Great architectural shot! But for carbon accounting, we need business documents like invoices or utility bills."
+  ],
+  selfie: [
+    "Looking good! 📸 But we're more interested in your invoices than your selfies. Upload a business document to get started.",
+    "Nice photo! For carbon tracking though, we need to see your electricity bills or purchase invoices."
+  ],
+  nature: [
+    "Beautiful scenery! 🌿 Trees do absorb carbon, but we need your business invoices to calculate emissions.",
+    "Love the nature shot! To track your carbon footprint though, please upload a fuel bill or invoice."
+  ],
+  food: [
+    "That looks delicious! 🍽️ But to calculate carbon, we need your business invoices, not your lunch.",
+    "Yum! For carbon accounting, please upload a utility bill or purchase invoice instead."
+  ],
+  personal: [
+    "This looks like a personal document. For carbon MRV, we need business invoices, fuel bills, or electricity receipts.",
+    "We respect your privacy! Please share business documents only — invoices, utility bills, or purchase receipts."
+  ],
+  default: [
+    "Hmm, this doesn't look like a business document. 📄 Try uploading an invoice, fuel bill, or electricity bill.",
+    "We're not quite sure what this is. For carbon MRV, please upload a business invoice or utility bill."
+  ]
+};
+
+// Detection patterns for humorous responses
+const IMAGE_CONTEXT_PATTERNS: Record<string, RegExp> = {
+  ceiling: /ceiling|roof|light|fixture|fan|lamp|chandelier|overhead/i,
+  selfie: /face|person|portrait|selfie|profile|headshot|smile/i,
+  nature: /tree|plant|flower|garden|nature|landscape|sky|cloud|mountain|forest|farm|field/i,
+  food: /food|meal|dish|restaurant|menu|plate|eating|breakfast|lunch|dinner/i
+};
+
+function getHumorousRejection(ocrText: string, category?: string): string {
+  const text = (ocrText || '').toLowerCase();
+  
+  // If category provided, use it
+  if (category && HUMOROUS_REJECTIONS[category]) {
+    const messages = HUMOROUS_REJECTIONS[category];
+    return messages[Math.floor(Math.random() * messages.length)];
+  }
+  
+  // Try to detect category from text
+  for (const [cat, pattern] of Object.entries(IMAGE_CONTEXT_PATTERNS)) {
+    if (pattern.test(text)) {
+      const messages = HUMOROUS_REJECTIONS[cat] || HUMOROUS_REJECTIONS.default;
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+  }
+  
+  // Check for personal document keywords
+  for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
+    if (text.includes(keyword)) {
+      const messages = HUMOROUS_REJECTIONS.personal;
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+  }
+  
+  return HUMOROUS_REJECTIONS.default[Math.floor(Math.random() * HUMOROUS_REJECTIONS.default.length)];
+}
+
 function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string } {
   const docType = (ocrData.documentType || '').toLowerCase();
+  const allText = JSON.stringify(ocrData).toLowerCase();
   
   // Check if document type is valid
   if (docType === 'unknown') {
     // Check content for irrelevant keywords
-    const allText = JSON.stringify(ocrData).toLowerCase();
     for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
       if (allText.includes(keyword)) {
         return {
           relevant: false,
-          message: `This appears to be a ${keyword.replace('_', ' ')} or personal document. Please upload a business invoice, utility bill, or receipt for carbon accounting.`
+          message: getHumorousRejection(allText, 'personal')
+        };
+      }
+    }
+    
+    // Check for nature/selfie/food patterns
+    for (const [category, pattern] of Object.entries(IMAGE_CONTEXT_PATTERNS)) {
+      if (pattern.test(allText)) {
+        return {
+          relevant: false,
+          message: getHumorousRejection(allText, category)
         };
       }
     }
@@ -283,7 +357,7 @@ function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string
     if ((!ocrData.lineItems || ocrData.lineItems.length === 0) && !ocrData.amount) {
       return {
         relevant: false,
-        message: "This document doesn't appear to contain invoice or billing data. Please upload a business invoice, fuel bill, electricity bill, or purchase receipt."
+        message: getHumorousRejection(allText)
       };
     }
   }

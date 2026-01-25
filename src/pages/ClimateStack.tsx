@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, memo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Search, ArrowRight, Filter, X } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { Footer } from "@/components/Footer";
+import { SecondaryFooter } from "@/components/SecondaryFooter";
 import { SEOHead } from "@/components/SEOHead";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Input } from "@/components/ui/input";
@@ -167,7 +167,7 @@ const ClimateStack = () => {
         </div>
       </main>
       
-      <Footer />
+      <SecondaryFooter />
     </div>
   );
 };
