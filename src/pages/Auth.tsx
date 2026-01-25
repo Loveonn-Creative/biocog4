@@ -109,14 +109,10 @@ const Auth = () => {
           navigate(redirectPath);
         }
       } else if (mode === "signup") {
-        // Use production domain for email verification to avoid Lovable preview URLs
-        const getRedirectUrl = () => {
-          const productionDomain = 'https://senseible.earth';
-          const host = window.location.hostname;
-          const isProduction = host === 'senseible.earth' || host === 'www.senseible.earth';
-          return isProduction ? productionDomain : window.location.origin;
-        };
-        const redirectUrl = `${getRedirectUrl()}/`;
+        // ALWAYS use production domain for email verification - never use Lovable preview URLs
+        // This ensures all verification emails redirect to senseible.earth
+        const PRODUCTION_DOMAIN = 'https://senseible.earth';
+        const redirectUrl = `${PRODUCTION_DOMAIN}/`;
         
         const { data, error } = await supabase.auth.signUp({
           email,
@@ -185,15 +181,10 @@ const Auth = () => {
           navigate(redirectPath);
         }
       } else {
-        // Forgot password - use production domain
-        const getResetUrl = () => {
-          const productionDomain = 'https://senseible.earth';
-          const host = window.location.hostname;
-          const isProduction = host === 'senseible.earth' || host === 'www.senseible.earth';
-          return isProduction ? productionDomain : window.location.origin;
-        };
+        // Forgot password - ALWAYS use production domain
+        const PRODUCTION_DOMAIN = 'https://senseible.earth';
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${getResetUrl()}/auth`
+          redirectTo: `${PRODUCTION_DOMAIN}/auth`
         });
         
         if (error) {

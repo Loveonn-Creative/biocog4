@@ -47,9 +47,17 @@ export const OnboardingTour = ({ currentStep = 'upload', onComplete }: Onboardin
   useEffect(() => {
     const hasCompletedTour = localStorage.getItem('senseible_onboarding_complete');
     if (!hasCompletedTour) {
-      setIsVisible(true);
+      // Auto-trigger after 5 seconds of user presence
+      const timer = setTimeout(() => {
+        // Only show if user isn't actively interacting (no processing state)
+        if (currentStep === 'upload') {
+          setIsVisible(true);
+        }
+      }, 5000);
+      
+      return () => clearTimeout(timer);
     }
-  }, []);
+  }, [currentStep]);
 
   useEffect(() => {
     // Auto-advance based on current page

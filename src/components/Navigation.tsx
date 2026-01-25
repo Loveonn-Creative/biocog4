@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
 import { usePersonalization } from '@/hooks/usePersonalization';
+import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { UserMenu } from '@/components/UserMenu';
 import { ContextSwitcher } from '@/components/ContextSwitcher';
-import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock } from 'lucide-react';
+import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock, Building2, Handshake } from 'lucide-react';
 import senseibleLogo from '@/assets/senseible-logo.png';
 
 interface NavigationProps {
@@ -28,6 +30,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
   const location = useLocation();
   const { user, isAuthenticated, signOut } = useSession();
   const { greeting, isPersonalized } = usePersonalization();
+  const { activeContext } = useOrganization();
   const [businessName, setBusinessName] = useState<string>('');
 
   // Fetch profile for business name
@@ -63,6 +66,28 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
             <Link to="/" className="flex items-center gap-3">
               <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
             </Link>
+            
+            {/* Role Context Badge - Shows MSME or Partner */}
+            {isAuthenticated && activeContext && (
+              <Badge 
+                variant={activeContext.context_type === 'partner' ? 'default' : 'secondary'}
+                className={`hidden md:flex items-center gap-1.5 ${
+                  activeContext.context_type === 'partner' 
+                    ? 'bg-primary/10 text-primary border-primary/20' 
+                    : 'bg-secondary text-muted-foreground'
+                }`}
+              >
+                {activeContext.context_type === 'partner' ? (
+                  <Handshake className="h-3 w-3" />
+                ) : (
+                  <Building2 className="h-3 w-3" />
+                )}
+                <span className="text-xs font-medium">
+                  {activeContext.context_type === 'partner' ? 'Partner' : 'MSME'}
+                </span>
+              </Badge>
+            )}
+            
             {/* Personalized Greeting - Desktop only */}
             {isAuthenticated && isPersonalized && (
               <span className="hidden lg:inline-block text-sm text-muted-foreground">
