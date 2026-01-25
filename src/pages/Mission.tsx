@@ -1,5 +1,5 @@
 import { MinimalNav } from "@/components/MinimalNav";
-import { SecondaryFooter } from "@/components/SecondaryFooter";
+import { Footer } from "@/components/Footer";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
@@ -127,7 +127,7 @@ const Mission = () => {
         </div>
       </main>
       
-      <SecondaryFooter />
+      <Footer />
     </div>
   );
 };

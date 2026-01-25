@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
-import { SecondaryFooter } from '@/components/SecondaryFooter';
+import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
@@ -525,7 +525,7 @@ const Pricing = () => {
         </section>
       </main>
       
-      <SecondaryFooter />
+      <Footer />
     </div>
   );
 };
