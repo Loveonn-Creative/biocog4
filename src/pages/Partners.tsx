@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/SEOHead';
 import { MinimalNav } from '@/components/MinimalNav';
-import { Footer } from '@/components/Footer';
+import { SecondaryFooter } from '@/components/SecondaryFooter';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -275,7 +275,7 @@ const Partners = () => {
         </section>
       </main>
 
-      <Footer />
+      <SecondaryFooter />
     </div>
   );
 };

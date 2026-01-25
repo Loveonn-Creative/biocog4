@@ -28,19 +28,24 @@ const socialLinks = [
 const footerLinks = {
   platform: [
     { name: 'Climate Intelligence', path: '/climate-intelligence' },
+    { name: 'Marketplace', path: '/marketplace' },
     { name: 'Pricing', path: '/pricing' },
-    { name: 'Contact', path: '/contact' },
+  ],
+  solutions: [
+    { name: 'Green Loans', path: '/climate-finance' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Carbon Credits', path: '/carbon-credits' },
   ],
   company: [
     { name: 'Mission', path: '/mission' },
     { name: 'About', path: '/about' },
     { name: 'Principles', path: '/principles' },
+    { name: 'Contact', path: '/contact' },
   ],
   legal: [
     { name: 'Terms of Service', path: '/legal/terms' },
     { name: 'Privacy Policy', path: '/legal/privacy' },
     { name: 'Data Processing', path: '/legal/dpa' },
-    { name: 'Industries', path: '/industries' },
   ],
 };
 
@@ -70,7 +75,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-background">
       <div className="container max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-semibold text-foreground">
@@ -102,6 +107,23 @@ export const Footer = () => {
             <h4 className="text-sm font-medium text-foreground mb-4">Platform</h4>
             <ul className="space-y-2">
               {getAuthAwareLinks().map((link) => (
+                <li key={link.path}>
+                  <Link 
+                    to={link.path}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Solutions */}
+          <div>
+            <h4 className="text-sm font-medium text-foreground mb-4">Solutions</h4>
+            <ul className="space-y-2">
+              {footerLinks.solutions.map((link) => (
                 <li key={link.path}>
                   <Link 
                     to={link.path}

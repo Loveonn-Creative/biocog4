@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { Footer } from "@/components/Footer";
+import { SecondaryFooter } from "@/components/SecondaryFooter";
 import { SEOHead } from "@/components/SEOHead";
 import { legalDocuments, getLegalDocumentBySlug } from "@/data/legalContent";
 
@@ -52,7 +52,7 @@ const Legal = () => {
           </article>
         </main>
         
-        <Footer />
+        <SecondaryFooter />
       </div>
     );
   }
@@ -70,7 +70,7 @@ const Legal = () => {
             Back to Legal
           </Link>
         </main>
-        <Footer />
+        <SecondaryFooter />
       </div>
     );
   }
@@ -113,7 +113,7 @@ const Legal = () => {
         </article>
       </main>
       
-      <Footer />
+      <SecondaryFooter />
     </div>
   );
 };

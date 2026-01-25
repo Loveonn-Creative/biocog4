@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
+import { SecondaryFooter } from '@/components/SecondaryFooter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
@@ -14,8 +15,7 @@ import {
 } from '@/components/ui/accordion';
 import { 
   Check, Sparkles, Zap, Crown, Building2, ArrowRight,
-  MessageCircle, FileText, Shield, Brain, TrendingUp,
-  Users, Phone, Mail, Headphones, Loader2
+  Brain, Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useSession } from '@/hooks/useSession';
@@ -524,6 +524,8 @@ const Pricing = () => {
           </div>
         </section>
       </main>
+      
+      <SecondaryFooter />
     </div>
   );
 };

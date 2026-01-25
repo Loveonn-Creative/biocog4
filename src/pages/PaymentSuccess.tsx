@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Navigation } from '@/components/Navigation';
+import { SecondaryFooter } from '@/components/SecondaryFooter';
 import { cn } from '@/lib/utils';
 import { 
   CheckCircle, 
@@ -208,6 +209,8 @@ const PaymentSuccess = () => {
           </a>
         </p>
       </main>
+      
+      <SecondaryFooter />
     </div>
   );
 };
