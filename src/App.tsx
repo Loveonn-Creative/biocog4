@@ -83,6 +83,7 @@ const App = () => (
               <Route path="/reports" element={<Reports />} />
               <Route path="/mrv-dashboard" element={<MRVDashboard />} />
               <Route path="/partner" element={<PartnerDashboard />} />
+              <Route path="/partner-dashboard" element={<PartnerDashboard />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/subscription" element={<Subscription />} />

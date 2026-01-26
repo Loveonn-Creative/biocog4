@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const socialLinks = [
   { 
@@ -50,17 +52,40 @@ const footerLinks = {
 };
 
 export const Footer = () => {
-  const { isAuthenticated, isLoading } = useSession();
+  const { isAuthenticated, isLoading, user } = useSession();
+  const [isPartner, setIsPartner] = useState(false);
 
-  // Derive authenticated links - show Dashboard instead of Sign In
+  // Check if user is a partner
+  useEffect(() => {
+    const checkPartnerContext = async () => {
+      if (!user?.id) return;
+      
+      const { data } = await supabase
+        .from('user_contexts')
+        .select('context_type')
+        .eq('user_id', user.id)
+        .eq('context_type', 'partner')
+        .eq('is_active', true)
+        .maybeSingle();
+      
+      setIsPartner(!!data);
+    };
+    
+    if (isAuthenticated && user?.id) {
+      checkPartnerContext();
+    }
+  }, [isAuthenticated, user?.id]);
+
+  // Derive authenticated links - show Dashboard based on role
   const getAuthAwareLinks = () => {
     if (isLoading) {
       return footerLinks.platform;
     }
     
     if (isAuthenticated) {
+      const dashboardPath = isPartner ? '/partner-dashboard' : '/dashboard';
       return [
-        { name: 'Dashboard', path: '/dashboard' },
+        { name: 'Dashboard', path: dashboardPath },
         { name: 'Climate Intelligence', path: '/climate-intelligence' },
         { name: 'Pricing', path: '/pricing' },
       ];
