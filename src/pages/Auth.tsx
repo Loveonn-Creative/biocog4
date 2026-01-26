@@ -154,7 +154,7 @@ const Auth = () => {
             console.error('Profile update error:', profileError);
           }
           
-          // If partner mode, create partner application
+          // If partner mode, create partner application AND user context
           if (isPartnerMode && organizationType) {
             const { error: applicationError } = await supabase
               .from('partner_applications')
@@ -170,7 +170,22 @@ const Auth = () => {
             if (applicationError) {
               console.error('Partner application error:', applicationError);
             } else {
-              toast.success("Partner application submitted! We'll review and contact you soon.");
+              // CRITICAL: Create partner context so redirect logic works
+              const { error: contextError } = await supabase
+                .from('user_contexts')
+                .insert({
+                  user_id: data.user.id,
+                  context_type: 'partner',
+                  context_id: data.user.id, // Use user_id as context_id for pending partners
+                  context_name: businessName || 'Unnamed Organization',
+                  is_active: true
+                });
+              
+              if (contextError) {
+                console.error('Partner context error:', contextError);
+              }
+              
+              toast.success("Partner account created! Redirecting to your dashboard...");
               navigate('/partner-dashboard');
               return;
             }

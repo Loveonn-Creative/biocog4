@@ -35,3 +35,6 @@ verify_jwt = false
 
 [functions.send-partner-notification]
 verify_jwt = false
+
+[functions.send-purchase-enquiry]
+verify_jwt = false

@@ -1,11 +1,13 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { CarbonParticles } from "@/components/CarbonParticles";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Label } from "@/components/ui/label";
 import { 
   Select, 
   SelectContent, 
@@ -20,13 +22,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import { 
   Leaf, Search, Shield, CheckCircle,
   MapPin, Calendar, ArrowRight, Verified,
-  Building2, Zap, TreePine, Droplets
+  Building2, Zap, TreePine, Droplets, Loader2
 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 // Sample carbon credits data - in production this would come from Supabase
 const sampleCredits = [
@@ -119,6 +124,12 @@ const CarbonMarketplace = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState("All Sectors");
   const [selectedPrice, setSelectedPrice] = useState("All Prices");
+  
+  // Purchase enquiry state
+  const [selectedCredit, setSelectedCredit] = useState<typeof sampleCredits[0] | null>(null);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [enquiryForm, setEnquiryForm] = useState({ name: '', email: '', company: '', phone: '', quantity: 1 });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const filteredCredits = useMemo(() => {
     return sampleCredits.filter(credit => {
@@ -137,6 +148,56 @@ const CarbonMarketplace = () => {
       return matchesSearch && matchesSector && matchesPrice;
     });
   }, [searchQuery, selectedSector, selectedPrice]);
+
+  const handleExpressInterest = (credit: typeof sampleCredits[0]) => {
+    setSelectedCredit(credit);
+    setEnquiryForm({ name: '', email: '', company: '', phone: '', quantity: 1 });
+    setEnquiryOpen(true);
+  };
+
+  const handleSubmitEnquiry = async () => {
+    if (!selectedCredit || !enquiryForm.name || !enquiryForm.email) {
+      toast.error('Please fill in your name and email');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-purchase-enquiry', {
+        body: {
+          listing: {
+            id: selectedCredit.id,
+            sector: selectedCredit.type,
+            region: selectedCredit.location,
+            pricePerTonne: selectedCredit.pricePerTonne,
+            creditsAvailable: selectedCredit.availableTonnes,
+            methodology: selectedCredit.methodology,
+            vintage: selectedCredit.vintage,
+            verificationScore: 95,
+            currency: 'INR'
+          },
+          buyer: {
+            name: enquiryForm.name,
+            email: enquiryForm.email,
+            company: enquiryForm.company,
+            phone: enquiryForm.phone
+          },
+          requestedQuantity: enquiryForm.quantity
+        }
+      });
+
+      if (error) throw error;
+      
+      toast.success('Enquiry submitted! Our team will contact you within 24 hours.');
+      setEnquiryOpen(false);
+      setSelectedCredit(null);
+    } catch (err) {
+      console.error('Enquiry error:', err);
+      toast.error('Failed to submit enquiry. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
@@ -319,11 +380,9 @@ const CarbonMarketplace = () => {
                           </div>
                         </div>
 
-                        <Button className="w-full" asChild>
-                          <Link to="/contact">
-                            Express Interest
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Link>
+                        <Button className="w-full" onClick={() => handleExpressInterest(credit)}>
+                          Express Interest
+                          <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
                         
                         <p className="text-xs text-center text-muted-foreground">
@@ -353,6 +412,91 @@ const CarbonMarketplace = () => {
           </div>
         )}
 
+        {/* Purchase Enquiry Dialog */}
+        <Dialog open={enquiryOpen} onOpenChange={setEnquiryOpen}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle>Express Interest</DialogTitle>
+              <DialogDescription>
+                {selectedCredit && `Submit your enquiry for ${selectedCredit.projectName}`}
+              </DialogDescription>
+            </DialogHeader>
+            
+            {selectedCredit && (
+              <div className="space-y-4 pt-2">
+                <div className="p-3 bg-secondary rounded-lg">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Project</span>
+                    <span className="font-medium">{selectedCredit.projectName.slice(0, 30)}...</span>
+                  </div>
+                  <div className="flex justify-between text-sm mt-1">
+                    <span className="text-muted-foreground">Price</span>
+                    <span className="font-semibold text-primary">₹{selectedCredit.pricePerTonne}/tCO₂e</span>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div>
+                    <Label htmlFor="name">Name *</Label>
+                    <Input
+                      id="name"
+                      value={enquiryForm.name}
+                      onChange={(e) => setEnquiryForm({...enquiryForm, name: e.target.value})}
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={enquiryForm.email}
+                      onChange={(e) => setEnquiryForm({...enquiryForm, email: e.target.value})}
+                      placeholder="you@company.com"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <Label htmlFor="company">Company</Label>
+                      <Input
+                        id="company"
+                        value={enquiryForm.company}
+                        onChange={(e) => setEnquiryForm({...enquiryForm, company: e.target.value})}
+                        placeholder="Company name"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="quantity">Quantity (t)</Label>
+                      <Input
+                        id="quantity"
+                        type="number"
+                        min={1}
+                        max={selectedCredit.availableTonnes}
+                        value={enquiryForm.quantity}
+                        onChange={(e) => setEnquiryForm({...enquiryForm, quantity: parseInt(e.target.value) || 1})}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="flex justify-between font-semibold">
+                    <span>Estimated Value</span>
+                    <span className="text-primary">₹{(enquiryForm.quantity * selectedCredit.pricePerTonne).toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setEnquiryOpen(false)}>Cancel</Button>
+              <Button onClick={handleSubmitEnquiry} disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
         {/* Trust Banner */}
         <div className="mt-12 p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
@@ -374,6 +518,7 @@ const CarbonMarketplace = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

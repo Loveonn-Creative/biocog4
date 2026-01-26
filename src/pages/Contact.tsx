@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check, Phone } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
-import { SecondaryFooter } from "@/components/SecondaryFooter";
+import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
@@ -90,7 +90,7 @@ const Contact = () => {
           </div>
         </main>
         
-        <SecondaryFooter />
+        <Footer />
       </div>
     );
   }
@@ -290,7 +290,7 @@ const Contact = () => {
         </div>
       </main>
       
-      <SecondaryFooter />
+      <Footer />
     </div>
   );
 };
