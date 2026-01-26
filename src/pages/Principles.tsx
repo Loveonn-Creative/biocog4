@@ -1,5 +1,5 @@
 import { MinimalNav } from "@/components/MinimalNav";
-import { SecondaryFooter } from "@/components/SecondaryFooter";
+import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -90,7 +90,7 @@ const Principles = () => {
         </div>
       </main>
       
-      <SecondaryFooter />
+      <Footer />
     </div>
   );
 };

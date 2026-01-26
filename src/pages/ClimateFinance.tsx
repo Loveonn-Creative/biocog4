@@ -1,5 +1,5 @@
 import { MinimalNav } from "@/components/MinimalNav";
-import { SecondaryFooter } from "@/components/SecondaryFooter";
+import { Footer } from "@/components/Footer";
 import { ArrowLeft, ArrowRight, Building, Banknote, FileCheck, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -103,7 +103,7 @@ const ClimateFinance = () => {
         </div>
       </main>
       
-      <SecondaryFooter />
+      <Footer />
     </div>
   );
 };
