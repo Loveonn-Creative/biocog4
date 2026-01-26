@@ -70,7 +70,7 @@ export const HomeNavIcons = () => {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to="/partner-dashboard" className="flex items-center gap-2 cursor-pointer">
+            <Link to="/partners" className="flex items-center gap-2 cursor-pointer">
               <Users className="w-4 h-4" />
               Partners
             </Link>
