@@ -62,13 +62,13 @@ const ClimateFinance = () => {
             <h2 className="text-xl font-semibold text-foreground mb-6">What MSMEs Are Missing</h2>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">Free Trade Agreements:</span> India has active FTAs with UAE, Australia, and is negotiating with EU/UK. Carbon certification is becoming a de facto requirement for preferential access.
+                <span className="font-medium text-foreground">Global Trade Access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to EU's Green Deal, Brazil's CBIO market, and Southeast Asia's carbon pricing pilots — verified sustainability data is becoming table stakes for trade access worldwide.
               </p>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">CBAM Impact:</span> Starting 2026, Indian exporters without carbon data will face additional tariffs of 20-35% on steel, cement, aluminum, and related products.
+                <span className="font-medium text-foreground">CBAM & Border Adjustments:</span> Starting 2026, exporters from emerging markets without carbon data face tariffs of 20-35% on steel, cement, aluminum, and related products entering the EU. Similar mechanisms are emerging in UK, Canada, and Australia.
               </p>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">Bank Mandates:</span> RBI guidelines increasingly favor sustainability-linked lending. Banks are building ESG scoring into credit decisions.
+                <span className="font-medium text-foreground">Financial Institution Mandates:</span> Central banks globally — from RBI in India to BCB in Brazil — increasingly favor sustainability-linked lending. Banks are building ESG scoring into credit decisions across emerging markets.
               </p>
             </div>
           </section>

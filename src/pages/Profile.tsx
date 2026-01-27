@@ -89,12 +89,31 @@ const Profile = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [verificationStatus, setVerificationStatus] = useState<'verified' | 'pending' | 'unverified'>('unverified');
 
-  // Redirect if not authenticated
+  // Redirect if not authenticated or if partner (partners go to PartnerProfile)
   useEffect(() => {
-    if (!sessionLoading && !isAuthenticated) {
-      navigate('/auth');
-    }
-  }, [isAuthenticated, sessionLoading, navigate]);
+    const checkContext = async () => {
+      if (!sessionLoading && !isAuthenticated) {
+        navigate('/auth');
+        return;
+      }
+      
+      if (user?.id) {
+        // Check if user is a partner - redirect to partner profile
+        const { data: contextData } = await supabase
+          .from('user_contexts')
+          .select('context_type')
+          .eq('user_id', user.id)
+          .eq('context_type', 'partner')
+          .eq('is_active', true);
+        
+        if (contextData && contextData.length > 0) {
+          navigate('/partner-profile');
+        }
+      }
+    };
+    
+    checkContext();
+  }, [isAuthenticated, sessionLoading, navigate, user?.id]);
 
   // Fetch profile data and verification status
   useEffect(() => {
