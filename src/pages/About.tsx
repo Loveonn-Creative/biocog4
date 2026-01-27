@@ -40,21 +40,24 @@ const About = () => {
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mt-6">
               <div className="p-5 bg-secondary/50 rounded-xl">
-                <p className="text-2xl font-semibold text-foreground">$8.8B</p>
+                <p className="text-2xl font-semibold text-foreground">$120B+</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Indian exports affected by EU CBAM by 2026
+                  Emerging market exports at risk from carbon border adjustments globally
+                </p>
+                <p className="text-xs text-muted-foreground/70 mt-2">
+                  Including $8.8B from India alone
                 </p>
               </div>
               <div className="p-5 bg-secondary/50 rounded-xl">
-                <p className="text-2xl font-semibold text-foreground">CCTS</p>
+                <p className="text-2xl font-semibold text-foreground">CCTS / ETS</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  India's Carbon Credit Trading Scheme mandates reporting
+                  Carbon pricing schemes now cover 23% of global emissions — from India's CCTS to EU ETS to emerging schemes in Brazil, Indonesia, and Southeast Asia
                 </p>
               </div>
             </div>
             <p className="text-muted-foreground mt-6 leading-relaxed">
-              Banks price risk differently for businesses with verified sustainability data. 
-              The gap between "has data" and "doesn't have data" is now a competitive moat.
+              Banks and buyers globally price risk differently for businesses with verified sustainability data. 
+              The gap between "has data" and "doesn't have data" is now a competitive moat — from Mumbai to São Paulo to Jakarta.
             </p>
           </section>
           
@@ -79,8 +82,8 @@ const About = () => {
               </div>
             </div>
             <p className="text-muted-foreground mt-6 leading-relaxed">
-              MSMEs—who employ 110 million people in India alone—are structurally excluded from the 
-              infrastructure required to participate in the transition.
+              MSMEs across emerging markets — 110 million in India, 40 million in Brazil, 65 million in Indonesia — are structurally excluded from the 
+              infrastructure required to participate in the climate transition.
             </p>
           </section>
           

@@ -15,7 +15,8 @@ interface NavigationProps {
   onSignOut?: () => void;
 }
 
-const navItems = [
+// MSME navigation items
+const msmeNavItems = [
   { path: '/', label: 'Upload', icon: Upload },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/history', label: 'History', icon: Clock },
@@ -23,6 +24,14 @@ const navItems = [
   { path: '/intelligence', label: 'Intelligence', icon: Brain },
   { path: '/verify', label: 'Verify', icon: Shield },
   { path: '/monetize', label: 'Monetize', icon: Coins },
+  { path: '/reports', label: 'Reports', icon: FileBarChart },
+];
+
+// Partner navigation items
+const partnerNavItems = [
+  { path: '/partner-dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/marketplace', label: 'Marketplace', icon: Coins },
+  { path: '/intelligence', label: 'Intelligence', icon: Brain },
   { path: '/reports', label: 'Reports', icon: FileBarChart },
 ];
 
@@ -56,6 +65,10 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
     if (path === '/') return location.pathname === '/';
     return location.pathname.startsWith(path);
   };
+
+  // Determine which nav items to show based on context
+  const isPartnerContext = activeContext?.context_type === 'partner';
+  const navItems = isPartnerContext ? partnerNavItems : msmeNavItems;
 
   return (
     <>

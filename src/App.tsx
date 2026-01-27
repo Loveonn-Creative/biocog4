@@ -33,6 +33,7 @@ const ClimateStack = lazy(() => import("./pages/ClimateStack"));
 const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Profile = lazy(() => import("./pages/Profile"));
+const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
 const Industries = lazy(() => import("./pages/Industries"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
@@ -86,6 +87,7 @@ const App = () => (
               <Route path="/partner-dashboard" element={<PartnerDashboard />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/partner-profile" element={<PartnerProfile />} />
               <Route path="/subscription" element={<Subscription />} />
               <Route path="/mission" element={<Mission />} />
               <Route path="/about" element={<About />} />

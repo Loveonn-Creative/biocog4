@@ -35,13 +35,13 @@ const CarbonCredits = () => {
             </div>
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <TrendingUp className="w-6 h-6 text-success mb-4" />
-              <p className="text-3xl font-semibold text-foreground mb-2">₹12K+</p>
-              <p className="text-sm text-muted-foreground">Average annual carbon credit value for a typical MSME</p>
+              <p className="text-3xl font-semibold text-foreground mb-2">$150+</p>
+              <p className="text-sm text-muted-foreground">Average annual carbon credit value for a typical MSME (~₹12,500)</p>
             </div>
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <Globe className="w-6 h-6 text-accent mb-4" />
-              <p className="text-3xl font-semibold text-foreground mb-2">CCTS</p>
-              <p className="text-sm text-muted-foreground">Aligned with India's Carbon Credit Trading Scheme</p>
+              <p className="text-3xl font-semibold text-foreground mb-2">Global Standards</p>
+              <p className="text-sm text-muted-foreground">Aligned with India's CCTS, EU ETS, and voluntary markets (Verra, Gold Standard)</p>
             </div>
           </div>
           
