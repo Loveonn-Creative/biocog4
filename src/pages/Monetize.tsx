@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useEmissions } from '@/hooks/useEmissions';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { useOrganization } from '@/hooks/useOrganization';
 import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
 import { 
   Coins, Building2, Gift, ExternalLink, CheckCircle, ArrowRight, 
@@ -52,11 +53,20 @@ const Monetize = () => {
   const { sessionId, user } = useSession();
   const { summary, getVerifiedEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
+  const { activeContext } = useOrganization();
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [applyingPathway, setApplyingPathway] = useState<string | null>(null);
   const [pathwayStatuses, setPathwayStatuses] = useState<Record<string, string>>({});
+
+  // Route protection: redirect partners to their dashboard
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
+      toast.info('This feature is for MSMEs. Redirecting to Partner Dashboard.');
+      navigate('/partner-dashboard');
+    }
+  }, [activeContext, navigate]);
 
   const co2Tons = summary.total / 1000;
   const carbonCreditValue = Math.round(co2Tons * 750); // ₹750 per tCO₂e

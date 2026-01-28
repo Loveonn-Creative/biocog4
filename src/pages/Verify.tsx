@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { useEmissions } from '@/hooks/useEmissions';
+import { useOrganization } from '@/hooks/useOrganization';
 import { 
   CheckCircle, AlertTriangle, Shield, ArrowRight, Loader2, 
   AlertCircle, TrendingUp, Leaf, Award, XCircle, Info,
   Coins, FileBarChart, BarChart3
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
@@ -45,11 +46,20 @@ interface VerificationResult {
 const Verify = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  const { activeContext } = useOrganization();
   const { emissions, getUnverifiedEmissions, refetch } = useEmissions();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const unverified = getUnverifiedEmissions();
+
+  // Route protection: redirect partners to their dashboard
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
+      toast.info('This feature is for MSMEs. Redirecting to Partner Dashboard.');
+      navigate('/partner-dashboard');
+    }
+  }, [activeContext, navigate]);
 
   const handleVerify = async () => {
     if (unverified.length === 0) return;

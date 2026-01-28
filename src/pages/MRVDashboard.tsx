@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -9,12 +9,14 @@ import { Progress } from '@/components/ui/progress';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
+import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import {
   Shield, TrendingUp, Target, Award, FileCheck, AlertCircle,
   CheckCircle, Clock, ArrowRight, Leaf, Zap, Recycle, Sun,
   ChevronRight, BarChart3, Lock, ExternalLink, Lightbulb, Activity
 } from 'lucide-react';
+import { toast } from 'sonner';
 import { 
   generateIntelligentRecommendations, 
   getTotalImpact,
@@ -54,13 +56,23 @@ interface GreenAction {
 }
 
 const MRVDashboard = () => {
+  const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  const { activeContext } = useOrganization();
   const { summary, emissions, getVerifiedEmissions } = useEmissions();
   const { documents } = useDocuments();
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const verifiedEmissions = getVerifiedEmissions();
+
+  // Route protection: redirect partners to their dashboard
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
+      toast.info('This dashboard is for MSMEs. Redirecting to Partner Dashboard.');
+      navigate('/partner-dashboard');
+    }
+  }, [activeContext, navigate]);
 
   useEffect(() => {
     fetchVerifications();
