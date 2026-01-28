@@ -1,155 +1,181 @@
 
-# Focused Implementation Plan: Global Narrative, SEO, Partner Separation, and Marketplace Flow
+# Sophisticated B2B Partner Access: Implementation Plan
 
-## Priority 1: Global & Emerging Market Narrative Balance
+## Current State Analysis
 
-### Current State
-- About page has "$8.8B Indian exports" and "CCTS India's Carbon Credit Trading Scheme" - India-only framing
-- Carbon Credits page mentions only CCTS
-- Climate Finance page mentions only Indian FTAs and RBI
+**What Works:**
+- Partner signup creates `user_contexts` with `context_type: 'partner'` (Auth.tsx lines 174-182)
+- Partner dashboard shows anonymized cluster data, baseline charts, and purchase flow (PartnerDashboard.tsx)
+- Partner profile exists with organization info (PartnerProfile.tsx)
+- Navigation switches between MSME and Partner nav items (Navigation.tsx line 70)
+- Partner Marketplace exists with filtering and SDG alignment (PartnerMarketplace.tsx)
 
-### Changes Required
-
-**About.tsx** - Update "The Problem" section:
-- Change "$8.8B Indian exports affected by EU CBAM by 2026" to:
-  "$120B+ emerging market exports at risk from carbon border adjustments globally"
-- Add subtext: "Including $8.8B from India alone"
-- Change CCTS box to: "CCTS/ETS" with description "Carbon pricing schemes now cover 23% of global emissions — from India's CCTS to EU ETS to emerging schemes in Brazil, Indonesia, and Southeast Asia"
-
-**CarbonCredits.tsx** - Update key metrics:
-- Change CCTS metric to: "Global Standards" with description "Aligned with India's CCTS, EU ETS, and voluntary markets (Verra, Gold Standard)"
-- Update INR metric to show USD equivalent (approximately $15+)
-
-**ClimateFinance.tsx** - Expand "What MSMEs Are Missing":
-- Add global context: "From India's FTAs to EU's Green Deal, Brazil's CBIO market, and Southeast Asia's carbon pricing pilots, verified sustainability data is becoming table stakes for trade access"
-- Add international examples alongside Indian examples
+**Critical Gaps:**
+- MSME pages (/verify, /monetize, /mrv-dashboard, /reports, /dashboard) have NO route protection for partners
+- Partners can still access all MSME features via URL navigation
+- No dedicated Partner Reports page
+- No partner-type-specific routing (Banks vs Carbon Buyers vs ERPs)
+- Missing real-time risk alerts and compliance signals
 
 ---
 
-## Priority 2: SEO & Blog Architecture
+## Implementation Scope
 
-### Favicon
-**Status**: Already configured in index.html pointing to Senseible logo
-**Fix**: Update to proper favicon format in public/ folder for reliability
+### 1. Route Protection for MSME-Only Pages
+Add partner exclusion logic to 5 MSME-only pages with redirect:
 
-### Internal Linking Strategy
-- Add contextual links within CMS articles to related pages (/carbon-credits, /climate-finance, /verify)
-- Add "Related Solutions" section in About, Mission, CarbonCredits, ClimateFinance pages
+**Files: Verify.tsx, Monetize.tsx, MRVDashboard.tsx, Reports.tsx, Dashboard.tsx**
 
-### Blog Architecture (Already Exists)
-- CMSArticle.tsx already provides excellent blog structure with:
-  - Related articles
-  - Category navigation
-  - Tags
-  - Social sharing
-  - Newsletter signup
+```typescript
+// Add at top of each component
+const { activeContext } = useOrganization();
+const navigate = useNavigate();
 
-### 10+ New High-Impact Blog Articles (to add to cmsContent.ts)
-Focus on voice/AI search optimization, internal links, 300-400 words each:
+useEffect(() => {
+  if (activeContext?.context_type === 'partner') {
+    toast.info('This feature is for MSMEs. Redirecting to Partner Dashboard.');
+    navigate('/partner-dashboard');
+  }
+}, [activeContext]);
+```
 
-1. "What is carbon MRV and why MSMEs need it in 2026"
-2. "How to get green loans in India using carbon data"
-3. "EU CBAM explained: What exporters in emerging markets need to know"
-4. "Scope 1 vs Scope 2 vs Scope 3: A simple guide for small businesses"
-5. "What is Senseible and how is it different from Sensibull"
-6. "How to calculate carbon footprint from electricity bills"
-7. "Brazil CBIO vs India CCTS: Comparing carbon markets"
-8. "Green finance for textile exporters: Step by step guide"
-9. "What documents do I need for carbon verification"
-10. "How to prepare for BRSR reporting as a small manufacturer"
-11. "Carbon credits for solar installations: How to monetize"
-12. "Steel and aluminum exporters: CBAM compliance checklist"
-13. "The $136 Billion Breakthrough: How the India-EU FTA Just Rewrote the Rulebook for Indian MSMEs"
-14. "Survival of the Greenest: Why the EU’s Carbon Tax (CBAM) is the Ultimate Litmus Test for Indian Industry"
-15. "Trading Air for Assets: Can India’s New Carbon Markets Shield Exporters from Europe’s €90 Carbon Price?"
-16. "The "Mother of All Deals" & MSMEs in India" 
-17. "The Great Diversification: Why the India-EU Pact is New Delhi’s Strategic Shield Against Global Tariff Wars"
+### 2. Dedicated Partner Reports Page
+**New File: src/pages/PartnerReports.tsx**
 
-Each article includes internal links to /verify, /carbon-credits, /climate-finance, /pricing
+Sections:
+- **Portfolio Overview**: Total credits held, acquisition history, retirement status
+- **Purchase History**: Table with date, listing, quantity, price, status
+- **Audit Pack Downloads**: Per-purchase verification bundles (PDF)
+- **Compliance Dashboard**: CBAM/EU Taxonomy/PCAF alignment indicators
 
----
+No raw MSME data exposure - only aggregated, verified signals.
 
-## Priority 3: Partner vs MSME Separation (CRITICAL)
+### 3. Enhanced Partner Dashboard Signals
+**File: PartnerDashboard.tsx modifications**
 
-### Current State Analysis
-- Auth.tsx already creates partner context on signup
-- PartnerDashboard.tsx has access control checking user_contexts
-- Profile.tsx is MSME-focused (GSTIN, sector, size)
+Replace current generic metrics with decision-grade signals:
 
-### Issues to Fix
+| Current | Replace With |
+|---------|-------------|
+| totalMSMEs | Active Verified Suppliers |
+| totalReductions | Tradeable Credits (TCO2e) |
+| additionalityScore | Data Quality Grade (A-D) |
+| confidenceBand | CBAM Readiness Score |
 
-**A. Partner Profile Model (New: PartnerProfile.tsx)**
-Create distinct partner profile page with:
-- Organization name and type (Bank, Carbon Buyer, ERP)
-- API access status
-- Portfolio overview
-- Different pricing display (enterprise tier)
-- No GSTIN/MSME fields
+Add new sections:
+- **Real-Time Alerts Panel**: Flagged verifications, expiring credits, compliance deadlines
+- **Eligibility Summary**: CCTS/CBAM/EU Taxonomy eligibility badges per cluster
+- **Regional Breakdown Chart**: Interactive pie chart by region
 
-**B. Route Protection Enhancement**
-Update protected routes to check context type:
-- /dashboard, /reports, /mrv-dashboard, /verify, /monetize → MSME only
-- /partner-dashboard, /partner-marketplace → Partner only
-- /intelligence, /marketplace → Shared access
+### 4. Partner Type Routing Logic
+**File: Auth.tsx enhancement**
 
-**C. Navigation Context Awareness (Navigation.tsx)**
-Show different nav items based on active context:
-- MSME: Upload, Dashboard, History, MRV, Intelligence, Verify, Monetize, Reports
-- Partner: Dashboard, Marketplace, Intelligence, Credits, Reports
+After partner signup, route based on `organization_type`:
 
-**D. Redirect Logic (Auth.tsx)**
-Already implemented - creates user_context with type='partner' and redirects to /partner-dashboard
+```typescript
+const getPartnerRedirect = (orgType: string): string => {
+  switch(orgType) {
+    case 'banks': return '/partner-dashboard'; // Future: /partner/lending
+    case 'carbon-buyers': return '/marketplace';
+    case 'erp': return '/partner-dashboard'; // Future: /partner/api
+    default: return '/partner-dashboard';
+  }
+};
+```
 
----
+Store `organization_type` in user_contexts metadata for routing on sign-in.
 
-## Priority 4: Marketplace Listing Details & Partner Type Routing
+### 5. Compliance Signals Component
+**New Component: src/components/partner/ComplianceSignals.tsx**
 
-### Listing Details Enhancement
-Current CarbonMarketplace.tsx has rich listing cards with:
-- Project name, location, type, vintage
-- Price and available tonnes
-- SDG goals, co-benefits
-- Verifier and methodology
-- Full detail dialog with Express Interest
+```text
++-------------------------------------------+
+| CBAM        | EU Taxonomy | PCAF          |
+| [Compliant] | [Eligible]  | [Pending]     |
++-------------------------------------------+
+| Last Verified: Jan 28, 2026               |
+| Audit Trail: SHA256-xxx...                |
++-------------------------------------------+
+```
 
-This is already well-implemented. No changes needed to listing display.
+Displays per-verification compliance status without raw data.
 
-### Express Interest Flow
-Already implemented with send-purchase-enquiry edge function that:
-- Captures buyer details (name, email, company, phone, quantity)
-- Sends structured email with full listing metadata
-- Confirms submission to user
+### 6. Interactive Analytics Charts
+**Enhancement to PartnerDashboard.tsx**
 
-### Partner Type Routing (Future Enhancement)
-Based on partner_applications.organization_type:
-- "carbon-buyers" → Marketplace + Credit analytics
-- "banks" → Green loan pipeline + Risk scoring
-- "erp" → API docs + Integration status
+Add three new Recharts visualizations:
+- **Score Trends Over Time**: Line chart of verification_score by month
+- **Eligibility Distribution**: Pie chart (CCTS Eligible vs Not)
+- **Regional Credits Breakdown**: Bar chart by region
 
-For now, all partners route to /partner-dashboard which provides credit buyer view.
+All charts use existing `recharts` dependency with existing theme colors.
 
 ---
 
-## Technical Implementation Summary
+## Route Structure
 
-| File | Changes |
-|------|---------|
-| About.tsx | Global narrative updates (3 text changes) |
-| CarbonCredits.tsx | CCTS → Global Standards metric |
-| ClimateFinance.tsx | Add global market context |
-| cmsContent.ts | Add 12 new SEO-optimized articles |
-| public/favicon.ico | Copy existing logo to favicon format |
-| PartnerProfile.tsx | NEW: Distinct partner profile page |
-| Navigation.tsx | Context-aware nav items |
-| App.tsx | Add partner-profile route |
-| Profile.tsx | Add redirect for partners to PartnerProfile |
+```text
+/partner-dashboard     -> Main partner hub
+/partner-profile       -> Organization settings (exists)
+/partner-reports       -> NEW: Credit portfolio + audit packs
+/marketplace          -> Credit browsing + purchase
+/intelligence         -> Shared: ESG Q&A assistant
+```
+
+**Protected MSME Routes (redirect partners to /partner-dashboard):**
+- /dashboard, /verify, /monetize, /mrv-dashboard, /reports
 
 ---
 
-## Performance & UX Guarantees
+## Data Isolation Guarantee
 
-- No new dependencies added
-- All changes are content/text updates or route additions
-- Existing page structures preserved
-- No core logic modifications
-- Lazy loading maintained for new routes
+Partners access ONLY:
+- `marketplace_listings` (anonymized)
+- `carbon_verifications` (aggregate cluster data via partner_access)
+- `partner_applications` (own record)
+- `partner_organizations` (if approved)
+
+Partners NEVER access:
+- `documents` (raw invoices)
+- `emissions` (individual records)
+- `profiles` (MSME business data)
+
+All enforced via existing RLS policies.
+
+---
+
+## File Changes Summary
+
+| File | Action | Purpose |
+|------|--------|---------|
+| Dashboard.tsx | Add partner redirect | Block partner access |
+| Verify.tsx | Add partner redirect | Block partner access |
+| Monetize.tsx | Add partner redirect | Block partner access |
+| MRVDashboard.tsx | Add partner redirect | Block partner access |
+| Reports.tsx | Add partner redirect | Block partner access |
+| PartnerReports.tsx | CREATE | Portfolio + audit packs |
+| PartnerDashboard.tsx | ENHANCE | Signals + alerts + charts |
+| ComplianceSignals.tsx | CREATE | CBAM/Taxonomy badges |
+| App.tsx | Add route | /partner-reports |
+| Navigation.tsx | Add nav item | Reports link for partners |
+| Auth.tsx | Enhance | Org-type routing |
+
+---
+
+## Performance Guarantees
+
+- No new dependencies (uses existing recharts, lucide-react)
+- Lazy loading for PartnerReports.tsx
+- Route protection uses existing useOrganization hook
+- All chart data derived from existing Supabase queries
+- No additional database tables required
+
+---
+
+## Expected Outcomes
+
+1. Partners CANNOT access /verify, /monetize, /mrv-dashboard, /dashboard, /reports
+2. Partners see decision-grade signals: scores, eligibility, compliance status
+3. Partner Reports page provides purchase history and audit pack downloads
+4. Real-time alerts surface exceptions without exposing raw data
+5. Future-ready for partner-type-specific portals (Banks, ERPs, Buyers)
