@@ -3,6 +3,7 @@ import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { usePersonalization } from '@/hooks/usePersonalization';
+import { useOrganization } from '@/hooks/useOrganization';
 import { useNavigate, Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -26,6 +27,7 @@ const Dashboard = () => {
   const { user, sessionId, isLoading: sessionLoading } = useSession();
   const { tier } = usePremiumStatus();
   const { greeting, tierLabel, tierEmoji, isPersonalized } = usePersonalization();
+  const { activeContext } = useOrganization();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -38,6 +40,14 @@ const Dashboard = () => {
   const unverifiedEmissions = getUnverifiedEmissions();
   const verifiedEmissions = getVerifiedEmissions();
   const isGuestUser = !user && sessionId;
+
+  // Route protection: redirect partners to their dashboard
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
+      toast.info('This dashboard is for MSMEs. Redirecting to Partner Dashboard.');
+      navigate('/partner-dashboard');
+    }
+  }, [activeContext, navigate]);
 
   useEffect(() => {
     fetchVerificationData();

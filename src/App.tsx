@@ -45,6 +45,7 @@ const Partners = lazy(() => import("./pages/Partners"));
 const Admin = lazy(() => import("./pages/Admin"));
 const AcceptInvite = lazy(() => import("./pages/AcceptInvite"));
 const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
+const PartnerReports = lazy(() => import("./pages/PartnerReports"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -111,6 +112,7 @@ const App = () => (
               <Route path="/partners" element={<Partners />} />
               <Route path="/accept-invite" element={<AcceptInvite />} />
               <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
+              <Route path="/partner-reports" element={<PartnerReports />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

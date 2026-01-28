@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,6 +10,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { useOrganization } from '@/hooks/useOrganization';
 import { PremiumBadge } from '@/components/PremiumBadge';
 import { supabase } from '@/integrations/supabase/client';
 import { 
@@ -66,15 +67,25 @@ const ALL_FRAMEWORKS = [
 ];
 
 const Reports = () => {
+  const navigate = useNavigate();
   const { summary, emissions } = useEmissions();
   const { user, sessionId } = useSession();
   const { isPremium, canAccessFeature } = usePremiumStatus();
+  const { activeContext } = useOrganization();
   const [isGenerating, setIsGenerating] = useState(false);
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showFrameworkOptions, setShowFrameworkOptions] = useState(false);
   const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
   const [useCustomFrameworks, setUseCustomFrameworks] = useState(false);
+
+  // Route protection: redirect partners to their reports page
+  useEffect(() => {
+    if (activeContext?.context_type === 'partner') {
+      toast.info('Redirecting to Partner Reports.');
+      navigate('/partner-reports');
+    }
+  }, [activeContext, navigate]);
   
   // Load profile from localStorage or use default
   const getStoredProfile = (): ProfileContext => {

@@ -32,7 +32,7 @@ const partnerNavItems = [
   { path: '/partner-dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/marketplace', label: 'Marketplace', icon: Coins },
   { path: '/intelligence', label: 'Intelligence', icon: Brain },
-  { path: '/reports', label: 'Reports', icon: FileBarChart },
+  { path: '/partner-reports', label: 'Reports', icon: FileBarChart },
 ];
 
 export const Navigation = ({ onSignOut }: NavigationProps) => {
