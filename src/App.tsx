@@ -46,6 +46,7 @@ const Admin = lazy(() => import("./pages/Admin"));
 const AcceptInvite = lazy(() => import("./pages/AcceptInvite"));
 const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
 const PartnerReports = lazy(() => import("./pages/PartnerReports"));
+const CompetitorComparison = lazy(() => import("./pages/CompetitorComparison"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -114,6 +115,7 @@ const App = () => (
               <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
               <Route path="/partner-reports" element={<PartnerReports />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
