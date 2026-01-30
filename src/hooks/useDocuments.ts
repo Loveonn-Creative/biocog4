@@ -19,6 +19,8 @@ export interface Document {
   created_at: string;
   session_id: string | null;
   user_id: string | null;
+  document_hash: string | null; // For duplicate detection
+  cached_result: Json | null;   // Cached MRV result
 }
 
 export function useDocuments() {

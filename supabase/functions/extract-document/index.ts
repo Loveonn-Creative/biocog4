@@ -690,9 +690,10 @@ serve(async (req) => {
     const documentHash = await generateDocumentHash(imageBase64, mimeType || 'image/jpeg');
     console.log(`Document hash generated: ${documentHash.substring(0, 16)}...`);
 
-    // Check for cached result (paid users only)
+    // Check for duplicate / cached result
     let userId: string | null = null;
     let userTier: string = 'guest';
+    let isAuthenticated = false;
     const authHeader = req.headers.get('Authorization');
     
     if (authHeader) {
@@ -707,6 +708,7 @@ serve(async (req) => {
           
           if (user) {
             userId = user.id;
+            isAuthenticated = true;
             
             // Get user tier from profile
             const { data: profile } = await supabase
@@ -717,38 +719,68 @@ serve(async (req) => {
             
             userTier = profile?.subscription_tier || 'snapshot';
             
-            // Check for cached result (paid users only - essential, pro, scale)
-            const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
+            // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
+            // For authenticated/paid users: Block duplicate processing to prevent greenwashing
+            // Check if this exact document hash has been processed before
+            const { data: existingDoc } = await supabase
+              .from('documents')
+              .select('id, vendor, invoice_number, created_at, cached_result')
+              .eq('document_hash', documentHash)
+              .eq('user_id', userId)
+              .order('created_at', { ascending: false })
+              .limit(1)
+              .single();
             
-            if (isPaidTier) {
-              const { data: cached } = await supabase
-                .from('documents')
-                .select('cached_result, cache_expires_at')
-                .eq('document_hash', documentHash)
-                .eq('user_id', userId)
-                .gte('cache_expires_at', new Date().toISOString())
-                .order('created_at', { ascending: false })
-                .limit(1)
-                .single();
+            if (existingDoc) {
+              console.log(`DUPLICATE DETECTED: Document hash ${documentHash.substring(0, 16)}... already processed for user ${userId}`);
               
-              if (cached?.cached_result) {
-                console.log(`Returning cached result for hash: ${documentHash.substring(0, 16)}...`);
+              // For paid tiers: Return cached result with duplicate flag
+              const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
+              
+              if (isPaidTier && existingDoc.cached_result) {
                 return new Response(
                   JSON.stringify({ 
                     success: true, 
-                    data: cached.cached_result,
+                    data: existingDoc.cached_result,
                     cached: true,
-                    documentHash 
+                    isDuplicate: true,
+                    originalDocumentId: existingDoc.id,
+                    originalProcessedAt: existingDoc.created_at,
+                    documentHash,
+                    message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results to ensure accuracy and prevent duplicate counting.`
                   }),
                   { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
                 );
               }
+              
+              // For free tiers: Block with clear message
+              return new Response(
+                JSON.stringify({ 
+                  success: false, 
+                  isDuplicate: true,
+                  originalDocumentId: existingDoc.id,
+                  originalProcessedAt: existingDoc.created_at,
+                  documentHash,
+                  error: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Each invoice can only be counted once to maintain audit integrity. View your history to see the original results.`,
+                  vendor: existingDoc.vendor,
+                  invoiceNumber: existingDoc.invoice_number
+                }),
+                { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+              );
             }
           }
         } catch (authError) {
           console.log('Auth check failed, proceeding as guest:', authError);
         }
       }
+    }
+    
+    // ============= GUEST USER HANDLING =============
+    // For guest users: Allow repeat processing for testing purposes
+    // Returns same deterministic result due to rule-based calculations
+    if (!isAuthenticated) {
+      console.log(`Guest user processing document. Hash: ${documentHash.substring(0, 16)}...`);
+      // Note: Same input always produces same output due to deterministic calculation
     }
 
     console.log(`Processing document for ${userTier} user with deterministic MRV extraction...`);
