@@ -11,8 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
-import { usePremiumStatus } from "@/hooks/usePremiumStatus";
-import { validateInvoiceForPremium, extractGstinFromInvoice } from "@/lib/gstinValidation";
+
 
 type State = "idle" | "processing" | "result";
 
@@ -119,21 +118,9 @@ const CARBON_CREDIT_RATE = 750;
 const Index = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
-  const { isPremium } = usePremiumStatus();
   const [state, setState] = useState<State>("idle");
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
-  
-  const getProfileGstin = (): string | undefined => {
-    try {
-      const stored = localStorage.getItem('senseible_company_profile');
-      if (stored) {
-        const profile = JSON.parse(stored);
-        return profile.gstin;
-      }
-    } catch {}
-    return undefined;
-  };
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -246,6 +233,30 @@ const Index = () => {
         toast.error("Failed to process document. Please try again.");
         setState("idle");
         return;
+      }
+
+      // Handle duplicate invoice detection for authenticated users
+      if (data?.isDuplicate) {
+        console.log("Duplicate invoice detected:", data);
+        if (data.success && data.data) {
+          // Paid user - show cached result with notification
+          toast.info(data.message || "Using previously verified results for this invoice.", {
+            duration: 5000,
+            icon: "🔒"
+          });
+          // Continue processing with cached data
+        } else {
+          // Free/snapshot user - block duplicate processing
+          toast.error(data.error || "This invoice was already processed.", {
+            duration: 6000,
+            action: {
+              label: "View History",
+              onClick: () => navigate('/history')
+            }
+          });
+          setState("idle");
+          return;
+        }
       }
 
       // Handle irrelevant document rejection

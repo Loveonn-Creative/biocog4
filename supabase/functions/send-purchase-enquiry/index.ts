@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
+import { Resend } from "https://esm.sh/resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -155,14 +155,14 @@ const handler = async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "Senseible Marketplace <noreply@senseible.earth>",
       to: ["impact@senseible.earth"],
-      replyTo: buyer.email,
+      reply_to: buyer.email,
       subject: `🌱 Carbon Credit Enquiry: ${requestedQuantity} tCO₂e from ${buyer.name}`,
       html: emailHtml,
     });
 
     console.log("Purchase enquiry email sent:", emailResponse);
 
-    return new Response(JSON.stringify({ success: true, id: emailResponse.id }), {
+    return new Response(JSON.stringify({ success: true, id: (emailResponse as any).id }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
