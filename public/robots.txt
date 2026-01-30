@@ -6,6 +6,7 @@ User-agent: *
 Allow: /
 Allow: /climate-intelligence/
 Allow: /industries/
+Allow: /vs/
 Allow: /mission
 Allow: /about
 Allow: /pricing

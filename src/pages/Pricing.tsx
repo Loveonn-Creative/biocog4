@@ -15,12 +15,13 @@ import {
 } from '@/components/ui/accordion';
 import { 
   Check, Sparkles, Zap, Crown, Building2, ArrowRight,
-  Brain, Loader2
+  Brain, Loader2, Briefcase, Phone
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useSession } from '@/hooks/useSession';
 import { useRazorpay } from '@/hooks/useRazorpay';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
 
 interface PricingTier {
@@ -38,11 +39,26 @@ interface PricingTier {
   features: string[];
 }
 
+interface PartnerTier {
+  id: string;
+  name: string;
+  icon: typeof Briefcase;
+  tagline: string;
+  priceLabel: string;
+  cta: string;
+  ctaVariant: 'default' | 'outline' | 'secondary';
+  popular?: boolean;
+  features: string[];
+}
+
 const Pricing = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useSession();
   const { initiatePayment, isLoading: isPaymentLoading, isReady: isRazorpayReady } = useRazorpay();
   const { tier: currentTier, refreshTier } = usePremiumStatus();
+  const { activeContext } = useOrganization();
+  
+  const isPartnerContext = activeContext?.context_type === 'partner';
   
   const [teamSize, setTeamSize] = useState(50);
   const [processingTier, setProcessingTier] = useState<string | null>(null);
@@ -50,6 +66,72 @@ const Pricing = () => {
   const scaleBasePrice = 15000;
   const perEmployeePrice = 99;
   const scalePrice = scaleBasePrice + (teamSize * perEmployeePrice);
+
+  // Partner-specific tiers
+  const partnerTiers: PartnerTier[] = [
+    {
+      id: 'pay-as-you-go',
+      name: 'Pay As You Go',
+      icon: Briefcase,
+      tagline: 'Flexible Access',
+      priceLabel: 'Per transaction',
+      cta: 'Get Started',
+      ctaVariant: 'outline',
+      features: [
+        'Access verified carbon credits',
+        'Per-credit transaction fees',
+        'Basic compliance signals',
+        'Standard verification',
+        'Email support',
+        'Download audit packs',
+      ],
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      icon: Building2,
+      tagline: 'Custom Solutions',
+      priceLabel: 'Custom pricing',
+      cta: 'Contact Sales',
+      ctaVariant: 'default',
+      popular: true,
+      features: [
+        'Unlimited credit access',
+        'Priority verification queue',
+        'Full compliance dashboard (CBAM, EU Taxonomy, PCAF)',
+        'API integrations',
+        'Real-time alerts & signals',
+        'Dedicated account manager',
+        'Custom reporting',
+        'SLA guarantee',
+      ],
+    },
+    {
+      id: 'api',
+      name: 'API Access',
+      icon: Zap,
+      tagline: 'For ERPs & Platforms',
+      priceLabel: 'Volume-based',
+      cta: 'Request API Docs',
+      ctaVariant: 'secondary',
+      features: [
+        'RESTful API access',
+        'Webhook integrations',
+        'Bulk verification endpoints',
+        'White-label options',
+        'Technical onboarding',
+        'Developer support',
+      ],
+    },
+  ];
+
+  const handlePartnerAction = (tierId: string) => {
+    if (tierId === 'pay-as-you-go') {
+      navigate('/marketplace');
+    } else {
+      navigate('/contact');
+    }
+  };
 
   const handleSubscribe = async (tierId: string) => {
     // Free tier - just navigate to auth
@@ -258,6 +340,29 @@ const Pricing = () => {
     },
   ];
 
+  const partnerFaqs = [
+    {
+      q: 'How do I access verified MSME carbon data?',
+      a: 'Our marketplace provides access to aggregated, anonymized carbon verification data from thousands of MSMEs. All data is verified through our AI-powered MRV system.',
+    },
+    {
+      q: 'What compliance standards do you support?',
+      a: 'We provide signals for EU CBAM, EU Taxonomy, PCAF, India CCTS, and BRSR. Our compliance dashboard shows real-time status for each framework.',
+    },
+    {
+      q: 'Can I integrate with my existing systems?',
+      a: 'Yes. Enterprise and API plans include RESTful API access, webhooks, and white-label options for ERP and platform integrations.',
+    },
+    {
+      q: 'How is pricing calculated for pay-as-you-go?',
+      a: 'Transaction fees are based on credit volume and verification depth. Contact us for volume discounts on larger purchases.',
+    },
+    {
+      q: 'Do you provide audit packs for due diligence?',
+      a: 'Yes. Every credit purchase includes downloadable audit packs with verification methodology, data sources, and compliance mappings.',
+    },
+  ];
+
   const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
     style: 'currency', 
     currency: 'INR', 
@@ -278,194 +383,301 @@ const Pricing = () => {
         <section className="container mx-auto px-4 pt-12 pb-16 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              Earn from your Climate Data
-              <br />
-              <span className="text-gradient-success">in 10 Seconds</span>
+              {isPartnerContext ? (
+                <>
+                  Partner Access
+                  <br />
+                  <span className="text-gradient-success">Built for Scale</span>
+                </>
+              ) : (
+                <>
+                  Earn from your Climate Data
+                  <br />
+                  <span className="text-gradient-success">in 10 Seconds</span>
+                </>
+              )}
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              AI for MSMEs. Start free. Grow as you grow. No consultants. No delays.
+              {isPartnerContext 
+                ? 'Access verified MSME carbon data, compliance signals, and credits. Flexible pricing for banks, buyers, and platforms.'
+                : 'AI for MSMEs. Start free. Grow as you grow. No consultants. No delays.'
+              }
             </p>
             <Button size="lg" asChild>
-              <Link to="/auth">
-                Start Free
+              <Link to={isPartnerContext ? "/contact" : "/auth"}>
+                {isPartnerContext ? 'Contact Sales' : 'Start Free'}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>
         </section>
 
-        {/* Pricing Cards */}
-        <section className="container mx-auto px-4 pb-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {tiers.map((tier, idx) => (
-              <Card 
-                key={tier.id}
-                className={cn(
-                  "relative overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in",
-                  tier.popular && "border-primary shadow-lg ring-2 ring-primary/20"
-                )}
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                {tier.popular && (
-                  <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
-                    Most Popular
-                  </div>
-                )}
-                <CardContent className="p-6">
-                  {/* Header */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className={cn(
-                      "p-2 rounded-lg",
-                      tier.popular ? "bg-primary/10" : "bg-muted"
-                    )}>
-                      <tier.icon className={cn(
-                        "h-5 w-5",
-                        tier.popular ? "text-primary" : "text-muted-foreground"
-                      )} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">{tier.name}</h3>
-                      <p className="text-xs text-muted-foreground">{tier.tagline}</p>
-                    </div>
-                  </div>
-
-                  {/* Price */}
-                  <div className="mb-4">
-                    {tier.originalPrice && (
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm line-through text-muted-foreground">
-                          {formatCurrency(tier.originalPrice)}
-                        </span>
-                        <span className="px-2 py-0.5 rounded-full bg-success/10 text-success text-xs font-medium">
-                          {Math.round((1 - tier.price / tier.originalPrice) * 100)}% OFF
-                        </span>
-                      </div>
-                    )}
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-bold">{formatCurrency(tier.price)}</span>
-                      <span className="text-sm text-muted-foreground">{tier.period}</span>
-                    </div>
-                    {tier.id === 'basic' && (
-                      <p className="text-xs text-muted-foreground mt-1">Less than ₹17/day</p>
-                    )}
-                  </div>
-
-                  {/* Scale Tier Calculator */}
-                  {tier.id === 'scale' && (
-                    <div className="mb-4 p-3 rounded-lg bg-muted/50">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-medium">Team Size</span>
-                        <span className="text-sm font-bold">{teamSize} employees</span>
-                      </div>
-                      <Slider
-                        value={[teamSize]}
-                        onValueChange={(v) => setTeamSize(v[0])}
-                        min={10}
-                        max={500}
-                        step={10}
-                        className="mb-2"
-                      />
-                      <p className="text-xs text-muted-foreground">
-                        Base {formatCurrency(scaleBasePrice)} + {formatCurrency(perEmployeePrice)}/employee
-                      </p>
+        {/* Partner Pricing Cards */}
+        {isPartnerContext ? (
+          <section className="container mx-auto px-4 pb-16">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {partnerTiers.map((tier, idx) => (
+                <Card 
+                  key={tier.id}
+                  className={cn(
+                    "relative overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in",
+                    tier.popular && "border-primary shadow-lg ring-2 ring-primary/20"
+                  )}
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  {tier.popular && (
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                      Recommended
                     </div>
                   )}
+                  <CardContent className="p-6">
+                    {/* Header */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className={cn(
+                        "p-2 rounded-lg",
+                        tier.popular ? "bg-primary/10" : "bg-muted"
+                      )}>
+                        <tier.icon className={cn(
+                          "h-5 w-5",
+                          tier.popular ? "text-primary" : "text-muted-foreground"
+                        )} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{tier.name}</h3>
+                        <p className="text-xs text-muted-foreground">{tier.tagline}</p>
+                      </div>
+                    </div>
 
-                  {/* CTA Button */}
-                  <Button 
-                    variant={tier.ctaVariant}
-                    className={cn(
-                      "w-full mb-4",
-                      tier.popular && "bg-primary hover:bg-primary/90",
-                      currentTier === tier.id && "opacity-60 cursor-default"
-                    )}
-                    onClick={() => handleSubscribe(tier.id)}
-                    disabled={
-                      processingTier !== null || 
-                      currentTier === tier.id ||
-                      (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
-                    }
-                  >
-                    {getButtonContent(tier)}
+                    {/* Price */}
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-bold">{tier.priceLabel}</span>
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <Button 
+                      variant={tier.ctaVariant}
+                      className={cn(
+                        "w-full mb-4",
+                        tier.popular && "bg-primary hover:bg-primary/90"
+                      )}
+                      onClick={() => handlePartnerAction(tier.id)}
+                    >
+                      {tier.id === 'enterprise' && <Phone className="h-4 w-4 mr-2" />}
+                      {tier.cta}
+                    </Button>
+
+                    {/* Features */}
+                    <ul className="space-y-2">
+                      {tier.features.map((feature, fidx) => (
+                        <li key={fidx} className="flex items-start gap-2 text-sm">
+                          <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Partner CTA */}
+            <div className="max-w-2xl mx-auto text-center mt-12">
+              <Card className="bg-gradient-to-r from-primary/5 to-success/5 border-primary/20">
+                <CardContent className="p-8">
+                  <Building2 className="h-12 w-12 mx-auto mb-4 text-primary" />
+                  <h2 className="text-2xl font-bold mb-2">Need Custom Integration?</h2>
+                  <p className="text-muted-foreground mb-6">
+                    Banks, ERPs, and enterprise buyers can access white-label solutions, dedicated APIs, and custom compliance workflows.
+                  </p>
+                  <Button size="lg" asChild>
+                    <Link to="/contact">
+                      Schedule a Call
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Link>
                   </Button>
-
-                  {/* Subtext */}
-                  {tier.subtext && (
-                    <p className="text-xs text-muted-foreground text-center mb-4 italic">
-                      "{tier.subtext}"
-                    </p>
-                  )}
-
-                  {/* Features */}
-                  <ul className="space-y-2">
-                    {tier.features.map((feature, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : (
+          /* MSME Pricing Cards */
+          <section className="container mx-auto px-4 pb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {tiers.map((tier, idx) => (
+                <Card 
+                  key={tier.id}
+                  className={cn(
+                    "relative overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in",
+                    tier.popular && "border-primary shadow-lg ring-2 ring-primary/20"
+                  )}
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  {tier.popular && (
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                      Most Popular
+                    </div>
+                  )}
+                  <CardContent className="p-6">
+                    {/* Header */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className={cn(
+                        "p-2 rounded-lg",
+                        tier.popular ? "bg-primary/10" : "bg-muted"
+                      )}>
+                        <tier.icon className={cn(
+                          "h-5 w-5",
+                          tier.popular ? "text-primary" : "text-muted-foreground"
+                        )} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{tier.name}</h3>
+                        <p className="text-xs text-muted-foreground">{tier.tagline}</p>
+                      </div>
+                    </div>
 
-        {/* Comparison Table */}
-        <section className="container mx-auto px-4 pb-16">
-          <h2 className="text-2xl font-bold text-center mb-8">Compare Plans</h2>
-          <div className="max-w-5xl mx-auto overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-3 px-4 font-medium">Feature</th>
-                  <th className="text-center py-3 px-4 font-medium">Snapshot</th>
-                  <th className="text-center py-3 px-4 font-medium">Essential</th>
-                  <th className="text-center py-3 px-4 font-medium bg-primary/5 border-x border-primary/20">Pro</th>
-                  <th className="text-center py-3 px-4 font-medium">Scale</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonFeatures.map((feature, idx) => (
-                  <tr key={idx} className="border-b border-border/50">
-                    <td className="py-3 px-4 text-sm">{feature.name}</td>
-                    {['snapshot', 'essential', 'pro', 'scale'].map((tier) => (
-                      <td 
-                        key={tier} 
-                        className={cn(
-                          "py-3 px-4 text-center text-sm",
-                          tier === 'pro' && "bg-primary/5 border-x border-primary/20"
-                        )}
-                      >
-                        {typeof feature[tier as keyof typeof feature] === 'boolean' ? (
-                          feature[tier as keyof typeof feature] ? (
-                            <Check className="h-4 w-4 text-success mx-auto" />
-                          ) : (
-                            <span className="text-muted-foreground">—</span>
-                          )
-                        ) : (
-                          <span className={cn(
-                            feature[tier as keyof typeof feature] === 'Priority' && "text-primary font-medium"
-                          )}>
-                            {feature[tier as keyof typeof feature] as string}
+                    {/* Price */}
+                    <div className="mb-4">
+                      {tier.originalPrice && (
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-sm line-through text-muted-foreground">
+                            {formatCurrency(tier.originalPrice)}
                           </span>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
+                          <span className="px-2 py-0.5 rounded-full bg-success/10 text-success text-xs font-medium">
+                            {Math.round((1 - tier.price / tier.originalPrice) * 100)}% OFF
+                          </span>
+                        </div>
+                      )}
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-3xl font-bold">{formatCurrency(tier.price)}</span>
+                        <span className="text-sm text-muted-foreground">{tier.period}</span>
+                      </div>
+                      {tier.id === 'basic' && (
+                        <p className="text-xs text-muted-foreground mt-1">Less than ₹17/day</p>
+                      )}
+                    </div>
 
-        {/* Add-ons */}
-        <section className="container mx-auto px-4 pb-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Add-ons & Extras</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {addons.map((addon, idx) => (
-                <div 
+                    {/* Scale Tier Calculator */}
+                    {tier.id === 'scale' && (
+                      <div className="mb-4 p-3 rounded-lg bg-muted/50">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs font-medium">Team Size</span>
+                          <span className="text-sm font-bold">{teamSize} employees</span>
+                        </div>
+                        <Slider
+                          value={[teamSize]}
+                          onValueChange={(v) => setTeamSize(v[0])}
+                          min={10}
+                          max={500}
+                          step={10}
+                          className="mb-2"
+                        />
+                        <p className="text-xs text-muted-foreground">
+                          Base {formatCurrency(scaleBasePrice)} + {formatCurrency(perEmployeePrice)}/employee
+                        </p>
+                      </div>
+                    )}
+
+                    {/* CTA Button */}
+                    <Button 
+                      variant={tier.ctaVariant}
+                      className={cn(
+                        "w-full mb-4",
+                        tier.popular && "bg-primary hover:bg-primary/90",
+                        currentTier === tier.id && "opacity-60 cursor-default"
+                      )}
+                      onClick={() => handleSubscribe(tier.id)}
+                      disabled={
+                        processingTier !== null || 
+                        currentTier === tier.id ||
+                        (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
+                      }
+                    >
+                      {getButtonContent(tier)}
+                    </Button>
+
+                    {/* Subtext */}
+                    {tier.subtext && (
+                      <p className="text-xs text-muted-foreground text-center mb-4 italic">
+                        "{tier.subtext}"
+                      </p>
+                    )}
+
+                    {/* Features */}
+                    <ul className="space-y-2">
+                      {tier.features.map((feature, fidx) => (
+                        <li key={fidx} className="flex items-start gap-2 text-sm">
+                          <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Comparison Table - Only for MSME */}
+        {!isPartnerContext && (
+          <section className="container mx-auto px-4 pb-16">
+            <h2 className="text-2xl font-bold text-center mb-8">Compare Plans</h2>
+            <div className="max-w-5xl mx-auto overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left py-3 px-4 font-medium">Feature</th>
+                    <th className="text-center py-3 px-4 font-medium">Snapshot</th>
+                    <th className="text-center py-3 px-4 font-medium">Essential</th>
+                    <th className="text-center py-3 px-4 font-medium bg-primary/5 border-x border-primary/20">Pro</th>
+                    <th className="text-center py-3 px-4 font-medium">Scale</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonFeatures.map((feature, idx) => (
+                    <tr key={idx} className="border-b border-border/50">
+                      <td className="py-3 px-4 text-sm">{feature.name}</td>
+                      {['snapshot', 'essential', 'pro', 'scale'].map((tier) => (
+                        <td 
+                          key={tier} 
+                          className={cn(
+                            "py-3 px-4 text-center text-sm",
+                            tier === 'pro' && "bg-primary/5 border-x border-primary/20"
+                          )}
+                        >
+                          {typeof feature[tier as keyof typeof feature] === 'boolean' ? (
+                            feature[tier as keyof typeof feature] ? (
+                              <Check className="h-4 w-4 text-success mx-auto" />
+                            ) : (
+                              <span className="text-muted-foreground">—</span>
+                            )
+                          ) : (
+                            <span className={cn(
+                              feature[tier as keyof typeof feature] === 'Priority' && "text-primary font-medium"
+                            )}>
+                              {feature[tier as keyof typeof feature] as string}
+                            </span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Add-ons - Only for MSME */}
+        {!isPartnerContext && (
+          <section className="container mx-auto px-4 pb-16">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-center mb-8">Add-ons & Extras</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {addons.map((addon, idx) => (
+                  <div
                   key={idx}
                   className="flex items-center justify-between p-4 rounded-lg border bg-card hover:border-primary/30 transition-colors"
                 >
@@ -476,13 +688,14 @@ const Pricing = () => {
             </div>
           </div>
         </section>
+        )}
 
         {/* FAQ */}
         <section className="container mx-auto px-4 pb-16">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, idx) => (
+              {(isPartnerContext ? partnerFaqs : faqs).map((faq, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`}>
                   <AccordionTrigger className="text-left">
                     {faq.q}
