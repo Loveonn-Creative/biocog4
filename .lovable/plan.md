@@ -1,181 +1,201 @@
 
-# Sophisticated B2B Partner Access: Implementation Plan
+# Comprehensive Fix Plan: SEO, Competitor Pages, and Partner Ecosystem
 
-## Current State Analysis
+## Problem Analysis
 
-**What Works:**
-- Partner signup creates `user_contexts` with `context_type: 'partner'` (Auth.tsx lines 174-182)
-- Partner dashboard shows anonymized cluster data, baseline charts, and purchase flow (PartnerDashboard.tsx)
-- Partner profile exists with organization info (PartnerProfile.tsx)
-- Navigation switches between MSME and Partner nav items (Navigation.tsx line 70)
-- Partner Marketplace exists with filtering and SDG alignment (PartnerMarketplace.tsx)
+### Fix 1: SEO & Search Visibility
+**Root Cause (from Google search screenshots):**
+- Google shows "sensible" dictionary definitions instead of Senseible
+- Sensibull (options trading platform) dominates results
+- Senseible.earth doesn't appear in first pages
 
-**Critical Gaps:**
-- MSME pages (/verify, /monetize, /mrv-dashboard, /reports, /dashboard) have NO route protection for partners
-- Partners can still access all MSME features via URL navigation
-- No dedicated Partner Reports page
-- No partner-type-specific routing (Banks vs Carbon Buyers vs ERPs)
-- Missing real-time risk alerts and compliance signals
+**Technical Diagnosis:**
+1. SPA architecture means Google only sees index.html initially - all 900+ sitemap URLs require JavaScript to render content
+2. Missing server-side rendering or pre-rendering for static content discovery
+3. Domain is new with low authority - needs high-intent comparison content
+4. CMS articles exist but are client-rendered, limiting crawl efficiency
+
+### Fix 2: Competitor Comparison Architecture
+**Current State:** No /vs/ competitor pages exist
+**Required:** Structured comparison pages targeting high-intent searches like:
+- "Senseible vs Persefoni"
+- "Senseible vs Watershed carbon accounting"
+- "Sensibull vs Senseible difference" (brand disambiguation)
+
+### Fix 3: Partner Ecosystem Issues
+**Identified Problems:**
+1. **Pricing Page shows MSME tiers to partners** - Partners see ₹499/mo Essential tier instead of enterprise/custom pricing
+2. **Partner Dashboard loading slow** - Fetches all carbon_verifications and emissions before rendering
+3. **Navigation confusion** - Partners can technically navigate to MSME routes via URL (protection implemented but UX needs clarity)
+4. **No partner-specific pricing display** - PartnerProfile has no pricing section
 
 ---
 
-## Implementation Scope
+## Implementation Plan
 
-### 1. Route Protection for MSME-Only Pages
-Add partner exclusion logic to 5 MSME-only pages with redirect:
+### Phase 1: SEO Architecture Fixes
 
-**Files: Verify.tsx, Monetize.tsx, MRVDashboard.tsx, Reports.tsx, Dashboard.tsx**
+**1.1 Pre-rendering Strategy**
+- Add static HTML meta content for critical pages directly in build
+- Create dedicated landing pages as static content (not CMS-dependent)
+
+**1.2 Enhanced robots.txt**
+- Add explicit Allow for all /climate-intelligence/* articles
+- Add /vs/* comparison pages to sitemap
+
+**1.3 Brand Disambiguation Content**
+Create high-priority article in cmsContent.ts:
+```text
+"What is Senseible vs Sensibull - Complete Guide"
+- Explicitly answers "Senseible is NOT Sensibull"
+- Targets misspelling searches
+- High internal linking to /about, /mission, /carbon-credits
+```
+
+**1.4 Update index.html FAQSchema**
+Add FAQ entry: "What is the difference between Senseible and Sensibull?"
+
+### Phase 2: Competitor Comparison Pages
+
+**2.1 Create /vs/:competitor route**
+New file: `src/pages/CompetitorComparison.tsx`
+
+**Route structure:**
+- /vs/persefoni
+- /vs/watershed
+- /vs/microsoft-sustainability-cloud
+- /vs/salesforce-net-zero
+- /vs/sensibull (brand disambiguation)
+
+**Page template:**
+```text
+Header: "Senseible vs [Competitor]"
+Intro: (exact context provided)
+Comparison Table:
+- MSME-first architecture ✓
+- GST/Invoice integration ✓
+- Sub-minute processing ✓
+- Carbon monetization ✓
+- Emerging market focus ✓
+Call to action: Start free with Senseible
+```
+
+**2.2 Update sitemap.xml**
+Add all /vs/ URLs with priority 0.8
+
+**2.3 SEO Schema**
+Add ComparisonSchema JSON-LD for each page
+
+### Phase 3: Partner Ecosystem Overhaul
+
+**3.1 Partner-Specific Pricing Page**
+Modify Pricing.tsx to detect partner context:
 
 ```typescript
-// Add at top of each component
-const { activeContext } = useOrganization();
-const navigate = useNavigate();
-
-useEffect(() => {
-  if (activeContext?.context_type === 'partner') {
-    toast.info('This feature is for MSMEs. Redirecting to Partner Dashboard.');
-    navigate('/partner-dashboard');
-  }
-}, [activeContext]);
+// If partner context active, show:
+- Enterprise tier (Contact Sales)
+- Pay-as-you-go credits option
+- Custom API pricing
+- No MSME tiers visible
 ```
 
-### 2. Dedicated Partner Reports Page
-**New File: src/pages/PartnerReports.tsx**
+**3.2 Partner Dashboard Performance**
+Optimize PartnerDashboard.tsx:
+- Add query limits (LIMIT 50 instead of all records)
+- Implement pagination for MSME table
+- Add loading skeleton states for each section
+- Memoize heavy computations
 
-Sections:
-- **Portfolio Overview**: Total credits held, acquisition history, retirement status
-- **Purchase History**: Table with date, listing, quantity, price, status
-- **Audit Pack Downloads**: Per-purchase verification bundles (PDF)
-- **Compliance Dashboard**: CBAM/EU Taxonomy/PCAF alignment indicators
-
-No raw MSME data exposure - only aggregated, verified signals.
-
-### 3. Enhanced Partner Dashboard Signals
-**File: PartnerDashboard.tsx modifications**
-
-Replace current generic metrics with decision-grade signals:
-
-| Current | Replace With |
-|---------|-------------|
-| totalMSMEs | Active Verified Suppliers |
-| totalReductions | Tradeable Credits (TCO2e) |
-| additionalityScore | Data Quality Grade (A-D) |
-| confidenceBand | CBAM Readiness Score |
-
-Add new sections:
-- **Real-Time Alerts Panel**: Flagged verifications, expiring credits, compliance deadlines
-- **Eligibility Summary**: CCTS/CBAM/EU Taxonomy eligibility badges per cluster
-- **Regional Breakdown Chart**: Interactive pie chart by region
-
-### 4. Partner Type Routing Logic
-**File: Auth.tsx enhancement**
-
-After partner signup, route based on `organization_type`:
-
+**3.3 Partner Navigation Enhancement**
+Update Navigation.tsx to show distinct partner nav:
 ```typescript
-const getPartnerRedirect = (orgType: string): string => {
-  switch(orgType) {
-    case 'banks': return '/partner-dashboard'; // Future: /partner/lending
-    case 'carbon-buyers': return '/marketplace';
-    case 'erp': return '/partner-dashboard'; // Future: /partner/api
-    default: return '/partner-dashboard';
-  }
-};
+const partnerNavItems = [
+  { path: '/partner-dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/marketplace', label: 'Marketplace', icon: Coins },
+  { path: '/intelligence', label: 'Intelligence', icon: Brain },
+  { path: '/partner-reports', label: 'Reports', icon: FileBarChart },
+  { path: '/partner-profile', label: 'Profile', icon: User },
+];
 ```
 
-Store `organization_type` in user_contexts metadata for routing on sign-in.
-
-### 5. Compliance Signals Component
-**New Component: src/components/partner/ComplianceSignals.tsx**
-
-```text
-+-------------------------------------------+
-| CBAM        | EU Taxonomy | PCAF          |
-| [Compliant] | [Eligible]  | [Pending]     |
-+-------------------------------------------+
-| Last Verified: Jan 28, 2026               |
-| Audit Trail: SHA256-xxx...                |
-+-------------------------------------------+
-```
-
-Displays per-verification compliance status without raw data.
-
-### 6. Interactive Analytics Charts
-**Enhancement to PartnerDashboard.tsx**
-
-Add three new Recharts visualizations:
-- **Score Trends Over Time**: Line chart of verification_score by month
-- **Eligibility Distribution**: Pie chart (CCTS Eligible vs Not)
-- **Regional Credits Breakdown**: Bar chart by region
-
-All charts use existing `recharts` dependency with existing theme colors.
-
----
-
-## Route Structure
-
-```text
-/partner-dashboard     -> Main partner hub
-/partner-profile       -> Organization settings (exists)
-/partner-reports       -> NEW: Credit portfolio + audit packs
-/marketplace          -> Credit browsing + purchase
-/intelligence         -> Shared: ESG Q&A assistant
-```
-
-**Protected MSME Routes (redirect partners to /partner-dashboard):**
-- /dashboard, /verify, /monetize, /mrv-dashboard, /reports
-
----
-
-## Data Isolation Guarantee
-
-Partners access ONLY:
-- `marketplace_listings` (anonymized)
-- `carbon_verifications` (aggregate cluster data via partner_access)
-- `partner_applications` (own record)
-- `partner_organizations` (if approved)
-
-Partners NEVER access:
-- `documents` (raw invoices)
-- `emissions` (individual records)
-- `profiles` (MSME business data)
-
-All enforced via existing RLS policies.
+**3.4 Strict Route Protection UI**
+Add visual feedback when partner attempts MSME route:
+- Immediate redirect (already done)
+- Toast with clear message (already done)
+- Add disabled nav links for MSME-only routes
 
 ---
 
 ## File Changes Summary
 
-| File | Action | Purpose |
-|------|--------|---------|
-| Dashboard.tsx | Add partner redirect | Block partner access |
-| Verify.tsx | Add partner redirect | Block partner access |
-| Monetize.tsx | Add partner redirect | Block partner access |
-| MRVDashboard.tsx | Add partner redirect | Block partner access |
-| Reports.tsx | Add partner redirect | Block partner access |
-| PartnerReports.tsx | CREATE | Portfolio + audit packs |
-| PartnerDashboard.tsx | ENHANCE | Signals + alerts + charts |
-| ComplianceSignals.tsx | CREATE | CBAM/Taxonomy badges |
-| App.tsx | Add route | /partner-reports |
-| Navigation.tsx | Add nav item | Reports link for partners |
-| Auth.tsx | Enhance | Org-type routing |
+| File | Change Type | Purpose |
+|------|-------------|---------|
+| src/pages/CompetitorComparison.tsx | CREATE | /vs/:competitor pages |
+| src/data/competitorData.ts | CREATE | Competitor comparison data |
+| src/App.tsx | EDIT | Add /vs/:competitor route |
+| public/sitemap.xml | EDIT | Add /vs/ URLs |
+| index.html | EDIT | Add brand disambiguation FAQ |
+| src/pages/Pricing.tsx | EDIT | Partner-aware pricing display |
+| src/pages/PartnerDashboard.tsx | EDIT | Performance optimization |
+| src/components/Navigation.tsx | EDIT | Partner profile link |
+| src/data/cmsContent.ts | EDIT | Brand disambiguation article |
+| public/robots.txt | EDIT | Allow /vs/* URLs |
 
 ---
 
-## Performance Guarantees
+## Technical Details
 
-- No new dependencies (uses existing recharts, lucide-react)
-- Lazy loading for PartnerReports.tsx
-- Route protection uses existing useOrganization hook
-- All chart data derived from existing Supabase queries
-- No additional database tables required
+### Competitor Comparison Page Structure
+```typescript
+interface CompetitorData {
+  slug: string;
+  name: string;
+  description: string;
+  category: 'enterprise' | 'startup' | 'registry' | 'disambiguation';
+  features: {
+    msmeFirst: boolean;
+    gstIntegration: boolean;
+    subMinuteProcessing: boolean;
+    carbonMonetization: boolean;
+    emergingMarketFocus: boolean;
+    autoVerification: boolean;
+  };
+  pricing: string;
+  targetMarket: string;
+}
+```
+
+### Partner Pricing Logic
+```typescript
+// In Pricing.tsx
+const { activeContext } = useOrganization();
+const isPartnerContext = activeContext?.context_type === 'partner';
+
+// Show different tiers based on context
+const displayTiers = isPartnerContext 
+  ? [enterpriseTier, customTier] 
+  : [snapshot, essential, pro, scale];
+```
+
+### Performance Optimization Pattern
+```typescript
+// PartnerDashboard.tsx - optimized queries
+const { data: verifications } = await supabase
+  .from('carbon_verifications')
+  .select('id, verification_score, total_co2_kg, created_at')
+  .eq('verification_status', 'approved')
+  .order('created_at', { ascending: false })
+  .limit(50); // Add limit for faster initial load
+```
 
 ---
 
 ## Expected Outcomes
 
-1. Partners CANNOT access /verify, /monetize, /mrv-dashboard, /dashboard, /reports
-2. Partners see decision-grade signals: scores, eligibility, compliance status
-3. Partner Reports page provides purchase history and audit pack downloads
-4. Real-time alerts surface exceptions without exposing raw data
-5. Future-ready for partner-type-specific portals (Banks, ERPs, Buyers)
+1. **SEO**: Brand disambiguation content targets "senseible vs sensibull" searches
+2. **Competitor Pages**: Capture high-intent comparison searches
+3. **Partner Experience**: 
+   - Clean pricing display (enterprise/custom only)
+   - Faster dashboard load (<2s)
+   - Clear navigation without MSME confusion
+4. **Performance**: All changes maintain <2s load time target
