@@ -56,9 +56,10 @@ const Pricing = () => {
   const { user, isAuthenticated } = useSession();
   const { initiatePayment, isLoading: isPaymentLoading, isReady: isRazorpayReady } = useRazorpay();
   const { tier: currentTier, refreshTier } = usePremiumStatus();
-  const { activeContext } = useOrganization();
+  const { activeContext, isLoading: contextLoading } = useOrganization();
   
-  const isPartnerContext = activeContext?.context_type === 'partner';
+  // Wait for context to load before determining pricing view
+  const isPartnerContext = !contextLoading && activeContext?.context_type === 'partner';
   
   const [teamSize, setTeamSize] = useState(50);
   const [processingTier, setProcessingTier] = useState<string | null>(null);

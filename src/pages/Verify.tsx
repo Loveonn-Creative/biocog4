@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,13 +10,20 @@ import { useOrganization } from '@/hooks/useOrganization';
 import { 
   CheckCircle, AlertTriangle, Shield, ArrowRight, Loader2, 
   AlertCircle, TrendingUp, Leaf, Award, XCircle, Info,
-  Coins, FileBarChart, BarChart3
+  Coins, FileBarChart, BarChart3, Upload
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
 import { Helmet } from 'react-helmet-async';
+
+interface NavigationState {
+  emissionId?: string;
+  documentId?: string;
+  extractedData?: any;
+  fromUpload?: boolean;
+}
 
 interface VerificationResult {
   verificationId: string;
@@ -45,13 +52,40 @@ interface VerificationResult {
 
 const Verify = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const navState = location.state as NavigationState | null;
   const { sessionId, user } = useSession();
   const { activeContext } = useOrganization();
-  const { emissions, getUnverifiedEmissions, refetch } = useEmissions();
+  const { emissions, getUnverifiedEmissions, refetch, isLoading: emissionsLoading } = useEmissions();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
+  
+  // Get unverified emissions, including just-uploaded data
   const unverified = getUnverifiedEmissions();
+  
+  // If coming from upload with extracted data, create a temporary emission object
+  const justUploadedEmission = useMemo(() => {
+    if (navState?.fromUpload && navState?.extractedData && navState?.emissionId) {
+      const data = navState.extractedData;
+      return {
+        id: navState.emissionId,
+        category: data.emissionCategory || data.primaryCategory || 'other',
+        scope: data.primaryScope || 3,
+        co2_kg: data.totalCO2Kg || data.estimatedCO2Kg || 0,
+        verified: false
+      };
+    }
+    return null;
+  }, [navState]);
+  
+  // Combine database emissions with just-uploaded if not already present
+  const effectiveUnverified = useMemo(() => {
+    if (justUploadedEmission && !unverified.find(e => e.id === justUploadedEmission.id)) {
+      return [justUploadedEmission, ...unverified];
+    }
+    return unverified;
+  }, [unverified, justUploadedEmission]);
 
   // Route protection: redirect partners to their dashboard
   useEffect(() => {
@@ -62,14 +96,14 @@ const Verify = () => {
   }, [activeContext, navigate]);
 
   const handleVerify = async () => {
-    if (unverified.length === 0) return;
+    if (effectiveUnverified.length === 0) return;
     setIsVerifying(true);
     setVerificationResult(null);
     
     try {
       const { data, error } = await supabase.functions.invoke('verify-carbon', {
         body: { 
-          emissionIds: unverified.map(e => e.id), 
+          emissionIds: effectiveUnverified.map(e => e.id), 
           sessionId, 
           userId: user?.id,
           includeIoT 
@@ -143,7 +177,7 @@ const Verify = () => {
           <CardContent>
             <div className="mb-6">
               <p className="text-sm text-muted-foreground mb-4">
-                {unverified.length} records pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
+                {effectiveUnverified.length} records pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
               </p>
               
               {/* IoT Toggle */}
@@ -163,10 +197,10 @@ const Verify = () => {
               </div>
             </div>
             
-            {unverified.length > 0 ? (
+            {effectiveUnverified.length > 0 ? (
               <>
                 <div className="space-y-2 mb-6 max-h-48 overflow-y-auto">
-                  {unverified.map((e, idx) => (
+                  {effectiveUnverified.map((e, idx) => (
                     <div 
                       key={e.id} 
                       className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 animate-fade-in"

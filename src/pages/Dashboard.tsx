@@ -199,14 +199,14 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Summary & Trend */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Verification Status Card - Prominent at top */}
+              {/* Verification Status Card - Only show score when emissions exist */}
               <VerificationStatusCard
-                verificationScore={verificationScore}
+                verificationScore={emissions.length > 0 ? verificationScore : 0}
                 totalEmissions={summary.total}
                 unverifiedCount={unverifiedEmissions.length}
                 hasVerifiedData={verifiedEmissions.length > 0}
-                latestStatus={latestStatus}
-                eligibleCredits={eligibleCredits}
+                latestStatus={emissions.length > 0 ? latestStatus : null}
+                eligibleCredits={emissions.length > 0 ? eligibleCredits : 0}
               />
               <EmissionsSummary summary={summary} />
               <TrendChart data={summary.monthlyTrend} />
