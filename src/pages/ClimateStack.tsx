@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, memo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Search, ArrowRight, Filter, X } from "lucide-react";
+import { ArrowLeft, Search, ArrowRight, Filter, X, Scale } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { getFeaturedArticles, searchArticles, getArticlesByCategory, cmsCategories, cmsArticles, type CMSArticle } from "@/data/cmsContent";
 import { extractPreview } from "@/lib/formatContent";
+import { competitorData } from "@/data/competitorData";
 
 const ClimateStack = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -127,6 +128,35 @@ const ClimateStack = () => {
                 {searchQuery && ` for "${searchQuery}"`}
                 {selectedCategory && ` in ${cmsCategories.find(c => c.id === selectedCategory)?.name}`}
               </p>
+            </div>
+          )}
+          
+          {/* Competitor Comparisons Section */}
+          {!searchQuery && !selectedCategory && (
+            <div className="mb-12">
+              <div className="flex items-center gap-2 mb-6">
+                <Scale className="w-5 h-5 text-primary" />
+                <h2 className="text-xl font-semibold">Platform Comparisons</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {competitorData.slice(0, 8).map((competitor) => (
+                  <Link
+                    key={competitor.slug}
+                    to={`/vs/${competitor.slug}`}
+                    className="group p-4 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all"
+                  >
+                    <p className="text-xs text-muted-foreground mb-1 capitalize">{competitor.category}</p>
+                    <p className="font-medium text-sm group-hover:text-primary transition-colors">
+                      Senseible vs {competitor.name}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <div className="text-center mt-4">
+                <Link to="/vs/sensibull" className="text-sm text-primary hover:underline">
+                  View all comparisons →
+                </Link>
+              </div>
             </div>
           )}
           
