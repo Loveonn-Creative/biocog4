@@ -137,11 +137,11 @@ const Index = () => {
 
   const saveToDatabase = async (extractedData: ExtractedData, documentHash?: string, userTier?: string): Promise<{ documentId: string; emissionId: string } | null> => {
     try {
-      // Calculate cache expiration (30 days for paid users)
-      const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier || '');
-      const cacheExpiresAt = isPaidTier && user?.id
+      // Cache results for ALL users to ensure determinism on re-uploads
+      // Guest users get cached to return same results, paid users for audit trail
+      const cacheExpiresAt = user?.id
         ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
-        : null;
+        : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(); // 7 days for guests
 
       const { data: docData, error: docError } = await supabase
         .from('documents')
@@ -159,7 +159,7 @@ const Index = () => {
           confidence: extractedData.confidence,
           raw_ocr_data: extractedData as any,
           document_hash: documentHash || null,
-          cached_result: isPaidTier ? extractedData : null,
+          cached_result: extractedData, // ALWAYS cache for determinism
           cache_expires_at: cacheExpiresAt,
         } as any)
         .select()
@@ -235,6 +235,16 @@ const Index = () => {
         return;
       }
 
+      // Handle cached results (guest or paid users)
+      if (data?.cached) {
+        console.log("Cached result returned:", data);
+        toast.info(data.message || "Using previously verified results for accuracy.", {
+          duration: 5000,
+          icon: "🔒"
+        });
+        // Continue processing with cached data
+      }
+      
       // Handle duplicate invoice detection for authenticated users
       if (data?.isDuplicate) {
         console.log("Duplicate invoice detected:", data);
@@ -448,11 +458,15 @@ const Index = () => {
 
   const handleConfirm = () => {
     toast.success("Saved! Your carbon data has been recorded.");
-    if (result?.emissionId) {
-      navigate(`/verify?emission=${result.emissionId}`);
-    } else {
-      navigate('/verify');
-    }
+    // Pass extracted data via navigation state to ensure Verify page has data
+    navigate('/verify', { 
+      state: { 
+        emissionId: result?.emissionId,
+        documentId: result?.documentId,
+        extractedData: result?.extractedData,
+        fromUpload: true
+      }
+    });
   };
 
   const handleReset = () => {

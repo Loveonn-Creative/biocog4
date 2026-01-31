@@ -775,12 +775,44 @@ serve(async (req) => {
       }
     }
     
-    // ============= GUEST USER HANDLING =============
-    // For guest users: Allow repeat processing for testing purposes
-    // Returns same deterministic result due to rule-based calculations
+    // ============= GUEST USER HANDLING WITH CACHING =============
+    // For guest users: Cache and return identical results for same document
+    // This ensures determinism despite AI OCR variability
     if (!isAuthenticated) {
       console.log(`Guest user processing document. Hash: ${documentHash.substring(0, 16)}...`);
-      // Note: Same input always produces same output due to deterministic calculation
+      
+      // Check for cached result for this document hash (any user)
+      const supabaseUrl = Deno.env.get('SUPABASE_URL');
+      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+      
+      if (supabaseUrl && supabaseKey) {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+        
+        // Look for any cached result with this document hash
+        const { data: cachedDoc } = await supabase
+          .from('documents')
+          .select('cached_result, document_hash, created_at')
+          .eq('document_hash', documentHash)
+          .not('cached_result', 'is', null)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .single();
+        
+        if (cachedDoc?.cached_result) {
+          console.log(`Guest user: Returning cached result for hash ${documentHash.substring(0, 16)}...`);
+          return new Response(
+            JSON.stringify({ 
+              success: true, 
+              data: cachedDoc.cached_result,
+              documentHash,
+              userTier: 'guest',
+              cached: true,
+              message: 'Returning consistent results for this invoice (cached for accuracy).'
+            }),
+            { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+      }
     }
 
     console.log(`Processing document for ${userTier} user with deterministic MRV extraction...`);

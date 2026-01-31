@@ -272,7 +272,11 @@ const Billing = () => {
                   <CardTitle className="text-base">Payment Methods</CardTitle>
                   <CardDescription>Manage your saved cards</CardDescription>
                 </div>
-                <Button variant="outline" size="sm" disabled>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => toast.info('Payment methods are saved automatically during checkout. Subscribe to a plan to save your card.', { duration: 5000 })}
+                >
                   <Plus className="w-4 h-4 mr-1" />
                   Add
                 </Button>
