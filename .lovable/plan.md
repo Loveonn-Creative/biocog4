@@ -1,128 +1,322 @@
 
-# Comprehensive Fix Plan: SEO, Competitor Pages, and Partner Ecosystem
 
-## Problem Analysis
+# Critical Fixes: OCR-to-MRV-to-Monetize Pipeline
 
-### Fix 1: SEO & Search Visibility
-**Root Cause (from Google search screenshots):**
-- Google shows "sensible" dictionary definitions instead of Senseible
-- Sensibull (options trading platform) dominates results
-- Senseible.earth doesn't appear in first pages
+## Verified Issues from Code Analysis
 
-**Technical Diagnosis:**
-1. SPA architecture means Google only sees index.html initially - all 900+ sitemap URLs require JavaScript to render content
-2. Missing server-side rendering or pre-rendering for static content discovery
-3. Domain is new with low authority - needs high-intent comparison content
-4. CMS articles exist but are client-rendered, limiting crawl efficiency
+### Issue 1: Guest User Gets Different Results for Same Invoice (CRITICAL BUG)
 
-### Fix 2: Competitor Comparison Architecture
-**Current State:** No /vs/ competitor pages exist
-**Required:** Structured comparison pages targeting high-intent searches like:
-- "Senseible vs Persefoni"
-- "Senseible vs Watershed carbon accounting"
-- "Sensibull vs Senseible difference" (brand disambiguation)
+**Root Cause Identified:**
+The OCR extraction uses Gemini AI models which have inherent non-determinism. Even with "deterministic" rule-based classification after OCR, the AI model returns **different line item extractions** each time for the same document.
 
-### Fix 3: Partner Ecosystem Issues
-**Identified Problems:**
-1. **Pricing Page shows MSME tiers to partners** - Partners see ₹499/mo Essential tier instead of enterprise/custom pricing
-2. **Partner Dashboard loading slow** - Fetches all carbon_verifications and emissions before rendering
-3. **Navigation confusion** - Partners can technically navigate to MSME routes via URL (protection implemented but UX needs clarity)
-4. **No partner-specific pricing display** - PartnerProfile has no pricing section
+Looking at lines 792-793 of `extract-document/index.ts`:
+```typescript
+content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-flash');
+```
+
+The AI extraction produces varying results (different quantities, line item parsing), which then feeds into the deterministic calculation. **Same input image -> Different AI OCR output -> Different calculated CO2 values**.
+
+**Fix Required:**
+1. For guest users: Cache the OCR result by document hash and return the same result on repeat uploads
+2. The claim "deterministic" only applies to calculations AFTER OCR - the OCR itself is non-deterministic
+
+### Issue 2: "Continue to Verify" Goes to Dummy Page
+
+**Root Cause Identified:**
+In `Index.tsx` line 449-456:
+```typescript
+const handleConfirm = () => {
+  toast.success("Saved! Your carbon data has been recorded.");
+  if (result?.emissionId) {
+    navigate(`/verify?emission=${result.emissionId}`);
+  } else {
+    navigate('/verify');
+  }
+};
+```
+
+The `Verify.tsx` page at lines 64-91 only fetches unverified emissions from the database. If:
+- The emission was already saved but the user has no active session
+- The session_id doesn't match what's in the database
+- The query filter returns empty
+
+...then the Verify page shows "No emissions data yet" and an upload button (lines 218-222).
+
+**Fix Required:**
+1. Pass extracted data directly to Verify page via state when navigating
+2. Improve session continuity between pages
+3. Add fallback to display the emission data that was just saved
+
+### Issue 3: Dashboard Shows 100% Score but 0,0,0 Values
+
+**Root Cause Identified:**
+1. `verificationScore` is fetched from `carbon_verifications` table (line 82-105 of Dashboard.tsx)
+2. Scope values come from `useEmissions()` which queries `emissions` table
+
+If there's a verification record but no emissions linked, or if the session_id mismatch prevents loading emissions:
+- `verificationScore` shows 100% from previous verification
+- `summary.scope1/2/3` all return 0 because no emissions are found
+
+**Fix Required:**
+1. Ensure session continuity - emissions and verifications must query with the same session
+2. Show verification score only when emissions exist
+3. Add validation that score reflects actual computed data
+
+### Issue 4: Partner Pricing Shows MSME Tiers (ALREADY FIXED)
+
+**Code Analysis Shows Fix IS Implemented:**
+In `Pricing.tsx` lines 59-61 and 416:
+```typescript
+const isPartnerContext = activeContext?.context_type === 'partner';
+// ...
+{isPartnerContext ? (
+  <section>...</section>  // Partner tiers rendered
+) : (
+  // MSME tiers
+)}
+```
+
+**The code exists but may not be triggering because:**
+- `activeContext` is null or undefined when the page loads
+- Partner signup doesn't correctly set `context_type: 'partner'`
+- User context switching isn't persisting
+
+**Fix Required:**
+1. Verify partner signup creates correct user_context record
+2. Add loading state check before showing pricing
+3. Ensure `useOrganization()` returns the correct context
+
+### Issue 5: "Add Payment Method" Button Disabled in Billing
+
+**Root Cause Identified:**
+In `Billing.tsx` line 275-278:
+```typescript
+<Button variant="outline" size="sm" disabled>
+  <Plus className="w-4 h-4 mr-1" />
+  Add
+</Button>
+```
+
+The button is **hardcoded as disabled**. This is intentional per the comment "Cards are saved during checkout" but the user expects to add cards directly.
+
+**Fix Required:**
+1. Either implement add payment method flow via Razorpay tokenization
+2. Or make the disabled state clearer with explanation
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: SEO Architecture Fixes
+### Phase 1: Fix OCR Determinism for Guest Users
 
-**1.1 Pre-rendering Strategy**
-- Add static HTML meta content for critical pages directly in build
-- Create dedicated landing pages as static content (not CMS-dependent)
+**File: `supabase/functions/extract-document/index.ts`**
 
-**1.2 Enhanced robots.txt**
-- Add explicit Allow for all /climate-intelligence/* articles
-- Add /vs/* comparison pages to sitemap
-
-**1.3 Brand Disambiguation Content**
-Create high-priority article in cmsContent.ts:
-```text
-"What is Senseible vs Sensibull - Complete Guide"
-- Explicitly answers "Senseible is NOT Sensibull"
-- Targets misspelling searches
-- High internal linking to /about, /mission, /carbon-credits
-```
-
-**1.4 Update index.html FAQSchema**
-Add FAQ entry: "What is the difference between Senseible and Sensibull?"
-
-### Phase 2: Competitor Comparison Pages
-
-**2.1 Create /vs/:competitor route**
-New file: `src/pages/CompetitorComparison.tsx`
-
-**Route structure:**
-- /vs/persefoni
-- /vs/watershed
-- /vs/microsoft-sustainability-cloud
-- /vs/salesforce-net-zero
-- /vs/sensibull (brand disambiguation)
-
-**Page template:**
-```text
-Header: "Senseible vs [Competitor]"
-Intro: (exact context provided)
-Comparison Table:
-- MSME-first architecture ✓
-- GST/Invoice integration ✓
-- Sub-minute processing ✓
-- Carbon monetization ✓
-- Emerging market focus ✓
-Call to action: Start free with Senseible
-```
-
-**2.2 Update sitemap.xml**
-Add all /vs/ URLs with priority 0.8
-
-**2.3 SEO Schema**
-Add ComparisonSchema JSON-LD for each page
-
-### Phase 3: Partner Ecosystem Overhaul
-
-**3.1 Partner-Specific Pricing Page**
-Modify Pricing.tsx to detect partner context:
+Add in-memory cache or session-based cache for guest users:
 
 ```typescript
-// If partner context active, show:
-- Enterprise tier (Contact Sales)
-- Pay-as-you-go credits option
-- Custom API pricing
-- No MSME tiers visible
+// After generating document hash (line ~690)
+const documentHash = await generateDocumentHash(imageBase64, mimeType || 'image/jpeg');
+
+// For guest users: Check if we have a cached result for this hash
+if (!isAuthenticated) {
+  const supabaseUrl = Deno.env.get('SUPABASE_URL');
+  const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  const supabase = createClient(supabaseUrl!, supabaseKey!);
+  
+  // Check for any existing document with this hash
+  const { data: existingDoc } = await supabase
+    .from('documents')
+    .select('cached_result, document_hash')
+    .eq('document_hash', documentHash)
+    .not('cached_result', 'is', null)
+    .limit(1)
+    .single();
+  
+  if (existingDoc?.cached_result) {
+    console.log(`Guest user: Returning cached result for hash ${documentHash.substring(0, 16)}...`);
+    return new Response(
+      JSON.stringify({ 
+        success: true, 
+        data: existingDoc.cached_result,
+        documentHash,
+        userTier: 'guest',
+        cached: true,
+        message: 'Returning consistent results for this invoice.'
+      }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+  }
+}
 ```
 
-**3.2 Partner Dashboard Performance**
-Optimize PartnerDashboard.tsx:
-- Add query limits (LIMIT 50 instead of all records)
-- Implement pagination for MSME table
-- Add loading skeleton states for each section
-- Memoize heavy computations
+Also: Cache ALL processed results (not just paid users) so same invoice returns same result:
 
-**3.3 Partner Navigation Enhancement**
-Update Navigation.tsx to show distinct partner nav:
 ```typescript
-const partnerNavItems = [
-  { path: '/partner-dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { path: '/marketplace', label: 'Marketplace', icon: Coins },
-  { path: '/intelligence', label: 'Intelligence', icon: Brain },
-  { path: '/partner-reports', label: 'Reports', icon: FileBarChart },
-  { path: '/partner-profile', label: 'Profile', icon: User },
-];
+// In the database insert (in Index.tsx saveToDatabase function)
+cached_result: extractedData,  // Always cache, not just for paid users
 ```
 
-**3.4 Strict Route Protection UI**
-Add visual feedback when partner attempts MSME route:
-- Immediate redirect (already done)
-- Toast with clear message (already done)
-- Add disabled nav links for MSME-only routes
+### Phase 2: Fix Verify Page Navigation
+
+**File: `src/pages/Index.tsx`**
+
+Pass extracted data via navigation state:
+
+```typescript
+const handleConfirm = () => {
+  toast.success("Saved! Your carbon data has been recorded.");
+  // Pass data directly to verify page
+  navigate('/verify', { 
+    state: { 
+      emissionId: result?.emissionId,
+      documentId: result?.documentId,
+      extractedData: result?.extractedData,
+      fromUpload: true
+    }
+  });
+};
+```
+
+**File: `src/pages/Verify.tsx`**
+
+Receive and use navigation state:
+
+```typescript
+import { useLocation } from 'react-router-dom';
+
+const location = useLocation();
+const navState = location.state as { emissionId?: string; extractedData?: any; fromUpload?: boolean } | null;
+
+// If coming from upload, show the just-uploaded data
+const [justUploaded, setJustUploaded] = useState(navState?.extractedData || null);
+
+// In the UI, show justUploaded data if emissions array is empty
+{unverified.length > 0 || justUploaded ? (
+  // Show emissions for verification
+) : (
+  // Show upload prompt
+)}
+```
+
+### Phase 3: Fix Dashboard Score/Values Mismatch
+
+**File: `src/pages/Dashboard.tsx`**
+
+Only show verification score if there are actual emissions:
+
+```typescript
+// Line 203-210
+<VerificationStatusCard
+  verificationScore={emissions.length > 0 ? verificationScore : 0}
+  totalEmissions={summary.total}
+  unverifiedCount={unverifiedEmissions.length}
+  hasVerifiedData={verifiedEmissions.length > 0}
+  latestStatus={emissions.length > 0 ? latestStatus : null}
+  eligibleCredits={emissions.length > 0 ? eligibleCredits : 0}
+/>
+```
+
+### Phase 4: Fix Partner Context Detection
+
+**File: `src/pages/Pricing.tsx`**
+
+Add explicit context loading check:
+
+```typescript
+const { activeContext, isLoading: contextLoading } = useOrganization();
+
+// Show loading while context is being determined
+if (contextLoading) {
+  return <LoadingSkeleton />;
+}
+
+const isPartnerContext = activeContext?.context_type === 'partner';
+```
+
+**File: `src/hooks/useOrganization.ts`**
+
+Verify the hook correctly returns loading state and context.
+
+### Phase 5: Enable Add Payment Method
+
+**File: `src/pages/Billing.tsx`**
+
+Replace disabled button with functional implementation or clearer messaging:
+
+```typescript
+<Button 
+  variant="outline" 
+  size="sm"
+  onClick={() => toast.info('Payment methods are saved automatically during checkout. Make a payment to save your card.')}
+>
+  <Plus className="w-4 h-4 mr-1" />
+  Add
+</Button>
+```
+
+### Phase 6: Add Session Continuity Check
+
+**File: `src/hooks/useSession.ts`**
+
+Ensure session is persisted and restored correctly across page navigations.
+
+---
+
+## New Features to Add
+
+### Bulk Upload with Deduplication Summary
+
+**New Component: `src/components/BulkUpload.tsx`**
+
+- Accept multiple files
+- Generate hash for each
+- Check for duplicates
+- Show summary: "3 new, 2 duplicates skipped"
+- Process new files in parallel
+
+### History Page Charts
+
+**File: `src/pages/History.tsx`**
+
+Add emissions trend chart using existing recharts:
+
+```typescript
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
+// Add date range filter
+const [dateRange, setDateRange] = useState<{ start: Date; end: Date } | null>(null);
+
+// Add trend chart section
+<Card className="mb-6">
+  <CardHeader>Emissions Trend</CardHeader>
+  <CardContent>
+    <ResponsiveContainer width="100%" height={200}>
+      <LineChart data={trendData}>
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="co2" stroke="#10b981" />
+      </LineChart>
+    </ResponsiveContainer>
+  </CardContent>
+</Card>
+```
+
+### Visual Indicator for Previously Processed Documents
+
+**File: `src/pages/Index.tsx`**
+
+Add indicator when document hash is recognized:
+
+```typescript
+// After receiving OCR response
+if (data?.cached) {
+  toast.info("This invoice was previously processed. Showing cached results for accuracy.", {
+    duration: 5000,
+    icon: "🔒"
+  });
+}
+```
 
 ---
 
@@ -130,72 +324,35 @@ Add visual feedback when partner attempts MSME route:
 
 | File | Change Type | Purpose |
 |------|-------------|---------|
-| src/pages/CompetitorComparison.tsx | CREATE | /vs/:competitor pages |
-| src/data/competitorData.ts | CREATE | Competitor comparison data |
-| src/App.tsx | EDIT | Add /vs/:competitor route |
-| public/sitemap.xml | EDIT | Add /vs/ URLs |
-| index.html | EDIT | Add brand disambiguation FAQ |
-| src/pages/Pricing.tsx | EDIT | Partner-aware pricing display |
-| src/pages/PartnerDashboard.tsx | EDIT | Performance optimization |
-| src/components/Navigation.tsx | EDIT | Partner profile link |
-| src/data/cmsContent.ts | EDIT | Brand disambiguation article |
-| public/robots.txt | EDIT | Allow /vs/* URLs |
+| supabase/functions/extract-document/index.ts | EDIT | Add guest user caching for determinism |
+| src/pages/Index.tsx | EDIT | Pass state to Verify, show cache indicator |
+| src/pages/Verify.tsx | EDIT | Accept nav state, handle just-uploaded data |
+| src/pages/Dashboard.tsx | EDIT | Fix score/value consistency |
+| src/pages/Pricing.tsx | EDIT | Add context loading check |
+| src/pages/Billing.tsx | EDIT | Improve add payment UX |
+| src/pages/History.tsx | EDIT | Add charts and date filtering |
+| src/hooks/useOrganization.ts | EDIT | Verify loading state export |
+| src/components/BulkUpload.tsx | CREATE | Multi-file upload with deduplication |
 
 ---
 
-## Technical Details
+## Performance Guarantees
 
-### Competitor Comparison Page Structure
-```typescript
-interface CompetitorData {
-  slug: string;
-  name: string;
-  description: string;
-  category: 'enterprise' | 'startup' | 'registry' | 'disambiguation';
-  features: {
-    msmeFirst: boolean;
-    gstIntegration: boolean;
-    subMinuteProcessing: boolean;
-    carbonMonetization: boolean;
-    emergingMarketFocus: boolean;
-    autoVerification: boolean;
-  };
-  pricing: string;
-  targetMarket: string;
-}
-```
-
-### Partner Pricing Logic
-```typescript
-// In Pricing.tsx
-const { activeContext } = useOrganization();
-const isPartnerContext = activeContext?.context_type === 'partner';
-
-// Show different tiers based on context
-const displayTiers = isPartnerContext 
-  ? [enterpriseTier, customTier] 
-  : [snapshot, essential, pro, scale];
-```
-
-### Performance Optimization Pattern
-```typescript
-// PartnerDashboard.tsx - optimized queries
-const { data: verifications } = await supabase
-  .from('carbon_verifications')
-  .select('id, verification_score, total_co2_kg, created_at')
-  .eq('verification_status', 'approved')
-  .order('created_at', { ascending: false })
-  .limit(50); // Add limit for faster initial load
-```
+- No new dependencies
+- All changes use existing patterns
+- Lazy loading maintained
+- No core logic changes that would affect existing flows
+- All fixes are additive/corrective
 
 ---
 
-## Expected Outcomes
+## Testing Checklist
 
-1. **SEO**: Brand disambiguation content targets "senseible vs sensibull" searches
-2. **Competitor Pages**: Capture high-intent comparison searches
-3. **Partner Experience**: 
-   - Clean pricing display (enterprise/custom only)
-   - Faster dashboard load (<2s)
-   - Clear navigation without MSME confusion
-4. **Performance**: All changes maintain <2s load time target
+1. Upload same invoice as guest 5+ times - verify identical CO2 values
+2. Click "Continue to Verify" - verify emissions appear on Verify page
+3. Check Dashboard after upload - verify score matches actual values
+4. Sign up as partner - verify Pricing shows Enterprise tiers
+5. Check Billing page - verify Add button provides clear guidance
+6. Upload multiple invoices - verify deduplication works
+7. View History - verify charts render and date filter works
+
