@@ -394,7 +394,7 @@ const Pricing = () => {
                 <>
                   Earn from your Climate Data
                   <br />
-                  <span className="text-gradient-success">in 10 Seconds</span>
+                  <span className="text-gradient-success">in under 47 Seconds</span>
                 </>
               )}
             </h1>
