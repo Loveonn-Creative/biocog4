@@ -9,6 +9,7 @@
 /industries/*  /index.html  200
 /climate-intelligence/*  /index.html  200
 /legal/*  /index.html  200
+/vs/*  /index.html  200
 
 # Catch-all fallback for SPA routing
 /*  /index.html  200
