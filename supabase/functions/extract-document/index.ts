@@ -20,10 +20,10 @@ async function generateDocumentHash(content: string, mimeType: string): Promise<
 // ============= METHODOLOGY VERSION (APPEND-ONLY VERSIONING) =============
 const METHODOLOGY_VERSION = {
   name: 'BIOCOG_MVR_INDIA',
-  version: 'v1.0.1',
+  version: 'v1.0.2', // Updated: Fixed scope assignment, deterministic caching
   country: 'IN',
   factorVersion: 'IND_EF_2025',
-  confidenceVersion: 'CONF_v1.0', // Deterministic confidence scoring
+  confidenceVersion: 'CONF_v1.0',
 };
 
 // ============= HSN CODE MASTER (RULE-BASED - NO AI) =============
@@ -62,6 +62,10 @@ const HSN_MASTER: Record<string, { productCategory: string; industryCode: string
 };
 
 // ============= EXPANDED KEYWORD FALLBACK MAP (RULE-BASED - NO AI) =============
+// CRITICAL: Scope assignments per BIOCOG_MVR_INDIA_v1.0
+// - Scope 1: Direct fuel combustion (diesel, petrol, LPG, coal, CNG, PNG)
+// - Scope 2: Purchased electricity (ALWAYS scope 2, never scope 1)
+// - Scope 3: Transport, materials, waste, services
 const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: string; scope: number; fuelType?: string }> = {
   // Fuels - Scope 1 (including common OCR misreads and regional terms)
   diesel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
@@ -88,7 +92,7 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   kerosene: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
   tel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
   fuel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  // Electricity - Scope 2 (including regional terms)
+  // Electricity - Scope 2 (ALWAYS SCOPE 2 per BIOCOG MRV spec)
   electricity: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   electy: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   elec: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
@@ -107,6 +111,8 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   cesc: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   bescom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   tneb: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  pspcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
+  'punjab state power': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   unit: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   units: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
   // Transport - Scope 3
@@ -159,37 +165,38 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
 };
 
-// ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0) =============
+// ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0 - from PDF) =============
+// Source: BIOCOG_CARBON_MVR_LOGIC_Updated_Jan_31.pdf
 const EMISSION_FACTORS = {
   scope1_fuels: {
-    DIESEL: { value: 2.68, unit: 'litre' },
-    PETROL: { value: 2.31, unit: 'litre' },
-    CNG: { value: 2.75, unit: 'kg' },
-    PNG: { value: 2.30, unit: 'scm' },
-    LPG: { value: 1.51, unit: 'kg' },
-    COAL: { value: 2.42, unit: 'kg' },
-    FURNACE_OIL: { value: 3.15, unit: 'litre' },
-    NAPHTHA: { value: 3.00, unit: 'litre' },
-    BIOMASS: { value: 0.00, unit: 'kg', creditable: false },
+    DIESEL: { value: 2.68, unit: 'litre' },      // kgCO2e per litre
+    PETROL: { value: 2.31, unit: 'litre' },      // kgCO2e per litre
+    CNG: { value: 2.75, unit: 'kg' },            // kgCO2e per kg
+    PNG: { value: 2.30, unit: 'scm' },           // kgCO2e per scm
+    LPG: { value: 1.51, unit: 'kg' },            // kgCO2e per kg
+    COAL: { value: 2.42, unit: 'kg' },           // kgCO2e per kg
+    FURNACE_OIL: { value: 3.15, unit: 'litre' }, // kgCO2e per litre
+    NAPHTHA: { value: 3.00, unit: 'litre' },     // kgCO2e per litre
+    BIOMASS: { value: 0.00, unit: 'kg', creditable: false }, // Reported but not credited
   },
   scope2_electricity: {
-    INDIA_GRID_AVG: 0.708,
+    INDIA_GRID_AVG: 0.708,  // kgCO2e per kWh (CEA India)
     SOLAR_CAPTIVE: 0.000,
     WIND_CAPTIVE: 0.000,
     RENEWABLE_PPA: 0.000,
   },
   scope3_transport: {
-    ROAD_LIGHT: 0.12,
-    ROAD_HEAVY: 0.18,
-    RAIL: 0.04,
-    INLAND_WATER: 0.03,
-    SEA: 0.015,
-    AIR: 0.60,
+    ROAD_LIGHT: 0.12,    // kgCO2e per ton-km
+    ROAD_HEAVY: 0.18,    // kgCO2e per ton-km
+    RAIL: 0.04,          // kgCO2e per ton-km
+    INLAND_WATER: 0.03,  // kgCO2e per ton-km
+    SEA: 0.015,          // kgCO2e per ton-km
+    AIR: 0.60,           // kgCO2e per ton-km
   },
   scope3_waste: {
-    LANDFILL_ORGANIC: 1.90,
-    LANDFILL_INORGANIC: 0.45,
-    RECYCLING_PAPER: -0.90,
+    LANDFILL_ORGANIC: 1.90,   // kgCO2e per kg
+    LANDFILL_INORGANIC: 0.45, // kgCO2e per kg
+    RECYCLING_PAPER: -0.90,   // Negative = credit (only with certificate)
     RECYCLING_PLASTIC: -1.50,
     RECYCLING_METAL: -4.00,
     INCINERATION: 2.50,
@@ -199,21 +206,17 @@ const EMISSION_FACTORS = {
 // ============= DETERMINISTIC CONFIDENCE SCORING (NO AI INFLUENCE) =============
 // Per BIOCOG MRV spec: Base 100, fixed penalties, same input = same output
 const CONFIDENCE_PENALTIES = {
-  // MANDATORY FIELD PENALTIES
   MISSING_QUANTITY: 20,
   MISSING_UNIT: 15,
   MISSING_INVOICE_NUMBER: 10,
   MISSING_SUPPLIER_GSTIN: 10,
   MISSING_DATE: 5,
   MISSING_AMOUNT: 5,
-  // CLASSIFICATION PENALTIES
-  UNVERIFIABLE_ITEM: 15, // Per item
-  MISSING_EMISSION_FACTOR: 10, // Per item
-  // OCR QUALITY PENALTIES
+  UNVERIFIABLE_ITEM: 15,
+  MISSING_EMISSION_FACTOR: 10,
   NO_LINE_ITEMS: 30,
-  LOW_EXTRACTION_RATE: 15, // Less than 50% fields
-  // ENHANCEMENT BONUSES (fixed, not random)
-  HSN_CLASSIFICATION_BONUS: 5, // Per HSN-classified item (max 10)
+  LOW_EXTRACTION_RATE: 15,
+  HSN_CLASSIFICATION_BONUS: 5,
 } as const;
 
 function calculateDeterministicConfidence(params: {
@@ -227,11 +230,10 @@ function calculateDeterministicConfidence(params: {
   unverifiableCount: number;
   missingEmissionFactorCount: number;
   hsnClassifiedCount: number;
-  extractedFieldRatio: number; // 0 to 1
+  extractedFieldRatio: number;
 }): number {
   let confidence = 100;
 
-  // Apply mandatory field penalties
   if (!params.hasQuantity) confidence -= CONFIDENCE_PENALTIES.MISSING_QUANTITY;
   if (!params.hasUnit) confidence -= CONFIDENCE_PENALTIES.MISSING_UNIT;
   if (!params.hasInvoiceNumber) confidence -= CONFIDENCE_PENALTIES.MISSING_INVOICE_NUMBER;
@@ -239,19 +241,15 @@ function calculateDeterministicConfidence(params: {
   if (!params.hasDate) confidence -= CONFIDENCE_PENALTIES.MISSING_DATE;
   if (!params.hasAmount) confidence -= CONFIDENCE_PENALTIES.MISSING_AMOUNT;
 
-  // Apply classification penalties
   confidence -= params.unverifiableCount * CONFIDENCE_PENALTIES.UNVERIFIABLE_ITEM;
   confidence -= params.missingEmissionFactorCount * CONFIDENCE_PENALTIES.MISSING_EMISSION_FACTOR;
 
-  // Apply OCR quality penalties
   if (params.lineItemCount === 0) confidence -= CONFIDENCE_PENALTIES.NO_LINE_ITEMS;
   if (params.extractedFieldRatio < 0.5) confidence -= CONFIDENCE_PENALTIES.LOW_EXTRACTION_RATE;
 
-  // Apply HSN classification bonus (capped)
   const hsnBonus = Math.min(params.hsnClassifiedCount * CONFIDENCE_PENALTIES.HSN_CLASSIFICATION_BONUS, 10);
   confidence += hsnBonus;
 
-  // Clamp to 0-100 range
   return Math.max(0, Math.min(100, Math.round(confidence)));
 }
 
@@ -263,35 +261,27 @@ const IRRELEVANT_DOCUMENT_KEYWORDS = [
   'resume', 'cv', 'curriculum vitae', 'photograph', 'selfie', 'photo'
 ];
 
-// ============= HUMOROUS REJECTION MESSAGES FOR IRRELEVANT IMAGES =============
 const HUMOROUS_REJECTIONS: Record<string, string[]> = {
   ceiling: [
     "That's a lovely ceiling, but we can't find any carbon emissions there! 😄 Try uploading a fuel bill or invoice instead.",
-    "Great architectural shot! But for carbon accounting, we need business documents like invoices or utility bills."
   ],
   selfie: [
     "Looking good! 📸 But we're more interested in your invoices than your selfies. Upload a business document to get started.",
-    "Nice photo! For carbon tracking though, we need to see your electricity bills or purchase invoices."
   ],
   nature: [
     "Beautiful scenery! 🌿 Trees do absorb carbon, but we need your business invoices to calculate emissions.",
-    "Love the nature shot! To track your carbon footprint though, please upload a fuel bill or invoice."
   ],
   food: [
     "That looks delicious! 🍽️ But to calculate carbon, we need your business invoices, not your lunch.",
-    "Yum! For carbon accounting, please upload a utility bill or purchase invoice instead."
   ],
   personal: [
     "This looks like a personal document. For carbon MRV, we need business invoices, fuel bills, or electricity receipts.",
-    "We respect your privacy! Please share business documents only — invoices, utility bills, or purchase receipts."
   ],
   default: [
     "Hmm, this doesn't look like a business document. 📄 Try uploading an invoice, fuel bill, or electricity bill.",
-    "We're not quite sure what this is. For carbon MRV, please upload a business invoice or utility bill."
   ]
 };
 
-// Detection patterns for humorous responses
 const IMAGE_CONTEXT_PATTERNS: Record<string, RegExp> = {
   ceiling: /ceiling|roof|light|fixture|fan|lamp|chandelier|overhead/i,
   selfie: /face|person|portrait|selfie|profile|headshot|smile/i,
@@ -302,67 +292,47 @@ const IMAGE_CONTEXT_PATTERNS: Record<string, RegExp> = {
 function getHumorousRejection(ocrText: string, category?: string): string {
   const text = (ocrText || '').toLowerCase();
   
-  // If category provided, use it
   if (category && HUMOROUS_REJECTIONS[category]) {
-    const messages = HUMOROUS_REJECTIONS[category];
-    return messages[Math.floor(Math.random() * messages.length)];
+    return HUMOROUS_REJECTIONS[category][0];
   }
   
-  // Try to detect category from text
   for (const [cat, pattern] of Object.entries(IMAGE_CONTEXT_PATTERNS)) {
     if (pattern.test(text)) {
-      const messages = HUMOROUS_REJECTIONS[cat] || HUMOROUS_REJECTIONS.default;
-      return messages[Math.floor(Math.random() * messages.length)];
+      return HUMOROUS_REJECTIONS[cat]?.[0] || HUMOROUS_REJECTIONS.default[0];
     }
   }
   
-  // Check for personal document keywords
   for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
     if (text.includes(keyword)) {
-      const messages = HUMOROUS_REJECTIONS.personal;
-      return messages[Math.floor(Math.random() * messages.length)];
+      return HUMOROUS_REJECTIONS.personal[0];
     }
   }
   
-  return HUMOROUS_REJECTIONS.default[Math.floor(Math.random() * HUMOROUS_REJECTIONS.default.length)];
+  return HUMOROUS_REJECTIONS.default[0];
 }
 
 function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string } {
   const docType = (ocrData.documentType || '').toLowerCase();
   const allText = JSON.stringify(ocrData).toLowerCase();
   
-  // Check if document type is valid
   if (docType === 'unknown') {
-    // Check content for irrelevant keywords
     for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
       if (allText.includes(keyword)) {
-        return {
-          relevant: false,
-          message: getHumorousRejection(allText, 'personal')
-        };
+        return { relevant: false, message: getHumorousRejection(allText, 'personal') };
       }
     }
     
-    // Check for nature/selfie/food patterns
     for (const [category, pattern] of Object.entries(IMAGE_CONTEXT_PATTERNS)) {
       if (pattern.test(allText)) {
-        return {
-          relevant: false,
-          message: getHumorousRejection(allText, category)
-        };
+        return { relevant: false, message: getHumorousRejection(allText, category) };
       }
     }
     
-    // If no line items and no amount, likely not an invoice
     if ((!ocrData.lineItems || ocrData.lineItems.length === 0) && !ocrData.amount) {
-      return {
-        relevant: false,
-        message: getHumorousRejection(allText)
-      };
+      return { relevant: false, message: getHumorousRejection(allText) };
     }
   }
   
-  // Check if explicitly non-invoice
   if (docType && !VALID_DOCUMENT_TYPES.includes(docType) && docType !== 'unknown') {
     return {
       relevant: false,
@@ -408,17 +378,8 @@ function inferQuantityFromContext(text: string, amount?: number): number | null 
     }
   }
   
-  // If we have amount and it looks like a fuel bill, try to infer
-  if (amount && amount > 100) {
-    const lowerText = text.toLowerCase();
-    if (lowerText.includes('diesel') || lowerText.includes('hsd')) {
-      return Math.round(amount / 90 * 10) / 10;
-    }
-    if (lowerText.includes('petrol') || lowerText.includes('ms')) {
-      return Math.round(amount / 100 * 10) / 10;
-    }
-  }
-  
+  // DON'T infer from amount - this causes hallucination
+  // Amount-based inference removed to ensure determinism
   return null;
 }
 
@@ -442,7 +403,10 @@ function classifyByHSN(hsnCode: string): { productCategory: string; industryCode
 function classifyByKeyword(text: string): { productCategory: string; industryCode: string; scope: number; fuelType?: string } | null {
   const lowerText = text.toLowerCase();
   
-  for (const [keyword, classification] of Object.entries(KEYWORD_MAP)) {
+  // Check longer phrases first to avoid false matches
+  const sortedKeywords = Object.entries(KEYWORD_MAP).sort((a, b) => b[0].length - a[0].length);
+  
+  for (const [keyword, classification] of sortedKeywords) {
     if (lowerText.includes(keyword)) {
       return classification;
     }
@@ -450,7 +414,9 @@ function classifyByKeyword(text: string): { productCategory: string; industryCod
   return null;
 }
 
-// ============= CALCULATE EMISSIONS (DETERMINISTIC) =============
+// ============= CALCULATE EMISSIONS (DETERMINISTIC - NO AI) =============
+// Formula: Quantity × Emission_Factor = CO2_kg
+// Per BIOCOG_MVR_INDIA_v1.0 specification
 function calculateEmissions(
   quantity: number,
   unit: string,
@@ -461,52 +427,60 @@ function calculateEmissions(
   
   if (!quantity || quantity <= 0) return null;
   
-  // Scope 1: Fuels
+  // Scope 1: Fuels - Quantity × Fuel_Factor
   if (scope === 1 && productCategory === 'FUEL' && fuelType) {
     const factor = EMISSION_FACTORS.scope1_fuels[fuelType as keyof typeof EMISSION_FACTORS.scope1_fuels];
     if (factor) {
+      const co2Kg = quantity * factor.value;
       return {
-        co2Kg: quantity * factor.value,
+        co2Kg: Math.round(co2Kg * 100) / 100, // Round to 2 decimals
         emissionFactor: factor.value,
-        factorSource: `IND_EF_2025:${fuelType}`,
+        factorSource: `BIOCOG_MVR_INDIA_v1.0:${fuelType}`,
       };
     }
   }
   
-  // Scope 2: Electricity
+  // Scope 2: Electricity - kWh × 0.708 (India Grid Average)
   if (scope === 2 && productCategory === 'ELECTRICITY') {
+    const factor = EMISSION_FACTORS.scope2_electricity.INDIA_GRID_AVG;
+    const co2Kg = quantity * factor;
     return {
-      co2Kg: quantity * EMISSION_FACTORS.scope2_electricity.INDIA_GRID_AVG,
-      emissionFactor: EMISSION_FACTORS.scope2_electricity.INDIA_GRID_AVG,
-      factorSource: 'IND_EF_2025:INDIA_GRID_AVG',
+      co2Kg: Math.round(co2Kg * 100) / 100,
+      emissionFactor: factor,
+      factorSource: 'BIOCOG_MVR_INDIA_v1.0:INDIA_GRID_AVG',
     };
   }
   
-  // Scope 3: Transport
+  // Scope 3: Transport - Weight(tons) × Distance(km) × Factor
   if (scope === 3 && productCategory === 'TRANSPORT') {
+    const factor = EMISSION_FACTORS.scope3_transport.ROAD_HEAVY;
+    const co2Kg = quantity * factor;
     return {
-      co2Kg: quantity * EMISSION_FACTORS.scope3_transport.ROAD_HEAVY,
-      emissionFactor: EMISSION_FACTORS.scope3_transport.ROAD_HEAVY,
-      factorSource: 'IND_EF_2025:ROAD_HEAVY',
+      co2Kg: Math.round(co2Kg * 100) / 100,
+      emissionFactor: factor,
+      factorSource: 'BIOCOG_MVR_INDIA_v1.0:ROAD_HEAVY',
     };
   }
   
-  // Scope 3: Waste
+  // Scope 3: Waste - kg × Waste_Factor
   if (scope === 3 && productCategory === 'WASTE') {
+    const factor = EMISSION_FACTORS.scope3_waste.LANDFILL_ORGANIC;
+    const co2Kg = quantity * factor;
     return {
-      co2Kg: quantity * EMISSION_FACTORS.scope3_waste.LANDFILL_ORGANIC,
-      emissionFactor: EMISSION_FACTORS.scope3_waste.LANDFILL_ORGANIC,
-      factorSource: 'IND_EF_2025:LANDFILL_ORGANIC',
+      co2Kg: Math.round(co2Kg * 100) / 100,
+      emissionFactor: factor,
+      factorSource: 'BIOCOG_MVR_INDIA_v1.0:LANDFILL_ORGANIC',
     };
   }
   
-  // Generic Scope 3 materials
+  // Scope 3: Raw materials - Estimated factor (requires more specific data)
   if (scope === 3 && productCategory === 'RAW_MATERIAL') {
-    const estimatedFactor = 0.5;
+    const estimatedFactor = 0.5; // Conservative estimate
+    const co2Kg = quantity * estimatedFactor;
     return {
-      co2Kg: quantity * estimatedFactor,
+      co2Kg: Math.round(co2Kg * 100) / 100,
       emissionFactor: estimatedFactor,
-      factorSource: 'IND_EF_2025:MATERIAL_AVG',
+      factorSource: 'BIOCOG_MVR_INDIA_v1.0:MATERIAL_AVG',
     };
   }
   
@@ -558,69 +532,47 @@ interface ExtractedData {
   };
 }
 
-// ============= AI OCR EXTRACTION =============
+// ============= AI OCR EXTRACTION (DATA ONLY - NO CALCULATIONS) =============
+// AI extracts ONLY: invoice_id, date, vendor, gstin, line_items (description, hsn, quantity, unit, amount)
+// AI does NOT calculate CO2 values - that's done by deterministic math above
 async function extractWithAI(imageBase64: string, mimeType: string, apiKey: string, model: string): Promise<any> {
-  const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Extract data from invoices, bills, and receipts with MAXIMUM accuracy, even from old, faded, or unclear documents.
+  const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Your ONLY job is to extract data fields from invoices. You do NOT calculate emissions or carbon values.
 
 CRITICAL EXTRACTION RULES:
-1. For FADED or UNCLEAR text:
-   - Look for patterns: numbers near "Qty", "Rate", "Amount" columns
-   - Infer values from context (e.g., if total is visible, work backwards)
-   - Check for common invoice layouts and extract accordingly
+1. Extract ONLY these fields - do NOT calculate or estimate anything else:
+   - documentType: invoice/bill/receipt/certificate/unknown
+   - vendor: Company name on the document
+   - date: Invoice/bill date (normalize to YYYY-MM-DD)
+   - invoiceNumber: Invoice/bill number
+   - supplierGstin: 15-character GSTIN if present
+   - buyerGstin: Buyer GSTIN if present
+   - amount: Total amount in INR (numbers only)
+   - taxAmount: GST/tax amount if shown
+   - subtotal: Subtotal before tax if shown
+   - lineItems: Array of items with:
+     - description: Product/service name exactly as shown
+     - hsn_code: 4-8 digit HSN/SAC code if visible
+     - quantity: Numeric quantity ONLY if explicitly stated (DO NOT INFER)
+     - unit: Unit type ONLY if explicitly stated (litre/kWh/kg/ton/km/scm/nos/pcs)
+     - unitPrice: Per unit price if shown
+     - total: Line total if shown
 
-2. GSTIN numbers: 15-character alphanumeric (e.g., 27AABCU9603R1ZM)
-   - Look in header, near "GSTIN", "GST No", "Tax ID"
+2. For electricity bills specifically:
+   - Look for "Units Consumed" or "kWh" values - this is the quantity
+   - The unit is "kWh" 
+   - Vendor should include the power company name
 
-3. HSN codes: 4-8 digit codes (e.g., 2710, 84713010)
-   - Found in columns labeled "HSN", "HSN/SAC", "SAC Code"
-   - Or embedded in product descriptions
+3. CRITICAL - DO NOT:
+   - Calculate or estimate CO2 emissions
+   - Infer quantities from amounts
+   - Guess units if not explicitly stated
+   - Make up HSN codes
 
-4. Line items - Extract ALL visible items:
-   - description: Full product/service name
-   - hsn_code: 4-8 digit code if visible
-   - quantity: Numeric value (look near "Qty", "Quantity")
-   - unit: litre/kWh/kg/ton/km/scm/nos/pcs
-   - unitPrice: Per unit price (look near "Rate", "Price")
-   - total: Line total (look in last column)
+4. If a field is not clearly visible, set it to null - DO NOT GUESS.
 
-5. For FUEL/ELECTRICITY bills specifically:
-   - Look for consumption in litres/kWh/units
-   - Check meter readings if present
-   - Extract billing period dates
+5. If this is NOT a business document (selfie, ID card, etc.), set documentType to "unknown".
 
-6. DATES: Accept any format (DD/MM/YYYY, MM-DD-YYYY, DD-MMM-YY, etc.)
-   - Normalize to YYYY-MM-DD in output
-
-7. AMOUNTS: Remove commas, convert to numbers
-   - Handle both ₹ and Rs. prefixes
-
-8. DOCUMENT TYPE DETECTION:
-   - If this is NOT an invoice/bill/receipt (e.g., ID card, photo, resume), set documentType to "unknown"
-   - Only set documentType to invoice/bill/receipt/certificate if it actually is one
-
-Respond ONLY with valid JSON (no markdown, no explanation):
-{
-  "documentType": "invoice|bill|certificate|receipt|unknown",
-  "vendor": "vendor/supplier name",
-  "date": "YYYY-MM-DD",
-  "invoiceNumber": "invoice/bill number",
-  "supplierGstin": "15-char GSTIN or null",
-  "buyerGstin": "15-char GSTIN or null",
-  "amount": total amount as number,
-  "currency": "INR",
-  "lineItems": [
-    {
-      "description": "item description",
-      "hsn_code": "HSN code if found or null",
-      "quantity": number or null,
-      "unit": "unit or null",
-      "unitPrice": number or null,
-      "total": number or null
-    }
-  ],
-  "taxAmount": tax amount as number or null,
-  "subtotal": subtotal as number or null
-}`;
+Respond with ONLY valid JSON, no markdown code blocks.`;
 
   const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
     method: 'POST',
@@ -629,37 +581,32 @@ Respond ONLY with valid JSON (no markdown, no explanation):
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: model,
+      model,
       messages: [
         { role: 'system', content: systemPrompt },
         {
           role: 'user',
           content: [
-            {
-              type: 'text',
-              text: 'Extract ALL data from this document. For old or unclear invoices, use context clues and common patterns to infer missing values. Pay special attention to HSN codes, GSTIN numbers, quantities, and units. If this is NOT a business document (invoice/bill/receipt), indicate documentType as "unknown".'
-            },
-            {
-              type: 'image_url',
-              image_url: {
-                url: `data:${mimeType};base64,${imageBase64}`
-              }
-            }
+            { type: 'text', text: 'Extract invoice data from this image. Return ONLY the JSON with extracted fields, no calculations.' },
+            { type: 'image_url', image_url: { url: `data:${mimeType};base64,${imageBase64}` } }
           ]
         }
       ],
+      max_tokens: 4096,
+      temperature: 0, // Minimize variability
     }),
   });
 
   if (!response.ok) {
-    const status = response.status;
     const errorText = await response.text();
-    console.error(`AI Gateway error (${model}):`, status, errorText);
-    throw { status, message: errorText };
+    console.error(`AI API error (${response.status}):`, errorText);
+    const error = new Error(`AI extraction failed: ${response.status}`);
+    (error as any).status = response.status;
+    throw error;
   }
 
-  const aiResponse = await response.json();
-  return aiResponse.choices?.[0]?.message?.content;
+  const data = await response.json();
+  return data.choices?.[0]?.message?.content;
 }
 
 serve(async (req) => {
@@ -672,31 +619,30 @@ serve(async (req) => {
 
     if (!imageBase64) {
       return new Response(
-        JSON.stringify({ error: 'No image data provided' }),
+        JSON.stringify({ error: 'Image data is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
-      console.error('LOVABLE_API_KEY not configured');
       return new Response(
         JSON.stringify({ error: 'AI service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    // ============= DOCUMENT HASH FOR DUPLICATE DETECTION =============
+    // ============= GENERATE DOCUMENT HASH FIRST =============
     const documentHash = await generateDocumentHash(imageBase64, mimeType || 'image/jpeg');
     console.log(`Document hash generated: ${documentHash.substring(0, 16)}...`);
 
-    // Check for duplicate / cached result
+    // Check for authenticated user
     let userId: string | null = null;
-    let userTier: string = 'guest';
     let isAuthenticated = false;
+    let userTier = 'guest';
     const authHeader = req.headers.get('Authorization');
     
-    if (authHeader) {
+    if (authHeader && authHeader.startsWith('Bearer ')) {
       const supabaseUrl = Deno.env.get('SUPABASE_URL');
       const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
       
@@ -710,7 +656,6 @@ serve(async (req) => {
             userId = user.id;
             isAuthenticated = true;
             
-            // Get user tier from profile
             const { data: profile } = await supabase
               .from('profiles')
               .select('subscription_tier')
@@ -720,8 +665,6 @@ serve(async (req) => {
             userTier = profile?.subscription_tier || 'snapshot';
             
             // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
-            // For authenticated/paid users: Block duplicate processing to prevent greenwashing
-            // Check if this exact document hash has been processed before
             const { data: existingDoc } = await supabase
               .from('documents')
               .select('id, vendor, invoice_number, created_at, cached_result')
@@ -732,9 +675,8 @@ serve(async (req) => {
               .single();
             
             if (existingDoc) {
-              console.log(`DUPLICATE DETECTED: Document hash ${documentHash.substring(0, 16)}... already processed for user ${userId}`);
+              console.log(`DUPLICATE DETECTED: Hash ${documentHash.substring(0, 16)}... for user ${userId}`);
               
-              // For paid tiers: Return cached result with duplicate flag
               const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
               
               if (isPaidTier && existingDoc.cached_result) {
@@ -745,25 +687,20 @@ serve(async (req) => {
                     cached: true,
                     isDuplicate: true,
                     originalDocumentId: existingDoc.id,
-                    originalProcessedAt: existingDoc.created_at,
                     documentHash,
-                    message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results to ensure accuracy and prevent duplicate counting.`
+                    message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results.`
                   }),
                   { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
                 );
               }
               
-              // For free tiers: Block with clear message
               return new Response(
                 JSON.stringify({ 
                   success: false, 
                   isDuplicate: true,
                   originalDocumentId: existingDoc.id,
-                  originalProcessedAt: existingDoc.created_at,
                   documentHash,
-                  error: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Each invoice can only be counted once to maintain audit integrity. View your history to see the original results.`,
-                  vendor: existingDoc.vendor,
-                  invoiceNumber: existingDoc.invoice_number
+                  error: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Each invoice can only be counted once.`,
                 }),
                 { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
               );
@@ -775,20 +712,18 @@ serve(async (req) => {
       }
     }
     
-    // ============= GUEST USER HANDLING WITH CACHING =============
-    // For guest users: Cache and return identical results for same document
-    // This ensures determinism despite AI OCR variability
+    // ============= GUEST USER: CHECK FOR CACHED RESULT =============
+    // This ensures same invoice = same result for guests
     if (!isAuthenticated) {
-      console.log(`Guest user processing document. Hash: ${documentHash.substring(0, 16)}...`);
+      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}...`);
       
-      // Check for cached result for this document hash (any user)
       const supabaseUrl = Deno.env.get('SUPABASE_URL');
       const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
       
       if (supabaseUrl && supabaseKey) {
         const supabase = createClient(supabaseUrl, supabaseKey);
         
-        // Look for any cached result with this document hash
+        // Check for ANY cached result with this hash (regardless of user)
         const { data: cachedDoc } = await supabase
           .from('documents')
           .select('cached_result, document_hash, created_at')
@@ -799,7 +734,7 @@ serve(async (req) => {
           .single();
         
         if (cachedDoc?.cached_result) {
-          console.log(`Guest user: Returning cached result for hash ${documentHash.substring(0, 16)}...`);
+          console.log(`CACHE HIT: Returning cached result for guest user`);
           return new Response(
             JSON.stringify({ 
               success: true, 
@@ -807,7 +742,7 @@ serve(async (req) => {
               documentHash,
               userTier: 'guest',
               cached: true,
-              message: 'Returning consistent results for this invoice (cached for accuracy).'
+              message: 'Returning verified results for this invoice (cached for accuracy).'
             }),
             { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
@@ -815,12 +750,12 @@ serve(async (req) => {
       }
     }
 
-    console.log(`Processing document for ${userTier} user with deterministic MRV extraction...`);
+    console.log(`Processing document for ${userTier} user...`);
 
+    // ============= AI EXTRACTION (DATA ONLY) =============
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
 
-    // First attempt with flash model (faster)
     try {
       content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-flash');
       console.log('Flash model extraction complete');
@@ -837,7 +772,7 @@ serve(async (req) => {
           { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      console.error('Flash model failed, will try pro model:', error);
+      console.error('Flash model failed:', error);
     }
 
     // Parse response
@@ -851,20 +786,16 @@ serve(async (req) => {
         }
         ocrData = JSON.parse(jsonStr);
       } catch (e) {
-        console.error('Failed to parse flash model response:', e);
+        console.error('Failed to parse flash response:', e);
       }
     }
 
-    // Retry with pro model if extraction failed or no line items
-    const shouldRetryWithPro = !ocrData || 
-      (ocrData.lineItems && ocrData.lineItems.length === 0 && ocrData.documentType !== 'unknown');
-
-    if (shouldRetryWithPro) {
-      console.log('Failed extraction, retrying with pro model...');
+    // Retry with pro model if needed
+    if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown')) {
+      console.log('Retrying with pro model...');
       try {
         content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-pro');
         usedModel = 'google/gemini-2.5-pro';
-        console.log('Pro model extraction complete');
         
         let jsonStr = content || '';
         const jsonMatch = content?.match(/```(?:json)?\s*([\s\S]*?)```/);
@@ -875,14 +806,14 @@ serve(async (req) => {
       } catch (error: any) {
         if (error.status === 429) {
           return new Response(
-            JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }),
+            JSON.stringify({ error: 'Rate limit exceeded. Please try again.' }),
             { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
-        console.error('Pro model also failed:', error);
+        console.error('Pro model failed:', error);
         if (!ocrData) {
           return new Response(
-            JSON.stringify({ error: 'Failed to extract data from document. Please try a clearer image.' }),
+            JSON.stringify({ error: 'Failed to extract data. Please try a clearer image.' }),
             { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
@@ -896,23 +827,19 @@ serve(async (req) => {
       );
     }
 
-    // ============= DOCUMENT RELEVANCE CHECK =============
+    // Check document relevance
     const relevanceCheck = isDocumentRelevant(ocrData);
     if (!relevanceCheck.relevant) {
-      console.log(`Document rejected as irrelevant: ${relevanceCheck.message}`);
       return new Response(
-        JSON.stringify({ 
-          success: false, 
-          error: relevanceCheck.message,
-          isIrrelevant: true 
-        }),
+        JSON.stringify({ success: false, error: relevanceCheck.message, isIrrelevant: true }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    console.log(`AI OCR Response received (${usedModel}), applying deterministic rule-based classification...`);
+    console.log(`AI OCR complete (${usedModel}), applying DETERMINISTIC classification...`);
 
-    // ============= RULE-BASED CLASSIFICATION (NO AI GUESSING) =============
+    // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
+    // This is where all math happens - deterministic, no AI
     const validationFlags: string[] = [];
     let totalCO2Kg = 0;
     let verifiedItems = 0;
@@ -932,21 +859,13 @@ serve(async (req) => {
         total: item.total,
       };
 
-      // Track if we have quantity/unit
       if (classifiedItem.quantity && classifiedItem.quantity > 0) hasAnyQuantity = true;
       if (classifiedItem.unit) hasAnyUnit = true;
 
-      // Try to infer quantity if missing
-      if (!classifiedItem.quantity && item.description) {
-        const inferredQty = inferQuantityFromContext(item.description, item.total);
-        if (inferredQty) {
-          classifiedItem.quantity = inferredQty;
-          hasAnyQuantity = true;
-          console.log(`Inferred quantity ${inferredQty} for: ${item.description?.substring(0, 30)}`);
-        }
-      }
+      // DO NOT infer quantity from amount - this causes hallucination
+      // Quantity must be explicitly extracted by OCR
 
-      // Step 1: Try HSN classification first
+      // Step 1: HSN classification
       if (item.hsn_code) {
         const hsnClass = classifyByHSN(item.hsn_code);
         if (hsnClass) {
@@ -959,7 +878,7 @@ serve(async (req) => {
         }
       }
 
-      // Step 2: Fallback to keyword classification
+      // Step 2: Keyword classification fallback
       if (!classifiedItem.productCategory) {
         const keywordClass = classifyByKeyword(item.description || '');
         if (keywordClass) {
@@ -971,16 +890,16 @@ serve(async (req) => {
         }
       }
 
-      // Step 3: Mark as unverifiable if no classification
+      // Step 3: Mark unverifiable if no classification
       if (!classifiedItem.productCategory) {
         classifiedItem.classificationMethod = 'UNVERIFIABLE';
         unverifiableItems++;
-        validationFlags.push(`Unclassified item: ${item.description?.substring(0, 30) || 'Unknown'}`);
+        validationFlags.push(`Unclassified: ${item.description?.substring(0, 30) || 'Unknown'}`);
       } else {
         verifiedItems++;
       }
 
-      // Step 4: Calculate emissions if possible
+      // Step 4: DETERMINISTIC emission calculation
       if (classifiedItem.productCategory && classifiedItem.quantity && classifiedItem.unit && classifiedItem.scope) {
         const emissions = calculateEmissions(
           classifiedItem.quantity,
@@ -999,7 +918,6 @@ serve(async (req) => {
           missingEmissionFactorCount++;
         }
       } else if (classifiedItem.productCategory) {
-        // Has category but missing data for emission calculation
         missingEmissionFactorCount++;
       }
 
@@ -1018,30 +936,25 @@ serve(async (req) => {
     const primaryScope = Object.entries(scopeCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
     const primaryCategory = Object.entries(categoryCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
 
-    // Determine classification status (more lenient - don't reject normal invoices)
+    // Classification status
     let classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
     if (unverifiableItems === 0 && classifiedItems.length > 0 && totalCO2Kg > 0) {
       classificationStatus = 'VERIFIED';
     } else if (verifiedItems > 0 || totalCO2Kg > 0) {
       classificationStatus = 'PARTIALLY_VERIFIED';
     } else if (classifiedItems.length > 0 || ocrData.amount) {
-      // Has line items or amount - it's a valid invoice, just can't calculate emissions
       classificationStatus = 'PARTIALLY_VERIFIED';
     } else {
       classificationStatus = 'UNVERIFIABLE';
     }
 
-    // Additional validation flags (informational, not rejection criteria)
+    // Validation flags
     if (!ocrData.invoiceNumber) validationFlags.push('Missing invoice number');
     if (!ocrData.supplierGstin) validationFlags.push('Missing supplier GSTIN');
     if (!ocrData.date) validationFlags.push('Missing invoice date');
-    if (classifiedItems.some(item => !item.quantity || item.quantity <= 0)) {
-      validationFlags.push('Missing or invalid quantities');
-    }
 
-    // ============= DETERMINISTIC CONFIDENCE CALCULATION =============
-    // Count extracted fields for ratio
-    const totalPossibleFields = 7; // vendor, date, invoiceNumber, supplierGstin, buyerGstin, amount, lineItems
+    // Deterministic confidence calculation
+    const totalPossibleFields = 7;
     let extractedFields = 0;
     if (ocrData.vendor) extractedFields++;
     if (ocrData.date) extractedFields++;
@@ -1049,7 +962,7 @@ serve(async (req) => {
     if (ocrData.supplierGstin) extractedFields++;
     if (ocrData.buyerGstin) extractedFields++;
     if (ocrData.amount) extractedFields++;
-    if (ocrData.lineItems && ocrData.lineItems.length > 0) extractedFields++;
+    if (ocrData.lineItems?.length > 0) extractedFields++;
 
     const finalConfidence = calculateDeterministicConfidence({
       hasQuantity: hasAnyQuantity,
@@ -1060,8 +973,8 @@ serve(async (req) => {
       hasAmount: !!ocrData.amount,
       lineItemCount: classifiedItems.length,
       unverifiableCount: unverifiableItems,
-      missingEmissionFactorCount: missingEmissionFactorCount,
-      hsnClassifiedCount: hsnClassifiedCount,
+      missingEmissionFactorCount,
+      hsnClassifiedCount,
       extractedFieldRatio: extractedFields / totalPossibleFields,
     });
 
@@ -1086,7 +999,41 @@ serve(async (req) => {
       methodology: METHODOLOGY_VERSION,
     };
 
-    console.log(`Document processed: ${classificationStatus}, ${verifiedItems} verified, ${unverifiableItems} unverifiable, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}% (model: ${usedModel})`);
+    console.log(`DETERMINISTIC RESULT: ${classificationStatus}, ${verifiedItems} items, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}%`);
+
+    // ============= CACHE THE RESULT =============
+    // Store in database so future requests for same document get same result
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    
+    if (supabaseUrl && supabaseKey) {
+      try {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+        
+        // Insert cache record
+        const { error: cacheError } = await supabase
+          .from('documents')
+          .insert({
+            document_hash: documentHash,
+            document_type: extractedData.documentType,
+            vendor: extractedData.vendor,
+            invoice_number: extractedData.invoiceNumber,
+            amount: extractedData.amount,
+            confidence: extractedData.confidence,
+            cached_result: extractedData,
+            cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
+            user_id: userId,
+          });
+        
+        if (cacheError) {
+          console.error('Failed to cache result:', cacheError);
+        } else {
+          console.log('Result cached for deterministic retrieval');
+        }
+      } catch (e) {
+        console.error('Cache error:', e);
+      }
+    }
 
     return new Response(
       JSON.stringify({ 

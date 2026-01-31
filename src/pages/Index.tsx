@@ -7,10 +7,12 @@ import { ResultState } from "@/components/ResultState";
 import { OnboardingTour } from "@/components/OnboardingTour";
 import { HomeNavIcons } from "@/components/HomeNavIcons";
 import { UseCaseTyper } from "@/components/UseCaseTyper";
+import { BulkUpload } from "@/components/BulkUpload";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
+import { Files } from "lucide-react";
 
 
 type State = "idle" | "processing" | "result";
@@ -64,17 +66,26 @@ interface ProcessingResult {
 }
 
 // ============= DETERMINISTIC SCOPE MAPPING =============
-// Per BIOCOG MRV spec: Category determines scope, not AI
+// Per BIOCOG_MVR_INDIA_v1.0: Category determines scope
+// Scope 1: Direct fuel combustion
+// Scope 2: Purchased electricity (ALWAYS scope 2)
+// Scope 3: Transport, materials, waste, services
 const SCOPE_MAP: Record<string, number> = {
-  'fuel': 1,          // Scope 1 - Direct emissions
-  'electricity': 2,   // Scope 2 - Purchased energy (FIXED: was sometimes 1)
-  'transport': 3,     // Scope 3 - Value chain
+  'fuel': 1,
+  'FUEL': 1,
+  'electricity': 2,
+  'ELECTRICITY': 2,
+  'transport': 3,
+  'TRANSPORT': 3,
   'materials': 3,
+  'RAW_MATERIAL': 3,
   'waste': 3,
-  'other': 3
+  'WASTE': 3,
+  'CHEMICALS': 3,
+  'other': 3,
 };
 
-// Map productCategory to our category format
+// Map productCategory to display format
 const CATEGORY_MAP: Record<string, string> = {
   'FUEL': 'fuel',
   'ELECTRICITY': 'electricity',
@@ -94,10 +105,6 @@ const getCategoryFromOCR = (data: ExtractedData): string => {
     return CATEGORY_MAP[data.primaryCategory];
   }
   
-  if (data.emissionCategory) {
-    return data.emissionCategory;
-  }
-  
   const firstItem = data.lineItems?.[0];
   if (firstItem?.productCategory && CATEGORY_MAP[firstItem.productCategory]) {
     return CATEGORY_MAP[firstItem.productCategory];
@@ -106,10 +113,9 @@ const getCategoryFromOCR = (data: ExtractedData): string => {
   return 'other';
 };
 
-// Helper to get scope from category (DETERMINISTIC)
-// This OVERRIDES any AI-provided scope to ensure correctness
+// Helper to get DETERMINISTIC scope from category
 const getScopeFromCategory = (category: string): number => {
-  return SCOPE_MAP[category] || 3;
+  return SCOPE_MAP[category] || SCOPE_MAP[category.toUpperCase()] || 3;
 };
 
 // Fixed carbon credit rate (same as backend)
@@ -121,6 +127,7 @@ const Index = () => {
   const [state, setState] = useState<State>("idle");
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
+  const [showBulkUpload, setShowBulkUpload] = useState(false);
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -135,47 +142,68 @@ const Index = () => {
     });
   };
 
-  const saveToDatabase = async (extractedData: ExtractedData, documentHash?: string, userTier?: string): Promise<{ documentId: string; emissionId: string } | null> => {
+  // Save emission record to database (document is cached by edge function)
+  const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId: string } | null> => {
     try {
-      // Cache results for ALL users to ensure determinism on re-uploads
-      // Guest users get cached to return same results, paid users for audit trail
-      const cacheExpiresAt = user?.id
-        ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
-        : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(); // 7 days for guests
+      // First, find the document that was cached by the edge function
+      let documentId: string | null = null;
+      
+      if (documentHash) {
+        const { data: existingDoc } = await supabase
+          .from('documents')
+          .select('id')
+          .eq('document_hash', documentHash)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .single();
+        
+        if (existingDoc) {
+          documentId = existingDoc.id;
+          
+          // Update with session/user info if not set
+          await supabase
+            .from('documents')
+            .update({
+              session_id: sessionId,
+              user_id: user?.id || null,
+            })
+            .eq('id', documentId);
+        }
+      }
+      
+      // If no document found (shouldn't happen), create one
+      if (!documentId) {
+        const { data: docData, error: docError } = await supabase
+          .from('documents')
+          .insert({
+            session_id: sessionId,
+            user_id: user?.id || null,
+            document_type: extractedData.documentType,
+            vendor: extractedData.vendor,
+            invoice_date: extractedData.date ? new Date(extractedData.date).toISOString().split('T')[0] : null,
+            invoice_number: extractedData.invoiceNumber,
+            amount: extractedData.amount,
+            currency: extractedData.currency || 'INR',
+            confidence: extractedData.confidence,
+            document_hash: documentHash || null,
+            cached_result: extractedData,
+            cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+          } as any)
+          .select()
+          .single();
 
-      const { data: docData, error: docError } = await supabase
-        .from('documents')
-        .insert({
-          session_id: sessionId,
-          user_id: user?.id || null,
-          document_type: extractedData.documentType,
-          vendor: extractedData.vendor,
-          invoice_date: extractedData.date ? new Date(extractedData.date).toISOString().split('T')[0] : null,
-          invoice_number: extractedData.invoiceNumber,
-          amount: extractedData.amount,
-          currency: extractedData.currency || 'INR',
-          tax_amount: extractedData.taxAmount,
-          subtotal: extractedData.subtotal,
-          confidence: extractedData.confidence,
-          raw_ocr_data: extractedData as any,
-          document_hash: documentHash || null,
-          cached_result: extractedData, // ALWAYS cache for determinism
-          cache_expires_at: cacheExpiresAt,
-        } as any)
-        .select()
-        .single();
-
-      if (docError) {
-        console.error('Document save error:', docError);
-        return null;
+        if (docError) {
+          console.error('Document save error:', docError);
+          return null;
+        }
+        documentId = docData.id;
       }
 
-      // Get emission data - use new fields with fallback to legacy
-      const co2Kg = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
+      // Get emission data - use totalCO2Kg from deterministic calculation
+      const co2Kg = extractedData.totalCO2Kg ?? 0;
       const category = getCategoryFromOCR(extractedData);
       
-      // CRITICAL: Use our deterministic scope mapping, NOT the OCR's primaryScope
-      // This ensures electricity is always Scope 2, fuel is always Scope 1, etc.
+      // DETERMINISTIC scope from category
       const scope = getScopeFromCategory(category);
       
       const firstItem = extractedData.lineItems?.[0];
@@ -186,7 +214,7 @@ const Index = () => {
       const { data: emissionData, error: emissionError } = await supabase
         .from('emissions')
         .insert({
-          document_id: docData.id,
+          document_id: documentId,
           session_id: sessionId,
           user_id: user?.id || null,
           scope: scope,
@@ -206,8 +234,8 @@ const Index = () => {
         return null;
       }
 
-      console.log('Saved to database - Document:', docData.id, 'Emission:', emissionData.id, 'Scope:', scope);
-      return { documentId: docData.id, emissionId: emissionData.id };
+      console.log('Saved emission - Document:', documentId, 'Emission:', emissionData.id, 'Scope:', scope, 'CO2:', co2Kg);
+      return { documentId, emissionId: emissionData.id };
     } catch (error) {
       console.error('Database save error:', error);
       return null;
@@ -306,7 +334,7 @@ const Index = () => {
         warnings.forEach(w => toast.warning(w, { duration: 4000 }));
       }
 
-      const savedIds = await saveToDatabase(extractedData, data.documentHash, data.userTier);
+      const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
 
       if (savedIds) {
         toast.success('Data saved successfully!', { duration: 2000 });
@@ -517,6 +545,31 @@ const Index = () => {
             <p className="text-xs text-muted-foreground/60 text-center mt-2">
               Upload a document or speak to begin
             </p>
+            
+            {/* Bulk Upload Toggle for signed-in users */}
+            {user && (
+              <div className="mt-6 w-full max-w-md">
+                <button
+                  onClick={() => setShowBulkUpload(!showBulkUpload)}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mx-auto"
+                >
+                  <Files className="h-4 w-4" />
+                  {showBulkUpload ? 'Hide Bulk Upload' : 'Upload Multiple Invoices'}
+                </button>
+                
+                {showBulkUpload && (
+                  <div className="mt-4">
+                    <BulkUpload 
+                      onComplete={(results) => {
+                        toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
+                        navigate('/history');
+                      }}
+                      maxFiles={10}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 
