@@ -646,7 +646,7 @@ const Grants = () => {
         </section>
 
         {/* Trust Signals */}
-        <section className="py-16 md:py-20 border-t border-border">
+        <section className="py-12 md:py-16 border-t border-border">
           <div className="container px-4 md:px-6">
             <motion.div 
               className="max-w-4xl mx-auto text-center"
@@ -654,16 +654,9 @@ const Grants = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
-              <p className="text-muted-foreground mb-8">
-                Inspired by accelerator programs from
+              <p className="text-muted-foreground text-sm">
+                Building infrastructure for 400M MSMEs across emerging markets
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-                {["Google", "Microsoft", "NVIDIA", "Cloudflare"].map((name) => (
-                  <span key={name} className="text-lg font-semibold text-muted-foreground">
-                    {name}
-                  </span>
-                ))}
-              </div>
             </motion.div>
           </div>
         </section>
