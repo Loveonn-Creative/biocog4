@@ -332,6 +332,78 @@ export type Database = {
           },
         ]
       }
+      grant_applications: {
+        Row: {
+          annual_revenue: string | null
+          applicant_name: string
+          carbon_focus: string | null
+          company_name: string
+          company_stage: string
+          country: string
+          created_at: string
+          email: string
+          employee_count: string | null
+          id: string
+          notes: string | null
+          phone: string | null
+          pitch: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          sector: string
+          status: string
+          updated_at: string
+          use_case: string
+          user_id: string | null
+          website: string | null
+        }
+        Insert: {
+          annual_revenue?: string | null
+          applicant_name: string
+          carbon_focus?: string | null
+          company_name: string
+          company_stage: string
+          country: string
+          created_at?: string
+          email: string
+          employee_count?: string | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          pitch: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          sector: string
+          status?: string
+          updated_at?: string
+          use_case: string
+          user_id?: string | null
+          website?: string | null
+        }
+        Update: {
+          annual_revenue?: string | null
+          applicant_name?: string
+          carbon_focus?: string | null
+          company_name?: string
+          company_stage?: string
+          country?: string
+          created_at?: string
+          email?: string
+          employee_count?: string | null
+          id?: string
+          notes?: string | null
+          phone?: string | null
+          pitch?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          sector?: string
+          status?: string
+          updated_at?: string
+          use_case?: string
+          user_id?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       invoices: {
         Row: {
           amount: number
