@@ -615,7 +615,7 @@ serve(async (req) => {
   }
 
   try {
-    const { imageBase64, mimeType } = await req.json();
+    const { imageBase64, mimeType, sessionId } = await req.json();
 
     if (!imageBase64) {
       return new Response(
@@ -1010,7 +1010,7 @@ serve(async (req) => {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
         
-        // Insert cache record
+        // Insert cache record with session_id for guest users
         const { error: cacheError } = await supabase
           .from('documents')
           .insert({
@@ -1023,6 +1023,7 @@ serve(async (req) => {
             cached_result: extractedData,
             cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
             user_id: userId,
+            session_id: isAuthenticated ? null : (sessionId || null), // Link to session for guest users
           });
         
         if (cacheError) {

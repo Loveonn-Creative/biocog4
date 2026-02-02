@@ -252,8 +252,9 @@ const Index = () => {
 
       console.log("Sending document for OCR processing...");
       
+      // Pass sessionId to edge function for guest user data linking
       const { data, error } = await supabase.functions.invoke('extract-document', {
-        body: { imageBase64, mimeType }
+        body: { imageBase64, mimeType, sessionId }
       });
 
       if (error) {
