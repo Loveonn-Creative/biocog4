@@ -33,6 +33,7 @@ export function useSession() {
       const { data: { session: authSession } } = await supabase.auth.getSession();
       
       if (authSession?.user) {
+        console.log('[Session] Authenticated user:', authSession.user.id.substring(0, 8) + '...');
         setState({
           sessionId: null,
           user: authSession.user,
@@ -77,10 +78,11 @@ export function useSession() {
           });
 
         if (error) {
-          console.error('Failed to create session:', error);
+          console.error('[Session] Failed to create session:', error);
         } else if (newSessionId) {
           sessionId = newSessionId;
           localStorage.setItem(SESSION_STORAGE_KEY, sessionId);
+          console.log('[Session] Created new session:', sessionId.substring(0, 8) + '...');
         }
       }
 
