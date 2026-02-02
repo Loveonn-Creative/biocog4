@@ -715,8 +715,10 @@ serve(async (req) => {
     // ============= GUEST USER: CHECK FOR CACHED RESULT =============
     // This ensures same invoice = same result for guests
     if (!isAuthenticated) {
-      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}...`);
-      
+      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}... SessionId: ${sessionId ? sessionId.substring(0, 8) + '...' : 'MISSING'}`);
+      if (!sessionId) {
+        console.warn('[WARN] No sessionId provided for guest user - data may be orphaned!');
+      }
       const supabaseUrl = Deno.env.get('SUPABASE_URL');
       const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
       
