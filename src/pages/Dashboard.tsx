@@ -49,9 +49,47 @@ const Dashboard = () => {
     }
   }, [activeContext, navigate]);
 
+  // Initial fetch
   useEffect(() => {
     fetchVerificationData();
   }, [sessionId, user?.id]);
+
+  // Real-time subscription for carbon verifications
+  useEffect(() => {
+    if (!user && !sessionId) return;
+
+    const channel = supabase
+      .channel('dashboard-verifications')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'carbon_verifications',
+        },
+        (payload) => {
+          console.log('[Dashboard] Verification update:', payload.eventType);
+          fetchVerificationData();
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'emissions',
+        },
+        (payload) => {
+          console.log('[Dashboard] Emission update:', payload.eventType);
+          refetch();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [sessionId, user?.id, refetch]);
 
   const resetAllData = async () => {
     if (!sessionId) return;

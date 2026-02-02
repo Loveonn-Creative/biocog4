@@ -144,6 +144,13 @@ const Index = () => {
 
   // Save emission record to database (document is cached by edge function)
   const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId: string } | null> => {
+    // CRITICAL: Validate session before saving
+    if (!user && !sessionId) {
+      console.error('[MRV] CRITICAL: No session_id or user_id available. Data cannot be saved!');
+      toast.error('Session expired. Please refresh the page and try again.');
+      return null;
+    }
+
     try {
       // First, find the document that was cached by the edge function
       let documentId: string | null = null;
@@ -161,22 +168,27 @@ const Index = () => {
           documentId = existingDoc.id;
           
           // Update with session/user info if not set
-          await supabase
+          const { error: updateError } = await supabase
             .from('documents')
             .update({
-              session_id: sessionId,
+              session_id: user ? null : sessionId,
               user_id: user?.id || null,
             })
             .eq('id', documentId);
+          
+          if (updateError) {
+            console.error('[MRV] Document update error:', updateError);
+          }
         }
       }
       
       // If no document found (shouldn't happen), create one
       if (!documentId) {
+        console.warn('[MRV] No cached document found, creating new one');
         const { data: docData, error: docError } = await supabase
           .from('documents')
           .insert({
-            session_id: sessionId,
+            session_id: user ? null : sessionId,
             user_id: user?.id || null,
             document_type: extractedData.documentType,
             vendor: extractedData.vendor,
@@ -193,7 +205,7 @@ const Index = () => {
           .single();
 
         if (docError) {
-          console.error('Document save error:', docError);
+          console.error('[MRV] Document save error:', docError);
           return null;
         }
         documentId = docData.id;
@@ -215,7 +227,7 @@ const Index = () => {
         .from('emissions')
         .insert({
           document_id: documentId,
-          session_id: sessionId,
+          session_id: user ? null : sessionId,
           user_id: user?.id || null,
           scope: scope,
           category: category,
@@ -230,11 +242,15 @@ const Index = () => {
         .single();
 
       if (emissionError) {
-        console.error('Emission save error:', emissionError);
+        console.error('[MRV] Emission save error:', emissionError);
+        if (emissionError.message?.includes('row-level security')) {
+          console.error('[MRV] RLS violation - check session_id:', sessionId, 'user_id:', user?.id);
+          toast.error('Permission denied. Please try refreshing the page.');
+        }
         return null;
       }
 
-      console.log('Saved emission - Document:', documentId, 'Emission:', emissionData.id, 'Scope:', scope, 'CO2:', co2Kg);
+      console.log('[MRV] Saved - Document:', documentId, 'Emission:', emissionData.id, 'Session:', sessionId?.substring(0, 8) + '...', 'Scope:', scope, 'CO2:', co2Kg);
       return { documentId, emissionId: emissionData.id };
     } catch (error) {
       console.error('Database save error:', error);
