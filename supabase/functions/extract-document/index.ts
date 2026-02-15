@@ -163,6 +163,40 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   scrap: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   garbage: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
+  // Cloud & Data Centers - Scope 3 (Purchased Services)
+  aws: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  'amazon web services': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  azure: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  gcp: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  'google cloud': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  cloud: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  'data center': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  compute: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
+  // Software & SaaS - Scope 3
+  'software license': { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
+  saas: { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
+  subscription: { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
+  'platform fee': { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
+  // IT Hardware (Capital Goods) - Scope 3
+  laptop: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
+  server: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
+  networking: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
+  router: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
+  switch: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
+  // Professional Services - Scope 3
+  consulting: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
+  legal: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
+  audit: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
+  advisory: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
+  // Business Travel - Scope 3
+  airfare: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  flight: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  hotel: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  cab: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  taxi: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  commute: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  uber: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
+  ola: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
 };
 
 // ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0 - from PDF) =============
@@ -200,6 +234,30 @@ const EMISSION_FACTORS = {
     RECYCLING_PLASTIC: -1.50,
     RECYCLING_METAL: -4.00,
     INCINERATION: 2.50,
+  },
+  // IT/Service monetary-based factors (kgCO2e per monetary unit)
+  scope3_cloud: {
+    AWS_INDIA: { value: 0.52, unit: 'USD', currency: 'USD' },      // kgCO2e per USD
+    AZURE_INDIA: { value: 0.55, unit: 'USD', currency: 'USD' },
+    GCP_INDIA: { value: 0.50, unit: 'USD', currency: 'USD' },
+    CLOUD_DEFAULT: { value: 0.52, unit: 'USD', currency: 'USD' },
+  },
+  scope3_it_hardware: {
+    LAPTOP: { value: 0.35, unit: 'INR1000' },      // kgCO2e per ₹1000
+    SERVER: { value: 0.62, unit: 'INR1000' },
+    NETWORKING: { value: 0.48, unit: 'INR1000' },
+    IT_DEFAULT: { value: 0.45, unit: 'INR1000' },
+  },
+  scope3_services: {
+    PROFESSIONAL_DEFAULT: { value: 0.30, unit: 'INR1000' },
+    SOFTWARE_DEFAULT: { value: 0.25, unit: 'INR1000' },
+  },
+  scope3_business_travel: {
+    AIR_SHORT: { value: 0.255, unit: 'km' },     // kgCO2e per passenger-km
+    AIR_MEDIUM: { value: 0.156, unit: 'km' },
+    AIR_LONG: { value: 0.150, unit: 'km' },
+    HOTEL_NIGHT: { value: 21.6, unit: 'night' },  // kgCO2e per night (fixed)
+    CAB_DEFAULT: { value: 0.14, unit: 'km' },
   },
 };
 

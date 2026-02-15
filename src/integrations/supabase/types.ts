@@ -859,6 +859,7 @@ export type Database = {
           business_name: string | null
           created_at: string | null
           data_consent: boolean | null
+          enterprise_mode: boolean | null
           gstin: string | null
           id: string
           location: string | null
@@ -877,6 +878,7 @@ export type Database = {
           business_name?: string | null
           created_at?: string | null
           data_consent?: boolean | null
+          enterprise_mode?: boolean | null
           gstin?: string | null
           id: string
           location?: string | null
@@ -895,6 +897,7 @@ export type Database = {
           business_name?: string | null
           created_at?: string | null
           data_consent?: boolean | null
+          enterprise_mode?: boolean | null
           gstin?: string | null
           id?: string
           location?: string | null

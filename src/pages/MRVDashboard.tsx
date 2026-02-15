@@ -17,6 +17,9 @@ import {
   ChevronRight, BarChart3, Lock, ExternalLink, Lightbulb, Activity
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
+import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
+import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { 
   generateIntelligentRecommendations, 
   getTotalImpact,
@@ -61,6 +64,7 @@ const MRVDashboard = () => {
   const { activeContext } = useOrganization();
   const { summary, emissions, getVerifiedEmissions } = useEmissions();
   const { documents } = useDocuments();
+  const { isEnterprise } = useEnterpriseMode();
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -675,6 +679,18 @@ const MRVDashboard = () => {
               </div>
             </div>
           </>
+        )}
+
+        {/* Enterprise Mode Panels */}
+        {isEnterprise && emissions.length > 0 && (
+          <div className="space-y-6 mt-6">
+            <EnterpriseAuditLedger emissions={emissions} />
+            <EnterpriseComplianceLabels
+              scope1={summary.scope1}
+              scope2={summary.scope2}
+              scope3={summary.scope3}
+            />
+          </div>
         )}
       </main>
     </div>

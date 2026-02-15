@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -19,6 +20,7 @@ import { format, startOfMonth, endOfMonth, isWithinInterval, parseISO } from 'da
 const History = () => {
   const { documents, isLoading: docsLoading } = useDocuments();
   const { emissions, isLoading: emissionsLoading } = useEmissions();
+  const { isEnterprise } = useEnterpriseMode();
   const [search, setSearch] = useState('');
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
     from: undefined,
@@ -286,8 +288,16 @@ const History = () => {
                       </div>
                       <div className="text-right shrink-0">
                         <div className="font-medium">{formatAmount(doc.amount)}</div>
-                        <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
+                      <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
                       </div>
+                      {/* Enterprise: Document Provenance */}
+                      {isEnterprise && doc.document_hash && (
+                        <div className="text-right shrink-0">
+                          <Badge variant="outline" className="text-xs font-mono border-primary/20 text-primary">
+                            SHA256: {doc.document_hash.substring(0, 12)}…
+                          </Badge>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 );

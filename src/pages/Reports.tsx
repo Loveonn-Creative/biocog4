@@ -4,6 +4,7 @@ import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -22,6 +23,7 @@ import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { 
   determineApplicableFrameworks, 
   getDefaultMSMEProfile, 
@@ -78,6 +80,7 @@ const Reports = () => {
   const [showFrameworkOptions, setShowFrameworkOptions] = useState(false);
   const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
   const [useCustomFrameworks, setUseCustomFrameworks] = useState(false);
+  const { isEnterprise } = useEnterpriseMode();
 
   // Route protection: redirect partners to their reports page
   useEffect(() => {
@@ -1082,6 +1085,68 @@ const Reports = () => {
         )}
         
         {/* Legal Footer */}
+        {/* Enterprise Finance-Grade Export */}
+        {isEnterprise && emissions.length > 0 && (
+          <Card className="mt-6">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <FileSpreadsheet className="h-4 w-4 text-primary" />
+                Finance-Grade Exports
+                <Badge variant="outline" className="text-xs ml-auto border-primary/30 text-primary">Enterprise</Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex gap-3 flex-wrap">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  const wb = XLSX.utils.book_new();
+                  const auditData = emissions.map(e => ({
+                    Date: new Date(e.created_at).toISOString(),
+                    Category: e.category,
+                    Scope: e.scope,
+                    'CO2 (kg)': e.co2_kg,
+                    'Activity Data': e.activity_data || '',
+                    'Activity Unit': e.activity_unit || '',
+                    'Emission Factor': e.emission_factor || '',
+                    'Data Quality': e.data_quality || '',
+                    'Verified': e.verified ? 'Yes' : 'No',
+                    'Document ID': e.document_id || '',
+                  }));
+                  const ws = XLSX.utils.json_to_sheet(auditData);
+                  XLSX.utils.book_append_sheet(wb, ws, 'Audit Trail');
+                  XLSX.writeFile(wb, `finance-grade-audit-${new Date().toISOString().split('T')[0]}.xlsx`);
+                  toast.success('Finance-grade audit trail exported');
+                }}
+              >
+                <FileSpreadsheet className="h-4 w-4 mr-2" />
+                Full Audit Trail (XLSX)
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  const wb = XLSX.utils.book_new();
+                  const anonData = emissions.map(e => ({
+                    Category: e.category,
+                    Scope: e.scope,
+                    'CO2 (kg)': e.co2_kg,
+                    'Data Quality': e.data_quality || '',
+                    'Verified': e.verified ? 'Yes' : 'No',
+                  }));
+                  const ws = XLSX.utils.json_to_sheet(anonData);
+                  XLSX.utils.book_append_sheet(wb, ws, 'Partner Report');
+                  XLSX.writeFile(wb, `partner-ready-${new Date().toISOString().split('T')[0]}.xlsx`);
+                  toast.success('Partner-ready format exported');
+                }}
+              >
+                <Shield className="h-4 w-4 mr-2" />
+                Partner-Ready (Anonymized)
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+
         <div className="mt-8 p-4 rounded-lg bg-muted/30 border border-border/50">
           <p className="text-xs text-muted-foreground leading-relaxed">
             <strong>Legal Disclaimer:</strong> {LEGAL_DISCLAIMER}
