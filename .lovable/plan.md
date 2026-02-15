@@ -1,171 +1,145 @@
 
-# Fix Plan: Data Persistence & MRV Pipeline Reliability
+# Enterprise Mode: Feature-Flag Architecture Plan
 
-## Problem Summary
+## Overview
 
-After investigation, I've identified a **critical data synchronization bug** in the invoice-to-MRV pipeline. While the OCR extraction and CO₂ calculations are mathematically correct (your 5,000L diesel invoice correctly calculates to 13,400 kg CO₂ and ₹10,050 carbon credit value), the data is NOT being properly linked to your session when saved.
+Add a single "Enterprise Mode" toggle to the user Profile page (OFF by default). When ON, the system conditionally reveals advanced capabilities on top of existing pages -- no new workflows, no new forms, no changes to the default MSME experience.
 
-## Root Cause Analysis
+## What Changes for Users
 
-### Issue 1: Session-Document Mismatch
+- **Toggle OFF (default):** Platform behaves exactly as today. Zero visual or functional difference.
+- **Toggle ON:** Same pages progressively reveal additional panels: audit trail, entity hierarchy, enhanced fraud checks, compliance labels (GHG Protocol / ISO 14064), and finance-grade export formats. All data comes from the same pipeline -- no parallel calculations.
 
-The edge function (`extract-document`) saves documents to the database **without a session_id for guest users**:
+## Architecture
 
-```typescript
-// Current problematic code (line 1016-1026):
-await supabase.from('documents').insert({
-  document_hash: documentHash,
-  user_id: userId,  // NULL for guests
-  // session_id is MISSING entirely!
-})
+### 1. Database: Add `enterprise_mode` Column to `profiles`
+
+A single migration adds a boolean column:
+
+```sql
+ALTER TABLE public.profiles ADD COLUMN enterprise_mode boolean DEFAULT false;
 ```
 
-This means guest user documents are orphaned in the database with no owner.
+No new tables, no new RLS policies needed (profiles RLS already covers owner read/write).
 
-### Issue 2: Client-Side Update Fails
+### 2. Hook: `useEnterpriseMode`
 
-When `Index.tsx` tries to update the document with session info (lines 162-170), the RLS policy blocks it because:
-- RLS requires `session_id` to match on UPDATE
-- The document has no `session_id` set, so the update fails silently
+A lightweight React hook that reads `enterprise_mode` from the user's profile and exposes:
+- `isEnterprise: boolean` -- the flag
+- `toggleEnterprise()` -- saves to DB
+- `isLoading: boolean`
 
-### Issue 3: Emissions Saved But Inaccessible
+This hook is the single source of truth. All pages import it and conditionally render enterprise sections only when `isEnterprise === true`.
 
-Emissions ARE being saved correctly, but queries in `useEmissions.ts` and `useDocuments.ts` filter by:
-```typescript
-query.eq('session_id', sessionId)  // Guest users
-query.eq('user_id', user.id)       // Signed-in users
+### 3. Profile Page: Enterprise Mode Toggle Card
+
+A new card in Profile (between "Data & Privacy" and "Security") with:
+- A Switch component labeled "Enterprise Mode"
+- Subtitle: "Activate audit-grade verification, entity consolidation, and finance-ready exports"
+- When toggled, calls `toggleEnterprise()` which updates the `profiles.enterprise_mode` column
+- Visual: subtle border highlight when active, no clutter
+
+### 4. Conditional Enterprise Panels on Existing Pages
+
+Each page gets a lazy-loaded enterprise section that renders only when `isEnterprise === true`. No existing components are modified -- enterprise content is appended below existing content.
+
+**Dashboard (`Dashboard.tsx`):**
+- "Audit Log" card showing recent verification events (read from `carbon_verifications`)
+- "Entity Consolidation" summary (parent/subsidiary roll-up placeholder -- uses existing org data)
+- "Compliance Labels" row: GHG Protocol / ISO 14064 / BRSR badges derived from existing scope data
+
+**MRV Dashboard (`MRVDashboard.tsx`):**
+- "Enhanced Fraud Analysis" panel: deeper greenwashing risk breakdown from existing `ai_analysis` JSON
+- "Audit-Grade Ledger" table: chronological, hash-linked emission entries with document provenance
+- "Data Retention" indicator showing extended retention period
+
+**Verify (`Verify.tsx`):**
+- "Enhanced Verification Depth" badge when enterprise mode is on
+- Additional verification metadata display (methodology version, factor source, hash chain)
+
+**Reports (`Reports.tsx`):**
+- "Finance-Grade Export" button (XLSX with full audit trail columns)
+- "Partner-Ready Format" export option (anonymized, compliance-mapped)
+- Additional framework badges: ISO 14064, GHG Protocol scope mapping labels
+
+**History (`History.tsx`):**
+- "Document Provenance" column showing SHA256 hash and methodology version per entry
+
+### 5. Extended OCR Category Maps (Edge Function)
+
+Extend the `KEYWORD_MAP` in `extract-document/index.ts` with IT/service activity keywords. These are additive -- existing keywords are untouched:
+
+```
+cloud, aws, azure, gcp        -> CLOUD_SERVICES, Scope 3
+software, saas, subscription   -> SOFTWARE, Scope 3  
+laptop, server, networking     -> IT_HARDWARE, Scope 3 (maps to HSN 84/85)
+consulting, legal, audit       -> PROFESSIONAL_SERVICES, Scope 3
+airfare, flight, hotel, cab    -> BUSINESS_TRAVEL, Scope 3
 ```
 
-If the session_id wasn't saved to the document/emission, it won't appear.
+Corresponding emission factors (monetary-based, fixed):
+```
+AWS India:     0.52 kgCO2e/USD
+Azure India:   0.55 kgCO2e/USD
+GCP India:     0.50 kgCO2e/USD
+Laptops:       0.35 kgCO2e/INR1000
+Servers:       0.62 kgCO2e/INR1000
+```
 
-## Carbon Credit Math Validation
+These factors are added to the existing `EMISSION_FACTORS` map. They apply to ALL users (MSME and Enterprise) since they are part of the deterministic pipeline -- Enterprise mode does not change calculations, only surfaces additional metadata.
 
-Your invoice's calculation is **correct and deterministic**:
+Update `CATEGORY_MAP` and `SCOPE_MAP` in `Index.tsx` to handle the new categories:
+```
+CLOUD_SERVICES -> 'cloud' -> Scope 3
+SOFTWARE -> 'software' -> Scope 3
+IT_HARDWARE -> 'it_hardware' -> Scope 3
+PROFESSIONAL_SERVICES -> 'services' -> Scope 3
+BUSINESS_TRAVEL -> 'travel' -> Scope 3
+```
 
-| Field | Value | Source |
-|-------|-------|--------|
-| Document | PQR Chemicals Fuel Invoice | OCR |
-| Fuel Type | High-Speed Diesel (HSD) | Keyword Detection |
-| Quantity | 5,000 liters | OCR Extraction |
-| Emission Factor | 2.68 kg CO₂e/L | BIOCOG_MVR_INDIA_v1.0 |
-| CO₂ Emissions | 5,000 × 2.68 = **13,400 kg** | Deterministic Calculation |
-| Credit Rate | ₹750/tonne | Fixed Platform Rate |
-| Carbon Credit Value | 13.4 t × ₹750 = **₹10,050** | Deterministic |
+### 6. Compliance Labeling Layer
 
-The math is correct. The issue is data not reaching downstream pages.
+A pure UI mapping (no calculation changes):
+- When Enterprise Mode is ON, existing scope1/2/3 data gets dual labels:
+  - India: CPCB / BRSR / GSTIN-HSN verified
+  - Global: GHG Protocol Category 1-15 / ISO 14064-1
+- Implemented as a utility function `getComplianceLabels(scope, category)` that returns label arrays
 
-## Implementation Plan
+## Files to Create/Modify
 
-### Step 1: Fix Edge Function Session Handling
-
-Modify `supabase/functions/extract-document/index.ts` to:
-- Accept `sessionId` from the request body (client sends it)
-- Save documents WITH `session_id` for guest users
-- Ensure all cached documents have proper ownership
-
-### Step 2: Update Client to Pass Session ID
-
-Modify `src/pages/Index.tsx` to:
-- Include `sessionId` in the edge function call
-- Verify database save succeeded before showing success toast
-- Add error handling when saves fail
-
-### Step 3: Add Session Validation on Client
-
-Modify `src/hooks/useSession.ts` to:
-- Verify session exists before using cached session_id
-- Handle session recovery gracefully
-- Log session state changes for debugging
-
-### Step 4: Fix RLS Policy Gap
-
-Add a migration to ensure:
-- Guest users can properly access their session-linked data
-- No orphaned documents exist without ownership
-
-### Step 5: Add Data Recovery Logic
-
-Create logic to:
-- Detect orphaned documents (those with `document_hash` but no `session_id`)
-- Associate them with the current session on next upload of same document
-
-## Technical Implementation Details
-
-### Files to Modify
-
-| File | Change | Purpose |
+| File | Action | Purpose |
 |------|--------|---------|
-| `supabase/functions/extract-document/index.ts` | Add sessionId parameter, save with session | Link guest documents to session |
-| `src/pages/Index.tsx` | Pass sessionId to edge function | Enable session-aware caching |
-| `src/hooks/useSession.ts` | Add session validation logging | Debug session issues |
-| Database Migration | Update documents table policies | Fix RLS access gap |
+| `src/hooks/useEnterpriseMode.ts` | **CREATE** | Single hook for enterprise flag |
+| `src/pages/Profile.tsx` | **EDIT** | Add Enterprise Mode toggle card |
+| `src/pages/Dashboard.tsx` | **EDIT** | Add conditional audit/compliance panels |
+| `src/pages/MRVDashboard.tsx` | **EDIT** | Add audit ledger and fraud analysis panels |
+| `src/pages/Verify.tsx` | **EDIT** | Add enhanced verification metadata |
+| `src/pages/Reports.tsx` | **EDIT** | Add finance-grade export options |
+| `src/pages/History.tsx` | **EDIT** | Add document provenance column |
+| `src/pages/Index.tsx` | **EDIT** | Extend SCOPE_MAP and CATEGORY_MAP for new categories |
+| `src/lib/complianceLabels.ts` | **CREATE** | GHG Protocol / ISO 14064 label mapping utility |
+| `supabase/functions/extract-document/index.ts` | **EDIT** | Add IT/service keywords and emission factors |
+| Database Migration | **CREATE** | Add `enterprise_mode` boolean to `profiles` |
 
-### Edge Function Fix (Key Change)
+## Performance Guarantees
 
-```typescript
-// Accept sessionId from client
-const { imageBase64, mimeType, sessionId } = await req.json();
+- Enterprise panels are conditionally rendered (`{isEnterprise && ...}`) -- zero DOM cost when OFF
+- No additional API calls when Enterprise Mode is OFF
+- The `useEnterpriseMode` hook piggybacks on the existing profile fetch (no extra query)
+- No new lazy-loaded routes or bundles -- enterprise sections are inline conditional renders
+- Extended keyword maps add ~30 entries to the edge function -- negligible impact
 
-// When caching document, include session_id
-await supabase.from('documents').insert({
-  document_hash: documentHash,
-  user_id: userId,
-  session_id: isAuthenticated ? null : sessionId, // ADD THIS
-  // ... rest of fields
-});
-```
+## Reversibility
 
-### Client Fix (Key Change)
+- Toggling OFF immediately hides all enterprise UI -- no stale state
+- No data is deleted when toggling OFF (emissions, documents, verifications remain intact)
+- The `enterprise_mode` column is a simple boolean flip with no cascading effects
 
-```typescript
-// In processDocument function:
-const { data, error } = await supabase.functions.invoke('extract-document', {
-  body: { 
-    imageBase64, 
-    mimeType,
-    sessionId // ADD THIS - pass session to edge function
-  }
-});
-```
+## What Does NOT Change
 
-## Expected Outcomes After Fix
-
-1. **Dashboard**: Will show emissions summary with scope breakdown
-2. **History**: Will list all processed invoices with vendor, amount, CO₂
-3. **MRV**: Will show pending/verified emissions with proper counts
-4. **Verify**: Will populate with unverified emissions immediately after upload
-5. **Monetize**: Will calculate credit value from verified emissions
-
-## Verification Tests
-
-After implementation:
-
-1. Upload the PQR Chemicals invoice as guest
-2. Verify "Continue to Verify" navigates with data
-3. Check History page shows the document
-4. Check Dashboard shows 13,400 kg in Scope 1
-5. Sign in and verify data persists (merge-session logic)
-6. Upload same invoice again - should show duplicate detection
-
-## Calculation Transparency
-
-For the attached invoice, here's the complete audit trail:
-
-```text
-Invoice: FUEL/2024-0120
-Vendor: ABC Petroleum → PQR Chemicals
-Product: High-Speed Diesel (HSD)
-Quantity: 5,000 liters (explicitly stated)
-Unit Price: ₹86.50/L
-Subtotal: ₹4,32,500
-GST: ₹77,850 (CGST + SGST @ 18%)
-Total: ₹5,10,350
-
-BIOCOG MRV Calculation:
-├─ Classification: HSN 27 → FUEL → Scope 1
-├─ Emission Factor: 2.68 kg CO₂e/litre (DIESEL)
-├─ CO₂ = 5,000 × 2.68 = 13,400 kg
-└─ Credit Value = 13.4 tCO₂e × ₹750 = ₹10,050
-```
-
-This calculation is **deterministic** - same invoice will always produce same result.
+- OCR pipeline logic and deterministic math
+- Emission factors for existing categories
+- Existing page layouts, navigation, and component hierarchy
+- RLS policies (profiles already has owner-based access)
+- Guest user experience (enterprise mode requires authentication)
+- Subscription tier system (enterprise mode is independent of tier)
