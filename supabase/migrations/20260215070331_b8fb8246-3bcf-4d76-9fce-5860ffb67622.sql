@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN enterprise_mode boolean DEFAULT false;

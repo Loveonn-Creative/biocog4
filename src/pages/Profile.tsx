@@ -26,6 +26,7 @@ import {
   ShieldCheck, FileCheck, AlertCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
 
 const tierIcons = {
   snapshot: Sparkles,
@@ -454,6 +455,9 @@ const Profile = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Enterprise Mode */}
+          <EnterpriseModeCard />
 
           {/* Security */}
           <Card>

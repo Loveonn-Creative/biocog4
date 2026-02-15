@@ -17,6 +17,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
 import { Helmet } from 'react-helmet-async';
+import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
+import { EnterpriseVerificationBadge } from '@/components/enterprise/EnterpriseVerificationBadge';
 
 interface NavigationState {
   emissionId?: string;
@@ -57,6 +59,7 @@ const Verify = () => {
   const { sessionId, user } = useSession();
   const { activeContext } = useOrganization();
   const { emissions, getUnverifiedEmissions, refetch, isLoading: emissionsLoading } = useEmissions();
+  const { isEnterprise } = useEnterpriseMode();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
@@ -164,6 +167,9 @@ const Verify = () => {
           <p className="text-muted-foreground">AI-powered MRV to ensure accuracy and prevent greenwashing</p>
         </div>
         
+        {/* Enterprise Verification Badge */}
+        {isEnterprise && <EnterpriseVerificationBadge />}
+
         {/* Verification Input Card */}
         <Card className="mb-6">
           <CardHeader>

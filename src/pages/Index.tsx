@@ -83,6 +83,17 @@ const SCOPE_MAP: Record<string, number> = {
   'WASTE': 3,
   'CHEMICALS': 3,
   'other': 3,
+  // Enterprise IT/Service scopes
+  'cloud': 3,
+  'CLOUD_SERVICES': 3,
+  'software': 3,
+  'SOFTWARE': 3,
+  'it_hardware': 3,
+  'IT_HARDWARE': 3,
+  'services': 3,
+  'PROFESSIONAL_SERVICES': 3,
+  'travel': 3,
+  'BUSINESS_TRAVEL': 3,
 };
 
 // Map productCategory to display format
@@ -97,6 +108,12 @@ const CATEGORY_MAP: Record<string, string> = {
   'ELECTRICAL_EQUIPMENT': 'materials',
   'TRANSPORT_EQUIPMENT': 'transport',
   'SERVICES': 'other',
+  // Enterprise IT/Service categories
+  'CLOUD_SERVICES': 'cloud',
+  'SOFTWARE': 'software',
+  'IT_HARDWARE': 'it_hardware',
+  'PROFESSIONAL_SERVICES': 'services',
+  'BUSINESS_TRAVEL': 'travel',
 };
 
 // Helper to get category from OCR response
@@ -413,6 +430,11 @@ const Index = () => {
       'transport': 'Transport',
       'materials': 'Materials',
       'waste': 'Waste',
+      'cloud': 'Cloud Services',
+      'software': 'Software',
+      'it_hardware': 'IT Hardware',
+      'services': 'Services',
+      'travel': 'Travel',
       'other': ''
     };
 

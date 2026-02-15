@@ -21,6 +21,9 @@ import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { Trash2, Loader2, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
+import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
+import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
+import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -28,6 +31,7 @@ const Dashboard = () => {
   const { tier } = usePremiumStatus();
   const { greeting, tierLabel, tierEmoji, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
+  const { isEnterprise } = useEnterpriseMode();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -262,6 +266,18 @@ const Dashboard = () => {
               />
               <RecentDocuments documents={documents.slice(0, 5)} />
             </div>
+          </div>
+        )}
+
+        {/* Enterprise Mode Panels — Only visible when toggle is ON */}
+        {isEnterprise && !isLoading && emissions.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            <EnterpriseAuditLog />
+            <EnterpriseComplianceLabels
+              scope1={summary.scope1}
+              scope2={summary.scope2}
+              scope3={summary.scope3}
+            />
           </div>
         )}
       </main>
