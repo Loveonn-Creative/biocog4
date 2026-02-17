@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter } from 'lucide-react';
+import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
@@ -16,11 +16,14 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar as CalendarPicker } from '@/components/ui/calendar';
 import { LineChart, Line, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { format, startOfMonth, endOfMonth, isWithinInterval, parseISO } from 'date-fns';
+import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from '@/components/GreenCategoryBadge';
+import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 
 const History = () => {
   const { documents, isLoading: docsLoading } = useDocuments();
   const { emissions, isLoading: emissionsLoading } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
+  const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
   const [search, setSearch] = useState('');
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
     from: undefined,
@@ -100,6 +103,12 @@ const History = () => {
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-semibold">Invoice History</h1>
+          {ledgerEntries.length > 0 && (
+            <Button variant="outline" size="sm" onClick={exportComplianceXLSX} className="gap-2 shrink-0">
+              <Download className="h-4 w-4" />
+              Export Ledger
+            </Button>
+          )}
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <div className="relative flex-1 sm:w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />

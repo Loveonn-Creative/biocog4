@@ -437,6 +437,85 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         .in('id', emissionIds);
     }
 
+    // ============= COMPLIANCE LEDGER POPULATION =============
+    // Auto-populate compliance ledger for authenticated users
+    if (userId) {
+      const GREEN_CATEGORIES = ['SOLAR_ENERGY', 'EV_TRANSPORT', 'FORESTATION', 'WIND_ENERGY', 'BIOGAS', 'ORGANIC_INPUT', 'ENERGY_EFFICIENCY', 'WATER_CONSERVATION', 'RECYCLED_MATERIAL'];
+      
+      for (const emission of emissions) {
+        const doc = emission.documents;
+        const isGreen = GREEN_CATEGORIES.includes(emission.category?.toUpperCase?.() || '');
+        const co2 = emission.co2_kg || 0;
+        
+        // Determine validation result
+        let validationResult = 'passed';
+        let validationFailureReason: string | null = null;
+        const emValidation = validationResults.get(emission.id);
+        
+        if (emValidation && !emValidation.valid) {
+          validationResult = 'failed';
+          if (!emission.activity_data || emission.activity_data <= 0) {
+            validationFailureReason = 'Quantity not detected - cannot compute: Quantity x Factor = CO2';
+          } else if (!emission.activity_unit) {
+            validationFailureReason = 'Unit missing - emission factor requires specific unit (litre/kWh/kg)';
+          } else if (!emission.emission_factor) {
+            validationFailureReason = `No emission factor available for category: ${emission.category}`;
+          } else {
+            validationFailureReason = emValidation.flags.join('; ');
+          }
+        }
+
+        // Determine fiscal year and quarter
+        const createdDate = new Date(emission.created_at || Date.now());
+        const month = createdDate.getMonth() + 1;
+        const year = createdDate.getFullYear();
+        const fiscalYear = month >= 4 ? `FY${year}-${year + 1}` : `FY${year - 1}-${year}`;
+        const fiscalQuarter = month >= 4 && month <= 6 ? 'Q1' : month >= 7 && month <= 9 ? 'Q2' : month >= 10 && month <= 12 ? 'Q3' : 'Q4';
+
+        try {
+          await supabase
+            .from('compliance_ledger')
+            .insert({
+              user_id: userId,
+              document_id: emission.document_id || null,
+              emission_id: emission.id,
+              verification_id: verification.id,
+              document_hash: doc?.document_hash || 'NO_HASH',
+              invoice_number: doc?.invoice_number || null,
+              vendor: doc?.vendor || null,
+              invoice_date: doc?.invoice_date || null,
+              amount: doc?.amount || null,
+              currency: doc?.currency || 'INR',
+              green_category: isGreen ? emission.category : null,
+              scope: emission.scope,
+              emission_category: emission.category,
+              activity_data: emission.activity_data || null,
+              activity_unit: emission.activity_unit || null,
+              emission_factor: emission.emission_factor || null,
+              factor_source: emission.verification_notes || null,
+              co2_kg: co2,
+              is_green_benefit: co2 < 0,
+              confidence_score: doc?.confidence || null,
+              verification_score: verificationScore,
+              verification_status: status,
+              validation_result: validationResult,
+              validation_failure_reason: validationFailureReason,
+              greenwashing_risk: greenwashingRisk,
+              methodology_version: 'BIOCOG_MVR_INDIA_v1.0',
+              classification_method: emission.data_quality === 'high' ? 'HSN' : 'KEYWORD',
+              gstin: null,
+              hsn_code: null,
+              verified_at: status === 'verified' ? new Date().toISOString() : null,
+              fiscal_year: fiscalYear,
+              fiscal_quarter: fiscalQuarter,
+            });
+        } catch (ledgerError) {
+          console.error('Compliance ledger insert error for emission:', emission.id, ledgerError);
+        }
+      }
+      console.log(`Compliance ledger populated with ${emissions.length} entries`);
+    }
+
     const result: VerificationResult = {
       verificationId: verification.id,
       status,

@@ -59,6 +59,11 @@ const HSN_MASTER: Record<string, { productCategory: string; industryCode: string
   '89': { productCategory: 'TRANSPORT_EQUIPMENT', industryCode: 'MARINE', industryName: 'Ships & Boats', defaultScope: 3 },
   // Services
   '99': { productCategory: 'SERVICES', industryCode: 'PROFESSIONAL', industryName: 'Professional & Business Services', defaultScope: 3 },
+  // Green HSN codes
+  '8541': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', industryName: 'Solar Cells & PV Modules', defaultScope: 2 },
+  '8711': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', industryName: 'Electric Motorcycles', defaultScope: 1 },
+  '0602': { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', industryName: 'Live Plants & Saplings', defaultScope: 3 },
+  '8501': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', industryName: 'Electric Motors', defaultScope: 1 },
 };
 
 // ============= EXPANDED KEYWORD FALLBACK MAP (RULE-BASED - NO AI) =============
@@ -163,6 +168,51 @@ const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: strin
   scrap: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   garbage: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
   kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
+  // Green Categories - Solar
+  solar: { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  'solar panel': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  'pv module': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  'photovoltaic': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  'solar inverter': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  // Green Categories - EV
+  'electric vehicle': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
+  'ev charging': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
+  'ev battery': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
+  'e-rickshaw': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
+  'e-scooter': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
+  // Green Categories - Forestation
+  forestation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
+  sapling: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
+  plantation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
+  'tree planting': { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
+  afforestation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
+  // Green Categories - Wind
+  'wind turbine': { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  windmill: { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  'wind energy': { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
+  // Green Categories - Biogas
+  biogas: { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
+  biomethane: { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
+  'bio-gas': { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
+  // Green Categories - Organic
+  organic: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
+  compost: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
+  'bio-fertilizer': { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
+  vermicompost: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
+  // Green Categories - Energy Efficiency
+  led: { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
+  'energy efficient': { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
+  bldc: { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
+  'star rated': { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
+  // Green Categories - Water Conservation
+  rainwater: { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
+  'water recycling': { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
+  'rain harvesting': { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
+  // Green Categories - Recycled Material
+  'recycled material': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
+  'r-pet': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
+  'recycled plastic': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
+  'recycled paper': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
   // Cloud & Data Centers - Scope 3 (Purchased Services)
   aws: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
   'amazon web services': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
@@ -253,11 +303,23 @@ const EMISSION_FACTORS = {
     SOFTWARE_DEFAULT: { value: 0.25, unit: 'INR1000' },
   },
   scope3_business_travel: {
-    AIR_SHORT: { value: 0.255, unit: 'km' },     // kgCO2e per passenger-km
+    AIR_SHORT: { value: 0.255, unit: 'km' },
     AIR_MEDIUM: { value: 0.156, unit: 'km' },
     AIR_LONG: { value: 0.150, unit: 'km' },
-    HOTEL_NIGHT: { value: 21.6, unit: 'night' },  // kgCO2e per night (fixed)
+    HOTEL_NIGHT: { value: 21.6, unit: 'night' },
     CAB_DEFAULT: { value: 0.14, unit: 'km' },
+  },
+  // Green benefit factors (negative = carbon avoided/reduced)
+  green_benefits: {
+    SOLAR_ENERGY: { value: -0.708, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:SOLAR_AVOIDED_GRID' },
+    EV_TRANSPORT: { value: -1.80, unit: 'litre-equivalent', factorSource: 'BIOCOG_MVR_INDIA_v1.0:EV_DIESEL_AVOIDED' },
+    FORESTATION: { value: -22.0, unit: 'tree', factorSource: 'BIOCOG_MVR_INDIA_v1.0:FORESTATION_IPCC' },
+    WIND_ENERGY: { value: -0.708, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:WIND_AVOIDED_GRID' },
+    BIOGAS: { value: -2.30, unit: 'scm', factorSource: 'BIOCOG_MVR_INDIA_v1.0:BIOGAS_NG_AVOIDED' },
+    ORGANIC_INPUT: { value: -0.50, unit: 'kg', factorSource: 'BIOCOG_MVR_INDIA_v1.0:ORGANIC_CHEM_AVOIDED' },
+    ENERGY_EFFICIENCY: { value: -0.30, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:EFFICIENCY_REDUCTION' },
+    WATER_CONSERVATION: { value: -0.20, unit: 'kL', factorSource: 'BIOCOG_MVR_INDIA_v1.0:WATER_ENERGY_SAVED' },
+    RECYCLED_MATERIAL: { value: -1.50, unit: 'kg', factorSource: 'BIOCOG_MVR_INDIA_v1.0:RECYCLED_VIRGIN_AVOIDED' },
   },
 };
 
@@ -445,6 +507,18 @@ function inferQuantityFromContext(text: string, amount?: number): number | null 
 function classifyByHSN(hsnCode: string): { productCategory: string; industryCode: string; industryName: string; scope: number } | null {
   if (!hsnCode) return null;
   
+  // Check 4-digit HSN first (more specific green codes)
+  const prefix4 = hsnCode.substring(0, 4);
+  if (HSN_MASTER[prefix4]) {
+    return {
+      productCategory: HSN_MASTER[prefix4].productCategory,
+      industryCode: HSN_MASTER[prefix4].industryCode,
+      industryName: HSN_MASTER[prefix4].industryName,
+      scope: HSN_MASTER[prefix4].defaultScope,
+    };
+  }
+  
+  // Fall back to 2-digit HSN
   const prefix2 = hsnCode.substring(0, 2);
   if (HSN_MASTER[prefix2]) {
     return {
@@ -539,6 +613,17 @@ function calculateEmissions(
       co2Kg: Math.round(co2Kg * 100) / 100,
       emissionFactor: estimatedFactor,
       factorSource: 'BIOCOG_MVR_INDIA_v1.0:MATERIAL_AVG',
+    };
+  }
+  
+  // Green benefit categories (negative CO2 = carbon avoided)
+  const greenFactor = EMISSION_FACTORS.green_benefits[productCategory as keyof typeof EMISSION_FACTORS.green_benefits];
+  if (greenFactor) {
+    const co2Kg = quantity * greenFactor.value;
+    return {
+      co2Kg: Math.round(co2Kg * 100) / 100,
+      emissionFactor: greenFactor.value,
+      factorSource: greenFactor.factorSource,
     };
   }
   
