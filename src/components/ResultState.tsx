@@ -1,4 +1,5 @@
-import { Check, ArrowRight, Leaf, AlertTriangle } from "lucide-react";
+import { Check, ArrowRight, Leaf, AlertTriangle, TreePine } from "lucide-react";
+import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from "./GreenCategoryBadge";
 
 interface ExtractedData {
   documentType: string;
@@ -25,6 +26,8 @@ interface ResultStateProps {
 export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }: ResultStateProps) => {
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
   const co2Value = extractedData?.totalCO2Kg ?? extractedData?.estimatedCO2Kg ?? 0;
+  const isGreenBenefit = co2Value < 0;
+  const greenCategory = extractedData?.emissionCategory ? getGreenCategoryFromEmissionCategory(extractedData.emissionCategory) : null;
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -48,9 +51,25 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         <div className="absolute -bottom-1 -left-3 w-2 h-2 rounded-full bg-primary/30 animate-float delay-200" />
       </div>
       
+      {/* Green Category Badge */}
+      {greenCategory && (
+        <GreenCategoryBadge category={greenCategory} size="md" />
+      )}
+
       {/* Result message */}
       <div className="text-center">
-        {type === "revenue" ? (
+        {isGreenBenefit ? (
+          <>
+            <p className="text-sm text-muted-foreground mb-2">Verified Green Benefit</p>
+            <div className="flex items-center justify-center gap-2">
+              <TreePine className="w-6 h-6 text-success" />
+              <p className="text-3xl sm:text-4xl font-semibold text-success tracking-tight">
+                {Math.abs(co2Value).toFixed(2)} kg
+              </p>
+            </div>
+            <p className="text-sm text-success/80 mt-1">CO₂ avoided / reduced</p>
+          </>
+        ) : type === "revenue" ? (
           <>
             <p className="text-sm text-muted-foreground mb-2">Potential carbon credit value</p>
             <p className="text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
@@ -87,7 +106,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         <div className="w-full p-4 rounded-xl bg-secondary/50 border border-border/50 space-y-3">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Leaf className="w-4 h-4 text-success" />
-            <span>Emissions Data Extracted</span>
+            <span>{isGreenBenefit ? 'Green Benefit Data' : 'Emissions Data Extracted'}</span>
           </div>
           
           <div className="grid grid-cols-2 gap-3 text-sm">
@@ -103,10 +122,12 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
                 <p className="font-medium text-foreground capitalize">{extractedData.emissionCategory}</p>
               </div>
             )}
-            {co2Value > 0 && (
+            {co2Value !== 0 && (
               <div>
-                <p className="text-muted-foreground text-xs">CO₂ Emissions</p>
-                <p className="font-medium text-success">{co2Value.toFixed(2)} kg</p>
+                <p className="text-muted-foreground text-xs">{isGreenBenefit ? 'CO₂ Avoided' : 'CO₂ Emissions'}</p>
+                <p className={`font-medium ${isGreenBenefit ? 'text-success' : 'text-destructive'}`}>
+                  {isGreenBenefit ? '-' : ''}{Math.abs(co2Value).toFixed(2)} kg
+                </p>
               </div>
             )}
             {extractedData.amount && (

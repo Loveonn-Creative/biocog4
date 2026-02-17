@@ -94,6 +94,25 @@ const SCOPE_MAP: Record<string, number> = {
   'PROFESSIONAL_SERVICES': 3,
   'travel': 3,
   'BUSINESS_TRAVEL': 3,
+  // Green categories
+  'solar': 2,
+  'SOLAR_ENERGY': 2,
+  'ev': 1,
+  'EV_TRANSPORT': 1,
+  'forestation': 3,
+  'FORESTATION': 3,
+  'wind': 2,
+  'WIND_ENERGY': 2,
+  'biogas': 1,
+  'BIOGAS': 1,
+  'organic': 3,
+  'ORGANIC_INPUT': 3,
+  'efficiency': 2,
+  'ENERGY_EFFICIENCY': 2,
+  'water': 3,
+  'WATER_CONSERVATION': 3,
+  'recycled': 3,
+  'RECYCLED_MATERIAL': 3,
 };
 
 // Map productCategory to display format
@@ -114,6 +133,16 @@ const CATEGORY_MAP: Record<string, string> = {
   'IT_HARDWARE': 'it_hardware',
   'PROFESSIONAL_SERVICES': 'services',
   'BUSINESS_TRAVEL': 'travel',
+  // Green categories
+  'SOLAR_ENERGY': 'solar',
+  'EV_TRANSPORT': 'ev',
+  'FORESTATION': 'forestation',
+  'WIND_ENERGY': 'wind',
+  'BIOGAS': 'biogas',
+  'ORGANIC_INPUT': 'organic',
+  'ENERGY_EFFICIENCY': 'efficiency',
+  'WATER_CONSERVATION': 'water',
+  'RECYCLED_MATERIAL': 'recycled',
 };
 
 // Helper to get category from OCR response
@@ -435,6 +464,15 @@ const Index = () => {
       'it_hardware': 'IT Hardware',
       'services': 'Services',
       'travel': 'Travel',
+      'solar': 'Solar Energy',
+      'ev': 'EV Transport',
+      'forestation': 'Forestation',
+      'wind': 'Wind Energy',
+      'biogas': 'Biogas',
+      'organic': 'Organic',
+      'efficiency': 'Energy Efficiency',
+      'water': 'Water Conservation',
+      'recycled': 'Recycled Material',
       'other': ''
     };
 
