@@ -1,145 +1,229 @@
-
-# Enterprise Mode: Feature-Flag Architecture Plan
+# Green Invoice Verification Architecture
 
 ## Overview
 
-Add a single "Enterprise Mode" toggle to the user Profile page (OFF by default). When ON, the system conditionally reveals advanced capabilities on top of existing pages -- no new workflows, no new forms, no changes to the default MSME experience.
+This plan designs an end-to-end Green Invoice Verification pipeline that extends the existing OCR-to-MRV flow with green category tagging (forestation, EV, solar, etc.), a structured compliance ledger, and one-click government-ready exports. No existing features, pages, or calculations change. Green verification layers on top of the current deterministic pipeline using the same data.
 
-## What Changes for Users
+## What This Adds (Without Changing Anything Existing)
 
-- **Toggle OFF (default):** Platform behaves exactly as today. Zero visual or functional difference.
-- **Toggle ON:** Same pages progressively reveal additional panels: audit trail, entity hierarchy, enhanced fraud checks, compliance labels (GHG Protocol / ISO 14064), and finance-grade export formats. All data comes from the same pipeline -- no parallel calculations.
+1. **Green category tagging** -- invoices classified as solar, EV, forestation, organic, etc. using rule-based keyword/HSN lookup (same pattern as existing fuel/electricity classification)
+2. **Compliance ledger table** -- every verified invoice produces a structured, immutable record linking hash, timestamp, category, scope, factor, and green benefit
+3. **Green benefit records** -- verified invoices generate exportable records for MRV, monetization, and regulatory reporting
+4. **Validation failure flagging** -- when validation fails, the exact math-based reason is stored and displayed (e.g., "Quantity missing - cannot multiply", "No emission factor for category")
+5. **One-click export** -- government-ready PDF/XLSX exports from History and Reports pages
+6. **Structured data reuse** -- compliance ledger powers operational intelligence without reprocessing invoices
 
-## Architecture
+## Architecture Flow
 
-### 1. Database: Add `enterprise_mode` Column to `profiles`
+```text
+Upload --> OCR Parsing --> Green Category Tagging --> Deterministic Factor Mapping
+   --> Verification Scoring --> Compliance Ledger Storage --> Export/Reporting
+```
 
-A single migration adds a boolean column:
+Each step maps to existing code with targeted extensions:
+
+### Step 1: Green Category Tagging (Edge Function)
+
+Extend `KEYWORD_MAP` and `HSN_MASTER` in `extract-document/index.ts` with green categories:
+
+```text
+GREEN KEYWORD MAP (additive):
+solar, solar panel, pv module           --> SOLAR_ENERGY, Scope 2, green_tag: 'solar'
+ev, electric vehicle, ev charging       --> EV_TRANSPORT, Scope 1, green_tag: 'ev'
+forestation, sapling, plantation, tree  --> FORESTATION, Scope 3, green_tag: 'forestation'
+organic, compost, bio-fertilizer        --> ORGANIC_INPUT, Scope 3, green_tag: 'organic'
+wind, wind turbine, windmill            --> WIND_ENERGY, Scope 2, green_tag: 'wind'
+biogas, biomethane                      --> BIOGAS, Scope 1, green_tag: 'biogas'
+led, energy efficient, bldc             --> ENERGY_EFFICIENCY, Scope 2, green_tag: 'efficiency'
+rainwater, water recycling              --> WATER_CONSERVATION, Scope 3, green_tag: 'water'
+recycled material, r-pet                --> RECYCLED_MATERIAL, Scope 3, green_tag: 'recycled'
+
+HSN EXTENSIONS:
+8541 (Solar cells/PV)       --> SOLAR_ENERGY, Scope 2
+8711 (Electric motorcycles) --> EV_TRANSPORT, Scope 1  
+0602 (Live plants/saplings) --> FORESTATION, Scope 3
+8501 (Electric motors)      --> EV_TRANSPORT, Scope 1
+```
+
+**Green emission factors** (deterministic, fixed):
+
+```text
+SOLAR_ENERGY:      -0.708 kgCO2e/kWh (avoided grid emissions)
+EV_TRANSPORT:      -1.80 kgCO2e/litre-equivalent (diesel avoided)
+FORESTATION:        -22.0 kgCO2e/tree/year (IPCC average)
+WIND_ENERGY:       -0.708 kgCO2e/kWh (avoided grid)
+BIOGAS:            -2.30 kgCO2e/scm (natural gas avoided)
+ORGANIC_INPUT:     -0.50 kgCO2e/kg (chemical fertilizer avoided)
+ENERGY_EFFICIENCY: -0.30 kgCO2e/kWh (reduction factor)
+RECYCLED_MATERIAL: -1.50 kgCO2e/kg (virgin material avoided)
+```
+
+Negative values indicate carbon benefit (reductions/avoidance). The existing `calculateEmissions` function returns these as negative CO2, which the UI displays as "Green Benefit" rather than "Emissions".
+
+### Step 2: Compliance Ledger Table (New Database Table)
+
+A new `compliance_ledger` table stores every verified invoice as an immutable, audit-ready record:
 
 ```sql
-ALTER TABLE public.profiles ADD COLUMN enterprise_mode boolean DEFAULT false;
+CREATE TABLE public.compliance_ledger (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  document_id uuid REFERENCES public.documents(id),
+  emission_id uuid REFERENCES public.emissions(id),
+  verification_id uuid REFERENCES public.carbon_verifications(id),
+  
+  -- Invoice identity
+  document_hash text NOT NULL,
+  invoice_number text,
+  vendor text,
+  invoice_date date,
+  amount numeric,
+  currency text DEFAULT 'INR',
+  
+  -- Green classification
+  green_category text,  -- solar, ev, forestation, etc.
+  scope integer NOT NULL,
+  emission_category text NOT NULL,
+  
+  -- Deterministic calculation audit trail
+  activity_data numeric,
+  activity_unit text,
+  emission_factor numeric,
+  factor_source text,
+  co2_kg numeric NOT NULL,
+  is_green_benefit boolean DEFAULT false,
+  
+  -- Verification
+  confidence_score numeric,
+  verification_score numeric,
+  verification_status text DEFAULT 'pending',
+  validation_result text DEFAULT 'pending', -- passed / failed
+  validation_failure_reason text, -- exact math-based reason if failed
+  greenwashing_risk text,
+  
+  -- Methodology provenance
+  methodology_version text NOT NULL,
+  classification_method text, -- HSN / KEYWORD / UNVERIFIABLE
+  
+  -- Compliance metadata
+  gstin text,
+  hsn_code text,
+  
+  -- Timestamps
+  created_at timestamptz DEFAULT now(),
+  verified_at timestamptz,
+  
+  -- Financial reporting fields
+  fiscal_year text,
+  fiscal_quarter text
+);
+
+-- RLS: Users can only access their own ledger entries
+ALTER TABLE public.compliance_ledger ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Users can view their own ledger" ON public.compliance_ledger
+  FOR SELECT USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can insert their own ledger" ON public.compliance_ledger
+  FOR INSERT WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own ledger" ON public.compliance_ledger
+  FOR UPDATE USING (auth.uid() = user_id);
 ```
 
-No new tables, no new RLS policies needed (profiles RLS already covers owner read/write).
+### Step 3: Ledger Population (Automatic)
 
-### 2. Hook: `useEnterpriseMode`
+After verification completes in `verify-carbon/index.ts`, automatically insert a compliance ledger entry for each verified emission. This happens server-side -- no new user action required.
 
-A lightweight React hook that reads `enterprise_mode` from the user's profile and exposes:
-- `isEnterprise: boolean` -- the flag
-- `toggleEnterprise()` -- saves to DB
-- `isLoading: boolean`
+The verify-carbon function already processes emissions and creates `carbon_verifications` records. We extend it to also insert into `compliance_ledger` with all provenance fields populated from the existing data.
 
-This hook is the single source of truth. All pages import it and conditionally render enterprise sections only when `isEnterprise === true`.
+### Step 4: Validation Failure Flagging
 
-### 3. Profile Page: Enterprise Mode Toggle Card
+When an invoice fails validation (missing quantity, no emission factor, unverifiable category), store the exact reason:
 
-A new card in Profile (between "Data & Privacy" and "Security") with:
-- A Switch component labeled "Enterprise Mode"
-- Subtitle: "Activate audit-grade verification, entity consolidation, and finance-ready exports"
-- When toggled, calls `toggleEnterprise()` which updates the `profiles.enterprise_mode` column
-- Visual: subtle border highlight when active, no clutter
-
-### 4. Conditional Enterprise Panels on Existing Pages
-
-Each page gets a lazy-loaded enterprise section that renders only when `isEnterprise === true`. No existing components are modified -- enterprise content is appended below existing content.
-
-**Dashboard (`Dashboard.tsx`):**
-- "Audit Log" card showing recent verification events (read from `carbon_verifications`)
-- "Entity Consolidation" summary (parent/subsidiary roll-up placeholder -- uses existing org data)
-- "Compliance Labels" row: GHG Protocol / ISO 14064 / BRSR badges derived from existing scope data
-
-**MRV Dashboard (`MRVDashboard.tsx`):**
-- "Enhanced Fraud Analysis" panel: deeper greenwashing risk breakdown from existing `ai_analysis` JSON
-- "Audit-Grade Ledger" table: chronological, hash-linked emission entries with document provenance
-- "Data Retention" indicator showing extended retention period
-
-**Verify (`Verify.tsx`):**
-- "Enhanced Verification Depth" badge when enterprise mode is on
-- Additional verification metadata display (methodology version, factor source, hash chain)
-
-**Reports (`Reports.tsx`):**
-- "Finance-Grade Export" button (XLSX with full audit trail columns)
-- "Partner-Ready Format" export option (anonymized, compliance-mapped)
-- Additional framework badges: ISO 14064, GHG Protocol scope mapping labels
-
-**History (`History.tsx`):**
-- "Document Provenance" column showing SHA256 hash and methodology version per entry
-
-### 5. Extended OCR Category Maps (Edge Function)
-
-Extend the `KEYWORD_MAP` in `extract-document/index.ts` with IT/service activity keywords. These are additive -- existing keywords are untouched:
-
-```
-cloud, aws, azure, gcp        -> CLOUD_SERVICES, Scope 3
-software, saas, subscription   -> SOFTWARE, Scope 3  
-laptop, server, networking     -> IT_HARDWARE, Scope 3 (maps to HSN 84/85)
-consulting, legal, audit       -> PROFESSIONAL_SERVICES, Scope 3
-airfare, flight, hotel, cab    -> BUSINESS_TRAVEL, Scope 3
+```text
+FAILURE REASONS (math-based, not AI):
+- "Quantity not detected - cannot compute: Quantity x Factor = CO2"
+- "Unit missing - emission factor requires specific unit (litre/kWh/kg)"
+- "No emission factor available for category: [CATEGORY]"
+- "HSN code [XX] not in verified factor table"
+- "Amount-only invoice - quantity inference disabled for determinism"
+- "Document classification: UNVERIFIABLE - no matching category"
 ```
 
-Corresponding emission factors (monetary-based, fixed):
-```
-AWS India:     0.52 kgCO2e/USD
-Azure India:   0.55 kgCO2e/USD
-GCP India:     0.50 kgCO2e/USD
-Laptops:       0.35 kgCO2e/INR1000
-Servers:       0.62 kgCO2e/INR1000
-```
+These are stored in `compliance_ledger.validation_failure_reason` and displayed in History and Reports.
 
-These factors are added to the existing `EMISSION_FACTORS` map. They apply to ALL users (MSME and Enterprise) since they are part of the deterministic pipeline -- Enterprise mode does not change calculations, only surfaces additional metadata.
+### Step 5: Green Benefit Display (UI)
 
-Update `CATEGORY_MAP` and `SCOPE_MAP` in `Index.tsx` to handle the new categories:
+Extend `ResultState.tsx` and History to show green benefits:
+
+- When `co2_kg < 0` (green benefit), display as "Green Benefit: X kg CO2 avoided" with a green leaf icon
+- Add green category badge (Solar, EV, Forestation, etc.) next to vendor name
+- Show "Verified Green Invoice" badge for passing invoices
+
+### Step 6: One-Click Government Export
+
+Add export buttons to History and Reports pages:
+
+- **Compliance XLSX**: Full ledger export with all fields (hash, timestamp, GSTIN, HSN, scope, factor, CO2, verification status, failure reasons)
+- **Government PDF**: Formatted report with legal disclaimer, methodology reference, and scope breakdown suitable for CPCB/BRSR submissions
+- Reuses existing `jspdf` and `xlsx` libraries already installed
+
+### Step 7: Green Categories on Index Page
+
+Extend the `SCOPE_MAP` and `CATEGORY_MAP` in `Index.tsx` to handle green categories:
+
+```text
+SOLAR_ENERGY -> 'solar' -> Scope 2
+EV_TRANSPORT -> 'ev' -> Scope 1
+FORESTATION -> 'forestation' -> Scope 3
+WIND_ENERGY -> 'wind' -> Scope 2
+BIOGAS -> 'biogas' -> Scope 1
+ORGANIC_INPUT -> 'organic' -> Scope 3
+ENERGY_EFFICIENCY -> 'efficiency' -> Scope 2
+RECYCLED_MATERIAL -> 'recycled' -> Scope 3
 ```
-CLOUD_SERVICES -> 'cloud' -> Scope 3
-SOFTWARE -> 'software' -> Scope 3
-IT_HARDWARE -> 'it_hardware' -> Scope 3
-PROFESSIONAL_SERVICES -> 'services' -> Scope 3
-BUSINESS_TRAVEL -> 'travel' -> Scope 3
-```
-
-### 6. Compliance Labeling Layer
-
-A pure UI mapping (no calculation changes):
-- When Enterprise Mode is ON, existing scope1/2/3 data gets dual labels:
-  - India: CPCB / BRSR / GSTIN-HSN verified
-  - Global: GHG Protocol Category 1-15 / ISO 14064-1
-- Implemented as a utility function `getComplianceLabels(scope, category)` that returns label arrays
 
 ## Files to Create/Modify
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `src/hooks/useEnterpriseMode.ts` | **CREATE** | Single hook for enterprise flag |
-| `src/pages/Profile.tsx` | **EDIT** | Add Enterprise Mode toggle card |
-| `src/pages/Dashboard.tsx` | **EDIT** | Add conditional audit/compliance panels |
-| `src/pages/MRVDashboard.tsx` | **EDIT** | Add audit ledger and fraud analysis panels |
-| `src/pages/Verify.tsx` | **EDIT** | Add enhanced verification metadata |
-| `src/pages/Reports.tsx` | **EDIT** | Add finance-grade export options |
-| `src/pages/History.tsx` | **EDIT** | Add document provenance column |
-| `src/pages/Index.tsx` | **EDIT** | Extend SCOPE_MAP and CATEGORY_MAP for new categories |
-| `src/lib/complianceLabels.ts` | **CREATE** | GHG Protocol / ISO 14064 label mapping utility |
-| `supabase/functions/extract-document/index.ts` | **EDIT** | Add IT/service keywords and emission factors |
-| Database Migration | **CREATE** | Add `enterprise_mode` boolean to `profiles` |
+
+| File                                           | Action     | Purpose                                                           |
+| ---------------------------------------------- | ---------- | ----------------------------------------------------------------- |
+| Database Migration                             | **CREATE** | Add `compliance_ledger` table with RLS                            |
+| `supabase/functions/extract-document/index.ts` | **EDIT**   | Add green keywords, HSN codes, and emission factors               |
+| `supabase/functions/verify-carbon/index.ts`    | **EDIT**   | Auto-populate compliance ledger after verification                |
+| `src/pages/Index.tsx`                          | **EDIT**   | Extend SCOPE_MAP and CATEGORY_MAP for green categories            |
+| `src/hooks/useComplianceLedger.ts`             | **CREATE** | Hook to fetch/export compliance ledger data                       |
+| `src/pages/History.tsx`                        | **EDIT**   | Add green badges, validation status, and compliance export button |
+| `src/pages/Reports.tsx`                        | **EDIT**   | Add government-ready compliance export                            |
+| `src/components/ResultState.tsx`               | **EDIT**   | Show green benefit display for negative CO2 values                |
+| `src/components/GreenCategoryBadge.tsx`        | **CREATE** | Reusable badge component for green categories                     |
+
 
 ## Performance Guarantees
 
-- Enterprise panels are conditionally rendered (`{isEnterprise && ...}`) -- zero DOM cost when OFF
-- No additional API calls when Enterprise Mode is OFF
-- The `useEnterpriseMode` hook piggybacks on the existing profile fetch (no extra query)
-- No new lazy-loaded routes or bundles -- enterprise sections are inline conditional renders
-- Extended keyword maps add ~30 entries to the edge function -- negligible impact
-
-## Reversibility
-
-- Toggling OFF immediately hides all enterprise UI -- no stale state
-- No data is deleted when toggling OFF (emissions, documents, verifications remain intact)
-- The `enterprise_mode` column is a simple boolean flip with no cascading effects
+- Green keyword map adds ~25 entries to existing map -- negligible impact on edge function
+- Compliance ledger insert is a single DB write piggybacking on existing verify-carbon call
+- No new API calls from frontend unless user clicks export
+- Green badges are simple conditional renders with zero layout shift
+- Export functions run client-side using existing `xlsx` and `jspdf` libraries
+- Don't create pages or features if already exists
 
 ## What Does NOT Change
 
-- OCR pipeline logic and deterministic math
-- Emission factors for existing categories
-- Existing page layouts, navigation, and component hierarchy
-- RLS policies (profiles already has owner-based access)
-- Guest user experience (enterprise mode requires authentication)
-- Subscription tier system (enterprise mode is independent of tier)
+- OCR pipeline and AI extraction prompt
+- Existing emission factors for fuel, electricity, transport, waste
+- Deterministic math formula: Quantity x Factor = CO2
+- Confidence scoring algorithm
+- Deduplication and caching logic
+- Page layouts, navigation, and routing
+- Guest user experience
+- Enterprise mode behavior
+- RLS policies on existing tables
+
+## Determinism Guarantee
+
+- Green factors are fixed lookup values, not AI-generated
+- Same solar panel invoice always produces same -0.708 kgCO2e/kWh result
+- Validation failure reasons are template strings with no AI inference
+- Compliance ledger is append-only -- no mutation of historical records
