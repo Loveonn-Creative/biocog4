@@ -1164,7 +1164,7 @@ serve(async (req) => {
             vendor: extractedData.vendor,
             invoice_number: extractedData.invoiceNumber,
             amount: extractedData.amount,
-            confidence: extractedData.confidence,
+            confidence: Math.min(extractedData.confidence, 999.99),
             cached_result: extractedData,
             cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
             user_id: userId,

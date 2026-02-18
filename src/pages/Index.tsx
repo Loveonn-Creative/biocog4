@@ -242,7 +242,7 @@ const Index = () => {
             invoice_number: extractedData.invoiceNumber,
             amount: extractedData.amount,
             currency: extractedData.currency || 'INR',
-            confidence: extractedData.confidence,
+            confidence: Math.min(extractedData.confidence ?? 0, 999.99),
             document_hash: documentHash || null,
             cached_result: extractedData,
             cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),

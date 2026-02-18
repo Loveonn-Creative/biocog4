@@ -1,0 +1,1 @@
+ALTER TABLE public.documents ALTER COLUMN confidence TYPE numeric(5,2);
