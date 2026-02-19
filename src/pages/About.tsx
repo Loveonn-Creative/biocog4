@@ -28,9 +28,9 @@ const About = () => {
           {/* India AI Badge */}
           <div className="flex flex-col items-center gap-3 mb-10">
             <IndiaAIBadge size={64} />
-            <p className="text-sm text-center leading-relaxed">
+            <p className="text-lg sm:text-xl text-center leading-relaxed font-semibold">
               <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
-              <span style={{ color: '#FF9933' }}>from India.</span>
+              <span style={{ color: '#FF9933' }} className="font-bold">from India.</span>
             </p>
           </div>
 
