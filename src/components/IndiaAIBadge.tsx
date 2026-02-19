@@ -67,8 +67,8 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
             to { transform: rotate(360deg); }
           }
           @keyframes india-ai-pulse {
-            0%, 100% { opacity: 0.12; }
-            50% { opacity: 0.08; }
+            0%, 100% { opacity: 0.25; }
+            50% { opacity: 0.15; }
           }
         `}</style>
 
@@ -82,7 +82,7 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
             y2={s.y2}
             stroke={s.color}
             strokeWidth={size < 56 ? 0.8 : 1}
-            opacity={0.15}
+            opacity={0.3}
             strokeLinecap="round"
           />
         ))}
@@ -95,7 +95,7 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
           fill="none"
           stroke="#000080"
           strokeWidth={size < 56 ? 0.6 : 0.8}
-          opacity={0.12}
+          opacity={0.25}
           className="india-ai-center"
         />
 
@@ -105,7 +105,7 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
           cy={center}
           r={size * 0.03}
           fill="#FF9933"
-          opacity={0.15}
+          opacity={0.35}
           className="india-ai-center"
         />
       </svg>
