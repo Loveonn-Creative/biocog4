@@ -1,74 +1,105 @@
 
+# India AI Innovation Element -- Homepage and About Page
 
-# Fix: Invoice Data Not Appearing on Dashboard, History, or MRV
+## What This Adds
 
-## Root Cause Identified
+A culturally meaningful, lightweight SVG animation component inspired by India's AI innovation identity (referencing the AI Impact Summit's Ashoka Chakra motif and Sovereign AI positioning). This is NOT a generic icon -- it is a purpose-built visual element combining:
 
-The `documents.confidence` column has a database constraint of `numeric(3,2)`, which only accepts values from 0.00 to 9.99. However, the OCR pipeline sends confidence as a whole-number percentage (e.g., 40, 80, 100). This causes a **"numeric field overflow"** error that silently breaks the entire save pipeline.
+- **Ashoka Chakra spokes** radiating outward (sovereignty, progress)
+- **Multi-color radiating lines** in saffron, green, and blue tones (India's tricolor + climate/tech)
+- **Subtle pulsing animation** suggesting AI neural activity
+- A grounding tagline: **"AI infrastructure for MSMEs from India. Empowering climate impact."**
 
-Evidence from the edge function logs:
-```
-Failed to cache result: { code: "22003", details: "A field with precision 3, scale 2 must round to an absolute value less than 10^1.", message: "numeric field overflow" }
-```
+The element appears on both the **Homepage** (below the upload area, above the footer nav) and the **About page** hero section.
 
-Evidence from the database: the current session (`013c59d5...`) has **zero documents and zero emissions** despite successfully processing invoices through OCR.
+## Design Principles
 
-## How This Breaks Everything
+- Pure CSS/SVG animation -- zero external libraries, zero bundle impact
+- Renders in under 1ms -- no JavaScript animation loop, CSS-only transforms
+- Does not interfere with OCR pipeline, upload flow, or any functional element
+- Subtle and refined -- 0.05-0.15 opacity range, never competes with core UI
+- Mobile-first: scales gracefully, no layout shift
+
+## Architecture
+
+### New Component: `src/components/IndiaAIBadge.tsx`
+
+A self-contained SVG component that renders:
 
 ```text
-Upload -> OCR (works) -> Edge Function saves document with confidence=40 -> OVERFLOW ERROR
-  -> Client looks up document by hash -> NOT FOUND (never inserted)
-  -> Client fallback creates document -> SAME OVERFLOW ERROR -> FAILS
-  -> Emission insert has no document_id -> FAILS or orphaned
-  -> Dashboard, History, MRV all show EMPTY
+        Radiating spokes (12 lines)
+       in saffron, white, green, blue
+              ╲  │  ╱
+           ─── ◉ ───    <-- Central circle with subtle Chakra-inspired pattern
+              ╱  │  ╲
+        Slow rotation animation (60s cycle)
+        + gentle pulse on the center (3s cycle)
+
+  "AI infrastructure for MSMEs from India."
+     "Empowering climate impact."
 ```
 
-## Fix Plan
+Colors used:
+- Saffron (#FF9933) -- Indian identity
+- Deep green (#138808) -- nature/climate
+- Navy blue (#000080) -- Ashoka Chakra, sovereignty
+- Primary brand green -- Senseible identity
 
-### 1. Database Migration: Widen the `confidence` column
+The spokes use varying colors to reflect diversity without being a literal flag. The animation is a very slow rotation (60 seconds per revolution) making it feel alive but never distracting. The center pulses gently every 3 seconds.
 
-Change `documents.confidence` from `numeric(3,2)` to `numeric(5,2)`, which supports values up to 999.99 (more than enough for 0-100 percentages).
+### Homepage Integration (`src/pages/Index.tsx`)
 
-```sql
-ALTER TABLE public.documents ALTER COLUMN confidence TYPE numeric(5,2);
+Place the badge + tagline between the upload area and the footer nav, only in idle state:
+
+```text
+  [UseCaseTyper]
+  [Document] | [Voice]
+  "Upload a document or speak to begin"
+  
+       [IndiaAIBadge]  <-- NEW: subtle, small (48px)
+  "AI infrastructure for MSMEs from India.
+     Empowering climate impact."
+  
+  [Monetize] [About] [Climate Intelligence] ...
 ```
 
-This is a non-destructive change -- all existing data remains intact.
+The tagline uses split coloring: "AI infrastructure for MSMEs" in foreground, "from India" in saffron, "Empowering climate impact" in brand green.
 
-### 2. Edge Function: Add confidence normalization safety
+### About Page Integration (`src/pages/About.tsx`)
 
-Add a guard in `extract-document/index.ts` to clamp confidence before inserting, ensuring it never overflows even if the column type is ever reverted:
+Add the same element above the "Why This Exists" heading with matching tagline, reinforcing the India-origin narrative in the infrastructure story.
 
-```typescript
-confidence: Math.min(extractedData.confidence, 999.99),
+```text
+  [Back]
+  
+  [IndiaAIBadge]  <-- NEW: slightly larger (64px)
+  "AI infrastructure for MSMEs from India."
+  
+  Why This Exists
+  ...
 ```
 
-### 3. Client-side: Same guard in Index.tsx fallback insert
+## Files to Create/Modify
 
-In `saveEmissionToDatabase`, add the same confidence clamp on the fallback document creation path.
+| File | Action | Purpose |
+|------|--------|---------|
+| `src/components/IndiaAIBadge.tsx` | **CREATE** | SVG component with Chakra-inspired radiating spokes, multi-color lines, CSS-only animation |
+| `src/pages/Index.tsx` | **EDIT** | Add IndiaAIBadge + tagline below upload area in idle state |
+| `src/pages/About.tsx` | **EDIT** | Add IndiaAIBadge + tagline above the hero heading |
 
-## Files to Modify
+## Performance Impact
 
-| File | Action | Change |
-|------|--------|--------|
-| Database Migration | CREATE | `ALTER COLUMN confidence TYPE numeric(5,2)` |
-| `supabase/functions/extract-document/index.ts` | EDIT | Clamp confidence value before DB insert |
-| `src/pages/Index.tsx` | EDIT | Clamp confidence in fallback document creation |
-
-## What This Fixes
-
-- All invoices (guest and paid) will be saved to the database correctly
-- Documents will appear in History with proper status badges (Verified, Processed, Review)
-- Emissions will appear on Dashboard with scope breakdown and trend charts
-- MRV Dashboard will show verification data and green scores
-- The entire pipeline from upload to display will work end-to-end
+- **Bundle**: ~2KB component (inline SVG + CSS), no new dependencies
+- **Render**: CSS-only animations, no useEffect, no requestAnimationFrame
+- **Layout**: Fixed height, no CLS (Cumulative Layout Shift)
+- **OCR pipeline**: Zero interference -- component is purely decorative
 
 ## What Does NOT Change
 
-- OCR pipeline logic and deterministic math
-- Emission factors, scope mapping, and category classification
-- Page layouts, navigation, and component hierarchy
-- RLS policies and security model
-- Enterprise mode behavior
-- Green invoice verification architecture
-
+- Homepage layout structure, upload flow, voice input
+- UseCaseTyper positioning and behavior
+- CarbonParticles background animation
+- Footer navigation links
+- Any functional component or data pipeline
+- About page content sections (Problem, Gap, Replacement, Why Now)
+- Mobile responsiveness of existing elements
