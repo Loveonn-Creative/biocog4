@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
+import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 
 const About = () => {
   return (
@@ -24,6 +25,15 @@ const About = () => {
         </Link>
         
         <article className="animate-fade-in">
+          {/* India AI Badge */}
+          <div className="flex flex-col items-center gap-3 mb-10">
+            <IndiaAIBadge size={64} />
+            <p className="text-sm text-center leading-relaxed">
+              <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
+              <span style={{ color: '#FF9933' }}>from India.</span>
+            </p>
+          </div>
+
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground mb-16">
             Why This Exists

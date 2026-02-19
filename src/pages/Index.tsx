@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
+import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 
 
 type State = "idle" | "processing" | "result";
@@ -622,6 +623,17 @@ const Index = () => {
             <p className="text-xs text-muted-foreground/60 text-center mt-2">
               Upload a document or speak to begin
             </p>
+
+            {/* India AI Innovation Badge */}
+            <div className="flex flex-col items-center gap-2 mt-4">
+              <IndiaAIBadge size={48} />
+              <p className="text-[11px] text-center leading-relaxed">
+                <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
+                <span style={{ color: '#FF9933' }}>from India.</span>
+                <br />
+                <span className="text-primary">Empowering climate impact.</span>
+              </p>
+            </div>
             
             {/* Bulk Upload Toggle for signed-in users */}
             {user && (
