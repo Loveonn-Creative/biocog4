@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { 
   CheckCircle, AlertCircle, Upload, ArrowRight, Shield, 
-  Coins, FileBarChart, Clock
+  Coins, FileBarChart, Clock, Star
 } from 'lucide-react';
 
 interface VerificationStatusCardProps {
@@ -14,6 +14,8 @@ interface VerificationStatusCardProps {
   hasVerifiedData: boolean;
   latestStatus?: 'verified' | 'needs_review' | 'pending' | null;
   eligibleCredits?: number;
+  credibilityScore?: number;
+  credibilityGrade?: string;
 }
 
 export const VerificationStatusCard = ({
@@ -23,6 +25,8 @@ export const VerificationStatusCard = ({
   hasVerifiedData,
   latestStatus,
   eligibleCredits = 0,
+  credibilityScore,
+  credibilityGrade,
 }: VerificationStatusCardProps) => {
   // Determine the next action based on current state
   const getNextAction = () => {
@@ -111,9 +115,23 @@ export const VerificationStatusCard = ({
                 </p>
               </div>
             </div>
-            <div className="text-right">
-              <div className="text-3xl font-mono font-bold">
-                {verificationScore}<span className="text-lg text-muted-foreground">%</span>
+            <div className="text-right flex items-center gap-4">
+              {credibilityScore != null && (
+                <div className="text-center">
+                  <div className="flex items-center gap-1 text-xs text-muted-foreground mb-0.5">
+                    <Star className="h-3 w-3" />
+                    Credibility
+                  </div>
+                  <div className="text-lg font-mono font-bold">
+                    {credibilityGrade || 'D'}
+                    <span className="text-xs text-muted-foreground ml-1">{credibilityScore}</span>
+                  </div>
+                </div>
+              )}
+              <div>
+                <div className="text-3xl font-mono font-bold">
+                  {verificationScore}<span className="text-lg text-muted-foreground">%</span>
+                </div>
               </div>
             </div>
           </div>

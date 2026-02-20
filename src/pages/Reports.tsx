@@ -12,12 +12,13 @@ import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
+import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { PremiumBadge } from '@/components/PremiumBadge';
 import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
   Building2, Shield, CheckCircle, AlertCircle, Calendar, 
-  ChevronDown, Settings, RefreshCw, Crown
+  ChevronDown, Settings, RefreshCw, Crown, Landmark
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
@@ -31,6 +32,7 @@ import {
   FRAMEWORKS,
   ProfileContext
 } from '@/lib/reportFrameworks';
+import type { GovFormat } from '@/lib/govComplianceAdapter';
 
 interface Verification {
   id: string;
@@ -74,6 +76,7 @@ const Reports = () => {
   const { user, sessionId } = useSession();
   const { isPremium, canAccessFeature } = usePremiumStatus();
   const { activeContext } = useOrganization();
+  const { entries: ledgerEntries, exportGovFormat } = useComplianceLedger();
   const [isGenerating, setIsGenerating] = useState(false);
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -919,6 +922,62 @@ const Reports = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Gov-Ready Export */}
+              {ledgerEntries.length > 0 && (
+                <Card className="border-warning/20">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-warning/10">
+                        <Shield className="h-5 w-5 text-warning" />
+                      </div>
+                      <div>
+                        <span>Gov-Ready Export</span>
+                        <p className="text-sm font-normal text-muted-foreground mt-1">
+                          Auto-formatted MRV outputs for government registries
+                        </p>
+                      </div>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Export compliance ledger data mapped to government-required fields with evidence hashes, geo-tags (from GSTIN), and verification timestamps.
+                    </p>
+                    <div className="grid grid-cols-3 gap-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => exportGovFormat('GCP')}
+                        className="gap-1"
+                      >
+                        <Download className="h-3 w-3" />
+                        GCP
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => exportGovFormat('BRSR')}
+                        className="gap-1"
+                      >
+                        <Download className="h-3 w-3" />
+                        BRSR
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => exportGovFormat('CCTS')}
+                        className="gap-1"
+                      >
+                        <Download className="h-3 w-3" />
+                        CCTS
+                      </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      GCP = Green Credit Programme • BRSR = Business Responsibility & Sustainability Reporting • CCTS = Carbon Credit Trading Scheme
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
               
               {/* Bank Disclosure Report */}
               <Card>
