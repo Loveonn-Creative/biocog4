@@ -6,16 +6,24 @@ import { Button } from '@/components/ui/button';
 import { useEmissions } from '@/hooks/useEmissions';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
+import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
+import { computeCredibilityScore } from '@/lib/credibilityScore';
 import { 
   Coins, Building2, Gift, ExternalLink, CheckCircle, ArrowRight, 
-  Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp, Crown
+  Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp, Crown,
+  Star, XCircle, Receipt
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { toast } from 'sonner';
+
+interface EligibilityCheck {
+  label: string;
+  pass: boolean;
+}
 
 interface MonetizationPathway {
   id: string;
@@ -30,6 +38,7 @@ interface MonetizationPathway {
   status: 'available' | 'applied' | 'processing' | 'completed';
   requirements: string[];
   timeline: string;
+  checks?: EligibilityCheck[];
 }
 
 interface Verification {
@@ -54,6 +63,7 @@ const Monetize = () => {
   const { summary, getVerifiedEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const { activeContext } = useOrganization();
+  const { entries: ledgerEntries } = useComplianceLedger();
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -72,7 +82,36 @@ const Monetize = () => {
   const carbonCreditValue = Math.round(co2Tons * 750); // ₹750 per tCO₂e
   const loanAmount = 500000;
   const greenLoanSavings = Math.round(loanAmount * 0.005); // 0.5% interest reduction
-  const govtIncentive = Math.round(carbonCreditValue * 1.5); // ZED certification subsidy
+  const govtIncentive = Math.round(carbonCreditValue * 1.5);
+
+  const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
+    style: 'currency', 
+    currency: 'INR', 
+    maximumFractionDigits: 0 
+  }).format(n);
+
+  // Compute credibility score
+  const credibility = computeCredibilityScore(
+    verifications.map(v => ({ verification_score: v.verification_score })),
+    ledgerEntries.map((e: any) => ({
+      is_green_benefit: e.is_green_benefit ?? null,
+      vendor: e.vendor ?? null,
+      invoice_date: e.invoice_date ?? null,
+      amount: e.amount ?? null,
+      hsn_code: e.hsn_code ?? null,
+    }))
+  );
+
+  // Green invoice factoring
+  const greenInvoiceTotal = ledgerEntries
+    .filter((e: any) => e.is_green_benefit && e.amount > 0)
+    .reduce((sum: number, e: any) => sum + (e.amount || 0), 0);
+  const factoringAdvance = Math.round(greenInvoiceTotal * 0.7);
+
+  // Dynamic eligibility
+  const greenScore = verifications[0]?.ai_analysis?.greenScore || 0;
+  const qualityGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
+  const isCCTSEligible = verifications[0]?.ccts_eligible || false;
 
   useEffect(() => {
     fetchVerifications();
@@ -170,7 +209,12 @@ const Monetize = () => {
       partner: 'IEX Green Market',
       status: (pathwayStatuses['carbon_credit'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified emissions data', 'Quality Grade B or above', 'CCTS eligibility'],
-      timeline: '2-4 weeks processing'
+      timeline: '2-4 weeks processing',
+      checks: [
+        { label: 'Verified emissions', pass: verifications.length > 0 },
+        { label: `Quality Grade B+ (yours: ${qualityGrade})`, pass: ['A', 'B', 'A+'].includes(qualityGrade) },
+        { label: 'CCTS eligible', pass: isCCTSEligible },
+      ],
     },
     { 
       id: 'green_loan',
@@ -184,7 +228,12 @@ const Monetize = () => {
       partner: 'SBI Green Finance',
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
       requirements: ['Green Score 60+', 'Verified carbon data', 'Business registration'],
-      timeline: '1-2 weeks approval'
+      timeline: '1-2 weeks approval',
+      checks: [
+        { label: `Green Score 60+ (yours: ${greenScore})`, pass: greenScore >= 60 },
+        { label: 'Verified carbon data', pass: verifications.length > 0 },
+        { label: `Credibility Grade C+ (yours: ${credibility.grade})`, pass: credibility.score >= 35 },
+      ],
     },
     { 
       id: 'govt_incentive',
@@ -198,15 +247,33 @@ const Monetize = () => {
       partner: 'MSME Ministry',
       status: (pathwayStatuses['govt_incentive'] as MonetizationPathway['status']) || 'available',
       requirements: ['MSME registration', 'Carbon reporting compliance', 'Verified emissions'],
-      timeline: '4-6 weeks processing'
+      timeline: '4-6 weeks processing',
+      checks: [
+        { label: 'Verified emissions', pass: verifications.length > 0 },
+        { label: 'Carbon reporting compliance', pass: ledgerEntries.length > 0 },
+        { label: `Credibility Score 35+ (yours: ${credibility.score})`, pass: credibility.score >= 35 },
+      ],
+    },
+    {
+      id: 'green_factoring',
+      type: 'green_factoring',
+      icon: Receipt,
+      color: 'text-primary',
+      bg: 'bg-primary/10',
+      title: 'Green Invoice Factoring',
+      value: factoringAdvance,
+      desc: 'Get advance payout (70%) against verified green invoices',
+      partner: 'Climate Finance Hub',
+      status: (pathwayStatuses['green_factoring'] as MonetizationPathway['status']) || 'available',
+      requirements: ['Verified green invoices', 'Credibility Score 50+', 'Minimum ₹10,000 green value'],
+      timeline: '3-5 business days',
+      checks: [
+        { label: 'Verified green invoices', pass: greenInvoiceTotal > 0 },
+        { label: `Credibility Score 50+ (yours: ${credibility.score})`, pass: credibility.score >= 50 },
+        { label: `Min ₹10,000 green value (yours: ${formatCurrency(greenInvoiceTotal)})`, pass: greenInvoiceTotal >= 10000 },
+      ],
     }
   ];
-
-  const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
-    style: 'currency', 
-    currency: 'INR', 
-    maximumFractionDigits: 0 
-  }).format(n);
 
   const totalPotentialValue = pathways.reduce((sum, p) => sum + p.value, 0);
 
@@ -313,6 +380,10 @@ const Monetize = () => {
                         <span>CCTS Eligible</span>
                       </div>
                     )}
+                    <div className="flex items-center gap-2 text-sm">
+                      <Shield className="h-4 w-4 text-warning" />
+                      <span>Credibility: <span className="font-mono font-bold">{credibility.grade}</span> ({credibility.score}/100)</span>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -390,16 +461,21 @@ const Monetize = () => {
                       </div>
                     </div>
 
-                    {/* Requirements */}
+                    {/* Requirements with dynamic checks */}
                     <div className="mt-4 pt-4 border-t border-border/50">
-                      <p className="text-xs font-medium text-muted-foreground mb-2">Requirements</p>
+                      <p className="text-xs font-medium text-muted-foreground mb-2">Eligibility</p>
                       <div className="flex flex-wrap gap-2">
-                        {p.requirements.map((req, ridx) => (
+                        {(p.checks || []).map((check, ridx) => (
                           <span 
                             key={ridx} 
-                            className="px-2 py-1 rounded-md bg-secondary/50 text-xs text-muted-foreground"
+                            className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs ${
+                              check.pass 
+                                ? 'bg-success/10 text-success' 
+                                : 'bg-destructive/10 text-destructive'
+                            }`}
                           >
-                            {req}
+                            {check.pass ? <CheckCircle className="h-3 w-3" /> : <AlertCircle className="h-3 w-3" />}
+                            {check.label}
                           </span>
                         ))}
                       </div>

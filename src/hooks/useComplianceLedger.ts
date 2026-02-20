@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import * as XLSX from 'xlsx';
 import { toast } from 'sonner';
+import { exportGovCompliance, type GovFormat } from '@/lib/govComplianceAdapter';
 
 interface ComplianceLedgerEntry {
   id: string;
@@ -109,5 +110,9 @@ export const useComplianceLedger = () => {
     toast.success('Compliance ledger exported');
   };
 
-  return { entries, isLoading, exportComplianceXLSX };
+  const exportGovFormat = (format: GovFormat) => {
+    exportGovCompliance(entries as any, format);
+  };
+
+  return { entries, isLoading, exportComplianceXLSX, exportGovFormat };
 };

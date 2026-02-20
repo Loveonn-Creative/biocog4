@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Leaf, AlertTriangle, TreePine } from "lucide-react";
+import { Check, ArrowRight, Leaf, AlertTriangle, TreePine, Building2 } from "lucide-react";
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from "./GreenCategoryBadge";
 
 interface ExtractedData {
@@ -6,6 +6,7 @@ interface ExtractedData {
   vendor?: string;
   date?: string;
   invoiceNumber?: string;
+  buyerGstin?: string;
   amount?: number;
   currency?: string;
   emissionCategory?: string;
@@ -154,6 +155,20 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         </div>
       )}
       
+      {/* Scope 3 Supply Chain Signal */}
+      {extractedData?.buyerGstin && (
+        <div className="w-full p-3 rounded-lg bg-accent/10 border border-accent/30 space-y-1">
+          <div className="flex items-center gap-2 text-sm font-medium text-accent">
+            <Building2 className="w-4 h-4" />
+            <span>Supply Chain Scope 3 Evidence</span>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            This data can serve as Scope 3 evidence for buyer (GSTIN: {extractedData.buyerGstin.substring(0, 4)}****). 
+            Share verified data to gain <span className="font-semibold text-foreground">Preferred Supplier</span> status.
+          </p>
+        </div>
+      )}
+
       {/* Action buttons */}
       <div className="flex flex-col gap-3 w-full">
         <button
