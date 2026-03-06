@@ -24,6 +24,7 @@ import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
+import { computeCredibilityScore } from '@/lib/credibilityScore';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -39,6 +40,8 @@ const Dashboard = () => {
   const [eligibleCredits, setEligibleCredits] = useState(0);
 
   const [isResetting, setIsResetting] = useState(false);
+  const [ledgerEntries, setLedgerEntries] = useState<any[]>([]);
+  const [allVerifications, setAllVerifications] = useState<any[]>([]);
 
   const isLoading = sessionLoading || emissionsLoading || docsLoading;
   const unverifiedEmissions = getUnverifiedEmissions();
@@ -126,8 +129,7 @@ const Dashboard = () => {
       let query = supabase
         .from('carbon_verifications')
         .select('verification_score, verification_status, ai_analysis')
-        .order('created_at', { ascending: false })
-        .limit(1);
+        .order('created_at', { ascending: false });
 
       if (user?.id) {
         query = query.eq('user_id', user.id);
@@ -136,15 +138,29 @@ const Dashboard = () => {
       }
 
       const { data } = await query;
-      if (data && data[0]) {
+      if (data && data.length > 0) {
+        setAllVerifications(data);
         setVerificationScore(Math.round((data[0].verification_score || 0) * 100));
         setLatestStatus(data[0].verification_status as any);
         setEligibleCredits((data[0].ai_analysis as any)?.creditEligibility?.eligibleCredits || 0);
+      }
+
+      // Fetch ledger for credibility score
+      if (user?.id) {
+        const { data: ledger } = await supabase
+          .from('compliance_ledger')
+          .select('is_green_benefit, vendor, invoice_date, amount, hsn_code')
+          .eq('user_id', user.id);
+        if (ledger) setLedgerEntries(ledger);
       }
     } catch (err) {
       console.error('Error fetching verification data:', err);
     }
   };
+
+  const credibility = allVerifications.length > 0
+    ? computeCredibilityScore(allVerifications, ledgerEntries)
+    : null;
 
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
@@ -249,6 +265,8 @@ const Dashboard = () => {
                 hasVerifiedData={verifiedEmissions.length > 0}
                 latestStatus={emissions.length > 0 ? latestStatus : null}
                 eligibleCredits={emissions.length > 0 ? eligibleCredits : 0}
+                credibilityScore={credibility?.score}
+                credibilityGrade={credibility?.grade}
               />
               <EmissionsSummary summary={summary} />
               <TrendChart data={summary.monthlyTrend} />

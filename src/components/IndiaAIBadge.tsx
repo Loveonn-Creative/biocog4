@@ -7,42 +7,35 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
   const s = size;
   const cx = s / 2;
   const cy = s / 2;
-  const petalR = s * 0.38; // petal reach
-  const eyeR = s * 0.12;
+  const outerR = s * 0.42;
+  const innerR = s * 0.15;
+  const chakraR = s * 0.10;
 
-  // 8 petals, each a quadratic bezier "leaf" shape
-  const petals = Array.from({ length: 8 }, (_, i) => {
-    const angle = (i * 360) / 8;
+  const id = `india-spoke-${size}`;
+
+  // 24 radiating spokes
+  const spokes = Array.from({ length: 24 }, (_, i) => {
+    const angle = (i * 360) / 24;
     const rad = (angle * Math.PI) / 180;
-    const tipX = cx + Math.cos(rad) * petalR;
-    const tipY = cy + Math.sin(rad) * petalR;
-    
-    // Control points for the curved petal shape
-    const spread = 0.35; // how wide the petal opens
-    const leftRad = ((angle - 25) * Math.PI) / 180;
-    const rightRad = ((angle + 25) * Math.PI) / 180;
-    const cpDist = petalR * 0.7;
-    
-    const cp1X = cx + Math.cos(leftRad) * cpDist;
-    const cp1Y = cy + Math.sin(leftRad) * cpDist;
-    const cp2X = cx + Math.cos(rightRad) * cpDist;
-    const cp2Y = cy + Math.sin(rightRad) * cpDist;
-    
-    const path = `M ${cx} ${cy} Q ${cp1X} ${cp1Y} ${tipX} ${tipY} Q ${cp2X} ${cp2Y} ${cx} ${cy} Z`;
-    
-    return { path, angle, tipX, tipY };
+    const x1 = cx + Math.cos(rad) * innerR;
+    const y1 = cy + Math.sin(rad) * innerR;
+    const x2 = cx + Math.cos(rad) * outerR;
+    const y2 = cy + Math.sin(rad) * outerR;
+    return { x1, y1, x2, y2, angle };
   });
 
-  // Gradient IDs unique per instance
-  const id = `lotus-${size}`;
-
-  // Synapse connections between alternate petal tips
-  const synapses = petals.map((p, i) => {
-    const next = petals[(i + 1) % 8];
-    const midX = (p.tipX + next.tipX) / 2 + (Math.random() - 0.5) * s * 0.05;
-    const midY = (p.tipY + next.tipY) / 2 + (Math.random() - 0.5) * s * 0.05;
-    return `M ${p.tipX} ${p.tipY} Q ${midX} ${midY} ${next.tipX} ${next.tipY}`;
+  // 24 mini Ashoka Chakra spokes in center
+  const chakraSpokes = Array.from({ length: 24 }, (_, i) => {
+    const angle = (i * 360) / 24;
+    const rad = (angle * Math.PI) / 180;
+    const x1 = cx + Math.cos(rad) * (chakraR * 0.25);
+    const y1 = cy + Math.sin(rad) * (chakraR * 0.25);
+    const x2 = cx + Math.cos(rad) * chakraR;
+    const y2 = cy + Math.sin(rad) * chakraR;
+    return { x1, y1, x2, y2 };
   });
+
+  
 
   return (
     <div className={`inline-flex items-center justify-center ${className}`}>
@@ -51,138 +44,112 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
         height={s}
         viewBox={`0 0 ${s} ${s}`}
         aria-hidden="true"
-        className="india-lotus-badge"
+        className="india-spoke-badge"
       >
         <defs>
-          {/* Saffron-to-Gold */}
           <linearGradient id={`${id}-saffron`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#FF9933" />
             <stop offset="100%" stopColor="#FFD700" />
           </linearGradient>
-          {/* Green-to-Teal */}
           <linearGradient id={`${id}-green`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#138808" />
             <stop offset="100%" stopColor="#0D9488" />
           </linearGradient>
-          {/* Navy-to-Indigo */}
           <linearGradient id={`${id}-navy`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#000080" />
             <stop offset="100%" stopColor="#4F46E5" />
           </linearGradient>
-          {/* Brand green */}
           <linearGradient id={`${id}-brand`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="hsl(142, 76%, 36%)" />
             <stop offset="100%" stopColor="hsl(160, 60%, 45%)" />
           </linearGradient>
-          {/* Eye gradient */}
-          <radialGradient id={`${id}-eye`} cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#FFD700" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#FF9933" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#000080" stopOpacity="0.5" />
-          </radialGradient>
         </defs>
 
         <style>{`
-          .india-lotus-badge {
-            filter: drop-shadow(0 0 ${s * 0.02}px rgba(255, 153, 51, 0.3));
+          .india-spoke-badge {
+            filter: drop-shadow(0 0 ${s * 0.03}px rgba(255, 153, 51, 0.4));
           }
-          .lotus-petals {
-            animation: lotus-breathe 4s ease-in-out infinite;
+          .spoke-group {
+            animation: spoke-rotate 60s linear infinite;
             transform-origin: ${cx}px ${cy}px;
           }
-          .lotus-synapse {
-            stroke-dasharray: ${s * 0.15};
-            stroke-dashoffset: ${s * 0.3};
-            animation: synapse-flow 8s linear infinite;
-          }
-          .lotus-eye-outer {
-            animation: eye-pulse 3s ease-in-out infinite;
+          .chakra-center {
+            animation: chakra-spin 30s linear infinite;
             transform-origin: ${cx}px ${cy}px;
           }
-          .lotus-eye-inner {
-            animation: eye-pulse 3s ease-in-out infinite reverse;
+          .chakra-pulse {
+            animation: chakra-pulse 3s ease-in-out infinite;
             transform-origin: ${cx}px ${cy}px;
           }
-          @keyframes lotus-breathe {
-            0%, 100% { transform: scale(0.97); }
-            50% { transform: scale(1.03); }
+          @keyframes spoke-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
-          @keyframes synapse-flow {
-            to { stroke-dashoffset: 0; }
+          @keyframes chakra-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
           }
-          @keyframes eye-pulse {
+          @keyframes chakra-pulse {
             0%, 100% { transform: scale(1); opacity: 0.85; }
-            50% { transform: scale(1.1); opacity: 1; }
+            50% { transform: scale(1.12); opacity: 1; }
           }
         `}</style>
 
-        {/* Petals group with breathing animation */}
-        <g className="lotus-petals">
-          {petals.map((p, i) => {
-            const gradients = [`${id}-saffron`, `${id}-green`, `${id}-navy`, `${id}-brand`];
-            const fill = `url(#${gradients[i % 4]})`;
-            return (
-              <path
-                key={i}
-                d={p.path}
-                fill={fill}
-                opacity={0.75}
-                stroke="none"
-              />
-            );
-          })}
+        {/* Radiating spokes */}
+        <g className="spoke-group">
+          {spokes.map((sp, i) => (
+            <line
+              key={i}
+              x1={sp.x1}
+              y1={sp.y1}
+              x2={sp.x2}
+              y2={sp.y2}
+              stroke={`url(#${id}-${['saffron', 'green', 'navy', 'brand'][i % 4]})`}
+              strokeWidth={s * 0.02}
+              strokeLinecap="round"
+              opacity={0.8}
+            />
+          ))}
         </g>
 
-        {/* Neural synapses connecting petal tips */}
-        {synapses.map((d, i) => (
-          <path
-            key={`syn-${i}`}
-            d={d}
+        {/* Center Ashoka Chakra wheel */}
+        <g className="chakra-pulse">
+          {/* Outer ring */}
+          <circle
+            cx={cx}
+            cy={cy}
+            r={chakraR}
             fill="none"
-            stroke={i % 2 === 0 ? "#FF9933" : "#138808"}
-            strokeWidth={s * 0.012}
-            opacity={0.6}
-            className="lotus-synapse"
-            style={{ animationDelay: `${i * 0.5}s` }}
+            stroke="#000080"
+            strokeWidth={s * 0.015}
+            opacity={0.9}
           />
-        ))}
+          {/* Inner ring */}
+          <circle
+            cx={cx}
+            cy={cy}
+            r={chakraR * 0.3}
+            fill="#000080"
+            opacity={0.85}
+          />
+        </g>
 
-        {/* Center: Geometric "AI Eye" */}
-        {/* Outer arc (top) */}
-        <path
-          d={`M ${cx - eyeR} ${cy} Q ${cx} ${cy - eyeR * 1.6} ${cx + eyeR} ${cy}`}
-          fill="none"
-          stroke="#000080"
-          strokeWidth={s * 0.02}
-          opacity={0.8}
-          className="lotus-eye-outer"
-        />
-        {/* Outer arc (bottom) */}
-        <path
-          d={`M ${cx - eyeR} ${cy} Q ${cx} ${cy + eyeR * 1.6} ${cx + eyeR} ${cy}`}
-          fill="none"
-          stroke="#138808"
-          strokeWidth={s * 0.02}
-          opacity={0.8}
-          className="lotus-eye-outer"
-        />
-        {/* Inner iris */}
-        <circle
-          cx={cx}
-          cy={cy}
-          r={eyeR * 0.5}
-          fill={`url(#${id}-eye)`}
-          className="lotus-eye-inner"
-        />
-        {/* Pupil dot */}
-        <circle
-          cx={cx}
-          cy={cy}
-          r={eyeR * 0.2}
-          fill="#000080"
-          opacity={0.9}
-          className="lotus-eye-inner"
-        />
+        {/* Chakra mini-spokes (rotate independently) */}
+        <g className="chakra-center">
+          {chakraSpokes.map((sp, i) => (
+            <line
+              key={`cs-${i}`}
+              x1={sp.x1}
+              y1={sp.y1}
+              x2={sp.x2}
+              y2={sp.y2}
+              stroke={i % 3 === 0 ? '#FF9933' : i % 3 === 1 ? '#138808' : '#000080'}
+              strokeWidth={s * 0.012}
+              strokeLinecap="round"
+              opacity={0.9}
+            />
+          ))}
+        </g>
       </svg>
     </div>
   );
