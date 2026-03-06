@@ -18,7 +18,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { 
   FileBarChart, Download, Award, Loader2, FileSpreadsheet, 
   Building2, Shield, CheckCircle, AlertCircle, Calendar, 
-  ChevronDown, Settings, RefreshCw, Crown, Landmark
+  ChevronDown, Settings, RefreshCw, Crown, Landmark, Clock
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';

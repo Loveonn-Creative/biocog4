@@ -265,6 +265,8 @@ const Dashboard = () => {
                 hasVerifiedData={verifiedEmissions.length > 0}
                 latestStatus={emissions.length > 0 ? latestStatus : null}
                 eligibleCredits={emissions.length > 0 ? eligibleCredits : 0}
+                credibilityScore={credibility?.score}
+                credibilityGrade={credibility?.grade}
               />
               <EmissionsSummary summary={summary} />
               <TrendChart data={summary.monthlyTrend} />

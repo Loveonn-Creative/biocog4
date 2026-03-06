@@ -447,6 +447,20 @@ const MRVDashboard = () => {
                       </div>
                     )}
 
+                    {/* Authenticity Score */}
+                    {aggregatedMetrics.confidenceScore > 0 && (
+                      <div className="flex items-center gap-3 p-3 rounded-lg bg-primary/5 border border-primary/20 mb-3">
+                        <Shield className="h-5 w-5 text-primary" />
+                        <div className="flex-1">
+                          <div className="text-sm font-medium">Authenticity Score</div>
+                          <div className="text-xs text-muted-foreground">Invoice verification confidence</div>
+                        </div>
+                        <div className="text-xl font-mono font-bold text-primary">
+                          {aggregatedMetrics.confidenceScore}<span className="text-sm text-muted-foreground">/100</span>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Compliance Badges */}
                     <div className="flex flex-wrap gap-2">
                       {verifications[0]?.ccts_eligible && (
