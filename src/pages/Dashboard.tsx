@@ -40,6 +40,8 @@ const Dashboard = () => {
   const [eligibleCredits, setEligibleCredits] = useState(0);
 
   const [isResetting, setIsResetting] = useState(false);
+  const [ledgerEntries, setLedgerEntries] = useState<any[]>([]);
+  const [allVerifications, setAllVerifications] = useState<any[]>([]);
 
   const isLoading = sessionLoading || emissionsLoading || docsLoading;
   const unverifiedEmissions = getUnverifiedEmissions();
