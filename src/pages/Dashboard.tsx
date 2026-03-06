@@ -24,6 +24,7 @@ import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
+import { computeCredibilityScore } from '@/lib/credibilityScore';
 
 const Dashboard = () => {
   const navigate = useNavigate();
