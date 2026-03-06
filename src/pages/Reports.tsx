@@ -923,6 +923,50 @@ const Reports = () => {
                 </CardContent>
               </Card>
 
+              {/* VCM Readiness Badge */}
+              {latestVerification && (
+                <Card className={`border-2 ${
+                  latestVerification.verification_status === 'verified' &&
+                  latestVerification.greenwashing_risk === 'low' &&
+                  (latestVerification.verification_score || 0) >= 0.7
+                    ? 'border-success/30' : 'border-muted'
+                }`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 rounded-full ${
+                        latestVerification.verification_status === 'verified' &&
+                        latestVerification.greenwashing_risk === 'low' &&
+                        (latestVerification.verification_score || 0) >= 0.7
+                          ? 'bg-success/10' : 'bg-muted'
+                      }`}>
+                        {latestVerification.verification_status === 'verified' &&
+                         latestVerification.greenwashing_risk === 'low' &&
+                         (latestVerification.verification_score || 0) >= 0.7 ? (
+                          <CheckCircle className="h-5 w-5 text-success" />
+                        ) : (
+                          <Clock className="h-5 w-5 text-muted-foreground" />
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-sm">VCM Readiness</div>
+                        <div className="text-xs text-muted-foreground">Voluntary Carbon Market compatibility</div>
+                      </div>
+                      <Badge variant={
+                        latestVerification.verification_status === 'verified' &&
+                        latestVerification.greenwashing_risk === 'low' &&
+                        (latestVerification.verification_score || 0) >= 0.7
+                          ? 'default' : 'secondary'
+                      }>
+                        {latestVerification.verification_status === 'verified' &&
+                         latestVerification.greenwashing_risk === 'low' &&
+                         (latestVerification.verification_score || 0) >= 0.7
+                          ? 'Ready' : 'Pending'}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
               {/* Gov-Ready Export */}
               {ledgerEntries.length > 0 && (
                 <Card className="border-warning/20">
