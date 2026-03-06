@@ -35,7 +35,7 @@ export const IndiaAIBadge = ({ size = 48, className = "" }: IndiaAIBadgeProps) =
     return { x1, y1, x2, y2 };
   });
 
-  const spokeColors = ['#FF9933', '#138808', '#000080', 'hsl(142, 76%, 36%)'];
+  
 
   return (
     <div className={`inline-flex items-center justify-center ${className}`}>
