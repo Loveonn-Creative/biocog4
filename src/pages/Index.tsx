@@ -642,6 +642,45 @@ const Index = () => {
               />
             </div>
             
+            {/* Retry button when save failed but extraction succeeded */}
+            {pendingRetry && (
+              <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-destructive/5 border border-destructive/20">
+                <p className="text-sm text-destructive font-medium">Data extraction succeeded but save failed.</p>
+                <button
+                  onClick={async () => {
+                    setState("processing");
+                    setDocumentType("Retrying save...");
+                    const savedIds = await saveEmissionToDatabase(pendingRetry.extractedData, pendingRetry.documentHash);
+                    if (savedIds) {
+                      toast.success('Data saved successfully!');
+                      setPendingRetry(null);
+                      const extractedData = pendingRetry.extractedData;
+                      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
+                      const emissionCat = getCategoryFromOCR(extractedData);
+                      const co2Tons = calculatedCO2 / 1000;
+                      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
+                      setResult({
+                        type: extractedData.documentType === 'certificate' || emissionCat === 'other' ? "compliance" : "revenue",
+                        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+                        documentType: formatDocumentType(extractedData.documentType, emissionCat),
+                        extractedData,
+                        documentId: savedIds.documentId,
+                        emissionId: savedIds.emissionId,
+                      });
+                      setDocumentType(formatDocumentType(extractedData.documentType, emissionCat));
+                      setState("result");
+                    } else {
+                      toast.error('Save failed again. Please try uploading a new document.');
+                      setState("idle");
+                    }
+                  }}
+                  className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Retry Save
+                </button>
+              </div>
+            )}
+            
             <p className="text-xs text-muted-foreground/60 text-center mt-2">
               Upload a document or speak to begin
             </p>
