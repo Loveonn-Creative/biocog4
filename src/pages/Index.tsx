@@ -175,6 +175,7 @@ const Index = () => {
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
+  const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
