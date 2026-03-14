@@ -175,6 +175,7 @@ const Index = () => {
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
+  const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -256,6 +257,21 @@ const Index = () => {
           return null;
         }
         documentId = docData.id;
+      }
+
+      // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
+      // Before inserting a new emission, check if one already exists for this document
+      const { data: existingEmission } = await supabase
+        .from('emissions')
+        .select('id')
+        .eq('document_id', documentId)
+        .limit(1)
+        .single();
+
+      if (existingEmission) {
+        console.log('[MRV] Emission already exists for document:', documentId, '- skipping duplicate');
+        toast.info('This invoice was already processed. Showing existing results.', { icon: '🔒' });
+        return { documentId, emissionId: existingEmission.id };
       }
 
       // Get emission data - use totalCO2Kg from deterministic calculation
@@ -400,11 +416,17 @@ const Index = () => {
 
       const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
 
-      if (savedIds) {
-        toast.success('Data saved successfully!', { duration: 2000 });
-      } else {
-        toast.error('Failed to save data. Please try again.');
+      if (!savedIds) {
+        // ============= GAP 4 FIX: SAVE FAILURE RECOVERY =============
+        // Don't show ephemeral results. Store data for retry.
+        setPendingRetry({ extractedData, documentHash: data.documentHash });
+        toast.error('Failed to save data. Click "Retry" to try again without re-scanning.', { duration: 6000 });
+        setState("idle");
+        return;
       }
+
+      toast.success('Data saved successfully!', { duration: 2000 });
+      setPendingRetry(null);
 
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
@@ -619,6 +641,45 @@ const Index = () => {
                 isProcessing={false} 
               />
             </div>
+            
+            {/* Retry button when save failed but extraction succeeded */}
+            {pendingRetry && (
+              <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-destructive/5 border border-destructive/20">
+                <p className="text-sm text-destructive font-medium">Data extraction succeeded but save failed.</p>
+                <button
+                  onClick={async () => {
+                    setState("processing");
+                    setDocumentType("Retrying save...");
+                    const savedIds = await saveEmissionToDatabase(pendingRetry.extractedData, pendingRetry.documentHash);
+                    if (savedIds) {
+                      toast.success('Data saved successfully!');
+                      setPendingRetry(null);
+                      const extractedData = pendingRetry.extractedData;
+                      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
+                      const emissionCat = getCategoryFromOCR(extractedData);
+                      const co2Tons = calculatedCO2 / 1000;
+                      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
+                      setResult({
+                        type: extractedData.documentType === 'certificate' || emissionCat === 'other' ? "compliance" : "revenue",
+                        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+                        documentType: formatDocumentType(extractedData.documentType, emissionCat),
+                        extractedData,
+                        documentId: savedIds.documentId,
+                        emissionId: savedIds.emissionId,
+                      });
+                      setDocumentType(formatDocumentType(extractedData.documentType, emissionCat));
+                      setState("result");
+                    } else {
+                      toast.error('Save failed again. Please try uploading a new document.');
+                      setState("idle");
+                    }
+                  }}
+                  className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Retry Save
+                </button>
+              </div>
+            )}
             
             <p className="text-xs text-muted-foreground/60 text-center mt-2">
               Upload a document or speak to begin

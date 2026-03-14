@@ -1,114 +1,174 @@
-# MRV → Monetize Pipeline: End-to-End Audit
+# Redesign IndiaAIBadge + Integrate Ecosystem Features from Reference
 
-## Audit Summary
+## Part 1: Redesign IndiaAIBadge -- "WOW" Factor
 
-After reviewing all pipeline files (`extract-document`, `verify-carbon`, `Index.tsx`, `Dashboard.tsx`, `MRVDashboard.tsx`, `credibilityScore.ts`, `govComplianceAdapter.ts`), the pipeline is **architecturally sound** with deterministic math, SHA-256 hashing, and rule-based classification. However, there are **5 gaps** that need closing.
+### Problem
+
+The current badge is generic -- thin lines radiating from a dot. It looks like a loading spinner, not a statement of sovereign AI innovation.
+
+### New Design: "Neural Lotus instead dots"
+
+A custom SVG that merges India's national flower (lotus) silhouette with AI neural network pathways. Bold, vivid colors -- not dim opacity values.
+
+**Visual concept:**
+
+- 8 lotus petals rendered as curved SVG paths, each filled with bold gradients (saffron-to-gold, green-to-teal, navy-to-indigo, brand-green)
+- Neural network "synapses" connecting petal tips as thin animated lines that pulse with data-flow energy
+- Center: a geometric "eye" pattern (representing AI vision/intelligence) instead of a generic dot
+- Petals breathe (subtle scale animation, 4s cycle) while synapses flow (dash-offset animation)
+- All colors at 0.6-0.9 opacity -- BOLD, not whisper-faint
+
+**Performance**: Still pure CSS/SVG, zero JS animation overhead, ~3KB.
+
+### Files Changed
+
+
+| File                              | Change                                  |
+| --------------------------------- | --------------------------------------- |
+| `src/components/IndiaAIBadge.tsx` | Complete redesign with Neural Lotus SVG |
+
 
 ---
 
-## What's Working Correctly
+## Part 2: Ecosystem Feature Integration (from Reference Data)
+
+These integrate into the EXISTING pipeline (Upload -> OCR -> MRV -> Verify -> Monetize) without creating new dummy pages. Each feature plugs into components that already exist.
+
+### Feature 1: Climate Credibility Score (MSME Reputation Engine)
+
+**What it does**: Computes a real-time "Climate Credibility Score" (0-100) from the MSME's existing invoice history, verification scores, green benefit ratio, and audit trail consistency. This score is already partially computed (verification_score, green_score exist) but never surfaced as a unified trust metric.
+
+**Integration point**: Dashboard `VerificationStatusCard` -- add a "Credibility Score" alongside the existing Verification Score. Also visible on the Monetize page as a trust signal for buyers.
+
+**How it works**: Pure client-side calculation from existing `emissions`, `carbon_verifications`, and `compliance_ledger` data. No new tables needed.
+
+Formula:
+
+- 30% from average verification_score across verifications
+- 25% from green benefit ratio (green invoices / total invoices)
+- 25% from data consistency (% of invoices with complete data: vendor, date, amount, HSN)
+- 20% from history depth (number of verified documents, capped at 50)
 
 
-| Layer                      | Status        | Evidence                                                                  |
-| -------------------------- | ------------- | ------------------------------------------------------------------------- |
-| OCR → Data Extraction      | Solid         | AI extracts fields only; `temperature: 0` prevents variability            |
-| Classification             | Deterministic | HSN lookup → Keyword fallback → UNVERIFIABLE (no AI guessing)             |
-| Emission Calculation       | Math-only     | `Quantity × Factor = CO2` with fixed BIOCOG_MVR_INDIA_v1.0 factors        |
-| Confidence Scoring         | Deterministic | Fixed penalty system (CONFIDENCE_PENALTIES), same input = same score      |
-| Document Hashing           | SHA-256       | Hash generated before any processing; used for dedup                      |
-| Duplicate Detection (Auth) | Working       | Paid users get cached result; free users blocked with clear message       |
-| Guest Caching              | Working       | Same hash returns same cached result for guests                           |
-| Real-time Updates          | Working       | Dashboard subscribes to `carbon_verifications` + `emissions` tables       |
-| Compliance Ledger          | Working       | Auto-populated during verification with full audit trail                  |
-| Greenwashing Detection     | Working       | Multi-signal risk scoring (perfect numbers, missing docs, low confidence) |
+| File                                                  | Change                                                               |
+| ----------------------------------------------------- | -------------------------------------------------------------------- |
+| `src/lib/credibilityScore.ts`                         | CREATE: Pure function computing the score                            |
+| `src/components/dashboard/VerificationStatusCard.tsx` | EDIT: Display Credibility Score badge                                |
+| `src/pages/Monetize.tsx`                              | EDIT: Show Credibility Score in summary banner as buyer trust signal |
+
+
+### Feature 2: Gov-Compliance Adapter (Auto-format MRV for GCP/BRSR)
+
+**What it does**: Adds a "Gov-Ready Export" option to the existing Reports page that auto-formats MRV outputs into government-required fields: document type, geotag (from GSTIN state code), activity-type, evidence hash, timestamp. This is the "quick win" from the reference -- minimal engineering, immediate policy alignment.
+
+**Integration point**: Existing `Reports` page and `exportComplianceXLSX` in `useComplianceLedger.ts`. Add a new export format that maps existing compliance_ledger fields to GCP/BRSR/CCTS required columns.
+
+
+| File                               | Change                                                                  |
+| ---------------------------------- | ----------------------------------------------------------------------- |
+| `src/lib/govComplianceAdapter.ts`  | CREATE: Mapping functions for GCP, BRSR, CCTS field formats             |
+| `src/hooks/useComplianceLedger.ts` | EDIT: Add `exportGovCompliance(format: 'GCP' | 'BRSR' | 'CCTS')` method |
+| `src/pages/Reports.tsx`            | EDIT: Add "Gov-Ready Export" dropdown with format options               |
+
+
+### Feature 3: Embedded Finance Signals on Monetize Page
+
+**What it does**: Extends the existing 3 monetization pathways with real-time eligibility signals based on the MSME's actual data. Instead of static requirements text, show dynamic pass/fail checks computed from their verification data.
+
+**Integration point**: Existing `Monetize.tsx` pathway cards. Each requirement (e.g., "Green Score 60+") becomes a live checkmark or X based on their actual green_score from verification data.
+
+Also adds a 4th pathway: "Green Invoice Factoring" -- advance payout against verified green invoices. Uses existing compliance_ledger green benefit data to compute eligibility. No new backend needed, just UI showing the calculated advance value.
+
+
+| File                     | Change                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| `src/pages/Monetize.tsx` | EDIT: Dynamic eligibility checks per pathway + Green Invoice Factoring pathway |
+
+
+### Feature 4: Supply Chain Scope 3 Signal
+
+**What it does**: On the result screen after invoice processing, if the invoice has a buyer GSTIN (already extracted by OCR as `buyerGstin`), show a banner: "This data can serve as Scope 3 evidence for [Buyer Company]. Share to gain Preferred Supplier status." 
+
+This turns the existing OCR output into a supply-chain transparency signal without building any new infrastructure. It's a display-only feature that educates MSMEs on the value chain.
+
+**Integration point**: Existing `ResultState.tsx` component.
+
+
+| File                             | Change                                                           |
+| -------------------------------- | ---------------------------------------------------------------- |
+| `src/components/ResultState.tsx` | EDIT: Add Scope 3 supply chain signal when buyerGstin is present |
 
 
 ---
-
-## Gap 1: Document Not Recorded Before MRV for Guest Users (CRITICAL)
-
-**Problem**: For guest users, the edge function caches the document at the END of processing (line 1159). But `Index.tsx` then calls `saveEmissionToDatabase` which tries to find the document by hash (line 206). If the edge function's cache insert fails silently, the client creates a NEW document record (line 234) — but the emission is saved without the original document being permanently recorded first.
-
-**The sequence should be**: Record document → Run MRV → Save emission (linked to document).
-
-**Current sequence**: OCR → Classify → Calculate → Cache document → Client finds/creates document → Save emission.
-
-**Fix**: In `extract-document/index.ts`, move the document cache insert BEFORE the AI extraction for guests. Insert a stub record with just `document_hash` and `session_id` immediately after hash generation. Then update it with `cached_result` after processing completes. This ensures every invoice is a permanent system entry before MRV begins.
-
-**File**: `supabase/functions/extract-document/index.ts`
-
----
-
-## Gap 2: No Duplicate Detection for Guest Users Uploading Same Invoice
-
-**Problem**: Authenticated users have duplicate detection (line 810-850). Guest users only get cache hits (same result returned), but the system still creates a NEW document + emission record each time. This means a guest can inflate their dashboard numbers by re-uploading the same invoice.
-
-**Fix**: In `Index.tsx` `saveEmissionToDatabase`, before inserting a new emission, check if an emission already exists for this `document_id` (found via hash). If yes, skip the emission insert and return the existing IDs. Add a toast: "This invoice was already processed."
-
-**File**: `src/pages/Index.tsx` (in `saveEmissionToDatabase`)
-
----
-
-## Gap 3: Verification Errors Not Surfaced with Precise Guidance
-
-**Problem**: When `verify-carbon` returns validation flags like "Missing or invalid activity data" or "Missing activity unit", these are stored in `ai_analysis.flags` but never shown to the MSME user in a clear, actionable way. The MRV Dashboard shows verification status but not the specific math-based reason why a record failed.
-
-**Current**: User sees "needs_review" badge. No explanation of WHY.
-
-**Fix**: In `MRVDashboard.tsx`, when rendering each verification, extract `ai_analysis.flags` and display them as a collapsible list with precise guidance. Map each flag to an actionable message:
-
-- "Missing or invalid activity data" → "The quantity (litres/kWh/kg) was not detected on this invoice. Upload a clearer scan showing the quantity."
-- "Missing activity unit" → "The unit of measurement could not be identified. Ensure the invoice shows units like litres, kWh, or kg."
-- "Low OCR confidence" → "The document quality is poor. Try scanning with better lighting or a higher resolution."
-
-**File**: `src/pages/MRVDashboard.tsx`
-
----
-
-## Gap 4: Emission Save Can Silently Fail Without User Recovery Path
-
-**Problem**: In `Index.tsx` line 401-407, if `saveEmissionToDatabase` returns null, the user sees "Failed to save data. Please try again." but the result screen still shows with the calculated CO2 value. The user thinks processing succeeded but no data was persisted. The result is ephemeral — lost on page reload.
-
-**Fix**: If `savedIds` is null, do NOT proceed to the result screen. Instead, show an error state with a "Retry" button that re-attempts the save with the already-extracted data (no re-OCR needed). Store `extractedData` in component state so retry is instant.
-
-**File**: `src/pages/Index.tsx`
-
----
-
-## Gap 5: Dashboard Emissions Real-time Channel Missing Filter
-
-**Problem**: The Dashboard's real-time subscription (line 68-94) listens to ALL `carbon_verifications` and `emissions` changes without filtering by `user_id` or `session_id`. This means the callback fires for every user's data, causing unnecessary refetches. At scale, this degrades performance.
-
-**Fix**: Add a filter to the subscription:
-
-```typescript
-filter: user?.id ? `user_id=eq.${user.id}` : `session_id=eq.${sessionId}`
-```
-
-**File**: `src/pages/Dashboard.tsx`
-
----
-
-## Files Summary (4 files)
-
-
-| File                                           | Change                                             | Priority |
-| ---------------------------------------------- | -------------------------------------------------- | -------- |
-| `supabase/functions/extract-document/index.ts` | Insert document stub before processing             | Critical |
-| `src/pages/Index.tsx`                          | Guest dedup check + save-failure recovery          | Critical |
-| `src/pages/MRVDashboard.tsx`                   | Surface validation flags with actionable guidance  | High     |
-| `src/pages/Dashboard.tsx`                      | Add user/session filter to real-time subscriptions | Medium   |
-
 
 ## What Does NOT Change
 
-- Emission factors, BIOCOG_MVR_INDIA_v1.0 methodology
-- SHA-256 hashing logic
-- HSN/Keyword classification rules
-- Confidence scoring penalties
-- Greenwashing detection algorithm
-- Compliance ledger population
-- Authentication, RLS policies
-- Any existing UI text or page structure
-- Guest user multiple scanning and testing of platform without lagging
-- Making platform more efficient for paid users
+- OCR pipeline, deterministic MRV math, emission factors
+- Database schema (no new tables or migrations)
+- Authentication, RLS policies, security model
+- Existing page layouts, navigation structure
+- Enterprise mode, partner ecosystem
+- Homepage upload flow, voice input
+- Any existing text or feature labels
+
+## Technical Details
+
+### IndiaAIBadge SVG Structure
+
+```text
+        Petal (saffron gradient)
+           ╲    ╱
+    Petal ── ◉ ── Petal (green)
+   (navy)  ╱ AI ╲
+         Petal (brand)
+  
+  8 petals with curved bezier paths
+  Neural synapses as animated dashed lines
+  Center: geometric "eye" (two overlapping arcs)
+  CSS: breathe animation (scale 0.97-1.03, 4s)
+       synapse flow (stroke-dashoffset, 8s)
+```
+
+### Credibility Score Computation
+
+```text
+score = (0.30 * avgVerificationScore) 
+      + (0.25 * greenBenefitRatio * 100)
+      + (0.25 * dataCompletenessRatio * 100)
+      + (0.20 * min(verifiedDocCount / 50, 1) * 100)
+```
+
+### Gov-Compliance Field Mapping
+
+```text
+GCP Format:
+  activity_type -> emission_category
+  evidence_hash -> document_hash  
+  state_code -> gstin[0:2]
+  quantity_unit -> activity_unit
+  verified_co2 -> co2_kg
+  methodology -> methodology_version
+  
+BRSR Format:
+  scope -> scope
+  category -> emission_category
+  total_emissions_tco2e -> co2_kg / 1000
+  data_source -> factor_source
+  reporting_period -> fiscal_year + fiscal_quarter
+```
+
+## Files Summary (10 files)
+
+
+| File                                                  | Action                                              |
+| ----------------------------------------------------- | --------------------------------------------------- |
+| `src/components/IndiaAIBadge.tsx`                     | REWRITE: Neural Lotus design                        |
+| `src/lib/credibilityScore.ts`                         | CREATE: Credibility score calculator                |
+| `src/lib/govComplianceAdapter.ts`                     | CREATE: GCP/BRSR/CCTS field mappers                 |
+| `src/components/dashboard/VerificationStatusCard.tsx` | EDIT: Add Credibility Score                         |
+| `src/pages/Monetize.tsx`                              | EDIT: Dynamic eligibility + Green Invoice Factoring |
+| `src/hooks/useComplianceLedger.ts`                    | EDIT: Add gov-compliance export                     |
+| `src/pages/Reports.tsx`                               | EDIT: Gov-Ready Export dropdown                     |
+| `src/components/ResultState.tsx`                      | EDIT: Scope 3 supply chain signal                   |
+| `src/pages/Index.tsx`                                 | EDIT: Updated tagline text size (minor)             |
+| `src/pages/About.tsx`                                 | EDIT: Updated tagline text size (minor)             |

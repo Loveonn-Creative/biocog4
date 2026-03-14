@@ -461,6 +461,40 @@ const MRVDashboard = () => {
                       </div>
                     )}
 
+                    {/* ============= GAP 3 FIX: ACTIONABLE VERIFICATION FLAGS ============= */}
+                    {(() => {
+                      const flags = (verifications[0]?.ai_analysis as any)?.validationFlags || 
+                                    (verifications[0]?.ai_analysis as any)?.flags || [];
+                      if (flags.length === 0) return null;
+                      
+                      const flagGuidance: Record<string, string> = {
+                        'Missing or invalid activity data': 'The quantity (litres/kWh/kg) was not detected on this invoice. Upload a clearer scan showing the quantity.',
+                        'Missing activity unit': 'The unit of measurement could not be identified. Ensure the invoice shows units like litres, kWh, or kg.',
+                        'Low OCR confidence': 'The document quality is poor. Try scanning with better lighting or a higher resolution.',
+                        'No verifiable line items found': 'No items could be mapped to emission categories. Ensure the invoice has product descriptions or HSN codes.',
+                        'Missing emission factor': 'No emission factor could be matched. The product category may not be in the current factor database.',
+                        'Missing supplier GSTIN': 'Supplier GSTIN was not detected. This reduces data completeness for compliance reports.',
+                        'Missing invoice number': 'Invoice number was not found. This is needed for audit trail integrity.',
+                      };
+
+                      return (
+                        <div className="p-3 rounded-lg bg-warning/5 border border-warning/20 mb-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <AlertCircle className="h-4 w-4 text-warning" />
+                            <span className="text-sm font-medium text-warning">Verification Issues ({flags.length})</span>
+                          </div>
+                          <ul className="space-y-1.5">
+                            {flags.map((flag: string, i: number) => (
+                              <li key={i} className="text-xs text-muted-foreground pl-6 relative">
+                                <span className="absolute left-2 top-1 h-1.5 w-1.5 rounded-full bg-warning/60" />
+                                {flagGuidance[flag] || flag}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })()}
+
                     {/* Compliance Badges */}
                     <div className="flex flex-wrap gap-2">
                       {verifications[0]?.ccts_eligible && (

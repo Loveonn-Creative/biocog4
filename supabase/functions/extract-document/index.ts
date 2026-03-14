@@ -897,6 +897,38 @@ serve(async (req) => {
 
     console.log(`Processing document for ${userTier} user...`);
 
+    // ============= GAP 1 FIX: INSERT DOCUMENT STUB BEFORE MRV =============
+    // Every invoice becomes a permanent system entry BEFORE AI processing begins.
+    // This prevents greenwashing by ensuring the document is recorded even if processing fails.
+    let stubDocumentId: string | null = null;
+    if (!isAuthenticated && sessionId) {
+      const stubUrl = Deno.env.get('SUPABASE_URL');
+      const stubKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+      if (stubUrl && stubKey) {
+        try {
+          const stubClient = createClient(stubUrl, stubKey);
+          const { data: stubDoc, error: stubError } = await stubClient
+            .from('documents')
+            .insert({
+              document_hash: documentHash,
+              document_type: 'pending',
+              session_id: sessionId,
+              confidence: 0,
+            })
+            .select('id')
+            .single();
+          if (stubError) {
+            console.error('Document stub insert failed:', stubError);
+          } else {
+            stubDocumentId = stubDoc.id;
+            console.log(`Document stub created: ${stubDocumentId} (hash: ${documentHash.substring(0, 16)}...)`);
+          }
+        } catch (e) {
+          console.error('Stub creation error:', e);
+        }
+      }
+    }
+
     // ============= AI EXTRACTION (DATA ONLY) =============
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
@@ -1148,6 +1180,7 @@ serve(async (req) => {
 
     // ============= CACHE THE RESULT =============
     // Store in database so future requests for same document get same result
+    // For guests with a stub: UPDATE the existing stub. For auth users: INSERT new.
     const supabaseUrl = Deno.env.get('SUPABASE_URL');
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
     
@@ -1155,26 +1188,48 @@ serve(async (req) => {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
         
-        // Insert cache record with session_id for guest users
-        const { error: cacheError } = await supabase
-          .from('documents')
-          .insert({
-            document_hash: documentHash,
-            document_type: extractedData.documentType,
-            vendor: extractedData.vendor,
-            invoice_number: extractedData.invoiceNumber,
-            amount: extractedData.amount,
-            confidence: Math.min(extractedData.confidence, 999.99),
-            cached_result: extractedData,
-            cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days
-            user_id: userId,
-            session_id: isAuthenticated ? null : (sessionId || null), // Link to session for guest users
-          });
-        
-        if (cacheError) {
-          console.error('Failed to cache result:', cacheError);
+        if (stubDocumentId) {
+          // UPDATE the stub created before processing
+          const { error: updateError } = await supabase
+            .from('documents')
+            .update({
+              document_type: extractedData.documentType,
+              vendor: extractedData.vendor,
+              invoice_number: extractedData.invoiceNumber,
+              amount: extractedData.amount,
+              confidence: Math.min(extractedData.confidence, 999.99),
+              cached_result: extractedData,
+              cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+            })
+            .eq('id', stubDocumentId);
+          
+          if (updateError) {
+            console.error('Failed to update document stub:', updateError);
+          } else {
+            console.log('Document stub updated with MRV result');
+          }
         } else {
-          console.log('Result cached for deterministic retrieval');
+          // Insert cache record (authenticated users or fallback)
+          const { error: cacheError } = await supabase
+            .from('documents')
+            .insert({
+              document_hash: documentHash,
+              document_type: extractedData.documentType,
+              vendor: extractedData.vendor,
+              invoice_number: extractedData.invoiceNumber,
+              amount: extractedData.amount,
+              confidence: Math.min(extractedData.confidence, 999.99),
+              cached_result: extractedData,
+              cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+              user_id: userId,
+              session_id: isAuthenticated ? null : (sessionId || null),
+            });
+          
+          if (cacheError) {
+            console.error('Failed to cache result:', cacheError);
+          } else {
+            console.log('Result cached for deterministic retrieval');
+          }
         }
       } catch (e) {
         console.error('Cache error:', e);
