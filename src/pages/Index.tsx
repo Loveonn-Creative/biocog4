@@ -258,6 +258,21 @@ const Index = () => {
         documentId = docData.id;
       }
 
+      // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
+      // Before inserting a new emission, check if one already exists for this document
+      const { data: existingEmission } = await supabase
+        .from('emissions')
+        .select('id')
+        .eq('document_id', documentId)
+        .limit(1)
+        .single();
+
+      if (existingEmission) {
+        console.log('[MRV] Emission already exists for document:', documentId, '- skipping duplicate');
+        toast.info('This invoice was already processed. Showing existing results.', { icon: '🔒' });
+        return { documentId, emissionId: existingEmission.id };
+      }
+
       // Get emission data - use totalCO2Kg from deterministic calculation
       const co2Kg = extractedData.totalCO2Kg ?? 0;
       const category = getCategoryFromOCR(extractedData);
