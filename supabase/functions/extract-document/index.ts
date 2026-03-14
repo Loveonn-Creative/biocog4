@@ -897,6 +897,38 @@ serve(async (req) => {
 
     console.log(`Processing document for ${userTier} user...`);
 
+    // ============= GAP 1 FIX: INSERT DOCUMENT STUB BEFORE MRV =============
+    // Every invoice becomes a permanent system entry BEFORE AI processing begins.
+    // This prevents greenwashing by ensuring the document is recorded even if processing fails.
+    let stubDocumentId: string | null = null;
+    if (!isAuthenticated && sessionId) {
+      const stubUrl = Deno.env.get('SUPABASE_URL');
+      const stubKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+      if (stubUrl && stubKey) {
+        try {
+          const stubClient = createClient(stubUrl, stubKey);
+          const { data: stubDoc, error: stubError } = await stubClient
+            .from('documents')
+            .insert({
+              document_hash: documentHash,
+              document_type: 'pending',
+              session_id: sessionId,
+              confidence: 0,
+            })
+            .select('id')
+            .single();
+          if (stubError) {
+            console.error('Document stub insert failed:', stubError);
+          } else {
+            stubDocumentId = stubDoc.id;
+            console.log(`Document stub created: ${stubDocumentId} (hash: ${documentHash.substring(0, 16)}...)`);
+          }
+        } catch (e) {
+          console.error('Stub creation error:', e);
+        }
+      }
+    }
+
     // ============= AI EXTRACTION (DATA ONLY) =============
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
