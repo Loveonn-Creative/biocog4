@@ -65,6 +65,10 @@ const Dashboard = () => {
   useEffect(() => {
     if (!user && !sessionId) return;
 
+    // ============= GAP 5 FIX: FILTERED REALTIME SUBSCRIPTIONS =============
+    const filterCol = user?.id ? 'user_id' : 'session_id';
+    const filterVal = user?.id || sessionId;
+
     const channel = supabase
       .channel('dashboard-verifications')
       .on(
@@ -73,6 +77,7 @@ const Dashboard = () => {
           event: '*',
           schema: 'public',
           table: 'carbon_verifications',
+          filter: `${filterCol}=eq.${filterVal}`,
         },
         (payload) => {
           console.log('[Dashboard] Verification update:', payload.eventType);
@@ -85,6 +90,7 @@ const Dashboard = () => {
           event: '*',
           schema: 'public',
           table: 'emissions',
+          filter: `${filterCol}=eq.${filterVal}`,
         },
         (payload) => {
           console.log('[Dashboard] Emission update:', payload.eventType);

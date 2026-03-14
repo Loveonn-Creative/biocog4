@@ -416,11 +416,17 @@ const Index = () => {
 
       const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
 
-      if (savedIds) {
-        toast.success('Data saved successfully!', { duration: 2000 });
-      } else {
-        toast.error('Failed to save data. Please try again.');
+      if (!savedIds) {
+        // ============= GAP 4 FIX: SAVE FAILURE RECOVERY =============
+        // Don't show ephemeral results. Store data for retry.
+        setPendingRetry({ extractedData, documentHash: data.documentHash });
+        toast.error('Failed to save data. Click "Retry" to try again without re-scanning.', { duration: 6000 });
+        setState("idle");
+        return;
       }
+
+      toast.success('Data saved successfully!', { duration: 2000 });
+      setPendingRetry(null);
 
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
