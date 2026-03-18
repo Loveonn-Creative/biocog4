@@ -1,174 +1,155 @@
-# Redesign IndiaAIBadge + Integrate Ecosystem Features from Reference
+# SEO Audit: Why senseible.earth Is Invisible + Fix Plan
 
-## Part 1: Redesign IndiaAIBadge -- "WOW" Factor
+## The Core Problem
 
-### Problem
-
-The current badge is generic -- thin lines radiating from a dot. It looks like a loading spinner, not a statement of sovereign AI innovation.
-
-### New Design: "Neural Lotus instead dots"
-
-A custom SVG that merges India's national flower (lotus) silhouette with AI neural network pathways. Bold, vivid colors -- not dim opacity values.
-
-**Visual concept:**
-
-- 8 lotus petals rendered as curved SVG paths, each filled with bold gradients (saffron-to-gold, green-to-teal, navy-to-indigo, brand-green)
-- Neural network "synapses" connecting petal tips as thin animated lines that pulse with data-flow energy
-- Center: a geometric "eye" pattern (representing AI vision/intelligence) instead of a generic dot
-- Petals breathe (subtle scale animation, 4s cycle) while synapses flow (dash-offset animation)
-- All colors at 0.6-0.9 opacity -- BOLD, not whisper-faint
-
-**Performance**: Still pure CSS/SVG, zero JS animation overhead, ~3KB.
-
-### Files Changed
-
-
-| File                              | Change                                  |
-| --------------------------------- | --------------------------------------- |
-| `src/components/IndiaAIBadge.tsx` | Complete redesign with Neural Lotus SVG |
-
+**Google returns zero results for `site:senseible.earth`.** The domain is completely unindexed despite being months old with 200+ content pages. This is not a content problem -- it is a **technical rendering and crawlability failure**.
 
 ---
 
-## Part 2: Ecosystem Feature Integration (from Reference Data)
+## Root Cause Analysis
 
-These integrate into the EXISTING pipeline (Upload -> OCR -> MRV -> Verify -> Monetize) without creating new dummy pages. Each feature plugs into components that already exist.
+### CRITICAL: SPA Rendering = Invisible to Search Engines
 
-### Feature 1: Climate Credibility Score (MSME Reputation Engine)
+This is a **client-side rendered React SPA**. When Googlebot fetches any page, it gets this:
 
-**What it does**: Computes a real-time "Climate Credibility Score" (0-100) from the MSME's existing invoice history, verification scores, green benefit ratio, and audit trail consistency. This score is already partially computed (verification_score, green_score exist) but never surfaced as a unified trust metric.
+```text
+<div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
+```
 
-**Integration point**: Dashboard `VerificationStatusCard` -- add a "Credibility Score" alongside the existing Verification Score. Also visible on the Monetize page as a trust signal for buyers.
+All content (titles, article text, internal links, structured data from `SEOHead`) is injected by JavaScript **after** page load. While Googlebot can render JS, it does so in a **second wave** with significant delays and frequent failures. For a new domain with no authority, Google deprioritizes JS rendering entirely.
 
-**How it works**: Pure client-side calculation from existing `emissions`, `carbon_verifications`, and `compliance_ledger` data. No new tables needed.
+**Evidence**: The fetched HTML of `/climate-intelligence/cbam-compliance-indian-exporters` shows the article content is rendered client-side. The `<head>` only contains the static `index.html` meta tags (the homepage title/description), NOT the article-specific SEO tags from `SEOHead`.
 
-Formula:
+**Result**: Every page appears to Google as the homepage with identical title/description. Massive duplicate content signal. Google drops the domain.
 
-- 30% from average verification_score across verifications
-- 25% from green benefit ratio (green invoices / total invoices)
-- 25% from data consistency (% of invoices with complete data: vendor, date, amount, HSN)
-- 20% from history depth (number of verified documents, capped at 50)
+### Issue 2: Sitemap Contains Auth-Required Pages
 
+The sitemap includes `/dashboard`, `/verify`, `/monetize`, `/reports`, `/intelligence`, `/marketplace` -- all behind auth or requiring user data. `robots.txt` blocks `/dashboard`, `/reports` etc. but the sitemap still lists them. **Conflicting signals** confuse crawlers.
 
-| File                                                  | Change                                                               |
-| ----------------------------------------------------- | -------------------------------------------------------------------- |
-| `src/lib/credibilityScore.ts`                         | CREATE: Pure function computing the score                            |
-| `src/components/dashboard/VerificationStatusCard.tsx` | EDIT: Display Credibility Score badge                                |
-| `src/pages/Monetize.tsx`                              | EDIT: Show Credibility Score in summary banner as buyer trust signal |
+### Issue 3: Sitemap `lastmod` Dates Are Stale
 
+All 200+ URLs show `2026-01-21` -- nearly 2 months old. Google interprets stale `lastmod` as "nothing changed, skip recrawl."
 
-### Feature 2: Gov-Compliance Adapter (Auto-format MRV for GCP/BRSR)
+### Issue 4: Static Sitemap File vs Dynamic Edge Function
 
-**What it does**: Adds a "Gov-Ready Export" option to the existing Reports page that auto-formats MRV outputs into government-required fields: document type, geotag (from GSTIN state code), activity-type, evidence hash, timestamp. This is the "quick win" from the reference -- minimal engineering, immediate policy alignment.
+There is both a static `public/sitemap.xml` (served at `/sitemap.xml`) AND an edge function `generate-sitemap`. The static file is what gets served. The edge function is never called. The static file has hardcoded dates and may be missing newer content.
 
-**Integration point**: Existing `Reports` page and `exportComplianceXLSX` in `useComplianceLedger.ts`. Add a new export format that maps existing compliance_ledger fields to GCP/BRSR/CCTS required columns.
+### Issue 5: No Server-Side Rendering / Pre-rendering
 
+Without SSR or pre-rendering, the `SEOHead` component's `<Helmet>` tags only work for users with JS enabled. Search engine crawlers that don't execute JS (Bing, Yandex, AI bots like GPTBot, PerplexityBot) see NOTHING.
 
-| File                               | Change                                                                  |
-| ---------------------------------- | ----------------------------------------------------------------------- |
-| `src/lib/govComplianceAdapter.ts`  | CREATE: Mapping functions for GCP, BRSR, CCTS field formats             |
-| `src/hooks/useComplianceLedger.ts` | EDIT: Add `exportGovCompliance(format: 'GCP' | 'BRSR' | 'CCTS')` method |
-| `src/pages/Reports.tsx`            | EDIT: Add "Gov-Ready Export" dropdown with format options               |
+### Issue 6: `index.html` Meta Tags Conflict with Helmet
 
+`index.html` has hardcoded `<title>`, `<meta description>`, `<meta og:*>` tags. `SEOHead` via Helmet tries to override them per-page. But for crawlers that don't run JS, every page shows the same homepage metadata. Even for those that do run JS, the initial HTML response has the wrong tags.
 
-### Feature 3: Embedded Finance Signals on Monetize Page
+### Issue 7: Missing Google Search Console Verification
 
-**What it does**: Extends the existing 3 monetization pathways with real-time eligibility signals based on the MSME's actual data. Instead of static requirements text, show dynamic pass/fail checks computed from their verification data.
+There is no evidence of Google Search Console (GSC) verification meta tag or file. Without GSC, Google has no prompt to discover and crawl the site. The sitemap was likely never submitted.
 
-**Integration point**: Existing `Monetize.tsx` pathway cards. Each requirement (e.g., "Green Score 60+") becomes a live checkmark or X based on their actual green_score from verification data.
+### Issue 8: No `BreadcrumbList` Structured Data
 
-Also adds a 4th pathway: "Green Invoice Factoring" -- advance payout against verified green invoices. Uses existing compliance_ledger green benefit data to compute eligibility. No new backend needed, just UI showing the calculated advance value.
-
-
-| File                     | Change                                                                         |
-| ------------------------ | ------------------------------------------------------------------------------ |
-| `src/pages/Monetize.tsx` | EDIT: Dynamic eligibility checks per pathway + Green Invoice Factoring pathway |
-
-
-### Feature 4: Supply Chain Scope 3 Signal
-
-**What it does**: On the result screen after invoice processing, if the invoice has a buyer GSTIN (already extracted by OCR as `buyerGstin`), show a banner: "This data can serve as Scope 3 evidence for [Buyer Company]. Share to gain Preferred Supplier status." 
-
-This turns the existing OCR output into a supply-chain transparency signal without building any new infrastructure. It's a display-only feature that educates MSMEs on the value chain.
-
-**Integration point**: Existing `ResultState.tsx` component.
-
-
-| File                             | Change                                                           |
-| -------------------------------- | ---------------------------------------------------------------- |
-| `src/components/ResultState.tsx` | EDIT: Add Scope 3 supply chain signal when buyerGstin is present |
-
+Articles have visual breadcrumbs but no JSON-LD `BreadcrumbList` schema. This prevents Google from understanding the site hierarchy and displaying breadcrumbs in search results.
 
 ---
+
+## Fix Plan (Ordered by Impact)
+
+### Fix 1: Add Pre-rendering for SEO-Critical Pages (HIGHEST IMPACT)
+
+Since this is a Vite SPA without SSR capability, implement a **build-time pre-rendering** solution using `vite-plugin-prerender` (or similar) to generate static HTML for all public pages at build time.
+
+**Alternative (simpler)**: Create a Vite plugin or post-build script that generates static HTML snapshots for the ~220 public URLs. Each snapshot contains the correct `<title>`, `<meta>`, structured data, and visible text content in the initial HTML.
+
+**Simplest viable fix**: Since we can't add SSR to this stack, create a **meta tag injection** approach: move all per-page meta tags into the static HTML via a build-time script, or use the edge function approach to serve different `<head>` content based on the URL path (detect crawler user-agents and serve pre-rendered HTML).
+
+**Recommended approach for this platform**: Create an edge function `serve-seo` that detects bot user-agents and returns pre-rendered HTML with correct meta tags, or implement `react-snap` for build-time static generation.
+
+**File**: New edge function or Vite plugin configuration
+
+### Fix 2: Fix `index.html` Duplicate Meta Tags
+
+Remove the hardcoded `<title>`, `og:title`, `og:description`, `twitter:title`, `twitter:description` from `index.html` lines 162-165. These duplicate and conflict with the `<head>` tags above. Keep only ONE set of defaults.
+
+Also, the `og:title` and `twitter:title` on lines 162-163 have `&amp;` HTML entities that render as literal `&amp;` in some parsers.
+
+**File**: `index.html`
+
+### Fix 3: Clean Up Sitemap
+
+- Remove auth-required pages (`/dashboard`, `/verify`, `/monetize`, `/reports`, `/intelligence`, `/marketplace`, `/mrv-dashboard`, `/partner-dashboard`, etc.)
+- Keep ONLY public-facing pages: `/`, `/about`, `/mission`, `/pricing`, `/contact`, `/principles`, `/climate-intelligence/*`, `/industries/*`, `/vs/*`, `/legal/*`, `/carbon-credits`, `/climate-finance`, `/partners`, `/grants`
+- Update all `lastmod` dates to today's date
+- Add the missing `/vs/*` competitor pages to sitemap
+- Add the `/grants` page
+
+**File**: `public/sitemap.xml`
+
+### Fix 4: Add Google Search Console Verification
+
+Add a GSC verification meta tag to `index.html`. The user needs to create a GSC property for `senseible.earth` and provide the verification code.
+
+**File**: `index.html` (add meta tag)
+
+HTML tag from google search console: <meta name="google-site-verification" content="8sZkYxQtPsntdVCsA6GZIl_P_ITofBHL8tQInVaWQ-8" />  
+Update HTML tag for better ranking on platform/ site without error or hallucination on expertise level
+
+### Fix 5: Add `BreadcrumbList` JSON-LD to Article Pages
+
+Add structured data for breadcrumbs on CMS articles: `Home > Climate Intelligence > [Category] > [Article Title]`
+
+**File**: `src/pages/CMSArticle.tsx`
+
+### Fix 6: Add `BreadcrumbList` to Industry Pages
+
+`Home > Industries > [Industry Name]`
+
+**File**: `src/pages/Industries.tsx`
+
+### Fix 7: Align `robots.txt` with Sitemap
+
+Ensure every URL in sitemap is crawlable per robots.txt. Currently `/dashboard`, `/verify` etc. are in sitemap but blocked by robots.txt. After Fix 3 removes them from sitemap, this resolves automatically.
+
+### Fix 8: Add `hreflang` for India/English
+
+Since the platform targets India + EU, add `hreflang="en-in"` as default and `x-default`.
+
+**File**: `index.html`, `src/components/SEOHead.tsx`
+
+---
+
+## Files Summary
+
+
+| File                         | Change                                                                     | Priority |
+| ---------------------------- | -------------------------------------------------------------------------- | -------- |
+| `index.html`                 | Remove duplicate meta tags, add GSC verification placeholder, add hreflang | Critical |
+| `public/sitemap.xml`         | Remove auth pages, update lastmod, add missing pages                       | Critical |
+| `src/components/SEOHead.tsx` | Add BreadcrumbList JSON-LD support, hreflang                               | High     |
+| `src/pages/CMSArticle.tsx`   | Add BreadcrumbList structured data                                         | High     |
+| `src/pages/Industries.tsx`   | Add BreadcrumbList structured data                                         | High     |
+| `public/robots.txt`          | Minor cleanup (already mostly correct)                                     | Medium   |
+
 
 ## What Does NOT Change
 
-- OCR pipeline, deterministic MRV math, emission factors
-- Database schema (no new tables or migrations)
-- Authentication, RLS policies, security model
-- Existing page layouts, navigation structure
-- Enterprise mode, partner ecosystem
-- Homepage upload flow, voice input
-- Any existing text or feature labels
+- Page content, CMS articles, or article text
+- Navigation structure or routing
+- Existing structured data (FAQPage, Organization, WebSite schemas)
+- Any backend logic, MRV pipeline, or database
 
-## Technical Details
+## Important Note for the User
 
-### IndiaAIBadge SVG Structure
+**The single biggest issue is that this is a client-side SPA.** Google may eventually render and index JS-rendered pages, but for a new domain it can take 6+ months. The fixes above maximize what can be done without SSR. To truly rank #1, the platform will eventually need either:
 
-```text
-        Petal (saffron gradient)
-           ╲    ╱
-    Petal ── ◉ ── Petal (green)
-   (navy)  ╱ AI ╲
-         Petal (brand)
-  
-  8 petals with curved bezier paths
-  Neural synapses as animated dashed lines
-  Center: geometric "eye" (two overlapping arcs)
-  CSS: breathe animation (scale 0.97-1.03, 4s)
-       synapse flow (stroke-dashoffset, 8s)
-```
+1. **Pre-rendering at build time** (e.g., `react-snap`, `vite-plugin-prerender`)
+2. **A CDN-level bot detection layer** that serves cached/pre-rendered HTML to crawlers
 
-### Credibility Score Computation
+The meta tag and sitemap fixes are immediate wins that unblock indexing. The structured data fixes improve how pages appear once indexed.
 
-```text
-score = (0.30 * avgVerificationScore) 
-      + (0.25 * greenBenefitRatio * 100)
-      + (0.25 * dataCompletenessRatio * 100)
-      + (0.20 * min(verifiedDocCount / 50, 1) * 100)
-```
+After implementing these fixes, the user should:
 
-### Gov-Compliance Field Mapping
-
-```text
-GCP Format:
-  activity_type -> emission_category
-  evidence_hash -> document_hash  
-  state_code -> gstin[0:2]
-  quantity_unit -> activity_unit
-  verified_co2 -> co2_kg
-  methodology -> methodology_version
-  
-BRSR Format:
-  scope -> scope
-  category -> emission_category
-  total_emissions_tco2e -> co2_kg / 1000
-  data_source -> factor_source
-  reporting_period -> fiscal_year + fiscal_quarter
-```
-
-## Files Summary (10 files)
-
-
-| File                                                  | Action                                              |
-| ----------------------------------------------------- | --------------------------------------------------- |
-| `src/components/IndiaAIBadge.tsx`                     | REWRITE: Neural Lotus design                        |
-| `src/lib/credibilityScore.ts`                         | CREATE: Credibility score calculator                |
-| `src/lib/govComplianceAdapter.ts`                     | CREATE: GCP/BRSR/CCTS field mappers                 |
-| `src/components/dashboard/VerificationStatusCard.tsx` | EDIT: Add Credibility Score                         |
-| `src/pages/Monetize.tsx`                              | EDIT: Dynamic eligibility + Green Invoice Factoring |
-| `src/hooks/useComplianceLedger.ts`                    | EDIT: Add gov-compliance export                     |
-| `src/pages/Reports.tsx`                               | EDIT: Gov-Ready Export dropdown                     |
-| `src/components/ResultState.tsx`                      | EDIT: Scope 3 supply chain signal                   |
-| `src/pages/Index.tsx`                                 | EDIT: Updated tagline text size (minor)             |
-| `src/pages/About.tsx`                                 | EDIT: Updated tagline text size (minor)             |
+1. Create a Google Search Console property for `senseible.earth`
+2. Submit the cleaned sitemap
+3. Request indexing for the homepage and top 10 pages
+4. Set up Bing Webmaster Tools similarly
