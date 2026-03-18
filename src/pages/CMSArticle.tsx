@@ -73,6 +73,12 @@ const CMSArticle = () => {
           author: 'Senseible',
           tags: article.tags
         }}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Climate Intelligence', url: '/climate-intelligence' },
+          { name: article.subtitle, url: `/climate-intelligence?category=${encodeURIComponent(article.category)}` },
+          { name: article.title, url: `/climate-intelligence/${slug}` }
+        ]}
       />
       <MinimalNav />
       

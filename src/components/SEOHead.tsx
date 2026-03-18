@@ -1,5 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
 interface SEOHeadProps {
   title: string;
   description: string;
@@ -14,6 +19,7 @@ interface SEOHeadProps {
     tags?: string[];
   };
   noIndex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 export const SEOHead = ({
@@ -25,19 +31,19 @@ export const SEOHead = ({
   keywords = [],
   article,
   noIndex = false,
+  breadcrumbs,
 }: SEOHeadProps) => {
   const fullTitle = title.includes('Senseible') ? title : `${title} | Senseible`;
   const siteUrl = 'https://senseible.earth';
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
   
-  // Base keywords always included (helps with brand misspellings)
+  // Base keywords always included
   const baseKeywords = [
     'senseible', 'sensible', 'senseible.earth', 'senseible carbon',
     'carbon accounting', 'carbon MRV', 'carbon credits', 'climate finance',
     'green loans', 'CBAM compliance', 'ESG reporting', 'MSME sustainability'
   ];
   
-  // Combine base keywords with page-specific keywords
   const allKeywords = [...new Set([...baseKeywords, ...keywords])].join(', ');
 
   // Organization schema
@@ -50,12 +56,8 @@ export const SEOHead = ({
     "description": "AI-driven carbon infrastructure converting MSME operational data into verified, regulation-ready carbon outcomes across India and the EU.",
     "areaServed": ["India", "European Union", "Southeast Asia", "Middle East"],
     "knowsAbout": [
-      "Carbon MRV",
-      "Carbon Accounting",
-      "Carbon Credits",
-      "CBAM",
-      "ESG Compliance",
-      "Green Finance"
+      "Carbon MRV", "Carbon Accounting", "Carbon Credits",
+      "CBAM", "ESG Compliance", "Green Finance"
     ],
     "sameAs": [
       "https://www.linkedin.com/company/senseible/",
@@ -127,6 +129,18 @@ export const SEOHead = ({
     "keywords": article.tags?.join(', ')
   } : null;
 
+  // BreadcrumbList schema
+  const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": `${siteUrl}${crumb.url}`
+    }))
+  } : null;
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -138,6 +152,10 @@ export const SEOHead = ({
       
       {/* Canonical URL */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      
+      {/* hreflang */}
+      {canonicalUrl && <link rel="alternate" hreflang="en-in" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -175,6 +193,11 @@ export const SEOHead = ({
       {articleSchema && (
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
+        </script>
+      )}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
     </Helmet>
