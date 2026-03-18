@@ -154,8 +154,8 @@ export const SEOHead = ({
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
       {/* hreflang */}
-      {canonicalUrl && <link rel="alternate" hreflang="en-in" href={canonicalUrl} />}
-      {canonicalUrl && <link rel="alternate" hreflang="x-default" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang="en-in" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />}
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
