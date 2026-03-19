@@ -82,9 +82,12 @@ const MRVDashboard = () => {
     fetchVerifications();
   }, [sessionId, user?.id]);
 
-  // Real-time subscription for verifications
+  // Real-time subscription for verifications (filtered by user/session)
   useEffect(() => {
     if (!user?.id && !sessionId) return;
+
+    const filterCol = user?.id ? 'user_id' : 'session_id';
+    const filterVal = user?.id || sessionId;
 
     const channel = supabase
       .channel('verifications-realtime')
@@ -94,6 +97,7 @@ const MRVDashboard = () => {
           event: '*',
           schema: 'public',
           table: 'carbon_verifications',
+          filter: `${filterCol}=eq.${filterVal}`,
         },
         (payload) => {
           console.log('Verification update received:', payload.eventType);
