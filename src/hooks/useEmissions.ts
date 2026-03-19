@@ -130,10 +130,13 @@ export function useEmissions() {
     fetchEmissions();
   }, [fetchEmissions]);
 
-  // Real-time subscription for emissions updates
+  // Real-time subscription for emissions updates (filtered by user/session)
   useEffect(() => {
     if (sessionLoading) return;
     if (!user && !sessionId) return;
+
+    const filterCol = user?.id ? 'user_id' : 'session_id';
+    const filterVal = user?.id || sessionId;
 
     const channel = supabase
       .channel('emissions-realtime')
@@ -143,6 +146,7 @@ export function useEmissions() {
           event: '*',
           schema: 'public',
           table: 'emissions',
+          filter: `${filterCol}=eq.${filterVal}`,
         },
         (payload) => {
           console.log('Emissions update received:', payload.eventType);
