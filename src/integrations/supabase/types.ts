@@ -737,6 +737,51 @@ export type Database = {
           },
         ]
       }
+      net_zero_goals: {
+        Row: {
+          baseline_co2_kg: number
+          created_at: string | null
+          id: string
+          progress_pct: number | null
+          roadmap: Json | null
+          sector: string | null
+          status: string | null
+          target_date: string
+          target_reduction_pct: number
+          tasks: Json | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          baseline_co2_kg: number
+          created_at?: string | null
+          id?: string
+          progress_pct?: number | null
+          roadmap?: Json | null
+          sector?: string | null
+          status?: string | null
+          target_date: string
+          target_reduction_pct: number
+          tasks?: Json | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          baseline_co2_kg?: number
+          created_at?: string | null
+          id?: string
+          progress_pct?: number | null
+          roadmap?: Json | null
+          sector?: string | null
+          status?: string | null
+          target_date?: string
+          target_reduction_pct?: number
+          tasks?: Json | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       organization_members: {
         Row: {
           created_at: string | null

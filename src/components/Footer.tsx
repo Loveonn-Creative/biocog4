@@ -37,6 +37,8 @@ const footerLinks = {
     { name: 'Green Loans', path: '/climate-finance' },
     { name: 'Industries', path: '/industries' },
     { name: 'Carbon Credits', path: '/carbon-credits' },
+    { name: 'CBAM Calculator', path: '/cbam-calculator' },
+    { name: 'Net-Zero Engine', path: '/net-zero' },
   ],
   company: [
     { name: 'Mission', path: '/mission' },

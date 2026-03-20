@@ -48,6 +48,8 @@ const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
 const PartnerReports = lazy(() => import("./pages/PartnerReports"));
 const CompetitorComparison = lazy(() => import("./pages/CompetitorComparison"));
 const Grants = lazy(() => import("./pages/Grants"));
+const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
+const NetZero = lazy(() => import("./pages/NetZero"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -117,6 +119,8 @@ const App = () => (
               <Route path="/partner-reports" element={<PartnerReports />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
+              <Route path="/cbam-calculator" element={<CBAMCalculator />} />
+              <Route path="/net-zero" element={<NetZero />} />
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
