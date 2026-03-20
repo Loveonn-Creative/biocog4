@@ -50,6 +50,18 @@ const routes = [
     keywords: 'carbon accounting pricing, MSME carbon plans, green finance pricing',
   },
   {
+    path: '/cbam-calculator',
+    title: 'CBAM Calculator — EU Carbon Border Tax Cost Estimator | Senseible',
+    description: 'Free CBAM cost estimator for EU importers. Calculate carbon border tax exposure for steel, aluminium, cement, fertilizers from India. 2026-2034 projections.',
+    keywords: 'CBAM calculator, CBAM cost estimator, EU carbon border tax, CBAM India',
+  },
+  {
+    path: '/net-zero',
+    title: 'Net-Zero Goal Engine — MSME Decarbonization Roadmap | Senseible',
+    description: 'Build your net-zero roadmap in 5 steps. Set science-based targets, get reduction strategies, and track real progress. Built for MSMEs.',
+    keywords: 'net zero MSME, MSME decarbonization, net zero roadmap India, SBTi MSME',
+  },
+  {
     path: '/contact',
     title: 'Contact Senseible — Get Help with Carbon Accounting',
     description: 'Reach out for partnerships, enterprise queries, or support. Based in Gurugram, serving MSMEs across India and the EU.',
