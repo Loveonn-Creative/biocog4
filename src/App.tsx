@@ -119,6 +119,8 @@ const App = () => (
               <Route path="/partner-reports" element={<PartnerReports />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
+              <Route path="/cbam-calculator" element={<CBAMCalculator />} />
+              <Route path="/net-zero" element={<NetZero />} />
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
