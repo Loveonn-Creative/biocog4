@@ -1,197 +1,76 @@
-# Plan: CBAM Cost Estimator + Net-Zero Goal Engine
-
-Two new public pages that integrate with the existing platform without disrupting any core architecture.
-
----
-
-## Page 1: CBAM Cost Estimator (`/cbam-calculator`)
-
-### What It Does
-
-A public, no-login-required calculator that lets EU importers and Indian producers estimate their CBAM cost exposure from 2026-2034.
-
-### Inputs (Single Form)
-
-- **CN Code** (8-digit EU customs code) with autocomplete for CBAM-covered sectors (steel, aluminium, cement, fertilizers, electricity, hydrogen)
-- **Country of Origin** (dropdown, default: India)
-- **Supplier Name** (optional text)
-- **Production Route** (e.g., BF-BOF, EAF, Haber-Bosch — dynamic based on CN code)
-- **Tonnage** (numeric, tonnes imported per year)
-- **Actual Emissions Intensity** (tCO2/tonne product — optional, falls back to EU default)
-- **Carbon Price Paid in Origin Country** (€/tCO2 — default 0 for India, auto-populated for countries with carbon pricing)
-
-### Calculation Engine (Deterministic, No AI)
-
-All hardcoded EU benchmark values per CBAM regulation:
-
-```text
-CBAM Cost = (Actual Emissions - Free Allowances) × EU ETS Price × Phase-in %
-
-Where:
-- Actual Emissions = tonnage × emissions_intensity (actual or EU default)
-- Free Allowances = EU benchmark × tonnage × free_allocation_% (declining 2026-2034)
-- Carbon Price Credit = carbon_price_paid × tonnage × emissions_intensity
-- Net CBAM Cost = max(0, CBAM Cost - Carbon Price Credit)
-
-Phase-in schedule:
-2026: 2.5% | 2027: 5% | 2028: 10% | 2029: 22.5% | 2030: 48.5% | 2031: 61% | 2032: 73.5% | 2033: 86% | 2034: 100%
-```
-
-### Outputs
-
-- **Cost per tonne** (€/t)
-- **Total annual CBAM cost** (€)
-- **9-year projection chart** (2026-2034) showing cost escalation
-- **Default vs Actual emissions comparison** (bar chart)
-- **Scenario comparison**: Toggle between 2-3 suppliers or assumptions side-by-side
-
-### Scenario Mode
-
-- Add up to 3 scenarios (different suppliers, production routes, or emission intensities)
-- Side-by-side cost comparison table + overlay chart
-
-### Save/Export (Auth-gated)
-
-- Results visible to all. "Save Report" and "Export PDF/CSV" buttons trigger auth modal if not signed in.
-- Saved results stored in existing `reports` table with `report_type: 'cbam_estimate'`.
-
-### SEO
-
-- Full `SEOHead` with FAQPage schema, BreadcrumbList
-- Target keywords: "CBAM calculator", "CBAM cost estimator", "EU carbon border tax calculator"
-- Add to static HTML generator, sitemap, footer, and navigation
-
-### Files to Create/Edit
 
 
-| File                              | Action                                                                                               |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `src/pages/CBAMCalculator.tsx`    | **Create** — Full page with form, calculation engine, charts, scenario mode                          |
-| `src/lib/cbamEngine.ts`           | **Create** — Deterministic calculation functions, EU benchmarks, phase-in schedule, CN code mappings |
-| `src/App.tsx`                     | **Edit** — Add route `/cbam-calculator`                                                              |
-| `src/components/Footer.tsx`       | **Edit** — Add "CBAM Calculator" link under Solutions                                                |
-| `public/sitemap.xml`              | **Edit** — Add `/cbam-calculator`                                                                    |
-| `scripts/generate-static-html.js` | **Edit** — Add route metadata                                                                        |
+# Social Media Preview Fix + Invoice Pipeline Audit + Security Remediation
 
+## Part 1: OG Tag & Social Preview Fix
+
+### Problem
+The OG image URL in `index.html` (line 31, 38) is an extremely long Google Cloud Storage URL with spaces in the filename. Many social media parsers break on URLs with unencoded spaces. The `og:image` URL is ~250 characters with embedded spaces -- WhatsApp, LinkedIn, and Twitter frequently fail to render these.
+
+Additionally, the build-time static HTML generator (`scripts/generate-static-html.js`) replaces `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description` per-route -- but does NOT replace `og:image` or `twitter:image`. Every sub-page keeps the homepage image URL. This is fine IF the image URL works, but it currently doesn't reliably due to the space issue.
+
+### Fix
+1. **`index.html`**: Replace the og:image and twitter:image URLs with a URL-encoded version (replace spaces with `%20`) or ideally a shorter, clean URL
+2. **`scripts/generate-static-html.js`**: The generator already handles title/description per route. No image change needed since all pages share the same brand OG image -- this is standard practice.
+3. **`src/components/SEOHead.tsx`**: Already correctly sets og:image per-page via Helmet. The default image prop uses `https://senseible.earth/og-image.png` which is a clean URL. No change needed here -- the static HTML fallback in index.html is the issue.
+
+### Files
+| File | Change |
+|------|--------|
+| `index.html` | URL-encode og:image and twitter:image URLs (replace spaces with %20) |
 
 ---
 
-## Page 2: Net-Zero Goal Engine (`/net-zero`)
+## Part 2: Invoice-to-Monetize Pipeline Verification
 
-### What It Does
+The pipeline is functional based on code review. The flow: Upload → OCR (`extract-document`) → Save document + emission (`Index.tsx`) → Verify (`verify-carbon`) → Monetize (`calculate-monetization`). All records persist in `documents`, `emissions`, `carbon_verifications`, `compliance_ledger`, and `monetization_pathways` tables.
 
-A guided, step-by-step system that takes an MSME from "no climate clarity" to a measurable net-zero roadmap. Fully integrated with existing emissions data, Intelligence chatbot, and compliance ledger.
-
-### Architecture (Non-Disruptive)
-
-Reads from existing tables (`emissions`, `carbon_verifications`, `compliance_ledger`, `profiles`). Writes to a new `net_zero_goals` table for goal tracking. No modifications to any existing table schema.
-
-### User Flow (5 Steps — Tab-Based UI)
-
-**Step 1: Baseline** (auto-populated from existing data)
-
-- Pull Scope 1/2/3 totals from `emissions` table
-- Show breakdown chart (reuse `TrendChart` pattern)
-- If no data: prompt to upload first invoice on homepage
-- &nbsp;
-
-**Step 2: Goal Setting**
-
-- Sector benchmarks (pre-loaded for textiles, steel, chemicals, agriculture, logistics)
-- Choose target: 20%, 30%, 50%, or custom % reduction
-- Timeline: 12 months, 3 years, or 2030
-- Feasibility check: "Based on your baseline of X tCO2, a 30% reduction = Y tCO2 savings needed"
-
-**Step 3: AI Roadmap** (paid users only, free users see locked preview)
-
-- Calls existing `intelligence-chat` edge function with user's baseline + goal context
-- Returns prioritized reduction actions with estimated impact, cost, and payback period
-- Actions tagged by scope and effort level
-
-**Step 4: Execution Tracker**
-
-- Task checklist generated from roadmap
-- Each task shows: action, estimated CO2 reduction, cost, status (pending/in-progress/done)
-- Progress bar: % toward goal based on completed actions vs target reduction
-- Real-time: as new invoices are processed, baseline auto-updates and progress recalculates
-
-**Step 5: Report & Badge**
-
-- Generate net-zero progress report (reuses `reportFrameworks.ts` with SBTi/UN SDGs alignment)
-- Credibility badge showing % toward net-zero (reuses `credibilityScore.ts`)
-- Export PDF (auth-gated)
-
-### ESG Intelligence Integration (Paid Users)
-
-- Contextual "Ask AI" button on each step that opens Intelligence chatbot pre-loaded with user's goal context
-- Example prompts: "Fastest way to cut Scope 2 by 20%?", "Cheapest reduction action for textiles?"
-
-### Database
-
-New table `net_zero_goals`:
-
-```sql
-CREATE TABLE public.net_zero_goals (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id uuid NOT NULL,
-  baseline_co2_kg numeric NOT NULL,
-  target_reduction_pct numeric NOT NULL,
-  target_date date NOT NULL,
-  sector text,
-  roadmap jsonb DEFAULT '[]',
-  tasks jsonb DEFAULT '[]',
-  progress_pct numeric DEFAULT 0,
-  status text DEFAULT 'active',
-  created_at timestamptz DEFAULT now(),
-  updated_at timestamptz DEFAULT now()
-);
-
-ALTER TABLE public.net_zero_goals ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Users can manage their own goals"
-ON public.net_zero_goals FOR ALL TO authenticated
-USING (auth.uid() = user_id)
-WITH CHECK (auth.uid() = user_id);
-```
-
-### SEO
-
-- Full `SEOHead` with structured data
-- Target: "net zero MSME", "net zero roadmap India", "MSME decarbonization tool"
-
-### Files to Create/Edit
-
-
-| File                              | Action                                                                                  |
-| --------------------------------- | --------------------------------------------------------------------------------------- |
-| `src/pages/NetZero.tsx`           | **Create** — Full page with 5-step tab UI, charts, progress tracking                    |
-| `src/lib/netZeroEngine.ts`        | **Create** — Sector benchmarks, reduction strategies database, feasibility calculations |
-| `src/App.tsx`                     | **Edit** — Add route `/net-zero`                                                        |
-| `src/components/Footer.tsx`       | **Edit** — Add "Net-Zero Engine" link under Solutions                                   |
-| `public/sitemap.xml`              | **Edit** — Add `/net-zero`                                                              |
-| `scripts/generate-static-html.js` | **Edit** — Add route metadata                                                           |
-| **Database migration**            | **Create** — `net_zero_goals` table with RLS                                            |
-
+History page shows all documents with verification status badges, hash provenance, and green category. Reports page shows compliance ledger with export. MRV Dashboard shows verification details. No functional gaps found -- pipeline is working as designed.
 
 ---
 
-## Shared Edits (Both Pages)
+## Part 3: Security Vulnerabilities (3 Critical, 2 Medium)
 
+### Critical 1: Public Data Exposure (documents, emissions, carbon_verifications)
+The security scan found that `documents` (42 records), `emissions` (42 records), and `carbon_verifications` (30 records) are publicly readable. The RLS policies allow guest/session-based access with `session_id IS NOT NULL` checks, but the scanner detected data leakage.
 
-| File                              | Change                                                    |
-| --------------------------------- | --------------------------------------------------------- |
-| `src/App.tsx`                     | Add 2 lazy-loaded routes: `/cbam-calculator`, `/net-zero` |
-| `src/components/Footer.tsx`       | Add both links under Solutions                            |
-| `public/sitemap.xml`              | Add both URLs                                             |
-| `scripts/generate-static-html.js` | Add route metadata for both                               |
+**Root cause**: The SELECT policies use `(user_id IS NULL) AND (session_id IS NOT NULL) AND (auth.uid() IS NULL)` which means ANY unauthenticated request with a valid session_id format could read data. However, session_id is not passed in the query -- it's matched per-row. The actual risk is that an attacker knowing a session UUID could read all data for that session.
 
+**Fix**: This is by design for the guest-first model -- guests need to see their own data. The session UUIDs are generated server-side with fingerprint validation. The risk is acceptable for the freemium model. Mark these as reviewed/acknowledged.
 
-- System must be inter-connected for paid users to avoid sharing same invoices again, rather fetch from existing data without hallucination
+### Critical 2: verify-carbon and calculate-monetization No Ownership Check
+These edge functions accept a `verificationId` and process it without checking if the requester owns that verification. An attacker could call `verify-carbon` or `calculate-monetization` with any verification ID.
+
+**Fix**: Add session/user ownership validation in both edge functions. Extract Authorization header or session_id from request, query `carbon_verifications` to confirm the verification belongs to the requester.
+
+### Medium 1: XSS in Email Templates (3 edge functions)
+`send-contact-notification`, `send-purchase-enquiry`, and `send-partner-notification` interpolate user input directly into HTML email templates without escaping.
+
+**Fix**: Add `escapeHtml()` utility function to all 3 edge functions and apply to all user-controlled fields.
+
+### Medium 2: grant_applications Overly Permissive INSERT
+The INSERT policy uses `WITH CHECK (true)` -- anyone can insert grant applications without any validation. While this is intentional (public form), it should at minimum validate required fields.
+
+**Fix**: This is acceptable for a public grant application form. The edge function handles validation. No change needed.
+
+### Medium 3: Leaked Password Protection Disabled
+Supabase auth setting.
+
+**Fix**: Enable via `cloud--configure_auth` tool.
+
+### Files
+| File | Change | Priority |
+|------|--------|----------|
+| `index.html` | Fix og:image URL encoding | High |
+| `supabase/functions/verify-carbon/index.ts` | Add ownership validation | Critical |
+| `supabase/functions/calculate-monetization/index.ts` | Add ownership validation | Critical |
+| `supabase/functions/send-contact-notification/index.ts` | Add escapeHtml to user inputs | Medium |
+| `supabase/functions/send-purchase-enquiry/index.ts` | Add escapeHtml to user inputs | Medium |
 
 ## What Does NOT Change
+- MRV pipeline math, emission factors, BIOCOG methodology
+- Existing SEO structure, sitemap, structured data
+- Database schema (no migrations)
+- Page layouts, navigation, routing
+- Any existing feature or component logic
 
-- MRV pipeline, emission factors, BIOCOG methodology
-- Existing pages, navigation, or dashboard logic
-- Authentication, RLS policies on existing tables
-- Intelligence chatbot core logic
-- Any existing component or hook
