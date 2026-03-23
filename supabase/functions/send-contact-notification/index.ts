@@ -24,6 +24,11 @@ const categoryLabels: Record<string, string> = {
   general: 'General Inquiry',
 };
 
+function escapeHtml(str: string | undefined | null): string {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 const handler = async (req: Request): Promise<Response> => {
   console.log("Contact notification function called");
   
@@ -32,9 +37,16 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, phone, company, category, message, newsletter }: ContactRequest = await req.json();
+    const rawBody: ContactRequest = await req.json();
+    const name = escapeHtml(rawBody.name);
+    const email = escapeHtml(rawBody.email);
+    const phone = escapeHtml(rawBody.phone);
+    const company = escapeHtml(rawBody.company);
+    const category = escapeHtml(rawBody.category);
+    const message = escapeHtml(rawBody.message);
+    const newsletter = rawBody.newsletter;
     
-    console.log("Processing contact from:", name, email, "Category:", category);
+    console.log("Processing contact from:", name, "Category:", category);
 
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {

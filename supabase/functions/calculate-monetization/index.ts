@@ -66,7 +66,7 @@ serve(async (req) => {
   }
 
   try {
-    const { verificationId }: MonetizationRequest = await req.json();
+    const { verificationId, userId, sessionId }: MonetizationRequest & { userId?: string; sessionId?: string } = await req.json();
 
     if (!verificationId) {
       return new Response(
@@ -91,6 +91,20 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ error: 'Verification not found' }),
         { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // ============= OWNERSHIP VALIDATION =============
+    const ownerMatch = userId
+      ? verification.user_id === userId
+      : sessionId
+        ? verification.session_id === sessionId
+        : false;
+    if (!ownerMatch) {
+      console.error('Ownership mismatch on verification', verificationId);
+      return new Response(
+        JSON.stringify({ error: 'Access denied: you do not own this verification' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
