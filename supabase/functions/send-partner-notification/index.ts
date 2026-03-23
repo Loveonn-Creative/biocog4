@@ -14,13 +14,21 @@ interface PartnerNotificationRequest {
   decision: "approved" | "rejected";
 }
 
+function escapeHtml(str: string | undefined | null): string {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { email, organization_name, decision }: PartnerNotificationRequest = await req.json();
+    const rawBody: PartnerNotificationRequest = await req.json();
+    const email = rawBody.email;
+    const organization_name = escapeHtml(rawBody.organization_name);
+    const decision = rawBody.decision;
 
     if (!email || !organization_name || !decision) {
       throw new Error("Missing required fields: email, organization_name, decision");

@@ -30,16 +30,30 @@ interface PurchaseEnquiry {
   message?: string;
 }
 
+function escapeHtml(str: string | undefined | null): string {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { listing, buyer, requestedQuantity, message }: PurchaseEnquiry = await req.json();
+    const rawBody: PurchaseEnquiry = await req.json();
+    const listing = rawBody.listing;
+    const buyer = {
+      name: escapeHtml(rawBody.buyer?.name),
+      email: escapeHtml(rawBody.buyer?.email),
+      company: escapeHtml(rawBody.buyer?.company),
+      phone: escapeHtml(rawBody.buyer?.phone),
+    };
+    const requestedQuantity = rawBody.requestedQuantity;
+    const message = escapeHtml(rawBody.message);
 
     // Validate required fields
-    if (!listing?.id || !buyer?.email || !requestedQuantity) {
+    if (!listing?.id || !rawBody.buyer?.email || !requestedQuantity) {
       throw new Error("Missing required fields: listing, buyer email, or quantity");
     }
 

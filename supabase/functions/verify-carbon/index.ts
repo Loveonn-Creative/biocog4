@@ -252,7 +252,8 @@ serve(async (req) => {
 
     console.log('Starting verification for emissions:', emissionIds);
 
-    // Fetch emissions data with documents
+    // ============= OWNERSHIP VALIDATION =============
+    // Ensure the requester owns the emissions being verified
     const { data: emissions, error: emissionsError } = await supabase
       .from('emissions')
       .select('*, documents(*)')
@@ -264,6 +265,22 @@ serve(async (req) => {
         JSON.stringify({ error: 'Failed to fetch emissions data' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
+    }
+
+    // Validate ownership: all emissions must belong to the same user/session
+    for (const emission of emissions) {
+      const ownerMatch = userId
+        ? emission.user_id === userId
+        : sessionId
+          ? emission.session_id === sessionId
+          : false;
+      if (!ownerMatch) {
+        console.error('Ownership mismatch: emission', emission.id, 'does not belong to requester');
+        return new Response(
+          JSON.stringify({ error: 'Access denied: you do not own these emissions' }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
     }
 
     // Step 1: Validate each emission
