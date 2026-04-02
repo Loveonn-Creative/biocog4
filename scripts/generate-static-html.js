@@ -163,9 +163,19 @@ function getCMSArticleSlugs() {
     'steel-aluminum-exporters-cbam-compliance-checklist',
     '136-billion-india-eu-fta-msme-breakthrough',
     'survival-of-the-greenest-cbam-litmus-test',
-    'trading-air-for-assets-india-carbon-markets-eu-price',
-    'mother-of-all-deals-india-eu-msmes',
-    'great-diversification-india-eu-strategic-shield-tariff-wars',
+     'trading-air-for-assets-india-carbon-markets-eu-price',
+     'mother-of-all-deals-india-eu-msmes',
+     'great-diversification-india-eu-strategic-shield-tariff-wars',
+     'why-every-invoice-needs-trust-score',
+     'proof-graph-how-carbon-value-calculated',
+     'auto-validation-catches-gaps-before-submit',
+     'dynamic-benchmarking-400m-msmes',
+     'confidence-bands-beat-false-precision',
+     'see-carbon-revenue-before-verify',
+     'one-click-audit-trails-investors-need',
+     'dispute-simulation-auditor-challenge',
+     'manual-entry-carbon-data-error-source',
+     'greenwashing-flags-explainable-not-just-high-risk',
   ];
 }
 

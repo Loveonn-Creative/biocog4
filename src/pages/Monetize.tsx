@@ -63,7 +63,7 @@ const Monetize = () => {
   const { summary, getVerifiedEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const { activeContext } = useOrganization();
-  const { entries: ledgerEntries } = useComplianceLedger();
+  const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -485,21 +485,27 @@ const Monetize = () => {
               ))}
             </div>
 
-            {/* Help Section */}
+            {/* Audit Trail Export + Help Section */}
             <Card className="mt-8 bg-secondary/30">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-accent/10">
                     <Shield className="h-6 w-6 text-accent" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-semibold mb-1">How monetization works</h4>
                     <p className="text-sm text-muted-foreground mb-4">
                       Your verified carbon data is matched with buyers, lenders, and government programs. 
                       Each pathway has different requirements and timelines. Applications are processed 
                       through our partner network.
                     </p>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 flex-wrap">
+                      {ledgerEntries.length > 0 && (
+                        <Button variant="default" size="sm" onClick={exportComplianceXLSX} className="gap-2">
+                          <FileCheck className="h-4 w-4" />
+                          Export Investor-Ready Audit Trail
+                        </Button>
+                      )}
                       <Button variant="outline" size="sm" asChild>
                         <Link to="/reports">View Reports</Link>
                       </Button>
