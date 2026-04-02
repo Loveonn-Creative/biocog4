@@ -175,19 +175,22 @@ function validateEmission(emission: EmissionRecord): { valid: boolean; flags: st
   };
 }
 
-function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResults: Map<string, { flags: string[]; confidence: number }>): 'low' | 'medium' | 'high' {
+function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResults: Map<string, { flags: string[]; confidence: number }>): { risk: 'low' | 'medium' | 'high'; factors: string[] } {
   let riskScore = 0;
+  const factors: string[] = [];
   
   // Check for too many perfect numbers (suspicious)
   const perfectNumbers = emissions.filter(e => e.co2_kg === Math.round(e.co2_kg)).length;
   if (perfectNumbers / emissions.length > 0.8) {
     riskScore += 20;
+    factors.push(`${Math.round((perfectNumbers / emissions.length) * 100)}% of values are round numbers — unusual for real-world data`);
   }
   
   // Check for missing documentation
   const noDocumentation = emissions.filter(e => !e.documents?.invoice_number).length;
   if (noDocumentation / emissions.length > 0.5) {
     riskScore += 30;
+    factors.push(`${noDocumentation}/${emissions.length} records missing invoice documentation`);
   }
   
   // Check overall data quality
@@ -199,19 +202,27 @@ function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResult
   
   if (avgConfidence < 60) {
     riskScore += 30;
+    factors.push(`Average data confidence ${avgConfidence.toFixed(0)}% — below 60% threshold`);
   } else if (avgConfidence < 80) {
     riskScore += 15;
+    factors.push(`Average data confidence ${avgConfidence.toFixed(0)}% — moderate quality`);
   }
   
   // Check for consistent emission factors
-  const factors = new Set(emissions.map(e => e.emission_factor));
-  if (factors.size === 1 && emissions.length > 3) {
-    riskScore += 10; // Same factor for everything is suspicious
+  const factorSet = new Set(emissions.map(e => e.emission_factor));
+  if (factorSet.size === 1 && emissions.length > 3) {
+    riskScore += 10;
+    factors.push('Identical emission factor across all records — suggests generic classification');
   }
   
-  if (riskScore >= 50) return 'high';
-  if (riskScore >= 25) return 'medium';
-  return 'low';
+  let risk: 'low' | 'medium' | 'high';
+  if (riskScore >= 50) risk = 'high';
+  else if (riskScore >= 25) risk = 'medium';
+  else risk = 'low';
+  
+  if (factors.length === 0) factors.push('No specific risk triggers identified');
+  
+  return { risk, factors };
 }
 
 function calculateGreenScore(scopeBreakdown: { scope1: number; scope2: number; scope3: number }, reductions: number, total: number): number {
