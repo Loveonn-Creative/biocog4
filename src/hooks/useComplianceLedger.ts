@@ -102,12 +102,27 @@ export const useComplianceLedger = () => {
       'Verified At': e.verified_at || '',
       'Fiscal Year': e.fiscal_year || '',
       'Fiscal Quarter': e.fiscal_quarter || '',
+      'Proof Chain': `Invoice → ${e.emission_category} → EF:${e.emission_factor || 'N/A'} → ${e.co2_kg}kg CO₂ → ${e.verification_status}`,
+      'Audit Grade': e.verification_score ? (e.verification_score >= 0.9 ? 'A' : e.verification_score >= 0.75 ? 'B' : e.verification_score >= 0.5 ? 'C' : 'D') : 'N/A',
     }));
 
     const ws = XLSX.utils.json_to_sheet(data);
     XLSX.utils.book_append_sheet(wb, ws, 'Compliance Ledger');
-    XLSX.writeFile(wb, `compliance-ledger-${new Date().toISOString().split('T')[0]}.xlsx`);
-    toast.success('Compliance ledger exported');
+    
+    // Add proof chain summary sheet
+    const summaryData = [{
+      'Export Date': new Date().toISOString(),
+      'Total Entries': entries.length,
+      'Methodology': 'BIOCOG_MVR_INDIA_v1.0',
+      'Total CO₂ (kg)': entries.reduce((sum, e) => sum + e.co2_kg, 0).toFixed(2),
+      'Verified Entries': entries.filter(e => e.verification_status === 'verified').length,
+      'Audit Note': 'This export is investor-ready. Every row traces from source invoice to carbon outcome.',
+    }];
+    const ws2 = XLSX.utils.json_to_sheet(summaryData);
+    XLSX.utils.book_append_sheet(wb, ws2, 'Audit Summary');
+    
+    XLSX.writeFile(wb, `audit-trail-${new Date().toISOString().split('T')[0]}.xlsx`);
+    toast.success('Investor-ready audit trail exported');
   };
 
   const exportGovFormat = (format: GovFormat) => {

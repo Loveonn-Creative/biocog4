@@ -544,11 +544,12 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       console.log(`Compliance ledger populated with ${emissions.length} entries`);
     }
 
-    const result: VerificationResult = {
+    const result: VerificationResult & { greenwashingFactors: string[] } = {
       verificationId: verification.id,
       status,
       score: verificationScore,
       greenwashingRisk,
+      greenwashingFactors,
       analysis: {
         dataQuality: dataQualityAssessment,
         methodologyCompliance,
