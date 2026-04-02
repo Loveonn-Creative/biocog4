@@ -501,9 +501,7 @@ const Monetize = () => {
                     </p>
                     <div className="flex gap-3 flex-wrap">
                       {ledgerEntries.length > 0 && (
-                        <Button variant="default" size="sm" onClick={() => {
-                          const { exportComplianceXLSX } = require('@/hooks/useComplianceLedger');
-                        }} className="gap-2">
+                        <Button variant="default" size="sm" onClick={exportComplianceXLSX} className="gap-2">
                           <FileCheck className="h-4 w-4" />
                           Export Investor-Ready Audit Trail
                         </Button>
