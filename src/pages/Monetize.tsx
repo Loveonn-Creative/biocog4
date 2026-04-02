@@ -63,7 +63,7 @@ const Monetize = () => {
   const { summary, getVerifiedEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const { activeContext } = useOrganization();
-  const { entries: ledgerEntries } = useComplianceLedger();
+  const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
   const verified = getVerifiedEmissions();
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
