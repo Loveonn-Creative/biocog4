@@ -1,5 +1,9 @@
-import { Check, ArrowRight, Leaf, AlertTriangle, TreePine, Building2 } from "lucide-react";
+import { Check, ArrowRight, Leaf, AlertTriangle, TreePine, Building2, Shield, TrendingUp, Coins, Info } from "lucide-react";
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from "./GreenCategoryBadge";
+import { TrustScoreGauge } from "./trust/TrustScoreGauge";
+import { ConfidenceBand } from "./trust/ConfidenceBand";
+import { AutoValidation } from "./trust/AutoValidation";
+import { MonetizationPreview } from "./trust/MonetizationPreview";
 
 interface ExtractedData {
   documentType: string;
@@ -14,6 +18,7 @@ interface ExtractedData {
   totalCO2Kg?: number;
   confidence: number;
   validationFlags?: string[];
+  classificationMethod?: string;
 }
 
 interface ResultStateProps {
@@ -46,8 +51,6 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
             <Check className="w-7 h-7 text-success" strokeWidth={2.5} />
           </div>
         </div>
-        
-        {/* Celebration particles */}
         <div className="absolute -top-2 -right-2 w-3 h-3 rounded-full bg-success/30 animate-float" />
         <div className="absolute -bottom-1 -left-3 w-2 h-2 rounded-full bg-primary/30 animate-float delay-200" />
       </div>
@@ -55,6 +58,11 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
       {/* Green Category Badge */}
       {greenCategory && (
         <GreenCategoryBadge category={greenCategory} size="md" />
+      )}
+
+      {/* Innovation 1: Trust Score Gauge */}
+      {extractedData && (
+        <TrustScoreGauge extractedData={extractedData} />
       )}
 
       {/* Result message */}
@@ -87,6 +95,19 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         )}
       </div>
 
+      {/* Innovation 5: Confidence Band */}
+      {extractedData && extractedData.confidence !== undefined && (
+        <ConfidenceBand 
+          confidence={extractedData.confidence} 
+          classificationMethod={extractedData.classificationMethod}
+        />
+      )}
+
+      {/* Innovation 6: Real-time Monetization Preview */}
+      {co2Value !== 0 && !isGreenBenefit && (
+        <MonetizationPreview co2Kg={co2Value} />
+      )}
+
       {/* Validation Warnings */}
       {hasWarnings && (
         <div className="w-full p-3 rounded-lg bg-warning/10 border border-warning/30 space-y-2">
@@ -100,6 +121,11 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
             ))}
           </ul>
         </div>
+      )}
+
+      {/* Innovation 3: Auto-Validation Before Submission */}
+      {extractedData && (
+        <AutoValidation extractedData={extractedData} />
       )}
 
       {/* Extracted data summary */}
@@ -138,20 +164,6 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
               </div>
             )}
           </div>
-          
-          {extractedData.confidence !== undefined && (
-            <div className="pt-2 border-t border-border/50">
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Confidence</span>
-                <span className={`font-medium ${
-                  extractedData.confidence >= 80 ? 'text-success' : 
-                  extractedData.confidence >= 50 ? 'text-yellow-600' : 'text-destructive'
-                }`}>
-                  {Math.round(extractedData.confidence)}%
-                </span>
-              </div>
-            </div>
-          )}
         </div>
       )}
       
