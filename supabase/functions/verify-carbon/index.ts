@@ -330,7 +330,7 @@ serve(async (req) => {
     const carryForward = netTCO2e - creditsIssued;
 
     // Step 6: Determine greenwashing risk
-    const greenwashingRisk = calculateGreenwashingRisk(emissions, validationResults);
+    const { risk: greenwashingRisk, factors: greenwashingFactors } = calculateGreenwashingRisk(emissions, validationResults);
 
     // Step 7: Calculate green score
     const greenScore = calculateGreenScore(scopeBreakdown, verifiedReductions, totalCO2Kg);

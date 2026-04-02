@@ -3,8 +3,6 @@ import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
-import { Label } from '@/components/ui/label';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useOrganization } from '@/hooks/useOrganization';
 import { 
@@ -19,6 +17,11 @@ import { useSession } from '@/hooks/useSession';
 import { Helmet } from 'react-helmet-async';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseVerificationBadge } from '@/components/enterprise/EnterpriseVerificationBadge';
+import { ProofGraph } from '@/components/trust/ProofGraph';
+import { PeerBenchmark } from '@/components/trust/PeerBenchmark';
+import { DisputeSimulation } from '@/components/trust/DisputeSimulation';
+import { DataConnectors } from '@/components/trust/DataConnectors';
+import { GreenwashingExplainer } from '@/components/trust/GreenwashingExplainer';
 
 interface NavigationState {
   emissionId?: string;
@@ -32,6 +35,7 @@ interface VerificationResult {
   status: 'verified' | 'needs_review' | 'rejected';
   score: number;
   greenwashingRisk: 'low' | 'medium' | 'high';
+  greenwashingFactors?: string[];
   analysis: {
     dataQuality: string;
     methodologyCompliance: string;
@@ -52,6 +56,12 @@ interface VerificationResult {
   verifiedReductions: number;
 }
 
+interface MonetizationResult {
+  totalValue: number;
+  carbonCreditValue: number;
+  greenLoanSavings: number;
+}
+
 const Verify = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -63,11 +73,10 @@ const Verify = () => {
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
+  const [monetizationPreview, setMonetizationPreview] = useState<MonetizationResult | null>(null);
   
-  // Get unverified emissions, including just-uploaded data
   const unverified = getUnverifiedEmissions();
   
-  // If coming from upload with extracted data, create a temporary emission object
   const justUploadedEmission = useMemo(() => {
     if (navState?.fromUpload && navState?.extractedData && navState?.emissionId) {
       const data = navState.extractedData;
@@ -82,7 +91,6 @@ const Verify = () => {
     return null;
   }, [navState]);
   
-  // Combine database emissions with just-uploaded if not already present
   const effectiveUnverified = useMemo(() => {
     if (justUploadedEmission && !unverified.find(e => e.id === justUploadedEmission.id)) {
       return [justUploadedEmission, ...unverified];
@@ -90,7 +98,6 @@ const Verify = () => {
     return unverified;
   }, [unverified, justUploadedEmission]);
 
-  // Route protection: redirect partners to their dashboard
   useEffect(() => {
     if (activeContext?.context_type === 'partner') {
       toast.info('This feature is for MSMEs. Redirecting to Partner Dashboard.');
@@ -98,10 +105,26 @@ const Verify = () => {
     }
   }, [activeContext, navigate]);
 
+  // Speed optimization: auto-trigger monetization calculation after verification
+  useEffect(() => {
+    if (!verificationResult || verificationResult.status !== 'verified') return;
+    
+    const co2Tons = verificationResult.totalCO2Kg / 1000;
+    const carbonCreditValue = Math.round(co2Tons * 750);
+    const greenLoanSavings = Math.round(500000 * 0.005);
+    
+    setMonetizationPreview({
+      totalValue: carbonCreditValue + greenLoanSavings,
+      carbonCreditValue,
+      greenLoanSavings,
+    });
+  }, [verificationResult]);
+
   const handleVerify = async () => {
     if (effectiveUnverified.length === 0) return;
     setIsVerifying(true);
     setVerificationResult(null);
+    setMonetizationPreview(null);
     
     try {
       const { data, error } = await supabase.functions.invoke('verify-carbon', {
@@ -146,14 +169,7 @@ const Verify = () => {
     }
   };
 
-  const getRiskColor = (risk: string) => {
-    switch (risk) {
-      case 'low': return 'bg-success/10 text-success border-success/30';
-      case 'medium': return 'bg-warning/10 text-warning border-warning/30';
-      case 'high': return 'bg-destructive/10 text-destructive border-destructive/30';
-      default: return 'bg-muted text-muted-foreground';
-    }
-  };
+  const formatINR = (n: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
@@ -167,7 +183,6 @@ const Verify = () => {
           <p className="text-muted-foreground">AI-powered MRV to ensure accuracy and prevent greenwashing</p>
         </div>
         
-        {/* Enterprise Verification Badge */}
         {isEnterprise && <EnterpriseVerificationBadge />}
 
         {/* Verification Input Card */}
@@ -186,21 +201,8 @@ const Verify = () => {
                 {effectiveUnverified.length} records pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
               </p>
               
-              {/* IoT Toggle */}
-              <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/30 mb-4">
-                <div className="flex items-center gap-3">
-                  <TrendingUp className="h-5 w-5 text-primary" />
-                  <div>
-                    <Label htmlFor="iot-toggle" className="font-medium">Include IoT & Tech Efficiency</Label>
-                    <p className="text-xs text-muted-foreground">Apply efficiency gains from smart monitoring</p>
-                  </div>
-                </div>
-                <Switch 
-                  id="iot-toggle" 
-                  checked={includeIoT} 
-                  onCheckedChange={setIncludeIoT}
-                />
-              </div>
+              {/* Innovation 9: Data Connectors (replaces IoT toggle) */}
+              <DataConnectors includeIoT={includeIoT} onIoTChange={setIncludeIoT} />
             </div>
             
             {effectiveUnverified.length > 0 ? (
@@ -290,9 +292,14 @@ const Verify = () => {
                       <p className="text-sm text-muted-foreground">Verification Score: {(verificationResult.score * 100).toFixed(0)}%</p>
                     </div>
                   </div>
-                  <div className={`px-4 py-2 rounded-full border font-medium ${getRiskColor(verificationResult.greenwashingRisk)}`}>
-                    {verificationResult.greenwashingRisk.toUpperCase()} Greenwashing Risk
-                  </div>
+                </div>
+
+                {/* Innovation 10: Explainable Greenwashing Risk */}
+                <div className="mb-6">
+                  <GreenwashingExplainer 
+                    risk={verificationResult.greenwashingRisk} 
+                    factors={verificationResult.greenwashingFactors}
+                  />
                 </div>
 
                 {/* Metrics Grid */}
@@ -400,6 +407,26 @@ const Verify = () => {
                   </div>
                 )}
 
+                {/* Innovation 2: Proof Graph */}
+                <div className="mb-6">
+                  <ProofGraph
+                    totalCO2Kg={verificationResult.totalCO2Kg}
+                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                    eligibleCredits={verificationResult.analysis.creditEligibility.eligibleCredits}
+                    verificationScore={verificationResult.score}
+                    qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
+                  />
+                </div>
+
+                {/* Innovation 4: Peer Benchmark */}
+                <div className="mb-6">
+                  <PeerBenchmark
+                    totalCO2Kg={verificationResult.totalCO2Kg}
+                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                    dominantCategory={effectiveUnverified[0]?.category}
+                  />
+                </div>
+
                 {/* Flags */}
                 {verificationResult.analysis.flags.length > 0 && (
                   <div className="mb-6">
@@ -417,6 +444,20 @@ const Verify = () => {
                   </div>
                 )}
 
+                {/* Innovation 8: Dispute Simulation */}
+                <div className="mb-6">
+                  <DisputeSimulation
+                    flags={verificationResult.analysis.flags}
+                    greenwashingRisk={verificationResult.greenwashingRisk}
+                    greenwashingFactors={verificationResult.greenwashingFactors}
+                    score={verificationResult.score}
+                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                    qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
+                    cctsEligible={verificationResult.cctsEligible}
+                    cbamCompliant={verificationResult.cbamCompliant}
+                  />
+                </div>
+
                 {/* Recommendations */}
                 {verificationResult.analysis.recommendations.length > 0 && (
                   <div className="mb-6">
@@ -429,6 +470,39 @@ const Verify = () => {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* Speed: Inline Monetization Preview */}
+                {monetizationPreview && verificationResult.status === 'verified' && (
+                  <div className="p-4 rounded-xl bg-gradient-to-r from-primary/5 to-success/5 border border-primary/20 mb-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Coins className="h-5 w-5 text-primary" />
+                      <h4 className="font-semibold">Monetization Ready</h4>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mb-4">
+                      <div>
+                        <p className="text-2xl font-mono font-bold text-foreground">{formatINR(monetizationPreview.totalValue)}</p>
+                        <p className="text-xs text-muted-foreground">Total potential value</p>
+                      </div>
+                      <div>
+                        <p className="text-lg font-mono font-bold text-warning">{formatINR(monetizationPreview.carbonCreditValue)}</p>
+                        <p className="text-xs text-muted-foreground">Carbon credits</p>
+                      </div>
+                      <div>
+                        <p className="text-lg font-mono font-bold text-success">{formatINR(monetizationPreview.greenLoanSavings)}</p>
+                        <p className="text-xs text-muted-foreground">Green loan savings</p>
+                      </div>
+                    </div>
+                    <Button 
+                      onClick={() => navigate('/monetize')}
+                      className="w-full glow-success"
+                      size="lg"
+                    >
+                      <Coins className="h-4 w-4 mr-2" />
+                      Claim Now — Go to Monetize
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
                   </div>
                 )}
 
