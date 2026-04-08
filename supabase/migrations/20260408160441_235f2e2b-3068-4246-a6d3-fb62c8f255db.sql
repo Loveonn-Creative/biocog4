@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS trust_layer_prefs jsonb DEFAULT '{}';
