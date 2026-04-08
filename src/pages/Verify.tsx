@@ -22,6 +22,7 @@ import { PeerBenchmark } from '@/components/trust/PeerBenchmark';
 import { DisputeSimulation } from '@/components/trust/DisputeSimulation';
 import { DataConnectors } from '@/components/trust/DataConnectors';
 import { GreenwashingExplainer } from '@/components/trust/GreenwashingExplainer';
+import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
 
 interface NavigationState {
   emissionId?: string;
@@ -74,6 +75,7 @@ const Verify = () => {
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const [monetizationPreview, setMonetizationPreview] = useState<MonetizationResult | null>(null);
+  const { isEnabled } = useTrustLayerSettings();
   
   const unverified = getUnverifiedEmissions();
   
@@ -201,8 +203,10 @@ const Verify = () => {
                 {effectiveUnverified.length} records pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
               </p>
               
-              {/* Innovation 9: Data Connectors (replaces IoT toggle) */}
-              <DataConnectors includeIoT={includeIoT} onIoTChange={setIncludeIoT} />
+              {/* Innovation 9: Data Connectors (opt-in) */}
+              {isEnabled('data_connectors') && (
+                <DataConnectors includeIoT={includeIoT} onIoTChange={setIncludeIoT} />
+              )}
             </div>
             
             {effectiveUnverified.length > 0 ? (
@@ -294,13 +298,15 @@ const Verify = () => {
                   </div>
                 </div>
 
-                {/* Innovation 10: Explainable Greenwashing Risk */}
-                <div className="mb-6">
-                  <GreenwashingExplainer 
-                    risk={verificationResult.greenwashingRisk} 
-                    factors={verificationResult.greenwashingFactors}
-                  />
-                </div>
+                {/* Innovation 10: Explainable Greenwashing Risk (opt-in) */}
+                {isEnabled('greenwashing_explainer') && (
+                  <div className="mb-6">
+                    <GreenwashingExplainer 
+                      risk={verificationResult.greenwashingRisk} 
+                      factors={verificationResult.greenwashingFactors}
+                    />
+                  </div>
+                )}
 
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -407,25 +413,29 @@ const Verify = () => {
                   </div>
                 )}
 
-                {/* Innovation 2: Proof Graph */}
-                <div className="mb-6">
-                  <ProofGraph
-                    totalCO2Kg={verificationResult.totalCO2Kg}
-                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
-                    eligibleCredits={verificationResult.analysis.creditEligibility.eligibleCredits}
-                    verificationScore={verificationResult.score}
-                    qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
-                  />
-                </div>
+                {/* Innovation 2: Proof Graph (opt-in) */}
+                {isEnabled('proof_graph') && (
+                  <div className="mb-6">
+                    <ProofGraph
+                      totalCO2Kg={verificationResult.totalCO2Kg}
+                      scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                      eligibleCredits={verificationResult.analysis.creditEligibility.eligibleCredits}
+                      verificationScore={verificationResult.score}
+                      qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
+                    />
+                  </div>
+                )}
 
-                {/* Innovation 4: Peer Benchmark */}
-                <div className="mb-6">
-                  <PeerBenchmark
-                    totalCO2Kg={verificationResult.totalCO2Kg}
-                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
-                    dominantCategory={effectiveUnverified[0]?.category}
-                  />
-                </div>
+                {/* Innovation 4: Peer Benchmark (opt-in) */}
+                {isEnabled('peer_benchmark') && (
+                  <div className="mb-6">
+                    <PeerBenchmark
+                      totalCO2Kg={verificationResult.totalCO2Kg}
+                      scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                      dominantCategory={effectiveUnverified[0]?.category}
+                    />
+                  </div>
+                )}
 
                 {/* Flags */}
                 {verificationResult.analysis.flags.length > 0 && (
@@ -444,19 +454,21 @@ const Verify = () => {
                   </div>
                 )}
 
-                {/* Innovation 8: Dispute Simulation */}
-                <div className="mb-6">
-                  <DisputeSimulation
-                    flags={verificationResult.analysis.flags}
-                    greenwashingRisk={verificationResult.greenwashingRisk}
-                    greenwashingFactors={verificationResult.greenwashingFactors}
-                    score={verificationResult.score}
-                    scopeBreakdown={verificationResult.analysis.scopeBreakdown}
-                    qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
-                    cctsEligible={verificationResult.cctsEligible}
-                    cbamCompliant={verificationResult.cbamCompliant}
-                  />
-                </div>
+                {/* Innovation 8: Dispute Simulation (opt-in) */}
+                {isEnabled('dispute_simulation') && (
+                  <div className="mb-6">
+                    <DisputeSimulation
+                      flags={verificationResult.analysis.flags}
+                      greenwashingRisk={verificationResult.greenwashingRisk}
+                      greenwashingFactors={verificationResult.greenwashingFactors}
+                      score={verificationResult.score}
+                      scopeBreakdown={verificationResult.analysis.scopeBreakdown}
+                      qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
+                      cctsEligible={verificationResult.cctsEligible}
+                      cbamCompliant={verificationResult.cbamCompliant}
+                    />
+                  </div>
+                )}
 
                 {/* Recommendations */}
                 {verificationResult.analysis.recommendations.length > 0 && (

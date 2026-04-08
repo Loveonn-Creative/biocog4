@@ -25,6 +25,8 @@ import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { computeCredibilityScore } from '@/lib/credibilityScore';
+import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
+import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -47,6 +49,27 @@ const Dashboard = () => {
   const unverifiedEmissions = getUnverifiedEmissions();
   const verifiedEmissions = getVerifiedEmissions();
   const isGuestUser = !user && sessionId;
+
+  // Profile Intelligence
+  const [profileInput, setProfileInput] = useState<any>(null);
+  useEffect(() => {
+    const stored = localStorage.getItem('senseible_profile_triggers');
+    const profileStored = localStorage.getItem('senseible_company_profile');
+    const triggers = stored ? JSON.parse(stored) : {};
+    const companyProfile = profileStored ? JSON.parse(profileStored) : {};
+    setProfileInput({
+      location: companyProfile.location || 'India',
+      sector: companyProfile.sector || 'manufacturing',
+      size: companyProfile.size || 'small',
+      exportsToEU: triggers.exportsToEU || false,
+      seekingFinance: triggers.seekingFinance ?? true,
+      hasNetZeroTarget: triggers.hasNetZeroTarget || false,
+      totalCO2Kg: summary.total,
+      verifiedCount: verifiedEmissions.length,
+    });
+  }, [summary.total, verifiedEmissions.length]);
+
+  const { alerts } = useProfileIntelligence(profileInput);
 
   // Route protection: redirect partners to their dashboard
   useEffect(() => {
@@ -275,6 +298,36 @@ const Dashboard = () => {
                 credibilityGrade={credibility?.grade}
               />
               <EmissionsSummary summary={summary} />
+
+              {/* Profile Intelligence Alerts */}
+              {alerts.length > 0 && (
+                <div className="space-y-3">
+                  {alerts.slice(0, 3).map(alert => (
+                    <div 
+                      key={alert.id}
+                      className={`p-4 rounded-xl border flex items-start gap-3 ${
+                        alert.severity === 'warning' ? 'bg-warning/5 border-warning/30' :
+                        alert.severity === 'success' ? 'bg-success/5 border-success/30' :
+                        'bg-primary/5 border-primary/20'
+                      }`}
+                    >
+                      {alert.severity === 'warning' ? <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" /> :
+                       alert.severity === 'success' ? <CheckCircle2 className="h-5 w-5 text-success shrink-0 mt-0.5" /> :
+                       <Info className="h-5 w-5 text-primary shrink-0 mt-0.5" />}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium">{alert.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{alert.message}</p>
+                        {alert.linkTo && (
+                          <Link to={alert.linkTo} className="text-xs text-primary font-medium mt-1 inline-block hover:underline">
+                            {alert.linkLabel} →
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <TrendChart data={summary.monthlyTrend} />
             </div>
 
