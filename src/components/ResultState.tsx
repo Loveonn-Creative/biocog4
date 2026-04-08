@@ -4,6 +4,7 @@ import { TrustScoreGauge } from "./trust/TrustScoreGauge";
 import { ConfidenceBand } from "./trust/ConfidenceBand";
 import { AutoValidation } from "./trust/AutoValidation";
 import { MonetizationPreview } from "./trust/MonetizationPreview";
+import { useTrustLayerSettings } from "@/hooks/useTrustLayerSettings";
 
 interface ExtractedData {
   documentType: string;
@@ -30,6 +31,7 @@ interface ResultStateProps {
 }
 
 export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }: ResultStateProps) => {
+  const { isEnabled } = useTrustLayerSettings();
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
   const co2Value = extractedData?.totalCO2Kg ?? extractedData?.estimatedCO2Kg ?? 0;
   const isGreenBenefit = co2Value < 0;
@@ -103,8 +105,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         />
       )}
 
-      {/* Innovation 6: Real-time Monetization Preview */}
-      {co2Value !== 0 && !isGreenBenefit && (
+      {/* Innovation 6: Real-time Monetization Preview (opt-in) */}
+      {co2Value !== 0 && !isGreenBenefit && isEnabled('monetization_preview') && (
         <MonetizationPreview co2Kg={co2Value} />
       )}
 
@@ -123,8 +125,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         </div>
       )}
 
-      {/* Innovation 3: Auto-Validation Before Submission */}
-      {extractedData && (
+      {/* Innovation 3: Auto-Validation Before Submission (opt-in) */}
+      {extractedData && isEnabled('auto_validation') && (
         <AutoValidation extractedData={extractedData} />
       )}
 

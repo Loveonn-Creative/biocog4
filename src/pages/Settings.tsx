@@ -10,8 +10,11 @@ import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
-import { Settings as SettingsIcon, Building2, Globe, Target, Shield, Save, Check } from 'lucide-react';
+import { Settings as SettingsIcon, Building2, Globe, Target, Shield, Save, Check, Layers, Lock } from 'lucide-react';
 import { toast } from 'sonner';
+import { getCountryList, getCountryConfig } from '@/lib/countryConfig';
+import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
+import { Link } from 'react-router-dom';
 
 interface CompanyProfile {
   businessName: string;
@@ -53,15 +56,17 @@ const Settings = () => {
   const [profile, setProfile] = useState<CompanyProfile>(DEFAULT_PROFILE);
   const [isSaving, setIsSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
+  const { prefs, toggleFeature, isPremium, features } = useTrustLayerSettings();
 
-  // Load profile from localStorage (guest) or database (authenticated)
+  const countryConfig = getCountryConfig(profile.location);
+  const countries = getCountryList();
+
   useEffect(() => {
     loadProfile();
   }, [user?.id, sessionId]);
 
   const loadProfile = async () => {
     if (user?.id) {
-      // Load from database for authenticated users
       const { data, error } = await supabase
         .from('profiles')
         .select('*')
@@ -75,12 +80,11 @@ const Settings = () => {
           size: (data.size as CompanyProfile['size']) || 'small',
           location: data.location || 'India',
           gstin: data.gstin || '',
-          exportsToEU: false, // Not in DB yet, use localStorage
+          exportsToEU: false,
           seekingFinance: true,
           hasNetZeroTarget: false,
         });
         
-        // Merge with localStorage for framework triggers
         const stored = localStorage.getItem('senseible_profile_triggers');
         if (stored) {
           const triggers = JSON.parse(stored);
@@ -88,7 +92,6 @@ const Settings = () => {
         }
       }
     } else {
-      // Load from localStorage for guests
       const stored = localStorage.getItem('senseible_company_profile');
       if (stored) {
         setProfile(JSON.parse(stored));
@@ -101,7 +104,6 @@ const Settings = () => {
     
     try {
       if (user?.id) {
-        // Save to database for authenticated users
         const { error } = await supabase
           .from('profiles')
           .upsert({
@@ -116,14 +118,12 @@ const Settings = () => {
 
         if (error) throw error;
         
-        // Save framework triggers to localStorage (until DB columns added)
         localStorage.setItem('senseible_profile_triggers', JSON.stringify({
           exportsToEU: profile.exportsToEU,
           seekingFinance: profile.seekingFinance,
           hasNetZeroTarget: profile.hasNetZeroTarget,
         }));
       } else {
-        // Save to localStorage for guests
         localStorage.setItem('senseible_company_profile', JSON.stringify(profile));
       }
       
@@ -142,14 +142,9 @@ const Settings = () => {
     setHasChanges(true);
   };
 
-  // Determine which frameworks will be triggered
   const getTriggeredFrameworks = () => {
-    const frameworks: string[] = ['GRI', 'GHG Protocol'];
+    const frameworks: string[] = [...countryConfig.frameworks, 'GRI', 'GHG Protocol'];
     
-    if (profile.location === 'India') {
-      frameworks.push('CPCB');
-      if (profile.size === 'large') frameworks.push('BRSR');
-    }
     if (profile.exportsToEU) {
       frameworks.push('CBAM', 'CSRD/ESRS', 'ISSB');
     }
@@ -208,12 +203,12 @@ const Settings = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="gstin">GSTIN</Label>
+                  <Label htmlFor="gstin">{countryConfig.taxIdLabel}</Label>
                   <Input
                     id="gstin"
                     value={profile.gstin}
                     onChange={e => updateProfile('gstin', e.target.value)}
-                    placeholder="22AAAAA0000A1Z5"
+                    placeholder={countryConfig.taxIdPlaceholder}
                   />
                 </div>
               </div>
@@ -249,18 +244,20 @@ const Settings = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
+                <Label htmlFor="location">Country</Label>
                 <Select value={profile.location} onValueChange={v => updateProfile('location', v)}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select location" />
+                    <SelectValue placeholder="Select country" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="India">India</SelectItem>
-                    <SelectItem value="EU">European Union</SelectItem>
-                    <SelectItem value="US">United States</SelectItem>
-                    <SelectItem value="Other">Other</SelectItem>
+                    {countries.map(c => (
+                      <SelectItem key={c.code} value={c.value}>{c.label}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
+                <p className="text-xs text-muted-foreground">
+                  Grid factor: {countryConfig.gridFactor} kgCO₂e/kWh • Gov body: {countryConfig.govBody}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -333,6 +330,48 @@ const Settings = () => {
                   ))}
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Trust Layer Controls */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                Trust Layer Controls
+              </CardTitle>
+              <CardDescription>
+                Toggle advanced trust & transparency features. Trust Score and Confidence Band are always visible.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {!isPremium && (
+                <div className="p-3 rounded-lg bg-warning/10 border border-warning/30 mb-4">
+                  <div className="flex items-center gap-2 text-sm text-warning font-medium">
+                    <Lock className="h-4 w-4" />
+                    <span>Upgrade to unlock Trust Layer controls</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    These features are available on Essential plan and above.
+                  </p>
+                  <Button variant="outline" size="sm" className="mt-2" asChild>
+                    <Link to="/pricing">View Plans</Link>
+                  </Button>
+                </div>
+              )}
+              {features.map(feature => (
+                <div key={feature.key} className="flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <Label className={!isPremium ? 'text-muted-foreground' : ''}>{feature.label}</Label>
+                    <p className="text-xs text-muted-foreground">{feature.description}</p>
+                  </div>
+                  <Switch
+                    checked={isPremium && (prefs[feature.key] ?? false)}
+                    onCheckedChange={() => toggleFeature(feature.key)}
+                    disabled={!isPremium}
+                  />
+                </div>
+              ))}
             </CardContent>
           </Card>
 
