@@ -175,7 +175,17 @@ function getCMSArticleSlugs() {
      'one-click-audit-trails-investors-need',
      'dispute-simulation-auditor-challenge',
      'manual-entry-carbon-data-error-source',
-     'greenwashing-flags-explainable-not-just-high-risk',
+      'greenwashing-flags-explainable-not-just-high-risk',
+      'trust-score-replaces-pass-fail-63m-msmes',
+      'proof-graphs-black-box-ai-carbon-trust',
+      'pre-submission-validation-cuts-rejection-40-percent',
+      'sector-benchmarking-context-raw-data-decisions',
+      'confidence-bands-honest-mrv-approach',
+      'real-time-revenue-preview-mrv-to-money',
+      'one-click-audit-trails-save-200-hours',
+      'dispute-simulation-prepare-auditor-challenges',
+      'manual-data-entry-source-carbon-fraud-risk',
+      'explainable-greenwashing-flags-transparency',
   ];
 }
 
