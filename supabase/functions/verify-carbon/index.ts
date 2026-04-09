@@ -28,21 +28,6 @@ const EMISSION_FACTORS = {
     WIND_CAPTIVE: 0.000,
     RENEWABLE_PPA: 0.000,
   },
-};
-
-// Country-specific grid emission factors (IEA 2023)
-const COUNTRY_GRID_FACTORS: Record<string, number> = {
-  IN: 0.708,
-  PH: 0.505,
-  ID: 0.761,
-  BD: 0.623,
-  PK: 0.495,
-  SG: 0.408,
-  VN: 0.625,
-  TH: 0.493,
-  MY: 0.585,
-  LK: 0.462,
-};
   
   // Scope 3: Transport (kgCO₂e per ton-km)
   scope3_transport: {
@@ -65,8 +50,19 @@ const COUNTRY_GRID_FACTORS: Record<string, number> = {
   },
 };
 
-// Industry benchmarks (kgCO₂e per INR of revenue)
-const INDUSTRY_BENCHMARKS: Record<string, number> = {
+// Country-specific grid emission factors (IEA 2023)
+const COUNTRY_GRID_FACTORS: Record<string, number> = {
+  IN: 0.708,
+  PH: 0.505,
+  ID: 0.761,
+  BD: 0.623,
+  PK: 0.495,
+  SG: 0.408,
+  VN: 0.625,
+  TH: 0.493,
+  MY: 0.585,
+  LK: 0.462,
+};
   STEEL: 3.5,
   CEMENT: 0.9,
   PLASTIC: 2.2,
