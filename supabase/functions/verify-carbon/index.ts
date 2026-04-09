@@ -549,7 +549,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               validation_result: validationResult,
               validation_failure_reason: validationFailureReason,
               greenwashing_risk: greenwashingRisk,
-              methodology_version: 'BIOCOG_MVR_INDIA_v1.0',
+              methodology_version: `BIOCOG_MVR_${countryCode}_v1.0`,
               classification_method: emission.data_quality === 'high' ? 'HSN' : 'KEYWORD',
               gstin: null,
               hsn_code: null,
