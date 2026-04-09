@@ -21,7 +21,7 @@ const EMISSION_FACTORS = {
     BIOMASS: { value: 0.00, unit: 'kg', creditable: false },
   },
   
-  // Scope 2: Electricity (kgCO₂e per kWh)
+  // Scope 2: Electricity (kgCO₂e per kWh) — India default
   scope2_electricity: {
     INDIA_GRID_AVG: 0.708,
     SOLAR_CAPTIVE: 0.000,
@@ -48,6 +48,20 @@ const EMISSION_FACTORS = {
     RECYCLING_METAL: -4.00,
     INCINERATION: 2.50,
   },
+};
+
+// Country-specific grid emission factors (IEA 2023)
+const COUNTRY_GRID_FACTORS: Record<string, number> = {
+  IN: 0.708,
+  PH: 0.505,
+  ID: 0.761,
+  BD: 0.623,
+  PK: 0.495,
+  SG: 0.408,
+  VN: 0.625,
+  TH: 0.493,
+  MY: 0.585,
+  LK: 0.462,
 };
 
 // Industry benchmarks (kgCO₂e per INR of revenue)
@@ -248,7 +262,11 @@ serve(async (req) => {
   }
 
   try {
-    const { emissionIds, sessionId, userId, includeIoT = false } = await req.json();
+    const { emissionIds, sessionId, userId, includeIoT = false, country = 'IN' } = await req.json();
+
+    // Resolve country-specific grid factor
+    const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
+    const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
 
     if (!emissionIds || emissionIds.length === 0) {
       return new Response(
@@ -436,10 +454,11 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
             qualityGrade,
           },
           methodology: {
-            name: 'BIOCOG_MVR_INDIA',
+            name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
             version: 'v1.0',
-            country: 'IN',
-            factorVersion: 'IND_EF_2025',
+            country: countryCode,
+            factorVersion: `${countryCode}_EF_2025`,
+            gridFactor,
           },
         },
         ccts_eligible: cctsEligible,
@@ -529,7 +548,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               validation_result: validationResult,
               validation_failure_reason: validationFailureReason,
               greenwashing_risk: greenwashingRisk,
-              methodology_version: 'BIOCOG_MVR_INDIA_v1.0',
+              methodology_version: `BIOCOG_MVR_${countryCode}_v1.0`,
               classification_method: emission.data_quality === 'high' ? 'HSN' : 'KEYWORD',
               gstin: null,
               hsn_code: null,
@@ -570,10 +589,11 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       netEmissions,
       verifiedReductions,
       methodology: {
-        name: 'BIOCOG_MVR_INDIA',
+        name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
         version: 'v1.0',
-        country: 'IN',
-        factorVersion: 'IND_EF_2025',
+        country: countryCode,
+        factorVersion: `${countryCode}_EF_2025`,
+        gridFactor,
       },
     };
 
