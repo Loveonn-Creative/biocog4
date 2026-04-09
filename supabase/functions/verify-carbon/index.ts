@@ -63,6 +63,9 @@ const COUNTRY_GRID_FACTORS: Record<string, number> = {
   MY: 0.585,
   LK: 0.462,
 };
+
+// Industry benchmarks (kgCO₂e per INR of revenue)
+const INDUSTRY_BENCHMARKS: Record<string, number> = {
   STEEL: 3.5,
   CEMENT: 0.9,
   PLASTIC: 2.2,
