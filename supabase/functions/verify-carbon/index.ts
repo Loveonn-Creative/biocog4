@@ -263,7 +263,11 @@ serve(async (req) => {
   }
 
   try {
-    const { emissionIds, sessionId, userId, includeIoT = false } = await req.json();
+    const { emissionIds, sessionId, userId, includeIoT = false, country = 'IN' } = await req.json();
+
+    // Resolve country-specific grid factor
+    const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
+    const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
 
     if (!emissionIds || emissionIds.length === 0) {
       return new Response(
@@ -451,10 +455,11 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
             qualityGrade,
           },
           methodology: {
-            name: 'BIOCOG_MVR_INDIA',
+            name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
             version: 'v1.0',
-            country: 'IN',
-            factorVersion: 'IND_EF_2025',
+            country: countryCode,
+            factorVersion: `${countryCode}_EF_2025`,
+            gridFactor,
           },
         },
         ccts_eligible: cctsEligible,
@@ -585,10 +590,11 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       netEmissions,
       verifiedReductions,
       methodology: {
-        name: 'BIOCOG_MVR_INDIA',
+        name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
         version: 'v1.0',
-        country: 'IN',
-        factorVersion: 'IND_EF_2025',
+        country: countryCode,
+        factorVersion: `${countryCode}_EF_2025`,
+        gridFactor,
       },
     };
 
