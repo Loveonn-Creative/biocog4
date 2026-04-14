@@ -22,19 +22,27 @@ const translationCache: Record<string, Record<string, string>> = {};
 // Lazy-load translation JSON
 async function loadTranslation(locale: string): Promise<Record<string, string>> {
   if (translationCache[locale]) return translationCache[locale];
-  if (locale === 'en') {
-    const mod = await import('./translations/en.json');
-    translationCache['en'] = mod.default;
-    return mod.default;
-  }
+  const loaders: Record<string, () => Promise<{ default: Record<string, string> }>> = {
+    en: () => import('./translations/en.json'),
+    hi: () => import('./translations/hi.json'),
+    bn: () => import('./translations/bn.json'),
+    ta: () => import('./translations/ta.json'),
+    mr: () => import('./translations/mr.json'),
+    id: () => import('./translations/id.json'),
+    ur: () => import('./translations/ur.json'),
+    tl: () => import('./translations/tl.json'),
+    vi: () => import('./translations/vi.json'),
+    th: () => import('./translations/th.json'),
+    es: () => import('./translations/es.json'),
+  };
   try {
-    const mod = await import(`./translations/${locale}.json`);
+    const loader = loaders[locale] || loaders['en'];
+    const mod = await loader();
     translationCache[locale] = mod.default;
     return mod.default;
   } catch {
-    // Fallback to English
     if (!translationCache['en']) {
-      const en = await import('./translations/en.json');
+      const en = await loaders['en']();
       translationCache['en'] = en.default;
     }
     return translationCache['en'];

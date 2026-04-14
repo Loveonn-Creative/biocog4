@@ -10,11 +10,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { getSolutionBySlug, getRelatedSolutions } from '@/data/solutionsData';
 import { getCountryConfig } from '@/lib/countryConfig';
-import { calculateCBAM, CBAM_SECTORS, DEFAULT_EU_ETS_PRICE, formatEuro } from '@/lib/cbamEngine';
+import { calculateCBAM, DEFAULT_EU_ETS_PRICE, formatEuro } from '@/lib/cbamEngine';
 import { useState } from 'react';
 import {
   ArrowRight, Check, Calculator, ClipboardList, DollarSign,
-  AlertTriangle, Globe, Factory, ChevronRight, HelpCircle,
+  Globe, Factory, ChevronRight, HelpCircle,
   Zap, Shield, TrendingDown, FileText
 } from 'lucide-react';
 
