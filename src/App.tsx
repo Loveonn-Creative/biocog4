@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -50,6 +51,7 @@ const CompetitorComparison = lazy(() => import("./pages/CompetitorComparison"));
 const Grants = lazy(() => import("./pages/Grants"));
 const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
 const NetZero = lazy(() => import("./pages/NetZero"));
+const Solutions = lazy(() => import("./pages/Solutions"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -62,6 +64,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
       <TooltipProvider>
         <Helmet>
           <title>Senseible — Turn Carbon Documents into Revenue</title>
@@ -122,11 +125,13 @@ const App = () => (
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
               <Route path="/net-zero" element={<NetZero />} />
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
+              <Route path="/solutions/:useCase" element={<Solutions />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </BrowserRouter>
       </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   </HelmetProvider>
 );
