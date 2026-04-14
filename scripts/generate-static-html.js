@@ -130,6 +130,13 @@ const routes = [
     description: `Compare Senseible with ${slugToTitle(slug)} for carbon accounting, MRV, and climate finance. See which platform is best for MSMEs.`,
     keywords: `senseible vs ${slug}, carbon accounting comparison, ${slug} alternative`,
   })),
+  // Solution pages (programmatic SEO)
+  ...getSolutionSlugs().map(slug => ({
+    path: `/solutions/${slug}`,
+    title: `${slugToTitle(slug)} — Senseible Solutions`,
+    description: `Carbon compliance solution for ${slugToTitle(slug).toLowerCase()}. Free tools, compliance steps, and cost breakdown.`,
+    keywords: slug.replace(/-/g, ', '),
+  })),
 ];
 
 function getCMSArticleSlugs() {
@@ -190,6 +197,43 @@ function getCMSArticleSlugs() {
 }
 
 function getCompetitorSlugs() {
+  return [
+    'sensibull', 'microsoft-sustainability-cloud', 'salesforce-net-zero-cloud',
+    'ibm-envizi', 'persefoni', 'watershed', 'sweep', 'plan-a', 'normative',
+    'greenly', 'sinai-technologies', 'sphera', 'sylvera', 'verra',
+    'gold-standard', 'esgi-india', 'updapt-esg', 'dcarbonize', 'climes', 'zeroboard',
+  ];
+}
+
+function getSolutionSlugs() {
+  return [
+    'cbam-steel-india','cbam-textile-india','scope3-steel-india','cbam-chemicals-india',
+    'scope3-textile-india','carbon-audit-manufacturing-india','green-finance-textile-india',
+    'scope3-chemicals-india','scope3-textile-bangladesh','cbam-textile-bangladesh',
+    'carbon-audit-manufacturing-bangladesh','green-finance-textile-bangladesh',
+    'cbam-steel-indonesia','cbam-chemicals-indonesia','carbon-audit-manufacturing-indonesia',
+    'scope3-food-processing-indonesia','green-finance-manufacturing-indonesia',
+    'carbon-audit-manufacturing-philippines','scope3-food-processing-philippines',
+    'green-finance-manufacturing-philippines','carbon-audit-logistics-philippines',
+    'scope3-textile-pakistan','green-finance-manufacturing-pakistan',
+    'carbon-audit-textile-pakistan','scope3-food-processing-pakistan',
+    'carbon-audit-manufacturing-singapore','scope3-chemicals-singapore',
+    'carbon-audit-logistics-singapore','green-finance-manufacturing-singapore',
+    'cbam-steel-vietnam','scope3-textile-vietnam','carbon-audit-manufacturing-vietnam',
+    'scope3-food-processing-vietnam','scope3-food-processing-thailand',
+    'carbon-audit-manufacturing-thailand','cbam-chemicals-thailand',
+    'green-finance-manufacturing-thailand','scope3-food-processing-malaysia',
+    'carbon-audit-manufacturing-malaysia','green-finance-manufacturing-malaysia',
+    'scope3-chemicals-malaysia','scope3-textile-sri-lanka',
+    'carbon-audit-manufacturing-sri-lanka','green-finance-manufacturing-sri-lanka',
+    'scope3-food-processing-sri-lanka','green-finance-manufacturing-india',
+    'green-finance-manufacturing-vietnam','cbam-steel-bangladesh',
+    'scope3-textile-indonesia','cbam-chemicals-vietnam','scope3-textile-thailand',
+    'cbam-steel-malaysia','scope3-manufacturing-philippines','cbam-steel-pakistan',
+    'green-finance-textile-sri-lanka','green-finance-manufacturing-bangladesh',
+    'carbon-audit-logistics-india','scope3-food-processing-india',
+  ];
+}
   return [
     'sensibull', 'microsoft-sustainability-cloud', 'salesforce-net-zero-cloud',
     'ibm-envizi', 'persefoni', 'watershed', 'sweep', 'plan-a', 'normative',
