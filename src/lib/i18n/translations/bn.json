@@ -1,0 +1,23 @@
+{
+  "nav.home": "হোম",
+  "nav.mission": "মিশন",
+  "nav.about": "আমাদের সম্পর্কে",
+  "nav.climate_intelligence": "জলবায়ু বুদ্ধিমত্তা",
+  "nav.contact": "যোগাযোগ",
+  "nav.upload": "আপলোড",
+  "nav.dashboard": "ড্যাশবোর্ড",
+  "nav.verify": "যাচাই",
+  "nav.monetize": "মুদ্রায়ন",
+  "nav.reports": "রিপোর্ট",
+  "nav.sign_in": "সাইন ইন",
+  "nav.sign_in_save": "ডেটা সংরক্ষণ করতে সাইন ইন করুন",
+  "cta.start_free": "বিনামূল্যে শুরু করুন",
+  "cta.upload_invoice": "ইনভয়েস আপলোড করুন",
+  "hero.tagline": "কার্বন ডকুমেন্টকে রাজস্বে রূপান্তর করুন",
+  "hero.subtitle": "৪০ কোটি MSMEs-এর জন্য ইনফ্রাস্ট্রাকচার-গ্রেড কার্বন MRV। ৪৭ সেকেন্ডে ইনভয়েসকে রাজস্বে রূপান্তর করুন।",
+  "settings.title": "সেটিংস",
+  "settings.company_profile": "কোম্পানি প্রোফাইল",
+  "settings.language": "ভাষা",
+  "settings.save": "পরিবর্তন সংরক্ষণ করুন",
+  "common.loading": "লোড হচ্ছে..."
+}

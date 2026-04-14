@@ -1,0 +1,23 @@
+{
+  "nav.home": "Inicio",
+  "nav.mission": "Misión",
+  "nav.about": "Acerca de",
+  "nav.climate_intelligence": "Inteligencia Climática",
+  "nav.contact": "Contacto",
+  "nav.upload": "Subir",
+  "nav.dashboard": "Panel",
+  "nav.verify": "Verificar",
+  "nav.monetize": "Monetizar",
+  "nav.reports": "Informes",
+  "nav.sign_in": "Iniciar Sesión",
+  "cta.start_free": "Comenzar Gratis",
+  "cta.upload_invoice": "Subir Factura",
+  "cta.calculate_now": "Calcular Ahora",
+  "hero.tagline": "Convierte Documentos de Carbono en Ingresos",
+  "hero.subtitle": "Infraestructura MRV de carbono para 400 millones de MIPYMES. Convierte facturas en ingresos en 47 segundos.",
+  "settings.title": "Configuración",
+  "settings.language": "Idioma",
+  "settings.save": "Guardar Cambios",
+  "common.loading": "Cargando...",
+  "footer.powered_by": "Impulsado por matemáticas determinísticas, no suposiciones de IA"
+}

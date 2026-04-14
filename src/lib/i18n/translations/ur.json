@@ -1,0 +1,20 @@
+{
+  "nav.home": "ہوم",
+  "nav.mission": "مشن",
+  "nav.about": "ہمارے بارے میں",
+  "nav.climate_intelligence": "آب و ہوا انٹیلی جنس",
+  "nav.contact": "رابطہ",
+  "nav.upload": "اپلوڈ",
+  "nav.dashboard": "ڈیش بورڈ",
+  "nav.verify": "تصدیق",
+  "nav.monetize": "مالیکرن",
+  "nav.reports": "رپورٹس",
+  "nav.sign_in": "سائن ان",
+  "cta.start_free": "مفت شروع کریں",
+  "cta.upload_invoice": "انوائس اپلوڈ کریں",
+  "hero.tagline": "کاربن دستاویزات کو آمدنی میں تبدیل کریں",
+  "settings.title": "ترتیبات",
+  "settings.language": "زبان",
+  "settings.save": "تبدیلیاں محفوظ کریں",
+  "common.loading": "لوڈ ہو رہا ہے..."
+}
