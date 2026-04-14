@@ -1,7 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import senseibleLogo from "@/assets/senseible-logo.png";
+import { useTranslation } from "@/lib/i18n/useTranslation";
+
+const LOCALE_LABELS: Record<string, string> = {
+  en: 'EN', hi: 'हिं', bn: 'বাং', ta: 'தமி', mr: 'मरा',
+  id: 'ID', ur: 'اردو', tl: 'TL', vi: 'VI', th: 'ไทย', es: 'ES',
+};
 
 const navLinks = [
   { path: "/mission", label: "Mission" },
@@ -13,8 +19,10 @@ const navLinks = [
 
 export const MinimalNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLang, setShowLang] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { locale, setLocale } = useTranslation();
 
   return (
     <>
@@ -33,19 +41,45 @@ export const MinimalNav = () => {
         </Link>
       </div>
 
-      {/* Menu toggle - only on non-home pages or when menu is open */}
-      {(!isHome || isOpen) && (
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="fixed top-6 right-6 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm border border-border transition-all duration-300 hover:bg-secondary"
-        >
-          {isOpen ? (
-            <X className="w-5 h-5 text-foreground" />
-          ) : (
-            <Menu className="w-5 h-5 text-foreground" />
+      {/* Language + Menu toggles */}
+      <div className="fixed top-6 right-6 z-50 flex items-center gap-2">
+        {/* Language toggle */}
+        <div className="relative">
+          <button
+            onClick={() => setShowLang(!showLang)}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm border border-border transition-all duration-300 hover:bg-secondary text-xs font-medium"
+          >
+            <Globe className="w-4 h-4 text-foreground" />
+          </button>
+          {showLang && (
+            <div className="absolute right-0 top-12 bg-background border border-border rounded-lg shadow-lg p-2 min-w-[120px] z-50">
+              {Object.entries(LOCALE_LABELS).map(([code, label]) => (
+                <button
+                  key={code}
+                  onClick={() => { setLocale(code); setShowLang(false); }}
+                  className={`w-full text-left px-3 py-1.5 text-sm rounded hover:bg-secondary transition-colors ${locale === code ? 'text-primary font-medium' : 'text-muted-foreground'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           )}
-        </button>
-      )}
+        </div>
+
+        {/* Menu toggle */}
+        {(!isHome || isOpen) && (
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm border border-border transition-all duration-300 hover:bg-secondary"
+          >
+            {isOpen ? (
+              <X className="w-5 h-5 text-foreground" />
+            ) : (
+              <Menu className="w-5 h-5 text-foreground" />
+            )}
+          </button>
+        )}
+      </div>
 
       {/* Full screen nav overlay */}
       <div
