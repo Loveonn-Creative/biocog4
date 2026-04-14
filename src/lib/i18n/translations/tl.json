@@ -1,0 +1,20 @@
+{
+  "nav.home": "Home",
+  "nav.mission": "Misyon",
+  "nav.about": "Tungkol sa Amin",
+  "nav.climate_intelligence": "Climate Intelligence",
+  "nav.contact": "Makipag-ugnayan",
+  "nav.upload": "Mag-upload",
+  "nav.dashboard": "Dashboard",
+  "nav.verify": "I-verify",
+  "nav.monetize": "I-monetize",
+  "nav.reports": "Mga Ulat",
+  "nav.sign_in": "Mag-sign In",
+  "cta.start_free": "Magsimula ng Libre",
+  "cta.upload_invoice": "Mag-upload ng Invoice",
+  "hero.tagline": "Gawing Kita ang Carbon Documents",
+  "settings.title": "Mga Setting",
+  "settings.language": "Wika",
+  "settings.save": "I-save ang mga Pagbabago",
+  "common.loading": "Naglo-load..."
+}

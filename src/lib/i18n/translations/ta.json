@@ -1,0 +1,20 @@
+{
+  "nav.home": "முகப்பு",
+  "nav.mission": "பணி",
+  "nav.about": "எங்களைப் பற்றி",
+  "nav.climate_intelligence": "காலநிலை நுண்ணறிவு",
+  "nav.contact": "தொடர்பு",
+  "nav.upload": "பதிவேற்று",
+  "nav.dashboard": "டாஷ்போர்டு",
+  "nav.verify": "சரிபார்",
+  "nav.monetize": "பணமாக்கு",
+  "nav.reports": "அறிக்கைகள்",
+  "nav.sign_in": "உள்நுழைக",
+  "cta.start_free": "இலவசமாகத் தொடங்கு",
+  "cta.upload_invoice": "விலைப்பட்டியல் பதிவேற்று",
+  "hero.tagline": "கார்பன் ஆவணங்களை வருவாயாக மாற்றுங்கள்",
+  "settings.title": "அமைப்புகள்",
+  "settings.language": "மொழி",
+  "settings.save": "மாற்றங்களைச் சேமி",
+  "common.loading": "ஏற்றுகிறது..."
+}

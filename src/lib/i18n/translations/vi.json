@@ -1,0 +1,23 @@
+{
+  "nav.home": "Trang chủ",
+  "nav.mission": "Sứ mệnh",
+  "nav.about": "Về chúng tôi",
+  "nav.climate_intelligence": "Trí tuệ Khí hậu",
+  "nav.contact": "Liên hệ",
+  "nav.upload": "Tải lên",
+  "nav.dashboard": "Bảng điều khiển",
+  "nav.verify": "Xác minh",
+  "nav.monetize": "Kiếm tiền",
+  "nav.reports": "Báo cáo",
+  "nav.sign_in": "Đăng nhập",
+  "cta.start_free": "Bắt đầu miễn phí",
+  "cta.upload_invoice": "Tải lên hóa đơn",
+  "cta.calculate_now": "Tính ngay",
+  "hero.tagline": "Biến tài liệu carbon thành doanh thu",
+  "hero.subtitle": "Hạ tầng MRV carbon cho 400 triệu MSME. Biến hóa đơn thành doanh thu trong 47 giây.",
+  "settings.title": "Cài đặt",
+  "settings.language": "Ngôn ngữ",
+  "settings.save": "Lưu thay đổi",
+  "common.loading": "Đang tải...",
+  "footer.powered_by": "Vận hành bởi toán học xác định, không phải phỏng đoán AI"
+}

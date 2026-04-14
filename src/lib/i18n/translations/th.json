@@ -1,0 +1,20 @@
+{
+  "nav.home": "หน้าแรก",
+  "nav.mission": "พันธกิจ",
+  "nav.about": "เกี่ยวกับเรา",
+  "nav.climate_intelligence": "ข่าวกรองภูมิอากาศ",
+  "nav.contact": "ติดต่อ",
+  "nav.upload": "อัปโหลด",
+  "nav.dashboard": "แดชบอร์ด",
+  "nav.verify": "ตรวจสอบ",
+  "nav.monetize": "สร้างรายได้",
+  "nav.reports": "รายงาน",
+  "nav.sign_in": "เข้าสู่ระบบ",
+  "cta.start_free": "เริ่มต้นฟรี",
+  "cta.upload_invoice": "อัปโหลดใบแจ้งหนี้",
+  "hero.tagline": "เปลี่ยนเอกสารคาร์บอนเป็นรายได้",
+  "settings.title": "การตั้งค่า",
+  "settings.language": "ภาษา",
+  "settings.save": "บันทึกการเปลี่ยนแปลง",
+  "common.loading": "กำลังโหลด..."
+}
