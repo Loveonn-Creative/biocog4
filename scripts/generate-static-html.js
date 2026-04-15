@@ -234,13 +234,6 @@ function getSolutionSlugs() {
     'carbon-audit-logistics-india','scope3-food-processing-india',
   ];
 }
-  return [
-    'sensibull', 'microsoft-sustainability-cloud', 'salesforce-net-zero-cloud',
-    'ibm-envizi', 'persefoni', 'watershed', 'sweep', 'plan-a', 'normative',
-    'greenly', 'sinai-technologies', 'sphera', 'sylvera', 'verra',
-    'gold-standard', 'esgi-india', 'updapt-esg', 'dcarbonize', 'climes', 'zeroboard',
-  ];
-}
 
 function slugToTitle(slug) {
   return slug
