@@ -220,6 +220,19 @@ const Solutions = () => {
     ],
   };
 
+  // Urgency: days since CBAM enforcement
+  const cbamEnforcementDate = new Date('2026-01-01');
+  const now = new Date();
+  const daysSinceEnforcement = Math.floor((now.getTime() - cbamEnforcementDate.getTime()) / (1000 * 60 * 60 * 24));
+  const isCbam = solution.regulation === 'cbam';
+
+  // FOMO readiness percentages by country
+  const readinessMap: Record<string, number> = {
+    'IN': 12, 'BD': 5, 'ID': 8, 'VN': 15, 'PH': 6,
+    'PK': 4, 'SG': 35, 'TH': 18, 'MY': 14, 'LK': 7,
+  };
+  const readinessPct = readinessMap[solution.countryCode] || 10;
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
@@ -232,12 +245,12 @@ const Solutions = () => {
           { name: 'Solutions', url: '/climate-intelligence' },
           { name: solution.regulationLabel, url: `/solutions/${solution.slug}` },
         ]}
+        faqSchema={solution.faqs}
+        howToSchema={{
+          name: solution.title,
+          steps: solution.steps.map(s => ({ title: s.title, text: s.description })),
+        }}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-      </Helmet>
 
       <MinimalNav />
 
@@ -264,6 +277,20 @@ const Solutions = () => {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {solution.painStatement}
           </p>
+
+          {/* Urgency + FOMO badges */}
+          <div className="flex flex-wrap gap-3 mt-4">
+            {isCbam && daysSinceEnforcement > 0 && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-destructive/10 text-destructive text-sm font-medium">
+                <AlertTriangle className="h-3.5 w-3.5" />
+                CBAM enforcement: Day {daysSinceEnforcement}
+              </div>
+            )}
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 text-sm font-medium">
+              <TrendingDown className="h-3.5 w-3.5" />
+              Only {readinessPct}% of {solution.countryName} {solution.sectorLabel.toLowerCase()} MSMEs are reporting
+            </div>
+          </div>
         </section>
 
         {/* Tool + Steps Grid */}
