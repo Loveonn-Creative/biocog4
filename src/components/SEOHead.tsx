@@ -20,6 +20,10 @@ interface SEOHeadProps {
   };
   noIndex?: boolean;
   breadcrumbs?: BreadcrumbItem[];
+  faqSchema?: { question: string; answer: string }[];
+  howToSchema?: { name: string; steps: { title: string; text: string }[] };
+  /** Set to false to suppress Organization schema on non-homepage pages */
+  showOrgSchema?: boolean;
 }
 
 export const SEOHead = ({
@@ -32,12 +36,14 @@ export const SEOHead = ({
   article,
   noIndex = false,
   breadcrumbs,
+  faqSchema,
+  howToSchema,
+  showOrgSchema = false,
 }: SEOHeadProps) => {
   const fullTitle = title.includes('Senseible') ? title : `${title} | Senseible`;
   const siteUrl = 'https://senseible.earth';
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
   
-  // Base keywords always included
   const baseKeywords = [
     'senseible', 'sensible', 'senseible.earth', 'senseible carbon',
     'carbon accounting', 'carbon MRV', 'carbon credits', 'climate finance',
@@ -46,8 +52,8 @@ export const SEOHead = ({
   
   const allKeywords = [...new Set([...baseKeywords, ...keywords])].join(', ');
 
-  // Organization schema
-  const organizationSchema = {
+  // Organization schema — only on homepage
+  const organizationSchema = showOrgSchema ? {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Senseible",
@@ -55,10 +61,7 @@ export const SEOHead = ({
     "logo": `${siteUrl}/logo.png`,
     "description": "AI-driven carbon infrastructure converting MSME operational data into verified, regulation-ready carbon outcomes across India and the EU.",
     "areaServed": ["India", "European Union", "Southeast Asia", "Middle East"],
-    "knowsAbout": [
-      "Carbon MRV", "Carbon Accounting", "Carbon Credits",
-      "CBAM", "ESG Compliance", "Green Finance"
-    ],
+    "knowsAbout": ["Carbon MRV", "Carbon Accounting", "Carbon Credits", "CBAM", "ESG Compliance", "Green Finance"],
     "sameAs": [
       "https://www.linkedin.com/company/senseible/",
       "https://x.com/senseible_earth",
@@ -81,22 +84,7 @@ export const SEOHead = ({
       "postalCode": "122003",
       "addressCountry": "IN"
     }
-  };
-
-  // Software application schema
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Senseible AI Carbon Layer",
-    "applicationCategory": "EnvironmentalManagementSoftware",
-    "operatingSystem": "Web",
-    "description": "AI carbon layer enabling MRV-to-monetization for MSMEs in under 47 seconds.",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock"
-    }
-  };
+  } : null;
 
   // Article schema for CMS pages
   const articleSchema = article ? {
@@ -107,25 +95,13 @@ export const SEOHead = ({
     "image": image,
     "datePublished": article.publishedTime,
     "dateModified": article.modifiedTime || article.publishedTime,
-    "author": {
-      "@type": "Organization",
-      "name": article.author || "Senseible",
-      "url": siteUrl
-    },
+    "author": { "@type": "Organization", "name": article.author || "Senseible", "url": siteUrl },
     "publisher": {
       "@type": "Organization",
       "name": "Senseible",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${siteUrl}/logo.png`,
-        "width": 600,
-        "height": 60
-      }
+      "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png`, "width": 600, "height": 60 }
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
     "keywords": article.tags?.join(', ')
   } : null;
 
@@ -141,23 +117,42 @@ export const SEOHead = ({
     }))
   } : null;
 
+  // FAQPage schema
+  const faqJsonLd = faqSchema && faqSchema.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSchema.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  } : null;
+
+  // HowTo schema
+  const howToJsonLd = howToSchema ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": howToSchema.name,
+    "step": howToSchema.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": s.title,
+      "text": s.text
+    }))
+  } : null;
+
   return (
     <Helmet>
-      {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="keywords" content={allKeywords} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
       
-      {/* Canonical URL */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-      
-      {/* hreflang */}
       {canonicalUrl && <link rel="alternate" hrefLang="en-in" href={canonicalUrl} />}
       {canonicalUrl && <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />}
       
-      {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -165,14 +160,12 @@ export const SEOHead = ({
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:site_name" content="Senseible" />
       
-      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@senseible_earth" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       
-      {/* Article specific */}
       {article?.publishedTime && (
         <meta property="article:published_time" content={article.publishedTime} />
       )}
@@ -183,22 +176,20 @@ export const SEOHead = ({
         <meta key={index} property="article:tag" content={tag} />
       ))}
       
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(softwareSchema)}
-      </script>
+      {organizationSchema && (
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      )}
       {articleSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       )}
       {breadcrumbSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+      )}
+      {howToJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(howToJsonLd)}</script>
       )}
     </Helmet>
   );

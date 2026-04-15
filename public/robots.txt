@@ -1,17 +1,24 @@
 # Senseible Carbon Intelligence Platform
 # https://senseible.earth
-# India's first AI-powered carbon MRV for MSMEs
+# AI-powered carbon MRV for MSMEs
 
 User-agent: *
 Allow: /
+Allow: /solutions/
 Allow: /climate-intelligence/
 Allow: /industries/
 Allow: /vs/
+Allow: /cbam-calculator
+Allow: /net-zero
 Allow: /mission
 Allow: /about
 Allow: /pricing
 Allow: /contact
 Allow: /principles
+Allow: /carbon-credits
+Allow: /climate-finance
+Allow: /partners
+Allow: /grants
 Disallow: /api/
 Disallow: /auth
 Disallow: /settings
@@ -25,6 +32,7 @@ Disallow: /verify
 Disallow: /monetize
 Disallow: /mrv-dashboard
 Disallow: /history
+Disallow: /admin
 
 # Search Engines
 User-agent: Googlebot
@@ -45,10 +53,14 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI Assistants - Allow knowledge hub and public pages
+# AI Assistants
 User-agent: GPTBot
+Allow: /solutions/
 Allow: /climate-intelligence/
 Allow: /industries/
+Allow: /vs/
+Allow: /cbam-calculator
+Allow: /net-zero
 Allow: /mission
 Allow: /about
 Allow: /pricing
@@ -56,8 +68,11 @@ Disallow: /dashboard
 Disallow: /auth
 
 User-agent: Claude-Web
+Allow: /solutions/
 Allow: /climate-intelligence/
 Allow: /industries/
+Allow: /vs/
+Allow: /cbam-calculator
 Allow: /mission
 Allow: /about
 
@@ -65,11 +80,15 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: CCBot
+Allow: /solutions/
 Allow: /climate-intelligence/
 
 User-agent: PerplexityBot
+Allow: /solutions/
 Allow: /climate-intelligence/
 Allow: /industries/
+Allow: /vs/
+Allow: /cbam-calculator
 Allow: /mission
 Allow: /about
 Allow: /pricing
