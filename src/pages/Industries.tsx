@@ -7,14 +7,16 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   Factory, Truck, Building2, Car, Shirt, FlaskConical, 
   HardHat, ArrowRight, Check, Leaf, TrendingDown, 
-  DollarSign, FileText, Shield, Zap
+  DollarSign, FileText, Shield, Zap, AlertTriangle, Globe, Calculator
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
+import { getCountryConfig } from '@/lib/countryConfig';
 interface IndustryData {
   id: string;
   name: string;
@@ -254,6 +256,186 @@ const industries: IndustryData[] = [
   }
 ];
 
+// CBAM-exposed industry IDs
+const cbamExposedSectors = ['steel', 'chemical'];
+
+// Scope 2 Quick Estimator
+const Scope2Estimator = () => {
+  const [country, setCountry] = useState('IN');
+  const [monthlyKwh, setMonthlyKwh] = useState(10000);
+  const config = getCountryConfig(country);
+  const annualCo2 = (monthlyKwh * 12 * config.gridFactor) / 1000;
+
+  return (
+    <Card className="border-primary/30 bg-primary/5">
+      <CardHeader className="pb-3">
+        <CardTitle className="flex items-center gap-2 text-lg">
+          <Calculator className="h-5 w-5 text-primary" />
+          Scope 2 Quick Estimator
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="space-y-1">
+            <Label className="text-xs">Country</Label>
+            <select value={country} onChange={e => setCountry(e.target.value)} className="w-full h-9 rounded-md border border-input bg-background px-3 text-sm">
+              {['IN','PH','ID','BD','PK','SG','VN','TH','MY','LK'].map(c => {
+                const cc = getCountryConfig(c);
+                return <option key={c} value={c}>{cc.name}</option>;
+              })}
+            </select>
+          </div>
+          <div className="space-y-1">
+            <Label className="text-xs">Monthly kWh</Label>
+            <Input type="number" value={monthlyKwh} onChange={e => setMonthlyKwh(Number(e.target.value))} />
+          </div>
+        </div>
+        <div className="p-3 bg-background rounded-lg text-center">
+          <div className="text-2xl font-bold text-primary">{annualCo2.toFixed(1)} tCO₂e/year</div>
+          <div className="text-xs text-muted-foreground">Grid factor: {config.gridFactor} kgCO₂/kWh ({config.name})</div>
+        </div>
+        <Button variant="outline" size="sm" className="w-full" asChild>
+          <Link to="/">Upload invoices for full Scope 1+2+3 <ArrowRight className="h-3 w-3 ml-1" /></Link>
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};
+
+// CBAM Readiness Score
+const CBAMReadiness = ({ industryId }: { industryId: string }) => {
+  const checks = [
+    { label: 'Emission intensity per tonne calculated', key: 'intensity' },
+    { label: 'EU importer identified for CBAM declarations', key: 'importer' },
+    { label: 'Monitoring plan documented', key: 'monitoring' },
+    { label: 'Quarterly reporting process established', key: 'reporting' },
+    { label: 'Domestic carbon price deduction assessed', key: 'deduction' },
+  ];
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const score = Object.values(checked).filter(Boolean).length;
+  const pct = Math.round((score / checks.length) * 100);
+
+  return (
+    <Card className="border-amber-500/30 bg-amber-500/5">
+      <CardHeader className="pb-3">
+        <CardTitle className="flex items-center gap-2 text-lg">
+          <Shield className="h-5 w-5 text-amber-600" />
+          CBAM Readiness Score
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm text-muted-foreground">Your readiness</span>
+          <Badge variant={pct >= 60 ? 'default' : 'destructive'}>{pct}%</Badge>
+        </div>
+        <ul className="space-y-2">
+          {checks.map(c => (
+            <li key={c.key} className="flex items-center gap-2 text-sm cursor-pointer" onClick={() => setChecked(p => ({ ...p, [c.key]: !p[c.key] }))}>
+              <div className={cn('w-4 h-4 rounded border flex items-center justify-center', checked[c.key] ? 'bg-primary border-primary' : 'border-border')}>
+                {checked[c.key] && <Check className="h-3 w-3 text-primary-foreground" />}
+              </div>
+              {c.label}
+            </li>
+          ))}
+        </ul>
+        <Button size="sm" className="w-full" asChild>
+          <Link to="/cbam-calculator">Full CBAM Calculator <ArrowRight className="h-3 w-3 ml-1" /></Link>
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};
+
+// Export Risk Badge
+const ExportRiskBadge = ({ industryId }: { industryId: string }) => {
+  const isCbam = cbamExposedSectors.includes(industryId);
+  return (
+    <Card className={cn('border-l-4', isCbam ? 'border-l-destructive' : 'border-l-amber-500')}>
+      <CardContent className="p-4 flex items-start gap-3">
+        <AlertTriangle className={cn('h-5 w-5 mt-0.5', isCbam ? 'text-destructive' : 'text-amber-500')} />
+        <div>
+          <div className="font-medium text-sm flex items-center gap-2">
+            EU Export Risk
+            <Badge variant={isCbam ? 'destructive' : 'outline'} className="text-xs">
+              {isCbam ? 'HIGH — CBAM Covered' : 'MEDIUM — Indirect Exposure'}
+            </Badge>
+          </div>
+          <p className="text-xs text-muted-foreground mt-1">
+            {isCbam
+              ? 'This sector is directly covered under EU CBAM. Exporters must provide product-level emission intensity data from 2026.'
+              : 'Not directly under CBAM, but EU buyers require Scope 3 data under CSDDD. Prepare carbon reports for supply chain compliance.'}
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+// Industry Tools section
+const IndustryTools = ({ industryId }: { industryId: string }) => (
+  <div className="grid md:grid-cols-2 gap-6 mb-8">
+    <div className="space-y-6">
+      <Scope2Estimator />
+      <ExportRiskBadge industryId={industryId} />
+    </div>
+    <div>
+      {cbamExposedSectors.includes(industryId) ? (
+        <CBAMReadiness industryId={industryId} />
+      ) : (
+        <Card className="border-primary/30 bg-primary/5 h-full">
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <DollarSign className="h-5 w-5 text-primary" />
+              Green Finance Eligibility
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-muted-foreground">Companies with verified carbon data access green financing at 2-4% lower interest rates across emerging markets.</p>
+            <ul className="space-y-2">
+              {['SIDBI Green Loans (India)', 'Bangladesh Bank 5% Refinance', 'IFC Climate Credit Lines', 'ADB Green Facilities'].map(item => (
+                <li key={item} className="flex items-center gap-2 text-sm">
+                  <Check className="h-3 w-3 text-primary" />{item}
+                </li>
+              ))}
+            </ul>
+            <Button size="sm" className="w-full" asChild>
+              <Link to="/climate-finance">Check Eligibility <ArrowRight className="h-3 w-3 ml-1" /></Link>
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  </div>
+);
+
+// Map industry IDs to related solution page slugs
+const getSolutionLinksForIndustry = (industryId: string): { slug: string; label: string }[] => {
+  const sectorMap: Record<string, string> = {
+    textile: 'textile',
+    chemical: 'chemicals',
+    steel: 'steel',
+    logistics: 'logistics',
+    construction: 'manufacturing',
+    automobile: 'manufacturing',
+  };
+  const sector = sectorMap[industryId] || 'manufacturing';
+  const countries = [
+    { code: 'india', label: 'India' },
+    { code: 'bangladesh', label: 'Bangladesh' },
+    { code: 'indonesia', label: 'Indonesia' },
+    { code: 'vietnam', label: 'Vietnam' },
+    { code: 'philippines', label: 'Philippines' },
+  ];
+  const regulations = cbamExposedSectors.includes(industryId) ? ['cbam', 'scope3'] : ['carbon-audit', 'scope3'];
+  
+  return countries.flatMap(c => 
+    regulations.map(r => ({
+      slug: `${r}-${sector}-${c.code}`,
+      label: `${r === 'cbam' ? 'CBAM' : r === 'scope3' ? 'Scope 3' : 'Carbon Audit'} · ${c.label}`,
+    }))
+  ).slice(0, 6);
+};
+
 const Industries = () => {
   const { industry: industrySlug } = useParams();
   const [activeTab, setActiveTab] = useState(industrySlug || 'textile');
@@ -475,6 +657,26 @@ const Industries = () => {
                     </CardContent>
                   </Card>
                 )}
+              </div>
+
+              {/* Scope 2 Quick Estimator + CBAM Readiness + Export Risk */}
+              <IndustryTools industryId={ind.id} />
+
+              {/* Related Solutions Links */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <Globe className="h-4 w-4 text-primary" />
+                  Country-Specific Solutions
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {getSolutionLinksForIndustry(ind.id).map(link => (
+                    <Link key={link.slug} to={`/solutions/${link.slug}`}>
+                      <Badge variant="outline" className="hover:bg-primary/10 cursor-pointer">
+                        {link.label}
+                      </Badge>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* CTA Section */}

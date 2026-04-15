@@ -47,6 +47,39 @@ const INDUSTRIES = [
   "cement", "paper", "plastics", "electronics", "renewable-energy"
 ];
 
+// Programmatic solution pages (country × sector × regulation)
+const SOLUTION_SLUGS = [
+  "cbam-steel-india","cbam-chemicals-india","cbam-manufacturing-india","scope3-textile-india","scope3-food-processing-india",
+  "carbon-audit-manufacturing-india","carbon-audit-logistics-india","green-finance-manufacturing-india",
+  "cbam-steel-bangladesh","cbam-chemicals-bangladesh","scope3-textile-bangladesh","scope3-manufacturing-bangladesh",
+  "carbon-audit-textile-bangladesh","green-finance-textile-bangladesh","green-finance-manufacturing-bangladesh",
+  "cbam-steel-indonesia","cbam-chemicals-indonesia","scope3-manufacturing-indonesia","scope3-food-processing-indonesia",
+  "carbon-audit-manufacturing-indonesia","green-finance-manufacturing-indonesia",
+  "cbam-steel-vietnam","cbam-chemicals-vietnam","scope3-textile-vietnam","scope3-manufacturing-vietnam",
+  "carbon-audit-manufacturing-vietnam","green-finance-manufacturing-vietnam",
+  "scope3-manufacturing-philippines","scope3-food-processing-philippines","carbon-audit-manufacturing-philippines",
+  "green-finance-manufacturing-philippines","carbon-audit-logistics-philippines",
+  "scope3-textile-pakistan","scope3-manufacturing-pakistan","carbon-audit-manufacturing-pakistan",
+  "green-finance-textile-pakistan","green-finance-manufacturing-pakistan",
+  "carbon-audit-manufacturing-singapore","scope3-manufacturing-singapore","green-finance-manufacturing-singapore",
+  "scope3-food-processing-thailand","scope3-manufacturing-thailand","carbon-audit-manufacturing-thailand",
+  "green-finance-manufacturing-thailand",
+  "scope3-manufacturing-malaysia","carbon-audit-manufacturing-malaysia","green-finance-manufacturing-malaysia",
+  "scope3-textile-sri-lanka","carbon-audit-manufacturing-sri-lanka","green-finance-textile-sri-lanka",
+  "cbam-steel-pakistan","cbam-steel-philippines","cbam-steel-thailand","cbam-steel-malaysia",
+  "scope3-logistics-india","scope3-chemicals-india","carbon-audit-chemicals-india",
+  "scope3-textile-vietnam","carbon-audit-textile-vietnam",
+  "cbam-steel-sri-lanka","scope3-food-processing-bangladesh",
+  "carbon-audit-food-processing-india","green-finance-logistics-india",
+  "scope3-chemicals-indonesia","carbon-audit-chemicals-indonesia",
+  "scope3-chemicals-vietnam","scope3-logistics-philippines",
+  "carbon-audit-food-processing-thailand","green-finance-food-processing-thailand",
+  "scope3-chemicals-malaysia","carbon-audit-textile-pakistan",
+  "green-finance-manufacturing-sri-lanka","carbon-audit-logistics-singapore",
+  "scope3-logistics-thailand","green-finance-chemicals-india",
+  "carbon-audit-steel-india","scope3-steel-india",
+];
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
