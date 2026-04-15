@@ -107,6 +107,16 @@ serve(async (req) => {
 `;
     }
 
+    // Add solution pages
+    for (const slug of SOLUTION_SLUGS) {
+      xml += `  <url>
+    <loc>${SITE_URL}/solutions/${slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+
     // Add industry pages
     for (const industry of INDUSTRIES) {
       xml += `  <url>
