@@ -1322,7 +1322,260 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     category: 'data-traceability',
     createdAt: '2025-04-05',
     featured: true
-  }
+  },
+
+  // === 25 Country-Specific Problem-First SEO Articles ===
+  {
+    id: '48',
+    slug: 'cbam-compliance-cost-indian-steel-exporters-2026-2034',
+    title: 'CBAM Compliance Cost for Indian Steel Exporters: 2026-2034 Breakdown',
+    subtitle: 'Carbon Regulations',
+    content: `Indian steel exporters will face a phased carbon border adjustment from the EU starting 2026. During the transitional period (2023-2025), only reporting is required. From 2026, a 2.5% CBAM certificate purchase obligation begins, scaling to 100% by 2034. For a mid-size steel MSME exporting 5,000 tonnes annually via blast furnace (BF-BOF) route, the estimated CBAM cost starts at approximately EUR 12,000 in 2026 and could exceed EUR 480,000 by 2034 at current EU ETS prices of EUR 85 per tonne. Key cost drivers include: embedded emission intensity (1.8-2.2 tCO2 per tonne for BF-BOF), India grid emission factor of 0.708 kgCO2 per kWh for Scope 2, and the absence of a domestic carbon price that could be deducted. Preparation steps: (1) Calculate product-level emission intensity using actual production data, (2) Register as an authorized CBAM declarant through your EU importer, (3) Implement monitoring plans aligned with the EU Implementing Regulation, (4) Explore electric arc furnace transition to reduce emission intensity by 60-70%. MSMEs that start measuring now can access green financing at 2-4% lower interest rates and position for carbon credit monetization. Senseible automates this entire calculation from fuel and electricity invoices.`,
+    tags: ['CBAM', 'steel', 'India', 'EU carbon tax', 'export compliance', 'MSME'],
+    category: 'regulations',
+    createdAt: '2026-04-10',
+    featured: true,
+  },
+  {
+    id: '49',
+    slug: 'philippine-manufacturing-sme-carbon-reporting-2026',
+    title: 'How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026',
+    subtitle: 'Regional Guidelines',
+    content: `The Philippines Department of Trade and Industry (DTI) is progressively aligning with international ESG disclosure requirements. SEC Memorandum Circular No. 4 (2019) already mandates sustainability reporting for listed companies, and supply chain pressure is pushing this to SME suppliers. Philippine manufacturers supplying multinational OEMs increasingly face Scope 3 data requests. Without carbon reporting capability, SMEs risk losing contracts to competitors in Vietnam or Indonesia who can provide emission data. Grid emission factor for the Philippines is 0.505 kgCO2 per kWh (IEA 2023), lower than India or Indonesia, giving Filipino manufacturers a competitive emission advantage if documented properly. Getting started: (1) Collect 12 months of Meralco or local utility bills, (2) Upload fuel purchase invoices for generators and company vehicles, (3) Use Senseible to auto-calculate Scope 1 and Scope 2 emissions, (4) Generate a GHG Protocol-aligned report for your buyers. The Philippine Board of Investments offers incentives for green manufacturing investments. Having verified carbon data is the first requirement for accessing these incentives.`,
+    tags: ['Philippines', 'carbon reporting', 'SME', 'DTI', 'manufacturing', 'SEC-ESG'],
+    category: 'regional',
+    createdAt: '2026-04-09',
+  },
+  {
+    id: '50',
+    slug: 'scope-3-calculator-bangladesh-textile-exporters',
+    title: 'Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step',
+    subtitle: 'Supply Chain Emissions',
+    content: `Bangladesh is the second-largest garment exporter globally, with EUR 30 billion in annual exports. EU buyers like H&M, Primark, and Inditex now require Scope 3 emission data from Bangladeshi suppliers as part of the EU Corporate Sustainability Due Diligence Directive (CSDDD). Scope 3 emissions in Bangladesh textiles typically represent 60-70% of total footprint. Key categories include: raw cotton procurement from India and Central Asia, synthetic fiber from China, chemical dyes and auxiliaries, packaging, and ocean freight to EU ports. Bangladesh grid factor is 0.623 kgCO2 per kWh. Step-by-step process: (1) Map your supply chain from fiber to finished garment, (2) Collect invoices from cotton suppliers, dye manufacturers, and logistics providers, (3) Upload to Senseible for automatic emission factor matching, (4) Generate buyer-ready Scope 3 reports. BGMEA members with verified carbon data can access better terms from IFC and ADB green credit lines through banks like BRAC Bank and City Bank.`,
+    tags: ['Bangladesh', 'Scope 3', 'textile', 'garment', 'supply chain', 'BGMEA'],
+    category: 'supply-chain',
+    createdAt: '2026-04-08',
+  },
+  {
+    id: '51',
+    slug: 'eu-carbon-border-tax-indonesian-chemical-exports',
+    title: 'EU Carbon Border Tax Impact on Indonesian Chemical Exports',
+    subtitle: 'Carbon Regulations',
+    content: `Indonesia exports over USD 3 billion in chemicals and fertilizers to the EU annually. Under CBAM, certain chemical products including hydrogen, ammonia, and organic chemicals fall under covered CN codes starting 2026. Indonesia has one of the highest grid emission factors in Southeast Asia at 0.761 kgCO2 per kWh, making Scope 2 emissions for electricity-intensive chemical production notably higher than competitors in Thailand (0.493) or Singapore (0.408). OJK ESG disclosure requirements and the PROPER environmental rating system already create a regulatory foundation. Financial exposure: A chemical exporter shipping 10,000 tonnes of ammonia to the EU faces potential CBAM costs of EUR 200,000-500,000 annually by 2030. Action plan: (1) Identify CBAM-covered product codes in your export manifest, (2) Calculate per-tonne emission intensity using Indonesia grid factors, (3) Document any carbon price paid under Indonesia carbon trading scheme, (4) Work with your EU importer to register for CBAM declarations. Indonesia launched its carbon trading scheme in 2023. Domestic carbon prices paid can be deducted from CBAM liability.`,
+    tags: ['Indonesia', 'CBAM', 'chemical', 'EU carbon tax', 'OJK', 'PROPER'],
+    category: 'regulations',
+    createdAt: '2026-04-07',
+  },
+  {
+    id: '52',
+    slug: 'green-loan-eligibility-pakistani-small-businesses',
+    title: 'Green Loan Eligibility for Pakistani Small Businesses: What Banks Need',
+    subtitle: 'Carbon Accounting Standards',
+    content: `State Bank of Pakistan (SBP) Green Banking Guidelines mandate that scheduled banks allocate a growing share of lending to green projects. For SMEs, this translates to preferential interest rates 2-3% below market for businesses with verified environmental data. Pakistani small businesses in textile, leather, and food processing sectors can access green loans from HBL, MCB, and Bank Alfalah under SBP refinancing schemes. The key requirement: documented carbon footprint and a credible reduction plan. Pakistan grid factor is 0.495 kgCO2 per kWh, among the lowest in South Asia due to significant hydro and nuclear generation. Green loan application process: (1) Calculate your baseline carbon footprint using Senseible, (2) Identify reduction opportunities in energy efficiency, (3) Generate a 3-year reduction roadmap, (4) Submit to bank with NTN (tax ID) and verified emission data. World Bank and ADB climate finance facilities in Pakistan exceed USD 2 billion.`,
+    tags: ['Pakistan', 'green loan', 'SBP', 'small business', 'SECP', 'green finance'],
+    category: 'carbon-standards',
+    createdAt: '2026-04-06',
+  },
+  {
+    id: '53',
+    slug: 'carbon-audit-checklist-singapore-manufacturing',
+    title: 'Carbon Audit Checklist for Singapore Manufacturing Companies',
+    subtitle: 'Data Traceability & Verification',
+    content: `Singapore Carbon Tax Act imposes SGD 25 per tonne on facilities emitting more than 25,000 tCO2e annually, rising to SGD 45 by 2026 and potentially SGD 80 by 2030. Even SMEs below the threshold benefit from voluntary carbon measurement. SGX-listed companies must follow SGX ESG reporting requirements. Singapore grid factor is 0.408 kgCO2 per kWh, the lowest in Southeast Asia. Carbon audit checklist: (1) SP Group electricity bills for 12 months, (2) Diesel and LPG purchase records, (3) Vehicle fleet fuel consumption, (4) Refrigerant top-up records, (5) Water consumption from PUB bills. NEA accepts GHG Protocol-aligned audits. Enterprise Singapore provides grants covering up to 70% of sustainability consultancy costs under the Enterprise Development Grant.`,
+    tags: ['Singapore', 'carbon audit', 'manufacturing', 'Carbon Tax Act', 'SGX', 'NEA'],
+    category: 'data-traceability',
+    createdAt: '2026-04-05',
+  },
+  {
+    id: '54',
+    slug: 'vietnamese-exporters-prepare-eu-cbam-90-days',
+    title: 'How Vietnamese Exporters Can Prepare for EU CBAM in 90 Days',
+    subtitle: 'Carbon Regulations',
+    content: `Vietnam exports over USD 50 billion to the EU, making it one of the most CBAM-exposed economies in Southeast Asia. Steel, cement, aluminium, and fertilizer exporters face immediate reporting obligations and financial liability from 2026. Vietnam grid factor is 0.625 kgCO2 per kWh. 90-day preparation plan: Week 1-2: Identify CBAM-covered products using EU CN code list. Week 3-4: Collect 12 months of energy consumption data (EVN electricity bills, fuel invoices). Week 5-6: Upload to Senseible and calculate emission intensity per product. Week 7-8: Work with EU importers to complete CBAM transitional registry entries. Week 9-12: Implement quick-win emission reductions. Vietnam is developing a domestic ETS expected by 2028. Early movers who build measurement capability now will be ahead when domestic carbon pricing begins.`,
+    tags: ['Vietnam', 'CBAM', 'exporter', 'MONRE', 'EU carbon tax', 'steel'],
+    category: 'regulations',
+    createdAt: '2026-04-04',
+  },
+  {
+    id: '55',
+    slug: 'thailand-food-processing-carbon-footprint-reduction',
+    title: 'Thailand Food Processing Sector: Carbon Footprint Reduction Guide',
+    subtitle: 'Manufacturing Emissions',
+    content: `Thailand is the world largest exporter of canned tuna and a significant processed food supplier to Europe, Japan, and the US. TGO Carbon Footprint for Organization (CFO) certification is increasingly required by international buyers. Thailand grid factor is 0.493 kgCO2 per kWh. For food processing, key emission sources include: refrigeration (30-40%), cooking and sterilization (25-30%), packaging (10-15%), and wastewater treatment (5-10%). Reduction strategies: (1) Replace R-22 refrigerants with low-GWP alternatives, (2) Install heat recovery from cooking processes, (3) Biogas from wastewater treatment, (4) Solar rooftop for daytime processing. Case example: A mid-size seafood processor in Samut Sakhon reduced emissions 28% in 18 months through refrigerant replacement and solar installation, saving THB 3.2 million annually.`,
+    tags: ['Thailand', 'food processing', 'carbon footprint', 'TGO', 'refrigeration', 'reduction'],
+    category: 'manufacturing',
+    createdAt: '2026-04-03',
+  },
+  {
+    id: '56',
+    slug: 'msme-carbon-credits-sri-lanka-invoice-to-revenue',
+    title: 'MSME Carbon Credits in Sri Lanka: From Invoice to Revenue',
+    subtitle: 'Carbon Accounting Standards',
+    content: `Sri Lankan MSMEs in apparel, tea processing, and rubber manufacturing can monetize verified emission reductions as carbon credits. The voluntary carbon market values credits from emerging market SMEs at USD 8-15 per tonne. Sri Lanka grid factor is 0.462 kgCO2 per kWh. Revenue pathway: (1) Establish baseline using 12 months of invoice data, (2) Implement reduction measures (solar, efficiency, fuel switching), (3) Document reductions with before and after invoice data, (4) Register with carbon standard and issue credits, (5) List on voluntary market platforms. For an apparel manufacturer consuming 50,000 kWh monthly, switching to solar rooftop could generate approximately 200 tCO2e in annual credits worth USD 1,600-3,000. CBSL sustainable finance taxonomy supports green lending for verified carbon reduction projects.`,
+    tags: ['Sri Lanka', 'carbon credits', 'MSME', 'CEA', 'apparel', 'monetization'],
+    category: 'carbon-standards',
+    createdAt: '2026-04-02',
+  },
+  {
+    id: '57',
+    slug: 'malaysia-palm-oil-scope-1-2-3-emission-breakdown',
+    title: 'Malaysia Palm Oil Sector: Scope 1, 2, 3 Emission Breakdown',
+    subtitle: 'Manufacturing Emissions',
+    content: `Malaysia is the world second-largest palm oil producer. RSPO and MSPO certification increasingly require carbon accounting. EU Deforestation Regulation (EUDR) adds urgency. Scope 1: Methane from palm oil mill effluent (POME) treatment is the single largest emission source at 40-50%. Scope 2: Malaysia grid factor is 0.585 kgCO2 per kWh. Mills typically consume 20-30 kWh per tonne of FFB. Scope 3: Upstream emissions from fertilizer application (N2O), land use change, and downstream refining represent 30-40%. Reduction priorities: (1) POME biogas capture, (2) Biomass cogeneration, (3) Precision fertilizer application, (4) No-deforestation commitments. Bursa Malaysia ESG reporting requirements and MyCarbon platform create a regulatory pathway. Palm oil companies with verified carbon data access better pricing from European refiners under EUDR compliance.`,
+    tags: ['Malaysia', 'palm oil', 'Scope 1 2 3', 'RSPO', 'EUDR', 'Bursa ESG'],
+    category: 'manufacturing',
+    createdAt: '2026-04-01',
+  },
+  {
+    id: '58',
+    slug: 'how-to-file-eu-carbon-tax-report-msme-guide',
+    title: 'How to File an EU Carbon Tax Report: Step-by-Step MSME Guide',
+    subtitle: 'Carbon Regulations',
+    content: `EU CBAM requires quarterly reporting from importers of covered goods (steel, cement, aluminium, fertilizers, hydrogen, electricity). As an MSME exporter from India, Bangladesh, Vietnam, or Indonesia, your EU importer will request emission data from you. Filing process: (1) Your EU importer registers as an Authorized CBAM Declarant, (2) You provide product-level embedded emissions data (direct and indirect), (3) The importer files quarterly CBAM reports using your data, (4) From 2026, certificates must be purchased proportional to embedded emissions. Data you must provide: Total direct emissions per tonne (Scope 1), indirect emissions from electricity (Scope 2), carbon price paid domestically, production methodology. Common mistakes: Using default EU emission factors instead of actual data, not accounting for domestic carbon prices paid, mixing product-level and facility-level data. Senseible automates the data preparation from production invoices and electricity bills.`,
+    tags: ['EU carbon tax', 'CBAM filing', 'MSME', 'quarterly report', 'carbon declaration'],
+    category: 'regulations',
+    createdAt: '2026-03-30',
+  },
+  {
+    id: '59',
+    slug: 'export-carbon-reporting-eu-msme-emerging-markets',
+    title: 'Export Carbon Reporting for EU-Bound MSMEs in Emerging Markets',
+    subtitle: 'Carbon Regulations',
+    content: `Emerging market MSMEs exporting to the EU face a new reality: carbon transparency is no longer optional. Between CBAM, CSDDD, and buyer sustainability requirements, emission data is becoming as critical as quality certificates. Countries most affected: India (USD 60B exports to EU), Vietnam (USD 50B), Bangladesh (EUR 30B in garments), Indonesia (USD 20B). What EU buyers expect: Annual or quarterly emission data by product category, GHG Protocol-aligned methodology, platform-verified data, reduction targets and progress tracking. Cost of not reporting: Contract losses to competitors, higher CBAM default values applied by EU customs, exclusion from preferred supplier lists. Grid factors: India (0.708), Indonesia (0.761), Bangladesh (0.623), Vietnam (0.625), Thailand (0.493), Philippines (0.505), Singapore (0.408). Upload 12 months of utility and fuel invoices to Senseible for buyer-ready export carbon reports.`,
+    tags: ['export', 'carbon reporting', 'EU', 'MSME', 'emerging markets', 'CSDDD'],
+    category: 'regulations',
+    createdAt: '2026-03-28',
+  },
+  {
+    id: '60',
+    slug: 'carbon-audit-small-business-india-complete-guide',
+    title: 'Carbon Audit for Small Business India: Complete 2026 Guide',
+    subtitle: 'Data Traceability & Verification',
+    content: `BRSR requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate. A carbon audit typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity at 0.708 kgCO2 per kWh India grid factor), and Scope 3 (raw materials, freight, employee commute). Cost comparison: Traditional consultant audit: INR 3-8 lakhs, 4-8 weeks. Senseible automated audit: INR 0 (free tier) to INR 15,000 (premium), under 47 seconds per document. Documents needed: 12 months of electricity bills, diesel and petrol receipts, LPG invoices, vehicle log books, raw material purchase orders. GSTIN integration enables automatic vendor classification and HSN code-based emission factor matching. Benefits: Access to SIDBI green loans at 2-3% lower rates, MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility.`,
+    tags: ['carbon audit', 'small business', 'India', 'BRSR', 'GSTIN', 'MSME'],
+    category: 'data-traceability',
+    createdAt: '2026-03-26',
+  },
+  {
+    id: '61',
+    slug: 'scope-3-emissions-supply-chain-msme-calculator',
+    title: 'Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide',
+    subtitle: 'Supply Chain Emissions',
+    content: `Scope 3 emissions typically represent 65-90% of a company total carbon footprint but are the hardest to measure. GHG Protocol Scope 3 categories most relevant to MSMEs: Category 1 (Purchased Goods and Services) usually 40-60% of Scope 3, Category 4 (Upstream Transportation) 10-20%, Category 5 (Waste) 5-10%, Category 7 (Employee Commuting) 3-8%. Calculation approaches: Spend-based method (easiest), Activity-based method (more accurate), Hybrid approach. Country-specific considerations: Emission factors vary significantly. Steel from India (2.2 tCO2/t) versus China (1.8 tCO2/t) versus EU (1.3 tCO2/t). Upload supplier invoices with line items. The system matches HSN/HS codes to emission factor databases, applies country-specific grid and transport factors, and generates category-wise Scope 3 breakdowns. EU CSDDD requires due diligence across value chains. Brands like Unilever, H&M, and Apple are pushing Scope 3 measurement to tier-2 and tier-3 suppliers.`,
+    tags: ['Scope 3', 'supply chain', 'MSME', 'GHG Protocol', 'calculator', 'CSDDD'],
+    category: 'supply-chain',
+    createdAt: '2026-03-24',
+  },
+  {
+    id: '62',
+    slug: 'brsr-reporting-msme-india-simplified-guide',
+    title: 'BRSR Reporting for Indian MSMEs: Simplified Compliance Guide',
+    subtitle: 'Carbon Accounting Standards',
+    content: `SEBI BRSR is mandatory for top-1000 listed companies by market capitalization. BRSR Core with assurance is expanding to include value chain partners, meaning MSMEs in listed company supply chains must provide emission data. Essential indicators relevant to MSMEs: Total energy consumed, total Scope 1 and Scope 2 emissions, energy intensity per rupee of turnover, water consumption, waste generated. BRSR reporting timeline: FY 2022-23 onwards for top-1000, BRSR Core with reasonable assurance from FY 2023-24 for top-150, value chain reporting expected from FY 2025-26. Senseible maps directly to BRSR disclosure requirements: energy intensity (GJ per lakh rupee turnover), emission intensity (tCO2 per lakh rupee turnover), and year-on-year comparison. MoEFCC and MCA guidelines align with GHG Protocol and TCFD frameworks.`,
+    tags: ['BRSR', 'SEBI', 'MSME', 'India', 'sustainability reporting', 'compliance'],
+    category: 'carbon-standards',
+    createdAt: '2026-03-22',
+  },
+  {
+    id: '63',
+    slug: 'indonesia-manufacturing-scope-2-electricity-emissions',
+    title: 'Indonesia Manufacturing: Scope 2 Electricity Emissions Calculator',
+    subtitle: 'Regional Guidelines',
+    content: `Indonesia has the highest grid emission factor in Southeast Asia at 0.761 kgCO2 per kWh (IEA 2023). For manufacturers in Bekasi, Cikarang, and Surabaya industrial zones, a factory consuming 100,000 kWh monthly has Scope 2 emissions of approximately 913 tCO2e annually, compared to 493 tCO2e for the same consumption in Thailand. OJK ESG disclosure framework requires listed companies to report emissions. PROPER environmental rating by Ministry of Environment rewards companies with verified carbon data. Reduction strategies: (1) Rooftop solar PPA arrangements, (2) PLN green tariff options, (3) Energy efficiency improvements in compressed air, cooling, and motors. NPWP (tax ID) can be used for business verification on Senseible platform. Indonesia carbon trading scheme launched in 2023. Companies purchasing domestic carbon credits can potentially deduct costs from CBAM liability.`,
+    tags: ['Indonesia', 'Scope 2', 'manufacturing', 'PLN', 'OJK', 'electricity emissions'],
+    category: 'regional',
+    createdAt: '2026-03-20',
+  },
+  {
+    id: '64',
+    slug: 'india-textile-exporters-cbam-eu-compliance-2026',
+    title: 'India Textile Exporters and EU CBAM: What You Need to Know in 2026',
+    subtitle: 'Carbon Regulations',
+    content: `While textiles are not currently in CBAM Scope, the EU is reviewing expansion to include downstream products by 2030. India textile industry exports USD 36 billion annually, with the EU as the second-largest market. Even without direct CBAM exposure, EU buyers under CSDDD are requesting carbon data from textile suppliers in Tirupur, Surat, and Ludhiana. Emission profile: Scope 1 (diesel generators, coal-fired boilers) 25-35%, Scope 2 (electricity at 0.708 kgCO2/kWh) 30-40%, Scope 3 (cotton, chemicals, logistics) 30-40%. Why prepare now: (1) EU CSRD requires brands to disclose supply chain emissions, (2) H&M, Inditex have 2030 targets, (3) Green financing offers 2-3% rate reduction, (4) Early movers can monetize carbon credits. Quick wins: Replace coal-fired boilers with biomass (40-50% reduction), install solar rooftop, implement zero liquid discharge.`,
+    tags: ['India', 'textile', 'CBAM', 'EU compliance', 'Tirupur', 'garment export'],
+    category: 'regulations',
+    createdAt: '2026-03-18',
+  },
+  {
+    id: '65',
+    slug: 'bangladesh-manufacturing-green-finance-access-guide',
+    title: 'Bangladesh Manufacturing: How to Access Green Finance with Carbon Data',
+    subtitle: 'Carbon Accounting Standards',
+    content: `Bangladesh Bank Green Refinance Scheme offers 5% interest rates versus 9-12% market rates for manufacturers with verified environmental data. IFC and ADB green credit lines through BRAC Bank, City Bank, and Eastern Bank provide additional low-cost capital. Eligibility criteria: documented baseline carbon footprint, credible reduction plan, quarterly monitoring, alignment with Bangladesh Bank green taxonomy. Manufacturing sectors eligible: garments, leather, food processing, pharmaceuticals, ceramics. Bangladesh grid factor is 0.623 kgCO2 per kWh. Application process with Senseible: (1) Upload 12 months of utility bills, (2) Calculate baseline using Bangladesh-specific factors, (3) Identify reduction opportunities, (4) Generate bank-ready green finance application with TIN verification. Bangladesh Climate Change Trust Fund and Green Climate Fund allocate additional resources for climate-aligned SME lending.`,
+    tags: ['Bangladesh', 'green finance', 'manufacturing', 'Bangladesh Bank', 'BRAC', 'SME lending'],
+    category: 'carbon-standards',
+    createdAt: '2026-03-16',
+  },
+  {
+    id: '66',
+    slug: 'logistics-scope-1-emissions-india-fleet-measurement',
+    title: 'Logistics Fleet Emissions in India: Scope 1 Measurement from Invoices',
+    subtitle: 'Logistics & Transport',
+    content: `India logistics sector contributes approximately 13% of national CO2 emissions. Fleet operators can measure Scope 1 emissions directly from diesel and petrol purchase invoices. Emission factors: Diesel 2.68 kgCO2/liter, Petrol 2.31 kgCO2/liter, CNG 2.75 kgCO2/kg, LPG 2.98 kgCO2/kg. For a fleet of 50 trucks consuming 3,000 liters diesel per month, total annual Scope 1 is approximately 4,824 tCO2e. E-way bill integration enables per-trip and per-km emission intensity calculation. Green logistics opportunities: (1) Route optimization reduces fuel 10-15%, (2) EV for last-mile, (3) CNG conversion for medium-haul, (4) Driver training reduces fuel waste 5-8%. Companies with verified carbon data access SIDBI green financing, preferential green logistics insurance rates, and carbon credit programs.`,
+    tags: ['India', 'logistics', 'fleet emissions', 'Scope 1', 'diesel', 'e-way bill'],
+    category: 'logistics',
+    createdAt: '2026-03-14',
+  },
+  {
+    id: '67',
+    slug: 'philippines-food-processing-carbon-measurement-guide',
+    title: 'Philippines Food Processing: Carbon Measurement Guide for Exporters',
+    subtitle: 'Manufacturing Emissions',
+    content: `The Philippines is a major food processing hub exporting canned goods, coconut products, and processed seafood. Philippines grid factor is 0.505 kgCO2 per kWh. Key emission sources: refrigeration and cold storage (35-45%), cooking and sterilization (20-30%), packaging (10-15%), wastewater treatment (5-10%). DTI sustainability guidelines and BOI green incentives reward companies with environmental documentation. Scope breakdown for a typical canned goods processor: Scope 1 (diesel, LPG, refrigerants) 20-30%, Scope 2 (Meralco electricity) 40-50%, Scope 3 (raw materials, packaging, freight) 25-35%. Quick wins: (1) Replace R-22 refrigerants, (2) Solar rooftop, (3) Biogas from wastewater, (4) LED lighting and VFD installation. Filipino food processors with verified carbon data access premium pricing from EU sustainability-conscious retailers.`,
+    tags: ['Philippines', 'food processing', 'carbon measurement', 'DTI', 'canned goods', 'exporter'],
+    category: 'manufacturing',
+    createdAt: '2026-03-12',
+  },
+  {
+    id: '68',
+    slug: 'cbam-cost-calculator-indian-steel-msme-2026',
+    title: 'CBAM Cost Calculator for Indian Steel MSMEs: Free Tool',
+    subtitle: 'Carbon Regulations',
+    content: `Indian steel MSMEs exporting to the EU need to calculate CBAM exposure before 2026. The cost depends on emission intensity, EU ETS price (EUR 85/tonne), and CBAM phase-in percentage. Production route matters: BF-BOF 1.8-2.2 tCO2/t, EAF with scrap 0.4-0.8 tCO2/t, EAF with DRI 1.2-1.6 tCO2/t. Phase-in: 2026 2.5%, 2027 5%, 2028 10%, 2029 22.5%, 2030 48.5%, 2031 61%, 2032 73.5%, 2033 86%, 2034 100%. Example for 5,000 tonnes BF-BOF at 2.0 tCO2/t: 2026 CBAM cost EUR 21,250, 2034 CBAM cost EUR 850,000. India has no domestic carbon price currently deductible. Use Senseible free CBAM calculator to input actual production data and get year-by-year cost projections using India grid factor (0.708 kgCO2/kWh).`,
+    tags: ['CBAM calculator', 'steel', 'India', 'MSME', 'cost projection', 'free tool'],
+    category: 'regulations',
+    createdAt: '2026-03-10',
+  },
+  {
+    id: '69',
+    slug: 'vietnam-textile-carbon-footprint-eu-buyers',
+    title: 'Vietnam Textile Factories: Carbon Footprint Data for EU Buyer Compliance',
+    subtitle: 'Supply Chain Emissions',
+    content: `Vietnam is the third-largest garment exporter globally. EU brands now require carbon data from Vietnamese textile suppliers under CSRD Scope 3 obligations. Vietnam grid factor is 0.625 kgCO2 per kWh. Typical emission profile: Scope 1 (coal and gas boilers) 30-40%, Scope 2 (EVN electricity) 35-45%, Scope 3 (yarn, chemicals, packaging) 20-30%. EU buyer requirements: Annual GHG inventory by scope, emission intensity per product unit, reduction targets, quarterly progress. MONRE EIA and planned ETS provide regulatory framework. Vietnamese factories participating in IFC PaCT have demonstrated 20-30% emission reductions. MST (tax ID) registration enables verification. Reports generated are compatible with Higg FEM used by major fashion brands.`,
+    tags: ['Vietnam', 'textile', 'carbon footprint', 'EU buyers', 'EVFTA', 'garment'],
+    category: 'supply-chain',
+    createdAt: '2026-03-08',
+  },
+  {
+    id: '70',
+    slug: 'thailand-automotive-supply-chain-carbon-measurement',
+    title: 'Thailand Automotive Supply Chain: Carbon Measurement for OEM Compliance',
+    subtitle: 'Manufacturing Emissions',
+    content: `Thailand is the largest automotive producer in Southeast Asia. Japanese and European OEMs like Toyota, Honda, BMW require Scope 3 emission data from Thai tier-1 and tier-2 suppliers. Thailand grid factor is 0.493 kgCO2 per kWh, giving competitive advantage over Indonesia (0.761) and Vietnam (0.625). Emission sources: Scope 1 (paint shop, welding, heat treatment) 20-30%, Scope 2 (PEA/MEA electricity) 40-50%, Scope 3 (steel, aluminium, plastics) 25-35%. TGO Carbon Footprint for Product (CFP) certification is increasingly requested by OEMs. SEC-ESG requirements cascade to SME suppliers. Eastern Seaboard industrial estates house thousands of auto parts SMEs. BOI provides tax incentives for green manufacturing investments with carbon measurement as qualifying criterion.`,
+    tags: ['Thailand', 'automotive', 'supply chain', 'OEM', 'TGO', 'carbon measurement'],
+    category: 'manufacturing',
+    createdAt: '2026-03-06',
+  },
+  {
+    id: '71',
+    slug: 'india-chemical-industry-cbam-exposure-analysis',
+    title: 'India Chemical Industry: CBAM Exposure Analysis and Compliance Roadmap',
+    subtitle: 'Carbon Regulations',
+    content: `Indian chemical exports to the EU exceed USD 8 billion annually. CBAM covers hydrogen, ammonia, and certain organic chemicals. Process emissions from chemical reactions are often larger than energy-related emissions. For ammonia production, the Haber-Bosch process releases approximately 1.8 tCO2 per tonne. India chemical clusters in Gujarat, Maharashtra, and Tamil Nadu face varying emission profiles. CBAM exposure by product: Ammonia HIGH, Hydrogen HIGH, Basic organic chemicals MEDIUM, Speciality chemicals LOW. Compliance roadmap: Phase 1 identify CBAM products, Phase 2 implement product-level monitoring, Phase 3 establish quarterly reporting with EU importers, Phase 4 reduce emission intensity. Green Chemistry Mission under MoEFCC supports emission reduction in chemical manufacturing.`,
+    tags: ['India', 'chemical', 'CBAM', 'ammonia', 'process emissions', 'Gujarat'],
+    category: 'regulations',
+    createdAt: '2026-03-04',
+  },
+  {
+    id: '72',
+    slug: 'pakistan-textile-scope-3-emissions-eu-buyers',
+    title: 'Pakistan Textile Industry: Scope 3 Emissions Data for EU Market Access',
+    subtitle: 'Supply Chain Emissions',
+    content: `Pakistan is the fourth-largest cotton producer and a major textile exporter. EU GSP+ status requires compliance with environmental conventions, and carbon reporting is becoming part of this framework. Pakistan grid factor is 0.495 kgCO2 per kWh. Scope 3 in Pakistan textiles: Cotton procurement 30-40%, chemical dyes 15-20%, packaging 5-10%, ocean freight 10-15%, worker commute 5-10%. EU buyer pressure: CSDDD requires due diligence on supplier emissions. H&M, Primark, C&A have 2030 Scope 3 reduction targets affecting Pakistani suppliers. SECP ESG guidelines create domestic momentum. PTEA members who adopt carbon measurement gain competitive advantage. NTN integration enables verification. Upload WAPDA/KESC bills and fuel invoices for buyer-ready Scope 3 reports compatible with Higg FEM.`,
+    tags: ['Pakistan', 'textile', 'Scope 3', 'EU buyers', 'GSP+', 'Faisalabad'],
+    category: 'supply-chain',
+    createdAt: '2026-03-02',
+  },
 ];
 
 // Get featured articles for landing page
@@ -1352,556 +1605,6 @@ export const searchArticles = (query: string): CMSArticle[] => {
     article.tags.some(tag => tag.toLowerCase().includes(lowerQuery))
   );
 };
-
-// === 25 Country-Specific Problem-First SEO Articles ===
-
-  // 1 — India Steel CBAM
-  {
-    id: '48',
-    slug: 'cbam-compliance-cost-indian-steel-exporters-2026-2034',
-    title: 'CBAM Compliance Cost for Indian Steel Exporters: 2026-2034 Breakdown',
-    subtitle: 'Carbon Regulations',
-    content: `Indian steel exporters will face a phased carbon border adjustment from the EU starting 2026. During the transitional period (2023-2025), only reporting is required. From 2026, a 2.5% CBAM certificate purchase obligation begins, scaling to 100% by 2034.
-
-For a mid-size steel MSME exporting 5,000 tonnes annually via blast furnace (BF-BOF) route, the estimated CBAM cost starts at approximately EUR 12,000 in 2026 and could exceed EUR 480,000 by 2034 at current EU ETS prices of EUR 85 per tonne.
-
-Key cost drivers include: embedded emission intensity (1.8-2.2 tCO2 per tonne for BF-BOF), India grid emission factor of 0.708 kgCO2 per kWh for Scope 2, and the absence of a domestic carbon price that could be deducted.
-
-Preparation steps: (1) Calculate product-level emission intensity using actual production data, (2) Register as an authorized CBAM declarant through your EU importer, (3) Implement monitoring plans aligned with the EU Implementing Regulation, (4) Explore electric arc furnace transition to reduce emission intensity by 60-70%.
-
-MSMEs that start measuring now can access green financing at 2-4% lower interest rates and position for carbon credit monetization. Senseible automates this entire calculation from fuel and electricity invoices.`,
-    tags: ['CBAM', 'steel', 'India', 'EU carbon tax', 'export compliance', 'MSME'],
-    category: 'regulations',
-    createdAt: '2026-04-10',
-    featured: true,
-  },
-
-  // 2 — Philippines Manufacturing Carbon Reporting
-  {
-    id: '49',
-    slug: 'philippine-manufacturing-sme-carbon-reporting-2026',
-    title: 'How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026',
-    subtitle: 'Regional Guidelines',
-    content: `The Philippines Department of Trade and Industry (DTI) is progressively aligning with international ESG disclosure requirements. SEC Memorandum Circular No. 4 (2019) already mandates sustainability reporting for listed companies, and supply chain pressure is pushing this to SME suppliers.
-
-Philippine manufacturers supplying multinational OEMs increasingly face Scope 3 data requests. Without carbon reporting capability, SMEs risk losing contracts to competitors in Vietnam or Indonesia who can provide emission data.
-
-Grid emission factor for the Philippines is 0.505 kgCO2 per kWh (IEA 2023), lower than India or Indonesia, giving Filipino manufacturers a competitive emission advantage if documented properly.
-
-Getting started: (1) Collect 12 months of Meralco or local utility bills, (2) Upload fuel purchase invoices for generators and company vehicles, (3) Use Senseible to auto-calculate Scope 1 and Scope 2 emissions, (4) Generate a GHG Protocol-aligned report for your buyers.
-
-The Philippine Board of Investments offers incentives for green manufacturing investments. Having verified carbon data is the first requirement for accessing these incentives. SMEs in Cavite, Laguna, and Batangas export zones should prioritize carbon measurement to maintain OEM relationships.`,
-    tags: ['Philippines', 'carbon reporting', 'SME', 'DTI', 'manufacturing', 'SEC-ESG'],
-    category: 'regional',
-    createdAt: '2026-04-09',
-  },
-
-  // 3 — Bangladesh Textile Scope 3
-  {
-    id: '50',
-    slug: 'scope-3-calculator-bangladesh-textile-exporters',
-    title: 'Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step',
-    subtitle: 'Supply Chain Emissions',
-    content: `Bangladesh is the second-largest garment exporter globally, with EUR 30 billion in annual exports. EU buyers like H&M, Primark, and Inditex now require Scope 3 emission data from Bangladeshi suppliers as part of the EU Corporate Sustainability Due Diligence Directive (CSDDD).
-
-Scope 3 emissions in Bangladesh textiles typically represent 60-70% of total footprint. Key categories include: raw cotton procurement from India and Central Asia, synthetic fiber from China, chemical dyes and auxiliaries, packaging, and ocean freight to EU ports.
-
-Bangladesh grid factor is 0.623 kgCO2 per kWh. Garment factories in Dhaka, Gazipur, and Chittagong can use this factor for Scope 2 calculations from electricity consumption.
-
-Step-by-step process: (1) Map your supply chain from fiber to finished garment, (2) Collect invoices from cotton suppliers, dye manufacturers, and logistics providers, (3) Upload to Senseible for automatic emission factor matching, (4) Generate buyer-ready Scope 3 reports.
-
-The Department of Environment (DoE) Environmental Conservation Act aligns with GHG Protocol standards. BGMEA members with verified carbon data can access better terms from IFC and ADB green credit lines through banks like BRAC Bank and City Bank.`,
-    tags: ['Bangladesh', 'Scope 3', 'textile', 'garment', 'supply chain', 'BGMEA'],
-    category: 'supply-chain',
-    createdAt: '2026-04-08',
-  },
-
-  // 4 — Indonesia Chemical EU Carbon Tax
-  {
-    id: '51',
-    slug: 'eu-carbon-border-tax-indonesian-chemical-exports',
-    title: 'EU Carbon Border Tax Impact on Indonesian Chemical Exports',
-    subtitle: 'Carbon Regulations',
-    content: `Indonesia exports over USD 3 billion in chemicals and fertilizers to the EU annually. Under CBAM, certain chemical products including hydrogen, ammonia, and organic chemicals fall under covered CN codes starting 2026.
-
-Indonesia has one of the highest grid emission factors in Southeast Asia at 0.761 kgCO2 per kWh, making Scope 2 emissions for electricity-intensive chemical production notably higher than competitors in Thailand (0.493) or Singapore (0.408).
-
-OJK (Financial Services Authority) ESG disclosure requirements and the PROPER environmental rating system already create a regulatory foundation for emissions reporting. Companies rated Blue or Green under PROPER can leverage this for CBAM compliance.
-
-Financial exposure: A chemical exporter shipping 10,000 tonnes of ammonia to the EU faces potential CBAM costs of EUR 200,000-500,000 annually by 2030, depending on emission intensity and EU ETS price trajectory.
-
-Action plan: (1) Identify CBAM-covered product codes in your export manifest, (2) Calculate per-tonne emission intensity using Indonesia grid factors, (3) Document any carbon price paid under Indonesia carbon trading scheme, (4) Work with your EU importer to register for CBAM declarations.
-
-Indonesia launched its carbon trading scheme in 2023 for the power sector. Domestic carbon prices paid can be deducted from CBAM liability, creating a potential cost advantage for early movers.`,
-    tags: ['Indonesia', 'CBAM', 'chemical', 'EU carbon tax', 'OJK', 'PROPER'],
-    category: 'regulations',
-    createdAt: '2026-04-07',
-  },
-
-  // 5 — Pakistan Green Loans
-  {
-    id: '52',
-    slug: 'green-loan-eligibility-pakistani-small-businesses',
-    title: 'Green Loan Eligibility for Pakistani Small Businesses: What Banks Need',
-    subtitle: 'Carbon Accounting Standards',
-    content: `State Bank of Pakistan (SBP) Green Banking Guidelines mandate that scheduled banks allocate a growing share of lending to green projects. For SMEs, this translates to preferential interest rates 2-3% below market for businesses with verified environmental data.
-
-Pakistani small businesses in textile, leather, and food processing sectors can access green loans from HBL, MCB, and Bank Alfalah under SBP refinancing schemes. The key requirement: documented carbon footprint and a credible reduction plan.
-
-Pakistan grid factor is 0.495 kgCO2 per kWh, among the lowest in South Asia due to significant hydro and nuclear generation. This gives Pakistani manufacturers a natural advantage in emission intensity calculations.
-
-SECP ESG reporting guidelines are expanding to include smaller listed companies. Early adopters who build carbon measurement capability now will be better positioned when mandatory disclosure arrives.
-
-Green loan application process: (1) Calculate your baseline carbon footprint using Senseible, (2) Identify reduction opportunities in energy efficiency, (3) Generate a 3-year reduction roadmap, (4) Submit to bank with NTN (tax ID) and verified emission data.
-
-World Bank and ADB climate finance facilities in Pakistan exceed USD 2 billion. Banks distributing these facilities require carbon measurement as a minimum eligibility criterion.`,
-    tags: ['Pakistan', 'green loan', 'SBP', 'small business', 'SECP', 'green finance'],
-    category: 'carbon-standards',
-    createdAt: '2026-04-06',
-  },
-
-  // 6 — Singapore Manufacturing Carbon Audit
-  {
-    id: '53',
-    slug: 'carbon-audit-checklist-singapore-manufacturing',
-    title: 'Carbon Audit Checklist for Singapore Manufacturing Companies',
-    subtitle: 'Data Traceability & Verification',
-    content: `Singapore Carbon Tax Act imposes SGD 25 per tonne on facilities emitting more than 25,000 tCO2e annually, rising to SGD 45 by 2026 and potentially SGD 80 by 2030. Even SMEs below the threshold benefit from voluntary carbon measurement for supply chain compliance and green financing.
-
-SGX-listed companies must follow SGX ESG reporting requirements. Supply chain pressure means Jurong Island chemical plants and Tuas manufacturing facilities increasingly require emission data from SME suppliers.
-
-Singapore grid factor is 0.408 kgCO2 per kWh, the lowest in Southeast Asia due to efficient gas-fired generation. This is a competitive advantage for Singapore-based manufacturers in carbon-intensive supply chains.
-
-Carbon audit checklist: (1) SP Group electricity bills for 12 months, (2) Diesel and LPG purchase records, (3) Vehicle fleet fuel consumption, (4) Refrigerant top-up records for cooling systems, (5) Water consumption from PUB bills.
-
-NEA (National Environment Agency) accepts GHG Protocol-aligned audits. Senseible generates reports compatible with both SGX ESG requirements and Carbon Tax Act measurement methodology.
-
-Enterprise Singapore provides grants covering up to 70% of sustainability consultancy costs under the Enterprise Development Grant. Carbon measurement is a qualifying activity.`,
-    tags: ['Singapore', 'carbon audit', 'manufacturing', 'Carbon Tax Act', 'SGX', 'NEA'],
-    category: 'data-traceability',
-    createdAt: '2026-04-05',
-  },
-
-  // 7 — Vietnam CBAM
-  {
-    id: '54',
-    slug: 'vietnamese-exporters-prepare-eu-cbam-90-days',
-    title: 'How Vietnamese Exporters Can Prepare for EU CBAM in 90 Days',
-    subtitle: 'Carbon Regulations',
-    content: `Vietnam exports over USD 50 billion to the EU, making it one of the most CBAM-exposed economies in Southeast Asia. Steel, cement, aluminium, and fertilizer exporters face immediate reporting obligations and financial liability from 2026.
-
-Vietnam grid factor is 0.625 kgCO2 per kWh. While lower than Indonesia (0.761), it is higher than Thailand or Singapore. Vietnamese exporters in steel and cement have above-average emission intensity compared to EU domestic producers.
-
-MONRE (Ministry of Natural Resources and Environment) Environmental Impact Assessment requirements provide a foundation for carbon reporting, but CBAM requires product-level emission intensity data that most Vietnamese SMEs currently lack.
-
-90-day preparation plan: Week 1-2: Identify CBAM-covered products using EU CN code list. Week 3-4: Collect 12 months of energy consumption data (EVN electricity bills, fuel invoices). Week 5-6: Upload to Senseible and calculate emission intensity per product. Week 7-8: Work with EU importers to complete CBAM transitional registry entries. Week 9-12: Implement quick-win emission reductions and document for future declarations.
-
-Vietnam is developing a domestic emissions trading scheme (ETS) expected by 2028. Early movers who build measurement capability now will be ahead when domestic carbon pricing begins.`,
-    tags: ['Vietnam', 'CBAM', 'exporter', 'MONRE', 'EU carbon tax', 'steel'],
-    category: 'regulations',
-    createdAt: '2026-04-04',
-  },
-
-  // 8 — Thailand Food Processing
-  {
-    id: '55',
-    slug: 'thailand-food-processing-carbon-footprint-reduction',
-    title: 'Thailand Food Processing Sector: Carbon Footprint Reduction Guide',
-    subtitle: 'Manufacturing Emissions',
-    content: `Thailand is the world's largest exporter of canned tuna, a major exporter of rice, and a significant processed food supplier to Europe, Japan, and the US. Food processing accounts for 6% of Thailand industrial emissions.
-
-TGO (Thailand Greenhouse Gas Management Organization) Carbon Footprint for Organization (CFO) certification is increasingly required by international buyers. Companies certified under TGO-CFO gain market access advantages.
-
-Thailand grid factor is 0.493 kgCO2 per kWh. For food processing, key emission sources include: refrigeration (30-40% of energy), cooking and sterilization (25-30%), packaging (10-15%), and wastewater treatment (5-10%).
-
-Reduction strategies: (1) Replace R-22 refrigerants with low-GWP alternatives to cut fugitive emissions by 80%, (2) Install heat recovery from cooking processes, (3) Biogas from wastewater treatment for on-site power generation, (4) Solar rooftop for daytime processing operations.
-
-SEC-ESG reporting requirements for SET-listed companies create downstream pressure on food processing SME suppliers. Companies with TGO-CFO certification and verified carbon data access Thai Bankers Association green loan facilities.
-
-Case example: A mid-size seafood processor in Samut Sakhon reduced emissions 28% in 18 months through refrigerant replacement and solar installation, saving THB 3.2 million annually.`,
-    tags: ['Thailand', 'food processing', 'carbon footprint', 'TGO', 'refrigeration', 'reduction'],
-    category: 'manufacturing',
-    createdAt: '2026-04-03',
-  },
-
-  // 9 — Sri Lanka Carbon Credits
-  {
-    id: '56',
-    slug: 'msme-carbon-credits-sri-lanka-invoice-to-revenue',
-    title: 'MSME Carbon Credits in Sri Lanka: From Invoice to Revenue',
-    subtitle: 'Carbon Accounting Standards',
-    content: `Sri Lankan MSMEs in apparel, tea processing, and rubber manufacturing can monetize verified emission reductions as carbon credits. The voluntary carbon market values credits from emerging market SMEs at USD 8-15 per tonne, with premium pricing for credits with co-benefits.
-
-Sri Lanka grid factor is 0.462 kgCO2 per kWh, reflecting significant hydro and renewable generation. This means energy efficiency improvements generate fewer grid-based credits, but fuel switching and process optimization remain highly monetizable.
-
-CEA (Central Environmental Authority) Environmental Impact Assessment framework provides the regulatory baseline. International standards like Gold Standard and Verra VCS accept Sri Lankan projects.
-
-Revenue pathway: (1) Establish baseline using 12 months of invoice data, (2) Implement reduction measures (solar, efficiency, fuel switching), (3) Document reductions with before and after invoice data, (4) Register with carbon standard and issue credits, (5) List on voluntary market platforms.
-
-For an apparel manufacturer consuming 50,000 kWh monthly, switching to solar rooftop could generate approximately 200 tCO2e in annual credits worth USD 1,600-3,000. Combined with electricity cost savings of LKR 4-5 million, the payback period is under 3 years.
-
-CBSL (Central Bank of Sri Lanka) sustainable finance taxonomy supports green lending for verified carbon reduction projects.`,
-    tags: ['Sri Lanka', 'carbon credits', 'MSME', 'CEA', 'apparel', 'monetization'],
-    category: 'carbon-standards',
-    createdAt: '2026-04-02',
-  },
-
-  // 10 — Malaysia Palm Oil
-  {
-    id: '57',
-    slug: 'malaysia-palm-oil-scope-1-2-3-emission-breakdown',
-    title: 'Malaysia Palm Oil Sector: Scope 1, 2, 3 Emission Breakdown',
-    subtitle: 'Manufacturing Emissions',
-    content: `Malaysia is the world's second-largest palm oil producer. RSPO (Roundtable on Sustainable Palm Oil) and MSPO (Malaysian Sustainable Palm Oil) certification increasingly require carbon accounting. EU Deforestation Regulation (EUDR) adds urgency to emission measurement.
-
-Scope 1: Methane from palm oil mill effluent (POME) treatment is the single largest emission source, accounting for 40-50% of total GHG. On-site boilers burning fiber and shell contribute 10-15%.
-
-Scope 2: Malaysia grid factor is 0.585 kgCO2 per kWh. Mills typically consume 20-30 kWh per tonne of FFB (fresh fruit bunches) processed.
-
-Scope 3: Upstream emissions from fertilizer application (N2O), land use change, and downstream refining and logistics represent 30-40% of total footprint.
-
-Reduction priorities: (1) POME biogas capture converts methane to electricity, reducing Scope 1 by 40-50%, (2) Biomass cogeneration using palm kernel shell, (3) Precision fertilizer application reduces N2O, (4) No-deforestation commitments eliminate land use change emissions.
-
-Bursa Malaysia ESG reporting requirements and MyCarbon platform create a regulatory pathway. NRE (Ministry of Natural Resources and Environment) supports carbon measurement in the palm oil sector.
-
-Palm oil companies with verified carbon data access better pricing from European refiners under EUDR compliance.`,
-    tags: ['Malaysia', 'palm oil', 'Scope 1 2 3', 'RSPO', 'EUDR', 'Bursa ESG'],
-    category: 'manufacturing',
-    createdAt: '2026-04-01',
-  },
-
-  // 11 — EU Carbon Tax Report Filing
-  {
-    id: '58',
-    slug: 'how-to-file-eu-carbon-tax-report-msme-guide',
-    title: 'How to File an EU Carbon Tax Report: Step-by-Step MSME Guide',
-    subtitle: 'Carbon Regulations',
-    content: `EU CBAM requires quarterly reporting from importers of covered goods (steel, cement, aluminium, fertilizers, hydrogen, electricity). As an MSME exporter from India, Bangladesh, Vietnam, or Indonesia, your EU importer will request emission data from you.
-
-Filing process: (1) Your EU importer registers as an Authorized CBAM Declarant on the CBAM Transitional Registry, (2) You provide product-level embedded emissions data (direct and indirect), (3) The importer files quarterly CBAM reports using your data, (4) From 2026, certificates must be purchased proportional to embedded emissions.
-
-Data you must provide: Total direct emissions per tonne of product (Scope 1), indirect emissions from electricity (Scope 2 using actual grid factor), carbon price paid domestically (if any, for deduction), production methodology and routes used.
-
-Common mistakes: Using default EU emission factors instead of actual data (results in higher CBAM costs), not accounting for domestic carbon prices paid, mixing product-level and facility-level data, missing quarterly deadlines.
-
-Senseible automates the data preparation: upload your production invoices, electricity bills, and fuel records. The system calculates product-level emission intensity using your country-specific grid factors and generates a CBAM-ready data package for your EU importer.
-
-Countries with domestic carbon pricing (Singapore, Indonesia draft ETS, India proposed) can deduct this from CBAM liability, creating a cost advantage.`,
-    tags: ['EU carbon tax', 'CBAM filing', 'MSME', 'quarterly report', 'carbon declaration'],
-    category: 'regulations',
-    createdAt: '2026-03-30',
-  },
-
-  // 12 — Export Carbon Reporting EU MSME
-  {
-    id: '59',
-    slug: 'export-carbon-reporting-eu-msme-emerging-markets',
-    title: 'Export Carbon Reporting for EU-Bound MSMEs in Emerging Markets',
-    subtitle: 'Carbon Regulations',
-    content: `Emerging market MSMEs exporting to the EU face a new reality: carbon transparency is no longer optional. Between CBAM, CSDDD (Corporate Sustainability Due Diligence Directive), and buyer sustainability requirements, emission data is becoming as critical as quality certificates.
-
-Countries most affected: India (USD 60B exports to EU), Vietnam (USD 50B), Bangladesh (EUR 30B in garments), Indonesia (USD 20B), Thailand, and Malaysia. Even non-CBAM sectors like garments face Scope 3 data requests from EU brands.
-
-What EU buyers expect: Annual or quarterly emission data by product category, GHG Protocol-aligned methodology, third-party verification or platform-verified data (like Senseible Trust Score), reduction targets and progress tracking.
-
-Cost of not reporting: Contract losses to competitors who can provide data, higher CBAM default values applied by EU customs, exclusion from preferred supplier lists, inability to access green trade finance.
-
-Grid emission factors matter: India (0.708), Indonesia (0.761), Bangladesh (0.623), Vietnam (0.625), Thailand (0.493), Philippines (0.505), Singapore (0.408). These determine Scope 2 intensity and therefore CBAM costs and buyer assessments.
-
-Getting started: Upload 12 months of utility and fuel invoices to Senseible. The platform applies country-specific factors and generates buyer-ready export carbon reports. No carbon accounting expertise required.`,
-    tags: ['export', 'carbon reporting', 'EU', 'MSME', 'emerging markets', 'CSDDD'],
-    category: 'regulations',
-    createdAt: '2026-03-28',
-  },
-
-  // 13 — Carbon Audit Small Business India
-  {
-    id: '60',
-    slug: 'carbon-audit-small-business-india-complete-guide',
-    title: 'Carbon Audit for Small Business India: Complete 2026 Guide',
-    subtitle: 'Data Traceability & Verification',
-    content: `BRSR (Business Responsibility and Sustainability Reporting) requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate.
-
-A carbon audit for a small Indian business typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity from DISCOM bills at 0.708 kgCO2 per kWh India grid factor), and Scope 3 (raw materials, freight, employee commute).
-
-Cost and time comparison: Traditional consultant-led audit: INR 3-8 lakhs, 4-8 weeks. Senseible automated audit: INR 0 (free tier) to INR 15,000 (premium), under 47 seconds per document.
-
-Documents needed: 12 months of electricity bills (DISCOM), diesel and petrol purchase receipts, LPG cylinder invoices, vehicle log books, raw material purchase orders (for Scope 3).
-
-GSTIN integration: Indian businesses can use their GSTIN for automatic vendor classification and HSN code-based emission factor matching, making the audit process even faster.
-
-Benefits of early carbon audit: Access to SIDBI green loans at 2-3% lower rates, MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility for verified reductions, and competitive advantage in government tenders with sustainability criteria.`,
-    tags: ['carbon audit', 'small business', 'India', 'BRSR', 'GSTIN', 'MSME'],
-    category: 'data-traceability',
-    createdAt: '2026-03-26',
-  },
-
-  // 14 — Scope 3 Supply Chain
-  {
-    id: '61',
-    slug: 'scope-3-emissions-supply-chain-msme-calculator',
-    title: 'Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide',
-    subtitle: 'Supply Chain Emissions',
-    content: `Scope 3 emissions typically represent 65-90% of a company total carbon footprint but are the hardest to measure. For MSMEs in manufacturing, textiles, and food processing, supply chain emissions dwarf direct operations.
-
-GHG Protocol Scope 3 categories most relevant to MSMEs: Category 1 (Purchased Goods and Services) — usually 40-60% of Scope 3, Category 4 (Upstream Transportation) — 10-20%, Category 5 (Waste) — 5-10%, Category 6 (Business Travel) — 2-5%, Category 7 (Employee Commuting) — 3-8%.
-
-Calculation approaches: Spend-based method (easiest, uses spend data with emission factors per currency unit), Activity-based method (more accurate, uses physical quantities like kg, liters, km), Hybrid approach (combines both for optimal accuracy versus effort).
-
-Country-specific considerations: Emission factors vary significantly. Steel from India (2.2 tCO2/t) versus China (1.8 tCO2/t) versus EU (1.3 tCO2/t). Using generic global averages can overstate or understate emissions by 30-50%.
-
-Senseible approach: Upload supplier invoices with line items. The system matches HSN/HS codes to emission factor databases, applies country-specific grid and transport factors, and generates category-wise Scope 3 breakdowns. No manual emission factor lookup required.
-
-Why it matters now: EU CSDDD requires due diligence across value chains. Brands like Unilever, H&M, and Apple are pushing Scope 3 measurement to tier-2 and tier-3 suppliers in India, Bangladesh, and Vietnam.`,
-    tags: ['Scope 3', 'supply chain', 'MSME', 'GHG Protocol', 'calculator', 'CSDDD'],
-    category: 'supply-chain',
-    createdAt: '2026-03-24',
-  },
-
-  // 15 — BRSR Reporting MSME
-  {
-    id: '62',
-    slug: 'brsr-reporting-msme-india-simplified-guide',
-    title: 'BRSR Reporting for Indian MSMEs: Simplified Compliance Guide',
-    subtitle: 'Carbon Accounting Standards',
-    content: `SEBI BRSR (Business Responsibility and Sustainability Reporting) is mandatory for top-1000 listed companies by market capitalization. BRSR Core with assurance is expanding to include value chain partners, meaning MSMEs in listed company supply chains must provide emission data.
-
-BRSR Essential indicators relevant to MSMEs: Total energy consumed (fuel and electricity), total Scope 1 and Scope 2 emissions, energy intensity per rupee of turnover, water consumption, waste generated and diverted from disposal.
-
-BRSR reporting timeline: FY 2022-23 onwards for top-1000 listed companies, BRSR Core with reasonable assurance from FY 2023-24 for top-150, value chain reporting expected from FY 2025-26.
-
-For MSMEs: Even if not directly mandated, your large corporate customers will request BRSR-aligned data. Being ready means: maintaining 12 months of utility and fuel invoices, tracking energy consumption per unit of output, and calculating emission intensity ratios.
-
-Senseible maps directly to BRSR disclosure requirements. Upload invoices and the system generates BRSR-aligned metrics including energy intensity (GJ per lakh rupee turnover), emission intensity (tCO2 per lakh rupee turnover), and year-on-year comparison.
-
-MoEFCC and MCA (Ministry of Corporate Affairs) guidelines align with GHG Protocol and TCFD frameworks. Companies preparing for BRSR are simultaneously building CBAM readiness for EU exports.`,
-    tags: ['BRSR', 'SEBI', 'MSME', 'India', 'sustainability reporting', 'compliance'],
-    category: 'carbon-standards',
-    createdAt: '2026-03-22',
-  },
-
-  // 16 — Indonesia Manufacturing Scope 2
-  {
-    id: '63',
-    slug: 'indonesia-manufacturing-scope-2-electricity-emissions',
-    title: 'Indonesia Manufacturing: Scope 2 Electricity Emissions Calculator',
-    subtitle: 'Regional Guidelines',
-    content: `Indonesia has the highest grid emission factor in Southeast Asia at 0.761 kgCO2 per kWh (IEA 2023), making electricity consumption a significant carbon cost for manufacturers. PLN electricity bills are the primary data source for Scope 2 calculations.
-
-For Indonesian manufacturers in Bekasi, Cikarang, and Surabaya industrial zones, a factory consuming 100,000 kWh monthly has Scope 2 emissions of approximately 913 tCO2e annually, compared to 493 tCO2e for the same consumption in Thailand or 408 tCO2e in Singapore.
-
-OJK (Financial Services Authority) ESG disclosure framework requires listed companies to report emissions. PROPER environmental rating by Ministry of Environment rewards companies with verified carbon data.
-
-Reduction strategies for Indonesian manufacturers: (1) Rooftop solar PPA arrangements reduce grid dependence and emission intensity, (2) PLN green tariff options for renewable electricity, (3) Energy efficiency improvements in compressed air, cooling, and motors.
-
-NPWP (tax ID) can be used for business verification on Senseible platform. Upload PLN bills and fuel invoices for automatic Scope 1 and 2 calculation using Indonesia-specific factors.
-
-Indonesia carbon trading scheme launched in 2023. Companies purchasing domestic carbon credits can potentially deduct costs from CBAM liability when exporting to the EU.`,
-    tags: ['Indonesia', 'Scope 2', 'manufacturing', 'PLN', 'OJK', 'electricity emissions'],
-    category: 'regional',
-    createdAt: '2026-03-20',
-  },
-
-  // 17 — India Textile CBAM
-  {
-    id: '64',
-    slug: 'india-textile-exporters-cbam-eu-compliance-2026',
-    title: 'India Textile Exporters and EU CBAM: What You Need to Know in 2026',
-    subtitle: 'Carbon Regulations',
-    content: `While textiles are not currently in CBAM Scope (steel, cement, aluminium, fertilizers, hydrogen, electricity), the EU is reviewing expansion to include organic chemicals, polymers, and potentially downstream products by 2030. Indian textile exporters should prepare now.
-
-India textile industry exports USD 36 billion annually, with the EU as the second-largest market. Even without direct CBAM exposure, EU buyers under CSDDD are requesting carbon data from textile suppliers in Tirupur, Surat, and Ludhiana.
-
-Emission profile of Indian textile manufacturing: Scope 1 (diesel generators, coal-fired boilers for dyeing) — 25-35%, Scope 2 (electricity for spinning, weaving, finishing at 0.708 kgCO2/kWh) — 30-40%, Scope 3 (cotton procurement, chemical inputs, logistics) — 30-40%.
-
-Why prepare now: (1) EU CSRD requires European brands to disclose supply chain emissions, (2) H&M, Inditex, ASOS have set 2030 supply chain decarbonization targets, (3) Green financing from SIDBI and SBI offers 2-3% rate reduction with carbon data, (4) Early movers can monetize reductions as carbon credits.
-
-Quick wins: Replace coal-fired boilers with biomass or gas boilers (40-50% emission reduction), install solar rooftop (typical payback under 4 years in Tamil Nadu and Gujarat), implement zero liquid discharge with energy recovery.`,
-    tags: ['India', 'textile', 'CBAM', 'EU compliance', 'Tirupur', 'garment export'],
-    category: 'regulations',
-    createdAt: '2026-03-18',
-  },
-
-  // 18 — Bangladesh Manufacturing Green Finance
-  {
-    id: '65',
-    slug: 'bangladesh-manufacturing-green-finance-access-guide',
-    title: 'Bangladesh Manufacturing: How to Access Green Finance with Carbon Data',
-    subtitle: 'Carbon Accounting Standards',
-    content: `Bangladesh Bank Green Refinance Scheme offers 5% interest rates versus 9-12% market rates for manufacturers with verified environmental data. IFC and ADB green credit lines through BRAC Bank, City Bank, and Eastern Bank provide additional low-cost capital.
-
-Green financing eligibility criteria: documented baseline carbon footprint, credible emission reduction plan, quarterly monitoring and reporting, alignment with Bangladesh Bank green taxonomy.
-
-Manufacturing sectors eligible: garments and textiles (largest), leather and footwear, food processing, pharmaceuticals, ceramics, and light engineering. Dhaka, Gazipur, Narayanganj, and Chittagong are the primary industrial areas.
-
-Bangladesh grid factor is 0.623 kgCO2 per kWh. Manufacturers switching from diesel generators to grid electricity actually reduce emissions per kWh. Solar rooftop installations generate bankable carbon credits and energy cost savings.
-
-Application process with Senseible: (1) Upload 12 months of utility bills and fuel invoices, (2) System calculates baseline using Bangladesh-specific emission factors, (3) Identify reduction opportunities (solar, efficiency, fuel switching), (4) Generate bank-ready green finance application package with TIN verification.
-
-Bangladesh Climate Change Trust Fund and Green Climate Fund allocate additional resources for climate-aligned SME lending, with carbon measurement as a mandatory prerequisite.`,
-    tags: ['Bangladesh', 'green finance', 'manufacturing', 'Bangladesh Bank', 'BRAC', 'SME lending'],
-    category: 'carbon-standards',
-    createdAt: '2026-03-16',
-  },
-
-  // 19 — India Logistics Scope 1
-  {
-    id: '66',
-    slug: 'logistics-scope-1-emissions-india-fleet-measurement',
-    title: 'Logistics Fleet Emissions in India: Scope 1 Measurement from Invoices',
-    subtitle: 'Logistics & Transport',
-    content: `India logistics sector contributes approximately 13% of national CO2 emissions. Fleet operators can measure Scope 1 emissions directly from diesel and petrol purchase invoices without installing telematics or IoT devices.
-
-Emission factors: Diesel — 2.68 kgCO2 per liter, Petrol — 2.31 kgCO2 per liter, CNG — 2.75 kgCO2 per kg, LPG — 2.98 kgCO2 per kg. These are GHG Protocol standard factors applicable across India.
-
-For a fleet of 50 trucks consuming 3,000 liters diesel per truck per month, total annual Scope 1 emissions are approximately 4,824 tCO2e. This data comes directly from fuel invoices uploaded to Senseible.
-
-E-way bill integration: Indian logistics companies can correlate fuel consumption with e-way bill data to calculate per-trip and per-kilometer emission intensity, essential for customer reporting and green logistics certification.
-
-Green logistics opportunities: (1) Route optimization can reduce fuel consumption by 10-15%, (2) EV transition for last-mile delivery, (3) CNG conversion for medium-haul routes, (4) Driver training programs reduce fuel waste by 5-8%.
-
-Logistics companies with verified carbon data can access: SIDBI green financing, preferential rates for green logistics insurance, carbon credit programs for verified fleet emission reductions, and competitive advantage in tenders from sustainability-focused shippers.`,
-    tags: ['India', 'logistics', 'fleet emissions', 'Scope 1', 'diesel', 'e-way bill'],
-    category: 'logistics',
-    createdAt: '2026-03-14',
-  },
-
-  // 20 — Philippines Food Processing
-  {
-    id: '67',
-    slug: 'philippines-food-processing-carbon-measurement-guide',
-    title: 'Philippines Food Processing: Carbon Measurement Guide for Exporters',
-    subtitle: 'Manufacturing Emissions',
-    content: `The Philippines is a major food processing hub exporting canned goods, coconut products, and processed seafood. EU and Japanese buyers increasingly require carbon data from Filipino food processors.
-
-Philippines grid factor is 0.505 kgCO2 per kWh. For food processing facilities in Cebu, Davao, and Laguna, key emission sources include: refrigeration and cold storage (35-45% of energy), cooking and sterilization (20-30%), packaging lines (10-15%), and wastewater treatment (5-10%).
-
-DTI (Department of Trade and Industry) sustainability guidelines and BOI (Board of Investments) green incentives reward companies with environmental documentation. Carbon measurement is the first step.
-
-Scope breakdown for a typical Filipino canned goods processor: Scope 1 (diesel generators, LPG cooking, refrigerant leaks) — 20-30%, Scope 2 (Meralco or local DISCO electricity) — 40-50%, Scope 3 (raw material procurement, packaging, ocean freight) — 25-35%.
-
-Quick wins: (1) Replace R-22 refrigerants with R-32 or natural refrigerants, (2) Solar rooftop for daytime processing operations, (3) Biogas from wastewater for auxiliary heating, (4) LED lighting and VFD installation on pumps and conveyors.
-
-Export advantage: Filipino food processors with verified carbon data can access premium pricing from EU sustainability-conscious retailers and comply with upcoming EUDR requirements for deforestation-free supply chains.`,
-    tags: ['Philippines', 'food processing', 'carbon measurement', 'DTI', 'canned goods', 'exporter'],
-    category: 'manufacturing',
-    createdAt: '2026-03-12',
-  },
-
-  // 21 — India CBAM Steel Cost Calculator
-  {
-    id: '68',
-    slug: 'cbam-cost-calculator-indian-steel-msme-2026',
-    title: 'CBAM Cost Calculator for Indian Steel MSMEs: Free Tool',
-    subtitle: 'Carbon Regulations',
-    content: `Indian steel MSMEs exporting to the EU need to calculate their CBAM exposure before 2026. The cost depends on three variables: emission intensity of your steel (tCO2 per tonne product), EU ETS price (currently EUR 85/tonne), and the CBAM phase-in percentage.
-
-Production route matters: BF-BOF (blast furnace) steel has emission intensity of 1.8-2.2 tCO2/t. EAF (electric arc furnace) with scrap is 0.4-0.8 tCO2/t. EAF with DRI is 1.2-1.6 tCO2/t.
-
-Phase-in schedule: 2026 — 2.5%, 2027 — 5%, 2028 — 10%, 2029 — 22.5%, 2030 — 48.5%, 2031 — 61%, 2032 — 73.5%, 2033 — 86%, 2034 — 100%.
-
-Example calculation for 5,000 tonnes BF-BOF steel at 2.0 tCO2/t: Total embedded emissions = 10,000 tCO2. At EUR 85/tonne and 2.5% phase-in (2026), CBAM cost = EUR 21,250. At 100% (2034), CBAM cost = EUR 850,000.
-
-India has no domestic carbon price currently deductible from CBAM. If India implements its planned carbon market, payments there could reduce CBAM liability significantly.
-
-Use Senseible free CBAM calculator to input your actual production data and get year-by-year cost projections. The tool uses India grid factor (0.708 kgCO2/kWh) for accurate Scope 2 calculations.`,
-    tags: ['CBAM calculator', 'steel', 'India', 'MSME', 'cost projection', 'free tool'],
-    category: 'regulations',
-    createdAt: '2026-03-10',
-  },
-
-  // 22 — Vietnam Textile Carbon
-  {
-    id: '69',
-    slug: 'vietnam-textile-carbon-footprint-eu-buyers',
-    title: 'Vietnam Textile Factories: Carbon Footprint Data for EU Buyer Compliance',
-    subtitle: 'Supply Chain Emissions',
-    content: `Vietnam is the third-largest garment exporter globally, with the EU as a key market under the EVFTA (EU-Vietnam Free Trade Agreement). EU brands are now requiring carbon data from Vietnamese textile suppliers under CSRD Scope 3 obligations.
-
-Vietnam grid factor is 0.625 kgCO2 per kWh. Textile factories in Ho Chi Minh City, Binh Duong, and Dong Nai industrial zones use significant electricity for spinning, weaving, and finishing operations.
-
-Typical emission profile: Scope 1 (coal and gas boilers for dyeing) — 30-40%, Scope 2 (EVN electricity) — 35-45%, Scope 3 (yarn procurement, chemical inputs, packaging) — 20-30%.
-
-EU buyer requirements: Annual GHG inventory by scope, emission intensity per product unit (kg CO2 per garment), reduction targets aligned with SBTi or equivalent, quarterly progress reports.
-
-MONRE Environmental Impact Assessment and planned ETS provide regulatory framework. Vietnamese factories participating in IFC Partnership for Cleaner Textile (PaCT) have demonstrated 20-30% emission reductions through energy efficiency.
-
-MST (tax ID) registration enables business verification. Upload EVN bills and fuel invoices to Senseible for automatic calculation using Vietnam-specific emission factors. Reports generated are compatible with Higg FEM (Facility Environmental Module) used by major fashion brands.`,
-    tags: ['Vietnam', 'textile', 'carbon footprint', 'EU buyers', 'EVFTA', 'garment'],
-    category: 'supply-chain',
-    createdAt: '2026-03-08',
-  },
-
-  // 23 — Thailand Automotive
-  {
-    id: '70',
-    slug: 'thailand-automotive-supply-chain-carbon-measurement',
-    title: 'Thailand Automotive Supply Chain: Carbon Measurement for OEM Compliance',
-    subtitle: 'Manufacturing Emissions',
-    content: `Thailand is the largest automotive producer in Southeast Asia (Detroit of Asia). Japanese and European OEMs like Toyota, Honda, BMW, and Mercedes require Scope 3 emission data from Thai tier-1 and tier-2 suppliers.
-
-Thailand grid factor is 0.493 kgCO2 per kWh, giving Thai manufacturers a competitive emission advantage over Indonesia (0.761) and Vietnam (0.625) suppliers.
-
-Automotive supply chain emission sources: Scope 1 (paint shop, welding, heat treatment, testing) — 20-30%, Scope 2 (PEA or MEA electricity for assembly lines, HVAC, compressed air) — 40-50%, Scope 3 (steel, aluminium, plastics procurement, logistics) — 25-35%.
-
-TGO Carbon Footprint for Product (CFP) certification is increasingly requested by OEMs. Companies certified under TGO-CFP gain preferred supplier status.
-
-SEC-ESG requirements for SET-listed companies cascade to SME suppliers. Eastern Seaboard industrial estates (Rayong, Chonburi) house thousands of auto parts SMEs facing these data requests.
-
-Getting started: Upload PEA/MEA electricity bills and fuel invoices. Senseible applies Thailand-specific factors and generates OEM-compatible carbon reports. Tax ID (13-digit) verification enables business authentication.
-
-BOI (Board of Investment) provides tax incentives for green manufacturing investments, with carbon measurement as a qualifying criterion.`,
-    tags: ['Thailand', 'automotive', 'supply chain', 'OEM', 'TGO', 'carbon measurement'],
-    category: 'manufacturing',
-    createdAt: '2026-03-06',
-  },
-
-  // 24 — India Chemical CBAM
-  {
-    id: '71',
-    slug: 'india-chemical-industry-cbam-exposure-analysis',
-    title: 'India Chemical Industry: CBAM Exposure Analysis and Compliance Roadmap',
-    subtitle: 'Carbon Regulations',
-    content: `Indian chemical exports to the EU exceed USD 8 billion annually. CBAM covers hydrogen, ammonia, and certain organic chemicals. Process emissions from chemical reactions add to combustion and electricity emissions.
-
-Chemical industry is uniquely complex for carbon accounting because process emissions from chemical reactions are often larger than energy-related emissions. For ammonia production, the Haber-Bosch process releases approximately 1.8 tCO2 per tonne of ammonia.
-
-India chemical clusters in Gujarat (Ankleshwar, Vapi, Vadodara), Maharashtra (MIDC Thane, Raigad), and Tamil Nadu (Manali, Cuddalore) face varying emission profiles based on feedstock and process routes.
-
-CBAM exposure by product: Ammonia — HIGH (covered from 2026), Hydrogen — HIGH (covered from 2026), Basic organic chemicals — MEDIUM (potential inclusion by 2030), Speciality chemicals — LOW (currently not covered).
-
-Compliance roadmap: Phase 1 (now) — identify CBAM-covered products in export portfolio. Phase 2 (6 months) — implement emission monitoring at product level. Phase 3 (12 months) — establish quarterly reporting pipeline with EU importers. Phase 4 (ongoing) — reduce emission intensity through energy efficiency and feedstock optimization.
-
-Green Chemistry Mission under MoEFCC and DST supports emission reduction in chemical manufacturing. PCPIR (Petroleum, Chemical, and Petrochemical Investment Regions) offer infrastructure for green chemistry transition.`,
-    tags: ['India', 'chemical', 'CBAM', 'ammonia', 'process emissions', 'Gujarat'],
-    category: 'regulations',
-    createdAt: '2026-03-04',
-  },
-
-  // 25 — Pakistan Textile Scope 3
-  {
-    id: '72',
-    slug: 'pakistan-textile-scope-3-emissions-eu-buyers',
-    title: 'Pakistan Textile Industry: Scope 3 Emissions Data for EU Market Access',
-    subtitle: 'Supply Chain Emissions',
-    content: `Pakistan is the fourth-largest cotton producer and a major textile exporter. EU GSP+ status requires compliance with environmental conventions, and carbon reporting is becoming part of this compliance framework.
-
-Pakistan grid factor is 0.495 kgCO2 per kWh, competitive due to hydro and nuclear generation. Textile clusters in Faisalabad, Lahore, and Karachi face varying emission profiles based on energy mix.
-
-Scope 3 in Pakistan textiles: Cotton procurement (domestic and imported) — 30-40%, chemical dyes and auxiliaries (often imported from China) — 15-20%, packaging materials — 5-10%, ocean freight to EU ports — 10-15%, worker commute and logistics — 5-10%.
-
-EU buyer pressure: CSDDD requires European brands to conduct due diligence on supplier emissions. H&M, Primark, and C&A have set 2030 Scope 3 reduction targets affecting Pakistani suppliers directly.
-
-SECP ESG guidelines create domestic regulatory momentum. Pakistan Textile Exporters Association (PTEA) members who adopt carbon measurement gain competitive advantage in EU buyer selection.
-
-NTN (National Tax Number) integration enables business verification. Upload WAPDA/KESC electricity bills and fuel invoices to Senseible. The system applies Pakistan-specific grid factors and generates buyer-ready Scope 3 reports compatible with Higg FEM requirements.
-
-APTMA (All Pakistan Textile Mills Association) members can collectively benefit from group carbon measurement programs.`,
-    tags: ['Pakistan', 'textile', 'Scope 3', 'EU buyers', 'GSP+', 'Faisalabad'],
-    category: 'supply-chain',
-    createdAt: '2026-03-02',
-  },
-];
 
 // Get related articles
 export const getRelatedArticles = (articleId: string, limit: number = 3): CMSArticle[] => {
