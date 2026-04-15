@@ -116,6 +116,7 @@ serve(async (req) => {
     <priority>0.7</priority>
   </url>
 `;
+    }
 
     // Add industry pages
     for (const industry of INDUSTRIES) {
