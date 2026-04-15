@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+
 import { SEOHead } from '@/components/SEOHead';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
@@ -187,38 +187,7 @@ const Solutions = () => {
   const related = getRelatedSolutions(solution.slug);
   const ToolComponent = toolComponents[solution.embeddedTool];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": solution.faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": { "@type": "Answer", "text": f.answer },
-    })),
-  };
 
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": solution.title,
-    "description": solution.painStatement,
-    "step": solution.steps.map((s, i) => ({
-      "@type": "HowToStep",
-      "position": i + 1,
-      "name": s.title,
-      "text": s.description,
-    })),
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://senseible.earth" },
-      { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://senseible.earth/solutions" },
-      { "@type": "ListItem", "position": 3, "name": solution.countryName, "item": `https://senseible.earth/solutions/${solution.slug}` },
-    ],
-  };
 
   // Urgency: days since CBAM enforcement
   const cbamEnforcementDate = new Date('2026-01-01');
