@@ -1,216 +1,170 @@
 
 
-# Plan: Problem-First SEO Discovery Engine + Programmatic Pages + Multilingual Layer
-
-## Overview
-
-Build a problem-first discovery engine that intercepts high-intent search queries ("CBAM compliance cost India," "Scope 3 calculator MSME," "carbon audit small business Philippines") and routes them to tool-embedded landing pages — layered over the existing product without disrupting core infrastructure.
+# Audit Report & Execution Plan: Making Senseible Rank #1
 
 ---
 
-## Architecture: Pillar-Cluster SEO Model
+## Part 1: Reality Audit — Why Senseible Is Invisible
 
-```text
-PILLAR PAGES (5 existing pages, enhanced):
-  /cbam-calculator     → CBAM Compliance Pillar
-  /verify              → Carbon Audit & MRV Pillar
-  /carbon-credits      → Carbon Monetization Pillar
-  /climate-finance     → Green Finance Pillar
-  /net-zero            → Decarbonization Pillar
+### What Google Sees Today
 
-CLUSTER PAGES (programmatic, data-driven):
-  /solutions/:use-case → 75 country×sector×regulation combos
-  /industries/:id      → Already exists (enhance with tool embeds)
-  /climate-intelligence/:slug → Already exists (add 25 new problem-first articles)
-```
+| Signal | Status | Impact |
+|--------|--------|--------|
+| **Indexed pages** | **1** (homepage only) | Fatal — 300+ pages in sitemap, 1 indexed |
+| `site:senseible.earth` | Returns only homepage | All /solutions/, /climate-intelligence/, /industries/ are ghost pages |
+| `site:senseible.earth solutions` | **0 results** | 75 programmatic pages completely invisible |
+| `site:senseible.earth climate-intelligence` | **0 results** | 80+ articles invisible |
+| Brand search "senseible carbon" | HN post ranks, not senseible.earth | Hacker News owns Senseible's brand narrative |
+| High-intent "CBAM compliance cost India" | cleancarbon.ai, raaas.com, cbam.in rank | Senseible not in top 50 |
+| "carbon accounting MSME India" | elion.co.in, smeclimatehub.org rank | Senseible absent |
 
----
+### Root Causes (5 Critical Failures)
 
-## Part 1: Programmatic SEO Engine — `/solutions/:use-case`
+**1. SPA Rendering = Invisible to Googlebot**
+The static HTML generator runs post-build but the deployed site serves client-rendered React for all routes. The `<noscript>` fallback only has a title and one-line description — no substantive content for crawlers that don't execute JS. Googlebot's JS rendering queue is delayed hours to days; most pages never get rendered.
 
-### What
+**2. Static sitemap.xml is stale (March 2026)**
+The `/public/sitemap.xml` has hardcoded `2026-03-18` dates and does NOT include any `/solutions/` routes. The Edge Function sitemap exists but is only accessible via API call — it's not what robots.txt points to. Robots.txt points to `https://senseible.earth/sitemap.xml` (the static one).
 
-A single new route component `Solutions.tsx` that renders 75+ unique landing pages from a config-driven data file. Each page solves one urgent use-case with embedded tools.
+**3. robots.txt blocks crawling of solution pages**
+`/solutions/` is not listed in any `Allow:` directive. While the default `Allow: /` covers it for generic user-agents, AI bots (GPTBot, PerplexityBot, Claude-Web) only see explicitly allowed paths — `/solutions/` is missing.
 
-### Page Structure (Every Page)
-1. **Hook** — Pain statement specific to country+sector+regulation
-2. **Instant Estimator** — Embedded calculator (CBAM cost / Scope 3 estimate / export risk score)
-3. **Compliance Steps** — Clear checklist (3-5 steps)
-4. **Cost/Time Breakdown** — Real numbers per country (IEA data, CBAM phase-in schedule)
-5. **CTA** — "Start Free Audit" / "Download Report" / "Calculate Now"
+**4. Zero backlinks, zero domain authority**
+Only external reference is Hacker News. No authority signals. Competitors (cleancarbon.ai, cbam.in, carbonsettle.com) have established backlink profiles from industry publications.
 
-### Example Pages
-- `/solutions/cbam-steel-india-2026` → "CBAM Cost for Steel MSMEs in India (2026)"
-- `/solutions/scope-3-textile-bangladesh` → "Scope 3 Calculator for Textile Exporters in Bangladesh"
-- `/solutions/carbon-audit-manufacturing-philippines` → "Carbon Audit for Manufacturing SMEs in Philippines"
-- `/solutions/export-carbon-reporting-indonesia` → "EU Export Carbon Reporting for Indonesian MSMEs"
-- `/solutions/green-loan-eligibility-pakistan` → "Green Loan Eligibility Score for Pakistani SMEs"
-
-### Data Structure — `src/data/solutionsData.ts`
-
-75 entries generated from combinations of:
-- **10 countries** (IN, PH, ID, BD, PK, SG, VN, TH, MY, LK) — from existing `countryConfig.ts`
-- **6 sectors** (steel, textile, manufacturing, chemicals, food-processing, logistics)
-- **4 regulations** (CBAM, Scope 3 reporting, carbon audit, green finance)
-- Filtered to ~75 most search-relevant combos (not all 240)
-
-Each entry contains: slug, title, painStatement, steps[], costBreakdown, embeddedTool (references existing calculator components), internalLinks[], schemaMarkup (FAQ + HowTo), keywords[]
-
-### Component — `src/pages/Solutions.tsx`
-
-- Single component, reads `:useCase` param, looks up data
-- Embeds existing components inline: mini CBAM calculator (from `cbamEngine.ts`), scope estimator (from verify-carbon logic), monetization preview
-- Full SEO: `<SEOHead>` with FAQ + HowTo schema, canonical, hreflang
-- Internal linking loop: links to pillar page + related solutions + industry page
-- If invalid slug → redirect to `/climate-intelligence`
-
-### Route Addition in `App.tsx`
-```
-<Route path="/solutions/:useCase" element={<Solutions />} />
-```
+**5. No crawlable text content in HTML source**
+When Googlebot fetches any page, it gets an empty `<div id="root"></div>` plus a `<noscript>` block with one sentence. The 2000+ words of actual page content only exists after React hydration. Google's crawler budget won't wait.
 
 ---
 
-## Part 2: Enhance Existing Industry Pages with Tool Embeds
+## Part 2: What's Already Built (Assets Inventory)
 
-### What Changes in `Industries.tsx`
-
-Currently shows static scope 1/2/3 breakdowns. Enhance each industry page with:
-- **Mini Scope Estimator**: "Enter monthly electricity bill → see estimated CO₂" (reuses existing emission factor math)
-- **CBAM Readiness Score**: For CBAM-exposed sectors (steel, chemicals, aluminium), show a quick readiness checklist
-- **Export Risk Badge**: "If you export to EU: HIGH exposure" based on sector + CBAM data
-- **Internal links** to related `/solutions/` pages
-
-No new page — additive changes to existing `Industries.tsx`.
-
----
-
-## Part 3: Multilingual Layer (JSON-Based, Cached)
-
-### Architecture
-
-```text
-src/lib/i18n/
-  translations/
-    en.json    (English — base, always complete)
-    hi.json    (Hindi)
-    bn.json    (Bengali)
-    ta.json    (Tamil)
-    mr.json    (Marathi)
-    id.json    (Bahasa Indonesia)
-    ur.json    (Urdu)
-    tl.json    (Tagalog)
-    vi.json    (Vietnamese)
-    th.json    (Thai)
-    es.json    (Spanish)
-  useTranslation.ts  (hook: returns t() function)
-  LanguageProvider.tsx (context: stores selected lang)
-```
-
-### How It Works
-- `useTranslation()` hook returns `t('key')` that looks up from loaded JSON
-- Browser language auto-detected on first visit (existing `detectBrowserLanguage()` in `languages.ts`)
-- Manual toggle in Settings (already has language section) + small globe icon in MinimalNav/Navigation
-- JSONs loaded lazily via `import()` — zero bundle impact for non-selected languages
-- **Reports/certificates stay English** — translation only applies to UI labels, navigation, and landing page content
-- Falls back to English for any missing key
-
-### Translation Scope
-- Navigation labels, CTA buttons, section headings, tool labels
-- Solution page pain statements and step descriptions
-- Industry page descriptions
-- NOT: CMS article body text, legal pages, API responses, verification certificates
-
-### Settings Integration
-- Country selection in Settings auto-suggests matching language
-- Selecting Indonesia → suggests Bahasa; selecting Bangladesh → suggests Bengali
-- User can override manually
+| Asset | Count | Status |
+|-------|-------|--------|
+| Solution pages (`/solutions/:slug`) | 75 | Built, rendering, not indexed |
+| CMS articles (`/climate-intelligence/:slug`) | 80+ | Built, rendering, not indexed |
+| Industry pages (`/industries/:id`) | 6 | Built, not indexed |
+| CBAM Calculator | 1 | Built, functional |
+| Scope Estimator (mini) | Embedded | Built in Solutions + Industries |
+| FAQ Schema (index.html) | 7 FAQs | Present but only on homepage |
+| Organization Schema | Yes | Present |
+| Multilingual i18n (11 langs) | Yes | Built, JSON lazy-loaded |
+| Competitor comparison pages | 20 | Built, not indexed |
+| Static HTML generator | Yes | Runs but output insufficient |
+| robots.txt | Yes | Missing /solutions/ allow |
+| Sitemap (static) | 306 URLs | Missing solutions, stale dates |
+| Sitemap (edge function) | Dynamic | Not connected to robots.txt |
 
 ---
 
-## Part 4: 25 Problem-First SEO Articles
+## Part 3: Execution Plan — Agency-Grade ($15M Thinking)
 
-Add to `src/data/cmsContent.ts` — each article targets a specific high-intent search query with country-specific data.
+### Phase 1: Make Existing Pages Indexable (Critical Fix)
 
-**Articles (sample 10 of 25):**
-1. "CBAM Compliance Cost for Indian Steel Exporters: 2026-2034 Breakdown" — target: "CBAM compliance cost India"
-2. "How Philippine Manufacturing SMEs Can Start Carbon Reporting in 2026" — target: "carbon reporting Philippines SME"
-3. "Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step" — target: "Scope 3 calculator Bangladesh textile"
-4. "EU Carbon Border Tax Impact on Indonesian Chemical Exports" — target: "EU carbon tax Indonesia"
-5. "Green Loan Eligibility for Pakistani Small Businesses: What Banks Need" — target: "green loan Pakistan small business"
-6. "Carbon Audit Checklist for Singapore Manufacturing Companies" — target: "carbon audit Singapore manufacturing"
-7. "How Vietnamese Exporters Can Prepare for EU CBAM in 90 Days" — target: "CBAM Vietnam exporter"
-8. "Thailand Food Processing Sector: Carbon Footprint Reduction Guide" — target: "carbon footprint food processing Thailand"
-9. "MSME Carbon Credits in Sri Lanka: From Invoice to Revenue" — target: "carbon credits Sri Lanka MSME"
-10. "Malaysia Palm Oil Sector: Scope 1, 2, 3 Emission Breakdown" — target: "palm oil emissions Malaysia"
+**Problem**: 300+ pages exist but Google can't see them.
 
-Remaining 15 target: "how to file EU carbon tax report," "export carbon reporting EU MSME," "carbon audit for small business India," "Scope 3 emissions supply chain," "BRSR reporting MSME," etc.
+**Fix 1 — Enhanced Static HTML Generator**
+Rewrite `generate-static-html.js` to inject **full semantic HTML content** into each page's `<noscript>` block — not just a title and description, but the actual page content: headings, paragraphs, steps, FAQs, cost breakdowns, internal links. This gives Googlebot substantive content without requiring JS execution.
 
-Each article: 300-400 words, embedded CTA to relevant `/solutions/` page, FAQ schema, internal links.
+Each generated HTML file will contain:
+- Complete `<head>` with unique title, description, canonical, OG tags
+- Unique JSON-LD schema (FAQPage, HowTo, BreadcrumbList) per page
+- Full page content in a `<noscript>` block with semantic HTML (`<article>`, `<h1>`, `<h2>`, `<ol>`, `<a>`)
+- Internal links to related pages (crawl path for bots)
 
----
+**Fix 2 — Connect Dynamic Sitemap**
+Update `robots.txt` to point to the Edge Function sitemap URL instead of the static file, OR replace the static sitemap with a build-time generated one that includes all 300+ routes with current dates.
 
-## Part 5: Schema Markup + Internal Linking
+**Fix 3 — robots.txt Updates**
+Add explicit `Allow:` directives for `/solutions/`, `/cbam-calculator`, `/net-zero`, `/vs/` for all bot user-agents including AI crawlers.
 
-### Enhanced Schema on Solution Pages
-- **FAQPage**: 3-4 FAQs per solution page (e.g., "What is CBAM cost for steel in India?")
-- **HowTo**: Step-by-step compliance guide
-- **Product**: For calculator/tool pages (applicationCategory: EnvironmentalManagementSoftware)
-- **BreadcrumbList**: Home → Solutions → [Country] → [Sector]
+### Phase 2: Content Depth for Authority
 
-### Internal Linking Loops
-Every solution page links to:
+**Problem**: Pages have thin content. Google ranks depth.
+
+**Fix 4 — Expand Solution Page Content**
+Each of the 75 solution pages currently has ~500 words of templated content. Enhance `solutionsData.ts` with:
+- Country-specific regulatory deadlines and penalty data
+- Real cost numbers from IEA/EU ETS (already in `cbamEngine.ts`)
+- "Cost of non-compliance" section (inversion principle — show what happens if you don't act)
+- "Competitor readiness" section (FOMO — "X% of exporters in your sector already reporting")
+- Urgency timestamps: "CBAM Phase 2 starts January 2026 — X days remaining"
+
+**Fix 5 — Expand CMS Articles**
+The 25 new country-specific articles need full body content (currently they have titles and summaries but the actual rendered content is thin). Each article should be 800-1200 words with:
+- Specific country data (grid factors, export volumes, regulatory bodies)
+- Embedded calculator CTAs
+- Internal links to 3-5 related solution pages
+- FAQ schema with 3-4 questions
+
+### Phase 3: Technical SEO Perfection
+
+**Fix 6 — Per-Page Schema Markup**
+Currently, JSON-LD schema only exists on `index.html`. The `SEOHead` component adds Organization and SoftwareApplication schema to every page (duplicate). Instead:
+- Solution pages: FAQPage + HowTo + BreadcrumbList
+- Industry pages: Product + FAQPage
+- CMS articles: Article + FAQPage
+- Calculator pages: SoftwareApplication + HowTo
+
+**Fix 7 — Internal Linking Mesh**
+Every solution page must link to:
 - Its pillar page (e.g., `/cbam-calculator`)
-- Related industry page (e.g., `/industries/steel`)
-- 2-3 related solution pages (same country or same sector)
+- 2-3 related solution pages (same country OR same sector)
 - Relevant CMS article
-- CTA to the main tool (`/` for upload, `/verify` for verification)
+- Industry page
+This creates crawl loops that distribute page authority.
+
+**Fix 8 — Canonical + hreflang Consistency**
+Ensure every page has unique canonical URL and proper hreflang tags. Currently some pages may have duplicate canonicals from the template.
+
+### Phase 4: Psychology-Driven Conversion Layer
+
+**Fix 9 — Urgency & Scarcity Elements**
+Add to solution pages:
+- Live countdown: "CBAM definitive phase: X days since enforcement"
+- "Non-compliance cost": Show financial penalty for inaction (inversion)
+- "Industry readiness": "Only 12% of Indian steel MSMEs are CBAM-ready" (FOMO)
+
+**Fix 10 — Moment Marketing Hooks**
+Add time-sensitive content blocks that reference current regulatory events:
+- "EU CBAM Phase 2 is now active — are you reporting?"
+- "India-EU FTA negotiations include carbon provisions"
+These create freshness signals Google rewards.
 
 ---
 
-## Part 6: Static HTML Generation
+## Files to Edit
 
-Update `scripts/generate-static-html.js` to include:
-- All 75 `/solutions/:slug` routes with unique titles, descriptions, keywords
-- 25 new CMS article routes
-- Proper schema markup injected into `<noscript>` blocks
-
----
-
-## Files to Create/Edit
-
-| File | Action | Purpose |
-|------|--------|---------|
-| `src/data/solutionsData.ts` | **Create** | 75 programmatic page configs (country×sector×regulation) |
-| `src/pages/Solutions.tsx` | **Create** | Single component rendering all solution pages from data |
-| `src/lib/i18n/translations/en.json` | **Create** | Base English translation keys (~200 keys) |
-| `src/lib/i18n/translations/hi.json` | **Create** | Hindi translations |
-| `src/lib/i18n/translations/bn.json` | **Create** | Bengali translations |
-| `src/lib/i18n/translations/id.json` | **Create** | Bahasa Indonesia translations |
-| `src/lib/i18n/translations/ur.json` | **Create** | Urdu translations |
-| `src/lib/i18n/translations/ta.json` | **Create** | Tamil translations |
-| `src/lib/i18n/translations/mr.json` | **Create** | Marathi translations |
-| `src/lib/i18n/translations/tl.json` | **Create** | Tagalog translations |
-| `src/lib/i18n/translations/vi.json` | **Create** | Vietnamese translations |
-| `src/lib/i18n/translations/th.json` | **Create** | Thai translations |
-| `src/lib/i18n/translations/es.json` | **Create** | Spanish translations |
-| `src/lib/i18n/useTranslation.ts` | **Create** | Translation hook with lazy loading + fallback |
-| `src/lib/i18n/LanguageProvider.tsx` | **Create** | Context provider for selected language |
-| `src/App.tsx` | **Edit** | Add `/solutions/:useCase` route + wrap with LanguageProvider |
-| `src/pages/Industries.tsx` | **Edit** | Add mini Scope estimator, CBAM readiness, export risk badge |
-| `src/data/cmsContent.ts` | **Edit** | Add 25 country-specific problem-first articles |
-| `src/components/MinimalNav.tsx` | **Edit** | Add small language toggle globe icon |
-| `src/components/Navigation.tsx` | **Edit** | Add language toggle |
-| `src/pages/Settings.tsx` | **Edit** | Auto-suggest language from country selection |
-| `scripts/generate-static-html.js` | **Edit** | Add 75 solution routes + 25 article routes |
-| `supabase/functions/generate-sitemap/index.ts` | **Edit** | Add solution pages to sitemap |
+| File | Changes |
+|------|---------|
+| `scripts/generate-static-html.js` | Inject full semantic content per page type (solutions, articles, industries) into HTML |
+| `public/robots.txt` | Add Allow directives for /solutions/, /cbam-calculator, /net-zero, /vs/ for all bots |
+| `public/sitemap.xml` | Replace with build-time generated version including all 300+ routes with current dates, OR point robots.txt to edge function |
+| `src/data/solutionsData.ts` | Add urgency data, cost-of-inaction, competitor readiness percentages, expanded content per page |
+| `src/pages/Solutions.tsx` | Add countdown timer, non-compliance cost section, competitor readiness badge, richer internal linking |
+| `src/components/SEOHead.tsx` | Deduplicate schema — only emit page-appropriate schema types, not Organization on every page |
+| `src/data/cmsContent.ts` | Expand article bodies with country-specific depth, add FAQ arrays per article |
 
 ## What Does NOT Change
 
-- MRV pipeline, emission factors, BIOCOG methodology
-- Existing page routing (no pages removed or restructured)
-- Database schema, RLS policies, authentication
-- CBAMCalculator, NetZero, Verify, Monetize core logic
-- Any existing component or hook behavior
-- Reports/certificates language (always English)
+- MRV pipeline, emission factors, verification logic
+- Authentication, RLS policies, database schema
+- Core page routing (no new pages created)
+- Homepage design, navigation structure
+- Edge functions, payment flows
+- Existing component behavior
+
+---
+
+## Expected Outcome
+
+After implementation:
+- 300+ pages with full crawlable HTML content (no JS dependency for indexing)
+- Unique schema markup per page type
+- Internal linking mesh creating topical authority clusters
+- Urgency/scarcity elements driving conversion psychology
+- Proper sitemap with all routes and fresh dates
+- AI bot access to full content library
+
+Timeline to ranking impact: 2-4 weeks for indexing, 6-8 weeks for ranking movement on long-tail queries, 3-4 months for competitive keyword positions.
 
