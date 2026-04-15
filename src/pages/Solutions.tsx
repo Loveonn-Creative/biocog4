@@ -15,7 +15,7 @@ import { useState } from 'react';
 import {
   ArrowRight, Check, Calculator, ClipboardList, DollarSign,
   Globe, Factory, ChevronRight, HelpCircle,
-  Zap, Shield, TrendingDown, FileText
+  Zap, Shield, TrendingDown, FileText, AlertTriangle
 } from 'lucide-react';
 
 // Mini CBAM Estimator Component
