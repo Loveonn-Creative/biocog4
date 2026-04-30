@@ -52,6 +52,12 @@ const Grants = lazy(() => import("./pages/Grants"));
 const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
 const NetZero = lazy(() => import("./pages/NetZero"));
 const Solutions = lazy(() => import("./pages/Solutions"));
+const CalculatorsHub = lazy(() => import("./pages/calculators/CalculatorsHub"));
+const PCFCalculatorPage = lazy(() => import("./pages/calculators/PCFCalculator"));
+const SupplierRiskCalculator = lazy(() => import("./pages/calculators/SupplierRiskCalculator"));
+const EnergyTransitionCalculator = lazy(() => import("./pages/calculators/EnergyTransitionCalculator"));
+const LogisticsCalculator = lazy(() => import("./pages/calculators/LogisticsCalculator"));
+const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPricingCalculator"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -126,6 +132,12 @@ const App = () => (
               <Route path="/net-zero" element={<NetZero />} />
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="/solutions/:useCase" element={<Solutions />} />
+              <Route path="/calculators" element={<CalculatorsHub />} />
+              <Route path="/calculators/product-carbon-footprint" element={<PCFCalculatorPage />} />
+              <Route path="/calculators/supplier-emissions-risk" element={<SupplierRiskCalculator />} />
+              <Route path="/calculators/energy-transition-savings" element={<EnergyTransitionCalculator />} />
+              <Route path="/calculators/logistics-emissions" element={<LogisticsCalculator />} />
+              <Route path="/calculators/carbon-pricing-impact" element={<CarbonPricingCalculator />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
