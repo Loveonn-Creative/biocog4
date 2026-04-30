@@ -65,6 +65,39 @@ export type Database = {
         }
         Relationships: []
       }
+      calculator_runs: {
+        Row: {
+          calculator_slug: string
+          created_at: string
+          factor_sources: Json
+          id: string
+          inputs: Json
+          label: string | null
+          results: Json
+          user_id: string
+        }
+        Insert: {
+          calculator_slug: string
+          created_at?: string
+          factor_sources?: Json
+          id?: string
+          inputs: Json
+          label?: string | null
+          results: Json
+          user_id: string
+        }
+        Update: {
+          calculator_slug?: string
+          created_at?: string
+          factor_sources?: Json
+          id?: string
+          inputs?: Json
+          label?: string | null
+          results?: Json
+          user_id?: string
+        }
+        Relationships: []
+      }
       carbon_verifications: {
         Row: {
           ai_analysis: Json | null
