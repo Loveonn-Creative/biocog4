@@ -10,6 +10,8 @@ Allow: /industries/
 Allow: /vs/
 Allow: /cbam-calculator
 Allow: /net-zero
+Allow: /calculators
+Allow: /calculators/
 Allow: /mission
 Allow: /about
 Allow: /pricing

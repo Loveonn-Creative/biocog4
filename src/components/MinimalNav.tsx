@@ -12,6 +12,7 @@ const LOCALE_LABELS: Record<string, string> = {
 const navLinks = [
   { path: "/mission", label: "Mission" },
   { path: "/about", label: "About" },
+  { path: "/calculators", label: "Calculators" },
   { path: "/climate-intelligence", label: "Climate Intelligence" },
   { path: "/contact", label: "Contact" },
   { path: "/legal", label: "Legal" },

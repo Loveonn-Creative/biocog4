@@ -1,170 +1,108 @@
 
+# Plan: 5 Deterministic Calculators + Calculators Hub
 
-# Audit Report & Execution Plan: Making Senseible Rank #1
+Build five standalone calculator pages — each with its own deterministic engine grounded in published government / international standards — plus one Calculators Hub page that lists all calculators on the platform (existing + new). MSME-friendly UI: minimal text, single-task screens, plain language. Saving is optional and gated to authenticated users via a new `calculator_runs` table. Zero changes to MRV pipeline, OCR, or existing engines.
 
----
+## What gets built
 
-## Part 1: Reality Audit — Why Senseible Is Invisible
+### 1. Engines (`src/lib/calculators/`)
+Pure deterministic functions. Each engine is a standalone `.ts` file with typed inputs, typed outputs, named factor sources, and unit tests-ready math (no AI, no randomness).
 
-### What Google Sees Today
+| File | Standard / source |
+|------|-------------------|
+| `pcfEngine.ts` | ISO 14067, GHG Protocol Product Standard. Cradle-to-gate: materials × EF + energy × grid factor + transport × distance×weight×modeEF + processing. Allocation: mass / energy / economic. EF hierarchy: primary → secondary (DEFRA 2024, Ecoinvent v3.10 published values) → IPCC AR6 proxy. Returns kgCO₂e per functional unit + breakdown + EF source per line. |
+| `supplierRiskEngine.ts` | GHG Protocol Scope 3 Cat. 1 (Purchased Goods). Hybrid: spend-based (EEIO factors USD/kg by sector-country) with activity-based override. Risk score 0–100 = weighted (geography 30 + sector intensity 35 + disclosure gap 35). Confidence band low/med/high based on data source. |
+| `energyTransitionEngine.ts` | MNRE benchmarks (India), IEA grid factors, IRR/NPV/payback formulas. Inputs: monthly kWh, current tariff, system kWp, capex/kWp, opex/yr, degradation 0.5%/yr default, PPA tariff option. Outputs: 25-yr cashflow, payback (yrs), IRR (%), NPV (₹), CO₂ avoided (tCO₂/yr & lifetime) using country grid factor from `countryConfig.ts`. |
+| `logisticsEngine.ts` | GLEC Framework v3.0 / ISO 14083. Inputs: leg list (mode, weight tonnes, distance km, fuel optional, load factor optional). Mode EFs (kgCO₂e/t-km): road-rigid 0.105, road-articulated 0.062, rail 0.022, sea-container 0.008, sea-bulk 0.004, air-shorthaul 1.13, air-longhaul 0.602. Empty-return uplift toggle. Multimodal sum. |
+| `carbonPricingEngine.ts` | EU ETS forward curve (€75 base, +€5/yr scenario), CBAM phase-in reused from `cbamEngine.ts`. Inputs: scope1, scope2, scope3 (tCO₂), sector free-allowance %, country, year range. Outputs: yearly liability €, sensitivity (best −20% / base / worst +30% price), regulated vs non-regulated split. Currency normalization via fixed FX table. |
 
-| Signal | Status | Impact |
-|--------|--------|--------|
-| **Indexed pages** | **1** (homepage only) | Fatal — 300+ pages in sitemap, 1 indexed |
-| `site:senseible.earth` | Returns only homepage | All /solutions/, /climate-intelligence/, /industries/ are ghost pages |
-| `site:senseible.earth solutions` | **0 results** | 75 programmatic pages completely invisible |
-| `site:senseible.earth climate-intelligence` | **0 results** | 80+ articles invisible |
-| Brand search "senseible carbon" | HN post ranks, not senseible.earth | Hacker News owns Senseible's brand narrative |
-| High-intent "CBAM compliance cost India" | cleancarbon.ai, raaas.com, cbam.in rank | Senseible not in top 50 |
-| "carbon accounting MSME India" | elion.co.in, smeclimatehub.org rank | Senseible absent |
+All factor tables include a `source` and `version` string surfaced in the UI ("DEFRA 2024 v1.2") and in the saved record.
 
-### Root Causes (5 Critical Failures)
+### 2. Pages (`src/pages/calculators/`)
+Each page: MinimalNav, hero (one-line purpose), single-column form with stepper for multi-input ones (PCF line items, logistics legs), Calculate button, results panel with chart, "Save to my account" button (visible only for authenticated users), CSV export, FAQ section, JSON-LD `WebApplication` + `HowTo` + `FAQPage` schema, hreflang, internal links to Hub + 2 related calculators.
 
-**1. SPA Rendering = Invisible to Googlebot**
-The static HTML generator runs post-build but the deployed site serves client-rendered React for all routes. The `<noscript>` fallback only has a title and one-line description — no substantive content for crawlers that don't execute JS. Googlebot's JS rendering queue is delayed hours to days; most pages never get rendered.
+| Route | Page |
+|-------|------|
+| `/calculators` | **Hub** — grid of all calculator cards (5 new + CBAM + Net-Zero + Scope 2 mini + CBAM cost + any solutions calc). Search input filters by name/keyword. Categorized: Compliance, Operations, Finance. |
+| `/calculators/product-carbon-footprint` | PCF |
+| `/calculators/supplier-emissions-risk` | Supplier risk |
+| `/calculators/energy-transition-savings` | Renewables ROI |
+| `/calculators/logistics-emissions` | Freight |
+| `/calculators/carbon-pricing-impact` | Carbon cost exposure |
 
-**2. Static sitemap.xml is stale (March 2026)**
-The `/public/sitemap.xml` has hardcoded `2026-03-18` dates and does NOT include any `/solutions/` routes. The Edge Function sitemap exists but is only accessible via API call — it's not what robots.txt points to. Robots.txt points to `https://senseible.earth/sitemap.xml` (the static one).
+UI rules (MSME-friendly):
+- One question per row, plain English label, no jargon (tooltip icon for terms like "functional unit").
+- Numeric inputs with unit suffix shown inline (e.g., "kg", "km", "kWh").
+- Defaults pre-filled where safe (e.g., load factor 70%, degradation 0.5%/yr) with "Edit" link to expose advanced fields.
+- Result shown as one big number first ("Your CBAM cost in 2026: €X"), breakdown collapsed below.
+- No marketing copy, no testimonials, no pricing pitch on calculator pages.
 
-**3. robots.txt blocks crawling of solution pages**
-`/solutions/` is not listed in any `Allow:` directive. While the default `Allow: /` covers it for generic user-agents, AI bots (GPTBot, PerplexityBot, Claude-Web) only see explicitly allowed paths — `/solutions/` is missing.
+### 3. Save / persistence (paid users only)
+New table `calculator_runs`:
+```
+id uuid pk, user_id uuid not null, calculator_slug text not null,
+inputs jsonb not null, results jsonb not null,
+factor_sources jsonb not null, created_at timestamptz default now()
+```
+RLS: `user_id = auth.uid()` for all CRUD.
+Save button calls `supabase.from('calculator_runs').insert(...)`. Gated by `usePremiumStatus().isPremium`; non-premium auth users see "Upgrade to save" link to `/subscription`. Anonymous users see "Sign in to save".
+History list shown on `/calculators` hub for logged-in users (last 10 runs).
 
-**4. Zero backlinks, zero domain authority**
-Only external reference is Hacker News. No authority signals. Competitors (cleancarbon.ai, cbam.in, carbonsettle.com) have established backlink profiles from industry publications.
+### 4. Navigation integration
+- Add `Calculators` link to `MinimalNav` (between Climate Intelligence and Contact).
+- Add `Calculators` section to `Footer`.
+- Add internal links from `/cbam-calculator`, `/net-zero`, `/industries`, `/solutions/:slug` → `/calculators` hub and to relevant peer calculator.
+- Voice command map (`src/lib/voiceCommands.ts`): add "open calculators", "product footprint calculator", "supplier risk", "renewable savings", "freight emissions", "carbon price calculator".
 
-**5. No crawlable text content in HTML source**
-When Googlebot fetches any page, it gets an empty `<div id="root"></div>` plus a `<noscript>` block with one sentence. The 2000+ words of actual page content only exists after React hydration. Google's crawler budget won't wait.
+### 5. SEO / Voice / AI ranking
+For each calculator page:
+- Unique `<title>` ≤ 60 chars, meta description ≤ 155 chars with primary keyword.
+- JSON-LD: `WebApplication` + `HowTo` (5–7 numbered steps) + `FAQPage` (4 Q&As targeting voice queries like "how do I calculate product carbon footprint for export").
+- Canonical, OG, Twitter cards.
+- Add all 5 routes + `/calculators` to `public/sitemap.xml` and to `supabase/functions/generate-sitemap/index.ts` with `priority 0.9`, `changefreq monthly`.
+- Add all 5 routes to `scripts/generate-static-html.js` with full noscript content (H1, intro, how-it-works, FAQ) so crawlers index without JS.
+- Add explicit `Allow: /calculators/` to `public/robots.txt` for all bots including GPTBot, PerplexityBot, Claude-Web.
 
----
+## Files
 
-## Part 2: What's Already Built (Assets Inventory)
+**New**
+- `src/lib/calculators/pcfEngine.ts`
+- `src/lib/calculators/supplierRiskEngine.ts`
+- `src/lib/calculators/energyTransitionEngine.ts`
+- `src/lib/calculators/logisticsEngine.ts`
+- `src/lib/calculators/carbonPricingEngine.ts`
+- `src/pages/calculators/CalculatorsHub.tsx`
+- `src/pages/calculators/PCFCalculator.tsx`
+- `src/pages/calculators/SupplierRiskCalculator.tsx`
+- `src/pages/calculators/EnergyTransitionCalculator.tsx`
+- `src/pages/calculators/LogisticsCalculator.tsx`
+- `src/pages/calculators/CarbonPricingCalculator.tsx`
+- `src/components/calculators/CalculatorShell.tsx` (shared layout: hero, save bar, related links, FAQ schema)
+- `src/components/calculators/SaveRunButton.tsx`
+- DB migration: `calculator_runs` table + RLS
 
-| Asset | Count | Status |
-|-------|-------|--------|
-| Solution pages (`/solutions/:slug`) | 75 | Built, rendering, not indexed |
-| CMS articles (`/climate-intelligence/:slug`) | 80+ | Built, rendering, not indexed |
-| Industry pages (`/industries/:id`) | 6 | Built, not indexed |
-| CBAM Calculator | 1 | Built, functional |
-| Scope Estimator (mini) | Embedded | Built in Solutions + Industries |
-| FAQ Schema (index.html) | 7 FAQs | Present but only on homepage |
-| Organization Schema | Yes | Present |
-| Multilingual i18n (11 langs) | Yes | Built, JSON lazy-loaded |
-| Competitor comparison pages | 20 | Built, not indexed |
-| Static HTML generator | Yes | Runs but output insufficient |
-| robots.txt | Yes | Missing /solutions/ allow |
-| Sitemap (static) | 306 URLs | Missing solutions, stale dates |
-| Sitemap (edge function) | Dynamic | Not connected to robots.txt |
-
----
-
-## Part 3: Execution Plan — Agency-Grade ($15M Thinking)
-
-### Phase 1: Make Existing Pages Indexable (Critical Fix)
-
-**Problem**: 300+ pages exist but Google can't see them.
-
-**Fix 1 — Enhanced Static HTML Generator**
-Rewrite `generate-static-html.js` to inject **full semantic HTML content** into each page's `<noscript>` block — not just a title and description, but the actual page content: headings, paragraphs, steps, FAQs, cost breakdowns, internal links. This gives Googlebot substantive content without requiring JS execution.
-
-Each generated HTML file will contain:
-- Complete `<head>` with unique title, description, canonical, OG tags
-- Unique JSON-LD schema (FAQPage, HowTo, BreadcrumbList) per page
-- Full page content in a `<noscript>` block with semantic HTML (`<article>`, `<h1>`, `<h2>`, `<ol>`, `<a>`)
-- Internal links to related pages (crawl path for bots)
-
-**Fix 2 — Connect Dynamic Sitemap**
-Update `robots.txt` to point to the Edge Function sitemap URL instead of the static file, OR replace the static sitemap with a build-time generated one that includes all 300+ routes with current dates.
-
-**Fix 3 — robots.txt Updates**
-Add explicit `Allow:` directives for `/solutions/`, `/cbam-calculator`, `/net-zero`, `/vs/` for all bot user-agents including AI crawlers.
-
-### Phase 2: Content Depth for Authority
-
-**Problem**: Pages have thin content. Google ranks depth.
-
-**Fix 4 — Expand Solution Page Content**
-Each of the 75 solution pages currently has ~500 words of templated content. Enhance `solutionsData.ts` with:
-- Country-specific regulatory deadlines and penalty data
-- Real cost numbers from IEA/EU ETS (already in `cbamEngine.ts`)
-- "Cost of non-compliance" section (inversion principle — show what happens if you don't act)
-- "Competitor readiness" section (FOMO — "X% of exporters in your sector already reporting")
-- Urgency timestamps: "CBAM Phase 2 starts January 2026 — X days remaining"
-
-**Fix 5 — Expand CMS Articles**
-The 25 new country-specific articles need full body content (currently they have titles and summaries but the actual rendered content is thin). Each article should be 800-1200 words with:
-- Specific country data (grid factors, export volumes, regulatory bodies)
-- Embedded calculator CTAs
-- Internal links to 3-5 related solution pages
-- FAQ schema with 3-4 questions
-
-### Phase 3: Technical SEO Perfection
-
-**Fix 6 — Per-Page Schema Markup**
-Currently, JSON-LD schema only exists on `index.html`. The `SEOHead` component adds Organization and SoftwareApplication schema to every page (duplicate). Instead:
-- Solution pages: FAQPage + HowTo + BreadcrumbList
-- Industry pages: Product + FAQPage
-- CMS articles: Article + FAQPage
-- Calculator pages: SoftwareApplication + HowTo
-
-**Fix 7 — Internal Linking Mesh**
-Every solution page must link to:
-- Its pillar page (e.g., `/cbam-calculator`)
-- 2-3 related solution pages (same country OR same sector)
-- Relevant CMS article
-- Industry page
-This creates crawl loops that distribute page authority.
-
-**Fix 8 — Canonical + hreflang Consistency**
-Ensure every page has unique canonical URL and proper hreflang tags. Currently some pages may have duplicate canonicals from the template.
-
-### Phase 4: Psychology-Driven Conversion Layer
-
-**Fix 9 — Urgency & Scarcity Elements**
-Add to solution pages:
-- Live countdown: "CBAM definitive phase: X days since enforcement"
-- "Non-compliance cost": Show financial penalty for inaction (inversion)
-- "Industry readiness": "Only 12% of Indian steel MSMEs are CBAM-ready" (FOMO)
-
-**Fix 10 — Moment Marketing Hooks**
-Add time-sensitive content blocks that reference current regulatory events:
-- "EU CBAM Phase 2 is now active — are you reporting?"
-- "India-EU FTA negotiations include carbon provisions"
-These create freshness signals Google rewards.
-
----
-
-## Files to Edit
-
-| File | Changes |
-|------|---------|
-| `scripts/generate-static-html.js` | Inject full semantic content per page type (solutions, articles, industries) into HTML |
-| `public/robots.txt` | Add Allow directives for /solutions/, /cbam-calculator, /net-zero, /vs/ for all bots |
-| `public/sitemap.xml` | Replace with build-time generated version including all 300+ routes with current dates, OR point robots.txt to edge function |
-| `src/data/solutionsData.ts` | Add urgency data, cost-of-inaction, competitor readiness percentages, expanded content per page |
-| `src/pages/Solutions.tsx` | Add countdown timer, non-compliance cost section, competitor readiness badge, richer internal linking |
-| `src/components/SEOHead.tsx` | Deduplicate schema — only emit page-appropriate schema types, not Organization on every page |
-| `src/data/cmsContent.ts` | Expand article bodies with country-specific depth, add FAQ arrays per article |
+**Edited**
+- `src/App.tsx` — 6 new lazy routes
+- `src/components/MinimalNav.tsx` — add Calculators link
+- `src/components/Footer.tsx` — add Calculators section
+- `src/lib/voiceCommands.ts` — add calculator voice intents
+- `public/sitemap.xml` — add 6 URLs
+- `public/robots.txt` — add `Allow: /calculators/`
+- `supabase/functions/generate-sitemap/index.ts` — add routes
+- `scripts/generate-static-html.js` — add noscript content for 6 routes
 
 ## What Does NOT Change
 
-- MRV pipeline, emission factors, verification logic
-- Authentication, RLS policies, database schema
-- Core page routing (no new pages created)
-- Homepage design, navigation structure
-- Edge functions, payment flows
-- Existing component behavior
+- MRV pipeline, OCR, `extract-document` edge function, emission classification
+- `cbamEngine.ts`, `netZeroEngine.ts`, `countryConfig.ts` (read-only consumers)
+- Existing pages, RLS policies on existing tables, auth flow
+- Database tables other than the new `calculator_runs`
+- Pricing, subscription logic (only consumes `usePremiumStatus`)
+- Translation JSON files (calculator labels added later in i18n pass)
 
----
+## Determinism guarantees
 
-## Expected Outcome
-
-After implementation:
-- 300+ pages with full crawlable HTML content (no JS dependency for indexing)
-- Unique schema markup per page type
-- Internal linking mesh creating topical authority clusters
-- Urgency/scarcity elements driving conversion psychology
-- Proper sitemap with all routes and fresh dates
-- AI bot access to full content library
-
-Timeline to ranking impact: 2-4 weeks for indexing, 6-8 weeks for ranking movement on long-tail queries, 3-4 months for competitive keyword positions.
-
+- Every factor is a numeric constant in code with a cited source string.
+- No call to LLMs, no `Math.random`, no AI gateway, no external runtime fetch.
+- All calculations executed client-side, results identical for identical inputs.
+- Factor source string surfaced in UI ("DEFRA 2024", "GLEC v3.0", "IEA 2023") and in saved JSON.

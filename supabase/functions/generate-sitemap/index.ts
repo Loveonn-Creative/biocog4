@@ -39,6 +39,14 @@ const STATIC_PAGES = [
   { path: "/legal/sla", priority: "0.3", changefreq: "yearly" },
   { path: "/legal/ai-policy", priority: "0.3", changefreq: "yearly" },
   { path: "/legal/refund", priority: "0.3", changefreq: "yearly" },
+  { path: "/cbam-calculator", priority: "0.9", changefreq: "monthly" },
+  { path: "/net-zero", priority: "0.9", changefreq: "monthly" },
+  { path: "/calculators", priority: "0.9", changefreq: "weekly" },
+  { path: "/calculators/product-carbon-footprint", priority: "0.9", changefreq: "monthly" },
+  { path: "/calculators/supplier-emissions-risk", priority: "0.9", changefreq: "monthly" },
+  { path: "/calculators/energy-transition-savings", priority: "0.9", changefreq: "monthly" },
+  { path: "/calculators/logistics-emissions", priority: "0.9", changefreq: "monthly" },
+  { path: "/calculators/carbon-pricing-impact", priority: "0.9", changefreq: "monthly" },
 ];
 
 const INDUSTRIES = [
