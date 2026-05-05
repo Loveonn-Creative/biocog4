@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Plus, Trash2, Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import {
   TRANSPORT_MODES, calculateLogistics,
   type FreightLeg, type LogisticsResult, type TransportMode,
@@ -23,6 +24,13 @@ const LogisticsCalculator = () => {
   const calculate = () => setResult(calculateLogistics(legs));
 
   const chartData = result ? Object.entries(result.byMode).map(([name, value]) => ({ name, value })) : [];
+
+  useCalculatorAutosave({
+    calculatorSlug: "logistics-emissions",
+    inputs: { legs },
+    results: result as Record<string, unknown> | null,
+    factorSources: result?.factorSources,
+  });
 
   return (
     <CalculatorShell
