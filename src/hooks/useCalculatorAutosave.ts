@@ -5,8 +5,8 @@ import { usePremiumStatus } from "./usePremiumStatus";
 
 interface Args {
   calculatorSlug: string;
-  inputs: Record<string, unknown>;
-  results: Record<string, unknown> | null;
+  inputs: unknown;
+  results: unknown;
   factorSources?: string[];
   label?: string;
   enabled?: boolean;
