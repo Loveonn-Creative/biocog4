@@ -152,6 +152,46 @@ export const voiceCommands: VoiceCommand[] = [
     route: '/auth',
     description: 'Sign In',
   },
+  {
+    patterns: [
+      /(open |go to |show )?calculators?/i,
+      /carbon calculator/i,
+      /free calculator/i,
+    ],
+    action: 'navigate',
+    route: '/calculators',
+    description: 'Open Calculators',
+  },
+  {
+    patterns: [/product carbon footprint( calculator)?/i, /pcf calculator/i, /iso 14067/i],
+    action: 'navigate',
+    route: '/calculators/product-carbon-footprint',
+    description: 'PCF Calculator',
+  },
+  {
+    patterns: [/supplier (emissions?|risk|carbon)( calculator)?/i, /scope 3 supplier/i],
+    action: 'navigate',
+    route: '/calculators/supplier-emissions-risk',
+    description: 'Supplier Risk Calculator',
+  },
+  {
+    patterns: [/(solar|energy transition|renewable)( roi| savings| calculator)?/i],
+    action: 'navigate',
+    route: '/calculators/energy-transition-savings',
+    description: 'Energy Transition Calculator',
+  },
+  {
+    patterns: [/logistics( emissions?| calculator)?/i, /freight (emissions?|calculator)/i, /glec/i],
+    action: 'navigate',
+    route: '/calculators/logistics-emissions',
+    description: 'Logistics Calculator',
+  },
+  {
+    patterns: [/(carbon pricing|eu ets|ets price)( impact| calculator)?/i],
+    action: 'navigate',
+    route: '/calculators/carbon-pricing-impact',
+    description: 'Carbon Pricing Calculator',
+  },
 ];
 
 export const matchVoiceCommand = (transcript: string): VoiceCommand | null => {
