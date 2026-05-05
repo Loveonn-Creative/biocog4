@@ -28,7 +28,7 @@ const LogisticsCalculator = () => {
   useCalculatorAutosave({
     calculatorSlug: "logistics-emissions",
     inputs: { legs },
-    results: result as Record<string, unknown> | null,
+    results: result,
     factorSources: result?.factorSources,
   });
 

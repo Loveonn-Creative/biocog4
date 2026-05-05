@@ -40,7 +40,7 @@ const SupplierRiskCalculator = () => {
   useCalculatorAutosave({
     calculatorSlug: "supplier-emissions-risk",
     inputs: { suppliers },
-    results: result as Record<string, unknown> | null,
+    results: result,
     factorSources: result?.factorSources,
   });
 

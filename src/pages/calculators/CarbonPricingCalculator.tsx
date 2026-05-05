@@ -47,7 +47,7 @@ const CarbonPricingCalculator = () => {
   useCalculatorAutosave({
     calculatorSlug: "carbon-pricing-impact",
     inputs: { scope1, scope2, scope3, production, sectorId, exportsToEU, reduction, scenario, startYear, endYear, domesticPrice, currency },
-    results: result as Record<string, unknown> | null,
+    results: result,
     factorSources: result?.factorSources,
   });
 

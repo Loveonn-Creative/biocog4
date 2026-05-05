@@ -60,7 +60,7 @@ const PCFCalculatorPage = () => {
   useCalculatorAutosave({
     calculatorSlug: "product-carbon-footprint",
     inputs: { productName, functionalUnit, unitsPerBatch, systemBoundary, allocationMethod, coProductShare, materials, energy, transport, processing },
-    results: result as Record<string, unknown> | null,
+    results: result,
     factorSources: result?.factorSources,
   });
 

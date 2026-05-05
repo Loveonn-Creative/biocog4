@@ -51,7 +51,7 @@ const EnergyTransitionCalculator = () => {
   useCalculatorAutosave({
     calculatorSlug: "energy-transition-savings",
     inputs: { country, scenario, monthlyKwh, tariff, systemKwp, capex, opex, ppaTariff, selfCons, exportTariff, discount, degradation, life, cuf, subsidy },
-    results: result as Record<string, unknown> | null,
+    results: result,
     factorSources: result?.factorSources,
   });
 
