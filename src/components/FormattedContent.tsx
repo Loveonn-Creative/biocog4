@@ -6,65 +6,66 @@ interface FormattedContentProps {
   className?: string;
 }
 
-/**
- * Renders formatted content without markdown artifacts
- * Provides clean, readable display of structured text
- */
 export const FormattedContent = memo(({ content, className = '' }: FormattedContentProps) => {
   const sections = parseContentToSections(content);
-  
+
   // Group consecutive list items
-  const groupedSections: (FormattedSection | FormattedSection[])[] = [];
-  let currentListItems: FormattedSection[] = [];
-  
-  for (const section of sections) {
-    if (section.type === 'listItem') {
-      currentListItems.push(section);
-    } else {
-      if (currentListItems.length > 0) {
-        groupedSections.push([...currentListItems]);
-        currentListItems = [];
-      }
-      groupedSections.push(section);
-    }
+  type Group = FormattedSection | { kind: 'ul'; items: string[] } | { kind: 'ol'; items: string[] };
+  const groups: Group[] = [];
+  let bullets: string[] = [];
+  let numbered: string[] = [];
+  const flush = () => {
+    if (bullets.length) { groups.push({ kind: 'ul', items: bullets }); bullets = []; }
+    if (numbered.length) { groups.push({ kind: 'ol', items: numbered }); numbered = []; }
+  };
+  for (const s of sections) {
+    if (s.type === 'listItem') { if (numbered.length) flush(); bullets.push(s.content); }
+    else if (s.type === 'numberedItem') { if (bullets.length) flush(); numbered.push(s.content); }
+    else { flush(); groups.push(s); }
   }
-  
-  if (currentListItems.length > 0) {
-    groupedSections.push(currentListItems);
-  }
-  
+  flush();
+
   return (
     <div className={`space-y-4 ${className}`}>
-      {groupedSections.map((item, index) => {
-        if (Array.isArray(item)) {
-          // Render list
+      {groups.map((g, i) => {
+        if ('kind' in g) {
+          if (g.kind === 'ul') {
+            return (
+              <ul key={i} className="space-y-2 pl-1">
+                {g.items.map((it, j) => (
+                  <li key={j} className="flex items-start gap-3 text-foreground/80">
+                    <span className="text-primary mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span className="flex-1">{it}</span>
+                  </li>
+                ))}
+              </ul>
+            );
+          }
           return (
-            <ul key={index} className="space-y-2 pl-4">
-              {item.map((listItem, listIndex) => (
-                <li key={listIndex} className="flex items-start gap-2 text-foreground/80">
-                  <span className="text-primary mt-1.5 text-xs">●</span>
-                  <span className="flex-1">{listItem.content}</span>
-                </li>
-              ))}
-            </ul>
+            <ol key={i} className="space-y-2 list-decimal list-inside marker:text-primary marker:font-semibold">
+              {g.items.map((it, j) => <li key={j} className="text-foreground/80 pl-1">{it}</li>)}
+            </ol>
           );
         }
-        
-        const section = item as FormattedSection;
-        
-        switch (section.type) {
-          case 'heading':
+        switch (g.type) {
+          case 'h2':
+            return <h2 key={i} className="text-xl sm:text-2xl font-semibold text-foreground mt-8 first:mt-0">{g.content}</h2>;
+          case 'h3':
+            return <h3 key={i} className="text-lg font-semibold text-foreground mt-6 first:mt-0">{g.content}</h3>;
+          case 'callout':
             return (
-              <h3 key={index} className="font-semibold text-foreground mt-6 first:mt-0">
-                {section.content}
-              </h3>
+              <blockquote key={i} className="border-l-4 border-primary/60 bg-primary/5 pl-4 py-3 rounded-r-md text-foreground/85 italic">
+                {g.content}
+              </blockquote>
             );
-          case 'paragraph':
+          case 'keyValue':
             return (
-              <p key={index} className="text-foreground/80 leading-relaxed">
-                {section.content}
+              <p key={i} className="text-foreground/85 leading-relaxed">
+                <span className="font-semibold text-foreground">{g.key}:</span> {g.content}
               </p>
             );
+          case 'paragraph':
+            return <p key={i} className="text-foreground/80 leading-relaxed">{g.content}</p>;
           default:
             return null;
         }
