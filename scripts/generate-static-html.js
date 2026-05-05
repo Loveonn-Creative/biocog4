@@ -189,6 +189,79 @@ const routes = [
     description: 'Read our terms of service, privacy policy, and data handling practices. Senseible is committed to data security and transparency.',
     keywords: 'terms of service, privacy policy, data handling',
   },
+  // Calculators hub + 5 deterministic calculators
+  {
+    path: '/calculators',
+    title: 'Free Carbon Calculators for MSMEs — PCF, Scope 3, Logistics, ETS | Senseible',
+    description: 'Five deterministic, audit-ready carbon calculators for MSMEs: Product Carbon Footprint (ISO 14067), Supplier Risk (Scope 3), Energy Transition ROI, Logistics (GLEC), Carbon Pricing (EU ETS/CBAM). Free, no signup.',
+    keywords: 'carbon calculator, PCF calculator, scope 3 calculator, GLEC calculator, EU ETS calculator, CBAM calculator MSME',
+    noscriptContent: `<h1>Free Carbon Calculators for MSMEs</h1>
+      <p>Five deterministic, standards-aligned calculators built for MSMEs. Zero hallucination — every output traces to a fixed emission factor or published methodology.</p>
+      <ul>
+        <li><a href="${SITE_URL}/calculators/product-carbon-footprint">Product Carbon Footprint (ISO 14067)</a> — cradle-to-gate emissions per unit</li>
+        <li><a href="${SITE_URL}/calculators/supplier-emissions-risk">Supplier Emissions Risk (Scope 3 Cat 1)</a> — hybrid spend/activity scoring with EORA factors</li>
+        <li><a href="${SITE_URL}/calculators/energy-transition-savings">Energy Transition Savings</a> — solar ROI, NPV, IRR with country grid factors</li>
+        <li><a href="${SITE_URL}/calculators/logistics-emissions">Logistics Emissions (GLEC v3.0 / ISO 14083)</a> — multimodal freight CO₂e</li>
+        <li><a href="${SITE_URL}/calculators/carbon-pricing-impact">Carbon Pricing Impact (EU ETS + CBAM)</a> — 2026–2034 exposure with sensitivity analysis</li>
+      </ul>`,
+  },
+  {
+    path: '/calculators/product-carbon-footprint',
+    title: 'Product Carbon Footprint Calculator (ISO 14067) — Free | Senseible',
+    description: 'Calculate cradle-to-gate Product Carbon Footprint per unit using ISO 14067 methodology. Free deterministic tool for MSMEs and exporters. No signup required.',
+    keywords: 'product carbon footprint calculator, ISO 14067, PCF calculator, cradle to gate emissions, LCA calculator MSME',
+    noscriptContent: `<h1>Product Carbon Footprint Calculator (ISO 14067)</h1>
+      <p>Calculate cradle-to-gate emissions per unit of product using deterministic ISO 14067 methodology. Inputs: raw materials, energy, transport, packaging. Output: kgCO₂e per unit with full breakdown.</p>
+      <h2>Why It Matters</h2>
+      <p>EU buyers increasingly require PCF disclosures. Product passports (DPP) under ESPR mandate carbon data per SKU from 2027.</p>
+      <h2>Methodology</h2>
+      <ul><li>ISO 14067:2018 cradle-to-gate boundary</li><li>IEA 2023 grid emission factors per country</li><li>DEFRA 2024 transport factors</li><li>EORA / Ecoinvent material factors</li></ul>
+      <p><a href="${SITE_URL}/calculators">All Calculators</a> | <a href="${SITE_URL}/cbam-calculator">CBAM Calculator</a></p>`,
+  },
+  {
+    path: '/calculators/supplier-emissions-risk',
+    title: 'Supplier Emissions Risk Calculator (Scope 3 Cat 1) — Free | Senseible',
+    description: 'Score supplier carbon risk using hybrid spend + activity methodology. GHG Protocol Scope 3 Category 1 compliant. EORA 2023 factors. Free MSME tool.',
+    keywords: 'supplier emissions calculator, scope 3 category 1, supply chain carbon risk, EORA emission factors, supplier carbon risk MSME',
+    noscriptContent: `<h1>Supplier Emissions Risk Calculator</h1>
+      <p>Score your suppliers on Scope 3 Category 1 (purchased goods & services) carbon risk using hybrid spend-based and activity-based methodology. Aligned with GHG Protocol.</p>
+      <h2>How It Works</h2>
+      <ol><li>Add suppliers with spend, country, and sector</li><li>Engine applies EORA 2023 sector factors and country grid intensity</li><li>Get tCO₂e per supplier and overall portfolio risk score</li></ol>
+      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
+  },
+  {
+    path: '/calculators/energy-transition-savings',
+    title: 'Energy Transition Savings Calculator — Solar ROI for MSMEs | Senseible',
+    description: 'Calculate solar payback, NPV, IRR, and CO₂ savings using MNRE/IEA factors. Country-specific grid emission factors. Free deterministic tool for MSMEs.',
+    keywords: 'solar ROI calculator, energy transition calculator, solar payback MSME, MNRE solar calculator, renewable energy savings calculator',
+    noscriptContent: `<h1>Energy Transition Savings Calculator</h1>
+      <p>Model rooftop solar or renewable energy investment with deterministic ROI, NPV, IRR, and CO₂ savings. Uses MNRE benchmark capex, country-specific tariffs, and IEA 2023 grid factors.</p>
+      <h2>Outputs</h2>
+      <ul><li>Annual energy generation (kWh)</li><li>Annual cost savings (₹/$)</li><li>Payback period (years)</li><li>10/25-year NPV and IRR</li><li>Lifetime CO₂ avoided (tCO₂e)</li></ul>
+      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
+  },
+  {
+    path: '/calculators/logistics-emissions',
+    title: 'Logistics Emissions Calculator (GLEC v3.0 / ISO 14083) — Free | Senseible',
+    description: 'Multimodal freight emissions calculator using GLEC v3.0 and ISO 14083. Road, rail, sea, air. Free tool for MSMEs and 3PLs serving EU buyers.',
+    keywords: 'logistics emissions calculator, GLEC calculator, ISO 14083, freight emissions, multimodal transport carbon, 3PL carbon calculator',
+    noscriptContent: `<h1>Logistics Emissions Calculator (GLEC v3.0)</h1>
+      <p>Calculate multimodal freight CO₂e using GLEC v3.0 framework and ISO 14083. Supports road, rail, sea, and air with cargo-weight × distance methodology.</p>
+      <h2>Why GLEC</h2>
+      <p>GLEC is the global standard for logistics emissions reporting, used by Maersk, DHL, and required by Smart Freight Centre members. ISO 14083:2023 codifies the same methodology.</p>
+      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
+  },
+  {
+    path: '/calculators/carbon-pricing-impact',
+    title: 'Carbon Pricing Impact Calculator (EU ETS + CBAM) — Free | Senseible',
+    description: 'Forecast EU ETS and CBAM exposure 2026–2034 with sensitivity analysis. Best/worst case scenarios. Free deterministic tool for exporters and MSMEs.',
+    keywords: 'carbon pricing calculator, EU ETS calculator, CBAM impact calculator, carbon price forecast, ETS scenario analysis',
+    noscriptContent: `<h1>Carbon Pricing Impact Calculator (EU ETS + CBAM)</h1>
+      <p>Forecast carbon cost exposure under EU ETS and CBAM from 2026 to 2034. Includes phase-in schedule, free allowance erosion, and best/worst case ETS price scenarios.</p>
+      <h2>Phase-In Reminder</h2>
+      <p>2026: 2.5% | 2027: 5% | 2028: 10% | 2029: 22.5% | 2030: 48.5% | 2034: 100%. Free allowances drop to zero by 2034.</p>
+      <p><a href="${SITE_URL}/calculators">All Calculators</a> | <a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a></p>`,
+  },
   // Industry sub-pages
   ...['textile', 'steel', 'automotive', 'pharmaceutical', 'logistics', 'chemical'].map(industry => ({
     path: `/industries/${industry}`,
