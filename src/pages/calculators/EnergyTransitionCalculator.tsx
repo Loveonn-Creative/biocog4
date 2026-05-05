@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator as CalcIcon, TrendingUp, Leaf, Wallet } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import {
   calculateEnergyTransition, formatLocalCurrency, ENERGY_COUNTRIES,
   type EnergyInput, type EnergyResult, type EnergyScenario,
@@ -46,6 +47,13 @@ const EnergyTransitionCalculator = () => {
     };
     setResult(calculateEnergyTransition(input));
   };
+
+  useCalculatorAutosave({
+    calculatorSlug: "energy-transition-savings",
+    inputs: { country, scenario, monthlyKwh, tariff, systemKwp, capex, opex, ppaTariff, selfCons, exportTariff, discount, degradation, life, cuf, subsidy },
+    results: result,
+    factorSources: result?.factorSources,
+  });
 
   return (
     <CalculatorShell

@@ -1,149 +1,78 @@
 // Content formatting utilities for clean, readable text
-// Converts markdown-style formatting to clean HTML or plain text
+// Supports: ## H2, ### H3, **bold** (stripped), bullets (- / *), numbered lists, > callouts, key: value lines
 
-/**
- * Clean markdown formatting from text
- * Removes ** for bold, * for italic, etc.
- */
 export const cleanMarkdownText = (text: string): string => {
   if (!text) return '';
-  
   return text
-    // Remove bold markers **text**
     .replace(/\*\*([^*]+)\*\*/g, '$1')
-    // Remove italic markers *text*
     .replace(/\*([^*]+)\*/g, '$1')
-    // Remove inline code `text`
     .replace(/`([^`]+)`/g, '$1')
-    // Clean up extra whitespace
     .replace(/\s+/g, ' ')
     .trim();
 };
 
-/**
- * Convert markdown-style content to formatted React elements
- * Returns structured content for rendering
- */
 export interface FormattedSection {
-  type: 'heading' | 'paragraph' | 'list' | 'listItem';
+  type: 'h2' | 'h3' | 'paragraph' | 'listItem' | 'numberedItem' | 'callout' | 'keyValue';
   content: string;
-  level?: number;
+  key?: string;
 }
+
+const cleanInline = (text: string): string =>
+  text
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .trim();
 
 export const parseContentToSections = (content: string): FormattedSection[] => {
   if (!content) return [];
-  
   const lines = content.split('\n');
   const sections: FormattedSection[] = [];
-  let currentList: string[] = [];
-  
-  for (const line of lines) {
-    const trimmed = line.trim();
-    
-    if (!trimmed) {
-      // Empty line - flush any current list
-      if (currentList.length > 0) {
-        currentList.forEach(item => {
-          sections.push({ type: 'listItem', content: cleanBoldMarkers(item) });
-        });
-        currentList = [];
-      }
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+
+    if (line.startsWith('### ')) { sections.push({ type: 'h3', content: cleanInline(line.slice(4)) }); continue; }
+    if (line.startsWith('## ')) { sections.push({ type: 'h2', content: cleanInline(line.slice(3)) }); continue; }
+    if (line.startsWith('# ')) { sections.push({ type: 'h2', content: cleanInline(line.slice(2)) }); continue; }
+    if (line.startsWith('> ')) { sections.push({ type: 'callout', content: cleanInline(line.slice(2)) }); continue; }
+
+    const num = line.match(/^(\d+)\.\s+(.*)$/);
+    if (num) { sections.push({ type: 'numberedItem', content: cleanInline(num[2]) }); continue; }
+    if (line.startsWith('- ') || line.startsWith('* ')) { sections.push({ type: 'listItem', content: cleanInline(line.slice(2)) }); continue; }
+
+    // Standalone bold "**Title**" or "**Title:**" → h3
+    const boldHead = line.match(/^\*\*([^*]+?):?\*\*:?\s*$/);
+    if (boldHead) { sections.push({ type: 'h3', content: cleanInline(boldHead[1]) }); continue; }
+
+    // Key: value short line (no period, key < 50 chars, has value)
+    const kv = line.match(/^([A-Z][A-Za-z0-9 ()&/+\-]{2,48}):\s+(.+)$/);
+    if (kv && !kv[2].includes(':') && kv[2].length < 220) {
+      sections.push({ type: 'keyValue', key: cleanInline(kv[1]), content: cleanInline(kv[2]) });
       continue;
     }
-    
-    // Check for heading patterns
-    if (trimmed.startsWith('**') && trimmed.endsWith('**') && !trimmed.includes(':')) {
-      // Standalone bold text is likely a heading
-      if (currentList.length > 0) {
-        currentList.forEach(item => {
-          sections.push({ type: 'listItem', content: cleanBoldMarkers(item) });
-        });
-        currentList = [];
-      }
-      sections.push({ 
-        type: 'heading', 
-        content: trimmed.replace(/^\*\*|\*\*$/g, ''),
-        level: 3
-      });
-    } else if (trimmed.match(/^\*\*[^:]+:\*\*/)) {
-      // Bold heading with colon like **Title:**
-      if (currentList.length > 0) {
-        currentList.forEach(item => {
-          sections.push({ type: 'listItem', content: cleanBoldMarkers(item) });
-        });
-        currentList = [];
-      }
-      sections.push({ 
-        type: 'heading', 
-        content: trimmed.replace(/^\*\*|\*\*$/g, '').replace(/:$/, ''),
-        level: 3
-      });
-    } else if (trimmed.startsWith('- ') || trimmed.match(/^\d+\.\s/)) {
-      // List item
-      const itemContent = trimmed.replace(/^[-\d.]+\s*/, '');
-      currentList.push(itemContent);
-    } else {
-      // Regular paragraph
-      if (currentList.length > 0) {
-        currentList.forEach(item => {
-          sections.push({ type: 'listItem', content: cleanBoldMarkers(item) });
-        });
-        currentList = [];
-      }
-      sections.push({ type: 'paragraph', content: cleanBoldMarkers(trimmed) });
-    }
+
+    sections.push({ type: 'paragraph', content: cleanInline(line) });
   }
-  
-  // Flush remaining list items
-  if (currentList.length > 0) {
-    currentList.forEach(item => {
-      sections.push({ type: 'listItem', content: cleanBoldMarkers(item) });
-    });
-  }
-  
   return sections;
 };
 
-/**
- * Clean bold markers but preserve the text structure
- */
-const cleanBoldMarkers = (text: string): string => {
-  return text
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*]+)\*/g, '$1')
-    .trim();
-};
-
-/**
- * Format content for display - converts markdown to clean readable format
- */
 export const formatContentForDisplay = (content: string): string => {
   if (!content) return '';
-  
   return content
-    // Convert **bold** to just the text (cleaner reading)
     .replace(/\*\*([^*]+)\*\*/g, '$1')
-    // Convert *italic* to just the text
     .replace(/\*([^*]+)\*/g, '$1')
-    // Clean up numbered lists formatting
     .replace(/(\d+)\.\s+\*\*([^*]+)\*\*/g, '$1. $2')
-    // Clean up bullet lists
     .replace(/^-\s+\*\*([^*]+)\*\*/gm, '• $1')
     .replace(/^-\s+/gm, '• ')
-    // Ensure proper paragraph spacing
     .replace(/\n{3,}/g, '\n\n');
 };
 
-/**
- * Extract a clean preview from content
- */
-export const extractPreview = (content: string, maxLength: number = 150): string => {
-  const cleaned = cleanMarkdownText(content);
+export const extractPreview = (content: string, maxLength = 150): string => {
+  const cleaned = cleanMarkdownText(content.replace(/^#+\s.*$/gm, '').replace(/^>\s.*$/gm, ''));
   if (cleaned.length <= maxLength) return cleaned;
-  
-  // Find a good break point
   const truncated = cleaned.substring(0, maxLength);
   const lastSpace = truncated.lastIndexOf(' ');
-  
-  return (lastSpace > maxLength * 0.7 ? truncated.substring(0, lastSpace) : truncated) + '...';
+  return (lastSpace > maxLength * 0.7 ? truncated.substring(0, lastSpace) : truncated) + '…';
 };

@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Plus, Trash2, Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import {
   PCF_MATERIALS, PCF_ENERGY, PCF_TRANSPORT,
   calculatePCF, type PCFInput, type PCFResult, type MaterialLine, type EnergyLine, type TransportLine, type ProcessingLine, type AllocationMethod, type SystemBoundary,
@@ -55,6 +56,13 @@ const PCFCalculatorPage = () => {
       { name: 'Processing', value: result.byCategory.processing },
     ].filter(d => d.value > 0);
   }, [result]);
+
+  useCalculatorAutosave({
+    calculatorSlug: "product-carbon-footprint",
+    inputs: { productName, functionalUnit, unitsPerBatch, systemBoundary, allocationMethod, coProductShare, materials, energy, transport, processing },
+    results: result,
+    factorSources: result?.factorSources,
+  });
 
   return (
     <CalculatorShell

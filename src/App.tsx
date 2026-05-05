@@ -53,6 +53,7 @@ const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
 const NetZero = lazy(() => import("./pages/NetZero"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const CalculatorsHub = lazy(() => import("./pages/calculators/CalculatorsHub"));
+const CalculatorHistory = lazy(() => import("./pages/calculators/CalculatorHistory"));
 const PCFCalculatorPage = lazy(() => import("./pages/calculators/PCFCalculator"));
 const SupplierRiskCalculator = lazy(() => import("./pages/calculators/SupplierRiskCalculator"));
 const EnergyTransitionCalculator = lazy(() => import("./pages/calculators/EnergyTransitionCalculator"));
@@ -133,6 +134,7 @@ const App = () => (
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="/solutions/:useCase" element={<Solutions />} />
               <Route path="/calculators" element={<CalculatorsHub />} />
+              <Route path="/calculators/history" element={<CalculatorHistory />} />
               <Route path="/calculators/product-carbon-footprint" element={<PCFCalculatorPage />} />
               <Route path="/calculators/supplier-emissions-risk" element={<SupplierRiskCalculator />} />
               <Route path="/calculators/energy-transition-savings" element={<EnergyTransitionCalculator />} />

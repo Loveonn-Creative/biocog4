@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import {
   SECTOR_BENCHMARKS, calculateCarbonPricing, formatCurrencyEur, formatLocal,
   type CarbonPricingInput, type CarbonPricingResult, type PriceScenario,
@@ -42,6 +43,13 @@ const CarbonPricingCalculator = () => {
     };
     setResult(calculateCarbonPricing(input));
   };
+
+  useCalculatorAutosave({
+    calculatorSlug: "carbon-pricing-impact",
+    inputs: { scope1, scope2, scope3, production, sectorId, exportsToEU, reduction, scenario, startYear, endYear, domesticPrice, currency },
+    results: result,
+    factorSources: result?.factorSources,
+  });
 
   return (
     <CalculatorShell

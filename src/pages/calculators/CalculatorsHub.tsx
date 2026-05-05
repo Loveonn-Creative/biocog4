@@ -147,24 +147,34 @@ const CalculatorsHub = () => {
             </section>
           ))}
 
-          {isAuthenticated && savedRuns.length > 0 && (
+          {isAuthenticated && (
             <section className="mt-12">
-              <h2 className="text-xl font-semibold text-foreground mb-4">Your saved results</h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <ul className="divide-y divide-border">
-                    {savedRuns.map(r => (
-                      <li key={r.id} className="py-3 flex items-center justify-between text-sm">
-                        <div>
-                          <p className="font-medium text-foreground">{r.label || titleOfSlug(r.calculator_slug)}</p>
-                          <p className="text-xs text-muted-foreground">{titleOfSlug(r.calculator_slug)} · {new Date(r.created_at).toLocaleDateString()}</p>
-                        </div>
-                        <Link to={`/calculators/${r.calculator_slug}`} className="text-primary hover:underline">Re-run →</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-foreground">Your saved results</h2>
+                <Link to="/calculators/history" className="text-sm text-primary hover:underline">View all & export →</Link>
+              </div>
+              {savedRuns.length > 0 ? (
+                <Card>
+                  <CardContent className="pt-6">
+                    <ul className="divide-y divide-border">
+                      {savedRuns.map(r => {
+                        const isLive = (r.label || '').startsWith('__live__:');
+                        return (
+                          <li key={r.id} className="py-3 flex items-center justify-between text-sm">
+                            <div>
+                              <p className="font-medium text-foreground">{isLive ? 'Working draft' : (r.label || titleOfSlug(r.calculator_slug))}</p>
+                              <p className="text-xs text-muted-foreground">{titleOfSlug(r.calculator_slug)} · {new Date(r.created_at).toLocaleDateString()}</p>
+                            </div>
+                            <Link to={`/calculators/${r.calculator_slug}`} className="text-primary hover:underline">Re-run →</Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ) : (
+                <p className="text-sm text-muted-foreground">Run a calculator and we'll auto-save your work in real time.</p>
+              )}
             </section>
           )}
 

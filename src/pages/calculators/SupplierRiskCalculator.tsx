@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Plus, Trash2, Calculator as CalcIcon, AlertTriangle } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import {
   SPEND_EF_BY_SECTOR, COUNTRY_RISK,
   calculateSupplierPortfolio, type SupplierInput, type SupplierPortfolioResult, type SupplierTier,
@@ -35,6 +36,13 @@ const SupplierRiskCalculator = () => {
     score >= 70 ? <Badge variant="destructive">High</Badge>
       : score >= 40 ? <Badge variant="secondary">Medium</Badge>
         : <Badge>Low</Badge>;
+
+  useCalculatorAutosave({
+    calculatorSlug: "supplier-emissions-risk",
+    inputs: { suppliers },
+    results: result,
+    factorSources: result?.factorSources,
+  });
 
   return (
     <CalculatorShell
