@@ -1576,6 +1576,1195 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     category: 'supply-chain',
     createdAt: '2026-03-02',
   },
+  {
+    id: '73',
+    slug: 'iso-14067-vs-ghg-protocol-product-standard-explained',
+    title: 'ISO 14067 vs GHG Protocol Product Standard: A Practical Comparison for MSME Exporters',
+    subtitle: 'Carbon Accounting Standards',
+    content: `Most MSMEs hear "product carbon footprint" and assume one global rulebook exists. There are two — and they disagree on subtle but expensive details.
+
+## What each standard actually covers
+
+ISO 14067:2018 defines how to quantify a product carbon footprint and is the reference cited by the EU CBAM verifier guidance. The GHG Protocol Product Standard, published by WRI/WBCSD, is older, freely available, and more prescriptive on data quality scoring.
+
+| Dimension | ISO 14067 | GHG Protocol Product |
+|---|---|---|
+| Scope | Single impact (climate) | Single impact (climate) |
+| Boundary defaults | Cradle-to-grave; cradle-to-gate allowed if justified | Cradle-to-grave preferred |
+| Allocation hierarchy | Subdivision → system expansion → physical → economic | Same hierarchy, more examples |
+| Biogenic carbon | Reported separately | Reported separately |
+| Verification | ISO 14064-3 | Independent assurance recommended |
+
+## Where MSMEs get tripped up
+
+> Buyers in Germany and France increasingly ask for "ISO 14067 compliant" PCFs because their CSRD auditor cites it by name. A GHG Protocol PCF is not automatically rejected, but you will be asked to map it.
+
+### Practical rule
+
+If you export to the EU, default to ISO 14067 cradle-to-gate with a documented allocation method. Use our [Product Carbon Footprint calculator](/calculators/product-carbon-footprint) — the engine is aligned to both standards and outputs a buyer-ready breakdown.
+
+## What to document either way
+
+- Functional unit (e.g. 1 kg of finished steel rod)
+- System boundary diagram with included and excluded processes
+- Primary vs secondary data percentage
+- Emission factor source for every line
+- Allocation method and the share applied
+
+Keep this in one PDF next to your invoice template. Auditors do not want to chase files.`,
+    tags: ['ISO 14067', 'GHG Protocol', 'PCF', 'product carbon footprint', 'CBAM', 'EU exports'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+    featured: true
+  },
+  {
+    id: '74',
+    slug: 'cbam-default-values-vs-actual-emissions-msme-decision-guide',
+    title: 'CBAM Default Values vs Actual Emissions: When Should an MSME Switch?',
+    subtitle: 'Carbon Regulations',
+    content: `From 2026 the transitional CBAM default values disappear for most goods. The decision is no longer "if" you measure actual emissions but "when".
+
+## How CBAM defaults work today
+
+The European Commission publishes default embedded emissions per CN code. They are deliberately conservative — meaning higher than typical actual emissions — to incentivise installations to report their own data.
+
+| Product | Indicative default (tCO2/t) | Typical Indian actual (tCO2/t) | Likely CBAM cost gap |
+|---|---|---|---|
+| Cement clinker | 0.86 | 0.78 | EUR 6–9 / t |
+| Steel (BOF) | 2.20 | 1.95 | EUR 18–25 / t |
+| Aluminium (primary) | 16.5 | 14.0 | EUR 175–200 / t |
+| Fertiliser (urea) | 1.9 | 1.7 | EUR 14–17 / t |
+
+> If your actual emissions are clearly below the default, you are paying a self-imposed tax by not measuring.
+
+## The break-even calculation
+
+Cost of measurement (verifier fee + internal time) is typically EUR 4,000–12,000 per installation per year. For a steel exporter shipping 5,000 tonnes/year to the EU, the gap above translates to EUR 90,000–125,000 — a clear business case.
+
+### When defaults still make sense
+
+- Annual EU exports under EUR 50,000
+- Single product, low margin, declining order book
+- Verifier capacity unavailable in your region
+
+## Recommended action
+
+Run the [CBAM Cost Estimator](/cbam-calculator) with both default and your best estimate of actual emissions. The spread is your annual measurement value. Then run the [Carbon Pricing Impact calculator](/calculators/carbon-pricing-impact) to forecast 2026–2034 exposure.`,
+    tags: ['CBAM', 'default values', 'EU regulation', 'steel exports', 'cement', 'aluminium'],
+    category: 'regulations',
+    createdAt: '2026-05-06',
+    featured: true
+  },
+  {
+    id: '75',
+    slug: 'scope-2-market-based-vs-location-based-msme-guide',
+    title: 'Market-Based vs Location-Based Scope 2: Which Number Do You Report?',
+    subtitle: 'Carbon Accounting Standards',
+    content: `Scope 2 looks deceptively simple — "electricity emissions" — until you discover the GHG Protocol requires you to report two different numbers.
+
+## The two methods
+
+### Location-based
+Multiply your kWh consumed by the average grid emission factor of the country or sub-region where consumption occurs. India national grid factor: 0.716 kgCO2e/kWh (CEA 2024).
+
+### Market-based
+Reflects emissions from electricity that you have contractually purchased — green PPAs, RECs, I-RECs — which can be lower. If you have no contracts, you use the residual mix factor (typically slightly higher than the grid average).
+
+| Scenario | Location-based | Market-based |
+|---|---|---|
+| Standard grid only | Same as market | Residual mix |
+| 100% solar PPA | Grid factor | ~0 kgCO2e/kWh |
+| Rooftop solar self-consumption | Grid factor for what you import | 0 for what you generate |
+
+> CDP, SBTi and CSRD all require dual reporting. CBAM only accepts the actual contracted electricity factor with proof.
+
+## Common MSME mistakes
+
+- Claiming zero Scope 2 because rooftop solar covers daytime — but importing from grid at night
+- Buying RECs from a different country than consumption
+- Counting the same green attribute twice (PPA energy + REC purchase)
+
+## What to do
+
+1. Start with location-based — it is the regulator default
+2. Add market-based only if you hold valid REC, I-REC or PPA documentation
+3. Report both side by side in your annual disclosure
+4. For CBAM, attach the bilateral PPA contract to the verification file
+
+Run both numbers automatically in the [Product Carbon Footprint calculator](/calculators/product-carbon-footprint).`,
+    tags: ['Scope 2', 'market based', 'location based', 'RECs', 'PPA', 'GHG Protocol'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '76',
+    slug: 'biogenic-carbon-accounting-food-textile-msme',
+    title: 'Biogenic Carbon Accounting for Food and Textile MSMEs: The Honest Guide',
+    subtitle: 'Multi-Gas Climate Accounting',
+    content: `Biogenic CO2 is the carbon released when biological material — wood, cotton, sugarcane bagasse, food waste — decomposes or burns. Whether it counts as "zero" depends on accounting rules, not chemistry.
+
+## The IPCC default
+
+IPCC AR6 treats biogenic CO2 from sustainably managed sources as carbon-neutral over the harvest cycle. Methane and nitrous oxide from the same biomass are NOT zero — they have GWP of 27.9 and 273 respectively.
+
+## Where MSMEs get this wrong
+
+- Burning rice husk or bagasse and reporting "zero emissions"
+- Forgetting CH4 leakage from anaerobic decomposition in food waste
+- Applying biogenic-zero rules to cotton without proving regenerative practice
+
+| Source | CO2 treatment | CH4/N2O treatment |
+|---|---|---|
+| Sustainable wood biomass | Reported separately as biogenic, often netted to zero | Counted in fossil totals |
+| Rice husk combustion | Biogenic CO2 separately | CH4 from incomplete combustion counted |
+| Cotton field residue | Biogenic CO2 separately | N2O from soil counted |
+| Food waste to landfill | Biogenic CO2 | Significant CH4 — counted |
+
+> The mistake is reporting one number. Report biogenic CO2, fossil CO2, CH4 and N2O on separate lines so a verifier can see the logic.
+
+## Practical reporting template
+
+For each biomass input, capture: source, mass, moisture content, end-use (combustion, decomposition, product), and document whether sustainability certification (FSC, BCI, Bonsucro) exists.
+
+## What CBAM and CSRD say
+
+CBAM excludes biogenic CO2 from embedded emissions if the biomass meets EU RED III sustainability criteria. CSRD requires you to disclose biogenic carbon as a separate line in the ESRS E1 emissions tables.
+
+Use the [PCF calculator](/calculators/product-carbon-footprint) — biogenic CO2 is split out automatically when you select biomass-based materials.`,
+    tags: ['biogenic carbon', 'food MSME', 'textile', 'cotton', 'rice husk', 'CSRD'],
+    category: 'multi-gas',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '77',
+    slug: 'msme-internal-carbon-price-implementation-guide',
+    title: 'Setting an Internal Carbon Price: A Step-by-Step Guide for MSMEs',
+    subtitle: 'Carbon Accounting Standards',
+    content: `An internal carbon price (ICP) is a self-imposed cost per tonne of CO2e that MSMEs apply to investment decisions. It is the single most effective management tool to make decarbonisation pay before regulation forces it.
+
+## Three flavours of ICP
+
+| Type | What it is | When to use |
+|---|---|---|
+| Shadow price | Hypothetical, used in capex evaluation only | Investment screening |
+| Internal fee | Real money charged to business units | Funding green capex |
+| Implicit price | Back-calculated from existing green spend | Benchmarking |
+
+## What price should you set?
+
+- EU ETS forward 2026: EUR 90–110 / tCO2
+- CBAM equivalent for steel exporters: EUR 95 / tCO2
+- SBTi guidance for MSME shadow price: USD 50 minimum, USD 100+ recommended
+- Conservative MSME starting point: INR 4,000 / tCO2 (~ USD 48)
+
+> Set the price below your highest regulatory exposure but above your cheapest abatement cost. Anywhere in that band redirects capex correctly.
+
+## A 6-week implementation plan
+
+### Week 1–2: Baseline
+Use the [Carbon Pricing Impact calculator](/calculators/carbon-pricing-impact) to model exposure at three price points.
+
+### Week 3: Set governance
+Decide who approves the price (CFO + sustainability lead), how often it reviews (annually), and which decisions it touches (capex > INR 5 lakh).
+
+### Week 4: Pilot
+Apply to next three capex decisions. Document the outcome.
+
+### Week 5–6: Roll out
+Add the ICP line to your standard capex template. Train procurement to ask vendors for emissions data.
+
+## Common failure modes
+
+- Setting it once and never reviewing
+- Excluding Scope 3 (where most MSME emissions live)
+- Letting it become advisory rather than binding`,
+    tags: ['internal carbon price', 'shadow price', 'capex', 'MSME governance', 'SBTi'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '78',
+    slug: 'glec-framework-explained-msme-freight-emissions',
+    title: 'The GLEC Framework Explained: Freight Emissions Without the Jargon',
+    subtitle: 'Logistics & Transport',
+    content: `The Global Logistics Emissions Council (GLEC) Framework v3.0 is the de-facto standard for logistics carbon accounting. It is also the basis of ISO 14083:2023.
+
+## The core equation
+
+Emissions per shipment = activity × emission factor
+
+Where activity = tonne-kilometres (tkm), and emission factor depends on mode, vehicle, load factor and empty-return.
+
+## Default factors GLEC publishes
+
+| Mode | Vehicle / vessel | Default kgCO2e per tkm |
+|---|---|---|
+| Road | Articulated truck >40t | 0.062 |
+| Road | Rigid 7.5–17t | 0.140 |
+| Rail | Diesel | 0.028 |
+| Rail | Electric (EU mix) | 0.018 |
+| Sea | Container 8500+ TEU | 0.008 |
+| Sea | Bulk handysize | 0.005 |
+| Air | Long haul belly-hold | 0.500 |
+| Inland waterway | Class V | 0.031 |
+
+> Air freight is roughly 60x worse than sea freight per tonne-km. The single biggest decarbonisation lever for MSMEs is mode shift, not vehicle efficiency.
+
+## What MSMEs typically miss
+
+### Empty return legs
+A truck that delivers full and returns empty should have its emissions doubled per loaded tonne-km. GLEC default empty-running factor for road: 0.20–0.40.
+
+### Load factor
+A truck running at 60% capacity has emissions per tkm 1.67x higher than at 100%. Always ask the carrier for load factor.
+
+### Hub transhipment
+Air freight headline numbers exclude the road leg from factory to airport. Your real Scope 3 must include both.
+
+## Practical workflow
+
+1. Pull last 12 months of dispatch data
+2. Bucket by mode and vehicle class
+3. Apply GLEC defaults — primary data only if available
+4. Run the [Logistics & Freight Emissions calculator](/calculators/logistics-emissions) to get ISO 14083-aligned outputs
+5. Share with your top 3 buyers on next quarterly review`,
+    tags: ['GLEC', 'ISO 14083', 'freight', 'logistics', 'tonne-kilometres', 'Scope 3'],
+    category: 'logistics',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '79',
+    slug: 'green-hydrogen-msme-cost-economics-2026',
+    title: 'Green Hydrogen for MSMEs: When Does It Actually Pay in 2026?',
+    subtitle: 'Manufacturing Emissions',
+    content: `Green hydrogen will not save every MSME in 2026. It will save specific ones in specific sectors with specific electricity contracts. This article tells you which.
+
+## Where hydrogen makes sense
+
+- High-temperature process heat (>400°C) where electrification is hard
+- Steel reduction (DRI route)
+- Ammonia production
+- Refining
+- Heavy-duty long-haul trucking and shipping
+
+## Where it does not
+
+- Space heating (heat pumps win)
+- Light vehicles (batteries win)
+- Low-temperature process heat (electric resistance + storage wins)
+- Power generation at small scale
+
+## The 2026 economics
+
+| Region | Renewable LCOE (USD/MWh) | Electrolyser capex (USD/kW) | Resulting H2 cost (USD/kg) |
+|---|---|---|---|
+| India (Rajasthan solar) | 28 | 750 | 2.40–3.10 |
+| Germany (offshore wind) | 65 | 800 | 4.20–5.10 |
+| Saudi Arabia (NEOM) | 20 | 700 | 1.80–2.20 |
+| China (Inner Mongolia) | 32 | 600 | 2.10–2.70 |
+
+> Grey hydrogen from natural gas costs USD 1.20–1.80/kg today. Green H2 needs to drop another 30–40% to reach parity without subsidies. India's SIGHT scheme provides USD 0.45/kg incentive — closing most of the gap for early movers.
+
+## What an MSME should do this year
+
+1. Audit your current fuel mix and process temperatures
+2. Identify only the loads above 400°C
+3. Get an indicative quote from a green H2 developer for 2027 supply
+4. Use the [Energy Transition calculator](/calculators/energy-transition-savings) to compare against captive solar + electric heating
+5. Apply for SIGHT or Rajasthan/Gujarat state incentives if H2 wins
+
+## A realistic 2026 expectation
+
+Green hydrogen will replace about 3% of grey H2 demand globally in 2026. By 2030 the IEA expects 15–20%. MSMEs that pre-contract supply at 2026 prices will lock in the cheapest tonne for the next decade.`,
+    tags: ['green hydrogen', 'SIGHT scheme', 'electrolyser', 'industrial heat', 'India', 'manufacturing'],
+    category: 'manufacturing',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '80',
+    slug: 'msme-net-zero-roadmap-12-months-no-consultants',
+    title: 'A 12-Month Net-Zero Roadmap for MSMEs With No Sustainability Team',
+    subtitle: 'Carbon Accounting Standards',
+    content: `Most MSME net-zero strategies fail because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week.
+
+## Month 1: Baseline
+Pull last 12 months of electricity bills, fuel invoices, freight bills and biggest material POs. Upload them at [Senseible](/) — the OCR extracts emissions automatically. Output: total tCO2e split by Scope 1, 2, 3.
+
+## Month 2: Hot-spot map
+80% of emissions usually sit in 2–3 line items. Identify yours. For most MSMEs it is electricity + freight + one raw material.
+
+## Month 3: Set the SBTi-aligned target
+1.5°C trajectory = 4.2% absolute reduction per year. For a 100 tCO2e baseline that is 4.2 tCO2e to remove in year 1.
+
+| Year | Target % reduction | Cumulative |
+|---|---|---|
+| 2026 | 4.2 | 4.2 |
+| 2027 | 4.2 | 8.4 |
+| 2030 | 4.2 | 21.0 |
+| 2035 | 4.2 | 42.0 |
+| 2050 | 4.2 | 100 |
+
+## Months 4–6: Easy wins
+- LED retrofit (8–12% Scope 2 cut, 2 year payback)
+- Compressed air leak audit (3–7% Scope 1 cut, <1 year payback)
+- Procurement switch to nearest supplier (2–5% Scope 3 cut)
+
+## Months 7–9: Capex decisions
+Apply your [internal carbon price](/cms/article/msme-internal-carbon-price-implementation-guide). Decide on rooftop solar, heat pump, or freight mode shift using the [Energy Transition calculator](/calculators/energy-transition-savings).
+
+## Months 10–11: Engage suppliers
+Send your top 5 suppliers a one-page PCF request. Use it to qualify them for renewals.
+
+## Month 12: Disclose
+Publish on your website: baseline, target, year-1 progress, year-2 plan. This single act unlocks buyer queries, green loans and tender shortlists.
+
+> The roadmap is not the hard part. Consistency is. Block a recurring 2-hour calendar entry for the first Friday of each month.`,
+    tags: ['net zero', 'roadmap', 'MSME', 'SBTi', 'baseline', '12 months'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+    featured: true
+  },
+  {
+    id: '81',
+    slug: 'epa-mandatory-greenhouse-gas-reporting-msme-india',
+    title: 'EPA-Style Mandatory GHG Reporting Is Coming to India: What MSMEs Should Do Now',
+    subtitle: 'Regional Guidelines',
+    content: `India's Carbon Credit Trading Scheme (CCTS) starts mandatory compliance in FY 2026–27 for 12 hard-to-abate sectors. The reporting model borrows heavily from US EPA Subpart W and EU ETS.
+
+## Sectors covered first
+
+Aluminium, cement, chlor-alkali, fertiliser, iron and steel, paper and pulp, petrochemicals, refineries, shipping, textiles (energy-intensive), distilleries, automobiles.
+
+## What thresholds mean for MSMEs
+
+| Sector | Threshold | Likely MSMEs in scope |
+|---|---|---|
+| Iron and steel | 25,000 tCO2e/year | Re-rolling mills > 50,000 t output |
+| Cement | 25,000 tCO2e/year | Mini cement plants |
+| Textiles | 50,000 tCO2e/year | Dyeing, processing units |
+| Pulp and paper | 10,000 tCO2e/year | Most large MSME mills |
+
+> The threshold sounds high. A textile dyeing unit with 5 MW connected load and 8000-hour utilisation crosses 25,000 tCO2e easily.
+
+## What you need to file
+
+- Annual GHG inventory (Scope 1 and 2 mandatory, Scope 3 voluntary first)
+- Emission intensity per tonne of product
+- Energy efficiency action plan
+- Verified by accredited verifier
+
+## How CCTS interacts with CBAM
+
+For exporters to the EU, CCTS creates a domestic price (currently ~INR 1,500/tCO2). Under CBAM, EU importers can deduct any verified domestic carbon price already paid. This means CCTS payments reduce CBAM liability rupee for rupee.
+
+## What to do now
+
+1. Map your annual emissions against the threshold using [Senseible](/)
+2. If within 70% of threshold, start preparing
+3. Use the [Carbon Pricing Impact calculator](/calculators/carbon-pricing-impact) to model CCTS + CBAM combined exposure
+4. Engage a BEE-accredited verifier in 2026 H2 — capacity will tighten in 2027`,
+    tags: ['CCTS', 'India', 'mandatory reporting', 'BEE', 'CBAM offset', 'compliance'],
+    category: 'regulations',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '82',
+    slug: 'csrd-double-materiality-assessment-msme-supplier',
+    title: 'CSRD Double Materiality: What an MSME Supplier to a CSRD Company Must Provide',
+    subtitle: 'Carbon Regulations',
+    content: `You are not directly in scope of CSRD if your turnover is below EUR 50M. You are very much in scope as a supplier. Here is what your EU customer will ask for.
+
+## Double materiality in plain English
+
+CSRD requires the EU buyer to disclose two things for every material topic:
+
+1. Impact materiality — how their business affects the environment and society
+2. Financial materiality — how environmental and social factors affect their business
+
+You sit on both sides. Your emissions are part of their Scope 3 (impact). Your climate-related risks (drought, flood, energy disruption) feed their financial risk disclosure.
+
+## The supplier questionnaire to expect
+
+| Section | Typical questions | Where to source data |
+|---|---|---|
+| Governance | Board oversight of climate? | Your sustainability charter |
+| Strategy | Net zero target year? | Your roadmap |
+| Risk | Top 3 physical climate risks? | Geographic exposure analysis |
+| Metrics | Scope 1, 2, 3 in tCO2e? | [Senseible](/) |
+| Targets | SBTi validation? | SBTi portal or N/A |
+| Transition plan | Capex committed to abatement? | Capex register |
+
+## What an honest small supplier should answer
+
+> Pretending to have a board climate committee when you have a 12-person company damages credibility. Say: "Founder-led oversight. Quarterly review of emissions and abatement spend." That is a credible answer.
+
+## The minimum data pack
+
+- Scope 1 + 2 in tCO2e for last full year
+- Scope 3 categories 1 (purchased goods) and 4 (upstream transport) at minimum
+- Emission intensity per unit of product sold to that buyer
+- One-page transition plan with year, action, expected reduction
+- Disclosure of any verifications or third-party reviews
+
+## Timing
+
+CSRD wave 2 (large EU companies) reports for FY 2025 in 2026. Their suppliers will receive questionnaires starting Q3 2026. Wave 3 (listed SMEs) reports for FY 2026 in 2027. Be ready by Q2 2026.`,
+    tags: ['CSRD', 'double materiality', 'supplier questionnaire', 'EU', 'Scope 3', 'transition plan'],
+    category: 'regulations',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '83',
+    slug: 'tamil-nadu-msme-decarbonisation-state-incentives',
+    title: 'Tamil Nadu MSME Decarbonisation: State Incentives, Grid, and Quick Wins',
+    subtitle: 'Regional Guidelines',
+    content: `Tamil Nadu hosts ~10% of India's MSMEs. The state grid factor is one of the cleanest in India, and incentives stack with central schemes.
+
+## The grid advantage
+
+Tamil Nadu grid emission factor: 0.628 kgCO2e/kWh (CEA 2024) vs national 0.716. Wind contributes 17% of generation, the highest in India. For MSMEs in Coimbatore, Tirupur and Chennai, this means rooftop solar payback already beats most of north India.
+
+## State-specific schemes
+
+| Scheme | Benefit | Eligibility |
+|---|---|---|
+| TN Solar Energy Policy 2024 | 50% capital subsidy on captive solar up to 1 MW | MSME-registered |
+| Energy Audit Subsidy | 75% reimbursement up to INR 2 lakh | Connected load > 100 kW |
+| Green Cluster Scheme | INR 5 crore per cluster for shared infrastructure | 10+ MSME group |
+| Wind Banking | 12-month banking with 14% wheeling charge | Captive wind purchase |
+
+## Sector hot-spots
+
+### Tirupur textiles
+2,000+ MSME dyeing and knitting units. Average Scope 2 intensity: 8 kgCO2/kg fabric. Best-in-class with rooftop + grid PPA: 3.2 kgCO2/kg.
+
+### Coimbatore engineering
+Foundries and pumps. Diesel furnaces are the largest Scope 1 source. Switch to induction heating + Tamil Nadu grid: 65% emission cut.
+
+### Chennai auto component
+Tier 2/3 suppliers to Hyundai and Stellantis face 2027 OEM Scope 3 deadlines. Most are unprepared.
+
+## A 90-day plan
+
+1. Day 1–10: Pull 12 months of TANGEDCO bills + fuel invoices into [Senseible](/)
+2. Day 11–30: Apply for TN energy audit subsidy
+3. Day 31–60: Quote rooftop solar — typical Coimbatore payback 4.2 years post-subsidy
+4. Day 61–90: Submit baseline + plan to your top 2 OEM customers
+
+> Tirupur saved 187,000 tCO2e in 2024 through coordinated MSME action. Most of it came from electricity, not exotic technology.`,
+    tags: ['Tamil Nadu', 'Tirupur', 'Coimbatore', 'TANGEDCO', 'rooftop solar', 'state incentive'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '84',
+    slug: 'bangladesh-rmg-exporters-eu-cbam-csddd-2026',
+    title: 'Bangladesh Garment Exporters: Surviving EU CBAM and CSDDD Together in 2026',
+    subtitle: 'Regional Guidelines',
+    content: `Bangladesh's USD 47 billion ready-made garment (RMG) industry faces two EU rules in 2026: CBAM (carbon at the border) and CSDDD (due diligence on environment and human rights). Most factories prepare for one and miss the other.
+
+## What hits when
+
+| Rule | Effective for BD RMG | Direct cost? | Indirect cost? |
+|---|---|---|---|
+| CBAM | Indirect via cotton & dye imports | Limited | Yes — through buyer pass-through |
+| CSDDD | 2027 for largest EU buyers | None to factory | Massive — order loss if non-compliant |
+
+## CBAM angle
+
+RMG is not on the CBAM goods list. But the cotton, polyester chips and dyes you import increasingly are (steel for spinning machinery is). And EU buyers like H&M and Uniqlo will pass back compliance costs through unit price.
+
+## CSDDD is the bigger threat
+
+CSDDD obliges large EU buyers to identify and address adverse environmental impacts in their supply chain. Buyers will demand:
+
+- Verified Scope 1, 2, 3 emissions
+- Energy intensity per kg of fabric or per garment
+- Water and chemical use disclosures
+- Worker grievance mechanism
+
+> A 10-line factory in Gazipur lost a USD 8M Inditex contract in 2024 for not providing verified Scope 2 data within 30 days. The data existed — there was no system to compile it.
+
+## A 2026 readiness plan
+
+### Quarter 1
+Baseline emissions using monthly DESCO/PDB bills + gas + transport. Upload at [Senseible](/) — Bangla, Hindi and English supported.
+
+### Quarter 2
+Switch one production line to ZDHC-conformant chemicals. Apply for IFC PaCT 2.0 if eligible.
+
+### Quarter 3
+Solar audit. Most BD RMG roofs can host 200–800 kWp. PPA model needs zero capex.
+
+### Quarter 4
+Buyer-ready disclosure pack: baseline, intensity, target, action plan.
+
+## What it saves
+
+A 100,000 piece/month factory cutting Scope 2 by 30% via solar saves USD 38,000/year on power and protects USD 4–8M in annual orders.`,
+    tags: ['Bangladesh', 'RMG', 'CSDDD', 'CBAM', 'cotton', 'IFC PaCT', 'Gazipur'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '85',
+    slug: 'indonesia-pertamina-rspo-palm-oil-carbon-2026',
+    title: 'Indonesian Palm Oil MSMEs: RSPO + ISPO + EUDR Carbon Compliance in 2026',
+    subtitle: 'Regional Guidelines',
+    content: `Indonesia produces 60% of the world's palm oil. The EU Deforestation Regulation (EUDR), RSPO, and Indonesia's mandatory ISPO converge on small mills and out-growers in 2026.
+
+## What each scheme demands
+
+| Scheme | Carbon scope | Deforestation cutoff | Smallholder support |
+|---|---|---|---|
+| EUDR | Embedded land-use change | 31 Dec 2020 | Limited grace period |
+| RSPO | Full LCA per tonne CPO | 2005 | Group certification allowed |
+| ISPO (mandatory) | Mill-level emissions | National forest definition | Subsidised audit |
+
+## Where the carbon actually sits
+
+- Land use change at planting: 30–60 tCO2/ha (peatland up to 200)
+- POME methane (palm oil mill effluent): 1.5 tCO2e per tonne CPO if untreated
+- Boiler fuel (mostly fibre and shell): biogenic, but with CH4
+- Transport: ~0.05 tCO2 per tonne CPO per 100 km
+
+> Untreated POME is the hidden killer — a 60 tonne/hour mill emits 90,000+ tCO2e/year just from effluent ponds. Methane capture cuts this by 90%.
+
+## The 2026 mill checklist
+
+1. GIS polygon for every supplying smallholder block
+2. Forest-cover proof at 31 Dec 2020 cutoff
+3. Mill-level Scope 1 + 2 inventory
+4. POME capture installed or planned
+5. Traceability to plantation for every batch shipped
+
+## Use Senseible to compile
+
+[Senseible](/) accepts Bahasa Indonesia and parses Pertamina diesel, PLN electricity bills, and CPO dispatch records. The output meets RSPO and ISPO data templates. EUDR polygon upload is a separate workflow.
+
+## Financing
+
+IFC + Bank Mandiri offer green loans at IDR rate minus 1.5% for mills with verified mitigation plans. Documentation requirement: 12-month emissions baseline, 3-year reduction plan, third-party verification.`,
+    tags: ['Indonesia', 'palm oil', 'RSPO', 'ISPO', 'EUDR', 'POME methane'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '86',
+    slug: 'vietnam-electronics-supply-chain-scope-3-2026',
+    title: 'Vietnam Electronics Supply Chain: Scope 3 Demands From Apple, Samsung, Intel',
+    subtitle: 'Supply Chain Emissions',
+    content: `Vietnam is the world's third-largest electronics exporter. Apple, Samsung and Intel have all committed to net-zero supply chains by 2030, and Vietnamese tier 2 and tier 3 suppliers are next.
+
+## The OEM ask
+
+| OEM | Net-zero year | Supplier requirement | Verification |
+|---|---|---|---|
+| Apple | 2030 | 100% renewable electricity by 2025 | Third-party |
+| Samsung | 2050 | RE100 by 2027 for tier 1 | Internal + audit |
+| Intel | 2040 | Sustainability scorecard with quarterly emissions | Annual third-party |
+| LG | 2030 | Scope 3 reductions per product | Self-declared first, audit later |
+
+## Vietnam grid reality
+
+EVN national grid factor: 0.704 kgCO2e/kWh. Coal-heavy. Direct PPA legal framework launched 2024 (DPPA decree) — bilateral renewable contracts now permitted.
+
+> A PCB assembly plant in Bac Ninh consuming 12 GWh/year produces ~8,500 tCO2e Scope 2. Switching to a solar DPPA cuts that to ~600 tCO2e and saves 8% on power cost.
+
+## What tier 2/3 should do
+
+1. Baseline last 12 months of EVN bills + diesel + freight using [Senseible](/)
+2. Express interest in DPPA — broker through VEPF or industry park
+3. Run [Energy Transition calculator](/calculators/energy-transition-savings) for both rooftop captive and grid PPA
+4. Submit to OEM portal (Apple Clean Energy Program / Samsung S-Partner)
+5. Plan facility-level RE certification (I-REC Vietnam)
+
+## What it unlocks
+
+- Continued OEM business after 2027 cut-off
+- Preferential payment terms (Apple offers 30-day vs 90-day for green-verified)
+- Access to OEM-funded efficiency capex grants
+
+## Common pitfalls
+
+- Buying I-RECs from a different province than consumption
+- Counting both DPPA and I-REC for the same MWh
+- Ignoring upstream PCB substrate emissions in Scope 3
+
+Use the [Supplier Risk calculator](/calculators/supplier-emissions-risk) to model your own sub-tier exposure.`,
+    tags: ['Vietnam', 'electronics', 'Apple', 'Samsung', 'DPPA', 'I-REC', 'Scope 3'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '87',
+    slug: 'philippines-bpo-renewable-energy-net-zero-2030',
+    title: 'Philippines BPO and IT-BPM: Net-Zero by 2030 Without Losing Margin',
+    subtitle: 'Regional Guidelines',
+    content: `The Philippine BPO sector employs 1.7M people and contributes 8% of GDP. US and EU clients increasingly require net-zero alignment. Most BPOs operate from leased office space — a unique constraint.
+
+## The leased-office problem
+
+Under GHG Protocol, electricity in a leased office is reported as Scope 2 if you have operational control. Most BPO contracts give you operational control. So the entire AC + lighting + servers load is your responsibility.
+
+## Where the emissions live
+
+| Source | % of BPO Scope 1+2 | Mitigation |
+|---|---|---|
+| Air-conditioning | 55–65% | Setpoint, retrofit, time-of-day |
+| Lighting | 10–15% | LED + occupancy sensors |
+| Servers / network | 15–20% | Cloud migration, rightsizing |
+| Pantry + lifts | 5–10% | Building shared |
+| Employee commute (Scope 3) | Often larger than Scope 1+2 | Hybrid + EV shuttles |
+
+## A practical net-zero path
+
+### Year 1
+Energy audit. Setpoint at 24°C (from typical 20). Saves 18–22% AC load. Cost: zero.
+
+### Year 2
+Negotiate Green Energy Option Program (GEOP) with Meralco/VECO. Renewable supply at 5–10% premium.
+
+### Year 3
+LED + sensor retrofit. 8–12% lighting cut. 2-year payback.
+
+### Year 4–5
+Migrate on-prem servers to AWS Manila or Azure Singapore which both run on increasing renewables.
+
+### Year 6+
+Address Scope 3 commute via EV shuttles + hybrid policy.
+
+> Setpoint change alone removed 14,000 tCO2e for a 25,000-seat BPO in Cebu in 2024 — and saved PHP 89M on electricity.
+
+## Reporting to clients
+
+US clients increasingly request CDP scores. EU clients ask for CSRD-aligned data. Both want Scope 1 + 2 in tCO2e per employee per year. Industry benchmark: 2.4–3.1 tCO2e/employee/year. Aim for under 2.0 by 2027.
+
+Use [Senseible](/) to baseline from Meralco bills and diesel genset records.`,
+    tags: ['Philippines', 'BPO', 'IT-BPM', 'GEOP', 'leased office', 'net zero', 'Cebu'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '88',
+    slug: 'thailand-ev-supply-chain-msme-2026',
+    title: 'Thailand EV Supply Chain: MSME Decarbonisation for the BOI 30@30 Policy',
+    subtitle: 'Regional Guidelines',
+    content: `Thailand's 30@30 policy targets 30% of vehicle production to be EVs by 2030. BYD, MG, Foxconn, Toyota and Mercedes have all committed manufacturing investment. MSME suppliers face new carbon and content rules.
+
+## What 30@30 demands of suppliers
+
+- Local content thresholds with embedded emissions reporting
+- BOI tax incentives tied to verified Scope 1 + 2 reductions
+- Battery passport conformity by 2027 (EU-aligned)
+
+## The grid reality
+
+EGAT national grid factor: 0.500 kgCO2e/kWh. Among the cleanest in ASEAN due to gas + hydro from Lao PDR. This means Thailand-assembled EVs already have a structural carbon advantage over Indian or Chinese assembly.
+
+| Activity | Thailand emissions | India emissions | Difference |
+|---|---|---|---|
+| Battery cell assembly per kWh | 32 kgCO2e | 48 kgCO2e | -33% |
+| Aluminium casting per kg | 9.5 kgCO2e | 14.2 kgCO2e | -33% |
+| Final EV assembly per unit | 280 kgCO2e | 420 kgCO2e | -33% |
+
+## What Tier 2/3 MSMEs should do
+
+1. Baseline electricity + LPG + diesel using [Senseible](/) (Thai language supported)
+2. Apply for BOI section 9 incentive — 8 year tax holiday for verified low-carbon manufacturing
+3. PEA / MEA solar net metering up to 1 MW
+4. Submit emissions data to OEM portal — most use IATF 16949 sustainability annex
+5. Use [Logistics calculator](/calculators/logistics-emissions) to model EV vs ICE component freight
+
+> Thailand's structural carbon advantage is real but shrinking. India and Vietnam are adding renewable capacity faster. Thai MSMEs that lock in solar PPAs at 2026 prices will protect the lead.
+
+## Battery passport prep
+
+The EU Battery Regulation requires every battery sold in the EU from 2027 to carry a digital passport with embedded emissions, recycled content and supply chain origin. Thai battery exporters need data collection systems running by Q2 2026.`,
+    tags: ['Thailand', 'EV', '30@30', 'BOI', 'battery passport', 'EGAT', 'PEA'],
+    category: 'regional',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '89',
+    slug: 'msme-water-carbon-nexus-textile-leather',
+    title: 'The Water-Carbon Nexus for Textile and Leather MSMEs: Why You Cannot Solve One Alone',
+    subtitle: 'Manufacturing Emissions',
+    content: `Textile dyeing and leather tanning are India's largest industrial water users and major Scope 1+2 emitters. Most decarbonisation plans ignore water. That is a mistake.
+
+## The hidden link
+
+| Process | Water (litres/kg product) | Energy (kWh/kg) | Carbon (kgCO2e/kg) |
+|---|---|---|---|
+| Cotton dyeing (conventional) | 100–150 | 4.5 | 3.2 |
+| Cotton dyeing (low-water) | 30–50 | 2.8 | 2.0 |
+| Leather tanning (chrome) | 35–45 | 3.1 | 2.1 |
+| Leather tanning (vegetable) | 50–70 | 2.4 | 1.5 |
+
+## Why water cuts cut carbon
+
+Every litre of process water needs to be:
+1. Pumped from source (electricity)
+2. Heated for dyeing or tanning (gas or electricity)
+3. Treated post-process (electricity + chemicals)
+
+Halve water use and you halve all three. The capital cost of water-efficient equipment is often 30–50% of the avoided carbon abatement cost.
+
+## High-impact retrofits
+
+### Reactive dyeing → cold pad batch
+80% water reduction, 60% steam reduction, payback 18 months.
+
+### Air dyeing
+98% water reduction, 70% energy reduction, capex INR 4–8 crore for 1 t/day.
+
+### Chrome recovery
+40% chrome chemical reduction, 30% water reduction, 12-month payback.
+
+### Membrane filtration + recycle
+Up to 80% process water recycled. 25–35% steam saved.
+
+> A Tirupur dyeing unit moved 50% of production from jet to cold pad batch in 2024. Water consumption fell 38%. Scope 1+2 fell 31%. Payback was 22 months.
+
+## Reporting framework
+
+ZDHC InCheck + GHG Protocol Scope 1+2 in one disclosure. Most EU buyers now accept this combined format. Use [Senseible](/) to compile both from utility bills + chemical purchase records.
+
+## Regulation tailwind
+
+CPCB's Zero Liquid Discharge mandate for 17 highly polluting industries already requires water recovery. Layer carbon accounting on top — most data already exists.`,
+    tags: ['water', 'textile', 'leather', 'ZDHC', 'Tirupur', 'ZLD', 'cold pad batch'],
+    category: 'manufacturing',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '90',
+    slug: 'msme-cold-chain-refrigerant-leak-carbon-2026',
+    title: 'Cold Chain MSMEs: Refrigerant Leakage Is Often 60% of Your Carbon Footprint',
+    subtitle: 'Multi-Gas Climate Accounting',
+    content: `An ice-cream MSME in Chennai with 30 cold rooms reported Scope 1 of 180 tCO2e from diesel gensets. The actual figure including refrigerant leakage was 1,150 tCO2e — six times higher.
+
+## The GWP shock
+
+| Refrigerant | Common use | GWP (AR6) |
+|---|---|---|
+| R-22 | Old AC, cold rooms (banned 2030) | 1,810 |
+| R-404A | Commercial refrigeration | 4,728 |
+| R-134a | MAC, beverage cooling | 1,530 |
+| R-410A | Modern AC | 2,256 |
+| R-32 | New AC | 771 |
+| R-744 (CO2) | Industrial refrigeration | 1 |
+| R-290 (propane) | Small commercial | 3 |
+
+> Losing 1 kg of R-404A is equivalent to burning 1.85 tonnes of diesel.
+
+## How to actually measure leak
+
+The IPCC default emission factor approach:
+
+Annual leakage rate = (refrigerant added during year) / (system charge)
+
+For commercial refrigeration, the IPCC default is 15% per year. For industrial, 7%. Both are higher than most MSMEs assume because they only count obvious refills.
+
+## A leak detection program that works
+
+### Month 1
+Compile last 3 years of refrigerant purchase invoices. Calculate actual leakage rate per system.
+
+### Month 2
+Install electronic leak detectors on systems > 50 kg charge (mandatory in EU F-gas, voluntary in India).
+
+### Month 3
+Plan transition: new systems on R-744 or R-290. Old R-22/R-404A systems on accelerated retirement.
+
+### Month 4 onwards
+Quarterly inspections logged. Record on [Senseible](/) — refrigerant lines feed Scope 1 automatically.
+
+## Financial case
+
+A typical 200-tonne cold storage with R-404A leaking at 18% per year emits 510 tCO2e from refrigerant alone. At an internal carbon price of INR 4,000/t, that is INR 20 lakh per year of avoidable cost. Retrofit to R-744 costs INR 80–120 lakh, payback 4–6 years pre-CBAM, faster post-CBAM if exporting.
+
+## Regulatory direction
+
+Kigali Amendment phasedown begins for India in 2028. R-22 fully banned 2030. Leak reporting will become mandatory under amended Ozone Depleting Substances Rules.`,
+    tags: ['cold chain', 'refrigerant', 'GWP', 'F-gas', 'Kigali', 'R-404A', 'R-744'],
+    category: 'multi-gas',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '91',
+    slug: 'msme-aluminium-recycling-scope-3-savings',
+    title: 'Recycled Aluminium for MSMEs: How Secondary Metal Cuts Scope 3 by 95%',
+    subtitle: 'Supply Chain Emissions',
+    content: `Primary aluminium production emits 14–20 tCO2e per tonne in India (mostly coal-based smelting). Recycled aluminium emits 0.5–0.8 tCO2e per tonne. That is a 95% reduction, available today, with no exotic technology.
+
+## Why this matters now
+
+| Driver | Why it tightens |
+|---|---|
+| CBAM 2026 | Aluminium is highest-cost CBAM product per tonne |
+| EU recycled-content mandate 2030 | Beverage cans must be 50% recycled |
+| Apple, BMW supplier rules | Already require >50% recycled in many parts |
+| Indian primary capacity constrained | New smelter approvals slowing |
+
+## What MSMEs can do
+
+### Casting and extrusion units
+Switch from primary ingot to secondary ingot from BIS-certified recyclers. Quality difference is negligible for non-aerospace, non-pressurised applications. Cost is typically 5–10% lower.
+
+### Component fabrication
+Specify "minimum 70% recycled content" in PO terms with traceability certificate. Major Indian recyclers (Hindalco, Vedanta, Century NF) provide ISO 14021 self-declarations.
+
+### Engineering MSMEs
+Design for disassembly. Aluminium components that can be removed at end-of-life feed the recycle stream. Mark alloy on every part.
+
+## The Scope 3 maths
+
+A pump manufacturer using 200 tonnes/year of aluminium:
+- 100% primary: 200 × 16 = 3,200 tCO2e Scope 3 Cat 1
+- 70% recycled mix: 200 × 5.05 = 1,010 tCO2e Scope 3 Cat 1
+- 100% recycled: 200 × 0.65 = 130 tCO2e Scope 3 Cat 1
+
+> A 95% Scope 3 cut from a single procurement decision is rare. Aluminium is the textbook example. Steel is similar (scrap-EAF route ~70% lower than blast furnace).
+
+## How to verify supplier claim
+
+Ask for:
+- Mass balance certificate per batch
+- Energy source declaration of recycler
+- Third-party (BIS or QCI) audit reference
+
+Run scenarios in the [Supplier Risk calculator](/calculators/supplier-emissions-risk).`,
+    tags: ['aluminium', 'recycling', 'scrap', 'CBAM', 'BIS', 'Scope 3', 'circular economy'],
+    category: 'supply-chain',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '92',
+    slug: 'msme-data-quality-tier-1-vs-tier-2-emission-factors',
+    title: 'Tier 1 vs Tier 2 vs Tier 3 Emission Factors: How Good Is Your Data, Really?',
+    subtitle: 'Data Traceability & Verification',
+    content: `Two companies can report the same Scope 1 emissions and have wildly different data quality. The IPCC tier system gives you a vocabulary to talk about it.
+
+## The three tiers
+
+| Tier | What it uses | Typical uncertainty | Example |
+|---|---|---|---|
+| Tier 1 | Default IPCC factors + national activity data | ±20–40% | Diesel × 2.68 kgCO2e/L |
+| Tier 2 | Country or technology-specific factors + activity data | ±10–25% | Indian fleet diesel factor adjusted for Bharat VI |
+| Tier 3 | Direct measurement or facility-specific factors | ±5–15% | CEMS-measured stack CO2 + flow |
+
+## When each tier is acceptable
+
+- Tier 1: First baseline, screening, internal use
+- Tier 2: CDP A-list, CSRD compliance, most CBAM transitional
+- Tier 3: CBAM definitive period (2026+), EU ETS, ISO 14064-3 reasonable assurance
+
+## The MSME progression path
+
+### Year 1 — Tier 1
+Use default IPCC + DEFRA factors. [Senseible](/) defaults to Tier 1 with full traceability.
+
+### Year 2 — Tier 2
+Apply CEA grid factors per state. Use BEE-published industry-specific intensities. Incremental cost: zero.
+
+### Year 3+ — Tier 3
+For your largest emission source only. Install fuel meters on top three boilers. Use stack CEMS for CPCB-flagged sources.
+
+## Data quality scoring
+
+The Pedigree Matrix (Weidema 1996, used in Ecoinvent) scores five attributes 1–5:
+
+- Reliability
+- Completeness
+- Temporal correlation
+- Geographical correlation
+- Technology correlation
+
+A score of (1,1,1,1,1) is gold standard. Most MSME baselines start at (3,2,2,3,3). Aim to improve one number per year.
+
+> Auditors are increasingly forgiving of Tier 1 in year 1, intolerant of Tier 1 by year 3. The trajectory matters more than the level.
+
+## What to document
+
+For every emission factor used: source, publication year, geography, technology assumption, uncertainty estimate. The compliance ledger in your dashboard captures this automatically.`,
+    tags: ['emission factor', 'IPCC tier', 'data quality', 'pedigree matrix', 'Tier 3', 'measurement'],
+    category: 'data-traceability',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '93',
+    slug: 'msme-circular-economy-iso-59020-reporting',
+    title: 'ISO 59020 Circular Economy Reporting: What Indian MSMEs Should Track',
+    subtitle: 'Carbon Accounting Standards',
+    content: `ISO 59020:2024 standardises how organisations measure and report circular economy performance. EU buyers, multilateral lenders and large Indian conglomerates are starting to ask for it.
+
+## The four core indicators
+
+| Indicator | What it measures | MSME starting target |
+|---|---|---|
+| Material circularity rate | % of material from secondary sources | 30% |
+| Product life extension | Average use life vs sector benchmark | +20% |
+| End-of-life recovery rate | % of product recovered for reuse/recycle | 50% |
+| Resource productivity | Revenue per kg material | +15% YoY |
+
+## Why circularity reduces carbon
+
+Most embodied carbon comes from primary material extraction and processing. Replacing primary inputs with secondary, refurbished or remanufactured ones cuts upstream Scope 3 by 50–95%. The biggest unused decarbonisation lever for component MSMEs.
+
+## A practical tracking sheet
+
+For each product line:
+- Mass of inputs by source (primary vs secondary)
+- Mass of waste generated by stream
+- Mass of waste recycled, recovered, landfilled
+- Take-back program existence and volume
+- Average product life from warranty data
+
+## How to report
+
+ISO 59020 does not require an external audit but does require traceability. The same data feeds CSRD ESRS E5 (Resource Use and Circular Economy) and ESRS E1 (Climate Change) Scope 3.
+
+> Circularity is the only metric that simultaneously cuts cost, cuts carbon, and creates a buyer story. Skipping it is wasteful in three dimensions.
+
+## Quick wins
+
+- Take-back deposit on packaging
+- Refurbished spare parts catalogue
+- Design for disassembly review on top 3 SKUs
+- Switch primary aluminium / steel for recycled (see [aluminium recycling article](/cms/article/msme-aluminium-recycling-scope-3-savings))
+
+Use [Senseible](/) to track material flows alongside emissions in one ledger.`,
+    tags: ['ISO 59020', 'circular economy', 'recycling', 'CSRD ESRS E5', 'material productivity'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '94',
+    slug: 'msme-sbti-fln-near-term-target-validation',
+    title: 'Getting SBTi-FLN Validated: A Realistic MSME Timeline and Cost',
+    subtitle: 'Carbon Accounting Standards',
+    content: `The Science Based Targets initiative for Forests, Land and Nature (FLN) launched its full validation pathway in 2024. It is now a credible target for MSMEs in agri, food, and forestry value chains.
+
+## Who should consider FLN
+
+- Food processors with crop sourcing
+- Cotton, jute, wood-based MSMEs
+- Leather and dairy companies
+- Pulp and paper
+
+If your supply chain touches land, FLN gives you a more accurate target than vanilla SBTi.
+
+## What FLN requires
+
+| Component | Detail |
+|---|---|
+| FLAG inventory | Land-use change, removals, biogenic stocks |
+| 1.5°C target | 30.3% absolute Scope 1+2 cut by 2030 |
+| FLAG sub-target | Sector-specific (e.g. dairy 30%, palm 35%) |
+| Net-zero year | No later than 2050 |
+| Removals | Limited use, must be additional |
+
+## Realistic timeline
+
+### Months 1–3
+Baseline FLAG inventory. Includes land-use change for the past 20 years for sourced commodities. Use IPCC AFOLU defaults.
+
+### Months 4–6
+Set targets. Run scenario modelling against SBTi tool.
+
+### Months 7–9
+Submit commitment letter (free).
+
+### Months 10–18
+Develop full target submission (USD 4,950 fee, plus internal time).
+
+### Months 19–24
+Validation by SBTi (USD 2,500 fee). Two rounds of revisions typical.
+
+## Cost summary for MSME
+
+| Item | Cost (USD) |
+|---|---|
+| SBTi commitment | Free |
+| SBTi validation fee | 2,500 |
+| Internal team time (300–500 hrs) | 8,000–15,000 (allocated) |
+| External consultant (optional) | 12,000–25,000 |
+| Software (Senseible Essentials) | 600/year |
+| Total realistic | 23,000–43,000 |
+
+## What it unlocks
+
+- ESG-linked working capital at 0.5–1.5% lower spread
+- Preferred supplier status with Unilever, Nestle, Mars, ITC
+- Access to JBIC/IFC concessional finance
+- Higher CDP score → buyer scorecard win
+
+> SBTi-FLN is the strongest signal an Asian agri MSME can send to global buyers. The cost is real but recovers within two procurement cycles.`,
+    tags: ['SBTi', 'FLN', 'FLAG', 'agri MSME', 'land use', 'validation', 'science-based targets'],
+    category: 'carbon-standards',
+    createdAt: '2026-05-06',
+  },
+  {
+    id: '95',
+    slug: 'msme-voice-search-carbon-faqs-2026',
+    title: 'Carbon Compliance Questions Indian MSMEs Are Asking Voice Assistants in 2026',
+    subtitle: 'Carbon Regulations',
+    content: `Voice search for compliance questions has tripled among Indian MSME owners since 2024. The questions reveal what the regulatory system has failed to make clear.
+
+## The top 10 voice queries
+
+1. "Is CBAM applicable to my company?"
+2. "How do I calculate Scope 2 emissions in India?"
+3. "What is BRSR Lite for SMEs?"
+4. "Who is the verifier for CBAM in India?"
+5. "How much does carbon accounting cost for a small factory?"
+6. "Can I sell carbon credits from my solar plant?"
+7. "What is the difference between CCTS and CBAM?"
+8. "Do I need ISO 14064 for buyers in Germany?"
+9. "How long does carbon verification take?"
+10. "Can I reduce CBAM by buying RECs?"
+
+## Voice-friendly answers
+
+### "Is CBAM applicable to my company?"
+CBAM applies if you export to the European Union and your product is on the CBAM goods list — currently cement, iron and steel, aluminium, fertilisers, hydrogen, and electricity. From 2030 organic chemicals, polymers and downstream products will likely be added.
+
+### "How much does carbon accounting cost for a small factory?"
+For an MSME with under 100 tCO2e per year, expect to spend USD 500–2,000 per year on software plus 80–120 hours of internal time in year 1, falling to 40 hours from year 2 onwards. Verification (when needed) adds USD 4,000–12,000.
+
+### "Can I reduce CBAM by buying RECs?"
+RECs reduce your reported Scope 2 under the market-based method. CBAM accepts the market-based factor only with a direct PPA contract attached to the verification file. Standalone REC purchase is not enough — the CBAM verifier wants bilateral electricity supply contracts.
+
+### "How long does carbon verification take?"
+First-time verification under ISO 14064-3 reasonable assurance: 6–10 weeks. Limited assurance or recurring verification: 3–5 weeks. Plan early in your fiscal year.
+
+> Voice answers must be 30–60 seconds when spoken. Most regulator websites take 4 minutes to read. That gap is why MSMEs ask Alexa, Siri and Gemini.
+
+## What MSMEs should bookmark
+
+- [Senseible homepage](/) for one-tap upload
+- [Calculator hub](/calculators) for instant numerics
+- [CBAM Cost Estimator](/cbam-calculator) for EU exposure
+- [Knowledge hub](/cms) for written deep-dives`,
+    tags: ['voice search', 'CBAM FAQ', 'BRSR Lite', 'verification cost', 'MSME questions'],
+    category: 'regulations',
+    createdAt: '2026-05-06',
+    featured: true
+  },
+  {
+    id: '96',
+    slug: 'msme-greenwashing-self-audit-checklist-2026',
+    title: 'A Greenwashing Self-Audit Checklist: 18 Tests Before You Make a Climate Claim',
+    subtitle: 'Data Traceability & Verification',
+    content: `EU Green Claims Directive (provisional 2026), India's CCPA Greenwashing Guidelines (2024), and FTC Green Guides (US) all sharpen enforcement. An MSME that publishes "we are carbon neutral" without backing data faces fines up to 4% of turnover in the EU.
+
+## The 18 tests
+
+### Evidence
+1. Do you have a documented baseline year and methodology?
+2. Is your baseline verified by an independent third party?
+3. Are emission factors sourced from a recognised database with citation?
+4. Are calculations reproducible from raw bills and invoices?
+
+### Boundary
+5. Have you stated which scopes are included (1, 2, 3)?
+6. Have you disclosed Scope 3 categories included and excluded?
+7. Have you included or explicitly excluded biogenic carbon?
+8. Is the geographic and temporal boundary clear?
+
+### Claim language
+9. Avoid "carbon neutral" without offset disclosure
+10. Avoid "100% green" without renewable certification reference
+11. Avoid "net zero" before 2030 unless validated by SBTi
+12. Use specific numbers, not vague adjectives ("low-carbon")
+
+### Offsets
+13. If using offsets, are they additional, permanent, verified?
+14. Have you stated the % of footprint offset vs reduced?
+15. Do offsets meet ICVCM Core Carbon Principles?
+
+### Improvement
+16. Is there a year-on-year reduction trajectory disclosed?
+17. Is the trajectory aligned with 1.5°C (4.2% absolute/year)?
+18. Is there a transition plan with capex and timeline?
+
+## How regulators interpret each test
+
+> The EU Green Claims Directive treats absent evidence as misleading by default. The burden of proof is on the claimant.
+
+## Score yourself
+
+- 16–18: Defensible. Publish.
+- 12–15: Defensible with refinement. Publish a more modest claim.
+- 8–11: Risky. Limit to internal use.
+- Under 8: Withdraw any external claim.
+
+## Building defence systematically
+
+[Senseible](/) ledger captures evidence (1–4), full Scope (5–8), structured calculation (10–12). For (13–15) layer offset providers with ICVCM compliance only. For (16–18) use the [Carbon Pricing Impact calculator](/calculators/carbon-pricing-impact) to publish a forward trajectory.`,
+    tags: ['greenwashing', 'EU Green Claims', 'CCPA', 'FTC', 'compliance', 'self-audit'],
+    category: 'data-traceability',
+    createdAt: '2026-05-06',
+    featured: true
+  },
+  {
+    id: '97',
+    slug: 'msme-climate-finance-instruments-comparison-2026',
+    title: 'Climate Finance for MSMEs in 2026: Sustainability-Linked Loans vs Green Bonds vs Receivables',
+    subtitle: 'Carbon Regulations',
+    content: `Indian MSMEs now have access to four broadly different climate finance instruments. Choosing the wrong one wastes 6–18 months and signals weakness to lenders.
+
+## The instrument matrix
+
+| Instrument | Use of proceeds | KPIs required | Typical size | Spread vs vanilla |
+|---|---|---|---|---|
+| Green loan | Specific green project | Project-level reporting | INR 1–50 cr | -25 to -75 bps |
+| Sustainability-linked loan (SLL) | Any purpose | Company KPIs (e.g. emission intensity) | INR 5 cr+ | -50 to -150 bps if KPI met |
+| Green bond | Specific green project | Annual use of proceeds report | INR 100 cr+ | -10 to -50 bps |
+| Climate receivables / green factoring | Working capital against verified low-carbon invoices | Per-invoice verification | INR 25 lakh+ | -100 to -200 bps |
+
+## Which to pick
+
+### If you have one big green capex
+Green loan from SIDBI 4E or IREDA. Lowest interest, fixed purpose.
+
+### If you need flexibility
+SLL with annual KPI review. Lender keeps lower spread if you hit emission intensity reduction.
+
+### If you supply to OEMs and need cash flow
+Climate receivables. Sell verified low-carbon invoices to climate-financiers at a discount lower than your normal factor cost. [Senseible](/) generates the verification automatically per invoice.
+
+### If you are a top-200 MSME group
+Green bond. Lower cost but high disclosure burden. Worth it above INR 100 cr capex.
+
+## The KPI trap
+
+SLL spreads worsen if you miss your KPI. Choose KPIs you can measurably control:
+
+- Scope 1+2 absolute emissions ✅
+- Scope 1+2 intensity per unit output ✅
+- Renewable electricity % ✅
+- Scope 3 absolute ❌ (too volatile, depends on suppliers)
+- Net-zero year ❌ (long horizon, lenders cannot wait)
+
+## Documentation needed
+
+- 12-month verified emissions baseline
+- 3-year reduction plan with capex schedule
+- Third-party verification of baseline (limited assurance acceptable)
+- Annual KPI report
+
+## What lenders increasingly demand
+
+> Indian banks now require LCFR (Loss-Carbon-Freight Risk) score, an internal metric blending physical climate risk with carbon transition cost. MSMEs with verified baselines pre-qualify.
+
+Use the [Carbon Pricing Impact calculator](/calculators/carbon-pricing-impact) to forecast KPI feasibility and the [Energy Transition calculator](/calculators/energy-transition-savings) to size the green loan.`,
+    tags: ['green loan', 'SLL', 'green bond', 'climate finance', 'SIDBI', 'IREDA', 'receivables'],
+    category: 'regulations',
+    createdAt: '2026-05-06',
+    featured: true
+  },
 ];
 
 // Get featured articles for landing page
