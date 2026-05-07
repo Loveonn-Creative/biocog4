@@ -7,6 +7,7 @@ import { Calculator as CalcIcon, TrendingUp, Leaf, Wallet } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
+import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
   calculateEnergyTransition, formatLocalCurrency, ENERGY_COUNTRIES,
   type EnergyInput, type EnergyResult, type EnergyScenario,
@@ -53,6 +54,16 @@ const EnergyTransitionCalculator = () => {
     inputs: { country, scenario, monthlyKwh, tariff, systemKwp, capex, opex, ppaTariff, selfCons, exportTariff, discount, degradation, life, cuf, subsidy },
     results: result,
     factorSources: result?.factorSources,
+  });
+
+  useCalculatorRerun("energy-transition-savings", (i) => {
+    const set = (k: string, fn: (v: string) => void) => { if (i[k] !== undefined && i[k] !== null) fn(String(i[k])); };
+    set('country', setCountry);
+    if (i.scenario) setScenario(i.scenario as EnergyScenario);
+    set('monthlyKwh', setMonthlyKwh); set('tariff', setTariff); set('systemKwp', setSystemKwp);
+    set('capex', setCapex); set('opex', setOpex); set('ppaTariff', setPpaTariff);
+    set('selfCons', setSelfCons); set('exportTariff', setExportTariff); set('discount', setDiscount);
+    set('degradation', setDegradation); set('life', setLife); set('cuf', setCuf); set('subsidy', setSubsidy);
   });
 
   return (

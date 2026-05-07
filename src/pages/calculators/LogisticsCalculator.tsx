@@ -7,6 +7,7 @@ import { Plus, Trash2, Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
+import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
   TRANSPORT_MODES, calculateLogistics,
   type FreightLeg, type LogisticsResult, type TransportMode,
@@ -30,6 +31,10 @@ const LogisticsCalculator = () => {
     inputs: { legs },
     results: result,
     factorSources: result?.factorSources,
+  });
+
+  useCalculatorRerun("logistics-emissions", (i) => {
+    if (Array.isArray(i.legs)) setLegs(i.legs as FreightLeg[]);
   });
 
   return (
