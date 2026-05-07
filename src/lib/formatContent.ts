@@ -1,5 +1,6 @@
 // Content formatting utilities for clean, readable text
-// Supports: ## H2, ### H3, **bold** (stripped), bullets (- / *), numbered lists, > callouts, key: value lines
+// Supports: ## H2, ### H3, **bold** (stripped), bullets (- / *), numbered lists, > callouts,
+// key: value lines, and pipe-style markdown tables.
 
 export const cleanMarkdownText = (text: string): string => {
   if (!text) return '';
@@ -12,9 +13,11 @@ export const cleanMarkdownText = (text: string): string => {
 };
 
 export interface FormattedSection {
-  type: 'h2' | 'h3' | 'paragraph' | 'listItem' | 'numberedItem' | 'callout' | 'keyValue';
+  type: 'h2' | 'h3' | 'paragraph' | 'listItem' | 'numberedItem' | 'callout' | 'keyValue' | 'table';
   content: string;
   key?: string;
+  rows?: string[][];
+  headers?: string[];
 }
 
 const cleanInline = (text: string): string =>
@@ -24,14 +27,35 @@ const cleanInline = (text: string): string =>
     .replace(/`([^`]+)`/g, '$1')
     .trim();
 
+const splitRow = (line: string): string[] =>
+  line.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map(c => cleanInline(c));
+
+const isTableSeparator = (line: string): boolean =>
+  /^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line);
+
 export const parseContentToSections = (content: string): FormattedSection[] => {
   if (!content) return [];
   const lines = content.split('\n');
   const sections: FormattedSection[] = [];
 
-  for (const raw of lines) {
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
     const line = raw.trim();
     if (!line) continue;
+
+    // Markdown table: header row, separator, then rows
+    if (line.includes('|') && i + 1 < lines.length && isTableSeparator(lines[i + 1].trim())) {
+      const headers = splitRow(line);
+      const rows: string[][] = [];
+      i += 2;
+      while (i < lines.length && lines[i].trim().includes('|')) {
+        rows.push(splitRow(lines[i].trim()));
+        i++;
+      }
+      i--;
+      sections.push({ type: 'table', content: '', headers, rows });
+      continue;
+    }
 
     if (line.startsWith('### ')) { sections.push({ type: 'h3', content: cleanInline(line.slice(4)) }); continue; }
     if (line.startsWith('## ')) { sections.push({ type: 'h2', content: cleanInline(line.slice(3)) }); continue; }
@@ -42,11 +66,9 @@ export const parseContentToSections = (content: string): FormattedSection[] => {
     if (num) { sections.push({ type: 'numberedItem', content: cleanInline(num[2]) }); continue; }
     if (line.startsWith('- ') || line.startsWith('* ')) { sections.push({ type: 'listItem', content: cleanInline(line.slice(2)) }); continue; }
 
-    // Standalone bold "**Title**" or "**Title:**" → h3
     const boldHead = line.match(/^\*\*([^*]+?):?\*\*:?\s*$/);
     if (boldHead) { sections.push({ type: 'h3', content: cleanInline(boldHead[1]) }); continue; }
 
-    // Key: value short line (no period, key < 50 chars, has value)
     const kv = line.match(/^([A-Z][A-Za-z0-9 ()&/+\-]{2,48}):\s+(.+)$/);
     if (kv && !kv[2].includes(':') && kv[2].length < 220) {
       sections.push({ type: 'keyValue', key: cleanInline(kv[1]), content: cleanInline(kv[2]) });
@@ -70,7 +92,7 @@ export const formatContentForDisplay = (content: string): string => {
 };
 
 export const extractPreview = (content: string, maxLength = 150): string => {
-  const cleaned = cleanMarkdownText(content.replace(/^#+\s.*$/gm, '').replace(/^>\s.*$/gm, ''));
+  const cleaned = cleanMarkdownText(content.replace(/^#+\s.*$/gm, '').replace(/^>\s.*$/gm, '').replace(/^\|.*$/gm, ''));
   if (cleaned.length <= maxLength) return cleaned;
   const truncated = cleaned.substring(0, maxLength);
   const lastSpace = truncated.lastIndexOf(' ');

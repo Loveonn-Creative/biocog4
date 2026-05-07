@@ -8,6 +8,7 @@ import { Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
+import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
   SECTOR_BENCHMARKS, calculateCarbonPricing, formatCurrencyEur, formatLocal,
   type CarbonPricingInput, type CarbonPricingResult, type PriceScenario,
@@ -49,6 +50,19 @@ const CarbonPricingCalculator = () => {
     inputs: { scope1, scope2, scope3, production, sectorId, exportsToEU, reduction, scenario, startYear, endYear, domesticPrice, currency },
     results: result,
     factorSources: result?.factorSources,
+  });
+
+  useCalculatorRerun("carbon-pricing-impact", (i) => {
+    const set = (k: string, fn: (v: string) => void) => { if (i[k] !== undefined && i[k] !== null) fn(String(i[k])); };
+    set('scope1', setScope1); set('scope2', setScope2); set('scope3', setScope3);
+    set('production', setProduction);
+    if (typeof i.sectorId === 'string') setSectorId(i.sectorId);
+    if (typeof i.exportsToEU === 'boolean') setExportsToEU(i.exportsToEU);
+    set('reduction', setReduction);
+    if (i.scenario) setScenario(i.scenario as PriceScenario);
+    set('startYear', setStartYear); set('endYear', setEndYear);
+    set('domesticPrice', setDomesticPrice);
+    if (typeof i.currency === 'string') setCurrency(i.currency);
   });
 
   return (

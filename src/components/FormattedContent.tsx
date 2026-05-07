@@ -48,6 +48,25 @@ export const FormattedContent = memo(({ content, className = '' }: FormattedCont
           );
         }
         switch (g.type) {
+          case 'table':
+            return (
+              <div key={i} className="overflow-x-auto my-4 rounded-md border border-border">
+                <table className="w-full text-sm">
+                  {g.headers && g.headers.length > 0 && (
+                    <thead className="bg-muted/50">
+                      <tr>{g.headers.map((h, j) => <th key={j} className="text-left font-semibold p-3 text-foreground">{h}</th>)}</tr>
+                    </thead>
+                  )}
+                  <tbody>
+                    {g.rows?.map((r, ri) => (
+                      <tr key={ri} className="border-t border-border">
+                        {r.map((c, ci) => <td key={ci} className="p-3 text-foreground/85">{c}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
           case 'h2':
             return <h2 key={i} className="text-xl sm:text-2xl font-semibold text-foreground mt-8 first:mt-0">{g.content}</h2>;
           case 'h3':

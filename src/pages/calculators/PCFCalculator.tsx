@@ -7,6 +7,7 @@ import { Plus, Trash2, Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
+import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
   PCF_MATERIALS, PCF_ENERGY, PCF_TRANSPORT,
   calculatePCF, type PCFInput, type PCFResult, type MaterialLine, type EnergyLine, type TransportLine, type ProcessingLine, type AllocationMethod, type SystemBoundary,
@@ -62,6 +63,19 @@ const PCFCalculatorPage = () => {
     inputs: { productName, functionalUnit, unitsPerBatch, systemBoundary, allocationMethod, coProductShare, materials, energy, transport, processing },
     results: result,
     factorSources: result?.factorSources,
+  });
+
+  useCalculatorRerun("product-carbon-footprint", (i) => {
+    if (typeof i.productName === 'string') setProductName(i.productName);
+    if (typeof i.functionalUnit === 'string') setFunctionalUnit(i.functionalUnit);
+    if (i.unitsPerBatch !== undefined) setUnitsPerBatch(String(i.unitsPerBatch));
+    if (i.systemBoundary) setSystemBoundary(i.systemBoundary as SystemBoundary);
+    if (i.allocationMethod) setAllocationMethod(i.allocationMethod as AllocationMethod);
+    if (i.coProductShare !== undefined) setCoProductShare(String(i.coProductShare));
+    if (Array.isArray(i.materials)) setMaterials(i.materials as MaterialLine[]);
+    if (Array.isArray(i.energy)) setEnergy(i.energy as EnergyLine[]);
+    if (Array.isArray(i.transport)) setTransport(i.transport as TransportLine[]);
+    if (Array.isArray(i.processing)) setProcessing(i.processing as ProcessingLine[]);
   });
 
   return (

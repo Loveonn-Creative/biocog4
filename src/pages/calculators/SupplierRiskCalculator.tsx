@@ -9,6 +9,7 @@ import { Plus, Trash2, Calculator as CalcIcon, AlertTriangle } from "lucide-reac
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
+import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
   SPEND_EF_BY_SECTOR, COUNTRY_RISK,
   calculateSupplierPortfolio, type SupplierInput, type SupplierPortfolioResult, type SupplierTier,
@@ -42,6 +43,10 @@ const SupplierRiskCalculator = () => {
     inputs: { suppliers },
     results: result,
     factorSources: result?.factorSources,
+  });
+
+  useCalculatorRerun("supplier-emissions-risk", (i) => {
+    if (Array.isArray(i.suppliers)) setSuppliers(i.suppliers as SupplierInput[]);
   });
 
   return (
