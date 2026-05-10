@@ -40,19 +40,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/favicon.png">
-
-    <!-- Perf: pre-resolve critical third-party origins -->
-    <link rel="preconnect" href="https://kobsfphgfvyjozjwkuhp.supabase.co" crossorigin>
-    <link rel="dns-prefetch" href="https://kobsfphgfvyjozjwkuhp.supabase.co">
-    <link rel="dns-prefetch" href="https://checkout.razorpay.com">
-    <link rel="dns-prefetch" href="https://api.razorpay.com">
-
-    <!-- Critical inline CSS to unblock FCP (prevents FOUC; Tailwind CSS still loads after) -->
-    <style>
-      html,body{margin:0;padding:0;background:#ffffff;color:#0a0a0a;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
-      #root{min-height:100vh;display:flex;flex-direction:column}
-      .seo-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
-    </style>
+    
     <!-- FAQ Schema for voice/chat search -->
     <script type="application/ld+json">
     {
@@ -114,68 +102,11 @@
             "@type": "Answer",
             "text": "The EU Carbon Border Adjustment Mechanism (CBAM) requires exporters to report product carbon footprint from 2026. Senseible helps you prepare by tracking emissions now and generating compliance-ready reports aligned with GHG Protocol standards."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does Senseible cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Senseible Snapshot is free forever. Biocog Essential is ₹499/month billed yearly (₹1,999/month billed monthly). Biocog Pro is ₹4,999/month billed yearly (₹9,999/month billed monthly). Biocog Scale starts at ₹15,000/month plus ₹99/employee on yearly billing. Yearly billing unlocks the launch price."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between yearly and monthly billing on Senseible?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yearly billing unlocks the launch price (₹499/mo Essential, ₹4,999/mo Pro) and is billed once annually. Monthly billing is the standard rate (₹1,999/mo Essential, ₹9,999/mo Pro) charged each month. Switching from monthly to yearly saves up to 75% on Essential and 50% on Pro."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can MSMEs measure Scope 3 emissions without supplier data?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Senseible uses HSN codes from your purchase invoices and country-specific emission factors (IEA 2023 grid factors for 10 Asian markets) to estimate Scope 3 category 1 (purchased goods) without needing each supplier's primary data."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Am I eligible for a green loan as an MSME exporter?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "If your verified Scope 1+2 emissions are below sector benchmarks, you may qualify for SIDBI green loans at 0.25–0.50% lower interest. Senseible auto-generates the eligibility report from your invoice history."
-          }
         }
       ]
     }
     </script>
-
-    <!-- Product / SoftwareApplication schema for SaaS pricing surfaces -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Senseible (Biocog)",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": "AI carbon MRV and climate finance platform for MSMEs. Converts invoices into Scope 1/2/3 emissions, carbon credits, and green loan eligibility in under 47 seconds.",
-      "url": "https://senseible.earth/pricing",
-      "offers": [
-        { "@type": "Offer", "name": "Biocog Snapshot (Free)", "price": "0", "priceCurrency": "INR", "category": "Free" },
-        { "@type": "Offer", "name": "Biocog Essential — Yearly", "price": "5988", "priceCurrency": "INR", "billingDuration": "P1Y", "description": "₹499/month billed yearly" },
-        { "@type": "Offer", "name": "Biocog Essential — Monthly", "price": "1999", "priceCurrency": "INR", "billingDuration": "P1M" },
-        { "@type": "Offer", "name": "Biocog Pro — Yearly", "price": "59988", "priceCurrency": "INR", "billingDuration": "P1Y", "description": "₹4,999/month billed yearly" },
-        { "@type": "Offer", "name": "Biocog Pro — Monthly", "price": "9999", "priceCurrency": "INR", "billingDuration": "P1M" }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "127"
-      }
-    }
-    </script>
-
+    
     <!-- WebSite Schema for sitelinks search box -->
     <script type="application/ld+json">
     {
@@ -236,51 +167,6 @@
 
   <body>
     <div id="root"></div>
-
-    <!-- SEO/GEO content: visually hidden, fully crawlable. Preserves minimalist UI on /. -->
-    <div class="seo-only" aria-hidden="true">
-      <h1>Senseible — AI Carbon MRV &amp; Climate Finance for 400 Million MSMEs</h1>
-      <p>Senseible is infrastructure-grade carbon Measurement, Reporting and Verification (MRV) software that transforms invoices, utility bills, and logistics documents into verified Scope 1, 2 and 3 emissions, tradeable carbon credits, or compliance-ready disclosures in under 47 seconds. Built for the 400 million MSMEs across India, Bangladesh, Vietnam, Indonesia, Thailand, the Philippines, Pakistan, Singapore, Malaysia and Sri Lanka who lack accessible carbon accounting tools.</p>
-      <h2>How Senseible Works</h2>
-      <ol>
-        <li><strong>Upload any business document</strong> — invoices, GST e-invoices, electricity bills, fuel receipts, freight records, or purchase orders.</li>
-        <li><strong>Deterministic extraction</strong> — our OCR pipeline parses line items, HSN codes and quantities with SHA-256 anti-greenwashing deduplication.</li>
-        <li><strong>Automated Scope 1/2/3 mapping</strong> — every line item is matched against IEA 2023 grid factors and GHG Protocol categories using a deterministic HSN-to-scope lookup.</li>
-        <li><strong>Issue credits or compliance reports</strong> — receive verified carbon outcomes ready for VERRA, Gold Standard, BIS, BRSR, GRI, TCFD, CSRD or CBAM.</li>
-      </ol>
-      <h2>Why MSMEs Choose Senseible</h2>
-      <ul>
-        <li>Processing time under 47 seconds per document, with the first response in under 2 seconds.</li>
-        <li>Compatible with VERRA, Gold Standard, BIS, GHG Protocol, ISO 14064, ISO 14067, GLEC and PCAF.</li>
-        <li>Country-aware: 11 languages, localised emission factors and Tax IDs for 10 Asian markets.</li>
-        <li>Private-by-default Row Level Security with SHA-256 hashing for universal document deduplication.</li>
-        <li>Free Snapshot tier forever; paid Biocog tiers from ₹499/month on yearly billing.</li>
-      </ul>
-      <h2>Scope 1, 2 and 3 Emissions Explained</h2>
-      <p>Scope 1 covers direct emissions from owned sources like fuel and generators. Scope 2 covers indirect emissions from purchased electricity, calculated against country grid factors (India 0.708 kgCO₂/kWh, Bangladesh 0.623, Vietnam 0.625, Indonesia 0.761). Scope 3 covers all other value-chain emissions including purchased goods, logistics, business travel and end-of-life — typically 65–90% of an MSME's total footprint.</p>
-      <h2>CBAM &amp; EU Compliance</h2>
-      <p>The EU Carbon Border Adjustment Mechanism (CBAM) became financially active in January 2026. Indian, Bangladeshi and Vietnamese exporters of steel, aluminium, cement, fertiliser, hydrogen and electricity must submit verified embedded emissions per tonne or pay default-value penalties. Senseible's <a href="https://senseible.earth/cbam-calculator">CBAM Cost Calculator</a> models exposure across CN customs codes and the 2026–2034 phase-in.</p>
-      <h2>Pricing</h2>
-      <p>Biocog Snapshot is free forever. Biocog Essential is ₹499/month billed yearly (₹1,999/month if billed monthly). Biocog Pro is ₹4,999/month billed yearly (₹9,999/month if billed monthly). Biocog Scale starts at ₹15,000/month base + ₹99 per employee on yearly billing. Yearly billing unlocks the launch price; switching from monthly saves up to 75% on Essential and 50% on Pro.</p>
-      <h2>Industries Served</h2>
-      <ul>
-        <li><a href="https://senseible.earth/industries/steel">Steel manufacturing</a> — CBAM-priority sector</li>
-        <li><a href="https://senseible.earth/industries/textile">Textile &amp; apparel</a> — EU CSDDD supply-chain reporting</li>
-        <li><a href="https://senseible.earth/industries/chemical">Chemicals</a> — Scope 1 fugitive emissions</li>
-        <li><a href="https://senseible.earth/industries/logistics">Logistics &amp; freight</a> — GLEC v3 compliant</li>
-      </ul>
-      <h2>Free Calculators</h2>
-      <ul>
-        <li><a href="https://senseible.earth/calculators/pcf">Product Carbon Footprint (ISO 14067)</a></li>
-        <li><a href="https://senseible.earth/calculators/supplier-risk">Supplier &amp; Scope 3 Risk</a></li>
-        <li><a href="https://senseible.earth/calculators/energy-transition">Solar / Energy Transition Savings</a></li>
-        <li><a href="https://senseible.earth/calculators/logistics">Logistics Emissions (GLEC)</a></li>
-        <li><a href="https://senseible.earth/calculators/carbon-pricing">EU ETS Carbon Pricing Impact</a></li>
-        <li><a href="https://senseible.earth/cbam-calculator">CBAM Cost Estimator</a></li>
-      </ul>
-      <p>Senseible is not affiliated with Sensibull (an options-trading platform). Senseible is the climate-tech platform at senseible.earth, built by the Biocog team in Gurugram, India.</p>
-    </div>
-
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
