@@ -216,6 +216,12 @@ const Pricing = () => {
     return tier.cta;
   };
 
+  // Pricing matrix: yearly = headline /mo equivalent (billed annually); monthly = full /mo
+  const TIER_PRICES = {
+    essential: { yearly: 499, monthly: 1999 },
+    pro: { yearly: 4999, monthly: 9999 },
+  } as const;
+
   const tiers: PricingTier[] = [
     {
       id: 'snapshot',
@@ -240,11 +246,13 @@ const Pricing = () => {
       id: 'essential',
       name: 'Biocog Essential',
       icon: Zap,
-      tagline: 'Launch Price',
-      price: 499,
-      originalPrice: 1999,
+      tagline: billingCycle === 'yearly' ? 'Best Value · Billed Yearly' : 'Billed Monthly',
+      price: TIER_PRICES.essential[billingCycle],
+      originalPrice: billingCycle === 'yearly' ? TIER_PRICES.essential.monthly : undefined,
       period: '/month',
-      subtext: 'You pay ₹499 to unlock thousands in savings.',
+      subtext: billingCycle === 'yearly'
+        ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
+        : 'Switch to yearly to save 75%.',
       cta: 'Unlock Savings',
       ctaVariant: 'default',
       features: [
@@ -262,11 +270,13 @@ const Pricing = () => {
       id: 'pro',
       name: 'Biocog Pro',
       icon: Crown,
-      tagline: 'Most Popular',
-      price: 4999,
-      originalPrice: 9999,
+      tagline: billingCycle === 'yearly' ? 'Most Popular · Billed Yearly' : 'Billed Monthly',
+      price: TIER_PRICES.pro[billingCycle],
+      originalPrice: billingCycle === 'yearly' ? TIER_PRICES.pro.monthly : undefined,
       period: '/month',
-      subtext: "Biocog Pro doesn't cost money — it makes money.",
+      subtext: billingCycle === 'yearly'
+        ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
+        : 'Switch to yearly to save 50%.',
       cta: 'Start Earning',
       ctaVariant: 'default',
       popular: true,
@@ -291,7 +301,7 @@ const Pricing = () => {
       tagline: 'Pay As You Grow',
       price: scalePrice,
       period: '/month',
-      subtext: 'Custom workflows and larger teams.',
+      subtext: billingCycle === 'yearly' ? 'Yearly billing — best per-seat rate.' : 'Custom workflows and larger teams.',
       cta: 'Talk to Sales',
       ctaVariant: 'secondary',
       features: [
