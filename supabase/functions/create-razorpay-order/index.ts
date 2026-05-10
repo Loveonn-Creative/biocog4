@@ -6,12 +6,16 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const PLAN_PRICES: Record<string, { amount: number; name: string }> = {
-  essential: { amount: 49900, name: 'Biocog Essential' },  // ₹499 in paise
-  basic: { amount: 49900, name: 'Biocog Essential' },      // Legacy support
-  pro: { amount: 499900, name: 'Biocog Pro' },             // ₹4,999 in paise
-  scale: { amount: 1500000, name: 'Biocog Scale' },        // ₹15,000 in paise (base)
+// Prices in paise. Yearly = listed monthly price * 12 (the discounted "yearly" headline).
+// Monthly (no discount) is roughly 4x the discounted monthly equivalent.
+const PLAN_PRICES: Record<string, { monthly: number; yearly: number; name: string }> = {
+  essential: { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // ₹1,999/mo  OR ₹5,988/yr (₹499/mo equiv)
+  basic:     { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // legacy alias
+  pro:       { monthly: 999900, yearly: 5998800, name: 'Biocog Pro' },        // ₹9,999/mo OR ₹59,988/yr (₹4,999/mo equiv)
+  scale:     { monthly: 3000000, yearly: 18000000, name: 'Biocog Scale' },    // ₹30,000/mo OR ₹1,80,000/yr base
 };
+const PER_EMPLOYEE_MONTHLY = 19800; // ₹198/employee/month
+const PER_EMPLOYEE_YEARLY = 118800; // ₹1,188/employee/year (₹99/mo equiv)
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -33,10 +37,11 @@ serve(async (req) => {
       );
     }
 
-    let { tier, teamSize, userId, userEmail } = await req.json();
+    let { tier, teamSize, billingCycle, userId, userEmail } = await req.json();
     // Normalize tier name
     if (tier === 'basic') tier = 'essential';
-    console.log('Creating order for:', { tier, teamSize, userId, userEmail });
+    const cycle: 'monthly' | 'yearly' = billingCycle === 'monthly' ? 'monthly' : 'yearly';
+    console.log('Creating order for:', { tier, teamSize, cycle, userId, userEmail });
 
     // Validate tier
     if (!PLAN_PRICES[tier]) {
@@ -47,10 +52,9 @@ serve(async (req) => {
     }
 
     // Calculate amount
-    let amount = PLAN_PRICES[tier].amount;
+    let amount = PLAN_PRICES[tier][cycle];
     if (tier === 'scale' && teamSize) {
-      // Add per-employee pricing for Scale tier
-      amount += teamSize * 9900; // ₹99 per employee in paise
+      amount += teamSize * (cycle === 'yearly' ? PER_EMPLOYEE_YEARLY : PER_EMPLOYEE_MONTHLY);
     }
 
     // Create Razorpay order
@@ -65,9 +69,10 @@ serve(async (req) => {
       body: JSON.stringify({
         amount,
         currency: 'INR',
-        receipt: `senseible_${tier}_${Date.now()}`,
+        receipt: `senseible_${tier}_${cycle}_${Date.now()}`.slice(0, 40),
         notes: {
           tier,
+          billing_cycle: cycle,
           user_id: userId,
           user_email: userEmail,
           team_size: teamSize || 0,
@@ -96,6 +101,7 @@ serve(async (req) => {
         .insert({
           user_id: userId,
           tier,
+          billing_cycle: cycle,
           razorpay_order_id: order.id,
           amount: amount / 100, // Store in rupees
           status: 'pending',
