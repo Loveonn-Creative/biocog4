@@ -114,11 +114,68 @@
             "@type": "Answer",
             "text": "The EU Carbon Border Adjustment Mechanism (CBAM) requires exporters to report product carbon footprint from 2026. Senseible helps you prepare by tracking emissions now and generating compliance-ready reports aligned with GHG Protocol standards."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Senseible cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Senseible Snapshot is free forever. Biocog Essential is ₹499/month billed yearly (₹1,999/month billed monthly). Biocog Pro is ₹4,999/month billed yearly (₹9,999/month billed monthly). Biocog Scale starts at ₹15,000/month plus ₹99/employee on yearly billing. Yearly billing unlocks the launch price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between yearly and monthly billing on Senseible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yearly billing unlocks the launch price (₹499/mo Essential, ₹4,999/mo Pro) and is billed once annually. Monthly billing is the standard rate (₹1,999/mo Essential, ₹9,999/mo Pro) charged each month. Switching from monthly to yearly saves up to 75% on Essential and 50% on Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can MSMEs measure Scope 3 emissions without supplier data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Senseible uses HSN codes from your purchase invoices and country-specific emission factors (IEA 2023 grid factors for 10 Asian markets) to estimate Scope 3 category 1 (purchased goods) without needing each supplier's primary data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Am I eligible for a green loan as an MSME exporter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your verified Scope 1+2 emissions are below sector benchmarks, you may qualify for SIDBI green loans at 0.25–0.50% lower interest. Senseible auto-generates the eligibility report from your invoice history."
+          }
         }
       ]
     }
     </script>
-    
+
+    <!-- Product / SoftwareApplication schema for SaaS pricing surfaces -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Senseible (Biocog)",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "AI carbon MRV and climate finance platform for MSMEs. Converts invoices into Scope 1/2/3 emissions, carbon credits, and green loan eligibility in under 47 seconds.",
+      "url": "https://senseible.earth/pricing",
+      "offers": [
+        { "@type": "Offer", "name": "Biocog Snapshot (Free)", "price": "0", "priceCurrency": "INR", "category": "Free" },
+        { "@type": "Offer", "name": "Biocog Essential — Yearly", "price": "5988", "priceCurrency": "INR", "billingDuration": "P1Y", "description": "₹499/month billed yearly" },
+        { "@type": "Offer", "name": "Biocog Essential — Monthly", "price": "1999", "priceCurrency": "INR", "billingDuration": "P1M" },
+        { "@type": "Offer", "name": "Biocog Pro — Yearly", "price": "59988", "priceCurrency": "INR", "billingDuration": "P1Y", "description": "₹4,999/month billed yearly" },
+        { "@type": "Offer", "name": "Biocog Pro — Monthly", "price": "9999", "priceCurrency": "INR", "billingDuration": "P1M" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      }
+    }
+    </script>
+
     <!-- WebSite Schema for sitelinks search box -->
     <script type="application/ld+json">
     {
