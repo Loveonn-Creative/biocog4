@@ -50,11 +50,13 @@ serve(async (req) => {
       razorpay_payment_id, 
       razorpay_signature,
       userId,
-      tier 
+      tier,
+      billingCycle,
     } = await req.json();
 
     // Normalize tier name
     if (tier === 'basic') tier = 'essential';
+    const cycle: 'monthly' | 'yearly' = billingCycle === 'monthly' ? 'monthly' : 'yearly';
 
     console.log('Verifying payment:', { razorpay_order_id, razorpay_payment_id, userId, tier });
 
@@ -77,9 +79,13 @@ serve(async (req) => {
     // Update database
     const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!);
 
-    // Calculate expiry (1 month from now)
+    // Calculate expiry based on billing cycle
     const expiresAt = new Date();
-    expiresAt.setMonth(expiresAt.getMonth() + 1);
+    if (cycle === 'yearly') {
+      expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+    } else {
+      expiresAt.setMonth(expiresAt.getMonth() + 1);
+    }
 
     // Update subscription status
     const { error: subError } = await supabase
@@ -88,6 +94,7 @@ serve(async (req) => {
         razorpay_payment_id,
         razorpay_signature,
         status: 'active',
+        billing_cycle: cycle,
         starts_at: new Date().toISOString(),
         expires_at: expiresAt.toISOString(),
       })

@@ -63,9 +63,11 @@ const Pricing = () => {
   
   const [teamSize, setTeamSize] = useState(50);
   const [processingTier, setProcessingTier] = useState<string | null>(null);
+  const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
+  const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
   
-  const scaleBasePrice = 15000;
-  const perEmployeePrice = 99;
+  const scaleBasePrice = billingCycle === 'yearly' ? 15000 : 30000;
+  const perEmployeePrice = billingCycle === 'yearly' ? 99 : 198;
   const scalePrice = scaleBasePrice + (teamSize * perEmployeePrice);
 
   // Partner-specific tiers
@@ -134,7 +136,7 @@ const Pricing = () => {
     }
   };
 
-  const handleSubscribe = async (tierId: string) => {
+  const handleSubscribe = async (tierId: string, forceCycle?: 'yearly' | 'monthly') => {
     // Free tier - just navigate to auth
     if (tierId === 'snapshot') {
       navigate('/auth');
@@ -147,10 +149,18 @@ const Pricing = () => {
       return;
     }
 
+    const cycle = forceCycle ?? billingCycle;
+
+    // Auto-redirect-to-yearly: if user clicked while monthly is selected, show inline upsell
+    if (cycle === 'monthly' && (tierId === 'essential' || tierId === 'pro') && !forceCycle) {
+      setPendingMonthlyTier(tierId);
+      return;
+    }
+
     // Check authentication
     if (!isAuthenticated || !user) {
       toast.info('Please sign in to subscribe');
-      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId } });
+      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId, billingCycle: cycle } });
       return;
     }
 
@@ -162,11 +172,13 @@ const Pricing = () => {
 
     // Initiate payment
     setProcessingTier(tierId);
+    setPendingMonthlyTier(null);
     
     try {
       await initiatePayment({
         tier: tierId,
         teamSize: tierId === 'scale' ? teamSize : undefined,
+        billingCycle: cycle,
         userId: user.id,
         userEmail: user.email || '',
         onSuccess: async (tier) => {
@@ -204,6 +216,12 @@ const Pricing = () => {
     return tier.cta;
   };
 
+  // Pricing matrix: yearly = headline /mo equivalent (billed annually); monthly = full /mo
+  const TIER_PRICES = {
+    essential: { yearly: 499, monthly: 1999 },
+    pro: { yearly: 4999, monthly: 9999 },
+  } as const;
+
   const tiers: PricingTier[] = [
     {
       id: 'snapshot',
@@ -228,11 +246,13 @@ const Pricing = () => {
       id: 'essential',
       name: 'Biocog Essential',
       icon: Zap,
-      tagline: 'Launch Price',
-      price: 499,
-      originalPrice: 1999,
+      tagline: billingCycle === 'yearly' ? 'Best Value · Billed Yearly' : 'Billed Monthly',
+      price: TIER_PRICES.essential[billingCycle],
+      originalPrice: billingCycle === 'yearly' ? TIER_PRICES.essential.monthly : undefined,
       period: '/month',
-      subtext: 'You pay ₹499 to unlock thousands in savings.',
+      subtext: billingCycle === 'yearly'
+        ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
+        : 'Switch to yearly to save 75%.',
       cta: 'Unlock Savings',
       ctaVariant: 'default',
       features: [
@@ -250,11 +270,13 @@ const Pricing = () => {
       id: 'pro',
       name: 'Biocog Pro',
       icon: Crown,
-      tagline: 'Most Popular',
-      price: 4999,
-      originalPrice: 9999,
+      tagline: billingCycle === 'yearly' ? 'Most Popular · Billed Yearly' : 'Billed Monthly',
+      price: TIER_PRICES.pro[billingCycle],
+      originalPrice: billingCycle === 'yearly' ? TIER_PRICES.pro.monthly : undefined,
       period: '/month',
-      subtext: "Biocog Pro doesn't cost money — it makes money.",
+      subtext: billingCycle === 'yearly'
+        ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
+        : 'Switch to yearly to save 50%.',
       cta: 'Start Earning',
       ctaVariant: 'default',
       popular: true,
@@ -279,7 +301,7 @@ const Pricing = () => {
       tagline: 'Pay As You Grow',
       price: scalePrice,
       period: '/month',
-      subtext: 'Custom workflows and larger teams.',
+      subtext: billingCycle === 'yearly' ? 'Yearly billing — best per-seat rate.' : 'Custom workflows and larger teams.',
       cta: 'Talk to Sales',
       ctaVariant: 'secondary',
       features: [
@@ -505,6 +527,46 @@ const Pricing = () => {
         ) : (
           /* MSME Pricing Cards */
           <section className="container mx-auto px-4 pb-16">
+            {/* Yearly / Monthly toggle */}
+            <div className="flex flex-col items-center mb-8">
+              <div className="inline-flex items-center rounded-full border bg-background p-1 shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => setBillingCycle('yearly')}
+                  className={cn(
+                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    billingCycle === 'yearly'
+                      ? "bg-primary text-primary-foreground shadow"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  aria-pressed={billingCycle === 'yearly'}
+                >
+                  Billed Yearly
+                  <span className="ml-2 px-1.5 py-0.5 text-[10px] rounded-full bg-success/15 text-success font-semibold align-middle">
+                    SAVE UP TO 75%
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBillingCycle('monthly')}
+                  className={cn(
+                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    billingCycle === 'monthly'
+                      ? "bg-primary text-primary-foreground shadow"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  aria-pressed={billingCycle === 'monthly'}
+                >
+                  Billed Monthly
+                </button>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {billingCycle === 'yearly'
+                  ? 'Best value — one annual payment, lowest per-month rate.'
+                  : 'Higher per-month rate. Switch to yearly to unlock the launch price.'}
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {tiers.map((tier, idx) => (
                 <Card 
@@ -580,23 +642,55 @@ const Pricing = () => {
                       </div>
                     )}
 
-                    {/* CTA Button */}
-                    <Button 
-                      variant={tier.ctaVariant}
-                      className={cn(
-                        "w-full mb-4",
-                        tier.popular && "bg-primary hover:bg-primary/90",
-                        currentTier === tier.id && "opacity-60 cursor-default"
-                      )}
-                      onClick={() => handleSubscribe(tier.id)}
-                      disabled={
-                        processingTier !== null || 
-                        currentTier === tier.id ||
-                        (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
-                      }
-                    >
-                      {getButtonContent(tier)}
-                    </Button>
+                    {/* Inline upsell when monthly was clicked for a paid tier */}
+                    {pendingMonthlyTier === tier.id ? (
+                      <div className="mb-4 p-3 rounded-lg border border-success/40 bg-success/5">
+                        <p className="text-xs font-medium mb-2">
+                          Switch to yearly and save{' '}
+                          <span className="text-success font-bold">
+                            ₹{(((TIER_PRICES as any)[tier.id]?.monthly - (TIER_PRICES as any)[tier.id]?.yearly) * 12).toLocaleString('en-IN')}
+                          </span>
+                          ?
+                        </p>
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            className="flex-1"
+                            onClick={() => {
+                              setBillingCycle('yearly');
+                              handleSubscribe(tier.id, 'yearly');
+                            }}
+                          >
+                            Yes, switch & save
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1"
+                            onClick={() => handleSubscribe(tier.id, 'monthly')}
+                          >
+                            Continue monthly
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <Button 
+                        variant={tier.ctaVariant}
+                        className={cn(
+                          "w-full mb-4",
+                          tier.popular && "bg-primary hover:bg-primary/90",
+                          currentTier === tier.id && "opacity-60 cursor-default"
+                        )}
+                        onClick={() => handleSubscribe(tier.id)}
+                        disabled={
+                          processingTier !== null || 
+                          currentTier === tier.id ||
+                          (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
+                        }
+                      >
+                        {getButtonContent(tier)}
+                      </Button>
+                    )}
 
                     {/* Subtext */}
                     {tier.subtext && (

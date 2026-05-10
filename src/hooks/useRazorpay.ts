@@ -11,6 +11,7 @@ declare global {
 interface RazorpayOptions {
   tier: string;
   teamSize?: number;
+  billingCycle?: 'monthly' | 'yearly';
   userId: string;
   userEmail: string;
   onSuccess: (tier: string) => void;
@@ -46,6 +47,7 @@ export const useRazorpay = () => {
   const initiatePayment = useCallback(async ({
     tier,
     teamSize,
+    billingCycle = 'yearly',
     userId,
     userEmail,
     onSuccess,
@@ -70,7 +72,7 @@ export const useRazorpay = () => {
             'Content-Type': 'application/json',
             'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
           },
-          body: JSON.stringify({ tier, teamSize, userId, userEmail }),
+          body: JSON.stringify({ tier, teamSize, billingCycle, userId, userEmail }),
         }
       );
 
@@ -125,6 +127,7 @@ export const useRazorpay = () => {
                   razorpay_signature: response.razorpay_signature,
                   userId,
                   tier,
+                  billingCycle,
                 }),
               }
             );

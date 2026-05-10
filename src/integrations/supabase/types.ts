@@ -1257,6 +1257,7 @@ export type Database = {
       subscriptions: {
         Row: {
           amount: number
+          billing_cycle: string
           created_at: string | null
           currency: string | null
           expires_at: string | null
@@ -1272,6 +1273,7 @@ export type Database = {
         }
         Insert: {
           amount: number
+          billing_cycle?: string
           created_at?: string | null
           currency?: string | null
           expires_at?: string | null
@@ -1287,6 +1289,7 @@ export type Database = {
         }
         Update: {
           amount?: number
+          billing_cycle?: string
           created_at?: string | null
           currency?: string | null
           expires_at?: string | null
