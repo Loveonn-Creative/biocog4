@@ -642,23 +642,55 @@ const Pricing = () => {
                       </div>
                     )}
 
-                    {/* CTA Button */}
-                    <Button 
-                      variant={tier.ctaVariant}
-                      className={cn(
-                        "w-full mb-4",
-                        tier.popular && "bg-primary hover:bg-primary/90",
-                        currentTier === tier.id && "opacity-60 cursor-default"
-                      )}
-                      onClick={() => handleSubscribe(tier.id)}
-                      disabled={
-                        processingTier !== null || 
-                        currentTier === tier.id ||
-                        (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
-                      }
-                    >
-                      {getButtonContent(tier)}
-                    </Button>
+                    {/* Inline upsell when monthly was clicked for a paid tier */}
+                    {pendingMonthlyTier === tier.id ? (
+                      <div className="mb-4 p-3 rounded-lg border border-success/40 bg-success/5">
+                        <p className="text-xs font-medium mb-2">
+                          Switch to yearly and save{' '}
+                          <span className="text-success font-bold">
+                            ₹{(((TIER_PRICES as any)[tier.id]?.monthly - (TIER_PRICES as any)[tier.id]?.yearly) * 12).toLocaleString('en-IN')}
+                          </span>
+                          ?
+                        </p>
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            className="flex-1"
+                            onClick={() => {
+                              setBillingCycle('yearly');
+                              handleSubscribe(tier.id, 'yearly');
+                            }}
+                          >
+                            Yes, switch & save
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="flex-1"
+                            onClick={() => handleSubscribe(tier.id, 'monthly')}
+                          >
+                            Continue monthly
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <Button 
+                        variant={tier.ctaVariant}
+                        className={cn(
+                          "w-full mb-4",
+                          tier.popular && "bg-primary hover:bg-primary/90",
+                          currentTier === tier.id && "opacity-60 cursor-default"
+                        )}
+                        onClick={() => handleSubscribe(tier.id)}
+                        disabled={
+                          processingTier !== null || 
+                          currentTier === tier.id ||
+                          (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
+                        }
+                      >
+                        {getButtonContent(tier)}
+                      </Button>
+                    )}
 
                     {/* Subtext */}
                     {tier.subtext && (
