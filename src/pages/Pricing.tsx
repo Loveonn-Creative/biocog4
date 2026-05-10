@@ -63,9 +63,11 @@ const Pricing = () => {
   
   const [teamSize, setTeamSize] = useState(50);
   const [processingTier, setProcessingTier] = useState<string | null>(null);
+  const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
+  const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
   
-  const scaleBasePrice = 15000;
-  const perEmployeePrice = 99;
+  const scaleBasePrice = billingCycle === 'yearly' ? 15000 : 30000;
+  const perEmployeePrice = billingCycle === 'yearly' ? 99 : 198;
   const scalePrice = scaleBasePrice + (teamSize * perEmployeePrice);
 
   // Partner-specific tiers
@@ -134,7 +136,7 @@ const Pricing = () => {
     }
   };
 
-  const handleSubscribe = async (tierId: string) => {
+  const handleSubscribe = async (tierId: string, forceCycle?: 'yearly' | 'monthly') => {
     // Free tier - just navigate to auth
     if (tierId === 'snapshot') {
       navigate('/auth');
@@ -147,10 +149,18 @@ const Pricing = () => {
       return;
     }
 
+    const cycle = forceCycle ?? billingCycle;
+
+    // Auto-redirect-to-yearly: if user clicked while monthly is selected, show inline upsell
+    if (cycle === 'monthly' && (tierId === 'essential' || tierId === 'pro') && !forceCycle) {
+      setPendingMonthlyTier(tierId);
+      return;
+    }
+
     // Check authentication
     if (!isAuthenticated || !user) {
       toast.info('Please sign in to subscribe');
-      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId } });
+      navigate('/auth', { state: { returnTo: '/pricing', selectedTier: tierId, billingCycle: cycle } });
       return;
     }
 
@@ -162,11 +172,13 @@ const Pricing = () => {
 
     // Initiate payment
     setProcessingTier(tierId);
+    setPendingMonthlyTier(null);
     
     try {
       await initiatePayment({
         tier: tierId,
         teamSize: tierId === 'scale' ? teamSize : undefined,
+        billingCycle: cycle,
         userId: user.id,
         userEmail: user.email || '',
         onSuccess: async (tier) => {
