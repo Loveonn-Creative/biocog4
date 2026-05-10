@@ -527,6 +527,46 @@ const Pricing = () => {
         ) : (
           /* MSME Pricing Cards */
           <section className="container mx-auto px-4 pb-16">
+            {/* Yearly / Monthly toggle */}
+            <div className="flex flex-col items-center mb-8">
+              <div className="inline-flex items-center rounded-full border bg-background p-1 shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => setBillingCycle('yearly')}
+                  className={cn(
+                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    billingCycle === 'yearly'
+                      ? "bg-primary text-primary-foreground shadow"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  aria-pressed={billingCycle === 'yearly'}
+                >
+                  Billed Yearly
+                  <span className="ml-2 px-1.5 py-0.5 text-[10px] rounded-full bg-success/15 text-success font-semibold align-middle">
+                    SAVE UP TO 75%
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBillingCycle('monthly')}
+                  className={cn(
+                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    billingCycle === 'monthly'
+                      ? "bg-primary text-primary-foreground shadow"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                  aria-pressed={billingCycle === 'monthly'}
+                >
+                  Billed Monthly
+                </button>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                {billingCycle === 'yearly'
+                  ? 'Best value — one annual payment, lowest per-month rate.'
+                  : 'Higher per-month rate. Switch to yearly to unlock the launch price.'}
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {tiers.map((tier, idx) => (
                 <Card 
