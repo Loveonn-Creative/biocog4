@@ -60,16 +60,48 @@ const routes = [
     title: 'Senseible — AI Carbon MRV & Climate Finance for MSMEs | senseible.earth',
     description: "India's first AI carbon layer. Turn invoices into verified Scope 1, 2, 3 emissions, carbon credits & green loan eligibility in under 47 seconds. Built for MSMEs, trusted by exporters.",
     keywords: 'carbon credits, carbon accounting, carbon MRV, MSME carbon, climate finance, green loans, CBAM compliance',
-    noscriptContent: `<h1>Senseible — AI Carbon MRV & Climate Finance for MSMEs</h1>
-      <p>Turn invoices into verified Scope 1, 2, 3 emissions, carbon credits, and green loan eligibility in under 47 seconds. India's first AI-powered carbon layer built for MSMEs and trusted by exporters.</p>
-      <h2>What Senseible Does</h2>
-      <ul><li>Upload any invoice → get verified emission data instantly</li><li>CBAM compliance for EU-bound exports</li><li>Carbon credit monetization from verified reductions</li><li>Green loan eligibility with auto-generated disclosures</li></ul>
-      <h2>Tools</h2>
-      <ul><li><a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a> — Free EU carbon border tax estimator</li><li><a href="${SITE_URL}/net-zero">Net-Zero Goal Engine</a> — Build your decarbonization roadmap</li></ul>
-      <h2>Industries</h2>
-      <ul><li><a href="${SITE_URL}/industries/steel">Steel Manufacturing</a></li><li><a href="${SITE_URL}/industries/textile">Textile & Apparel</a></li><li><a href="${SITE_URL}/industries/chemical">Chemical Industry</a></li><li><a href="${SITE_URL}/industries/logistics">Logistics & Transport</a></li></ul>
+    noscriptContent: `<h1>Senseible — AI Carbon MRV &amp; Climate Finance for 400 Million MSMEs</h1>
+      <p>Senseible is infrastructure-grade carbon Measurement, Reporting and Verification (MRV) software that transforms invoices, utility bills and logistics documents into verified Scope 1, 2 and 3 emissions, tradeable carbon credits, or compliance-ready disclosures in under 47 seconds. Built for the 400 million MSMEs across India, Bangladesh, Vietnam, Indonesia, Thailand, the Philippines, Pakistan, Singapore, Malaysia and Sri Lanka who lack accessible carbon accounting tools.</p>
+      <h2>How Senseible Works</h2>
+      <ol>
+        <li><strong>Upload any business document</strong> — invoices, GST e-invoices, electricity bills, fuel receipts, freight records or purchase orders.</li>
+        <li><strong>Deterministic extraction</strong> — OCR pipeline parses line items, HSN codes and quantities with SHA-256 anti-greenwashing deduplication.</li>
+        <li><strong>Automated Scope 1/2/3 mapping</strong> — every line item is matched against IEA 2023 grid factors and GHG Protocol categories using a deterministic HSN-to-scope lookup.</li>
+        <li><strong>Issue credits or compliance reports</strong> — verified carbon outcomes ready for VERRA, Gold Standard, BIS, BRSR, GRI, TCFD, CSRD or CBAM.</li>
+      </ol>
+      <h2>Why MSMEs Choose Senseible</h2>
+      <ul>
+        <li>Processing time under 47 seconds per document, first response under 2 seconds.</li>
+        <li>Compatible with VERRA, Gold Standard, BIS, GHG Protocol, ISO 14064, ISO 14067, GLEC and PCAF.</li>
+        <li>Country-aware: 11 languages, localised emission factors and Tax IDs for 10 Asian markets.</li>
+        <li>Private-by-default Row Level Security with SHA-256 hashing for universal document deduplication.</li>
+        <li>Free Snapshot tier forever; paid Biocog tiers from ₹499/month on yearly billing (₹1,999/month if billed monthly).</li>
+      </ul>
+      <h2>Scope 1, 2 and 3 Emissions</h2>
+      <p>Scope 1 covers direct emissions from owned sources like fuel and generators. Scope 2 covers indirect emissions from purchased electricity, calculated against country grid factors (India 0.708, Bangladesh 0.623, Vietnam 0.625, Indonesia 0.761 kgCO₂/kWh). Scope 3 covers all other value-chain emissions including purchased goods, logistics, business travel and end-of-life — typically 65–90% of an MSME's total footprint.</p>
+      <h2>CBAM &amp; EU Compliance</h2>
+      <p>The EU Carbon Border Adjustment Mechanism became financially active in January 2026. Indian, Bangladeshi and Vietnamese exporters of steel, aluminium, cement, fertiliser, hydrogen and electricity must submit verified embedded emissions per tonne or pay default-value penalties. Use the <a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a> to model exposure across CN customs codes and the 2026–2034 phase-in.</p>
+      <h2>Pricing</h2>
+      <p>Biocog Snapshot is free forever. Biocog Essential is ₹499/month billed yearly (₹1,999/month billed monthly). Biocog Pro is ₹4,999/month billed yearly (₹9,999/month billed monthly). Biocog Scale starts at ₹15,000/month base + ₹99 per employee on yearly billing. Yearly billing unlocks the launch price; switching from monthly saves up to 75% on Essential and 50% on Pro.</p>
+      <h2>Free Calculators</h2>
+      <ul>
+        <li><a href="${SITE_URL}/calculators/pcf">Product Carbon Footprint (ISO 14067)</a></li>
+        <li><a href="${SITE_URL}/calculators/supplier-risk">Supplier &amp; Scope 3 Risk</a></li>
+        <li><a href="${SITE_URL}/calculators/energy-transition">Solar / Energy Transition Savings</a></li>
+        <li><a href="${SITE_URL}/calculators/logistics">Logistics Emissions (GLEC)</a></li>
+        <li><a href="${SITE_URL}/calculators/carbon-pricing">EU ETS Carbon Pricing Impact</a></li>
+        <li><a href="${SITE_URL}/cbam-calculator">CBAM Cost Estimator</a></li>
+      </ul>
+      <h2>Industries Served</h2>
+      <ul>
+        <li><a href="${SITE_URL}/industries/steel">Steel manufacturing</a> — CBAM-priority sector</li>
+        <li><a href="${SITE_URL}/industries/textile">Textile &amp; apparel</a> — EU CSDDD supply-chain reporting</li>
+        <li><a href="${SITE_URL}/industries/chemical">Chemicals</a> — Scope 1 fugitive emissions</li>
+        <li><a href="${SITE_URL}/industries/logistics">Logistics &amp; freight</a> — GLEC v3 compliant</li>
+      </ul>
       <h2>Countries Served</h2>
-      <p>India, Bangladesh, Indonesia, Vietnam, Philippines, Pakistan, Thailand, Malaysia, Singapore, Sri Lanka</p>`,
+      <p>India, Bangladesh, Indonesia, Vietnam, Philippines, Pakistan, Thailand, Malaysia, Singapore and Sri Lanka — each with localised grid factors, regulatory IDs and language support.</p>
+      <p><em>Senseible is not affiliated with Sensibull (an options-trading platform). Senseible is the climate-tech platform at senseible.earth, built by the Biocog team in Gurugram, India.</em></p>`,
   },
   {
     path: '/about',
