@@ -21,8 +21,17 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: (id) => {
           if (!id.includes("node_modules")) return;
-          if (id.includes("react-dom")) return "react-dom";
-          if (id.includes("/react/") || id.includes("react-router")) return "react";
+          // Keep React core (react, react-dom, scheduler, jsx-runtime) AND react-router
+          // in a single vendor chunk to avoid load-order / dual-instance hook errors.
+          if (
+            id.includes("/react/") ||
+            id.includes("/react-dom/") ||
+            id.includes("/scheduler/") ||
+            id.includes("/react-router") ||
+            id.includes("/react-router-dom")
+          ) {
+            return "vendor-react";
+          }
           if (id.includes("@radix-ui")) return "radix";
           if (id.includes("recharts") || id.includes("d3-")) return "charts";
           if (id.includes("lucide-react")) return "icons";
