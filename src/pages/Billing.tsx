@@ -80,6 +80,7 @@ const Billing = () => {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [autopayEnabled, setAutopayEnabled] = useState(false);
+  const [activeSub, setActiveSub] = useState<{ billing_cycle: string; expires_at: string | null } | null>(null);
 
   useEffect(() => {
     if (!sessionLoading && !isAuthenticated) {
@@ -126,6 +127,17 @@ const Billing = () => {
         .limit(10);
       
       if (invoiceData) setInvoices(invoiceData);
+
+      // Fetch active subscription (cycle + renewal)
+      const { data: subData } = await supabase
+        .from('subscriptions')
+        .select('billing_cycle, expires_at')
+        .eq('user_id', user!.id)
+        .eq('status', 'active')
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (subData) setActiveSub(subData);
     } catch (error) {
       console.error('Error fetching billing data:', error);
     } finally {
@@ -244,7 +256,13 @@ const Billing = () => {
                 <div>
                   <CardTitle className="text-lg">{tierLabel} Plan</CardTitle>
                   <CardDescription>
-                    {isPremium ? 'Your subscription is active' : 'Upgrade to unlock more features'}
+                    {isPremium
+                      ? `${activeSub?.billing_cycle === 'yearly' ? 'Yearly' : activeSub?.billing_cycle === 'monthly' ? 'Monthly' : 'Active'} billing${
+                          activeSub?.expires_at
+                            ? ` · Renews ${new Date(activeSub.expires_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`
+                            : ''
+                        }`
+                      : 'Upgrade to unlock more features'}
                   </CardDescription>
                 </div>
               </div>

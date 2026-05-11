@@ -23,6 +23,7 @@ import { useRazorpay } from '@/hooks/useRazorpay';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
+import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
 
 interface PricingTier {
   id: string;
@@ -402,6 +403,9 @@ const Pricing = () => {
       <Navigation />
 
       <main className="relative z-10">
+        <div className="pt-6">
+          <SubscriptionStatusBanner />
+        </div>
         {/* Hero Section */}
         <section className="container mx-auto px-4 pt-12 pb-16 text-center">
           <div className="max-w-3xl mx-auto">
