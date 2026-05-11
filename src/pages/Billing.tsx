@@ -256,7 +256,13 @@ const Billing = () => {
                 <div>
                   <CardTitle className="text-lg">{tierLabel} Plan</CardTitle>
                   <CardDescription>
-                    {isPremium ? 'Your subscription is active' : 'Upgrade to unlock more features'}
+                    {isPremium
+                      ? `${activeSub?.billing_cycle === 'yearly' ? 'Yearly' : activeSub?.billing_cycle === 'monthly' ? 'Monthly' : 'Active'} billing${
+                          activeSub?.expires_at
+                            ? ` · Renews ${new Date(activeSub.expires_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`
+                            : ''
+                        }`
+                      : 'Upgrade to unlock more features'}
                   </CardDescription>
                 </div>
               </div>
