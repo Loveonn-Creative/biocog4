@@ -21,6 +21,8 @@ Allow: /carbon-credits
 Allow: /climate-finance
 Allow: /partners
 Allow: /grants
+Allow: /llms.txt
+Allow: /md/
 Disallow: /api/
 Disallow: /auth
 Disallow: /settings

@@ -371,4 +371,17 @@
   <url><loc>https://senseible.earth/calculators/energy-transition-savings</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://senseible.earth/calculators/logistics-emissions</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://senseible.earth/calculators/carbon-pricing-impact</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- AI discovery surfaces (llms.txt + markdown mirrors of high-value pages) -->
+  <url><loc>https://senseible.earth/llms.txt</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://senseible.earth/md/index.md</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://senseible.earth/md/cbam-calculator.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://senseible.earth/md/net-zero.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://senseible.earth/md/calculators.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://senseible.earth/md/pricing.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://senseible.earth/md/about.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/md/mission.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/md/principles.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/md/carbon-credits.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://senseible.earth/md/climate-finance.md</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
