@@ -1,99 +1,99 @@
+## Goal
 
-# Plan: Yearly Billing + Targeted SEO/GEO Upgrades
+Infrastructure-only AI/SEO discoverability upgrades + targeted, non-duplicate long-form content. Zero changes to existing pages, routes, schemas, DB, RLS, edge functions, or UI.
 
-Two independent workstreams. Both preserve current architecture, page UI, and minimalist homepage aesthetic.
+## Current state (verified)
 
----
+- `public/robots.txt` — present, healthy, allows core public paths
+- `public/sitemap.xml` — 373 lines, hand-maintained, includes core + solutions + industries
+- `supabase/functions/generate-sitemap` — dynamic alternate also exists (covers CMS slugs)
+- `src/data/cmsContent.ts` — **103 published articles already exist**, including many overlapping the user's list (e.g. "what-is-carbon-mrv-and-why-msmes-need-it-2026", "scope-1-2-3-emissions-simple-guide-small-business", "scope-3-calculator-bangladesh-textile-exporters", BRSR, ESG, green-loans, CBAM)
+- No `public/llms.txt` yet
+- No markdown mirrors of pages yet
+- `SEOHead.tsx` already injects JSON-LD, breadcrumbs, FAQ, HowTo — do NOT touch
 
-## Part A — Pricing: Yearly vs Monthly billing cycle
+## Priority 1 — Infrastructure (this phase)
 
-### Current reality
-- `Pricing.tsx` shows ₹499 (Essential) and ₹4,999 (Pro) labelled as `/month`, `originalPrice` ₹1,999 / ₹9,999.
-- `useRazorpay` + `create-razorpay-order` only know one price per tier (paise hardcoded). No billing cycle concept.
-- `subscriptions` table stores `amount` and `expires_at` (1 month).
+### 1. `public/llms.txt` (new, static)
+Single flat markdown file at root following llmstxt.org spec. Sections:
+- H1 Senseible + one-line summary
+- What Senseible is, who it serves (MSMEs in India + emerging Asia), what it does (carbon MRV → revenue in <47s), regulatory coverage (CBAM, BRSR, GHG Protocol)
+- `## Core product` — links to /, /verify, /monetize, /calculators, /cbam-calculator, /net-zero
+- `## Knowledge` — links to top 20 highest-value CMS articles (CBAM, scope 3, MRV, BRSR, green finance) — selected from existing 103, not new
+- `## Solutions` — 5–8 representative `/solutions/*` country+sector pages
+- `## Industries` — link to /industries hub
+- `## Optional` — /about, /mission, /principles, /pricing, /partners
+- Exclude all auth, dashboard, admin, partner-dashboard, settings, billing, profile, /api/*
 
-### Pricing logic to enforce (no price changes)
-| Tier | Yearly (per-month equivalent) | Monthly |
-|---|---|---|
-| Essential | ₹499/mo (billed ₹5,988/yr) | ₹1,999/mo |
-| Pro | ₹4,999/mo (billed ₹59,988/yr) | ₹9,999/mo |
-| Scale | base ₹15,000 + ₹99/employee yearly equivalent (existing) / 2x for monthly | same model |
-| Snapshot | Free | Free |
+### 2. Markdown mirrors (new, static, additive only)
+Create `public/md/` directory with clean markdown mirrors of **only existing high-value pages** so LLM crawlers can ingest structured content without parsing JS shell. ~10 mirrors:
+- `public/md/index.md` (homepage explainer)
+- `public/md/cbam-calculator.md`
+- `public/md/net-zero.md`
+- `public/md/calculators.md`
+- `public/md/pricing.md`
+- `public/md/about.md`
+- `public/md/mission.md`
+- `public/md/principles.md`
+- `public/md/carbon-credits.md`
+- `public/md/climate-finance.md`
 
-### UI changes (Pricing.tsx only)
-1. Add a single **Billed Yearly (save ~75% / 50%) ↔ Billed Monthly** toggle at the top of the MSME tier grid (default = Yearly so the displayed prices remain ₹499 / ₹4,999 — the headline price never changes on first paint).
-2. When toggled to Monthly, prices switch to ₹1,999 / ₹9,999 with strikethrough on the yearly equivalent + microcopy: "Save ₹18,000/yr — switch to yearly".
-3. Each tier card shows the effective annual cost beneath the price.
-4. **Auto-redirect-to-yearly behaviour**: When user clicks "Subscribe" on a card while Monthly is selected, show a one-step inline confirmation chip ("Switch to yearly and save ₹X — Yes / No, continue monthly"). "Yes" flips state to yearly and proceeds. This satisfies "redirect yearly subscription automatically, if opt for monthly removal reduction" without a hard hijack.
-5. Toggle state passed into `handleSubscribe(tierId, cycle)`.
+Each mirror = plain markdown derived from the live page's existing copy (no new claims). Linked from llms.txt. Zero impact on live React routes.
 
-### Backend / payment changes
-1. `useRazorpay.initiatePayment` accepts `billingCycle: 'monthly' | 'yearly'`.
-2. `create-razorpay-order` edge function: extend `PLAN_PRICES` to a 2-D map keyed by `{tier, cycle}`:
-   - essential.monthly = 199900 paise / yearly = 598800 paise
-   - pro.monthly = 999900 / yearly = 5998800
-   - scale unchanged structure, yearly = 12× monthly with 17% discount applied
-   - Validates input, falls back to monthly on missing.
-3. `verify-razorpay-payment`: compute `expiresAt` as +1 month or +12 months from `cycle` (passed through Razorpay order notes so signature stays trustworthy — read from the fetched Razorpay order's `notes.cycle`).
-4. `subscriptions` table: add nullable `billing_cycle text` column (default 'monthly') via migration so history is preserved.
-5. Invoice generator (`generate-invoice-pdf`): include billing cycle line item.
+### 3. `public/sitemap.xml` optimization (in-place edit, no replacement)
+- Refresh `<lastmod>` to today
+- Re-tier `<priority>` so true money pages (/, /cbam-calculator, /net-zero, /calculators, /pricing, /climate-intelligence) sit at 0.9–1.0 and low-value legal pages drop to 0.2
+- Tighten `<changefreq>` (calculators monthly → quarterly already fine; legal yearly)
+- Add `<loc>` for `/llms.txt` and `/md/*.md` mirrors so crawlers discover them
+- Do NOT change which URLs are indexed; do NOT remove entries
 
-### What stays unchanged
-- Razorpay keys, secrets, RLS policies, profile schema, partner/enterprise/API tier flows, Scale "Talk to sales" route, Snapshot free flow.
+### 4. `public/robots.txt` (tiny additive edit)
+- Add `Sitemap: https://senseible.earth/sitemap.xml` line if missing
+- Add `Allow: /llms.txt` and `Allow: /md/`
 
----
+## Priority 2 — Content (gap-filtered, quality-first)
 
-## Part B — SEO / GEO upgrades (evaluated, not blindly applied)
+Cross-checked the user's ~280 proposed titles against the 103 existing slugs. Many are already covered (carbon MRV basics, scope 1/2/3 simple guide, BRSR, CBAM checklists, green finance for textiles, Bangladesh/Vietnam/Thailand sector pages, scope 3 supply chain, etc.). Skipping duplicates entirely.
 
-### What the audit asked for vs reality (so we only do what helps)
+**Phase 2A — ship now (8–10 articles), only genuine gaps, full-length 1,500–2,500 words each, with FAQ schema-ready Q&A blocks, tables, callouts:**
 
-| Recommendation | Already done? | Action |
-|---|---|---|
-| `defer`/`async` on scripts | `<script type="module">` is **already deferred by spec** | Skip — no-op |
-| Inline critical CSS | Vite injects a single CSS file in `<head>` (render-blocking) | **Do**: add `<link rel="preload" as="style">` + small inline above-the-fold CSS for hero |
-| Vite manualChunks | Not configured | **Do**: split `react`, `react-dom`, `@radix-ui/*`, `recharts`, `lucide-react` so initial bundle drops |
-| Homepage 600+ words crawlable | Static generator emits ~80-word noscript on `/`. JS-rendered hero is intentionally minimal (per memory: minimalist, no marketing on home) | **Do**: expand the **noscript** block in `scripts/generate-static-html.js` to 700+ semantically structured words — invisible to the user, fully visible to crawlers and AI bots. Preserves homepage aesthetic. |
-| FAQ schema | Already present in `index.html` | **Augment**: add 4 more high-intent Q&As (CBAM cost, Scope 3 for MSMEs, green loan eligibility, yearly vs monthly billing) |
-| Product schema for SaaS | Missing | **Add** `Product` + `Offer` JSON-LD reflecting the new yearly/monthly prices in `index.html` |
+1. `carbon-accounting-frequency-msme-when-to-measure` — How often to measure (monthly vs quarterly vs annual, by company size)
+2. `diy-vs-consultant-carbon-accounting-msme-decision-framework` — DIY vs hire decision matrix
+3. `carbon-credit-pricing-explained-vcm-compliance-2026` — How carbon credits are actually priced (VCM vs compliance, $/tCO2e ranges)
+4. `carbon-offsets-vs-carbon-credits-difference-explained` — Offsets vs credits terminology (genuinely missing)
+5. `mrv-vs-traditional-audit-carbon-verification-compared` — MRV vs traditional audit
+6. `climate-risk-vs-esg-difference-financial-institutions` — Climate risk vs ESG for lenders
+7. `transition-finance-vs-green-finance-borrower-guide` — Transition vs green finance for borrowers
+8. `spend-based-vs-activity-based-scope-3-method-choice` — Calculation method selection for scope 3
+9. `supplier-emissions-data-collection-playbook-msme` — Getting supplier data when they won't share
+10. `audit-grade-carbon-data-what-it-actually-means` — "Audit-grade accuracy" demystified
 
-### Concrete changes
-1. **`vite.config.ts`** — add `build.rollupOptions.output.manualChunks` (vendor / radix / charts / icons). Pure perf, zero behavior change.
-2. **`index.html`** —
-   - `<link rel="preconnect" href="https://kobsfphgfvyjozjwkuhp.supabase.co">` + `dns-prefetch` for fonts/razorpay.
-   - `<link rel="preload" as="image" href="/og-image.png" fetchpriority="high">` only if used above the fold (verify first).
-   - Tiny inline `<style>` block with hero layout primitives (body bg, font-family, container width) to prevent FOUC and unblock FCP.
-   - Add `Product` JSON-LD with two `Offer` entries (yearly/monthly) per paid tier.
-   - Append the 4 new FAQ entries.
-3. **`scripts/generate-static-html.js`** — replace the `/` route's `noscriptContent` with a 700+ word block:
-   - H1 (matches current tagline)
-   - "How Senseible Works" 4-step ordered list
-   - "Why MSMEs Choose Senseible" stat list (400M MSMEs, 47s, frameworks)
-   - Scope 1/2/3 explainer paragraph
-   - CBAM section with internal link
-   - Country coverage table (10 countries with grid factor)
-   - Pricing summary mentioning yearly/monthly (helps GEO answer "how much does Senseible cost")
-   - Footer of internal links to /calculators, /industries/*, /cms, /pricing
-4. **No visible UI change to `Index.tsx`** — keeps the minimalist homepage rule.
+All append-only to `src/data/cmsContent.ts`. No slug collisions (verified). No edits to existing 103 articles. Each uses the same `CMSArticle` shape already in the file → `/climate-intelligence/:slug` route auto-serves them with existing SEO/JSON-LD.
 
-### Validation
-- After build: `curl https://senseible.earth/ | wc -w` should show 700+ words in HTML source.
-- Lighthouse run after deploy to confirm FCP/LCP improvement; manualChunks should cut main bundle by ~30–40%.
+**Phase 2B — backlog (record, do not write half-baked):**
+A `.lovable/content-backlog.md` file listing the remaining ~150 candidate titles that survived dedupe, grouped by cluster (RWA tokenization, credit-decision fairness, green finance careers, climate risk modeling deep-dives, ESG compliance ops). Documented so future runs don't re-propose or collide. Not published.
 
----
+## Out of scope (explicit)
 
-## Out of scope (explicitly)
-- No changes to homepage React UI, hero, or visible copy.
-- No changes to pricing amounts, partner tiers, or Scale per-employee math.
-- No new pages, no marketing additions to `/`.
-- No changes to RLS, auth, calculators, CMS, voice AI.
+- No edits to: existing pages, routes, components, `SEOHead.tsx`, `App.tsx`, edge functions, DB schema, RLS, billing, Razorpay logic, vite config, index.html `<head>`, existing 103 CMS articles
+- No new dependencies
+- No bundle-size changes (static files only + plain text append to existing data file)
+- No design/UX changes
 
-## File touch list
-- `src/pages/Pricing.tsx` (toggle + handler)
-- `src/hooks/useRazorpay.ts` (cycle param)
-- `supabase/functions/create-razorpay-order/index.ts` (price map)
-- `supabase/functions/verify-razorpay-payment/index.ts` (expiry math)
-- `supabase/functions/generate-invoice-pdf/index.ts` (cycle line)
-- New migration: add `billing_cycle` to `subscriptions`
-- `vite.config.ts` (manualChunks)
-- `index.html` (preconnect, inline critical CSS, Product schema, +4 FAQs)
-- `scripts/generate-static-html.js` (expanded `/` noscript)
+## Files touched
+
+Created:
+- `public/llms.txt`
+- `public/md/index.md`, `pricing.md`, `cbam-calculator.md`, `net-zero.md`, `calculators.md`, `about.md`, `mission.md`, `principles.md`, `carbon-credits.md`, `climate-finance.md`
+- `.lovable/content-backlog.md`
+
+Edited (additive only):
+- `public/sitemap.xml` (lastmod refresh, priority tiering, add llms.txt + md mirrors)
+- `public/robots.txt` (add Sitemap directive + Allow lines)
+- `src/data/cmsContent.ts` (append 10 articles to end of array)
+
+## Verification
+
+- Confirm `/llms.txt`, `/md/*.md`, `/sitemap.xml`, `/robots.txt` all return 200
+- Spot-check 2 new CMS slugs render at `/climate-intelligence/:slug`
+- No build/preview regressions (static files don't enter bundle; data file append is tree-shaken text)
