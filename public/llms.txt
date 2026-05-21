@@ -1,0 +1,82 @@
+# Senseible
+
+> Senseible turns ordinary business documents — invoices, energy bills, fuel slips — into verified carbon outcomes, compliance evidence, and monetisable climate data in under 47 seconds. Built for MSMEs across India and emerging Asia.
+
+Senseible is an AI-powered carbon Measurement, Reporting and Verification (MRV) infrastructure layer. It is operated as a public, no-login interface (Senseible) that feeds a logged-in B2B reporting workspace (Biocog). The platform deterministically classifies HSN codes against the GHG Protocol, applies IEA 2023 grid factors localised for 10 countries (India, Bangladesh, Indonesia, Vietnam, Philippines, Pakistan, Singapore, Thailand, Malaysia, Sri Lanka), and produces audit-grade Scope 1, 2 and 3 emission records suitable for CBAM, BRSR, GRI, TCFD, ISO 14064, ISO 14067 and GHG Protocol disclosure.
+
+The audience is MSME owners, sustainability leads, exporters facing the EU Carbon Border Adjustment Mechanism, lenders running green-loan books, carbon credit buyers, and ERP/ESG software vendors that need a verification primitive. Senseible is operated by Biocog Technologies (Gurugram, India) and contactable at impact@senseible.earth.
+
+## Core product
+
+- [Senseible homepage](/): single-input surface to upload, capture, or speak a document and receive a verified emission estimate.
+- [Verify](/verify): deterministic verification flow with confidence bands, SHA-256 evidence hashes, and dispute simulation.
+- [Monetize](/monetize): converts verified evidence into carbon credit and green finance signals.
+- [Calculators hub](/calculators): five free public calculators (PCF, supplier risk, energy transition, logistics, carbon pricing).
+- [CBAM cost calculator](/cbam-calculator): EU CBAM exposure estimator using CN customs codes and quarterly default values.
+- [Net-Zero engine](/net-zero): five-step roadmap turning a baseline into tracked, sector-specific reduction tasks.
+- [Industries](/industries): sector landing pages for 15 MSME industries.
+- [Marketplace](/marketplace): MSME-issued credit listings with provenance badges.
+- [Partner portal](/partners): integrations for carbon buyers, banks, ERP and climate-finance partners.
+
+## Knowledge
+
+Long-form, fact-checked articles. Each is published at `/climate-intelligence/{slug}`.
+
+- [What is carbon MRV and why MSMEs need it](/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026): plain-English MRV explainer for non-technical owners.
+- [Scope 1, 2, 3 emissions — simple guide for small business](/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business): jargon-free scope walkthrough.
+- [EU CBAM explained for emerging-market exporters](/climate-intelligence/eu-cbam-explained-emerging-market-exporters): how CBAM works, who pays, when.
+- [CBAM compliance cost for Indian steel exporters 2026–2034](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034): per-tonne cost forecast and mitigation.
+- [Steel and aluminium exporters CBAM compliance checklist](/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist): step-by-step pre-export readiness.
+- [CBAM default values vs actual emissions — MSME decision guide](/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide): when each method saves money.
+- [How to get green loans in India with carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data): SIDBI, IREDA and SLL pathways.
+- [Green finance for textile exporters — step by step](/climate-intelligence/green-finance-textile-exporters-step-by-step): financing playbook for RMG and apparel.
+- [BRSR reporting requirements in India](/climate-intelligence/brsr-reporting-requirements-india): regulatory baseline for listed-equivalent MSMEs.
+- [BRSR reporting for small manufacturers — preparation guide](/climate-intelligence/brsr-reporting-small-manufacturer-preparation): readiness checklist.
+- [Scope 3 calculator for Bangladesh textile exporters](/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters): supplier emissions playbook.
+- [Scope 3 emissions supply-chain MSME calculator](/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator): bottom-up supplier modelling.
+- [How to calculate carbon footprint from electricity bills](/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills): worked example using IEA grid factors.
+- [Documents needed for carbon verification](/climate-intelligence/documents-needed-carbon-verification): exhaustive evidence list.
+- [Emission factors selection guidance](/climate-intelligence/emission-factors-selection-guidance): tier-1 vs tier-2 factor choice.
+- [ISO 14067 vs GHG Protocol Product Standard explained](/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained): standard comparison.
+- [Scope 2 market-based vs location-based MSME guide](/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide): RE certificate accounting.
+- [MSME net-zero roadmap in 12 months without consultants](/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants): DIY decarbonisation plan.
+- [How to file EU carbon tax report — MSME guide](/climate-intelligence/how-to-file-eu-carbon-tax-report-msme-guide): CBAM declaration walkthrough.
+- [How Senseible is different from Sensibull](/climate-intelligence/what-is-senseible-different-from-sensibull): brand disambiguation.
+
+## Solutions
+
+Country × sector × regulation landing pages with embedded calculators.
+
+- [CBAM for steel exporters in India](/solutions/cbam-steel-india)
+- [Scope 3 for textile exporters in Bangladesh](/solutions/scope3-textile-bangladesh)
+- [CBAM for chemicals exporters in Vietnam](/solutions/cbam-chemicals-vietnam)
+- [Scope 3 for manufacturing in Indonesia](/solutions/scope3-manufacturing-indonesia)
+- [Carbon audit for manufacturing in Philippines](/solutions/carbon-audit-manufacturing-philippines)
+- [Green finance for textile in Pakistan](/solutions/green-finance-textile-pakistan)
+- [CBAM for steel in Thailand](/solutions/cbam-steel-thailand)
+- [Carbon audit for manufacturing in Malaysia](/solutions/carbon-audit-manufacturing-malaysia)
+
+## Markdown mirrors
+
+Plain-text mirrors of the highest-value live pages, intended for AI ingestion without executing the JavaScript shell.
+
+- [Homepage](/md/index.md)
+- [CBAM calculator](/md/cbam-calculator.md)
+- [Net-Zero engine](/md/net-zero.md)
+- [Calculators hub](/md/calculators.md)
+- [Pricing](/md/pricing.md)
+- [About](/md/about.md)
+- [Mission](/md/mission.md)
+- [Principles](/md/principles.md)
+- [Carbon credits](/md/carbon-credits.md)
+- [Climate finance](/md/climate-finance.md)
+
+## Optional
+
+- [About Senseible](/about)
+- [Mission](/mission)
+- [Operating principles](/principles)
+- [Pricing](/pricing)
+- [Partner programs](/partners)
+- [Contact](/contact)
+- [Sitemap](/sitemap.xml)
