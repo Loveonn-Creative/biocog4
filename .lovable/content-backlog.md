@@ -1,8 +1,16 @@
-# Content backlog — Phase 2B
+# Content backlog — Phase 2C
 
-Titles surfaced from FindQuestions user-demand research that survived dedupe against the 103 existing CMS articles AND were not selected for the Phase 2A ship (10 articles). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
+Titles surfaced from FindQuestions user-demand research that survived dedupe against the 119 existing CMS articles AND were not selected for Phase 2A (10 articles, IDs 104–113) or Phase 2B (6 articles, IDs 114–119). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
 
-Last updated: 2026-05-21.
+Last updated: 2026-05-22.
+
+## Phase 2B ship log (now live, do not re-author)
+- realistic-income-from-selling-carbon-credits-msme (id 114, carbon-standards)
+- how-to-vet-a-legitimate-carbon-credit-platform (id 115, data-traceability)
+- mrv-vs-esg-reporting-where-they-overlap-and-differ (id 116, data-traceability)
+- how-to-choose-an-mrv-provider-msme-checklist (id 117, data-traceability)
+- green-loan-vs-traditional-loan-real-cost-comparison (id 118, regulations)
+- green-loan-rejection-reasons-and-how-to-fix-them (id 119, regulations)
 
 ## Cluster A — Carbon credits monetisation (individual / SMB earner angle)
 - How much money can you make selling carbon credits (realistic ranges)
