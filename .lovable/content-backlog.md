@@ -39,7 +39,7 @@ Last updated: 2026-05-22.
 - Data quality tiers in scope 3 (already partially covered — expand)
 
 ## Cluster D — MRV product education
-- MRV vs ESG reporting overlap
+- ~~MRV vs ESG reporting overlap~~ (shipped as id 116)
 - MRV for nature-based projects (forestry, agroforestry)
 - MRV with legacy / offline source systems
 - Blockchain in MRV: realistic role
