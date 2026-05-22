@@ -1,14 +1,22 @@
-# Content backlog — Phase 2B
+# Content backlog — Phase 2C
 
-Titles surfaced from FindQuestions user-demand research that survived dedupe against the 103 existing CMS articles AND were not selected for the Phase 2A ship (10 articles). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
+Titles surfaced from FindQuestions user-demand research that survived dedupe against the 119 existing CMS articles AND were not selected for Phase 2A (10 articles, IDs 104–113) or Phase 2B (6 articles, IDs 114–119). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
 
-Last updated: 2026-05-21.
+Last updated: 2026-05-22.
+
+## Phase 2B ship log (now live, do not re-author)
+- realistic-income-from-selling-carbon-credits-msme (id 114, carbon-standards)
+- how-to-vet-a-legitimate-carbon-credit-platform (id 115, data-traceability)
+- mrv-vs-esg-reporting-where-they-overlap-and-differ (id 116, data-traceability)
+- how-to-choose-an-mrv-provider-msme-checklist (id 117, data-traceability)
+- green-loan-vs-traditional-loan-real-cost-comparison (id 118, regulations)
+- green-loan-rejection-reasons-and-how-to-fix-them (id 119, regulations)
 
 ## Cluster A — Carbon credits monetisation (individual / SMB earner angle)
-- How much money can you make selling carbon credits (realistic ranges)
+- ~~How much money can you make selling carbon credits~~ (shipped as id 114)
 - Can a non-corporate individual monetise carbon credits
 - Carbon credit side-income mechanics for freelancers
-- How to spot a legitimate carbon credit platform — vetting checklist
+- ~~How to spot a legitimate carbon credit platform~~ (shipped as id 115)
 - Hidden costs and payout timelines in carbon credit programs
 - Stacking multiple carbon monetisation income streams
 - First-year realistic income from carbon monetisation
@@ -31,11 +39,11 @@ Last updated: 2026-05-21.
 - Data quality tiers in scope 3 (already partially covered — expand)
 
 ## Cluster D — MRV product education
-- MRV vs ESG reporting overlap
+- ~~MRV vs ESG reporting overlap~~ (shipped as id 116)
 - MRV for nature-based projects (forestry, agroforestry)
 - MRV with legacy / offline source systems
 - Blockchain in MRV: realistic role
-- MRV provider selection criteria
+- ~~MRV provider selection criteria~~ (shipped as id 117)
 - MRV implementation timeline for mid-sized companies
 
 ## Cluster E — Real-world asset tokenisation
@@ -65,8 +73,8 @@ Last updated: 2026-05-21.
 - CSRD double-materiality (already in cms — expand to lender variant)
 
 ## Cluster H — Green finance practical (borrower angle)
-- Green loan vs traditional loan — real cost comparison
-- Green loan rejection reasons and how to fix them
+- ~~Green loan vs traditional loan — real cost comparison~~ (shipped as id 118)
+- ~~Green loan rejection reasons and how to fix them~~ (shipped as id 119)
 - Refinancing existing debt into green loan
 - Climate-resilience loans for property owners
 - Green loan documentation pack
