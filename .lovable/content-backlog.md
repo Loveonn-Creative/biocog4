@@ -1,10 +1,18 @@
-# Content backlog — Phase 2C
+# Content backlog — Phase 2D
 
-Titles surfaced from FindQuestions user-demand research that survived dedupe against the 119 existing CMS articles AND were not selected for Phase 2A (10 articles, IDs 104–113) or Phase 2B (6 articles, IDs 114–119). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
+Titles surfaced from FindQuestions user-demand research that survived dedupe against existing CMS articles AND were not selected for Phases 2A (IDs 104–113), 2B (IDs 114–119), or 2C (IDs 120–125). Recorded here to prevent collision and re-proposal in future runs. **Do not write half-baked. Each title is queued for a future dedicated authoring pass.**
 
-Last updated: 2026-05-22.
+Last updated: 2026-05-23.
 
-## Phase 2B ship log (now live, do not re-author)
+## Phase 2C ship log (now live, do not re-author)
+- carbon-careers-salary-roles-india-asia-2026 (id 120, regulations) — Cluster B
+- real-world-asset-tokenisation-explained-for-msme-finance (id 121, regulations) — Cluster E
+- physical-vs-transition-climate-risk-financial-institutions (id 122, regulations) — Cluster F
+- esg-readiness-assessment-msme-step-by-step-2026 (id 123, regulations) — Cluster G
+- algorithmic-bias-credit-decisions-borrower-rights-2026 (id 124, regulations) — Cluster I (covers Five Cs, appeals, fairness)
+- scope-3-data-quality-tiers-software-buyer-guide-2026 (id 125, supply-chain) — Cluster C
+
+## Phase 2B ship log (live, do not re-author)
 - realistic-income-from-selling-carbon-credits-msme (id 114, carbon-standards)
 - how-to-vet-a-legitimate-carbon-credit-platform (id 115, data-traceability)
 - mrv-vs-esg-reporting-where-they-overlap-and-differ (id 116, data-traceability)
