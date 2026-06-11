@@ -1,99 +1,83 @@
+# Trust & Technical Validation Page — Plan
+
 ## Goal
 
-Infrastructure-only AI/SEO discoverability upgrades + targeted, non-duplicate long-form content. Zero changes to existing pages, routes, schemas, DB, RLS, edge functions, or UI.
+A single public page at `/trust` (titled "Trust & Technical Validation") that explains *how* Senseible validates MSME climate data — for partners, auditors, climate-finance providers, credit buyers, enterprises, and investors. Modeled on the existing `Industries` page pattern (category-tabbed long-form), matching current theme, nav, and SEO architecture. **No changes to logic, math, calculators, schemas, or edge functions.**
 
-## Current state (verified)
+## Scope (presentation-only)
 
-- `public/robots.txt` — present, healthy, allows core public paths
-- `public/sitemap.xml` — 373 lines, hand-maintained, includes core + solutions + industries
-- `supabase/functions/generate-sitemap` — dynamic alternate also exists (covers CMS slugs)
-- `src/data/cmsContent.ts` — **103 published articles already exist**, including many overlapping the user's list (e.g. "what-is-carbon-mrv-and-why-msmes-need-it-2026", "scope-1-2-3-emissions-simple-guide-small-business", "scope-3-calculator-bangladesh-textile-exporters", BRSR, ESG, green-loans, CBAM)
-- No `public/llms.txt` yet
-- No markdown mirrors of pages yet
-- `SEOHead.tsx` already injects JSON-LD, breadcrumbs, FAQ, HowTo — do NOT touch
+### New files
 
-## Priority 1 — Infrastructure (this phase)
+- `src/pages/Trust.tsx` — the page
+- `src/data/trustLayerContent.ts` — static content (sections, FAQs, framework matrix, evidence pathways)
+- `public/md/trust.md` — markdown mirror for LLM/AI crawlers (follows existing `public/md/*` pattern)
 
-### 1. `public/llms.txt` (new, static)
-Single flat markdown file at root following llmstxt.org spec. Sections:
-- H1 Senseible + one-line summary
-- What Senseible is, who it serves (MSMEs in India + emerging Asia), what it does (carbon MRV → revenue in <47s), regulatory coverage (CBAM, BRSR, GHG Protocol)
-- `## Core product` — links to /, /verify, /monetize, /calculators, /cbam-calculator, /net-zero
-- `## Knowledge` — links to top 20 highest-value CMS articles (CBAM, scope 3, MRV, BRSR, green finance) — selected from existing 103, not new
-- `## Solutions` — 5–8 representative `/solutions/*` country+sector pages
-- `## Industries` — link to /industries hub
-- `## Optional` — /about, /mission, /principles, /pricing, /partners
-- Exclude all auth, dashboard, admin, partner-dashboard, settings, billing, profile, /api/*
+### Edits (minimal, additive only)
 
-### 2. Markdown mirrors (new, static, additive only)
-Create `public/md/` directory with clean markdown mirrors of **only existing high-value pages** so LLM crawlers can ingest structured content without parsing JS shell. ~10 mirrors:
-- `public/md/index.md` (homepage explainer)
-- `public/md/cbam-calculator.md`
-- `public/md/net-zero.md`
-- `public/md/calculators.md`
-- `public/md/pricing.md`
-- `public/md/about.md`
-- `public/md/mission.md`
-- `public/md/principles.md`
-- `public/md/carbon-credits.md`
-- `public/md/climate-finance.md`
+- `src/App.tsx` — add `<Route path="/trust" element={<Trust />} />` (lazy import, same pattern as siblings)
+- `src/components/Footer.tsx` — add "Trust & Validation" link under Platform/Solutions column
+- `public/sitemap.xml` — add `/trust` entry + `/md/trust.md`
+- `public/robots.txt` — add `Allow: /trust`
+- `public/llms.txt` — add Trust page entry under Platform section
 
-Each mirror = plain markdown derived from the live page's existing copy (no new claims). Linked from llms.txt. Zero impact on live React routes.
+No edits to: Navigation primary menu (footer-only per request), calculators, MRV engines, types, RLS, or any backend.
 
-### 3. `public/sitemap.xml` optimization (in-place edit, no replacement)
-- Refresh `<lastmod>` to today
-- Re-tier `<priority>` so true money pages (/, /cbam-calculator, /net-zero, /calculators, /pricing, /climate-intelligence) sit at 0.9–1.0 and low-value legal pages drop to 0.2
-- Tighten `<changefreq>` (calculators monthly → quarterly already fine; legal yearly)
-- Add `<loc>` for `/llms.txt` and `/md/*.md` mirrors so crawlers discover them
-- Do NOT change which URLs are indexed; do NOT remove entries
+## Page Structure
 
-### 4. `public/robots.txt` (tiny additive edit)
-- Add `Sitemap: https://senseible.earth/sitemap.xml` line if missing
-- Add `Allow: /llms.txt` and `Allow: /md/`
+Hero → sticky in-page nav (anchor links) → 11 thematic sections → FAQ → CTAs (Contact / Partners / Pricing).
 
-## Priority 2 — Content (gap-filtered, quality-first)
+Sections (each a `<section id>` with icon, intro, evidence blocks, no proprietary detail):
 
-Cross-checked the user's ~280 proposed titles against the 103 existing slugs. Many are already covered (carbon MRV basics, scope 1/2/3 simple guide, BRSR, CBAM checklists, green finance for textiles, Bangladesh/Vietnam/Thailand sector pages, scope 3 supply chain, etc.). Skipping duplicates entirely.
+1. **Trust Layers Overview** — 4-layer model: Evidence → Verification → Attestation → Disclosure. Uses existing `TrustScoreGauge` visual language (no logic change, presentation re-use).
+2. **Data Sources & Verification** — Cards for: utility bills, GST/tax invoices, IoT meters, ops records, satellite/geo signals, supplier evidence, ERP imports. Each lists *what we collect, what we verify, what we never store*.
+3. **MRV Architecture** — Public-safe block diagram (ingest → parse → deterministic rules → SHA-256 evidence → attestation). References existing principles from `public/md/principles.md`.
+4. **ESG Intelligence Engine** — How structured outputs map to disclosures (high level only; no algorithms).
+5. **Reporting Frameworks Matrix** — Table: CBAM, BRSR, GHG Protocol, CSRD, ISSB, TCFD, GRI, SBTi — coverage, evidence type, output format. Sourced from `src/lib/reportFrameworks.ts` (read-only).
+6. **Scope 3 Traceability** — Supplier evidence chain, buyer-GSTIN linkage rationale (re-uses public-safe language from existing Scope 3 memory).
+7. **Carbon & Confidence Scoring** — Inputs, weighting categories, grade bands (A+/A/B/C/D) — high-level; mirrors `src/lib/credibilityScore.ts` *description only*, no formulas exposed beyond what's already public.
+8. **Greenwashing Prevention** — SHA-256 dedupe, immutable stubs, explicit-failure principle, cross-tenant isolation.
+9. **Carbon Credit Validation** — Additionality, VCM-readiness flagging, evidence-to-credit linkage, methodology version locking.
+10. **Climate Finance Readiness** — How verified evidence becomes lender-ready signals; embedded-finance eligibility checks.
+11. **Net-Zero Enablement** — Baseline → roadmap → tracked tasks (references `netZeroEngine` capability, not internals).
 
-**Phase 2A — ship now (8–10 articles), only genuine gaps, full-length 1,500–2,500 words each, with FAQ schema-ready Q&A blocks, tables, callouts:**
+Plus:
 
-1. `carbon-accounting-frequency-msme-when-to-measure` — How often to measure (monthly vs quarterly vs annual, by company size)
-2. `diy-vs-consultant-carbon-accounting-msme-decision-framework` — DIY vs hire decision matrix
-3. `carbon-credit-pricing-explained-vcm-compliance-2026` — How carbon credits are actually priced (VCM vs compliance, $/tCO2e ranges)
-4. `carbon-offsets-vs-carbon-credits-difference-explained` — Offsets vs credits terminology (genuinely missing)
-5. `mrv-vs-traditional-audit-carbon-verification-compared` — MRV vs traditional audit
-6. `climate-risk-vs-esg-difference-financial-institutions` — Climate risk vs ESG for lenders
-7. `transition-finance-vs-green-finance-borrower-guide` — Transition vs green finance for borrowers
-8. `spend-based-vs-activity-based-scope-3-method-choice` — Calculation method selection for scope 3
-9. `supplier-emissions-data-collection-playbook-msme` — Getting supplier data when they won't share
-10. `audit-grade-carbon-data-what-it-actually-means` — "Audit-grade accuracy" demystified
+- **Governance & Security** subsection — RLS-by-default, IP hashing, audit ledger, methodology version pinning.
+- **Outcomes** — 3–4 anonymised, generic outcome statements ("a textile exporter cut CBAM exposure by X% after 6 weeks") — no customer names, no confidential numbers; clearly labelled "illustrative".
+- **FAQ** — 8–10 Qs targeting partner/auditor/buyer/lender intents (feeds FAQPage schema).
 
-All append-only to `src/data/cmsContent.ts`. No slug collisions (verified). No edits to existing 103 articles. Each uses the same `CMSArticle` shape already in the file → `/climate-intelligence/:slug` route auto-serves them with existing SEO/JSON-LD.
+## Design & UX
 
-**Phase 2B — backlog (record, do not write half-baked):**
-A `.lovable/content-backlog.md` file listing the remaining ~150 candidate titles that survived dedupe, grouped by cluster (RWA tokenization, credit-decision fairness, green finance careers, climate risk modeling deep-dives, ESG compliance ops). Documented so future runs don't re-propose or collide. Not published.
+- Matches existing `Industries.tsx` layout: hero, sticky tab/anchor nav, alternating section bands, semantic tokens only (no hardcoded colors).
+- Reuses existing components where presentational: `Card`, `Badge`, `Accordion` (FAQ), `Separator`, lucide icons.
+- Static SVG/CSS diagrams for MRV flow and Trust Layers (no new deps, no Three.js).
+- Fully responsive, mobile-friendly, lazy-loaded route (code-split).
+- Visual trust indicators: badge chips ("Deterministic", "SHA-256 evidence", "RLS isolated", "Methodology-pinned").
 
-## Out of scope (explicit)
+## SEO / GEO / AI-search
 
-- No edits to: existing pages, routes, components, `SEOHead.tsx`, `App.tsx`, edge functions, DB schema, RLS, billing, Razorpay logic, vite config, index.html `<head>`, existing 103 CMS articles
-- No new dependencies
-- No bundle-size changes (static files only + plain text append to existing data file)
-- No design/UX changes
+- `SEOHead` with: title "Trust & Technical Validation | Senseible", description (<160c), canonical `/trust`, breadcrumbs, FAQPage JSON-LD, Article-style schema.
+- Single H1, semantic H2s per section.
+- `public/md/trust.md` plain-text mirror for LLM crawlers.
+- Sitemap + robots + llms.txt updated.
+- Keyword set: MRV validation, Scope 3 traceability, carbon confidence score, greenwashing prevention, CBAM evidence, climate finance readiness.
 
-## Files touched
+## Guardrails (explicit)
 
-Created:
-- `public/llms.txt`
-- `public/md/index.md`, `pricing.md`, `cbam-calculator.md`, `net-zero.md`, `calculators.md`, `about.md`, `mission.md`, `principles.md`, `carbon-credits.md`, `climate-finance.md`
-- `.lovable/content-backlog.md`
+- No edits to: calculators, edge functions, `supabase/`, `integrations/supabase/`, RLS, schemas, scoring math, or any existing page beyond Footer + App routes.
+- No exposure of: algorithm weights, prompt templates, model names, customer identities, internal SHA strategies beyond the already-public "SHA-256 dedupe" fact, or any proprietary heuristic.
+- All "outcomes" are explicitly labelled illustrative.
+- Content sourced only from already-public memory entries and existing public files (`public/md/principles.md`, `llms.txt`, etc.).
 
-Edited (additive only):
-- `public/sitemap.xml` (lastmod refresh, priority tiering, add llms.txt + md mirrors)
-- `public/robots.txt` (add Sitemap directive + Allow lines)
-- `src/data/cmsContent.ts` (append 10 articles to end of array)
+## Verification before delivery
 
-## Verification
+- Route loads, no console errors, Lighthouse mobile pass.
+- Footer link visible; no duplicate sitemap entries.
+- FAQ accordion + anchor nav work on mobile.
+- No regression to `/industries`, `/pricing`, `/`.
 
-- Confirm `/llms.txt`, `/md/*.md`, `/sitemap.xml`, `/robots.txt` all return 200
-- Spot-check 2 new CMS slugs render at `/climate-intelligence/:slug`
-- No build/preview regressions (static files don't enter bundle; data file append is tree-shaken text)
+## Out of scope (not in this task)
+
+- Primary Navigation changes (footer placement only, per request).
+- Any logged-in/dashboard surface.
+- Translations beyond English (mirrors current public pages).
