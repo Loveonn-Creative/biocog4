@@ -17,6 +17,7 @@ The audience is MSME owners, sustainability leads, exporters facing the EU Carbo
 - [Industries](/industries): sector landing pages for 15 MSME industries.
 - [Marketplace](/marketplace): MSME-issued credit listings with provenance badges.
 - [Partner portal](/partners): integrations for carbon buyers, banks, ERP and climate-finance partners.
+- [Trust & Technical Validation](/trust): consolidated public reference for partners, auditors, lenders and credit buyers — trust layers, MRV pipeline, framework coverage, Scope 3 traceability, confidence scoring, greenwashing prevention, governance.
 
 ## Knowledge
 
@@ -70,6 +71,7 @@ Plain-text mirrors of the highest-value live pages, intended for AI ingestion wi
 - [Principles](/md/principles.md)
 - [Carbon credits](/md/carbon-credits.md)
 - [Climate finance](/md/climate-finance.md)
+- [Trust & Technical Validation](/md/trust.md)
 
 ## Optional
 

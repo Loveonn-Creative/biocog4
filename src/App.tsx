@@ -52,6 +52,7 @@ const Grants = lazy(() => import("./pages/Grants"));
 const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
 const NetZero = lazy(() => import("./pages/NetZero"));
 const Solutions = lazy(() => import("./pages/Solutions"));
+const Trust = lazy(() => import("./pages/Trust"));
 const CalculatorsHub = lazy(() => import("./pages/calculators/CalculatorsHub"));
 const CalculatorHistory = lazy(() => import("./pages/calculators/CalculatorHistory"));
 const PCFCalculatorPage = lazy(() => import("./pages/calculators/PCFCalculator"));
@@ -131,6 +132,7 @@ const App = () => (
               <Route path="/grants" element={<Grants />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
               <Route path="/net-zero" element={<NetZero />} />
+              <Route path="/trust" element={<Trust />} />
               <Route path="/vs/:competitor" element={<CompetitorComparison />} />
               <Route path="/solutions/:useCase" element={<Solutions />} />
               <Route path="/calculators" element={<CalculatorsHub />} />
