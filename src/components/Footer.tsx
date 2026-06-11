@@ -40,6 +40,7 @@ const footerLinks = {
     { name: 'Green Loans', path: '/climate-finance' },
     { name: 'Industries', path: '/industries' },
     { name: 'Carbon Credits', path: '/carbon-credits' },
+    { name: 'Trust & Validation', path: '/trust' },
   ],
   company: [
     { name: 'Mission', path: '/mission' },
