@@ -14,7 +14,7 @@ import {
 import {
   Shield, Database, FileCheck, Network, Layers, Satellite, MapPin,
   Wifi, FileText, Building2, Gauge, AlertTriangle, Coins, Banknote,
-  Target, Lock, ArrowRight, CheckCircle2, GitBranch, ScrollText,
+  Target, Lock, ArrowRight, CheckCircle2, GitBranch, ScrollText, Sparkles,
 } from "lucide-react";
 
 const sections = [
@@ -27,27 +27,43 @@ const sections = [
   { id: "scoring", label: "Confidence Score" },
   { id: "greenwashing", label: "Greenwashing" },
   { id: "credits", label: "Credit Validation" },
-  { id: "finance", label: "Finance Readiness" },
+  { id: "finance", label: "Climate Finance" },
   { id: "netzero", label: "Net-Zero" },
   { id: "governance", label: "Governance" },
   { id: "faq", label: "FAQ" },
 ];
 
 const trustLayers = [
-  { icon: FileText, name: "Evidence", desc: "Raw documents and signals captured with SHA-256 fingerprints before any processing begins." },
-  { icon: FileCheck, name: "Verification", desc: "Deterministic rules — HSN-to-scope mapping, IEA 2023 grid factors, math-based failure when inputs are insufficient." },
-  { icon: Shield, name: "Attestation", desc: "Methodology version, factor source, and evidence hash locked together in an immutable record." },
-  { icon: ScrollText, name: "Disclosure", desc: "Framework-aligned outputs (CBAM, BRSR, GHG Protocol, ISSB) with the underlying audit trail attached." },
+  {
+    icon: FileText,
+    name: "Evidence Layer",
+    desc: "Every document is fingerprinted with SHA-256 before processing. A pre-processing stub is written first, so even failed runs leave an audit trail. The same invoice cannot be claimed twice — across users, sessions, or time.",
+  },
+  {
+    icon: FileCheck,
+    name: "Verification Layer",
+    desc: "Deterministic HSN-to-scope mapping, country grid factors (IEA 2023), and math reconciliation. Missing inputs return a math-based failure reason — never a silent estimate.",
+  },
+  {
+    icon: Sparkles,
+    name: "Intelligence Layer",
+    desc: "Biocog superintelligence reads the scope ledger as the single source of truth and projects it into every framework view non-destructively. The same number appears in every report because it comes from the same record.",
+  },
+  {
+    icon: ScrollText,
+    name: "Disclosure & Decision Layer",
+    desc: "Framework-aligned outputs (CBAM, BRSR, GHG Protocol, CSRD, ISSB, TCFD, GRI, SBTi) carry the audit trail, confidence bands, and Climate Credibility Score (A+ to D) with them — ready for auditors, lenders, and buyers.",
+  },
 ];
 
 const dataSources = [
-  { icon: FileText, name: "Tax invoices & GST records", what: "Vendor, line items, HSN codes, amounts, dates", verify: "Schema, math reconciliation, vendor pattern match" },
-  { icon: Gauge, name: "Utility & energy bills", what: "kWh, kVAH, period, distributor", verify: "Period continuity, consumption sanity, grid-factor lookup" },
+  { icon: FileText, name: "Tax invoices & purchase records", what: "Vendor, line items, HSN/CN codes, amounts, dates", verify: "Schema, math reconciliation, vendor pattern match" },
+  { icon: Gauge, name: "Utility & energy bills", what: "kWh, kVAH, period, distributor", verify: "Period continuity, consumption sanity, country grid-factor lookup" },
   { icon: Wifi, name: "IoT & meter signals", what: "Sub-metered electricity, fuel, water telemetry", verify: "Device identity, timestamp gaps, drift detection" },
   { icon: Database, name: "Operational records", what: "Production logs, fuel consumption, freight manifests", verify: "Cross-check against invoices and supplier evidence" },
-  { icon: Satellite, name: "Satellite & remote signals", what: "Where applicable: plot boundaries, change detection", verify: "Source provenance and acquisition date stamping" },
-  { icon: MapPin, name: "Geotagging", what: "Facility coordinates, plant boundaries", verify: "Country-config alignment with grid and tax IDs" },
-  { icon: Building2, name: "Supplier evidence", what: "Supplier-issued PCFs, certifications, GSTIN linkage", verify: "Buyer-GSTIN cross-reference and methodology check" },
+  { icon: Satellite, name: "Satellite & remote signals", what: "Plot boundaries, change detection where applicable", verify: "Source provenance and acquisition-date stamping" },
+  { icon: MapPin, name: "Geotagging", what: "Facility coordinates, plant boundaries", verify: "Country-config alignment with grid factor and tax ID format" },
+  { icon: Building2, name: "Supplier evidence", what: "Supplier-issued PCFs, certifications, counterparty IDs", verify: "Buyer–supplier identifier linkage and methodology check" },
 ];
 
 const frameworks = [
@@ -62,6 +78,19 @@ const frameworks = [
   { name: "ISO 14064 / 14067", coverage: "Organisation and product inventories", evidence: "Per-item PCF with traceable factors" },
 ];
 
+const countryIds = [
+  { country: "India", id: "GSTIN" },
+  { country: "Indonesia", id: "NPWP" },
+  { country: "Vietnam", id: "MST" },
+  { country: "Thailand", id: "TIN" },
+  { country: "Philippines", id: "TIN" },
+  { country: "Malaysia", id: "TIN" },
+  { country: "Bangladesh", id: "BIN" },
+  { country: "Pakistan", id: "NTN" },
+  { country: "Brazil", id: "CNPJ" },
+  { country: "EU", id: "VAT" },
+];
+
 const faqs = [
   {
     q: "How do you know an invoice wasn't fabricated or reused?",
@@ -72,36 +101,32 @@ const faqs = [
     a: "AI is used strictly to parse unstructured inputs into structured fields. Classification (HSN-to-scope), grid factors, and arithmetic are deterministic. When required inputs are missing, the system returns the math reason for failure rather than estimating silently.",
   },
   {
-    q: "Can a carbon credit buyer independently verify a record?",
-    a: "Yes. Each verified record carries a methodology version, factor source, and evidence hash. Buyers receive a decision-grade signal linked to that immutable fingerprint without exposure to the underlying MSME data.",
+    q: "Why can a lender trust a number that came from an MSME's own invoice?",
+    a: "Because the lender isn't trusting the MSME — they're trusting the chain. Every figure traces to a hash-pinned source document the lender can spot-audit, sits inside a confidence band, and carries the methodology version that produced it. Cross-MSME benchmarking lets the lender compare a borrower against verified peers rather than self-reported claims.",
   },
   {
-    q: "How is Scope 3 traceability handled?",
-    a: "Supplier evidence is linked to buyer identifiers (e.g., GSTIN where applicable). This lets a buyer see that an MSME's upstream claim is anchored to a real, hash-pinned supplier document.",
+    q: "How is Scope 3 traceability handled outside India?",
+    a: "Counterparty linkage is country-aware. The platform uses the local tax identifier auto-selected by country config — GSTIN in India, NPWP in Indonesia, MST in Vietnam, TIN in Thailand and the Philippines, CNPJ in Brazil, VAT in the EU, and so on — so supplier evidence is anchored to a real counterparty in every supported market.",
   },
   {
-    q: "What does the confidence score actually measure?",
+    q: "What does the Climate Credibility Score actually measure?",
     a: "It aggregates verification quality, data completeness (vendor + date + amount + HSN), history depth, and the green-benefit ratio into a single 0–100 band (A+ to D). Higher bands mean denser, better-attested evidence — not better marketing.",
   },
   {
     q: "How do you prevent greenwashing?",
-    a: "Three mechanisms: universal SHA-256 deduplication blocks evidence reuse; an immutable document stub is written before processing so failed runs still leave an audit trail; methodology and factor versions are pinned per record so retroactive changes are visible.",
+    a: "Five structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, and an additionality lock on credit-eligible records. Verification you can challenge — and that holds up when challenged.",
   },
   {
     q: "Are reporting outputs audit-ready?",
-    a: "Framework outputs (CBAM, BRSR, GHG Protocol, ISSB, TCFD, GRI, CSRD) are produced from the same scope ledger with disclaimers identifying the methodology version and factor source. Auditors can trace any figure back to its evidence hash.",
+    a: "Framework outputs (CBAM, BRSR, GHG Protocol, ISSB, TCFD, GRI, CSRD) are produced from the same scope ledger with the methodology version and factor source attached. Auditors can trace any figure back to its evidence hash.",
   },
   {
-    q: "How is confidentiality preserved between MSMEs and partners?",
-    a: "Row-Level Security on every table; IP addresses are hashed; partners see anonymised, decision-grade signals — not raw invoices. Cross-tenant access is impossible by construction.",
+    q: "How is confidentiality preserved between MSMEs, lenders, and buyers?",
+    a: "Row-Level Security on every table; IP addresses are hashed; lenders and buyers see anonymised decision-grade signals — not raw invoices. Cross-tenant access is impossible by construction.",
   },
   {
     q: "Which countries are supported with localised factors?",
-    a: "India, Bangladesh, Indonesia, Vietnam, the Philippines, Pakistan, Singapore, Thailand, Malaysia and Sri Lanka — each with localised grid factors, tax IDs, and document formats.",
-  },
-  {
-    q: "Do you expose the algorithms or proprietary models?",
-    a: "No. We expose the inputs, the standards we follow, the failure modes, and the evidence chain. Internal weights, prompts, and heuristics remain proprietary so the trust surface stays auditable without becoming gameable.",
+    a: "India, Bangladesh, Indonesia, Vietnam, the Philippines, Pakistan, Singapore, Thailand, Malaysia and Sri Lanka — each with localised grid factors, tax IDs, and document formats. CBAM and EU exporters are supported across CN customs codes.",
   },
 ];
 
@@ -133,14 +158,12 @@ const Trust = () => {
         {/* Hero */}
         <section className="border-b border-border">
           <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
-            <Badge variant="outline" className="mb-6">Public reference · v1</Badge>
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6">
-              Trust & Technical Validation
+              Trust &amp; Technical Validation
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              How Senseible turns ordinary business documents into evidence partners, auditors,
-              lenders and carbon-credit buyers can rely on — without exposing what makes the
-              underlying methodology proprietary.
+              How Senseible turns ordinary business documents into evidence that auditors,
+              lenders, carbon-credit buyers, enterprises, and ESG teams can independently rely on.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-2">
               {["Deterministic", "SHA-256 evidence", "RLS isolated", "Methodology-pinned", "Framework-aligned"].map(t => (
@@ -175,7 +198,7 @@ const Trust = () => {
               <Layers className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Trust Layers</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">A four-layer model, end to end</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Four layers. One unbroken chain.</h2>
             <p className="text-muted-foreground max-w-2xl mb-10">
               Evidence flows through four layers. Each one is independently verifiable and leaves a trail the next layer cannot rewrite.
             </p>
@@ -203,11 +226,11 @@ const Trust = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
               <Database className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Data Sources & Verification</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Data Sources &amp; Verification</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">What we collect — and how each item is checked</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Every input has a defined verification path</h2>
             <p className="text-muted-foreground max-w-2xl mb-10">
-              Every input has a defined verification path. Nothing is accepted at face value, and nothing is silently estimated when a required field is missing.
+              Nothing is accepted at face value. Nothing is silently estimated when a required field is missing.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {dataSources.map(s => (
@@ -239,7 +262,7 @@ const Trust = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">From document to disclosure</h2>
             <p className="text-muted-foreground max-w-2xl mb-10">
-              A public, simplified view of the pipeline. Internal weights, parsing prompts and heuristics are intentionally not shown.
+              A five-step pipeline. Deterministic where it matters; AI only where it earns its place.
             </p>
             <Card className="border-border">
               <CardContent className="p-6 md:p-10">
@@ -268,17 +291,50 @@ const Trust = () => {
           </div>
         </section>
 
-        {/* 4. ESG Intelligence */}
+        {/* 4. ESG Intelligence — outcome multiplier */}
         <section id="intelligence" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <GitBranch className="h-5 w-5 text-primary" />
+              <Sparkles className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-muted-foreground">ESG Intelligence Engine</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Structured outputs that map cleanly to disclosure</h2>
-            <p className="text-muted-foreground max-w-3xl">
-              The intelligence layer organises verified records into a scope ledger and projects them onto the disclosure framework selected by the user. The ledger is the source of truth; framework views are non-destructive projections. The same numbers appear in every report because they come from the same record.
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">One verified ledger. Every framework. Every decision.</h2>
+            <p className="text-muted-foreground max-w-3xl mb-10">
+              Biocog superintelligence reads the scope ledger once and serves every disclosure, every reduction recommendation,
+              and every finance signal from it. Sustainability teams stop re-keying numbers across spreadsheets and start
+              compounding insight from a shared memory of every invoice processed.
             </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "Do more in less time",
+                  body: "One ingestion event produces CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD, GRI and SBTi outputs with no re-keying. Work that took weeks per framework collapses into a single verified record.",
+                },
+                {
+                  title: "Reduce cost from invoice memory",
+                  body: "The platform surfaces duplicate spend, high-emission supplier substitutes, and energy-mix arbitrage hidden in your own purchase history — each reduction routed into the Net-Zero engine as a tracked action.",
+                },
+                {
+                  title: "Maximize net-zero progress",
+                  body: "Sector-aware reduction levers (energy, logistics, supplier swap, green-tariff) are ranked by tCO₂e impact per unit of spend, so the next action is always the one with the largest measurable return.",
+                },
+                {
+                  title: "Audit-ready by default",
+                  body: "Methodology version, factor source, and evidence hash lock at write time. Disclosures compound credibility instead of depreciating between audit cycles.",
+                },
+              ].map(b => (
+                <Card key={b.title} className="border-border">
+                  <CardContent className="p-6">
+                    <div className="text-base font-medium mb-2">{b.title}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{b.body}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <Badge variant="outline">Same ledger · eight frameworks · zero re-keying</Badge>
+              <Badge variant="outline">Every reduction action traces to a verified invoice</Badge>
+            </div>
           </div>
         </section>
 
@@ -316,35 +372,69 @@ const Trust = () => {
           </div>
         </section>
 
-        {/* 6. Scope 3 */}
+        {/* 6. Scope 3 — emerging-markets reframing */}
         <section id="scope3" className="py-20 border-b border-border bg-secondary/30">
-          <div className="container max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <Network className="h-5 w-5 text-primary" />
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">Scope 3 Traceability</span>
-              </div>
-              <h2 className="text-3xl font-semibold mb-4">Supplier evidence, not supplier averages</h2>
-              <p className="text-muted-foreground mb-4">
-                Where a supplier-issued document exists, Scope 3 records reference its hash. Buyer identifiers (such as GSTIN in India) anchor upstream claims to a verifiable counterparty rather than a sector average.
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Supplier-document hash recorded</li>
-                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Buyer-GSTIN linkage where applicable</li>
-                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Methodology version pinned per line</li>
-              </ul>
+          <div className="container max-w-5xl mx-auto px-6">
+            <div className="flex items-center gap-3 mb-3">
+              <Network className="h-5 w-5 text-primary" />
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Scope 3 Traceability</span>
             </div>
-            <Card className="border-border">
-              <CardContent className="p-6 text-sm">
-                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Buyer-side decision signal</div>
-                <p className="text-muted-foreground mb-4">A purchaser sees that an upstream claim is backed by a real supplier document — not that we estimated it from an industry average.</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Hash anchored</Badge>
-                  <Badge variant="secondary">Counterparty linked</Badge>
-                  <Badge variant="secondary">Factor versioned</Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Supplier evidence enterprises can't gather alone</h2>
+            <p className="text-muted-foreground max-w-3xl mb-8">
+              In emerging markets, most suppliers don't publish PCFs. Enterprises fall back on sector averages and lose
+              defensibility under CBAM, ISSB, and CSRD. Senseible's cross-MSME footprint turns that gap into a primary-data
+              network — your suppliers' real numbers, benchmarked against thousands of peers.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="text-sm font-medium mb-2">Anomaly detection across the network</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Supplier emission intensity is flagged when it deviates beyond 2σ from the peer cluster mean for the same
+                    HSN/CN code and country grid factor. Outliers surface before they reach a disclosure.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="text-sm font-medium mb-2">Cluster benchmarking no single enterprise can build</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Sector medians come from verified MSME activity across the network — peer-normalized scores instead of
+                    generic industry averages from outdated reports.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="text-sm font-medium mb-2">Country-aware counterparty linkage</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    The platform anchors upstream claims to the local tax identifier auto-selected by country config.
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {countryIds.map(c => (
+                      <Badge key={c.country} variant="secondary" className="text-[11px] font-mono">
+                        {c.country} · {c.id}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="text-sm font-medium mb-2">Hash-anchored, factor-versioned, per line</div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Supplier-document hash recorded</li>
+                    <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Counterparty identifier linked</li>
+                    <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> Methodology version pinned per line</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <p className="text-base text-foreground/90 italic max-w-3xl">
+              "Your suppliers' real data, benchmarked against thousands of peers — not a sector average from 2019."
+            </p>
           </div>
         </section>
 
@@ -353,11 +443,12 @@ const Trust = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
               <Gauge className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Carbon & Confidence Scoring</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Carbon &amp; Confidence Scoring</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">A score you can audit</h2>
             <p className="text-muted-foreground max-w-2xl mb-10">
-              The Climate Credibility Score is a single 0–100 band derived from four observable inputs. It rewards denser, better-attested evidence — not narrative quality.
+              The Climate Credibility Score is a single 0–100 band derived from four observable inputs. It rewards denser,
+              better-attested evidence — not narrative quality.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -382,28 +473,56 @@ const Trust = () => {
           </div>
         </section>
 
-        {/* 8. Greenwashing */}
+        {/* 8. Greenwashing — structural defense */}
         <section id="greenwashing" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
               <AlertTriangle className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Greenwashing Prevention</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Three mechanisms, working together</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Structural defense, not a disclaimer</h2>
+            <p className="text-muted-foreground max-w-3xl mb-10">
+              Greenwashing is prevented by the architecture, not by policy. Five mechanisms work together so a claim cannot
+              be inflated, recycled, or quietly re-baselined after the fact.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
               {[
-                { name: "Universal deduplication", desc: "SHA-256 fingerprints prevent the same evidence being claimed twice — across users, sessions, or time." },
-                { name: "Immutable pre-processing stub", desc: "An audit row is written before processing starts. Failed or abandoned runs still leave a record." },
-                { name: "Methodology version pinning", desc: "Each output stores the factor source and methodology version, so changes are visible — never retroactive." },
+                {
+                  name: "Universal SHA-256 deduplication",
+                  desc: "Every document is fingerprinted across users, sessions and time. The same invoice cannot be claimed by two MSMEs or twice by one.",
+                },
+                {
+                  name: "Immutable pre-processing stub",
+                  desc: "An audit row is written before parsing begins. Failed or abandoned runs still leave a record — no silent retries, no quiet edits.",
+                },
+                {
+                  name: "Methodology & factor pinning per output",
+                  desc: "Each disclosure stores its methodology version and factor source. Retroactive factor changes are visible in the audit trail; nothing is overwritten.",
+                },
+                {
+                  name: "Deterministic failure",
+                  desc: "Missing inputs return a math-based failure reason. The platform never estimates to fill a gap — gaps stay visible until they are resolved.",
+                },
+                {
+                  name: "Additionality lock on credits",
+                  desc: "Only records that clear additionality, evidence linkage, and methodology lock are eligible for credit generation. Everything else is held back.",
+                },
+                {
+                  name: "Cross-MSME peer challenge",
+                  desc: "Anomalous values are flagged against the verified peer cluster before they reach a buyer or auditor — reducing the surface for after-the-fact disputes.",
+                },
               ].map(m => (
                 <Card key={m.name} className="border-border">
                   <CardContent className="p-5">
                     <div className="text-sm font-medium mb-2">{m.name}</div>
-                    <p className="text-xs text-muted-foreground">{m.desc}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
+            <p className="mt-8 text-base text-foreground/90 italic">
+              "Verification you can challenge — and that holds up when challenged."
+            </p>
           </div>
         </section>
 
@@ -416,11 +535,13 @@ const Trust = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">From verified record to credit-ready signal</h2>
             <p className="text-muted-foreground max-w-3xl mb-8">
-              Records eligible for credit consideration must clear three gates: additionality (the activity wouldn't occur without intervention), evidence linkage (hash-anchored to source documents), and methodology lock (the version used cannot drift). Buyers consume a decision-grade signal — not raw MSME data.
+              Records eligible for credit consideration must clear three gates: additionality, evidence linkage
+              (hash-anchored), and methodology lock (the version used cannot drift). Buyers consume a decision-grade signal
+              — not raw MSME data.
             </p>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
-                { name: "Additionality flag", desc: "Activity meets baseline additionality test." },
+                { name: "Additionality flag", desc: "Activity meets the baseline additionality test." },
                 { name: "Evidence linkage", desc: "Every claim traces to a SHA-256 hash." },
                 { name: "Methodology lock", desc: "Factor source and version pinned to the record." },
               ].map(g => (
@@ -435,17 +556,61 @@ const Trust = () => {
           </div>
         </section>
 
-        {/* 10. Finance */}
+        {/* 10. Climate Finance — why lenders can act on it */}
         <section id="finance" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
               <Banknote className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Climate Finance Readiness</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Climate &amp; Green Finance</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Evidence that lenders can act on</h2>
-            <p className="text-muted-foreground max-w-3xl">
-              Verified evidence powers eligibility signals used in green-loan, factoring, and SLL workflows. Lenders see a decision-grade view — instrument fit, eligibility band, evidence depth — without touching the borrower's underlying documents. The signal travels with the same methodology lock as the disclosure output.
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Why a lender can underwrite against this data</h2>
+            <p className="text-muted-foreground max-w-3xl mb-10">
+              Lenders don't trust borrower self-declarations — they trust verifiable chains. Every figure that reaches a
+              bank, factoring desk, or government incentive scheme carries the proof of how it was produced.
             </p>
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {[
+                {
+                  title: "Hash-pinned, spot-auditable",
+                  body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices.",
+                },
+                {
+                  title: "Confidence bands, never false precision",
+                  body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate.",
+                },
+                {
+                  title: "Methodology locked at disclosure time",
+                  body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve.",
+                },
+                {
+                  title: "Climate Credibility Score (0–100)",
+                  body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio — graded A+ to D.",
+                },
+                {
+                  title: "Cross-MSME peer comparison",
+                  body: "The borrower is benchmarked against verified peers in the same sector and country — not against a self-reported claim or a global average.",
+                },
+                {
+                  title: "Decision-grade, not raw",
+                  body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth — borrower documents stay private.",
+                },
+              ].map(b => (
+                <Card key={b.title} className="border-border">
+                  <CardContent className="p-6">
+                    <div className="text-sm font-medium mb-2">{b.title}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{b.body}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              The same verified ledger maps to government incentive schemes across emerging markets — including SIDBI,
+              IREDA, and MNRE in India, with equivalent programmes wired through country config elsewhere.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild variant="outline"><Link to="/climate-finance">See the full climate-finance flow <ArrowRight className="h-4 w-4 ml-2" /></Link></Button>
+              <Button asChild variant="ghost"><Link to="/partners">For lenders &amp; partners</Link></Button>
+            </div>
           </div>
         </section>
 
@@ -458,7 +623,8 @@ const Trust = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Baseline → roadmap → tracked tasks</h2>
             <p className="text-muted-foreground max-w-3xl mb-8">
-              The Net-Zero engine consumes the same scope ledger that feeds disclosure. A baseline becomes a sector-aware roadmap; progress is measured against the original methodology so reductions are real, not re-baselined.
+              The Net-Zero engine consumes the same scope ledger that feeds disclosure. A baseline becomes a sector-aware
+              roadmap; progress is measured against the original methodology so reductions are real, not re-baselined.
             </p>
             <Button asChild variant="outline">
               <Link to="/net-zero">Explore the Net-Zero engine <ArrowRight className="h-4 w-4 ml-2" /></Link>
@@ -471,7 +637,7 @@ const Trust = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
               <Lock className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance & Security</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance &amp; Security</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default</h2>
             <div className="grid md:grid-cols-2 gap-4">
@@ -488,16 +654,6 @@ const Trust = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-
-            <div className="mt-10 p-5 rounded-lg border border-border bg-background">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Illustrative outcomes</div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>— A mid-size exporter compressed first-pass CBAM evidence assembly from weeks to a single working session.</li>
-                <li>— A lender shortened green-loan diligence by consuming evidence-backed eligibility signals instead of requesting raw bills.</li>
-                <li>— A buyer reduced supplier-side Scope 3 disputes by referencing hash-anchored upstream evidence.</li>
-              </ul>
-              <p className="text-[11px] text-muted-foreground mt-3 italic">Illustrative only. No customer identities or confidential figures are disclosed.</p>
             </div>
           </div>
         </section>
