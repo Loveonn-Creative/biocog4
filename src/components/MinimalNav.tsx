@@ -1,12 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe } from "lucide-react";
+import { toast } from "sonner";
 import senseibleLogo from "@/assets/senseible-logo.png";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 const LOCALE_LABELS: Record<string, string> = {
   en: 'EN', hi: 'हिं', bn: 'বাং', ta: 'தமி', mr: 'मरा',
   id: 'ID', ur: 'اردو', tl: 'TL', vi: 'VI', th: 'ไทย', es: 'ES',
+};
+const LOCALE_FULL: Record<string, string> = {
+  en: 'English', hi: 'हिन्दी', bn: 'বাংলা', ta: 'தமிழ்', mr: 'मराठी',
+  id: 'Bahasa Indonesia', ur: 'اردو', tl: 'Tagalog', vi: 'Tiếng Việt', th: 'ไทย', es: 'Español',
 };
 
 const navLinks = [
@@ -21,9 +26,34 @@ const navLinks = [
 export const MinimalNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showLang, setShowLang] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { locale, setLocale } = useTranslation();
+
+  // Close popover on outside click + Escape
+  useEffect(() => {
+    if (!showLang) return;
+    const onClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setShowLang(false);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowLang(false); };
+    document.addEventListener('mousedown', onClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [showLang]);
+
+  const handlePickLocale = (code: string) => {
+    setLocale(code);
+    setShowLang(false);
+    if (code !== locale) {
+      toast.success(`Language: ${LOCALE_FULL[code] || code.toUpperCase()}`, { duration: 1800 });
+    }
+  };
+
 
   return (
     <>
@@ -45,22 +75,25 @@ export const MinimalNav = () => {
       {/* Language + Menu toggles */}
       <div className="fixed top-6 right-6 z-50 flex items-center gap-2">
         {/* Language toggle */}
-        <div className="relative">
+        <div className="relative" ref={langRef}>
           <button
             onClick={() => setShowLang(!showLang)}
+            aria-label="Change language"
+            aria-expanded={showLang}
             className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm border border-border transition-all duration-300 hover:bg-secondary text-xs font-medium"
           >
             <Globe className="w-4 h-4 text-foreground" />
           </button>
           {showLang && (
-            <div className="absolute right-0 top-12 bg-background border border-border rounded-lg shadow-lg p-2 min-w-[120px] z-50">
+            <div className="absolute right-0 top-12 bg-background border border-border rounded-lg shadow-lg p-2 min-w-[160px] z-50">
               {Object.entries(LOCALE_LABELS).map(([code, label]) => (
                 <button
                   key={code}
-                  onClick={() => { setLocale(code); setShowLang(false); }}
-                  className={`w-full text-left px-3 py-1.5 text-sm rounded hover:bg-secondary transition-colors ${locale === code ? 'text-primary font-medium' : 'text-muted-foreground'}`}
+                  onClick={() => handlePickLocale(code)}
+                  className={`w-full text-left px-3 py-1.5 text-sm rounded hover:bg-secondary transition-colors flex items-center justify-between gap-3 ${locale === code ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 >
-                  {label}
+                  <span>{LOCALE_FULL[code]}</span>
+                  <span className="text-[10px] opacity-60 font-mono">{label}</span>
                 </button>
               ))}
             </div>

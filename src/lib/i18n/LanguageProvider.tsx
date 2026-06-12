@@ -60,13 +60,17 @@ function detectInitialLocale(): string {
 }
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocaleState] = useState('en');
+  // Lazy-init so first render has the correct locale (no flash / no double render)
+  const [locale, setLocaleState] = useState<string>(() => {
+    if (typeof window === 'undefined') return 'en';
+    try { return detectInitialLocale(); } catch { return 'en'; }
+  });
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
 
   const setLocale = useCallback((newLocale: string) => {
     setLocaleState(newLocale);
-    localStorage.setItem('senseible_locale', newLocale);
+    try { localStorage.setItem('senseible_locale', newLocale); } catch {}
   }, []);
 
   // Load translations when locale changes
@@ -77,18 +81,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (!cancelled) {
         setTranslations(t);
         setIsLoading(false);
+        // Surface to the DOM so non-React listeners (e.g. analytics, SSG snapshots) react too
+        try { document.documentElement.lang = locale; } catch {}
       }
     });
     return () => { cancelled = true; };
   }, [locale]);
-
-  // Detect initial locale on mount
-  useEffect(() => {
-    const initial = detectInitialLocale();
-    if (initial !== 'en') setLocaleState(initial);
-    // Always load English as base
-    loadTranslation('en').then(t => setTranslations(t));
-  }, []);
 
   return (
     <I18nContext.Provider value={{ locale, setLocale, translations, isLoading }}>

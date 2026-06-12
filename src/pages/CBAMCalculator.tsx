@@ -177,9 +177,10 @@ const CBAMCalculator = () => {
         <div className="container max-w-6xl mx-auto px-4 sm:px-6">
           {/* Hero */}
           <div className="text-center mb-10">
-            <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
-              <Calculator className="w-3 h-3 mr-1" /> Free Tool
-            </Badge>
+            <div className="flex items-center justify-center gap-2 mb-4 text-xs uppercase tracking-wider text-muted-foreground">
+              <Calculator className="w-3.5 h-3.5" />
+              <span>CBAM Exposure · EU Regulation 2023/956</span>
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 font-display">
               CBAM Cost Estimator
             </h1>
