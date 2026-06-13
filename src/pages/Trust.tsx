@@ -208,6 +208,11 @@ const faqs = [
 
 const Trust = () => {
   const faqSchema = faqs.map(f => ({ question: f.q, answer: f.a }));
+  const [scope3Country, setScope3Country] = useState<string>("IN");
+  const scope3 = scope3Examples[scope3Country];
+  const countryOptions = Object.values(COUNTRY_CONFIGS).map(c => ({ code: c.code, name: c.name }));
+
+
 
   return (
     <div className="min-h-screen bg-background">
