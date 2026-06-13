@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { Navigation } from "@/components/Navigation";
@@ -5,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
 import {
   Accordion,
   AccordionContent,
@@ -82,13 +84,87 @@ const countryIds = [
   { country: "India", id: "GSTIN" },
   { country: "Indonesia", id: "NPWP" },
   { country: "Vietnam", id: "MST" },
-  { country: "Thailand", id: "TIN" },
+  { country: "Thailand", id: "Tax ID" },
   { country: "Philippines", id: "TIN" },
-  { country: "Malaysia", id: "TIN" },
-  { country: "Bangladesh", id: "BIN" },
+  { country: "Malaysia", id: "SST ID" },
+  { country: "Bangladesh", id: "TIN" },
   { country: "Pakistan", id: "NTN" },
-  { country: "Brazil", id: "CNPJ" },
-  { country: "EU", id: "VAT" },
+  { country: "Singapore", id: "UEN" },
+  { country: "Sri Lanka", id: "TIN" },
+];
+
+// Region-aware Scope 3 examples — each shows how supplier evidence
+// is anchored in that market using its own tax ID, grid factor and frameworks.
+const scope3Examples: Record<string, { headline: string; example: string; frameworks: string }> = {
+  IN: {
+    headline: "India — GSTIN-anchored supplier chain",
+    example: "A Tiruppur textile exporter pulls a yarn purchase invoice carrying the supplier's GSTIN. The line item is matched to the IEA 2023 India grid factor (0.708 kgCO₂e/kWh) for upstream electricity, and the supplier hash links it to a verified peer cluster.",
+    frameworks: "BRSR · CBAM · ISSB",
+  },
+  ID: {
+    headline: "Indonesia — NPWP-anchored supplier chain",
+    example: "A Jakarta nickel processor's input invoice carries the upstream miner's NPWP. The line item is benchmarked against the Indonesia grid factor (0.761 kgCO₂e/kWh) and OJK-ESG disclosure templates, with anomaly detection flagging suppliers outside the peer cluster.",
+    frameworks: "OJK-ESG · CBAM · ISSB",
+  },
+  VN: {
+    headline: "Vietnam — MST-anchored supplier chain",
+    example: "A Hai Phong electronics MSME imports components from a Hanoi vendor whose MST appears on every line. Upstream electricity is priced at the Vietnam grid factor (0.625 kgCO₂e/kWh) and the line carries the methodology version pinned for MONRE submission.",
+    frameworks: "MONRE-EIA · CBAM",
+  },
+  BD: {
+    headline: "Bangladesh — TIN-anchored supplier chain",
+    example: "A Dhaka garment exporter's dye supplier issues an invoice with its TIN. The bill is reconciled against the Bangladesh grid factor (0.623 kgCO₂e/kWh), and the supplier's emission intensity is held against the verified RMG peer cluster.",
+    frameworks: "DoE-ECA · CBAM · EU CSDDD",
+  },
+  PK: {
+    headline: "Pakistan — NTN-anchored supplier chain",
+    example: "A Faisalabad textile MSME's spinning supplier provides an invoice carrying its NTN. The line is priced at the Pakistan grid factor (0.495 kgCO₂e/kWh), and the methodology version travels with the figure into the SECP-ESG output.",
+    frameworks: "SECP-ESG",
+  },
+  PH: {
+    headline: "Philippines — TIN-anchored supplier chain",
+    example: "A Cebu electronics assembler receives PCB invoices with the supplier's TIN. The Philippines grid factor (0.505 kgCO₂e/kWh) is applied to upstream electricity, and the figure feeds SEC-ESG and DTI-EO outputs from the same record.",
+    frameworks: "SEC-ESG · DTI-EO",
+  },
+  TH: {
+    headline: "Thailand — Tax-ID-anchored supplier chain",
+    example: "A Bangkok food-processor's packaging supplier issues an invoice with its 13-digit Tax ID. The line is reconciled against the Thailand grid factor (0.493 kgCO₂e/kWh) and rolled into a TGO-CFO report with the factor source pinned.",
+    frameworks: "TGO-CFO · SEC-ESG",
+  },
+  MY: {
+    headline: "Malaysia — SST-ID-anchored supplier chain",
+    example: "A Penang E&E manufacturer receives upstream invoices carrying the supplier's SST ID. Energy is priced at the Malaysia grid factor (0.585 kgCO₂e/kWh) and outputs feed Bursa-ESG and MyCarbon disclosures from the same scope ledger.",
+    frameworks: "Bursa-ESG · MyCarbon",
+  },
+  SG: {
+    headline: "Singapore — UEN-anchored supplier chain",
+    example: "A Singapore logistics MSME's fuel supplier issues an invoice carrying its UEN. The line is priced at the Singapore grid factor (0.408 kgCO₂e/kWh) and routed into an SGX-ESG-aligned disclosure with Carbon Tax Act exposure flagged.",
+    frameworks: "SGX-ESG · Carbon Tax Act",
+  },
+  LK: {
+    headline: "Sri Lanka — TIN-anchored supplier chain",
+    example: "A Colombo apparel MSME's accessories supplier provides an invoice with its TIN. The Sri Lanka grid factor (0.462 kgCO₂e/kWh) is applied to upstream electricity, with the supplier's intensity anchored to the verified peer cluster.",
+    frameworks: "CEA-EIA",
+  },
+};
+
+// Concrete bank/finance use cases — grounded in climate-finance.md, never claiming guaranteed approval.
+const financeUseCases = [
+  {
+    title: "Sustainability-Linked Loans",
+    sub: "SIDBI · IREDA · commercial banks",
+    body: "The verified scope baseline becomes the KPI. Lenders price coupon step-ups or step-downs against year-over-year reduction on a number whose source they can spot-audit, not a self-reported claim.",
+  },
+  {
+    title: "Receivables factoring on green invoices",
+    sub: "Solar · EV · forestation invoices",
+    body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds — shortening the discount on advances against those receivables.",
+  },
+  {
+    title: "Trade finance under CBAM",
+    sub: "EU-bound exporters",
+    body: "Verified actual emissions per tonne replace the EU default values that would otherwise apply, reducing destination CBAM cost and improving the margin trade-finance desks can underwrite on the shipment.",
+  },
 ];
 
 const faqs = [
@@ -114,7 +190,7 @@ const faqs = [
   },
   {
     q: "How do you prevent greenwashing?",
-    a: "Five structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, and an additionality lock on credit-eligible records. Verification you can challenge — and that holds up when challenged.",
+    a: "Six structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, an additionality lock on credit-eligible records, and cross-MSME peer challenge before disclosure. Verification you can challenge — and that holds up when challenged.",
   },
   {
     q: "Are reporting outputs audit-ready?",
@@ -132,6 +208,11 @@ const faqs = [
 
 const Trust = () => {
   const faqSchema = faqs.map(f => ({ question: f.q, answer: f.a }));
+  const [scope3Country, setScope3Country] = useState<string>("IN");
+  const scope3 = scope3Examples[scope3Country];
+  const countryOptions = Object.values(COUNTRY_CONFIGS).map(c => ({ code: c.code, name: c.name }));
+
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -432,9 +513,39 @@ const Trust = () => {
               </Card>
             </div>
 
-            <p className="text-base text-foreground/90 italic max-w-3xl">
-              "Your suppliers' real data, benchmarked against thousands of peers — not a sector average from 2019."
+            {/* Region-aware Scope 3 example */}
+            <Card className="border-border bg-background">
+              <CardContent className="p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+                  <div className="text-sm font-medium">How it looks in your market</div>
+                  <div className="flex items-center gap-2">
+                    <label htmlFor="scope3-country" className="text-xs text-muted-foreground">Region</label>
+                    <select
+                      id="scope3-country"
+                      value={scope3Country}
+                      onChange={e => setScope3Country(e.target.value)}
+                      className="text-sm bg-background border border-border rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
+                    >
+                      {countryOptions.map(c => (
+                        <option key={c.code} value={c.code}>{c.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="text-base font-medium mb-2">{scope3.headline}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{scope3.example}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {scope3.frameworks.split(" · ").map(f => (
+                    <Badge key={f} variant="outline" className="text-[11px]">{f}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <p className="text-base text-foreground/90 italic max-w-3xl mt-8">
+              Same architecture, anchored to the right identifier and the right grid factor in every market.
             </p>
+
           </div>
         </section>
 
@@ -603,10 +714,29 @@ const Trust = () => {
                 </Card>
               ))}
             </div>
+
+            {/* Concrete use cases — no guarantees, no "we lend" claims */}
+            <div className="mb-8">
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Where lenders consume this</div>
+              <div className="grid md:grid-cols-3 gap-4">
+                {financeUseCases.map(u => (
+                  <Card key={u.title} className="border-border">
+                    <CardContent className="p-6">
+                      <div className="text-sm font-medium mb-1">{u.title}</div>
+                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">{u.sub}</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{u.body}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             <p className="text-sm text-muted-foreground mb-6">
-              The same verified ledger maps to government incentive schemes across emerging markets — including SIDBI,
-              IREDA, and MNRE in India, with equivalent programmes wired through country config elsewhere.
+              Senseible is not a lender, factor, or registry. It is the verification primitive each of those institutions
+              consumes. The same verified ledger maps to government incentive schemes — SIDBI, IREDA and MNRE in India,
+              with equivalent programmes wired through country config in every supported market.
             </p>
+
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="outline"><Link to="/climate-finance">See the full climate-finance flow <ArrowRight className="h-4 w-4 ml-2" /></Link></Button>
               <Button asChild variant="ghost"><Link to="/partners">For lenders &amp; partners</Link></Button>
