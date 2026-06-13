@@ -714,10 +714,29 @@ const Trust = () => {
                 </Card>
               ))}
             </div>
+
+            {/* Concrete use cases — no guarantees, no "we lend" claims */}
+            <div className="mb-8">
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Where lenders consume this</div>
+              <div className="grid md:grid-cols-3 gap-4">
+                {financeUseCases.map(u => (
+                  <Card key={u.title} className="border-border">
+                    <CardContent className="p-6">
+                      <div className="text-sm font-medium mb-1">{u.title}</div>
+                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">{u.sub}</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{u.body}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             <p className="text-sm text-muted-foreground mb-6">
-              The same verified ledger maps to government incentive schemes across emerging markets — including SIDBI,
-              IREDA, and MNRE in India, with equivalent programmes wired through country config elsewhere.
+              Senseible is not a lender, factor, or registry. It is the verification primitive each of those institutions
+              consumes. The same verified ledger maps to government incentive schemes — SIDBI, IREDA and MNRE in India,
+              with equivalent programmes wired through country config in every supported market.
             </p>
+
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="outline"><Link to="/climate-finance">See the full climate-finance flow <ArrowRight className="h-4 w-4 ml-2" /></Link></Button>
               <Button asChild variant="ghost"><Link to="/partners">For lenders &amp; partners</Link></Button>
