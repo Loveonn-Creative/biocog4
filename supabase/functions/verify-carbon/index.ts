@@ -262,9 +262,8 @@ serve(async (req) => {
   }
 
   try {
-    const { emissionIds, sessionId, userId, includeIoT = false, country = 'IN' } = await req.json();
+    const { emissionIds, sessionId: bodySessionId, includeIoT = false, country = 'IN' } = await req.json();
 
-    // Resolve country-specific grid factor
     const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
     const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
 
@@ -276,10 +275,34 @@ serve(async (req) => {
     }
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
-    console.log('Starting verification for emissions:', emissionIds);
+    // ============= AUTH: derive userId from JWT if present =============
+    let userId: string | null = null;
+    const authHeader = req.headers.get('Authorization');
+    if (authHeader?.startsWith('Bearer ')) {
+      const tok = authHeader.replace('Bearer ', '');
+      // Don't treat anon publishable key as a user
+      if (tok !== anonKey) {
+        const userClient = createClient(supabaseUrl, anonKey, {
+          global: { headers: { Authorization: authHeader } },
+        });
+        const { data: claimsRes } = await userClient.auth.getClaims(tok);
+        if (claimsRes?.claims?.sub) userId = claimsRes.claims.sub as string;
+      }
+    }
+    // Guest sessionId only allowed when no authenticated user
+    const sessionId = userId ? null : (bodySessionId || null);
+
+    if (!userId && !sessionId) {
+      return new Response(
+        JSON.stringify({ error: 'Authentication or session required' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, serviceKey);
 
     // ============= OWNERSHIP VALIDATION =============
     // Ensure the requester owns the emissions being verified
