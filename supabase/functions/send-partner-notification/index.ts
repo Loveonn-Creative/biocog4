@@ -1,7 +1,11 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -16,7 +20,7 @@ interface PartnerNotificationRequest {
 
 function escapeHtml(str: string | undefined | null): string {
   if (!str) return '';
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -25,9 +29,32 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // ============= AUTH: admin role only =============
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      global: { headers: { Authorization: authHeader } },
+    });
+    const { data: claimsRes } = await userClient.auth.getClaims(authHeader.replace("Bearer ", ""));
+    if (!claimsRes?.claims?.sub) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+    const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const { data: roleRow } = await admin
+      .from("user_roles").select("role")
+      .eq("user_id", claimsRes.claims.sub).eq("role", "admin").maybeSingle();
+    if (!roleRow) {
+      return new Response(JSON.stringify({ error: "Forbidden" }),
+        { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+
     const rawBody: PartnerNotificationRequest = await req.json();
-    const email = rawBody.email;
-    const organization_name = escapeHtml(rawBody.organization_name);
+    const email = String(rawBody.email || "").slice(0, 320);
+    const organization_name = escapeHtml(String(rawBody.organization_name || "").slice(0, 200));
     const decision = rawBody.decision;
 
     if (!email || !organization_name || !decision) {
