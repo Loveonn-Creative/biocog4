@@ -114,7 +114,7 @@ const faqs = [
   },
   {
     q: "How do you prevent greenwashing?",
-    a: "Five structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, and an additionality lock on credit-eligible records. Verification you can challenge — and that holds up when challenged.",
+    a: "Six structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, an additionality lock on credit-eligible records, and cross-MSME peer challenge before disclosure. Verification you can challenge — and that holds up when challenged.",
   },
   {
     q: "Are reporting outputs audit-ready?",
