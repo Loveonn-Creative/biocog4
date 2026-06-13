@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { FormattedContent } from "@/components/FormattedContent";
 import { legalDocuments, getLegalDocumentBySlug } from "@/data/legalContent";
 
 const Legal = () => {
