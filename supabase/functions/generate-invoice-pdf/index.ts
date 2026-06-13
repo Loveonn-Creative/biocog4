@@ -313,10 +313,17 @@ serve(async (req) => {
       throw new Error("Missing required environment variables");
     }
 
+    // ============= SERVICE-ROLE-ONLY: caller must present the service role key =============
+    const authHeader = req.headers.get("Authorization") || "";
+    const internalHeader = req.headers.get("x-internal-service-role") || "";
+    const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : "";
+    if (token !== SUPABASE_SERVICE_ROLE_KEY && internalHeader !== SUPABASE_SERVICE_ROLE_KEY) {
+      return new Response(JSON.stringify({ error: "Forbidden" }),
+        { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const data: InvoiceData = await req.json();
-
-    console.log("Generating invoice for:", data.email, "Tier:", data.tier);
 
     // Generate invoice number
     const invoiceNumber = `INV-${new Date().getFullYear()}${(new Date().getMonth() + 1).toString().padStart(2, '0')}-${Date.now().toString(36).toUpperCase()}`;
