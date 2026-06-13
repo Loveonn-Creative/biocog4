@@ -513,9 +513,39 @@ const Trust = () => {
               </Card>
             </div>
 
-            <p className="text-base text-foreground/90 italic max-w-3xl">
-              "Your suppliers' real data, benchmarked against thousands of peers — not a sector average from 2019."
+            {/* Region-aware Scope 3 example */}
+            <Card className="border-border bg-background">
+              <CardContent className="p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+                  <div className="text-sm font-medium">How it looks in your market</div>
+                  <div className="flex items-center gap-2">
+                    <label htmlFor="scope3-country" className="text-xs text-muted-foreground">Region</label>
+                    <select
+                      id="scope3-country"
+                      value={scope3Country}
+                      onChange={e => setScope3Country(e.target.value)}
+                      className="text-sm bg-background border border-border rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
+                    >
+                      {countryOptions.map(c => (
+                        <option key={c.code} value={c.code}>{c.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="text-base font-medium mb-2">{scope3.headline}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{scope3.example}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {scope3.frameworks.split(" · ").map(f => (
+                    <Badge key={f} variant="outline" className="text-[11px]">{f}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <p className="text-base text-foreground/90 italic max-w-3xl mt-8">
+              Same architecture, anchored to the right identifier and the right grid factor in every market.
             </p>
+
           </div>
         </section>
 
