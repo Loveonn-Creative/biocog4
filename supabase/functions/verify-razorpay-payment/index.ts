@@ -6,89 +6,105 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Compute HMAC-SHA256 signature
 async function computeHmacSha256(message: string, key: string): Promise<string> {
   const encoder = new TextEncoder();
-  const keyData = encoder.encode(key);
-  const messageData = encoder.encode(message);
-  
   const cryptoKey = await crypto.subtle.importKey(
-    'raw',
-    keyData,
-    { name: 'HMAC', hash: 'SHA-256' },
-    false,
-    ['sign']
+    'raw', encoder.encode(key),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
   );
-  
-  const signature = await crypto.subtle.sign('HMAC', cryptoKey, messageData);
-  return Array.from(new Uint8Array(signature))
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+  const signature = await crypto.subtle.sign('HMAC', cryptoKey, encoder.encode(message));
+  return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function mask(id: string | null | undefined): string {
+  if (!id) return '';
+  return id.length > 8 ? `${id.slice(0, 4)}***${id.slice(-4)}` : '***';
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
     const RAZORPAY_KEY_SECRET = Deno.env.get('RAZORPAY_KEY_SECRET');
-    const SUPABASE_URL = Deno.env.get('SUPABASE_URL');
-    const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    const RAZORPAY_KEY_ID = Deno.env.get('RAZORPAY_KEY_ID');
+    const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
+    const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY')!;
+    const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
     if (!RAZORPAY_KEY_SECRET) {
-      console.error('Razorpay secret not configured');
-      return new Response(
-        JSON.stringify({ error: 'Payment verification not configured' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      return new Response(JSON.stringify({ error: 'Payment verification not configured' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
-    let { 
-      razorpay_order_id, 
-      razorpay_payment_id, 
-      razorpay_signature,
-      userId,
-      tier,
-      billingCycle,
-    } = await req.json();
-
-    // Normalize tier name
-    if (tier === 'basic') tier = 'essential';
-    const cycle: 'monthly' | 'yearly' = billingCycle === 'monthly' ? 'monthly' : 'yearly';
-
-    console.log('Verifying payment:', { razorpay_order_id, razorpay_payment_id, userId, tier });
-
-    // Verify signature
-    const generatedSignature = await computeHmacSha256(
-      `${razorpay_order_id}|${razorpay_payment_id}`,
-      RAZORPAY_KEY_SECRET
+    // ============= AUTHENTICATION =============
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      global: { headers: { Authorization: authHeader } },
+    });
+    const { data: claimsRes, error: authErr } = await userClient.auth.getClaims(
+      authHeader.replace('Bearer ', '')
     );
+    if (authErr || !claimsRes?.claims?.sub) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    const userId = claimsRes.claims.sub as string;
 
-    if (generatedSignature !== razorpay_signature) {
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, billingCycle } = await req.json();
+
+    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+      return new Response(JSON.stringify({ error: 'Missing payment fields' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    console.log('Verifying payment:', { order: mask(razorpay_order_id), payment: mask(razorpay_payment_id), user: mask(userId) });
+
+    // ============= SIGNATURE VERIFY =============
+    const generated = await computeHmacSha256(`${razorpay_order_id}|${razorpay_payment_id}`, RAZORPAY_KEY_SECRET);
+    if (generated !== razorpay_signature) {
       console.error('Signature verification failed');
-      return new Response(
-        JSON.stringify({ error: 'Payment verification failed' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      return new Response(JSON.stringify({ error: 'Payment verification failed' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
-    console.log('Signature verified successfully');
+    // ============= AUTHORITATIVE TIER FROM DB =============
+    // The tier MUST come from the pre-recorded subscription row created by create-razorpay-order,
+    // not from the client request body. This prevents tier spoofing.
+    const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const { data: subRow, error: subFetchErr } = await admin
+      .from('subscriptions')
+      .select('id, user_id, tier, billing_cycle, amount')
+      .eq('razorpay_order_id', razorpay_order_id)
+      .maybeSingle();
 
-    // Update database
-    const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!);
+    if (subFetchErr || !subRow) {
+      console.error('Subscription order row not found');
+      return new Response(JSON.stringify({ error: 'Order record missing' }),
+        { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
-    // Calculate expiry based on billing cycle
+    // The order's user_id must match the JWT user
+    if (subRow.user_id !== userId) {
+      console.error('Order ownership mismatch');
+      return new Response(JSON.stringify({ error: 'Access denied' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    const tier = subRow.tier as string;
+    const cycle: 'monthly' | 'yearly' = (subRow.billing_cycle === 'monthly' ? 'monthly'
+      : billingCycle === 'monthly' ? 'monthly' : 'yearly');
+
     const expiresAt = new Date();
-    if (cycle === 'yearly') {
-      expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-    } else {
-      expiresAt.setMonth(expiresAt.getMonth() + 1);
-    }
+    if (cycle === 'yearly') expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+    else expiresAt.setMonth(expiresAt.getMonth() + 1);
 
-    // Update subscription status
-    const { error: subError } = await supabase
+    await admin
       .from('subscriptions')
       .update({
         razorpay_payment_id,
@@ -100,12 +116,7 @@ serve(async (req) => {
       })
       .eq('razorpay_order_id', razorpay_order_id);
 
-    if (subError) {
-      console.error('Failed to update subscription:', subError);
-    }
-
-    // Update user profile with new tier
-    const { error: profileError } = await supabase
+    await admin
       .from('profiles')
       .update({
         subscription_tier: tier,
@@ -113,83 +124,51 @@ serve(async (req) => {
       })
       .eq('id', userId);
 
-    if (profileError) {
-      console.error('Failed to update profile:', profileError);
-    }
-
-    console.log('Payment verified and subscription activated for user:', userId);
-
-    // Fetch actual order details from Razorpay for accurate amount
+    // Fetch actual order amount for invoice
     let orderAmount = 0;
     let orderCurrency = 'INR';
-    const RAZORPAY_KEY_ID = Deno.env.get('RAZORPAY_KEY_ID');
-    
     try {
-      const orderResponse = await fetch(
-        `https://api.razorpay.com/v1/orders/${razorpay_order_id}`,
-        {
-          headers: {
-            'Authorization': 'Basic ' + btoa(`${RAZORPAY_KEY_ID}:${RAZORPAY_KEY_SECRET}`)
-          }
-        }
-      );
+      const orderResponse = await fetch(`https://api.razorpay.com/v1/orders/${razorpay_order_id}`, {
+        headers: { 'Authorization': 'Basic ' + btoa(`${RAZORPAY_KEY_ID}:${RAZORPAY_KEY_SECRET}`) },
+      });
       if (orderResponse.ok) {
         const orderData = await orderResponse.json();
         orderAmount = orderData.amount || 0;
         orderCurrency = orderData.currency || 'INR';
-        console.log('Fetched order details:', { amount: orderAmount, currency: orderCurrency });
       }
-    } catch (orderError) {
-      console.error('Failed to fetch order details:', orderError);
+    } catch (e) {
+      console.error('Failed to fetch order details');
     }
 
-    // Generate invoice number
-    const invoiceNumber = `INV-${Date.now().toString(36).toUpperCase()}`;
-
-    // Generate and send invoice PDF via edge function
+    // Trigger invoice generation (service-role auth)
     try {
-      // Get user email from auth
-      const { data: userData } = await supabase.auth.admin.getUserById(userId);
+      const { data: userData } = await admin.auth.admin.getUserById(userId);
       if (userData?.user?.email) {
-        // Trigger invoice generation
         await fetch(`${SUPABASE_URL}/functions/v1/generate-invoice-pdf`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+            'x-internal-service-role': SUPABASE_SERVICE_ROLE_KEY,
           },
           body: JSON.stringify({
-            userId,
-            email: userData.user.email,
-            tier,
-            amount: orderAmount,
-            currency: orderCurrency,
-            transactionId: razorpay_payment_id,
-            orderId: razorpay_order_id,
+            userId, email: userData.user.email, tier,
+            amount: orderAmount, currency: orderCurrency,
+            transactionId: razorpay_payment_id, orderId: razorpay_order_id,
           }),
         });
-        console.log('Invoice generation triggered for:', userData.user.email);
       }
-    } catch (invoiceError) {
-      console.error('Failed to generate invoice:', invoiceError);
-      // Don't fail the payment verification if invoice fails
+    } catch (e) {
+      console.error('Failed to trigger invoice generation');
     }
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        message: 'Payment verified successfully',
-        tier,
-        expiresAt: expiresAt.toISOString(),
-      }),
+      JSON.stringify({ success: true, tier, expiresAt: expiresAt.toISOString() }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
-
   } catch (error) {
-    console.error('Payment verification error:', error);
-    return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    console.error('Payment verification error:', error instanceof Error ? error.message : 'unknown');
+    return new Response(JSON.stringify({ error: 'Internal error' }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 });
