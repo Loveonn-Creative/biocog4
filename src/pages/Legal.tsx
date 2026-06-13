@@ -103,11 +103,9 @@ const Legal = () => {
           
           <div className="space-y-8">
             {document.sections.map((section, index) => (
-              <section key={index} className="prose prose-lg max-w-none">
+              <section key={index}>
                 <h2 className="text-xl font-medium text-foreground mb-4">{section.title}</h2>
-                <div className="text-muted-foreground whitespace-pre-wrap leading-relaxed">
-                  {section.content}
-                </div>
+                <FormattedContent content={section.content} className="text-foreground/85" />
               </section>
             ))}
           </div>
