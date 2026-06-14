@@ -4,6 +4,7 @@ import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check, Phone } from "luci
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import contactOg from "@/assets/og/contact.jpg";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,6 +70,7 @@ const Contact = () => {
           title="Contact Us"
           description="Get in touch with Senseible for carbon intelligence, ESG solutions, and climate finance inquiries."
           canonical="/contact"
+          image={`https://senseible.earth${contactOg}`}
         />
         <MinimalNav />
         
@@ -101,6 +103,7 @@ const Contact = () => {
         title="Contact Us"
         description="Get in touch with Senseible for carbon intelligence, ESG solutions, and climate finance inquiries. HQ: Minarch Tower, Gurugram."
         canonical="/contact"
+        image={`https://senseible.earth${contactOg}`}
       />
       <MinimalNav />
       

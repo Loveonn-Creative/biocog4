@@ -104,6 +104,36 @@ const routes = [
       <p><em>Senseible is not affiliated with Sensibull (an options-trading platform). Senseible is the climate-tech platform at senseible.earth, built by the Biocog team in Gurugram, India.</em></p>`,
   },
   {
+    path: '/platform',
+    title: 'Senseible — The Platform | Verified Climate Evidence for MSMEs, Lenders & Buyers',
+    description: "What Senseible does, who it's for, and how it turns ordinary business documents into climate evidence trusted by auditors, lenders, regulators and carbon buyers.",
+    keywords: 'Senseible platform, climate MRV platform, verified emissions, MSME climate, carbon evidence',
+    noscriptContent: `<h1>Senseible — The Platform</h1>
+      <p>Senseible is a verification layer for climate data. It turns any business document — an invoice, an energy bill, a freight slip — into a verified emission record that a lender can underwrite, a regulator can audit, and a buyer can rely on.</p>
+      <h2>Who it's for</h2>
+      <ul>
+        <li>MSMEs and exporters — turn invoices into a verified emission record without a consultant.</li>
+        <li>Enterprises — get Scope 3 supplier data that holds up under CBAM, ISSB and CSRD.</li>
+        <li>Banks and lenders — underwrite against hash-pinned figures, not borrower self-declarations.</li>
+        <li>Policy and regulators — read decision-grade signals tied to an auditable methodology version.</li>
+        <li>Carbon credit buyers — source MSME-origin credits that clear additionality and evidence linkage.</li>
+        <li>Ecosystem partners — plug verified MSME climate data into your own product surface.</li>
+      </ul>
+      <h2>How it works</h2>
+      <ol>
+        <li>Capture — drop a document, take a photo, or speak the data point.</li>
+        <li>Verify — every document is hashed, parsed, classified deterministically, and reconciled against country grid factors.</li>
+        <li>Use — the verified record feeds your disclosure, your lender, your reduction roadmap, and — when eligible — your credits.</li>
+      </ol>
+      <h2>Outcomes</h2>
+      <ul>
+        <li><a href="${SITE_URL}/trust">Report</a> — one ledger that serves CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD, GRI and SBTi.</li>
+        <li><a href="${SITE_URL}/climate-finance">Finance</a> — verified baselines and credibility scores become underwriting inputs.</li>
+        <li><a href="${SITE_URL}/net-zero">Decarbonise</a> — a baseline becomes a sector-aware roadmap, tracked against the original methodology.</li>
+        <li><a href="${SITE_URL}/carbon-credits">Monetise</a> — records that clear additionality become credit-ready signals for buyers.</li>
+      </ul>`,
+  },
+  {
     path: '/about',
     title: 'About Senseible — AI Carbon Infrastructure for Emerging Markets',
     description: 'Senseible builds AI-powered carbon MRV infrastructure enabling MSMEs to convert operational data into verified carbon outcomes across India and the EU.',
