@@ -72,5 +72,13 @@
   "common.back": "Back",
   "common.next": "Next",
   "footer.powered_by": "Powered by deterministic math, not AI guesses",
-  "footer.copyright": "© 2026 Senseible. All rights reserved."
+  "footer.copyright": "© 2026 Senseible. All rights reserved.",
+  "platform.eyebrow": "The Platform",
+  "platform.hero.title": "Climate evidence, in the time it takes to read this line.",
+  "platform.hero.sub": "Senseible turns any business document into a verified emission record — one that a lender can underwrite, a regulator can audit, and a buyer can rely on.",
+  "platform.what.eyebrow": "What is Senseible?",
+  "platform.what.title": "A verification layer for climate data.",
+  "platform.what.body": "Most climate numbers are self-reported. Senseible replaces the self-report with a chain of evidence — a hash, a methodology, a confidence band — that anyone downstream can independently check. It works on the documents a business already produces, in the language and the country the business already operates in.",
+  "platform.who.eyebrow": "Who is it for?"
 }
+

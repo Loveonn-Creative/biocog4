@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
+import aboutOg from "@/assets/og/about.jpg";
 
 const About = () => {
   return (
@@ -12,6 +13,8 @@ const About = () => {
         title="About — Senseible"
         description="How the world works differently because Senseible exists. Infrastructure-grade carbon MRV for 400 million MSMEs."
         keywords={["about senseible", "carbon MRV infrastructure", "MSME climate finance", "carbon verification"]}
+        canonical="/about"
+        image={`https://senseible.earth${aboutOg}`}
       />
       <MinimalNav />
       

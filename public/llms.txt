@@ -9,6 +9,7 @@ The audience is MSME owners, sustainability leads, exporters facing the EU Carbo
 ## Core product
 
 - [Senseible homepage](/): single-input surface to upload, capture, or speak a document and receive a verified emission estimate.
+- [Platform overview](/platform): high-level explainer for first-time visitors covering what Senseible is, who it serves (MSMEs, enterprises, lenders, regulators, credit buyers, partners), how the capture-verify-use flow works, and outcomes across reporting, finance, decarbonisation and monetisation.
 - [Verify](/verify): deterministic verification flow with confidence bands, SHA-256 evidence hashes, and dispute simulation.
 - [Monetize](/monetize): converts verified evidence into carbon credit and green finance signals.
 - [Calculators hub](/calculators): five free public calculators (PCF, supplier risk, energy transition, logistics, carbon pricing).

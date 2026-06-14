@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SEOHead } from '@/components/SEOHead';
+import industriesOg from '@/assets/og/industries.jpg';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -469,6 +470,7 @@ const Industries = () => {
         title={`${activeIndustry.name} Carbon Accounting — Senseible Industry Solutions`}
         description={`AI-powered carbon MRV for ${activeIndustry.name.toLowerCase()}. Track Scope 1, 2, 3 emissions. Access green loans and CBAM compliance. Built for Indian MSMEs.`}
         canonical={`/industries/${activeIndustry.id}`}
+        image={`https://senseible.earth${industriesOg}`}
         keywords={activeIndustry.keywords}
         breadcrumbs={[
           { name: 'Home', url: '/' },

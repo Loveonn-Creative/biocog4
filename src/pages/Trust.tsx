@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
+import trustOg from "@/assets/og/trust.jpg";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -220,6 +221,7 @@ const Trust = () => {
         title="Trust & Technical Validation"
         description="How Senseible validates MSME climate data: trust layers, MRV architecture, framework alignment, Scope 3 traceability, confidence scoring, and greenwashing prevention — for partners, auditors, buyers and lenders."
         canonical="/trust"
+        image={`https://senseible.earth${trustOg}`}
         keywords={[
           "MRV validation", "carbon data trust layer", "Scope 3 traceability",
           "carbon confidence score", "greenwashing prevention", "CBAM evidence",
