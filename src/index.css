@@ -246,6 +246,16 @@
     100% { transform: translateY(100%); opacity: 0; }
   }
   
+  /* Marquee for platform strip */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+  
   /* Stagger delay utilities */
   .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
