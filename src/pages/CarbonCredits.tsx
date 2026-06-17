@@ -148,10 +148,10 @@ const CarbonCredits = () => {
         {/* Subtle navigation */}
         <div className="mt-20 pt-12 border-t border-border flex justify-between items-center">
           <Link 
-            to="/principles" 
+            to="/trust" 
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Principles
+            Trust architecture
           </Link>
           <Link 
             to="/climate-finance" 
