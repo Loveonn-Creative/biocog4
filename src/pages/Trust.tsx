@@ -607,6 +607,21 @@ const Trust = () => {
                   name: "Cross-MSME peer challenge",
                   desc: "Anomalous values are flagged against the verified peer cluster before they reach a buyer or auditor — reducing the surface for after-the-fact disputes.",
                 },
+              ].map(m => (
+                <Card key={m.name} className="border-border">
+                  <CardContent className="p-5">
+                    <div className="text-sm font-medium mb-2">{m.name}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-8 text-base text-foreground/90 italic">
+              "Verification you can challenge — and that holds up when challenged."
+            </p>
+          </div>
+        </section>
+
         {/* 9. Handoff — where this verified ledger goes next */}
         <section id="handoff" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
