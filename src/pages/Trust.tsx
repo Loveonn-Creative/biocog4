@@ -29,8 +29,7 @@ const sections = [
   { id: "scope3", label: "Scope 3" },
   { id: "scoring", label: "Confidence Score" },
   { id: "greenwashing", label: "Greenwashing" },
-  { id: "credits", label: "Credit Validation" },
-  { id: "finance", label: "Climate Finance" },
+  { id: "handoff", label: "Where it goes next" },
   { id: "netzero", label: "Net-Zero" },
   { id: "governance", label: "Governance" },
   { id: "faq", label: "FAQ" },
@@ -149,24 +148,8 @@ const scope3Examples: Record<string, { headline: string; example: string; framew
   },
 };
 
-// Concrete bank/finance use cases — grounded in climate-finance.md, never claiming guaranteed approval.
-const financeUseCases = [
-  {
-    title: "Sustainability-Linked Loans",
-    sub: "SIDBI · IREDA · commercial banks",
-    body: "The verified scope baseline becomes the KPI. Lenders price coupon step-ups or step-downs against year-over-year reduction on a number whose source they can spot-audit, not a self-reported claim.",
-  },
-  {
-    title: "Receivables factoring on green invoices",
-    sub: "Solar · EV · forestation invoices",
-    body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds — shortening the discount on advances against those receivables.",
-  },
-  {
-    title: "Trade finance under CBAM",
-    sub: "EU-bound exporters",
-    body: "Verified actual emissions per tonne replace the EU default values that would otherwise apply, reducing destination CBAM cost and improving the margin trade-finance desks can underwrite on the shipment.",
-  },
-];
+// Climate-finance and credit depth now lives in /climate-finance and /carbon-credits.
+// Trust keeps a single tight handoff (section 9 below) and ends.
 
 const faqs = [
   {
@@ -639,112 +622,55 @@ const Trust = () => {
           </div>
         </section>
 
-        {/* 9. Credit Validation */}
-        <section id="credits" className="py-20 border-b border-border">
+        {/* 9. Handoff — where this verified ledger goes next */}
+        <section id="handoff" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Coins className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Carbon Credit Validation</span>
+              <ArrowRight className="h-5 w-5 text-primary" />
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Where this ledger goes next</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">From verified record to credit-ready signal</h2>
-            <p className="text-muted-foreground max-w-3xl mb-8">
-              Records eligible for credit consideration must clear three gates: additionality, evidence linkage
-              (hash-anchored), and methodology lock (the version used cannot drift). Buyers consume a decision-grade signal
-              — not raw MSME data.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { name: "Additionality flag", desc: "Activity meets the baseline additionality test." },
-                { name: "Evidence linkage", desc: "Every claim traces to a SHA-256 hash." },
-                { name: "Methodology lock", desc: "Factor source and version pinned to the record." },
-              ].map(g => (
-                <Card key={g.name} className="border-border">
-                  <CardContent className="p-5">
-                    <div className="text-sm font-medium mb-2">{g.name}</div>
-                    <p className="text-xs text-muted-foreground">{g.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 10. Climate Finance — why lenders can act on it */}
-        <section id="finance" className="py-20 border-b border-border bg-secondary/30">
-          <div className="container max-w-5xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Banknote className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Climate &amp; Green Finance</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Why a lender can underwrite against this data</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Verification is the input. Finance and credits are downstream.</h2>
             <p className="text-muted-foreground max-w-3xl mb-10">
-              Lenders don't trust borrower self-declarations — they trust verifiable chains. Every figure that reaches a
-              bank, factoring desk, or government incentive scheme carries the proof of how it was produced.
+              The verified scope ledger described above is the primitive. Two of its downstream uses have their own dedicated
+              pages — with the lender mechanics, the credit gates, and the regulatory grounding spelled out in full.
             </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {[
-                {
-                  title: "Hash-pinned, spot-auditable",
-                  body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices.",
-                },
-                {
-                  title: "Confidence bands, never false precision",
-                  body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate.",
-                },
-                {
-                  title: "Methodology locked at disclosure time",
-                  body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve.",
-                },
-                {
-                  title: "Climate Credibility Score (0–100)",
-                  body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio — graded A+ to D.",
-                },
-                {
-                  title: "Cross-MSME peer comparison",
-                  body: "The borrower is benchmarked against verified peers in the same sector and country — not against a self-reported claim or a global average.",
-                },
-                {
-                  title: "Decision-grade, not raw",
-                  body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth — borrower documents stay private.",
-                },
-              ].map(b => (
-                <Card key={b.title} className="border-border">
-                  <CardContent className="p-6">
-                    <div className="text-sm font-medium mb-2">{b.title}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{b.body}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Concrete use cases — no guarantees, no "we lend" claims */}
-            <div className="mb-8">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Where lenders consume this</div>
-              <div className="grid md:grid-cols-3 gap-4">
-                {financeUseCases.map(u => (
-                  <Card key={u.title} className="border-border">
-                    <CardContent className="p-6">
-                      <div className="text-sm font-medium mb-1">{u.title}</div>
-                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">{u.sub}</div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{u.body}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground mb-6">
-              Senseible is not a lender, factor, or registry. It is the verification primitive each of those institutions
-              consumes. The same verified ledger maps to government incentive schemes — SIDBI, IREDA and MNRE in India,
-              with equivalent programmes wired through country config in every supported market.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <Button asChild variant="outline"><Link to="/climate-finance">See the full climate-finance flow <ArrowRight className="h-4 w-4 ml-2" /></Link></Button>
-              <Button asChild variant="ghost"><Link to="/partners">For lenders &amp; partners</Link></Button>
+            <div className="grid md:grid-cols-2 gap-4">
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Banknote className="h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Climate &amp; green finance</div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Lenders, factors and incentive desks consume hash-pinned figures, confidence bands, methodology lock,
+                    and the Climate Credibility Score — not borrower self-declarations. Senseible is not a lender; it is
+                    the verification primitive each of those institutions consumes.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/climate-finance">See the climate-finance flow <ArrowRight className="h-3.5 w-3.5 ml-2" /></Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Coins className="h-4 w-4 text-primary" />
+                    <div className="text-sm font-medium">Carbon credit validation</div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Records that clear additionality, evidence linkage and methodology lock become credit-ready signals.
+                    Buyers consume a decision-grade signal — not raw MSME data. The three gates and the underlying
+                    workflow are documented on the carbon credits page.
+                  </p>
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/carbon-credits">See carbon credit flow <ArrowRight className="h-3.5 w-3.5 ml-2" /></Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
+
 
         {/* 11. Net-Zero */}
         <section id="netzero" className="py-20 border-b border-border">
