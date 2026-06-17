@@ -148,24 +148,8 @@ const scope3Examples: Record<string, { headline: string; example: string; framew
   },
 };
 
-// Concrete bank/finance use cases — grounded in climate-finance.md, never claiming guaranteed approval.
-const financeUseCases = [
-  {
-    title: "Sustainability-Linked Loans",
-    sub: "SIDBI · IREDA · commercial banks",
-    body: "The verified scope baseline becomes the KPI. Lenders price coupon step-ups or step-downs against year-over-year reduction on a number whose source they can spot-audit, not a self-reported claim.",
-  },
-  {
-    title: "Receivables factoring on green invoices",
-    sub: "Solar · EV · forestation invoices",
-    body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds — shortening the discount on advances against those receivables.",
-  },
-  {
-    title: "Trade finance under CBAM",
-    sub: "EU-bound exporters",
-    body: "Verified actual emissions per tonne replace the EU default values that would otherwise apply, reducing destination CBAM cost and improving the margin trade-finance desks can underwrite on the shipment.",
-  },
-];
+// Climate-finance and credit depth now lives in /climate-finance and /carbon-credits.
+// Trust keeps a single tight handoff (section 9 below) and ends.
 
 const faqs = [
   {
