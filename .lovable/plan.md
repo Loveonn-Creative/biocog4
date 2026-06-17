@@ -1,119 +1,82 @@
-## Scope
+# Plan — Trust handoff, ClimateFinance / CarbonCredits depth, Platform page polish
 
-Six focused changes. Nothing existing gets duplicated; MRV logic, schemas, and edge functions are untouched.
+Scope is strictly UI + content + i18n. No changes to MRV logic, edge functions, schemas, RLS, or other functional pages.
 
----
+## 1. Trust page — remove deep sections, keep the handoff
 
-### 1. Trust page — Climate / Green Finance section rewrite
+`src/pages/Trust.tsx`
 
-Source of truth: `public/md/climate-finance.md` (already grounded, no claims of being a lender).
+- **Remove** the deep `#finance` section (all six "why a lender can underwrite" cards + `financeUseCases` cards) and the `financeUseCases` constant.
+- **Remove** the deep `#credits` section (three-gate cards).
+- **Replace both** with a single tight "Where this verified ledger goes next" handoff block (2 cards, ~3 lines each):
+  - **Climate & green finance →** one paragraph: lenders consume hash-pinned figures, confidence bands, methodology lock, Climate Credibility Score. CTA: *See the climate-finance flow → /climate-finance*.
+  - **Carbon credit validation →** one paragraph: records that clear additionality + evidence linkage + methodology lock become credit-ready signals. CTA: *See carbon credit flow → /carbon-credits*.
+- Update the in-page sticky nav (`sections` array, lines 32–33): collapse `credits` + `finance` into one entry `{ id: "handoff", label: "Where it goes next" }`.
+- Keep greenwashing, scope3, scoring, governance, FAQ untouched.
 
-Rewrite the `finance` section in `src/pages/Trust.tsx` around the four real mechanics:
+## 2. ClimateFinance page — absorb the lender depth
 
-- Verified Scope 1/2/3 baseline as an underwriting input.
-- Confidence bands per scope (no false precision).
-- Climate Credibility Score (0–100, A+/A/B/C/D) as a single signal.
-- SHA-256 evidence hashes for spot-audit.
+`src/pages/ClimateFinance.tsx` — full rewrite, same shell (MinimalNav/Footer, `max-w-4xl`, `animate-fade-in`).
 
-Add three concrete bank/finance use cases pulled from `climate-finance.md`:
+Sections, top to bottom:
+1. Back link + H1 *Climate Finance* + lede: "Verified Senseible data is the primitive lenders, factors, and incentive desks consume — Senseible is not a lender."
+2. **Why lenders can underwrite against this data** — 6-card grid migrated verbatim from Trust's current finance section (hash-pinned, confidence bands, methodology lock, Climate Credibility Score, peer comparison, decision-grade not raw).
+3. **Where it gets consumed** — 3 use-case cards from `climate-finance.md`: SLLs via SIDBI/IREDA/commercial banks, green-invoice factoring (solar/EV/forestation), CBAM trade finance.
+4. Keep existing **Opportunity cards** grid (Green Loans / Govt Incentives / Export Compliance / SLL) — reframed under heading "Opportunities this unlocks for MSMEs" and reworded to drop guaranteed-rate claims (e.g. "potential preferential rates", not "Save 0.5-2%"). Region-neutral copy with EM examples (drop the ₹-only line; add a USD/INR pairing).
+5. Keep **What MSMEs Are Missing** block.
+6. CTA card + footer cross-links → `/trust` (back to architecture) and `/carbon-credits`.
+7. Add `SEOHead` with existing `climate-finance.jpg` OG.
 
-- Sustainability-Linked Loans (SIDBI / IREDA / commercial banks) — KPI is the verified baseline trend.
-- Receivables factoring on green invoices — verified solar/EV/forestation invoices unlock advance.
-- Trade finance under CBAM — verified actuals replace EU defaults to reduce destination cost.
+## 3. CarbonCredits page — absorb credit-validation depth
 
-Remove or reword any line that implies guaranteed approval, fixed rate, or that Senseible is a lender. Replace with "decision-grade signal" / "underwriting input" phrasing already used in `climate-finance.md`.
+`src/pages/CarbonCredits.tsx` — add (don't remove existing flow):
+- New section after the lede, before "How It Works": **"From verified record to credit-ready signal"** with 3 gate cards migrated from Trust (Additionality flag / Evidence linkage / Methodology lock) + one sentence: "Buyers consume a decision-grade signal — not raw MSME data."
+- Update footer cross-link target to `/trust`.
+- Add `SEOHead` (no carbon-credits OG asset exists — reuse `trust.jpg` or `climate-finance.jpg`; pick climate-finance for thematic fit).
+- Keep ₹/$ metric cards but make currency labels region-neutral.
 
-### 2. Trust page — Greenwashing section replaced with Phase 2D version
+> **Assumption (one open call):** the user's second bullet says "update in climate finance page" for carbon credits — interpreting this as "Carbon Credits page" (the natural home) since `/carbon-credits` already exists and ClimateFinance is now the lender story. If you actually want the credit-validation depth inside `/climate-finance` instead, say so and I'll move it.
 
-Replace the current `greenwashing` block in `Trust.tsx` with the structural-defense version already drafted in `public/md/trust.md` (six mechanisms: SHA-256 dedup, immutable pre-processing stubs, methodology + factor pinning per output, deterministic failure on missing inputs, additionality lock on credit-eligible records, cross-MSME peer challenge).
+## 4. Platform page — fix the four real complaints
 
-Render as six tight cards with one-line mechanism + one-line "what it prevents". No essay paragraphs, no "illustrative only" disclaimers, no "public version v1" tags, no "without exposing…" phrasing. Same narrative flow as the rest of the page.
+`src/pages/Platform.tsx`
 
-### 3. Trust page — market-aware Scope 3 copy
+### 4a. Full i18n (no more hardcoded English)
+- All `audiences[]`, `outcomes[]`, `steps[]` arrays already pass labels through `t()` with fallbacks — but the translation files don't contain the keys for non-English locales. Add the full `platform.*` key set (audiences.*.label/line, out.*.title/body/cta, how.01–03.title/body, who.*, problem.*, trust.*, where.*, cta.*) to all 10 non-English files: `bn, es, hi, id, mr, ta, th, tl, ur, vi`. Use the existing English copy as source; for non-English I'll provide accurate translations (not transliteration) consistent with `mem://technical/multilingual-support`.
 
-Today the Scope 3 block reads India-first. Make it region-aware using the existing country selector in `src/lib/countryConfig.ts` (already loads grid factors + tax IDs for 10 countries).
+### 4b. Remove decorative icons that serve no purpose
+- Drop the standalone `Sparkles` icon above the final CTA (purely decorative, the user explicitly called it out).
+- Keep functional/labelling icons (`Shield` on trust strip, `Building2` on industries, `Globe2` on markets, `FileCheck/Banknote/Target/Coins` on outcome cards) — each labels a category.
+- The hero has no platform icon; the screenshot the user shared shows only the `The Platform` badge above the H1, which stays.
 
-Implementation: read the active country from `countryConfig` and render the Scope 3 examples dynamically:
+### 4c. Replace "all black/white" with platform theme accents
+- Trust-strip badges: switch from `outline` to a subtle `bg-primary/5 text-primary border-primary/15` chip style for the 9 framework names.
+- Outcome cards: icon background goes from `bg-secondary` to `bg-primary/8 border-primary/15`; icon color stays `text-primary`.
+- Step cards (How it works): add a thin `border-l-2 border-primary/30` accent on the left.
+- Industries pills: hover state gets `hover:border-primary/40 hover:text-primary` instead of plain `hover:bg-secondary`.
+- Country tiles: small primary dot before the country name.
+- Keep background palette (white / `secondary/30`) — accents only, no full repaint.
 
-- Counterparty ID label: GSTIN (IN), NPWP (ID), MST (VN), TIN (TH/PH/MY), BIN (BD), NTN (PK), CNPJ (BR), VAT (EU), UEN (SG), TIN (LK).
-- One example sentence per region using that ID and the local grid factor source.
-- Peer-cluster benchmark line stays universal.
+### 4d. Add the marquee strip (inspired by the PDF — NOT copied)
+- New component `src/components/PlatformMarquee.tsx`: single horizontal auto-scrolling row, dark `bg-foreground text-background` band, 6 word-pairs in mono font: `MRV workflows → standardised`, `Decarbonisation roadmaps → actionable`, `Climate finance flows → transparent`, `Emerging markets → included`, `Scope 1 · 2 · 3 → verified`, `Carbon credits → traceable`. Right-hand word uses `text-primary`.
+- Pure CSS animation (`@keyframes scroll-x` already present pattern; add to `index.css` if missing). Respects `prefers-reduced-motion` (animation paused).
+- Place it once on Platform page, between Hero and "What is Senseible?" section.
+- All six labels translated via `t('platform.marquee.*')`.
 
-No new country data added — only surfacing what `countryConfig` already holds. Jurisdiction-specific frameworks (CBAM, BRSR, CSRD, ISSB) stay precisely tagged to the country that owns them.
+### 4e. Speed/clarity micro-fixes
+- Hero `pt-32` → `pt-24 md:pt-28` (less dead space on mobile).
+- Lazy-load OG image via `loading="lazy"` (already meta only, no body img — skip).
+- All `<Link>` already use react-router — no route changes.
 
-### 4. Per-page OG / social preview images
+## 5. SEO surface unchanged
+No new routes. No sitemap/llms.txt/static-html changes (Platform already wired in previous turn). Only `en.json` already has `platform.*`; this plan adds the same keys to the other 10 locales.
 
-Today every page falls back to one generic OG image. Generate distinct OG cards (1200×630) for the high-traffic public routes using the agent image tool (premium tier, because they contain text):
+## Files touched
+- Edit: `src/pages/Trust.tsx`, `src/pages/ClimateFinance.tsx`, `src/pages/CarbonCredits.tsx`, `src/pages/Platform.tsx`, `src/index.css` (one keyframe if missing)
+- Create: `src/components/PlatformMarquee.tsx`
+- Edit (i18n): `src/lib/i18n/translations/{bn,es,hi,id,mr,ta,th,tl,ur,vi}.json` — append `platform.*` block
 
-Routes to cover: `/`, `/trust`, `/climate-finance`, `/net-zero`, `/cbam-calculator`, `/mission`, `/about`, `/partners`, `/industries`, `/pricing`, `/contact`, and the new `/platform` page.
-
-Design system (Apple-product-launch register while align with platform theme and context):
-
-- Pure white background, generous negative space.
-- Single-line headline in Senseible's existing display type, page-specific.
-- One small monochrome glyph drawn from the page's own iconography.
-- Senseible wordmark bottom-left, one-line descriptor bottom-right.
-- No gradients, no stock illustrations, no badges, no India-only flags.
-
-Files saved under `src/assets/og/{route}.jpg`. `SEOHead.tsx` extended to accept an `ogImage` prop and each page passes its asset. The current global fallback stays for any route that doesn't ship a custom card.
-
-### 5. Legal + critical pages — markdown formatting fix
-
-Root cause: `src/pages/Legal.tsx` and several markdown-driven pages render `section.content` with `whitespace-pre-wrap`, so literal `**bold**` and `-` bullets show as raw characters (the screenshot you shared — "**1.1 Platform Classification**" — is exactly this).
-
-Fix: route all long-form content through the existing `src/components/FormattedContent.tsx` (or extend it minimally) so `**…**`, `*…*`, `-` / `1.` lists, and headings render as real HTML. Single shared renderer, no per-page hacks.
-
-Pages to switch over in the same pass:
-
-- `Legal.tsx` (all 4 documents)
-- `About.tsx`, `Mission.tsx`, `Principles.tsx`, `ClimateFinance.tsx`, `NetZero.tsx`, `CarbonCredits.tsx`, `Trust.tsx` long-form blocks, `CBAMCalculator.tsx` intro copy
-
-No content rewrites here — purely a rendering fix so the existing markdown reads cleanly.
-
-### 6. New `/platform` landing page (NOT the homepage)
-
-A dedicated explainer for first-time visitors — clients, enterprises, MSMEs, climate-finance partners, policymakers, carbon buyers. Homepage at `/` stays exactly as-is.
-
-Route: `/platform`, added to `App.tsx`, `sitemap.xml`, `llms.txt`, footer, and the `MinimalNav` "Learn more" group.
-
-Sections (conversational, Ogilvy/Godin register, one question per section):
-
-1. **What is Senseible?** — one paragraph, plain language, no jargon.
-2. **Who is it for?** — six audience chips (MSME, Enterprise, Lender, Policy, Carbon Buyer, Ecosystem Partner). Each chip expands one sentence.
-3. **What problem does it solve?** — the verification gap in emerging-market climate data, framed globally (not India-only).
-4. **How it works** — three steps: capture → verify → use (link to `/trust` for depth, don't repeat methodology).
-5. **What you can do with verified data** — four outcome cards: report, finance, decarbonize, monetize. Each links to the existing page (`/climate-finance`, `/net-zero`, `/carbon-credits`, the relevant calculator).
-6. **Trust in one line** — Climate Credibility Score band + SHA-256 hash + framework coverage strip. Links to `/trust`.
-7. **Industries** — strip linking to existing `/industries` sector pages.
-8. **Where it works** — 10-country strip (already in `countryConfig`).
-9. **Next action** — two CTAs only: "Decarbonize" (homepage) and "Talk to us" (`/contact`). No pricing, no signup wall.
-
-Design rules:
-
-- Reuses existing tokens, type, and `MinimalNav` / `Footer`. No new design system.
-- Mobile-first, single-column on phones, two-column on desktop where it helps.
-- i18n: every string goes through `useTranslation`, keys added to `en.json` and the 10 locale files (English source, others get the English string until translated — same pattern the rest of the site uses).
-- SEO: page-specific `<title>`, meta description, canonical, JSON-LD `WebPage` + `Organization`, the new `/platform` OG image from step 4.
-- No confidential methodology, no competitive-advantage detail — all depth links to `/trust`.
-
----
-
-## Technical notes
-
-- Trust section rewrites are edits to `src/pages/Trust.tsx` arrays; no component restructure.
-- Scope 3 region awareness uses the existing `useCountry`/`countryConfig` hook — no new state, no new tables.
-- `FormattedContent.tsx` already exists; extending it is cheaper than introducing `react-markdown`.
-- OG images: one image per route under `src/assets/og/`, imported as ES modules. `SEOHead` reads an optional `ogImage` prop.
-- `/platform` is a new route file `src/pages/Platform.tsx` + lazy import in `App.tsx`. No backend, no schema changes.
-- `sitemap.xml`, `robots.txt`, `llms.txt`, `scripts/generate-static-html.js` updated so `/platform` is pre-rendered and indexable.
-
-## Out of scope
-
-- MRV logic, edge functions, RLS, schemas — untouched.
-- Homepage `/` — untouched.
-- New copy for legal documents — only the renderer changes.
-- New translations beyond English — the i18n keys land in every locale file with the English string as fallback.
-
-## One open choice
-
-Route name for the new landing page. Plan assumes `/platform`. If you'd rather use `/overview`, `/start`, or `/what-is-senseible`, say so before I build and I'll swap it everywhere (sitemap, llms.txt, OG asset filename, nav).
+## Explicitly NOT in scope
+- Solution page for Platform (user said "Then we create a solution page… before that ensure all above pages and actions are functional" — that's a follow-up after this lands and is verified).
+- Any change to MRV math, edge functions, RLS, schemas, or the homepage.
+- Any change to the Trust page beyond the two sections above and the sticky-nav entry collapse.
