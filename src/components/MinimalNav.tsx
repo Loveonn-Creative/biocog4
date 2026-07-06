@@ -21,6 +21,7 @@ const navLinks = [
   { path: "/trust", label: "Trust" },
   { path: "/calculators", label: "Calculators" },
   { path: "/climate-intelligence", label: "Climate Intelligence" },
+  { path: "/careers", label: "Careers" },
   { path: "/contact", label: "Contact" },
   { path: "/legal", label: "Legal" },
 ];
