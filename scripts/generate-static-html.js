@@ -134,6 +134,44 @@ const routes = [
       </ul>`,
   },
   {
+    path: '/careers',
+    title: 'Careers — Build climate infrastructure | Senseible',
+    description: "Join Senseible to build AI infrastructure for carbon markets, climate finance, and MSME decarbonisation. Open roles from interns to senior engineers.",
+    keywords: 'climate tech careers, carbon market jobs, AI climate jobs, climate finance careers, ESG AI, green fintech careers, MSME climate platform',
+    noscriptContent: `<h1>Careers at Senseible — Build the infrastructure that decarbonises millions of MSMEs</h1>
+      <p>Senseible is building the AI verification layer for carbon markets, climate finance, and MSME decarbonisation. We hire builders who want difficult problems, direct ownership, and speed — not manufactured perks.</p>
+      <h2>Why join now</h2>
+      <ul>
+        <li>400 million MSMEs across emerging markets need carbon accounting they can trust. CBAM, BRSR, and green finance are already asking for it.</li>
+        <li>Verified evidence is a primitive that lenders, buyers, regulators and ERP tools all consume. Build it once, unlock many markets.</li>
+        <li>Small team, direct founder access, work reaches production the same week.</li>
+      </ul>
+      <h2>What you'll build</h2>
+      <ul>
+        <li>MRV pipeline and deterministic carbon math — evidence hashing, HSN classification, methodology versioning.</li>
+        <li>Climate finance signals — verified baselines as underwriting inputs for green loans and factoring.</li>
+        <li>Applied AI and voice — document extraction, Scope 3 inference, multilingual voice for MSME owners.</li>
+        <li>Trust and data layer — greenwashing prevention, framework mapping across CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD.</li>
+      </ul>
+      <h2>Open roles</h2>
+      <ul>
+        <li>Founding Engineer — Gurugram, Senior.</li>
+        <li>Applied AI Engineer — Hybrid, Mid.</li>
+        <li>Climate Research Associate — Remote (India), Mid.</li>
+        <li>Product Designer — Hybrid, Mid.</li>
+        <li>Growth & Operations — Gurugram, Mid.</li>
+        <li>Founder's Office — Gurugram, Mid.</li>
+        <li>Freshers — Engineering, Research, Design, Ops (Hybrid).</li>
+        <li>Interns — Applied AI, Climate, Product (Remote, India).</li>
+      </ul>
+      <h2>How to apply</h2>
+      <ol>
+        <li>Visit <a href="${SITE_URL}/platform">the platform</a>.</li>
+        <li>Send 3–5 lines or a 2–3 minute video on how your experience will help Senseible move faster.</li>
+        <li>Freshers and interns: use the intake form linked from the Careers page. Everyone else: email build@senseible.earth.</li>
+      </ol>
+      <p>We reply within a week and decide within two. Fast, both ways.</p>`,
+  {
     path: '/about',
     title: 'About Senseible — AI Carbon Infrastructure for Emerging Markets',
     description: 'Senseible builds AI-powered carbon MRV infrastructure enabling MSMEs to convert operational data into verified carbon outcomes across India and the EU.',

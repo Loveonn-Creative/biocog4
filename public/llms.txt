@@ -19,6 +19,7 @@ The audience is MSME owners, sustainability leads, exporters facing the EU Carbo
 - [Marketplace](/marketplace): MSME-issued credit listings with provenance badges.
 - [Partner portal](/partners): integrations for carbon buyers, banks, ERP and climate-finance partners.
 - [Trust & Technical Validation](/trust): consolidated public reference for partners, auditors, lenders and credit buyers — trust layers, MRV pipeline, framework coverage, Scope 3 traceability, confidence scoring, greenwashing prevention, governance.
+- [Careers](/careers): open roles across engineering, applied AI, climate research, design, growth and founder's office — plus intern and fresher tracks. Apply via the platform, the mailto, or the intake form.
 
 ## Knowledge
 
