@@ -379,18 +379,23 @@ const Careers = () => {
               )}
             </h2>
           </div>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {["Carbon markets", "Climate finance", "Applied AI", "Distributed systems", "Product", "Research"].map(
-              (chip) => (
-                <span
-                  key={chip}
-                  className="text-xs px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-foreground"
-                >
-                  {chip}
-                </span>
-              )
-            )}
-          </div>
+          <ul className="flex flex-wrap gap-2 mb-6" aria-label={t("careers.growth.eyebrow", "Where your career goes")}>
+            {[
+              ["careers.chip.carbon_markets", "Carbon markets"],
+              ["careers.chip.climate_finance", "Climate finance"],
+              ["careers.chip.applied_ai", "Applied AI"],
+              ["careers.chip.distributed_systems", "Distributed systems"],
+              ["careers.chip.product", "Product"],
+              ["careers.chip.research", "Research"],
+            ].map(([key, fallback]) => (
+              <li
+                key={key}
+                className="text-xs px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-foreground"
+              >
+                {t(key, fallback)}
+              </li>
+            ))}
+          </ul>
           <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
             {t(
               "careers.growth.body",
