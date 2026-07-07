@@ -613,10 +613,15 @@ const Careers = () => {
           >
             {t("careers.faq.title", "Straight answers.")}
           </h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full"
+            aria-label={t("careers.faq.title", "Straight answers.")}
+          >
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-base">
+                <AccordionTrigger className="text-left text-base focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 rounded-sm">
                   {f.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
