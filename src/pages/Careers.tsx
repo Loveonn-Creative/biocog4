@@ -421,43 +421,60 @@ const Careers = () => {
                 {t("careers.roles.title", "A short, honest list.")}
               </h2>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Filter className="h-3.5 w-3.5" />
-              <span>{visible.length} of {careersRoles.length}</span>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground" role="status" aria-live="polite">
+              <Filter className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>
+                {t("careers.filter.count", "{visible} of {total} roles shown")
+                  .replace("{visible}", String(visible.length))
+                  .replace("{total}", String(careersRoles.length))}
+              </span>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-3 mb-6">
+          <div
+            role="group"
+            aria-label={t("careers.filter.title", "Filter open roles")}
+            className="grid sm:grid-cols-3 gap-3 mb-6"
+          >
             <Select value={fn} onValueChange={setFn}>
-              <SelectTrigger aria-label="Filter by function">
-                <SelectValue placeholder="All functions" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_function", "Filter by function")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_functions", "All functions")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All functions</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_functions", "All functions")}</SelectItem>
                 {functions.map((f) => (
-                  <SelectItem key={f} value={f}>{f}</SelectItem>
+                  <SelectItem key={f} value={f}>{t(`careers.function.${f}`, f)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <Select value={lvl} onValueChange={setLvl}>
-              <SelectTrigger aria-label="Filter by level">
-                <SelectValue placeholder="All levels" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_level", "Filter by level")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_levels", "All levels")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All levels</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_levels", "All levels")}</SelectItem>
                 {levels.map((l) => (
-                  <SelectItem key={l} value={l}>{l}</SelectItem>
+                  <SelectItem key={l} value={l}>{t(`careers.level.${l}`, l)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <Select value={loc} onValueChange={setLoc}>
-              <SelectTrigger aria-label="Filter by location">
-                <SelectValue placeholder="All locations" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_location", "Filter by location")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_locations", "All locations")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All locations</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_locations", "All locations")}</SelectItem>
                 {locations.map((l) => (
-                  <SelectItem key={l} value={l}>{l}</SelectItem>
+                  <SelectItem key={l} value={l}>{t(`careers.location.${l}`, l)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -466,17 +483,16 @@ const Careers = () => {
           {visible.length === 0 ? (
             <div className="text-center py-12 border border-dashed border-border rounded-lg">
               <p className="text-sm text-muted-foreground">
-                No open roles match those filters right now.
+                {t("careers.roles.empty.title", "No open roles match those filters right now.")}
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Send a note to{" "}
-                <a
-                  href={`mailto:${APPLY_EMAIL}`}
-                  className="text-primary hover:underline"
-                >
-                  {APPLY_EMAIL}
-                </a>{" "}
-                — we track strong builders for the next opening.
+                {t("careers.roles.empty.body", "Send a note to {email} — we track strong builders for the next opening.")
+                  .split("{email}")
+                  .flatMap((part, i, arr) =>
+                    i < arr.length - 1
+                      ? [part, <a key={i} href={`mailto:${APPLY_EMAIL}`} className="text-primary hover:underline">{APPLY_EMAIL}</a>]
+                      : [part]
+                  )}
               </p>
             </div>
           ) : (
