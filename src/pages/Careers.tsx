@@ -157,19 +157,32 @@ const Careers = () => {
             )}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="min-h-11">
               <a
                 href={FRESHER_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t(
+                  "careers.hero.cta.form_aria",
+                  "Open the applications form in a new tab"
+                )}
               >
                 {t("careers.hero.cta.primary", "Apply now")}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                <span className="sr-only">
+                  {t("careers.role.opens_new_tab", "(opens in new tab)")}
+                </span>
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}>
-                <Mail className="mr-2 h-4 w-4" />
+            <Button asChild variant="outline" size="lg" className="min-h-11">
+              <a
+                href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
+                aria-label={t(
+                  "careers.hero.cta.email_aria",
+                  "Email the founding team at build@senseible.earth"
+                )}
+              >
+                <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
                 {APPLY_EMAIL}
               </a>
             </Button>
@@ -366,18 +379,23 @@ const Careers = () => {
               )}
             </h2>
           </div>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {["Carbon markets", "Climate finance", "Applied AI", "Distributed systems", "Product", "Research"].map(
-              (chip) => (
-                <span
-                  key={chip}
-                  className="text-xs px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-foreground"
-                >
-                  {chip}
-                </span>
-              )
-            )}
-          </div>
+          <ul className="flex flex-wrap gap-2 mb-6" aria-label={t("careers.growth.eyebrow", "Where your career goes")}>
+            {[
+              ["careers.chip.carbon_markets", "Carbon markets"],
+              ["careers.chip.climate_finance", "Climate finance"],
+              ["careers.chip.applied_ai", "Applied AI"],
+              ["careers.chip.distributed_systems", "Distributed systems"],
+              ["careers.chip.product", "Product"],
+              ["careers.chip.research", "Research"],
+            ].map(([key, fallback]) => (
+              <li
+                key={key}
+                className="text-xs px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-foreground"
+              >
+                {t(key, fallback)}
+              </li>
+            ))}
+          </ul>
           <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
             {t(
               "careers.growth.body",
@@ -403,43 +421,60 @@ const Careers = () => {
                 {t("careers.roles.title", "A short, honest list.")}
               </h2>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <Filter className="h-3.5 w-3.5" />
-              <span>{visible.length} of {careersRoles.length}</span>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground" role="status" aria-live="polite">
+              <Filter className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>
+                {t("careers.filter.count", "{visible} of {total} roles shown")
+                  .replace("{visible}", String(visible.length))
+                  .replace("{total}", String(careersRoles.length))}
+              </span>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-3 mb-6">
+          <div
+            role="group"
+            aria-label={t("careers.filter.title", "Filter open roles")}
+            className="grid sm:grid-cols-3 gap-3 mb-6"
+          >
             <Select value={fn} onValueChange={setFn}>
-              <SelectTrigger aria-label="Filter by function">
-                <SelectValue placeholder="All functions" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_function", "Filter by function")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_functions", "All functions")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All functions</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_functions", "All functions")}</SelectItem>
                 {functions.map((f) => (
-                  <SelectItem key={f} value={f}>{f}</SelectItem>
+                  <SelectItem key={f} value={f}>{t(`careers.function.${f}`, f)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <Select value={lvl} onValueChange={setLvl}>
-              <SelectTrigger aria-label="Filter by level">
-                <SelectValue placeholder="All levels" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_level", "Filter by level")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_levels", "All levels")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All levels</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_levels", "All levels")}</SelectItem>
                 {levels.map((l) => (
-                  <SelectItem key={l} value={l}>{l}</SelectItem>
+                  <SelectItem key={l} value={l}>{t(`careers.level.${l}`, l)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
             <Select value={loc} onValueChange={setLoc}>
-              <SelectTrigger aria-label="Filter by location">
-                <SelectValue placeholder="All locations" />
+              <SelectTrigger
+                aria-label={t("careers.filter.by_location", "Filter by location")}
+                className="min-h-11"
+              >
+                <SelectValue placeholder={t("careers.filter.all_locations", "All locations")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={ALL}>All locations</SelectItem>
+                <SelectItem value={ALL}>{t("careers.filter.all_locations", "All locations")}</SelectItem>
                 {locations.map((l) => (
-                  <SelectItem key={l} value={l}>{l}</SelectItem>
+                  <SelectItem key={l} value={l}>{t(`careers.location.${l}`, l)}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -448,17 +483,16 @@ const Careers = () => {
           {visible.length === 0 ? (
             <div className="text-center py-12 border border-dashed border-border rounded-lg">
               <p className="text-sm text-muted-foreground">
-                No open roles match those filters right now.
+                {t("careers.roles.empty.title", "No open roles match those filters right now.")}
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                Send a note to{" "}
-                <a
-                  href={`mailto:${APPLY_EMAIL}`}
-                  className="text-primary hover:underline"
-                >
-                  {APPLY_EMAIL}
-                </a>{" "}
-                — we track strong builders for the next opening.
+                {t("careers.roles.empty.body", "Send a note to {email} — we track strong builders for the next opening.")
+                  .split("{email}")
+                  .flatMap((part, i, arr) =>
+                    i < arr.length - 1
+                      ? [part, <a key={i} href={`mailto:${APPLY_EMAIL}`} className="text-primary hover:underline">{APPLY_EMAIL}</a>]
+                      : [part]
+                  )}
               </p>
             </div>
           ) : (
@@ -478,39 +512,46 @@ const Careers = () => {
                         {r.scope}
                       </p>
                       <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.function}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.level}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.location}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.function.${r.function}`, r.function)}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.level.${r.level}`, r.level)}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.location.${r.location}`, r.location)}</span>
                       </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 md:min-w-[220px] md:justify-end">
                       {fresher ? (
-                        <Button asChild size="sm">
+                        <Button asChild size="sm" className="min-h-11">
                           <a
                             href={FRESHER_FORM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`${t("careers.role.apply_form", "Apply via form")} — ${r.title}`}
                           >
-                            Apply via form
-                            <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                            {t("careers.role.apply_form", "Apply via form")}
+                            <ExternalLink className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
+                            <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
                           </a>
                         </Button>
                       ) : (
                         <>
-                          <Button asChild size="sm">
+                          <Button asChild size="sm" className="min-h-11">
                             <a
                               href={FRESHER_FORM_URL}
                               target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`${t("careers.role.apply", "Apply")} — ${r.title}`}
                             >
-                              Apply
-                              <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                              {t("careers.role.apply", "Apply")}
+                              <ArrowRight className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
+                              <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
                             </a>
                           </Button>
-                          <Button asChild size="sm" variant="outline">
-                            <a href={mailtoFor(r)}>
-                              <Mail className="mr-2 h-3.5 w-3.5" />
-                              Email CV
+                          <Button asChild size="sm" variant="outline" className="min-h-11">
+                            <a
+                              href={mailtoFor(r)}
+                              aria-label={`${t("careers.role.email_cv", "Email CV")} — ${r.title}`}
+                            >
+                              <Mail className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
+                              {t("careers.role.email_cv", "Email CV")}
                             </a>
                           </Button>
                         </>
@@ -572,10 +613,15 @@ const Careers = () => {
           >
             {t("careers.faq.title", "Straight answers.")}
           </h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full"
+            aria-label={t("careers.faq.title", "Straight answers.")}
+          >
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
-                <AccordionTrigger className="text-left text-base">
+                <AccordionTrigger className="text-left text-base focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 rounded-sm">
                   {f.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
@@ -605,25 +651,30 @@ const Careers = () => {
               )}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="min-h-11">
                 <Link to="/platform">
-                  See the platform
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {t("nav.platform", "See the platform")}
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="min-h-11">
                 <a
                   href={FRESHER_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={t("careers.hero.cta.form_aria", "Open the applications form in a new tab")}
                 >
-                  Apply now
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                  {t("careers.hero.cta.primary", "Apply now")}
+                  <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
+                  <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="lg">
-                <a href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}>
-                  <Mail className="mr-2 h-4 w-4" />
+              <Button asChild variant="ghost" size="lg" className="min-h-11">
+                <a
+                  href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
+                  aria-label={t("careers.hero.cta.email_aria", "Email the founding team at build@senseible.earth")}
+                >
+                  <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
                   {APPLY_EMAIL}
                 </a>
               </Button>

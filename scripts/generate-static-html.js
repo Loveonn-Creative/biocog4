@@ -171,6 +171,7 @@ const routes = [
         <li>Freshers and interns: use the intake form linked from the Careers page. Everyone else: email build@senseible.earth.</li>
       </ol>
       <p>We reply within a week and decide within two. Fast, both ways.</p>`,
+  },
   {
     path: '/about',
     title: 'About Senseible — AI Carbon Infrastructure for Emerging Markets',
