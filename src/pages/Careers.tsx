@@ -512,39 +512,46 @@ const Careers = () => {
                         {r.scope}
                       </p>
                       <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.function}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.level}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{r.location}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.function.${r.function}`, r.function)}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.level.${r.level}`, r.level)}</span>
+                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.location.${r.location}`, r.location)}</span>
                       </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 md:min-w-[220px] md:justify-end">
                       {fresher ? (
-                        <Button asChild size="sm">
+                        <Button asChild size="sm" className="min-h-11">
                           <a
                             href={FRESHER_FORM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`${t("careers.role.apply_form", "Apply via form")} — ${r.title}`}
                           >
-                            Apply via form
-                            <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                            {t("careers.role.apply_form", "Apply via form")}
+                            <ExternalLink className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
+                            <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
                           </a>
                         </Button>
                       ) : (
                         <>
-                          <Button asChild size="sm">
+                          <Button asChild size="sm" className="min-h-11">
                             <a
                               href={FRESHER_FORM_URL}
                               target="_blank"
                               rel="noopener noreferrer"
+                              aria-label={`${t("careers.role.apply", "Apply")} — ${r.title}`}
                             >
-                              Apply
-                              <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                              {t("careers.role.apply", "Apply")}
+                              <ArrowRight className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
+                              <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
                             </a>
                           </Button>
-                          <Button asChild size="sm" variant="outline">
-                            <a href={mailtoFor(r)}>
-                              <Mail className="mr-2 h-3.5 w-3.5" />
-                              Email CV
+                          <Button asChild size="sm" variant="outline" className="min-h-11">
+                            <a
+                              href={mailtoFor(r)}
+                              aria-label={`${t("careers.role.email_cv", "Email CV")} — ${r.title}`}
+                            >
+                              <Mail className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
+                              {t("careers.role.email_cv", "Email CV")}
                             </a>
                           </Button>
                         </>
