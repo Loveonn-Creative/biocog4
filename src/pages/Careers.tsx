@@ -157,19 +157,32 @@ const Careers = () => {
             )}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="min-h-11">
               <a
                 href={FRESHER_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t(
+                  "careers.hero.cta.form_aria",
+                  "Open the applications form in a new tab"
+                )}
               >
                 {t("careers.hero.cta.primary", "Apply now")}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                <span className="sr-only">
+                  {t("careers.role.opens_new_tab", "(opens in new tab)")}
+                </span>
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}>
-                <Mail className="mr-2 h-4 w-4" />
+            <Button asChild variant="outline" size="lg" className="min-h-11">
+              <a
+                href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
+                aria-label={t(
+                  "careers.hero.cta.email_aria",
+                  "Email the founding team at build@senseible.earth"
+                )}
+              >
+                <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
                 {APPLY_EMAIL}
               </a>
             </Button>
