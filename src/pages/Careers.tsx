@@ -1,12 +1,10 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, ExternalLink, Filter } from "lucide-react";
+import { ArrowRight, Mail, ExternalLink } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
@@ -42,37 +40,19 @@ const mailtoFor = (r: CareerRole) => {
   return `mailto:${APPLY_EMAIL}?subject=${subject}&body=${body}`;
 };
 
-const faqs = [
-  {
-    question: "Is Senseible hiring right now?",
-    answer:
-      "Yes — for the roles listed on this page. We keep the list honest. If we don't have a role open for your skill, apply anyway; we track strong builders for the next opening.",
-  },
-  {
-    question: "I'm a fresher or intern. How do I apply?",
-    answer:
-      "Use the fresher/intern form on this page. It goes straight to the founding team. We reply fast — usually within a week.",
-  },
-  {
-    question: "What are the compensation and perks?",
-    answer:
-      "Market-competitive salary for the stage, meaningful ESOPs, and performance incentives. We don't sell you free snacks or unlimited leave. We're a resource-constrained early-stage company moving quickly.",
-  },
-  {
-    question: "Do you sponsor visas or relocation?",
-    answer:
-      "Not today. Most roles are Gurugram, Hybrid, or Remote (India). We revisit this as we grow.",
-  },
-  {
-    question: "How fast does hiring move?",
-    answer:
-      "Fast — both ways. First reply within a week, decision usually within two. If it's not a fit we say so quickly so you can move on.",
-  },
-  {
-    question: "What does day one look like?",
-    answer:
-      "You ship something real in week one — a pipeline change, a design pass, a research note, a partner conversation. No manufactured onboarding.",
-  },
+// 11 languages the platform already ships in — used as a diversity motif, no flags/stock.
+const LANGUAGE_GLYPHS = [
+  "English",
+  "हिन्दी",
+  "বাংলা",
+  "தமிழ்",
+  "मराठी",
+  "Español",
+  "Bahasa",
+  "Tiếng Việt",
+  "ไทย",
+  "Filipino",
+  "اردو",
 ];
 
 const Careers = () => {
@@ -101,16 +81,182 @@ const Careers = () => {
       (loc === ALL || r.location === loc)
   );
 
+  // Copy blocks — kept inline so the narrative reads top-to-bottom in one place.
+  const whyItMatters: Array<[string, string, string]> = [
+    [
+      t("careers.why.a.h", "Months → seconds."),
+      t(
+        "careers.why.a.b",
+        "MRV that used to take a consultant a quarter now clears in under 47 seconds. The work you ship compresses time for millions of businesses."
+      ),
+      t("careers.why.a.tag", "Speed"),
+    ],
+    [
+      t("careers.why.b.h", "Cost → revenue."),
+      t(
+        "careers.why.b.b",
+        "Compliance stops being a burden and becomes a payout. Green invoices, factoring, credits — proof that being clean pays."
+      ),
+      t("careers.why.b.tag", "Fairness"),
+    ],
+    [
+      t("careers.why.c.h", "A few → four hundred million."),
+      t(
+        "careers.why.c.b",
+        "Verification cheap enough to reach every MSME across ten emerging markets, in eleven languages. This is the scale we're built for."
+      ),
+      t("careers.why.c.tag", "Scale"),
+    ],
+  ];
+
+  const belongingLines: Array<[string, string]> = [
+    [
+      t("careers.belong.a.h", "Your language belongs here."),
+      t(
+        "careers.belong.a.b",
+        "We ship in eleven languages because the people using this platform don't all think in English. If yours isn't listed yet, help us add it."
+      ),
+    ],
+    [
+      t("careers.belong.b.h", "Your background is a feature, not a footnote."),
+      t(
+        "careers.belong.b.b",
+        "Self-taught, graduate, career-switcher, PhD, first job — the problem is too big for one kind of resume. Show us how you think."
+      ),
+    ],
+    [
+      t("careers.belong.c.h", "Your discipline is welcome across surfaces."),
+      t(
+        "careers.belong.c.b",
+        "Engineer, researcher, designer, operator, writer, policy mind — every one of them touches this product. None of them are ornamental."
+      ),
+    ],
+    [
+      t("careers.belong.d.h", "Your distance from us is not the point."),
+      t(
+        "careers.belong.d.b",
+        "Gurugram, Remote (India), or Hybrid today — with the discipline to work asynchronously well. We hire for judgement, not proximity."
+      ),
+    ],
+  ];
+
+  const workSurfaces = [
+    {
+      h: t("careers.work.mrv.h", "The MRV pipeline."),
+      b: t(
+        "careers.work.mrv.b",
+        "Deterministic carbon math on real documents. OCR, HSN-to-scope, evidence hashing, methodology versioning. Numbers that survive audit."
+      ),
+      to: "/platform",
+      cta: t("careers.work.mrv.cta", "See the platform"),
+    },
+    {
+      h: t("careers.work.finance.h", "Climate finance signals."),
+      b: t(
+        "careers.work.finance.b",
+        "Turn verified baselines into underwriting inputs for green loans, factoring, and SLLs — with a credibility score a lender can read."
+      ),
+      to: "/climate-finance",
+      cta: t("careers.work.finance.cta", "See climate finance"),
+    },
+    {
+      h: t("careers.work.ai.h", "Applied AI and voice."),
+      b: t(
+        "careers.work.ai.b",
+        "Document extraction, Scope 3 inference, multilingual voice for owners who don't type in English. Production traffic, not demos."
+      ),
+      to: "/intelligence",
+      cta: t("careers.work.ai.cta", "See intelligence"),
+    },
+    {
+      h: t("careers.work.trust.h", "The trust and data layer."),
+      b: t(
+        "careers.work.trust.b",
+        "Immutable evidence, greenwashing prevention, framework mapping (CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD). The audit case for everything upstream."
+      ),
+      to: "/trust",
+      cta: t("careers.work.trust.cta", "See the trust layer"),
+    },
+  ];
+
+  const doDont: Array<[string, string]> = [
+    [
+      t("careers.do.a", "We ship the week you join."),
+      t("careers.dont.a", "We don't run six-week onboarding."),
+    ],
+    [
+      t("careers.do.b", "We give you the surface."),
+      t("careers.dont.b", "We don't micromanage the brushstroke."),
+    ],
+    [
+      t("careers.do.c", "We say yes or no in two weeks."),
+      t("careers.dont.c", "We don't ghost."),
+    ],
+    [
+      t("careers.do.d", "We argue with data and move."),
+      t("careers.dont.d", "We don't defend decisions with seniority."),
+    ],
+    [
+      t("careers.do.e", "We compensate the work honestly."),
+      t("careers.dont.e", "We don't dress up perks as a salary."),
+    ],
+  ];
+
+  const faqs = [
+    {
+      question: t("careers.faq.q1", "Do I need climate experience?"),
+      answer: t(
+        "careers.faq.a1",
+        "No. We need strong builders who care. The carbon and finance context is teachable in weeks; the taste for hard problems is not."
+      ),
+    },
+    {
+      question: t("careers.faq.q2", "I'm a fresher or intern. How do I apply?"),
+      answer: t(
+        "careers.faq.a2",
+        "Use the freshers and interns form on this page. It goes to the founding team. Reply within a week — usually faster."
+      ),
+    },
+    {
+      question: t("careers.faq.q3", "What is the compensation like?"),
+      answer: t(
+        "careers.faq.a3",
+        "Market-competitive base for the stage, meaningful ESOPs, performance incentives. No unlimited-leave theatre. We move fast because we're resource-conscious, not resource-loose."
+      ),
+    },
+    {
+      question: t("careers.faq.q4", "Remote, hybrid, or in-office?"),
+      answer: t(
+        "careers.faq.a4",
+        "Roles are Gurugram, Hybrid, or Remote (India) today. We hire for outcomes and judgement, not desks."
+      ),
+    },
+    {
+      question: t("careers.faq.q5", "Do you sponsor visas or relocation?"),
+      answer: t(
+        "careers.faq.a5",
+        "Not today. We revisit as we grow. If you're extraordinary and outside India, still write — we'll be honest about what's possible."
+      ),
+    },
+    {
+      question: t("careers.faq.q6", "What does day one actually look like?"),
+      answer: t(
+        "careers.faq.a6",
+        "You ship something real. A pipeline change, a design pass, a research note, a partner conversation. No manufactured onboarding."
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEOHead
         title={t(
           "careers.seo.title",
-          "Careers — Build climate infrastructure | Senseible"
+          "Life at Senseible — Careers"
         )}
         description={t(
           "careers.seo.desc",
-          "Join Senseible to build AI infrastructure for carbon markets, climate finance, and MSME decarbonisation. Open roles from interns to senior engineers."
+          "We're removing what stood between 400 million small businesses and the green economy. If you want difficult, meaningful work, this is the door."
         )}
         canonical="/careers"
         image={`https://senseible.earth${careersOg}`}
@@ -133,498 +279,469 @@ const Careers = () => {
       <MinimalNav />
 
       <main className="flex-1">
-        {/* Hero */}
+        {/* 1. Life at Senseible — full-viewport opening */}
         <section
-          aria-labelledby="careers-hero"
-          className="container max-w-4xl mx-auto px-6 pt-24 md:pt-28 pb-16 text-center"
+          aria-labelledby="life-at-senseible"
+          className="relative flex items-center min-h-[85vh] px-6 pt-24 md:pt-28 pb-16"
         >
-          <Badge variant="secondary" className="mb-6 text-xs">
-            {t("careers.eyebrow", "Careers at Senseible")}
-          </Badge>
-          <h1
-            id="careers-hero"
-            className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6"
+          <div className="container max-w-5xl mx-auto">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-8 animate-fade-in motion-reduce:animate-none">
+              {t("careers.life.eyebrow", "Life at Senseible")}
+            </p>
+            <h1
+              id="life-at-senseible"
+              className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight text-foreground leading-[1.05] max-w-4xl animate-fade-in motion-reduce:animate-none"
+            >
+              {t(
+                "careers.life.title",
+                "We aren't just building climate technology. We're removing what stood between 400 million small businesses and the green economy."
+              )}
+            </h1>
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">
+              {t(
+                "careers.life.sub",
+                "Compressing months of proof into seconds — so being clean pays, instead of costing. This is where that work happens."
+              )}
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm animate-fade-in motion-reduce:animate-none">
+              <a
+                href="#roles"
+                className="inline-flex items-center gap-2 text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
+              >
+                {t("careers.life.cta.roles", "See open roles")}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href="#apply"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t("careers.life.cta.apply", "Or apply directly")}
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* 2. Why it matters — one weight-of-a-photograph statement per band */}
+        <section
+          aria-labelledby="why-matters"
+          className="bg-muted/30 border-y border-border/50"
+        >
+          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <h2 id="why-matters" className="sr-only">
+              {t("careers.why.title", "Why the work matters")}
+            </h2>
+            <div className="space-y-16 md:space-y-24">
+              {whyItMatters.map(([h, b, tag], i) => (
+                <div
+                  key={h}
+                  className="grid md:grid-cols-12 gap-6 md:gap-10 items-baseline"
+                >
+                  <div className="md:col-span-3">
+                    <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                      {String(i + 1).padStart(2, "0")} · {tag}
+                    </span>
+                  </div>
+                  <div className="md:col-span-9">
+                    <p className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
+                      {h}
+                    </p>
+                    <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl leading-[1.7]">
+                      {b}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. We recognise the whole you — belonging */}
+        <section
+          aria-labelledby="belonging"
+          className="container max-w-5xl mx-auto px-6 py-20 md:py-28"
+        >
+          {/* Language glyph motif — subtle diversity signal, no stock photography */}
+          <div
+            aria-hidden="true"
+            className="mb-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground/70"
+          >
+            {LANGUAGE_GLYPHS.map((g) => (
+              <span key={g}>{g}</span>
+            ))}
+          </div>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+            {t("careers.belong.eyebrow", "We recognise the whole you")}
+          </p>
+          <h2
+            id="belonging"
+            className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1]"
           >
             {t(
-              "careers.hero.title",
-              "Build the infrastructure that decarbonises millions of MSMEs."
+              "careers.belong.title",
+              "You bring a life, a language, a way of seeing the problem we haven't seen yet. We hire for that, not around it."
             )}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {t(
-              "careers.hero.sub",
-              "We're building the AI layer for carbon markets, climate finance, and MSME decarbonisation. If you want difficult problems, real ownership, and speed — read on."
-            )}
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button asChild size="lg" className="min-h-11">
-              <a
-                href={FRESHER_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t(
-                  "careers.hero.cta.form_aria",
-                  "Open the applications form in a new tab"
-                )}
-              >
-                {t("careers.hero.cta.primary", "Apply now")}
-                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                <span className="sr-only">
-                  {t("careers.role.opens_new_tab", "(opens in new tab)")}
-                </span>
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="min-h-11">
-              <a
-                href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
-                aria-label={t(
-                  "careers.hero.cta.email_aria",
-                  "Email the founding team at build@senseible.earth"
-                )}
-              >
-                <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
-                {APPLY_EMAIL}
-              </a>
-            </Button>
-          </div>
-          <p className="mt-4 text-xs text-muted-foreground">
-            {t(
-              "careers.hero.note",
-              "Freshers & interns: form goes straight to the founding team."
-            )}
-          </p>
-        </section>
-
-        {/* Why Senseible now */}
-        <section
-          aria-labelledby="why-now"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
-        >
-          <div className="max-w-2xl mb-10">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-              {t("careers.why.eyebrow", "Why now")}
-            </p>
-            <h2
-              id="why-now"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-            >
-              {t(
-                "careers.why.title",
-                "Carbon is becoming financial infrastructure. Someone has to build the rails."
-              )}
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4">
-            {[
-              {
-                h: "The scale is real",
-                b: "400 million MSMEs across emerging markets don't have carbon accounting they can trust. CBAM, BRSR, and green finance are already asking for it.",
-              },
-              {
-                h: "Infrastructure leverage",
-                b: "Verified evidence is a primitive — lenders, buyers, regulators, ERP tools all need it. Build it once, unlock many downstream markets.",
-              },
-              {
-                h: "Early stage, high ownership",
-                b: "Small team. Direct founder access. Your work reaches production the same week. Career acceleration is a side effect, not a promise.",
-              },
-            ].map((c) => (
-              <Card
-                key={c.h}
-                className="bg-primary/5 border-primary/15"
-              >
-                <CardContent className="p-6">
-                  <h3 className="text-base font-medium text-foreground mb-2">
-                    {c.h}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {c.b}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* What you'll build */}
-        <section
-          aria-labelledby="what-build"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
-        >
-          <div className="max-w-2xl mb-10">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-              {t("careers.build.eyebrow", "What you'll build")}
-            </p>
-            <h2
-              id="what-build"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-            >
-              {t(
-                "careers.build.title",
-                "Four surfaces. Real users on day one."
-              )}
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              {
-                h: "MRV & deterministic carbon math",
-                b: "OCR, HSN-to-scope classification, evidence hashing, methodology versioning. Numbers that hold up under audit.",
-                to: "/platform",
-                cta: "The platform",
-              },
-              {
-                h: "Climate finance signals",
-                b: "Turn verified baselines into underwriting inputs for green loans, factoring, and SLLs — with a lender-readable credibility score.",
-                to: "/climate-finance",
-                cta: "Climate finance",
-              },
-              {
-                h: "Applied AI & voice",
-                b: "Document extraction, Scope 3 inference, multilingual voice for MSME owners. Real production traffic, not demos.",
-                to: "/intelligence",
-                cta: "Intelligence",
-              },
-              {
-                h: "Trust & data layer",
-                b: "Immutable evidence, greenwashing prevention, framework mapping (CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD).",
-                to: "/trust",
-                cta: "Trust layer",
-              },
-            ].map((c) => (
-              <Card
-                key={c.h}
-                className="border-l-2 border-l-primary/40 hover:border-l-primary transition-colors"
-              >
-                <CardContent className="p-6">
-                  <h3 className="text-base font-medium text-foreground mb-2">
-                    {c.h}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {c.b}
-                  </p>
-                  <Link
-                    to={c.to}
-                    className="text-sm text-primary hover:underline inline-flex items-center gap-1"
-                  >
-                    {c.cta} <ArrowRight className="h-3 w-3" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* How we work */}
-        <section
-          aria-labelledby="how-work"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
-        >
-          <div className="max-w-2xl mb-10">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-              {t("careers.how.eyebrow", "How we work")}
-            </p>
-            <h2
-              id="how-work"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-            >
-              {t(
-                "careers.how.title",
-                "Honest trade-offs. No manufactured perks."
-              )}
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-            {[
-              ["Aggressive execution", "Ship weekly. Roll back gracefully. Argue with data."],
-              ["Direct founder access", "No layers. Every builder talks to the founders."],
-              ["Resource-constrained", "We move fast because we have to. Small team, real budget discipline."],
-              ["High ownership", "You own a surface end-to-end — problem to production to feedback loop."],
-              ["Fast filtering", "We say yes or no quickly. We expect the same from you."],
-              ["Career acceleration", "Exposure to AI, carbon markets, climate finance, distributed systems and policy — in one seat."],
-            ].map(([h, b]) => (
-              <div key={h} className="py-3 border-b border-border/50">
-                <div className="text-sm font-medium text-foreground">{h}</div>
-                <div className="text-sm text-muted-foreground mt-1">{b}</div>
+          </h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {belongingLines.map(([h, b]) => (
+              <div key={h}>
+                <h3 className="text-lg md:text-xl font-medium text-foreground mb-2">
+                  {h}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-[1.7]">
+                  {b}
+                </p>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-sm text-muted-foreground max-w-2xl">
-            {t(
-              "careers.how.principles",
-              "We operate on the same principles our platform runs on — deterministic, transparent, regulator-safe."
-            )}{" "}
-            <Link to="/principles" className="text-primary hover:underline">
-              Read our principles →
-            </Link>
-          </p>
         </section>
 
-        {/* Career growth */}
+        {/* 4. The work itself */}
         <section
-          aria-labelledby="growth"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
+          aria-labelledby="the-work"
+          className="bg-primary/[0.03] border-y border-border/50"
         >
-          <div className="max-w-2xl mb-8">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-              {t("careers.growth.eyebrow", "Where your career goes")}
+          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+              {t("careers.work.eyebrow", "The work itself")}
             </p>
             <h2
-              id="growth"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
+              id="the-work"
+              className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1] mb-12"
             >
               {t(
-                "careers.growth.title",
-                "Three deep, transferable domains — at the same time."
+                "careers.work.title",
+                "Four surfaces. Each one shipped by someone who owns it end-to-end."
               )}
             </h2>
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-12">
+              {workSurfaces.map((s) => (
+                <div key={s.h}>
+                  <h3 className="text-xl md:text-2xl font-medium text-foreground mb-3">
+                    {s.h}
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-[1.7] mb-4">
+                    {s.b}
+                  </p>
+                  <Link
+                    to={s.to}
+                    className="text-sm text-foreground inline-flex items-center gap-1 border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
+                  >
+                    {s.cta}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
-          <ul className="flex flex-wrap gap-2 mb-6" aria-label={t("careers.growth.eyebrow", "Where your career goes")}>
-            {[
-              ["careers.chip.carbon_markets", "Carbon markets"],
-              ["careers.chip.climate_finance", "Climate finance"],
-              ["careers.chip.applied_ai", "Applied AI"],
-              ["careers.chip.distributed_systems", "Distributed systems"],
-              ["careers.chip.product", "Product"],
-              ["careers.chip.research", "Research"],
-            ].map(([key, fallback]) => (
-              <li
-                key={key}
-                className="text-xs px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-foreground"
-              >
-                {t(key, fallback)}
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
-            {t(
-              "careers.growth.body",
-              "Most operators pick one. Here you touch all three because the problem demands it — AI for extraction, carbon science for correctness, finance for downstream utility. Two years here compounds like five somewhere narrower."
-            )}
-          </p>
         </section>
 
-        {/* Open roles */}
+        {/* 5. How we work — inversion */}
         <section
-          aria-labelledby="roles"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
+          aria-labelledby="how-we-work"
+          className="container max-w-5xl mx-auto px-6 py-20 md:py-28"
         >
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-            <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-                {t("careers.roles.eyebrow", "Open roles")}
-              </p>
-              <h2
-                id="roles"
-                className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-              >
-                {t("careers.roles.title", "A short, honest list.")}
-              </h2>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+            {t("careers.how.eyebrow", "How we work")}
+          </p>
+          <h2
+            id="how-we-work"
+            className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1] mb-12"
+          >
+            {t(
+              "careers.how.title",
+              "Your work is as meaningful to us as it is to you."
+            )}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-x-10">
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                {t("careers.how.we_do", "We do")}
+              </div>
+              <ul className="space-y-4">
+                {doDont.map(([d]) => (
+                  <li
+                    key={d}
+                    className="text-base md:text-lg text-foreground leading-relaxed"
+                  >
+                    {d}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground" role="status" aria-live="polite">
-              <Filter className="h-3.5 w-3.5" aria-hidden="true" />
-              <span>
-                {t("careers.filter.count", "{visible} of {total} roles shown")
+            <div className="mt-10 md:mt-0">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                {t("careers.how.we_dont", "We don't")}
+              </div>
+              <ul className="space-y-4">
+                {doDont.map(([, dn]) => (
+                  <li
+                    key={dn}
+                    className="text-base md:text-lg text-muted-foreground leading-relaxed"
+                  >
+                    {dn}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Open roles */}
+        <section
+          id="roles"
+          aria-labelledby="roles-heading"
+          className="bg-muted/30 border-y border-border/50 scroll-mt-24"
+        >
+          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-24">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+              <div className="max-w-2xl">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                  {t("careers.roles.eyebrow", "And here is the door")}
+                </p>
+                <h2
+                  id="roles-heading"
+                  className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
+                >
+                  {t("careers.roles.title", "Open roles — kept short, kept honest.")}
+                </h2>
+              </div>
+              <div
+                className="text-xs text-muted-foreground"
+                role="status"
+                aria-live="polite"
+              >
+                {t(
+                  "careers.filter.count",
+                  "{visible} of {total} roles shown"
+                )
                   .replace("{visible}", String(visible.length))
                   .replace("{total}", String(careersRoles.length))}
-              </span>
+              </div>
             </div>
-          </div>
 
-          <div
-            role="group"
-            aria-label={t("careers.filter.title", "Filter open roles")}
-            className="grid sm:grid-cols-3 gap-3 mb-6"
-          >
-            <Select value={fn} onValueChange={setFn}>
-              <SelectTrigger
-                aria-label={t("careers.filter.by_function", "Filter by function")}
-                className="min-h-11"
-              >
-                <SelectValue placeholder={t("careers.filter.all_functions", "All functions")} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={ALL}>{t("careers.filter.all_functions", "All functions")}</SelectItem>
-                {functions.map((f) => (
-                  <SelectItem key={f} value={f}>{t(`careers.function.${f}`, f)}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select value={lvl} onValueChange={setLvl}>
-              <SelectTrigger
-                aria-label={t("careers.filter.by_level", "Filter by level")}
-                className="min-h-11"
-              >
-                <SelectValue placeholder={t("careers.filter.all_levels", "All levels")} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={ALL}>{t("careers.filter.all_levels", "All levels")}</SelectItem>
-                {levels.map((l) => (
-                  <SelectItem key={l} value={l}>{t(`careers.level.${l}`, l)}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select value={loc} onValueChange={setLoc}>
-              <SelectTrigger
-                aria-label={t("careers.filter.by_location", "Filter by location")}
-                className="min-h-11"
-              >
-                <SelectValue placeholder={t("careers.filter.all_locations", "All locations")} />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value={ALL}>{t("careers.filter.all_locations", "All locations")}</SelectItem>
-                {locations.map((l) => (
-                  <SelectItem key={l} value={l}>{t(`careers.location.${l}`, l)}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+            <div
+              role="group"
+              aria-label={t("careers.filter.title", "Filter open roles")}
+              className="grid sm:grid-cols-3 gap-3 mb-6"
+            >
+              <Select value={fn} onValueChange={setFn}>
+                <SelectTrigger
+                  aria-label={t("careers.filter.by_function", "Filter by function")}
+                  className="min-h-11 bg-background"
+                >
+                  <SelectValue
+                    placeholder={t("careers.filter.all_functions", "All functions")}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ALL}>
+                    {t("careers.filter.all_functions", "All functions")}
+                  </SelectItem>
+                  {functions.map((f) => (
+                    <SelectItem key={f} value={f}>
+                      {t(`careers.function.${f}`, f)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={lvl} onValueChange={setLvl}>
+                <SelectTrigger
+                  aria-label={t("careers.filter.by_level", "Filter by level")}
+                  className="min-h-11 bg-background"
+                >
+                  <SelectValue
+                    placeholder={t("careers.filter.all_levels", "All levels")}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ALL}>
+                    {t("careers.filter.all_levels", "All levels")}
+                  </SelectItem>
+                  {levels.map((l) => (
+                    <SelectItem key={l} value={l}>
+                      {t(`careers.level.${l}`, l)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={loc} onValueChange={setLoc}>
+                <SelectTrigger
+                  aria-label={t("careers.filter.by_location", "Filter by location")}
+                  className="min-h-11 bg-background"
+                >
+                  <SelectValue
+                    placeholder={t("careers.filter.all_locations", "All locations")}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ALL}>
+                    {t("careers.filter.all_locations", "All locations")}
+                  </SelectItem>
+                  {locations.map((l) => (
+                    <SelectItem key={l} value={l}>
+                      {t(`careers.location.${l}`, l)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
-          {visible.length === 0 ? (
-            <div className="text-center py-12 border border-dashed border-border rounded-lg">
-              <p className="text-sm text-muted-foreground">
-                {t("careers.roles.empty.title", "No open roles match those filters right now.")}
-              </p>
-              <p className="text-sm text-muted-foreground mt-2">
-                {t("careers.roles.empty.body", "Send a note to {email} — we track strong builders for the next opening.")
-                  .split("{email}")
-                  .flatMap((part, i, arr) =>
-                    i < arr.length - 1
-                      ? [part, <a key={i} href={`mailto:${APPLY_EMAIL}`} className="text-primary hover:underline">{APPLY_EMAIL}</a>]
-                      : [part]
+            {visible.length === 0 ? (
+              <div className="text-center py-12 border border-dashed border-border rounded-lg bg-background">
+                <p className="text-sm text-muted-foreground">
+                  {t(
+                    "careers.roles.empty.title",
+                    "No open roles match those filters right now."
                   )}
-              </p>
-            </div>
-          ) : (
-            <ul className="divide-y divide-border border border-border rounded-lg overflow-hidden">
-              {visible.map((r) => {
-                const fresher = isFresherTrack(r);
-                return (
-                  <li
-                    key={r.id}
-                    className="p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover:bg-secondary/40 transition-colors"
-                  >
-                    <div className="min-w-0">
-                      <h3 className="text-base font-medium text-foreground">
-                        {r.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {r.scope}
-                      </p>
-                      <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.function.${r.function}`, r.function)}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.level.${r.level}`, r.level)}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-secondary">{t(`careers.location.${r.location}`, r.location)}</span>
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {t(
+                    "careers.roles.empty.body",
+                    "Send a note to {email} — we track strong builders for the next opening."
+                  )
+                    .split("{email}")
+                    .flatMap((part, i, arr) =>
+                      i < arr.length - 1
+                        ? [
+                            part,
+                            <a
+                              key={i}
+                              href={`mailto:${APPLY_EMAIL}`}
+                              className="text-primary hover:underline"
+                            >
+                              {APPLY_EMAIL}
+                            </a>,
+                          ]
+                        : [part]
+                    )}
+                </p>
+              </div>
+            ) : (
+              <ul className="divide-y divide-border border border-border rounded-lg overflow-hidden bg-background">
+                {visible.map((r) => {
+                  const fresher = isFresherTrack(r);
+                  return (
+                    <li
+                      key={r.id}
+                      className="p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover:bg-secondary/40 transition-colors"
+                    >
+                      <div className="min-w-0">
+                        <h3 className="text-base font-medium text-foreground">
+                          {r.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {r.scope}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                          <span className="px-2 py-0.5 rounded-full bg-secondary">
+                            {t(`careers.function.${r.function}`, r.function)}
+                          </span>
+                          <span className="px-2 py-0.5 rounded-full bg-secondary">
+                            {t(`careers.level.${r.level}`, r.level)}
+                          </span>
+                          <span className="px-2 py-0.5 rounded-full bg-secondary">
+                            {t(`careers.location.${r.location}`, r.location)}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-2 md:min-w-[220px] md:justify-end">
-                      {fresher ? (
-                        <Button asChild size="sm" className="min-h-11">
-                          <a
-                            href={FRESHER_FORM_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${t("careers.role.apply_form", "Apply via form")} — ${r.title}`}
-                          >
-                            {t("careers.role.apply_form", "Apply via form")}
-                            <ExternalLink className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
-                            <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
-                          </a>
-                        </Button>
-                      ) : (
-                        <>
+                      <div className="flex flex-col sm:flex-row gap-2 md:min-w-[220px] md:justify-end">
+                        {fresher ? (
                           <Button asChild size="sm" className="min-h-11">
                             <a
                               href={FRESHER_FORM_URL}
                               target="_blank"
                               rel="noopener noreferrer"
-                              aria-label={`${t("careers.role.apply", "Apply")} — ${r.title}`}
+                              aria-label={`${t("careers.role.apply_form", "Apply via form")} — ${r.title}`}
                             >
-                              {t("careers.role.apply", "Apply")}
-                              <ArrowRight className="ml-2 h-3.5 w-3.5" aria-hidden="true" />
-                              <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
+                              {t("careers.role.apply_form", "Apply via form")}
+                              <ExternalLink
+                                className="ml-2 h-3.5 w-3.5"
+                                aria-hidden="true"
+                              />
+                              <span className="sr-only">
+                                {t(
+                                  "careers.role.opens_new_tab",
+                                  "(opens in new tab)"
+                                )}
+                              </span>
                             </a>
                           </Button>
-                          <Button asChild size="sm" variant="outline" className="min-h-11">
-                            <a
-                              href={mailtoFor(r)}
-                              aria-label={`${t("careers.role.email_cv", "Email CV")} — ${r.title}`}
+                        ) : (
+                          <>
+                            <Button asChild size="sm" className="min-h-11">
+                              <a
+                                href={mailtoFor(r)}
+                                aria-label={`${t("careers.role.email_cv", "Email CV")} — ${r.title}`}
+                              >
+                                <Mail
+                                  className="mr-2 h-3.5 w-3.5"
+                                  aria-hidden="true"
+                                />
+                                {t("careers.role.email_cv", "Email CV")}
+                              </a>
+                            </Button>
+                            <Button
+                              asChild
+                              size="sm"
+                              variant="outline"
+                              className="min-h-11"
                             >
-                              <Mail className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
-                              {t("careers.role.email_cv", "Email CV")}
-                            </a>
-                          </Button>
-                        </>
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </section>
-
-        {/* Hiring process */}
-        <section
-          aria-labelledby="process"
-          className="container max-w-5xl mx-auto px-6 py-16 border-t border-border/60"
-        >
-          <div className="max-w-2xl mb-8">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-              {t("careers.process.eyebrow", "Hiring process")}
-            </p>
-            <h2
-              id="process"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-            >
-              {t("careers.process.title", "Fast, both ways.")}
-            </h2>
+                              <a
+                                href={FRESHER_FORM_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`${t("careers.role.apply", "Apply")} — ${r.title}`}
+                              >
+                                {t("careers.role.apply", "Apply")}
+                                <ArrowRight
+                                  className="ml-2 h-3.5 w-3.5"
+                                  aria-hidden="true"
+                                />
+                                <span className="sr-only">
+                                  {t(
+                                    "careers.role.opens_new_tab",
+                                    "(opens in new tab)"
+                                  )}
+                                </span>
+                              </a>
+                            </Button>
+                          </>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
-          <ol className="grid md:grid-cols-4 gap-4">
-            {[
-              ["01", "Apply", "3–5 lines or a 2–3 min video on how your experience helps."],
-              ["02", "First call", "30 minutes with a founder. Real problem discussion, not trivia."],
-              ["03", "Work sample", "A small, paid, timeboxed problem from the actual roadmap."],
-              ["04", "Decision", "Yes or no within two weeks of first contact. We move on quickly if it's not a fit."],
-            ].map(([n, h, b]) => (
-              <li
-                key={n}
-                className="p-5 rounded-lg border border-border bg-card"
-              >
-                <div className="text-xs font-mono text-muted-foreground mb-2">{n}</div>
-                <div className="text-sm font-medium text-foreground mb-1">{h}</div>
-                <div className="text-xs text-muted-foreground leading-relaxed">{b}</div>
-              </li>
-            ))}
-          </ol>
         </section>
 
-        {/* FAQs */}
+        {/* 7. Straight answers */}
         <section
           aria-labelledby="faqs"
-          className="container max-w-3xl mx-auto px-6 py-16 border-t border-border/60"
+          className="container max-w-3xl mx-auto px-6 py-20 md:py-24"
         >
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-            {t("careers.faq.eyebrow", "FAQs")}
+          <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+            {t("careers.faq.eyebrow", "Straight answers")}
           </p>
           <h2
             id="faqs"
             className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-8"
           >
-            {t("careers.faq.title", "Straight answers.")}
+            {t("careers.faq.title", "What people actually ask.")}
           </h2>
           <Accordion
             type="single"
             collapsible
             className="w-full"
-            aria-label={t("careers.faq.title", "Straight answers.")}
+            aria-label={t("careers.faq.title", "What people actually ask.")}
           >
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
                 <AccordionTrigger className="text-left text-base focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 rounded-sm">
                   {f.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-sm md:text-base text-muted-foreground leading-[1.7]">
                   {f.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -632,60 +749,90 @@ const Careers = () => {
           </Accordion>
         </section>
 
-        {/* Apply CTA band */}
+        {/* 8. Apply — the single saturated moment on the page */}
         <section
-          aria-labelledby="apply"
-          className="container max-w-4xl mx-auto px-6 py-20 border-t border-border/60"
+          id="apply"
+          aria-labelledby="apply-heading"
+          className="bg-primary text-primary-foreground scroll-mt-24"
         >
-          <div className="rounded-2xl bg-primary/5 border border-primary/15 p-8 md:p-12 text-center">
+          <div className="container max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-primary-foreground/70 mb-4">
+              {t("careers.cta.eyebrow", "Come do the best work of your life")}
+            </p>
             <h2
-              id="apply"
-              className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-4"
+              id="apply-heading"
+              className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6"
             >
-              {t("careers.cta.title", "Ready? Here's how to apply.")}
+              {t("careers.cta.title", "If this is your problem, this is your seat.")}
             </h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-primary-foreground/85 max-w-2xl mx-auto leading-[1.7]">
               {t(
                 "careers.cta.body",
-                "Visit the platform first. Then tell us — in 3–5 lines or a 2–3 minute video — how your experience will help Senseible accelerate its mission. We decide fast and filter fast. If you're a builder, this is one of the best seats in climate tech right now."
+                "Spend ten minutes on the platform. Then tell us — in 3–5 lines, or a 2–3 minute video — how your experience helps us move faster. We reply fast, in both directions."
               )}
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button asChild size="lg" className="min-h-11">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="min-h-11"
+              >
                 <Link to="/platform">
-                  {t("nav.platform", "See the platform")}
+                  {t("careers.cta.platform", "See the platform")}
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="min-h-11">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="min-h-11 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
                 <a
                   href={FRESHER_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={t("careers.hero.cta.form_aria", "Open the applications form in a new tab")}
+                  aria-label={t(
+                    "careers.hero.cta.form_aria",
+                    "Open the applications form in a new tab"
+                  )}
                 >
-                  {t("careers.hero.cta.primary", "Apply now")}
+                  {t("careers.cta.form", "Freshers & interns form")}
                   <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
-                  <span className="sr-only">{t("careers.role.opens_new_tab", "(opens in new tab)")}</span>
+                  <span className="sr-only">
+                    {t("careers.role.opens_new_tab", "(opens in new tab)")}
+                  </span>
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="min-h-11">
-                <a
-                  href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
-                  aria-label={t("careers.hero.cta.email_aria", "Email the founding team at build@senseible.earth")}
-                >
-                  <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
-                  {APPLY_EMAIL}
-                </a>
-              </Button>
+              <a
+                href={`mailto:${APPLY_EMAIL}?subject=Building%20with%20Senseible`}
+                aria-label={t(
+                  "careers.hero.cta.email_aria",
+                  "Email the founding team at build@senseible.earth"
+                )}
+                className="inline-flex items-center gap-2 text-sm text-primary-foreground/85 hover:text-primary-foreground underline underline-offset-4 min-h-11 px-2"
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                {APPLY_EMAIL}
+              </a>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-              <Link to="/mission" className="hover:text-foreground">Mission</Link>
-              <Link to="/about" className="hover:text-foreground">About</Link>
-              <Link to="/principles" className="hover:text-foreground">Principles</Link>
-              <Link to="/intelligence" className="hover:text-foreground">Intelligence</Link>
-              <Link to="/platform" className="hover:text-foreground">Platform</Link>
-              <Link to="/contact" className="hover:text-foreground">Contact</Link>
+            <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-primary-foreground/70">
+              <Link to="/mission" className="hover:text-primary-foreground">
+                {t("nav.mission", "Mission")}
+              </Link>
+              <Link to="/about" className="hover:text-primary-foreground">
+                {t("nav.about", "About")}
+              </Link>
+              <Link to="/principles" className="hover:text-primary-foreground">
+                {t("careers.principles.link", "Principles")}
+              </Link>
+              <Link to="/platform" className="hover:text-primary-foreground">
+                {t("careers.cta.platform", "Platform")}
+              </Link>
+              <Link to="/contact" className="hover:text-primary-foreground">
+                {t("nav.contact", "Contact")}
+              </Link>
             </div>
           </div>
         </section>
