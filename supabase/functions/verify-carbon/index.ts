@@ -292,8 +292,9 @@ serve(async (req) => {
         if (claimsRes?.claims?.sub) userId = claimsRes.claims.sub as string;
       }
     }
-    // Guest sessionId only allowed when no authenticated user
-    const sessionId = userId ? null : (bodySessionId || null);
+    // Keep bodySessionId available even for authenticated users so guest-owned
+    // rows created in the same browser (pre sign-in) still pass ownership.
+    const sessionId: string | null = bodySessionId || null;
 
     if (!userId && !sessionId) {
       return new Response(
@@ -305,7 +306,6 @@ serve(async (req) => {
     const supabase = createClient(supabaseUrl, serviceKey);
 
     // ============= OWNERSHIP VALIDATION =============
-    // Ensure the requester owns the emissions being verified
     const { data: emissions, error: emissionsError } = await supabase
       .from('emissions')
       .select('*, documents(*)')
@@ -319,20 +319,34 @@ serve(async (req) => {
       );
     }
 
-    // Validate ownership: all emissions must belong to the same user/session
+    // Ownership passes if the row is owned by the JWT user OR by the browser
+    // session that created it (guest → signed-in on same device).
+    const adoptEmissionIds: string[] = [];
+    const adoptDocumentIds: string[] = [];
     for (const emission of emissions) {
-      const ownerMatch = userId
-        ? emission.user_id === userId
-        : sessionId
-          ? emission.session_id === sessionId
-          : false;
-      if (!ownerMatch) {
+      const userMatch = !!userId && emission.user_id === userId;
+      const sessionMatch = !!sessionId && emission.session_id === sessionId;
+      if (!userMatch && !sessionMatch) {
         console.error('Ownership mismatch: emission', emission.id, 'does not belong to requester');
         return new Response(
           JSON.stringify({ error: 'Access denied: you do not own these emissions' }),
           { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
+      // Authenticated user verifying a guest-created row → adopt it.
+      if (userId && !emission.user_id && sessionMatch) {
+        adoptEmissionIds.push(emission.id);
+        if (emission.document_id) adoptDocumentIds.push(emission.document_id);
+        emission.user_id = userId;
+      }
+    }
+
+    if (userId && adoptEmissionIds.length) {
+      await supabase.from('emissions').update({ user_id: userId }).in('id', adoptEmissionIds).is('user_id', null);
+      if (adoptDocumentIds.length) {
+        await supabase.from('documents').update({ user_id: userId }).in('id', adoptDocumentIds).is('user_id', null);
+      }
+      console.log(`Adopted ${adoptEmissionIds.length} guest emission(s) into user ${userId}`);
     }
 
     // Step 1: Validate each emission
