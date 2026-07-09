@@ -139,15 +139,46 @@ const Verify = () => {
       });
       
       if (error) throw error;
-      
-      if (data?.success) {
+
+      if (data?.success && data?.data) {
         setVerificationResult(data.data);
-        toast.success(`Verification complete! Score: ${(data.data.score * 100).toFixed(0)}%`);
+        toast.success(`Verification complete — ${data.data.status.replace('_', ' ')} (${(data.data.score * 100).toFixed(0)}%)`);
         refetch();
+      } else {
+        throw new Error(data?.error || 'Verification returned no outcome');
       }
     } catch (err) {
       console.error('Verification error:', err);
-      toast.error('Verification failed. Please try again.');
+      const message = err instanceof Error ? err.message : 'Verification could not complete';
+      // Always render an outcome card — never leave the user with only a toast.
+      const totalCO2Kg = effectiveUnverified.reduce((s, e) => s + (e.co2_kg || 0), 0);
+      const scopeBreakdown = {
+        scope1: effectiveUnverified.filter(e => e.scope === 1).reduce((s, e) => s + (e.co2_kg || 0), 0),
+        scope2: effectiveUnverified.filter(e => e.scope === 2).reduce((s, e) => s + (e.co2_kg || 0), 0),
+        scope3: effectiveUnverified.filter(e => e.scope === 3).reduce((s, e) => s + (e.co2_kg || 0), 0),
+      };
+      setVerificationResult({
+        verificationId: 'client-fallback',
+        status: 'rejected',
+        score: 0,
+        greenwashingRisk: 'high',
+        greenwashingFactors: [message],
+        analysis: {
+          dataQuality: 'Unable to complete server-side validation',
+          methodologyCompliance: 'Not evaluated',
+          recommendations: ['Retry verification', 'If the issue persists, contact support with the emission IDs shown above'],
+          flags: [message],
+          scopeBreakdown,
+          greenScore: 0,
+          creditEligibility: { eligibleCredits: 0, carryForward: 0, qualityGrade: 'D' },
+        },
+        cctsEligible: false,
+        cbamCompliant: false,
+        totalCO2Kg,
+        netEmissions: totalCO2Kg,
+        verifiedReductions: 0,
+      });
+      toast.error('Verification returned rejected — see details below.');
     } finally {
       setIsVerifying(false);
     }

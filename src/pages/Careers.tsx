@@ -294,13 +294,13 @@ const Careers = () => {
             >
               {t(
                 "careers.life.title",
-                "We aren't just building climate technology. We're removing what stood between 400 million small businesses and the green economy."
+                "Life at Senseible is life inside a system that has to work — for 400 million small businesses that can't afford it not to."
               )}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">
               {t(
                 "careers.life.sub",
-                "Compressing months of proof into seconds — so being clean pays, instead of costing. This is where that work happens."
+                "We compress months of carbon proof into seconds so being clean pays instead of costing. Come build the parts that don't exist yet."
               )}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm animate-fade-in motion-reduce:animate-none">
@@ -370,7 +370,7 @@ const Careers = () => {
             ))}
           </div>
           <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-            {t("careers.belong.eyebrow", "We recognise the whole you")}
+            {t("careers.belong.eyebrow", "Who belongs here")}
           </p>
           <h2
             id="belonging"
@@ -378,7 +378,7 @@ const Careers = () => {
           >
             {t(
               "careers.belong.title",
-              "You bring a life, a language, a way of seeing the problem we haven't seen yet. We hire for that, not around it."
+              "Eleven languages, ten markets, one bar: you can think, you can ship, and the problem won't let you sleep."
             )}
           </h2>
           <div className="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-10">
@@ -768,7 +768,7 @@ const Careers = () => {
             <p className="text-base md:text-lg text-primary-foreground/85 max-w-2xl mx-auto leading-[1.7]">
               {t(
                 "careers.cta.body",
-                "Spend ten minutes on the platform. Then tell us — in 3–5 lines, or a 2–3 minute video — how your experience helps us move faster. We reply fast, in both directions."
+                "Spend ten minutes on the platform, then tell us in 3–5 lines — or a 2–3 minute video — how you'd make it faster. Freshers use the form; everyone else, email."
               )}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
