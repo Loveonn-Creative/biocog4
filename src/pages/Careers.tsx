@@ -768,7 +768,7 @@ const Careers = () => {
             <p className="text-base md:text-lg text-primary-foreground/85 max-w-2xl mx-auto leading-[1.7]">
               {t(
                 "careers.cta.body",
-                "Spend ten minutes on the platform. Then tell us — in 3–5 lines, or a 2–3 minute video — how your experience helps us move faster. We reply fast, in both directions."
+                "Spend ten minutes on the platform, then tell us in 3–5 lines — or a 2–3 minute video — how you'd make it faster. Freshers use the form; everyone else, email."
               )}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
