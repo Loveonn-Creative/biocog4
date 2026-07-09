@@ -294,13 +294,13 @@ const Careers = () => {
             >
               {t(
                 "careers.life.title",
-                "We aren't just building climate technology. We're removing what stood between 400 million small businesses and the green economy."
+                "Life at Senseible is life inside a system that has to work — for 400 million small businesses that can't afford it not to."
               )}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">
               {t(
                 "careers.life.sub",
-                "Compressing months of proof into seconds — so being clean pays, instead of costing. This is where that work happens."
+                "We compress months of carbon proof into seconds so being clean pays instead of costing. Come build the parts that don't exist yet."
               )}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm animate-fade-in motion-reduce:animate-none">
