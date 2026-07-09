@@ -370,7 +370,7 @@ const Careers = () => {
             ))}
           </div>
           <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-            {t("careers.belong.eyebrow", "We recognise the whole you")}
+            {t("careers.belong.eyebrow", "Who belongs here")}
           </p>
           <h2
             id="belonging"
@@ -378,7 +378,7 @@ const Careers = () => {
           >
             {t(
               "careers.belong.title",
-              "You bring a life, a language, a way of seeing the problem we haven't seen yet. We hire for that, not around it."
+              "Eleven languages, ten markets, one bar: you can think, you can ship, and the problem won't let you sleep."
             )}
           </h2>
           <div className="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-10">
