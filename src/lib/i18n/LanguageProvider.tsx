@@ -81,8 +81,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (!cancelled) {
         setTranslations(t);
         setIsLoading(false);
-        // Surface to the DOM so non-React listeners (e.g. analytics, SSG snapshots) react too
-        try { document.documentElement.lang = locale; } catch {}
+        // Surface to the DOM so non-React listeners (analytics, SSG snapshots,
+        // Playwright, native form validation) react too.
+        try {
+          document.documentElement.lang = locale;
+          // Urdu is the only RTL locale we currently support.
+          document.documentElement.dir = locale === 'ur' ? 'rtl' : 'ltr';
+        } catch {}
       }
     });
     return () => { cancelled = true; };
