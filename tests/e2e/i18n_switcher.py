@@ -7,7 +7,7 @@ import asyncio, sys
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-ROOT = "http://localhost:8080"
+ROOT = "http://localhost:8080/platform"
 SHOTS = Path("/tmp/browser/i18n")
 SHOTS.mkdir(parents=True, exist_ok=True)
 
