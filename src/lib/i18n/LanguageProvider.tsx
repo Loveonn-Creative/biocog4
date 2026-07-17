@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { startDomTranslator, stopDomTranslator } from './domTranslator';
 
 interface I18nContextType {
   locale: string;
@@ -81,12 +82,15 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (!cancelled) {
         setTranslations(t);
         setIsLoading(false);
-        // Surface to the DOM so non-React listeners (analytics, SSG snapshots,
-        // Playwright, native form validation) react too.
         try {
           document.documentElement.lang = locale;
-          // Urdu is the only RTL locale we currently support.
           document.documentElement.dir = locale === 'ur' ? 'rtl' : 'ltr';
+        } catch {}
+        // Universal DOM translator: makes the language switch cover every
+        // rendered string, including pages that never adopted useTranslation.
+        try {
+          if (locale === 'en') stopDomTranslator();
+          else startDomTranslator(locale);
         } catch {}
       }
     });
