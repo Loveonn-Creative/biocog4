@@ -1349,6 +1349,30 @@ export type Database = {
           },
         ]
       }
+      translation_cache: {
+        Row: {
+          created_at: string
+          locale: string
+          source: string
+          source_hash: string
+          translated: string
+        }
+        Insert: {
+          created_at?: string
+          locale: string
+          source: string
+          source_hash: string
+          translated: string
+        }
+        Update: {
+          created_at?: string
+          locale?: string
+          source?: string
+          source_hash?: string
+          translated?: string
+        }
+        Relationships: []
+      }
       user_contexts: {
         Row: {
           context_id: string
