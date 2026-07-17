@@ -1,114 +1,110 @@
-# Plan
+# Plan: Real Multilingual + MRV E2E Tests
 
-Two independent workstreams. Both preserve existing architecture, routing, and data model.
+Two independent workstreams. Zero changes to routing, DB schema, business logic, or UI layout.
 
 ---
 
-## 1. Fix "Verification failed" (MRV pipeline)
+## Part 1 — Real-time multilingual (all pages, all components)
 
-### Root cause (confirmed from edge logs + DB)
+### Problem today
+- Only 4 files use `useTranslation()` (`MinimalNav`, `PlatformMarquee`, `Platform`, `Careers`).
+- Translation JSONs cover ~160–290 keys; the app has 60+ pages, dozens of forms, toasts, tables → **>95% of visible text is hardcoded English**.
+- Switching language only re-labels the nav and a few marketing lines. Everything else stays English → the switcher feels dummy.
+- Expanding static JSON to cover every string across 11 locales × ~5000 strings = ~55k manual entries, impossible to keep in sync with future pages.
 
-Edge log: `Ownership mismatch: emission e1591082… does not belong to requester`.
+### Approach: hybrid i18n
+Keep the existing static JSON system (fast, deterministic for known keys) and add a **runtime auto-translation fallback** so any untranslated string is translated on the fly, cached, and reused.
 
-The failing emission has `user_id = null`, `session_id = c5327400-…` — it was created as a guest, then the user signed in on the same browser. The client still shows it (because `useEmissions` matches by session), and sends both `sessionId` and the authenticated JWT to `verify-carbon`.
-
-`supabase/functions/verify-carbon/index.ts` currently does:
-
-```ts
-const sessionId = userId ? null : (bodySessionId || null);
+```text
+Component renders text
+        │
+        ▼
+useT(text) / <T>text</T>
+        │
+   locale == 'en' ? ── yes ──▶ return text
+        │ no
+        ▼
+   static JSON has it? ── yes ──▶ return translation
+        │ no
+        ▼
+   memory + localStorage cache hit? ── yes ──▶ return
+        │ no
+        ▼
+   supabase translation_cache table hit? ── yes ──▶ hydrate caches, return
+        │ no
+        ▼
+   queue → debounced batch call to edge fn `translate-batch`
+        │
+        ▼
+   Lovable AI (google/gemini-2.5-flash) translates array of strings
+        │
+        ▼
+   write to supabase translation_cache + localStorage + memory
+        │
+        ▼
+   component re-renders with translated text
 ```
 
-As soon as a user is authenticated it **discards** `bodySessionId`, then requires `emission.user_id === userId`. Guest-owned rows can never pass — the verify call throws → toast "Verification failed. Please try again." No verification row is ever written, so History/Reports/Monetize never get an outcome.
+### Deliverables
+1. **`src/lib/i18n/useT.ts`** — `const t = useT(); t("Save changes")`. Returns English immediately while auto-translation resolves; triggers one re-render when ready. Includes `<T>` wrapper component for JSX-only usage.
+2. **`src/lib/i18n/autoTranslateQueue.ts`** — 150 ms debounce, batches up to 50 strings per request, dedupes in-flight requests, per-locale memory + localStorage cache (LRU, ~2 MB cap).
+3. **Edge function `supabase/functions/translate-batch/index.ts`** — accepts `{ locale, strings[] }`, checks `translation_cache` table, translates misses via Lovable AI Gateway (`google/gemini-2.5-flash`, temperature 0, system prompt: "Translate UI strings for a climate-fintech MSME app. Preserve placeholders like {name}, keep numbers/units, no explanations."), upserts results, returns full map.
+4. **Migration** — `translation_cache(locale text, source_hash text, source text, translated text, created_at timestamptz)` with PK `(locale, source_hash)`, RLS enabled, `GRANT SELECT` to anon/authenticated, INSERT via service_role only. sha256 of source string as hash.
+5. **Toast / sonner wrapper** — `src/lib/i18n/toast.ts` wrapping `sonner` so `toast.success(msg)` auto-translates using the queue before display.
+6. **Form validation** — small helper `tError(msg)` used at zod/react-hook-form boundaries; existing error strings routed through it.
+7. **Codemod-lite migration** — sweep the top-traffic surfaces and wrap hardcoded strings:
+   - Nav, Footer, SecondaryFooter, HomeNavIcons, NewsletterSignup
+   - Public pages: Index, Platform, Mission, About, Trust, Calculators hub, Climate Intelligence, Careers, Contact, Legal, Pricing, Solutions, Industries
+   - Authenticated shells: Dashboard, History, Reports, Monetize, Verify, Profile, Settings, Billing, Subscription, Team, Admin, CMSAdmin
+   - Shared components: ResultState, ProcessingState, DocumentInput, BulkUpload, ChatInput, ChatMessage, UserMenu, OnboardingTour, Subscription banners, all dashboard/* cards, all trust/* widgets, all enterprise/* widgets, all calculators/*
+   - Forms & modals: Auth, AcceptInvite, Contact, Grants, PartnerProfile, purchase enquiry
+   - Do the wrapping mechanically: wrap visible `>text<`, `placeholder=`, `aria-label=`, `title=`, toast/alert/confirm strings with `t(...)`. **No layout, class, or logic changes.**
+8. **Dynamic content** — role listings, FAQ entries, marketplace listings, report labels: pass through `useT` at render time so DB-sourced English strings translate.
+9. **RTL** — set `document.documentElement.dir = 'rtl'` for `ur` inside `LanguageProvider` (already sets `lang`). No CSS overhaul; Tailwind handles logical properties adequately on existing layouts.
+10. **SEO preserved** — static build script keeps generating English HTML for crawlers; client hydration then translates. `hreflang` untouched.
+11. **Performance** — first paint always English (no blocking). Auto-translations are cached forever per string; steady state = one edge call per new string per locale, then free. Batches keep egress low.
 
-### Fix (surgical, no architecture change)
-
-Edit only `supabase/functions/verify-carbon/index.ts`:
-
-1. Keep `bodySessionId` available even when `userId` is present.
-2. Ownership check passes if **either**:
-  - `emission.user_id === userId`, **or**
-  - `bodySessionId && emission.session_id === bodySessionId` (same browser that created it).
-3. When an authenticated user successfully verifies a guest-owned emission, adopt it: `UPDATE emissions SET user_id = <userId> WHERE id IN (...) AND user_id IS NULL AND session_id = <bodySessionId>` before the verified flag update. Same adoption pattern for the linked `documents` row (id from `emission.document_id`) so History/Reports show it under the user.
-4. Persist `carbon_verifications.user_id = userId` (already correct) and `session_id = bodySessionId` when adoption happened, so the audit trail is intact.
-5. Guarantee an outcome on unrecoverable errors: wrap the AI-recommendations block and compliance-ledger inserts in try/catch (AI block already is; ledger inserts are looped but a single throw would still bubble — confirm each insert is inside its own try/catch, which it already is). No behavior change needed there, just verify.
-6. Return HTTP 200 with `{ success: true, data: { status: 'rejected', ... } }` for validation-failure cases instead of 400/500 whenever emissions were fetched successfully — so the UI always renders an outcome card (verified / needs_review / rejected) instead of a generic toast.
-7. For guest user always output even cached data end to end without failing,
-
-Client-side (`src/pages/Verify.tsx`): no change to the happy path. Only tighten the catch: if `data?.success === false` or `error` present, still show a rejected result card with the server message, not just a toast — this matches the "must give outcome even null or rejection" requirement.
-
-### Downstream (already wired, will start working once verification succeeds)
-
-- `useEffect` on `verificationResult` triggers monetization preview.
-- `refetch()` reloads emissions → Dashboard/History pick up `verified=true`.
-- `compliance_ledger` inserts run inside the function → Reports page reads them.
-No changes needed in Dashboard/History/Monetize/Reports.
-
-### Verification steps
-
-- `psql` check: run the failing emission id, confirm `user_id` gets set after a successful verify.
-- Playwright: sign in, land on `/verify`, click Verify All → screenshot the result card (verified or rejected), then `/history` and `/reports` should show the row.
-- Edge logs: no more "Ownership mismatch" entries.
-
-### Files touched
-
-- `supabase/functions/verify-carbon/index.ts` (ownership + adoption + always-200 outcome)
-- `src/pages/Verify.tsx` (render rejected outcome from server payload instead of only a toast)
-
-Nothing else in the MRV pipeline is broken from the logs. Extraction, ledger, monetization code paths are intact; they simply never run today because verification 403s.
+### Explicitly NOT changed
+Routing, RLS, MRV logic, verification pipeline, Razorpay/billing, DB tables other than the new `translation_cache`, `src/integrations/supabase/*`, `.env`, tailwind config, index.css tokens, page layouts, component structure.
 
 ---
 
-## 2. Careers page — deliberate color/type system + copy trim
+## Part 2 — MRV pipeline E2E tests
 
-Architecture, routes, data (`careersRoles.ts`), i18n keys, apply flow (fresher → Google Form, others → email + platform video) all stay identical. This is a visual-hierarchy + copy pass only.
+Playwright suite under `tests/e2e/mrv/` driven by shell (matches existing browser-use workflow). Runs against `http://localhost:8080` + deployed edge functions.
 
-### Color & type system (uses existing tokens, no new palette)
+### Coverage
+1. **`01_scan_to_extract.spec.ts`** — upload sample invoice fixture (PDF + image) → assert `extract-document` returns structured line items, HSN codes, totals; UI shows extracted table within SLA (<10s).
+2. **`02_verify_success.spec.ts`** — verified green invoice (solar) → `verify-carbon` returns `status: verified`, credit eligibility populated, ledger row written.
+3. **`02b_verify_rejected.spec.ts`** — tampered/mismatched invoice → returns `status: rejected` with reason; UI renders rejected outcome card (regression guard for the earlier silent-failure bug).
+4. **`02c_guest_adoption.spec.ts`** — upload as guest, sign in, verify → confirm `emissions.user_id` adopted, document row adopted, verification persisted.
+5. **`03_history_updates.spec.ts`** — after verify, `/history` shows the new row with SHA badge and correct scope.
+6. **`04_reports.spec.ts`** — generate GRI/BRSR/TCFD report → PDF endpoint returns 200, contains expected totals.
+7. **`05_dashboard_realtime.spec.ts`** — open `/dashboard` in one context, verify an emission in another, assert dashboard summary + trend chart update within 5s (supabase realtime subscription).
+8. **`06_monetize.spec.ts`** — verified green invoice appears in Monetize with correct tier-based payout preview.
+9. **`07_bulk.spec.ts`** — bulk upload of 5 invoices runs in parallel, dedupes on SHA256, no duplicate ledger rows.
 
-Introduce a small pacing system inside `Careers.tsx` — no new global tokens:
+### Infrastructure
+- `tests/e2e/fixtures/` — 4 sample invoices (solar, diesel, EV, duplicate).
+- `tests/e2e/helpers/auth.ts` — restores Supabase session from env (matches existing browser-use pattern).
+- `tests/e2e/helpers/db.ts` — read-only assertions via anon key (RLS-respecting) plus cleanup of test rows tagged with a run UUID.
+- `package.json` script: `"test:e2e": "playwright test"`. No CI wiring changes.
+- Each spec ends by deleting rows tagged with its run UUID so repeated runs stay clean.
 
-- **Section rhythm**: alternating `bg-background` → `bg-muted/30` → `bg-background` → single accent band (`bg-primary text-primary-foreground`) for the Apply section. One saturated moment, everything else quiet.
-- **Type scale (locked to existing font stack)**:
-  - Manifesto / hero: `text-[clamp(2.75rem,6vw,5.5rem)] leading-[1.05] tracking-[-0.03em] font-medium`
-  - Section leads: `text-[clamp(2rem,3.5vw,3.25rem)] leading-[1.1] tracking-[-0.02em]`
-  - Body lead: `text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[62ch]`
-  - Micro-eyebrow: `text-xs uppercase tracking-[0.18em] text-muted-foreground`
-- **Contrast rules**: only `text-foreground` / `text-muted-foreground` / `text-primary-foreground` — remove any lingering arbitrary greys. Meets WCAG AA in both themes.
-- **Emphasis**: single accent color (`text-primary`) reserved for numbers that matter (400M, 47s, 11) and the Apply band. No accent on decorative elements.
-- **Spacing**: sections use `py-24 md:py-32`, hero `min-h-[85vh]`. Consistent `max-w-6xl` container.
-
-### Copy trim (remove AI-sounding phrasing)
-
-Pass every string through a "would a builder actually say this?" filter. Concrete deletions/rewrites in `en.json` `careers.*` keys:
-
-- Cut: "we're building the future", "passionate team", "world-class", "shape the future", "join us on this journey", any exclamation marks, any triple-adjective stacks.
-- Replace hero manifesto with a shorter, concrete opening (2 lines, not 4).
-- "Why it matters" — trim each of the 3 blocks to one sentence + one number. No filler.
-- "How we work" (We do / We don't) — keep, but make each line ≤ 9 words. Currently reads like a values doc.
-- "Belonging" — remove the "we recognise the whole you" heading (feels HR-generated); replace with a one-line frame around the 11-language glyph row.
-- "Straight answers" FAQs — rewrite in candidate voice, cut every "at Senseible we…" opener.
-- Apply band — one sentence, two actions (fresher form, everyone else email + platform link). No secondary paragraph.
-
-Only English strings change. Other locales already fall back to English per the existing pattern; no re-translation forced.
-
-### Files touched
-
-- `src/pages/Careers.tsx` (typography scale, section rhythm, accent band, remove templated blocks)
-- `src/lib/i18n/translations/en.json` (`careers.*` copy trims only)
-
-Not touched: `careersRoles.ts`, `Footer.tsx`, `MinimalNav.tsx`, `App.tsx`, `index.css`, `tailwind.config.ts`, other locale JSONs, any platform/Supabase code.
-
-### Verification
-
-- `tsgo` clean, `bun run build` exits 0.
-- Playwright at 1280×1800 and 375×812 — screenshot hero, "Why it matters", roles, apply band. Confirm one saturated section only, consistent type scale, no orphan grey utilities.
-- Toggle `prefers-reduced-motion: reduce` — no motion regressions (existing keyframes already respect it via `MinimalNav` / global CSS).
-
-Chat Output: In chat along with summary of what deployed; include colour codes & fonts used on Senseible platform as brand theme.
+### Not covered (out of scope, called out)
+- Payment capture (Razorpay live) — mocked at edge function boundary.
+- Voice agent (ElevenLabs) — separate concern.
 
 ---
 
-## Out of scope (explicit)
+## Rollout order
+1. Ship translation edge fn + `useT` + cache table (backend + primitives).
+2. Wrap top 10 highest-traffic surfaces; verify switching locale translates them live.
+3. Sweep remaining pages/components in batches.
+4. Land MRV E2E suite + fixtures.
+5. Run full Playwright + `tsgo` before handoff.
 
-- No changes to extraction pipeline, HSN lookup, emission factors, `extract-document`, `calculate-monetization`, RLS, or DB schema.
-- No new design tokens, no palette change, no new fonts.
-- No changes to any other page.
+## Risk / cost notes
+- Lovable AI usage: one-time translation per unique string per locale; expect a few thousand calls during initial warm-up per language, then near-zero. Batched 50/req keeps this cheap.
+- First view in a non-English locale on a cold cache shows English for ~300–800 ms then swaps — acceptable and preserves SEO/first paint.
+- No user-facing regressions expected because English path is unchanged (`locale === 'en'` short-circuits).
