@@ -22,7 +22,7 @@ async def main():
         await page.screenshot(path=str(SHOTS / "01_home_en.png"))
 
         # Open language menu (aria-label='Change language') and pick Hindi
-        await page.get_by_role("button", name="Change language").click()
+        await page.locator("button[aria-label="Change language"]").click(force=True)
         await page.get_by_role("button", name="हिन्दी").click()
 
         # Give the queue time to batch + translate + swap DOM
@@ -40,7 +40,7 @@ async def main():
         print("PASS: DOM translator swapped text to Hindi")
 
         # Switch back to English and confirm restoration
-        await page.get_by_role("button", name="Change language").click()
+        await page.locator("button[aria-label="Change language"]").click(force=True)
         await page.get_by_role("button", name="English").click()
         await page.wait_for_timeout(1500)
         html_lang2 = await page.evaluate("document.documentElement.lang")
