@@ -12,6 +12,8 @@ type Locale = string;
 
 const SUPPORTED_LOCALES = new Set([
   "en", "hi", "bn", "ta", "mr", "id", "ur", "tl", "vi", "th", "es",
+  // Extended emerging-market coverage (auto-translated, no static JSON needed)
+  "te", "gu", "pa", "ml", "kn", "zh", "ar", "pt",
 ]);
 
 const memory: Record<Locale, Map<string, string>> = {};
