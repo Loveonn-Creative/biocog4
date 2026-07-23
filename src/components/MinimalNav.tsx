@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "@/lib/i18n/toast";
 import senseibleLogo from "@/assets/senseible-logo.png";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
