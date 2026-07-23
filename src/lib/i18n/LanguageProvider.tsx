@@ -100,10 +100,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         setIsLoading(false);
         try {
           document.documentElement.lang = locale;
-          document.documentElement.dir = locale === 'ur' ? 'rtl' : 'ltr';
+          document.documentElement.dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';
         } catch {}
-        // Universal DOM translator: makes the language switch cover every
-        // rendered string, including pages that never adopted useTranslation.
         try {
           if (locale === 'en') stopDomTranslator();
           else startDomTranslator(locale);
@@ -111,6 +109,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     });
     return () => { cancelled = true; };
+  }, [locale]);
+
+  // Cross-tab sync: if the locale changes in another tab, mirror it here.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'senseible_locale' && e.newValue && e.newValue !== locale) {
+        setLocaleState(e.newValue);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
   }, [locale]);
 
   return (
