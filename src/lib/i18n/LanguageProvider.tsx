@@ -21,6 +21,8 @@ export const useI18nContext = () => useContext(I18nContext);
 const translationCache: Record<string, Record<string, string>> = {};
 
 // Lazy-load translation JSON
+// Lazy-load translation JSON (only English is guaranteed to exist statically;
+// other locales fall back to English + runtime auto-translation).
 async function loadTranslation(locale: string): Promise<Record<string, string>> {
   if (translationCache[locale]) return translationCache[locale];
   const loaders: Record<string, () => Promise<{ default: Record<string, string> }>> = {
@@ -37,10 +39,20 @@ async function loadTranslation(locale: string): Promise<Record<string, string>> 
     es: () => import('./translations/es.json'),
   };
   try {
-    const loader = loaders[locale] || loaders['en'];
-    const mod = await loader();
-    translationCache[locale] = mod.default;
-    return mod.default;
+    const loader = loaders[locale];
+    if (loader) {
+      const mod = await loader();
+      translationCache[locale] = mod.default;
+      return mod.default;
+    }
+    // No static bundle: use English keys as fallback; runtime auto-translation
+    // will still translate visible strings via the DOM translator.
+    if (!translationCache['en']) {
+      const en = await loaders['en']();
+      translationCache['en'] = en.default;
+    }
+    translationCache[locale] = translationCache['en'];
+    return translationCache['en'];
   } catch {
     if (!translationCache['en']) {
       const en = await loaders['en']();
@@ -50,15 +62,19 @@ async function loadTranslation(locale: string): Promise<Record<string, string>> 
   }
 }
 
+const SUPPORTED = [
+  'en', 'hi', 'bn', 'ta', 'mr', 'id', 'ur', 'tl', 'vi', 'th', 'es',
+  'te', 'gu', 'pa', 'ml', 'kn', 'zh', 'ar', 'pt',
+];
+
 function detectInitialLocale(): string {
-  // Check localStorage
   const stored = localStorage.getItem('senseible_locale');
-  if (stored) return stored;
-  // Check browser language
+  if (stored && SUPPORTED.includes(stored)) return stored;
   const browserLang = navigator.language?.split('-')[0] || 'en';
-  const supported = ['en', 'hi', 'bn', 'ta', 'mr', 'id', 'ur', 'tl', 'vi', 'th', 'es'];
-  return supported.includes(browserLang) ? browserLang : 'en';
+  return SUPPORTED.includes(browserLang) ? browserLang : 'en';
 }
+
+const RTL_LOCALES = new Set(['ur', 'ar', 'fa', 'he']);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // Lazy-init so first render has the correct locale (no flash / no double render)
@@ -84,10 +100,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         setIsLoading(false);
         try {
           document.documentElement.lang = locale;
-          document.documentElement.dir = locale === 'ur' ? 'rtl' : 'ltr';
+          document.documentElement.dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';
         } catch {}
-        // Universal DOM translator: makes the language switch cover every
-        // rendered string, including pages that never adopted useTranslation.
         try {
           if (locale === 'en') stopDomTranslator();
           else startDomTranslator(locale);
@@ -95,6 +109,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     });
     return () => { cancelled = true; };
+  }, [locale]);
+
+  // Cross-tab sync: if the locale changes in another tab, mirror it here.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'senseible_locale' && e.newValue && e.newValue !== locale) {
+        setLocaleState(e.newValue);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
   }, [locale]);
 
   return (

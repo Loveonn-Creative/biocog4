@@ -12,6 +12,8 @@ type Locale = string;
 
 const SUPPORTED_LOCALES = new Set([
   "en", "hi", "bn", "ta", "mr", "id", "ur", "tl", "vi", "th", "es",
+  // Extended emerging-market coverage (auto-translated, no static JSON needed)
+  "te", "gu", "pa", "ml", "kn", "zh", "ar", "pt",
 ]);
 
 const memory: Record<Locale, Map<string, string>> = {};
@@ -136,9 +138,17 @@ export function subscribe(listener: () => void): () => void {
 export function translateSync(locale: Locale, text: string): string {
   if (!text || typeof text !== "string") return text;
   if (locale === "en" || !SUPPORTED_LOCALES.has(locale)) return text;
-  // Skip pure numbers / very short tokens
-  if (text.trim().length === 0) return text;
-  if (/^[\d\s.,%:/+\-]+$/.test(text)) return text;
+  const trimmed = text.trim();
+  if (trimmed.length === 0) return text;
+  // Skip pure numeric/symbolic tokens
+  if (/^[\d\s.,%:/+\-]+$/.test(trimmed)) return text;
+  // Skip strings with no letters at all (emoji, punctuation, code-ish)
+  if (!/\p{L}/u.test(trimmed)) return text;
+  // Skip pure identifiers / code tokens (GSTIN, HSN, SHA hashes, ISO codes)
+  if (/^[A-Z0-9_\-]{4,}$/.test(trimmed)) return text;
+  // Skip emails and URLs
+  if (/^\S+@\S+\.\S+$/.test(trimmed)) return text;
+  if (/^https?:\/\//i.test(trimmed)) return text;
 
   hydrateFromStorage(locale);
   const mem = getMem(locale);

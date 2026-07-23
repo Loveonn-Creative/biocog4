@@ -302,3 +302,38 @@
     box-shadow: 0 0 20px hsl(var(--accent) / 0.3), 0 0 40px hsl(var(--accent) / 0.1);
   }
 }
+
+/* ============================================================
+   Multilingual / RTL platform capability
+   ============================================================ */
+
+/* Text expansion tolerance: many languages (DE, TA, UR) expand 30–40%.
+   Prevent overflow while keeping identical visual layout. */
+h1, h2, h3, h4, h5, h6, p, a, button, label, span {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Localized script fallbacks — keep our brand font, add per-script fonts */
+:root {
+  --font-arabic: "Noto Naskh Arabic", "Amiri", "Geeza Pro", system-ui, sans-serif;
+  --font-indic: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Bengali",
+                "Noto Sans Tamil", "Noto Sans Gujarati", "Noto Sans Gurmukhi",
+                "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Kannada",
+                system-ui, sans-serif;
+  --font-cjk: "Noto Sans SC", "PingFang SC", "Hiragino Sans", system-ui, sans-serif;
+}
+
+:lang(ur), :lang(ar), :lang(fa), :lang(he) { font-family: var(--font-arabic); }
+:lang(hi), :lang(mr), :lang(bn), :lang(ta), :lang(te),
+:lang(gu), :lang(pa), :lang(ml), :lang(kn) { font-family: var(--font-indic); }
+:lang(zh), :lang(ja), :lang(ko) { font-family: var(--font-cjk); }
+
+/* RTL: keep visual parity — mirror directional icons only */
+[dir="rtl"] .rtl-mirror,
+[dir="rtl"] svg[data-lucide="arrow-right"],
+[dir="rtl"] svg[data-lucide="arrow-left"],
+[dir="rtl"] svg[data-lucide="chevron-right"],
+[dir="rtl"] svg[data-lucide="chevron-left"] {
+  transform: scaleX(-1);
+}
