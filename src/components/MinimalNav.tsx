@@ -7,11 +7,15 @@ import { useTranslation } from "@/lib/i18n/useTranslation";
 
 const LOCALE_LABELS: Record<string, string> = {
   en: 'EN', hi: 'हिं', bn: 'বাং', ta: 'தமி', mr: 'मरा',
+  te: 'తెలు', gu: 'ગુજ', pa: 'ਪੰਜਾ', ml: 'മല', kn: 'ಕನ್ನ',
   id: 'ID', ur: 'اردو', tl: 'TL', vi: 'VI', th: 'ไทย', es: 'ES',
+  zh: '中文', ar: 'عر', pt: 'PT',
 };
 const LOCALE_FULL: Record<string, string> = {
   en: 'English', hi: 'हिन्दी', bn: 'বাংলা', ta: 'தமிழ்', mr: 'मराठी',
+  te: 'తెలుగు', gu: 'ગુજરાતી', pa: 'ਪੰਜਾਬੀ', ml: 'മലയാളം', kn: 'ಕನ್ನಡ',
   id: 'Bahasa Indonesia', ur: 'اردو', tl: 'Tagalog', vi: 'Tiếng Việt', th: 'ไทย', es: 'Español',
+  zh: '简体中文', ar: 'العربية', pt: 'Português',
 };
 
 const navLinks = [
