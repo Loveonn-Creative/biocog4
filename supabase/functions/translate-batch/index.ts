@@ -17,13 +17,30 @@ const LANGUAGE_NAMES: Record<string, string> = {
   bn: "Bengali (বাংলা)",
   ta: "Tamil (தமிழ்)",
   mr: "Marathi (मराठी)",
+  te: "Telugu (తెలుగు)",
+  gu: "Gujarati (ગુજરાતી)",
+  pa: "Punjabi (ਪੰਜਾਬੀ)",
+  ml: "Malayalam (മലയാളം)",
+  kn: "Kannada (ಕನ್ನಡ)",
   id: "Bahasa Indonesia",
   ur: "Urdu (اردو)",
   tl: "Tagalog / Filipino",
   vi: "Vietnamese (Tiếng Việt)",
   th: "Thai (ไทย)",
   es: "Spanish (Español)",
+  zh: "Simplified Chinese (简体中文)",
+  ar: "Modern Standard Arabic (العربية)",
+  pt: "Brazilian Portuguese (Português)",
 };
+
+// Never translate — brand, units, identifiers, standards
+const PROTECTED_TERMS = [
+  "Senseible", "Biocog", "MRV", "ESG", "GRI", "TCFD", "BRSR", "CBAM", "CDP",
+  "SBTi", "GHG Protocol", "ISO 14064", "ISO 14001", "PAS 2060", "IFRS S2",
+  "GSTIN", "GST", "HSN", "PAN", "CIN", "LEI", "ISIN", "MSME", "SME",
+  "tCO2e", "CO2", "CO2e", "kWh", "MWh", "GJ", "kg", "SHA-256", "PDF", "API",
+  "EU", "UK", "US", "IEA", "UNFCCC", "Scope 1", "Scope 2", "Scope 3",
+];
 
 async function sha256(input: string): Promise<string> {
   const buf = new TextEncoder().encode(input);
