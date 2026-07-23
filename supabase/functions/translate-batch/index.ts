@@ -110,10 +110,13 @@ Deno.serve(async (req) => {
       } else {
         const target = LANGUAGE_NAMES[locale];
         const numbered = missing.map((m, i) => `${i + 1}. ${m.source}`).join("\n");
+        const protectedList = PROTECTED_TERMS.join(", ");
         const systemPrompt =
-          `You translate UI strings for Senseible, a climate-fintech app for MSMEs. ` +
-          `Translate each numbered line into ${target}. ` +
-          `Rules: preserve placeholders like {name} and %s exactly; keep numbers, units, product names (Senseible, Biocog), and acronyms (MRV, CBAM, GRI, TCFD, BRSR, GST, HSN, MSME, EU, CO2, PDF, AI) unchanged; keep punctuation and capitalization style; do not add commentary. ` +
+          `You translate UI strings for Senseible, a climate-fintech platform used by MSMEs across emerging markets and rural India. ` +
+          `Translate each numbered line into ${target} using natural, locally understandable phrasing that a small-business owner would actually say — not literal machine translation. ` +
+          `Preserve product/brand names, acronyms, units, standards and identifiers EXACTLY as written. Do not translate these: ${protectedList}. ` +
+          `Preserve placeholders like {name}, {0}, %s, %d, and any inline numbers, currency symbols, dates, URLs, emails, GSTIN/HSN/SHA codes. ` +
+          `Keep punctuation, capitalization style, and sentence-ending punctuation intact. Do not add commentary, quotes, or notes. ` +
           `Return ONLY a JSON object of shape {"1":"...","2":"..."} with the translated string for each number. No prose, no code fences.`;
 
         const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
