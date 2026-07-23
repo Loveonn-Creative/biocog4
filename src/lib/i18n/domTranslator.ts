@@ -26,8 +26,17 @@ function shouldSkip(el: Element | null): boolean {
   let node: Element | null = el;
   while (node) {
     if (SKIP_TAGS.has(node.tagName)) return true;
-    if (node.getAttribute && node.getAttribute("data-no-translate") !== null) return true;
-    if (node.getAttribute && node.getAttribute("contenteditable") === "true") return true;
+    if (node.getAttribute) {
+      if (node.getAttribute("data-no-translate") !== null) return true;
+      if (node.getAttribute("contenteditable") === "true") return true;
+      // Never touch code-shaped or identifier content: hashes, GSTIN, HSN, etc.
+      const cls = node.getAttribute("class") || "";
+      if (/\bfont-mono\b/.test(cls)) return true;
+      if (/\b(hash|sha|gstin|hsn|code|identifier)\b/i.test(cls)) return true;
+      // Never translate <time>, <kbd>, <samp>, <var> content
+      const tag = node.tagName;
+      if (tag === "TIME" || tag === "KBD" || tag === "SAMP" || tag === "VAR") return true;
+    }
     node = node.parentElement;
   }
   return false;
