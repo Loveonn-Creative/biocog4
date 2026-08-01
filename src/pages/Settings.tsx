@@ -180,7 +180,11 @@ const Settings = () => {
         </div>
 
         <div className="space-y-6">
+          {/* Language — applies instantly, saved to profile when signed in */}
+          <LanguagePreference isAuthenticated={!!user} />
+
           {/* Company Details */}
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
