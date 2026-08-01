@@ -465,18 +465,25 @@ const PartnerDashboard = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-primary" />
-                Baseline vs Actual
+                Observed monthly emissions
               </CardTitle>
               <CardDescription>
-                Cluster emissions trend (6 months)
+                Verified records per month. The dashed line is the mean of the observed
+                months, not a target or an assumed counterfactual.
               </CardDescription>
             </CardHeader>
             <CardContent>
               {isLoading ? (
                 <Skeleton className="h-[250px] w-full" />
+              ) : baselineData.length === 0 ? (
+                <div className="flex h-[250px] items-center justify-center text-center text-sm text-muted-foreground">
+                  No verified records in this portfolio yet. This chart appears once linked
+                  MSMEs have verified emissions.
+                </div>
               ) : (
                 <div className="h-[250px]">
                   <ResponsiveContainer width="100%" height="100%">
+
                     <ComposedChart data={baselineData}>
                       <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
                       <XAxis 
