@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
@@ -178,7 +179,17 @@ const CarbonPricingCalculator = () => {
               </BarChart>
             </ResponsiveContainer>
 
+            <MethodologyPanel
+              methodologyVersion={result.methodologyVersion}
+              factorSources={result.factorSources}
+              issues={[
+                `Forward carbon prices follow the ${scenario} price scenario — they are projections, not quoted market prices.`,
+                ...(Number(domesticPrice) === 0 ? ["No domestic carbon price entered, so no offset against the CBAM liability is applied."] : []),
+              ]}
+            />
+
             <SaveRunButton
+
               calculatorSlug="carbon-pricing-impact"
               inputs={{ scope1, scope2, scope3, production, sectorId, exportsToEU, reduction, scenario, startYear, endYear, domesticPrice, currency }}
               results={result as never}

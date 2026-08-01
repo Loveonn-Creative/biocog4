@@ -1,5 +1,7 @@
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 import { startDomTranslator, stopDomTranslator } from './domTranslator';
+import { supabase } from '@/integrations/supabase/client';
+
 
 interface I18nContextType {
   locale: string;
@@ -84,11 +86,71 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   });
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
+  const userIdRef = useRef<string | null>(null);
 
+  // Single setter used by Settings AND the nav quick-switch.
+  // Writes local storage always; mirrors to the profile when signed in so the
+  // preference follows the user across devices and future sessions.
   const setLocale = useCallback((newLocale: string) => {
+    if (!SUPPORTED.includes(newLocale)) return;
     setLocaleState(newLocale);
     try { localStorage.setItem('senseible_locale', newLocale); } catch {}
+    const uid = userIdRef.current;
+    if (uid) {
+      void supabase
+        .from('profiles')
+        .update({ preferred_language: newLocale })
+        .eq('id', uid)
+        .then(({ error }) => {
+          if (error) console.error('preferred_language save failed', error.message);
+        });
+    }
   }, []);
+
+  // Profile-backed preference: the stored profile value wins over browser
+  // language and over whatever this device happened to have cached.
+  useEffect(() => {
+    let cancelled = false;
+
+    const applyForUser = async (uid: string | null) => {
+      userIdRef.current = uid;
+      if (!uid) return;
+      const { data } = await supabase
+        .from('profiles')
+        .select('preferred_language')
+        .eq('id', uid)
+        .maybeSingle();
+      if (cancelled) return;
+      const pref = data?.preferred_language;
+      if (pref && SUPPORTED.includes(pref)) {
+        setLocaleState(pref);
+        try { localStorage.setItem('senseible_locale', pref); } catch {}
+      } else {
+        // First sign-in with no stored preference: adopt the current one.
+        try {
+          const current = localStorage.getItem('senseible_locale');
+          if (current && SUPPORTED.includes(current)) {
+            await supabase.from('profiles').update({ preferred_language: current }).eq('id', uid);
+          }
+        } catch {}
+      }
+    };
+
+    supabase.auth.getSession().then(({ data }) => {
+      void applyForUser(data.session?.user?.id ?? null);
+    });
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      const uid = session?.user?.id ?? null;
+      if (uid !== userIdRef.current) void applyForUser(uid);
+    });
+
+    return () => {
+      cancelled = true;
+      sub.subscription.unsubscribe();
+    };
+  }, []);
+
 
   // Load translations when locale changes
   useEffect(() => {

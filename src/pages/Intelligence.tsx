@@ -129,17 +129,13 @@ const Intelligence = () => {
     onError: handleVoiceError,
   });
 
-  // Calculate context from emissions - different for guest vs authenticated
+  // The assistant's figures are assembled server-side from the signed-in
+  // user's own records. The client only passes non-authoritative hints.
   const context = {
-    scope1: emissions?.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    scope2: emissions?.filter(e => e.scope === 2).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    scope3: emissions?.filter(e => e.scope === 3).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    totalEmissions: emissions?.reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    greenScore: Math.min(100, Math.max(0, 100 - (emissions?.length || 0) * 2)),
-    sector: 'MSME',
     isAuthenticated,
     userTier: tier,
   };
+
 
   // Save language preference
   useEffect(() => {
@@ -176,6 +172,13 @@ const Intelligence = () => {
     setIsLoading(true);
 
     try {
+      // Send the user's own access token when signed in so the function can
+      // ground its answer in that user's records (falls back to the
+      // publishable key for guests).
+      const { data: sessionData } = await supabase.auth.getSession();
+      const accessToken =
+        sessionData?.session?.access_token || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/intelligence-chat`,
         {
@@ -183,7 +186,7 @@ const Intelligence = () => {
           headers: {
             'Content-Type': 'application/json',
             'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+            'Authorization': `Bearer ${accessToken}`,
           },
           body: JSON.stringify({
             messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
@@ -192,6 +195,7 @@ const Intelligence = () => {
           }),
         }
       );
+
 
       if (!response.ok) {
         const error = await response.json();
@@ -460,14 +464,15 @@ const Intelligence = () => {
               </div>
             )}
 
-            {isAuthenticated && context.totalEmissions > 0 && (
+            {isAuthenticated && (emissions?.length ?? 0) > 0 && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 text-sm">
                 <Info className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  Using your emission data: {context.totalEmissions.toFixed(1)} kg CO2e across {emissions?.length || 0} sources
+                  Answers are grounded in your own records: {emissions?.length || 0} emission sources, plus your documents, verifications and reports.
                 </span>
               </div>
             )}
+
 
             {/* Voice command hint */}
             {voiceNavEnabled && (

@@ -15,6 +15,8 @@ import { toast } from 'sonner';
 import { getCountryList, getCountryConfig } from '@/lib/countryConfig';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
+import { LanguagePreference } from '@/components/settings/LanguagePreference';
+
 
 interface CompanyProfile {
   businessName: string;
@@ -180,7 +182,11 @@ const Settings = () => {
         </div>
 
         <div className="space-y-6">
+          {/* Language — applies instantly, saved to profile when signed in */}
+          <LanguagePreference isAuthenticated={!!user} />
+
           {/* Company Details */}
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

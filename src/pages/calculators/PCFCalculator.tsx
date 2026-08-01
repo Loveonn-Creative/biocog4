@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Plus, Trash2, Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
@@ -272,7 +273,18 @@ const PCFCalculatorPage = () => {
             )}
 
             <div className="mt-6 flex flex-wrap gap-3">
+              <MethodologyPanel
+                methodologyVersion={result.methodologyVersion}
+                factorSources={result.factorSources}
+                issues={[
+                  ...(transport.length === 0 ? ["No transport stage entered — inbound/outbound transport is excluded from this footprint."] : []),
+                  ...(processing.length === 0 ? ["No processing stage entered — conversion energy is excluded from this footprint."] : []),
+                  ...(systemBoundary === 'cradle-to-gate' ? ["Cradle-to-gate boundary: use and end-of-life stages are out of scope."] : []),
+                ]}
+              />
+
               <SaveRunButton
+
                 calculatorSlug="product-carbon-footprint"
                 label={result.productName}
                 inputs={{ productName, functionalUnit, unitsPerBatch, systemBoundary, allocationMethod, coProductShare, materials, energy, transport, processing }}

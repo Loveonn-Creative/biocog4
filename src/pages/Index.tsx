@@ -10,6 +10,7 @@ import { UseCaseTyper } from "@/components/UseCaseTyper";
 import { BulkUpload } from "@/components/BulkUpload";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { getLocaleMeta } from "@/lib/i18n/locales";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
@@ -516,15 +517,18 @@ const Index = () => {
     setDocumentType("Processing voice query...");
     
     try {
-      // Send to intelligence-chat with stream: false for voice queries
+      // Send to intelligence-chat with stream: false for voice queries.
+      // invoke() forwards the signed-in user's JWT, so the assistant can
+      // ground its answer in that user's own records.
       const response = await supabase.functions.invoke('intelligence-chat', {
         body: { 
           messages: [{ role: 'user', content: transcript }],
           context: { isHomepage: true, type: 'voice_query' },
-          language: 'English',
+          language: getLocaleMeta(localStorage.getItem('senseible_locale') || 'en').name,
           stream: false  // Non-streaming for voice - returns JSON directly
         }
       });
+
 
       setState("idle");
 

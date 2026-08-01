@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator as CalcIcon, TrendingUp, Leaf, Wallet } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
@@ -212,7 +213,17 @@ const EnergyTransitionCalculator = () => {
               </LineChart>
             </ResponsiveContainer>
 
+            <MethodologyPanel
+              methodologyVersion={result.methodologyVersion}
+              factorSources={result.factorSources}
+              issues={[
+                `Generation modelled from an assumed capacity utilisation of ${cuf} and ${degradation}%/yr degradation — actual site yield will differ.`,
+                ...(Number(subsidy) > 0 ? ["Subsidy applied exactly as entered; scheme eligibility is not verified by this tool."] : []),
+              ]}
+            />
+
             <SaveRunButton
+
               calculatorSlug="energy-transition-savings"
               label={`${scenario} ${systemKwp}kWp ${country}`}
               inputs={{ country, scenario, monthlyKwh, tariff, systemKwp, capex, opex, ppaTariff, selfCons, exportTariff, discount, degradation, life, cuf, subsidy }}

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Plus, Trash2, Calculator as CalcIcon, AlertTriangle } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
@@ -157,7 +158,19 @@ const SupplierRiskCalculator = () => {
               </table>
             </div>
 
+            <MethodologyPanel
+              methodologyVersion={result.methodologyVersion}
+              factorSources={result.factorSources}
+              issues={[
+                ...(suppliers.filter(s => !s.name.trim()).length > 0
+                  ? [`${suppliers.filter(s => !s.name.trim()).length} unnamed supplier row(s) excluded.`]
+                  : []),
+                "Spend-based factors are sector averages — supplier-specific primary data will change these results.",
+              ]}
+            />
+
             <SaveRunButton
+
               calculatorSlug="supplier-emissions-risk"
               inputs={{ suppliers }}
               results={result as never}
