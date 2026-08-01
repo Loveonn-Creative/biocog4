@@ -456,14 +456,15 @@ const Intelligence = () => {
               </div>
             )}
 
-            {isAuthenticated && context.totalEmissions > 0 && (
+            {isAuthenticated && (emissions?.length ?? 0) > 0 && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 text-sm">
                 <Info className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  Using your emission data: {context.totalEmissions.toFixed(1)} kg CO2e across {emissions?.length || 0} sources
+                  Answers are grounded in your own records: {emissions?.length || 0} emission sources, plus your documents, verifications and reports.
                 </span>
               </div>
             )}
+
 
             {/* Voice command hint */}
             {voiceNavEnabled && (
