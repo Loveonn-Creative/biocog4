@@ -605,9 +605,17 @@ const PartnerDashboard = () => {
                           </td>
                           <td className="py-3 px-4 text-sm">{msme.sector}</td>
                           <td className="py-3 px-4">
-                            <span className="text-sm font-mono text-success">
-                              {msme.baselineVsActual}%
-                            </span>
+                            {msme.baselineVsActual === null ? (
+                              <span className="text-sm text-muted-foreground" title="Not enough history to compute a change">
+                                Not enough history
+                              </span>
+                            ) : (
+                              <span
+                                className={`text-sm font-mono ${msme.baselineVsActual <= 0 ? 'text-success' : 'text-muted-foreground'}`}
+                              >
+                                {msme.baselineVsActual > 0 ? '+' : ''}{msme.baselineVsActual}%
+                              </span>
+                            )}
                           </td>
                           <td className="py-3 px-4">
                             <span className="text-sm font-mono">
@@ -615,9 +623,18 @@ const PartnerDashboard = () => {
                             </span>
                           </td>
                           <td className="py-3 px-4">
-                            <Badge variant={msme.status === 'clean' ? 'default' : 'destructive'}>
-                              {msme.status === 'clean' ? 'Clean' : 'Flagged'}
+                            <Badge
+                              variant={
+                                msme.status === 'flagged'
+                                  ? 'destructive'
+                                  : msme.status === 'clean'
+                                  ? 'default'
+                                  : 'outline'
+                              }
+                            >
+                              {msme.status === 'clean' ? 'Clean' : msme.status === 'flagged' ? 'Flagged' : 'Not verified'}
                             </Badge>
+
                           </td>
                           <td className="py-3 px-4">
                             <Badge variant="outline" className={
