@@ -40,11 +40,15 @@ interface ClusterData {
 interface AnonymizedMSME {
   hashId: string;
   sector: string;
-  baselineVsActual: number;
+  /** Change vs the entity's own earliest observed period. null when there is
+   *  not enough history to compute it — never a generated placeholder. */
+  baselineVsActual: number | null;
   verifiedReduction: number;
-  status: 'clean' | 'flagged';
+  /** 'unknown' when no verification run covers this entity yet. */
+  status: 'clean' | 'flagged' | 'unknown';
   qualityGrade: 'A' | 'B' | 'C' | 'D';
 }
+
 
 interface BaselineData {
   month: string;
