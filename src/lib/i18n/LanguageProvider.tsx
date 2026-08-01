@@ -1,5 +1,7 @@
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 import { startDomTranslator, stopDomTranslator } from './domTranslator';
+import { supabase } from '@/integrations/supabase/client';
+
 
 interface I18nContextType {
   locale: string;
