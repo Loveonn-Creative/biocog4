@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calculator as CalcIcon, TrendingUp, Leaf, Wallet } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {

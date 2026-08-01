@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Plus, Trash2, Calculator as CalcIcon, AlertTriangle } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {

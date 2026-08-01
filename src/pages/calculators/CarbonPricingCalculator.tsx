@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Calculator as CalcIcon } from "lucide-react";
 import { CalculatorShell } from "@/components/calculators/CalculatorShell";
 import { SaveRunButton } from "@/components/calculators/SaveRunButton";
+import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
