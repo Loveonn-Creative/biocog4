@@ -343,32 +343,51 @@ export function determineApplicableFrameworks(profile: ProfileContext): string[]
 // Generate framework coverage section for reports
 export function generateFrameworkSection(
   frameworks: string[],
-  summary: { scope1: number; scope2: number; scope3: number; total: number }
-): { covered: FrameworkCoverage[]; partial: FrameworkCoverage[]; notCovered: FrameworkCoverage[] } {
-  const covered: FrameworkCoverage[] = [];
-  const partial: FrameworkCoverage[] = [];
-  const notCovered: FrameworkCoverage[] = [];
-  
-  frameworks.forEach(fwId => {
-    const fw = FRAMEWORKS[fwId];
-    if (fw) {
-      // Determine coverage based on data availability
-      const hasScope1 = summary.scope1 > 0;
-      const hasScope2 = summary.scope2 > 0;
-      const hasScope3 = summary.scope3 > 0;
-      
-      if (fw.status === 'covered' && (hasScope1 || hasScope2 || hasScope3)) {
-        covered.push(fw);
-      } else if (fw.status === 'partial' || (fw.status === 'covered' && summary.total === 0)) {
-        partial.push(fw);
-      } else {
-        notCovered.push(fw);
-      }
-    }
-  });
-  
-  return { covered, partial, notCovered };
+  availability: DataAvailability,
+): {
+  assessments: FrameworkAssessment[];
+  covered: FrameworkCoverage[];
+  partial: FrameworkCoverage[];
+  notCovered: FrameworkCoverage[];
+} {
+  const assessments = frameworks
+    .map(id => FRAMEWORKS[id])
+    .filter(Boolean)
+    .map(fw => assessFramework(fw!, availability));
+
+  return {
+    assessments,
+    covered: assessments.filter(a => a.coverage === 'covered').map(a => a.framework),
+    partial: assessments.filter(a => a.coverage === 'partial').map(a => a.framework),
+    notCovered: assessments.filter(a => a.coverage === 'not_covered').map(a => a.framework),
+  };
 }
+
+/** Build the availability flags from the platform's own verified records. */
+export function availabilityFromRecords(input: {
+  scope1Kg: number;
+  scope2Kg: number;
+  scope3Kg: number;
+  hasIntensityDenominator?: boolean;
+  hasTarget?: boolean;
+  hasGovernanceNarrative?: boolean;
+  hasRiskAssessment?: boolean;
+  hasEnergyRecords?: boolean;
+  hasProductLevelData?: boolean;
+}): DataAvailability {
+  return {
+    scope1: input.scope1Kg > 0,
+    scope2: input.scope2Kg > 0,
+    scope3: input.scope3Kg > 0,
+    intensity: Boolean(input.hasIntensityDenominator),
+    targets: Boolean(input.hasTarget),
+    governance: Boolean(input.hasGovernanceNarrative),
+    risks: Boolean(input.hasRiskAssessment),
+    energy: Boolean(input.hasEnergyRecords),
+    productLevel: Boolean(input.hasProductLevelData),
+  };
+}
+
 
 // Get default profile for MSMEs in India
 export function getDefaultMSMEProfile(): ProfileContext {
