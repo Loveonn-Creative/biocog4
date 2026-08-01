@@ -15,6 +15,8 @@ import { toast } from 'sonner';
 import { getCountryList, getCountryConfig } from '@/lib/countryConfig';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
+import { LanguagePreference } from '@/components/settings/LanguagePreference';
+
 
 interface CompanyProfile {
   businessName: string;
