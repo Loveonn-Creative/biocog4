@@ -172,6 +172,13 @@ const Intelligence = () => {
     setIsLoading(true);
 
     try {
+      // Send the user's own access token when signed in so the function can
+      // ground its answer in that user's records (falls back to the
+      // publishable key for guests).
+      const { data: sessionData } = await supabase.auth.getSession();
+      const accessToken =
+        sessionData?.session?.access_token || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/intelligence-chat`,
         {
@@ -179,7 +186,7 @@ const Intelligence = () => {
           headers: {
             'Content-Type': 'application/json',
             'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+            'Authorization': `Bearer ${accessToken}`,
           },
           body: JSON.stringify({
             messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
@@ -188,6 +195,7 @@ const Intelligence = () => {
           }),
         }
       );
+
 
       if (!response.ok) {
         const error = await response.json();
