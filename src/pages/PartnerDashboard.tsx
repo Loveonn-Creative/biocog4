@@ -132,7 +132,7 @@ const PartnerDashboard = () => {
       // Optimized query with LIMIT for faster initial load
       const { data: verifications, error: verError } = await supabase
         .from('carbon_verifications')
-        .select('id, verification_score, total_co2_kg, created_at, cbam_compliant, ccts_eligible')
+        .select('id, session_id, verification_score, total_co2_kg, created_at, cbam_compliant, ccts_eligible, greenwashing_risk')
         .eq('verification_status', 'approved')
         .order('created_at', { ascending: false })
         .limit(50);
@@ -167,42 +167,79 @@ const PartnerDashboard = () => {
         availableCredits: Math.floor(totalReductions / 1000),
       });
 
-      // Generate anonymized MSME data
-      const msmeMap = new Map<string, { co2: number; sector: string }>();
+      // Risk signal per entity, taken from real verification runs
+      const riskBySession = new Map<string, string>();
+      verifications?.forEach(v => {
+        if (v.session_id) riskBySession.set(v.session_id, v.greenwashing_risk || 'low');
+      });
+
+      // Aggregate anonymised entities from real emission records
+      const msmeMap = new Map<
+        string,
+        { co2: number; sector: string; first: { ts: number; co2: number }; last: { ts: number; co2: number } }
+      >();
       emissions?.forEach(e => {
         const key = e.session_id || e.id;
-        const existing = msmeMap.get(key) || { co2: 0, sector: 'General' };
-        msmeMap.set(key, {
-          co2: existing.co2 + (e.co2_kg || 0),
-          sector: e.category === 'fuel' ? 'Energy' : 
-                  e.category === 'electricity' ? 'Manufacturing' :
-                  e.category === 'transport' ? 'Logistics' : 'General',
-        });
+        const ts = new Date(e.created_at).getTime();
+        const co2 = e.co2_kg || 0;
+        const sector =
+          e.category === 'fuel' ? 'Energy' :
+          e.category === 'electricity' ? 'Manufacturing' :
+          e.category === 'transport' ? 'Logistics' : 'General';
+        const existing = msmeMap.get(key);
+        if (!existing) {
+          msmeMap.set(key, { co2, sector, first: { ts, co2 }, last: { ts, co2 } });
+          return;
+        }
+        existing.co2 += co2;
+        existing.sector = existing.sector === 'General' ? sector : existing.sector;
+        if (ts < existing.first.ts) existing.first = { ts, co2 };
+        if (ts > existing.last.ts) existing.last = { ts, co2 };
       });
 
       const anonymized: AnonymizedMSME[] = Array.from(msmeMap.entries())
         .slice(0, 10)
-        .map(([key, value], index) => ({
-          hashId: `MSME-${key.substring(0, 4).toUpperCase()}${index}`,
-          sector: value.sector,
-          baselineVsActual: -Math.round(Math.random() * 25 + 5), // Negative = reduction
-          verifiedReduction: Math.round(value.co2 / 1000 * 100) / 100,
-          status: Math.random() > 0.1 ? 'clean' : 'flagged',
-          qualityGrade: value.co2 > 500 ? 'A' : value.co2 > 200 ? 'B' : 'C',
-        }));
+        .map(([key, value], index) => {
+          // Only computable when the entity has records from two distinct dates.
+          const hasHistory = value.first.ts !== value.last.ts && value.first.co2 > 0;
+          const change = hasHistory
+            ? Math.round(((value.last.co2 - value.first.co2) / value.first.co2) * 100)
+            : null;
+          const risk = riskBySession.get(key);
+          return {
+            hashId: `MSME-${key.substring(0, 4).toUpperCase()}${index}`,
+            sector: value.sector,
+            baselineVsActual: change,
+            verifiedReduction: Math.round(value.co2 / 1000 * 100) / 100,
+            status: risk === undefined ? 'unknown' : risk === 'high' ? 'flagged' : 'clean',
+            qualityGrade: value.co2 > 500 ? 'A' : value.co2 > 200 ? 'B' : 'C',
+          } as AnonymizedMSME;
+        });
 
       setAnonymizedMSMEs(anonymized);
 
-      // Generate baseline vs actual chart data (last 6 months)
-      const months = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      const chartData: BaselineData[] = months.map((month, i) => {
-        const baseline = 1000 + Math.random() * 500;
-        const actual = baseline * (0.85 - i * 0.02);
+      // Observed monthly totals from real records. The reference line is the
+      // mean monthly total across the observed window — not a target or an
+      // assumed counterfactual.
+      const monthly = new Map<string, number>();
+      emissions?.forEach(e => {
+        const d = new Date(e.created_at);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        monthly.set(key, (monthly.get(key) || 0) + (e.co2_kg || 0));
+      });
+      const orderedMonths = Array.from(monthly.entries()).sort((a, b) => a[0].localeCompare(b[0])).slice(-6);
+      const meanMonthly = orderedMonths.length
+        ? orderedMonths.reduce((s, [, v]) => s + v, 0) / orderedMonths.length
+        : 0;
+      const chartData: BaselineData[] = orderedMonths.map(([key, value]) => {
+        const [year, month] = key.split('-');
+        const label = new Date(Number(year), Number(month) - 1, 1)
+          .toLocaleDateString('en', { month: 'short' });
         return {
-          month,
-          baseline: Math.round(baseline),
-          actual: Math.round(actual),
-          reduction: Math.round(baseline - actual),
+          month: label,
+          baseline: Math.round(meanMonthly),
+          actual: Math.round(value),
+          reduction: Math.round(meanMonthly - value),
         };
       });
       setBaselineData(chartData);
@@ -210,6 +247,7 @@ const PartnerDashboard = () => {
     } catch (error) {
       console.error('Error fetching partner data:', error);
       toast.error('Failed to load partner data');
+
     } finally {
       setIsLoading(false);
     }
