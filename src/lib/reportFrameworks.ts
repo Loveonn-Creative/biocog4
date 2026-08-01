@@ -1,5 +1,10 @@
 // Multi-Framework Reporting Engine
-// Maps normalized carbon data to various sustainability disclosure frameworks
+// Maps normalized carbon data to various sustainability disclosure frameworks.
+//
+// Coverage is never asserted from a static label: every framework declares the
+// disclosure inputs it needs, and coverage is computed from the evidence the
+// user actually holds. A framework with no supporting evidence is reported as
+// not covered rather than presented as satisfied.
 
 export interface FrameworkCoverage {
   id: string;
@@ -8,8 +13,110 @@ export interface FrameworkCoverage {
   category: 'mandatory' | 'voluntary' | 'investor';
   applicableWhen: string[];
   metricsMapping: Record<string, string>;
+  /** Baseline expectation only — actual coverage is computed from evidence. */
   status: 'covered' | 'partial' | 'not_applicable';
 }
+
+/**
+ * Disclosure inputs the platform can evidence today.
+ * Anything absent here must be declared as a gap in the report, never inferred.
+ */
+export interface DataAvailability {
+  scope1: boolean;
+  scope2: boolean;
+  scope3: boolean;
+  /** Emissions per unit of output or revenue */
+  intensity: boolean;
+  /** A recorded reduction target with a baseline and target year */
+  targets: boolean;
+  /** Documented governance / oversight narrative */
+  governance: boolean;
+  /** Documented transition or physical risk assessment */
+  risks: boolean;
+  /** Metered or invoiced energy consumption */
+  energy: boolean;
+  /** Product- or shipment-level embedded emissions */
+  productLevel: boolean;
+}
+
+export const EMPTY_AVAILABILITY: DataAvailability = {
+  scope1: false, scope2: false, scope3: false, intensity: false,
+  targets: false, governance: false, risks: false, energy: false,
+  productLevel: false,
+};
+
+/** Which availability flag each framework metric depends on. */
+const METRIC_REQUIREMENTS: Record<string, keyof DataAvailability> = {
+  scope1: 'scope1',
+  scope1Emissions: 'scope1',
+  scope2: 'scope2',
+  scope3: 'scope3',
+  scope3Categories: 'scope3',
+  scope1_2Combined: 'scope1',
+  scope1_2_3: 'scope3',
+  totalEmissions: 'scope1',
+  emissionsBreakdown: 'scope1',
+  climateChange: 'scope1',
+  environmentalResponsibility: 'scope1',
+  climateAction: 'scope1',
+  emissionIntensity: 'intensity',
+  reductionInitiatives: 'targets',
+  reductionTargets: 'targets',
+  targetReductions: 'targets',
+  targetYear: 'targets',
+  baselineYear: 'targets',
+  responsibleConsumption: 'targets',
+  governanceProcess: 'governance',
+  governanceLeadership: 'governance',
+  companyOverview: 'governance',
+  climateStrategy: 'governance',
+  climateRisks: 'risks',
+  riskProcess: 'risks',
+  transitionRisks: 'risks',
+  physicalRisks: 'risks',
+  natureRisks: 'risks',
+  natureDependencies: 'risks',
+  natureActions: 'risks',
+  operationsLocation: 'governance',
+  energyConsumption: 'energy',
+  cleanEnergy: 'energy',
+  productEmissions: 'productLevel',
+};
+
+export interface FrameworkAssessment {
+  framework: FrameworkCoverage;
+  /** Disclosure references the current evidence supports */
+  satisfied: string[];
+  /** Disclosure references that cannot be evidenced yet */
+  missing: string[];
+  coverage: 'covered' | 'partial' | 'not_covered';
+  /** 0-100, share of the framework's mapped references that are evidenced */
+  completeness: number;
+}
+
+/** Assess one framework against the evidence actually held. */
+export function assessFramework(
+  fw: FrameworkCoverage,
+  availability: DataAvailability,
+): FrameworkAssessment {
+  const refs = Object.entries(fw.metricsMapping);
+  const satisfied: string[] = [];
+  const missing: string[] = [];
+
+  for (const [ref, metric] of refs) {
+    const requirement = METRIC_REQUIREMENTS[metric];
+    // Unmapped metric: treat as unevidenced rather than silently satisfied.
+    if (requirement && availability[requirement]) satisfied.push(ref);
+    else missing.push(ref);
+  }
+
+  const completeness = refs.length === 0 ? 0 : Math.round((satisfied.length / refs.length) * 100);
+  const coverage: FrameworkAssessment['coverage'] =
+    completeness === 100 ? 'covered' : completeness === 0 ? 'not_covered' : 'partial';
+
+  return { framework: fw, satisfied, missing, coverage, completeness };
+}
+
 
 export interface ProfileContext {
   country?: string;
