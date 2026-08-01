@@ -130,6 +130,14 @@ const LogisticsCalculator = () => {
         </CardContent>
       </Card>
 
+      {blocked && (
+        <Card>
+          <CardContent className="pt-6">
+            <p className="text-sm text-muted-foreground">{blocked}</p>
+          </CardContent>
+        </Card>
+      )}
+
       {result && (
         <Card>
           <CardContent className="pt-6 space-y-4">
@@ -151,7 +159,14 @@ const LogisticsCalculator = () => {
               </ResponsiveContainer>
             )}
 
+            <MethodologyPanel
+              methodologyVersion={result.methodologyVersion}
+              factorSources={result.factorSources}
+              issues={issues}
+            />
+
             <SaveRunButton
+
               calculatorSlug="logistics-emissions"
               inputs={{ legs }}
               results={result as never}
