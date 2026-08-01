@@ -20,11 +20,33 @@ const newLeg = (): FreightLeg => ({ id: uid(), mode: 'road-articulated', weightT
 const LogisticsCalculator = () => {
   const [legs, setLegs] = useState<FreightLeg[]>([newLeg()]);
   const [result, setResult] = useState<LogisticsResult | null>(null);
+  const [blocked, setBlocked] = useState<string | null>(null);
 
   const update = (id: string, patch: Partial<FreightLeg>) => setLegs(legs.map(l => l.id === id ? { ...l, ...patch } : l));
-  const calculate = () => setResult(calculateLogistics(legs));
+
+  const usableLegs = legs.filter(l => l.weightTonnes > 0 && l.distanceKm > 0);
+
+  const calculate = () => {
+    if (usableLegs.length === 0) {
+      setResult(null);
+      setBlocked("Each leg needs a weight above 0 tonnes and a distance above 0 km. Without both, tonne-kilometres cannot be computed and no emissions figure can be produced.");
+      return;
+    }
+    setBlocked(null);
+    setResult(calculateLogistics(usableLegs));
+  };
+
+  // Data-quality caveats, derived from what the user actually supplied.
+  const issues: string[] = [];
+  if (result) {
+    const skipped = legs.length - usableLegs.length;
+    if (skipped > 0) issues.push(`${skipped} leg${skipped > 1 ? "s" : ""} excluded for missing weight or distance.`);
+    if (usableLegs.some(l => l.loadFactor === undefined)) issues.push("Typical load factors used where none was entered.");
+    if (usableLegs.some(l => !l.emptyReturnFactor)) issues.push("Empty-return distance assumed to be zero where not specified.");
+  }
 
   const chartData = result ? Object.entries(result.byMode).map(([name, value]) => ({ name, value })) : [];
+
 
   useCalculatorAutosave({
     calculatorSlug: "logistics-emissions",
