@@ -129,17 +129,13 @@ const Intelligence = () => {
     onError: handleVoiceError,
   });
 
-  // Calculate context from emissions - different for guest vs authenticated
+  // The assistant's figures are assembled server-side from the signed-in
+  // user's own records. The client only passes non-authoritative hints.
   const context = {
-    scope1: emissions?.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    scope2: emissions?.filter(e => e.scope === 2).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    scope3: emissions?.filter(e => e.scope === 3).reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    totalEmissions: emissions?.reduce((sum, e) => sum + e.co2_kg, 0) || 0,
-    greenScore: Math.min(100, Math.max(0, 100 - (emissions?.length || 0) * 2)),
-    sector: 'MSME',
     isAuthenticated,
     userTier: tier,
   };
+
 
   // Save language preference
   useEffect(() => {
