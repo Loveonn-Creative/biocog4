@@ -88,6 +88,8 @@ const Reports = () => {
   const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
   const [useCustomFrameworks, setUseCustomFrameworks] = useState(false);
   const { isEnterprise } = useEnterpriseMode();
+  const { locale } = useI18nContext();
+
 
   // Route protection: redirect partners to their reports page
   useEffect(() => {
