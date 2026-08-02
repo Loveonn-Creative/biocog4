@@ -97,34 +97,26 @@ const Reports = () => {
     }
   }, [activeContext, navigate]);
   
-  // Load profile from localStorage or use default
-  const getStoredProfile = (): ProfileContext => {
-    try {
-      const stored = localStorage.getItem('senseible_company_profile');
-      if (stored) {
-        const profile = JSON.parse(stored);
-        return {
-          country: profile.location === 'India' ? 'IN' : profile.location,
-          size: profile.size,
-          exportsToEU: profile.exportsToEU,
-          seekingFinance: profile.seekingFinance,
-          hasNetZeroTarget: profile.hasNetZeroTarget,
-          sector: profile.sector,
-        };
-      }
-    } catch {}
-    return getDefaultMSMEProfile();
-  };
-  
-  const profile = getStoredProfile();
-  const autoFrameworks = determineApplicableFrameworks(profile);
-  
+  // Framework applicability and coverage come from stored records, not from
+  // any browser-local copy of the company profile.
+  const {
+    profile: dbProfile,
+    availability,
+    applicableFrameworks: autoFrameworks,
+    evidence,
+    target,
+    factorSources,
+    methodologyVersion,
+    isLoading: evidenceLoading,
+  } = useReportEvidence();
+
   // Initialize selected frameworks from auto-detected
   useEffect(() => {
     if (!useCustomFrameworks) {
       setSelectedFrameworks(autoFrameworks);
     }
   }, [autoFrameworks.join(','), useCustomFrameworks]);
+
   
   useEffect(() => {
     fetchVerifications();
