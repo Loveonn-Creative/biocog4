@@ -991,9 +991,10 @@ const Reports = () => {
                         </div>
                         <p className="text-xs text-muted-foreground">
                           {useCustomFrameworks 
-                            ? 'Using custom selection. Reset to use auto-detected frameworks based on your profile.'
-                            : 'Auto-detected based on your company profile. Customize if needed.'}
+                            ? 'Using custom selection. Reset to use frameworks detected from your stored profile and records.'
+                            : 'Detected from your stored profile, recorded targets and invoice evidence.'}
                         </p>
+
                       </div>
                     </CollapsibleContent>
                   </Collapsible>
