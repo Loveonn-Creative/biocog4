@@ -26,12 +26,13 @@ import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { 
-  determineApplicableFrameworks, 
-  getDefaultMSMEProfile, 
   getFrameworkDisclaimer,
+  assessFramework,
   FRAMEWORKS,
-  ProfileContext
 } from '@/lib/reportFrameworks';
+import { useReportEvidence } from '@/hooks/useReportEvidence';
+import { generateFrameworkPDF, generateFrameworkExcel, type ReportDataset } from '@/lib/frameworkReports';
+import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 
 interface Verification {
@@ -57,6 +58,8 @@ const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and 
 
 // All available frameworks for customization
 const ALL_FRAMEWORKS = [
+  { id: 'GHG_PROTOCOL', label: 'GHG Protocol' },
+  { id: 'ISO_14064', label: 'ISO 14064-1' },
   { id: 'GRI_305', label: 'GRI 305' },
   { id: 'TCFD', label: 'TCFD' },
   { id: 'CDP', label: 'CDP' },
@@ -69,6 +72,7 @@ const ALL_FRAMEWORKS = [
   { id: 'INDIA_CPCB', label: 'CPCB' },
   { id: 'INDIA_BRSR', label: 'BRSR' },
 ];
+
 
 const Reports = () => {
   const navigate = useNavigate();
