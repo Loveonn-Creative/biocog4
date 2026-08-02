@@ -342,9 +342,10 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
 
 // Determine which frameworks apply based on profile
 export function determineApplicableFrameworks(profile: ProfileContext): string[] {
-  const applicable: string[] = [];
-  
-  // India-specific
+  // Generic GHG accounting standards always apply — they define the
+  // quantification basis the platform already computes with.
+  const applicable: string[] = ['GHG_PROTOCOL', 'ISO_14064'];
+
   if (profile.country === 'IN') {
     applicable.push('INDIA_CPCB');
     if (profile.size === 'large') {
