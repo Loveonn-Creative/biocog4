@@ -1029,6 +1029,86 @@ const Reports = () => {
                 </CardContent>
               </Card>
 
+              {/* Framework-specific reports, all built from the same verified dataset */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Shield className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <span>Framework Reports</span>
+                      <p className="text-sm font-normal text-muted-foreground mt-1">
+                        Each framework renders the same verified records in its own disclosure structure
+                      </p>
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {assessments.length === 0 && (
+                    <p className="text-sm text-muted-foreground">
+                      No frameworks selected. Choose frameworks above to generate reports.
+                    </p>
+                  )}
+                  {assessments.map(a => (
+                    <div
+                      key={a.framework.id}
+                      className="p-4 rounded-lg border border-border/50 space-y-3"
+                    >
+                      <div className="flex items-start justify-between gap-3 flex-wrap">
+                        <div className="min-w-0">
+                          <div className="font-medium text-sm">{a.framework.shortName}</div>
+                          <div className="text-xs text-muted-foreground">{a.framework.name}</div>
+                        </div>
+                        <Badge
+                          variant={a.coverage === 'covered' ? 'default' : a.coverage === 'partial' ? 'secondary' : 'outline'}
+                        >
+                          {a.coverage === 'covered'
+                            ? 'Fully evidenced'
+                            : a.coverage === 'partial'
+                              ? `${a.completeness}% evidenced`
+                              : 'No evidence yet'}
+                        </Badge>
+                      </div>
+
+                      {a.missing.length > 0 && (
+                        <p className="text-xs text-muted-foreground">
+                          Reported as gaps: {a.missing.join(', ')}
+                        </p>
+                      )}
+
+                      <div className="flex gap-2 flex-wrap">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="gap-2"
+                          disabled={isGenerating || a.coverage === 'not_covered'}
+                          onClick={() => downloadFramework(a.framework.id, 'pdf')}
+                        >
+                          <Download className="h-3.5 w-3.5" />
+                          PDF
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="gap-2"
+                          disabled={isGenerating || a.coverage === 'not_covered'}
+                          onClick={() => downloadFramework(a.framework.id, 'xlsx')}
+                        >
+                          <FileSpreadsheet className="h-3.5 w-3.5" />
+                          Excel
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                  <p className="text-xs text-muted-foreground">
+                    Coverage is computed from your recorded emissions, targets and evidence. Disclosures without
+                    supporting records are printed as declared gaps, never estimated.
+                  </p>
+                </CardContent>
+              </Card>
+
+
               {/* VCM Readiness Badge */}
               {latestVerification && (
                 <Card className={`border-2 ${
