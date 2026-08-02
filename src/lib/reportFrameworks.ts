@@ -131,6 +131,37 @@ export interface ProfileContext {
 
 // Framework definitions with mapping to our data model
 export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
+  GHG_PROTOCOL: {
+    id: 'GHG_PROTOCOL',
+    name: 'GHG Protocol Corporate Accounting and Reporting Standard',
+    shortName: 'GHG Protocol',
+    category: 'voluntary',
+    applicableWhen: [],
+    metricsMapping: {
+      'Ch.4 Scope 1': 'scope1',
+      'Ch.4 Scope 2': 'scope2',
+      'Ch.4 Scope 3': 'scope3',
+      'Ch.7 Base year & targets': 'reductionTargets',
+      'Ch.9 Energy consumption': 'energyConsumption',
+    },
+    status: 'partial',
+  },
+  ISO_14064: {
+    id: 'ISO_14064',
+    name: 'ISO 14064-1: Organization-level GHG quantification and reporting',
+    shortName: 'ISO 14064-1',
+    category: 'voluntary',
+    applicableWhen: [],
+    metricsMapping: {
+      '5.2 Direct GHG emissions': 'scope1',
+      '5.2 Indirect from energy': 'scope2',
+      '5.2 Other indirect': 'scope3',
+      '6.4 Quantification methodology': 'totalEmissions',
+      '9.3.1 Reduction initiatives': 'reductionInitiatives',
+    },
+    status: 'partial',
+  },
+
   GRI_305: {
     id: 'GRI_305',
     name: 'GRI 305: Emissions',
@@ -311,9 +342,10 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
 
 // Determine which frameworks apply based on profile
 export function determineApplicableFrameworks(profile: ProfileContext): string[] {
-  const applicable: string[] = [];
-  
-  // India-specific
+  // Generic GHG accounting standards always apply — they define the
+  // quantification basis the platform already computes with.
+  const applicable: string[] = ['GHG_PROTOCOL', 'ISO_14064'];
+
   if (profile.country === 'IN') {
     applicable.push('INDIA_CPCB');
     if (profile.size === 'large') {
