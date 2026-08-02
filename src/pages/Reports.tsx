@@ -723,15 +723,11 @@ const Reports = () => {
       doc.setFontSize(20);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(0);
-      // Get business name from stored profile (not hardcoded)
-      const storedProfile = localStorage.getItem('senseible_company_profile');
-      const companyProfile = storedProfile ? JSON.parse(storedProfile) : null;
-      const businessName = companyProfile?.business_name || 
-                           companyProfile?.businessName || 
-                           user?.email?.split('@')[0] || 
-                           'Your Business';
-      const gstin = companyProfile?.gstin;
-      const sector = companyProfile?.sector;
+      // Identity comes from the stored profile record, not browser storage.
+      const businessName = organizationName;
+      const gstin = dbProfile?.gstin || null;
+      const sector = dbProfile?.sector || null;
+
       
       const displayName = businessName.charAt(0).toUpperCase() + businessName.slice(1);
       const maxNameWidth = pageWidth - 80;
