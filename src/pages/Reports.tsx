@@ -151,14 +151,124 @@ const Reports = () => {
   
   const activeFrameworks = useCustomFrameworks ? selectedFrameworks : autoFrameworks;
   const frameworkDisclaimer = getFrameworkDisclaimer(activeFrameworks);
-  
+
+  const dateLocale = locale === 'en' ? 'en-IN' : locale;
   const formatNumber = (n: number) => n >= 1000 ? `${(n/1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
-  const formatDate = (date: string) => new Date(date).toLocaleDateString('en-IN', { 
-    day: 'numeric', 
-    month: 'long', 
-    year: 'numeric' 
-  });
-  
+  const formatDate = (date: string) => {
+    try {
+      return new Date(date).toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch {
+      return new Date(date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+  };
+
+  const organizationName =
+    dbProfile?.businessName || user?.email?.split('@')[0] || 'Unnamed entity';
+
+  // One verified dataset, shared by every framework output.
+  const dataset: ReportDataset = useMemo(() => {
+    const dates = emissions.map(e => e.created_at).sort();
+    const categories = Object.values(
+      emissions.reduce((acc, e) => {
+        const key = `${e.scope}:${e.category}`;
+        if (!acc[key]) {
+          acc[key] = {
+            category: e.category,
+            scope: e.scope,
+            co2Kg: 0,
+            activityData: 0,
+            activityUnit: e.activity_unit,
+            emissionFactor: e.emission_factor,
+            dataQuality: e.data_quality,
+            verified: Boolean(e.verified),
+          };
+        }
+        acc[key].co2Kg += e.co2_kg;
+        acc[key].activityData = (acc[key].activityData ?? 0) + (e.activity_data ?? 0);
+        acc[key].verified = acc[key].verified && Boolean(e.verified);
+        return acc;
+      }, {} as Record<string, ReportDataset['categories'][number]>),
+    ).sort((a, b) => b.co2Kg - a.co2Kg);
+
+    return {
+      organizationName,
+      gstin: dbProfile?.gstin ?? null,
+      sector: dbProfile?.sector ?? null,
+      size: dbProfile?.size ?? null,
+      country: dbProfile?.country ?? 'IN',
+      locale: dateLocale,
+      generatedAt: new Date().toISOString(),
+      periodStart: dates[0] ?? null,
+      periodEnd: dates[dates.length - 1] ?? null,
+      scope1Kg: summary.scope1,
+      scope2Kg: summary.scope2,
+      scope3Kg: summary.scope3,
+      totalKg: summary.total,
+      categories,
+      evidence: evidence.map(e => ({
+        documentHash: e.documentHash,
+        invoiceNumber: e.invoiceNumber,
+        vendor: e.vendor,
+        invoiceDate: e.invoiceDate,
+        co2Kg: e.co2Kg,
+        scope: e.scope,
+        category: e.category,
+        factorSource: e.factorSource,
+        verificationStatus: e.verificationStatus,
+      })),
+      availability,
+      methodologyVersion,
+      factorSources,
+      verification: latestVerification
+        ? {
+            status: latestVerification.verification_status || 'pending',
+            score: latestVerification.verification_score,
+            greenwashingRisk: latestVerification.greenwashing_risk,
+            cctsEligible: latestVerification.ccts_eligible,
+            cbamCompliant: latestVerification.cbam_compliant,
+            verifiedAt: latestVerification.created_at,
+          }
+        : null,
+      target: target
+        ? {
+            baselineCo2Kg: target.baselineCo2Kg,
+            targetReductionPct: target.targetReductionPct,
+            targetDate: target.targetDate,
+            progressPct: target.progressPct,
+          }
+        : null,
+    };
+  }, [emissions, summary, evidence, availability, methodologyVersion, factorSources, latestVerification, target, dbProfile, organizationName, dateLocale]);
+
+  const assessments = useMemo(
+    () =>
+      activeFrameworks
+        .map(id => FRAMEWORKS[id])
+        .filter(Boolean)
+        .map(fw => assessFramework(fw!, availability)),
+    [activeFrameworks, availability],
+  );
+
+  const downloadFramework = (fwId: string, kind: 'pdf' | 'xlsx') => {
+    if (summary.total <= 0) {
+      toast.error('No verified emissions data to report yet');
+      return;
+    }
+    setIsGenerating(true);
+    try {
+      const ok = kind === 'pdf'
+        ? generateFrameworkPDF(fwId, dataset)
+        : generateFrameworkExcel(fwId, dataset);
+      if (ok) toast.success(`${FRAMEWORKS[fwId]?.shortName} report downloaded`);
+      else toast.error('Unknown framework');
+    } catch (err) {
+      console.error('Framework report error:', err);
+      toast.error('Failed to generate report');
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   const toggleFramework = (fwId: string) => {
     setUseCustomFrameworks(true);
     setSelectedFrameworks(prev => 
@@ -172,6 +282,7 @@ const Reports = () => {
     setUseCustomFrameworks(false);
     setSelectedFrameworks(autoFrameworks);
   };
+
   
   const generateESGReport = async () => {
     setIsGenerating(true);
