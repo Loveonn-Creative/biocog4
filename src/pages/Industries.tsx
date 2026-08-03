@@ -374,7 +374,7 @@ const IndustryTools = ({ industryId }: { industryId: string }) => (
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">Companies with verified carbon data access green financing at 2-4% lower interest rates across emerging markets.</p>
+            <p className="text-sm text-muted-foreground">These facilities require a quantified emissions baseline before a sustainability-linked term can be written. A verified record is the entry condition, not a guarantee of approval or of any particular rate.</p>
             <ul className="space-y-2">
               {['SIDBI Green Loans (India)', 'Bangladesh Bank 5% Refinance', 'IFC Climate Credit Lines', 'ADB Green Facilities'].map(item => (
                 <li key={item} className="flex items-center gap-2 text-sm">
