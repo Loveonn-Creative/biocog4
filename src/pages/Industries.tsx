@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getCountryConfig } from '@/lib/countryConfig';
+import { IndustryPipeline } from '@/components/industry/IndustryPipeline';
 interface IndustryData {
   id: string;
   name: string;
