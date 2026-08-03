@@ -141,7 +141,7 @@ const MRVDashboard = () => {
       return {
         carbonScore: 0,
         confidenceScore: 0,
-        greenScore: 0,
+        greenScore: null as number | null,
         totalCredits: 0,
         qualityGrade: 'D',
         trend: 'stable' as const,
@@ -154,6 +154,7 @@ const MRVDashboard = () => {
     let weightedConfidence = 0;
     let weightedGreenScore = 0;
     let totalWeight = 0;
+    let greenWeight = 0;
     let totalCredits = 0;
     let carryForward = 0;
 
@@ -163,26 +164,32 @@ const MRVDashboard = () => {
       
       weightedCarbonScore += ((v.verification_score || 0) * 100) * weight;
       weightedConfidence += (v.verification_status === 'verified' ? 100 : v.verification_status === 'needs_review' ? 60 : 30) * weight;
-      weightedGreenScore += (v.ai_analysis?.greenScore || 50) * weight;
+      if (typeof v.ai_analysis?.greenScore === 'number') {
+        weightedGreenScore += v.ai_analysis.greenScore * weight;
+        greenWeight += weight;
+      }
       totalCredits += v.ai_analysis?.creditEligibility?.eligibleCredits || 0;
       carryForward += v.ai_analysis?.creditEligibility?.carryForward || 0;
     });
 
     const carbonScore = totalWeight > 0 ? Math.round(weightedCarbonScore / totalWeight) : 0;
     const confidenceScore = totalWeight > 0 ? Math.round(weightedConfidence / totalWeight) : 0;
-    const greenScore = totalWeight > 0 ? Math.round(weightedGreenScore / totalWeight) : 50;
+    // Only scored verifications contribute. With none, the score is reported
+    // as unavailable rather than defaulted to a mid-point.
+    const greenScore = greenWeight > 0 ? Math.round(weightedGreenScore / greenWeight) : null;
 
     // Determine quality grade from most recent verification
     const latestGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
 
     // Calculate trend (comparing recent vs older verifications)
     let trend: 'improving' | 'declining' | 'stable' = 'stable';
-    if (verifications.length >= 2) {
-      const recentAvg = verifications.slice(0, Math.ceil(verifications.length / 2))
-        .reduce((sum, v) => sum + (v.ai_analysis?.greenScore || 50), 0) / Math.ceil(verifications.length / 2);
-      const olderAvg = verifications.slice(Math.ceil(verifications.length / 2))
-        .reduce((sum, v) => sum + (v.ai_analysis?.greenScore || 50), 0) / (verifications.length - Math.ceil(verifications.length / 2));
-      
+    const scored = verifications.filter(v => typeof v.ai_analysis?.greenScore === 'number');
+    if (scored.length >= 2) {
+      const half = Math.ceil(scored.length / 2);
+      const avg = (arr: typeof scored) =>
+        arr.reduce((sum, v) => sum + (v.ai_analysis!.greenScore as number), 0) / arr.length;
+      const recentAvg = avg(scored.slice(0, half));
+      const olderAvg = avg(scored.slice(half));
       if (recentAvg > olderAvg + 5) trend = 'improving';
       else if (recentAvg < olderAvg - 5) trend = 'declining';
     }
@@ -194,8 +201,9 @@ const MRVDashboard = () => {
       totalCredits: totalCredits + Math.floor(carryForward),
       qualityGrade: latestGrade,
       trend,
-      improvementRate: verifications.length >= 2 
-        ? Math.round(((verifications[0].ai_analysis?.greenScore || 50) - (verifications[verifications.length - 1].ai_analysis?.greenScore || 50)) / verifications.length)
+      improvementRate: scored.length >= 2
+        ? Math.round((((scored[0].ai_analysis!.greenScore as number) -
+            (scored[scored.length - 1].ai_analysis!.greenScore as number)) / scored.length))
         : 0,
     };
   }, [verifications]);
@@ -297,7 +305,9 @@ const MRVDashboard = () => {
             <h1 className="text-3xl font-semibold tracking-tight">MRV Dashboard</h1>
           </div>
           <p className="text-muted-foreground">
-            Transparent measurement, reporting & verification with progress-based rewards
+            The operational workspace: capture evidence, resolve verification issues and keep the
+            record audit-ready. Trends, filters and period comparisons live on the{' '}
+            <Link to="/dashboard" className="text-primary hover:underline">Dashboard</Link>.
           </p>
         </div>
 
@@ -359,13 +369,24 @@ const MRVDashboard = () => {
                       <Leaf className="h-4 w-4 text-success" />
                     </div>
                   </div>
-                  <div className="text-3xl font-mono font-bold mb-2 text-gradient-success">
-                    {aggregatedMetrics.greenScore}<span className="text-lg text-muted-foreground">/100</span>
-                  </div>
-                  <Progress value={aggregatedMetrics.greenScore} className="h-2 bg-success/20" />
-                  <p className="text-xs text-muted-foreground mt-2">
-                    {aggregatedMetrics.trend === 'improving' ? '↑ Improving' : aggregatedMetrics.trend === 'declining' ? '↓ Needs attention' : '→ Stable'}
-                  </p>
+                  {aggregatedMetrics.greenScore === null ? (
+                    <>
+                      <div className="text-xl font-medium mb-2 text-muted-foreground">Not scored</div>
+                      <p className="text-xs text-muted-foreground">
+                        No verification has produced a green score yet.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-mono font-bold mb-2 text-gradient-success">
+                        {aggregatedMetrics.greenScore}<span className="text-lg text-muted-foreground">/100</span>
+                      </div>
+                      <Progress value={aggregatedMetrics.greenScore} className="h-2 bg-success/20" />
+                      <p className="text-xs text-muted-foreground mt-2">
+                        {aggregatedMetrics.trend === 'improving' ? '↑ Improving' : aggregatedMetrics.trend === 'declining' ? '↓ Needs attention' : '→ Stable'}
+                      </p>
+                    </>
+                  )}
                 </CardContent>
               </Card>
 
