@@ -47,17 +47,6 @@ interface VerificationRecord {
   } | null;
 }
 
-interface GreenAction {
-  id: string;
-  type: 'recycling' | 'solar' | 'efficiency' | 'renewable';
-  title: string;
-  description: string;
-  icon: typeof Recycle;
-  potentialReduction: number;
-  incentiveValue: number;
-  eligibleEvenIfNotCompliant: boolean;
-}
-
 const MRVDashboard = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
@@ -212,50 +201,6 @@ const MRVDashboard = () => {
   const latestAnalysis = verifications[0]?.ai_analysis;
   const latestStatus = verifications[0]?.verification_status;
   const greenwashingRisk = verifications[0]?.greenwashing_risk;
-
-  // Green actions available even for non-compliant users
-  const greenActions: GreenAction[] = [
-    {
-      id: 'recycling',
-      type: 'recycling',
-      title: 'Certified Recycling',
-      description: 'Get recycler certificates for waste materials to earn carbon credits',
-      icon: Recycle,
-      potentialReduction: summary.total * 0.1,
-      incentiveValue: Math.round(summary.total * 0.1 * 0.75), // ₹750/tCO₂e discounted
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'solar',
-      type: 'solar',
-      title: 'Solar Adoption',
-      description: 'Install rooftop solar with subsidized rates and REC certificates',
-      icon: Sun,
-      potentialReduction: summary.scope2 * 0.6,
-      incentiveValue: Math.round(summary.scope2 * 0.6 * 0.50), // Discounted incentive
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'efficiency',
-      type: 'efficiency',
-      title: 'Efficiency Upgrades',
-      description: 'IoT monitoring and energy-efficient equipment with green loans',
-      icon: Zap,
-      potentialReduction: summary.total * 0.15,
-      incentiveValue: Math.round(summary.total * 0.15 * 0.60),
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'renewable',
-      type: 'renewable',
-      title: 'Renewable Energy PPA',
-      description: 'Power Purchase Agreements for wind/solar at lower rates',
-      icon: Leaf,
-      potentialReduction: summary.scope2 * 0.8,
-      incentiveValue: Math.round(summary.scope2 * 0.8 * 0.40),
-      eligibleEvenIfNotCompliant: false,
-    },
-  ];
 
   const formatNumber = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
   const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
@@ -656,47 +601,70 @@ const MRVDashboard = () => {
 
               {/* Right Column - Green Actions */}
               <div className="space-y-6">
-                {/* Progress Rewards */}
-                <Card className="border-success/20 bg-gradient-to-br from-success/5 to-transparent">
+                {/* Evidence queue — operational, not analytical */}
+                <Card className="border-warning/20">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Award className="h-5 w-5 text-success" />
-                      Progress Rewards
+                      <FileCheck className="h-5 w-5 text-warning" />
+                      Evidence queue
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Earn value while improving — no need to be "perfect" to start monetizing.
-                    </p>
-                    <div className="space-y-3">
-                      {greenActions.filter(a => a.eligibleEvenIfNotCompliant || latestStatus === 'verified').map(action => (
-                        <div key={action.id} className="p-3 rounded-lg bg-background border border-border/50 hover:border-success/30 transition-colors">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="p-2 rounded-lg bg-success/10">
-                              <action.icon className="h-4 w-4 text-success" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="font-medium text-sm">{action.title}</div>
-                              <div className="text-xs text-muted-foreground">{action.description}</div>
-                            </div>
+                    {(() => {
+                      const pending = emissions.filter(e => !e.verified);
+                      if (pending.length === 0) {
+                        return (
+                          <div className="text-sm text-muted-foreground">
+                            <p className="mb-4">
+                              Every emission record currently held carries a completed verification.
+                              Nothing is waiting on you.
+                            </p>
+                            <Button variant="outline" className="w-full" asChild>
+                              <Link to="/">Capture another document</Link>
+                            </Button>
                           </div>
-                          <div className="flex items-center justify-between text-xs">
-                            <span className="text-muted-foreground">
-                              Potential: {formatNumber(action.potentialReduction)} reduction
-                            </span>
-                            <span className="font-mono text-success font-medium">
-                              {formatCurrency(action.incentiveValue)}
-                            </span>
+                        );
+                      }
+                      const reason = (e: typeof pending[number]) => {
+                        if (e.activity_data === null || e.activity_data === undefined)
+                          return 'No activity quantity captured — the figure cannot be reproduced.';
+                        if (e.emission_factor === null || e.emission_factor === undefined)
+                          return 'No emission factor matched to this line.';
+                        return 'Awaiting verification.';
+                      };
+                      return (
+                        <>
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {pending.length} record{pending.length === 1 ? '' : 's'} not yet verified.
+                            Unverified lines are excluded from framework coverage.
+                          </p>
+                          <div className="space-y-2 mb-4">
+                            {pending.slice(0, 5).map(e => (
+                              <div key={e.id} className="p-3 rounded-lg bg-muted/30">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-sm font-medium truncate">{e.category}</span>
+                                  <span className="text-xs font-mono text-muted-foreground shrink-0">
+                                    Scope {e.scope} · {formatNumber(e.co2_kg)}
+                                  </span>
+                                </div>
+                                <p className="text-xs text-muted-foreground mt-1">{reason(e)}</p>
+                              </div>
+                            ))}
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                    <Button className="w-full mt-4" asChild>
-                      <Link to="/monetize">
-                        Explore All Options
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Link>
-                    </Button>
+                          {pending.length > 5 && (
+                            <p className="text-xs text-muted-foreground mb-3">
+                              and {pending.length - 5} more.
+                            </p>
+                          )}
+                          <Button className="w-full" asChild>
+                            <Link to="/verify">
+                              Run verification
+                              <ArrowRight className="h-4 w-4 ml-2" />
+                            </Link>
+                          </Button>
+                        </>
+                      );
+                    })()}
                   </CardContent>
                 </Card>
 
