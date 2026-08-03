@@ -589,7 +589,10 @@ const Industries = () => {
                 </Card>
               </div>
 
-              {/* Reduction Strategies & Case Study */}
+              {/* How Senseible works in this sector: visibility → verification → scope 3 → monetization */}
+              <IndustryPipeline industryId={ind.id} />
+
+              {/* Reduction Strategies */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <Card>
                   <CardHeader>
@@ -612,39 +615,37 @@ const Industries = () => {
                   </CardContent>
                 </Card>
 
-                {ind.caseStudy && (
-                  <Card className="bg-gradient-to-br from-success/5 to-primary/5">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <FileText className="h-5 w-5 text-primary" />
-                        Success Story
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {ind.caseStudy.company}
-                      </p>
-                      <div className="grid grid-cols-3 gap-4">
-                        <div className="text-center p-3 bg-background rounded-lg">
-                          <div className="text-2xl font-bold text-success">{ind.caseStudy.reduction}</div>
-                          <div className="text-xs text-muted-foreground">CO2 Reduction</div>
-                        </div>
-                        <div className="text-center p-3 bg-background rounded-lg">
-                          <div className="text-2xl font-bold text-primary">{ind.caseStudy.savings}</div>
-                          <div className="text-xs text-muted-foreground">Annual Savings</div>
-                        </div>
-                        <div className="text-center p-3 bg-background rounded-lg">
-                          <div className="text-2xl font-bold">{ind.caseStudy.timeframe}</div>
-                          <div className="text-xs text-muted-foreground">Timeframe</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-primary" />
+                      What a verified record contains
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3 text-sm">
+                      {[
+                        'Scope 1, 2 and 3 totals with the emission factor and its published source against each line',
+                        'The document hash for every piece of evidence, so a claim can be spot-checked without reopening the books',
+                        'Data gaps stated explicitly, separated from disclosures that are genuinely not applicable',
+                        'The methodology version used, so the same documents reproduce the same number later',
+                        'Confidence attached to each scope, rather than a single unqualified total',
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="p-1 bg-primary/10 rounded mt-0.5">
+                            <Shield className="h-3 w-3 text-primary" />
+                          </div>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
               </div>
 
               {/* Scope 2 Quick Estimator + CBAM Readiness + Export Risk */}
               <IndustryTools industryId={ind.id} />
+
 
               {/* Related Solutions Links */}
               <div className="mb-8">
