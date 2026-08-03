@@ -28,12 +28,6 @@ interface IndustryData {
   scope2Sources: string[];
   scope3Sources: string[];
   reductionStrategies: string[];
-  caseStudy?: {
-    company: string;
-    reduction: string;
-    savings: string;
-    timeframe: string;
-  };
   keywords: string[];
 }
 
@@ -71,12 +65,6 @@ const industries: IndustryData[] = [
       'Sustainable fiber sourcing',
       'LED lighting retrofits'
     ],
-    caseStudy: {
-      company: 'Mid-size Tirupur Exporter',
-      reduction: '35%',
-      savings: '₹18L/year',
-      timeframe: '18 months'
-    },
     keywords: ['textile carbon footprint', 'garment emissions', 'sustainable fashion', 'tirupur exports', 'EU CBAM textile']
   },
   {
@@ -145,12 +133,6 @@ const industries: IndustryData[] = [
       'Energy efficiency in rolling mills',
       'Carbon capture readiness'
     ],
-    caseStudy: {
-      company: 'Secondary Steel Manufacturer',
-      reduction: '22%',
-      savings: '₹1.2Cr/year',
-      timeframe: '24 months'
-    },
     keywords: ['green steel', 'steel emissions', 'blast furnace carbon', 'electric arc furnace', 'steel decarbonization']
   },
   {
