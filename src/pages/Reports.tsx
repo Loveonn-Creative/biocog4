@@ -893,17 +893,18 @@ const Reports = () => {
                       </span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <span className="text-sm">Quality Grade</span>
-                      <span className="font-mono font-bold">{analysis?.creditEligibility?.qualityGrade || 'D'}</span>
+                      <span className="text-sm">Evidence records</span>
+                      <span className="font-mono font-bold">{evidence.length}</span>
                     </div>
                   </div>
-                  
+
                   <Button 
                     variant="outline" 
                     className="w-full gap-2"
-                    onClick={generateESGReport}
+                    onClick={generateLenderReport}
                     disabled={isGenerating}
                   >
+
                     {isGenerating ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
