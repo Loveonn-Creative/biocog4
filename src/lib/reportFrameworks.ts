@@ -432,29 +432,123 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     },
     status: 'covered',
   },
+  ISO_14067: {
+    id: 'ISO_14067',
+    name: 'ISO 14067: Greenhouse gases — Carbon footprint of products',
+    shortName: 'ISO 14067',
+    category: 'voluntary',
+    applicableWhen: ['productLevel'],
+    metricsMapping: {
+      '6.3 Functional unit': 'functionalUnit',
+      '6.4 Product system boundary': 'productCarbonFootprint',
+      '6.4 Upstream materials': 'scope3',
+      '6.4 Energy in production': 'scope2',
+      '6.4 Direct process emissions': 'scope1',
+    },
+    status: 'partial',
+    note: 'Requires product-level (HSN/CN coded) evidence. Without it the product footprint is reported as a gap, never allocated by assumption.',
+  },
+  INDIA_BRSR_CORE: {
+    id: 'INDIA_BRSR_CORE',
+    name: 'SEBI BRSR Core — assurable KPIs',
+    shortName: 'BRSR Core',
+    category: 'mandatory',
+    applicableWhen: ['country_IN'],
+    metricsMapping: {
+      'Attribute 1 — GHG footprint (Scope 1)': 'scope1',
+      'Attribute 1 — GHG footprint (Scope 2)': 'scope2',
+      'Attribute 1 — GHG intensity': 'ghgIntensity',
+      'Attribute 2 — Energy footprint': 'energyConsumption',
+      'Attribute 9 — Value chain emissions': 'valueChainEmissions',
+    },
+    status: 'partial',
+    note: 'BRSR Core KPIs are subject to reasonable assurance when filed. This output is unassured and is source data for that filing, not the filing itself.',
+  },
+  LENDER_VIEW: {
+    id: 'LENDER_VIEW',
+    name: 'Bank and lender climate disclosure pack',
+    shortName: 'Lender pack',
+    category: 'reader_view',
+    applicableWhen: ['seekingFinance'],
+    metricsMapping: {
+      'Financed baseline — Scope 1': 'scope1',
+      'Financed baseline — Scope 2': 'scope2',
+      'Value chain exposure': 'scope3',
+      'Reduction commitment': 'reductionTargets',
+      'Evidence traceability': 'evidenceTraceability',
+    },
+    status: 'partial',
+    note: 'A reader view of the same verified dataset, ordered for credit assessment. It is not a credit rating or an eligibility decision.',
+  },
+  INVESTOR_VIEW: {
+    id: 'INVESTOR_VIEW',
+    name: 'Investor climate data pack',
+    shortName: 'Investor pack',
+    category: 'reader_view',
+    applicableWhen: ['seekingFinance'],
+    metricsMapping: {
+      'Absolute emissions': 'totalEmissions',
+      'Scope 3 coverage': 'scope3',
+      'Emissions intensity': 'emissionIntensity',
+      'Targets and progress': 'reductionTargets',
+      'Data quality and assurance': 'evidenceTraceability',
+    },
+    status: 'partial',
+  },
+  GOVERNMENT_VIEW: {
+    id: 'GOVERNMENT_VIEW',
+    name: 'Government and regulator submission pack',
+    shortName: 'Regulator pack',
+    category: 'reader_view',
+    applicableWhen: [],
+    metricsMapping: {
+      'Entity identification': 'evidenceTraceability',
+      'Direct emissions': 'scope1',
+      'Energy indirect emissions': 'scope2',
+      'Energy consumption': 'energyConsumption',
+      'Evidence register': 'evidenceTraceability',
+    },
+    status: 'partial',
+  },
+  SENSEIBLE_SUMMARY: {
+    id: 'SENSEIBLE_SUMMARY',
+    name: 'Senseible carbon accounting summary',
+    shortName: 'Senseible summary',
+    category: 'reader_view',
+    applicableWhen: [],
+    metricsMapping: {
+      'Scope 1 inventory': 'scope1',
+      'Scope 2 inventory': 'scope2',
+      'Scope 3 inventory': 'scope3',
+      'Energy consumption': 'energyConsumption',
+      'Reduction target': 'reductionTargets',
+    },
+    status: 'partial',
+    note: 'The platform\'s own summary view of the verified dataset. Every framework export below renders the same records in that framework\'s structure.',
+  },
 };
 
 // Determine which frameworks apply based on profile
 export function determineApplicableFrameworks(profile: ProfileContext): string[] {
   // Generic GHG accounting standards always apply — they define the
   // quantification basis the platform already computes with.
-  const applicable: string[] = ['GHG_PROTOCOL', 'ISO_14064'];
+  const applicable: string[] = ['SENSEIBLE_SUMMARY', 'GHG_PROTOCOL', 'ISO_14064'];
 
   if (profile.country === 'IN') {
-    applicable.push('INDIA_CPCB');
+    applicable.push('INDIA_CPCB', 'GOVERNMENT_VIEW');
     if (profile.size === 'large') {
-      applicable.push('INDIA_BRSR');
+      applicable.push('INDIA_BRSR', 'INDIA_BRSR_CORE');
     }
   }
   
   // EU exports
   if (profile.exportsToEU) {
-    applicable.push('CBAM', 'CSRD_ESRS', 'ISSB_S1', 'ISSB_S2');
+    applicable.push('CBAM', 'CSRD_ESRS', 'ISSB_S1', 'ISSB_S2', 'ISO_14067');
   }
   
   // Finance seeking
   if (profile.seekingFinance) {
-    applicable.push('GRI_305', 'TCFD', 'CDP', 'SASB');
+    applicable.push('GRI_305', 'ISSB_S2', 'CDP', 'SASB', 'LENDER_VIEW', 'INVESTOR_VIEW');
   }
   
   // Net-zero targets
@@ -465,6 +559,71 @@ export function determineApplicableFrameworks(profile: ProfileContext): string[]
   // Remove duplicates
   return [...new Set(applicable)];
 }
+
+/**
+ * Market compatibility, replacing the undefined "VCM Ready" label.
+ *
+ * Disclosure readiness and carbon-credit project eligibility are separate
+ * questions and are answered separately. Credit eligibility is never asserted
+ * from invoice evidence alone — it requires a recognised project methodology.
+ */
+export interface MarketCompatibilityCriterion {
+  label: string;
+  met: boolean;
+  detail: string;
+}
+
+export interface MarketCompatibility {
+  disclosureReady: boolean;
+  disclosureCriteria: MarketCompatibilityCriterion[];
+  creditProjectEligible: false;
+  creditStatement: string;
+}
+
+export function assessMarketCompatibility(input: {
+  availability: DataAvailability;
+  evidenceCount: number;
+  verificationStatus: string | null;
+  verificationScore: number | null;
+  greenwashingRisk: string | null;
+}): MarketCompatibility {
+  const disclosureCriteria: MarketCompatibilityCriterion[] = [
+    {
+      label: 'Emissions evidenced by source documents',
+      met: input.evidenceCount > 0,
+      detail: `${input.evidenceCount} evidence record${input.evidenceCount === 1 ? '' : 's'} hashed and stored.`,
+    },
+    {
+      label: 'Scope 1 and Scope 2 both quantified',
+      met: input.availability.scope1 && input.availability.scope2,
+      detail: 'Both direct and purchased-energy emissions carry at least one evidenced record.',
+    },
+    {
+      label: 'Value chain (Scope 3) started',
+      met: input.availability.scope3,
+      detail: 'At least one Scope 3 category is evidenced rather than left empty.',
+    },
+    {
+      label: 'Data-integrity check passed',
+      met: input.verificationStatus === 'verified',
+      detail: 'Platform verification is an internal integrity control, not third-party assurance.',
+    },
+    {
+      label: 'No high greenwashing-risk flag',
+      met: input.greenwashingRisk !== null && input.greenwashingRisk !== 'high',
+      detail: 'Risk flag is raised from duplicate, inconsistent or unsupported records.',
+    },
+  ];
+
+  return {
+    disclosureReady: disclosureCriteria.every((c) => c.met),
+    disclosureCriteria,
+    creditProjectEligible: false,
+    creditStatement:
+      'Carbon-credit project eligibility is a separate question and is not established by this dataset. Credits require a recognised project methodology, additionality testing and accredited third-party validation and verification. This platform reports disclosure readiness only.',
+  };
+}
+
 
 // Generate framework coverage section for reports
 export function generateFrameworkSection(
