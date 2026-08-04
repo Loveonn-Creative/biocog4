@@ -763,49 +763,48 @@ const Reports = () => {
               </Card>
 
 
-              {/* VCM Readiness Badge */}
-              {latestVerification && (
-                <Card className={`border-2 ${
-                  latestVerification.verification_status === 'verified' &&
-                  latestVerification.greenwashing_risk === 'low' &&
-                  (latestVerification.verification_score || 0) >= 0.7
-                    ? 'border-success/30' : 'border-muted'
-                }`}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-full ${
-                        latestVerification.verification_status === 'verified' &&
-                        latestVerification.greenwashing_risk === 'low' &&
-                        (latestVerification.verification_score || 0) >= 0.7
-                          ? 'bg-success/10' : 'bg-muted'
-                      }`}>
-                        {latestVerification.verification_status === 'verified' &&
-                         latestVerification.greenwashing_risk === 'low' &&
-                         (latestVerification.verification_score || 0) >= 0.7 ? (
-                          <CheckCircle className="h-5 w-5 text-success" />
-                        ) : (
-                          <Clock className="h-5 w-5 text-muted-foreground" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-sm">VCM Readiness</div>
-                        <div className="text-xs text-muted-foreground">Voluntary Carbon Market compatibility</div>
-                      </div>
-                      <Badge variant={
-                        latestVerification.verification_status === 'verified' &&
-                        latestVerification.greenwashing_risk === 'low' &&
-                        (latestVerification.verification_score || 0) >= 0.7
-                          ? 'default' : 'secondary'
-                      }>
-                        {latestVerification.verification_status === 'verified' &&
-                         latestVerification.greenwashing_risk === 'low' &&
-                         (latestVerification.verification_score || 0) >= 0.7
-                          ? 'Ready' : 'Pending'}
-                      </Badge>
+              {/* Market compatibility — disclosure readiness, stated separately
+                  from carbon-credit project eligibility */}
+              <Card className={`border-2 ${marketCompatibility.disclosureReady ? 'border-success/30' : 'border-muted'}`}>
+                <CardContent className="p-4 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-full ${marketCompatibility.disclosureReady ? 'bg-success/10' : 'bg-muted'}`}>
+                      {marketCompatibility.disclosureReady
+                        ? <CheckCircle className="h-5 w-5 text-success" />
+                        : <Clock className="h-5 w-5 text-muted-foreground" />}
                     </div>
-                  </CardContent>
-                </Card>
-              )}
+                    <div className="flex-1">
+                      <div className="font-semibold text-sm">Market compatibility</div>
+                      <div className="text-xs text-muted-foreground">
+                        Disclosure readiness, measured against the criteria below
+                      </div>
+                    </div>
+                    <Badge variant={marketCompatibility.disclosureReady ? 'default' : 'secondary'}>
+                      {marketCompatibility.disclosureReady ? 'Disclosure-ready' : 'Criteria outstanding'}
+                    </Badge>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {marketCompatibility.disclosureCriteria.map(c => (
+                      <li key={c.label} className="flex items-start gap-2 text-xs">
+                        {c.met
+                          ? <CheckCircle className="h-3.5 w-3.5 text-success shrink-0 mt-0.5" />
+                          : <AlertCircle className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
+                        <span>
+                          <span className={c.met ? 'text-foreground' : 'text-muted-foreground'}>{c.label}</span>
+                          <span className="text-muted-foreground"> — {c.detail}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/50 pt-3">
+                    <strong>Carbon-credit project eligibility: not established.</strong>{' '}
+                    {marketCompatibility.creditStatement}
+                  </p>
+                </CardContent>
+              </Card>
+
 
               {/* Gov-Ready Export */}
               {ledgerEntries.length > 0 && (
