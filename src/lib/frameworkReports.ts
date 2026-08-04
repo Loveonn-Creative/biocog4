@@ -707,7 +707,7 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
   doc.text(doc.splitTextToSize(fw.name, width), margin, 20);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
-  doc.text(`${ds.organizationName} · ${kg(ds.totalKg)} total · ${assessment.completeness}% of mapped references evidenced`, margin, 35);
+  doc.text(`${ds.organizationName} · ${kgL(ds.totalKg, ds.locale)} total · ${assessment.completeness}% of mapped references evidenced`, margin, 35);
   y = 54;
 
   sections.forEach((section) => {
