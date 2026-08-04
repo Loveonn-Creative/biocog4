@@ -152,8 +152,11 @@ const entitySection = (ds: ReportDataset): Section => ({
     ['Reporting period', ds.periodStart && ds.periodEnd
       ? `${fmtDate(ds.periodStart, ds.locale)} — ${fmtDate(ds.periodEnd, ds.locale)}`
       : 'All recorded activity to date'],
-    ['Consolidation approach', 'Operational control (invoice-evidenced activity)'],
+    ['Base year', baseYear(ds)],
+    ['Organizational boundary', 'Operational control'],
+    ['Operational boundary', 'Scope 1, Scope 2 (location-based) and evidenced Scope 3 categories'],
     ['Report generated', fmtDate(ds.generatedAt, ds.locale)],
+    ['Output locale', ds.locale],
   ],
 });
 
@@ -162,10 +165,10 @@ const inventorySection = (ds: ReportDataset, labels: [string, string, string]): 
   title: 'GHG inventory by scope',
   head: ['Scope', 'Description', 'tCO2e', 'Share'],
   rows: [
-    ['Scope 1', labels[0], t(ds.scope1Kg), pct(ds.scope1Kg, ds.totalKg)],
-    ['Scope 2', labels[1], t(ds.scope2Kg), pct(ds.scope2Kg, ds.totalKg)],
-    ['Scope 3', labels[2], t(ds.scope3Kg), pct(ds.scope3Kg, ds.totalKg)],
-    ['Total', '', t(ds.totalKg), '100.0%'],
+    ['Scope 1', labels[0], tL(ds.scope1Kg, ds.locale), pctL(ds.scope1Kg, ds.totalKg, ds.locale)],
+    ['Scope 2', labels[1], tL(ds.scope2Kg, ds.locale), pctL(ds.scope2Kg, ds.totalKg, ds.locale)],
+    ['Scope 3', labels[2], tL(ds.scope3Kg, ds.locale), pctL(ds.scope3Kg, ds.totalKg, ds.locale)],
+    ['Total', '', tL(ds.totalKg, ds.locale), pctL(ds.totalKg, ds.totalKg, ds.locale)],
   ],
 });
 
@@ -179,7 +182,7 @@ const categorySection = (ds: ReportDataset): Section => ({
     c.activityData ?? '—',
     c.activityUnit ?? '—',
     c.emissionFactor ?? '—',
-    t(c.co2Kg),
+    tL(c.co2Kg, ds.locale),
     c.dataQuality || 'unrated',
   ]),
 });
@@ -191,11 +194,36 @@ const methodologySection = (ds: ReportDataset): Section => ({
     ['Methodology version', ds.methodologyVersion],
     ['Emission factor sources', ds.factorSources.length ? ds.factorSources.join(', ') : 'Not recorded'],
     ['Activity data source', 'Supplier invoices and metered records uploaded by the entity'],
+    ['Calculation basis', 'Activity data × published emission factor; no spend-based proxy is applied'],
     ['Gases covered', 'CO2e aggregate (factors are supplied on a CO2e basis)'],
+    ['Scope 2 method', 'Location-based; no market-based figure is disclosed because contractual instruments are not recorded'],
+    ['Exclusions', 'Any activity without a supporting document is excluded and declared in the disclosure index'],
     ['Recalculation policy', 'Restated when source evidence is corrected or a factor set is superseded'],
     ['Independent assurance', 'Not obtained — this report is unassured unless separately verified'],
   ],
 });
+
+/** Completeness, quality and assurance, stated uniformly for every framework. */
+const dataQualitySection = (ds: ReportDataset, assessment: FrameworkAssessment): Section => {
+  const verified = ds.evidence.filter((e) => e.verificationStatus === 'verified').length;
+  const rated = ds.categories.filter((c) => Boolean(c.dataQuality)).length;
+  return {
+    kind: 'kv',
+    title: 'Completeness, data quality and assurance',
+    rows: [
+      ['Evidence records', String(ds.evidence.length)],
+      ['Of which integrity-checked', `${verified} of ${ds.evidence.length}`],
+      ['Activity categories', String(ds.categories.length)],
+      ['Categories carrying a data-quality rating', `${rated} of ${ds.categories.length}`],
+      ['Disclosure completeness (all mapped references)', `${assessment.completeness}%`],
+      ['Disclosure completeness (references the platform can evidence)', `${assessment.evidenceableCompleteness}%`],
+      ['Declared data gaps', String(assessment.dataGaps.length)],
+      ['Declared not applicable', String(assessment.notApplicable.length)],
+      ['Assurance status', 'Self-reported, unassured'],
+      ['Uncertainty treatment', 'Expressed qualitatively through per-record data-quality ratings; no numeric uncertainty range is asserted'],
+    ],
+  };
+};
 
 const evidenceSection = (ds: ReportDataset): Section => ({
   kind: 'table',
@@ -207,7 +235,7 @@ const evidenceSection = (ds: ReportDataset): Section => ({
     e.vendor || '—',
     e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '—',
     `Scope ${e.scope}`,
-    t(e.co2Kg),
+    tL(e.co2Kg, ds.locale),
     e.verificationStatus,
   ]),
   note: ds.evidence.length > 200 ? `Showing first 200 of ${ds.evidence.length} evidence records.` : undefined,
@@ -233,7 +261,7 @@ const targetSection = (ds: ReportDataset): Section =>
         kind: 'kv',
         title: 'Reduction target',
         rows: [
-          ['Baseline emissions', kg(ds.target.baselineCo2Kg)],
+          ['Baseline emissions', kgL(ds.target.baselineCo2Kg, ds.locale)],
           ['Target reduction', `${ds.target.targetReductionPct}%`],
           ['Target date', fmtDate(ds.target.targetDate, ds.locale)],
           ['Progress recorded', ds.target.progressPct === null ? 'Not tracked' : `${ds.target.progressPct}%`],
@@ -249,13 +277,20 @@ const targetSection = (ds: ReportDataset): Section =>
 const gapSection = (assessment: FrameworkAssessment): Section => ({
   kind: 'table',
   title: 'Disclosure index',
-  head: ['Disclosure reference', 'Evidenced'],
+  head: ['Disclosure reference', 'Status', 'Basis'],
   rows: [
-    ...assessment.satisfied.map((r) => [r, 'Yes — supported by recorded data']),
-    ...assessment.missing.map((r) => [r, 'No — data not collected by this entity']),
+    ...assessment.satisfied.map((r) => [r, 'Evidenced', 'Computed from the entity\'s own recorded evidence']),
+    ...assessment.missingDetail.map((m) => [
+      m.reference,
+      m.classification === 'data_gap' ? 'Data gap' : 'Not applicable',
+      m.reason,
+    ]),
   ],
-  note: `Completeness against mapped references: ${assessment.completeness}% (${assessment.satisfied.length} of ${assessment.satisfied.length + assessment.missing.length}).`,
+  note:
+    `Evidenced: ${assessment.satisfied.length}. Data gaps: ${assessment.dataGaps.length}. Not applicable: ${assessment.notApplicable.length}. ` +
+    'A data gap is a disclosure that can be closed by adding the underlying record. Not applicable means the disclosure is authored by the entity and sits outside this platform. Neither is estimated or filled in.',
 });
+
 
 /** Framework-specific narrative and section order. */
 function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAssessment): Section[] {
