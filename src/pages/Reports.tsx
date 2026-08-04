@@ -26,8 +26,8 @@ import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { 
-  getFrameworkDisclaimer,
   assessFramework,
+  assessMarketCompatibility,
   FRAMEWORKS,
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
