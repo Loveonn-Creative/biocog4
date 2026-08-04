@@ -56,22 +56,14 @@ interface Verification {
 
 const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using the BIOCOG MRV India v1.0 methodology with emission factors from IND_EF_2025. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.";
 
-// All available frameworks for customization
-const ALL_FRAMEWORKS = [
-  { id: 'GHG_PROTOCOL', label: 'GHG Protocol' },
-  { id: 'ISO_14064', label: 'ISO 14064-1' },
-  { id: 'GRI_305', label: 'GRI 305' },
-  { id: 'TCFD', label: 'TCFD' },
-  { id: 'CDP', label: 'CDP' },
-  { id: 'ISSB_S2', label: 'ISSB S2' },
-  { id: 'SASB', label: 'SASB' },
-  { id: 'CSRD_ESRS', label: 'CSRD/ESRS' },
-  { id: 'CBAM', label: 'CBAM' },
-  { id: 'SBTI', label: 'SBTi' },
-  { id: 'UN_SDGS', label: 'UN SDGs' },
-  { id: 'INDIA_CPCB', label: 'CPCB' },
-  { id: 'INDIA_BRSR', label: 'BRSR' },
-];
+// Every implemented framework is selectable. The list is derived from the
+// registry so a framework can never exist in the engine but be missing here.
+const ALL_FRAMEWORKS = Object.values(FRAMEWORKS).map(fw => ({
+  id: fw.id,
+  label: fw.shortName,
+  category: fw.category,
+}));
+
 
 
 const Reports = () => {
