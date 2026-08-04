@@ -152,9 +152,20 @@ export interface FrameworkAssessment {
   satisfied: string[];
   /** Disclosure references that cannot be evidenced yet */
   missing: string[];
+  /** The same missing references, each classified and explained */
+  missingDetail: MissingDisclosure[];
+  /** Missing because the entity has no record yet — closeable */
+  dataGaps: MissingDisclosure[];
+  /** Missing because the disclosure sits outside the platform boundary */
+  notApplicable: MissingDisclosure[];
   coverage: 'covered' | 'partial' | 'not_covered';
   /** 0-100, share of the framework's mapped references that are evidenced */
   completeness: number;
+  /**
+   * 0-100 measured only against references the platform can evidence, i.e.
+   * excluding narrative disclosures that are outside its boundary.
+   */
+  evidenceableCompleteness: number;
 }
 
 /** Assess one framework against the evidence actually held. */
@@ -164,20 +175,37 @@ export function assessFramework(
 ): FrameworkAssessment {
   const refs = Object.entries(fw.metricsMapping);
   const satisfied: string[] = [];
-  const missing: string[] = [];
+  const missingDetail: MissingDisclosure[] = [];
 
   for (const [ref, metric] of refs) {
     const requirement = METRIC_REQUIREMENTS[metric];
     // Unmapped metric: treat as unevidenced rather than silently satisfied.
     if (requirement && availability[requirement]) satisfied.push(ref);
-    else missing.push(ref);
+    else missingDetail.push(classifyMissing(ref, metric));
   }
 
+  const notApplicable = missingDetail.filter((m) => m.classification === 'not_applicable');
+  const dataGaps = missingDetail.filter((m) => m.classification === 'data_gap');
+
   const completeness = refs.length === 0 ? 0 : Math.round((satisfied.length / refs.length) * 100);
+  const evidenceableTotal = refs.length - notApplicable.length;
+  const evidenceableCompleteness =
+    evidenceableTotal <= 0 ? 0 : Math.round((satisfied.length / evidenceableTotal) * 100);
   const coverage: FrameworkAssessment['coverage'] =
     completeness === 100 ? 'covered' : completeness === 0 ? 'not_covered' : 'partial';
 
-  return { framework: fw, satisfied, missing, coverage, completeness };
+  return {
+    framework: fw,
+    satisfied,
+    missing: missingDetail.map((m) => m.reference),
+    missingDetail,
+    dataGaps,
+    notApplicable,
+    coverage,
+    completeness,
+    evidenceableCompleteness,
+  };
+
 }
 
 
