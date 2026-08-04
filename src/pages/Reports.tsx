@@ -152,7 +152,6 @@ const Reports = () => {
   const analysis = latestVerification?.ai_analysis;
   
   const activeFrameworks = useCustomFrameworks ? selectedFrameworks : autoFrameworks;
-  const frameworkDisclaimer = getFrameworkDisclaimer(activeFrameworks);
 
   const dateLocale = locale === 'en' ? 'en-IN' : locale;
   const formatNumber = (n: number) => n >= 1000 ? `${(n/1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
