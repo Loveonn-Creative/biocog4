@@ -242,6 +242,22 @@ const Reports = () => {
     [activeFrameworks, availability],
   );
 
+  // Disclosure readiness and carbon-credit project eligibility are separate
+  // questions, answered separately from the criteria that produced them.
+  const marketCompatibility = useMemo(
+    () =>
+      assessMarketCompatibility({
+        availability,
+        evidenceCount: evidence.length,
+        verificationStatus: latestVerification?.verification_status ?? null,
+        verificationScore: latestVerification?.verification_score ?? null,
+        greenwashingRisk: latestVerification?.greenwashing_risk ?? null,
+      }),
+    [availability, evidence.length, latestVerification],
+  );
+
+
+
   const downloadFramework = (fwId: string, kind: 'pdf' | 'xlsx') => {
     if (summary.total <= 0) {
       toast.error('No verified emissions data to report yet');
