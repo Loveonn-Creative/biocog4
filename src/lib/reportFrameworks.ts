@@ -10,12 +10,17 @@ export interface FrameworkCoverage {
   id: string;
   name: string;
   shortName: string;
-  category: 'mandatory' | 'voluntary' | 'investor';
+  category: 'mandatory' | 'voluntary' | 'investor' | 'reader_view';
   applicableWhen: string[];
   metricsMapping: Record<string, string>;
   /** Baseline expectation only — actual coverage is computed from evidence. */
   status: 'covered' | 'partial' | 'not_applicable';
+  /** Set when a newer standard has taken over this framework's role. */
+  supersededBy?: string;
+  /** Short, factual note shown in the UI and printed in the report. */
+  note?: string;
 }
+
 
 /**
  * Disclosure inputs the platform can evidence today.
