@@ -26,8 +26,8 @@ import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { 
-  getFrameworkDisclaimer,
   assessFramework,
+  assessMarketCompatibility,
   FRAMEWORKS,
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
@@ -56,22 +56,14 @@ interface Verification {
 
 const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using the BIOCOG MRV India v1.0 methodology with emission factors from IND_EF_2025. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.";
 
-// All available frameworks for customization
-const ALL_FRAMEWORKS = [
-  { id: 'GHG_PROTOCOL', label: 'GHG Protocol' },
-  { id: 'ISO_14064', label: 'ISO 14064-1' },
-  { id: 'GRI_305', label: 'GRI 305' },
-  { id: 'TCFD', label: 'TCFD' },
-  { id: 'CDP', label: 'CDP' },
-  { id: 'ISSB_S2', label: 'ISSB S2' },
-  { id: 'SASB', label: 'SASB' },
-  { id: 'CSRD_ESRS', label: 'CSRD/ESRS' },
-  { id: 'CBAM', label: 'CBAM' },
-  { id: 'SBTI', label: 'SBTi' },
-  { id: 'UN_SDGS', label: 'UN SDGs' },
-  { id: 'INDIA_CPCB', label: 'CPCB' },
-  { id: 'INDIA_BRSR', label: 'BRSR' },
-];
+// Every implemented framework is selectable. The list is derived from the
+// registry so a framework can never exist in the engine but be missing here.
+const ALL_FRAMEWORKS = Object.values(FRAMEWORKS).map(fw => ({
+  id: fw.id,
+  label: fw.shortName,
+  category: fw.category,
+}));
+
 
 
 const Reports = () => {
@@ -152,7 +144,6 @@ const Reports = () => {
   const analysis = latestVerification?.ai_analysis;
   
   const activeFrameworks = useCustomFrameworks ? selectedFrameworks : autoFrameworks;
-  const frameworkDisclaimer = getFrameworkDisclaimer(activeFrameworks);
 
   const dateLocale = locale === 'en' ? 'en-IN' : locale;
   const formatNumber = (n: number) => n >= 1000 ? `${(n/1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
@@ -251,6 +242,22 @@ const Reports = () => {
     [activeFrameworks, availability],
   );
 
+  // Disclosure readiness and carbon-credit project eligibility are separate
+  // questions, answered separately from the criteria that produced them.
+  const marketCompatibility = useMemo(
+    () =>
+      assessMarketCompatibility({
+        availability,
+        evidenceCount: evidence.length,
+        verificationStatus: latestVerification?.verification_status ?? null,
+        verificationScore: latestVerification?.verification_score ?? null,
+        greenwashingRisk: latestVerification?.greenwashing_risk ?? null,
+      }),
+    [availability, evidence.length, latestVerification],
+  );
+
+
+
   const downloadFramework = (fwId: string, kind: 'pdf' | 'xlsx') => {
     if (summary.total <= 0) {
       toast.error('No verified emissions data to report yet');
@@ -286,397 +293,13 @@ const Reports = () => {
   };
 
   
-  const generateESGReport = async () => {
-    setIsGenerating(true);
-    
-    try {
-      const doc = new jsPDF();
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const pageHeight = doc.internal.pageSize.getHeight();
-      const margin = 20;
-      const contentWidth = pageWidth - margin * 2;
-      let yPos = 20;
-      
-      // Header with branding
-      doc.setFillColor(34, 82, 54);
-      doc.rect(0, 0, pageWidth, 40, 'F');
-      
-      doc.setFontSize(22);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(255, 255, 255);
-      doc.text('Carbon Accounting Report', margin, 25);
-      
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Multi-Framework ESG Compliance Ready', margin, 33);
-      
-      yPos = 55;
-      
-      // Report metadata - properly aligned
-      doc.setTextColor(100);
-      doc.setFontSize(9);
-      const reportId = `RPT-${Date.now().toString(36).toUpperCase()}`;
-      doc.text(`Report ID: ${reportId}`, pageWidth - margin, 50, { align: 'right' });
-      doc.text(`Generated: ${formatDate(new Date().toISOString())}`, pageWidth - margin, 56, { align: 'right' });
-      
-      // Verification Status Banner
-      const status = latestVerification?.verification_status || 'pending';
-      const statusColor = status === 'verified' ? [34, 139, 34] : status === 'needs_review' ? [255, 165, 0] : [220, 20, 60];
-      doc.setFillColor(statusColor[0], statusColor[1], statusColor[2]);
-      doc.roundedRect(margin, yPos, contentWidth, 25, 3, 3, 'F');
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(12);
-      doc.setFont('helvetica', 'bold');
-      doc.text(`Verification Status: ${status.toUpperCase().replace('_', ' ')}`, margin + 10, yPos + 10);
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.text(`Quality Grade: ${analysis?.creditEligibility?.qualityGrade || 'D'} | Green Score: ${analysis?.greenScore || 0}/100`, margin + 10, yPos + 18);
-      
-      yPos += 35;
-      
-      // Executive Summary Section
-      doc.setTextColor(0);
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text('Executive Summary', margin, yPos);
-      yPos += 10;
-      
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(60);
-      
-      const summaryText = `This report presents the carbon footprint analysis for the reporting period, calculated using the BIOCOG MRV India v1.0 methodology in compliance with GHG Protocol and ISO 14064 standards. Total verified emissions: ${formatNumber(summary.total)} CO₂e.`;
-      const splitSummary = doc.splitTextToSize(summaryText, contentWidth);
-      doc.text(splitSummary, margin, yPos);
-      yPos += splitSummary.length * 5 + 10;
-      
-      // Emissions Overview
-      doc.setTextColor(0);
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text('Emissions Overview', margin, yPos);
-      yPos += 12;
-      
-      // Scope boxes - equal width with proper spacing
-      const boxSpacing = 8;
-      const boxWidth = (contentWidth - boxSpacing * 2) / 3;
-      const scopes = [
-        { label: 'Scope 1 (Direct)', value: summary.scope1, color: [255, 140, 0], desc: 'Fuel combustion' },
-        { label: 'Scope 2 (Energy)', value: summary.scope2, color: [65, 105, 225], desc: 'Purchased electricity' },
-        { label: 'Scope 3 (Indirect)', value: summary.scope3, color: [75, 192, 192], desc: 'Value chain' }
-      ];
-      
-      scopes.forEach((scope, i) => {
-        const x = margin + i * (boxWidth + boxSpacing);
-        doc.setFillColor(scope.color[0], scope.color[1], scope.color[2]);
-        doc.roundedRect(x, yPos, boxWidth, 40, 3, 3, 'F');
-        
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        doc.text(scope.label, x + 5, yPos + 10);
-        
-        doc.setFontSize(16);
-        doc.setFont('helvetica', 'bold');
-        doc.text(formatNumber(scope.value), x + 5, yPos + 25);
-        
-        doc.setFontSize(8);
-        doc.setFont('helvetica', 'normal');
-        doc.text(scope.desc, x + 5, yPos + 34);
-      });
-      
-      yPos += 55;
-      
-      // Total emissions bar
-      doc.setFillColor(34, 82, 54);
-      doc.roundedRect(margin, yPos, contentWidth, 25, 3, 3, 'F');
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(11);
-      doc.setFont('helvetica', 'normal');
-      doc.text('Total Carbon Footprint', margin + 10, yPos + 10);
-      doc.setFontSize(16);
-      doc.setFont('helvetica', 'bold');
-      doc.text(`${formatNumber(summary.total)} CO₂e`, pageWidth - margin - 10, yPos + 17, { align: 'right' });
-      
-      yPos += 35;
-      
-      // Framework Coverage Section
-      doc.setTextColor(0);
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text('Framework Coverage & Methodology', margin, yPos);
-      yPos += 10;
-      
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(60);
-      
-      // Show covered frameworks
-      const coveredFrameworks = activeFrameworks
-        .map(fwId => FRAMEWORKS[fwId]?.shortName)
-        .filter(Boolean)
-        .join(' • ');
-      
-      const complianceItems = [
-        `Frameworks: ${coveredFrameworks || 'GHG Protocol'}`,
-        `Methodology: BIOCOG MRV India v1.0`,
-        `Emission Factors: IND_EF_2025`,
-        `Standards: GHG Protocol, ISO 14064`,
-        `Data Quality: ${analysis?.dataQuality || 'Under review'}`,
-        `CCTS Eligible: ${latestVerification?.ccts_eligible ? 'Yes' : 'No'}`,
-        `CBAM Compliant: ${latestVerification?.cbam_compliant ? 'Yes' : 'No'}`,
-      ];
-      
-      complianceItems.forEach(item => {
-        doc.text(`• ${item}`, margin + 5, yPos);
-        yPos += 6;
-      });
-      
-      yPos += 5;
-      
-      // Emissions Breakdown Table
-      if (emissions.length > 0) {
-        doc.setTextColor(0);
-        doc.setFontSize(14);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Emissions Breakdown by Category', margin, yPos);
-        yPos += 12;
-        
-        // Fixed column widths for consistent alignment
-        const col1Width = 90; // Category
-        const col2Width = 35; // Scope
-        const col3Width = 45; // Emissions (right-aligned)
-        
-        // Table header
-        doc.setFillColor(34, 82, 54);
-        doc.rect(margin, yPos, contentWidth, 12, 'F');
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'bold');
-        doc.setTextColor(255, 255, 255);
-        doc.text('Category', margin + 5, yPos + 8);
-        doc.text('Scope', margin + col1Width + 10, yPos + 8);
-        doc.text('CO₂ Emissions', margin + contentWidth - 5, yPos + 8, { align: 'right' });
-        yPos += 14;
-        
-        // Table rows
-        doc.setFont('helvetica', 'normal');
-        
-        // Group by category
-        const categories: Record<string, { scope: number; total: number }> = {};
-        emissions.forEach(e => {
-          if (!categories[e.category]) {
-            categories[e.category] = { scope: e.scope, total: 0 };
-          }
-          categories[e.category].total += e.co2_kg;
-        });
-        
-        const sortedCategories = Object.entries(categories)
-          .sort((a, b) => b[1].total - a[1].total)
-          .slice(0, 10);
-        
-        sortedCategories.forEach(([category, data], i) => {
-          if (yPos > pageHeight - 40) {
-            doc.addPage();
-            yPos = 20;
-            // Repeat header on new page
-            doc.setFillColor(34, 82, 54);
-            doc.rect(margin, yPos, contentWidth, 12, 'F');
-            doc.setFontSize(9);
-            doc.setFont('helvetica', 'bold');
-            doc.setTextColor(255, 255, 255);
-            doc.text('Category', margin + 5, yPos + 8);
-            doc.text('Scope', margin + col1Width + 10, yPos + 8);
-            doc.text('CO₂ Emissions', margin + contentWidth - 5, yPos + 8, { align: 'right' });
-            yPos += 14;
-            doc.setFont('helvetica', 'normal');
-          }
-          
-          // Alternating row background
-          if (i % 2 === 0) {
-            doc.setFillColor(248, 250, 248);
-            doc.rect(margin, yPos - 3, contentWidth, 10, 'F');
-          }
-          
-          // Category name with proper wrapping
-          doc.setTextColor(30, 30, 30);
-          const catName = category.charAt(0).toUpperCase() + category.slice(1);
-          const truncatedCat = catName.length > 30 ? catName.substring(0, 27) + '...' : catName;
-          doc.text(truncatedCat, margin + 5, yPos + 4);
-          
-          // Scope - left aligned in column
-          doc.setTextColor(80, 80, 80);
-          doc.text(`Scope ${data.scope}`, margin + col1Width + 10, yPos + 4);
-          
-          // Emissions - right aligned with proper number formatting
-          doc.setTextColor(30, 30, 30);
-          doc.setFont('helvetica', 'bold');
-          const emissionValue = data.total >= 1000 
-            ? `${(data.total / 1000).toFixed(2)} t` 
-            : `${data.total.toFixed(1)} kg`;
-          doc.text(emissionValue, margin + contentWidth - 5, yPos + 4, { align: 'right' });
-          doc.setFont('helvetica', 'normal');
-          
-          yPos += 10;
-        });
-        
-        // Add subtle bottom border
-        doc.setDrawColor(200, 200, 200);
-        doc.line(margin, yPos, margin + contentWidth, yPos);
-      }
-      
-      // Add new page for recommendations if needed
-      if (yPos > pageHeight - 80) {
-        doc.addPage();
-        yPos = 20;
-      } else {
-        yPos += 15;
-      }
-      
-      // Recommendations Section
-      if (analysis?.recommendations && analysis.recommendations.length > 0) {
-        doc.setTextColor(0);
-        doc.setFontSize(14);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Improvement Recommendations', margin, yPos);
-        yPos += 10;
-        
-        doc.setFontSize(9);
-        doc.setFont('helvetica', 'normal');
-        doc.setTextColor(60);
-        
-        analysis.recommendations.slice(0, 5).forEach((rec, i) => {
-          if (yPos > pageHeight - 30) {
-            doc.addPage();
-            yPos = 20;
-          }
-          const splitRec = doc.splitTextToSize(`${i + 1}. ${rec}`, contentWidth - 10);
-          doc.text(splitRec, margin + 5, yPos);
-          yPos += splitRec.length * 5 + 3;
-        });
-      }
-      
-      // Footer with legal disclaimer
-      if (yPos > pageHeight - 50) {
-        doc.addPage();
-        yPos = 20;
-      }
-      
-      yPos = pageHeight - 35;
-      doc.setDrawColor(200);
-      doc.line(margin, yPos, pageWidth - margin, yPos);
-      yPos += 5;
-      
-      doc.setFontSize(7);
-      doc.setTextColor(120);
-      const splitDisclaimer = doc.splitTextToSize(frameworkDisclaimer, contentWidth);
-      doc.text(splitDisclaimer, margin, yPos);
-      
-      // Page number on each page
-      const totalPages = doc.getNumberOfPages();
-      for (let i = 1; i <= totalPages; i++) {
-        doc.setPage(i);
-        doc.setFontSize(8);
-        doc.setTextColor(150);
-        doc.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
-        doc.text('Senseible Carbon Platform', pageWidth - margin, pageHeight - 10, { align: 'right' });
-      }
-      
-      doc.save(`carbon-esg-report-${new Date().toISOString().split('T')[0]}.pdf`);
-      toast.success('ESG Report downloaded successfully');
-    } catch (error) {
-      console.error('PDF generation error:', error);
-      toast.error('Failed to generate report');
-    } finally {
-      setIsGenerating(false);
-    }
-  };
-  
-  const generateExcelReport = async () => {
-    setIsGenerating(true);
-    
-    try {
-      // Get covered frameworks for Excel
-      const coveredFrameworksList = activeFrameworks
-        .map(fwId => FRAMEWORKS[fwId]?.shortName)
-        .filter(Boolean)
-        .join(', ');
-      
-      // Summary sheet data
-      const summaryData = [
-        ['Carbon Accounting Report - Multi-Framework ESG Compliance'],
-        ['Generated:', formatDate(new Date().toISOString())],
-        ['Methodology:', 'BIOCOG MRV India v1.0'],
-        ['Frameworks Covered:', coveredFrameworksList || 'GHG Protocol'],
-        [''],
-        ['EMISSIONS SUMMARY'],
-        ['Scope', 'Description', 'CO₂ Emissions (kg)', 'Percentage'],
-        ['Scope 1', 'Direct Emissions', summary.scope1, `${((summary.scope1 / summary.total) * 100 || 0).toFixed(1)}%`],
-        ['Scope 2', 'Purchased Energy', summary.scope2, `${((summary.scope2 / summary.total) * 100 || 0).toFixed(1)}%`],
-        ['Scope 3', 'Value Chain', summary.scope3, `${((summary.scope3 / summary.total) * 100 || 0).toFixed(1)}%`],
-        ['TOTAL', '', summary.total, '100%'],
-        [''],
-        ['VERIFICATION STATUS'],
-        ['Status:', latestVerification?.verification_status || 'Pending'],
-        ['Quality Grade:', analysis?.creditEligibility?.qualityGrade || 'D'],
-        ['Green Score:', `${analysis?.greenScore || 0}/100`],
-        ['CCTS Eligible:', latestVerification?.ccts_eligible ? 'Yes' : 'No'],
-        ['CBAM Compliant:', latestVerification?.cbam_compliant ? 'Yes' : 'No'],
-        [''],
-        ['LEGAL DISCLAIMER'],
-        [LEGAL_DISCLAIMER],
-      ];
-      
-      // Detailed emissions data
-      const emissionsData = [
-        ['Category', 'Scope', 'Activity Data', 'Unit', 'Emission Factor', 'CO₂ (kg)', 'Verified', 'Created Date'],
-        ...emissions.map(e => [
-          e.category,
-          `Scope ${e.scope}`,
-          e.activity_data || '',
-          e.activity_unit || '',
-          e.emission_factor || '',
-          e.co2_kg,
-          e.verified ? 'Yes' : 'No',
-          formatDate(e.created_at),
-        ]),
-      ];
-      
-      // Verification history data
-      const verificationData = [
-        ['Verification ID', 'Date', 'Total CO₂ (kg)', 'Status', 'Score', 'Quality Grade', 'Greenwashing Risk'],
-        ...verifications.map(v => [
-          v.id.substring(0, 8),
-          formatDate(v.created_at),
-          v.total_co2_kg,
-          v.verification_status || 'Pending',
-          `${Math.round((v.verification_score || 0) * 100)}%`,
-          v.ai_analysis?.creditEligibility?.qualityGrade || 'D',
-          v.greenwashing_risk || 'Unknown',
-        ]),
-      ];
-      
-      // Create workbook
-      const wb = XLSX.utils.book_new();
-      
-      const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
-      XLSX.utils.book_append_sheet(wb, wsSummary, 'Summary');
-      
-      const wsEmissions = XLSX.utils.aoa_to_sheet(emissionsData);
-      XLSX.utils.book_append_sheet(wb, wsEmissions, 'Emissions Detail');
-      
-      const wsVerifications = XLSX.utils.aoa_to_sheet(verificationData);
-      XLSX.utils.book_append_sheet(wb, wsVerifications, 'Verification History');
-      
-      // Download
-      XLSX.writeFile(wb, `carbon-report-${new Date().toISOString().split('T')[0]}.xlsx`);
-      toast.success('Excel report downloaded successfully');
-    } catch (error) {
-      console.error('Excel generation error:', error);
-      toast.error('Failed to generate Excel report');
-    } finally {
-      setIsGenerating(false);
-    }
-  };
+  // The Senseible summary and the reader-specific packs are views over the
+  // same verified dataset, produced by the same engine as every framework
+  // export. There is no second report generator.
+  const generateESGReport = () => downloadFramework('SENSEIBLE_SUMMARY', 'pdf');
+  const generateExcelReport = () => downloadFramework('SENSEIBLE_SUMMARY', 'xlsx');
+  const generateLenderReport = () => downloadFramework('LENDER_VIEW', 'pdf');
+
   
   const generateComplianceCertificate = async () => {
     setIsGenerating(true);
@@ -973,27 +596,43 @@ const Reports = () => {
                             </Button>
                           )}
                         </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {ALL_FRAMEWORKS.map(fw => (
-                            <label
-                              key={fw.id}
-                              className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 cursor-pointer text-sm"
-                            >
-                              <Checkbox
-                                checked={selectedFrameworks.includes(fw.id)}
-                                onCheckedChange={() => toggleFramework(fw.id)}
-                              />
-                              <span className={selectedFrameworks.includes(fw.id) ? 'text-foreground' : 'text-muted-foreground'}>
-                                {fw.label}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
+                        {(['reader_view', 'mandatory', 'investor', 'voluntary'] as const).map(cat => {
+                          const items = ALL_FRAMEWORKS.filter(fw => fw.category === cat);
+                          if (items.length === 0) return null;
+                          const heading = {
+                            reader_view: 'Reader views (same dataset, reader-specific structure)',
+                            mandatory: 'Regulatory frameworks',
+                            investor: 'Investor frameworks',
+                            voluntary: 'Voluntary standards',
+                          }[cat];
+                          return (
+                            <div key={cat} className="space-y-2">
+                              <div className="text-xs uppercase tracking-wider text-muted-foreground">{heading}</div>
+                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                {items.map(fw => (
+                                  <label
+                                    key={fw.id}
+                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 cursor-pointer text-sm"
+                                  >
+                                    <Checkbox
+                                      checked={selectedFrameworks.includes(fw.id)}
+                                      onCheckedChange={() => toggleFramework(fw.id)}
+                                    />
+                                    <span className={selectedFrameworks.includes(fw.id) ? 'text-foreground' : 'text-muted-foreground'}>
+                                      {fw.label}
+                                    </span>
+                                  </label>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
                         <p className="text-xs text-muted-foreground">
                           {useCustomFrameworks 
                             ? 'Using custom selection. Reset to use frameworks detected from your stored profile and records.'
                             : 'Detected from your stored profile, recorded targets and invoice evidence.'}
                         </p>
+
 
                       </div>
                     </CollapsibleContent>
@@ -1071,11 +710,26 @@ const Reports = () => {
                         </Badge>
                       </div>
 
-                      {a.missing.length > 0 && (
+                      {a.framework.note && (
+                        <p className="text-xs text-muted-foreground">{a.framework.note}</p>
+                      )}
+
+                      {a.dataGaps.length > 0 && (
                         <p className="text-xs text-muted-foreground">
-                          Reported as gaps: {a.missing.join(', ')}
+                          Data gaps (closeable by adding records): {a.dataGaps.map(g => g.reference).join(', ')}
                         </p>
                       )}
+                      {a.notApplicable.length > 0 && (
+                        <p className="text-xs text-muted-foreground">
+                          Not applicable to this platform (entity-authored): {a.notApplicable.map(g => g.reference).join(', ')}
+                        </p>
+                      )}
+                      {a.coverage === 'not_covered' && (
+                        <p className="text-xs text-muted-foreground">
+                          Export is disabled until at least one disclosure under this framework is evidenced.
+                        </p>
+                      )}
+
 
                       <div className="flex gap-2 flex-wrap">
                         <Button
@@ -1109,49 +763,48 @@ const Reports = () => {
               </Card>
 
 
-              {/* VCM Readiness Badge */}
-              {latestVerification && (
-                <Card className={`border-2 ${
-                  latestVerification.verification_status === 'verified' &&
-                  latestVerification.greenwashing_risk === 'low' &&
-                  (latestVerification.verification_score || 0) >= 0.7
-                    ? 'border-success/30' : 'border-muted'
-                }`}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-full ${
-                        latestVerification.verification_status === 'verified' &&
-                        latestVerification.greenwashing_risk === 'low' &&
-                        (latestVerification.verification_score || 0) >= 0.7
-                          ? 'bg-success/10' : 'bg-muted'
-                      }`}>
-                        {latestVerification.verification_status === 'verified' &&
-                         latestVerification.greenwashing_risk === 'low' &&
-                         (latestVerification.verification_score || 0) >= 0.7 ? (
-                          <CheckCircle className="h-5 w-5 text-success" />
-                        ) : (
-                          <Clock className="h-5 w-5 text-muted-foreground" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-sm">VCM Readiness</div>
-                        <div className="text-xs text-muted-foreground">Voluntary Carbon Market compatibility</div>
-                      </div>
-                      <Badge variant={
-                        latestVerification.verification_status === 'verified' &&
-                        latestVerification.greenwashing_risk === 'low' &&
-                        (latestVerification.verification_score || 0) >= 0.7
-                          ? 'default' : 'secondary'
-                      }>
-                        {latestVerification.verification_status === 'verified' &&
-                         latestVerification.greenwashing_risk === 'low' &&
-                         (latestVerification.verification_score || 0) >= 0.7
-                          ? 'Ready' : 'Pending'}
-                      </Badge>
+              {/* Market compatibility — disclosure readiness, stated separately
+                  from carbon-credit project eligibility */}
+              <Card className={`border-2 ${marketCompatibility.disclosureReady ? 'border-success/30' : 'border-muted'}`}>
+                <CardContent className="p-4 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-full ${marketCompatibility.disclosureReady ? 'bg-success/10' : 'bg-muted'}`}>
+                      {marketCompatibility.disclosureReady
+                        ? <CheckCircle className="h-5 w-5 text-success" />
+                        : <Clock className="h-5 w-5 text-muted-foreground" />}
                     </div>
-                  </CardContent>
-                </Card>
-              )}
+                    <div className="flex-1">
+                      <div className="font-semibold text-sm">Market compatibility</div>
+                      <div className="text-xs text-muted-foreground">
+                        Disclosure readiness, measured against the criteria below
+                      </div>
+                    </div>
+                    <Badge variant={marketCompatibility.disclosureReady ? 'default' : 'secondary'}>
+                      {marketCompatibility.disclosureReady ? 'Disclosure-ready' : 'Criteria outstanding'}
+                    </Badge>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {marketCompatibility.disclosureCriteria.map(c => (
+                      <li key={c.label} className="flex items-start gap-2 text-xs">
+                        {c.met
+                          ? <CheckCircle className="h-3.5 w-3.5 text-success shrink-0 mt-0.5" />
+                          : <AlertCircle className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
+                        <span>
+                          <span className={c.met ? 'text-foreground' : 'text-muted-foreground'}>{c.label}</span>
+                          <span className="text-muted-foreground"> — {c.detail}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/50 pt-3">
+                    <strong>Carbon-credit project eligibility: not established.</strong>{' '}
+                    {marketCompatibility.creditStatement}
+                  </p>
+                </CardContent>
+              </Card>
+
 
               {/* Gov-Ready Export */}
               {ledgerEntries.length > 0 && (
@@ -1240,17 +893,18 @@ const Reports = () => {
                       </span>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                      <span className="text-sm">Quality Grade</span>
-                      <span className="font-mono font-bold">{analysis?.creditEligibility?.qualityGrade || 'D'}</span>
+                      <span className="text-sm">Evidence records</span>
+                      <span className="font-mono font-bold">{evidence.length}</span>
                     </div>
                   </div>
-                  
+
                   <Button 
                     variant="outline" 
                     className="w-full gap-2"
-                    onClick={generateESGReport}
+                    onClick={generateLenderReport}
                     disabled={isGenerating}
                   >
+
                     {isGenerating ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
