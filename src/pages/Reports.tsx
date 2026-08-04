@@ -710,11 +710,26 @@ const Reports = () => {
                         </Badge>
                       </div>
 
-                      {a.missing.length > 0 && (
+                      {a.framework.note && (
+                        <p className="text-xs text-muted-foreground">{a.framework.note}</p>
+                      )}
+
+                      {a.dataGaps.length > 0 && (
                         <p className="text-xs text-muted-foreground">
-                          Reported as gaps: {a.missing.join(', ')}
+                          Data gaps (closeable by adding records): {a.dataGaps.map(g => g.reference).join(', ')}
                         </p>
                       )}
+                      {a.notApplicable.length > 0 && (
+                        <p className="text-xs text-muted-foreground">
+                          Not applicable to this platform (entity-authored): {a.notApplicable.map(g => g.reference).join(', ')}
+                        </p>
+                      )}
+                      {a.coverage === 'not_covered' && (
+                        <p className="text-xs text-muted-foreground">
+                          Export is disabled until at least one disclosure under this framework is evidenced.
+                        </p>
+                      )}
+
 
                       <div className="flex gap-2 flex-wrap">
                         <Button
