@@ -292,7 +292,10 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
       'RiskManagement': 'climateRisks',
     },
     status: 'partial',
+    supersededBy: 'ISSB_S2',
+    note: 'The TCFD framework was disbanded in 2023 and its recommendations are carried forward in IFRS S2. Retained here for readers who still request the TCFD structure; the same evidence maps to ISSB S2.',
   },
+
   ISSB_S1: {
     id: 'ISSB_S1',
     name: 'ISSB S1: General Sustainability Disclosures',
