@@ -86,7 +86,65 @@ const METRIC_REQUIREMENTS: Record<string, keyof DataAvailability> = {
   energyConsumption: 'energy',
   cleanEnergy: 'energy',
   productEmissions: 'productLevel',
+  productCarbonFootprint: 'productLevel',
+  functionalUnit: 'productLevel',
+  ghgIntensity: 'intensity',
+  evidenceTraceability: 'scope1',
+  emissionsBaseline: 'scope1',
+  valueChainEmissions: 'scope3',
 };
+
+/**
+ * Why a mapped disclosure could not be evidenced.
+ *
+ * "Not applicable" is used only where the disclosure is structurally outside
+ * the platform boundary (narrative governance, risk and nature disclosures the
+ * entity must author itself). Everything else is a data gap — a disclosure the
+ * platform could evidence once the underlying records exist. Neither case is
+ * ever filled with an estimate.
+ */
+export type MissingClassification = 'not_applicable' | 'data_gap';
+
+export interface MissingDisclosure {
+  reference: string;
+  classification: MissingClassification;
+  reason: string;
+}
+
+const OUT_OF_BOUNDARY: Array<keyof DataAvailability> = ['governance', 'risks'];
+
+const GAP_REASONS: Partial<Record<keyof DataAvailability, string>> = {
+  scope1: 'No Scope 1 activity has been evidenced by an uploaded document.',
+  scope2: 'No purchased-energy record has been evidenced.',
+  scope3: 'No value-chain activity has been evidenced.',
+  intensity: 'No output or revenue denominator is recorded, so an intensity figure cannot be derived.',
+  targets: 'No reduction target with a baseline and target year is recorded.',
+  energy: 'No metered or invoiced energy consumption is recorded.',
+  productLevel: 'No product-level (HSN/CN coded) evidence is recorded, so per-product emissions cannot be allocated.',
+};
+
+export function classifyMissing(
+  reference: string,
+  metric: string | undefined,
+): MissingDisclosure {
+  const requirement = metric ? METRIC_REQUIREMENTS[metric] : undefined;
+  if (requirement && OUT_OF_BOUNDARY.includes(requirement)) {
+    return {
+      reference,
+      classification: 'not_applicable',
+      reason:
+        requirement === 'governance'
+          ? 'Not applicable to this platform: governance and oversight narratives are authored by the entity and are not derived from documents.'
+          : 'Not applicable to this platform: climate risk and nature assessments are authored by the entity and are not derived from documents.',
+    };
+  }
+  return {
+    reference,
+    classification: 'data_gap',
+    reason: (requirement && GAP_REASONS[requirement]) || 'No supporting record exists for this disclosure.',
+  };
+}
+
 
 export interface FrameworkAssessment {
   framework: FrameworkCoverage;
