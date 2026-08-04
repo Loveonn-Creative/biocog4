@@ -596,27 +596,43 @@ const Reports = () => {
                             </Button>
                           )}
                         </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {ALL_FRAMEWORKS.map(fw => (
-                            <label
-                              key={fw.id}
-                              className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 cursor-pointer text-sm"
-                            >
-                              <Checkbox
-                                checked={selectedFrameworks.includes(fw.id)}
-                                onCheckedChange={() => toggleFramework(fw.id)}
-                              />
-                              <span className={selectedFrameworks.includes(fw.id) ? 'text-foreground' : 'text-muted-foreground'}>
-                                {fw.label}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
+                        {(['reader_view', 'mandatory', 'investor', 'voluntary'] as const).map(cat => {
+                          const items = ALL_FRAMEWORKS.filter(fw => fw.category === cat);
+                          if (items.length === 0) return null;
+                          const heading = {
+                            reader_view: 'Reader views (same dataset, reader-specific structure)',
+                            mandatory: 'Regulatory frameworks',
+                            investor: 'Investor frameworks',
+                            voluntary: 'Voluntary standards',
+                          }[cat];
+                          return (
+                            <div key={cat} className="space-y-2">
+                              <div className="text-xs uppercase tracking-wider text-muted-foreground">{heading}</div>
+                              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                {items.map(fw => (
+                                  <label
+                                    key={fw.id}
+                                    className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted/50 cursor-pointer text-sm"
+                                  >
+                                    <Checkbox
+                                      checked={selectedFrameworks.includes(fw.id)}
+                                      onCheckedChange={() => toggleFramework(fw.id)}
+                                    />
+                                    <span className={selectedFrameworks.includes(fw.id) ? 'text-foreground' : 'text-muted-foreground'}>
+                                      {fw.label}
+                                    </span>
+                                  </label>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
                         <p className="text-xs text-muted-foreground">
                           {useCustomFrameworks 
                             ? 'Using custom selection. Reset to use frameworks detected from your stored profile and records.'
                             : 'Detected from your stored profile, recorded targets and invoice evidence.'}
                         </p>
+
 
                       </div>
                     </CollapsibleContent>
