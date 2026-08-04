@@ -79,9 +79,42 @@ type Section =
   | { kind: 'kv'; title: string; rows: Array<[string, string]> }
   | { kind: 'table'; title: string; head: string[]; rows: Array<Array<string | number>>; note?: string };
 
-const kg = (v: number) => (v >= 1000 ? `${(v / 1000).toFixed(3)} tCO2e` : `${v.toFixed(1)} kgCO2e`);
-const t = (v: number) => (v / 1000).toFixed(4);
-const pct = (part: number, whole: number) => (whole > 0 ? `${((part / whole) * 100).toFixed(1)}%` : '0.0%');
+/* ------------------------- locale-aware formatting --------------------- */
+
+const numFmt = (locale: string, digits: number) => {
+  try {
+    return new Intl.NumberFormat(locale, {
+      minimumFractionDigits: digits,
+      maximumFractionDigits: digits,
+    });
+  } catch {
+    return new Intl.NumberFormat('en', {
+      minimumFractionDigits: digits,
+      maximumFractionDigits: digits,
+    });
+  }
+};
+
+/** Mass in the reader's locale, with the unit always spelled out. */
+const kgL = (v: number, locale: string) =>
+  v >= 1000
+    ? `${numFmt(locale, 3).format(v / 1000)} tCO2e`
+    : `${numFmt(locale, 1).format(v)} kgCO2e`;
+
+/** Tonnes as a locale-formatted string for table cells. */
+const tL = (v: number, locale: string) => numFmt(locale, 4).format(v / 1000);
+
+/** Raw tonnes for spreadsheet cells that must stay numeric. */
+const tNum = (v: number) => Number((v / 1000).toFixed(4));
+
+const pctL = (part: number, whole: number, locale: string) => {
+  const value = whole > 0 ? (part / whole) * 100 : 0;
+  try {
+    return `${new Intl.NumberFormat(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)}%`;
+  } catch {
+    return `${value.toFixed(1)}%`;
+  }
+};
 
 const fmtDate = (iso: string | null, locale: string) => {
   if (!iso) return 'Not recorded';
@@ -91,6 +124,20 @@ const fmtDate = (iso: string | null, locale: string) => {
     return new Date(iso).toISOString().split('T')[0];
   }
 };
+
+/** Base year = the earliest evidenced activity year in the dataset. */
+const baseYear = (ds: ReportDataset): string => {
+  const dates = ds.evidence
+    .map((e) => e.invoiceDate)
+    .filter(Boolean)
+    .concat(ds.periodStart ? [ds.periodStart] : [])
+    .sort();
+  const first = dates[0];
+  if (!first) return 'Not established — no dated evidence recorded';
+  const year = new Date(first).getFullYear();
+  return Number.isNaN(year) ? 'Not established' : String(year);
+};
+
 
 /** Shared entity + boundary block used by every framework. */
 const entitySection = (ds: ReportDataset): Section => ({
