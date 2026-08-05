@@ -208,7 +208,7 @@ const Auth = () => {
         // Forgot password - ALWAYS use production domain
         const PRODUCTION_DOMAIN = 'https://senseible.earth';
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${PRODUCTION_DOMAIN}/auth`
+          redirectTo: `${PRODUCTION_DOMAIN}/reset-password`
         });
         
         if (error) {
