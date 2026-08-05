@@ -95,22 +95,24 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AnalyticsTracker />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/history" element={<History />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
+              <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+              <Route path="/history" element={<RequireAuth><History /></RequireAuth>} />
               <Route path="/verify" element={<Verify />} />
               <Route path="/monetize" element={<Monetize />} />
-              <Route path="/reports" element={<Reports />} />
-              <Route path="/mrv-dashboard" element={<MRVDashboard />} />
-              <Route path="/partner" element={<PartnerDashboard />} />
-              <Route path="/partner-dashboard" element={<PartnerDashboard />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/partner-profile" element={<PartnerProfile />} />
-              <Route path="/subscription" element={<Subscription />} />
+              <Route path="/reports" element={<RequireAuth><Reports /></RequireAuth>} />
+              <Route path="/mrv-dashboard" element={<RequireAuth><MRVDashboard /></RequireAuth>} />
+              <Route path="/partner" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
+              <Route path="/partner-dashboard" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
+              <Route path="/settings" element={<RequireAuth><Settings /></RequireAuth>} />
+              <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
+              <Route path="/partner-profile" element={<RequireAuth><PartnerProfile /></RequireAuth>} />
+              <Route path="/subscription" element={<RequireAuth><Subscription /></RequireAuth>} />
               <Route path="/mission" element={<Mission />} />
               <Route path="/about" element={<About />} />
               <Route path="/principles" element={<Principles />} />
