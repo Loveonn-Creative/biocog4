@@ -546,6 +546,18 @@ export const LOCATION_TO_CODE: Record<string, string> = {
   'Thailand': 'TH',
   'Malaysia': 'MY',
   'Sri Lanka': 'LK',
+  'United States': 'US',
+  'USA': 'US',
+  'United Kingdom': 'GB',
+  'UK': 'GB',
+  'Germany': 'DE',
+  'France': 'FR',
+  'Netherlands': 'NL',
+  'United Arab Emirates': 'AE',
+  'UAE': 'AE',
+  'Australia': 'AU',
+  'Japan': 'JP',
+  'South Korea': 'KR',
 };
 
 export function getCountryConfig(locationOrCode: string): CountryConfig {
