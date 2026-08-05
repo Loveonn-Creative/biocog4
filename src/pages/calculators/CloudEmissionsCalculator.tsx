@@ -116,7 +116,7 @@ const CloudEmissionsCalculator = () => {
                 <Select value={w.regionCountry} onValueChange={v => update(w.id, { regionCountry: v })}>
                   <SelectTrigger><SelectValue /></SelectTrigger>
                   <SelectContent>
-                    {countries.map(c => <SelectItem key={c.code} value={c.code}>{c.name}</SelectItem>)}
+                    {countries.map(c => <SelectItem key={c.code} value={c.code}>{c.label}</SelectItem>)}
                   </SelectContent>
                 </Select>
               </div>
@@ -275,7 +275,7 @@ const CloudEmissionsCalculator = () => {
           </Card>
 
           <MethodologyPanel
-            methodology={result.methodologyVersion}
+            methodologyVersion={result.methodologyVersion}
             factorSources={result.factorSources}
             issues={result.assumptions}
           />
