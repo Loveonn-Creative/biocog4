@@ -11,6 +11,10 @@ import { Loader2 } from "lucide-react";
 // Eagerly load critical pages
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
+import { AnalyticsTracker } from "./components/AnalyticsTracker";
+import { RequireAuth } from "./components/RequireAuth";
+
+const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
 // Lazy load other pages for performance
 const Mission = lazy(() => import("./pages/Mission"));
