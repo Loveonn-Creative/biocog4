@@ -130,12 +130,12 @@ const App = () => (
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/marketplace" element={<PartnerMarketplace />} />
               <Route path="/cms-admin" element={<CMSAdmin />} />
-              <Route path="/billing" element={<Billing />} />
-              <Route path="/team" element={<Team />} />
+              <Route path="/billing" element={<RequireAuth><Billing /></RequireAuth>} />
+              <Route path="/team" element={<RequireAuth><Team /></RequireAuth>} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/accept-invite" element={<AcceptInvite />} />
               <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
-              <Route path="/partner-reports" element={<PartnerReports />} />
+              <Route path="/partner-reports" element={<RequireAuth><PartnerReports /></RequireAuth>} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
