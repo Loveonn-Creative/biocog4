@@ -14,9 +14,13 @@ const Auth = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isPartnerMode = searchParams.get('mode') === 'partner';
+  const initialMode = searchParams.get('mode');
+  const nextPath = searchParams.get('next');
   
   const { isAuthenticated, isLoading: sessionLoading } = useSession();
-  const [mode, setMode] = useState<AuthMode>(isPartnerMode ? "signup" : "signin");
+  const [mode, setMode] = useState<AuthMode>(
+    isPartnerMode ? "signup" : initialMode === "forgot" ? "forgot" : initialMode === "signup" ? "signup" : "signin"
+  );
   const [isLoading, setIsLoading] = useState(false);
   
   // Form fields
@@ -40,11 +44,16 @@ const Auth = () => {
       .eq('user_id', userId)
       .eq('is_active', true)
       .maybeSingle();
-    
-    if (data?.context_type === 'partner') {
-      return '/partner-dashboard';
+
+    const isPartner = data?.context_type === 'partner';
+
+    // Restore the page the user was trying to reach, if it is a safe in-app path.
+    if (nextPath && nextPath.startsWith('/') && !nextPath.startsWith('//') && !nextPath.startsWith('/auth')) {
+      const partnerOnly = nextPath.startsWith('/partner');
+      if (isPartner === partnerOnly) return nextPath;
     }
-    return '/dashboard';
+
+    return isPartner ? '/partner-dashboard' : '/dashboard';
   };
 
   // Redirect if already authenticated
@@ -199,7 +208,7 @@ const Auth = () => {
         // Forgot password - ALWAYS use production domain
         const PRODUCTION_DOMAIN = 'https://senseible.earth';
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${PRODUCTION_DOMAIN}/auth`
+          redirectTo: `${PRODUCTION_DOMAIN}/reset-password`
         });
         
         if (error) {
