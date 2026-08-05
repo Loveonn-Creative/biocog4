@@ -14,9 +14,13 @@ const Auth = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isPartnerMode = searchParams.get('mode') === 'partner';
+  const initialMode = searchParams.get('mode');
+  const nextPath = searchParams.get('next');
   
   const { isAuthenticated, isLoading: sessionLoading } = useSession();
-  const [mode, setMode] = useState<AuthMode>(isPartnerMode ? "signup" : "signin");
+  const [mode, setMode] = useState<AuthMode>(
+    isPartnerMode ? "signup" : initialMode === "forgot" ? "forgot" : initialMode === "signup" ? "signup" : "signin"
+  );
   const [isLoading, setIsLoading] = useState(false);
   
   // Form fields
