@@ -66,6 +66,7 @@ const SupplierRiskCalculator = lazy(() => import("./pages/calculators/SupplierRi
 const EnergyTransitionCalculator = lazy(() => import("./pages/calculators/EnergyTransitionCalculator"));
 const LogisticsCalculator = lazy(() => import("./pages/calculators/LogisticsCalculator"));
 const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPricingCalculator"));
+const CloudEmissionsCalculator = lazy(() => import("./pages/calculators/CloudEmissionsCalculator"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -152,6 +153,7 @@ const App = () => (
               <Route path="/calculators/energy-transition-savings" element={<EnergyTransitionCalculator />} />
               <Route path="/calculators/logistics-emissions" element={<LogisticsCalculator />} />
               <Route path="/calculators/carbon-pricing-impact" element={<CarbonPricingCalculator />} />
+              <Route path="/calculators/cloud-data-centre-emissions" element={<CloudEmissionsCalculator />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
