@@ -54,6 +54,13 @@ const LayerBlock = ({
   </Card>
 );
 
+const OUTCOMES: Array<{ key: 'visibility' | 'verification' | 'supplyChain' | 'monetization'; label: string; outcome: string }> = [
+  { key: 'visibility', label: 'Becomes visible', outcome: 'Scope 1/2/3 split read out of documents already filed' },
+  { key: 'verification', label: 'Becomes defensible', outcome: 'Each figure carries its factor, source and evidence hash' },
+  { key: 'supplyChain', label: 'Becomes shareable', outcome: 'Buyer-facing Scope 3 record without exposing the invoices' },
+  { key: 'monetization', label: 'Becomes usable', outcome: 'Border cost, lender KPI or credit eligibility — stated, not assumed' },
+];
+
 export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
   const pipeline = INDUSTRY_PIPELINES[industryId];
   if (!pipeline) return null;
@@ -72,11 +79,30 @@ export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
         </CardContent>
       </Card>
 
+      {/* Outcome strip — the four layers read as outcomes before the detail. */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {OUTCOMES.map((o, i) => {
+          const L = LAYERS[i];
+          const Icon = L.icon;
+          return (
+            <div key={o.key} className="rounded-lg border bg-card p-4">
+              <div className={`inline-flex p-1.5 rounded-md mb-3 ${L.tone}`}>
+                <Icon className="h-3.5 w-3.5" />
+              </div>
+              <div className="text-[11px] font-mono tracking-wider text-muted-foreground">{L.step}</div>
+              <div className="text-sm font-medium">{o.label}</div>
+              <p className="text-xs text-muted-foreground leading-relaxed mt-1">{o.outcome}</p>
+            </div>
+          );
+        })}
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {LAYERS.map((l) => (
           <LayerBlock key={l.key} step={l.step} title={l.title} icon={l.icon} tone={l.tone} layer={pipeline[l.key]} />
         ))}
       </div>
+
 
       <Card className="bg-muted/30">
         <CardContent className="p-5">
