@@ -32,6 +32,7 @@ import {
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
 import { generateFrameworkPDF, generateFrameworkExcel, type ReportDataset } from '@/lib/frameworkReports';
+import { analyticsEvents } from '@/lib/analytics';
 import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 
@@ -268,7 +269,10 @@ const Reports = () => {
       const ok = kind === 'pdf'
         ? generateFrameworkPDF(fwId, dataset)
         : generateFrameworkExcel(fwId, dataset);
-      if (ok) toast.success(`${FRAMEWORKS[fwId]?.shortName} report downloaded`);
+      if (ok) {
+        analyticsEvents.reportExport(fwId, kind);
+        toast.success(`${FRAMEWORKS[fwId]?.shortName} report downloaded`);
+      }
       else toast.error('Unknown framework');
     } catch (err) {
       console.error('Framework report error:', err);

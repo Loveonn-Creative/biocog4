@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 import { Badge } from "@/components/ui/badge";
+import { analyticsEvents } from "@/lib/analytics";
 
 type AuthMode = "signin" | "signup" | "forgot";
 
@@ -114,6 +115,7 @@ const Auth = () => {
         
         if (data.user) {
           const redirectPath = await getRedirectPath(data.user.id);
+          analyticsEvents.login('password');
           toast.success("Welcome back! Redirecting...");
           navigate(redirectPath);
         }
@@ -148,6 +150,7 @@ const Auth = () => {
         }
         
         if (data.user) {
+          analyticsEvents.signUp('password', isPartnerMode ? 'partner' : 'msme');
           // Update profile with additional data
           const { error: profileError } = await supabase
             .from('profiles')

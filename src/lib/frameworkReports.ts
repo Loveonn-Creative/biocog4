@@ -9,6 +9,7 @@
 
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import { buildSupplierLedger, summariseCoverage, TIER_LABEL } from '@/lib/supplierLedger';
 import {
   FRAMEWORKS,
   assessFramework,
@@ -241,6 +242,54 @@ const evidenceSection = (ds: ReportDataset): Section => ({
   note: ds.evidence.length > 200 ? `Showing first 200 of ${ds.evidence.length} evidence records.` : undefined,
 });
 
+/**
+ * Scope 3 supplier annex — the same verified evidence, grouped by counterparty.
+ * Suppliers without usable evidence are listed as declared gaps rather than
+ * estimated, so a buyer or auditor can see exactly what is covered.
+ */
+const supplierAnnexSection = (ds: ReportDataset): Section | null => {
+  const suppliers = buildSupplierLedger(
+    ds.evidence.map((e) => ({
+      vendor: e.vendor,
+      invoiceDate: e.invoiceDate,
+      amount: null,
+      currency: null,
+      co2Kg: e.co2Kg,
+      scope: e.scope,
+      category: e.category,
+      hsnCode: null,
+      factorSource: e.factorSource,
+      verificationStatus: e.verificationStatus,
+      documentHash: e.documentHash,
+    })),
+  );
+  if (suppliers.length === 0) return null;
+
+  const coverage = summariseCoverage(suppliers);
+  const scope3Total = suppliers.reduce((t, s) => t + s.scope3Co2Kg, 0);
+
+  return {
+    kind: 'table',
+    title: 'Scope 3 supplier annex',
+    head: ['Supplier', 'Documents', 'Verified', 'tCO2e', 'Share of Scope 3', 'Evidence basis'],
+    rows: suppliers.slice(0, 100).map((s) => [
+      s.name,
+      s.documentCount,
+      s.verifiedCount,
+      tL(s.co2Kg, ds.locale),
+      pctL(s.scope3Co2Kg, scope3Total, ds.locale),
+      TIER_LABEL[s.tier],
+    ]),
+    note:
+      `${coverage.supplierCount} suppliers identified from the entity's own documents; ` +
+      `${coverage.evidencedCount} carry usable evidence. ` +
+      `Verified share of supplier-attributed emissions: ${coverage.emissionsCoveragePct.toFixed(1)}%. ` +
+      'Suppliers with no verified document are reported as coverage gaps and are not estimated.' +
+      (suppliers.length > 100 ? ` Showing the first 100 of ${suppliers.length} suppliers.` : ''),
+  };
+};
+
+
 const verificationSection = (ds: ReportDataset): Section => ({
   kind: 'kv',
   title: 'Verification status',
@@ -308,7 +357,14 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
   const note = (title: string, body: string): Section => ({ kind: 'text', title, body });
 
   /** Standard tail every framework view shares. */
-  const tail: Section[] = [common.index, common.quality, common.verification, common.evidence];
+  const supplierAnnex = ds.scope3Kg > 0 ? supplierAnnexSection(ds) : null;
+  const tail: Section[] = [
+    common.index,
+    common.quality,
+    ...(supplierAnnex ? [supplierAnnex] : []),
+    common.verification,
+    common.evidence,
+  ];
 
   const supersededNote = assessment.framework.supersededBy
     ? [note('Standard status', assessment.framework.note || '')]

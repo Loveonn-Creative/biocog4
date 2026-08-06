@@ -15,6 +15,7 @@ import {
   type CloudWorkload, type CloudEmissionsResult, type CloudProvider, type StorageType,
 } from "@/lib/calculators/cloudEmissionsEngine";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { analyticsEvents } from "@/lib/analytics";
 
 const uid = () => Math.random().toString(36).slice(2, 9);
 const newWorkload = (): CloudWorkload => ({
@@ -42,6 +43,7 @@ const CloudEmissionsCalculator = () => {
   const usable = workloads.filter(hasUsage);
 
   const calculate = () => {
+    analyticsEvents.calculatorRunStart("cloud-data-centre-emissions");
     if (usable.length === 0) {
       setResult(null);
       setBlocked("Each workload needs at least one usage quantity — vCPU-hours, memory GB-hours, storage, or network transfer. Without a measured quantity there is no energy to convert, and no emissions figure can be produced.");

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Eye, ShieldCheck, Network, Coins, BookOpen, AlertCircle } from 'lucide-react';
+import { Eye, ShieldCheck, Network, Coins, BookOpen, AlertCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { INDUSTRY_PIPELINES, type PipelineLayer } from '@/data/industryPipeline';
 
 const LAYERS: Array<{
@@ -54,6 +55,13 @@ const LayerBlock = ({
   </Card>
 );
 
+const OUTCOMES: Array<{ key: 'visibility' | 'verification' | 'supplyChain' | 'monetization'; label: string; outcome: string }> = [
+  { key: 'visibility', label: 'Becomes visible', outcome: 'Scope 1/2/3 split read out of documents already filed' },
+  { key: 'verification', label: 'Becomes defensible', outcome: 'Each figure carries its factor, source and evidence hash' },
+  { key: 'supplyChain', label: 'Becomes shareable', outcome: 'Buyer-facing Scope 3 record without exposing the invoices' },
+  { key: 'monetization', label: 'Becomes usable', outcome: 'Border cost, lender KPI or credit eligibility — stated, not assumed' },
+];
+
 export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
   const pipeline = INDUSTRY_PIPELINES[industryId];
   if (!pipeline) return null;
@@ -72,11 +80,30 @@ export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
         </CardContent>
       </Card>
 
+      {/* Outcome strip — the four layers read as outcomes before the detail. */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {OUTCOMES.map((o, i) => {
+          const L = LAYERS[i];
+          const Icon = L.icon;
+          return (
+            <div key={o.key} className="rounded-lg border bg-card p-4">
+              <div className={`inline-flex p-1.5 rounded-md mb-3 ${L.tone}`}>
+                <Icon className="h-3.5 w-3.5" />
+              </div>
+              <div className="text-[11px] font-mono tracking-wider text-muted-foreground">{L.step}</div>
+              <div className="text-sm font-medium">{o.label}</div>
+              <p className="text-xs text-muted-foreground leading-relaxed mt-1">{o.outcome}</p>
+            </div>
+          );
+        })}
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {LAYERS.map((l) => (
           <LayerBlock key={l.key} step={l.step} title={l.title} icon={l.icon} tone={l.tone} layer={pipeline[l.key]} />
         ))}
       </div>
+
 
       <Card className="bg-muted/30">
         <CardContent className="p-5">
@@ -97,6 +124,44 @@ export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
           </p>
         </CardContent>
       </Card>
+
+      {/* Where the sector goes next: decarbonization → evidence → use. */}
+      <Card>
+        <CardContent className="p-5 grid md:grid-cols-3 gap-5">
+          {[
+            {
+              title: 'Decarbonization levers',
+              body: 'The levers worth acting on are the ones your own documents already point at — the largest verified line, not a generic checklist.',
+              href: '/net-zero',
+              cta: 'Set a baseline and target',
+            },
+            {
+              title: 'Certification-ready evidence',
+              body: 'The same verified dataset produces the framework a buyer, lender or regulator asked for, with gaps declared rather than filled.',
+              href: '/reports',
+              cta: 'See report frameworks',
+            },
+            {
+              title: 'Where the number is used',
+              body: 'Disclosure-grade data lowers border and financing cost; credit-grade data is a separate, stricter test the platform states plainly.',
+              href: '/climate-finance',
+              cta: 'Finance and credit pathways',
+            },
+          ].map((b) => (
+            <div key={b.title} className="space-y-2">
+              <div className="text-sm font-medium">{b.title}</div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{b.body}</p>
+              <Link
+                to={b.href}
+                className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+              >
+                {b.cta} <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </section>
+
   );
 };

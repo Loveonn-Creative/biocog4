@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { MinimalNav } from "@/components/MinimalNav";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 import { supabase } from "@/integrations/supabase/client";
+import { analyticsEvents } from "@/lib/analytics";
 
 type LinkState = "checking" | "valid" | "invalid" | "done";
 
@@ -83,6 +84,7 @@ const ResetPassword = () => {
       }
 
       setLinkState("done");
+      analyticsEvents.passwordResetComplete();
       toast.success("Password updated. Signing you in…");
 
       const { data: { user } } = await supabase.auth.getUser();
