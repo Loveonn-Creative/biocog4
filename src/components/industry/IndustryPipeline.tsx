@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Eye, ShieldCheck, Network, Coins, BookOpen, AlertCircle } from 'lucide-react';
+import { Eye, ShieldCheck, Network, Coins, BookOpen, AlertCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { INDUSTRY_PIPELINES, type PipelineLayer } from '@/data/industryPipeline';
 
 const LAYERS: Array<{
@@ -123,6 +124,44 @@ export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
           </p>
         </CardContent>
       </Card>
+
+      {/* Where the sector goes next: decarbonization → evidence → use. */}
+      <Card>
+        <CardContent className="p-5 grid md:grid-cols-3 gap-5">
+          {[
+            {
+              title: 'Decarbonization levers',
+              body: 'The levers worth acting on are the ones your own documents already point at — the largest verified line, not a generic checklist.',
+              href: '/net-zero',
+              cta: 'Set a baseline and target',
+            },
+            {
+              title: 'Certification-ready evidence',
+              body: 'The same verified dataset produces the framework a buyer, lender or regulator asked for, with gaps declared rather than filled.',
+              href: '/reports',
+              cta: 'See report frameworks',
+            },
+            {
+              title: 'Where the number is used',
+              body: 'Disclosure-grade data lowers border and financing cost; credit-grade data is a separate, stricter test the platform states plainly.',
+              href: '/climate-finance',
+              cta: 'Finance and credit pathways',
+            },
+          ].map((b) => (
+            <div key={b.title} className="space-y-2">
+              <div className="text-sm font-medium">{b.title}</div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{b.body}</p>
+              <Link
+                to={b.href}
+                className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+              >
+                {b.cta} <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
     </section>
+
   );
 };
