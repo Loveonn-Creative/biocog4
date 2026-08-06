@@ -357,7 +357,14 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
   const note = (title: string, body: string): Section => ({ kind: 'text', title, body });
 
   /** Standard tail every framework view shares. */
-  const tail: Section[] = [common.index, common.quality, common.verification, common.evidence];
+  const supplierAnnex = ds.scope3Kg > 0 ? supplierAnnexSection(ds) : null;
+  const tail: Section[] = [
+    common.index,
+    common.quality,
+    ...(supplierAnnex ? [supplierAnnex] : []),
+    common.verification,
+    common.evidence,
+  ];
 
   const supersededNote = assessment.framework.supersededBy
     ? [note('Standard status', assessment.framework.note || '')]
