@@ -12,10 +12,10 @@ import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
-import { analyticsEvents } from "@/lib/analytics";
   SPEND_EF_BY_SECTOR, COUNTRY_RISK,
   calculateSupplierPortfolio, type SupplierInput, type SupplierPortfolioResult, type SupplierTier,
 } from "@/lib/calculators/supplierRiskEngine";
+import { analyticsEvents } from "@/lib/analytics";
 
 const uid = () => Math.random().toString(36).slice(2, 9);
 
