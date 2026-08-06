@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 import { Badge } from "@/components/ui/badge";
+import { analyticsEvents } from "@/lib/analytics";
 
 type AuthMode = "signin" | "signup" | "forgot";
 
