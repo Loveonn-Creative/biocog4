@@ -18,6 +18,7 @@ import { usePremiumStatus } from "@/hooks/usePremiumStatus";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { stashRerun } from "@/hooks/useCalculatorRerun";
+import { analyticsEvents } from "@/lib/analytics";
 
 interface Run {
   id: string;
