@@ -20,6 +20,7 @@ import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
+import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
 import { 
   generateIntelligentRecommendations, 
   getTotalImpact,
@@ -721,6 +722,11 @@ const MRVDashboard = () => {
             </div>
           </>
         )}
+
+        {/* Scope 3 supplier visibility */}
+        <div className="mt-6">
+          <SupplierCoveragePanel />
+        </div>
 
         {/* Enterprise Mode Panels */}
         {isEnterprise && emissions.length > 0 && (
