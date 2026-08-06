@@ -12,6 +12,7 @@ import { MethodologyPanel } from "@/components/calculators/MethodologyPanel";
 import { useCalculatorAutosave } from "@/hooks/useCalculatorAutosave";
 import { useCalculatorRerun } from "@/hooks/useCalculatorRerun";
 import {
+import { analyticsEvents } from "@/lib/analytics";
   SPEND_EF_BY_SECTOR, COUNTRY_RISK,
   calculateSupplierPortfolio, type SupplierInput, type SupplierPortfolioResult, type SupplierTier,
 } from "@/lib/calculators/supplierRiskEngine";
@@ -32,7 +33,7 @@ const SupplierRiskCalculator = () => {
     setSuppliers(suppliers.map(s => s.id === id ? { ...s, ...patch } : s));
   };
 
-  const calculate = () => setResult(calculateSupplierPortfolio(suppliers.filter(s => s.name.trim())));
+  const calculate = () => { analyticsEvents.calculatorRunStart("supplier-emissions-risk"); return ( setResult(calculateSupplierPortfolio(suppliers.filter(s => s.name.trim())))); };
 
   const riskBadge = (score: number) =>
     score >= 70 ? <Badge variant="destructive">High</Badge>

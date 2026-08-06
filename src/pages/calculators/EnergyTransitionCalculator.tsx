@@ -14,6 +14,7 @@ import {
   type EnergyInput, type EnergyResult, type EnergyScenario,
 } from "@/lib/calculators/energyTransitionEngine";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { analyticsEvents } from "@/lib/analytics";
 
 const EnergyTransitionCalculator = () => {
   const [country, setCountry] = useState('IN');
@@ -34,6 +35,7 @@ const EnergyTransitionCalculator = () => {
   const [result, setResult] = useState<EnergyResult | null>(null);
 
   const calculate = () => {
+    analyticsEvents.calculatorRunStart("energy-transition-savings");
     const input: EnergyInput = {
       countryCode: country, monthlyKwh: parseFloat(monthlyKwh) || 0,
       currentTariff: parseFloat(tariff) || 0, systemKwp: parseFloat(systemKwp) || 0,

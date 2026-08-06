@@ -15,6 +15,7 @@ import {
   type FreightLeg, type LogisticsResult, type TransportMode,
 } from "@/lib/calculators/logisticsEngine";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { analyticsEvents } from "@/lib/analytics";
 
 const uid = () => Math.random().toString(36).slice(2, 9);
 const newLeg = (): FreightLeg => ({ id: uid(), mode: 'road-articulated', weightTonnes: 0, distanceKm: 0, emptyReturnFactor: 0 });
@@ -29,6 +30,7 @@ const LogisticsCalculator = () => {
   const usableLegs = legs.filter(l => l.weightTonnes > 0 && l.distanceKm > 0);
 
   const calculate = () => {
+    analyticsEvents.calculatorRunStart("logistics-emissions");
     if (usableLegs.length === 0) {
       setResult(null);
       setBlocked("Each leg needs a weight above 0 tonnes and a distance above 0 km. Without both, tonne-kilometres cannot be computed and no emissions figure can be produced.");
