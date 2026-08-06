@@ -9,6 +9,7 @@
 
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import { buildSupplierLedger, summariseCoverage, TIER_LABEL } from '@/lib/supplierLedger';
 import {
   FRAMEWORKS,
   assessFramework,
