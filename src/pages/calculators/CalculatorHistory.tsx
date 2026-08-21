@@ -18,7 +18,6 @@ import { usePremiumStatus } from "@/hooks/usePremiumStatus";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { stashRerun } from "@/hooks/useCalculatorRerun";
-import { analyticsEvents } from "@/lib/analytics";
 
 interface Run {
   id: string;
@@ -135,14 +134,12 @@ const CalculatorHistory = () => {
 
   const exportCsv = (rows: Run[], name: string) => {
     if (!rows.length) return;
-    analyticsEvents.calculatorExport(rows[0].calculator_slug, 'csv');
     download(`${name}-${new Date().toISOString().slice(0, 10)}.csv`, toCsv(rows.map(flatRowFor)));
     toast({ title: "Exported", description: `${rows.length} run(s) downloaded as CSV.` });
   };
 
   const exportJson = (rows: Run[], name: string) => {
     if (!rows.length) return;
-    analyticsEvents.calculatorExport(rows[0].calculator_slug, 'json');
     const payload = rows.map(r => ({
       id: r.id,
       calculator: SLUG_TITLES[r.calculator_slug] || r.calculator_slug,

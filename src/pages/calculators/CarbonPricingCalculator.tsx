@@ -15,7 +15,6 @@ import {
   type CarbonPricingInput, type CarbonPricingResult, type PriceScenario,
 } from "@/lib/calculators/carbonPricingEngine";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, BarChart, Bar } from "recharts";
-import { analyticsEvents } from "@/lib/analytics";
 
 const CarbonPricingCalculator = () => {
   const [scope1, setScope1] = useState('100000');
@@ -33,7 +32,6 @@ const CarbonPricingCalculator = () => {
   const [result, setResult] = useState<CarbonPricingResult | null>(null);
 
   const calculate = () => {
-    analyticsEvents.calculatorRunStart("carbon-pricing-impact");
     const input: CarbonPricingInput = {
       scope1KgCO2e: parseFloat(scope1) || 0,
       scope2KgCO2e: parseFloat(scope2) || 0,

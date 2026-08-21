@@ -11,10 +11,6 @@ import { Loader2 } from "lucide-react";
 // Eagerly load critical pages
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
-import { AnalyticsTracker } from "./components/AnalyticsTracker";
-import { RequireAuth } from "./components/RequireAuth";
-
-const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
 // Lazy load other pages for performance
 const Mission = lazy(() => import("./pages/Mission"));
@@ -66,7 +62,6 @@ const SupplierRiskCalculator = lazy(() => import("./pages/calculators/SupplierRi
 const EnergyTransitionCalculator = lazy(() => import("./pages/calculators/EnergyTransitionCalculator"));
 const LogisticsCalculator = lazy(() => import("./pages/calculators/LogisticsCalculator"));
 const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPricingCalculator"));
-const CloudEmissionsCalculator = lazy(() => import("./pages/calculators/CloudEmissionsCalculator"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -96,24 +91,22 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <AnalyticsTracker />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/reset-password" element={<ResetPassword />} />
-              <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
-              <Route path="/history" element={<RequireAuth><History /></RequireAuth>} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/history" element={<History />} />
               <Route path="/verify" element={<Verify />} />
               <Route path="/monetize" element={<Monetize />} />
-              <Route path="/reports" element={<RequireAuth><Reports /></RequireAuth>} />
-              <Route path="/mrv-dashboard" element={<RequireAuth><MRVDashboard /></RequireAuth>} />
-              <Route path="/partner" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
-              <Route path="/partner-dashboard" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
-              <Route path="/settings" element={<RequireAuth><Settings /></RequireAuth>} />
-              <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
-              <Route path="/partner-profile" element={<RequireAuth><PartnerProfile /></RequireAuth>} />
-              <Route path="/subscription" element={<RequireAuth><Subscription /></RequireAuth>} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/mrv-dashboard" element={<MRVDashboard />} />
+              <Route path="/partner" element={<PartnerDashboard />} />
+              <Route path="/partner-dashboard" element={<PartnerDashboard />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/partner-profile" element={<PartnerProfile />} />
+              <Route path="/subscription" element={<Subscription />} />
               <Route path="/mission" element={<Mission />} />
               <Route path="/about" element={<About />} />
               <Route path="/principles" element={<Principles />} />
@@ -131,12 +124,12 @@ const App = () => (
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/marketplace" element={<PartnerMarketplace />} />
               <Route path="/cms-admin" element={<CMSAdmin />} />
-              <Route path="/billing" element={<RequireAuth><Billing /></RequireAuth>} />
-              <Route path="/team" element={<RequireAuth><Team /></RequireAuth>} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/team" element={<Team />} />
               <Route path="/partners" element={<Partners />} />
               <Route path="/accept-invite" element={<AcceptInvite />} />
               <Route path="/partner-marketplace" element={<PartnerMarketplace />} />
-              <Route path="/partner-reports" element={<RequireAuth><PartnerReports /></RequireAuth>} />
+              <Route path="/partner-reports" element={<PartnerReports />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
@@ -153,7 +146,6 @@ const App = () => (
               <Route path="/calculators/energy-transition-savings" element={<EnergyTransitionCalculator />} />
               <Route path="/calculators/logistics-emissions" element={<LogisticsCalculator />} />
               <Route path="/calculators/carbon-pricing-impact" element={<CarbonPricingCalculator />} />
-              <Route path="/calculators/cloud-data-centre-emissions" element={<CloudEmissionsCalculator />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

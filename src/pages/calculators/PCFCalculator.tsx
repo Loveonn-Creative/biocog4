@@ -14,7 +14,6 @@ import {
   calculatePCF, type PCFInput, type PCFResult, type MaterialLine, type EnergyLine, type TransportLine, type ProcessingLine, type AllocationMethod, type SystemBoundary,
 } from "@/lib/calculators/pcfEngine";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
-import { analyticsEvents } from "@/lib/analytics";
 
 const uid = () => Math.random().toString(36).slice(2, 9);
 
@@ -33,7 +32,6 @@ const PCFCalculatorPage = () => {
   const [result, setResult] = useState<PCFResult | null>(null);
 
   const calculate = () => {
-    analyticsEvents.calculatorRunStart("product-carbon-footprint");
     const input: PCFInput = {
       productName: productName || 'Unnamed product',
       functionalUnit,
