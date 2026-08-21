@@ -14,7 +14,7 @@ import { QuickActions } from '@/components/dashboard/QuickActions';
 import { MonetizationPanel } from '@/components/dashboard/MonetizationPanel';
 import { VerificationStatusCard } from '@/components/dashboard/VerificationStatusCard';
 import { Helmet } from 'react-helmet-async';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -27,6 +27,20 @@ import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseCo
 import { computeCredibilityScore } from '@/lib/credibilityScore';
 import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
+import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
+import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
+import {
+  DEFAULT_FILTERS,
+  resolveWindow,
+  applyFilters,
+  totals as computeTotals,
+  periodDelta,
+  topCategories,
+  monthlySeries,
+  evidenceCompleteness,
+  allCategories,
+  type DashboardFilters,
+} from '@/lib/dashboardAnalytics';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -50,24 +64,59 @@ const Dashboard = () => {
   const verifiedEmissions = getVerifiedEmissions();
   const isGuestUser = !user && sessionId;
 
-  // Profile Intelligence
-  const [profileInput, setProfileInput] = useState<any>(null);
+  // Profile Intelligence — read from stored records, never localStorage, so the
+  // same signals appear on every device the user signs in from.
+  const [profileRecord, setProfileRecord] = useState<{
+    location: string; sector: string; size: string; exportsToEU: boolean; hasNetZeroTarget: boolean;
+  } | null>(null);
+
   useEffect(() => {
-    const stored = localStorage.getItem('senseible_profile_triggers');
-    const profileStored = localStorage.getItem('senseible_company_profile');
-    const triggers = stored ? JSON.parse(stored) : {};
-    const companyProfile = profileStored ? JSON.parse(profileStored) : {};
-    setProfileInput({
-      location: companyProfile.location || 'India',
-      sector: companyProfile.sector || 'manufacturing',
-      size: companyProfile.size || 'small',
-      exportsToEU: triggers.exportsToEU || false,
-      seekingFinance: triggers.seekingFinance ?? true,
-      hasNetZeroTarget: triggers.hasNetZeroTarget || false,
-      totalCO2Kg: summary.total,
-      verifiedCount: verifiedEmissions.length,
-    });
-  }, [summary.total, verifiedEmissions.length]);
+    let cancelled = false;
+    const load = async () => {
+      if (!user?.id) { if (!cancelled) setProfileRecord(null); return; }
+      const [profileRes, docRes, goalRes] = await Promise.all([
+        supabase.from('profiles').select('location, sector, size').eq('id', user.id).maybeSingle(),
+        supabase.from('documents').select('currency').eq('user_id', user.id).limit(200),
+        supabase.from('net_zero_goals').select('id').eq('user_id', user.id).limit(1),
+      ]);
+      if (cancelled) return;
+      setProfileRecord({
+        location: profileRes.data?.location || 'India',
+        sector: profileRes.data?.sector || 'manufacturing',
+        size: profileRes.data?.size || 'small',
+        exportsToEU: (docRes.data ?? []).some(d => (d.currency || '').toUpperCase() === 'EUR'),
+        hasNetZeroTarget: (goalRes.data ?? []).length > 0,
+      });
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [user?.id]);
+
+  const profileInput = useMemo(() => profileRecord ? {
+    ...profileRecord,
+    seekingFinance: true,
+    totalCO2Kg: summary.total,
+    verifiedCount: verifiedEmissions.length,
+  } : null, [profileRecord, summary.total, verifiedEmissions.length]);
+
+  // ---- Decision-intelligence layer: filtering and period analysis over the
+  // records already loaded. Display only; no factor or methodology is applied.
+  const [filters, setFilters] = useState<DashboardFilters>(DEFAULT_FILTERS);
+
+  const analytics = useMemo(() => {
+    const win = resolveWindow(filters.range);
+    const rows = applyFilters(emissions, filters, win);
+    return {
+      rows,
+      totals: computeTotals(rows),
+      delta: periodDelta(emissions, filters, win),
+      categories: topCategories(rows),
+      series: monthlySeries(rows, win),
+      completeness: evidenceCompleteness(rows),
+    };
+  }, [emissions, filters]);
+
+  const categoryOptions = useMemo(() => allCategories(emissions), [emissions]);
 
   const { alerts } = useProfileIntelligence(profileInput);
 
@@ -221,7 +270,7 @@ const Dashboard = () => {
               )}
             </div>
             <p className="text-muted-foreground">
-              Track your emissions, verify data, and unlock monetization opportunities.
+              Decision view over your verified records. Capture and verification happen in the MRV workspace.
             </p>
           </div>
           
@@ -283,6 +332,27 @@ const Dashboard = () => {
             <div className="animate-pulse text-muted-foreground">Loading your data...</div>
           </div>
         ) : (
+          <>
+          {emissions.length > 0 && (
+            <>
+              <DashboardFilterBar
+                filters={filters}
+                categories={categoryOptions}
+                matchedCount={analytics.rows.length}
+                totalCount={emissions.length}
+                onChange={setFilters}
+              />
+              <div className="mb-6">
+                <DashboardIntelligence
+                  range={filters.range}
+                  totals={analytics.totals}
+                  delta={analytics.delta}
+                  categories={analytics.categories}
+                  completeness={analytics.completeness}
+                />
+              </div>
+            </>
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Summary & Trend */}
             <div className="lg:col-span-2 space-y-6">
@@ -328,7 +398,7 @@ const Dashboard = () => {
                 </div>
               )}
 
-              <TrendChart data={summary.monthlyTrend} />
+              <TrendChart data={analytics.series.length > 0 ? analytics.series : summary.monthlyTrend} />
             </div>
 
             {/* Right Column - Actions & Recent */}
@@ -344,6 +414,7 @@ const Dashboard = () => {
               <RecentDocuments documents={documents.slice(0, 5)} />
             </div>
           </div>
+          </>
         )}
 
         {/* Enterprise Mode Panels — Only visible when toggle is ON */}

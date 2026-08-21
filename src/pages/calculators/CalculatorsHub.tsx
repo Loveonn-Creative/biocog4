@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Search, Globe, Truck, Factory, TrendingDown, Coins, Leaf, Building2, Zap, FileText } from "lucide-react";
+import { Calculator, Search, Globe, Truck, Factory, TrendingDown, Coins, Leaf, Building2, Zap, FileText, Server } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -26,6 +26,7 @@ const CALCULATORS: CalcCard[] = [
   { href: '/calculators/energy-transition-savings', title: 'Energy Transition Savings', description: 'Solar / PPA / hybrid ROI, payback, IRR, NPV and CO₂ avoided.', category: 'Finance', icon: Zap, keywords: 'solar roi payback ppa renewable mnre iea', standard: 'MNRE / IEA' },
   { href: '/calculators/logistics-emissions', title: 'Logistics & Freight Emissions', description: 'Road, rail, sea, air emissions across multimodal legs.', category: 'Operations', icon: Truck, keywords: 'logistics freight transport glec iso 14083 multimodal', standard: 'GLEC v3.0' },
   { href: '/calculators/carbon-pricing-impact', title: 'Carbon Pricing Impact', description: 'EU ETS + CBAM cost exposure 2026–2034 with sensitivity.', category: 'Finance', icon: Coins, keywords: 'carbon price ets cbam tax exposure liability', standard: 'EU ETS / CBAM' },
+  { href: '/calculators/cloud-data-centre-emissions', title: 'Cloud & Data Centre Emissions', description: 'Server, cloud and data-centre emissions by region. Location and market-based.', category: 'Operations', icon: Server, keywords: 'cloud emissions data centre server scope 2 pue aws azure gcp', standard: 'GHGP Scope 2' },
   { href: '/cbam-calculator', title: 'CBAM Cost Estimator', description: 'EU CBAM cost for steel, aluminium, cement, fertilizers.', category: 'Compliance', icon: Globe, keywords: 'cbam eu carbon border adjustment 2026', standard: 'EU 2023/956' },
   { href: '/net-zero', title: 'Net-Zero Goal Engine', description: '5-step journey from baseline to verified net-zero plan.', category: 'Reporting', icon: TrendingDown, keywords: 'net zero baseline reduction roadmap', standard: 'SBTi-aligned' },
   { href: '/industries', title: 'Scope 2 Quick Estimator', description: 'Monthly kWh → tCO₂e using country grid factor.', category: 'Operations', icon: Leaf, keywords: 'scope 2 electricity grid factor estimator', standard: 'IEA 2023' },

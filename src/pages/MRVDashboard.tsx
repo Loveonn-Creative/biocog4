@@ -20,6 +20,7 @@ import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
+import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
 import { 
   generateIntelligentRecommendations, 
   getTotalImpact,
@@ -45,17 +46,6 @@ interface VerificationRecord {
     recommendations?: string[];
     scopeBreakdown?: { scope1: number; scope2: number; scope3: number };
   } | null;
-}
-
-interface GreenAction {
-  id: string;
-  type: 'recycling' | 'solar' | 'efficiency' | 'renewable';
-  title: string;
-  description: string;
-  icon: typeof Recycle;
-  potentialReduction: number;
-  incentiveValue: number;
-  eligibleEvenIfNotCompliant: boolean;
 }
 
 const MRVDashboard = () => {
@@ -141,7 +131,7 @@ const MRVDashboard = () => {
       return {
         carbonScore: 0,
         confidenceScore: 0,
-        greenScore: 0,
+        greenScore: null as number | null,
         totalCredits: 0,
         qualityGrade: 'D',
         trend: 'stable' as const,
@@ -154,6 +144,7 @@ const MRVDashboard = () => {
     let weightedConfidence = 0;
     let weightedGreenScore = 0;
     let totalWeight = 0;
+    let greenWeight = 0;
     let totalCredits = 0;
     let carryForward = 0;
 
@@ -163,26 +154,32 @@ const MRVDashboard = () => {
       
       weightedCarbonScore += ((v.verification_score || 0) * 100) * weight;
       weightedConfidence += (v.verification_status === 'verified' ? 100 : v.verification_status === 'needs_review' ? 60 : 30) * weight;
-      weightedGreenScore += (v.ai_analysis?.greenScore || 50) * weight;
+      if (typeof v.ai_analysis?.greenScore === 'number') {
+        weightedGreenScore += v.ai_analysis.greenScore * weight;
+        greenWeight += weight;
+      }
       totalCredits += v.ai_analysis?.creditEligibility?.eligibleCredits || 0;
       carryForward += v.ai_analysis?.creditEligibility?.carryForward || 0;
     });
 
     const carbonScore = totalWeight > 0 ? Math.round(weightedCarbonScore / totalWeight) : 0;
     const confidenceScore = totalWeight > 0 ? Math.round(weightedConfidence / totalWeight) : 0;
-    const greenScore = totalWeight > 0 ? Math.round(weightedGreenScore / totalWeight) : 50;
+    // Only scored verifications contribute. With none, the score is reported
+    // as unavailable rather than defaulted to a mid-point.
+    const greenScore = greenWeight > 0 ? Math.round(weightedGreenScore / greenWeight) : null;
 
     // Determine quality grade from most recent verification
     const latestGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
 
     // Calculate trend (comparing recent vs older verifications)
     let trend: 'improving' | 'declining' | 'stable' = 'stable';
-    if (verifications.length >= 2) {
-      const recentAvg = verifications.slice(0, Math.ceil(verifications.length / 2))
-        .reduce((sum, v) => sum + (v.ai_analysis?.greenScore || 50), 0) / Math.ceil(verifications.length / 2);
-      const olderAvg = verifications.slice(Math.ceil(verifications.length / 2))
-        .reduce((sum, v) => sum + (v.ai_analysis?.greenScore || 50), 0) / (verifications.length - Math.ceil(verifications.length / 2));
-      
+    const scored = verifications.filter(v => typeof v.ai_analysis?.greenScore === 'number');
+    if (scored.length >= 2) {
+      const half = Math.ceil(scored.length / 2);
+      const avg = (arr: typeof scored) =>
+        arr.reduce((sum, v) => sum + (v.ai_analysis!.greenScore as number), 0) / arr.length;
+      const recentAvg = avg(scored.slice(0, half));
+      const olderAvg = avg(scored.slice(half));
       if (recentAvg > olderAvg + 5) trend = 'improving';
       else if (recentAvg < olderAvg - 5) trend = 'declining';
     }
@@ -194,8 +191,9 @@ const MRVDashboard = () => {
       totalCredits: totalCredits + Math.floor(carryForward),
       qualityGrade: latestGrade,
       trend,
-      improvementRate: verifications.length >= 2 
-        ? Math.round(((verifications[0].ai_analysis?.greenScore || 50) - (verifications[verifications.length - 1].ai_analysis?.greenScore || 50)) / verifications.length)
+      improvementRate: scored.length >= 2
+        ? Math.round((((scored[0].ai_analysis!.greenScore as number) -
+            (scored[scored.length - 1].ai_analysis!.greenScore as number)) / scored.length))
         : 0,
     };
   }, [verifications]);
@@ -204,50 +202,6 @@ const MRVDashboard = () => {
   const latestAnalysis = verifications[0]?.ai_analysis;
   const latestStatus = verifications[0]?.verification_status;
   const greenwashingRisk = verifications[0]?.greenwashing_risk;
-
-  // Green actions available even for non-compliant users
-  const greenActions: GreenAction[] = [
-    {
-      id: 'recycling',
-      type: 'recycling',
-      title: 'Certified Recycling',
-      description: 'Get recycler certificates for waste materials to earn carbon credits',
-      icon: Recycle,
-      potentialReduction: summary.total * 0.1,
-      incentiveValue: Math.round(summary.total * 0.1 * 0.75), // ₹750/tCO₂e discounted
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'solar',
-      type: 'solar',
-      title: 'Solar Adoption',
-      description: 'Install rooftop solar with subsidized rates and REC certificates',
-      icon: Sun,
-      potentialReduction: summary.scope2 * 0.6,
-      incentiveValue: Math.round(summary.scope2 * 0.6 * 0.50), // Discounted incentive
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'efficiency',
-      type: 'efficiency',
-      title: 'Efficiency Upgrades',
-      description: 'IoT monitoring and energy-efficient equipment with green loans',
-      icon: Zap,
-      potentialReduction: summary.total * 0.15,
-      incentiveValue: Math.round(summary.total * 0.15 * 0.60),
-      eligibleEvenIfNotCompliant: true,
-    },
-    {
-      id: 'renewable',
-      type: 'renewable',
-      title: 'Renewable Energy PPA',
-      description: 'Power Purchase Agreements for wind/solar at lower rates',
-      icon: Leaf,
-      potentialReduction: summary.scope2 * 0.8,
-      incentiveValue: Math.round(summary.scope2 * 0.8 * 0.40),
-      eligibleEvenIfNotCompliant: false,
-    },
-  ];
 
   const formatNumber = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
   const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
@@ -297,7 +251,9 @@ const MRVDashboard = () => {
             <h1 className="text-3xl font-semibold tracking-tight">MRV Dashboard</h1>
           </div>
           <p className="text-muted-foreground">
-            Transparent measurement, reporting & verification with progress-based rewards
+            The operational workspace: capture evidence, resolve verification issues and keep the
+            record audit-ready. Trends, filters and period comparisons live on the{' '}
+            <Link to="/dashboard" className="text-primary hover:underline">Dashboard</Link>.
           </p>
         </div>
 
@@ -359,13 +315,24 @@ const MRVDashboard = () => {
                       <Leaf className="h-4 w-4 text-success" />
                     </div>
                   </div>
-                  <div className="text-3xl font-mono font-bold mb-2 text-gradient-success">
-                    {aggregatedMetrics.greenScore}<span className="text-lg text-muted-foreground">/100</span>
-                  </div>
-                  <Progress value={aggregatedMetrics.greenScore} className="h-2 bg-success/20" />
-                  <p className="text-xs text-muted-foreground mt-2">
-                    {aggregatedMetrics.trend === 'improving' ? '↑ Improving' : aggregatedMetrics.trend === 'declining' ? '↓ Needs attention' : '→ Stable'}
-                  </p>
+                  {aggregatedMetrics.greenScore === null ? (
+                    <>
+                      <div className="text-xl font-medium mb-2 text-muted-foreground">Not scored</div>
+                      <p className="text-xs text-muted-foreground">
+                        No verification has produced a green score yet.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-mono font-bold mb-2 text-gradient-success">
+                        {aggregatedMetrics.greenScore}<span className="text-lg text-muted-foreground">/100</span>
+                      </div>
+                      <Progress value={aggregatedMetrics.greenScore} className="h-2 bg-success/20" />
+                      <p className="text-xs text-muted-foreground mt-2">
+                        {aggregatedMetrics.trend === 'improving' ? '↑ Improving' : aggregatedMetrics.trend === 'declining' ? '↓ Needs attention' : '→ Stable'}
+                      </p>
+                    </>
+                  )}
                 </CardContent>
               </Card>
 
@@ -635,47 +602,70 @@ const MRVDashboard = () => {
 
               {/* Right Column - Green Actions */}
               <div className="space-y-6">
-                {/* Progress Rewards */}
-                <Card className="border-success/20 bg-gradient-to-br from-success/5 to-transparent">
+                {/* Evidence queue — operational, not analytical */}
+                <Card className="border-warning/20">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Award className="h-5 w-5 text-success" />
-                      Progress Rewards
+                      <FileCheck className="h-5 w-5 text-warning" />
+                      Evidence queue
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Earn value while improving — no need to be "perfect" to start monetizing.
-                    </p>
-                    <div className="space-y-3">
-                      {greenActions.filter(a => a.eligibleEvenIfNotCompliant || latestStatus === 'verified').map(action => (
-                        <div key={action.id} className="p-3 rounded-lg bg-background border border-border/50 hover:border-success/30 transition-colors">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="p-2 rounded-lg bg-success/10">
-                              <action.icon className="h-4 w-4 text-success" />
-                            </div>
-                            <div className="flex-1">
-                              <div className="font-medium text-sm">{action.title}</div>
-                              <div className="text-xs text-muted-foreground">{action.description}</div>
-                            </div>
+                    {(() => {
+                      const pending = emissions.filter(e => !e.verified);
+                      if (pending.length === 0) {
+                        return (
+                          <div className="text-sm text-muted-foreground">
+                            <p className="mb-4">
+                              Every emission record currently held carries a completed verification.
+                              Nothing is waiting on you.
+                            </p>
+                            <Button variant="outline" className="w-full" asChild>
+                              <Link to="/">Capture another document</Link>
+                            </Button>
                           </div>
-                          <div className="flex items-center justify-between text-xs">
-                            <span className="text-muted-foreground">
-                              Potential: {formatNumber(action.potentialReduction)} reduction
-                            </span>
-                            <span className="font-mono text-success font-medium">
-                              {formatCurrency(action.incentiveValue)}
-                            </span>
+                        );
+                      }
+                      const reason = (e: typeof pending[number]) => {
+                        if (e.activity_data === null || e.activity_data === undefined)
+                          return 'No activity quantity captured — the figure cannot be reproduced.';
+                        if (e.emission_factor === null || e.emission_factor === undefined)
+                          return 'No emission factor matched to this line.';
+                        return 'Awaiting verification.';
+                      };
+                      return (
+                        <>
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {pending.length} record{pending.length === 1 ? '' : 's'} not yet verified.
+                            Unverified lines are excluded from framework coverage.
+                          </p>
+                          <div className="space-y-2 mb-4">
+                            {pending.slice(0, 5).map(e => (
+                              <div key={e.id} className="p-3 rounded-lg bg-muted/30">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-sm font-medium truncate">{e.category}</span>
+                                  <span className="text-xs font-mono text-muted-foreground shrink-0">
+                                    Scope {e.scope} · {formatNumber(e.co2_kg)}
+                                  </span>
+                                </div>
+                                <p className="text-xs text-muted-foreground mt-1">{reason(e)}</p>
+                              </div>
+                            ))}
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                    <Button className="w-full mt-4" asChild>
-                      <Link to="/monetize">
-                        Explore All Options
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Link>
-                    </Button>
+                          {pending.length > 5 && (
+                            <p className="text-xs text-muted-foreground mb-3">
+                              and {pending.length - 5} more.
+                            </p>
+                          )}
+                          <Button className="w-full" asChild>
+                            <Link to="/verify">
+                              Run verification
+                              <ArrowRight className="h-4 w-4 ml-2" />
+                            </Link>
+                          </Button>
+                        </>
+                      );
+                    })()}
                   </CardContent>
                 </Card>
 
@@ -732,6 +722,11 @@ const MRVDashboard = () => {
             </div>
           </>
         )}
+
+        {/* Scope 3 supplier visibility */}
+        <div className="mt-6">
+          <SupplierCoveragePanel />
+        </div>
 
         {/* Enterprise Mode Panels */}
         {isEnterprise && emissions.length > 0 && (
