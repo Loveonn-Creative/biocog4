@@ -1477,6 +1477,7 @@ export type Database = {
         Args: { _partner_id: string; _user_id: string }
         Returns: boolean
       }
+      owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
