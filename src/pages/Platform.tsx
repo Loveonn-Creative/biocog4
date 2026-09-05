@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, FileCheck, Shield, Banknote, Target, Coins, Building2, Globe2 } from "lucide-react";
+import { ArrowRight, FileCheck, Shield, Banknote, Target, Coins, Building2, Globe2, BarChart3, Bot, Landmark, Workflow } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -31,6 +31,25 @@ const steps = [
   { n: "01", key: "capture", title: "Capture", body: "Drop a document, take a photo, or speak the data point. The first response arrives in under two seconds." },
   { n: "02", key: "verify", title: "Verify", body: "Every document is hashed, parsed, classified deterministically, and reconciled against country grid factors." },
   { n: "03", key: "use", title: "Use", body: "The verified record feeds your disclosure, your lender, your reduction roadmap, and — when eligible — your credits." },
+];
+
+const proofMetrics = [
+  { value: "29", label: "clusters", body: "Pilot footprint across operating clusters." },
+  { value: "11", label: "countries piloted", body: "Pilot coverage, stated separately from configured country support." },
+  { value: "92%", label: "benchmarking accuracy", body: "The confirmed benchmarking result." },
+];
+
+const proofPaths = [
+  { key: "textile", title: "Textile", body: "A named sector pathway from source documents to verified reporting and supplier visibility.", to: "/industries/textile" },
+  { key: "steel", title: "Steel", body: "A named sector pathway for evidence-led emissions visibility and downstream decisions.", to: "/industries/steel" },
+  { key: "logistics", title: "Logistics", body: "A named sector pathway connecting activity data to a usable climate record.", to: "/industries/logistics" },
+];
+
+const pricingSummary = [
+  { key: "snapshot", name: "Snapshot", price: "Free", detail: "AI emission snapshot, basic ESG score, 10 invoice scans per month, and 90-day data backup.", fit: "Start with the verification surface.", to: "/pricing" },
+  { key: "essential", name: "Essential", price: "₹499 / month yearly", detail: "₹1,999 monthly. Adds GST → Carbon Automation, a verified climate score, and 3 team members.", fit: "For a business building a repeatable record.", to: "/pricing" },
+  { key: "pro", name: "Pro", price: "₹4,999 / month yearly", detail: "₹9,999 monthly. Adds monetization setup, automated ESG reports, the verification ledger, and 10 team members.", fit: "For teams turning verified data into action.", to: "/pricing" },
+  { key: "scale", name: "Scale", price: "Custom team pricing", detail: "From ₹15,000 base + ₹99 per employee monthly equivalent on yearly billing; monthly billing is ₹30,000 + ₹198 per employee.", fit: "For larger teams, entities, and integrations.", to: "/pricing" },
 ];
 
 const Platform = () => {
@@ -66,6 +85,22 @@ const Platform = () => {
 
         {/* Marquee strip */}
         <PlatformMarquee />
+
+        {/* Positioning */}
+        <section className="border-b border-border py-16">
+          <div className="container max-w-5xl mx-auto px-6">
+            <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
+              <div>
+                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.positioning.eyebrow", "Built into Senseible")}</div>
+                <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises.")}</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">{t("platform.positioning.body", "The same evidence layer that helps a business verify its own activity can give an enterprise a clearer view of supplier coverage, gaps, and reporting readiness.")}</p>
+              </div>
+              <div className="border-l-2 border-primary/30 pl-5 text-sm text-muted-foreground leading-relaxed">
+                {t("platform.positioning.note", "One platform, from source document to decision. No separate narrative is required for each downstream use.")}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* What is Senseible? */}
         <section className="border-b border-border py-20">
@@ -159,6 +194,100 @@ const Platform = () => {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Proof and operating paths */}
+        <section className="border-b border-border py-20 bg-secondary/30">
+          <div className="container max-w-5xl mx-auto px-6">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+              <div>
+                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.proof.eyebrow", "Proof, stated precisely")}</div>
+                <h2 className="text-3xl md:text-4xl font-semibold mb-5">{t("platform.proof.title", "A measurable footprint, with the mechanics in view.")}</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">{t("platform.proof.body", "Senseible has piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy. The proof is useful because it stays connected to the workflow: capture, classification, evidence, and reporting.")}</p>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Shield className="h-4 w-4 text-primary" />
+                  <span>{t("platform.proof.disclaimer", "Pilot and benchmarking figures are shown as confirmed platform facts; no customer outcome is inferred.")}</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {proofMetrics.map(metric => (
+                  <div key={metric.label} className="border border-border bg-background p-4 md:p-5">
+                    <div className="font-mono text-2xl md:text-3xl text-primary mb-2">{metric.value}</div>
+                    <div className="text-sm font-medium mb-2">{metric.label}</div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{metric.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-12 border-t border-border pt-10">
+              <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-primary mb-2">{t("platform.proof.paths.eyebrow", "Named operating paths")}</div>
+                  <h3 className="text-2xl md:text-3xl font-semibold">{t("platform.proof.paths.title", "See the platform in the sectors it serves.")}</h3>
+                </div>
+                <span className="text-xs text-muted-foreground">{t("platform.proof.paths.note", "Sector pathways, not invented customer case studies")}</span>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {proofPaths.map(path => (
+                  <Card key={path.key} className="border-border bg-background hover:border-primary/40 transition-colors">
+                    <CardContent className="p-5">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2 rounded-md bg-primary/10 border border-primary/20">
+                          <Workflow className="h-4 w-4 text-primary" />
+                        </div>
+                        <div className="font-medium">{t(`platform.proof.paths.${path.key}.title`, path.title)}</div>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t(`platform.proof.paths.${path.key}.body`, path.body)}</p>
+                      <Link to={path.to} className="text-sm text-primary hover:underline inline-flex items-center gap-1">
+                        {t("platform.proof.paths.cta", "View sector path")} <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Buyer pricing guide */}
+        <section className="border-b border-border py-20">
+          <div className="container max-w-5xl mx-auto px-6">
+            <div className="flex flex-wrap items-end justify-between gap-5 mb-10">
+              <div className="max-w-2xl">
+                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.pricing.eyebrow", "Choose your starting point")}</div>
+                <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.pricing.title", "Pricing that maps to the job in front of you.")}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t("platform.pricing.body", "The free entry point lets you inspect the verification surface. Yearly billing carries the launch rates for Essential and Pro; monthly billing stays available at the standard rate. Larger teams can take the Scale route.")}</p>
+              </div>
+              <Button asChild variant="outline">
+                <Link to="/pricing">{t("platform.pricing.cta", "Compare all plans")} <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              </Button>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {pricingSummary.map(tier => (
+                <Card key={tier.key} className="border-border h-full flex flex-col">
+                  <CardContent className="p-5 flex flex-col h-full">
+                    <div className="flex items-center gap-2 mb-4">
+                      {tier.key === "snapshot" && <BarChart3 className="h-4 w-4 text-primary" />}
+                      {tier.key === "essential" && <Bot className="h-4 w-4 text-primary" />}
+                      {tier.key === "pro" && <Landmark className="h-4 w-4 text-primary" />}
+                      {tier.key === "scale" && <Building2 className="h-4 w-4 text-primary" />}
+                      <div className="text-sm font-medium">{t(`platform.pricing.${tier.key}.name`, tier.name)}</div>
+                    </div>
+                    <div className="font-mono text-lg text-foreground mb-3">{t(`platform.pricing.${tier.key}.price`, tier.price)}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t(`platform.pricing.${tier.key}.detail`, tier.detail)}</p>
+                    <div className="mt-auto pt-4 border-t border-border">
+                      <div className="text-xs text-muted-foreground mb-3">{t(`platform.pricing.${tier.key}.fit`, tier.fit)}</div>
+                      <Link to={tier.to} className="text-sm text-primary hover:underline inline-flex items-center gap-1">
+                        {t("platform.pricing.view", "See plan details")} <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground mt-5">{t("platform.pricing.note", "Prices and entitlements are maintained on the existing pricing page; checkout is not duplicated here.")}</p>
           </div>
         </section>
 
