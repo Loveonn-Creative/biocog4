@@ -34,15 +34,33 @@ const steps = [
 ];
 
 const proofMetrics = [
-  { value: "29", label: "clusters", body: "Pilot footprint across operating clusters." },
-  { value: "11", label: "countries piloted", body: "Pilot coverage, stated separately from configured country support." },
+  { value: "29", label: "clusters", body: "Where the platform has been piloted." },
+  { value: "11", label: "countries piloted", body: "Pilot reach across emerging markets." },
   { value: "92%", label: "benchmarking accuracy", body: "The confirmed benchmarking result." },
 ];
 
 const proofPaths = [
-  { key: "textile", title: "Textile", body: "A named sector pathway from source documents to verified reporting and supplier visibility.", to: "/industries/textile" },
-  { key: "steel", title: "Steel", body: "A named sector pathway for evidence-led emissions visibility and downstream decisions.", to: "/industries/steel" },
-  { key: "logistics", title: "Logistics", body: "A named sector pathway connecting activity data to a usable climate record.", to: "/industries/logistics" },
+  {
+    key: "textile",
+    title: "Textile",
+    source: "Utility bills, fuel, fibre and freight records.",
+    decision: "Build product-level evidence for buyers and export screening.",
+    to: "/industries/textile",
+  },
+  {
+    key: "steel",
+    title: "Steel",
+    source: "Fuel, power, dispatch tonnage, ore and scrap records.",
+    decision: "Compare evidenced intensity with the applicable CBAM default.",
+    to: "/industries/steel",
+  },
+  {
+    key: "logistics",
+    title: "Logistics",
+    source: "Fuel invoices, consignment notes and carrier records.",
+    decision: "Give shippers a usable Category 4 view by lane or consignment.",
+    to: "/industries/logistics",
+  },
 ];
 
 const pricingSummary = [
@@ -93,10 +111,10 @@ const Platform = () => {
               <div>
                 <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.positioning.eyebrow", "Built into Senseible")}</div>
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises.")}</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t("platform.positioning.body", "The same evidence layer that helps a business verify its own activity can give an enterprise a clearer view of supplier coverage, gaps, and reporting readiness.")}</p>
+                <p className="text-lg text-muted-foreground leading-relaxed">{t("platform.positioning.body", "For an enterprise, that means seeing which suppliers have usable evidence, where the gaps are, and what is ready for Scope 3 reporting.")}</p>
               </div>
               <div className="border-l-2 border-primary/30 pl-5 text-sm text-muted-foreground leading-relaxed">
-                {t("platform.positioning.note", "One platform, from source document to decision. No separate narrative is required for each downstream use.")}
+                {t("platform.positioning.note", "Start with the document. Keep the evidence attached as the record moves into reporting, supplier decisions, or finance.")}
               </div>
             </div>
           </div>
@@ -202,19 +220,19 @@ const Platform = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <div>
-                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.proof.eyebrow", "Proof, stated precisely")}</div>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-5">{t("platform.proof.title", "A measurable footprint, with the mechanics in view.")}</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">{t("platform.proof.body", "Senseible has piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy. The proof is useful because it stays connected to the workflow: capture, classification, evidence, and reporting.")}</p>
+                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.proof.eyebrow", "What we have proven")}</div>
+                <h2 className="text-3xl md:text-4xl font-semibold mb-5">{t("platform.proof.title", "The numbers are real. So is the work behind them.")}</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">{t("platform.proof.body", "Senseible has been piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy. Each number comes from the work of turning everyday business records into usable climate evidence.")}</p>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Shield className="h-4 w-4 text-primary" />
-                  <span>{t("platform.proof.disclaimer", "Pilot and benchmarking figures are shown as confirmed platform facts; no customer outcome is inferred.")}</span>
+                  <span>{t("platform.proof.disclaimer", "These are platform pilot and benchmarking figures — not promises about a customer’s future result.")}</span>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-3" aria-label={t("platform.proof.metrics.label", "Platform proof metrics")}>
                 {proofMetrics.map(metric => (
-                  <div key={metric.label} className="border border-border bg-background p-4 md:p-5">
-                    <div className="font-mono text-2xl md:text-3xl text-primary mb-2">{metric.value}</div>
-                    <div className="text-sm font-medium mb-2">{metric.label}</div>
+                  <div key={metric.label} className="border border-border bg-background p-4 md:p-5 transition-transform duration-300 hover:-translate-y-1">
+                    <div className="font-mono text-4xl md:text-5xl leading-none text-primary mb-3">{metric.value}</div>
+                    <div className="text-sm font-medium mb-2">{t(`platform.proof.metrics.${metric.label}`, metric.label)}</div>
                     <p className="text-xs text-muted-foreground leading-relaxed">{metric.body}</p>
                   </div>
                 ))}
@@ -224,14 +242,14 @@ const Platform = () => {
             <div className="mt-12 border-t border-border pt-10">
               <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-primary mb-2">{t("platform.proof.paths.eyebrow", "Named operating paths")}</div>
-                  <h3 className="text-2xl md:text-3xl font-semibold">{t("platform.proof.paths.title", "See the platform in the sectors it serves.")}</h3>
+                  <div className="text-xs uppercase tracking-wider text-primary mb-2">{t("platform.proof.paths.eyebrow", "Where it becomes useful")}</div>
+                  <h3 className="text-2xl md:text-3xl font-semibold">{t("platform.proof.paths.title", "The same evidence solves a different problem in every sector.")}</h3>
                 </div>
-                <span className="text-xs text-muted-foreground">{t("platform.proof.paths.note", "Sector pathways, not invented customer case studies")}</span>
+                <span className="text-xs text-muted-foreground">{t("platform.proof.paths.note", "Choose a sector to see the evidence and the decision it supports.")}</span>
               </div>
               <div className="grid gap-4 md:grid-cols-3">
                 {proofPaths.map(path => (
-                  <Card key={path.key} className="border-border bg-background hover:border-primary/40 transition-colors">
+                  <Card key={path.key} className="border-border bg-background hover:border-primary/40 transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-5">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-md bg-primary/10 border border-primary/20">
@@ -239,9 +257,18 @@ const Platform = () => {
                         </div>
                         <div className="font-medium">{t(`platform.proof.paths.${path.key}.title`, path.title)}</div>
                       </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t(`platform.proof.paths.${path.key}.body`, path.body)}</p>
-                      <Link to={path.to} className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                        {t("platform.proof.paths.cta", "View sector path")} <ArrowRight className="h-3.5 w-3.5" />
+                      <div className="space-y-3 mb-5">
+                        <div>
+                          <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">{t("platform.proof.paths.source", "Evidence")}</div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.proof.paths.${path.key}.source`, path.source)}</p>
+                        </div>
+                        <div>
+                          <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">{t("platform.proof.paths.decision", "Decision")}</div>
+                          <p className="text-sm text-foreground leading-relaxed">{t(`platform.proof.paths.${path.key}.decision`, path.decision)}</p>
+                        </div>
+                      </div>
+                      <Link to={path.to} className="group text-sm text-primary hover:underline inline-flex items-center gap-1">
+                        {t("platform.proof.paths.cta", "Explore this use case")} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </CardContent>
                   </Card>
@@ -258,7 +285,7 @@ const Platform = () => {
               <div className="max-w-2xl">
                 <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.pricing.eyebrow", "Choose your starting point")}</div>
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.pricing.title", "Pricing that maps to the job in front of you.")}</h2>
-                <p className="text-muted-foreground leading-relaxed">{t("platform.pricing.body", "The free entry point lets you inspect the verification surface. Yearly billing carries the launch rates for Essential and Pro; monthly billing stays available at the standard rate. Larger teams can take the Scale route.")}</p>
+                <p className="text-muted-foreground leading-relaxed">{t("platform.pricing.body", "Start free if you are still building your first record. Choose yearly billing for the lower monthly equivalent on Essential or Pro, or speak with the team when your work spans people, entities, or integrations.")}</p>
               </div>
               <Button asChild variant="outline">
                 <Link to="/pricing">{t("platform.pricing.cta", "Compare all plans")} <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -279,15 +306,15 @@ const Platform = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t(`platform.pricing.${tier.key}.detail`, tier.detail)}</p>
                     <div className="mt-auto pt-4 border-t border-border">
                       <div className="text-xs text-muted-foreground mb-3">{t(`platform.pricing.${tier.key}.fit`, tier.fit)}</div>
-                      <Link to={tier.to} className="text-sm text-primary hover:underline inline-flex items-center gap-1">
-                        {t("platform.pricing.view", "See plan details")} <ArrowRight className="h-3.5 w-3.5" />
+                      <Link to={tier.to} className="group text-sm text-primary hover:underline inline-flex items-center gap-1">
+                        {t("platform.pricing.view", "Compare this plan")} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-5">{t("platform.pricing.note", "Prices and entitlements are maintained on the existing pricing page; checkout is not duplicated here.")}</p>
+            <p className="text-xs text-muted-foreground mt-5">{t("platform.pricing.note", "See the pricing page for the current billing choice, full entitlements, and checkout.")}</p>
           </div>
         </section>
 
@@ -335,7 +362,7 @@ const Platform = () => {
               <Globe2 className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-primary">{t("platform.where.eyebrow", "Where it works")}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.where.title", "Ten markets, each with its own identifier and grid factor.")}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.where.title", "19 configured countries, each with its own identifier and grid factor.")}</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-3">
               {countries.map(c => (
                 <div key={c.code} className="p-3 rounded-md border border-border bg-background">
