@@ -71,7 +71,6 @@ interface TeamMember {
   role: string;
   joined_at?: string;
   invited_email?: string;
-  email?: string;
 }
 
 interface Invitation {
@@ -152,44 +151,10 @@ const Team = () => {
 
     setIsInviting(true);
     try {
-      const token = crypto.randomUUID();
-      
-      const { error } = await supabase
-        .from('team_invitations')
-        .insert({
-          organization_id: activeOrganization.id,
-          email: inviteEmail,
-          role: inviteRole,
-          invited_by: user!.id,
-          token,
-        });
-      
+      const { error } = await supabase.functions.invoke('send-team-invitation', {
+        body: { email: inviteEmail.trim().toLowerCase(), role: inviteRole, organizationId: activeOrganization.id },
+      });
       if (error) throw error;
-
-      // Send invitation email via edge function
-      try {
-        await fetch(
-          `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-team-invitation`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-            },
-            body: JSON.stringify({
-              invitationId: token,
-              email: inviteEmail,
-              role: inviteRole,
-              organizationName: activeOrganization.name,
-              inviterName: user?.email?.split('@')[0],
-              token,
-            }),
-          }
-        );
-      } catch (emailErr) {
-        console.error('Failed to send invitation email:', emailErr);
-        // Continue anyway - invitation was created
-      }
 
       toast.success(`Invitation sent to ${inviteEmail}`);
       setInviteDialogOpen(false);
@@ -399,12 +364,12 @@ const Team = () => {
                       <div className="flex items-center gap-3">
                         <Avatar>
                           <AvatarFallback>
-                            {getInitials(member.invited_email || member.email)}
+                            {getInitials(member.invited_email)}
                           </AvatarFallback>
                         </Avatar>
                         <div>
                           <p className="text-sm font-medium">
-                            {member.invited_email || member.email || 'Unknown'}
+                            {member.invited_email || (member.user_id === user?.id ? user.email : 'Organization member')}
                           </p>
                           {member.joined_at && (
                             <p className="text-xs text-muted-foreground">

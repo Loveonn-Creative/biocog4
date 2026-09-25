@@ -57,43 +57,17 @@ const AcceptInvite = () => {
   const [isAccepting, setIsAccepting] = useState(false);
 
   useEffect(() => {
-    if (token) {
+    if (token && isAuthenticated) {
       validateInvitation();
+    } else if (token && !sessionLoading) {
+      setStatus('valid');
     } else {
       setStatus('error');
     }
-  }, [token]);
+  }, [token, isAuthenticated, sessionLoading]);
 
   const validateInvitation = async () => {
     try {
-      // Query invitation by token - needs service role to bypass RLS
-      const { data, error } = await supabase
-        .from('team_invitations')
-        .select('*, organizations(name)')
-        .eq('token', token)
-        .single();
-
-      if (error || !data) {
-        setStatus('error');
-        return;
-      }
-
-      // Check if expired
-      if (new Date(data.expires_at) < new Date()) {
-        setStatus('expired');
-        return;
-      }
-
-      // Check if already accepted
-      if (data.accepted_at) {
-        setStatus('accepted');
-        return;
-      }
-
-      setInvitation({
-        ...data,
-        organization: data.organizations,
-      });
       setStatus('valid');
     } catch (err) {
       console.error('Error validating invitation:', err);
@@ -102,44 +76,13 @@ const AcceptInvite = () => {
   };
 
   const handleAccept = async () => {
-    if (!invitation || !user?.id) return;
+    if (!token || !user?.id) return;
     
     setIsAccepting(true);
     try {
-      // Add user as organization member
-      const { error: memberError } = await supabase
-        .from('organization_members')
-        .insert({
-          organization_id: invitation.organization_id,
-          user_id: user.id,
-          role: invitation.role,
-          joined_at: new Date().toISOString(),
-          invited_email: invitation.email,
-        });
-
-      if (memberError) throw memberError;
-
-      // Create user context
-      const { error: contextError } = await supabase
-        .from('user_contexts')
-        .insert({
-          user_id: user.id,
-          context_type: 'msme',
-          context_id: invitation.organization_id,
-          context_name: invitation.organization?.name,
-          is_active: true,
-        });
-
-      if (contextError) {
-        console.error('Context creation error:', contextError);
-      }
-
-      // Mark invitation as accepted
-      // Note: This will only work if user has permission via RLS
-      // In production, this should be done via edge function
-      console.log('Invitation accepted for token:', token);
-
-      toast.success(`Welcome to ${invitation.organization?.name}!`);
+      const { data, error } = await supabase.functions.invoke('accept-team-invitation', { body: { token } });
+      if (error || !data?.success) throw new Error(data?.error || error?.message || 'Invitation acceptance failed');
+      toast.success(`Welcome to ${data.membership?.organization_name || 'your team'}!`);
       navigate('/dashboard');
     } catch (err) {
       console.error('Error accepting invitation:', err);
@@ -169,7 +112,7 @@ const AcceptInvite = () => {
       <MinimalNav />
 
       <main className="relative z-10 container mx-auto px-4 py-20 max-w-md">
-        {status === 'valid' && invitation && (
+        {status === 'valid' && (
           <Card className="text-center">
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -177,18 +120,10 @@ const AcceptInvite = () => {
               </div>
               <CardTitle className="text-xl">You're Invited!</CardTitle>
               <CardDescription>
-                Join <strong>{invitation.organization?.name}</strong> on Senseible
+                 Join your invited organization on Senseible
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="p-4 rounded-lg bg-secondary/50">
-                <p className="text-sm text-muted-foreground mb-2">Your Role</p>
-                <Badge variant="secondary" className="gap-1 text-base py-1 px-3">
-                  <RoleIcon className="w-4 h-4" />
-                  {ROLE_LABELS[invitation.role]}
-                </Badge>
-              </div>
-
               {!isAuthenticated ? (
                 <div className="space-y-3">
                   <p className="text-sm text-muted-foreground">
@@ -199,21 +134,6 @@ const AcceptInvite = () => {
                       Sign In to Accept
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
-                  </Button>
-                </div>
-              ) : invitation.email !== user?.email ? (
-                <div className="space-y-3">
-                  <p className="text-sm text-amber-600 bg-amber-50 p-3 rounded-lg">
-                    This invitation was sent to <strong>{invitation.email}</strong>.
-                    You're signed in as <strong>{user?.email}</strong>.
-                  </p>
-                  <Button variant="outline" className="w-full" onClick={handleAccept} disabled={isAccepting}>
-                    {isAccepting ? (
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    ) : (
-                      <CheckCircle2 className="w-4 h-4 mr-2" />
-                    )}
-                    Accept Anyway
                   </Button>
                 </div>
               ) : (
