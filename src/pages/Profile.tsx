@@ -177,6 +177,7 @@ const Profile = () => {
 
     setIsSaving(true);
     try {
+      const consentChangedAt = profile.data_consent ? new Date().toISOString() : null;
       const { error } = await supabase
         .from('profiles')
         .update({
@@ -188,6 +189,8 @@ const Profile = () => {
           size: profile.size,
           role: profile.role,
           data_consent: profile.data_consent,
+          data_consent_at: consentChangedAt,
+          data_consent_version: profile.data_consent ? '2026-09-25' : null,
         })
         .eq('id', user.id);
 

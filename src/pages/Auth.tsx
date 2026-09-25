@@ -169,7 +169,9 @@ const Auth = () => {
               phone: phone,
               gstin: gstin,
                location: location,
-               data_consent: true
+               data_consent: true,
+               data_consent_at: new Date().toISOString(),
+               data_consent_version: '2026-09-25'
             })
             .eq('id', data.user.id);
           
