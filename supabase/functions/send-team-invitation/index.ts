@@ -19,12 +19,9 @@ function escapeHtml(str: string | undefined | null): string {
 }
 
 interface InvitationRequest {
-  invitationId?: string; // legacy: token value
   email: string;
   role: string;
-  organizationName: string;
-  inviterName?: string;
-  token: string;
+  organizationId: string;
 }
 
 const ROLE_LABELS: Record<string, string> = {
@@ -100,49 +97,35 @@ serve(async (req) => {
     const callerId = claimsRes.claims.sub as string;
 
     const data: InvitationRequest = await req.json();
-    if (!data.token || !data.email || !data.organizationName) {
+    if (!data.email || !data.organizationId || !data.role) {
       return new Response(JSON.stringify({ error: "Missing required fields" }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
 
-    // ============= VERIFY INVITATION OWNERSHIP =============
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-    const { data: invitation, error: invErr } = await admin
-      .from("team_invitations")
-      .select("id, organization_id, email, role, invited_by")
-      .eq("token", data.token)
+    const { data: organization } = await admin
+      .from("organizations")
+      .select("name")
+      .eq("id", data.organizationId)
       .maybeSingle();
-
-    if (invErr || !invitation) {
-      return new Response(JSON.stringify({ error: "Invitation not found" }),
+    if (!organization) {
+      return new Response(JSON.stringify({ error: "Organization not found" }),
         { status: 404, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
-    if (invitation.email !== data.email) {
-      return new Response(JSON.stringify({ error: "Invitation/email mismatch" }),
-        { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders } });
-    }
 
-    // Caller must be an admin/owner of the invitation's organization
-    const { data: membership } = await admin
-      .from("organization_members")
-      .select("role")
-      .eq("organization_id", invitation.organization_id)
-      .eq("user_id", callerId)
-      .maybeSingle();
-    const { data: orgOwner } = await admin
-      .from("organizations")
-      .select("owner_id")
-      .eq("id", invitation.organization_id)
-      .maybeSingle();
-    const isAuthorized =
-      orgOwner?.owner_id === callerId ||
-      (membership && ["owner", "admin"].includes(membership.role));
-    if (!isAuthorized) {
-      return new Response(JSON.stringify({ error: "Forbidden" }),
-        { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders } });
-    }
+    const token = crypto.randomUUID();
+    const { data: invitation, error: invErr } = await admin.rpc("service_create_team_invitation", {
+      p_actor_id: callerId,
+      p_organization_id: data.organizationId,
+      p_email: data.email,
+      p_role: data.role,
+      p_token: token,
+    });
+    if (invErr || !invitation) throw new Error(invErr?.message || "Invitation creation failed");
 
-    const emailHTML = getInvitationEmailHTML(data);
+    const emailData = { ...data, token, organizationName: organization.name, inviterName: String(claimsRes.claims.email || "").split("@")[0] };
+
+    const emailHTML = getInvitationEmailHTML(emailData);
 
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -152,8 +135,8 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Senseible <noreply@senseible.earth>",
-        to: [String(data.email).slice(0, 320)],
-        subject: `You're invited to join ${String(data.organizationName).slice(0, 100)} on Senseible`,
+        to: [String(invitation.email).slice(0, 320)],
+        subject: `You're invited to join ${String(organization.name).slice(0, 100)} on Senseible`,
         html: emailHTML,
       }),
     });
@@ -165,7 +148,7 @@ serve(async (req) => {
         { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
 
-    return new Response(JSON.stringify({ success: true, emailId: emailResult.id }),
+    return new Response(JSON.stringify({ success: true, invitation, emailId: emailResult.id }),
       { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } });
   } catch (error: any) {
     console.error("Team invitation error:", error?.message ?? "unknown");
