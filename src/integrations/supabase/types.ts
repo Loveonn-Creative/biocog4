@@ -1435,9 +1435,28 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      accept_team_invitation: {
+        Args: { p_token: string }
+        Returns: {
+          accepted_role: string
+          organization_id: string
+          organization_name: string
+        }[]
+      }
       create_secure_session: {
         Args: { fingerprint: string; ip_hash?: string }
         Returns: string
+      }
+      create_team_invitation: {
+        Args: { p_email: string; p_organization_id: string; p_role: string }
+        Returns: {
+          email: string
+          expires_at: string
+          id: string
+          organization_name: string
+          role: string
+          token: string
+        }[]
       }
       get_active_context: {
         Args: never
