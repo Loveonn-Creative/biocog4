@@ -411,10 +411,13 @@ const Profile = () => {
               <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
                 <div className="space-y-1">
                   <Label htmlFor="data_consent" className="font-medium">
-                    AI Data Processing
+                    Business Data Processing
                   </Label>
                   <p className="text-xs text-muted-foreground">
-                    Allow AI to analyze your business data for personalized insights
+                    Allow Senseible to collect, upload, parse and process your business data for the services you request.{' '}
+                    <Link to="/legal/privacy" className="underline underline-offset-2">Privacy Policy</Link>
+                    {' '}·{' '}
+                    <Link to="/legal/dpa" className="underline underline-offset-2">DPA</Link>
                   </p>
                 </div>
                 <Switch

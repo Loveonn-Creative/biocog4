@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useSession } from "@/hooks/useSession";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { analyticsEvents } from "@/lib/analytics";
 
 type AuthMode = "signin" | "signup" | "forgot";
@@ -32,6 +33,7 @@ const Auth = () => {
   const [businessName, setBusinessName] = useState("");
   const [gstin, setGstin] = useState("");
   const [location, setLocation] = useState("");
+  const [dataConsent, setDataConsent] = useState(false);
   
   // Partner-specific fields
   const [organizationType, setOrganizationType] = useState("");
@@ -79,6 +81,11 @@ const Auth = () => {
     
     if (mode === 'signup' && !isPasswordStrong(password)) {
       toast.error('Please create a stronger password');
+      return false;
+    }
+
+    if (mode === 'signup' && !dataConsent) {
+      toast.error('Please confirm how Senseible may process your business data');
       return false;
     }
     
@@ -134,7 +141,10 @@ const Auth = () => {
               business_name: businessName,
               phone: phone,
               gstin: gstin,
-              location: location
+               location: location,
+               data_consent: true,
+               data_consent_at: new Date().toISOString(),
+               data_consent_version: '2026-09-25'
             }
           }
         });
@@ -158,7 +168,8 @@ const Auth = () => {
               business_name: businessName,
               phone: phone,
               gstin: gstin,
-              location: location
+               location: location,
+               data_consent: true
             })
             .eq('id', data.user.id);
           
@@ -402,6 +413,27 @@ const Auth = () => {
                 Forgot password?
               </button>
             )}
+
+            {mode === "signup" && (
+              <div className="flex items-start gap-3 rounded-xl border border-border bg-muted/30 p-4">
+                <Checkbox
+                  id="data-consent"
+                  checked={dataConsent}
+                  onCheckedChange={(checked) => setDataConsent(checked === true)}
+                  aria-describedby="data-consent-description"
+                />
+                <label id="data-consent-description" htmlFor="data-consent" className="text-sm leading-relaxed text-muted-foreground">
+                  I consent to Senseible collecting, processing, uploading and parsing my business data. Read the{' '}
+                  <Link to="/legal/privacy" target="_blank" className="font-medium text-foreground underline underline-offset-4">
+                    Privacy Policy
+                  </Link>{' '}
+                  and{' '}
+                  <Link to="/legal/dpa" target="_blank" className="font-medium text-foreground underline underline-offset-4">
+                    Data Processing Addendum
+                  </Link>.
+                </label>
+              </div>
+            )}
             
             <button
               type="submit"
@@ -460,7 +492,7 @@ const Auth = () => {
           
           {/* Trust note */}
           <p className="mt-8 text-xs text-center text-muted-foreground/60">
-            Your data is encrypted and never shared without your consent.
+            Your business data stays subject to your account permissions and our published data terms.
           </p>
         </div>
       </main>
