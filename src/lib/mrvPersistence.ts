@@ -92,6 +92,7 @@ export function buildEmissionRows(
       : 'low';
 
   return (extractedData.lineItems || []).flatMap((item) => {
+    const classificationMethod = item.classificationMethod;
     if (
       !item.productCategory ||
       !item.scope ||
@@ -100,8 +101,7 @@ export function buildEmissionRows(
       item.co2Kg === undefined || !Number.isFinite(item.co2Kg) ||
       item.emissionFactor === undefined || !Number.isFinite(item.emissionFactor) ||
       !item.factorSource ||
-      item.classificationMethod === 'UNVERIFIABLE' ||
-      !item.classificationMethod
+      classificationMethod !== 'HSN' && classificationMethod !== 'KEYWORD'
     ) {
       return [];
     }
@@ -117,7 +117,7 @@ export function buildEmissionRows(
       activity_unit: item.unit,
       emission_factor: item.emissionFactor,
       data_quality: dataQuality,
-      verification_notes: encodeEmissionProvenance(item),
+      verification_notes: encodeEmissionProvenance({ ...item, classificationMethod }),
       verified: false,
     }];
   });
