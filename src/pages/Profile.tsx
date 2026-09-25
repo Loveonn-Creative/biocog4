@@ -88,6 +88,7 @@ const Profile = () => {
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [savedDataConsent, setSavedDataConsent] = useState(false);
   const [verificationStatus, setVerificationStatus] = useState<'verified' | 'pending' | 'unverified'>('unverified');
 
   // Redirect if not authenticated or if partner (partners go to PartnerProfile)
@@ -142,6 +143,7 @@ const Profile = () => {
             role: data.role || '',
             data_consent: data.data_consent || false,
           });
+          setSavedDataConsent(data.data_consent || false);
         }
 
         // Fetch latest verification status
@@ -177,7 +179,7 @@ const Profile = () => {
 
     setIsSaving(true);
     try {
-      const consentChangedAt = profile.data_consent ? new Date().toISOString() : null;
+      const consentChanged = profile.data_consent !== savedDataConsent;
       const { error } = await supabase
         .from('profiles')
         .update({
@@ -189,13 +191,16 @@ const Profile = () => {
           size: profile.size,
           role: profile.role,
           data_consent: profile.data_consent,
-          data_consent_at: consentChangedAt,
-          data_consent_version: profile.data_consent ? '2026-09-25' : null,
+          ...(consentChanged ? {
+            data_consent_at: profile.data_consent ? new Date().toISOString() : null,
+            data_consent_version: profile.data_consent ? '2026-09-25' : null,
+          } : {}),
         })
         .eq('id', user.id);
 
       if (error) throw error;
 
+      setSavedDataConsent(profile.data_consent);
       toast.success('Profile updated successfully');
     } catch (error) {
       console.error('Error saving profile:', error);
