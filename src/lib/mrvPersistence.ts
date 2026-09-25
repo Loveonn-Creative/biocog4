@@ -12,6 +12,12 @@ export interface PersistableLineItem {
 }
 
 export interface PersistableExtraction {
+  documentType?: string;
+  vendor?: string;
+  date?: string;
+  invoiceNumber?: string;
+  amount?: number;
+  currency?: string;
   confidence: number;
   lineItems?: PersistableLineItem[];
   validationFlags?: string[];

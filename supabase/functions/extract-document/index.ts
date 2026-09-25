@@ -559,10 +559,13 @@ function calculateEmissions(
   
   if (!quantity || quantity <= 0) return null;
   
+  const normalizedUnit = unit.trim().toLowerCase();
+  const unitMatches = (accepted: string[]) => accepted.includes(normalizedUnit);
+
   // Scope 1: Fuels - Quantity × Fuel_Factor
   if (scope === 1 && productCategory === 'FUEL' && fuelType) {
     const factor = EMISSION_FACTORS.scope1_fuels[fuelType as keyof typeof EMISSION_FACTORS.scope1_fuels];
-    if (factor) {
+    if (factor && unitMatches([factor.unit.toLowerCase(), factor.unit === 'litre' ? 'liter' : factor.unit.toLowerCase()])) {
       const co2Kg = quantity * factor.value;
       return {
         co2Kg: Math.round(co2Kg * 100) / 100, // Round to 2 decimals
@@ -573,7 +576,7 @@ function calculateEmissions(
   }
   
   // Scope 2: Electricity - kWh × 0.708 (India Grid Average)
-  if (scope === 2 && productCategory === 'ELECTRICITY') {
+  if (scope === 2 && productCategory === 'ELECTRICITY' && unitMatches(['kwh', 'kw.h'])) {
     const factor = EMISSION_FACTORS.scope2_electricity.INDIA_GRID_AVG;
     const co2Kg = quantity * factor;
     return {
@@ -584,7 +587,7 @@ function calculateEmissions(
   }
   
   // Scope 3: Transport - Weight(tons) × Distance(km) × Factor
-  if (scope === 3 && productCategory === 'TRANSPORT') {
+  if (scope === 3 && productCategory === 'TRANSPORT' && unitMatches(['ton-km', 'tonne-km', 'tkm'])) {
     const factor = EMISSION_FACTORS.scope3_transport.ROAD_HEAVY;
     const co2Kg = quantity * factor;
     return {
@@ -595,7 +598,7 @@ function calculateEmissions(
   }
   
   // Scope 3: Waste - kg × Waste_Factor
-  if (scope === 3 && productCategory === 'WASTE') {
+  if (scope === 3 && productCategory === 'WASTE' && unitMatches(['kg', 'kilogram', 'kgs'])) {
     const factor = EMISSION_FACTORS.scope3_waste.LANDFILL_ORGANIC;
     const co2Kg = quantity * factor;
     return {
@@ -605,20 +608,9 @@ function calculateEmissions(
     };
   }
   
-  // Scope 3: Raw materials - Estimated factor (requires more specific data)
-  if (scope === 3 && productCategory === 'RAW_MATERIAL') {
-    const estimatedFactor = 0.5; // Conservative estimate
-    const co2Kg = quantity * estimatedFactor;
-    return {
-      co2Kg: Math.round(co2Kg * 100) / 100,
-      emissionFactor: estimatedFactor,
-      factorSource: 'BIOCOG_MVR_INDIA_v1.0:MATERIAL_AVG',
-    };
-  }
-  
   // Green benefit categories (negative CO2 = carbon avoided)
   const greenFactor = EMISSION_FACTORS.green_benefits[productCategory as keyof typeof EMISSION_FACTORS.green_benefits];
-  if (greenFactor) {
+  if (greenFactor && unitMatches([greenFactor.unit.toLowerCase()])) {
     const co2Kg = quantity * greenFactor.value;
     return {
       co2Kg: Math.round(co2Kg * 100) / 100,
@@ -646,6 +638,9 @@ interface LineItem {
   emissionFactor?: number;
   factorSource?: string;
   classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
+  sourcePage?: number;
+  sourceText?: string;
+  validationFlags?: string[];
 }
 
 interface ExtractedData {
@@ -698,7 +693,9 @@ CRITICAL EXTRACTION RULES:
      - quantity: Numeric quantity ONLY if explicitly stated (DO NOT INFER)
      - unit: Unit type ONLY if explicitly stated (litre/kWh/kg/ton/km/scm/nos/pcs)
      - unitPrice: Per unit price if shown
-     - total: Line total if shown
+      - total: Line total if shown
+     - sourcePage: PDF page number where the item is visible; use 1 for a single image
+     - sourceText: Short exact text fragment supporting the quantity and unit
 
 2. For electricity bills specifically:
    - Look for "Units Consumed" or "kWh" values - this is the quantity
@@ -1034,6 +1031,9 @@ serve(async (req) => {
         unit: item.unit || detectUnit(item.description || ''),
         unitPrice: item.unitPrice,
         total: item.total,
+        sourcePage: Number.isInteger(item.sourcePage) && item.sourcePage > 0 ? item.sourcePage : 1,
+        sourceText: typeof item.sourceText === 'string' ? item.sourceText.slice(0, 240) : undefined,
+        validationFlags: [],
       };
 
       if (classifiedItem.quantity && classifiedItem.quantity > 0) hasAnyQuantity = true;
@@ -1093,9 +1093,19 @@ serve(async (req) => {
           totalCO2Kg += emissions.co2Kg;
         } else {
           missingEmissionFactorCount++;
+          const reason = `No verified factor for ${classifiedItem.productCategory} with unit ${classifiedItem.unit}`;
+          classifiedItem.validationFlags?.push(reason);
+          validationFlags.push(`${reason}: ${classifiedItem.description.substring(0, 40)}`);
         }
       } else if (classifiedItem.productCategory) {
         missingEmissionFactorCount++;
+        const reason = !classifiedItem.quantity
+          ? 'Missing explicit activity quantity'
+          : !classifiedItem.unit
+            ? 'Missing explicit activity unit'
+            : 'Missing deterministic scope mapping';
+        classifiedItem.validationFlags?.push(reason);
+        validationFlags.push(`${reason}: ${classifiedItem.description.substring(0, 40)}`);
       }
 
       return classifiedItem;

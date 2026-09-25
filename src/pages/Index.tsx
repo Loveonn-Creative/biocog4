@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
+import { buildEmissionRows } from "@/lib/mrvPersistence";
 
 
 type State = "idle" | "processing" | "result";
@@ -192,7 +193,7 @@ const Index = () => {
   };
 
   // Save emission record to database (document is cached by edge function)
-  const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId: string } | null> => {
+  const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId?: string; emissionIds: string[] } | null> => {
     // CRITICAL: Validate session before saving
     if (!user && !sessionId) {
       console.error('[MRV] CRITICAL: No session_id or user_id available. Data cannot be saved!');
@@ -262,48 +263,37 @@ const Index = () => {
 
       // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
       // Before inserting a new emission, check if one already exists for this document
-      const { data: existingEmission } = await supabase
+      const { data: existingEmissions } = await supabase
         .from('emissions')
         .select('id')
         .eq('document_id', documentId)
-        .limit(1)
-        .single();
+        .order('created_at', { ascending: true });
 
-      if (existingEmission) {
+      if (existingEmissions?.length) {
         console.log('[MRV] Emission already exists for document:', documentId, '- skipping duplicate');
         toast.info('This invoice was already processed. Showing existing results.', { icon: '🔒' });
-        return { documentId, emissionId: existingEmission.id };
+        return {
+          documentId,
+          emissionId: existingEmissions[0].id,
+          emissionIds: existingEmissions.map((emission) => emission.id),
+        };
       }
 
-      // Get emission data - use totalCO2Kg from deterministic calculation
-      const co2Kg = extractedData.totalCO2Kg ?? 0;
-      const category = getCategoryFromOCR(extractedData);
-      
-      // DETERMINISTIC scope from category
-      const scope = getScopeFromCategory(category);
-      
-      const firstItem = extractedData.lineItems?.[0];
-      const activityData = firstItem?.quantity ?? null;
-      const activityUnit = firstItem?.unit ?? null;
-      const emissionFactor = firstItem?.emissionFactor ?? null;
+      const emissionRows = buildEmissionRows(extractedData, {
+        documentId,
+        sessionId: user ? null : sessionId,
+        userId: user?.id || null,
+      });
+
+      if (emissionRows.length === 0) {
+        console.info('[MRV] No independently calculable line items; document retained for review without an emissions row');
+        return { documentId, emissionIds: [] };
+      }
 
       const { data: emissionData, error: emissionError } = await supabase
         .from('emissions')
-        .insert({
-          document_id: documentId,
-          session_id: user ? null : sessionId,
-          user_id: user?.id || null,
-          scope: scope,
-          category: category,
-          co2_kg: co2Kg,
-          activity_data: activityData,
-          activity_unit: activityUnit,
-          emission_factor: emissionFactor,
-          data_quality: extractedData.confidence >= 80 ? 'high' : extractedData.confidence >= 50 ? 'medium' : 'low',
-          verified: false
-        })
-        .select()
-        .single();
+        .insert(emissionRows)
+        .select('id');
 
       if (emissionError) {
         console.error('[MRV] Emission save error:', emissionError);
@@ -314,8 +304,9 @@ const Index = () => {
         return null;
       }
 
-      console.log('[MRV] Saved - Document:', documentId, 'Emission:', emissionData.id, 'Session:', sessionId?.substring(0, 8) + '...', 'Scope:', scope, 'CO2:', co2Kg);
-      return { documentId, emissionId: emissionData.id };
+      const emissionIds = (emissionData || []).map((emission) => emission.id);
+      console.log('[MRV] Saved document with independently calculated emission rows:', documentId, emissionIds.length);
+      return { documentId, emissionId: emissionIds[0], emissionIds };
     } catch (error) {
       console.error('Database save error:', error);
       return null;
@@ -396,12 +387,12 @@ const Index = () => {
       console.log("Extracted data:", extractedData);
 
       // Validation warnings for low-confidence or missing data
-      const warnings: string[] = [];
+      const warnings: string[] = [...(extractedData.validationFlags || [])];
       if (extractedData.confidence < 50) {
         warnings.push('Low confidence extraction - please verify the data');
       }
-      if (!extractedData.amount && !extractedData.totalCO2Kg && !extractedData.estimatedCO2Kg) {
-        warnings.push('Amount or CO₂ data could not be extracted');
+      if (!extractedData.totalCO2Kg && !extractedData.estimatedCO2Kg) {
+        warnings.push('No verified activity and factor pair was available; no emissions were recorded');
       }
       if (!extractedData.vendor) {
         warnings.push('Vendor name not detected');
@@ -411,8 +402,9 @@ const Index = () => {
       }
       
       // Show warnings to user
-      if (warnings.length > 0) {
-        warnings.forEach(w => toast.warning(w, { duration: 4000 }));
+      const uniqueWarnings = [...new Set(warnings)];
+      if (uniqueWarnings.length > 0) {
+        uniqueWarnings.forEach(w => toast.warning(w, { duration: 4000 }));
       }
 
       const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
@@ -445,7 +437,7 @@ const Index = () => {
         documentType: formatDocumentType(extractedData.documentType, emissionCat),
         extractedData: {
           ...extractedData,
-          validationFlags: warnings,
+          validationFlags: uniqueWarnings,
         },
         documentId: savedIds?.documentId,
         emissionId: savedIds?.emissionId
