@@ -697,12 +697,16 @@ const Trust = () => {
               <Lock className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance &amp; Security</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default. Access must be earned.</h2>
+            <p className="text-muted-foreground max-w-3xl mb-8">
+              Enterprise data paths follow zero-trust principles: explicit authorization, least-privilege access,
+              tenant-scoped records and traceable actions. This describes the platform architecture, not a third-party certification.
+            </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { name: "Row-Level Security on every table", desc: "Cross-tenant access is impossible by construction." },
+                { name: "Account-scoped data access", desc: "Policies restrict authenticated business records to authorized account and organization contexts." },
                 { name: "IP-address hashing", desc: "Operational logs never store raw identifiers." },
-                { name: "Centralised audit ledger", desc: "Sensitive actions are recorded with immutable references." },
+                { name: "Centralised audit ledger", desc: "Verification and evidence actions retain traceable references." },
                 { name: "Methodology version pinning", desc: "Every output carries its factor source and version." },
               ].map(g => (
                 <Card key={g.name} className="border-border">

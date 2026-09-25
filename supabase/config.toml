@@ -1,43 +1,33 @@
 project_id = "kobsfphgfvyjozjwkuhp"
 
-[functions.send-contact-notification]
-verify_jwt = false
-
-[functions.extract-document]
-verify_jwt = false
-
-[functions.verify-carbon]
-verify_jwt = false
-
-[functions.generate-sitemap]
-verify_jwt = false
-
-[functions.calculate-monetization]
-verify_jwt = false
-
-[functions.intelligence-chat]
-verify_jwt = false
-
-[functions.create-razorpay-order]
-verify_jwt = false
-
-[functions.verify-razorpay-payment]
-verify_jwt = false
-
-[functions.merge-session]
-verify_jwt = false
-
-[functions.elevenlabs-conversation-token]
-verify_jwt = false
-
-[functions.send-payment-notification]
-verify_jwt = false
-
-[functions.send-partner-notification]
-verify_jwt = false
-
-[functions.send-purchase-enquiry]
-verify_jwt = false
-
-[functions.notify-grant-application]
-verify_jwt = false
+[functions]
+  [functions.auth-email-hook]
+    verify_jwt = false
+  [functions.calculate-monetization]
+    verify_jwt = false
+  [functions.create-razorpay-order]
+    verify_jwt = false
+  [functions.elevenlabs-conversation-token]
+    verify_jwt = false
+  [functions.extract-document]
+    verify_jwt = false
+  [functions.generate-sitemap]
+    verify_jwt = false
+  [functions.intelligence-chat]
+    verify_jwt = false
+  [functions.merge-session]
+    verify_jwt = false
+  [functions.notify-grant-application]
+    verify_jwt = false
+  [functions.send-contact-notification]
+    verify_jwt = false
+  [functions.send-partner-notification]
+    verify_jwt = false
+  [functions.send-payment-notification]
+    verify_jwt = false
+  [functions.send-purchase-enquiry]
+    verify_jwt = false
+  [functions.verify-carbon]
+    verify_jwt = false
+  [functions.verify-razorpay-payment]
+    verify_jwt = false

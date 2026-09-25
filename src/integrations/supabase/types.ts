@@ -1070,6 +1070,8 @@ export type Database = {
           business_name: string | null
           created_at: string | null
           data_consent: boolean | null
+          data_consent_at: string | null
+          data_consent_version: string | null
           enterprise_mode: boolean | null
           gstin: string | null
           id: string
@@ -1090,6 +1092,8 @@ export type Database = {
           business_name?: string | null
           created_at?: string | null
           data_consent?: boolean | null
+          data_consent_at?: string | null
+          data_consent_version?: string | null
           enterprise_mode?: boolean | null
           gstin?: string | null
           id: string
@@ -1110,6 +1114,8 @@ export type Database = {
           business_name?: string | null
           created_at?: string | null
           data_consent?: boolean | null
+          data_consent_at?: string | null
+          data_consent_version?: string | null
           enterprise_mode?: boolean | null
           gstin?: string | null
           id?: string

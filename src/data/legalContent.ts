@@ -19,7 +19,7 @@ export const legalDocuments: LegalDocument[] = [
     title: 'Terms of Service',
     slug: 'terms',
     effectiveDate: '27 August 2024',
-    lastUpdated: '17 December 2025',
+    lastUpdated: '25 September 2026',
     sections: [
       {
         title: '0. Parties & Legal Identity',
@@ -154,9 +154,13 @@ User shall indemnify Senseible against claims arising from:
       },
       {
         title: '15. Grievance Redressal',
-        content: `Contact: impact@senseible.earth
+        content: `Data Officer: Sneha Ghosh
 
-Grievance Officer details will be provided upon request.`
+Email: sneha@senseible.earth
+
+Address: Minarch Tower, Gurugram, 122003, Haryana, India
+
+Email us with your request and sufficient information to identify your account. We aim to resolve privacy and data-protection requests within five to seven (5–7) business days. A longer period may be required where applicable law, request complexity, identity verification, or third-party dependencies require it; we will communicate any extension.`
       }
     ]
   },
@@ -165,7 +169,7 @@ Grievance Officer details will be provided upon request.`
     title: 'Privacy Policy',
     slug: 'privacy',
     effectiveDate: '27 August 2024',
-    lastUpdated: '17 December 2025',
+    lastUpdated: '25 September 2026',
     sections: [
       {
         title: '0. Introduction & Legal Identity',
@@ -235,13 +239,16 @@ Data may be disclosed only:
       },
       {
         title: '6. Data Storage & Security',
-        content: `Data is stored using secure cloud infrastructure with access controls, encryption, and regional caching where required. Reasonable technical and organizational safeguards are implemented to prevent unauthorized access or misuse.
+        content: `Data is stored using managed cloud infrastructure with access controls and safeguards designed to prevent unauthorized access or misuse.
 
-Senseible implements industry-standard safeguards including:
-- encryption at rest and in transit,
-- role-based access controls,
-- audit logs and monitoring,
-- incident response procedures.`
+Senseible applies zero-trust principles to enterprise data paths. Access is explicitly authorized, scoped to the relevant account or organization, limited by role and purpose, and logged where the platform supports an audit record. Zero-trust describes an architectural approach and is not presented as a third-party certification.
+
+Controls include:
+- authenticated and role-scoped access,
+- tenant-scoped database policies,
+- private document storage,
+- evidence fingerprints and audit references,
+- monitoring and incident-response procedures.`
       },
       {
         title: '7. Legal Basis & Compliance',
@@ -264,15 +271,19 @@ Certain rights may be limited where data has been anonymized or aggregated.`
       },
       {
         title: '9. Data Retention & Deletion',
-        content: `Data is retained only for as long as necessary for stated purposes, contractual obligations, or legal requirements.
+        content: `Data is retained only for as long as necessary for stated purposes, contractual obligations, or legal requirements. The default periods described in this Policy are up to three (3) months for unauthenticated data and up to eighteen (18) months for authenticated or paid-user data.
 
 Upon termination, data may be deleted or anonymized except where retention is legally required or incorporated into aggregated intelligence. Retention periods may be extended for regulatory, audit, training, or dispute resolution purposes.`
       },
       {
         title: '10. Sub-Processors & Third Parties',
-        content: `Senseible may engage sub-processors including cloud infrastructure providers, AI service vendors, and analytics partners.
+        content: `Senseible uses service providers only where needed to operate the platform. Current provider categories and confirmed services include:
+- Lovable for managed platform hosting, cloud services, authentication and email delivery,
+- Google for analytics and supported AI processing,
+- ElevenLabs for voice interactions when that feature is used,
+- Razorpay for payment processing.
 
-Such sub-processors are bound by contractual data protection obligations and confidentiality.`
+The services involved depend on the features a User chooses to use. Providers process data under their applicable contractual and privacy terms. Senseible reviews provider access by purpose and does not authorize providers to sell User business data. Material changes relevant to enterprise processing will be reflected in this Policy or the applicable agreement.`
       },
       {
         title: '11. Cross-Border Transfers',
@@ -292,9 +303,13 @@ Continued use of the Services constitutes acceptance of the updated Policy.`
       },
       {
         title: '14. Grievance Redressal & Contact',
-        content: `Email: impact@senseible.earth
+        content: `Data Officer: Sneha Ghosh
 
-Grievance Officer details will be provided upon request.`
+Email: sneha@senseible.earth
+
+Address: Minarch Tower, Gurugram, 122003, Haryana, India
+
+To request access, correction, deletion, consent withdrawal, processing information, or to raise a grievance, email the Data Officer with sufficient information to identify your account and request. We aim to resolve requests within five to seven (5–7) business days. Timing may be extended where applicable law, identity verification, request complexity, or third-party dependencies require it; we will communicate any extension.`
       }
     ]
   },
@@ -303,7 +318,7 @@ Grievance Officer details will be provided upon request.`
     title: 'Data Processing Addendum',
     slug: 'dpa',
     effectiveDate: '27 August 2024',
-    lastUpdated: '17 December 2025',
+    lastUpdated: '25 September 2026',
     sections: [
       {
         title: 'Introduction',
@@ -325,7 +340,7 @@ This DPA shall be interpreted to ensure lawful processing while preserving Sense
 
 (b) Senseible acts as a Data Processor when processing data on documented instructions of the Controller.
 
-(c) Where Senseible independently determines processing purposes for its platform operations, Senseible acts as an independent Data Controller, except where Senseible independently determines purposes for its platform, in which case Senseible acts as Data Controller.`
+(c) Where Senseible independently determines processing purposes for its own platform operations, Senseible acts as an independent Data Controller.`
       },
       {
         title: 'Scope of Processing',
@@ -352,15 +367,17 @@ Processing shall continue for the term of the Agreement unless extended by legal
       },
       {
         title: 'Technical & Organizational Measures',
-        content: `Senseible implements appropriate security measures including:
-- Encryption of data at rest and in transit
-- Role-based access controls and least-privilege access
-- Continuous monitoring, logging, and audit trails
-- Incident detection, response, and remediation procedures`
+        content: `Senseible applies technical and organizational controls appropriate to the processing, including:
+- Explicit authorization and least-privilege access for enterprise data paths
+- Tenant-scoped database policies and private document storage
+- Evidence fingerprints, operational logging, and audit references
+- Incident detection, response, and remediation procedures
+
+These controls follow zero-trust principles and do not represent a claim of third-party certification. Additional enterprise controls, retention schedules, data locations, or security terms apply only where documented in the Agreement.`
       },
       {
         title: 'Sub-Processors',
-        content: `Senseible may engage sub-processors including cloud infrastructure providers and AI service vendors.
+        content: `Senseible may engage sub-processors necessary to provide the Services. Confirmed service categories include managed platform and cloud services, authentication and email delivery, analytics, supported AI processing, optional voice interactions, and payment processing. Current providers are identified in the Privacy Policy.
 
 Senseible remains responsible for ensuring that sub-processors provide adequate data protection safeguards.
 
@@ -398,9 +415,13 @@ No data localization obligation is assumed unless explicitly agreed in writing.`
       },
       {
         title: 'Contact',
-        content: `Data protection inquiries may be directed to:
+        content: `Data Officer: Sneha Ghosh
 
-impact@senseible.earth`
+Email: sneha@senseible.earth
+
+Address: Minarch Tower, Gurugram, 122003, Haryana, India
+
+Email us with a data-protection request and sufficient information to identify the relevant account or agreement. We aim to resolve requests within five to seven (5–7) business days, subject to applicable law, identity verification, request complexity, and required third-party coordination.`
       }
     ]
   },
@@ -506,7 +527,7 @@ Email: impact@senseible.earth`
     title: 'AI & Data Processing Policy',
     slug: 'ai-policy',
     effectiveDate: '27 August 2024',
-    lastUpdated: '6 December 2025',
+    lastUpdated: '25 September 2026',
     sections: [
       {
         title: 'Preamble',
@@ -583,9 +604,9 @@ Senseible continuously monitors performance but does not guarantee bias-free or 
       },
       {
         title: '9. Data Security & Processing Controls',
-        content: `Senseible applies encryption, access controls, environment segregation, audit logs, regional data caching, monitoring, and incident response mechanisms appropriate to the nature of the processing.
+        content: `Senseible applies access controls, environment separation, audit references, monitoring, and incident-response measures appropriate to the nature of the processing.
 
-Data processing is restricted to authorized personnel and systems.`
+Enterprise data paths follow zero-trust principles: processing is restricted to explicitly authorized personnel and systems, with least-privilege and tenant-scoped access. This is an architectural approach, not a third-party certification.`
       },
       {
         title: '10. Third-Party AI & Infrastructure',
@@ -613,7 +634,13 @@ Continued use of the Services constitutes acceptance.`
       },
       {
         title: '14. Contact',
-        content: `For questions or opt-out requests, contact: impact@senseible.earth`
+        content: `For questions, rights requests, or opt-out requests, contact the Data Officer:
+
+Sneha Ghosh — sneha@senseible.earth
+
+Minarch Tower, Gurugram, 122003, Haryana, India
+
+We aim to resolve requests within five to seven (5–7) business days, subject to applicable law and any identity-verification or request-complexity requirements.`
       }
     ]
   },

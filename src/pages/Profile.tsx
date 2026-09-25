@@ -88,6 +88,7 @@ const Profile = () => {
   });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [savedDataConsent, setSavedDataConsent] = useState(false);
   const [verificationStatus, setVerificationStatus] = useState<'verified' | 'pending' | 'unverified'>('unverified');
 
   // Redirect if not authenticated or if partner (partners go to PartnerProfile)
@@ -142,6 +143,7 @@ const Profile = () => {
             role: data.role || '',
             data_consent: data.data_consent || false,
           });
+          setSavedDataConsent(data.data_consent || false);
         }
 
         // Fetch latest verification status
@@ -177,6 +179,7 @@ const Profile = () => {
 
     setIsSaving(true);
     try {
+      const consentChanged = profile.data_consent !== savedDataConsent;
       const { error } = await supabase
         .from('profiles')
         .update({
@@ -188,11 +191,16 @@ const Profile = () => {
           size: profile.size,
           role: profile.role,
           data_consent: profile.data_consent,
+          ...(consentChanged ? {
+            data_consent_at: profile.data_consent ? new Date().toISOString() : null,
+            data_consent_version: profile.data_consent ? '2026-09-25' : null,
+          } : {}),
         })
         .eq('id', user.id);
 
       if (error) throw error;
 
+      setSavedDataConsent(profile.data_consent);
       toast.success('Profile updated successfully');
     } catch (error) {
       console.error('Error saving profile:', error);
@@ -411,10 +419,13 @@ const Profile = () => {
               <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
                 <div className="space-y-1">
                   <Label htmlFor="data_consent" className="font-medium">
-                    AI Data Processing
+                    Business Data Processing
                   </Label>
                   <p className="text-xs text-muted-foreground">
-                    Allow AI to analyze your business data for personalized insights
+                    Allow Senseible to collect, upload, parse and process your business data for the services you request.{' '}
+                    <Link to="/legal/privacy" className="underline underline-offset-2">Privacy Policy</Link>
+                    {' '}·{' '}
+                    <Link to="/legal/dpa" className="underline underline-offset-2">DPA</Link>
                   </p>
                 </div>
                 <Switch

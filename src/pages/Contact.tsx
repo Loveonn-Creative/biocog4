@@ -60,7 +60,7 @@ const Contact = () => {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi Senseible, I have a query about carbon intelligence and ESG solutions.");
-    window.open(`https://wa.me/919999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/917260064476?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
   if (isSubmitted) {
