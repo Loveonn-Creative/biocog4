@@ -106,11 +106,16 @@ interface EmissionRecord {
   activity_unit: string | null;
   emission_factor: number | null;
   data_quality: string | null;
+  verification_notes?: string | null;
   documents?: {
     vendor: string | null;
     invoice_number: string | null;
     amount: number | null;
     confidence: number | null;
+    document_hash?: string | null;
+    invoice_date?: string | null;
+    currency?: string | null;
+    cached_result?: unknown;
   };
 }
 
@@ -174,7 +179,7 @@ function validateEmission(emission: EmissionRecord): { valid: boolean; flags: st
   }
   
   // Check document confidence if available
-  if (emission.documents?.confidence && emission.documents.confidence < 0.7) {
+  if (emission.documents?.confidence !== null && emission.documents?.confidence !== undefined && emission.documents.confidence < 70) {
     flags.push('Low OCR confidence on source document');
     confidence -= 15;
   }
@@ -513,11 +518,11 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       );
     }
 
-    // Update emissions as verified if applicable
+    // Update status only. verification_notes stores immutable extraction provenance.
     if (status === 'verified') {
       await supabase
         .from('emissions')
-        .update({ verified: true, verification_notes: `Verified with score ${(verificationScore * 100).toFixed(0)}%` })
+        .update({ verified: true })
         .in('id', emissionIds);
     }
 
@@ -530,6 +535,38 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const doc = emission.documents;
         const isGreen = GREEN_CATEGORIES.includes(emission.category?.toUpperCase?.() || '');
         const co2 = emission.co2_kg || 0;
+        const cachedResult = doc?.cached_result && typeof doc.cached_result === 'object'
+          ? doc.cached_result as Record<string, unknown>
+          : null;
+        const cachedItems = Array.isArray(cachedResult?.lineItems)
+          ? cachedResult.lineItems as Array<Record<string, unknown>>
+          : [];
+        const matchingItem = cachedItems.find((item) =>
+          Number(item.scope) === Number(emission.scope) &&
+          Number(item.co2Kg) === Number(emission.co2_kg) &&
+          Number(item.emissionFactor) === Number(emission.emission_factor)
+        );
+        let storedProvenance: Record<string, unknown> | null = null;
+        if (emission.verification_notes) {
+          try {
+            const parsed = JSON.parse(emission.verification_notes);
+            if (parsed && typeof parsed === 'object') storedProvenance = parsed;
+          } catch {
+            storedProvenance = null;
+          }
+        }
+        const factorSource = typeof storedProvenance?.factorSource === 'string'
+          ? storedProvenance.factorSource
+          : typeof matchingItem?.factorSource === 'string' ? matchingItem.factorSource : null;
+        const classificationMethod = storedProvenance?.classificationMethod === 'HSN' || storedProvenance?.classificationMethod === 'KEYWORD'
+          ? storedProvenance.classificationMethod
+          : matchingItem?.classificationMethod === 'HSN' || matchingItem?.classificationMethod === 'KEYWORD'
+            ? matchingItem.classificationMethod
+            : null;
+        const supplierGstin = typeof cachedResult?.supplierGstin === 'string' ? cachedResult.supplierGstin : null;
+        const hsnCode = typeof storedProvenance?.hsnCode === 'string'
+          ? storedProvenance.hsnCode
+          : typeof matchingItem?.hsn_code === 'string' ? matchingItem.hsn_code : null;
         
         // Determine validation result
         let validationResult = 'passed';
@@ -557,6 +594,15 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const fiscalQuarter = month >= 4 && month <= 6 ? 'Q1' : month >= 7 && month <= 9 ? 'Q2' : month >= 10 && month <= 12 ? 'Q3' : 'Q4';
 
         try {
+          const { data: existingLedger } = await supabase
+            .from('compliance_ledger')
+            .select('id')
+            .eq('emission_id', emission.id)
+            .eq('verification_id', verification.id)
+            .maybeSingle();
+
+          if (existingLedger) continue;
+
           await supabase
             .from('compliance_ledger')
             .insert({
@@ -576,7 +622,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               activity_data: emission.activity_data || null,
               activity_unit: emission.activity_unit || null,
               emission_factor: emission.emission_factor || null,
-              factor_source: emission.verification_notes || null,
+              factor_source: factorSource,
               co2_kg: co2,
               is_green_benefit: co2 < 0,
               confidence_score: doc?.confidence || null,
@@ -586,9 +632,9 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               validation_failure_reason: validationFailureReason,
               greenwashing_risk: greenwashingRisk,
               methodology_version: `BIOCOG_MVR_${countryCode}_v1.0`,
-              classification_method: emission.data_quality === 'high' ? 'HSN' : 'KEYWORD',
-              gstin: null,
-              hsn_code: null,
+              classification_method: classificationMethod,
+              gstin: supplierGstin,
+              hsn_code: hsnCode,
               verified_at: status === 'verified' ? new Date().toISOString() : null,
               fiscal_year: fiscalYear,
               fiscal_quarter: fiscalQuarter,

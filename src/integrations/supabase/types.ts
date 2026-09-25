@@ -1488,6 +1488,40 @@ export type Database = {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
       }
+      service_accept_team_invitation: {
+        Args: { p_token: string; p_user_email: string; p_user_id: string }
+        Returns: {
+          accepted_role: string
+          organization_id: string
+          organization_name: string
+        }[]
+      }
+      service_create_team_invitation: {
+        Args: {
+          p_actor_id: string
+          p_email: string
+          p_organization_id: string
+          p_role: string
+          p_token: string
+        }
+        Returns: {
+          accepted_at: string | null
+          created_at: string | null
+          email: string
+          expires_at: string
+          id: string
+          invited_by: string
+          organization_id: string
+          role: string | null
+          token: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "team_invitations"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       switch_user_context: {
         Args: { p_context_id: string; p_context_type: string }
         Returns: boolean
