@@ -72,7 +72,9 @@ export interface StoredProvenance {
   sourceDescription: string;
 }
 
-export function encodeEmissionProvenance(item: PersistableLineItem): string {
+export function encodeEmissionProvenance(
+  item: PersistableLineItem & { factorSource: string; classificationMethod: 'HSN' | 'KEYWORD' },
+): string {
   return JSON.stringify({
     factorSource: item.factorSource,
     classificationMethod: item.classificationMethod,
