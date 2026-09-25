@@ -17,6 +17,7 @@ import {
   Trash2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
 interface FileStatus {
   file: File;
@@ -93,7 +94,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         const mimeType = fileStatus.file.type || 'image/jpeg';
 
         const { data, error } = await supabase.functions.invoke('extract-document', {
-          body: { imageBase64, mimeType }
+          body: { imageBase64, mimeType, sessionId }
         });
 
         if (error) throw error;
@@ -110,6 +111,35 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           ));
           results.duplicates++;
         } else if (data?.success) {
+          const extractedData = data.data as PersistableExtraction;
+          const { data: document } = await supabase
+            .from('documents')
+            .select('id')
+            .eq('document_hash', data.documentHash)
+            .eq('user_id', user?.id || '')
+            .order('created_at', { ascending: false })
+            .limit(1)
+            .maybeSingle();
+
+          if (!document) throw new Error('Processed evidence could not be linked to its source document');
+
+          const { data: existingEmissions } = await supabase
+            .from('emissions')
+            .select('id')
+            .eq('document_id', document.id)
+            .limit(1);
+
+          if (!existingEmissions?.length) {
+            const rows = buildEmissionRows(extractedData, {
+              documentId: document.id,
+              sessionId: null,
+              userId: user?.id || null,
+            });
+            if (rows.length === 0) throw new Error('No verified activity and factor pair was found');
+            const { error: saveError } = await supabase.from('emissions').insert(rows);
+            if (saveError) throw saveError;
+          }
+
           // Success (including cached results)
           setFiles(prev => prev.map((f, idx) => 
             idx === i ? { 
@@ -117,7 +147,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
               status: 'success' as const,
               message: data.cached ? 'Cached result' : 'Processed',
               documentHash: data.documentHash,
-              extractedData: data.data
+              extractedData
             } : f
           ));
           results.processed++;

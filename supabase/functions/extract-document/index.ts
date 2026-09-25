@@ -539,7 +539,9 @@ function classifyByKeyword(text: string): { productCategory: string; industryCod
   const sortedKeywords = Object.entries(KEYWORD_MAP).sort((a, b) => b[0].length - a[0].length);
   
   for (const [keyword, classification] of sortedKeywords) {
-    if (lowerText.includes(keyword)) {
+    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const boundaryPattern = new RegExp(`(^|[^a-z0-9])${escapedKeyword}([^a-z0-9]|$)`, 'i');
+    if (boundaryPattern.test(lowerText)) {
       return classification;
     }
   }

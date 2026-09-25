@@ -418,7 +418,11 @@ const Index = () => {
         return;
       }
 
-      toast.success('Data saved successfully!', { duration: 2000 });
+      if (savedIds.emissionIds.length > 0) {
+        toast.success('Verified activity data saved successfully!', { duration: 2000 });
+      } else {
+        toast.warning('Document saved for review. No emissions were recorded without verified activity data.', { duration: 5000 });
+      }
       setPendingRetry(null);
 
       const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
