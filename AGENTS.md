@@ -1,0 +1,2 @@
+- Keep bespoke India scope-estimate arithmetic in `src/lib/customScopeEstimate.ts`, separate from Scale subscription and checkout calculations, so enquiry estimates cannot alter plan billing.
+- Reuse the existing Contact form and notification for scope-review requests, so enquiries retain their existing delivery path without a second store.
