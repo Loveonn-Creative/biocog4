@@ -1212,6 +1212,7 @@ export type Database = {
           message: string
           name: string
           phone: string | null
+          request_ip_hash: string | null
           scope_input: Json
           updated_at: string
         }
@@ -1226,6 +1227,7 @@ export type Database = {
           message: string
           name: string
           phone?: string | null
+          request_ip_hash?: string | null
           scope_input: Json
           updated_at?: string
         }
@@ -1240,6 +1242,7 @@ export type Database = {
           message?: string
           name?: string
           phone?: string | null
+          request_ip_hash?: string | null
           scope_input?: Json
           updated_at?: string
         }
