@@ -58,16 +58,14 @@ export function CustomScopeEstimator() {
                         <Label htmlFor={`scope-${work.id}`} className="leading-snug cursor-pointer text-sm font-medium">{work.label}</Label>
                       </div>
                       {count > 0 && (
-                        <>
-                          <div className="flex items-center gap-3 mt-4 pl-7">
-                            <Label htmlFor={`count-${work.id}`} className="text-xs text-muted-foreground">{work.countLabel}</Label>
-                            <Input id={`count-${work.id}`} aria-label={work.countLabel} type="number" min={1} max={10} step={1} value={count} onChange={(event) => setCount(work.id, Number(event.target.value))} className="w-20 h-9" />
-                          </div>
-                          <Button type="button" variant="link" className="pl-7 mt-2 h-auto text-xs whitespace-normal justify-start text-left" disabled={!estimateCustomScope({ ...input, counts: { [work.id]: count } })} onClick={() => requestReview({ ...input, counts: { [work.id]: count } })}>
-                            Request Scope Review <ArrowRight className="h-3 w-3 ml-1 shrink-0" />
-                          </Button>
-                        </>
+                        <div className="flex items-center gap-3 mt-4 pl-7">
+                          <Label htmlFor={`count-${work.id}`} className="text-xs text-muted-foreground">{work.countLabel}</Label>
+                          <Input id={`count-${work.id}`} aria-label={work.countLabel} type="number" min={1} max={10} step={1} value={count} onChange={(event) => setCount(work.id, Number(event.target.value))} className="w-20 h-9" />
+                        </div>
                       )}
+                      <Button type="button" variant="link" className="pl-7 mt-3 h-auto text-xs whitespace-normal justify-start text-left" disabled={!estimateCustomScope({ ...input, counts: { [work.id]: count || 1 } })} onClick={() => requestReview({ ...input, counts: { [work.id]: count || 1 } })}>
+                        Request Scope Review <ArrowRight className="h-3 w-3 ml-1 shrink-0" />
+                      </Button>
                     </div>
                   );
                 })}
