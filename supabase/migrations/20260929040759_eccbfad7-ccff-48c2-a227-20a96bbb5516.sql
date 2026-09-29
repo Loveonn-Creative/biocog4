@@ -1,0 +1,1 @@
+CREATE POLICY "Server service manages scope review requests" ON public.scope_review_requests FOR ALL TO service_role USING (true) WITH CHECK (true);
