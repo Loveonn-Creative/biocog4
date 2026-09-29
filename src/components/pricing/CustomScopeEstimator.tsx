@@ -30,6 +30,11 @@ export function CustomScopeEstimator() {
     setCounts((current) => ({ ...current, [id]: value }));
   }
 
+  function requestReview(requestInput: ScopeInput) {
+    if (!estimateCustomScope(requestInput)) return;
+    navigate('/contact', { state: { scopeInput: requestInput, scopeReview: scopeReviewMessage(requestInput) } });
+  }
+
   return (
     <section aria-labelledby="custom-scope-title" className="border-y border-border bg-secondary/40 py-14 md:py-20">
       <div className="container mx-auto max-w-5xl px-4">
@@ -58,6 +63,9 @@ export function CustomScopeEstimator() {
                           <Input id={`count-${work.id}`} aria-label={work.countLabel} type="number" min={1} max={10} step={1} value={count} onChange={(event) => setCount(work.id, Number(event.target.value))} className="w-20 h-9" />
                         </div>
                       )}
+                      <Button type="button" variant="link" className="pl-7 mt-3 h-auto text-xs whitespace-normal justify-start text-left" disabled={!estimateCustomScope({ ...input, counts: { [work.id]: count || 1 } })} onClick={() => requestReview({ ...input, counts: { [work.id]: count || 1 } })}>
+                        Request Scope Review <ArrowRight className="h-3 w-3 ml-1 shrink-0" />
+                      </Button>
                     </div>
                   );
                 })}
@@ -96,7 +104,7 @@ export function CustomScopeEstimator() {
                 <h3 className="font-semibold mt-7 mb-3">What is driving this estimate</h3>
                 <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5">{estimate.drivers.map((driver) => <li key={driver}>{driver}</li>)}</ul>
                 <p className="text-xs text-muted-foreground mt-6">Estimate only. Final pricing depends on confirmed scope, integrations, data volume and technical requirements. Senseible reviews every scope before agreeing a price.</p>
-                <Button className="mt-6 w-full h-auto min-h-11 whitespace-normal text-left" onClick={() => navigate('/contact', { state: { scopeReview: scopeReviewMessage(input) } })}>
+                <Button className="mt-6 w-full h-auto min-h-11 whitespace-normal text-left" onClick={() => requestReview(input)}>
                   Share estimate with Senseible <ArrowRight className="h-4 w-4 ml-2 shrink-0" />
                   <span className="sr-only">Request Scope Review</span>
                 </Button>

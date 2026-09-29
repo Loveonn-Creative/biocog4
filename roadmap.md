@@ -3,6 +3,7 @@
 - [x] Deploy and confirm `extract-document`, `verify-carbon`, `send-team-invitation`, and `accept-team-invitation` individually.
 - [ ] Add India custom-scope range estimator above Pricing FAQs, using only bespoke work outside Scale and the existing enquiry path; preserve plans and checkout.
 - [ ] Verify estimate boundaries, mobile/desktop interactions, and contact handoff without sending a real enquiry.
+- [ ] Store submitted scope reviews privately and notify the established Senseible sales inbox; verify the notification path without fabricating a successful delivery.
 - [x] PHASE 1 GATE: Rewrite and verify the new Platform proof, industry-use-case, and pricing sections for clear customer-facing hierarchy.
 - [x] Correct configured market coverage while preserving the 11-country pilot metric.
 - [ ] PHASE 2 GATE: Restore homepage voice and Carbon Intelligence responses with supported AI gateway handling.

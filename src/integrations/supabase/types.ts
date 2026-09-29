@@ -1200,6 +1200,54 @@ export type Database = {
           },
         ]
       }
+      scope_review_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          email_status: string
+          estimate_max_inr: number
+          estimate_min_inr: number
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          request_ip_hash: string | null
+          scope_input: Json
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          email_status?: string
+          estimate_max_inr: number
+          estimate_min_inr: number
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          request_ip_hash?: string | null
+          scope_input: Json
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          email_status?: string
+          estimate_max_inr?: number
+          estimate_min_inr?: number
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          request_ip_hash?: string | null
+          scope_input?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
       security_audit_log: {
         Row: {
           created_at: string | null

@@ -1,2 +1,2 @@
-- Keep bespoke India scope-estimate arithmetic in `src/lib/customScopeEstimate.ts`, separate from Scale subscription and checkout calculations, so enquiry estimates cannot alter plan billing.
-- Reuse the existing Contact form and notification for scope-review requests, so enquiries retain their existing delivery path without a second store.
+- Keep bespoke India scope-estimate arithmetic shared between pricing and server-side submission through `supabase/functions/_shared/customScopeEstimate.ts`, separate from Scale billing, so client-supplied amounts cannot be trusted or alter checkout.
+- Reuse the Contact form and its dedicated notification function for scope reviews; store confirmed submissions in private `scope_review_requests` and notify the fixed Senseible contact inbox so leads remain auditable without exposing other visitors' details.

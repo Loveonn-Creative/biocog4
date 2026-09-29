@@ -1,0 +1,2 @@
+ALTER TABLE public.scope_review_requests ADD COLUMN request_ip_hash text;
+CREATE INDEX scope_review_requests_ip_rate_idx ON public.scope_review_requests (request_ip_hash, created_at DESC) WHERE request_ip_hash IS NOT NULL;

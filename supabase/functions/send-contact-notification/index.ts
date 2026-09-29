@@ -1,4 +1,8 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from 'npm:@supabase/supabase-js@2';
+import { z } from 'npm:zod@3.25.76';
+import { estimateCustomScope, formatScopeRupees, CUSTOM_WORK, type ScopeInput } from '../_shared/customScopeEstimate.ts';
+import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -13,7 +17,27 @@ interface ContactRequest {
   category: string;
   message: string;
   newsletter?: boolean;
+  scopeInput?: ScopeInput;
 }
+
+const scopeInputSchema = z.object({
+  counts: z.object(Object.fromEntries(CUSTOM_WORK.map((work) => [work.id, z.number().int().min(0).max(10).optional()])) as Record<typeof CUSTOM_WORK[number]['id'], z.ZodOptional<z.ZodNumber>>).strict(),
+  complexity: z.enum(['standard', 'complex', 'enterprise']),
+  entities: z.number().int().min(1).max(100),
+  users: z.number().int().min(1).max(10000),
+  volume: z.enum(['normal', 'high', 'very-high']),
+}).strict();
+
+const scopeRequestSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+  email: z.string().trim().email().max(254),
+  phone: z.string().max(40).optional(),
+  company: z.string().max(160).optional(),
+  category: z.enum(['sales', 'enterprise']),
+  message: z.string().trim().min(1).max(4000),
+  newsletter: z.boolean().optional(),
+  scopeInput: scopeInputSchema,
+}).strict();
 
 const categoryLabels: Record<string, string> = {
   sales: 'Sales & Partnerships',
@@ -38,6 +62,49 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const rawBody: ContactRequest = await req.json();
+    if (rawBody.scopeInput !== undefined) {
+      const parsed = scopeRequestSchema.safeParse(rawBody);
+      if (!parsed.success) return new Response(JSON.stringify({ error: 'Check your details and estimate, then try again.' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      const data = parsed.data;
+      const scopeInput = data.scopeInput as ScopeInput;
+      const estimate = estimateCustomScope(scopeInput);
+      if (!estimate) return new Response(JSON.stringify({ error: 'Choose at least one new piece of work.' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+
+      const url = Deno.env.get('SUPABASE_URL');
+      const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+      if (!url || !key) throw new Error('Scope review storage is unavailable');
+      const db = createClient(url, key, { auth: { persistSession: false } });
+      const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+      const secret = Deno.env.get('LOVABLE_API_KEY');
+      if (!secret) throw new Error('Notification service unavailable');
+      const payload = new TextEncoder().encode(`${secret}:${ip}`);
+      const digest = await crypto.subtle.digest('SHA-256', payload);
+      const ipHash = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+      const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+      const { count, error: countError } = await db.from('scope_review_requests').select('id', { count: 'exact', head: true }).eq('request_ip_hash', ipHash).gte('created_at', since);
+      if (countError) throw countError;
+      if ((count ?? 0) >= 3) return new Response(JSON.stringify({ error: 'Too many requests. Please try again later.' }), { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      const { data: saved, error: saveError } = await db.from('scope_review_requests').insert({
+        name: data.name, email: data.email, phone: data.phone || null, company: data.company || null,
+        message: data.message, scope_input: scopeInput, estimate_min_inr: estimate.min, estimate_max_inr: estimate.max, request_ip_hash: ipHash,
+      }).select('id').single();
+      if (saveError || !saved) throw saveError || new Error('Unable to save request');
+      try {
+        const sent = await sendTemplateEmail('scope-review', 'impact@senseible.earth', {
+          templateData: { name: data.name, email: data.email, phone: data.phone, company: data.company, message: data.message,
+            estimate: `${formatScopeRupees(estimate.min)} to ${formatScopeRupees(estimate.max)}`, drivers: estimate.drivers, requestId: saved.id },
+          idempotencyKey: `scope-review-${saved.id}`, replyTo: data.email,
+        });
+        const status = sent.sent ? 'sent' : 'suppressed';
+        const { error: updateError } = await db.from('scope_review_requests').update({ email_status: status }).eq('id', saved.id);
+        if (updateError) console.error('Scope review status update failed', saved.id, updateError);
+        return new Response(JSON.stringify({ success: true, saved: true, notified: sent.sent }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      } catch (sendError) {
+        console.error('Scope review notification failed', saved.id, sendError);
+        await db.from('scope_review_requests').update({ email_status: 'failed' }).eq('id', saved.id);
+        return new Response(JSON.stringify({ success: true, saved: true, notified: false }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+    }
     const name = escapeHtml(rawBody.name);
     const email = escapeHtml(rawBody.email);
     const phone = escapeHtml(rawBody.phone);
