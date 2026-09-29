@@ -21,6 +21,8 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.send-contact-notification]
     verify_jwt = false
+  [functions.preview-transactional-email]
+    verify_jwt = false
   [functions.send-partner-notification]
     verify_jwt = false
   [functions.send-payment-notification]

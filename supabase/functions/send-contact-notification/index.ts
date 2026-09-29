@@ -35,6 +35,7 @@ const scopeRequestSchema = z.object({
   company: z.string().max(160).optional(),
   category: z.enum(['sales', 'enterprise']),
   message: z.string().trim().min(1).max(4000),
+  newsletter: z.boolean().optional(),
   scopeInput: scopeInputSchema,
 }).strict();
 

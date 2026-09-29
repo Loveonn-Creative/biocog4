@@ -1,5 +1,5 @@
 import { useState, memo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check, Phone } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
@@ -14,6 +14,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { estimateCustomScope, scopeReviewMessage, type ScopeInput } from '@/lib/customScopeEstimate';
 
 const categories = [
   { id: 'sales', label: 'Sales & Partnerships' },
@@ -25,15 +26,19 @@ const categories = [
 ];
 
 const Contact = () => {
+  const location = useLocation();
+  const routeState = location.state as { scopeInput?: ScopeInput } | null;
+  const scopeInput = routeState?.scopeInput && estimateCustomScope(routeState.scopeInput) ? routeState.scopeInput : undefined;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [notificationPending, setNotificationPending] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
     company: '',
-    category: 'general',
-    message: '',
+    category: scopeInput ? 'sales' : 'general',
+    message: scopeInput ? scopeReviewMessage(scopeInput) : '',
     newsletter: false
   });
 
@@ -42,14 +47,15 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke('send-contact-notification', {
-        body: form
+      const { data, error } = await supabase.functions.invoke('send-contact-notification', {
+        body: scopeInput ? { ...form, newsletter: undefined, scopeInput } : form
       });
 
-      if (error) throw error;
+      if (error || !data?.success) throw error || new Error('The message was not accepted');
 
+      setNotificationPending(scopeInput ? data.notified !== true : false);
       setIsSubmitted(true);
-      toast.success("Message sent successfully! We'll get back to you soon.");
+      toast.success(scopeInput ? 'Scope review saved.' : "Message sent successfully! We'll get back to you soon.");
     } catch (err) {
       console.error('Contact form error:', err);
       toast.error("Failed to send message. Please try again.");
@@ -79,8 +85,8 @@ const Contact = () => {
             <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-6">
               <Check className="w-8 h-8 text-success" />
             </div>
-            <h1 className="text-3xl font-semibold text-foreground mb-4">Message Sent</h1>
-            <p className="text-muted-foreground mb-8">We will get back to you within 24 hours.</p>
+            <h1 className="text-3xl font-semibold text-foreground mb-4">{scopeInput ? 'Scope review saved' : 'Message Sent'}</h1>
+            <p className="text-muted-foreground mb-8">{notificationPending ? 'Your request is saved, but the email notification could not be confirmed. You can also contact impact@senseible.earth.' : 'We will get back to you within 24 hours.'}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/">
                 <Button>Back to Home</Button>
@@ -120,7 +126,7 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              We respond within 24 hours.
+              {scopeInput ? 'Review the scope and your contact details before sending.' : 'We respond within 24 hours.'}
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -171,10 +177,11 @@ const Contact = () => {
               
               <div className="space-y-3">
                 <Label>How can we help?</Label>
-                <RadioGroup
+                  <RadioGroup
                   value={form.category}
                   onValueChange={(value) => setForm({...form, category: value})}
                   className="grid grid-cols-2 gap-2"
+                    disabled={Boolean(scopeInput)}
                 >
                   {categories.map((cat) => (
                     <div key={cat.id} className="flex items-center space-x-2">

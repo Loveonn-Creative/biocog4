@@ -24,6 +24,7 @@ import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
 import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
+import { CustomScopeEstimator } from '@/components/pricing/CustomScopeEstimator';
 
 interface PricingTier {
   id: string;
@@ -788,6 +789,8 @@ const Pricing = () => {
           </div>
         </section>
         )}
+
+        {!isPartnerContext && <CustomScopeEstimator />}
 
         {/* FAQ */}
         <section className="container mx-auto px-4 pb-16">
