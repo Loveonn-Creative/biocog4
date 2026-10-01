@@ -1,2 +1,4 @@
 - Keep bespoke India scope-estimate arithmetic shared between pricing and server-side submission through `supabase/functions/_shared/customScopeEstimate.ts`, separate from Scale billing, so client-supplied amounts cannot be trusted or alter checkout.
 - Reuse the Contact form and its dedicated notification function for scope reviews; store confirmed submissions in private `scope_review_requests` and notify the fixed Senseible contact inbox so leads remain auditable without exposing other visitors' details.
+- Treat authenticated verification as an idempotent evidence transition, with History and downstream views reading existing emission IDs rather than creating records during refresh; this preserves audit lineage and prevents double counting.
+- Serve only reviewed static language bundles on sensitive product pages, falling back to English for incomplete locales; runtime generated translations cannot establish verified regulatory claims.

@@ -1,0 +1,3 @@
+ALTER TABLE public.carbon_verifications ADD COLUMN idempotency_key text;
+CREATE UNIQUE INDEX carbon_verifications_idempotency_key_unique ON public.carbon_verifications (idempotency_key) WHERE idempotency_key IS NOT NULL;
+COMMENT ON COLUMN public.carbon_verifications.idempotency_key IS 'Canonical SHA-256 of sorted emission identifiers for authenticated verification attempts; legacy rows remain unchanged.';

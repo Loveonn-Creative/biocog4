@@ -272,9 +272,11 @@ serve(async (req) => {
     const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
     const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
 
-    if (!emissionIds || emissionIds.length === 0) {
+    if (!Array.isArray(emissionIds) || emissionIds.length === 0 || emissionIds.length > 100 ||
+        emissionIds.some((id) => typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(id)) ||
+        new Set(emissionIds).size !== emissionIds.length) {
       return new Response(
-        JSON.stringify({ error: 'No emissions to verify' }),
+        JSON.stringify({ error: 'Provide distinct, valid emission IDs (up to 100)' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
@@ -297,8 +299,7 @@ serve(async (req) => {
         if (claimsRes?.claims?.sub) userId = claimsRes.claims.sub as string;
       }
     }
-    // Keep bodySessionId available even for authenticated users so guest-owned
-    // rows created in the same browser (pre sign-in) still pass ownership.
+    // Signed-in requests must own their emissions. Guest handling is unchanged.
     const sessionId: string | null = bodySessionId || null;
 
     if (!userId && !sessionId) {
@@ -316,7 +317,7 @@ serve(async (req) => {
       .select('*, documents(*)')
       .in('id', emissionIds);
 
-    if (emissionsError || !emissions?.length) {
+    if (emissionsError || !emissions?.length || emissions.length !== emissionIds.length) {
       console.error('Error fetching emissions:', emissionsError);
       return new Response(
         JSON.stringify({ error: 'Failed to fetch emissions data' }),
@@ -324,13 +325,12 @@ serve(async (req) => {
       );
     }
 
-    // Ownership passes if the row is owned by the JWT user OR by the browser
-    // session that created it (guest → signed-in on same device).
-    const adoptEmissionIds: string[] = [];
-    const adoptDocumentIds: string[] = [];
+    // Ownership passes only for the JWT user, or on the existing guest path.
     for (const emission of emissions) {
       const userMatch = !!userId && emission.user_id === userId;
-      const sessionMatch = !!sessionId && emission.session_id === sessionId;
+      // Do not accept a client-supplied guest session as ownership for a
+      // signed-in identity. Guest ownership remains on its existing path.
+      const sessionMatch = !userId && !!sessionId && emission.session_id === sessionId;
       if (!userMatch && !sessionMatch) {
         console.error('Ownership mismatch: emission', emission.id, 'does not belong to requester');
         return new Response(
@@ -338,20 +338,33 @@ serve(async (req) => {
           { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      // Authenticated user verifying a guest-created row → adopt it.
-      if (userId && !emission.user_id && sessionMatch) {
-        adoptEmissionIds.push(emission.id);
-        if (emission.document_id) adoptDocumentIds.push(emission.document_id);
-        emission.user_id = userId;
-      }
     }
 
-    if (userId && adoptEmissionIds.length) {
-      await supabase.from('emissions').update({ user_id: userId }).in('id', adoptEmissionIds).is('user_id', null);
-      if (adoptDocumentIds.length) {
-        await supabase.from('documents').update({ user_id: userId }).in('id', adoptDocumentIds).is('user_id', null);
+    // Authenticated requests are keyed by their exact emission set. The unique
+    // index arbitrates concurrent calls; historical results remain untouched.
+    let idempotencyKey: string | null = null;
+    if (userId) {
+      const canonical = `${userId}:${[...emissionIds].sort().join(',')}`;
+      const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical));
+      idempotencyKey = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
+      const { data: previous, error: previousError } = await supabase.from('carbon_verifications')
+        .select('*').eq('user_id', userId).eq('idempotency_key', idempotencyKey).maybeSingle();
+      if (previousError) throw previousError;
+      if (previous) {
+        const { error: statusError } = previous.verification_status === 'verified'
+          ? await supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('user_id', userId)
+          : { error: null };
+        if (statusError) throw statusError;
+        return new Response(JSON.stringify({ success: true, data: {
+          verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
+          greenwashingRisk: previous.greenwashing_risk,
+          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
+          cbamCompliant: previous.cbam_compliant, totalCO2Kg: previous.total_co2_kg,
+          netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
+          verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
+          methodology: previous.ai_analysis?.methodology,
+        }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
       }
-      console.log(`Adopted ${adoptEmissionIds.length} guest emission(s) into user ${userId}`);
     }
 
     // Step 1: Validate each emission
@@ -376,7 +389,7 @@ serve(async (req) => {
     // Step 3: Calculate verified reductions (only from certified documents)
     // In real implementation, this would check for REC_CERTIFICATE, RECYCLER_CERTIFICATE, etc.
     let verifiedReductions = 0;
-    if (includeIoT) {
+    if (includeIoT && !userId) {
       // IoT efficiency bonus (simulated - in reality would come from meter data)
       verifiedReductions = totalCO2Kg * 0.05; // 5% efficiency gain from IoT monitoring
     }
@@ -475,6 +488,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       .from('carbon_verifications')
       .insert({
         emission_ids: emissionIds,
+        idempotency_key: idempotencyKey,
         session_id: sessionId || null,
         user_id: userId || null,
         total_co2_kg: totalCO2Kg,
@@ -490,6 +504,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           greenScore,
           netEmissions,
           verifiedReductions,
+          greenwashingFactors,
           creditEligibility: {
             eligibleCredits: creditsIssued,
             carryForward,
@@ -510,6 +525,20 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       .select()
       .single();
 
+    if (verificationError?.code === '23505' && userId && idempotencyKey) {
+      const { data: previous, error: lookupError } = await supabase.from('carbon_verifications')
+        .select('*').eq('user_id', userId).eq('idempotency_key', idempotencyKey).single();
+      if (lookupError || !previous) throw lookupError || new Error('Existing verification unavailable');
+      return new Response(JSON.stringify({ success: true, data: {
+        verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
+        greenwashingRisk: previous.greenwashing_risk, greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [],
+        analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
+        cbamCompliant: previous.cbam_compliant, totalCO2Kg: previous.total_co2_kg,
+        netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
+        verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
+        methodology: previous.ai_analysis?.methodology,
+      }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
     if (verificationError) {
       console.error('Error storing verification:', verificationError);
       return new Response(
@@ -520,10 +549,14 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
 
     // Update status only. verification_notes stores immutable extraction provenance.
     if (status === 'verified') {
-      await supabase
+      const { error: statusError } = await supabase
         .from('emissions')
         .update({ verified: true })
-        .in('id', emissionIds);
+        .in('id', emissionIds)
+        .eq('user_id', userId || '');
+      if (statusError && userId) throw statusError;
+      // Preserve the original guest update path without changing guest access.
+      if (!userId) await supabase.from('emissions').update({ verified: true }).in('id', emissionIds);
     }
 
     // ============= COMPLIANCE LEDGER POPULATION =============

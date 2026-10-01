@@ -1,6 +1,6 @@
 import { useDocuments } from '@/hooks/useDocuments';
 import { useEmissions } from '@/hooks/useEmissions';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filte
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
+import { useSession } from '@/hooks/useSession';
 import { Helmet } from 'react-helmet-async';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { Badge } from '@/components/ui/badge';
@@ -20,8 +21,10 @@ import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from '@/comp
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 
 const History = () => {
-  const { documents, isLoading: docsLoading } = useDocuments();
-  const { emissions, isLoading: emissionsLoading } = useEmissions();
+  const navigate = useNavigate();
+  const { user } = useSession();
+  const { documents, isLoading: docsLoading, refetch: refreshDocuments } = useDocuments();
+  const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
   const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
   const [search, setSearch] = useState('');
@@ -31,6 +34,14 @@ const History = () => {
   });
 
   const isLoading = docsLoading || emissionsLoading;
+  const emissionsByDocument = useMemo(() => {
+    const grouped = new Map<string, typeof emissions>();
+    for (const row of emissions) {
+      if (!row.document_id) continue;
+      grouped.set(row.document_id, [...(grouped.get(row.document_id) || []), row]);
+    }
+    return grouped;
+  }, [emissions]);
 
   // Filter documents by search and date range
   const filtered = useMemo(() => {
@@ -103,6 +114,7 @@ const History = () => {
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-semibold">Invoice History</h1>
+          {user && <Button variant="outline" size="sm" onClick={() => { void refreshDocuments(); void refreshEmissions(); }} aria-label="Refresh saved invoices">Refresh</Button>}
           {ledgerEntries.length > 0 && (
             <Button variant="outline" size="sm" onClick={exportComplianceXLSX} className="gap-2 shrink-0">
               <Download className="h-4 w-4" />
@@ -237,8 +249,9 @@ const History = () => {
             <div className="space-y-3">
               {filtered.map(doc => {
                 const hasHash = !!doc.document_hash;
-                const isCached = !!doc.cached_result;
-                const isHighConfidence = (doc.confidence ?? 0) >= 80;
+                const documentRows = emissionsByDocument.get(doc.id) || [];
+                const allVerified = documentRows.length > 0 && documentRows.every(e => e.verified === true);
+                const pendingCount = documentRows.filter(e => !e.verified).length;
                 
                 return (
                   <Card key={doc.id} className="hover:bg-secondary/30 transition-colors">
@@ -253,30 +266,25 @@ const History = () => {
                           {hasHash && (
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                {isCached ? (
+                                 {allVerified ? (
                                   <Badge variant="outline" className="text-xs bg-primary/5 border-primary/20 text-primary py-0 h-5 shrink-0">
                                     <ShieldCheck className="h-3 w-3 mr-1" />
                                     Verified
                                   </Badge>
-                                ) : isHighConfidence ? (
-                                  <Badge variant="outline" className="text-xs bg-emerald-500/10 border-emerald-500/20 text-emerald-600 py-0 h-5 shrink-0">
+                                 ) : pendingCount > 0 ? (
+                                   <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
                                     <CheckCircle className="h-3 w-3 mr-1" />
-                                    Processed
+                                     Pending verification
                                   </Badge>
                                 ) : (
                                   <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
-                                    Review
+                                     No emission record
                                   </Badge>
                                 )}
                               </TooltipTrigger>
                               <TooltipContent side="top">
                                 <p className="text-xs">
-                                  {isCached 
-                                    ? "Previously verified - results are locked for audit integrity"
-                                    : isHighConfidence
-                                    ? "Processed with deterministic MRV calculation"
-                                    : "Low confidence - manual review recommended"
-                                  }
+                                   {allVerified ? 'Stored emission records are verified' : pendingCount > 0 ? 'Stored emission records need verification' : 'No calculable stored emissions. Review the source document before verification.'}
                                 </p>
                                 {hasHash && (
                                   <p className="text-xs font-mono text-muted-foreground mt-1">
@@ -299,6 +307,7 @@ const History = () => {
                         <div className="font-medium">{formatAmount(doc.amount)}</div>
                       <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
                       </div>
+                      {user && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
                       {/* Enterprise: Document Provenance */}
                       {isEnterprise && doc.document_hash && (
                         <div className="text-right shrink-0">
