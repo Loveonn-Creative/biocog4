@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Authenticated invoice reliability: History to Verify, safe idempotent verification, evidence-consistent reads and refresh; guest behavior unchanged.
+- [ ] Repair unsupported financial actions and claims, Profile password change, and safe translation fallback.
+- [ ] Validate signed-in saved-record journey and repeated refresh against live data; report any blocked gate.
+
 - [x] Deploy and confirm `extract-document`, `verify-carbon`, `send-team-invitation`, and `accept-team-invitation` individually.
 - [ ] Add India custom-scope range estimator above Pricing FAQs, using only bespoke work outside Scale and the existing enquiry path; preserve plans and checkout.
 - [ ] Verify estimate boundaries, mobile/desktop interactions, and contact handoff without sending a real enquiry.
