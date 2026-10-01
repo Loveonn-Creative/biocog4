@@ -299,8 +299,7 @@ serve(async (req) => {
         if (claimsRes?.claims?.sub) userId = claimsRes.claims.sub as string;
       }
     }
-    // Keep bodySessionId available even for authenticated users so guest-owned
-    // rows created in the same browser (pre sign-in) still pass ownership.
+    // Signed-in requests must own their emissions. Guest handling is unchanged.
     const sessionId: string | null = bodySessionId || null;
 
     if (!userId && !sessionId) {
@@ -326,10 +325,7 @@ serve(async (req) => {
       );
     }
 
-    // Ownership passes if the row is owned by the JWT user OR by the browser
-    // session that created it (guest → signed-in on same device).
-    const adoptEmissionIds: string[] = [];
-    const adoptDocumentIds: string[] = [];
+    // Ownership passes only for the JWT user, or on the existing guest path.
     for (const emission of emissions) {
       const userMatch = !!userId && emission.user_id === userId;
       // Do not accept a client-supplied guest session as ownership for a
@@ -342,20 +338,6 @@ serve(async (req) => {
           { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      // Authenticated user verifying a guest-created row → adopt it.
-      if (userId && !emission.user_id && sessionMatch) {
-        adoptEmissionIds.push(emission.id);
-        if (emission.document_id) adoptDocumentIds.push(emission.document_id);
-        emission.user_id = userId;
-      }
-    }
-
-    if (userId && adoptEmissionIds.length) {
-      await supabase.from('emissions').update({ user_id: userId }).in('id', adoptEmissionIds).is('user_id', null);
-      if (adoptDocumentIds.length) {
-        await supabase.from('documents').update({ user_id: userId }).in('id', adoptDocumentIds).is('user_id', null);
-      }
-      console.log(`Adopted ${adoptEmissionIds.length} guest emission(s) into user ${userId}`);
     }
 
     // Authenticated requests are keyed by their exact emission set. The unique
@@ -376,7 +358,7 @@ serve(async (req) => {
         return new Response(JSON.stringify({ success: true, data: {
           verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
           greenwashingRisk: previous.greenwashing_risk,
-          greenwashingFactors: [], analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
+          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
           cbamCompliant: previous.cbam_compliant, totalCO2Kg: previous.total_co2_kg,
           netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
           verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
