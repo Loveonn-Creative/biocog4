@@ -107,6 +107,7 @@ export type Database = {
           emission_ids: string[]
           greenwashing_risk: string | null
           id: string
+          idempotency_key: string | null
           organization_id: string | null
           session_id: string | null
           total_co2_kg: number
@@ -123,6 +124,7 @@ export type Database = {
           emission_ids: string[]
           greenwashing_risk?: string | null
           id?: string
+          idempotency_key?: string | null
           organization_id?: string | null
           session_id?: string | null
           total_co2_kg: number
@@ -139,6 +141,7 @@ export type Database = {
           emission_ids?: string[]
           greenwashing_risk?: string | null
           id?: string
+          idempotency_key?: string | null
           organization_id?: string | null
           session_id?: string | null
           total_co2_kg?: number
