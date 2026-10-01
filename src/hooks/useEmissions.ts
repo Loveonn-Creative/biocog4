@@ -72,7 +72,8 @@ export function useEmissions() {
       } else {
         const emissionsData = (data || []) as Emission[];
         setEmissions(emissionsData);
-        calculateSummary(emissionsData);
+        // Signed-in reporting uses only verified rows; retain the guest view.
+        calculateSummary(user ? emissionsData.filter(e => e.verified === true) : emissionsData);
       }
     } catch (err) {
       console.error('Emissions fetch error:', err);
