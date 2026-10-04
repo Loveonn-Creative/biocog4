@@ -267,7 +267,7 @@ serve(async (req) => {
   }
 
   try {
-    const { emissionIds, sessionId: bodySessionId, includeIoT = false, country = 'IN' } = await req.json();
+    const { emissionIds, sessionId: bodySessionId, includeIoT = false, country = 'IN', inspectOnly = false } = await req.json();
 
     const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
     const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
@@ -337,6 +337,38 @@ serve(async (req) => {
           JSON.stringify({ error: 'Access denied: you do not own these emissions' }),
           { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
+      }
+    }
+
+    // Signed-in invoice verification is an evidence transition, not a way to
+    // manufacture missing source data. Preflight and commit use this same gate.
+    if (userId) {
+      const missingInputs: Array<{ emissionId: string; fields: string[] }> = [];
+      for (const emission of emissions) {
+        const fields: string[] = [];
+        const doc = emission.documents;
+        if (!emission.document_id || !doc) fields.push('source invoice');
+        if (!doc?.document_hash) fields.push('document fingerprint');
+        if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
+        if (!emission.category || emission.category === 'other') fields.push('activity classification');
+        if (!Number.isFinite(emission.activity_data) || emission.activity_data <= 0) fields.push('activity quantity');
+        if (!emission.activity_unit?.trim()) fields.push('activity unit');
+        if (!Number.isFinite(emission.emission_factor) || emission.emission_factor <= 0) fields.push('emission factor');
+        if (!Number.isFinite(emission.co2_kg) || emission.co2_kg < 0) fields.push('calculated emissions');
+        let provenance: Record<string, unknown> | null = null;
+        try { provenance = JSON.parse(emission.verification_notes || 'null'); } catch { /* legacy notes */ }
+        if (!provenance || typeof provenance.factorSource !== 'string' || !provenance.factorSource.trim()) fields.push('factor source');
+        if (!provenance || typeof provenance.sourceDescription !== 'string' || !provenance.sourceDescription.trim()) fields.push('source line item');
+        if (Number.isFinite(emission.activity_data) && Number.isFinite(emission.emission_factor) && Number.isFinite(emission.co2_kg) &&
+          Math.abs(emission.activity_data * emission.emission_factor - emission.co2_kg) > Math.max(0.01, Math.abs(emission.co2_kg) * 0.001)) {
+          fields.push('quantity × factor does not match stored emissions');
+        }
+        if (fields.length) missingInputs.push({ emissionId: emission.id, fields });
+      }
+      if (inspectOnly || missingInputs.length) {
+        return new Response(JSON.stringify({ ready: missingInputs.length === 0, missingInputs }), {
+          status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
       }
     }
 
