@@ -148,7 +148,7 @@ const MRVDashboard = () => {
     let totalCredits = 0;
     let carryForward = 0;
 
-    verifications.forEach(v => {
+    verifications.filter(v => v.verification_status === "verified").forEach(v => {
       const weight = v.total_co2_kg || 1;
       totalWeight += weight;
       
@@ -173,7 +173,7 @@ const MRVDashboard = () => {
 
     // Calculate trend (comparing recent vs older verifications)
     let trend: 'improving' | 'declining' | 'stable' = 'stable';
-    const scored = verifications.filter(v => typeof v.ai_analysis?.greenScore === 'number');
+    const scored = verifications.filter(v => v.verification_status === "verified").filter(v => typeof v.ai_analysis?.greenScore === 'number');
     if (scored.length >= 2) {
       const half = Math.ceil(scored.length / 2);
       const avg = (arr: typeof scored) =>
