@@ -78,8 +78,11 @@ const Monetize = () => {
     }
   }, [activeContext, navigate]);
 
-  const co2Tons = summary.total / 1000;
-  const carbonCreditValue = Math.round(co2Tons * 750); // ₹750 per tCO₂e
+  const verifiedEmissions = getVerifiedEmissions();
+  const verifiedTotalKg = verifiedEmissions.reduce((sum, e) => sum + (e.co2_kg || 0), 0);
+  const co2Tons = verifiedTotalKg / 1000;
+  // Baseline ₹750/tCO₂e (market estimate)
+  const carbonCreditValue = Math.round(co2Tons * 750);
   const loanAmount = 500000;
   const greenLoanSavings = Math.round(loanAmount * 0.005); // 0.5% interest reduction
   const govtIncentive = Math.round(carbonCreditValue * 1.5);
