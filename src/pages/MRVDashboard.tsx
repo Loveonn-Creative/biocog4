@@ -145,6 +145,7 @@ const MRVDashboard = () => {
     let weightedGreenScore = 0;
     let totalWeight = 0;
     let greenWeight = 0;
+    let verifiedWeight = 0;
     let totalCredits = 0;
     let carryForward = 0;
 
@@ -152,17 +153,20 @@ const MRVDashboard = () => {
       const weight = v.total_co2_kg || 1;
       totalWeight += weight;
       
-      weightedCarbonScore += ((v.verification_score || 0) * 100) * weight;
+      if (v.verification_status === "verified") {
+        verifiedWeight += weight;
+        weightedCarbonScore += ((v.verification_score || 0) * 100) * weight;
       weightedConfidence += (v.verification_status === 'verified' ? 100 : v.verification_status === 'needs_review' ? 60 : 30) * weight;
       if (typeof v.ai_analysis?.greenScore === 'number') {
-        weightedGreenScore += v.ai_analysis.greenScore * weight;
+          weightedGreenScore += v.ai_analysis.greenScore * weight;
         greenWeight += weight;
       }
-      totalCredits += v.ai_analysis?.creditEligibility?.eligibleCredits || 0;
-      carryForward += v.ai_analysis?.creditEligibility?.carryForward || 0;
+        totalCredits += v.ai_analysis?.creditEligibility?.eligibleCredits || 0;
+        carryForward += v.ai_analysis?.creditEligibility?.carryForward || 0;
+      }
     });
 
-    const carbonScore = totalWeight > 0 ? Math.round(weightedCarbonScore / totalWeight) : 0;
+    const carbonScore = verifiedWeight > 0 ? Math.round(weightedCarbonScore / verifiedWeight) : 0;
     const confidenceScore = totalWeight > 0 ? Math.round(weightedConfidence / totalWeight) : 0;
     // Only scored verifications contribute. With none, the score is reported
     // as unavailable rather than defaulted to a mid-point.
