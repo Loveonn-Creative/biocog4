@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, FileCheck, Shield, Banknote, Target, Coins, Building2, Globe2, BarChart3, Bot, Landmark, Workflow } from "lucide-react";
+import { lazy, Suspense } from "react";
+import { ArrowRight, FileCheck, Shield, Banknote, Target, Coins, Building2, BarChart3, Bot, Landmark, Workflow, ScanLine, ShieldCheck, Layers } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -10,6 +11,9 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
 import platformOg from "@/assets/og/platform.jpg";
+import { Reveal, SectionHead } from "@/components/platform/Reveal";
+
+const ProductPipeline = lazy(() => import("@/components/product/ProductPipeline"));
 
 const audiences = [
   { key: "msme", label: "MSMEs & exporters", line: "Turn invoices into a verified emission record, no consultant required." },
@@ -28,9 +32,9 @@ const outcomes = [
 ];
 
 const steps = [
-  { n: "01", key: "capture", title: "Capture", body: "Drop a document, take a photo, or speak the data point. The first response arrives in under two seconds." },
-  { n: "02", key: "verify", title: "Verify", body: "Every document is hashed, parsed, classified deterministically, and reconciled against country grid factors." },
-  { n: "03", key: "use", title: "Use", body: "The verified record feeds your disclosure, your lender, your reduction roadmap, and, when eligible, your credits." },
+  { n: "01", key: "capture", icon: ScanLine, tone: "accent", title: "Capture", body: "Drop a document, take a photo, or speak the data point. The first response arrives in under two seconds." },
+  { n: "02", key: "verify", icon: ShieldCheck, tone: "verified", title: "Verify", body: "Every document is hashed, parsed, classified deterministically, and reconciled against country grid factors." },
+  { n: "03", key: "use", icon: Layers, tone: "primary", title: "Use", body: "The verified record feeds your disclosure, your lender, your reduction roadmap, and, when eligible, your credits." },
 ];
 
 const proofMetrics = [
@@ -90,15 +94,24 @@ const Platform = () => {
       <MinimalNav />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="container max-w-4xl mx-auto px-6 pt-24 md:pt-28 pb-16 text-center">
-          <Badge variant="secondary" className="mb-6 text-xs">{t("platform.eyebrow", "The Platform")}</Badge>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6">
-            {t("platform.hero.title", "Climate evidence, in the time it takes to read this line.")}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {t("platform.hero.sub", "Senseible turns any business document into a verified emission record, one that a lender can underwrite, a regulator can audit, and a buyer can rely on.")}
-          </p>
+        {/* Hero: the words on one side, the product doing them on the other */}
+        <section className="container max-w-6xl mx-auto px-6 pt-24 md:pt-28 pb-14 md:pb-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+            <div className="text-center lg:text-left">
+              <Badge variant="secondary" className="mb-6 text-xs">{t("platform.eyebrow", "The Platform")}</Badge>
+              <h1 className="text-[2.25rem] leading-[1.08] md:text-[3.5rem] font-semibold tracking-tight text-foreground mb-6 [text-wrap:balance]">
+                {t("platform.hero.title", "Climate evidence, in the time it takes to read this line.")}
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-[34rem] mx-auto lg:mx-0 leading-relaxed">
+                {t("platform.hero.sub", "Senseible turns any business document into a verified emission record, one that a lender can underwrite, a regulator can audit, and a buyer can rely on.")}
+              </p>
+            </div>
+            <div className="min-h-[280px] sm:min-h-[360px]">
+              <Suspense fallback={<div className="h-[280px] sm:h-[360px]" aria-hidden="true" />}>
+                <ProductPipeline tone="page" />
+              </Suspense>
+            </div>
+          </div>
         </section>
 
         {/* Marquee strip */}
@@ -109,8 +122,7 @@ const Platform = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end">
               <div>
-                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.positioning.eyebrow", "Built into Senseible")}</div>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises.")}</h2>
+                <SectionHead n="01" className="mb-5" eyebrow={t("platform.positioning.eyebrow", "Built into Senseible")} title={t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises.")} />
                 <p className="text-lg text-muted-foreground leading-relaxed">{t("platform.positioning.body", "For an enterprise, that means seeing which suppliers have usable evidence, where the gaps are, and what is ready for Scope 3 reporting.")}</p>
               </div>
               <div className="border-l-2 border-primary/30 pl-5 text-sm text-muted-foreground leading-relaxed">
@@ -121,10 +133,9 @@ const Platform = () => {
         </section>
 
         {/* What is Senseible? */}
-        <section className="border-b border-border py-20">
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container max-w-3xl mx-auto px-6">
-            <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.what.eyebrow", "What is Senseible?")}</div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.what.title", "A verification layer for climate data.")}</h2>
+            <SectionHead n="02" className="mb-7" eyebrow={t("platform.what.eyebrow", "What is Senseible?")} title={t("platform.what.title", "A verification layer for climate data.")} />
             <p className="text-lg text-muted-foreground leading-relaxed">
               {t("platform.what.body", "Most climate numbers are self-reported. Senseible replaces the self-report with a chain of evidence (a hash, a methodology, a confidence band) that anyone downstream can independently check. It works on the documents a business already produces, in the language and the country the business already operates in.")}
             </p>
@@ -132,28 +143,32 @@ const Platform = () => {
         </section>
 
         {/* Who is it for? */}
-        <section className="border-b border-border py-20 bg-secondary/30">
+        <section className="border-b border-border py-20 md:py-28 bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.who.eyebrow", "Who is it for?")}</div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-10">{t("platform.who.title", "Six audiences. One verified record.")}</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {audiences.map(a => (
-                <Card key={a.key} className="border-border hover:border-primary/40 transition-colors">
-                  <CardContent className="p-6">
-                    <div className="text-sm font-medium mb-2 text-foreground">{t(`platform.who.${a.key}.label`, a.label)}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.who.${a.key}.line`, a.line)}</p>
-                  </CardContent>
-                </Card>
+            <SectionHead n="03" className="mb-10" eyebrow={t("platform.who.eyebrow", "Who is it for?")} title={t("platform.who.title", "Six audiences. One verified record.")} />
+            {/* One record in the middle, six readers around it: hairline rows instead of six boxes. */}
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t border-border">
+              {audiences.map((a, i) => (
+                <li key={a.key} className="group border-b border-border py-5">
+                  <Reveal delay={i * 60}>
+                    <div className="flex items-baseline gap-3">
+                      <span aria-hidden="true" className="shrink-0 whitespace-nowrap font-mono text-[11px] text-muted-foreground tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                      <div>
+                        <div className="text-[15px] font-medium mb-1.5 text-foreground group-hover:text-primary transition-colors">{t(`platform.who.${a.key}.label`, a.label)}</div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.who.${a.key}.line`, a.line)}</p>
+                      </div>
+                    </div>
+                  </Reveal>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
         {/* The problem */}
-        <section className="border-b border-border py-20">
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container max-w-3xl mx-auto px-6">
-            <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.problem.eyebrow", "What problem does it solve?")}</div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.problem.title", "The verification gap in emerging-market climate data.")}</h2>
+            <SectionHead n="04" className="mb-7" eyebrow={t("platform.problem.eyebrow", "What problem does it solve?")} title={t("platform.problem.title", "The verification gap in emerging-market climate data.")} />
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               {t("platform.problem.p1", "Emerging-market supply chains carry most of the world's industrial emissions, and almost none of the verified data. Regulators ask for primary numbers. Buyers ask for primary numbers. Lenders ask for primary numbers. Without them, the default values apply, and the cost lands on the smallest producer.")}
             </p>
@@ -164,21 +179,32 @@ const Platform = () => {
         </section>
 
         {/* How it works */}
-        <section className="border-b border-border py-20 bg-secondary/30">
+        <section className="border-b border-border py-20 md:py-28 bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.how.eyebrow", "How it works")}</div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-10">{t("platform.how.title", "Three steps. Same record, used three ways.")}</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {steps.map(s => (
-                <Card key={s.n} className="border-border border-l-2 border-l-primary/40">
-                  <CardContent className="p-6">
-                    <div className="text-xs font-mono text-primary mb-3">{s.n}</div>
-                    <div className="text-lg font-medium mb-2 text-foreground">{t(`platform.how.${s.key}.title`, s.title)}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.how.${s.key}.body`, s.body)}</p>
-                  </CardContent>
-                </Card>
+            <SectionHead n="05" className="mb-10" eyebrow={t("platform.how.eyebrow", "How it works")} title={t("platform.how.title", "Three steps. Same record, used three ways.")} />
+            {/* Colour follows the record: data (blue), checked (green), in use (brand). */}
+            <ol className="relative grid md:grid-cols-3 gap-6">
+              <svg aria-hidden="true" className="hidden md:block absolute left-0 right-0 top-9 h-6 w-full text-muted-foreground/50" viewBox="0 0 900 24" preserveAspectRatio="none">
+                <path d="M120 12 C 220 2, 300 22, 400 12 S 580 2, 690 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 5" />
+                <path d="M684 6 L 694 12 L 684 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              {steps.map((s, i) => (
+                <li key={s.n} className="relative">
+                  <Reveal delay={i * 140}>
+                    <div className="h-full rounded-2xl border border-border bg-background p-6 transition-shadow hover:shadow-[0_18px_40px_-24px_hsl(var(--foreground)/.35)]">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="grid place-items-center h-9 w-9 rounded-xl" style={{ background: `hsl(var(--${s.tone}) / .12)`, color: `hsl(var(--${s.tone}))` }}>
+                          <s.icon className="h-4 w-4" aria-hidden="true" />
+                        </span>
+                        <span className="text-xs font-mono text-muted-foreground">{s.n}</span>
+                      </div>
+                      <div className="text-lg font-medium mb-2 text-foreground">{t(`platform.how.${s.key}.title`, s.title)}</div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.how.${s.key}.body`, s.body)}</p>
+                    </div>
+                  </Reveal>
+                </li>
               ))}
-            </div>
+            </ol>
             <div className="mt-8">
               <Button asChild variant="ghost" className="px-0 text-primary hover:text-primary">
                 <Link to="/trust">{t("platform.how.cta", "Read the technical depth")} <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -188,13 +214,13 @@ const Platform = () => {
         </section>
 
         {/* Outcomes */}
-        <section className="border-b border-border py-20">
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.out.eyebrow", "What you can do with verified data")}</div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-10">{t("platform.out.title", "Four outcomes, one ledger.")}</h2>
+            <SectionHead n="06" className="mb-10" eyebrow={t("platform.out.eyebrow", "What you can do with verified data")} title={t("platform.out.title", "Four outcomes, one ledger.")} />
             <div className="grid sm:grid-cols-2 gap-4">
-              {outcomes.map(o => (
-                <Card key={o.key} className="border-border hover:border-primary/40 transition-colors">
+              {outcomes.map((o, i) => (
+                <Reveal key={o.key} delay={i * 80}>
+                <Card className="h-full border-border hover:border-primary/40 transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="p-2 rounded-md bg-primary/10 border border-primary/20">
@@ -210,18 +236,18 @@ const Platform = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* Proof and operating paths */}
-        <section className="border-b border-border py-20 bg-secondary/30">
+        <section className="border-b border-border py-20 md:py-28 bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <div>
-                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.proof.eyebrow", "What we have proven")}</div>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-5">{t("platform.proof.title", "The numbers are real. So is the work behind them.")}</h2>
+                <SectionHead n="07" className="mb-6" eyebrow={t("platform.proof.eyebrow", "What we have proven")} title={t("platform.proof.title", "The numbers are real. So is the work behind them.")} />
                 <p className="text-muted-foreground leading-relaxed mb-6">{t("platform.proof.body", "Senseible has been piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy. Each number comes from the work of turning everyday business records into usable climate evidence.")}</p>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Shield className="h-4 w-4 text-primary" />
@@ -279,12 +305,11 @@ const Platform = () => {
         </section>
 
         {/* Buyer pricing guide */}
-        <section className="border-b border-border py-20">
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex flex-wrap items-end justify-between gap-5 mb-10">
               <div className="max-w-2xl">
-                <div className="text-xs uppercase tracking-wider text-primary mb-3">{t("platform.pricing.eyebrow", "Choose your starting point")}</div>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.pricing.title", "Pricing that maps to the job in front of you.")}</h2>
+                <SectionHead n="08" className="mb-5" eyebrow={t("platform.pricing.eyebrow", "Choose your starting point")} title={t("platform.pricing.title", "Pricing that maps to the job in front of you.")} />
                 <p className="text-muted-foreground leading-relaxed">{t("platform.pricing.body", "Start free if you are still building your first record. Choose yearly billing for the lower monthly equivalent on Essential or Pro, or speak with the team when your work spans people, entities, or integrations.")}</p>
               </div>
               <Button asChild variant="outline">
@@ -338,13 +363,9 @@ const Platform = () => {
         </section>
 
         {/* Industries */}
-        <section className="border-b border-border py-20">
+        <section className="border-b border-border py-20 md:py-28">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Building2 className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-primary">{t("platform.industries.eyebrow", "Industries")}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.industries.title", "Built for the sectors that need it most.")}</h2>
+            <SectionHead n="09" className="mb-8" eyebrow={t("platform.industries.eyebrow", "Industries")} title={t("platform.industries.title", "Built for the sectors that need it most.")} />
             <div className="flex flex-wrap gap-2">
               {["textile", "steel", "chemical", "logistics", "automobile", "construction"].map(s => (
                 <Link key={s} to={`/industries/${s}`} className="px-4 py-2 rounded-full border border-border text-sm text-foreground/80 hover:border-primary/40 hover:text-primary transition-colors capitalize">
@@ -356,13 +377,9 @@ const Platform = () => {
         </section>
 
         {/* Where it works */}
-        <section className="border-b border-border py-20 bg-secondary/30">
+        <section className="border-b border-border py-20 md:py-28 bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Globe2 className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-primary">{t("platform.where.eyebrow", "Where it works")}</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{t("platform.where.title", "19 configured countries, each with its own identifier and grid factor.")}</h2>
+            <SectionHead n="10" className="mb-8" eyebrow={t("platform.where.eyebrow", "Where it works")} title={t("platform.where.title", "19 configured countries, each with its own identifier and grid factor.")} />
             <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-3">
               {countries.map(c => (
                 <div key={c.code} className="p-3 rounded-md border border-border bg-background">
