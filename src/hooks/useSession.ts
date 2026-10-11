@@ -4,6 +4,10 @@ import type { User, Session } from '@supabase/supabase-js';
 
 const SESSION_STORAGE_KEY = 'senseible_session_id';
 
+// Every component calls useSession, so each mounts its own auth listener.
+// This set makes sure one guest session is merged at most once per page load.
+const mergesStarted = new Set<string>();
+
 interface SessionState {
   sessionId: string | null;
   user: User | null;
@@ -116,10 +120,14 @@ export function useSession() {
             isAuthenticated: true
           });
 
-          // Merge anonymous session data on login
+          // Merge this device's guest uploads into the account that just signed
+          // in, once. The guest id is then forgotten, so a later visitor (or a
+          // later sign-in on a shared device) can never inherit those records.
           if (event === 'SIGNED_IN') {
             const anonSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
-            if (anonSessionId) {
+            if (anonSessionId && !mergesStarted.has(anonSessionId)) {
+              mergesStarted.add(anonSessionId);
+              localStorage.removeItem(SESSION_STORAGE_KEY);
               setTimeout(() => {
                 mergeAnonymousSession(anonSessionId, session.user.id);
               }, 0);

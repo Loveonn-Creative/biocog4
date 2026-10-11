@@ -4,7 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download, Loader2, AlertTriangle } from 'lucide-react';
+import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download, Loader2, AlertTriangle, Trash2 } from 'lucide-react';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { toast } from 'sonner';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
+import { getFunctionErrorMessage } from '@/hooks/useOrganization';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
@@ -28,6 +32,24 @@ const History = () => {
   const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
   const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  // Server-side delete: checks ownership, refuses verified records, logs the removal.
+  const deleteDocument = async (documentId: string) => {
+    setDeletingId(documentId);
+    try {
+      const supabase = await loadSupabase();
+      const { error } = await supabase.functions.invoke('delete-document', { body: { documentId } });
+      if (error) {
+        toast.error(await getFunctionErrorMessage(error, 'Could not delete the invoice.'));
+        return;
+      }
+      toast.success('Invoice deleted.');
+      await Promise.all([refreshDocuments(), refreshEmissions(), refreshLedger()]);
+    } finally {
+      setDeletingId(null);
+    }
+  };
   const [search, setSearch] = useState('');
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
     from: undefined,
@@ -301,6 +323,28 @@ const History = () => {
                       <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
                       </div>
                       {user && documentRows.length > 0 && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
+                      {/* Remove a wrongly parsed or duplicate invoice. Verified records are never deletable. */}
+                      {user && status.kind !== 'verified' && (
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                            <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-destructive shrink-0" disabled={deletingId === doc.id} aria-label={`Delete ${doc.vendor || 'invoice'}`}>
+                              {deletingId === doc.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
+                            </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Delete this invoice?</AlertDialogTitle>
+                              <AlertDialogDescription>
+                                {doc.vendor || 'This invoice'}{doc.invoice_number ? ` #${doc.invoice_number}` : ''} and its {documentRows.length} unverified emission {documentRows.length === 1 ? 'record' : 'records'} will be removed. Verified records are never deleted.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Keep</AlertDialogCancel>
+                              <AlertDialogAction onClick={() => deleteDocument(doc.id)} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">Delete</AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                      )}
                       {/* Enterprise: Document Provenance */}
                       {isEnterprise && doc.document_hash && (
                         <div className="text-right shrink-0">

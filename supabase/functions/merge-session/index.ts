@@ -61,7 +61,7 @@ Deno.serve(async (req) => {
     // CRITICAL: Validate session ownership via device fingerprint
     const { data: session, error: sessionError } = await supabaseAdmin
       .from('sessions')
-      .select('id, device_fingerprint')
+      .select('id, device_fingerprint, last_active')
       .eq('id', sessionId)
       .single();
 
@@ -94,6 +94,24 @@ Deno.serve(async (req) => {
       );
     }
 
+    // Only a guest session used recently on this device is merged. A session
+    // left idle (for example by a previous visitor on a shared computer) is
+    // never attached to whoever signs in next.
+    const MERGE_WINDOW_MS = 24 * 60 * 60 * 1000;
+    const lastActive = session.last_active ? new Date(session.last_active).getTime() : 0;
+    if (!lastActive || Date.now() - lastActive > MERGE_WINDOW_MS) {
+      await supabaseAdmin.from('security_audit_log').insert({
+        event_type: 'session_merge_skipped_stale',
+        user_id: user.id,
+        session_id: sessionId,
+        details: { last_active: session.last_active ?? null },
+      });
+      return new Response(
+        JSON.stringify({ success: true, merged: false, reason: 'stale_session' }),
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     // Count data to be merged
     const [docCount, emissionCount, verificationCount, reportCount] = await Promise.all([
       supabaseAdmin.from('documents').select('id', { count: 'exact' }).eq('session_id', sessionId),
@@ -114,27 +132,33 @@ Deno.serve(async (req) => {
       supabaseAdmin
         .from('documents')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
       supabaseAdmin
         .from('emissions')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
       supabaseAdmin
         .from('carbon_verifications')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
       supabaseAdmin
         .from('reports')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
       supabaseAdmin
         .from('chat_history')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
       supabaseAdmin
         .from('monetization_pathways')
         .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId),
+        .eq('session_id', sessionId)
+        .is('user_id', null),
     ]);
 
     // Check for errors
@@ -142,6 +166,10 @@ Deno.serve(async (req) => {
     if (errors.length > 0) {
       console.error('Merge errors:', errors.map(e => e.error));
     }
+
+    // End the guest session so nothing uploaded on this device later can be
+    // merged into this (or any other) account.
+    await supabaseAdmin.from('sessions').update({ is_active: false }).eq('id', sessionId);
 
     // Log successful merge
     await supabaseAdmin.from('security_audit_log').insert({
