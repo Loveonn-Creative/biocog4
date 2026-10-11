@@ -1,9 +1,9 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, type ReactNode } from "react";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
 
@@ -14,6 +14,9 @@ import { RequireAuth } from "./components/RequireAuth";
 import { RouteSEO } from "./components/RouteSEO";
 import { TranslationScope } from "./components/TranslationScope";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
+import { servicePages } from "@/data/services";
+import { AppErrorBoundary } from "./components/AppErrorBoundary";
+import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
 
 // Perf: Auth was eager; lazy keeps it (and its form deps) out of the homepage bundle.
 const Auth = lazy(() => import("./pages/Auth"));
@@ -44,6 +47,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const ClimateStack = lazy(() => import("./pages/ClimateStack"));
 const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
 const Profile = lazy(() => import("./pages/Profile"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
@@ -82,7 +86,26 @@ const PageLoader = () => (
   </div>
 );
 
-const queryClient = new QueryClient();
+installChunkRecovery();
+
+// Retry only what a retry can fix: never auth, permission or validation
+// errors (4xx, Postgres 42501/PGRST), at most twice for network or 5xx.
+const isPermanentError = (err: unknown) => {
+  const e = err as { status?: number; code?: string } | null;
+  if (typeof e?.status === "number" && e.status >= 400 && e.status < 500) return true;
+  return typeof e?.code === "string" && /^(42501|PGRST\d+|22\w{3}|23\w{3})$/.test(e.code);
+};
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { retry: (count, err) => count < 2 && !isPermanentError(err) },
+  },
+});
+
+/** Error boundary that resets on navigation. */
+const RoutedBoundary = ({ children }: { children: ReactNode }) => {
+  const { pathname } = useLocation();
+  return <AppErrorBoundary resetKey={pathname}>{children}</AppErrorBoundary>;
+};
 
 const App = () => (
   <HelmetProvider>
@@ -104,9 +127,11 @@ const App = () => (
           <AnalyticsTracker />
           <RouteSEO />
           <TranslationScope />
+          <RoutedBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              {servicePages.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
@@ -165,6 +190,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          </RoutedBoundary>
         </BrowserRouter>
       </TooltipProvider>
       </LanguageProvider>

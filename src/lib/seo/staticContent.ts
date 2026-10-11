@@ -4,9 +4,10 @@
 // cite primary sources (EUR-Lex); have the CBAM reviewer re-check them on
 // every regulatory change.
 import type { Block } from './render';
+import { servicePages } from '@/data/services';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
 
-const STATUS = { live: 'Live', pilot: 'Pilot', roadmap: 'Roadmap' } as const;
+const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
 const capList = (items: Capability[]): Block => ({ ul: items.map(c => `${c.label} (${STATUS[c.status]})${c.note ? `: ${c.note}` : ''}`) });
 
 export const EUR_LEX_CBAM = 'https://eur-lex.europa.eu/eli/reg/2023/956/oj';
@@ -23,7 +24,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/': {
     h1: 'Senseible: from your bills to climate finance',
     blocks: [
-      { p: 'Upload a bill or invoice for an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
+      { p: 'Upload an invoice, get an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
       { h2: 'How it works' },
       { ol: [
         'Upload a document, take a photo or speak the data point.',
@@ -57,7 +58,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/enterprise': {
     h1: 'Supplier emissions, without the chasing',
     blocks: [
-      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Being built: the supplier network. Every capability below is marked Live, Pilot or Roadmap.' },
+      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
       { h2: 'How the agents work' },
       { p: 'Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.' },
       capList(pipelineStages),
@@ -169,4 +170,24 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: '[All calculators](/calculators)' },
     ],
   },
+  // Service lead pages: the prerendered answer, objections, links and FAQs.
+  ...Object.fromEntries(servicePages.map(s => [`/${s.slug}`, {
+    h1: s.hero.headline,
+    blocks: [
+      { p: s.hero.sub },
+      ...(s.hero.stake ? [{ p: `${s.hero.stake.text} (${s.hero.stake.source})` } as Block] : []),
+      { h2: s.answer.q },
+      { p: s.answer.a },
+      { h2: `Free tool: ${s.tool.title}` },
+      { p: `Answer in about a minute, with no sign-up. Then send the result on WhatsApp or [book a scoping call](/contact).` },
+      { h2: `What you receive: ${s.deliverable.title}` },
+      { ul: s.deliverable.rows.map(([k]) => k) },
+      { h2: 'Price, time, data and who does the work' },
+      { ul: [`Price: ${s.objections.price}`, `Time: ${s.objections.time}`, `What you need: ${s.objections.data}`, `Who does the work: ${s.objections.who}`] },
+      { h2: 'Already in Senseible' },
+      { ul: [...s.product.map(l => `[${l.label}](${l.to})`), '[Plans and pricing](/pricing)'] },
+      { h2: 'Questions buyers ask' },
+      ...s.faqs.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+    ] as Block[],
+  }])),
 };

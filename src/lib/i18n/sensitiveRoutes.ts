@@ -6,6 +6,9 @@ export const SENSITIVE_PREFIXES = [
   '/cbam-calculator', '/calculators', '/net-zero', '/trust', '/legal', '/pricing',
   '/billing', '/subscription', '/climate-intelligence', '/solutions',
   '/carbon-credits', '/climate-finance', '/marketplace', '/partner-marketplace', '/enterprise',
+  // Service lead pages carry regulatory statements and prices.
+  '/carbon-accounting', '/esg-reporting', '/supplier-due-diligence', '/decarbonization', '/circular-economy',
+  '/climate-risk', '/esg-data-management', '/ehs-social', '/product-compliance', '/esg-ratings', '/green-finance',
 ];
 
 export function isSensitiveRoute(pathname: string): boolean {

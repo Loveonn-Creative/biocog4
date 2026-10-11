@@ -1,5 +1,14 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import {
+  calculateEmissions,
+  classifyByHSN,
+  classifyByKeyword,
+  totalsFor,
+  FACTOR_SET_VERSION,
+  METHODOLOGY_NAME,
+  METHODOLOGY_VERSION_TAG,
+} from "../_shared/emissionFactors.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -7,321 +16,46 @@ const corsHeaders = {
 };
 
 // ============= DOCUMENT HASH GENERATION (DETERMINISTIC) =============
-async function generateDocumentHash(content: string, mimeType: string): Promise<string> {
-  // Use first 10KB of content for faster hashing while maintaining uniqueness
-  const hashInput = content.substring(0, 10000) + mimeType;
-  const encoder = new TextEncoder();
-  const data = encoder.encode(hashInput);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+// SHA-256 over the full decoded file bytes. The previous hash covered only the
+// first 10,000 base64 characters, so different files sharing a header could
+// collide. Hashes made before this change will not match new uploads of the
+// same file.
+async function generateDocumentHash(base64Content: string): Promise<string> {
+  const clean = base64Content.replace(/\s+/g, '');
+  const binary = atob(clean);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Decode a JWT payload without verifying it. Used only to tell the anon or
+// publishable key apart from a user token; getUser() does the real check.
+function jwtRole(token: string): string | null {
+  const parts = token.split('.');
+  if (parts.length !== 3) return null;
+  try {
+    const json = atob(parts[1].replace(/-/g, '+').replace(/_/g, '/').padEnd(Math.ceil(parts[1].length / 4) * 4, '='));
+    const payload = JSON.parse(json);
+    return typeof payload?.role === 'string' ? payload.role : null;
+  } catch {
+    return null;
+  }
 }
 
 // ============= METHODOLOGY VERSION (APPEND-ONLY VERSIONING) =============
 const METHODOLOGY_VERSION = {
-  name: 'BIOCOG_MVR_INDIA',
-  version: 'v1.0.2', // Updated: Fixed scope assignment, deterministic caching
+  name: METHODOLOGY_NAME,
+  // v1.1.0: corrected LPG, PNG, furnace oil, naphtha, kerosene and grid
+  // factors; unit aliases; avoided emissions reported separately; full-file hash.
+  version: `${METHODOLOGY_VERSION_TAG}.0`,
   country: 'IN',
-  factorVersion: 'IND_EF_2025',
+  factorVersion: FACTOR_SET_VERSION,
   confidenceVersion: 'CONF_v1.0',
 };
 
-// ============= HSN CODE MASTER (RULE-BASED - NO AI) =============
-const HSN_MASTER: Record<string, { productCategory: string; industryCode: string; industryName: string; defaultScope: number }> = {
-  // Fuel & Energy: Scope 1/2
-  '27': { productCategory: 'FUEL', industryCode: 'ENERGY', industryName: 'Mineral Fuels & Oils', defaultScope: 1 },
-  '10': { productCategory: 'BIOMASS', industryCode: 'AGRI', industryName: 'Agricultural Biomass', defaultScope: 1 },
-  '12': { productCategory: 'BIOMASS', industryCode: 'AGRI', industryName: 'Oil Seeds & Biomass', defaultScope: 1 },
-  // Metals & Minerals: Scope 3
-  '72': { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', industryName: 'Iron & Steel', defaultScope: 3 },
-  '73': { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL_PRODUCTS', industryName: 'Steel Articles', defaultScope: 3 },
-  '74': { productCategory: 'RAW_MATERIAL', industryCode: 'COPPER', industryName: 'Copper', defaultScope: 3 },
-  '76': { productCategory: 'RAW_MATERIAL', industryCode: 'ALUMINIUM', industryName: 'Aluminium', defaultScope: 3 },
-  '25': { productCategory: 'RAW_MATERIAL', industryCode: 'CEMENT', industryName: 'Cement & Minerals', defaultScope: 3 },
-  // Plastics, Chemicals
-  '39': { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', industryName: 'Plastics & Polymers', defaultScope: 3 },
-  '28': { productCategory: 'CHEMICALS', industryCode: 'CHEMICALS', industryName: 'Inorganic Chemicals', defaultScope: 3 },
-  '29': { productCategory: 'CHEMICALS', industryCode: 'CHEMICALS', industryName: 'Organic Chemicals', defaultScope: 3 },
-  '40': { productCategory: 'RAW_MATERIAL', industryCode: 'RUBBER', industryName: 'Rubber & Elastomers', defaultScope: 3 },
-  // Paper, Textiles, Wood
-  '48': { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', industryName: 'Paper & Pulp', defaultScope: 3 },
-  '44': { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', industryName: 'Wood & Timber', defaultScope: 3 },
-  '52': { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', industryName: 'Cotton Textiles', defaultScope: 3 },
-  '54': { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', industryName: 'Synthetic Textiles', defaultScope: 3 },
-  // Machinery, Electricals
-  '84': { productCategory: 'CAPITAL_GOODS', industryCode: 'MACHINERY', industryName: 'Industrial Machinery', defaultScope: 3 },
-  '85': { productCategory: 'ELECTRICAL_EQUIPMENT', industryCode: 'ELECTRICAL', industryName: 'Electrical Equipment', defaultScope: 3 },
-  '90': { productCategory: 'INSTRUMENTS', industryCode: 'INSTRUMENTATION', industryName: 'Measuring Instruments', defaultScope: 3 },
-  // Transport
-  '86': { productCategory: 'TRANSPORT_EQUIPMENT', industryCode: 'RAILWAYS', industryName: 'Railway Equipment', defaultScope: 3 },
-  '87': { productCategory: 'TRANSPORT_EQUIPMENT', industryCode: 'AUTOMOTIVE', industryName: 'Vehicles & Transport', defaultScope: 3 },
-  '88': { productCategory: 'TRANSPORT_EQUIPMENT', industryCode: 'AVIATION', industryName: 'Aircraft & Parts', defaultScope: 3 },
-  '89': { productCategory: 'TRANSPORT_EQUIPMENT', industryCode: 'MARINE', industryName: 'Ships & Boats', defaultScope: 3 },
-  // Services
-  '99': { productCategory: 'SERVICES', industryCode: 'PROFESSIONAL', industryName: 'Professional & Business Services', defaultScope: 3 },
-  // Green HSN codes
-  '8541': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', industryName: 'Solar Cells & PV Modules', defaultScope: 2 },
-  '8711': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', industryName: 'Electric Motorcycles', defaultScope: 1 },
-  '0602': { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', industryName: 'Live Plants & Saplings', defaultScope: 3 },
-  '8501': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', industryName: 'Electric Motors', defaultScope: 1 },
-};
-
-// ============= EXPANDED KEYWORD FALLBACK MAP (RULE-BASED - NO AI) =============
-// CRITICAL: Scope assignments per BIOCOG_MVR_INDIA_v1.0
-// - Scope 1: Direct fuel combustion (diesel, petrol, LPG, coal, CNG, PNG)
-// - Scope 2: Purchased electricity (ALWAYS scope 2, never scope 1)
-// - Scope 3: Transport, materials, waste, services
-const KEYWORD_MAP: Record<string, { productCategory: string; industryCode: string; scope: number; fuelType?: string }> = {
-  // Fuels - Scope 1 (including common OCR misreads and regional terms)
-  diesel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  deisel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  disel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  'd1esel': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  hsd: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  petrol: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  petro: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  petr0l: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  gasoline: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  ms: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PETROL' },
-  cng: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'CNG' },
-  lpg: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
-  'l.p.g': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'LPG' },
-  coal: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'COAL' },
-  furnace: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
-  'furnace oil': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
-  fo: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'FURNACE_OIL' },
-  naphtha: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'NAPHTHA' },
-  png: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
-  'piped gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
-  'natural gas': { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'PNG' },
-  kerosene: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  tel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  fuel: { productCategory: 'FUEL', industryCode: 'ENERGY', scope: 1, fuelType: 'DIESEL' },
-  // Electricity - Scope 2 (ALWAYS SCOPE 2 per BIOCOG MRV spec)
-  electricity: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  electy: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  elec: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  'elec bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  power: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  kwh: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  kw: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  'electric bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  'power bill': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  bijli: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  vidyut: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  discom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  msedcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  tpddl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  bses: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  cesc: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  bescom: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  tneb: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  pspcl: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  'punjab state power': { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  unit: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  units: { productCategory: 'ELECTRICITY', industryCode: 'POWER', scope: 2 },
-  // Transport - Scope 3
-  freight: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  transport: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  logistics: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  courier: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  shipping: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  delivery: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  trucking: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  lorry: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  carrier: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  dhl: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  fedex: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  bluedart: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  delhivery: { productCategory: 'TRANSPORT', industryCode: 'LOGISTICS', scope: 3 },
-  // Raw Materials - Scope 3
-  steel: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
-  iron: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
-  tmt: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
-  rebar: { productCategory: 'RAW_MATERIAL', industryCode: 'STEEL', scope: 3 },
-  plastic: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
-  polymer: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
-  hdpe: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
-  ldpe: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
-  pvc: { productCategory: 'RAW_MATERIAL', industryCode: 'PLASTIC', scope: 3 },
-  paper: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
-  cardboard: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
-  carton: { productCategory: 'RAW_MATERIAL', industryCode: 'PAPER', scope: 3 },
-  cement: { productCategory: 'RAW_MATERIAL', industryCode: 'CEMENT', scope: 3 },
-  concrete: { productCategory: 'RAW_MATERIAL', industryCode: 'CEMENT', scope: 3 },
-  aluminium: { productCategory: 'RAW_MATERIAL', industryCode: 'ALUMINIUM', scope: 3 },
-  aluminum: { productCategory: 'RAW_MATERIAL', industryCode: 'ALUMINIUM', scope: 3 },
-  copper: { productCategory: 'RAW_MATERIAL', industryCode: 'COPPER', scope: 3 },
-  textile: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
-  fabric: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
-  cotton: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
-  yarn: { productCategory: 'RAW_MATERIAL', industryCode: 'TEXTILE', scope: 3 },
-  wood: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
-  timber: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
-  plywood: { productCategory: 'RAW_MATERIAL', industryCode: 'WOOD', scope: 3 },
-  rubber: { productCategory: 'RAW_MATERIAL', industryCode: 'RUBBER', scope: 3 },
-  glass: { productCategory: 'RAW_MATERIAL', industryCode: 'GLASS', scope: 3 },
-  // Waste - Scope 3
-  waste: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  disposal: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  recycling: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  scrap: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  garbage: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  kachra: { productCategory: 'WASTE', industryCode: 'WASTE_MANAGEMENT', scope: 3 },
-  // Green Categories - Solar
-  solar: { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  'solar panel': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  'pv module': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  'photovoltaic': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  'solar inverter': { productCategory: 'SOLAR_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  // Green Categories - EV
-  'electric vehicle': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
-  'ev charging': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
-  'ev battery': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
-  'e-rickshaw': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
-  'e-scooter': { productCategory: 'EV_TRANSPORT', industryCode: 'GREEN_TRANSPORT', scope: 1 },
-  // Green Categories - Forestation
-  forestation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
-  sapling: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
-  plantation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
-  'tree planting': { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
-  afforestation: { productCategory: 'FORESTATION', industryCode: 'GREEN_LAND', scope: 3 },
-  // Green Categories - Wind
-  'wind turbine': { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  windmill: { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  'wind energy': { productCategory: 'WIND_ENERGY', industryCode: 'GREEN_ENERGY', scope: 2 },
-  // Green Categories - Biogas
-  biogas: { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
-  biomethane: { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
-  'bio-gas': { productCategory: 'BIOGAS', industryCode: 'GREEN_ENERGY', scope: 1 },
-  // Green Categories - Organic
-  organic: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
-  compost: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
-  'bio-fertilizer': { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
-  vermicompost: { productCategory: 'ORGANIC_INPUT', industryCode: 'GREEN_AGRI', scope: 3 },
-  // Green Categories - Energy Efficiency
-  led: { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
-  'energy efficient': { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
-  bldc: { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
-  'star rated': { productCategory: 'ENERGY_EFFICIENCY', industryCode: 'GREEN_TECH', scope: 2 },
-  // Green Categories - Water Conservation
-  rainwater: { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
-  'water recycling': { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
-  'rain harvesting': { productCategory: 'WATER_CONSERVATION', industryCode: 'GREEN_WATER', scope: 3 },
-  // Green Categories - Recycled Material
-  'recycled material': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
-  'r-pet': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
-  'recycled plastic': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
-  'recycled paper': { productCategory: 'RECYCLED_MATERIAL', industryCode: 'GREEN_MATERIAL', scope: 3 },
-  // Cloud & Data Centers - Scope 3 (Purchased Services)
-  aws: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  'amazon web services': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  azure: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  gcp: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  'google cloud': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  cloud: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  'data center': { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  compute: { productCategory: 'CLOUD_SERVICES', industryCode: 'CLOUD', scope: 3 },
-  // Software & SaaS - Scope 3
-  'software license': { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
-  saas: { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
-  subscription: { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
-  'platform fee': { productCategory: 'SOFTWARE', industryCode: 'SOFTWARE', scope: 3 },
-  // IT Hardware (Capital Goods) - Scope 3
-  laptop: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
-  server: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
-  networking: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
-  router: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
-  switch: { productCategory: 'IT_HARDWARE', industryCode: 'IT_EQUIPMENT', scope: 3 },
-  // Professional Services - Scope 3
-  consulting: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
-  legal: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
-  audit: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
-  advisory: { productCategory: 'PROFESSIONAL_SERVICES', industryCode: 'PROFESSIONAL', scope: 3 },
-  // Business Travel - Scope 3
-  airfare: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  flight: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  hotel: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  cab: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  taxi: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  commute: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  uber: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-  ola: { productCategory: 'BUSINESS_TRAVEL', industryCode: 'TRAVEL', scope: 3 },
-};
-
-// ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0 - from PDF) =============
-// Source: BIOCOG_CARBON_MVR_LOGIC_Updated_Jan_31.pdf
-const EMISSION_FACTORS = {
-  scope1_fuels: {
-    DIESEL: { value: 2.68, unit: 'litre' },      // kgCO2e per litre
-    PETROL: { value: 2.31, unit: 'litre' },      // kgCO2e per litre
-    CNG: { value: 2.75, unit: 'kg' },            // kgCO2e per kg
-    PNG: { value: 2.30, unit: 'scm' },           // kgCO2e per scm
-    LPG: { value: 1.51, unit: 'kg' },            // kgCO2e per kg
-    COAL: { value: 2.42, unit: 'kg' },           // kgCO2e per kg
-    FURNACE_OIL: { value: 3.15, unit: 'litre' }, // kgCO2e per litre
-    NAPHTHA: { value: 3.00, unit: 'litre' },     // kgCO2e per litre
-    BIOMASS: { value: 0.00, unit: 'kg', creditable: false }, // Reported but not credited
-  },
-  scope2_electricity: {
-    INDIA_GRID_AVG: 0.708,  // kgCO2e per kWh (CEA India)
-    SOLAR_CAPTIVE: 0.000,
-    WIND_CAPTIVE: 0.000,
-    RENEWABLE_PPA: 0.000,
-  },
-  scope3_transport: {
-    ROAD_LIGHT: 0.12,    // kgCO2e per ton-km
-    ROAD_HEAVY: 0.18,    // kgCO2e per ton-km
-    RAIL: 0.04,          // kgCO2e per ton-km
-    INLAND_WATER: 0.03,  // kgCO2e per ton-km
-    SEA: 0.015,          // kgCO2e per ton-km
-    AIR: 0.60,           // kgCO2e per ton-km
-  },
-  scope3_waste: {
-    LANDFILL_ORGANIC: 1.90,   // kgCO2e per kg
-    LANDFILL_INORGANIC: 0.45, // kgCO2e per kg
-    RECYCLING_PAPER: -0.90,   // Negative = credit (only with certificate)
-    RECYCLING_PLASTIC: -1.50,
-    RECYCLING_METAL: -4.00,
-    INCINERATION: 2.50,
-  },
-  // IT/Service monetary-based factors (kgCO2e per monetary unit)
-  scope3_cloud: {
-    AWS_INDIA: { value: 0.52, unit: 'USD', currency: 'USD' },      // kgCO2e per USD
-    AZURE_INDIA: { value: 0.55, unit: 'USD', currency: 'USD' },
-    GCP_INDIA: { value: 0.50, unit: 'USD', currency: 'USD' },
-    CLOUD_DEFAULT: { value: 0.52, unit: 'USD', currency: 'USD' },
-  },
-  scope3_it_hardware: {
-    LAPTOP: { value: 0.35, unit: 'INR1000' },      // kgCO2e per ₹1000
-    SERVER: { value: 0.62, unit: 'INR1000' },
-    NETWORKING: { value: 0.48, unit: 'INR1000' },
-    IT_DEFAULT: { value: 0.45, unit: 'INR1000' },
-  },
-  scope3_services: {
-    PROFESSIONAL_DEFAULT: { value: 0.30, unit: 'INR1000' },
-    SOFTWARE_DEFAULT: { value: 0.25, unit: 'INR1000' },
-  },
-  scope3_business_travel: {
-    AIR_SHORT: { value: 0.255, unit: 'km' },
-    AIR_MEDIUM: { value: 0.156, unit: 'km' },
-    AIR_LONG: { value: 0.150, unit: 'km' },
-    HOTEL_NIGHT: { value: 21.6, unit: 'night' },
-    CAB_DEFAULT: { value: 0.14, unit: 'km' },
-  },
-  // Green benefit factors (negative = carbon avoided/reduced)
-  green_benefits: {
-    SOLAR_ENERGY: { value: -0.708, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:SOLAR_AVOIDED_GRID' },
-    EV_TRANSPORT: { value: -1.80, unit: 'litre-equivalent', factorSource: 'BIOCOG_MVR_INDIA_v1.0:EV_DIESEL_AVOIDED' },
-    FORESTATION: { value: -22.0, unit: 'tree', factorSource: 'BIOCOG_MVR_INDIA_v1.0:FORESTATION_IPCC' },
-    WIND_ENERGY: { value: -0.708, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:WIND_AVOIDED_GRID' },
-    BIOGAS: { value: -2.30, unit: 'scm', factorSource: 'BIOCOG_MVR_INDIA_v1.0:BIOGAS_NG_AVOIDED' },
-    ORGANIC_INPUT: { value: -0.50, unit: 'kg', factorSource: 'BIOCOG_MVR_INDIA_v1.0:ORGANIC_CHEM_AVOIDED' },
-    ENERGY_EFFICIENCY: { value: -0.30, unit: 'kWh', factorSource: 'BIOCOG_MVR_INDIA_v1.0:EFFICIENCY_REDUCTION' },
-    WATER_CONSERVATION: { value: -0.20, unit: 'kL', factorSource: 'BIOCOG_MVR_INDIA_v1.0:WATER_ENERGY_SAVED' },
-    RECYCLED_MATERIAL: { value: -1.50, unit: 'kg', factorSource: 'BIOCOG_MVR_INDIA_v1.0:RECYCLED_VIRGIN_AVOIDED' },
-  },
-};
+// Factors, HSN map, keyword map and unit conversion live in
+// ../_shared/emissionFactors.ts so they can be unit tested.
 
 // ============= DETERMINISTIC CONFIDENCE SCORING (NO AI INFLUENCE) =============
 // Per BIOCOG MRV spec: Base 100, fixed penalties, same input = same output
@@ -464,163 +198,22 @@ function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string
 }
 
 // ============= ENHANCED UNIT DETECTION =============
+// Used only when the OCR gave no explicit unit. Bare "unit"/"units" are not
+// read as kWh: they also appear as "unit price" on ordinary invoices.
 function detectUnit(text: string): string | null {
   const unitPatterns: Record<string, RegExp> = {
-    'litre': /\b(litre|liter|ltr|lt|l|l1tre|1itre)\b/i,
-    'kg': /\b(kg|kilogram|kgs|k\.g|k9)\b/i,
-    'kWh': /\b(kwh|kilowatt|unit|units|un1ts|kw\.h)\b/i,
-    'ton': /\b(ton|tonne|mt|tons|tonnes|metric\s*ton)\b/i,
-    'km': /\b(km|kilometer|kilometres|k\.m)\b/i,
-    'scm': /\b(scm|cubic\s*m|cu\.m|cbm)\b/i,
+    'kWh': /\b(kwh|kilowatt[- ]?hours?|kw\.h)\b/i,
+    'MWh': /\b(mwh)\b/i,
+    'kl': /\b(kl|kilolitres?|kiloliters?)\b/i,
+    'litre': /\b(litres?|liters?|ltrs?|l1tre|1itre)\b/i,
+    'kg': /\b(kg|kilograms?|kgs|k\.g)\b/i,
+    'tonne': /\b(tonnes?|mt|metric\s*tons?)\b/i,
+    'scm': /\b(scm|sm3|cubic\s*met(re|er)s?|cu\.m)\b/i,
   };
-  
+
   for (const [unit, pattern] of Object.entries(unitPatterns)) {
     if (pattern.test(text)) return unit;
   }
-  return null;
-}
-
-// ============= QUANTITY INFERENCE FROM CONTEXT =============
-function inferQuantityFromContext(text: string, amount?: number): number | null {
-  const quantityPatterns = [
-    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:litre|liter|ltr|lt|l)\b/i,
-    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:kg|kilogram|kgs)\b/i,
-    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:kwh|unit|units)\b/i,
-    /(\d+(?:,\d{3})*(?:\.\d+)?)\s*(?:ton|tonne|mt)\b/i,
-    /qty[:\s]*(\d+(?:,\d{3})*(?:\.\d+)?)/i,
-    /quantity[:\s]*(\d+(?:,\d{3})*(?:\.\d+)?)/i,
-  ];
-  
-  for (const pattern of quantityPatterns) {
-    const match = text.match(pattern);
-    if (match) {
-      return parseFloat(match[1].replace(/,/g, ''));
-    }
-  }
-  
-  // DON'T infer from amount - this causes hallucination
-  // Amount-based inference removed to ensure determinism
-  return null;
-}
-
-// ============= HSN CLASSIFICATION (RULE-BASED) =============
-function classifyByHSN(hsnCode: string): { productCategory: string; industryCode: string; industryName: string; scope: number } | null {
-  if (!hsnCode) return null;
-  
-  // Check 4-digit HSN first (more specific green codes)
-  const prefix4 = hsnCode.substring(0, 4);
-  if (HSN_MASTER[prefix4]) {
-    return {
-      productCategory: HSN_MASTER[prefix4].productCategory,
-      industryCode: HSN_MASTER[prefix4].industryCode,
-      industryName: HSN_MASTER[prefix4].industryName,
-      scope: HSN_MASTER[prefix4].defaultScope,
-    };
-  }
-  
-  // Fall back to 2-digit HSN
-  const prefix2 = hsnCode.substring(0, 2);
-  if (HSN_MASTER[prefix2]) {
-    return {
-      productCategory: HSN_MASTER[prefix2].productCategory,
-      industryCode: HSN_MASTER[prefix2].industryCode,
-      industryName: HSN_MASTER[prefix2].industryName,
-      scope: HSN_MASTER[prefix2].defaultScope,
-    };
-  }
-  return null;
-}
-
-// ============= KEYWORD CLASSIFICATION (RULE-BASED FALLBACK) =============
-function classifyByKeyword(text: string): { productCategory: string; industryCode: string; scope: number; fuelType?: string } | null {
-  const lowerText = text.toLowerCase();
-  
-  // Check longer phrases first to avoid false matches
-  const sortedKeywords = Object.entries(KEYWORD_MAP).sort((a, b) => b[0].length - a[0].length);
-  
-  for (const [keyword, classification] of sortedKeywords) {
-    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const boundaryPattern = new RegExp(`(^|[^a-z0-9])${escapedKeyword}([^a-z0-9]|$)`, 'i');
-    if (boundaryPattern.test(lowerText)) {
-      return classification;
-    }
-  }
-  return null;
-}
-
-// ============= CALCULATE EMISSIONS (DETERMINISTIC - NO AI) =============
-// Formula: Quantity × Emission_Factor = CO2_kg
-// Per BIOCOG_MVR_INDIA_v1.0 specification
-function calculateEmissions(
-  quantity: number,
-  unit: string,
-  scope: number,
-  productCategory: string,
-  fuelType?: string
-): { co2Kg: number; emissionFactor: number; factorSource: string } | null {
-  
-  if (!quantity || quantity <= 0) return null;
-  
-  const normalizedUnit = unit.trim().toLowerCase();
-  const unitMatches = (accepted: string[]) => accepted.includes(normalizedUnit);
-
-  // Scope 1: Fuels - Quantity × Fuel_Factor
-  if (scope === 1 && productCategory === 'FUEL' && fuelType) {
-    const factor = EMISSION_FACTORS.scope1_fuels[fuelType as keyof typeof EMISSION_FACTORS.scope1_fuels];
-    if (factor && unitMatches([factor.unit.toLowerCase(), factor.unit === 'litre' ? 'liter' : factor.unit.toLowerCase()])) {
-      const co2Kg = quantity * factor.value;
-      return {
-        co2Kg: Math.round(co2Kg * 100) / 100, // Round to 2 decimals
-        emissionFactor: factor.value,
-        factorSource: `BIOCOG_MVR_INDIA_v1.0:${fuelType}`,
-      };
-    }
-  }
-  
-  // Scope 2: Electricity - kWh × 0.708 (India Grid Average)
-  if (scope === 2 && productCategory === 'ELECTRICITY' && unitMatches(['kwh', 'kw.h'])) {
-    const factor = EMISSION_FACTORS.scope2_electricity.INDIA_GRID_AVG;
-    const co2Kg = quantity * factor;
-    return {
-      co2Kg: Math.round(co2Kg * 100) / 100,
-      emissionFactor: factor,
-      factorSource: 'BIOCOG_MVR_INDIA_v1.0:INDIA_GRID_AVG',
-    };
-  }
-  
-  // Scope 3: Transport - Weight(tons) × Distance(km) × Factor
-  if (scope === 3 && productCategory === 'TRANSPORT' && unitMatches(['ton-km', 'tonne-km', 'tkm'])) {
-    const factor = EMISSION_FACTORS.scope3_transport.ROAD_HEAVY;
-    const co2Kg = quantity * factor;
-    return {
-      co2Kg: Math.round(co2Kg * 100) / 100,
-      emissionFactor: factor,
-      factorSource: 'BIOCOG_MVR_INDIA_v1.0:ROAD_HEAVY',
-    };
-  }
-  
-  // Scope 3: Waste - kg × Waste_Factor
-  if (scope === 3 && productCategory === 'WASTE' && unitMatches(['kg', 'kilogram', 'kgs'])) {
-    const factor = EMISSION_FACTORS.scope3_waste.LANDFILL_ORGANIC;
-    const co2Kg = quantity * factor;
-    return {
-      co2Kg: Math.round(co2Kg * 100) / 100,
-      emissionFactor: factor,
-      factorSource: 'BIOCOG_MVR_INDIA_v1.0:LANDFILL_ORGANIC',
-    };
-  }
-  
-  // Green benefit categories (negative CO2 = carbon avoided)
-  const greenFactor = EMISSION_FACTORS.green_benefits[productCategory as keyof typeof EMISSION_FACTORS.green_benefits];
-  if (greenFactor && unitMatches([greenFactor.unit.toLowerCase()])) {
-    const co2Kg = quantity * greenFactor.value;
-    return {
-      co2Kg: Math.round(co2Kg * 100) / 100,
-      emissionFactor: greenFactor.value,
-      factorSource: greenFactor.factorSource,
-    };
-  }
-  
   return null;
 }
 
@@ -638,6 +231,12 @@ interface LineItem {
   fuelType?: string;
   co2Kg?: number;
   emissionFactor?: number;
+  /** Avoided emissions for green purchases. Reported separately, never netted. */
+  avoidedCo2Kg?: number;
+  avoidedFactor?: number;
+  /** Quantity and unit as printed, when converted to the factor's unit. */
+  originalQuantity?: number;
+  originalUnit?: string;
   factorSource?: string;
   classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
   sourcePage?: number;
@@ -659,7 +258,10 @@ interface ExtractedData {
   subtotal?: number;
   primaryScope?: number;
   primaryCategory?: string;
+  /** Gross emissions (>= 0). Avoided emissions are never subtracted. */
   totalCO2Kg?: number;
+  /** Avoided emissions from green line items, reported separately (>= 0). */
+  avoidedCO2Kg?: number;
   confidence: number;
   validationFlags: string[];
   classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
@@ -775,118 +377,140 @@ serve(async (req) => {
     }
 
     // ============= GENERATE DOCUMENT HASH FIRST =============
-    const documentHash = await generateDocumentHash(imageBase64, mimeType || 'image/jpeg');
+    let documentHash: string;
+    try {
+      documentHash = await generateDocumentHash(imageBase64);
+    } catch {
+      return new Response(
+        JSON.stringify({ error: 'Image data is not valid base64' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
     console.log(`Document hash generated: ${documentHash.substring(0, 16)}...`);
 
-    // Check for authenticated user
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    const anonKey = Deno.env.get('SUPABASE_ANON_KEY');
+
+    // Check for authenticated user. The browser client always sends a bearer
+    // token: the anon/publishable key for guests, a user JWT when signed in.
+    // A user token that fails validation is rejected rather than silently
+    // downgraded to the guest path.
     let userId: string | null = null;
     let isAuthenticated = false;
     let userTier = 'guest';
     const authHeader = req.headers.get('Authorization');
-    
-    if (authHeader && authHeader.startsWith('Bearer ')) {
-      const supabaseUrl = Deno.env.get('SUPABASE_URL');
-      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-      
-      if (supabaseUrl && supabaseKey) {
-        try {
-          const supabase = createClient(supabaseUrl, supabaseKey);
-          const token = authHeader.replace('Bearer ', '');
-          const { data: { user } } = await supabase.auth.getUser(token);
-          
-          if (user) {
-            userId = user.id;
-            isAuthenticated = true;
-            
-            const { data: profile } = await supabase
-              .from('profiles')
-              .select('subscription_tier')
-              .eq('id', userId)
-              .single();
-            
-            userTier = profile?.subscription_tier || 'snapshot';
-            
-            // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
-            const { data: existingDoc } = await supabase
-              .from('documents')
-              .select('id, vendor, invoice_number, created_at, cached_result')
-              .eq('document_hash', documentHash)
-              .eq('user_id', userId)
-              .order('created_at', { ascending: false })
-              .limit(1)
-              .single();
-            
-            if (existingDoc) {
-              console.log(`DUPLICATE DETECTED: Hash ${documentHash.substring(0, 16)}... for user ${userId}`);
-              
-              const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
-              
-              if (isPaidTier && existingDoc.cached_result) {
-                return new Response(
-                  JSON.stringify({ 
-                    success: true, 
-                    data: existingDoc.cached_result,
-                    cached: true,
-                    isDuplicate: true,
-                    originalDocumentId: existingDoc.id,
-                    documentHash,
-                    message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results.`
-                  }),
-                  { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-                );
-              }
-              
-              return new Response(
-                JSON.stringify({ 
-                  success: false, 
-                  isDuplicate: true,
-                  originalDocumentId: existingDoc.id,
-                  documentHash,
-                  error: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Each invoice can only be counted once.`,
-                }),
-                { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-              );
-            }
+    const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
+    const isGuestKey = !bearer || bearer === anonKey || bearer === req.headers.get('apikey') || jwtRole(bearer) === 'anon';
+
+    if (!isGuestKey) {
+      if (!supabaseUrl || !supabaseKey) {
+        return new Response(
+          JSON.stringify({ error: 'Authentication service not configured' }),
+          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      const authClient = createClient(supabaseUrl, supabaseKey);
+      const { data: authData, error: authError } = await authClient.auth.getUser(bearer);
+      if (authError || !authData?.user) {
+        return new Response(
+          JSON.stringify({ error: 'Your session has expired. Please sign in again.' }),
+          { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      userId = authData.user.id;
+      isAuthenticated = true;
+
+      try {
+        const supabase = authClient;
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('subscription_tier')
+          .eq('id', userId)
+          .single();
+
+        userTier = profile?.subscription_tier || 'snapshot';
+
+        // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
+        const { data: existingDoc } = await supabase
+          .from('documents')
+          .select('id, vendor, invoice_number, created_at, cached_result')
+          .eq('document_hash', documentHash)
+          .eq('user_id', userId)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
+        if (existingDoc) {
+          console.log(`DUPLICATE DETECTED: Hash ${documentHash.substring(0, 16)}... for user ${userId}`);
+
+          const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
+
+          if (isPaidTier && existingDoc.cached_result) {
+            return new Response(
+              JSON.stringify({
+                success: true,
+                data: existingDoc.cached_result,
+                cached: true,
+                isDuplicate: true,
+                originalDocumentId: existingDoc.id,
+                documentHash,
+                message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results.`
+              }),
+              { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+            );
           }
-        } catch (authError) {
-          console.log('Auth check failed, proceeding as guest:', authError);
+
+          return new Response(
+            JSON.stringify({
+              success: false,
+              isDuplicate: true,
+              originalDocumentId: existingDoc.id,
+              documentHash,
+              error: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Each invoice can only be counted once.`,
+            }),
+            { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
         }
+      } catch (lookupError) {
+        console.error('Profile or duplicate lookup failed:', lookupError);
       }
     }
-    
+
     // ============= GUEST USER: CHECK FOR CACHED RESULT =============
-    // This ensures same invoice = same result for guests
+    // Same invoice in the same guest session returns the same result. The
+    // cache is scoped to this session only: another visitor's result for the
+    // same file is never returned.
     if (!isAuthenticated) {
-      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}... SessionId: ${sessionId ? sessionId.substring(0, 8) + '...' : 'MISSING'}`);
+      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}... SessionId: ${sessionId ? String(sessionId).substring(0, 8) + '...' : 'MISSING'}`);
       if (!sessionId) {
-        console.warn('[WARN] No sessionId provided for guest user - data may be orphaned!');
+        console.warn('[WARN] No sessionId provided for guest user - result will not be cached or saved');
       }
-      const supabaseUrl = Deno.env.get('SUPABASE_URL');
-      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-      
-      if (supabaseUrl && supabaseKey) {
+
+      if (supabaseUrl && supabaseKey && sessionId) {
         const supabase = createClient(supabaseUrl, supabaseKey);
-        
-        // Check for ANY cached result with this hash (regardless of user)
+
         const { data: cachedDoc } = await supabase
           .from('documents')
           .select('cached_result, document_hash, created_at')
           .eq('document_hash', documentHash)
+          .eq('session_id', sessionId)
+          .is('user_id', null)
           .not('cached_result', 'is', null)
           .order('created_at', { ascending: false })
           .limit(1)
-          .single();
-        
+          .maybeSingle();
+
         if (cachedDoc?.cached_result) {
-          console.log(`CACHE HIT: Returning cached result for guest user`);
+          console.log(`CACHE HIT: Returning this session's cached result`);
           return new Response(
-            JSON.stringify({ 
-              success: true, 
+            JSON.stringify({
+              success: true,
               data: cachedDoc.cached_result,
               documentHash,
               userTier: 'guest',
               cached: true,
-              message: 'Returning verified results for this invoice (cached for accuracy).'
+              message: 'Returning the earlier result for this invoice from your session.'
             }),
             { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
@@ -1017,7 +641,6 @@ serve(async (req) => {
     // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
     // This is where all math happens - deterministic, no AI
     const validationFlags: string[] = [];
-    let totalCO2Kg = 0;
     let verifiedItems = 0;
     let unverifiableItems = 0;
     let missingEmissionFactorCount = 0;
@@ -1029,8 +652,8 @@ serve(async (req) => {
       const classifiedItem: LineItem = {
         description: item.description || '',
         hsn_code: item.hsn_code,
-        quantity: item.quantity,
-        unit: item.unit || detectUnit(item.description || ''),
+        quantity: Number.isFinite(Number(item.quantity)) && Number(item.quantity) > 0 ? Number(item.quantity) : undefined,
+        unit: item.unit || detectUnit(item.description || '') || undefined,
         unitPrice: item.unitPrice,
         total: item.total,
         sourcePage: Number.isInteger(item.sourcePage) && item.sourcePage > 0 ? item.sourcePage : 1,
@@ -1054,6 +677,12 @@ serve(async (req) => {
           classifiedItem.scope = hsnClass.scope;
           classifiedItem.classificationMethod = 'HSN';
           hsnClassifiedCount++;
+          // Chapter 27 says "fuel" but not which one; take the fuel type from
+          // the description when it names one. Without it no factor applies.
+          if (hsnClass.productCategory === 'FUEL') {
+            const named = classifyByKeyword(item.description || '');
+            if (named?.productCategory === 'FUEL' && named.fuelType) classifiedItem.fuelType = named.fuelType;
+          }
         }
       }
 
@@ -1080,22 +709,38 @@ serve(async (req) => {
 
       // Step 4: DETERMINISTIC emission calculation
       if (classifiedItem.productCategory && classifiedItem.quantity && classifiedItem.unit && classifiedItem.scope) {
-        const emissions = calculateEmissions(
+        const result = calculateEmissions(
           classifiedItem.quantity,
           classifiedItem.unit,
           classifiedItem.scope,
           classifiedItem.productCategory,
           classifiedItem.fuelType
         );
-        
-        if (emissions) {
-          classifiedItem.co2Kg = emissions.co2Kg;
-          classifiedItem.emissionFactor = emissions.emissionFactor;
-          classifiedItem.factorSource = emissions.factorSource;
-          totalCO2Kg += emissions.co2Kg;
+
+        if (result) {
+          // Store the quantity in the factor's unit (e.g. MWh -> kWh, t -> kg)
+          // so quantity x factor = CO2 holds for the stored row; keep the
+          // printed values alongside for the audit trail.
+          if (result.quantity !== classifiedItem.quantity || result.unit !== classifiedItem.unit) {
+            classifiedItem.originalQuantity = classifiedItem.quantity;
+            classifiedItem.originalUnit = classifiedItem.unit;
+            classifiedItem.quantity = result.quantity;
+            classifiedItem.unit = result.unit;
+          }
+          classifiedItem.factorSource = result.factorSource;
+          if (result.kind === 'emission') {
+            classifiedItem.co2Kg = result.co2Kg;
+            classifiedItem.emissionFactor = result.emissionFactor;
+          } else {
+            // Avoided emissions are not emissions: no co2Kg, so no emission
+            // row is created and nothing is netted against gross totals.
+            classifiedItem.avoidedCo2Kg = result.avoidedCo2Kg;
+            classifiedItem.avoidedFactor = result.avoidedFactor;
+            classifiedItem.validationFlags?.push('Avoided emissions reported separately; not included in totals');
+          }
         } else {
           missingEmissionFactorCount++;
-          const reason = `No verified factor for ${classifiedItem.productCategory} with unit ${classifiedItem.unit}`;
+          const reason = `No verified factor for ${classifiedItem.productCategory}${classifiedItem.fuelType ? ` (${classifiedItem.fuelType})` : ''} with unit ${classifiedItem.unit}`;
           classifiedItem.validationFlags?.push(reason);
           validationFlags.push(`${reason}: ${classifiedItem.description.substring(0, 40)}`);
         }
@@ -1112,6 +757,11 @@ serve(async (req) => {
 
       return classifiedItem;
     });
+
+    // Gross emissions and avoided emissions are totalled separately and both
+    // stay >= 0. Avoided emissions are never subtracted from gross.
+    const { grossCo2Kg: totalCO2Kg, avoidedCo2Kg: totalAvoidedKg } = totalsFor(classifiedItems);
+    if (totalAvoidedKg > 0) validationFlags.push('Avoided emissions from green items are reported separately and not netted');
 
     // Determine primary scope and category
     const scopeCounts: Record<number, number> = {};
@@ -1181,7 +831,8 @@ serve(async (req) => {
       subtotal: ocrData.subtotal,
       primaryScope: primaryScope ? parseInt(primaryScope) : undefined,
       primaryCategory,
-      totalCO2Kg: totalCO2Kg > 0 ? Math.round(totalCO2Kg * 100) / 100 : undefined,
+      totalCO2Kg: totalCO2Kg > 0 ? totalCO2Kg : undefined,
+      avoidedCO2Kg: totalAvoidedKg > 0 ? totalAvoidedKg : undefined,
       confidence: finalConfidence,
       validationFlags,
       classificationStatus,
@@ -1193,8 +844,6 @@ serve(async (req) => {
     // ============= CACHE THE RESULT =============
     // Store in database so future requests for same document get same result
     // For guests with a stub: UPDATE the existing stub. For auth users: INSERT new.
-    const supabaseUrl = Deno.env.get('SUPABASE_URL');
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
     
     if (supabaseUrl && supabaseKey) {
       try {

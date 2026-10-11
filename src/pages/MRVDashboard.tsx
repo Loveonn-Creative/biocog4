@@ -26,6 +26,7 @@ import {
   getTotalImpact,
   IntelligenceRecommendation 
 } from '@/lib/intelligenceEngine';
+import { indicativeValueFromKg, sumVerifiedKgOncePerEmission, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
 
 interface VerificationRecord {
   id: string;
@@ -59,6 +60,10 @@ const MRVDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const verifiedEmissions = getVerifiedEmissions();
+  // Value comes from verified emission rows, each id counted once, not from
+  // summing verification records (which can overlap the same emissions).
+  const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, (e) => e.id, (e) => e.co2_kg);
+  const indicativeValue = indicativeValueFromKg(verifiedKg);
 
   // Route protection: redirect partners to their dashboard
   useEffect(() => {
@@ -132,7 +137,6 @@ const MRVDashboard = () => {
         carbonScore: 0,
         confidenceScore: 0,
         greenScore: null as number | null,
-        totalCredits: 0,
         qualityGrade: 'D',
         trend: 'stable' as const,
         improvementRate: 0,
@@ -146,8 +150,6 @@ const MRVDashboard = () => {
     let totalWeight = 0;
     let greenWeight = 0;
     let verifiedWeight = 0;
-    let totalCredits = 0;
-    let carryForward = 0;
 
     verifications.forEach(v => {
       const weight = v.total_co2_kg || 1;
@@ -161,8 +163,6 @@ const MRVDashboard = () => {
           weightedGreenScore += v.ai_analysis.greenScore * weight;
         greenWeight += weight;
       }
-        totalCredits += v.ai_analysis?.creditEligibility?.eligibleCredits || 0;
-        carryForward += v.ai_analysis?.creditEligibility?.carryForward || 0;
       }
     });
 
@@ -192,7 +192,6 @@ const MRVDashboard = () => {
       carbonScore,
       confidenceScore,
       greenScore,
-      totalCredits: totalCredits + Math.floor(carryForward),
       qualityGrade: latestGrade,
       trend,
       improvementRate: scored.length >= 2
@@ -351,8 +350,9 @@ const MRVDashboard = () => {
                     {aggregatedMetrics.qualityGrade}
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
-                    {aggregatedMetrics.totalCredits} credits eligible
+                    {formatCurrency(indicativeValue)} from {(verifiedKg / 1000).toFixed(3)} verified tCO₂e
                   </p>
+                  <p className="text-[10px] text-muted-foreground">{INDICATIVE_VALUE_LABEL}</p>
                 </CardContent>
               </Card>
             </div>
@@ -483,7 +483,7 @@ const MRVDashboard = () => {
                         </span>
                       )}
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        BIOCOG_MVR_INDIA v1.0
+                        BIOCOG_MVR_INDIA v1.1
                       </span>
                     </div>
                   </CardContent>
@@ -696,9 +696,10 @@ const MRVDashboard = () => {
                       </div>
                       <div className="pt-3 border-t border-border/50">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Total Credits Eligible</span>
-                          <span className="font-mono font-bold text-primary">{aggregatedMetrics.totalCredits}</span>
+                          <span className="text-muted-foreground">Indicative value</span>
+                          <span className="font-mono font-bold text-primary">{formatCurrency(indicativeValue)}</span>
                         </div>
+                        <p className="text-[10px] text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
                       </div>
                     </div>
                   </CardContent>

@@ -28,6 +28,10 @@ interface InvoiceData {
   businessName?: string;
   customerGstin?: string;
   tier: string;
+  billingCycle?: string;
+  subscriptionId?: string;
+  periodStart?: string | null;
+  periodEnd?: string | null;
   amount: number; // in paise
   currency: string;
   transactionId: string;
@@ -63,6 +67,30 @@ const getTierName = (tier: string) => {
 };
 
 // Tier prices removed - amounts come from actual payment
+
+// Every interpolated value goes through this before reaching invoice/email HTML.
+const escapeHtml = (value: unknown): string =>
+  String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const formatDate = (iso: string | null | undefined) => {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+};
+
+const getLineDescription = (data: InvoiceData) => {
+  const cycle = data.billingCycle === 'monthly' ? 'Monthly' : data.billingCycle === 'yearly' ? 'Annual' : '';
+  const start = formatDate(data.periodStart);
+  const end = formatDate(data.periodEnd);
+  const period = start && end ? ` (${start} to ${end})` : '';
+  return `${cycle ? `${cycle} subscription` : 'Subscription'}${period} - Carbon MRV & Intelligence Platform`;
+};
 
 const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
   const baseAmount = data.amount / 1.18; // Remove GST to get base
@@ -130,34 +158,34 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
       </div>
       <div class="invoice-title">
         <h1>TAX INVOICE</h1>
-        <div class="invoice-number">${invoiceNumber}</div>
-        <div class="invoice-date">Date: ${invoiceDate}</div>
+        <div class="invoice-number">${escapeHtml(invoiceNumber)}</div>
+        <div class="invoice-date">Date: ${escapeHtml(invoiceDate)}</div>
       </div>
     </div>
 
     <div class="parties">
       <div class="party">
         <div class="party-label">From</div>
-        <div class="party-name">${COMPANY.name}</div>
+        <div class="party-name">${escapeHtml(COMPANY.name)}</div>
         <div class="party-detail">
-          Trading as: ${COMPANY.tradeName}<br>
-          ${COMPANY.address}<br>
-          Email: ${COMPANY.email}
+          Trading as: ${escapeHtml(COMPANY.tradeName)}<br>
+          ${escapeHtml(COMPANY.address)}<br>
+          Email: ${escapeHtml(COMPANY.email)}
         </div>
-        <div class="gstin-badge">GSTIN: ${COMPANY.gstin}</div>
-        <div style="font-size: 10px; color: #666; margin-top: 4px;">CIN: ${COMPANY.cin}</div>
+        <div class="gstin-badge">GSTIN: ${escapeHtml(COMPANY.gstin)}</div>
+        <div style="font-size: 10px; color: #666; margin-top: 4px;">CIN: ${escapeHtml(COMPANY.cin)}</div>
       </div>
       <div class="party">
         <div class="party-label">Bill To</div>
-        <div class="party-name">${data.billingAddress?.name || data.businessName || data.userName || 'Customer'}</div>
+        <div class="party-name">${escapeHtml(data.billingAddress?.name || data.businessName || data.userName || 'Customer')}</div>
         <div class="party-detail">
-          ${data.billingAddress?.address_line_1 ? `${data.billingAddress.address_line_1}<br>` : ''}
-          ${data.billingAddress?.address_line_2 ? `${data.billingAddress.address_line_2}<br>` : ''}
-          ${[data.billingAddress?.city, data.billingAddress?.state, data.billingAddress?.postal_code].filter(Boolean).join(', ')}<br>
-          ${data.billingAddress?.country || 'India'}<br>
-          Email: ${data.email}
+          ${data.billingAddress?.address_line_1 ? `${escapeHtml(data.billingAddress.address_line_1)}<br>` : ''}
+          ${data.billingAddress?.address_line_2 ? `${escapeHtml(data.billingAddress.address_line_2)}<br>` : ''}
+          ${escapeHtml([data.billingAddress?.city, data.billingAddress?.state, data.billingAddress?.postal_code].filter(Boolean).join(', '))}<br>
+          ${escapeHtml(data.billingAddress?.country || 'India')}<br>
+          Email: ${escapeHtml(data.email)}
         </div>
-        ${data.billingAddress?.gstin || data.customerGstin ? `<div class="gstin-badge">GSTIN: ${data.billingAddress?.gstin || data.customerGstin}</div>` : ''}
+        ${data.billingAddress?.gstin || data.customerGstin ? `<div class="gstin-badge">GSTIN: ${escapeHtml(data.billingAddress?.gstin || data.customerGstin)}</div>` : ''}
       </div>
     </div>
 
@@ -174,13 +202,13 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
       <tbody>
         <tr>
           <td>
-            <div class="item-desc">${getTierName(data.tier)} Subscription</div>
-            <div class="item-sub">Monthly subscription - Carbon MRV & Intelligence Platform</div>
+            <div class="item-desc">${escapeHtml(getTierName(data.tier))} Subscription</div>
+            <div class="item-sub">${escapeHtml(getLineDescription(data))}</div>
           </td>
           <td>998314</td>
           <td>1</td>
-          <td class="text-right">${formatCurrency(baseAmount)}</td>
-          <td class="text-right">${formatCurrency(baseAmount)}</td>
+          <td class="text-right">${escapeHtml(formatCurrency(baseAmount, data.currency))}</td>
+          <td class="text-right">${escapeHtml(formatCurrency(baseAmount, data.currency))}</td>
         </tr>
       </tbody>
     </table>
@@ -188,26 +216,26 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
     <table class="totals">
       <tr>
         <td class="label">Subtotal</td>
-        <td class="text-right">${formatCurrency(baseAmount)}</td>
+        <td class="text-right">${escapeHtml(formatCurrency(baseAmount, data.currency))}</td>
       </tr>
       ${isInterState ? `
       <tr>
         <td class="label">IGST @ 18%</td>
-        <td class="text-right">${formatCurrency(igst)}</td>
+        <td class="text-right">${escapeHtml(formatCurrency(igst, data.currency))}</td>
       </tr>
       ` : `
       <tr>
         <td class="label">CGST @ 9%</td>
-        <td class="text-right">${formatCurrency(cgst)}</td>
+        <td class="text-right">${escapeHtml(formatCurrency(cgst, data.currency))}</td>
       </tr>
       <tr>
         <td class="label">SGST @ 9%</td>
-        <td class="text-right">${formatCurrency(sgst)}</td>
+        <td class="text-right">${escapeHtml(formatCurrency(sgst, data.currency))}</td>
       </tr>
       `}
       <tr class="final">
         <td>Total</td>
-        <td class="text-right">${formatCurrency(data.amount)}</td>
+        <td class="text-right">${escapeHtml(formatCurrency(data.amount, data.currency))}</td>
       </tr>
     </table>
 
@@ -215,8 +243,8 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
       <div class="footer-section">
         <div class="footer-label">Payment Details</div>
         <div class="footer-content">
-          Transaction ID: ${data.transactionId}<br>
-          Order ID: ${data.orderId}<br>
+          Transaction ID: ${escapeHtml(data.transactionId)}<br>
+          Order ID: ${escapeHtml(data.orderId)}<br>
           Payment Method: Razorpay<br>
           Status: <strong style="color: #22c55e;">PAID</strong>
         </div>
@@ -235,7 +263,7 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
       <span class="paid-badge">PAID</span>
       <div class="stamp-text">
         Authorized Signatory<br>
-        ${COMPANY.tradeName}
+        ${escapeHtml(COMPANY.tradeName)}
       </div>
     </div>
   </div>
@@ -265,20 +293,20 @@ const generateInvoiceEmailHTML = (data: InvoiceData, invoiceNumber: string) => {
     <h1 style="color: #22c55e; margin: 0;">🧾 Your Invoice is Ready</h1>
   </div>
   
-  <p>Hi${data.userName || data.businessName ? ` ${data.userName || data.businessName}` : ''},</p>
+  <p>Hi${data.userName || data.businessName ? ` ${escapeHtml(data.userName || data.businessName)}` : ''},</p>
   
-  <p>Thank you for your subscription to <strong>${getTierName(data.tier)}</strong>. Your tax invoice is attached to this email.</p>
+  <p>Thank you for your subscription to <strong>${escapeHtml(getTierName(data.tier))}</strong>. Your tax invoice is attached to this email.</p>
   
   <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin: 20px 0;">
     <h2 style="margin: 0 0 15px 0; color: #374151; font-size: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px;">Invoice Summary</h2>
     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-      <tr><td style="padding: 8px 0; color: #6b7280;">Invoice No:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${invoiceNumber}</td></tr>
-      <tr><td style="padding: 8px 0; color: #6b7280;">Transaction ID:</td><td style="padding: 8px 0; text-align: right; font-family: monospace; font-size: 12px;">${data.transactionId}</td></tr>
-      <tr><td style="padding: 8px 0; color: #6b7280;">Plan:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${getTierName(data.tier)}</td></tr>
-      <tr><td style="padding: 8px 0; color: #6b7280;">Date:</td><td style="padding: 8px 0; text-align: right;">${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">Invoice No:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${escapeHtml(invoiceNumber)}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">Transaction ID:</td><td style="padding: 8px 0; text-align: right; font-family: monospace; font-size: 12px;">${escapeHtml(data.transactionId)}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">Plan:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${escapeHtml(getTierName(data.tier))}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">Date:</td><td style="padding: 8px 0; text-align: right;">${escapeHtml(new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }))}</td></tr>
       <tr style="border-top: 1px solid #e5e7eb;">
         <td style="padding: 12px 0 8px 0; color: #374151; font-weight: 600;">Amount Paid:</td>
-        <td style="padding: 12px 0 8px 0; text-align: right; font-weight: 700; font-size: 18px; color: #22c55e;">${formatCurrency(data.amount, data.currency)}</td>
+        <td style="padding: 12px 0 8px 0; text-align: right; font-weight: 700; font-size: 18px; color: #22c55e;">${escapeHtml(formatCurrency(data.amount, data.currency))}</td>
       </tr>
     </table>
   </div>
@@ -294,9 +322,9 @@ const generateInvoiceEmailHTML = (data: InvoiceData, invoiceNumber: string) => {
   <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
   
   <p style="color: #9ca3af; font-size: 12px; text-align: center;">
-    ${COMPANY.name}<br>
-    GSTIN: ${COMPANY.gstin} | CIN: ${COMPANY.cin}<br>
-    ${COMPANY.address}
+    ${escapeHtml(COMPANY.name)}<br>
+    GSTIN: ${escapeHtml(COMPANY.gstin)} | CIN: ${escapeHtml(COMPANY.cin)}<br>
+    ${escapeHtml(COMPANY.address)}
   </p>
 </body>
 </html>
@@ -357,8 +385,27 @@ serve(async (req) => {
       }
     }
 
+    // Load the subscription row so the invoice states the actual tier, billing
+    // cycle and service period, and links back via invoices.subscription_id.
+    let subscription: { id: string; tier: string; billing_cycle: string | null; starts_at: string | null; expires_at: string | null } | null = null;
+    if (data.userId && (data.subscriptionId || data.orderId)) {
+      let query = supabase
+        .from('subscriptions')
+        .select('id, tier, billing_cycle, starts_at, expires_at')
+        .eq('user_id', data.userId);
+      query = data.subscriptionId ? query.eq('id', data.subscriptionId) : query.eq('razorpay_order_id', data.orderId);
+      const { data: subData, error: subErr } = await query.maybeSingle();
+      if (subErr) console.error('Subscription lookup for invoice failed:', subErr.code);
+      if (subData) subscription = subData;
+    }
+
     const invoiceData: InvoiceData = {
       ...data,
+      tier: subscription?.tier || data.tier,
+      billingCycle: subscription?.billing_cycle || data.billingCycle,
+      subscriptionId: subscription?.id,
+      periodStart: subscription?.starts_at ?? null,
+      periodEnd: subscription?.expires_at ?? null,
       billingAddress,
       businessName: data.businessName || profile?.business_name,
       customerGstin: data.customerGstin || profile?.gstin,
@@ -401,6 +448,7 @@ serve(async (req) => {
       .from('invoices')
       .insert({
         user_id: data.userId,
+        subscription_id: subscription?.id ?? null,
         invoice_number: invoiceNumber,
         amount: data.amount / 1.18 / 100, // Base amount in rupees
         tax_amount: (data.amount - data.amount / 1.18) / 100,
@@ -428,7 +476,7 @@ serve(async (req) => {
       body: JSON.stringify({
         from: "Senseible Billing <billing@senseible.earth>",
         to: [data.email],
-        subject: `Invoice ${invoiceNumber} - ${getTierName(data.tier)} Subscription`,
+        subject: `Invoice ${invoiceNumber} - ${getTierName(invoiceData.tier)} Subscription`,
         html: emailHTML,
         attachments: [
           {

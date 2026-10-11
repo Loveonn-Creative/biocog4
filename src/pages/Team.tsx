@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
-import { useOrganization } from '@/hooks/useOrganization';
+import { useOrganization, getFunctionErrorMessage, isMissingRpcError, untypedRpc } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import { Navigation } from '@/components/Navigation';
 import { CarbonParticles } from '@/components/CarbonParticles';
@@ -29,6 +29,16 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 import { 
   Users, 
   Mail, 
@@ -40,7 +50,9 @@ import {
   UserPlus,
   Clock,
   Trash2,
-  Lock
+  Lock,
+  Building2,
+  UserMinus
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -69,8 +81,8 @@ interface TeamMember {
   id: string;
   user_id: string;
   role: string;
-  joined_at?: string;
-  invited_email?: string;
+  joined_at?: string | null;
+  invited_email?: string | null;
 }
 
 interface Invitation {
@@ -78,25 +90,60 @@ interface Invitation {
   email: string;
   role: string;
   expires_at: string;
-  created_at: string;
+  created_at: string | null;
 }
+
+const ROLE_ORDER: Record<string, number> = { owner: 0, admin: 1, analyst: 2, viewer: 3 };
+const PENDING_MIGRATION_MESSAGE = 'Available after the team access update is applied.';
 
 const Team = () => {
   const navigate = useNavigate();
   const { user, isLoading: sessionLoading, isAuthenticated } = useSession();
-  const { tier, features } = usePremiumStatus();
-  const { activeOrganization, isLoading: orgLoading } = useOrganization();
-  
+  const { tier, isLoading: premiumLoading } = usePremiumStatus();
+  const {
+    activeOrganization,
+    organizations,
+    organizationsError,
+    isLoading: orgLoading,
+    createOrganization,
+  } = useOrganization();
+
+  // Prefer the active context's organization, then one the user owns, then any membership.
+  const organization =
+    activeOrganization ??
+    organizations.find(o => o.owner_id === user?.id) ??
+    organizations[0] ??
+    null;
+
   const [members, setMembers] = useState<TeamMember[]>([]);
   const [invitations, setInvitations] = useState<Invitation[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [seatLimit, setSeatLimit] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [inviteDialogOpen, setInviteDialogOpen] = useState(false);
   const [inviteEmail, setInviteEmail] = useState('');
   const [inviteRole, setInviteRole] = useState<string>('viewer');
   const [isInviting, setIsInviting] = useState(false);
+  const [inviteError, setInviteError] = useState<string | null>(null);
+  const [newOrgName, setNewOrgName] = useState('');
+  const [createError, setCreateError] = useState<string | null>(null);
+  const [busyMemberId, setBusyMemberId] = useState<string | null>(null);
+  const [memberToRemove, setMemberToRemove] = useState<TeamMember | null>(null);
 
-  const canManageTeam = tier === 'pro' || tier === 'scale';
-  const maxMembers = features?.teamMembers || 1;
+  // organizations.max_members (kept in sync with the owner's plan server-side) is the
+  // single source of truth for seats; members and pending invitations both use one.
+  const maxMembers = Math.max(seatLimit ?? organization?.max_members ?? 1, 1);
+  const seatsUsed = members.length + invitations.length;
+  const seatsFull = seatsUsed >= maxMembers;
+
+  const myRole =
+    members.find(m => m.user_id === user?.id)?.role ??
+    (organization && organization.owner_id === user?.id ? 'owner' : null);
+  const isOrgAdmin = myRole === 'owner' || myRole === 'admin';
+
+  // Members of someone else's organization can see their team even on a free personal plan.
+  const isMemberOfOtherOrg = !!organization && organization.owner_id !== user?.id;
+  const showUpgradeWall = !premiumLoading && tier === 'snapshot' && !isMemberOfOtherOrg;
 
   useEffect(() => {
     if (!sessionLoading && !isAuthenticated) {
@@ -104,57 +151,106 @@ const Team = () => {
     }
   }, [sessionLoading, isAuthenticated, navigate]);
 
-  useEffect(() => {
-    if (activeOrganization?.id) {
-      fetchTeamData();
-    }
-  }, [activeOrganization?.id]);
+  const fetchTeamData = useCallback(async () => {
+    if (!organization?.id) return;
 
-  const fetchTeamData = async () => {
-    if (!activeOrganization?.id) return;
-    
     setIsLoading(true);
+    setLoadError(null);
     try {
-      // Fetch members
-      const { data: memberData } = await supabase
-        .from('organization_members')
-        .select('*')
-        .eq('organization_id', activeOrganization.id)
-        .order('role', { ascending: true });
-      
-      if (memberData) setMembers(memberData);
+      const [memberRes, inviteRes, orgRes] = await Promise.all([
+        supabase
+          .from('organization_members')
+          .select('id, user_id, role, joined_at, invited_email')
+          .eq('organization_id', organization.id),
+        supabase
+          .from('team_invitations')
+          .select('id, email, role, expires_at, created_at')
+          .eq('organization_id', organization.id)
+          .is('accepted_at', null)
+          .gt('expires_at', new Date().toISOString())
+          .order('created_at', { ascending: false }),
+        supabase
+          .from('organizations')
+          .select('max_members')
+          .eq('id', organization.id)
+          .maybeSingle(),
+      ]);
 
-      // Fetch pending invitations
-      const { data: inviteData } = await supabase
-        .from('team_invitations')
-        .select('*')
-        .eq('organization_id', activeOrganization.id)
-        .is('accepted_at', null)
-        .gt('expires_at', new Date().toISOString())
-        .order('created_at', { ascending: false });
-      
-      if (inviteData) setInvitations(inviteData);
+      const firstError = memberRes.error || inviteRes.error || orgRes.error;
+      if (firstError) setLoadError(firstError.message);
+
+      setMembers(
+        ((memberRes.data as TeamMember[] | null) ?? [])
+          .slice()
+          .sort((a, b) => (ROLE_ORDER[a.role] ?? 9) - (ROLE_ORDER[b.role] ?? 9))
+      );
+      setInvitations((inviteRes.data as Invitation[] | null) ?? []);
+      if (orgRes.data && typeof orgRes.data.max_members === 'number') {
+        setSeatLimit(orgRes.data.max_members);
+      }
     } catch (error) {
       console.error('Error fetching team data:', error);
+      setLoadError(error instanceof Error ? error.message : 'Could not load your team.');
     } finally {
       setIsLoading(false);
+    }
+  }, [organization?.id]);
+
+  useEffect(() => {
+    if (organization?.id) {
+      fetchTeamData();
+    } else {
+      // No organization: nothing to load, so never leave a spinner running.
+      setMembers([]);
+      setInvitations([]);
+      setSeatLimit(null);
+      setIsLoading(false);
+    }
+  }, [organization?.id, fetchTeamData]);
+
+  const handleCreateOrganization = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const name = newOrgName.trim();
+    if (!name) {
+      setCreateError('Enter a name for your organization.');
+      return;
+    }
+    setCreateError(null);
+    try {
+      await createOrganization.mutateAsync(name);
+      toast.success(`${name} created`);
+      setNewOrgName('');
+    } catch (err) {
+      console.error('Failed to create organization:', err);
+      const message = (err as { message?: string })?.message || 'Could not create the organization.';
+      setCreateError(
+        /permission denied/i.test(message) ? `${message}. ${PENDING_MIGRATION_MESSAGE}` : message
+      );
     }
   };
 
   const handleInvite = async () => {
-    if (!inviteEmail || !activeOrganization?.id) return;
-    
-    if (members.length >= maxMembers) {
-      toast.error(`Your plan allows up to ${maxMembers} team members. Upgrade to add more.`);
+    if (!inviteEmail || !organization?.id) return;
+    setInviteError(null);
+
+    if (seatsFull) {
+      setInviteError(
+        `All ${maxMembers} seats are in use (members plus pending invitations). Cancel an invitation or upgrade to add more.`
+      );
       return;
     }
 
     setIsInviting(true);
     try {
       const { error } = await supabase.functions.invoke('send-team-invitation', {
-        body: { email: inviteEmail.trim().toLowerCase(), role: inviteRole, organizationId: activeOrganization.id },
+        body: { email: inviteEmail.trim().toLowerCase(), role: inviteRole, organizationId: organization.id },
       });
-      if (error) throw error;
+      if (error) {
+        const message = await getFunctionErrorMessage(error, 'Failed to send invitation');
+        setInviteError(message);
+        toast.error(message);
+        return;
+      }
 
       toast.success(`Invitation sent to ${inviteEmail}`);
       setInviteDialogOpen(false);
@@ -163,29 +259,83 @@ const Team = () => {
       fetchTeamData();
     } catch (err) {
       console.error('Failed to send invitation:', err);
-      toast.error('Failed to send invitation');
+      const message = await getFunctionErrorMessage(err, 'Failed to send invitation');
+      setInviteError(message);
+      toast.error(message);
     } finally {
       setIsInviting(false);
     }
   };
 
   const handleCancelInvitation = async (invitationId: string) => {
+    const { data, error } = await supabase
+      .from('team_invitations')
+      .delete()
+      .eq('id', invitationId)
+      .select('id');
+    if (error) {
+      console.error('Failed to cancel invitation:', error);
+      toast.error(`Failed to cancel invitation: ${error.message}`);
+      return;
+    }
+    if (!data || data.length === 0) {
+      // RLS filtered the row out: nothing was deleted.
+      toast.error('Could not cancel this invitation. Only organization admins can cancel invitations.');
+      return;
+    }
+    setInvitations(prev => prev.filter(i => i.id !== invitationId));
+    toast.success('Invitation cancelled');
+  };
+
+  const handleRoleChange = async (member: TeamMember, role: string) => {
+    if (!organization?.id || role === member.role) return;
+    setBusyMemberId(member.id);
     try {
-      await supabase.from('team_invitations').delete().eq('id', invitationId);
-      setInvitations(prev => prev.filter(i => i.id !== invitationId));
-      toast.success('Invitation cancelled');
-    } catch (err) {
-      console.error('Failed to cancel invitation:', err);
-      toast.error('Failed to cancel invitation');
+      const { error } = await untypedRpc('update_member_role', {
+        p_organization_id: organization.id,
+        p_user_id: member.user_id,
+        p_role: role,
+      });
+      if (error) {
+        toast.error(isMissingRpcError(error) ? PENDING_MIGRATION_MESSAGE : error.message);
+        return;
+      }
+      setMembers(prev => prev.map(m => (m.id === member.id ? { ...m, role } : m)));
+      toast.success(`Role updated to ${ROLE_LABELS[role] || role}`);
+    } finally {
+      setBusyMemberId(null);
     }
   };
 
-  const getInitials = (email?: string) => {
+  const handleRemoveMember = async (member: TeamMember) => {
+    if (!organization?.id) return;
+    setBusyMemberId(member.id);
+    try {
+      const { error } = await untypedRpc('remove_member', {
+        p_organization_id: organization.id,
+        p_user_id: member.user_id,
+      });
+      if (error) {
+        toast.error(isMissingRpcError(error) ? PENDING_MIGRATION_MESSAGE : error.message);
+        return;
+      }
+      setMembers(prev => prev.filter(m => m.id !== member.id));
+      toast.success('Member removed');
+    } finally {
+      setBusyMemberId(null);
+      setMemberToRemove(null);
+    }
+  };
+
+  const getInitials = (email?: string | null) => {
     if (!email) return '?';
     return email.split('@')[0].slice(0, 2).toUpperCase();
   };
 
-  if (sessionLoading || orgLoading) {
+  const memberLabel = (member: TeamMember) =>
+    member.invited_email || (member.user_id === user?.id ? user?.email : null) || 'Organization member';
+
+  if (sessionLoading || orgLoading || premiumLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -193,7 +343,7 @@ const Team = () => {
     );
   }
 
-  if (!canManageTeam) {
+  if (showUpgradeWall) {
     return (
       <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
         <CarbonParticles />
@@ -205,11 +355,65 @@ const Team = () => {
               <Lock className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
               <h2 className="text-xl font-semibold mb-2">Team Management</h2>
               <p className="text-muted-foreground mb-4">
-                Upgrade to Pro or Scale to invite team members and collaborate.
+                Upgrade to a paid plan to invite team members and collaborate.
               </p>
               <Button asChild>
                 <a href="/pricing">View Plans</a>
               </Button>
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+    );
+  }
+
+  if (!organization) {
+    return (
+      <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
+        <Helmet>
+          <title>Team Management | Senseible</title>
+        </Helmet>
+        <CarbonParticles />
+        <Navigation onSignOut={() => navigate('/')} />
+
+        <main className="relative z-10 container mx-auto px-4 py-8 max-w-xl">
+          {organizationsError && (
+            <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive" role="alert">
+              We could not load your organization: {organizationsError.message}
+              {/permission denied/i.test(organizationsError.message) && ` ${PENDING_MIGRATION_MESSAGE}`}
+            </div>
+          )}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Building2 className="w-5 h-5" />
+                Create your organization
+              </CardTitle>
+              <CardDescription>
+                Your team lives inside an organization. Create one to start inviting colleagues.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleCreateOrganization} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="org_name">Organization name</Label>
+                  <Input
+                    id="org_name"
+                    value={newOrgName}
+                    onChange={(e) => setNewOrgName(e.target.value)}
+                    placeholder="Your company name"
+                    maxLength={120}
+                    disabled={createOrganization.isPending}
+                  />
+                </div>
+                {createError && (
+                  <p className="text-sm text-destructive" role="alert">{createError}</p>
+                )}
+                <Button type="submit" disabled={createOrganization.isPending || !newOrgName.trim()}>
+                  {createOrganization.isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+                  Create organization
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </main>
@@ -233,11 +437,18 @@ const Team = () => {
           <div>
             <h1 className="text-2xl font-semibold text-foreground mb-2">Team Management</h1>
             <p className="text-muted-foreground">
-              Invite members and manage access to {activeOrganization?.name || 'your organization'}.
+              Invite members and manage access to {organization.name || 'your organization'}.
             </p>
           </div>
           
-          <Dialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen}>
+          {isOrgAdmin && (
+          <Dialog
+            open={inviteDialogOpen}
+            onOpenChange={(open) => {
+              setInviteDialogOpen(open);
+              if (!open) setInviteError(null);
+            }}
+          >
             <DialogTrigger asChild>
               <Button>
                 <UserPlus className="w-4 h-4 mr-2" />
@@ -295,6 +506,10 @@ const Team = () => {
                     {ROLE_DESCRIPTIONS[inviteRole]}
                   </p>
                 </div>
+
+                {inviteError && (
+                  <p className="text-sm text-destructive" role="alert">{inviteError}</p>
+                )}
               </div>
 
               <DialogFooter>
@@ -312,7 +527,15 @@ const Team = () => {
               </DialogFooter>
             </DialogContent>
           </Dialog>
+          )}
         </div>
+
+        {loadError && (
+          <div className="mb-6 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive" role="alert">
+            Some team details could not be loaded: {loadError}
+            {/permission denied/i.test(loadError) && ` ${PENDING_MIGRATION_MESSAGE}`}
+          </div>
+        )}
 
         {/* Team Stats */}
         <Card className="mb-6">
@@ -324,10 +547,15 @@ const Team = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Team Size</p>
-                  <p className="text-2xl font-semibold">{members.length} / {maxMembers}</p>
+                  <p className="text-2xl font-semibold">{seatsUsed} / {maxMembers}</p>
+                  {invitations.length > 0 && (
+                    <p className="text-xs text-muted-foreground">
+                      {members.length} member{members.length === 1 ? '' : 's'} and {invitations.length} pending invitation{invitations.length === 1 ? '' : 's'}
+                    </p>
+                  )}
                 </div>
               </div>
-              {members.length >= maxMembers && (
+              {seatsFull && isOrgAdmin && (
                 <Button variant="outline" asChild>
                   <a href="/pricing">Upgrade for More</a>
                 </Button>
@@ -364,12 +592,15 @@ const Team = () => {
                       <div className="flex items-center gap-3">
                         <Avatar>
                           <AvatarFallback>
-                            {getInitials(member.invited_email)}
+                            {getInitials(memberLabel(member))}
                           </AvatarFallback>
                         </Avatar>
                         <div>
                           <p className="text-sm font-medium">
-                            {member.invited_email || (member.user_id === user?.id ? user.email : 'Organization member')}
+                            {memberLabel(member)}
+                            {member.user_id === user?.id && (
+                              <span className="ml-1 text-xs text-muted-foreground">(you)</span>
+                            )}
                           </p>
                           {member.joined_at && (
                             <p className="text-xs text-muted-foreground">
@@ -378,10 +609,43 @@ const Team = () => {
                           )}
                         </div>
                       </div>
-                      <Badge variant="secondary" className="gap-1">
-                        <RoleIcon className="w-3 h-3" />
-                        {ROLE_LABELS[member.role]}
-                      </Badge>
+                      {isOrgAdmin && member.role !== 'owner' && member.user_id !== user?.id ? (
+                        <div className="flex items-center gap-2">
+                          <Select
+                            value={member.role}
+                            onValueChange={(role) => handleRoleChange(member, role)}
+                            disabled={busyMemberId === member.id}
+                          >
+                            <SelectTrigger className="h-8 w-[120px]" aria-label="Change role">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="admin">Admin</SelectItem>
+                              <SelectItem value="analyst">Analyst</SelectItem>
+                              <SelectItem value="viewer">Viewer</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8 text-destructive hover:text-destructive"
+                            onClick={() => setMemberToRemove(member)}
+                            disabled={busyMemberId === member.id}
+                            aria-label="Remove member"
+                          >
+                            {busyMemberId === member.id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <UserMinus className="w-4 h-4" />
+                            )}
+                          </Button>
+                        </div>
+                      ) : (
+                        <Badge variant="secondary" className="gap-1">
+                          <RoleIcon className="w-3 h-3" />
+                          {ROLE_LABELS[member.role]}
+                        </Badge>
+                      )}
                     </div>
                   );
                 })}
@@ -418,6 +682,7 @@ const Team = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <Badge variant="outline">{ROLE_LABELS[invite.role]}</Badge>
+                      {isOrgAdmin && (
                       <Button
                         variant="ghost"
                         size="icon"
@@ -426,6 +691,7 @@ const Team = () => {
                       >
                         <Trash2 className="w-4 h-4" />
                       </Button>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -458,6 +724,25 @@ const Team = () => {
             </div>
           </CardContent>
         </Card>
+        <AlertDialog open={!!memberToRemove} onOpenChange={(open) => { if (!open) setMemberToRemove(null); }}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Remove team member?</AlertDialogTitle>
+              <AlertDialogDescription>
+                {memberToRemove ? memberLabel(memberToRemove) : 'This member'} will lose access to {organization.name}. You can invite them again later.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Keep member</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={() => memberToRemove && handleRemoveMember(memberToRemove)}
+                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                Remove
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </main>
     </div>
   );

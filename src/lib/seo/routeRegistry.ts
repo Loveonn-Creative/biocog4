@@ -5,6 +5,7 @@
 // and scripts/validate-seo.mjs; never imported by the client.
 import { cmsArticles, cmsCategories } from '@/data/cmsContent';
 import { solutionPages } from '@/data/solutionsData';
+import { servicePages } from '@/data/services';
 import { competitorData } from '@/data/competitorData';
 import { industries } from '@/data/industriesData';
 import { legalDocuments } from '@/data/legalContent';
@@ -202,6 +203,7 @@ function coreRoutes(): SeoRoute[] {
     ['/climate-finance', 'core', 0.8], ['/partners', 'core', 0.6], ['/grants', 'core', 0.4],
     ['/net-zero', 'tool', 0.7], ['/enterprise', 'core', 0.8], ['/cbam-calculator', 'tool', 0.9],
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
+    ...servicePages.map(sp => [`/${sp.slug}`, 'core', 0.8] as [string, RouteSection, number]),
   ];
   const calculators = Object.keys(STATIC_PAGE_META)
     .filter(p => p.startsWith('/calculators/'))

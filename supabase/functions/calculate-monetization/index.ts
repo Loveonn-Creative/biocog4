@@ -1,5 +1,12 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import {
+  indicativeValueFromKg,
+  sumVerifiedKgOncePerEmission,
+  INDICATIVE_RATE_INR_PER_T,
+  INDICATIVE_RATE_SOURCE,
+  INDICATIVE_VALUE_LABEL,
+} from "../_shared/carbonValue.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,29 +16,22 @@ const corsHeaders = {
 interface MonetizationPathway {
   type: 'carbon_credit' | 'green_loan' | 'govt_incentive';
   name: string;
-  estimatedValue: number;
+  /** Only the carbon pathway carries a figure: verified tCO2e x the reference rate. */
+  estimatedValue: number | null;
+  valueLabel: string | null;
   currency: string;
-  partner: string;
+  partner: string | null;
   details: {
     description: string;
     eligibility: string;
-    timeline: string;
     requirements: string[];
   };
 }
 
-const CARBON_CREDIT_RATE_INR = 750;
-const GREEN_LOAN_RATE_REDUCTION = 0.5;
-const AVG_LOAN_AMOUNT = 500000;
-
-const GOVT_SCHEMES = [
-  { name: 'MSME ZED Certification Subsidy', maxSubsidy: 500000, subsidyRate: 0.8, description: 'Up to 80% subsidy for ZED certification', eligibility: 'MSMEs with verified carbon data' },
-  { name: 'BEE Energy Audit Subsidy', maxSubsidy: 250000, subsidyRate: 0.5, description: 'Subsidy for energy efficiency improvements', eligibility: 'Energy-intensive MSMEs' },
-  { name: 'State Green Manufacturing Incentive', maxSubsidy: 1000000, subsidyRate: 1.5, description: 'Capital subsidy for clean technology adoption', eligibility: 'Manufacturing units with carbon verification' },
-];
-
-const CARBON_BUYER = { name: 'IEX Green Market', type: 'Exchange' };
-const GREEN_LOAN_PARTNER = { name: 'SIDBI Green Loan', rateReduction: '0.75%', maxLoan: '1 Crore' };
+// One value everywhere: verified tCO2e x INDICATIVE_RATE_INR_PER_T, labelled
+// as indicative and not an issued credit. Loan savings and scheme subsidies
+// are not estimated: the earlier fixed loan figure and subsidy multipliers
+// were not based on the user's data or any lender or scheme terms.
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -96,65 +96,75 @@ serve(async (req) => {
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
-    const co2Tons = verification.total_co2_kg / 1000;
-    const pathways: MonetizationPathway[] = [];
+    // Recompute from the verification's own emission rows that are owned by
+    // the requester and currently verified, each counted once.
+    const emissionIds: string[] = Array.isArray(verification.emission_ids) ? verification.emission_ids : [];
+    let emissionsQuery = supabase.from('emissions').select('id, co2_kg, verified, user_id, session_id').in('id', emissionIds);
+    emissionsQuery = userId ? emissionsQuery.eq('user_id', userId) : emissionsQuery.eq('session_id', sessionId).is('user_id', null);
+    const { data: emissionRows, error: emissionsError } = emissionIds.length
+      ? await emissionsQuery
+      : { data: [], error: null };
+    if (emissionsError) throw emissionsError;
 
-    const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE_INR);
+    const verifiedKg = sumVerifiedKgOncePerEmission(
+      emissionRows || [],
+      (e: { id: string }) => e.id,
+      (e: { co2_kg: number | string | null }) => Number(e.co2_kg),
+      (e: { verified: boolean | null }) => e.verified === true,
+    );
+    const verifiedTCO2e = verifiedKg / 1000;
+    const indicativeValueInr = indicativeValueFromKg(verifiedKg);
 
-    if (verification.ccts_eligible && carbonCreditValue > 100) {
-      pathways.push({
+    const pathways: MonetizationPathway[] = [
+      {
         type: 'carbon_credit',
-        name: 'Carbon Credit Sale',
-        estimatedValue: carbonCreditValue,
+        name: 'Indicative carbon value',
+        estimatedValue: indicativeValueInr,
+        valueLabel: INDICATIVE_VALUE_LABEL,
         currency: 'INR',
-        partner: CARBON_BUYER.name,
+        partner: null,
         details: {
-          description: `Sell ${co2Tons.toFixed(2)} tons of verified carbon credits through ${CARBON_BUYER.type}`,
-          eligibility: 'CCTS Eligible ✓',
-          timeline: '2-4 weeks for listing, 1-2 months for sale',
-          requirements: [
-            'Verified emission data', 'CCTS registration', 'Business documentation',
-            verification.cbam_compliant ? 'CBAM compliant ✓' : 'CBAM certification pending',
-          ],
+          description: `${verifiedTCO2e.toFixed(3)} verified tCO2e x ₹${INDICATIVE_RATE_INR_PER_T}/t. No credit has been issued and no buyer has agreed a price.`,
+          eligibility: 'Credit issuance requires registration under a recognised programme; not assessed here',
+          requirements: ['Verified emission data', 'Programme registration and third-party validation'],
         },
-      });
-    }
-
-    const interestSavings = Math.round(AVG_LOAN_AMOUNT * GREEN_LOAN_RATE_REDUCTION / 100);
-    pathways.push({
-      type: 'green_loan',
-      name: 'Green Loan Benefits',
-      estimatedValue: interestSavings,
-      currency: 'INR',
-      partner: GREEN_LOAN_PARTNER.name,
-      details: {
-        description: `Get ${GREEN_LOAN_PARTNER.rateReduction} lower interest rate on business loans up to ${GREEN_LOAN_PARTNER.maxLoan}`,
-        eligibility: 'Based on verified carbon footprint',
-        timeline: 'Standard loan processing time',
-        requirements: ['Carbon verification certificate', 'Standard loan documentation', 'Business financials'],
       },
-    });
+      {
+        type: 'green_loan',
+        name: 'Green loan',
+        estimatedValue: null,
+        valueLabel: null,
+        currency: 'INR',
+        partner: null,
+        details: {
+          description: 'Lender terms depend on the lender. No saving is estimated here.',
+          eligibility: 'Not assessed',
+          requirements: ['Carbon verification record', 'Standard loan documentation'],
+        },
+      },
+      {
+        type: 'govt_incentive',
+        name: 'Government schemes',
+        estimatedValue: null,
+        valueLabel: null,
+        currency: 'INR',
+        partner: null,
+        details: {
+          description: 'Scheme benefits depend on scheme rules. No benefit is estimated here.',
+          eligibility: 'Not assessed',
+          requirements: ['MSME registration', 'Carbon verification record'],
+        },
+      },
+    ];
 
-    for (const scheme of GOVT_SCHEMES) {
-      const estimatedBenefit = Math.min(scheme.maxSubsidy, Math.round(carbonCreditValue * scheme.subsidyRate));
-      if (estimatedBenefit > 10000) {
-        pathways.push({
-          type: 'govt_incentive',
-          name: scheme.name,
-          estimatedValue: estimatedBenefit,
-          currency: 'INR',
-          partner: 'Government of India',
-          details: {
-            description: scheme.description,
-            eligibility: scheme.eligibility,
-            timeline: '1-3 months processing',
-            requirements: ['Carbon verification certificate', 'MSME registration', 'Bank account details', 'Application form submission'],
-          },
-        });
-      }
-    }
-
+    // Record each pathway once per verification; repeat calls do not add rows.
+    const { data: existingPathways } = await supabase
+      .from('monetization_pathways')
+      .select('pathway_type')
+      .eq('verification_id', verificationId);
+    const existingTypes = new Set((existingPathways || []).map((p: { pathway_type: string }) => p.pathway_type));
     for (const pathway of pathways) {
+      if (existingTypes.has(pathway.type)) continue;
       await supabase.from('monetization_pathways').insert({
         verification_id: verificationId,
         pathway_type: pathway.type,
@@ -166,17 +176,19 @@ serve(async (req) => {
       });
     }
 
-    const totalValue = pathways.reduce((sum, p) => sum + p.estimatedValue, 0);
-
     return new Response(JSON.stringify({
       success: true,
       data: {
-        pathways, totalPotentialValue: totalValue, currency: 'INR',
-        verificationScore: verification.verification_score, co2Tons,
+        pathways,
+        verifiedTCO2e,
+        indicativeValueInr,
+        indicativeValueLabel: INDICATIVE_VALUE_LABEL,
+        currency: 'INR',
+        verificationScore: verification.verification_score,
         methodology: {
-          carbonCreditRate: CARBON_CREDIT_RATE_INR,
-          greenLoanRateReduction: GREEN_LOAN_RATE_REDUCTION,
-          version: 'BIOCOG_MONETIZATION_v1.0',
+          rateInrPerT: INDICATIVE_RATE_INR_PER_T,
+          rateSource: INDICATIVE_RATE_SOURCE,
+          version: 'BIOCOG_MONETIZATION_v2.0',
         },
       },
     }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });

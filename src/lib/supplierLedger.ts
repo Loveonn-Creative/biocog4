@@ -22,7 +22,22 @@ export interface SupplierSourceRecord {
   factorSource: string | null;
   verificationStatus: string | null;
   documentHash: string | null;
+  /** Source document id, when known. Used for grouping when there is no hash. */
+  documentId?: string | null;
 }
+
+/**
+ * Document key for grouping line-level records. Ledger rows are one per
+ * emission line, so several rows can share one invoice. Records with no
+ * usable id or hash each count as their own document.
+ */
+const documentKeyFor = (r: SupplierSourceRecord, index: number): string => {
+  // Hash first: every caller passes it, so rows for one invoice share a key
+  // even when only some of them carry the document id.
+  if (r.documentHash && r.documentHash !== 'NO_HASH') return `hash:${r.documentHash}`;
+  if (r.documentId) return `id:${r.documentId}`;
+  return `row:${index}`;
+};
 
 export interface SupplierRecord {
   /** Normalised vendor key used for grouping. */
@@ -98,10 +113,12 @@ function gapsFor(s: SupplierRecord): string[] {
 
 export function buildSupplierLedger(records: SupplierSourceRecord[]): SupplierRecord[] {
   const map = new Map<string, SupplierRecord>();
+  // Per supplier: document key -> { amount counted once, verified flag }.
+  const docs = new Map<string, Map<string, { amount: number; verified: boolean }>>();
 
-  for (const r of records) {
+  records.forEach((r, index) => {
     const key = normaliseVendor(r.vendor);
-    if (!key) continue;
+    if (!key) return;
 
     let s = map.get(key);
     if (!s) {
@@ -125,9 +142,23 @@ export function buildSupplierLedger(records: SupplierSourceRecord[]): SupplierRe
       map.set(key, s);
     }
 
-    s.documentCount += 1;
-    if (isVerified(r.verificationStatus)) s.verifiedCount += 1;
-    s.spend += Number(r.amount) || 0;
+    // Spend and document counts are per document: the invoice amount is
+    // taken once (largest value seen for that document, since older ledger
+    // rows repeat the full amount on every line), and a document counts as
+    // verified when any of its lines is verified.
+    let supplierDocs = docs.get(key);
+    if (!supplierDocs) { supplierDocs = new Map(); docs.set(key, supplierDocs); }
+    const docKey = documentKeyFor(r, index);
+    const amount = Number(r.amount) || 0;
+    const doc = supplierDocs.get(docKey);
+    if (!doc) {
+      supplierDocs.set(docKey, { amount, verified: isVerified(r.verificationStatus) });
+    } else {
+      doc.amount = Math.max(doc.amount, amount);
+      doc.verified = doc.verified || isVerified(r.verificationStatus);
+    }
+
+    // CO2 is per line and is summed across lines.
     const co2 = Number(r.co2Kg) || 0;
     s.co2Kg += co2;
     if (r.scope === 3) s.scope3Co2Kg += co2;
@@ -140,10 +171,14 @@ export function buildSupplierLedger(records: SupplierSourceRecord[]): SupplierRe
       if (!s.firstSeen || r.invoiceDate < s.firstSeen) s.firstSeen = r.invoiceDate;
       if (!s.lastSeen || r.invoiceDate > s.lastSeen) s.lastSeen = r.invoiceDate;
     }
-  }
+  });
 
   const list = [...map.values()];
   for (const s of list) {
+    const supplierDocs = [...(docs.get(s.key)?.values() ?? [])];
+    s.documentCount = supplierDocs.length;
+    s.verifiedCount = supplierDocs.filter((d) => d.verified).length;
+    s.spend = supplierDocs.reduce((t, d) => t + d.amount, 0);
     s.tier = tierFor(s);
     s.gaps = gapsFor(s);
   }

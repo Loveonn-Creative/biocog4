@@ -8,17 +8,25 @@ const corsHeaders = {
 
 // Prices in paise. Yearly = listed monthly price * 12 (the discounted "yearly" headline).
 // Monthly (no discount) is roughly 4x the discounted monthly equivalent.
+// Keys are the tier values allowed by the subscriptions.tier CHECK constraint
+// ('snapshot','basic','pro','scale'). Essential is stored as 'basic'.
 const PLAN_PRICES: Record<string, { monthly: number; yearly: number; name: string }> = {
-  essential: { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // ₹1,999/mo  OR ₹5,988/yr (₹499/mo equiv)
-  basic:     { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // legacy alias
-  pro:       { monthly: 999900, yearly: 5998800, name: 'Biocog Pro' },        // ₹9,999/mo OR ₹59,988/yr (₹4,999/mo equiv)
-  scale:     { monthly: 3000000, yearly: 18000000, name: 'Biocog Scale' },    // ₹30,000/mo OR ₹1,80,000/yr base
+  basic: { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // Essential: ₹1,999/mo OR ₹5,988/yr
+  pro:   { monthly: 999900, yearly: 5998800, name: 'Biocog Pro' },        // ₹9,999/mo OR ₹59,988/yr
 };
-const PER_EMPLOYEE_MONTHLY = 19800; // ₹198/employee/month
-const PER_EMPLOYEE_YEARLY = 118800; // ₹1,188/employee/year (₹99/mo equiv)
-// Matches the Scale team-size slider in src/pages/Pricing.tsx (10..500).
-const MIN_TEAM_SIZE = 10;
-const MAX_TEAM_SIZE = 500;
+// Scale has no list price. It is custom priced and can only be bought against an
+// admin-issued row in public.scale_price_quotes (see
+// supabase/pending-migrations/20261011160000_scale_price_quotes.sql).
+// Not related to the India scope estimate in _shared/customScopeEstimate.ts.
+const SCALE_PLAN_NAME = 'Biocog Scale';
+const SCALE_REFUSAL = 'Scale is custom priced. Contact us for a quote.';
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+const json = (body: unknown, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  });
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -62,36 +70,59 @@ serve(async (req) => {
     const userId = authData.user.id;
     const userEmail = authData.user.email || '';
 
-    let { tier, teamSize, billingCycle } = await req.json();
-    // Normalize tier name
-    if (tier === 'basic') tier = 'essential';
-    const cycle: 'monthly' | 'yearly' = billingCycle === 'monthly' ? 'monthly' : 'yearly';
-    console.log('Creating order for:', { tier, teamSize, cycle, userId });
+    const body = await req.json().catch(() => ({}));
+    // Client-supplied amounts (and teamSize) are ignored: price comes from
+    // PLAN_PRICES or from an admin-issued Scale quote.
+    const rawTier = typeof body?.tier === 'string' ? body.tier.toLowerCase() : '';
+    // The DB CHECK constraint only allows 'basic' for Essential.
+    const tier = rawTier === 'essential' ? 'basic' : rawTier;
+    let cycle: 'monthly' | 'yearly' = body?.billingCycle === 'monthly' ? 'monthly' : 'yearly';
+    console.log('Creating order for:', { tier, cycle, userId });
 
-    // Validate tier
-    if (!PLAN_PRICES[tier]) {
-      return new Response(
-        JSON.stringify({ error: 'Invalid plan selected' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
+    let amount: number;
+    let planName: string;
+    let quoteId: string | null = null;
+    let seats: number | null = null;
 
-    // Validate team size (only priced for Scale)
     if (tier === 'scale') {
-      if (!Number.isInteger(teamSize) || teamSize < MIN_TEAM_SIZE || teamSize > MAX_TEAM_SIZE) {
-        return new Response(
-          JSON.stringify({ error: `Team size must be a whole number between ${MIN_TEAM_SIZE} and ${MAX_TEAM_SIZE}` }),
-          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
+      const requestedQuoteId = typeof body?.quoteId === 'string' ? body.quoteId : '';
+      if (!UUID_RE.test(requestedQuoteId)) {
+        return json({ error: SCALE_REFUSAL }, 403);
       }
+      const { data: quote, error: quoteErr } = await supabase
+        .from('scale_price_quotes')
+        .select('id, user_id, amount_inr, billing_cycle, seats, valid_until, status')
+        .eq('id', requestedQuoteId)
+        .maybeSingle();
+      if (quoteErr) {
+        // 42P01 = table not created yet (pending migration not applied). Fail closed either way.
+        console.error('Scale quote lookup failed:', quoteErr.code === '42P01' ? 'table missing' : quoteErr.code);
+        return json({ error: SCALE_REFUSAL }, 403);
+      }
+      const amountInr = Number(quote?.amount_inr);
+      if (
+        !quote ||
+        quote.user_id !== userId ||
+        quote.status !== 'active' ||
+        !quote.valid_until ||
+        new Date(quote.valid_until).getTime() <= Date.now() ||
+        !Number.isFinite(amountInr) ||
+        amountInr <= 0
+      ) {
+        return json({ error: SCALE_REFUSAL }, 403);
+      }
+      amount = Math.round(amountInr * 100);
+      if (quote.billing_cycle === 'monthly' || quote.billing_cycle === 'yearly') {
+        cycle = quote.billing_cycle;
+      }
+      planName = SCALE_PLAN_NAME;
+      quoteId = quote.id;
+      seats = typeof quote.seats === 'number' ? quote.seats : null;
+    } else if (PLAN_PRICES[tier]) {
+      amount = PLAN_PRICES[tier][cycle];
+      planName = PLAN_PRICES[tier].name;
     } else {
-      teamSize = 0;
-    }
-
-    // Calculate amount
-    let amount = PLAN_PRICES[tier][cycle];
-    if (tier === 'scale') {
-      amount += teamSize * (cycle === 'yearly' ? PER_EMPLOYEE_YEARLY : PER_EMPLOYEE_MONTHLY);
+      return json({ error: 'Invalid plan selected' }, 400);
     }
 
     // Create Razorpay order
@@ -112,7 +143,8 @@ serve(async (req) => {
           billing_cycle: cycle,
           user_id: userId,
           user_email: userEmail,
-          team_size: teamSize,
+          ...(quoteId ? { scale_quote_id: quoteId } : {}),
+          ...(seats !== null ? { seats } : {}),
         },
       }),
     });
@@ -129,7 +161,9 @@ serve(async (req) => {
     const order = await orderResponse.json();
     console.log('Razorpay order created:', order.id);
 
-    // Store pending subscription in database
+    // Store pending subscription in database. Fail closed: if the row cannot be
+    // written, verify-razorpay-payment could never activate the plan, so the
+    // order id is NOT returned and the customer is never asked to pay.
     const { error: subError } = await supabase
       .from('subscriptions')
       .insert({
@@ -142,19 +176,17 @@ serve(async (req) => {
       });
 
     if (subError) {
-      console.error('Failed to store subscription:', subError);
+      console.error('Failed to store subscription:', subError.code, subError.message);
+      return json({ error: 'Could not start checkout. Please try again or contact billing@senseible.earth.' }, 500);
     }
 
-    return new Response(
-      JSON.stringify({
-        orderId: order.id,
-        amount: order.amount,
-        currency: order.currency,
-        keyId: RAZORPAY_KEY_ID,
-        planName: PLAN_PRICES[tier].name,
-      }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return json({
+      orderId: order.id,
+      amount: order.amount,
+      currency: order.currency,
+      keyId: RAZORPAY_KEY_ID,
+      planName,
+    });
 
   } catch (error) {
     console.error('Order creation error:', error);

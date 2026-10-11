@@ -6,7 +6,6 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
 import {
   Accordion,
   AccordionContent,
@@ -31,7 +30,8 @@ interface PricingTier {
   name: string;
   icon: typeof Sparkles;
   tagline: string;
-  price: number;
+  /** null = custom priced (shown as "Custom pricing", no figure). */
+  price: number | null;
   originalPrice?: number;
   period: string;
   subtext?: string;
@@ -63,15 +63,10 @@ const Pricing = () => {
   // Wait for context to load before determining pricing view
   const isPartnerContext = !contextLoading && activeContext?.context_type === 'partner';
   
-  const [teamSize, setTeamSize] = useState(50);
   const [processingTier, setProcessingTier] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
   const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
   
-  const scaleBasePrice = billingCycle === 'yearly' ? 15000 : 30000;
-  const perEmployeePrice = billingCycle === 'yearly' ? 99 : 198;
-  const scalePrice = scaleBasePrice + (teamSize * perEmployeePrice);
-
   // Partner-specific tiers
   const partnerTiers: PartnerTier[] = [
     {
@@ -104,7 +99,7 @@ const Pricing = () => {
         'Unlimited credit access',
         'Priority verification queue',
         'Full compliance dashboard (CBAM, EU Taxonomy, PCAF)',
-        'API integrations (roadmap)',
+        'API integrations (custom build)',
         'Real-time alerts & signals',
         'Dedicated account manager',
         'Custom reporting',
@@ -120,8 +115,8 @@ const Pricing = () => {
       cta: 'Request API Docs',
       ctaVariant: 'secondary',
       features: [
-        'RESTful API access (roadmap)',
-        'Webhook integrations (roadmap)',
+        'RESTful API access (custom build)',
+        'Webhook integrations (custom build)',
         'Bulk verification endpoints',
         'White-label options',
         'Technical onboarding',
@@ -179,7 +174,6 @@ const Pricing = () => {
     try {
       await initiatePayment({
         tier: tierId,
-        teamSize: tierId === 'scale' ? teamSize : undefined,
         billingCycle: cycle,
         userId: user.id,
         userEmail: user.email || '',
@@ -300,17 +294,17 @@ const Pricing = () => {
       id: 'scale',
       name: 'Biocog Scale',
       icon: Building2,
-      tagline: 'Pay As You Grow',
-      price: scalePrice,
-      period: '/month',
-      subtext: billingCycle === 'yearly' ? 'Yearly billing: best per-seat rate.' : 'Custom workflows and larger teams.',
+      tagline: 'For larger teams',
+      price: null,
+      period: '',
+      subtext: 'Custom workflows and larger teams. Contact us for a quote.',
       cta: 'Talk to Sales',
       ctaVariant: 'secondary',
       features: [
         'Everything in Pro',
         'Real-time MRV Pipeline',
         'Multi-entity Support',
-        'API & integrations (roadmap)',
+        'API & integrations (custom build)',
         'SBTi-ready Projections',
         'Dedicated Onboarding',
         'Priority SLA',
@@ -376,7 +370,7 @@ const Pricing = () => {
     },
     {
       q: 'Can I integrate with my existing systems?',
-      a: 'An API and webhooks are on the roadmap and being designed with enterprise teams. Tell us your stack on the Enterprise page and we will scope integrations with you.',
+      a: 'API and webhook integrations are custom built to each enterprise\'s requirements. Tell us your stack on the Enterprise page and we will scope them with you.',
     },
     {
       q: 'How is pricing calculated for pay-as-you-go?',
@@ -605,7 +599,7 @@ const Pricing = () => {
 
                     {/* Price */}
                     <div className="mb-4">
-                      {tier.originalPrice && (
+                      {tier.originalPrice && tier.price !== null && (
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-sm line-through text-muted-foreground">
                             {formatCurrency(tier.originalPrice)}
@@ -616,34 +610,19 @@ const Pricing = () => {
                         </div>
                       )}
                       <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-bold">{formatCurrency(tier.price)}</span>
-                        <span className="text-sm text-muted-foreground">{tier.period}</span>
+                        {tier.price === null ? (
+                          <span className="text-3xl font-bold">Custom pricing</span>
+                        ) : (
+                          <>
+                            <span className="text-3xl font-bold">{formatCurrency(tier.price)}</span>
+                            <span className="text-sm text-muted-foreground">{tier.period}</span>
+                          </>
+                        )}
                       </div>
                       {tier.id === 'basic' && (
                         <p className="text-xs text-muted-foreground mt-1">Less than ₹17/day</p>
                       )}
                     </div>
-
-                    {/* Scale Tier Calculator */}
-                    {tier.id === 'scale' && (
-                      <div className="mb-4 p-3 rounded-lg bg-muted/50">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-medium">Team Size</span>
-                          <span className="text-sm font-bold">{teamSize} employees</span>
-                        </div>
-                        <Slider
-                          value={[teamSize]}
-                          onValueChange={(v) => setTeamSize(v[0])}
-                          min={10}
-                          max={500}
-                          step={10}
-                          className="mb-2"
-                        />
-                        <p className="text-xs text-muted-foreground">
-                          Base {formatCurrency(scaleBasePrice)} + {formatCurrency(perEmployeePrice)}/employee
-                        </p>
-                      </div>
-                    )}
 
                     {/* Inline upsell when monthly was clicked for a paid tier */}
                     {pendingMonthlyTier === tier.id ? (

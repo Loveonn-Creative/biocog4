@@ -1,6 +1,37 @@
 import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import type { PostgrestError } from '@supabase/supabase-js';
+
+/** True when a PostgREST RPC does not exist yet (pending migration not applied). */
+export const isMissingRpcError = (error: { code?: string; message?: string } | null | undefined): boolean =>
+  !!error && (error.code === '42883' || error.code === 'PGRST202' || /could not find the function/i.test(error.message || ''));
+
+/**
+ * supabase.functions.invoke returns data = null on non-2xx responses; the server's
+ * JSON body (with its `error` message) is only available on error.context.
+ */
+export async function getFunctionErrorMessage(error: unknown, fallback: string): Promise<string> {
+  const context = (error as { context?: unknown } | null)?.context;
+  if (context && typeof (context as Response).json === 'function') {
+    try {
+      const body = await (context as Response).clone().json();
+      if (body && typeof body.error === 'string' && body.error) return body.error;
+    } catch {
+      // Body was not JSON; fall through.
+    }
+  }
+  if (error instanceof Error && error.message && !/non-2xx|failed to send a request/i.test(error.message)) {
+    return error.message;
+  }
+  return fallback;
+}
+
+// RPCs added by the pending team access migration are not in the generated types yet.
+type UntypedRpc = (fn: string, args?: Record<string, unknown>) => PromiseLike<{ data: unknown; error: PostgrestError | null }>;
+export const untypedRpc: UntypedRpc = (fn, args) =>
+  (supabase.rpc as unknown as (this: typeof supabase, fn: string, args?: Record<string, unknown>) => PromiseLike<{ data: unknown; error: PostgrestError | null }>)
+    .call(supabase, fn, args);
 
 export interface Organization {
   id: string;
@@ -35,7 +66,7 @@ export function useOrganization() {
   const queryClient = useQueryClient();
 
   // Fetch user's organizations
-  const { data: organizations = [], isLoading: orgsLoading } = useQuery({
+  const { data: organizations = [], isLoading: orgsLoading, error: organizationsError } = useQuery({
     queryKey: ['organizations', user?.id],
     queryFn: async () => {
       if (!user?.id) return [];
@@ -48,6 +79,8 @@ export function useOrganization() {
       return data as Organization[];
     },
     enabled: !!user?.id,
+    // A permission error will not fix itself on retry; surface it straight away.
+    retry: (failureCount, error) => (error as { code?: string })?.code !== '42501' && failureCount < 3,
   });
 
   // Fetch user's contexts (for role switching)
@@ -73,7 +106,13 @@ export function useOrganization() {
   const createOrganization = useMutation({
     mutationFn: async (name: string) => {
       if (!user?.id) throw new Error('Not authenticated');
-      
+
+      // Preferred path: one atomic SECURITY DEFINER RPC (org + owner member + context).
+      const { data: rpcOrg, error: rpcError } = await untypedRpc('create_organization', { p_name: name });
+      if (!rpcError) return rpcOrg as Organization;
+      if (!isMissingRpcError(rpcError)) throw rpcError;
+
+      // Fallback until the pending migration adds create_organization.
       // Create organization
       const { data: org, error: orgError } = await supabase
         .from('organizations')
@@ -143,6 +182,7 @@ export function useOrganization() {
     activeContext,
     activeOrganization,
     isLoading: orgsLoading || contextsLoading,
+    organizationsError: organizationsError as (Error & { code?: string }) | null,
     createOrganization,
     switchContext,
     hasOrganization: organizations.length > 0,

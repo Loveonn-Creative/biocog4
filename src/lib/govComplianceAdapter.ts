@@ -8,7 +8,6 @@
  * - CCTS (Carbon Credit Trading Scheme)
  */
 
-import * as XLSX from 'xlsx';
 import { toast } from 'sonner';
 
 interface LedgerEntry {
@@ -118,7 +117,7 @@ export function formatForCCTS(entries: LedgerEntry[]) {
 
 export type GovFormat = 'GCP' | 'BRSR' | 'CCTS';
 
-export function exportGovCompliance(entries: LedgerEntry[], format: GovFormat) {
+export async function exportGovCompliance(entries: LedgerEntry[], format: GovFormat) {
   if (entries.length === 0) {
     toast.error('No compliance data to export');
     return;
@@ -128,6 +127,8 @@ export function exportGovCompliance(entries: LedgerEntry[], format: GovFormat) {
   const sheetNames = { GCP: 'Green Credit Programme', BRSR: 'BRSR Disclosure', CCTS: 'CCTS Registry' };
 
   const data = formatters[format](entries);
+  // Loaded only when an export is requested, so xlsx stays out of page bundles.
+  const XLSX = await import('xlsx');
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.json_to_sheet(data);
   XLSX.utils.book_append_sheet(wb, ws, sheetNames[format]);

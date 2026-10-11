@@ -1,6 +1,5 @@
 import { lazy, Suspense, useState } from "react";
 import { useT } from "@/lib/i18n/useT";
-import { CarbonParticles } from "@/components/CarbonParticles";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
@@ -32,6 +31,7 @@ const ResultState = lazy(() =>
 );
 // Below-the-fold story, sticky phone CTA and the sample result load after
 // first paint in their own chunks.
+const ProductPipeline = lazy(() => import("@/components/product/ProductPipeline"));
 const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
 const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
 const SampleResult = lazy(() => import("@/components/home/SampleResult").then((m) => ({ default: m.SampleResult })));
@@ -78,6 +78,7 @@ interface ExtractedData {
   primaryScope?: number;
   primaryCategory?: string;
   totalCO2Kg?: number;
+  avoidedCO2Kg?: number;
   emissionCategory?: string;
   estimatedCO2Kg?: number;
   confidence: number;
@@ -193,8 +194,9 @@ const getScopeFromCategory = (category: string): number => {
   return SCOPE_MAP[category] || SCOPE_MAP[category.toUpperCase()] || 3;
 };
 
-// Fixed carbon credit rate (same as backend)
-const CARBON_CREDIT_RATE = 750;
+// No money figure is shown at upload. The indicative value is verified tCO2e
+// x the reference rate (src/lib/carbonValue.ts) and these emissions are not
+// verified yet. The invoice amount is never used as a stand-in.
 
 const Index = () => {
   const navigate = useNavigate();
@@ -238,29 +240,22 @@ const Index = () => {
       let documentId: string | null = null;
       
       if (documentHash) {
-        const { data: existingDoc } = await (await loadSupabase())
+        // Only this user's (or this guest session's) document. Another
+        // owner's row with the same hash is never matched or reassigned.
+        let lookup = (await loadSupabase())
           .from('documents')
           .select('id')
-          .eq('document_hash', documentHash)
+          .eq('document_hash', documentHash);
+        lookup = user
+          ? lookup.eq('user_id', user.id)
+          : lookup.eq('session_id', sessionId).is('user_id', null);
+        const { data: existingDoc } = await lookup
           .order('created_at', { ascending: false })
           .limit(1)
-          .single();
-        
+          .maybeSingle();
+
         if (existingDoc) {
           documentId = existingDoc.id;
-          
-          // Update with session/user info if not set
-          const { error: updateError } = await (await loadSupabase())
-            .from('documents')
-            .update({
-              session_id: user ? null : sessionId,
-              user_id: user?.id || null,
-            })
-            .eq('id', documentId);
-          
-          if (updateError) {
-            console.error('[MRV] Document update error:', updateError);
-          }
         }
       }
       
@@ -463,13 +458,10 @@ const Index = () => {
       const isCompliance = extractedData.documentType === 'certificate' || 
                           emissionCat === 'other';
       
-      // DETERMINISTIC: CO2 × Fixed Rate = Carbon Credit Value
-      const co2Tons = calculatedCO2 / 1000;
-      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
-
       const processingResult: ProcessingResult = {
         type: isCompliance ? "compliance" : "revenue",
-        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+        // Unverified at this point, so no indicative value yet.
+        amount: 0,
         documentType: formatDocumentType(extractedData.documentType, emissionCat),
         extractedData: {
           ...extractedData,
@@ -643,7 +635,6 @@ const Index = () => {
       
       {/* First viewport: what it is, who it is for, why trust it, and the action. */}
       <div id="hero" className="relative flex flex-col min-h-[100dvh]">
-      <CarbonParticles />
       
       {/* Top-right navigation icons */}
       <HomeNavIcons />
@@ -669,7 +660,9 @@ const Index = () => {
         )}
 
         {state === "idle" && !showSample && (
-          <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
+          <div className="w-full max-w-6xl grid gap-8 lg:gap-x-14 lg:grid-cols-[1fr_1.1fr] items-center animate-fade-in">
+          {/* Left: the action. Right: what happens to the bill once it is uploaded. */}
+          <div className="flex flex-col items-center gap-7 sm:gap-8 lg:row-span-1">
             {/* Animated use case headline - ABOVE icons for maximum impact */}
             <UseCaseTyper className="mt-2" />
             
@@ -702,13 +695,10 @@ const Index = () => {
                       toast.success('Data saved successfully!');
                       setPendingRetry(null);
                       const extractedData = pendingRetry.extractedData;
-                      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
                       const emissionCat = getCategoryFromOCR(extractedData);
-                      const co2Tons = calculatedCO2 / 1000;
-                      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
                       setResult({
                         type: extractedData.documentType === 'certificate' || emissionCat === 'other' ? "compliance" : "revenue",
-                        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+                        amount: 0,
                         documentType: formatDocumentType(extractedData.documentType, emissionCat),
                         extractedData,
                         documentId: savedIds.documentId,
@@ -730,7 +720,7 @@ const Index = () => {
             
             <div className="flex flex-col items-center gap-2 -mt-2">
               <p className="text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
-                {t("home.hero.action", "Upload a bill or invoice for your audit-ready carbon report")}
+                {t("home.hero.action", "Upload an invoice, get an audit-ready carbon report")}
               </p>
               <button
                 onClick={openSample}
@@ -741,8 +731,17 @@ const Index = () => {
             </div>
 
 
+          </div>
+
+          <div className="w-full max-w-md mx-auto lg:max-w-none lg:row-span-2 lg:col-start-2 lg:row-start-1">
+            <Suspense fallback={<div className="h-[300px] lg:h-[400px]" aria-hidden="true" />}>
+              <ProductPipeline />
+            </Suspense>
+          </div>
+
+          <div className="flex flex-col items-center gap-7 sm:gap-8">
             {/* India AI Innovation Badge */}
-            <div className="flex flex-col items-center gap-2 mt-4">
+            <div className="flex flex-col items-center gap-2 mt-4 lg:mt-0">
               <IndiaAIBadge size={48} />
               <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-xs [text-wrap:balance]">
                 <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
@@ -778,6 +777,7 @@ const Index = () => {
                 )}
               </div>
             )}
+          </div>
           </div>
         )}
 

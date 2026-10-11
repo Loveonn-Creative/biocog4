@@ -21,13 +21,28 @@ const ResetPassword = () => {
   useEffect(() => {
     let cancelled = false;
 
+    const markValid = () => {
+      if (cancelled) return;
+      setLinkState((prev) => (prev === "done" ? prev : "valid"));
+      // Clean the tokens out of the address bar.
+      window.history.replaceState({}, "", "/reset-password");
+    };
+
+    // The hash-token style link is processed asynchronously by detectSessionInUrl,
+    // which fires PASSWORD_RECOVERY once a real session exists.
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session && (event === "PASSWORD_RECOVERY" || event === "SIGNED_IN")) {
+        markValid();
+      }
+    });
+
     const resolveRecovery = async () => {
       try {
         const url = new URL(window.location.href);
         const code = url.searchParams.get("code");
         const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
-        const hasRecoveryHash =
-          hash.get("type") === "recovery" || !!hash.get("access_token");
+        const accessToken = hash.get("access_token");
+        const refreshToken = hash.get("refresh_token");
 
         if (code) {
           const { error } = await supabase.auth.exchangeCodeForSession(code);
@@ -37,25 +52,35 @@ const ResetPassword = () => {
           }
         }
 
-        // detectSessionInUrl handles the hash-token style link automatically.
-        const { data } = await supabase.auth.getSession();
+        let { data } = await supabase.auth.getSession();
+
+        // Fall back to establishing the session from the hash tokens ourselves.
+        if (!data.session && accessToken && refreshToken) {
+          const { error } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+          if (!error) {
+            ({ data } = await supabase.auth.getSession());
+          }
+        }
 
         if (cancelled) return;
-        if (data.session || hasRecoveryHash) {
-          setLinkState("valid");
-          // Clean the tokens out of the address bar.
-          window.history.replaceState({}, "", "/reset-password");
+        // Only a real session can update the password; a recovery hash alone is not enough.
+        if (data.session) {
+          markValid();
         } else {
-          setLinkState("invalid");
+          setLinkState((prev) => (prev === "checking" ? "invalid" : prev));
         }
       } catch {
-        if (!cancelled) setLinkState("invalid");
+        if (!cancelled) setLinkState((prev) => (prev === "checking" ? "invalid" : prev));
       }
     };
 
     resolveRecovery();
     return () => {
       cancelled = true;
+      authListener.subscription.unsubscribe();
     };
   }, []);
 

@@ -19,6 +19,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { toast } from 'sonner';
+import { indicativeValueFromKg, sumVerifiedKgOncePerEmission, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
 
 interface EligibilityCheck {
   label: string;
@@ -32,7 +33,9 @@ interface MonetizationPathway {
   color: string;
   bg: string;
   title: string;
-  value: number;
+  /** Only the carbon pathway has a figure (verified tCO2e x ₹750). Others are not estimated. */
+  value: number | null;
+  valueLabel?: string;
   desc: string;
   partner: string;
   status: 'available' | 'applied' | 'processing' | 'completed';
@@ -79,13 +82,13 @@ const Monetize = () => {
   }, [activeContext, navigate]);
 
   const verifiedEmissions = getVerifiedEmissions();
-  const verifiedTotalKg = verifiedEmissions.reduce((sum, e) => sum + (e.co2_kg || 0), 0);
+  // Each verified emission counted once; this is the only input to the value.
+  const verifiedTotalKg = sumVerifiedKgOncePerEmission(verifiedEmissions, (e) => e.id, (e) => e.co2_kg);
   const co2Tons = verifiedTotalKg / 1000;
-  // Baseline ₹750/tCO₂e (market estimate)
-  const carbonCreditValue = Math.round(co2Tons * 750);
-  const loanAmount = 500000;
-  const greenLoanSavings = Math.round(loanAmount * 0.005); // 0.5% interest reduction
-  const govtIncentive = Math.round(carbonCreditValue * 1.5);
+  const indicativeValue = indicativeValueFromKg(verifiedTotalKg);
+  // Loan savings, scheme benefits and factoring advances are not estimated:
+  // the earlier fixed ₹2,500 loan figure, 1.5x "incentive" and 70% advance
+  // were not based on any lender, scheme or the user's data.
 
   const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
     style: 'currency', 
@@ -105,16 +108,16 @@ const Monetize = () => {
     }))
   );
 
-  // Green invoice factoring
-  const greenInvoiceTotal = ledgerEntries
-    .filter((e: any) => e.is_green_benefit && e.amount > 0)
-    .reduce((sum: number, e: any) => sum + (e.amount || 0), 0);
-  const factoringAdvance = Math.round(greenInvoiceTotal * 0.7);
+  // Green invoices on the ledger (count only; amounts are not turned into an advance figure).
+  const greenInvoiceCount = new Set(
+    ledgerEntries
+      .filter((e: any) => e.is_green_benefit)
+      .map((e: any) => e.document_id || e.document_hash || e.id),
+  ).size;
 
   // Dynamic eligibility
   const greenScore = verifications[0]?.ai_analysis?.greenScore || 0;
   const qualityGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
-  const isCCTSEligible = verifications[0]?.ccts_eligible || false;
 
   useEffect(() => {
     fetchVerifications();
@@ -160,7 +163,7 @@ const Monetize = () => {
     }
   };
 
-  const handleApply = async (pathwayType: string, partnerName: string, estimatedValue: number) => {
+  const handleApply = async (pathwayType: string, partnerName: string, estimatedValue: number | null) => {
     if (!verifications.length) {
       toast.error('Please verify your emissions first');
       navigate('/verify');
@@ -207,16 +210,17 @@ const Monetize = () => {
       color: 'text-warning', 
       bg: 'bg-warning/10', 
       title: 'Carbon Credits', 
-      value: carbonCreditValue, 
-      desc: 'Sell verified credits to corporate buyers on voluntary market',
+      value: indicativeValue,
+      valueLabel: INDICATIVE_VALUE_LABEL,
+      desc: 'Credits must first be issued under a recognised programme. The figure is indicative only.',
       partner: 'IEX Green Market',
       status: (pathwayStatuses['carbon_credit'] as MonetizationPathway['status']) || 'available',
-      requirements: ['Verified emissions data', 'Quality Grade B or above', 'CCTS eligibility'],
+      requirements: ['Verified emissions data', 'Quality Grade B or above', 'Programme registration'],
       timeline: '2-4 weeks processing',
       checks: [
         { label: 'Verified emissions', pass: verifications.length > 0 },
         { label: `Quality Grade B+ (yours: ${qualityGrade})`, pass: ['A', 'B', 'A+'].includes(qualityGrade) },
-        { label: 'CCTS eligible', pass: isCCTSEligible },
+        { label: 'CCTS eligibility: not assessed', pass: false },
       ],
     },
     { 
@@ -226,8 +230,8 @@ const Monetize = () => {
       color: 'text-accent', 
       bg: 'bg-accent/10', 
       title: 'Green Loans', 
-      value: greenLoanSavings, 
-      desc: '0.5% lower interest rate on business loans',
+      value: null,
+      desc: 'Lenders set their own terms for green loans. No saving is estimated here.',
       partner: 'SBI Green Finance',
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
       requirements: ['Green Score 60+', 'Verified carbon data', 'Business registration'],
@@ -245,8 +249,8 @@ const Monetize = () => {
       color: 'text-success', 
       bg: 'bg-success/10', 
       title: 'Govt Incentives', 
-      value: govtIncentive, 
-      desc: 'ZED certification subsidy + PLI scheme benefits',
+      value: null,
+      desc: 'Scheme benefits depend on each scheme\'s rules. No benefit is estimated here.',
       partner: 'MSME Ministry',
       status: (pathwayStatuses['govt_incentive'] as MonetizationPathway['status']) || 'available',
       requirements: ['MSME registration', 'Carbon reporting compliance', 'Verified emissions'],
@@ -264,21 +268,19 @@ const Monetize = () => {
       color: 'text-primary',
       bg: 'bg-primary/10',
       title: 'Green Invoice Factoring',
-      value: factoringAdvance,
-      desc: 'Get advance payout (70%) against verified green invoices',
+      value: null,
+      desc: 'Advance terms are set by the financier. No advance is estimated here.',
       partner: 'Climate Finance Hub',
       status: (pathwayStatuses['green_factoring'] as MonetizationPathway['status']) || 'available',
-      requirements: ['Verified green invoices', 'Credibility Score 50+', 'Minimum ₹10,000 green value'],
+      requirements: ['Verified green invoices', 'Credibility Score 50+'],
       timeline: '3-5 business days',
       checks: [
-        { label: 'Verified green invoices', pass: greenInvoiceTotal > 0 },
+        { label: `Verified green invoices (yours: ${greenInvoiceCount})`, pass: greenInvoiceCount > 0 },
         { label: `Credibility Score 50+ (yours: ${credibility.score})`, pass: credibility.score >= 50 },
-        { label: `Min ₹10,000 green value (yours: ${formatCurrency(greenInvoiceTotal)})`, pass: greenInvoiceTotal >= 10000 },
       ],
     }
   ];
 
-  const totalPotentialValue = pathways.reduce((sum, p) => sum + p.value, 0);
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -362,11 +364,12 @@ const Monetize = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <TrendingUp className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium text-muted-foreground">Total Potential Value</span>
+                      <span className="text-sm font-medium text-muted-foreground">Indicative value</span>
                     </div>
                     <div className="text-4xl font-mono font-bold text-gradient-success">
-                      {formatCurrency(totalPotentialValue)}
+                      {formatCurrency(indicativeValue)}
                     </div>
+                    <p className="text-xs text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 text-sm">
@@ -375,14 +378,8 @@ const Monetize = () => {
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Shield className="h-4 w-4 text-primary" />
-                      <span>{co2Tons.toFixed(2)} tCO₂e total emissions</span>
+                      <span>{co2Tons.toFixed(2)} verified tCO₂e</span>
                     </div>
-                    {verifications[0]?.ccts_eligible && (
-                      <div className="flex items-center gap-2 text-sm">
-                        <FileCheck className="h-4 w-4 text-accent" />
-                        <span>CCTS Eligible</span>
-                      </div>
-                    )}
                     <div className="flex items-center gap-2 text-sm">
                       <Shield className="h-4 w-4 text-warning" />
                       <span>Credibility: <span className="font-mono font-bold">{credibility.grade}</span> ({credibility.score}/100)</span>
@@ -430,8 +427,14 @@ const Monetize = () => {
                       {/* Value & Action */}
                       <div className="flex items-center gap-4 md:flex-col md:items-end">
                         <div className="text-right">
-                          <div className="text-2xl font-mono font-bold">{formatCurrency(p.value)}</div>
-                          <p className="text-xs text-muted-foreground">Estimated value</p>
+                          {p.value !== null ? (
+                            <>
+                              <div className="text-2xl font-mono font-bold">{formatCurrency(p.value)}</div>
+                              <p className="text-xs text-muted-foreground max-w-[12rem]">{p.valueLabel}</p>
+                            </>
+                          ) : (
+                            <p className="text-sm text-muted-foreground">Not estimated</p>
+                          )}
                         </div>
                         {p.status === 'available' ? (
                           canAccessFeature('carbonMonetization') ? (

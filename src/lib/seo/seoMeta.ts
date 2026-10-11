@@ -1,3 +1,4 @@
+import { servicePages } from '@/data/services';
 // Single source of truth for page metadata, shared by the client (SEOHead,
 // RouteSEO) and the build-time prerender + validator (scripts/). Keep this file
 // free of large data imports so it stays cheap in the client bundle; the full
@@ -203,6 +204,8 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Cloud and Data Centre Emissions Calculator',
     description: 'Calculate server, cloud and data-centre emissions by region with location-based and market-based Scope 2 figures, using published PUE and grid factors.',
   },
+  // Service lead pages (src/data/services).
+  ...Object.fromEntries(servicePages.map(s => [`/${s.slug}`, { title: s.seo.title, description: s.seo.description }])),
 };
 
 export function pageMeta(path: string): PageMeta | undefined {

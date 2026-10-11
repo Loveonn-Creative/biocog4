@@ -455,12 +455,14 @@ const Billing = () => {
                       </div>
                       <Button
                         variant="ghost"
-                        size="icon"
-                        className="h-8 w-8"
+                        size="sm"
+                        className="h-8 gap-1.5"
                         disabled={!invoice.pdf_url}
-                        onClick={() => invoice.pdf_url && window.open(invoice.pdf_url, '_blank')}
+                        aria-label="View invoice"
+                        onClick={() => invoice.pdf_url && window.open(invoice.pdf_url, '_blank', 'noopener,noreferrer')}
                       >
-                        <Download className="w-4 h-4" />
+                        <Download className="w-4 h-4" aria-hidden="true" />
+                        View invoice
                       </Button>
                     </div>
                   </div>
