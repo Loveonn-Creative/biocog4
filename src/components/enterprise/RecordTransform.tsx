@@ -30,7 +30,7 @@ export const EXAMPLES: Example[] = [
   {
     key: "meter",
     channelLabel: "Meter readings (CSV)",
-    channelStatus: "roadmap",
+    channelStatus: "custom",
     raw: ["ts,kwh", "2026-09-01T00:00,0.84", "2026-09-01T00:15,0.79", "… 2,880 rows"],
     record: { scope: "Scope 2", activity: "1,312 kWh metered", factor: "0.710 kgCO2/kWh, CEA v21.0", result: "931.5 kgCO2e", confidence: "0.98", source: "sha256 7a55…19fe" },
   },

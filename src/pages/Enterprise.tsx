@@ -141,7 +141,7 @@ const Enterprise = () => {
             {t("ent.hero.line", "Agents collect what your suppliers already have and turn it into Scope 3 records you can audit.")}
           </p>
           <p className="mt-4 text-sm text-muted-foreground max-w-xl">
-            {t("ent.hero.status", "Live today: documents to verified records. Being built: the supplier network. Every capability on this page is labelled.")}
+            {t("ent.hero.status", "Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability on this page is labelled.")}
           </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <button onClick={toForm} className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-medium">
@@ -188,7 +188,7 @@ const Enterprise = () => {
             <div className="flex items-center gap-3">
               <Lock className="w-4 h-4" aria-hidden="true" />
               <p className="text-sm font-medium">{t("ent.b3.record", "Supplier record")}</p>
-              <StatusBadge status="roadmap" />
+              <StatusBadge status="custom" />
             </div>
             <ul className="mt-4 space-y-3 text-sm">
               {[
@@ -227,7 +227,7 @@ const Enterprise = () => {
               { k: t("ent.trail.factor", "Factor"), v: "0.710 kgCO2/kWh, CEA v21.0", s: "live" as const },
               { k: t("ent.trail.method", "Method version"), v: "BIOCOG_MVR_INDIA_v1.0", s: "live" as const },
               { k: t("ent.trail.confidence", "Confidence"), v: "0.95 (CONF_v1.0)", s: "live" as const },
-              { k: t("ent.trail.reviewer", "Reviewer"), v: t("ent.trail.reviewer.v", "Named sign-off"), s: "roadmap" as const },
+              { k: t("ent.trail.reviewer", "Reviewer"), v: t("ent.trail.reviewer.v", "Named sign-off"), s: "custom" as const },
             ].map(row => (
               <li key={row.k} className="relative">
                 <span className="absolute -left-[1.42rem] top-1.5 h-2.5 w-2.5 rounded-full border border-foreground bg-background" aria-hidden="true" />
@@ -246,7 +246,7 @@ const Enterprise = () => {
           <div className="rounded-3xl bg-foreground text-background p-5 overflow-x-auto">
             <div className="flex items-center justify-between mb-3">
               <span className="font-mono text-xs text-background/60">{t("ent.api.preview", "API preview")}</span>
-              <span className="rounded-full border border-background/30 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-background/70">{t("ent.status.roadmap", "Roadmap")}</span>
+              <span className="rounded-full border border-background/30 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-background/70">{t("ent.status.custom", "Custom")}</span>
             </div>
             <pre className="font-mono text-[11px] sm:text-xs leading-relaxed whitespace-pre">{`POST /v1/suppliers/{id}/documents
 → 202 { "record_id": "rec_…" }

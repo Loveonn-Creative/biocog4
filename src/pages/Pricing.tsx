@@ -99,7 +99,7 @@ const Pricing = () => {
         'Unlimited credit access',
         'Priority verification queue',
         'Full compliance dashboard (CBAM, EU Taxonomy, PCAF)',
-        'API integrations (roadmap)',
+        'API integrations (custom build)',
         'Real-time alerts & signals',
         'Dedicated account manager',
         'Custom reporting',
@@ -115,8 +115,8 @@ const Pricing = () => {
       cta: 'Request API Docs',
       ctaVariant: 'secondary',
       features: [
-        'RESTful API access (roadmap)',
-        'Webhook integrations (roadmap)',
+        'RESTful API access (custom build)',
+        'Webhook integrations (custom build)',
         'Bulk verification endpoints',
         'White-label options',
         'Technical onboarding',
@@ -304,7 +304,7 @@ const Pricing = () => {
         'Everything in Pro',
         'Real-time MRV Pipeline',
         'Multi-entity Support',
-        'API & integrations (roadmap)',
+        'API & integrations (custom build)',
         'SBTi-ready Projections',
         'Dedicated Onboarding',
         'Priority SLA',
@@ -370,7 +370,7 @@ const Pricing = () => {
     },
     {
       q: 'Can I integrate with my existing systems?',
-      a: 'An API and webhooks are on the roadmap and being designed with enterprise teams. Tell us your stack on the Enterprise page and we will scope integrations with you.',
+      a: 'API and webhook integrations are custom built to each enterprise\'s requirements. Tell us your stack on the Enterprise page and we will scope them with you.',
     },
     {
       q: 'How is pricing calculated for pay-as-you-go?',
