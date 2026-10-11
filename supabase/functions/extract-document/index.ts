@@ -414,7 +414,16 @@ serve(async (req) => {
       const bytes = new Uint8Array(head.length);
       for (let i = 0; i < head.length; i++) bytes[i] = head.charCodeAt(i);
       if (isPdf(bytes)) {
-        const pages = countPdfPages(bytes);
+        let pages = countPdfPages(bytes);
+        if (pages === 0) {
+          // Compressed page tree: count exactly. Loaded only for such files.
+          try {
+            const { PDFDocument } = await import('https://esm.sh/pdf-lib@1.17.1');
+            pages = (await PDFDocument.load(bytes, { updateMetadata: false, ignoreEncryption: true })).getPageCount();
+          } catch (e) {
+            console.warn('Exact PDF page count failed:', e);
+          }
+        }
         if (pages > MAX_PDF_PAGES) {
           return new Response(
             JSON.stringify({ error: pageLimitMessage(pages), code: 'too_many_pages', pages, maxPages: MAX_PDF_PAGES }),

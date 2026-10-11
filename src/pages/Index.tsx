@@ -16,7 +16,8 @@ import { buildEmissionRows } from "@/lib/mrvPersistence";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
-import { getFunctionErrorMessage } from '@/hooks/useOrganization';
+import { getFunctionErrorMessage } from '@/lib/functionErrors';
+import { splitPdf } from '@/lib/pdfSplit';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -339,11 +340,76 @@ const Index = () => {
     }
   };
 
+  // A PDF over the page limit is split in the browser into parts of up to 10
+  // pages. Each part is read in full and saved as its own document; the
+  // result screen shows all parts together.
+  const processLongPdf = async (file: File) => {
+    setState("processing");
+    setDocumentType("Splitting a long PDF into parts...");
+    const split = await splitPdf(file);
+    if (!split.ok || !split.parts) {
+      toast.error(split.message || 'This PDF could not be split.', { duration: 8000 });
+      setState("idle");
+      return;
+    }
+    const done: { extracted: ExtractedData; saved: { documentId: string; emissionIds: string[] } }[] = [];
+    const notes: string[] = [];
+    for (const part of split.parts) {
+      const range = `pages ${part.fromPage}-${part.toPage}`;
+      setDocumentType(`Reading ${range} of ${part.totalPages}...`);
+      try {
+        const imageBase64 = await fileToBase64(part.file);
+        const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
+          body: { imageBase64, mimeType: 'application/pdf', sessionId },
+        });
+        if (error) { notes.push(`${range}: ${await getFunctionErrorMessage(error, 'could not be read')}`); continue; }
+        if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
+        if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); continue; }
+        const extracted = data.data as ExtractedData;
+        const saved = await saveEmissionToDatabase(extracted, data.documentHash);
+        if (!saved) { notes.push(`${range}: could not be saved`); continue; }
+        done.push({ extracted, saved });
+      } catch {
+        notes.push(`${range}: could not be read`);
+      }
+    }
+    if (done.length === 0) {
+      toast.error(notes[0] ? `Nothing could be read from this PDF (${notes[0]}).` : 'Nothing could be read from this PDF.', { duration: 8000 });
+      setState("idle");
+      return;
+    }
+    const recordCount = done.reduce((n, d) => n + d.saved.emissionIds.length, 0);
+    const first = done[0].extracted;
+    const merged: ExtractedData = {
+      ...first,
+      lineItems: done.flatMap(d => d.extracted.lineItems || []),
+      totalCO2Kg: done.reduce((t, d) => t + (d.extracted.totalCO2Kg || 0), 0),
+      validationFlags: [
+        `Long PDF read in ${split.parts.length} parts of up to 10 pages; ${done.length} read`,
+        ...notes,
+        ...done.flatMap(d => d.extracted.validationFlags || []),
+      ],
+    };
+    if (recordCount > 0) emitRecordsChanged('upload');
+    const emissionCat = getCategoryFromOCR(merged);
+    setDocumentType(formatDocumentType(merged.documentType, emissionCat));
+    setResult({
+      type: merged.documentType === 'certificate' || emissionCat === 'other' ? "compliance" : "revenue",
+      amount: 0,
+      documentType: formatDocumentType(merged.documentType, emissionCat),
+      extractedData: merged,
+      // One part: Verify can scope to it. Several: Verify lists every pending record.
+      documentId: done.length === 1 ? done[0].saved.documentId : undefined,
+      emissionId: undefined,
+      recordCount,
+    });
+    setState("result");
+  };
+
   const processDocument = async (file: File) => {
-    // Long PDFs are refused before upload, with guidance, rather than parsed partially.
     const pageCheck = await checkUploadPages(file);
     if (!pageCheck.ok) {
-      toast.error(pageCheck.message, { duration: 8000 });
+      await processLongPdf(file);
       return;
     }
     setState("processing");

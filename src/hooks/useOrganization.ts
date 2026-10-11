@@ -11,21 +11,9 @@ export const isMissingRpcError = (error: { code?: string; message?: string } | n
  * supabase.functions.invoke returns data = null on non-2xx responses; the server's
  * JSON body (with its `error` message) is only available on error.context.
  */
-export async function getFunctionErrorMessage(error: unknown, fallback: string): Promise<string> {
-  const context = (error as { context?: unknown } | null)?.context;
-  if (context && typeof (context as Response).json === 'function') {
-    try {
-      const body = await (context as Response).clone().json();
-      if (body && typeof body.error === 'string' && body.error) return body.error;
-    } catch {
-      // Body was not JSON; fall through.
-    }
-  }
-  if (error instanceof Error && error.message && !/non-2xx|failed to send a request/i.test(error.message)) {
-    return error.message;
-  }
-  return fallback;
-}
+// Moved to a dependency-free module so pages that only need the message
+// (e.g. the homepage) do not pull in the Supabase client.
+export { getFunctionErrorMessage } from '@/lib/functionErrors';
 
 // RPCs added by the pending team access migration are not in the generated types yet.
 type UntypedRpc = (fn: string, args?: Record<string, unknown>) => PromiseLike<{ data: unknown; error: PostgrestError | null }>;

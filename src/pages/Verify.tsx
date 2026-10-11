@@ -27,7 +27,7 @@ import { GreenwashingExplainer } from '@/components/trust/GreenwashingExplainer'
 import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
 import { chunk, groupByInvoice, planBulk } from '@/lib/bulkVerify';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
-import { getFunctionErrorMessage } from '@/hooks/useOrganization';
+import { getFunctionErrorMessage } from '@/lib/functionErrors';
 
 interface NavigationState {
   emissionId?: string;
