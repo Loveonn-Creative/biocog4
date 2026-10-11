@@ -1,11 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
 import { calculateCBAM, CBAM_SECTORS, DEFAULT_EU_ETS_PRICE } from "@/lib/cbamEngine";
+import { daysUntilIst, msUntilNextIstMidnight } from "@/lib/calendarDays";
 
 // First annual CBAM declaration (covering 2026 imports), Regulation (EU) 2025/2083.
-const FIRST_DECLARATION = new Date("2027-09-30T23:59:59Z");
+const FIRST_DECLARATION = "2027-09-30";
 
 const OPTIONS = [
   { sectorId: "steel", routeId: "bf-bof" },
@@ -36,7 +37,18 @@ export const CbamExposure = () => {
     return { y2026: at(2026), y2027: at(2027), y2030: at(2030), intensity: r.emissionsIntensityUsed, route: r.routeName };
   }, [sectorId, option.routeId, verified]);
 
-  const daysLeft = Math.max(0, Math.ceil((FIRST_DECLARATION.getTime() - Date.now()) / 86_400_000));
+  // Calendar days in India time; refreshes at midnight IST even if the tab stays open.
+  const [daysLeft, setDaysLeft] = useState(() => daysUntilIst(FIRST_DECLARATION));
+  useEffect(() => {
+    let timer: number;
+    const schedule = () => {
+      timer = window.setTimeout(() => { setDaysLeft(daysUntilIst(FIRST_DECLARATION)); schedule(); }, msUntilNextIstMidnight() + 1000);
+    };
+    schedule();
+    const onVisible = () => { if (!document.hidden) setDaysLeft(daysUntilIst(FIRST_DECLARATION)); };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { window.clearTimeout(timer); document.removeEventListener("visibilitychange", onVisible); };
+  }, []);
 
   return (
     <div className="rounded-3xl border border-border p-5 sm:p-8 bg-background">
