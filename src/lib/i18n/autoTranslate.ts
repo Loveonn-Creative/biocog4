@@ -115,7 +115,16 @@ async function translateBatch(locale: Locale, strings: string[]) {
   }
 }
 
+// Bumped on every cache update so React's useSyncExternalStore sees a new
+// snapshot and re-renders components showing freshly translated text.
+let storeVersion = 0;
+
+export function getStoreVersion(): number {
+  return storeVersion;
+}
+
 function notify() {
+  storeVersion += 1;
   listeners.forEach((l) => {
     try { l(); } catch {}
   });
@@ -143,7 +152,7 @@ let runtimeAllowed = true;
 export function setRuntimeTranslationAllowed(allowed: boolean) {
   if (runtimeAllowed === allowed) return;
   runtimeAllowed = allowed;
-  listeners.forEach(l => l());
+  notify();
 }
 
 export function isRuntimeTranslationAllowed() {

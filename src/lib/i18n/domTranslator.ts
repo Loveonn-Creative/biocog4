@@ -42,12 +42,21 @@ function shouldSkip(el: Element | null): boolean {
   return false;
 }
 
+// Text already rendered from a reviewed static bundle (useT keys). The DOM
+// translator must never machine-translate it again.
+let staticValues = new Set<string>();
+
+export function setStaticTranslations(values: Iterable<string>) {
+  staticValues = new Set(Array.from(values, v => v.trim()));
+}
+
 function processTextNode(locale: string, node: Text) {
   const parent = node.parentElement;
   if (!parent || shouldSkip(parent)) return;
   const raw = node.nodeValue ?? "";
   const trimmed = raw.trim();
   if (!trimmed || !hasLetters(trimmed)) return;
+  if (staticValues.has(trimmed)) return;
   // Preserve leading/trailing whitespace
   const lead = raw.match(/^\s*/)?.[0] ?? "";
   const tail = raw.match(/\s*$/)?.[0] ?? "";
@@ -55,13 +64,18 @@ function processTextNode(locale: string, node: Text) {
   // Remember original English so re-translations use the same source
   // even after another locale has replaced the node's text.
   const key = "__i18nOriginal";
+  const lastKey = "__i18nLast";
   const anyNode = node as any;
+  // If React replaced the text since we last wrote it (new render, new
+  // language), that new text is the source now, not the stale original.
+  if (anyNode[lastKey] !== undefined && anyNode[lastKey] !== raw) anyNode[key] = undefined;
   const original: string = anyNode[key] ?? trimmed;
   anyNode[key] = original;
 
   const translated = translateSync(locale, original);
   const next = `${lead}${translated}${tail}`;
   if (node.nodeValue !== next) node.nodeValue = next;
+  anyNode[lastKey] = next;
 }
 
 function processAttr(locale: string, el: Element, attr: string) {

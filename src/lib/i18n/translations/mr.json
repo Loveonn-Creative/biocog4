@@ -154,5 +154,10 @@
   "careers.chip.distributed_systems": "Distributed systems",
   "careers.chip.product": "Product",
   "careers.chip.research": "Research",
-  "careers.principles.link": "Read our principles →"
+  "careers.principles.link": "Read our principles →",
+  "home.hero.action": "ऑडिटसाठी तयार कार्बन अहवालासाठी बिल किंवा इनव्हॉइस अपलोड करा",
+  "home.hero.sample": "नमुना इनव्हॉइस वापरून पहा",
+  "home.act.sample": "नमुना इनव्हॉइस वापरून पहा",
+  "home.act.upload": "बिल अपलोड करा",
+  "home.act.sample_short": "नमुना"
 }

@@ -154,5 +154,10 @@
   "careers.chip.distributed_systems": "Distributed systems",
   "careers.chip.product": "Product",
   "careers.chip.research": "Research",
-  "careers.principles.link": "Read our principles →"
+  "careers.principles.link": "Read our principles →",
+  "home.hero.action": "தணிக்கைக்குத் தயாரான கார்பன் அறிக்கைக்கு பில் அல்லது இன்வாய்ஸைப் பதிவேற்றவும்",
+  "home.hero.sample": "மாதிரி இன்வாய்ஸை முயற்சிக்கவும்",
+  "home.act.sample": "மாதிரி இன்வாய்ஸை முயற்சிக்கவும்",
+  "home.act.upload": "பில்லைப் பதிவேற்றவும்",
+  "home.act.sample_short": "மாதிரி"
 }

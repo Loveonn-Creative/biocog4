@@ -154,5 +154,10 @@
   "careers.chip.distributed_systems": "Distributed systems",
   "careers.chip.product": "Product",
   "careers.chip.research": "Research",
-  "careers.principles.link": "Read our principles →"
+  "careers.principles.link": "Read our principles →",
+  "home.hero.action": "Mag-upload ng bill o invoice para sa carbon report na handa sa audit",
+  "home.hero.sample": "Subukan ang sample na invoice",
+  "home.act.sample": "Subukan ang sample na invoice",
+  "home.act.upload": "Mag-upload ng bill",
+  "home.act.sample_short": "Sample"
 }

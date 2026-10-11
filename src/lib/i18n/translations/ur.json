@@ -154,5 +154,10 @@
   "careers.chip.distributed_systems": "Distributed systems",
   "careers.chip.product": "Product",
   "careers.chip.research": "Research",
-  "careers.principles.link": "Read our principles →"
+  "careers.principles.link": "Read our principles →",
+  "home.hero.action": "آڈٹ کے لیے تیار کاربن رپورٹ کے لیے بل یا انوائس اپ لوڈ کریں",
+  "home.hero.sample": "نمونہ انوائس آزمائیں",
+  "home.act.sample": "نمونہ انوائس آزمائیں",
+  "home.act.upload": "بل اپ لوڈ کریں",
+  "home.act.sample_short": "نمونہ"
 }
