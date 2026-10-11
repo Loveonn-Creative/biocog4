@@ -540,6 +540,10 @@ const Trust = () => {
               Same architecture, anchored to the right identifier and the right grid factor in every market.
             </p>
 
+            <p className="mt-8 text-sm text-muted-foreground">
+              Managing hundreds of suppliers?{" "}
+              <Link to="/enterprise" className="text-foreground underline underline-offset-4">How supplier emissions work for enterprises</Link>
+            </p>
           </div>
         </section>
 

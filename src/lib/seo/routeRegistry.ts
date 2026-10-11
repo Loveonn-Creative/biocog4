@@ -200,7 +200,7 @@ function coreRoutes(): SeoRoute[] {
     ['/platform', 'core', 0.9], ['/about', 'core', 0.6], ['/mission', 'core', 0.5],
     ['/principles', 'core', 0.5], ['/contact', 'core', 0.6], ['/carbon-credits', 'core', 0.8],
     ['/climate-finance', 'core', 0.8], ['/partners', 'core', 0.6], ['/grants', 'core', 0.4],
-    ['/net-zero', 'tool', 0.7], ['/cbam-calculator', 'tool', 0.9],
+    ['/net-zero', 'tool', 0.7], ['/enterprise', 'core', 0.8], ['/cbam-calculator', 'tool', 0.9],
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
   ];
   const calculators = Object.keys(STATIC_PAGE_META)

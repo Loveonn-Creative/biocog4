@@ -1,0 +1,2 @@
+supplier_name,country,contact_name,contact_email,contact_phone_whatsapp,tax_id_type,tax_id,annual_spend,spend_currency,category,preferred_language,data_available
+Example Packaging Pvt Ltd,India,Asha Kumar,asha@example.com,+910000000000,GSTIN,,1200000,INR,Packaging,English,bills

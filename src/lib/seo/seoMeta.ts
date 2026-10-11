@@ -139,6 +139,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Trust and Technical Validation',
     description: 'How Senseible verifies emission data: evidence hashing, methodology versioning, confidence bands, framework coverage and greenwashing safeguards.',
   },
+  '/enterprise': {
+    title: 'Supplier Emissions and Scope 3 for Enterprises',
+    description: 'Agents turn supplier invoices, bills and estimates into Scope 3 records with a source, factor and confidence score. Every capability is labelled honestly.',
+  },
   '/careers': {
     title: 'Careers at Senseible: Build Climate Infrastructure',
     description: 'Open roles at Senseible across engineering, applied AI, climate research, design and growth, plus intern and fresher tracks. See how to apply.',

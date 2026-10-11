@@ -104,7 +104,7 @@ const Pricing = () => {
         'Unlimited credit access',
         'Priority verification queue',
         'Full compliance dashboard (CBAM, EU Taxonomy, PCAF)',
-        'API integrations',
+        'API integrations (roadmap)',
         'Real-time alerts & signals',
         'Dedicated account manager',
         'Custom reporting',
@@ -120,8 +120,8 @@ const Pricing = () => {
       cta: 'Request API Docs',
       ctaVariant: 'secondary',
       features: [
-        'RESTful API access',
-        'Webhook integrations',
+        'RESTful API access (roadmap)',
+        'Webhook integrations (roadmap)',
         'Bulk verification endpoints',
         'White-label options',
         'Technical onboarding',
@@ -310,7 +310,7 @@ const Pricing = () => {
         'Everything in Pro',
         'Real-time MRV Pipeline',
         'Multi-entity Support',
-        'API & Integrations',
+        'API & integrations (roadmap)',
         'SBTi-ready Projections',
         'Dedicated Onboarding',
         'Priority SLA',
@@ -376,7 +376,7 @@ const Pricing = () => {
     },
     {
       q: 'Can I integrate with my existing systems?',
-      a: 'Yes. Enterprise and API plans include RESTful API access, webhooks, and white-label options for ERP and platform integrations.',
+      a: 'An API and webhooks are on the roadmap and being designed with enterprise teams. Tell us your stack on the Enterprise page and we will scope integrations with you.',
     },
     {
       q: 'How is pricing calculated for pay-as-you-go?',
@@ -515,7 +515,7 @@ const Pricing = () => {
                   <Building2 className="h-12 w-12 mx-auto mb-4 text-primary" />
                   <h2 className="text-2xl font-bold mb-2">Need Custom Integration?</h2>
                   <p className="text-muted-foreground mb-6">
-                    Banks, ERPs, and enterprise buyers can access white-label solutions, dedicated APIs, and custom compliance workflows.
+                    Banks, ERPs and enterprise buyers can discuss white-label options, integrations and custom compliance workflows with us.
                   </p>
                   <Button size="lg" asChild>
                     <Link to="/contact">
