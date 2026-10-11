@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Leaf, AlertTriangle, TreePine, Building2, Shield, TrendingUp, Coins, Info } from "lucide-react";
+import { Share2, Check, ArrowRight, Leaf, AlertTriangle, TreePine, Building2, Shield, TrendingUp, Coins, Info } from "lucide-react";
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from "./GreenCategoryBadge";
 import { TrustScoreGauge } from "./trust/TrustScoreGauge";
 import { ConfidenceBand } from "./trust/ConfidenceBand";
@@ -201,6 +201,20 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
           <ArrowRight className="w-4 h-4" />
         </button>
         
+        {co2Value !== 0 && (
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(
+              `My ${extractedData?.documentType ?? 'document'} came to ${Math.abs(co2Value).toFixed(1)} kg CO2e on Senseible, with the emission factor and source for every line. Try it: https://senseible.earth/`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-full border border-border text-sm font-medium hover:bg-secondary transition-colors"
+          >
+            <Share2 className="w-4 h-4" />
+            <span>Share on WhatsApp</span>
+          </a>
+        )}
+
         <button
           onClick={onReset}
           className="

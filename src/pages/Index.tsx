@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from "react";
+import { useT } from "@/lib/i18n/useT";
 import { CarbonParticles } from "@/components/CarbonParticles";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
@@ -29,6 +30,18 @@ const BulkUpload = lazy(() =>
 const ResultState = lazy(() =>
   import("@/components/ResultState").then((m) => ({ default: m.ResultState }))
 );
+// Below-the-fold story, sticky phone CTA and the sample result load after
+// first paint in their own chunks.
+const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
+const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
+const SampleResult = lazy(() => import("@/components/home/SampleResult").then((m) => ({ default: m.SampleResult })));
+
+/** Opens the upload picker from anywhere on the page (must run in a click handler). */
+const openUploadPicker = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const input = document.querySelector<HTMLInputElement>('#hero input[type="file"]');
+  input?.click();
+};
 
 
 type State = "idle" | "processing" | "result";
@@ -191,6 +204,12 @@ const Index = () => {
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
   const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
+  const [showSample, setShowSample] = useState(false);
+  const t = useT();
+  const openSample = () => {
+    setShowSample(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -617,29 +636,49 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-hidden">
       <Suspense fallback={null}>
         <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
       </Suspense>
       
+      {/* First viewport: what it is, who it is for, why trust it, and the action. */}
+      <div id="hero" className="relative flex flex-col min-h-[100dvh]">
       <CarbonParticles />
       
       {/* Top-right navigation icons */}
       <HomeNavIcons />
       
-      <header className="relative z-20 w-full pt-5 pb-2">
-        <Link to="/" className="block">
-          <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
+      {/* Wordmark sits left on phones so it never collides with the nav icons. */}
+      <header className="relative z-20 w-full pt-5 pb-2 px-4">
+        <Link to="/" className="inline-block sm:block">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-left sm:text-center text-foreground tracking-tight">
             senseible
           </h1>
         </Link>
       </header>
 
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-10">
-        {state === "idle" && (
-          <div className="flex flex-col items-center gap-8 animate-fade-in">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-6 sm:-mt-10">
+        {state === "idle" && showSample && (
+          <Suspense fallback={null}>
+            <SampleResult
+              onClose={() => setShowSample(false)}
+              onTryOwn={() => { setShowSample(false); setTimeout(openUploadPicker, 0); }}
+            />
+          </Suspense>
+        )}
+
+        {state === "idle" && !showSample && (
+          <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
             {/* Animated use case headline - ABOVE icons for maximum impact */}
-            <UseCaseTyper className="mb-2" />
+            <div className="flex flex-col items-center gap-3 text-center">
+              <UseCaseTyper className="mb-0" />
+              <p className="text-sm sm:text-base text-muted-foreground max-w-md">
+                {t("home.hero.what", "Turn invoices and energy bills into verified emissions, CBAM data and finance signals.")}
+              </p>
+              <p className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-foreground/70">
+                {t("home.hero.who", "For exporters · MSMEs · EU buyers")}
+              </p>
+            </div>
             
             <div className="flex items-start gap-4 sm:gap-6">
               <DocumentInput 
@@ -696,8 +735,21 @@ const Index = () => {
               </div>
             )}
             
-            <p className="text-xs text-muted-foreground/60 text-center mt-2">
-              Upload a document or speak to begin
+            <div className="flex flex-col items-center gap-2 -mt-2">
+              <p className="text-xs text-muted-foreground/70 text-center">
+                {t("home.hero.hint", "Upload a document or speak to begin")}
+              </p>
+              <button
+                onClick={openSample}
+                className="text-sm font-medium text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary"
+              >
+                {t("home.hero.sample", "Try a sample invoice")}
+              </button>
+            </div>
+
+            {/* One checkable proof point: a real factor with its source. */}
+            <p className="text-xs text-muted-foreground text-center max-w-sm">
+              {t("home.hero.proof", "Every figure shows its factor and source, e.g. India grid power 0.710 kgCO2/kWh (CEA v21.0).")}
             </p>
 
             {/* India AI Innovation Badge */}
@@ -756,8 +808,14 @@ const Index = () => {
           </Suspense>
         )}
       </main>
+      </div>
+
+      <Suspense fallback={null}>
+        <HomeStory onUpload={openUploadPicker} onSample={openSample} />
+        <StickyCta heroId="hero" onUpload={openUploadPicker} onSample={openSample} />
+      </Suspense>
       
-      <footer className="relative z-20 w-full pb-6 pt-3">
+      <footer className="relative z-20 w-full pb-24 sm:pb-6 pt-3 border-t border-border">
         <nav className="flex items-center justify-center gap-5 sm:gap-7 flex-wrap px-4">
           <Link 
             to="/monetize" 
