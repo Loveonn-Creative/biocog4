@@ -16,6 +16,19 @@ async function computeHmacSha256(message: string, key: string): Promise<string> 
   return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+// Constant-time string comparison to avoid leaking signature prefixes via timing.
+function timingSafeEqual(a: string, b: string): boolean {
+  const encoder = new TextEncoder();
+  const aBytes = encoder.encode(a);
+  const bBytes = encoder.encode(b);
+  let diff = aBytes.length ^ bBytes.length;
+  const len = Math.max(aBytes.length, bBytes.length);
+  for (let i = 0; i < len; i++) {
+    diff |= (aBytes[i] ?? 0) ^ (bBytes[i] ?? 0);
+  }
+  return diff === 0;
+}
+
 function mask(id: string | null | undefined): string {
   if (!id) return '';
   return id.length > 8 ? `${id.slice(0, 4)}***${id.slice(-4)}` : '***';
@@ -67,7 +80,7 @@ serve(async (req) => {
 
     // ============= SIGNATURE VERIFY =============
     const generated = await computeHmacSha256(`${razorpay_order_id}|${razorpay_payment_id}`, RAZORPAY_KEY_SECRET);
-    if (generated !== razorpay_signature) {
+    if (typeof razorpay_signature !== 'string' || !timingSafeEqual(generated, razorpay_signature)) {
       console.error('Signature verification failed');
       return new Response(JSON.stringify({ error: 'Payment verification failed' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
@@ -104,7 +117,9 @@ serve(async (req) => {
     if (cycle === 'yearly') expiresAt.setFullYear(expiresAt.getFullYear() + 1);
     else expiresAt.setMonth(expiresAt.getMonth() + 1);
 
-    await admin
+    // Activate only if this order is still pending. A replayed or concurrent
+    // verification matches 0 rows and is treated as already processed.
+    const { data: activatedRows, error: activateErr } = await admin
       .from('subscriptions')
       .update({
         razorpay_payment_id,
@@ -114,7 +129,35 @@ serve(async (req) => {
         starts_at: new Date().toISOString(),
         expires_at: expiresAt.toISOString(),
       })
-      .eq('razorpay_order_id', razorpay_order_id);
+      .eq('razorpay_order_id', razorpay_order_id)
+      .eq('status', 'pending')
+      .select('id');
+
+    if (activateErr) {
+      console.error('Subscription activation failed');
+      return new Response(JSON.stringify({ error: 'Internal error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    if (!activatedRows || activatedRows.length === 0) {
+      const { data: current } = await admin
+        .from('subscriptions')
+        .select('status, expires_at')
+        .eq('razorpay_order_id', razorpay_order_id)
+        .maybeSingle();
+      if (current?.status === 'active') {
+        // Already processed (possibly by a concurrent request): idempotent success,
+        // no expiry extension and no duplicate invoice email.
+        console.log('Payment already processed:', { order: mask(razorpay_order_id) });
+        return new Response(
+          JSON.stringify({ success: true, tier, expiresAt: current.expires_at, alreadyProcessed: true }),
+          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      console.error('Order not in an activatable state');
+      return new Response(JSON.stringify({ error: 'Order is no longer valid' }),
+        { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
     await admin
       .from('profiles')

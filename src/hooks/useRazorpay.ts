@@ -63,7 +63,11 @@ export const useRazorpay = () => {
     try {
       console.log('[Razorpay] Creating order for tier:', tier, 'user:', userId);
       
-      // Create order
+      // Create order (server derives user identity from the session JWT)
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) {
+        throw new Error('Please sign in to subscribe');
+      }
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-razorpay-order`,
         {
@@ -71,8 +75,9 @@ export const useRazorpay = () => {
           headers: {
             'Content-Type': 'application/json',
             'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+            'Authorization': `Bearer ${session.access_token}`,
           },
-          body: JSON.stringify({ tier, teamSize, billingCycle, userId, userEmail }),
+          body: JSON.stringify({ tier, teamSize, billingCycle }),
         }
       );
 
@@ -112,7 +117,8 @@ export const useRazorpay = () => {
             // Show processing toast
             toast.loading('Verifying payment...', { id: 'payment-verify' });
             
-            // Verify payment
+            // Verify payment (the function requires the signed-in user's JWT)
+            const { data: { session: verifySession } } = await supabase.auth.getSession();
             const verifyResponse = await fetch(
               `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/verify-razorpay-payment`,
               {
@@ -120,6 +126,7 @@ export const useRazorpay = () => {
                 headers: {
                   'Content-Type': 'application/json',
                   'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+                  ...(verifySession?.access_token ? { 'Authorization': `Bearer ${verifySession.access_token}` } : {}),
                 },
                 body: JSON.stringify({
                   razorpay_order_id: response.razorpay_order_id,
