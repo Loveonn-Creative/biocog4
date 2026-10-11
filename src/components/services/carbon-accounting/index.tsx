@@ -79,7 +79,7 @@ export const Visual = ({ data }: ServiceVisualProps) => {
   useCanvasLoop(canvasRef, (ctx, { dt, w, h }) => {
     ctx.clearRect(0, 0, w, h);
     const max = Math.max(v1, v2, 1);
-    const hMax = h * 0.42;
+    const hMax = h * 0.34;
     const targets = [(v1 / max) * hMax, (v2 / max) * hMax];
     const st = sim.current;
     // Spring with gravity-like overshoot: k = 90, damping 9.
@@ -94,7 +94,7 @@ export const Visual = ({ data }: ServiceVisualProps) => {
 
     const s = Math.min(w, h) / 300;
     const ox = w * 0.5;
-    const oy = h * 0.5;
+    const oy = h * 0.56;
     // Three columns at the same depth (x + y constant), spread across the screen.
     const C = [{ x: -96, y: 48 }, { x: -24, y: -24 }, { x: 48, y: -96 }];
     // Floor

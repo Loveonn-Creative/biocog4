@@ -621,7 +621,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-clip">
       <Suspense fallback={null}>
         <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
       </Suspense>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { servicePages } from "@/data/services";
+import { serviceNav } from "@/data/services/nav";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { useState, useEffect } from "react";
@@ -155,7 +155,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Services</h4>
             <ul className="space-y-2">
-              {servicePages.map((sp) => (
+              {serviceNav.map((sp) => (
                 <li key={sp.slug}>
                   <Link to={`/${sp.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {sp.nav}

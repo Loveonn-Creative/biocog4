@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Landmark, Ship, Coins, Upload } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
-import { FlowVisual } from "./FlowVisual";
+import { ScrollStory } from "./ScrollStory";
+import { AskCards } from "./AskCards";
 import { CbamExposure } from "./CbamExposure";
 
 /**
@@ -65,39 +66,27 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
 
   return (
     <div className="relative z-10 w-full">
-      {/* The problem, in the visitor's words */}
-      <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <h2 className="text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight max-w-3xl [text-wrap:balance]">
-          {t("home.problem.title", "Your bills already hold your carbon data.")}
-        </h2>
-        <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-          {t("home.problem.body", "Banks, buyers and carbon markets now ask small businesses for verified emissions. Senseible turns the invoices and energy bills you already keep into a verified record you can take to a green loan, a buyer or a carbon credit check.")}
-        </p>
+      {/* The problem: first the request that brings an MSME here, then the answer. */}
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-20 sm:pt-28 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <AskCards />
+        <div>
+          <h2 className="text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight [text-wrap:balance]">
+            {t("home.problem.title", "Your bills already hold your carbon data.")}
+          </h2>
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
+            {t("home.problem.body", "Banks, buyers and carbon markets now ask small businesses for verified emissions. Senseible turns the invoices and energy bills you already keep into a verified record you can take to a green loan, a buyer or a carbon credit check.")}
+          </p>
+        </div>
       </section>
 
-      {/* How it works, with the model */}
-      <section aria-labelledby="how-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-14 sm:pt-20">
-        <h2 id="how-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">
-          {t("home.how.title", "From an invoice to finance-ready data")}
-        </h2>
-        <div className="mt-6">
-          <FlowVisual />
-        </div>
-        <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map(s => (
-            <li key={s.n} className="border-t border-foreground/80 pt-4">
-              <p className="font-mono text-xs text-muted-foreground">{s.n}</p>
-              <h3 className="mt-1 text-lg font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+      {/* How it works: the words scroll, the picture follows. */}
+      <ScrollStory title={t("home.how.title", "From an invoice to finance-ready data")} steps={steps} />
 
       {/* Who it is for */}
-      <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <h2 id="who-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.unlock.title", "What verified data unlocks")}</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+      <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-8 sm:pt-16">
+        <h2 id="who-title" className="text-[clamp(1.6rem,4vw,2.5rem)] font-semibold tracking-tight leading-tight">{t("home.unlock.title", "What verified data unlocks")}</h2>
+        <OneRecordConnector />
+        <div className="mt-2 md:mt-0 grid gap-4 md:grid-cols-3">
           {outcomes.map(a => (
             <Link key={a.who} to={a.to} className="group rounded-3xl border border-border p-5 sm:p-6 hover:border-foreground/40 transition-colors">
               <a.icon className="w-5 h-5 text-primary" aria-hidden="true" />
@@ -145,6 +134,34 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
       </section>
 
       <div className="pb-20 sm:pb-24" aria-hidden="true" />
+    </div>
+  );
+};
+
+/**
+ * One verified record branching into the three uses below it. The lines draw
+ * once as the section arrives (desktop, where the cards sit in a row).
+ */
+const OneRecordConnector = () => {
+  const t = useT();
+  const ref = useRef<SVGSVGElement>(null);
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setOn(true); return; }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } }, { threshold: 0.6 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const draw = (delay: number) => ({ strokeDasharray: 1, strokeDashoffset: on ? 0 : 1, transition: `stroke-dashoffset 900ms cubic-bezier(.2,.8,.2,1) ${delay}ms` });
+  return (
+    <div className="hidden md:block relative mt-6" aria-hidden="true">
+      <div className="mx-auto w-fit rounded-full border border-primary/40 bg-primary/[0.06] px-3 py-1 font-mono text-xs text-primary">{t("home.unlock.record", "1 verified record")}</div>
+      <svg ref={ref} viewBox="0 0 300 36" preserveAspectRatio="none" className="block w-full h-10 text-primary/50">
+        <path d="M150 0 C150 18, 50 14, 50 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(0)} vectorEffect="non-scaling-stroke" />
+        <path d="M150 0 L150 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(120)} vectorEffect="non-scaling-stroke" />
+        <path d="M150 0 C150 18, 250 14, 250 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(240)} vectorEffect="non-scaling-stroke" />
+      </svg>
     </div>
   );
 };

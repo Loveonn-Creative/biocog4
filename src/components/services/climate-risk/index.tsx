@@ -203,8 +203,18 @@ export const Visual = ({ data }: ServiceVisualProps) => {
 
     // Site block (isometric), top-left of the plot, above the fan.
     const s = Math.min(pw, ph) / 240;
-    const ox = L + pw * 0.2, oy = T + ph * 0.24;
+    const ox = L + pw * 0.26, oy = T + ph * 0.24;
     const P = (x: number, y: number, z: number) => project(x, y, z, ox, oy, s);
+    // A card behind the site so it reads as its own panel, not part of the cost axes.
+    {
+      const pts = [P(-30, -30, 0), P(40, -30, 0), P(40, 40, 0), P(-30, 40, 0), P(-30, -30, 46), P(40, 40, 46), P(40, -30, 46)];
+      const xs = pts.map(q => q[0]), ys = pts.map(q => q[1]);
+      const x0 = Math.min(...xs) - fs * 3.6, x1 = Math.max(...xs) + fs * 3.4;
+      const y0 = Math.min(...ys) - 8, y1 = Math.max(...ys) + 8;
+      ctx.beginPath(); ctx.roundRect(x0, y0, x1 - x0, y1 - y0, 10);
+      ctx.fillStyle = token("--background", 0.94); ctx.fill();
+      ctx.strokeStyle = token("--border", 1); ctx.lineWidth = 1; ctx.stroke();
+    }
     const plate = [P(-30, -30, 0), P(40, -30, 0), P(40, 40, 0), P(-30, 40, 0)];
     ctx.beginPath(); plate.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.closePath();
     ctx.fillStyle = token("--muted", 0.8); ctx.fill();
