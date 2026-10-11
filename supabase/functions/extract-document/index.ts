@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
+import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -303,8 +304,17 @@ CRITICAL EXTRACTION RULES:
      - sourceText: Short exact text fragment supporting the quantity and unit
 
 2. For electricity bills specifically:
-   - Look for "Units Consumed" or "kWh" values - this is the quantity
-   - The unit is "kWh" 
+   - Find the billed consumption: "Units Consumed", "Billed Units", "Net Units"
+     or "Consumption (kWh)". Use the billed figure printed on the bill (it
+     already includes any multiplying factor). Do not subtract meter readings
+     yourself.
+   - Return it at the top level as "unitsConsumedKwh" (number exactly as
+     printed) and "unitsConsumedText" (the exact printed text, e.g.
+     "Units Consumed: 342").
+   - Also add it as a line item: description "Electricity consumed",
+     quantity = that number, unit "kWh", hsn_code "2716".
+   - Charge lines (energy charges, fixed charges, duty) keep quantity null
+     unless a kWh quantity is printed on that same line.
    - Vendor should include the power company name
 
 3. CRITICAL - DO NOT:
@@ -667,6 +677,12 @@ serve(async (req) => {
     // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
     // This is where all math happens - deterministic, no AI
     const validationFlags: string[] = [];
+    // Electricity bills: read printed billed units; "units" means kWh there.
+    {
+      const prepared = prepareElectricityLines(ocrData);
+      ocrData.lineItems = prepared.lines;
+      validationFlags.push(...prepared.notes);
+    }
     let verifiedItems = 0;
     let unverifiableItems = 0;
     let missingEmissionFactorCount = 0;
@@ -783,6 +799,8 @@ serve(async (req) => {
 
       return classifiedItem;
     });
+    // The same consumption printed on several lines is counted once.
+    consolidateElectricity(classifiedItems);
 
     // Gross emissions and avoided emissions are totalled separately and both
     // stay >= 0. Avoided emissions are never subtracted from gross.

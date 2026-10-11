@@ -30,9 +30,13 @@ interface ResultStateProps {
   extractedData?: ExtractedData;
   onConfirm: () => void;
   onReset: () => void;
+  /** False when no line item had a printed quantity and unit, so nothing was saved to verify. */
+  hasRecords?: boolean;
+  /** What the main button does when there is nothing to verify. */
+  noRecordsAction?: 'history' | 'upload';
 }
 
-export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }: ResultStateProps) => {
+export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, hasRecords = true, noRecordsAction = 'history' }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
   // Gross emissions and avoided emissions are separate and both >= 0. Older
@@ -208,6 +212,14 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
         </div>
       )}
 
+      {/* Nothing to verify: say why, plainly, before any button */}
+      {!hasRecords && (
+        <p className="w-full rounded-xl border border-warning/30 bg-warning/10 px-4 py-3 text-sm text-foreground">
+          {extractedData?.validationFlags?.find(f => /not found|missing explicit activity quantity|missing explicit activity unit/i.test(f))
+            ?? 'No quantity with a unit (kWh, litres, kg) was found on this document, so there is nothing to verify yet.'}
+        </p>
+      )}
+
       {/* Action buttons */}
       <div className="flex flex-col gap-3 w-full">
         <button
@@ -222,7 +234,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
             active:scale-[0.98]
           "
         >
-          <span>Continue to Verify</span>
+          <span>{hasRecords ? 'Continue to Verify' : noRecordsAction === 'history' ? 'Open History' : 'Upload another bill'}</span>
           <ArrowRight className="w-4 h-4" />
         </button>
         

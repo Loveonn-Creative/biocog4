@@ -94,6 +94,8 @@ interface ProcessingResult {
   extractedData?: ExtractedData;
   documentId?: string;
   emissionId?: string;
+  /** Number of emission rows saved for this document. */
+  recordCount?: number;
 }
 
 // ============= DETERMINISTIC SCOPE MAPPING =============
@@ -471,7 +473,8 @@ const Index = () => {
           validationFlags: uniqueWarnings,
         },
         documentId: savedIds?.documentId,
-        emissionId: savedIds?.emissionId
+        emissionId: savedIds?.emissionId,
+        recordCount: savedIds?.emissionIds.length ?? 0,
       };
 
       setDocumentType(processingResult.documentType);
@@ -612,6 +615,13 @@ const Index = () => {
   };
 
   const handleConfirm = () => {
+    // Nothing calculable was saved. Signed-in users see the document and the
+    // reason in History; guests (no History) go back to upload another bill.
+    if (result && result.recordCount === 0) {
+      if (user) navigate('/history');
+      else handleReset();
+      return;
+    }
     toast.success("Saved! Your carbon data has been recorded.");
     // Pass extracted data via navigation state to ensure Verify page has data
     navigate('/verify', { 
@@ -767,6 +777,8 @@ const Index = () => {
               extractedData={result.extractedData}
               onConfirm={handleConfirm}
               onReset={handleReset}
+              hasRecords={result.recordCount !== 0}
+              noRecordsAction={user ? 'history' : 'upload'}
             />
           </Suspense>
         )}
