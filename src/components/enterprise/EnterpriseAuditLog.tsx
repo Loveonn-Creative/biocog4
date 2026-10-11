@@ -18,6 +18,12 @@ export function EnterpriseAuditLog() {
   const [entries, setEntries] = useState<AuditEntry[]>([]);
 
   useEffect(() => {
+    // Never send an unscoped query: with no owner there is nothing to show.
+    if (!user?.id && !sessionId) {
+      setEntries([]);
+      return;
+    }
+    let cancelled = false;
     const fetch = async () => {
       let query = supabase
         .from('carbon_verifications')
@@ -25,13 +31,13 @@ export function EnterpriseAuditLog() {
         .order('created_at', { ascending: false })
         .limit(10);
 
-      if (user?.id) query = query.eq('user_id', user.id);
-      else if (sessionId) query = query.eq('session_id', sessionId);
+      query = user?.id ? query.eq('user_id', user.id) : query.eq('session_id', sessionId as string);
 
       const { data } = await query;
-      if (data) setEntries(data);
+      if (!cancelled && data) setEntries(data);
     };
     fetch();
+    return () => { cancelled = true; };
   }, [user?.id, sessionId]);
 
   if (entries.length === 0) return null;

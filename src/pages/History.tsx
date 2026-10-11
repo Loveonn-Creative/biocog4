@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download } from 'lucide-react';
+import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download, Loader2, AlertTriangle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
@@ -15,10 +15,11 @@ import { Badge } from '@/components/ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar as CalendarPicker } from '@/components/ui/calendar';
-import { LineChart, Line, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { format, startOfMonth, endOfMonth, isWithinInterval, parseISO } from 'date-fns';
+import { XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { format, isWithinInterval } from 'date-fns';
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from '@/components/GreenCategoryBadge';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
+import { documentEmissionStatus, verifiedEmissionsOnce, verifiedMonthlyTrend, verifiedScopeTotals } from '@/lib/emissionLedger';
 
 const History = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const History = () => {
   const { documents, isLoading: docsLoading, refetch: refreshDocuments } = useDocuments();
   const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
-  const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
+  const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
   const [search, setSearch] = useState('');
   const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
     from: undefined,
@@ -65,39 +66,13 @@ const History = () => {
     });
   }, [documents, search, dateRange]);
 
-  // Calculate monthly emissions trend for chart
-  const trendData = useMemo(() => {
-    const monthlyData: Record<string, { month: string; co2: number; count: number }> = {};
-    
-    emissions.forEach(e => {
-      const date = new Date(e.created_at);
-      const monthKey = format(date, 'yyyy-MM');
-      const monthLabel = format(date, 'MMM yy');
-      
-      if (!monthlyData[monthKey]) {
-        monthlyData[monthKey] = { month: monthLabel, co2: 0, count: 0 };
-      }
-      monthlyData[monthKey].co2 += e.co2_kg;
-      monthlyData[monthKey].count += 1;
-    });
-    
-    return Object.values(monthlyData).sort((a, b) => 
-      a.month.localeCompare(b.month)
-    );
-  }, [emissions]);
-
-  // Calculate scope breakdown
-  const scopeBreakdown = useMemo(() => {
-    const breakdown = { scope1: 0, scope2: 0, scope3: 0 };
-    emissions.forEach(e => {
-      if (e.scope === 1) breakdown.scope1 += e.co2_kg;
-      else if (e.scope === 2) breakdown.scope2 += e.co2_kg;
-      else breakdown.scope3 += e.co2_kg;
-    });
-    return breakdown;
-  }, [emissions]);
-
-  const totalCO2 = scopeBreakdown.scope1 + scopeBreakdown.scope2 + scopeBreakdown.scope3;
+  // Totals and trend count verified rows only, once per emission id. Pending
+  // rows are listed per document below but never added to totals.
+  const trendData = useMemo(() => verifiedMonthlyTrend(emissions), [emissions]);
+  const scopeBreakdown = useMemo(() => verifiedScopeTotals(emissions), [emissions]);
+  const verifiedCount = useMemo(() => verifiedEmissionsOnce(emissions).length, [emissions]);
+  const pendingTotal = emissions.length - emissions.filter(e => e.verified === true).length;
+  const totalCO2 = scopeBreakdown.total;
 
   const formatDate = (dateStr: string) => new Date(dateStr).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
   const formatAmount = (amount: number | null) => amount ? new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount) : '-';
@@ -114,11 +89,17 @@ const History = () => {
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-semibold">Invoice History</h1>
-          {user && <Button variant="outline" size="sm" onClick={() => { void refreshDocuments(); void refreshEmissions(); }} aria-label="Refresh saved invoices">Refresh</Button>}
+          {user && <Button variant="outline" size="sm" onClick={() => { void refreshDocuments(); void refreshEmissions(); void refreshLedger(); }} aria-label="Refresh saved invoices">Refresh</Button>}
           {ledgerEntries.length > 0 && (
-            <Button variant="outline" size="sm" onClick={exportComplianceXLSX} className="gap-2 shrink-0">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => { void exportComplianceXLSX(); }}
+              className="gap-2 shrink-0"
+              title={`${ledgerEntries.length} audit ledger ${ledgerEntries.length === 1 ? 'record' : 'records'}, ${ledgerVerifiedKg.toFixed(1)} kg CO₂e verified`}
+            >
               <Download className="h-4 w-4" />
-              Export Ledger
+              Export audit ledger
             </Button>
           )}
           <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -157,13 +138,20 @@ const History = () => {
             <CardHeader className="pb-2">
               <CardTitle className="text-base flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-primary" />
-                Emissions Trend
+                Verified Emissions Trend
               </CardTitle>
+              <p className="text-xs text-muted-foreground">
+                Totals count verified records only.
+                {pendingTotal > 0 && ` ${pendingTotal} ${pendingTotal === 1 ? 'record is' : 'records are'} pending verification and not included.`}
+              </p>
             </CardHeader>
             <CardContent>
+              {verifiedCount === 0 && (
+                <p className="text-sm text-muted-foreground mb-4">No verified records yet. Open an invoice in Verify to verify its stored records.</p>
+              )}
               <div className="grid md:grid-cols-4 gap-4 mb-4">
                 <div className="p-3 rounded-lg bg-secondary/30">
-                  <p className="text-xs text-muted-foreground">Total CO₂</p>
+                  <p className="text-xs text-muted-foreground">Verified CO₂</p>
                   <p className="text-lg font-mono font-bold">{totalCO2.toFixed(1)} kg</p>
                 </div>
                 <div className="p-3 rounded-lg bg-destructive/10">
@@ -197,7 +185,7 @@ const History = () => {
                         border: '1px solid hsl(var(--border))',
                         borderRadius: '8px'
                       }}
-                      formatter={(value: number) => [`${value.toFixed(1)} kg CO₂`, 'Emissions']}
+                      formatter={(value: number) => [`${value.toFixed(1)} kg CO₂`, 'Verified emissions']}
                     />
                     <Area 
                       type="monotone" 
@@ -250,8 +238,12 @@ const History = () => {
               {filtered.map(doc => {
                 const hasHash = !!doc.document_hash;
                 const documentRows = emissionsByDocument.get(doc.id) || [];
-                const allVerified = documentRows.length > 0 && documentRows.every(e => e.verified === true);
-                const pendingCount = documentRows.filter(e => !e.verified).length;
+                const status = documentEmissionStatus(documentRows, doc.cached_result);
+                const tooltipText =
+                  status.kind === 'verified' ? 'Stored emission records are verified'
+                  : status.kind === 'pending' ? `${status.count} stored emission ${status.count === 1 ? 'record needs' : 'records need'} verification`
+                  : status.kind === 'processing' ? 'This invoice is still being processed. Refresh in a moment.'
+                  : `No emission record was stored because no line item could be calculated (${status.reason}). This is not a verification result.`;
                 
                 return (
                   <Card key={doc.id} className="hover:bg-secondary/30 transition-colors">
@@ -261,39 +253,40 @@ const History = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-medium truncate">{doc.vendor || doc.document_type}</span>
-                          {/* Verification status badge */}
-                          {hasHash && (
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                 {allVerified ? (
-                                  <Badge variant="outline" className="text-xs bg-primary/5 border-primary/20 text-primary py-0 h-5 shrink-0">
-                                    <ShieldCheck className="h-3 w-3 mr-1" />
-                                    Verified
-                                  </Badge>
-                                 ) : pendingCount > 0 ? (
-                                   <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
-                                    <CheckCircle className="h-3 w-3 mr-1" />
-                                     Pending verification
-                                  </Badge>
-                                ) : (
-                                  <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
-                                     No emission record
-                                  </Badge>
-                                )}
-                              </TooltipTrigger>
-                              <TooltipContent side="top">
-                                <p className="text-xs">
-                                   {allVerified ? 'Stored emission records are verified' : pendingCount > 0 ? 'Stored emission records need verification' : 'No calculable stored emissions. Review the source document before verification.'}
+                          <span className="font-medium truncate">{doc.vendor || doc.document_type || 'Invoice'}</span>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              {status.kind === 'verified' ? (
+                                <Badge variant="outline" className="text-xs bg-primary/5 border-primary/20 text-primary py-0 h-5 shrink-0">
+                                  <ShieldCheck className="h-3 w-3 mr-1" />
+                                  Verified
+                                </Badge>
+                              ) : status.kind === 'pending' ? (
+                                <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
+                                  <CheckCircle className="h-3 w-3 mr-1" />
+                                  Pending verification
+                                </Badge>
+                              ) : status.kind === 'processing' ? (
+                                <Badge variant="outline" className="text-xs bg-secondary border-border text-muted-foreground py-0 h-5 shrink-0">
+                                  <Loader2 className="h-3 w-3 mr-1" />
+                                  Processing
+                                </Badge>
+                              ) : (
+                                <Badge variant="outline" className="text-xs bg-muted border-border text-muted-foreground py-0 h-5 shrink-0">
+                                  <AlertTriangle className="h-3 w-3 mr-1" />
+                                  Not calculable: {status.reason}
+                                </Badge>
+                              )}
+                            </TooltipTrigger>
+                            <TooltipContent side="top">
+                              <p className="text-xs">{tooltipText}</p>
+                              {hasHash && (
+                                <p className="text-xs font-mono text-muted-foreground mt-1">
+                                  Hash: {doc.document_hash?.substring(0, 12)}...
                                 </p>
-                                {hasHash && (
-                                  <p className="text-xs font-mono text-muted-foreground mt-1">
-                                    Hash: {doc.document_hash?.substring(0, 12)}...
-                                  </p>
-                                )}
-                              </TooltipContent>
-                            </Tooltip>
-                          )}
+                              )}
+                            </TooltipContent>
+                          </Tooltip>
                         </div>
                         <div className="text-sm text-muted-foreground flex items-center gap-2">
                           <Calendar className="h-3 w-3" />
@@ -307,7 +300,7 @@ const History = () => {
                         <div className="font-medium">{formatAmount(doc.amount)}</div>
                       <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
                       </div>
-                      {user && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
+                      {user && documentRows.length > 0 && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
                       {/* Enterprise: Document Provenance */}
                       {isEnterprise && doc.document_hash && (
                         <div className="text-right shrink-0">

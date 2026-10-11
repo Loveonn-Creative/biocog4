@@ -11,6 +11,8 @@ import {
   Coins, FileBarChart, BarChart3, Upload
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
+import { verifyListState } from '@/lib/emissionLedger';
+import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
@@ -27,7 +29,7 @@ import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
 interface NavigationState {
   emissionId?: string;
   documentId?: string;
-  extractedData?: any;
+  extractedData?: unknown;
   fromUpload?: boolean;
 }
 
@@ -57,10 +59,15 @@ interface VerificationResult {
   verifiedReductions: number;
 }
 
-interface MonetizationResult {
-  totalValue: number;
-  carbonCreditValue: number;
-  greenLoanSavings: number;
+interface MissingInput {
+  emissionId: string;
+  fields: string[];
+}
+
+interface BatchRow {
+  id: string;
+  category: string;
+  scope: number;
 }
 
 const Verify = () => {
@@ -69,36 +76,43 @@ const Verify = () => {
   const navState = location.state as NavigationState | null;
   const { sessionId, user } = useSession();
   const { activeContext } = useOrganization();
-  const { emissions, getUnverifiedEmissions, refetch, isLoading: emissionsLoading } = useEmissions();
+  const { emissions, refetch, isLoading: emissionsLoading } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
-  const [monetizationPreview, setMonetizationPreview] = useState<MonetizationResult | null>(null);
+  const [missingInputs, setMissingInputs] = useState<MissingInput[] | null>(null);
+  const [verifyError, setVerifyError] = useState<string | null>(null);
+  // Rows sent in the last verify call, so result panels still have context
+  // after the list refetches and those rows are no longer pending.
+  const [lastBatch, setLastBatch] = useState<BatchRow[]>([]);
+  const [refetchAttempts, setRefetchAttempts] = useState(0);
   const { isEnabled } = useTrustLayerSettings();
-  
-  const unverified = getUnverifiedEmissions();
-  
-  const justUploadedEmission = useMemo(() => {
-    if (navState?.fromUpload && navState?.extractedData && navState?.emissionId) {
-      const data = navState.extractedData;
-      return {
-        id: navState.emissionId,
-        category: data.emissionCategory || data.primaryCategory || 'other',
-        scope: data.primaryScope || 3,
-        co2_kg: data.totalCO2Kg || data.estimatedCO2Kg || 0,
-        verified: false
-      };
-    }
-    return null;
-  }, [navState]);
-  
-  const effectiveUnverified = useMemo(() => {
-    if (justUploadedEmission && !unverified.find(e => e.id === justUploadedEmission.id)) {
-      return [justUploadedEmission, ...unverified];
-    }
-    return unverified;
-  }, [unverified, justUploadedEmission]);
+
+  const documentId = navState?.documentId || null;
+  const expectsNewRows = Boolean(navState?.fromUpload || navState?.emissionId || documentId);
+
+  // Only stored rows are shown. When navigation names a document, scope to it.
+  const { scoped, pending, allVerified } = useMemo(
+    () => verifyListState(emissions, documentId),
+    [emissions, documentId],
+  );
+
+  // Just after upload, the stored rows may not be readable yet. Refetch a few
+  // times instead of showing a placeholder row that does not exist.
+  const awaitingRows = expectsNewRows && !emissionsLoading && scoped.length === 0;
+  useEffect(() => {
+    if (!awaitingRows || refetchAttempts >= 3) return;
+    const t = setTimeout(() => {
+      setRefetchAttempts((n) => n + 1);
+      void refetch();
+    }, 2000);
+    return () => clearTimeout(t);
+  }, [awaitingRows, refetchAttempts, refetch]);
+
+  const indicativeValue = verificationResult?.status === 'verified'
+    ? indicativeValueFromKg(verificationResult.totalCO2Kg)
+    : 0;
 
   useEffect(() => {
     if (activeContext?.context_type === 'partner') {
@@ -107,31 +121,18 @@ const Verify = () => {
     }
   }, [activeContext, navigate]);
 
-  // Speed optimization: auto-trigger monetization calculation after verification
-  useEffect(() => {
-    if (!verificationResult || verificationResult.status !== 'verified') return;
-    
-    const co2Tons = verificationResult.totalCO2Kg / 1000;
-    const carbonCreditValue = Math.round(co2Tons * 750);
-    const greenLoanSavings = Math.round(500000 * 0.005);
-    
-    setMonetizationPreview({
-      totalValue: carbonCreditValue + greenLoanSavings,
-      carbonCreditValue,
-      greenLoanSavings,
-    });
-  }, [verificationResult]);
-
   const handleVerify = async () => {
-    if (effectiveUnverified.length === 0) return;
+    if (pending.length === 0) return;
     setIsVerifying(true);
     setVerificationResult(null);
-    setMonetizationPreview(null);
+    setMissingInputs(null);
+    setVerifyError(null);
+    setLastBatch(pending.map(e => ({ id: e.id, category: e.category, scope: e.scope })));
     
     try {
       const { data, error } = await supabase.functions.invoke('verify-carbon', {
         body: { 
-          emissionIds: effectiveUnverified.map(e => e.id), 
+          emissionIds: pending.map(e => e.id), 
           sessionId, 
           userId: user?.id,
           includeIoT 
@@ -139,6 +140,14 @@ const Verify = () => {
       });
       
       if (error) throw error;
+
+      // HTTP 200 with ready:false is a preflight result, not a rejection: the
+      // stored records lack inputs needed to verify them.
+      if (data && data.ready === false) {
+        setMissingInputs(Array.isArray(data.missingInputs) ? data.missingInputs : []);
+        toast.info('Some records need more inputs before they can be verified.');
+        return;
+      }
 
       if (data?.success && data?.data) {
         setVerificationResult(data.data);
@@ -150,35 +159,9 @@ const Verify = () => {
     } catch (err) {
       console.error('Verification error:', err);
       const message = err instanceof Error ? err.message : 'Verification could not complete';
-      // Always render an outcome card — never leave the user with only a toast.
-      const totalCO2Kg = effectiveUnverified.reduce((s, e) => s + (e.co2_kg || 0), 0);
-      const scopeBreakdown = {
-        scope1: effectiveUnverified.filter(e => e.scope === 1).reduce((s, e) => s + (e.co2_kg || 0), 0),
-        scope2: effectiveUnverified.filter(e => e.scope === 2).reduce((s, e) => s + (e.co2_kg || 0), 0),
-        scope3: effectiveUnverified.filter(e => e.scope === 3).reduce((s, e) => s + (e.co2_kg || 0), 0),
-      };
-      setVerificationResult({
-        verificationId: 'client-fallback',
-        status: 'rejected',
-        score: 0,
-        greenwashingRisk: 'high',
-        greenwashingFactors: [message],
-        analysis: {
-          dataQuality: 'Unable to complete server-side validation',
-          methodologyCompliance: 'Not evaluated',
-          recommendations: ['Retry verification', 'If the issue persists, contact support with the emission IDs shown above'],
-          flags: [message],
-          scopeBreakdown,
-          greenScore: 0,
-          creditEligibility: { eligibleCredits: 0, carryForward: 0, qualityGrade: 'D' },
-        },
-        cctsEligible: false,
-        cbamCompliant: false,
-        totalCO2Kg,
-        netEmissions: totalCO2Kg,
-        verifiedReductions: 0,
-      });
-      toast.error('Verification returned rejected. See details below.');
+      // Show an error card, not a fabricated verification outcome.
+      setVerifyError(message);
+      toast.error('Verification could not complete. See details below.');
     } finally {
       setIsVerifying(false);
     }
@@ -231,8 +214,16 @@ const Verify = () => {
           <CardContent>
             <div className="mb-6">
               <p className="text-sm text-muted-foreground mb-4">
-                {effectiveUnverified.length} records pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
+                {pending.length} {pending.length === 1 ? 'record' : 'records'} pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
               </p>
+              {documentId && (
+                <div className="flex items-center justify-between gap-2 mb-4 p-2 rounded-lg bg-secondary/30 text-sm">
+                  <span className="text-muted-foreground">Showing records for one invoice</span>
+                  <Button variant="ghost" size="sm" onClick={() => navigate('/verify', { replace: true, state: null })}>
+                    Show all records
+                  </Button>
+                </div>
+              )}
               
               {/* Innovation 9: Data Connectors (opt-in) */}
               {isEnabled('data_connectors') && (
@@ -240,10 +231,15 @@ const Verify = () => {
               )}
             </div>
             
-            {effectiveUnverified.length > 0 ? (
+            {emissionsLoading ? (
+              <div className="text-center py-8 text-muted-foreground">
+                <Loader2 className="h-5 w-5 animate-spin mx-auto mb-2" />
+                Loading stored records...
+              </div>
+            ) : pending.length > 0 ? (
               <>
                 <div className="space-y-2 mb-6 max-h-48 overflow-y-auto">
-                  {effectiveUnverified.map((e, idx) => (
+                  {pending.map((e, idx) => (
                     <div 
                       key={e.id} 
                       className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 animate-fade-in"
@@ -274,23 +270,45 @@ const Verify = () => {
                     </>
                   ) : (
                     <>
-                      Verify All Emissions
+                      {documentId ? 'Verify This Invoice' : 'Verify All Emissions'}
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </>
                   )}
                 </Button>
               </>
-            ) : emissions.length > 0 ? (
+            ) : allVerified ? (
               <div className="text-center py-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-4 animate-verify-pulse">
                   <CheckCircle className="h-8 w-8 text-success" />
                 </div>
-                <p className="font-medium text-lg mb-2">All emissions verified!</p>
-                <p className="text-sm text-muted-foreground mb-4">Your carbon data is ready for monetization</p>
+                <p className="font-medium text-lg mb-2">
+                  {documentId ? 'All records for this invoice are verified' : 'All emissions verified'}
+                </p>
+                <p className="text-sm text-muted-foreground mb-4">Verified records are listed in History and the audit ledger</p>
                 <Button onClick={() => navigate('/monetize')} size="lg">
                   Proceed to Monetize
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
+              </div>
+            ) : expectsNewRows && scoped.length === 0 ? (
+              <div className="text-center py-8">
+                {refetchAttempts < 3 ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin mx-auto mb-2 text-muted-foreground" />
+                    <p className="text-muted-foreground mb-4">Waiting for the stored emission records for this invoice...</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="font-medium mb-2">No stored emission records for this invoice yet</p>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      It may still be processing, or no line item had the quantity and unit needed to calculate emissions. Check History for its status.
+                    </p>
+                  </>
+                )}
+                <div className="flex justify-center gap-2">
+                  <Button variant="outline" onClick={() => { setRefetchAttempts(0); void refetch(); }}>Refresh</Button>
+                  <Button variant="ghost" onClick={() => navigate('/history')}>Open History</Button>
+                </div>
               </div>
             ) : (
               <div className="text-center py-8">
@@ -300,6 +318,56 @@ const Verify = () => {
             )}
           </CardContent>
         </Card>
+
+        {/* Needs inputs: preflight said stored records are incomplete */}
+        {missingInputs && (
+          <Card className="mb-6 border-2 border-warning/50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-lg">
+                <AlertCircle className="h-5 w-5 text-warning" />
+                Needs inputs before verification
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Nothing was verified or rejected. These records are missing inputs that verification needs. Upload a clearer invoice or correct the source data, then try again.
+              </p>
+              {missingInputs.length === 0 ? (
+                <p className="text-sm">The verifier did not list the missing inputs.</p>
+              ) : (
+                <ul className="space-y-2">
+                  {missingInputs.map((m) => {
+                    const row = lastBatch.find(r => r.id === m.emissionId);
+                    return (
+                      <li key={m.emissionId} className="p-3 rounded-lg bg-secondary/30 text-sm">
+                        <span className="capitalize font-medium">{row ? row.category : 'Record'}</span>
+                        {row && <span className="text-xs text-muted-foreground ml-2">Scope {row.scope}</span>}
+                        <span className="block text-xs font-mono text-muted-foreground">{m.emissionId}</span>
+                        <span className="block mt-1">Missing: {m.fields.join(', ')}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Verification could not complete */}
+        {verifyError && (
+          <Card className="mb-6 border-2 border-destructive/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-2">
+                <XCircle className="h-5 w-5 text-destructive" />
+                <h3 className="font-semibold">Verification could not complete</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                No verification outcome was recorded. Your records are unchanged. Details: {verifyError}
+              </p>
+              <Button variant="outline" onClick={handleVerify} disabled={isVerifying || pending.length === 0}>Retry verification</Button>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Verification Result Card */}
         {verificationResult && (
@@ -432,7 +500,7 @@ const Verify = () => {
                         <p className="text-2xl font-mono font-bold text-primary">
                           {verificationResult.analysis.creditEligibility.eligibleCredits}
                         </p>
-                        <p className="text-sm text-muted-foreground">Credits Issuable (tCO₂e)</p>
+                        <p className="text-sm text-muted-foreground">Eligible tCO₂e (not issued)</p>
                       </div>
                       <div>
                         <p className="text-lg font-mono">
@@ -463,7 +531,7 @@ const Verify = () => {
                     <PeerBenchmark
                       totalCO2Kg={verificationResult.totalCO2Kg}
                       scopeBreakdown={verificationResult.analysis.scopeBreakdown}
-                      dominantCategory={effectiveUnverified[0]?.category}
+                      dominantCategory={lastBatch[0]?.category}
                     />
                   </div>
                 )}
@@ -516,34 +584,22 @@ const Verify = () => {
                   </div>
                 )}
 
-                {/* Speed: Inline Monetization Preview */}
-                {monetizationPreview && verificationResult.status === 'verified' && (
+                {/* Indicative value from verified tonnes, using the shared formula */}
+                {verificationResult.status === 'verified' && indicativeValue > 0 && (
                   <div className="p-4 rounded-xl bg-gradient-to-r from-primary/5 to-success/5 border border-primary/20 mb-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Coins className="h-5 w-5 text-primary" />
-                      <h4 className="font-semibold">Monetization Ready</h4>
+                      <h4 className="font-semibold">Indicative value</h4>
                     </div>
-                    <div className="grid grid-cols-3 gap-4 mb-4">
-                      <div>
-                        <p className="text-2xl font-mono font-bold text-foreground">{formatINR(monetizationPreview.totalValue)}</p>
-                        <p className="text-xs text-muted-foreground">Total potential value</p>
-                      </div>
-                      <div>
-                        <p className="text-lg font-mono font-bold text-warning">{formatINR(monetizationPreview.carbonCreditValue)}</p>
-                        <p className="text-xs text-muted-foreground">Carbon credits</p>
-                      </div>
-                      <div>
-                        <p className="text-lg font-mono font-bold text-success">{formatINR(monetizationPreview.greenLoanSavings)}</p>
-                        <p className="text-xs text-muted-foreground">Green loan savings</p>
-                      </div>
-                    </div>
+                    <p className="text-2xl font-mono font-bold text-foreground">{formatINR(indicativeValue)}</p>
+                    <p className="text-xs text-muted-foreground mb-4">{INDICATIVE_VALUE_LABEL}</p>
                     <Button 
                       onClick={() => navigate('/monetize')}
-                      className="w-full glow-success"
+                      className="w-full"
                       size="lg"
                     >
                       <Coins className="h-4 w-4 mr-2" />
-                      Claim Now: Go to Monetize
+                      Go to Monetize
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
                   </div>
