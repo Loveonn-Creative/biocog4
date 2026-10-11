@@ -8,7 +8,7 @@ import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filte
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import { toast } from 'sonner';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
-import { getFunctionErrorMessage } from '@/hooks/useOrganization';
+import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';

@@ -20,6 +20,7 @@ import { cn } from '@/lib/utils';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
 import { checkUploadPages } from '@/lib/pdfLimit';
+import { splitPdf } from '@/lib/pdfSplit';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
@@ -80,24 +81,29 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
     setProgress(0);
 
     const results = { processed: 0, duplicates: 0, errors: 0 };
-    const totalFiles = files.length;
 
-    for (let i = 0; i < files.length; i++) {
-      const fileStatus = files[i];
+    // PDFs over the page limit are split into parts (up to 10 pages each) and
+    // each part is processed as its own document, so nothing is cut off.
+    const queue: FileStatus[] = [];
+    for (const f of files) {
+      if (f.status !== 'pending') { queue.push(f); continue; }
+      const check = await checkUploadPages(f.file);
+      if (check.ok) { queue.push(f); continue; }
+      const split = await splitPdf(f.file);
+      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const })));
+      else queue.push({ ...f, status: 'error' as const, message: split.message });
+    }
+    setFiles(queue);
+    const totalFiles = queue.length;
+
+    for (let i = 0; i < queue.length; i++) {
+      const fileStatus = queue[i];
+      if (fileStatus.status === 'error') { results.errors++; setProgress(((i + 1) / totalFiles) * 100); continue; }
       
       // Update status to processing
       setFiles(prev => prev.map((f, idx) => 
         idx === i ? { ...f, status: 'processing' as const } : f
       ));
-
-      // Long PDFs are refused before upload rather than parsed partially.
-      const pageCheck = await checkUploadPages(fileStatus.file);
-      if (!pageCheck.ok) {
-        setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'error' as const, message: pageCheck.message } : f));
-        results.errors++;
-        setProgress(((i + 1) / totalFiles) * 100);
-        continue;
-      }
 
       try {
         const imageBase64 = await fileToBase64(fileStatus.file);
