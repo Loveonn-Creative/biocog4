@@ -88,10 +88,10 @@ const PARTNER_TYPES = [
 ];
 
 const TRUST_INDICATORS = [
-  { label: '400M+', description: 'MSMEs Addressable' },
-  { label: '47 sec', description: 'Average MRV Time' },
-  { label: '95%+', description: 'Verification Accuracy' },
-  { label: 'India First', description: 'Built for Emerging Markets' },
+  { label: 'Scope 1-3', description: 'GHG Protocol aligned' },
+  { label: 'SHA-256', description: 'Evidence hash per document' },
+  { label: '10', description: 'Countries with local grid factors' },
+  { label: 'Built in India', description: 'For emerging markets' },
 ];
 
 const Partners = () => {
@@ -129,7 +129,7 @@ const Partners = () => {
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Access verified carbon credits, enable green lending, or integrate carbon tracking. 
-            Join the infrastructure powering climate action for 400 million MSMEs.
+            Join the infrastructure powering climate action for MSMEs.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">

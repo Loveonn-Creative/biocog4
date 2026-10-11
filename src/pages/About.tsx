@@ -11,7 +11,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="About — Senseible"
-        description="How the world works differently because Senseible exists. Infrastructure-grade carbon MRV for 400 million MSMEs."
+        description="How the world works differently because Senseible exists. Infrastructure-grade carbon MRV for MSMEs and exporters."
         keywords={["about senseible", "carbon MRV infrastructure", "MSME climate finance", "carbon verification"]}
         canonical="/about"
         image={`https://senseible.earth${aboutOg}`}

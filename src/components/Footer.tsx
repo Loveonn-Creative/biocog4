@@ -112,7 +112,7 @@ export const Footer = () => {
               senseible
             </Link>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              AI-powered carbon infrastructure for 400 million MSMEs.
+              AI-powered carbon infrastructure for MSMEs and exporters.
             </p>
             
             {/* Social Links */}

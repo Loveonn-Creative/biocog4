@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo, forwardRef } from 'react';
 const useCasesMultilang: Record<string, string[]> = {
   'en': [
     "Turn invoices into carbon credits",
-    "Get green loan eligibility in 47s",
+    "Check green loan eligibility",
     "Track Scope 1, 2, 3 emissions",
     "Prepare for EU CBAM compliance",
     "Verify emissions instantly",
@@ -27,7 +27,7 @@ const useCasesMultilang: Record<string, string[]> = {
   ],
   'fr': [
     "Convertir les factures en crédits carbone",
-    "Éligibilité prêt vert en 47 secondes",
+    "Vérifier l'éligibilité au prêt vert",
     "Suivre les émissions Scope 1, 2, 3",
     "Préparation conformité EU CBAM",
     "Vérifier les émissions instantanément",

@@ -13,6 +13,8 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import { AnalyticsTracker } from "./components/AnalyticsTracker";
 import { RequireAuth } from "./components/RequireAuth";
+import { RouteSEO } from "./components/RouteSEO";
+import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 
@@ -82,21 +84,17 @@ const App = () => (
       <LanguageProvider>
       <TooltipProvider>
         <Helmet>
-          <title>Senseible — Turn Carbon Documents into Revenue</title>
-          <meta name="description" content="Infrastructure-grade carbon MRV for 400 million MSMEs. Turn invoices into revenue or compliance in under 47 seconds. Starting with India." />
-          <meta name="keywords" content="carbon credits, MSME, climate finance, carbon accounting, India, sustainability, green loans, CBAM, carbon certification" />
-          <meta property="og:title" content="Senseible — Turn Carbon Documents into Revenue" />
-          <meta property="og:description" content="Infrastructure-grade carbon MRV for 400 million MSMEs across emerging markets." />
+          <title>{STATIC_PAGE_META["/"].title}</title>
+          <meta name="description" content={STATIC_PAGE_META["/"].description} />
           <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Senseible" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Senseible — Carbon to Revenue in Seconds" />
-          <meta name="twitter:description" content="Turn your invoices into carbon credits and climate finance." />
-          <link rel="canonical" href="https://senseible.earth" />
         </Helmet>
         <Toaster />
         <Sonner />
         <BrowserRouter>
           <AnalyticsTracker />
+          <RouteSEO />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />

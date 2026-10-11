@@ -70,8 +70,8 @@ const CarbonCredits = () => {
           <div className="grid sm:grid-cols-3 gap-6 mb-20">
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <Leaf className="w-6 h-6 text-primary mb-4" />
-              <p className="text-3xl font-semibold text-foreground mb-2">47s</p>
-              <p className="text-sm text-muted-foreground">Average processing time from invoice to carbon credit eligibility check</p>
+              <p className="text-3xl font-semibold text-foreground mb-2">1 upload</p>
+              <p className="text-sm text-muted-foreground">From invoice to a carbon credit eligibility check</p>
             </div>
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <TrendingUp className="w-6 h-6 text-success mb-4" />

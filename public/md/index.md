@@ -1,28 +1,47 @@
-# Senseible — Earn from your climate data in under 47 seconds
+# Senseible: verified carbon data from the documents you already have
 
-Senseible is the public surface of Biocog's carbon MRV infrastructure. Upload, photograph, or speak any business document — an invoice, an electricity bill, a fuel slip — and Senseible returns a verified Scope 1, 2 or 3 emission estimate, a SHA-256 evidence hash, and a monetisation signal in under 47 seconds. The first response arrives in under two seconds.
+Canonical: https://senseible.earth/
 
-## What it does
+Senseible turns invoices, electricity bills, fuel slips and freight records into Scope 1, 2 and 3 emission records, with the emission factor and its source shown against every line. MSMEs use it to answer buyer and lender requests, exporters use it to prepare CBAM data, and enterprise buyers use it to collect supplier emissions.
 
-- Deterministically maps HSN / CN customs codes to the correct GHG Protocol scope.
-- Applies IEA 2023 grid emission factors localised for 10 Asian countries.
-- Produces audit-grade emission records compatible with CBAM, BRSR, GRI, TCFD, ISO 14064 and ISO 14067.
-- Issues an immutable SHA-256 hash for every document so the same evidence cannot be double-counted.
-- Surfaces a real-time monetisation preview (carbon credits, green loan eligibility, factoring discounts).
+## How it works
 
-## Who uses it
+1. Upload a document, take a photo or speak the data point.
+2. Line items are extracted and classified to Scope 1, 2 or 3 using a deterministic HSN-to-scope lookup.
+3. Each line is multiplied by a published emission factor for your country, and the document is hashed (SHA-256) so the same evidence cannot be counted twice.
+4. Use the verified record for a buyer questionnaire, a CBAM data request, a BRSR disclosure or a green loan application.
 
-- MSME owners and operators in India, Bangladesh, Vietnam, Indonesia, the Philippines, Pakistan, Singapore, Thailand, Malaysia and Sri Lanka.
-- Exporters facing the EU Carbon Border Adjustment Mechanism.
-- Sustainability and finance teams preparing BRSR, GRI or TCFD disclosures.
-- Banks and NBFCs underwriting green loans.
-- Carbon credit buyers sourcing verified MSME-origin credits.
+## Who it is for
 
-## How to use it
+- MSMEs and exporters that need an emissions record without hiring a consultant.
+- Enterprise buyers and EU importers that need supplier emissions data they can check.
+- Lenders that want emission baselines tied to source documents, not self-declarations.
 
-1. Open the homepage at https://senseible.earth.
-2. Drop a document, take a photo, or speak the data point.
-3. Receive a verified emission estimate plus a monetisation signal.
-4. Sign in to persist results, build a baseline, and export audit packs.
+## CBAM in 2026
 
-No login is required for the public verification surface. Sign-in is only needed to save runs and access the logged-in Biocog reporting workspace.
+The EU Carbon Border Adjustment Mechanism (CBAM) moved from its transitional reporting phase to its definitive period on 1 January 2026. Under the definitive regime, EU importers, acting as authorised CBAM declarants, declare the embedded emissions of covered goods (iron and steel, aluminium, cement, fertilisers, hydrogen and electricity) and surrender CBAM certificates for them. Non-EU producers do not pay CBAM directly, but their EU buyers need their emissions data.
+
+Regulation (EU) 2025/2083 added a single mass-based threshold: an importer bringing in 50 tonnes or less of covered goods in a calendar year is exempt. The threshold does not apply to electricity or hydrogen. Where actual emissions data from the producer is not available, default values are used instead, which can raise the cost for the importer.
+
+The share of embedded emissions that carries a certificate cost rises as EU free allocation is phased out: 2.5% in 2026, 5% in 2027, 10% in 2028, 22.5% in 2029, 48.5% in 2030, 61% in 2031, 73.5% in 2032, 86% in 2033 and 100% from 2034.
+
+Sources: [Regulation (EU) 2023/956](https://eur-lex.europa.eu/eli/reg/2023/956/oj) and [Regulation (EU) 2025/2083](https://eur-lex.europa.eu/eli/reg/2025/2083/oj) on EUR-Lex.
+
+Estimate your exposure with the [CBAM cost calculator](https://senseible.earth/cbam-calculator).
+
+## Free tools
+
+- [CBAM cost calculator](https://senseible.earth/cbam-calculator)
+- [Product carbon footprint calculator (ISO 14067)](https://senseible.earth/calculators/product-carbon-footprint)
+- [Supplier emissions and Scope 3 risk calculator](https://senseible.earth/calculators/supplier-emissions-risk)
+- [Freight emissions calculator (GLEC, ISO 14083)](https://senseible.earth/calculators/logistics-emissions)
+- [Carbon pricing impact calculator](https://senseible.earth/calculators/carbon-pricing-impact)
+- [Solar ROI calculator](https://senseible.earth/calculators/energy-transition-savings)
+
+## Plans
+
+Biocog Snapshot is free. Paid plans start at ₹499 a month on yearly billing. [Compare plans](https://senseible.earth/pricing).
+
+## Senseible is not Sensibull
+
+Senseible (senseible.earth) is a carbon accounting platform. Sensibull is an unrelated options-trading platform. [Read the difference](https://senseible.earth/vs/sensibull).

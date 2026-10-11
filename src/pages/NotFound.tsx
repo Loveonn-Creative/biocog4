@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Home, Leaf, Upload, MessageCircle, CreditCard, Building2, FileText } from "lucide-react";
 
 const NotFound = () => {
@@ -48,6 +49,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6">
+      <Helmet>
+        <title>Page not found | Senseible</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="text-center max-w-lg animate-fade-in">
         {/* Friendly illustration */}
         <div className="w-28 h-28 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-success/10 rounded-full flex items-center justify-center">

@@ -1,672 +1,182 @@
 /**
- * Build-time Static HTML Generator for SEO
- * 
- * Generates individual HTML files for each public route with correct
- * meta tags, structured data, and FULL semantic content embedded in
- * noscript blocks. This solves the SPA indexing problem.
- * 
- * Run after `vite build`: node scripts/generate-static-html.js
+ * Build-time prerender for SEO. Runs after `vite build`.
+ *
+ * Reads every indexable route from src/lib/seo/routeRegistry.ts (which derives
+ * them from the data files) and writes, into dist/:
+ *   - {route}/index.html  per-route title, description, canonical, Open Graph,
+ *                         JSON-LD and indexable body copy (inside <noscript>)
+ *   - sitemap.xml         every indexable route, real lastmod dates only
+ *   - llms.txt            an index of the site for AI assistants
+ *   - md/{route}.md       a Markdown mirror of every route
+ *
+ * New pages need no manual SEO work: add the record to its data file.
+ * `node scripts/generate-static-html.js --sync-public` also refreshes the
+ * committed copies of sitemap.xml, llms.txt and md/ in public/.
  */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loadRegistry } from './seo/load-registry.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST_DIR = path.resolve(__dirname, '../dist');
-const SITE_URL = 'https://senseible.earth';
+const ROOT = path.resolve(__dirname, '..');
+const DIST_DIR = path.join(ROOT, 'dist');
+const PUBLIC_DIR = path.join(ROOT, 'public');
 
-// Solution page content for noscript rendering
-const solutionContent = {
-  cbam: {
-    intro: 'The EU Carbon Border Adjustment Mechanism (CBAM) requires importers to report and pay for embedded carbon in goods imported into the EU.',
-    steps: ['Map CBAM-covered products by CN codes', 'Calculate embedded Scope 1+2 emissions per tonne', 'Prepare quarterly CBAM declarations', 'Estimate financial exposure from 2026-2034', 'Implement reduction strategies'],
-    urgency: 'CBAM financial obligations are active since January 2026. Every quarter of delay means higher default values applied to your exports.'
-  },
-  scope3: {
-    intro: 'Scope 3 emissions typically represent 65-90% of total carbon footprint but remain unmeasured for most MSMEs.',
-    steps: ['Map your complete value chain', 'Collect supplier invoices and data', 'Apply country-specific emission factors', 'Generate GHG Protocol-compliant reports'],
-    urgency: 'EU CSDDD and CSRD require brands to report supply chain emissions. Suppliers without data risk losing contracts.'
-  },
-  'carbon-audit': {
-    intro: 'A carbon audit establishes your baseline emissions from operational data — the first step to compliance, green finance, and carbon credits.',
-    steps: ['Upload utility bills and fuel invoices', 'Auto-classify into Scope 1, 2, 3', 'Review data quality and trust scores', 'Download audit-ready compliance report'],
-    urgency: 'BRSR value chain reporting is expanding. MSMEs in listed company supply chains must provide emission data.'
-  },
-  'green-finance': {
-    intro: 'Green loans offer 2-7% lower interest rates, but 90% of MSMEs lack the verified emission data required for applications.',
-    steps: ['Build verified carbon profile', 'Check eligibility against bank criteria', 'Generate TCFD/CDP-aligned disclosures', 'Apply with data — no manual reporting'],
-    urgency: 'Green finance windows are time-limited. Banks allocate fixed annual budgets for sustainable lending.'
+const HEAD_START = '<!--seo:head-->';
+const HEAD_END = '<!--/seo:head-->';
+
+const mdPathFor = routePath => (routePath === '/' ? '/md/index.md' : `/md${routePath}.md`);
+
+function headTags(route, R) {
+  const url = R.canonicalUrl(route.path);
+  const e = R.escapeHtml;
+  const tags = [
+    `<title>${e(route.title)}</title>`,
+    `<meta name="description" content="${e(route.description)}" data-rh="true" />`,
+    `<link rel="canonical" href="${url}" data-rh="true" />`,
+    `<link rel="alternate" hreflang="x-default" href="${url}" data-rh="true" />`,
+    `<link rel="alternate" type="text/markdown" href="${R.SITE_URL}${mdPathFor(route.path)}" />`,
+    `<meta property="og:type" content="${route.section === 'guide' ? 'article' : 'website'}" data-rh="true" />`,
+    `<meta property="og:site_name" content="Senseible" data-rh="true" />`,
+    `<meta property="og:url" content="${url}" data-rh="true" />`,
+    `<meta property="og:title" content="${e(route.title)}" data-rh="true" />`,
+    `<meta property="og:description" content="${e(route.description)}" data-rh="true" />`,
+    `<meta property="og:image" content="${R.DEFAULT_OG_IMAGE}" data-rh="true" />`,
+    `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
+    `<meta name="twitter:site" content="@senseible_earth" data-rh="true" />`,
+    `<meta name="twitter:title" content="${e(route.title)}" data-rh="true" />`,
+    `<meta name="twitter:description" content="${e(route.description)}" data-rh="true" />`,
+    `<meta name="twitter:image" content="${R.DEFAULT_OG_IMAGE}" data-rh="true" />`,
+  ];
+  // JSON-LD is marked as Helmet-managed so client-side schema replaces it
+  // after hydration instead of duplicating it. "<" is escaped so content can
+  // never close the script element.
+  for (const ld of route.jsonLd) {
+    tags.push(`<script type="application/ld+json" data-rh="true">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>`);
   }
-};
-
-const countryData = {
-  'india': { grid: '0.708 kgCO₂/kWh', exports: '$120B to EU', msmes: '63 million' },
-  'bangladesh': { grid: '0.623 kgCO₂/kWh', exports: '$47B garments', msmes: '7.8 million' },
-  'indonesia': { grid: '0.761 kgCO₂/kWh', exports: '$20B to EU', msmes: '64 million' },
-  'vietnam': { grid: '0.625 kgCO₂/kWh', exports: '$50B to EU', msmes: '5.4 million' },
-  'philippines': { grid: '0.505 kgCO₂/kWh', exports: '$12B to EU', msmes: '1 million' },
-  'pakistan': { grid: '0.454 kgCO₂/kWh', exports: '$8B to EU', msmes: '5.2 million' },
-  'singapore': { grid: '0.408 kgCO₂/kWh', exports: '$15B to EU', msmes: '300K' },
-  'thailand': { grid: '0.493 kgCO₂/kWh', exports: '$25B to EU', msmes: '3.1 million' },
-  'malaysia': { grid: '0.585 kgCO₂/kWh', exports: '$30B to EU', msmes: '1.2 million' },
-  'sri-lanka': { grid: '0.462 kgCO₂/kWh', exports: '$3B to EU', msmes: '1 million' },
-};
-
-// All public routes with their SEO metadata
-const routes = [
-  {
-    path: '/',
-    title: 'Senseible — AI Carbon MRV & Climate Finance for MSMEs | senseible.earth',
-    description: "India's first AI carbon layer. Turn invoices into verified Scope 1, 2, 3 emissions, carbon credits & green loan eligibility in under 47 seconds. Built for MSMEs, trusted by exporters.",
-    keywords: 'carbon credits, carbon accounting, carbon MRV, MSME carbon, climate finance, green loans, CBAM compliance',
-    noscriptContent: `<h1>Senseible — AI Carbon MRV &amp; Climate Finance for 400 Million MSMEs</h1>
-      <p>Senseible is infrastructure-grade carbon Measurement, Reporting and Verification (MRV) software that transforms invoices, utility bills and logistics documents into verified Scope 1, 2 and 3 emissions, tradeable carbon credits, or compliance-ready disclosures in under 47 seconds. Built for the 400 million MSMEs across India, Bangladesh, Vietnam, Indonesia, Thailand, the Philippines, Pakistan, Singapore, Malaysia and Sri Lanka who lack accessible carbon accounting tools.</p>
-      <h2>How Senseible Works</h2>
-      <ol>
-        <li><strong>Upload any business document</strong> — invoices, GST e-invoices, electricity bills, fuel receipts, freight records or purchase orders.</li>
-        <li><strong>Deterministic extraction</strong> — OCR pipeline parses line items, HSN codes and quantities with SHA-256 anti-greenwashing deduplication.</li>
-        <li><strong>Automated Scope 1/2/3 mapping</strong> — every line item is matched against IEA 2023 grid factors and GHG Protocol categories using a deterministic HSN-to-scope lookup.</li>
-        <li><strong>Issue credits or compliance reports</strong> — verified carbon outcomes ready for VERRA, Gold Standard, BIS, BRSR, GRI, TCFD, CSRD or CBAM.</li>
-      </ol>
-      <h2>Why MSMEs Choose Senseible</h2>
-      <ul>
-        <li>Processing time under 47 seconds per document, first response under 2 seconds.</li>
-        <li>Compatible with VERRA, Gold Standard, BIS, GHG Protocol, ISO 14064, ISO 14067, GLEC and PCAF.</li>
-        <li>Country-aware: 11 languages, localised emission factors and Tax IDs for 10 Asian markets.</li>
-        <li>Private-by-default Row Level Security with SHA-256 hashing for universal document deduplication.</li>
-        <li>Free Snapshot tier forever; paid Biocog tiers from ₹499/month on yearly billing (₹1,999/month if billed monthly).</li>
-      </ul>
-      <h2>Scope 1, 2 and 3 Emissions</h2>
-      <p>Scope 1 covers direct emissions from owned sources like fuel and generators. Scope 2 covers indirect emissions from purchased electricity, calculated against country grid factors (India 0.708, Bangladesh 0.623, Vietnam 0.625, Indonesia 0.761 kgCO₂/kWh). Scope 3 covers all other value-chain emissions including purchased goods, logistics, business travel and end-of-life — typically 65–90% of an MSME's total footprint.</p>
-      <h2>CBAM &amp; EU Compliance</h2>
-      <p>The EU Carbon Border Adjustment Mechanism became financially active in January 2026. Indian, Bangladeshi and Vietnamese exporters of steel, aluminium, cement, fertiliser, hydrogen and electricity must submit verified embedded emissions per tonne or pay default-value penalties. Use the <a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a> to model exposure across CN customs codes and the 2026–2034 phase-in.</p>
-      <h2>Pricing</h2>
-      <p>Biocog Snapshot is free forever. Biocog Essential is ₹499/month billed yearly (₹1,999/month billed monthly). Biocog Pro is ₹4,999/month billed yearly (₹9,999/month billed monthly). Biocog Scale starts at ₹15,000/month base + ₹99 per employee on yearly billing. Yearly billing unlocks the launch price; switching from monthly saves up to 75% on Essential and 50% on Pro.</p>
-      <h2>Free Calculators</h2>
-      <ul>
-        <li><a href="${SITE_URL}/calculators/pcf">Product Carbon Footprint (ISO 14067)</a></li>
-        <li><a href="${SITE_URL}/calculators/supplier-risk">Supplier &amp; Scope 3 Risk</a></li>
-        <li><a href="${SITE_URL}/calculators/energy-transition">Solar / Energy Transition Savings</a></li>
-        <li><a href="${SITE_URL}/calculators/logistics">Logistics Emissions (GLEC)</a></li>
-        <li><a href="${SITE_URL}/calculators/carbon-pricing">EU ETS Carbon Pricing Impact</a></li>
-        <li><a href="${SITE_URL}/cbam-calculator">CBAM Cost Estimator</a></li>
-      </ul>
-      <h2>Industries Served</h2>
-      <ul>
-        <li><a href="${SITE_URL}/industries/steel">Steel manufacturing</a> — CBAM-priority sector</li>
-        <li><a href="${SITE_URL}/industries/textile">Textile &amp; apparel</a> — EU CSDDD supply-chain reporting</li>
-        <li><a href="${SITE_URL}/industries/chemical">Chemicals</a> — Scope 1 fugitive emissions</li>
-        <li><a href="${SITE_URL}/industries/logistics">Logistics &amp; freight</a> — GLEC v3 compliant</li>
-      </ul>
-      <h2>Countries Served</h2>
-      <p>India, Bangladesh, Indonesia, Vietnam, Philippines, Pakistan, Thailand, Malaysia, Singapore and Sri Lanka — each with localised grid factors, regulatory IDs and language support.</p>
-      <p><em>Senseible is not affiliated with Sensibull (an options-trading platform). Senseible is the climate-tech platform at senseible.earth, built by the Biocog team in Gurugram, India.</em></p>`,
-  },
-  {
-    path: '/platform',
-    title: 'Senseible — The Platform | Verified Climate Evidence for MSMEs, Lenders & Buyers',
-    description: "What Senseible does, who it's for, and how it turns ordinary business documents into climate evidence trusted by auditors, lenders, regulators and carbon buyers.",
-    keywords: 'Senseible platform, climate MRV platform, verified emissions, MSME climate, carbon evidence',
-    noscriptContent: `<h1>Senseible — The Platform</h1>
-      <p>Senseible is a verification layer for climate data. It turns any business document — an invoice, an energy bill, a freight slip — into a verified emission record that a lender can underwrite, a regulator can audit, and a buyer can rely on.</p>
-      <h2>Who it's for</h2>
-      <ul>
-        <li>MSMEs and exporters — turn invoices into a verified emission record without a consultant.</li>
-        <li>Enterprises — get Scope 3 supplier data that holds up under CBAM, ISSB and CSRD.</li>
-        <li>Banks and lenders — underwrite against hash-pinned figures, not borrower self-declarations.</li>
-        <li>Policy and regulators — read decision-grade signals tied to an auditable methodology version.</li>
-        <li>Carbon credit buyers — source MSME-origin credits that clear additionality and evidence linkage.</li>
-        <li>Ecosystem partners — plug verified MSME climate data into your own product surface.</li>
-      </ul>
-      <h2>How it works</h2>
-      <ol>
-        <li>Capture — drop a document, take a photo, or speak the data point.</li>
-        <li>Verify — every document is hashed, parsed, classified deterministically, and reconciled against country grid factors.</li>
-        <li>Use — the verified record feeds your disclosure, your lender, your reduction roadmap, and — when eligible — your credits.</li>
-      </ol>
-      <h2>Outcomes</h2>
-      <ul>
-        <li><a href="${SITE_URL}/trust">Report</a> — one ledger that serves CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD, GRI and SBTi.</li>
-        <li><a href="${SITE_URL}/climate-finance">Finance</a> — verified baselines and credibility scores become underwriting inputs.</li>
-        <li><a href="${SITE_URL}/net-zero">Decarbonise</a> — a baseline becomes a sector-aware roadmap, tracked against the original methodology.</li>
-        <li><a href="${SITE_URL}/carbon-credits">Monetise</a> — records that clear additionality become credit-ready signals for buyers.</li>
-      </ul>`,
-  },
-  {
-    path: '/careers',
-    title: 'Careers — Build climate infrastructure | Senseible',
-    description: "Join Senseible to build AI infrastructure for carbon markets, climate finance, and MSME decarbonisation. Open roles from interns to senior engineers.",
-    keywords: 'climate tech careers, carbon market jobs, AI climate jobs, climate finance careers, ESG AI, green fintech careers, MSME climate platform',
-    noscriptContent: `<h1>Careers at Senseible — Build the infrastructure that decarbonises millions of MSMEs</h1>
-      <p>Senseible is building the AI verification layer for carbon markets, climate finance, and MSME decarbonisation. We hire builders who want difficult problems, direct ownership, and speed — not manufactured perks.</p>
-      <h2>Why join now</h2>
-      <ul>
-        <li>400 million MSMEs across emerging markets need carbon accounting they can trust. CBAM, BRSR, and green finance are already asking for it.</li>
-        <li>Verified evidence is a primitive that lenders, buyers, regulators and ERP tools all consume. Build it once, unlock many markets.</li>
-        <li>Small team, direct founder access, work reaches production the same week.</li>
-      </ul>
-      <h2>What you'll build</h2>
-      <ul>
-        <li>MRV pipeline and deterministic carbon math — evidence hashing, HSN classification, methodology versioning.</li>
-        <li>Climate finance signals — verified baselines as underwriting inputs for green loans and factoring.</li>
-        <li>Applied AI and voice — document extraction, Scope 3 inference, multilingual voice for MSME owners.</li>
-        <li>Trust and data layer — greenwashing prevention, framework mapping across CBAM, BRSR, GHG Protocol, ISSB, CSRD, TCFD.</li>
-      </ul>
-      <h2>Open roles</h2>
-      <ul>
-        <li>Founding Engineer — Gurugram, Senior.</li>
-        <li>Applied AI Engineer — Hybrid, Mid.</li>
-        <li>Climate Research Associate — Remote (India), Mid.</li>
-        <li>Product Designer — Hybrid, Mid.</li>
-        <li>Growth & Operations — Gurugram, Mid.</li>
-        <li>Founder's Office — Gurugram, Mid.</li>
-        <li>Freshers — Engineering, Research, Design, Ops (Hybrid).</li>
-        <li>Interns — Applied AI, Climate, Product (Remote, India).</li>
-      </ul>
-      <h2>How to apply</h2>
-      <ol>
-        <li>Visit <a href="${SITE_URL}/platform">the platform</a>.</li>
-        <li>Send 3–5 lines or a 2–3 minute video on how your experience will help Senseible move faster.</li>
-        <li>Freshers and interns: use the intake form linked from the Careers page. Everyone else: email build@senseible.earth.</li>
-      </ol>
-      <p>We reply within a week and decide within two. Fast, both ways.</p>`,
-  },
-  {
-    path: '/about',
-    title: 'About Senseible — AI Carbon Infrastructure for Emerging Markets',
-    description: 'Senseible builds AI-powered carbon MRV infrastructure enabling MSMEs to convert operational data into verified carbon outcomes across India and the EU.',
-    keywords: 'about senseible, carbon infrastructure, MSME sustainability, climate tech India',
-  },
-  {
-    path: '/mission',
-    title: 'Our Mission — Making Carbon Accounting Accessible for Every MSME',
-    description: 'Senseible is on a mission to democratize carbon accounting for 400 million MSMEs. Infrastructure-grade MRV starting with India.',
-    keywords: 'carbon mission, MSME decarbonization, climate finance access',
-  },
-  {
-    path: '/principles',
-    title: 'Our Principles — Deterministic, Transparent Carbon Science',
-    description: 'Senseible operates on deterministic math, not AI guesses. Every emission number is traceable to source invoices with fixed factors.',
-    keywords: 'carbon principles, deterministic MRV, transparent carbon accounting',
-  },
-  {
-    path: '/pricing',
-    title: 'Pricing — Carbon MRV Plans for MSMEs | Senseible',
-    description: 'Start free with Snapshot tier. Upgrade to Lens or Pulse for unlimited invoices, compliance reports, and carbon credit monetization.',
-    keywords: 'carbon accounting pricing, MSME carbon plans, green finance pricing',
-  },
-  {
-    path: '/cbam-calculator',
-    title: 'CBAM Calculator — EU Carbon Border Tax Cost Estimator | Senseible',
-    description: 'Free CBAM cost estimator for EU importers. Calculate carbon border tax exposure for steel, aluminium, cement, fertilizers from India. 2026-2034 projections.',
-    keywords: 'CBAM calculator, CBAM cost estimator, EU carbon border tax, CBAM India',
-    noscriptContent: `<h1>CBAM Calculator — EU Carbon Border Tax Cost Estimator</h1>
-      <p>Free tool to calculate your EU Carbon Border Adjustment Mechanism (CBAM) exposure. Covers steel, aluminium, cement, fertilizers, and hydrogen exports.</p>
-      <h2>How It Works</h2>
-      <ol><li>Select your sector and production route</li><li>Enter annual export tonnage</li><li>Choose your country (grid factor auto-applied)</li><li>Get year-by-year cost projections from 2026 to 2034</li></ol>
-      <h2>CBAM Phase-In Schedule</h2>
-      <p>2026: 2.5% | 2027: 5% | 2028: 10% | 2029: 22.5% | 2030: 48.5% | 2031: 61% | 2032: 73.5% | 2033: 86% | 2034: 100%</p>
-      <h2>Related</h2>
-      <ul><li><a href="${SITE_URL}/solutions/cbam-steel-india">CBAM for Indian Steel</a></li><li><a href="${SITE_URL}/solutions/cbam-chemicals-india">CBAM for Indian Chemicals</a></li><li><a href="${SITE_URL}/climate-intelligence/cbam-compliance-indian-exporters">CBAM Compliance Guide</a></li></ul>`,
-  },
-  {
-    path: '/net-zero',
-    title: 'Net-Zero Goal Engine — MSME Decarbonization Roadmap | Senseible',
-    description: 'Build your net-zero roadmap in 5 steps. Set science-based targets, get reduction strategies, and track real progress. Built for MSMEs.',
-    keywords: 'net zero MSME, MSME decarbonization, net zero roadmap India, SBTi MSME',
-  },
-  {
-    path: '/contact',
-    title: 'Contact Senseible — Get Help with Carbon Accounting',
-    description: 'Reach out for partnerships, enterprise queries, or support. Based in Gurugram, serving MSMEs across India and the EU.',
-    keywords: 'contact senseible, carbon accounting support, climate finance help',
-  },
-  {
-    path: '/carbon-credits',
-    title: 'Carbon Credits for MSMEs — Monetize Your Emissions Data | Senseible',
-    description: 'Learn how MSMEs can earn carbon credits from verified emission reductions. Invoice-based MRV to monetization in under 47 seconds.',
-    keywords: 'carbon credits MSME, voluntary carbon market, carbon monetization India',
-  },
-  {
-    path: '/climate-finance',
-    title: 'Climate Finance for MSMEs — Green Loans & Carbon Revenue | Senseible',
-    description: 'Access green loans, carbon credits, and ESG compliance tools. Senseible converts your emission data into climate finance signals.',
-    keywords: 'climate finance MSME, green loans India, SIDBI green loan, ESG lending',
-  },
-  {
-    path: '/partners',
-    title: 'Partner with Senseible — Banks, Auditors & Carbon Buyers',
-    description: 'Join the Senseible partner ecosystem. Access verified MSME carbon data for lending decisions, audits, and carbon credit purchases.',
-    keywords: 'carbon partner program, ESG data partners, green finance partners',
-  },
-  {
-    path: '/grants',
-    title: 'Grants & Funding for Climate Startups | Senseible',
-    description: 'Apply for climate grants and early-stage funding. Senseible supports climate-tech innovation in emerging markets.',
-    keywords: 'climate grants, startup funding, climate tech grants India',
-  },
-  {
-    path: '/climate-intelligence',
-    title: 'Climate Intelligence — Carbon Knowledge Hub | Senseible',
-    description: 'Expert guides on carbon accounting, CBAM compliance, green loans, and emission reduction for MSMEs. Trusted by Indian exporters.',
-    keywords: 'climate intelligence, carbon knowledge, CBAM guide, BRSR reporting guide',
-    noscriptContent: `<h1>Climate Intelligence — Carbon Knowledge Hub</h1>
-      <p>Expert guides on carbon accounting, CBAM compliance, green loans, and emission reduction for MSMEs across India and emerging markets.</p>
-      <h2>Popular Guides</h2>
-      <ul>
-        <li><a href="${SITE_URL}/climate-intelligence/cbam-compliance-indian-exporters">CBAM Compliance for Indian Exporters</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/how-to-file-eu-carbon-tax-report-msme-guide">How to File EU Carbon Tax Report</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/carbon-audit-small-business-india-complete-guide">Carbon Audit for Small Business India</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator">Scope 3 Calculator Guide</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/brsr-reporting-msme-india-simplified-guide">BRSR Reporting Simplified</a></li>
-      </ul>
-      <h2>Country Guides</h2>
-      <ul>
-        <li><a href="${SITE_URL}/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters">Bangladesh Textile Scope 3</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions">Indonesia Manufacturing Scope 2</a></li>
-        <li><a href="${SITE_URL}/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers">Vietnam Textile Carbon Footprint</a></li>
-      </ul>`,
-  },
-  {
-    path: '/industries',
-    title: 'Industries — Carbon Accounting by Sector | Senseible',
-    description: 'Sector-specific carbon MRV for textile, steel, automotive, pharmaceutical, logistics, and chemical industries. Tailored emission factors for India.',
-    keywords: 'industry carbon accounting, sector emissions, manufacturing carbon footprint',
-    noscriptContent: `<h1>Industries — Carbon Accounting by Sector</h1>
-      <p>Sector-specific carbon MRV with tailored emission factors, compliance steps, and reduction strategies.</p>
-      <ul>
-        <li><a href="${SITE_URL}/industries/textile">Textile Manufacturing</a> — Scope 1-3 for garment exporters</li>
-        <li><a href="${SITE_URL}/industries/steel">Steel & Metal</a> — CBAM-ready emission intensity</li>
-        <li><a href="${SITE_URL}/industries/chemical">Chemical Industry</a> — Fertilizer and ammonia CBAM</li>
-        <li><a href="${SITE_URL}/industries/logistics">Logistics & Transport</a> — Fleet emission measurement</li>
-        <li><a href="${SITE_URL}/industries/automobile">Automotive</a> — Supply chain carbon for OEMs</li>
-        <li><a href="${SITE_URL}/industries/construction">Construction</a> — Embodied carbon in materials</li>
-      </ul>`,
-  },
-  {
-    path: '/legal',
-    title: 'Legal — Terms of Service & Privacy Policy | Senseible',
-    description: 'Read our terms of service, privacy policy, and data handling practices. Senseible is committed to data security and transparency.',
-    keywords: 'terms of service, privacy policy, data handling',
-  },
-  // Calculators hub + 5 deterministic calculators
-  {
-    path: '/calculators',
-    title: 'Free Carbon Calculators for MSMEs — PCF, Scope 3, Logistics, ETS | Senseible',
-    description: 'Five deterministic, audit-ready carbon calculators for MSMEs: Product Carbon Footprint (ISO 14067), Supplier Risk (Scope 3), Energy Transition ROI, Logistics (GLEC), Carbon Pricing (EU ETS/CBAM). Free, no signup.',
-    keywords: 'carbon calculator, PCF calculator, scope 3 calculator, GLEC calculator, EU ETS calculator, CBAM calculator MSME',
-    noscriptContent: `<h1>Free Carbon Calculators for MSMEs</h1>
-      <p>Five deterministic, standards-aligned calculators built for MSMEs. Zero hallucination — every output traces to a fixed emission factor or published methodology.</p>
-      <ul>
-        <li><a href="${SITE_URL}/calculators/product-carbon-footprint">Product Carbon Footprint (ISO 14067)</a> — cradle-to-gate emissions per unit</li>
-        <li><a href="${SITE_URL}/calculators/supplier-emissions-risk">Supplier Emissions Risk (Scope 3 Cat 1)</a> — hybrid spend/activity scoring with EORA factors</li>
-        <li><a href="${SITE_URL}/calculators/energy-transition-savings">Energy Transition Savings</a> — solar ROI, NPV, IRR with country grid factors</li>
-        <li><a href="${SITE_URL}/calculators/logistics-emissions">Logistics Emissions (GLEC v3.0 / ISO 14083)</a> — multimodal freight CO₂e</li>
-        <li><a href="${SITE_URL}/calculators/carbon-pricing-impact">Carbon Pricing Impact (EU ETS + CBAM)</a> — 2026–2034 exposure with sensitivity analysis</li>
-      </ul>`,
-  },
-  {
-    path: '/calculators/product-carbon-footprint',
-    title: 'Product Carbon Footprint Calculator (ISO 14067) — Free | Senseible',
-    description: 'Calculate cradle-to-gate Product Carbon Footprint per unit using ISO 14067 methodology. Free deterministic tool for MSMEs and exporters. No signup required.',
-    keywords: 'product carbon footprint calculator, ISO 14067, PCF calculator, cradle to gate emissions, LCA calculator MSME',
-    noscriptContent: `<h1>Product Carbon Footprint Calculator (ISO 14067)</h1>
-      <p>Calculate cradle-to-gate emissions per unit of product using deterministic ISO 14067 methodology. Inputs: raw materials, energy, transport, packaging. Output: kgCO₂e per unit with full breakdown.</p>
-      <h2>Why It Matters</h2>
-      <p>EU buyers increasingly require PCF disclosures. Product passports (DPP) under ESPR mandate carbon data per SKU from 2027.</p>
-      <h2>Methodology</h2>
-      <ul><li>ISO 14067:2018 cradle-to-gate boundary</li><li>IEA 2023 grid emission factors per country</li><li>DEFRA 2024 transport factors</li><li>EORA / Ecoinvent material factors</li></ul>
-      <p><a href="${SITE_URL}/calculators">All Calculators</a> | <a href="${SITE_URL}/cbam-calculator">CBAM Calculator</a></p>`,
-  },
-  {
-    path: '/calculators/supplier-emissions-risk',
-    title: 'Supplier Emissions Risk Calculator (Scope 3 Cat 1) — Free | Senseible',
-    description: 'Score supplier carbon risk using hybrid spend + activity methodology. GHG Protocol Scope 3 Category 1 compliant. EORA 2023 factors. Free MSME tool.',
-    keywords: 'supplier emissions calculator, scope 3 category 1, supply chain carbon risk, EORA emission factors, supplier carbon risk MSME',
-    noscriptContent: `<h1>Supplier Emissions Risk Calculator</h1>
-      <p>Score your suppliers on Scope 3 Category 1 (purchased goods & services) carbon risk using hybrid spend-based and activity-based methodology. Aligned with GHG Protocol.</p>
-      <h2>How It Works</h2>
-      <ol><li>Add suppliers with spend, country, and sector</li><li>Engine applies EORA 2023 sector factors and country grid intensity</li><li>Get tCO₂e per supplier and overall portfolio risk score</li></ol>
-      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
-  },
-  {
-    path: '/calculators/energy-transition-savings',
-    title: 'Energy Transition Savings Calculator — Solar ROI for MSMEs | Senseible',
-    description: 'Calculate solar payback, NPV, IRR, and CO₂ savings using MNRE/IEA factors. Country-specific grid emission factors. Free deterministic tool for MSMEs.',
-    keywords: 'solar ROI calculator, energy transition calculator, solar payback MSME, MNRE solar calculator, renewable energy savings calculator',
-    noscriptContent: `<h1>Energy Transition Savings Calculator</h1>
-      <p>Model rooftop solar or renewable energy investment with deterministic ROI, NPV, IRR, and CO₂ savings. Uses MNRE benchmark capex, country-specific tariffs, and IEA 2023 grid factors.</p>
-      <h2>Outputs</h2>
-      <ul><li>Annual energy generation (kWh)</li><li>Annual cost savings (₹/$)</li><li>Payback period (years)</li><li>10/25-year NPV and IRR</li><li>Lifetime CO₂ avoided (tCO₂e)</li></ul>
-      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
-  },
-  {
-    path: '/calculators/logistics-emissions',
-    title: 'Logistics Emissions Calculator (GLEC v3.0 / ISO 14083) — Free | Senseible',
-    description: 'Multimodal freight emissions calculator using GLEC v3.0 and ISO 14083. Road, rail, sea, air. Free tool for MSMEs and 3PLs serving EU buyers.',
-    keywords: 'logistics emissions calculator, GLEC calculator, ISO 14083, freight emissions, multimodal transport carbon, 3PL carbon calculator',
-    noscriptContent: `<h1>Logistics Emissions Calculator (GLEC v3.0)</h1>
-      <p>Calculate multimodal freight CO₂e using GLEC v3.0 framework and ISO 14083. Supports road, rail, sea, and air with cargo-weight × distance methodology.</p>
-      <h2>Why GLEC</h2>
-      <p>GLEC is the global standard for logistics emissions reporting, used by Maersk, DHL, and required by Smart Freight Centre members. ISO 14083:2023 codifies the same methodology.</p>
-      <p><a href="${SITE_URL}/calculators">All Calculators</a></p>`,
-  },
-  {
-    path: '/calculators/carbon-pricing-impact',
-    title: 'Carbon Pricing Impact Calculator (EU ETS + CBAM) — Free | Senseible',
-    description: 'Forecast EU ETS and CBAM exposure 2026–2034 with sensitivity analysis. Best/worst case scenarios. Free deterministic tool for exporters and MSMEs.',
-    keywords: 'carbon pricing calculator, EU ETS calculator, CBAM impact calculator, carbon price forecast, ETS scenario analysis',
-    noscriptContent: `<h1>Carbon Pricing Impact Calculator (EU ETS + CBAM)</h1>
-      <p>Forecast carbon cost exposure under EU ETS and CBAM from 2026 to 2034. Includes phase-in schedule, free allowance erosion, and best/worst case ETS price scenarios.</p>
-      <h2>Phase-In Reminder</h2>
-      <p>2026: 2.5% | 2027: 5% | 2028: 10% | 2029: 22.5% | 2030: 48.5% | 2034: 100%. Free allowances drop to zero by 2034.</p>
-      <p><a href="${SITE_URL}/calculators">All Calculators</a> | <a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a></p>`,
-  },
-  // Industry sub-pages
-  ...['textile', 'steel', 'automotive', 'pharmaceutical', 'logistics', 'chemical'].map(industry => ({
-    path: `/industries/${industry}`,
-    title: `${industry.charAt(0).toUpperCase() + industry.slice(1)} Carbon Accounting — Senseible`,
-    description: `Carbon MRV for ${industry} manufacturers. Track Scope 1, 2, 3 emissions with invoice-based verification tailored for India's ${industry} sector.`,
-    keywords: `${industry} carbon accounting, ${industry} emissions India, ${industry} CBAM compliance`,
-    noscriptContent: `<h1>${industry.charAt(0).toUpperCase() + industry.slice(1)} Carbon Accounting</h1>
-      <p>Track Scope 1, 2, 3 emissions for ${industry} manufacturers with invoice-based verification. Country-specific emission factors for India and emerging markets.</p>
-      <h2>Related Solutions</h2>
-      <ul>
-        <li><a href="${SITE_URL}/solutions/cbam-${industry === 'chemical' ? 'chemicals' : industry}-india">CBAM Compliance for ${industry.charAt(0).toUpperCase() + industry.slice(1)} in India</a></li>
-        <li><a href="${SITE_URL}/solutions/scope3-${industry === 'chemical' ? 'chemicals' : industry}-india">Scope 3 Calculator for ${industry.charAt(0).toUpperCase() + industry.slice(1)}</a></li>
-      </ul>
-      <p><a href="${SITE_URL}/cbam-calculator">Use the free CBAM Calculator</a> | <a href="${SITE_URL}">Start your carbon audit</a></p>`,
-  })),
-  // CMS articles
-  ...getCMSArticleSlugs().map(slug => ({
-    path: `/climate-intelligence/${slug}`,
-    title: `${slugToTitle(slug)} | Senseible Climate Intelligence`,
-    description: `Expert analysis on ${slugToTitle(slug).toLowerCase()}. Trusted carbon knowledge for MSMEs and exporters.`,
-    keywords: slug.replace(/-/g, ', '),
-  })),
-  // Competitor comparison pages
-  ...getCompetitorSlugs().map(slug => ({
-    path: `/vs/${slug}`,
-    title: `Senseible vs ${slugToTitle(slug)} — Carbon MRV Comparison`,
-    description: `Compare Senseible with ${slugToTitle(slug)} for carbon accounting, MRV, and climate finance. See which platform is best for MSMEs.`,
-    keywords: `senseible vs ${slug}, carbon accounting comparison, ${slug} alternative`,
-  })),
-  // Solution pages with full semantic content
-  ...getSolutionSlugs().map(slug => {
-    const parts = slug.split('-');
-    const countryRaw = parts[parts.length - 1];
-    const country = countryData[countryRaw] || { grid: 'N/A', exports: 'N/A', msmes: 'N/A' };
-    const countryName = countryRaw.charAt(0).toUpperCase() + countryRaw.slice(1);
-    
-    // Determine regulation type
-    let regulation = 'carbon-audit';
-    if (slug.startsWith('cbam-')) regulation = 'cbam';
-    else if (slug.startsWith('scope3-')) regulation = 'scope3';
-    else if (slug.startsWith('green-finance-')) regulation = 'green-finance';
-    
-    const content = solutionContent[regulation];
-    const sectorRaw = slug.replace(/^(cbam|scope3|carbon-audit|green-finance)-/, '').replace(/-[^-]+$/, '');
-    const sectorName = slugToTitle(sectorRaw);
-
-    return {
-      path: `/solutions/${slug}`,
-      title: `${slugToTitle(regulation)} for ${sectorName} in ${countryName} — Senseible`,
-      description: `Carbon compliance solution for ${sectorName.toLowerCase()} in ${countryName}. Free tools, compliance steps, and cost breakdown. Grid factor: ${country.grid}.`,
-      keywords: `${slugToTitle(regulation)} ${countryName}, ${sectorName} carbon ${countryName}, carbon compliance ${countryName}`,
-      noscriptContent: `<article>
-        <h1>${slugToTitle(regulation)} for ${sectorName} in ${countryName}</h1>
-        <p>${content.intro}</p>
-        <p><strong>Country data:</strong> Grid factor ${country.grid} | Exports ${country.exports} | MSMEs ${country.msmes}</p>
-        <p><strong>${content.urgency}</strong></p>
-        <h2>Compliance Steps</h2>
-        <ol>${content.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-        <h2>Free Tools</h2>
-        <ul>
-          <li><a href="${SITE_URL}/cbam-calculator">CBAM Cost Calculator</a></li>
-          <li><a href="${SITE_URL}">Upload invoices for instant Scope 1+2+3 calculation</a></li>
-          <li><a href="${SITE_URL}/net-zero">Net-Zero Goal Engine</a></li>
-        </ul>
-        <h2>Related Solutions</h2>
-        <ul>
-          <li><a href="${SITE_URL}/industries">Industry-specific guides</a></li>
-          <li><a href="${SITE_URL}/climate-intelligence">Climate Intelligence Knowledge Hub</a></li>
-          <li><a href="${SITE_URL}/climate-finance">Green Finance Eligibility</a></li>
-        </ul>
-      </article>`,
-    };
-  }),
-];
-
-function getCMSArticleSlugs() {
-  return [
-    'how-to-trace-emission-data-to-source',
-    'maintain-historical-carbon-data-methodology-changes',
-    'ghg-gases-warming-impact-beyond-co2',
-    'methane-black-carbon-reductions-vs-co2',
-    'emissions-data-hidden-in-semi-finished-imports',
-    'reroute-supply-chains-reduce-cbam-exposure',
-    'manufacturing-scope-1-emissions-india',
-    'manufacturing-scope-2-emissions-india',
-    'manufacturing-scope-3-emissions-india',
-    'cbam-compliance-indian-exporters',
-    'agriculture-scope-1-emissions-india',
-    'logistics-scope-1-emissions-india',
-    'carbon-credit-types-voluntary-markets',
-    'brsr-reporting-requirements-india',
-    'emission-factors-selection-guidance',
-    'what-is-carbon-mrv-and-why-msmes-need-it-2026',
-    'how-to-get-green-loans-india-carbon-data',
-    'eu-cbam-explained-emerging-market-exporters',
-    'scope-1-2-3-emissions-simple-guide-small-business',
-    'what-is-senseible-different-from-sensibull',
-    'how-to-calculate-carbon-footprint-electricity-bills',
-    'brazil-cbio-india-ccts-comparing-carbon-markets',
-    'green-finance-textile-exporters-step-by-step',
-    'documents-needed-carbon-verification',
-    'brsr-reporting-small-manufacturer-preparation',
-    'carbon-credits-solar-installations-monetize',
-    'steel-aluminum-exporters-cbam-compliance-checklist',
-    '136-billion-india-eu-fta-msme-breakthrough',
-    'survival-of-the-greenest-cbam-litmus-test',
-    'trading-air-for-assets-india-carbon-markets-eu-price',
-    'mother-of-all-deals-india-eu-msmes',
-    'great-diversification-india-eu-strategic-shield-tariff-wars',
-    'why-every-invoice-needs-trust-score',
-    'proof-graph-how-carbon-value-calculated',
-    'auto-validation-catches-gaps-before-submit',
-    'dynamic-benchmarking-400m-msmes',
-    'confidence-bands-beat-false-precision',
-    'see-carbon-revenue-before-verify',
-    'one-click-audit-trails-investors-need',
-    'dispute-simulation-auditor-challenge',
-    'manual-entry-carbon-data-error-source',
-    'greenwashing-flags-explainable-not-just-high-risk',
-    'trust-score-replaces-pass-fail-63m-msmes',
-    'proof-graphs-black-box-ai-carbon-trust',
-    'pre-submission-validation-cuts-rejection-40-percent',
-    'sector-benchmarking-context-raw-data-decisions',
-    'confidence-bands-honest-mrv-approach',
-    'real-time-revenue-preview-mrv-to-money',
-    'one-click-audit-trails-save-200-hours',
-    'dispute-simulation-prepare-auditor-challenges',
-    'manual-data-entry-source-carbon-fraud-risk',
-    'explainable-greenwashing-flags-transparency',
-    // Country-specific SEO articles
-    'cbam-compliance-cost-india-steel-chemicals-2026',
-    'scope-3-calculator-bangladesh-textile-exporters',
-    'eu-carbon-border-tax-impact-indonesian-chemical-exports',
-    'carbon-audit-philippine-manufacturing-food-processing',
-    'green-finance-pakistan-textile-msme-access',
-    'carbon-reporting-singapore-msme-compliance',
-    'vietnam-garment-exporters-scope-3-eu-compliance',
-    'thailand-food-processing-carbon-footprint-reduction',
-    'msme-carbon-credits-sri-lanka-invoice-to-revenue',
-    'malaysia-palm-oil-scope-1-2-3-emission-breakdown',
-    'how-to-file-eu-carbon-tax-report-msme-guide',
-    'export-carbon-reporting-eu-msme-emerging-markets',
-    'carbon-audit-small-business-india-complete-guide',
-    'scope-3-emissions-supply-chain-msme-calculator',
-    'brsr-reporting-msme-india-simplified-guide',
-    'indonesia-manufacturing-scope-2-electricity-emissions',
-    'india-textile-exporters-cbam-eu-compliance-2026',
-    'bangladesh-manufacturing-green-finance-access-guide',
-    'logistics-scope-1-emissions-india-fleet-measurement',
-    'philippines-food-processing-carbon-measurement-guide',
-    'cbam-cost-calculator-indian-steel-msme-2026',
-    'vietnam-textile-carbon-footprint-eu-buyers',
-    'thailand-automotive-supply-chain-carbon-measurement',
-    'pakistan-leather-industry-carbon-audit-eu-compliance',
-    'singapore-supply-chain-carbon-transparency-guide',
-    'malaysia-electrical-electronics-scope-2-carbon-guide',
-  ];
+  return tags.join('\n    ');
 }
 
-function getCompetitorSlugs() {
-  return [
-    'sensibull', 'microsoft-sustainability-cloud', 'salesforce-net-zero-cloud',
-    'ibm-envizi', 'persefoni', 'watershed', 'sweep', 'plan-a', 'normative',
-    'greenly', 'sinai-technologies', 'sphera', 'sylvera', 'verra',
-    'gold-standard', 'esgi-india', 'updapt-esg', 'dcarbonize', 'climes', 'zeroboard',
-  ];
+function bodyHtml(route, R) {
+  const crumbs = route.breadcrumbs
+    .map(c => `<a href="${R.canonicalUrl(c.path)}">${R.escapeHtml(c.name)}</a>`)
+    .join(' › ');
+  return `<noscript><main style="padding:1.5rem;max-width:860px;margin:0 auto;font-family:system-ui,sans-serif;line-height:1.6">
+<nav aria-label="Breadcrumb">${crumbs}</nav>
+<h1>${R.escapeHtml(route.h1)}</h1>
+${R.blocksToHtml(route.blocks)}
+<hr/><p><a href="${R.SITE_URL}/">Senseible</a> · <a href="${R.SITE_URL}/climate-intelligence">Guides</a> · <a href="${R.SITE_URL}/calculators">Calculators</a> · <a href="${R.SITE_URL}/pricing">Pricing</a> · <a href="${R.SITE_URL}/contact">Contact</a></p>
+</main></noscript>`;
 }
 
-function getSolutionSlugs() {
-  return [
-    'cbam-steel-india','cbam-textile-india','scope3-steel-india','cbam-chemicals-india',
-    'scope3-textile-india','carbon-audit-manufacturing-india','green-finance-textile-india',
-    'scope3-chemicals-india','scope3-textile-bangladesh','cbam-textile-bangladesh',
-    'carbon-audit-manufacturing-bangladesh','green-finance-textile-bangladesh',
-    'cbam-steel-indonesia','cbam-chemicals-indonesia','carbon-audit-manufacturing-indonesia',
-    'scope3-food-processing-indonesia','green-finance-manufacturing-indonesia',
-    'carbon-audit-manufacturing-philippines','scope3-food-processing-philippines',
-    'green-finance-manufacturing-philippines','carbon-audit-logistics-philippines',
-    'scope3-textile-pakistan','green-finance-manufacturing-pakistan',
-    'carbon-audit-textile-pakistan','scope3-food-processing-pakistan',
-    'carbon-audit-manufacturing-singapore','scope3-chemicals-singapore',
-    'carbon-audit-logistics-singapore','green-finance-manufacturing-singapore',
-    'cbam-steel-vietnam','scope3-textile-vietnam','carbon-audit-manufacturing-vietnam',
-    'scope3-food-processing-vietnam','scope3-food-processing-thailand',
-    'carbon-audit-manufacturing-thailand','cbam-chemicals-thailand',
-    'green-finance-manufacturing-thailand','scope3-food-processing-malaysia',
-    'carbon-audit-manufacturing-malaysia','green-finance-manufacturing-malaysia',
-    'scope3-chemicals-malaysia','scope3-textile-sri-lanka',
-    'carbon-audit-manufacturing-sri-lanka','green-finance-manufacturing-sri-lanka',
-    'scope3-food-processing-sri-lanka','green-finance-manufacturing-india',
-    'green-finance-manufacturing-vietnam','cbam-steel-bangladesh',
-    'scope3-textile-indonesia','cbam-chemicals-vietnam','scope3-textile-thailand',
-    'cbam-steel-malaysia','scope3-manufacturing-philippines','cbam-steel-pakistan',
-    'green-finance-textile-sri-lanka','green-finance-manufacturing-bangladesh',
-    'carbon-audit-logistics-india','scope3-food-processing-india',
-  ];
-}
-
-function slugToTitle(slug) {
-  return slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-function generateHTML(route, templateHTML) {
-  const fullUrl = `${SITE_URL}${route.path}`;
-  
-  let html = templateHTML.replace(
-    /<title>[^<]*<\/title>/,
-    `<title>${escapeHTML(route.title)}</title>`
-  );
-  
-  html = html.replace(
-    /<meta name="description" content="[^"]*">/,
-    `<meta name="description" content="${escapeHTML(route.description)}">`
-  );
-  
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*" \/>/,
-    `<meta property="og:title" content="${escapeHTML(route.title)}" />`
-  );
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*" \/>/,
-    `<meta property="og:description" content="${escapeHTML(route.description)}" />`
-  );
-  html = html.replace(
-    /<meta property="og:url" content="[^"]*" \/>/,
-    `<meta property="og:url" content="${fullUrl}" />`
-  );
-  
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*" \/>/,
-    `<meta name="twitter:title" content="${escapeHTML(route.title)}" />`
-  );
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*" \/>/,
-    `<meta name="twitter:description" content="${escapeHTML(route.description)}" />`
-  );
-  
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*" \/>/,
-    `<link rel="canonical" href="${fullUrl}" />`
-  );
-  
-  html = html.replace(
-    /<link rel="alternate" hreflang="en-in" href="[^"]*" \/>/,
-    `<link rel="alternate" hreflang="en-in" href="${fullUrl}" />`
-  );
-  html = html.replace(
-    /<link rel="alternate" hreflang="x-default" href="[^"]*" \/>/,
-    `<link rel="alternate" hreflang="x-default" href="${fullUrl}" />`
-  );
-  
-  // Full semantic noscript content
-  const noscript = route.noscriptContent
-    ? `<noscript><div style="padding:2rem;max-width:900px;margin:0 auto;font-family:system-ui,sans-serif;line-height:1.6">${route.noscriptContent}<hr/><p style="font-size:0.85em;color:#666">© Senseible | <a href="${SITE_URL}">senseible.earth</a> | <a href="${SITE_URL}/contact">Contact</a> | <a href="${SITE_URL}/pricing">Pricing</a></p></div></noscript>`
-    : `<noscript><div style="padding:2rem;max-width:800px;margin:0 auto"><h1>${escapeHTML(route.title)}</h1><p>${escapeHTML(route.description)}</p><p><a href="${SITE_URL}">Visit senseible.earth</a> | <a href="${SITE_URL}/cbam-calculator">CBAM Calculator</a> | <a href="${SITE_URL}/climate-intelligence">Knowledge Hub</a></p></div></noscript>`;
-  
-  html = html.replace(
-    '<div id="root"></div>',
-    `<div id="root"></div>${noscript}`
-  );
-  
+function renderPage(template, route, R) {
+  const start = template.indexOf(HEAD_START);
+  const end = template.indexOf(HEAD_END);
+  if (start === -1 || end === -1) throw new Error('index.html is missing the <!--seo:head--> markers');
+  let html = template.slice(0, start + HEAD_START.length) + '\n    ' + headTags(route, R) + '\n    ' + template.slice(end);
+  if (!html.includes('<div id="root"></div>')) throw new Error('index.html is missing <div id="root"></div>');
+  html = html.replace('<div id="root"></div>', `<div id="root"></div>\n${bodyHtml(route, R)}`);
   return html;
 }
 
-function escapeHTML(str) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+function sitemapXml(routes, R) {
+  const urls = routes
+    .map(r => {
+      const lastmod = r.lastmod ? `<lastmod>${r.lastmod}</lastmod>` : '';
+      return `  <url><loc>${R.canonicalUrl(r.path)}</loc>${lastmod}<changefreq>${r.changefreq}</changefreq><priority>${r.priority.toFixed(1)}</priority></url>`;
+    })
+    .join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
-function main() {
+const SECTION_TITLES = {
+  core: 'Core pages',
+  tool: 'Free tools',
+  guide: 'Guides',
+  solution: 'Solutions by sector and country',
+  compare: 'Comparisons',
+  industry: 'Industries',
+  legal: 'Legal',
+};
+
+function llmsTxt(routes, R) {
+  const lines = [
+    '# Senseible',
+    '',
+    '> Senseible (senseible.earth) turns business documents such as invoices, energy bills, fuel slips and freight records into Scope 1, 2 and 3 emission records that show the emission factor and source for every line. It serves MSMEs and exporters, enterprise buyers and EU importers that need supplier emissions data, and lenders. Operated from Gurugram, India. Contact: impact@senseible.earth. Senseible is not related to Sensibull, an options-trading platform.',
+    '',
+    `Every page below has a Markdown mirror: replace the path with /md/{path}.md (the homepage is /md/index.md).`,
+  ];
+  for (const [section, title] of Object.entries(SECTION_TITLES)) {
+    const items = routes.filter(r => r.section === section);
+    if (!items.length) continue;
+    lines.push('', `## ${title}`, '');
+    for (const r of items) lines.push(`- [${r.h1}](${R.canonicalUrl(r.path)}): ${r.description}`);
+  }
+  return lines.join('\n') + '\n';
+}
+
+function markdownMirror(route, R) {
+  return [
+    `# ${route.h1}`,
+    '',
+    `Canonical: ${R.canonicalUrl(route.path)}`,
+    '',
+    R.blocksToMarkdown(route.blocks),
+    '',
+  ].join('\n');
+}
+
+function writeFile(file, content) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, content);
+}
+
+function writeSupportFiles(baseDir, routes, R) {
+  writeFile(path.join(baseDir, 'sitemap.xml'), sitemapXml(routes, R));
+  writeFile(path.join(baseDir, 'llms.txt'), llmsTxt(routes, R));
+  fs.rmSync(path.join(baseDir, 'md'), { recursive: true, force: true });
+  for (const r of routes) writeFile(path.join(baseDir, mdPathFor(r.path)), markdownMirror(r, R));
+}
+
+async function main() {
+  const R = await loadRegistry();
+  const routes = R.getSeoRoutes();
+
+  const seen = new Set();
+  for (const r of routes) {
+    if (seen.has(r.path)) throw new Error(`Duplicate route in registry: ${r.path}`);
+    seen.add(r.path);
+  }
+
+  if (process.argv.includes('--sync-public')) {
+    writeSupportFiles(PUBLIC_DIR, routes, R);
+    console.log(`✅ Synced public/ sitemap.xml, llms.txt and ${routes.length} Markdown mirrors`);
+    return;
+  }
+
   const indexPath = path.join(DIST_DIR, 'index.html');
-  
-  if (!fs.existsSync(indexPath)) {
-    console.error('Error: dist/index.html not found. Run `vite build` first.');
-    process.exit(1);
+  if (!fs.existsSync(indexPath)) throw new Error('dist/index.html not found. Run `vite build` first.');
+  const template = fs.readFileSync(indexPath, 'utf-8');
+
+  // Each route is written as both {route}.html and {route}/index.html, so hosts
+  // that resolve clean URLs either way serve the prerendered page for /route
+  // without a trailing-slash redirect away from the canonical URL.
+  for (const r of routes) {
+    const html = renderPage(template, r, R);
+    if (r.path === '/') { writeFile(indexPath, html); continue; }
+    writeFile(path.join(DIST_DIR, `${r.path}.html`), html);
+    writeFile(path.join(DIST_DIR, r.path, 'index.html'), html);
   }
-  
-  const templateHTML = fs.readFileSync(indexPath, 'utf-8');
-  let generated = 0;
-  
-  for (const route of routes) {
-    if (route.path === '/') continue;
-    
-    const dirPath = path.join(DIST_DIR, route.path);
-    const filePath = path.join(dirPath, 'index.html');
-    
-    fs.mkdirSync(dirPath, { recursive: true });
-    fs.writeFileSync(filePath, generateHTML(route, templateHTML));
-    generated++;
-  }
-  
-  const homeRoute = routes.find(r => r.path === '/');
-  if (homeRoute) {
-    fs.writeFileSync(indexPath, generateHTML(homeRoute, templateHTML));
-  }
-  
-  console.log(`✅ Generated ${generated} static HTML files for SEO pre-rendering`);
-  console.log(`📊 Routes: ${getCMSArticleSlugs().length} articles, ${getSolutionSlugs().length} solutions, ${getCompetitorSlugs().length} competitors, 6 industries`);
+  writeSupportFiles(DIST_DIR, routes, R);
+
+  const bySection = routes.reduce((acc, r) => ({ ...acc, [r.section]: (acc[r.section] || 0) + 1 }), {});
+  console.log(`✅ Prerendered ${routes.length} routes, sitemap.xml, llms.txt and Markdown mirrors`);
+  console.log(`📊 ${Object.entries(bySection).map(([k, v]) => `${v} ${k}`).join(', ')}`);
 }
 
-main();
+main().catch(err => {
+  console.error('❌ SEO prerender failed:', err.message);
+  process.exit(1);
+});

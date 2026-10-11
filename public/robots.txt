@@ -1,54 +1,65 @@
-# Senseible Carbon Intelligence Platform
-# https://senseible.earth
-# AI-powered carbon MRV for MSMEs
+# Senseible: https://senseible.earth
+# Public pages are open to search and AI crawlers. Signed-in and transactional
+# routes are excluded here and also carry a noindex tag.
 
 User-agent: *
 Allow: /
-Allow: /solutions/
-Allow: /climate-intelligence/
-Allow: /industries/
-Allow: /vs/
-Allow: /cbam-calculator
-Allow: /net-zero
-Allow: /calculators
-Allow: /calculators/
-Allow: /mission
-Allow: /about
-Allow: /pricing
-Allow: /contact
-Allow: /principles
-Allow: /carbon-credits
-Allow: /trust
-Allow: /climate-finance
-Allow: /partners
-Allow: /grants
-Allow: /llms.txt
-Allow: /md/
 Disallow: /api/
 Disallow: /auth
+Disallow: /reset-password
+Disallow: /dashboard
+Disallow: /history
+Disallow: /verify
+Disallow: /monetize
+Disallow: /reports
+Disallow: /mrv-dashboard
+Disallow: /partner-dashboard
+Disallow: /partner-profile
+Disallow: /partner-reports
 Disallow: /settings
 Disallow: /profile
 Disallow: /subscription
+Disallow: /billing
+Disallow: /team
 Disallow: /payment-success
-Disallow: /partner-dashboard
-Disallow: /dashboard
-Disallow: /reports
-Disallow: /verify
-Disallow: /monetize
-Disallow: /mrv-dashboard
-Disallow: /history
+Disallow: /accept-invite
 Disallow: /admin
+Disallow: /cms-admin
+Disallow: /calculators/history
 
-# Search Engines
+# Search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
 
-# Social Media Crawlers
+# AI search and assistants (named explicitly so a later edit cannot block them)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Social previews
 User-agent: Twitterbot
 Allow: /
 
@@ -58,48 +69,4 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# AI Assistants
-User-agent: GPTBot
-Allow: /solutions/
-Allow: /climate-intelligence/
-Allow: /industries/
-Allow: /vs/
-Allow: /cbam-calculator
-Allow: /net-zero
-Allow: /mission
-Allow: /about
-Allow: /pricing
-Disallow: /dashboard
-Disallow: /auth
-
-User-agent: Claude-Web
-Allow: /solutions/
-Allow: /climate-intelligence/
-Allow: /industries/
-Allow: /vs/
-Allow: /cbam-calculator
-Allow: /mission
-Allow: /about
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /solutions/
-Allow: /climate-intelligence/
-
-User-agent: PerplexityBot
-Allow: /solutions/
-Allow: /climate-intelligence/
-Allow: /industries/
-Allow: /vs/
-Allow: /cbam-calculator
-Allow: /mission
-Allow: /about
-Allow: /pricing
-
-# Sitemap
 Sitemap: https://senseible.earth/sitemap.xml
-
-# Host
-Host: https://senseible.earth

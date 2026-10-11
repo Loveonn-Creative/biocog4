@@ -78,7 +78,7 @@ const Platform = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <SEOHead
         title="Senseible — The Platform"
-        description="What Senseible does, who it's for, and how it turns ordinary business documents into climate evidence trusted by auditors, lenders, regulators and carbon buyers."
+        description="What Senseible does, who it's for, and how it turns ordinary business documents into climate evidence built to hold up with auditors, lenders, regulators and carbon buyers."
         canonical="/platform"
         image={`https://senseible.earth${platformOg}`}
         keywords={["climate platform", "carbon MRV platform", "verified emissions", "MSME climate", "Senseible platform"]}

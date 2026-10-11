@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { pageMeta, fitTitle, canonicalUrl as toCanonicalUrl, CANONICAL_ALIASES, canonicalPath, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo/seoMeta";
 
 interface BreadcrumbItem {
   name: string;
@@ -31,7 +33,7 @@ export const SEOHead = ({
   description,
   canonical,
   type = 'website',
-  image = 'https://senseible.earth/og-image.png',
+  image = DEFAULT_OG_IMAGE,
   keywords = [],
   article,
   noIndex = false,
@@ -40,9 +42,20 @@ export const SEOHead = ({
   howToSchema,
   showOrgSchema = false,
 }: SEOHeadProps) => {
-  const fullTitle = title.includes('Senseible') ? title : `${title} | Senseible`;
-  const siteUrl = 'https://senseible.earth';
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : undefined;
+  const { pathname } = useLocation();
+  // Registered static pages always use the shared metadata so the rendered
+  // head matches the prerendered HTML exactly.
+  const registered = pageMeta(canonical ?? pathname);
+  if (registered) {
+    title = registered.title;
+    description = registered.description;
+  }
+  const fullTitle = fitTitle(title);
+  const siteUrl = SITE_URL;
+  // Without an explicit canonical, RouteSEO supplies one from the current path.
+  const canonicalUrl = canonical
+    ? toCanonicalUrl(CANONICAL_ALIASES[canonicalPath(canonical)] ?? canonical)
+    : undefined;
   
   const baseKeywords = [
     'senseible', 'sensible', 'senseible.earth', 'senseible carbon',

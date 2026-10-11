@@ -451,7 +451,7 @@ The EU Carbon Border Adjustment Mechanism (CBAM) begins charging tariffs on impo
 **How Senseible Solves This:**
 Traditional MRV costs ₹50,000 to ₹5,00,000 annually and takes months. Senseible reduces this to seconds — upload an invoice, get verified carbon data. No consultants, no forms, no waiting.
 
-Start with one document. See your carbon footprint in 47 seconds. [Try it now](/). Learn more about [carbon credits](/carbon-credits) and [climate finance](/climate-finance) opportunities.`,
+Start with one document. See your carbon footprint from one document. [Try it now](/). Learn more about [carbon credits](/carbon-credits) and [climate finance](/climate-finance) opportunities.`,
     tags: ['carbon MRV', 'MSME', '2026 compliance', 'CBAM', 'climate reporting', 'senseible'],
     category: 'regulations',
     createdAt: '2025-01-15',
@@ -1104,7 +1104,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     featured: true
   },
   {
-    id: '28',
+    id: '126',
     slug: 'why-every-invoice-needs-trust-score',
     title: 'Why Every Invoice Needs a Trust Score — Not Just Pass/Fail',
     subtitle: 'Removing Uncertainty from Carbon Verification',
@@ -1115,7 +1115,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     featured: true
   },
   {
-    id: '29',
+    id: '127',
     slug: 'proof-graph-how-carbon-value-calculated',
     title: 'The Proof Graph: See Exactly How Your Carbon Value Is Calculated',
     subtitle: 'Traceable MRV for Every Invoice',
@@ -1126,7 +1126,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     featured: true
   },
   {
-    id: '30',
+    id: '128',
     slug: 'auto-validation-catches-gaps-before-submit',
     title: 'Stop Fearing Rejection: Auto-Validation Catches Gaps Before You Submit',
     subtitle: 'Pre-Submission Intelligence for MSMEs',
@@ -1137,18 +1137,18 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     featured: true
   },
   {
-    id: '31',
+    id: '129',
     slug: 'dynamic-benchmarking-400m-msmes',
-    title: 'How Do You Compare? Dynamic Benchmarking Against 400M MSMEs',
+    title: 'How Do You Compare? Dynamic Benchmarking for MSMEs',
     subtitle: 'Context Kills Uncertainty More Than Raw Numbers',
-    content: `Knowing your Scope 1 emissions are 3,200 kg CO₂e means nothing without context. Are you efficient or wasteful? Dynamic Benchmarking answers this: "Your electricity intensity is 23% below textile sector average" or "Your Scope 1 ratio is 12% above manufacturing benchmark." These comparisons use sector-specific data from India's 400 million MSMEs, normalized by revenue and employee count. A pharmaceutical manufacturer in Hyderabad instantly sees how their emission profile compares to peers — not global corporations, but businesses of similar size and sector. This context transforms raw numbers into actionable intelligence. If you're 15% below sector average, that's a competitive advantage worth marketing to EU buyers under CBAM. If you're 20% above, the system suggests specific reduction strategies: "Switching to solar PPA would reduce your Scope 2 by 40% and bring you below sector median." Benchmarking also builds confidence for monetization: MSMEs below sector average qualify for premium carbon credit pricing. The data is updated as more MSMEs join the platform, creating a living benchmark that becomes more accurate over time. No consultant, no industry report — just your position relative to peers, updated in real time.`,
+    content: `Knowing your Scope 1 emissions are 3,200 kg CO₂e means nothing without context. Are you efficient or wasteful? Dynamic Benchmarking answers this: "Your electricity intensity is 23% below textile sector average" or "Your Scope 1 ratio is 12% above manufacturing benchmark." These comparisons use sector-specific benchmark data, normalized by revenue and employee count. A pharmaceutical manufacturer in Hyderabad instantly sees how their emission profile compares to peers — not global corporations, but businesses of similar size and sector. This context transforms raw numbers into actionable intelligence. If you're 15% below sector average, that's a competitive advantage worth marketing to EU buyers under CBAM. If you're 20% above, the system suggests specific reduction strategies: "Switching to solar PPA would reduce your Scope 2 by 40% and bring you below sector median." Benchmarking also builds confidence for monetization: MSMEs below sector average qualify for premium carbon credit pricing. The data is updated as more MSMEs join the platform, creating a living benchmark that becomes more accurate over time. No consultant, no industry report — just your position relative to peers, updated in real time.`,
     tags: ['benchmarking', 'MSME', 'sector comparison', 'carbon intensity', 'competitive advantage'],
     category: 'manufacturing',
     createdAt: '2025-04-01',
     featured: true
   },
   {
-    id: '32',
+    id: '130',
     slug: 'confidence-bands-beat-false-precision',
     title: 'Honest Uncertainty: Why Confidence Bands Beat False Precision',
     subtitle: 'Building Trust Through Transparent Uncertainty',
@@ -1250,7 +1250,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     id: '41',
     slug: 'sector-benchmarking-context-raw-data-decisions',
     title: 'Sector Benchmarking: Context That Turns Raw Data Into Decisions',
-    subtitle: 'How Do You Compare Against 400M MSMEs?',
+    subtitle: 'How Do You Compare Against Your Sector?',
     content: `A textile manufacturer emitting 500 kg CO₂e per month has no idea if that's good or bad without context. Dynamic Benchmarking provides that context: "Your electricity intensity is 23% below the textile sector average" or "Your Scope 1 ratio is 12% above manufacturing benchmarks." This comparison uses IEA 2023 published data and sector-specific intensity ratios from India's Central Electricity Authority. The benchmarks cover 7 sectors across 10 Asian countries, adjusting for local grid emission factors. A Bangladesh RMG exporter sees different benchmarks than a Tirupur textile unit — same sector, different grid factors, different regulatory contexts. For MSMEs, benchmarking removes the abstract from carbon data. Instead of "you emitted 1.2 tonnes," the message becomes "you're in the top 30% of your sector — this qualifies for green finance." For lenders evaluating green loan applications, benchmarking provides the risk context they need: an MSME performing better than sector average represents lower transition risk. For EU buyers evaluating suppliers, benchmarking answers the question: "Is this supplier's carbon performance competitive?" Dynamic benchmarking turns carbon accounting from a compliance burden into a competitive advantage signal.`,
     tags: ['benchmarking', 'sector comparison', 'competitive advantage', 'green finance', 'IEA data'],
     category: 'data-traceability',
@@ -1451,7 +1451,7 @@ The world is reshuffling supply chains. MSMEs with verified sustainability data 
     slug: 'carbon-audit-small-business-india-complete-guide',
     title: 'Carbon Audit for Small Business India: Complete 2026 Guide',
     subtitle: 'Data Traceability & Verification',
-    content: `BRSR requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate. A carbon audit typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity at 0.708 kgCO2 per kWh India grid factor), and Scope 3 (raw materials, freight, employee commute). Cost comparison: Traditional consultant audit: INR 3-8 lakhs, 4-8 weeks. Senseible automated audit: INR 0 (free tier) to INR 15,000 (premium), under 47 seconds per document. Documents needed: 12 months of electricity bills, diesel and petrol receipts, LPG invoices, vehicle log books, raw material purchase orders. GSTIN integration enables automatic vendor classification and HSN code-based emission factor matching. Benefits: Access to SIDBI green loans at 2-3% lower rates, MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility.`,
+    content: `BRSR requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate. A carbon audit typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity at 0.708 kgCO2 per kWh India grid factor), and Scope 3 (raw materials, freight, employee commute). Cost comparison: Traditional consultant audit: INR 3-8 lakhs, 4-8 weeks. Senseible automated audit: INR 0 (free tier) to INR 15,000 (premium), processed per document on upload. Documents needed: 12 months of electricity bills, diesel and petrol receipts, LPG invoices, vehicle log books, raw material purchase orders. GSTIN integration enables automatic vendor classification and HSN code-based emission factor matching. Benefits: Access to SIDBI green loans at 2-3% lower rates, MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility.`,
     tags: ['carbon audit', 'small business', 'India', 'BRSR', 'GSTIN', 'MSME'],
     category: 'data-traceability',
     createdAt: '2026-03-26',
@@ -1910,7 +1910,7 @@ Pull last 12 months of electricity bills, fuel invoices, freight bills and bigge
 - Procurement switch to nearest supplier (2–5% Scope 3 cut)
 
 ## Months 7–9: Capex decisions
-Apply your [internal carbon price](/cms/article/msme-internal-carbon-price-implementation-guide). Decide on rooftop solar, heat pump, or freight mode shift using the [Energy Transition calculator](/calculators/energy-transition-savings).
+Apply your [internal carbon price](/climate-intelligence/msme-internal-carbon-price-implementation-guide). Decide on rooftop solar, heat pump, or freight mode shift using the [Energy Transition calculator](/calculators/energy-transition-savings).
 
 ## Months 10–11: Engage suppliers
 Send your top 5 suppliers a one-page PCF request. Use it to qualify them for renewals.
@@ -2532,7 +2532,7 @@ ISO 59020 does not require an external audit but does require traceability. The 
 - Take-back deposit on packaging
 - Refurbished spare parts catalogue
 - Design for disassembly review on top 3 SKUs
-- Switch primary aluminium / steel for recycled (see [aluminium recycling article](/cms/article/msme-aluminium-recycling-scope-3-savings))
+- Switch primary aluminium / steel for recycled (see [aluminium recycling article](/climate-intelligence/msme-aluminium-recycling-scope-3-savings))
 
 Use [Senseible](/) to track material flows alongside emissions in one ledger.`,
     tags: ['ISO 59020', 'circular economy', 'recycling', 'CSRD ESRS E5', 'material productivity'],
@@ -2646,7 +2646,7 @@ First-time verification under ISO 14064-3 reasonable assurance: 6–10 weeks. Li
 - [Senseible homepage](/) for one-tap upload
 - [Calculator hub](/calculators) for instant numerics
 - [CBAM Cost Estimator](/cbam-calculator) for EU exposure
-- [Knowledge hub](/cms) for written deep-dives`,
+- [Knowledge hub](/climate-intelligence) for written deep-dives`,
     tags: ['voice search', 'CBAM FAQ', 'BRSR Lite', 'verification cost', 'MSME questions'],
     category: 'regulations',
     createdAt: '2026-05-06',
@@ -3054,7 +3054,7 @@ If you are the MSME *buying* credits to make a product claim, you are using offs
 |---|---|---|
 | Cadence | Annual, one-off | Continuous, per-document |
 | Cost per cycle | ₹6L–₹40L (consultant-led) | ₹0.5–₹5 per document |
-| Time to first number | 8–14 weeks | Under 47 seconds per document |
+| Time to first number | 8–14 weeks | Same session as upload |
 | Evidence basis | Sample of documents | 100% of documents ingested |
 | Reproducibility | Audit-firm-specific | Deterministic — re-runnable by anyone with same inputs |
 | Failure mode | Silent estimate or rounding | Explicit failure with math reason |

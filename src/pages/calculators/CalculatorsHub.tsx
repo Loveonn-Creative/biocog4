@@ -87,12 +87,7 @@ const CalculatorsHub = () => {
   return (
     <>
       <Helmet>
-        <title>Climate Calculators for MSMEs | CBAM, PCF, Solar ROI | Senseible</title>
-        <meta name="description" content="Free deterministic climate calculators for MSMEs: CBAM, Product Carbon Footprint, Supplier Risk, Solar ROI, Logistics emissions, Carbon pricing." />
         <meta name="keywords" content="climate calculators, carbon calculator, cbam calculator, pcf calculator, solar roi, logistics emissions, MSME carbon" />
-        <link rel="canonical" href="https://senseible.earth/calculators" />
-        <meta property="og:title" content="Climate Calculators for MSMEs | Senseible" />
-        <meta property="og:description" content="Free deterministic calculators aligned with ISO 14067, GLEC v3.0, GHG Protocol, EU CBAM and IEA grid factors." />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

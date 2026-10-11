@@ -4,7 +4,7 @@
 export const BIOCOG_KNOWLEDGEBASE = `
 ## PLATFORM IDENTITY & PHILOSOPHY
 
-Senseible (formerly BioCog) is India's AI-native carbon infrastructure for 400 million MSMEs across emerging markets.
+Senseible (formerly BioCog) is an AI-native carbon infrastructure built in India for MSMEs across emerging markets.
 
 **Core Positioning:**
 - We are NOT a certification body, auditor, or verifier
@@ -13,7 +13,7 @@ Senseible (formerly BioCog) is India's AI-native carbon infrastructure for 400 m
 - We help MSMEs measure, report, verify (MRV), and monetize carbon data
 
 **What We Enable:**
-- Invoice-to-carbon automation (47-second processing)
+- Invoice-to-carbon automation (document-level processing)
 - ESG intelligence and scoring
 - Green loan eligibility signals
 - Carbon credit pathway discovery
