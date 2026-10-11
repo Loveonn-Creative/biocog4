@@ -6,7 +6,7 @@
 import type { Block } from './render';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
 
-const STATUS = { live: 'Live', pilot: 'Pilot', roadmap: 'Roadmap' } as const;
+const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
 const capList = (items: Capability[]): Block => ({ ul: items.map(c => `${c.label} (${STATUS[c.status]})${c.note ? `: ${c.note}` : ''}`) });
 
 export const EUR_LEX_CBAM = 'https://eur-lex.europa.eu/eli/reg/2023/956/oj';
@@ -57,7 +57,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/enterprise': {
     h1: 'Supplier emissions, without the chasing',
     blocks: [
-      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Being built: the supplier network. Every capability below is marked Live, Pilot or Roadmap.' },
+      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
       { h2: 'How the agents work' },
       { p: 'Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.' },
       capList(pipelineStages),
