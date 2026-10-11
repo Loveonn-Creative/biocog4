@@ -91,7 +91,7 @@ interface VerificationResult {
     flags: string[];
     scopeBreakdown: { scope1: number; scope2: number; scope3: number };
     emissionIntensity: number | null;
-    greenScore: number;
+    greenScore: number | null;
     creditEligibility: {
       eligibleCredits: number;
       carryForward: number;
@@ -235,22 +235,12 @@ function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResult
   return { risk, factors };
 }
 
-function calculateGreenScore(scopeBreakdown: { scope1: number; scope2: number; scope3: number }, reductions: number, total: number): number {
-  if (total === 0) return 0;
-  
-  const scope1Pct = scopeBreakdown.scope1 / total;
-  const scope2Pct = scopeBreakdown.scope2 / total;
-  const scope3Pct = scopeBreakdown.scope3 / total;
-  
-  // Base score deductions based on scope distribution
-  let score = 100 - (scope1Pct * 50) - (scope2Pct * 30) - (scope3Pct * 20);
-  
-  // Reduction bonus (capped at 30%)
-  const reductionRatio = Math.min(reductions / total, 0.3);
-  score += reductionRatio * 100;
-  
-  return Math.max(0, Math.min(100, Math.round(score)));
-}
+// No green score is computed. The previous formula scored the mix of scopes
+// (100 - 50 x Scope 1 share - 30 x Scope 2 share - 20 x Scope 3 share), which
+// does not depend on how much is emitted or reduced and has no basis in the
+// GHG Protocol. A low-carbon measure needs avoided or renewable activity data,
+// which verified emission rows do not carry, so the field is null ("not
+// assessed") rather than a made-up number.
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -431,7 +421,7 @@ serve(async (req) => {
     const { risk: greenwashingRisk, factors: greenwashingFactors } = calculateGreenwashingRisk(emissions, validationResults);
 
     // Step 7: Calculate green score
-    const greenScore = calculateGreenScore(scopeBreakdown, verifiedReductions, totalCO2Kg);
+    const greenScore: number | null = null;
 
     // Step 8: Determine verification status
     const validCount = Array.from(validationResults.values()).filter(v => v.valid).length;
@@ -440,15 +430,17 @@ serve(async (req) => {
     let status: 'verified' | 'needs_review' | 'rejected';
     let verificationScore: number;
     
+    // The score is the plain share of records that passed the evidence
+    // checks (0 to 1). It measures evidence quality only: it is not carbon
+    // performance and not credit or payment eligibility. It used to be
+    // stretched into bands (e.g. 80% passing showed as 97%).
+    verificationScore = validRatio;
     if (validRatio >= 0.8 && greenwashingRisk === 'low') {
       status = 'verified';
-      verificationScore = 0.85 + (validRatio * 0.15);
     } else if (validRatio >= 0.5 && greenwashingRisk !== 'high') {
       status = 'needs_review';
-      verificationScore = 0.5 + (validRatio * 0.35);
     } else {
       status = 'rejected';
-      verificationScore = validRatio * 0.5;
     }
 
     // Determine quality grade
@@ -493,7 +485,6 @@ Total Emissions: ${totalCO2Kg.toFixed(2)} kg CO₂e
 Scope 1: ${scopeBreakdown.scope1.toFixed(2)} kg (${((scopeBreakdown.scope1/totalCO2Kg)*100 || 0).toFixed(1)}%)
 Scope 2: ${scopeBreakdown.scope2.toFixed(2)} kg (${((scopeBreakdown.scope2/totalCO2Kg)*100 || 0).toFixed(1)}%)
 Scope 3: ${scopeBreakdown.scope3.toFixed(2)} kg (${((scopeBreakdown.scope3/totalCO2Kg)*100 || 0).toFixed(1)}%)
-Green Score: ${greenScore}/100
 Greenwashing Risk: ${greenwashingRisk}
 Validation Issues: ${allFlags.slice(0, 5).join(', ') || 'None'}
 

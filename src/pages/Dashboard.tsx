@@ -30,6 +30,7 @@ import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
 import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
 import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
+import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
   DEFAULT_FILTERS,
   resolveWindow,
@@ -130,6 +131,8 @@ const Dashboard = () => {
   }, [activeContext, navigate]);
 
   // Initial fetch
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { fetchVerificationData(); });
   useEffect(() => {
     fetchVerificationData();
   }, [sessionId, user?.id]);

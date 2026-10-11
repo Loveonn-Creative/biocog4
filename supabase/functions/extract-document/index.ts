@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -313,6 +314,12 @@ CRITICAL EXTRACTION RULES:
    - Make up HSN codes
 
 4. If a field is not clearly visible, set it to null - DO NOT GUESS.
+   Handwritten bills: read digits slowly and check them against the line total
+   (quantity x unit price) when both are written. If a handwritten quantity or
+   unit is ambiguous (for example 1 vs 7, 0 vs 6, a smudged decimal point), set
+   it to null and copy what you can see into sourceText. Never pick the more
+   likely reading.
+   Also return "legibility": "printed", "handwritten" or "mixed" at the top level.
 
 5. If this is NOT a business document (selfie, ID card, etc.), set documentType to "unknown".
 
@@ -388,6 +395,25 @@ serve(async (req) => {
     }
     console.log(`Document hash generated: ${documentHash.substring(0, 16)}...`);
 
+    // ============= PAGE LIMIT FOR PDFs =============
+    // Long PDFs can exceed what one extraction answer holds and come back
+    // incomplete. Refuse them with guidance instead of storing partial data.
+    {
+      const clean = imageBase64.replace(/\s+/g, '');
+      const head = atob(clean);
+      const bytes = new Uint8Array(head.length);
+      for (let i = 0; i < head.length; i++) bytes[i] = head.charCodeAt(i);
+      if (isPdf(bytes)) {
+        const pages = countPdfPages(bytes);
+        if (pages > MAX_PDF_PAGES) {
+          return new Response(
+            JSON.stringify({ error: pageLimitMessage(pages), code: 'too_many_pages', pages, maxPages: MAX_PDF_PAGES }),
+            { status: 413, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+      }
+    }
+
     const supabaseUrl = Deno.env.get('SUPABASE_URL');
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
     const anonKey = Deno.env.get('SUPABASE_ANON_KEY');
@@ -444,9 +470,9 @@ serve(async (req) => {
         if (existingDoc) {
           console.log(`DUPLICATE DETECTED: Hash ${documentHash.substring(0, 16)}... for user ${userId}`);
 
-          const isPaidTier = ['essential', 'pro', 'scale'].includes(userTier);
-
-          if (isPaidTier && existingDoc.cached_result) {
+          // The same file always returns the result stored for it, on every
+          // tier, so one invoice never shows two different sets of numbers.
+          if (existingDoc.cached_result) {
             return new Response(
               JSON.stringify({
                 success: true,

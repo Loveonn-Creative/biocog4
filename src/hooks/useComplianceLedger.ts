@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 import { latestLedgerRowPerEmission, verifiedLedgerTotalKg } from '@/lib/emissionLedger';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 export interface ComplianceLedgerEntry {
   id: string;
   emission_id: string | null;
@@ -159,6 +160,9 @@ export const useComplianceLedger = () => {
       toast.error(`${format} export failed. Please try again.`);
     }
   };
+
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { void fetchEntries(); });
 
   return { entries, verifiedTotalKg, isLoading, refetch: fetchEntries, exportComplianceXLSX, exportGovFormat };
 };

@@ -28,6 +28,7 @@ import {
 } from '@/lib/intelligenceEngine';
 import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 interface VerificationRecord {
   id: string;
   total_co2_kg: number;
@@ -73,6 +74,8 @@ const MRVDashboard = () => {
     }
   }, [activeContext, navigate]);
 
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { fetchVerifications(); });
   useEffect(() => {
     fetchVerifications();
   }, [sessionId, user?.id]);

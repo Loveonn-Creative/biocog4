@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
 import type { Json } from '@/integrations/supabase/types';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 export interface Document {
   id: string;
   document_type: string;
@@ -98,6 +99,9 @@ export function useDocuments() {
       return null;
     }
   };
+
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { void fetchDocuments(); });
 
   return {
     documents,

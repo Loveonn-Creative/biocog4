@@ -9,6 +9,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { toast } from 'sonner';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { getFunctionErrorMessage } from '@/hooks/useOrganization';
+import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
@@ -45,7 +46,7 @@ const History = () => {
         return;
       }
       toast.success('Invoice deleted.');
-      await Promise.all([refreshDocuments(), refreshEmissions(), refreshLedger()]);
+      emitRecordsChanged('delete');
     } finally {
       setDeletingId(null);
     }

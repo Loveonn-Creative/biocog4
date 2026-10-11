@@ -25,6 +25,9 @@ import { DisputeSimulation } from '@/components/trust/DisputeSimulation';
 import { DataConnectors } from '@/components/trust/DataConnectors';
 import { GreenwashingExplainer } from '@/components/trust/GreenwashingExplainer';
 import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
+import { chunk, groupByInvoice, planBulk } from '@/lib/bulkVerify';
+import { emitRecordsChanged } from '@/lib/recordsEvents';
+import { getFunctionErrorMessage } from '@/hooks/useOrganization';
 
 interface NavigationState {
   emissionId?: string;
@@ -45,7 +48,7 @@ interface VerificationResult {
     recommendations: string[];
     flags: string[];
     scopeBreakdown: { scope1: number; scope2: number; scope3: number };
-    greenScore: number;
+    greenScore: number | null;
     creditEligibility: {
       eligibleCredits: number;
       carryForward: number;
@@ -70,6 +73,16 @@ interface BatchRow {
   scope: number;
 }
 
+/** Outcome per invoice in a bulk run. */
+interface InvoiceOutcome {
+  key: string;
+  emissionIds: string[];
+  status: 'verified' | 'needs_review' | 'rejected' | 'needs_inputs' | 'error';
+  score?: number;
+  totalCO2Kg?: number;
+  message?: string;
+}
+
 const Verify = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -86,6 +99,7 @@ const Verify = () => {
   // Rows sent in the last verify call, so result panels still have context
   // after the list refetches and those rows are no longer pending.
   const [lastBatch, setLastBatch] = useState<BatchRow[]>([]);
+  const [outcomes, setOutcomes] = useState<InvoiceOutcome[] | null>(null);
   const [refetchAttempts, setRefetchAttempts] = useState(0);
   const { isEnabled } = useTrustLayerSettings();
 
@@ -121,46 +135,69 @@ const Verify = () => {
     }
   }, [activeContext, navigate]);
 
+  // Bulk verification, per invoice: one preflight lists every missing input,
+  // then each invoice whose lines all have evidence is verified on its own.
+  // Invoices with gaps are listed and left untouched. Re-running sends the
+  // same id set per invoice, so the verifier replays the same result.
   const handleVerify = async () => {
     if (pending.length === 0) return;
     setIsVerifying(true);
     setVerificationResult(null);
     setMissingInputs(null);
     setVerifyError(null);
+    setOutcomes(null);
     setLastBatch(pending.map(e => ({ id: e.id, category: e.category, scope: e.scope })));
-    
+
     try {
-      const { data, error } = await supabase.functions.invoke('verify-carbon', {
-        body: { 
-          emissionIds: pending.map(e => e.id), 
-          sessionId, 
-          userId: user?.id,
-          includeIoT 
+      const missing: MissingInput[] = [];
+      for (const ids of chunk(pending.map(e => e.id))) {
+        const { data, error } = await supabase.functions.invoke('verify-carbon', {
+          body: { emissionIds: ids, sessionId, userId: user?.id, inspectOnly: true },
+        });
+        if (error) throw new Error(await getFunctionErrorMessage(error, 'The evidence check could not run.'));
+        if (Array.isArray(data?.missingInputs)) missing.push(...data.missingInputs);
+      }
+
+      const plan = planBulk(groupByInvoice(pending), missing);
+      const results: InvoiceOutcome[] = plan.blocked.map(g => ({ key: g.key, emissionIds: g.emissionIds, status: 'needs_inputs' as const }));
+      let single: VerificationResult | null = null;
+
+      for (const g of plan.ready) {
+        for (const ids of chunk(g.emissionIds)) {
+          const { data, error } = await supabase.functions.invoke('verify-carbon', {
+            body: { emissionIds: ids, sessionId, userId: user?.id },
+          });
+          if (error) {
+            results.push({ key: g.key, emissionIds: ids, status: 'error', message: await getFunctionErrorMessage(error, 'Verification could not complete.') });
+          } else if (data?.ready === false) {
+            if (Array.isArray(data.missingInputs)) missing.push(...data.missingInputs);
+            results.push({ key: g.key, emissionIds: ids, status: 'needs_inputs' });
+          } else if (data?.success && data?.data) {
+            single = data.data as VerificationResult;
+            results.push({ key: g.key, emissionIds: ids, status: single.status, score: single.score, totalCO2Kg: single.totalCO2Kg });
+          } else {
+            results.push({ key: g.key, emissionIds: ids, status: 'error', message: data?.error || 'Verification returned no outcome.' });
+          }
         }
-      });
-      
-      if (error) throw error;
-
-      // HTTP 200 with ready:false is a preflight result, not a rejection: the
-      // stored records lack inputs needed to verify them.
-      if (data && data.ready === false) {
-        setMissingInputs(Array.isArray(data.missingInputs) ? data.missingInputs : []);
-        toast.info('Some records need more inputs before they can be verified.');
-        return;
       }
 
-      if (data?.success && data?.data) {
-        setVerificationResult(data.data);
-        toast.success(`Verification complete: ${data.data.status.replace('_', ' ')} (${(data.data.score * 100).toFixed(0)}%)`);
-        refetch();
-      } else {
-        throw new Error(data?.error || 'Verification returned no outcome');
-      }
+      setOutcomes(results);
+      const gaps = missing.filter(m => m.fields.length);
+      if (gaps.length) setMissingInputs(gaps);
+      // One invoice: keep the detailed result card as before.
+      if (results.length === 1 && single) setVerificationResult(single);
+
+      const verified = results.filter(r => r.status === 'verified').length;
+      const blocked = results.filter(r => r.status === 'needs_inputs').length;
+      const failed = results.filter(r => r.status === 'error').length;
+      if (results.some(r => r.status !== 'needs_inputs' && r.status !== 'error')) emitRecordsChanged('verify');
+      await refetch();
+      if (failed) toast.error(`${failed} invoice${failed === 1 ? '' : 's'} could not be verified. See below.`);
+      else if (blocked && !verified) toast.info('Nothing verified yet: every invoice needs more inputs.');
+      else toast.success(`${verified} invoice${verified === 1 ? '' : 's'} verified${blocked ? `, ${blocked} need${blocked === 1 ? 's' : ''} inputs` : ''}.`);
     } catch (err) {
       console.error('Verification error:', err);
-      const message = err instanceof Error ? err.message : 'Verification could not complete';
-      // Show an error card, not a fabricated verification outcome.
-      setVerifyError(message);
+      setVerifyError(err instanceof Error ? err.message : 'Verification could not complete');
       toast.error('Verification could not complete. See details below.');
     } finally {
       setIsVerifying(false);
@@ -319,6 +356,41 @@ const Verify = () => {
           </CardContent>
         </Card>
 
+        {/* Bulk run: one line per invoice */}
+        {outcomes && outcomes.length > 1 && (
+          <Card className="mb-6">
+            <CardHeader>
+              <CardTitle className="text-lg">Verification by invoice</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="divide-y divide-border">
+                {outcomes.map((o, i) => {
+                  const rows = lastBatch.filter(r => o.emissionIds.includes(r.id));
+                  const label = [...new Set(rows.map(r => r.category))].join(', ') || 'Invoice';
+                  const tone = o.status === 'verified' ? 'text-success' : o.status === 'needs_inputs' || o.status === 'needs_review' ? 'text-warning' : 'text-destructive';
+                  const text = o.status === 'verified' ? 'Verified'
+                    : o.status === 'needs_review' ? 'Needs review'
+                    : o.status === 'rejected' ? 'Rejected'
+                    : o.status === 'needs_inputs' ? 'Needs inputs, not verified'
+                    : 'Could not verify';
+                  return (
+                    <li key={`${o.key}-${i}`} className="flex items-center justify-between gap-3 py-2.5 text-sm">
+                      <span className="min-w-0">
+                        <span className="capitalize font-medium">{label}</span>
+                        <span className="text-xs text-muted-foreground ml-2">{o.emissionIds.length} line{o.emissionIds.length === 1 ? '' : 's'}</span>
+                        {o.message && <span className="block text-xs text-muted-foreground">{o.message}</span>}
+                      </span>
+                      <span className={`shrink-0 font-medium ${tone}`}>
+                        {text}{typeof o.totalCO2Kg === 'number' && o.status === 'verified' ? ` · ${o.totalCO2Kg.toFixed(1)} kg` : ''}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Needs inputs: preflight said stored records are incomplete */}
         {missingInputs && (
           <Card className="mb-6 border-2 border-warning/50">
@@ -330,7 +402,7 @@ const Verify = () => {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                Nothing was verified or rejected. These records are missing inputs that verification needs. Upload a clearer invoice or correct the source data, then try again.
+                These invoices were not verified. Their records are missing inputs that verification needs. Upload a clearer invoice or correct the source data, then try again.
               </p>
               {missingInputs.length === 0 ? (
                 <p className="text-sm">The verifier did not list the missing inputs.</p>
@@ -420,9 +492,9 @@ const Verify = () => {
                     <p className="text-xs text-muted-foreground">kg CO₂e</p>
                   </div>
                   <div className="p-4 rounded-lg bg-success/10">
-                    <p className="text-xs text-muted-foreground mb-1">Green Score</p>
-                    <p className="text-xl font-mono font-bold text-success">{verificationResult.analysis.greenScore}</p>
-                    <p className="text-xs text-muted-foreground">/100</p>
+                    <p className="text-xs text-muted-foreground mb-1">Evidence score</p>
+                    <p className="text-xl font-mono font-bold text-success">{Math.round(verificationResult.score * 100)}%</p>
+                    <p className="text-xs text-muted-foreground">records passing checks</p>
                   </div>
                   <div className="p-4 rounded-lg bg-primary/10">
                     <p className="text-xs text-muted-foreground mb-1">Credit Quality</p>

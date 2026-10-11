@@ -19,6 +19,7 @@ import {
 import { cn } from '@/lib/utils';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
+import { checkUploadPages } from '@/lib/pdfLimit';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
@@ -88,6 +89,15 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       setFiles(prev => prev.map((f, idx) => 
         idx === i ? { ...f, status: 'processing' as const } : f
       ));
+
+      // Long PDFs are refused before upload rather than parsed partially.
+      const pageCheck = await checkUploadPages(fileStatus.file);
+      if (!pageCheck.ok) {
+        setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'error' as const, message: pageCheck.message } : f));
+        results.errors++;
+        setProgress(((i + 1) / totalFiles) * 100);
+        continue;
+      }
 
       try {
         const imageBase64 = await fileToBase64(fileStatus.file);

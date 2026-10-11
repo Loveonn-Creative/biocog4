@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code session files and local tool clutter
+.claude/
+CLAUDE.local.md
+coverage
+.cache

@@ -107,9 +107,9 @@ export const VerificationStatusCard = ({
                 {getStatusIcon()}
               </div>
               <div>
-                <h3 className="font-semibold">Verification Score</h3>
+                <h3 className="font-semibold">Evidence score</h3>
                 <p className="text-xs text-muted-foreground">
-                  {latestStatus === 'verified' ? 'Data verified' : 
+                  {latestStatus === 'verified' ? 'Records passing evidence checks' : 
                    unverifiedCount > 0 ? 'Action needed' : 
                    totalEmissions === 0 ? 'No data yet' : 'Ready'}
                 </p>
