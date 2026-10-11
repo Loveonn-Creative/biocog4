@@ -117,7 +117,6 @@ const Monetize = () => {
   ).size;
 
   // Dynamic eligibility
-  const greenScore = verifications[0]?.ai_analysis?.greenScore || 0;
   const qualityGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
 
   // Refetch when records change anywhere (verify, delete, upload).
@@ -236,10 +235,9 @@ const Monetize = () => {
       desc: 'Lenders set their own terms for green loans. No saving is estimated here.',
       partner: 'SBI Green Finance',
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
-      requirements: ['Green Score 60+', 'Verified carbon data', 'Business registration'],
+      requirements: ['Verified carbon data', 'Business registration'],
       timeline: '1-2 weeks approval',
       checks: [
-        { label: `Green Score 60+ (yours: ${greenScore})`, pass: greenScore >= 60 },
         { label: 'Verified carbon data', pass: verifications.length > 0 },
         { label: `Credibility Grade C+ (yours: ${credibility.grade})`, pass: credibility.score >= 35 },
       ],

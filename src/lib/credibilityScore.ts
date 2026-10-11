@@ -1,14 +1,18 @@
 /**
  * Climate Credibility Score (0-100)
  * 
- * A unified trust metric computed from MSME invoice history,
- * verification performance, green benefit ratio, and data completeness.
- * 
+ * How far a business's climate data can be trusted: evidence quality only.
+ * It says nothing about how green the business is, and it is not a credit,
+ * loan or payment eligibility decision.
+ *
  * Formula:
- * - 30% avg verification_score across verifications
- * - 25% green benefit ratio (green invoices / total)
- * - 25% data completeness (% with vendor+date+amount+HSN)
- * - 20% history depth (verified doc count, capped at 50)
+ * - 40% average evidence score (share of records passing checks)
+ * - 40% data completeness (% of ledger rows with vendor, date, amount, HSN)
+ * - 20% history depth (verifications, capped at 50)
+ *
+ * The green-benefit ratio used to carry 25% of the weight; it measures
+ * performance, not credibility, so it is reported separately (greenRatio)
+ * and no longer moves the score.
  */
 
 interface VerificationInput {
@@ -66,9 +70,8 @@ export function computeCredibilityScore(
 
   // Weighted score
   const score = Math.round(
-    0.30 * avgVerification +
-    0.25 * greenRatio +
-    0.25 * dataCompleteness +
+    0.40 * avgVerification +
+    0.40 * dataCompleteness +
     0.20 * historyDepth
   );
 

@@ -48,7 +48,7 @@ interface VerificationResult {
     recommendations: string[];
     flags: string[];
     scopeBreakdown: { scope1: number; scope2: number; scope3: number };
-    greenScore: number;
+    greenScore: number | null;
     creditEligibility: {
       eligibleCredits: number;
       carryForward: number;
@@ -492,9 +492,9 @@ const Verify = () => {
                     <p className="text-xs text-muted-foreground">kg CO₂e</p>
                   </div>
                   <div className="p-4 rounded-lg bg-success/10">
-                    <p className="text-xs text-muted-foreground mb-1">Green Score</p>
-                    <p className="text-xl font-mono font-bold text-success">{verificationResult.analysis.greenScore}</p>
-                    <p className="text-xs text-muted-foreground">/100</p>
+                    <p className="text-xs text-muted-foreground mb-1">Evidence score</p>
+                    <p className="text-xl font-mono font-bold text-success">{Math.round(verificationResult.score * 100)}%</p>
+                    <p className="text-xs text-muted-foreground">records passing checks</p>
                   </div>
                   <div className="p-4 rounded-lg bg-primary/10">
                     <p className="text-xs text-muted-foreground mb-1">Credit Quality</p>
