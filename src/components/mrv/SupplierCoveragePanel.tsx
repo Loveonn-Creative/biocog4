@@ -28,7 +28,7 @@ export const SupplierCoveragePanel = () => {
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground">
           No supplier is visible yet. Suppliers appear here as soon as invoices carrying a vendor
-          name are captured — nothing is assumed on your behalf.
+          name are captured; nothing is assumed on your behalf.
         </CardContent>
       </Card>
     );

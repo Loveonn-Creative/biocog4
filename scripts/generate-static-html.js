@@ -171,6 +171,24 @@ async function main() {
   }
   writeSupportFiles(DIST_DIR, routes, R);
 
+  // Retired URLs: instant meta refresh plus a canonical to the new URL, which
+  // search engines treat as a permanent redirect on hosts without 301 support.
+  const redirects = R.getRedirects();
+  for (const rd of redirects) {
+    const target = `${R.SITE_URL}${rd.to}`;
+    const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8" />
+<title>Moved | Senseible</title>
+<link rel="canonical" href="${R.canonicalUrl(rd.to.split('#')[0])}" />
+<meta http-equiv="refresh" content="0; url=${target}" />
+<script>location.replace(${JSON.stringify(rd.to)})</script>
+</head><body><p>This page has moved to <a href="${target}">${target}</a>.</p></body></html>
+`;
+    writeFile(path.join(DIST_DIR, `${rd.from}.html`), html);
+    writeFile(path.join(DIST_DIR, rd.from, 'index.html'), html);
+  }
+  console.log(`↪️  ${redirects.length} retired URLs redirect to their new pages`);
+
   const bySection = routes.reduce((acc, r) => ({ ...acc, [r.section]: (acc[r.section] || 0) + 1 }), {});
   console.log(`✅ Prerendered ${routes.length} routes, sitemap.xml, llms.txt and Markdown mirrors`);
   console.log(`📊 ${Object.entries(bySection).map(([k, v]) => `${v} ${k}`).join(', ')}`);

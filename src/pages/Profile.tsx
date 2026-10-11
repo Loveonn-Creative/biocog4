@@ -242,7 +242,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-8">
       <Helmet>
-        <title>Profile — Senseible</title>
+        <title>Profile | Senseible</title>
         <meta name="description" content="Manage your Senseible profile and business information." />
       </Helmet>
 

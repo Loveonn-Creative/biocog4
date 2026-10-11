@@ -78,7 +78,7 @@ const EnergyTransitionCalculator = () => {
       h1="Energy Transition Savings Calculator"
       intro="Compare grid vs solar / PPA / hybrid. See payback period, IRR, NPV and lifetime CO₂ avoided using region-specific grid factors."
       howToSteps={[
-        'Choose your country — grid emission factor and currency are set automatically.',
+        'Choose your country; grid emission factor and currency are set automatically.',
         'Enter monthly electricity consumption and your current tariff (per kWh).',
         'Pick a scenario: on-grid solar, off-grid solar, hybrid, or PPA (no upfront capex).',
         'Enter proposed system size in kWp and capex per kWp.',
@@ -190,11 +190,11 @@ const EnergyTransitionCalculator = () => {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground"><TrendingUp className="w-3 h-3 inline mr-1" /> Payback</p>
-                <p className="text-xl font-bold">{result.paybackYears !== null ? `${result.paybackYears} yrs` : '—'}</p>
+                <p className="text-xl font-bold">{result.paybackYears !== null ? `${result.paybackYears} yrs` : '-'}</p>
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">IRR / NPV</p>
-                <p className="text-xl font-bold">{result.irrPct !== null ? `${result.irrPct}%` : '—'}</p>
+                <p className="text-xl font-bold">{result.irrPct !== null ? `${result.irrPct}%` : '-'}</p>
                 <p className="text-xs text-muted-foreground">{formatLocalCurrency(result.npv, country)}</p>
               </div>
               <div>
@@ -219,7 +219,7 @@ const EnergyTransitionCalculator = () => {
               methodologyVersion={result.methodologyVersion}
               factorSources={result.factorSources}
               issues={[
-                `Generation modelled from an assumed capacity utilisation of ${cuf} and ${degradation}%/yr degradation — actual site yield will differ.`,
+                `Generation modelled from an assumed capacity utilisation of ${cuf} and ${degradation}%/yr degradation; actual site yield will differ.`,
                 ...(Number(subsidy) > 0 ? ["Subsidy applied exactly as entered; scheme eligibility is not verified by this tool."] : []),
               ]}
             />

@@ -73,7 +73,7 @@ const LogisticsCalculator = () => {
       intro="Calculate freight emissions across road, rail, sea and air. Aligned with GLEC Framework v3.0 and ISO 14083."
       howToSteps={[
         'Add each transport leg of your shipment.',
-        'Pick the transport mode — articulated truck, container ship, rail, air, etc.',
+        'Pick the transport mode: articulated truck, container ship, rail, air, etc.',
         'Enter weight in tonnes and distance in kilometres.',
         'Optionally adjust load factor (default per mode is set) and empty-return factor.',
         'Click Calculate to see total kgCO₂e, emissions per mode, and average intensity (kgCO₂e per tonne-km).',

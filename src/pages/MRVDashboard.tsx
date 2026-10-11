@@ -240,7 +240,7 @@ const MRVDashboard = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
-        <title>MRV Dashboard — Senseible</title>
+        <title>MRV Dashboard | Senseible</title>
         <meta name="description" content="Transparent carbon MRV dashboard with progress-based scoring and monetization pathways." />
       </Helmet>
       
@@ -632,7 +632,7 @@ const MRVDashboard = () => {
                       }
                       const reason = (e: typeof pending[number]) => {
                         if (e.activity_data === null || e.activity_data === undefined)
-                          return 'No activity quantity captured — the figure cannot be reproduced.';
+                          return 'No activity quantity captured; the figure cannot be reproduced.';
                         if (e.emission_factor === null || e.emission_factor === undefined)
                           return 'No emission factor matched to this line.';
                         return 'Awaiting verification.';

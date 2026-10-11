@@ -380,7 +380,7 @@ const CBAMCalculator = () => {
               {scenarios.filter(s => s.result).map((s) => (
                 <Card key={s.id}>
                   <CardHeader>
-                    <CardTitle className="text-lg">{s.label}: {s.result!.sectorName} — {s.result!.routeName}</CardTitle>
+                    <CardTitle className="text-lg">{s.label}: {s.result!.sectorName} ({s.result!.routeName})</CardTitle>
                     {s.result!.isUsingDefault && (
                       <div className="flex items-center gap-1 text-xs text-warning">
                         <AlertTriangle className="w-3 h-3" /> Using EU default emission intensity. Provide actual data for accurate estimates.
@@ -439,7 +439,7 @@ const CBAMCalculator = () => {
               <h2 className="text-xl font-semibold text-foreground mb-6">Frequently Asked Questions</h2>
               <div className="space-y-6">
                 {[
-                  { q: 'What is CBAM?', a: 'The Carbon Border Adjustment Mechanism (CBAM) is the EU\'s carbon tariff on imports of carbon-intensive goods — steel, aluminium, cement, fertilizers, electricity, and hydrogen. It ensures imported goods face the same carbon price as EU-produced goods.' },
+                  { q: 'What is CBAM?', a: 'The Carbon Border Adjustment Mechanism (CBAM) is the EU\'s carbon tariff on imports of carbon-intensive goods: steel, aluminium, cement, fertilizers, electricity, and hydrogen. It ensures imported goods face the same carbon price as EU-produced goods.' },
                   { q: 'When does CBAM start?', a: 'The CBAM transitional period began in October 2023 with reporting-only requirements. Financial obligations start in 2026 at 2.5% and scale to 100% by 2034 as free EU ETS allowances phase out.' },
                   { q: 'How is CBAM cost calculated?', a: 'CBAM cost = (Actual embedded emissions − Free allowances) × EU ETS price × Phase-in percentage − Carbon price credit for any carbon tax paid in the country of origin.' },
                   { q: 'Does India have a carbon price?', a: 'India does not yet have an explicit carbon price. The Indian Carbon Market (ICM) is under development. Currently, Indian exporters cannot claim carbon price deductions under CBAM.' },

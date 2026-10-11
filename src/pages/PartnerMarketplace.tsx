@@ -268,7 +268,7 @@ const PartnerMarketplace = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <SEOHead
-        title="Carbon Credit Marketplace — Verified MSME Credits"
+        title="Carbon Credit Marketplace | Verified MSME Credits"
         description="Browse and purchase verified carbon credits directly from Indian MSMEs. Transparent pricing, MRV-backed verification, and SDG-aligned projects."
         canonical="/marketplace"
         keywords={['carbon credits', 'buy carbon credits', 'MSME carbon', 'India carbon market', 'verified credits']}

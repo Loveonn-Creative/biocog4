@@ -53,18 +53,18 @@ export function EnterpriseAuditLedger({ emissions }: Props) {
                   <TableCell className="text-xs capitalize font-medium">{e.category}</TableCell>
                   <TableCell><Badge variant="outline" className="text-xs">{e.scope}</Badge></TableCell>
                   <TableCell className="text-xs font-mono text-right">{e.co2_kg.toFixed(1)}</TableCell>
-                  <TableCell className="text-xs font-mono text-muted-foreground">{e.emission_factor ?? '—'}</TableCell>
+                  <TableCell className="text-xs font-mono text-muted-foreground">{e.emission_factor ?? '-'}</TableCell>
                   <TableCell>
                     <Badge variant="outline" className={`text-xs ${
                       e.data_quality === 'high' ? 'border-success/30 text-success' :
                       e.data_quality === 'medium' ? 'border-warning/30 text-warning' :
                       'border-muted'
                     }`}>
-                      {e.data_quality || '—'}
+                      {e.data_quality || '-'}
                     </Badge>
                   </TableCell>
                   <TableCell className="text-xs font-mono text-muted-foreground">
-                    {e.document_id ? e.document_id.substring(0, 8) : '—'}
+                    {e.document_id ? e.document_id.substring(0, 8) : '-'}
                   </TableCell>
                 </TableRow>
               ))}

@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import climateFinanceOg from "@/assets/og/climate-finance.jpg";
 
 const creditGates = [
-  { icon: ShieldCheck, name: "Additionality flag", desc: "The activity meets the baseline additionality test — credit only for what would not have happened anyway." },
+  { icon: ShieldCheck, name: "Additionality flag", desc: "The activity meets the baseline additionality test: credit only for what would not have happened anyway." },
   { icon: Hash, name: "Evidence linkage", desc: "Every claim traces to a SHA-256 hash on the source document. Spot-auditable, never reusable." },
   { icon: Lock, name: "Methodology lock", desc: "Factor source and methodology version pinned to the record. The figure cannot drift after issue." },
 ];
@@ -16,7 +16,7 @@ const CarbonCredits = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Carbon Credits — Senseible"
+        title="Carbon Credits | Senseible"
         description="From verified record to credit-ready signal. The three gates every Senseible-verified record clears before it can become a tradeable carbon credit signal for buyers."
         canonical="/carbon-credits"
         image={`https://senseible.earth${climateFinanceOg}`}
@@ -40,7 +40,7 @@ const CarbonCredits = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground mb-16 max-w-2xl">
-            Your operational data already contains carbon signals. Senseible extracts, verifies, and converts them into tradeable value — only after three gates are cleared.
+            Your operational data already contains carbon signals. Senseible extracts, verifies, and converts them into tradeable value, only after three gates are cleared.
           </p>
 
           {/* Credit-validation gates (migrated from Trust) */}
@@ -51,7 +51,7 @@ const CarbonCredits = () => {
             </div>
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3">Three gates every record clears</h2>
             <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
-              Buyers consume a decision-grade signal — not raw MSME data. Records that fail any gate are held back, with a math-based reason.
+              Buyers consume a decision-grade signal, not raw MSME data. Records that fail any gate are held back, with a math-based reason.
             </p>
             <div className="grid sm:grid-cols-3 gap-4">
               {creditGates.map(g => (
@@ -106,7 +106,7 @@ const CarbonCredits = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground mb-1">Automatic Extraction</h3>
-                  <p className="text-muted-foreground">Our AI reads and interprets document data — quantities, suppliers, dates, emission-relevant fields.</p>
+                  <p className="text-muted-foreground">Our AI reads and interprets document data: quantities, suppliers, dates, emission-relevant fields.</p>
                 </div>
               </div>
               

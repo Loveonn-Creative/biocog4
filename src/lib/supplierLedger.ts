@@ -88,7 +88,7 @@ function gapsFor(s: SupplierRecord): string[] {
   if (s.verifiedCount === 0 && s.documentCount > 0)
     gaps.push('Documents captured but not yet verified');
   if (s.hsnCodes.length === 0)
-    gaps.push('No HSN/CN code on the invoice — category mapped from description only');
+    gaps.push('No HSN/CN code on the invoice; category mapped from description only');
   if (s.co2Kg <= 0)
     gaps.push('No emission factor could be applied to this supplier’s line items');
   if (s.factorSources.length === 0 && s.co2Kg > 0)

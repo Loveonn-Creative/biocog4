@@ -101,7 +101,7 @@ const Subscription = () => {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-8">
       <Helmet>
-        <title>Subscription — Senseible</title>
+        <title>Subscription | Senseible</title>
         <meta name="description" content="Manage your Senseible subscription and billing." />
       </Helmet>
 

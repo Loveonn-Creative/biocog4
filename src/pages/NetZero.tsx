@@ -461,7 +461,7 @@ const NetZero = () => {
                     <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto text-left">
                       <div className="p-3 rounded-lg bg-muted/50">
                         <p className="text-xs text-muted-foreground">Baseline</p>
-                        <p className="text-sm font-medium">{feasibility ? formatCo2(feasibility.baselineCo2Kg) : '—'}</p>
+                        <p className="text-sm font-medium">{feasibility ? formatCo2(feasibility.baselineCo2Kg) : '-'}</p>
                       </div>
                       <div className="p-3 rounded-lg bg-muted/50">
                         <p className="text-xs text-muted-foreground">Target</p>
@@ -473,7 +473,7 @@ const NetZero = () => {
                       </div>
                       <div className="p-3 rounded-lg bg-muted/50">
                         <p className="text-xs text-muted-foreground">Investment</p>
-                        <p className="text-sm font-medium">{feasibility ? formatInr(feasibility.totalEstimatedCost) : '—'}</p>
+                        <p className="text-sm font-medium">{feasibility ? formatInr(feasibility.totalEstimatedCost) : '-'}</p>
                       </div>
                     </div>
 
@@ -496,7 +496,7 @@ const NetZero = () => {
 
               <Card className="bg-muted/30">
                 <CardContent className="pt-6 text-xs text-muted-foreground">
-                  <p><strong>Trust Layer:</strong> Built on verified scientific emission factors (IPCC AR6, CEA India Grid Factor, MoEFCC guidelines) and deterministic calculations. AI enhances strategy recommendations — it never replaces core measurement logic.</p>
+                  <p><strong>Trust Layer:</strong> Built on verified scientific emission factors (IPCC AR6, CEA India Grid Factor, MoEFCC guidelines) and deterministic calculations. AI enhances strategy recommendations; it never replaces core measurement logic.</p>
                 </CardContent>
               </Card>
 

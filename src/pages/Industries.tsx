@@ -122,7 +122,7 @@ const ExportRiskBadge = ({ industryId }: { industryId: string }) => {
           <div className="font-medium text-sm flex items-center gap-2">
             EU Export Risk
             <Badge variant={isCbam ? 'destructive' : 'outline'} className="text-xs">
-              {isCbam ? 'HIGH — CBAM Covered' : 'MEDIUM — Indirect Exposure'}
+              {isCbam ? 'HIGH: CBAM Covered' : 'MEDIUM: Indirect Exposure'}
             </Badge>
           </div>
           <p className="text-xs text-muted-foreground mt-1">
@@ -313,7 +313,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-red-500/10 rounded">
                         <Zap className="h-4 w-4 text-red-500" />
                       </div>
-                      Scope 1 — Direct
+                      Scope 1: Direct
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -335,7 +335,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-amber-500/10 rounded">
                         <Zap className="h-4 w-4 text-amber-500" />
                       </div>
-                      Scope 2 — Electricity
+                      Scope 2: Electricity
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -357,7 +357,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-blue-500/10 rounded">
                         <Zap className="h-4 w-4 text-blue-500" />
                       </div>
-                      Scope 3 — Value Chain
+                      Scope 3: Value Chain
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

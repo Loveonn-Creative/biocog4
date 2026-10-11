@@ -243,7 +243,7 @@ const Dashboard = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
-        <title>Dashboard — Senseible Carbon MRV</title>
+        <title>Dashboard | Senseible Carbon MRV</title>
         <meta name="description" content="View your carbon emissions summary, trends, and monetization opportunities." />
       </Helmet>
       

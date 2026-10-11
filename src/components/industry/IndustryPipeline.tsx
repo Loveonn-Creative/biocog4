@@ -59,7 +59,7 @@ const OUTCOMES: Array<{ key: 'visibility' | 'verification' | 'supplyChain' | 'mo
   { key: 'visibility', label: 'Becomes visible', outcome: 'Scope 1/2/3 split read out of documents already filed' },
   { key: 'verification', label: 'Becomes defensible', outcome: 'Each figure carries its factor, source and evidence hash' },
   { key: 'supplyChain', label: 'Becomes shareable', outcome: 'Buyer-facing Scope 3 record without exposing the invoices' },
-  { key: 'monetization', label: 'Becomes usable', outcome: 'Border cost, lender KPI or credit eligibility — stated, not assumed' },
+  { key: 'monetization', label: 'Becomes usable', outcome: 'Border cost, lender KPI or credit eligibility: stated, not assumed' },
 ];
 
 export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
@@ -131,7 +131,7 @@ export const IndustryPipeline = ({ industryId }: { industryId: string }) => {
           {[
             {
               title: 'Decarbonization levers',
-              body: 'The levers worth acting on are the ones your own documents already point at — the largest verified line, not a generic checklist.',
+              body: 'The levers worth acting on are the ones your own documents already point at: the largest verified line, not a generic checklist.',
               href: '/net-zero',
               cta: 'Set a baseline and target',
             },

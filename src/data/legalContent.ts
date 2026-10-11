@@ -636,7 +636,7 @@ Continued use of the Services constitutes acceptance.`
         title: '14. Contact',
         content: `For questions, rights requests, or opt-out requests, contact the Data Officer:
 
-Sneha Ghosh — sneha@senseible.earth
+Sneha Ghosh: sneha@senseible.earth
 
 Minarch Tower, Gurugram, 122003, Haryana, India
 

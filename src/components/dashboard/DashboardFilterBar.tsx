@@ -62,9 +62,9 @@ export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCou
           }
         >
           <option value="all">All scopes</option>
-          <option value="1">Scope 1 — direct</option>
-          <option value="2">Scope 2 — electricity</option>
-          <option value="3">Scope 3 — value chain</option>
+          <option value="1">Scope 1: direct</option>
+          <option value="2">Scope 2: electricity</option>
+          <option value="3">Scope 3: value chain</option>
         </select>
 
         <select

@@ -64,7 +64,7 @@ export const DisputeSimulation = ({
         <div className="flex items-center gap-2">
           <ShieldAlert className="h-4 w-4 text-accent" />
           <span className="font-medium">Dispute Simulation</span>
-          <span className="text-xs text-muted-foreground">— What if an auditor challenges this?</span>
+          <span className="text-xs text-muted-foreground">What if an auditor challenges this?</span>
         </div>
         {open ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
       </CollapsibleTrigger>

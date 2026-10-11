@@ -96,6 +96,20 @@ async function main() {
     if (!fs.existsSync(mdFile)) fail(where, 'Markdown mirror missing');
   }
 
+  // Redirects: source retired (not a live route), target live, page present.
+  for (const rd of R.getRedirects()) {
+    if (routes.some(r => r.path === rd.from)) fail(rd.from, 'redirect source is still a live route');
+    const targetPath = R.canonicalPath(rd.to.split('#')[0]);
+    if (!known.has(targetPath)) fail(rd.from, `redirect target ${rd.to} is not a live route`);
+    const file = path.join(DIST, rd.from, 'index.html');
+    if (!fs.existsSync(file) || !fs.readFileSync(file, 'utf8').includes('http-equiv="refresh"')) fail(rd.from, 'redirect page missing');
+    if (rd.to.includes('#') && targetPath === '/trust') {
+      const anchor = rd.to.split('#')[1];
+      const trustSrc = fs.readFileSync(path.join(ROOT, 'src/data/trustSafeguards.ts'), 'utf8');
+      if (!trustSrc.includes(`id: '${anchor}'`)) fail(rd.from, `anchor #${anchor} does not exist on /trust`);
+    }
+  }
+
   // Sitemap must list exactly the registry routes.
   const sitemap = fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8');
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);

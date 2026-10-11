@@ -315,7 +315,7 @@ const Monetize = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-      <Helmet><title>Monetize — Senseible</title></Helmet>
+      <Helmet><title>Monetize | Senseible</title></Helmet>
       <CarbonParticles />
       <Navigation />
       

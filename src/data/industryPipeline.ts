@@ -38,10 +38,10 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       'Textile exporters are asked for product-level carbon data by EU buyers long before they have any emissions baseline, and the data sits in utility bills and job-work invoices nobody has ever read as carbon evidence.',
     visibility: {
       summary:
-        'The emission signal for a textile unit is already inside documents the unit files for tax — it just has never been read as carbon data.',
+        'The emission signal for a textile unit is already inside documents the unit files for tax; it just has never been read as carbon data.',
       points: [
         'State DISCOM bills carry consumed units (kWh) and sanctioned load; consumed units drive Scope 2 against the grid factor for the billing region.',
-        'Dyeing and processing job-work invoices carry the fuel line — furnace oil, briquette, LPG, coal — which maps to Scope 1 combustion by HSN code.',
+        'Dyeing and processing job-work invoices carry the fuel line (furnace oil, briquette, LPG, coal), which maps to Scope 1 combustion by HSN code.',
         'Fibre, yarn and dye purchase invoices carry HSN codes that place the spend in Scope 3 Category 1 (purchased goods and services).',
         'Freight and courier invoices for shipment to port map to Scope 3 Category 4 (upstream transport).',
       ],
@@ -61,18 +61,18 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
         'A buyer asking for Scope 3 wants your emissions attached to your identity, not a PDF attached to an email.',
       points: [
         'The tax identifier on the invoice (GSTIN in India, and the equivalent registration in each supported country) is what links a supplier record to the buying brand.',
-        'The buyer sees the verified Scope 1/2/3 split, the confidence attached to it, and the evidence hash — enough to place it in their own Category 1 inventory.',
+        'The buyer sees the verified Scope 1/2/3 split, the confidence attached to it, and the evidence hash: enough to place it in their own Category 1 inventory.',
         'The buyer does not see the underlying invoices, prices or customer names unless the supplier explicitly shares them.',
         'Because each document is hash-pinned, a buyer can spot-check a claim without the supplier having to reopen its books.',
       ],
     },
     monetization: {
       summary:
-        'For textiles the realistic first return is not a carbon credit — it is keeping the order and lowering the border cost.',
+        'For textiles the realistic first return is not a carbon credit; it is keeping the order and lowering the border cost.',
       points: [
         'A verified actual-emissions figure replaces the EU default value in a buyer\'s CBAM-adjacent screening, which matters where the buyer prices carbon into the order.',
         'Verified solar or energy-efficiency invoices are the evidence a lender needs for a sustainability-linked loan KPI.',
-        'Marketplace listing requires an additional, project-grade reduction — the platform states plainly when a unit has disclosure-grade data but not credit-grade data.',
+        'Marketplace listing requires an additional, project-grade reduction; the platform states plainly when a unit has disclosure-grade data but not credit-grade data.',
       ],
     },
     references: [
@@ -89,7 +89,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'Two distinct streams have to be captured, and they arrive as different document types.',
       points: [
-        'Energy stream: electricity bills, furnace oil and natural gas invoices, boiler fuel purchases — Scope 1 combustion and Scope 2.',
+        'Energy stream: electricity bills, furnace oil and natural gas invoices, boiler fuel purchases: Scope 1 combustion and Scope 2.',
         'Feedstock stream: raw material and catalyst invoices with HSN codes, which sit in Scope 3 Category 1.',
         'Process emissions from reaction chemistry are not on any invoice; they are declared separately and flagged as a different data type from invoice-derived lines.',
         'Effluent treatment and hazardous waste manifests map to Scope 3 Category 5 (waste generated in operations).',
@@ -109,7 +109,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
         'Chemical suppliers are usually two tiers away from the brand doing the asking, which is exactly where Scope 3 breaks.',
       points: [
         'A verified record keyed to the registered tax identifier lets a tier-1 formulator pull a real number for its own Category 1 instead of an industry average.',
-        'Where a downstream customer exports to the EU, the chemical input becomes part of their embedded emissions — verified upstream data is what stops a default value being applied.',
+        'Where a downstream customer exports to the EU, the chemical input becomes part of their embedded emissions; verified upstream data is what stops a default value being applied.',
         'Commercially sensitive inputs stay hidden: the shared record carries scope totals and confidence, not the bill of materials.',
       ],
     },
@@ -136,8 +136,8 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'CBAM asks for emissions per tonne of goods, which means production output has to be captured alongside energy.',
       points: [
-        'Coal, coke and natural gas purchase invoices carry quantity and HSN code — direct Scope 1 combustion.',
-        'Electricity bills for the arc furnace and rolling mill carry kWh — Scope 2, converted at the regional grid factor.',
+        'Coal, coke and natural gas purchase invoices carry quantity and HSN code: direct Scope 1 combustion.',
+        'Electricity bills for the arc furnace and rolling mill carry kWh: Scope 2, converted at the regional grid factor.',
         'Dispatch and sales invoices carry tonnage, which supplies the denominator for an intensity figure.',
         'Ore, scrap and flux invoices sit in Scope 3 Category 1.',
       ],
@@ -146,7 +146,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'An intensity number is only produced when both numerator and denominator are evidenced.',
       points: [
-        'Without dispatch tonnage the platform reports absolute emissions and declares intensity as a data gap — it does not divide by an assumed output.',
+        'Without dispatch tonnage the platform reports absolute emissions and declares intensity as a data gap; it does not divide by an assumed output.',
         'Each CN code on the export side is checked against the CBAM goods list rather than inferred from the product description.',
         'Where a domestic carbon price applies, it is recorded as a separate, evidenced deduction rather than folded into the emission figure.',
       ],
@@ -155,7 +155,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'Secondary steel producers sell into construction, auto and engineering buyers who each need the same number in a different format.',
       points: [
-        'One verified dataset renders as a buyer-facing Scope 3 record, a CBAM-oriented intensity view, and a lender-facing baseline — without recomputation.',
+        'One verified dataset renders as a buyer-facing Scope 3 record, a CBAM-oriented intensity view, and a lender-facing baseline, without recomputation.',
         'Scrap-based routes usually carry materially lower intensity than integrated routes; a verified figure is what makes that difference legible to a buyer.',
         'Buyer visibility is limited to scope totals, intensity where evidenced, and hashes.',
       ],
@@ -164,7 +164,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'For steel the measurable financial event is the difference between actual and default emissions at the EU border.',
       points: [
-        'The CBAM calculator prices the gap between an evidenced intensity and the applicable transitional default, using published EU values — the exposure is computed, not estimated by the platform.',
+        'The CBAM calculator prices the gap between an evidenced intensity and the applicable transitional default, using published EU values; the exposure is computed, not estimated by the platform.',
         'That same evidence supports green loan and transition-finance conversations where the lender needs a baseline to write a KPI against.',
         'Credit generation from a route change is treated as a project question requiring a recognised methodology, and is not asserted from invoices alone.',
       ],
@@ -183,7 +183,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'Fuel and trip documents together give both the activity and the service unit.',
       points: [
-        'Fuel invoices carry litres by fuel type — direct Scope 1 for owned fleet.',
+        'Fuel invoices carry litres by fuel type: direct Scope 1 for owned fleet.',
         'Consignment notes and e-way bills carry origin, destination and consignment weight, which produce tonne-kilometres.',
         'Third-party carrier invoices are Scope 3 Category 4, not Scope 1, and are separated accordingly.',
         'Warehouse and cold-storage electricity bills are Scope 2; reefer fuel is Scope 1.',
@@ -194,7 +194,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
         'The logistics engine refuses to compute rather than assume a missing leg.',
       points: [
         'Weight or distance missing means no tonne-km figure is produced; the platform states which field is absent instead of substituting a typical load.',
-        'Mode is taken from the document, not guessed — road, rail, sea and air carry materially different factors.',
+        'Mode is taken from the document, not guessed: road, rail, sea and air carry materially different factors.',
         'Backhaul and empty running are only reflected where the documents evidence them.',
       ],
     },
@@ -230,7 +230,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'Material procurement is the dominant stream and it arrives as ordinary purchase invoices.',
       points: [
-        'Cement, steel, aggregate, glass and aluminium invoices carry quantity and HSN code — Scope 3 Category 1, and usually the largest block.',
+        'Cement, steel, aggregate, glass and aluminium invoices carry quantity and HSN code: Scope 3 Category 1, and usually the largest block.',
         'Site diesel for gensets and equipment is Scope 1; temporary site power connection is Scope 2.',
         'Material haulage invoices are Scope 3 Category 4.',
         'Debris and construction waste disposal records are Scope 3 Category 5.',
@@ -241,7 +241,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
         'Embodied carbon is only as good as the quantity on the invoice.',
       points: [
         'Cement and steel lines require tonnage or bag count; a value-only line is held as a gap rather than converted through a spend proxy.',
-        'Blended and low-clinker cement is treated as a distinct material only when the invoice identifies the grade — otherwise the ordinary grade is used and the assumption is recorded.',
+        'Blended and low-clinker cement is treated as a distinct material only when the invoice identifies the grade; otherwise the ordinary grade is used and the assumption is recorded.',
         'Project boundary is declared explicitly so a single project\'s footprint is not mixed with company-level totals.',
       ],
     },
@@ -277,10 +277,10 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'For a component maker the footprint is mostly bought-in material plus plant energy.',
       points: [
-        'Steel, aluminium, polymer and casting invoices carry quantity and HSN code — Scope 3 Category 1.',
-        'Plant electricity bills for presses, assembly and compressed air — Scope 2 at the regional grid factor.',
-        'Paint shop and heat-treatment fuel invoices — Scope 1.',
-        'Inbound and outbound freight — Scope 3 Category 4; part dispatch notes give the unit denominator.',
+        'Steel, aluminium, polymer and casting invoices carry quantity and HSN code: Scope 3 Category 1.',
+        'Plant electricity bills for presses, assembly and compressed air: Scope 2 at the regional grid factor.',
+        'Paint shop and heat-treatment fuel invoices: Scope 1.',
+        'Inbound and outbound freight: Scope 3 Category 4; part dispatch notes give the unit denominator.',
       ],
     },
     verification: {
@@ -297,7 +297,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
         'This is the sector where the tier chain, not the single company, is the unit of measurement.',
       points: [
         'A tier-2 supplier with a verified record links to its tier-1 by tax identifier, and the tier-1 to the OEM, so Category 1 stops being an industry average at each hop.',
-        'The OEM sees scope totals, confidence and evidence hashes — never the supplier\'s cost base.',
+        'The OEM sees scope totals, confidence and evidence hashes, never the supplier\'s cost base.',
         'Where a sub-supplier is unverified, that portion is shown as a declared gap rather than filled with a proxy, which is what makes the number auditable.',
       ],
     },
@@ -305,7 +305,7 @@ export const INDUSTRY_PIPELINES: Record<string, IndustryPipeline> = {
       summary:
         'Supplier qualification is the immediate return; financing follows the evidence.',
       points: [
-        'Verified carbon data is becoming a line item in OEM supplier scorecards alongside quality and delivery — an unquantified supplier loses points before commercial talks.',
+        'Verified carbon data is becoming a line item in OEM supplier scorecards alongside quality and delivery; an unquantified supplier loses points before commercial talks.',
         'Renewable PPA and efficiency retrofit invoices give a lender the KPI evidence for sustainability-linked terms.',
         'Plant-level reductions are disclosure evidence; credit eligibility is a separate, methodology-bound question and is labelled as such.',
       ],

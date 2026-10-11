@@ -52,7 +52,7 @@ function sol(
   relatedArticle: string,
 ): SolutionPage {
   const slug = `${regulation}-${sector}-${countryName.toLowerCase().replace(/\s+/g, '-')}`;
-  const title = `${regulationLabel} for ${sectorLabel} in ${countryName} — Senseible`;
+  const title = `${regulationLabel} for ${sectorLabel} in ${countryName} | Senseible`;
   const metaDescription = `${painStatement.substring(0, 140)}. Free tools and compliance steps for ${sectorLabel.toLowerCase()} businesses in ${countryName}.`;
   const keywords = [
     `${regulationLabel} ${countryName}`,
@@ -91,7 +91,7 @@ const financeSteps = (country: string, sector: string): SolutionStep[] => [
   { title: 'Complete Carbon Profile', description: `Build your ${sector} company carbon profile with verified emission data from ${country} operations.` },
   { title: 'Check Eligibility', description: 'Senseible auto-matches your profile against green loan criteria from banks and DFIs.' },
   { title: 'Generate Disclosure', description: 'Create TCFD/CDP-aligned disclosures that lenders require for preferential green rates.' },
-  { title: 'Apply with Data', description: 'Submit green loan applications with verified carbon data attached — no manual reporting needed.' },
+  { title: 'Apply with Data', description: 'Submit green loan applications with verified carbon data attached, no manual reporting needed.' },
 ];
 
 export const solutionPages: SolutionPage[] = [

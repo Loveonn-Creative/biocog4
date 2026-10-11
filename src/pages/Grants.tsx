@@ -162,7 +162,7 @@ const Grants = () => {
     return (
       <>
         <SEOHead
-          title="Application Submitted — Senseible Accelerator"
+          title="Application Submitted | Senseible Accelerator"
           description="Thank you for applying to the Senseible Accelerator Program."
         />
         <div className="min-h-screen bg-background">
@@ -201,7 +201,7 @@ const Grants = () => {
   return (
     <>
         <SEOHead
-          title="Accelerator Grants — AI Startups & MSMEs | Senseible"
+          title="Accelerator Grants: AI Startups & MSMEs | Senseible"
           description="Unlock $13,000 in platform access and up to $150,000 in cash benefits. Priority for India and emerging markets. Apply now for climate-tech acceleration."
           keywords={["AI grants", "startup accelerator", "MSME funding", "India startup grants", "climate tech funding", "emerging market accelerator", "carbon credits startup"]}
         />
@@ -228,7 +228,7 @@ const Grants = () => {
                 variants={fadeInUp}
               >
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Applications Open — 2025 Cohort</span>
+                <span className="text-sm font-medium text-primary">Applications Open: 2025 Cohort</span>
               </motion.div>
               
               {/* Headline */}

@@ -190,7 +190,7 @@ const PartnerProfile = () => {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-8">
       <Helmet>
-        <title>Partner Profile — Senseible</title>
+        <title>Partner Profile | Senseible</title>
         <meta name="description" content="Manage your Senseible partner profile and organization settings." />
       </Helmet>
 

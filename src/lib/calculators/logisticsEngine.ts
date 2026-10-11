@@ -21,17 +21,17 @@ export interface ModeFactor {
 }
 
 export const TRANSPORT_MODES: ModeFactor[] = [
-  { id: 'road-rigid',       name: 'Truck — rigid (7.5–17 t)',  kgCO2ePerTKm: 0.182, category: 'road', defaultLoadFactor: 0.55 },
-  { id: 'road-articulated', name: 'Truck — articulated (>17 t)', kgCO2ePerTKm: 0.062, category: 'road', defaultLoadFactor: 0.70 },
+  { id: 'road-rigid',       name: 'Truck: rigid (7.5–17 t)',  kgCO2ePerTKm: 0.182, category: 'road', defaultLoadFactor: 0.55 },
+  { id: 'road-articulated', name: 'Truck: articulated (>17 t)', kgCO2ePerTKm: 0.062, category: 'road', defaultLoadFactor: 0.70 },
   { id: 'road-van',         name: 'Light van / pickup',         kgCO2ePerTKm: 0.487, category: 'road', defaultLoadFactor: 0.40 },
-  { id: 'rail-diesel',      name: 'Rail — diesel freight',      kgCO2ePerTKm: 0.022, category: 'rail', defaultLoadFactor: 0.65 },
-  { id: 'rail-electric',    name: 'Rail — electric freight',    kgCO2ePerTKm: 0.010, category: 'rail', defaultLoadFactor: 0.65 },
-  { id: 'sea-container',    name: 'Sea — container ship',       kgCO2ePerTKm: 0.008, category: 'sea',  defaultLoadFactor: 0.70 },
-  { id: 'sea-bulk',         name: 'Sea — bulk carrier',         kgCO2ePerTKm: 0.004, category: 'sea',  defaultLoadFactor: 0.85 },
-  { id: 'sea-tanker',       name: 'Sea — oil tanker',           kgCO2ePerTKm: 0.005, category: 'sea',  defaultLoadFactor: 0.85 },
+  { id: 'rail-diesel',      name: 'Rail: diesel freight',      kgCO2ePerTKm: 0.022, category: 'rail', defaultLoadFactor: 0.65 },
+  { id: 'rail-electric',    name: 'Rail: electric freight',    kgCO2ePerTKm: 0.010, category: 'rail', defaultLoadFactor: 0.65 },
+  { id: 'sea-container',    name: 'Sea: container ship',       kgCO2ePerTKm: 0.008, category: 'sea',  defaultLoadFactor: 0.70 },
+  { id: 'sea-bulk',         name: 'Sea: bulk carrier',         kgCO2ePerTKm: 0.004, category: 'sea',  defaultLoadFactor: 0.85 },
+  { id: 'sea-tanker',       name: 'Sea: oil tanker',           kgCO2ePerTKm: 0.005, category: 'sea',  defaultLoadFactor: 0.85 },
   { id: 'inland-waterway',  name: 'Inland waterway / barge',    kgCO2ePerTKm: 0.031, category: 'inland', defaultLoadFactor: 0.70 },
-  { id: 'air-short',        name: 'Air freight — short-haul (<1500 km)', kgCO2ePerTKm: 1.130, category: 'air', defaultLoadFactor: 0.70 },
-  { id: 'air-long',         name: 'Air freight — long-haul (>1500 km)',  kgCO2ePerTKm: 0.602, category: 'air', defaultLoadFactor: 0.75 },
+  { id: 'air-short',        name: 'Air freight: short-haul (<1500 km)', kgCO2ePerTKm: 1.130, category: 'air', defaultLoadFactor: 0.70 },
+  { id: 'air-long',         name: 'Air freight: long-haul (>1500 km)',  kgCO2ePerTKm: 0.602, category: 'air', defaultLoadFactor: 0.75 },
   { id: 'pipeline',         name: 'Pipeline (gas/liquid)',      kgCO2ePerTKm: 0.005, category: 'pipeline', defaultLoadFactor: 1.0 },
 ];
 

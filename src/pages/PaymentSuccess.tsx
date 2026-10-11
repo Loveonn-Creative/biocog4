@@ -122,7 +122,7 @@ const PaymentSuccess = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Payment Successful — Welcome to {tierNames[tier]}</title>
+        <title>Payment Successful | Welcome to {tierNames[tier]}</title>
       </Helmet>
 
       <Navigation />
