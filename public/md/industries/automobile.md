@@ -1,4 +1,4 @@
-# Automobile Manufacturing: carbon accounting
+# Automobile Manufacturing: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/automobile
 

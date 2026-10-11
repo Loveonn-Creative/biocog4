@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { trustSafeguards } from "@/data/trustSafeguards";
 import { SEOHead } from "@/components/SEOHead";
 import trustOg from "@/assets/og/trust.jpg";
 import { Navigation } from "@/components/Navigation";
@@ -39,12 +40,12 @@ const trustLayers = [
   {
     icon: FileText,
     name: "Evidence Layer",
-    desc: "Every document is fingerprinted with SHA-256 before processing. A pre-processing stub is written first, so even failed runs leave an audit trail. The same invoice cannot be claimed twice — across users, sessions, or time.",
+    desc: "Every document is fingerprinted with SHA-256 before processing. A pre-processing stub is written first, so even failed runs leave an audit trail. The same invoice cannot be claimed twice, across users, sessions or time.",
   },
   {
     icon: FileCheck,
     name: "Verification Layer",
-    desc: "Deterministic HSN-to-scope mapping, country grid factors (IEA 2023), and math reconciliation. Missing inputs return a math-based failure reason — never a silent estimate.",
+    desc: "Deterministic HSN-to-scope mapping, country grid factors (IEA 2023), and math reconciliation. Missing inputs return a math-based failure reason, never a silent estimate.",
   },
   {
     icon: Sparkles,
@@ -54,7 +55,7 @@ const trustLayers = [
   {
     icon: ScrollText,
     name: "Disclosure & Decision Layer",
-    desc: "Framework-aligned outputs (CBAM, BRSR, GHG Protocol, CSRD, ISSB, TCFD, GRI, SBTi) carry the audit trail, confidence bands, and Climate Credibility Score (A+ to D) with them — ready for auditors, lenders, and buyers.",
+    desc: "Framework-aligned outputs (CBAM, BRSR, GHG Protocol, CSRD, ISSB, TCFD, GRI, SBTi) carry the audit trail, confidence bands, and Climate Credibility Score (A+ to D) with them, ready for auditors, lenders, and buyers.",
   },
 ];
 
@@ -97,52 +98,52 @@ const countryIds = [
 // is anchored in that market using its own tax ID, grid factor and frameworks.
 const scope3Examples: Record<string, { headline: string; example: string; frameworks: string }> = {
   IN: {
-    headline: "India — GSTIN-anchored supplier chain",
+    headline: "India: GSTIN-anchored supplier chain",
     example: "A Tiruppur textile exporter pulls a yarn purchase invoice carrying the supplier's GSTIN. The line item is matched to the IEA 2023 India grid factor (0.708 kgCO₂e/kWh) for upstream electricity, and the supplier hash links it to a verified peer cluster.",
     frameworks: "BRSR · CBAM · ISSB",
   },
   ID: {
-    headline: "Indonesia — NPWP-anchored supplier chain",
+    headline: "Indonesia: NPWP-anchored supplier chain",
     example: "A Jakarta nickel processor's input invoice carries the upstream miner's NPWP. The line item is benchmarked against the Indonesia grid factor (0.761 kgCO₂e/kWh) and OJK-ESG disclosure templates, with anomaly detection flagging suppliers outside the peer cluster.",
     frameworks: "OJK-ESG · CBAM · ISSB",
   },
   VN: {
-    headline: "Vietnam — MST-anchored supplier chain",
+    headline: "Vietnam: MST-anchored supplier chain",
     example: "A Hai Phong electronics MSME imports components from a Hanoi vendor whose MST appears on every line. Upstream electricity is priced at the Vietnam grid factor (0.625 kgCO₂e/kWh) and the line carries the methodology version pinned for MONRE submission.",
     frameworks: "MONRE-EIA · CBAM",
   },
   BD: {
-    headline: "Bangladesh — TIN-anchored supplier chain",
+    headline: "Bangladesh: TIN-anchored supplier chain",
     example: "A Dhaka garment exporter's dye supplier issues an invoice with its TIN. The bill is reconciled against the Bangladesh grid factor (0.623 kgCO₂e/kWh), and the supplier's emission intensity is held against the verified RMG peer cluster.",
     frameworks: "DoE-ECA · CBAM · EU CSDDD",
   },
   PK: {
-    headline: "Pakistan — NTN-anchored supplier chain",
+    headline: "Pakistan: NTN-anchored supplier chain",
     example: "A Faisalabad textile MSME's spinning supplier provides an invoice carrying its NTN. The line is priced at the Pakistan grid factor (0.495 kgCO₂e/kWh), and the methodology version travels with the figure into the SECP-ESG output.",
     frameworks: "SECP-ESG",
   },
   PH: {
-    headline: "Philippines — TIN-anchored supplier chain",
+    headline: "Philippines: TIN-anchored supplier chain",
     example: "A Cebu electronics assembler receives PCB invoices with the supplier's TIN. The Philippines grid factor (0.505 kgCO₂e/kWh) is applied to upstream electricity, and the figure feeds SEC-ESG and DTI-EO outputs from the same record.",
     frameworks: "SEC-ESG · DTI-EO",
   },
   TH: {
-    headline: "Thailand — Tax-ID-anchored supplier chain",
+    headline: "Thailand: Tax-ID-anchored supplier chain",
     example: "A Bangkok food-processor's packaging supplier issues an invoice with its 13-digit Tax ID. The line is reconciled against the Thailand grid factor (0.493 kgCO₂e/kWh) and rolled into a TGO-CFO report with the factor source pinned.",
     frameworks: "TGO-CFO · SEC-ESG",
   },
   MY: {
-    headline: "Malaysia — SST-ID-anchored supplier chain",
+    headline: "Malaysia: SST-ID-anchored supplier chain",
     example: "A Penang E&E manufacturer receives upstream invoices carrying the supplier's SST ID. Energy is priced at the Malaysia grid factor (0.585 kgCO₂e/kWh) and outputs feed Bursa-ESG and MyCarbon disclosures from the same scope ledger.",
     frameworks: "Bursa-ESG · MyCarbon",
   },
   SG: {
-    headline: "Singapore — UEN-anchored supplier chain",
+    headline: "Singapore: UEN-anchored supplier chain",
     example: "A Singapore logistics MSME's fuel supplier issues an invoice carrying its UEN. The line is priced at the Singapore grid factor (0.408 kgCO₂e/kWh) and routed into an SGX-ESG-aligned disclosure with Carbon Tax Act exposure flagged.",
     frameworks: "SGX-ESG · Carbon Tax Act",
   },
   LK: {
-    headline: "Sri Lanka — TIN-anchored supplier chain",
+    headline: "Sri Lanka: TIN-anchored supplier chain",
     example: "A Colombo apparel MSME's accessories supplier provides an invoice with its TIN. The Sri Lanka grid factor (0.462 kgCO₂e/kWh) is applied to upstream electricity, with the supplier's intensity anchored to the verified peer cluster.",
     frameworks: "CEA-EIA",
   },
@@ -154,7 +155,7 @@ const scope3Examples: Record<string, { headline: string; example: string; framew
 const faqs = [
   {
     q: "How do you know an invoice wasn't fabricated or reused?",
-    a: "Every document is hashed with SHA-256 before processing. The same evidence cannot be claimed twice — across users, sessions, or time. Duplicates fail at the verification layer with an explicit reason.",
+    a: "Every document is hashed with SHA-256 before processing. The same evidence cannot be claimed twice, across users, sessions or time. Duplicates fail at the verification layer with an explicit reason.",
   },
   {
     q: "Where does AI sit in the pipeline?",
@@ -162,19 +163,19 @@ const faqs = [
   },
   {
     q: "Why can a lender trust a number that came from an MSME's own invoice?",
-    a: "Because the lender isn't trusting the MSME — they're trusting the chain. Every figure traces to a hash-pinned source document the lender can spot-audit, sits inside a confidence band, and carries the methodology version that produced it. Cross-MSME benchmarking lets the lender compare a borrower against verified peers rather than self-reported claims.",
+    a: "Because the lender isn't trusting the MSME; they're trusting the chain. Every figure traces to a hash-pinned source document the lender can spot-audit, sits inside a confidence band, and carries the methodology version that produced it. Cross-MSME benchmarking lets the lender compare a borrower against verified peers rather than self-reported claims.",
   },
   {
     q: "How is Scope 3 traceability handled outside India?",
-    a: "Counterparty linkage is country-aware. The platform uses the local tax identifier auto-selected by country config — GSTIN in India, NPWP in Indonesia, MST in Vietnam, TIN in Thailand and the Philippines, CNPJ in Brazil, VAT in the EU, and so on — so supplier evidence is anchored to a real counterparty in every supported market.",
+    a: "Counterparty linkage is country-aware. The platform uses the local tax identifier auto-selected by country config: GSTIN in India, NPWP in Indonesia, MST in Vietnam, TIN in Thailand and the Philippines, CNPJ in Brazil, VAT in the EU, and so on, so supplier evidence is anchored to a real counterparty in every supported market.",
   },
   {
     q: "What does the Climate Credibility Score actually measure?",
-    a: "It aggregates verification quality, data completeness (vendor + date + amount + HSN), history depth, and the green-benefit ratio into a single 0–100 band (A+ to D). Higher bands mean denser, better-attested evidence — not better marketing.",
+    a: "It aggregates verification quality, data completeness (vendor + date + amount + HSN), history depth, and the green-benefit ratio into a single 0–100 band (A+ to D). Higher bands mean denser, better-attested evidence, not better marketing.",
   },
   {
     q: "How do you prevent greenwashing?",
-    a: "Six structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, an additionality lock on credit-eligible records, and cross-MSME peer challenge before disclosure. Verification you can challenge — and that holds up when challenged.",
+    a: "Six structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, an additionality lock on credit-eligible records, and cross-MSME peer challenge before disclosure. Verification you can challenge, and that holds up when challenged.",
   },
   {
     q: "Are reporting outputs audit-ready?",
@@ -182,15 +183,23 @@ const faqs = [
   },
   {
     q: "How is confidentiality preserved between MSMEs, lenders, and buyers?",
-    a: "Row-Level Security on every table; IP addresses are hashed; lenders and buyers see anonymised decision-grade signals — not raw invoices. Cross-tenant access is impossible by construction.",
+    a: "Row-Level Security on every table; IP addresses are hashed; lenders and buyers see anonymised decision-grade signals, not raw invoices. Cross-tenant access is impossible by construction.",
   },
   {
     q: "Which countries are supported with localised factors?",
-    a: "India, Bangladesh, Indonesia, Vietnam, the Philippines, Pakistan, Singapore, Thailand, Malaysia and Sri Lanka — each with localised grid factors, tax IDs, and document formats. CBAM and EU exporters are supported across CN customs codes.",
+    a: "India, Bangladesh, Indonesia, Vietnam, the Philippines, Pakistan, Singapore, Thailand, Malaysia and Sri Lanka, each with localised grid factors, tax IDs, and document formats. CBAM and EU exporters are supported across CN customs codes.",
   },
 ];
 
 const Trust = () => {
+  // Redirected article URLs land on /trust#<safeguard>; scroll there once the
+  // lazily loaded page has rendered.
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    el?.scrollIntoView({ block: "start" });
+  }, [hash]);
   const faqSchema = faqs.map(f => ({ question: f.q, answer: f.a }));
   const [scope3Country, setScope3Country] = useState<string>("IN");
   const scope3 = scope3Examples[scope3Country];
@@ -202,7 +211,7 @@ const Trust = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Trust & Technical Validation"
-        description="How Senseible validates MSME climate data: trust layers, MRV architecture, framework alignment, Scope 3 traceability, confidence scoring, and greenwashing prevention — for partners, auditors, buyers and lenders."
+        description="How Senseible validates MSME climate data: trust layers, MRV architecture, framework alignment, Scope 3 traceability, confidence scoring, and greenwashing prevention, for partners, auditors, buyers and lenders."
         canonical="/trust"
         image={`https://senseible.earth${trustOg}`}
         keywords={[
@@ -378,7 +387,7 @@ const Trust = () => {
                 },
                 {
                   title: "Reduce cost from invoice memory",
-                  body: "The platform surfaces duplicate spend, high-emission supplier substitutes, and energy-mix arbitrage hidden in your own purchase history — each reduction routed into the Net-Zero engine as a tracked action.",
+                  body: "The platform surfaces duplicate spend, high-emission supplier substitutes, and energy-mix arbitrage hidden in your own purchase history, with each reduction routed into the Net-Zero engine as a tracked action.",
                 },
                 {
                   title: "Maximize net-zero progress",
@@ -449,7 +458,7 @@ const Trust = () => {
             <p className="text-muted-foreground max-w-3xl mb-8">
               In emerging markets, most suppliers don't publish PCFs. Enterprises fall back on sector averages and lose
               defensibility under CBAM, ISSB, and CSRD. Senseible's cross-MSME footprint turns that gap into a primary-data
-              network — your suppliers' real numbers, benchmarked against thousands of peers.
+              network: your suppliers' real numbers, benchmarked against thousands of peers.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -466,7 +475,7 @@ const Trust = () => {
                 <CardContent className="p-6">
                   <div className="text-sm font-medium mb-2">Cluster benchmarking no single enterprise can build</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Sector medians come from verified MSME activity across the network — peer-normalized scores instead of
+                    Sector medians come from verified MSME activity across the network: peer-normalized scores instead of
                     generic industry averages from outdated reports.
                   </p>
                 </CardContent>
@@ -544,7 +553,7 @@ const Trust = () => {
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">A score you can audit</h2>
             <p className="text-muted-foreground max-w-2xl mb-10">
               The Climate Credibility Score is a single 0–100 band derived from four observable inputs. It rewards denser,
-              better-attested evidence — not narrative quality.
+              better-attested evidence, not narrative quality.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -589,7 +598,7 @@ const Trust = () => {
                 },
                 {
                   name: "Immutable pre-processing stub",
-                  desc: "An audit row is written before parsing begins. Failed or abandoned runs still leave a record — no silent retries, no quiet edits.",
+                  desc: "An audit row is written before parsing begins. Failed or abandoned runs still leave a record: no silent retries, no quiet edits.",
                 },
                 {
                   name: "Methodology & factor pinning per output",
@@ -597,7 +606,7 @@ const Trust = () => {
                 },
                 {
                   name: "Deterministic failure",
-                  desc: "Missing inputs return a math-based failure reason. The platform never estimates to fill a gap — gaps stay visible until they are resolved.",
+                  desc: "Missing inputs return a math-based failure reason. The platform never estimates to fill a gap; gaps stay visible until they are resolved.",
                 },
                 {
                   name: "Additionality lock on credits",
@@ -605,7 +614,7 @@ const Trust = () => {
                 },
                 {
                   name: "Cross-MSME peer challenge",
-                  desc: "Anomalous values are flagged against the verified peer cluster before they reach a buyer or auditor — reducing the surface for after-the-fact disputes.",
+                  desc: "Anomalous values are flagged against the verified peer cluster before they reach a buyer or auditor, reducing the surface for after-the-fact disputes.",
                 },
               ].map(m => (
                 <Card key={m.name} className="border-border">
@@ -617,7 +626,7 @@ const Trust = () => {
               ))}
             </div>
             <p className="mt-8 text-base text-foreground/90 italic">
-              "Verification you can challenge — and that holds up when challenged."
+              "Verification you can challenge, and that holds up when challenged."
             </p>
           </div>
         </section>
@@ -632,7 +641,7 @@ const Trust = () => {
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Verification is the input. Finance and credits are downstream.</h2>
             <p className="text-muted-foreground max-w-3xl mb-10">
               The verified scope ledger described above is the primitive. Two of its downstream uses have their own dedicated
-              pages — with the lender mechanics, the credit gates, and the regulatory grounding spelled out in full.
+              pages, with the lender mechanics, the credit gates, and the regulatory grounding spelled out in full.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <Card className="border-border">
@@ -643,7 +652,7 @@ const Trust = () => {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Lenders, factors and incentive desks consume hash-pinned figures, confidence bands, methodology lock,
-                    and the Climate Credibility Score — not borrower self-declarations. Senseible is not a lender; it is
+                    and the Climate Credibility Score, not borrower self-declarations. Senseible is not a lender; it is
                     the verification primitive each of those institutions consumes.
                   </p>
                   <Button asChild variant="outline" size="sm">
@@ -659,7 +668,7 @@ const Trust = () => {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Records that clear additionality, evidence linkage and methodology lock become credit-ready signals.
-                    Buyers consume a decision-grade signal — not raw MSME data. The three gates and the underlying
+                    Buyers consume a decision-grade signal, not raw MSME data. The three gates and the underlying
                     workflow are documented on the carbon credits page.
                   </p>
                   <Button asChild variant="outline" size="sm">
@@ -713,6 +722,36 @@ const Trust = () => {
                   <CardContent className="p-5">
                     <div className="text-sm font-medium mb-2">{g.name}</div>
                     <p className="text-xs text-muted-foreground">{g.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Safeguards: replaces the earlier one-feature-per-article pieces */}
+        <section id="safeguards" className="py-20 border-b border-border bg-secondary/30">
+          <div className="container max-w-4xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">How each safeguard works</h2>
+            <p className="text-muted-foreground mb-10 max-w-2xl">
+              The checks that sit between an uploaded document and a figure you can put in front of an auditor, lender or buyer.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {trustSafeguards.map(item => (
+                <Card key={item.id} id={item.id} className="scroll-mt-24">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.summary}</p>
+                    <ul className="space-y-2">
+                      {item.points.map(point => (
+                        <li key={point} className="flex gap-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               ))}

@@ -108,7 +108,7 @@ const History = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-      <Helmet><title>Invoice History — Senseible</title></Helmet>
+      <Helmet><title>Invoice History | Senseible</title></Helmet>
       <CarbonParticles />
       <Navigation />
       <main className="relative z-10 container mx-auto px-4 py-8">

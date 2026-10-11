@@ -105,7 +105,7 @@ const AcceptInvite = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden">
       <Helmet>
-        <title>Accept Team Invitation — Senseible</title>
+        <title>Accept Team Invitation | Senseible</title>
       </Helmet>
       
       <CarbonParticles />

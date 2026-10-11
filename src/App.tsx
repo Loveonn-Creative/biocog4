@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -8,15 +7,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
 
-// Eagerly load critical pages
+// Eagerly load the homepage only; everything else is route-split.
 import Index from "./pages/Index";
-import Auth from "./pages/Auth";
 import { AnalyticsTracker } from "./components/AnalyticsTracker";
 import { RequireAuth } from "./components/RequireAuth";
 import { RouteSEO } from "./components/RouteSEO";
+import { TranslationScope } from "./components/TranslationScope";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 
+// Perf: Auth was eager; lazy keeps it (and its form deps) out of the homepage bundle.
+const Auth = lazy(() => import("./pages/Auth"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
+// Perf: the Radix toast viewport is not needed for first paint, so it loads right
+// after it. Toast state lives in hooks/use-toast (module memory), so toasts fired
+// before this mounts are still shown once it does.
+const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
 
 // Lazy load other pages for performance
 const Mission = lazy(() => import("./pages/Mission"));
@@ -90,11 +95,14 @@ const App = () => (
           <meta property="og:site_name" content="Senseible" />
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
-        <Toaster />
+        <Suspense fallback={null}>
+          <Toaster />
+        </Suspense>
         <Sonner />
         <BrowserRouter>
           <AnalyticsTracker />
           <RouteSEO />
+          <TranslationScope />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />

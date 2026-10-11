@@ -2,14 +2,16 @@
 
 Canonical: https://senseible.earth/climate-intelligence/mother-of-all-deals-india-eu-msmes
 
+Published 2025-01-15.
+
 The India-EU FTA has been called "the mother of all deals" for Indian trade. What does it mean for MSMEs?
 
 **The Stakes:**
 
-- EU is a $17 trillion economy
+- EU is one of the world's largest economies
 - 450 million consumers
 - Strict sustainability standards
-- High willingness to pay for verified sustainable goods
+- Growing demand for verified sustainable goods
 
 **MSME Opportunity:**
 
@@ -40,7 +42,7 @@ This is exactly why we exist. Turn your existing business documents into:
 
 **Action Steps:**
 
-1. [Upload one invoice](https://senseible.earth/) — see the process
+1. [Upload one invoice](https://senseible.earth/) and see the process
 2. Build your baseline over time
 3. Generate reports for buyers
 4. Access preferential financing
@@ -50,5 +52,5 @@ The FTA opens doors. Senseible gives you the keys. Start with your first documen
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

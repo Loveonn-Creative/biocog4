@@ -217,7 +217,7 @@ const PartnerReports = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Partner Reports — Senseible</title>
+        <title>Partner Reports | Senseible</title>
         <meta name="description" content="View your carbon credit portfolio, purchase history, and download audit packs." />
       </Helmet>
       

@@ -92,8 +92,8 @@ export const BANNED_CLAIMS: { pattern: RegExp; reason: string }[] = [
 
 export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/': {
-    title: 'Senseible: Carbon MRV, CBAM and Scope 3 for MSMEs',
-    description: 'Turn invoices and energy bills into verified Scope 1, 2 and 3 emissions, CBAM cost estimates and green finance signals. Free to start for MSMEs and exporters.',
+    title: 'Senseible: Carbon MRV to Climate Finance for MSMEs',
+    description: 'Upload a bill or invoice for an audit-ready carbon report. MSMEs use the verified record for green loans, buyer and export requests, and carbon credits.',
   },
   '/platform': {
     title: 'The Senseible Platform: Verified Climate Evidence',
@@ -208,7 +208,7 @@ export function pageMeta(path: string): PageMeta | undefined {
 // --- Dynamic route families. Each takes the record from its data file. ---
 
 export function solutionMeta(s: { title: string; regulationLabel: string; sectorLabel: string; countryName: string; painStatement: string }): PageMeta {
-  const base = s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '');
+  const base = s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '');
   const short = `${s.regulationLabel}: ${s.sectorLabel}, ${s.countryName}`;
   return {
     title: fitTitle(base.length <= TITLE_MAX ? base : short),

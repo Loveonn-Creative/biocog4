@@ -2,17 +2,19 @@
 
 Canonical: https://senseible.earth/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared
 
-A traditional carbon audit is a project — discrete, periodic, performed by humans. Digital MRV is a process — continuous, automated, performed by software with humans in the loop. Both produce a number. They do not produce equivalent numbers.
+Published 2026-05-21.
+
+A traditional carbon audit is a project: discrete, periodic, performed by humans. Digital MRV is a process: continuous, automated, performed by software with humans in the loop. Both produce a number. They do not produce equivalent numbers.
 
 ## Side-by-side
 
 | Dimension | Traditional audit | Digital MRV |
 | --- | --- | --- |
 | Cadence | Annual, one-off | Continuous, per-document |
-| Cost per cycle | ₹6L–₹40L (consultant-led) | ₹0.5–₹5 per document |
-| Time to first number | 8–14 weeks | Same session as upload |
+| Cost per cycle | High (consultant-led) | Low, per document |
+| Time to first number | Weeks to months | Same session as upload |
 | Evidence basis | Sample of documents | 100% of documents ingested |
-| Reproducibility | Audit-firm-specific | Deterministic — re-runnable by anyone with same inputs |
+| Reproducibility | Audit-firm-specific | Deterministic: re-runnable by anyone with same inputs |
 | Failure mode | Silent estimate or rounding | Explicit failure with math reason |
 | Audit trail | PDF report + working papers | SHA-256 hash per evidence document |
 | Methodology updates | Manual, next cycle | Version-pinned per record |
@@ -40,7 +42,7 @@ A traditional carbon audit is a project — discrete, periodic, performed by hum
 
 ## What digital MRV does badly
 
-- **Judgment.** When methodology is genuinely ambiguous, software defers — it does not invent.
+- **Judgment.** When methodology is genuinely ambiguous, software defers; it does not invent.
 - **Regulator signature.** MRV output is data, not assurance. A registered verifier still has to sign for regulator-filed disclosures.
 - **Edge-case sectors.** Highly bespoke processes still need human modelling.
 
@@ -58,7 +60,7 @@ This is cheaper than annual audits, faster than annual audits, and produces a st
 
 ## Why regulators are moving toward MRV-feed assurance
 
-- **EU CBAM.** Quarterly declarations need verifiable per-shipment data; manual audit cadence cannot keep up.
+- **EU CBAM.** EU importers' annual declarations need verifiable installation-level data for every shipment (the transitional period's quarterly reports ended in 2025); manual audit cadence struggles to keep up.
 - **SEBI BRSR Core.** Assurance requirements are tightening; auditors need ingest-grade source data.
 - **Voluntary Carbon Market.** Post-2023 quality crackdown demands per-credit traceability.
 
@@ -66,11 +68,11 @@ This is cheaper than annual audits, faster than annual audits, and produces a st
 
 ## FAQ
 
-**Can MRV replace my auditor?** No. It replaces the spreadsheet work that consumes 80% of an auditor's time, which means the auditor's hours focus on judgment, not data assembly. Your audit gets cheaper and more rigorous at the same time.
+**Can MRV replace my auditor?** No. It replaces the spreadsheet work that consumes much of an auditor's time, which means the auditor's hours focus on judgment, not data assembly. Your audit gets cheaper and more rigorous at the same time.
 
-**Is MRV blockchain-based?** Some implementations use blockchain for immutability. Senseible uses SHA-256 hashing in a private-by-default database, which delivers the same immutability guarantee without the blockchain operating cost.
+**Is MRV blockchain-based?** Some implementations use blockchain for immutability. Senseible uses SHA-256 hashing in a private-by-default database, which makes tampering detectable without the blockchain operating cost.
 
-**Do MRV outputs hold up in court or arbitration?** When properly hashed and methodology-pinned, yes. The legal standing comes from the evidence chain, not from the tool brand.
+**Do MRV outputs hold up in court or arbitration?** When properly hashed and methodology-pinned, they are much easier to defend. The legal standing comes from the evidence chain, not from the tool brand.
 
 ## Related guides
 

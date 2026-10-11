@@ -356,7 +356,7 @@ const CMSAdmin = () => {
   if (!isAuthenticated || !isAdmin) {
     return (
       <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-        <Helmet><title>Access Denied — Senseible</title></Helmet>
+        <Helmet><title>Access Denied | Senseible</title></Helmet>
         <CarbonParticles />
         <Navigation />
         
@@ -380,7 +380,7 @@ const CMSAdmin = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-      <Helmet><title>CMS Admin — Senseible</title></Helmet>
+      <Helmet><title>CMS Admin | Senseible</title></Helmet>
       <CarbonParticles />
       <Navigation />
 

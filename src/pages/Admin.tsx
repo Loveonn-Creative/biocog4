@@ -210,7 +210,7 @@ const Admin = () => {
       // Send approval notification email
       await sendPartnerNotification(app.contact_email, app.organization_name, 'approved');
 
-      toast.success(`Partner "${app.organization_name}" approved — notification sent`);
+      toast.success(`Partner "${app.organization_name}" approved, notification sent`);
       await Promise.all([fetchApplications(), fetchStats()]);
     } catch (err) {
       console.error('Error approving application:', err);
@@ -234,7 +234,7 @@ const Admin = () => {
       // Send rejection notification email
       await sendPartnerNotification(app.contact_email, app.organization_name, 'rejected');
 
-      toast.success('Application rejected — notification sent');
+      toast.success('Application rejected, notification sent');
       await Promise.all([fetchApplications(), fetchStats()]);
     } catch (err) {
       console.error('Error rejecting application:', err);
@@ -312,7 +312,7 @@ const Admin = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
-        <title>Admin Dashboard — Senseible</title>
+        <title>Admin Dashboard | Senseible</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       

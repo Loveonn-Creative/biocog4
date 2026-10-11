@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/scope3-steel-india
 
-Steel MSMEs in India lack tools to measure value chain emissions. With 60% of emissions in Scope 3 (raw materials, logistics), incomplete reporting risks CBAM penalties and lost green finance.
+Steel buyers and lenders increasingly ask for value-chain emissions: purchased iron ore, coal, ferro-alloys and freight. Measuring them starts with purchase invoices and supplier data, with Scope 1 and 2 calculated from fuel and power bills.
 
 ## Steps
 
@@ -15,15 +15,15 @@ Steel MSMEs in India lack tools to measure value chain emissions. With 60% of em
 
 | Item | Value |
 | --- | --- |
-| Scope 3 share (steel) | 55-65% of total |
-| Key categories | Cat 1 (materials), Cat 4 (transport) |
-| Data collection time | 1-3 weeks |
+| Main Scope 3 categories for steel | Cat 1 (purchased goods), Cat 4 (inbound freight) |
+| India grid factor for Scope 2 | 0.710 tCO2/MWh (CEA v21.0, FY 2024-25) |
+| Method guidance | GHG Protocol Corporate Value Chain (Scope 3) Standard |
 
 ## Questions
 
-### What percentage of steel emissions are Scope 3?
+### Is Scope 3 needed for CBAM?
 
-For Indian steel MSMEs, Scope 3 typically accounts for 55-65% of total emissions, primarily from iron ore procurement (Category 1) and transportation (Category 4).
+No. CBAM uses installation-level direct emissions (and precursors) per product. Scope 3 is what corporate buyers and lenders ask for.
 
 ## Related
 

@@ -202,7 +202,7 @@ const CarbonMarketplace = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <SEOHead 
-        title="Carbon Marketplace — Senseible"
+        title="Carbon Marketplace | Senseible"
         description="Discover, evaluate and purchase verified carbon credits from Indian MSMEs. Net-zero aligned, UN SDG compliant, transparent pricing."
         keywords={["carbon marketplace", "carbon credits India", "buy carbon credits", "MSME carbon", "verified credits"]}
       />

@@ -253,7 +253,7 @@ const Pricing = () => {
       originalPrice: billingCycle === 'yearly' ? TIER_PRICES.essential.monthly : undefined,
       period: '/month',
       subtext: billingCycle === 'yearly'
-        ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
+        ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
         : 'Switch to yearly to save 75%.',
       cta: 'Unlock Savings',
       ctaVariant: 'default',
@@ -277,7 +277,7 @@ const Pricing = () => {
       originalPrice: billingCycle === 'yearly' ? TIER_PRICES.pro.monthly : undefined,
       period: '/month',
       subtext: billingCycle === 'yearly'
-        ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr — save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
+        ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
         : 'Switch to yearly to save 50%.',
       cta: 'Start Earning',
       ctaVariant: 'default',
@@ -303,7 +303,7 @@ const Pricing = () => {
       tagline: 'Pay As You Grow',
       price: scalePrice,
       period: '/month',
-      subtext: billingCycle === 'yearly' ? 'Yearly billing — best per-seat rate.' : 'Custom workflows and larger teams.',
+      subtext: billingCycle === 'yearly' ? 'Yearly billing: best per-seat rate.' : 'Custom workflows and larger teams.',
       cta: 'Talk to Sales',
       ctaVariant: 'secondary',
       features: [
@@ -345,7 +345,7 @@ const Pricing = () => {
     },
     {
       q: 'Is this built for small businesses?',
-      a: 'Yes! Senseible is designed specifically for MSMEs. No consultants, no complex setups — just simple, affordable climate action.',
+      a: 'Yes! Senseible is designed specifically for MSMEs. No consultants, no complex setups, just simple, affordable climate action.',
     },
     {
       q: 'Can I actually earn money from this?',
@@ -565,7 +565,7 @@ const Pricing = () => {
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
                 {billingCycle === 'yearly'
-                  ? 'Best value — one annual payment, lowest per-month rate.'
+                  ? 'Best value: one annual payment, lowest per-month rate.'
                   : 'Higher per-month rate. Switch to yearly to unlock the launch price.'}
               </p>
             </div>
@@ -749,7 +749,7 @@ const Pricing = () => {
                             feature[tier as keyof typeof feature] ? (
                               <Check className="h-4 w-4 text-success mx-auto" />
                             ) : (
-                              <span className="text-muted-foreground">—</span>
+                              <span className="text-muted-foreground">-</span>
                             )
                           ) : (
                             <span className={cn(

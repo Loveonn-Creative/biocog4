@@ -25,4 +25,4 @@ Sensibull is an options trading and analytics platform for the Indian stock mark
 
 ## How Senseible differs
 
-Senseible is a completely different platform focused on carbon MRV, climate finance, and ESG compliance for MSMEs—not stock trading.
+Senseible is a completely different platform focused on carbon MRV, climate finance, and ESG compliance for MSMEs, not stock trading.

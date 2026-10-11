@@ -2,11 +2,13 @@
 
 Canonical: https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme
 
-Biogenic CO2 is the carbon released when biological material — wood, cotton, sugarcane bagasse, food waste — decomposes or burns. Whether it counts as "zero" depends on accounting rules, not chemistry.
+Published 2026-05-06.
+
+Biogenic CO2 is the carbon released when biological material (wood, cotton, sugarcane bagasse, food waste) decomposes or burns. Whether it counts as "zero" depends on accounting rules, not chemistry.
 
 ## The IPCC default
 
-IPCC AR6 treats biogenic CO2 from sustainably managed sources as carbon-neutral over the harvest cycle. Methane and nitrous oxide from the same biomass are NOT zero — they have GWP of 27.9 and 273 respectively.
+IPCC AR6 treats biogenic CO2 from sustainably managed sources as carbon-neutral over the harvest cycle. Methane and nitrous oxide from the same biomass are NOT zero: they have GWP of 27.9 and 273 respectively.
 
 ## Where MSMEs get this wrong
 
@@ -19,7 +21,7 @@ IPCC AR6 treats biogenic CO2 from sustainably managed sources as carbon-neutral 
 | Sustainable wood biomass | Reported separately as biogenic, often netted to zero | Counted in fossil totals |
 | Rice husk combustion | Biogenic CO2 separately | CH4 from incomplete combustion counted |
 | Cotton field residue | Biogenic CO2 separately | N2O from soil counted |
-| Food waste to landfill | Biogenic CO2 | Significant CH4 — counted |
+| Food waste to landfill | Biogenic CO2 | Significant CH4, counted |
 
 The mistake is reporting one number. Report biogenic CO2, fossil CO2, CH4 and N2O on separate lines so a verifier can see the logic.
 
@@ -31,10 +33,10 @@ For each biomass input, capture: source, mass, moisture content, end-use (combus
 
 CBAM excludes biogenic CO2 from embedded emissions if the biomass meets EU RED III sustainability criteria. CSRD requires you to disclose biogenic carbon as a separate line in the ESRS E1 emissions tables.
 
-Use the [PCF calculator](https://senseible.earth/calculators/product-carbon-footprint) — biogenic CO2 is split out automatically when you select biomass-based materials.
+Use the [PCF calculator](https://senseible.earth/calculators/product-carbon-footprint): biogenic CO2 is split out automatically when you select biomass-based materials.
 
 ## Related guides
 
 - [What is GHG-6 and how do we calculate warming impact beyond CO2?](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
 - [Do methane and black carbon reductions count differently from CO2?](https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2)
-- [Cold Chain MSMEs: Refrigerant Leakage Is Often 60% of Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [Cold Chain MSMEs: Refrigerant Leakage Can Dominate Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)

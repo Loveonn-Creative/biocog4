@@ -2,24 +2,26 @@
 
 Canonical: https://senseible.earth/climate-intelligence/indonesia-pertamina-rspo-palm-oil-carbon-2026
 
-Indonesia produces 60% of the world's palm oil. The EU Deforestation Regulation (EUDR), RSPO, and Indonesia's mandatory ISPO converge on small mills and out-growers in 2026.
+Published 2026-05-06.
+
+Indonesia is the world's largest palm oil producer. The EU Deforestation Regulation (EUDR), RSPO, and Indonesia's mandatory ISPO converge on small mills and out-growers in 2026.
 
 ## What each scheme demands
 
 | Scheme | Carbon scope | Deforestation cutoff | Smallholder support |
 | --- | --- | --- | --- |
-| EUDR | Embedded land-use change | 31 Dec 2020 | Limited grace period |
+| EUDR | None (deforestation-free and legality evidence only) | 31 Dec 2020 | Limited grace period |
 | RSPO | Full LCA per tonne CPO | 2005 | Group certification allowed |
 | ISPO (mandatory) | Mill-level emissions | National forest definition | Subsidised audit |
 
 ## Where the carbon actually sits
 
-- Land use change at planting: 30–60 tCO2/ha (peatland up to 200)
-- POME methane (palm oil mill effluent): 1.5 tCO2e per tonne CPO if untreated
+- Land use change at planting, which is far higher on peatland
+- POME methane (palm oil mill effluent), large if untreated
 - Boiler fuel (mostly fibre and shell): biogenic, but with CH4
-- Transport: ~0.05 tCO2 per tonne CPO per 100 km
+- Transport of FFB and CPO
 
-Untreated POME is the hidden killer — a 60 tonne/hour mill emits 90,000+ tCO2e/year just from effluent ponds. Methane capture cuts this by 90%.
+Untreated POME is often the largest hidden source at a mill, and methane capture can remove most of it.
 
 ## The 2026 mill checklist
 
@@ -31,11 +33,11 @@ Untreated POME is the hidden killer — a 60 tonne/hour mill emits 90,000+ tCO2e
 
 ## Use Senseible to compile
 
-[Senseible](https://senseible.earth/) accepts Bahasa Indonesia and parses Pertamina diesel, PLN electricity bills, and CPO dispatch records. The output meets RSPO and ISPO data templates. EUDR polygon upload is a separate workflow.
+[Senseible](https://senseible.earth/) parses Pertamina diesel, PLN electricity bills, and CPO dispatch records, and the output can be mapped to RSPO and ISPO data requests. EUDR polygon upload is a separate workflow.
 
 ## Financing
 
-IFC + Bank Mandiri offer green loans at IDR rate minus 1.5% for mills with verified mitigation plans. Documentation requirement: 12-month emissions baseline, 3-year reduction plan, third-party verification.
+Development finance institutions and Indonesian banks offer green loans for mills with verified mitigation plans. Typical documentation requirement: 12-month emissions baseline, 3-year reduction plan, third-party verification.
 
 ## Related guides
 

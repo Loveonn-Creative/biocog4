@@ -2,23 +2,25 @@
 
 Canonical: https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize
 
+Published 2025-01-15.
+
 Solar installations reduce grid electricity consumption, which means fewer emissions. These reductions can potentially be monetized as carbon credits.
 
 **How Solar Creates Carbon Value:**
 
 Every kWh of solar power displaces grid electricity. In India:
 
-- Grid average: 0.82 kg CO2e/kWh
+- Grid average: 0.710 kg CO2/kWh (CEA CO2 Baseline Database v21.0, FY 2024-25)
 - Solar: 0 kg CO2e/kWh (operational)
-- Difference: 0.82 kg CO2e saved per kWh
+- Difference: 0.710 kg CO2 saved per kWh
 
 **Example Calculation:**
 
-A 100 kW rooftop solar system generating 150,000 kWh/year:
+Suppose a 100 kW rooftop solar system generates 150,000 kWh/year:
 
-- Emission reduction: 150,000 × 0.82 = 123,000 kg CO2e
-- Annual reduction: 123 tonnes CO2e
-- At ₹600-800 per tonne: ₹73,800 - ₹98,400 potential value
+- Emission reduction: 150,000 × 0.710 = 106,500 kg CO2
+- Annual reduction: about 106 tonnes CO2
+- Potential value: 106 tonnes × the price a buyer will actually pay, which varies widely by standard, vintage and project type
 
 **Eligibility Requirements:**
 
@@ -42,7 +44,7 @@ Not all solar installations qualify for carbon credits. Key factors:
 3. [Verify your reductions](https://senseible.earth/verify)
 4. Explore [monetization pathways](https://senseible.earth/monetize)
 
-For smaller installations, bundling with other MSMEs through platforms like Senseible makes credit generation viable.
+For smaller installations, bundling with other MSMEs through platforms like Senseible can make credit generation more viable.
 
 ## Related guides
 

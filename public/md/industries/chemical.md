@@ -1,4 +1,4 @@
-# Chemical Industry: carbon accounting
+# Chemical Industry: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/chemical
 

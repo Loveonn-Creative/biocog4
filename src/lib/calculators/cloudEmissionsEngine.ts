@@ -162,7 +162,7 @@ export function calculateCloudEmissions(workloads: CloudWorkload[]): CloudEmissi
 
     results.push({
       id: w.id,
-      label: w.label?.trim() || `${profile.name} — ${region.name}`,
+      label: w.label?.trim() || `${profile.name}, ${region.name}`,
       providerName: profile.name,
       regionName: region.name,
       gridFactor: region.factor,
@@ -202,7 +202,7 @@ export function calculateCloudEmissions(workloads: CloudWorkload[]): CloudEmissi
       'Cloud Carbon Footprint energy coefficients (vCPU, memory, storage, network)',
       'Operator-published PUE disclosures (2023)',
       'IEA 2023 national grid emission factors',
-      'GHG Protocol Scope 2 Guidance — location-based and market-based methods',
+      'GHG Protocol Scope 2 Guidance: location-based and market-based methods',
     ],
     methodologyVersion: 'CLOUD-v1.0 (GHGP Scope 2 dual reporting / CCF coefficients)',
   };

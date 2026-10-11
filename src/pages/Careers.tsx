@@ -33,9 +33,9 @@ const isFresherTrack = (r: CareerRole) =>
   r.level === "Fresher" || r.level === "Intern";
 
 const mailtoFor = (r: CareerRole) => {
-  const subject = encodeURIComponent(`Application — ${r.title}`);
+  const subject = encodeURIComponent(`Application: ${r.title}`);
   const body = encodeURIComponent(
-    `Hi Senseible team,\n\nRole: ${r.title}\nFunction: ${r.function}\nLocation: ${r.location}\n\nIn 3–5 lines: what have you built, and how will it help Senseible move faster?\n\n(Attach CV or share links.)\n\n— `
+    `Hi Senseible team,\n\nRole: ${r.title}\nFunction: ${r.function}\nLocation: ${r.location}\n\nIn 3–5 lines: what have you built, and how will it help Senseible move faster?\n\n(Attach CV or share links.)\n\n`
   );
   return `mailto:${APPLY_EMAIL}?subject=${subject}&body=${body}`;
 };
@@ -95,7 +95,7 @@ const Careers = () => {
       t("careers.why.b.h", "Cost → revenue."),
       t(
         "careers.why.b.b",
-        "Compliance stops being a burden and becomes a payout. Green invoices, factoring, credits — proof that being clean pays."
+        "Compliance stops being a burden and becomes a payout. Green invoices, factoring, credits: proof that being clean pays."
       ),
       t("careers.why.b.tag", "Fairness"),
     ],
@@ -121,21 +121,21 @@ const Careers = () => {
       t("careers.belong.b.h", "Your background is a feature, not a footnote."),
       t(
         "careers.belong.b.b",
-        "Self-taught, graduate, career-switcher, PhD, first job — the problem is too big for one kind of resume. Show us how you think."
+        "Self-taught, graduate, career-switcher, PhD, first job: the problem is too big for one kind of resume. Show us how you think."
       ),
     ],
     [
       t("careers.belong.c.h", "Your discipline is welcome across surfaces."),
       t(
         "careers.belong.c.b",
-        "Engineer, researcher, designer, operator, writer, policy mind — every one of them touches this product. None of them are ornamental."
+        "Engineer, researcher, designer, operator, writer, policy mind: every one of them touches this product. None of them are ornamental."
       ),
     ],
     [
       t("careers.belong.d.h", "Your distance from us is not the point."),
       t(
         "careers.belong.d.b",
-        "Gurugram, Remote (India), or Hybrid today — with the discipline to work asynchronously well. We hire for judgement, not proximity."
+        "Gurugram, Remote (India), or Hybrid today, with the discipline to work asynchronously well. We hire for judgement, not proximity."
       ),
     ],
   ];
@@ -154,7 +154,7 @@ const Careers = () => {
       h: t("careers.work.finance.h", "Climate finance signals."),
       b: t(
         "careers.work.finance.b",
-        "Turn verified baselines into underwriting inputs for green loans, factoring, and SLLs — with a credibility score a lender can read."
+        "Turn verified baselines into underwriting inputs for green loans, factoring, and SLLs, with a credibility score a lender can read."
       ),
       to: "/climate-finance",
       cta: t("careers.work.finance.cta", "See climate finance"),
@@ -214,7 +214,7 @@ const Careers = () => {
       question: t("careers.faq.q2", "I'm a fresher or intern. How do I apply?"),
       answer: t(
         "careers.faq.a2",
-        "Use the freshers and interns form on this page. It goes to the founding team. Reply within a week — usually faster."
+        "Use the freshers and interns form on this page. It goes to the founding team. Reply within a week, usually faster."
       ),
     },
     {
@@ -235,7 +235,7 @@ const Careers = () => {
       question: t("careers.faq.q5", "Do you sponsor visas or relocation?"),
       answer: t(
         "careers.faq.a5",
-        "Not today. We revisit as we grow. If you're extraordinary and outside India, still write — we'll be honest about what's possible."
+        "Not today. We revisit as we grow. If you're extraordinary and outside India, still write. We'll be honest about what's possible."
       ),
     },
     {
@@ -252,7 +252,7 @@ const Careers = () => {
       <SEOHead
         title={t(
           "careers.seo.title",
-          "Life at Senseible — Careers"
+          "Life at Senseible | Careers"
         )}
         description={t(
           "careers.seo.desc",
@@ -294,7 +294,7 @@ const Careers = () => {
             >
               {t(
                 "careers.life.title",
-                "Life at Senseible is life inside a system that has to work — for small businesses that can't afford it not to."
+                "Life at Senseible is life inside a system that has to work, for small businesses that can't afford it not to."
               )}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">
@@ -502,7 +502,7 @@ const Careers = () => {
                   id="roles-heading"
                   className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
                 >
-                  {t("careers.roles.title", "Open roles — kept short, kept honest.")}
+                  {t("careers.roles.title", "Open roles: kept short, kept honest.")}
                 </h2>
               </div>
               <div
@@ -597,7 +597,7 @@ const Careers = () => {
                 <p className="text-sm text-muted-foreground mt-2">
                   {t(
                     "careers.roles.empty.body",
-                    "Send a note to {email} — we track strong builders for the next opening."
+                    "Send a note to {email}. We track strong builders for the next opening."
                   )
                     .split("{email}")
                     .flatMap((part, i, arr) =>
@@ -651,7 +651,7 @@ const Careers = () => {
                               href={FRESHER_FORM_URL}
                               target="_blank"
                               rel="noopener noreferrer"
-                              aria-label={`${t("careers.role.apply_form", "Apply via form")} — ${r.title}`}
+                              aria-label={`${t("careers.role.apply_form", "Apply via form")}: ${r.title}`}
                             >
                               {t("careers.role.apply_form", "Apply via form")}
                               <ExternalLink
@@ -671,7 +671,7 @@ const Careers = () => {
                             <Button asChild size="sm" className="min-h-11">
                               <a
                                 href={mailtoFor(r)}
-                                aria-label={`${t("careers.role.email_cv", "Email CV")} — ${r.title}`}
+                                aria-label={`${t("careers.role.email_cv", "Email CV")}: ${r.title}`}
                               >
                                 <Mail
                                   className="mr-2 h-3.5 w-3.5"
@@ -690,7 +690,7 @@ const Careers = () => {
                                 href={FRESHER_FORM_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label={`${t("careers.role.apply", "Apply")} — ${r.title}`}
+                                aria-label={`${t("careers.role.apply", "Apply")}: ${r.title}`}
                               >
                                 {t("careers.role.apply", "Apply")}
                                 <ArrowRight
@@ -768,7 +768,7 @@ const Careers = () => {
             <p className="text-base md:text-lg text-primary-foreground/85 max-w-2xl mx-auto leading-[1.7]">
               {t(
                 "careers.cta.body",
-                "Spend ten minutes on the platform, then tell us in 3–5 lines — or a 2–3 minute video — how you'd make it faster. Freshers use the form; everyone else, email."
+                "Spend ten minutes on the platform, then tell us in 3–5 lines (or a 2–3 minute video) how you'd make it faster. Freshers use the form; everyone else, email."
               )}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">

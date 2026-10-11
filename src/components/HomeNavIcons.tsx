@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HelpCircle, Sparkles, CreditCard, LogIn, Phone, Building2, Users, Scale, LayoutDashboard, User } from 'lucide-react';
 import { useSession } from '@/hooks/useSession';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,7 @@ export const HomeNavIcons = () => {
 
   return (
     <div className="absolute top-4 right-4 flex items-center gap-2 z-30">
+      <LanguageSwitcher />
       {/* Question mark dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

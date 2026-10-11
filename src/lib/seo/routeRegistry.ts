@@ -9,6 +9,8 @@ import { competitorData } from '@/data/competitorData';
 import { industries } from '@/data/industriesData';
 import { legalDocuments } from '@/data/legalContent';
 import { careersRoles } from '@/data/careersRoles';
+import { trustSafeguards } from '@/data/trustSafeguards';
+import { articleRedirects } from '@/data/articleRedirects';
 import {
   STATIC_PAGE_META,
   SITE_URL,
@@ -18,8 +20,10 @@ import {
   industryMeta,
   legalMeta,
   canonicalUrl,
+  PAGE_REVIEWS,
+  REVIEWERS,
 } from './seoMeta';
-import { articleMeta } from './articleSeo';
+import { articleMeta, extractFaqs } from './articleSeo';
 import { STATIC_CONTENT } from './staticContent';
 import { markdownToBlocks, type Block } from './render';
 
@@ -184,11 +188,19 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  const trust = staticRoute('/trust', 'core', 0.8, {
+    blocks: [
+      { p: STATIC_PAGE_META['/trust'].description },
+      { h2: 'How each safeguard works' },
+      ...trustSafeguards.flatMap(sg => [{ h3: sg.title } as Block, { p: sg.summary } as Block, { ul: sg.points } as Block]),
+    ],
+  });
+
   const simple: [string, RouteSection, number][] = [
     ['/platform', 'core', 0.9], ['/about', 'core', 0.6], ['/mission', 'core', 0.5],
     ['/principles', 'core', 0.5], ['/contact', 'core', 0.6], ['/carbon-credits', 'core', 0.8],
     ['/climate-finance', 'core', 0.8], ['/partners', 'core', 0.6], ['/grants', 'core', 0.4],
-    ['/trust', 'core', 0.8], ['/net-zero', 'tool', 0.7], ['/cbam-calculator', 'tool', 0.9],
+    ['/net-zero', 'tool', 0.7], ['/cbam-calculator', 'tool', 0.9],
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
   ];
   const calculators = Object.keys(STATIC_PAGE_META)
@@ -198,10 +210,18 @@ function coreRoutes(): SeoRoute[] {
     }));
 
   return [
-    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub,
+    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust,
     ...simple.map(([p, s, pr]) => staticRoute(p, s, pr)),
     ...calculators,
   ];
+}
+
+function articleByline(path: string, date: string, updated: boolean): string {
+  const review = PAGE_REVIEWS[path];
+  const dated = `${updated ? 'Updated' : 'Published'} ${toIsoDate(date) ?? date}.`;
+  return review
+    ? `${dated} Reviewed by ${REVIEWERS[review.reviewer].name}, ${REVIEWERS[review.reviewer].role}, on ${review.reviewedOn}.`
+    : dated;
 }
 
 function articleRoutes(): SeoRoute[] {
@@ -216,6 +236,7 @@ function articleRoutes(): SeoRoute[] {
       ...meta,
       h1: a.title,
       blocks: [
+        { p: articleByline(path, a.updatedAt ?? a.createdAt, !!a.updatedAt) },
         ...markdownToBlocks(a.content),
         ...(related.length ? [{ h2: 'Related guides' } as Block, { ul: related.map(r => `[${r.title}](/climate-intelligence/${r.slug})`) } as Block] : []),
       ],
@@ -227,13 +248,15 @@ function articleRoutes(): SeoRoute[] {
           headline: a.title,
           description: meta.description,
           datePublished: toIsoDate(a.createdAt),
+          dateModified: toIsoDate(a.updatedAt ?? a.createdAt),
           author: { '@type': 'Organization', name: 'Senseible', url: SITE_URL },
           publisher: { '@type': 'Organization', name: 'Senseible', logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` } },
           mainEntityOfPage: canonicalUrl(path),
         },
         breadcrumbLd(crumbs),
+        ...(extractFaqs(a.content).length ? [faqLd(extractFaqs(a.content))] : []),
       ],
-      lastmod: toIsoDate(a.createdAt),
+      lastmod: toIsoDate(a.updatedAt ?? a.createdAt),
       priority: 0.6,
       changefreq: 'monthly' as const,
     };
@@ -242,13 +265,14 @@ function articleRoutes(): SeoRoute[] {
 
 // Only link to pages that exist, so prerendered pages never point at a 404.
 const articleBySlug = new Map(cmsArticles.map(a => [a.slug, a.title]));
-const solutionBySlug = new Map(solutionPages.map(s => [s.slug, s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '')]));
+const solutionBySlug = new Map(solutionPages.filter(s => s.indexed).map(s => [s.slug, s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '')]));
 const PUBLIC_TOOL_PATHS = new Set(['/cbam-calculator', '/net-zero', '/calculators', ...Object.keys(STATIC_PAGE_META).filter(p => p.startsWith('/calculators/'))]);
 
 function solutionRoutes(): SeoRoute[] {
-  return solutionPages.map(s => {
+  // Only reviewed, data-backed solution pages are indexed and prerendered.
+  return solutionPages.filter(s => s.indexed).map(s => {
     const path = `/solutions/${s.slug}`;
-    const h1 = s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '');
+    const h1 = s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '');
     const crumbs = [{ name: 'Home', path: '/' }, { name: h1, path }];
     return {
       path,
@@ -310,7 +334,7 @@ function industryRoutes(): SeoRoute[] {
       path,
       section: 'industry' as const,
       ...industryMeta(i),
-      h1: `${i.name}: carbon accounting`,
+      h1: `${i.name}: Carbon Accounting Guide`,
       blocks: [
         { p: i.description },
         { h2: 'Scope 1 sources' }, { ul: i.scope1Sources },
@@ -358,4 +382,19 @@ export function getSeoRoutes(): SeoRoute[] {
     ...industryRoutes(),
     ...legalRoutes(),
   ];
+}
+
+export interface SeoRedirect {
+  from: string;
+  to: string;
+}
+
+/** Retired URLs. Rendered as redirect pages, never listed in the sitemap. */
+export function getRedirects(): SeoRedirect[] {
+  return Object.entries(articleRedirects).map(([slug, to]) => ({ from: `/climate-intelligence/${slug}`, to }));
+}
+
+/** Live pages that render with noindex (reachable, linkable, not in the sitemap). */
+export function getNoIndexPaths(): string[] {
+  return solutionPages.filter(s => !s.indexed).map(s => `/solutions/${s.slug}`);
 }

@@ -25,4 +25,4 @@ Indian carbon accounting platform for enterprises with focus on Scope 3 supplier
 
 ## How Senseible differs
 
-Senseible offers sub-minute processing, automated verification, and direct monetization—designed for MSMEs who need speed and revenue.
+Senseible offers sub-minute processing, automated verification, and direct monetization, designed for MSMEs who need speed and revenue.

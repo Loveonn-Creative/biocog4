@@ -33,7 +33,7 @@ export const PeerBenchmark = ({ totalCO2Kg, scopeBreakdown, dominantCategory }: 
     <div className="p-4 rounded-xl bg-secondary/30 border border-border/50">
       <h4 className="text-sm font-medium mb-3 flex items-center gap-2">
         <BarChart3 className="h-4 w-4 text-accent" />
-        Peer Benchmark — {benchmark.label} Sector
+        Peer Benchmark: {benchmark.label} Sector
       </h4>
       <div className="grid grid-cols-2 gap-3">
         <div className="p-2 rounded-lg bg-background/50">

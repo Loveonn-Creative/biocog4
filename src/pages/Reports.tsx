@@ -518,7 +518,7 @@ const Reports = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-      <Helmet><title>Reports — Senseible</title></Helmet>
+      <Helmet><title>Reports | Senseible</title></Helmet>
       <CarbonParticles />
       <Navigation />
       
@@ -796,7 +796,7 @@ const Reports = () => {
                           : <AlertCircle className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-0.5" />}
                         <span>
                           <span className={c.met ? 'text-foreground' : 'text-muted-foreground'}>{c.label}</span>
-                          <span className="text-muted-foreground"> — {c.detail}</span>
+                          <span className="text-muted-foreground">: {c.detail}</span>
                         </span>
                       </li>
                     ))}

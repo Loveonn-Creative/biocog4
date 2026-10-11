@@ -2,18 +2,20 @@
 
 Canonical: https://senseible.earth/climate-intelligence/green-finance-textile-exporters-step-by-step
 
-India's textile sector exports $35+ billion annually, with significant exposure to EU sustainability requirements. Here's how textile MSMEs can access green finance.
+Published 2025-01-15.
+
+India's textile sector is a major exporter, with significant exposure to EU sustainability requirements. Here's how textile MSMEs can access green finance.
 
 **Why Textiles Face Pressure:**
 
 - EU Strategy for Sustainable Textiles (2030 targets)
-- CBAM may expand to textiles
-- Buyer mandates (H&M, Zara, IKEA require supplier data)
+- CBAM does not cover textiles, but the EU reviews its scope periodically
+- Buyer mandates (large brands increasingly ask suppliers for emissions data)
 - Water and energy intensity makes textiles high-impact
 
 **Green Finance Opportunities:**
 
-1. **Green Working Capital** (0.5-2% lower interest)
+1. **Green Working Capital** (potentially lower interest)
 2. **Technology Upgrade Loans** (for efficient machinery)
 3. **Export Credit** (preferential rates for sustainable exporters)
 4. **Carbon Credit Revenue** (from verified reductions)

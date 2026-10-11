@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets
 
+Published 2025-01-01.
+
 Voluntary carbon markets offer several types of credits based on the project methodology and verification standard.
 
 **By Project Type:**

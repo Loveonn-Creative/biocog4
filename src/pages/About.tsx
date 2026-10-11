@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="About — Senseible"
+        title="About | Senseible"
         description="How the world works differently because Senseible exists. Infrastructure-grade carbon MRV for MSMEs and exporters."
         keywords={["about senseible", "carbon MRV infrastructure", "MSME climate finance", "carbon verification"]}
         canonical="/about"
@@ -64,13 +64,13 @@ const About = () => {
               <div className="p-5 bg-secondary/50 rounded-xl">
                 <p className="text-2xl font-semibold text-foreground">CCTS / ETS</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Carbon pricing schemes now cover 23% of global emissions — from India's CCTS to EU ETS to emerging schemes in Brazil, Indonesia, and Southeast Asia
+                  Carbon pricing schemes now cover 23% of global emissions, from India's CCTS to EU ETS to emerging schemes in Brazil, Indonesia, and Southeast Asia
                 </p>
               </div>
             </div>
             <p className="text-muted-foreground mt-6 leading-relaxed">
               Banks and buyers globally price risk differently for businesses with verified sustainability data. 
-              The gap between "has data" and "doesn't have data" is now a competitive moat — from Mumbai to São Paulo to Jakarta.
+              The gap between "has data" and "doesn't have data" is now a competitive moat, from Mumbai to São Paulo to Jakarta.
             </p>
           </section>
           
@@ -83,7 +83,7 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex items-baseline justify-between py-4 border-b border-border">
                 <span className="text-muted-foreground">Traditional carbon measurement cost</span>
-                <span className="text-xl font-semibold">₹50,000 — ₹5,00,000/year</span>
+                <span className="text-xl font-semibold">₹50,000 to ₹5,00,000/year</span>
               </div>
               <div className="flex items-baseline justify-between py-4 border-b border-border">
                 <span className="text-muted-foreground">Verification timeline</span>
@@ -95,7 +95,7 @@ const About = () => {
               </div>
             </div>
             <p className="text-muted-foreground mt-6 leading-relaxed">
-              MSMEs across emerging markets — 110 million in India, 40 million in Brazil, 65 million in Indonesia — are structurally excluded from the 
+              MSMEs across emerging markets (110 million in India, 40 million in Brazil, 65 million in Indonesia) are structurally excluded from the 
               infrastructure required to participate in the climate transition.
             </p>
           </section>

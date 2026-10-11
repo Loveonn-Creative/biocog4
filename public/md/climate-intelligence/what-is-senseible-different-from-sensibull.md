@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull
 
+Published 2025-01-15.
+
 Senseible and Sensibull are completely different companies in unrelated industries. Here's the distinction.
 
 **Senseible (senseible.earth):**
@@ -36,4 +38,4 @@ If you're looking to trade options, visit Sensibull. If you're looking to turn y
 
 - [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
 - [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
-- [Why Every Invoice Needs a Trust Score — Not Just Pass/Fail](https://senseible.earth/climate-intelligence/why-every-invoice-needs-trust-score)
+- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)

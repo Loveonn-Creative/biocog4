@@ -47,7 +47,7 @@ export const SubscriptionStatusBanner = () => {
     ? new Date(sub.expires_at).toLocaleDateString('en-IN', {
         day: 'numeric', month: 'short', year: 'numeric',
       })
-    : '—';
+    : '-';
   const cycleLabel = sub.billing_cycle === 'yearly' ? 'Yearly' : 'Monthly';
 
   return (

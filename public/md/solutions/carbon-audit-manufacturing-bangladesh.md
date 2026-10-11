@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/carbon-audit-manufacturing-bangladesh
 
-Bangladeshi manufacturers face growing pressure from international buyers for emission disclosures. The DoE-ECA framework requires environmental compliance but lacks carbon-specific guidance for SMEs.
+International buyers and lenders increasingly ask Bangladeshi manufacturers for an emissions baseline. A carbon audit from fuel, electricity and purchase records gives one consistent set of figures to share.
 
 ## Steps
 
@@ -15,19 +15,18 @@ Bangladeshi manufacturers face growing pressure from international buyers for em
 
 | Item | Value |
 | --- | --- |
-| Grid factor | 0.623 kgCO₂/kWh |
-| Regulatory body | DoE (Department of Environment) |
-| Audit cost (manual) | BDT 2-5 lakh |
+| Documents needed | 12 months of electricity, fuel and freight bills; key purchase invoices |
+| Grid factor to use | Official Bangladesh factor (government BUR or DoE), with year stated |
+| Method | GHG Protocol Corporate Standard |
 
 ## Questions
 
 ### Is carbon auditing mandatory in Bangladesh?
 
-Not yet mandatory for SMEs, but international buyers and financing institutions increasingly require it. Early compliance creates competitive advantage.
+Not for SMEs at present. Buyers and lenders ask for it, which is why many exporters measure voluntarily.
 
 ## Related
 
 - [Industry guide](https://senseible.earth/industries/automobile)
 - [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
 - [Carbon Audit for Manufacturing SMEs in India](https://senseible.earth/solutions/carbon-audit-manufacturing-india)
-- [Carbon Audit for Manufacturing SMEs in Philippines](https://senseible.earth/solutions/carbon-audit-manufacturing-philippines)

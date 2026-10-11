@@ -2,11 +2,13 @@
 
 Canonical: https://senseible.earth/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained
 
-Most MSMEs hear "product carbon footprint" and assume one global rulebook exists. There are two — and they disagree on subtle but expensive details.
+Published 2026-05-06.
+
+Most MSMEs hear "product carbon footprint" and assume one global rulebook exists. There are two, and they disagree on subtle but expensive details.
 
 ## What each standard actually covers
 
-ISO 14067:2018 defines how to quantify a product carbon footprint and is the reference cited by the EU CBAM verifier guidance. The GHG Protocol Product Standard, published by WRI/WBCSD, is older, freely available, and more prescriptive on data quality scoring.
+ISO 14067:2018 defines how to quantify a product carbon footprint and is widely referenced by buyers and verifiers. The GHG Protocol Product Standard, published by WRI/WBCSD, is older, freely available, and more prescriptive on data quality scoring.
 
 | Dimension | ISO 14067 | GHG Protocol Product |
 | --- | --- | --- |
@@ -18,11 +20,11 @@ ISO 14067:2018 defines how to quantify a product carbon footprint and is the ref
 
 ## Where MSMEs get tripped up
 
-Buyers in Germany and France increasingly ask for "ISO 14067 compliant" PCFs because their CSRD auditor cites it by name. A GHG Protocol PCF is not automatically rejected, but you will be asked to map it.
+Some EU buyers ask for "ISO 14067 compliant" PCFs by name. A GHG Protocol PCF is not automatically rejected, but you will be asked to map it.
 
 ### Practical rule
 
-If you export to the EU, default to ISO 14067 cradle-to-gate with a documented allocation method. Use our [Product Carbon Footprint calculator](https://senseible.earth/calculators/product-carbon-footprint) — the engine is aligned to both standards and outputs a buyer-ready breakdown.
+If you export to the EU, default to ISO 14067 cradle-to-gate with a documented allocation method. Use our [Product Carbon Footprint calculator](https://senseible.earth/calculators/product-carbon-footprint); the engine is aligned to both standards and outputs a buyer-ready breakdown.
 
 ## What to document either way
 

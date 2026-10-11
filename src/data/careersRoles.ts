@@ -76,11 +76,11 @@ export const careersRoles: CareerRole[] = [
     level: "Mid",
     location: "Gurugram",
     scope:
-      "Sit next to the founders. Run the hardest un-owned problem each week — research, strategy, execution.",
+      "Sit next to the founders. Run the hardest un-owned problem each week: research, strategy, execution.",
   },
   {
     id: "fresher-general",
-    title: "Freshers — Engineering, Research, Design, Ops",
+    title: "Freshers: Engineering, Research, Design, Ops",
     function: "Engineering",
     level: "Fresher",
     location: "Hybrid",
@@ -89,7 +89,7 @@ export const careersRoles: CareerRole[] = [
   },
   {
     id: "intern-general",
-    title: "Interns — Applied AI, Climate, Product",
+    title: "Interns: Applied AI, Climate, Product",
     function: "AI & Research",
     level: "Intern",
     location: "Remote (India)",

@@ -34,7 +34,7 @@ const Principles = () => {
                   Software that converts documents into decisions.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  It removes regulatory uncertainty by interpreting real-world paperwork the way institutions do — instantly, consistently, without manual effort. For MSMEs, this replaces months of verification with seconds of certainty.
+                  It removes regulatory uncertainty by interpreting real-world paperwork the way institutions do: instantly, consistently, without manual effort. For MSMEs, this replaces months of verification with seconds of certainty.
                 </p>
               </div>
             </section>

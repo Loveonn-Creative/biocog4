@@ -2,43 +2,40 @@
 
 Canonical: https://senseible.earth/climate-intelligence/epa-mandatory-greenhouse-gas-reporting-msme-india
 
-India's Carbon Credit Trading Scheme (CCTS) starts mandatory compliance in FY 2026–27 for 12 hard-to-abate sectors. The reporting model borrows heavily from US EPA Subpart W and EU ETS.
+Published 2026-05-06.
+
+India's Carbon Credit Trading Scheme (CCTS) compliance mechanism sets greenhouse gas emission-intensity targets for obligated entities in energy-intensive sectors, with targets notified sector by sector. Its measurement, reporting and verification model resembles established schemes such as the EU ETS.
 
 ## Sectors covered first
 
-Aluminium, cement, chlor-alkali, fertiliser, iron and steel, paper and pulp, petrochemicals, refineries, shipping, textiles (energy-intensive), distilleries, automobiles.
+Sectors identified for the compliance mechanism include aluminium, cement, chlor-alkali, fertiliser, iron and steel, pulp and paper, petrochemicals, petroleum refining and textiles.
 
 ## What thresholds mean for MSMEs
 
-| Sector | Threshold | Likely MSMEs in scope |
-| --- | --- | --- |
-| Iron and steel | 25,000 tCO2e/year | Re-rolling mills > 50,000 t output |
-| Cement | 25,000 tCO2e/year | Mini cement plants |
-| Textiles | 50,000 tCO2e/year | Dyeing, processing units |
-| Pulp and paper | 10,000 tCO2e/year | Most large MSME mills |
+Obligated entities are named in sector-specific notifications, and their targets are set as emission intensity per tonne of product rather than as absolute caps. Most MSMEs will not be obligated entities, but large units in these sectors, and their suppliers, should check the notified lists.
 
-The threshold sounds high. A textile dyeing unit with 5 MW connected load and 8000-hour utilisation crosses 25,000 tCO2e easily.
+Check your status against the notified list for your sector rather than estimating it from your emissions alone.
 
 ## What you need to file
 
-- Annual GHG inventory (Scope 1 and 2 mandatory, Scope 3 voluntary first)
+- Annual emissions and production data for the plant boundary
 - Emission intensity per tonne of product
 - Energy efficiency action plan
-- Verified by accredited verifier
+- Verified by an accredited carbon verification agency
 
 ## How CCTS interacts with CBAM
 
-For exporters to the EU, CCTS creates a domestic price (currently ~INR 1,500/tCO2). Under CBAM, EU importers can deduct any verified domestic carbon price already paid. This means CCTS payments reduce CBAM liability rupee for rupee.
+For exporters to the EU, CCTS creates a domestic carbon credit market, but its prices are still being established. Under CBAM, EU importers can deduct a carbon price effectively paid in the country of origin on the embedded emissions, net of any rebate or compensation. How much of a CCTS cost will qualify is not yet settled, so do not assume rupee-for-rupee relief.
 
 ## What to do now
 
 1. Map your annual emissions against the threshold using [Senseible](https://senseible.earth/)
-2. If within 70% of threshold, start preparing
+2. If you are close to being covered in your sector, start preparing
 3. Use the [Carbon Pricing Impact calculator](https://senseible.earth/calculators/carbon-pricing-impact) to model CCTS + CBAM combined exposure
-4. Engage a BEE-accredited verifier in 2026 H2 — capacity will tighten in 2027
+4. Engage a BEE-accredited verifier early, since verifier capacity may be limited
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

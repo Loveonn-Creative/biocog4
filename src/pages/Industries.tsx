@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SEOHead } from '@/components/SEOHead';
 import industriesOg from '@/assets/og/industries.jpg';
@@ -122,7 +122,7 @@ const ExportRiskBadge = ({ industryId }: { industryId: string }) => {
           <div className="font-medium text-sm flex items-center gap-2">
             EU Export Risk
             <Badge variant={isCbam ? 'destructive' : 'outline'} className="text-xs">
-              {isCbam ? 'HIGH — CBAM Covered' : 'MEDIUM — Indirect Exposure'}
+              {isCbam ? 'HIGH: CBAM Covered' : 'MEDIUM: Indirect Exposure'}
             </Badge>
           </div>
           <p className="text-xs text-muted-foreground mt-1">
@@ -205,7 +205,10 @@ const getSolutionLinksForIndustry = (industryId: string): { slug: string; label:
 
 const Industries = () => {
   const { industry: industrySlug } = useParams();
-  const [activeTab, setActiveTab] = useState(industrySlug || 'textile');
+  const navigate = useNavigate();
+  // The URL is the source of truth, so the tab, H1 and canonical always agree.
+  const activeTab = industrySlug || 'textile';
+  const setActiveTab = (id: string) => navigate(`/industries/${id}`, { replace: true, preventScrollReset: true });
   
   const activeIndustry = industries.find(i => i.id === activeTab) || industries[0];
 
@@ -257,10 +260,21 @@ const Industries = () => {
             <Leaf className="h-3 w-3 mr-1" />
             Industry Solutions
           </Badge>
+          {/* Each industry URL gets its own H1; the hub keeps the overview headline. */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Carbon Accounting for
-            <br />
-            <span className="text-gradient-success">Every MSME Industry</span>
+            {industrySlug && industries.some(i => i.id === industrySlug) ? (
+              <>
+                {activeIndustry.name}:
+                <br />
+                <span className="text-gradient-success">Carbon Accounting Guide</span>
+              </>
+            ) : (
+              <>
+                Carbon Accounting for
+                <br />
+                <span className="text-gradient-success">Every MSME Industry</span>
+              </>
+            )}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Tailored emission tracking, reporting, and monetization pathways for your sector.
@@ -313,7 +327,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-red-500/10 rounded">
                         <Zap className="h-4 w-4 text-red-500" />
                       </div>
-                      Scope 1 — Direct
+                      Scope 1: Direct
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -335,7 +349,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-amber-500/10 rounded">
                         <Zap className="h-4 w-4 text-amber-500" />
                       </div>
-                      Scope 2 — Electricity
+                      Scope 2: Electricity
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -357,7 +371,7 @@ const Industries = () => {
                       <div className="p-1.5 bg-blue-500/10 rounded">
                         <Zap className="h-4 w-4 text-blue-500" />
                       </div>
-                      Scope 3 — Value Chain
+                      Scope 3: Value Chain
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

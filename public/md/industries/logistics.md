@@ -1,4 +1,4 @@
-# Logistics & Transportation: carbon accounting
+# Logistics & Transportation: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/logistics
 

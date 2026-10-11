@@ -2,11 +2,13 @@
 
 Canonical: https://senseible.earth/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist
 
+Published 2025-01-15.
+
 Steel and aluminum are priority sectors under EU CBAM. If you export to Europe, compliance preparation must start now.
 
 **Why Steel and Aluminum First:**
 
-- High carbon intensity (1.5-2.5 tonnes CO2 per tonne of steel)
+- High carbon intensity, especially for blast-furnace steel and primary aluminium
 - Significant trade volume to EU
 - Clear emission measurement methodologies
 - Direct competition with EU producers facing carbon costs
@@ -29,8 +31,8 @@ Steel and aluminum are priority sectors under EU CBAM. If you export to Europe, 
 
 **□ Reporting Capability:**
 
-- Quarterly reports during transition (2024-2025)
-- Annual verified reports from 2026
+- Quarterly reports were filed by EU importers during the transitional period (October 2023 to end 2025)
+- From 2026, EU authorised declarants file annual CBAM declarations (the first, for 2026 imports, is due 30 September 2027) using verified actual emissions or default values
 - Data available for EU importer requests
 
 **□ Verification Readiness:**
@@ -51,5 +53,5 @@ Explore [CBAM preparation details](https://senseible.earth/climate-intelligence/
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

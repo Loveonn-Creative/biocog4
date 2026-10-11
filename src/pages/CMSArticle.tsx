@@ -1,10 +1,12 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Tag, ChevronRight } from "lucide-react";
 import { memo, useMemo } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { articleMeta } from "@/lib/seo/articleSeo";
+import { articleMeta, extractFaqs } from "@/lib/seo/articleSeo";
+import { articleRedirects } from "@/data/articleRedirects";
+import { PAGE_REVIEWS, REVIEWERS } from "@/lib/seo/seoMeta";
 import { FormattedContent } from "@/components/FormattedContent";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
@@ -23,6 +25,10 @@ const CMSArticle = () => {
       .slice(0, 6);
   }, [article]);
   
+  if (!article && slug && articleRedirects[slug]) {
+    return <Navigate to={articleRedirects[slug]} replace />;
+  }
+
   if (!article) {
     return (
       <div className="min-h-screen bg-background flex flex-col">
@@ -49,6 +55,8 @@ const CMSArticle = () => {
 
   // Generate dynamic OG image URL using a service or fallback
   const meta = articleMeta(article);
+  // Shown only once a named reviewer has actually reviewed this page.
+  const review = PAGE_REVIEWS[`/climate-intelligence/${article.slug}`];
   
   // Generate OG image URL - uses encoded title for dynamic image generation
   const ogImageUrl = `https://og.senseible.earth/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.subtitle)}`;
@@ -63,11 +71,12 @@ const CMSArticle = () => {
         description={meta.description}
         canonical={`/climate-intelligence/${slug}`}
         type="article"
+        faqSchema={extractFaqs(article.content)}
         image={defaultOgImage}
         keywords={article.tags}
         article={{
           publishedTime: article.createdAt,
-          modifiedTime: article.createdAt,
+          modifiedTime: article.updatedAt ?? article.createdAt,
           author: 'Senseible',
           tags: article.tags
         }}
@@ -110,15 +119,22 @@ const CMSArticle = () => {
           </h1>
           
           {/* Meta info */}
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-6">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
-              {new Date(article.createdAt).toLocaleDateString('en-IN', { 
+              {article.updatedAt ? 'Updated ' : ''}
+              {new Date(article.updatedAt ?? article.createdAt).toLocaleDateString('en-IN', { 
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
               })}
             </span>
+            {review && (
+              <span>
+                Reviewed by {REVIEWERS[review.reviewer].name}, {REVIEWERS[review.reviewer].role}, on{' '}
+                {new Date(review.reviewedOn).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+            )}
             <span className="flex items-center gap-1.5">
               <Tag className="w-4 h-4" />
               {article.tags.length} topics

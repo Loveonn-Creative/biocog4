@@ -2,14 +2,16 @@
 
 Canonical: https://senseible.earth/climate-intelligence/survival-of-the-greenest-cbam-litmus-test
 
-CBAM isn't just a tax — it's a filter that will separate competitive exporters from obsolete ones. Here's the reality.
+Published 2025-01-15.
+
+CBAM isn't just a tax; it's a filter that will separate competitive exporters from obsolete ones. Here's the reality.
 
 **The Selection Pressure:**
 
-EU's carbon price is currently €90+ per tonne. By 2030, it could reach €150. For carbon-intensive Indian exports, this means:
+CBAM certificates are priced off the EU ETS carbon price, and the CBAM charge rises each year as EU free allocation is phased out between 2026 and 2034. For carbon-intensive Indian exports, this means:
 
 - Low-carbon steel: Competitive advantage
-- High-carbon steel: 20-35% cost disadvantage
+- High-carbon steel: A growing cost disadvantage
 - The gap widens every year
 
 **Who Survives:**
@@ -32,24 +34,24 @@ EU's carbon price is currently €90+ per tonne. By 2030, it could reach €150.
 
 ❌ Assumption that CBAM will be delayed
 
-**The Numbers:**
+**The Numbers (illustrative):**
 
-- Indian steel exports to EU: $1.2B annually
-- Average carbon intensity: 2.0 tCO2/tonne
-- CBAM cost at €90: €180/tonne (~₹16,000/tonne)
-- Margin impact: Significant for most MSMEs
+- Suppose a steel product embeds 2.0 tCO2 per tonne
+- At an EU carbon price of €90, the full carbon cost would be €180 per tonne
+- The EU importer's certificate obligation is reduced to reflect the free allocation EU producers still receive, a deduction that shrinks each year and disappears in 2034; how much is payable depends on how the product's emissions compare with the EU benchmark
+- Margin impact: grows each year for high-carbon producers whose buyers pass the cost back
 
 **Your Survival Strategy:**
 
-1. [Measure your baseline now](https://senseible.earth/) — you can't improve what you don't measure
+1. [Measure your baseline now](https://senseible.earth/): you can't improve what you don't measure
 2. Identify low-cost reduction opportunities
 3. Build [verification capability](https://senseible.earth/verify)
 4. Position for [green finance](https://senseible.earth/climate-finance) to fund improvements
 
-This isn't about compliance. It's about competitive survival. The green transition is a race — start running.
+This isn't about compliance. It's about competitive survival. The green transition is a race. Start running.
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

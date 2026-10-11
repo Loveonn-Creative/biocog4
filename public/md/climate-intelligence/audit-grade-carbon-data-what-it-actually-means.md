@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/audit-grade-carbon-data-what-it-actually-means
 
-"Audit-grade" is the most overused phrase in carbon software marketing. It has a precise meaning — and most products that claim it do not meet it. The phrase has five concrete properties. A dataset either has all five or it is not audit-grade.
+Published 2026-05-21.
+
+"Audit-grade" is the most overused phrase in carbon software marketing. It has a precise meaning, and most products that claim it do not meet it. The phrase has five concrete properties. A dataset either has all five or it is not audit-grade.
 
 ## The five properties
 
@@ -16,7 +18,7 @@ Canonical: https://senseible.earth/climate-intelligence/audit-grade-carbon-data-
 
 ### Traceability
 
-Auditors work backward. They pick a final emission figure, then trace it back through the calculation chain to the source. If the chain breaks — a missing invoice number, an orphaned spreadsheet row — the auditor cannot sign. Modern MRV stores the source document, the extracted fields, the methodology applied, and the output as one linked record.
+Auditors work backward. They pick a final emission figure, then trace it back through the calculation chain to the source. If the chain breaks (a missing invoice number, an orphaned spreadsheet row), the auditor cannot sign. Modern MRV stores the source document, the extracted fields, the methodology applied, and the output as one linked record.
 
 ### Methodology pinning
 
@@ -28,11 +30,11 @@ Spreadsheets are the canonical anti-pattern. Anyone with edit access can change 
 
 ### Reproducibility
 
-If a third party cannot rerun your calculation and get the same number, your number is not audit-grade. This is the single biggest reason black-box AI-generated emission estimates fail audit: the same input on the same day can produce different outputs depending on the model state. Deterministic math (HSN-to-scope, factor multiplication, GHG Protocol conversion) is reproducible. AI-generated estimates are not.
+If a third party cannot rerun your calculation and get the same number, your number is not audit-grade. This is a major reason black-box AI-generated emission estimates fail audit: the same input on the same day can produce different outputs depending on the model state. Deterministic math (HSN-to-scope, factor multiplication, GHG Protocol conversion) is reproducible. AI-generated estimates are not.
 
 ### Explainability
 
-An auditor must be able to ask "how did you arrive at 12.4 tCO2e for this shipment?" and receive an answer like: "Invoice INV-2026-0421, 8 tonnes of HSN 7208 (hot-rolled steel), classified as Scope 3 Category 4 (upstream transport) by the GHG Protocol mapping, multiplied by GLEC sea-freight factor 1.55 tCO2e/tonne for the Chennai–Hamburg route." Anything less is not explainable.
+An auditor must be able to ask "how did you arrive at 12.4 tCO2e for this purchase?" and receive an answer like this hypothetical one: "Invoice INV-2026-0421, 8 tonnes of HSN 7208 (hot-rolled steel), classified as Scope 3 Category 1 (purchased goods) by the GHG Protocol mapping, multiplied by the supplier-specific factor of 1.55 tCO2e/tonne." Anything less is not explainable.
 
 ## What is *not* required for audit-grade
 
@@ -50,17 +52,17 @@ Ask these five questions. If any answer is unclear, "audit-grade" is marketing c
 4. *If your AI model is retrained tomorrow, will my historical numbers change?*
 5. *Can a different engineer at your company re-derive the same number from the same inputs?*
 
-The acceptable answers are: full version history, SHA-256 hash on the source document, a complete derivation chain, "no — math is deterministic", and "yes, deterministically".
+The acceptable answers are: full version history, SHA-256 hash on the source document, a complete derivation chain, "no: math is deterministic", and "yes, deterministically".
 
 ## Why this matters for MSMEs specifically
 
 MSME owners often think audit-grade is "for big companies". It is not. Three forces are pulling audit-grade into MSME territory:
 
-- **EU CBAM** requires verifiable per-shipment data from any exporter into covered sectors.
+- **EU CBAM** requires EU importers of covered goods to declare embedded emissions, so they ask exporters for verifiable installation-level data (or fall back on default values).
 - **Green loans** increasingly require third-party-verified baselines for the preferential rate to hold.
-- **Tier-1 buyers** (the Walmarts, IKEAs, H&Ms of the world) are pushing audit-grade requirements into their supplier code of conduct.
+- **Tier-1 buyers** are pushing verifiable-data requirements into their supplier codes of conduct.
 
-An MSME that built its baseline on non-audit-grade data will have to rebuild it within 24 months, at the worst possible time — when a buyer or banker asks. Building audit-grade from day one is the cheaper path.
+An MSME that built its baseline on non-audit-grade data is likely to have to rebuild it at the worst possible time: when a buyer or banker asks. Building audit-grade from day one is the cheaper path.
 
 ## What Senseible enforces by default
 
@@ -76,7 +78,7 @@ These are not options. They are the default because anything less is not audit-g
 
 **Is my Excel spreadsheet audit-grade?** Almost never. Excel fails immutability and version pinning by design. It can be the *intermediate* tool feeding an audit-grade system, but not the system of record.
 
-**Does audit-grade cost more?** Audit-grade software typically costs less than non-audit-grade software because it does not have to be rebuilt at the audit step. The expensive path is to discover at year-end that the data fails.
+**Does audit-grade cost more?** Not necessarily. Audit-grade software does not have to be rebuilt at the audit step. The expensive path is to discover at year-end that the data fails.
 
 **Can third-party verification fix non-audit-grade data after the fact?** No. A verifier signs only what is traceable. Non-traceable data gets rejected; that is the verifier's whole job.
 

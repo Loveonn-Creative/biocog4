@@ -163,7 +163,7 @@ const Settings = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
-        <title>Settings — Senseible</title>
+        <title>Settings | Senseible</title>
         <meta name="description" content="Configure your company profile and framework preferences." />
       </Helmet>
       

@@ -62,7 +62,7 @@ const SupplierRiskCalculator = () => {
       howToSteps={[
         'Add each supplier with its country, sector, and tier (1 = direct, 2 = sub-supplier, 3 = upstream).',
         'Enter annual spend in USD if you do not have primary activity data.',
-        'If the supplier shared its own emissions in tonnes CO₂e, enter that — it overrides the spend estimate.',
+        'If the supplier shared its own emissions in tonnes CO₂e, enter that; it overrides the spend estimate.',
         'Mark whether the supplier discloses emissions or has ISO 14064 verification.',
         'Click Calculate to see emissions, risk score 0–100, and confidence band per supplier.',
         'Use the top contributors list to focus engagement on the highest-impact 5 suppliers.',
@@ -108,7 +108,7 @@ const SupplierRiskCalculator = () => {
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
                 <Input type="number" placeholder="Annual spend (USD)" value={s.annualSpendUSD ?? ''} onChange={e => update(s.id, { annualSpendUSD: e.target.value ? Number(e.target.value) : undefined })} />
-                <Input type="number" placeholder="Primary emissions (kgCO₂e/yr) — optional" value={s.activityKgCO2e ?? ''} onChange={e => update(s.id, { activityKgCO2e: e.target.value ? Number(e.target.value) : undefined })} />
+                <Input type="number" placeholder="Primary emissions (kgCO₂e/yr), optional" value={s.activityKgCO2e ?? ''} onChange={e => update(s.id, { activityKgCO2e: e.target.value ? Number(e.target.value) : undefined })} />
               </div>
               <div className="flex flex-wrap gap-4 items-center">
                 <label className="flex items-center gap-2 text-sm">
@@ -166,7 +166,7 @@ const SupplierRiskCalculator = () => {
                 ...(suppliers.filter(s => !s.name.trim()).length > 0
                   ? [`${suppliers.filter(s => !s.name.trim()).length} unnamed supplier row(s) excluded.`]
                   : []),
-                "Spend-based factors are sector averages — supplier-specific primary data will change these results.",
+                "Spend-based factors are sector averages; supplier-specific primary data will change these results.",
               ]}
             />
 

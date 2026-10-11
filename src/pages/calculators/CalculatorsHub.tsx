@@ -177,7 +177,7 @@ const CalculatorsHub = () => {
           <noscript>
             <h2>All calculators</h2>
             <ul>
-              {CALCULATORS.map(c => <li key={c.href}><a href={c.href}>{c.title}</a> — {c.description}</li>)}
+              {CALCULATORS.map(c => <li key={c.href}><a href={c.href}>{c.title}</a>: {c.description}</li>)}
             </ul>
           </noscript>
         </div>

@@ -142,7 +142,7 @@ const Verify = () => {
 
       if (data?.success && data?.data) {
         setVerificationResult(data.data);
-        toast.success(`Verification complete — ${data.data.status.replace('_', ' ')} (${(data.data.score * 100).toFixed(0)}%)`);
+        toast.success(`Verification complete: ${data.data.status.replace('_', ' ')} (${(data.data.score * 100).toFixed(0)}%)`);
         refetch();
       } else {
         throw new Error(data?.error || 'Verification returned no outcome');
@@ -178,7 +178,7 @@ const Verify = () => {
         netEmissions: totalCO2Kg,
         verifiedReductions: 0,
       });
-      toast.error('Verification returned rejected — see details below.');
+      toast.error('Verification returned rejected. See details below.');
     } finally {
       setIsVerifying(false);
     }
@@ -206,7 +206,7 @@ const Verify = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
-      <Helmet><title>Verify Emissions — Senseible</title></Helmet>
+      <Helmet><title>Verify Emissions | Senseible</title></Helmet>
       <CarbonParticles />
       <Navigation />
       
@@ -543,7 +543,7 @@ const Verify = () => {
                       size="lg"
                     >
                       <Coins className="h-4 w-4 mr-2" />
-                      Claim Now — Go to Monetize
+                      Claim Now: Go to Monetize
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
                   </div>

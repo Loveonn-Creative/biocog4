@@ -220,7 +220,7 @@ const Team = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
-        <title>Team Management — Senseible</title>
+        <title>Team Management | Senseible</title>
         <meta name="description" content="Invite team members and manage roles for your organization." />
       </Helmet>
       

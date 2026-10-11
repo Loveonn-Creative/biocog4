@@ -2,43 +2,40 @@
 
 Canonical: https://senseible.earth/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives
 
-Tamil Nadu hosts ~10% of India's MSMEs. The state grid factor is one of the cleanest in India, and incentives stack with central schemes.
+Published 2026-05-06.
+
+Tamil Nadu hosts a large share of India's MSMEs and a large share of its wind and solar capacity, and state incentives can stack with central schemes.
 
 ## The grid advantage
 
-Tamil Nadu grid emission factor: 0.628 kgCO2e/kWh (CEA 2024) vs national 0.716. Wind contributes 17% of generation, the highest in India. For MSMEs in Coimbatore, Tirupur and Chennai, this means rooftop solar payback already beats most of north India.
+CEA publishes a single national grid emission factor (0.710 kgCO2/kWh in CO2 Baseline Database v21.0, FY 2024-25), so use it for location-based Scope 2 even though Tamil Nadu has a large share of renewable generation. For MSMEs in Coimbatore, Tirupur and Chennai, the state's renewable resources make captive and rooftop solar worth evaluating.
 
 ## State-specific schemes
 
-| Scheme | Benefit | Eligibility |
-| --- | --- | --- |
-| TN Solar Energy Policy 2024 | 50% capital subsidy on captive solar up to 1 MW | MSME-registered |
-| Energy Audit Subsidy | 75% reimbursement up to INR 2 lakh | Connected load > 100 kW |
-| Green Cluster Scheme | INR 5 crore per cluster for shared infrastructure | 10+ MSME group |
-| Wind Banking | 12-month banking with 14% wheeling charge | Captive wind purchase |
+State schemes for MSMEs (such as energy audit support, capital subsidies for solar, cluster infrastructure and wind energy banking) change often. Check the current terms with the state MSME and energy departments before you plan around them.
 
 ## Sector hot-spots
 
 ### Tirupur textiles
 
-2,000+ MSME dyeing and knitting units. Average Scope 2 intensity: 8 kgCO2/kg fabric. Best-in-class with rooftop + grid PPA: 3.2 kgCO2/kg.
+Thousands of MSME dyeing and knitting units. Track Scope 2 intensity per kg of fabric and compare it before and after rooftop solar or a green power purchase.
 
 ### Coimbatore engineering
 
-Foundries and pumps. Diesel furnaces are the largest Scope 1 source. Switch to induction heating + Tamil Nadu grid: 65% emission cut.
+Foundries and pumps. Diesel furnaces are the largest Scope 1 source. Switching to induction heating moves those emissions to Scope 2 and can cut them substantially, especially with renewable power.
 
 ### Chennai auto component
 
-Tier 2/3 suppliers to Hyundai and Stellantis face 2027 OEM Scope 3 deadlines. Most are unprepared.
+Tier 2/3 suppliers to global automakers increasingly receive OEM requests for emissions data. Many are not yet prepared.
 
 ## A 90-day plan
 
 1. Day 1–10: Pull 12 months of TANGEDCO bills + fuel invoices into [Senseible](https://senseible.earth/)
-2. Day 11–30: Apply for TN energy audit subsidy
-3. Day 31–60: Quote rooftop solar — typical Coimbatore payback 4.2 years post-subsidy
+2. Day 11–30: Apply for any available state energy audit support
+3. Day 31–60: Get rooftop solar quotes and compare payback after any subsidy
 4. Day 61–90: Submit baseline + plan to your top 2 OEM customers
 
-Tirupur saved 187,000 tCO2e in 2024 through coordinated MSME action. Most of it came from electricity, not exotic technology.
+For most Tamil Nadu MSMEs, the biggest early reductions come from electricity, not exotic technology.
 
 ## Related guides
 

@@ -1,16 +1,18 @@
-# Why green loans get rejected — and how to fix each reason
+# Why green loans get rejected, and how to fix each reason
 
 Canonical: https://senseible.earth/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them
 
-Green-loan rejection rates for first-time MSME applicants in 2026 sit around 55–65%. The reasons cluster into eight recurring failure modes. Each is fixable, but only if diagnosed correctly. Most rejected applicants re-apply with cosmetic fixes and get rejected again.
+Published 2026-05-22.
 
-## The eight reasons, in order of frequency
+Many first-time MSME green-loan applications are rejected. The reasons cluster into eight recurring failure modes. Each is fixable, but only if diagnosed correctly. Most rejected applicants re-apply with cosmetic fixes and get rejected again.
+
+## The eight reasons
 
 ### 1. Unverifiable baseline emissions
 
 **Symptom:** Bank's ESG team asks "how did you arrive at this tCO2e number" and the answer is a spreadsheet without source documents.
 
-**Fix:** Rebuild the baseline from source-document evidence (invoices, bills) with methodology-pinned per-record output. This is the audit-grade MRV layer. Allow 4–8 weeks.
+**Fix:** Rebuild the baseline from source-document evidence (invoices, bills) with methodology-pinned per-record output. This is the audit-grade MRV layer. Allow several weeks.
 
 ### 2. Use-of-proceeds outside listed green categories
 
@@ -28,7 +30,7 @@ Green-loan rejection rates for first-time MSME applicants in 2026 sit around 55�
 
 **Symptom:** Application promises 60% reduction in 24 months on activities that cannot physically reduce that fast.
 
-**Fix:** Use a defensible bottom-up plan: list each reduction lever (asset switch, efficiency, fuel switch, renewables) with its physical reduction estimate. Aggregate. Most credible MSME plans land at 15–35% over 3 years.
+**Fix:** Use a defensible bottom-up plan: list each reduction lever (asset switch, efficiency, fuel switch, renewables) with its physical reduction estimate. Aggregate. The total is usually smaller than the first draft promised.
 
 ### 5. Greenwashing language in the application
 
@@ -73,7 +75,7 @@ A well-prepared first application looks like:
 - Covenant negotiated as intensity-based rather than absolute (where appropriate).
 - Existing-portfolio ESG status disclosed proactively.
 
-This pack converts the application from a marketing pitch into a credit document. Approval rates rise to 75–85% with this preparation, against the 35–45% baseline.
+This pack converts the application from a marketing pitch into a credit document, which materially improves the odds of approval.
 
 ## Bank-by-bank patterns
 
@@ -84,18 +86,18 @@ This pack converts the application from a marketing pitch into a credit document
 
 ## What Senseible does for green-loan applicants
 
-Senseible produces the audit-grade MRV layer that addresses reasons 1, 5, 6, and 7 directly. The baseline pack, monitoring plan, covenant evidence, and verifier-ready exports come out of the same system. Reasons 2, 3, 4, and 8 are application-design questions that the borrower has to solve with the lender — but they become easier to solve once the data layer is defensible.
+Senseible produces the audit-grade MRV layer that addresses reasons 1, 5, 6, and 7 directly. The baseline pack, monitoring plan, covenant evidence, and verifier-ready exports come out of the same system. Reasons 2, 3, 4, and 8 are application-design questions that the borrower has to solve with the lender, but they become easier to solve once the data layer is defensible.
 
 ## FAQ
 
 **Can I appeal a rejection?** Yes, but only with new evidence. Appealing the same application produces the same outcome.
 
-**How soon can I re-apply after rejection?** Most banks accept re-application after 90 days, sooner if you can show material remediation.
+**How soon can I re-apply after rejection?** It depends on the bank; many will look again sooner if you can show material remediation.
 
 **Should I try a different bank instead of fixing the application?** No. The same eight reasons will fail at the next bank too. Fix the underlying issue first.
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

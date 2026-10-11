@@ -10,9 +10,9 @@ const lenderMechanics = [
   { icon: Hash, title: "Hash-pinned, spot-auditable", body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices." },
   { icon: Sliders, title: "Confidence bands, never false precision", body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate." },
   { icon: Lock, title: "Methodology locked at disclosure time", body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve." },
-  { icon: Gauge, title: "Climate Credibility Score (0–100)", body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio — graded A+ to D." },
-  { icon: Users, title: "Cross-MSME peer comparison", body: "The borrower is benchmarked against verified peers in the same sector and country — not against a self-reported claim or a global average." },
-  { icon: Eye, title: "Decision-grade, not raw", body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth — borrower documents stay private." },
+  { icon: Gauge, title: "Climate Credibility Score (0–100)", body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio, graded A+ to D." },
+  { icon: Users, title: "Cross-MSME peer comparison", body: "The borrower is benchmarked against verified peers in the same sector and country, not against a self-reported claim or a global average." },
+  { icon: Eye, title: "Decision-grade, not raw", body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth; borrower documents stay private." },
 ];
 
 const useCases = [
@@ -24,7 +24,7 @@ const useCases = [
   {
     title: "Receivables factoring on green invoices",
     sub: "Solar · EV · forestation invoices",
-    body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds — shortening the discount on advances against those receivables.",
+    body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds, shortening the discount on advances against those receivables.",
   },
   {
     title: "Trade finance under CBAM",
@@ -37,7 +37,7 @@ const ClimateFinance = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Climate Finance — Senseible"
+        title="Climate Finance | Senseible"
         description="How verified Senseible data becomes underwriting input for lenders, factors, and incentive desks across emerging markets. Senseible is the verification primitive, not the lender."
         canonical="/climate-finance"
         image={`https://senseible.earth${climateFinanceOg}`}
@@ -99,7 +99,7 @@ const ClimateFinance = () => {
               ))}
             </div>
             <p className="text-xs text-muted-foreground mt-4">
-              The same verified ledger maps to government incentive schemes — SIDBI, IREDA and MNRE in India, with equivalent programmes wired through country config across every supported market.
+              The same verified ledger maps to government incentive schemes: SIDBI, IREDA and MNRE in India, with equivalent programmes wired through country config across every supported market.
             </p>
           </section>
 
@@ -116,7 +116,7 @@ const ClimateFinance = () => {
               <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
                 <Building className="w-6 h-6 text-primary mb-4" />
                 <h3 className="font-medium text-foreground mb-2">Government incentives</h3>
-                <p className="text-sm text-muted-foreground mb-4">Qualify for state and central schemes with documented emission reductions — across SIDBI/IREDA in India and equivalents wired through country config elsewhere.</p>
+                <p className="text-sm text-muted-foreground mb-4">Qualify for state and central schemes with documented emission reductions, across SIDBI/IREDA in India and equivalents wired through country config elsewhere.</p>
                 <p className="text-xs text-primary font-medium">Multiple schemes per market.</p>
               </div>
               <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
@@ -128,7 +128,7 @@ const ClimateFinance = () => {
               <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
                 <Shield className="w-6 h-6 text-earth mb-4" />
                 <h3 className="font-medium text-foreground mb-2">Sustainability-Linked Credit</h3>
-                <p className="text-sm text-muted-foreground mb-4">Access emerging credit facilities tied to verified sustainability KPIs — early positioning for TCFD- and ISSB-aligned financing.</p>
+                <p className="text-sm text-muted-foreground mb-4">Access emerging credit facilities tied to verified sustainability KPIs: early positioning for TCFD- and ISSB-aligned financing.</p>
                 <p className="text-xs text-primary font-medium">Aligned with global standards.</p>
               </div>
             </div>
@@ -139,13 +139,13 @@ const ClimateFinance = () => {
             <h2 className="text-xl font-semibold text-foreground mb-6">What MSMEs are missing without verified data</h2>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">Global trade access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to the EU Green Deal, Brazil's CBIO market, and Southeast Asia's carbon-pricing pilots — verified sustainability data is becoming table stakes for trade access worldwide.
+                <span className="font-medium text-foreground">Global trade access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to the EU Green Deal, Brazil's CBIO market, and Southeast Asia's carbon-pricing pilots, verified sustainability data is becoming table stakes for trade access worldwide.
               </p>
               <p className="text-muted-foreground">
                 <span className="font-medium text-foreground">CBAM &amp; border adjustments:</span> Exporters from emerging markets without carbon data face tariffs of 20–35% on steel, cement, aluminium, and related products entering the EU. Similar mechanisms are emerging in the UK, Canada, and Australia.
               </p>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">Financial institution mandates:</span> Central banks globally — RBI in India, BCB in Brazil, BSP in the Philippines — increasingly favour sustainability-linked lending. Banks are building ESG scoring into credit decisions across emerging markets.
+                <span className="font-medium text-foreground">Financial institution mandates:</span> Central banks globally (RBI in India, BCB in Brazil, BSP in the Philippines) increasingly favour sustainability-linked lending. Banks are building ESG scoring into credit decisions across emerging markets.
               </p>
             </div>
           </section>

@@ -46,7 +46,7 @@ const CloudEmissionsCalculator = () => {
     analyticsEvents.calculatorRunStart("cloud-data-centre-emissions");
     if (usable.length === 0) {
       setResult(null);
-      setBlocked("Each workload needs at least one usage quantity — vCPU-hours, memory GB-hours, storage, or network transfer. Without a measured quantity there is no energy to convert, and no emissions figure can be produced.");
+      setBlocked("Each workload needs at least one usage quantity: vCPU-hours, memory GB-hours, storage, or network transfer. Without a measured quantity there is no energy to convert, and no emissions figure can be produced.");
       return;
     }
     setBlocked(null);
@@ -79,7 +79,7 @@ const CloudEmissionsCalculator = () => {
         'Add one line per workload, account or data centre.',
         'Pick the provider (or on-premise / colocation) and the country the region physically sits in.',
         'Enter usage from your billing or monitoring export: vCPU-hours, memory GB-hours, storage TB and hours, network GB.',
-        'Set average CPU utilisation if you know it — otherwise 50% is assumed and stated.',
+        'Set average CPU utilisation if you know it; otherwise 50% is assumed and stated.',
         'Enter a contractual renewable share only if it is backed by RECs or a PPA; that produces the market-based figure.',
         'Calculate to see kWh, location-based and market-based kgCO₂e, and the split by region and provider.',
       ]}
@@ -102,7 +102,7 @@ const CloudEmissionsCalculator = () => {
             <div key={w.id} className="border border-border rounded-lg p-3 grid grid-cols-12 gap-2 items-end">
               <div className="col-span-12 sm:col-span-3">
                 <label className="text-xs text-muted-foreground">Label</label>
-                <Input placeholder="e.g. Production API — Mumbai" value={w.label || ''} onChange={e => update(w.id, { label: e.target.value })} />
+                <Input placeholder="e.g. Production API, Mumbai" value={w.label || ''} onChange={e => update(w.id, { label: e.target.value })} />
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label className="text-xs text-muted-foreground">Provider</label>
@@ -209,7 +209,7 @@ const CloudEmissionsCalculator = () => {
                   <p className="text-xs text-muted-foreground">Market-based</p>
                   <p className="text-2xl font-semibold">
                     {result.marketBasedKgCO2e === null
-                      ? <span className="text-base text-muted-foreground">Not reported — no contractual instruments entered</span>
+                      ? <span className="text-base text-muted-foreground">Not reported: no contractual instruments entered</span>
                       : `${(result.marketBasedKgCO2e / 1000).toFixed(3)} tCO₂e`}
                   </p>
                 </div>
@@ -251,7 +251,7 @@ const CloudEmissionsCalculator = () => {
                         <td className="py-2 pr-4">{w.gridFactor} kg/kWh</td>
                         <td className="py-2 pr-4">{w.kwh.toLocaleString()}</td>
                         <td className="py-2 pr-4">{w.locationBasedKgCO2e.toLocaleString()}</td>
-                        <td className="py-2">{w.marketBasedKgCO2e === null ? '—' : w.marketBasedKgCO2e.toLocaleString()}</td>
+                        <td className="py-2">{w.marketBasedKgCO2e === null ? '-' : w.marketBasedKgCO2e.toLocaleString()}</td>
                       </tr>
                     ))}
                   </tbody>

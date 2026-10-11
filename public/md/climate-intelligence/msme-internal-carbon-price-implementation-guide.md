@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-internal-carbon-price-implementation-guide
 
-An internal carbon price (ICP) is a self-imposed cost per tonne of CO2e that MSMEs apply to investment decisions. It is the single most effective management tool to make decarbonisation pay before regulation forces it.
+Published 2026-05-06.
+
+An internal carbon price (ICP) is a self-imposed cost per tonne of CO2e that MSMEs apply to investment decisions. It is a practical management tool to make decarbonisation pay before regulation forces it.
 
 ## Three flavours of ICP
 
@@ -14,10 +16,10 @@ An internal carbon price (ICP) is a self-imposed cost per tonne of CO2e that MSM
 
 ## What price should you set?
 
-- EU ETS forward 2026: EUR 90–110 / tCO2
-- CBAM equivalent for steel exporters: EUR 95 / tCO2
-- SBTi guidance for MSME shadow price: USD 50 minimum, USD 100+ recommended
-- Conservative MSME starting point: INR 4,000 / tCO2 (~ USD 48)
+- The current EU ETS price, which sets the price of CBAM certificates
+- Your CBAM exposure, if you export covered goods to the EU
+- Prices your buyers and peers disclose for their own internal carbon pricing
+- Your cheapest available abatement cost, as a floor
 
 Set the price below your highest regulatory exposure but above your cheapest abatement cost. Anywhere in that band redirects capex correctly.
 
@@ -29,7 +31,7 @@ Use the [Carbon Pricing Impact calculator](https://senseible.earth/calculators/c
 
 ### Week 3: Set governance
 
-Decide who approves the price (CFO + sustainability lead), how often it reviews (annually), and which decisions it touches (capex > INR 5 lakh).
+Decide who approves the price (CFO + sustainability lead), how often it reviews (annually), and which decisions it touches (for example, capex above INR 5 lakh).
 
 ### Week 4: Pilot
 
@@ -42,7 +44,7 @@ Add the ICP line to your standard capex template. Train procurement to ask vendo
 ## Common failure modes
 
 - Setting it once and never reviewing
-- Excluding Scope 3 (where most MSME emissions live)
+- Excluding Scope 3 (where most MSME emissions often live)
 - Letting it become advisory rather than binding
 
 ## Related guides

@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/agriculture-scope-1-emissions-india
 
+Published 2025-01-01.
+
 Agriculture firms calculate Scope 1 emissions, which are direct emissions from owned or controlled sources, by identifying and quantifying fuel in tractors and equipment, enteric fermentation from livestock, manure management, rice cultivation methane, and direct nitrous oxide from fertilizers.
 
 **India-Specific Sources:**
@@ -19,7 +21,7 @@ Use IPCC Tier 1 methods with India-specific emission factors where available. Th
 **Key Emission Factors:**
 
 - Paddy: 1.3 kg CH4 per hectare per day (varies by water management)
-- Cattle enteric: 46 kg CH4 per head per year (dairy cattle)
+- Cattle enteric: use IPCC Tier 1 regional defaults per head per year (separate values for dairy and other cattle) or national data
 - Nitrogen fertilizer: 1% of applied N released as N2O
 
 **Reporting:**

@@ -56,11 +56,11 @@ const CBAMEstimator = ({ countryCode }: { countryCode: string }) => {
           <div className="grid grid-cols-2 gap-3 pt-2">
             <div className="p-3 bg-background rounded-lg text-center">
               <div className="text-xl font-bold text-primary">{formatEuro(result.cost2026)}</div>
-              <div className="text-xs text-muted-foreground">2026 (2.5% phase-in)</div>
+              <div className="text-xs text-muted-foreground">2026 estimate</div>
             </div>
             <div className="p-3 bg-background rounded-lg text-center">
               <div className="text-xl font-bold text-destructive">{formatEuro(result.cost2034)}</div>
-              <div className="text-xs text-muted-foreground">2034 (100% liability)</div>
+              <div className="text-xs text-muted-foreground">2034 (no free allocation)</div>
             </div>
           </div>
         )}
@@ -207,6 +207,7 @@ const Solutions = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         {...solutionMeta(solution)}
+        noIndex={!solution.indexed}
         canonical={`/solutions/${solution.slug}`}
         keywords={solution.keywords}
         breadcrumbs={[

@@ -134,7 +134,7 @@ const baseYear = (ds: ReportDataset): string => {
     .concat(ds.periodStart ? [ds.periodStart] : [])
     .sort();
   const first = dates[0];
-  if (!first) return 'Not established — no dated evidence recorded';
+  if (!first) return 'Not established: no dated evidence recorded';
   const year = new Date(first).getFullYear();
   return Number.isNaN(year) ? 'Not established' : String(year);
 };
@@ -151,7 +151,7 @@ const entitySection = (ds: ReportDataset): Section => ({
     ['Organization size', ds.size || 'Not recorded'],
     ['Country of operation', ds.country],
     ['Reporting period', ds.periodStart && ds.periodEnd
-      ? `${fmtDate(ds.periodStart, ds.locale)} — ${fmtDate(ds.periodEnd, ds.locale)}`
+      ? `${fmtDate(ds.periodStart, ds.locale)} to ${fmtDate(ds.periodEnd, ds.locale)}`
       : 'All recorded activity to date'],
     ['Base year', baseYear(ds)],
     ['Organizational boundary', 'Operational control'],
@@ -180,9 +180,9 @@ const categorySection = (ds: ReportDataset): Section => ({
   rows: ds.categories.map((c) => [
     c.category,
     `Scope ${c.scope}`,
-    c.activityData ?? '—',
-    c.activityUnit ?? '—',
-    c.emissionFactor ?? '—',
+    c.activityData ?? '-',
+    c.activityUnit ?? '-',
+    c.emissionFactor ?? '-',
     tL(c.co2Kg, ds.locale),
     c.dataQuality || 'unrated',
   ]),
@@ -200,7 +200,7 @@ const methodologySection = (ds: ReportDataset): Section => ({
     ['Scope 2 method', 'Location-based; no market-based figure is disclosed because contractual instruments are not recorded'],
     ['Exclusions', 'Any activity without a supporting document is excluded and declared in the disclosure index'],
     ['Recalculation policy', 'Restated when source evidence is corrected or a factor set is superseded'],
-    ['Independent assurance', 'Not obtained — this report is unassured unless separately verified'],
+    ['Independent assurance', 'Not obtained: this report is unassured unless separately verified'],
   ],
 });
 
@@ -232,9 +232,9 @@ const evidenceSection = (ds: ReportDataset): Section => ({
   head: ['Evidence hash', 'Document', 'Vendor', 'Date', 'Scope', 'tCO2e', 'Status'],
   rows: ds.evidence.slice(0, 200).map((e) => [
     e.documentHash.substring(0, 16),
-    e.invoiceNumber || '—',
-    e.vendor || '—',
-    e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '—',
+    e.invoiceNumber || '-',
+    e.vendor || '-',
+    e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '-',
     `Scope ${e.scope}`,
     tL(e.co2Kg, ds.locale),
     e.verificationStatus,
@@ -389,19 +389,19 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'Clause 5 — Boundaries and GHG inventory',
+          'Clause 5: Boundaries and GHG inventory',
           'The organizational boundary is set by operational control. Direct emissions, indirect emissions from imported energy, and other indirect emissions are quantified separately in line with ISO 14064-1 categorisation. Emissions arising outside evidenced activity are excluded and declared in the disclosure index.',
         ),
-        inventorySection(ds, ['Category 1 — Direct GHG emissions', 'Category 2 — Indirect from imported energy', 'Categories 3-6 — Other indirect emissions']),
+        inventorySection(ds, ['Category 1: Direct GHG emissions', 'Category 2: Indirect from imported energy', 'Categories 3-6: Other indirect emissions']),
         common.categories,
         note(
-          'Clause 6 — Quantification approach',
+          'Clause 6: Quantification approach',
           'Emissions are quantified as activity data multiplied by a published emission factor. Activity data is drawn from invoices and metered records; no modelled or extrapolated activity is included. Uncertainty is expressed qualitatively through per-record data-quality ratings.',
         ),
         common.methodology,
         common.target,
         note(
-          'Clause 7 — Verification',
+          'Clause 7: Verification',
           'This inventory has not undergone third-party verification to ISO 14064-3. The platform verification result below is an internal data-integrity control and must not be presented as a validation or verification statement.',
         ),
         ...tail,
@@ -411,7 +411,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'Clause 6.3 — Functional unit and product system',
+          'Clause 6.3: Functional unit and product system',
           ds.availability.productLevel
             ? 'Product-level evidence (HSN/CN coded purchase and dispatch records) is present, so emissions are attributed to the goods those records identify. The functional unit is the unit of the good stated on the dispatch evidence; where a dispatch quantity is absent for a given good, the per-product figure for that good is declared a gap.'
             : 'No product-level (HSN/CN coded) evidence is recorded for this entity, so a product carbon footprint cannot be produced. The organizational inventory below is provided as context only and must not be presented as a product footprint.',
@@ -419,7 +419,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         inventorySection(ds, ['Direct process emissions in the product system', 'Energy used in production', 'Upstream materials and inputs']),
         common.categories,
         note(
-          'Clause 6.4 — Life cycle stages covered',
+          'Clause 6.4: Life cycle stages covered',
           'Coverage is cradle-to-gate and limited to stages evidenced by documents: purchased materials, production energy and direct process fuel. Use phase, distribution beyond evidenced freight, and end-of-life are outside the evidence set and are declared as gaps rather than modelled.',
         ),
         common.methodology,
@@ -430,7 +430,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'GRI 305 — Reporting approach',
+          'GRI 305: Reporting approach',
           'Disclosures 305-1 to 305-5 are reported against the entity\'s own evidenced activity. Biogenic emissions, ozone-depleting substances (305-6) and NOx/SOx (305-7) are not captured by this platform and are not asserted.',
         ),
         inventorySection(ds, ['305-1 Direct (Scope 1) GHG emissions', '305-2 Energy indirect (Scope 2) GHG emissions', '305-3 Other indirect (Scope 3) GHG emissions']),
@@ -450,7 +450,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'SASB — Applicability',
+          'SASB: Applicability',
           'SASB metrics are industry-specific. The greenhouse-gas metrics below are the subset this platform can evidence. Industry topics outside GHG accounting are not covered here and must be reported separately by the entity.',
         ),
         inventorySection(ds, ['Gross global Scope 1 emissions', 'Purchased energy emissions', 'Value chain emissions (where the applicable standard requires them)']),
@@ -479,7 +479,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'IFRS S1 — General requirements',
+          'IFRS S1: General requirements',
           'IFRS S1 requires sustainability-related risks and opportunities that could reasonably affect prospects, disclosed alongside the financial statements. This output supplies the metrics pillar from verified evidence. Governance, strategy and risk-management narratives are authored by the entity and are marked accordingly in the disclosure index.',
         ),
         inventorySection(ds, ['Scope 1', 'Scope 2 (location-based)', 'Scope 3']),
@@ -493,7 +493,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'IFRS S2 — Climate-related disclosures',
+          'IFRS S2: Climate-related disclosures',
           'IFRS S2 carries forward the TCFD recommendations. Cross-industry metrics for absolute gross Scope 1, 2 and 3 emissions are reported below from evidenced records. Scenario analysis, transition planning and physical risk exposure are entity-authored and are not asserted here.',
         ),
         inventorySection(ds, ['Absolute gross Scope 1', 'Absolute gross Scope 2 (location-based)', 'Absolute gross Scope 3']),
@@ -507,7 +507,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'CDP — Response basis',
+          'CDP: Response basis',
           'The figures below correspond to CDP module C6 (emissions data). Responses to governance (C1), risks and opportunities (C2-C3) and verification (C10) modules require entity input and third-party assurance respectively; they are not answered from this dataset.',
         ),
         inventorySection(ds, ['C6.1 Scope 1', 'C6.3 Scope 2 (location-based)', 'C6.5 Scope 3']),
@@ -521,7 +521,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'ESRS E1 — Climate change',
+          'ESRS E1: Climate change',
           'This output covers the quantitative datapoints of ESRS E1-5 (energy) and E1-6 (gross Scopes 1, 2, 3 and total). E1-1 transition plan, E1-2 policies and E1-3 actions are entity-authored. Double materiality assessment is a prerequisite of CSRD reporting and is not performed by this platform.',
         ),
         inventorySection(ds, ['E1-6 Gross Scope 1', 'E1-6 Gross Scope 2 (location-based)', 'E1-6 Gross Scope 3']),
@@ -535,7 +535,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'TNFD — LEAP applicability',
+          'TNFD: LEAP applicability',
           'The TNFD LEAP approach requires location-level nature dependency and impact assessment. This platform records financial and energy evidence, not ecosystem or biodiversity data, so the Evaluate, Assess and Prepare stages are reported as not applicable to this platform rather than estimated. The GHG inventory below is supplied as contextual data only.',
         ),
         inventorySection(ds, ['Direct emissions', 'Purchased energy', 'Value chain emissions']),
@@ -564,7 +564,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
           'SDG contribution reporting',
           'Emissions data is mapped to SDG 7 (affordable and clean energy), SDG 12 (responsible consumption and production) and SDG 13 (climate action) only where an evidenced record exists. No contribution is claimed for a goal without supporting data.',
         ),
-        inventorySection(ds, ['SDG 13 — direct emissions', 'SDG 7 — purchased energy emissions', 'SDG 12 — value chain emissions']),
+        inventorySection(ds, ['SDG 13: direct emissions', 'SDG 7: purchased energy emissions', 'SDG 12: value chain emissions']),
         common.categories,
         common.target,
         common.methodology,
@@ -588,23 +588,23 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         {
           kind: 'kv',
-          title: 'Section A — General disclosures',
+          title: 'Section A: General disclosures',
           rows: [
             ['Name of the entity', ds.organizationName],
             ['GSTIN', ds.gstin || 'Not recorded'],
             ['Sector / industry', ds.sector || 'Not recorded'],
             ['Scale of entity', ds.size || 'Not recorded'],
             ['Reporting period', ds.periodStart && ds.periodEnd
-              ? `${fmtDate(ds.periodStart, ds.locale)} — ${fmtDate(ds.periodEnd, ds.locale)}`
+              ? `${fmtDate(ds.periodStart, ds.locale)} to ${fmtDate(ds.periodEnd, ds.locale)}`
               : 'All recorded activity to date'],
           ],
         },
         note(
-          'Section B — Management and process disclosures',
+          'Section B: Management and process disclosures',
           'Policy, governance and oversight narratives for the NGRBC principles are not captured by this platform and are therefore not asserted here. Section B must be completed by the entity before filing.',
         ),
         note(
-          'Section C, Principle 6 — Environment',
+          'Section C, Principle 6: Environment',
           'The quantitative environmental disclosures below cover greenhouse gas emissions computed from invoice-level evidence. Water, waste and biodiversity indicators under Principle 6 are outside the platform boundary and are reported as gaps.',
         ),
         inventorySection(ds, ['Direct emissions (P6 essential indicator 1)', 'Energy indirect emissions (P6 essential indicator 1)', 'Other indirect emissions (P6 leadership indicator)']),
@@ -618,12 +618,12 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
       return [
         common.entity,
         note(
-          'BRSR Core — basis and assurance',
+          'BRSR Core: basis and assurance',
           'BRSR Core specifies a set of KPIs subject to reasonable assurance when filed with the exchange. This output is the underlying, unassured source data for those KPIs. It is not an assurance statement and does not itself satisfy the assurance requirement.',
         ),
-        inventorySection(ds, ['Attribute 1 — Scope 1 emissions', 'Attribute 1 — Scope 2 emissions', 'Attribute 9 — value chain emissions']),
+        inventorySection(ds, ['Attribute 1: Scope 1 emissions', 'Attribute 1: Scope 2 emissions', 'Attribute 9: value chain emissions']),
         note(
-          'Attribute 1 — GHG intensity',
+          'Attribute 1: GHG intensity',
           ds.availability.intensity
             ? 'Intensity is computed from an evidenced output denominator.'
             : 'Turnover-adjusted GHG intensity requires a revenue or output denominator, which is not recorded here. It is declared a data gap and must be completed by the entity from its audited financials.',
@@ -701,7 +701,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'What this summary is',
-          'The platform\'s own view of the verified dataset: every framework export renders these same records in that framework\'s structure. Nothing in a framework report is recomputed or restated — only reorganised and labelled to that standard\'s disclosure index.',
+          'The platform\'s own view of the verified dataset: every framework export renders these same records in that framework\'s structure. Nothing in a framework report is recomputed or restated, only reorganised and labelled to that standard\'s disclosure index.',
         ),
         inventorySection(ds, ['Direct emissions', 'Purchased energy', 'Value chain emissions']),
         common.categories,

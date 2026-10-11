@@ -9,7 +9,7 @@ const Mission = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Mission — Senseible"
+        title="Mission | Senseible"
         description="Why Senseible exists: Making carbon verification infrastructure accessible to MSMEs excluded from global climate finance."
         keywords={["senseible mission", "MSME carbon", "climate finance inclusion", "carbon verification infrastructure"]}
         canonical="/mission"
@@ -92,10 +92,10 @@ const Mission = () => {
           <section className="mb-12 p-8 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl border border-primary/10">
             <p className="text-xl sm:text-2xl text-foreground leading-relaxed font-medium">
               <span className="text-muted-foreground">Senseible exists to replace that infrastructure.</span>{' '}
-              To turn everyday business documents—<span className="text-primary font-semibold">invoices, bills, receipts</span>—into verified carbon signals.{' '}
+              To turn everyday business documents (<span className="text-primary font-semibold">invoices, bills, receipts</span>) into verified carbon signals.{' '}
               To make compliance automatic. To make <span className="text-primary font-semibold">revenue from carbon</span> accessible to every business, not just large ones.
             </p>
-            <p className="text-sm text-muted-foreground mt-6 italic">— Founder's Note</p>
+            <p className="text-sm text-muted-foreground mt-6 italic">Founder's Note</p>
           </section>
           
           {/* Founder's Voice */}
@@ -105,8 +105,8 @@ const Mission = () => {
               We make regulatory fear irrelevant.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              If you're building something that touches climate, trade, or MSME finance—and you see 
-              the same infrastructure gap we do—we should talk.
+              If you're building something that touches climate, trade, or MSME finance, and you see 
+              the same infrastructure gap we do, we should talk.
             </p>
           </section>
         </article>

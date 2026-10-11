@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 import { startDomTranslator, stopDomTranslator } from './domTranslator';
-import { supabase } from '@/integrations/supabase/client';
+import { isRuntimeTranslationAllowed } from './autoTranslate';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
 
 
 interface I18nContextType {
@@ -97,13 +98,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     try { localStorage.setItem('senseible_locale', newLocale); } catch {}
     const uid = userIdRef.current;
     if (uid) {
-      void supabase
+      void loadSupabase().then(supabase => supabase
         .from('profiles')
         .update({ preferred_language: newLocale })
         .eq('id', uid)
         .then(({ error }) => {
           if (error) console.error('preferred_language save failed', error.message);
-        });
+        }));
     }
   }, []);
 
@@ -115,6 +116,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const applyForUser = async (uid: string | null) => {
       userIdRef.current = uid;
       if (!uid) return;
+      const supabase = await loadSupabase();
       const { data } = await supabase
         .from('profiles')
         .select('preferred_language')
@@ -136,18 +138,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       }
     };
 
-    supabase.auth.getSession().then(({ data }) => {
-      void applyForUser(data.session?.user?.id ?? null);
-    });
-
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      const uid = session?.user?.id ?? null;
-      if (uid !== userIdRef.current) void applyForUser(uid);
+    let unsubscribe: (() => void) | null = null;
+    void loadSupabase().then(supabase => {
+      if (cancelled) return;
+      supabase.auth.getSession().then(({ data }) => {
+        void applyForUser(data.session?.user?.id ?? null);
+      });
+      const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+        const uid = session?.user?.id ?? null;
+        if (uid !== userIdRef.current) void applyForUser(uid);
+      });
+      unsubscribe = () => sub.subscription.unsubscribe();
     });
 
     return () => {
       cancelled = true;
-      sub.subscription.unsubscribe();
+      unsubscribe?.();
     };
   }, []);
 
@@ -165,7 +171,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
           document.documentElement.dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';
         } catch {}
         try {
-          if (locale === 'en') stopDomTranslator();
+          if (locale === 'en' || !isRuntimeTranslationAllowed()) stopDomTranslator();
           else startDomTranslator(locale);
         } catch {}
       }

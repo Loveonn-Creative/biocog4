@@ -1,6 +1,8 @@
-# Green loan vs traditional loan — the real cost comparison for MSMEs
+# Green loan vs traditional loan: the real cost comparison for MSMEs
 
 Canonical: https://senseible.earth/climate-intelligence/green-loan-vs-traditional-loan-real-cost-comparison
+
+Published 2026-05-22.
 
 Green loans are pitched as "cheaper than traditional loans because banks reward sustainability". That is partly true and partly marketing. A real cost comparison has to include the **interest differential**, the **MRV and disclosure overhead**, and the **covenant risk** of losing the rate if you miss your reported milestones.
 
@@ -8,32 +10,32 @@ Green loans are pitched as "cheaper than traditional loans because banks reward 
 
 | Item | Traditional MSME term loan | Green-labelled MSME term loan |
 | --- | --- | --- |
-| Indicative rate | 10.5% – 13.5% | 9.0% – 12.5% |
-| Typical processing fee | 0.5% – 1.5% | 0.5% – 1.5% |
+| Indicative rate | Lender's standard rate | Often somewhat lower |
+| Typical processing fee | Standard | Usually similar |
 | MRV / disclosure obligation | Annual financials | Annual financials + sustainability metrics + verifier letter |
-| Covenant if metrics miss | None | Step-up of 25–100 bps (sometimes more) |
+| Covenant if metrics miss | None | Rate step-up (size varies) |
 | Capex restriction | None usual | Use-of-proceeds tied to listed green categories |
 
-Headline rate reduction: **50–200 bps** on the underlying loan. Not free, but real.
+Headline rate reduction: varies by lender and product. Not free, but real.
 
 ## The all-in cost calculation
 
-For a 25 lakh, 5-year term loan in India:
+For example, take a 25 lakh, 5-year term loan in India at two assumed rates:
 
 - **Traditional at 12.0%** → total interest ≈ ₹8.4 lakh over the life of the loan.
 - **Green at 11.0%** → total interest ≈ ₹7.6 lakh. Gross saving ≈ ₹80,000 over 5 years (₹16,000/year).
 
 From that gross saving, subtract:
 
-- **MRV setup** (one-time): ₹0–₹50,000 depending on whether you already have a system.
-- **Annual MRV + verification cost**: ₹15,000–₹60,000/year for an MSME-scale loan.
-- **Internal time**: 20–60 hours/year of finance + ops team time.
+- **MRV setup** (one-time): little or nothing if you already have a system.
+- **Annual MRV + verification cost** for an MSME-scale loan.
+- **Internal time** of the finance + ops team.
 
-Net cash benefit: typically **₹5,000–₹40,000/year** for a 25 lakh green loan in India. Positive but modest.
+Net cash benefit at this loan size: positive but modest, and it can disappear if you build MRV only for this loan.
 
 ## When green loans are clearly worth it
 
-- **Larger ticket sizes (₹1 cr+).** The interest saving scales linearly; the MRV cost is roughly fixed. At ₹1 cr, a 100 bps reduction = ~₹3 lakh/year, against the same MRV overhead.
+- **Larger ticket sizes (₹1 cr+).** The interest saving scales linearly; the MRV cost is roughly fixed. At ₹1 cr, a 100 bps reduction = ~₹1 lakh/year, against the same MRV overhead.
 - **Capex you would have done anyway.** Solar, EV fleet, efficient HVAC. The use-of-proceeds restriction does not bind because you wanted to spend on that asset regardless.
 - **Buyer-mandated sustainability data.** You are already paying for MRV because your buyers require it. The green loan converts that sunk cost into incremental cash benefit.
 - **Long tenor loans (7–15 years).** The compounding interest saving outpaces the MRV cost stack.
@@ -43,16 +45,16 @@ Net cash benefit: typically **₹5,000–₹40,000/year** for a 25 lakh green lo
 - **Small short-tenor working capital lines.** The interest saving is too small to absorb MRV overhead.
 - **You have no existing MRV.** Setup cost in year one can eat the entire interest saving.
 - **Your capex plan does not match a listed green category.** Forcing your spend into an eligible category to qualify costs more than the rate benefit.
-- **Your reported metrics are fragile.** Missing a milestone triggers a rate step-up that wipes out 18–30 months of saving.
+- **Your reported metrics are fragile.** Missing a milestone triggers a rate step-up that can wipe out many months of saving.
 
 ## The covenant trap most MSMEs miss
 
-Sustainability-linked loans carry covenants — usually a year-on-year reduction in emissions intensity, or hitting a renewables share. **Missing the covenant typically triggers a step-up of 25–100 bps** that erases the rate benefit. The trap is signing covenants based on optimistic projections, then discovering operations cannot hit them.
+Sustainability-linked loans carry covenants: usually a year-on-year reduction in emissions intensity, or hitting a renewables share. **Missing the covenant typically triggers a rate step-up** that erases the rate benefit. The trap is signing covenants based on optimistic projections, then discovering operations cannot hit them.
 
 Mitigations:
 
 - Negotiate covenants based on verified baseline, not aspirational targets.
-- Build in a cure period (commonly 12 months) before the step-up triggers.
+- Build in a cure period (for example, 12 months) before the step-up triggers.
 - Confirm whether the step-up is *only* prospective or also retrospective on the prior period.
 
 ## What banks actually want to see
@@ -71,9 +73,9 @@ This pack is roughly the same evidence buyers want for Scope 3. The marginal cos
 
 For Indian MSMEs, the green loan should be compared against existing subsidy paths:
 
-- **PM Surya Ghar Yojana** (rooftop solar subsidy) often gives a better effective rate than a green loan, because the subsidy is upfront.
+- **Rooftop solar subsidies** can give a better effective rate than a green loan, because the subsidy is upfront. (PM Surya Ghar: Muft Bijli Yojana covers households only, so check state schemes for commercial and industrial rooftops.)
 - **MUDRA + green capex** can stack with a partial green-loan structure.
-- **SIDBI 4E loan** (Energy Efficiency Energy Excellence) has lower rates than commercial green loans for energy-efficiency capex.
+- **SIDBI 4E loan** (End-to-End Energy Efficiency) can have lower rates than commercial green loans for energy-efficiency capex.
 
 A real evaluation compares green loan vs traditional loan vs subsidy-stacked traditional loan. Often the third wins.
 
@@ -88,5 +90,5 @@ A real evaluation compares green loan vs traditional loan vs subsidy-stacked tra
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

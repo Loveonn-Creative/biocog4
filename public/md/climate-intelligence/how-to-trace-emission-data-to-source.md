@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source
 
+Published 2025-01-01.
+
 Traceability requires a structured data management system that logs every emission calculation to its source document or measurement. Start by establishing a data hierarchy: raw inputs like fuel invoices, electricity bills, or IoT sensor readings form the base layer. Each data point should carry metadata including timestamp, source identifier, collection method, and responsible person or system.
 
 Use unique transaction IDs to link calculated emissions back through the calculation chain to the original input. For example, if Scope 1 emissions from a diesel generator are 500 kg CO2e, the system should reference the specific fuel purchase invoice number, date, quantity in liters, the emission factor used, and the calculation standard applied.
@@ -16,4 +18,4 @@ This approach satisfies third-party verification requirements under ISO 14064, C
 
 - [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
 - [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
-- [Why Every Invoice Needs a Trust Score — Not Just Pass/Fail](https://senseible.earth/climate-intelligence/why-every-invoice-needs-trust-score)
+- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)

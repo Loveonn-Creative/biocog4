@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/transition-finance-vs-green-finance-borrower-guide
 
-An MSME walks into a bank and asks for a "green loan". The relationship manager pulls out a brochure that mixes green, transition and sustainability-linked products under one heading. They are not interchangeable. Picking the wrong one usually costs 50–150 basis points in pricing or kills eligibility entirely.
+Published 2026-05-21.
+
+An MSME walks into a bank and asks for a "green loan". The relationship manager pulls out a brochure that mixes green, transition and sustainability-linked products under one heading. They are not interchangeable. Picking the wrong one can cost you on pricing or kill eligibility entirely.
 
 ## The three product families
 
@@ -18,18 +20,18 @@ The differences are not academic. Each has its own approval committee, its own d
 
 A green loan funds an asset that is *already* green. The use of proceeds is restricted. Common eligibility criteria:
 
-- Rooftop solar > 100 kW with metered output.
+- Rooftop solar with metered output.
 - EV commercial fleet conversion with verified mileage displacement.
-- Building retrofit achieving > 20% energy reduction (metered before/after).
-- Water recycling > 50% reuse with continuous monitoring.
+- Building retrofit achieving a metered energy reduction (before/after).
+- Water recycling with continuous monitoring.
 
-**Pricing.** Typically 50–150 bps below the borrower's standard term-loan rate from SIDBI, IREDA, NABARD or commercial green lines.
+**Pricing.** Often below the borrower's standard term-loan rate, through SIDBI, IREDA, NABARD or commercial green lines.
 
-**Documentation.** Asset technical spec, expected impact (kWh saved, tCO2e avoided), commitment to annual impact reporting. Senseible-grade MRV evidence accelerates this dramatically.
+**Documentation.** Asset technical spec, expected impact (kWh saved, tCO2e avoided), commitment to annual impact reporting. Senseible-grade MRV evidence can speed this up.
 
 ## Transition finance: bigger ticket, harder narrative
 
-Transition finance funds the *journey* of a high-carbon asset toward lower carbon. It is the only honest financing path for sectors where "green" is not yet operationally possible (steel, cement, chemicals, long-haul shipping).
+Transition finance funds the *journey* of a high-carbon asset toward lower carbon. It is the main honest financing path for sectors where "green" is not yet operationally possible (steel, cement, chemicals, long-haul shipping).
 
 **Eligibility.** The borrower must demonstrate:
 
@@ -38,7 +40,7 @@ Transition finance funds the *journey* of a high-carbon asset toward lower carbo
 3. Independent verification of progress (this is where MRV is non-optional).
 4. No lock-in of high-carbon infrastructure beyond the transition window.
 
-**Pricing.** Less discounted than pure green (typically 25–75 bps below standard) but available where green is not.
+**Pricing.** Less discounted than pure green, but available where green is not.
 
 **Documentation.** Transition plan, baseline emissions, target trajectory, governance, verification schedule.
 
@@ -52,11 +54,11 @@ An SLL is general-purpose financing where the interest rate steps in either dire
 - Achieve verified renewable energy share > Y% by year-end.
 - Cut Scope 3 freight emissions by Z% via modal shift.
 
-**Pricing.** Two-way step. Typical structure: -10 bps if all SPTs met, +10 bps if missed. The actual numbers vary.
+**Pricing.** Two-way step: a small margin reduction if all SPTs are met and an increase if they are missed. The actual numbers vary by lender.
 
 **Documentation.** SPT calibration memo, baseline, KPI definitions, third-party verification mechanism, reporting cadence.
 
-**Critical.** ICMA principles require SPTs to be material and ambitious. A target you would have hit anyway is not an SPT — and lenders increasingly reject "business as usual" KPIs.
+**Critical.** The Sustainability-Linked Loan Principles (LMA, APLMA, LSTA) require KPIs to be material and SPTs to be ambitious. A target you would have hit anyway is not an SPT, and lenders increasingly reject "business as usual" KPIs.
 
 ## How to choose
 
@@ -94,5 +96,5 @@ A continuous MRV layer (such as Senseible) compresses this cost and converts the
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

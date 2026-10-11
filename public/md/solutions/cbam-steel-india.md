@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/cbam-steel-india
 
-Indian steel exporters face up to 26% cost increase under EU CBAM by 2034. Most MSMEs lack emission intensity data required for quarterly CBAM declarations.
+Since 1 January 2026, EU buyers of Indian steel owe CBAM certificates on every tonne of embedded emissions above the free-allocation adjustment. Coal-based routes sit well above EU benchmarks, so verified intensity data now decides your landed price.
 
 ## Steps
 
@@ -16,30 +16,32 @@ Indian steel exporters face up to 26% cost increase under EU CBAM by 2034. Most 
 
 | Item | Value |
 | --- | --- |
-| CBAM certificate cost (2026) | €2-5/tonne |
-| Full liability (2034) | €40-120/tonne |
-| Compliance setup time | 2-4 weeks |
-| Annual reporting cost (manual) | ₹5-15 lakh |
+| Intensity assumed (Blast Furnace (BF-BOF)) | 2.1 tCO2 per tonne |
+| Estimated CBAM cost, 2026, 1,000 t, verified data | €50,874 |
+| Same shipment, default value with 10% mark-up | €68,161 |
+| Estimated cost, 2030 (verified data) | €108,432 |
+| Estimated cost, 2034 (no free allocation) | €172,872 |
+| Certificate price used | €82.32 (Q3 2026, European Commission) |
 
 ## Questions
 
-### What is the CBAM cost for steel exports from India in 2026?
+### Who pays CBAM, the exporter or the EU buyer?
 
-In 2026, CBAM covers only 2.5% of emissions with 97.5% free allocation. For a typical Indian steel MSME exporting 1000 tonnes via BF-BOF route, the net CBAM cost is approximately €1,200-3,500 in the first year.
+The EU importer, as an authorised CBAM declarant, buys and surrenders certificates; the first annual declaration for 2026 imports is due by 30 September 2027. The exporter supplies verified emissions data per tonne so the importer does not have to use default values with a mark-up.
 
-### Do Indian steel MSMEs need to file CBAM reports?
+### Why does verified data matter so much?
 
-Yes. From 2026, EU importers must declare embedded emissions for all CBAM-covered steel products. Indian exporters need to provide verified emission intensity data per tonne of product.
+Without it the importer uses the EU default value plus a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 (Implementing Regulation (EU) 2025/2621). In this example that adds about €17 per tonne in 2026.
 
-### How can Senseible help with CBAM compliance for steel?
+### Which India grid factor applies?
 
-Senseible calculates emission intensity from your invoices using India-specific grid factors (0.708 kgCO₂/kWh), generates CBAM-ready reports, and projects costs through 2034.
+For steel, CBAM counts direct emissions only. For your own Scope 2, the Central Electricity Authority CO2 Baseline Database v21.0 gives 0.710 tCO2 per MWh for FY 2024-25.
 
 ## Related
 
 - [Free tool](https://senseible.earth/cbam-calculator)
 - [Industry guide](https://senseible.earth/industries/steel)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
 - [CBAM Compliance for Steel & Metal in Bangladesh](https://senseible.earth/solutions/cbam-steel-bangladesh)
 - [Scope 3 Calculator for Steel Manufacturing in India](https://senseible.earth/solutions/scope3-steel-india)
 - [CBAM Compliance for Chemical Industry in India](https://senseible.earth/solutions/cbam-chemicals-india)

@@ -111,7 +111,7 @@ function scoreSupplier(s: SupplierInput, sectorEF: number): SupplierResult {
     dataSource = 'industry-avg';
     confidence = 'low';
     uncertaintyPct = 60;
-    notes.push('No spend or activity data — sector average used as proxy');
+    notes.push('No spend or activity data; sector average used as proxy');
   }
 
   // Risk: weighted geography (30) + sector intensity (35) + disclosure gap (35)

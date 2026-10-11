@@ -2,16 +2,17 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-water-carbon-nexus-textile-leather
 
-Textile dyeing and leather tanning are India's largest industrial water users and major Scope 1+2 emitters. Most decarbonisation plans ignore water. That is a mistake.
+Published 2026-05-06.
+
+Textile dyeing and leather tanning are among India's most water-intensive industries and major Scope 1+2 emitters. Most decarbonisation plans ignore water. That is a mistake.
 
 ## The hidden link
 
-| Process | Water (litres/kg product) | Energy (kWh/kg) | Carbon (kgCO2e/kg) |
+| Process | Water use | Energy use | Carbon |
 | --- | --- | --- | --- |
-| Cotton dyeing (conventional) | 100–150 | 4.5 | 3.2 |
-| Cotton dyeing (low-water) | 30–50 | 2.8 | 2.0 |
-| Leather tanning (chrome) | 35–45 | 3.1 | 2.1 |
-| Leather tanning (vegetable) | 50–70 | 2.4 | 1.5 |
+| Cotton dyeing (conventional) | High | High | High |
+| Cotton dyeing (low-water) | Lower | Lower | Lower |
+| Leather tanning | Significant | Significant (process heat, effluent treatment) | Depends on fuel and grid |
 
 ## Why water cuts cut carbon
 
@@ -21,35 +22,35 @@ Every litre of process water needs to be:
 2. Heated for dyeing or tanning (gas or electricity)
 3. Treated post-process (electricity + chemicals)
 
-Halve water use and you halve all three. The capital cost of water-efficient equipment is often 30–50% of the avoided carbon abatement cost.
+Cut water use and you cut all three, so water efficiency often doubles as low-cost carbon abatement.
 
 ## High-impact retrofits
 
 ### Reactive dyeing → cold pad batch
 
-80% water reduction, 60% steam reduction, payback 18 months.
+Large cuts in water and steam use compared with conventional exhaust dyeing.
 
 ### Air dyeing
 
-98% water reduction, 70% energy reduction, capex INR 4–8 crore for 1 t/day.
+Very low water and energy use, but high capex.
 
 ### Chrome recovery
 
-40% chrome chemical reduction, 30% water reduction, 12-month payback.
+Reduces chrome chemical purchases, water use and effluent load.
 
 ### Membrane filtration + recycle
 
-Up to 80% process water recycled. 25–35% steam saved.
+Recycles a large share of process water; recovering heat from hot effluent also saves steam.
 
-A Tirupur dyeing unit moved 50% of production from jet to cold pad batch in 2024. Water consumption fell 38%. Scope 1+2 fell 31%. Payback was 22 months.
+Measure water, steam and electricity before and after any retrofit so the carbon saving can be verified.
 
 ## Reporting framework
 
-ZDHC InCheck + GHG Protocol Scope 1+2 in one disclosure. Most EU buyers now accept this combined format. Use [Senseible](https://senseible.earth/) to compile both from utility bills + chemical purchase records.
+ZDHC InCheck + GHG Protocol Scope 1+2 in one disclosure gives buyers both views in one pack. Use [Senseible](https://senseible.earth/) to compile both from utility bills + chemical purchase records.
 
 ## Regulation tailwind
 
-CPCB's Zero Liquid Discharge mandate for 17 highly polluting industries already requires water recovery. Layer carbon accounting on top — most data already exists.
+Zero Liquid Discharge requirements from CPCB and state pollution control boards already require water recovery at many textile and tannery units. Layer carbon accounting on top: most data already exists.
 
 ## Related guides
 

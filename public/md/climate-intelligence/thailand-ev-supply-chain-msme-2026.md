@@ -2,37 +2,33 @@
 
 Canonical: https://senseible.earth/climate-intelligence/thailand-ev-supply-chain-msme-2026
 
-Thailand's 30@30 policy targets 30% of vehicle production to be EVs by 2030. BYD, MG, Foxconn, Toyota and Mercedes have all committed manufacturing investment. MSME suppliers face new carbon and content rules.
+Published 2026-05-06.
 
-## What 30@30 demands of suppliers
+Thailand's 30@30 policy targets 30% of vehicle production to be EVs by 2030. Several global automakers have committed EV manufacturing investment in Thailand. MSME suppliers face new carbon and content expectations.
 
-- Local content thresholds with embedded emissions reporting
-- BOI tax incentives tied to verified Scope 1 + 2 reductions
-- Battery passport conformity by 2027 (EU-aligned)
+## What 30@30 means for suppliers
+
+- Government EV incentives come with local production commitments, pulling more component work into Thailand
+- OEM customers increasingly ask suppliers for emissions data
+- Battery suppliers exporting to the EU must prepare for the EU Battery Regulation's carbon footprint and passport rules
 
 ## The grid reality
 
-EGAT national grid factor: 0.500 kgCO2e/kWh. Among the cleanest in ASEAN due to gas + hydro from Lao PDR. This means Thailand-assembled EVs already have a structural carbon advantage over Indian or Chinese assembly.
-
-| Activity | Thailand emissions | India emissions | Difference |
-| --- | --- | --- | --- |
-| Battery cell assembly per kWh | 32 kgCO2e | 48 kgCO2e | -33% |
-| Aluminium casting per kg | 9.5 kgCO2e | 14.2 kgCO2e | -33% |
-| Final EV assembly per unit | 280 kgCO2e | 420 kgCO2e | -33% |
+Thailand's grid relies mainly on natural gas plus hydropower imported from Lao PDR, so its grid emission factor is lower than coal-heavy grids such as India's. That gives Thailand-assembled components a structural advantage on electricity-related emissions. Use the official Thai grid factor published by TGO and document its version.
 
 ## What Tier 2/3 MSMEs should do
 
-1. Baseline electricity + LPG + diesel using [Senseible](https://senseible.earth/) (Thai language supported)
-2. Apply for BOI section 9 incentive — 8 year tax holiday for verified low-carbon manufacturing
-3. PEA / MEA solar net metering up to 1 MW
-4. Submit emissions data to OEM portal — most use IATF 16949 sustainability annex
+1. Baseline electricity + LPG + diesel using [Senseible](https://senseible.earth/)
+2. Check BOI incentives for eligible EV parts and energy-efficiency investments
+3. Check PEA / MEA rules for rooftop solar
+4. Submit emissions data through each OEM's supplier portal
 5. Use [Logistics calculator](https://senseible.earth/calculators/logistics-emissions) to model EV vs ICE component freight
 
-Thailand's structural carbon advantage is real but shrinking. India and Vietnam are adding renewable capacity faster. Thai MSMEs that lock in solar PPAs at 2026 prices will protect the lead.
+A cleaner grid is an advantage, but other countries are adding renewable capacity too. Rooftop solar and renewable supply contracts help Thai MSMEs keep their lead.
 
 ## Battery passport prep
 
-The EU Battery Regulation requires every battery sold in the EU from 2027 to carry a digital passport with embedded emissions, recycled content and supply chain origin. Thai battery exporters need data collection systems running by Q2 2026.
+The EU Battery Regulation requires EV batteries, light means of transport batteries and industrial batteries above 2 kWh placed on the EU market from February 2027 to carry a digital battery passport, with information including carbon footprint, recycled content and supply chain due diligence. Thai battery exporters need data collection systems running well before then.
 
 ## Related guides
 

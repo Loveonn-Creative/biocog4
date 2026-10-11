@@ -1,4 +1,4 @@
-# Construction & Real Estate: carbon accounting
+# Construction & Real Estate: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/construction
 

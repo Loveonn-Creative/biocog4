@@ -27,7 +27,7 @@ export const GreenwashingExplainer = ({ risk, factors = [] }: GreenwashingExplai
       >
         <div className="flex items-center gap-2 font-medium">
           <ShieldAlert className="h-4 w-4" />
-          {risk.toUpperCase()} Greenwashing Risk — {factors.length} factor{factors.length !== 1 ? 's' : ''}
+          {risk.toUpperCase()} Greenwashing Risk: {factors.length} factor{factors.length !== 1 ? 's' : ''}
         </div>
         {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
       </button>

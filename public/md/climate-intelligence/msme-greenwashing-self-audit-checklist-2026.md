@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-greenwashing-self-audit-checklist-2026
 
-EU Green Claims Directive (provisional 2026), India's CCPA Greenwashing Guidelines (2024), and FTC Green Guides (US) all sharpen enforcement. An MSME that publishes "we are carbon neutral" without backing data faces fines up to 4% of turnover in the EU.
+Published 2026-05-06.
+
+The EU's Empowering Consumers for the Green Transition Directive (applying from September 2026), India's CCPA Greenwashing Guidelines (2024), and FTC Green Guides (US) all sharpen enforcement; the separate EU Green Claims Directive proposal has stalled. The EU directive bans generic environmental claims and product claims of carbon neutrality based on offsetting, and penalties for widespread breaches of EU consumer law can reach at least 4% of turnover.
 
 ## The 18 tests
 
@@ -41,7 +43,7 @@ EU Green Claims Directive (provisional 2026), India's CCPA Greenwashing Guidelin
 
 ## How regulators interpret each test
 
-The EU Green Claims Directive treats absent evidence as misleading by default. The burden of proof is on the claimant.
+EU consumer law treats unsubstantiated environmental claims as misleading. The burden of proof is on the claimant.
 
 ## Score yourself
 

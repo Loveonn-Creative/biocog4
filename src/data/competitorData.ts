@@ -48,7 +48,7 @@ export const competitorData: CompetitorData[] = [
     },
     strengths: ['Options strategy builder', 'Real-time market data', 'Paper trading'],
     limitations: ['No carbon accounting', 'No ESG features', 'No climate finance'],
-    senseibleAdvantage: 'Senseible is a completely different platform focused on carbon MRV, climate finance, and ESG compliance for MSMEs—not stock trading.',
+    senseibleAdvantage: 'Senseible is a completely different platform focused on carbon MRV, climate finance, and ESG compliance for MSMEs, not stock trading.',
   },
   
   // Enterprise Competitors
@@ -447,7 +447,7 @@ export const competitorData: CompetitorData[] = [
     },
     strengths: ['Scope 3 focus', 'Supplier tools', 'India presence'],
     limitations: ['Enterprise focus', 'No instant verification', 'No monetization'],
-    senseibleAdvantage: 'Senseible offers sub-minute processing, automated verification, and direct monetization—designed for MSMEs who need speed and revenue.',
+    senseibleAdvantage: 'Senseible offers sub-minute processing, automated verification, and direct monetization, designed for MSMEs who need speed and revenue.',
   },
   {
     slug: 'climes',
@@ -493,7 +493,7 @@ export const competitorData: CompetitorData[] = [
     },
     strengths: ['Asia presence', 'Supply chain', 'Japanese compliance'],
     limitations: ['No India focus', 'No invoice automation', 'Enterprise pricing'],
-    senseibleAdvantage: 'Senseible is built India-first with GST integration, MSME pricing, and CBAM + BRSR compliance—not Japan-centric.',
+    senseibleAdvantage: 'Senseible is built India-first with GST integration, MSME pricing, and CBAM + BRSR compliance, not Japan-centric.',
   },
 ];
 

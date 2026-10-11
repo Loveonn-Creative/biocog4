@@ -1,21 +1,47 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
+import { useT } from "@/lib/i18n/useT";
 import { CarbonParticles } from "@/components/CarbonParticles";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
-import { ResultState } from "@/components/ResultState";
-import { OnboardingTour } from "@/components/OnboardingTour";
 import { HomeNavIcons } from "@/components/HomeNavIcons";
 import { UseCaseTyper } from "@/components/UseCaseTyper";
-import { BulkUpload } from "@/components/BulkUpload";
 import { Link, useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { getLocaleMeta } from "@/lib/i18n/locales";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
+
+// Perf: components not needed for first paint are code-split out of the
+// homepage's initial bundle. Each is rendered inside its own
+// <Suspense fallback={null}> so the route-level PageLoader never flashes.
+// - OnboardingTour renders nothing until a 5s timer fires.
+// - BulkUpload only appears for signed-in users after a click.
+// - ResultState (and its trust widgets) only appears after processing.
+const OnboardingTour = lazy(() =>
+  import("@/components/OnboardingTour").then((m) => ({ default: m.OnboardingTour }))
+);
+const BulkUpload = lazy(() =>
+  import("@/components/BulkUpload").then((m) => ({ default: m.BulkUpload }))
+);
+const ResultState = lazy(() =>
+  import("@/components/ResultState").then((m) => ({ default: m.ResultState }))
+);
+// Below-the-fold story, sticky phone CTA and the sample result load after
+// first paint in their own chunks.
+const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
+const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
+const SampleResult = lazy(() => import("@/components/home/SampleResult").then((m) => ({ default: m.SampleResult })));
+
+/** Opens the upload picker from anywhere on the page (must run in a click handler). */
+const openUploadPicker = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const input = document.querySelector<HTMLInputElement>('#hero input[type="file"]');
+  input?.click();
+};
 
 
 type State = "idle" | "processing" | "result";
@@ -178,6 +204,12 @@ const Index = () => {
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
   const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
+  const [showSample, setShowSample] = useState(false);
+  const t = useT();
+  const openSample = () => {
+    setShowSample(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -206,7 +238,7 @@ const Index = () => {
       let documentId: string | null = null;
       
       if (documentHash) {
-        const { data: existingDoc } = await supabase
+        const { data: existingDoc } = await (await loadSupabase())
           .from('documents')
           .select('id')
           .eq('document_hash', documentHash)
@@ -218,7 +250,7 @@ const Index = () => {
           documentId = existingDoc.id;
           
           // Update with session/user info if not set
-          const { error: updateError } = await supabase
+          const { error: updateError } = await (await loadSupabase())
             .from('documents')
             .update({
               session_id: user ? null : sessionId,
@@ -235,7 +267,7 @@ const Index = () => {
       // If no document found (shouldn't happen), create one
       if (!documentId) {
         console.warn('[MRV] No cached document found, creating new one');
-        const { data: docData, error: docError } = await supabase
+        const { data: docData, error: docError } = await (await loadSupabase())
           .from('documents')
           .insert({
             session_id: user ? null : sessionId,
@@ -263,7 +295,7 @@ const Index = () => {
 
       // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
       // Before inserting a new emission, check if one already exists for this document
-      const { data: existingEmissions } = await supabase
+      const { data: existingEmissions } = await (await loadSupabase())
         .from('emissions')
         .select('id')
         .eq('document_id', documentId)
@@ -290,7 +322,7 @@ const Index = () => {
         return { documentId, emissionIds: [] };
       }
 
-      const { data: emissionData, error: emissionError } = await supabase
+      const { data: emissionData, error: emissionError } = await (await loadSupabase())
         .from('emissions')
         .insert(emissionRows)
         .select('id');
@@ -324,7 +356,7 @@ const Index = () => {
       console.log("Sending document for OCR processing...");
       
       // Pass sessionId to edge function for guest user data linking
-      const { data, error } = await supabase.functions.invoke('extract-document', {
+      const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
         body: { imageBase64, mimeType, sessionId }
       });
 
@@ -516,7 +548,7 @@ const Index = () => {
       // Send to intelligence-chat with stream: false for voice queries.
       // invoke() forwards the signed-in user's JWT, so the assistant can
       // ground its answer in that user's own records.
-      const response = await supabase.functions.invoke('intelligence-chat', {
+      const response = await (await loadSupabase()).functions.invoke('intelligence-chat', {
         body: { 
           messages: [{ role: 'user', content: transcript }],
           context: { isHomepage: true, type: 'voice_query' },
@@ -604,15 +636,21 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
-      <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
+    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-hidden">
+      <Suspense fallback={null}>
+        <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
+      </Suspense>
       
+      {/* First viewport: what it is, who it is for, why trust it, and the action. */}
+      <div id="hero" className="relative flex flex-col min-h-[100dvh]">
       <CarbonParticles />
       
       {/* Top-right navigation icons */}
       <HomeNavIcons />
       
-      <header className="relative z-20 w-full pt-5 pb-2">
+      {/* Wordmark is centred on the same axis as the headline. On phones it sits
+          below the icon row (pt-16) so the two never collide. */}
+      <header className="relative z-20 w-full pt-16 sm:pt-5 pb-2 px-4">
         <Link to="/" className="block">
           <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
             senseible
@@ -620,11 +658,20 @@ const Index = () => {
         </Link>
       </header>
 
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-10">
-        {state === "idle" && (
-          <div className="flex flex-col items-center gap-8 animate-fade-in">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-6 sm:pt-0 sm:-mt-10">
+        {state === "idle" && showSample && (
+          <Suspense fallback={null}>
+            <SampleResult
+              onClose={() => setShowSample(false)}
+              onTryOwn={() => { setShowSample(false); setTimeout(openUploadPicker, 0); }}
+            />
+          </Suspense>
+        )}
+
+        {state === "idle" && !showSample && (
+          <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
             {/* Animated use case headline - ABOVE icons for maximum impact */}
-            <UseCaseTyper className="mb-2" />
+            <UseCaseTyper className="mt-2" />
             
             <div className="flex items-start gap-4 sm:gap-6">
               <DocumentInput 
@@ -681,14 +728,23 @@ const Index = () => {
               </div>
             )}
             
-            <p className="text-xs text-muted-foreground/60 text-center mt-2">
-              Upload a document or speak to begin
-            </p>
+            <div className="flex flex-col items-center gap-2 -mt-2">
+              <p className="text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
+                {t("home.hero.action", "Upload a bill or invoice for your audit-ready carbon report")}
+              </p>
+              <button
+                onClick={openSample}
+                className="text-sm font-medium text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary"
+              >
+                {t("home.hero.sample", "Try a sample invoice")}
+              </button>
+            </div>
+
 
             {/* India AI Innovation Badge */}
             <div className="flex flex-col items-center gap-2 mt-4">
               <IndiaAIBadge size={48} />
-              <p className="text-sm sm:text-base text-center leading-relaxed font-medium">
+              <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-xs [text-wrap:balance]">
                 <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
                 <span style={{ color: '#FF9933' }} className="font-semibold">from India.</span>
                 <br />
@@ -709,13 +765,15 @@ const Index = () => {
                 
                 {showBulkUpload && (
                   <div className="mt-4">
-                    <BulkUpload 
-                      onComplete={(results) => {
-                        toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
-                        navigate('/history');
-                      }}
-                      maxFiles={10}
-                    />
+                    <Suspense fallback={null}>
+                      <BulkUpload 
+                        onComplete={(results) => {
+                          toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
+                          navigate('/history');
+                        }}
+                        maxFiles={10}
+                      />
+                    </Suspense>
                   </div>
                 )}
               </div>
@@ -728,17 +786,25 @@ const Index = () => {
         )}
 
         {state === "result" && result && (
-          <ResultState 
-            type={result.type}
-            amount={result.amount}
-            extractedData={result.extractedData}
-            onConfirm={handleConfirm}
-            onReset={handleReset}
-          />
+          <Suspense fallback={null}>
+            <ResultState 
+              type={result.type}
+              amount={result.amount}
+              extractedData={result.extractedData}
+              onConfirm={handleConfirm}
+              onReset={handleReset}
+            />
+          </Suspense>
         )}
       </main>
+      </div>
+
+      <Suspense fallback={null}>
+        <HomeStory onUpload={openUploadPicker} onSample={openSample} />
+        <StickyCta heroId="hero" onUpload={openUploadPicker} onSample={openSample} />
+      </Suspense>
       
-      <footer className="relative z-20 w-full pb-6 pt-3">
+      <footer className="relative z-20 w-full pb-24 sm:pb-6 pt-3 border-t border-border">
         <nav className="flex items-center justify-center gap-5 sm:gap-7 flex-wrap px-4">
           <Link 
             to="/monetize" 

@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/carbon-audit-manufacturing-vietnam
 
-MONRE-EIA requirements and growing FDI-linked ESG requirements push Vietnamese manufacturers toward carbon measurement. 97% of Vietnamese businesses are SMEs.
+FDI buyers and lenders increasingly ask Vietnamese manufacturers for an emissions baseline. A carbon audit from fuel, electricity and purchase records, using the official national grid factor, gives one consistent set of figures.
 
 ## Steps
 
@@ -15,18 +15,16 @@ MONRE-EIA requirements and growing FDI-linked ESG requirements push Vietnamese m
 
 | Item | Value |
 | --- | --- |
-| SME share | 97% of businesses |
-| Grid factor | 0.625 kgCO₂/kWh |
-| Framework | MONRE-EIA |
+| Documents needed | 12 months of electricity, fuel and freight bills; key purchase invoices |
+| Vietnam grid factor, 2024 | About 0.68 tCO2e/MWh (use the official Department of Climate Change value when published) |
+| Method | GHG Protocol Corporate Standard |
 
 ## Questions
 
-### Is carbon auditing mandatory in Vietnam?
+### Which grid factor should a Vietnamese factory use?
 
-Vietnam National Climate Change Strategy targets net-zero by 2050. MONRE requires environmental impact assessments for large projects. Voluntary audits benefit SMEs for supply chain compliance.
+The annual grid emission factor announced by the Department of Climate Change for the reporting year, with the year and source stated.
 
 ## Related
 
 - [Industry guide](https://senseible.earth/industries/automobile)
-- [Carbon Audit for Manufacturing SMEs in Indonesia](https://senseible.earth/solutions/carbon-audit-manufacturing-indonesia)
-- [Carbon Audit for Manufacturing SMEs in Philippines](https://senseible.earth/solutions/carbon-audit-manufacturing-philippines)

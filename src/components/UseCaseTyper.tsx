@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, forwardRef } from 'react';
+import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 
 const useCasesMultilang: Record<string, string[]> = {
   'en': [
@@ -11,7 +12,7 @@ const useCasesMultilang: Record<string, string[]> = {
   ],
   'hi': [
     "चालान को कार्बन क्रेडिट में बदलें",
-    "47 सेकंड में ग्रीन लोन पात्रता",
+    "ग्रीन लोन पात्रता जांचें",
     "स्कोप 1, 2, 3 उत्सर्जन ट्रैक करें",
     "EU CBAM अनुपालन की तैयारी",
     "उत्सर्जन तुरंत सत्यापित करें",
@@ -19,7 +20,7 @@ const useCasesMultilang: Record<string, string[]> = {
   ],
   'de': [
     "Rechnungen in CO₂-Gutschriften umwandeln",
-    "Grüne Darlehen in 47 Sekunden",
+    "Eignung für grüne Kredite prüfen",
     "Scope 1, 2, 3 Emissionen verfolgen",
     "EU CBAM Vorbereitung starten",
     "Emissionen sofort verifizieren",
@@ -47,14 +48,17 @@ export const UseCaseTyper = forwardRef<HTMLDivElement, UseCaseTyperProps>(
     const [displayText, setDisplayText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
 
-    // Get browser language
-    const cases = useMemo(() => {
-      if (typeof navigator !== 'undefined') {
-        const lang = navigator.language?.split('-')[0] || 'en';
-        return useCasesMultilang[lang] || defaultCases;
-      }
-      return defaultCases;
-    }, []);
+    // Follow the app's language setting (not the browser's), so the headline
+    // changes with the language switch. Locales without a reviewed set use English.
+    const { locale } = useI18nContext();
+    const cases = useMemo(() => useCasesMultilang[locale] || defaultCases, [locale]);
+
+    // Restart cleanly when the language changes.
+    useEffect(() => {
+      setCurrentIndex(0);
+      setDisplayText('');
+      setIsDeleting(false);
+    }, [cases]);
 
     useEffect(() => {
       const currentText = cases[currentIndex];
@@ -94,9 +98,13 @@ export const UseCaseTyper = forwardRef<HTMLDivElement, UseCaseTyperProps>(
     return (
       <div 
         ref={ref}
-        className={`text-center min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center ${className || ''}`}
+        // Height for two lines is reserved so typing, wrapping or a language
+        // change never pushes the upload tiles. data-no-translate keeps the
+        // runtime translator from re-translating every typed frame.
+        data-no-translate
+        className={`w-full max-w-[min(92vw,36rem)] text-center min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5rem] flex items-center justify-center ${className || ''}`}
       >
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight [text-wrap:balance]">
           <span className="text-foreground">{firstPart}</span>
           {secondPart && (
             <span className="text-primary">{' '}{secondPart}</span>

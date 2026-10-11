@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/malaysia-palm-oil-scope-1-2-3-emission-breakdown
 
-Malaysia is the world second-largest palm oil producer. RSPO and MSPO certification increasingly require carbon accounting. EU Deforestation Regulation (EUDR) adds urgency. Scope 1: Methane from palm oil mill effluent (POME) treatment is the single largest emission source at 40-50%. Scope 2: Malaysia grid factor is 0.585 kgCO2 per kWh. Mills typically consume 20-30 kWh per tonne of FFB. Scope 3: Upstream emissions from fertilizer application (N2O), land use change, and downstream refining represent 30-40%. Reduction priorities: (1) POME biogas capture, (2) Biomass cogeneration, (3) Precision fertilizer application, (4) No-deforestation commitments. Bursa Malaysia ESG reporting requirements and MyCarbon platform create a regulatory pathway. Palm oil companies with verified carbon data access better pricing from European refiners under EUDR compliance.
+Published 2026-04-01.
+
+Malaysia is the world second-largest palm oil producer. RSPO and MSPO certification increasingly require carbon accounting. EU Deforestation Regulation (EUDR) adds urgency. Scope 1: Methane from palm oil mill effluent (POME) treatment is often the single largest emission source at a mill. Scope 2: use the latest official Malaysia grid emission factor and track electricity use per tonne of FFB. Scope 3: Upstream emissions from fertilizer application (N2O), land use change, and downstream refining. Reduction priorities: (1) POME biogas capture, (2) Biomass cogeneration, (3) Precision fertilizer application, (4) No-deforestation commitments. Bursa Malaysia ESG reporting requirements and MyCarbon platform create a regulatory pathway. Palm oil companies with verified carbon data are better placed with European buyers, although EUDR compliance itself depends on deforestation-free and legality evidence rather than carbon data.
 
 ## Related guides
 

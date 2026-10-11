@@ -98,7 +98,7 @@ const Partners = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden">
       <SEOHead
-        title="Partner Program — Carbon Buyers, Banks & ERP Integrations"
+        title="Partner Program | Carbon Buyers, Banks & ERP Integrations"
         description="Join Senseible's partner ecosystem. Access verified MSME carbon credits, enable green lending, or integrate carbon tracking into your platform."
         canonical="/partners"
         image={`https://senseible.earth${partnersOg}`}

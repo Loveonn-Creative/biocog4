@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india
 
+Published 2025-01-01.
+
 Manufacturing firms calculate Scope 2 emissions, which are indirect emissions from purchased electricity, heat, or steam, by identifying and quantifying purchased electricity for production equipment, HVAC systems, and facility lighting.
 
 **India-Specific Guidance:**
@@ -18,7 +20,7 @@ Gather electricity consumption data from utility bills or meters. Apply the appr
 
 **Key Considerations:**
 
-- State grids in India vary from 0.5 to 1.0 kg CO2e per kWh
+- Use the latest grid emission factor published in the Central Electricity Authority (CEA) CO2 Baseline Database
 - Document whether using location-based or market-based approach
 - If purchasing green power, retain certificates and contractual documentation
 - Report Scope 2 separately from Scope 1
@@ -27,4 +29,4 @@ Gather electricity consumption data from utility bills or meters. Apply the appr
 
 - [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
 - [How do Manufacturing firms calculate Scope 3 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india)
-- [How to Calculate Carbon Footprint from Electricity Bills](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
