@@ -30,3 +30,7 @@ DB/migration context:
 Run `rollback/20261011120000_protect_privileged_columns.rollback.sql`. It drops
 the five triggers, their functions, and `public.is_trusted_db_writer()`. No data
 is changed by either script.
+
+## 20261011150000_business_ids_on_profiles.sql
+
+Adds `cin`, `company_pan` and business-ID check columns to `profiles`, syncs them from signup metadata in `handle_new_user`, and stops browser clients from setting `verified` or `not_found` (only service_role can, once a licensed registry API is connected). Depends on `public.is_trusted_db_writer()` from `20261011120000_protect_privileged_columns.sql`, so apply that one first. Roll back with `rollback/20261011150000_business_ids_on_profiles.rollback.sql`.
