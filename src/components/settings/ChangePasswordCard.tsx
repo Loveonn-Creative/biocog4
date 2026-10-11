@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import type { AuthError, User } from '@supabase/supabase-js';
 import { toast } from 'sonner';
 import { Loader2, Shield, KeyRound } from 'lucide-react';
@@ -64,6 +63,7 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
   const [awaitingNonce, setAwaitingNonce] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [linkSent, setLinkSent] = useState(false);
 
   const reset = () => {
     setCurrentPassword('');
@@ -77,6 +77,30 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
   if (!user) return null;
 
   const passwordless = !hasPasswordIdentity(user);
+
+  // OAuth-only accounts set a first password through the same recovery email
+  // the sign-in page's "Forgot password" uses. Sending it from here keeps the
+  // user on this page: /auth redirects signed-in users to their dashboard.
+  const sendSetPasswordLink = async () => {
+    if (!user.email) return;
+    setIsSaving(true);
+    setErrorMessage(null);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(user.email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (error) {
+        setErrorMessage(describeUpdateError(error));
+        return;
+      }
+      setLinkSent(true);
+      toast.success(`We emailed a link to ${user.email} to set your password.`);
+    } catch {
+      setErrorMessage('Could not send the email. Please try again.');
+    } finally {
+      setIsSaving(false);
+    }
+  };
 
   const applyUpdate = async (withNonce?: string): Promise<boolean> => {
     const { error } = await supabase.auth.updateUser(
@@ -182,15 +206,22 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
       </CardHeader>
       <CardContent>
         {passwordless ? (
-          <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 text-sm">
-            <KeyRound className="w-4 h-4 mt-0.5 text-muted-foreground shrink-0" />
-            <p className="text-muted-foreground">
-              You sign in with {oauthProviderLabel(user)}. Use Forgot password on the{' '}
-              <Link to="/auth?mode=forgot" className="underline underline-offset-2">
-                sign-in page
-              </Link>{' '}
-              to set one.
-            </p>
+          <div className="flex flex-col gap-3 p-4 rounded-lg bg-muted/50 text-sm">
+            <div className="flex items-start gap-3">
+              <KeyRound className="w-4 h-4 mt-0.5 text-muted-foreground shrink-0" />
+              <p className="text-muted-foreground">
+                {linkSent
+                  ? `Check ${user.email} for a link to set your password.`
+                  : `You sign in with ${oauthProviderLabel(user)}. To also sign in with a password, we will email you a link to set one.`}
+              </p>
+            </div>
+            {errorMessage && <p className="text-sm text-destructive" role="alert">{errorMessage}</p>}
+            {!linkSent && user.email && (
+              <Button type="button" variant="outline" className="w-fit" onClick={sendSetPasswordLink} disabled={isSaving}>
+                {isSaving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+                Email me a link to set a password
+              </Button>
+            )}
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
