@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { User, Session } from '@supabase/supabase-js';
+import { loadSupabase } from '@/integrations/supabase/lazyClient';
+import type { User, Session } from '@supabase/supabase-js';
 
 const SESSION_STORAGE_KEY = 'senseible_session_id';
 
@@ -29,6 +29,7 @@ export function useSession() {
   // Initialize or get existing anonymous session using secure RPC functions
   const initializeSession = useCallback(async () => {
     try {
+      const supabase = await loadSupabase();
       // Check for authenticated user first
       const { data: { session: authSession } } = await supabase.auth.getSession();
       
@@ -101,33 +102,43 @@ export function useSession() {
 
   // Listen for auth changes
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (session?.user) {
-        setState({
-          sessionId: null,
-          user: session.user,
-          authSession: session,
-          isLoading: false,
-          isAuthenticated: true
-        });
+    let cancelled = false;
+    let unsubscribe: (() => void) | null = null;
+    void loadSupabase().then(supabase => {
+      if (cancelled) return;
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+        if (session?.user) {
+          setState({
+            sessionId: null,
+            user: session.user,
+            authSession: session,
+            isLoading: false,
+            isAuthenticated: true
+          });
 
-        // Merge anonymous session data on login
-        if (event === 'SIGNED_IN') {
-          const anonSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
-          if (anonSessionId) {
-            setTimeout(() => {
-              mergeAnonymousSession(anonSessionId, session.user.id);
-            }, 0);
+          // Merge anonymous session data on login
+          if (event === 'SIGNED_IN') {
+            const anonSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
+            if (anonSessionId) {
+              setTimeout(() => {
+                mergeAnonymousSession(anonSessionId, session.user.id);
+              }, 0);
+            }
           }
+        } else {
+          initializeSession();
         }
-      } else {
-        initializeSession();
-      }
+      });
+
+      unsubscribe = () => subscription.unsubscribe();
     });
 
     initializeSession();
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      unsubscribe?.();
+    };
   }, [initializeSession]);
 
   // Securely merge anonymous session data to user account via edge function
@@ -137,6 +148,7 @@ export function useSession() {
       const deviceFingerprint = getDeviceFingerprint();
       
       // Call secure server-side merge function
+      const supabase = await loadSupabase();
       const { data, error } = await supabase.functions.invoke('merge-session', {
         body: {
           sessionId,
@@ -163,6 +175,7 @@ export function useSession() {
   };
 
   const signOut = async () => {
+    const supabase = await loadSupabase();
     await supabase.auth.signOut();
     localStorage.removeItem(SESSION_STORAGE_KEY);
     initializeSession();

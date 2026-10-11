@@ -129,7 +129,7 @@ const CBAMCalculator = () => {
       return;
     }
     // CSV export
-    const rows = [['Year', 'Phase-in %', 'Total Emissions (tCO2)', 'Free Allowances', 'Net Liable', 'Gross Cost (€)', 'Credit (€)', 'Net CBAM Cost (€)', 'Cost/Tonne (€)']];
+    const rows = [['Year', 'Free allocation removed %', 'Total Emissions (tCO2)', 'Free Allowances', 'Net Liable', 'Gross Cost (€)', 'Credit (€)', 'Net CBAM Cost (€)', 'Cost/Tonne (€)']];
     scenarios.forEach(s => {
       if (!s.result) return;
       rows.push([`--- ${s.label}: ${s.result.sectorName} (${s.result.routeName}) ---`]);
@@ -392,7 +392,7 @@ const CBAMCalculator = () => {
                       <thead>
                         <tr className="border-b border-border text-left">
                           <th className="pb-2 font-medium text-muted-foreground">Year</th>
-                          <th className="pb-2 font-medium text-muted-foreground">Phase-in</th>
+                          <th className="pb-2 font-medium text-muted-foreground">Free alloc. removed</th>
                           <th className="pb-2 font-medium text-muted-foreground text-right">Emissions</th>
                           <th className="pb-2 font-medium text-muted-foreground text-right">Free Allow.</th>
                           <th className="pb-2 font-medium text-muted-foreground text-right">Net Liable</th>
@@ -424,7 +424,7 @@ const CBAMCalculator = () => {
                   <div className="flex gap-2">
                     <Info className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
                     <div className="text-xs text-muted-foreground space-y-1">
-                      <p><strong>Methodology:</strong> Calculations based on EU CBAM Regulation (EU) 2023/956 and Implementing Regulation (EU) 2023/1773. Phase-in follows the legislated schedule from transitional period through full implementation.</p>
+                      <p><strong>Methodology:</strong> Estimate based on Regulation (EU) 2023/956 as amended by Regulation (EU) 2025/2083. Certificates are owed on embedded emissions minus the free-allocation adjustment (EU benchmark × share of free allocation still granted that year). Default intensities include the mark-ups in Implementing Regulation (EU) 2025/2621. EU benchmarks shown are indicative; this is not a CBAM declaration.</p>
                       <p><strong>Disclaimer:</strong> This is an estimate for planning purposes. Actual CBAM costs depend on EU ETS certificate prices at the time of purchase, verified emissions data, and applicable carbon price deductions. Consult qualified advisors for compliance decisions.</p>
                     </div>
                   </div>
@@ -440,8 +440,8 @@ const CBAMCalculator = () => {
               <div className="space-y-6">
                 {[
                   { q: 'What is CBAM?', a: 'The Carbon Border Adjustment Mechanism (CBAM) is the EU\'s carbon tariff on imports of carbon-intensive goods: steel, aluminium, cement, fertilizers, electricity, and hydrogen. It ensures imported goods face the same carbon price as EU-produced goods.' },
-                  { q: 'When does CBAM start?', a: 'The CBAM transitional period began in October 2023 with reporting-only requirements. Financial obligations start in 2026 at 2.5% and scale to 100% by 2034 as free EU ETS allowances phase out.' },
-                  { q: 'How is CBAM cost calculated?', a: 'CBAM cost = (Actual embedded emissions − Free allowances) × EU ETS price × Phase-in percentage − Carbon price credit for any carbon tax paid in the country of origin.' },
+                  { q: 'When does CBAM start?', a: 'Reporting-only CBAM ran from October 2023 to December 2025. The definitive period began on 1 January 2026: authorised declarants owe certificates for 2026 imports, buy them from 1 February 2027 and file the first annual declaration by 30 September 2027. The free-allocation adjustment shrinks from 97.5% of the EU benchmark in 2026 to zero in 2034.' },
+                  { q: 'How is CBAM cost calculated?', a: 'CBAM cost = (embedded emissions − EU benchmark × share of free allocation still granted) × CBAM certificate price − any carbon price effectively paid abroad. Default values carry a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 (1% for fertilisers).' },
                   { q: 'Does India have a carbon price?', a: 'India does not yet have an explicit carbon price. The Indian Carbon Market (ICM) is under development. Currently, Indian exporters cannot claim carbon price deductions under CBAM.' },
                 ].map((faq, i) => (
                   <div key={i}>

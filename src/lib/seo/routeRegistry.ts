@@ -265,13 +265,14 @@ function articleRoutes(): SeoRoute[] {
 
 // Only link to pages that exist, so prerendered pages never point at a 404.
 const articleBySlug = new Map(cmsArticles.map(a => [a.slug, a.title]));
-const solutionBySlug = new Map(solutionPages.map(s => [s.slug, s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '')]));
+const solutionBySlug = new Map(solutionPages.filter(s => s.indexed).map(s => [s.slug, s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '')]));
 const PUBLIC_TOOL_PATHS = new Set(['/cbam-calculator', '/net-zero', '/calculators', ...Object.keys(STATIC_PAGE_META).filter(p => p.startsWith('/calculators/'))]);
 
 function solutionRoutes(): SeoRoute[] {
-  return solutionPages.map(s => {
+  // Only reviewed, data-backed solution pages are indexed and prerendered.
+  return solutionPages.filter(s => s.indexed).map(s => {
     const path = `/solutions/${s.slug}`;
-    const h1 = s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '');
+    const h1 = s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '');
     const crumbs = [{ name: 'Home', path: '/' }, { name: h1, path }];
     return {
       path,
@@ -333,7 +334,7 @@ function industryRoutes(): SeoRoute[] {
       path,
       section: 'industry' as const,
       ...industryMeta(i),
-      h1: `${i.name}: carbon accounting`,
+      h1: `${i.name}: Carbon Accounting Guide`,
       blocks: [
         { p: i.description },
         { h2: 'Scope 1 sources' }, { ul: i.scope1Sources },
@@ -391,4 +392,9 @@ export interface SeoRedirect {
 /** Retired URLs. Rendered as redirect pages, never listed in the sitemap. */
 export function getRedirects(): SeoRedirect[] {
   return Object.entries(articleRedirects).map(([slug, to]) => ({ from: `/climate-intelligence/${slug}`, to }));
+}
+
+/** Live pages that render with noindex (reachable, linkable, not in the sitemap). */
+export function getNoIndexPaths(): string[] {
+  return solutionPages.filter(s => !s.indexed).map(s => `/solutions/${s.slug}`);
 }

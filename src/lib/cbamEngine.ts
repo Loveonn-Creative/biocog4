@@ -1,10 +1,18 @@
 /**
  * CBAM Cost Estimator Engine
- * Deterministic calculations based on EU CBAM Regulation (EU) 2023/956
- * Phase-in: 2026–2034, full financial obligation from 2026
+ * Deterministic estimate based on Regulation (EU) 2023/956 as amended by
+ * Regulation (EU) 2025/2083, and default values per Implementing Regulation
+ * (EU) 2025/2621 (mark-ups as corrected by 2026/1740).
+ *
+ * Certificates owed for a year = embedded emissions minus the free-allocation
+ * adjustment (EU benchmark × share of free allocation still granted, CBAM
+ * Art. 31 / ETS Directive Art. 10a(1a)). The phase-out is already inside that
+ * adjustment, so it must not be applied a second time to the cost.
+ * Benchmarks below are indicative; results are estimates, not a declaration.
  */
 
-// CBAM Phase-in schedule: % of CBAM certificates required
+// Share of EU free allocation removed each year (display only: it is the
+// complement of FREE_ALLOCATION_PCT and is NOT a multiplier on cost).
 export const PHASE_IN_SCHEDULE: Record<number, number> = {
   2026: 0.025,
   2027: 0.05,
@@ -30,8 +38,22 @@ export const FREE_ALLOCATION_PCT: Record<number, number> = {
   2034: 0.0,
 };
 
-// EU ETS price assumption (€/tCO2) — conservative estimate
-export const DEFAULT_EU_ETS_PRICE = 75;
+// Default price: the official Q3 2026 CBAM certificate price (€82.32,
+// published 5 Oct 2026, taxation-customs.ec.europa.eu "Price of CBAM
+// certificates"). Users can change it in the calculator.
+export const DEFAULT_EU_ETS_PRICE = 82.32;
+
+// Mark-up applied to default values when actual verified data is not used
+// (Implementing Regulation (EU) 2025/2621 as corrected by 2026/1740):
+// 10% in 2026, 20% in 2027, 30% from 2028 for cement, iron and steel,
+// aluminium and hydrogen; 1% for fertilisers.
+export function defaultValueMarkup(sectorId: string, year: number): number {
+  if (sectorId === 'fertilizers') return 0.01;
+  if (['steel', 'aluminium', 'cement', 'hydrogen'].includes(sectorId)) {
+    return year <= 2026 ? 0.10 : year === 2027 ? 0.20 : 0.30;
+  }
+  return 0;
+}
 
 // CBAM-covered sectors with CN codes, benchmarks, and production routes
 export interface CBAMSector {
@@ -232,12 +254,19 @@ export function calculateCBAM(input: CBAMInput): CBAMResult {
     const phaseInPct = PHASE_IN_SCHEDULE[year];
     const freeAllocationPct = FREE_ALLOCATION_PCT[year];
 
-    const totalEmissions = input.tonnage * emissionsIntensity;
+    const intensityThisYear = isUsingDefault
+      ? emissionsIntensity * (1 + defaultValueMarkup(sector.id, year))
+      : emissionsIntensity;
+    const totalEmissions = input.tonnage * intensityThisYear;
     const freeAllowances = sector.euBenchmark * input.tonnage * freeAllocationPct;
     const netLiableEmissions = Math.max(0, totalEmissions - freeAllowances);
 
-    const grossCbamCost = netLiableEmissions * input.euEtsPrice * phaseInPct;
-    const carbonPriceCredit = carbonPrice * totalEmissions * phaseInPct;
+    // Certificates are owed on every net liable tonne; the phase-out is
+    // already reflected in freeAllowances.
+    const grossCbamCost = netLiableEmissions * input.euEtsPrice;
+    // Art. 9: carbon price effectively paid abroad reduces the certificates
+    // due, applied here to the liable tonnes only.
+    const carbonPriceCredit = Math.min(grossCbamCost, carbonPrice * netLiableEmissions);
     const netCbamCost = Math.max(0, grossCbamCost - carbonPriceCredit);
     const costPerTonne = input.tonnage > 0 ? netCbamCost / input.tonnage : 0;
 

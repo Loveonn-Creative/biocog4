@@ -6,7 +6,7 @@
 // Callers use useT() (see useT.ts). This module is a plain singleton with no
 // React concerns so it can be shared by toast helpers, form validators, etc.
 
-import { supabase } from "@/integrations/supabase/client";
+import { loadSupabase } from "@/integrations/supabase/lazyClient";
 
 type Locale = string;
 
@@ -88,7 +88,7 @@ async function flushAll() {
 
 async function translateBatch(locale: Locale, strings: string[]) {
   try {
-    const { data, error } = await supabase.functions.invoke("translate-batch", {
+    const { data, error } = await (await loadSupabase()).functions.invoke("translate-batch", {
       body: { locale, strings },
     });
     const map: Record<string, string> =
@@ -135,9 +135,25 @@ export function subscribe(listener: () => void): () => void {
  * - Otherwise queues a batch translation and returns the source; components
  *   subscribed via useT() will re-render when the translation arrives.
  */
+// Runtime machine translation is switched off on sensitive product pages
+// (see sensitiveRoutes.ts): they show reviewed static bundles or English,
+// never generated text that could restate a regulatory or verified claim.
+let runtimeAllowed = true;
+
+export function setRuntimeTranslationAllowed(allowed: boolean) {
+  if (runtimeAllowed === allowed) return;
+  runtimeAllowed = allowed;
+  listeners.forEach(l => l());
+}
+
+export function isRuntimeTranslationAllowed() {
+  return runtimeAllowed;
+}
+
 export function translateSync(locale: Locale, text: string): string {
   if (!text || typeof text !== "string") return text;
   if (locale === "en" || !SUPPORTED_LOCALES.has(locale)) return text;
+  if (!runtimeAllowed) return text;
   const trimmed = text.trim();
   if (trimmed.length === 0) return text;
   // Skip pure numeric/symbolic tokens

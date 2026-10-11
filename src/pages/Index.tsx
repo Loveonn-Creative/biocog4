@@ -1,21 +1,34 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { CarbonParticles } from "@/components/CarbonParticles";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
 import { ProcessingState } from "@/components/ProcessingState";
-import { ResultState } from "@/components/ResultState";
-import { OnboardingTour } from "@/components/OnboardingTour";
 import { HomeNavIcons } from "@/components/HomeNavIcons";
 import { UseCaseTyper } from "@/components/UseCaseTyper";
-import { BulkUpload } from "@/components/BulkUpload";
 import { Link, useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { getLocaleMeta } from "@/lib/i18n/locales";
 import { toast } from "sonner";
 import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
+
+// Perf: components not needed for first paint are code-split out of the
+// homepage's initial bundle. Each is rendered inside its own
+// <Suspense fallback={null}> so the route-level PageLoader never flashes.
+// - OnboardingTour renders nothing until a 5s timer fires.
+// - BulkUpload only appears for signed-in users after a click.
+// - ResultState (and its trust widgets) only appears after processing.
+const OnboardingTour = lazy(() =>
+  import("@/components/OnboardingTour").then((m) => ({ default: m.OnboardingTour }))
+);
+const BulkUpload = lazy(() =>
+  import("@/components/BulkUpload").then((m) => ({ default: m.BulkUpload }))
+);
+const ResultState = lazy(() =>
+  import("@/components/ResultState").then((m) => ({ default: m.ResultState }))
+);
 
 
 type State = "idle" | "processing" | "result";
@@ -206,7 +219,7 @@ const Index = () => {
       let documentId: string | null = null;
       
       if (documentHash) {
-        const { data: existingDoc } = await supabase
+        const { data: existingDoc } = await (await loadSupabase())
           .from('documents')
           .select('id')
           .eq('document_hash', documentHash)
@@ -218,7 +231,7 @@ const Index = () => {
           documentId = existingDoc.id;
           
           // Update with session/user info if not set
-          const { error: updateError } = await supabase
+          const { error: updateError } = await (await loadSupabase())
             .from('documents')
             .update({
               session_id: user ? null : sessionId,
@@ -235,7 +248,7 @@ const Index = () => {
       // If no document found (shouldn't happen), create one
       if (!documentId) {
         console.warn('[MRV] No cached document found, creating new one');
-        const { data: docData, error: docError } = await supabase
+        const { data: docData, error: docError } = await (await loadSupabase())
           .from('documents')
           .insert({
             session_id: user ? null : sessionId,
@@ -263,7 +276,7 @@ const Index = () => {
 
       // ============= GAP 2 FIX: GUEST DEDUP CHECK =============
       // Before inserting a new emission, check if one already exists for this document
-      const { data: existingEmissions } = await supabase
+      const { data: existingEmissions } = await (await loadSupabase())
         .from('emissions')
         .select('id')
         .eq('document_id', documentId)
@@ -290,7 +303,7 @@ const Index = () => {
         return { documentId, emissionIds: [] };
       }
 
-      const { data: emissionData, error: emissionError } = await supabase
+      const { data: emissionData, error: emissionError } = await (await loadSupabase())
         .from('emissions')
         .insert(emissionRows)
         .select('id');
@@ -324,7 +337,7 @@ const Index = () => {
       console.log("Sending document for OCR processing...");
       
       // Pass sessionId to edge function for guest user data linking
-      const { data, error } = await supabase.functions.invoke('extract-document', {
+      const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
         body: { imageBase64, mimeType, sessionId }
       });
 
@@ -516,7 +529,7 @@ const Index = () => {
       // Send to intelligence-chat with stream: false for voice queries.
       // invoke() forwards the signed-in user's JWT, so the assistant can
       // ground its answer in that user's own records.
-      const response = await supabase.functions.invoke('intelligence-chat', {
+      const response = await (await loadSupabase()).functions.invoke('intelligence-chat', {
         body: { 
           messages: [{ role: 'user', content: transcript }],
           context: { isHomepage: true, type: 'voice_query' },
@@ -605,7 +618,9 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background overflow-hidden">
-      <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
+      <Suspense fallback={null}>
+        <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
+      </Suspense>
       
       <CarbonParticles />
       
@@ -709,13 +724,15 @@ const Index = () => {
                 
                 {showBulkUpload && (
                   <div className="mt-4">
-                    <BulkUpload 
-                      onComplete={(results) => {
-                        toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
-                        navigate('/history');
-                      }}
-                      maxFiles={10}
-                    />
+                    <Suspense fallback={null}>
+                      <BulkUpload 
+                        onComplete={(results) => {
+                          toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
+                          navigate('/history');
+                        }}
+                        maxFiles={10}
+                      />
+                    </Suspense>
                   </div>
                 )}
               </div>
@@ -728,13 +745,15 @@ const Index = () => {
         )}
 
         {state === "result" && result && (
-          <ResultState 
-            type={result.type}
-            amount={result.amount}
-            extractedData={result.extractedData}
-            onConfirm={handleConfirm}
-            onReset={handleReset}
-          />
+          <Suspense fallback={null}>
+            <ResultState 
+              type={result.type}
+              amount={result.amount}
+              extractedData={result.extractedData}
+              onConfirm={handleConfirm}
+              onReset={handleReset}
+            />
+          </Suspense>
         )}
       </main>
       

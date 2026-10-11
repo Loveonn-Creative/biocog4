@@ -11,7 +11,7 @@ export const EUR_LEX_CBAM_OMNIBUS = 'https://eur-lex.europa.eu/eli/reg/2025/2083
 export const CBAM_SUMMARY_BLOCKS: Block[] = [
   { p: `The EU Carbon Border Adjustment Mechanism (CBAM) moved from its transitional reporting phase to its definitive period on 1 January 2026. Under the definitive regime, EU importers, acting as authorised CBAM declarants, declare the embedded emissions of covered goods (iron and steel, aluminium, cement, fertilisers, hydrogen and electricity) and surrender CBAM certificates for them. Non-EU producers do not pay CBAM directly, but their EU buyers need their emissions data.` },
   { p: `Regulation (EU) 2025/2083 added a single mass-based threshold: an importer bringing in 50 tonnes or less of covered goods in a calendar year is exempt. The threshold does not apply to electricity or hydrogen. Where actual emissions data from the producer is not available, default values are used instead, which can raise the cost for the importer.` },
-  { p: `The share of embedded emissions that carries a certificate cost rises as EU free allocation is phased out: 2.5% in 2026, 5% in 2027, 10% in 2028, 22.5% in 2029, 48.5% in 2030, 61% in 2031, 73.5% in 2032, 86% in 2033 and 100% from 2034.` },
+  { p: `Certificates are owed on embedded emissions minus a free-allocation adjustment equal to the EU benchmark for the product multiplied by the share of free allocation EU producers still receive: 97.5% in 2026, 95% in 2027, 90% in 2028, 77.5% in 2029, 51.5% in 2030, 39% in 2031, 26.5% in 2032, 14% in 2033 and 0% from 2034. Emissions above the benchmark are charged in full from 2026. Certificates for 2026 imports go on sale on 1 February 2027, and the first annual declaration is due by 30 September 2027. Default values carry a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028 for steel, aluminium, cement and hydrogen, and 1% for fertilisers (Implementing Regulation (EU) 2025/2621).` },
   { p: `Sources: [Regulation (EU) 2023/956](${EUR_LEX_CBAM}) and [Regulation (EU) 2025/2083](${EUR_LEX_CBAM_OMNIBUS}) on EUR-Lex.` },
 ];
 
@@ -84,8 +84,8 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Estimate the CBAM certificate cost attached to steel, aluminium, cement, fertiliser and hydrogen imports into the EU, year by year from 2026 to 2034. Pick a sector and production route, enter annual tonnage and the country of production, and set an EU ETS price assumption.' },
       { h2: 'How the estimate works' },
       { ol: [
-        'Embedded emissions = tonnage × emission intensity for the sector and route (actual data where you have it, otherwise a default intensity).',
-        'Certificate cost = embedded emissions × EU ETS price × the CBAM share for that year.',
+        'Embedded emissions = tonnage × emission intensity for the sector and route (verified actual data where you have it, otherwise a default intensity with its mark-up).',
+        'Certificates owed = embedded emissions minus the EU benchmark × the share of free allocation still granted that year; cost = certificates × certificate price.',
         'A carbon price already paid in the country of production is deducted where applicable.',
       ] },
       { h2: 'CBAM rules this calculator follows' },
@@ -134,7 +134,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
     h1: 'Carbon pricing impact calculator: EU ETS and CBAM',
     blocks: [
       { p: 'Estimate carbon cost exposure under the EU ETS and CBAM from 2026 to 2034, including the CBAM phase-in, free allocation phase-out and best and worst case carbon price scenarios.' },
-      { p: 'CBAM share of embedded emissions by year: 2.5% in 2026, 5% in 2027, 10% in 2028, 22.5% in 2029, 48.5% in 2030, 61% in 2031, 73.5% in 2032, 86% in 2033 and 100% from 2034.' },
+      { p: 'Free allocation still granted to EU producers, which sets the CBAM adjustment: 97.5% of the benchmark in 2026, falling to 51.5% in 2030 and 0% from 2034.' },
       { p: '[All calculators](/calculators) · [CBAM cost calculator](/cbam-calculator)' },
     ],
   },

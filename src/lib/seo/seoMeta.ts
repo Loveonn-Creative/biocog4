@@ -208,7 +208,7 @@ export function pageMeta(path: string): PageMeta | undefined {
 // --- Dynamic route families. Each takes the record from its data file. ---
 
 export function solutionMeta(s: { title: string; regulationLabel: string; sectorLabel: string; countryName: string; painStatement: string }): PageMeta {
-  const base = s.title.replace(/\s*[—-]\s*Senseible\s*$/i, '');
+  const base = s.title.replace(/\s*[—|-]\s*Senseible\s*$/i, '');
   const short = `${s.regulationLabel}: ${s.sectorLabel}, ${s.countryName}`;
   return {
     title: fitTitle(base.length <= TITLE_MAX ? base : short),

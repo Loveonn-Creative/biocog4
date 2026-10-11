@@ -75,8 +75,8 @@ const CarbonCredits = () => {
             </div>
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <TrendingUp className="w-6 h-6 text-success mb-4" />
-              <p className="text-3xl font-semibold text-foreground mb-2">$150+</p>
-              <p className="text-sm text-muted-foreground">Indicative annual carbon credit value for a typical MSME (varies by sector and region)</p>
+              <p className="text-3xl font-semibold text-foreground mb-2">t × price</p>
+              <p className="text-sm text-muted-foreground">Indicative value is verified tonnes times a stated market price, shown with its assumptions, never a promise</p>
             </div>
             <div className="p-6 rounded-2xl bg-secondary/50 border border-border">
               <Globe className="w-6 h-6 text-accent mb-4" />

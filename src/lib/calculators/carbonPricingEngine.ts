@@ -111,8 +111,10 @@ function applyScenario(input: CarbonPricingInput, scenario: PriceScenario): { ye
     const cbamPhase = (sector.cbamCovered && input.exportsToEU) ? (PHASE_IN_SCHEDULE[year] ?? 1) : 1;
     const price = priceFor(year, scenario);
 
-    const gross = liable * price * cbamPhase;
-    const credit = totalT * input.countryCarbonPrice * cbamPhase;
+    // The free-allocation phase-out is already in freeAllowance; applying
+    // cbamPhase to the cost as well would count it twice (CBAM Art. 31).
+    const gross = liable * price;
+    const credit = Math.min(gross, liable * input.countryCarbonPrice);
     const net = Math.max(0, gross - credit);
     total += net;
 

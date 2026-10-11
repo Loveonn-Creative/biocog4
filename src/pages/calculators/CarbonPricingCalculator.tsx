@@ -87,7 +87,7 @@ const CarbonPricingCalculator = () => {
       ]}
       faqs={[
         { q: 'What carbon prices does this calculator assume?', a: 'EU ETS forward curve from €80/tCO₂ in 2026 rising to €135 by 2034 (base scenario). Best case applies −20%, worst case +30%.' },
-        { q: 'How does CBAM phase-in work?', a: 'CBAM certificates phase in from 2.5% in 2026 to 100% by 2034, while free allowances decline from 97.5% to 0% over the same period; both schedules are from EU Regulation 2023/956.' },
+        { q: 'How does CBAM phase-in work?', a: 'EU free allocation falls from 97.5% of the product benchmark in 2026 to 0% in 2034 (ETS Directive Art. 10a(1a)). CBAM deducts the same free allocation from embedded emissions (CBAM Art. 31), so certificates are owed on every tonne above that adjustment from 2026.' },
         { q: 'What if my sector is not CBAM-covered?', a: 'Non-CBAM sectors get no free allowance and no phase-in; they pay the full ETS-equivalent price on liable emissions if a domestic carbon market applies.' },
         { q: 'How is the regulated vs non-regulated split calculated?', a: 'For CBAM-covered sectors, Scope 1 + Scope 2 are treated as regulated; Scope 3 is non-regulated unless your downstream falls under separate regulation.' },
       ]}

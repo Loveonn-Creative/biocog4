@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SEOHead } from '@/components/SEOHead';
 import industriesOg from '@/assets/og/industries.jpg';
@@ -205,7 +205,10 @@ const getSolutionLinksForIndustry = (industryId: string): { slug: string; label:
 
 const Industries = () => {
   const { industry: industrySlug } = useParams();
-  const [activeTab, setActiveTab] = useState(industrySlug || 'textile');
+  const navigate = useNavigate();
+  // The URL is the source of truth, so the tab, H1 and canonical always agree.
+  const activeTab = industrySlug || 'textile';
+  const setActiveTab = (id: string) => navigate(`/industries/${id}`, { replace: true, preventScrollReset: true });
   
   const activeIndustry = industries.find(i => i.id === activeTab) || industries[0];
 
@@ -257,10 +260,21 @@ const Industries = () => {
             <Leaf className="h-3 w-3 mr-1" />
             Industry Solutions
           </Badge>
+          {/* Each industry URL gets its own H1; the hub keeps the overview headline. */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Carbon Accounting for
-            <br />
-            <span className="text-gradient-success">Every MSME Industry</span>
+            {industrySlug && industries.some(i => i.id === industrySlug) ? (
+              <>
+                {activeIndustry.name}:
+                <br />
+                <span className="text-gradient-success">Carbon Accounting Guide</span>
+              </>
+            ) : (
+              <>
+                Carbon Accounting for
+                <br />
+                <span className="text-gradient-success">Every MSME Industry</span>
+              </>
+            )}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Tailored emission tracking, reporting, and monetization pathways for your sector.

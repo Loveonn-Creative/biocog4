@@ -9,7 +9,8 @@ import { Badge } from '@/components/ui/badge';
 import { UserMenu } from '@/components/UserMenu';
 import { ContextSwitcher } from '@/components/ContextSwitcher';
 import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock, Building2, Handshake } from 'lucide-react';
-import senseibleLogo from '@/assets/senseible-logo.png';
+// Perf: 384x153 downscale of senseible-logo.png (same aspect ratio, rendered at 28px tall); 6.5 KB vs 212 KB.
+import senseibleLogo from '@/assets/senseible-logo-384.png';
 
 interface NavigationProps {
   onSignOut?: () => void;
@@ -77,7 +78,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-3">
-              <img src={senseibleLogo} alt="Senseible" className="h-7 w-auto dark:invert" />
+              <img src={senseibleLogo} alt="Senseible" width={70} height={28} className="h-7 w-auto dark:invert" />
             </Link>
             
             {/* Role Context Badge - Shows MSME or Partner */}

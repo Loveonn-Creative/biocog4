@@ -1,3 +1,5 @@
+import { INDEXED_SOLUTION_SLUGS, solutionOverrides } from './solutionOverrides';
+
 // Programmatic SEO Engine — 75 country×sector×regulation solution pages
 // Each entry renders a unique landing page at /solutions/:slug
 
@@ -31,6 +33,8 @@ export interface SolutionPage {
   relatedIndustry: string;
   relatedSolutions: string[];
   relatedArticle: string;
+  /** Indexed by search engines; false pages render with noindex until upgraded. */
+  indexed?: boolean;
 }
 
 // Helper to generate solution pages
@@ -94,12 +98,12 @@ const financeSteps = (country: string, sector: string): SolutionStep[] => [
   { title: 'Apply with Data', description: 'Submit green loan applications with verified carbon data attached, no manual reporting needed.' },
 ];
 
-export const solutionPages: SolutionPage[] = [
+const rawSolutionPages: SolutionPage[] = [
   // === INDIA (IN) — 8 pages ===
   sol('IN', 'India', 'steel', 'Steel Manufacturing', 'cbam', 'CBAM Compliance Cost', 'Indian steel exporters face up to 26% cost increase under EU CBAM by 2034. Most MSMEs lack emission intensity data required for quarterly CBAM declarations.', 'cbam-estimator',
     cbamSteps('India', 'steel'),
-    [{ item: 'CBAM certificate cost (2026)', value: '€2-5/tonne' }, { item: 'Full liability (2034)', value: '€40-120/tonne' }, { item: 'Compliance setup time', value: '2-4 weeks' }, { item: 'Annual reporting cost (manual)', value: '₹5-15 lakh' }],
-    [{ question: 'What is the CBAM cost for steel exports from India in 2026?', answer: 'In 2026, CBAM covers only 2.5% of emissions with 97.5% free allocation. For a typical Indian steel MSME exporting 1000 tonnes via BF-BOF route, the net CBAM cost is approximately €1,200-3,500 in the first year.' },
+    [{ item: 'Estimated CBAM cost, 2026 (BF-BOF, 2.1 tCO2/t, actual data)', value: '≈ €51 per tonne' }, { item: 'Same, using default value (+10% mark-up)', value: '≈ €68 per tonne' }, { item: 'Estimated cost, 2034 (no free allocation)', value: '≈ €173 per tonne' }, { item: 'Certificate price used', value: '€82.32 (Q3 2026, European Commission)' }],
+    [{ question: 'What is the CBAM cost for steel exports from India in 2026?', answer: 'Certificates are owed on embedded emissions above the free-allocation adjustment (the EU benchmark × 97.5% in 2026). In our estimate, 1,000 tonnes of BF-BOF steel at 2.1 tCO2 per tonne and the Q3 2026 certificate price of €82.32 comes to about €51,000 for 2026 with verified actual data, or about €68,000 using a default value with its 10% mark-up. The EU importer pays; benchmarks used are indicative, so run the calculator with your own figures.' },
      { question: 'Do Indian steel MSMEs need to file CBAM reports?', answer: 'Yes. From 2026, EU importers must declare embedded emissions for all CBAM-covered steel products. Indian exporters need to provide verified emission intensity data per tonne of product.' },
      { question: 'How can Senseible help with CBAM compliance for steel?', answer: 'Senseible calculates emission intensity from your invoices using India-specific grid factors (0.708 kgCO₂/kWh), generates CBAM-ready reports, and projects costs through 2034.' }],
     '/cbam-calculator', 'steel', ['cbam-steel-bangladesh', 'scope3-steel-india', 'cbam-chemicals-india'], 'cbam-compliance-indian-exporters'),
@@ -460,6 +464,13 @@ export const solutionPages: SolutionPage[] = [
 ];
 
 // Get solution by slug
+// Reviewed overrides for indexed pages (computed CBAM figures, sourced facts).
+export const solutionPages: SolutionPage[] = rawSolutionPages.map(page => ({
+  ...page,
+  ...solutionOverrides[page.slug],
+  indexed: INDEXED_SOLUTION_SLUGS.has(page.slug),
+}));
+
 export const getSolutionBySlug = (slug: string): SolutionPage | undefined => {
   return solutionPages.find(s => s.slug === slug);
 };

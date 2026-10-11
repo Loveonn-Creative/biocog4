@@ -22,7 +22,7 @@ export const industries: IndustryData[] = [
     name: 'Textile Manufacturing',
     icon: Shirt,
     tagline: 'Sustainable Fashion Starts with Data',
-    description: 'India\'s textile sector accounts for 12% of export earnings. With EU CBAM on the horizon, carbon transparency is becoming essential for international competitiveness.',
+    description: 'Textiles are not covered by EU CBAM, but EU brands reporting under CSRD now ask suppliers for facility emissions. Fuel and electricity bills are enough to answer most requests.',
     scope1Sources: [
       'Diesel generators and boilers',
       'On-site fuel combustion for dyeing',

@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { toast } from "@/lib/i18n/toast";
-import senseibleLogo from "@/assets/senseible-logo.png";
+// Perf: 384x153 downscale of senseible-logo.png (same aspect ratio, rendered at 28px tall); 6.5 KB vs 212 KB.
+import senseibleLogo from "@/assets/senseible-logo-384.png";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 const LOCALE_LABELS: Record<string, string> = {
@@ -74,6 +75,8 @@ export const MinimalNav = () => {
           <img 
             src={senseibleLogo} 
             alt="Senseible" 
+            width={70}
+            height={28}
             className="h-7 w-auto invert transition-transform duration-300 group-hover:scale-105"
           />
         </Link>

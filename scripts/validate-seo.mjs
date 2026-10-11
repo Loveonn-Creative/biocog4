@@ -47,7 +47,8 @@ async function main() {
   }
   const R = await loadRegistry();
   const routes = R.getSeoRoutes();
-  const known = new Set([...routes.map(r => r.path), ...appRoutes]);
+  const noIndexPaths = R.getNoIndexPaths();
+  const known = new Set([...routes.map(r => r.path), ...appRoutes, ...noIndexPaths]);
   const titles = new Map();
   const descriptions = new Map();
 
@@ -115,6 +116,7 @@ async function main() {
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
   const expected = new Set(routes.map(r => R.canonicalUrl(r.path)));
   for (const loc of locs) if (!expected.has(loc)) fail('sitemap.xml', `lists unknown URL ${loc}`);
+  for (const p of noIndexPaths) if (locs.includes(R.canonicalUrl(p))) fail('sitemap.xml', `lists noindexed page ${p}`);
   for (const url of expected) if (!locs.includes(url)) fail('sitemap.xml', `missing ${url}`);
   if (new Set(locs).size !== locs.length) fail('sitemap.xml', 'contains duplicate URLs');
 
