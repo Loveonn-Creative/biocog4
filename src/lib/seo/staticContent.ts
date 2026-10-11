@@ -23,7 +23,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/': {
     h1: 'Senseible: from your bills to climate finance',
     blocks: [
-      { p: 'Upload a bill or invoice for an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
+      { p: 'Upload an invoice, get an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
       { h2: 'How it works' },
       { ol: [
         'Upload a document, take a photo or speak the data point.',

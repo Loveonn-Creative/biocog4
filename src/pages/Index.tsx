@@ -730,7 +730,7 @@ const Index = () => {
             
             <div className="flex flex-col items-center gap-2 -mt-2">
               <p className="text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
-                {t("home.hero.action", "Upload a bill or invoice for your audit-ready carbon report")}
+                {t("home.hero.action", "Upload an invoice, get an audit-ready carbon report")}
               </p>
               <button
                 onClick={openSample}
