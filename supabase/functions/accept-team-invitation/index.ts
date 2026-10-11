@@ -31,7 +31,20 @@ serve(async (req) => {
     const { data, error: acceptError } = await admin.rpc("service_accept_team_invitation", {
       p_user_id: userId, p_user_email: email, p_token: token,
     });
-    if (acceptError) return json({ error: acceptError.message }, 400);
+    if (acceptError) {
+      const message = acceptError.message || "Invitation could not be accepted";
+      const status =
+        /not found/i.test(message) ? 404 :
+        /already accepted/i.test(message) ? 409 :
+        /expired/i.test(message) ? 410 :
+        /does not match/i.test(message) ? 403 :
+        /member limit reached/i.test(message) ? 409 :
+        400;
+      const friendly = /does not match/i.test(message)
+        ? `This invitation was sent to a different email address. You are signed in as ${email}. Sign in with the invited address to accept it.`
+        : message;
+      return json({ error: friendly }, status);
+    }
     return json({ success: true, membership: data?.[0] });
   } catch (error) {
     console.error("Accept invitation error:", error instanceof Error ? error.message : "unknown");

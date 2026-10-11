@@ -6,6 +6,21 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
+// Base URL for the accept link. Optional SITE_URL secret (e.g. a staging origin);
+// falls back to production so behaviour is unchanged when it is not set.
+const DEFAULT_SITE_URL = "https://senseible.earth";
+const SITE_URL = (() => {
+  const raw = Deno.env.get("SITE_URL")?.trim();
+  if (!raw) return DEFAULT_SITE_URL;
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== "https:" && url.hostname !== "localhost") return DEFAULT_SITE_URL;
+    return url.origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+})();
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -24,6 +39,39 @@ interface InvitationRequest {
   organizationId: string;
 }
 
+interface InvitationEmailData extends InvitationRequest {
+  token: string;
+  organizationName: string;
+  inviterName?: string;
+}
+
+const json = (body: unknown, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { "Content-Type": "application/json", ...corsHeaders },
+  });
+
+// Map the business-rule exceptions raised by service_create_team_invitation
+// to client errors so the caller sees the real reason instead of a 500.
+const RPC_ERROR_STATUS: Array<[RegExp, number]> = [
+  [/administrator access required/i, 403],
+  [/member limit reached/i, 409],
+  [/active invitation already exists/i, 409],
+  [/already an organization member/i, 409],
+  [/organization not found/i, 404],
+  [/invalid team role|valid email required/i, 400],
+];
+
+const rpcErrorResponse = (err: { message?: string; code?: string } | null) => {
+  const message = err?.message || "";
+  for (const [pattern, status] of RPC_ERROR_STATUS) {
+    if (pattern.test(message)) return json({ error: message }, status);
+  }
+  // Any other RAISE EXCEPTION from the function body (SQLSTATE P0001) is a rule violation.
+  if (err?.code === "P0001" && message) return json({ error: message }, 400);
+  return null;
+};
+
 const ROLE_LABELS: Record<string, string> = {
   owner: "Owner", admin: "Admin", analyst: "Analyst", viewer: "Viewer",
 };
@@ -35,8 +83,8 @@ const ROLE_DESCRIPTIONS: Record<string, string> = {
   viewer: "Read-only access to dashboard and reports",
 };
 
-const getInvitationEmailHTML = (data: InvitationRequest) => {
-  const acceptUrl = `https://senseible.earth/accept-invite?token=${encodeURIComponent(data.token)}`;
+const getInvitationEmailHTML = (data: InvitationEmailData) => {
+  const acceptUrl = `${SITE_URL}/accept-invite?token=${encodeURIComponent(data.token)}`;
   const expiryDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString("en-IN", {
     day: "numeric", month: "long", year: "numeric",
   });
@@ -63,7 +111,7 @@ const getInvitationEmailHTML = (data: InvitationRequest) => {
   </p>
   <p style="margin-top: 24px; color: #6b7280; font-size: 13px;">If you didn't expect this invitation, you can safely ignore this email.</p>
   <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-  <p style="color: #9ca3af; font-size: 12px; text-align: center;">Senseible — Carbon Intelligence for MSMEs</p>
+  <p style="color: #9ca3af; font-size: 12px; text-align: center;">Senseible · Carbon Intelligence for MSMEs</p>
 </body></html>`;
 };
 
@@ -96,23 +144,20 @@ serve(async (req) => {
     }
     const callerId = claimsRes.claims.sub as string;
 
-    const data: InvitationRequest = await req.json();
+    let data: InvitationRequest;
+    try {
+      data = await req.json();
+    } catch {
+      return json({ error: "Invalid request body" }, 400);
+    }
     if (!data.email || !data.organizationId || !data.role) {
       return new Response(JSON.stringify({ error: "Missing required fields" }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
 
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-    const { data: organization } = await admin
-      .from("organizations")
-      .select("name")
-      .eq("id", data.organizationId)
-      .maybeSingle();
-    if (!organization) {
-      return new Response(JSON.stringify({ error: "Organization not found" }),
-        { status: 404, headers: { "Content-Type": "application/json", ...corsHeaders } });
-    }
 
+    // The RPC checks admin access first, so non-admins cannot probe which organizations exist.
     const token = crypto.randomUUID();
     const { data: invitation, error: invErr } = await admin.rpc("service_create_team_invitation", {
       p_actor_id: callerId,
@@ -121,31 +166,56 @@ serve(async (req) => {
       p_role: data.role,
       p_token: token,
     });
-    if (invErr || !invitation) throw new Error(invErr?.message || "Invitation creation failed");
+    if (invErr || !invitation) {
+      const mapped = rpcErrorResponse(invErr);
+      if (mapped) return mapped;
+      throw new Error(invErr?.message || "Invitation creation failed");
+    }
 
-    const emailData = { ...data, token, organizationName: organization.name, inviterName: String(claimsRes.claims.email || "").split("@")[0] };
+    const { data: organization } = await admin
+      .from("organizations")
+      .select("name")
+      .eq("id", data.organizationId)
+      .maybeSingle();
+    const organizationName = String(organization?.name || "your organization");
+
+    const emailData: InvitationEmailData = { ...data, token, organizationName, inviterName: String(claimsRes.claims.email || "").split("@")[0] };
 
     const emailHTML = getInvitationEmailHTML(emailData);
 
-    const emailResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Senseible <noreply@senseible.earth>",
-        to: [String(invitation.email).slice(0, 320)],
-        subject: `You're invited to join ${String(organization.name).slice(0, 100)} on Senseible`,
-        html: emailHTML,
-      }),
-    });
+    // If the email cannot be sent, remove the invitation we just created so it
+    // does not hold a seat or block a retry as a "duplicate invite".
+    const discardInvitation = async () => {
+      const { error: delErr } = await admin.from("team_invitations").delete().eq("id", invitation.id);
+      if (delErr) console.error("Failed to remove unsent invitation:", delErr.message);
+    };
 
-    const emailResult = await emailResponse.json();
+    let emailResponse: Response;
+    try {
+      emailResponse = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Senseible <noreply@senseible.earth>",
+          to: [String(invitation.email).slice(0, 320)],
+          subject: `You're invited to join ${organizationName.slice(0, 100)} on Senseible`,
+          html: emailHTML,
+        }),
+      });
+    } catch (sendErr) {
+      console.error("Resend request failed:", sendErr instanceof Error ? sendErr.message : "unknown");
+      await discardInvitation();
+      return json({ error: "We could not send the invitation email. No invitation was created. Please try again." }, 502);
+    }
+
+    const emailResult = await emailResponse.json().catch(() => ({}));
     if (!emailResponse.ok) {
-      console.error("Resend API error");
-      return new Response(JSON.stringify({ error: "Failed to send invitation" }),
-        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } });
+      console.error("Resend API error", emailResponse.status);
+      await discardInvitation();
+      return json({ error: "We could not send the invitation email. No invitation was created. Please try again." }, 502);
     }
 
     return new Response(JSON.stringify({ success: true, invitation, emailId: emailResult.id }),

@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
+import { getFunctionErrorMessage } from '@/hooks/useOrganization';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -55,6 +56,7 @@ const AcceptInvite = () => {
   const [invitation, setInvitation] = useState<InvitationData | null>(null);
   const [status, setStatus] = useState<'loading' | 'valid' | 'expired' | 'accepted' | 'error'>('loading');
   const [isAccepting, setIsAccepting] = useState(false);
+  const [acceptError, setAcceptError] = useState<string | null>(null);
 
   useEffect(() => {
     if (token && isAuthenticated) {
@@ -79,14 +81,25 @@ const AcceptInvite = () => {
     if (!token || !user?.id) return;
     
     setIsAccepting(true);
+    setAcceptError(null);
     try {
       const { data, error } = await supabase.functions.invoke('accept-team-invitation', { body: { token } });
-      if (error || !data?.success) throw new Error(data?.error || error?.message || 'Invitation acceptance failed');
+      if (error || !data?.success) {
+        // On non-2xx, data is null and the server's message is on error.context.
+        const message = error
+          ? await getFunctionErrorMessage(error, 'Failed to accept invitation')
+          : data?.error || 'Failed to accept invitation';
+        setAcceptError(message);
+        toast.error(message);
+        return;
+      }
       toast.success(`Welcome to ${data.membership?.organization_name || 'your team'}!`);
       navigate('/dashboard');
     } catch (err) {
       console.error('Error accepting invitation:', err);
-      toast.error('Failed to accept invitation');
+      const message = await getFunctionErrorMessage(err, 'Failed to accept invitation');
+      setAcceptError(message);
+      toast.error(message);
     } finally {
       setIsAccepting(false);
     }
@@ -130,7 +143,7 @@ const AcceptInvite = () => {
                     Sign in or create an account to accept this invitation
                   </p>
                   <Button className="w-full" asChild>
-                    <Link to={`/auth?redirect=/accept-invite?token=${token}`}>
+                    <Link to={`/auth?next=${encodeURIComponent('/accept-invite?token=' + token)}`}>
                       Sign In to Accept
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
@@ -145,6 +158,11 @@ const AcceptInvite = () => {
                   )}
                   Accept Invitation
                 </Button>
+              )}
+              {acceptError && (
+                <p className="text-sm text-destructive" role="alert">
+                  {acceptError}
+                </p>
               )}
             </CardContent>
           </Card>

@@ -71,7 +71,7 @@ const Auth = () => {
     const isPartner = data?.context_type === 'partner';
 
     // Restore the page the user was trying to reach, if it is a safe in-app path.
-    if (nextPath && nextPath.startsWith('/') && !nextPath.startsWith('//') && !nextPath.startsWith('/auth')) {
+    if (nextPath && nextPath.startsWith('/') && !nextPath.startsWith('//') && !nextPath.includes('\\') && !nextPath.startsWith('/auth')) {
       const partnerOnly = nextPath.startsWith('/partner');
       if (isPartner === partnerOnly) return nextPath;
     }
@@ -255,10 +255,9 @@ const Auth = () => {
           navigate(redirectPath);
         }
       } else {
-        // Forgot password - ALWAYS use production domain
-        const PRODUCTION_DOMAIN = 'https://senseible.earth';
+        // Forgot password: return to the origin the user is on (must be in the Supabase redirect allow list).
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${PRODUCTION_DOMAIN}/reset-password`
+          redirectTo: `${window.location.origin}/reset-password`
         });
         
         if (error) {

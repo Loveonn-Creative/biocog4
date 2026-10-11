@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
+import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
 
 const tierIcons = {
   snapshot: Sparkles,
@@ -471,20 +472,7 @@ const Profile = () => {
           <EnterpriseModeCard />
 
           {/* Security */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Shield className="w-5 h-5" />
-                Security
-              </CardTitle>
-              <CardDescription>Manage your account security</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="outline" asChild>
-                <Link to="/auth">Change Password</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <ChangePasswordCard user={user} />
         </div>
       </main>
     </div>
