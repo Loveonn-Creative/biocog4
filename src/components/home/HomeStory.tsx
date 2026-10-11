@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Landmark, Ship, Coins, Upload, Sparkles } from "lucide-react";
+import { ArrowRight, Landmark, Ship, Coins, Upload } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
 import { FlowVisual } from "./FlowVisual";
 import { CbamExposure } from "./CbamExposure";
@@ -12,7 +12,7 @@ import { CbamExposure } from "./CbamExposure";
  * enterprise use case (supplier / Scope 3 automation) gets a single pointer
  * here and lives on its own pages. Loaded lazily so it never weighs on first paint.
  */
-export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSample: () => void }) => {
+export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
   const t = useT();
 
   const steps = [
@@ -138,14 +138,9 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.act.title", "Start with one bill.")}</h2>
             <p className="mt-2 text-background/70">{t("home.act.body", "Free audit-ready carbon report from your first bill.")}</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <button onClick={onUpload} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
-              <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
-            </button>
-            <button onClick={onSample} className="inline-flex items-center justify-center gap-2 rounded-full border border-background/30 px-5 py-3 text-sm font-medium">
-              <Sparkles className="w-4 h-4" /> {t("home.act.sample", "Try a sample invoice")}
-            </button>
-          </div>
+          <button onClick={onUpload} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
+            <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
+          </button>
         </div>
       </section>
 
@@ -157,7 +152,7 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
 /**
  * Thumb-zone actions on phones, shown once the hero has scrolled away.
  */
-export const StickyCta = ({ heroId, onUpload, onSample }: { heroId: string; onUpload: () => void; onSample: () => void }) => {
+export const StickyCta = ({ heroId, onUpload }: { heroId: string; onUpload: () => void }) => {
   const t = useT();
   const [show, setShow] = useState(false);
 
@@ -174,14 +169,9 @@ export const StickyCta = ({ heroId, onUpload, onSample }: { heroId: string; onUp
       className={`sm:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(env(safe-area-inset-bottom),12px)] pt-3 bg-background/95 backdrop-blur border-t border-border transition-transform duration-300 ${show ? "translate-y-0" : "translate-y-full"}`}
       aria-hidden={!show}
     >
-      <div className="flex gap-2">
-        <button tabIndex={show ? 0 : -1} onClick={onUpload} className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-3 text-sm font-medium">
-          <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
-        </button>
-        <button tabIndex={show ? 0 : -1} onClick={onSample} className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-3 text-sm font-medium">
-          <Sparkles className="w-4 h-4" /> {t("home.act.sample_short", "Sample")}
-        </button>
-      </div>
+      <button tabIndex={show ? 0 : -1} onClick={onUpload} className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-3 text-sm font-medium">
+        <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
+      </button>
     </div>
   );
 };
