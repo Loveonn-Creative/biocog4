@@ -6,7 +6,7 @@ Every page below has a Markdown mirror: replace the path with /md/{path}.md (the
 
 ## Core pages
 
-- [Senseible: verified carbon data from the documents you already have](https://senseible.earth/): Turn invoices and energy bills into verified Scope 1, 2 and 3 emissions, CBAM cost estimates and green finance signals. Free to start for MSMEs and exporters.
+- [Senseible: from your bills to climate finance](https://senseible.earth/): Upload a bill or invoice for an audit-ready carbon report. MSMEs use the verified record for green loans, buyer and export requests, and carbon credits.
 - [Pricing: Carbon MRV Plans for MSMEs](https://senseible.earth/pricing): Compare Senseible plans: a free Snapshot tier, Essential and Pro for growing MSMEs, and Scale for teams. Yearly and monthly billing in Indian rupees.
 - [Careers at Senseible: Build Climate Infrastructure](https://senseible.earth/careers): Open roles at Senseible across engineering, applied AI, climate research, design and growth, plus intern and fresher tracks. See how to apply.
 - [Climate Intelligence: CBAM, Scope 3 and BRSR Guides](https://senseible.earth/climate-intelligence): Guides on carbon accounting, CBAM, Scope 3 supplier data, BRSR and green finance for MSMEs and exporters in India and emerging markets.

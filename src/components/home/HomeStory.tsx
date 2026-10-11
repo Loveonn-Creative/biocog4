@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Factory, Ship, Building2, Upload, Sparkles } from "lucide-react";
+import { ArrowRight, Landmark, Ship, Coins, Upload, Sparkles } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
 import { FlowVisual } from "./FlowVisual";
 import { CbamExposure } from "./CbamExposure";
 
 /**
- * The homepage story below the first viewport: the visitor's problem, how a
- * bill becomes verified data, who it serves, what CBAM costs, and a
- * disambiguation line. Loaded lazily so it never weighs on first paint.
+ * The homepage story below the first viewport. The homepage speaks to one
+ * audience: MSMEs turning their own documents into verified data they can
+ * monetise (green loans, buyer and export requests, carbon credits). The
+ * enterprise use case (supplier / Scope 3 automation) gets a single pointer
+ * here and lives on its own pages. Loaded lazily so it never weighs on first paint.
  */
 export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSample: () => void }) => {
   const t = useT();
@@ -32,31 +34,32 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
     {
       n: "04",
       title: t("home.how.4.title", "Use it"),
-      body: t("home.how.4.body", "Send the same verified record to an EU buyer, a CBAM data request, a BRSR customer or a green loan application."),
+      body: t("home.how.4.body", "Take the same verified record to a green loan application, a buyer or export request, or a carbon credit check."),
     },
   ];
 
-  const audiences = [
+  // What verified data unlocks for an MSME: the MRV-to-monetise path.
+  const outcomes = [
     {
-      icon: Factory,
-      who: t("home.who.msme.who", "MSME owners"),
-      line: t("home.who.msme.line", "Answer buyer and bank questions from the bills you already keep. No consultant, no spreadsheet."),
-      to: "/calculators",
-      cta: t("home.who.msme.cta", "Free calculators"),
+      icon: Landmark,
+      who: t("home.unlock.loan.title", "Green loans"),
+      line: t("home.unlock.loan.line", "Lenders can underwrite against figures tied to your own bills, not a self-declared number."),
+      to: "/climate-finance",
+      cta: t("home.unlock.loan.cta", "How lenders use it"),
     },
     {
       icon: Ship,
-      who: t("home.who.exporter.who", "Exporters"),
-      line: t("home.who.exporter.line", "Give EU buyers verified emissions per tonne, so they do not fall back on default values with a mark-up."),
+      who: t("home.unlock.buyer.title", "Buyer and export requests"),
+      line: t("home.unlock.buyer.line", "Answer buyer questionnaires and EU CBAM data requests from one verified record."),
       to: "/climate-intelligence/eu-cbam-explained-emerging-market-exporters",
-      cta: t("home.who.exporter.cta", "CBAM in 2026"),
+      cta: t("home.unlock.buyer.cta", "CBAM in 2026"),
     },
     {
-      icon: Building2,
-      who: t("home.who.buyer.who", "EU buyers and enterprises"),
-      line: t("home.who.buyer.line", "Collect supplier emissions you can trace back to source documents, with factors and versions attached."),
-      to: "/trust",
-      cta: t("home.who.buyer.cta", "How verification works"),
+      icon: Coins,
+      who: t("home.unlock.credits.title", "Carbon credits"),
+      line: t("home.unlock.credits.line", "Verified reductions that clear additionality can become credit-ready signals for buyers."),
+      to: "/carbon-credits",
+      cta: t("home.unlock.credits.cta", "How credits work"),
     },
   ];
 
@@ -64,12 +67,11 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
     <div className="relative z-10 w-full">
       {/* The problem, in the visitor's words */}
       <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{t("home.problem.eyebrow", "The problem")}</p>
-        <h2 className="mt-3 text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight max-w-3xl">
-          {t("home.problem.title", "Your buyer wants your carbon numbers. Your numbers are sitting in a folder of bills.")}
+        <h2 className="text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight max-w-3xl [text-wrap:balance]">
+          {t("home.problem.title", "Your bills already hold your carbon data.")}
         </h2>
         <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-          {t("home.problem.body", "EU importers now pay CBAM on steel, aluminium, cement and fertilisers, brands ask suppliers for Scope 1 and 2, and lenders ask for baselines. Senseible turns the documents you already have into figures each of them can check.")}
+          {t("home.problem.body", "Banks, buyers and carbon markets now ask small businesses for verified emissions. Senseible turns the invoices and energy bills you already keep into a verified record you can take to a green loan, a buyer or a carbon credit check.")}
         </p>
       </section>
 
@@ -94,9 +96,9 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
 
       {/* Who it is for */}
       <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <h2 id="who-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.who.title", "Who uses it")}</h2>
+        <h2 id="who-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.unlock.title", "What verified data unlocks")}</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {audiences.map(a => (
+          {outcomes.map(a => (
             <Link key={a.who} to={a.to} className="group rounded-3xl border border-border p-5 sm:p-6 hover:border-foreground/40 transition-colors">
               <a.icon className="w-5 h-5 text-primary" aria-hidden="true" />
               <h3 className="mt-4 text-lg font-semibold">{a.who}</h3>
@@ -107,12 +109,19 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
             </Link>
           ))}
         </div>
+        {/* The one place the enterprise use case appears on the homepage. */}
+        <p className="mt-6 text-sm text-muted-foreground">
+          {t("home.enterprise.pointer", "Sourcing from MSMEs? Automate supplier (Scope 3) emissions for your supply chain.")}{" "}
+          <Link to="/trust#scope3" className="font-medium text-foreground underline underline-offset-4">
+            {t("home.enterprise.link", "For enterprises")}
+          </Link>
+        </p>
       </section>
 
       {/* CBAM exposure */}
       <section aria-labelledby="cbam-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
         <h2 id="cbam-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">
-          {t("home.cbam.title", "What CBAM costs your EU buyer")}
+          {t("home.cbam.title", "Exporting to the EU? What CBAM costs your buyer")}
         </h2>
         <p className="mt-2 text-muted-foreground max-w-2xl">
           {t("home.cbam.sub", "Since 1 January 2026, EU importers owe a certificate for each tonne of CO2 embedded in these goods, above a shrinking free allowance. Verified data from you is the cheapest way down.")}

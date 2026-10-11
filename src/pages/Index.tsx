@@ -648,16 +648,17 @@ const Index = () => {
       {/* Top-right navigation icons */}
       <HomeNavIcons />
       
-      {/* Wordmark sits left on phones so it never collides with the nav icons. */}
-      <header className="relative z-20 w-full pt-5 pb-2 px-4">
-        <Link to="/" className="inline-block sm:block">
-          <h1 className="text-2xl sm:text-3xl font-semibold text-left sm:text-center text-foreground tracking-tight">
+      {/* Wordmark is centred on the same axis as the headline. On phones it sits
+          below the icon row (pt-16) so the two never collide. */}
+      <header className="relative z-20 w-full pt-16 sm:pt-5 pb-2 px-4">
+        <Link to="/" className="block">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-center text-foreground tracking-tight">
             senseible
           </h1>
         </Link>
       </header>
 
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 -mt-6 sm:-mt-10">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-6 sm:pt-0 sm:-mt-10">
         {state === "idle" && showSample && (
           <Suspense fallback={null}>
             <SampleResult
@@ -670,15 +671,7 @@ const Index = () => {
         {state === "idle" && !showSample && (
           <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
             {/* Animated use case headline - ABOVE icons for maximum impact */}
-            <div className="flex flex-col items-center gap-3 text-center">
-              <UseCaseTyper className="mb-0" />
-              <p className="text-sm sm:text-base text-muted-foreground max-w-md">
-                {t("home.hero.what", "Turn invoices and energy bills into verified emissions, CBAM data and finance signals.")}
-              </p>
-              <p className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-foreground/70">
-                {t("home.hero.who", "For exporters · MSMEs · EU buyers")}
-              </p>
-            </div>
+            <UseCaseTyper className="mt-2" />
             
             <div className="flex items-start gap-4 sm:gap-6">
               <DocumentInput 
@@ -736,8 +729,8 @@ const Index = () => {
             )}
             
             <div className="flex flex-col items-center gap-2 -mt-2">
-              <p className="text-xs text-muted-foreground/70 text-center">
-                {t("home.hero.hint", "Upload a document or speak to begin")}
+              <p className="text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
+                {t("home.hero.action", "Upload a bill or invoice for your audit-ready carbon report")}
               </p>
               <button
                 onClick={openSample}
@@ -747,15 +740,11 @@ const Index = () => {
               </button>
             </div>
 
-            {/* One checkable proof point: a real factor with its source. */}
-            <p className="text-xs text-muted-foreground text-center max-w-sm">
-              {t("home.hero.proof", "Every figure shows its factor and source, e.g. India grid power 0.710 kgCO2/kWh (CEA v21.0).")}
-            </p>
 
             {/* India AI Innovation Badge */}
             <div className="flex flex-col items-center gap-2 mt-4">
               <IndiaAIBadge size={48} />
-              <p className="text-sm sm:text-base text-center leading-relaxed font-medium">
+              <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-xs [text-wrap:balance]">
                 <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
                 <span style={{ color: '#FF9933' }} className="font-semibold">from India.</span>
                 <br />

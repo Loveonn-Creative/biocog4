@@ -54,10 +54,11 @@ export const LanguageSwitcher = ({ className = "" }: { className?: string }) => 
         aria-label={`Change language (current: ${LOCALE_FULL[locale] ?? locale})`}
         aria-expanded={open}
         aria-haspopup="listbox"
-        className="h-9 min-w-9 px-2.5 flex items-center justify-center gap-1.5 rounded-full bg-secondary/60 hover:bg-secondary transition-colors text-xs font-medium text-foreground"
+        className="h-9 w-[4.5rem] px-2 flex items-center justify-center gap-1.5 rounded-full bg-secondary/60 hover:bg-secondary transition-colors text-xs font-medium text-foreground"
       >
         <Globe className="w-4 h-4" aria-hidden="true" />
-        <span>{LOCALE_LABELS[locale] ?? locale.toUpperCase()}</span>
+        {/* Fixed button width: switching EN to a longer script label causes no shift. */}
+        <span className="truncate">{LOCALE_LABELS[locale] ?? locale.toUpperCase()}</span>
       </button>
       {open && (
         <ul

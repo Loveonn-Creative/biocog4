@@ -92,8 +92,8 @@ export const BANNED_CLAIMS: { pattern: RegExp; reason: string }[] = [
 
 export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/': {
-    title: 'Senseible: Carbon MRV, CBAM and Scope 3 for MSMEs',
-    description: 'Turn invoices and energy bills into verified Scope 1, 2 and 3 emissions, CBAM cost estimates and green finance signals. Free to start for MSMEs and exporters.',
+    title: 'Senseible: Carbon MRV to Climate Finance for MSMEs',
+    description: 'Upload a bill or invoice for an audit-ready carbon report. MSMEs use the verified record for green loans, buyer and export requests, and carbon credits.',
   },
   '/platform': {
     title: 'The Senseible Platform: Verified Climate Evidence',

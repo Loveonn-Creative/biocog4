@@ -1,23 +1,23 @@
-# Senseible: verified carbon data from the documents you already have
+# Senseible: from your bills to climate finance
 
 Canonical: https://senseible.earth/
 
-Senseible turns invoices, electricity bills, fuel slips and freight records into Scope 1, 2 and 3 emission records, with the emission factor and its source shown against every line. MSMEs use it to answer buyer and lender requests, exporters use it to prepare CBAM data, and enterprise buyers use it to collect supplier emissions.
+Upload a bill or invoice for an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.
 
 ## How it works
 
 1. Upload a document, take a photo or speak the data point.
 2. Line items are extracted and classified to Scope 1, 2 or 3 using a deterministic HSN-to-scope lookup.
 3. Each line is multiplied by a published emission factor for your country, and the document is hashed (SHA-256) so the same evidence cannot be counted twice.
-4. Use the verified record for a buyer questionnaire, a CBAM data request, a BRSR disclosure or a green loan application.
+4. Take the verified record to a green loan application, a buyer or export request, or a carbon credit check.
 
-## Who it is for
+## What verified data unlocks
 
-- MSMEs and exporters that need an emissions record without hiring a consultant.
-- Enterprise buyers and EU importers that need supplier emissions data they can check.
-- Lenders that want emission baselines tied to source documents, not self-declarations.
+- [Green loans](https://senseible.earth/climate-finance): lenders can underwrite against figures tied to your own bills.
+- [Buyer and export requests](https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters): answer buyer questionnaires and EU CBAM data requests from one verified record.
+- [Carbon credits](https://senseible.earth/carbon-credits): verified reductions that clear additionality can become credit-ready signals.
 
-## CBAM in 2026
+## Exporting to the EU? CBAM in 2026
 
 The EU Carbon Border Adjustment Mechanism (CBAM) moved from its transitional reporting phase to its definitive period on 1 January 2026. Under the definitive regime, EU importers, acting as authorised CBAM declarants, declare the embedded emissions of covered goods (iron and steel, aluminium, cement, fertilisers, hydrogen and electricity) and surrender CBAM certificates for them. Non-EU producers do not pay CBAM directly, but their EU buyers need their emissions data.
 
@@ -27,20 +27,20 @@ Certificates are owed on embedded emissions minus a free-allocation adjustment e
 
 Sources: [Regulation (EU) 2023/956](https://eur-lex.europa.eu/eli/reg/2023/956/oj) and [Regulation (EU) 2025/2083](https://eur-lex.europa.eu/eli/reg/2025/2083/oj) on EUR-Lex.
 
-Estimate your exposure with the [CBAM cost calculator](https://senseible.earth/cbam-calculator).
+Estimate your buyer's cost with the [CBAM cost calculator](https://senseible.earth/cbam-calculator).
 
 ## Free tools
 
 - [CBAM cost calculator](https://senseible.earth/cbam-calculator)
 - [Product carbon footprint calculator (ISO 14067)](https://senseible.earth/calculators/product-carbon-footprint)
-- [Supplier emissions and Scope 3 risk calculator](https://senseible.earth/calculators/supplier-emissions-risk)
 - [Freight emissions calculator (GLEC, ISO 14083)](https://senseible.earth/calculators/logistics-emissions)
-- [Carbon pricing impact calculator](https://senseible.earth/calculators/carbon-pricing-impact)
 - [Solar ROI calculator](https://senseible.earth/calculators/energy-transition-savings)
 
 ## Plans
 
 Biocog Snapshot is free. Paid plans start at ₹499 a month on yearly billing. [Compare plans](https://senseible.earth/pricing).
+
+Sourcing from MSMEs? Supplier (Scope 3) emissions automation for enterprise supply chains is described on [Trust and technical validation](https://senseible.earth/trust).
 
 ## Senseible is not Sensibull
 
