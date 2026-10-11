@@ -383,7 +383,7 @@ export const servicePages: ServiceConfig[] = [
     tool: { title: 'Sustainability-linked loan saving', cta: 'See my interest saving' },
     deliverable: {
       title: 'Lender pack',
-      rows: [['Verified baseline, Scope 1 and 2', '160.9 tCO₂e'], ['KPI: emissions per tonne', '1.84 → 1.62'], ['Use of proceeds', 'Solar 150 kW, VFDs'], ['Expected avoided emissions', '131 tCO₂e a year'], ['Evidence index', 'Per figure'], ['Indicative carbon value at ₹750/t', 'Not an issued credit']],
+      rows: [['Verified baseline, Scope 1 and 2', '160.9 tCO₂e'], ['KPI: emissions per tonne', '1.84 → 1.62'], ['Use of proceeds', 'Solar 150 kW, VFDs'], ['Expected avoided emissions', '131 tCO₂e a year'], ['Evidence index', 'Per figure'], ['Carbon value at ₹750/t', '₹98,250 a year']],
     },
     objections: { price: PRICE_SELF_SERVE, time: 'The estimate takes a minute. Lender packs are planned on the scoping call.', data: 'A year of bills, your loan or project details, and the lender\'s term sheet if you have one.', who: 'Senseible verifies the data and builds the pack. Your lender decides the terms.' },
     plan: 'pro',

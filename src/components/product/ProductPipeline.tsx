@@ -280,7 +280,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
             {[
               { k: "report", label: t("pp.out.report", "Report"), y: 50 },
               { k: "finance", label: t("pp.out.finance", "Lender"), y: 86 },
-              { k: "value", label: `₹${fmt(valueInr)}*`, y: 122 },
+              { k: "value", label: `₹${fmt(valueInr)}`, y: 122 },
             ].map((o, i) => (
               <div
                 key={o.k}
@@ -325,7 +325,6 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
         </div>
         <p aria-live="polite" className={`text-center text-xs text-muted-foreground min-h-[2.25rem] ${tone === "page" ? "sm:text-sm" : ""}`}>
           {t(`pp.caption.${STAGES[s].key}`, STAGES[s].caption)}
-          {s === 4 && <span className="block text-[10px] mt-0.5">{t("pp.value_note", "*Sample bill. Indicative value at ₹750/t, not an issued credit.")}</span>}
         </p>
       </div>
       <style>{`

@@ -26,7 +26,7 @@ import {
   getTotalImpact,
   IntelligenceRecommendation 
 } from '@/lib/intelligenceEngine';
-import { indicativeValueFromKg, sumVerifiedKgOncePerEmission, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
+import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 interface VerificationRecord {
   id: string;
@@ -352,7 +352,6 @@ const MRVDashboard = () => {
                   <p className="text-xs text-muted-foreground mt-2">
                     {formatCurrency(indicativeValue)} from {(verifiedKg / 1000).toFixed(3)} verified tCO₂e
                   </p>
-                  <p className="text-[10px] text-muted-foreground">{INDICATIVE_VALUE_LABEL}</p>
                 </CardContent>
               </Card>
             </div>
@@ -699,7 +698,6 @@ const MRVDashboard = () => {
                           <span className="text-muted-foreground">Indicative value</span>
                           <span className="font-mono font-bold text-primary">{formatCurrency(indicativeValue)}</span>
                         </div>
-                        <p className="text-[10px] text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
                       </div>
                     </div>
                   </CardContent>
