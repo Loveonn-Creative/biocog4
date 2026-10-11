@@ -149,7 +149,6 @@ export const Visual = ({ data }: ServiceVisualProps) => {
             </span>
           ))}
         </div>
-        {empty && <p className="mt-2 text-[11px] text-muted-foreground">Sample until you enter your bills.</p>}
       </figcaption>
     </figure>
   );
