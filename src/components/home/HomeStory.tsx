@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Landmark, Ship, Coins, Upload } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
-import { ScrollStory } from "./ScrollStory";
+import { FlowVisual } from "./FlowVisual";
 import { AskCards } from "./AskCards";
 import { CbamExposure } from "./CbamExposure";
 
@@ -79,8 +79,24 @@ export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
         </div>
       </section>
 
-      {/* How it works: the words scroll, the picture follows. */}
-      <ScrollStory title={t("home.how.title", "From an invoice to finance-ready data")} steps={steps} />
+      {/* How it works, with the model */}
+      <section aria-labelledby="how-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-14 sm:pt-20">
+        <h2 id="how-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          {t("home.how.title", "From an invoice to finance-ready data")}
+        </h2>
+        <div className="mt-6">
+          <FlowVisual />
+        </div>
+        <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map(s => (
+            <li key={s.n} className="border-t border-foreground/80 pt-4">
+              <p className="font-mono text-xs text-muted-foreground">{s.n}</p>
+              <h3 className="mt-1 text-lg font-semibold">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       {/* Who it is for */}
       <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-8 sm:pt-16">
