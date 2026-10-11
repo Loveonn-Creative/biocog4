@@ -29,6 +29,11 @@ const Contact = () => {
   const location = useLocation();
   const routeState = location.state as { scopeInput?: ScopeInput } | null;
   const scopeInput = routeState?.scopeInput && estimateCustomScope(routeState.scopeInput) ? routeState.scopeInput : undefined;
+  // Service pages link here with ?topic=&ref=&msg= so the visitor's tool result is already filled in.
+  const query = new URLSearchParams(location.search);
+  const queryTopic = query.get('topic');
+  const prefillCategory = queryTopic && categories.some(c => c.id === queryTopic) ? queryTopic : null;
+  const prefillMessage = (query.get('msg') ?? '').slice(0, 1000);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [notificationPending, setNotificationPending] = useState(false);
@@ -37,8 +42,8 @@ const Contact = () => {
     email: '',
     phone: '',
     company: '',
-    category: scopeInput ? 'sales' : 'general',
-    message: scopeInput ? scopeReviewMessage(scopeInput) : '',
+    category: scopeInput ? 'sales' : (prefillCategory ?? 'general'),
+    message: scopeInput ? scopeReviewMessage(scopeInput) : prefillMessage,
     newsletter: false
   });
 

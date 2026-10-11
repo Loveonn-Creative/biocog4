@@ -4,6 +4,7 @@
 // cite primary sources (EUR-Lex); have the CBAM reviewer re-check them on
 // every regulatory change.
 import type { Block } from './render';
+import { servicePages } from '@/data/services';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -169,4 +170,24 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: '[All calculators](/calculators)' },
     ],
   },
+  // Service lead pages: the prerendered answer, objections, links and FAQs.
+  ...Object.fromEntries(servicePages.map(s => [`/${s.slug}`, {
+    h1: s.hero.headline,
+    blocks: [
+      { p: s.hero.sub },
+      ...(s.hero.stake ? [{ p: `${s.hero.stake.text} (${s.hero.stake.source})` } as Block] : []),
+      { h2: s.answer.q },
+      { p: s.answer.a },
+      { h2: `Free tool: ${s.tool.title}` },
+      { p: `Answer in about a minute, with no sign-up. Then send the result on WhatsApp or [book a scoping call](/contact).` },
+      { h2: `What you receive: ${s.deliverable.title}` },
+      { ul: s.deliverable.rows.map(([k]) => k) },
+      { h2: 'Price, time, data and who does the work' },
+      { ul: [`Price: ${s.objections.price}`, `Time: ${s.objections.time}`, `What you need: ${s.objections.data}`, `Who does the work: ${s.objections.who}`] },
+      { h2: 'Already in Senseible' },
+      { ul: [...s.product.map(l => `[${l.label}](${l.to})`), '[Plans and pricing](/pricing)'] },
+      { h2: 'Questions buyers ask' },
+      ...s.faqs.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+    ] as Block[],
+  }])),
 };

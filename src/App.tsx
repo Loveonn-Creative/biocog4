@@ -14,6 +14,7 @@ import { RequireAuth } from "./components/RequireAuth";
 import { RouteSEO } from "./components/RouteSEO";
 import { TranslationScope } from "./components/TranslationScope";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
+import { servicePages } from "@/data/services";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
 
@@ -46,6 +47,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const ClimateStack = lazy(() => import("./pages/ClimateStack"));
 const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
 const Profile = lazy(() => import("./pages/Profile"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
@@ -129,6 +131,7 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              {servicePages.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
