@@ -2,20 +2,22 @@
 
 Canonical: https://senseible.earth/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026
 
-Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality — specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number.
+Published 2026-05-23.
+
+Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality: specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number.
 
 This article is for buyers of carbon software who have outgrown their first spend-based estimate and need a procurement specification that holds up under ISAE 3410, ISO 14064-3, or CDP scoring.
 
 ## The four-tier framework, plainly
 
-The GHG Protocol Scope 3 Technical Guidance and the PCAF Standard converge on a four-tier hierarchy for data quality:
+Drawing on the GHG Protocol Scope 3 Technical Guidance and the PCAF data-quality scores, a practical four-tier hierarchy for data quality is:
 
-- **Tier 1 — Supplier-specific primary data.** Activity data and emission factor both from the supplier, ideally verified.
-- **Tier 2 — Hybrid.** Activity data from the supplier, emission factor from a recognised database (ecoinvent, DEFRA, EPA, IPCC, India GHG Programme).
-- **Tier 3 — Average data.** Activity data from the buyer, sector-average emission factor.
-- **Tier 4 — Spend-based.** Monetary spend converted through a sector spend factor (EXIOBASE, USEEIO, India-EXIO).
+- **Tier 1: Supplier-specific primary data.** Activity data and emission factor both from the supplier, ideally verified.
+- **Tier 2: Hybrid.** Activity data from the supplier, emission factor from a recognised database (ecoinvent, DEFRA, EPA, IPCC, India GHG Programme).
+- **Tier 3: Average data.** Activity data from the buyer, sector-average emission factor.
+- **Tier 4: Spend-based.** Monetary spend converted through a sector spend factor (EXIOBASE, USEEIO, India-EXIO).
 
-Each tier is up to an order of magnitude more accurate than the next. Spend-based numbers are sufficient for screening; they fail almost all forms of credible disclosure on material categories.
+Each tier is generally more accurate than the next. Spend-based numbers are sufficient for screening; they fail almost all forms of credible disclosure on material categories.
 
 ## Why "audit-grade" is a real specification, not marketing
 
@@ -25,13 +27,13 @@ An assurance provider working to ISAE 3410 limited assurance asks three question
 2. Where is the source evidence?
 3. What was the calculation method, including methodology version and emission-factor database vintage?
 
-If any of these cannot be answered for a specific number, that number is excluded from assurance or qualified. Most early Scope 3 tools fail on question 2 — they store the number but not the trail to the input.
+If any of these cannot be answered for a specific number, that number is excluded from assurance or qualified. Most early Scope 3 tools fail on question 2: they store the number but not the trail to the input.
 
-A correct audit-grade record looks like this for a single Scope 3 Category 1 entry:
+A correct audit-grade record looks like this for a single Scope 3 Category 1 entry (illustrative values):
 
 | Field | Value |
 | --- | --- |
-| Category | 1 — Purchased goods and services |
+| Category | 1: Purchased goods and services |
 | Activity | 12,400 kg cotton yarn purchased |
 | Supplier | Supplier ID 9381 |
 | Source document | Invoice INV-2025-04-318 |
@@ -64,9 +66,9 @@ What weaker software does:
 
 ## The Pareto-shaped reality of Scope 3
 
-In almost every company we have seen, 5–15% of Scope 3 line items account for 70–85% of the total. The right operational pattern is:
+In most companies, a small share of Scope 3 line items accounts for most of the total. The right operational pattern is:
 
-- Use supplier-specific (Tier 1 or 2) data for the top 5–15% by emission contribution.
+- Use supplier-specific (Tier 1 or 2) data for the top line items by emission contribution.
 - Use sector-average (Tier 3) for the middle.
 - Use spend-based (Tier 4) for the long tail.
 - Disclose the mix explicitly.
@@ -83,7 +85,7 @@ When evaluating Scope 3 software in 2026:
 4. Ask for a sample export that an external verifier could work from in a week. Time the demo.
 5. Ask how method-switching is handled when a previously-spend-based supplier provides primary data mid-year.
 
-These five questions filter out 70% of vendors.
+These five questions filter out many vendors.
 
 ## Common mistakes buyers make
 
@@ -95,7 +97,7 @@ These five questions filter out 70% of vendors.
 
 ## How this connects to MRV
 
-The same line-item, evidence-linked, hash-anchored discipline that audit-grade Scope 3 requires is what an MRV layer provides natively. The companies in our cohort that scaled from a first BRSR report to a CDP A-list submission did so without changing their data layer — they only changed the disclosure wrapper. Companies that started with spend-based estimates re-did the work three times.
+The same line-item, evidence-linked, hash-anchored discipline that audit-grade Scope 3 requires is what an MRV layer provides natively. Companies that build on that layer can move from a first BRSR report to a CDP submission by changing only the disclosure wrapper; companies that start from spend-based estimates often end up redoing the work.
 
 ## FAQ
 
@@ -110,5 +112,5 @@ The same line-item, evidence-linked, hash-anchored discipline that audit-grade S
 ## Related guides
 
 - [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
 - [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)

@@ -2,15 +2,17 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants
 
-Most MSME net-zero strategies fail because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week.
+Published 2026-05-06.
+
+Many MSME net-zero strategies stall because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week.
 
 ## Month 1: Baseline
 
-Pull last 12 months of electricity bills, fuel invoices, freight bills and biggest material POs. Upload them at [Senseible](https://senseible.earth/) — the OCR extracts emissions automatically. Output: total tCO2e split by Scope 1, 2, 3.
+Pull last 12 months of electricity bills, fuel invoices, freight bills and biggest material POs. Upload them at [Senseible](https://senseible.earth/): the OCR extracts emissions automatically. Output: total tCO2e split by Scope 1, 2, 3.
 
 ## Month 2: Hot-spot map
 
-80% of emissions usually sit in 2–3 line items. Identify yours. For most MSMEs it is electricity + freight + one raw material.
+Most emissions usually sit in a few line items. Identify yours. For most MSMEs it is electricity + freight + one raw material.
 
 ## Month 3: Set the SBTi-aligned target
 
@@ -26,9 +28,9 @@ Pull last 12 months of electricity bills, fuel invoices, freight bills and bigge
 
 ## Months 4–6: Easy wins
 
-- LED retrofit (8–12% Scope 2 cut, 2 year payback)
-- Compressed air leak audit (3–7% Scope 1 cut, <1 year payback)
-- Procurement switch to nearest supplier (2–5% Scope 3 cut)
+- LED retrofit (cuts lighting electricity, usually with a short payback)
+- Compressed air leak audit (low cost, cuts compressor electricity)
+- Procurement switch to nearest supplier (cuts freight emissions)
 
 ## Months 7–9: Capex decisions
 
@@ -40,7 +42,7 @@ Send your top 5 suppliers a one-page PCF request. Use it to qualify them for ren
 
 ## Month 12: Disclose
 
-Publish on your website: baseline, target, year-1 progress, year-2 plan. This single act unlocks buyer queries, green loans and tender shortlists.
+Publish on your website: baseline, target, year-1 progress, year-2 plan. This helps with buyer queries, green loan applications and tender shortlists.
 
 The roadmap is not the hard part. Consistency is. Block a recurring 2-hour calendar entry for the first Friday of each month.
 

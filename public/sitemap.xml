@@ -7,6 +7,7 @@
   <url><loc>https://senseible.earth/industries</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://senseible.earth/legal</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://senseible.earth/calculators</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://senseible.earth/trust</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://senseible.earth/platform</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://senseible.earth/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/mission</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -16,7 +17,6 @@
   <url><loc>https://senseible.earth/climate-finance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://senseible.earth/partners</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/grants</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://senseible.earth/trust</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://senseible.earth/net-zero</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://senseible.earth/cbam-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://senseible.earth/marketplace</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -36,22 +36,21 @@
   <url><loc>https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/agriculture-scope-1-emissions-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/carbon-credit-types-voluntary-markets</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/emission-factors-selection-guidance</loc><lastmod>2025-01-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/how-to-get-green-loans-india-carbon-data</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/green-finance-textile-exporters-step-by-step</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/documents-needed-carbon-verification</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/brsr-reporting-small-manufacturer-preparation</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/carbon-credits-solar-installations-monetize</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/steel-aluminum-exporters-cbam-compliance-checklist</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/136-billion-india-eu-fta-msme-breakthrough</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -59,53 +58,29 @@
   <url><loc>https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/mother-of-all-deals-india-eu-msmes</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/great-diversification-india-eu-strategic-shield-tariff-wars</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/why-every-invoice-needs-trust-score</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/proof-graph-how-carbon-value-calculated</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/auto-validation-catches-gaps-before-submit</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/dynamic-benchmarking-400m-msmes</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/confidence-bands-beat-false-precision</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/see-carbon-revenue-before-verify</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/one-click-audit-trails-investors-need</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/dispute-simulation-auditor-challenge</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/manual-entry-carbon-data-error-source</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/greenwashing-flags-explainable-not-just-high-risk</loc><lastmod>2025-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/trust-score-replaces-pass-fail-63m-msmes</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/proof-graphs-black-box-ai-carbon-trust</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/pre-submission-validation-cuts-rejection-40-percent</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/sector-benchmarking-context-raw-data-decisions</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/confidence-bands-honest-mrv-approach</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/real-time-revenue-preview-mrv-to-money</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/one-click-audit-trails-save-200-hours</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/dispute-simulation-prepare-auditor-challenges</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/manual-data-entry-source-carbon-fraud-risk</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/explainable-greenwashing-flags-transparency</loc><lastmod>2025-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034</loc><lastmod>2026-04-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/philippine-manufacturing-sme-carbon-reporting-2026</loc><lastmod>2026-04-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters</loc><lastmod>2026-04-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/eu-carbon-border-tax-indonesian-chemical-exports</loc><lastmod>2026-04-07</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/green-loan-eligibility-pakistani-small-businesses</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing</loc><lastmod>2026-04-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/vietnamese-exporters-prepare-eu-cbam-90-days</loc><lastmod>2026-04-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/vietnamese-exporters-prepare-eu-cbam-90-days</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/thailand-food-processing-carbon-footprint-reduction</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/msme-carbon-credits-sri-lanka-invoice-to-revenue</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/malaysia-palm-oil-scope-1-2-3-emission-breakdown</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/how-to-file-eu-carbon-tax-report-msme-guide</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/export-carbon-reporting-eu-msme-emerging-markets</loc><lastmod>2026-03-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/how-to-file-eu-carbon-tax-report-msme-guide</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/carbon-audit-small-business-india-complete-guide</loc><lastmod>2026-03-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator</loc><lastmod>2026-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/brsr-reporting-msme-india-simplified-guide</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions</loc><lastmod>2026-03-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/bangladesh-manufacturing-green-finance-access-guide</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/logistics-scope-1-emissions-india-fleet-measurement</loc><lastmod>2026-03-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/philippines-food-processing-carbon-measurement-guide</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/cbam-cost-calculator-indian-steel-msme-2026</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/thailand-automotive-supply-chain-carbon-measurement</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/india-chemical-industry-cbam-exposure-analysis</loc><lastmod>2026-03-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/india-chemical-industry-cbam-exposure-analysis</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers</loc><lastmod>2026-03-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://senseible.earth/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/msme-internal-carbon-price-implementation-guide</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -152,63 +127,18 @@
   <url><loc>https://senseible.earth/climate-intelligence/algorithmic-bias-credit-decisions-borrower-rights-2026</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/cbam-steel-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-textile-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/scope3-steel-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/cbam-chemicals-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/scope3-textile-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-textile-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/scope3-chemicals-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/scope3-textile-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-textile-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-textile-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-steel-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-chemicals-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-philippines</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-philippines</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-philippines</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-logistics-philippines</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-textile-pakistan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-pakistan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-textile-pakistan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-pakistan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-singapore</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-chemicals-singapore</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-logistics-singapore</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-singapore</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/cbam-steel-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/scope3-textile-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-thailand</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-thailand</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-chemicals-thailand</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-thailand</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-malaysia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-malaysia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-malaysia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-chemicals-malaysia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-textile-sri-lanka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-manufacturing-sri-lanka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-sri-lanka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-sri-lanka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/cbam-steel-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-textile-indonesia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/solutions/cbam-chemicals-vietnam</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-textile-thailand</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-steel-malaysia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-manufacturing-philippines</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/cbam-steel-pakistan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-textile-sri-lanka</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/green-finance-manufacturing-bangladesh</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/carbon-audit-logistics-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://senseible.earth/solutions/scope3-food-processing-india</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://senseible.earth/vs/sensibull</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://senseible.earth/vs/microsoft-sustainability-cloud</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://senseible.earth/vs/salesforce-net-zero-cloud</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>

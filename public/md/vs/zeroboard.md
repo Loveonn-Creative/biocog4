@@ -25,4 +25,4 @@ Japanese carbon accounting platform for supply chain emissions with strong prese
 
 ## How Senseible differs
 
-Senseible is built India-first with GST integration, MSME pricing, and CBAM + BRSR compliance—not Japan-centric.
+Senseible is built India-first with GST integration, MSME pricing, and CBAM + BRSR compliance, not Japan-centric.

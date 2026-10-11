@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/green-hydrogen-msme-cost-economics-2026
 
+Published 2026-05-06.
+
 Green hydrogen will not save every MSME in 2026. It will save specific ones in specific sectors with specific electricity contracts. This article tells you which.
 
 ## Where hydrogen makes sense
@@ -21,14 +23,13 @@ Green hydrogen will not save every MSME in 2026. It will save specific ones in s
 
 ## The 2026 economics
 
-| Region | Renewable LCOE (USD/MWh) | Electrolyser capex (USD/kW) | Resulting H2 cost (USD/kg) |
-| --- | --- | --- | --- |
-| India (Rajasthan solar) | 28 | 750 | 2.40–3.10 |
-| Germany (offshore wind) | 65 | 800 | 4.20–5.10 |
-| Saudi Arabia (NEOM) | 20 | 700 | 1.80–2.20 |
-| China (Inner Mongolia) | 32 | 600 | 2.10–2.70 |
+The cost of green hydrogen depends mostly on three inputs:
 
-Grey hydrogen from natural gas costs USD 1.20–1.80/kg today. Green H2 needs to drop another 30–40% to reach parity without subsidies. India's SIGHT scheme provides USD 0.45/kg incentive — closing most of the gap for early movers.
+- Renewable electricity cost, which is lowest in sunny or windy regions
+- Electrolyser capex and how many hours a year the electrolyser runs
+- Financing cost and available subsidies
+
+Without subsidies, green hydrogen still generally costs more than grey hydrogen made from natural gas. India's SIGHT programme under the National Green Hydrogen Mission offers production incentives that narrow the gap for selected producers.
 
 ## What an MSME should do this year
 
@@ -40,7 +41,7 @@ Grey hydrogen from natural gas costs USD 1.20–1.80/kg today. Green H2 needs to
 
 ## A realistic 2026 expectation
 
-Green hydrogen will replace about 3% of grey H2 demand globally in 2026. By 2030 the IEA expects 15–20%. MSMEs that pre-contract supply at 2026 prices will lock in the cheapest tonne for the next decade.
+Low-emission hydrogen is still a small share of global hydrogen use. MSMEs considering early supply contracts should compare them carefully against electrification options and expected future prices.
 
 ## Related guides
 

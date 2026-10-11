@@ -1,14 +1,16 @@
-# Trading Air for Assets: Can Indias New Carbon Markets Shield Exporters from Europes €90 Carbon Price?
+# Trading Air for Assets: Can Indias New Carbon Markets Shield Exporters from Europes Carbon Price?
 
 Canonical: https://senseible.earth/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price
+
+Published 2025-01-15.
 
 India's CCTS creates a domestic carbon market. Can it protect exporters from EU's much higher carbon prices?
 
 **The Price Gap:**
 
-- EU ETS: €90+ per tonne (and rising)
-- India CCTS: Expected ₹500-1500 per tonne initially (~€5-15)
-- Gap: 6-18x difference
+- EU ETS: a market price set by the EU's cap-and-trade system
+- India CCTS: a price still to be established by trading, widely expected to start far lower
+- Gap: likely to stay large for years
 
 **How CBAM Works:**
 
@@ -29,10 +31,10 @@ If India CCTS prices stay low, Indian exporters:
 
 Even without price parity, CCTS creates:
 
-1. **MRV infrastructure** — needed for CBAM anyway
-2. **Data verification systems** — recognized globally
-3. **Trading mechanisms** — potential future linking
-4. **Policy signals** — driving corporate investment
+1. **MRV infrastructure**: needed for CBAM anyway
+2. **Data verification systems**: useful for international reporting
+3. **Trading mechanisms**: potential future linking
+4. **Policy signals**: driving corporate investment
 
 **Strategic Play for MSMEs:**
 
@@ -41,10 +43,10 @@ Even without price parity, CCTS creates:
 - Build verified data for both markets
 - Position for arbitrage opportunities
 
-[Start building your carbon market readiness](https://senseible.earth/) — the infrastructure you build now works across all markets. Explore [carbon credit opportunities](https://senseible.earth/carbon-credits).
+[Start building your carbon market readiness](https://senseible.earth/): the infrastructure you build now works across all markets. Explore [carbon credit opportunities](https://senseible.earth/carbon-credits).
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

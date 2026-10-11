@@ -1,40 +1,77 @@
-# What are the BRSR reporting requirements for Indian companies?
+# BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules
 
 Canonical: https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india
 
-The Business Responsibility and Sustainability Report (BRSR) is mandatory for the top 1000 listed companies in India by market capitalization, effective from FY 2022-23.
+Updated 2026-10-11.
 
-**Core Elements:**
+SEBI requires the top 1,000 listed companies by market capitalisation to file a Business Responsibility and Sustainability Report (BRSR) every year. Under SEBI's circular of 28 March 2025, BRSR Core assurance or assessment phases in to all top 1,000 by FY 2026-27, and value-chain disclosures for the top 250 are voluntary from FY 2025-26.
 
-1. **Section A:** General Disclosures (company profile, operations)
-2. **Section B:** Management and Process Disclosures (policies, governance)
-3. **Section C:** Principle-wise Performance Disclosures
+## At a glance
 
-**Environment-Related Requirements:**
+| Requirement | Who | From |
+| --- | --- | --- |
+| BRSR filing | Top 1,000 listed entities by market cap | Mandatory since FY 2022-23 |
+| BRSR Core assurance or assessment | Top 150 / 250 / 500 / 1,000 | FY 2023-24 / 2024-25 / 2025-26 / 2026-27 |
+| Value-chain ESG disclosures | Top 250 | Voluntary from FY 2025-26 |
+| Value-chain assurance or assessment | Top 250 | Voluntary from FY 2026-27 |
+| Value-chain scope | Partners with 2% or more of purchases or sales by value | Disclosure may cover partners making up 75% of value |
 
-- Energy consumption and intensity
-- Water usage and recycling
-- GHG emissions (Scope 1 and 2, Scope 3 for larger companies)
-- Waste generation and management
-- Air emissions beyond GHGs
+## What changed in March 2025
 
-**Scope 3 Expansion:**
+SEBI's circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42 of 28 March 2025 introduced a third-party "assessment" as an alternative to reasonable assurance for BRSR Core, made value-chain disclosures voluntary, and added a voluntary green credits disclosure.
 
-BRSR Core (for assurance-ready reporting) includes Scope 3 emissions across material categories.
+## What this means for MSME suppliers
 
-**Assurance:**
+You do not file BRSR yourself unless you are a top 1,000 listed company. But a listed customer that chooses to disclose value-chain data, or simply wants better data, may ask you for:
 
-From FY 2023-24, reasonable assurance is required for select ESG parameters. The scope of assured parameters is expanding progressively.
+- Energy use and Scope 1 and 2 emissions.
+- Water withdrawal and waste.
+- Basic workforce and safety data.
 
-**Best Practices:**
+## Worked example: a supplier's Scope 2 for a BRSR customer
 
-- Start data collection early
-- Implement automated tracking systems
-- Engage with value chain partners for Scope 3 data
-- Consider voluntary GHG verification to build capability
+| Step | Value |
+| --- | --- |
+| Grid electricity in FY 2024-25 | 600 MWh |
+| India grid factor (CEA v21.0, FY 2024-25) | 0.710 tCO2 per MWh |
+| Scope 2 | 426 tCO2 |
+| Revenue | ₹30 crore |
+| Intensity | 14.2 tCO2 per ₹ crore |
+
+BRSR Core includes emission intensity metrics, so customers often ask for revenue or output alongside emissions. Calculate Scope 1 and 2 from your bills on the [Senseible homepage](https://senseible.earth/).
+
+## Frequently asked questions
+
+### Do unlisted MSMEs have to file BRSR?
+
+No. BRSR applies to the top 1,000 listed entities. MSMEs are affected only when a listed customer asks for supplier data.
+
+### Is value-chain disclosure mandatory?
+
+No. Since the March 2025 circular it is voluntary for the top 250 from FY 2025-26, with voluntary assurance from FY 2026-27.
+
+### What counts as a value-chain partner?
+
+Upstream and downstream partners that each account for 2% or more of the listed company's purchases or sales by value, with disclosure allowed to stop once 75% of value is covered.
+
+### Which grid factor should Indian companies use?
+
+The Central Electricity Authority's CO2 Baseline Database. Version 21.0 gives a weighted average of 0.710 tCO2 per MWh for FY 2024-25; check whether a newer version has been published before filing.
+
+## Related
+
+- [Carbon audit for small businesses in India](https://senseible.earth/climate-intelligence/carbon-audit-small-business-india-complete-guide)
+- [How to calculate a carbon footprint from electricity bills](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [Scope 1 emissions for manufacturers in India](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
+
+## Sources
+
+- [SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025](https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html)
+- [SEBI Master Circular, July 2023](https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf)
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
 - [What is Carbon MRV and Why MSMEs Need It in 2026?](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)

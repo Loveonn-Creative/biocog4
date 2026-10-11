@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/scope3-textile-bangladesh
 
-Bangladesh is the 2nd largest garment exporter globally ($47B). EU buyers under CSRD now require Scope 3 data from Bangladeshi suppliers, but 95% of RMG factories lack any emission measurement.
+Bangladesh shipped US$19.71 billion of garments to the EU in FY 2024-25, about half of all RMG exports (EPB data reported by BSS). EU brands reporting under CSRD now ask suppliers for facility emissions to build their Scope 3.
 
 ## Steps
 
@@ -15,19 +15,19 @@ Bangladesh is the 2nd largest garment exporter globally ($47B). EU buyers under 
 
 | Item | Value |
 | --- | --- |
-| Grid factor (BD) | 0.623 kgCO₂/kWh |
-| Industry at risk | $47B RMG exports |
-| Factories affected | 4,000+ BGMEA members |
+| RMG exports to the EU, FY 2024-25 | US$19.71 billion (EPB, via BSS) |
+| What buyers ask first | Facility Scope 1 and 2, allocated per piece or kg |
+| Grid factor to use | Official Bangladesh factor (government BUR or DoE), with year stated |
+| CBAM | Does not apply to garments |
 
 ## Questions
 
-### Why do Bangladeshi garment factories need Scope 3 data?
+### How much data can an EU buyer demand from a small supplier?
 
-EU CSRD requires large importers like H&M, Zara, and Primark to report supply chain emissions. Without data from Bangladeshi suppliers, orders may shift to compliant alternatives.
+Under Directive (EU) 2026/470, a company reporting under CSRD may not require suppliers with 1,000 or fewer employees to provide more than the voluntary VSME-based standard. Suppliers can still share more if they choose.
 
 ## Related
 
 - [Industry guide](https://senseible.earth/industries/textile)
-- [Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
 - [Scope 3 Emissions Calculator for Textile Exporters in India](https://senseible.earth/solutions/scope3-textile-india)
-- [Green Finance Access for Garment Exporters in Bangladesh](https://senseible.earth/solutions/green-finance-textile-bangladesh)

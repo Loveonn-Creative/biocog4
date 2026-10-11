@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing
 
-Singapore Carbon Tax Act imposes SGD 25 per tonne on facilities emitting more than 25,000 tCO2e annually, rising to SGD 45 by 2026 and potentially SGD 80 by 2030. Even SMEs below the threshold benefit from voluntary carbon measurement. SGX-listed companies must follow SGX ESG reporting requirements. Singapore grid factor is 0.408 kgCO2 per kWh, the lowest in Southeast Asia. Carbon audit checklist: (1) SP Group electricity bills for 12 months, (2) Diesel and LPG purchase records, (3) Vehicle fleet fuel consumption, (4) Refrigerant top-up records, (5) Water consumption from PUB bills. NEA accepts GHG Protocol-aligned audits. Enterprise Singapore provides grants covering up to 70% of sustainability consultancy costs under the Enterprise Development Grant.
+Published 2026-04-05.
+
+Singapore Carbon Tax Act imposes SGD 25 per tonne on facilities emitting more than 25,000 tCO2e annually, rising to SGD 45 by 2026 and potentially SGD 80 by 2030. Even SMEs below the threshold benefit from voluntary carbon measurement. SGX-listed companies must follow SGX ESG reporting requirements. Use the latest grid emission factor published by Singapore's Energy Market Authority (EMA). Carbon audit checklist: (1) SP Group electricity bills for 12 months, (2) Diesel and LPG purchase records, (3) Vehicle fleet fuel consumption, (4) Refrigerant top-up records, (5) Water consumption from PUB bills. NEA administers the carbon tax and its measurement and reporting rules for taxable facilities. Enterprise Singapore's Enterprise Development Grant can co-fund eligible sustainability projects.
 
 ## Related guides
 

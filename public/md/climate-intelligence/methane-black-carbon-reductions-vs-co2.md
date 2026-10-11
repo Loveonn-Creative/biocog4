@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/methane-black-carbon-reductions-vs-co2
 
+Published 2025-01-01.
+
 Yes, they count differently in impact and in most accounting frameworks. Methane is a recognized greenhouse gas under the GHG Protocol and is converted to CO2 equivalent using its Global Warming Potential, typically around 28-30 over 100 years.
 
 One tonne of methane reduced equals roughly 28-30 tonnes of CO2 equivalent in your inventory, making methane reductions highly valuable.
@@ -16,4 +18,4 @@ If your operations produce significant black carbon, such as diesel engines, bri
 
 - [What is GHG-6 and how do we calculate warming impact beyond CO2?](https://senseible.earth/climate-intelligence/ghg-gases-warming-impact-beyond-co2)
 - [Biogenic Carbon Accounting for Food and Textile MSMEs: The Honest Guide](https://senseible.earth/climate-intelligence/biogenic-carbon-accounting-food-textile-msme)
-- [Cold Chain MSMEs: Refrigerant Leakage Is Often 60% of Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)
+- [Cold Chain MSMEs: Refrigerant Leakage Can Dominate Your Carbon Footprint](https://senseible.earth/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026)

@@ -2,9 +2,11 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-voice-search-carbon-faqs-2026
 
-Voice search for compliance questions has tripled among Indian MSME owners since 2024. The questions reveal what the regulatory system has failed to make clear.
+Published 2026-05-06.
 
-## The top 10 voice queries
+More Indian MSME owners are asking voice assistants compliance questions. The questions reveal what the regulatory system has failed to make clear.
+
+## Ten common voice queries
 
 1. "Is CBAM applicable to my company?"
 2. "How do I calculate Scope 2 emissions in India?"
@@ -21,21 +23,21 @@ Voice search for compliance questions has tripled among Indian MSME owners since
 
 ### "Is CBAM applicable to my company?"
 
-CBAM applies if you export to the European Union and your product is on the CBAM goods list — currently cement, iron and steel, aluminium, fertilisers, hydrogen, and electricity. From 2030 organic chemicals, polymers and downstream products will likely be added.
+CBAM applies to goods on the CBAM list imported into the European Union: currently cement, iron and steel, aluminium, fertilisers, hydrogen, and electricity. The EU importer pays, but will ask you for emissions data. The EU is considering extending CBAM to more downstream products and other sectors.
 
 ### "How much does carbon accounting cost for a small factory?"
 
-For an MSME with under 100 tCO2e per year, expect to spend USD 500–2,000 per year on software plus 80–120 hours of internal time in year 1, falling to 40 hours from year 2 onwards. Verification (when needed) adds USD 4,000–12,000.
+Costs depend on the number of sites and how organised your records are. Expect a software subscription plus internal time that is highest in year 1 and falls once data collection is routine. Verification, when needed, adds a separate fee.
 
 ### "Can I reduce CBAM by buying RECs?"
 
-RECs reduce your reported Scope 2 under the market-based method. CBAM accepts the market-based factor only with a direct PPA contract attached to the verification file. Standalone REC purchase is not enough — the CBAM verifier wants bilateral electricity supply contracts.
+RECs reduce your reported Scope 2 under the market-based method, but not your CBAM embedded emissions. Under CBAM, indirect (electricity) emissions count only for cement and fertilisers, and an actual electricity factor can replace the default only with evidence such as a direct technical connection or a qualifying power purchase agreement. Standalone REC purchases are not enough.
 
 ### "How long does carbon verification take?"
 
-First-time verification under ISO 14064-3 reasonable assurance: 6–10 weeks. Limited assurance or recurring verification: 3–5 weeks. Plan early in your fiscal year.
+First-time verification under ISO 14064-3 takes longer than recurring verification, and reasonable assurance takes longer than limited assurance. Plan early in your fiscal year.
 
-Voice answers must be 30–60 seconds when spoken. Most regulator websites take 4 minutes to read. That gap is why MSMEs ask Alexa, Siri and Gemini.
+Voice answers need to be short when spoken, while most regulator pages take minutes to read. That gap is why MSMEs ask Alexa, Siri and Gemini.
 
 ## What MSMEs should bookmark
 
@@ -47,5 +49,5 @@ Voice answers must be 30–60 seconds when spoken. Most regulator websites take 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

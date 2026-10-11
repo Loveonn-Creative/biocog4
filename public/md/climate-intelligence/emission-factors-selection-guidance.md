@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/emission-factors-selection-guidance
 
+Published 2025-01-01.
+
 Emission factor selection directly impacts the accuracy and credibility of your GHG inventory. Follow this hierarchy for choosing factors.
 
 **Hierarchy of Data Quality:**

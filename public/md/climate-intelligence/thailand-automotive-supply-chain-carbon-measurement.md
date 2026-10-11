@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/thailand-automotive-supply-chain-carbon-measurement
 
-Thailand is the largest automotive producer in Southeast Asia. Japanese and European OEMs like Toyota, Honda, BMW require Scope 3 emission data from Thai tier-1 and tier-2 suppliers. Thailand grid factor is 0.493 kgCO2 per kWh, giving competitive advantage over Indonesia (0.761) and Vietnam (0.625). Emission sources: Scope 1 (paint shop, welding, heat treatment) 20-30%, Scope 2 (PEA/MEA electricity) 40-50%, Scope 3 (steel, aluminium, plastics) 25-35%. TGO Carbon Footprint for Product (CFP) certification is increasingly requested by OEMs. SEC-ESG requirements cascade to SME suppliers. Eastern Seaboard industrial estates house thousands of auto parts SMEs. BOI provides tax incentives for green manufacturing investments with carbon measurement as qualifying criterion.
+Published 2026-03-06.
+
+Thailand is the largest automotive producer in Southeast Asia. Japanese and European OEMs increasingly ask Thai tier-1 and tier-2 suppliers for emission data for their Scope 3 inventories. Use the latest official Thailand grid emission factor for Scope 2. Emission sources: Scope 1 (paint shop, welding, heat treatment), Scope 2 (PEA/MEA electricity), Scope 3 (steel, aluminium, plastics). TGO Carbon Footprint for Product (CFP) certification is increasingly requested by OEMs. SEC-ESG requirements cascade to SME suppliers. Eastern Seaboard industrial estates house many auto parts SMEs. BOI provides tax incentives for eligible green manufacturing investments.
 
 ## Related guides
 

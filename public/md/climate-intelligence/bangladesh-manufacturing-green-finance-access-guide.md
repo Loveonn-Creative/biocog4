@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/bangladesh-manufacturing-green-finance-access-guide
 
-Bangladesh Bank Green Refinance Scheme offers 5% interest rates versus 9-12% market rates for manufacturers with verified environmental data. IFC and ADB green credit lines through BRAC Bank, City Bank, and Eastern Bank provide additional low-cost capital. Eligibility criteria: documented baseline carbon footprint, credible reduction plan, quarterly monitoring, alignment with Bangladesh Bank green taxonomy. Manufacturing sectors eligible: garments, leather, food processing, pharmaceuticals, ceramics. Bangladesh grid factor is 0.623 kgCO2 per kWh. Application process with Senseible: (1) Upload 12 months of utility bills, (2) Calculate baseline using Bangladesh-specific factors, (3) Identify reduction opportunities, (4) Generate bank-ready green finance application with TIN verification. Bangladesh Climate Change Trust Fund and Green Climate Fund allocate additional resources for climate-aligned SME lending.
+Published 2026-03-16.
+
+Bangladesh Bank green refinance schemes offer concessional rates for eligible green projects. IFC and ADB green credit lines through local banks provide additional low-cost capital. Typical eligibility criteria: documented baseline carbon footprint, credible reduction plan, regular monitoring, alignment with Bangladesh Bank green taxonomy. Manufacturing sectors eligible: garments, leather, food processing, pharmaceuticals, ceramics. Use the latest official Bangladesh grid emission factor. Application process with Senseible: (1) Upload 12 months of utility bills, (2) Calculate baseline using Bangladesh-specific factors, (3) Identify reduction opportunities, (4) Generate bank-ready green finance application with TIN verification. The Bangladesh Climate Change Trust Fund and the Green Climate Fund also fund climate programmes in the country.
 
 ## Related guides
 

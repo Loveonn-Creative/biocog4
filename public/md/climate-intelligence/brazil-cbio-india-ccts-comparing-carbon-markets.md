@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/brazil-cbio-india-ccts-comparing-carbon-markets
 
+Published 2025-01-15.
+
 Brazil's CBIO and India's CCTS represent two different approaches to carbon markets in emerging economies. Understanding both helps MSMEs position for global trade.
 
 **India's CCTS (Carbon Credit Trading Scheme):**
@@ -9,7 +11,7 @@ Brazil's CBIO and India's CCTS represent two different approaches to carbon mark
 - Launched: 2023, transitional phase
 - Regulator: Bureau of Energy Efficiency (BEE)
 - Scope: Energy-intensive industries first, expanding
-- Mechanism: Cap-and-trade style with tradeable credits
+- Mechanism: Baseline-and-credit (emission-intensity targets) with tradeable credits
 - MSME Impact: Reporting requirements coming; credits create new revenue
 
 **Brazil's CBIO (Decarbonization Credits):**
@@ -26,16 +28,16 @@ Brazil's CBIO and India's CCTS represent two different approaches to carbon mark
 | --- | --- | --- |
 | Focus | Broad economy | Biofuels sector |
 | Trading | Carbon credits | Decarbonization certificates |
-| Mandatory buyers | TBD | Fuel distributors |
+| Mandatory buyers | Obligated entities that miss their intensity targets | Fuel distributors |
 
 **Global Alignment:**
 
 Both schemes position their countries for [CBAM compliance](https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters) and international carbon trading. MSMEs that build MRV capability now will benefit as these markets mature.
 
-[Start building your carbon data foundation](https://senseible.earth/) — it works across all carbon markets.
+[Start building your carbon data foundation](https://senseible.earth/): it works across all carbon markets.
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

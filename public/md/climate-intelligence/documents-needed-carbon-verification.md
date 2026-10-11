@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/documents-needed-carbon-verification
 
+Published 2025-01-15.
+
 Carbon verification requires evidence. Here's exactly what documents you need to calculate and verify your emissions.
 
 **Scope 1 Documents (Direct Emissions):**
@@ -41,7 +43,7 @@ You don't need everything. Start with:
 1. One electricity bill (Scope 2 baseline)
 2. One fuel invoice (Scope 1 baseline)
 
-[Upload your first document](https://senseible.earth/) and see your carbon footprint in under a minute. Expand from there.
+[Upload your first document](https://senseible.earth/) and see your carbon footprint. Expand from there.
 
 For [BRSR reporting](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india), you'll need 12 months of data. For [carbon credits](https://senseible.earth/carbon-credits), continuous tracking helps.
 
@@ -49,4 +51,4 @@ For [BRSR reporting](https://senseible.earth/climate-intelligence/brsr-reporting
 
 - [How can we trace every emission number back to raw sensor or invoice data?](https://senseible.earth/climate-intelligence/how-to-trace-emission-data-to-source)
 - [What is Senseible and How is It Different from Sensibull?](https://senseible.earth/climate-intelligence/what-is-senseible-different-from-sensibull)
-- [Why Every Invoice Needs a Trust Score — Not Just Pass/Fail](https://senseible.earth/climate-intelligence/why-every-invoice-needs-trust-score)
+- [Carbon Audit Checklist for Singapore Manufacturing Companies](https://senseible.earth/climate-intelligence/carbon-audit-checklist-singapore-manufacturing)

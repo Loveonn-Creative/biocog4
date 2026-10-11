@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/carbon-audit-small-business-india-complete-guide
 
-BRSR requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate. A carbon audit typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity at 0.708 kgCO2 per kWh India grid factor), and Scope 3 (raw materials, freight, employee commute). Cost comparison: Traditional consultant audit: INR 3-8 lakhs, 4-8 weeks. Senseible automated audit: INR 0 (free tier) to INR 15,000 (premium), processed per document on upload. Documents needed: 12 months of electricity bills, diesel and petrol receipts, LPG invoices, vehicle log books, raw material purchase orders. GSTIN integration enables automatic vendor classification and HSN code-based emission factor matching. Benefits: Access to SIDBI green loans at 2-3% lower rates, MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility.
+Published 2026-03-26.
+
+BRSR requirements are expanding beyond top-1000 listed companies. Supply chain pressure means Indian MSMEs must prepare for carbon audits even before regulatory mandate. A carbon audit typically covers: Scope 1 (diesel generators, company vehicles, LPG usage), Scope 2 (electricity at 0.710 kgCO2 per kWh, the India grid factor in CEA CO2 Baseline Database v21.0 for FY 2024-25), and Scope 3 (raw materials, freight, employee commute). Cost comparison: a traditional consultant audit can take weeks and a significant fee. Senseible has a free tier and paid plans (see [pricing](https://senseible.earth/pricing)), and processes each document on upload. Documents needed: 12 months of electricity bills, diesel and petrol receipts, LPG invoices, vehicle log books, raw material purchase orders. GSTIN integration enables automatic vendor classification and HSN code-based emission factor matching. Benefits: Stronger applications for green loans (including SIDBI schemes), MoEFCC compliance readiness, buyer confidence for export contracts, carbon credit eligibility.
 
 ## Related guides
 

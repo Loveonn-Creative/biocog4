@@ -1,38 +1,102 @@
-# How should Indian exporters prepare for EU CBAM compliance?
+# CBAM for Indian Exporters: What Changed on 1 January 2026
 
 Canonical: https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters
 
-The EU Carbon Border Adjustment Mechanism (CBAM) requires importers to report and eventually pay for the embedded carbon in certain goods imported into the EU. Indian exporters in covered sectors must prepare now.
+Updated 2026-10-11.
 
-**Covered Sectors (Phase 1):**
+From 1 January 2026, EU buyers of Indian steel, aluminium, cement, fertilisers and hydrogen owe CBAM certificates on the embedded emissions. The buyer pays, but needs your plant's verified emissions per tonne; without them it must use EU default values with a 10% mark-up in 2026, rising to 30% from 2028.
 
-- Iron and steel
-- Aluminum
-- Cement
-- Fertilizers
-- Electricity
-- Hydrogen
+## At a glance
 
-**Compliance Timeline:**
+| Item | What it means for an Indian exporter |
+| --- | --- |
+| Products affected | Iron and steel, aluminium, cement, fertilisers, hydrogen (and electricity) |
+| Who pays | Your EU customer, as an authorised CBAM declarant |
+| What you supply | Installation-level emissions per tonne, ideally verified |
+| Certificate price | €82.32 per tCO2 in Q3 2026 (European Commission) |
+| First declaration | 30 September 2027, for 2026 imports |
+| India grid factor | 0.710 tCO2 per MWh (CEA CO2 Baseline Database v21.0, FY 2024-25) |
 
-- 2023-2025: Transitional reporting period
-- 2026: Financial obligations begin
-- 2034: Full phase-in
+## Why Indian exporters are exposed
 
-**Action Steps for Exporters:**
+India was among the largest suppliers of CBAM-covered iron and steel to the EU in recent years. Much Indian steel is made by the coal-based blast furnace or coal-DRI routes, which sit well above EU benchmarks. Under the definitive rules, every tonne of embedded emissions above the free-allocation adjustment is charged at the full certificate price from 2026. That makes your emissions intensity part of your price.
 
-1. Calculate product-level embedded emissions using actual production data
-2. Implement measurement and verification systems
-3. Prepare documentation for EU importers
-4. Consider decarbonization investments to reduce embedded emissions
-5. Engage with EU importers on data requirements
+## What your EU buyer will ask for
 
-**Competitive Considerations:**
+- Production route and installation details.
+- Direct emissions per tonne of each product (and, for cement and fertilisers, indirect emissions from electricity).
+- Emissions from relevant precursors, such as pig iron or ammonia, if you buy them in.
+- Any carbon price effectively paid, with evidence.
+- A verification statement from an accredited verifier, if you report actual data.
 
-Exporters with lower carbon intensity will have competitive advantages. Investing in renewable energy, energy efficiency, and cleaner production now positions you favorably for the new trade environment.
+## Worked example: electricity in a fertiliser plant
+
+Fertiliser imports count indirect emissions. A unit drawing 12,000 MWh a year from the grid:
+
+| Step | Value |
+| --- | --- |
+| Grid electricity | 12,000 MWh |
+| India grid factor (CEA v21.0) | 0.710 tCO2 per MWh |
+| Indirect emissions | 8,520 tCO2 |
+| Product output | 60,000 tonnes |
+| Indirect intensity | 0.142 tCO2 per tonne |
+
+The same plant on a lower-carbon supply contract can show a lower figure only if it meets CBAM's rules for using actual electricity emissions. Try your own inputs in the [CBAM cost calculator](https://senseible.earth/cbam-calculator).
+
+## India's carbon market and CBAM
+
+India's Carbon Credit Trading Scheme (CCTS) now sets greenhouse-gas intensity targets for 490 obligated entities, including cement, aluminium, chlor-alkali, pulp and paper, refineries, petrochemicals, textiles and secondary aluminium. CBAM only allows a deduction for a carbon price effectively paid and documented. Holding CCTS targets does not by itself reduce CBAM.
+
+## A 6-step plan
+
+1. List every product you ship to the EU with its CN code.
+2. Collect 12 months of fuel, power and raw-material records per plant.
+3. Calculate emissions per tonne for each product, following the EU CBAM methodology.
+4. Compare with EU default values; where yours are lower, the gap is money saved for your buyer.
+5. Book an accredited verifier for actual data before your buyer's 2027 declaration.
+6. Share data per reporting period, in the format your buyer's CBAM Registry entry needs.
+
+## Frequently asked questions
+
+### Do Indian MSMEs have to register for CBAM?
+
+No. Registration and declarations are the EU importer's job. Indian producers supply data.
+
+### Is BRSR data enough for CBAM?
+
+No. BRSR is company-level. CBAM needs installation-level emissions per tonne of each product, following the EU methodology.
+
+### My buyer imports less than 50 tonnes a year. Does CBAM apply?
+
+An importer bringing in 50 tonnes or less of covered goods in a year is exempt, but the threshold is per importer across all its CBAM imports, not per supplier.
+
+### Will Indian textiles or engineering goods be covered?
+
+Textiles are not covered. Some steel articles are (for example CN 7318 screws and bolts, 7326 other articles). A December 2025 Commission proposal would extend CBAM to more downstream steel and aluminium products; it is not yet law.
+
+### Can a CBAM cost be passed back to me?
+
+Commercially, yes: many buyers compare suppliers on landed cost including CBAM. Verified, lower intensity data is the most direct way to stay competitive.
+
+## Related
+
+- [EU CBAM explained for emerging-market exporters](https://senseible.earth/climate-intelligence/eu-cbam-explained-emerging-market-exporters)
+- [CBAM cost for Indian steel exporters, 2026 to 2034](https://senseible.earth/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034)
+- [CBAM exposure for the Indian chemical and fertiliser industry](https://senseible.earth/climate-intelligence/india-chemical-industry-cbam-exposure-analysis)
+- [CBAM for steel manufacturers in India](https://senseible.earth/solutions/cbam-steel-india)
+
+## Sources
+
+- [Regulation (EU) 2023/956 (CBAM), consolidated text](https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20)
+- [Regulation (EU) 2025/2083 (CBAM simplification)](https://eur-lex.europa.eu/eli/reg/2025/2083/oj)
+- [Implementing Regulation (EU) 2025/2621 (default values)](https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng)
+- [European Commission: CBAM definitive regime](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en)
+- [European Commission: price of CBAM certificates](https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en)
+- [Central Electricity Authority: CO2 Baseline Database v21.0](https://cea.nic.in/cdm-co2-baseline-database/?lang=en)
+- [PIB: CCTS obligated entities](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239)
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
 - [What is Carbon MRV and Why MSMEs Need It in 2026?](https://senseible.earth/climate-intelligence/what-is-carbon-mrv-and-why-msmes-need-it-2026)

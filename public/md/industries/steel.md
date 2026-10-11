@@ -1,4 +1,4 @@
-# Steel Production: carbon accounting
+# Steel Production: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/steel
 

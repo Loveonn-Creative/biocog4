@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/carbon-audit-manufacturing-india
 
-Over 63 million Indian MSMEs lack any carbon measurement. Without a baseline audit, they cannot access green loans, carbon credits, or meet buyer ESG requirements.
+A carbon audit sets your baseline: Scope 1 from fuel, Scope 2 from electricity, and the main Scope 3 sources from purchases. It is the starting point for buyer questionnaires, BRSR customers and green loan applications.
 
 ## Steps
 
@@ -15,23 +15,17 @@ Over 63 million Indian MSMEs lack any carbon measurement. Without a baseline aud
 
 | Item | Value |
 | --- | --- |
-| Audit completion time | Same session as upload |
-| Cost (Senseible) | Free for first 5 invoices |
-| Manual audit cost | ₹50,000-2,00,000 |
+| Documents needed | 12 months of electricity, fuel and freight bills; key purchase invoices |
+| India grid factor | 0.710 tCO2/MWh (CEA v21.0, FY 2024-25) |
+| Method | GHG Protocol Corporate Standard |
 
 ## Questions
 
-### How much does a carbon audit cost for Indian MSMEs?
-
-Traditional consultants charge ₹50,000 to ₹2,00,000. Senseible provides automated carbon audits starting free, with premium tiers from ₹999/month.
-
 ### What documents do I need for a carbon audit?
 
-Electricity bills, fuel purchase invoices, freight receipts, and raw material purchase orders. Senseible extracts data automatically from uploaded documents.
+Electricity bills, fuel purchase invoices, freight receipts and raw material purchase orders for the reporting period, usually 12 months.
 
 ## Related
 
 - [Industry guide](https://senseible.earth/industries/automobile)
 - [What Documents Do I Need for Carbon Verification?](https://senseible.earth/climate-intelligence/documents-needed-carbon-verification)
-- [Carbon Audit for Manufacturing SMEs in Philippines](https://senseible.earth/solutions/carbon-audit-manufacturing-philippines)
-- [Carbon Audit for Manufacturing SMEs in Indonesia](https://senseible.earth/solutions/carbon-audit-manufacturing-indonesia)

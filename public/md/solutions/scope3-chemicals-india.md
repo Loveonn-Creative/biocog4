@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/scope3-chemicals-india
 
-Indian chemical manufacturers export $18B annually but cannot quantify supply chain emissions. Scope 3 Category 1 (purchased chemicals) dominates at 50-60% of total.
+Chemical buyers and lenders ask for value-chain emissions, especially purchased feedstocks and freight. Start from purchase and logistics invoices, and calculate your own Scope 1 and 2 from fuel and power records.
 
 ## Steps
 
@@ -15,15 +15,15 @@ Indian chemical manufacturers export $18B annually but cannot quantify supply ch
 
 | Item | Value |
 | --- | --- |
-| Scope 3 share | 50-60% |
-| Grid factor | 0.708 kgCO₂/kWh |
-| Key categories | Cat 1, Cat 4, Cat 12 |
+| Main Scope 3 categories | Cat 1 (feedstocks), Cat 4 (inbound freight), Cat 12 (end of life, where relevant) |
+| India grid factor | 0.710 tCO2/MWh (CEA v21.0, FY 2024-25) |
+| Method guidance | GHG Protocol Scope 3 Standard |
 
 ## Questions
 
-### How do chemical companies calculate Scope 3 in India?
+### Are my chemicals covered by CBAM?
 
-Upload raw material and logistics invoices. Senseible applies IPCC-aligned emission factors specific to Indian chemical manufacturing.
+Only ammonia, nitric acid, nitrogen and mixed fertilisers, potassium nitrates and hydrogen are CBAM goods. Other chemicals are not, but buyers may still ask for product footprints.
 
 ## Related
 

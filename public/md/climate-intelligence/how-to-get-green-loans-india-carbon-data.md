@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/how-to-get-green-loans-india-carbon-data
 
+Published 2025-01-15.
+
 Banks in India are increasingly offering green loans with lower interest rates for businesses that can demonstrate sustainability. The key? Verified carbon data.
 
 **What Banks Want to See:**
@@ -13,11 +15,11 @@ Banks in India are increasingly offering green loans with lower interest rates f
 
 **Interest Rate Benefits:**
 
-Green loans from SBI, HDFC, and other major banks offer 0.5% to 2% lower interest rates for verified sustainable businesses. For a ₹50 lakh working capital loan, this saves ₹25,000 to ₹1,00,000 annually.
+Some banks offer interest concessions on green loans for qualifying borrowers or projects. The size of the concession varies by lender and product, but on a working capital loan even a small reduction in rate adds up each year.
 
 **RBI Guidelines Driving Change:**
 
-The Reserve Bank of India's climate risk guidelines push banks to favor borrowers with ESG data. By 2027, sustainability-linked lending will be mainstream.
+The Reserve Bank of India's work on climate-related financial risk is pushing banks to understand the climate exposure of their loan books, which makes borrower emission data more useful. Sustainability-linked lending is expected to keep growing.
 
 **How to Qualify:**
 
@@ -26,10 +28,10 @@ The Reserve Bank of India's climate risk guidelines push banks to favor borrower
 3. Download your verification report
 4. Present to your bank with your loan application
 
-Banks recognize Senseible verification because it uses BEE and CCTS-aligned emission factors. Start building your green loan eligibility today. Explore [climate finance options](https://senseible.earth/climate-finance).
+Senseible reports use published emission factors and trace each number to its source document, which makes them easier for a lender to review. Start building your green loan eligibility today. Explore [climate finance options](https://senseible.earth/climate-finance).
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

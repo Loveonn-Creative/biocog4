@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/scope3-textile-vietnam
 
-Vietnam is the 3rd largest garment exporter globally ($39B). EU and US buyers require supply chain carbon data. Scope 3 from cotton imports and logistics dominates.
+Vietnam's textile and garment exports reached an estimated US$46 billion in 2025 (VITAS). EU buyers reporting under CSRD need each supplier's facility emissions, which a factory can calculate from 12 months of electricity and fuel bills.
 
 ## Steps
 
@@ -15,15 +15,15 @@ Vietnam is the 3rd largest garment exporter globally ($39B). EU and US buyers re
 
 | Item | Value |
 | --- | --- |
-| Garment exports | $39B annually |
-| Grid factor | 0.625 kgCO₂/kWh |
-| Scope 3 share | 65-75% |
+| Textile and garment exports, 2025 | About US$46 billion (VITAS estimate) |
+| Vietnam grid factor, 2024 | About 0.68 tCO2e/MWh (study with the Ministry of Agriculture and Environment) |
+| CBAM | Does not apply to textiles |
 
 ## Questions
 
-### How do Vietnamese garment factories calculate Scope 3?
+### How much data can an EU buyer demand from a small supplier?
 
-Upload supplier invoices for cotton, fabric, dyes, and freight. Senseible applies Vietnam-specific emission factors and IEA grid data for accurate calculations.
+Under Directive (EU) 2026/470, a company reporting under CSRD may not require suppliers with 1,000 or fewer employees to provide more than the voluntary VSME-based standard. Suppliers can still share more if they choose.
 
 ## Related
 

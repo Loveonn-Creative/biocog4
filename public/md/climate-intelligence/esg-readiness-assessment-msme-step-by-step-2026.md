@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026
 
-An ESG readiness assessment is the diagnostic step before any reporting, certification, or capital-raise involving sustainability criteria. For MSMEs in India and Asia, doing this well in 2026 is the difference between being shortlisted by EU buyers, qualifying for green credit lines, and surviving CBAM-equivalent scrutiny — or being silently dropped from supplier panels.
+Published 2026-05-23.
+
+An ESG readiness assessment is the diagnostic step before any reporting, certification, or capital-raise involving sustainability criteria. For MSMEs in India and Asia, doing this well in 2026 is the difference between being shortlisted by EU buyers, qualifying for green credit lines, and surviving CBAM-equivalent scrutiny, or being silently dropped from supplier panels.
 
 This article gives the framework we use with MSMEs preparing for their first credible disclosure. It is opinionated. Generic ESG checklists fail in this segment because they assume corporate scale and corporate budget.
 
@@ -16,17 +18,17 @@ Three honest tests:
 
 If the answer to any is no, the company is not ESG-ready. It is ESG-aspirational. The distinction matters because lenders and buyers increasingly verify.
 
-## Step 1 — Materiality screening (1 week)
+## Step 1: Materiality screening (1 week)
 
 Skip generic ESG topic lists. Run a sector-specific materiality screen using:
 
 - The SASB Materiality Map for your sector.
-- The CSRD ESRS sector-specific standards (even if you are not directly in scope — your EU buyer is).
+- The CSRD ESRS topical standards (even if you are not directly in scope, your EU buyer may be).
 - Two or three buyer questionnaires you have actually received.
 
 Output: a one-page list of 8–15 material topics. For an Indian apparel exporter, the list usually includes Scope 1 and 2 emissions, Scope 3 (purchased goods, transport), water withdrawal, wastewater quality, occupational health and safety, working hours, freedom-of-association, and supplier due diligence.
 
-## Step 2 — Data inventory (1–2 weeks)
+## Step 2: Data inventory (1–2 weeks)
 
 For each material topic, list:
 
@@ -35,9 +37,9 @@ For each material topic, list:
 - Update frequency.
 - Whether it is auditable as is.
 
-Most MSMEs discover at this stage that 50–70% of required data already exists in invoices, electricity bills, payroll, ERP, and quality systems. The problem is structure, not absence.
+Most MSMEs discover at this stage that much of the required data already exists in invoices, electricity bills, payroll, ERP, and quality systems. The problem is structure, not absence.
 
-## Step 3 — Gap analysis against the target framework (1 week)
+## Step 3: Gap analysis against the target framework (1 week)
 
 Pick the framework you will actually be measured against:
 
@@ -49,18 +51,18 @@ Pick the framework you will actually be measured against:
 
 Do not chase all of them at once. Pick the binding one and design for it.
 
-## Step 4 — Build the data spine (4–8 weeks)
+## Step 4: Build the data spine (4–8 weeks)
 
-This is where most MSMEs lose three to six months on consulting engagements that produce slide decks but no data. The pragmatic alternative:
+This is where many MSMEs lose months on consulting engagements that produce slide decks but no data. The pragmatic alternative:
 
 - Centralise invoice and bill capture in one inbox or system.
 - Run OCR + emission-factor lookup against every record so the trail is calculation-grade.
 - Lock the methodology version (GHG Protocol revision, emission-factor database year, GWP set).
 - Store calculation outputs with a hash linking each number to its source.
 
-This is what an MRV layer does. The reason it matters now is that ESG readiness without an MRV layer means re-doing the work every year, every framework, every buyer questionnaire — usually with different numbers each time. With an MRV layer the numbers reconcile by construction.
+This is what an MRV layer does. The reason it matters now is that ESG readiness without an MRV layer means re-doing the work every year, every framework, every buyer questionnaire, usually with different numbers each time. With an MRV layer the numbers reconcile by construction.
 
-## Step 5 — Social and governance evidence pack (2–3 weeks)
+## Step 5: Social and governance evidence pack (2–3 weeks)
 
 For each material S/G topic, assemble:
 
@@ -70,11 +72,11 @@ For each material S/G topic, assemble:
 
 Buyers and rating agencies treat the presence of a baseline KPI as a stronger readiness signal than a policy without one.
 
-## Step 6 — Internal audit and remediation (2 weeks)
+## Step 6: Internal audit and remediation (2 weeks)
 
 Walk a colleague who did not build the data through the trail. Anything they cannot reconstruct without you is a gap. Fix it before the external assessor arrives.
 
-## Step 7 — External validation
+## Step 7: External validation
 
 Choose the lightest credible external check that satisfies the binding stakeholder. Options ranked by cost:
 
@@ -85,14 +87,14 @@ Choose the lightest credible external check that satisfies the binding stakehold
 
 ## Realistic cost and time
 
-A 50–250 employee MSME, doing this seriously, lands at:
+A 50–250 employee MSME, doing this seriously, should budget for:
 
-- 3–4 months elapsed time.
-- INR 3–8 lakh in software (if not using an integrated MRV platform that bundles it).
-- INR 4–10 lakh in external assurance.
-- 0.5–1 FTE internal owner.
+- A few months of elapsed time.
+- Software (unless an integrated MRV platform bundles it).
+- External assurance.
+- A part-time to full-time internal owner.
 
-Quoted costs of INR 25–60 lakh for ESG consulting at MSME scale usually buy slide decks, not data. Walk away.
+ESG consulting quotes that dwarf these items at MSME scale usually buy slide decks, not data. Walk away.
 
 ## Common failure modes
 
@@ -113,5 +115,5 @@ Quoted costs of INR 25–60 lakh for ESG consulting at MSME scale usually buy sl
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)

@@ -1,25 +1,27 @@
-# Getting SBTi-FLN Validated: A Realistic MSME Timeline and Cost
+# Getting an SBTi FLAG Target Validated: A Realistic MSME Timeline and Cost
 
 Canonical: https://senseible.earth/climate-intelligence/msme-sbti-fln-near-term-target-validation
 
-The Science Based Targets initiative for Forests, Land and Nature (FLN) launched its full validation pathway in 2024. It is now a credible target for MSMEs in agri, food, and forestry value chains.
+Published 2026-05-06.
 
-## Who should consider FLN
+The Science Based Targets initiative's Forest, Land and Agriculture (FLAG) guidance sets how companies with land-intensive emissions set science-based targets. It is a credible target for MSMEs in agri, food, and forestry value chains.
+
+## Who should consider FLAG
 
 - Food processors with crop sourcing
 - Cotton, jute, wood-based MSMEs
 - Leather and dairy companies
 - Pulp and paper
 
-If your supply chain touches land, FLN gives you a more accurate target than vanilla SBTi.
+If your supply chain touches land, a FLAG target gives you a more accurate target than a standard SBTi target alone.
 
-## What FLN requires
+## What FLAG requires
 
 | Component | Detail |
 | --- | --- |
 | FLAG inventory | Land-use change, removals, biogenic stocks |
-| 1.5°C target | 30.3% absolute Scope 1+2 cut by 2030 |
-| FLAG sub-target | Sector-specific (e.g. dairy 30%, palm 35%) |
+| 1.5°C target | Absolute reduction in FLAG emissions in line with the FLAG pathway |
+| FLAG sub-target | Commodity-specific pathways where available |
 | Net-zero year | No later than 2050 |
 | Removals | Limited use, must be additional |
 
@@ -39,31 +41,31 @@ Submit commitment letter (free).
 
 ### Months 10–18
 
-Develop full target submission (USD 4,950 fee, plus internal time).
+Develop full target submission (plus internal time).
 
 ### Months 19–24
 
-Validation by SBTi (USD 2,500 fee). Two rounds of revisions typical.
+Validation by SBTi (fee per SBTi's current schedule). Revisions are common.
 
 ## Cost summary for MSME
 
-| Item | Cost (USD) |
+| Item | Cost |
 | --- | --- |
 | SBTi commitment | Free |
-| SBTi validation fee | 2,500 |
-| Internal team time (300–500 hrs) | 8,000–15,000 (allocated) |
-| External consultant (optional) | 12,000–25,000 |
-| Software (Senseible Essentials) | 600/year |
-| Total realistic | 23,000–43,000 |
+| SBTi validation fee | Per SBTi's current fee schedule |
+| Internal team time | Significant, especially for the FLAG inventory |
+| External consultant (optional) | Varies |
+| Software | See [Senseible pricing](https://senseible.earth/pricing) |
+| Total realistic | Mostly internal time; budget it before you commit |
 
 ## What it unlocks
 
-- ESG-linked working capital at 0.5–1.5% lower spread
-- Preferred supplier status with Unilever, Nestle, Mars, ITC
-- Access to JBIC/IFC concessional finance
+- Eligibility for some ESG-linked working capital products
+- Stronger standing with large food and consumer-goods buyers that have their own FLAG targets
+- A stronger case for concessional climate finance
 - Higher CDP score → buyer scorecard win
 
-SBTi-FLN is the strongest signal an Asian agri MSME can send to global buyers. The cost is real but recovers within two procurement cycles.
+A validated SBTi FLAG target is a strong signal an Asian agri MSME can send to global buyers. The cost is real, so weigh it against what your buyers ask for.
 
 ## Related guides
 

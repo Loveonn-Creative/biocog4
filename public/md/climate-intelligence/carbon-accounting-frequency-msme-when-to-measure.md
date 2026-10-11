@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/carbon-accounting-frequency-msme-when-to-measure
 
+Published 2026-05-21.
+
 Most MSME owners are told to "measure carbon" without anyone explaining how often. The honest answer depends on three things: what you will do with the number, who is asking for it, and how much it costs you to produce. Get those three right and the frequency answers itself.
 
 ## The short answer
@@ -10,14 +12,14 @@ Most MSME owners are told to "measure carbon" without anyone explaining how ofte
 | --- | --- | --- |
 | Internal management dashboard | Monthly | Aligns with how you already close books |
 | Annual disclosure (BRSR, GRI, TCFD) | Annual, with quarterly check-ins | Disclosure is yearly; check-ins prevent year-end surprises |
-| EU CBAM quarterly declaration | Quarterly | Mandatory cadence for in-scope exporters |
+| EU CBAM annual declaration (filed by the EU importer) | Annual, with data ready per shipment | Quarterly reports ended with the transitional period in 2025; importers now declare once a year |
 | Green loan KPI monitoring (SLL) | Quarterly or semi-annual | Set by the loan covenant |
 | Carbon credit issuance | Per project cycle (continuous) | Each credit needs evidence dated within methodology window |
-| Marketing claim or product label | At least every 12 months | ASCI and EU empowering-consumer rules require recency |
+| Marketing claim or product label | At least every 12 months | ASCI and EU consumer rules expect claims to be substantiated and current |
 
 ## Why "annual" is usually wrong for operators
 
-Annual measurement is fine for the disclosure team, but it is useless for the people who can actually reduce emissions. By the time the annual report lands in April, the decisions that drove last year's emissions — supplier contracts, freight modes, energy mix — were made in the prior 12 months. You cannot change them retroactively.
+Annual measurement is fine for the disclosure team, but it is useless for the people who can actually reduce emissions. By the time the annual report lands in April, the decisions that drove last year's emissions (supplier contracts, freight modes, energy mix) were made in the prior 12 months. You cannot change them retroactively.
 
 Operators need a monthly or at least quarterly signal so they can:
 
@@ -35,15 +37,15 @@ Each measurement cycle costs time. Three drivers determine how much:
 2. **Calculation.** Manual spreadsheet vs automated MRV.
 3. **Verification.** Self-attested vs third-party assured.
 
-For a 50-employee manufacturer, a manual annual cycle typically consumes 80–120 staff-hours. A monthly automated cycle through a deterministic MRV layer consumes under 4 staff-hours per month — and the per-document verification cost falls below the cost of *not* having the number when a buyer or banker asks.
+For a mid-sized manufacturer, a manual annual cycle can consume many staff-hours. A monthly automated cycle through a deterministic MRV layer takes far less time per cycle, and the per-document verification cost falls below the cost of *not* having the number when a buyer or banker asks.
 
 ## How to decide
 
 Ask three questions:
 
-1. *Who is the most demanding consumer of the number?* If it is a CBAM-covered EU buyer or an EU regulator, the answer is quarterly. If it is your own board, monthly is sensible.
-2. *What is the longest acceptable delay between an emission event and your knowing about it?* For a logistics MSME spending 40% of revenue on freight, the answer is days, not months.
-3. *What is the cost of a wrong number?* If a wrong baseline kills a green loan rate of 1.5% below market, the annualised cost of measurement under-investment is much larger than the cost of measuring more often.
+1. *Who is the most demanding consumer of the number?* If it is an EU importer of CBAM goods, have data ready for each shipment and for its annual declaration. If it is your own board, monthly is sensible.
+2. *What is the longest acceptable delay between an emission event and your knowing about it?* For a logistics-heavy MSME, the answer is days, not months.
+3. *What is the cost of a wrong number?* If a wrong baseline costs you a green loan rate concession, the annualised cost of measurement under-investment is much larger than the cost of measuring more often.
 
 ## Recommended cadence by company size
 

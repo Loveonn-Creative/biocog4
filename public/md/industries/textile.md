@@ -1,8 +1,8 @@
-# Textile Manufacturing: carbon accounting
+# Textile Manufacturing: Carbon Accounting Guide
 
 Canonical: https://senseible.earth/industries/textile
 
-India's textile sector accounts for 12% of export earnings. With EU CBAM on the horizon, carbon transparency is becoming essential for international competitiveness.
+Textiles are not covered by EU CBAM, but EU brands reporting under CSRD now ask suppliers for facility emissions. Fuel and electricity bills are enough to answer most requests.
 
 ## Scope 1 sources
 

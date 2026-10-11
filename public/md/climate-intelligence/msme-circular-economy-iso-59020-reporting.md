@@ -2,20 +2,22 @@
 
 Canonical: https://senseible.earth/climate-intelligence/msme-circular-economy-iso-59020-reporting
 
-ISO 59020:2024 standardises how organisations measure and report circular economy performance. EU buyers, multilateral lenders and large Indian conglomerates are starting to ask for it.
+Published 2026-05-06.
+
+ISO 59020:2024 standardises how organisations measure and report circular economy performance. Some EU buyers and lenders are starting to ask about circularity metrics.
 
 ## The four core indicators
 
 | Indicator | What it measures | MSME starting target |
 | --- | --- | --- |
-| Material circularity rate | % of material from secondary sources | 30% |
-| Product life extension | Average use life vs sector benchmark | +20% |
-| End-of-life recovery rate | % of product recovered for reuse/recycle | 50% |
-| Resource productivity | Revenue per kg material | +15% YoY |
+| Material circularity rate | % of material from secondary sources | Set from your baseline |
+| Product life extension | Average use life vs sector benchmark | Set from your baseline |
+| End-of-life recovery rate | % of product recovered for reuse/recycle | Set from your baseline |
+| Resource productivity | Revenue per kg material | Year-on-year improvement |
 
 ## Why circularity reduces carbon
 
-Most embodied carbon comes from primary material extraction and processing. Replacing primary inputs with secondary, refurbished or remanufactured ones cuts upstream Scope 3 by 50–95%. The biggest unused decarbonisation lever for component MSMEs.
+Most embodied carbon comes from primary material extraction and processing. Replacing primary inputs with secondary, refurbished or remanufactured ones can cut upstream Scope 3 substantially. It is one of the most underused decarbonisation levers for component MSMEs.
 
 ## A practical tracking sheet
 
@@ -31,7 +33,7 @@ For each product line:
 
 ISO 59020 does not require an external audit but does require traceability. The same data feeds CSRD ESRS E5 (Resource Use and Circular Economy) and ESRS E1 (Climate Change) Scope 3.
 
-Circularity is the only metric that simultaneously cuts cost, cuts carbon, and creates a buyer story. Skipping it is wasteful in three dimensions.
+Circularity can cut cost, cut carbon and create a buyer story at the same time. Skipping it is wasteful in three dimensions.
 
 ## Quick wins
 

@@ -2,7 +2,7 @@
 
 Canonical: https://senseible.earth/solutions/scope3-textile-india
 
-Tirupur and Surat textile exporters need Scope 3 data for EU buyer compliance. Raw cotton, dyes, and freight account for 70% of total emissions but remain unmeasured.
+EU brands reporting under CSRD need emissions data from their suppliers. For an Indian textile exporter, that usually means facility Scope 1 and 2 from fuel and electricity bills, allocated to the garments or fabric each buyer purchases.
 
 ## Steps
 
@@ -15,19 +15,22 @@ Tirupur and Surat textile exporters need Scope 3 data for EU buyer compliance. R
 
 | Item | Value |
 | --- | --- |
-| Scope 3 share (textile) | 65-75% of total |
-| Top category | Raw material procurement |
-| Annual export value at risk | $14B industry |
+| What buyers ask first | Facility Scope 1 and 2, with factors and sources |
+| India grid factor | 0.710 tCO2/MWh (CEA v21.0, FY 2024-25) |
+| Worked example: 2,400 MWh a year | 1,704 tCO2 Scope 2 (location-based) |
+| CBAM | Does not apply to textiles |
 
 ## Questions
 
-### How do textile MSMEs calculate Scope 3 emissions?
+### How much data can an EU buyer demand from a small supplier?
 
-Upload supplier invoices for cotton, dyes, chemicals, and freight. Senseible applies India-specific emission factors to calculate Category 1, 4, and 9 Scope 3 emissions.
+Under Directive (EU) 2026/470, a company reporting under CSRD may not require suppliers with 1,000 or fewer employees to provide more than the voluntary VSME-based standard. Suppliers can still share more if they choose.
+
+### Do Indian textile exporters fall under CBAM?
+
+No. CBAM covers iron and steel, aluminium, cement, fertilisers, hydrogen and electricity only.
 
 ## Related
 
 - [Industry guide](https://senseible.earth/industries/textile)
 - [Green Finance for Textile Exporters: Step by Step Guide](https://senseible.earth/climate-intelligence/green-finance-textile-exporters-step-by-step)
-- [CBAM Readiness for Textile & Apparel in India](https://senseible.earth/solutions/cbam-textile-india)
-- [Green Loan Eligibility for Textile MSMEs in India](https://senseible.earth/solutions/green-finance-textile-india)

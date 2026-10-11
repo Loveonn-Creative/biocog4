@@ -2,7 +2,9 @@
 
 Canonical: https://senseible.earth/climate-intelligence/supplier-emissions-data-collection-playbook-msme
 
-The single most common Scope 3 blocker for MSMEs is supplier non-response. The supplier is busy, the request looks unfamiliar, and there is no obvious benefit for them to spend three days filling out your form. This is solvable — but only with a sequenced playbook, not a single email blast.
+Published 2026-05-21.
+
+A very common Scope 3 blocker for MSMEs is supplier non-response. The supplier is busy, the request looks unfamiliar, and there is no obvious benefit for them to spend three days filling out your form. This is solvable, but only with a sequenced playbook, not a single email blast.
 
 ## Why suppliers do not respond
 
@@ -16,7 +18,7 @@ Every step of the playbook addresses one of these.
 
 ## The five-step engagement playbook
 
-### Step 1 — Segment the supplier base (week 1)
+### Step 1: Segment the supplier base (week 1)
 
 Do not contact everyone. Rank suppliers by:
 
@@ -24,9 +26,9 @@ Do not contact everyone. Rank suppliers by:
 2. Estimated emission intensity of their sector (use spend-based EEIO factors for the ranking).
 3. Strategic dependence (sole-source vs commodity).
 
-Top 20 suppliers usually account for > 70% of your Scope 3. Engage them first. Long-tail can wait or stay on spend-based.
+A small number of top suppliers usually account for most of your Scope 3. Engage them first. Long-tail can wait or stay on spend-based.
 
-### Step 2 — Pre-engagement (week 2)
+### Step 2: Pre-engagement (week 2)
 
 Before any form goes out, send a one-page letter from a *commercial* signatory (procurement head or CEO), not from sustainability. The letter:
 
@@ -35,9 +37,9 @@ Before any form goes out, send a one-page letter from a *commercial* signatory (
 - Names a single human contact at your end.
 - Includes a one-line offer: "we will share back your benchmark vs sector peers anonymously".
 
-This single change typically lifts response rates from ~15% to ~55%.
+This single change usually lifts response rates noticeably.
 
-### Step 3 — Make the form survivable (week 3)
+### Step 3: Make the form survivable (week 3)
 
 A response-grade form for MSME suppliers has three properties:
 
@@ -57,7 +59,7 @@ A worked example of a minimum viable supplier form:
 | HSN / CN code of primary output | Methodology mapping |
 | Confidence (estimate / metered / verified) | Data quality tier |
 
-### Step 4 — Make it easy to send (week 4)
+### Step 4: Make it easy to send (week 4)
 
 Offer three response paths:
 
@@ -67,7 +69,7 @@ Offer three response paths:
 
 The last option is the highest-success path with reluctant suppliers. The cost (your time) is real but small relative to the value of getting top-supplier data into activity-based tier.
 
-### Step 5 — Reciprocate and renew (week 6 onward)
+### Step 5: Reciprocate and renew (week 6 onward)
 
 After data is received:
 
@@ -79,12 +81,12 @@ After data is received:
 
 You have four options, in increasing escalation:
 
-1. **Default emission factors.** Use the highest sector-and-country-specific default. This is the GHG Protocol-acceptable fallback and is usually unfavourable to the supplier — which they should know.
+1. **Default emission factors.** Use the highest sector-and-country-specific default. This is the GHG Protocol-acceptable fallback and is usually unfavourable to the supplier, which they should know.
 2. **Independent estimation.** Hire a Tier 3 estimator to model the supplier's footprint from public data.
 3. **Procurement leverage.** Make data sharing a renewal condition for the next contract cycle.
-4. **Substitute.** Switch a portion of volume to a supplier that does share. Often a 10–15% volume shift is enough to change the original supplier's posture.
+4. **Substitute.** Switch a portion of volume to a supplier that does share. Often a modest volume shift is enough to change the original supplier's posture.
 
-**The honest rule.** No supplier owes you data. But every supplier owes their customer a credible answer to "what is the emission intensity of what I am buying from you?" — because increasingly, your customer is asking *you* the same question.
+**The honest rule.** No supplier owes you data. But every supplier owes their customer a credible answer to "what is the emission intensity of what I am buying from you?", because increasingly, your customer is asking *you* the same question.
 
 ## Tools that help
 
@@ -94,14 +96,14 @@ You have four options, in increasing escalation:
 
 ## FAQ
 
-**How long does it take to build a supplier engagement program?** Six months to the first usable dataset, 12–18 months to mature it into renewal-cycle discipline.
+**How long does it take to build a supplier engagement program?** Several months to the first usable dataset, and longer to mature it into renewal-cycle discipline.
 
-**What response rate is realistic?** 50–70% with a well-run program for top suppliers. 100% is a fantasy in year one.
+**What response rate is realistic?** A well-run program can get most top suppliers to respond. 100% is a fantasy in year one.
 
-**Do I have to verify supplier data?** Not initially. But the more your number depends on supplier data, the more your customers will require third-party verification of theirs. Plan for verified-tier data in major categories within 24 months.
+**Do I have to verify supplier data?** Not initially. But the more your number depends on supplier data, the more your customers will require third-party verification of theirs. Plan for verified-tier data in major categories over the next few years.
 
 ## Related guides
 
 - [What emissions data is hidden inside semi-finished imports?](https://senseible.earth/climate-intelligence/emissions-data-hidden-in-semi-finished-imports)
-- [Scope 3 Calculator for Bangladesh Textile Exporters: Step-by-Step](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
+- [Scope 3 for Bangladesh Textile Exporters: What EU Buyers Need and How to Calculate It](https://senseible.earth/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters)
 - [Scope 3 Emissions in Your Supply Chain: MSME Calculator Guide](https://senseible.earth/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator)

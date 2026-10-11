@@ -2,6 +2,8 @@
 
 Canonical: https://senseible.earth/climate-intelligence/manufacturing-scope-3-emissions-india
 
+Published 2025-01-01.
+
 Manufacturing firms calculate Scope 3 emissions, which are all other indirect emissions in the value chain, by identifying and quantifying raw material extraction and production, supplier emissions, product transportation, employee commuting, waste disposal, and product use and end-of-life.
 
 **The 15 Scope 3 Categories:**
@@ -36,4 +38,4 @@ Start with material categories that represent the largest emissions sources, typ
 
 - [How do Manufacturing firms calculate Scope 1 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-1-emissions-india)
 - [How do Manufacturing firms calculate Scope 2 emissions in India?](https://senseible.earth/climate-intelligence/manufacturing-scope-2-emissions-india)
-- [How to Calculate Carbon Footprint from Electricity Bills](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)
+- [How to Calculate a Carbon Footprint From Electricity Bills (With a Worked Example)](https://senseible.earth/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills)

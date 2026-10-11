@@ -2,14 +2,16 @@
 
 Canonical: https://senseible.earth/climate-intelligence/csrd-double-materiality-assessment-msme-supplier
 
-You are not directly in scope of CSRD if your turnover is below EUR 50M. You are very much in scope as a supplier. Here is what your EU customer will ask for.
+Published 2026-05-06.
+
+As an MSME supplier you are almost certainly not directly in scope of CSRD, which applies to large companies (and was narrowed further by the EU's Omnibus simplification). You are still in its reach as a supplier. Here is what your EU customer will ask for.
 
 ## Double materiality in plain English
 
 CSRD requires the EU buyer to disclose two things for every material topic:
 
-1. Impact materiality — how their business affects the environment and society
-2. Financial materiality — how environmental and social factors affect their business
+1. Impact materiality: how their business affects the environment and society
+2. Financial materiality: how environmental and social factors affect their business
 
 You sit on both sides. Your emissions are part of their Scope 3 (impact). Your climate-related risks (drought, flood, energy disruption) feed their financial risk disclosure.
 
@@ -38,10 +40,10 @@ Pretending to have a board climate committee when you have a 12-person company d
 
 ## Timing
 
-CSRD wave 2 (large EU companies) reports for FY 2025 in 2026. Their suppliers will receive questionnaires starting Q3 2026. Wave 3 (listed SMEs) reports for FY 2026 in 2027. Be ready by Q2 2026.
+Wave 1 companies already report under CSRD, so questionnaires can arrive at any time. The EU's 2025 "stop-the-clock" directive postponed reporting for wave 2 (large companies not yet reporting) by two years, to financial year 2027, and the Omnibus simplification removed listed SMEs from scope. Be ready now rather than waiting for a deadline.
 
 ## Related guides
 
 - [Can we reroute supply chains to reduce CBAM exposure legally?](https://senseible.earth/climate-intelligence/reroute-supply-chains-reduce-cbam-exposure)
-- [How should Indian exporters prepare for EU CBAM compliance?](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
-- [What are the BRSR reporting requirements for Indian companies?](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
+- [CBAM for Indian Exporters: What Changed on 1 January 2026](https://senseible.earth/climate-intelligence/cbam-compliance-indian-exporters)
+- [BRSR Reporting Requirements in India: Who Reports, BRSR Core and Value-Chain Rules](https://senseible.earth/climate-intelligence/brsr-reporting-requirements-india)
