@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Landmark, Ship, Coins, Upload, Sparkles } from "lucide-react";
+import { ArrowRight, Landmark, Ship, Coins, Upload } from "lucide-react";
 import { useT } from "@/lib/i18n/useT";
 import { FlowVisual } from "./FlowVisual";
+import { AskCards } from "./AskCards";
 import { CbamExposure } from "./CbamExposure";
 
 /**
@@ -12,7 +13,7 @@ import { CbamExposure } from "./CbamExposure";
  * enterprise use case (supplier / Scope 3 automation) gets a single pointer
  * here and lives on its own pages. Loaded lazily so it never weighs on first paint.
  */
-export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSample: () => void }) => {
+export const HomeStory = ({ onUpload }: { onUpload: () => void }) => {
   const t = useT();
 
   const steps = [
@@ -65,14 +66,17 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
 
   return (
     <div className="relative z-10 w-full">
-      {/* The problem, in the visitor's words */}
-      <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <h2 className="text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight max-w-3xl [text-wrap:balance]">
-          {t("home.problem.title", "Your bills already hold your carbon data.")}
-        </h2>
-        <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-          {t("home.problem.body", "Banks, buyers and carbon markets now ask small businesses for verified emissions. Senseible turns the invoices and energy bills you already keep into a verified record you can take to a green loan, a buyer or a carbon credit check.")}
-        </p>
+      {/* The problem: first the request that brings an MSME here, then the answer. */}
+      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 pt-20 sm:pt-28 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <AskCards />
+        <div>
+          <h2 className="text-[clamp(1.75rem,5vw,3.25rem)] font-semibold leading-[1.08] tracking-tight [text-wrap:balance]">
+            {t("home.problem.title", "Your bills already hold your carbon data.")}
+          </h2>
+          <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
+            {t("home.problem.body", "Banks, buyers and carbon markets now ask small businesses for verified emissions. Senseible turns the invoices and energy bills you already keep into a verified record you can take to a green loan, a buyer or a carbon credit check.")}
+          </p>
+        </div>
       </section>
 
       {/* How it works, with the model */}
@@ -95,9 +99,10 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
       </section>
 
       {/* Who it is for */}
-      <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-16 sm:pt-24">
-        <h2 id="who-title" className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.unlock.title", "What verified data unlocks")}</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+      <section aria-labelledby="who-title" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-8 sm:pt-16">
+        <h2 id="who-title" className="text-[clamp(1.6rem,4vw,2.5rem)] font-semibold tracking-tight leading-tight">{t("home.unlock.title", "What verified data unlocks")}</h2>
+        <OneRecordConnector />
+        <div className="mt-2 md:mt-0 grid gap-4 md:grid-cols-3">
           {outcomes.map(a => (
             <Link key={a.who} to={a.to} className="group rounded-3xl border border-border p-5 sm:p-6 hover:border-foreground/40 transition-colors">
               <a.icon className="w-5 h-5 text-primary" aria-hidden="true" />
@@ -138,14 +143,9 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.act.title", "Start with one bill.")}</h2>
             <p className="mt-2 text-background/70">{t("home.act.body", "Free audit-ready carbon report from your first bill.")}</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-2">
-            <button onClick={onUpload} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
-              <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
-            </button>
-            <button onClick={onSample} className="inline-flex items-center justify-center gap-2 rounded-full border border-background/30 px-5 py-3 text-sm font-medium">
-              <Sparkles className="w-4 h-4" /> {t("home.act.sample", "Try a sample invoice")}
-            </button>
-          </div>
+          <button onClick={onUpload} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
+            <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
+          </button>
         </div>
       </section>
 
@@ -155,9 +155,37 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
 };
 
 /**
+ * One verified record branching into the three uses below it. The lines draw
+ * once as the section arrives (desktop, where the cards sit in a row).
+ */
+const OneRecordConnector = () => {
+  const t = useT();
+  const ref = useRef<SVGSVGElement>(null);
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setOn(true); return; }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } }, { threshold: 0.6 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const draw = (delay: number) => ({ strokeDasharray: 1, strokeDashoffset: on ? 0 : 1, transition: `stroke-dashoffset 900ms cubic-bezier(.2,.8,.2,1) ${delay}ms` });
+  return (
+    <div className="hidden md:block relative mt-6" aria-hidden="true">
+      <div className="mx-auto w-fit rounded-full border border-primary/40 bg-primary/[0.06] px-3 py-1 font-mono text-xs text-primary">{t("home.unlock.record", "1 verified record")}</div>
+      <svg ref={ref} viewBox="0 0 300 36" preserveAspectRatio="none" className="block w-full h-10 text-primary/50">
+        <path d="M150 0 C150 18, 50 14, 50 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(0)} vectorEffect="non-scaling-stroke" />
+        <path d="M150 0 L150 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(120)} vectorEffect="non-scaling-stroke" />
+        <path d="M150 0 C150 18, 250 14, 250 36" fill="none" stroke="currentColor" strokeWidth="1.2" pathLength={1} style={draw(240)} vectorEffect="non-scaling-stroke" />
+      </svg>
+    </div>
+  );
+};
+
+/**
  * Thumb-zone actions on phones, shown once the hero has scrolled away.
  */
-export const StickyCta = ({ heroId, onUpload, onSample }: { heroId: string; onUpload: () => void; onSample: () => void }) => {
+export const StickyCta = ({ heroId, onUpload }: { heroId: string; onUpload: () => void }) => {
   const t = useT();
   const [show, setShow] = useState(false);
 
@@ -174,14 +202,9 @@ export const StickyCta = ({ heroId, onUpload, onSample }: { heroId: string; onUp
       className={`sm:hidden fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(env(safe-area-inset-bottom),12px)] pt-3 bg-background/95 backdrop-blur border-t border-border transition-transform duration-300 ${show ? "translate-y-0" : "translate-y-full"}`}
       aria-hidden={!show}
     >
-      <div className="flex gap-2">
-        <button tabIndex={show ? 0 : -1} onClick={onUpload} className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-3 text-sm font-medium">
-          <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
-        </button>
-        <button tabIndex={show ? 0 : -1} onClick={onSample} className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-4 py-3 text-sm font-medium">
-          <Sparkles className="w-4 h-4" /> {t("home.act.sample_short", "Sample")}
-        </button>
-      </div>
+      <button tabIndex={show ? 0 : -1} onClick={onUpload} className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-3 text-sm font-medium">
+        <Upload className="w-4 h-4" /> {t("home.act.upload", "Upload a bill")}
+      </button>
     </div>
   );
 };

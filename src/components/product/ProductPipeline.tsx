@@ -53,7 +53,13 @@ const move = (x: number, y: number, z = 0, extra = ""): CSSProperties => ({
   transform: `translate3d(${x}px, ${y}px, ${z}px) ${extra}`,
 });
 
-export const ProductPipeline = ({ className = "", tone = "hero" }: { className?: string; tone?: "hero" | "page" }) => {
+export const ProductPipeline = ({ className = "", tone = "hero", stage: controlled, bare = false }: {
+  className?: string; tone?: "hero" | "page";
+  /** When set, the parent drives the step (e.g. from scroll) and autoplay is off. */
+  stage?: number;
+  /** Hide the step rail and caption (the parent shows the words). */
+  bare?: boolean;
+}) => {
   const t = useT();
   const [stage, setStage] = useState(0);
   const [scale, setScale] = useState(1);
@@ -75,6 +81,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
   // Auto-advance only while on screen and the tab is visible.
   useEffect(() => {
     if (prefersStatic() || !boxRef.current) return;
+    if (controlled !== undefined) { setAuto(true); return; }
     const io = new IntersectionObserver(([e]) => { visibleRef.current = e.isIntersecting; }, { threshold: 0.35 });
     io.observe(boxRef.current);
     setAuto(true);
@@ -83,6 +90,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
       setStage(s => (s + 1) % STAGES.length);
     }, STEP_MS);
     return () => { io.disconnect(); window.clearInterval(id); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Small pointer tilt reveals the depth layers (bill, lines, gate, ledger).
@@ -102,7 +110,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
 
   const go = (i: number) => { setStage(i); holdRef.current = true; };
 
-  const s = stage;
+  const s = controlled !== undefined ? Math.max(0, Math.min(STAGES.length - 1, controlled)) : stage;
   const verified = s >= 3;
   const settled = s >= 4;
   const tr = `transform 900ms ${EASE}, opacity 600ms ${EASE}, background-color 500ms, border-color 500ms, width 700ms ${EASE}`;
@@ -280,7 +288,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
             {[
               { k: "report", label: t("pp.out.report", "Report"), y: 50 },
               { k: "finance", label: t("pp.out.finance", "Lender"), y: 86 },
-              { k: "value", label: `₹${fmt(valueInr)}*`, y: 122 },
+              { k: "value", label: `₹${fmt(valueInr)}`, y: 122 },
             ].map((o, i) => (
               <div
                 key={o.k}
@@ -303,7 +311,7 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
       </div>
 
       {/* Stage rail: the same five steps, tappable */}
-      <div className="mt-3 flex flex-col items-center gap-2">
+      {!bare && <div className="mt-3 flex flex-col items-center gap-2">
         <div role="group" aria-label={t("pp.rail", "How a bill becomes a verified record")} className="flex items-center gap-1 rounded-full border border-border bg-background/80 p-1 backdrop-blur">
           {STAGES.map((st, i) => (
             <button
@@ -325,9 +333,8 @@ export const ProductPipeline = ({ className = "", tone = "hero" }: { className?:
         </div>
         <p aria-live="polite" className={`text-center text-xs text-muted-foreground min-h-[2.25rem] ${tone === "page" ? "sm:text-sm" : ""}`}>
           {t(`pp.caption.${STAGES[s].key}`, STAGES[s].caption)}
-          {s === 4 && <span className="block text-[10px] mt-0.5">{t("pp.value_note", "*Sample bill. Indicative value at ₹750/t, not an issued credit.")}</span>}
         </p>
-      </div>
+      </div>}
       <style>{`
         @keyframes pp-scan { 0% { transform: translateY(-40px) } 100% { transform: translateY(250px) } }
         @keyframes pp-progress { from { width: 0 } to { width: 100% } }

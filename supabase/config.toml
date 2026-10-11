@@ -33,3 +33,5 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.verify-razorpay-payment]
     verify_jwt = false
+  [functions.delete-document]
+    verify_jwt = false

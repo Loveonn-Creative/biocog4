@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Coins, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { indicativeValueFromKg, kgToTonnes, INDICATIVE_RATE_INR_PER_T, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
+import { indicativeValueFromKg, kgToTonnes } from '@/lib/carbonValue';
 
 interface MonetizationPanelProps {
   /** All recorded kgCO2e (verified or not). Used only to decide what to prompt. */
@@ -48,12 +48,10 @@ export function MonetizationPanel({ totalCO2, hasVerifiedData, verifiedCO2Kg }: 
                   <p className="text-sm text-muted-foreground">
                     From {verifiedTonnes.toFixed(3)} verified tCO₂e
                   </p>
-                  <p className="text-xs text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
                 </>
               ) : (
                 <p className="text-sm text-muted-foreground">
-                  Only verified emissions carry an indicative value (verified tCO₂e × ₹{INDICATIVE_RATE_INR_PER_T}).
-                  It is not an issued credit.
+                  Verify your emissions to see their value.
                 </p>
               )}
             </div>

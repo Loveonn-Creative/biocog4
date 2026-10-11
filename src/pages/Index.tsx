@@ -31,10 +31,8 @@ const ResultState = lazy(() =>
 );
 // Below-the-fold story, sticky phone CTA and the sample result load after
 // first paint in their own chunks.
-const ProductPipeline = lazy(() => import("@/components/product/ProductPipeline"));
 const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
 const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
-const SampleResult = lazy(() => import("@/components/home/SampleResult").then((m) => ({ default: m.SampleResult })));
 
 /** Opens the upload picker from anywhere on the page (must run in a click handler). */
 const openUploadPicker = () => {
@@ -206,12 +204,7 @@ const Index = () => {
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
   const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
-  const [showSample, setShowSample] = useState(false);
   const t = useT();
-  const openSample = () => {
-    setShowSample(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -628,7 +621,7 @@ const Index = () => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-hidden">
+    <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-clip">
       <Suspense fallback={null}>
         <OnboardingTour currentStep={state === 'idle' ? 'upload' : state === 'processing' ? 'processing' : 'upload'} />
       </Suspense>
@@ -650,19 +643,8 @@ const Index = () => {
       </header>
 
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-6 sm:pt-0 sm:-mt-10">
-        {state === "idle" && showSample && (
-          <Suspense fallback={null}>
-            <SampleResult
-              onClose={() => setShowSample(false)}
-              onTryOwn={() => { setShowSample(false); setTimeout(openUploadPicker, 0); }}
-            />
-          </Suspense>
-        )}
-
-        {state === "idle" && !showSample && (
-          <div className="w-full max-w-6xl grid gap-8 lg:gap-x-14 lg:grid-cols-[1fr_1.1fr] items-center animate-fade-in">
-          {/* Left: the action. Right: what happens to the bill once it is uploaded. */}
-          <div className="flex flex-col items-center gap-7 sm:gap-8 lg:row-span-1">
+        {state === "idle" && (
+          <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
             {/* Animated use case headline - ABOVE icons for maximum impact */}
             <UseCaseTyper className="mt-2" />
             
@@ -718,30 +700,13 @@ const Index = () => {
               </div>
             )}
             
-            <div className="flex flex-col items-center gap-2 -mt-2">
-              <p className="text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
-                {t("home.hero.action", "Upload an invoice, get an audit-ready carbon report")}
-              </p>
-              <button
-                onClick={openSample}
-                className="text-sm font-medium text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary"
-              >
-                {t("home.hero.sample", "Try a sample invoice")}
-              </button>
-            </div>
+            <p className="-mt-2 text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
+              {t("home.hero.action", "Upload an invoice, get an audit-ready carbon report")}
+            </p>
 
 
-          </div>
-
-          <div className="w-full max-w-md mx-auto lg:max-w-none lg:row-span-2 lg:col-start-2 lg:row-start-1">
-            <Suspense fallback={<div className="h-[300px] lg:h-[400px]" aria-hidden="true" />}>
-              <ProductPipeline />
-            </Suspense>
-          </div>
-
-          <div className="flex flex-col items-center gap-7 sm:gap-8">
             {/* India AI Innovation Badge */}
-            <div className="flex flex-col items-center gap-2 mt-4 lg:mt-0">
+            <div className="flex flex-col items-center gap-2 mt-4">
               <IndiaAIBadge size={48} />
               <p className="text-sm sm:text-base text-center leading-relaxed font-medium max-w-xs [text-wrap:balance]">
                 <span className="text-muted-foreground">AI infrastructure for MSMEs </span>
@@ -778,7 +743,6 @@ const Index = () => {
               </div>
             )}
           </div>
-          </div>
         )}
 
         {state === "processing" && (
@@ -800,8 +764,8 @@ const Index = () => {
       </div>
 
       <Suspense fallback={null}>
-        <HomeStory onUpload={openUploadPicker} onSample={openSample} />
-        <StickyCta heroId="hero" onUpload={openUploadPicker} onSample={openSample} />
+        <HomeStory onUpload={openUploadPicker} />
+        <StickyCta heroId="hero" onUpload={openUploadPicker} />
       </Suspense>
       
       <footer className="relative z-20 w-full pb-24 sm:pb-6 pt-3 border-t border-border">

@@ -62,3 +62,7 @@ Recomputes `co2_kg` and `emission_factor` for stored emissions whose factor chan
 - Run as the DB owner, after 20261011120000 if that is applied (its trigger only lets trusted writers change `co2_kg`).
 - Rollback: `rollback/20261011170000_recalculate_emissions.sql` restores the three columns exactly and drops the backup table.
 - Needs confirmation before applying: the CEA edition behind 0.710, and the densities assumed for PNG (0.76 kg/scm), furnace oil (0.95 kg/L) and kerosene (0.80 kg/L).
+
+## audit_20261012_ownership.sql (read-only)
+
+Five SELECT queries that list records whose owner does not match the record they derive from (emissions vs documents, ledger vs emissions), documents that existed before their first emission (re-assigned), files held by several accounts, and recent guest-session merges. It changes nothing. Use it to find invoices that reached the wrong account before the ownership fixes; owners can then remove wrongly attached unverified invoices from History, and any verified ones are reviewed by hand.

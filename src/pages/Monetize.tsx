@@ -19,7 +19,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { toast } from 'sonner';
-import { indicativeValueFromKg, sumVerifiedKgOncePerEmission, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
+import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 interface EligibilityCheck {
   label: string;
@@ -211,8 +211,7 @@ const Monetize = () => {
       bg: 'bg-warning/10', 
       title: 'Carbon Credits', 
       value: indicativeValue,
-      valueLabel: INDICATIVE_VALUE_LABEL,
-      desc: 'Credits must first be issued under a recognised programme. The figure is indicative only.',
+      desc: 'Credits must first be issued under a recognised programme.',
       partner: 'IEX Green Market',
       status: (pathwayStatuses['carbon_credit'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified emissions data', 'Quality Grade B or above', 'Programme registration'],
@@ -369,7 +368,6 @@ const Monetize = () => {
                     <div className="text-4xl font-mono font-bold text-gradient-success">
                       {formatCurrency(indicativeValue)}
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 text-sm">

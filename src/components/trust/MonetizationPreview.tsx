@@ -1,5 +1,5 @@
 import { Coins, Info } from "lucide-react";
-import { indicativeValueFromKg, INDICATIVE_RATE_INR_PER_T, INDICATIVE_VALUE_LABEL } from "@/lib/carbonValue";
+import { indicativeValueFromKg } from "@/lib/carbonValue";
 
 interface MonetizationPreviewProps {
   /** Verified kgCO2e. Only this feeds the indicative value. */
@@ -30,14 +30,12 @@ export const MonetizationPreview = ({ verifiedKg, pendingKg = 0 }: MonetizationP
       {value >= 1 ? (
         <div>
           <p className="text-sm font-mono font-bold text-foreground">{formatINR(value)}</p>
-          <p className="text-[10px] text-muted-foreground">{INDICATIVE_VALUE_LABEL}</p>
         </div>
       ) : (
         <div className="flex items-start gap-2">
           <Info className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
           <p className="text-xs text-muted-foreground">
-            {(pendingKg / 1000).toFixed(3)} tCO₂e is awaiting verification. Once verified, the indicative value is
-            verified tCO₂e × ₹{INDICATIVE_RATE_INR_PER_T}. It is not an issued credit.
+            {(pendingKg / 1000).toFixed(3)} tCO₂e is awaiting verification.
           </p>
         </div>
       )}

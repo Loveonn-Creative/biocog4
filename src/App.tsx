@@ -14,7 +14,7 @@ import { RequireAuth } from "./components/RequireAuth";
 import { RouteSEO } from "./components/RouteSEO";
 import { TranslationScope } from "./components/TranslationScope";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
-import { servicePages } from "@/data/services";
+import { serviceNav } from "@/data/services/nav";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
 
@@ -131,7 +131,7 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
-              {servicePages.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
+              {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
               <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />

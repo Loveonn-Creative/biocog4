@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { verifyListState } from '@/lib/emissionLedger';
-import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL } from '@/lib/carbonValue';
+import { indicativeValueFromKg } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
@@ -580,7 +580,7 @@ const Verify = () => {
                       <h4 className="font-semibold">Indicative value</h4>
                     </div>
                     <p className="text-2xl font-mono font-bold text-foreground">{formatINR(indicativeValue)}</p>
-                    <p className="text-xs text-muted-foreground mb-4">{INDICATIVE_VALUE_LABEL}</p>
+                    <div className="mb-4" />
                     <Button 
                       onClick={() => navigate('/monetize')}
                       className="w-full"

@@ -5,7 +5,6 @@ import { ConfidenceBand } from "./trust/ConfidenceBand";
 import { AutoValidation } from "./trust/AutoValidation";
 import { MonetizationPreview } from "./trust/MonetizationPreview";
 import { useTrustLayerSettings } from "@/hooks/useTrustLayerSettings";
-import { INDICATIVE_VALUE_LABEL } from "@/lib/carbonValue";
 
 interface ExtractedData {
   documentType: string;
@@ -97,7 +96,6 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
               <p className="text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
                 {formatCurrency(amount)}
               </p>
-              <p className="text-xs text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
             </>
           ) : (
             <>
@@ -106,7 +104,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
                 {co2Value.toFixed(2)} kg CO₂e
               </p>
               <p className="text-xs text-muted-foreground mt-1">
-                Not yet verified. After verification you will see an indicative value ({INDICATIVE_VALUE_LABEL.toLowerCase()}).
+                Not yet verified.
               </p>
             </>
           )

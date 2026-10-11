@@ -34,7 +34,7 @@ export const Steps = ({ steps, cta, onFinish, onFirstTouch }: { steps: Step[]; c
       </fieldset>
       <div className="mt-5 flex items-center gap-2">
         {i > 0 && (
-          <button type="button" onClick={() => setI(i - 1)} className="inline-flex items-center gap-1 rounded-xl border border-border px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
+          <button type="button" onClick={() => setI(i - 1)} className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-xl border border-border px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back
           </button>
         )}

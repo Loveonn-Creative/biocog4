@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { useSession } from '@/hooks/useSession';
+import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { 
@@ -350,9 +351,6 @@ const PartnerProfile = () => {
               <CardDescription>Manage your account security</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col sm:flex-row gap-3">
-              <Button variant="outline" asChild>
-                <Link to="/auth">Change Password</Link>
-              </Button>
               <Button variant="outline" onClick={handleSave} disabled={isSaving}>
                 {isSaving ? (
                   <>
@@ -368,6 +366,9 @@ const PartnerProfile = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* Password change happens here; /auth would redirect a signed-in user to their dashboard. */}
+          <ChangePasswordCard user={user} />
         </div>
       </main>
     </div>
