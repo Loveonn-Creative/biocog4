@@ -89,7 +89,12 @@ async function main() {
       const href = decode(m[1]);
       if (!href.startsWith(R.SITE_URL)) continue;
       const target = R.canonicalPath(href.slice(R.SITE_URL.length) || '/');
-      if (target.startsWith('/md/') || /\.(txt|xml|png|ico)$/.test(target)) continue;
+      if (target.startsWith('/md/')) continue;
+      // Links to files (templates, feeds, images) must exist in the build.
+      if (/\.[a-z0-9]{2,5}$/i.test(target)) {
+        if (!fs.existsSync(path.join(DIST, target))) fail(where, `broken file link to ${target}`);
+        continue;
+      }
       if (!known.has(target)) fail(where, `broken internal link to ${target}`);
     }
 

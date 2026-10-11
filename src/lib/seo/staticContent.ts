@@ -4,6 +4,10 @@
 // cite primary sources (EUR-Lex); have the CBAM reviewer re-check them on
 // every regulatory change.
 import type { Block } from './render';
+import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
+
+const STATUS = { live: 'Live', pilot: 'Pilot', roadmap: 'Roadmap' } as const;
+const capList = (items: Capability[]): Block => ({ ul: items.map(c => `${c.label} (${STATUS[c.status]})${c.note ? `: ${c.note}` : ''}`) });
 
 export const EUR_LEX_CBAM = 'https://eur-lex.europa.eu/eli/reg/2023/956/oj';
 export const EUR_LEX_CBAM_OMNIBUS = 'https://eur-lex.europa.eu/eli/reg/2025/2083/oj';
@@ -48,6 +52,27 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Sourcing from MSMEs? Supplier (Scope 3) emissions automation for enterprise supply chains is described on [Trust and technical validation](/trust).' },
       { h2: 'Senseible is not Sensibull' },
       { p: 'Senseible (senseible.earth) is a carbon accounting platform. Sensibull is an unrelated options-trading platform. [Read the difference](/vs/sensibull).' },
+    ],
+  },
+  '/enterprise': {
+    h1: 'Supplier emissions, without the chasing',
+    blocks: [
+      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Being built: the supplier network. Every capability below is marked Live, Pilot or Roadmap.' },
+      { h2: 'How the agents work' },
+      { p: 'Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.' },
+      capList(pipelineStages),
+      { h3: 'Inputs' },
+      capList(ingestionChannels),
+      { h2: 'Scale without breaking' },
+      { p: 'Primary data where the spend is. Spend-based estimates for the long tail. People only see what the checks flag.' },
+      capList(scaleControls),
+      { h2: 'The supplier keeps its data' },
+      capList(controlAndSecurity),
+      { p: 'No third-party security certification is claimed. Security detail is on [Trust and technical validation](/trust).' },
+      { h2: 'Every number has a trail' },
+      capList(outputs),
+      { h2: 'Talk to us' },
+      { p: 'Send your work email, company and supplier count from this page, or download the [supplier list template](/templates/supplier-list-template.csv). You can also [score suppliers with the free calculator](/calculators/supplier-emissions-risk) or see [plans and pricing](/pricing).' },
     ],
   },
   '/platform': {

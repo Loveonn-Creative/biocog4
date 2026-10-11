@@ -1,6 +1,6 @@
 import { useCallback, useSyncExternalStore } from "react";
 import { useI18nContext } from "./LanguageProvider";
-import { subscribe, translateSync } from "./autoTranslate";
+import { getStoreVersion, subscribe, translateSync } from "./autoTranslate";
 
 /**
  * Universal translator hook.
@@ -17,7 +17,9 @@ export function useT() {
   const { locale, translations } = useI18nContext();
   // Subscribe once to the auto-translate store so this component re-renders
   // when new translations are cached in.
-  useSyncExternalStore(subscribe, () => (translations && locale) as any, () => null);
+  // The snapshot is the store version, so every new batch of translations
+  // re-renders this component (the previous snapshot never changed).
+  const version = useSyncExternalStore(subscribe, getStoreVersion, getStoreVersion);
 
   return useCallback(
     (input: string, fallback?: string): string => {
@@ -33,7 +35,8 @@ export function useT() {
       if (fromStatic) return fromStatic;
       return translateSync(locale, input);
     },
-    [locale, translations]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [locale, translations, version]
   );
 }
 

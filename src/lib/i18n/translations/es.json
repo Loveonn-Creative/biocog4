@@ -156,5 +156,10 @@
   "careers.chip.distributed_systems": "Distributed systems",
   "careers.chip.product": "Product",
   "careers.chip.research": "Research",
-  "careers.principles.link": "Read our principles →"
+  "careers.principles.link": "Read our principles →",
+  "home.hero.action": "Sube una factura o recibo para tu informe de carbono listo para auditoría",
+  "home.hero.sample": "Prueba una factura de ejemplo",
+  "home.act.sample": "Prueba una factura de ejemplo",
+  "home.act.upload": "Sube una factura",
+  "home.act.sample_short": "Ejemplo"
 }

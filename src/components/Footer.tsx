@@ -32,6 +32,7 @@ const footerLinks = {
     { name: 'Climate Intelligence', path: '/climate-intelligence' },
     { name: 'Marketplace', path: '/marketplace' },
     { name: 'Pricing', path: '/pricing' },
+    { name: 'Enterprise', path: '/enterprise' },
   ],
   solutions: [
     { name: 'Calculators', path: '/calculators' },

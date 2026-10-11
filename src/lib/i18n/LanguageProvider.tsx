@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
-import { startDomTranslator, stopDomTranslator } from './domTranslator';
+import { setStaticTranslations, startDomTranslator, stopDomTranslator } from './domTranslator';
 import { isRuntimeTranslationAllowed } from './autoTranslate';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 
@@ -166,6 +166,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (!cancelled) {
         setTranslations(t);
         setIsLoading(false);
+        try { setStaticTranslations(Object.values(t)); } catch {}
         try {
           document.documentElement.lang = locale;
           document.documentElement.dir = RTL_LOCALES.has(locale) ? 'rtl' : 'ltr';

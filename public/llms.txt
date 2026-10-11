@@ -21,6 +21,7 @@ Every page below has a Markdown mirror: replace the path with /md/{path}.md (the
 - [Climate Finance for MSMEs: Green Loans and Signals](https://senseible.earth/climate-finance): How verified emission baselines become inputs for green loans and sustainability-linked lending, and what lenders need to see from an MSME borrower.
 - [Partner with Senseible: Lenders, Auditors, Buyers](https://senseible.earth/partners): Partner programme for banks, auditors, carbon credit buyers and ERP providers that need verified MSME emission data inside their own products.
 - [Climate Grants and Funding Applications](https://senseible.earth/grants): Apply to Senseible grant and pilot programmes for climate-tech work in emerging markets, and see what we look for in an application.
+- [Supplier emissions, without the chasing](https://senseible.earth/enterprise): Agents turn supplier invoices, bills and estimates into Scope 3 records with a source, factor and confidence score. Every capability is labelled honestly.
 - [Carbon Credit Marketplace: MSME Credit Listings](https://senseible.earth/marketplace): Browse carbon credit listings from MSMEs with provenance details, verification status and evidence links. For buyers who need traceable supply.
 
 ## Free tools

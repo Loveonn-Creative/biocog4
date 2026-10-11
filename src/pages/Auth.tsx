@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BusinessIdField, type BusinessIdResult } from "@/components/auth/BusinessIdField";
 import { MinimalNav } from "@/components/MinimalNav";
 import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2, Eye, EyeOff, Globe, Briefcase } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
@@ -33,6 +34,25 @@ const Auth = () => {
   const [businessName, setBusinessName] = useState("");
   const [gstin, setGstin] = useState("");
   const [location, setLocation] = useState("");
+  // Business identifier (GSTIN, CIN or company PAN) with its explicit check state.
+  const [businessId, setBusinessId] = useState<BusinessIdResult>({ type: null, value: "", status: "idle", facts: {} });
+  const [locationAutofilled, setLocationAutofilled] = useState<string | null>(null);
+
+  const handleBusinessId = (r: BusinessIdResult) => {
+    setBusinessId(r);
+    const usable = r.status !== "invalid" && r.status !== "idle" && r.status !== "not_found";
+    setGstin(usable && r.type === "gstin" ? r.value : "");
+    // Prefill location from the number only if the user has not typed one.
+    if (usable && r.facts.state) {
+      setLocation(prev => {
+        if (prev.trim() === "" || prev === locationAutofilled) {
+          setLocationAutofilled(r.facts.state!);
+          return r.facts.state!;
+        }
+        return prev;
+      });
+    }
+  };
   const [dataConsent, setDataConsent] = useState(false);
   
   // Partner-specific fields
@@ -81,6 +101,11 @@ const Auth = () => {
     
     if (mode === 'signup' && !isPasswordStrong(password)) {
       toast.error('Please create a stronger password');
+      return false;
+    }
+
+    if (mode === 'signup' && (businessId.status === 'invalid' || businessId.status === 'not_found')) {
+      toast.error('Please correct the GSTIN, CIN or PAN, or clear the field to continue');
       return false;
     }
 
@@ -142,6 +167,15 @@ const Auth = () => {
               phone: phone,
               gstin: gstin,
                location: location,
+               // CIN and company PAN live in account metadata until profile
+               // columns are approved (supabase/pending-migrations).
+               cin: businessId.type === 'cin' && businessId.status !== 'invalid' ? businessId.value : undefined,
+               company_pan: businessId.type === 'pan' && businessId.status !== 'invalid'
+                 ? businessId.value
+                 : businessId.type === 'gstin' && businessId.facts.pan ? businessId.facts.pan : undefined,
+               business_id_check: businessId.type
+                 ? { type: businessId.type, status: businessId.status, checked_at: new Date().toISOString() }
+                 : undefined,
                data_consent: true,
                data_consent_at: new Date().toISOString(),
                data_consent_version: '2026-09-25'
@@ -299,16 +333,7 @@ const Auth = () => {
                   />
                 </div>
                 
-                <div className="relative">
-                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input
-                    type="text"
-                    placeholder="GSTIN (optional)"
-                    value={gstin}
-                    onChange={(e) => setGstin(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
-                </div>
+                <BusinessIdField onResult={handleBusinessId} />
                 
                 <div className="relative">
                   <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -327,7 +352,7 @@ const Auth = () => {
                     type="text"
                     placeholder="Location (City, State)"
                     value={location}
-                    onChange={(e) => setLocation(e.target.value)}
+                    onChange={(e) => { setLocation(e.target.value); setLocationAutofilled(null); }}
                     className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
                 </div>

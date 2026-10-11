@@ -112,7 +112,7 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
         {/* The one place the enterprise use case appears on the homepage. */}
         <p className="mt-6 text-sm text-muted-foreground">
           {t("home.enterprise.pointer", "Sourcing from MSMEs? Automate supplier (Scope 3) emissions for your supply chain.")}{" "}
-          <Link to="/trust#scope3" className="font-medium text-foreground underline underline-offset-4">
+          <Link to="/enterprise" className="font-medium text-foreground underline underline-offset-4">
             {t("home.enterprise.link", "For enterprises")}
           </Link>
         </p>
@@ -136,7 +136,7 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
         <div className="rounded-3xl bg-foreground text-background p-6 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{t("home.act.title", "Start with one bill.")}</h2>
-            <p className="mt-2 text-background/70">{t("home.act.body", "Free to start. Every figure shows its emission factor and source.")}</p>
+            <p className="mt-2 text-background/70">{t("home.act.body", "Free audit-ready carbon report from your first bill.")}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2">
             <button onClick={onUpload} className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-5 py-3 text-sm font-medium">
@@ -149,14 +149,7 @@ export const HomeStory = ({ onUpload, onSample }: { onUpload: () => void; onSamp
         </div>
       </section>
 
-      {/* Disambiguation */}
-      <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-12 pb-20 sm:pb-24">
-        <p className="text-sm text-muted-foreground max-w-2xl">
-          <strong className="text-foreground">{t("home.notsensibull.title", "Senseible is not Sensibull.")}</strong>{" "}
-          {t("home.notsensibull.body", "Senseible (senseible.earth) is a carbon accounting platform; Sensibull is an unrelated options-trading app.")}{" "}
-          <Link to="/vs/sensibull" className="underline underline-offset-2">{t("home.notsensibull.link", "The difference")}</Link>
-        </p>
-      </section>
+      <div className="pb-20 sm:pb-24" aria-hidden="true" />
     </div>
   );
 };

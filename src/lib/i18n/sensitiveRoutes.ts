@@ -5,7 +5,7 @@ export const SENSITIVE_PREFIXES = [
   '/verify', '/reports', '/mrv-dashboard', '/dashboard', '/history', '/monetize',
   '/cbam-calculator', '/calculators', '/net-zero', '/trust', '/legal', '/pricing',
   '/billing', '/subscription', '/climate-intelligence', '/solutions',
-  '/carbon-credits', '/climate-finance', '/marketplace', '/partner-marketplace',
+  '/carbon-credits', '/climate-finance', '/marketplace', '/partner-marketplace', '/enterprise',
 ];
 
 export function isSensitiveRoute(pathname: string): boolean {
