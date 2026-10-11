@@ -85,7 +85,6 @@ const INTERVENTIONS = {
     type: 'operational' as const,
     title: 'Certified Waste Recycling',
     reductionFactor: 0.08, // 8% of total
-    creditValue: 750, // ₹750/tCO₂e in credits
     paybackMonths: 3,
     applicableTo: 'scope3',
   },
@@ -257,11 +256,14 @@ export function generateIntelligentRecommendations(
       type: 'financial',
       priority: 'medium',
       title: 'Green Supply Chain Initiative',
-      insight: `Scope 3 (value chain) emissions of ${Math.round(summary.scope3)}kg represent ${Math.round((summary.scope3/summary.total)*100)}% - significant monetization opportunity.`,
-      action: `Request emission data from top 5 suppliers. Prioritize suppliers with green certifications. This improves CBAM compliance and access to green finance.`,
+      insight: `Scope 3 (value chain) emissions of ${Math.round(summary.scope3)}kg represent ${Math.round((summary.scope3/summary.total)*100)}% of your footprint.`,
+      action: `Request emission data from top 5 suppliers. Prioritize suppliers with green certifications. Supplier data strengthens CBAM reporting and green finance applications.`,
       impact: {
         co2ReductionKg: Math.round(summary.scope3 * 0.10),
-        costSavingsINR: Math.round(summary.scope3 * 0.10 * 500), // Carbon credit value
+        // Was scope3 x 0.10 x ₹500 labelled "carbon credit value": ₹500 per kg
+        // (1000x the per-tonne rate) applied to unverified, unrealised
+        // reductions. A planned reduction has no indicative value, so 0.
+        costSavingsINR: 0,
         paybackMonths: 18,
       },
       category: 'procurement',
@@ -293,12 +295,14 @@ export function generateIntelligentRecommendations(
     id: 'recycling_credits',
     type: 'compliance',
     priority: summary.total > 500 ? 'medium' : 'low',
-    title: 'Earn Carbon Credits via Recycling',
-    insight: `Waste recycling with certified recyclers generates verifiable carbon credits worth ₹750-1500/tCO₂e.`,
-    action: `Partner with CPCB-certified e-waste and plastic recyclers. Obtain recycling certificates for credit generation. No upfront investment needed.`,
+    title: 'Document Recycling with Certificates',
+    insight: `Recycling through certified recyclers, with certificates, gives evidence of avoided emissions that can be reported separately from your footprint.`,
+    action: `Partner with CPCB-certified e-waste and plastic recyclers and keep their recycling certificates as evidence.`,
     impact: {
       co2ReductionKg: Math.round(summary.total * 0.08),
-      costSavingsINR: Math.round(summary.total * 0.08 * 0.75), // ₹750/tCO₂e = ₹0.75/kgCO₂e
+      // No money figure: a planned reduction is not verified and is not an
+      // issued credit. The indicative value applies to verified tCO2e only.
+      costSavingsINR: 0,
       paybackMonths: 3,
     },
     category: 'waste',

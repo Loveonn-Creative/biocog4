@@ -1,58 +1,18 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL, INDICATIVE_RATE_INR_PER_T } from "../_shared/carbonValue.ts";
+import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// ============= EMISSION FACTORS (BIOCOG_MVR_INDIA_v1.0) =============
-const EMISSION_FACTORS = {
-  // Scope 1: Fuels (kgCO₂e per unit)
-  scope1_fuels: {
-    DIESEL: { value: 2.68, unit: 'litre' },
-    PETROL: { value: 2.31, unit: 'litre' },
-    CNG: { value: 2.75, unit: 'kg' },
-    PNG: { value: 2.30, unit: 'scm' },
-    LPG: { value: 1.51, unit: 'kg' },
-    COAL: { value: 2.42, unit: 'kg' },
-    FURNACE_OIL: { value: 3.15, unit: 'litre' },
-    NAPHTHA: { value: 3.00, unit: 'litre' },
-    BIOMASS: { value: 0.00, unit: 'kg', creditable: false },
-  },
-  
-  // Scope 2: Electricity (kgCO₂e per kWh) — India default
-  scope2_electricity: {
-    INDIA_GRID_AVG: 0.708,
-    SOLAR_CAPTIVE: 0.000,
-    WIND_CAPTIVE: 0.000,
-    RENEWABLE_PPA: 0.000,
-  },
-  
-  // Scope 3: Transport (kgCO₂e per ton-km)
-  scope3_transport: {
-    ROAD_LIGHT: 0.12,
-    ROAD_HEAVY: 0.18,
-    RAIL: 0.04,
-    INLAND_WATER: 0.03,
-    SEA: 0.015,
-    AIR: 0.60,
-  },
-  
-  // Scope 3: Waste (kgCO₂e per kg)
-  scope3_waste: {
-    LANDFILL_ORGANIC: 1.90,
-    LANDFILL_INORGANIC: 0.45,
-    RECYCLING_PAPER: -0.90,
-    RECYCLING_PLASTIC: -1.50,
-    RECYCLING_METAL: -4.00,
-    INCINERATION: 2.50,
-  },
-};
-
-// Country-specific grid emission factors (IEA 2023)
+// Country grid factors. India uses the shared factor (see
+// ../_shared/emissionFactors.ts for its source note); the others are the
+// earlier values labelled "IEA 2023" and are unchanged.
 const COUNTRY_GRID_FACTORS: Record<string, number> = {
-  IN: 0.708,
+  IN: INDIA_GRID_FACTOR_KG_PER_KWH,
   PH: 0.505,
   ID: 0.761,
   BD: 0.623,
@@ -148,6 +108,37 @@ interface VerificationResult {
     version: string;
     country: string;
     factorVersion: string;
+    gridFactor?: number;
+  };
+  indicativeValue: {
+    verifiedTCO2e: number;
+    indicativeValueInr: number;
+    rateInrPerT: number;
+    label: string;
+    creditsIssued: number;
+  };
+  complianceAssessment: 'not_assessed';
+}
+
+// Older stored verifications may carry floor(tCO2e) as "eligibleCredits" and
+// heuristic CCTS/CBAM flags. Replayed results report neither.
+function replayAnalysis(analysis: Record<string, any> | null | undefined) {
+  const a = analysis && typeof analysis === 'object' ? analysis : {};
+  return {
+    ...a,
+    creditEligibility: { ...(a.creditEligibility || {}), eligibleCredits: 0, carryForward: 0 },
+    complianceAssessment: 'not_assessed',
+  };
+}
+
+function replayIndicativeValue(previous: { verification_status: string | null; total_co2_kg: number | null }) {
+  const verifiedKg = previous.verification_status === 'verified' ? Number(previous.total_co2_kg) || 0 : 0;
+  return {
+    verifiedTCO2e: verifiedKg / 1000,
+    indicativeValueInr: indicativeValueFromKg(verifiedKg),
+    rateInrPerT: INDICATIVE_RATE_INR_PER_T,
+    label: INDICATIVE_VALUE_LABEL,
+    creditsIssued: 0,
   };
 }
 
@@ -267,10 +258,11 @@ serve(async (req) => {
   }
 
   try {
-    const { emissionIds, sessionId: bodySessionId, includeIoT = false, country = 'IN', inspectOnly = false } = await req.json();
+    // includeIoT is still accepted from older clients but no longer changes any number.
+    const { emissionIds, sessionId: bodySessionId, country = 'IN', inspectOnly = false } = await req.json();
 
     const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
-    const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || 0.708;
+    const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || INDIA_GRID_FACTOR_KG_PER_KWH;
 
     if (!Array.isArray(emissionIds) || emissionIds.length === 0 || emissionIds.length > 100 ||
         emissionIds.some((id) => typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(id)) ||
@@ -340,9 +332,10 @@ serve(async (req) => {
       }
     }
 
-    // Signed-in invoice verification is an evidence transition, not a way to
-    // manufacture missing source data. Preflight and commit use this same gate.
-    if (userId) {
+    // Verification is an evidence transition, not a way to manufacture
+    // missing source data. Signed-in users and guests go through the same
+    // gate; preflight and commit use it too.
+    {
       const missingInputs: Array<{ emissionId: string; fields: string[] }> = [];
       for (const emission of emissions) {
         const fields: string[] = [];
@@ -390,11 +383,12 @@ serve(async (req) => {
         return new Response(JSON.stringify({ success: true, data: {
           verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
           greenwashingRisk: previous.greenwashing_risk,
-          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
-          cbamCompliant: previous.cbam_compliant, totalCO2Kg: previous.total_co2_kg,
+          greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [], analysis: replayAnalysis(previous.ai_analysis), cctsEligible: false,
+          cbamCompliant: false, totalCO2Kg: previous.total_co2_kg,
           netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
           verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
           methodology: previous.ai_analysis?.methodology,
+          indicativeValue: replayIndicativeValue(previous), complianceAssessment: 'not_assessed',
         }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
       }
     }
@@ -410,29 +404,28 @@ serve(async (req) => {
     }
 
     // Step 2: Calculate scope breakdown
+    // Gross emissions only: legacy negative (avoided) rows count as zero and
+    // are never subtracted.
+    const grossKg = (e: EmissionRecord) => (Number.isFinite(Number(e.co2_kg)) && Number(e.co2_kg) > 0 ? Number(e.co2_kg) : 0);
     const scopeBreakdown = {
-      scope1: emissions.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0),
-      scope2: emissions.filter(e => e.scope === 2).reduce((sum, e) => sum + e.co2_kg, 0),
-      scope3: emissions.filter(e => e.scope === 3).reduce((sum, e) => sum + e.co2_kg, 0),
+      scope1: emissions.filter(e => e.scope === 1).reduce((sum, e) => sum + grossKg(e), 0),
+      scope2: emissions.filter(e => e.scope === 2).reduce((sum, e) => sum + grossKg(e), 0),
+      scope3: emissions.filter(e => e.scope === 3).reduce((sum, e) => sum + grossKg(e), 0),
     };
 
     const totalCO2Kg = scopeBreakdown.scope1 + scopeBreakdown.scope2 + scopeBreakdown.scope3;
 
-    // Step 3: Calculate verified reductions (only from certified documents)
-    // In real implementation, this would check for REC_CERTIFICATE, RECYCLER_CERTIFICATE, etc.
-    let verifiedReductions = 0;
-    if (includeIoT && !userId) {
-      // IoT efficiency bonus (simulated - in reality would come from meter data)
-      verifiedReductions = totalCO2Kg * 0.05; // 5% efficiency gain from IoT monitoring
-    }
+    // Step 3: Reductions. None are recorded: there is no certificate or meter
+    // evidence path yet, and a simulated reduction is not evidence.
+    const verifiedReductions = 0;
 
-    // Step 4: Calculate net emissions
-    const netEmissions = Math.max(0, totalCO2Kg - verifiedReductions);
-    const netTCO2e = netEmissions / 1000;
+    // Step 4: Net emissions equal gross emissions (nothing is netted).
+    const netEmissions = totalCO2Kg;
 
-    // Step 5: Calculate credit eligibility
-    const creditsIssued = Math.floor(netTCO2e);
-    const carryForward = netTCO2e - creditsIssued;
+    // Step 5: No credits are issued by this service. eligibleCredits and
+    // carryForward stay 0 for older clients that read them.
+    const creditsIssued = 0;
+    const carryForward = 0;
 
     // Step 6: Determine greenwashing risk
     const { risk: greenwashingRisk, factors: greenwashingFactors } = calculateGreenwashingRisk(emissions, validationResults);
@@ -465,9 +458,26 @@ serve(async (req) => {
     else if (verificationScore >= 0.5) qualityGrade = 'C';
     else qualityGrade = 'D';
 
-    // CCTS and CBAM eligibility
-    const cctsEligible = status === 'verified' && qualityGrade !== 'D';
-    const cbamCompliant = status === 'verified' && greenwashingRisk === 'low' && qualityGrade === 'A';
+    // CCTS and CBAM status is NOT assessed here. Invoice verification says
+    // nothing about CCTS registration or CBAM reporting, so the stored columns
+    // are null ("not assessed") and the response reports false for clients
+    // that expect a boolean.
+    const cctsEligible = false;
+    const cbamCompliant = false;
+    const complianceAssessment = 'not_assessed' as const;
+
+    // Indicative value: verified tCO2e x the single reference rate. Zero
+    // unless this verification passed. Not an issued credit.
+    const verifiedKg = status === 'verified' ? totalCO2Kg : 0;
+    const verifiedTCO2e = verifiedKg / 1000;
+    const indicativeValueInr = indicativeValueFromKg(verifiedKg);
+    const indicativeValue = {
+      verifiedTCO2e,
+      indicativeValueInr,
+      rateInrPerT: INDICATIVE_RATE_INR_PER_T,
+      label: INDICATIVE_VALUE_LABEL,
+      creditsIssued: 0,
+    };
 
     // Use AI for additional analysis and recommendations
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
@@ -542,16 +552,19 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
             carryForward,
             qualityGrade,
           },
+          indicativeValue,
+          complianceAssessment,
           methodology: {
             name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
-            version: 'v1.0',
+            version: METHODOLOGY_VERSION_TAG,
             country: countryCode,
-            factorVersion: `${countryCode}_EF_2025`,
+            factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
             gridFactor,
           },
         },
-        ccts_eligible: cctsEligible,
-        cbam_compliant: cbamCompliant,
+        // null = not assessed (see complianceAssessment above).
+        ccts_eligible: null,
+        cbam_compliant: null,
         verified_at: status === 'verified' ? new Date().toISOString() : null,
       })
       .select()
@@ -564,11 +577,12 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       return new Response(JSON.stringify({ success: true, data: {
         verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
         greenwashingRisk: previous.greenwashing_risk, greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [],
-        analysis: previous.ai_analysis, cctsEligible: previous.ccts_eligible,
-        cbamCompliant: previous.cbam_compliant, totalCO2Kg: previous.total_co2_kg,
+        analysis: replayAnalysis(previous.ai_analysis), cctsEligible: false,
+        cbamCompliant: false, totalCO2Kg: previous.total_co2_kg,
         netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
         verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
         methodology: previous.ai_analysis?.methodology,
+          indicativeValue: replayIndicativeValue(previous), complianceAssessment: 'not_assessed',
       }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
     if (verificationError) {
@@ -587,19 +601,82 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         .in('id', emissionIds)
         .eq('user_id', userId || '');
       if (statusError && userId) throw statusError;
-      // Preserve the original guest update path without changing guest access.
-      if (!userId) await supabase.from('emissions').update({ verified: true }).in('id', emissionIds);
+      // Guests: same evidence gate passed above; update only this session's rows.
+      if (!userId && sessionId) {
+        const { error: guestStatusError } = await supabase.from('emissions').update({ verified: true })
+          .in('id', emissionIds).eq('session_id', sessionId).is('user_id', null);
+        if (guestStatusError) throw guestStatusError;
+      }
     }
 
     // ============= COMPLIANCE LEDGER POPULATION =============
-    // Auto-populate compliance ledger for authenticated users
+    // Auto-populate compliance ledger for authenticated users.
+    // One ledger row per (user, emission), across all verifications, so an
+    // emission verified twice is never counted twice downstream.
     if (userId) {
-      const GREEN_CATEGORIES = ['SOLAR_ENERGY', 'EV_TRANSPORT', 'FORESTATION', 'WIND_ENERGY', 'BIOGAS', 'ORGANIC_INPUT', 'ENERGY_EFFICIENCY', 'WATER_CONSERVATION', 'RECYCLED_MATERIAL'];
-      
+      // Emission rows store the lowercase display category (see
+      // src/lib/mrvPersistence.ts); older code compared against upper-case
+      // product categories only, so no row was ever marked green.
+      const GREEN_CATEGORIES = new Set([
+        'solar', 'ev', 'forestation', 'wind', 'biogas', 'organic', 'efficiency', 'water', 'recycled',
+        'solar_energy', 'ev_transport', 'wind_energy', 'organic_input', 'energy_efficiency', 'water_conservation', 'recycled_material',
+      ]);
+
+      const { data: priorLedger, error: priorLedgerError } = await supabase
+        .from('compliance_ledger')
+        .select('id, emission_id, document_id, amount, verification_status')
+        .eq('user_id', userId)
+        .in('emission_id', emissionIds);
+      if (priorLedgerError) throw priorLedgerError;
+      const priorByEmission = new Map((priorLedger || []).map((row) => [row.emission_id as string, row]));
+
+      // Invoice amount is a document-level figure. Store it on one ledger row
+      // per document (the first one written) and leave it null on the other
+      // line rows, so summing ledger amounts never multiplies supplier spend.
+      const documentIds = [...new Set(emissions.map((e) => e.document_id).filter(Boolean))] as string[];
+      const docsWithAmount = new Set<string>();
+      if (documentIds.length) {
+        const { data: amountRows, error: amountRowsError } = await supabase
+          .from('compliance_ledger')
+          .select('document_id')
+          .eq('user_id', userId)
+          .in('document_id', documentIds)
+          .not('amount', 'is', null);
+        if (amountRowsError) throw amountRowsError;
+        for (const row of amountRows || []) if (row.document_id) docsWithAmount.add(row.document_id as string);
+      }
+
+      let written = 0;
       for (const emission of emissions) {
         const doc = emission.documents;
-        const isGreen = GREEN_CATEGORIES.includes(emission.category?.toUpperCase?.() || '');
+        const isGreen = GREEN_CATEGORIES.has(String(emission.category || '').toLowerCase());
         const co2 = emission.co2_kg || 0;
+
+        const prior = priorByEmission.get(emission.id);
+        if (prior) {
+          // Already in the ledger. Only promote an earlier unverified row when
+          // this verification passed; never add a second row.
+          if (status === 'verified' && prior.verification_status !== 'verified') {
+            const { error: promoteError } = await supabase.from('compliance_ledger').update({
+              verification_id: verification.id,
+              verification_status: status,
+              verification_score: verificationScore,
+              greenwashing_risk: greenwashingRisk,
+              validation_result: validationResults.get(emission.id)?.valid === false ? 'failed' : 'passed',
+              verified_at: new Date().toISOString(),
+            }).eq('id', prior.id).eq('user_id', userId);
+            if (promoteError) console.error('Compliance ledger promote error for emission:', emission.id, promoteError);
+          }
+          continue;
+        }
+        const docAmount = doc?.amount ?? null;
+        let ledgerAmount: number | null = null;
+        if (docAmount !== null && emission.document_id && !docsWithAmount.has(emission.document_id)) {
+          ledgerAmount = docAmount;
+          docsWithAmount.add(emission.document_id);
+        } else if (docAmount !== null && !emission.document_id) {
+          ledgerAmount = docAmount;
+        }
         const cachedResult = doc?.cached_result && typeof doc.cached_result === 'object'
           ? doc.cached_result as Record<string, unknown>
           : null;
@@ -659,16 +736,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const fiscalQuarter = month >= 4 && month <= 6 ? 'Q1' : month >= 7 && month <= 9 ? 'Q2' : month >= 10 && month <= 12 ? 'Q3' : 'Q4';
 
         try {
-          const { data: existingLedger } = await supabase
-            .from('compliance_ledger')
-            .select('id')
-            .eq('emission_id', emission.id)
-            .eq('verification_id', verification.id)
-            .maybeSingle();
-
-          if (existingLedger) continue;
-
-          await supabase
+          const { error: insertError } = await supabase
             .from('compliance_ledger')
             .insert({
               user_id: userId,
@@ -679,7 +747,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               invoice_number: doc?.invoice_number || null,
               vendor: doc?.vendor || null,
               invoice_date: doc?.invoice_date || null,
-              amount: doc?.amount || null,
+              amount: ledgerAmount,
               currency: doc?.currency || 'INR',
               green_category: isGreen ? emission.category : null,
               scope: emission.scope,
@@ -689,14 +757,14 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               emission_factor: emission.emission_factor || null,
               factor_source: factorSource,
               co2_kg: co2,
-              is_green_benefit: co2 < 0,
+              is_green_benefit: isGreen,
               confidence_score: doc?.confidence || null,
               verification_score: verificationScore,
               verification_status: status,
               validation_result: validationResult,
               validation_failure_reason: validationFailureReason,
               greenwashing_risk: greenwashingRisk,
-              methodology_version: `BIOCOG_MVR_${countryCode}_v1.0`,
+              methodology_version: `BIOCOG_MVR_${countryCode}_${METHODOLOGY_VERSION_TAG}`,
               classification_method: classificationMethod,
               gstin: supplierGstin,
               hsn_code: hsnCode,
@@ -704,11 +772,14 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               fiscal_year: fiscalYear,
               fiscal_quarter: fiscalQuarter,
             });
+          // 23505: a concurrent request already wrote this (user, emission).
+          if (insertError && insertError.code !== '23505') throw insertError;
+          if (!insertError) written++;
         } catch (ledgerError) {
           console.error('Compliance ledger insert error for emission:', emission.id, ledgerError);
         }
       }
-      console.log(`Compliance ledger populated with ${emissions.length} entries`);
+      console.log(`Compliance ledger: ${written} new entries, ${emissions.length - written} already present or failed`);
     }
 
     const result: VerificationResult & { greenwashingFactors: string[] } = {
@@ -738,11 +809,13 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       verifiedReductions,
       methodology: {
         name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
-        version: 'v1.0',
+        version: METHODOLOGY_VERSION_TAG,
         country: countryCode,
-        factorVersion: `${countryCode}_EF_2025`,
+        factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
         gridFactor,
       },
+      indicativeValue,
+      complianceAssessment,
     };
 
     console.log('Verification complete:', result);

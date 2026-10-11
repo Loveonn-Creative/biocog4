@@ -50,3 +50,15 @@ Runs in one transaction. Depends on `public.is_trusted_db_writer()` from `202610
 - **compliance_ledger.** Moves duplicate `(user_id, emission_id)` rows (keeps the latest by `verified_at`, then `created_at`) into `compliance_ledger_duplicates_backup` (RLS on, no policies), adds unique index `compliance_ledger_user_emission_key`, and drops the owner UPDATE policy. A commented-out line can also drop the owner INSERT policy (owner decision).
 
 Roll back with `rollback/20261011180000_team_access_and_ledger_integrity.sql`: restores the original policies (which fail again), drops the `private` helpers and schema, the RPCs, triggers and seat functions, restores saved `max_members`, puts the removed ledger rows back and recreates the UPDATE policy. Organizations created while the migration was live keep their tier-derived seat count.
+
+## 20261011170000_recalculate_emissions.sql
+
+Recomputes `co2_kg` and `emission_factor` for stored emissions whose factor changed in methodology v1.1: LPG 1.51 to 2.98 per kg, PNG 2.30 to 2.05 per scm, furnace oil 3.15 to 2.97 per L, grid 0.708 to 0.710 per kWh, kerosene (stored with diesel's 2.68) to 2.52 per L.
+
+- Rows match on category, old factor and stored unit; kerosene rows are found through `sourceDescription`. Naphtha rows (old 3.00 per L) are listed for manual review and not changed, because the new factor is per kg. Negative green rows are untouched.
+- Old values are first copied to `public.emissions_recalc_backup_20261011` (RLS on, no policies).
+- `compliance_ledger` and `carbon_verifications.total_co2_kg` are left as snapshots of what was verified at the time.
+- Dry run: execute up to and including the two preview SELECTs, then ROLLBACK. Re-running the migration changes nothing.
+- Run as the DB owner, after 20261011120000 if that is applied (its trigger only lets trusted writers change `co2_kg`).
+- Rollback: `rollback/20261011170000_recalculate_emissions.sql` restores the three columns exactly and drops the backup table.
+- Needs confirmation before applying: the CEA edition behind 0.710, and the densities assumed for PNG (0.76 kg/scm), furnace oil (0.95 kg/L) and kerosene (0.80 kg/L).

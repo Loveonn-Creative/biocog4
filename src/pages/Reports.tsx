@@ -160,25 +160,46 @@ const Reports = () => {
     dbProfile?.businessName || user?.email?.split('@')[0] || 'Unnamed entity';
 
   // One verified dataset, shared by every framework output.
+  // Categories use exactly the rows behind the totals: verified rows for
+  // signed-in users (as useEmissions' summary does), each emission id once.
+  const reportRows = useMemo(() => {
+    const rows = user ? emissions.filter(e => e.verified === true) : emissions;
+    const seen = new Set<string>();
+    return rows.filter(e => (seen.has(e.id) ? false : (seen.add(e.id), true)));
+  }, [emissions, user]);
+
   const dataset: ReportDataset = useMemo(() => {
-    const dates = emissions.map(e => e.created_at).sort();
+    const dates = reportRows.map(e => e.created_at).sort();
+    // All co2Kg values are kgCO2e, like scope1Kg..totalKg. Activity data is
+    // only summed when every row in the group shares one unit; mixed units
+    // (e.g. litres and kg of fuel) are reported as unavailable, not added.
     const categories = Object.values(
-      emissions.reduce((acc, e) => {
+      reportRows.reduce((acc, e) => {
         const key = `${e.scope}:${e.category}`;
+        const unit = e.activity_unit ?? null;
         if (!acc[key]) {
           acc[key] = {
             category: e.category,
             scope: e.scope,
             co2Kg: 0,
             activityData: 0,
-            activityUnit: e.activity_unit,
+            activityUnit: unit,
             emissionFactor: e.emission_factor,
             dataQuality: e.data_quality,
             verified: Boolean(e.verified),
           };
+        } else {
+          if (acc[key].activityUnit !== unit) {
+            acc[key].activityUnit = null;
+            acc[key].activityData = null;
+          }
+          if (acc[key].emissionFactor !== e.emission_factor) acc[key].emissionFactor = null;
         }
-        acc[key].co2Kg += e.co2_kg;
-        acc[key].activityData = (acc[key].activityData ?? 0) + (e.activity_data ?? 0);
+        // Same summation as the scope totals so categories add up to them.
+        acc[key].co2Kg += Number(e.co2_kg) || 0;
+        if (acc[key].activityData !== null && acc[key].activityUnit !== null) {
+          acc[key].activityData = (acc[key].activityData ?? 0) + (e.activity_data ?? 0);
+        }
         acc[key].verified = acc[key].verified && Boolean(e.verified);
         return acc;
       }, {} as Record<string, ReportDataset['categories'][number]>),
@@ -232,7 +253,7 @@ const Reports = () => {
           }
         : null,
     };
-  }, [emissions, summary, evidence, availability, methodologyVersion, factorSources, latestVerification, target, dbProfile, organizationName, dateLocale]);
+  }, [reportRows, summary, evidence, availability, methodologyVersion, factorSources, latestVerification, target, dbProfile, organizationName, dateLocale]);
 
   const assessments = useMemo(
     () =>

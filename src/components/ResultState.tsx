@@ -5,6 +5,7 @@ import { ConfidenceBand } from "./trust/ConfidenceBand";
 import { AutoValidation } from "./trust/AutoValidation";
 import { MonetizationPreview } from "./trust/MonetizationPreview";
 import { useTrustLayerSettings } from "@/hooks/useTrustLayerSettings";
+import { INDICATIVE_VALUE_LABEL } from "@/lib/carbonValue";
 
 interface ExtractedData {
   documentType: string;
@@ -17,6 +18,7 @@ interface ExtractedData {
   emissionCategory?: string;
   estimatedCO2Kg?: number;
   totalCO2Kg?: number;
+  avoidedCO2Kg?: number;
   confidence: number;
   validationFlags?: string[];
   classificationMethod?: string;
@@ -24,6 +26,7 @@ interface ExtractedData {
 
 interface ResultStateProps {
   type: "revenue" | "compliance";
+  /** Indicative value of VERIFIED emissions only (verified tCO2e x ₹750). 0 or absent before verification. */
   amount?: number;
   extractedData?: ExtractedData;
   onConfirm: () => void;
@@ -33,8 +36,15 @@ interface ResultStateProps {
 export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
-  const co2Value = extractedData?.totalCO2Kg ?? extractedData?.estimatedCO2Kg ?? 0;
-  const isGreenBenefit = co2Value < 0;
+  // Gross emissions and avoided emissions are separate and both >= 0. Older
+  // cached results may still carry a netted negative total; read that as
+  // avoided emissions, never as negative emissions.
+  const rawTotal = extractedData?.totalCO2Kg ?? extractedData?.estimatedCO2Kg ?? 0;
+  const co2Value = rawTotal > 0 ? rawTotal : 0;
+  const avoidedKg = extractedData?.avoidedCO2Kg && extractedData.avoidedCO2Kg > 0
+    ? extractedData.avoidedCO2Kg
+    : rawTotal < 0 ? -rawTotal : 0;
+  const isGreenBenefit = co2Value === 0 && avoidedKg > 0;
   const greenCategory = extractedData?.emissionCategory ? getGreenCategoryFromEmissionCategory(extractedData.emissionCategory) : null;
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-IN", {
@@ -71,27 +81,40 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
       <div className="text-center">
         {isGreenBenefit ? (
           <>
-            <p className="text-sm text-muted-foreground mb-2">Verified Green Benefit</p>
+            <p className="text-sm text-muted-foreground mb-2">Avoided emissions (not yet verified)</p>
             <div className="flex items-center justify-center gap-2">
               <TreePine className="w-6 h-6 text-success" />
               <p className="text-3xl sm:text-4xl font-semibold text-success tracking-tight">
-                {Math.abs(co2Value).toFixed(2)} kg
+                {avoidedKg.toFixed(2)} kg
               </p>
             </div>
-            <p className="text-sm text-success/80 mt-1">CO₂ avoided / reduced</p>
+            <p className="text-sm text-success/80 mt-1">CO₂e avoided, reported separately from emissions</p>
           </>
         ) : type === "revenue" ? (
-          <>
-            <p className="text-sm text-muted-foreground mb-2">Potential carbon credit value</p>
-            <p className="text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
-              {amount ? formatCurrency(amount) : "₹0"}
-            </p>
-          </>
+          amount && amount > 0 ? (
+            <>
+              <p className="text-sm text-muted-foreground mb-2">Indicative value</p>
+              <p className="text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
+                {formatCurrency(amount)}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">{INDICATIVE_VALUE_LABEL}</p>
+            </>
+          ) : (
+            <>
+              <p className="text-sm text-muted-foreground mb-2">Emissions recorded</p>
+              <p className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
+                {co2Value.toFixed(2)} kg CO₂e
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Not yet verified. After verification you will see an indicative value ({INDICATIVE_VALUE_LABEL.toLowerCase()}).
+              </p>
+            </>
+          )
         ) : (
           <>
-            <p className="text-sm text-muted-foreground mb-2">Submission ready</p>
+            <p className="text-sm text-muted-foreground mb-2">Document recorded</p>
             <p className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">
-              Compliance verified
+              Ready for verification
             </p>
           </>
         )}
@@ -106,8 +129,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
       )}
 
       {/* Innovation 6: Real-time Monetization Preview (opt-in) */}
-      {co2Value !== 0 && !isGreenBenefit && isEnabled('monetization_preview') && (
-        <MonetizationPreview co2Kg={co2Value} />
+      {co2Value > 0 && isEnabled('monetization_preview') && (
+        <MonetizationPreview pendingKg={co2Value} verifiedKg={0} />
       )}
 
       {/* Validation Warnings */}
@@ -151,12 +174,16 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
                 <p className="font-medium text-foreground capitalize">{extractedData.emissionCategory}</p>
               </div>
             )}
-            {co2Value !== 0 && (
+            {co2Value > 0 && (
               <div>
-                <p className="text-muted-foreground text-xs">{isGreenBenefit ? 'CO₂ Avoided' : 'CO₂ Emissions'}</p>
-                <p className={`font-medium ${isGreenBenefit ? 'text-success' : 'text-destructive'}`}>
-                  {isGreenBenefit ? '-' : ''}{Math.abs(co2Value).toFixed(2)} kg
-                </p>
+                <p className="text-muted-foreground text-xs">CO₂ Emissions</p>
+                <p className="font-medium text-destructive">{co2Value.toFixed(2)} kg</p>
+              </div>
+            )}
+            {avoidedKg > 0 && (
+              <div>
+                <p className="text-muted-foreground text-xs">CO₂ Avoided (separate)</p>
+                <p className="font-medium text-success">{avoidedKg.toFixed(2)} kg</p>
               </div>
             )}
             {extractedData.amount && (
@@ -201,10 +228,10 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset }:
           <ArrowRight className="w-4 h-4" />
         </button>
         
-        {co2Value !== 0 && (
+        {co2Value > 0 && (
           <a
             href={`https://wa.me/?text=${encodeURIComponent(
-              `My ${extractedData?.documentType ?? 'document'} came to ${Math.abs(co2Value).toFixed(1)} kg CO2e on Senseible, with the emission factor and source for every line. Try it: https://senseible.earth/`
+              `My ${extractedData?.documentType ?? 'document'} came to ${co2Value.toFixed(1)} kg CO2e on Senseible, with the emission factor and source for every line. Try it: https://senseible.earth/`
             )}`}
             target="_blank"
             rel="noopener noreferrer"

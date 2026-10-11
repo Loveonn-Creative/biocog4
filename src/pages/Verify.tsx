@@ -470,22 +470,10 @@ const Verify = () => {
                   </div>
                 </div>
 
-                {/* Compliance Badges */}
-                <div className="flex gap-3 mb-6">
-                  <div className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
-                    verificationResult.cctsEligible ? 'bg-success/10 border-success/30 text-success' : 'bg-muted border-border text-muted-foreground'
-                  }`}>
-                    <Award className="h-4 w-4" />
-                    <span className="text-sm font-medium">CCTS Eligible</span>
-                    {verificationResult.cctsEligible ? <CheckCircle className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
-                  </div>
-                  <div className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
-                    verificationResult.cbamCompliant ? 'bg-success/10 border-success/30 text-success' : 'bg-muted border-border text-muted-foreground'
-                  }`}>
-                    <Leaf className="h-4 w-4" />
-                    <span className="text-sm font-medium">CBAM Compliant</span>
-                    {verificationResult.cbamCompliant ? <CheckCircle className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
-                  </div>
+                {/* CCTS / CBAM eligibility is not assessed by this verification. */}
+                <div className="flex items-center gap-2 mb-6 px-4 py-2 rounded-lg border border-border bg-muted text-muted-foreground w-fit">
+                  <Award className="h-4 w-4" />
+                  <span className="text-sm">CCTS and CBAM eligibility: not assessed</span>
                 </div>
 
                 {/* Credit Eligibility */}

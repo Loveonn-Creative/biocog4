@@ -7,9 +7,9 @@ interface DataConnectorsProps {
   onIoTChange: (checked: boolean) => void;
 }
 
-const connectors = [
+const connectors: { icon: typeof Upload; label: string; desc: string; status: 'active' | 'toggle' | 'coming'; key: string }[] = [
   { icon: Upload, label: 'Manual Upload', desc: 'Invoice / bill upload', status: 'active' as const, key: 'manual' },
-  { icon: Wifi, label: 'IoT Sensors', desc: 'Smart meter data feed', status: 'toggle' as const, key: 'iot' },
+  { icon: Wifi, label: 'IoT Sensors', desc: 'Smart meter data feed', status: 'coming' as const, key: 'iot' },
   { icon: FileSpreadsheet, label: 'Tally Import', desc: 'Accounting software sync', status: 'coming' as const, key: 'tally' },
   { icon: Database, label: 'ERP Integration', desc: 'SAP, Oracle, Zoho', status: 'coming' as const, key: 'erp' },
 ];

@@ -78,6 +78,7 @@ interface ExtractedData {
   primaryScope?: number;
   primaryCategory?: string;
   totalCO2Kg?: number;
+  avoidedCO2Kg?: number;
   emissionCategory?: string;
   estimatedCO2Kg?: number;
   confidence: number;
@@ -193,8 +194,9 @@ const getScopeFromCategory = (category: string): number => {
   return SCOPE_MAP[category] || SCOPE_MAP[category.toUpperCase()] || 3;
 };
 
-// Fixed carbon credit rate (same as backend)
-const CARBON_CREDIT_RATE = 750;
+// No money figure is shown at upload. The indicative value is verified tCO2e
+// x the reference rate (src/lib/carbonValue.ts) and these emissions are not
+// verified yet. The invoice amount is never used as a stand-in.
 
 const Index = () => {
   const navigate = useNavigate();
@@ -238,29 +240,22 @@ const Index = () => {
       let documentId: string | null = null;
       
       if (documentHash) {
-        const { data: existingDoc } = await (await loadSupabase())
+        // Only this user's (or this guest session's) document. Another
+        // owner's row with the same hash is never matched or reassigned.
+        let lookup = (await loadSupabase())
           .from('documents')
           .select('id')
-          .eq('document_hash', documentHash)
+          .eq('document_hash', documentHash);
+        lookup = user
+          ? lookup.eq('user_id', user.id)
+          : lookup.eq('session_id', sessionId).is('user_id', null);
+        const { data: existingDoc } = await lookup
           .order('created_at', { ascending: false })
           .limit(1)
-          .single();
-        
+          .maybeSingle();
+
         if (existingDoc) {
           documentId = existingDoc.id;
-          
-          // Update with session/user info if not set
-          const { error: updateError } = await (await loadSupabase())
-            .from('documents')
-            .update({
-              session_id: user ? null : sessionId,
-              user_id: user?.id || null,
-            })
-            .eq('id', documentId);
-          
-          if (updateError) {
-            console.error('[MRV] Document update error:', updateError);
-          }
         }
       }
       
@@ -463,13 +458,10 @@ const Index = () => {
       const isCompliance = extractedData.documentType === 'certificate' || 
                           emissionCat === 'other';
       
-      // DETERMINISTIC: CO2 × Fixed Rate = Carbon Credit Value
-      const co2Tons = calculatedCO2 / 1000;
-      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
-
       const processingResult: ProcessingResult = {
         type: isCompliance ? "compliance" : "revenue",
-        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+        // Unverified at this point, so no indicative value yet.
+        amount: 0,
         documentType: formatDocumentType(extractedData.documentType, emissionCat),
         extractedData: {
           ...extractedData,
@@ -702,13 +694,10 @@ const Index = () => {
                       toast.success('Data saved successfully!');
                       setPendingRetry(null);
                       const extractedData = pendingRetry.extractedData;
-                      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
                       const emissionCat = getCategoryFromOCR(extractedData);
-                      const co2Tons = calculatedCO2 / 1000;
-                      const carbonCreditValue = Math.round(co2Tons * CARBON_CREDIT_RATE);
                       setResult({
                         type: extractedData.documentType === 'certificate' || emissionCat === 'other' ? "compliance" : "revenue",
-                        amount: carbonCreditValue > 0 ? carbonCreditValue : (extractedData.amount || 0),
+                        amount: 0,
                         documentType: formatDocumentType(extractedData.documentType, emissionCat),
                         extractedData,
                         documentId: savedIds.documentId,
