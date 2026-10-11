@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL, INDICATIVE_RATE_INR_PER_T } from "../_shared/carbonValue.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
@@ -92,6 +93,7 @@ interface VerificationResult {
     scopeBreakdown: { scope1: number; scope2: number; scope3: number };
     emissionIntensity: number | null;
     greenScore: number | null;
+    greenPotential?: number | null;
     creditEligibility: {
       eligibleCredits: number;
       carryForward: number;
@@ -234,13 +236,6 @@ function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResult
   
   return { risk, factors };
 }
-
-// No green score is computed. The previous formula scored the mix of scopes
-// (100 - 50 x Scope 1 share - 30 x Scope 2 share - 20 x Scope 3 share), which
-// does not depend on how much is emitted or reduced and has no basis in the
-// GHG Protocol. A low-carbon measure needs avoided or renewable activity data,
-// which verified emission rows do not carry, so the field is null ("not
-// assessed") rather than a made-up number.
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -421,7 +416,13 @@ serve(async (req) => {
     const { risk: greenwashingRisk, factors: greenwashingFactors } = calculateGreenwashingRisk(emissions, validationResults);
 
     // Step 7: Calculate green score
-    const greenScore: number | null = null;
+    // Estimated green score from the same verified records: the share of
+    // would-be emissions already avoided by clean sources, and the share that
+    // clean power would add (see _shared/greenScore.ts for the formula).
+    const avoidedKg = avoidedFromDocuments(emissions.map((e) => e.documents ? { id: e.document_id, cached_result: e.documents.cached_result as { avoidedCO2Kg?: unknown } | null } : null));
+    const green = estimateGreenScore(totalCO2Kg, avoidedKg, scopeBreakdown.scope2);
+    const greenScore: number | null = green ? green.score : null;
+    const greenPotential: number | null = green ? green.potential : null;
 
     // Step 8: Determine verification status
     const validCount = Array.from(validationResults.values()).filter(v => v.valid).length;
@@ -535,6 +536,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           flags: [...new Set(allFlags)],
           scopeBreakdown,
           greenScore,
+          greenPotential,
           netEmissions,
           verifiedReductions,
           greenwashingFactors,
@@ -787,6 +789,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         scopeBreakdown,
         emissionIntensity: null,
         greenScore,
+        greenPotential,
         creditEligibility: {
           eligibleCredits: creditsIssued,
           carryForward,

@@ -49,6 +49,7 @@ interface VerificationResult {
     flags: string[];
     scopeBreakdown: { scope1: number; scope2: number; scope3: number };
     greenScore: number | null;
+    greenPotential?: number | null;
     creditEligibility: {
       eligibleCredits: number;
       carryForward: number;
@@ -487,9 +488,13 @@ const Verify = () => {
                     <p className="text-xs text-muted-foreground">kg CO₂e</p>
                   </div>
                   <div className="p-4 rounded-lg bg-secondary/30">
-                    <p className="text-xs text-muted-foreground mb-1">Net Emissions</p>
-                    <p className="text-xl font-mono font-bold">{verificationResult.netEmissions.toFixed(1)}</p>
-                    <p className="text-xs text-muted-foreground">kg CO₂e</p>
+                    <p className="text-xs text-muted-foreground mb-1">Green score (est.)</p>
+                    <p className="text-xl font-mono font-bold">{verificationResult.analysis.greenScore ?? '—'}<span className="text-xs text-muted-foreground font-normal">/100</span></p>
+                    <p className="text-xs text-muted-foreground">
+                      {verificationResult.analysis.greenPotential != null && verificationResult.analysis.greenPotential > (verificationResult.analysis.greenScore ?? 0)
+                        ? `up to ${verificationResult.analysis.greenPotential} with clean power`
+                        : 'share avoided by clean sources'}
+                    </p>
                   </div>
                   <div className="p-4 rounded-lg bg-success/10">
                     <p className="text-xs text-muted-foreground mb-1">Evidence score</p>
