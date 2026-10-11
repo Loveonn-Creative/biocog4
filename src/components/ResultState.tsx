@@ -32,11 +32,9 @@ interface ResultStateProps {
   onReset: () => void;
   /** False when no line item had a printed quantity and unit, so nothing was saved to verify. */
   hasRecords?: boolean;
-  /** What the main button does when there is nothing to verify. */
-  noRecordsAction?: 'history' | 'upload';
 }
 
-export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, hasRecords = true, noRecordsAction = 'history' }: ResultStateProps) => {
+export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, hasRecords = true }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
   // Gross emissions and avoided emissions are separate and both >= 0. Older
@@ -234,7 +232,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
             active:scale-[0.98]
           "
         >
-          <span>{hasRecords ? 'Continue to Verify' : noRecordsAction === 'history' ? 'Open History' : 'Upload another bill'}</span>
+          <span>Continue to Verify</span>
           <ArrowRight className="w-4 h-4" />
         </button>
         

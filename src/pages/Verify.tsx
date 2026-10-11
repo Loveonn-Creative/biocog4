@@ -109,8 +109,10 @@ const Verify = () => {
 
   // Only stored rows are shown. When navigation names a document, scope to it.
   const { scoped, pending, allVerified } = useMemo(
-    () => verifyListState(emissions, documentId),
-    [emissions, documentId],
+    // Verify always works on every pending record on the account (all invoices),
+    // including the one just uploaded.
+    () => verifyListState(emissions, null),
+    [emissions],
   );
 
   // Just after upload, the stored rows may not be readable yet. Refetch a few
@@ -254,14 +256,6 @@ const Verify = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 {pending.length} {pending.length === 1 ? 'record' : 'records'} pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
               </p>
-              {documentId && (
-                <div className="flex items-center justify-between gap-2 mb-4 p-2 rounded-lg bg-secondary/30 text-sm">
-                  <span className="text-muted-foreground">Showing records for one invoice</span>
-                  <Button variant="ghost" size="sm" onClick={() => navigate('/verify', { replace: true, state: null })}>
-                    Show all records
-                  </Button>
-                </div>
-              )}
               
               {/* Innovation 9: Data Connectors (opt-in) */}
               {isEnabled('data_connectors') && (
@@ -308,7 +302,7 @@ const Verify = () => {
                     </>
                   ) : (
                     <>
-                      {documentId ? 'Verify This Invoice' : 'Verify All Emissions'}
+                      Verify All Emissions
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </>
                   )}
@@ -320,7 +314,7 @@ const Verify = () => {
                   <CheckCircle className="h-8 w-8 text-success" />
                 </div>
                 <p className="font-medium text-lg mb-2">
-                  {documentId ? 'All records for this invoice are verified' : 'All emissions verified'}
+                  All emissions verified
                 </p>
                 <p className="text-sm text-muted-foreground mb-4">Verified records are listed in History and the audit ledger</p>
                 <Button onClick={() => navigate('/monetize')} size="lg">
@@ -333,13 +327,13 @@ const Verify = () => {
                 {refetchAttempts < 3 ? (
                   <>
                     <Loader2 className="h-5 w-5 animate-spin mx-auto mb-2 text-muted-foreground" />
-                    <p className="text-muted-foreground mb-4">Waiting for the stored emission records for this invoice...</p>
+                    <p className="text-muted-foreground mb-4">Waiting for the stored emission records...</p>
                   </>
                 ) : (
                   <>
-                    <p className="font-medium mb-2">No stored emission records for this invoice yet</p>
+                    <p className="font-medium mb-2">No emission records to verify yet</p>
                     <p className="text-sm text-muted-foreground mb-4">
-                      It may still be processing, or no line item had the quantity and unit needed to calculate emissions. Check History for its status.
+                      Records appear here once an uploaded bill shows a quantity with its unit (kWh, litres, kg).
                     </p>
                   </>
                 )}
