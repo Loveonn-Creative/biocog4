@@ -15,6 +15,8 @@ import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
+import { checkUploadPages } from '@/lib/pdfLimit';
+import { getFunctionErrorMessage } from '@/hooks/useOrganization';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -336,6 +338,12 @@ const Index = () => {
   };
 
   const processDocument = async (file: File) => {
+    // Long PDFs are refused before upload, with guidance, rather than parsed partially.
+    const pageCheck = await checkUploadPages(file);
+    if (!pageCheck.ok) {
+      toast.error(pageCheck.message, { duration: 8000 });
+      return;
+    }
     setState("processing");
     setDocumentType("Analyzing document...");
 
@@ -352,7 +360,7 @@ const Index = () => {
 
       if (error) {
         console.error("OCR Error:", error);
-        toast.error("Failed to process document. Please try again.");
+        toast.error(await getFunctionErrorMessage(error, "Failed to process document. Please try again."));
         setState("idle");
         return;
       }
