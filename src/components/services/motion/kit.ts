@@ -64,8 +64,9 @@ export function useCanvasLoop(canvasRef: RefObject<HTMLCanvasElement>, draw: Dra
       drawRef.current(ctx, { t: (now - start) / 1000, dt, ...size.current });
       raf = requestAnimationFrame(tick);
     };
+    // Draw immediately so the canvas is never blank between fit() and the first frame.
+    drawRef.current(ctx, { t: 0, dt: 0, ...size.current });
     if (active) raf = requestAnimationFrame(tick);
-    else drawRef.current(ctx, { t: 0, dt: 0, ...size.current });
     return () => { cancelAnimationFrame(raf); ro.disconnect(); };
   }, [canvasRef, active]);
 }
