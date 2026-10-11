@@ -170,6 +170,7 @@ serve(async (req) => {
     // Fetch actual order amount for invoice
     let orderAmount = 0;
     let orderCurrency = 'INR';
+    let scaleQuoteId: string | null = null;
     try {
       const orderResponse = await fetch(`https://api.razorpay.com/v1/orders/${razorpay_order_id}`, {
         headers: { 'Authorization': 'Basic ' + btoa(`${RAZORPAY_KEY_ID}:${RAZORPAY_KEY_SECRET}`) },
@@ -178,9 +179,38 @@ serve(async (req) => {
         const orderData = await orderResponse.json();
         orderAmount = orderData.amount || 0;
         orderCurrency = orderData.currency || 'INR';
+        // Set server-side by create-razorpay-order; the client cannot alter order notes.
+        const noteQuote = orderData?.notes?.scale_quote_id;
+        if (typeof noteQuote === 'string' && noteQuote) scaleQuoteId = noteQuote;
       }
     } catch (e) {
       console.error('Failed to fetch order details');
+    }
+
+    // Mark the admin-issued Scale quote as consumed so it cannot fund another order.
+    // Tolerates the table not existing yet (pending migration) and never blocks activation,
+    // because the customer has already paid at this point.
+    if (tier === 'scale' && scaleQuoteId) {
+      try {
+        const { data: consumedRows, error: consumeErr } = await admin
+          .from('scale_price_quotes')
+          .update({
+            status: 'consumed',
+            consumed_at: new Date().toISOString(),
+            consumed_order_id: razorpay_order_id,
+          })
+          .eq('id', scaleQuoteId)
+          .eq('user_id', userId)
+          .eq('status', 'active')
+          .select('id');
+        if (consumeErr) {
+          console.error('Scale quote consume failed:', consumeErr.code === '42P01' ? 'table missing' : consumeErr.code);
+        } else if (!consumedRows || consumedRows.length === 0) {
+          console.error('Scale quote was not active at consumption time; review manually:', { order: mask(razorpay_order_id) });
+        }
+      } catch (e) {
+        console.error('Scale quote consume error');
+      }
     }
 
     // Trigger invoice generation (service-role auth)
@@ -196,6 +226,7 @@ serve(async (req) => {
           },
           body: JSON.stringify({
             userId, email: userData.user.email, tier,
+            billingCycle: cycle, subscriptionId: subRow.id,
             amount: orderAmount, currency: orderCurrency,
             transactionId: razorpay_payment_id, orderId: razorpay_order_id,
           }),

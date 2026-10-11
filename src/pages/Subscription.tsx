@@ -15,12 +15,18 @@ import {
   Loader2, FileText, Upload, Brain, Shield
 } from 'lucide-react';
 
-const tiers = [
+// price = listed monthly-equivalent on yearly billing; null = custom priced (Scale).
+const tiers: { id: string; name: string; icon: typeof Sparkles; price: number | null; color: string }[] = [
   { id: 'snapshot', name: 'Snapshot', icon: Sparkles, price: 0, color: 'bg-muted' },
   { id: 'essential', name: 'Essential', icon: Zap, price: 499, color: 'bg-blue-500/10' },
   { id: 'pro', name: 'Pro', icon: Crown, price: 4999, color: 'bg-primary/10' },
-  { id: 'scale', name: 'Scale', icon: Building2, price: 15000, color: 'bg-amber-500/10' },
+  { id: 'scale', name: 'Scale', icon: Building2, price: null, color: 'bg-amber-500/10' },
 ];
+
+// subscriptions.tier stores Essential as 'basic' (DB CHECK constraint).
+const normalizeTier = (t: string | null | undefined) => (t === 'basic' ? 'essential' : t || '');
+const tierName = (t: string | null | undefined) =>
+  tiers.find((x) => x.id === normalizeTier(t))?.name || t || '';
 
 const usageLimits: Record<string, { invoices: number; reports: number; teamMembers: number }> = {
   snapshot: { invoices: 10, reports: 1, teamMembers: 1 },
@@ -90,6 +96,20 @@ const Subscription = () => {
   const currentTier = tiers.find(t => t.id === tier) || tiers[0];
   const TierIcon = currentTier.icon;
 
+  // Prefer what the user actually paid for the active plan over any list price.
+  const activeSub = subscriptions.find(
+    (s) => s.status === 'active' && normalizeTier(s.tier) === tier && Number(s.amount) > 0
+  );
+  const planPriceLabel = (() => {
+    if (tier === 'snapshot') return 'Free forever';
+    if (activeSub) {
+      const period = activeSub.billing_cycle === 'monthly' ? 'month' : activeSub.billing_cycle === 'yearly' ? 'year' : null;
+      return `Paid ₹${Number(activeSub.amount).toLocaleString('en-IN')}${period ? ` per ${period}` : ''}`;
+    }
+    if (currentTier.price === null) return 'Custom pricing';
+    return `₹${currentTier.price.toLocaleString('en-IN')}/month`;
+  })();
+
   if (sessionLoading || isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -129,13 +149,7 @@ const Subscription = () => {
                         <Badge className="bg-success text-success-foreground">Active</Badge>
                       )}
                     </h2>
-                    <p className="text-muted-foreground">
-                      {tier === 'snapshot' ? (
-                        'Free forever'
-                      ) : (
-                        `₹${currentTier.price.toLocaleString('en-IN')}/month`
-                      )}
-                    </p>
+                    <p className="text-muted-foreground">{planPriceLabel}</p>
                   </div>
                 </div>
                 <Button asChild>
@@ -237,7 +251,7 @@ const Subscription = () => {
                       className="flex items-center justify-between p-3 rounded-lg bg-muted/50"
                     >
                       <div>
-                        <p className="font-medium">Biocog {sub.tier}</p>
+                        <p className="font-medium">Biocog {tierName(sub.tier)}</p>
                         <p className="text-xs text-muted-foreground">
                           {new Date(sub.created_at).toLocaleDateString('en-IN', {
                             year: 'numeric',

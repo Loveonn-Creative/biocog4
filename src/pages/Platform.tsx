@@ -67,7 +67,7 @@ const pricingSummary = [
   { key: "snapshot", name: "Snapshot", price: "Free", detail: "AI emission snapshot, basic ESG score, 10 invoice scans per month, and 90-day data backup.", fit: "Start with the verification surface.", to: "/pricing" },
   { key: "essential", name: "Essential", price: "₹499 / month yearly", detail: "₹1,999 monthly. Adds GST → Carbon Automation, a verified climate score, and 3 team members.", fit: "For a business building a repeatable record.", to: "/pricing" },
   { key: "pro", name: "Pro", price: "₹4,999 / month yearly", detail: "₹9,999 monthly. Adds monetization setup, automated ESG reports, the verification ledger, and 10 team members.", fit: "For teams turning verified data into action.", to: "/pricing" },
-  { key: "scale", name: "Scale", price: "Custom team pricing", detail: "From ₹15,000 base + ₹99 per employee monthly equivalent on yearly billing; monthly billing is ₹30,000 + ₹198 per employee.", fit: "For larger teams, entities, and integrations.", to: "/pricing" },
+  { key: "scale", name: "Scale", price: "Custom pricing", detail: "Custom pricing for your team, entities, and integrations. Contact us for a quote.", fit: "For larger teams, entities, and integrations.", to: "/pricing" },
 ];
 
 const Platform = () => {
