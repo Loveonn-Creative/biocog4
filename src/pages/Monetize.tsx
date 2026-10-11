@@ -21,6 +21,7 @@ import { useSession } from '@/hooks/useSession';
 import { toast } from 'sonner';
 import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 interface EligibilityCheck {
   label: string;
   pass: boolean;
@@ -119,6 +120,8 @@ const Monetize = () => {
   const greenScore = verifications[0]?.ai_analysis?.greenScore || 0;
   const qualityGrade = verifications[0]?.ai_analysis?.creditEligibility?.qualityGrade || 'D';
 
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { fetchVerifications(); fetchPathwayStatuses(); });
   useEffect(() => {
     fetchVerifications();
     fetchPathwayStatuses();

@@ -36,6 +36,7 @@ import { analyticsEvents } from '@/lib/analytics';
 import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 interface Verification {
   id: string;
   total_co2_kg: number;
@@ -113,6 +114,8 @@ const Reports = () => {
   }, [autoFrameworks.join(','), useCustomFrameworks]);
 
   
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { fetchVerifications(); });
   useEffect(() => {
     fetchVerifications();
   }, [sessionId, user?.id]);

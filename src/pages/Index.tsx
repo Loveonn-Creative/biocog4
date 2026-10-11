@@ -14,6 +14,7 @@ import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
 
+import { emitRecordsChanged } from '@/lib/recordsEvents';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -325,6 +326,7 @@ const Index = () => {
       }
 
       const emissionIds = (emissionData || []).map((emission) => emission.id);
+      emitRecordsChanged('upload');
       console.log('[MRV] Saved document with independently calculated emission rows:', documentId, emissionIds.length);
       return { documentId, emissionId: emissionIds[0], emissionIds };
     } catch (error) {

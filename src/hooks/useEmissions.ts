@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
 
+import { useRecordsChanged } from '@/lib/recordsEvents';
 export interface Emission {
   id: string;
   document_id: string | null;
@@ -191,6 +192,9 @@ export function useEmissions() {
 
   const getUnverifiedEmissions = () => emissions.filter(e => !e.verified);
   const getVerifiedEmissions = () => emissions.filter(e => e.verified);
+
+  // Refetch when records change anywhere (verify, delete, upload).
+  useRecordsChanged(() => { void fetchEmissions(); });
 
   return {
     emissions,
