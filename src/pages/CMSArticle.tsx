@@ -4,6 +4,7 @@ import { memo, useMemo } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { articleMeta } from "@/lib/seo/articleSeo";
 import { FormattedContent } from "@/components/FormattedContent";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
@@ -25,6 +26,7 @@ const CMSArticle = () => {
   if (!article) {
     return (
       <div className="min-h-screen bg-background flex flex-col">
+        <SEOHead title="Article not found" description="This Climate Intelligence article does not exist or has moved." noIndex />
         <MinimalNav />
         <main className="container max-w-3xl mx-auto px-6 py-24 flex-1">
           <h1 className="text-2xl font-semibold">Article not found</h1>
@@ -46,11 +48,7 @@ const CMSArticle = () => {
   };
 
   // Generate dynamic OG image URL using a service or fallback
-  const articleDescription = article.content
-    .substring(0, 155)
-    .replace(/\*\*/g, '')
-    .replace(/\n/g, ' ')
-    .trim() + '...';
+  const meta = articleMeta(article);
   
   // Generate OG image URL - uses encoded title for dynamic image generation
   const ogImageUrl = `https://og.senseible.earth/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.subtitle)}`;
@@ -61,8 +59,8 @@ const CMSArticle = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SEOHead 
-        title={article.title}
-        description={articleDescription}
+        title={meta.title}
+        description={meta.description}
         canonical={`/climate-intelligence/${slug}`}
         type="article"
         image={defaultOgImage}

@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calculator } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { pageMeta } from "@/lib/seo/seoMeta";
 
 export interface RelatedLink { href: string; label: string; }
 export interface FAQ { q: string; a: string; }
@@ -28,6 +29,12 @@ export const CalculatorShell = ({
   howToSteps, faqs, factorSources, related, children,
 }: Props) => {
   const url = `https://senseible.earth/calculators/${slug}`;
+  // Shared metadata keeps the rendered head identical to the prerendered page.
+  const registered = pageMeta(`/calculators/${slug}`);
+  if (registered) {
+    title = registered.title;
+    description = registered.description;
+  }
 
   const jsonLd = [
     {

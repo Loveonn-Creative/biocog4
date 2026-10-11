@@ -397,8 +397,6 @@ const Pricing = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
-        <title>Pricing — Senseible</title>
-        <meta name="description" content="AI for MSMEs. Start free. Grow as you grow. No consultants. No delays." />
       </Helmet>
       <CarbonParticles />
       <Navigation />
@@ -421,7 +419,7 @@ const Pricing = () => {
                 <>
                   Earn from your Climate Data
                   <br />
-                  <span className="text-gradient-success">in under 47 Seconds</span>
+                  <span className="text-gradient-success">starting with one invoice</span>
                 </>
               )}
             </h1>

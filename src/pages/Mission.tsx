@@ -10,7 +10,7 @@ const Mission = () => {
     <div className="min-h-screen bg-background">
       <SEOHead 
         title="Mission — Senseible"
-        description="Why Senseible exists: Making carbon verification infrastructure accessible to 400 million MSMEs excluded from global climate finance."
+        description="Why Senseible exists: Making carbon verification infrastructure accessible to MSMEs excluded from global climate finance."
         keywords={["senseible mission", "MSME carbon", "climate finance inclusion", "carbon verification infrastructure"]}
         canonical="/mission"
         image={`https://senseible.earth${missionOg}`}
@@ -30,7 +30,7 @@ const Mission = () => {
           {/* Hero Statement */}
           <div className="mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-[1.1]">
-              400 million businesses are invisible to climate finance
+              Most small businesses are invisible to climate finance
             </h1>
             <div className="w-16 h-1 bg-primary rounded-full" />
           </div>
@@ -74,7 +74,7 @@ const Mission = () => {
             </h2>
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="p-6 bg-card rounded-xl border">
-                <p className="text-3xl font-semibold text-primary mb-2">47s</p>
+                <p className="text-3xl font-semibold text-primary mb-2">1 upload</p>
                 <p className="text-sm text-muted-foreground">Document to verified carbon signal</p>
               </div>
               <div className="p-6 bg-card rounded-xl border">

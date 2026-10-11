@@ -298,7 +298,7 @@ const CMSAdmin = () => {
       
       // FAQ template
       const faqTemplate = [
-        { Title: 'What is Senseible?', Answer: 'Senseible is an AI-powered carbon verification infrastructure for MSMEs across emerging markets, enabling carbon MRV to monetization in under 47 seconds.', Category: 'brand', Tags: 'senseible, carbon, MRV', Priority: 'high' },
+        { Title: 'What is Senseible?', Answer: 'Senseible is an AI-powered carbon verification infrastructure for MSMEs across emerging markets, enabling carbon MRV to monetization from a single upload.', Category: 'brand', Tags: 'senseible, carbon, MRV', Priority: 'high' },
         { Title: '', Answer: '', Category: '', Tags: '', Priority: '' }
       ];
       const faqSheet = XLSX.utils.json_to_sheet(faqTemplate);

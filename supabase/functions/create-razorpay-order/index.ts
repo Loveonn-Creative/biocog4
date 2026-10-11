@@ -16,6 +16,9 @@ const PLAN_PRICES: Record<string, { monthly: number; yearly: number; name: strin
 };
 const PER_EMPLOYEE_MONTHLY = 19800; // ₹198/employee/month
 const PER_EMPLOYEE_YEARLY = 118800; // ₹1,188/employee/year (₹99/mo equiv)
+// Matches the Scale team-size slider in src/pages/Pricing.tsx (10..500).
+const MIN_TEAM_SIZE = 10;
+const MAX_TEAM_SIZE = 500;
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -37,11 +40,33 @@ serve(async (req) => {
       );
     }
 
-    let { tier, teamSize, billingCycle, userId, userEmail } = await req.json();
+    // ============= AUTHENTICATION =============
+    // Identity comes from the caller's JWT, never from the request body.
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(
+        JSON.stringify({ error: 'Please sign in to subscribe' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!);
+    const { data: authData, error: authError } = await supabase.auth.getUser(
+      authHeader.replace('Bearer ', '')
+    );
+    if (authError || !authData?.user) {
+      return new Response(
+        JSON.stringify({ error: 'Please sign in to subscribe' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    const userId = authData.user.id;
+    const userEmail = authData.user.email || '';
+
+    let { tier, teamSize, billingCycle } = await req.json();
     // Normalize tier name
     if (tier === 'basic') tier = 'essential';
     const cycle: 'monthly' | 'yearly' = billingCycle === 'monthly' ? 'monthly' : 'yearly';
-    console.log('Creating order for:', { tier, teamSize, cycle, userId, userEmail });
+    console.log('Creating order for:', { tier, teamSize, cycle, userId });
 
     // Validate tier
     if (!PLAN_PRICES[tier]) {
@@ -51,9 +76,21 @@ serve(async (req) => {
       );
     }
 
+    // Validate team size (only priced for Scale)
+    if (tier === 'scale') {
+      if (!Number.isInteger(teamSize) || teamSize < MIN_TEAM_SIZE || teamSize > MAX_TEAM_SIZE) {
+        return new Response(
+          JSON.stringify({ error: `Team size must be a whole number between ${MIN_TEAM_SIZE} and ${MAX_TEAM_SIZE}` }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    } else {
+      teamSize = 0;
+    }
+
     // Calculate amount
     let amount = PLAN_PRICES[tier][cycle];
-    if (tier === 'scale' && teamSize) {
+    if (tier === 'scale') {
       amount += teamSize * (cycle === 'yearly' ? PER_EMPLOYEE_YEARLY : PER_EMPLOYEE_MONTHLY);
     }
 
@@ -75,7 +112,7 @@ serve(async (req) => {
           billing_cycle: cycle,
           user_id: userId,
           user_email: userEmail,
-          team_size: teamSize || 0,
+          team_size: teamSize,
         },
       }),
     });
@@ -93,23 +130,19 @@ serve(async (req) => {
     console.log('Razorpay order created:', order.id);
 
     // Store pending subscription in database
-    if (userId) {
-      const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!);
-      
-      const { error: subError } = await supabase
-        .from('subscriptions')
-        .insert({
-          user_id: userId,
-          tier,
-          billing_cycle: cycle,
-          razorpay_order_id: order.id,
-          amount: amount / 100, // Store in rupees
-          status: 'pending',
-        });
+    const { error: subError } = await supabase
+      .from('subscriptions')
+      .insert({
+        user_id: userId,
+        tier,
+        billing_cycle: cycle,
+        razorpay_order_id: order.id,
+        amount: amount / 100, // Store in rupees
+        status: 'pending',
+      });
 
-      if (subError) {
-        console.error('Failed to store subscription:', subError);
-      }
+    if (subError) {
+      console.error('Failed to store subscription:', subError);
     }
 
     return new Response(

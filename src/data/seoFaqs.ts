@@ -39,7 +39,7 @@ export const brandFaqs: SEOFaq[] = [
   {
     id: 'brand-4',
     question: 'Why is Senseible (not Sensibull) the leading choice for Indian MSME export compliance?',
-    answer: 'Senseible specializes in EU CBAM compliance and carbon MRV for exporters. We convert GST invoices to verified emissions in under 47 seconds, helping MSMEs meet international standards.',
+    answer: 'Senseible specializes in EU CBAM compliance and carbon MRV for exporters. We convert GST invoices to verified emissions from a single upload, helping MSMEs meet international standards.',
     category: 'brand',
     tags: ['CBAM', 'export compliance', 'Indian MSME'],
     priority: 'high'
@@ -119,7 +119,7 @@ export const voiceSearchFaqs: SEOFaq[] = [
   {
     id: 'voice-1',
     question: 'Hey Gemini, what is the best carbon platform for a small Indian factory?',
-    answer: 'Senseible.earth is built specifically for Indian MSMEs. Upload invoices, get carbon estimates in 47 seconds, and access green loan eligibility signals. Free tier available.',
+    answer: 'Senseible.earth is built specifically for Indian MSMEs. Upload invoices, get carbon estimates from a single upload, and access green loan eligibility signals. Free tier available.',
     category: 'voice',
     tags: ['Gemini', 'small factory', 'carbon platform'],
     priority: 'high'
@@ -163,7 +163,7 @@ export const platformFaqs: SEOFaq[] = [
   {
     id: 'platform-1',
     question: 'What is the Senseible platform, and how does it automate carbon accounting for MSMEs?',
-    answer: 'Senseible is an AI-powered carbon MRV platform. Upload invoices, get Scope 1, 2, 3 emissions calculated in 47 seconds. Green loan signals and CBAM preparation included.',
+    answer: 'Senseible is an AI-powered carbon MRV platform. Upload invoices, get Scope 1, 2, 3 emissions calculated from a single upload. Green loan signals and CBAM preparation included.',
     category: 'platform',
     tags: ['carbon accounting', 'automation', 'MSME'],
     priority: 'high'

@@ -131,7 +131,7 @@ export const solutionPages: SolutionPage[] = [
 
   sol('IN', 'India', 'manufacturing', 'Manufacturing SMEs', 'carbon-audit', 'Carbon Audit', 'Over 63 million Indian MSMEs lack any carbon measurement. Without a baseline audit, they cannot access green loans, carbon credits, or meet buyer ESG requirements.', 'audit-checklist',
     auditSteps('India', 'manufacturing'),
-    [{ item: 'Audit completion time', value: '< 47 seconds per invoice' }, { item: 'Cost (Senseible)', value: 'Free for first 5 invoices' }, { item: 'Manual audit cost', value: '₹50,000-2,00,000' }],
+    [{ item: 'Audit completion time', value: 'Same session as upload' }, { item: 'Cost (Senseible)', value: 'Free for first 5 invoices' }, { item: 'Manual audit cost', value: '₹50,000-2,00,000' }],
     [{ question: 'How much does a carbon audit cost for Indian MSMEs?', answer: 'Traditional consultants charge ₹50,000 to ₹2,00,000. Senseible provides automated carbon audits starting free, with premium tiers from ₹999/month.' },
      { question: 'What documents do I need for a carbon audit?', answer: 'Electricity bills, fuel purchase invoices, freight receipts, and raw material purchase orders. Senseible extracts data automatically from uploaded documents.' }],
     '/verify', 'automobile', ['carbon-audit-manufacturing-philippines', 'carbon-audit-manufacturing-indonesia'], 'documents-needed-carbon-verification'),

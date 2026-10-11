@@ -119,10 +119,7 @@ const NetZero = () => {
   return (
     <>
       <Helmet>
-        <title>Net-Zero Goal Engine — MSME Decarbonization Roadmap | Senseible</title>
-        <meta name="description" content="Build your net-zero roadmap in 5 steps. Set science-based targets, get AI-powered reduction strategies, and track real progress. Built for MSMEs and startups." />
         <meta name="keywords" content="net zero MSME, MSME decarbonization, net zero roadmap India, carbon reduction tool, SBTi MSME" />
-        <link rel="canonical" href="https://senseible.earth/net-zero" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <MinimalNav />

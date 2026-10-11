@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 
 import { SEOHead } from '@/components/SEOHead';
+import { solutionMeta } from '@/lib/seo/seoMeta';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -205,8 +206,7 @@ const Solutions = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={solution.title}
-        description={solution.metaDescription}
+        {...solutionMeta(solution)}
         canonical={`/solutions/${solution.slug}`}
         keywords={solution.keywords}
         breadcrumbs={[
@@ -335,7 +335,7 @@ const Solutions = () => {
                 Start Your {solution.regulationLabel} Journey
               </h2>
               <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                Upload your first invoice and get verified emission data in under 47 seconds. No expertise required.
+                Upload your first invoice and get verified emission data from a single upload. No expertise required.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button size="lg" asChild>

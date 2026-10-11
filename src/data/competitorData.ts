@@ -119,7 +119,7 @@ export const competitorData: CompetitorData[] = [
     },
     strengths: ['Enterprise-grade', 'Complex reporting', 'Audit capabilities'],
     limitations: ['12+ month implementation', 'Requires consultants', 'No MSME focus'],
-    senseibleAdvantage: 'Senseible delivers verified carbon data in 47 seconds, not 12 months. Built for MSMEs who need results today, not next year.',
+    senseibleAdvantage: 'Senseible returns a verified carbon estimate from a single document, not a months-long engagement. Built for MSMEs who need results today, not next year.',
   },
   
   // Startup Competitors
@@ -514,9 +514,9 @@ export const getAllCompetitorSlugs = (): string[] => {
 
 // Senseible unique features for comparison
 export const senseibleFeatures = {
-  msmeFirst: 'Built specifically for 400M+ MSMEs in emerging markets, not enterprise add-ons',
+  msmeFirst: 'Built specifically for MSMEs in emerging markets, not enterprise add-ons',
   gstIntegration: 'Native GST invoice OCR extracts carbon data from Indian business documents',
-  subMinuteProcessing: 'Invoice to verified carbon in under 47 seconds, not days or weeks',
+  subMinuteProcessing: 'Invoice to verified carbon estimate in one upload, not days or weeks',
   carbonMonetization: 'Direct pathways to carbon credits, green loans, and incentives',
   emergingMarketFocus: 'India-first with BRSR, CCTS, CBAM compliance built-in',
   autoVerification: 'AI-powered verification with greenwashing detection',

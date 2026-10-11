@@ -164,12 +164,7 @@ const CBAMCalculator = () => {
   return (
     <>
       <Helmet>
-        <title>CBAM Calculator — EU Carbon Border Tax Cost Estimator | Senseible</title>
-        <meta name="description" content="Free CBAM cost estimator for EU importers. Calculate carbon border tax exposure for steel, aluminium, cement, fertilizers from India. 2026-2034 projections with scenario modeling." />
         <meta name="keywords" content="CBAM calculator, CBAM cost estimator, EU carbon border tax, CBAM India, carbon border adjustment mechanism calculator" />
-        <link rel="canonical" href="https://senseible.earth/cbam-calculator" />
-        <meta property="og:title" content="CBAM Calculator — EU Carbon Border Tax Cost Estimator" />
-        <meta property="og:description" content="Calculate your CBAM cost exposure from 2026-2034. Free tool for EU importers and Indian producers." />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <MinimalNav />

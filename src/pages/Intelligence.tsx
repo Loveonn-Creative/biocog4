@@ -315,8 +315,6 @@ const Intelligence = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
-        <title>AI ESG Head — Senseible Intelligence</title>
-        <meta name="description" content="Your AI-powered ESG advisor for real-time sustainability guidance and net-zero strategy." />
       </Helmet>
 
       <Navigation />

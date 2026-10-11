@@ -655,7 +655,7 @@ const Grants = () => {
               viewport={{ once: true }}
             >
               <p className="text-muted-foreground text-sm">
-                Building infrastructure for 400M MSMEs across emerging markets
+                Building infrastructure for MSMEs across emerging markets
               </p>
             </motion.div>
           </div>

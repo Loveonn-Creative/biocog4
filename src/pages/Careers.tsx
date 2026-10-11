@@ -87,7 +87,7 @@ const Careers = () => {
       t("careers.why.a.h", "Months → seconds."),
       t(
         "careers.why.a.b",
-        "MRV that used to take a consultant a quarter now clears in under 47 seconds. The work you ship compresses time for millions of businesses."
+        "MRV that used to take a consultant a quarter now clears from a single upload. The work you ship compresses time for millions of businesses."
       ),
       t("careers.why.a.tag", "Speed"),
     ],
@@ -256,7 +256,7 @@ const Careers = () => {
         )}
         description={t(
           "careers.seo.desc",
-          "We're removing what stood between 400 million small businesses and the green economy. If you want difficult, meaningful work, this is the door."
+          "We're removing what stands between small businesses and the green economy. If you want difficult, meaningful work, this is the door."
         )}
         canonical="/careers"
         image={`https://senseible.earth${careersOg}`}
@@ -294,7 +294,7 @@ const Careers = () => {
             >
               {t(
                 "careers.life.title",
-                "Life at Senseible is life inside a system that has to work — for 400 million small businesses that can't afford it not to."
+                "Life at Senseible is life inside a system that has to work — for small businesses that can't afford it not to."
               )}
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">

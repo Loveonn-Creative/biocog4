@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { competitorMeta } from '@/lib/seo/seoMeta';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
@@ -43,13 +44,13 @@ const CompetitorComparison = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet>
-        <title>Senseible vs {competitor.name} — Carbon Accounting Comparison 2026</title>
-        <meta name="description" content={`Compare Senseible vs ${competitor.name}. ${competitor.description.substring(0, 120)}...`} />
+        <title>{competitorMeta(competitor).title}</title>
+        <meta name="description" content={competitorMeta(competitor).description} />
         <meta name="keywords" content={`senseible vs ${competitor.name.toLowerCase()}, ${competitor.name.toLowerCase()} alternative, carbon accounting comparison, ESG platform comparison, MRV comparison`} />
         <link rel="canonical" href={`https://senseible.earth/vs/${competitor.slug}`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`Senseible vs ${competitor.name} — Which is Better for Carbon Accounting?`} />
+        <meta property="og:title" content={competitorMeta(competitor).title} />
         <meta property="og:description" content={competitor.description} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://senseible.earth/vs/${competitor.slug}`} />
@@ -137,7 +138,7 @@ const CompetitorComparison = () => {
                     <Badge className="bg-primary text-primary-foreground">Recommended</Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    AI-powered carbon MRV for 400M+ MSMEs
+                    AI-powered carbon MRV for MSMEs and exporters
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -300,7 +301,7 @@ const CompetitorComparison = () => {
                 Ready to Try Senseible?
               </h3>
               <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                Start free. Get verified carbon data in under 47 seconds. 
+                Start free. Get verified carbon data from your first upload. 
                 No consultants, no complex setups.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
