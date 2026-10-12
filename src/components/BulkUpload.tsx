@@ -23,12 +23,15 @@ import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersiste
 
 import { checkUploadPages } from '@/lib/pdfLimit';
 import { splitPdf } from '@/lib/pdfSplit';
+import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
   message?: string;
   documentHash?: string;
   extractedData?: any;
+  /** First page of this part in the original PDF, for split files. */
+  fromPage?: number;
 }
 
 interface BulkUploadProps {
@@ -97,8 +100,9 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       if (f.status !== 'pending') { queue.push(f); continue; }
       const check = await checkUploadPages(f.file);
       if (check.ok) { queue.push(f); continue; }
+      if (check.reason === 'unknown_page_count') { queue.push({ ...f, status: 'error' as const, message: check.message }); continue; }
       const split = await splitPdf(f.file);
-      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const })));
+      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage })));
       else queue.push({ ...f, status: 'error' as const, message: split.message });
     }
     setFiles(queue);
@@ -135,7 +139,11 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           ));
           results.duplicates++;
         } else if (data?.success) {
-          const extractedData = data.data as PersistableExtraction;
+          const partData = data.data as PersistableExtraction;
+          // Split parts: page numbers mapped back to the original PDF.
+          const extractedData: PersistableExtraction = fileStatus.fromPage
+            ? { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], fileStatus.fromPage) }
+            : partData;
           const docLookup = supabase
             .from('documents')
             .select('id')

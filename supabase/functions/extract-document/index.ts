@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
+import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
@@ -369,6 +370,13 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
   }
 
   const data = await response.json();
+  // A cut-off answer is not a partial result to keep: the caller retries or
+  // refuses it.
+  if (isTruncatedFinish(data.choices?.[0]?.finish_reason)) {
+    const error = new Error('AI answer was cut off');
+    (error as any).truncated = true;
+    throw error;
+  }
   return data.choices?.[0]?.message?.content;
 }
 
@@ -419,6 +427,8 @@ serve(async (req) => {
     // ============= PAGE LIMIT FOR PDFs =============
     // Long PDFs can exceed what one extraction answer holds and come back
     // incomplete. Refuse them with guidance instead of storing partial data.
+    // null for images (one page).
+    let pdfPageCount: number | null = null;
     {
       const clean = imageBase64.replace(/\s+/g, '');
       const head = atob(clean);
@@ -435,6 +445,14 @@ serve(async (req) => {
             console.warn('Exact PDF page count failed:', e);
           }
         }
+        if (pages < 1) {
+          // Without a page count nothing can confirm the whole file was read.
+          return new Response(
+            JSON.stringify({ error: UNKNOWN_PAGE_COUNT_MESSAGE, code: 'unknown_page_count' }),
+            { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+        pdfPageCount = pages;
         if (pages > MAX_PDF_PAGES) {
           return new Response(
             JSON.stringify({ error: pageLimitMessage(pages), code: 'too_many_pages', pages, maxPages: MAX_PDF_PAGES }),
@@ -628,6 +646,7 @@ serve(async (req) => {
     // ============= AI EXTRACTION (DATA ONLY) =============
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
+    let truncated = false;
 
     try {
       content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-flash');
@@ -645,6 +664,7 @@ serve(async (req) => {
           { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
+      if (error.truncated) truncated = true;
       console.error('Flash model failed:', error);
     }
 
@@ -669,6 +689,7 @@ serve(async (req) => {
       try {
         content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-pro');
         usedModel = 'google/gemini-2.5-pro';
+        truncated = false;
         
         let jsonStr = content || '';
         const jsonMatch = content?.match(/```(?:json)?\s*([\s\S]*?)```/);
@@ -684,6 +705,13 @@ serve(async (req) => {
           );
         }
         console.error('Pro model failed:', error);
+        if (error.truncated || (truncated && !ocrData)) {
+          // The reads were cut off: refuse rather than keep a partial answer.
+          return new Response(
+            JSON.stringify({ error: INCOMPLETE_EXTRACTION_MESSAGE, code: 'incomplete_extraction' }),
+            { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
         if (!ocrData) {
           return new Response(
             JSON.stringify({ error: 'Failed to extract data. Please try a clearer image.' }),
@@ -735,11 +763,16 @@ serve(async (req) => {
         unit: item.unit || detectUnit(item.description || '') || undefined,
         unitPrice: item.unitPrice,
         total: item.total,
-        sourcePage: Number.isInteger(item.sourcePage) && item.sourcePage > 0 ? item.sourcePage : 1,
+        // Checked against the real page count; an out-of-range page is
+        // reported as unknown, never moved to page 1.
+        sourcePage: checkedSourcePage(item.sourcePage, pdfPageCount) ?? undefined,
         sourceText: typeof item.sourceText === 'string' ? item.sourceText.slice(0, 240) : undefined,
         validationFlags: [],
       };
 
+      if (item.sourcePage != null && classifiedItem.sourcePage === undefined) {
+        classifiedItem.validationFlags!.push(`Page reference ${String(item.sourcePage).slice(0, 8)} is outside this document; page unknown`);
+      }
       if (classifiedItem.quantity && classifiedItem.quantity > 0) hasAnyQuantity = true;
       if (classifiedItem.unit) hasAnyUnit = true;
 
