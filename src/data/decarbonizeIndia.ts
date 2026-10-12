@@ -25,11 +25,10 @@ export const story = [
 
 /** One-word labels; every number is from the program document. */
 export const counters = [
-  { value: 90, label: 'Days' },
-  { value: 18, label: 'Countries' },
-  { value: 7, label: 'Lanes' },
-  { value: 1, label: 'Mission' },
-] as { value: number; label: string; prefix?: string; suffix?: string }[];
+  { value: 90, label: 'Days', doodle: 'sun' },
+  { value: 18, label: 'Countries', doodle: 'globe' },
+  { value: 1, label: 'Mission', doodle: 'heart' },
+] as { value: number; label: string; doodle: 'sun' | 'globe' | 'heart'; prefix?: string; suffix?: string }[];
 
 export const who = 'Any background. Phase 1 starts October 2026.';
 

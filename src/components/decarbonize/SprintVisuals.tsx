@@ -24,17 +24,60 @@ function CountUp({ to, duration = 1200 }: { to: number; duration?: number }) {
 }
 export { CountUp };
 
-/** Oversized numbers with one-word labels: a pause between heavier sections. */
-export function CounterStrip() {
+/**
+ * Hand-drawn doodle beside each number. It draws itself in when the strip
+ * scrolls into view, then keeps a small loop (sun crossing the sky, globe
+ * turning, heart beating). Reduced motion: drawn, still.
+ */
+function CounterDoodle({ kind, on }: { kind: "sun" | "globe" | "heart"; on: boolean }) {
+  const stroke = { fill: "none", stroke: "#f4c45a", strokeWidth: 3, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, pathLength: 1 };
+  const draw = `di-draw${on ? " di-draw-on" : ""}`;
   return (
-    <section className="bg-[#12321f] px-4 py-14 text-[#f7f3e8] sm:px-6 md:py-20" aria-label="The program in numbers">
-      <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-y-10 md:grid-cols-4">
+    <svg viewBox="0 0 80 56" className="mx-auto mb-2 h-12 w-[4.5rem] sm:h-14 sm:w-20 md:h-16 md:w-24" aria-hidden="true">
+      {kind === "sun" && (
+        <g>
+          {/* the day's arc and the horizon, then a sun that travels along it */}
+          <path d="M8 46 Q40 2 72 46" fill="none" stroke="#f4c45a80" strokeWidth={2} strokeLinecap="round" strokeDasharray="2 5" className={`di-fade${on ? " di-fade-on" : ""}`} />
+          <path d="M4 48 H76" {...stroke} className={draw} />
+          <g className={on ? "di-sun-travel di-fade di-fade-on" : "di-fade"} style={{ offsetPath: "path('M8 46 Q40 2 72 46')" } as Record<string, string>}>
+            <circle r="6" fill="#f4c45a" />
+            {[0, 60, 120, 180, 240, 300].map(a => <path key={a} d="M0 -9 V-12" stroke="#f4c45a" strokeWidth="2" strokeLinecap="round" transform={`rotate(${a})`} />)}
+          </g>
+        </g>
+      )}
+      {kind === "globe" && (
+        <g>
+          <circle cx="40" cy="28" r="22" {...stroke} className={draw} />
+          <path d="M18 28 H62 M22 17 H58 M22 39 H58" {...stroke} strokeWidth={2} className={draw} />
+          <g className={on ? "di-globe-turn" : ""}>
+            <ellipse cx="40" cy="28" rx="9" ry="22" {...stroke} strokeWidth={2} className={draw} />
+          </g>
+          <circle cx="62" cy="10" r="2.5" fill="#7fdca4" className={on ? "di-twinkle" : ""} />
+        </g>
+      )}
+      {kind === "heart" && (
+        <g className={on ? "di-heart-beat" : ""}>
+          <path d="M40 48 C18 34 12 22 20 14 C27 8 36 11 40 19 C44 11 53 8 60 14 C68 22 62 34 40 48 Z" {...stroke} className={draw} />
+          <path d="M26 26 h6 l3 -6 l4 12 l3 -6 h12" {...stroke} strokeWidth={2} style={{ stroke: "#7fdca4" }} className={draw} />
+        </g>
+      )}
+    </svg>
+  );
+}
+
+/** Oversized numbers with one-word labels and a doodle each: a pause between heavier sections. */
+export function CounterStrip() {
+  const { ref, inView } = useInView<HTMLElement>(0.35);
+  return (
+    <section ref={ref} className="bg-[#12321f] px-4 py-14 text-[#f7f3e8] sm:px-6 md:py-20" aria-label="The program in numbers">
+      <dl className="mx-auto grid max-w-5xl grid-cols-3 gap-x-2">
         {counters.map(c => (
           <div key={c.label} className="flex flex-col-reverse items-center text-center">
-            <dt className="mt-3 text-xs uppercase tracking-[0.22em] text-amber-300">{c.label}</dt>
-            <dd className="text-6xl font-semibold leading-none tracking-tight sm:text-7xl md:text-8xl">
+            <dt className="mt-3 text-[11px] uppercase tracking-[0.22em] text-amber-300 sm:text-xs">{c.label}</dt>
+            <dd className="text-5xl font-semibold leading-none tracking-tight sm:text-7xl md:text-8xl">
               {c.prefix}<CountUp to={c.value} />{c.suffix}
             </dd>
+            <CounterDoodle kind={c.doodle} on={inView} />
           </div>
         ))}
       </dl>
