@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
+import { useWorkspace } from './useWorkspace';
+import { applyScope, ownerColumns, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
 export interface Emission {
@@ -30,7 +32,9 @@ export interface EmissionsSummary {
 }
 
 export function useEmissions() {
-  const { sessionId, user, isLoading: sessionLoading } = useSession();
+  const { user, isLoading: sessionLoading } = useSession();
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
   const [emissions, setEmissions] = useState<Emission[]>([]);
   const [summary, setSummary] = useState<EmissionsSummary>({
     scope1: 0,
@@ -44,22 +48,17 @@ export function useEmissions() {
   const [error, setError] = useState<string | null>(null);
 
   const fetchEmissions = useCallback(async () => {
-    if (sessionLoading) return;
+    if (!ready) return;
 
     try {
       setIsLoading(true);
       setError(null);
 
-      let query = supabase
-        .from('emissions')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (user) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      } else {
+      const query = applyScope(
+        supabase.from('emissions').select('*').order('created_at', { ascending: false }),
+        scope,
+      );
+      if (!query) {
         setEmissions([]);
         setIsLoading(false);
         return;
@@ -82,7 +81,8 @@ export function useEmissions() {
     } finally {
       setIsLoading(false);
     }
-  }, [sessionId, user, sessionLoading]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [key, ready, user]);
 
   const calculateSummary = (emissionsData: Emission[]) => {
     const scope1 = emissionsData.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0);
@@ -134,11 +134,9 @@ export function useEmissions() {
 
   // Real-time subscription for emissions updates (filtered by user/session)
   useEffect(() => {
-    if (sessionLoading) return;
-    if (!user && !sessionId) return;
-
-    const filterCol = user?.id ? 'user_id' : 'session_id';
-    const filterVal = user?.id || sessionId;
+    if (!ready) return;
+    const filter = realtimeFilter(scope);
+    if (!filter) return;
 
     const channel = supabase
       .channel('emissions-realtime')
@@ -148,7 +146,7 @@ export function useEmissions() {
           event: '*',
           schema: 'public',
           table: 'emissions',
-          filter: `${filterCol}=eq.${filterVal}`,
+          filter,
         },
         (payload) => {
           console.log('Emissions update received:', payload.eventType);
@@ -160,14 +158,14 @@ export function useEmissions() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [sessionId, user, sessionLoading, fetchEmissions]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [key, ready, fetchEmissions]);
 
   const saveEmission = async (emissionData: { scope: number; category: string; co2_kg: number; document_id?: string; activity_data?: number; activity_unit?: string; emission_factor?: number; data_quality?: string }): Promise<Emission | null> => {
     try {
       const insertData = {
         ...emissionData,
-        session_id: user ? null : sessionId,
-        user_id: user?.id || null
+        ...ownerColumns(scope),
       };
 
       const { data, error: insertError } = await supabase
@@ -199,7 +197,7 @@ export function useEmissions() {
   return {
     emissions,
     summary,
-    isLoading: isLoading || sessionLoading,
+    isLoading: isLoading || sessionLoading || !ready,
     error,
     refetch: fetchEmissions,
     saveEmission,

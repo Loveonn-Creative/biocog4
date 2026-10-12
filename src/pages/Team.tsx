@@ -52,25 +52,26 @@ import {
   Trash2,
   Lock,
   Building2,
-  UserMinus
+  UserMinus,
+  Database,
+  ClipboardCheck
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { OrganizationProfileCard } from '@/components/team/OrganizationProfileCard';
-import { ROLE_DESCRIPTIONS, TEAM_SHARING_NOTE, planIncludesTeam } from '@/lib/organizationProfile';
+import { ROLE_DESCRIPTIONS as PERSONAL_ONLY_DESCRIPTIONS, TEAM_SHARING_NOTE, planIncludesTeam } from '@/lib/organizationProfile';
+import { ASSIGNABLE_ROLES, LEGACY_ROLES, ROLE_DESCRIPTIONS as WORKSPACE_DESCRIPTIONS, ROLE_LABELS as ALL_ROLE_LABELS, ROLE_ORDER as ALL_ROLE_ORDER, type TeamRole } from '@/lib/teamRoles';
+import { useWorkspace } from '@/hooks/useWorkspace';
 
 const ROLE_ICONS: Record<string, typeof Crown> = {
   owner: Crown,
   admin: Shield,
+  data_manager: Database,
   analyst: BarChart3,
+  carbon_auditor: ClipboardCheck,
   viewer: Eye,
 };
 
-const ROLE_LABELS: Record<string, string> = {
-  owner: 'Owner',
-  admin: 'Admin',
-  analyst: 'Analyst',
-  viewer: 'Viewer',
-};
+const ROLE_LABELS: Record<string, string> = ALL_ROLE_LABELS;
 
 
 interface TeamMember {
@@ -89,7 +90,7 @@ interface Invitation {
   created_at: string | null;
 }
 
-const ROLE_ORDER: Record<string, number> = { owner: 0, admin: 1, analyst: 2, viewer: 3 };
+const ROLE_ORDER: Record<string, number> = Object.fromEntries(ALL_ROLE_ORDER.map((r, i) => [r, i]));
 const PENDING_MIGRATION_MESSAGE = 'Available after the team access update is applied.';
 
 const Team = () => {
@@ -136,6 +137,19 @@ const Team = () => {
     members.find(m => m.user_id === user?.id)?.role ??
     (organization && organization.owner_id === user?.id ? 'owner' : null);
   const isOrgAdmin = myRole === 'owner' || myRole === 'admin';
+  const isOwner = myRole === 'owner';
+
+  // The six roles exist once the organisation workspace update is applied;
+  // before that only admin, analyst and viewer work, and records are not shared.
+  const { workspacesAvailable } = useWorkspace();
+  const roleChoices: TeamRole[] = (workspacesAvailable ? ASSIGNABLE_ROLES : LEGACY_ROLES)
+    // Only the owner hands out admin access.
+    .filter(r => r !== 'admin' || isOwner);
+  const describeRole = (role: string) =>
+    workspacesAvailable
+      ? WORKSPACE_DESCRIPTIONS[role as TeamRole]
+      : PERSONAL_ONLY_DESCRIPTIONS[role] ?? WORKSPACE_DESCRIPTIONS[role as TeamRole];
+  const referenceRoles: TeamRole[] = workspacesAvailable ? ALL_ROLE_ORDER : ['owner', ...LEGACY_ROLES];
 
   // Members of someone else's organization can see their team even on a free personal plan.
   const isMemberOfOtherOrg = !!organization && organization.owner_id !== user?.id;
@@ -355,7 +369,7 @@ const Team = () => {
               <Lock className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
               <h2 className="text-xl font-semibold mb-2">Team Management</h2>
               <p className="text-muted-foreground mb-4">
-                Essential includes 3 seats, Pro 10 and Scale unlimited. Upgrade to invite your team.
+                Essential includes 3 seats, Pro 10, and Scale as many as your quote sets. Upgrade to invite your team.
               </p>
               <Button asChild>
                 <a href="/pricing">View Plans</a>
@@ -482,28 +496,21 @@ const Team = () => {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="admin">
-                        <div className="flex items-center gap-2">
-                          <Shield className="w-4 h-4" />
-                          Admin
-                        </div>
-                      </SelectItem>
-                      <SelectItem value="analyst">
-                        <div className="flex items-center gap-2">
-                          <BarChart3 className="w-4 h-4" />
-                          Analyst
-                        </div>
-                      </SelectItem>
-                      <SelectItem value="viewer">
-                        <div className="flex items-center gap-2">
-                          <Eye className="w-4 h-4" />
-                          Viewer
-                        </div>
-                      </SelectItem>
+                      {roleChoices.map(r => {
+                        const Icon = ROLE_ICONS[r];
+                        return (
+                          <SelectItem key={r} value={r}>
+                            <div className="flex items-center gap-2">
+                              <Icon className="w-4 h-4" />
+                              {ROLE_LABELS[r]}
+                            </div>
+                          </SelectItem>
+                        );
+                      })}
                     </SelectContent>
                   </Select>
                   <p className="text-xs text-muted-foreground">
-                    {ROLE_DESCRIPTIONS[inviteRole]}
+                    {describeRole(inviteRole)}
                   </p>
                 </div>
 
@@ -539,9 +546,10 @@ const Team = () => {
 
         <OrganizationProfileCard
           organization={organization}
-          canEdit={organization.owner_id === user?.id}
+          canEdit={organization.owner_id === user?.id || (workspacesAvailable && myRole === 'admin')}
           userId={user?.id}
           pendingMessage={PENDING_MIGRATION_MESSAGE}
+          editors={workspacesAvailable ? 'the owner and admins' : 'the owner'}
         />
 
         {/* Team Stats */}
@@ -616,7 +624,7 @@ const Team = () => {
                           )}
                         </div>
                       </div>
-                      {isOrgAdmin && member.role !== 'owner' && member.user_id !== user?.id ? (
+                      {isOrgAdmin && member.role !== 'owner' && member.user_id !== user?.id && (isOwner || member.role !== 'admin') ? (
                         <div className="flex items-center gap-2 shrink-0">
                           <Select
                             value={member.role}
@@ -627,9 +635,9 @@ const Team = () => {
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="admin">Admin</SelectItem>
-                              <SelectItem value="analyst">Analyst</SelectItem>
-                              <SelectItem value="viewer">Viewer</SelectItem>
+                              {roleChoices.map(r => (
+                                <SelectItem key={r} value={r}>{ROLE_LABELS[r]}</SelectItem>
+                              ))}
                             </SelectContent>
                           </Select>
                           <Button
@@ -711,11 +719,16 @@ const Team = () => {
         <Card className="mt-6">
           <CardHeader>
             <CardTitle className="text-base">What each role can do</CardTitle>
-            <CardDescription>{TEAM_SHARING_NOTE}</CardDescription>
+            <CardDescription>
+              {workspacesAvailable
+                ? 'Records added in the organisation workspace are shared by role. Personal workspaces stay private.'
+                : TEAM_SHARING_NOTE}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid gap-3 sm:grid-cols-2">
-              {Object.entries(ROLE_LABELS).map(([role, label]) => {
+              {referenceRoles.map(role => {
+                const label = ROLE_LABELS[role];
                 const Icon = ROLE_ICONS[role];
                 return (
                   <div key={role} className="flex items-start gap-3 p-3 rounded-lg bg-secondary/30">
@@ -723,7 +736,7 @@ const Team = () => {
                     <div>
                       <p className="text-sm font-medium">{label}</p>
                       <p className="text-xs text-muted-foreground">
-                        {ROLE_DESCRIPTIONS[role]}
+                        {describeRole(role)}
                       </p>
                     </div>
                   </div>

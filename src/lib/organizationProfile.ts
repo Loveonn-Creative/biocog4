@@ -97,17 +97,17 @@ export const isOrganizationProfileEmpty = (p: OrganizationProfile) =>
   !p.taxId && !p.sector && !p.country && !p.size && !p.website;
 
 /** Team seats per plan, as published on the Pricing page. */
-export const PLAN_TEAM_SEATS: Record<string, number | 'unlimited'> = {
+export const PLAN_TEAM_SEATS: Record<string, number | 'quote'> = {
   snapshot: 1,
   essential: 3,
   basic: 3,
   pro: 10,
-  scale: 'unlimited',
+  scale: 'quote', // seats on the customer's Scale quote, at least 10
 };
 
 export function planSeatsLabel(tier: string): string {
   const seats = PLAN_TEAM_SEATS[tier] ?? 1;
-  if (seats === 'unlimited') return 'Unlimited team members';
+  if (seats === 'quote') return 'Team seats set in your Scale quote';
   return `${seats} team member${seats === 1 ? '' : 's'}`;
 }
 
@@ -118,12 +118,7 @@ export const planIncludesTeam = (tier: string) => (PLAN_TEAM_SEATS[tier] ?? 1) !
  * What each role can do today. Only permissions the database enforces are
  * listed; carbon records are not shared between members yet.
  */
-export const ROLE_DESCRIPTIONS: Record<string, string> = {
-  owner: 'Edits the organisation profile and manages the team. The owner\'s plan sets the seats.',
-  admin: 'Invites members, changes their roles and removes them.',
-  analyst: 'For members who upload and verify invoices. Sees the team and organisation profile.',
-  viewer: 'For members who only read. Sees the team and organisation profile.',
-};
+export { LEGACY_ROLE_DESCRIPTIONS as ROLE_DESCRIPTIONS } from './teamRoles';
 
 export const TEAM_SHARING_NOTE =
   'Each member\'s uploads, verified records and reports stay in their own account. Shared organisation records are not live yet.';

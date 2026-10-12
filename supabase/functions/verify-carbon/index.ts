@@ -3,6 +3,7 @@ import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL, INDICATIVE_RATE_INR_PER_T } from "../_shared/carbonValue.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
+import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -302,19 +303,19 @@ serve(async (req) => {
       );
     }
 
-    // Ownership passes only for the JWT user, or on the existing guest path.
-    for (const emission of emissions) {
-      const userMatch = !!userId && emission.user_id === userId;
-      // Do not accept a client-supplied guest session as ownership for a
-      // signed-in identity. Guest ownership remains on its existing path.
-      const sessionMatch = !userId && !!sessionId && emission.session_id === sessionId;
-      if (!userMatch && !sessionMatch) {
-        console.error('Ownership mismatch: emission', emission.id, 'does not belong to requester');
-        return new Response(
-          JSON.stringify({ error: 'Access denied: you do not own these emissions' }),
-          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
+    // Ownership passes for the JWT user's own records, on the existing guest
+    // path, or for organisation records when the caller's team role may verify.
+    // A client-supplied guest session never counts for a signed-in identity.
+    const access = decideRecordAccess(emissions, { userId, sessionId });
+    const orgId = access.kind === 'organization' ? access.organizationId : null;
+    if (access.kind === 'denied' || (orgId && !(await orgCan(supabase, userId!, orgId, 'records.verify')))) {
+      console.error('Access denied for verification:', access.kind === 'denied' ? access.reason : 'team role');
+      return new Response(
+        JSON.stringify({ error: orgId
+          ? 'Your team role cannot verify records in this organisation. Ask an admin for data manager or carbon auditor access.'
+          : 'Access denied: you do not own these emissions' }),
+        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
     // Verification is an evidence transition, not a way to manufacture
@@ -354,15 +355,21 @@ serve(async (req) => {
     // index arbitrates concurrent calls; historical results remain untouched.
     let idempotencyKey: string | null = null;
     if (userId) {
-      const canonical = `${userId}:${[...emissionIds].sort().join(',')}`;
+      // Organisation sets are keyed by organisation, so two members verifying the
+      // same records reuse one result instead of counting it twice.
+      const canonical = idempotencyCanonical(access, userId, emissionIds);
       const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical));
       idempotencyKey = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
-      const { data: previous, error: previousError } = await supabase.from('carbon_verifications')
-        .select('*').eq('user_id', userId).eq('idempotency_key', idempotencyKey).maybeSingle();
+      const previousQuery = supabase.from('carbon_verifications').select('*').eq('idempotency_key', idempotencyKey);
+      const { data: previous, error: previousError } = await (orgId
+        ? previousQuery.eq('organization_id', orgId)
+        : previousQuery.eq('user_id', userId)).maybeSingle();
       if (previousError) throw previousError;
       if (previous) {
         const { error: statusError } = previous.verification_status === 'verified'
-          ? await supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('user_id', userId)
+          ? await (orgId
+            ? supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('organization_id', orgId)
+            : supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('user_id', userId))
           : { error: null };
         if (statusError) throw statusError;
         return new Response(JSON.stringify({ success: true, data: {
@@ -525,6 +532,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         idempotency_key: idempotencyKey,
         session_id: sessionId || null,
         user_id: userId || null,
+        organization_id: orgId,
         total_co2_kg: totalCO2Kg,
         verification_status: status,
         verification_score: verificationScore,
@@ -564,8 +572,10 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       .single();
 
     if (verificationError?.code === '23505' && userId && idempotencyKey) {
-      const { data: previous, error: lookupError } = await supabase.from('carbon_verifications')
-        .select('*').eq('user_id', userId).eq('idempotency_key', idempotencyKey).single();
+      const conflictQuery = supabase.from('carbon_verifications').select('*').eq('idempotency_key', idempotencyKey);
+      const { data: previous, error: lookupError } = await (orgId
+        ? conflictQuery.eq('organization_id', orgId)
+        : conflictQuery.eq('user_id', userId)).single();
       if (lookupError || !previous) throw lookupError || new Error('Existing verification unavailable');
       return new Response(JSON.stringify({ success: true, data: {
         verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
@@ -588,11 +598,10 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
 
     // Update status only. verification_notes stores immutable extraction provenance.
     if (status === 'verified') {
-      const { error: statusError } = await supabase
-        .from('emissions')
-        .update({ verified: true })
-        .in('id', emissionIds)
-        .eq('user_id', userId || '');
+      const statusUpdate = supabase.from('emissions').update({ verified: true }).in('id', emissionIds);
+      const { error: statusError } = await (orgId
+        ? statusUpdate.eq('organization_id', orgId)
+        : statusUpdate.eq('user_id', userId || ''));
       if (statusError && userId) throw statusError;
       // Guests: same evidence gate passed above; update only this session's rows.
       if (!userId && sessionId) {
@@ -615,11 +624,15 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         'solar_energy', 'ev_transport', 'wind_energy', 'organic_input', 'energy_efficiency', 'water_conservation', 'recycled_material',
       ]);
 
-      const { data: priorLedger, error: priorLedgerError } = await supabase
+      // Organisation records: one ledger row per emission, owned by its uploader
+      // and tagged with the organisation, whichever member verifies it.
+      const priorQuery = supabase
         .from('compliance_ledger')
         .select('id, emission_id, document_id, amount, verification_status')
-        .eq('user_id', userId)
         .in('emission_id', emissionIds);
+      const { data: priorLedger, error: priorLedgerError } = await (orgId
+        ? priorQuery.eq('organization_id', orgId)
+        : priorQuery.eq('user_id', userId));
       if (priorLedgerError) throw priorLedgerError;
       const priorByEmission = new Map((priorLedger || []).map((row) => [row.emission_id as string, row]));
 
@@ -629,12 +642,14 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       const documentIds = [...new Set(emissions.map((e) => e.document_id).filter(Boolean))] as string[];
       const docsWithAmount = new Set<string>();
       if (documentIds.length) {
-        const { data: amountRows, error: amountRowsError } = await supabase
+        const amountQuery = supabase
           .from('compliance_ledger')
           .select('document_id')
-          .eq('user_id', userId)
           .in('document_id', documentIds)
           .not('amount', 'is', null);
+        const { data: amountRows, error: amountRowsError } = await (orgId
+          ? amountQuery.eq('organization_id', orgId)
+          : amountQuery.eq('user_id', userId));
         if (amountRowsError) throw amountRowsError;
         for (const row of amountRows || []) if (row.document_id) docsWithAmount.add(row.document_id as string);
       }
@@ -657,7 +672,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
               greenwashing_risk: greenwashingRisk,
               validation_result: validationResults.get(emission.id)?.valid === false ? 'failed' : 'passed',
               verified_at: new Date().toISOString(),
-            }).eq('id', prior.id).eq('user_id', userId);
+            }).eq('id', prior.id).eq(orgId ? 'organization_id' : 'user_id', orgId ?? userId);
             if (promoteError) console.error('Compliance ledger promote error for emission:', emission.id, promoteError);
           }
           continue;
@@ -732,7 +747,9 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           const { error: insertError } = await supabase
             .from('compliance_ledger')
             .insert({
-              user_id: userId,
+              user_id: orgId ? emission.user_id : userId,
+              // compliance_ledger.organization_id exists only once the workspace migration is applied.
+              ...(orgId ? { organization_id: orgId } : {}),
               document_id: emission.document_id || null,
               emission_id: emission.id,
               verification_id: verification.id,

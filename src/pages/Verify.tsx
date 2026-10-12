@@ -16,6 +16,8 @@ import { indicativeValueFromKg } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { CAPABILITY_REASON } from '@/lib/workspaceScope';
 import { Helmet } from 'react-helmet-async';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseVerificationBadge } from '@/components/enterprise/EnterpriseVerificationBadge';
@@ -89,6 +91,8 @@ const Verify = () => {
   const location = useLocation();
   const navState = location.state as NavigationState | null;
   const { sessionId, user } = useSession();
+  const { can } = useWorkspace();
+  const canVerify = can('records.verify');
   const { activeContext } = useOrganization();
   const { emissions, refetch, isLoading: emissionsLoading } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
@@ -292,7 +296,7 @@ const Verify = () => {
                 <Button 
                   className="w-full glow-primary" 
                   onClick={handleVerify} 
-                  disabled={isVerifying}
+                  disabled={isVerifying || !canVerify}
                   size="lg"
                 >
                   {isVerifying ? (
@@ -307,6 +311,9 @@ const Verify = () => {
                     </>
                   )}
                 </Button>
+                {!canVerify && (
+                  <p className="text-xs text-muted-foreground text-center mt-2">{CAPABILITY_REASON['records.verify']}</p>
+                )}
               </>
             ) : allVerified ? (
               <div className="text-center py-8">
@@ -431,7 +438,7 @@ const Verify = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 No verification outcome was recorded. Your records are unchanged. Details: {verifyError}
               </p>
-              <Button variant="outline" onClick={handleVerify} disabled={isVerifying || pending.length === 0}>Retry verification</Button>
+              <Button variant="outline" onClick={handleVerify} disabled={isVerifying || pending.length === 0 || !canVerify}>Retry verification</Button>
             </CardContent>
           </Card>
         )}

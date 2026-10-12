@@ -44,7 +44,7 @@ Creates `public.scale_price_quotes` (admin-issued, per-user Scale quotes with `a
 Runs in one transaction. Depends on `public.is_trusted_db_writer()` from `20261011120000_protect_privileged_columns.sql` (it aborts if that is missing), so apply that one first.
 
 - **RLS helper access (fixes "permission denied for function is_org_member").** `20260613142133` revoked EXECUTE on `has_role`, `is_org_member`, `is_org_admin`, `is_partner_admin` and `has_partner_access`, but policies from `20260122104318`, `20260123170433` and `20260124091714` still call them, so organization, member, invitation, partner and audit-log queries fail for signed-in users and anon. Adds `SECURITY DEFINER` copies in a `private` schema (`search_path = ''`, not exposed through the API), grants `USAGE`/`EXECUTE` to `authenticated` and `anon`, and recreates the 15 affected policies with identical names and expressions pointing at `private.*`. The `public.*` helpers stay revoked.
-- **Seat sync.** `organizations.max_members` is derived from the owner's `profiles.subscription_tier` (basic/Essential 3, pro 10, scale **25: placeholder, TO CONFIRM**; expired or free 1) by a `BEFORE INSERT OR UPDATE` trigger that fires after the protect trigger, plus an `AFTER UPDATE` trigger on `profiles`. service_role may still set an explicit value. Existing rows are backfilled; their previous values are saved in `organizations_max_members_backup` for the rollback.
+- **Seat sync.** `organizations.max_members` is derived from the owner's `profiles.subscription_tier` (basic/Essential 3, pro 10, Scale = `seats` on the owner's most recently consumed Scale quote, never fewer than 10; expired or free 1; needs `20261011160000_scale_price_quotes.sql` first) by a `BEFORE INSERT OR UPDATE` trigger that fires after the protect trigger, plus an `AFTER UPDATE` trigger on `profiles`. service_role may still set an explicit value. Existing rows are backfilled; their previous values are saved in `organizations_max_members_backup` for the rollback.
 - **`create_organization(p_name)`** creates the org, the owner member row and the active context atomically (granted to `authenticated`).
 - **`update_member_role(org, user, role)` / `remove_member(org, user)`**: admin only, the owner cannot be changed or removed, admins cannot change their own role, any non-owner can remove themselves.
 - **compliance_ledger.** Moves duplicate `(user_id, emission_id)` rows (keeps the latest by `verified_at`, then `created_at`) into `compliance_ledger_duplicates_backup` (RLS on, no policies), adds unique index `compliance_ledger_user_emission_key`, and drops the owner UPDATE policy. A commented-out line can also drop the owner INSERT policy (owner decision).
@@ -76,3 +76,19 @@ Tested locally on Postgres 16: `supabase/pending-migrations/tests/run.sh 2026101
 Roll back with `rollback/20261012120000_water_mrv.rollback.sql`. It drops only the `water_*` objects. While any water bill exists it refuses unless `SET LOCAL water.rollback_confirm = 'drop water data';` is run in the same transaction (export the tables first if the data is needed).
 
 Rollout helpers: `water_load_factors.template.sql` (empty template, no values), `water_shadow_compare.sql` (read-only comparison), `scripts/water-backfill.ts` (dry run by default). Steps in `docs/methodology/water-mrv.md` §12.
+
+## 20261013100000_org_workspace_roles.sql (organisation workspace)
+
+Depends on `20261011180000`. Purely additive apart from widening two role CHECK constraints; no row is deleted or rewritten.
+
+- **Roles**: owner, admin, data_manager, analyst, carbon_auditor, viewer. One matrix, `private.role_can`, used by every policy, trigger and RPC (the app copy in `supabase/functions/_shared/teamRoles.ts` is tested against it). Analysts add invoices but cannot verify; carbon auditors verify but cannot add or change invoices; viewers only read.
+- **Records**: rows written in an organisation workspace carry `organization_id`. `guard_record_organization` checks the writer's role, makes emissions inherit their invoice's workspace and stops a row moving between workspaces. One invoice file counts once per organisation (`documents_org_hash_key`). `compliance_ledger.organization_id` is added.
+- **Reading**: additive SELECT policies let members read their organisation's documents, emissions, verifications, reports and ledger. Owner policies are untouched, so personal records stay private.
+- **Team**: owners and admins edit the organisation profile; nobody can change `owner_id` from the browser; only the owner grants, removes or invites admins.
+- **Functions**: `my_org_permissions(org)` for the browser, `service_org_can(user, org, capability)` for edge functions (service_role only).
+
+Tested: `tests/run_chain.sh` replays all of `supabase/migrations` on local Postgres 16 with Supabase stand-ins, applies the pending chain, runs 33 behaviour checks across all six roles and an outsider, rolls back and compares the catalog, then re-applies.
+
+Roll back with `rollback/20261013100000_org_workspace_roles.rollback.sql`. Members holding a new role are mapped (data_manager to analyst, carbon_auditor to viewer) and their previous roles are kept in `org_role_rollback_backup`. `organization_id` values already written stay on their rows.
+
+Step-by-step apply guide: `docs/runbooks/team-workspace-rollout.md`.

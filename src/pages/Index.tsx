@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useRef, useState } from "react";
 import { useT } from "@/lib/i18n/useT";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
@@ -13,6 +13,8 @@ import { useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
+import { resolveWorkspaceScope } from "@/lib/workspaceChoice";
+import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/workspaceScope";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
@@ -205,6 +207,30 @@ const getScopeFromCategory = (category: string): number => {
 const Index = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  // Workspace for the current upload, resolved once per upload. Organisation
+  // workspaces only exist once the team migration is live; until then this is
+  // always the personal workspace.
+  const uploadScopeRef = useRef<(WorkspaceScope & { organizationName?: string }) | null>(null);
+  const prepareWorkspace = async (): Promise<boolean> => {
+    if (!user) {
+      uploadScopeRef.current = sessionId ? { kind: 'guest', sessionId } : { kind: 'none' };
+      return true;
+    }
+    try {
+      const resolved = await resolveWorkspaceScope(await loadSupabase(), user.id);
+      if (resolved.kind === 'organization' && !resolved.capabilities.includes('records.upload')) {
+        toast.error(`${resolved.organizationName || 'Organisation'} workspace: ${CAPABILITY_REASON['records.upload']}`, { duration: 8000 });
+        return false;
+      }
+      uploadScopeRef.current = resolved;
+      return true;
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Could not check your workspace.');
+      return false;
+    }
+  };
+  const uploadOrganizationId = () =>
+    uploadScopeRef.current?.kind === 'organization' ? uploadScopeRef.current.organizationId : undefined;
   const [state, setState] = useState<State>("idle");
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
@@ -245,9 +271,13 @@ const Index = () => {
           .from('documents')
           .select('id')
           .eq('document_hash', documentHash);
-        lookup = user
-          ? lookup.eq('user_id', user.id)
-          : lookup.eq('session_id', sessionId).is('user_id', null);
+        // In an organisation workspace the invoice is the organisation's, whoever uploaded it.
+        const orgId = uploadOrganizationId();
+        lookup = orgId
+          ? lookup.eq('organization_id', orgId)
+          : user
+            ? lookup.eq('user_id', user.id)
+            : lookup.eq('session_id', sessionId).is('user_id', null);
         const { data: existingDoc } = await lookup
           .order('created_at', { ascending: false })
           .limit(1)
@@ -264,8 +294,7 @@ const Index = () => {
         const { data: docData, error: docError } = await (await loadSupabase())
           .from('documents')
           .insert({
-            session_id: user ? null : sessionId,
-            user_id: user?.id || null,
+            ...(uploadScopeRef.current ? ownerColumns(uploadScopeRef.current) : { session_id: user ? null : sessionId, user_id: user?.id || null }),
             document_type: extractedData.documentType,
             vendor: extractedData.vendor,
             invoice_date: extractedData.date ? new Date(extractedData.date).toISOString().split('T')[0] : null,
@@ -332,6 +361,9 @@ const Index = () => {
 
       const emissionIds = (emissionData || []).map((emission) => emission.id);
       emitRecordsChanged('upload');
+      if (uploadScopeRef.current?.kind === 'organization') {
+        toast.success(`Saved to the ${uploadScopeRef.current.organizationName || 'organisation'} workspace`);
+      }
       console.log('[MRV] Saved document with independently calculated emission rows:', documentId, emissionIds.length);
       return { documentId, emissionId: emissionIds[0], emissionIds };
     } catch (error) {
@@ -344,6 +376,7 @@ const Index = () => {
   // pages. Each part is read in full and saved as its own document; the
   // result screen shows all parts together.
   const processLongPdf = async (file: File) => {
+    if (!(await prepareWorkspace())) return;
     setState("processing");
     setDocumentType("Splitting a long PDF into parts...");
     const split = await splitPdf(file);
@@ -360,7 +393,7 @@ const Index = () => {
       try {
         const imageBase64 = await fileToBase64(part.file);
         const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
-          body: { imageBase64, mimeType: 'application/pdf', sessionId },
+          body: { imageBase64, mimeType: 'application/pdf', sessionId, organizationId: uploadOrganizationId() },
         });
         if (error) { notes.push(`${range}: ${await getFunctionErrorMessage(error, 'could not be read')}`); continue; }
         if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
@@ -412,6 +445,7 @@ const Index = () => {
       await processLongPdf(file);
       return;
     }
+    if (!(await prepareWorkspace())) return;
     setState("processing");
     setDocumentType("Analyzing document...");
 
@@ -423,7 +457,7 @@ const Index = () => {
       
       // Pass sessionId to edge function for guest user data linking
       const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
-        body: { imageBase64, mimeType, sessionId }
+        body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId() }
       });
 
       if (error) {

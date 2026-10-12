@@ -1,6 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
+import { readOrganizationProfile } from '@/lib/organizationProfile';
 import { useEmissions } from '@/hooks/useEmissions';
 import {
   availabilityFromRecords,
@@ -66,6 +69,8 @@ const countryFromLocation = (location: string | null): string => {
 
 export function useReportEvidence() {
   const { user } = useSession();
+  const { scope, ready, organization } = useWorkspace();
+  const key = scopeKey(scope);
   const { emissions, summary, isLoading: emissionsLoading } = useEmissions();
 
   const [profile, setProfile] = useState<ReportProfile | null>(null);
@@ -78,7 +83,13 @@ export function useReportEvidence() {
     let cancelled = false;
 
     const load = async () => {
-      if (!user?.id) {
+      if (!ready) return;
+      const ledgerQuery = user?.id ? applyScope(supabase
+          .from('compliance_ledger')
+          .select('document_hash, invoice_number, vendor, invoice_date, co2_kg, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
+          .order('created_at', { ascending: false }), scope) : null;
+      const docQuery = user?.id ? applyScope(supabase.from('documents').select('currency').limit(200), scope) : null;
+      if (!user?.id || !ledgerQuery || !docQuery) {
         if (!cancelled) {
           setProfile(null);
           setEvidence([]);
@@ -97,36 +108,42 @@ export function useReportEvidence() {
           .select('business_name, gstin, sector, size, location, preferred_language')
           .eq('id', user.id)
           .maybeSingle(),
-        supabase
-          .from('compliance_ledger')
-          .select('document_hash, invoice_number, vendor, invoice_date, co2_kg, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
-          .eq('user_id', user.id)
-          .order('created_at', { ascending: false }),
+        ledgerQuery,
         supabase
           .from('net_zero_goals')
           .select('baseline_co2_kg, target_reduction_pct, target_date, progress_pct')
           .eq('user_id', user.id)
           .order('created_at', { ascending: false })
           .limit(1),
-        supabase
-          .from('documents')
-          .select('currency')
-          .eq('user_id', user.id)
-          .limit(200),
+        docQuery,
       ]);
 
       if (cancelled) return;
 
       const p = profileRes.data;
-      setProfile({
-        businessName: p?.business_name ?? null,
-        gstin: p?.gstin ?? null,
-        sector: p?.sector ?? null,
-        size: p?.size ?? null,
-        location: p?.location ?? null,
-        preferredLanguage: p?.preferred_language ?? null,
-        country: countryFromLocation(p?.location ?? null),
-      });
+      if (organization) {
+        // Organisation workspace: the report is about the organisation.
+        const o = readOrganizationProfile(organization);
+        setProfile({
+          businessName: o.name || null,
+          gstin: o.taxId || null,
+          sector: o.sector || null,
+          size: o.size || null,
+          location: o.country || null,
+          preferredLanguage: p?.preferred_language ?? null,
+          country: countryFromLocation(o.country || null),
+        });
+      } else {
+        setProfile({
+          businessName: p?.business_name ?? null,
+          gstin: p?.gstin ?? null,
+          sector: p?.sector ?? null,
+          size: p?.size ?? null,
+          location: p?.location ?? null,
+          preferredLanguage: p?.preferred_language ?? null,
+          country: countryFromLocation(p?.location ?? null),
+        });
+      }
 
       setEvidence(
         (ledgerRes.data ?? []).map((e) => ({
@@ -144,7 +161,8 @@ export function useReportEvidence() {
         })),
       );
 
-      const goal = goalRes.data?.[0];
+      // Net-zero goals are personal records; an organisation has none yet.
+      const goal = organization ? undefined : goalRes.data?.[0];
       setTarget(
         goal
           ? {
@@ -165,7 +183,8 @@ export function useReportEvidence() {
 
     load();
     return () => { cancelled = true; };
-  }, [user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [user?.id, key, ready, organization]);
 
   const availability: DataAvailability = useMemo(() => {
     if (!user?.id && summary.total === 0) return EMPTY_AVAILABILITY;

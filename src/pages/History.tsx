@@ -14,6 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useState, useMemo } from 'react';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
 import { Helmet } from 'react-helmet-async';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { Badge } from '@/components/ui/badge';
@@ -29,6 +30,11 @@ import { documentEmissionStatus, verifiedEmissionsOnce, verifiedMonthlyTrend, ve
 const History = () => {
   const navigate = useNavigate();
   const { user } = useSession();
+  const { scope, can } = useWorkspace();
+  // Personal workspace: your own invoices. Organisation: admins and data
+  // managers remove any unverified invoice; uploaders remove their own.
+  const canDelete = (doc: { user_id: string | null }) =>
+    scope.kind !== 'organization' || can('records.manage') || (can('records.upload') && doc.user_id === user?.id);
   const { documents, isLoading: docsLoading, refetch: refreshDocuments } = useDocuments();
   const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
@@ -325,7 +331,7 @@ const History = () => {
                       </div>
                       {user && documentRows.length > 0 && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
                       {/* Remove a wrongly parsed or duplicate invoice. Verified records are never deletable. */}
-                      {user && status.kind !== 'verified' && (
+                      {user && status.kind !== 'verified' && canDelete(doc) && (
                         <AlertDialog>
                           <AlertDialogTrigger asChild>
                             <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-destructive shrink-0" disabled={deletingId === doc.id} aria-label={`Delete ${doc.vendor || 'invoice'}`}>

@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from './useSession';
+import { useWorkspace } from './useWorkspace';
+import { applyScope, ownerColumns, scopeKey } from '@/lib/workspaceScope';
 import type { Json } from '@/integrations/supabase/types';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
@@ -25,28 +27,25 @@ export interface Document {
 }
 
 export function useDocuments() {
-  const { sessionId, user, isLoading: sessionLoading } = useSession();
+  const { isLoading: sessionLoading } = useSession();
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
   const [documents, setDocuments] = useState<Document[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchDocuments = useCallback(async () => {
-    if (sessionLoading) return;
+    if (!ready) return;
     
     try {
       setIsLoading(true);
       setError(null);
 
-      let query = supabase
-        .from('documents')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (user) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      } else {
+      const query = applyScope(
+        supabase.from('documents').select('*').order('created_at', { ascending: false }),
+        scope,
+      );
+      if (!query) {
         setDocuments([]);
         setIsLoading(false);
         return;
@@ -66,7 +65,8 @@ export function useDocuments() {
     } finally {
       setIsLoading(false);
     }
-  }, [sessionId, user, sessionLoading]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [key, ready]);
 
   useEffect(() => {
     fetchDocuments();
@@ -76,8 +76,7 @@ export function useDocuments() {
     try {
       const insertData = {
         ...documentData,
-        session_id: user ? null : sessionId,
-        user_id: user?.id || null
+        ...ownerColumns(scope),
       };
 
       const { data, error: insertError } = await supabase
@@ -105,7 +104,7 @@ export function useDocuments() {
 
   return {
     documents,
-    isLoading: isLoading || sessionLoading,
+    isLoading: isLoading || sessionLoading || !ready,
     error,
     refetch: fetchDocuments,
     saveDocument

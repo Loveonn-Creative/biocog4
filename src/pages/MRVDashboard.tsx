@@ -9,6 +9,8 @@ import { Progress } from '@/components/ui/progress';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
 import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import {
@@ -53,6 +55,8 @@ interface VerificationRecord {
 const MRVDashboard = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  const { scope, ready: workspaceReady } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const { activeContext } = useOrganization();
   const { summary, emissions, getVerifiedEmissions } = useEmissions();
   const { documents } = useDocuments();
@@ -78,14 +82,14 @@ const MRVDashboard = () => {
   useRecordsChanged(() => { fetchVerifications(); });
   useEffect(() => {
     fetchVerifications();
-  }, [sessionId, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
   // Real-time subscription for verifications (filtered by user/session)
   useEffect(() => {
-    if (!user?.id && !sessionId) return;
-
-    const filterCol = user?.id ? 'user_id' : 'session_id';
-    const filterVal = user?.id || sessionId;
+    if (!workspaceReady) return;
+    const filter = realtimeFilter(scope);
+    if (!filter) return;
 
     const channel = supabase
       .channel('verifications-realtime')
@@ -95,7 +99,7 @@ const MRVDashboard = () => {
           event: '*',
           schema: 'public',
           table: 'carbon_verifications',
-          filter: `${filterCol}=eq.${filterVal}`,
+          filter,
         },
         (payload) => {
           console.log('Verification update received:', payload.eventType);
@@ -107,20 +111,20 @@ const MRVDashboard = () => {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [sessionId, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
   const fetchVerifications = async () => {
+    if (!workspaceReady) return;
     try {
       let query = supabase
         .from('carbon_verifications')
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (user?.id) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      }
+      const scoped = applyScope(query, scope);
+      if (!scoped) return;
+      query = scoped;
 
       const { data, error } = await query;
       if (!error && data) {

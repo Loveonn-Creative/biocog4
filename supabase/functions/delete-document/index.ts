@@ -1,5 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { decideDocumentDelete } from '../_shared/deletePolicy.ts';
+import { canDeleteOrganizationDocument, orgCan } from '../_shared/workspaceAccess.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -33,24 +34,36 @@ Deno.serve(async (req) => {
     const documentId = typeof body?.documentId === 'string' ? body.documentId : '';
     if (!UUID_RE.test(documentId)) return json({ error: 'Invalid invoice.' }, 400);
 
-    // Ownership: the document must belong to the caller. Anything else is "not found".
-    const { data: doc, error: docError } = await admin
+    // Ownership: a personal document must belong to the caller; an organisation
+    // document needs a team role that allows it. Anything else is "not found".
+    const { data: found, error: docError } = await admin
       .from('documents')
-      .select('id, user_id, document_hash, vendor, invoice_number, created_at')
+      .select('id, user_id, organization_id, document_hash, vendor, invoice_number, created_at')
       .eq('id', documentId)
-      .eq('user_id', user.id)
       .maybeSingle();
     if (docError) return json({ error: 'Could not load the invoice.' }, 500);
-    if (!doc) return json({ error: 'Invoice not found.' }, 404);
+    const orgId: string | null = found?.organization_id ?? null;
+    let allowed = !!found && !orgId && found.user_id === user.id;
+    if (found && orgId) {
+      const [manage, upload] = await Promise.all([
+        orgCan(admin, user.id, orgId, 'records.manage'),
+        orgCan(admin, user.id, orgId, 'records.upload'),
+      ]);
+      allowed = canDeleteOrganizationDocument(found, user.id, { manage, upload });
+    }
+    if (!found || !allowed) return json({ error: 'Invoice not found.' }, 404);
+    const doc = found;
 
     const { data: emissions, error: emError } = await admin
       .from('emissions')
-      .select('id, verified, user_id')
+      .select('id, verified, user_id, organization_id')
       .eq('document_id', documentId);
     if (emError) return json({ error: 'Could not load the invoice records.' }, 500);
 
-    // Rows on this document owned by someone else would mean broken ownership: stop, never delete them.
-    if ((emissions ?? []).some(e => e.user_id !== user.id)) {
+    // Rows on this document outside its workspace would mean broken ownership: stop, never delete them.
+    const outside = (e: { user_id: string | null; organization_id: string | null }) =>
+      orgId ? e.organization_id !== orgId : e.user_id !== user.id;
+    if ((emissions ?? []).some(outside)) {
       await admin.from('security_audit_log').insert({
         event_type: 'document_delete_blocked_ownership_mismatch', user_id: user.id,
         details: { document_id: documentId },
@@ -59,7 +72,9 @@ Deno.serve(async (req) => {
     }
 
     const emissionIds = (emissions ?? []).map(e => e.id);
-    const ledgerQuery = admin.from('compliance_ledger').select('id, emission_id, verification_status').eq('user_id', user.id);
+    // Organisation ledger rows belong to each emission's uploader, so they are found through the invoice.
+    const ledgerBase = admin.from('compliance_ledger').select('id, emission_id, verification_status');
+    const ledgerQuery = orgId ? ledgerBase : ledgerBase.eq('user_id', user.id);
     const { data: ledger, error: ledgerError } = emissionIds.length
       ? await ledgerQuery.or(`document_id.eq.${documentId},emission_id.in.(${emissionIds.join(',')})`)
       : await ledgerQuery.eq('document_id', documentId);
@@ -76,22 +91,27 @@ Deno.serve(async (req) => {
     // Derived rows first (the ledger references emissions and documents), then
     // the document; emissions also cascade from the document.
     if (decision.ledgerIds.length) {
-      const { error } = await admin.from('compliance_ledger').delete().in('id', decision.ledgerIds).eq('user_id', user.id);
+      const del = admin.from('compliance_ledger').delete().in('id', decision.ledgerIds);
+      const { error } = await (orgId ? del : del.eq('user_id', user.id));
       if (error) return json({ error: 'Could not remove the ledger rows.' }, 500);
     }
     if (decision.emissionIds.length) {
-      const { error } = await admin.from('emissions').delete().in('id', decision.emissionIds).eq('user_id', user.id).eq('verified', false);
+      const del = admin.from('emissions').delete().in('id', decision.emissionIds).eq('verified', false);
+      const { error } = await (orgId ? del.eq('organization_id', orgId) : del.eq('user_id', user.id));
       if (error) return json({ error: 'Could not remove the emission records.' }, 500);
     }
-    const { error: delError } = await admin.from('documents').delete().eq('id', documentId).eq('user_id', user.id);
+    const delDoc = admin.from('documents').delete().eq('id', documentId);
+    const { error: delError } = await (orgId ? delDoc.eq('organization_id', orgId) : delDoc.eq('user_id', user.id));
     if (delError) return json({ error: 'Could not remove the invoice.' }, 500);
 
     await admin.from('security_audit_log').insert({
-      event_type: 'document_deleted_by_owner',
+      event_type: orgId ? 'document_deleted_in_organization' : 'document_deleted_by_owner',
       user_id: user.id,
       user_agent: req.headers.get('user-agent'),
       details: {
         document_id: documentId,
+        organization_id: orgId,
+        uploaded_by: doc.user_id,
         document_hash: doc.document_hash,
         vendor: doc.vendor,
         invoice_number: doc.invoice_number,

@@ -48,7 +48,7 @@ describe('team plan facts', () => {
     expect(planSeatsLabel('essential')).toBe('3 team members');
     expect(planSeatsLabel('basic')).toBe('3 team members');
     expect(planSeatsLabel('pro')).toBe('10 team members');
-    expect(planSeatsLabel('scale')).toBe('Unlimited team members');
+    expect(planSeatsLabel('scale')).toBe('Team seats set in your Scale quote');
   });
 
   test('every plan with more than one seat gets the Team page', () => {

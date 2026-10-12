@@ -18,6 +18,8 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { toast } from 'sonner';
 import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
@@ -64,6 +66,8 @@ interface Verification {
 const Monetize = () => {
   const navigate = useNavigate();
   const { sessionId, user } = useSession();
+  const { scope, ready: workspaceReady } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const { summary, getVerifiedEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const { activeContext } = useOrganization();
@@ -124,17 +128,17 @@ const Monetize = () => {
   useEffect(() => {
     fetchVerifications();
     fetchPathwayStatuses();
-  }, [sessionId, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
   const fetchVerifications = async () => {
+    if (!workspaceReady) return;
     try {
       let query = supabase.from('carbon_verifications').select('*');
       
-      if (user?.id) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      }
+      const scoped = applyScope(query, scope);
+      if (!scoped) return;
+      query = scoped;
       
       const { data, error } = await query.eq('verification_status', 'verified');
       

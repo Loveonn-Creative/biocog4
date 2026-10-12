@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
+import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -377,7 +378,16 @@ serve(async (req) => {
   }
 
   try {
-    const { imageBase64, mimeType, sessionId } = await req.json();
+    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId } = await req.json();
+    // Set when a signed-in member uploads in an organisation workspace.
+    const organizationId: string | null =
+      typeof rawOrganizationId === 'string' && UUID_RE.test(rawOrganizationId) ? rawOrganizationId : null;
+    if (rawOrganizationId != null && !organizationId) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid workspace' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
     if (!imageBase64) {
       return new Response(
@@ -467,6 +477,13 @@ serve(async (req) => {
       userId = authData.user.id;
       isAuthenticated = true;
 
+      if (organizationId && !(await orgCan(authClient, userId, organizationId, 'records.upload'))) {
+        return new Response(
+          JSON.stringify({ error: 'Your team role cannot add invoices to this organisation. Ask an admin for analyst or data manager access.' }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+
       try {
         const supabase = authClient;
         const { data: profile } = await supabase
@@ -478,11 +495,14 @@ serve(async (req) => {
         userTier = profile?.subscription_tier || 'snapshot';
 
         // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
-        const { data: existingDoc } = await supabase
+        // In an organisation the same invoice counts once, whichever member uploads it.
+        const dupLookup = supabase
           .from('documents')
           .select('id, vendor, invoice_number, created_at, cached_result')
-          .eq('document_hash', documentHash)
-          .eq('user_id', userId)
+          .eq('document_hash', documentHash);
+        const { data: existingDoc } = await (organizationId
+          ? dupLookup.eq('organization_id', organizationId)
+          : dupLookup.eq('user_id', userId))
           .order('created_at', { ascending: false })
           .limit(1)
           .maybeSingle();
@@ -521,6 +541,13 @@ serve(async (req) => {
       } catch (lookupError) {
         console.error('Profile or duplicate lookup failed:', lookupError);
       }
+    }
+
+    if (!isAuthenticated && organizationId) {
+      return new Response(
+        JSON.stringify({ error: 'Sign in to add invoices to an organisation.' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
     // ============= GUEST USER: CHECK FOR CACHED RESULT =============
@@ -938,6 +965,7 @@ serve(async (req) => {
               cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
               user_id: userId,
               session_id: isAuthenticated ? null : (sessionId || null),
+              ...(isAuthenticated && organizationId ? { organization_id: organizationId } : {}),
             });
           
           if (cacheError) {

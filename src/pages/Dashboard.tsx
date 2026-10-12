@@ -4,6 +4,9 @@ import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import { useOrganization } from '@/hooks/useOrganization';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
+import { readOrganizationProfile } from '@/lib/organizationProfile';
 import { useNavigate, Link } from 'react-router-dom';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -50,6 +53,8 @@ const Dashboard = () => {
   const { tier } = usePremiumStatus();
   const { greeting, tierLabel, tierEmoji, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
+  const { scope, ready: workspaceReady, organization } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
@@ -75,24 +80,29 @@ const Dashboard = () => {
   useEffect(() => {
     let cancelled = false;
     const load = async () => {
-      if (!user?.id) { if (!cancelled) setProfileRecord(null); return; }
+      if (!workspaceReady) return;
+      const docQuery = user?.id ? applyScope(supabase.from('documents').select('currency').limit(200), scope) : null;
+      if (!user?.id || !docQuery) { if (!cancelled) setProfileRecord(null); return; }
       const [profileRes, docRes, goalRes] = await Promise.all([
         supabase.from('profiles').select('location, sector, size').eq('id', user.id).maybeSingle(),
-        supabase.from('documents').select('currency').eq('user_id', user.id).limit(200),
+        docQuery,
         supabase.from('net_zero_goals').select('id').eq('user_id', user.id).limit(1),
       ]);
       if (cancelled) return;
+      // In an organisation workspace the signals describe the organisation.
+      const org = organization ? readOrganizationProfile(organization) : null;
       setProfileRecord({
-        location: profileRes.data?.location || 'India',
-        sector: profileRes.data?.sector || 'manufacturing',
-        size: profileRes.data?.size || 'small',
+        location: (org ? org.country : profileRes.data?.location) || 'India',
+        sector: (org ? org.sector : profileRes.data?.sector) || 'manufacturing',
+        size: (org ? org.size : profileRes.data?.size) || 'small',
         exportsToEU: (docRes.data ?? []).some(d => (d.currency || '').toUpperCase() === 'EUR'),
-        hasNetZeroTarget: (goalRes.data ?? []).length > 0,
+        hasNetZeroTarget: !org && (goalRes.data ?? []).length > 0,
       });
     };
     load();
     return () => { cancelled = true; };
-  }, [user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [user?.id, workspaceKey, workspaceReady, organization]);
 
   const profileInput = useMemo(() => profileRecord ? {
     ...profileRecord,
@@ -135,15 +145,15 @@ const Dashboard = () => {
   useRecordsChanged(() => { fetchVerificationData(); });
   useEffect(() => {
     fetchVerificationData();
-  }, [sessionId, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
   // Real-time subscription for carbon verifications
   useEffect(() => {
-    if (!user && !sessionId) return;
-
-    // ============= GAP 5 FIX: FILTERED REALTIME SUBSCRIPTIONS =============
-    const filterCol = user?.id ? 'user_id' : 'session_id';
-    const filterVal = user?.id || sessionId;
+    if (!workspaceReady) return;
+    // Filtered realtime subscriptions: only this workspace's rows.
+    const filter = realtimeFilter(scope);
+    if (!filter) return;
 
     const channel = supabase
       .channel('dashboard-verifications')
@@ -153,7 +163,7 @@ const Dashboard = () => {
           event: '*',
           schema: 'public',
           table: 'carbon_verifications',
-          filter: `${filterCol}=eq.${filterVal}`,
+          filter,
         },
         (payload) => {
           console.log('[Dashboard] Verification update:', payload.eventType);
@@ -166,7 +176,7 @@ const Dashboard = () => {
           event: '*',
           schema: 'public',
           table: 'emissions',
-          filter: `${filterCol}=eq.${filterVal}`,
+          filter,
         },
         (payload) => {
           console.log('[Dashboard] Emission update:', payload.eventType);
@@ -178,7 +188,8 @@ const Dashboard = () => {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [sessionId, user?.id, refetch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady, refetch]);
 
   const resetAllData = async () => {
     if (!sessionId) return;
@@ -207,19 +218,26 @@ const Dashboard = () => {
   };
 
   const fetchVerificationData = async () => {
+    if (!workspaceReady) return;
     try {
-      let query = supabase
-        .from('carbon_verifications')
-        .select('verification_score, verification_status, ai_analysis')
-        .order('created_at', { ascending: false });
-
-      if (user?.id) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      }
+      const query = applyScope(
+        supabase
+          .from('carbon_verifications')
+          .select('verification_score, verification_status, ai_analysis')
+          .order('created_at', { ascending: false }),
+        scope,
+      );
+      if (!query) return;
 
       const { data } = await query;
+      // Clear figures from another workspace before showing this one.
+      if (!data || data.length === 0) {
+        setAllVerifications([]);
+        setVerificationScore(0);
+        setLatestStatus(null);
+        setEligibleCredits(0);
+        setLedgerEntries([]);
+      }
       if (data && data.length > 0) {
         setAllVerifications(data);
         setVerificationScore(Math.round((data[0].verification_score || 0) * 100));
@@ -228,11 +246,11 @@ const Dashboard = () => {
       }
 
       // Fetch ledger for credibility score
-      if (user?.id) {
-        const { data: ledger } = await supabase
-          .from('compliance_ledger')
-          .select('is_green_benefit, vendor, invoice_date, amount, hsn_code')
-          .eq('user_id', user.id);
+      const ledgerQuery = user?.id
+        ? applyScope(supabase.from('compliance_ledger').select('is_green_benefit, vendor, invoice_date, amount, hsn_code'), scope)
+        : null;
+      if (ledgerQuery) {
+        const { data: ledger } = await ledgerQuery;
         if (ledger) setLedgerEntries(ledger);
       }
     } catch (err) {

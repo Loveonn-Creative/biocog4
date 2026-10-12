@@ -48,7 +48,7 @@ const PaymentSuccess = () => {
       'Real-time MRV Pipeline',
       'API & Integrations',
       'Dedicated Support',
-      'Unlimited Teams',
+      'Team seats from your quote',
     ],
   };
 
