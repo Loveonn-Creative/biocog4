@@ -21,6 +21,7 @@ import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
+import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -399,7 +400,9 @@ const Index = () => {
         if (error) { notes.push(`${range}: ${await getFunctionErrorMessage(error, 'could not be read')}`); continue; }
         if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
         if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); continue; }
-        const extracted = data.data as ExtractedData;
+        // Page numbers of this part, mapped back to the original PDF.
+        const partData = data.data as ExtractedData;
+        const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
         const saved = await saveEmissionToDatabase(extracted, data.documentHash);
         if (!saved) { notes.push(`${range}: could not be saved`); continue; }
         done.push({ extracted, saved });
@@ -442,6 +445,10 @@ const Index = () => {
 
   const processDocument = async (file: File) => {
     const pageCheck = await checkUploadPages(file);
+    if (!pageCheck.ok && pageCheck.reason === 'unknown_page_count') {
+      toast.error(pageCheck.message, { duration: 8000 });
+      return;
+    }
     if (!pageCheck.ok) {
       await processLongPdf(file);
       return;
