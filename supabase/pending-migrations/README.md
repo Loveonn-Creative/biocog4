@@ -92,3 +92,11 @@ Tested: `tests/run_chain.sh` replays all of `supabase/migrations` on local Postg
 Roll back with `rollback/20261013100000_org_workspace_roles.rollback.sql`. Members holding a new role are mapped (data_manager to analyst, carbon_auditor to viewer) and their previous roles are kept in `org_role_rollback_backup`. `organization_id` values already written stay on their rows.
 
 Step-by-step apply guide: `docs/runbooks/team-workspace-rollout.md`.
+
+## 20261014100000_ambassador_applications.sql (Decarbonize India applications)
+
+Creates one new private table, `ambassador_applications`. Nothing existing is touched. RLS is on with no policies, and `anon`/`authenticated` have no grants, so only the `submit-ambassador-application` edge function (service_role) writes or reads it. One application per email (case-insensitive); three submissions per network per hour. The program manager is emailed each application through the shared transactional email sender (`ambassador-application` template, fixed recipient palanisamy@senseible.earth, reply-to the applicant). Until this table exists the page shows the WhatsApp and email route instead of failing.
+
+Tested: `tests/run_ambassador.sh` replays `supabase/migrations`, applies it, runs 7 checks (uniqueness, lane and length rules, no browser access), confirms the rollback refuses while applications exist, then rolls back with confirmation and compares the catalog.
+
+Roll back with `rollback/20261014100000_ambassador_applications.rollback.sql`. It refuses while applications exist unless `SET LOCAL ambassador.rollback_confirm = 'drop applications';` is run in the same transaction (export first).

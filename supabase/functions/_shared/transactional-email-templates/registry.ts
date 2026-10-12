@@ -1,5 +1,6 @@
 import type { ComponentType } from 'npm:react@18.3.1'
 import { template as scopeReviewTemplate } from './scope-review.tsx'
+import { template as ambassadorApplicationTemplate } from './ambassador-application.tsx'
 
 export interface TemplateEntry {
   component: ComponentType<any>
@@ -20,4 +21,5 @@ export interface TemplateEntry {
  */
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'scope-review': scopeReviewTemplate,
+  'ambassador-application': ambassadorApplicationTemplate,
 }
