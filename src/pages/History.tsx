@@ -25,7 +25,8 @@ import { XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChar
 import { format, isWithinInterval } from 'date-fns';
 import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from '@/components/GreenCategoryBadge';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
-import { documentEmissionStatus, verifiedEmissionsOnce, verifiedMonthlyTrend, verifiedScopeTotals } from '@/lib/emissionLedger';
+import { documentEmissionStatus, ledgerEvidenceGaps, verifiedEmissionsOnce, verifiedMonthlyTrend, verifiedScopeTotals } from '@/lib/emissionLedger';
+import { applyScope } from '@/lib/workspaceScope';
 
 const History = () => {
   const navigate = useNavigate();
@@ -38,7 +39,8 @@ const History = () => {
   const { documents, isLoading: docsLoading, refetch: refreshDocuments } = useDocuments();
   const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
-  const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
+  const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, loaded: ledgerLoaded, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
+  const [restoring, setRestoring] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // Server-side delete: checks ownership, refuses verified records, logs the removal.
@@ -64,6 +66,47 @@ const History = () => {
   });
 
   const isLoading = docsLoading || emissionsLoading;
+
+  // Read-only consistency check: verified records with no verified audit
+  // ledger entry (left by an interrupted verification). Checked only once the
+  // ledger was read for this account and workspace, so a failed read is never
+  // reported as missing evidence.
+  const evidenceGaps = useMemo(
+    () => (user && ledgerLoaded && !emissionsLoading ? ledgerEvidenceGaps(emissions, ledgerEntries) : new Map<string, string[]>()),
+    [user, ledgerLoaded, emissionsLoading, emissions, ledgerEntries],
+  );
+  const gapRecordCount = useMemo(() => [...evidenceGaps.values()].reduce((n, ids) => n + ids.length, 0), [evidenceGaps]);
+
+  // Completes the stored verification results that cover those records. The
+  // server only fills in what is missing and never creates a new verification.
+  const restoreAuditEntries = async () => {
+    setRestoring(true);
+    try {
+      const supabase = await loadSupabase();
+      const gapIds = [...evidenceGaps.values()].flat();
+      const query = applyScope(
+        supabase.from('carbon_verifications').select('id, emission_ids').eq('verification_status', 'verified').overlaps('emission_ids', gapIds),
+        scope,
+      );
+      const { data: stored, error } = query ? await query : { data: [], error: null };
+      if (error) { toast.error('Could not read your verification results. Nothing was changed.'); return; }
+      const sets = (stored ?? []) as Array<{ id: string; emission_ids: string[] }>;
+      if (sets.length === 0) {
+        toast.error('No stored verification result covers these records, so nothing was changed. Contact Senseible support.');
+        return;
+      }
+      let failed = 0;
+      for (const v of sets) {
+        const { data, error: fnError } = await supabase.functions.invoke('verify-carbon', { body: { emissionIds: v.emission_ids, repairOnly: true } });
+        if (fnError || data?.reused !== true) failed++;
+      }
+      emitRecordsChanged('verify');
+      if (failed) toast.error(`${failed} of ${sets.length} verification ${sets.length === 1 ? 'result' : 'results'} could not be completed. Try again.`);
+      else toast.success('Audit entries restored from your stored verification results.');
+    } finally {
+      setRestoring(false);
+    }
+  };
   const emissionsByDocument = useMemo(() => {
     const grouped = new Map<string, typeof emissions>();
     for (const row of emissions) {
@@ -160,6 +203,23 @@ const History = () => {
             </Popover>
           </div>
         </div>
+
+        {gapRecordCount > 0 && (
+          <Card className="mb-6 border-warning/40 bg-warning/5" role="status">
+            <CardContent className="p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+              <AlertTriangle className="h-5 w-5 text-warning shrink-0" />
+              <p className="text-sm flex-1">
+                {gapRecordCount} verified {gapRecordCount === 1 ? 'record has' : 'records have'} no audit ledger entry
+                ({evidenceGaps.size} {evidenceGaps.size === 1 ? 'invoice' : 'invoices'}). An earlier verification was interrupted.
+                Totals already count {gapRecordCount === 1 ? 'it' : 'them'}; the audit export does not until the entries are restored.
+              </p>
+              <Button size="sm" variant="outline" onClick={() => { void restoreAuditEntries(); }} disabled={restoring} className="shrink-0">
+                {restoring && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+                Restore audit entries
+              </Button>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Emissions Trend Chart */}
         {emissions.length > 0 && (

@@ -157,3 +157,22 @@ export function documentEmissionStatus(
   if (missingUnit) return { kind: 'not_calculable', reason: 'missing unit' };
   return { kind: 'not_calculable', reason: 'missing classification or emission factor' };
 }
+
+/**
+ * Read-only consistency check for History: verified emissions that have no
+ * verified audit ledger row, grouped by invoice. Reads loaded rows only and
+ * never creates records; an interrupted verification is what leaves these.
+ */
+export function ledgerEvidenceGaps<E extends VerifiableEmissionRow, L extends LedgerRowLike>(
+  emissions: E[],
+  ledger: L[],
+): Map<string, string[]> {
+  const evidenced = new Set(ledger.filter((r) => r.verification_status === 'verified' && r.emission_id).map((r) => r.emission_id as string));
+  const gaps = new Map<string, string[]>();
+  for (const e of verifiedEmissionsOnce(emissions)) {
+    if (evidenced.has(e.id)) continue;
+    const doc = e.document_id ?? '';
+    gaps.set(doc, [...(gaps.get(doc) ?? []), e.id]);
+  }
+  return gaps;
+}

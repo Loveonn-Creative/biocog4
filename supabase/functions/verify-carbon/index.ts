@@ -245,7 +245,7 @@ serve(async (req) => {
 
   try {
     // includeIoT is still accepted from older clients but no longer changes any number.
-    const { emissionIds, sessionId: bodySessionId, country = 'IN', inspectOnly = false } = await req.json();
+    const { emissionIds, sessionId: bodySessionId, country = 'IN', inspectOnly = false, repairOnly = false } = await req.json();
 
     const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
     const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || INDIA_GRID_FACTOR_KG_PER_KWH;
@@ -351,9 +351,17 @@ serve(async (req) => {
       }
     }
 
+    if (repairOnly && !userId) {
+      return new Response(JSON.stringify({ error: 'Sign in to restore audit entries.' }), {
+        status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     // Authenticated requests are keyed by their exact emission set. The unique
     // index arbitrates concurrent calls; historical results remain untouched.
     let idempotencyKey: string | null = null;
+    // A stored verification whose ledger evidence is incomplete (see below).
+    let repairOf: { id: string; verification_status: string; verification_score: number | null; greenwashing_risk: string | null; verified_at: string | null; ai_analysis: { verifiedEmissionIds?: string[] } | null } | null = null;
     if (userId) {
       // Organisation sets are keyed by organisation, so two members verifying the
       // same records reuse one result instead of counting it twice.
@@ -365,7 +373,33 @@ serve(async (req) => {
         ? previousQuery.eq('organization_id', orgId)
         : previousQuery.eq('user_id', userId)).maybeSingle();
       if (previousError) throw previousError;
+      // repairOnly (History's "Restore audit entries"): complete a stored
+      // result, never create a new one.
+      if (repairOnly && !previous) {
+        return new Response(JSON.stringify({ success: false, repaired: false, reason: 'no_stored_verification' }), {
+          status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      // Evidence check: every record of the set has a ledger row, and every
+      // record the stored result verified has a verified one. If not, an
+      // earlier run was interrupted; the commit below completes the stored
+      // result instead of returning it as it is.
+      let evidenceComplete = true;
       if (previous) {
+        const storedVerified = previous.verification_status === 'verified'
+          ? new Set<string>(Array.isArray(previous.ai_analysis?.verifiedEmissionIds) ? previous.ai_analysis.verifiedEmissionIds : emissionIds)
+          : new Set<string>();
+        const heldQuery = supabase.from('compliance_ledger').select('emission_id, verification_status').in('emission_id', emissionIds);
+        const { data: held, error: heldError } = await (orgId ? heldQuery.eq('organization_id', orgId) : heldQuery.eq('user_id', userId));
+        if (heldError) throw heldError;
+        const heldStatus = new Map<string, string | null>((held || []).map((r) => [r.emission_id as string, r.verification_status as string | null]));
+        evidenceComplete = emissionIds.every((id) => heldStatus.has(id) && (!storedVerified.has(id) || heldStatus.get(id) === 'verified'));
+        if (!evidenceComplete) {
+          repairOf = previous;
+          console.log('Stored verification has missing ledger evidence; completing it');
+        }
+      }
+      if (previous && evidenceComplete) {
         // Re-flag only the records that passed when this set was first verified.
         const replayIds: string[] = Array.isArray(previous.ai_analysis?.verifiedEmissionIds) ? previous.ai_analysis.verifiedEmissionIds : emissionIds;
         const { error: statusError } = previous.verification_status === 'verified' && replayIds.length
@@ -744,6 +778,35 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       }
     }
 
+    // Step-by-step ledger write (used until the atomic migration is applied):
+    // insert missing rows, promote an earlier unverified row, change nothing else.
+    const writeLedgerStepByStep = async (rows: LedgerRow[], verId: string, score: number | null, risk: string | null, at: string) => {
+      let written = 0;
+      for (const row of rows) {
+        const prior = priorByEmission.get(row.emission_id);
+        if (prior) {
+          // Already in the ledger: only promote an earlier unverified row.
+          if (row.verification_status === 'verified' && prior.verification_status !== 'verified') {
+            const { error: promoteError } = await supabase.from('compliance_ledger').update({
+              verification_id: verId,
+              verification_status: 'verified',
+              verification_score: score,
+              greenwashing_risk: risk,
+              validation_result: row.validation_result,
+              verified_at: at,
+            }).eq('id', prior.id);
+            if (promoteError) console.error('Compliance ledger promote error for emission:', row.emission_id, promoteError);
+          }
+          continue;
+        }
+        const { error: insertError } = await supabase.from('compliance_ledger').insert(row);
+        // 23505: a concurrent request already wrote this (owner, emission).
+        if (insertError && insertError.code !== '23505') console.error('Compliance ledger insert error for emission:', row.emission_id, insertError);
+        if (!insertError) written++;
+      }
+      console.log(`Compliance ledger: ${written} new entries`);
+    };
+
     const replayExisting = async () => {
       const q = supabase.from('carbon_verifications').select('*').eq('idempotency_key', idempotencyKey);
       const { data: previous, error: lookupError } = await (orgId ? q.eq('organization_id', orgId) : q.eq('user_id', userId)).single();
@@ -786,6 +849,32 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       );
     } else {
       // ---- Step-by-step path, until the migration is applied. ----
+      if (repairOf) {
+        // Complete the stored result: statuses follow it, not this run.
+        const stored = repairOf;
+        const storedVerified = new Set<string>(stored.verification_status === 'verified'
+          ? (Array.isArray(stored.ai_analysis?.verifiedEmissionIds) ? stored.ai_analysis!.verifiedEmissionIds! : emissionIds)
+          : []);
+        const flagIds = [...storedVerified];
+        if (flagIds.length) {
+          const flag = supabase.from('emissions').update({ verified: true }).in('id', flagIds);
+          const { error: flagError } = await (orgId ? flag.eq('organization_id', orgId) : flag.eq('user_id', userId as string));
+          if (flagError) throw flagError;
+        }
+        const repairRows = ledgerRows.map((row) => {
+          const ok = storedVerified.has(row.emission_id);
+          return {
+            ...row,
+            verification_id: stored.id,
+            verification_score: stored.verification_score,
+            greenwashing_risk: stored.greenwashing_risk,
+            verification_status: ok ? 'verified' : stored.verification_status === 'verified' ? 'needs_review' : stored.verification_status,
+            verified_at: ok ? (stored.verified_at ?? nowIso) : null,
+          };
+        });
+        await writeLedgerStepByStep(repairRows, stored.id, stored.verification_score, stored.greenwashing_risk, stored.verified_at ?? nowIso);
+        return await replayExisting();
+      }
       const { error: verificationError } = await supabase.from('carbon_verifications').insert(verificationRow);
       if (verificationError?.code === '23505' && userId && idempotencyKey) return await replayExisting();
       if (verificationError) {
@@ -802,30 +891,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           : userId ? statusUpdate.eq('user_id', userId) : statusUpdate.eq('session_id', sessionId as string).is('user_id', null));
         if (statusError) throw statusError;
       }
-      let written = 0;
-      for (const row of ledgerRows) {
-        const prior = priorByEmission.get(row.emission_id);
-        if (prior) {
-          // Already in the ledger: only promote an earlier unverified row.
-          if (row.verification_status === 'verified' && prior.verification_status !== 'verified') {
-            const { error: promoteError } = await supabase.from('compliance_ledger').update({
-              verification_id: verificationId,
-              verification_status: 'verified',
-              verification_score: verificationScore,
-              greenwashing_risk: greenwashingRisk,
-              validation_result: row.validation_result,
-              verified_at: nowIso,
-            }).eq('id', prior.id);
-            if (promoteError) console.error('Compliance ledger promote error for emission:', row.emission_id, promoteError);
-          }
-          continue;
-        }
-        const { error: insertError } = await supabase.from('compliance_ledger').insert(row);
-        // 23505: a concurrent request already wrote this (owner, emission).
-        if (insertError && insertError.code !== '23505') console.error('Compliance ledger insert error for emission:', row.emission_id, insertError);
-        if (!insertError) written++;
-      }
-      console.log(`Compliance ledger: ${written} new entries`);
+      await writeLedgerStepByStep(ledgerRows, verificationId, verificationScore, greenwashingRisk, nowIso);
     }
 
     const result: VerificationResult & { greenwashingFactors: string[] } = {
