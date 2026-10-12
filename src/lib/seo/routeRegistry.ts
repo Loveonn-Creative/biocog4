@@ -8,6 +8,7 @@ import { solutionPages } from '@/data/solutionsData';
 import { servicePages } from '@/data/services';
 import { competitorData } from '@/data/competitorData';
 import { industries } from '@/data/industriesData';
+import { answers, ANSWER_TOPICS } from '@/data/answers';
 import { legalDocuments } from '@/data/legalContent';
 import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
@@ -19,6 +20,7 @@ import {
   solutionMeta,
   competitorMeta,
   industryMeta,
+  answerMeta,
   legalMeta,
   canonicalUrl,
   PAGE_REVIEWS,
@@ -329,6 +331,38 @@ function competitorRoutes(): SeoRoute[] {
   });
 }
 
+function answerRoutes(): SeoRoute[] {
+  const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'Answers', path: '/answers' }];
+  const hub: SeoRoute = {
+    path: '/answers', section: 'guide', ...STATIC_PAGE_META['/answers'], h1: 'Answers',
+    blocks: (Object.keys(ANSWER_TOPICS) as (keyof typeof ANSWER_TOPICS)[]).flatMap(t => [
+      { h2: ANSWER_TOPICS[t].label } as Block,
+      { ul: answers.filter(a => a.topic === t).map(a => `[${a.q}](/answers/${a.slug})`) } as Block,
+    ]),
+    breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs), faqLd(answers.map(a => ({ question: a.q, answer: a.short })))],
+    priority: 0.7, changefreq: 'monthly',
+  };
+  return [hub, ...answers.map(a => {
+    const path = `/answers/${a.slug}`;
+    const crumbs = [...hubCrumbs, { name: a.title, path }];
+    return {
+      path, section: 'guide' as const, ...answerMeta(a), h1: a.q,
+      blocks: [
+        { p: a.short } as Block,
+        ...a.body.map(p => ({ p }) as Block),
+        ...(a.links.length ? [{ ul: a.links.map(l => `[${l.label}](${l.to})`) } as Block] : []),
+        ...(a.sources?.length ? [{ p: `Sources: ${a.sources.map(s => `[${s.label}](${s.url})`).join(', ')}` } as Block] : []),
+      ],
+      breadcrumbs: crumbs,
+      jsonLd: [breadcrumbLd(crumbs), {
+        '@context': 'https://schema.org', '@type': 'QAPage',
+        mainEntity: { '@type': 'Question', name: a.q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: [a.short, ...a.body].join(' ') } },
+      }],
+      priority: 0.6, changefreq: 'monthly' as const,
+    };
+  })];
+}
+
 function industryRoutes(): SeoRoute[] {
   return industries.map(i => {
     const path = `/industries/${i.id}`;
@@ -388,6 +422,7 @@ export function getSeoRoutes(): SeoRoute[] {
     ...solutionRoutes(),
     ...competitorRoutes(),
     ...industryRoutes(),
+    ...answerRoutes(),
     ...legalRoutes(),
   ];
 }

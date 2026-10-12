@@ -205,6 +205,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Cloud and Data Centre Emissions Calculator',
     description: 'Calculate server, cloud and data-centre emissions by region with location-based and market-based Scope 2 figures, using published PUE and grid factors.',
   },
+  '/answers': {
+    title: 'Answers: Senseible, Carbon Data and CBAM',
+    description: 'Straight answers about Senseible: what it does, how to sign in, pricing, CBAM, BRSR, Scope 3, green finance, data protection and what it does not do.',
+  },
   // Lead magnet pages (src/data/leadMagnets.ts). Not linked from navigation.
   [SUPPLIER_EVIDENCE_META.path]: { title: SUPPLIER_EVIDENCE_META.title, description: SUPPLIER_EVIDENCE_META.description },
   [MSME_CARBON_META.path]: { title: MSME_CARBON_META.title, description: MSME_CARBON_META.description },
@@ -249,6 +253,10 @@ export function industryMeta(i: { name: string; description: string }): PageMeta
 }
 
 export const INDUSTRIES_HUB_META: PageMeta = STATIC_PAGE_META['/industries'];
+
+export function answerMeta(a: { title: string; short: string }): PageMeta {
+  return { title: fitTitle(a.title), description: clampDescription(a.short) };
+}
 
 export function legalMeta(doc: { title: string; lastUpdated: string }): PageMeta {
   return {
