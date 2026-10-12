@@ -7,6 +7,7 @@
 //  - The model is told never to estimate a figure that is not in the context.
 
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { sanitizeChatInput } from "../_shared/chatInput.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -15,7 +16,7 @@ const corsHeaders = {
 };
 
 interface ChatMessage {
-  role: "user" | "assistant" | "system";
+  role: "user" | "assistant";
   content: string;
 }
 
@@ -194,17 +195,18 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const body: ChatRequest = await req.json();
-    const messages = Array.isArray(body?.messages) ? body.messages : [];
-    const language = body?.language || "English";
-    const stream = body?.stream !== false;
-
-    if (messages.length === 0) {
-      return new Response(JSON.stringify({ error: "messages is required" }), {
+    const body: ChatRequest = await req.json().catch(() => ({}) as ChatRequest);
+    // Only user and assistant text turns are accepted from the browser; the
+    // system prompt below is the only instruction the model receives.
+    const input = sanitizeChatInput(body);
+    if (!input.ok) {
+      return new Response(JSON.stringify({ error: input.error }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+    const { messages, language } = input;
+    const stream = body?.stream !== false;
 
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
@@ -254,7 +256,7 @@ Answer in ${language}. Keep technical identifiers, units, framework names and co
         model: "google/gemini-3.6-flash",
         messages: [
           { role: "system", content: systemPrompt },
-          ...messages.slice(-10),
+          ...messages,
         ],
         stream,
       }),
@@ -283,15 +285,17 @@ Answer in ${language}. Keep technical identifiers, units, framework names and co
         headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
       });
     }
+    // Return only the answer text, in the shape the voice client reads.
     const data = await response.json();
-    return new Response(JSON.stringify(data), {
+    const content = typeof data?.choices?.[0]?.message?.content === "string" ? data.choices[0].message.content : "";
+    return new Response(JSON.stringify({ choices: [{ message: { role: "assistant", content } }] }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Intelligence chat error:", error);
     return new Response(
       JSON.stringify({
-        error: error instanceof Error ? error.message : "Failed to process request",
+        error: "Failed to process request",
       }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
     );
