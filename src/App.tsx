@@ -49,6 +49,7 @@ const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const SupplierEvidence = lazy(() => import("./pages/lead/SupplierEvidence"));
+const Answers = lazy(() => import("./pages/Answers"));
 const MsmeCarbonNumber = lazy(() => import("./pages/lead/MsmeCarbonNumber"));
 const Profile = lazy(() => import("./pages/Profile"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
@@ -133,6 +134,8 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/answers" element={<Answers />} />
+              <Route path="/answers/:slug" element={<Answers />} />
               <Route path="/scope-3-supplier-evidence" element={<SupplierEvidence />} />
               <Route path="/msme-carbon-number" element={<MsmeCarbonNumber />} />
               {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}

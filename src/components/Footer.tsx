@@ -49,6 +49,7 @@ const footerLinks = {
     { name: 'About', path: '/about' },
     { name: 'Principles', path: '/principles' },
     { name: 'Careers', path: '/careers' },
+    { name: 'Answers', path: '/answers' },
     { name: 'Contact', path: '/contact' },
   ],
   legal: [
