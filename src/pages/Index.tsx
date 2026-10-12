@@ -23,6 +23,7 @@ import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
+import { cacheGuestSource } from '@/lib/guestSourceCache';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -406,6 +407,7 @@ const Index = () => {
         const partData = data.data as ExtractedData;
         const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
         const saved = await saveEmissionToDatabase(extracted, data.documentHash);
+        if (!user) void cacheGuestSource(data.documentHash, part.file, part.file.name);
         if (!saved) { notes.push(`${range}: could not be saved`); continue; }
         done.push({ extracted, saved });
       } catch {
@@ -550,6 +552,8 @@ const Index = () => {
       }
 
       const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
+      // Guests: the original stays in this browser only (never uploaded for storage).
+      if (!user) void cacheGuestSource(data.documentHash, file, file.name);
 
       if (!savedIds) {
         // ============= GAP 4 FIX: SAVE FAILURE RECOVERY =============
