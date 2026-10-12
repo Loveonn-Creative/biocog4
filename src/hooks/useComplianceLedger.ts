@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { toast } from 'sonner';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 import { latestLedgerRowPerEmission, verifiedLedgerTotalKg } from '@/lib/emissionLedger';
@@ -46,20 +48,22 @@ export const useComplianceLedger = () => {
   const [rawEntries, setRawEntries] = useState<ComplianceLedgerEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const userId = user?.id;
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
 
   const fetchEntries = useCallback(async () => {
     // The ledger is only ever read for the signed-in user. Guests have no ledger.
-    if (!userId) {
+    if (!ready) return;
+    const query = userId
+      ? applyScope(supabase.from('compliance_ledger').select('*').order('created_at', { ascending: false }), scope)
+      : null;
+    if (!query) {
       setRawEntries([]);
       setIsLoading(false);
       return;
     }
     setIsLoading(true);
-    const { data, error } = await supabase
-      .from('compliance_ledger')
-      .select('*')
-      .eq('user_id', userId)
-      .order('created_at', { ascending: false });
+    const { data, error } = await query;
 
     if (error) {
       console.error('Error fetching audit ledger:', error);
@@ -67,7 +71,8 @@ export const useComplianceLedger = () => {
       setRawEntries((data || []) as unknown as ComplianceLedgerEntry[]);
     }
     setIsLoading(false);
-  }, [userId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [userId, key, ready]);
 
   useEffect(() => {
     void fetchEntries();

@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Clock } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
-import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 
 interface AuditEntry {
   id: string;
@@ -14,31 +15,35 @@ interface AuditEntry {
 }
 
 export function EnterpriseAuditLog() {
-  const { user, sessionId } = useSession();
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
   const [entries, setEntries] = useState<AuditEntry[]>([]);
 
   useEffect(() => {
     // Never send an unscoped query: with no owner there is nothing to show.
-    if (!user?.id && !sessionId) {
+    if (!ready) return;
+    const query = applyScope(
+      supabase
+        .from('carbon_verifications')
+        .select('id, verification_status, total_co2_kg, verification_score, created_at')
+        .order('created_at', { ascending: false })
+        .limit(10),
+      scope,
+    );
+    if (!query) {
       setEntries([]);
       return;
     }
     let cancelled = false;
     const fetch = async () => {
-      let query = supabase
-        .from('carbon_verifications')
-        .select('id, verification_status, total_co2_kg, verification_score, created_at')
-        .order('created_at', { ascending: false })
-        .limit(10);
-
-      query = user?.id ? query.eq('user_id', user.id) : query.eq('session_id', sessionId as string);
 
       const { data } = await query;
       if (!cancelled && data) setEntries(data);
     };
     fetch();
     return () => { cancelled = true; };
-  }, [user?.id, sessionId]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [key, ready]);
 
   if (entries.length === 0) return null;
 

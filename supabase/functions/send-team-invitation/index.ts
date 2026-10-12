@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { ROLE_LABELS as SHARED_ROLE_LABELS, ROLE_DESCRIPTIONS as WORKSPACE_ROLE_DESCRIPTIONS, LEGACY_ROLE_DESCRIPTIONS } from '../_shared/teamRoles.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
@@ -43,6 +44,8 @@ interface InvitationEmailData extends InvitationRequest {
   token: string;
   organizationName: string;
   inviterName?: string;
+  /** True once the organisation workspace migration is applied (records shared by role). */
+  workspacesLive?: boolean;
 }
 
 const json = (body: unknown, status = 200) =>
@@ -72,16 +75,7 @@ const rpcErrorResponse = (err: { message?: string; code?: string } | null) => {
   return null;
 };
 
-const ROLE_LABELS: Record<string, string> = {
-  owner: "Owner", admin: "Admin", analyst: "Analyst", viewer: "Viewer",
-};
-
-const ROLE_DESCRIPTIONS: Record<string, string> = {
-  owner: "Full access including billing and team management",
-  admin: "All features except billing. Can manage team members",
-  analyst: "Upload, verify, reports, and intelligence access",
-  viewer: "Read-only access to dashboard and reports",
-};
+const ROLE_LABELS: Record<string, string> = SHARED_ROLE_LABELS;
 
 const getInvitationEmailHTML = (data: InvitationEmailData) => {
   const acceptUrl = `${SITE_URL}/accept-invite?token=${encodeURIComponent(data.token)}`;
@@ -90,7 +84,8 @@ const getInvitationEmailHTML = (data: InvitationEmailData) => {
   });
   const orgName = escapeHtml(data.organizationName);
   const role = escapeHtml(ROLE_LABELS[data.role] || data.role);
-  const roleDesc = escapeHtml(ROLE_DESCRIPTIONS[data.role] || "");
+  const descriptions: Record<string, string> = data.workspacesLive ? WORKSPACE_ROLE_DESCRIPTIONS : LEGACY_ROLE_DESCRIPTIONS;
+  const roleDesc = escapeHtml(descriptions[data.role] || "");
   const inviter = escapeHtml(data.inviterName || "A team member");
 
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -181,7 +176,11 @@ serve(async (req) => {
 
     const emailData: InvitationEmailData = { ...data, token, organizationName, inviterName: String(claimsRes.claims.email || "").split("@")[0] };
 
-    const emailHTML = getInvitationEmailHTML(emailData);
+    // Describe the role as it works today: shared records only once the workspace migration is live.
+    const { error: probeError } = await admin.rpc("service_org_can", {
+      p_user_id: callerId, p_organization_id: data.organizationId, p_capability: "records.view",
+    });
+    const emailHTML = getInvitationEmailHTML({ ...emailData, workspacesLive: !probeError });
 
     // If the email cannot be sent, remove the invitation we just created so it
     // does not hold a seat or block a retry as a "duplicate invite".

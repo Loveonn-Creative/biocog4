@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { CAPABILITY_REASON } from '@/lib/workspaceScope';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -36,6 +38,8 @@ interface BulkUploadProps {
 
 export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
   const { sessionId, user } = useSession();
+  const { scope, can, organization } = useWorkspace();
+  const organizationId = scope.kind === 'organization' ? scope.organizationId : undefined;
   const [files, setFiles] = useState<FileStatus[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -76,6 +80,10 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
   const processFiles = async () => {
     if (files.length === 0) return;
+    if (!can('records.upload')) {
+      toast.error(`${organization?.name || 'Organisation'} workspace: ${CAPABILITY_REASON['records.upload']}`, { duration: 8000 });
+      return;
+    }
 
     setIsProcessing(true);
     setProgress(0);
@@ -110,7 +118,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         const mimeType = fileStatus.file.type || 'image/jpeg';
 
         const { data, error } = await supabase.functions.invoke('extract-document', {
-          body: { imageBase64, mimeType, sessionId }
+          body: { imageBase64, mimeType, sessionId, organizationId }
         });
 
         if (error) throw error;
@@ -128,11 +136,14 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           results.duplicates++;
         } else if (data?.success) {
           const extractedData = data.data as PersistableExtraction;
-          const { data: document } = await supabase
+          const docLookup = supabase
             .from('documents')
             .select('id')
-            .eq('document_hash', data.documentHash)
-            .eq('user_id', user?.id || '')
+            .eq('document_hash', data.documentHash);
+          // In an organisation workspace the invoice is the organisation's, whoever uploaded it.
+          const { data: document } = await (organizationId
+            ? docLookup.eq('organization_id', organizationId)
+            : docLookup.eq('user_id', user?.id || ''))
             .order('created_at', { ascending: false })
             .limit(1)
             .maybeSingle();

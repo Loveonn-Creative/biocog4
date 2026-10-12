@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { UserMenu } from '@/components/UserMenu';
 import { ContextSwitcher } from '@/components/ContextSwitcher';
+import { WorkspaceSwitcher } from '@/components/WorkspaceSwitcher';
 import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock, Building2, Handshake } from 'lucide-react';
 // Perf: 384x153 downscale of senseible-logo.png (same aspect ratio, rendered at 28px tall); 6.5 KB vs 212 KB.
 import senseibleLogo from '@/assets/senseible-logo-384.png';
@@ -129,6 +130,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
           <div className="flex items-center gap-3">
             {/* Context Switcher - for users with multiple contexts */}
             {isAuthenticated && <ContextSwitcher />}
+            {isAuthenticated && <WorkspaceSwitcher />}
             
             {isAuthenticated && user ? (
               <UserMenu 

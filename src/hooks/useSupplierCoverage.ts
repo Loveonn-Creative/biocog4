@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import {
   buildSupplierLedger,
   summariseCoverage,
@@ -28,6 +30,8 @@ const EMPTY: SupplierCoverage = {
  */
 export function useSupplierCoverage() {
   const { user } = useSession();
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
   const [records, setRecords] = useState<SupplierSourceRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,22 +39,20 @@ export function useSupplierCoverage() {
     let cancelled = false;
 
     const load = async () => {
-      if (!user?.id) {
+      if (!ready) return;
+      const ledgerQuery = user?.id ? applyScope(supabase
+          .from('compliance_ledger')
+          .select('vendor, invoice_date, amount, currency, co2_kg, scope, emission_category, hsn_code, factor_source, verification_status, document_hash, document_id'), scope) : null;
+      const docQuery = user?.id ? applyScope(supabase
+          .from('documents')
+          .select('id, vendor, invoice_date, amount, currency, document_hash'), scope) : null;
+      if (!ledgerQuery || !docQuery) {
         if (!cancelled) { setRecords([]); setIsLoading(false); }
         return;
       }
       setIsLoading(true);
 
-      const [ledgerRes, docRes] = await Promise.all([
-        supabase
-          .from('compliance_ledger')
-          .select('vendor, invoice_date, amount, currency, co2_kg, scope, emission_category, hsn_code, factor_source, verification_status, document_hash, document_id')
-          .eq('user_id', user.id),
-        supabase
-          .from('documents')
-          .select('id, vendor, invoice_date, amount, currency, document_hash')
-          .eq('user_id', user.id),
-      ]);
+      const [ledgerRes, docRes] = await Promise.all([ledgerQuery, docQuery]);
 
       if (cancelled) return;
 
@@ -94,7 +96,8 @@ export function useSupplierCoverage() {
 
     load();
     return () => { cancelled = true; };
-  }, [user?.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [user?.id, key, ready]);
 
   const coverage = useMemo(
     () => (records.length ? summariseCoverage(buildSupplierLedger(records)) : EMPTY),

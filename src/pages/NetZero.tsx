@@ -13,6 +13,8 @@ import { Separator } from "@/components/ui/separator";
 import { Target, BarChart3, Zap, CheckCircle2, FileText, Lock, ArrowRight, Leaf, TrendingDown, AlertTriangle, Sparkles } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { useSession } from "@/hooks/useSession";
+import { useWorkspace } from "@/hooks/useWorkspace";
+import { applyScope, scopeKey } from "@/lib/workspaceScope";
 import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -36,6 +38,8 @@ const STEPS = [
 
 const NetZero = () => {
   const { isAuthenticated, user } = useSession();
+  const { scope, ready: workspaceReady } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const navigate = useNavigate();
   const { isPremium } = usePremiumStatus();
   const [activeStep, setActiveStep] = useState('baseline');
@@ -56,16 +60,15 @@ const NetZero = () => {
   // Load baseline from existing emissions
   useEffect(() => {
     const loadBaseline = async () => {
+      if (!workspaceReady) return;
       setLoadingBaseline(true);
-      if (!isAuthenticated || !user?.id) {
+      const query = isAuthenticated && user?.id ? applyScope(supabase.from('emissions').select('scope, co2_kg'), scope) : null;
+      if (!query) {
         setLoadingBaseline(false);
         return;
       }
 
-      const { data } = await supabase
-        .from('emissions')
-        .select('scope, co2_kg')
-        .eq('user_id', user.id);
+      const { data } = await query;
 
       if (data && data.length > 0) {
         const scope1 = data.filter(e => e.scope === 1).reduce((s, e) => s + Number(e.co2_kg), 0);
@@ -76,7 +79,8 @@ const NetZero = () => {
       setLoadingBaseline(false);
     };
     loadBaseline();
-  }, [isAuthenticated, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [isAuthenticated, user?.id, workspaceKey, workspaceReady]);
 
   // Calculate feasibility when goal params change
   useEffect(() => {

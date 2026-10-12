@@ -26,12 +26,14 @@ interface Props {
   canEdit: boolean;
   userId?: string;
   pendingMessage: string;
+  /** Who may edit, for the read-only caption, e.g. "the owner" or "the owner and admins". */
+  editors: string;
 }
 
 const labelOf = (list: { value: string; label: string }[], value: string) =>
   list.find(o => o.value === value)?.label || '';
 
-export function OrganizationProfileCard({ organization, canEdit, userId, pendingMessage }: Props) {
+export function OrganizationProfileCard({ organization, canEdit, userId, pendingMessage, editors }: Props) {
   const queryClient = useQueryClient();
   const saved = useMemo(() => readOrganizationProfile(organization), [organization]);
   const [editing, setEditing] = useState(false);
@@ -93,7 +95,7 @@ export function OrganizationProfileCard({ organization, canEdit, userId, pending
       }
       if (!data || data.length === 0) {
         // RLS filtered the row: only the owner may edit.
-        setSaveError('Only the organisation owner can edit this profile.');
+        setSaveError(`Only ${editors} can edit this profile.`);
         return;
       }
       await queryClient.invalidateQueries({ queryKey: ['organizations'] });
@@ -121,7 +123,7 @@ export function OrganizationProfileCard({ organization, canEdit, userId, pending
             Organisation profile
           </CardTitle>
           <CardDescription>
-            {canEdit ? 'Shared with everyone on your team.' : 'Set by the organisation owner.'}
+            {canEdit ? 'Shared with everyone on your team.' : `Edited by ${editors}.`}
           </CardDescription>
         </div>
         {canEdit && !editing && (

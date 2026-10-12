@@ -308,7 +308,7 @@ const Pricing = () => {
         'SBTi-ready Projections',
         'Dedicated Onboarding',
         'Priority SLA',
-        'Unlimited Team Members',
+        'Team seats sized to your quote',
       ],
     },
   ];
@@ -320,7 +320,7 @@ const Pricing = () => {
     { name: 'Carbon Monetization', snapshot: false, essential: false, pro: true, scale: true },
     { name: 'Reports', snapshot: 'Preview', essential: 'Basic', pro: 'Automated', scale: 'Custom' },
     { name: 'Support', snapshot: 'Help Center', essential: 'Email', pro: 'Phone + Email', scale: 'Dedicated' },
-    { name: 'Team Members', snapshot: '1', essential: '3', pro: '10', scale: 'Unlimited' },
+    { name: 'Team Members', snapshot: '1', essential: '3', pro: '10', scale: 'Per quote' },
   ];
 
   const addons = [

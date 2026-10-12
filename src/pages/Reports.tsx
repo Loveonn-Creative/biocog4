@@ -10,6 +10,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
@@ -72,6 +74,8 @@ const Reports = () => {
   const navigate = useNavigate();
   const { summary, emissions } = useEmissions();
   const { user, sessionId } = useSession();
+  const { scope, ready: workspaceReady } = useWorkspace();
+  const workspaceKey = scopeKey(scope);
   const { isPremium, canAccessFeature } = usePremiumStatus();
   const { activeContext } = useOrganization();
   const { entries: ledgerEntries, exportGovFormat } = useComplianceLedger();
@@ -118,20 +122,20 @@ const Reports = () => {
   useRecordsChanged(() => { fetchVerifications(); });
   useEffect(() => {
     fetchVerifications();
-  }, [sessionId, user?.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
+  }, [workspaceKey, workspaceReady]);
 
   const fetchVerifications = async () => {
+    if (!workspaceReady) return;
     try {
       let query = supabase
         .from('carbon_verifications')
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (user?.id) {
-        query = query.eq('user_id', user.id);
-      } else if (sessionId) {
-        query = query.eq('session_id', sessionId);
-      }
+      const scoped = applyScope(query, scope);
+      if (!scoped) return;
+      query = scoped;
 
       const { data, error } = await query;
       if (!error && data) {
