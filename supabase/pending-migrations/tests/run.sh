@@ -15,8 +15,9 @@ snapshot() { psql_ -Atc "SELECT md5(string_agg(x, ',' ORDER BY x)) FROM (
   UNION ALL SELECT 'fn:'||p.proname FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public'
   UNION ALL SELECT 'pol:'||polname FROM pg_policy
   UNION ALL SELECT 'row:'||id::text||':'||co2_kg::text FROM public.emissions) t(x)"; }
+mig="$here/../$name.sql"; [ -f "$mig" ] || mig="$here/../../migrations/$name.sql"
 before="$(snapshot)"
-psql_ -f "$here/../$name.sql"
+psql_ -f "$mig"
 psql_ -f "$here/$name.test.sql"
 # Rollback must refuse while data exists, then succeed with explicit confirmation.
 if psql_ -f "$here/../rollback/$name.rollback.sql" 2>/dev/null; then echo "rollback should have refused with data present"; exit 1; fi
@@ -24,7 +25,7 @@ if psql_ -f "$here/../rollback/$name.rollback.sql" 2>/dev/null; then echo "rollb
 after="$(snapshot)"
 [ "$before" = "$after" ] || { echo "rollback did not restore the starting state"; exit 1; }
 # Re-apply after rollback, and roll back the empty install without confirmation.
-psql_ -f "$here/../$name.sql"
+psql_ -f "$mig"
 psql_ -f "$here/../rollback/$name.rollback.sql"
 [ "$before" = "$(snapshot)" ] || { echo "second rollback did not restore the starting state"; exit 1; }
 echo "OK: $name applies, passes its tests, and rolls back cleanly"

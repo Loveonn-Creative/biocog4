@@ -1,8 +1,8 @@
 -- =============================================
--- PENDING (NOT APPLIED): water-bill MRV tables, behind a switch that is OFF.
+-- Water-bill MRV tables, behind a switch that is OFF (approved for apply 2026-10-12).
 -- Purely additive: creates new water_* objects only. No existing table,
 -- policy, function or row is changed. Rollback:
---   rollback/20261012120000_water_mrv.rollback.sql
+--   supabase/pending-migrations/rollback/20261012120000_water_mrv.rollback.sql
 -- Methodology: docs/methodology/water-mrv.md
 -- =============================================
 BEGIN;
@@ -274,7 +274,7 @@ CREATE TRIGGER water_audit_no_truncate BEFORE TRUNCATE ON public.water_audit_eve
 
 -- ---------------------------------------------
 -- Persist one pipeline run for one bill in one transaction (PERSIST + AUDIT).
--- p: { actor, method_version, bill:{...}, results:[{...}], flags:[{...}] }
+-- p: { actor, kind ('INGEST' default | 'SHADOW'), method_version, bill:{...}, results:[{...}], flags:[{...}] }
 -- Results reference factors and rules by id; rows are taken as computed by
 -- supabase/functions/_shared/water/pipeline.ts. Re-ingesting the same bill is a no-op.
 -- ---------------------------------------------
@@ -308,7 +308,8 @@ BEGIN
   END IF;
 
   INSERT INTO public.water_calc_run (kind, method_version, gwp_basis, period_basis, planned_by)
-  VALUES ('INGEST', p->>'method_version', s.gwp_basis, s.period_basis, p->>'actor') RETURNING id INTO v_run;
+  VALUES (CASE WHEN p->>'kind' = 'SHADOW' THEN 'SHADOW' ELSE 'INGEST' END, p->>'method_version', s.gwp_basis, s.period_basis, p->>'actor')
+  RETURNING id INTO v_run;
 
   FOR r IN SELECT * FROM jsonb_array_elements(coalesce(p->'results','[]'::jsonb)) LOOP
     INSERT INTO public.water_emission_result (water_bill_id, entity_id, allocation_period, version, calc_run_id,
@@ -334,7 +335,7 @@ BEGIN
   END LOOP;
 
   INSERT INTO public.water_audit_event (actor, action, entity_id, subject_table, subject_id, payload)
-  VALUES (p->>'actor', 'INGEST', (b->>'entity_id')::uuid, 'water_bill', v_bill::text,
+  VALUES (p->>'actor', CASE WHEN p->>'kind' = 'SHADOW' THEN 'SHADOW_INGEST' ELSE 'INGEST' END, (b->>'entity_id')::uuid, 'water_bill', v_bill::text,
           jsonb_build_object('calc_run_id', v_run, 'results', jsonb_array_length(coalesce(p->'results','[]'::jsonb)),
                              'flags', jsonb_array_length(coalesce(p->'flags','[]'::jsonb))));
   RETURN jsonb_build_object('status','stored','water_bill_id',v_bill,'calc_run_id',v_run,'result_ids',v_ids);

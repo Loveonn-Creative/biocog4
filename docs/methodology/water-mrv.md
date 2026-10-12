@@ -1,8 +1,9 @@
 # Water-bill emissions: calculation methodology (draft for approval)
 
-Status: **not active.** Code is in `supabase/functions/_shared/water/`, tables are in
-`supabase/pending-migrations/20261012120000_water_mrv.sql` behind a switch that ships OFF.
-Nothing here is wired into the live app, edge functions or reports.
+Status: **migration approved for apply; switch OFF; no factors loaded.** Code is in
+`supabase/functions/_shared/water/`, tables in `supabase/migrations/20261012120000_water_mrv.sql`.
+`extract-document` calls a shadow run (`shadow.ts`) that writes only to the water tables and only
+while the switch is on. Nothing is shown in the app or reports.
 Method version: `WATER_MRV_v1.0`.
 
 This document records every formula, unit, boundary, source and assumption the engine uses.
@@ -181,6 +182,7 @@ bill, calc_run, locked_period, emission_result, data_gap_flag, audit_event.
 
 ## 11. Tests
 
+* `tests/water-shadow.test.ts` (8 tests): bill detection, period parsing, shadow run off/on/failure.
 * `tests/water-mrv.test.ts` (46 tests): unit conversions from legal definitions, validation, day-based
   allocation (year end, Indian FY end, leap year), factor eligibility and tie-breaks, the calculation,
   mapping, flag state machine, end-to-end reference bills reconciled to hand arithmetic, versioned
@@ -204,5 +206,23 @@ Test factors are labelled `TEST FIXTURE (not a real factor)` and use round numbe
 5. Existing live code has an avoided-emissions factor `WATER_CONSERVATION` of 0.20 kgCO2e per kL in
    `supabase/functions/_shared/emissionFactors.ts` with no cited publication. It is left unchanged
    because changing it alters live numbers; it needs a sourced value or removal, on your decision.
-6. Rollout after approval: apply the migration, load factors, run in shadow mode (results stored,
-   not shown), compare, then backfill through a dry-run plan, then turn the switch on.
+6. Rollout steps and tools:
+   1. Apply: `supabase/migrations/20261012120000_water_mrv.sql` (switch stays off).
+   2. Load factors and rules: `supabase/pending-migrations/water_load_factors.template.sql` (values from the publication, second-person approval).
+   3. Shadow: `UPDATE public.water_mrv_settings SET enabled = true, updated_by = '<you>';` Every new water bill
+      is then stored in the water tables only; nothing is displayed.
+   4. Compare: `supabase/pending-migrations/water_shadow_compare.sql` (read-only).
+   5. Backfill: `bun scripts/water-backfill.ts` (dry run), then `--apply --planned-by A --approved-by B`.
+   6. Turn on for users: not built. Showing water totals in the app is a separate UI change for your approval.
+
+## 13. Shadow-mode input rules
+
+* A bill is a water bill when the vendor or lines name a water utility, water supply/charges, jal board or
+  nigam, sewerage, sewage, wastewater or drainage charges, and it is not packaged drinking water (HSN 2201,
+  bottled, jar). Lines naming sewerage/wastewater are WASTEWATER, other water lines SUPPLY, a line naming both
+  COMBINED_UNSPLIT.
+* Billing period: only a printed "date to date" range is used (valid dates, ordered, at most 400 days). The bill
+  date is never used as a period; without a printed range the bill is MISSING_FIELD.
+* Country is IN only when the bill carries a valid-format GSTIN; otherwise unknown.
+* Bills do not name a site; all of an entity's bills go to site "unassigned" (identity only, no effect on numbers).
+* The entity is the signed-in uploader. Guest uploads are not processed.

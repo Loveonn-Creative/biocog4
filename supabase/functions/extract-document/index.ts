@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
+import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -948,6 +949,14 @@ serve(async (req) => {
       } catch (e) {
         console.error('Cache error:', e);
       }
+    }
+
+    // Water MRV shadow run: stores to water_* tables only, shows nothing, and is a
+    // no-op unless water_mrv_settings.enabled is true. Never affects this response.
+    if (supabaseUrl && supabaseKey && isAuthenticated && userId) {
+      const shadow = shadowWaterRun(createClient(supabaseUrl, supabaseKey), ocrData, userId, documentHash);
+      const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+      if (rt?.waitUntil) rt.waitUntil(shadow); else await shadow;
     }
 
     return new Response(
