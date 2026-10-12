@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { creditValuation, CREDIT_VALUE_WITHHELD } from "../_shared/carbonValue.ts";
+import { activityDate, fiscalPeriod } from "../_shared/invoiceDate.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 
@@ -734,11 +735,8 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         }
 
         // Determine fiscal year and quarter
-        const createdDate = new Date(emission.created_at || Date.now());
-        const month = createdDate.getMonth() + 1;
-        const year = createdDate.getFullYear();
-        const fiscalYear = month >= 4 ? `FY${year}-${year + 1}` : `FY${year - 1}-${year}`;
-        const fiscalQuarter = month >= 4 && month <= 6 ? 'Q1' : month >= 7 && month <= 9 ? 'Q2' : month >= 10 && month <= 12 ? 'Q3' : 'Q4';
+        // Period from the invoice date; the upload date only when there is none.
+        const { fiscalYear, fiscalQuarter } = fiscalPeriod(activityDate(doc?.invoice_date, emission.created_at || new Date().toISOString()));
 
         ledgerRows.push({
           id: crypto.randomUUID(),

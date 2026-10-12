@@ -9,7 +9,12 @@ export interface VerifiableEmissionRow {
   co2_kg: number;
   verified: boolean | null;
   created_at: string;
+  /** Invoice date when known (see useEmissions); periods use it over created_at. */
+  activity_date?: string;
 }
+
+/** The date a record counts in for periods: its invoice date, else upload date. */
+export const periodDateOf = (r: { created_at: string; activity_date?: string }): string => r.activity_date || r.created_at;
 
 export interface LedgerRowLike {
   id: string;
@@ -97,7 +102,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 export function verifiedMonthlyTrend<T extends VerifiableEmissionRow>(rows: T[]): Array<{ key: string; month: string; co2: number; count: number }> {
   const buckets = new Map<string, { key: string; month: string; co2: number; count: number }>();
   for (const r of verifiedEmissionsOnce(rows)) {
-    const d = new Date(r.created_at);
+    const d = new Date(periodDateOf(r));
     if (Number.isNaN(d.getTime())) continue;
     const key = `${d.getFullYear()}-${pad2(d.getMonth() + 1)}`;
     const month = `${MONTHS[d.getMonth()]} ${String(d.getFullYear()).slice(-2)}`;

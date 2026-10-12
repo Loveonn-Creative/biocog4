@@ -8,7 +8,7 @@
  */
 
 import type { Emission } from '@/hooks/useEmissions';
-import { grossKg } from '@/lib/emissionLedger';
+import { grossKg, periodDateOf } from '@/lib/emissionLedger';
 
 export type TimeRange = '30d' | '90d' | '12m' | 'fy' | 'all';
 export type ScopeFilter = 'all' | 1 | 2 | 3;
@@ -88,7 +88,7 @@ const inWindow = (iso: string, from: Date | null, to: Date): boolean => {
 
 export function applyFilters(emissions: Emission[], filters: DashboardFilters, win: Window): Emission[] {
   return emissions.filter((e) => {
-    if (!inWindow(e.created_at, win.from, win.to)) return false;
+    if (!inWindow(periodDateOf(e), win.from, win.to)) return false;
     if (filters.scope !== 'all' && e.scope !== filters.scope) return false;
     if (filters.status === 'verified' && !e.verified) return false;
     if (filters.status === 'unverified' && e.verified) return false;
@@ -185,7 +185,7 @@ export interface SeriesPoint {
 export function monthlySeries(rows: Emission[], win: Window, locale = 'en-US'): SeriesPoint[] {
   if (rows.length === 0) return [];
 
-  const dates = rows.map((r) => new Date(r.created_at).getTime()).filter((t) => !Number.isNaN(t));
+  const dates = rows.map((r) => new Date(periodDateOf(r)).getTime()).filter((t) => !Number.isNaN(t));
   if (dates.length === 0) return [];
 
   const start = win.from ?? new Date(Math.min(...dates));
@@ -200,7 +200,7 @@ export function monthlySeries(rows: Emission[], win: Window, locale = 'en-US'): 
   }
 
   for (const e of rows) {
-    const d = new Date(e.created_at);
+    const d = new Date(periodDateOf(e));
     if (Number.isNaN(d.getTime())) continue;
     const key = d.toLocaleDateString(locale, { month: 'short', year: '2-digit' });
     const bucket = buckets.get(key);

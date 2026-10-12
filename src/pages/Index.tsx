@@ -22,6 +22,7 @@ import { checkUploadPages } from '@/lib/pdfLimit';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
+import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -299,7 +300,8 @@ const Index = () => {
             ...(uploadScopeRef.current ? ownerColumns(uploadScopeRef.current) : { session_id: user ? null : sessionId, user_id: user?.id || null }),
             document_type: extractedData.documentType,
             vendor: extractedData.vendor,
-            invoice_date: extractedData.date ? new Date(extractedData.date).toISOString().split('T')[0] : null,
+            // Only a valid YYYY-MM-DD date; an ambiguous one is never guessed.
+            invoice_date: parseInvoiceDate(extractedData.date),
             invoice_number: extractedData.invoiceNumber,
             amount: extractedData.amount,
             currency: extractedData.currency || 'INR',

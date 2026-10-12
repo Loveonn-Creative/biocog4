@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst } from '../_shared/planLimits.ts';
+import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
@@ -995,6 +996,7 @@ serve(async (req) => {
               document_type: extractedData.documentType,
               vendor: extractedData.vendor,
               invoice_number: extractedData.invoiceNumber,
+              invoice_date: parseInvoiceDate(extractedData.date),
               amount: extractedData.amount,
               confidence: Math.min(extractedData.confidence, 999.99),
               cached_result: extractedData,
@@ -1016,6 +1018,7 @@ serve(async (req) => {
               document_type: extractedData.documentType,
               vendor: extractedData.vendor,
               invoice_number: extractedData.invoiceNumber,
+              invoice_date: parseInvoiceDate(extractedData.date),
               amount: extractedData.amount,
               confidence: Math.min(extractedData.confidence, 999.99),
               cached_result: extractedData,

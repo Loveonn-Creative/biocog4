@@ -33,7 +33,7 @@ import {
   FRAMEWORKS,
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
-import { grossKg } from '@/lib/emissionLedger';
+import { grossKg, periodDateOf } from '@/lib/emissionLedger';
 import { generateFrameworkPDF, generateFrameworkExcel, type ReportDataset } from '@/lib/frameworkReports';
 import { analyticsEvents } from '@/lib/analytics';
 import { useI18nContext } from '@/lib/i18n/LanguageProvider';
@@ -177,7 +177,8 @@ const Reports = () => {
   }, [emissions, user]);
 
   const dataset: ReportDataset = useMemo(() => {
-    const dates = reportRows.map(e => e.created_at).sort();
+    // Reporting period from invoice dates (upload date when an invoice has none).
+    const dates = reportRows.map(e => periodDateOf(e)).sort();
     // All co2Kg values are kgCO2e, like scope1Kg..totalKg. Activity data is
     // only summed when every row in the group shares one unit; mixed units
     // (e.g. litres and kg of fuel) are reported as unavailable, not added.
@@ -1078,7 +1079,8 @@ const Reports = () => {
                 onClick={() => {
                   const wb = XLSX.utils.book_new();
                   const auditData = emissions.map(e => ({
-                    Date: new Date(e.created_at).toISOString(),
+                    'Period date': periodDateOf(e).slice(0, 10),
+                    'Recorded at': new Date(e.created_at).toISOString(),
                     Category: e.category,
                     Scope: e.scope,
                     'CO2 (kg)': e.co2_kg,
