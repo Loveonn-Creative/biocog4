@@ -152,60 +152,6 @@ export function LedgerFanOut({ targets }: { targets: string[] }) {
   );
 }
 
-/* ---------------------------------------------------------------- Scoring */
-
-/** A doodled gauge whose needle sweeps across the published grade bands. */
-export function GradeGauge({ bands }: { bands: string[] }) {
-  const { ref, inView } = useInView<HTMLDivElement>(0.5);
-  // Bands are listed best first (A+ ... D); draw them left (D) to right (A+).
-  const ordered = [...bands].reverse();
-  const r = 90, cx = 110, cy = 105;
-  const arc = (a0: number, a1: number) => {
-    const p = (a: number) => [cx + r * Math.cos(Math.PI - a * Math.PI), cy - r * Math.sin(Math.PI - a * Math.PI)];
-    const [x0, y0] = p(a0), [x1, y1] = p(a1);
-    return `M${x0} ${y0} A ${r} ${r} 0 0 1 ${x1} ${y1}`;
-  };
-  // Band edges from the thresholds 35/55/75/90 on a 0-100 scale.
-  const edges = [0, 0.35, 0.55, 0.75, 0.9, 1];
-  return (
-    <div ref={ref} className="mx-auto mb-8 w-full max-w-xs">
-      <svg viewBox="0 0 220 125" className="h-auto w-full" role="img" aria-label={`Grade bands: ${bands.join(", ")}`}>
-        {ordered.map((b, i) => (
-          <path key={b} d={arc(edges[i] + 0.006, edges[i + 1] - 0.006)} fill="none" strokeWidth="14" strokeLinecap="butt"
-            stroke={INK} strokeOpacity={0.25 + i * 0.17} />
-        ))}
-        <g className={`tr-needle ${inView ? "tr-needle-on" : ""}`} style={{ transformOrigin: `${cx}px ${cy}px` }}>
-          <path d={`M${cx} ${cy} L ${cx - r + 22} ${cy}`} stroke="hsl(var(--foreground))" strokeWidth="3" strokeLinecap="round" />
-        </g>
-        <circle cx={cx} cy={cy} r="7" fill="hsl(var(--foreground))" />
-        <text x="18" y="122" fontSize="11" fill="hsl(var(--muted-foreground))">D</text>
-        <text x="190" y="122" fontSize="11" fill="hsl(var(--muted-foreground))">A+</text>
-      </svg>
-    </div>
-  );
-}
-
-/* ---------------------------------------------------------------- Greenwashing */
-
-/** A shield drawn in as many segments as there are mechanisms. */
-export function ShieldSegments({ count }: { count: number }) {
-  const { ref, inView } = useInView<HTMLDivElement>(0.4);
-  const outline = "M60 8 L104 24 C 104 70, 88 100, 60 116 C 32 100, 16 70, 16 24 Z";
-  return (
-    <div ref={ref} className="mx-auto mb-8 w-28" aria-hidden="true">
-      <svg viewBox="0 0 120 124" className="h-auto w-full">
-        <path d={outline} fill="hsl(var(--primary) / .08)" stroke="hsl(var(--border))" strokeWidth="2" />
-        {Array.from({ length: count }, (_, i) => {
-          const y0 = 28 + (i * 80) / count, y1 = 28 + ((i + 1) * 80) / count - 4;
-          return <path key={i} pathLength={1} d={`M34 ${y0} C 50 ${y0 - 3}, 70 ${y0 + 3}, 86 ${y0} M34 ${y1} L 86 ${y1}`} fill="none" stroke={INK} strokeWidth="2.4" strokeLinecap="round" strokeDasharray="1"
-            className={`tr-path ${inView ? "tr-draw-on" : ""}`} style={{ transitionDelay: `${0.15 + i * 0.18}s` }} />;
-        })}
-        <path pathLength={1} d={outline} fill="none" stroke={INK} strokeWidth="2.6" strokeLinejoin="round" strokeDasharray="1" className={`tr-path ${inView ? "tr-draw-on" : ""}`} />
-      </svg>
-    </div>
-  );
-}
-
 /* ---------------------------------------------------------------- Governance */
 
 /** A padlock whose shackle clicks shut when the section is in view. */

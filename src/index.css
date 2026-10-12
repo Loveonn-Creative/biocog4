@@ -521,3 +521,14 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .tr-doc-on { animation: none; opacity: 1; left: calc(100% - 18px); }
   .tr-needle, .tr-shackle { transition: none; }
 }
+
+/* Trust interactives: market flow, grade stamp, safeguard reader. */
+.tr3-step { animation: tr3-rise .45s cubic-bezier(.2,.8,.2,1) both; }
+.tr3-link path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: di-paint .4s ease forwards; }
+.tr3-stamp { animation: tr-press .4s cubic-bezier(.3,1.6,.5,1) both; }
+.tr3-point { animation: tr3-rise .35s ease both; }
+@keyframes tr3-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .tr3-step, .tr3-stamp, .tr3-point { animation: none; }
+  .tr3-link path { animation: none; stroke-dashoffset: 0; }
+}

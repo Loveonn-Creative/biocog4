@@ -22,4 +22,5 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | Page | PR | Started from |
 |------|----|--------------|
 | /pricing | [Loveonn-Creative/biocog4#36](https://github.com/Loveonn-Creative/biocog4/pull/36) | `e8b67c3` |
-| /trust | "Trust redesign: motion and doodles, every word kept" | `5344c62` |
+| /trust | [Loveonn-Creative/biocog4#37](https://github.com/Loveonn-Creative/biocog4/pull/37) | `5344c62` |
+| /trust (interactives) | "Trust: fix market flow; interactive score, claims and safeguards; doodle icons" | `52af0c5` |
