@@ -3,6 +3,7 @@ import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { onIdentityReset } from "@/lib/identity";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
@@ -25,6 +26,7 @@ const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 // after it. Toast state lives in hooks/use-toast (module memory), so toasts fired
 // before this mounts are still shown once it does.
 const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
+const GuestImportPrompt = lazy(() => import("@/components/GuestImportPrompt"));
 
 // Lazy load other pages for performance
 const Mission = lazy(() => import("./pages/Mission"));
@@ -104,6 +106,8 @@ const queryClient = new QueryClient({
     queries: { retry: (count, err) => count < 2 && !isPermanentError(err) },
   },
 });
+// One person's cached queries must never render for the next person on this device.
+onIdentityReset(() => queryClient.clear());
 
 /** Error boundary that resets on navigation. */
 const RoutedBoundary = ({ children }: { children: ReactNode }) => {
@@ -125,6 +129,7 @@ const App = () => (
         </Helmet>
         <Suspense fallback={null}>
           <Toaster />
+          <GuestImportPrompt />
         </Suspense>
         <Sonner />
         <BrowserRouter>

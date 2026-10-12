@@ -8,7 +8,14 @@ const corsHeaders = {
 interface MergeRequest {
   sessionId: string;
   deviceFingerprint: string;
+  /** Must be true to move anything. Without it the function only reports counts. */
+  confirm?: boolean;
 }
+
+// Tables holding guest rows, in the order they are moved. Each update is
+// limited to rows still on this guest session with no owner, so a retry after
+// a partial failure only moves what is left.
+const GUEST_TABLES = ['documents', 'emissions', 'carbon_verifications', 'reports', 'chat_history', 'monetization_pathways'] as const;
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
@@ -49,7 +56,7 @@ Deno.serve(async (req) => {
     }
 
     // Parse request body
-    const { sessionId, deviceFingerprint }: MergeRequest = await req.json();
+    const { sessionId, deviceFingerprint, confirm }: MergeRequest = await req.json();
 
     if (!sessionId || !deviceFingerprint) {
       return new Response(
@@ -61,7 +68,7 @@ Deno.serve(async (req) => {
     // CRITICAL: Validate session ownership via device fingerprint
     const { data: session, error: sessionError } = await supabaseAdmin
       .from('sessions')
-      .select('id, device_fingerprint, last_active')
+      .select('id, device_fingerprint, last_active, is_active')
       .eq('id', sessionId)
       .single();
 
@@ -112,84 +119,72 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Count data to be merged
-    const [docCount, emissionCount, verificationCount, reportCount] = await Promise.all([
-      supabaseAdmin.from('documents').select('id', { count: 'exact' }).eq('session_id', sessionId),
-      supabaseAdmin.from('emissions').select('id', { count: 'exact' }).eq('session_id', sessionId),
-      supabaseAdmin.from('carbon_verifications').select('id', { count: 'exact' }).eq('session_id', sessionId),
-      supabaseAdmin.from('reports').select('id', { count: 'exact' }).eq('session_id', sessionId),
-    ]);
+    // A guest session that was already merged or ended is never reused.
+    if (session.is_active === false) {
+      return new Response(
+        JSON.stringify({ success: true, merged: false, reason: 'session_closed' }),
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
-    const mergeStats = {
+    // What this guest session holds that has no owner yet.
+    const [docCount, emissionCount, verificationCount, reportCount] = await Promise.all(
+      ['documents', 'emissions', 'carbon_verifications', 'reports'].map(t =>
+        supabaseAdmin.from(t).select('id', { count: 'exact', head: true }).eq('session_id', sessionId).is('user_id', null)),
+    );
+    const counts = {
       documents: docCount.count || 0,
       emissions: emissionCount.count || 0,
       verifications: verificationCount.count || 0,
       reports: reportCount.count || 0,
     };
 
-    // Perform the merge operations using service role
-    const mergeResults = await Promise.all([
-      supabaseAdmin
-        .from('documents')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-      supabaseAdmin
-        .from('emissions')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-      supabaseAdmin
-        .from('carbon_verifications')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-      supabaseAdmin
-        .from('reports')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-      supabaseAdmin
-        .from('chat_history')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-      supabaseAdmin
-        .from('monetization_pathways')
-        .update({ user_id: user.id, session_id: null })
-        .eq('session_id', sessionId)
-        .is('user_id', null),
-    ]);
+    // Nothing moves without the signed-in person's explicit confirmation.
+    if (confirm !== true) {
+      return new Response(
+        JSON.stringify({ success: true, preview: true, counts }),
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
-    // Check for errors
-    const errors = mergeResults.filter(r => r.error);
-    if (errors.length > 0) {
-      console.error('Merge errors:', errors.map(e => e.error));
+    // Move table by table and stop at the first error. The session stays open
+    // on failure, so a retry moves exactly the rows that are left.
+    for (const table of GUEST_TABLES) {
+      const { error } = await supabaseAdmin
+        .from(table)
+        .update({ user_id: user.id, session_id: null })
+        .eq('session_id', sessionId)
+        .is('user_id', null);
+      if (error) {
+        console.error('Merge failed at', table, error.code);
+        await supabaseAdmin.from('security_audit_log').insert({
+          event_type: 'session_merge_failed',
+          user_id: user.id,
+          session_id: sessionId,
+          details: { table, code: error.code ?? null },
+        });
+        return new Response(
+          JSON.stringify({ success: false, error: 'Could not add these uploads right now. Try again.' }),
+          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
     }
 
     // End the guest session so nothing uploaded on this device later can be
     // merged into this (or any other) account.
     await supabaseAdmin.from('sessions').update({ is_active: false }).eq('id', sessionId);
 
-    // Log successful merge
     await supabaseAdmin.from('security_audit_log').insert({
       event_type: 'SESSION_MERGE_SUCCESS',
       user_id: user.id,
       session_id: sessionId,
       ip_address: req.headers.get('x-forwarded-for') || req.headers.get('cf-connecting-ip'),
       user_agent: req.headers.get('user-agent'),
-      details: {
-        merged_counts: mergeStats,
-        errors_count: errors.length,
-      },
+      details: { merged_counts: counts, confirmed_by_user: true },
     });
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        merged: mergeStats,
-        message: 'Session data merged successfully',
-      }),
+      JSON.stringify({ success: true, merged: counts }),
       { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 

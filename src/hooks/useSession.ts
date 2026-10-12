@@ -1,12 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import type { User, Session } from '@supabase/supabase-js';
+import { syncIdentity } from '@/lib/identity';
+import { hasGuestData, setPendingGuestImport, type GuestCounts } from '@/lib/guestImport';
 
 const SESSION_STORAGE_KEY = 'senseible_session_id';
 
 // Every component calls useSession, so each mounts its own auth listener.
-// This set makes sure one guest session is merged at most once per page load.
-const mergesStarted = new Set<string>();
+// This set makes sure one guest session is checked at most once per page load.
+const guestChecksStarted = new Set<string>();
+
+/** Forget this device's guest session, after its uploads were added to an account or declined. */
+export function forgetGuestSession(sessionId: string) {
+  try {
+    if (localStorage.getItem(SESSION_STORAGE_KEY) === sessionId) localStorage.removeItem(SESSION_STORAGE_KEY);
+  } catch { /* storage blocked */ }
+}
 
 interface SessionState {
   sessionId: string | null;
@@ -38,7 +47,7 @@ export function useSession() {
       const { data: { session: authSession } } = await supabase.auth.getSession();
       
       if (authSession?.user) {
-        console.log('[Session] Authenticated user:', authSession.user.id.substring(0, 8) + '...');
+        syncIdentity(authSession.user.id);
         setState({
           sessionId: null,
           user: authSession.user,
@@ -49,6 +58,7 @@ export function useSession() {
         return;
       }
 
+      syncIdentity(null);
       // Check for existing anonymous session
       let sessionId = localStorage.getItem(SESSION_STORAGE_KEY);
       const fingerprint = getDeviceFingerprint();
@@ -112,6 +122,9 @@ export function useSession() {
       if (cancelled) return;
       const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
         if (session?.user) {
+          // A different account than the last one on this device: drop the
+          // previous person's cached data before anything renders.
+          syncIdentity(session.user.id);
           setState({
             sessionId: null,
             user: session.user,
@@ -120,20 +133,17 @@ export function useSession() {
             isAuthenticated: true
           });
 
-          // Merge this device's guest uploads into the account that just signed
-          // in, once. The guest id is then forgotten, so a later visitor (or a
-          // later sign-in on a shared device) can never inherit those records.
+          // Guest uploads on this device are never adopted automatically. The
+          // person who signed in is asked first (GuestImportPrompt).
           if (event === 'SIGNED_IN') {
             const anonSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
-            if (anonSessionId && !mergesStarted.has(anonSessionId)) {
-              mergesStarted.add(anonSessionId);
-              localStorage.removeItem(SESSION_STORAGE_KEY);
-              setTimeout(() => {
-                mergeAnonymousSession(anonSessionId, session.user.id);
-              }, 0);
+            if (anonSessionId && !guestChecksStarted.has(anonSessionId)) {
+              guestChecksStarted.add(anonSessionId);
+              setTimeout(() => { void previewGuestUploads(anonSessionId); }, 0);
             }
           }
         } else {
+          syncIdentity(null);
           initializeSession();
         }
       });
@@ -149,36 +159,23 @@ export function useSession() {
     };
   }, [initializeSession]);
 
-  // Securely merge anonymous session data to user account via edge function
-  const mergeAnonymousSession = async (sessionId: string, _userId: string) => {
+  // Ask the server what this device's guest session holds. Nothing moves here;
+  // the person decides in GuestImportPrompt.
+  const previewGuestUploads = async (sessionId: string) => {
     try {
-      // Get device fingerprint for server-side validation
       const deviceFingerprint = getDeviceFingerprint();
-      
-      // Call secure server-side merge function
       const supabase = await loadSupabase();
-      const { data, error } = await supabase.functions.invoke('merge-session', {
-        body: {
-          sessionId,
-          deviceFingerprint,
-        },
-      });
-
-      if (error) {
-        console.error('Session merge failed:', error);
-        // Don't expose error details to prevent information leakage
-        return;
-      }
-
-      if (data?.success) {
-        // Clear anonymous session from storage only after successful merge
-        localStorage.removeItem(SESSION_STORAGE_KEY);
-        console.log('Session data merged securely:', data.merged);
+      const { data, error } = await supabase.functions.invoke('merge-session', { body: { sessionId, deviceFingerprint } });
+      if (error) { console.error('Guest upload check failed'); return; }
+      const counts = data?.counts as GuestCounts | undefined;
+      if (data?.preview && hasGuestData(counts)) {
+        setPendingGuestImport({ sessionId, deviceFingerprint, counts });
       } else {
-        console.error('Session merge returned unsuccessful');
+        // Empty, stale or already used: nothing to offer, so forget it.
+        forgetGuestSession(sessionId);
       }
-    } catch (error) {
-      console.error('Failed to merge session:', error);
+    } catch {
+      console.error('Guest upload check failed');
     }
   };
 
@@ -186,6 +183,8 @@ export function useSession() {
     const supabase = await loadSupabase();
     await supabase.auth.signOut();
     localStorage.removeItem(SESSION_STORAGE_KEY);
+    setPendingGuestImport(null);
+    syncIdentity(null);
     initializeSession();
   };
 
