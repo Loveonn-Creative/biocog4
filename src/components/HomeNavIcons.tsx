@@ -15,6 +15,16 @@ export const HomeNavIcons = () => {
 
   return (
     <div className="absolute top-4 right-4 flex items-center gap-2 z-30">
+      {/* The one place signed-in users go next, visible without opening a menu. */}
+      {!isLoading && (
+        <Link
+          to={isAuthenticated ? '/dashboard' : '/auth'}
+          className="inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {isAuthenticated ? <LayoutDashboard className="h-4 w-4" /> : <LogIn className="h-4 w-4" />}
+          {isAuthenticated ? 'Dashboard' : 'Sign in'}
+        </Link>
+      )}
       <LanguageSwitcher />
       {/* Question mark dropdown */}
       <DropdownMenu>

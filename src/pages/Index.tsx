@@ -43,6 +43,7 @@ const ResultState = lazy(() =>
 // first paint in their own chunks.
 const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
 const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
+const SignedInNextStep = lazy(() => import("@/components/home/SignedInNextStep"));
 
 /** Opens the upload picker from anywhere on the page (must run in a click handler). */
 const openUploadPicker = () => {
@@ -210,7 +211,7 @@ const getScopeFromCategory = (category: string): number => {
 
 const Index = () => {
   const navigate = useNavigate();
-  const { sessionId, user } = useSession();
+  const { sessionId, user, isLoading: sessionLoading } = useSession();
   // Workspace for the current upload, resolved once per upload. Organisation
   // workspaces only exist once the team migration is live; until then this is
   // always the personal workspace.
@@ -766,7 +767,7 @@ const Index = () => {
       </Suspense>
       
       {/* First viewport: what it is, who it is for, why trust it, and the action. */}
-      <div id="hero" className="relative flex flex-col min-h-[100dvh]">
+      <div id="hero" className={`relative flex flex-col ${user ? 'min-h-[calc(100dvh-7.5rem)]' : 'min-h-[100dvh]'}`}>
       
       {/* Top-right navigation icons */}
       <HomeNavIcons />
@@ -905,10 +906,20 @@ const Index = () => {
       </main>
       </div>
 
-      <Suspense fallback={null}>
-        <HomeStory onUpload={openUploadPicker} />
-        <StickyCta heroId="hero" onUpload={openUploadPicker} />
-      </Suspense>
+      {/* Signed out: the landing story. Signed in: the next step only; the
+          story is for people who have not started yet. */}
+      {!sessionLoading && (
+        <Suspense fallback={null}>
+          {user ? (
+            <SignedInNextStep />
+          ) : (
+            <>
+              <HomeStory onUpload={openUploadPicker} />
+              <StickyCta heroId="hero" onUpload={openUploadPicker} />
+            </>
+          )}
+        </Suspense>
+      )}
       
       <footer className="relative z-20 w-full pb-24 sm:pb-6 pt-3 border-t border-border">
         <nav className="flex items-center justify-center gap-5 sm:gap-7 flex-wrap px-4">
