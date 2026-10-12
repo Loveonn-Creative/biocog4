@@ -34,7 +34,7 @@ export function EvidenceSeal({ compact = false, title }: { compact?: boolean; ti
   return (
     <div className={`grid items-center gap-10 ${compact ? "" : "lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"}`}>
       {/* the seal */}
-      <div className={`relative mx-auto aspect-square w-full ${compact ? "max-w-[220px]" : "max-w-[340px]"}`} aria-hidden="true">
+      <div className={`relative mx-auto aspect-square w-full overflow-hidden rounded-full ${compact ? "max-w-[220px]" : "max-w-[340px]"}`} aria-hidden="true">
         <svg viewBox="0 0 300 300" className={`absolute inset-0 h-full w-full text-foreground/70 ${held ? "" : "motion-safe:animate-[spin_60s_linear_infinite]"}`}>
           <defs><path id="seal-rim" d="M150,150 m-118,0 a118,118 0 1,1 236,0 a118,118 0 1,1 -236,0" /></defs>
           <circle cx="150" cy="150" r="140" fill="none" stroke="currentColor" strokeOpacity=".25" />
