@@ -20,8 +20,15 @@ export interface LedgerRowLike {
   verified_at?: string | null;
 }
 
-const finiteKg = (kg: number | null | undefined): number =>
-  typeof kg === 'number' && Number.isFinite(kg) ? kg : 0;
+/**
+ * Gross kg CO2e for one row, the rule every total uses (and verify-carbon
+ * uses on the server): a finite positive value, otherwise 0. Legacy negative
+ * (avoided) rows are never subtracted from a footprint.
+ */
+export const grossKg = (kg: number | string | null | undefined): number => {
+  const n = typeof kg === 'string' ? Number(kg) : kg;
+  return typeof n === 'number' && Number.isFinite(n) && n > 0 ? n : 0;
+};
 
 const timeOf = (iso: string | null | undefined): number => {
   if (!iso) return Number.NEGATIVE_INFINITY;
@@ -56,7 +63,7 @@ export function latestLedgerRowPerEmission<T extends LedgerRowLike>(rows: T[]): 
 export function verifiedLedgerTotalKg<T extends LedgerRowLike>(rows: T[]): number {
   return latestLedgerRowPerEmission(rows)
     .filter((r) => r.verification_status === 'verified')
-    .reduce((sum, r) => sum + finiteKg(r.co2_kg), 0);
+    .reduce((sum, r) => sum + grossKg(r.co2_kg), 0);
 }
 
 /** Verified emission rows only, one per emission id (last row seen wins). */
@@ -74,7 +81,7 @@ export interface ScopeTotals { scope1: number; scope2: number; scope3: number; t
 export function verifiedScopeTotals<T extends VerifiableEmissionRow>(rows: T[]): ScopeTotals {
   const t = { scope1: 0, scope2: 0, scope3: 0, total: 0 };
   for (const r of verifiedEmissionsOnce(rows)) {
-    const kg = finiteKg(r.co2_kg);
+    const kg = grossKg(r.co2_kg);
     if (r.scope === 1) t.scope1 += kg;
     else if (r.scope === 2) t.scope2 += kg;
     else t.scope3 += kg;
@@ -95,7 +102,7 @@ export function verifiedMonthlyTrend<T extends VerifiableEmissionRow>(rows: T[])
     const key = `${d.getFullYear()}-${pad2(d.getMonth() + 1)}`;
     const month = `${MONTHS[d.getMonth()]} ${String(d.getFullYear()).slice(-2)}`;
     const b = buckets.get(key) ?? { key, month, co2: 0, count: 0 };
-    b.co2 += finiteKg(r.co2_kg);
+    b.co2 += grossKg(r.co2_kg);
     b.count += 1;
     buckets.set(key, b);
   }

@@ -8,6 +8,7 @@
  */
 
 import type { Emission } from '@/hooks/useEmissions';
+import { grossKg } from '@/lib/emissionLedger';
 
 export type TimeRange = '30d' | '90d' | '12m' | 'fy' | 'all';
 export type ScopeFilter = 'all' | 1 | 2 | 3;
@@ -26,6 +27,14 @@ export const DEFAULT_FILTERS: DashboardFilters = {
   status: 'all',
   category: 'all',
 };
+
+/**
+ * Starting filters. Signed-in totals count verified records only, the same
+ * set History, Reports, MRV and Monetize use; guests see every record they
+ * uploaded on this device.
+ */
+export const defaultFilters = (signedIn: boolean): DashboardFilters =>
+  ({ ...DEFAULT_FILTERS, status: signedIn ? 'verified' : 'all' });
 
 export const TIME_RANGE_LABELS: Record<TimeRange, string> = {
   '30d': 'Last 30 days',
@@ -96,9 +105,11 @@ export interface ScopeTotals {
 }
 
 export function totals(rows: Emission[]): ScopeTotals {
-  const scope1 = rows.filter((e) => e.scope === 1).reduce((s, e) => s + (e.co2_kg || 0), 0);
-  const scope2 = rows.filter((e) => e.scope === 2).reduce((s, e) => s + (e.co2_kg || 0), 0);
-  const scope3 = rows.filter((e) => e.scope === 3).reduce((s, e) => s + (e.co2_kg || 0), 0);
+  // Each emission id once, gross kg (negative legacy rows count as 0).
+  const once = [...new Map(rows.map((e) => [e.id, e])).values()];
+  const scope1 = once.filter((e) => e.scope === 1).reduce((s, e) => s + grossKg(e.co2_kg), 0);
+  const scope2 = once.filter((e) => e.scope === 2).reduce((s, e) => s + grossKg(e.co2_kg), 0);
+  const scope3 = once.filter((e) => e.scope !== 1 && e.scope !== 2).reduce((s, e) => s + grossKg(e.co2_kg), 0);
   return { scope1, scope2, scope3, total: scope1 + scope2 + scope3 };
 }
 
@@ -149,7 +160,7 @@ export function topCategories(rows: Emission[], limit = 6): CategoryRow[] {
   const map = new Map<string, { kg: number; n: number }>();
   for (const e of rows) {
     const prev = map.get(e.category) || { kg: 0, n: 0 };
-    map.set(e.category, { kg: prev.kg + (e.co2_kg || 0), n: prev.n + 1 });
+    map.set(e.category, { kg: prev.kg + grossKg(e.co2_kg), n: prev.n + 1 });
   }
   const total = [...map.values()].reduce((s, v) => s + v.kg, 0);
   return [...map.entries()]
@@ -194,9 +205,9 @@ export function monthlySeries(rows: Emission[], win: Window, locale = 'en-US'): 
     const key = d.toLocaleDateString(locale, { month: 'short', year: '2-digit' });
     const bucket = buckets.get(key);
     if (!bucket) continue;
-    if (e.scope === 1) bucket.scope1 += e.co2_kg || 0;
-    else if (e.scope === 2) bucket.scope2 += e.co2_kg || 0;
-    else bucket.scope3 += e.co2_kg || 0;
+    if (e.scope === 1) bucket.scope1 += grossKg(e.co2_kg);
+    else if (e.scope === 2) bucket.scope2 += grossKg(e.co2_kg);
+    else bucket.scope3 += grossKg(e.co2_kg);
   }
 
   return [...buckets.values()];

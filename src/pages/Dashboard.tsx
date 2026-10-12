@@ -35,7 +35,7 @@ import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
 import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
-  DEFAULT_FILTERS,
+  defaultFilters,
   resolveWindow,
   applyFilters,
   totals as computeTotals,
@@ -113,7 +113,9 @@ const Dashboard = () => {
 
   // ---- Decision-intelligence layer: filtering and period analysis over the
   // records already loaded. Display only; no factor or methodology is applied.
-  const [filters, setFilters] = useState<DashboardFilters>(DEFAULT_FILTERS);
+  const [filters, setFilters] = useState<DashboardFilters>(() => defaultFilters(Boolean(user)));
+  // Signing in or out restarts from that state's default (verified-only when signed in).
+  useEffect(() => { setFilters(defaultFilters(Boolean(user))); }, [user]);
 
   const analytics = useMemo(() => {
     const win = resolveWindow(filters.range);
@@ -124,7 +126,9 @@ const Dashboard = () => {
       delta: periodDelta(emissions, filters, win),
       categories: topCategories(rows),
       series: monthlySeries(rows, win),
-      completeness: evidenceCompleteness(rows),
+      // Completeness compares verified with all records in view, so it ignores
+      // the status filter.
+      completeness: evidenceCompleteness(applyFilters(emissions, { ...filters, status: 'all' }, win)),
     };
   }, [emissions, filters]);
 
@@ -358,6 +362,7 @@ const Dashboard = () => {
           {emissions.length > 0 && (
             <>
               <DashboardFilterBar
+                defaults={defaultFilters(Boolean(user))}
                 filters={filters}
                 categories={categoryOptions}
                 matchedCount={analytics.rows.length}
