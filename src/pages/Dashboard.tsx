@@ -28,7 +28,7 @@ import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
-import { computeCredibilityScore } from '@/lib/credibilityScore';
+import { useCredibility } from '@/hooks/useCredibility';
 import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
 import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
@@ -60,11 +60,8 @@ const Dashboard = () => {
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
   const [latestStatus, setLatestStatus] = useState<'verified' | 'needs_review' | 'pending' | null>(null);
-  const [eligibleCredits, setEligibleCredits] = useState(0);
 
   const [isResetting, setIsResetting] = useState(false);
-  const [ledgerEntries, setLedgerEntries] = useState<any[]>([]);
-  const [allVerifications, setAllVerifications] = useState<any[]>([]);
 
   const isLoading = sessionLoading || emissionsLoading || docsLoading;
   const unverifiedEmissions = getUnverifiedEmissions();
@@ -212,7 +209,6 @@ const Dashboard = () => {
       fetchVerificationData();
       setVerificationScore(0);
       setLatestStatus(null);
-      setEligibleCredits(0);
     } catch (error) {
       console.error('Error resetting data:', error);
       toast.error('Failed to reset data. Please try again.');
@@ -236,35 +232,20 @@ const Dashboard = () => {
       const { data } = await query;
       // Clear figures from another workspace before showing this one.
       if (!data || data.length === 0) {
-        setAllVerifications([]);
         setVerificationScore(0);
         setLatestStatus(null);
-        setEligibleCredits(0);
-        setLedgerEntries([]);
       }
       if (data && data.length > 0) {
-        setAllVerifications(data);
         setVerificationScore(Math.round((data[0].verification_score || 0) * 100));
         setLatestStatus(data[0].verification_status as any);
-        setEligibleCredits((data[0].ai_analysis as any)?.creditEligibility?.eligibleCredits || 0);
-      }
-
-      // Fetch ledger for credibility score
-      const ledgerQuery = user?.id
-        ? applyScope(supabase.from('compliance_ledger').select('is_green_benefit, vendor, invoice_date, amount, hsn_code'), scope)
-        : null;
-      if (ledgerQuery) {
-        const { data: ledger } = await ledgerQuery;
-        if (ledger) setLedgerEntries(ledger);
       }
     } catch (err) {
       console.error('Error fetching verification data:', err);
     }
   };
 
-  const credibility = allVerifications.length > 0
-    ? computeCredibilityScore(allVerifications, ledgerEntries)
-    : null;
+  // Same score and inputs as Monetize.
+  const { credibility } = useCredibility();
 
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
@@ -390,7 +371,6 @@ const Dashboard = () => {
                 unverifiedCount={unverifiedEmissions.length}
                 hasVerifiedData={verifiedEmissions.length > 0}
                 latestStatus={emissions.length > 0 ? latestStatus : null}
-                eligibleCredits={emissions.length > 0 ? eligibleCredits : 0}
                 credibilityScore={credibility?.score}
                 credibilityGrade={credibility?.grade}
               />

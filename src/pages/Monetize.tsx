@@ -8,7 +8,7 @@ import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
-import { computeCredibilityScore } from '@/lib/credibilityScore';
+import { useCredibility } from '@/hooks/useCredibility';
 import { 
   Coins, Building2, Gift, ExternalLink, CheckCircle, ArrowRight, 
   Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp, Crown,
@@ -101,17 +101,9 @@ const Monetize = () => {
     maximumFractionDigits: 0 
   }).format(n);
 
-  // Compute credibility score
-  const credibility = computeCredibilityScore(
-    verifications.map(v => ({ verification_score: v.verification_score })),
-    ledgerEntries.map((e: any) => ({
-      is_green_benefit: e.is_green_benefit ?? null,
-      vendor: e.vendor ?? null,
-      invoice_date: e.invoice_date ?? null,
-      amount: e.amount ?? null,
-      hsn_code: e.hsn_code ?? null,
-    }))
-  );
+  // Same score and inputs as the Dashboard. Shown for information only:
+  // pathway checks below use explicit evidence, not this score.
+  const { credibility } = useCredibility();
 
   // Green invoices on the ledger (count only; amounts are not turned into an advance figure).
   const greenInvoiceCount = new Set(
@@ -243,7 +235,6 @@ const Monetize = () => {
       timeline: '1-2 weeks approval',
       checks: [
         { label: 'Verified carbon data', pass: verifications.length > 0 },
-        { label: `Credibility Grade C+ (yours: ${credibility.grade})`, pass: credibility.score >= 35 },
       ],
     },
     { 
@@ -262,7 +253,6 @@ const Monetize = () => {
       checks: [
         { label: 'Verified emissions', pass: verifications.length > 0 },
         { label: 'Carbon reporting compliance', pass: ledgerEntries.length > 0 },
-        { label: `Credibility Score 35+ (yours: ${credibility.score})`, pass: credibility.score >= 35 },
       ],
     },
     {
@@ -276,11 +266,10 @@ const Monetize = () => {
       desc: 'Advance terms are set by the financier. No advance is estimated here.',
       partner: 'Climate Finance Hub',
       status: (pathwayStatuses['green_factoring'] as MonetizationPathway['status']) || 'available',
-      requirements: ['Verified green invoices', 'Credibility Score 50+'],
+      requirements: ['Verified green invoices'],
       timeline: '3-5 business days',
       checks: [
         { label: `Verified green invoices (yours: ${greenInvoiceCount})`, pass: greenInvoiceCount > 0 },
-        { label: `Credibility Score 50+ (yours: ${credibility.score})`, pass: credibility.score >= 50 },
       ],
     }
   ];
@@ -382,7 +371,7 @@ const Monetize = () => {
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Shield className="h-4 w-4 text-warning" />
-                      <span>Credibility: <span className="font-mono font-bold">{credibility.grade}</span> ({credibility.score}/100)</span>
+                      <span>Credibility: <span className="font-mono font-bold">{credibility ? credibility.grade : 'n/a'}</span>{credibility ? ` (${credibility.score}/100)` : ''}</span>
                     </div>
                   </div>
                 </div>
