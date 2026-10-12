@@ -5,7 +5,8 @@ import { useWorkspace } from './useWorkspace';
 import { applyScope, ownerColumns, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
-import { grossKg } from '@/lib/emissionLedger';
+import { grossKg, periodDateOf } from '@/lib/emissionLedger';
+import { activityDate } from '../../supabase/functions/_shared/invoiceDate';
 export interface Emission {
   id: string;
   document_id: string | null;
@@ -21,6 +22,8 @@ export interface Emission {
   verified: boolean | null;
   verification_notes: string | null;
   created_at: string;
+  /** Date for periods: the invoice's date when valid, else created_at. */
+  activity_date?: string;
 }
 
 export interface EmissionsSummary {
@@ -56,7 +59,7 @@ export function useEmissions() {
       setError(null);
 
       const query = applyScope(
-        supabase.from('emissions').select('*').order('created_at', { ascending: false }),
+        supabase.from('emissions').select('*, documents(invoice_date)').order('created_at', { ascending: false }),
         scope,
       );
       if (!query) {
@@ -71,7 +74,9 @@ export function useEmissions() {
         console.error('Error fetching emissions:', fetchError);
         setError('Failed to load emissions');
       } else {
-        const emissionsData = (data || []) as Emission[];
+        // Periods follow the invoice date (upload date when there is none).
+        const emissionsData = ((data || []) as Array<Emission & { documents?: { invoice_date: string | null } | null }>)
+          .map(({ documents, ...e }) => ({ ...e, activity_date: activityDate(documents?.invoice_date, e.created_at) }) as Emission);
         setEmissions(emissionsData);
         // Signed-in reporting uses only verified rows; retain the guest view.
         calculateSummary(user ? emissionsData.filter(e => e.verified === true) : emissionsData);
@@ -110,7 +115,7 @@ export function useEmissions() {
     }
 
     emissionsData.forEach(e => {
-      const date = new Date(e.created_at);
+      const date = new Date(periodDateOf(e));
       const key = date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
       if (monthlyData[key]) {
         if (e.scope === 1) monthlyData[key].scope1 += grossKg(e.co2_kg);
