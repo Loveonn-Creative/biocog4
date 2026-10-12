@@ -201,9 +201,9 @@ const getScopeFromCategory = (category: string): number => {
   return SCOPE_MAP[category] || SCOPE_MAP[category.toUpperCase()] || 3;
 };
 
-// No money figure is shown at upload. The indicative value is verified tCO2e
-// x the reference rate (src/lib/carbonValue.ts) and these emissions are not
-// verified yet. The invoice amount is never used as a stand-in.
+// No money figure is shown at upload. A credit value needs verified
+// reductions and a dated price (src/lib/carbonValue.ts); emissions are never
+// priced, and the invoice amount is never used as a stand-in.
 
 const Index = () => {
   const navigate = useNavigate();

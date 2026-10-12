@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { useT } from "@/lib/i18n/useT";
 import { SAMPLE_LINES } from "@/lib/sampleInvoice";
-import { indicativeValueFromKg } from "@/lib/carbonValue";
 
 /**
  * The product, as one 3D scene. Every movement is a real step the platform
@@ -28,7 +27,6 @@ const lines = SAMPLE_LINES.map((l, i) => ({
   row: i,
 }));
 const totalKg = lines.reduce((s, l) => s + l.co2Kg, 0);
-const valueInr = indicativeValueFromKg(totalKg);
 
 const fmt = (n: number, d = 0) => n.toLocaleString("en-IN", { maximumFractionDigits: d, minimumFractionDigits: d });
 
@@ -37,7 +35,7 @@ const STAGES = [
   { key: "classify", label: "Classify", caption: "Each line gets its scope from the HSN code" },
   { key: "calculate", label: "Calculate", caption: "Quantity × published emission factor" },
   { key: "verify", label: "Verify", caption: "Hashed and checked before it counts" },
-  { key: "use", label: "Use", caption: "One ledger for reports, lenders and carbon value" },
+  { key: "use", label: "Use", caption: "One ledger for reports, lenders and audits" },
 ] as const;
 
 function prefersStatic(): boolean {
@@ -288,7 +286,7 @@ export const ProductPipeline = ({ className = "", tone = "hero", stage: controll
             {[
               { k: "report", label: t("pp.out.report", "Report"), y: 50 },
               { k: "finance", label: t("pp.out.finance", "Lender"), y: 86 },
-              { k: "value", label: `₹${fmt(valueInr)}`, y: 122 },
+              { k: "audit", label: t("pp.out.audit", "Audit"), y: 122 },
             ].map((o, i) => (
               <div
                 key={o.k}
@@ -303,7 +301,7 @@ export const ProductPipeline = ({ className = "", tone = "hero", stage: controll
                   transition: `all 600ms ${EASE} ${settled ? 250 + i * 120 : 0}ms`,
                 }}
               >
-                {o.k === "value" && !settled ? "₹" : o.label}
+                {o.label}
               </div>
             ))}
           </div>

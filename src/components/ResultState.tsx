@@ -25,7 +25,7 @@ interface ExtractedData {
 
 interface ResultStateProps {
   type: "revenue" | "compliance";
-  /** Indicative value of VERIFIED emissions only (verified tCO2e x ₹750). 0 or absent before verification. */
+  /** Not used for a rupee value: emissions are not credits (see carbonValue.ts). */
   amount?: number;
   extractedData?: ExtractedData;
   onConfirm: () => void;
@@ -92,24 +92,15 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
             <p className="text-sm text-success/80 mt-1">CO₂e avoided, reported separately from emissions</p>
           </>
         ) : type === "revenue" ? (
-          amount && amount > 0 ? (
-            <>
-              <p className="text-sm text-muted-foreground mb-2">Indicative value</p>
-              <p className="text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
-                {formatCurrency(amount)}
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="text-sm text-muted-foreground mb-2">Emissions recorded</p>
-              <p className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
-                {co2Value.toFixed(2)} kg CO₂e
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Not yet verified.
-              </p>
-            </>
-          )
+          <>
+            <p className="text-sm text-muted-foreground mb-2">Emissions recorded</p>
+            <p className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
+              {co2Value.toFixed(2)} kg CO₂e
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Not yet verified.
+            </p>
+          </>
         ) : (
           <>
             <p className="text-sm text-muted-foreground mb-2">Document recorded</p>

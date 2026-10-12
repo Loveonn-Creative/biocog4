@@ -1,11 +1,9 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import {
-  indicativeValueFromKg,
+  creditValuation,
   sumVerifiedKgOncePerEmission,
-  INDICATIVE_RATE_INR_PER_T,
-  INDICATIVE_RATE_SOURCE,
-  INDICATIVE_VALUE_LABEL,
+  CREDIT_VALUE_WITHHELD,
 } from "../_shared/carbonValue.ts";
 
 const corsHeaders = {
@@ -16,7 +14,7 @@ const corsHeaders = {
 interface MonetizationPathway {
   type: 'carbon_credit' | 'green_loan' | 'govt_incentive';
   name: string;
-  /** Only the carbon pathway carries a figure: verified tCO2e x the reference rate. */
+  /** Only verified reductions at a confirmed price carry a figure; none do yet. */
   estimatedValue: number | null;
   valueLabel: string | null;
   currency: string;
@@ -28,8 +26,9 @@ interface MonetizationPathway {
   };
 }
 
-// One value everywhere: verified tCO2e x INDICATIVE_RATE_INR_PER_T, labelled
-// as indicative and not an issued credit. Loan savings and scheme subsidies
+// Credit value only for verified reductions at a dated, sourced price, the
+// same gate every page uses; neither exists yet, so no value is stored or
+// returned (verified emissions are not credits). Loan savings and scheme subsidies
 // are not estimated: the earlier fixed loan figure and subsidy multipliers
 // were not based on the user's data or any lender or scheme terms.
 
@@ -113,18 +112,23 @@ serve(async (req) => {
       (e: { verified: boolean | null }) => e.verified === true,
     );
     const verifiedTCO2e = verifiedKg / 1000;
-    const indicativeValueInr = indicativeValueFromKg(verifiedKg);
+    const reductionsKg = Number((verification.ai_analysis as { verifiedReductions?: number } | null)?.verifiedReductions) || 0;
+    const valuation = creditValuation(reductionsKg);
+    const indicativeValueInr = valuation.available ? valuation.valueInr : null;
+    const valueLabel = valuation.available
+      ? `Value of verified reductions at ₹${valuation.price.inrPerT}/t (${valuation.price.source}, ${valuation.price.asOf})`
+      : CREDIT_VALUE_WITHHELD;
 
     const pathways: MonetizationPathway[] = [
       {
         type: 'carbon_credit',
-        name: 'Indicative carbon value',
+        name: 'Carbon credits',
         estimatedValue: indicativeValueInr,
-        valueLabel: INDICATIVE_VALUE_LABEL,
+        valueLabel,
         currency: 'INR',
         partner: null,
         details: {
-          description: `${verifiedTCO2e.toFixed(3)} verified tCO2e x ₹${INDICATIVE_RATE_INR_PER_T}/t. No credit has been issued and no buyer has agreed a price.`,
+          description: `${verifiedTCO2e.toFixed(3)} verified tCO2e of emissions. Credits are issued for verified reductions; no credit has been issued and no buyer has agreed a price.`,
           eligibility: 'Credit issuance requires registration under a recognised programme; not assessed here',
           requirements: ['Verified emission data', 'Programme registration and third-party validation'],
         },
@@ -182,12 +186,12 @@ serve(async (req) => {
         pathways,
         verifiedTCO2e,
         indicativeValueInr,
-        indicativeValueLabel: INDICATIVE_VALUE_LABEL,
+        indicativeValueLabel: valueLabel,
         currency: 'INR',
         verificationScore: verification.verification_score,
         methodology: {
-          rateInrPerT: INDICATIVE_RATE_INR_PER_T,
-          rateSource: INDICATIVE_RATE_SOURCE,
+          rateInrPerT: valuation.available ? valuation.price.inrPerT : null,
+          rateSource: valuation.available ? valuation.price.source : null,
           version: 'BIOCOG_MONETIZATION_v2.0',
         },
       },
