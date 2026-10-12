@@ -204,7 +204,8 @@ function coreRoutes(): SeoRoute[] {
     h1: 'Decarbonize India: Impact Ambassador Program',
     changefreq: 'weekly',
     blocks: [
-      { p: `${di.hero.line} ${di.hero.rhythm.join('. ')}. ${di.hero.open}` },
+      ...di.story.map(line => ({ p: line } as Block)),
+      { p: di.who },
       { h2: di.realFight.title },
       { p: `${di.realFight.habits.join(', ')}: ${di.realFight.habitsNote}` },
       { ul: di.realFight.sources },

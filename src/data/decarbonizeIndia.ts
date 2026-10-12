@@ -8,19 +8,30 @@ import { LANES, PROGRAM_CONTACT, type LaneId } from '@/lib/ambassadorApplication
 export const DI_PATH = '/decarbonize-india';
 
 export const hero = {
-  eyebrow: "India's Green Sprint",
   title: ['Decarbonize', 'India'] as const,
   kicker: 'Impact Ambassador Program',
-  line: 'Become the person who got a carbon-heavy business to switch.',
-  rhythm: ['90 days', 'One mission', '18 countries'],
-  open: 'Any background. 90 days of selfless work. Phase 1 starts October 2026.',
+  join: "I'm in for 90 days",
+  session: 'Meet the team live this week',
+  scrollHint: 'Scroll to clear the air',
 };
 
-/** The wall in the hero: what an owner fears, painted into what they gain. */
-export const wall = {
-  grey: ['Higher costs', 'Tougher compliance', 'Lost orders'],
-  green: ['Lower bills', 'Compliance ready', 'New buyers'],
-};
+/** Hero scroll story: one line per stage, as the haze over the planet clears. */
+export const story = [
+  'The planet is holding its breath.',
+  'Most of the smoke rises where things are made: factories, dye units, metal shops, data centres.',
+  'It clears one business, one city, one loud campaign at a time.',
+  'Impact Ambassadors do that work. 90 days. One mission. 18 countries.',
+];
+
+/** One-word labels; every number is from the program document. */
+export const counters = [
+  { value: 90, label: 'Days' },
+  { value: 18, label: 'Countries' },
+  { value: 7, label: 'Lanes' },
+  { value: 1, label: 'Mission' },
+] as { value: number; label: string; prefix?: string; suffix?: string }[];
+
+export const who = 'Any background. Phase 1 starts October 2026.';
 
 export const realFight = {
   title: 'Keep the steel bottle. Then go where the carbon is.',

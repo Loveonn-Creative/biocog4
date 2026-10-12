@@ -438,3 +438,10 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .di-stroke { stroke-dasharray: 340; stroke-dashoffset: 340; animation: di-paint 1.1s cubic-bezier(.6,0,.2,1) .4s forwards; }
 @keyframes di-paint { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .di-stroke { stroke-dashoffset: 0; animation: none; } }
+/* Smoke drifting up from the stacks in the "today" skyline. */
+.di-smoke > g { animation: di-rise 3.6s ease-in-out infinite; transform-box: fill-box; }
+@keyframes di-rise { 0% { transform: translateY(6px); opacity: .5; } 50% { opacity: 1; } 100% { transform: translateY(-10px); opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { .di-smoke > g { animation: none; } }
+@keyframes di-dissolve { 0% { opacity: .9; filter: blur(0); } 100% { opacity: .45; filter: blur(.5px); } }
+@keyframes di-resolve { 0% { opacity: 0; filter: blur(8px); transform: translateY(6px); } 100% { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes di-pin { 0% { transform: scale(.4) rotate(-12deg); opacity: 0; } 100% { transform: none; opacity: 1; } }

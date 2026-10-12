@@ -32,6 +32,11 @@ describe('Decarbonize India copy', () => {
       if (/internship|job/i.test(line)) expect(line).toMatch(/not|no\./i);
     }
   });
+  test('mission framing: no sprint slogan, no weak lane CTA, no business-benefit wall', () => {
+    for (const gone of ["Green Sprint", 'Claim your lane', 'Lower bills', 'Compliance ready', 'New buyers']) expect(allCopy).not.toContain(gone);
+    expect(di.hero.join).toBe("I'm in for 90 days");
+    expect(di.story.length).toBe(4);
+  });
   test('no em dashes, and no weekly session dates', () => {
     expect(allCopy).not.toContain('—');
     expect(allCopy).not.toMatch(/\b(1[3-8]) Oct\b/i);

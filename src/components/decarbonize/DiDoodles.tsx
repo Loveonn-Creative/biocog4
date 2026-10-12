@@ -11,28 +11,6 @@ export const TricolorStroke = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-/** A single drop next to an ocean: the habits versus the industry. */
-export const DropVsOcean = () => (
-  <Doodle viewBox="0 0 220 90" className="h-20 w-full" label="One drop beside an ocean">
-    <path pathLength={1} d="M30 30 C 30 30, 18 46, 18 54 a12 12 0 0 0 24 0 C 42 46, 30 30, 30 30z" />
-    <path pathLength={1} d="M70 62 C 90 52, 110 72, 130 62 S 170 52, 190 62 S 210 70, 216 64" stroke="hsl(var(--primary))" />
-    <path pathLength={1} d="M64 76 C 86 66, 108 86, 130 76 S 172 66, 194 76" stroke="hsl(var(--primary))" opacity=".7" />
-  </Doodle>
-);
-
-/** Smokestacks; one of them sprouting a leaf. */
-export const StacksToLeaf = () => (
-  <Doodle viewBox="0 0 220 90" className="h-20 w-full" label="Factory stacks, one turning green">
-    <path pathLength={1} d="M10 84 V52 l22 -12 v12 l22 -12 v12 l22 -12 v44z" />
-    <path pathLength={1} d="M92 84 V22 h12 v62" />
-    <path pathLength={1} d="M124 84 V30 h12 v54" />
-    <path pathLength={1} d="M6 84 h200" />
-    <path pathLength={1} d="M96 18 C 92 8, 104 4, 100 -4" className="dot" />
-    <path pathLength={1} d="M150 70 C 150 40, 176 28, 204 30 C 202 58, 182 72, 150 70z" stroke="hsl(var(--primary))" />
-    <path pathLength={1} d="M150 70 L186 42" stroke="hsl(var(--primary))" />
-  </Doodle>
-);
-
 /** A seal with a ribbon: the certificate. */
 export const Seal = () => (
   <Doodle viewBox="0 0 96 64" className="h-14 w-20">
