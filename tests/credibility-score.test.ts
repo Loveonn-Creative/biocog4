@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { computeCredibilityScore, type CredibilityLedgerInput } from '../src/lib/credibilityScore';
+import { computeCredibilityScore, CREDIBILITY_WEIGHTS, type CredibilityLedgerInput } from '../src/lib/credibilityScore';
 
 const line = (over: Partial<CredibilityLedgerInput>): CredibilityLedgerInput => ({
   id: Math.random().toString(36).slice(2), emission_id: null, document_id: 'd1', document_hash: 'h1',
@@ -62,16 +62,19 @@ describe('credibility score', () => {
     expect(computeCredibilityScore([], rows).breakdown.dataCompleteness).toBe(100);
   });
 
-  test('green share does not move credibility', () => {
+  test('green-benefit share carries 20% of the score', () => {
     const v = [{ verification_score: 1, verification_status: 'verified' }];
     const a = computeCredibilityScore(v, [line({ emission_id: 'g1', amount: 1, is_green_benefit: false })]);
     const b = computeCredibilityScore(v, [line({ emission_id: 'g1', amount: 1, is_green_benefit: true })]);
-    expect(a.score).toBe(b.score);
+    expect(b.score - a.score).toBe(20);
     expect(b.breakdown.greenRatio).toBe(100);
   });
+  test('weights add up to one', () => {
+    expect(Object.values(CREDIBILITY_WEIGHTS).reduce((x, y) => x + y, 0)).toBeCloseTo(1, 10);
+  });
   test('full evidence and completeness with one verified invoice', () => {
-    // 0.4 x 100 + 0.4 x 100 + 0.2 x (1/50 x 100) = 80.4 -> 80
-    expect(computeCredibilityScore([{ verification_score: 1, verification_status: 'verified' }], [line({ emission_id: 'e1', amount: 100 })]).score).toBe(80);
+    // 0.35 x 100 + 0.30 x 100 + 0.20 x 0 + 0.15 x (1/50 x 100) = 65.3 -> 65
+    expect(computeCredibilityScore([{ verification_score: 1, verification_status: 'verified' }], [line({ emission_id: 'e1', amount: 100 })]).score).toBe(65);
   });
   test('no data scores zero', () => {
     expect(computeCredibilityScore([], []).score).toBe(0);

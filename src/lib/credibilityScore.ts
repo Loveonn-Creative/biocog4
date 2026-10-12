@@ -6,18 +6,17 @@
  * loan, scheme or payment eligibility decision. Pathway eligibility uses its
  * own explicit checks; this score is shown for information.
  *
- * Formula:
- * - 40% evidence: average verification score over every attempt, failed
+ * Formula (CREDIBILITY_WEIGHTS):
+ * - 35% evidence: average verification score over every attempt, failed
  *   attempts included as 0 (leaving them out would inflate the average).
- * - 40% completeness: share of invoices whose ledger evidence has a vendor,
+ * - 30% completeness: share of invoices whose ledger evidence has a vendor,
  *   an invoice date and an amount (stored once per invoice) and an HSN code
  *   on every line.
- * - 20% history: unique invoices with verified records, capped at 50.
+ * - 20% green-benefit ratio: share of ledger records marked as green benefit.
+ * - 15% history: unique invoices with verified records, capped at 50.
  *
  * Ledger rows are read once per emission (the latest row), as the ledger
- * total and the audit export count them. The green-benefit ratio measures
- * performance, not credibility, so it is reported (greenRatio) but does not
- * move the score.
+ * total and the audit export count them.
  */
 import { latestLedgerRowPerEmission } from '@/lib/emissionLedger';
 
@@ -61,6 +60,9 @@ export interface CredibilityResult {
 
 export const HISTORY_CAP_INVOICES = 50;
 
+/** Share of the 0-100 score each input carries; they add up to 1. */
+export const CREDIBILITY_WEIGHTS = { evidence: 0.35, completeness: 0.3, greenBenefit: 0.2, history: 0.15 } as const;
+
 const text = (v: string | null | undefined) => typeof v === 'string' && v.trim() !== '';
 
 export function computeCredibilityScore(
@@ -99,7 +101,10 @@ export function computeCredibilityScore(
 
   const greenRatio = rows.length > 0 ? (rows.filter((e) => e.is_green_benefit === true).length / rows.length) * 100 : 0;
 
-  const score = Math.max(0, Math.min(100, Math.round(0.4 * avgVerification + 0.4 * dataCompleteness + 0.2 * historyDepth)));
+  const w = CREDIBILITY_WEIGHTS;
+  const score = Math.max(0, Math.min(100, Math.round(
+    w.evidence * avgVerification + w.completeness * dataCompleteness + w.greenBenefit * greenRatio + w.history * historyDepth,
+  )));
   const grade: CredibilityResult['grade'] =
     score >= 90 ? 'A+' : score >= 75 ? 'A' : score >= 55 ? 'B' : score >= 35 ? 'C' : 'D';
 
