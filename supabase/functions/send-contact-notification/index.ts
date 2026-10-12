@@ -92,7 +92,7 @@ const handler = async (req: Request): Promise<Response> => {
       try {
         const sent = await sendTemplateEmail('scope-review', 'impact@senseible.earth', {
           templateData: { name: data.name, email: data.email, phone: data.phone, company: data.company, message: data.message,
-            estimate: `${formatScopeRupees(estimate.min)} to ${formatScopeRupees(estimate.max)}`, drivers: estimate.drivers, requestId: saved.id },
+            estimate: `${formatScopeRupees(estimate.min)} to ${formatScopeRupees(estimate.max)}`, drivers: [...estimate.drivers, ...estimate.internalDrivers], requestId: saved.id },
           idempotencyKey: `scope-review-${saved.id}`, replyTo: data.email,
         });
         const status = sent.sent ? 'sent' : 'suppressed';

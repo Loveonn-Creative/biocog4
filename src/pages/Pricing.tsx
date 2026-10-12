@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { lazy, Suspense, useCallback, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
@@ -23,7 +23,13 @@ import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { useOrganization } from '@/hooks/useOrganization';
 import { toast } from 'sonner';
 import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner';
-import { CustomScopeEstimator } from '@/components/pricing/CustomScopeEstimator';
+import { PlanMeter } from '@/components/pricing/PlanMeter';
+import { MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
+import type { PlanTier } from '../../supabase/functions/_shared/planLimits';
+
+// Below the fold: loaded after the plans are on screen.
+const CustomScopeEstimator = lazy(() => import('@/components/pricing/CustomScopeEstimator').then((m) => ({ default: m.CustomScopeEstimator })));
+const AddonBuilder = lazy(() => import('@/components/pricing/AddonBuilder'));
 
 interface PricingTier {
   id: string;
@@ -66,6 +72,11 @@ const Pricing = () => {
   const [processingTier, setProcessingTier] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
   const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
+  // The plan the meter recommends (or the visitor picks on a phone): ringed on
+  // desktop, shown on phones, and used by the add-on estimate.
+  const [focusPlan, setFocusPlan] = useState<PlanTier>('essential');
+  const onRecommend = useCallback((p: PlanTier) => setFocusPlan(p), []);
+  const [hoverCol, setHoverCol] = useState<string | null>(null);
   
   // Partner-specific tiers
   const partnerTiers: PartnerTier[] = [
@@ -212,11 +223,8 @@ const Pricing = () => {
     return tier.cta;
   };
 
-  // Pricing matrix: yearly = headline /mo equivalent (billed annually); monthly = full /mo
-  const TIER_PRICES = {
-    essential: { yearly: 499, monthly: 1999 },
-    pro: { yearly: 4999, monthly: 9999 },
-  } as const;
+  // Pricing matrix (src/lib/pricing/pricingMath.ts): yearly = headline /mo
+  // equivalent (billed annually); monthly = full /mo.
 
   const tiers: PricingTier[] = [
     {
@@ -248,7 +256,7 @@ const Pricing = () => {
       period: '/month',
       subtext: billingCycle === 'yearly'
         ? `Billed ₹${(TIER_PRICES.essential.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.essential.monthly - TIER_PRICES.essential.yearly) * 12).toLocaleString('en-IN')}.`
-        : 'Switch to yearly to save 75%.',
+        : `Switch to yearly to save ${yearlySaving('essential').percent}%.`,
       cta: 'Unlock Savings',
       ctaVariant: 'default',
       features: [
@@ -272,7 +280,7 @@ const Pricing = () => {
       period: '/month',
       subtext: billingCycle === 'yearly'
         ? `Billed ₹${(TIER_PRICES.pro.yearly * 12).toLocaleString('en-IN')}/yr. Save ₹${((TIER_PRICES.pro.monthly - TIER_PRICES.pro.yearly) * 12).toLocaleString('en-IN')}.`
-        : 'Switch to yearly to save 50%.',
+        : `Switch to yearly to save ${yearlySaving('pro').percent}%.`,
       cta: 'Start Earning',
       ctaVariant: 'default',
       popular: true,
@@ -323,15 +331,6 @@ const Pricing = () => {
     { name: 'Team Members', snapshot: '1', essential: '3', pro: '10', scale: 'Per quote' },
   ];
 
-  const addons = [
-    { name: 'Extra Invoice Scans', price: '₹49 per 100 scans' },
-    { name: 'Custom Dashboard', price: '₹999/month' },
-    { name: 'Multi-entity Support', price: '₹1,999/month' },
-    { name: 'Expert Climate Audit', price: '₹4,999 one-time' },
-    { name: 'Fast-track Verification', price: '₹2,999 per report' },
-    { name: 'Real-time Data Streaming', price: '₹1,499/month' },
-  ];
-
   const faqs = [
     {
       q: 'Do I need climate knowledge to use this?',
@@ -343,7 +342,7 @@ const Pricing = () => {
     },
     {
       q: 'Can I actually earn money from this?',
-      a: 'Yes. With Pro and Scale plans, you can monetize verified carbon data through credits, green loans, and government incentives.',
+      a: 'Pro and Scale help you use verified carbon data with lenders, buyers and government schemes, for example a green loan application. Senseible does not issue carbon credits, and any loan, scheme or price is decided by the lender, scheme or buyer.',
     },
     {
       q: 'Can I switch plans anytime?',
@@ -355,7 +354,7 @@ const Pricing = () => {
     },
     {
       q: 'How is this different from hiring ESG consultants?',
-      a: '10x faster, 10x cheaper, always available. AI-powered insights replace months of manual work with instant, accurate results.',
+      a: 'Your invoices are read and calculated in minutes, at a plan price instead of a consulting fee, and the platform is available whenever you need it. For complex scopes, our team can still review the work with you.',
     },
   ];
 
@@ -429,6 +428,7 @@ const Pricing = () => {
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
+            {!isPartnerContext && <PlanMeter onRecommend={onRecommend} />}
           </div>
         </section>
 
@@ -446,7 +446,7 @@ const Pricing = () => {
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
                   {tier.popular && (
-                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                    <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg rounded-tr-lg">
                       Recommended
                     </div>
                   )}
@@ -531,7 +531,7 @@ const Pricing = () => {
                   type="button"
                   onClick={() => setBillingCycle('yearly')}
                   className={cn(
-                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    "whitespace-nowrap px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all",
                     billingCycle === 'yearly'
                       ? "bg-primary text-primary-foreground shadow"
                       : "text-muted-foreground hover:text-foreground"
@@ -539,15 +539,15 @@ const Pricing = () => {
                   aria-pressed={billingCycle === 'yearly'}
                 >
                   Billed Yearly
-                  <span className="ml-2 px-1.5 py-0.5 text-[10px] rounded-full bg-success/15 text-success font-semibold align-middle">
-                    SAVE UP TO 75%
+                  <span className="ml-1.5 sm:ml-2 px-1.5 py-0.5 text-[10px] rounded-full bg-success/15 text-success font-semibold align-middle">
+                    SAVE UP TO {MAX_SAVING_PERCENT}%
                   </span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setBillingCycle('monthly')}
                   className={cn(
-                    "px-5 py-2 text-sm font-medium rounded-full transition-all",
+                    "whitespace-nowrap px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all",
                     billingCycle === 'monthly'
                       ? "bg-primary text-primary-foreground shadow"
                       : "text-muted-foreground hover:text-foreground"
@@ -564,16 +564,32 @@ const Pricing = () => {
               </p>
             </div>
 
+            {/* Phones: one plan at a time, starting with the one the meter recommends. */}
+            <div className="md:hidden mb-4 grid grid-cols-4 gap-1 rounded-full border bg-background p-1" role="tablist" aria-label="Plans">
+              {tiers.map((tier) => (
+                <button key={tier.id} type="button" role="tab" aria-selected={focusPlan === tier.id}
+                  onClick={() => setFocusPlan(tier.id as PlanTier)}
+                  className={cn("rounded-full py-2 text-xs font-medium transition-colors", focusPlan === tier.id ? "bg-primary text-primary-foreground" : "text-muted-foreground")}>
+                  {tier.name.replace('Biocog ', '')}
+                </button>
+              ))}
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {tiers.map((tier, idx) => (
                 <Card 
                   key={tier.id}
                   className={cn(
-                    "relative overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in",
-                    tier.popular && "border-primary shadow-lg ring-2 ring-primary/20"
+                    "relative overflow-visible transition-all duration-300 hover:shadow-lg animate-fade-in",
+                    tier.popular && "border-primary shadow-lg ring-2 ring-primary/20",
+                    focusPlan !== tier.id && "hidden md:block"
                   )}
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
+                  {/* Hand-drawn ring around the plan the meter recommends (desktop). */}
+                  <svg className={cn("pr-ring hidden md:block", focusPlan === tier.id && "pr-ring-on")} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <path pathLength={1} d="M8 6 C 30 1, 75 1, 94 7 S 99 60, 96 90 S 50 99, 10 95 S 1 45, 5 14" />
+                  </svg>
+                  {focusPlan === tier.id && <span className="pr-fit hidden md:inline-flex">Fits your volume</span>}
                   {tier.popular && (
                     <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
                       Most Popular
@@ -601,8 +617,10 @@ const Pricing = () => {
                     <div className="mb-4">
                       {tier.originalPrice && tier.price !== null && (
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-sm line-through text-muted-foreground">
+                          <span className="pr-strike relative text-sm text-muted-foreground">
                             {formatCurrency(tier.originalPrice)}
+                            <svg viewBox="0 0 60 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength={1} d="M2 8 C 15 3, 35 10, 58 4" /></svg>
+                            <span className="sr-only"> (was)</span>
                           </span>
                           <span className="px-2 py-0.5 rounded-full bg-success/10 text-success text-xs font-medium">
                             {Math.round((1 - tier.price / tier.originalPrice) * 100)}% OFF
@@ -619,8 +637,11 @@ const Pricing = () => {
                           </>
                         )}
                       </div>
-                      {tier.id === 'basic' && (
-                        <p className="text-xs text-muted-foreground mt-1">Less than ₹17/day</p>
+                      {billingCycle === 'yearly' && (tier.id === 'essential' || tier.id === 'pro') && (
+                        <p className="pr-save mt-2 inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
+                          <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true"><path pathLength={1} d="M2 11 C 5 4, 9 4, 13 8 M10 4 l3 4 -4 1" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                          You keep {formatCurrency(yearlySaving(tier.id).perYear)} a year ({yearlySaving(tier.id).percent}%)
+                        </p>
                       )}
                     </div>
 
@@ -676,8 +697,8 @@ const Pricing = () => {
 
                     {/* Subtext */}
                     {tier.subtext && (
-                      <p className="text-xs text-muted-foreground text-center mb-4 italic">
-                        "{tier.subtext}"
+                      <p className="text-xs text-muted-foreground text-center mb-4">
+                        {tier.subtext}
                       </p>
                     )}
 
@@ -705,30 +726,34 @@ const Pricing = () => {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b">
-                    <th className="text-left py-3 px-4 font-medium">Feature</th>
-                    <th className="text-center py-3 px-4 font-medium">Snapshot</th>
-                    <th className="text-center py-3 px-4 font-medium">Essential</th>
-                    <th className="text-center py-3 px-4 font-medium bg-primary/5 border-x border-primary/20">Pro</th>
-                    <th className="text-center py-3 px-4 font-medium">Scale</th>
+                    <th className="sticky left-0 z-10 bg-background text-left py-3 px-4 font-medium">Feature</th>
+                    {(['snapshot', 'essential', 'pro', 'scale'] as const).map((col) => (
+                      <th key={col} onMouseEnter={() => setHoverCol(col)} onMouseLeave={() => setHoverCol(null)}
+                        className={cn("text-center py-3 px-4 font-medium capitalize transition-colors", col === 'pro' && "bg-primary/5 border-x border-primary/20", hoverCol === col && "bg-primary/10")}>
+                        {col}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonFeatures.map((feature, idx) => (
                     <tr key={idx} className="border-b border-border/50">
-                      <td className="py-3 px-4 text-sm">{feature.name}</td>
+                      <td className="sticky left-0 z-10 bg-background py-3 px-4 text-sm">{feature.name}</td>
                       {['snapshot', 'essential', 'pro', 'scale'].map((tier) => (
                         <td 
                           key={tier} 
+                          onMouseEnter={() => setHoverCol(tier)} onMouseLeave={() => setHoverCol(null)}
                           className={cn(
-                            "py-3 px-4 text-center text-sm",
-                            tier === 'pro' && "bg-primary/5 border-x border-primary/20"
+                            "py-3 px-4 text-center text-sm transition-colors",
+                            tier === 'pro' && "bg-primary/5 border-x border-primary/20",
+                            hoverCol === tier && "bg-primary/10"
                           )}
                         >
                           {typeof feature[tier as keyof typeof feature] === 'boolean' ? (
                             feature[tier as keyof typeof feature] ? (
-                              <Check className="h-4 w-4 text-success mx-auto" />
+                              <Check className="pr-tick h-4 w-4 text-success mx-auto" style={{ animationDelay: `${idx * 60}ms` }} aria-label="Included" />
                             ) : (
-                              <span className="text-muted-foreground">-</span>
+                              <span className="text-muted-foreground" aria-label="Not included">-</span>
                             )
                           ) : (
                             <span className={cn(
@@ -747,27 +772,24 @@ const Pricing = () => {
           </section>
         )}
 
-        {/* Add-ons - Only for MSME */}
+        {/* Add-ons - Only for MSME: published prices, a working estimate. */}
         {!isPartnerContext && (
-          <section className="container mx-auto px-4 pb-16">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-center mb-8">Add-ons & Extras</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {addons.map((addon, idx) => (
-                  <div
-                  key={idx}
-                  className="flex items-center justify-between p-4 rounded-lg border bg-card hover:border-primary/30 transition-colors"
-                >
-                  <span className="font-medium">{addon.name}</span>
-                  <span className="text-sm text-muted-foreground">{addon.price}</span>
-                </div>
-              ))}
+          <section className="container mx-auto px-4 pb-16" aria-labelledby="addons-title">
+            <div className="max-w-5xl mx-auto">
+              <h2 id="addons-title" className="text-2xl font-bold text-center mb-2">Add-ons & Extras</h2>
+              <p className="text-center text-sm text-muted-foreground mb-8">Add what you need to the {focusPlan === 'scale' ? 'Scale' : focusPlan.charAt(0).toUpperCase() + focusPlan.slice(1)} plan and see the total.</p>
+              <Suspense fallback={<div className="h-80" />}>
+                <AddonBuilder plan={focusPlan} cycle={billingCycle} />
+              </Suspense>
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
-        {!isPartnerContext && <CustomScopeEstimator />}
+        {!isPartnerContext && (
+          <Suspense fallback={<div className="h-96" />}>
+            <CustomScopeEstimator />
+          </Suspense>
+        )}
 
         {/* FAQ */}
         <section className="container mx-auto px-4 pb-16">
@@ -796,7 +818,7 @@ const Pricing = () => {
                 <Brain className="h-12 w-12 mx-auto mb-4 text-primary" />
                 <h2 className="text-2xl font-bold mb-2">Ready to transform your climate data?</h2>
                 <p className="text-muted-foreground mb-6">
-                  Join thousands of MSMEs already earning from their carbon footprint.
+                  Start with one invoice. Your first emission snapshot is free.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" asChild>
