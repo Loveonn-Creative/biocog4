@@ -30,6 +30,7 @@ below can be undone with the matching file in `supabase/pending-migrations/rollb
 | 3 | `20261011180000_team_access_and_ledger_integrity.sql` | Fixes "permission denied for function is_org_member" on the Team page; seat counts per plan; team role changes. | `SELECT to_regprocedure('public.create_organization(text)') IS NOT NULL AND to_regprocedure('private.is_org_member(uuid,uuid)') IS NOT NULL;` |
 | 4 | `20261013100000_org_workspace_roles.sql` | Six team roles and the shared organisation workspace. | `SELECT to_regprocedure('public.my_org_permissions(uuid)') IS NOT NULL;` |
 | 5 | `20261015100000_atomic_verify_and_delete.sql` | Verification and invoice deletion each save completely or not at all. Needs step 3. Works before or after step 4. | `SELECT to_regprocedure('public.commit_verification(jsonb)') IS NOT NULL AND to_regprocedure('public.delete_document_atomic(uuid,uuid,boolean,text)') IS NOT NULL;` |
+| 6 | `20261016100000_invoice_source_files.sql` | Keeps signed-in users' original invoice files (server-write-only, "View source" in History). Independent of steps 1 to 5. | `SELECT to_regprocedure('public.invoice_source_storage_ready()') IS NOT NULL;` |
 
 ## Separate: Decarbonize India applications
 
@@ -51,6 +52,11 @@ Independent of steps 1 to 4. Apply `20261014100000_ambassador_applications.sql` 
 - Verify an invoice on Verify. The result, the verified marks and the ledger rows appear together; if saving fails, the page says nothing was changed and you can try again.
 - Delete an unverified invoice from History. It disappears with its records, and one entry is written to the security audit log. An invoice with verified records still cannot be deleted.
 
+## After step 6, in the app
+
+- Upload an invoice while signed in, then open History: the invoice shows "View source", which opens the original file in a new tab (the link works for 5 minutes).
+- Invoices uploaded before step 6 have no kept file; "View source" does not appear for them.
+
 ## Scale seats
 
 Seats for a Scale customer come from the quote you issue. When creating a quote, set `seats`:
@@ -64,7 +70,7 @@ When the customer pays, the quote is marked consumed and their organisation's se
 
 ## Undo
 
-Roll back in reverse order (5, 4, then 3, 2, 1), only as far as needed, with the
+Roll back in reverse order (6, 5, 4, then 3, 2, 1), only as far as needed, with the
 files in `supabase/pending-migrations/rollback/`, applied the same way as above.
 Rolling back step 4 keeps every record; members with the new roles are mapped
 to the nearest old role and their previous roles are saved.

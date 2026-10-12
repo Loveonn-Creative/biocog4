@@ -113,3 +113,16 @@ Until it is applied, both edge functions fall back to the previous step-by-step 
 Tested on local Postgres 16, with and without `20261013100000`: `tests/20261015100000_atomic_verify_and_delete.test.sql` (19 checks). The real `verify-carbon` and `delete-document` handlers were also run against the replayed schema, before and after the migration, including a forced ledger failure (atomic path: HTTP 500, nothing written) and a delete racing an open verification.
 
 Roll back with `rollback/20261015100000_atomic_verify_and_delete.rollback.sql`. It drops the two functions; no data changes.
+
+## 20261016100000_invoice_source_files.sql (original invoice files kept as evidence)
+
+No dependency on the other pending migrations. Uses the existing private `documents` bucket (no new bucket, no table or row change).
+
+- **Server-write-only bucket**: drops the owner INSERT, UPDATE and DELETE storage policies and the unused anonymous upload policy on the shared `guest/` folder, so a stored file cannot be planted in advance, replaced or deleted from the browser. Owners keep read access to their own folder. The billing-invoice HTML that `generate-invoice-pdf` writes (service role, `invoices/` folder) is unaffected.
+- **`invoice_source_storage_ready()`** (service_role only): `extract-document` stores files only once this exists, so nothing is stored before the policies are tightened.
+- **What happens after it is applied**: after a successful read, `extract-document` stores a signed-in user's original file at `<user id>/<document hash>.<ext>` and records the path in `documents.file_url`. Guest files are never stored on the server; they stay in the guest's browser (IndexedDB), cleared when the identity on the device changes. History shows "View source": `document-source-url` issues a 5-minute link only to the uploader, or for an organisation invoice to members whose role allows `records.view`, and writes `document_source_viewed` to `security_audit_log`. Deleting an unverified invoice also removes its file. Invoices added before this was applied have no kept file and say so.
+
+Tested on local Postgres 16: `tests/20261016100000_invoice_source_files.test.sql` (9 checks: bucket private, no browser write policy, owner reads own file, owner cannot plant, replace or delete, other users read nothing, guests cannot upload, browsers cannot call the readiness function). The real `extract-document`, `document-source-url` and `delete-document` handlers were run before and after it.
+
+Roll back with `rollback/20261016100000_invoice_source_files.rollback.sql`: restores the four policies exactly and drops the readiness function, so storing stops. Stored files are kept; delete them from the bucket separately if wanted.
+

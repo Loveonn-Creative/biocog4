@@ -12,7 +12,7 @@ import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { Helmet } from 'react-helmet-async';
@@ -27,6 +27,8 @@ import { GreenCategoryBadge, getGreenCategoryFromEmissionCategory } from '@/comp
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { documentEmissionStatus, ledgerEvidenceGaps, verifiedEmissionsOnce, verifiedMonthlyTrend, verifiedScopeTotals } from '@/lib/emissionLedger';
 import { applyScope } from '@/lib/workspaceScope';
+import { cachedGuestHashes, getGuestSource } from '@/lib/guestSourceCache';
+import { isSourceFilePath } from '../../supabase/functions/_shared/sourceFiles';
 
 const History = () => {
   const navigate = useNavigate();
@@ -41,6 +43,41 @@ const History = () => {
   const { isEnterprise } = useEnterpriseMode();
   const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, loaded: ledgerLoaded, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
   const [restoring, setRestoring] = useState(false);
+  const [openingSource, setOpeningSource] = useState<string | null>(null);
+  // Guests: which originals this browser still holds (they are never stored on the server).
+  const [guestHashes, setGuestHashes] = useState<Set<string>>(new Set());
+  useEffect(() => { if (!user) void cachedGuestHashes().then(setGuestHashes); }, [user, documents.length]);
+
+  const canViewSource = (doc: { file_url: string | null; document_hash: string | null }) =>
+    user ? isSourceFilePath(doc.file_url) : !!doc.document_hash && guestHashes.has(doc.document_hash);
+
+  // Opens the original file in a new tab: a short-lived link for signed-in
+  // users (checked on the server by owner or team role), this browser's copy for guests.
+  const openSource = async (doc: { id: string; document_hash: string | null }) => {
+    const tab = window.open('', '_blank'); // opened now so the browser does not block it
+    if (tab) tab.opener = null;
+    setOpeningSource(doc.id);
+    try {
+      if (!user) {
+        const entry = doc.document_hash ? await getGuestSource(doc.document_hash) : null;
+        if (!entry) { tab?.close(); toast.error('The original is kept only in the browser it was uploaded from.'); return; }
+        const href = URL.createObjectURL(entry.blob);
+        if (tab) tab.location.href = href; else window.location.assign(href);
+        setTimeout(() => URL.revokeObjectURL(href), 60_000);
+        return;
+      }
+      const supabase = await loadSupabase();
+      const { data, error } = await supabase.functions.invoke('document-source-url', { body: { documentId: doc.id } });
+      if (error || !data?.url) {
+        tab?.close();
+        toast.error(error ? await getFunctionErrorMessage(error, 'The original file could not be opened.') : 'The original file could not be opened.');
+        return;
+      }
+      if (tab) tab.location.href = data.url; else window.location.assign(data.url);
+    } finally {
+      setOpeningSource(null);
+    }
+  };
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // Server-side delete: checks ownership, refuses verified records, logs the removal.
@@ -389,6 +426,11 @@ const History = () => {
                         <div className="font-medium">{formatAmount(doc.amount)}</div>
                       <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
                       </div>
+                      {canViewSource(doc) && (
+                        <Button size="sm" variant="ghost" onClick={() => { void openSource(doc); }} disabled={openingSource === doc.id} aria-label={`View the original file for ${doc.vendor || doc.document_type || 'this invoice'}`}>
+                          {openingSource === doc.id ? <Loader2 className="h-4 w-4 animate-spin" /> : 'View source'}
+                        </Button>
+                      )}
                       {user && documentRows.length > 0 && <Button size="sm" variant="outline" onClick={() => navigate('/verify', { state: { documentId: doc.id } })} aria-label={`Open ${doc.vendor || doc.document_type} in Verify`}>View in Verify</Button>}
                       {/* Remove a wrongly parsed or duplicate invoice. Verified records are never deletable. */}
                       {user && status.kind !== 'verified' && canDelete(doc) && (

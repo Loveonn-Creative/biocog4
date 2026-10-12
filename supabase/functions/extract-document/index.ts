@@ -4,6 +4,7 @@ import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_share
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst } from '../_shared/planLimits.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
+import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
@@ -27,6 +28,31 @@ const corsHeaders = {
 // first 10,000 base64 characters, so different files sharing a header could
 // collide. Hashes made before this change will not match new uploads of the
 // same file.
+/**
+ * Keeps the original file of a signed-in user's invoice as evidence, in the
+ * private bucket at <user id>/<hash>.<ext>. Does nothing until the pending
+ * migration 20261016100000 (server-write-only bucket) is applied. A path that
+ * already exists is the same file (same hash), so it is reused, never
+ * replaced. Returns the stored path, or null when nothing was stored.
+ */
+async function storeSourceFile(
+  // deno-lint-ignore no-explicit-any
+  client: any, userId: string, documentHash: string, mimeType: string, base64Content: string,
+): Promise<string | null> {
+  const path = sourceFilePath(userId, documentHash, mimeType);
+  if (!path) return null;
+  const { data: ready, error: readyError } = await client.rpc('invoice_source_storage_ready');
+  if (readyError || ready !== true) return null;
+  const binary = atob(base64Content.replace(/\s+/g, ''));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const { error } = await client.storage.from(SOURCE_BUCKET).upload(path, bytes, { contentType: mimeType, upsert: false });
+  if (!error) return path;
+  if (/exist|duplicate/i.test(error.message || '') || (error as { statusCode?: string }).statusCode === '409') return path;
+  console.error('Source file not stored:', error.message);
+  return null;
+}
+
 async function generateDocumentHash(base64Content: string): Promise<string> {
   const clean = base64Content.replace(/\s+/g, '');
   const binary = atob(clean);
@@ -476,6 +502,7 @@ serve(async (req) => {
     let isAuthenticated = false;
     let userTier = 'guest';
     let scanLimit: number | null = null; // signed-in users only
+    let sourcePath: string | null = null; // stored original file (signed-in only)
     const authHeader = req.headers.get('Authorization');
     const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
     const isGuestKey = !bearer || bearer === anonKey || bearer === req.headers.get('apikey') || jwtRole(bearer) === 'anon';
@@ -1010,6 +1037,10 @@ serve(async (req) => {
             console.log('Document stub updated with MRV result');
           }
         } else {
+          // Original file as evidence (signed-in only; guests' files are never stored).
+          if (isAuthenticated && userId) {
+            sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
+          }
           // Insert cache record (authenticated users or fallback)
           const { error: cacheError } = await supabase
             .from('documents')
@@ -1024,6 +1055,7 @@ serve(async (req) => {
               cached_result: extractedData,
               cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
               user_id: userId,
+              file_url: sourcePath,
               session_id: isAuthenticated ? null : (sessionId || null),
               ...(isAuthenticated && organizationId ? { organization_id: organizationId } : {}),
             });

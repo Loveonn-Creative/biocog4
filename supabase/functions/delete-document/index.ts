@@ -1,6 +1,7 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { decideDocumentDelete } from '../_shared/deletePolicy.ts';
 import { canDeleteOrganizationDocument, orgCan } from '../_shared/workspaceAccess.ts';
+import { isSourceFilePath, SOURCE_BUCKET } from '../_shared/sourceFiles.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -38,7 +39,7 @@ Deno.serve(async (req) => {
     // document needs a team role that allows it. Anything else is "not found".
     const { data: found, error: docError } = await admin
       .from('documents')
-      .select('id, user_id, organization_id, document_hash, vendor, invoice_number, created_at')
+      .select('id, user_id, organization_id, document_hash, vendor, invoice_number, created_at, file_url')
       .eq('id', documentId)
       .maybeSingle();
     if (docError) return json({ error: 'Could not load the invoice.' }, 500);
@@ -53,6 +54,12 @@ Deno.serve(async (req) => {
     }
     if (!found || !allowed) return json({ error: 'Invoice not found.' }, 404);
     const doc = found;
+    // The deleted invoice's original file goes too (only unverified invoices get here).
+    const removeSourceFile = async (path: unknown) => {
+      if (!isSourceFilePath(path)) return;
+      const { error } = await admin.storage.from(SOURCE_BUCKET).remove([path]);
+      if (error) console.error('Source file not removed:', error.message);
+    };
 
     // One transaction (pending migration 20261015100000): locks the invoice and
     // its records, checks every verified reference, deletes and writes the
@@ -65,6 +72,7 @@ Deno.serve(async (req) => {
       if (!r.deleted) {
         return json({ error: 'This invoice has verified records. They stay for your audit trail and cannot be deleted.', reason: r.reason }, 409);
       }
+      await removeSourceFile(doc.file_url);
       return json({ success: true, removed: { emissions: r.emissions ?? 0, ledger: r.ledger ?? 0 } });
     }
     if (atomicError.code === 'P0002') return json({ error: 'Invoice not found.' }, 404);
@@ -141,6 +149,7 @@ Deno.serve(async (req) => {
       },
     });
 
+    await removeSourceFile(doc.file_url);
     return json({ success: true, removed: { emissions: decision.emissionIds.length, ledger: decision.ledgerIds.length } });
   } catch (error) {
     console.error('delete-document error:', error);

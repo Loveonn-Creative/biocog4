@@ -24,6 +24,7 @@ import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersiste
 import { checkUploadPages } from '@/lib/pdfLimit';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
+import { cacheGuestSource } from '@/lib/guestSourceCache';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
@@ -139,6 +140,8 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           ));
           results.duplicates++;
         } else if (data?.success) {
+          // Guests: the original stays in this browser only.
+          if (!user) void cacheGuestSource(data.documentHash, fileStatus.file, fileStatus.file.name);
           const partData = data.data as PersistableExtraction;
           // Split parts: page numbers mapped back to the original PDF.
           const extractedData: PersistableExtraction = fileStatus.fromPage
