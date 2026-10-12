@@ -24,6 +24,7 @@ const QuestionRow = ({ eyebrow, title, children }: { eyebrow: ReactNode; title: 
 );
 
 const ProductPipeline = lazy(() => import("@/components/product/ProductPipeline"));
+const EvidenceSeal = lazy(() => import("@/components/trust/EvidenceSeal"));
 
 const audiences = [
   { key: "msme", label: "MSMEs & exporters", line: "Turn invoices into a verified emission record, no consultant required." },
@@ -244,6 +245,12 @@ const Platform = () => {
                 </Link>
               </div>
             </div>
+
+            <div className="mt-16 border-t border-border pt-12">
+              <Suspense fallback={<div className="h-[340px]" aria-hidden="true" />}>
+                <EvidenceSeal title={t("platform.seal.title", "Nothing here asks for blind trust.")} />
+              </Suspense>
+            </div>
           </div>
         </section>
 
@@ -252,7 +259,6 @@ const Platform = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="text-xs uppercase tracking-[0.14em] text-primary mb-3">{t("platform.proof.paths.eyebrow", "Where it becomes useful")}</div>
             <h2 className="max-w-3xl text-[1.75rem] leading-[1.15] md:text-[2.5rem] font-semibold tracking-tight [text-wrap:balance]">{t("platform.proof.paths.title", "The same evidence solves a different problem in every sector.")}</h2>
-            <p className="mt-3 text-sm text-muted-foreground">{t("platform.proof.paths.note", "Choose a sector to see the evidence and the decision it supports.")}</p>
 
             <div className="mt-8 border-t border-border">
               <div className="hidden md:grid grid-cols-[9rem_1fr_1fr_auto] gap-6 py-3 text-[11px] uppercase tracking-wider text-muted-foreground border-b border-border">
@@ -333,7 +339,6 @@ const Platform = () => {
                 </Link>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mt-5">{t("platform.pricing.note", "See the pricing page for the current billing choice, full entitlements, and checkout.")}</p>
 
             <div className="mt-20 rounded-3xl bg-foreground px-6 py-14 text-center text-background md:py-16">
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.cta.title", "Two ways to start.")}</h2>

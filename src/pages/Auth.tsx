@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BusinessIdField, type BusinessIdResult } from "@/components/auth/BusinessIdField";
 import { MinimalNav } from "@/components/MinimalNav";
-import { ArrowLeft, Mail, Lock, User, Phone, Building, MapPin, ArrowRight, Loader2, Eye, EyeOff, Globe, Briefcase } from "lucide-react";
+import { ArrowLeft, ArrowRight, Loader2, Eye, EyeOff, Briefcase } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,6 +10,14 @@ import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrengt
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { analyticsEvents } from "@/lib/analytics";
+import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from "@/lib/factors";
+
+/** The three fears at a sign-up form, each answered with a fact the product already backs. */
+const AUTH_ASSURANCES = [
+  { key: "free", mark: "Free", short: "Free to start: 10 bills a month on Snapshot, no card asked.", long: "Free to start. The Snapshot plan reads 10 bills a month, and no card is asked for.", href: "", linkText: "" },
+  { key: "dpa", mark: "DPA", short: "Your records stay in your account, under a DPA drafted for India’s DPDP Act, 2023.", long: "Your records stay in your account, under a Data Processing Addendum drafted for India’s DPDP Act, 2023.", href: "/legal/dpa", linkText: "Read it" },
+  { key: "src", mark: "Source", short: "Every number shows its emission factor and source.", long: "Every number shows its emission factor and source, so you can defend it.", href: "/trust", linkText: "How" },
+];
 
 type AuthMode = "signin" | "signup" | "forgot";
 
@@ -284,244 +292,244 @@ const Auth = () => {
     );
   }
 
+  const field = "h-12 w-full rounded-xl border border-input bg-background px-4 text-[15px] transition-colors placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15";
+  const label = "mb-1.5 block text-sm font-medium text-foreground";
+
   return (
     <div className="min-h-screen bg-background">
       <MinimalNav />
-      
-      <main className="container max-w-md mx-auto px-6 py-24 sm:py-32">
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back
-        </Link>
-        
-        <div className="animate-fade-in">
-          {isPartnerMode && (
-            <Badge variant="secondary" className="mb-4">
-              <Briefcase className="w-3 h-3 mr-1" />
-              Partner Registration
-            </Badge>
-          )}
-          
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground mb-2">
-            {mode === "signin" && "Sign in"}
-            {mode === "signup" && (isPartnerMode ? "Become a Partner" : "Create account")}
-            {mode === "forgot" && "Reset password"}
-          </h1>
-          <p className="text-muted-foreground mb-8">
-            {mode === "signin" && "Access your carbon data and saved reports."}
-            {mode === "signup" && (isPartnerMode 
-              ? "Register to access the partner marketplace and carbon credit purchasing." 
-              : "Start tracking and monetizing your carbon data.")}
-            {mode === "forgot" && "We'll send you a reset link."}
-          </p>
-          
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {mode === "signup" && (
-              <>
-                <div className="relative">
-                  <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input
-                    type="text"
-                    placeholder="Business name"
-                    value={businessName}
-                    onChange={(e) => setBusinessName(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
-                </div>
-                
-                <BusinessIdField onResult={handleBusinessId} />
-                
-                <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input
-                    type="tel"
-                    placeholder="Phone number"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
-                </div>
-                
-                <div className="relative">
-                  <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input
-                    type="text"
-                    placeholder="Location (City, State)"
-                    value={location}
-                    onChange={(e) => { setLocation(e.target.value); setLocationAutofilled(null); }}
-                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
-                </div>
-                
-                {/* Partner-specific fields */}
-                {isPartnerMode && (
-                  <>
-                    <div className="relative">
-                      <Briefcase className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <select
-                        value={organizationType}
-                        onChange={(e) => setOrganizationType(e.target.value)}
-                        required={isPartnerMode}
-                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
-                      >
-                        <option value="">Select organization type</option>
-                        <option value="bank">Bank / Financial Institution</option>
-                        <option value="carbon_buyer">Carbon Credit Buyer</option>
-                        <option value="erp">ERP / Accounting Platform</option>
-                        <option value="climate_finance">Climate Finance Provider</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    
-                    <div className="relative">
-                      <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <input
-                        type="url"
-                        placeholder="Website (optional)"
-                        value={website}
-                        onChange={(e) => setWebsite(e.target.value)}
-                        className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                      />
-                    </div>
-                  </>
-                )}
-              </>
-            )}
-            
-            <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              />
-            </div>
-            
-            {mode !== "forgot" && (
-              <div className="space-y-2">
-                <div className="relative">
-                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    minLength={6}
-                    className="w-full pl-11 pr-12 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  </button>
-                </div>
-                {mode === "signup" && (
-                  <PasswordStrength password={password} />
-                )}
-              </div>
-            )}
-            
-            {mode === "signin" && (
-              <button
-                type="button"
-                onClick={() => setMode("forgot")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Forgot password?
-              </button>
+
+      <div className="grid min-h-screen lg:grid-cols-[1fr_1fr]">
+        {/* Form side */}
+        <main className="flex items-start justify-center px-5 pb-16 pt-24 sm:pt-28 lg:items-center lg:pt-20">
+          <div className="w-full max-w-[420px] animate-fade-in">
+            <Link to="/" className="mb-10 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <ArrowLeft className="h-4 w-4" />
+              Back
+            </Link>
+
+            {isPartnerMode && (
+              <Badge variant="secondary" className="mb-4">
+                <Briefcase className="mr-1 h-3 w-3" />
+                Partner Registration
+              </Badge>
             )}
 
-            {mode === "signup" && (
-              <div className="flex items-start gap-3 rounded-xl border border-border bg-muted/30 p-4">
-                <Checkbox
-                  id="data-consent"
-                  checked={dataConsent}
-                  onCheckedChange={(checked) => setDataConsent(checked === true)}
-                  aria-describedby="data-consent-description"
-                />
-                <label id="data-consent-description" htmlFor="data-consent" className="text-sm leading-relaxed text-muted-foreground">
-                  I consent to Senseible collecting, processing, uploading and parsing my business data. Read the{' '}
-                  <Link to="/legal/privacy" target="_blank" className="font-medium text-foreground underline underline-offset-4">
-                    Privacy Policy
-                  </Link>{' '}
-                  and{' '}
-                  <Link to="/legal/dpa" target="_blank" className="font-medium text-foreground underline underline-offset-4">
-                    Data Processing Addendum
-                  </Link>.
-                </label>
+            {mode !== "forgot" && !isPartnerMode && (
+              <div role="tablist" aria-label="Account" className="mb-8 grid grid-cols-2 rounded-full border border-border bg-secondary/50 p-1 text-sm">
+                {(["signin", "signup"] as const).map(m => (
+                  <button key={m} type="button" role="tab" aria-selected={mode === m} onClick={() => setMode(m)}
+                    className={`h-10 rounded-full font-medium transition-all ${mode === m ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}>
+                    {m === "signin" ? "Sign in" : "Create account"}
+                  </button>
+                ))}
               </div>
             )}
-            
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-carbon text-carbon-foreground rounded-xl font-medium transition-all hover:bg-carbon/90 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
-              ) : (
-                <>
-                  {mode === "signin" && "Sign in"}
-                  {mode === "signup" && "Create account"}
-                  {mode === "forgot" && "Send reset link"}
-                  <ArrowRight className="w-4 h-4" />
-                </>
+
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+              {mode === "signin" && "Sign in"}
+              {mode === "signup" && (isPartnerMode ? "Become a Partner" : "Create account")}
+              {mode === "forgot" && "Reset password"}
+            </h1>
+            <p className="mt-2 mb-8 text-muted-foreground">
+              {mode === "signin" && "Access your carbon data and saved reports."}
+              {mode === "signup" && (isPartnerMode
+                ? "Register to access the partner marketplace and carbon credit purchasing."
+                : "Start tracking and monetizing your carbon data.")}
+              {mode === "forgot" && "We'll send you a reset link."}
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="auth-email" className={label}>Email address</label>
+                <input id="auth-email" type="email" autoComplete="email" inputMode="email" placeholder="you@business.com"
+                  value={email} onChange={(e) => setEmail(e.target.value)} required className={field} />
+              </div>
+
+              {mode !== "forgot" && (
+                <div>
+                  <div className="flex items-baseline justify-between">
+                    <label htmlFor="auth-password" className={label}>Password</label>
+                    {mode === "signin" && (
+                      <button type="button" onClick={() => setMode("forgot")} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                        Forgot password?
+                      </button>
+                    )}
+                  </div>
+                  <div className="relative">
+                    <input id="auth-password" type={showPassword ? "text" : "password"} autoComplete={mode === "signup" ? "new-password" : "current-password"}
+                      value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} className={`${field} pr-12`} />
+                    <button type="button" onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? "Hide password" : "Show password"}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground">
+                      {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    </button>
+                  </div>
+                  {mode === "signup" && <div className="mt-2"><PasswordStrength password={password} /></div>}
+                </div>
               )}
-            </button>
-          </form>
-          
-          {/* Mode switcher */}
-          <div className="mt-8 pt-6 border-t border-border text-center">
-            {mode === "signin" && (
-              <p className="text-sm text-muted-foreground">
-                Don't have an account?{" "}
-                <button
-                  onClick={() => setMode("signup")}
-                  className="text-foreground font-medium hover:underline"
-                >
-                  Create one
-                </button>
-              </p>
+
+              {mode === "signup" && (
+                <fieldset className="space-y-4 rounded-2xl border border-border p-4 sm:p-5">
+                  <legend className="px-1 text-sm font-medium text-foreground">
+                    {isPartnerMode ? "Your organisation" : "Your business"} <span className="font-normal text-muted-foreground">{isPartnerMode ? "" : "(optional)"}</span>
+                  </legend>
+                  <div>
+                    <label htmlFor="auth-business" className={label}>Business name</label>
+                    <input id="auth-business" type="text" autoComplete="organization" value={businessName} onChange={(e) => setBusinessName(e.target.value)} className={field} />
+                  </div>
+
+                  <div>
+                    <span className={label}>GSTIN, CIN or company PAN</span>
+                    <BusinessIdField onResult={handleBusinessId} />
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="auth-phone" className={label}>Phone</label>
+                      <input id="auth-phone" type="tel" autoComplete="tel" inputMode="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={field} />
+                    </div>
+                    <div>
+                      <label htmlFor="auth-location" className={label}>City, State</label>
+                      <input id="auth-location" type="text" autoComplete="address-level2" value={location}
+                        onChange={(e) => { setLocation(e.target.value); setLocationAutofilled(null); }} className={field} />
+                    </div>
+                  </div>
+
+                  {isPartnerMode && (
+                    <>
+                      <div>
+                        <label htmlFor="auth-orgtype" className={label}>Organization type</label>
+                        <select id="auth-orgtype" value={organizationType} onChange={(e) => setOrganizationType(e.target.value)} required={isPartnerMode}
+                          className={`${field} appearance-none`}>
+                          <option value="">Select organization type</option>
+                          <option value="bank">Bank / Financial Institution</option>
+                          <option value="carbon_buyer">Carbon Credit Buyer</option>
+                          <option value="erp">ERP / Accounting Platform</option>
+                          <option value="climate_finance">Climate Finance Provider</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label htmlFor="auth-website" className={label}>Website (optional)</label>
+                        <input id="auth-website" type="url" autoComplete="url" value={website} onChange={(e) => setWebsite(e.target.value)} className={field} />
+                      </div>
+                    </>
+                  )}
+                </fieldset>
+              )}
+
+              {mode === "signup" && (
+                <div className="flex items-start gap-3 rounded-2xl bg-secondary/50 p-4">
+                  <Checkbox
+                    id="data-consent"
+                    checked={dataConsent}
+                    onCheckedChange={(checked) => setDataConsent(checked === true)}
+                    aria-describedby="data-consent-description"
+                    className="mt-0.5"
+                  />
+                  <label id="data-consent-description" htmlFor="data-consent" className="text-sm leading-relaxed text-muted-foreground">
+                    I consent to Senseible collecting, processing, uploading and parsing my business data. Read the{' '}
+                    <Link to="/legal/privacy" target="_blank" className="font-medium text-foreground underline underline-offset-4">
+                      Privacy Policy
+                    </Link>{' '}
+                    and{' '}
+                    <Link to="/legal/dpa" target="_blank" className="font-medium text-foreground underline underline-offset-4">
+                      Data Processing Addendum
+                    </Link>.
+                  </label>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-6 font-medium text-primary-foreground transition-all hover:-translate-y-px hover:shadow-[0_12px_24px_-14px_hsl(var(--primary))] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
+              >
+                {isLoading ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <>
+                    {mode === "signin" && "Sign in"}
+                    {mode === "signup" && "Create account"}
+                    {mode === "forgot" && "Send reset link"}
+                    <ArrowRight className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            </form>
+
+            {(mode === "forgot" || isPartnerMode) && (
+              <div className="mt-8 border-t border-border pt-6 text-center">
+                {mode === "signup" && (
+                  <p className="text-sm text-muted-foreground">
+                    Already have an account?{" "}
+                    <button onClick={() => setMode("signin")} className="font-medium text-foreground hover:underline">Sign in</button>
+                  </p>
+                )}
+                {mode === "signin" && (
+                  <p className="text-sm text-muted-foreground">
+                    Don't have an account?{" "}
+                    <button onClick={() => setMode("signup")} className="font-medium text-foreground hover:underline">Create one</button>
+                  </p>
+                )}
+                {mode === "forgot" && (
+                  <p className="text-sm text-muted-foreground">
+                    Remember your password?{" "}
+                    <button onClick={() => setMode("signin")} className="font-medium text-foreground hover:underline">Sign in</button>
+                  </p>
+                )}
+              </div>
             )}
-            {mode === "signup" && (
-              <p className="text-sm text-muted-foreground">
-                Already have an account?{" "}
-                <button
-                  onClick={() => setMode("signin")}
-                  className="text-foreground font-medium hover:underline"
-                >
-                  Sign in
-                </button>
-              </p>
-            )}
-            {mode === "forgot" && (
-              <p className="text-sm text-muted-foreground">
-                Remember your password?{" "}
-                <button
-                  onClick={() => setMode("signin")}
-                  className="text-foreground font-medium hover:underline"
-                >
-                  Sign in
-                </button>
-              </p>
-            )}
+
+            {/* Reassurance on phones, where the side panel is hidden */}
+            <ul className="mt-8 space-y-2 text-[13px] text-muted-foreground lg:hidden">
+              {AUTH_ASSURANCES.map(a => (
+                <li key={a.key} className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />{a.short}</li>
+              ))}
+            </ul>
+
+            <p className="mt-8 text-center text-xs text-muted-foreground/70">
+              Your business data stays subject to your account permissions and our published data terms.
+            </p>
           </div>
-          
-          {/* Trust note */}
-          <p className="mt-8 text-xs text-center text-muted-foreground/60">
-            Your business data stays subject to your account permissions and our published data terms.
-          </p>
-        </div>
-      </main>
+        </main>
+
+        {/* What you are signing up for: a real-shaped record and the terms behind it */}
+        <aside className="relative hidden overflow-hidden border-l border-border bg-secondary/40 lg:flex lg:items-center lg:justify-center" aria-label="What you get">
+          <div className="w-full max-w-[460px] px-10 py-24">
+            <p className="text-xs uppercase tracking-[0.14em] text-primary">{mode === "signin" ? "Welcome back" : "Your first record"}</p>
+            <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-tight [text-wrap:balance]">
+              {mode === "signin" ? "Every number, still traced to its bill." : "One bill in. A record a lender can check, out."}
+            </h2>
+
+            <div className="mt-8 rounded-3xl border border-border bg-background p-5 shadow-[0_40px_70px_-50px_hsl(var(--foreground)/.5)] [transform:perspective(1000px)_rotateY(-6deg)_rotateX(3deg)] transition-transform duration-500 hover:[transform:perspective(1000px)_rotateY(0deg)_rotateX(0deg)]">
+              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                <span>Sample record</span>
+                <span className="rounded-full bg-primary/10 px-2 py-0.5 normal-case tracking-normal text-primary">Scope 2</span>
+              </div>
+              <div className="mt-4 text-sm text-muted-foreground">Electricity bill, Mar 2026</div>
+              <div className="mt-1 font-mono text-[15px] text-foreground">4,200 kWh × {INDIA_GRID_FACTOR_KG_PER_KWH.toFixed(3)} kg/kWh</div>
+              <div className="mt-1 text-2xl font-semibold tabular-nums">= {(4200 * INDIA_GRID_FACTOR_KG_PER_KWH).toLocaleString("en-IN", { maximumFractionDigits: 0 })} kg CO₂</div>
+              <dl className="mt-5 grid grid-cols-2 gap-y-2 border-t border-border pt-4 text-[13px]">
+                <dt className="text-muted-foreground">Factor source</dt><dd className="text-right">India grid average</dd>
+                <dt className="text-muted-foreground">Methodology</dt><dd className="text-right font-mono">{METHODOLOGY_VERSION_TAG}</dd>
+                <dt className="text-muted-foreground">Fingerprint</dt><dd className="text-right font-mono">sha256 · 9f2c…e41a</dd>
+              </dl>
+            </div>
+
+            <ul className="mt-10 space-y-5">
+              {AUTH_ASSURANCES.map(a => (
+                <li key={a.key} className="grid grid-cols-[3.5rem_1fr] items-baseline gap-3">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-primary">{a.mark}</span>
+                  <span className="text-[15px] leading-relaxed text-foreground/80">
+                    {a.long}{a.href && <> <Link to={a.href} target="_blank" className="text-primary underline-offset-4 hover:underline">{a.linkText}</Link></>}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 };
