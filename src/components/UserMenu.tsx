@@ -14,6 +14,8 @@ import { Badge } from '@/components/ui/badge';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { useOrganization } from '@/hooks/useOrganization';
+import { planIncludesTeam } from '@/lib/organizationProfile';
 
 interface UserMenuProps {
   email: string;
@@ -40,6 +42,7 @@ const tierLabels: Record<string, string> = {
 export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
   const { tier, isPremium } = usePremiumStatus();
   const { user } = useSession();
+  const { hasOrganization } = useOrganization();
   const [open, setOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -61,7 +64,8 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
     ? businessName.slice(0, 2).toUpperCase()
     : email.slice(0, 2).toUpperCase();
 
-  const canManageTeam = tier === 'pro' || tier === 'scale';
+  // Every plan with more than one seat has a team, and invited members can see the team they joined.
+  const showTeam = planIncludesTeam(tier) || hasOrganization;
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -102,7 +106,7 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
             Settings
           </Link>
         </DropdownMenuItem>
-        {canManageTeam && (
+        {showTeam && (
           <DropdownMenuItem asChild>
             <Link to="/team" className="flex items-center gap-2 cursor-pointer">
               <Users className="w-4 h-4" />

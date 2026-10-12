@@ -55,6 +55,8 @@ import {
   UserMinus
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { OrganizationProfileCard } from '@/components/team/OrganizationProfileCard';
+import { ROLE_DESCRIPTIONS, TEAM_SHARING_NOTE, planIncludesTeam } from '@/lib/organizationProfile';
 
 const ROLE_ICONS: Record<string, typeof Crown> = {
   owner: Crown,
@@ -70,12 +72,6 @@ const ROLE_LABELS: Record<string, string> = {
   viewer: 'Viewer',
 };
 
-const ROLE_DESCRIPTIONS: Record<string, string> = {
-  owner: 'Full access including billing and team management',
-  admin: 'All features except billing. Can manage team members',
-  analyst: 'Upload, verify, reports, and intelligence access',
-  viewer: 'Read-only access to dashboard and reports',
-};
 
 interface TeamMember {
   id: string;
@@ -143,7 +139,7 @@ const Team = () => {
 
   // Members of someone else's organization can see their team even on a free personal plan.
   const isMemberOfOtherOrg = !!organization && organization.owner_id !== user?.id;
-  const showUpgradeWall = !premiumLoading && tier === 'snapshot' && !isMemberOfOtherOrg;
+  const showUpgradeWall = !premiumLoading && !planIncludesTeam(tier) && !isMemberOfOtherOrg;
 
   useEffect(() => {
     if (!sessionLoading && !isAuthenticated) {
@@ -332,8 +328,12 @@ const Team = () => {
     return email.split('@')[0].slice(0, 2).toUpperCase();
   };
 
+  // Only emails the database already holds are shown: the invited address, or your own.
+  // Owners who created the organization have no invited address, so they are labelled by role.
   const memberLabel = (member: TeamMember) =>
-    member.invited_email || (member.user_id === user?.id ? user?.email : null) || 'Organization member';
+    member.invited_email ||
+    (member.user_id === user?.id ? user?.email : null) ||
+    (member.role === 'owner' ? `Owner of ${organization?.name || 'this organisation'}` : `${ROLE_LABELS[member.role] || 'Team'} member`);
 
   if (sessionLoading || orgLoading || premiumLoading) {
     return (
@@ -355,7 +355,7 @@ const Team = () => {
               <Lock className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
               <h2 className="text-xl font-semibold mb-2">Team Management</h2>
               <p className="text-muted-foreground mb-4">
-                Upgrade to a paid plan to invite team members and collaborate.
+                Essential includes 3 seats, Pro 10 and Scale unlimited. Upgrade to invite your team.
               </p>
               <Button asChild>
                 <a href="/pricing">View Plans</a>
@@ -371,7 +371,7 @@ const Team = () => {
     return (
       <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
         <Helmet>
-          <title>Team Management | Senseible</title>
+          <title>Organisation and team | Senseible</title>
         </Helmet>
         <CarbonParticles />
         <Navigation onSignOut={() => navigate('/')} />
@@ -424,8 +424,8 @@ const Team = () => {
   return (
     <div className="relative min-h-screen w-full bg-background overflow-hidden pb-16 md:pb-0">
       <Helmet>
-        <title>Team Management | Senseible</title>
-        <meta name="description" content="Invite team members and manage roles for your organization." />
+        <title>Organisation and team | Senseible</title>
+        <meta name="description" content="Your organisation profile, team members and roles." />
       </Helmet>
       
       <CarbonParticles />
@@ -433,11 +433,11 @@ const Team = () => {
 
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
-        <div className="flex items-start justify-between mb-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-semibold text-foreground mb-2">Team Management</h1>
+            <h1 className="text-2xl font-semibold text-foreground mb-2">Organisation and team</h1>
             <p className="text-muted-foreground">
-              Invite members and manage access to {organization.name || 'your organization'}.
+              {isOrgAdmin ? 'Keep your organisation details current and decide who joins.' : `You are a member of ${organization.name || 'this organisation'}.`}
             </p>
           </div>
           
@@ -537,6 +537,13 @@ const Team = () => {
           </div>
         )}
 
+        <OrganizationProfileCard
+          organization={organization}
+          canEdit={organization.owner_id === user?.id}
+          userId={user?.id}
+          pendingMessage={PENDING_MIGRATION_MESSAGE}
+        />
+
         {/* Team Stats */}
         <Card className="mb-6">
           <CardContent className="pt-6">
@@ -587,16 +594,16 @@ const Team = () => {
                   return (
                     <div 
                       key={member.id}
-                      className="flex items-center justify-between p-3 rounded-lg border bg-card"
+                      className="flex items-center justify-between gap-3 p-3 rounded-lg border bg-card"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3 min-w-0">
                         <Avatar>
                           <AvatarFallback>
                             {getInitials(memberLabel(member))}
                           </AvatarFallback>
                         </Avatar>
-                        <div>
-                          <p className="text-sm font-medium">
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium truncate">
                             {memberLabel(member)}
                             {member.user_id === user?.id && (
                               <span className="ml-1 text-xs text-muted-foreground">(you)</span>
@@ -610,13 +617,13 @@ const Team = () => {
                         </div>
                       </div>
                       {isOrgAdmin && member.role !== 'owner' && member.user_id !== user?.id ? (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 shrink-0">
                           <Select
                             value={member.role}
                             onValueChange={(role) => handleRoleChange(member, role)}
                             disabled={busyMemberId === member.id}
                           >
-                            <SelectTrigger className="h-8 w-[120px]" aria-label="Change role">
+                            <SelectTrigger className="h-8 w-[104px] sm:w-[120px]" aria-label="Change role">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
@@ -703,7 +710,8 @@ const Team = () => {
         {/* Role Reference */}
         <Card className="mt-6">
           <CardHeader>
-            <CardTitle className="text-base">Role Permissions</CardTitle>
+            <CardTitle className="text-base">What each role can do</CardTitle>
+            <CardDescription>{TEAM_SHARING_NOTE}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid gap-3 sm:grid-cols-2">

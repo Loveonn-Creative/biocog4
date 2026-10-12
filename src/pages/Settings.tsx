@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Settings as SettingsIcon, Building2, Globe, Target, Shield, Save, Check, Layers, Lock } from 'lucide-react';
 import { toast } from 'sonner';
 import { getCountryList, getCountryConfig } from '@/lib/countryConfig';
+import { COMPANY_SECTORS } from '@/lib/organizationProfile';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
 import { LanguagePreference } from '@/components/settings/LanguagePreference';
@@ -40,18 +41,7 @@ const DEFAULT_PROFILE: CompanyProfile = {
   hasNetZeroTarget: false,
 };
 
-const SECTORS = [
-  { value: 'manufacturing', label: 'Manufacturing' },
-  { value: 'textile', label: 'Textile & Apparel' },
-  { value: 'food_processing', label: 'Food Processing' },
-  { value: 'chemicals', label: 'Chemicals & Pharma' },
-  { value: 'logistics', label: 'Logistics & Transport' },
-  { value: 'construction', label: 'Construction' },
-  { value: 'services', label: 'Services' },
-  { value: 'retail', label: 'Retail & Trading' },
-  { value: 'agriculture', label: 'Agriculture' },
-  { value: 'other', label: 'Other' },
-];
+const SECTORS = COMPANY_SECTORS;
 
 const Settings = () => {
   const { user, sessionId } = useSession();

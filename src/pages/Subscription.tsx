@@ -10,6 +10,7 @@ import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { planSeatsLabel } from '@/lib/organizationProfile';
 import { 
   Crown, Sparkles, Zap, Building2, ArrowRight, Check, 
   Loader2, FileText, Upload, Brain, Shield
@@ -28,12 +29,12 @@ const normalizeTier = (t: string | null | undefined) => (t === 'basic' ? 'essent
 const tierName = (t: string | null | undefined) =>
   tiers.find((x) => x.id === normalizeTier(t))?.name || t || '';
 
-const usageLimits: Record<string, { invoices: number; reports: number; teamMembers: number }> = {
-  snapshot: { invoices: 10, reports: 1, teamMembers: 1 },
-  essential: { invoices: 100, reports: 5, teamMembers: 3 },
-  basic: { invoices: 100, reports: 5, teamMembers: 3 }, // Legacy mapping
-  pro: { invoices: 1000, reports: 50, teamMembers: 10 },
-  scale: { invoices: 10000, reports: 500, teamMembers: 100 },
+const usageLimits: Record<string, { invoices: number; reports: number }> = {
+  snapshot: { invoices: 10, reports: 1 },
+  essential: { invoices: 100, reports: 5 },
+  basic: { invoices: 100, reports: 5 }, // Legacy mapping
+  pro: { invoices: 1000, reports: 50 },
+  scale: { invoices: 10000, reports: 500 },
 };
 
 const Subscription = () => {
@@ -220,7 +221,7 @@ const Subscription = () => {
                 {[
                   `${limits.invoices} invoice scans/month`,
                   `${limits.reports} ESG reports/month`,
-                  `${limits.teamMembers} team member${limits.teamMembers > 1 ? 's' : ''}`,
+                  planSeatsLabel(tier),
                   tier !== 'snapshot' && 'Verified Climate Score',
                   tier !== 'snapshot' && 'Green Loan Eligibility',
                   isPremium && 'Carbon Monetization',
