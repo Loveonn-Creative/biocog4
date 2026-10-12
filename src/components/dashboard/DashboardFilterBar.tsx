@@ -17,17 +17,19 @@ interface Props {
   matchedCount: number;
   totalCount: number;
   onChange: (next: DashboardFilters) => void;
+  /** What Reset returns to (signed-in users start on verified records). */
+  defaults?: DashboardFilters;
 }
 
 const selectClass =
   'h-9 rounded-md border border-input bg-background px-3 text-sm min-w-[9rem] focus:outline-none focus:ring-2 focus:ring-ring';
 
-export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCount, onChange }: Props) => {
+export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCount, onChange, defaults = DEFAULT_FILTERS }: Props) => {
   const isDefault =
-    filters.range === DEFAULT_FILTERS.range &&
-    filters.scope === DEFAULT_FILTERS.scope &&
-    filters.status === DEFAULT_FILTERS.status &&
-    filters.category === DEFAULT_FILTERS.category;
+    filters.range === defaults.range &&
+    filters.scope === defaults.scope &&
+    filters.status === defaults.status &&
+    filters.category === defaults.category;
 
   return (
     <Card className="mb-6">
@@ -97,7 +99,7 @@ export const DashboardFilterBar = ({ filters, categories, matchedCount, totalCou
             {matchedCount} of {totalCount} records
           </Badge>
           {!isDefault && (
-            <Button variant="ghost" size="sm" onClick={() => onChange(DEFAULT_FILTERS)} className="gap-1">
+            <Button variant="ghost" size="sm" onClick={() => onChange(defaults)} className="gap-1">
               <RotateCcw className="h-3 w-3" />
               Reset
             </Button>

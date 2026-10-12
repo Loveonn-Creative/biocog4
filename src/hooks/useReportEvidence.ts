@@ -5,6 +5,7 @@ import { useWorkspace } from '@/hooks/useWorkspace';
 import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { readOrganizationProfile } from '@/lib/organizationProfile';
 import { useEmissions } from '@/hooks/useEmissions';
+import { grossKg, latestLedgerRowPerEmission, type LedgerRowLike } from '@/lib/emissionLedger';
 import {
   availabilityFromRecords,
   determineApplicableFrameworks,
@@ -86,7 +87,7 @@ export function useReportEvidence() {
       if (!ready) return;
       const ledgerQuery = user?.id ? applyScope(supabase
           .from('compliance_ledger')
-          .select('document_hash, invoice_number, vendor, invoice_date, co2_kg, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
+          .select('id, emission_id, created_at, verified_at, document_hash, invoice_number, vendor, invoice_date, co2_kg, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
           .order('created_at', { ascending: false }), scope) : null;
       const docQuery = user?.id ? applyScope(supabase.from('documents').select('currency').limit(200), scope) : null;
       if (!user?.id || !ledgerQuery || !docQuery) {
@@ -145,13 +146,15 @@ export function useReportEvidence() {
         });
       }
 
+      // One evidence row per emission: the latest ledger row, as the ledger
+      // total and the audit export count them.
       setEvidence(
-        (ledgerRes.data ?? []).map((e) => ({
+        latestLedgerRowPerEmission((ledgerRes.data ?? []) as Array<LedgerRowLike & Record<string, any>>).map((e) => ({
           documentHash: e.document_hash,
           invoiceNumber: e.invoice_number,
           vendor: e.vendor,
           invoiceDate: e.invoice_date,
-          co2Kg: Number(e.co2_kg) || 0,
+          co2Kg: grossKg(e.co2_kg),
           scope: e.scope,
           category: e.emission_category,
           factorSource: e.factor_source,

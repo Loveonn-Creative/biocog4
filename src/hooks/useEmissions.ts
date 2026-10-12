@@ -5,6 +5,7 @@ import { useWorkspace } from './useWorkspace';
 import { applyScope, ownerColumns, realtimeFilter, scopeKey } from '@/lib/workspaceScope';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
+import { grossKg } from '@/lib/emissionLedger';
 export interface Emission {
   id: string;
   document_id: string | null;
@@ -84,14 +85,19 @@ export function useEmissions() {
   // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
   }, [key, ready, user]);
 
-  const calculateSummary = (emissionsData: Emission[]) => {
-    const scope1 = emissionsData.filter(e => e.scope === 1).reduce((sum, e) => sum + e.co2_kg, 0);
-    const scope2 = emissionsData.filter(e => e.scope === 2).reduce((sum, e) => sum + e.co2_kg, 0);
-    const scope3 = emissionsData.filter(e => e.scope === 3).reduce((sum, e) => sum + e.co2_kg, 0);
+  const calculateSummary = (rows: Emission[]) => {
+    // Each emission id once, gross kg only (the rule verify-carbon uses).
+    const byId = new Map<string, Emission>();
+    for (const e of rows) byId.set(e.id, e);
+    const emissionsData = [...byId.values()];
+    const sumScope = (n: number) => emissionsData.filter(e => e.scope === n).reduce((sum, e) => sum + grossKg(e.co2_kg), 0);
+    const scope1 = sumScope(1);
+    const scope2 = sumScope(2);
+    const scope3 = emissionsData.filter(e => e.scope !== 1 && e.scope !== 2).reduce((sum, e) => sum + grossKg(e.co2_kg), 0);
 
     const byCategory: Record<string, number> = {};
     emissionsData.forEach(e => {
-      byCategory[e.category] = (byCategory[e.category] || 0) + e.co2_kg;
+      byCategory[e.category] = (byCategory[e.category] || 0) + grossKg(e.co2_kg);
     });
 
     // Calculate monthly trend (last 6 months)
@@ -107,9 +113,9 @@ export function useEmissions() {
       const date = new Date(e.created_at);
       const key = date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
       if (monthlyData[key]) {
-        if (e.scope === 1) monthlyData[key].scope1 += e.co2_kg;
-        else if (e.scope === 2) monthlyData[key].scope2 += e.co2_kg;
-        else monthlyData[key].scope3 += e.co2_kg;
+        if (e.scope === 1) monthlyData[key].scope1 += grossKg(e.co2_kg);
+        else if (e.scope === 2) monthlyData[key].scope2 += grossKg(e.co2_kg);
+        else monthlyData[key].scope3 += grossKg(e.co2_kg);
       }
     });
 

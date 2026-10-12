@@ -33,6 +33,7 @@ import {
   FRAMEWORKS,
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
+import { grossKg } from '@/lib/emissionLedger';
 import { generateFrameworkPDF, generateFrameworkExcel, type ReportDataset } from '@/lib/frameworkReports';
 import { analyticsEvents } from '@/lib/analytics';
 import { useI18nContext } from '@/lib/i18n/LanguageProvider';
@@ -203,7 +204,7 @@ const Reports = () => {
           if (acc[key].emissionFactor !== e.emission_factor) acc[key].emissionFactor = null;
         }
         // Same summation as the scope totals so categories add up to them.
-        acc[key].co2Kg += Number(e.co2_kg) || 0;
+        acc[key].co2Kg += grossKg(e.co2_kg);
         if (acc[key].activityData !== null && acc[key].activityUnit !== null) {
           acc[key].activityData = (acc[key].activityData ?? 0) + (e.activity_data ?? 0);
         }
