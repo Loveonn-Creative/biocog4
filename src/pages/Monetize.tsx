@@ -21,7 +21,7 @@ import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { toast } from 'sonner';
-import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
+import { CREDIT_VALUE_WITHHELD, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
 interface EligibilityCheck {
@@ -36,7 +36,7 @@ interface MonetizationPathway {
   color: string;
   bg: string;
   title: string;
-  /** Only the carbon pathway has a figure (verified tCO2e x ₹750). Others are not estimated. */
+  /** No pathway has a rupee figure yet; see carbonValue.ts. */
   value: number | null;
   valueLabel?: string;
   desc: string;
@@ -87,10 +87,10 @@ const Monetize = () => {
   }, [activeContext, navigate]);
 
   const verifiedEmissions = getVerifiedEmissions();
-  // Each verified emission counted once; this is the only input to the value.
+  // Each verified emission counted once. Shown as a quantity: emissions are
+  // not credits, so no rupee value is derived from them.
   const verifiedTotalKg = sumVerifiedKgOncePerEmission(verifiedEmissions, (e) => e.id, (e) => e.co2_kg);
   const co2Tons = verifiedTotalKg / 1000;
-  const indicativeValue = indicativeValueFromKg(verifiedTotalKg);
   // Loan savings, scheme benefits and factoring advances are not estimated:
   // the earlier fixed ₹2,500 loan figure, 1.5x "incentive" and 70% advance
   // were not based on any lender, scheme or the user's data.
@@ -216,7 +216,7 @@ const Monetize = () => {
       color: 'text-warning', 
       bg: 'bg-warning/10', 
       title: 'Carbon Credits', 
-      value: indicativeValue,
+      value: null,
       desc: 'Credits must first be issued under a recognised programme.',
       partner: 'IEX Green Market',
       status: (pathwayStatuses['carbon_credit'] as MonetizationPathway['status']) || 'available',
@@ -368,20 +368,17 @@ const Monetize = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <TrendingUp className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium text-muted-foreground">Indicative value</span>
+                      <span className="text-sm font-medium text-muted-foreground">Verified emissions</span>
                     </div>
                     <div className="text-4xl font-mono font-bold text-gradient-success">
-                      {formatCurrency(indicativeValue)}
+                      {co2Tons.toFixed(2)} tCO₂e
                     </div>
+                    <p className="text-xs text-muted-foreground mt-1 max-w-md">{CREDIT_VALUE_WITHHELD}</p>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-success" />
                       <span>{verified.length} verified emission records</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Shield className="h-4 w-4 text-primary" />
-                      <span>{co2Tons.toFixed(2)} verified tCO₂e</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Shield className="h-4 w-4 text-warning" />
@@ -436,7 +433,7 @@ const Monetize = () => {
                               <p className="text-xs text-muted-foreground max-w-[12rem]">{p.valueLabel}</p>
                             </>
                           ) : (
-                            <p className="text-sm text-muted-foreground">Not estimated</p>
+                            <p className="text-sm text-muted-foreground max-w-[12rem]">{p.type === 'carbon_credit' ? 'Withheld until reductions are verified' : 'Not estimated'}</p>
                           )}
                         </div>
                         {p.status === 'available' ? (

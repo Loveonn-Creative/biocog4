@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { indicativeValueFromKg, INDICATIVE_VALUE_LABEL, INDICATIVE_RATE_INR_PER_T } from "../_shared/carbonValue.ts";
+import { creditValuation, CREDIT_VALUE_WITHHELD } from "../_shared/carbonValue.ts";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 
@@ -113,13 +113,7 @@ interface VerificationResult {
     factorVersion: string;
     gridFactor?: number;
   };
-  indicativeValue: {
-    verifiedTCO2e: number;
-    indicativeValueInr: number;
-    rateInrPerT: number;
-    label: string;
-    creditsIssued: number;
-  };
+  indicativeValue: CreditValueField;
   complianceAssessment: 'not_assessed';
 }
 
@@ -134,15 +128,32 @@ function replayAnalysis(analysis: Record<string, any> | null | undefined) {
   };
 }
 
-function replayIndicativeValue(previous: { verification_status: string | null; total_co2_kg: number | null }) {
-  const verifiedKg = previous.verification_status === 'verified' ? Number(previous.total_co2_kg) || 0 : 0;
+// Field names kept for older clients. A credit value needs verified
+// reductions and a dated, sourced price; neither exists, so the rupee value
+// is null and the reason says why (see _shared/carbonValue.ts).
+interface CreditValueField {
+  verifiedTCO2e: number;
+  indicativeValueInr: number | null;
+  rateInrPerT: number | null;
+  label: string;
+  withheldReason: string | null;
+  creditsIssued: number;
+}
+function creditValueField(verifiedKg: number, verifiedReductionsKg: number): CreditValueField {
+  const v = creditValuation(verifiedReductionsKg);
   return {
     verifiedTCO2e: verifiedKg / 1000,
-    indicativeValueInr: indicativeValueFromKg(verifiedKg),
-    rateInrPerT: INDICATIVE_RATE_INR_PER_T,
-    label: INDICATIVE_VALUE_LABEL,
+    indicativeValueInr: v.available ? v.valueInr : null,
+    rateInrPerT: v.available ? v.price.inrPerT : null,
+    label: v.available ? `Value of verified reductions at ₹${v.price.inrPerT}/t (${v.price.source}, ${v.price.asOf})` : CREDIT_VALUE_WITHHELD,
+    withheldReason: v.available ? null : v.reason,
     creditsIssued: 0,
   };
+}
+
+function replayIndicativeValue(previous: { verification_status: string | null; total_co2_kg: number | null; ai_analysis?: { verifiedReductions?: number } | null }) {
+  const verifiedKg = previous.verification_status === 'verified' ? Number(previous.total_co2_kg) || 0 : 0;
+  return creditValueField(verifiedKg, Number(previous.ai_analysis?.verifiedReductions) || 0);
 }
 
 // Validation functions
@@ -502,21 +513,13 @@ serve(async (req) => {
     const cbamCompliant = false;
     const complianceAssessment = 'not_assessed' as const;
 
-    // Indicative value: verified tCO2e x the single reference rate. Zero
-    // unless this verification passed. Not an issued credit.
-    // Only records that passed every check count as verified.
+    // Credit value: withheld unless verified reductions and a dated price
+    // exist. Only records that passed every check count as verified.
     const verifiedKg = status === 'verified'
       ? emissions.filter((e) => validationResults.get(e.id)?.valid !== false).reduce((sum, e) => sum + grossKg(e), 0)
       : 0;
     const verifiedTCO2e = verifiedKg / 1000;
-    const indicativeValueInr = indicativeValueFromKg(verifiedKg);
-    const indicativeValue = {
-      verifiedTCO2e,
-      indicativeValueInr,
-      rateInrPerT: INDICATIVE_RATE_INR_PER_T,
-      label: INDICATIVE_VALUE_LABEL,
-      creditsIssued: 0,
-    };
+    const indicativeValue = creditValueField(verifiedKg, verifiedReductions);
 
     // Use AI for additional analysis and recommendations
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');

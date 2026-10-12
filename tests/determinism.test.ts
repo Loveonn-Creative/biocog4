@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { calculateEmissions, totalsFor } from '../supabase/functions/_shared/emissionFactors';
-import { sumVerifiedKgOncePerEmission, indicativeValueFromKg } from '../src/lib/carbonValue';
+import { sumVerifiedKgOncePerEmission } from '../src/lib/carbonValue';
 import { groupByInvoice } from '../src/lib/bulkVerify';
 
 // "One invoice gets the same maths-based emission output no matter how many
@@ -35,7 +35,6 @@ describe('same invoice, same numbers', () => {
     ];
     const total = sumVerifiedKgOncePerEmission(rows, r => r.id, r => r.kg, r => r.v);
     expect(total).toBeCloseTo(3303.6, 6);
-    expect(indicativeValueFromKg(total)).toBe(indicativeValueFromKg(3303.6));
   });
   test('bulk verify sends the same id set for an invoice every time', () => {
     const a = groupByInvoice([{ id: 'b', document_id: 'd' }, { id: 'a', document_id: 'd' }]);

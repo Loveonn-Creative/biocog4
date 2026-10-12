@@ -58,7 +58,6 @@ const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
 const Industries = lazy(() => import("./pages/Industries"));
 const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
-const CarbonMarketplace = lazy(() => import("./pages/CarbonMarketplace"));
 const CMSAdmin = lazy(() => import("./pages/CMSAdmin"));
 const Billing = lazy(() => import("./pages/Billing"));
 const Team = lazy(() => import("./pages/Team"));

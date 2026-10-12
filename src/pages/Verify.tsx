@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { verifyListState } from '@/lib/emissionLedger';
-import { indicativeValueFromKg } from '@/lib/carbonValue';
+import { CREDIT_VALUE_WITHHELD } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSession } from '@/hooks/useSession';
@@ -131,9 +131,6 @@ const Verify = () => {
     return () => clearTimeout(t);
   }, [awaitingRows, refetchAttempts, refetch]);
 
-  const indicativeValue = verificationResult?.status === 'verified'
-    ? indicativeValueFromKg(verificationResult.totalCO2Kg)
-    : 0;
 
   useEffect(() => {
     if (activeContext?.context_type === 'partner') {
@@ -229,7 +226,6 @@ const Verify = () => {
     }
   };
 
-  const formatINR = (n: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n);
 
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
@@ -650,15 +646,15 @@ const Verify = () => {
                   </div>
                 )}
 
-                {/* Indicative value from verified tonnes, using the shared formula */}
-                {verificationResult.status === 'verified' && indicativeValue > 0 && (
+                {/* Next step for verified data. No rupee value: emissions are not credits. */}
+                {verificationResult.status === 'verified' && verificationResult.totalCO2Kg > 0 && (
                   <div className="p-4 rounded-xl bg-gradient-to-r from-primary/5 to-success/5 border border-primary/20 mb-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Coins className="h-5 w-5 text-primary" />
-                      <h4 className="font-semibold">Indicative value</h4>
+                      <h4 className="font-semibold">Verified data ready</h4>
                     </div>
-                    <p className="text-2xl font-mono font-bold text-foreground">{formatINR(indicativeValue)}</p>
-                    <div className="mb-4" />
+                    <p className="text-2xl font-mono font-bold text-foreground">{(verificationResult.totalCO2Kg / 1000).toFixed(3)} tCO₂e</p>
+                    <p className="text-sm text-muted-foreground mt-1 mb-4">{CREDIT_VALUE_WITHHELD}</p>
                     <Button 
                       onClick={() => navigate('/monetize')}
                       className="w-full"

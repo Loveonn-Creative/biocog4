@@ -28,7 +28,7 @@ import {
   getTotalImpact,
   IntelligenceRecommendation 
 } from '@/lib/intelligenceEngine';
-import { indicativeValueFromKg, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
+import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
 interface VerificationRecord {
@@ -65,10 +65,10 @@ const MRVDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const verifiedEmissions = getVerifiedEmissions();
-  // Value comes from verified emission rows, each id counted once, not from
-  // summing verification records (which can overlap the same emissions).
+  // Verified emission rows, each id counted once, not a sum of verification
+  // records (which can overlap the same emissions). No rupee value: emissions
+  // are not credits (see carbonValue.ts).
   const verifiedKg = sumVerifiedKgOncePerEmission(verifiedEmissions, (e) => e.id, (e) => e.co2_kg);
-  const indicativeValue = indicativeValueFromKg(verifiedKg);
 
   // Route protection: redirect partners to their dashboard
   useEffect(() => {
@@ -357,7 +357,7 @@ const MRVDashboard = () => {
                     {aggregatedMetrics.qualityGrade}
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
-                    {formatCurrency(indicativeValue)} from {(verifiedKg / 1000).toFixed(3)} verified tCO₂e
+                    From {(verifiedKg / 1000).toFixed(3)} verified tCO₂e
                   </p>
                 </CardContent>
               </Card>
@@ -702,8 +702,8 @@ const MRVDashboard = () => {
                       </div>
                       <div className="pt-3 border-t border-border/50">
                         <div className="flex justify-between text-sm">
-                          <span className="text-muted-foreground">Indicative value</span>
-                          <span className="font-mono font-bold text-primary">{formatCurrency(indicativeValue)}</span>
+                          <span className="text-muted-foreground">Credit value</span>
+                          <span className="text-xs text-muted-foreground text-right max-w-[12rem]">Withheld until reductions are verified</span>
                         </div>
                       </div>
                     </div>
