@@ -54,12 +54,17 @@ export interface EmissionFactor {
 }
 
 export interface MappingRule {
-  entity_id: string;
+  id: string;
+  /** null = default rule for every entity; an entity rule always wins over a default. */
+  entity_id: string | null;
   activity_type: WaterActivity;
   scope: 1 | 2 | 3;
   scope3_category: number | null;
   valid_from: string;
   valid_to: string | null;
+  status: 'APPROVED' | 'DRAFT' | 'RETIRED';
+  /** Methodological basis, e.g. the GHG Protocol chapter the mapping follows. */
+  basis: string;
 }
 
 export interface TraceEntry { factor_id: string; version: number; accepted: boolean; reason: string }
@@ -75,7 +80,7 @@ export interface Resolution {
 export interface EmissionResultDraft {
   water_bill_key: string;        // idempotency key of the bill
   allocation_period: string;     // reporting period label, e.g. "FY2026" or "2026"
-  allocated_volume_m3: number;
+  allocated_volume_m3: number | null; // null when the volume could not be read
   allocation_method: 'WHOLE_PERIOD' | 'PRO_RATA_DAYS';
   status: ResultStatus;
   emissions_kgco2e: number | null;
@@ -94,6 +99,7 @@ export interface EmissionResultDraft {
   scope: number | null;
   scope3_category: number | null;
   mapping_status: MappingStatus;
+  mapping_rule_id: string | null;
   reasons: ReasonCode[];
   calc_run_id: string;
 }
