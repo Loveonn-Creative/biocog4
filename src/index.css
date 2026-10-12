@@ -492,3 +492,32 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .pr-fit, .pr-tick, .pr-token[data-on="true"], .pr-receipt-line { animation: none; }
 }
 
+
+/* Trust: seals, scan, track, fan-out, gauge, shield, lock. Rest = finished frame. */
+.tr-path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.1s cubic-bezier(.6,0,.2,1); }
+.tr-draw-on { stroke-dashoffset: 0 !important; }
+.tr-chain path { fill: none; stroke: hsl(var(--primary) / .45); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s ease; }
+.tr-seal { opacity: 0; transform: scale(1.4) rotate(-14deg); }
+.tr-seal path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.tr-seal-on { animation: tr-press .5s cubic-bezier(.3,1.6,.5,1) forwards; }
+.tr-seal-on path { animation: di-paint .5s ease forwards; }
+.tr-scan .tr-glass { position: absolute; top: -2px; left: -6px; opacity: 0; pointer-events: none; }
+.tr-scan-on .tr-glass { animation: tr-sweep 1.6s cubic-bezier(.5,0,.3,1) .2s forwards; }
+.tr-doc { position: absolute; top: 9px; left: 0; width: 18px; height: 22px; border-radius: 3px; background: hsl(var(--card)); border: 2px solid hsl(var(--primary)); opacity: 0; }
+.tr-doc::after { content: ""; position: absolute; inset: 4px 3px auto 3px; height: 2px; background: hsl(var(--primary) / .5); box-shadow: 0 4px 0 hsl(var(--primary) / .5), 0 8px 0 hsl(var(--primary) / .5); }
+.tr-doc-on { animation: tr-travel 2.6s cubic-bezier(.45,0,.25,1) .6s forwards; }
+.tr-needle { transform: rotate(0deg); transition: transform 1.6s cubic-bezier(.3,1.25,.5,1) .2s; }
+.tr-needle-on { transform: rotate(158deg); }
+.tr-shackle { transform: translateY(-9px); transition: transform .45s cubic-bezier(.3,1.8,.5,1) .3s; }
+.tr-shackle-on { transform: none; }
+@keyframes tr-press { 0% { opacity: 0; transform: scale(1.4) rotate(-14deg); } 100% { opacity: 1; transform: none; } }
+@keyframes tr-sweep { 0% { opacity: 0; left: -6px; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { opacity: 0; left: calc(100% - 12px); } }
+@keyframes tr-travel { 0% { opacity: 0; left: 0; } 8% { opacity: 1; } 100% { opacity: 1; left: calc(100% - 18px); } }
+@media (prefers-reduced-motion: reduce) {
+  .tr-path, .tr-chain path { transition: none; stroke-dashoffset: 0; }
+  .tr-seal, .tr-seal-on { animation: none; opacity: 1; transform: none; }
+  .tr-seal path, .tr-seal-on path { animation: none; stroke-dashoffset: 0; }
+  .tr-scan-on .tr-glass { animation: none; }
+  .tr-doc-on { animation: none; opacity: 1; left: calc(100% - 18px); }
+  .tr-needle, .tr-shackle { transition: none; }
+}

@@ -21,4 +21,5 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 
 | Page | PR | Started from |
 |------|----|--------------|
-| (filled in as each redesign merges) | | |
+| /pricing | [Loveonn-Creative/biocog4#36](https://github.com/Loveonn-Creative/biocog4/pull/36) | `e8b67c3` |
+| /trust | "Trust redesign: motion and doodles, every word kept" | `5344c62` |
