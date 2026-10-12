@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useSession } from './useSession';
 import { supabase } from '@/integrations/supabase/client';
+import { PLAN_INVOICE_SCANS_PER_MONTH } from '../../supabase/functions/_shared/planLimits';
 
 export type PremiumTier = 'snapshot' | 'essential' | 'pro' | 'scale';
 
@@ -48,7 +49,7 @@ export interface PremiumStatus {
   isPremium: boolean;
   isAuthenticated: boolean;
   features: PremiumFeatures;
-  invoicesUsed: number;
+  /** New invoice reads per month; the server enforces the same figure (planLimits.ts). */
   invoiceLimit: number;
   expiresAt: Date | null;
   isLoading: boolean;
@@ -60,7 +61,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
   snapshot: {
     basicEmissionSnapshot: true,
     basicEsgScore: true,
-    invoiceScansPerMonth: 10,
+    invoiceScansPerMonth: PLAN_INVOICE_SCANS_PER_MONTH.snapshot,
     dataBackupDays: 90,
     voiceAiLite: true,
     helpCenterSupport: true,
@@ -91,7 +92,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
   essential: {
     basicEmissionSnapshot: true,
     basicEsgScore: true,
-    invoiceScansPerMonth: 100,
+    invoiceScansPerMonth: PLAN_INVOICE_SCANS_PER_MONTH.essential,
     dataBackupDays: 365,
     voiceAiLite: true,
     helpCenterSupport: true,
@@ -122,7 +123,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
   pro: {
     basicEmissionSnapshot: true,
     basicEsgScore: true,
-    invoiceScansPerMonth: 500,
+    invoiceScansPerMonth: PLAN_INVOICE_SCANS_PER_MONTH.pro,
     dataBackupDays: 730,
     voiceAiLite: true,
     helpCenterSupport: true,
@@ -153,7 +154,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
   scale: {
     basicEmissionSnapshot: true,
     basicEsgScore: true,
-    invoiceScansPerMonth: 10000,
+    invoiceScansPerMonth: PLAN_INVOICE_SCANS_PER_MONTH.scale,
     dataBackupDays: 1825,
     voiceAiLite: true,
     helpCenterSupport: true,
@@ -195,7 +196,6 @@ export const usePremiumStatus = (): PremiumStatus => {
   const { user } = useSession();
   const [tier, setTier] = useState<PremiumTier>('snapshot');
   const [expiresAt, setExpiresAt] = useState<Date | null>(null);
-  const [invoicesUsed, setInvoicesUsed] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchTierFromDatabase = useCallback(async () => {
@@ -272,10 +272,7 @@ export const usePremiumStatus = (): PremiumStatus => {
 
   useEffect(() => {
     fetchTierFromDatabase();
-    
-    // Track invoices used from localStorage
-    const usedCount = parseInt(localStorage.getItem('senseible_invoices_used') || '0', 10);
-    setInvoicesUsed(usedCount);
+
   }, [fetchTierFromDatabase]);
 
   // Real-time subscription to profiles and subscriptions tables
@@ -329,7 +326,6 @@ export const usePremiumStatus = (): PremiumStatus => {
     isPremium,
     isAuthenticated: !!user,
     features,
-    invoicesUsed,
     invoiceLimit: features.invoiceScansPerMonth,
     expiresAt,
     isLoading,

@@ -11,6 +11,7 @@ import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { planSeatsLabel } from '@/lib/organizationProfile';
+import { monthStartIst, normalizePlanTier, PLAN_INVOICE_SCANS_PER_MONTH, type PlanTier } from '../../supabase/functions/_shared/planLimits';
 import { 
   Crown, Sparkles, Zap, Building2, ArrowRight, Check, 
   Loader2, FileText, Upload, Brain, Shield
@@ -29,12 +30,11 @@ const normalizeTier = (t: string | null | undefined) => (t === 'basic' ? 'essent
 const tierName = (t: string | null | undefined) =>
   tiers.find((x) => x.id === normalizeTier(t))?.name || t || '';
 
-const usageLimits: Record<string, { invoices: number; reports: number }> = {
-  snapshot: { invoices: 10, reports: 1 },
-  essential: { invoices: 100, reports: 5 },
-  basic: { invoices: 100, reports: 5 }, // Legacy mapping
-  pro: { invoices: 1000, reports: 50 },
-  scale: { invoices: 10000, reports: 500 },
+// Invoice reads come from the one allowance table the server enforces.
+const reportLimits: Record<PlanTier, number> = { snapshot: 1, essential: 5, pro: 50, scale: 500 };
+const usageLimits = (t: string) => {
+  const plan = normalizePlanTier(t);
+  return { invoices: PLAN_INVOICE_SCANS_PER_MONTH[plan], reports: reportLimits[plan] };
 };
 
 const Subscription = () => {
@@ -59,17 +59,19 @@ const Subscription = () => {
       if (!user?.id) return;
 
       try {
-        // Get document count
+        // This month's usage (India time), counted the way the server counts it.
+        const since = monthStartIst();
         const { count: docCount } = await supabase
           .from('documents')
           .select('*', { count: 'exact', head: true })
-          .eq('user_id', user.id);
+          .eq('user_id', user.id)
+          .gte('created_at', since);
 
-        // Get report count
         const { count: reportCount } = await supabase
           .from('reports')
           .select('*', { count: 'exact', head: true })
-          .eq('user_id', user.id);
+          .eq('user_id', user.id)
+          .gte('created_at', since);
 
         // Get subscription history
         const { data: subs } = await supabase
@@ -93,7 +95,7 @@ const Subscription = () => {
     fetchData();
   }, [user?.id]);
 
-  const limits = usageLimits[tier];
+  const limits = usageLimits(tier);
   const currentTier = tiers.find(t => t.id === tier) || tiers[0];
   const TierIcon = currentTier.icon;
 

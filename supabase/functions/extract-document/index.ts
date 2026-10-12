@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
+import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst } from '../_shared/planLimits.ts';
 import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
@@ -473,6 +474,7 @@ serve(async (req) => {
     let userId: string | null = null;
     let isAuthenticated = false;
     let userTier = 'guest';
+    let scanLimit: number | null = null; // signed-in users only
     const authHeader = req.headers.get('Authorization');
     const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
     const isGuestKey = !bearer || bearer === anonKey || bearer === req.headers.get('apikey') || jwtRole(bearer) === 'anon';
@@ -506,11 +508,13 @@ serve(async (req) => {
         const supabase = authClient;
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_tier')
+          .select('subscription_tier, subscription_expires_at')
           .eq('id', userId)
           .single();
 
-        userTier = profile?.subscription_tier || 'snapshot';
+        // The plan in force (an expired paid plan reads as Snapshot).
+        userTier = effectivePlanTier(profile?.subscription_tier, profile?.subscription_expires_at);
+        scanLimit = invoiceScanLimit(profile?.subscription_tier, profile?.subscription_expires_at);
 
         // ============= DUPLICATE DETECTION FOR AUTHENTICATED USERS =============
         // In an organisation the same invoice counts once, whichever member uploads it.
@@ -558,6 +562,26 @@ serve(async (req) => {
         }
       } catch (lookupError) {
         console.error('Profile or duplicate lookup failed:', lookupError);
+      }
+
+      // ============= MONTHLY PLAN ALLOWANCE =============
+      // New reads this calendar month (India time), counted from the
+      // invoices this user stored. Stored invoices returned above are free.
+      // A failed count does not block the upload (quota, not access control).
+      if (scanLimit !== null) {
+        const { count, error: countError } = await authClient
+          .from('documents')
+          .select('id', { count: 'exact', head: true })
+          .eq('user_id', userId)
+          .gte('created_at', monthStartIst());
+        if (countError) {
+          console.error('Monthly allowance count failed:', countError.code);
+        } else if ((count ?? 0) >= scanLimit) {
+          return new Response(
+            JSON.stringify({ error: monthlyLimitMessage(scanLimit), code: 'monthly_limit', limit: scanLimit, used: count, tier: userTier }),
+            { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
       }
     }
 
