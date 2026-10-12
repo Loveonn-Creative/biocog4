@@ -105,6 +105,14 @@ const Platform = () => {
               <p className="text-lg md:text-xl text-muted-foreground max-w-[34rem] mx-auto lg:mx-0 leading-relaxed">
                 {t("platform.hero.sub", "Senseible turns any business document into a verified emission record, one that a lender can underwrite, a regulator can audit, and a buyer can rely on.")}
               </p>
+              <div className="mt-8 flex justify-center lg:justify-start">
+                <Button asChild size="lg" className="group rounded-full px-6">
+                  <Link to="/">
+                    {t("platform.hero.cta", "Upload a bill")}
+                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
             </div>
             <div className="min-h-[280px] sm:min-h-[360px]">
               <Suspense fallback={<div className="h-[280px] sm:h-[360px]" aria-hidden="true" />}>

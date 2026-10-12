@@ -96,6 +96,8 @@
     
     /* Primary - Deep forest green (nature, sustainability) */
     --primary: 152 45% 22%;
+    /* Accent on inverted strips (bg-foreground): readable green for that surface */
+    --strip-accent: 152 50% 58%;
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Soft atmospheric */
@@ -162,6 +164,7 @@
     --popover-foreground: 0 0% 95%;
     
     --primary: 152 50% 45%;
+    --strip-accent: 152 45% 24%;
     --primary-foreground: 0 0% 100%;
     
     --secondary: 0 0% 12%;
