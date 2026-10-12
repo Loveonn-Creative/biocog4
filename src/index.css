@@ -532,3 +532,14 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .tr3-step, .tr3-stamp, .tr3-point { animation: none; }
   .tr3-link path { animation: none; stroke-dashoffset: 0; }
 }
+
+/* Solar signal: panels light up, the sun walks, stamps press, rows slide in. */
+.sol-panel { fill: hsl(var(--muted)); stroke: hsl(var(--foreground) / .35); transition: fill .5s ease; }
+.sol-panel-on { fill: #1f4e79; animation: sol-glint .9s ease; }
+.sol-sun { transition: transform .9s cubic-bezier(.3,1.2,.5,1); }
+.sol-stamp { animation: tr-press .4s cubic-bezier(.3,1.6,.5,1); }
+.sol-row { animation: tr3-rise .3s ease both; }
+.sol-ready { animation: sol-glow 1.2s ease; }
+@keyframes sol-glint { 0% { fill: #9cc3e6; } 100% { fill: #1f4e79; } }
+@keyframes sol-glow { 0% { box-shadow: 0 0 0 0 hsl(var(--primary) / .45); } 100% { box-shadow: 0 0 0 18px hsl(var(--primary) / 0); } }
+@media (prefers-reduced-motion: reduce) { .sol-panel, .sol-sun { transition: none; } .sol-panel-on, .sol-stamp, .sol-row, .sol-ready { animation: none; } }

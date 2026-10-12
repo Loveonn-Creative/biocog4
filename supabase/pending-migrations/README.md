@@ -126,3 +126,24 @@ Tested on local Postgres 16: `tests/20261016100000_invoice_source_files.test.sql
 
 Roll back with `rollback/20261016100000_invoice_source_files.rollback.sql`: restores the four policies exactly and drops the readiness function, so storing stops. Stored files are kept; delete them from the bucket separately if wanted.
 
+## 20261017100000_solar_signals.sql (rooftop solar reduction signal)
+
+No dependency on the other pending migrations. Adds four tables; changes no existing table.
+
+- **`grid_emission_factors`**: combined-margin grid factors, each with a required `source` and `version`. Readable by everyone; written only from the SQL editor. No factor value ships in code or in this migration.
+- **`solar_assets`, `solar_readings`**: a signed-in user's rooftop system and its metered monthly generation. Owners can read their own rows; all writes go through the `solar-signal` edge function (service role), which validates the input.
+- **`credit_signals`**: append-only log of each computed signal, with the method id and version, inputs hash, conservative and central tCO2e (null while withheld). Owners read their own; no update or delete.
+- **Method** (`supabase/functions/_shared/solarSignal.ts`, `SENSEIBLE-SOLAR-01` v0.1): ISO 14064-2 project accounting with CDM AMS-I.F arithmetic (metered generation × combined-margin factor from the CDM grid emission factor tool). Gaps are never filled, readings above a 30% capacity factor are excluded, and the conservative figure deducts the meter accuracy class. It is a signal for the offline credit process, not a credit.
+
+**After applying, add the factor** from the latest CEA CO2 Baseline Database (combined margin, India grid), copying the value and version exactly from the published document:
+
+```sql
+INSERT INTO public.grid_emission_factors (region, kind, kg_per_kwh, source, version)
+VALUES ('IN', 'combined_margin', <value from CEA>, 'CEA CO2 Baseline Database', '<version, e.g. Version 20.0>');
+```
+
+Until a factor exists, /solar-signal shows every check and the kWh, but tonnes stay withheld. Before the migration, saving shows "not switched on" and the page still previews.
+
+Tested on local Postgres 16: `tests/20261017100000_solar_signals.test.sql` (10 checks: owners read only their own rows, browsers cannot write any table, signals cannot be updated or deleted, factors need a source and version). The real `solar-signal` handler was typechecked; the arithmetic is covered by `tests/solar-signal.test.ts`.
+
+Roll back with `rollback/20261017100000_solar_signals.rollback.sql`. It refuses while any solar data exists unless run with `SET LOCAL solar.rollback_confirm = 'drop solar data';` in the same transaction, then drops the four tables.
