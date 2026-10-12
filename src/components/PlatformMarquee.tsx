@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 
 const pairs = [
@@ -11,46 +10,36 @@ const pairs = [
 ];
 
 /**
- * What the platform changes, as before → after pairs. Each pair resolves once
- * as it scrolls into view (the "before" state turns into the "after" state),
- * instead of looping forever.
+ * What the platform changes, as before → after pairs on one moving line.
+ * Pauses while hovered or focused so a pair can be read; the copy used for the
+ * seamless loop is hidden from screen readers; with reduced motion the line
+ * stays still and scrolls by hand.
  */
 export const PlatformMarquee = () => {
   const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (typeof IntersectionObserver === "undefined") { setShown(true); return; }
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } }, { threshold: 0.3 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
+  const row = (copy: boolean) => (
+    <ul aria-hidden={copy || undefined} className="flex shrink-0 items-center gap-12 pr-12">
+      {pairs.map((p) => (
+        <li key={p.lk} className="flex items-center gap-2">
+          <span className="text-background/70">{t(`platform.${p.lk}`, p.left)}</span>
+          <span aria-hidden="true" className="text-background/40">→</span>
+          <span className="font-medium text-[hsl(var(--strip-accent))]">{t(`platform.${p.rk}`, p.right)}</span>
+        </li>
+      ))}
+    </ul>
+  );
   return (
-    <div ref={ref} className="bg-foreground text-background border-y border-foreground/20">
-      <ul className="container max-w-6xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-3 font-mono text-xs sm:text-sm tracking-tight">
-        {pairs.map((p, i) => (
-          <li key={p.lk} className="flex items-center gap-2 min-w-0">
-            <span className="text-background/60 truncate">{t(`platform.${p.lk}`, p.left)}</span>
-            <span
-              aria-hidden="true"
-              className="text-background/40 transition-transform duration-500 motion-reduce:transition-none"
-              style={{ transform: shown ? "translateX(0)" : "translateX(-6px)", transitionDelay: `${i * 90}ms` }}
-            >
-              →
-            </span>
-            <span
-              className="text-primary font-medium transition-all duration-500 motion-reduce:transition-none"
-              style={{ opacity: shown ? 1 : 0.15, filter: shown ? "none" : "blur(2px)", transitionDelay: `${150 + i * 90}ms` }}
-            >
-              {t(`platform.${p.rk}`, p.right)}
-            </span>
-          </li>
-        ))}
-      </ul>
+    <div
+      className="group bg-foreground text-background border-y border-foreground/20 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--strip-accent))]"
+      tabIndex={0}
+      aria-label={t("platform.marquee.label", "What the platform changes")}
+    >
+      <div className="overflow-hidden motion-reduce:overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <div className="flex w-max whitespace-nowrap py-4 font-mono text-xs sm:text-sm tracking-tight animate-marquee group-hover:[animation-play-state:paused] group-focus-within:[animation-play-state:paused] motion-reduce:animate-none">
+        {row(false)}
+        <span className="contents motion-reduce:hidden">{row(true)}</span>
+      </div>
+      </div>
     </div>
   );
 };

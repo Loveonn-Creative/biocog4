@@ -67,10 +67,12 @@ Recomputes `co2_kg` and `emission_factor` for stored emissions whose factor chan
 
 Five SELECT queries that list records whose owner does not match the record they derive from (emissions vs documents, ledger vs emissions), documents that existed before their first emission (re-assigned), files held by several accounts, and recent guest-session merges. It changes nothing. Use it to find invoices that reached the wrong account before the ownership fixes; owners can then remove wrongly attached unverified invoices from History, and any verified ones are reviewed by hand.
 
-## 20261012120000_water_mrv.sql (water-bill emissions, switch OFF)
+## 20261012120000_water_mrv.sql (moved to supabase/migrations/ on approval, switch OFF)
 
 Purely additive: creates ten new `water_*` tables, four guard triggers and three `service_role`-only functions (`water_persist_run`, `water_apply_recalc`, `water_transition_flag`). No existing table, policy, function or row is touched. The switch row `water_mrv_settings.enabled` is created as `false` and both write functions refuse to run until it is turned on. The factor and mapping tables ship empty: nothing is calculated until a factor steward loads sourced factors and a second person approves them. Results are append-only and versioned; audit events are immutable; NULL emissions without a factor are enforced by a CHECK. Clients can read only their own entity's rows. Methodology, sources and open decisions: `docs/methodology/water-mrv.md`.
 
 Tested locally on Postgres 16: `supabase/pending-migrations/tests/run.sh 20261012120000_water_mrv` (run as a user that can create databases) applies it, runs `tests/20261012120000_water_mrv.test.sql`, rolls back and checks the catalog and an existing table match the starting snapshot.
 
 Roll back with `rollback/20261012120000_water_mrv.rollback.sql`. It drops only the `water_*` objects. While any water bill exists it refuses unless `SET LOCAL water.rollback_confirm = 'drop water data';` is run in the same transaction (export the tables first if the data is needed).
+
+Rollout helpers: `water_load_factors.template.sql` (empty template, no values), `water_shadow_compare.sql` (read-only comparison), `scripts/water-backfill.ts` (dry run by default). Steps in `docs/methodology/water-mrv.md` §12.

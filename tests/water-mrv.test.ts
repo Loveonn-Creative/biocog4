@@ -342,7 +342,7 @@ describe('static guards', () => {
 });
 
 describe('contract with the pending migration', () => {
-  const sql = readFileSync('supabase/pending-migrations/20261012120000_water_mrv.sql', 'utf8');
+  const sql = readFileSync('supabase/migrations/20261012120000_water_mrv.sql', 'utf8');
   test('every result field the SQL reads is produced by the pipeline', async () => {
     const r = (await runBill(BILL(), SET())).results[0] as unknown as Record<string, unknown>;
     const read = [...sql.matchAll(/\br->>'([a-z0-9_]+)'/g)].map(m => m[1]).filter(k => k !== 'water_bill_id' && k !== 'supersedes_id');

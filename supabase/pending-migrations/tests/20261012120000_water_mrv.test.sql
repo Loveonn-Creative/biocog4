@@ -74,6 +74,18 @@ DO $$ DECLARE r jsonb; BEGIN
   IF (SELECT count(*) FROM public.water_audit_event WHERE action='INGEST') <> 2 THEN RAISE EXCEPTION 'two ingest audits'; END IF;
 END $$;
 
+-- 3b. Shadow ingest is recorded as a SHADOW run.
+SELECT public.water_persist_run($j${"actor":"extract-document","kind":"SHADOW","method_version":"WATER_MRV_v1.0",
+ "bill":{"idempotency_key":"k3","entity_id":"00000000-0000-0000-0000-0000000000e1","volume_kind":"SUPPLY","reading_type":"ACTUAL","unit_raw":"gallon","volume_raw":5},
+ "results":[{"allocation_period":"UNALLOCATED","allocated_volume_m3":null,"allocation_method":"WHOLE_PERIOD","status":"INVALID_INPUT","factor_tier":"none","mapping_status":"MAPPING_PENDING_REVIEW","reasons":["UNKNOWN_UNIT"]}],
+ "flags":[{"allocation_period":null,"reason_code":"UNKNOWN_UNIT","severity":"High","owner_role":"PREPARER","due_date":"2026-10-17","detail":"unit gallon"}]}$j$::jsonb);
+DO $$ BEGIN
+  IF (SELECT c.kind FROM public.water_calc_run c JOIN public.water_emission_result r ON r.calc_run_id = c.id JOIN public.water_bill b ON b.id = r.water_bill_id WHERE b.idempotency_key = 'k3') <> 'SHADOW' THEN
+    RAISE EXCEPTION 'shadow run must be recorded as SHADOW'; END IF;
+  IF (SELECT emission_result_id FROM public.water_data_gap_flag f JOIN public.water_bill b ON b.id = f.water_bill_id WHERE b.idempotency_key = 'k3') IS NULL THEN
+    RAISE EXCEPTION 'unallocated flag must link to its result'; END IF;
+END $$;
+
 -- 4. Flags: state machine and segregation of duties.
 DO $$ DECLARE f uuid; BEGIN
   SELECT id INTO f FROM public.water_data_gap_flag WHERE reason_code='NO_FACTOR';
@@ -114,8 +126,8 @@ INSERT INTO public.water_mrv_role VALUES ('00000000-0000-0000-0000-0000000000b1'
 SET ROLE authenticated;
 SELECT set_config('request.jwt.claim.sub','00000000-0000-0000-0000-0000000000b1',false);
 DO $$ BEGIN
-  IF (SELECT count(*) FROM public.water_bill) <> 2 THEN RAISE EXCEPTION 'member must see 2 bills'; END IF;
-  IF (SELECT count(*) FROM public.water_emission_result) <> 3 THEN RAISE EXCEPTION 'member must see 3 result versions'; END IF;
+  IF (SELECT count(*) FROM public.water_bill) <> 3 THEN RAISE EXCEPTION 'member must see 3 bills'; END IF;
+  IF (SELECT count(*) FROM public.water_emission_result) <> 4 THEN RAISE EXCEPTION 'member must see 4 result versions'; END IF;
   PERFORM pg_temp.expect_error($q$INSERT INTO public.water_mrv_role VALUES (auth.uid(),'00000000-0000-0000-0000-0000000000e2','APPROVER')$q$, 'permission denied');
   PERFORM pg_temp.expect_error($q$UPDATE public.water_mrv_settings SET enabled=false$q$, 'permission denied');
   PERFORM pg_temp.expect_error($q$SELECT public.water_persist_run('{}'::jsonb)$q$, 'permission denied');
