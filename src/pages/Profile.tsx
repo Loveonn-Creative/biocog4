@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/select';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { useOrganization } from '@/hooks/useOrganization';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { 
@@ -76,6 +77,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
   const { tier, isPremium } = usePremiumStatus();
+  const { hasOrganization } = useOrganization();
   
   const [profile, setProfile] = useState<ProfileData>({
     business_name: '',
@@ -329,7 +331,15 @@ const Profile = () => {
                 <Building className="w-5 h-5" />
                 Business Details
               </CardTitle>
-              <CardDescription>Information about your organization</CardDescription>
+              <CardDescription>
+                Your own business details.
+                {hasOrganization && (
+                  <>
+                    {' '}Details your team shares are in the{' '}
+                    <Link to="/team" className="text-primary underline-offset-4 hover:underline">organisation profile</Link>.
+                  </>
+                )}
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
