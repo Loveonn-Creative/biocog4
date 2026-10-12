@@ -46,12 +46,17 @@ export function estimateCustomScope(input: ScopeInput) {
   const base = BASE_MULTIPLIER[input.complexity];
   if (base === undefined || volumeBand === undefined) return null;
   const multiplier = Math.min(1.8, base + 0.05 * (extraUnits + entityBands + userBands + volumeBand));
-  drivers.push(`${input.complexity[0].toUpperCase()}${input.complexity.slice(1)} complexity (×${base.toFixed(2)})`);
-  drivers.push(`${input.entities} ${input.entities === 1 ? 'entity' : 'entities'}, ${input.users} ${input.users === 1 ? 'user' : 'users'}`);
+  drivers.push(`${input.complexity[0].toUpperCase()}${input.complexity.slice(1)} complexity`);
+  drivers.push(`${input.entities} ${input.entities === 1 ? 'business unit' : 'business units'}, ${input.users} ${input.users === 1 ? 'user' : 'users'}`);
   drivers.push(`${input.volume === 'normal' ? 'Usual' : input.volume === 'high' ? 'High' : 'Very high'} data volume`);
-  drivers.push(`Final scope multiplier ×${multiplier.toFixed(2)} (maximum ×1.80)`);
+  // Pricing factors are for the Senseible team only (the review email), never
+  // shown to the visitor or put in their message.
+  const internalDrivers = [
+    `Complexity factor ×${base.toFixed(2)}`,
+    `Final scope multiplier ×${multiplier.toFixed(2)} (maximum ×1.80)`,
+  ];
 
-  return { min: Math.round(min * multiplier), max: Math.round(max * multiplier), multiplier, drivers };
+  return { min: Math.round(min * multiplier), max: Math.round(max * multiplier), multiplier, drivers, internalDrivers };
 }
 
 export const formatScopeRupees = (amount: number) => `₹${new Intl.NumberFormat('en-IN').format(amount)}`;

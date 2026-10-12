@@ -7,10 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { CUSTOM_WORK, estimateCustomScope, formatScopeRupees, scopeReviewMessage, type Complexity, type ScopeInput, type Volume, type WorkId } from '@/lib/customScopeEstimate';
 
-const complexities: { id: Complexity; label: string; factor: string }[] = [
-  { id: 'standard', label: 'Standard', factor: '×1.00' },
-  { id: 'complex', label: 'Complex', factor: '×1.25' },
-  { id: 'enterprise', label: 'Enterprise', factor: '×1.50' },
+const complexities: { id: Complexity; label: string; hint: string }[] = [
+  { id: 'standard', label: 'Standard', hint: 'One team, familiar systems' },
+  { id: 'complex', label: 'Complex', hint: 'Several systems or rules' },
+  { id: 'enterprise', label: 'Enterprise', hint: 'Group-wide, strict controls' },
 ];
 const volumes: { id: Volume; label: string }[] = [
   { id: 'normal', label: 'Usual' }, { id: 'high', label: 'High' }, { id: 'very-high', label: 'Very high' },
@@ -78,7 +78,7 @@ export function CustomScopeEstimator() {
               <div className="grid grid-cols-3 gap-2 max-w-md">
                 {complexities.map((option) => (
                   <Button key={option.id} type="button" variant={complexity === option.id ? 'default' : 'outline'} aria-pressed={complexity === option.id} onClick={() => setComplexity(option.id)} className="h-auto min-h-14 flex-col gap-0 whitespace-normal text-xs sm:text-sm">
-                    {option.label}<span className="text-[11px] opacity-80">{option.factor}</span>
+                    {option.label}<span className="text-[11px] font-normal opacity-80">{option.hint}</span>
                   </Button>
                 ))}
               </div>
@@ -92,7 +92,7 @@ export function CustomScopeEstimator() {
                   <Button key={option.id} type="button" size="sm" variant={volume === option.id ? 'default' : 'outline'} aria-pressed={volume === option.id} onClick={() => setVolume(option.id)}>{option.label}</Button>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground mt-4">Each extra item or higher load band adds 0.05 to the multiplier, up to ×1.80. Business units: 2–10 adds one band, 11+ adds two. Users: 21–100 adds one, 101+ adds two. Data volume: high adds one, very high adds two.</p>
+              <p className="text-xs text-muted-foreground mt-4">More business units, users or data widen the range a little. Our team confirms the exact scope before any price is agreed.</p>
             </fieldset>
           </div>
 

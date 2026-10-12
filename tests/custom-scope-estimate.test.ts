@@ -26,3 +26,16 @@ describe('custom scope estimate', () => {
     expect(scopeReviewMessage(baseline)).toContain('New system integration × 1');
   });
 });
+describe('pricing factors stay internal', () => {
+  const input = { counts: { integration: 2 } as Record<string, number>, complexity: 'complex' as const, entities: 12, users: 150, volume: 'very-high' as const };
+  test('visitor-facing drivers and message carry no multiplier', () => {
+    const e = estimateCustomScope(input as never)!;
+    expect(e.drivers.join(' ')).not.toMatch(/×\s*1\.|multiplier/i);
+    expect(scopeReviewMessage(input as never)).not.toMatch(/×\s*1\.|multiplier/i);
+  });
+  test('the team email still receives the factors', () => {
+    const e = estimateCustomScope(input as never)!;
+    expect(e.internalDrivers.join(' ')).toMatch(/Complexity factor ×1\.25/);
+    expect(e.internalDrivers.join(' ')).toMatch(/Final scope multiplier ×1\.60/);
+  });
+});
