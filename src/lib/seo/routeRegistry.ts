@@ -171,7 +171,7 @@ function coreRoutes(): SeoRoute[] {
   const industriesHub = staticRoute('/industries', 'core', 0.7, {
     blocks: [
       { p: STATIC_PAGE_META['/industries'].description },
-      { ul: industries.map(i => `[${i.name}](/industries/${i.id}): ${i.tagline}`) },
+      { ul: industries.map(i => `[${i.name}](/industries/${i.id}): ${i.buyer.question}${i.cbam ? ' (covered by EU CBAM)' : ''}`) },
     ],
   });
 
@@ -340,11 +340,16 @@ function industryRoutes(): SeoRoute[] {
       h1: `${i.name}: Carbon Accounting Guide`,
       blocks: [
         { p: i.description },
-        { h2: 'Scope 1 sources' }, { ul: i.scope1Sources },
-        { h2: 'Scope 2 sources' }, { ul: i.scope2Sources },
-        { h2: 'Scope 3 sources' }, { ul: i.scope3Sources },
-        { h2: 'Reduction strategies' }, { ul: i.reductionStrategies },
-        { p: '[All industries](/industries) · [CBAM cost calculator](/cbam-calculator)' },
+        { h2: `The question ${i.buyer.who.toLowerCase()}s ask` },
+        { p: `“${i.buyer.question}”` },
+        { p: i.cbam ? 'This sector is covered by EU CBAM (Regulation (EU) 2023/956). Since 1 January 2026, EU importers declare embedded emissions; without actual producer data, default values with a mark-up apply.' : 'This sector is not directly covered by EU CBAM. Buyers, lenders and OEMs ask for emissions built from documents for their own reporting.' },
+        { h2: 'Scope 1 sources (evidence: fuel invoices)' }, { ul: i.scope1Sources },
+        { h2: 'Scope 2 sources (evidence: electricity bills)' }, { ul: i.scope2Sources },
+        { h2: 'Scope 3 sources (evidence: purchase and freight invoices)' }, { ul: i.scope3Sources },
+        { h2: 'Worked example' },
+        { p: `Illustrative monthly quantities: ${i.example.map(e => `${e.qty.toLocaleString('en-IN')} ${e.unit} of ${e.label.toLowerCase()}`).join(', ')}, multiplied by the emission factors Senseible uses and annualised. ${i.exampleNote}` },
+        { h2: 'Where reductions usually start' }, { ul: i.reductionStrategies },
+        { p: '[All industries](/industries) · [CBAM cost calculator](/cbam-calculator) · [Upload a bill](/)' },
       ],
       breadcrumbs: crumbs,
       jsonLd: [breadcrumbLd(crumbs)],
