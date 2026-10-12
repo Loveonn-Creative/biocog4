@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { lazy, Suspense, type ReactNode } from "react";
+import { lazy, Suspense } from "react";
 import { ArrowRight } from "lucide-react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
@@ -11,17 +11,11 @@ import { useTranslation } from "@/lib/i18n/useTranslation";
 import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
 import platformOg from "@/assets/og/platform.jpg";
 import { Reveal, SectionHead } from "@/components/platform/Reveal";
+import { WhySwitcher } from "@/components/platform/WhySwitcher";
+import { AudienceHub } from "@/components/platform/AudienceHub";
+import { CreditToken, DecarbPath, FinanceDial, ReportSheets } from "@/components/doodles/Doodles";
 
-/** One question per row: the question on the left for scanning, the answer on the right for reading. */
-const QuestionRow = ({ eyebrow, title, children }: { eyebrow: ReactNode; title: ReactNode; children: ReactNode }) => (
-  <Reveal className="grid gap-4 py-10 md:grid-cols-[13rem_1fr] md:gap-10 md:py-14">
-    <div className="text-xs uppercase tracking-[0.14em] text-primary md:pt-2">{eyebrow}</div>
-    <div>
-      <h2 className="text-[1.6rem] leading-[1.15] md:text-[2.1rem] font-semibold tracking-tight text-foreground [text-wrap:balance]">{title}</h2>
-      <div className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed">{children}</div>
-    </div>
-  </Reveal>
-);
+const OUTCOME_ART: Record<string, () => JSX.Element> = { report: ReportSheets, finance: FinanceDial, decarbonize: DecarbPath, monetize: CreditToken };
 
 const ProductPipeline = lazy(() => import("@/components/product/ProductPipeline"));
 const EvidenceSeal = lazy(() => import("@/components/trust/EvidenceSeal"));
@@ -136,22 +130,35 @@ const Platform = () => {
         {/* Marquee strip */}
         <PlatformMarquee />
 
-        {/* 1. Why: the three questions a first-time visitor brings, answered in one rhythm. */}
-        <section className="py-20 md:py-28">
+        {/* 1. Why: three questions, one answer open at a time, each with its drawing. */}
+        <section className="overflow-x-clip py-20 md:py-28">
           <div className="container max-w-5xl mx-auto px-6">
-            <div className="divide-y divide-border border-y border-border">
-              <QuestionRow eyebrow={t("platform.positioning.eyebrow", "Built into Senseible")} title={t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises.")}>
-                <p>{t("platform.positioning.body", "For an enterprise, that means seeing which suppliers have usable evidence, where the gaps are, and what is ready for Scope 3 reporting.")}</p>
-                <p className="mt-4 border-l-2 border-primary/30 pl-4 text-[15px]">{t("platform.positioning.note", "Start with the document. Keep the evidence attached as the record moves into reporting, supplier decisions, or finance.")}</p>
-              </QuestionRow>
-              <QuestionRow eyebrow={t("platform.what.eyebrow", "What is Senseible?")} title={t("platform.what.title", "A verification layer for climate data.")}>
-                <p>{t("platform.what.body", "Most climate numbers are self-reported. Senseible replaces the self-report with a chain of evidence (a hash, a methodology, a confidence band) that anyone downstream can independently check. It works on the documents a business already produces, in the language and the country the business already operates in.")}</p>
-              </QuestionRow>
-              <QuestionRow eyebrow={t("platform.problem.eyebrow", "What problem does it solve?")} title={t("platform.problem.title", "The verification gap in emerging-market climate data.")}>
-                <p>{t("platform.problem.p1", "Emerging-market supply chains carry most of the world's industrial emissions, and almost none of the verified data. Regulators ask for primary numbers. Buyers ask for primary numbers. Lenders ask for primary numbers. Without them, the default values apply, and the cost lands on the smallest producer.")}</p>
-                <p className="mt-4">{t("platform.problem.p2", "Senseible closes that gap by making verification cheap enough to do at the speed of business, in the language and identifier system of every market it touches.")}</p>
-              </QuestionRow>
-            </div>
+            <WhySwitcher items={[
+              {
+                key: "positioning",
+                eyebrow: t("platform.positioning.eyebrow", "Built into Senseible"),
+                title: t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises."),
+                body: <>
+                  <p>{t("platform.positioning.body", "For an enterprise, that means seeing which suppliers have usable evidence, where the gaps are, and what is ready for Scope 3 reporting.")}</p>
+                  <p className="mt-4 border-l-2 border-primary/30 pl-4 text-[15px]">{t("platform.positioning.note", "Start with the document. Keep the evidence attached as the record moves into reporting, supplier decisions, or finance.")}</p>
+                </>,
+              },
+              {
+                key: "what",
+                eyebrow: t("platform.what.eyebrow", "What is Senseible?"),
+                title: t("platform.what.title", "A verification layer for climate data."),
+                body: <p>{t("platform.what.body", "Most climate numbers are self-reported. Senseible replaces the self-report with a chain of evidence (a hash, a methodology, a confidence band) that anyone downstream can independently check. It works on the documents a business already produces, in the language and the country the business already operates in.")}</p>,
+              },
+              {
+                key: "problem",
+                eyebrow: t("platform.problem.eyebrow", "What problem does it solve?"),
+                title: t("platform.problem.title", "The verification gap in emerging-market climate data."),
+                body: <>
+                  <p>{t("platform.problem.p1", "Emerging-market supply chains carry most of the world's industrial emissions, and almost none of the verified data. Regulators ask for primary numbers. Buyers ask for primary numbers. Lenders ask for primary numbers. Without them, the default values apply, and the cost lands on the smallest producer.")}</p>
+                  <p className="mt-4">{t("platform.problem.p2", "Senseible closes that gap by making verification cheap enough to do at the speed of business, in the language and identifier system of every market it touches.")}</p>
+                </>,
+              },
+            ]} />
           </div>
         </section>
 
@@ -159,16 +166,7 @@ const Platform = () => {
         <section className="py-20 md:py-28 bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <SectionHead className="mb-10" eyebrow={t("platform.who.eyebrow", "Who is it for?")} title={t("platform.who.title", "Six audiences. One verified record.")} />
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t border-border">
-              {audiences.map((a, i) => (
-                <li key={a.key} className="border-b border-border py-5">
-                  <Reveal delay={i * 50}>
-                    <div className="text-[15px] font-medium mb-1.5 text-foreground">{t(`platform.who.${a.key}.label`, a.label)}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{t(`platform.who.${a.key}.line`, a.line)}</p>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
+            <AudienceHub centre={t("platform.who.centre", "One verified record")} audiences={audiences.map(a => ({ key: a.key, label: t(`platform.who.${a.key}.label`, a.label), line: t(`platform.who.${a.key}.line`, a.line) }))} />
           </div>
         </section>
 
@@ -197,16 +195,24 @@ const Platform = () => {
 
             <div className="mt-20 md:mt-24">
               <SectionHead className="mb-10" eyebrow={t("platform.out.eyebrow", "What you can do with verified data")} title={t("platform.out.title", "Four outcomes, one ledger.")} />
-              <div className="grid gap-x-12 sm:grid-cols-2">
-                {outcomes.map((o, i) => (
-                  <Reveal key={o.key} delay={i * 60} className="border-t border-border py-6">
-                    <div className="text-base font-medium text-foreground">{t(`platform.out.${o.key}.title`, o.title)}</div>
-                    <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{t(`platform.out.${o.key}.body`, o.body)}</p>
-                    <Link to={o.to} className="group mt-3 inline-flex items-center gap-1 text-sm text-primary">
-                      {t(`platform.out.${o.key}.cta`, o.cta)} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                    </Link>
-                  </Reveal>
-                ))}
+              <div className="grid gap-4 sm:grid-cols-2">
+                {outcomes.map((o, i) => {
+                  const Art = OUTCOME_ART[o.key];
+                  return (
+                    <Reveal key={o.key} delay={i * 70}>
+                      <Link to={o.to} className="group flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_24px_50px_-34px_hsl(var(--foreground)/.4)]">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="text-lg font-medium text-foreground">{t(`platform.out.${o.key}.title`, o.title)}</div>
+                          <div className="-mt-1 shrink-0 text-foreground/60">{Art && <Art />}</div>
+                        </div>
+                        <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{t(`platform.out.${o.key}.body`, o.body)}</p>
+                        <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm text-primary">
+                          {t(`platform.out.${o.key}.cta`, o.cta)} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                        </span>
+                      </Link>
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -248,7 +254,7 @@ const Platform = () => {
 
             <div className="mt-16 border-t border-border pt-12">
               <Suspense fallback={<div className="h-[340px]" aria-hidden="true" />}>
-                <EvidenceSeal title={t("platform.seal.title", "Nothing here asks for blind trust.")} />
+                <EvidenceSeal title={t("platform.seal.title", "Every claim, with its source.")} />
               </Suspense>
             </div>
           </div>

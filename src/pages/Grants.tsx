@@ -16,6 +16,11 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Reveal } from "@/components/platform/Reveal";
 import { StickyCta } from "@/components/lead/LeadKit";
+import { ApplicationCard3D } from "@/components/grants/ApplicationCard3D";
+import { CoinStack, FactoryRoof, GlobeLines, KeyAccess, RisingSun, SparkLeaf, TwoVoices } from "@/components/doodles/Doodles";
+
+const BENEFIT_ART = [KeyAccess, CoinStack, GlobeLines, TwoVoices];
+const AUDIENCE_ART = [SparkLeaf, FactoryRoof, RisingSun];
 
 const grantSchema = z.object({
   applicantName: z.string().min(2, "Name must be at least 2 characters").max(100),
@@ -251,9 +256,9 @@ const Grants = () => {
         <MinimalNav />
 
         {/* 1. The offer and the one action, with what it costs the founder in time */}
-        <section className="pt-28 pb-14 md:pt-36 md:pb-20">
+        <section className="overflow-x-clip pt-28 pb-14 md:pt-36 md:pb-20">
           <div className="container max-w-5xl mx-auto px-5">
-            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 px-3 py-1 text-[13px] font-medium text-primary">
                   <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -278,37 +283,40 @@ const Grants = () => {
                 </div>
               </div>
 
-              {/* What happens next, so applying feels safe */}
-              <ol className="relative space-y-6 border-l border-border pl-6" aria-label="What happens after you apply">
-                {journey.map((j, i) => (
-                  <li key={j.n} className="relative">
-                    <span className={`absolute -left-[31px] top-1 h-2.5 w-2.5 rounded-full ring-4 ring-background ${i === 0 ? "bg-primary" : "bg-border"}`} aria-hidden="true" />
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-mono text-xs text-muted-foreground">{j.n}</span>
-                      <span className="font-medium">{j.title}</span>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{j.desc}</p>
-                  </li>
-                ))}
-              </ol>
+              {/* The application filling itself in, and what happens after */}
+              <div>
+                <ApplicationCard3D />
+                <ol className="mt-6 grid grid-cols-3 gap-3" aria-label="What happens after you apply">
+                  {journey.map((j, i) => (
+                    <li key={j.n} className="border-t-2 pt-3" style={{ borderColor: i === 0 ? "hsl(var(--primary))" : "hsl(var(--border))" }}>
+                      <div className="text-sm font-medium">{j.title}</div>
+                      <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{j.desc}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 2. What you get: four facts, read in one glance */}
-        <section className="border-y border-border bg-secondary/30">
+        {/* 2. What you get: four facts, each with a drawing of what it is */}
+        <section className="py-16 md:py-20 bg-secondary/30 border-y border-border">
           <div className="container max-w-5xl mx-auto px-5">
-            <dl className="grid grid-cols-2 md:grid-cols-4">
-              {benefits.map((b, i) => (
-                <Reveal key={b.label} delay={i * 70} className={`py-8 md:py-10 ${i % 2 ? "pl-5 md:pl-6" : "pr-5 md:pr-6"} ${i > 0 ? "md:border-l md:border-border md:pl-6" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i > 1 ? "border-t border-border md:border-t-0" : ""}`}>
-                  <dt className="sr-only">{b.label}</dt>
-                  <dd>
-                    <div className="font-mono text-3xl md:text-4xl leading-none text-foreground">{b.value}</div>
-                    <div className="mt-3 font-medium">{b.label}</div>
-                    <div className="mt-0.5 text-sm text-muted-foreground">{b.desc}</div>
-                  </dd>
-                </Reveal>
-              ))}
+            <dl className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+              {benefits.map((b, i) => {
+                const Art = BENEFIT_ART[i];
+                return (
+                  <Reveal key={b.label} delay={i * 80} className="group rounded-3xl border border-border bg-background p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_24px_50px_-34px_hsl(var(--foreground)/.45)] md:p-6">
+                    <div className="text-foreground/60"><Art /></div>
+                    <dt className="sr-only">{b.label}</dt>
+                    <dd>
+                      <div className="mt-4 font-mono text-2xl md:text-3xl leading-none text-foreground">{b.value}</div>
+                      <div className="mt-2 font-medium">{b.label}</div>
+                      <div className="mt-0.5 text-sm text-muted-foreground">{b.desc}</div>
+                    </dd>
+                  </Reveal>
+                );
+              })}
             </dl>
           </div>
         </section>
@@ -316,22 +324,26 @@ const Grants = () => {
         {/* 3. Who should apply: a quick self-check */}
         <section className="py-16 md:py-24">
           <div className="container max-w-5xl mx-auto px-5">
-            <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
-              <div>
+            <div className="grid gap-10 md:grid-cols-2">
+              <div className="md:col-span-2 max-w-2xl">
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Who Should Apply</h2>
                 <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
                   We prioritize high-intent founders solving real climate problems
                 </p>
               </div>
-              <ul className="border-t border-border">
-                {audiences.map((a, i) => (
-                  <li key={a.title} className="border-b border-border py-5">
-                    <Reveal delay={i * 80} className="grid gap-1 sm:grid-cols-[12rem_1fr] sm:gap-6">
-                      <h3 className="font-semibold">{a.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{a.desc}</p>
-                    </Reveal>
-                  </li>
-                ))}
+              <ul className="grid gap-3 sm:grid-cols-3 md:col-span-2">
+                {audiences.map((a, i) => {
+                  const Art = AUDIENCE_ART[i];
+                  return (
+                    <li key={a.title}>
+                      <Reveal delay={i * 90} className="h-full rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+                        <div className="text-foreground/60"><Art /></div>
+                        <h3 className="mt-4 text-lg font-semibold">{a.title}</h3>
+                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
+                      </Reveal>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

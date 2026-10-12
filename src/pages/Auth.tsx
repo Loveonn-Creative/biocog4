@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { analyticsEvents } from "@/lib/analytics";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from "@/lib/factors";
+import { AccountStack, StackStrip, type StackLayer } from "@/components/auth/AccountStack";
 
 /** The three fears at a sign-up form, each answered with a fact the product already backs. */
 const AUTH_ASSURANCES = [
@@ -294,6 +295,20 @@ const Auth = () => {
   }
 
   const tabsShown = mode !== "forgot" && !isPartnerMode;
+  // Visual progress only; validation stays in validateForm.
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const layers: StackLayer[] = mode === "forgot"
+    ? [{ key: "email", label: "Email", done: emailOk }]
+    : mode === "signin"
+      ? [{ key: "email", label: "Email", done: emailOk }, { key: "password", label: "Password", done: password.length >= 6 }]
+      : [
+          { key: "email", label: "Email", done: emailOk },
+          { key: "password", label: "Strong password", done: isPasswordStrong(password) },
+          ...(isPartnerMode
+            ? [{ key: "org", label: "Organisation type", done: !!organizationType }]
+            : [{ key: "business", label: "Business details", done: !!(businessName.trim() || businessId.value), optional: true }]),
+          { key: "consent", label: "Consent", done: dataConsent },
+        ];
   const field = "h-12 w-full rounded-xl border border-input bg-background px-4 text-[15px] transition-colors placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15";
   const label = "mb-1.5 block text-sm font-medium text-foreground";
 
@@ -447,6 +462,8 @@ const Auth = () => {
                 </div>
               )}
 
+              <div className="lg:hidden"><StackStrip layers={layers} /></div>
+
               <button
                 type="submit"
                 disabled={isLoading}
@@ -502,7 +519,9 @@ const Auth = () => {
               {mode === "signin" ? "Every number, still traced to its bill." : "One bill in. A record a lender can check, out."}
             </h2>
 
-            <div className="mt-8 rounded-3xl border border-border bg-background p-5 shadow-[0_40px_70px_-50px_hsl(var(--foreground)/.5)] [transform:perspective(1000px)_rotateY(-6deg)_rotateX(3deg)] transition-transform duration-500 hover:[transform:perspective(1000px)_rotateY(0deg)_rotateX(0deg)]">
+            <div className="mt-10"><AccountStack layers={layers} /></div>
+
+            <div className={`mt-8 rounded-3xl border p-5 transition-all duration-700 ${layers.filter(l => !l.optional).every(l => l.done) ? "border-primary/50 bg-background" : "border-border bg-background/70"} shadow-[0_40px_70px_-50px_hsl(var(--foreground)/.5)] [transform:perspective(1000px)_rotateY(-6deg)_rotateX(3deg)] hover:[transform:perspective(1000px)_rotateY(0deg)_rotateX(0deg)]`}>
               <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                 <span>Sample record</span>
                 <span className="rounded-full bg-primary/10 px-2 py-0.5 normal-case tracking-normal text-primary">Scope 2</span>
