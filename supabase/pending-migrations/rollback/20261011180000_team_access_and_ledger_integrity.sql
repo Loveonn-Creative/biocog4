@@ -49,6 +49,8 @@ DROP FUNCTION IF EXISTS public.create_organization(text);
 -- ---------------------------------------------
 -- b) Seat sync
 -- ---------------------------------------------
+DROP TRIGGER IF EXISTS sync_quote_org_seat_limits ON public.scale_price_quotes;
+DROP FUNCTION IF EXISTS public.sync_quote_org_seat_limits();
 DROP TRIGGER IF EXISTS sync_owner_org_seat_limits ON public.profiles;
 DROP TRIGGER IF EXISTS sync_organization_seat_limit ON public.organizations;
 DROP FUNCTION IF EXISTS public.sync_owner_org_seat_limits();

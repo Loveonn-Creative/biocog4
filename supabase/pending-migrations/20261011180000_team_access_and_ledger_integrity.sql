@@ -3,7 +3,8 @@
 -- Rollback: rollback/20261011180000_team_access_and_ledger_integrity.sql
 --
 -- Depends on 20261011120000_protect_privileged_columns.sql
--- (public.is_trusted_db_writer() and the organizations protect trigger).
+-- (public.is_trusted_db_writer() and the organizations protect trigger)
+-- and 20261011160000_scale_price_quotes.sql (Scale seats).
 --
 -- a) Restore RLS helper access. 20260613142133 revoked EXECUTE on
 --    public.has_role / is_org_member / is_org_admin / is_partner_admin /
@@ -14,7 +15,8 @@
 --    non-API `private` schema and point the policies at them. The public.*
 --    functions stay revoked (they remain callable by other SECURITY DEFINER
 --    functions owned by postgres, e.g. service_create_team_invitation).
--- b) Seat sync: organizations.max_members follows the owner's subscription tier.
+-- b) Seat sync: organizations.max_members follows the owner's plan (Essential 3,
+--    Pro 10, Scale = seats on the consumed quote, at least 10).
 -- c) RPC create_organization(p_name) creates org + owner member + context atomically.
 -- d) RPCs update_member_role / remove_member (admin only, owner protected).
 -- e) compliance_ledger: dedupe (user_id, emission_id), unique index, drop owner UPDATE policy.
@@ -27,6 +29,9 @@ DO $$
 BEGIN
   IF to_regprocedure('public.is_trusted_db_writer()') IS NULL THEN
     RAISE EXCEPTION 'Apply 20261011120000_protect_privileged_columns.sql first (public.is_trusted_db_writer is missing)';
+  END IF;
+  IF to_regclass('public.scale_price_quotes') IS NULL THEN
+    RAISE EXCEPTION 'Apply 20261011160000_scale_price_quotes.sql first (Scale seats come from the consumed quote)';
   END IF;
 END $$;
 
@@ -216,6 +221,8 @@ USING (private.has_role(auth.uid(), 'admin'::app_role));
 -- b) Seat sync: organizations.max_members from the owner's subscription tier
 -- ---------------------------------------------
 -- profiles.subscription_tier stores Essential as 'basic'.
+-- Seats per plan, as published on the Pricing page. Scale is custom: its seats
+-- come from the owner's most recently consumed Scale quote (see owner_seat_limit).
 CREATE OR REPLACE FUNCTION public.seat_limit_for_tier(p_tier text)
 RETURNS integer
 LANGUAGE sql
@@ -226,7 +233,7 @@ AS $$
     WHEN 'basic' THEN 3
     WHEN 'essential' THEN 3
     WHEN 'pro' THEN 10
-    WHEN 'scale' THEN 25 -- TO CONFIRM: placeholder. Pricing/Subscription UI shows 100, usePremiumStatus 999.
+    WHEN 'scale' THEN 10 -- floor when no quote states seats: never fewer than Pro
     ELSE 1
   END
 $$;
@@ -239,12 +246,19 @@ SECURITY DEFINER
 SET search_path = ''
 AS $$
   SELECT COALESCE((
-    SELECT public.seat_limit_for_tier(
-      CASE
-        WHEN p.subscription_expires_at IS NOT NULL AND p.subscription_expires_at < now() THEN 'snapshot'
-        ELSE p.subscription_tier
-      END
-    )
+    SELECT CASE
+      WHEN p.subscription_expires_at IS NOT NULL AND p.subscription_expires_at < now() THEN 1
+      WHEN lower(coalesce(p.subscription_tier, '')) = 'scale' THEN GREATEST(
+        public.seat_limit_for_tier('scale'),
+        COALESCE((
+          SELECT q.seats FROM public.scale_price_quotes q
+           WHERE q.user_id = p.id AND q.status = 'consumed' AND q.seats IS NOT NULL
+           ORDER BY q.consumed_at DESC NULLS LAST, q.created_at DESC
+           LIMIT 1
+        ), 0)
+      )
+      ELSE public.seat_limit_for_tier(p.subscription_tier)
+    END
     FROM public.profiles p
     WHERE p.id = p_owner_id
   ), 1)
@@ -305,7 +319,29 @@ CREATE TRIGGER sync_owner_org_seat_limits
      OR OLD.subscription_expires_at IS DISTINCT FROM NEW.subscription_expires_at)
   EXECUTE FUNCTION public.sync_owner_org_seat_limits();
 
+-- A consumed Scale quote can change the seat count after the tier is already 'scale'.
+CREATE OR REPLACE FUNCTION public.sync_quote_org_seat_limits()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE public.organizations o
+     SET max_members = public.owner_seat_limit(NEW.user_id)
+   WHERE o.owner_id = NEW.user_id
+     AND o.max_members IS DISTINCT FROM public.owner_seat_limit(NEW.user_id);
+  RETURN NULL;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS sync_quote_org_seat_limits ON public.scale_price_quotes;
+CREATE TRIGGER sync_quote_org_seat_limits
+  AFTER INSERT OR UPDATE OF status, seats ON public.scale_price_quotes
+  FOR EACH ROW EXECUTE FUNCTION public.sync_quote_org_seat_limits();
+
 REVOKE ALL ON FUNCTION public.owner_seat_limit(uuid) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.sync_quote_org_seat_limits() FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.sync_organization_seat_limit() FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.sync_owner_org_seat_limits() FROM PUBLIC, anon, authenticated;
 
