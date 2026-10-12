@@ -163,7 +163,7 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   },
   '/industries': {
     title: 'Carbon Accounting by Industry',
-    description: 'Sector guides for textile, chemical, steel, logistics, construction and automotive businesses: emission sources, reduction levers and CBAM exposure.',
+    description: 'Carbon accounting for steel, aluminium, cement, fertilisers, textiles, chemicals, ceramics, paper, food, logistics, construction and auto parts.',
   },
   '/legal': {
     title: 'Legal: Terms, Privacy and Policies',
@@ -244,7 +244,7 @@ export function competitorMeta(c: { name: string; slug: string; category: string
 export function industryMeta(i: { name: string; description: string }): PageMeta {
   return {
     title: fitTitle(`${i.name}: Carbon Accounting Guide`),
-    description: clampDescription(`Scope 1, 2 and 3 emission sources and reduction levers for ${i.name.toLowerCase()}. ${i.description}`),
+    description: clampDescription(`${i.name}: where emissions come from, what buyers ask for, and a worked example with real factors. ${i.description}`),
   };
 }
 
