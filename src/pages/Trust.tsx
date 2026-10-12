@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
+import { GradeGauge, LedgerFanOut, LockDoodle, PipelineTrack, ScanLine, SealChain, ShieldSegments } from "@/components/trust/TrustVisuals";
 import {
   Accordion,
   AccordionContent,
@@ -277,22 +278,7 @@ const Trust = () => {
             <p className="text-muted-foreground max-w-2xl mb-10">
               Evidence flows through four layers. Each one is independently verifiable and leaves a trail the next layer cannot rewrite.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {trustLayers.map((l, i) => (
-                <Card key={l.name} className="border-border">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <l.icon className="h-5 w-5 text-primary" />
-                      <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                    </div>
-                    <CardTitle className="text-base mt-3">{l.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{l.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <SealChain layers={trustLayers} />
           </div>
         </section>
 
@@ -317,7 +303,7 @@ const Trust = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-base font-medium mb-2">{s.name}</h3>
-                        <p className="text-xs text-muted-foreground mb-1"><span className="text-foreground/80">What we read: </span>{s.what}</p>
+                        <ScanLine><p className="text-xs text-muted-foreground mb-1"><span className="text-foreground/80">What we read: </span>{s.what}</p></ScanLine>
                         <p className="text-xs text-muted-foreground"><span className="text-foreground/80">How it's verified: </span>{s.verify}</p>
                       </div>
                     </div>
@@ -341,6 +327,7 @@ const Trust = () => {
             </p>
             <Card className="border-border">
               <CardContent className="p-6 md:p-10">
+                <div className="hidden md:block"><PipelineTrack steps={5} /></div>
                 <ol className="grid md:grid-cols-5 gap-4">
                   {[
                     { step: "Ingest", desc: "Document, photo, bill, or signal arrives." },
@@ -379,6 +366,7 @@ const Trust = () => {
               and every finance signal from it. Sustainability teams stop re-keying numbers across spreadsheets and start
               compounding insight from a shared memory of every invoice processed.
             </p>
+            <LedgerFanOut targets={["CBAM", "BRSR", "GHG Protocol", "ISSB", "CSRD", "TCFD", "GRI", "SBTi"]} />
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 {
@@ -487,11 +475,21 @@ const Trust = () => {
                     The platform anchors upstream claims to the local tax identifier auto-selected by country config.
                   </p>
                   <div className="flex flex-wrap gap-1.5">
-                    {countryIds.map(c => (
-                      <Badge key={c.country} variant="secondary" className="text-[11px] font-mono">
-                        {c.country} · {c.id}
-                      </Badge>
-                    ))}
+                    {countryIds.map(c => {
+                      const selected = countryOptions.find(o => o.code === scope3Country)?.name === c.country;
+                      return (
+                        <span key={c.country} className="relative inline-flex">
+                          <Badge variant="secondary" className={`text-[11px] font-mono transition-colors ${selected ? "bg-primary text-primary-foreground" : ""}`}>
+                            {c.country} · {c.id}
+                          </Badge>
+                          {selected && (
+                            <svg className="pointer-events-none absolute -inset-1.5 h-[calc(100%+12px)] w-[calc(100%+12px)] overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
+                              <path pathLength={1} d="M6 22 C 4 6, 40 2, 70 4 S 99 14, 96 24 S 60 39, 30 37 S 2 32, 8 16" fill="none" stroke="#f4a21a" strokeWidth="2" strokeLinecap="round" strokeDasharray="1" className="tr-path tr-draw-on" style={{ animation: "di-paint .6s ease both", strokeDashoffset: 1 }} />
+                            </svg>
+                          )}
+                        </span>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -559,6 +557,7 @@ const Trust = () => {
               The Climate Credibility Score is a single 0–100 band derived from four observable inputs. It rewards denser,
               better-attested evidence, not narrative quality.
             </p>
+            <GradeGauge bands={["A+ ≥ 90", "A ≥ 75", "B ≥ 55", "C ≥ 35", "D < 35"]} />
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { name: "Verification quality", desc: "Average verification outcome across records." },
@@ -594,6 +593,7 @@ const Trust = () => {
               Greenwashing is prevented by the architecture, not by policy. Five mechanisms work together so a claim cannot
               be inflated, recycled, or quietly re-baselined after the fact.
             </p>
+            <ShieldSegments count={6} />
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 {
@@ -710,6 +710,7 @@ const Trust = () => {
               <Lock className="h-5 w-5 text-primary" />
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance &amp; Security</span>
             </div>
+            <LockDoodle />
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Private by default. Access must be earned.</h2>
             <p className="text-muted-foreground max-w-3xl mb-8">
               Enterprise data paths follow zero-trust principles: explicit authorization, least-privilege access,
