@@ -151,9 +151,6 @@ export const useRazorpay = () => {
 
             toast.success('🎉 Payment successful! Welcome to ' + planName, { duration: 5000 });
             
-            // Update local storage for immediate effect
-            localStorage.setItem('biocog_tier', tier);
-            
             onSuccess(tier);
           } catch (error) {
             console.error('[Razorpay] Verification error:', error);

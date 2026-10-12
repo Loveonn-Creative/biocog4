@@ -199,12 +199,11 @@ export const usePremiumStatus = (): PremiumStatus => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchTierFromDatabase = useCallback(async () => {
+    // The plan always comes from the signed-in account. Signed-out visitors are
+    // on Snapshot; nothing stored in the browser can raise a tier.
+    setTier('snapshot');
+    setExpiresAt(null);
     if (!user?.id) {
-      // Check localStorage for demo/testing when not authenticated
-      const savedTier = localStorage.getItem('senseible_premium_tier');
-      if (savedTier) {
-        setTier(normalizeTier(savedTier));
-      }
       setIsLoading(false);
       return;
     }
@@ -218,12 +217,8 @@ export const usePremiumStatus = (): PremiumStatus => {
         .single();
 
       if (profileError) {
+        // Fail closed: stay on Snapshot until the account's plan can be read.
         console.error('Error fetching profile tier:', profileError);
-        // Fall back to localStorage
-        const savedTier = localStorage.getItem('senseible_premium_tier');
-        if (savedTier) {
-          setTier(normalizeTier(savedTier));
-        }
       } else if (profile) {
         // Check if subscription is still valid
         const dbTier = normalizeTier(profile.subscription_tier);
@@ -241,8 +236,6 @@ export const usePremiumStatus = (): PremiumStatus => {
         } else {
           setTier(dbTier);
           setExpiresAt(expiry);
-          // Sync to localStorage for quick access
-          localStorage.setItem('senseible_premium_tier', dbTier);
         }
       }
 
@@ -262,7 +255,6 @@ export const usePremiumStatus = (): PremiumStatus => {
           const subTier = normalizeTier(subscription.tier);
           setTier(subTier);
           setExpiresAt(subExpiry);
-          localStorage.setItem('senseible_premium_tier', subTier);
         }
       }
     } catch (error) {
@@ -346,8 +338,3 @@ export const usePremiumStatus = (): PremiumStatus => {
   };
 };
 
-// Helper to set tier (for demo/testing)
-export const setDemoTier = (tier: PremiumTier) => {
-  localStorage.setItem('senseible_premium_tier', tier);
-  window.location.reload();
-};

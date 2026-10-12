@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useT } from "@/lib/i18n/useT";
 import { DocumentInput } from "@/components/DocumentInput";
 import { VoiceInput } from "@/components/VoiceInput";
@@ -14,6 +14,7 @@ import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
 import { resolveWorkspaceScope } from "@/lib/workspaceChoice";
+import { IDENTITY_CHANGED_EVENT } from "@/lib/identity";
 import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/workspaceScope";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
@@ -733,6 +734,18 @@ const Index = () => {
     setDocumentType("");
   };
 
+  // A different person signed in or out: drop the previous person's result,
+  // pending retry and upload workspace so nothing is shown or saved for them.
+  useEffect(() => {
+    const onChange = () => {
+      uploadScopeRef.current = null;
+      setPendingRetry(null);
+      handleReset();
+    };
+    window.addEventListener(IDENTITY_CHANGED_EVENT, onChange);
+    return () => window.removeEventListener(IDENTITY_CHANGED_EVENT, onChange);
+  }, []);
+
   return (
     <div className="relative min-h-screen w-full flex flex-col bg-background overflow-x-clip">
       <Suspense fallback={null}>
@@ -783,6 +796,8 @@ const Index = () => {
                 <p className="text-sm text-destructive font-medium">Data extraction succeeded but save failed.</p>
                 <button
                   onClick={async () => {
+                    // Re-resolve who is saving: never reuse an earlier person's workspace.
+                    if (!(await prepareWorkspace())) return;
                     setState("processing");
                     setDocumentType("Retrying save...");
                     const savedIds = await saveEmissionToDatabase(pendingRetry.extractedData, pendingRetry.documentHash);
