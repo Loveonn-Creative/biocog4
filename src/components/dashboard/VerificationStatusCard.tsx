@@ -13,6 +13,7 @@ interface VerificationStatusCardProps {
   unverifiedCount: number;
   hasVerifiedData: boolean;
   latestStatus?: 'verified' | 'needs_review' | 'pending' | null;
+  /** Ignored: no credits are issued by the platform (older stored results may carry a count). */
   eligibleCredits?: number;
   credibilityScore?: number;
   credibilityGrade?: string;
@@ -24,7 +25,6 @@ export const VerificationStatusCard = ({
   unverifiedCount,
   hasVerifiedData,
   latestStatus,
-  eligibleCredits = 0,
   credibilityScore,
   credibilityGrade,
 }: VerificationStatusCardProps) => {
@@ -47,16 +47,6 @@ export const VerificationStatusCard = ({
         link: '/verify',
         icon: Shield,
         color: 'text-warning',
-      };
-    }
-    
-    if (hasVerifiedData && eligibleCredits > 0) {
-      return {
-        message: `${eligibleCredits} carbon credit${eligibleCredits > 1 ? 's' : ''} ready for monetization. Start earning now!`,
-        action: 'Monetize Now',
-        link: '/monetize',
-        icon: Coins,
-        color: 'text-success',
       };
     }
     

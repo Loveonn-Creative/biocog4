@@ -1,30 +1,45 @@
 /**
  * Climate Credibility Score (0-100)
- * 
+ *
  * How far a business's climate data can be trusted: evidence quality only.
  * It says nothing about how green the business is, and it is not a credit,
- * loan or payment eligibility decision.
+ * loan, scheme or payment eligibility decision. Pathway eligibility uses its
+ * own explicit checks; this score is shown for information.
  *
  * Formula:
- * - 40% average evidence score (share of records passing checks)
- * - 40% data completeness (% of ledger rows with vendor, date, amount, HSN)
- * - 20% history depth (verifications, capped at 50)
+ * - 40% evidence: average verification score over every attempt, failed
+ *   attempts included as 0 (leaving them out would inflate the average).
+ * - 40% completeness: share of invoices whose ledger evidence has a vendor,
+ *   an invoice date and an amount (stored once per invoice) and an HSN code
+ *   on every line.
+ * - 20% history: unique invoices with verified records, capped at 50.
  *
- * The green-benefit ratio used to carry 25% of the weight; it measures
- * performance, not credibility, so it is reported separately (greenRatio)
- * and no longer moves the score.
+ * Ledger rows are read once per emission (the latest row), as the ledger
+ * total and the audit export count them. The green-benefit ratio measures
+ * performance, not credibility, so it is reported (greenRatio) but does not
+ * move the score.
  */
+import { latestLedgerRowPerEmission } from '@/lib/emissionLedger';
 
-interface VerificationInput {
+export interface CredibilityVerificationInput {
   verification_score: number | null;
+  verification_status: string | null;
 }
 
-interface LedgerInput {
-  is_green_benefit: boolean | null;
+export interface CredibilityLedgerInput {
+  id: string;
+  emission_id: string | null;
+  document_id: string | null;
+  document_hash: string | null;
   vendor: string | null;
   invoice_date: string | null;
   amount: number | null;
   hsn_code: string | null;
+  is_green_benefit: boolean | null;
+  verification_status: string | null;
+  co2_kg: number;
+  created_at: string | null;
+  verified_at?: string | null;
 }
 
 export interface CredibilityResult {
@@ -36,55 +51,60 @@ export interface CredibilityResult {
     dataCompleteness: number;
     historyDepth: number;
   };
+  counts: {
+    attempts: number;
+    invoices: number;
+    completeInvoices: number;
+    verifiedInvoices: number;
+  };
 }
 
+export const HISTORY_CAP_INVOICES = 50;
+
+const text = (v: string | null | undefined) => typeof v === 'string' && v.trim() !== '';
+
 export function computeCredibilityScore(
-  verifications: VerificationInput[],
-  ledgerEntries: LedgerInput[]
+  verifications: CredibilityVerificationInput[],
+  ledgerRows: CredibilityLedgerInput[],
 ): CredibilityResult {
-  // 1. Average verification score (0-100)
-  const validScores = verifications
-    .map(v => v.verification_score)
-    .filter((s): s is number => s != null && s > 0);
-  const avgVerification = validScores.length > 0
-    ? (validScores.reduce((a, b) => a + b, 0) / validScores.length) * 100
-    : 0;
+  // 1. Evidence: every finished attempt counts; a failed one scores 0.
+  const attempts = verifications.filter((v) => v.verification_status !== 'pending');
+  const scores = attempts.map((v) => (typeof v.verification_score === 'number' && Number.isFinite(v.verification_score) ? Math.max(0, Math.min(1, v.verification_score)) : 0));
+  const avgVerification = scores.length > 0 ? (scores.reduce((a, b) => a + b, 0) / scores.length) * 100 : 0;
 
-  // 2. Green benefit ratio (0-100)
-  const totalEntries = ledgerEntries.length;
-  const greenCount = ledgerEntries.filter(e => e.is_green_benefit === true).length;
-  const greenRatio = totalEntries > 0 ? (greenCount / totalEntries) * 100 : 0;
+  // Ledger: one row per emission, grouped by invoice.
+  const rows = latestLedgerRowPerEmission(ledgerRows);
+  const invoices = new Map<string, CredibilityLedgerInput[]>();
+  for (const r of rows) {
+    const key = r.document_id || r.document_hash || r.id;
+    invoices.set(key, [...(invoices.get(key) ?? []), r]);
+  }
 
-  // 3. Data completeness (0-100)
-  const completeCount = ledgerEntries.filter(e =>
-    e.vendor != null && e.vendor.trim() !== '' &&
-    e.invoice_date != null &&
-    e.amount != null && e.amount > 0 &&
-    e.hsn_code != null && e.hsn_code.trim() !== ''
-  ).length;
-  const dataCompleteness = totalEntries > 0 ? (completeCount / totalEntries) * 100 : 0;
+  // 2. Completeness per invoice. The amount is stored on one line only.
+  let completeInvoices = 0;
+  let verifiedInvoices = 0;
+  for (const lines of invoices.values()) {
+    const complete =
+      lines.some((l) => text(l.vendor)) &&
+      lines.some((l) => text(l.invoice_date)) &&
+      lines.some((l) => typeof l.amount === 'number' && l.amount > 0) &&
+      lines.every((l) => text(l.hsn_code));
+    if (complete) completeInvoices++;
+    if (lines.some((l) => l.verification_status === 'verified')) verifiedInvoices++;
+  }
+  const dataCompleteness = invoices.size > 0 ? (completeInvoices / invoices.size) * 100 : 0;
 
-  // 4. History depth (0-100, capped at 50 docs)
-  const verifiedCount = verifications.filter(v => v.verification_score != null && v.verification_score > 0).length;
-  const historyDepth = Math.min(verifiedCount / 50, 1) * 100;
+  // 3. History: unique verified invoices, not verification attempts.
+  const historyDepth = Math.min(verifiedInvoices / HISTORY_CAP_INVOICES, 1) * 100;
 
-  // Weighted score
-  const score = Math.round(
-    0.40 * avgVerification +
-    0.40 * dataCompleteness +
-    0.20 * historyDepth
-  );
+  const greenRatio = rows.length > 0 ? (rows.filter((e) => e.is_green_benefit === true).length / rows.length) * 100 : 0;
 
-  const clampedScore = Math.max(0, Math.min(100, score));
-
+  const score = Math.max(0, Math.min(100, Math.round(0.4 * avgVerification + 0.4 * dataCompleteness + 0.2 * historyDepth)));
   const grade: CredibilityResult['grade'] =
-    clampedScore >= 90 ? 'A+' :
-    clampedScore >= 75 ? 'A' :
-    clampedScore >= 55 ? 'B' :
-    clampedScore >= 35 ? 'C' : 'D';
+    score >= 90 ? 'A+' : score >= 75 ? 'A' : score >= 55 ? 'B' : score >= 35 ? 'C' : 'D';
 
   return {
-    score: clampedScore,
+    score,
     grade,
     breakdown: {
       verificationAvg: Math.round(avgVerification),
@@ -92,5 +112,6 @@ export function computeCredibilityScore(
       dataCompleteness: Math.round(dataCompleteness),
       historyDepth: Math.round(historyDepth),
     },
+    counts: { attempts: attempts.length, invoices: invoices.size, completeInvoices, verifiedInvoices },
   };
 }
