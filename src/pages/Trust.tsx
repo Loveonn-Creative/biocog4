@@ -563,7 +563,7 @@ const Trust = () => {
                 { name: "Verification quality", desc: "Average verification outcome across records." },
                 { name: "Green-benefit ratio", desc: "Share of records eligible for green benefit." },
                 { name: "Data completeness", desc: "Vendor + date + amount + HSN present." },
-                { name: "History depth", desc: "Count of verified documents over time." },
+                { name: "History depth", desc: "Count of verified invoices over time." },
               ].map(b => (
                 <Card key={b.name} className="border-border">
                   <CardContent className="p-5">
@@ -590,7 +590,7 @@ const Trust = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Structural defense, not a disclaimer</h2>
             <p className="text-muted-foreground max-w-3xl mb-10">
-              Greenwashing is prevented by the architecture, not by policy. Five mechanisms work together so a claim cannot
+              Greenwashing is prevented by the architecture, not by policy. Six mechanisms work together so a claim cannot
               be inflated, recycled, or quietly re-baselined after the fact.
             </p>
             <ShieldSegments count={6} />
@@ -614,7 +614,7 @@ const Trust = () => {
                 },
                 {
                   name: "Additionality lock on credits",
-                  desc: "Only records that clear additionality, evidence linkage, and methodology lock are eligible for credit generation. Everything else is held back.",
+                  desc: "Only records that clear additionality, evidence linkage, and methodology lock are passed on as a credit signal from their invoice evidence. Credit generation itself is carried out offline, outside the platform. Everything else is held back.",
                 },
                 {
                   name: "Cross-MSME peer challenge",
