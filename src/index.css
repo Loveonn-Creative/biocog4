@@ -417,3 +417,8 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 [dir="rtl"] svg[data-lucide="chevron-left"] {
   transform: scaleX(-1);
 }
+
+/* Lead magnet pages: hand-drawn strokes, a slow float for tilted objects, a value pop. */
+@keyframes lm-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes lm-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes lm-pop { 0% { opacity: .2; transform: translateY(3px); } 100% { opacity: 1; transform: none; } }

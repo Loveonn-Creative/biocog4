@@ -5,6 +5,8 @@
 // every regulatory change.
 import type { Block } from './render';
 import { servicePages } from '@/data/services';
+import { MSME_CARBON_FAQS, MSME_CARBON_META, SUPPLIER_EVIDENCE_FAQS, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
+import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -171,6 +173,28 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
     ],
   },
   // Service lead pages: the prerendered answer, objections, links and FAQs.
+  [SUPPLIER_EVIDENCE_META.path]: {
+    h1: SUPPLIER_EVIDENCE_META.h1,
+    blocks: [
+      { p: 'When assurance or a customer asks where a Scope 3 Category 1 figure came from, the spend-based estimate is the line that gets challenged. Enter how many suppliers make up about 80% of your purchased-goods spend, how many already send activity data, and how many months you have; the check shows your coverage by supplier count and the monthly pace needed to close the gap.' },
+      { h2: 'Why supplier bills make a figure defensible' },
+      { p: 'The GHG Protocol Scope 3 Technical Guidance ranks Category 1 methods from supplier-specific and hybrid to average-data and spend-based. A supplier’s electricity bills and fuel invoices provide the activity data for the hybrid method, and each line can show its method, emission factor, source and original document.' },
+      { h2: 'Supplier request you can send today' },
+      { p: SUPPLIER_REQUEST.replace(/\n+/g, ' ') },
+      { h2: 'Questions' },
+      ...SUPPLIER_EVIDENCE_FAQS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+    ] as Block[],
+  },
+  [MSME_CARBON_META.path]: {
+    h1: MSME_CARBON_META.h1,
+    blocks: [
+      { p: 'If a buyer, a large customer or a bank has asked for your carbon footprint, type the monthly units from your electricity bill and any diesel you use. You see an estimated annual figure in tonnes of CO₂ straight away, what the person asking usually needs, and a short reply you can send. No sign-up.' },
+      { h2: 'How the estimate is worked out' },
+      { p: 'Annual emissions = monthly kWh × 12 × 0.710 kg CO₂ per kWh (India grid average used by Senseible) + monthly diesel litres × 12 × 2.68 kg CO₂ per litre. It is an estimate from typed numbers; a Senseible record built from the bills shows the factor and source for every line.' },
+      { h2: 'Questions' },
+      ...MSME_CARBON_FAQS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+    ] as Block[],
+  },
   ...Object.fromEntries(servicePages.map(s => [`/${s.slug}`, {
     h1: s.hero.headline,
     blocks: [

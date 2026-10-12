@@ -48,6 +48,8 @@ const ClimateStack = lazy(() => import("./pages/ClimateStack"));
 const CMSArticle = lazy(() => import("./pages/CMSArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
+const SupplierEvidence = lazy(() => import("./pages/lead/SupplierEvidence"));
+const MsmeCarbonNumber = lazy(() => import("./pages/lead/MsmeCarbonNumber"));
 const Profile = lazy(() => import("./pages/Profile"));
 const PartnerProfile = lazy(() => import("./pages/PartnerProfile"));
 const Subscription = lazy(() => import("./pages/Subscription"));
@@ -131,6 +133,8 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/scope-3-supplier-evidence" element={<SupplierEvidence />} />
+              <Route path="/msme-carbon-number" element={<MsmeCarbonNumber />} />
               {serviceNav.map(sp => <Route key={sp.slug} path={`/${sp.slug}`} element={<ServicePage slug={sp.slug} />} />)}
               <Route path="/auth" element={<Auth />} />
               <Route path="/reset-password" element={<ResetPassword />} />
