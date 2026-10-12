@@ -14,9 +14,9 @@ import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from "@/lib/fac
 
 /** The three fears at a sign-up form, each answered with a fact the product already backs. */
 const AUTH_ASSURANCES = [
-  { key: "free", mark: "Free", short: "Free to start: 10 bills a month on Snapshot, no card asked.", long: "Free to start. The Snapshot plan reads 10 bills a month, and no card is asked for.", href: "", linkText: "" },
-  { key: "dpa", mark: "DPA", short: "Your records stay in your account, under a DPA drafted for India’s DPDP Act, 2023.", long: "Your records stay in your account, under a Data Processing Addendum drafted for India’s DPDP Act, 2023.", href: "/legal/dpa", linkText: "Read it" },
-  { key: "src", mark: "Source", short: "Every number shows its emission factor and source.", long: "Every number shows its emission factor and source, so you can defend it.", href: "/trust", linkText: "How" },
+  { key: "free", short: "Free for 10 bills a month. No card.", href: "", linkText: "" },
+  { key: "dpa", short: "Your records stay in your account.", href: "/legal/dpa", linkText: "DPA" },
+  { key: "src", short: "Every number shows its source.", href: "", linkText: "" },
 ];
 
 type AuthMode = "signin" | "signup" | "forgot";
@@ -62,6 +62,7 @@ const Auth = () => {
     }
   };
   const [dataConsent, setDataConsent] = useState(false);
+  const [showBusiness, setShowBusiness] = useState(false);
   
   // Partner-specific fields
   const [organizationType, setOrganizationType] = useState("");
@@ -292,6 +293,7 @@ const Auth = () => {
     );
   }
 
+  const tabsShown = mode !== "forgot" && !isPartnerMode;
   const field = "h-12 w-full rounded-xl border border-input bg-background px-4 text-[15px] transition-colors placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15";
   const label = "mb-1.5 block text-sm font-medium text-foreground";
 
@@ -315,7 +317,7 @@ const Auth = () => {
               </Badge>
             )}
 
-            {mode !== "forgot" && !isPartnerMode && (
+            {tabsShown && (
               <div role="tablist" aria-label="Account" className="mb-8 grid grid-cols-2 rounded-full border border-border bg-secondary/50 p-1 text-sm">
                 {(["signin", "signup"] as const).map(m => (
                   <button key={m} type="button" role="tab" aria-selected={mode === m} onClick={() => setMode(m)}
@@ -326,18 +328,17 @@ const Auth = () => {
               </div>
             )}
 
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+            <h1 className={tabsShown ? "sr-only" : "text-3xl font-semibold tracking-tight text-foreground"}>
               {mode === "signin" && "Sign in"}
               {mode === "signup" && (isPartnerMode ? "Become a Partner" : "Create account")}
               {mode === "forgot" && "Reset password"}
             </h1>
-            <p className="mt-2 mb-8 text-muted-foreground">
-              {mode === "signin" && "Access your carbon data and saved reports."}
-              {mode === "signup" && (isPartnerMode
-                ? "Register to access the partner marketplace and carbon credit purchasing."
-                : "Start tracking and monetizing your carbon data.")}
-              {mode === "forgot" && "We'll send you a reset link."}
-            </p>
+            {!tabsShown && (
+              <p className="mt-2 mb-8 text-muted-foreground">
+                {mode === "signup" && "Register to access the partner marketplace and carbon credit purchasing."}
+                {mode === "forgot" && "We'll send you a reset link."}
+              </p>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -368,7 +369,13 @@ const Auth = () => {
                 </div>
               )}
 
-              {mode === "signup" && (
+              {mode === "signup" && !isPartnerMode && !showBusiness && (
+                <button type="button" onClick={() => setShowBusiness(true)} className="text-sm font-medium text-primary">
+                  + Add business details <span className="font-normal text-muted-foreground">(optional)</span>
+                </button>
+              )}
+
+              {mode === "signup" && (isPartnerMode || showBusiness) && (
                 <fieldset className="space-y-4 rounded-2xl border border-border p-4 sm:p-5">
                   <legend className="px-1 text-sm font-medium text-foreground">
                     {isPartnerMode ? "Your organisation" : "Your business"} <span className="font-normal text-muted-foreground">{isPartnerMode ? "" : "(optional)"}</span>
@@ -419,7 +426,7 @@ const Auth = () => {
               )}
 
               {mode === "signup" && (
-                <div className="flex items-start gap-3 rounded-2xl bg-secondary/50 p-4">
+                <div className="flex items-start gap-3">
                   <Checkbox
                     id="data-consent"
                     checked={dataConsent}
@@ -427,7 +434,7 @@ const Auth = () => {
                     aria-describedby="data-consent-description"
                     className="mt-0.5"
                   />
-                  <label id="data-consent-description" htmlFor="data-consent" className="text-sm leading-relaxed text-muted-foreground">
+                  <label id="data-consent-description" htmlFor="data-consent" className="text-[13px] leading-relaxed text-muted-foreground">
                     I consent to Senseible collecting, processing, uploading and parsing my business data. Read the{' '}
                     <Link to="/legal/privacy" target="_blank" className="font-medium text-foreground underline underline-offset-4">
                       Privacy Policy
@@ -482,14 +489,8 @@ const Auth = () => {
             )}
 
             {/* Reassurance on phones, where the side panel is hidden */}
-            <ul className="mt-8 space-y-2 text-[13px] text-muted-foreground lg:hidden">
-              {AUTH_ASSURANCES.map(a => (
-                <li key={a.key} className="flex gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />{a.short}</li>
-              ))}
-            </ul>
-
-            <p className="mt-8 text-center text-xs text-muted-foreground/70">
-              Your business data stays subject to your account permissions and our published data terms.
+            <p className="mt-8 text-center text-xs text-muted-foreground lg:hidden">
+              Free to start · No card · <Link to="/legal/dpa" className="underline underline-offset-2">DPA</Link> for India’s DPDP Act, 2023
             </p>
           </div>
         </main>
@@ -497,8 +498,7 @@ const Auth = () => {
         {/* What you are signing up for: a real-shaped record and the terms behind it */}
         <aside className="relative hidden overflow-hidden border-l border-border bg-secondary/40 lg:flex lg:items-center lg:justify-center" aria-label="What you get">
           <div className="w-full max-w-[460px] px-10 py-24">
-            <p className="text-xs uppercase tracking-[0.14em] text-primary">{mode === "signin" ? "Welcome back" : "Your first record"}</p>
-            <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-tight [text-wrap:balance]">
+            <h2 className="text-[1.9rem] font-semibold leading-tight tracking-tight [text-wrap:balance]">
               {mode === "signin" ? "Every number, still traced to its bill." : "One bill in. A record a lender can check, out."}
             </h2>
 
@@ -517,13 +517,11 @@ const Auth = () => {
               </dl>
             </div>
 
-            <ul className="mt-10 space-y-5">
+            <ul className="mt-10 space-y-3 text-[15px] text-foreground/80">
               {AUTH_ASSURANCES.map(a => (
-                <li key={a.key} className="grid grid-cols-[3.5rem_1fr] items-baseline gap-3">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-primary">{a.mark}</span>
-                  <span className="text-[15px] leading-relaxed text-foreground/80">
-                    {a.long}{a.href && <> <Link to={a.href} target="_blank" className="text-primary underline-offset-4 hover:underline">{a.linkText}</Link></>}
-                  </span>
+                <li key={a.key} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                  <span>{a.short}{a.href && <> <Link to={a.href} target="_blank" className="text-primary underline-offset-4 hover:underline">{a.linkText}</Link></>}</span>
                 </li>
               ))}
             </ul>
