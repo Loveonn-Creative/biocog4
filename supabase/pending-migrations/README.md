@@ -100,3 +100,16 @@ Creates one new private table, `ambassador_applications`. Nothing existing is to
 Tested: `tests/run_ambassador.sh` replays `supabase/migrations`, applies it, runs 7 checks (uniqueness, lane and length rules, no browser access), confirms the rollback refuses while applications exist, then rolls back with confirmation and compares the catalog.
 
 Roll back with `rollback/20261014100000_ambassador_applications.rollback.sql`. It refuses while applications exist unless `SET LOCAL ambassador.rollback_confirm = 'drop applications';` is run in the same transaction (export first).
+
+## 20261015100000_atomic_verify_and_delete.sql (atomic verification and deletion)
+
+Depends on `20261011180000` (the unique ledger index; aborts if missing). Adds two `service_role`-only functions; no table, policy or row is changed.
+
+- **`commit_verification(p jsonb)`**: `verify-carbon` saves the verification, the `verified` marks and the ledger rows in one transaction. The emissions are locked first and must still belong to the caller's workspace (personal, organisation or guest session), otherwise `records_changed` (HTTP 409). Only records that passed their checks are marked verified. Re-sending the same set returns the stored verification and fills in any marks or ledger rows an interrupted earlier run left out. An existing unverified ledger row is promoted when that record is now verified; a verified row is never overwritten.
+- **`delete_document_atomic(document, actor, allowed, user_agent)`**: `delete-document` removes an unverified invoice, its records and ledger rows, and writes the audit entry, in one transaction, after locking the invoice and its records. It refuses when any record, ledger row or verification of these records is verified, or a monetisation pathway or marketplace listing is built on one. Unverified attempts stay as history and are named in the audit entry. A delete that arrives while a verification of the same records is in progress waits for it, then refuses.
+
+Until it is applied, both edge functions fall back to the previous step-by-step path, so the code can ship first.
+
+Tested on local Postgres 16, with and without `20261013100000`: `tests/20261015100000_atomic_verify_and_delete.test.sql` (19 checks). The real `verify-carbon` and `delete-document` handlers were also run against the replayed schema, before and after the migration, including a forced ledger failure (atomic path: HTTP 500, nothing written) and a delete racing an open verification.
+
+Roll back with `rollback/20261015100000_atomic_verify_and_delete.rollback.sql`. It drops the two functions; no data changes.

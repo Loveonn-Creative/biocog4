@@ -366,10 +366,12 @@ serve(async (req) => {
         : previousQuery.eq('user_id', userId)).maybeSingle();
       if (previousError) throw previousError;
       if (previous) {
-        const { error: statusError } = previous.verification_status === 'verified'
+        // Re-flag only the records that passed when this set was first verified.
+        const replayIds: string[] = Array.isArray(previous.ai_analysis?.verifiedEmissionIds) ? previous.ai_analysis.verifiedEmissionIds : emissionIds;
+        const { error: statusError } = previous.verification_status === 'verified' && replayIds.length
           ? await (orgId
-            ? supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('organization_id', orgId)
-            : supabase.from('emissions').update({ verified: true }).in('id', emissionIds).eq('user_id', userId))
+            ? supabase.from('emissions').update({ verified: true }).in('id', replayIds).eq('organization_id', orgId)
+            : supabase.from('emissions').update({ verified: true }).in('id', replayIds).eq('user_id', userId))
           : { error: null };
         if (statusError) throw statusError;
         return new Response(JSON.stringify({ success: true, data: {
@@ -468,7 +470,10 @@ serve(async (req) => {
 
     // Indicative value: verified tCO2e x the single reference rate. Zero
     // unless this verification passed. Not an issued credit.
-    const verifiedKg = status === 'verified' ? totalCO2Kg : 0;
+    // Only records that passed every check count as verified.
+    const verifiedKg = status === 'verified'
+      ? emissions.filter((e) => validationResults.get(e.id)?.valid !== false).reduce((sum, e) => sum + grossKg(e), 0)
+      : 0;
     const verifiedTCO2e = verifiedKg / 1000;
     const indicativeValueInr = indicativeValueFromKg(verifiedKg);
     const indicativeValue = {
@@ -524,101 +529,71 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       }
     }
 
-    // Store verification result
-    const { data: verification, error: verificationError } = await supabase
-      .from('carbon_verifications')
-      .insert({
-        emission_ids: emissionIds,
-        idempotency_key: idempotencyKey,
-        session_id: sessionId || null,
-        user_id: userId || null,
-        organization_id: orgId,
-        total_co2_kg: totalCO2Kg,
-        verification_status: status,
-        verification_score: verificationScore,
-        greenwashing_risk: greenwashingRisk,
-        ai_analysis: {
-          dataQuality: dataQualityAssessment,
-          methodologyCompliance,
-          recommendations: aiRecommendations,
-          flags: [...new Set(allFlags)],
-          scopeBreakdown,
-          greenScore,
-          greenPotential,
-          netEmissions,
-          verifiedReductions,
-          greenwashingFactors,
-          creditEligibility: {
-            eligibleCredits: creditsIssued,
-            carryForward,
-            qualityGrade,
-          },
-          indicativeValue,
-          complianceAssessment,
-          methodology: {
-            name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
-            version: METHODOLOGY_VERSION_TAG,
-            country: countryCode,
-            factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
-            gridFactor,
-          },
+    // ============= COMMIT =============
+    // Everything below is computed first and committed once. With the
+    // commit_verification database function (pending migration
+    // 20261015100000), the verification row, the emission flags and the
+    // ledger evidence are written in one transaction: all or nothing.
+    // Without it, the earlier step-by-step writes run as before.
+    const verificationId = crypto.randomUUID();
+    const nowIso = new Date().toISOString();
+    // Only records that passed every evidence check become verified, even
+    // when the batch as a whole passes. The rest stay pending for review.
+    const passedIds = emissions.filter((e) => validationResults.get(e.id)?.valid !== false).map((e) => e.id as string);
+    const verifiedIds = status === 'verified' ? passedIds : [];
+
+    const verificationRow = {
+      id: verificationId,
+      created_at: nowIso,
+      emission_ids: emissionIds,
+      idempotency_key: idempotencyKey,
+      session_id: sessionId || null,
+      user_id: userId || null,
+      organization_id: orgId,
+      total_co2_kg: totalCO2Kg,
+      verification_status: status,
+      verification_score: verificationScore,
+      greenwashing_risk: greenwashingRisk,
+      ai_analysis: {
+        dataQuality: dataQualityAssessment,
+        methodologyCompliance,
+        recommendations: aiRecommendations,
+        flags: [...new Set(allFlags)],
+        scopeBreakdown,
+        greenScore,
+        greenPotential,
+        netEmissions,
+        verifiedReductions,
+        greenwashingFactors,
+        creditEligibility: {
+          eligibleCredits: creditsIssued,
+          carryForward,
+          qualityGrade,
         },
-        // null = not assessed (see complianceAssessment above).
-        ccts_eligible: null,
-        cbam_compliant: null,
-        verified_at: status === 'verified' ? new Date().toISOString() : null,
-      })
-      .select()
-      .single();
+        indicativeValue,
+        complianceAssessment,
+        verifiedEmissionIds: verifiedIds,
+        methodology: {
+          name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
+          version: METHODOLOGY_VERSION_TAG,
+          country: countryCode,
+          factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
+          gridFactor,
+        },
+      },
+      // null = not assessed (see complianceAssessment above).
+      ccts_eligible: null,
+      cbam_compliant: null,
+      verified_at: status === 'verified' ? nowIso : null,
+    };
 
-    if (verificationError?.code === '23505' && userId && idempotencyKey) {
-      const conflictQuery = supabase.from('carbon_verifications').select('*').eq('idempotency_key', idempotencyKey);
-      const { data: previous, error: lookupError } = await (orgId
-        ? conflictQuery.eq('organization_id', orgId)
-        : conflictQuery.eq('user_id', userId)).single();
-      if (lookupError || !previous) throw lookupError || new Error('Existing verification unavailable');
-      return new Response(JSON.stringify({ success: true, data: {
-        verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
-        greenwashingRisk: previous.greenwashing_risk, greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [],
-        analysis: replayAnalysis(previous.ai_analysis), cctsEligible: false,
-        cbamCompliant: false, totalCO2Kg: previous.total_co2_kg,
-        netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
-        verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
-        methodology: previous.ai_analysis?.methodology,
-          indicativeValue: replayIndicativeValue(previous), complianceAssessment: 'not_assessed',
-      }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-    if (verificationError) {
-      console.error('Error storing verification:', verificationError);
-      return new Response(
-        JSON.stringify({ error: 'Failed to store verification' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    // Update status only. verification_notes stores immutable extraction provenance.
-    if (status === 'verified') {
-      const statusUpdate = supabase.from('emissions').update({ verified: true }).in('id', emissionIds);
-      const { error: statusError } = await (orgId
-        ? statusUpdate.eq('organization_id', orgId)
-        : statusUpdate.eq('user_id', userId || ''));
-      if (statusError && userId) throw statusError;
-      // Guests: same evidence gate passed above; update only this session's rows.
-      if (!userId && sessionId) {
-        const { error: guestStatusError } = await supabase.from('emissions').update({ verified: true })
-          .in('id', emissionIds).eq('session_id', sessionId).is('user_id', null);
-        if (guestStatusError) throw guestStatusError;
-      }
-    }
-
-    // ============= COMPLIANCE LEDGER POPULATION =============
-    // Auto-populate compliance ledger for authenticated users.
-    // One ledger row per (user, emission), across all verifications, so an
-    // emission verified twice is never counted twice downstream.
+    // ---- Ledger evidence (signed-in only): one row per (owner, emission). ----
+    type LedgerRow = Record<string, unknown> & { id: string; emission_id: string; verification_status: string };
+    const ledgerRows: LedgerRow[] = [];
+    const priorByEmission = new Map<string, { id: string; verification_status: string | null }>();
     if (userId) {
       // Emission rows store the lowercase display category (see
-      // src/lib/mrvPersistence.ts); older code compared against upper-case
-      // product categories only, so no row was ever marked green.
+      // src/lib/mrvPersistence.ts).
       const GREEN_CATEGORIES = new Set([
         'solar', 'ev', 'forestation', 'wind', 'biogas', 'organic', 'efficiency', 'water', 'recycled',
         'solar_energy', 'ev_transport', 'wind_energy', 'organic_input', 'energy_efficiency', 'water_conservation', 'recycled_material',
@@ -628,17 +603,17 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       // and tagged with the organisation, whichever member verifies it.
       const priorQuery = supabase
         .from('compliance_ledger')
-        .select('id, emission_id, document_id, amount, verification_status')
+        .select('id, emission_id, verification_status')
         .in('emission_id', emissionIds);
       const { data: priorLedger, error: priorLedgerError } = await (orgId
         ? priorQuery.eq('organization_id', orgId)
         : priorQuery.eq('user_id', userId));
       if (priorLedgerError) throw priorLedgerError;
-      const priorByEmission = new Map((priorLedger || []).map((row) => [row.emission_id as string, row]));
+      for (const row of priorLedger || []) priorByEmission.set(row.emission_id as string, { id: row.id as string, verification_status: row.verification_status as string | null });
 
       // Invoice amount is a document-level figure. Store it on one ledger row
-      // per document (the first one written) and leave it null on the other
-      // line rows, so summing ledger amounts never multiplies supplier spend.
+      // per document and leave it null on the other line rows, so summing
+      // ledger amounts never multiplies supplier spend.
       const documentIds = [...new Set(emissions.map((e) => e.document_id).filter(Boolean))] as string[];
       const docsWithAmount = new Set<string>();
       if (documentIds.length) {
@@ -654,30 +629,15 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         for (const row of amountRows || []) if (row.document_id) docsWithAmount.add(row.document_id as string);
       }
 
-      let written = 0;
       for (const emission of emissions) {
         const doc = emission.documents;
         const isGreen = GREEN_CATEGORIES.has(String(emission.category || '').toLowerCase());
         const co2 = emission.co2_kg || 0;
+        const rowPassed = validationResults.get(emission.id)?.valid !== false;
+        // A record that failed its checks is never "verified" in the ledger.
+        const rowStatus = status === 'verified' && !rowPassed ? 'needs_review' : status;
 
-        const prior = priorByEmission.get(emission.id);
-        if (prior) {
-          // Already in the ledger. Only promote an earlier unverified row when
-          // this verification passed; never add a second row.
-          if (status === 'verified' && prior.verification_status !== 'verified') {
-            const { error: promoteError } = await supabase.from('compliance_ledger').update({
-              verification_id: verification.id,
-              verification_status: status,
-              verification_score: verificationScore,
-              greenwashing_risk: greenwashingRisk,
-              validation_result: validationResults.get(emission.id)?.valid === false ? 'failed' : 'passed',
-              verified_at: new Date().toISOString(),
-            }).eq('id', prior.id).eq(orgId ? 'organization_id' : 'user_id', orgId ?? userId);
-            if (promoteError) console.error('Compliance ledger promote error for emission:', emission.id, promoteError);
-          }
-          continue;
-        }
-        const docAmount = doc?.amount ?? null;
+        const docAmount = priorByEmission.has(emission.id) ? null : (doc?.amount ?? null);
         let ledgerAmount: number | null = null;
         if (docAmount !== null && emission.document_id && !docsWithAmount.has(emission.document_id)) {
           ledgerAmount = docAmount;
@@ -743,57 +703,133 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const fiscalYear = month >= 4 ? `FY${year}-${year + 1}` : `FY${year - 1}-${year}`;
         const fiscalQuarter = month >= 4 && month <= 6 ? 'Q1' : month >= 7 && month <= 9 ? 'Q2' : month >= 10 && month <= 12 ? 'Q3' : 'Q4';
 
-        try {
-          const { error: insertError } = await supabase
-            .from('compliance_ledger')
-            .insert({
-              user_id: orgId ? emission.user_id : userId,
-              // compliance_ledger.organization_id exists only once the workspace migration is applied.
-              ...(orgId ? { organization_id: orgId } : {}),
-              document_id: emission.document_id || null,
-              emission_id: emission.id,
-              verification_id: verification.id,
-              document_hash: doc?.document_hash || 'NO_HASH',
-              invoice_number: doc?.invoice_number || null,
-              vendor: doc?.vendor || null,
-              invoice_date: doc?.invoice_date || null,
-              amount: ledgerAmount,
-              currency: doc?.currency || 'INR',
-              green_category: isGreen ? emission.category : null,
-              scope: emission.scope,
-              emission_category: emission.category,
-              activity_data: emission.activity_data || null,
-              activity_unit: emission.activity_unit || null,
-              emission_factor: emission.emission_factor || null,
-              factor_source: factorSource,
-              co2_kg: co2,
-              is_green_benefit: isGreen,
-              confidence_score: doc?.confidence || null,
-              verification_score: verificationScore,
-              verification_status: status,
-              validation_result: validationResult,
-              validation_failure_reason: validationFailureReason,
-              greenwashing_risk: greenwashingRisk,
-              methodology_version: `BIOCOG_MVR_${countryCode}_${METHODOLOGY_VERSION_TAG}`,
-              classification_method: classificationMethod,
-              gstin: supplierGstin,
-              hsn_code: hsnCode,
-              verified_at: status === 'verified' ? new Date().toISOString() : null,
-              fiscal_year: fiscalYear,
-              fiscal_quarter: fiscalQuarter,
-            });
-          // 23505: a concurrent request already wrote this (user, emission).
-          if (insertError && insertError.code !== '23505') throw insertError;
-          if (!insertError) written++;
-        } catch (ledgerError) {
-          console.error('Compliance ledger insert error for emission:', emission.id, ledgerError);
-        }
+        ledgerRows.push({
+          id: crypto.randomUUID(),
+          created_at: nowIso,
+          user_id: orgId ? emission.user_id : userId,
+          // compliance_ledger.organization_id exists only once the workspace migration is applied.
+          ...(orgId ? { organization_id: orgId } : {}),
+          document_id: emission.document_id || null,
+          emission_id: emission.id,
+          verification_id: verificationId,
+          document_hash: doc?.document_hash || 'NO_HASH',
+          invoice_number: doc?.invoice_number || null,
+          vendor: doc?.vendor || null,
+          invoice_date: doc?.invoice_date || null,
+          amount: ledgerAmount,
+          currency: doc?.currency || 'INR',
+          green_category: isGreen ? emission.category : null,
+          scope: emission.scope,
+          emission_category: emission.category,
+          activity_data: emission.activity_data || null,
+          activity_unit: emission.activity_unit || null,
+          emission_factor: emission.emission_factor || null,
+          factor_source: factorSource,
+          co2_kg: co2,
+          is_green_benefit: isGreen,
+          confidence_score: doc?.confidence || null,
+          verification_score: verificationScore,
+          verification_status: rowStatus,
+          validation_result: validationResult,
+          validation_failure_reason: validationFailureReason,
+          greenwashing_risk: greenwashingRisk,
+          methodology_version: `BIOCOG_MVR_${countryCode}_${METHODOLOGY_VERSION_TAG}`,
+          classification_method: classificationMethod,
+          gstin: supplierGstin,
+          hsn_code: hsnCode,
+          verified_at: rowStatus === 'verified' ? nowIso : null,
+          fiscal_year: fiscalYear,
+          fiscal_quarter: fiscalQuarter,
+        });
       }
-      console.log(`Compliance ledger: ${written} new entries, ${emissions.length - written} already present or failed`);
+    }
+
+    const replayExisting = async () => {
+      const q = supabase.from('carbon_verifications').select('*').eq('idempotency_key', idempotencyKey);
+      const { data: previous, error: lookupError } = await (orgId ? q.eq('organization_id', orgId) : q.eq('user_id', userId)).single();
+      if (lookupError || !previous) throw lookupError || new Error('Existing verification unavailable');
+      return new Response(JSON.stringify({ success: true, data: {
+        verificationId: previous.id, status: previous.verification_status, score: previous.verification_score,
+        greenwashingRisk: previous.greenwashing_risk, greenwashingFactors: previous.ai_analysis?.greenwashingFactors || [],
+        analysis: replayAnalysis(previous.ai_analysis), cctsEligible: false,
+        cbamCompliant: false, totalCO2Kg: previous.total_co2_kg,
+        netEmissions: previous.ai_analysis?.netEmissions ?? previous.total_co2_kg,
+        verifiedReductions: previous.ai_analysis?.verifiedReductions ?? 0,
+        methodology: previous.ai_analysis?.methodology,
+        indicativeValue: replayIndicativeValue(previous), complianceAssessment: 'not_assessed',
+      }, reused: true }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    };
+
+    const { data: committed, error: commitError } = await supabase.rpc('commit_verification', {
+      p: {
+        verification: verificationRow,
+        verified_emission_ids: verifiedIds,
+        ledger: ledgerRows,
+        scope: { user_id: userId, session_id: userId ? null : sessionId, organization_id: orgId },
+      },
+    });
+    const rpcMissing = !!commitError && (commitError.code === 'PGRST202' || commitError.code === '42883');
+
+    if (!commitError) {
+      // Same emission set already verified: the stored result is returned, and
+      // the transaction has filled in any missing flags or ledger rows.
+      if ((committed as { reused?: boolean } | null)?.reused && userId && idempotencyKey) return await replayExisting();
+    } else if (!rpcMissing) {
+      // The transaction rolled back: nothing was written.
+      console.error('commit_verification failed:', commitError.code);
+      const changed = commitError.code === '40001' || !!commitError.message?.includes('records_changed');
+      return new Response(
+        JSON.stringify({ error: changed
+          ? 'Some of these records were changed or removed. Refresh and try again.'
+          : 'Verification could not be saved. Nothing was changed. Try again.' }),
+        { status: changed ? 409 : 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    } else {
+      // ---- Step-by-step path, until the migration is applied. ----
+      const { error: verificationError } = await supabase.from('carbon_verifications').insert(verificationRow);
+      if (verificationError?.code === '23505' && userId && idempotencyKey) return await replayExisting();
+      if (verificationError) {
+        console.error('Error storing verification:', verificationError);
+        return new Response(
+          JSON.stringify({ error: 'Failed to store verification' }),
+          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (verifiedIds.length) {
+        const statusUpdate = supabase.from('emissions').update({ verified: true }).in('id', verifiedIds);
+        const { error: statusError } = await (orgId
+          ? statusUpdate.eq('organization_id', orgId)
+          : userId ? statusUpdate.eq('user_id', userId) : statusUpdate.eq('session_id', sessionId as string).is('user_id', null));
+        if (statusError) throw statusError;
+      }
+      let written = 0;
+      for (const row of ledgerRows) {
+        const prior = priorByEmission.get(row.emission_id);
+        if (prior) {
+          // Already in the ledger: only promote an earlier unverified row.
+          if (row.verification_status === 'verified' && prior.verification_status !== 'verified') {
+            const { error: promoteError } = await supabase.from('compliance_ledger').update({
+              verification_id: verificationId,
+              verification_status: 'verified',
+              verification_score: verificationScore,
+              greenwashing_risk: greenwashingRisk,
+              validation_result: row.validation_result,
+              verified_at: nowIso,
+            }).eq('id', prior.id);
+            if (promoteError) console.error('Compliance ledger promote error for emission:', row.emission_id, promoteError);
+          }
+          continue;
+        }
+        const { error: insertError } = await supabase.from('compliance_ledger').insert(row);
+        // 23505: a concurrent request already wrote this (owner, emission).
+        if (insertError && insertError.code !== '23505') console.error('Compliance ledger insert error for emission:', row.emission_id, insertError);
+        if (!insertError) written++;
+      }
+      console.log(`Compliance ledger: ${written} new entries`);
     }
 
     const result: VerificationResult & { greenwashingFactors: string[] } = {
-      verificationId: verification.id,
+      verificationId,
       status,
       score: verificationScore,
       greenwashingRisk,

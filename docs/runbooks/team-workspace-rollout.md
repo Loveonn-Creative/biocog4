@@ -29,6 +29,7 @@ below can be undone with the matching file in `supabase/pending-migrations/rollb
 | 2 | `20261011160000_scale_price_quotes.sql` | Scale quotes table; Scale seats come from the quote. | `SELECT to_regclass('public.scale_price_quotes') IS NOT NULL;` |
 | 3 | `20261011180000_team_access_and_ledger_integrity.sql` | Fixes "permission denied for function is_org_member" on the Team page; seat counts per plan; team role changes. | `SELECT to_regprocedure('public.create_organization(text)') IS NOT NULL AND to_regprocedure('private.is_org_member(uuid,uuid)') IS NOT NULL;` |
 | 4 | `20261013100000_org_workspace_roles.sql` | Six team roles and the shared organisation workspace. | `SELECT to_regprocedure('public.my_org_permissions(uuid)') IS NOT NULL;` |
+| 5 | `20261015100000_atomic_verify_and_delete.sql` | Verification and invoice deletion each save completely or not at all. Needs step 3. Works before or after step 4. | `SELECT to_regprocedure('public.commit_verification(jsonb)') IS NOT NULL AND to_regprocedure('public.delete_document_atomic(uuid,uuid,boolean,text)') IS NOT NULL;` |
 
 ## Separate: Decarbonize India applications
 
@@ -45,6 +46,11 @@ Independent of steps 1 to 4. Apply `20261014100000_ambassador_applications.sql` 
 - Members of an organisation see a workspace switcher next to their name: Personal or the organisation.
 - In the organisation workspace, invoices added by any member appear for everyone in the team; personal workspaces stay private.
 
+## After step 5, in the app
+
+- Verify an invoice on Verify. The result, the verified marks and the ledger rows appear together; if saving fails, the page says nothing was changed and you can try again.
+- Delete an unverified invoice from History. It disappears with its records, and one entry is written to the security audit log. An invoice with verified records still cannot be deleted.
+
 ## Scale seats
 
 Seats for a Scale customer come from the quote you issue. When creating a quote, set `seats`:
@@ -58,7 +64,9 @@ When the customer pays, the quote is marked consumed and their organisation's se
 
 ## Undo
 
-Roll back in reverse order (4, then 3, 2, 1), only as far as needed, with the
+Roll back in reverse order (5, 4, then 3, 2, 1), only as far as needed, with the
 files in `supabase/pending-migrations/rollback/`, applied the same way as above.
 Rolling back step 4 keeps every record; members with the new roles are mapped
 to the nearest old role and their previous roles are saved.
+Rolling back step 5 only removes the two functions; the app returns to
+saving step by step. No data changes.

@@ -54,6 +54,26 @@ Deno.serve(async (req) => {
     if (!found || !allowed) return json({ error: 'Invoice not found.' }, 404);
     const doc = found;
 
+    // One transaction (pending migration 20261015100000): locks the invoice and
+    // its records, checks every verified reference, deletes and writes the
+    // audit entry together. Until it exists, the step-by-step path below runs.
+    const { data: atomic, error: atomicError } = await admin.rpc('delete_document_atomic', {
+      p_document_id: documentId, p_actor: user.id, p_allowed: true, p_user_agent: req.headers.get('user-agent'),
+    });
+    if (!atomicError) {
+      const r = atomic as { deleted: boolean; emissions?: number; ledger?: number; reason?: string };
+      if (!r.deleted) {
+        return json({ error: 'This invoice has verified records. They stay for your audit trail and cannot be deleted.', reason: r.reason }, 409);
+      }
+      return json({ success: true, removed: { emissions: r.emissions ?? 0, ledger: r.ledger ?? 0 } });
+    }
+    if (atomicError.code === 'P0002') return json({ error: 'Invoice not found.' }, 404);
+    if (atomicError.code !== 'PGRST202' && atomicError.code !== '42883') {
+      // Rolled back: nothing was removed.
+      console.error('delete_document_atomic failed:', atomicError.code);
+      return json({ error: 'Could not remove the invoice. Nothing was changed. Try again.' }, 500);
+    }
+
     const { data: emissions, error: emError } = await admin
       .from('emissions')
       .select('id, verified, user_id, organization_id')
