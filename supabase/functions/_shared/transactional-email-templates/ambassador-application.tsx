@@ -14,7 +14,7 @@ interface Props {
   applicationId?: string
 }
 
-/** Sent to the program manager for every new Impact Ambassador application. */
+/** Sent to the program coordinator (Palanisamy) for every new Impact Ambassador application. */
 const AmbassadorApplication = ({ name, email, whatsapp, city, lanes, commitment, firstMove, workLink, applicationId }: Props) => (
   <Html lang="en" dir="ltr">
     <Head />

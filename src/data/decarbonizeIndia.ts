@@ -110,7 +110,7 @@ export const session = {
   title: 'Meet the team live. Every week.',
   line: 'A 30-minute online overview of the program. Ask anything this page did not answer.',
   whatsappHref: `https://wa.me/${PROGRAM_CONTACT.whatsappNumber}?text=${encodeURIComponent(PROGRAM_CONTACT.whatsappKeyword)}`,
-  emailHref: `mailto:${PROGRAM_CONTACT.managerEmail}?subject=${encodeURIComponent('Decarbonize India live session')}`,
+  emailHref: (email: string) => `mailto:${email}?subject=${encodeURIComponent('Decarbonize India live session')}`,
   note: 'Messages come in fast. The application and the weekly session get you answers quickest.',
 };
 

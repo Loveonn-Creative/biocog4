@@ -4,7 +4,7 @@ import { sendTemplateEmail } from '../_shared/transactional-email-templates/send
 
 /**
  * Decarbonize India: stores one Impact Ambassador application and tells the
- * program manager. The applicant's answers are stored exactly as written.
+ * program coordinator. The applicant's answers are stored exactly as written.
  * Applications live in the private ambassador_applications table (service
  * role only). Three submissions per network per hour; one per email.
  */
