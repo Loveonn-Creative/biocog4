@@ -31,6 +31,7 @@ below can be undone with the matching file in `supabase/pending-migrations/rollb
 | 4 | `20261013100000_org_workspace_roles.sql` | Six team roles and the shared organisation workspace. | `SELECT to_regprocedure('public.my_org_permissions(uuid)') IS NOT NULL;` |
 | 5 | `20261015100000_atomic_verify_and_delete.sql` | Verification and invoice deletion each save completely or not at all. Needs step 3. Works before or after step 4. | `SELECT to_regprocedure('public.commit_verification(jsonb)') IS NOT NULL AND to_regprocedure('public.delete_document_atomic(uuid,uuid,boolean,text)') IS NOT NULL;` |
 | 6 | `20261016100000_invoice_source_files.sql` | Keeps signed-in users' original invoice files (server-write-only, "View source" in History). Independent of steps 1 to 5. | `SELECT to_regprocedure('public.invoice_source_storage_ready()') IS NOT NULL;` |
+| 7 | `20261017100000_solar_signals.sql` | Rooftop solar reduction signal (/solar-signal): grid factors, solar systems, readings and an append-only signal log. Independent of steps 1 to 6. After it, insert one sourced CEA combined-margin factor (see the pending migrations README) or tonnes stay withheld. | `SELECT to_regclass('public.credit_signals') IS NOT NULL;` |
 
 ## Separate: Decarbonize India applications
 
