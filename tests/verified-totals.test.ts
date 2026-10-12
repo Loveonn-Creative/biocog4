@@ -56,3 +56,21 @@ describe('one verified-total rule', () => {
     expect(verifiedLedgerTotalKg(ledger)).toBe(100);
   });
 });
+
+describe('History evidence check (read-only)', () => {
+  const { ledgerEvidenceGaps } = require('../src/lib/emissionLedger');
+  const em = (id: string, doc: string, verified: boolean) => ({ id, document_id: doc, scope: 1, co2_kg: 1, verified, created_at: now });
+  test('lists verified records without a verified ledger row, by invoice', () => {
+    const gaps = ledgerEvidenceGaps(
+      [em('a', 'd1', true), em('b', 'd1', true), em('c', 'd2', true), em('p', 'd2', false)],
+      [
+        { id: 'l1', emission_id: 'a', co2_kg: 1, verification_status: 'verified', created_at: now },
+        { id: 'l2', emission_id: 'c', co2_kg: 1, verification_status: 'needs_review', created_at: now },
+      ],
+    );
+    expect([...gaps.entries()]).toEqual([['d1', ['b']], ['d2', ['c']]]);
+  });
+  test('nothing to report when every verified record is evidenced', () => {
+    expect(ledgerEvidenceGaps([em('a', 'd1', true)], [{ id: 'l', emission_id: 'a', co2_kg: 1, verification_status: 'verified', created_at: now }]).size).toBe(0);
+  });
+});

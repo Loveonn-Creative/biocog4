@@ -47,6 +47,8 @@ export const useComplianceLedger = () => {
   const { user } = useSession();
   const [rawEntries, setRawEntries] = useState<ComplianceLedgerEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  // Which account and workspace the entries belong to; null until a read succeeds.
+  const [loadedFor, setLoadedFor] = useState<string | null>(null);
   const userId = user?.id;
   const { scope, ready } = useWorkspace();
   const key = scopeKey(scope);
@@ -59,6 +61,7 @@ export const useComplianceLedger = () => {
       : null;
     if (!query) {
       setRawEntries([]);
+      setLoadedFor(null);
       setIsLoading(false);
       return;
     }
@@ -69,6 +72,7 @@ export const useComplianceLedger = () => {
       console.error('Error fetching audit ledger:', error);
     } else {
       setRawEntries((data || []) as unknown as ComplianceLedgerEntry[]);
+      setLoadedFor(`${userId}:${key}`);
     }
     setIsLoading(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
@@ -77,6 +81,8 @@ export const useComplianceLedger = () => {
   useEffect(() => {
     void fetchEntries();
   }, [fetchEntries]);
+  /** True once the ledger was read for the current account and workspace. */
+  const loaded = !!userId && loadedFor === `${userId}:${key}`;
 
   // A re-verification writes a new ledger row for the same emission. Show and
   // export only the latest row per emission so nothing is counted twice.
@@ -169,5 +175,5 @@ export const useComplianceLedger = () => {
   // Refetch when records change anywhere (verify, delete, upload).
   useRecordsChanged(() => { void fetchEntries(); });
 
-  return { entries, verifiedTotalKg, isLoading, refetch: fetchEntries, exportComplianceXLSX, exportGovFormat };
+  return { entries, verifiedTotalKg, isLoading, loaded, refetch: fetchEntries, exportComplianceXLSX, exportGovFormat };
 };
