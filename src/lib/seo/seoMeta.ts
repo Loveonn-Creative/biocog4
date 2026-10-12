@@ -137,6 +137,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Climate Grants and Funding Applications',
     description: 'Apply to Senseible grant and pilot programmes for climate-tech work in emerging markets, and see what we look for in an application.',
   },
+  '/decarbonize-india': {
+    title: 'Decarbonize India: Impact Ambassador Program',
+    description: 'Become a Climate Impact Ambassador. 90 days of selfless work getting carbon-heavy Indian MSMEs to measure, cut and commit. Pick your lane and apply.',
+  },
   '/trust': {
     title: 'Trust and Technical Validation',
     description: 'How Senseible verifies emission data: evidence hashing, methodology versioning, confidence bands, framework coverage and greenwashing safeguards.',

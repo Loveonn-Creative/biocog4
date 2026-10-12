@@ -67,6 +67,7 @@ const PartnerMarketplace = lazy(() => import("./pages/PartnerMarketplace"));
 const PartnerReports = lazy(() => import("./pages/PartnerReports"));
 const CompetitorComparison = lazy(() => import("./pages/CompetitorComparison"));
 const Grants = lazy(() => import("./pages/Grants"));
+const DecarbonizeIndia = lazy(() => import("./pages/DecarbonizeIndia"));
 const CBAMCalculator = lazy(() => import("./pages/CBAMCalculator"));
 const NetZero = lazy(() => import("./pages/NetZero"));
 const Solutions = lazy(() => import("./pages/Solutions"));
@@ -178,6 +179,7 @@ const App = () => (
               <Route path="/partner-reports" element={<RequireAuth><PartnerReports /></RequireAuth>} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/grants" element={<Grants />} />
+              <Route path="/decarbonize-india" element={<DecarbonizeIndia />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
               <Route path="/net-zero" element={<NetZero />} />
               <Route path="/trust" element={<Trust />} />

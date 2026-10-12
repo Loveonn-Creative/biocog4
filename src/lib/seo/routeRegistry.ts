@@ -13,6 +13,7 @@ import { legalDocuments } from '@/data/legalContent';
 import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
+import * as di from '@/data/decarbonizeIndia';
 import {
   STATIC_PAGE_META,
   SITE_URL,
@@ -199,6 +200,40 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  const decarbonizeIndia = staticRoute(di.DI_PATH, 'core', 0.8, {
+    h1: 'Decarbonize India: Impact Ambassador Program',
+    changefreq: 'weekly',
+    blocks: [
+      ...di.story.map(line => ({ p: line } as Block)),
+      { p: di.who },
+      { h2: di.realFight.title },
+      { p: `${di.realFight.habits.join(', ')}: ${di.realFight.habitsNote}` },
+      { ul: di.realFight.sources },
+      { h2: di.ownerSpeak.title },
+      { ul: di.ownerSpeak.pairs.map(pair => `You say "${pair.say}". The owner hears "${pair.hear}".`) },
+      { p: di.ownerSpeak.rule },
+      { h2: 'Ambassador lanes' },
+      { ul: di.lanes.map(l => `${l.label}: ${l.line}`) },
+      { h2: di.sprint.title },
+      { ul: [...di.sprint.wins, di.sprint.winsNote] },
+      { h2: di.rewards.title },
+      { ul: di.rewards.items.map(r => `${r.name}: ${r.line}`) },
+      { p: di.quote },
+      { h2: di.filter.title },
+      { ul: di.filter.points },
+      { h2: 'How to apply' },
+      { ol: di.steps.map(st => `${st.title}. ${st.line}`) },
+      { h2: di.session.title },
+      { p: `${di.session.line} Send CLIMATE on WhatsApp to +91 77085 40931, or email palanisamy@senseible.earth.` },
+      { h2: 'Questions' },
+      ...di.faqs.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
+    ],
+    jsonLd: [
+      breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Decarbonize India', path: di.DI_PATH }]),
+      faqLd(di.faqs),
+    ],
+  });
+
   const simple: [string, RouteSection, number][] = [
     ['/platform', 'core', 0.9], ['/about', 'core', 0.6], ['/mission', 'core', 0.5],
     ['/principles', 'core', 0.5], ['/contact', 'core', 0.6], ['/carbon-credits', 'core', 0.8],
@@ -215,7 +250,7 @@ function coreRoutes(): SeoRoute[] {
     }));
 
   return [
-    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust,
+    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia,
     ...simple.map(([p, s, pr]) => staticRoute(p, s, pr)),
     ...calculators,
   ];

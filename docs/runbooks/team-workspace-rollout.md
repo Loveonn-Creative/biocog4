@@ -30,6 +30,10 @@ below can be undone with the matching file in `supabase/pending-migrations/rollb
 | 3 | `20261011180000_team_access_and_ledger_integrity.sql` | Fixes "permission denied for function is_org_member" on the Team page; seat counts per plan; team role changes. | `SELECT to_regprocedure('public.create_organization(text)') IS NOT NULL AND to_regprocedure('private.is_org_member(uuid,uuid)') IS NOT NULL;` |
 | 4 | `20261013100000_org_workspace_roles.sql` | Six team roles and the shared organisation workspace. | `SELECT to_regprocedure('public.my_org_permissions(uuid)') IS NOT NULL;` |
 
+## Separate: Decarbonize India applications
+
+Independent of steps 1 to 4. Apply `20261014100000_ambassador_applications.sql` the same way. Check: `SELECT to_regclass('public.ambassador_applications') IS NOT NULL;`. After it, the application form on /decarbonize-india saves applications and emails palanisamy@senseible.earth. Before it, the form points applicants to WhatsApp and email.
+
 ## After step 3, in the app
 
 - Open Team. It loads without a "permission denied" message.

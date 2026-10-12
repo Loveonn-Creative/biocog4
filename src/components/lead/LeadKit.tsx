@@ -17,21 +17,32 @@ export const LeadHeader = () => (
  * Bottom bar on phones, shown once the visitor has scrolled past the hero and
  * hidden again when the target section is on screen.
  */
-export function StickyCta({ label, onClick, hideWhenVisible }: { label: string; onClick: () => void; hideWhenVisible: string }) {
+export function StickyCta({ label, onClick, hideWhenVisible, showAfter }: { label: string; onClick: () => void; hideWhenVisible: string | string[]; showAfter?: string }) {
   const [past, setPast] = useState(false);
   const [targetVisible, setTargetVisible] = useState(false);
+  const hideKey = Array.isArray(hideWhenVisible) ? hideWhenVisible.join(",") : hideWhenVisible;
   useEffect(() => {
-    const onScroll = () => setPast(window.scrollY > window.innerHeight * 0.9);
+    // With showAfter, wait until that element (e.g. a tall pinned hero) has scrolled away.
+    const onScroll = () => {
+      const after = showAfter ? document.getElementById(showAfter) : null;
+      setPast(after ? after.getBoundingClientRect().bottom < window.innerHeight * 0.5 : window.scrollY > window.innerHeight * 0.9);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    const el = document.getElementById(hideWhenVisible);
+    // Hidden while any of the target sections is on screen.
+    const ids = hideKey.split(",");
+    const els = ids.map(id => document.getElementById(id)).filter((e): e is HTMLElement => !!e);
+    const onScreen = new Set<Element>();
     let io: IntersectionObserver | undefined;
-    if (el && typeof IntersectionObserver !== "undefined") {
-      io = new IntersectionObserver(([e]) => setTargetVisible(e.isIntersecting), { threshold: 0.15 });
-      io.observe(el);
+    if (els.length && typeof IntersectionObserver !== "undefined") {
+      io = new IntersectionObserver(entries => {
+        for (const e of entries) { if (e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); }
+        setTargetVisible(onScreen.size > 0);
+      }, { threshold: 0.15 });
+      els.forEach(e => io!.observe(e));
     }
     return () => { window.removeEventListener("scroll", onScroll); io?.disconnect(); };
-  }, [hideWhenVisible]);
+  }, [hideKey, showAfter]);
   const show = past && !targetVisible;
   return (
     <div
