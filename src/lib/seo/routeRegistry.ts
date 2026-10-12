@@ -224,7 +224,7 @@ function coreRoutes(): SeoRoute[] {
       { h2: 'How to apply' },
       { ol: di.steps.map(st => `${st.title}. ${st.line}`) },
       { h2: di.session.title },
-      { p: `${di.session.line} Send CLIMATE on WhatsApp to +91 77085 40931, or email palanisamy@senseible.earth.` },
+      { p: `${di.session.line} Send CLIMATE on WhatsApp to +91 77085 40931, or email a Program Coordinator: Palanisamy (palanisamy@senseible.earth) or Vatsalya Sai (vatsalya@senseible.earth).` },
       { h2: 'Questions' },
       ...di.faqs.flatMap(f => [{ h3: f.question } as Block, { p: f.answer } as Block]),
     ],

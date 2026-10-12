@@ -25,11 +25,10 @@ export const story = [
 
 /** One-word labels; every number is from the program document. */
 export const counters = [
-  { value: 90, label: 'Days' },
-  { value: 18, label: 'Countries' },
-  { value: 7, label: 'Lanes' },
-  { value: 1, label: 'Mission' },
-] as { value: number; label: string; prefix?: string; suffix?: string }[];
+  { value: 90, label: 'Days', doodle: 'sun' },
+  { value: 18, label: 'Countries', doodle: 'globe' },
+  { value: 1, label: 'Mission', doodle: 'heart' },
+] as { value: number; label: string; doodle: 'sun' | 'globe' | 'heart'; prefix?: string; suffix?: string }[];
 
 export const who = 'Any background. Phase 1 starts October 2026.';
 
@@ -111,7 +110,7 @@ export const session = {
   title: 'Meet the team live. Every week.',
   line: 'A 30-minute online overview of the program. Ask anything this page did not answer.',
   whatsappHref: `https://wa.me/${PROGRAM_CONTACT.whatsappNumber}?text=${encodeURIComponent(PROGRAM_CONTACT.whatsappKeyword)}`,
-  emailHref: `mailto:${PROGRAM_CONTACT.managerEmail}?subject=${encodeURIComponent('Decarbonize India live session')}`,
+  emailHref: (email: string) => `mailto:${email}?subject=${encodeURIComponent('Decarbonize India live session')}`,
   note: 'Messages come in fast. The application and the weekly session get you answers quickest.',
 };
 

@@ -20,6 +20,7 @@ describe('Decarbonize India copy', () => {
     expect(allCopy).toContain('October 2026');
     expect(allCopy).toContain('18 countries');
     expect(PROGRAM_CONTACT.managerEmail).toBe('palanisamy@senseible.earth');
+    expect(PROGRAM_CONTACT.coordinators.map(c => c.email)).toEqual(['palanisamy@senseible.earth', 'vatsalya@senseible.earth']);
     expect(PROGRAM_CONTACT.whatsappNumber).toBe('917708540931');
   });
   test('states nothing the document leaves open', () => {

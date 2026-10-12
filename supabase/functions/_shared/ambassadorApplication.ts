@@ -129,6 +129,12 @@ export function stepErrors(errors: FieldErrors, step: number): FieldErrors {
 }
 
 export const PROGRAM_CONTACT = {
+  /** Program coordinators, shown on the page. */
+  coordinators: [
+    { name: 'Palanisamy', email: 'palanisamy@senseible.earth' },
+    { name: 'Vatsalya Sai', email: 'vatsalya@senseible.earth' },
+  ],
+  /** Receives the application notification email. */
   manager: 'Palanisamy',
   managerEmail: 'palanisamy@senseible.earth',
   whatsappNumber: '917708540931',

@@ -147,10 +147,16 @@ const DecarbonizeIndia = () => {
                 className="mt-5 flex items-center justify-between rounded-2xl px-5 py-4 font-semibold text-[#f7f3e8] transition hover:-translate-y-0.5" style={{ background: GREEN }}>
                 <span>{PROGRAM_CONTACT.whatsappDisplay}</span><span aria-hidden="true">→</span>
               </a>
-              <p className="mt-4 text-sm">
-                Or write to {PROGRAM_CONTACT.manager}, Program Manager:{" "}
-                <a href={session.emailHref} className="font-medium underline underline-offset-4">{PROGRAM_CONTACT.managerEmail}</a>
-              </p>
+              <div className="mt-4 text-sm">
+                <p>Or write to a Program Coordinator:</p>
+                <ul className="mt-2 space-y-1">
+                  {PROGRAM_CONTACT.coordinators.map(c => (
+                    <li key={c.email}>
+                      {c.name}: <a href={session.emailHref(c.email)} className="font-medium underline underline-offset-4">{c.email}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
