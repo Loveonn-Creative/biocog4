@@ -9,18 +9,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
-import { GradeGauge, LedgerFanOut, LockDoodle, PipelineTrack, ScanLine, SealChain, ShieldSegments } from "@/components/trust/TrustVisuals";
+import { LedgerFanOut, LockDoodle, PipelineTrack, ScanLine, SealChain } from "@/components/trust/TrustVisuals";
+import { ClaimGauntlet, detectMarket, Glyph, SafeguardReader, Scope3Explorer, ScoreComposer } from "@/components/trust/TrustInteractives";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Shield, Database, FileCheck, Network, Layers, Satellite, MapPin,
-  Wifi, FileText, Building2, Gauge, AlertTriangle, Coins, Banknote,
-  Target, Lock, ArrowRight, CheckCircle2, GitBranch, ScrollText, Sparkles,
-} from "lucide-react";
+import { FileCheck, Layers, Satellite, FileText, Target, ArrowRight, CheckCircle2, ScrollText, Sparkles } from "lucide-react";
 
 const sections = [
   { id: "layers", label: "Trust Layers" },
@@ -61,13 +58,13 @@ const trustLayers = [
 ];
 
 const dataSources = [
-  { icon: FileText, name: "Tax invoices & purchase records", what: "Vendor, line items, HSN/CN codes, amounts, dates", verify: "Schema, math reconciliation, vendor pattern match" },
-  { icon: Gauge, name: "Utility & energy bills", what: "kWh, kVAH, period, distributor", verify: "Period continuity, consumption sanity, country grid-factor lookup" },
-  { icon: Wifi, name: "IoT & meter signals", what: "Sub-metered electricity, fuel, water telemetry", verify: "Device identity, timestamp gaps, drift detection" },
-  { icon: Database, name: "Operational records", what: "Production logs, fuel consumption, freight manifests", verify: "Cross-check against invoices and supplier evidence" },
-  { icon: Satellite, name: "Satellite & remote signals", what: "Plot boundaries, change detection where applicable", verify: "Source provenance and acquisition-date stamping" },
-  { icon: MapPin, name: "Geotagging", what: "Facility coordinates, plant boundaries", verify: "Country-config alignment with grid factor and tax ID format" },
-  { icon: Building2, name: "Supplier evidence", what: "Supplier-issued PCFs, certifications, counterparty IDs", verify: "Buyer–supplier identifier linkage and methodology check" },
+  { icon: "invoice", name: "Tax invoices & purchase records", what: "Vendor, line items, HSN/CN codes, amounts, dates", verify: "Schema, math reconciliation, vendor pattern match" },
+  { icon: "meter", name: "Utility & energy bills", what: "kWh, kVAH, period, distributor", verify: "Period continuity, consumption sanity, country grid-factor lookup" },
+  { icon: "signal", name: "IoT & meter signals", what: "Sub-metered electricity, fuel, water telemetry", verify: "Device identity, timestamp gaps, drift detection" },
+  { icon: "ledger", name: "Operational records", what: "Production logs, fuel consumption, freight manifests", verify: "Cross-check against invoices and supplier evidence" },
+  { icon: "satellite", name: "Satellite & remote signals", what: "Plot boundaries, change detection where applicable", verify: "Source provenance and acquisition-date stamping" },
+  { icon: "pin", name: "Geotagging", what: "Facility coordinates, plant boundaries", verify: "Country-config alignment with grid factor and tax ID format" },
+  { icon: "factory", name: "Supplier evidence", what: "Supplier-issued PCFs, certifications, counterparty IDs", verify: "Buyer–supplier identifier linkage and methodology check" },
 ];
 
 const frameworks = [
@@ -199,12 +196,16 @@ const Trust = () => {
   useEffect(() => {
     if (!hash) return;
     const el = document.getElementById(decodeURIComponent(hash.slice(1)));
-    el?.scrollIntoView({ block: "start" });
+    // A safeguard panel opens itself (SafeguardReader); scroll to its section.
+    const target = el?.hidden ? document.getElementById("safeguards") : el;
+    target?.scrollIntoView({ block: "start" });
   }, [hash]);
   const faqSchema = faqs.map(f => ({ question: f.q, answer: f.a }));
-  const [scope3Country, setScope3Country] = useState<string>("IN");
-  const scope3 = scope3Examples[scope3Country];
-  const countryOptions = Object.values(COUNTRY_CONFIGS).map(c => ({ code: c.code, name: c.name }));
+  const [scope3Country, setScope3Country] = useState<string>(() => detectMarket(Object.keys(scope3Examples)));
+  // Only markets with a worked example are offered (the region list used to
+  // include countries without one, which broke this section).
+  const nameOfMarket = (code: string) => COUNTRY_CONFIGS[code]?.name;
+  const codeOfCountry = (country: string) => Object.keys(scope3Examples).find(code => nameOfMarket(code) === country);
 
 
 
@@ -271,7 +272,7 @@ const Trust = () => {
         <section id="layers" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Layers className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="layers" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Trust Layers</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Four layers. One unbroken chain.</h2>
@@ -286,7 +287,7 @@ const Trust = () => {
         <section id="sources" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Database className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="ledger" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Data Sources &amp; Verification</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Every input has a defined verification path</h2>
@@ -298,8 +299,8 @@ const Trust = () => {
                 <Card key={s.name} className="border-border">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-2 rounded-md bg-background border border-border">
-                        <s.icon className="h-4 w-4 text-primary" />
+                      <div className="p-2 rounded-md bg-background border border-border text-primary">
+                        <Glyph name={s.icon} className="h-5 w-5" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-base font-medium mb-2">{s.name}</h3>
@@ -318,7 +319,7 @@ const Trust = () => {
         <section id="mrv" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Network className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="network" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">MRV Architecture</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">From document to disclosure</h2>
@@ -357,7 +358,7 @@ const Trust = () => {
         <section id="intelligence" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Sparkles className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="spark" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">ESG Intelligence Engine</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">One verified ledger. Every framework. Every decision.</h2>
@@ -405,7 +406,7 @@ const Trust = () => {
         <section id="frameworks" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <ScrollText className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="scroll" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Reporting Frameworks</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Framework coverage matrix</h2>
@@ -439,7 +440,7 @@ const Trust = () => {
         <section id="scope3" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Network className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="network" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Scope 3 Traceability</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Supplier evidence enterprises can't gather alone</h2>
@@ -476,18 +477,13 @@ const Trust = () => {
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {countryIds.map(c => {
-                      const selected = countryOptions.find(o => o.code === scope3Country)?.name === c.country;
+                      const code = codeOfCountry(c.country);
+                      const selected = code === scope3Country;
                       return (
-                        <span key={c.country} className="relative inline-flex">
-                          <Badge variant="secondary" className={`text-[11px] font-mono transition-colors ${selected ? "bg-primary text-primary-foreground" : ""}`}>
-                            {c.country} · {c.id}
-                          </Badge>
-                          {selected && (
-                            <svg className="pointer-events-none absolute -inset-1.5 h-[calc(100%+12px)] w-[calc(100%+12px)] overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
-                              <path pathLength={1} d="M6 22 C 4 6, 40 2, 70 4 S 99 14, 96 24 S 60 39, 30 37 S 2 32, 8 16" fill="none" stroke="#f4a21a" strokeWidth="2" strokeLinecap="round" strokeDasharray="1" className="tr-path tr-draw-on" style={{ animation: "di-paint .6s ease both", strokeDashoffset: 1 }} />
-                            </svg>
-                          )}
-                        </span>
+                        <button key={c.country} type="button" disabled={!code} onClick={() => code && setScope3Country(code)} aria-pressed={selected}
+                          className={`rounded-full px-2.5 py-0.5 text-[11px] font-mono transition-colors ${selected ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground hover:bg-primary/15"}`}>
+                          {c.country} · {c.id}
+                        </button>
                       );
                     })}
                   </div>
@@ -505,34 +501,8 @@ const Trust = () => {
               </Card>
             </div>
 
-            {/* Region-aware Scope 3 example */}
-            <Card className="border-border bg-background">
-              <CardContent className="p-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-                  <div className="text-sm font-medium">How it looks in your market</div>
-                  <div className="flex items-center gap-2">
-                    <label htmlFor="scope3-country" className="text-xs text-muted-foreground">Region</label>
-                    <select
-                      id="scope3-country"
-                      value={scope3Country}
-                      onChange={e => setScope3Country(e.target.value)}
-                      className="text-sm bg-background border border-border rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
-                    >
-                      {countryOptions.map(c => (
-                        <option key={c.code} value={c.code}>{c.name}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-                <div className="text-base font-medium mb-2">{scope3.headline}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{scope3.example}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {scope3.frameworks.split(" · ").map(f => (
-                    <Badge key={f} variant="outline" className="text-[11px]">{f}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            {/* Region-aware Scope 3 example: pick a market, the flow redraws for it. */}
+            <Scope3Explorer examples={scope3Examples} countryIds={countryIds} nameOf={nameOfMarket} value={scope3Country} onChange={setScope3Country} />
 
             <p className="text-base text-foreground/90 italic max-w-3xl mt-8">
               Same architecture, anchored to the right identifier and the right grid factor in every market.
@@ -549,7 +519,7 @@ const Trust = () => {
         <section id="scoring" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Gauge className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="gauge" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Carbon &amp; Confidence Scoring</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">A score you can audit</h2>
@@ -557,27 +527,15 @@ const Trust = () => {
               The Climate Credibility Score is a single 0–100 band derived from four observable inputs. It rewards denser,
               better-attested evidence, not narrative quality.
             </p>
-            <GradeGauge bands={["A+ ≥ 90", "A ≥ 75", "B ≥ 55", "C ≥ 35", "D < 35"]} />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
+            <ScoreComposer
+              inputs={[
                 { name: "Verification quality", desc: "Average verification outcome across records." },
                 { name: "Green-benefit ratio", desc: "Share of records eligible for green benefit." },
                 { name: "Data completeness", desc: "Vendor + date + amount + HSN present." },
                 { name: "History depth", desc: "Count of verified invoices over time." },
-              ].map(b => (
-                <Card key={b.name} className="border-border">
-                  <CardContent className="p-5">
-                    <div className="text-sm font-medium mb-2">{b.name}</div>
-                    <p className="text-xs text-muted-foreground">{b.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {["A+ ≥ 90", "A ≥ 75", "B ≥ 55", "C ≥ 35", "D < 35"].map(g => (
-                <Badge key={g} variant="outline" className="text-xs">{g}</Badge>
-              ))}
-            </div>
+              ]}
+              bands={["A+ ≥ 90", "A ≥ 75", "B ≥ 55", "C ≥ 35", "D < 35"]}
+            />
           </div>
         </section>
 
@@ -585,7 +543,7 @@ const Trust = () => {
         <section id="greenwashing" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <AlertTriangle className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="alert" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Greenwashing Prevention</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Structural defense, not a disclaimer</h2>
@@ -593,9 +551,8 @@ const Trust = () => {
               Greenwashing is prevented by the architecture, not by policy. Six mechanisms work together so a claim cannot
               be inflated, recycled, or quietly re-baselined after the fact.
             </p>
-            <ShieldSegments count={6} />
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
+            <ClaimGauntlet
+              mechanisms={[
                 {
                   name: "Universal SHA-256 deduplication",
                   desc: "Every document is fingerprinted across users, sessions and time. The same invoice cannot be claimed by two MSMEs or twice by one.",
@@ -620,15 +577,8 @@ const Trust = () => {
                   name: "Cross-MSME peer challenge",
                   desc: "Anomalous values are flagged against the verified peer cluster before they reach a buyer or auditor, reducing the surface for after-the-fact disputes.",
                 },
-              ].map(m => (
-                <Card key={m.name} className="border-border">
-                  <CardContent className="p-5">
-                    <div className="text-sm font-medium mb-2">{m.name}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+              ]}
+            />
             <p className="mt-8 text-base text-foreground/90 italic">
               "Verification you can challenge, and that holds up when challenged."
             </p>
@@ -639,7 +589,7 @@ const Trust = () => {
         <section id="handoff" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <ArrowRight className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="arrow" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Where this ledger goes next</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Verification is the input. Finance and credits are downstream.</h2>
@@ -651,7 +601,7 @@ const Trust = () => {
               <Card className="border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <Banknote className="h-4 w-4 text-primary" />
+                    <span className="text-primary"><Glyph name="banknote" className="h-4 w-4" /></span>
                     <div className="text-sm font-medium">Climate &amp; green finance</div>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -667,7 +617,7 @@ const Trust = () => {
               <Card className="border-border">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <Coins className="h-4 w-4 text-primary" />
+                    <span className="text-primary"><Glyph name="coin" className="h-4 w-4" /></span>
                     <div className="text-sm font-medium">Carbon credit validation</div>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
@@ -689,7 +639,7 @@ const Trust = () => {
         <section id="netzero" className="py-20 border-b border-border">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Target className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="target" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Net-Zero Enablement</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">Baseline → roadmap → tracked tasks</h2>
@@ -707,7 +657,7 @@ const Trust = () => {
         <section id="governance" className="py-20 border-b border-border bg-secondary/30">
           <div className="container max-w-5xl mx-auto px-6">
             <div className="flex items-center gap-3 mb-3">
-              <Lock className="h-5 w-5 text-primary" />
+              <span className="text-primary"><Glyph name="lock" /></span>
               <span className="text-xs uppercase tracking-wider text-muted-foreground">Governance &amp; Security</span>
             </div>
             <LockDoodle />
@@ -736,31 +686,12 @@ const Trust = () => {
 
         {/* Safeguards: replaces the earlier one-feature-per-article pieces */}
         <section id="safeguards" className="py-20 border-b border-border bg-secondary/30">
-          <div className="container max-w-4xl mx-auto px-6">
+          <div className="container max-w-5xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">How each safeguard works</h2>
             <p className="text-muted-foreground mb-10 max-w-2xl">
               The checks that sit between an uploaded document and a figure you can put in front of an auditor, lender or buyer.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {trustSafeguards.map(item => (
-                <Card key={item.id} id={item.id} className="scroll-mt-24">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.summary}</p>
-                    <ul className="space-y-2">
-                      {item.points.map(point => (
-                        <li key={point} className="flex gap-2 text-sm">
-                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <SafeguardReader items={trustSafeguards} />
           </div>
         </section>
 
