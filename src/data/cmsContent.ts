@@ -779,7 +779,7 @@ Senseible automatically categorizes your emissions by scope when you [upload doc
 **Senseible (senseible.earth):**
 - Climate technology platform for carbon MRV
 - Helps MSMEs calculate and verify carbon emissions
-- Converts business documents into carbon credits and climate finance
+- Turns business documents into verified carbon data for reporting and climate finance
 - Focus: Sustainability, carbon accounting, green loans, CBAM compliance
 - Users: Small and medium businesses, exporters, manufacturers
 

@@ -3,7 +3,7 @@ import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 
 const useCasesMultilang: Record<string, string[]> = {
   'en': [
-    "Turn invoices into carbon credits",
+    "Turn invoices into verified carbon data",
     "Check green loan eligibility",
     "Track Scope 1, 2, 3 emissions",
     "Prepare for EU CBAM compliance",
@@ -11,7 +11,7 @@ const useCasesMultilang: Record<string, string[]> = {
     "Unlock climate finance today",
   ],
   'hi': [
-    "चालान को कार्बन क्रेडिट में बदलें",
+    "चालान को सत्यापित कार्बन डेटा में बदलें",
     "ग्रीन लोन पात्रता जांचें",
     "स्कोप 1, 2, 3 उत्सर्जन ट्रैक करें",
     "EU CBAM अनुपालन की तैयारी",
@@ -19,7 +19,7 @@ const useCasesMultilang: Record<string, string[]> = {
     "आज क्लाइमेट फाइनेंस अनलॉक करें",
   ],
   'de': [
-    "Rechnungen in CO₂-Gutschriften umwandeln",
+    "Rechnungen in verifizierte CO₂-Daten umwandeln",
     "Eignung für grüne Kredite prüfen",
     "Scope 1, 2, 3 Emissionen verfolgen",
     "EU CBAM Vorbereitung starten",
@@ -27,7 +27,7 @@ const useCasesMultilang: Record<string, string[]> = {
     "Klimafinanzierung heute freischalten",
   ],
   'fr': [
-    "Convertir les factures en crédits carbone",
+    "Convertir les factures en données carbone vérifiées",
     "Vérifier l'éligibilité au prêt vert",
     "Suivre les émissions Scope 1, 2, 3",
     "Préparation conformité EU CBAM",

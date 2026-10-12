@@ -28,8 +28,8 @@ const tourSteps: TourStep[] = [
   },
   {
     id: 'monetize',
-    title: 'Monetize Credits',
-    description: 'Turn verified emissions into carbon credits, green loans, or incentives.',
+    title: 'Use Verified Data',
+    description: 'Use verified emissions for green loan, scheme and buyer conversations. No credit is issued here.',
     icon: <Coins className="h-6 w-6" />,
     position: 'center',
   },
