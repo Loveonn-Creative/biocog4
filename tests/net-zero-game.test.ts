@@ -3,6 +3,7 @@ import {
   REDUCTION_STRATEGIES, calculateFeasibility, baselineFromUsage, actionCutKg, heatPumpFraction,
   GAS_SWITCH_FRACTION, DIESEL_KG_PER_KWH_FUEL, IPCC_CO2_KG_PER_TJ,
   sbtiPace, estimatedCutKg, earnedBadges, targetDateFor, timelineFromGoal, SBTI_MIN_ANNUAL_PCT,
+  buildActions, cleanAssumptions,
 } from '../src/lib/netZeroEngine';
 
 const action = (id: string) => REDUCTION_STRATEGIES.find(a => a.id === id)!;
@@ -106,5 +107,56 @@ describe('badges and stored dates', () => {
   const created = new Date('2026-10-13T00:00:00Z');
   test.each([[12, '12'], [36, '36'], [60, '60']] as const)('%i months round-trips', (m, choice) => {
     expect(timelineFromGoal(targetDateFor(m, created), created.toISOString())).toBe(choice);
+  });
+});
+
+describe('editable assumptions', () => {
+  const b = { scope1Kg: 40_000, scope2Kg: 50_000, scope3Kg: 10_000, totalKg: 100_000 };
+  const pick = (r: ReturnType<typeof calculateFeasibility>, id: string) => r.recommendedActions.find(a => a.id === id);
+
+  test('a user figure replaces the default and changes the cut', () => {
+    const solar = buildActions({ solarShare: 60 }).find(a => a.id === 'solar-rooftop')!;
+    expect(solar.fraction).toBeCloseTo(0.6, 10);
+    const p = solar.params.find(x => x.key === 'solarShare')!;
+    expect(p.value).toBe(60);
+    expect(p.default).toBe(30);
+    expect(buildActions({ solarShare: 60 }).find(a => a.id === 'solar-rooftop')!.fraction).toBeGreaterThan(action('solar-rooftop').fraction);
+  });
+  test('figures outside the valid range are clamped', () => {
+    const solar = buildActions({ solarShare: 250 }).find(a => a.id === 'solar-rooftop')!;
+    expect(solar.params.find(x => x.key === 'solarShare')!.value).toBe(100);
+    const pf = buildActions({ pf0: 0.1 }).find(a => a.id === 'power-factor')!;
+    expect(pf.params.find(x => x.key === 'pf0')!.value).toBe(0.5);
+  });
+  test('figures that would raise emissions give no cut, never a negative one', () => {
+    const hvac = buildActions({ iseerOld: 6, iseerNew: 4 }).find(a => a.id === 'hvac-upgrade')!;
+    expect(hvac.fraction).toBe(0);
+    const boiler = buildActions({ eff0: 90, eff1: 80 }).find(a => a.id === 'boiler-efficiency')!;
+    expect(boiler.fraction).toBe(0);
+    const r = calculateFeasibility(b, 30, 12, 'textile', { iseerOld: 6, iseerNew: 4 });
+    expect(pick(r, 'hvac-upgrade')).toBeUndefined();
+  });
+  test('the roadmap uses the figures, and no figures means the defaults', () => {
+    const base = calculateFeasibility(b, 30, 12, 'other');
+    expect(calculateFeasibility(b, 30, 12, 'other', {})).toEqual(base);
+    const edited = calculateFeasibility(b, 30, 12, 'other', { lightShare: 30 });
+    expect(pick(edited, 'led-lighting')!.cutKg).toBeGreaterThan(pick(base, 'led-lighting')?.cutKg ?? 0);
+  });
+  test('saved figures keep only known keys with finite numbers', () => {
+    expect(cleanAssumptions({ solarShare: 40, cop: 3.5, bogus: 1, lightShare: '20', coolShare: NaN, greenShare: Infinity })).toEqual({ solarShare: 40, cop: 3.5 });
+    expect(cleanAssumptions(null)).toEqual({});
+    expect(cleanAssumptions([1, 2])).toEqual({});
+    expect(cleanAssumptions('x')).toEqual({});
+  });
+  test('every assumption has a key, default and range that holds the default', () => {
+    const keys = new Set<string>();
+    for (const a of REDUCTION_STRATEGIES) for (const p of a.params) {
+      if (p.kind !== 'assumption') continue;
+      expect(p.key).toBeTruthy();
+      expect(p.min! <= p.default! && p.default! <= p.max!).toBe(true);
+      expect(p.value).toBe(p.default!);
+      keys.add(p.key!);
+    }
+    expect(keys.size).toBe(22);
   });
 });
