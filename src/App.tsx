@@ -30,6 +30,8 @@ const GuestImportPrompt = lazy(() => import("@/components/GuestImportPrompt"));
 
 // Lazy load other pages for performance
 const Mission = lazy(() => import("./pages/Mission"));
+const EmissionFactors = lazy(() => import("./pages/EmissionFactors"));
+const CbamCost = lazy(() => import("./pages/CbamCost"));
 const About = lazy(() => import("./pages/About"));
 const Principles = lazy(() => import("./pages/Principles"));
 const CarbonCredits = lazy(() => import("./pages/CarbonCredits"));
@@ -187,6 +189,10 @@ const App = () => (
               <Route path="/grants" element={<Grants />} />
               <Route path="/decarbonize-india" element={<DecarbonizeIndia />} />
               <Route path="/cbam-calculator" element={<CBAMCalculator />} />
+              <Route path="/emission-factors" element={<EmissionFactors />} />
+              <Route path="/emission-factors/:slug" element={<EmissionFactors />} />
+              <Route path="/cbam-cost" element={<CbamCost />} />
+              <Route path="/cbam-cost/:sector" element={<CbamCost />} />
               <Route path="/net-zero" element={<NetZero />} />
               <Route path="/trust" element={<Trust />} />
               <Route path="/platform" element={<Platform />} />

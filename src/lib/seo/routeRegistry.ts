@@ -14,6 +14,8 @@ import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
 import * as di from '@/data/decarbonizeIndia';
+import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
+import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
 import {
   STATIC_PAGE_META,
   SITE_URL,
@@ -58,6 +60,8 @@ const ORGANIZATION = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: 'impact@senseible.earth',
+  alternateName: ['Senseible Earth', 'senseible.earth'],
+  disambiguatingDescription: 'Senseible (senseible.earth) is a carbon MRV and climate finance platform for MSMEs and exporters. Not to be confused with the word sensible or with Sensibull, an options trading platform.',
   sameAs: [
     'https://www.linkedin.com/company/senseible/',
     'https://x.com/senseible_earth',
@@ -188,7 +192,7 @@ function coreRoutes(): SeoRoute[] {
       { ul: Object.keys(STATIC_PAGE_META)
         .filter(p => p.startsWith('/calculators/'))
         .map(p => `[${STATIC_CONTENT[p]?.h1 ?? STATIC_PAGE_META[p].title}](${p})`)
-        .concat('[CBAM cost calculator](/cbam-calculator)') },
+        .concat('[CBAM cost calculator](/cbam-calculator)', '[CBAM cost per tonne by sector](/cbam-cost)', '[Emission factor library](/emission-factors)') },
     ],
   });
 
@@ -428,6 +432,67 @@ function industryRoutes(): SeoRoute[] {
   });
 }
 
+function factorRoutes(): SeoRoute[] {
+  const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'Emission factors', path: FACTOR_HUB_PATH }];
+  const hub: SeoRoute = {
+    path: FACTOR_HUB_PATH, section: 'tool', ...FACTOR_HUB_META, h1: 'Emission factors for Indian invoices',
+    blocks: [
+      { p: FACTOR_HUB_ANSWER },
+      { table: { head: ['Fuel or energy', 'Factor', 'HSN', 'Scope'], rows: FACTOR_PAGES.map(f => [`[${f.name}](${factorPath(f.slug)})`, `${f.value} kg CO2 per ${f.unit}`, f.hsn, String(f.scope)]) } },
+      { p: '[CBAM cost per tonne by sector](/cbam-cost) · [All calculators](/calculators) · [Upload an invoice](/)' },
+    ],
+    breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs)], priority: 0.7, changefreq: 'monthly',
+  };
+  return [hub, ...FACTOR_PAGES.map(f => {
+    const path = factorPath(f.slug);
+    const crumbs = [...hubCrumbs, { name: f.name, path }];
+    const faqs = factorFaqs(f);
+    return {
+      path, section: 'tool' as const, ...factorMeta(f), h1: `${f.name} emission factor (India): ${f.value} kg CO2 per ${f.unit}`,
+      blocks: [
+        { p: factorAnswer(f) },
+        { table: { head: ['Factor', 'Scope', 'HSN heading', 'On invoices as'], rows: [[`${f.value} kg CO2 per ${f.unit}`, `Scope ${f.scope}`, `${f.hsn} (${f.hsnLabel})`, f.invoiceTerms]] } },
+        { h2: 'How the factor is derived' }, { p: f.basis }, ...(f.caveat ? [{ p: f.caveat } as Block] : []),
+        { h2: 'Questions' }, ...faqs.flatMap(q => [{ h3: q.question } as Block, { p: q.answer } as Block]),
+        { p: `[All emission factors](${FACTOR_HUB_PATH}) · [Upload an invoice](/)` },
+      ],
+      breadcrumbs: crumbs, jsonLd: [breadcrumbLd(crumbs), faqLd(faqs)], priority: 0.6, changefreq: 'monthly' as const,
+    };
+  })];
+}
+
+function cbamCostRoutes(): SeoRoute[] {
+  const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'CBAM cost by sector', path: CBAM_HUB_PATH }];
+  const eur = (n: number) => `€${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
+  const hub: SeoRoute = {
+    path: CBAM_HUB_PATH, section: 'tool', ...CBAM_HUB_META, h1: 'CBAM cost per tonne by sector',
+    blocks: [
+      { p: CBAM_HUB_ANSWER },
+      { table: { head: ['Sector (default route)', '2026', '2030', '2034'], rows: CBAM_SECTOR_COSTS.map(s => [`[${s.sector.name}](${sectorHref(s.sector.id)}) (${s.headline.routeName})`, eur(s.headline.perTonne[2026]), eur(s.headline.perTonne[2030]), eur(s.headline.perTonne[2034])]) } },
+      { p: `€ per tonne of product, EU default values, certificate price ${eur(CBAM_PRICE)}, origin India. [CBAM calculator](/cbam-calculator) · [Emission factors](/emission-factors)` },
+    ],
+    breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs)], priority: 0.7, changefreq: 'monthly',
+  };
+  return [hub, ...CBAM_SECTOR_PAGES.map(s => {
+    const path = cbamSectorPath(s.sector.id);
+    const crumbs = [...hubCrumbs, { name: s.sector.name, path }];
+    const faqs = cbamFaqs(s);
+    return {
+      path, section: 'tool' as const, ...cbamSectorMeta(s), h1: `CBAM cost per tonne of ${s.sector.name.toLowerCase()}, 2026 to 2034`,
+      blocks: [
+        { p: cbamAnswer(s) },
+        { h2: 'Cost per tonne by year (€)' },
+        { table: { head: ['Route', ...CBAM_YEARS.map(String)], rows: s.routes.map(r => [`${r.routeName} (${r.intensity} tCO2/t default)`, ...CBAM_YEARS.map(y => r.perTonne[y].toLocaleString('en-IN', { maximumFractionDigits: 0 }))]) } },
+        { p: `Assumptions: EU default values with the default-value mark-up, certificate price held at ${eur(CBAM_PRICE)} (Q3 2026), origin India with no carbon price paid at origin. Estimates, not a CBAM declaration.` },
+        { h2: 'Covered CN codes' }, { ul: s.sector.cnCodes.map(c => `${c.code}: ${c.description}`) },
+        { h2: 'Questions' }, ...faqs.flatMap(q => [{ h3: q.question } as Block, { p: q.answer } as Block]),
+        { p: `[CBAM calculator](/cbam-calculator) · [All sectors](${CBAM_HUB_PATH})` },
+      ],
+      breadcrumbs: crumbs, jsonLd: [breadcrumbLd(crumbs), faqLd(faqs)], priority: 0.6, changefreq: 'monthly' as const,
+    };
+  })];
+}
+
 function legalRoutes(): SeoRoute[] {
   return legalDocuments.map(d => {
     const path = `/legal/${d.slug}`;
@@ -458,6 +523,8 @@ export function getSeoRoutes(): SeoRoute[] {
     ...competitorRoutes(),
     ...industryRoutes(),
     ...answerRoutes(),
+    ...factorRoutes(),
+    ...cbamCostRoutes(),
     ...legalRoutes(),
   ];
 }

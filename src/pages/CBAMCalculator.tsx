@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { Calculator, TrendingUp, Plus, X, Download, AlertTriangle, Info, BarChart3 } from "lucide-react";
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { useSession } from "@/hooks/useSession";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import {
   CBAM_SECTORS,
@@ -452,6 +452,9 @@ const CBAMCalculator = () => {
               </div>
             </div>
           )}
+          <p className="mt-10 text-sm text-muted-foreground">
+            Per-tonne costs by sector and production route, 2026 to 2034: <Link to="/cbam-cost" className="underline">CBAM cost by sector</Link>.
+          </p>
         </div>
       </main>
       <Footer />

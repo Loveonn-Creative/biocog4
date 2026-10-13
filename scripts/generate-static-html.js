@@ -65,6 +65,15 @@ function headTags(route, R) {
   return tags.join('\n    ');
 }
 
+// Pillar hubs linked from every prerendered page, so crawlers that do not run
+// JavaScript reach each topic hub in one hop.
+const PILLARS = [
+  ['/', 'Senseible'], ['/carbon-accounting', 'Carbon accounting'], ['/esg-reporting', 'ESG reporting'], ['/cbam-calculator', 'CBAM'],
+  ['/enterprise', 'Supplier emissions and Scope 3'], ['/climate-finance', 'Climate finance'], ['/carbon-credits', 'Carbon credits'],
+  ['/emission-factors', 'Emission factors'], ['/industries', 'Industries'], ['/calculators', 'Calculators'], ['/climate-intelligence', 'Guides'],
+  ['/answers', 'Answers'], ['/pricing', 'Pricing'], ['/contact', 'Contact'],
+];
+
 function bodyHtml(route, R) {
   const crumbs = route.breadcrumbs
     .map(c => `<a href="${R.canonicalUrl(c.path)}">${R.escapeHtml(c.name)}</a>`)
@@ -73,7 +82,7 @@ function bodyHtml(route, R) {
 <nav aria-label="Breadcrumb">${crumbs}</nav>
 <h1>${R.escapeHtml(route.h1)}</h1>
 ${R.blocksToHtml(route.blocks)}
-<hr/><p><a href="${R.SITE_URL}/">Senseible</a> · <a href="${R.SITE_URL}/climate-intelligence">Guides</a> · <a href="${R.SITE_URL}/calculators">Calculators</a> · <a href="${R.SITE_URL}/pricing">Pricing</a> · <a href="${R.SITE_URL}/contact">Contact</a></p>
+<hr/><nav aria-label="Topics"><p>${PILLARS.map(([p, n]) => `<a href="${R.SITE_URL}${p}">${n}</a>`).join(' · ')}</p></nav>
 </main></noscript>`;
 }
 

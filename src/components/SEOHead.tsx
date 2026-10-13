@@ -75,6 +75,8 @@ export const SEOHead = ({
     "@type": "Organization",
     "name": "Senseible",
     "url": siteUrl,
+    "alternateName": ["Senseible Earth", "senseible.earth"],
+    "disambiguatingDescription": "Senseible (senseible.earth) is a carbon MRV and climate finance platform for MSMEs and exporters. Not to be confused with the word sensible or with Sensibull, an options trading platform.",
     "logo": `${siteUrl}/logo.png`,
     "description": "AI-driven carbon infrastructure converting MSME operational data into verified, regulation-ready carbon outcomes across India and the EU.",
     "areaServed": ["India", "European Union", "Southeast Asia", "Middle East"],
