@@ -6408,6 +6408,434 @@ This is general guidance, not legal advice.`,
     createdAt: '2026-10-13',
     featured: false
   },
+  // Sources researched October 2026 (kept here, not on the page):
+  // it.andersen.com "CBAM: the first certificate price will be published on
+  // 7 April 2026"; epa.ie CBAM certificates page (Q1 EUR 75.36 on 7 Apr 2026,
+  // Q2 EUR 75.28 on 6 Jul 2026, Q4 due 4 Jan 2027); alcircle.com news 121455
+  // (Q3 EUR 82.32, 5 Oct 2026); environnement.public.lu CBAM certificates and
+  // price (weighted average of EU ETS auction clearing prices; purchase from
+  // 1 Feb 2027; weekly price from 2027, published Monday, effective Tuesday).
+  {
+    id: '152',
+    slug: 'how-cbam-certificate-price-is-set',
+    title: 'How is the CBAM certificate price set, and what will it be?',
+    subtitle: 'Carbon Regulations',
+    content: `Every CBAM cost estimate multiplies two numbers: the embedded emissions in a shipment and the price of one CBAM certificate. Exporters spend most of their effort on the first number. The second one is set in Brussels, follows the EU carbon market, and changes on a published schedule. Knowing how it works tells you which price to use in a quote and how much it can move.
+
+## One certificate, one tonne
+
+A CBAM certificate covers one tonne of CO2e embedded in imported goods. The EU importer, as authorised declarant, buys certificates for the embedded emissions it declares, after deducting the share still covered by EU free allocation and any carbon price paid at origin.
+
+## How the price is calculated
+
+The certificate price is tied to the EU Emissions Trading System. The European Commission calculates it from the weighted average of the auction clearing prices of EU ETS allowances.
+
+- **In 2026:** the Commission publishes one price per quarter, which applies to goods imported during that quarter.
+- **From 2027:** the price becomes weekly, based on the average EU ETS auction price of the previous week, published on Monday and applying from Tuesday.
+
+Certificates for 2026 imports can be bought from 1 February 2027, and the first annual declaration, covering 2026, is due by 30 September 2027.
+
+## The 2026 prices so far
+
+| Quarter | Price per certificate | Published |
+|---|---|---|
+| Q1 2026 | €75.36 | 7 April 2026 |
+| Q2 2026 | €75.28 | 6 July 2026 |
+| Q3 2026 | €82.32 | 5 October 2026 |
+| Q4 2026 | to be published | due 4 January 2027 |
+
+Senseible's [CBAM calculator](/cbam-calculator) and the [cost tables by sector](/cbam-cost) use the latest published price, €82.32, and hold it flat to 2034 so that the change in cost comes only from emissions and the phase-out of free allocation.
+
+## What this means for a quote
+
+- **Quote with a range, not a point.** The EU carbon price moved by about €7 between the second and third quarters of 2026. A tonne of steel at default values embeds roughly two tonnes of CO2, so the certificate cost per tonne of product moves by about twice the price change, less the share still allocated free.
+- **The quarter of import decides the 2026 price.** Goods that clear customs in a given quarter of 2026 use that quarter's price, whenever the certificates are bought.
+- **From 2027, timing matters weekly.** Importers will watch the EU ETS more closely, and some will ask suppliers to share the risk in contracts.
+- **The emissions number is the one you control.** A verified actual figure below the default value lowers the bill at any price. For when that pays off, see [CBAM default values versus actual emissions](/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide).
+
+For how the declaration itself works, read [how the CBAM declaration works and what exporters must provide](/climate-intelligence/how-to-file-eu-carbon-tax-report-msme-guide).
+
+This is general guidance, not legal advice. Check the Commission's published prices for the quarter of import.`,
+    tags: ['cbam', 'cbam certificates', 'certificate price', 'eu ets', 'carbon price'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // icapcarbonaction.com "India notifies emission intensity targets for nine
+  // sectors" and "Compliance obligations ... enter force for seven sectors";
+  // business-standard.com 2026-01-22 and renewablewatch.in 2026-01-28 (phase 1
+  // notified 8 Oct 2025: aluminium, cement, chlor-alkali, pulp and paper, 282
+  // plants; ranges; 40% in 2025-26 and 60% in 2026-27; baseline 2023-24);
+  // government press release 13 Jan 2026 via simpliance.in (refineries,
+  // petrochemicals, textiles, secondary aluminium; 208 entities; 490 total);
+  // impriindia.com policy update (iron and steel, fertiliser pending).
+  {
+    id: '153',
+    slug: 'india-ccts-emission-intensity-targets-sectors',
+    title: 'Which Indian industries have carbon emission targets under the CCTS, and what do they mean for suppliers?',
+    subtitle: 'Carbon Regulations',
+    content: `India's Carbon Credit Trading Scheme moved from design to obligation in 2025. Large plants in energy-intensive sectors now have legally binding targets for greenhouse gas emissions per tonne of product, and they will earn tradable carbon credit certificates if they beat them, or have to buy them if they miss.
+
+The question most businesses ask is simple: is my sector covered, and if I am a supplier rather than an obligated plant, what changes for me?
+
+## Who has targets
+
+Targets are set as emissions intensity, tonnes of CO2e per tonne of product, against a 2023-24 baseline. They have been notified in two batches so far.
+
+**Notified on 8 October 2025:** aluminium, cement, chlor-alkali, and pulp and paper, covering 282 plants. Reported reduction ranges over two years are about 2.8 to 7.06 percent for aluminium, 4.7 to 7.6 percent for cement, 3.3 to 11 percent for chlor-alkali, and up to 15 percent for pulp and paper. About 40 percent of each plant's reduction is due in 2025-26 and the remaining 60 percent in 2026-27.
+
+**Notified on 13 January 2026:** petroleum refineries, petrochemicals, textiles and secondary aluminium, bringing in 208 more obligated entities. That takes the total to about 490.
+
+**Still pending at the time of writing:** iron and steel, and fertilisers, which were in the 2025 draft lists. Check the latest gazette notifications before assuming your sector's status.
+
+## How compliance works
+
+Each obligated entity has a target intensity for each year. A plant that does better than its target earns carbon credit certificates for the difference; a plant that falls short must surrender certificates to cover it. The certificates trade on Indian power exchanges under the scheme's rules.
+
+## Why suppliers should care
+
+Most MSMEs are not obligated entities. The scheme still reaches them in three ways:
+
+1. **Customers will push intensity down the chain.** A textile mill or cement plant with a target looks first at its own fuel and power, then at what it buys: purchased steam, process inputs, transport.
+2. **Data requests will arrive.** Obligated entities need monitoring, reporting and verification. Suppliers of fuel, power and intermediate products will be asked for documented figures.
+3. **Lower intensity has a price.** Once certificates trade, every tonne a plant avoids has a market value, which strengthens the case for efficiency projects and the green loans that fund them.
+
+## What to do now
+
+- Check whether your plant, or your largest customer, is in a notified sector.
+- Build a monthly record of fuel, electricity and production so intensity per tonne can be shown. Senseible does this from the invoices and bills you already have, with each figure linked to its source document.
+- If you sell to the EU as well, the same records serve CBAM. India's request for CBAM to recognise its carbon market is covered in [can India's new carbon markets shield exporters](/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price).
+
+This is general guidance. Check the Bureau of Energy Efficiency and gazette notifications for your sector's target.`,
+    tags: ['ccts', 'india carbon market', 'emission intensity targets', 'cement', 'aluminium', 'textiles'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // beeindia.gov.in/adeetie.php and adeetie.beeindia.gov.in (MSMEs with
+  // Udyam ID in 60 energy-intensive clusters across 14 sectors; 5% and 3%
+  // subvention; 10% savings); energetica-india.net (launched 17 July 2025 by
+  // Manohar Lal; Rs 1,000 crore); impriindia.com ?p=74937 (Rs 925 crore
+  // outlay cited; FY2025-26 to FY2027-28; 200 km radius; Phase II to 100 more
+  // clusters; minimum net rate 2%; critique); leatherindia.org (IGEA and DPR by
+  // BEE-empanelled auditors; BEE reimburses up to Rs 1 lakh per DPR after loan
+  // approval; loans Rs 10 lakh to Rs 15 crore).
+  {
+    id: '154',
+    slug: 'adeetie-scheme-explained-msme-energy-efficiency',
+    title: 'What is the ADEETIE scheme, and how does an MSME apply?',
+    subtitle: 'Green Finance',
+    content: `Most MSME owners know which machine wastes energy. The furnace with the cracked lining, the compressor that runs all night, the boiler older than the business. What stops them replacing it is the loan: the interest, the paperwork, and a banker who cannot tell whether the promised saving is real.
+
+ADEETIE is the central government's attempt to fix that. This article explains what it offers, who qualifies and how the process runs.
+
+## What it is
+
+ADEETIE (Assistance in Deploying Energy Efficient Technologies in Industries and Establishments) is a Ministry of Power scheme run by the Bureau of Energy Efficiency. The Minister of Power, Manohar Lal, launched its portal on 17 July 2025. It runs for three financial years, 2025-26 to 2027-28. The budget is reported as ₹1,000 crore, though one policy review cites ₹925 crore for the main outlay.
+
+## What it offers
+
+- **Interest subvention:** 5 percent for micro and small enterprises and 3 percent for medium enterprises, on loans for energy-efficient technology. The borrower's net interest rate cannot fall below 2 percent.
+- **Loan size:** reported as ₹10 lakh to ₹15 crore.
+- **A funded audit:** an investment-grade energy audit and detailed project report prepared by a BEE-empanelled auditor. BEE reimburses the auditor up to ₹1 lakh per report, after a lender approves the project.
+
+## Who qualifies
+
+- MSMEs registered on the Udyam portal.
+- Operating in one of the scheme's **60 energy-intensive clusters across 14 sectors**, such as steel re-rolling, foundries, brass, ceramics, glass, textiles and chemicals. A policy review notes that units within 200 km of a notified cluster can also apply, and that a second phase is planned for another 100 clusters.
+- The project must achieve, and keep, **at least 10 percent energy savings** during the scheme period. The subvention is paid each year the saving is sustained.
+
+## How the process runs
+
+1. **Register** the unit on the ADEETIE portal, adeetie.beeindia.gov.in.
+2. **Get the audit:** a BEE-empanelled auditor carries out the investment-grade audit and prepares the project report.
+3. **Apply for the loan** with a participating lender using that report. Lenders update sanction and disbursement on the portal.
+4. **Install and measure.** The saving is checked against the baseline, and the subvention continues while the saving holds.
+
+## Where applications go wrong
+
+The 10 percent test is a measurement test. A unit that cannot show its energy use per tonne before the project will struggle to prove the saving after it. Start with twelve months of electricity bills and fuel invoices, matched to monthly production. Senseible turns those documents into kWh, fuel and emissions per month, each linked to its source, which gives the auditor and the lender the same baseline.
+
+## The limits
+
+A policy review by IMPRI points out that BEE had not yet published cluster-wise data on the number of MSMEs financed, and that units outside notified clusters are excluded. Check that your cluster is listed before you plan around the scheme.
+
+For cluster examples, see [green finance for Jalna's re-rolling mills](/climate-intelligence/green-finance-jalna-steel-rerolling-cluster) and [Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes).
+
+Confirm current terms, clusters and participating lenders on the BEE portal before you apply.`,
+    tags: ['adeetie', 'bee', 'msme', 'energy efficiency', 'interest subvention', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // lexplosion.in and vinodkothari.com on RBI draft Disclosure Framework on
+  // Climate-related Financial Risks, 28 Feb 2024 (SCBs, top and upper layer
+  // NBFCs; Scope 1, 2, 3; metrics and targets from FY2027-28); indiacorplaw.in
+  // 2026/09/09 (framework still at draft; banks report Scope 1 and 2;
+  // BRSR Scope 3 voluntary); PCAF Global GHG Accounting and Reporting Standard
+  // (attribution factors, data quality scores 1 to 5).
+  {
+    id: '155',
+    slug: 'financed-emissions-pcaf-indian-banks-nbfcs',
+    title: 'How should an Indian bank or NBFC measure financed emissions?',
+    subtitle: 'Carbon Standards',
+    content: `For a bank, almost all of its carbon footprint sits in its loan book. The electricity in its branches is small next to the emissions of the steel mills, transporters and factories it finances. Those are financed emissions, Scope 3 Category 15 under the GHG Protocol, and they are what climate disclosure frameworks for lenders are built around.
+
+In India, measuring them has moved from a question for sustainability teams to one for risk and credit. This article explains the method, where Indian regulation stands, and the practical problem every lender hits first: data from small borrowers.
+
+## Where regulation stands
+
+The Reserve Bank of India issued a draft Disclosure Framework on Climate-related Financial Risks on 28 February 2024. It would apply to all scheduled commercial banks and to top-layer and upper-layer NBFCs, with others able to adopt it voluntarily. Its metrics and targets pillar includes Scope 1, 2 and 3 emissions, phased in for the largest entities from 2027-28 in the draft timeline.
+
+At the time of writing the framework has not been finalised, as a September 2026 legal commentary noted. Under SEBI's BRSR, Scope 3 disclosure is voluntary, and most large Indian banks report Scope 1 and 2 only. Investors and global partners are asking for more.
+
+## The method: PCAF
+
+The Partnership for Carbon Accounting Financials (PCAF) standard is the common method. For a business loan, the core idea is attribution:
+
+- **Attribution factor** = the lender's outstanding amount ÷ the borrower's total equity plus debt (or enterprise value for listed companies).
+- **Financed emissions** = attribution factor × the borrower's emissions.
+
+If a bank has lent ₹2 crore to a company with ₹10 crore of equity and debt, it attributes 20 percent of that company's emissions to its book.
+
+## Data quality decides how useful the number is
+
+PCAF scores data from 1 (best) to 5 (worst):
+
+- **Score 1 to 2:** the borrower's own verified or reported emissions.
+- **Score 3:** emissions estimated from the borrower's physical activity, such as fuel or electricity use.
+- **Score 4 to 5:** estimates from revenue or the loan amount using sector averages.
+
+For MSME portfolios, almost everything starts at score 4 or 5, because small borrowers do not report emissions. That makes the number weak for risk decisions: two textile units with the same turnover get the same estimate even if one runs on solar and the other on coal.
+
+## How to move an MSME book up the quality ladder
+
+1. **Collect activity data at onboarding and renewal.** Electricity bills and fuel invoices are already in many loan files; they support a score of 3 directly.
+2. **Prioritise by exposure and sector.** Start with the largest loans in steel, cement, chemicals, textiles and transport.
+3. **Use verified borrower records where they exist.** A borrower with a documented emissions record, each number traceable to an invoice, can be scored better than a sector average.
+4. **Keep the method and factors versioned,** so year-on-year changes reflect real change, not a new spreadsheet.
+
+Senseible gives borrowers a verified record built from their own bills and invoices, which lenders can read as activity-based evidence. For the borrower's side of the same conversation, see [how climate risk differs from ESG for a lender](/climate-intelligence/climate-risk-vs-esg-difference-financial-institutions) and [physical versus transition risk](/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions).
+
+This is general guidance. Check the RBI's current circulars and the PCAF standard for your reporting.`,
+    tags: ['financed emissions', 'pcaf', 'rbi', 'banks', 'nbfc', 'scope 3 category 15'],
+    category: 'carbon-standards',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page): BEE
+  // ADEETIE sources as in article 154 (IGEA by BEE-empanelled auditors, up to
+  // Rs 1 lakh reimbursement after loan approval); haryanaindustries.gov.in
+  // energy audit and conservation schemes (BEE-certified auditor; 2021 scheme
+  // window to 31 Dec 2025; 2015 scheme 75% up to Rs 2 lakh, expired);
+  // myscheme.gov.in Banglashree EES (50% reimbursement for micro and small,
+  // after implementation).
+  {
+    id: '156',
+    slug: 'energy-audit-msme-india-how-to-get-one',
+    title: 'How does an MSME in India get an energy audit, and who pays for it?',
+    subtitle: 'Manufacturing Emissions',
+    content: `An energy audit is the cheapest way for a factory to find out where its money is burning. It is also, increasingly, a document banks and government schemes require before they fund an efficiency project. Yet many owners have never had one, or had one that produced a thick report nobody acted on.
+
+This article explains the types of audit, who can carry one out, what support exists to pay for it, and how to make sure the report is useful.
+
+## Three kinds of audit
+
+- **Walk-through audit.** A short visit, often a day, that looks at the main energy users and lists obvious savings: leaks, idle running, poor power factor. Useful as a first screen.
+- **Detailed energy audit.** Measurements over several days with instruments on furnaces, boilers, compressors, pumps and motors, and a full energy balance. It quantifies each saving and its payback.
+- **Investment-grade energy audit (IGEA).** A detailed audit written for a lender: costed measures, technical specifications and a monitoring plan, packaged as a detailed project report. This is what schemes like ADEETIE require.
+
+## Who can do it
+
+The Bureau of Energy Efficiency certifies energy auditors through a national exam and accredits a smaller group with more experience. Schemes usually specify which they accept: ADEETIE uses BEE-empanelled auditors for its investment-grade audits, and state schemes often require a BEE-certified auditor.
+
+## Who pays
+
+- **ADEETIE (central):** for MSMEs in its 60 notified clusters, BEE reimburses the auditor up to ₹1 lakh per investment-grade audit and project report, once a lender approves the project. See [the ADEETIE scheme explained](/climate-intelligence/adeetie-scheme-explained-msme-energy-efficiency).
+- **State schemes:** several states reimburse part of the audit cost. West Bengal's scheme reimburses 50 percent of the audit cost for micro and small enterprises after the recommendations are implemented. Haryana has run energy audit schemes requiring a BEE-certified auditor; its 2021 scheme covered audits and equipment bought up to 31 December 2025, so check whether it has been renewed.
+- **The owner:** where no scheme applies, the audit is a business cost that a single implemented measure often repays.
+
+Reimbursement is almost always paid after something else happens, a loan approval or the implementation, so plan cash flow accordingly.
+
+## How to get a report you will use
+
+1. **Hand the auditor your baseline.** Twelve months of electricity bills and fuel invoices, with monthly production. Without it, the auditor measures one week and guesses the year.
+2. **Ask for savings in units, not just rupees.** kWh, litres and kilograms per tonne of product survive tariff changes.
+3. **Insist on a monitoring plan** for each measure, so you can show the saving later to a lender or a scheme.
+4. **Rank by payback and by what you can finance.** The best report is a short list you can act on this year.
+
+Senseible builds the baseline from the bills and invoices you already have: monthly kWh, fuel and emissions, each linked to its source document, ready to hand to an auditor. For the bill itself, see [how to calculate a carbon footprint from electricity bills](/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills).
+
+Check the current scheme rules in your state and cluster before you commission an audit.`,
+    tags: ['energy audit', 'msme', 'bee', 'adeetie', 'igea', 'india'],
+    category: 'manufacturing',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // mondaq.com "Promoting renewable energy through Green Energy Open Access
+  // Rules 2022" and ksandk.com green energy open access (threshold cut from
+  // 1 MW to 100 kW in June 2022; 2023 Second Amendment allows aggregation of
+  // connections in the same distribution division; no limit for captive);
+  // solarquarter.com 2024-02-20 (Ministry urges states to align
+  // regulations); india.mongabay.com 2023/06 (small consumers; LT access
+  // gap); mercomindia.com (Delhi draft to drop the 11 kV requirement, 2026).
+  {
+    id: '157',
+    slug: 'green-energy-open-access-india-factories',
+    title: 'Can a factory in India buy renewable power through open access, and is it worth it?',
+    subtitle: 'Manufacturing Emissions',
+    content: `For years, buying wind or solar power directly from a generator was something only large plants could do in India. The rule was simple: you needed at least 1 MW of connected load. A mid-sized factory could put panels on its own roof, but it could not buy green power from a solar park in the next district.
+
+That changed in 2022. This article explains what the Green Energy Open Access Rules allow, how they differ from rooftop solar, and how to judge whether open access makes sense for your plant.
+
+## What the rules changed
+
+The Ministry of Power's **Green Energy Open Access Rules, 2022**, notified in June 2022, cut the minimum load for green energy open access from 1 MW to **100 kW**. A 2023 amendment allowed that 100 kW to be met through several connections that together reach 100 kW in the same electricity division of a distribution company. Captive consumers, who own at least part of the generating plant, have no limit on how much they can procure.
+
+The rules set the national framework, but each state's regulator writes the regulations that make it work, and the Ministry asked states in February 2024 to align their regulations. Progress varies. In 2026, for example, Delhi's regulator proposed dropping an 11 kV connection requirement in favour of the 100 kW threshold. Commentators have also pointed out that many 100 kW consumers are on low-tension lines, where open access frameworks are less developed.
+
+## Open access or rooftop?
+
+| | Rooftop solar | Green energy open access |
+|---|---|---|
+| Where the power is made | Your roof or premises | A wind or solar plant elsewhere, delivered over the grid |
+| Size limit | Your roof area and state net-metering limits | From 100 kW of load, under state rules |
+| Charges | Mostly the capital cost or a solar lease | Transmission and wheeling charges, surcharges and banking terms set by the state |
+| Approvals | Utility connection approval | Open access approval from the state nodal agency |
+| Best for | Daytime load, limited roof space needs | Plants with steady load and little roof |
+
+Many plants do both: rooftop for daytime load, open access for the rest.
+
+## Is it worth it?
+
+The answer depends on three numbers in your state: your current industrial tariff, the landed cost of open access power after charges, and how much of the generated power you can actually use or bank. A Tamil Nadu study of the textile sector estimated that shifting fully to renewable power through green tariffs and open access could cut electricity spending by up to 41.5 percent, which shows the scale possible where the rules are favourable. The same arithmetic can come out flat in a state with high charges.
+
+## What it does for your carbon numbers
+
+Under the GHG Protocol, renewable power bought through open access lowers your **market-based** Scope 2 emissions when it comes with the right contractual instruments. Your **location-based** figure still uses the grid factor. Report both, and keep the open access invoices and certificates with the numbers. For the difference, see [market-based versus location-based Scope 2](/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide).
+
+## How to start
+
+1. Pull twelve months of bills: units, maximum demand, time-of-day split.
+2. Check your state's green energy open access regulations and current charges.
+3. Get landed-cost offers from two or three developers, including banking terms.
+4. Model the saving against your actual load profile, not an annual average. The [energy transition savings calculator](/calculators/energy-transition-savings) is a starting point.
+
+Senseible reads your electricity bills for units and billing periods and keeps the renewable share and the grid share separate, so both Scope 2 figures stay traceable.
+
+Check your state regulator's current open access rules and charges before signing a contract.`,
+    tags: ['open access', 'renewable energy', 'india', 'factories', 'scope 2', 'green energy open access rules'],
+    category: 'manufacturing',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // fabory.com group news "CBAM" and "CBAM blind spot" (fasteners under
+  // 7318 covered; applies to all EU importers sourcing from outside the EU);
+  // expometals.net "CBAM 2026: the impact of carbon costs on fasteners
+  // procurement" (defaults by origin and product category can be much higher
+  // than verified data); eurometal.net EFDA statement (verification bottleneck
+  // in 2026); fastenershows.com news 144738 (proposal for about 180 more
+  // downstream products by Jan 2028).
+  {
+    id: '158',
+    slug: 'cbam-indian-fastener-exporters',
+    title: 'Do Indian fastener exporters face CBAM, and how can they protect their EU orders?',
+    subtitle: 'Carbon Regulations',
+    content: `Bolts, nuts, screws and washers look like the least carbon-intensive thing a factory can make. Under the EU's Carbon Border Adjustment Mechanism they are steel products like any other. Fasteners classified under CN code 7318 are covered, so every tonne an EU importer brings in from India, including from the fastener clusters around Ludhiana, carries a certificate cost based on its embedded emissions.
+
+For an exporter this raises a practical question: how do you keep EU distributors buying when the CBAM cost depends on data you may not have?
+
+## What the EU importer now needs
+
+Since 1 January 2026, CBAM has moved from reporting to payment. The importer, as authorised declarant, must declare the embedded emissions of the fasteners and buy certificates for them. There are two ways to establish those emissions:
+
+- **Actual emissions,** verified, from the installation that made the fasteners, including the emissions of the steel wire rod or bar they were made from.
+- **Default values** set by the EU for each product category and country of origin, with a mark-up of 10 percent in 2026, 20 percent in 2027 and 30 percent from 2028.
+
+Industry guidance for EU buyers warns that defaults, differentiated by origin and product category, can produce considerably higher carbon costs than verified data. That is the gap an Indian exporter can close.
+
+## The bottleneck nobody planned for
+
+The European Fastener Distributors Association has warned of a severe bottleneck in verifying actual emissions in 2026, because there are too few accredited verifiers to visit the many fastener makers around the world. An exporter who starts early is more likely to have verified data when the importer needs it.
+
+## Where a fastener's embedded emissions come from
+
+Most of the carbon is in the steel. A fastener maker buys wire rod or bar, draws it, forms it cold or hot, heat-treats it and coats it. The precursor steel usually dominates; heat treatment furnaces and coating add the rest. So:
+
+1. **Get your steel supplier's data.** Ask for installation-level emissions per tonne of wire rod or bar, with the production route. Steel from scrap-based electric arc furnaces usually embeds far less than blast-furnace steel.
+2. **Measure your own process.** Electricity and fuel for drawing, forming and heat treatment, matched to tonnes produced.
+3. **Allocate by product family.** Group fasteners with similar processing so emissions per tonne are defensible.
+
+## What is coming
+
+The EU has proposed bringing about 180 more downstream steel and aluminium products into CBAM from January 2028, including fabricated metal parts and components. Exporters of assemblies that contain fasteners should expect the same questions.
+
+## Turning the data into an advantage
+
+A distributor choosing between two suppliers at the same price will choose the one whose fasteners carry the lower, verifiable CBAM cost. Senseible turns your electricity bills, fuel invoices and steel purchase records into emissions per month and per tonne, each linked to its source document, which is the starting file for a verifier. Work out the cost per tonne with the [CBAM calculator](/cbam-calculator), and for the wider picture see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [green finance for Ludhiana steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes).
+
+This is general guidance, not legal advice.`,
+    tags: ['fasteners', 'ludhiana', 'cbam', 'cn 7318', 'steel exporters', 'india'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // cliffedekkerhofmeyr.com Tax and Exchange Control Alert 25 Feb 2026 and
+  // anthesisgroup.com South African carbon tax update 2026 (rate R236 to R308
+  // per tCO2e from 1 Jan 2026; phase 2 to 31 Dec 2030; offset allowance up 5
+  // points to 15% combustion and 10% process and fugitive; CDM, Gold Standard
+  // and Verra eligible; tax-free allowances extended to 2030; fuel levy 19c
+  // petrol and 23c diesel from 1 Apr 2026); discovery.co.za carbon taxes
+  // guide (effective rate about R105, about EUR 5.5, after allowances,
+  // estimate); CBAM Regulation (EU) 2023/956 Article 9.
+  {
+    id: '159',
+    slug: 'south-africa-carbon-tax-cbam-deduction',
+    title: 'Does South Africa\'s carbon tax reduce what EU importers pay under CBAM?',
+    subtitle: 'Carbon Regulations',
+    content: `South Africa is one of the few CBAM-exposed exporters that already has a carbon price. Its carbon tax has applied since 2019, and from 1 January 2026 the headline rate rose sharply. The obvious question for a steel, aluminium or ferroalloy exporter is whether that tax counts at the EU border, so that the EU importer pays less.
+
+The short answer: it can, but only for the carbon price effectively paid, which is much lower than the headline rate.
+
+## How South Africa's carbon tax works in 2026
+
+- **Headline rate:** R308 per tonne of CO2e from 1 January 2026, up from R236.
+- **Phase 2:** the current phase runs from 2026 to the end of 2030.
+- **Tax-free allowances:** emitters receive allowances that reduce the share of emissions taxed, extended to the end of 2030.
+- **Offsets:** the share of liability that can be met with carbon offsets rose by 5 percentage points in 2026, to 15 percent for combustion emissions and 10 percent for process and fugitive emissions. Credits from projects under the Clean Development Mechanism, Gold Standard and Verra are eligible.
+- **Fuel levy:** from 1 April 2026, the carbon fuel levy is 19 cents per litre on petrol and 23 cents on diesel.
+
+Because of the allowances, the effective rate is far below R308. Discovery estimated it at about R105 per tonne in 2026, roughly €5.5, against a CBAM certificate price above €75.
+
+## How CBAM treats a carbon price paid at origin
+
+Article 9 of the CBAM Regulation lets the EU importer claim a reduction in the certificates it must surrender for a carbon price effectively paid in the country of origin on the embedded emissions, net of any rebate or compensation. Two consequences follow:
+
+1. **Only the effective price counts.** Free allowances and rebates are deducted, so the reduction reflects the roughly €5.5 a tonne paid, not the headline R308.
+2. **It must be documented for the goods.** The producer needs to show the tax paid on the emissions embedded in the specific products exported, and the importer must have that evidence.
+
+The law firm Werksmans has reported that the EU will publish default carbon-price references for third countries from 2027, which may simplify claims.
+
+## What a South African exporter should do
+
+- **Record the tax by installation and product,** from the carbon tax returns, so the effective price per tonne of embedded emissions can be shown.
+- **Pair it with actual emissions data.** The deduction applies to the emissions declared, so verified actual figures help twice: lower emissions and a documented price paid on them.
+- **Do not count on the deduction to close the gap.** At current effective rates it reduces the certificate cost by a few percent. The larger lever is lower embedded emissions, as covered in [green finance for Johannesburg steel and metals firms](/climate-intelligence/green-finance-johannesburg-steel-metals-firms) and [South African ferrochrome smelters](/climate-intelligence/green-finance-south-africa-ferrochrome-smelters).
+
+The [CBAM calculator](/cbam-calculator) lets you enter a carbon price paid to see how much it changes the cost per tonne.
+
+This is general guidance, not tax or legal advice.`,
+    tags: ['south africa', 'carbon tax', 'cbam', 'article 9', 'carbon price paid', 'exporters'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
 ];
 
 // Get featured articles for landing page
