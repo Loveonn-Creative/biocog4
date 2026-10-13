@@ -2,13 +2,21 @@ import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PillarsVisual, useSectionsReached } from "@/components/principles/Pillars";
 
 const Principles = () => {
+  const { refs, reached, current } = useSectionsReached(3);
+  // Phones: each section shows its own pillar rising once it is read.
+  const inline = (i: number) => (
+    <div className="md:hidden mb-6" aria-hidden="true">
+      <PillarsVisual raised={reached > i ? i + 1 : i} highlight={i} compact />
+    </div>
+  );
   return (
     <div className="min-h-screen bg-background">
       <MinimalNav />
       
-      <main className="container max-w-4xl mx-auto px-6 py-24 sm:py-32">
+      <main className="pl-anim container max-w-5xl mx-auto px-6 py-24 sm:py-32">
         <Link 
           to="/" 
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
@@ -17,14 +25,16 @@ const Principles = () => {
           Back
         </Link>
         
-        <article className="animate-fade-in">
+        <div className="grid gap-12 md:grid-cols-[1fr_16rem] lg:grid-cols-[1fr_18rem]">
+        <article className="animate-fade-in min-w-0">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground mb-16">
             Three Pillars
           </h1>
           
           <div className="space-y-20">
             {/* Senseible AI */}
-            <section className="group">
+            <section ref={el => (refs.current[0] = el)} className="group">
+              {inline(0)}
               <div className="flex items-baseline gap-4 mb-6">
                 <span className="text-sm font-medium text-muted-foreground/60 uppercase tracking-wider">01</span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">Senseible AI</h2>
@@ -40,7 +50,8 @@ const Principles = () => {
             </section>
             
             {/* Senseible Climate */}
-            <section className="group">
+            <section ref={el => (refs.current[1] = el)} className="group">
+              {inline(1)}
               <div className="flex items-baseline gap-4 mb-6">
                 <span className="text-sm font-medium text-muted-foreground/60 uppercase tracking-wider">02</span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">Senseible Climate</h2>
@@ -56,7 +67,8 @@ const Principles = () => {
             </section>
             
             {/* Senseible Business */}
-            <section className="group">
+            <section ref={el => (refs.current[2] = el)} className="group">
+              {inline(2)}
               <div className="flex items-baseline gap-4 mb-6">
                 <span className="text-sm font-medium text-muted-foreground/60 uppercase tracking-wider">03</span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">Senseible Business</h2>
@@ -72,6 +84,13 @@ const Principles = () => {
             </section>
           </div>
         </article>
+        <aside className="hidden md:block" aria-hidden="true">
+          <div className="sticky top-28 rounded-3xl border border-border bg-secondary/20 p-5">
+            <PillarsVisual raised={reached} highlight={current} />
+            <p className="mt-3 text-[11px] text-muted-foreground">{reached < 3 ? `${reached} of 3 pillars standing` : "Three pillars, one structure"}</p>
+          </div>
+        </aside>
+        </div>
         
         {/* Subtle navigation */}
         <div className="mt-20 pt-12 border-t border-border flex justify-between items-center">

@@ -10,3 +10,12 @@ describe('/mission keeps its words', () => {
     'We measure in seconds, not months.', 'we should talk.',
   ])('%s', t => expect(page).toContain(t));
 });
+
+describe('/principles keeps its words', () => {
+  const page = readFileSync('src/pages/Principles.tsx', 'utf8');
+  test.each([
+    'Three Pillars', 'Senseible AI', 'Software that converts documents into decisions.', 'Senseible Climate',
+    'Carbon treated as infrastructure, not obligation.', 'Senseible Business', 'A financial bridge for those excluded from global systems.',
+    'trillion-dollar climate markets',
+  ])('%s', t => expect(page).toContain(t));
+});
