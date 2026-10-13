@@ -57,6 +57,38 @@ const CapabilityList = ({ items, prefix }: { items: Capability[]; prefix: string
   );
 };
 
+/**
+ * Pricing in context: what the visitor has told us so far (supplier count,
+ * the topics they picked across the page, their stack) is what a Scale quote
+ * starts from. Rows fill in as the form does; the link opens the Scale plan.
+ */
+const ScaleFit = ({ suppliers, interests, stack }: { suppliers: string; interests: string[]; stack: string }) => {
+  const t = useT();
+  const rows = [
+    { k: t("ent.fit.suppliers", "Suppliers in scope"), v: suppliers, empty: t("ent.fit.suppliers.empty", "Pick a number in the form") },
+    { k: t("ent.fit.focus", "Focus"), v: interests.slice(0, 3).join(", ") + (interests.length > 3 ? ` +${interests.length - 3}` : ""), empty: t("ent.fit.focus.empty", "Optional: pick topics") },
+    { k: t("ent.fit.stack", "Stack"), v: stack.trim().slice(0, 60), empty: t("ent.fit.stack.empty", "Optional") },
+  ];
+  return (
+    <div className="mt-8 rounded-2xl bg-secondary/50 p-4 sm:p-5">
+      <p className="text-sm font-medium">{t("ent.fit.title", "Scale, shaped around your programme")}</p>
+      <dl className="mt-3 grid gap-2 text-sm" aria-live="polite">
+        {rows.map(r => (
+          <div key={r.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
+            <dt className="text-muted-foreground">{r.k}</dt>
+            <dd key={r.v || "empty"} className={r.v ? "font-medium animate-[ent-fade-up_var(--motion-base)_var(--ease-out)_both]" : "text-muted-foreground/70"}>{r.v || r.empty}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-3 text-xs text-muted-foreground">{t("ent.fit.note", "Your quote starts from these. Team seats, entities and integrations are set in it.")}</p>
+      <Link to="/pricing?plan=scale#plans" className="group mt-3 inline-flex items-center gap-1 text-sm underline underline-offset-4">
+        {t("ent.fit.link", "See what Scale includes")}
+        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-[var(--motion-fast)] ease-[var(--ease-out)] group-hover:translate-x-0.5" aria-hidden="true" />
+      </Link>
+    </div>
+  );
+};
+
 /** One idea per screen. */
 const Beat = ({ id, n, title, line, children }: { id: string; n: string; title: string; line?: string; children: React.ReactNode }) => (
   <section id={id} aria-labelledby={`${id}-title`} className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-16 sm:py-24 scroll-mt-16">
@@ -163,12 +195,12 @@ const Enterprise = () => {
       {/* Hero: supplier sources pass the checks and land in the ledger */}
       <header id="ent-hero" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-24 sm:pt-28 pb-8 grid gap-10 md:grid-cols-[1.05fr_1fr] md:items-center">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{t("ent.hero.eyebrow", "For enterprises")}</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{t("ent.hero.eyebrow", "For enterprise supply chains")}</p>
           <h1 className="mt-3 text-[clamp(2rem,6vw,3.75rem)] font-semibold leading-[1.04] tracking-tight [text-wrap:balance]">
-            {t("ent.hero.title", "Supplier emissions, without the chasing.")}
+            {t("ent.hero.title", "Every supplier's emissions, in one record you can defend.")}
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl">
-            {t("ent.hero.line", "Agents collect what your suppliers already have and turn it into Scope 3 records you can audit.")}
+            {t("ent.hero.line", "Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile. Senseible collects what suppliers already have, ties each figure to its source document, and keeps estimates labelled until real data replaces them, so reporting holds up as your supplier base grows.")}
           </p>
           <p className="mt-4 text-sm text-muted-foreground max-w-xl">
             {t("ent.hero.status", "Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability on this page is labelled.")}
@@ -182,9 +214,9 @@ const Enterprise = () => {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
-            {t("ent.hero.pricing", "Start free on Snapshot; Scale is priced for your team, entities and integrations.")}{" "}
+            {t("ent.hero.pricing", "Scale is built around your team, entities and integrations, and priced to match.")}{" "}
             <Link to="/pricing?plan=scale#plans" className="group inline-flex items-center gap-1 whitespace-nowrap text-foreground underline underline-offset-4">
-              {t("ent.hero.pricing.link", "See plans")}
+              {t("ent.hero.pricing.link", "Explore plans")}
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-[var(--motion-fast)] ease-[var(--ease-out)] group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>
           </p>
@@ -337,8 +369,8 @@ webhook  record.verified
             <div className="mt-6 flex flex-col gap-3 text-sm">
               <a href={TEMPLATE_URL} download className="inline-flex items-center gap-2 font-medium underline underline-offset-4"><Download className="w-4 h-4" />{t("ent.cta.template", "Supplier list template")}</a>
               <Link to="/calculators/supplier-emissions-risk" className="inline-flex items-center gap-2 underline underline-offset-4">{t("ent.talk.calc", "Score suppliers now with the free calculator")}</Link>
-              <Link to="/pricing?plan=scale#plans" className="inline-flex items-center gap-2 underline underline-offset-4">{t("ent.talk.pricing2", "Compare plans, including Scale")}</Link>
             </div>
+            <ScaleFit suppliers={form.suppliers} interests={interests} stack={form.stack} />
           </div>
           {sent ? (
             <div className="flex flex-col items-start justify-center gap-3" role="status">

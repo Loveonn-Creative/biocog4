@@ -58,9 +58,9 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
     ],
   },
   '/enterprise': {
-    h1: 'Supplier emissions, without the chasing',
+    h1: 'Every supplier\'s emissions, in one record you can defend',
     blocks: [
-      { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
+      { p: 'Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile. Senseible collects what suppliers already have, ties each figure to its source document, and keeps estimates labelled until real data replaces them, so reporting holds up as your supplier base grows. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
       { h2: 'Unstructured data in. The simplest next decision out.' },
       { p: 'Supply chains and enterprise systems produce data in every shape: bills in several languages, photos, ERP exports, meter files and spend lines. Each becomes one record with its scope, kgCO2e, the factor used, a confidence score and the hash of its source, and the ledger ranks what to act on first.' },
       { h2: 'The full suite, on one verified ledger' },
