@@ -30,6 +30,86 @@ const getDeviceFingerprint = (): string => {
   return navigator.userAgent;
 };
 
+// Every component calls useSession. Without sharing, each one ran its own
+// session check, so a new visitor got one guest session per component (40+
+// rows, with parts of the page holding different session ids). One check is
+// shared per page load and replaced only when the person signs in or out.
+let sharedSession: Promise<SessionState> | null = null;
+/** Whether the shared state is a signed-in one (known synchronously, for sign-out). */
+let sharedIsAuthenticated = false;
+
+async function resolveSession(): Promise<SessionState> {
+  try {
+    const supabase = await loadSupabase();
+    // Check for authenticated user first
+    const { data: { session: authSession } } = await supabase.auth.getSession();
+    
+    if (authSession?.user) {
+      syncIdentity(authSession.user.id);
+      return {
+        sessionId: null,
+        user: authSession.user,
+        authSession,
+        isLoading: false,
+        isAuthenticated: true
+      };
+    }
+
+    syncIdentity(null);
+    // Check for existing anonymous session
+    let sessionId = localStorage.getItem(SESSION_STORAGE_KEY);
+    const fingerprint = getDeviceFingerprint();
+    
+    if (sessionId) {
+      // Verify session exists and belongs to this device via secure RPC
+      const { data: sessionData, error: sessionError } = await supabase
+        .rpc('get_own_session', {
+          session_uuid: sessionId,
+          fingerprint: fingerprint
+        });
+      
+      if (sessionError || !sessionData || sessionData.length === 0) {
+        // Session doesn't exist or doesn't belong to this device
+        sessionId = null;
+        localStorage.removeItem(SESSION_STORAGE_KEY);
+      } else {
+        // Update session activity securely
+        await supabase.rpc('update_session_activity', {
+          session_uuid: sessionId,
+          fingerprint: fingerprint
+        });
+      }
+    }
+
+    // Create new session if needed using secure RPC
+    if (!sessionId) {
+      const { data: newSessionId, error } = await supabase
+        .rpc('create_secure_session', {
+          fingerprint: fingerprint,
+          ip_hash: null // Could add IP hashing for extra security
+        });
+
+      if (error) {
+        console.error('[Session] Failed to create session:', error);
+      } else if (newSessionId) {
+        sessionId = newSessionId;
+        localStorage.setItem(SESSION_STORAGE_KEY, sessionId);
+      }
+    }
+
+    return {
+      sessionId,
+      user: null,
+      authSession: null,
+      isLoading: false,
+      isAuthenticated: false
+    };
+  } catch (error) {
+    console.error('Session initialization error:', error);
+    return { sessionId: null, user: null, authSession: null, isLoading: false, isAuthenticated: false };
+  }
+}
+
 export function useSession() {
   const [state, setState] = useState<SessionState>({
     sessionId: null,
@@ -39,79 +119,13 @@ export function useSession() {
     isAuthenticated: false
   });
 
-  // Initialize or get existing anonymous session using secure RPC functions
+  // One shared session check (see resolveSession).
   const initializeSession = useCallback(async () => {
-    try {
-      const supabase = await loadSupabase();
-      // Check for authenticated user first
-      const { data: { session: authSession } } = await supabase.auth.getSession();
-      
-      if (authSession?.user) {
-        syncIdentity(authSession.user.id);
-        setState({
-          sessionId: null,
-          user: authSession.user,
-          authSession,
-          isLoading: false,
-          isAuthenticated: true
-        });
-        return;
-      }
-
-      syncIdentity(null);
-      // Check for existing anonymous session
-      let sessionId = localStorage.getItem(SESSION_STORAGE_KEY);
-      const fingerprint = getDeviceFingerprint();
-      
-      if (sessionId) {
-        // Verify session exists and belongs to this device via secure RPC
-        const { data: sessionData, error: sessionError } = await supabase
-          .rpc('get_own_session', {
-            session_uuid: sessionId,
-            fingerprint: fingerprint
-          });
-        
-        if (sessionError || !sessionData || sessionData.length === 0) {
-          // Session doesn't exist or doesn't belong to this device
-          sessionId = null;
-          localStorage.removeItem(SESSION_STORAGE_KEY);
-        } else {
-          // Update session activity securely
-          await supabase.rpc('update_session_activity', {
-            session_uuid: sessionId,
-            fingerprint: fingerprint
-          });
-        }
-      }
-
-      // Create new session if needed using secure RPC
-      if (!sessionId) {
-        const { data: newSessionId, error } = await supabase
-          .rpc('create_secure_session', {
-            fingerprint: fingerprint,
-            ip_hash: null // Could add IP hashing for extra security
-          });
-
-        if (error) {
-          console.error('[Session] Failed to create session:', error);
-        } else if (newSessionId) {
-          sessionId = newSessionId;
-          localStorage.setItem(SESSION_STORAGE_KEY, sessionId);
-          console.log('[Session] Created new session:', sessionId.substring(0, 8) + '...');
-        }
-      }
-
-      setState({
-        sessionId,
-        user: null,
-        authSession: null,
-        isLoading: false,
-        isAuthenticated: false
-      });
-    } catch (error) {
-      console.error('Session initialization error:', error);
-      setState(prev => ({ ...prev, isLoading: false }));
+    if (!sharedSession) {
+      sharedSession = resolveSession().then((s) => { sharedIsAuthenticated = s.isAuthenticated; return s; });
     }
+    const resolved = await sharedSession;
+    setState(resolved);
   }, []);
 
   // Listen for auth changes
@@ -125,13 +139,16 @@ export function useSession() {
           // A different account than the last one on this device: drop the
           // previous person's cached data before anything renders.
           syncIdentity(session.user.id);
-          setState({
+          const signedIn: SessionState = {
             sessionId: null,
             user: session.user,
             authSession: session,
             isLoading: false,
             isAuthenticated: true
-          });
+          };
+          sharedSession = Promise.resolve(signedIn);
+          sharedIsAuthenticated = true;
+          setState(signedIn);
 
           // Guest uploads on this device are never adopted automatically. The
           // person who signed in is asked first (GuestImportPrompt).
@@ -144,6 +161,8 @@ export function useSession() {
           }
         } else {
           syncIdentity(null);
+          // Signed out: drop the shared signed-in state so one fresh guest check runs.
+          if (sharedIsAuthenticated) { sharedSession = null; sharedIsAuthenticated = false; }
           initializeSession();
         }
       });

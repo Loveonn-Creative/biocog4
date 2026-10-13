@@ -9,7 +9,7 @@ import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
 import { useCredibility } from '@/hooks/useCredibility';
 import { 
-  Coins, Building2, Gift, ExternalLink, CheckCircle, ArrowRight, 
+  Coins, Building2, Gift, CheckCircle, ArrowRight, 
   Shield, Loader2, Clock, FileCheck, AlertCircle, TrendingUp, Crown,
   Star, XCircle, Receipt
 } from 'lucide-react';
@@ -189,7 +189,8 @@ const Monetize = () => {
 
       if (error) throw error;
 
-      toast.success(`Application submitted to ${partnerName}!`);
+      // Saved on the account only: nothing is sent to the partner from here.
+      toast.success(`Interest in ${partnerName} saved to your account. Nothing is shared with them without your go-ahead.`);
       setPathwayStatuses(prev => ({ ...prev, [pathwayType]: 'applied' }));
     } catch (err) {
       console.error('Error applying for pathway:', err);
@@ -435,7 +436,6 @@ const Monetize = () => {
                               ) : (
                                 <>
                                   Apply Now
-                                  <ExternalLink className="h-3 w-3 ml-2" />
                                 </>
                               )}
                             </Button>
@@ -485,9 +485,8 @@ const Monetize = () => {
                   <div>
                     <h4 className="font-semibold mb-1">How monetization works</h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Your verified carbon data is matched with buyers, lenders, and government programs. 
-                      Each pathway has different requirements and timelines. Applications are processed 
-                      through our partner network.
+                      Each pathway shows what your verified records already meet. Apply Now saves your interest
+                      on your account; nothing is shared with a buyer, lender or programme without your go-ahead.
                     </p>
                     <div className="flex gap-3 flex-wrap">
                       {ledgerEntries.length > 0 && (

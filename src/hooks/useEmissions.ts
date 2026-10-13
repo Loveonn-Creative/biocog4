@@ -160,7 +160,6 @@ export function useEmissions() {
           filter,
         },
         (payload) => {
-          console.log('Emissions update received:', payload.eventType);
           fetchEmissions();
         }
       )

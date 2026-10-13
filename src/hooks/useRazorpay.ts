@@ -22,27 +22,19 @@ export const useRazorpay = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
-  // Load Razorpay script
-  useEffect(() => {
-    if (window.Razorpay) {
-      setIsScriptLoaded(true);
-      return;
-    }
-
+  // Load the checkout script quietly. A failure (often an ad-blocker) is only
+  // reported when someone actually tries to pay, never on page load.
+  const loadScript = useCallback(() => new Promise<boolean>((resolve) => {
+    if (window.Razorpay) { setIsScriptLoaded(true); resolve(true); return; }
     const script = document.createElement('script');
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.async = true;
-    script.onload = () => setIsScriptLoaded(true);
-    script.onerror = () => {
-      console.error('Failed to load Razorpay script');
-      toast.error('Payment gateway unavailable');
-    };
+    script.onload = () => { setIsScriptLoaded(true); resolve(true); };
+    script.onerror = () => { script.remove(); console.warn('Razorpay checkout script did not load'); resolve(false); };
     document.body.appendChild(script);
+  }), []);
 
-    return () => {
-      // Cleanup if needed
-    };
-  }, []);
+  useEffect(() => { void loadScript(); }, [loadScript]);
 
   const initiatePayment = useCallback(async ({
     tier,
@@ -53,15 +45,14 @@ export const useRazorpay = () => {
     onSuccess,
     onFailure,
   }: RazorpayOptions) => {
-    if (!isScriptLoaded) {
-      toast.error('Payment gateway is loading, please try again');
+    if (!isScriptLoaded && !window.Razorpay && !(await loadScript())) {
+      toast.error('Payment gateway could not load. If you use an ad-blocker, allow checkout.razorpay.com and try again.');
       return;
     }
 
     setIsLoading(true);
 
     try {
-      console.log('[Razorpay] Creating order for tier:', tier, 'user:', userId);
       
       // Create order (server derives user identity from the session JWT)
       const { data: { session } } = await supabase.auth.getSession();
@@ -82,7 +73,6 @@ export const useRazorpay = () => {
       );
 
       const responseData = await response.json();
-      console.log('[Razorpay] Order response:', response.status, responseData);
 
       if (!response.ok) {
         const errorMsg = responseData.error || 'Failed to create order';
@@ -97,7 +87,6 @@ export const useRazorpay = () => {
         throw new Error('Invalid order response from server');
       }
       
-      console.log('[Razorpay] Order created:', { orderId, amount, currency, planName });
 
       // Initialize Razorpay checkout
       const options = {
@@ -108,10 +97,6 @@ export const useRazorpay = () => {
         description: planName,
         order_id: orderId,
         handler: async (response: any) => {
-          console.log('[Razorpay] Payment completed, verifying...', {
-            order_id: response.razorpay_order_id,
-            payment_id: response.razorpay_payment_id,
-          });
           
           try {
             // Show processing toast
@@ -140,7 +125,6 @@ export const useRazorpay = () => {
             );
 
             const verifyData = await verifyResponse.json();
-            console.log('[Razorpay] Verification response:', verifyResponse.status, verifyData);
             
             toast.dismiss('payment-verify');
 
@@ -182,7 +166,7 @@ export const useRazorpay = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [isScriptLoaded]);
+  }, [isScriptLoaded, loadScript]);
 
   return {
     initiatePayment,

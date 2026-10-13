@@ -62,8 +62,10 @@ interface PartnerTier {
 const Pricing = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useSession();
-  const { initiatePayment, isLoading: isPaymentLoading, isReady: isRazorpayReady } = useRazorpay();
-  const { tier: currentTier, refreshTier } = usePremiumStatus();
+  const { initiatePayment, isLoading: isPaymentLoading } = useRazorpay();
+  const { tier: premiumTier, refreshTier } = usePremiumStatus();
+  // A guest has no plan yet: no card is "Current Plan" for them, so the free card stays a sign-up.
+  const currentTier = isAuthenticated ? premiumTier : null;
   const { activeContext, isLoading: contextLoading } = useOrganization();
   
   // Wait for context to load before determining pricing view
@@ -687,8 +689,7 @@ const Pricing = () => {
                         onClick={() => handleSubscribe(tier.id)}
                         disabled={
                           processingTier !== null || 
-                          currentTier === tier.id ||
-                          (!isRazorpayReady && tier.id !== 'snapshot' && tier.id !== 'scale')
+                          currentTier === tier.id
                         }
                       >
                         {getButtonContent(tier)}

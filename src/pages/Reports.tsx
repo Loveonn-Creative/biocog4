@@ -23,8 +23,6 @@ import {
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
-import jsPDF from 'jspdf';
-import * as XLSX from 'xlsx';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { 
   assessFramework,
@@ -33,7 +31,8 @@ import {
 } from '@/lib/reportFrameworks';
 import { useReportEvidence } from '@/hooks/useReportEvidence';
 import { grossKg, periodDateOf } from '@/lib/emissionLedger';
-import { generateFrameworkPDF, generateFrameworkExcel, type ReportDataset } from '@/lib/frameworkReports';
+// PDF and Excel engines load on first download, not with the page.
+import type { ReportDataset } from '@/lib/frameworkReports';
 import { analyticsEvents } from '@/lib/analytics';
 import { useI18nContext } from '@/lib/i18n/LanguageProvider';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
@@ -288,13 +287,14 @@ const Reports = () => {
 
 
 
-  const downloadFramework = (fwId: string, kind: 'pdf' | 'xlsx') => {
+  const downloadFramework = async (fwId: string, kind: 'pdf' | 'xlsx') => {
     if (summary.total <= 0) {
       toast.error('No verified emissions data to report yet');
       return;
     }
     setIsGenerating(true);
     try {
+      const { generateFrameworkPDF, generateFrameworkExcel } = await import('@/lib/frameworkReports');
       const ok = kind === 'pdf'
         ? generateFrameworkPDF(fwId, dataset)
         : generateFrameworkExcel(fwId, dataset);
@@ -338,6 +338,7 @@ const Reports = () => {
     setIsGenerating(true);
     
     try {
+      const { default: jsPDF } = await import('jspdf');
       const doc = new jsPDF({ orientation: 'landscape' });
       const pageWidth = doc.internal.pageSize.getWidth();
       const pageHeight = doc.internal.pageSize.getHeight();
@@ -1064,7 +1065,8 @@ const Reports = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => {
+                onClick={async () => {
+                  const XLSX = await import('xlsx');
                   const wb = XLSX.utils.book_new();
                   const auditData = emissions.map(e => ({
                     'Period date': periodDateOf(e).slice(0, 10),
@@ -1091,7 +1093,8 @@ const Reports = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => {
+                onClick={async () => {
+                  const XLSX = await import('xlsx');
                   const wb = XLSX.utils.book_new();
                   const anonData = emissions.map(e => ({
                     Category: e.category,
