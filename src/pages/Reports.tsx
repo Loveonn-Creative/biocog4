@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -549,7 +548,6 @@ const Reports = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Reports | Senseible</title></Helmet>
-      <CarbonParticles />
       <Navigation />
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
@@ -572,9 +570,7 @@ const Reports = () => {
               <Card className="border-primary/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <FileBarChart className="h-5 w-5 text-primary" />
-                    </div>
+                    <FileBarChart className="h-4 w-4 shrink-0 text-primary" />
                     <div>
                       <span>Carbon Accounting Report</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
@@ -706,9 +702,7 @@ const Reports = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Shield className="h-5 w-5 text-primary" />
-                    </div>
+                    <Shield className="h-4 w-4 shrink-0 text-primary" />
                     <div>
                       <span>Framework Reports</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
@@ -845,9 +839,7 @@ const Reports = () => {
                 <Card className="border-warning/20">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-warning/10">
-                        <Shield className="h-5 w-5 text-warning" />
-                      </div>
+                      <Shield className="h-4 w-4 shrink-0 text-warning" />
                       <div>
                         <span>Gov-Ready Export</span>
                         <p className="text-sm font-normal text-muted-foreground mt-1">
@@ -900,9 +892,7 @@ const Reports = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-accent/10">
-                      <Building2 className="h-5 w-5 text-accent" />
-                    </div>
+                    <Building2 className="h-4 w-4 shrink-0 text-accent" />
                     <div>
                       <span>Bank Disclosure Report</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
@@ -955,9 +945,7 @@ const Reports = () => {
               <Card className="border-success/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-success/10">
-                      <Award className="h-5 w-5 text-success" />
-                    </div>
+                    <Award className="h-4 w-4 shrink-0 text-success" />
                     <div>
                       <span>Compliance Certificate</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">

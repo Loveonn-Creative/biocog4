@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -250,7 +249,6 @@ const MRVDashboard = () => {
         <meta name="description" content="Transparent carbon MRV dashboard with progress-based scoring and monetization pathways." />
       </Helmet>
       
-      <CarbonParticles />
       <Navigation />
 
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">

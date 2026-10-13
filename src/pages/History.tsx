@@ -1,7 +1,6 @@
 import { useDocuments } from '@/hooks/useDocuments';
 import { useEmissions } from '@/hooks/useEmissions';
 import { Link, useNavigate } from 'react-router-dom';
-import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download, Loader2, AlertTriangle, Trash2 } from 'lucide-react';
@@ -193,7 +192,6 @@ const History = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Invoice History | Senseible</title></Helmet>
-      <CarbonParticles />
       <Navigation />
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -374,9 +372,6 @@ const History = () => {
                 return (
                   <Card key={doc.id} className="hover:bg-secondary/30 transition-colors">
                     <CardContent className="p-4 flex items-center gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10">
-                        <FileText className="h-5 w-5 text-primary" />
-                      </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-medium truncate">{doc.vendor || doc.document_type || 'Invoice'}</span>
