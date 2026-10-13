@@ -1,66 +1,245 @@
 /**
  * Net-Zero Goal Engine
- * Sector benchmarks, reduction strategies, and feasibility calculations
- * Deterministic logic — AI augments decisions, never replaces core math
+ *
+ * Every number here is either
+ *   - a constant with a published source (the platform's own emission
+ *     factors, IPCC 2006 defaults, or the GHG Protocol's accounting rules), or
+ *   - an assumption about the site, labelled as one, with the default stated
+ *     so it can be replaced from an energy audit.
+ * Each reduction is a formula over the baseline split by scope, so the result
+ * can be recomputed by hand. No costs are shown: none could be sourced to a
+ * current official benchmark, and an invented price is worse than none.
  */
 
-export interface SectorBenchmark {
-  id: string;
-  name: string;
-  avgIntensity: number; // kgCO2/unit revenue (₹1L)
-  topQuartile: number;
-  reductionPotential: number; // % achievable in 12 months
-  typicalBaseline: number; // kgCO2 annual for typical MSME
+import { FUEL_FACTORS, INDIA_GRID_FACTOR_KG_PER_KWH } from '@/lib/factors';
+
+/* ------------------------------- Constants ------------------------------- */
+
+export interface Param {
+  label: string;
+  value: number;
+  unit: string;
+  kind: 'constant' | 'assumption';
+  /** Where a constant comes from, or why an assumption has this default. */
+  source: string;
 }
 
-export const SECTOR_BENCHMARKS: SectorBenchmark[] = [
-  { id: 'textile', name: 'Textiles & Apparel', avgIntensity: 42, topQuartile: 28, reductionPotential: 25, typicalBaseline: 85000 },
-  { id: 'steel', name: 'Iron & Steel', avgIntensity: 180, topQuartile: 120, reductionPotential: 15, typicalBaseline: 450000 },
-  { id: 'chemical', name: 'Chemicals', avgIntensity: 95, topQuartile: 60, reductionPotential: 20, typicalBaseline: 220000 },
-  { id: 'agriculture', name: 'Agriculture & Food', avgIntensity: 35, topQuartile: 22, reductionPotential: 30, typicalBaseline: 65000 },
-  { id: 'logistics', name: 'Logistics & Transport', avgIntensity: 68, topQuartile: 45, reductionPotential: 20, typicalBaseline: 150000 },
-  { id: 'construction', name: 'Construction', avgIntensity: 110, topQuartile: 75, reductionPotential: 18, typicalBaseline: 280000 },
-  { id: 'auto', name: 'Automotive', avgIntensity: 85, topQuartile: 55, reductionPotential: 22, typicalBaseline: 190000 },
-  { id: 'pharma', name: 'Pharmaceuticals', avgIntensity: 52, topQuartile: 35, reductionPotential: 28, typicalBaseline: 95000 },
-  { id: 'it', name: 'IT & Services', avgIntensity: 18, topQuartile: 10, reductionPotential: 40, typicalBaseline: 32000 },
-  { id: 'other', name: 'Other / General', avgIntensity: 55, topQuartile: 35, reductionPotential: 22, typicalBaseline: 120000 },
+/** IPCC 2006 Guidelines, Vol. 2, Ch. 2, Table 2.2: default CO2 emission factors for stationary combustion. */
+export const IPCC_CO2_KG_PER_TJ = { diesel: 74_100, naturalGas: 56_100 } as const;
+
+const C = {
+  grid: { label: 'Grid emission factor', value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kgCO2/kWh', kind: 'constant', source: 'CEA CO2 Baseline Database, India weighted average (the factor the platform applies to electricity bills)' },
+  diesel: { label: 'Diesel emission factor', value: FUEL_FACTORS.DIESEL.value, unit: 'kgCO2/L', kind: 'constant', source: 'Platform factor for diesel (IPCC 2006 basis)' },
+  dieselCo2PerTj: { label: 'Diesel CO2 per energy', value: IPCC_CO2_KG_PER_TJ.diesel, unit: 'kgCO2/TJ', kind: 'constant', source: 'IPCC 2006, Vol. 2, Table 2.2 (gas/diesel oil)' },
+  gasCo2PerTj: { label: 'Natural gas CO2 per energy', value: IPCC_CO2_KG_PER_TJ.naturalGas, unit: 'kgCO2/TJ', kind: 'constant', source: 'IPCC 2006, Vol. 2, Table 2.2 (natural gas)' },
+} satisfies Record<string, Param>;
+
+/* ------------------------------- Baseline ------------------------------- */
+
+export interface Baseline { scope1Kg: number; scope2Kg: number; scope3Kg: number; totalKg: number }
+
+/** A baseline from monthly electricity (kWh) and diesel (litres), with the platform's own factors. */
+export function baselineFromUsage(monthlyKwh: number, monthlyDieselL: number): Baseline {
+  const scope2Kg = Math.max(0, monthlyKwh) * 12 * C.grid.value;
+  const scope1Kg = Math.max(0, monthlyDieselL) * 12 * C.diesel.value;
+  return { scope1Kg, scope2Kg, scope3Kg: 0, totalKg: scope1Kg + scope2Kg };
+}
+
+/* -------------------------------- Sectors -------------------------------- */
+
+/** Sectors decide which actions apply. They carry no emission numbers. */
+export const SECTOR_BENCHMARKS: { id: string; name: string }[] = [
+  { id: 'textile', name: 'Textiles & Apparel' },
+  { id: 'steel', name: 'Iron & Steel' },
+  { id: 'chemical', name: 'Chemicals' },
+  { id: 'agriculture', name: 'Agriculture & Food' },
+  { id: 'logistics', name: 'Logistics & Transport' },
+  { id: 'construction', name: 'Construction' },
+  { id: 'auto', name: 'Automotive' },
+  { id: 'pharma', name: 'Pharmaceuticals' },
+  { id: 'it', name: 'IT & Services' },
+  { id: 'other', name: 'Other / General' },
 ];
+
+/* -------------------------------- Actions -------------------------------- */
 
 export interface ReductionAction {
   id: string;
   title: string;
-  scope: number;
-  reductionPct: number; // % of scope emissions
-  estimatedCostInr: number; // ₹
-  paybackMonths: number;
+  scope: 1 | 2 | 3;
   effort: 'low' | 'medium' | 'high';
   applicableSectors: string[]; // 'all' or sector ids
+  /** The formula in words, using the parameter labels below. */
+  formula: string;
+  params: Param[];
+  /** Fraction of the scope's emissions this action removes. */
+  fraction: number;
+  note?: string;
 }
 
-export const REDUCTION_STRATEGIES: ReductionAction[] = [
-  // Scope 2 — Quick wins
-  { id: 'solar-rooftop', title: 'Install rooftop solar (25-100 kW)', scope: 2, reductionPct: 40, estimatedCostInr: 2500000, paybackMonths: 36, effort: 'medium', applicableSectors: ['all'] },
-  { id: 'green-tariff', title: 'Switch to green power tariff (RE100)', scope: 2, reductionPct: 60, estimatedCostInr: 0, paybackMonths: 0, effort: 'low', applicableSectors: ['all'] },
-  { id: 'led-lighting', title: 'Upgrade to LED lighting throughout', scope: 2, reductionPct: 8, estimatedCostInr: 150000, paybackMonths: 12, effort: 'low', applicableSectors: ['all'] },
-  { id: 'hvac-upgrade', title: 'Upgrade HVAC to 5-star rated systems', scope: 2, reductionPct: 15, estimatedCostInr: 800000, paybackMonths: 24, effort: 'medium', applicableSectors: ['all'] },
-  { id: 'power-factor', title: 'Improve power factor to 0.99', scope: 2, reductionPct: 5, estimatedCostInr: 200000, paybackMonths: 8, effort: 'low', applicableSectors: ['all'] },
+const assumption = (label: string, value: number, unit: string, source: string): Param => ({ label, value, unit, kind: 'assumption', source });
+const pct = (v: number) => v / 100;
 
-  // Scope 1 — Fuel switching
-  { id: 'fuel-switch-gas', title: 'Switch from diesel/furnace oil to natural gas', scope: 1, reductionPct: 30, estimatedCostInr: 1500000, paybackMonths: 18, effort: 'high', applicableSectors: ['steel', 'chemical', 'textile', 'construction'] },
-  { id: 'boiler-efficiency', title: 'Upgrade boiler efficiency (>85%)', scope: 1, reductionPct: 15, estimatedCostInr: 600000, paybackMonths: 14, effort: 'medium', applicableSectors: ['textile', 'chemical', 'pharma'] },
-  { id: 'ev-fleet', title: 'Transition fleet to EV/CNG vehicles', scope: 1, reductionPct: 45, estimatedCostInr: 3000000, paybackMonths: 48, effort: 'high', applicableSectors: ['logistics', 'all'] },
-  { id: 'process-heat', title: 'Electrify process heating', scope: 1, reductionPct: 35, estimatedCostInr: 2000000, paybackMonths: 30, effort: 'high', applicableSectors: ['steel', 'chemical', 'auto'] },
+// Physical ratios used below, computed once so tests can check them.
+/** Diesel → natural gas at the same useful energy: 1 − 56,100 / 74,100. */
+export const GAS_SWITCH_FRACTION = 1 - IPCC_CO2_KG_PER_TJ.naturalGas / IPCC_CO2_KG_PER_TJ.diesel;
+/** kgCO2 per kWh of diesel fuel energy: 74,100 kg/TJ × 3.6 × 10⁻⁶ TJ/kWh. */
+export const DIESEL_KG_PER_KWH_FUEL = IPCC_CO2_KG_PER_TJ.diesel * 3.6e-6;
 
-  // Scope 3 — Supply chain
-  { id: 'local-sourcing', title: 'Shift to local/regional suppliers', scope: 3, reductionPct: 15, estimatedCostInr: 0, paybackMonths: 0, effort: 'medium', applicableSectors: ['all'] },
-  { id: 'packaging-reduce', title: 'Reduce packaging weight by 30%', scope: 3, reductionPct: 8, estimatedCostInr: 100000, paybackMonths: 6, effort: 'low', applicableSectors: ['all'] },
-  { id: 'recycled-inputs', title: 'Switch to recycled raw materials', scope: 3, reductionPct: 20, estimatedCostInr: 0, paybackMonths: 0, effort: 'medium', applicableSectors: ['textile', 'auto', 'construction'] },
-  { id: 'waste-diversion', title: 'Achieve 90% waste diversion from landfill', scope: 3, reductionPct: 10, estimatedCostInr: 300000, paybackMonths: 12, effort: 'medium', applicableSectors: ['all'] },
-  { id: 'supplier-engagement', title: 'Supplier carbon disclosure program', scope: 3, reductionPct: 12, estimatedCostInr: 50000, paybackMonths: 0, effort: 'low', applicableSectors: ['all'] },
-];
+/** Fraction of process-heat emissions a heat pump removes against a diesel boiler; negative means it adds emissions. */
+export function heatPumpFraction(cop: number, boilerEff: number): number {
+  // Emissions per kWh of useful heat: fuel = EF_fuel / η_boiler; heat pump = EF_grid / COP.
+  const fuel = DIESEL_KG_PER_KWH_FUEL / boilerEff;
+  const hp = C.grid.value / cop;
+  return 1 - hp / fuel; // negative means electrification raises emissions on this grid
+}
 
-/** Assumed share of total emissions per scope, used when an action's cut is estimated. */
-export const SCOPE_SHARE: Record<1 | 2 | 3, number> = { 1: 0.3, 2: 0.4, 3: 0.3 };
+function buildActions(): ReductionAction[] {
+  const solarShare = assumption('Electricity covered by rooftop solar', 30, '%', 'Roof-limited; replace with your installer’s design');
+  const lightShare = assumption('Lighting share of electricity', 10, '%', 'Replace with your energy audit');
+  const ledRatio = { label: 'LED tube vs 36 W fluorescent tube', value: 18 / 36, unit: 'W/W', kind: 'constant' as const, source: 'Nameplate ratings of standard 4-ft tubes: 18 W LED replacing 36 W T8 (ballast losses ignored, so the cut is conservative)' };
+  const coolShare = assumption('Cooling share of electricity', 20, '%', 'Replace with your energy audit');
+  const iseerOld = assumption('Efficiency of existing ACs (ISEER)', 3.5, '', 'Older low-star split ACs; read it from the BEE label');
+  const iseerNew = assumption('Efficiency of new ACs (ISEER)', 5.0, '', 'High-star inverter split ACs; read it from the BEE label');
+  const lossShare = assumption('In-plant cable and transformer losses', 2, '% of electricity', 'Replace with your energy audit');
+  const pf0 = assumption('Power factor before', 0.85, '', 'Typical uncorrected inductive load');
+  const pf1 = assumption('Power factor after', 0.99, '', 'Target with capacitor banks');
+  const boilerShare = assumption('Scope 1 fuel used in boilers', 50, '%', 'Replace with your fuel records');
+  const eff0 = assumption('Boiler efficiency before', 75, '%', 'Replace with a boiler efficiency test');
+  const eff1 = assumption('Boiler efficiency after', 85, '%', 'Achievable with economiser and tuning; confirm with the vendor');
+  const fleetShare = assumption('Scope 1 fuel used by vehicles', 50, '%', 'Replace with your fuel records');
+  const heatShare = assumption('Scope 1 fuel used for low-temperature process heat', 30, '%', 'Heat pumps suit heat below about 100 °C');
+  const cop = assumption('Heat pump COP', 3, '', 'Seasonal coefficient of performance; confirm with the vendor');
+  const greenShare = assumption('Grid electricity moved to a green tariff', 100, '%', 'Share contracted with the DISCOM or open access');
+  const packShare = assumption('Packaging share of Scope 3', 10, '%', 'Replace with your purchase records');
+  const freightShare = assumption('Inbound freight share of Scope 3', 15, '%', 'Replace with your freight invoices');
+  const distanceCut = assumption('Shorter average sourcing distance', 50, '%', 'Depends on the suppliers you can switch to');
+  const materialShare = assumption('Material share of Scope 3 switched to recycled', 20, '%', 'Replace with your purchase records');
+  const recycledRatio = assumption('Recycled material footprint vs virgin', 50, '%', 'Material-specific; use the supplier’s EPD');
+  const wasteShare = assumption('Waste share of Scope 3', 5, '%', 'Replace with your waste contractor invoices');
+  const diverted = assumption('Waste diverted from landfill', 90, '%', 'Target diversion rate');
+
+  return [
+    // GHG Protocol Scope 2 Guidance: a green tariff lowers market-based Scope 2
+    // only. This baseline is location-based (grid factor × units), so the
+    // tariff cuts nothing here; counting it would mix the two methods.
+    { id: 'green-tariff', title: 'Switch to green power tariff (RE100)', scope: 2, effort: 'low', applicableSectors: ['all'],
+      formula: 'No cut to location-based Scope 2', params: [greenShare], fraction: 0,
+      note: 'Lowers market-based Scope 2 by the share contracted (GHG Protocol Scope 2 Guidance). The location-based baseline used here does not change, so it is reported alongside, not subtracted.' },
+    { id: 'solar-rooftop', title: 'Install rooftop solar', scope: 2, effort: 'medium', applicableSectors: ['all'],
+      formula: 'Scope 2 × share of electricity covered by solar', params: [solarShare, C.grid], fraction: pct(solarShare.value),
+      note: 'Each kWh generated on site and used replaces one grid kWh at the grid factor.' },
+    { id: 'led-lighting', title: 'Upgrade to LED lighting throughout', scope: 2, effort: 'low', applicableSectors: ['all'],
+      formula: 'Scope 2 × lighting share × (1 − LED watts ÷ fluorescent watts)', params: [lightShare, ledRatio], fraction: pct(lightShare.value) * (1 - ledRatio.value) },
+    { id: 'hvac-upgrade', title: 'Upgrade air conditioning to high-star inverter units', scope: 2, effort: 'medium', applicableSectors: ['all'],
+      formula: 'Scope 2 × cooling share × (1 − old ISEER ÷ new ISEER)', params: [coolShare, iseerOld, iseerNew], fraction: pct(coolShare.value) * (1 - iseerOld.value / iseerNew.value),
+      note: 'For the same cooling, electricity use is inversely proportional to efficiency.' },
+    { id: 'power-factor', title: 'Improve power factor to 0.99', scope: 2, effort: 'low', applicableSectors: ['all'],
+      formula: 'Scope 2 × in-plant losses × (1 − (PF before ÷ PF after)²)', params: [lossShare, pf0, pf1], fraction: pct(lossShare.value) * (1 - (pf0.value / pf1.value) ** 2),
+      note: 'Resistive losses scale with current squared, and current with 1 ÷ power factor. The main gain is on kVAh charges, not emissions.' },
+    { id: 'fuel-switch-gas', title: 'Switch from diesel/furnace oil to natural gas', scope: 1, effort: 'high', applicableSectors: ['steel', 'chemical', 'textile', 'construction'],
+      formula: 'Scope 1 × (1 − natural gas CO2 per TJ ÷ diesel CO2 per TJ)', params: [C.gasCo2PerTj, C.dieselCo2PerTj], fraction: GAS_SWITCH_FRACTION,
+      note: 'Same useful energy assumed; efficiency gains from new burners would add to this.' },
+    { id: 'boiler-efficiency', title: 'Upgrade boiler efficiency', scope: 1, effort: 'medium', applicableSectors: ['textile', 'chemical', 'pharma'],
+      formula: 'Scope 1 × boiler share × (1 − efficiency before ÷ efficiency after)', params: [boilerShare, eff0, eff1], fraction: pct(boilerShare.value) * (1 - eff0.value / eff1.value),
+      note: 'Fuel for the same steam is inversely proportional to boiler efficiency.' },
+    { id: 'ev-fleet', title: 'Move fleet from diesel to CNG', scope: 1, effort: 'high', applicableSectors: ['logistics', 'all'],
+      formula: 'Scope 1 × vehicle share × (1 − natural gas CO2 per TJ ÷ diesel CO2 per TJ)', params: [fleetShare, C.gasCo2PerTj, C.dieselCo2PerTj], fraction: pct(fleetShare.value) * GAS_SWITCH_FRACTION,
+      note: 'Combustion CO2 only, at equal energy per km. Electric vehicles are assessed separately against the grid factor.' },
+    { id: 'process-heat', title: 'Electrify low-temperature process heat with heat pumps', scope: 1, effort: 'high', applicableSectors: ['steel', 'chemical', 'auto', 'textile', 'pharma', 'agriculture'],
+      formula: 'Scope 1 × heat share × (1 − (grid factor ÷ COP) ÷ (diesel CO2 per kWh ÷ boiler efficiency))', params: [heatShare, cop, C.grid, eff0], fraction: pct(heatShare.value) * Math.max(0, heatPumpFraction(cop.value, pct(eff0.value))),
+      note: 'Plain electric resistance heating would raise emissions on a 0.71 kg/kWh grid; only heat pumps with a COP above about 2 cut them (break-even COP = grid factor ÷ (diesel CO2 per kWh ÷ boiler efficiency)).' },
+    { id: 'local-sourcing', title: 'Shift to local/regional suppliers', scope: 3, effort: 'medium', applicableSectors: ['all'],
+      formula: 'Scope 3 × freight share × shorter distance', params: [freightShare, distanceCut], fraction: pct(freightShare.value) * pct(distanceCut.value),
+      note: 'Freight emissions scale with tonne-kilometres.' },
+    { id: 'packaging-reduce', title: 'Reduce packaging weight by 30%', scope: 3, effort: 'low', applicableSectors: ['all'],
+      formula: 'Scope 3 × packaging share × 30% lighter', params: [packShare], fraction: pct(packShare.value) * 0.3,
+      note: 'Material emissions scale with mass for the same material.' },
+    { id: 'recycled-inputs', title: 'Switch to recycled raw materials', scope: 3, effort: 'medium', applicableSectors: ['textile', 'auto', 'construction'],
+      formula: 'Scope 3 × material share × (1 − recycled ÷ virgin footprint)', params: [materialShare, recycledRatio], fraction: pct(materialShare.value) * (1 - pct(recycledRatio.value)) },
+    { id: 'waste-diversion', title: 'Achieve 90% waste diversion from landfill', scope: 3, effort: 'medium', applicableSectors: ['all'],
+      formula: 'Scope 3 × waste share × diverted share', params: [wasteShare, diverted], fraction: pct(wasteShare.value) * pct(diverted.value),
+      note: 'Assumes diverted waste has negligible emissions next to landfill; recycling processes add some back.' },
+    { id: 'supplier-engagement', title: 'Supplier carbon disclosure program', scope: 3, effort: 'low', applicableSectors: ['all'],
+      formula: 'No direct cut', params: [], fraction: 0,
+      note: 'Replaces spend estimates with suppliers’ own data. Cuts follow from what suppliers then change.' },
+  ];
+}
+
+export const REDUCTION_STRATEGIES: ReductionAction[] = buildActions();
+
+/** kgCO2e an action removes from a given baseline. */
+export function actionCutKg(a: ReductionAction, b: Baseline): number {
+  const scopeKg = a.scope === 1 ? b.scope1Kg : a.scope === 2 ? b.scope2Kg : b.scope3Kg;
+  return Math.round(scopeKg * a.fraction);
+}
+
+/* ------------------------------ Feasibility ------------------------------ */
+
+export interface RecommendedAction extends ReductionAction { cutKg: number }
+
+export interface FeasibilityResult {
+  baselineCo2Kg: number;
+  targetReductionPct: number;
+  targetReductionKg: number;
+  targetCo2Kg: number;
+  timelineMonths: number;
+  isFeasible: boolean;
+  feasibilityNote: string;
+  recommendedActions: RecommendedAction[];
+  /** kgCO2e the recommended actions would cut together. */
+  totalEstimatedCutKg: number;
+}
+
+const EFFORT_WEIGHT = { low: 1, medium: 2, high: 3 } as const;
+
+export function calculateFeasibility(baseline: Baseline, targetReductionPct: number, timelineMonths: number, sectorId: string): FeasibilityResult {
+  const baselineCo2Kg = Math.round(baseline.totalKg);
+  const targetReductionKg = Math.round(baselineCo2Kg * (targetReductionPct / 100));
+
+  // Applicable actions with a real cut on this baseline, best cut for the effort first.
+  // Actions on the same Scope 2 electricity overlap (a green tariff for all
+  // units leaves nothing for solar to cut), so each pick is applied to what
+  // the earlier picks left in its scope.
+  const remaining = { 1: baseline.scope1Kg, 2: baseline.scope2Kg, 3: baseline.scope3Kg } as Record<1 | 2 | 3, number>;
+  const candidates = REDUCTION_STRATEGIES
+    .filter(a => a.applicableSectors.includes('all') || a.applicableSectors.includes(sectorId))
+    .map(a => ({ a, score: actionCutKg(a, baseline) / EFFORT_WEIGHT[a.effort] }))
+    .filter(x => x.score > 0)
+    .sort((x, y) => y.score - x.score);
+
+  const recommended: RecommendedAction[] = [];
+  let total = 0;
+  for (const { a } of candidates) {
+    if (total >= targetReductionKg) break;
+    const cut = Math.round(remaining[a.scope] * a.fraction);
+    if (cut <= 0) continue;
+    remaining[a.scope] -= cut;
+    total += cut;
+    recommended.push({ ...a, cutKg: cut });
+  }
+
+  const isFeasible = targetReductionKg > 0 && total >= targetReductionKg;
+  const feasibilityNote = baselineCo2Kg <= 0
+    ? 'Add your electricity and fuel use, or upload bills, to size a target.'
+    : isFeasible
+      ? `${recommended.length} actions together cover the target cut on this baseline.`
+      : `These actions cover about ${Math.round((total / Math.max(1, targetReductionKg)) * 100)}% of the target. Close the gap with deeper changes or a later date.`;
+
+  return {
+    baselineCo2Kg,
+    targetReductionPct,
+    targetReductionKg,
+    targetCo2Kg: baselineCo2Kg - targetReductionKg,
+    timelineMonths,
+    isFeasible,
+    feasibilityNote,
+    recommendedActions: recommended,
+    totalEstimatedCutKg: total,
+  };
+}
+
+/* ------------------------------ Progress ------------------------------ */
 
 /**
  * SBTi near-term criteria: a 1.5°C-aligned Scope 1 and 2 target needs at
@@ -75,11 +254,9 @@ export function sbtiPace(targetReductionPct: number, timelineMonths: number): { 
   return { annualPct: Math.round(annualPct * 10) / 10, meets: annualPct >= SBTI_MIN_ANNUAL_PCT };
 }
 
-/** Estimated kgCO2e cut by the actions marked done, with the engine's scope shares. Never above the baseline. */
-export function estimatedCutKg(baselineCo2Kg: number, actions: ReductionAction[], statuses: Record<string, string>): number {
-  const kg = actions
-    .filter(a => statuses[a.id] === 'done')
-    .reduce((sum, a) => sum + baselineCo2Kg * (a.reductionPct / 100) * SCOPE_SHARE[a.scope as 1 | 2 | 3], 0);
+/** kgCO2e cut by the recommended actions marked done. Never above the baseline. */
+export function estimatedCutKg(baselineCo2Kg: number, actions: RecommendedAction[], statuses: Record<string, string>): number {
+  const kg = actions.filter(a => statuses[a.id] === 'done').reduce((s, a) => s + a.cutKg, 0);
   return Math.min(baselineCo2Kg, Math.round(kg));
 }
 
@@ -121,86 +298,14 @@ export function timelineFromGoal(targetDate: string, createdAt: string): '12' | 
   return months > 24 ? '36' : '12';
 }
 
-export interface FeasibilityResult {
-  baselineCo2Kg: number;
-  targetReductionPct: number;
-  targetReductionKg: number;
-  targetCo2Kg: number;
-  timelineMonths: number;
-  isFeasible: boolean;
-  feasibilityNote: string;
-  recommendedActions: ReductionAction[];
-  totalEstimatedReduction: number;
-  totalEstimatedCost: number;
-}
-
-export function calculateFeasibility(
-  baselineCo2Kg: number,
-  targetReductionPct: number,
-  timelineMonths: number,
-  sectorId: string
-): FeasibilityResult {
-  const targetReductionKg = baselineCo2Kg * (targetReductionPct / 100);
-  const targetCo2Kg = baselineCo2Kg - targetReductionKg;
-
-  const benchmark = SECTOR_BENCHMARKS.find(b => b.id === sectorId) || SECTOR_BENCHMARKS.find(b => b.id === 'other')!;
-
-  // Filter applicable strategies
-  const applicable = REDUCTION_STRATEGIES.filter(s =>
-    s.applicableSectors.includes('all') || s.applicableSectors.includes(sectorId)
-  ).filter(s => s.paybackMonths <= timelineMonths || s.paybackMonths === 0);
-
-  // Sort by impact/effort ratio
-  const sorted = [...applicable].sort((a, b) => {
-    const scoreA = a.reductionPct / (a.effort === 'low' ? 1 : a.effort === 'medium' ? 2 : 3);
-    const scoreB = b.reductionPct / (b.effort === 'low' ? 1 : b.effort === 'medium' ? 2 : 3);
-    return scoreB - scoreA;
-  });
-
-  // Estimate total achievable reduction
-  let cumulativeReduction = 0;
-  const recommended: ReductionAction[] = [];
-  let totalCost = 0;
-
-  for (const action of sorted) {
-    if (cumulativeReduction >= targetReductionPct) break;
-    // Rough: each action's % applies to its scope share of total
-    const effectiveReduction = action.reductionPct * SCOPE_SHARE[action.scope as 1 | 2 | 3];
-    cumulativeReduction += effectiveReduction;
-    totalCost += action.estimatedCostInr;
-    recommended.push(action);
-  }
-
-  const isFeasible = cumulativeReduction >= targetReductionPct * 0.7;
-  const feasibilityNote = isFeasible
-    ? timelineMonths <= 12
-      ? `Achievable with focused execution. ${recommended.length} actions identified.`
-      : `Strong feasibility over ${Math.round(timelineMonths / 12)} years. Phased execution recommended.`
-    : `Ambitious target. Consider extending timeline or adjusting to ${Math.round(cumulativeReduction)}% reduction.`;
-
-  return {
-    baselineCo2Kg,
-    targetReductionPct,
-    targetReductionKg: Math.round(targetReductionKg),
-    targetCo2Kg: Math.round(targetCo2Kg),
-    timelineMonths,
-    isFeasible,
-    feasibilityNote,
-    recommendedActions: recommended,
-    totalEstimatedReduction: Math.round(cumulativeReduction * 10) / 10,
-    totalEstimatedCost: totalCost,
-  };
-}
-
-export function formatInr(value: number): string {
-  if (value >= 10000000) return `₹${(value / 10000000).toFixed(1)} Cr`;
-  if (value >= 100000) return `₹${(value / 100000).toFixed(1)} L`;
-  if (value >= 1000) return `₹${(value / 1000).toFixed(0)}K`;
-  return `₹${value}`;
-}
-
 export function formatCo2(kgValue: number): string {
   if (kgValue >= 1000000) return `${(kgValue / 1000).toFixed(0)} tCO₂`;
   if (kgValue >= 1000) return `${(kgValue / 1000).toFixed(1)} tCO₂`;
   return `${Math.round(kgValue)} kgCO₂`;
+}
+
+/** Formats a parameter value with its unit. */
+export function formatParam(p: Param): string {
+  const v = p.unit === 'W/W' ? `${Math.round(p.value * 100)}%` : p.value.toLocaleString('en-IN', { maximumFractionDigits: 3 });
+  return p.unit && p.unit !== 'W/W' ? `${v} ${p.unit}` : v;
 }
