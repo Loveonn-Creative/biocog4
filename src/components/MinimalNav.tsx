@@ -21,6 +21,7 @@ const LOCALE_FULL: Record<string, string> = {
 
 const navLinks = [
   { path: "/platform", label: "Platform" },
+  { path: "/pricing", label: "Pricing" },
   { path: "/mission", label: "Mission" },
   { path: "/about", label: "About" },
   { path: "/trust", label: "Trust" },

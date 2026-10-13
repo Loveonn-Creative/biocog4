@@ -939,6 +939,12 @@ const Index = () => {
             Climate Intelligence
           </Link>
           <Link 
+            to="/pricing" 
+            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+          >
+            Pricing
+          </Link>
+          <Link 
             to="/enterprise" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >

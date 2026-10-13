@@ -181,6 +181,13 @@ const Enterprise = () => {
               <Download className="w-4 h-4" /> {t("ent.cta.template", "Supplier list template")}
             </a>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            {t("ent.hero.pricing", "Start free on Snapshot; Scale is priced for your team, entities and integrations.")}{" "}
+            <Link to="/pricing?plan=scale#plans" className="group inline-flex items-center gap-1 whitespace-nowrap text-foreground underline underline-offset-4">
+              {t("ent.hero.pricing.link", "See plans")}
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-[var(--motion-fast)] ease-[var(--ease-out)] group-hover:translate-x-0.5" aria-hidden="true" />
+            </Link>
+          </p>
         </div>
         <LedgerHero onSelect={onSelect} />
       </header>
@@ -330,7 +337,7 @@ webhook  record.verified
             <div className="mt-6 flex flex-col gap-3 text-sm">
               <a href={TEMPLATE_URL} download className="inline-flex items-center gap-2 font-medium underline underline-offset-4"><Download className="w-4 h-4" />{t("ent.cta.template", "Supplier list template")}</a>
               <Link to="/calculators/supplier-emissions-risk" className="inline-flex items-center gap-2 underline underline-offset-4">{t("ent.talk.calc", "Score suppliers now with the free calculator")}</Link>
-              <Link to="/pricing" className="inline-flex items-center gap-2 underline underline-offset-4">{t("ent.talk.pricing", "Plans and pricing")}</Link>
+              <Link to="/pricing?plan=scale#plans" className="inline-flex items-center gap-2 underline underline-offset-4">{t("ent.talk.pricing2", "Compare plans, including Scale")}</Link>
             </div>
           </div>
           {sent ? (
