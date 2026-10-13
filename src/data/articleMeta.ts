@@ -3,6 +3,10 @@
 // H1 keeps the full headline. Used by both the client (SEOHead) and the
 // build-time prerender (scripts/generate-static-html.js) via src/lib/seo.
 export const articleMetaTitles: Record<string, string> = {
+  'vietnam-grid-emission-factor': 'Vietnam Grid Emission Factor and How to Use It',
+  'cbam-support-for-indian-msmes': 'Government Support for Indian MSMEs on CBAM Compliance',
+  'cbam-50-tonne-exemption': 'CBAM 50-Tonne Exemption: Is Your Import Exempt?',
+  'cbam-verification-non-eu-producer': 'How to Get CBAM Emissions Verified (Non-EU Producers)',
   'rooftop-solar-net-metering-pakistan-factories': 'Is Rooftop Solar Worth It for Factories in Pakistan Now?',
   'green-finance-textile-recycling-panipat': 'Green Finance for Textile Recyclers in Panipat',
   'germany-supply-chain-act-lksg-indian-suppliers': 'Germany\'s Supply Chain Act (LkSG) for Indian Suppliers',
