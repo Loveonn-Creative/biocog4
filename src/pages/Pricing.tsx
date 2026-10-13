@@ -180,6 +180,9 @@ const Pricing = () => {
       return;
     }
 
+    // One checkout at a time: a click while Checkout is open must not start a second order.
+    if (isPaymentLoading) return;
+
     // Initiate payment
     setProcessingTier(tierId);
     setPendingMonthlyTier(null);
@@ -190,15 +193,14 @@ const Pricing = () => {
         billingCycle: cycle,
         userId: user.id,
         userEmail: user.email || '',
-        onSuccess: async (tier) => {
-          // Refresh tier from database
+        onSuccess: async () => {
+          // Refresh tier from database (useRazorpay already confirmed it to the customer)
           await refreshTier();
-          toast.success(`Welcome to Biocog ${tier.charAt(0).toUpperCase() + tier.slice(1)}!`);
           navigate('/dashboard');
         },
-        onFailure: (error) => {
-          toast.error(error || 'Payment failed. Please try again.');
-        },
+        // useRazorpay has already told the customer what happened (with the
+        // payment reference where money may have moved); no second toast.
+        onFailure: () => {},
       });
     } finally {
       setProcessingTier(null);
@@ -689,6 +691,7 @@ const Pricing = () => {
                         onClick={() => handleSubscribe(tier.id)}
                         disabled={
                           processingTier !== null || 
+                          isPaymentLoading ||
                           currentTier === tier.id
                         }
                       >
