@@ -514,6 +514,20 @@ const Monetize = () => {
             </Card>
           </>
         )}
+
+        {/* Rooftop solar: a separate, metered reduction signal */}
+        <Link to="/solar-signal" className="group mt-8 flex items-center gap-4 rounded-2xl border border-dashed border-primary/40 p-4 transition-colors hover:bg-primary/5">
+          <svg viewBox="0 0 64 44" className="h-11 w-16 shrink-0" aria-hidden="true">
+            <circle cx="12" cy="10" r="5" fill="hsl(var(--warning))" />
+            <path d="M8 40 V26 L32 12 L56 26 V40 Z" fill="none" stroke="hsl(var(--foreground))" strokeOpacity=".5" strokeWidth="1.6" strokeLinejoin="round" />
+            <path d="M22 24 l8 -4.6 M26 26.4 l8 -4.6 M34 21.8 l8 4.6 M30 24.2 l8 4.6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" />
+          </svg>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">Have rooftop solar?</span>
+            <span className="block text-sm text-muted-foreground">Turn metered generation into a reduction signal for the credit process.</span>
+          </span>
+          <ArrowRight className="h-4 w-4 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
+        </Link>
       </main>
     </div>
   );
