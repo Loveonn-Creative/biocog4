@@ -8,6 +8,7 @@
  * what the page lets you do. No figures or claims beyond the page's own copy.
  */
 import fs from 'fs';
+import crypto from 'crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
@@ -67,3 +68,14 @@ for (const p of OG_PAGES) {
   console.log(`${p.slug}.jpg  ${(fs.statSync(file).size / 1024).toFixed(0)} KB`);
 }
 await browser.close();
+
+// Version the preview URLs so previewers that cache by URL fetch the new images.
+const hash = crypto.createHash('sha1');
+for (const f of fs.readdirSync(OUT).filter(n => n.endsWith('.jpg')).sort()) hash.update(fs.readFileSync(path.join(OUT, f)));
+const version = hash.digest('hex').slice(0, 8);
+fs.writeFileSync(path.join(ROOT, 'src/lib/seo/ogVersion.ts'), `// Written by scripts/og/render-og.mjs: a hash of the preview images. It is
+// added to every og:image URL so link previewers that cache images by URL
+// (Facebook, LinkedIn, WhatsApp) fetch the new image after a change.
+export const OG_VERSION = '${version}';
+`);
+console.log(`OG_VERSION ${version}`);
