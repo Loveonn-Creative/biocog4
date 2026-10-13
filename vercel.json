@@ -1,8 +1,31 @@
 {
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.senseible.earth" }], "destination": "https://senseible.earth/:path*", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.senseible.earth"
+        }
+      ],
+      "destination": "https://senseible.earth/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/cbam-cost-estimator",
+      "destination": "/cbam-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/cbam-cost/steel",
+      "destination": "/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

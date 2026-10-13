@@ -187,8 +187,8 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     description: 'Turn an emissions baseline into a sector-specific net-zero roadmap with reduction tasks you can track. Free five-step planner for MSMEs.',
   },
   '/cbam-calculator': {
-    title: 'CBAM Cost Calculator for EU Imports, 2026 to 2034',
-    description: 'Estimate CBAM certificate cost for steel, aluminium, cement, fertiliser and hydrogen imports into the EU, year by year from 2026 to 2034. Free tool.',
+    title: 'Free CBAM Calculator and Cost Estimator, 2026 to 2034',
+    description: 'Free CBAM calculator: estimate EU certificate cost per tonne for steel, aluminium, cement, fertiliser and hydrogen imports, year by year from 2026 to 2034.',
   },
   '/climate-intelligence': {
     title: 'Climate Intelligence: CBAM, Scope 3 and BRSR Guides',
