@@ -40,12 +40,12 @@ export interface SuiteModule extends Capability {
 }
 
 export const suiteModules: SuiteModule[] = [
-  { key: 'scope3', label: 'Scope 3 and supplier emissions', status: 'live', note: 'Documents to verified records today; supplier portal and roll-up are custom', to: '/supplier-due-diligence', input: 'Supplier invoices, bills and spend', output: 'Verified Scope 3 records, tiered by data quality' },
+  { key: 'scope3', label: 'Scope 3 and supplier emissions', status: 'live', note: 'Documents to verified records today; supplier portal and roll-up are custom', to: '/scope-3-supplier-evidence', input: 'Supplier invoices, bills and spend', output: 'Verified Scope 3 records, tiered by data quality' },
   { key: 'pcf', label: 'Product carbon footprint (PCF)', status: 'live', note: 'Calculator per product; an ISO 14067 report needs HSN/CN coded evidence', to: '/calculators/product-carbon-footprint', input: 'Bill of materials, energy and freight per product', output: 'Cradle-to-gate kgCO2e per unit, by stage' },
-  { key: 'lca', label: 'Life cycle assessment (LCA)', status: 'custom', note: 'Analyst-led study following the ISO 14040 and 14044 phases', to: '/carbon-accounting', input: 'Product system, suppliers and use phase', output: 'Impact by life-cycle stage, with the study report' },
+  { key: 'lca', label: 'Life cycle assessment (LCA)', status: 'custom', note: 'Analyst-led study following the ISO 14040 and 14044 phases', to: '/carbon-accounting#tool', input: 'Product system, suppliers and use phase', output: 'Impact by life-cycle stage, with the study report' },
   { key: 'decarb', label: 'Decarbonisation strategy to net zero', status: 'live', note: 'Net-zero engine self-serve; science-based target setting with analysts is custom', to: '/net-zero', input: 'Your verified baseline and sector', output: 'Target, costed roadmap and tracked progress' },
-  { key: 'dma', label: 'Double materiality assessment', status: 'custom', note: 'Analyst-led, structured on the ESRS topics for CSRD', to: '/esg-reporting', input: 'Stakeholder input and your verified data', output: 'Impact and financial materiality matrix' },
-  { key: 'reporting', label: 'Audit-ready reporting', status: 'live', note: 'For one entity, labelled self-reported; portfolio roll-up is custom', to: '/esg-data-management', input: 'The same verified records', output: 'Framework reports with the evidence trail' },
+  { key: 'dma', label: 'Double materiality assessment', status: 'custom', note: 'Analyst-led, structured on the ESRS topics for CSRD', to: '/esg-reporting#tool', input: 'Stakeholder input and your verified data', output: 'Impact and financial materiality matrix' },
+  { key: 'reporting', label: 'Audit-ready reporting', status: 'live', note: 'For one entity, labelled self-reported; portfolio roll-up is custom', to: '/esg-data-management#tool', input: 'The same verified records', output: 'Framework reports with the evidence trail' },
 ];
 
 export const pipelineStages: Capability[] = [

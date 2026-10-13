@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { useT } from "@/lib/i18n/useT";
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { toast } from "sonner";
-import { SupplyGraphVisual } from "@/components/enterprise/SupplyGraphVisual";
+import { LedgerHero } from "@/components/enterprise/LedgerHero";
 import { RecordTransform } from "@/components/enterprise/RecordTransform";
 import { StatusBadge } from "@/components/enterprise/StatusBadge";
 import { SectionNav } from "@/components/enterprise/suite/SectionNav";
@@ -160,7 +160,7 @@ const Enterprise = () => {
       <MinimalNav />
       <SectionNav groups={NAV_GROUPS} visible={showSticky} onTalk={toForm} />
 
-      {/* Hero: the room, quiet */}
+      {/* Hero: supplier sources pass the checks and land in the ledger */}
       <header id="ent-hero" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-24 sm:pt-28 pb-8 grid gap-10 md:grid-cols-[1.05fr_1fr] md:items-center">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{t("ent.hero.eyebrow", "For enterprises")}</p>
@@ -182,7 +182,7 @@ const Enterprise = () => {
             </a>
           </div>
         </div>
-        <SupplyGraphVisual onSelect={onSelect} />
+        <LedgerHero onSelect={onSelect} />
       </header>
 
       {/* 01 Scattered data to one decision: scroll-driven assembly */}
@@ -196,7 +196,7 @@ const Enterprise = () => {
       </Beat>
 
       {/* 03 Scope 3: one click from collection to audit-ready */}
-      <Beat id="ent-agents" n="03" title={t("ent.b1.title2", "Custom-built for Scope 3: one click from collection to audit-ready")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a supplier in the network above, or pick an input below, to see the record it becomes.")}>
+      <Beat id="ent-agents" n="03" title={t("ent.b1.title2", "Custom-built for Scope 3: one click from collection to audit-ready")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a source in the ledger at the top of the page, or pick an input below, to see the record it becomes.")}>
         <WhenNear minH={460}><LazyOneClickCollect onAsk={ask} /></WhenNear>
         <div className="mt-10"><RecordTransform index={example} onChange={setExample} /></div>
       </Beat>

@@ -564,8 +564,29 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .ab-to { clip-path: none; }
 }
 
+/* Motion language, shared across pages: one easing for things settling into
+   place, one for lines drawing in, and three durations. New motion uses these
+   so timing feels the same everywhere. */
+:root {
+  --motion-fast: 180ms;
+  --motion-base: 360ms;
+  --motion-slow: 700ms;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --ease-draw: cubic-bezier(.6, 0, .2, 1);
+}
+
 /* Enterprise suite (/enterprise). One reduced-motion rule covers every
    animation and transition on the page: the final state shows, nothing moves. */
+/* Hero ledger: a document drops to the checks, the checks light in turn, the row is written. */
+@keyframes ent-packet { from { transform: translate(-50%, 0); opacity: 1; } to { transform: translate(-50%, 26px); opacity: 0; } }
+@keyframes ent-scan { from { transform: translateX(-2.5rem); } to { transform: translateX(32rem); } }
+@keyframes ent-row-in { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes ent-seal { 0% { box-shadow: 0 0 0 0 hsl(var(--primary) / .6); } 100% { box-shadow: 0 0 0 8px hsl(var(--primary) / 0); } }
+.ent-packet { animation: ent-packet .5s var(--ease-draw) both; }
+.ent-scan { animation: ent-scan .9s var(--ease-draw) both; }
+.ent-check { animation: ent-fade-up var(--motion-base) var(--ease-out) both; }
+.ent-row-in { animation: ent-row-in .55s var(--ease-draw) both; }
+.ent-seal { animation: ent-seal .9s var(--ease-out) .3s both; }
 @keyframes ent-grow-x { from { transform: scaleX(0); } to { transform: none; } }
 @keyframes ent-grow-y { from { transform: scaleY(0); } to { transform: none; } }
 @keyframes ent-fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
