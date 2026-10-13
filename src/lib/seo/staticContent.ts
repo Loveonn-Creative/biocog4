@@ -7,7 +7,7 @@ import type { Block } from './render';
 import { servicePages } from '@/data/services';
 import { MSME_CARBON_FAQS, MSME_CARBON_META, SUPPLIER_EVIDENCE_FAQS, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
-import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, type Capability } from '@/data/enterpriseCapabilities';
+import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
 const capList = (items: Capability[]): Block => ({ ul: items.map(c => `${c.label} (${STATUS[c.status]})${c.note ? `: ${c.note}` : ''}`) });
@@ -61,14 +61,26 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
     h1: 'Supplier emissions, without the chasing',
     blocks: [
       { p: 'Agents collect what your suppliers already have and turn it into Scope 3 records you can audit. Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements. Every capability below is marked Live, Pilot or Custom.' },
-      { h2: 'How the agents work' },
+      { h2: 'Unstructured data in. The simplest next decision out.' },
+      { p: 'Supply chains and enterprise systems produce data in every shape: bills in several languages, photos, ERP exports, meter files and spend lines. Each becomes one record with its scope, kgCO2e, the factor used, a confidence score and the hash of its source, and the ledger ranks what to act on first.' },
+      { h2: 'The full suite, on one verified ledger' },
+      capList(suiteModules),
+      { h2: 'Custom-built for Scope 3: one click from collection to audit-ready' },
       { p: 'Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.' },
       capList(pipelineStages),
-      { h3: 'Inputs' },
+      { h2: 'Agents, sensors, satellite and a live feed' },
       capList(ingestionChannels),
       { h2: 'Scale without breaking' },
       { p: 'Primary data where the spend is. Spend-based estimates for the long tail. People only see what the checks flag.' },
       capList(scaleControls),
+      { h2: 'Emissions, from liability to decision to profit' },
+      { p: 'The same tonnes, priced at EU default values and at the intensity verified data shows, using the CBAM engine behind the [CBAM calculator](/cbam-calculator). The difference is what verified data is worth to your EU buyer each year.' },
+      { h2: 'Biocog superintelligence' },
+      { p: 'Biocog reads the scope ledger as the single source of truth and answers from it: which suppliers carry most of Scope 3, what CBAM will cost, which disclosures are still gaps and where the cheapest tonne to cut is, in English or Indian languages.' },
+      { h2: "Comply with the world's top standards, from one record" },
+      { p: 'GHG Protocol, ISO 14064-1, ISSB S2, GRI 305, CDP, SBTi, CSRD and ESRS, CBAM, BRSR and BRSR Core. Each framework gets its own disclosure structure from the same verified data. Reports are labelled self-reported; filing and assurance stay with you.' },
+      { h2: 'A breakthrough in supplier emissions' },
+      { p: 'Senseible has been piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy.' },
       { h2: 'The supplier keeps its data' },
       capList(controlAndSecurity),
       { p: 'No third-party security certification is claimed. Security detail is on [Trust and technical validation](/trust).' },
