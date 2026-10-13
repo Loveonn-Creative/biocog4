@@ -5103,8 +5103,8 @@ The same line-item, evidence-linked, hash-anchored discipline that audit-grade S
   // filters); frontlinesmedia.in/environmental-jobs-salary-in-india.
   {
     id: '126',
-    slug: 'climate-finance-analyst-salary-india-2026',
-    title: 'Climate finance analyst salary in India: what the data actually supports (2026)',
+    slug: 'climate-finance-analyst-salary-india',
+    title: 'Climate Finance Analyst Salary in India (2026)',
     subtitle: 'Climate Careers',
     content: `Ask what a climate finance analyst earns in India and you will get a confident number from almost anyone. Ask where the number comes from and the confidence fades. The job is new enough that no public salary survey tracks it by name. What exists is a scatter of adjacent figures: salary sites that report "analyst" in general, recruiters that publish bands for carbon-market roles, payroll aggregators that track sustainability managers, and the odd job listing that prints a number. This article puts those figures side by side, says how far each can be trusted, and calculates a working range from the places where independent sources agree.
 
@@ -5149,7 +5149,7 @@ Salary data for these roles exists at city level, not by state, so the table fol
 | Maharashtra | Pune | Sustainability manager ₹21.2 lakh; environment managers up to about ₹29 lakh | Tier-1 range |
 | Telangana | Hyderabad | Environment managers ₹6 to 30.6 lakh | Tier-1 range |
 | Tamil Nadu | Chennai | Environment managers ₹5.6 to 18 lakh, a lower top end than the other metros | Entry similar; mid-career upper end likely lower |
-| Karnataka | Bengaluru | No city-specific figure found | Tier-1 range applies; see [ESG jobs in Bengaluru](/climate-intelligence/esg-jobs-bengaluru-2026) |
+| Karnataka | Bengaluru | No city-specific figure found | Tier-1 range applies; see [ESG jobs in Bengaluru](/climate-intelligence/esg-jobs-bangalore) |
 | Delhi NCR | Delhi, Gurugram, Noida | Climate policy research listing about ₹6 to 7.2 lakh a year | Tier-1 range |
 
 Outside the metros, expect the same roles to pay less, in line with the tier-1 premium above, though remote roles for global teams blur the line.
@@ -5175,8 +5175,8 @@ For how verified emission records support green loans in practice, see [how to g
   // listings (Apex Group, Credit Saison India, ERM, Quest Global).
   {
     id: '127',
-    slug: 'esg-jobs-bengaluru-2026',
-    title: 'ESG jobs in Bengaluru: where the work is, and what it pays',
+    slug: 'esg-jobs-bangalore',
+    title: 'ESG Jobs in Bangalore: Roles, Employers and Pay',
     subtitle: 'Climate Careers',
     content: `Bengaluru did not set out to become a place where companies count carbon. It became one the way it became everything else: global firms needed large teams that could work with data, follow a method precisely and keep up with rules written in Brussels, Washington and Mumbai at the same time. Sustainability reporting turned out to need exactly those people.
 
@@ -5200,7 +5200,7 @@ Three rules sit behind most of these jobs. India's BRSR requires the top 1,000 l
 
 ## What it pays
 
-No public source publishes an ESG salary for Bengaluru specifically. Using the method in our [climate finance analyst salary guide](/climate-intelligence/climate-finance-analyst-salary-india-2026), which counts a range only where at least two independent sources agree, the working estimate for tier-1 Indian cities is **about ₹6 to 8 lakh a year at entry level and about ₹14 to 21 lakh with three to seven years of experience**. Bengaluru sits in that tier. Roles in global data and advisory firms tend to pay toward the top of the range.
+No public source publishes an ESG salary for Bengaluru specifically. Using the method in our [climate finance analyst salary guide](/climate-intelligence/climate-finance-analyst-salary-india), which counts a range only where at least two independent sources agree, the working estimate for tier-1 Indian cities is **about ₹6 to 8 lakh a year at entry level and about ₹14 to 21 lakh with three to seven years of experience**. Bengaluru sits in that tier. Roles in global data and advisory firms tend to pay toward the top of the range.
 
 ## How to get in
 
@@ -5229,8 +5229,8 @@ The early wave of ESG work in India was about writing reports. The current wave 
   // 2025-30); giz.de policy brief, energy transition in textiles, Oct 2025.
   {
     id: '128',
-    slug: 'how-karachi-textile-exporters-access-green-loans',
-    title: 'How does a Karachi textile exporter get a green loan?',
+    slug: 'green-loan-textile-business-karachi',
+    title: 'How to Get a Green Loan for a Textile Business in Karachi',
     subtitle: 'Green Finance',
     content: `A spinning mill in Korangi and a stitching unit in SITE have the same problem with their power bills. Grid electricity is expensive and unreliable, captive gas is no longer cheap, and the obvious fix, rooftop solar or a more efficient boiler, needs money up front. The question owners ask is whether a green loan can pay for it, and how to get one.
 
@@ -5266,7 +5266,7 @@ The third question is where most applications stall. A bank officer cannot verif
 - Ask two or three banks with active SME and green desks; compare mark-up, tenor and collateral, not just the label.
 - After installation, keep the bills coming. They are your evidence at the annual review, and they are also what European buyers ask for.
 
-Senseible turns bills and invoices into a monthly record of energy use and emissions with each number linked to its source document, which is the baseline a lender asks for. For the wider eligibility picture, see [green loan eligibility for Pakistani small businesses](/climate-intelligence/green-loan-eligibility-pakistani-small-businesses). If the loan is part of keeping European customers, read [how a Karachi textile exporter keeps selling to Europe](/climate-intelligence/how-karachi-textile-exporters-supply-european-markets).
+Senseible turns bills and invoices into a monthly record of energy use and emissions with each number linked to its source document, which is the baseline a lender asks for. For the wider eligibility picture, see [green loan eligibility for Pakistani small businesses](/climate-intelligence/green-loan-eligibility-pakistani-small-businesses). If the loan is part of keeping European customers, read [how a Karachi textile exporter keeps selling to Europe](/climate-intelligence/export-textiles-to-europe-from-karachi).
 
 Scheme terms change. Confirm current eligibility and pricing with the lender before you apply.`,
     tags: ['karachi', 'pakistan', 'green loans', 'textile exporters', 'pakistan green taxonomy'],
@@ -5283,8 +5283,8 @@ Scheme terms change. Confirm current eligibility and pricing with the lender bef
   // Regulation (EU) 2024/3015 (forced labour, applies from 14 Dec 2027).
   {
     id: '129',
-    slug: 'how-karachi-textile-exporters-supply-european-markets',
-    title: 'How does a Karachi textile exporter keep selling to Europe?',
+    slug: 'export-textiles-to-europe-from-karachi',
+    title: 'How to Export Textiles to Europe from Karachi',
     subtitle: 'Green Finance',
     content: `For a Karachi home-textile or denim exporter, Europe has been the easy market for a decade. Since 2014 the EU's GSP+ arrangement has let most Pakistani textiles in without duty, which is a large part of why a towel from Korangi can compete with one from Turkey or Portugal.
 
@@ -5317,7 +5317,7 @@ A supplier that can hand over four things quickly is easier to keep than one tha
 | Traceability | Supplier list for fibre, yarn, fabric and chemicals, with purchase records |
 | Social compliance | Audit reports and corrective-action records |
 
-The first row is the one most exporters cannot produce on request, and it is also the one a bank needs for a green loan. Building it once serves both. See [how a Karachi exporter gets a green loan](/climate-intelligence/how-karachi-textile-exporters-access-green-loans) and [Scope 3 data that EU buyers ask Pakistani textile suppliers for](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers).
+The first row is the one most exporters cannot produce on request, and it is also the one a bank needs for a green loan. Building it once serves both. See [how a Karachi exporter gets a green loan](/climate-intelligence/green-loan-textile-business-karachi) and [Scope 3 data that EU buyers ask Pakistani textile suppliers for](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers).
 
 Senseible reads bills and invoices and keeps every emission figure linked to its source document, so the numbers sent to a buyer can be checked.`,
     tags: ['karachi', 'pakistan', 'eu market', 'gsp plus', 'textile exporters', 'due diligence'],
@@ -5334,8 +5334,8 @@ Senseible reads bills and invoices and keeps every emission figure linked to its
   // launch GEEF" (R500m, R1m to R50m, prime less 2%, up to 15 years).
   {
     id: '130',
-    slug: 'green-finance-johannesburg-steel-metals-firms',
-    title: 'How can a Johannesburg steel or metals firm use green finance for EU exports?',
+    slug: 'green-loan-steel-business-johannesburg',
+    title: 'How to Get a Green Loan for a Steel Business in Johannesburg',
     subtitle: 'Green Finance',
     content: `Gauteng's metals economy is a chain of mills, foundries, fabricators, merchants and scrap processors. Some ship to Europe directly; many more sell to someone who does. Since 1 January 2026 that European trade carries a carbon cost, and the firms in the chain that can show lower emissions per tonne are the ones whose steel costs a European buyer less.
 
@@ -5386,8 +5386,8 @@ Senseible turns fuel, electricity and purchase invoices into emission records li
   // advances vs 5% guideline).
   {
     id: '131',
-    slug: 'green-finance-dhaka-gazipur-garment-exporters',
-    title: 'How can a Dhaka or Gazipur garment exporter get green finance?',
+    slug: 'green-loan-garment-factory-dhaka',
+    title: 'How to Get a Green Loan for a Garment Factory in Dhaka or Gazipur',
     subtitle: 'Green Finance',
     content: `Drive north from Dhaka through Tongi into Gazipur and the factories never really stop. Knit, woven, denim and the washing and dyeing plants that serve them sit side by side, and between them they make a large share of what Bangladesh sells to Europe. Many have already invested in efficiency, and Bangladesh has become known for its certified green garment factories.
 
@@ -5434,8 +5434,8 @@ Senseible turns utility bills and fuel invoices into monthly energy and emission
   // Sponge Iron press release, 13 Nov 2025 (5 MW green captive plant).
   {
     id: '132',
-    slug: 'green-finance-ludhiana-raipur-steel-msmes',
-    title: 'How can a Ludhiana or Raipur steel MSME get green finance?',
+    slug: 'green-loan-steel-msme-ludhiana-raipur',
+    title: 'How to Get a Green Loan for a Steel MSME in Ludhiana or Raipur',
     subtitle: 'Green Finance',
     content: `Ludhiana and Raipur sit at two ends of India's small-steel economy. Raipur, with Siltara and Urla, makes sponge iron, billets and rolled products close to the iron ore and coal. Ludhiana turns steel into forgings, fasteners, cycle parts and auto components for buyers across India and abroad. Both run on furnaces, and both pay heavily for power and fuel.
 
@@ -5449,7 +5449,7 @@ The question owners ask is whether green finance can pay for the next furnace, t
 
 **Central MSME schemes.** A Lok Sabha answer on iron and steel MSMEs describes the sector as highly energy inefficient and names MSE-GIFT and the ZED scheme as current support, while acknowledging that much more green financing is needed.
 
-**ADEETIE.** The Bureau of Energy Efficiency's ₹1,000 crore ADEETIE scheme lists Ludhiana and Raipur among its steel re-rolling clusters, with a reported interest subvention of 5 percent for micro and small units and 3 percent for medium units on energy-efficient technology loans, for projects that show at least 10 percent energy savings. See [green finance for Jalna's re-rolling mills](/climate-intelligence/green-finance-jalna-steel-rerolling-cluster) for how the savings test works, and confirm current terms with the BEE or your bank.
+**ADEETIE.** The Bureau of Energy Efficiency's ₹1,000 crore ADEETIE scheme lists Ludhiana and Raipur among its steel re-rolling clusters, with a reported interest subvention of 5 percent for micro and small units and 3 percent for medium units on energy-efficient technology loans, for projects that show at least 10 percent energy savings. See [green finance for Jalna's re-rolling mills](/climate-intelligence/green-loan-steel-rolling-mill-jalna) for how the savings test works, and confirm current terms with the BEE or your bank.
 
 **State support.** In Chhattisgarh, the Chief Minister has said that industries adopting green energy will receive additional support, including special grants. The details depend on the state's current industrial policy; check with the state industries department.
 
@@ -5489,8 +5489,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // track-record condition).
   {
     id: '133',
-    slug: 'green-finance-tamil-nadu-textile-clusters',
-    title: 'How can Tamil Nadu textile clusters use green finance?',
+    slug: 'green-loan-textile-mill-tamil-nadu',
+    title: 'How to Get a Green Loan for a Textile Mill in Tamil Nadu',
     subtitle: 'Green Finance',
     content: `Tamil Nadu's textile economy is a set of clusters that each do one thing well: spinning around Coimbatore, knitwear in Tiruppur, power looms in Erode and Karur's home textiles. Tiruppur in particular has done much of what green finance is meant to fund. Its dyeing units run zero liquid discharge systems that the cluster says recycle about 13 crore litres of water a day, and its industry body says members own about 2,000 MW of wind and 250 MW of solar capacity.
 
@@ -5536,8 +5536,8 @@ Senseible reads electricity bills, wheeling statements and fuel invoices and lin
   // warrants steel exporter reaction" (VSA warning).
   {
     id: '134',
-    slug: 'vietnam-steel-exporters-cbam-green-finance',
-    title: 'How can Vietnamese steel exporters finance CBAM readiness?',
+    slug: 'finance-cbam-compliance-steel-vietnam',
+    title: 'How to Finance CBAM Compliance for a Steel Exporter in Vietnam',
     subtitle: 'Green Finance',
     content: `For a Vietnamese steel exporter, 2026 brought two changes from Brussels at once. From 1 January, EU importers of steel started owing CBAM certificates for the embedded emissions in what they buy. From 1 July, a permanent EU steel import regime replaced the old safeguard, with lower duty-free quotas and a higher duty beyond them, as trade press reported.
 
@@ -5586,8 +5586,8 @@ Senseible turns fuel, power and purchase invoices into emission records linked t
   // first-loss guarantee; uses).
   {
     id: '135',
-    slug: 'turkish-steel-cement-exporters-cbam-green-finance',
-    title: 'How can Turkish steel and cement exporters use green finance to cut CBAM costs?',
+    slug: 'green-finance-steel-cement-turkey',
+    title: 'How Steel and Cement Exporters in Turkey Can Use Green Finance to Cut CBAM Costs',
     subtitle: 'Green Finance',
     content: `Turkey sells more steel and cement to the European Union than most countries that face CBAM, and it sells them close by. A law-firm estimate puts Turkish cement at nearly 30 percent of the EU's cement imports. That closeness has been an advantage on freight. Under CBAM, it means Turkish producers feel the carbon price early and in full.
 
@@ -5637,8 +5637,8 @@ Confirm eligibility and terms with the lender before you apply.`,
   // Morbi situation analysis for the SME sector.
   {
     id: '136',
-    slug: 'green-finance-morbi-ceramic-cluster',
-    title: 'How can a Morbi ceramic maker use green finance to cut energy costs?',
+    slug: 'green-loan-ceramic-factory-morbi',
+    title: 'How to Get a Green Loan for a Ceramic Tile Factory in Morbi',
     subtitle: 'Green Finance',
     content: `Morbi makes most of India's tiles, and it makes them with heat. Every kiln and spray dryer in the cluster burns fuel around the clock, so the price of that fuel decides whether a unit makes money. In 2026 that price moved against the owners twice: gas shortages shut plants in March, and on 2 September Gujarat's gas supplier raised the industrial price for Morbi from ₹79 to ₹90 per standard cubic metre, with an ₹8 discount for long-term users, as DeshGujarat reported. By August, propane made up about 65 percent of the cluster's fuel mix.
 
@@ -5684,8 +5684,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // 2026).
   {
     id: '137',
-    slug: 'green-finance-firozabad-glass-cluster',
-    title: 'How can a Firozabad glass unit finance more efficient furnaces?',
+    slug: 'finance-glass-furnace-firozabad',
+    title: 'How to Finance an Energy-Efficient Glass Furnace in Firozabad',
     subtitle: 'Green Finance',
     content: `Firozabad's bangles, lamps and glassware come out of furnaces that never cool. A pot furnace or tank furnace that goes cold can crack, so units run on gas day and night whatever the order book says. That makes the cluster unusually exposed to the price and supply of one fuel.
 
@@ -5729,8 +5729,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // and the government's no-dismantling rule for non-HKC yards.
   {
     id: '138',
-    slug: 'green-finance-chattogram-steel-ship-recycling',
-    title: 'How can Chattogram ship recyclers and re-rolling mills get green finance?',
+    slug: 'green-finance-ship-recycling-chattogram',
+    title: 'How to Get Green Finance for Ship Recycling Yards and Steel Mills in Chattogram',
     subtitle: 'Green Finance',
     content: `Along the beaches of Sitakunda, north of Chattogram, old ships are cut into plates and sections. Much of that steel never leaves the district: it goes by truck to re-rolling mills that turn it into the bars and rods Bangladesh builds with. BIMCO, the shipowners' association, has estimated that ship recycling scrap feeds about 350 re-rolling mills that supply roughly half of the country's annual steel consumption.
 
@@ -5754,7 +5754,7 @@ Bangladesh Bank runs green refinancing for listed green products, and its Green 
 
 **For a mill:** twelve months of electricity and fuel bills, monthly tonnes rolled, and the expected saving from the project, with how it will be metered.
 
-In both cases the stronger file is the one with records, not projections. For more on Bangladesh's green funds, see [green finance for Dhaka and Gazipur garment exporters](/climate-intelligence/green-finance-dhaka-gazipur-garment-exporters) and [accessing green finance in Bangladesh manufacturing](/climate-intelligence/bangladesh-manufacturing-green-finance-access-guide). If a mill supplies steel that ends up in the EU, read [CBAM for Bangladeshi steel](/solutions/cbam-steel-bangladesh).
+In both cases the stronger file is the one with records, not projections. For more on Bangladesh's green funds, see [green finance for Dhaka and Gazipur garment exporters](/climate-intelligence/green-loan-garment-factory-dhaka) and [accessing green finance in Bangladesh manufacturing](/climate-intelligence/bangladesh-manufacturing-green-finance-access-guide). If a mill supplies steel that ends up in the EU, read [CBAM for Bangladeshi steel](/solutions/cbam-steel-bangladesh).
 
 Senseible turns utility bills and fuel invoices into emission records linked to their source documents. Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['chattogram', 'bangladesh', 'ship recycling', 're-rolling mills', 'steel', 'green finance', 'hong kong convention'],
@@ -5771,8 +5771,8 @@ Senseible turns utility bills and fuel invoices into emission records linked to 
   // in article 128.
   {
     id: '139',
-    slug: 'green-finance-pakistan-cement-makers',
-    title: 'How can Pakistani cement makers finance lower-carbon kilns?',
+    slug: 'green-loan-cement-plant-pakistan',
+    title: 'How to Get a Green Loan for a Cement Plant in Pakistan',
     subtitle: 'Green Finance',
     content: `Pakistan's cement industry has more kiln capacity than the country uses, so exports matter. In the year to June 2025, Lucky Cement alone shipped more than 3 million tonnes of cement and clinker by sea, which the company said was a record for itself and for Pakistan, and 42 percent of the country's cement and clinker exports.
 
@@ -5796,7 +5796,7 @@ For large producers, that means green or sustainability-linked loans from commer
 2. **Fuel use by type** (coal, alternative fuels) and its calorific value, and electricity bought and self-generated.
 3. **A project file** for the waste-heat, solar, alternative-fuel or efficiency project, with expected emissions and cost savings and the metering that will prove them.
 
-If you sell to the EU, the importer will need embedded emissions per tonne of clinker or cement, and without actual data it uses EU default values with a mark-up of 10 percent in 2026, 20 percent in 2027 and 30 percent from 2028. See [CBAM cost per tonne of cement](/cbam-cost/cement) and try the [CBAM calculator](/cbam-calculator). For the general Pakistan loan picture, read [how a Karachi exporter gets a green loan](/climate-intelligence/how-karachi-textile-exporters-access-green-loans).
+If you sell to the EU, the importer will need embedded emissions per tonne of clinker or cement, and without actual data it uses EU default values with a mark-up of 10 percent in 2026, 20 percent in 2027 and 30 percent from 2028. See [CBAM cost per tonne of cement](/cbam-cost/cement) and try the [CBAM calculator](/cbam-calculator). For the general Pakistan loan picture, read [how a Karachi exporter gets a green loan](/climate-intelligence/green-loan-textile-business-karachi).
 
 Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['pakistan', 'cement', 'clinker', 'waste heat recovery', 'green finance', 'cbam'],
@@ -5814,8 +5814,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // comment); Decision 21/2025/QD-TTg as in article 134.
   {
     id: '140',
-    slug: 'vietnam-cement-carbon-market-green-finance',
-    title: 'How can Vietnamese cement makers finance lower emissions under the new carbon quotas?',
+    slug: 'finance-emission-cuts-cement-plant-vietnam',
+    title: 'How to Finance Emission Cuts at a Cement Plant in Vietnam',
     subtitle: 'Green Finance',
     content: `Vietnam makes more cement than it can use, and in 2025 it sold more abroad than ever. Exports of cement and clinker rose 25.6 percent to 37.32 million tonnes, according to Vietnam Customs data reported by S&P Global, mostly to Bangladesh, the Philippines, Malaysia and Taiwan. A cut in the clinker export tax from 10 to 5 percent, in force from late May 2025 to the end of 2026, helped.
 
@@ -5844,7 +5844,7 @@ Vietnam's national green taxonomy, **Decision 21/2025/QĐ-TTg**, in force since 
 
 A plant that can show monthly fuel, clinker and power data, its quota and its expected position under the pilot has a clear story for a lender: the project lowers emissions and the cost of buying allowances.
 
-For buyers in the EU, cement is covered by CBAM, with default values carrying a mark-up when actual data is missing; see [CBAM cost per tonne of cement](/cbam-cost/cement). For the steel side of Vietnam's market, read [how Vietnamese steel exporters can finance CBAM readiness](/climate-intelligence/vietnam-steel-exporters-cbam-green-finance).
+For buyers in the EU, cement is covered by CBAM, with default values carrying a mark-up when actual data is missing; see [CBAM cost per tonne of cement](/cbam-cost/cement). For the steel side of Vietnam's market, read [how Vietnamese steel exporters can finance CBAM readiness](/climate-intelligence/finance-cbam-compliance-steel-vietnam).
 
 Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['vietnam', 'cement', 'clinker', 'carbon market', 'decision 263', 'green finance'],
@@ -5861,8 +5861,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // Eximbank EUR 1bn Green Export Project as in article 135.
   {
     id: '141',
-    slug: 'green-finance-turkish-textile-exporters',
-    title: 'How can Turkish textile exporters in Bursa and Denizli finance the EU green transition?',
+    slug: 'green-finance-textile-exporter-turkey',
+    title: 'How to Get Green Finance for a Textile Exporter in Bursa or Denizli',
     subtitle: 'Green Finance',
     content: `Turkey's textile map has two old centres. Bursa built its name on weaving, from silk to technical fabrics. Denizli made towels and home textiles that fill European bathrooms. Both sell to Europe by truck in days, which is the advantage Asian suppliers cannot match.
 
@@ -5889,7 +5889,7 @@ Textiles are not covered by the EU's Carbon Border Adjustment Mechanism. The pre
 3. **Output by month** in kilograms or metres, so energy and water per unit can be stated.
 4. **The project:** solar, heat recovery, efficient stenters or water reuse, with expected savings and metering.
 
-The same records answer a European brand's questionnaire and a lender's file. For how buyers use this data, see [Scope 3 data that EU buyers ask textile suppliers for](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers), and for Turkey's carbon market and heavy industry, [green finance for Turkish steel and cement exporters](/climate-intelligence/turkish-steel-cement-exporters-cbam-green-finance).
+The same records answer a European brand's questionnaire and a lender's file. For how buyers use this data, see [Scope 3 data that EU buyers ask textile suppliers for](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers), and for Turkey's carbon market and heavy industry, [green finance for Turkish steel and cement exporters](/climate-intelligence/green-finance-steel-cement-turkey).
 
 Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['turkey', 'bursa', 'denizli', 'textile exporters', 'green finance', 'turk eximbank', 'espr'],
@@ -5907,8 +5907,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // CN 7202.
   {
     id: '142',
-    slug: 'green-finance-south-africa-ferrochrome-smelters',
-    title: 'How can South African ferrochrome and ferroalloy smelters finance cheaper, cleaner power?',
+    slug: 'renewable-power-ferrochrome-smelter-south-africa',
+    title: 'How to Finance Renewable Power for a Ferrochrome Smelter in South Africa',
     subtitle: 'Green Finance',
     content: `South Africa mines more chrome ore than any other country and once smelted much of it at home, in furnaces across North West and Mpumalanga. Those furnaces run on electricity in huge quantities, and since the late 2000s that electricity has become the industry's central problem.
 
@@ -5937,7 +5937,7 @@ Commercial banks and development lenders finance renewable PPAs and industrial e
 3. **Carbon tax paid,** with the returns that show it.
 4. **The project's expected effect** on power cost and emissions, with metering.
 
-For how CBAM is charged on South African metals more broadly, see [green finance for Johannesburg steel and metals firms](/climate-intelligence/green-finance-johannesburg-steel-metals-firms), and estimate a shipment with the [CBAM calculator](/cbam-calculator).
+For how CBAM is charged on South African metals more broadly, see [green finance for Johannesburg steel and metals firms](/climate-intelligence/green-loan-steel-business-johannesburg), and estimate a shipment with the [CBAM calculator](/cbam-calculator).
 
 Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['south africa', 'ferrochrome', 'ferroalloys', 'smelters', 'electricity', 'green finance', 'cbam'],
@@ -5954,8 +5954,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // src/lib/cbamEngine.ts.
   {
     id: '143',
-    slug: 'how-german-importers-lower-cbam-costs',
-    title: 'How can a German importer lower its CBAM costs on steel and aluminium?',
+    slug: 'lower-cbam-costs-importer-germany',
+    title: 'How to Lower CBAM Costs as an Importer in Germany',
     subtitle: 'Carbon Regulations',
     content: `For a German steel trader, fastener importer or aluminium profile buyer, CBAM stopped being a reporting exercise on 1 January 2026. Imports of iron and steel, aluminium, cement, fertilisers, hydrogen and electricity now need an authorised CBAM declarant, and the declarant will buy certificates for the embedded emissions in what it brought in.
 
@@ -5978,7 +5978,7 @@ Certificate sales for 2026 imports start in February 2027, and the first annual 
 - The monitoring methodology and the verifier, or the date verification is planned.
 - Any carbon price paid, with evidence.
 
-Suppliers in India, Vietnam, Türkiye and South Africa are all being asked for the same file. Those that can produce it quickly are worth paying attention to. See how suppliers are preparing in [green finance for Turkish steel and cement exporters](/climate-intelligence/turkish-steel-cement-exporters-cbam-green-finance) and [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034).
+Suppliers in India, Vietnam, Türkiye and South Africa are all being asked for the same file. Those that can produce it quickly are worth paying attention to. See how suppliers are preparing in [green finance for Turkish steel and cement exporters](/climate-intelligence/green-finance-steel-cement-turkey) and [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034).
 
 ## Run the numbers
 
@@ -6001,8 +6001,8 @@ This is general guidance, not legal advice. Check DEHSt's current guidance for y
   // EU); assets.kpmg.com Poland CBAM note Nov 2025 (50 t threshold).
   {
     id: '144',
-    slug: 'polish-steel-importers-cbam-supplier-data',
-    title: 'What should a Polish steel importer ask its non-EU suppliers for under CBAM?',
+    slug: 'cbam-supplier-data-steel-importer-poland',
+    title: 'What CBAM Data to Ask Steel Suppliers For in Poland',
     subtitle: 'Carbon Regulations',
     content: `Poland's construction sites and fabrication shops use a great deal of imported steel, much of it rebar, wire rod and sections from mills outside the EU. Since 1 January 2026, every tonne of it carries a CBAM obligation for the importer, and Polish distributors have been slowing purchases while the cost of certificates is uncertain, as Eurometal reported.
 
@@ -6034,7 +6034,7 @@ Build the answers into supply agreements, with a price adjustment if verified da
 
 ## Work out the difference
 
-The [CBAM calculator](/cbam-calculator) compares default values with actual emissions for each route and year to 2034. For how suppliers in other countries are preparing, see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [how German importers lower CBAM costs](/climate-intelligence/how-german-importers-lower-cbam-costs).
+The [CBAM calculator](/cbam-calculator) compares default values with actual emissions for each route and year to 2034. For how suppliers in other countries are preparing, see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [how German importers lower CBAM costs](/climate-intelligence/lower-cbam-costs-importer-germany).
 
 This is general guidance, not legal advice. Check KOBiZE's current guidance for your case.`,
     tags: ['poland', 'cbam', 'steel importers', 'kobize', 'supplier data', 'ukraine'],
@@ -6054,8 +6054,8 @@ This is general guidance, not legal advice. Check KOBiZE's current guidance for 
   // authorised declarant status).
   {
     id: '145',
-    slug: 'italian-rerollers-cbam-slab-imports',
-    title: 'How can Italian re-rollers keep CBAM costs on imported slab under control?',
+    slug: 'cbam-cost-imported-steel-slab-italy',
+    title: 'How to Control CBAM Costs on Imported Steel Slab in Italy',
     subtitle: 'Carbon Regulations',
     content: `Some of Italy's plate mills do not make their own steel. They buy slab, often from outside the EU, reheat it and roll it into heavy plate for shipyards, construction and machinery. Under CBAM, imported slab is a covered steel product, so every tonne carries a certificate cost for the importer. For a business whose margin is the gap between slab and plate prices, that cost lands straight on the bottom line.
 
@@ -6090,7 +6090,7 @@ Federacciai, the Italian steel federation, has pressed for import safeguards, CB
 
 ## Work out the numbers
 
-Use the [CBAM calculator](/cbam-calculator) to compare default and actual emissions for each route and year to 2034. For how slab-producing countries are preparing, see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [how Vietnamese steel exporters finance CBAM readiness](/climate-intelligence/vietnam-steel-exporters-cbam-green-finance).
+Use the [CBAM calculator](/cbam-calculator) to compare default and actual emissions for each route and year to 2034. For how slab-producing countries are preparing, see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [how Vietnamese steel exporters finance CBAM readiness](/climate-intelligence/finance-cbam-compliance-steel-vietnam).
 
 This is general guidance, not legal advice. Check MASE's current guidance for your case.`,
     tags: ['italy', 'cbam', 're-rollers', 'slab', 'heavy plate', 'mase', 'steel imports'],
@@ -6108,8 +6108,8 @@ This is general guidance, not legal advice. Check MASE's current guidance for yo
   // clusters.
   {
     id: '146',
-    slug: 'green-finance-jalna-steel-rerolling-cluster',
-    title: 'How can a Jalna steel re-rolling mill get green finance for its furnace?',
+    slug: 'green-loan-steel-rolling-mill-jalna',
+    title: 'How to Get a Green Loan for a Steel Rolling Mill in Jalna',
     subtitle: 'Green Finance',
     content: `Jalna, in Maharashtra's Marathwada region, is one of the state's main steel re-rolling centres, making the TMT bars that go into houses and roads. Its mills melt scrap and sponge iron in induction furnaces, cast billets, reheat them and roll them into bars. Every one of those steps runs on electricity or fuel, so the energy bill decides who survives a weak steel price.
 
@@ -6143,7 +6143,7 @@ The same IEEFA analysis makes a point every owner will recognise: the barrier is
 3. **An energy audit** by an empanelled auditor, with the expected saving for each measure.
 4. **A metering plan** that will show the 10 percent saving after installation.
 
-For the emission factors behind these bills, see [grid electricity](/emission-factors/grid-electricity) and [coal](/emission-factors/coal). For other steel clusters, read [green finance for Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes). Senseible turns bills and invoices into kWh, fuel and emissions per month, each linked to its source document.
+For the emission factors behind these bills, see [grid electricity](/emission-factors/grid-electricity) and [coal](/emission-factors/coal). For other steel clusters, read [green finance for Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-loan-steel-msme-ludhiana-raipur). Senseible turns bills and invoices into kWh, fuel and emissions per month, each linked to its source document.
 
 Confirm current eligibility and terms with the lender before you apply.`,
     tags: ['jalna', 'maharashtra', 'steel re-rolling', 'induction furnace', 'adeetie', 'green finance'],
@@ -6163,8 +6163,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // sources as in article 135.
   {
     id: '147',
-    slug: 'turkish-aluminium-extruders-cbam',
-    title: 'What does CBAM cost a Turkish aluminium extruder, and how can it cut the bill?',
+    slug: 'cbam-cost-aluminium-extrusion-turkey',
+    title: 'CBAM Cost for Aluminium Extruders in Turkey, and How to Cut It',
     subtitle: 'Carbon Regulations',
     content: `If you have bought a window frame, a curtain wall or a solar mounting rail in Europe, there is a fair chance the aluminium profile inside it was extruded in Turkey. In 2025 Turkey supplied about 207,100 tonnes of the EU's imports across two main profile categories, roughly 57.8 percent of the total, according to an SMM analysis.
 
@@ -6193,9 +6193,9 @@ The EU has proposed bringing about 180 more steel- and aluminium-intensive downs
 
 ## Paying for the changes
 
-Remelt and recycling lines, furnace efficiency and rooftop solar are the projects green lenders know. Turkish exporters can look at the Türkiye Green Export Project, a €1 billion Turk Eximbank facility for green products, renewable energy, energy efficiency and working capital, described in [green finance for Turkish steel and cement exporters](/climate-intelligence/turkish-steel-cement-exporters-cbam-green-finance).
+Remelt and recycling lines, furnace efficiency and rooftop solar are the projects green lenders know. Turkish exporters can look at the Türkiye Green Export Project, a €1 billion Turk Eximbank facility for green products, renewable energy, energy efficiency and working capital, described in [green finance for Turkish steel and cement exporters](/climate-intelligence/green-finance-steel-cement-turkey).
 
-Work out a shipment with the [CBAM calculator](/cbam-calculator), and see how EU buyers approach suppliers in [how German importers lower CBAM costs](/climate-intelligence/how-german-importers-lower-cbam-costs).
+Work out a shipment with the [CBAM calculator](/cbam-calculator), and see how EU buyers approach suppliers in [how German importers lower CBAM costs](/climate-intelligence/lower-cbam-costs-importer-germany).
 
 This is general guidance, not legal advice.`,
     tags: ['turkey', 'aluminium', 'extrusion', 'profiles', 'cbam', 'recycled aluminium'],
@@ -6213,8 +6213,8 @@ This is general guidance, not legal advice.`,
   // 1 Jan 2026; about 180 downstream products proposed from 1 Jan 2028).
   {
     id: '148',
-    slug: 'indian-aluminium-exporters-cbam',
-    title: 'How can Indian aluminium exporters keep EU buyers under CBAM?',
+    slug: 'cbam-aluminium-exporter-india',
+    title: 'CBAM for Aluminium Exporters in India: How to Keep EU Buyers',
     subtitle: 'Carbon Regulations',
     content: `India's aluminium industry sells foil, sheet, extrusions, wire and castings to European buyers, many of them made by small and mid-sized firms that buy their metal from a handful of large smelters. Since 1 January 2026, every tonne of covered aluminium entering the EU carries a CBAM certificate cost for the importer.
 
@@ -6263,8 +6263,8 @@ This is general guidance, not legal advice.`,
   // tenders); mediwales.com Auditel note (global boundary).
   {
     id: '149',
-    slug: 'indian-pharma-suppliers-nhs-carbon-reduction-plan',
-    title: 'What do UK NHS carbon rules mean for Indian pharma suppliers in Hyderabad and Baddi?',
+    slug: 'nhs-carbon-reduction-plan-pharma-india',
+    title: 'NHS Carbon Reduction Plan Rules for Pharma Suppliers in India',
     subtitle: 'Supply Chain Emissions',
     content: `Indian manufacturers supply many of the generic medicines the UK's National Health Service buys, and two clusters stand out: the API and formulation plants around Hyderabad, and the formulation belt at Baddi in Himachal Pradesh. Pharmaceuticals are not a heavy-industry sector, but the NHS has set itself a net zero target that includes everything it buys, and it is passing that target down to suppliers.
 
@@ -6318,8 +6318,8 @@ This is general guidance. Check the NHS Net Zero Supplier Roadmap and your contr
   // CBAM Annex I (hydrogen; ammonia and nitric acid under fertilisers).
   {
     id: '150',
-    slug: 'green-finance-gujarat-chemical-clusters',
-    title: 'How can chemical makers in Vapi, Ankleshwar and Dahej use green finance?',
+    slug: 'green-loan-chemical-plant-gujarat',
+    title: 'How to Get a Green Loan for a Chemical Plant in Vapi, Ankleshwar or Dahej',
     subtitle: 'Green Finance',
     content: `South Gujarat's chemical belt runs along the highway from Vapi through Ankleshwar to Dahej. Dyes, pigments, agrochemicals, specialty and bulk chemicals: thousands of plants, from family-run reactors to large integrated sites. What they share is a need for steam and power around the clock, and buyers abroad who now ask about both.
 
@@ -6373,8 +6373,8 @@ Confirm current eligibility and terms with the lender before you apply.`,
   // 2026); fertiliser default mark-up 1% per src/lib/cbamEngine.ts.
   {
     id: '151',
-    slug: 'fertiliser-importers-cbam-germany-poland',
-    title: 'How does CBAM change fertiliser buying for German and Polish importers?',
+    slug: 'cbam-fertiliser-imports-germany-poland',
+    title: 'How CBAM Changes Fertiliser Imports in Germany and Poland',
     subtitle: 'Carbon Regulations',
     content: `Fertiliser is the CBAM product group that farmers notice. Nitrogen fertilisers such as urea, ammonium nitrate and calcium ammonium nitrate, and their inputs ammonia and nitric acid, are all covered. For an importer or distributor in Germany or Poland, 2026 brought two changes at once: a carbon charge on what it imports, and new tariffs that close off some of its cheapest sources.
 
@@ -6400,7 +6400,7 @@ To soften the combined effect, the European Commission proposed on 24 February 2
 2. Specific embedded emissions per tonne, covering CO2 and nitrous oxide, with the reporting period and verifier.
 3. Any carbon price paid at origin, with evidence.
 
-Compare default and actual emissions with the [CBAM calculator](/cbam-calculator), and see the [fertiliser cost table](/cbam-cost/fertilizers) for how the charge grows to 2034. For the steel side of Polish and German imports, read [what a Polish steel importer should ask its suppliers](/climate-intelligence/polish-steel-importers-cbam-supplier-data).
+Compare default and actual emissions with the [CBAM calculator](/cbam-calculator), and see the [fertiliser cost table](/cbam-cost/fertilizers) for how the charge grows to 2034. For the steel side of Polish and German imports, read [what a Polish steel importer should ask its suppliers](/climate-intelligence/cbam-supplier-data-steel-importer-poland).
 
 This is general guidance, not legal advice.`,
     tags: ['fertilisers', 'germany', 'poland', 'cbam', 'urea', 'ammonia', 'importers'],
@@ -6417,8 +6417,8 @@ This is general guidance, not legal advice.`,
   // 1 Feb 2027; weekly price from 2027, published Monday, effective Tuesday).
   {
     id: '152',
-    slug: 'how-cbam-certificate-price-is-set',
-    title: 'How is the CBAM certificate price set, and what will it be?',
+    slug: 'cbam-certificate-price',
+    title: 'CBAM Certificate Price: How It Is Set and the 2026 Prices',
     subtitle: 'Carbon Regulations',
     content: `Every CBAM cost estimate multiplies two numbers: the embedded emissions in a shipment and the price of one CBAM certificate. Exporters spend most of their effort on the first number. The second one is set in Brussels, follows the EU carbon market, and changes on a published schedule. Knowing how it works tells you which price to use in a quote and how much it can move.
 
@@ -6472,8 +6472,8 @@ This is general guidance, not legal advice. Check the Commission's published pri
   // impriindia.com policy update (iron and steel, fertiliser pending).
   {
     id: '153',
-    slug: 'india-ccts-emission-intensity-targets-sectors',
-    title: 'Which Indian industries have carbon emission targets under the CCTS, and what do they mean for suppliers?',
+    slug: 'india-carbon-credit-trading-scheme-targets',
+    title: 'India Carbon Credit Trading Scheme: Which Industries Have Targets',
     subtitle: 'Carbon Regulations',
     content: `India's Carbon Credit Trading Scheme moved from design to obligation in 2025. Large plants in energy-intensive sectors now have legally binding targets for greenhouse gas emissions per tonne of product, and they will earn tradable carbon credit certificates if they beat them, or have to buy them if they miss.
 
@@ -6524,8 +6524,8 @@ This is general guidance. Check the Bureau of Energy Efficiency and gazette noti
   // approval; loans Rs 10 lakh to Rs 15 crore).
   {
     id: '154',
-    slug: 'adeetie-scheme-explained-msme-energy-efficiency',
-    title: 'What is the ADEETIE scheme, and how does an MSME apply?',
+    slug: 'adeetie-scheme',
+    title: 'ADEETIE Scheme: Eligibility, Benefits and How to Apply',
     subtitle: 'Green Finance',
     content: `Most MSME owners know which machine wastes energy. The furnace with the cracked lining, the compressor that runs all night, the boiler older than the business. What stops them replacing it is the loan: the interest, the paperwork, and a banker who cannot tell whether the promised saving is real.
 
@@ -6562,7 +6562,7 @@ The 10 percent test is a measurement test. A unit that cannot show its energy us
 
 A policy review by IMPRI points out that BEE had not yet published cluster-wise data on the number of MSMEs financed, and that units outside notified clusters are excluded. Check that your cluster is listed before you plan around the scheme.
 
-For cluster examples, see [green finance for Jalna's re-rolling mills](/climate-intelligence/green-finance-jalna-steel-rerolling-cluster) and [Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes).
+For cluster examples, see [green finance for Jalna's re-rolling mills](/climate-intelligence/green-loan-steel-rolling-mill-jalna) and [Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-loan-steel-msme-ludhiana-raipur).
 
 Confirm current terms, clusters and participating lenders on the BEE portal before you apply.`,
     tags: ['adeetie', 'bee', 'msme', 'energy efficiency', 'interest subvention', 'green finance'],
@@ -6579,8 +6579,8 @@ Confirm current terms, clusters and participating lenders on the BEE portal befo
   // (attribution factors, data quality scores 1 to 5).
   {
     id: '155',
-    slug: 'financed-emissions-pcaf-indian-banks-nbfcs',
-    title: 'How should an Indian bank or NBFC measure financed emissions?',
+    slug: 'financed-emissions-banks-india',
+    title: 'How Banks and NBFCs in India Measure Financed Emissions',
     subtitle: 'Carbon Standards',
     content: `For a bank, almost all of its carbon footprint sits in its loan book. The electricity in its branches is small next to the emissions of the steel mills, transporters and factories it finances. Those are financed emissions, Scope 3 Category 15 under the GHG Protocol, and they are what climate disclosure frameworks for lenders are built around.
 
@@ -6635,8 +6635,8 @@ This is general guidance. Check the RBI's current circulars and the PCAF standar
   // after implementation).
   {
     id: '156',
-    slug: 'energy-audit-msme-india-how-to-get-one',
-    title: 'How does an MSME in India get an energy audit, and who pays for it?',
+    slug: 'energy-audit-for-msme-india',
+    title: 'How to Get an Energy Audit for an MSME in India',
     subtitle: 'Manufacturing Emissions',
     content: `An energy audit is the cheapest way for a factory to find out where its money is burning. It is also, increasingly, a document banks and government schemes require before they fund an efficiency project. Yet many owners have never had one, or had one that produced a thick report nobody acted on.
 
@@ -6654,7 +6654,7 @@ The Bureau of Energy Efficiency certifies energy auditors through a national exa
 
 ## Who pays
 
-- **ADEETIE (central):** for MSMEs in its 60 notified clusters, BEE reimburses the auditor up to ₹1 lakh per investment-grade audit and project report, once a lender approves the project. See [the ADEETIE scheme explained](/climate-intelligence/adeetie-scheme-explained-msme-energy-efficiency).
+- **ADEETIE (central):** for MSMEs in its 60 notified clusters, BEE reimburses the auditor up to ₹1 lakh per investment-grade audit and project report, once a lender approves the project. See [the ADEETIE scheme explained](/climate-intelligence/adeetie-scheme).
 - **State schemes:** several states reimburse part of the audit cost. West Bengal's scheme reimburses 50 percent of the audit cost for micro and small enterprises after the recommendations are implemented. Haryana has run energy audit schemes requiring a BEE-certified auditor; its 2021 scheme covered audits and equipment bought up to 31 December 2025, so check whether it has been renewed.
 - **The owner:** where no scheme applies, the audit is a business cost that a single implemented measure often repays.
 
@@ -6685,8 +6685,8 @@ Check the current scheme rules in your state and cluster before you commission a
   // gap); mercomindia.com (Delhi draft to drop the 11 kV requirement, 2026).
   {
     id: '157',
-    slug: 'green-energy-open-access-india-factories',
-    title: 'Can a factory in India buy renewable power through open access, and is it worth it?',
+    slug: 'green-energy-open-access-india',
+    title: 'How Factories in India Can Buy Renewable Power Through Open Access',
     subtitle: 'Manufacturing Emissions',
     content: `For years, buying wind or solar power directly from a generator was something only large plants could do in India. The rule was simple: you needed at least 1 MW of connected load. A mid-sized factory could put panels on its own roof, but it could not buy green power from a solar park in the next district.
 
@@ -6743,8 +6743,8 @@ Check your state regulator's current open access rules and charges before signin
   // downstream products by Jan 2028).
   {
     id: '158',
-    slug: 'cbam-indian-fastener-exporters',
-    title: 'Do Indian fastener exporters face CBAM, and how can they protect their EU orders?',
+    slug: 'cbam-fastener-exporters-india',
+    title: 'CBAM for Fastener Exporters in India (CN 7318)',
     subtitle: 'Carbon Regulations',
     content: `Bolts, nuts, screws and washers look like the least carbon-intensive thing a factory can make. Under the EU's Carbon Border Adjustment Mechanism they are steel products like any other. Fasteners classified under CN code 7318 are covered, so every tonne an EU importer brings in from India, including from the fastener clusters around Ludhiana, carries a certificate cost based on its embedded emissions.
 
@@ -6777,7 +6777,7 @@ The EU has proposed bringing about 180 more downstream steel and aluminium produ
 
 ## Turning the data into an advantage
 
-A distributor choosing between two suppliers at the same price will choose the one whose fasteners carry the lower, verifiable CBAM cost. Senseible turns your electricity bills, fuel invoices and steel purchase records into emissions per month and per tonne, each linked to its source document, which is the starting file for a verifier. Work out the cost per tonne with the [CBAM calculator](/cbam-calculator), and for the wider picture see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [green finance for Ludhiana steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes).
+A distributor choosing between two suppliers at the same price will choose the one whose fasteners carry the lower, verifiable CBAM cost. Senseible turns your electricity bills, fuel invoices and steel purchase records into emissions per month and per tonne, each linked to its source document, which is the starting file for a verifier. Work out the cost per tonne with the [CBAM calculator](/cbam-calculator), and for the wider picture see [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [green finance for Ludhiana steel MSMEs](/climate-intelligence/green-loan-steel-msme-ludhiana-raipur).
 
 This is general guidance, not legal advice.`,
     tags: ['fasteners', 'ludhiana', 'cbam', 'cn 7318', 'steel exporters', 'india'],
@@ -6796,8 +6796,8 @@ This is general guidance, not legal advice.`,
   // estimate); CBAM Regulation (EU) 2023/956 Article 9.
   {
     id: '159',
-    slug: 'south-africa-carbon-tax-cbam-deduction',
-    title: 'Does South Africa\'s carbon tax reduce what EU importers pay under CBAM?',
+    slug: 'south-africa-carbon-tax-cbam',
+    title: 'Does South Africa\'s Carbon Tax Reduce CBAM Costs?',
     subtitle: 'Carbon Regulations',
     content: `South Africa is one of the few CBAM-exposed exporters that already has a carbon price. Its carbon tax has applied since 2019, and from 1 January 2026 the headline rate rose sharply. The obvious question for a steel, aluminium or ferroalloy exporter is whether that tax counts at the EU border, so that the EU importer pays less.
 
@@ -6826,7 +6826,7 @@ The law firm Werksmans has reported that the EU will publish default carbon-pric
 
 - **Record the tax by installation and product,** from the carbon tax returns, so the effective price per tonne of embedded emissions can be shown.
 - **Pair it with actual emissions data.** The deduction applies to the emissions declared, so verified actual figures help twice: lower emissions and a documented price paid on them.
-- **Do not count on the deduction to close the gap.** At current effective rates it reduces the certificate cost by a few percent. The larger lever is lower embedded emissions, as covered in [green finance for Johannesburg steel and metals firms](/climate-intelligence/green-finance-johannesburg-steel-metals-firms) and [South African ferrochrome smelters](/climate-intelligence/green-finance-south-africa-ferrochrome-smelters).
+- **Do not count on the deduction to close the gap.** At current effective rates it reduces the certificate cost by a few percent. The larger lever is lower embedded emissions, as covered in [green finance for Johannesburg steel and metals firms](/climate-intelligence/green-loan-steel-business-johannesburg) and [South African ferrochrome smelters](/climate-intelligence/renewable-power-ferrochrome-smelter-south-africa).
 
 The [CBAM calculator](/cbam-calculator) lets you enter a carbon price paid to see how much it changes the cost per tonne.
 
