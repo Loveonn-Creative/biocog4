@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { ORG_REF } from "@/lib/seo/entity";
 import { Helmet } from "react-helmet-async";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
@@ -308,7 +309,7 @@ const NetZero = () => {
     "description": "MSME net-zero roadmap builder. Set science-based targets, get AI-powered reduction strategies, and track progress toward net-zero.",
     "url": "https://senseible.earth/net-zero",
     "applicationCategory": "BusinessApplication",
-    "provider": { "@type": "Organization", "name": "Senseible", "url": "https://senseible.earth" },
+    "provider": ORG_REF,
   };
 
   const chip = (on: boolean) => `rounded-full px-4 py-2 text-sm transition-colors ${on ? "bg-foreground text-background" : "border border-border hover:bg-secondary"}`;

@@ -15,6 +15,7 @@ import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
 import * as di from '@/data/decarbonizeIndia';
+import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
 import {
@@ -54,22 +55,6 @@ export interface SeoRoute {
   changefreq: 'weekly' | 'monthly' | 'yearly';
 }
 
-const ORGANIZATION = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Senseible',
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
-  email: 'impact@senseible.earth',
-  alternateName: ['Senseible Earth', 'senseible.earth'],
-  disambiguatingDescription: 'Senseible (senseible.earth) is a carbon MRV and climate finance platform for MSMEs and exporters. Not to be confused with the word sensible or with Sensibull, an options trading platform.',
-  sameAs: [
-    'https://www.linkedin.com/company/senseible/',
-    'https://x.com/senseible_earth',
-    'https://www.instagram.com/senseible.earth/',
-  ],
-  address: { '@type': 'PostalAddress', addressLocality: 'Gurugram', addressCountry: 'IN' },
-};
 
 const breadcrumbLd = (crumbs: { name: string; path: string }[]) => ({
   '@context': 'https://schema.org',
@@ -97,6 +82,12 @@ export function toIsoDate(value?: string): string | undefined {
   return undefined;
 }
 
+// About and Contact describe Senseible itself, so they point at the one entity.
+function withEntityPage(r: SeoRoute): SeoRoute {
+  const extra = entityJsonLd(r.path);
+  return extra.length ? { ...r, jsonLd: [...r.jsonLd, ...extra] } : r;
+}
+
 function staticRoute(path: string, section: RouteSection, priority: number, extra: Partial<SeoRoute> = {}): SeoRoute {
   const meta = STATIC_PAGE_META[path];
   if (!meta) throw new Error(`No STATIC_PAGE_META entry for ${path}`);
@@ -122,18 +113,7 @@ function coreRoutes(): SeoRoute[] {
   const home = staticRoute('/', 'core', 1.0, {
     changefreq: 'weekly',
     jsonLd: [
-      ORGANIZATION,
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: 'Senseible',
-        url: SITE_URL,
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/climate-intelligence?search={search_term_string}` },
-          'query-input': 'required name=search_term_string',
-        },
-      },
+      ...entityJsonLd('/'),
     ],
   });
 
@@ -258,7 +238,7 @@ function coreRoutes(): SeoRoute[] {
 
   return [
     home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia,
-    ...simple.map(([p, s, pr]) => staticRoute(p, s, pr)),
+    ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];
 }
@@ -296,8 +276,8 @@ function articleRoutes(): SeoRoute[] {
           description: meta.description,
           datePublished: toIsoDate(a.createdAt),
           dateModified: toIsoDate(a.updatedAt ?? a.createdAt),
-          author: { '@type': 'Organization', name: 'Senseible', url: SITE_URL },
-          publisher: { '@type': 'Organization', name: 'Senseible', logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` } },
+          author: ORG_REF,
+          publisher: { ...ORG_REF, logo: ORGANIZATION.logo },
           mainEntityOfPage: canonicalUrl(path),
         },
         breadcrumbLd(crumbs),

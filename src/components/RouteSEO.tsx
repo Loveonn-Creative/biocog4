@@ -8,6 +8,7 @@ import {
   isNoIndexPath,
   pageMeta,
 } from "@/lib/seo/seoMeta";
+import { entityJsonLd } from "@/lib/seo/entity";
 
 /**
  * Route-level SEO defaults. Mounted once inside the router, before any page,
@@ -21,6 +22,7 @@ export const RouteSEO = () => {
   const href = canonicalUrl(CANONICAL_ALIASES[path] ?? path);
   const meta = pageMeta(path);
   const noIndex = isNoIndexPath(path);
+  const entity = entityJsonLd(path);
 
   return (
     <Helmet>
@@ -31,6 +33,9 @@ export const RouteSEO = () => {
       <link rel="canonical" href={href} />
       <meta property="og:url" content={href} />
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
+      {entity.map(node => (
+        <script key={String(node['@id'])} type="application/ld+json">{JSON.stringify(node)}</script>
+      ))}
     </Helmet>
   );
 };
