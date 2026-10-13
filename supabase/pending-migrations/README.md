@@ -147,3 +147,23 @@ Until a factor exists, /solar-signal shows every check and the kWh, but tonnes s
 Tested on local Postgres 16: `tests/20261017100000_solar_signals.test.sql` (10 checks: owners read only their own rows, browsers cannot write any table, signals cannot be updated or deleted, factors need a source and version). The real `solar-signal` handler was typechecked; the arithmetic is covered by `tests/solar-signal.test.ts`.
 
 Roll back with `rollback/20261017100000_solar_signals.rollback.sql`. It refuses while any solar data exists unless run with `SET LOCAL solar.rollback_confirm = 'drop solar data';` in the same transaction, then drops the four tables.
+
+## 20261018100000_reduction_projects.sql (fuel-switch and energy-efficiency signals)
+
+**Requires 20261017100000_solar_signals.sql** (it reuses `grid_emission_factors` and extends `credit_signals`). Apply it after the solar migration; roll it back before the solar one.
+
+- **`reduction_projects`**: a signed-in user's change at a site, one lever each: `fuel_switch` (old fuel and the new energy that replaced it) or `energy_efficiency` (the energy measured and the output unit). Check constraints make the lever's fields required and forbid the other lever's fields. Fuels are limited to the ones with an IPCC-derived factor in code (diesel, furnace oil, kerosene, LPG, PNG); grid electricity uses the combined-margin factor table.
+- **`reduction_periods`**: the monthly figures behind a project, split into `baseline` (before the change) and `project` (after) phases, each with its evidence type and optional link to the stored invoice. A period must carry at least one figure; quantities cannot be negative; the same period cannot be entered twice.
+- **`credit_signals`** (from the solar migration): a signal now belongs to exactly one solar asset **or** one reduction project, and gains `baseline_tco2e`, `project_tco2e` and `details`. Existing solar rows and policies are unchanged; a new policy lets owners read their project signals.
+- Owners read their own rows; browsers cannot write any of these tables. All writes go through the `reduction-signal` edge function (service role), which recomputes the signal server-side with the shared method.
+- **Methods** (`supabase/functions/_shared/reductionSignal.ts`):
+  - `SENSEIBLE-FUELSWITCH-01` v0.1 follows the baseline structure of CDM AMS-III.B v18.0 (switches between fossil fuels). The baseline is the lower of the historical old-fuel rate (per unit of output when recorded) and the old fuel needed to supply the energy the new source delivered. A switch to grid electricity is outside AMS-III.B and is never marked ready.
+  - `SENSEIBLE-EFFICIENCY-01` v0.1 follows CDM AMS-II.D v13.0 as adopted by BEE BM IN02.001 v1.0: baseline energy per unit of output × output, allowed only when the baseline stays within ±10% of its average; lower production is never credited.
+  - Conservative figure: the lower 90% confidence limit of the baseline rate, IPCC 2006 lower limits for baseline fuel and upper limits for project fuel (CDM TOOL03), and meter accuracy added to project energy.
+  - At least 12 months of baseline (a Senseible minimum; the signal notes that credit methods commonly use three years). It is a signal for the offline credit process, not a credit.
+
+No factor value ships in this migration. Grid electricity needs the CEA combined-margin row described under the solar migration; fuel factors come from the IPCC tables cited in code.
+
+Tested on local Postgres 16 with `tests/run_reduction.sh`: replays every migration, applies solar, then this migration, runs `tests/20261018100000_reduction_projects.test.sql` (24 checks: lever fields, period rules, one subject per signal, owners read only their own rows, browsers cannot write, deletes cascade, solar rows untouched), proves the rollback refuses with data, rolls back to the identical catalog, re-applies, and the solar rollback still works afterwards. The solar behaviour tests also pass with this migration applied. The real `reduction-signal` handler was run against this schema (13 scenarios: save, recompute, set replacement, append-only signals, other users blocked, overlap refused, withheld without a factor, ready with one, 401 without sign-in, 503 before the migration).
+
+Roll back with `rollback/20261018100000_reduction_projects.rollback.sql`. It refuses while any project or project signal exists unless run with `SET LOCAL reduction.rollback_confirm = 'drop reduction data';` in the same transaction, then deletes project signals, restores `credit_signals` to its solar-only shape and drops the two tables.
