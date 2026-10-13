@@ -185,7 +185,6 @@ export const SuiteDashboard = ({ onAsk }: { onAsk: (interest: string) => void })
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div className="rounded-2xl bg-background border border-border p-4">
               <Visual />
-              <p className="mt-2 text-[10px] text-muted-foreground">{t("ent.suite.illus", "Illustration, not customer data.")}</p>
             </div>
             <dl className="grid gap-4 text-sm">
               <div><dt className="text-xs uppercase tracking-wider text-muted-foreground">{t("ent.suite.in", "Goes in")}</dt><dd className="mt-1">{t(`ent.suite.${m.key}.in`, m.input)}</dd></div>

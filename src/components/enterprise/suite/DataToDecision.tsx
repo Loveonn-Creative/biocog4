@@ -122,7 +122,6 @@ export const DataToDecision = () => {
                 <p className="mt-2 text-xs text-background/70">{t("ent.d2d.decision.trail", "Based on 6 records, each linked to its source hash.")}</p>
               </div>
             </div>
-            <figcaption className="mt-3 text-[11px] text-muted-foreground">{t("ent.d2d.note", "Illustration, not customer data. Low confidence marks spend-based estimates.")}</figcaption>
           </figure>
         </div>
       </div>
