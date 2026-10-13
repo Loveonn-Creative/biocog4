@@ -1,41 +1,44 @@
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { ArrowLeft, ArrowRight, Building, Banknote, FileCheck, Shield, Hash, Sliders, Lock, Gauge, Users, Eye } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
+import { LenderLens, RouteRecord, Doodle, CbamScrubber } from "@/components/climate-finance/FinanceVisuals";
 import climateFinanceOg from "@/assets/og/climate-finance.jpg";
 
 const lenderMechanics = [
-  { icon: Hash, title: "Hash-pinned, spot-auditable", body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices." },
-  { icon: Sliders, title: "Confidence bands, never false precision", body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate." },
-  { icon: Lock, title: "Methodology locked at disclosure time", body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve." },
-  { icon: Gauge, title: "Climate Credibility Score (0–100)", body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio, graded A+ to D." },
-  { icon: Users, title: "Cross-MSME peer comparison", body: "The borrower is benchmarked against verified peers in the same sector and country, not against a self-reported claim or a global average." },
-  { icon: Eye, title: "Decision-grade, not raw", body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth; borrower documents stay private." },
+  { key: "hash", title: "Hash-pinned, spot-auditable", body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices." },
+  { key: "band", title: "Confidence bands, never false precision", body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate." },
+  { key: "lock", title: "Methodology locked at disclosure time", body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve." },
+  { key: "score", title: "Climate Credibility Score (0–100)", body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio, graded A+ to D." },
+  { key: "peers", title: "Cross-MSME peer comparison", body: "The borrower is benchmarked against verified peers in the same sector and country, not against a self-reported claim or a global average." },
+  { key: "decision", title: "Decision-grade, not raw", body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth; borrower documents stay private." },
 ];
 
 const useCases = [
   {
     title: "Sustainability-Linked Loans",
     sub: "SIDBI · IREDA · commercial banks",
+    to: "Lender",
     body: "The verified scope baseline becomes the KPI. Lenders price coupon step-ups or step-downs against year-over-year reduction on a number whose source they can spot-audit, not a self-reported claim.",
   },
   {
     title: "Receivables factoring on green invoices",
     sub: "Solar · EV · forestation invoices",
+    to: "Factor",
     body: "Invoices that pass the green-benefit rule and additionality check carry an evidence hash the factor can verify in seconds, shortening the discount on advances against those receivables.",
   },
   {
     title: "Trade finance under CBAM",
     sub: "EU-bound exporters",
+    to: "Trade desk",
     body: "Verified actual emissions per tonne replace the EU default values that would otherwise apply, reducing destination CBAM cost and improving the margin trade-finance desks can underwrite on the shipment.",
   },
 ];
 
 const ClimateFinance = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="cf-anim min-h-screen bg-background">
       <SEOHead
         title="Climate Finance | Senseible"
         description="How verified Senseible data becomes underwriting input for lenders, factors, and incentive desks across emerging markets. Senseible is the verification primitive, not the lender."
@@ -60,44 +63,18 @@ const ClimateFinance = () => {
             Senseible is not a lender, factor, or registry. It is the verification layer each of those institutions trusts when they price climate-linked risk.
           </p>
 
-          {/* 1. Lender mechanics (migrated from Trust) */}
+          {/* 1. Lender mechanics: inspect the record the way a lender does */}
           <section className="mb-20">
-            <div className="flex items-center gap-3 mb-3">
-              <Banknote className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Why lenders can underwrite against this data</span>
-            </div>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Why lenders can underwrite against this data</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Six properties of every figure that reaches a bank</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {lenderMechanics.map(m => (
-                <Card key={m.title} className="border-border">
-                  <CardContent className="p-5">
-                    <m.icon className="w-4 h-4 text-primary mb-3" />
-                    <div className="text-sm font-medium text-foreground mb-1">{m.title}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <LenderLens properties={lenderMechanics} />
           </section>
 
-          {/* 2. Where it gets consumed */}
+          {/* 2. Where it gets consumed: route one record to each desk */}
           <section className="mb-20">
-            <div className="flex items-center gap-3 mb-3">
-              <Building className="h-5 w-5 text-primary" />
-              <span className="text-xs uppercase tracking-wider text-muted-foreground">Where the verified ledger gets consumed</span>
-            </div>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Where the verified ledger gets consumed</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Three concrete pipelines</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              {useCases.map(u => (
-                <Card key={u.title} className="border-border">
-                  <CardContent className="p-5">
-                    <div className="text-sm font-medium text-foreground mb-1">{u.title}</div>
-                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">{u.sub}</div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{u.body}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <RouteRecord pipelines={useCases} />
             <p className="text-xs text-muted-foreground mt-4">
               The same verified ledger maps to government incentive schemes: SIDBI, IREDA and MNRE in India, with equivalent programmes wired through country config across every supported market.
             </p>
@@ -106,31 +83,22 @@ const ClimateFinance = () => {
           {/* 3. Opportunity cards — region-neutral, no guaranteed-rate claims */}
           <section className="mb-20">
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Opportunities this unlocks for MSMEs</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
-                <Banknote className="w-6 h-6 text-success mb-4" />
-                <h3 className="font-medium text-foreground mb-2">Green loans</h3>
-                <p className="text-sm text-muted-foreground mb-4">Verified baselines pre-qualify MSMEs for potentially preferential rates on working capital from banks that recognise verified sustainability data.</p>
-                <p className="text-xs text-primary font-medium">Positioning, not a guaranteed rate.</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
-                <Building className="w-6 h-6 text-primary mb-4" />
-                <h3 className="font-medium text-foreground mb-2">Government incentives</h3>
-                <p className="text-sm text-muted-foreground mb-4">Qualify for state and central schemes with documented emission reductions, across SIDBI/IREDA in India and equivalents wired through country config elsewhere.</p>
-                <p className="text-xs text-primary font-medium">Multiple schemes per market.</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
-                <FileCheck className="w-6 h-6 text-accent mb-4" />
-                <h3 className="font-medium text-foreground mb-2">Export compliance</h3>
-                <p className="text-sm text-muted-foreground mb-4">Meet EU CBAM requirements with verified actuals before defaults apply. Position for international buyers who require carbon disclosure.</p>
-                <p className="text-xs text-primary font-medium">Export-access protection.</p>
-              </div>
-              <div className="p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors">
-                <Shield className="w-6 h-6 text-earth mb-4" />
-                <h3 className="font-medium text-foreground mb-2">Sustainability-Linked Credit</h3>
-                <p className="text-sm text-muted-foreground mb-4">Access emerging credit facilities tied to verified sustainability KPIs: early positioning for TCFD- and ISSB-aligned financing.</p>
-                <p className="text-xs text-primary font-medium">Aligned with global standards.</p>
-              </div>
+            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+              {[
+                { d: "loan" as const, t: "Green loans", b: "Verified baselines pre-qualify MSMEs for potentially preferential rates on working capital from banks that recognise verified sustainability data.", n: "Positioning, not a guaranteed rate." },
+                { d: "incentive" as const, t: "Government incentives", b: "Qualify for state and central schemes with documented emission reductions, across SIDBI/IREDA in India and equivalents wired through country config elsewhere.", n: "Multiple schemes per market." },
+                { d: "export" as const, t: "Export compliance", b: "Meet EU CBAM requirements with verified actuals before defaults apply. Position for international buyers who require carbon disclosure.", n: "Export-access protection." },
+                { d: "linked" as const, t: "Sustainability-Linked Credit", b: "Access emerging credit facilities tied to verified sustainability KPIs: early positioning for TCFD- and ISSB-aligned financing.", n: "Aligned with global standards." },
+              ].map(o => (
+                <div key={o.t} className="grid grid-cols-[auto_1fr] gap-4 items-start">
+                  <Doodle kind={o.d} />
+                  <div>
+                    <h3 className="font-medium text-foreground mb-1.5">{o.t}</h3>
+                    <p className="text-sm text-muted-foreground mb-2">{o.b}</p>
+                    <p className="text-xs text-primary font-medium">{o.n}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -142,8 +110,9 @@ const ClimateFinance = () => {
                 <span className="font-medium text-foreground">Global trade access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to the EU Green Deal, Brazil's CBIO market, and Southeast Asia's carbon-pricing pilots, verified sustainability data is becoming table stakes for trade access worldwide.
               </p>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">CBAM &amp; border adjustments:</span> Exporters from emerging markets without carbon data face tariffs of 20–35% on steel, cement, aluminium, and related products entering the EU. Similar mechanisms are emerging in the UK, Canada, and Australia.
+                <span className="font-medium text-foreground">CBAM &amp; border adjustments:</span> Since 1 January 2026, EU importers pay for the carbon embedded in steel, cement, aluminium, fertilisers and related goods. Exporters without verified data are priced at EU default values with mark-ups. Similar mechanisms are emerging in the UK, Canada, and Australia.
               </p>
+              <CbamScrubber />
               <p className="text-muted-foreground">
                 <span className="font-medium text-foreground">Financial institution mandates:</span> Central banks globally (RBI in India, BCB in Brazil, BSP in the Philippines) increasingly favour sustainability-linked lending. Banks are building ESG scoring into credit decisions across emerging markets.
               </p>
