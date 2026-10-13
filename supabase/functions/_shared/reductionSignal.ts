@@ -9,24 +9,33 @@
 // replaced equipment moved to another site stops the signal instead of being
 // estimated (AMS-II.D treats transferred equipment as leakage).
 //
-// Method references (read from the CDM and BEE registries; paragraph numbers
-// deliberately not cited until checked against the adopted PDFs):
+// Method references (read from the CDM and BEE registries and secondary
+// copies; paragraph numbers deliberately not cited until checked against the
+// adopted PDFs):
 // - Fuel switch: CDM AMS-III.B "Switching fossil fuels" v18.0 (active from
-//   16 Apr 2015) covers switches between fossil fuels only. Its baseline is
-//   the fuel that would have been burned to deliver the energy the project
-//   delivered; that is option (b) below. A switch to grid electricity is
-//   outside AMS-III.B (CDM SSC WG clarification), so it is never "ready".
+//   16 Apr 2015) covers switches to a lower-carbon fossil fuel. Its baseline
+//   is the fuel that would have been burned without the project, derived from
+//   the monitored project fuel adjusted for efficiency and calorific value;
+//   option (b) below follows that structure at equal efficiency (a Senseible
+//   simplification, bounded by the historical option (a)). A switch to grid
+//   electricity is outside AMS-III.B (CDM SSC WG clarification SSC_232), so it
+//   is never "ready".
 // - Energy efficiency: CDM AMS-II.D "Energy efficiency and fuel switching
 //   measures for industrial facilities" v13.0 (active from 4 Oct 2013), as
 //   adopted for India's CCTS offset mechanism by BEE BM IN02.001 v1.0
 //   (27 Mar 2025): baseline = specific energy consumption x output, allowed
 //   only when baseline energy depends on production alone and stays within
-//   +/-10% of its average; lower production is never credited.
-// - Factors: IPCC 2006 Vol. 2 Ch. 1 Tables 1.2 and 1.4. Conservative figure
-//   per CDM TOOL03 v3.0: the upper 95% limit for project fuel, and the lower
-//   limit for baseline fuel. Grid electricity: the combined margin (CDM
-//   TOOL05 v3.0 Option A1, computed per TOOL07; for India the CEA CO2
-//   Baseline Database), supplied from the factor table with its source.
+//   +/-10% of its average; credits cannot be earned for decreases in activity
+//   level outside the project; reductions accrue only up to the remaining
+//   lifetime of the baseline equipment.
+// - Factors: IPCC 2006 Vol. 2 Ch. 1 Tables 1.2 (NCV) and 1.4 (CO2 factor).
+//   Conservative bounds: CDM TOOL03 v3.0 (project and leakage emissions only)
+//   uses the upper limit of the 95% confidence interval when IPCC defaults are
+//   the source; for baseline fuel, CDM methodologies take the lower limit
+//   (e.g. ACM0026 draft wording), applied here the same way. Grid
+//   electricity: the combined margin (CDM TOOL05 v3.0 Option A1, computed per
+//   TOOL07; for India the CEA CO2 Baseline Database, OM and BM weighted
+//   50:50), supplied from the factor table with its source.
 // Senseible-specific rules are marked as such.
 
 import { FUEL_FACTORS } from './emissionFactors.ts';
@@ -39,7 +48,7 @@ export type Bound = 'default' | 'lower' | 'upper';
 export const FUEL_SWITCH_METHOD = {
   id: 'SENSEIBLE-FUELSWITCH-01',
   version: '0.1',
-  basis: 'ISO 14064-2 project accounting; baseline structure of CDM AMS-III.B v18.0 (fossil to lower-carbon fossil); IPCC 2006 V2 Ch.1 factors with CDM TOOL03 bounds',
+  basis: 'ISO 14064-2 project accounting; baseline structure of CDM AMS-III.B v18.0 (fossil to lower-carbon fossil); IPCC 2006 V2 Ch.1 factors (upper limit for project fuel per CDM TOOL03, lower limit for baseline fuel)',
 } as const;
 
 export const EFFICIENCY_METHOD = {
