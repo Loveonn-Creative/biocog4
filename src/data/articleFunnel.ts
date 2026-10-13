@@ -156,4 +156,10 @@ export const articleFunnel: Record<string, { stage: FunnelStage; anchor: string 
   'solar-loan-for-msme-india': { stage: 'decision', anchor: 'solar loan for an MSME in India' },
   'green-finance-textile-recycling-panipat': { stage: 'consideration', anchor: 'green finance for textile recyclers in Panipat' },
   'germany-supply-chain-act-lksg-indian-suppliers': { stage: 'awareness', anchor: 'Germany\'s supply chain act for Indian suppliers' },
+  'cbam-verification-non-eu-producer': { stage: 'decision', anchor: 'getting CBAM emissions verified' },
+  'cbam-support-for-indian-msmes': { stage: 'consideration', anchor: 'CBAM support for Indian MSMEs' },
+  'cbam-50-tonne-exemption': { stage: 'awareness', anchor: 'the CBAM 50-tonne exemption' },
+  'become-cbam-authorised-declarant': { stage: 'decision', anchor: 'becoming a CBAM authorised declarant' },
+  'turkey-emissions-trading-system': { stage: 'awareness', anchor: 'Turkey\'s emissions trading system' },
+  'vietnam-grid-emission-factor': { stage: 'awareness', anchor: 'Vietnam\'s grid emission factor' },
 };
