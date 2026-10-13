@@ -36,3 +36,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /partners | [Loveonn-Creative/biocog4#85](https://github.com/Loveonn-Creative/biocog4/pull/85) | `c488704` (merge `2f9c6ea`) |
 | /mission | [Loveonn-Creative/biocog4#86](https://github.com/Loveonn-Creative/biocog4/pull/86) | `2f9c6ea` (merge `2d09dc0`) |
 | /principles | [Loveonn-Creative/biocog4#87](https://github.com/Loveonn-Creative/biocog4/pull/87) | `2d09dc0` |
+| /enterprise (ledger hero, traceability threads) | [Loveonn-Creative/biocog4#96](https://github.com/Loveonn-Creative/biocog4/pull/96) | `8ce3eed` |
