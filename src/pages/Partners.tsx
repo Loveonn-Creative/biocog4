@@ -5,27 +5,16 @@ import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Leaf, 
-  Plug, 
-  Landmark,
-  ArrowRight,
-  Shield,
-  Globe,
-  TrendingUp,
-  CheckCircle2,
-  Handshake,
-  BarChart3
-} from 'lucide-react';
+import { ArrowRight, Handshake } from 'lucide-react';
+import { FlowLanes, FlipReasons, type PartnerType } from '@/components/partners/PartnerVisuals';
 
-const PARTNER_TYPES = [
+const PARTNER_TYPES: PartnerType[] = [
   {
     id: 'carbon-buyers',
     title: 'Carbon Credit Buyers',
     description: 'Access verified MSME carbon credits directly from the source. High-quality, transparent, and traceable.',
-    icon: Leaf,
+    flow: { label: 'Verified credit records' },
     benefits: [
       'Pre-verified credits with AI-powered MRV',
       'Direct access to MSME credit supply',
@@ -34,14 +23,12 @@ const PARTNER_TYPES = [
     ],
     cta: 'Explore Credits',
     href: '/marketplace',
-    color: 'text-success',
-    bgColor: 'bg-success/10',
   },
   {
     id: 'banks',
     title: 'Banks & Financial Institutions',
     description: 'Offer green loans and climate-linked products using verified carbon data from your MSME clients.',
-    icon: Landmark,
+    flow: { label: 'Verified baselines', back: 'Green loans' },
     benefits: [
       'Verified carbon data for green lending',
       'Risk assessment via carbon metrics',
@@ -50,14 +37,12 @@ const PARTNER_TYPES = [
     ],
     cta: 'Learn More',
     href: '/climate-finance',
-    color: 'text-accent',
-    bgColor: 'bg-accent/10',
   },
   {
     id: 'erp',
     title: 'ERP & Accounting Platforms',
     description: 'Integrate carbon tracking into your existing workflows. API-first design for seamless adoption.',
-    icon: Plug,
+    flow: { label: 'Carbon data by API' },
     benefits: [
       'REST API for carbon data',
       'Webhook integrations',
@@ -66,14 +51,12 @@ const PARTNER_TYPES = [
     ],
     cta: 'View API Docs',
     href: '/contact',
-    color: 'text-primary',
-    bgColor: 'bg-primary/10',
   },
   {
     id: 'climate-finance',
     title: 'Climate Finance Providers',
     description: 'Deploy capital at scale with verified impact data. Fund MSMEs driving real climate outcomes.',
-    icon: TrendingUp,
+    flow: { label: 'Impact data', back: 'Capital' },
     benefits: [
       'Impact-verified project pipelines',
       'MRV-backed performance tracking',
@@ -82,8 +65,6 @@ const PARTNER_TYPES = [
     ],
     cta: 'Partner With Us',
     href: '/contact',
-    color: 'text-warning',
-    bgColor: 'bg-warning/10',
   },
 ];
 
@@ -96,7 +77,7 @@ const TRUST_INDICATORS = [
 
 const Partners = () => {
   return (
-    <div className="relative min-h-screen w-full bg-background overflow-hidden">
+    <div className="pt-anim relative min-h-screen w-full bg-background overflow-hidden">
       <SEOHead
         title="Partner Program | Carbon Buyers, Banks & ERP Integrations"
         description="Join Senseible's partner ecosystem. Access verified MSME carbon credits, enable green lending, or integrate carbon tracking into your platform."
@@ -167,41 +148,8 @@ const Partners = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {PARTNER_TYPES.map((type) => {
-              const Icon = type.icon;
-              return (
-                <Card key={type.id} className="relative overflow-hidden hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className={`w-12 h-12 rounded-xl ${type.bgColor} flex items-center justify-center mb-4`}>
-                        <Icon className={`w-6 h-6 ${type.color}`} />
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl">{type.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {type.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-6">
-                      {type.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="outline" className="w-full" asChild>
-                      <Link to={type.href}>
-                        {type.cta}
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="max-w-5xl mx-auto">
+            <FlowLanes types={PARTNER_TYPES} />
           </div>
         </section>
 
@@ -216,40 +164,11 @@ const Partners = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Shield className="w-10 h-10 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">MRV-Grade Verification</h3>
-                  <p className="text-sm text-muted-foreground">
-                    AI-powered verification that meets international standards. 
-                    CBAM-ready, CCTS-aligned.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Globe className="w-10 h-10 mx-auto mb-4 text-accent" />
-                  <h3 className="font-semibold mb-2">India-First, Global-Ready</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Built for India's unique MSME landscape, 
-                    designed for emerging market expansion.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <BarChart3 className="w-10 h-10 mx-auto mb-4 text-success" />
-                  <h3 className="font-semibold mb-2">Real-Time Intelligence</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Live carbon data streams. Portfolio analytics. 
-                    Impact tracking at scale.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <FlipReasons reasons={[
+              { title: 'MRV-Grade Verification', body: 'AI-powered verification that meets international standards. CBAM-ready, CCTS-aligned.', mark: 'M20 5 L32 10 V19 C32 27 26 33 20 35 C14 33 8 27 8 19 V10 Z M14 20 L18 24 L26 15' },
+              { title: 'India-First, Global-Ready', body: "Built for India's unique MSME landscape, designed for emerging market expansion.", mark: 'M20 5 A15 15 0 1 0 20.01 5 M5 20 H35 M20 5 C13 12 13 28 20 35 M20 5 C27 12 27 28 20 35' },
+              { title: 'Real-Time Intelligence', body: 'Live carbon data streams. Portfolio analytics. Impact tracking at scale.', mark: 'M4 22 H12 L16 12 L22 30 L26 18 L29 22 H36' },
+            ]} />
           </div>
         </section>
 
