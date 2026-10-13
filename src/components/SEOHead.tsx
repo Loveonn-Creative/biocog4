@@ -118,7 +118,7 @@ export const SEOHead = ({
     "publisher": {
       "@type": "Organization",
       "name": "Senseible",
-      "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png`, "width": 600, "height": 60 }
+      "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png`, "width": 512, "height": 512 }
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
     "keywords": article.tags?.join(', ')
