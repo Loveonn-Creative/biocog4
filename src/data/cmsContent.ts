@@ -605,7 +605,7 @@ Start with one document. See your carbon footprint from one document. [Try it no
     slug: 'how-to-get-green-loans-india-carbon-data',
     title: 'How to Get Green Loans in India Using Carbon Data',
     subtitle: 'Unlocking Preferential Financing for MSMEs',
-    content: `Banks in India are increasingly offering green loans with lower interest rates for businesses that can demonstrate sustainability. The key? Verified carbon data.
+    content: `Banks in India are increasingly offering green loans with lower interest rates for businesses that can demonstrate sustainability. The key? Verified carbon data. For green bonds, sustainability-linked loans and supply chain finance, see [green finance](/green-finance).
 
 **What Banks Want to See:**
 - Scope 1, 2, and 3 emissions baseline
@@ -738,7 +738,7 @@ For cement and fertilisers, direct and indirect (electricity) emissions. For iro
     slug: 'scope-1-2-3-emissions-simple-guide-small-business',
     title: 'Scope 1 vs Scope 2 vs Scope 3: A Simple Guide for Small Businesses',
     subtitle: 'Understanding GHG Protocol Scopes',
-    content: `Every carbon footprint calculation starts with understanding the three scopes. Here's what they mean for your small business.
+    content: `Every carbon footprint calculation starts with understanding the three scopes. Here's what they mean for your small business. If you want the inventory built for you from bills and invoices, see [carbon accounting and GHG inventory](/carbon-accounting).
 
 **Scope 1: Direct Emissions**
 Emissions from sources you own or control.
@@ -2349,7 +2349,7 @@ Low-emission hydrogen is still a small share of global hydrogen use. MSMEs consi
     slug: 'msme-net-zero-roadmap-12-months-no-consultants',
     title: 'A 12-Month Net-Zero Roadmap for MSMEs With No Sustainability Team',
     subtitle: 'Carbon Accounting Standards',
-    content: `Many MSME net-zero strategies stall because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week.
+    content: `Many MSME net-zero strategies stall because they are written by consultants who leave after the report. This roadmap assumes you have one operations person with two hours per week. For targets, renewable procurement and audits in one plan, see [decarbonisation strategy and net-zero roadmaps](/decarbonization).
 
 ## Month 1: Baseline
 Pull last 12 months of electricity bills, fuel invoices, freight bills and biggest material POs. Upload them at [Senseible](/): the OCR extracts emissions automatically. Output: total tCO2e split by Scope 1, 2, 3.
@@ -2431,7 +2431,7 @@ For exporters to the EU, CCTS creates a domestic carbon credit market, but its p
     slug: 'csrd-double-materiality-assessment-msme-supplier',
     title: 'CSRD Double Materiality: What an MSME Supplier to a CSRD Company Must Provide',
     subtitle: 'Carbon Regulations',
-    content: `As an MSME supplier you are almost certainly not directly in scope of CSRD, which applies to large companies (and was narrowed further by the EU's Omnibus simplification). You are still in its reach as a supplier. Here is what your EU customer will ask for.
+    content: `As an MSME supplier you are almost certainly not directly in scope of CSRD, which applies to large companies (and was narrowed further by the EU's Omnibus simplification). You are still in its reach as a supplier. Here is what your EU customer will ask for. To check which reporting rules apply to you directly, see [ESG reporting](/esg-reporting).
 
 ## Double materiality in plain English
 
@@ -2937,7 +2937,7 @@ For every emission factor used: source, publication year, geography, technology 
     slug: 'msme-circular-economy-iso-59020-reporting',
     title: 'ISO 59020 Circular Economy Reporting: What Indian MSMEs Should Track',
     subtitle: 'Carbon Accounting Standards',
-    content: `ISO 59020:2024 standardises how organisations measure and report circular economy performance. Some EU buyers and lenders are starting to ask about circularity metrics.
+    content: `ISO 59020:2024 standardises how organisations measure and report circular economy performance. Some EU buyers and lenders are starting to ask about circularity metrics. For EPR obligations in India and take-back schemes, see [circular economy and EPR compliance](/circular-economy).
 
 ## The four core indicators
 
@@ -3565,7 +3565,7 @@ This is cheaper than annual audits, faster than annual audits, and produces a st
     slug: 'climate-risk-vs-esg-difference-financial-institutions',
     title: 'How is climate risk different from ESG, for a bank or lender?',
     subtitle: 'Carbon Regulations',
-    content: `Inside a financial institution, ESG and climate risk are often run by the same team and confused for the same workstream. They are not. ESG is a *disclosure and stakeholder* discipline. Climate risk is a *prudential and credit* discipline. The two have different consumers, different timeframes, and different consequences for getting it wrong.
+    content: `Inside a financial institution, ESG and climate risk are often run by the same team and confused for the same workstream. They are not. ESG is a *disclosure and stakeholder* discipline. Climate risk is a *prudential and credit* discipline. The two have different consumers, different timeframes, and different consequences for getting it wrong. For a company-side assessment of physical and transition risk, see [climate risk and resilience](/climate-risk).
 
 ## The clean split
 
@@ -4790,7 +4790,7 @@ Skip generic ESG topic lists. Run a sector-specific materiality screen using:
 - The CSRD ESRS topical standards (even if you are not directly in scope, your EU buyer may be).
 - Two or three buyer questionnaires you have actually received.
 
-Output: a one-page list of 8–15 material topics. For an Indian apparel exporter, the list usually includes Scope 1 and 2 emissions, Scope 3 (purchased goods, transport), water withdrawal, wastewater quality, occupational health and safety, working hours, freedom-of-association, and supplier due diligence.
+Output: a one-page list of 8–15 material topics. For an Indian apparel exporter, the list usually includes Scope 1 and 2 emissions, Scope 3 (purchased goods, transport), water withdrawal, wastewater quality, occupational health and safety, working hours, freedom-of-association, and supplier due diligence. For the safety and labour metrics, see [EHS and social performance](/ehs-social).
 
 ## Step 2: Data inventory (1–2 weeks)
 
@@ -4810,7 +4810,7 @@ Pick the framework you will actually be measured against:
 - **BRSR** if you are an unlisted supplier to a BRSR-top-1000 company.
 - **CSRD ESRS** if your buyer is EU-based and CSRD-in-scope.
 - **CDP Climate** if your buyer scores suppliers through CDP.
-- **EcoVadis** if you sell into procurement-led EU or US buyers.
+- **EcoVadis** if you sell into procurement-led EU or US buyers. See [EcoVadis and CDP ratings support](/esg-ratings).
 - **GHG Protocol + ISO 14064-1** as the universal floor under all of the above.
 
 Do not chase all of them at once. Pick the binding one and design for it.
@@ -4984,7 +4984,7 @@ If two or more of these are true, the case is worth escalating to the regulator,
     slug: 'scope-3-data-quality-tiers-software-buyer-guide-2026',
     title: 'Scope 3 data quality tiers: what audit-grade actually requires from your software',
     subtitle: 'Supply Chain Emissions',
-    content: `Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality: specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number.
+    content: `Most Scope 3 software in 2026 produces a number. Fewer produce a number that survives external assurance. The difference is data quality: specifically, the tier of input data used for each Scope 3 category and the transparency with which that tier is recorded against the number. For controls and evidence that hold up to assurance, see [ESG data management and assurance](/esg-data-management).
 
 This article is for buyers of carbon software who have outgrown their first spend-based estimate and need a procurement specification that holds up under ISAE 3410, ISO 14064-3, or CDP scoring.
 
@@ -5300,11 +5300,11 @@ None of this is a carbon rule. But it means the duty-free price depends on Pakis
 
 Textiles are not covered by the EU's Carbon Border Adjustment Mechanism, which applies to iron and steel, aluminium, cement, fertilisers, electricity and hydrogen. A Karachi exporter does not pay CBAM.
 
-The carbon question arrives another way. Large European brands report their own value-chain emissions, and fabric and garment production is usually a big part of that. So the buyer asks the supplier for energy use and emissions per order or per kilogram, and increasingly sets reduction targets in the supply agreement. The Pakistan Business Council's study of EU standards and the APTMA Compliance Handbook both name this buyer-led pressure, alongside the EU's Ecodesign for Sustainable Products Regulation, which will set product rules for textiles.
+The carbon question arrives another way. Large European brands report their own value-chain emissions, and fabric and garment production is usually a big part of that. So the buyer asks the supplier for energy use and emissions per order or per kilogram, and increasingly sets reduction targets in the supply agreement. The Pakistan Business Council's study of EU standards and the APTMA Compliance Handbook both name this buyer-led pressure, alongside the EU's Ecodesign for Sustainable Products Regulation, which will set product rules for textiles. What a product needs under ESPR and the Digital Product Passport is covered in [product compliance](/product-compliance).
 
 ## Due diligence travels down the chain
 
-The EU's Corporate Sustainability Due Diligence Directive applies to large EU companies, not to Pakistani mills. Its effect reaches Karachi through the buyer, who must check environmental and human-rights risks across its suppliers, often beyond the first tier. Separately, the EU's Forced Labour Regulation applies from 14 December 2027 and lets authorities stop products made with forced labour at the border. For a vertically integrated exporter, that means knowing where cotton, yarn and dyes come from, and being able to show it.
+The EU's Corporate Sustainability Due Diligence Directive applies to large EU companies, not to Pakistani mills. Its effect reaches Karachi through the buyer, who must check environmental and human-rights risks across its suppliers, often beyond the first tier. Separately, the EU's Forced Labour Regulation applies from 14 December 2027 and lets authorities stop products made with forced labour at the border. For a vertically integrated exporter, that means knowing where cotton, yarn and dyes come from, and being able to show it. For a structured way to screen suppliers against these rules, see [supplier due diligence](/supplier-due-diligence).
 
 ## What to have ready
 

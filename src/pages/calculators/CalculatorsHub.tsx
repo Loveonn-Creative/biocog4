@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calculator, Search, Globe, Truck, Factory, TrendingDown, Coins, Leaf, Building2, Zap, FileText, Server } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { supabase } from "@/integrations/supabase/client";
+import { serviceNav } from "@/data/services/nav";
 
 interface CalcCard {
   href: string;
@@ -144,6 +145,23 @@ const CalculatorsHub = () => {
               </div>
             </section>
           ))}
+
+          {!search.trim() && (
+            <section className="mb-10">
+              <h2 className="text-xl font-semibold text-foreground mb-1">Free checks by service</h2>
+              <p className="text-sm text-muted-foreground mb-4">Each service page opens with a free tool you can run in a minute.</p>
+              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+                {serviceNav.map(sp => (
+                  <li key={sp.slug} className="min-w-0">
+                    <Link to={`/${sp.slug}`} className="group block rounded-lg border border-border px-4 py-3 hover:border-primary/50">
+                      <span className="block text-sm font-medium text-foreground group-hover:text-primary">{sp.nav}</span>
+                      <span className="block text-xs text-muted-foreground line-clamp-1">{sp.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {isAuthenticated && (
             <section className="mt-12">
