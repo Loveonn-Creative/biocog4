@@ -57,7 +57,18 @@ interface Verification {
   } | null;
 }
 
-const LEGAL_DISCLAIMER = "This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using the BIOCOG MRV India v1.0 methodology with emission factors from IND_EF_2025. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.";
+// The methodology and factor sources are the ones recorded on the user's own
+// evidence, not a fixed label.
+const legalDisclaimer = (methodology: string, factorSources: string[]) =>
+  `This report serves as decision-support disclosure and is not a statutory filing unless independently assured. Data is calculated using methodology ${methodology}${factorSources.length ? ` with emission factors from ${factorSources.join(', ')}` : ''}. Scope boundaries, data quality assumptions, and methodology limitations are detailed herein.`;
+
+/** SHA-256 over the sorted document hashes, hex. Null when there are none or hashing is unavailable. */
+async function evidenceFingerprint(documentHashes: string[]): Promise<string | null> {
+  const list = [...new Set(documentHashes.filter(Boolean))].sort();
+  if (list.length === 0 || !globalThis.crypto?.subtle) return null;
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(list.join('\n')));
+  return [...new Uint8Array(digest)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 // Every implemented framework is selectable. The list is derived from the
 // registry so a framework can never exist in the engine but be missing here.
@@ -271,6 +282,22 @@ const Reports = () => {
     [activeFrameworks, availability],
   );
 
+  // The certificate names a standard only when the records evidence part of
+  // it, with the share evidenced, never as a blanket conformance mark.
+  const standardBadges = useMemo(
+    () => (['GHG_PROTOCOL', 'ISO_14064'] as const)
+      .map(id => assessFramework(FRAMEWORKS[id], availability))
+      .filter(a => a.coverage !== 'not_covered')
+      .map(a => `${a.framework.shortName}: ${a.completeness}% evidenced`),
+    [availability],
+  );
+
+  // Only frameworks the records actually evidence are named in the summary line.
+  const evidencedFrameworks = useMemo(
+    () => assessments.filter(a => a.coverage !== 'not_covered').map(a => a.framework.shortName),
+    [assessments],
+  );
+
   // Disclosure readiness and carbon-credit project eligibility are separate
   // questions, answered separately from the criteria that produced them.
   const marketCompatibility = useMemo(
@@ -406,8 +433,10 @@ const Reports = () => {
       doc.setFontSize(11);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);
-      doc.text('has successfully documented and verified their carbon emissions', centerX, bodyY, { align: 'center' });
-      doc.text('in accordance with Indian environmental compliance standards and regulations.', centerX, bodyY + 9, { align: 'center' });
+      // States only what the records show: emissions recorded from source
+      // documents and checked by the platform's own integrity control.
+      doc.text(`has recorded its greenhouse gas emissions from ${evidence.length} source document${evidence.length === 1 ? '' : 's'}`, centerX, bodyY, { align: 'center' });
+      doc.text('checked by Senseible\'s data-integrity verification (not third-party assurance).', centerX, bodyY + 9, { align: 'center' });
       
       // Verification details box - centered with equal columns
       const boxY = bodyY + 25;
@@ -457,7 +486,9 @@ const Reports = () => {
       doc.setFontSize(24);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text(analysis?.creditEligibility?.qualityGrade || 'D', col2Center, boxY + 35, { align: 'center' });
+      const grade = analysis?.creditEligibility?.qualityGrade;
+      if (!grade) doc.setFontSize(12);
+      doc.text(grade || 'Not assessed', col2Center, boxY + 35, { align: 'center' });
       
       // Column 3: Green Score
       doc.setFontSize(8);
@@ -467,19 +498,20 @@ const Reports = () => {
       doc.setFontSize(16);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text(`${analysis?.greenScore || 0}`, col3Center, boxY + 32, { align: 'center' });
+      const greenScore = typeof analysis?.greenScore === 'number' ? analysis.greenScore : null;
+      if (greenScore === null) doc.setFontSize(12);
+      doc.text(greenScore === null ? 'Not assessed' : `${greenScore}`, col3Center, boxY + 32, { align: 'center' });
       doc.setFontSize(7);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(120);
-      doc.text('out of 100', col3Center, boxY + 42, { align: 'center' });
+      if (greenScore !== null) doc.text('out of 100', col3Center, boxY + 42, { align: 'center' });
       
       // Compliance badges - centered with consistent sizing
       const badgeY = boxY + boxHeight + 12;
       const badges: string[] = [];
       if (latestVerification?.ccts_eligible) badges.push('CCTS Eligible');
       if (latestVerification?.cbam_compliant) badges.push('CBAM Compliant');
-      badges.push('GHG Protocol');
-      badges.push('ISO 14064');
+      badges.push(...standardBadges);
       
       doc.setFontSize(8);
       doc.setFont('helvetica', 'bold');
@@ -499,12 +531,16 @@ const Reports = () => {
         badgeX += bw + badgeGap;
       });
       
-      // Certificate hash for tamper-proofing
-      const certHash = `SHA256:${crypto.randomUUID().replace(/-/g, '').substring(0, 16).toUpperCase()}`;
-      doc.setFontSize(7);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(140);
-      doc.text(`Verification Hash: ${certHash}`, centerX, badgeY + 26, { align: 'center' });
+      // Evidence fingerprint: SHA-256 over the sorted hashes of the source
+      // documents behind this certificate, so anyone holding the same
+      // documents can recompute it. Omitted when there is no evidence.
+      const fingerprint = await evidenceFingerprint(evidence.map(e => e.documentHash));
+      if (fingerprint) {
+        doc.setFontSize(7);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(140);
+        doc.text(`Evidence fingerprint (SHA-256 of ${evidence.length} document hashes): ${fingerprint.slice(0, 16).toUpperCase()}`, centerX, badgeY + 26, { align: 'center' });
+      }
       
       // Signature area - properly aligned
       const sigY = pageHeight - 55;
@@ -521,12 +557,12 @@ const Reports = () => {
       doc.setTextColor(100);
       doc.text(`Certificate ID: ${certId}`, pageWidth - 25, pageHeight - 30, { align: 'right' });
       doc.text(`Issued: ${formatDate(new Date().toISOString())}`, 25, pageHeight - 30, { align: 'left' });
-      doc.text('Methodology: BIOCOG MRV India v1.0', centerX, pageHeight - 22, { align: 'center' });
+      doc.text(`Methodology: ${methodologyVersion}`, centerX, pageHeight - 22, { align: 'center' });
       
       // Footer disclaimer - centered
       doc.setFontSize(6);
       doc.setTextColor(130);
-      doc.text('Powered by Senseible Carbon Platform | Compliant with Indian carbon regulation standards', centerX, pageHeight - 15, { align: 'center' });
+      doc.text('Powered by Senseible Carbon Platform | Decision-support record, not a statutory filing or third-party assurance', centerX, pageHeight - 15, { align: 'center' });
       
       doc.save(`compliance-certificate-${new Date().toISOString().split('T')[0]}.pdf`);
       toast.success('Certificate downloaded successfully');
@@ -603,8 +639,11 @@ const Reports = () => {
                         <div className="flex items-center gap-2">
                           <Shield className="h-4 w-4 text-primary" />
                           <span className="text-sm">
-                            Aligned with {activeFrameworks.slice(0, 3).map(fwId => FRAMEWORKS[fwId]?.shortName).filter(Boolean).join(', ')}
-                            {activeFrameworks.length > 3 && ` +${activeFrameworks.length - 3} more`}
+                            {evidencedFrameworks.length === 0
+                              ? 'No framework evidenced by your records yet'
+                              : <>Records evidence {evidencedFrameworks.slice(0, 3).join(', ')}
+                                {evidencedFrameworks.length > 3 && ` +${evidencedFrameworks.length - 3} more`}
+                                {evidencedFrameworks.length < assessments.length && ` (of ${assessments.length} selected)`}</>}
                           </span>
                           {useCustomFrameworks && (
                             <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Custom</span>
@@ -967,9 +1006,11 @@ const Reports = () => {
                         <CheckCircle className="h-3 w-3" /> CBAM Compliant
                       </span>
                     )}
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                      GHG Protocol
-                    </span>
+                    {standardBadges.map(b => (
+                      <span key={b} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                        {b}
+                      </span>
+                    ))}
                   </div>
                   
                   <p className="text-sm text-muted-foreground mb-6">
@@ -1118,7 +1159,7 @@ const Reports = () => {
 
         <div className="mt-8 p-4 rounded-lg bg-muted/30 border border-border/50">
           <p className="text-xs text-muted-foreground leading-relaxed">
-            <strong>Legal Disclaimer:</strong> {LEGAL_DISCLAIMER}
+            <strong>Legal Disclaimer:</strong> {legalDisclaimer(methodologyVersion, factorSources)}
           </p>
         </div>
       </main>

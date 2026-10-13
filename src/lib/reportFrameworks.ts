@@ -50,20 +50,32 @@ export const EMPTY_AVAILABILITY: DataAvailability = {
   productLevel: false,
 };
 
-/** Which availability flag each framework metric depends on. */
-const METRIC_REQUIREMENTS: Record<string, keyof DataAvailability> = {
+/**
+ * What each framework metric needs. A single flag, or a combination:
+ * `any` is met by at least one flag (a total exists once any scope is
+ * evidenced), `all` only when every flag is (a combined Scope 1+2+3 figure
+ * needs all three scopes).
+ */
+type Requirement =
+  | keyof DataAvailability
+  | { any: Array<keyof DataAvailability> }
+  | { all: Array<keyof DataAvailability> };
+
+const ANY_SCOPE: Requirement = { any: ['scope1', 'scope2', 'scope3'] };
+
+const METRIC_REQUIREMENTS: Record<string, Requirement> = {
   scope1: 'scope1',
   scope1Emissions: 'scope1',
   scope2: 'scope2',
   scope3: 'scope3',
   scope3Categories: 'scope3',
-  scope1_2Combined: 'scope1',
-  scope1_2_3: 'scope3',
-  totalEmissions: 'scope1',
-  emissionsBreakdown: 'scope1',
-  climateChange: 'scope1',
-  environmentalResponsibility: 'scope1',
-  climateAction: 'scope1',
+  scope1_2Combined: { all: ['scope1', 'scope2'] },
+  scope1_2_3: { all: ['scope1', 'scope2', 'scope3'] },
+  totalEmissions: ANY_SCOPE,
+  emissionsBreakdown: ANY_SCOPE,
+  climateChange: ANY_SCOPE,
+  environmentalResponsibility: ANY_SCOPE,
+  climateAction: ANY_SCOPE,
   emissionIntensity: 'intensity',
   reductionInitiatives: 'targets',
   reductionTargets: 'targets',
@@ -89,10 +101,34 @@ const METRIC_REQUIREMENTS: Record<string, keyof DataAvailability> = {
   productCarbonFootprint: 'productLevel',
   functionalUnit: 'productLevel',
   ghgIntensity: 'intensity',
-  evidenceTraceability: 'scope1',
-  emissionsBaseline: 'scope1',
+  evidenceTraceability: ANY_SCOPE,
+  emissionsBaseline: ANY_SCOPE,
   valueChainEmissions: 'scope3',
 };
+
+/**
+ * Disclosures that GHG evidence can never satisfy, whatever is uploaded.
+ * CPCB emission norms set limits for pollutants (particulate matter, SO2, NOx
+ * and others) measured by stack or ambient monitoring under the Air and Water
+ * Acts; invoices and GHG totals say nothing about them.
+ */
+const NOT_EVIDENCEABLE: Record<string, string> = {
+  pollutantEmissionNorms:
+    'Not applicable to this platform: CPCB emission norms cover pollutants (such as particulate matter, SO2 and NOx) measured by stack or ambient monitoring, which greenhouse gas records cannot evidence.',
+};
+
+function requirementMet(req: Requirement, availability: DataAvailability): boolean {
+  if (typeof req === 'string') return availability[req];
+  if ('any' in req) return req.any.some((k) => availability[k]);
+  return req.all.every((k) => availability[k]);
+}
+
+/** The flags a requirement still lacks, for the gap explanation. */
+function missingFlags(req: Requirement, availability: DataAvailability): Array<keyof DataAvailability> {
+  if (typeof req === 'string') return availability[req] ? [] : [req];
+  if ('any' in req) return req.any.some((k) => availability[k]) ? [] : req.any;
+  return req.all.filter((k) => !availability[k]);
+}
 
 /**
  * Why a mapped disclosure could not be evidenced.
@@ -126,23 +162,31 @@ const GAP_REASONS: Partial<Record<keyof DataAvailability, string>> = {
 export function classifyMissing(
   reference: string,
   metric: string | undefined,
+  availability: DataAvailability = EMPTY_AVAILABILITY,
 ): MissingDisclosure {
+  if (metric && NOT_EVIDENCEABLE[metric]) {
+    return { reference, classification: 'not_applicable', reason: NOT_EVIDENCEABLE[metric] };
+  }
   const requirement = metric ? METRIC_REQUIREMENTS[metric] : undefined;
-  if (requirement && OUT_OF_BOUNDARY.includes(requirement)) {
+  const lacking = requirement ? missingFlags(requirement, availability) : [];
+  const outOfBoundary = lacking.find((k) => OUT_OF_BOUNDARY.includes(k));
+  if (outOfBoundary) {
     return {
       reference,
       classification: 'not_applicable',
       reason:
-        requirement === 'governance'
+        outOfBoundary === 'governance'
           ? 'Not applicable to this platform: governance and oversight narratives are authored by the entity and are not derived from documents.'
           : 'Not applicable to this platform: climate risk and nature assessments are authored by the entity and are not derived from documents.',
     };
   }
-  return {
-    reference,
-    classification: 'data_gap',
-    reason: (requirement && GAP_REASONS[requirement]) || 'No supporting record exists for this disclosure.',
-  };
+  let reason = 'No supporting record exists for this disclosure.';
+  if (requirement && typeof requirement !== 'string' && 'any' in requirement) {
+    reason = 'No emissions have been evidenced by an uploaded document yet.';
+  } else if (lacking.length > 0) {
+    reason = lacking.map((k) => GAP_REASONS[k]).filter(Boolean).join(' ') || reason;
+  }
+  return { reference, classification: 'data_gap', reason };
 }
 
 
@@ -179,9 +223,9 @@ export function assessFramework(
 
   for (const [ref, metric] of refs) {
     const requirement = METRIC_REQUIREMENTS[metric];
-    // Unmapped metric: treat as unevidenced rather than silently satisfied.
-    if (requirement && availability[requirement]) satisfied.push(ref);
-    else missingDetail.push(classifyMissing(ref, metric));
+    // Unmapped or never-evidenceable metric: unevidenced, never silently satisfied.
+    if (requirement && requirementMet(requirement, availability)) satisfied.push(ref);
+    else missingDetail.push(classifyMissing(ref, metric, availability));
   }
 
   const notApplicable = missingDetail.filter((m) => m.classification === 'not_applicable');
@@ -401,7 +445,7 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
     category: 'mandatory',
     applicableWhen: ['country_IN'],
     metricsMapping: {
-      'EmissionNorms': 'scope1Emissions',
+      'EmissionNorms': 'pollutantEmissionNorms',
       'EnergyAudit': 'energyConsumption',
     },
     status: 'covered',
