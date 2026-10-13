@@ -53,7 +53,11 @@ export function downloadNetZeroReport(r: NetZeroReportInput): void {
     const status = r.statuses[a.id] || 'pending';
     line(`[${status === 'done' ? 'x' : status === 'in-progress' ? '~' : ' '}] ${a.title} · Scope ${a.scope} · est. cut ${formatCo2(a.cutKg)}`, 10, true, 30);
     line(`${a.formula} = ${Math.round(a.fraction * 1000) / 10}% of Scope ${a.scope}`, 8, false, 80);
-    for (const p of a.params) line(`${p.kind === 'constant' ? 'Constant' : 'Assumption'}: ${p.label} = ${formatParam(p)} (${p.source})`, 8, false, 90);
+    for (const p of a.params) {
+      const yours = p.kind === 'assumption' && p.default !== undefined && p.value !== p.default;
+      const origin = yours ? `your figure; default ${formatParam({ ...p, value: p.default! })}` : p.source;
+      line(`${p.kind === 'constant' ? 'Constant' : 'Assumption'}: ${p.label} = ${formatParam(p)} (${origin})`, 8, false, 90);
+    }
     if (a.note) line(a.note, 8, false, 90);
     y += 1;
   }
@@ -66,7 +70,7 @@ export function downloadNetZeroReport(r: NetZeroReportInput): void {
   y += 6;
 
   line('How these numbers are made', 10, true, 60);
-  line(`Each cut is a formula over your baseline split by scope. Constants come from the platform's emission factors, IPCC 2006 defaults and the GHG Protocol; assumptions are labelled and should be replaced from an energy audit. Actions on the same scope are applied in sequence, so overlapping cuts are not double counted. Costs are not estimated. These are planning estimates, not verified reductions: a verified reduction shows up in new bills and invoices after a change is made.`, 8, false, 90);
+  line(`Each cut is a formula over your baseline split by scope. Constants come from the platform's emission factors, IPCC 2006 defaults and the GHG Protocol; assumptions are labelled, and any marked as your figure were entered by you in place of the default. Actions on the same scope are applied in sequence, so overlapping cuts are not double counted. Costs are not estimated. These are planning estimates, not verified reductions: a verified reduction shows up in new bills and invoices after a change is made.`, 8, false, 90);
 
   doc.save(`net-zero-report-${new Date().toISOString().slice(0, 10)}.pdf`);
 }

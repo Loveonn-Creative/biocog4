@@ -22,7 +22,16 @@ export interface Param {
   kind: 'constant' | 'assumption';
   /** Where a constant comes from, or why an assumption has this default. */
   source: string;
+  /** Assumptions only: stable key for saving edits, the default, and the valid range. */
+  key?: string;
+  default?: number;
+  min?: number;
+  max?: number;
+  step?: number;
 }
+
+/** Values a user entered for assumptions, by key. Missing keys use the default. */
+export type AssumptionValues = Record<string, number>;
 
 /** IPCC 2006 Guidelines, Vol. 2, Ch. 2, Table 2.2: default CO2 emission factors for stationary combustion. */
 export const IPCC_CO2_KG_PER_TJ = { diesel: 74_100, naturalGas: 56_100 } as const;
@@ -77,7 +86,6 @@ export interface ReductionAction {
   note?: string;
 }
 
-const assumption = (label: string, value: number, unit: string, source: string): Param => ({ label, value, unit, kind: 'assumption', source });
 const pct = (v: number) => v / 100;
 
 // Physical ratios used below, computed once so tests can check them.
@@ -94,30 +102,36 @@ export function heatPumpFraction(cop: number, boilerEff: number): number {
   return 1 - hp / fuel; // negative means electrification raises emissions on this grid
 }
 
-function buildActions(): ReductionAction[] {
-  const solarShare = assumption('Electricity covered by rooftop solar', 30, '%', 'Roof-limited; replace with your installer’s design');
-  const lightShare = assumption('Lighting share of electricity', 10, '%', 'Replace with your energy audit');
+/** The actions, with any assumptions the user has edited. Values outside the valid range are clamped. */
+export function buildActions(values: AssumptionValues = {}): ReductionAction[] {
+  const assumption = (key: string, label: string, def: number, unit: string, source: string, min: number, max: number, step = 1): Param => {
+    const raw = Number(values[key]);
+    const value = Number.isFinite(raw) && key in values ? Math.min(max, Math.max(min, raw)) : def;
+    return { key, label, value, default: def, unit, kind: 'assumption', source, min, max, step };
+  };
+  const solarShare = assumption('solarShare', 'Electricity covered by rooftop solar', 30, '%', 'Roof-limited; replace with your installer’s design', 0, 100);
+  const lightShare = assumption('lightShare', 'Lighting share of electricity', 10, '%', 'Replace with your energy audit', 0, 100);
   const ledRatio = { label: 'LED tube vs 36 W fluorescent tube', value: 18 / 36, unit: 'W/W', kind: 'constant' as const, source: 'Nameplate ratings of standard 4-ft tubes: 18 W LED replacing 36 W T8 (ballast losses ignored, so the cut is conservative)' };
-  const coolShare = assumption('Cooling share of electricity', 20, '%', 'Replace with your energy audit');
-  const iseerOld = assumption('Efficiency of existing ACs (ISEER)', 3.5, '', 'Older low-star split ACs; read it from the BEE label');
-  const iseerNew = assumption('Efficiency of new ACs (ISEER)', 5.0, '', 'High-star inverter split ACs; read it from the BEE label');
-  const lossShare = assumption('In-plant cable and transformer losses', 2, '% of electricity', 'Replace with your energy audit');
-  const pf0 = assumption('Power factor before', 0.85, '', 'Typical uncorrected inductive load');
-  const pf1 = assumption('Power factor after', 0.99, '', 'Target with capacitor banks');
-  const boilerShare = assumption('Scope 1 fuel used in boilers', 50, '%', 'Replace with your fuel records');
-  const eff0 = assumption('Boiler efficiency before', 75, '%', 'Replace with a boiler efficiency test');
-  const eff1 = assumption('Boiler efficiency after', 85, '%', 'Achievable with economiser and tuning; confirm with the vendor');
-  const fleetShare = assumption('Scope 1 fuel used by vehicles', 50, '%', 'Replace with your fuel records');
-  const heatShare = assumption('Scope 1 fuel used for low-temperature process heat', 30, '%', 'Heat pumps suit heat below about 100 °C');
-  const cop = assumption('Heat pump COP', 3, '', 'Seasonal coefficient of performance; confirm with the vendor');
-  const greenShare = assumption('Grid electricity moved to a green tariff', 100, '%', 'Share contracted with the DISCOM or open access');
-  const packShare = assumption('Packaging share of Scope 3', 10, '%', 'Replace with your purchase records');
-  const freightShare = assumption('Inbound freight share of Scope 3', 15, '%', 'Replace with your freight invoices');
-  const distanceCut = assumption('Shorter average sourcing distance', 50, '%', 'Depends on the suppliers you can switch to');
-  const materialShare = assumption('Material share of Scope 3 switched to recycled', 20, '%', 'Replace with your purchase records');
-  const recycledRatio = assumption('Recycled material footprint vs virgin', 50, '%', 'Material-specific; use the supplier’s EPD');
-  const wasteShare = assumption('Waste share of Scope 3', 5, '%', 'Replace with your waste contractor invoices');
-  const diverted = assumption('Waste diverted from landfill', 90, '%', 'Target diversion rate');
+  const coolShare = assumption('coolShare', 'Cooling share of electricity', 20, '%', 'Replace with your energy audit', 0, 100);
+  const iseerOld = assumption('iseerOld', 'Efficiency of existing ACs (ISEER)', 3.5, '', 'Older low-star split ACs; read it from the BEE label', 1, 10, 0.1);
+  const iseerNew = assumption('iseerNew', 'Efficiency of new ACs (ISEER)', 5.0, '', 'High-star inverter split ACs; read it from the BEE label', 1, 10, 0.1);
+  const lossShare = assumption('lossShare', 'In-plant cable and transformer losses', 2, '% of electricity', 'Replace with your energy audit', 0, 20, 0.5);
+  const pf0 = assumption('pf0', 'Power factor before', 0.85, '', 'Typical uncorrected inductive load', 0.5, 1, 0.01);
+  const pf1 = assumption('pf1', 'Power factor after', 0.99, '', 'Target with capacitor banks', 0.5, 1, 0.01);
+  const boilerShare = assumption('boilerShare', 'Scope 1 fuel used in boilers', 50, '%', 'Replace with your fuel records', 0, 100);
+  const eff0 = assumption('eff0', 'Boiler efficiency before', 75, '%', 'Replace with a boiler efficiency test', 30, 99);
+  const eff1 = assumption('eff1', 'Boiler efficiency after', 85, '%', 'Achievable with economiser and tuning; confirm with the vendor', 30, 99);
+  const fleetShare = assumption('fleetShare', 'Scope 1 fuel used by vehicles', 50, '%', 'Replace with your fuel records', 0, 100);
+  const heatShare = assumption('heatShare', 'Scope 1 fuel used for low-temperature process heat', 30, '%', 'Heat pumps suit heat below about 100 °C', 0, 100);
+  const cop = assumption('cop', 'Heat pump COP', 3, '', 'Seasonal coefficient of performance; confirm with the vendor', 1, 8, 0.1);
+  const greenShare = assumption('greenShare', 'Grid electricity moved to a green tariff', 100, '%', 'Share contracted with the DISCOM or open access', 0, 100);
+  const packShare = assumption('packShare', 'Packaging share of Scope 3', 10, '%', 'Replace with your purchase records', 0, 100);
+  const freightShare = assumption('freightShare', 'Inbound freight share of Scope 3', 15, '%', 'Replace with your freight invoices', 0, 100);
+  const distanceCut = assumption('distanceCut', 'Shorter average sourcing distance', 50, '%', 'Depends on the suppliers you can switch to', 0, 100);
+  const materialShare = assumption('materialShare', 'Material share of Scope 3 switched to recycled', 20, '%', 'Replace with your purchase records', 0, 100);
+  const recycledRatio = assumption('recycledRatio', 'Recycled material footprint vs virgin', 50, '%', 'Material-specific; use the supplier’s EPD', 0, 100);
+  const wasteShare = assumption('wasteShare', 'Waste share of Scope 3', 5, '%', 'Replace with your waste contractor invoices', 0, 100);
+  const diverted = assumption('diverted', 'Waste diverted from landfill', 90, '%', 'Target diversion rate', 0, 100);
 
   return [
     // GHG Protocol Scope 2 Guidance: a green tariff lowers market-based Scope 2
@@ -130,18 +144,18 @@ function buildActions(): ReductionAction[] {
       formula: 'Scope 2 × share of electricity covered by solar', params: [solarShare, C.grid], fraction: pct(solarShare.value),
       note: 'Each kWh generated on site and used replaces one grid kWh at the grid factor.' },
     { id: 'led-lighting', title: 'Upgrade to LED lighting throughout', scope: 2, effort: 'low', applicableSectors: ['all'],
-      formula: 'Scope 2 × lighting share × (1 − LED watts ÷ fluorescent watts)', params: [lightShare, ledRatio], fraction: pct(lightShare.value) * (1 - ledRatio.value) },
+      formula: 'Scope 2 × lighting share × (1 − LED watts ÷ fluorescent watts)', params: [lightShare, ledRatio], fraction: Math.max(0, pct(lightShare.value) * (1 - ledRatio.value)) },
     { id: 'hvac-upgrade', title: 'Upgrade air conditioning to high-star inverter units', scope: 2, effort: 'medium', applicableSectors: ['all'],
-      formula: 'Scope 2 × cooling share × (1 − old ISEER ÷ new ISEER)', params: [coolShare, iseerOld, iseerNew], fraction: pct(coolShare.value) * (1 - iseerOld.value / iseerNew.value),
+      formula: 'Scope 2 × cooling share × (1 − old ISEER ÷ new ISEER)', params: [coolShare, iseerOld, iseerNew], fraction: Math.max(0, pct(coolShare.value) * (1 - iseerOld.value / iseerNew.value)),
       note: 'For the same cooling, electricity use is inversely proportional to efficiency.' },
     { id: 'power-factor', title: 'Improve power factor to 0.99', scope: 2, effort: 'low', applicableSectors: ['all'],
-      formula: 'Scope 2 × in-plant losses × (1 − (PF before ÷ PF after)²)', params: [lossShare, pf0, pf1], fraction: pct(lossShare.value) * (1 - (pf0.value / pf1.value) ** 2),
+      formula: 'Scope 2 × in-plant losses × (1 − (PF before ÷ PF after)²)', params: [lossShare, pf0, pf1], fraction: Math.max(0, pct(lossShare.value) * (1 - (pf0.value / pf1.value) ** 2)),
       note: 'Resistive losses scale with current squared, and current with 1 ÷ power factor. The main gain is on kVAh charges, not emissions.' },
     { id: 'fuel-switch-gas', title: 'Switch from diesel/furnace oil to natural gas', scope: 1, effort: 'high', applicableSectors: ['steel', 'chemical', 'textile', 'construction'],
       formula: 'Scope 1 × (1 − natural gas CO2 per TJ ÷ diesel CO2 per TJ)', params: [C.gasCo2PerTj, C.dieselCo2PerTj], fraction: GAS_SWITCH_FRACTION,
       note: 'Same useful energy assumed; efficiency gains from new burners would add to this.' },
     { id: 'boiler-efficiency', title: 'Upgrade boiler efficiency', scope: 1, effort: 'medium', applicableSectors: ['textile', 'chemical', 'pharma'],
-      formula: 'Scope 1 × boiler share × (1 − efficiency before ÷ efficiency after)', params: [boilerShare, eff0, eff1], fraction: pct(boilerShare.value) * (1 - eff0.value / eff1.value),
+      formula: 'Scope 1 × boiler share × (1 − efficiency before ÷ efficiency after)', params: [boilerShare, eff0, eff1], fraction: Math.max(0, pct(boilerShare.value) * (1 - eff0.value / eff1.value)),
       note: 'Fuel for the same steam is inversely proportional to boiler efficiency.' },
     { id: 'ev-fleet', title: 'Move fleet from diesel to CNG', scope: 1, effort: 'high', applicableSectors: ['logistics', 'all'],
       formula: 'Scope 1 × vehicle share × (1 − natural gas CO2 per TJ ÷ diesel CO2 per TJ)', params: [fleetShare, C.gasCo2PerTj, C.dieselCo2PerTj], fraction: pct(fleetShare.value) * GAS_SWITCH_FRACTION,
@@ -166,7 +180,20 @@ function buildActions(): ReductionAction[] {
   ];
 }
 
+/** The actions at their default assumptions. */
 export const REDUCTION_STRATEGIES: ReductionAction[] = buildActions();
+
+/** Keeps only known assumption keys with finite numbers, for saving and restoring. */
+export function cleanAssumptions(input: unknown): AssumptionValues {
+  const known = new Set(REDUCTION_STRATEGIES.flatMap(a => a.params.map(p => p.key).filter(Boolean) as string[]));
+  const out: AssumptionValues = {};
+  if (input && typeof input === 'object') {
+    for (const [k, v] of Object.entries(input as Record<string, unknown>)) {
+      if (known.has(k) && typeof v === 'number' && Number.isFinite(v)) out[k] = v;
+    }
+  }
+  return out;
+}
 
 /** kgCO2e an action removes from a given baseline. */
 export function actionCutKg(a: ReductionAction, b: Baseline): number {
@@ -193,7 +220,8 @@ export interface FeasibilityResult {
 
 const EFFORT_WEIGHT = { low: 1, medium: 2, high: 3 } as const;
 
-export function calculateFeasibility(baseline: Baseline, targetReductionPct: number, timelineMonths: number, sectorId: string): FeasibilityResult {
+export function calculateFeasibility(baseline: Baseline, targetReductionPct: number, timelineMonths: number, sectorId: string, assumptions: AssumptionValues = {}): FeasibilityResult {
+  const actions = Object.keys(assumptions).length ? buildActions(assumptions) : REDUCTION_STRATEGIES;
   const baselineCo2Kg = Math.round(baseline.totalKg);
   const targetReductionKg = Math.round(baselineCo2Kg * (targetReductionPct / 100));
 
@@ -202,7 +230,7 @@ export function calculateFeasibility(baseline: Baseline, targetReductionPct: num
   // units leaves nothing for solar to cut), so each pick is applied to what
   // the earlier picks left in its scope.
   const remaining = { 1: baseline.scope1Kg, 2: baseline.scope2Kg, 3: baseline.scope3Kg } as Record<1 | 2 | 3, number>;
-  const candidates = REDUCTION_STRATEGIES
+  const candidates = actions
     .filter(a => a.applicableSectors.includes('all') || a.applicableSectors.includes(sectorId))
     .map(a => ({ a, score: actionCutKg(a, baseline) / EFFORT_WEIGHT[a.effort] }))
     .filter(x => x.score > 0)

@@ -22,10 +22,13 @@ import {
   timelineFromGoal,
   formatCo2,
   formatParam,
+  cleanAssumptions,
   type FeasibilityResult,
   type BadgeKey,
+  type AssumptionValues,
 } from "@/lib/netZeroEngine";
 import { SummitTrail, CarbonBudget, BadgeShelf, PathwayChart, ScopeDonut, Burst } from "@/components/netzero/GameParts";
+import { AssumptionField } from "@/components/netzero/AssumptionField";
 
 const STEPS = [
   { id: 'baseline', label: 'Baseline' },
@@ -76,6 +79,8 @@ const NetZero = () => {
   const [monthlyDiesel, setMonthlyDiesel] = useState(500);
   const [timeline, setTimeline] = useState('12');
   const [feasibility, setFeasibility] = useState<FeasibilityResult | null>(null);
+  // Assumptions the user changed from the defaults, by key. Saved with the goal.
+  const [assumptions, setAssumptions] = useState<AssumptionValues>({});
 
   // Execution tracking, saved to the signed-in account's goal
   const [taskStatuses, setTaskStatuses] = useState<Record<string, TaskStatus>>({});
@@ -141,8 +146,9 @@ const NetZero = () => {
           }
           setTaskStatuses(restored);
         }
-        const roadmap = data.roadmap as { reportExportedAt?: string } | null;
+        const roadmap = data.roadmap as { reportExportedAt?: string; assumptions?: unknown } | null;
         if (roadmap && !Array.isArray(roadmap) && typeof roadmap.reportExportedAt === 'string') setReportExportedAt(roadmap.reportExportedAt);
+        if (roadmap && !Array.isArray(roadmap)) setAssumptions(cleanAssumptions(roadmap.assumptions));
         setSaveState('saved');
       });
     return () => { live = false; };
@@ -153,9 +159,9 @@ const NetZero = () => {
     const baseline = baselineData && baselineData.total > 0
       ? { scope1Kg: baselineData.scope1, scope2Kg: baselineData.scope2, scope3Kg: baselineData.scope3, totalKg: baselineData.total }
       : baselineFromUsage(monthlyKwh, monthlyDiesel);
-    const result = calculateFeasibility(baseline, parseFloat(targetPct) || 30, parseFloat(timeline) || 12, sectorId);
+    const result = calculateFeasibility(baseline, parseFloat(targetPct) || 30, parseFloat(timeline) || 12, sectorId, assumptions);
     setFeasibility(result);
-  }, [sectorId, targetPct, timeline, baselineData, monthlyKwh, monthlyDiesel]);
+  }, [sectorId, targetPct, timeline, baselineData, monthlyKwh, monthlyDiesel, assumptions]);
 
   const baselineTotal = baselineData?.total || 0;
   const hasData = baselineTotal > 0;
@@ -205,7 +211,7 @@ const NetZero = () => {
     saveQueue.current = run.catch(() => undefined);
     return run;
   // eslint-disable-next-line react-hooks/exhaustive-deps -- saveGoalNow reads current state each run
-  }, [isAuthenticated, user?.id, feasibility, timeline, sectorId, goalCreatedAt, reportExportedAt]);
+  }, [isAuthenticated, user?.id, feasibility, timeline, sectorId, goalCreatedAt, reportExportedAt, assumptions]);
 
   const saveGoalNow = async (statuses: Record<string, TaskStatus>, extra?: { reportExportedAt?: string }) => {
     if (!isAuthenticated || !user?.id || !feasibility) return false;
@@ -218,7 +224,11 @@ const NetZero = () => {
       // Measured from when the goal was first set, so later saves do not move the date.
       target_date: targetDateFor(parseFloat(timeline) || 12, goalCreatedAt ? new Date(goalCreatedAt) : new Date()),
       sector: sectorId,
-      roadmap: { actions: feasibility.recommendedActions.map(a => a.id), ...(extra?.reportExportedAt || reportExportedAt ? { reportExportedAt: extra?.reportExportedAt ?? reportExportedAt } : {}) },
+      roadmap: {
+        actions: feasibility.recommendedActions.map(a => a.id),
+        ...(extra?.reportExportedAt || reportExportedAt ? { reportExportedAt: extra?.reportExportedAt ?? reportExportedAt } : {}),
+        ...(Object.keys(assumptions).length ? { assumptions } : {}),
+      },
       tasks: feasibility.recommendedActions.map(a => ({ id: a.id, status: statuses[a.id] || 'pending' })),
       progress_pct: feasibility.targetReductionKg > 0 ? Math.round(Math.min(100, (cut / feasibility.targetReductionKg) * 100)) : 0,
       status: 'active',
@@ -256,6 +266,27 @@ const NetZero = () => {
     window.clearTimeout(saveTimer.current);
     saveTimer.current = window.setTimeout(() => { void saveGoal(updated); }, 600);
   };
+
+  // An edited assumption changes the roadmap; once it is recalculated, a saved
+  // goal saves again after a short pause. A new goal saves them with "Save goal".
+  const assumptionsEdited = useRef(false);
+  const setAssumption = (key: string, value: number | null) => {
+    assumptionsEdited.current = true;
+    setAssumptions(prev => {
+      const next = { ...prev };
+      if (value === null) delete next[key]; else next[key] = value;
+      return next;
+    });
+  };
+  const resetAssumptions = () => { assumptionsEdited.current = true; setAssumptions({}); };
+  useEffect(() => {
+    if (!assumptionsEdited.current || !goalIdRef.current) return;
+    assumptionsEdited.current = false;
+    window.clearTimeout(saveTimer.current);
+    saveTimer.current = window.setTimeout(() => { void saveGoal(taskStatuses); }, 800);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once the edited roadmap is recalculated
+  }, [feasibility]);
+  const editedCount = Object.keys(assumptions).length;
 
   const exportReport = async () => {
     if (!feasibility) return;
@@ -457,7 +488,13 @@ const NetZero = () => {
             <section className="space-y-6">
               <div className="rounded-3xl border border-border p-5 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">Reduction Roadmap</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Ranked by cut for the effort. Each quest shows its estimated cut and how it is calculated, with every assumption you can replace from an energy audit.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Ranked by cut for the effort. Each quest shows its estimated cut and how it is calculated. Open it to replace any assumption with your own figure, from an energy audit or your records, and the cut recalculates.</p>
+                {editedCount > 0 && (
+                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-warning/40 bg-warning/5 px-3 py-2 text-xs">
+                    <span>{editedCount} {editedCount === 1 ? 'assumption uses your figure' : 'assumptions use your figures'}{goalId ? '' : '. Save the goal to keep them'}.</span>
+                    <button type="button" onClick={resetAssumptions} className="underline underline-offset-2">Reset all to defaults</button>
+                  </div>
+                )}
                 {feasibility && (
                   <ol className="mt-6 grid gap-3 sm:grid-cols-2">
                     {actions.map((action, i) => {
@@ -482,7 +519,11 @@ const NetZero = () => {
                                 {action.params.map(p => (
                                   <li key={p.label} className="flex flex-wrap gap-x-2">
                                     <span className={`rounded px-1 font-mono text-[10px] uppercase ${p.kind === 'constant' ? 'bg-primary/10 text-primary' : 'bg-warning/15 text-warning'}`}>{p.kind}</span>
-                                    <span>{p.label}: <span className="font-medium">{formatParam(p)}</span></span>
+                                    {p.kind === 'assumption' && p.key ? (
+                                      <div className="mt-1 w-full"><AssumptionField id={`nz-${action.id}-${p.key}`} param={p} onChange={setAssumption} /></div>
+                                    ) : (
+                                      <span>{p.label}: <span className="font-medium">{formatParam(p)}</span></span>
+                                    )}
                                     <span className="w-full text-muted-foreground">{p.source}</span>
                                   </li>
                                 ))}
