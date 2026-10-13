@@ -1,5 +1,4 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -230,7 +229,6 @@ const Verify = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Verify Emissions | Senseible</title></Helmet>
-      <CarbonParticles />
       <Navigation />
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
@@ -245,9 +243,7 @@ const Verify = () => {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-accent/10">
-                <Shield className="h-5 w-5 text-accent" />
-              </div>
+              <Shield className="h-4 w-4 shrink-0 text-accent" />
               Emissions to Verify
             </CardTitle>
           </CardHeader>

@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -311,7 +310,6 @@ const Monetize = () => {
   return (
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Monetize | Senseible</title></Helmet>
-      <CarbonParticles />
       <Navigation />
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
@@ -483,11 +481,8 @@ const Monetize = () => {
             {/* Audit Trail Export + Help Section */}
             <Card className="mt-8 bg-secondary/30">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10">
-                    <Shield className="h-6 w-6 text-accent" />
-                  </div>
-                  <div className="flex-1">
+                <div>
+                  <div>
                     <h4 className="font-semibold mb-1">How monetization works</h4>
                     <p className="text-sm text-muted-foreground mb-4">
                       Your verified carbon data is matched with buyers, lenders, and government programs. 
