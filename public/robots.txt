@@ -1,8 +1,24 @@
 # Senseible: https://senseible.earth
-# Public pages are open to search and AI crawlers. Signed-in and transactional
-# routes are excluded here and also carry a noindex tag.
+# Public pages are open to search, AI and social crawlers. Signed-in and
+# transactional routes are excluded here and also carry a noindex tag.
+#
+# One group for every crawler: a crawler obeys only the most specific group
+# naming it, so a separate "Allow: /" group would drop these Disallow rules.
 
 User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
 Allow: /
 Disallow: /api/
 Disallow: /auth
@@ -26,47 +42,5 @@ Disallow: /accept-invite
 Disallow: /admin
 Disallow: /cms-admin
 Disallow: /calculators/history
-
-# Search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# AI search and assistants (named explicitly so a later edit cannot block them)
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-# Social previews
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
 
 Sitemap: https://senseible.earth/sitemap.xml
