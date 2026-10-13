@@ -237,6 +237,11 @@ const Index = () => {
   const uploadOrganizationId = () =>
     uploadScopeRef.current?.kind === 'organization' ? uploadScopeRef.current.organizationId : undefined;
   const [state, setState] = useState<State>("idle");
+  // The first view paints at once: it holds the largest text on the page, and a
+  // fade from opacity 0 delays when browsers count it as shown (LCP). Coming
+  // back to the start after a result still fades in.
+  const [fadeHero, setFadeHero] = useState(false);
+  useEffect(() => { if (state !== "idle") setFadeHero(true); }, [state]);
   const [result, setResult] = useState<ProcessingResult | null>(null);
   const [documentType, setDocumentType] = useState<string>("");
   const [showBulkUpload, setShowBulkUpload] = useState(false);
@@ -776,7 +781,7 @@ const Index = () => {
 
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-6 sm:pt-0 sm:-mt-10">
         {state === "idle" && (
-          <div className="flex flex-col items-center gap-7 sm:gap-8 animate-fade-in">
+          <div className={`w-full flex flex-col items-center gap-7 sm:gap-8 ${fadeHero ? "animate-fade-in" : ""}`}>
             {/* Animated use case headline - ABOVE icons for maximum impact */}
             <UseCaseTyper className="mt-2" />
             
