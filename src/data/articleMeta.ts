@@ -3,6 +3,9 @@
 // H1 keeps the full headline. Used by both the client (SEOHead) and the
 // build-time prerender (scripts/generate-static-html.js) via src/lib/seo.
 export const articleMetaTitles: Record<string, string> = {
+  'rooftop-solar-net-metering-pakistan-factories': 'Is Rooftop Solar Worth It for Factories in Pakistan Now?',
+  'green-finance-textile-recycling-panipat': 'Green Finance for Textile Recyclers in Panipat',
+  'germany-supply-chain-act-lksg-indian-suppliers': 'Germany\'s Supply Chain Act (LkSG) for Indian Suppliers',
   'green-loan-garment-factory-dhaka': 'Green Loan for a Garment Factory in Dhaka or Gazipur',
   'green-loan-steel-msme-ludhiana-raipur': 'Green Loan for a Steel MSME in Ludhiana or Raipur',
   'finance-cbam-compliance-steel-vietnam': 'Financing CBAM Compliance for Steel Exporters in Vietnam',

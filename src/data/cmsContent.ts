@@ -6836,6 +6836,383 @@ This is general guidance, not tax or legal advice.`,
     createdAt: '2026-10-13',
     featured: false
   },
+  // Sources researched October 2026 (kept here, not on the page):
+  // downtoearth.org.in "Maharashtra's clean industry plan runs into funding
+  // and policy gaps in Kolhapur foundries" (29 June 2026: BEE State Energy
+  // Efficiency Action Plan 2024 targets; foundry target 0.066 to 0.088 Mtoe by
+  // 2031; owners cite awareness, subsidised finance and implementation;
+  // auditors on furnace optimisation; solar banking rules and grid charges;
+  // Kohinoor Metallics: Rs 10 lakh repairs, Rs 6 crore private bank loan for a
+  // 6 MW open-access solar plant); sbi.co.in Project Uptech FAQ (divided blast
+  // cupola, about 30% fuel saving, about 90 units); ADEETIE sources as in
+  // article 154.
+  {
+    id: '160',
+    slug: 'green-loan-foundry-kolhapur',
+    title: 'How to Get a Green Loan for a Foundry in Kolhapur',
+    subtitle: 'Green Finance',
+    content: `Kolhapur's foundries cast the engine blocks, pump housings and machine parts that India's auto and engineering industries run on. Melting iron takes a great deal of energy, by coke in cupolas or electricity in induction furnaces, so the energy bill is the biggest cost a foundry owner can actually change.
+
+Maharashtra has a plan for that. A State Energy Efficiency Action Plan prepared by the Bureau of Energy Efficiency in 2024 sets a target for foundries to cut energy use by 0.066 to 0.088 million tonnes of oil equivalent by 2031. But in June 2026, Down To Earth reported that Kolhapur owners face poor awareness of schemes, limited access to subsidised finance and weak implementation. This article answers the practical question: how does a Kolhapur foundry finance the upgrade?
+
+## What actually saves energy in a foundry
+
+Auditors interviewed by Down To Earth made a point many owners miss: switching from coal to electricity is not the same as becoming efficient. The savings come from:
+
+- **Melting:** furnace optimisation, correct charge mix and sizing, lids kept closed, and repairs to linings and coils.
+- **Cupolas, where still used:** the divided-blast cupola. SBI's Project Uptech work in Kolhapur reported about 30 percent fuel savings with it, adopted by around 90 units.
+- **Ladles and holding:** preheating and insulation to cut heat losses between melt and pour.
+- **Sand plant, compressors and motors:** variable-speed drives and leak repair.
+- **Power supply:** rooftop or open-access solar for the melting load.
+
+## The finance options
+
+**ADEETIE.** The Bureau of Energy Efficiency's scheme offers a 5 percent interest subvention for micro and small units and 3 percent for medium units, for projects that save at least 10 percent energy, in its notified clusters. Check whether Kolhapur is listed for foundries before planning around it; see [ADEETIE scheme eligibility and application](/climate-intelligence/adeetie-scheme).
+
+**Bank term loans.** Down To Earth described one Shirol foundry, Kohinoor Metallics, that spent ₹10 lakh repairing and upgrading machinery and took a ₹6 crore loan from a private bank at industrial interest rates for a 6 MW open-access solar plant. That is the ordinary route when a scheme does not fit.
+
+**Solar loans.** Banks run dedicated solar loans for MSMEs; owners told the same reporter that changing solar banking rules and grid charges have stretched paybacks, so model your own case carefully.
+
+## What the lender needs
+
+1. **Twelve months of electricity bills** and coke or fuel invoices.
+2. **Monthly output** in tonnes of good castings, so you can state kWh or coke per tonne.
+3. **An energy audit** with each measure's saving and cost; see [how to get an energy audit for an MSME](/climate-intelligence/energy-audit-for-msme-india).
+4. **A metering plan** for proving the saving later.
+
+Senseible reads the bills and fuel invoices you already have and gives you energy and emissions per month, each figure linked to its source document, the baseline both the auditor and the bank ask for.
+
+## Will Europe care?
+
+Iron castings sold to EU buyers are not covered by CBAM today, as the Shirol owner noted, but the EU has proposed bringing about 180 more steel products into CBAM from 2028. Buyers already ask for emissions per part. A foundry that measures now will be ready for both.
+
+Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['kolhapur', 'foundry', 'maharashtra', 'green loan', 'energy efficiency', 'castings'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page): RBI
+  // circular RBI/2023-24/14, "Framework for acceptance of Green Deposits",
+  // 11 April 2023, effective 1 June 2023 (rbi.org.in Id=12487); KPMG First
+  // Notes May 2023; vinodkothari.com 2023/04 commentary (applicability,
+  // board-approved financing framework published on website, eligible
+  // activities per Indian green taxonomy once notified, allocation, reporting
+  // and third-party verification).
+  {
+    id: '161',
+    slug: 'rbi-green-deposits-what-banks-finance',
+    title: 'What Can Banks in India Finance With Green Deposits?',
+    subtitle: 'Green Finance',
+    content: `Walk into many Indian banks today and you can open a green fixed deposit. The money is supposed to go to green projects. For a business owner looking for finance, that raises a useful question: if banks are collecting green money, what kinds of loans is it meant for, and how do you get one?
+
+This article explains the Reserve Bank of India's green deposit rules from the borrower's side.
+
+## The rules in brief
+
+The RBI issued its **Framework for Acceptance of Green Deposits** on 11 April 2023, effective 1 June 2023. It applies to scheduled commercial banks, including small finance banks, and to deposit-taking NBFCs, including housing finance companies. Regional rural banks, local area banks and payments banks are excluded.
+
+A green deposit is an ordinary interest-bearing deposit for a fixed period, with one difference: the money raised must be allocated to green finance, meaning activities and projects that contribute to climate mitigation and other environmental objectives.
+
+## What each bank must publish
+
+Each bank or NBFC taking green deposits must have a board-approved financing framework, published on its website. It has to set out:
+
+- **Eligible green activities** the deposits can fund. Eligibility is to follow India's official green taxonomy once it is notified.
+- **How projects are evaluated and selected.**
+- **How the borrower's sustainability information is monitored and validated.**
+- **How proceeds are allocated and reported,** including third-party verification.
+
+That last point is why green deposit money comes with paperwork. The bank must be able to show, to a verifier and to its depositors, that the money went where it said.
+
+## What this means for a borrower
+
+1. **Read your bank's framework.** It is public. It tells you which activities qualify, such as renewable energy, energy efficiency, clean transport, green buildings or pollution control, and what evidence the bank will ask for.
+2. **Expect monitoring after the loan.** Because the bank reports on allocation and impact, it will ask for data during the loan, not just at sanction: energy generated or saved, emissions avoided, project completion.
+3. **Bring documented data.** A borrower who can show monthly energy use and emissions from bills and invoices, before and after the project, is easier for the bank to allocate green money to.
+
+Green deposits are a source of funds for the bank, not a separate loan product with fixed concessional rates. Whether you get a better price depends on the bank's own green lending policy.
+
+Senseible keeps a borrower's energy and emissions as a monthly record linked to each bill and invoice, which is the kind of evidence a bank needs for allocation and impact reporting. For the loan process itself, read [how to get a green loan in India](/climate-intelligence/how-to-get-green-loans-india-carbon-data), and for common pitfalls, [why green loans get rejected](/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them).
+
+This is general guidance. Check your bank's published green financing framework for its eligible activities and terms.`,
+    tags: ['rbi', 'green deposits', 'green finance', 'banks', 'india', 'green loans'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // idcol.org rooftop solar project page (term loan up to 80% of project
+  // cost, 10-year tenor, 1-year grace, monthly repayment, fixed 5.5% for a
+  // 50% tranche or 5.0% for a 75% tranche; CAPEX and RESCO/OPEX models);
+  // thedailystar.net "Factories slash carbon with rooftop solar push"
+  // (commercial bank loans short and costly; IDCOL 165 MWp across 52
+  // factories; grid Tk 10 to 12 per kWh; net metering paperwork; EPZs; BEPZA
+  // and SREDA Net Metering Guidelines 2025); thefinancialexpress.com.bd CPD
+  // study (RMG rooftop potential 1,768 MWp across 2,303 factories; 1,359
+  // investable with support; SME rates 9 to 12%).
+  {
+    id: '162',
+    slug: 'rooftop-solar-loan-factory-bangladesh',
+    title: 'How to Finance Rooftop Solar for a Factory in Bangladesh',
+    subtitle: 'Green Finance',
+    content: `A garment or textile factory in Bangladesh has acres of flat roof and a grid bill that, by The Daily Star's reporting, runs at Tk 10 to 12 per kilowatt-hour. Rooftop solar is the obvious answer, and European buyers increasingly expect it. The obstacle is money: solar costs a lot up front, and ordinary bank loans are short and expensive.
+
+This article explains the main finance routes and what a factory needs to apply.
+
+## How much roof there is
+
+A Centre for Policy Dialogue study estimated the technical rooftop solar potential of the ready-made garment sector at about 1,768 MWp across 2,303 factories, and found that around 1,359 of them could become investable with credit enhancement, interest subsidies and longer loan tenors. It reported that SMEs face commercial lending rates of 9 to 12 percent.
+
+## Route 1: IDCOL's rooftop solar programme
+
+IDCOL, the state-owned infrastructure finance company, publishes these terms for rooftop solar:
+
+- **Loan:** up to 80 percent of project cost.
+- **Tenor:** 10 years, with a 1-year grace period on principal and monthly repayment.
+- **Rate:** fixed at 5.5 percent a year for a tranche of 50 percent of the loan amount, or 5.0 percent for a 75 percent tranche, as listed on its page.
+
+The Daily Star reported that IDCOL had financed 165 MWp across 52 factories. Confirm the current terms directly with IDCOL, as published rates can change.
+
+## Route 2: Pay for the power, not the panels
+
+Under a **RESCO or OPEX model**, a developer installs and owns the system on your roof and sells you the electricity at an agreed rate, usually below the grid tariff. You invest nothing up front, and the developer arranges the finance, often through the same channels. IDCOL supports both the CAPEX model, where the factory owns the system, and the RESCO model.
+
+## Route 3: Bangladesh Bank green refinancing
+
+Bangladesh Bank refinances banks for listed green products, and its Green Transformation Fund covers imported green machinery for exporters. See [green loans for garment factories in Dhaka](/climate-intelligence/green-loan-garment-factory-dhaka).
+
+## Net metering
+
+Net metering lets a factory export surplus power to the grid. The Daily Star reported that it often takes months of paperwork and multiple approvals, and that it had not yet been implemented in export processing zones, where BEPZA said it was moving to introduce it under SREDA's Net Metering Guidelines 2025. Size the system to your own daytime load so the project works without relying on exports.
+
+## What to prepare
+
+1. **Twelve months of electricity bills** with units and time-of-day split, plus diesel invoices if you run generators.
+2. **A structural certificate** that the roof can carry the panels.
+3. **Developer quotations** with expected annual generation.
+4. **Ownership or lease documents** for the roof.
+
+Senseible reads electricity bills and generator fuel invoices and shows energy and emissions per month, each linked to its source, which gives both the lender and your buyers the before-and-after record. For buyer requirements, see [CBAM and CSDDD for Bangladesh garment exporters](/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026).
+
+Confirm current terms with IDCOL or your bank before you apply.`,
+    tags: ['bangladesh', 'rooftop solar', 'idcol', 'garment factories', 'green finance', 'net metering'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // profit.pakistantoday.com.pk 2025/03/13 (ECC cut buyback from Rs27 to Rs10
+  // per unit for new consumers; NEPRA may adjust periodically); 2025/12/22
+  // (NEPRA draft Prosumer Regulations: new systems paid Rs11.30 per exported
+  // unit under gross metering vs Rs22 under net metering; existing seven-year
+  // agreements continue; five-year contracts; 30 days for comments);
+  // 2026/01/31 (net billing: imports at national tariff, exports credited at a
+  // lower fixed rate).
+  {
+    id: '163',
+    slug: 'rooftop-solar-net-metering-pakistan-factories',
+    title: 'Is Rooftop Solar Still Worth It for Factories in Pakistan After the Net Metering Changes?',
+    subtitle: 'Green Finance',
+    content: `For three years, rooftop solar was the easiest saving a Pakistani factory could make. Power prices kept rising, panels kept getting cheaper, and net metering let you export surplus power and offset it unit for unit against what you bought. Then the rules started to change.
+
+This article explains what changed, what is still proposed, and how a factory owner should judge solar now.
+
+## What has changed
+
+- **March 2025:** the Economic Coordination Committee approved cutting the buyback rate for new net metering consumers from Rs27 to Rs10 per unit, and gave NEPRA the power to adjust it periodically. Existing consumers kept their terms.
+- **December 2025:** NEPRA published draft Prosumer Regulations. New rooftop systems would be paid about Rs11.30 per exported unit under gross metering, against Rs22 under net metering at the time. Existing net metering consumers with valid seven-year agreements would keep their rate until their contracts expire. New contracts would run five years.
+- **January 2026:** reporting described the direction as **net billing**: power you import is billed at the full tariff, and power you export is credited at a lower fixed rate, rather than offsetting one for one.
+
+At the time of writing, check NEPRA's latest notification for the final rules. Most coverage focuses on domestic users, so confirm how they apply to your industrial connection.
+
+## What it means for the numbers
+
+The change does not touch the value of solar power you use yourself. Every unit generated and consumed on site still avoids a unit bought at the industrial tariff. What falls is the value of surplus exported to the grid.
+
+So the question becomes: how much of your solar output can you use?
+
+- **A factory running one or two shifts, mostly in daytime,** uses most of what the panels produce. Solar still pays well.
+- **A factory with a small daytime load and big panels** exports a lot and now earns much less for it.
+
+## How to size solar under the new rules
+
+1. **Pull twelve months of bills** and, if you can, hourly or time-of-day demand.
+2. **Size the system to your daytime base load,** not to the roof area or your annual units.
+3. **Consider storage only where the numbers work;** batteries add cost and need replacement.
+4. **Shift flexible loads to daytime,** such as compressors, pumps and some processes, to raise self-consumption.
+
+## Paying for it
+
+The State Bank's dedicated renewable energy refinancing scheme closed to new financing from 1 July 2024. Banks now judge solar projects against the Pakistan Green Taxonomy and lend through their normal credit process; see [how to get a green loan for a textile business in Karachi](/climate-intelligence/green-loan-textile-business-karachi).
+
+Senseible reads your electricity bills for units and billing periods and shows how much grid power solar is replacing each month, the figure that now decides whether solar pays. For EU buyers, the same records feed the emissions data they ask for; see [exporting textiles to Europe from Karachi](/climate-intelligence/export-textiles-to-europe-from-karachi).
+
+This is general guidance. Check NEPRA's current regulations and your distribution company's terms before investing.`,
+    tags: ['pakistan', 'rooftop solar', 'net metering', 'nepra', 'factories', 'net billing'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // sbi.co.in / sbi.bank.in Surya Shakti solar finance pages (MSME variant up
+  // to Rs 10 crore; up to 10 years incl. moratorium; 20% margin; Udyam
+  // registration; grid-connected with net metering; promoters' CIBIL 650+;
+  // collateral not mandatory if security coverage adequate; personal
+  // guarantee; EBR-linked pricing, one version shows repo + 2.65%; processing
+  // fee shown as 0.75% or 1% plus GST on different versions; nil prepayment);
+  // indianbank.in IND-Surya Shakti (collateral: equitable mortgage of the
+  // property where the plant is erected).
+  {
+    id: '164',
+    slug: 'solar-loan-for-msme-india',
+    title: 'How to Get a Solar Loan for an MSME in India',
+    subtitle: 'Green Finance',
+    content: `Rooftop solar is often the first green project an Indian MSME takes on. It cuts the electricity bill from the first month, it needs no change to the production process, and banks understand it well. The question is which loan to use and what the bank will ask for.
+
+This article walks through how bank solar loans for MSMEs typically work, using two published schemes as examples, and what to prepare.
+
+## What a bank solar loan looks like
+
+State Bank of India's **Surya Shakti** solar finance is one widely available example. Its published terms for MSMEs include:
+
+- **Loan size:** up to ₹10 crore.
+- **Repayment:** up to 10 years, including an initial moratorium.
+- **Your contribution:** at least 20 percent of the project cost.
+- **Eligibility:** Udyam registration, a grid-connected system with net metering, and promoters with CIBIL scores of at least 650.
+- **Security:** collateral is not mandatory if the bank judges security coverage adequate; promoters give personal guarantees.
+- **Pricing:** linked to the bank's external benchmark rate. Processing fees and the spread have differed between versions of the published page, so ask for the current figures.
+- **Prepayment:** no charges, per the published terms.
+
+Other banks' products differ in ways that matter. Indian Bank's IND-Surya Shakti, for example, asks for collateral in the form of an equitable mortgage on the property where the plant is installed. Compare at least two banks on rate, fees, tenor and security, not just the headline.
+
+## Is it worth it?
+
+The return depends on three things: your electricity tariff, how much of the solar output you use during working hours, and your state's net metering rules. A factory that uses most of its solar power on site recovers the cost far faster than one that exports most of it. The [energy transition savings calculator](/calculators/energy-transition-savings) models payback from your own numbers.
+
+## What to prepare
+
+1. **Udyam registration** and the business's financial statements, as the bank requires.
+2. **Twelve months of electricity bills,** with units consumed and sanctioned load.
+3. **A quotation** from an installer, with system size, expected generation and equipment details.
+4. **Roof ownership or lease documents,** and a structural check for larger systems.
+5. **Net metering approval** from your distribution company, or the application.
+
+## After installation
+
+Keep the bills coming. Your post-solar bills show the reduction, which matters for your own reporting and for any future green loan. If you supply listed companies or EU buyers, they will also want to see it.
+
+Senseible reads electricity bills for units and billing periods only, never consumer names or account numbers, and shows your grid use and emissions month by month, so the effect of the panels is visible and documented. For more routes, see [how to get a green loan in India](/climate-intelligence/how-to-get-green-loans-india-carbon-data) and [green energy open access for factories in India](/climate-intelligence/green-energy-open-access-india) if your roof is too small.
+
+Confirm current terms with the bank before you apply.`,
+    tags: ['solar loan', 'msme', 'india', 'rooftop solar', 'sbi surya shakti', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // fmc.org.in Panipat Textile Recycling Sustainability Readiness Report and
+  // draft DSR (12 Feb 2026, with Reverse Resources and SUSTENT; open for
+  // comment); switch-asia.eu "Accelerating circularity in India's textile
+  // sector: green finance takes centre stage in Panipat" and Green Threads
+  // (2025 to 2028, FMC; August 2025 workshop; DPP pilot with Green Story);
+  // textileexcellence.com news 6830 (waste crisis); fibre2fashion article
+  // 11569 (dyeing units moving from coal to biomass or LPG; machinery 10 to
+  // 15 years old; about 1.4 Mt CO2 a year for the cluster).
+  {
+    id: '165',
+    slug: 'green-finance-textile-recycling-panipat',
+    title: 'How Can Textile Recyclers in Panipat Get Green Finance and Keep EU Buyers?',
+    subtitle: 'Green Finance',
+    content: `Panipat turns the world's discarded clothes into blankets, yarn and home furnishings. It is often called India's recycling capital, and recycled textiles are exactly what European brands say they want more of. That should make the cluster a natural fit for green finance. In practice, many units run old machines, burn fuel for dyeing and have little paperwork to show buyers what they do.
+
+This article answers how a Panipat recycler can finance cleaner production and prove it to the buyers who matter.
+
+## Where the cluster stands
+
+Reporting on the cluster describes a mixed picture. Many dyeing units have moved from coal to biomass or LPG, but energy efficiency and effluent treatment remain uneven, and many enterprises still run machinery 10 to 15 years old. One estimate puts the cluster's emissions at about 1.4 million tonnes of CO2 a year.
+
+## What European buyers are starting to ask
+
+Recycled content is a selling point only if it can be shown. Sources on the cluster tie its exposure to the EU's Ecodesign for Sustainable Products Regulation, the coming **Digital Product Passport**, restrictions on textile waste exports and tighter reporting. Only some export-oriented units hold certifications such as the Global Recycled Standard or GOTS today. Textiles are not covered by CBAM, but the passport will ask for information that starts on the factory floor: materials, recycled share, and in time, environmental footprint.
+
+## Help that exists
+
+The EU SWITCH-Asia **Green Threads** project, running from 2025 to 2028 and led by the Foundation for MSME Clusters, works with Panipat recyclers on sustainability and finance. It held an exporters' workshop on EU textile rules in August 2025 and launched a Digital Product Passport pilot with Green Story. A draft sustainability readiness study of the cluster, prepared with Reverse Resources and SUSTENT Consulting, was published for comment in February 2026.
+
+## What green finance can pay for
+
+- **Efficient dyeing and finishing machines** that use less heat, water and chemicals.
+- **Boiler upgrades** and fuel switching where coal remains.
+- **Rooftop solar** for spinning and weaving loads.
+- **Effluent treatment** improvements.
+
+Bank green loans, SIDBI's energy efficiency products and, where Panipat is a notified cluster, the BEE's ADEETIE interest subvention are the main routes; see [ADEETIE scheme eligibility and application](/climate-intelligence/adeetie-scheme) and [how to get a green loan in India](/climate-intelligence/how-to-get-green-loans-india-carbon-data).
+
+## What to document, for lenders and buyers alike
+
+1. **Energy by month:** electricity bills and fuel invoices, in units.
+2. **Output by month:** kilograms of yarn or pieces.
+3. **Inputs:** purchase records for waste and fibre, showing recycled share.
+4. **The project:** expected saving and how it will be measured.
+
+Senseible turns bills, fuel invoices and purchase records into monthly energy and emissions per kilogram, each linked to its source document, a starting point for both the loan file and the product passport. For buyer data requests, see [Scope 3 data for Pakistani textile exporters](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers), which applies equally to Indian suppliers.
+
+Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['panipat', 'textile recycling', 'digital product passport', 'green finance', 'haryana', 'espr'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // dihk.de "Changes to the German Supply Chain Act" (cabinet approved
+  // amendment early September 2025; annual reporting obligation removed,
+  // retroactively; authority stopped reviewing reports; core duties remain;
+  // fines only for severe violations; CSDDD to be transposed by mid-2028,
+  // initially for companies with 5,000+ employees and EUR 1.5bn turnover);
+  // nwb-experten-blog.de (Bundestag first reading 14 Jan 2026).
+  {
+    id: '166',
+    slug: 'germany-supply-chain-act-lksg-indian-suppliers',
+    title: "What Does Germany's Supply Chain Act (LkSG) Mean for Indian Suppliers?",
+    subtitle: 'Supply Chain Emissions',
+    content: `If you sell to a large German company, you have probably received a supplier code of conduct, a questionnaire about labour and environmental practices, or a request to sign a declaration. Most of it traces back to one law: the German Supply Chain Due Diligence Act, known as the LkSG.
+
+In 2025 Germany began loosening that law. This article explains what changed, what did not, and what an Indian supplier should still expect.
+
+## What the LkSG requires
+
+The LkSG applies to large companies in Germany. It requires them to run risk management across their supply chains for human rights and certain environmental risks: carry out regular risk analyses, take preventive measures, set up a complaints procedure, and act when they find violations. Suppliers are not directly bound by the law, but their German customers must assess and manage them.
+
+## What changed in 2025 and 2026
+
+- **Reporting removed.** In early September 2025 the German cabinet approved an amendment that removes the annual reporting obligation, retroactively. The supervisory authority has already stopped reviewing those reports.
+- **Lighter sanctions.** Fines are to apply only to severe violations leading to significant human rights infringements.
+- **Status.** The Bundestag held the first reading of the amending bill on 14 January 2026. Check whether it has been finally passed.
+
+## What did not change
+
+The core duties stay: risk management, regular risk analyses and preventive measures in supply chains. For a supplier, that means the questionnaires and audits do not go away. What goes away is the German company's annual public report.
+
+## What comes next: the EU directive
+
+Germany must also transpose the EU's revised Corporate Sustainability Due Diligence Directive by mid-2028. As revised, it will initially apply only to very large companies, those with 5,000 employees and €1.5 billion in global net turnover. Its duties will eventually replace much of the LkSG for those companies.
+
+## What an Indian supplier should do
+
+1. **Keep your answers consistent and documented.** German customers still need evidence for their risk analysis: labour practices, health and safety, environmental permits, and where your own inputs come from.
+2. **Map your own suppliers.** Customers increasingly ask about tier 2 risks, such as cotton, metals or chemicals.
+3. **Have environmental data ready.** Energy use, emissions, water and waste are now routine parts of German supplier questionnaires, alongside the social questions.
+4. **Treat it as a sales asset.** A supplier who answers quickly and with evidence is cheaper for a German buyer to keep.
+
+Senseible helps with the environmental side: energy use and emissions built from your bills and invoices, each number linked to its source, ready for a customer questionnaire. For the EU-level picture, read [CBAM and CSDDD for Bangladesh garment exporters](/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026), which applies the same logic to a neighbouring supplier country.
+
+This is general guidance, not legal advice. Check the final text of the amended LkSG and your customer's requirements.`,
+    tags: ['germany', 'lksg', 'supply chain act', 'due diligence', 'indian suppliers', 'csddd'],
+    category: 'supply-chain',
+    createdAt: '2026-10-13',
+    featured: false
+  },
 ];
 
 // Get featured articles for landing page

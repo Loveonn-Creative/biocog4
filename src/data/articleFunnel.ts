@@ -149,4 +149,11 @@ export const articleFunnel: Record<string, { stage: FunnelStage; anchor: string 
   'green-energy-open-access-india': { stage: 'consideration', anchor: 'green energy open access for factories in India' },
   'cbam-fastener-exporters-india': { stage: 'consideration', anchor: 'CBAM for fastener exporters in India' },
   'south-africa-carbon-tax-cbam': { stage: 'awareness', anchor: 'South Africa\'s carbon tax and CBAM' },
+  'green-loan-foundry-kolhapur': { stage: 'decision', anchor: 'green loan for a foundry in Kolhapur' },
+  'rbi-green-deposits-what-banks-finance': { stage: 'consideration', anchor: 'what banks finance with green deposits' },
+  'rooftop-solar-loan-factory-bangladesh': { stage: 'decision', anchor: 'rooftop solar finance for factories in Bangladesh' },
+  'rooftop-solar-net-metering-pakistan-factories': { stage: 'consideration', anchor: 'rooftop solar for factories in Pakistan' },
+  'solar-loan-for-msme-india': { stage: 'decision', anchor: 'solar loan for an MSME in India' },
+  'green-finance-textile-recycling-panipat': { stage: 'consideration', anchor: 'green finance for textile recyclers in Panipat' },
+  'germany-supply-chain-act-lksg-indian-suppliers': { stage: 'awareness', anchor: 'Germany\'s supply chain act for Indian suppliers' },
 };
