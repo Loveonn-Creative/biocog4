@@ -10,6 +10,7 @@ import { PAGE_REVIEWS, REVIEWERS } from "@/lib/seo/seoMeta";
 import { FormattedContent } from "@/components/FormattedContent";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { articleFunnel, FUNNEL_LABEL } from "@/data/articleFunnel";
 import { getArticleBySlug, getRelatedArticles, getArticlesByCategory, cmsCategories } from "@/data/cmsContent";
 
 const CMSArticle = () => {
@@ -105,13 +106,20 @@ const CMSArticle = () => {
         </nav>
         
         <article className="animate-fade-in">
-          {/* Category badge */}
-          <button 
-            onClick={handleCategoryClick}
-            className="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-4 hover:bg-primary/20 transition-colors"
-          >
-            {article.subtitle}
-          </button>
+          {/* Category badge, then the reader's stage: what this page helps them do */}
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <button 
+              onClick={handleCategoryClick}
+              className="inline-block text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full hover:bg-primary/20 transition-colors"
+            >
+              {article.subtitle}
+            </button>
+            {articleFunnel[article.slug] && (
+              <span className="inline-block rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+                {FUNNEL_LABEL[articleFunnel[article.slug].stage].stage} · {FUNNEL_LABEL[articleFunnel[article.slug].stage].intent}
+              </span>
+            )}
+          </div>
           
           {/* Title */}
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground mb-6 leading-tight">

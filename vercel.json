@@ -20,6 +20,176 @@
       "source": "/cbam-cost/steel",
       "destination": "/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034",
       "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/climate-finance-analyst-salary-india-2026",
+      "destination": "/climate-intelligence/climate-finance-analyst-salary-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/esg-jobs-bengaluru-2026",
+      "destination": "/climate-intelligence/esg-jobs-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/how-karachi-textile-exporters-access-green-loans",
+      "destination": "/climate-intelligence/green-loan-textile-business-karachi",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/how-karachi-textile-exporters-supply-european-markets",
+      "destination": "/climate-intelligence/export-textiles-to-europe-from-karachi",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-johannesburg-steel-metals-firms",
+      "destination": "/climate-intelligence/green-loan-steel-business-johannesburg",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-dhaka-gazipur-garment-exporters",
+      "destination": "/climate-intelligence/green-loan-garment-factory-dhaka",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes",
+      "destination": "/climate-intelligence/green-loan-steel-msme-ludhiana-raipur",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-tamil-nadu-textile-clusters",
+      "destination": "/climate-intelligence/green-loan-textile-mill-tamil-nadu",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/vietnam-steel-exporters-cbam-green-finance",
+      "destination": "/climate-intelligence/finance-cbam-compliance-steel-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/turkish-steel-cement-exporters-cbam-green-finance",
+      "destination": "/climate-intelligence/green-finance-steel-cement-turkey",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-morbi-ceramic-cluster",
+      "destination": "/climate-intelligence/green-loan-ceramic-factory-morbi",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-firozabad-glass-cluster",
+      "destination": "/climate-intelligence/finance-glass-furnace-firozabad",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-chattogram-steel-ship-recycling",
+      "destination": "/climate-intelligence/green-finance-ship-recycling-chattogram",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-pakistan-cement-makers",
+      "destination": "/climate-intelligence/green-loan-cement-plant-pakistan",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/vietnam-cement-carbon-market-green-finance",
+      "destination": "/climate-intelligence/finance-emission-cuts-cement-plant-vietnam",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-turkish-textile-exporters",
+      "destination": "/climate-intelligence/green-finance-textile-exporter-turkey",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-south-africa-ferrochrome-smelters",
+      "destination": "/climate-intelligence/renewable-power-ferrochrome-smelter-south-africa",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/how-german-importers-lower-cbam-costs",
+      "destination": "/climate-intelligence/lower-cbam-costs-importer-germany",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/polish-steel-importers-cbam-supplier-data",
+      "destination": "/climate-intelligence/cbam-supplier-data-steel-importer-poland",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/italian-rerollers-cbam-slab-imports",
+      "destination": "/climate-intelligence/cbam-cost-imported-steel-slab-italy",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-jalna-steel-rerolling-cluster",
+      "destination": "/climate-intelligence/green-loan-steel-rolling-mill-jalna",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/turkish-aluminium-extruders-cbam",
+      "destination": "/climate-intelligence/cbam-cost-aluminium-extrusion-turkey",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/indian-aluminium-exporters-cbam",
+      "destination": "/climate-intelligence/cbam-aluminium-exporter-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/indian-pharma-suppliers-nhs-carbon-reduction-plan",
+      "destination": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-finance-gujarat-chemical-clusters",
+      "destination": "/climate-intelligence/green-loan-chemical-plant-gujarat",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/fertiliser-importers-cbam-germany-poland",
+      "destination": "/climate-intelligence/cbam-fertiliser-imports-germany-poland",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/how-cbam-certificate-price-is-set",
+      "destination": "/climate-intelligence/cbam-certificate-price",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/india-ccts-emission-intensity-targets-sectors",
+      "destination": "/climate-intelligence/india-carbon-credit-trading-scheme-targets",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/adeetie-scheme-explained-msme-energy-efficiency",
+      "destination": "/climate-intelligence/adeetie-scheme",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/financed-emissions-pcaf-indian-banks-nbfcs",
+      "destination": "/climate-intelligence/financed-emissions-banks-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/energy-audit-msme-india-how-to-get-one",
+      "destination": "/climate-intelligence/energy-audit-for-msme-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/green-energy-open-access-india-factories",
+      "destination": "/climate-intelligence/green-energy-open-access-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/cbam-indian-fastener-exporters",
+      "destination": "/climate-intelligence/cbam-fastener-exporters-india",
+      "permanent": true
+    },
+    {
+      "source": "/climate-intelligence/south-africa-carbon-tax-cbam-deduction",
+      "destination": "/climate-intelligence/south-africa-carbon-tax-cbam",
+      "permanent": true
     }
   ],
   "rewrites": [

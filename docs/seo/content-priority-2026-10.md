@@ -159,3 +159,32 @@ Each cell is one page answering one question. A cell is filled only when the pag
 - EU: aluminium importers in Germany and Italy
 
 Pages stay out when no place-specific fact exists, so the matrix never fills itself with template pages.
+
+## Titles, slugs, funnel stage and anchor text
+
+Every article follows these rules. The data lives in `src/data/articleFunnel.ts`, and `tests/article-funnel.test.ts` enforces it.
+
+**Title.** Write it the way a buyer types or says the question: plain words, with the industry, the project, the place and the financing need. For example: "How to Get a Green Loan for a Steel Business in Johannesburg". No jargon stacks, no keyword lists. If the title runs past 60 characters, a shorter search title goes in `articleMeta.ts`.
+
+**Slug.** Short lowercase words joined by hyphens: the core query, nothing else. For example: `green-loan-steel-business-johannesburg`.
+- No years in new slugs, so a page doesn't look dated.
+- No filler such as "how-to" or "guide" unless it is the query itself.
+- Indexed slugs are never changed without a 301 redirect in `vercel.json`. The 34 articles renamed in October 2026 all have one.
+
+**Funnel stage and intent.**
+
+| Stage | Search intent | The reader wants to | Typical titles |
+|---|---|---|---|
+| Awareness | Informational | Understand the problem | "What is…", rules explained, salary and jobs |
+| Consideration | Commercial investigation | Explore solutions and compare finance options | "X vs Y", cost, "how to finance…" |
+| Decision | Transactional | Check eligibility, apply, find lenders, prepare documents | "How to get a green loan for…", checklists, documents |
+
+The stage shows on each article as a small chip, for example "Decision · Eligibility and how to apply".
+
+Current split: 57 awareness, 44 consideration, 32 decision.
+
+**Anchor text.** Each article has one defined anchor: the plain phrase a buyer would search, in 2 to 9 words. For example: "green loan for a steel business in Johannesburg".
+- Use it, or a close natural variant, when linking to that article.
+- Never use "click here", "read more" or a bare URL.
+- One link per target per page.
+- Link down the funnel: awareness pages link to consideration pages, and consideration pages link to decision pages.
