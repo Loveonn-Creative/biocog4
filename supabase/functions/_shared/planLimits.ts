@@ -42,3 +42,20 @@ export function monthStartIst(now = new Date()): string {
 export function monthlyLimitMessage(limit: number): string {
   return `You have used this month's ${limit} invoice reads on your plan. Already stored invoices still open as usual. Upgrade on the Subscription page, or wait for the new month.`;
 }
+
+const PLAN_RANK: Record<PlanTier, number> = { snapshot: 0, essential: 1, pro: 2, scale: 3 };
+
+/**
+ * The higher of two plans in force, each with its own expiry. Used so an
+ * active paid subscription row counts even if the profile copy of the tier
+ * failed to update.
+ */
+export function strongerPlan(
+  a: { tier: string | null | undefined; expiresAt: string | null | undefined },
+  b: { tier: string | null | undefined; expiresAt: string | null | undefined },
+  now = new Date(),
+): { tier: string | null | undefined; expiresAt: string | null | undefined } {
+  const pa = effectivePlanTier(a.tier, a.expiresAt, now);
+  const pb = effectivePlanTier(b.tier, b.expiresAt, now);
+  return PLAN_RANK[pb] > PLAN_RANK[pa] ? b : a;
+}

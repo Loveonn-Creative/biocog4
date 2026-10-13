@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { reconcileUser } from "../_shared/razorpayReconcile.ts";
+import { blocksNewOrder } from "../_shared/razorpayActivation.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -83,6 +85,37 @@ serve(async (req) => {
     let planName: string;
     let quoteId: string | null = null;
     let seats: number | null = null;
+
+    // ============= NO DOUBLE CHARGES =============
+    // 1. A payment Razorpay captured earlier but that never activated (closed
+    //    tab, lost callback) is activated now instead of taking a second payment.
+    // 2. An account already on this plan or a higher one, with more than 30
+    //    days left, is not sent to checkout again.
+    if (tier === 'scale' || PLAN_PRICES[tier]) {
+      try {
+        const recovered = await reconcileUser(supabase, userId, {
+          supabaseUrl: SUPABASE_URL!, serviceKey: SUPABASE_SERVICE_ROLE_KEY!, keyId: RAZORPAY_KEY_ID, keySecret: RAZORPAY_KEY_SECRET,
+        });
+        if (recovered.activated.length > 0) {
+          return json({ error: 'Your earlier payment was received and your plan is now active. No new payment is needed.', alreadyActive: true, tier: recovered.activated[0].tier }, 409);
+        }
+      } catch (e) {
+        // Never block checkout on a recovery error; it is retried on the next visit.
+        console.error('Pre-checkout reconcile failed:', e instanceof Error ? e.message : 'unknown');
+      }
+      const { data: activeRows, error: activeErr } = await supabase
+        .from('subscriptions')
+        .select('tier, expires_at')
+        .eq('user_id', userId)
+        .eq('status', 'active')
+        .gt('expires_at', new Date().toISOString());
+      if (!activeErr) {
+        const block = blocksNewOrder(tier, activeRows ?? []);
+        if (block) {
+          return json({ error: `You already have this plan or a higher one until ${block.until.slice(0, 10)}. You can renew within 30 days of that date.`, alreadyActive: true }, 409);
+        }
+      }
+    }
 
     if (tier === 'scale') {
       const requestedQuoteId = typeof body?.quoteId === 'string' ? body.quoteId : '';

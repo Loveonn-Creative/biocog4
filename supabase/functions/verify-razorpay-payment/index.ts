@@ -1,43 +1,23 @@
+// Browser callback after Razorpay Checkout reports success. It proves the
+// callback came from Razorpay (signature) and that the order belongs to the
+// signed-in user, then activates through the shared path, which re-checks
+// with Razorpay that the payment was captured for this order and amount.
+// razorpay-webhook and reconcile-razorpay-payments use the same path, so a
+// plan activates once even if this callback never arrives or arrives twice.
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { activateOrder, activationFailure } from "../_shared/razorpayActivation.ts";
+import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
-
-async function computeHmacSha256(message: string, key: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const cryptoKey = await crypto.subtle.importKey(
-    'raw', encoder.encode(key),
-    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
-  );
-  const signature = await crypto.subtle.sign('HMAC', cryptoKey, encoder.encode(message));
-  return Array.from(new Uint8Array(signature)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Constant-time string comparison to avoid leaking signature prefixes via timing.
-function timingSafeEqual(a: string, b: string): boolean {
-  const encoder = new TextEncoder();
-  const aBytes = encoder.encode(a);
-  const bBytes = encoder.encode(b);
-  let diff = aBytes.length ^ bBytes.length;
-  const len = Math.max(aBytes.length, bBytes.length);
-  for (let i = 0; i < len; i++) {
-    diff |= (aBytes[i] ?? 0) ^ (bBytes[i] ?? 0);
-  }
-  return diff === 0;
-}
-
-function mask(id: string | null | undefined): string {
-  if (!id) return '';
-  return id.length > 8 ? `${id.slice(0, 4)}***${id.slice(-4)}` : '***';
-}
+const json = (body: unknown, status = 200) =>
+  new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
   try {
     const RAZORPAY_KEY_SECRET = Deno.env.get('RAZORPAY_KEY_SECRET');
@@ -45,204 +25,53 @@ serve(async (req) => {
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
     const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY')!;
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-
-    if (!RAZORPAY_KEY_SECRET) {
-      return new Response(JSON.stringify({ error: 'Payment verification not configured' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
+    if (!RAZORPAY_KEY_SECRET || !RAZORPAY_KEY_ID) return json({ error: 'Payment verification not configured' }, 500);
 
     // ============= AUTHENTICATION =============
     const authHeader = req.headers.get('Authorization');
-    if (!authHeader?.startsWith('Bearer ')) {
-      return new Response(JSON.stringify({ error: 'Unauthorized' }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-      global: { headers: { Authorization: authHeader } },
-    });
-    const { data: claimsRes, error: authErr } = await userClient.auth.getClaims(
-      authHeader.replace('Bearer ', '')
-    );
-    if (authErr || !claimsRes?.claims?.sub) {
-      return new Response(JSON.stringify({ error: 'Unauthorized' }),
-        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
+    if (!authHeader?.startsWith('Bearer ')) return json({ error: 'Unauthorized' }, 401);
+    const userClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { global: { headers: { Authorization: authHeader } } });
+    const { data: claimsRes, error: authErr } = await userClient.auth.getClaims(authHeader.replace('Bearer ', ''));
+    if (authErr || !claimsRes?.claims?.sub) return json({ error: 'Unauthorized' }, 401);
     const userId = claimsRes.claims.sub as string;
 
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, billingCycle } = await req.json();
-
-    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
-      return new Response(JSON.stringify({ error: 'Missing payment fields' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = await req.json().catch(() => ({}));
+    if (typeof razorpay_order_id !== 'string' || typeof razorpay_payment_id !== 'string' || typeof razorpay_signature !== 'string') {
+      return json({ error: 'Missing payment fields' }, 400);
     }
-
     console.log('Verifying payment:', { order: mask(razorpay_order_id), payment: mask(razorpay_payment_id), user: mask(userId) });
 
     // ============= SIGNATURE VERIFY =============
-    const generated = await computeHmacSha256(`${razorpay_order_id}|${razorpay_payment_id}`, RAZORPAY_KEY_SECRET);
-    if (typeof razorpay_signature !== 'string' || !timingSafeEqual(generated, razorpay_signature)) {
+    const generated = await hmacSha256Hex(`${razorpay_order_id}|${razorpay_payment_id}`, RAZORPAY_KEY_SECRET);
+    if (!timingSafeEqual(generated, razorpay_signature)) {
       console.error('Signature verification failed');
-      return new Response(JSON.stringify({ error: 'Payment verification failed' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      return json({ error: 'Payment verification failed' }, 400);
     }
 
-    // ============= AUTHORITATIVE TIER FROM DB =============
-    // The tier MUST come from the pre-recorded subscription row created by create-razorpay-order,
-    // not from the client request body. This prevents tier spoofing.
+    // ============= ACTIVATE (shared, idempotent, checked with Razorpay) =============
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-    const { data: subRow, error: subFetchErr } = await admin
-      .from('subscriptions')
-      .select('id, user_id, tier, billing_cycle, amount')
-      .eq('razorpay_order_id', razorpay_order_id)
-      .maybeSingle();
-
-    if (subFetchErr || !subRow) {
-      console.error('Subscription order row not found');
-      return new Response(JSON.stringify({ error: 'Order record missing' }),
-        { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-
-    // The order's user_id must match the JWT user
-    if (subRow.user_id !== userId) {
-      console.error('Order ownership mismatch');
-      return new Response(JSON.stringify({ error: 'Access denied' }),
-        { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-
-    const tier = subRow.tier as string;
-    const cycle: 'monthly' | 'yearly' = (subRow.billing_cycle === 'monthly' ? 'monthly'
-      : billingCycle === 'monthly' ? 'monthly' : 'yearly');
-
-    const expiresAt = new Date();
-    if (cycle === 'yearly') expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-    else expiresAt.setMonth(expiresAt.getMonth() + 1);
-
-    // Activate only if this order is still pending. A replayed or concurrent
-    // verification matches 0 rows and is treated as already processed.
-    const { data: activatedRows, error: activateErr } = await admin
-      .from('subscriptions')
-      .update({
-        razorpay_payment_id,
-        razorpay_signature,
-        status: 'active',
-        billing_cycle: cycle,
-        starts_at: new Date().toISOString(),
-        expires_at: expiresAt.toISOString(),
-      })
-      .eq('razorpay_order_id', razorpay_order_id)
-      .eq('status', 'pending')
-      .select('id');
-
-    if (activateErr) {
-      console.error('Subscription activation failed');
-      return new Response(JSON.stringify({ error: 'Internal error' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-
-    if (!activatedRows || activatedRows.length === 0) {
-      const { data: current } = await admin
-        .from('subscriptions')
-        .select('status, expires_at')
-        .eq('razorpay_order_id', razorpay_order_id)
-        .maybeSingle();
-      if (current?.status === 'active') {
-        // Already processed (possibly by a concurrent request): idempotent success,
-        // no expiry extension and no duplicate invoice email.
-        console.log('Payment already processed:', { order: mask(razorpay_order_id) });
-        return new Response(
-          JSON.stringify({ success: true, tier, expiresAt: current.expires_at, alreadyProcessed: true }),
-          { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      console.error('Order not in an activatable state');
-      return new Response(JSON.stringify({ error: 'Order is no longer valid' }),
-        { status: 409, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-    }
-
-    await admin
-      .from('profiles')
-      .update({
-        subscription_tier: tier,
-        subscription_expires_at: expiresAt.toISOString(),
-      })
-      .eq('id', userId);
-
-    // Fetch actual order amount for invoice
-    let orderAmount = 0;
-    let orderCurrency = 'INR';
-    let scaleQuoteId: string | null = null;
-    try {
-      const orderResponse = await fetch(`https://api.razorpay.com/v1/orders/${razorpay_order_id}`, {
-        headers: { 'Authorization': 'Basic ' + btoa(`${RAZORPAY_KEY_ID}:${RAZORPAY_KEY_SECRET}`) },
-      });
-      if (orderResponse.ok) {
-        const orderData = await orderResponse.json();
-        orderAmount = orderData.amount || 0;
-        orderCurrency = orderData.currency || 'INR';
-        // Set server-side by create-razorpay-order; the client cannot alter order notes.
-        const noteQuote = orderData?.notes?.scale_quote_id;
-        if (typeof noteQuote === 'string' && noteQuote) scaleQuoteId = noteQuote;
-      }
-    } catch (e) {
-      console.error('Failed to fetch order details');
-    }
-
-    // Mark the admin-issued Scale quote as consumed so it cannot fund another order.
-    // Tolerates the table not existing yet (pending migration) and never blocks activation,
-    // because the customer has already paid at this point.
-    if (tier === 'scale' && scaleQuoteId) {
-      try {
-        const { data: consumedRows, error: consumeErr } = await admin
-          .from('scale_price_quotes')
-          .update({
-            status: 'consumed',
-            consumed_at: new Date().toISOString(),
-            consumed_order_id: razorpay_order_id,
-          })
-          .eq('id', scaleQuoteId)
-          .eq('user_id', userId)
-          .eq('status', 'active')
-          .select('id');
-        if (consumeErr) {
-          console.error('Scale quote consume failed:', consumeErr.code === '42P01' ? 'table missing' : consumeErr.code);
-        } else if (!consumedRows || consumedRows.length === 0) {
-          console.error('Scale quote was not active at consumption time; review manually:', { order: mask(razorpay_order_id) });
-        }
-      } catch (e) {
-        console.error('Scale quote consume error');
-      }
-    }
-
-    // Trigger invoice generation (service-role auth)
-    try {
-      const { data: userData } = await admin.auth.admin.getUserById(userId);
-      if (userData?.user?.email) {
-        await fetch(`${SUPABASE_URL}/functions/v1/generate-invoice-pdf`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-            'x-internal-service-role': SUPABASE_SERVICE_ROLE_KEY,
-          },
-          body: JSON.stringify({
-            userId, email: userData.user.email, tier,
-            billingCycle: cycle, subscriptionId: subRow.id,
-            amount: orderAmount, currency: orderCurrency,
-            transactionId: razorpay_payment_id, orderId: razorpay_order_id,
-          }),
-        });
-      }
-    } catch (e) {
-      console.error('Failed to trigger invoice generation');
-    }
-
-    return new Response(
-      JSON.stringify({ success: true, tier, expiresAt: expiresAt.toISOString() }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    const result = await activateOrder(
+      { store: supabaseStore(admin), razorpay: razorpayApi(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET) },
+      { orderId: razorpay_order_id, paymentId: razorpay_payment_id, expectedUserId: userId },
     );
+
+    if (result.ok === false) {
+      console.error('Activation refused:', result.code, { order: mask(razorpay_order_id) });
+      const f = activationFailure(result.code);
+      return json({ error: f.error, code: result.code }, f.status);
+    }
+
+    if (result.activated) {
+      await afterActivation(admin, { supabaseUrl: SUPABASE_URL, serviceKey: SUPABASE_SERVICE_ROLE_KEY, keyId: RAZORPAY_KEY_ID, keySecret: RAZORPAY_KEY_SECRET }, {
+        userId, tier: result.tier, cycle: result.cycle, subscriptionId: result.subscriptionId, paymentId: result.payment.id, orderId: razorpay_order_id,
+      });
+    } else {
+      console.log('Payment already processed:', { order: mask(razorpay_order_id) });
+    }
+
+    return json({ success: true, tier: result.tier, expiresAt: result.expiresAt, alreadyProcessed: !result.activated });
   } catch (error) {
     console.error('Payment verification error:', error instanceof Error ? error.message : 'unknown');
-    return new Response(JSON.stringify({ error: 'Internal error' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    return json({ error: 'Internal error' }, 500);
   }
 });
