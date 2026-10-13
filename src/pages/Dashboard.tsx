@@ -15,6 +15,7 @@ import { TrendChart } from '@/components/dashboard/TrendChart';
 import { RecentDocuments } from '@/components/dashboard/RecentDocuments';
 import { QuickActions } from '@/components/dashboard/QuickActions';
 import { MonetizationPanel } from '@/components/dashboard/MonetizationPanel';
+import { FinanceEvidenceCard } from '@/components/dashboard/FinanceEvidenceCard';
 import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 import { VerificationStatusCard } from '@/components/dashboard/VerificationStatusCard';
 import { Helmet } from 'react-helmet-async';
@@ -419,6 +420,7 @@ const Dashboard = () => {
                 verifiedCO2Kg={sumVerifiedKgOncePerEmission(verifiedEmissions, e => e.id, e => e.co2_kg)}
                 hasVerifiedData={verifiedEmissions.length > 0}
               />
+              {user && <FinanceEvidenceCard />}
               <RecentDocuments documents={documents.slice(0, 5)} />
             </div>
           </div>
