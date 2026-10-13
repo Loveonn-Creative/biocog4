@@ -99,10 +99,12 @@ export const UseCaseTyper = forwardRef<HTMLDivElement, UseCaseTyperProps>(
       <div 
         ref={ref}
         // Height for two lines is reserved so typing, wrapping or a language
-        // change never pushes the upload tiles. data-no-translate keeps the
-        // runtime translator from re-translating every typed frame.
+        // change never pushes the upload tiles. Text sits at the top of that
+        // space, so wrapping adds a line below instead of moving the first
+        // one (a layout shift). data-no-translate keeps the runtime
+        // translator from re-translating every typed frame.
         data-no-translate
-        className={`w-full max-w-[min(92vw,36rem)] text-center min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5rem] flex items-center justify-center ${className || ''}`}
+        className={`w-full max-w-[min(92vw,36rem)] text-center min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5rem] flex items-start justify-center ${className || ''}`}
       >
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight leading-tight [text-wrap:balance]">
           <span className="text-foreground">{firstPart}</span>
