@@ -543,3 +543,11 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @keyframes sol-glint { 0% { fill: #9cc3e6; } 100% { fill: #1f4e79; } }
 @keyframes sol-glow { 0% { box-shadow: 0 0 0 0 hsl(var(--primary) / .45); } 100% { box-shadow: 0 0 0 18px hsl(var(--primary) / 0); } }
 @media (prefers-reduced-motion: reduce) { .sol-panel, .sol-sun { transition: none; } .sol-panel-on, .sol-stamp, .sol-row, .sol-ready { animation: none; } }
+
+/* /carbon-credits: gate run, value equation, step trail */
+.cc-record { transition: transform 1.6s cubic-bezier(.5,0,.2,1) .5s; }
+.cc-term { opacity: 0; }
+.cc-term-on { animation: cc-rise .6s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes cc-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.cc-stamp { animation: tr-press .45s cubic-bezier(.3,1.6,.5,1) both; }
+@media (prefers-reduced-motion: reduce) { .cc-record { transition: none; } .cc-term { opacity: 1; } .cc-term-on, .cc-stamp { animation: none; } }
