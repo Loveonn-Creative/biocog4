@@ -1,61 +1,49 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
+import { accountKey, ACCOUNT_STALE_MS } from '@/lib/queryClient';
 
+/** The account's enterprise-mode switch, read once and shared across pages. */
 export function useEnterpriseMode() {
   const { user } = useSession();
-  const [isEnterprise, setIsEnterprise] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const qc = useQueryClient();
+  const key = accountKey(user?.id, 'enterprise_mode');
 
-  useEffect(() => {
-    if (!user?.id) {
-      setIsEnterprise(false);
-      setIsLoading(false);
-      return;
-    }
-
-    const fetchMode = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('profiles')
-          .select('enterprise_mode')
-          .eq('id', user.id)
-          .single();
-
-        if (!error && data) {
-          setIsEnterprise((data as any).enterprise_mode ?? false);
-        }
-      } catch (err) {
-        console.error('[Enterprise] Error fetching mode:', err);
-      } finally {
-        setIsLoading(false);
+  const query = useQuery({
+    queryKey: key,
+    enabled: !!user?.id,
+    staleTime: ACCOUNT_STALE_MS,
+    queryFn: async () => {
+      const { data, error } = await supabase.from('profiles').select('enterprise_mode').eq('id', user!.id).single();
+      if (error) {
+        console.error('[Enterprise] Error fetching mode:', error);
+        return false;
       }
-    };
-
-    fetchMode();
-  }, [user?.id]);
+      return ((data as { enterprise_mode?: boolean } | null)?.enterprise_mode ?? false) as boolean;
+    },
+  });
+  const isEnterprise = !!user?.id && !!query.data;
 
   const toggleEnterprise = useCallback(async () => {
     if (!user?.id) return;
-
     const newValue = !isEnterprise;
-    setIsEnterprise(newValue);
-
+    qc.setQueryData(key, newValue);
     try {
       const { error } = await supabase
         .from('profiles')
-        .update({ enterprise_mode: newValue } as any)
+        .update({ enterprise_mode: newValue } as never)
         .eq('id', user.id);
-
       if (error) {
-        setIsEnterprise(!newValue); // rollback
+        qc.setQueryData(key, !newValue); // rollback
         console.error('[Enterprise] Toggle error:', error);
       }
     } catch (err) {
-      setIsEnterprise(!newValue);
+      qc.setQueryData(key, !newValue);
       console.error('[Enterprise] Toggle error:', err);
     }
-  }, [user?.id, isEnterprise]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key follows user id
+  }, [user?.id, isEnterprise, qc]);
 
-  return { isEnterprise, toggleEnterprise, isLoading };
+  return { isEnterprise, toggleEnterprise, isLoading: !!user?.id && query.isPending };
 }

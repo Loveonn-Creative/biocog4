@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { accountKey, ACCOUNT_STALE_MS } from '@/lib/queryClient';
 import { Link } from 'react-router-dom';
 import { User, Settings, CreditCard, LogOut, ChevronDown, Crown, Receipt, Users, Shield, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -44,21 +46,15 @@ export const UserMenu = ({ email, businessName, onSignOut }: UserMenuProps) => {
   const { user } = useSession();
   const { hasOrganization } = useOrganization();
   const [open, setOpen] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  useEffect(() => {
-    const checkAdmin = async () => {
-      if (!user?.id) return;
-      const { data } = await supabase
-        .from('user_roles')
-        .select('role')
-        .eq('user_id', user.id)
-        .eq('role', 'admin')
-        .maybeSingle();
-      setIsAdmin(!!data);
-    };
-    checkAdmin();
-  }, [user?.id]);
+  const { data: isAdmin = false } = useQuery({
+    queryKey: accountKey(user?.id, 'is_admin'),
+    enabled: !!user?.id,
+    staleTime: ACCOUNT_STALE_MS,
+    queryFn: async () => {
+      const { data } = await supabase.from('user_roles').select('role').eq('user_id', user!.id).eq('role', 'admin').maybeSingle();
+      return !!data;
+    },
+  });
 
   const initials = businessName 
     ? businessName.slice(0, 2).toUpperCase()

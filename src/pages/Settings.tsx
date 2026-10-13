@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { refreshAccount } from '@/lib/queryClient';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -111,6 +112,7 @@ const Settings = () => {
           });
 
         if (error) throw error;
+        void refreshAccount(user.id);
         
         localStorage.setItem('senseible_profile_triggers', JSON.stringify({
           exportsToEU: profile.exportsToEU,

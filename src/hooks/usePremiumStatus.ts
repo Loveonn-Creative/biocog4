@@ -1,4 +1,7 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useCallback, useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { queryClient } from '@/lib/queryClient';
+import { useRealtimeRefresh } from '@/lib/sharedRealtime';
 import { reconcilePayments } from './useRazorpay';
 import { useSession } from './useSession';
 import { supabase } from '@/integrations/supabase/client';
@@ -198,159 +201,127 @@ const normalizeTier = (tier: string | null): PremiumTier => {
   return 'snapshot';
 };
 
+interface PlanRead { tier: PremiumTier; expiresAt: string | null }
+
+export const planQueryKey = (userId: string) => ['plan', userId] as const;
+
+/**
+ * Reads the plan from the account's records. Throws when neither record could
+ * be read as proof, so the cache keeps the last known plan (a first read that
+ * fails shows Snapshot: fail closed).
+ */
+async function readPlan(userId: string): Promise<PlanRead> {
+  let nextTier: PremiumTier = 'snapshot';
+  let nextExpiry: Date | null = null;
+
+  // Fetch from profiles table
+  const { data: profile, error: profileError } = await supabase
+    .from('profiles')
+    .select('subscription_tier, subscription_expires_at')
+    .eq('id', userId)
+    .single();
+
+  if (profileError) {
+    console.error('Error fetching profile tier:', profileError);
+  } else if (profile) {
+    // An expired paid plan reads as Snapshot. The profile row is not
+    // rewritten here: the active subscription row below is the record of
+    // payment, and the server applies the same expiry rule.
+    const dbTier = normalizeTier(profile.subscription_tier);
+    const expiry = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+    if (!(expiry && expiry < new Date())) {
+      nextTier = dbTier;
+      nextExpiry = expiry;
+    }
+  }
+
+  // Also check active subscriptions table for latest info
+  const { data: subscription, error: subscriptionError } = await supabase
+    .from('subscriptions')
+    .select('tier, expires_at, status')
+    .eq('user_id', userId)
+    .eq('status', 'active')
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (subscription && subscription.expires_at) {
+    const subExpiry = new Date(subscription.expires_at);
+    const subTier = normalizeTier(subscription.tier);
+    // Use the paid subscription when it is in force and at least as high as the profile copy.
+    if (subExpiry > new Date() && TIER_RANK[subTier] >= TIER_RANK[nextTier]) {
+      nextTier = subTier;
+      nextExpiry = subExpiry;
+    }
+  }
+
+  // A recent order still pending can mean Razorpay took the payment but
+  // the browser never confirmed it. Ask the server to check with Razorpay
+  // once per session; it activates only a captured payment. Realtime is
+  // not published for these tables in production, so re-read here when
+  // something was activated instead of waiting for an event.
+  if (!reconciledThisSession.has(userId)) {
+    reconciledThisSession.add(userId);
+    const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
+    const { data: pending } = await supabase
+      .from('subscriptions')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('status', 'pending')
+      .gte('created_at', since)
+      .limit(1);
+    if (pending && pending.length > 0) {
+      void reconcilePayments().then(rec => {
+        if (rec?.activated?.length) void queryClient.invalidateQueries({ queryKey: planQueryKey(userId) });
+      });
+    }
+  }
+
+  // Show the result when either record was read. A failed profile read
+  // with an active paid subscription still shows the paid plan; when both
+  // reads fail, the last known plan stays.
+  if (!profileError || (!subscriptionError && subscription)) {
+    return { tier: nextTier, expiresAt: nextExpiry ? nextExpiry.toISOString() : null };
+  }
+  throw profileError ?? subscriptionError ?? new Error('Plan not readable');
+}
+
+/**
+ * The signed-in account's plan, read once and shared by every component
+ * through the query cache, so a page change shows the known plan at once
+ * instead of flashing Snapshot while each component re-reads it. Refreshed
+ * after payment (refreshTier), on realtime changes and when stale. The plan
+ * always comes from the account's records; nothing in the browser can raise
+ * it, and the cache is cleared on sign-out or user switch.
+ */
 export const usePremiumStatus = (): PremiumStatus => {
   const { user } = useSession();
-  const [tier, setTier] = useState<PremiumTier>('snapshot');
-  const [expiresAt, setExpiresAt] = useState<Date | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const uid = user?.id ?? null;
+  const [refreshing, setRefreshing] = useState(false);
 
-  // Whose plan the state currently describes. A refresh for the same account
-  // keeps the last known plan on screen until the new read lands, so a
-  // realtime event or refresh never flashes a paying customer back to
-  // Snapshot; a different account (or sign-out) resets to Snapshot first.
-  const shownFor = useRef<string | null>(null);
+  const query = useQuery({
+    queryKey: planQueryKey(uid ?? ''),
+    queryFn: () => readPlan(uid!),
+    enabled: !!uid,
+    staleTime: 60_000,
+    retry: false,
+    refetchOnWindowFocus: false,
+  });
 
-  const fetchTierFromDatabase = useCallback(async () => {
-    // The plan always comes from the signed-in account. Signed-out visitors are
-    // on Snapshot; nothing stored in the browser can raise a tier.
-    if (shownFor.current !== (user?.id ?? null)) {
-      setTier('snapshot');
-      setExpiresAt(null);
-      shownFor.current = user?.id ?? null;
-    }
-    if (!user?.id) {
-      setIsLoading(false);
-      return;
-    }
-    let nextTier: PremiumTier = 'snapshot';
-    let nextExpiry: Date | null = null;
-
-    try {
-      // Fetch from profiles table
-      const { data: profile, error: profileError } = await supabase
-        .from('profiles')
-        .select('subscription_tier, subscription_expires_at')
-        .eq('id', user.id)
-        .single();
-
-      if (profileError) {
-        // Fail closed for a first read; a refresh keeps the last known plan.
-        console.error('Error fetching profile tier:', profileError);
-      } else if (profile) {
-        // An expired paid plan reads as Snapshot. The profile row is not
-        // rewritten here: the active subscription row below is the record of
-        // payment, and the server applies the same expiry rule.
-        const dbTier = normalizeTier(profile.subscription_tier);
-        const expiry = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-        if (!(expiry && expiry < new Date())) {
-          nextTier = dbTier;
-          nextExpiry = expiry;
-        }
-      }
-
-      // Also check active subscriptions table for latest info
-      const { data: subscription, error: subscriptionError } = await supabase
-        .from('subscriptions')
-        .select('tier, expires_at, status')
-        .eq('user_id', user.id)
-        .eq('status', 'active')
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .maybeSingle();
-
-      if (subscription && subscription.expires_at) {
-        const subExpiry = new Date(subscription.expires_at);
-        const subTier = normalizeTier(subscription.tier);
-        // Use the paid subscription when it is in force and at least as high as the profile copy.
-        if (subExpiry > new Date() && TIER_RANK[subTier] >= TIER_RANK[nextTier]) {
-          nextTier = subTier;
-          nextExpiry = subExpiry;
-        }
-      }
-      // Show the result when either record was read. A failed profile read
-      // with an active paid subscription still shows the paid plan; when both
-      // reads fail, a refresh keeps the last known plan.
-      if (!profileError || (!subscriptionError && subscription)) {
-        setTier(nextTier);
-        setExpiresAt(nextExpiry);
-      }
-
-      // A recent order still pending can mean Razorpay took the payment but
-      // the browser never confirmed it. Ask the server to check with Razorpay
-      // once per session; it activates only a captured payment. Realtime is
-      // not published for these tables in production, so re-read here when
-      // something was activated instead of waiting for an event.
-      if (!reconciledThisSession.has(user.id)) {
-        reconciledThisSession.add(user.id);
-        const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
-        const { data: pending } = await supabase
-          .from('subscriptions')
-          .select('id')
-          .eq('user_id', user.id)
-          .eq('status', 'pending')
-          .gte('created_at', since)
-          .limit(1);
-        if (pending && pending.length > 0) {
-          void reconcilePayments().then(rec => { if (rec?.activated?.length) void fetchTierFromDatabase(); });
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching tier:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [user?.id]);
+  useRealtimeRefresh('profiles', uid ? `id=eq.${uid}` : null, planQueryKey(uid ?? ''), !!uid);
+  useRealtimeRefresh('subscriptions', uid ? `user_id=eq.${uid}` : null, planQueryKey(uid ?? ''), !!uid);
 
   // Refresh tier - callable externally after payment success
+  const refetchPlan = query.refetch;
   const refreshTier = useCallback(async () => {
-    setIsLoading(true);
-    await fetchTierFromDatabase();
-  }, [fetchTierFromDatabase]);
+    if (!uid) return;
+    setRefreshing(true);
+    try { await refetchPlan(); } finally { setRefreshing(false); }
+  }, [uid, refetchPlan]);
 
-  useEffect(() => {
-    fetchTierFromDatabase();
-
-  }, [fetchTierFromDatabase]);
-
-  // Real-time subscription to profiles and subscriptions tables
-  useEffect(() => {
-    if (!user?.id) return;
-
-    const channel = supabase
-      .channel(`subscription-updates-${user.id}-${Math.random().toString(36).slice(2, 8)}`)
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'profiles',
-          filter: `id=eq.${user.id}`,
-        },
-        () => {
-          // Refresh tier when profile changes
-          fetchTierFromDatabase();
-        }
-      )
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'subscriptions',
-          filter: `user_id=eq.${user.id}`,
-        },
-        () => {
-          // Refresh tier when subscription changes
-          fetchTierFromDatabase();
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [user?.id, fetchTierFromDatabase]);
-
+  const tier: PremiumTier = uid ? query.data?.tier ?? 'snapshot' : 'snapshot';
+  const expiresIso = uid ? query.data?.expiresAt ?? null : null;
+  const expiresAt = useMemo(() => (expiresIso ? new Date(expiresIso) : null), [expiresIso]);
   const features = TIER_FEATURES[tier];
   const isPremium = tier !== 'snapshot';
 
@@ -365,9 +336,8 @@ export const usePremiumStatus = (): PremiumStatus => {
     features,
     invoiceLimit: features.invoiceScansPerMonth,
     expiresAt,
-    isLoading,
+    isLoading: (!!uid && query.isPending) || refreshing,
     canAccessFeature,
     refreshTier,
   };
 };
-

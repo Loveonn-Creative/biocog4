@@ -117,6 +117,8 @@ const Monetize = () => {
   // Refetch when records change anywhere (verify, delete, upload).
   useRecordsChanged(() => { fetchVerifications(); fetchPathwayStatuses(); });
   useEffect(() => {
+    // Wait for the workspace, so the first visit reads each table once.
+    if (!workspaceReady) return;
     fetchVerifications();
     fetchPathwayStatuses();
   // eslint-disable-next-line react-hooks/exhaustive-deps -- workspaceKey captures scope
