@@ -5,6 +5,7 @@ import { syncIdentity } from '@/lib/identity';
 import { hasGuestData, setPendingGuestImport, type GuestCounts } from '@/lib/guestImport';
 
 const SESSION_STORAGE_KEY = 'senseible_session_id';
+const GUEST_TIMEOUT_MS = 8000;
 
 // Every component calls useSession, so each mounts its own auth listener.
 // This set makes sure one guest session is checked at most once per page load.
@@ -56,6 +57,23 @@ async function resolveSession(): Promise<SessionState> {
     }
 
     syncIdentity(null);
+    // A slow or unreachable guest-session service must not hold every page on
+    // a spinner. After GUEST_TIMEOUT_MS the page continues signed out with the
+    // id this device already holds (if any); the check finishes in the
+    // background and a new id, if one is created, is used on the next visit.
+    const stored = localStorage.getItem(SESSION_STORAGE_KEY);
+    const timedOut = new Promise<SessionState>(resolve => setTimeout(() => resolve({
+      sessionId: stored, user: null, authSession: null, isLoading: false, isAuthenticated: false,
+    }), GUEST_TIMEOUT_MS));
+    return await Promise.race([resolveGuestSession(supabase), timedOut]);
+  } catch (error) {
+    console.error('Session initialization error:', error);
+    return { sessionId: null, user: null, authSession: null, isLoading: false, isAuthenticated: false };
+  }
+}
+
+async function resolveGuestSession(supabase: Awaited<ReturnType<typeof loadSupabase>>): Promise<SessionState> {
+  try {
     // Check for existing anonymous session
     let sessionId = localStorage.getItem(SESSION_STORAGE_KEY);
     const fingerprint = getDeviceFingerprint();
@@ -108,6 +126,34 @@ async function resolveSession(): Promise<SessionState> {
     console.error('Session initialization error:', error);
     return { sessionId: null, user: null, authSession: null, isLoading: false, isAuthenticated: false };
   }
+}
+
+/**
+ * Signed in or not, known as soon as the stored sign-in is read. Unlike
+ * useSession it never waits for the guest session, so route guards can
+ * redirect a signed-out visitor at once.
+ */
+export function useAuthStatus(): 'loading' | 'signedIn' | 'signedOut' {
+  const [status, setStatus] = useState<'loading' | 'signedIn' | 'signedOut'>(sharedIsAuthenticated ? 'signedIn' : 'loading');
+  useEffect(() => {
+    let live = true;
+    let unsubscribe: (() => void) | null = null;
+    loadSupabase().then(supabase => {
+      if (!live) return;
+      // Fires INITIAL_SESSION once the stored session is read (and refreshed if
+      // it had expired), then on every sign-in and sign-out.
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (live) setStatus(session?.user ? 'signedIn' : 'signedOut');
+      });
+      unsubscribe = () => subscription.unsubscribe();
+    }).catch(err => {
+      // The client code did not load (usually a new deploy): let the error
+      // boundary reload or say so, rather than guessing the visitor is signed out.
+      if (live) setStatus(() => { throw err; });
+    });
+    return () => { live = false; unsubscribe?.(); };
+  }, []);
+  return status;
 }
 
 export function useSession() {
