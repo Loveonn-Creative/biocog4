@@ -101,7 +101,6 @@ const MRVDashboard = () => {
           filter,
         },
         (payload) => {
-          console.log('Verification update received:', payload.eventType);
           fetchVerifications();
         }
       )
@@ -213,11 +212,6 @@ const MRVDashboard = () => {
   const greenwashingRisk = verifications[0]?.greenwashing_risk;
 
   const formatNumber = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(2)}t` : `${n.toFixed(1)}kg`;
-  const formatCurrency = (n: number) => new Intl.NumberFormat('en-IN', { 
-    style: 'currency', 
-    currency: 'INR', 
-    maximumFractionDigits: 0 
-  }).format(n);
 
   const getGradeColor = (grade: string) => {
     switch (grade) {
@@ -503,28 +497,19 @@ const MRVDashboard = () => {
                   </CardHeader>
                   <CardContent>
                     {(() => {
-                      const intelligentRecs = generateIntelligentRecommendations(emissions, summary);
-                      const impact = getTotalImpact(intelligentRecs);
+                      // Same basis as the summary (verified rows), so shares add up.
+                      const intelligentRecs = generateIntelligentRecommendations(verifiedEmissions, summary);
+                      const impact = getTotalImpact(intelligentRecs.slice(0, 4));
                       
                       if (intelligentRecs.length > 0) {
                         return (
                           <div className="space-y-4">
-                            {/* Impact Summary */}
-                            <div className="grid grid-cols-3 gap-2 p-3 rounded-lg bg-success/5 border border-success/20">
-                              <div className="text-center">
-                                <div className="text-lg font-mono font-bold text-success">{formatNumber(impact.totalReduction)}</div>
-                                <div className="text-xs text-muted-foreground">Potential Reduction</div>
-                              </div>
-                              <div className="text-center border-x border-success/20">
-                                <div className="text-lg font-mono font-bold text-success">{formatCurrency(impact.totalSavings)}</div>
-                                <div className="text-xs text-muted-foreground">Annual Savings</div>
-                              </div>
-                              <div className="text-center">
-                                <div className="text-lg font-mono font-bold text-success">{impact.avgPayback}mo</div>
-                                <div className="text-xs text-muted-foreground">Avg Payback</div>
-                              </div>
+                            {/* Impact summary: emissions only. Cost savings and payback need a site's own tariffs and quotes, so none are shown. */}
+                            <div className="flex items-baseline justify-between gap-3 p-3 rounded-lg bg-success/5 border border-success/20">
+                              <span className="text-xs text-muted-foreground">Indicative reduction across {Math.min(intelligentRecs.length, 4)} action{Math.min(intelligentRecs.length, 4) === 1 ? '' : 's'}</span>
+                              <span className="text-lg font-mono font-bold text-success">{formatNumber(impact.totalReduction)}</span>
                             </div>
-                            
+
                             {/* Recommendations */}
                             <ul className="space-y-3">
                               {intelligentRecs.slice(0, 4).map((rec) => (
@@ -539,10 +524,8 @@ const MRVDashboard = () => {
                                     <div className="flex-1">
                                       <div className="font-medium text-sm mb-1">{rec.title}</div>
                                       <p className="text-xs text-muted-foreground mb-2">{rec.insight}</p>
-                                      <div className="flex items-center gap-3 text-xs">
-                                        <span className="text-success font-medium">-{formatNumber(rec.impact.co2ReductionKg)}</span>
-                                        <span className="text-muted-foreground">|</span>
-                                        <span className="text-primary font-medium">{formatCurrency(rec.impact.costSavingsINR)}/yr</span>
+                                      <div className="text-xs">
+                                        <span className="text-success font-medium">-{formatNumber(rec.impact.co2ReductionKg)} indicative</span>
                                       </div>
                                     </div>
                                   </div>

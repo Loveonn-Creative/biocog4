@@ -169,7 +169,7 @@ export function generateIntelligentRecommendations(
       priority: 'high',
       title: 'Install Rooftop Solar',
       insight: `Your Scope 2 emissions (${Math.round(summary.scope2)}kg) represent ${Math.round((summary.scope2/summary.total)*100)}% of total footprint - grid electricity is your largest emission source.`,
-      action: `Install ${estimatedKW}kW rooftop solar system to reduce Scope 2 by 60%. Apply for PM-KUSUM or state subsidy (up to 40% off).`,
+      action: `Consider about ${estimatedKW} kW of rooftop solar to cut grid electricity, your main Scope 2 source. Check current central and state schemes for business rooftop solar before investing.`,
       impact: {
         co2ReductionKg: Math.round(solarReduction),
         costSavingsINR: Math.round(annualSavings),

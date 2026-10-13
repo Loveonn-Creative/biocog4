@@ -331,7 +331,6 @@ const Index = () => {
         .order('created_at', { ascending: true });
 
       if (existingEmissions?.length) {
-        console.log('[MRV] Emission already exists for document:', documentId, '- skipping duplicate');
         toast.info('This invoice was already processed. Showing existing results.', { icon: '🔒' });
         return {
           documentId,
@@ -370,7 +369,6 @@ const Index = () => {
       if (uploadScopeRef.current?.kind === 'organization') {
         toast.success(`Saved to the ${uploadScopeRef.current.organizationName || 'organisation'} workspace`);
       }
-      console.log('[MRV] Saved document with independently calculated emission rows:', documentId, emissionIds.length);
       return { documentId, emissionId: emissionIds[0], emissionIds };
     } catch (error) {
       console.error('Database save error:', error);
@@ -466,7 +464,6 @@ const Index = () => {
       const imageBase64 = await fileToBase64(file);
       const mimeType = file.type || 'image/jpeg';
 
-      console.log("Sending document for OCR processing...");
       
       // Pass sessionId to edge function for guest user data linking
       const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
@@ -482,7 +479,6 @@ const Index = () => {
 
       // Handle cached results (guest or paid users)
       if (data?.cached) {
-        console.log("Cached result returned:", data);
         toast.info(data.message || "Using previously verified results for accuracy.", {
           duration: 5000,
           icon: "🔒"
@@ -492,7 +488,6 @@ const Index = () => {
       
       // Handle duplicate invoice detection for authenticated users
       if (data?.isDuplicate) {
-        console.log("Duplicate invoice detected:", data);
         if (data.success && data.data) {
           // Paid user - show cached result with notification
           toast.info(data.message || "Using previously verified results for this invoice.", {
@@ -529,7 +524,6 @@ const Index = () => {
       }
 
       const extractedData: ExtractedData = data.data;
-      console.log("Extracted data:", extractedData);
 
       // Validation warnings for low-confidence or missing data
       const warnings: string[] = [...(extractedData.validationFlags || [])];
@@ -648,12 +642,10 @@ const Index = () => {
   };
 
   const handleFileSelect = (file: File) => {
-    console.log("File selected:", file.name);
     processDocument(file);
   };
 
   const handleVoiceInput = async (transcript: string) => {
-    console.log("Voice input:", transcript);
     setState("processing");
     setDocumentType("Processing voice query...");
     

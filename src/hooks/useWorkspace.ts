@@ -23,7 +23,7 @@ export interface WorkspaceState {
 
 export function useWorkspace(): WorkspaceState {
   const { user, sessionId, isLoading: sessionLoading } = useSession();
-  const { organizations, isLoading: orgLoading } = useOrganization();
+  const { organizations, organizationsSettled } = useOrganization();
   useSyncExternalStore(subscribeWorkspaceChoice, workspaceChoiceVersion, workspaceChoiceVersion);
 
   const uid = user?.id ?? null;
@@ -32,9 +32,11 @@ export function useWorkspace(): WorkspaceState {
 
   const perms = useQuery({
     queryKey: ['org-permissions', uid, chosenOrg?.id ?? null],
-    enabled: !!uid && !orgLoading,
+    enabled: !!uid && organizationsSettled,
     staleTime: 60_000,
     retry: false,
+    retryOnMount: false,
+    refetchOnWindowFocus: false,
     queryFn: async () => {
       // Called with null to learn whether the migration is live.
       const { data, error } = await untypedRpc('my_org_permissions', { p_organization_id: chosenOrg?.id ?? null });
@@ -61,7 +63,11 @@ export function useWorkspace(): WorkspaceState {
     } else if (sessionId) {
       scope = { kind: 'guest', sessionId };
     }
-    const ready = !sessionLoading && (!uid || (!orgLoading && !perms.isLoading));
+    // Ready once each input has answered once. A failed organisations or
+    // permissions query settles to the personal workspace (how records pages
+    // worked before workspaces), and later refetches never flip ready back.
+    const permsSettled = perms.dataUpdatedAt > 0 || perms.errorUpdatedAt > 0;
+    const ready = !sessionLoading && (!uid || (organizationsSettled && permsSettled));
     return {
       scope,
       ready,
@@ -71,5 +77,5 @@ export function useWorkspace(): WorkspaceState {
       role,
       can: (c: Capability) => scopeCan(scope, c),
     };
-  }, [uid, sessionId, sessionLoading, orgLoading, perms.isLoading, perms.data, chosenOrg, organizations]);
+  }, [uid, sessionId, sessionLoading, organizationsSettled, perms.dataUpdatedAt, perms.errorUpdatedAt, perms.data, chosenOrg, organizations]);
 }
