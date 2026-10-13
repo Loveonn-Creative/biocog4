@@ -6,7 +6,35 @@ import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 // route list lives in ./routeRegistry.ts, which only the build imports.
 export const SITE_URL = 'https://senseible.earth';
 export const SITE_NAME = 'Senseible';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/default.jpg`;
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+
+// Link-preview images (public/og/, rendered by scripts/og/render-og.mjs).
+// Pages not listed share the default preview.
+const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
+  '/': { slug: 'default', alt: 'Turn invoices into verified carbon records' },
+  '/platform': { slug: 'platform', alt: 'Every claim, with its source: invoices in, verified records out' },
+  '/pricing': { slug: 'pricing', alt: 'Start free. Upgrade when your records grow' },
+  '/trust': { slug: 'trust', alt: 'Trust, made structural: a four-layer evidence chain' },
+  '/carbon-credits': { slug: 'carbon-credits', alt: 'Three gates before any credit signal' },
+  '/about': { slug: 'about', alt: 'Why Senseible exists: an invoice becomes a carbon calculation' },
+  '/contact': { slug: 'contact', alt: 'Talk to the Senseible team on WhatsApp or email' },
+  '/decarbonize-india': { slug: 'decarbonize-india', alt: 'Decarbonize India: become an Impact Ambassador' },
+  '/cbam-calculator': { slug: 'cbam-calculator', alt: 'Know your CBAM exposure, 2026 to 2034' },
+  '/climate-finance': { slug: 'climate-finance', alt: 'Verified data lenders can underwrite' },
+  '/industries': { slug: 'industries', alt: 'Carbon, sector by sector' },
+  '/net-zero': { slug: 'net-zero', alt: 'A baseline becomes a roadmap' },
+};
+
+/** The preview image and its alt text for a path; the shared default when the page has none. */
+export function ogImageFor(path: string): { url: string; alt: string; specific: boolean } {
+  const key = path.length > 1 ? path.replace(/\/+$/, '') : path;
+  const hit = OG_IMAGES[key];
+  return hit
+    ? { url: `${SITE_URL}/og/${hit.slug}.jpg`, alt: hit.alt, specific: true }
+    : { url: DEFAULT_OG_IMAGE, alt: 'Senseible: turn invoices into verified carbon records', specific: false };
+}
 
 export const TITLE_MAX = 60;
 export const DESCRIPTION_MIN = 70;

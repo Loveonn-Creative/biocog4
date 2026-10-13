@@ -31,6 +31,7 @@ const mdPathFor = routePath => (routePath === '/' ? '/md/index.md' : `/md${route
 function headTags(route, R) {
   const url = R.canonicalUrl(route.path);
   const e = R.escapeHtml;
+  const og = R.ogImageFor(route.path);
   const tags = [
     `<title>${e(route.title)}</title>`,
     `<meta name="description" content="${e(route.description)}" data-rh="true" />`,
@@ -42,12 +43,18 @@ function headTags(route, R) {
     `<meta property="og:url" content="${url}" data-rh="true" />`,
     `<meta property="og:title" content="${e(route.title)}" data-rh="true" />`,
     `<meta property="og:description" content="${e(route.description)}" data-rh="true" />`,
-    `<meta property="og:image" content="${R.DEFAULT_OG_IMAGE}" data-rh="true" />`,
+    `<meta property="og:image" content="${og.url}" data-rh="true" />`,
+    `<meta property="og:image:type" content="image/jpeg" data-rh="true" />`,
+    `<meta property="og:image:width" content="${R.OG_IMAGE_WIDTH}" data-rh="true" />`,
+    `<meta property="og:image:height" content="${R.OG_IMAGE_HEIGHT}" data-rh="true" />`,
+    `<meta property="og:image:alt" content="${e(og.alt)}" data-rh="true" />`,
+    `<meta property="og:locale" content="en_IN" data-rh="true" />`,
     `<meta name="twitter:card" content="summary_large_image" data-rh="true" />`,
     `<meta name="twitter:site" content="@senseible_earth" data-rh="true" />`,
     `<meta name="twitter:title" content="${e(route.title)}" data-rh="true" />`,
     `<meta name="twitter:description" content="${e(route.description)}" data-rh="true" />`,
-    `<meta name="twitter:image" content="${R.DEFAULT_OG_IMAGE}" data-rh="true" />`,
+    `<meta name="twitter:image" content="${og.url}" data-rh="true" />`,
+    `<meta name="twitter:image:alt" content="${e(og.alt)}" data-rh="true" />`,
   ];
   // JSON-LD is marked as Helmet-managed so client-side schema replaces it
   // after hydration instead of duplicating it. "<" is escaped so content can
