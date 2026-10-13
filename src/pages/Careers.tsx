@@ -11,13 +11,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Reveal } from "@/components/platform/Reveal";
+import { StickyCta } from "@/components/lead/LeadKit";
+import { BeforeAfter, LanguageRoll, StruckLine, SurfaceDoodle } from "@/components/careers/CareerVisuals";
 import {
   careersRoles,
   APPLY_EMAIL,
@@ -28,6 +24,39 @@ import { useTranslation } from "@/lib/i18n/useTranslation";
 import careersOg from "@/assets/og/careers.jpg";
 
 const ALL = "all";
+const SURFACE_KINDS = ["mrv", "finance", "ai", "trust"] as const;
+const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+// Decarbonize India's eyebrow: a short amber bar, then the label.
+const Eyebrow = ({ children, light = false }: { children: string; light?: boolean }) => (
+  <p className={`mb-4 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em] ${light ? "text-primary-foreground/80" : "text-[#184d37] dark:text-emerald-400"}`}>
+    <span aria-hidden="true" className="h-[3px] w-6 rounded-full bg-amber-500" />
+    {children}
+  </p>
+);
+
+/** One row of tap-to-filter chips; replaces a dropdown so every option is visible at once. */
+const ChipGroup = ({ label, value, onChange, allLabel, options, labelFor }: {
+  label: string; value: string; onChange: (v: string) => void; allLabel: string; options: string[]; labelFor: (o: string) => string;
+}) => (
+  <div role="radiogroup" aria-label={label} className="flex flex-wrap gap-2">
+    {[ALL, ...options].map((o) => {
+      const on = value === o;
+      return (
+        <button
+          key={o}
+          type="button"
+          role="radio"
+          aria-checked={on}
+          onClick={() => onChange(o)}
+          className={`min-h-9 rounded-full border px-3.5 text-sm transition-colors ${on ? "border-[#184d37] bg-[#184d37] text-white dark:border-emerald-400 dark:bg-emerald-400 dark:text-background" : "border-border bg-background text-muted-foreground hover:border-foreground/40 hover:text-foreground"}`}
+        >
+          {o === ALL ? allLabel : labelFor(o)}
+        </button>
+      );
+    })}
+  </div>
+);
 
 const isFresherTrack = (r: CareerRole) =>
   r.level === "Fresher" || r.level === "Intern";
@@ -247,8 +276,10 @@ const Careers = () => {
     },
   ];
 
+  const pickRole = (r: CareerRole) => { setFn(r.function); setLvl(ALL); setLoc(ALL); go("roles"); };
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-[#faf6ec] text-foreground dark:bg-background flex flex-col">
       <SEOHead
         title={t(
           "careers.seo.title",
@@ -278,76 +309,93 @@ const Careers = () => {
       />
       <MinimalNav />
 
-      <main className="flex-1">
-        {/* 1. Life at Senseible — full-viewport opening */}
-        <section
-          aria-labelledby="life-at-senseible"
-          className="relative flex items-center min-h-[85vh] px-6 pt-24 md:pt-28 pb-16"
-        >
-          <div className="container max-w-5xl mx-auto">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-8 animate-fade-in motion-reduce:animate-none">
-              {t("careers.life.eyebrow", "Life at Senseible")}
-            </p>
-            <h1
-              id="life-at-senseible"
-              className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight text-foreground leading-[1.05] max-w-4xl animate-fade-in motion-reduce:animate-none"
-            >
-              {t(
-                "careers.life.title",
-                "Life at Senseible is life inside a system that has to work, for small businesses that can't afford it not to."
-              )}
-            </h1>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-[1.7] animate-fade-in motion-reduce:animate-none">
-              {t(
-                "careers.life.sub",
-                "We compress months of carbon proof into seconds so being clean pays instead of costing. Come build the parts that don't exist yet."
-              )}
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm animate-fade-in motion-reduce:animate-none">
-              <a
-                href="#roles"
-                className="inline-flex items-center gap-2 text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
+      <main className="flex-1 overflow-x-clip">
+        {/* 1. Life at Senseible: the promise on the left, the open roles on the right, so the door is visible from the first screen */}
+        <section aria-labelledby="life-at-senseible" className="px-4 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-24">
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <Reveal>
+              <Eyebrow>{t("careers.life.eyebrow", "Life at Senseible")}</Eyebrow>
+              <h1
+                id="life-at-senseible"
+                className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-[1.05] [text-wrap:balance]"
               >
-                {t("careers.life.cta.roles", "See open roles")}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="#apply"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {t("careers.life.cta.apply", "Or apply directly")}
-              </a>
-            </div>
+                {t(
+                  "careers.life.title",
+                  "Life at Senseible is life inside a system that has to work, for small businesses that can't afford it not to."
+                )}
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-[1.7]">
+                {t(
+                  "careers.life.sub",
+                  "We compress months of carbon proof into seconds so being clean pays instead of costing. Come build the parts that don't exist yet."
+                )}
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <a
+                  href="#roles"
+                  className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#184d37] px-6 text-[15px] font-medium text-white hover:bg-[#123b2a] dark:bg-emerald-500 dark:text-background"
+                >
+                  {t("careers.life.cta.roles", "See open roles")}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <a href="#apply" className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
+                  {t("careers.life.cta.apply", "Or apply directly")}
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={150}>
+              <div className="rounded-3xl border border-border bg-background p-5 sm:p-6 shadow-sm">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                    {t("careers.life.cta.roles", "See open roles")}
+                  </p>
+                  <span className="rounded-full bg-amber-100 px-2.5 py-0.5 font-mono text-xs text-amber-900 dark:bg-amber-500/20 dark:text-amber-300">
+                    {careersRoles.length}
+                  </span>
+                </div>
+                <ul className="mt-4 divide-y divide-border">
+                  {careersRoles.map((r, i) => (
+                    <li key={r.id}>
+                      <button
+                        type="button"
+                        onClick={() => pickRole(r)}
+                        className="group flex w-full items-center justify-between gap-3 py-2.5 text-left animate-fade-in motion-reduce:animate-none"
+                        style={{ animationDelay: `${120 + i * 60}ms`, animationFillMode: "both" }}
+                      >
+                        <span className="min-w-0">
+                          <span className="block truncate text-sm font-medium group-hover:text-[#184d37] dark:group-hover:text-emerald-400">{r.title}</span>
+                          <span className="block truncate text-xs text-muted-foreground">
+                            {t(`careers.function.${r.function}`, r.function)} · {t(`careers.location.${r.location}`, r.location)}
+                          </span>
+                        </span>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           </div>
         </section>
 
-        {/* 2. Why it matters — one weight-of-a-photograph statement per band */}
-        <section
-          aria-labelledby="why-matters"
-          className="bg-muted/30 border-y border-border/50"
-        >
-          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        {/* 2. Why it matters: each before state is struck out and the after state lands */}
+        <section aria-labelledby="why-matters" className="border-y border-border/60 bg-background px-4 sm:px-6">
+          <div className="mx-auto max-w-5xl py-20 md:py-28">
             <h2 id="why-matters" className="sr-only">
               {t("careers.why.title", "Why the work matters")}
             </h2>
-            <div className="space-y-16 md:space-y-24">
+            <div className="space-y-14 md:space-y-20">
               {whyItMatters.map(([h, b, tag], i) => (
-                <div
-                  key={h}
-                  className="grid md:grid-cols-12 gap-6 md:gap-10 items-baseline"
-                >
+                <div key={h} className="grid gap-4 md:grid-cols-12 md:gap-10 md:items-baseline">
                   <div className="md:col-span-3">
-                    <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                    <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                       {String(i + 1).padStart(2, "0")} · {tag}
                     </span>
                   </div>
                   <div className="md:col-span-9">
-                    <p className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
-                      {h}
-                    </p>
-                    <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl leading-[1.7]">
-                      {b}
-                    </p>
+                    <BeforeAfter text={h} />
+                    <p className="mt-4 max-w-2xl text-base md:text-lg text-muted-foreground leading-[1.7]">{b}</p>
                   </div>
                 </div>
               ))}
@@ -355,239 +403,146 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* 3. We recognise the whole you — belonging */}
-        <section
-          aria-labelledby="belonging"
-          className="container max-w-5xl mx-auto px-6 py-20 md:py-28"
-        >
-          {/* Language glyph motif — subtle diversity signal, no stock photography */}
-          <div
-            aria-hidden="true"
-            className="mb-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground/70"
-          >
-            {LANGUAGE_GLYPHS.map((g) => (
-              <span key={g}>{g}</span>
-            ))}
-          </div>
-          <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-            {t("careers.belong.eyebrow", "Who belongs here")}
-          </p>
-          <h2
-            id="belonging"
-            className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1]"
-          >
-            {t(
-              "careers.belong.title",
-              "Eleven languages, ten markets, one bar: you can think, you can ship, and the problem won't let you sleep."
-            )}
-          </h2>
-          <div className="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-10">
-            {belongingLines.map(([h, b]) => (
-              <div key={h}>
-                <h3 className="text-lg md:text-xl font-medium text-foreground mb-2">
-                  {h}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-[1.7]">
-                  {b}
-                </p>
-              </div>
-            ))}
+        {/* 3. Who belongs here: the languages light up one at a time */}
+        <section aria-labelledby="belonging" className="px-4 sm:px-6 py-20 md:py-28">
+          <div className="mx-auto max-w-5xl">
+            <Reveal>
+              <Eyebrow>{t("careers.belong.eyebrow", "Who belongs here")}</Eyebrow>
+              <h2 id="belonging" className="max-w-3xl text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] [text-wrap:balance]">
+                {t(
+                  "careers.belong.title",
+                  "Eleven languages, ten markets, one bar: you can think, you can ship, and the problem won't let you sleep."
+                )}
+              </h2>
+            </Reveal>
+            <div className="mt-8">
+              <LanguageRoll glyphs={LANGUAGE_GLYPHS} />
+            </div>
+            <ol className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+              {belongingLines.map(([h, b], i) => (
+                <li key={h} className="grid grid-cols-[auto_1fr] gap-4">
+                  <span aria-hidden="true" className="mt-1 font-mono text-xs text-amber-600 dark:text-amber-400">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="mb-2 text-lg md:text-xl font-medium">{h}</h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-[1.7]">{b}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
-        {/* 4. The work itself */}
-        <section
-          aria-labelledby="the-work"
-          className="bg-primary/[0.03] border-y border-border/50"
-        >
-          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-              {t("careers.work.eyebrow", "The work itself")}
-            </p>
-            <h2
-              id="the-work"
-              className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1] mb-12"
-            >
-              {t(
-                "careers.work.title",
-                "Four surfaces. Each one shipped by someone who owns it end-to-end."
-              )}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-x-10 gap-y-12">
-              {workSurfaces.map((s) => (
-                <div key={s.h}>
-                  <h3 className="text-xl md:text-2xl font-medium text-foreground mb-3">
-                    {s.h}
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-[1.7] mb-4">
-                    {s.b}
-                  </p>
-                  <Link
-                    to={s.to}
-                    className="text-sm text-foreground inline-flex items-center gap-1 border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
-                  >
-                    {s.cta}
-                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                  </Link>
-                </div>
+        {/* 4. The work itself: four surfaces, each drawn as it arrives */}
+        <section aria-labelledby="the-work" className="border-y border-border/60 bg-background px-4 sm:px-6">
+          <div className="mx-auto max-w-5xl py-20 md:py-28">
+            <Reveal>
+              <Eyebrow>{t("careers.work.eyebrow", "The work itself")}</Eyebrow>
+              <h2 id="the-work" className="mb-12 max-w-3xl text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] [text-wrap:balance]">
+                {t("careers.work.title", "Four surfaces. Each one shipped by someone who owns it end-to-end.")}
+              </h2>
+            </Reveal>
+            <div className="grid gap-5 md:grid-cols-2">
+              {workSurfaces.map((w, i) => (
+                <Reveal key={w.h} delay={i * 80}>
+                  <div className="flex h-full flex-col rounded-3xl border border-border p-6 md:p-7">
+                    <div className="mb-4 text-foreground/70">
+                      <SurfaceDoodle kind={SURFACE_KINDS[i] ?? "trust"} />
+                    </div>
+                    <h3 className="mb-3 text-xl md:text-2xl font-medium">{w.h}</h3>
+                    <p className="mb-5 flex-1 text-base text-muted-foreground leading-[1.7]">{w.b}</p>
+                    <Link
+                      to={w.to}
+                      className="inline-flex items-center gap-1 self-start border-b border-foreground/30 pb-0.5 text-sm hover:border-foreground transition-colors"
+                    >
+                      {w.cta}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 5. How we work — inversion */}
-        <section
-          aria-labelledby="how-we-work"
-          className="container max-w-5xl mx-auto px-6 py-20 md:py-28"
-        >
-          <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-            {t("careers.how.eyebrow", "How we work")}
-          </p>
-          <h2
-            id="how-we-work"
-            className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground max-w-3xl leading-[1.1] mb-12"
-          >
-            {t(
-              "careers.how.title",
-              "Your work is as meaningful to us as it is to you."
-            )}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-x-10">
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-                {t("careers.how.we_do", "We do")}
-              </div>
-              <ul className="space-y-4">
-                {doDont.map(([d]) => (
-                  <li
-                    key={d}
-                    className="text-base md:text-lg text-foreground leading-relaxed"
-                  >
+        {/* 5. How we work: each habit sits beside the one it replaces, which is crossed out */}
+        <section aria-labelledby="how-we-work" className="px-4 sm:px-6 py-20 md:py-28">
+          <div className="mx-auto max-w-5xl">
+            <Reveal>
+              <Eyebrow>{t("careers.how.eyebrow", "How we work")}</Eyebrow>
+              <h2 id="how-we-work" className="mb-10 max-w-3xl text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] [text-wrap:balance]">
+                {t("careers.how.title", "Your work is as meaningful to us as it is to you.")}
+              </h2>
+            </Reveal>
+            <div className="hidden md:grid md:grid-cols-2 md:gap-10 border-b border-border pb-3 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+              <span>{t("careers.how.we_do", "We do")}</span>
+              <span>{t("careers.how.we_dont", "We don't")}</span>
+            </div>
+            <ul className="divide-y divide-border">
+              {doDont.map(([d, dn]) => (
+                <li key={d} className="grid gap-1 py-4 md:grid-cols-2 md:gap-10">
+                  <span className="text-base md:text-lg font-medium leading-relaxed">
+                    <span className="mr-2 text-[#184d37] dark:text-emerald-400" aria-hidden="true">✓</span>
+                    <span className="sr-only">{t("careers.how.we_do", "We do")}: </span>
                     {d}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-10 md:mt-0">
-              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-                {t("careers.how.we_dont", "We don't")}
-              </div>
-              <ul className="space-y-4">
-                {doDont.map(([, dn]) => (
-                  <li
-                    key={dn}
-                    className="text-base md:text-lg text-muted-foreground leading-relaxed"
-                  >
-                    {dn}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  </span>
+                  <span className="text-base md:text-lg leading-relaxed">
+                    <span className="sr-only">{t("careers.how.we_dont", "We don't")}: </span>
+                    <StruckLine text={dn} />
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        {/* 6. Open roles */}
-        <section
-          id="roles"
-          aria-labelledby="roles-heading"
-          className="bg-muted/30 border-y border-border/50 scroll-mt-24"
-        >
-          <div className="container max-w-5xl mx-auto px-6 py-20 md:py-24">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+        {/* 6. Open roles: one-tap filters, every option visible */}
+        <section id="roles" aria-labelledby="roles-heading" className="scroll-mt-24 border-y border-border/60 bg-background px-4 sm:px-6">
+          <div className="mx-auto max-w-5xl py-20 md:py-24">
+            <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div className="max-w-2xl">
-                <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-                  {t("careers.roles.eyebrow", "And here is the door")}
-                </p>
-                <h2
-                  id="roles-heading"
-                  className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground"
-                >
+                <Eyebrow>{t("careers.roles.eyebrow", "And here is the door")}</Eyebrow>
+                <h2 id="roles-heading" className="text-3xl md:text-4xl font-semibold tracking-tight">
                   {t("careers.roles.title", "Open roles: kept short, kept honest.")}
                 </h2>
               </div>
-              <div
-                className="text-xs text-muted-foreground"
-                role="status"
-                aria-live="polite"
-              >
-                {t(
-                  "careers.filter.count",
-                  "{visible} of {total} roles shown"
-                )
+              <div className="text-xs text-muted-foreground" role="status" aria-live="polite">
+                {t("careers.filter.count", "{visible} of {total} roles shown")
                   .replace("{visible}", String(visible.length))
                   .replace("{total}", String(careersRoles.length))}
               </div>
             </div>
 
-            <div
-              role="group"
-              aria-label={t("careers.filter.title", "Filter open roles")}
-              className="grid sm:grid-cols-3 gap-3 mb-6"
-            >
-              <Select value={fn} onValueChange={setFn}>
-                <SelectTrigger
-                  aria-label={t("careers.filter.by_function", "Filter by function")}
-                  className="min-h-11 bg-background"
-                >
-                  <SelectValue
-                    placeholder={t("careers.filter.all_functions", "All functions")}
-                  />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ALL}>
-                    {t("careers.filter.all_functions", "All functions")}
-                  </SelectItem>
-                  {functions.map((f) => (
-                    <SelectItem key={f} value={f}>
-                      {t(`careers.function.${f}`, f)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Select value={lvl} onValueChange={setLvl}>
-                <SelectTrigger
-                  aria-label={t("careers.filter.by_level", "Filter by level")}
-                  className="min-h-11 bg-background"
-                >
-                  <SelectValue
-                    placeholder={t("careers.filter.all_levels", "All levels")}
-                  />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ALL}>
-                    {t("careers.filter.all_levels", "All levels")}
-                  </SelectItem>
-                  {levels.map((l) => (
-                    <SelectItem key={l} value={l}>
-                      {t(`careers.level.${l}`, l)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Select value={loc} onValueChange={setLoc}>
-                <SelectTrigger
-                  aria-label={t("careers.filter.by_location", "Filter by location")}
-                  className="min-h-11 bg-background"
-                >
-                  <SelectValue
-                    placeholder={t("careers.filter.all_locations", "All locations")}
-                  />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ALL}>
-                    {t("careers.filter.all_locations", "All locations")}
-                  </SelectItem>
-                  {locations.map((l) => (
-                    <SelectItem key={l} value={l}>
-                      {t(`careers.location.${l}`, l)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <div role="group" aria-label={t("careers.filter.title", "Filter open roles")} className="mb-6 space-y-3">
+              <ChipGroup
+                label={t("careers.filter.by_function", "Filter by function")}
+                value={fn}
+                onChange={setFn}
+                allLabel={t("careers.filter.all_functions", "All functions")}
+                options={functions}
+                labelFor={(f) => t(`careers.function.${f}`, f)}
+              />
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
+                <ChipGroup
+                  label={t("careers.filter.by_level", "Filter by level")}
+                  value={lvl}
+                  onChange={setLvl}
+                  allLabel={t("careers.filter.all_levels", "All levels")}
+                  options={levels}
+                  labelFor={(l) => t(`careers.level.${l}`, l)}
+                />
+                <ChipGroup
+                  label={t("careers.filter.by_location", "Filter by location")}
+                  value={loc}
+                  onChange={setLoc}
+                  allLabel={t("careers.filter.all_locations", "All locations")}
+                  options={locations}
+                  labelFor={(l) => t(`careers.location.${l}`, l)}
+                />
+              </div>
             </div>
 
             {visible.length === 0 ? (
-              <div className="text-center py-12 border border-dashed border-border rounded-lg bg-background">
+              <div className="text-center py-12 border border-dashed border-border rounded-2xl bg-background">
                 <p className="text-sm text-muted-foreground">
                   {t(
                     "careers.roles.empty.title",
@@ -617,7 +572,7 @@ const Careers = () => {
                 </p>
               </div>
             ) : (
-              <ul className="divide-y divide-border border border-border rounded-lg overflow-hidden bg-background">
+              <ul className="divide-y divide-border border border-border rounded-2xl overflow-hidden bg-background">
                 {visible.map((r) => {
                   const fresher = isFresherTrack(r);
                   return (
@@ -838,6 +793,11 @@ const Careers = () => {
         </section>
       </main>
 
+      <StickyCta
+        label={t("careers.life.cta.roles", "See open roles")}
+        onClick={() => go("roles")}
+        hideWhenVisible={["roles", "apply"]}
+      />
       <Footer />
     </div>
   );
