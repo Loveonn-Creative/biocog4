@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { serviceNav } from "@/data/services/nav";
+import { serviceFooterGroups } from "@/data/services/footerGroups";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { useState, useEffect } from "react";
@@ -62,6 +63,12 @@ const footerLinks = {
   ],
 };
 
+const SERVICE_TONE = {
+  primary: { dot: 'bg-primary' },
+  accent: { dot: 'bg-accent' },
+  warning: { dot: 'bg-warning' },
+} as const;
+
 export const Footer = () => {
   const { isAuthenticated, isLoading, user } = useSession();
   const [isPartner, setIsPartner] = useState(false);
@@ -111,7 +118,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-background">
       <div className="container max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1.35fr_1fr_1fr_1fr] gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-semibold text-foreground">
@@ -155,18 +162,31 @@ export const Footer = () => {
             </ul>
           </div>
           
-          {/* Services: one lead page per job, each with a free tool */}
+          {/* Services: one lead page per job, grouped so the column scans in three parts */}
           <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Services</h4>
-            <ul className="space-y-2">
-              {serviceNav.map((sp) => (
-                <li key={sp.slug}>
-                  <Link to={`/${sp.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    {sp.nav}
-                  </Link>
-                </li>
+            <div className="space-y-3">
+              {serviceFooterGroups.map((g) => (
+                <div key={g.label}>
+                  <p className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/80">
+                    <span aria-hidden className={`h-1.5 w-1.5 shrink-0 rounded-full ${SERVICE_TONE[g.tone].dot}`} />
+                    {g.label}
+                  </p>
+                  <ul className="mt-1.5 space-y-1.5">
+                    {g.slugs.map((slug) => {
+                      const sp = serviceNav.find((s) => s.slug === slug);
+                      return sp ? (
+                        <li key={slug}>
+                          <Link to={`/${sp.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                            {sp.nav}
+                          </Link>
+                        </li>
+                      ) : null;
+                    })}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Solutions */}
