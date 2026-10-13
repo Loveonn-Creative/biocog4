@@ -32,4 +32,5 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /careers | [Loveonn-Creative/biocog4#68](https://github.com/Loveonn-Creative/biocog4/pull/68) | `d2bcee6` (merge `eadd071`) |
 | /enterprise | [Loveonn-Creative/biocog4#81](https://github.com/Loveonn-Creative/biocog4/pull/81) | `e72bc37` (merge `43c48be`) |
 | /net-zero | [Loveonn-Creative/biocog4#83](https://github.com/Loveonn-Creative/biocog4/pull/83) | `953a0b2` (merge `cf77b35`) |
-| /climate-finance | [Loveonn-Creative/biocog4#84](https://github.com/Loveonn-Creative/biocog4/pull/84) | `cf77b35` |
+| /climate-finance | [Loveonn-Creative/biocog4#84](https://github.com/Loveonn-Creative/biocog4/pull/84) | `cf77b35` (merge `c488704`) |
+| /partners | [Loveonn-Creative/biocog4#85](https://github.com/Loveonn-Creative/biocog4/pull/85) | `c488704` |
