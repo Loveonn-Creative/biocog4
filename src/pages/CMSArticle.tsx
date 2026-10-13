@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 import { ArrowLeft, Calendar, Tag, ChevronRight } from "lucide-react";
-import { memo, useMemo } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -11,14 +11,32 @@ import { FormattedContent } from "@/components/FormattedContent";
 import { SocialShare } from "@/components/SocialShare";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { articleFunnel, FUNNEL_LABEL } from "@/data/articleFunnel";
-import { getArticleBySlug, getRelatedArticles, getArticlesByCategory, cmsCategories } from "@/data/cmsContent";
+import { getArticleBySlug, getArticlesByCategory } from "@/data/articleIndex";
+import { loadArticleBody } from "@/data/articleBody";
+import { relatedArticles as relatedFor } from "@/data/articleRelated";
 
 const CMSArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
   const article = useMemo(() => slug ? getArticleBySlug(slug) : undefined, [slug]);
-  const relatedArticles = useMemo(() => article ? getRelatedArticles(article.id, 4) : [], [article]);
+  const relatedArticles = useMemo(() => article ? relatedFor(article.slug) : [], [article]);
+  // The body loads on its own (one small chunk per article). Until it
+  // arrives the prerendered head tags stay in place; a failed load says so
+  // and offers a reload (a failed module import is cached by the browser, so
+  // only a fresh page load can retry it) instead of showing an empty article.
+  const [body, setBody] = useState<string | null>(null);
+  const [bodyError, setBodyError] = useState(false);
+  useEffect(() => {
+    if (!article) return;
+    let live = true;
+    setBody(null);
+    setBodyError(false);
+    loadArticleBody(article.slug)
+      .then(b => { if (live) setBody(b); })
+      .catch(() => { if (live) setBodyError(true); });
+    return () => { live = false; };
+  }, [article]);
   const categoryArticles = useMemo(() => {
     if (!article) return [];
     return getArticlesByCategory(article.category)
@@ -55,7 +73,7 @@ const CMSArticle = () => {
   };
 
   // Generate dynamic OG image URL using a service or fallback
-  const meta = articleMeta(article);
+  const meta = body !== null ? articleMeta({ ...article, content: body }) : null;
   // Shown only once a named reviewer has actually reviewed this page.
   const review = PAGE_REVIEWS[`/climate-intelligence/${article.slug}`];
   
@@ -67,12 +85,12 @@ const CMSArticle = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <SEOHead 
+      {meta && body !== null && <SEOHead 
         title={meta.title}
         description={meta.description}
         canonical={`/climate-intelligence/${slug}`}
         type="article"
-        faqSchema={extractFaqs(article.content)}
+        faqSchema={extractFaqs(body)}
         image={defaultOgImage}
         keywords={article.tags}
         article={{
@@ -87,7 +105,7 @@ const CMSArticle = () => {
           { name: article.subtitle, url: `/climate-intelligence?category=${encodeURIComponent(article.category)}` },
           { name: article.title, url: `/climate-intelligence/${slug}` }
         ]}
-      />
+      />}
       <MinimalNav />
       
       <main className="container max-w-4xl mx-auto px-6 py-24 sm:py-32 flex-1">
@@ -153,17 +171,31 @@ const CMSArticle = () => {
           <div className="mb-8 pb-8 border-b border-border">
             <SocialShare 
               title={article.title}
-              description={article.content.substring(0, 200).replace(/\*\*/g, '')}
+              description={article.excerpt}
               compact
             />
           </div>
           
           {/* Content - Properly formatted */}
           <div className="prose prose-lg max-w-none">
-            <FormattedContent 
-              content={article.content} 
-              className="text-lg leading-relaxed"
-            />
+            {body !== null ? (
+              <FormattedContent 
+                content={body} 
+                className="text-lg leading-relaxed"
+              />
+            ) : bodyError ? (
+              <div role="alert" className="rounded-xl border border-border p-5 not-prose">
+                <p className="text-base text-foreground">This article could not be loaded. Check your connection and try again.</p>
+                <button type="button" onClick={() => window.location.reload()} className="mt-3 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+                  Try again
+                </button>
+              </div>
+            ) : (
+              <div aria-busy="true" aria-label="Loading article" className="not-prose space-y-3">
+                <p className="text-lg leading-relaxed text-foreground/80">{article.excerpt}</p>
+                {[0, 1, 2, 3].map(i => <div key={i} className="h-4 rounded bg-secondary/70 animate-pulse motion-reduce:animate-none" style={{ width: `${92 - i * 9}%` }} />)}
+              </div>
+            )}
           </div>
           
           {/* Disclaimer */}
@@ -195,7 +227,7 @@ const CMSArticle = () => {
           <div className="mt-8 pt-8 border-t border-border">
             <SocialShare 
               title={article.title}
-              description={article.content.substring(0, 200).replace(/\*\*/g, '')}
+              description={article.excerpt}
             />
           </div>
           
