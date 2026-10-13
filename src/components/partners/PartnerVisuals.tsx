@@ -2,12 +2,17 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { useMotionGate } from "@/components/services/motion/kit";
+import { StatusBadge } from "@/components/enterprise/StatusBadge";
+import type { CapabilityStatus } from "@/data/enterpriseCapabilities";
+
+/** A benefit, optionally with the same Live / Custom label used on /enterprise. */
+export type Benefit = string | { text: string; status: CapabilityStatus };
 
 export interface PartnerType {
   id: string;
   title: string;
   description: string;
-  benefits: string[];
+  benefits: Benefit[];
   cta: string;
   href: string;
   /** What travels along the lane, and which way. */
@@ -74,9 +79,16 @@ export const FlowLanes = ({ types }: { types: PartnerType[] }) => {
           {t.flow.back && <><span className="inline-block h-2 w-2 rounded-full bg-warning ml-4 mr-1.5 align-middle" />{t.flow.back}</>}
         </p>
         <ul className="mt-5 space-y-2.5">
-          {t.benefits.map(b => (
-            <li key={b} className="flex items-start gap-2.5 text-sm"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{b}</li>
-          ))}
+          {t.benefits.map(b => {
+            const text = typeof b === "string" ? b : b.text;
+            return (
+              <li key={text} className="flex items-start gap-2.5 text-sm">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="flex-1">{text}</span>
+                {typeof b !== "string" && <StatusBadge status={b.status} />}
+              </li>
+            );
+          })}
         </ul>
         <Link to={t.href} className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium">
           {t.cta} <ArrowRight className="w-4 h-4" />
@@ -86,7 +98,7 @@ export const FlowLanes = ({ types }: { types: PartnerType[] }) => {
   );
 };
 
-export interface Reason { title: string; body: string; mark: string }
+export interface Reason { title: string; body: string; mark: string; note?: string }
 
 /** Cards that turn over to show how each claim works. Keyboard and screen readers get both sides. */
 export const FlipReasons = ({ reasons }: { reasons: Reason[] }) => {
@@ -108,7 +120,7 @@ export const FlipReasons = ({ reasons }: { reasons: Reason[] }) => {
               </span>
             </span>
             <span className={`absolute inset-0 rounded-3xl bg-foreground text-background p-6 flex items-center transition-transform duration-500 [backface-visibility:hidden] ${flipped ? "" : "[transform:rotateY(-180deg)]"}`}>
-              <span className="text-sm leading-relaxed">{r.body}</span>
+              <span className="text-sm leading-relaxed">{r.body}{r.note && <span className="mt-2 block text-[11px] text-background/70">{r.note}</span>}</span>
             </span>
           </button>
         );
