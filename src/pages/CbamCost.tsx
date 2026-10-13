@@ -61,7 +61,7 @@ function Detail({ s }: { s: SectorCosts }) {
         <div className="mt-4 overflow-x-auto rounded-2xl border border-border">
           <table className="w-full min-w-[640px] text-right text-sm">
             <thead className="bg-secondary/50 text-xs uppercase tracking-wider text-muted-foreground">
-              <tr><th className="px-3 py-3 text-left font-medium">Route</th>{CBAM_YEARS.map((y) => <th key={y} className="px-3 py-3 font-medium">{y}</th>)}</tr>
+              <tr><th className="px-3 py-3 text-left font-medium">{s.sector.routeKind === "product" ? "Product" : "Route"}</th>{CBAM_YEARS.map((y) => <th key={y} className="px-3 py-3 font-medium">{y}</th>)}</tr>
             </thead>
             <tbody>
               {s.routes.map((r) => (
@@ -73,7 +73,7 @@ function Detail({ s }: { s: SectorCosts }) {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-sm text-muted-foreground">Assumptions: EU default values with the default-value mark-up, certificate price held at {eur(CBAM_PRICE)} (Q3 2026), origin India with no carbon price paid at origin. Estimates, not a CBAM declaration.</p>
+        <p className="mt-3 text-sm text-muted-foreground">Assumptions: EU default values with the default-value mark-up{s.sector.routeKind === "product" ? " (India defaults by product, direct emissions only)" : ""}, certificate price held at {eur(CBAM_PRICE)} (Q3 2026), origin India with no carbon price paid at origin. Estimates, not a CBAM declaration.</p>
       </section>
 
       <section className="mt-12">

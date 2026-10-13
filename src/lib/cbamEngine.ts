@@ -60,6 +60,8 @@ export interface CBAMSector {
   id: string;
   name: string;
   cnCodes: { code: string; description: string }[];
+  /** 'product' when defaults differ by product form rather than production route. */
+  routeKind?: 'route' | 'product';
   productionRoutes: { id: string; name: string; defaultIntensity: number }[];
   euBenchmark: number; // tCO2/tonne product
   defaultIntensity: number; // tCO2/tonne (EU default value if no actual data)
@@ -101,14 +103,23 @@ export const CBAM_SECTORS: CBAMSector[] = [
       { code: '7606', description: 'Aluminium plates & sheets' },
       { code: '7607', description: 'Aluminium foil' },
     ],
+    // CBAM charges aluminium on direct emissions only (Regulation (EU) 2023/956,
+    // Annex II lists cement and fertilisers for indirect emissions, not
+    // aluminium), so smelter electricity is not counted. EU default values are
+    // set per product and origin, not per production route: these are the
+    // India defaults from Implementing Regulation (EU) 2025/2621 (unwrought
+    // 1.87; wire 2.59; bars and rods 3.41, with some profile subheadings
+    // reported at 3.44; plates, sheets and strip 4.13). Recycled metal only
+    // lowers the charge through verified actual emissions.
+    routeKind: 'product',
     productionRoutes: [
-      { id: 'primary-coal', name: 'Primary (Coal Power)', defaultIntensity: 16.5 },
-      { id: 'primary-hydro', name: 'Primary (Hydro Power)', defaultIntensity: 4.0 },
-      { id: 'primary-mixed', name: 'Primary (Mixed Grid)', defaultIntensity: 8.0 },
-      { id: 'secondary', name: 'Secondary (Recycled)', defaultIntensity: 0.5 },
+      { id: 'unwrought', name: 'Unwrought aluminium (CN 7601)', defaultIntensity: 1.87 },
+      { id: 'wire', name: 'Wire (CN 7605)', defaultIntensity: 2.59 },
+      { id: 'bars-profiles', name: 'Bars, rods and profiles (CN 7604)', defaultIntensity: 3.41 },
+      { id: 'plates-sheets', name: 'Plates, sheets and strip (CN 7606)', defaultIntensity: 4.13 },
     ],
     euBenchmark: 1.514,
-    defaultIntensity: 8.0,
+    defaultIntensity: 1.87,
   },
   {
     id: 'cement',

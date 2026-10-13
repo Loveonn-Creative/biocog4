@@ -10,7 +10,7 @@ const FIRST_DECLARATION = "2027-09-30";
 
 const OPTIONS = [
   { sectorId: "steel", routeId: "bf-bof" },
-  { sectorId: "aluminium", routeId: "primary-mixed" },
+  { sectorId: "aluminium", routeId: "unwrought" },
   { sectorId: "cement", routeId: "grey-clinker" },
   { sectorId: "fertilizers", routeId: "haber-bosch-gas" },
 ];

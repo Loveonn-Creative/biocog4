@@ -58,19 +58,24 @@ export const findSectorCosts = (id: string | undefined) => CBAM_SECTOR_PAGES.fin
 
 const eur = (n: number) => `€${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
 const lower = (s: string) => s.toLowerCase().replace('&', 'and');
+const isProduct = (s: SectorCosts) => s.sector.routeKind === 'product';
+/** "on the BF-BOF route" for routes; "for unwrought aluminium (CN 7601)" for product forms. */
+const onRoute = (s: SectorCosts, r: RouteCosts) => (isProduct(s) ? `for ${r.routeName.charAt(0).toLowerCase()}${r.routeName.slice(1)}` : `on the ${r.routeName} route`);
 
 /** The answer that leads each sector page. */
 export function cbamAnswer(s: SectorCosts): string {
   const h = s.headline;
-  return `Using EU default values and a certificate price of ${eur(CBAM_PRICE)}, CBAM adds about ${eur(h.perTonne[2026])} per tonne of ${lower(s.sector.name)} imported from India in 2026 on the ${h.routeName} route, rising to ${eur(h.perTonne[2030])} in 2030 and ${eur(h.perTonne[2034])} in 2034 as free allocation ends.`;
+  return `Using EU default values and a certificate price of ${eur(CBAM_PRICE)}, CBAM adds about ${eur(h.perTonne[2026])} per tonne of ${lower(s.sector.name)} imported from India in 2026 ${onRoute(s, h)}, rising to ${eur(h.perTonne[2030])} in 2030 and ${eur(h.perTonne[2034])} in 2034 as free allocation ends.`;
 }
 
 export function cbamFaqs(s: SectorCosts): { question: string; answer: string }[] {
   const h = s.headline;
   const low = [...s.routes].sort((a, b) => a.perTonne[2034] - b.perTonne[2034])[0];
   return [
-    { question: `What is the CBAM cost per tonne of ${lower(s.sector.name)} in 2026?`, answer: `About ${eur(h.perTonne[2026])} per tonne at default values on the ${h.routeName} route (${h.intensity} tCO2 per tonne plus the default-value mark-up), with ${Math.round(FREE_ALLOCATION_PCT[2026] * 100)}% of the EU benchmark still allocated free.` },
-    { question: `How much does the production route change the CBAM cost?`, answer: `By 2034 the default-value cost ranges from ${eur(low.perTonne[2034])} per tonne on the ${low.routeName} route to ${eur(Math.max(...s.routes.map((r) => r.perTonne[2034])))} per tonne for the most carbon-intensive route listed.` },
+    { question: `What is the CBAM cost per tonne of ${lower(s.sector.name)} in 2026?`, answer: `About ${eur(h.perTonne[2026])} per tonne at default values ${onRoute(s, h)} (${h.intensity} tCO2 per tonne plus the default-value mark-up), with ${Math.round(FREE_ALLOCATION_PCT[2026] * 100)}% of the EU benchmark still allocated free.` },
+    isProduct(s)
+      ? { question: `Does the product form change the CBAM cost of ${lower(s.sector.name)}?`, answer: `Yes. EU default values rise with each stage of working, so by 2034 the default-value cost ranges from ${eur(low.perTonne[2034])} per tonne ${onRoute(s, low)} to ${eur(Math.max(...s.routes.map((r) => r.perTonne[2034])))} per tonne for the most worked product listed. Only direct emissions count for ${lower(s.sector.name)}, and defaults do not distinguish recycled from primary metal: recycled content lowers the charge only through verified actual emissions.` }
+      : { question: `How much does the production route change the CBAM cost?`, answer: `By 2034 the default-value cost ranges from ${eur(low.perTonne[2034])} per tonne on the ${low.routeName} route to ${eur(Math.max(...s.routes.map((r) => r.perTonne[2034])))} per tonne for the most carbon-intensive route listed.` },
     { question: 'How can an exporter lower this cost?', answer: `Replace default values with verified actual emissions from the installation: CBAM charges on the embedded emissions declared, and for this sector default values carry a ${Math.round(defaultValueMarkup(s.sector.id, 2028) * 100)}% mark-up from 2028.` },
   ];
 }
