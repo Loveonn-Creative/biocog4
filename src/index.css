@@ -617,3 +617,10 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @media (prefers-reduced-motion: reduce) {
   .mission-anim *, .mission-anim *::before, .mission-anim *::after { animation: none !important; transition: none !important; }
 }
+
+/* Principles (/principles). */
+.pl-rise { transform-box: fill-box; transform-origin: bottom; transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .5s ease-out; }
+.pl-lintel { transform-box: fill-box; transition: transform .6s cubic-bezier(.2,.8,.2,1) .25s, opacity .5s ease-out .25s; }
+@media (prefers-reduced-motion: reduce) {
+  .pl-anim *, .pl-anim *::before, .pl-anim *::after { animation: none !important; transition: none !important; }
+}
