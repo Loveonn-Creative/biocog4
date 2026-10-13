@@ -1,4 +1,5 @@
 import { serviceNav } from '@/data/services/nav';
+import { OG_VERSION } from './ogVersion';
 import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 // Single source of truth for page metadata, shared by the client (SEOHead,
 // RouteSEO) and the build-time prerender + validator (scripts/). Keep this file
@@ -6,7 +7,7 @@ import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 // route list lives in ./routeRegistry.ts, which only the build imports.
 export const SITE_URL = 'https://senseible.earth';
 export const SITE_NAME = 'Senseible';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/default.jpg`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/default.jpg?v=${OG_VERSION}`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 
@@ -32,7 +33,7 @@ export function ogImageFor(path: string): { url: string; alt: string; specific: 
   const key = path.length > 1 ? path.replace(/\/+$/, '') : path;
   const hit = OG_IMAGES[key];
   return hit
-    ? { url: `${SITE_URL}/og/${hit.slug}.jpg`, alt: hit.alt, specific: true }
+    ? { url: `${SITE_URL}/og/${hit.slug}.jpg?v=${OG_VERSION}`, alt: hit.alt, specific: true }
     : { url: DEFAULT_OG_IMAGE, alt: 'Senseible: turn invoices into verified carbon records', specific: false };
 }
 
