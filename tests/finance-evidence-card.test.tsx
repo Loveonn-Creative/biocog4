@@ -12,6 +12,8 @@ const entries = [
     activity_data: 100, activity_unit: 'L', emission_factor: 2.68, factor_source: 'IPCC', methodology_version: 'v1', co2_kg: 268, verification_status: 'verified', created_at: '2025-06-13' },
 ];
 mock.module('@/hooks/useComplianceLedger', () => ({ useComplianceLedger: () => ({ entries, isLoading: false }) }));
+mock.module('@/hooks/useWorkspace', () => ({ useWorkspace: () => ({ scope: { kind: 'personal', userId: 'u' }, ready: false }) }));
+mock.module('@/integrations/supabase/client', () => ({ supabase: {} }));
 mock.module('@/hooks/useFinanceDetail', () => ({ useFinanceDetail: () => ({ ...detail, setEnabled: () => {} }) }));
 
 const { FinanceEvidenceCard } = await import('../src/components/dashboard/FinanceEvidenceCard');

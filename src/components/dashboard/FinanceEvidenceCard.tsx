@@ -1,9 +1,12 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { useComplianceLedger } from '@/hooks/useComplianceLedger';
 import { useFinanceDetail } from '@/hooks/useFinanceDetail';
-import { computeFinanceEvidence, type FinanceLedgerRow } from '@/lib/financeEvidence';
+import { computeFinanceEvidence, type BillingPeriods, type FinanceLedgerRow } from '@/lib/financeEvidence';
+import { supabase } from '@/integrations/supabase/client';
+import { useWorkspace } from '@/hooks/useWorkspace';
+import { applyScope, scopeKey } from '@/lib/workspaceScope';
 
 // What a lender can check in the verified records. Every plan sees the
 // summary; Pro and Scale see the detail once "Finance detail" is on in
@@ -25,7 +28,31 @@ const Row = ({ label, value, note }: { label: string; value: string; note?: stri
 export function FinanceEvidenceCard() {
   const { entries } = useComplianceLedger();
   const { available, enabled } = useFinanceDetail();
-  const fe = useMemo(() => computeFinanceEvidence(entries as unknown as FinanceLedgerRow[]), [entries]);
+  const { scope, ready } = useWorkspace();
+  const key = scopeKey(scope);
+  const [periods, setPeriods] = useState<BillingPeriods>({});
+
+  // Billing periods printed on electricity bills (stored with the reading); only needed for the detail view.
+  useEffect(() => {
+    if (!enabled || !ready) return;
+    let cancelled = false;
+    // JSON-path select: typed loosely, the generated types cannot follow it.
+    const docs = supabase.from('documents') as unknown as { select: (cols: string) => { not: (c: string, op: string, v: null) => { limit: (n: number) => PromiseLike<{ data: unknown[] | null }> } } };
+    const query = applyScope(docs.select('document_hash, bill:cached_result->electricityBill').not('cached_result->electricityBill', 'is', null).limit(500), scope);
+    if (!query) return;
+    void query.then(({ data }) => {
+      if (cancelled || !data) return;
+      const next: BillingPeriods = {};
+      for (const d of data as Array<{ document_hash: string | null; bill: { billingPeriodStart?: string | null; billingPeriodEnd?: string | null } | null }>) {
+        if (d.document_hash && d.bill?.billingPeriodStart && d.bill.billingPeriodEnd) next[d.document_hash] = { start: d.bill.billingPeriodStart, end: d.bill.billingPeriodEnd };
+      }
+      setPeriods(next);
+    });
+    return () => { cancelled = true; };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
+  }, [enabled, ready, key]);
+
+  const fe = useMemo(() => computeFinanceEvidence(entries as unknown as FinanceLedgerRow[], periods), [entries, periods]);
   if (fe.summary.invoices === 0) return null;
   const { summary: s, detail: d } = fe;
 

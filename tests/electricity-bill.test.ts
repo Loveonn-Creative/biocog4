@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { prepareElectricityLines, consolidateElectricity, isElectricityBill, type RawOcr } from '../supabase/functions/_shared/electricityBill';
+import { prepareElectricityLines, consolidateElectricity, isElectricityBill, electricityBillMeta, type RawOcr } from '../supabase/functions/_shared/electricityBill';
 import { calculateEmissions, classifyByHSN, classifyByKeyword } from '../supabase/functions/_shared/emissionFactors';
 import { buildEmissionRows } from '../src/lib/mrvPersistence';
 
@@ -85,5 +85,29 @@ describe('electricity bills produce one verifiable record from printed units', (
     const first = kg(pipeline(ocr).rows);
     expect(first).toBeCloseTo(887.5, 6);
     for (let i = 0; i < 20; i++) expect(kg(pipeline(ocr).rows)).toBe(first);
+  });
+});
+
+describe('electricityBillMeta', () => {
+  const bill = { documentType: 'bill', vendor: 'BESCOM', lineItems: [{ description: 'Energy charges', hsn_code: '2716' }] };
+
+  test('keeps printed billing details that pass checks', () => {
+    expect(electricityBillMeta({ ...bill, billingPeriodStart: '2025-04-12', billingPeriodEnd: '2025-05-11', tariffCategory: ' LT-II  Commercial ', sanctionedLoadKw: '15' }))
+      .toEqual({ billingPeriodStart: '2025-04-12', billingPeriodEnd: '2025-05-11', tariffCategory: 'LT-II Commercial', sanctionedLoadKw: 15 });
+  });
+
+  test('drops a reversed, too long or half period', () => {
+    expect(electricityBillMeta({ ...bill, billingPeriodStart: '2025-05-11', billingPeriodEnd: '2025-04-12', sanctionedLoadKw: 5 })?.billingPeriodStart).toBeNull();
+    expect(electricityBillMeta({ ...bill, billingPeriodStart: '2023-01-01', billingPeriodEnd: '2025-01-01', sanctionedLoadKw: 5 })?.billingPeriodEnd).toBeNull();
+    expect(electricityBillMeta({ ...bill, billingPeriodStart: '2025-04-12', sanctionedLoadKw: 5 })?.billingPeriodStart).toBeNull();
+  });
+
+  test('never keeps tariff text carrying an account-like number', () => {
+    expect(electricityBillMeta({ ...bill, tariffCategory: 'LT-II A/c 1234567890' })).toBeNull();
+  });
+
+  test('null for non-electricity documents or when nothing is printed', () => {
+    expect(electricityBillMeta({ documentType: 'invoice', vendor: 'Steel Traders', lineItems: [{ description: 'MS rods', hsn_code: '7214' }], tariffCategory: 'X' })).toBeNull();
+    expect(electricityBillMeta(bill)).toBeNull();
   });
 });

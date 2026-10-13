@@ -5,7 +5,7 @@ import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UN
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst } from '../_shared/planLimits.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
-import { consolidateElectricity, prepareElectricityLines } from '../_shared/electricityBill.ts';
+import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import {
@@ -295,6 +295,8 @@ interface ExtractedData {
   totalCO2Kg?: number;
   /** Avoided emissions from green line items, reported separately (>= 0). */
   avoidedCO2Kg?: number;
+  /** Electricity bills only: billing details as printed, validated. */
+  electricityBill?: ElectricityBillMeta;
   confidence: number;
   validationFlags: string[];
   classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
@@ -347,6 +349,12 @@ CRITICAL EXTRACTION RULES:
    - Charge lines (energy charges, fixed charges, duty) keep quantity null
      unless a kWh quantity is printed on that same line.
    - Vendor should include the power company name
+   - If printed, also return at the top level: "billingPeriodStart" and
+     "billingPeriodEnd" (the billing period, YYYY-MM-DD), "tariffCategory"
+     (exactly as printed, e.g. "LT-II Commercial") and "sanctionedLoadKw"
+     (number, in kW). Leave any that are not printed as null.
+   - Never return the consumer's name, address, phone number, consumer or
+     account number, or meter number.
 
 3. CRITICAL - DO NOT:
    - Calculate or estimate CO2 emissions
@@ -1003,6 +1011,7 @@ serve(async (req) => {
       validationFlags,
       classificationStatus,
       methodology: METHODOLOGY_VERSION,
+      electricityBill: electricityBillMeta(ocrData) ?? undefined,
     };
 
     console.log(`DETERMINISTIC RESULT: ${classificationStatus}, ${verifiedItems} items, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}%`);

@@ -27,6 +27,10 @@ export interface RawOcr {
   /** Billed consumption exactly as printed (units / kWh), if the bill shows it. */
   unitsConsumedKwh?: number | string | null;
   unitsConsumedText?: string | null;
+  billingPeriodStart?: string | null;
+  billingPeriodEnd?: string | null;
+  tariffCategory?: string | null;
+  sanctionedLoadKw?: number | string | null;
   [k: string]: unknown;
 }
 
@@ -114,4 +118,46 @@ export function consolidateElectricity<T extends CalculatedLine>(items: T[]): T[
     (d.validationFlags ??= []).push('Same consumption already counted on another line; not counted twice');
   }
   return items;
+}
+
+export interface ElectricityBillMeta {
+  /** Billing period as printed (YYYY-MM-DD), both ends included. */
+  billingPeriodStart: string | null;
+  billingPeriodEnd: string | null;
+  /** Tariff category exactly as printed, e.g. "LT-II Commercial". */
+  tariffCategory: string | null;
+  sanctionedLoadKw: number | null;
+}
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const dayMs = 86_400_000;
+const validDate = (v: unknown): string | null => {
+  if (typeof v !== 'string' || !ISO_DATE.test(v.trim())) return null;
+  const t = Date.parse(`${v.trim()}T00:00:00Z`);
+  return Number.isFinite(t) && t >= Date.UTC(2000, 0, 1) && t <= Date.now() + 31 * dayMs ? v.trim() : null;
+};
+
+/**
+ * Billing details printed on an electricity bill, validated. A field that is
+ * missing or fails a check is null; nothing is inferred. Personal details
+ * (consumer name, address, account, consumer or meter numbers) are never
+ * read: the tariff text is dropped if it carries a long digit run.
+ */
+export function electricityBillMeta(ocr: RawOcr): ElectricityBillMeta | null {
+  if (!isElectricityBill(ocr)) return null;
+  let start = validDate(ocr.billingPeriodStart);
+  let end = validDate(ocr.billingPeriodEnd);
+  if (start && end) {
+    const span = (Date.parse(`${end}T00:00:00Z`) - Date.parse(`${start}T00:00:00Z`)) / dayMs + 1;
+    if (span < 1 || span > 400) { start = null; end = null; }
+  } else { start = null; end = null; }
+
+  const tariffRaw = typeof ocr.tariffCategory === 'string' ? ocr.tariffCategory.replace(/\s+/g, ' ').trim() : '';
+  const tariffCategory = tariffRaw && tariffRaw.length <= 60 && !/\d{6,}/.test(tariffRaw) ? tariffRaw : null;
+
+  const load = num(ocr.sanctionedLoadKw);
+  const sanctionedLoadKw = load !== null && load < 100_000 ? load : null;
+
+  if (!start && !tariffCategory && sanctionedLoadKw === null) return null;
+  return { billingPeriodStart: start, billingPeriodEnd: end, tariffCategory, sanctionedLoadKw };
 }
