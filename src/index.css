@@ -551,3 +551,15 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @keyframes cc-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .cc-stamp { animation: tr-press .45s cubic-bezier(.3,1.6,.5,1) both; }
 @media (prefers-reduced-motion: reduce) { .cc-record { transition: none; } .cc-term { opacity: 1; } .cc-term-on, .cc-stamp { animation: none; } }
+
+/* /about: chapter rail and "becomes" lines */
+.ab-fill { transform-origin: top; transform-box: fill-box; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.ab-from { text-decoration: line-through; text-decoration-color: transparent; transition: text-decoration-color .4s ease, color .4s ease; }
+.ab-from-on { text-decoration-color: hsl(var(--muted-foreground)); color: hsl(var(--muted-foreground)); }
+.ab-to { display: inline-block; clip-path: inset(0 100% 0 0); transition: clip-path .7s cubic-bezier(.6,0,.2,1) .35s; }
+.ab-to-on { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) {
+  .ab-fill, .ab-from, .ab-to { transition: none; }
+  .ab-from { text-decoration-color: hsl(var(--muted-foreground)); color: hsl(var(--muted-foreground)); }
+  .ab-to { clip-path: none; }
+}
