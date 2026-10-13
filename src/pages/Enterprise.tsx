@@ -10,12 +10,34 @@ import { toast } from "sonner";
 import { SupplyGraphVisual } from "@/components/enterprise/SupplyGraphVisual";
 import { RecordTransform } from "@/components/enterprise/RecordTransform";
 import { StatusBadge } from "@/components/enterprise/StatusBadge";
+import { SectionNav } from "@/components/enterprise/suite/SectionNav";
+import { DataToDecision } from "@/components/enterprise/suite/DataToDecision";
 import {
-  ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs,
+  WhenNear, scrollToSection, LazySuiteDashboard, LazyOneClickCollect, LazySignalFeed,
+  LazyLiabilityToProfit, LazyBiocogMind, LazyStandardsPrism, LazyBenchmarkProof,
+} from "@/components/enterprise/suite/lazy";
+import {
+  ingestionChannels, scaleControls, controlAndSecurity, outputs,
   supplierCountOptions, type Capability,
 } from "@/data/enterpriseCapabilities";
 
 const TEMPLATE_URL = "/templates/supplier-list-template.csv";
+
+const NAV_GROUPS = [
+  { id: "suite", label: "Suite", sections: ["ent-d2d", "ent-suite"] },
+  { id: "scope3", label: "Scope 3", sections: ["ent-agents", "ent-signals", "ent-scale"] },
+  { id: "decide", label: "Decisions", sections: ["ent-profit", "ent-mind"] },
+  { id: "standards", label: "Standards", sections: ["ent-standards"] },
+  { id: "proof", label: "Proof and trust", sections: ["ent-proof", "ent-control", "ent-audit", "ent-integrate"] },
+];
+
+// What an enquiry is about. Section buttons pre-select one, so the reply
+// starts from what the visitor was looking at.
+const INTERESTS = [
+  "Scope 3 and supplier emissions", "Product carbon footprint (PCF)", "Life cycle assessment (LCA)",
+  "Decarbonisation strategy to net zero", "Double materiality assessment", "Audit-ready reporting",
+  "Sensors, satellite and live feeds", "CBAM exposure",
+];
 
 /** A capability line with its honest status. */
 const CapabilityList = ({ items, prefix }: { items: Capability[]; prefix: string }) => {
@@ -75,6 +97,7 @@ const Enterprise = () => {
   const t = useT();
   const [example, setExample] = useState(0);
   const [form, setForm] = useState({ email: "", company: "", suppliers: "", stack: "" });
+  const [interests, setInterests] = useState<string[]>([]);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [showSticky, setShowSticky] = useState(false);
@@ -89,7 +112,13 @@ const Enterprise = () => {
     return () => io.disconnect();
   }, []);
 
-  const toForm = () => document.getElementById("ent-talk")?.scrollIntoView({ behavior: "smooth" });
+  const toForm = () => void scrollToSection("ent-talk");
+  /** From a section's "plan this with us": pre-select the topic, then go to the form. */
+  const ask = useCallback((interest: string) => {
+    setInterests(prev => (prev.includes(interest) ? prev : [...prev, interest]));
+    void scrollToSection("ent-talk");
+  }, []);
+  const toggleInterest = (i: string) => setInterests(prev => (prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]));
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,6 +140,7 @@ const Enterprise = () => {
           message: [
             "Enterprise enquiry from /enterprise",
             `Suppliers: ${form.suppliers}`,
+            `Interested in: ${interests.length ? interests.join(", ") : "not given"}`,
             form.stack.trim() ? `Stack: ${form.stack.trim().slice(0, 1500)}` : "Stack: not given",
           ].join("\n"),
           newsletter: false,
@@ -126,9 +156,10 @@ const Enterprise = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="ent-anim min-h-screen bg-background text-foreground">
       <SEOHead title="" description="" canonical="/enterprise" />
       <MinimalNav />
+      <SectionNav groups={NAV_GROUPS} visible={showSticky} onTalk={toForm} />
 
       {/* Hero: the room, quiet */}
       <header id="ent-hero" className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-24 sm:pt-28 pb-8 grid gap-10 md:grid-cols-[1.05fr_1fr] md:items-center">
@@ -155,34 +186,57 @@ const Enterprise = () => {
         <SupplyGraphVisual onSelect={onSelect} />
       </header>
 
-      {/* Beat 1: how the agents work */}
-      <Beat id="ent-agents" n="01" title={t("ent.b1.title", "How the agents work")} line={t("ent.b1.line", "Tap a supplier in the network, or pick an input below. Most suppliers start from documents and estimates; sensors upgrade the data later.")}>
-        <ol className="grid grid-cols-5 gap-1 sm:gap-2 mb-10">
-          {pipelineStages.map((s, i) => (
-            <li key={s.key} className="relative flex flex-col items-start gap-2">
-              <div className={`h-1 w-full rounded-full ${s.status === "live" ? "bg-primary" : s.status === "pilot" ? "bg-warning" : "bg-border"}`} />
-              <p className="text-xs sm:text-sm font-medium">{i + 1}. {t(`ent.stage.${s.key}`, s.label)}</p>
-              <StatusBadge status={s.status} />
-            </li>
-          ))}
-        </ol>
-        <RecordTransform index={example} onChange={setExample} />
-        <div className="mt-10">
-          <h3 className="text-sm font-medium text-muted-foreground mb-2">{t("ent.b1.inputs", "Inputs")}</h3>
-          <CapabilityList items={ingestionChannels} prefix="ent.in" />
-        </div>
+      {/* 01 Scattered data to one decision: scroll-driven assembly */}
+      <Beat id="ent-d2d" n="01" title={t("ent.d2d.title", "Unstructured data in. The simplest next decision out.")} line={t("ent.d2d.line", "Supply chains and enterprise systems produce data in every shape. Senseible turns it into one ledger you can act on.")}>
+        <DataToDecision />
+      </Beat>
+
+      {/* 02 The full suite: a working dashboard */}
+      <Beat id="ent-suite" n="02" title={t("ent.suite.title", "The full suite, on one verified ledger")} line={t("ent.suite.line", "Product footprints, life cycle studies, net-zero strategy, double materiality, Scope 3 and reporting. Pick a module to see what goes in and what comes out.")}>
+        <WhenNear minH={420}><LazySuiteDashboard onAsk={ask} /></WhenNear>
+      </Beat>
+
+      {/* 03 Scope 3: one click from collection to audit-ready */}
+      <Beat id="ent-agents" n="03" title={t("ent.b1.title2", "Custom-built for Scope 3: one click from collection to audit-ready")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a supplier in the network above, or pick an input below, to see the record it becomes.")}>
+        <WhenNear minH={460}><LazyOneClickCollect onAsk={ask} /></WhenNear>
+        <div className="mt-10"><RecordTransform index={example} onChange={setExample} /></div>
+      </Beat>
+
+      {/* 04 Agents, sensors, satellite and live feeds */}
+      <Beat id="ent-signals" n="04" title={t("ent.feed.h", "Agents, sensors, satellite and a live feed")} line={t("ent.feed.line", "Most suppliers start from documents and estimates; sensors upgrade the data later. Switch channels to see what each adds.")}>
+        <WhenNear minH={640}><LazySignalFeed /></WhenNear>
       </Beat>
 
       {/* Beat 2: scale without breaking */}
-      <Beat id="ent-scale" n="02" title={t("ent.b2.title", "A thousand suppliers, one queue for humans")} line={t("ent.b2.line", "Primary data where the spend is. Estimates for the long tail. People only see what the checks flag.")}>
+      <Beat id="ent-scale" n="05" title={t("ent.b2.title", "A thousand suppliers, one queue for humans")} line={t("ent.b2.line", "Primary data where the spend is. Estimates for the long tail. People only see what the checks flag.")}>
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <TierCurve />
           <CapabilityList items={scaleControls} prefix="ent.scale" />
         </div>
       </Beat>
 
+      {/* 06 Liability to decision to profit: CBAM engine */}
+      <Beat id="ent-profit" n="06" title={t("ent.liab.title", "Emissions, from liability to decision to profit")} line={t("ent.liab.line", "The same steel, priced at EU default values and at what your verified data shows. Move the sliders.")}>
+        <WhenNear minH={460}><LazyLiabilityToProfit /></WhenNear>
+      </Beat>
+
+      {/* 07 Biocog superintelligence */}
+      <Beat id="ent-mind" n="07" title={t("ent.mind.title", "Biocog superintelligence")} line={t("ent.mind.line", "Biocog reads the scope ledger as the single source of truth and answers from it. Ask a question.")}>
+        <WhenNear minH={420}><LazyBiocogMind /></WhenNear>
+      </Beat>
+
+      {/* 08 Standards prism */}
+      <Beat id="ent-standards" n="08" title={t("ent.std.title", "Comply with the world's top standards, from one record")} line={t("ent.std.line", "Each framework gets its own disclosure structure from the same verified data. Pick one to see what the record fills.")}>
+        <WhenNear minH={520}><LazyStandardsPrism /></WhenNear>
+      </Beat>
+
+      {/* 09 Proof */}
+      <Beat id="ent-proof" n="09" title={t("ent.bench.title", "A breakthrough in supplier emissions")}>
+        <WhenNear minH={400}><LazyBenchmarkProof /></WhenNear>
+      </Beat>
+
       {/* Beat 3: suppliers stay in control */}
-      <Beat id="ent-control" n="03" title={t("ent.b3.title", "The supplier keeps its data")} line={t("ent.b3.line", "Figures and proof travel to the buyer. Invoices stay with the supplier.")}>
+      <Beat id="ent-control" n="10" title={t("ent.b3.title", "The supplier keeps its data")} line={t("ent.b3.line", "Figures and proof travel to the buyer. Invoices stay with the supplier.")}>
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div className="rounded-3xl border border-border p-5 sm:p-6">
             <div className="flex items-center gap-3">
@@ -218,7 +272,7 @@ const Enterprise = () => {
       </Beat>
 
       {/* Beat 4: audit-ready output */}
-      <Beat id="ent-audit" n="04" title={t("ent.b4.title", "Every number has a trail")} line={t("ent.b4.line", "Open any figure and walk back to the document it came from.")}>
+      <Beat id="ent-audit" n="11" title={t("ent.b4.title", "Every number has a trail")} line={t("ent.b4.line", "Open any figure and walk back to the document it came from.")}>
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <ol className="relative border-l border-foreground/20 pl-5 space-y-5">
             {[
@@ -241,7 +295,7 @@ const Enterprise = () => {
       </Beat>
 
       {/* Beat 5: custom integrations */}
-      <Beat id="ent-integrate" n="05" title={t("ent.b5.title", "Fits your stack")} line={t("ent.b5.line", "The API is being designed with the first enterprise teams. This is the shape we are working towards.")}>
+      <Beat id="ent-integrate" n="12" title={t("ent.b5.title", "Fits your stack")} line={t("ent.b5.line", "The API is being designed with the first enterprise teams. This is the shape we are working towards.")}>
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div className="rounded-3xl bg-foreground text-background p-5 overflow-x-auto">
             <div className="flex items-center justify-between mb-3">
@@ -302,6 +356,20 @@ webhook  record.verified
                   {supplierCountOptions.map(o => <option key={o} value={o}>{o}</option>)}
                 </select>
               </label>
+              <fieldset className="grid gap-2 text-sm">
+                <legend className="mb-1.5">{t("ent.form.interest", "What are you exploring? (optional)")}</legend>
+                <div className="flex flex-wrap gap-2">
+                  {INTERESTS.map(i => {
+                    const on = interests.includes(i);
+                    return (
+                      <button key={i} type="button" aria-pressed={on} onClick={() => toggleInterest(i)}
+                        className={`rounded-full px-3 py-1.5 text-xs transition-colors ${on ? "bg-foreground text-background" : "border border-border hover:bg-secondary"}`}>
+                        {t(`ent.interest.${INTERESTS.indexOf(i)}`, i)}
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
               <label className="grid gap-1.5 text-sm">
                 <span>{t("ent.form.stack", "Your stack (optional)")}</span>
                 <textarea rows={2} value={form.stack} onChange={e => setForm({ ...form, stack: e.target.value })} placeholder={t("ent.form.stack.ph", "e.g. SAP, Coupa, SharePoint")} className="rounded-xl border border-input bg-background px-3 py-2" />

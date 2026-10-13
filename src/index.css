@@ -563,3 +563,19 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .ab-from { text-decoration-color: hsl(var(--muted-foreground)); color: hsl(var(--muted-foreground)); }
   .ab-to { clip-path: none; }
 }
+
+/* Enterprise suite (/enterprise). One reduced-motion rule covers every
+   animation and transition on the page: the final state shows, nothing moves. */
+@keyframes ent-grow-x { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes ent-grow-y { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes ent-fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes ent-feed { from { opacity: 0; transform: translateY(-10px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes ent-orbit { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes ent-draw { to { stroke-dashoffset: 0; } }
+@keyframes ent-pop { 0% { opacity: 0; transform: scale(.3); } 70% { transform: scale(1.15); } 100% { opacity: 1; transform: none; } }
+.ent-bar-y { transform-box: fill-box; transform-origin: bottom; animation: ent-grow-y .5s ease-out both; }
+.ent-orbit-dot { offset-path: path("M40 60 C 80 10, 220 10, 260 60 C 220 110, 80 110, 40 60"); animation: ent-orbit 6s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .ent-anim *, .ent-anim *::before, .ent-anim *::after { animation: none !important; transition: none !important; }
+  .ent-orbit-dot { display: none; }
+}
