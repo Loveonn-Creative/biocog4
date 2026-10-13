@@ -249,7 +249,7 @@ export const usePremiumStatus = (): PremiumStatus => {
       }
 
       // Also check active subscriptions table for latest info
-      const { data: subscription } = await supabase
+      const { data: subscription, error: subscriptionError } = await supabase
         .from('subscriptions')
         .select('tier, expires_at, status')
         .eq('user_id', user.id)
@@ -267,15 +267,19 @@ export const usePremiumStatus = (): PremiumStatus => {
           nextExpiry = subExpiry;
         }
       }
-      if (!profileError) {
+      // Show the result when either record was read. A failed profile read
+      // with an active paid subscription still shows the paid plan; when both
+      // reads fail, a refresh keeps the last known plan.
+      if (!profileError || (!subscriptionError && subscription)) {
         setTier(nextTier);
         setExpiresAt(nextExpiry);
       }
 
       // A recent order still pending can mean Razorpay took the payment but
       // the browser never confirmed it. Ask the server to check with Razorpay
-      // once per session; it activates only a captured payment, and the
-      // realtime listener below picks up the change.
+      // once per session; it activates only a captured payment. Realtime is
+      // not published for these tables in production, so re-read here when
+      // something was activated instead of waiting for an event.
       if (!reconciledThisSession.has(user.id)) {
         reconciledThisSession.add(user.id);
         const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
@@ -286,7 +290,9 @@ export const usePremiumStatus = (): PremiumStatus => {
           .eq('status', 'pending')
           .gte('created_at', since)
           .limit(1);
-        if (pending && pending.length > 0) void reconcilePayments();
+        if (pending && pending.length > 0) {
+          void reconcilePayments().then(rec => { if (rec?.activated?.length) void fetchTierFromDatabase(); });
+        }
       }
     } catch (error) {
       console.error('Error fetching tier:', error);

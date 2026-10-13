@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BusinessIdField, type BusinessIdResult } from "@/components/auth/BusinessIdField";
 import { MinimalNav } from "@/components/MinimalNav";
 import { ArrowLeft, ArrowRight, Loader2, Eye, EyeOff, Briefcase } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { useSession } from "@/hooks/useSession";
+import { useAuthStatus, useSession } from "@/hooks/useSession";
 import { PasswordStrength, isPasswordStrong } from "@/components/PasswordStrength";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -29,7 +29,8 @@ const Auth = () => {
   const initialMode = searchParams.get('mode');
   const nextPath = searchParams.get('next');
   
-  const { isAuthenticated, isLoading: sessionLoading } = useSession();
+  const { isAuthenticated, isLoading: sessionLoading, user: sessionUser } = useSession();
+  const authStatus = useAuthStatus();
   const [mode, setMode] = useState<AuthMode>(
     isPartnerMode ? "signup" : initialMode === "forgot" ? "forgot" : initialMode === "signup" ? "signup" : "signin"
   );
@@ -89,19 +90,25 @@ const Auth = () => {
     return isPartner ? '/partner-dashboard' : '/dashboard';
   };
 
-  // Redirect if already authenticated
+  // One redirect per visit. Signing in also updates the session, so without
+  // this guard the form and the effect below would both navigate. Replacing
+  // the history entry keeps Back from returning to a sign-in page that would
+  // only bounce forward again.
+  const redirectStarted = useRef(false);
+  // While the form is submitting it decides where to go (a new partner
+  // account goes to the partner dashboard before its context row is readable).
+  const submitting = useRef(false);
+  const redirectTo = async (userId: string) => {
+    if (redirectStarted.current) return;
+    redirectStarted.current = true;
+    navigate(await getRedirectPath(userId), { replace: true });
+  };
+
+  // Redirect if already authenticated (the session already holds the user,
+  // so no extra round trip is needed).
   useEffect(() => {
-    const checkAndRedirect = async () => {
-      if (!sessionLoading && isAuthenticated) {
-        const { data: { user } } = await supabase.auth.getUser();
-        if (user) {
-          const redirectPath = await getRedirectPath(user.id);
-          navigate(redirectPath);
-        }
-      }
-    };
-    checkAndRedirect();
-  }, [isAuthenticated, sessionLoading, navigate]);
+    if (!sessionLoading && isAuthenticated && sessionUser && !submitting.current) void redirectTo(sessionUser.id);
+  }, [isAuthenticated, sessionLoading, sessionUser]);
 
   const validateForm = (): boolean => {
     if (!email || !email.includes('@')) {
@@ -138,6 +145,7 @@ const Auth = () => {
     if (!validateForm()) return;
     
     setIsLoading(true);
+    submitting.current = true;
     
     try {
       if (mode === "signin") {
@@ -156,10 +164,9 @@ const Auth = () => {
         }
         
         if (data.user) {
-          const redirectPath = await getRedirectPath(data.user.id);
           analyticsEvents.login('password');
           toast.success("Welcome back! Redirecting...");
-          navigate(redirectPath);
+          await redirectTo(data.user.id);
         }
       } else if (mode === "signup") {
         // ALWAYS use production domain for email verification - never use Lovable preview URLs
@@ -255,14 +262,14 @@ const Auth = () => {
               }
               
               toast.success("Partner account created! Redirecting to your dashboard...");
-              navigate('/partner-dashboard');
+              redirectStarted.current = true;
+              navigate('/partner-dashboard', { replace: true });
               return;
             }
           }
           
-          const redirectPath = await getRedirectPath(data.user.id);
           toast.success("Account created! Redirecting...");
-          navigate(redirectPath);
+          await redirectTo(data.user.id);
         }
       } else {
         // Forgot password: return to the origin the user is on (must be in the Supabase redirect allow list).
@@ -282,11 +289,15 @@ const Auth = () => {
       console.error('Auth error:', err);
       toast.error('An unexpected error occurred. Please try again.');
     } finally {
+      submitting.current = false;
       setIsLoading(false);
     }
   };
 
-  if (sessionLoading) {
+  // Show the form as soon as the visitor is known to be signed out; it does
+  // not need the guest session. A signed-in visitor keeps the spinner while
+  // the redirect runs.
+  if (authStatus !== 'signedOut') {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-primary" />
