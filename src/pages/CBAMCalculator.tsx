@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { ORG_REF } from "@/lib/seo/entity";
 import { Helmet } from "react-helmet-async";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
@@ -158,7 +159,7 @@ const CBAMCalculator = () => {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "provider": { "@type": "Organization", "name": "Senseible", "url": "https://senseible.earth" },
+    "provider": ORG_REF,
   };
 
   return (

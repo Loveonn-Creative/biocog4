@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
+import { ORGANIZATION, ORG_REF } from "@/lib/seo/entity";
 import { pageMeta, fitTitle, canonicalUrl as toCanonicalUrl, CANONICAL_ALIASES, canonicalPath, SITE_URL, ogImageFor, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "@/lib/seo/seoMeta";
 
 interface BreadcrumbItem {
@@ -70,40 +71,7 @@ export const SEOHead = ({
   const allKeywords = [...new Set([...baseKeywords, ...keywords])].join(', ');
 
   // Organization schema — only on homepage
-  const organizationSchema = showOrgSchema ? {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Senseible",
-    "url": siteUrl,
-    "alternateName": ["Senseible Earth", "senseible.earth"],
-    "disambiguatingDescription": "Senseible (senseible.earth) is a carbon MRV and climate finance platform for MSMEs and exporters. Not to be confused with the word sensible or with Sensibull, an options trading platform.",
-    "logo": `${siteUrl}/logo.png`,
-    "description": "AI-driven carbon infrastructure converting MSME operational data into verified, regulation-ready carbon outcomes across India and the EU.",
-    "areaServed": ["India", "European Union", "Southeast Asia", "Middle East"],
-    "knowsAbout": ["Carbon MRV", "Carbon Accounting", "Carbon Credits", "CBAM", "ESG Compliance", "Green Finance"],
-    "sameAs": [
-      "https://www.linkedin.com/company/senseible/",
-      "https://x.com/senseible_earth",
-      "https://www.instagram.com/senseible.earth/",
-      "https://www.threads.com/@senseible.earth",
-      "https://www.facebook.com/senseible",
-      "https://www.tumblr.com/blog/senseible-earth"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "impact@senseible.earth",
-      "contactType": "customer service",
-      "areaServed": ["IN", "EU"],
-      "availableLanguage": ["English", "Hindi"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Minarch Tower, Sector 44",
-      "addressLocality": "Gurugram",
-      "postalCode": "122003",
-      "addressCountry": "IN"
-    }
-  } : null;
+  const organizationSchema = showOrgSchema ? ORGANIZATION : null;
 
   // Article schema for CMS pages
   const articleSchema = article ? {
@@ -114,12 +82,8 @@ export const SEOHead = ({
     "image": previewImage,
     "datePublished": article.publishedTime,
     "dateModified": article.modifiedTime || article.publishedTime,
-    "author": { "@type": "Organization", "name": article.author || "Senseible", "url": siteUrl },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Senseible",
-      "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png`, "width": 512, "height": 512 }
-    },
+    "author": !article.author || article.author === "Senseible" ? ORG_REF : { "@type": "Organization", "name": article.author },
+    "publisher": { ...ORG_REF, "logo": ORGANIZATION.logo },
     "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
     "keywords": article.tags?.join(', ')
   } : null;
