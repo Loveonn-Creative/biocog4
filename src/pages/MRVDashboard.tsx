@@ -470,16 +470,8 @@ const MRVDashboard = () => {
 
                     {/* Compliance Badges */}
                     <div className="flex flex-wrap gap-2">
-                      {verifications[0]?.ccts_eligible && (
-                        <span className="px-3 py-1 rounded-full bg-success/10 text-success text-xs font-medium flex items-center gap-1">
-                          <CheckCircle className="h-3 w-3" /> CCTS Eligible
-                        </span>
-                      )}
-                      {verifications[0]?.cbam_compliant && (
-                        <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium flex items-center gap-1">
-                          <CheckCircle className="h-3 w-3" /> CBAM Compliant
-                        </span>
-                      )}
+                      {/* Legacy CCTS / CBAM flags are not shown: a readiness claim needs a
+                          documented review, which no verification record carries yet. */}
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                         BIOCOG_MVR_INDIA v1.1
                       </span>

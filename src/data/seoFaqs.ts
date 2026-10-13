@@ -267,7 +267,7 @@ export const complianceFaqs: SEOFaq[] = [
   {
     id: 'compliance-3',
     question: 'How to verify a Senseible carbon certificate on the blockchain?',
-    answer: 'Senseible stores verification hashes on distributed ledgers. Enter the certificate ID on our verification portal to confirm authenticity and view the audit trail.',
+    answer: 'Senseible does not issue blockchain certificates or carbon tokens. Each record is backed by a SHA-256 fingerprint of the original document, its emission factor and source, and the methodology version, which anyone with the record can check.',
     category: 'compliance',
     tags: ['blockchain', 'certificate', 'verification'],
     priority: 'medium'
@@ -303,7 +303,7 @@ export const industryFaqs: SEOFaq[] = [
   {
     id: 'industry-3',
     question: 'How to prove to a European buyer that my steel is Low-Carbon using Senseible?',
-    answer: 'Generate a Product Carbon Footprint certificate on Senseible. Include Scope 1, 2, 3 breakdown with source traceability. Share verified report directly with buyers.',
+    answer: 'Share an Independently Reviewed emissions record from Senseible: Scope 1, 2 and 3 with each line traced to its source document. A product-level footprint needs HSN/CN coded evidence for that product.',
     category: 'industry',
     tags: ['steel', 'low-carbon', 'European buyer'],
     priority: 'high'
