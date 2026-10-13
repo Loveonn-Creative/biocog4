@@ -127,3 +127,35 @@ Going past 100, towards 400, should follow the Ads search-term and conversion ex
 - A new page needs a distinct primary question that the owner does not answer in its first two sections.
 - Variants (spellings, "1 2 3" vs "1, 2 and 3", "&") are handled by the owning page's copy, not by new URLs.
 - Before publishing, `scripts/seo/audit-content.mjs` must show no new title or H1 keyword collisions.
+
+## Keyword × industry × geography matrix
+
+**Keyword bases**, from the Keyword Planner clusters above:
+- **G:** green loan / green finance
+- **C:** CBAM cost
+- **S:** Scope 1, 2, 3 and supplier data
+- **E:** emission factors
+
+Each cell is one page answering one question. A cell is filled only when the page can cite a named scheme, rule, lender, price or published figure for that place and industry. Otherwise it stays empty.
+
+| Industry | India | Bangladesh | Pakistan | Vietnam | Türkiye | South Africa | Germany | Poland | Italy |
+|---|---|---|---|---|---|---|---|---|---|
+| Iron and steel | G: Ludhiana/Raipur, Jalna · C: steel cost guide | G: Chattogram re-rolling | next: Lahore steel (needs source) | C+G: steel exporters | C+G: steel and cement | G: Johannesburg metals; ferrochrome | C: importers | C: steel importers | C: re-rollers (slab) |
+| Aluminium | C: exporters | | | | C: extruders | next: Richards Bay smelter (single firm; skip unless asked) | next: importer view | | next: importer view |
+| Cement | | | G: cement makers | G: cement under carbon quotas | C+G: steel and cement | | | | |
+| Fertilisers | next: urea importer view (needs source) | | | | | | C: importers | C: importers | |
+| Chemicals | G: Vapi/Ankleshwar/Dahej | | | | | | | | |
+| Pharma | S: NHS rules (Hyderabad, Baddi) | | | | | | | | |
+| Textiles | G: Tamil Nadu clusters | G: Dhaka/Gazipur garments | G: Karachi loans; S: Karachi selling to the EU | existing: textile footprint | G: Bursa/Denizli | | | | |
+| Ceramics and glass | G: Morbi ceramics; Firozabad glass | | | | | | | | |
+| Ship recycling | | G: Chattogram | | | | | | | |
+
+**Next cells, gated on sourcing:**
+- India: Rajkot and Kolhapur foundries, Jamnagar brass, Panipat recycled textiles, Pune auto components
+- Bangladesh: Narayanganj knitwear
+- Pakistan: Faisalabad and Sialkot
+- Vietnam: Binh Duong furniture, footwear
+- South Africa: Durban
+- EU: aluminium importers in Germany and Italy
+
+Pages stay out when no place-specific fact exists, so the matrix never fills itself with template pages.

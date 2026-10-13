@@ -5449,6 +5449,8 @@ The question owners ask is whether green finance can pay for the next furnace, t
 
 **Central MSME schemes.** A Lok Sabha answer on iron and steel MSMEs describes the sector as highly energy inefficient and names MSE-GIFT and the ZED scheme as current support, while acknowledging that much more green financing is needed.
 
+**ADEETIE.** The Bureau of Energy Efficiency's ₹1,000 crore ADEETIE scheme lists Ludhiana and Raipur among its steel re-rolling clusters, with a reported interest subvention of 5 percent for micro and small units and 3 percent for medium units on energy-efficient technology loans, for projects that show at least 10 percent energy savings. See [green finance for Jalna's re-rolling mills](/climate-intelligence/green-finance-jalna-steel-rerolling-cluster) for how the savings test works, and confirm current terms with the BEE or your bank.
+
 **State support.** In Chhattisgarh, the Chief Minister has said that industries adopting green energy will receive additional support, including special grants. The details depend on the state's current industrial policy; check with the state industries department.
 
 ## Why evidence decides the price
@@ -6092,6 +6094,316 @@ Use the [CBAM calculator](/cbam-calculator) to compare default and actual emissi
 
 This is general guidance, not legal advice. Check MASE's current guidance for your case.`,
     tags: ['italy', 'cbam', 're-rollers', 'slab', 'heavy plate', 'mase', 'steel imports'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // greentechlead.com "India steel MSMEs face Rs 5000 crore decarbonization
+  // challenge" (IEEFA; ADEETIE: Rs 1,000 crore, 14 energy-intensive sectors,
+  // steel re-rolling clusters incl. Jalna, Mandi Gobindgarh, Ludhiana, Jaipur,
+  // Raipur; 5% interest subvention for micro and small, 3% for medium; at
+  // least 10% energy savings; financing and documentation as the barrier);
+  // cdm.unfccc.int SIDBI programme on furnace efficiency in SME steel
+  // clusters.
+  {
+    id: '146',
+    slug: 'green-finance-jalna-steel-rerolling-cluster',
+    title: 'How can a Jalna steel re-rolling mill get green finance for its furnace?',
+    subtitle: 'Green Finance',
+    content: `Jalna, in Maharashtra's Marathwada region, is one of the state's main steel re-rolling centres, making the TMT bars that go into houses and roads. Its mills melt scrap and sponge iron in induction furnaces, cast billets, reheat them and roll them into bars. Every one of those steps runs on electricity or fuel, so the energy bill decides who survives a weak steel price.
+
+The question for a Jalna owner is whether there is finance built for this kind of upgrade, and what a lender needs to see.
+
+## A scheme that names Jalna
+
+The Bureau of Energy Efficiency's ADEETIE scheme, worth ₹1,000 crore, covers 14 energy-intensive sectors and lists Jalna among its steel re-rolling clusters, alongside Mandi Gobindgarh, Ludhiana, Jaipur and Raipur, as reported by GreentechLead citing IEEFA. The reported terms:
+
+- **Interest subvention** of 5 percent for micro and small units and 3 percent for medium units on loans for energy-efficient technology.
+- **A savings test:** projects must show, and keep, at least 10 percent energy savings during the scheme period.
+
+Confirm the current terms, the empanelled auditors and the participating banks with the BEE or your bank before you plan around them.
+
+## Why good projects still fail to get funded
+
+The same IEEFA analysis makes a point every owner will recognise: the barrier is less the technology than the paperwork. Small projects with attractive paybacks struggle because of their size, weak project documentation, perceived technology risk and lenders' worry about verifying the savings afterwards. The 10 percent test makes that last point concrete. If you cannot measure energy per tonne before and after, you cannot show the saving the subvention depends on.
+
+## Where the savings usually are
+
+- **Induction furnace:** efficient coils and power supplies, better crucible practice, and charging that keeps the furnace full.
+- **Reheating furnace:** recuperators that preheat combustion air, better insulation and burner control.
+- **Hot charging:** sending billets to the rolling mill while still hot, where the layout allows, so they need less reheating.
+- **Drives and auxiliaries:** variable-speed drives on fans, pumps and the rolling mill.
+- **Rooftop solar** on mill sheds for daytime load.
+
+## What to put in front of the lender
+
+1. **Twelve months of electricity bills** with units, maximum demand and power factor, plus fuel invoices for the reheating furnace.
+2. **Monthly production** in tonnes of billet and bar, so you can state kWh and fuel per tonne.
+3. **An energy audit** by an empanelled auditor, with the expected saving for each measure.
+4. **A metering plan** that will show the 10 percent saving after installation.
+
+For the emission factors behind these bills, see [grid electricity](/emission-factors/grid-electricity) and [coal](/emission-factors/coal). For other steel clusters, read [green finance for Ludhiana and Raipur steel MSMEs](/climate-intelligence/green-finance-ludhiana-raipur-steel-msmes). Senseible turns bills and invoices into kWh, fuel and emissions per month, each linked to its source document.
+
+Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['jalna', 'maharashtra', 'steel re-rolling', 'induction furnace', 'adeetie', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // news.metal.com SMM analysis "EU alloy aluminium profiles under CBAM:
+  // Turkiye dominates supply" (about 207,100 t, 57.8% of EU imports across two
+  // profile categories in 2025; theoretical default about 2.66 tCO2e/t under
+  // the 2026 method, not an actual liability); eurometal.net "Anil Akalin:
+  // CBAM to increase costs" (EUR 0.06 to 0.28 per kg, 2026 to 2028; Turkish
+  // ETS pilot with full free allocation); vajiramandravi / basispointinsight
+  // (EU proposal to bring about 180 more steel- and aluminium-intensive
+  // products into CBAM from 1 Jan 2028); Turkish ETS and Green Export Project
+  // sources as in article 135.
+  {
+    id: '147',
+    slug: 'turkish-aluminium-extruders-cbam',
+    title: 'What does CBAM cost a Turkish aluminium extruder, and how can it cut the bill?',
+    subtitle: 'Carbon Regulations',
+    content: `If you have bought a window frame, a curtain wall or a solar mounting rail in Europe, there is a fair chance the aluminium profile inside it was extruded in Turkey. In 2025 Turkey supplied about 207,100 tonnes of the EU's imports across two main profile categories, roughly 57.8 percent of the total, according to an SMM analysis.
+
+Aluminium profiles are covered by the EU's Carbon Border Adjustment Mechanism. Since 1 January 2026, the EU importer owes certificates for the embedded emissions in every tonne. This article answers what that means for a Turkish extruder and how to keep the cost down.
+
+## How big the cost can be
+
+Estimates vary with the assumptions. An industry estimate reported by Eurometal puts the added cost at about €0.06 to €0.28 per kilogram between 2026 and 2028, depending on origin. SMM calculated a theoretical default emissions value of about 2.66 tonnes of CO2e per tonne for Turkish profiles under the 2026 method, and stressed that this is an exposure figure, not what Turkish producers actually emit.
+
+That distinction is the whole game. The importer pays on the emissions declared. If the extruder and its billet supplier can show verified actual emissions, the importer uses those. If not, it uses EU default values, which carry a mark-up of 10 percent in 2026, 20 percent in 2027 and 30 percent from 2028.
+
+## Where an extruder's emissions come from
+
+An extruder buys billet and reshapes it. Most of the embedded emissions sit upstream, in the primary aluminium smelted with electricity, or are much lower in recycled billet. The extruder's own furnace gas and press electricity add a smaller share. So the two levers are:
+
+1. **The billet.** More recycled content, and primary metal from smelters on low-carbon power, with emissions data that passes down the chain.
+2. **The data.** Installation-level figures for your own process and verified precursor data from billet suppliers.
+
+## Turkey's own carbon price
+
+Turkey's emissions trading system runs a pilot in 2026 and 2027. Eurometal reported that the pilot uses full free allocation, so Turkish manufacturers pay no effective carbon price yet, and nothing can be deducted from the CBAM bill. When an effective price applies, an importer can deduct it if it is documented for the goods.
+
+## What is coming
+
+The EU has proposed bringing about 180 more steel- and aluminium-intensive downstream products into CBAM from 1 January 2028. For an extruder who also fabricates, more of its product range may soon need the same data.
+
+## Paying for the changes
+
+Remelt and recycling lines, furnace efficiency and rooftop solar are the projects green lenders know. Turkish exporters can look at the Türkiye Green Export Project, a €1 billion Turk Eximbank facility for green products, renewable energy, energy efficiency and working capital, described in [green finance for Turkish steel and cement exporters](/climate-intelligence/turkish-steel-cement-exporters-cbam-green-finance).
+
+Work out a shipment with the [CBAM calculator](/cbam-calculator), and see how EU buyers approach suppliers in [how German importers lower CBAM costs](/climate-intelligence/how-german-importers-lower-cbam-costs).
+
+This is general guidance, not legal advice.`,
+    tags: ['turkey', 'aluminium', 'extrusion', 'profiles', 'cbam', 'recycled aluminium'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // basispointinsight.com "India's metal exports to EU plunge 24%" (GTRI:
+  // steel and aluminium exports to the EU fell 24.4%, from $7.71bn in
+  // 2023-24 to $5.82bn in 2024-25; aluminium down 9.8%; MSMEs lack verified
+  // data from large producers; price cuts of 15 to 22% estimated);
+  // yourstory.com "India seeks exclusions for MSMEs" (MSME exemption and
+  // mutual recognition requests); vajiramandravi.com (CBAM charges from
+  // 1 Jan 2026; about 180 downstream products proposed from 1 Jan 2028).
+  {
+    id: '148',
+    slug: 'indian-aluminium-exporters-cbam',
+    title: 'How can Indian aluminium exporters keep EU buyers under CBAM?',
+    subtitle: 'Carbon Regulations',
+    content: `India's aluminium industry sells foil, sheet, extrusions, wire and castings to European buyers, many of them made by small and mid-sized firms that buy their metal from a handful of large smelters. Since 1 January 2026, every tonne of covered aluminium entering the EU carries a CBAM certificate cost for the importer.
+
+The question for an Indian exporter is how to stay on the approved supplier list when the buyer's cost now depends on emissions data the exporter may not control.
+
+## What has already happened
+
+The shift started before the first certificate was owed. The Global Trade Research Initiative reported that India's steel and aluminium exports to the EU fell 24.4 percent, from $7.71 billion in 2023-24 to $5.82 billion in 2024-25, with aluminium down 9.8 percent. It warned that MSMEs face the heaviest burden because of compliance, data and verification costs, and estimated that exporters might need to cut prices by 15 to 22 percent to absorb the charge.
+
+India has asked the EU for MSME exemptions and for mutual recognition of its own carbon market; the EU has said CBAM is not negotiable.
+
+## The MSME data problem
+
+An extruder or foil roller's embedded emissions are mostly the emissions of the primary metal it bought. GTRI noted that large producers often do not share verified emissions data with MSME buyers. Without it, the EU importer falls back on default values, which carry a mark-up of 10 percent in 2026, 20 percent in 2027 and 30 percent from 2028.
+
+That makes the first job contractual, not technical:
+
+1. **Ask your metal supplier for installation-level emissions** per tonne of ingot or billet, with the reporting period and verifier.
+2. **Record your own process emissions:** furnace fuel and electricity per tonne of product.
+3. **Track recycled content** with purchase records; secondary aluminium carries far lower emissions than primary.
+
+## Where green finance helps
+
+The projects that lower embedded emissions are the ones lenders understand: remelting lines for scrap, furnace efficiency, and rooftop or open-access solar for rolling and extrusion loads. For the Indian loan process, read [how to get green loans using carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data).
+
+## What is coming
+
+The EU has proposed adding about 180 more steel- and aluminium-intensive downstream products to CBAM from 1 January 2028. Exporters of finished aluminium parts that are outside CBAM today should expect the same questions soon.
+
+Work out the cost for your products with the [CBAM calculator](/cbam-calculator) and see the [aluminium sector page](/cbam-cost/aluminium). For the steel side, read [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034).
+
+This is general guidance, not legal advice.`,
+    tags: ['india', 'aluminium', 'msme exporters', 'cbam', 'extrusions', 'foil'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // england.nhs.uk/greenernhs/get-involved/suppliers and NHS Net Zero
+  // Supplier Roadmap (2024; June 2026 update): from April 2027 suppliers
+  // publicly report targets and emissions and publish a CRP for global
+  // emissions; product carbon footprinting requirements from 2028;
+  // penningtonslaw.com "Enhanced carbon reduction plan requirements for NHS
+  // suppliers" (2027 enhanced CRP for contracts of GBP 5m+ a year and all new
+  // frameworks; includes pharmaceuticals; Evergreen assessment for medicines
+  // tenders); mediwales.com Auditel note (global boundary).
+  {
+    id: '149',
+    slug: 'indian-pharma-suppliers-nhs-carbon-reduction-plan',
+    title: 'What do UK NHS carbon rules mean for Indian pharma suppliers in Hyderabad and Baddi?',
+    subtitle: 'Supply Chain Emissions',
+    content: `Indian manufacturers supply many of the generic medicines the UK's National Health Service buys, and two clusters stand out: the API and formulation plants around Hyderabad, and the formulation belt at Baddi in Himachal Pradesh. Pharmaceuticals are not a heavy-industry sector, but the NHS has set itself a net zero target that includes everything it buys, and it is passing that target down to suppliers.
+
+The question for an Indian manufacturer is what the NHS rules require, when, and how to be ready.
+
+## What the NHS asks, and when
+
+NHS England's Net Zero Supplier Roadmap sets the timeline:
+
+- **Today:** suppliers on in-scope contracts publish a Carbon Reduction Plan covering their UK Scope 1 and 2 emissions and a limited set of Scope 3 categories.
+- **From April 2027:** NHS England says suppliers will publicly report targets and emissions and publish a Carbon Reduction Plan for their **global** emissions, aligned with the NHS net zero target. A law-firm summary describes the enhanced requirement as applying to contracts worth £5 million or more a year and to all new frameworks, with lower-value contracts staying on the current requirement. Check the June 2026 roadmap for which applies to your contracts.
+- **From 2028:** new requirements for carbon footprints of individual products supplied to the NHS.
+
+Pharmaceuticals are explicitly in scope. For NHS England medicines tenders, net zero and social value are assessed through the Evergreen supplier assessment.
+
+## Why this reaches a plant in India
+
+The shift from a UK-only boundary to global emissions is the part that matters. A UK distributor or marketing-authorisation holder whose manufacturing happens in Telangana or Himachal will need that plant's energy and emissions data, and from 2028, a product footprint for what it supplies.
+
+## Where a pharma plant's emissions are
+
+- **Steam:** boilers for reactors, drying and HVAC, often on coal, furnace oil, natural gas or biomass.
+- **Electricity:** chillers, HVAC for clean rooms, compressors and utilities run all year.
+- **Solvents and purchased materials:** Scope 3, often the largest share for API makers.
+
+## Paying for the reductions
+
+Boiler fuel switching, heat recovery, efficient chillers and rooftop or open-access solar are standard green loan projects. Lenders want the same baseline the NHS will ask for: twelve months of fuel and electricity by site, production for the same months, and the expected saving. For the Indian loan process, read [how to get green loans using carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data); for product footprints, see the [product carbon footprint calculator](/calculators/product-carbon-footprint).
+
+## A practical starting point
+
+1. Build a site-level Scope 1 and 2 inventory from fuel invoices and electricity bills.
+2. Map your top purchased materials and solvents for Scope 3.
+3. Set a reduction target and a dated plan; that is what a Carbon Reduction Plan is.
+
+Senseible turns fuel invoices and electricity bills into emission records linked to their source documents, the evidence a customer or the NHS can check.
+
+This is general guidance. Check the NHS Net Zero Supplier Roadmap and your contract terms for what applies to you.`,
+    tags: ['pharma', 'hyderabad', 'baddi', 'nhs', 'carbon reduction plan', 'scope 3', 'api manufacturers'],
+    category: 'supply-chain',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // sidhiee.beeindia.gov.in chemical cluster manuals (Vapi chemicals and dyes);
+  // eparlib.nic.in (Ankleshwar among targeted clusters in an energy efficiency
+  // programme with finance access support); energy.greenbusinesscentre.com
+  // Deccan Fine Chemicals case (over 50% of power from wind-solar hybrid at
+  // Ankleshwar from July 2023); chemindigest.com (GACL green energy share
+  // 35.7% in quarter to Dec 2025; Arete Group biomass boilers at Dahej);
+  // CBAM Annex I (hydrogen; ammonia and nitric acid under fertilisers).
+  {
+    id: '150',
+    slug: 'green-finance-gujarat-chemical-clusters',
+    title: 'How can chemical makers in Vapi, Ankleshwar and Dahej use green finance?',
+    subtitle: 'Green Finance',
+    content: `South Gujarat's chemical belt runs along the highway from Vapi through Ankleshwar to Dahej. Dyes, pigments, agrochemicals, specialty and bulk chemicals: thousands of plants, from family-run reactors to large integrated sites. What they share is a need for steam and power around the clock, and buyers abroad who now ask about both.
+
+The question this article answers is how a Gujarat chemical maker can finance lower-emission steam and power, and what a lender wants to see.
+
+## Where the emissions are
+
+For most chemical plants, two utilities carry the bulk of direct and energy emissions:
+
+- **Steam** from boilers, many still on coal, lignite or furnace oil, for reactors, distillation and drying.
+- **Electricity** for agitators, pumps, chillers and compressors, bought from the grid or generated on site.
+
+Process emissions matter for a few products, such as nitric acid and ammonia, which fall under the EU's Carbon Border Adjustment Mechanism as fertiliser inputs, and hydrogen. Most specialty and dye chemicals are outside CBAM today, but EU customers ask for product footprints under their own reporting.
+
+## What others in the belt have done
+
+Published examples show the main routes. Deccan Fine Chemicals reported that from July 2023 it met more than half of the power needs at its Ankleshwar site from a wind and solar hybrid supply. Gujarat Alkalies and Chemicals reported a green energy share of 35.7 percent in the quarter to December 2025. At Dahej, Arete Group's planned industrial park was reported to use biomass-fired steam boilers instead of coal.
+
+## What green finance can pay for
+
+- **Boiler fuel switching** to biomass, natural gas or electric boilers where the economics work.
+- **Condensate recovery and heat integration** to need less steam in the first place.
+- **Open-access wind and solar,** or rooftop solar for daytime load.
+- **Efficient chillers, compressors and drives.**
+
+The Bureau of Energy Efficiency has published energy conservation manuals for the Vapi chemicals and dyes cluster, useful when preparing a project report. SIDBI and commercial banks finance these projects; Ankleshwar has also been among clusters targeted by energy efficiency programmes that support access to finance.
+
+## What the lender will ask for
+
+1. **Fuel invoices** by type and calorific value, and electricity bills, for twelve months.
+2. **Steam generated** and production by month, so energy per tonne of product can be stated.
+3. **The project report** with the expected saving and how it will be metered.
+
+For the emission factors behind those invoices, see [coal](/emission-factors/coal), [furnace oil](/emission-factors/furnace-oil) and [PNG](/emission-factors/png). For the loan process, read [how to get green loans using carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data).
+
+Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['gujarat', 'vapi', 'ankleshwar', 'dahej', 'chemicals', 'green finance', 'boilers'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // bcinsight.crugroup.com 2026/03/05 "EU suspends fertilizer tariffs to
+  // offset CBAM costs" (Commission proposal 24 Feb 2026: one-year suspension
+  // of MFN duties on urea and ammonia for all origins except Russia and
+  // Belarus; about EUR 60m saving); agri-tech-e.co.uk fertiliser supply update
+  // and lobbying.ie IFA return (tariffs on Russian and Belarusian fertilisers:
+  // base about 6.5% plus a fixed charge of about EUR 40 to 45 per tonne rising
+  // to about EUR 315 to 430 by 2028); starch.eu joint statement Dec 2025
+  // (industry estimates CBAM adds 10% to over 30%; at least 10 to 15% in
+  // 2026); fertiliser default mark-up 1% per src/lib/cbamEngine.ts.
+  {
+    id: '151',
+    slug: 'fertiliser-importers-cbam-germany-poland',
+    title: 'How does CBAM change fertiliser buying for German and Polish importers?',
+    subtitle: 'Carbon Regulations',
+    content: `Fertiliser is the CBAM product group that farmers notice. Nitrogen fertilisers such as urea, ammonium nitrate and calcium ammonium nitrate, and their inputs ammonia and nitric acid, are all covered. For an importer or distributor in Germany or Poland, 2026 brought two changes at once: a carbon charge on what it imports, and new tariffs that close off some of its cheapest sources.
+
+This article answers what changed and how to buy with it in mind.
+
+## Two cost changes at the same border
+
+**CBAM.** Since 1 January 2026 the authorised declarant owes certificates for the embedded emissions in imported fertiliser, bought from February 2027 and surrendered with the first annual declaration by 30 September 2027. Making ammonia releases a lot of CO2, and nitric acid production also releases nitrous oxide, which CBAM counts. Industry groups estimated in December 2025 that CBAM could add 10 percent to more than 30 percent to fertiliser prices, and at least 10 to 15 percent in 2026.
+
+**Tariffs on Russia and Belarus.** The EU has put tariffs on fertilisers from Russia and Belarus that start with the base duty of about 6.5 percent plus a fixed charge of about €40 to €45 per tonne, rising to roughly €315 to €430 per tonne by 2028, according to industry summaries.
+
+To soften the combined effect, the European Commission proposed on 24 February 2026 to suspend ordinary import duties on urea and ammonia for one year for all origins except Russia and Belarus, saving importers about €60 million by its estimate. Check whether the suspension has been adopted for the period you are buying in.
+
+## What this means for sourcing
+
+- **Origin matters more than before.** With Russian and Belarusian supply taxed out of reach over time, importers turn to North Africa, the Middle East, the Americas and Asia.
+- **Producer data matters more than origin.** Plants differ widely in emissions per tonne of ammonia, depending on gas efficiency and whether nitrous oxide from nitric acid is abated. Verified installation data from an efficient plant can cut the certificate cost sharply.
+- **Default values are less punishing here than for steel.** For fertilisers, the mark-up on default values is 1 percent, compared with 10 to 30 percent for steel, aluminium and cement. But default values themselves are set cautiously, so actual data still usually wins.
+
+## What to ask suppliers for
+
+1. The producing installation and production route for each product, including the ammonia and nitric acid behind it.
+2. Specific embedded emissions per tonne, covering CO2 and nitrous oxide, with the reporting period and verifier.
+3. Any carbon price paid at origin, with evidence.
+
+Compare default and actual emissions with the [CBAM calculator](/cbam-calculator), and see the [fertiliser cost table](/cbam-cost/fertilizers) for how the charge grows to 2034. For the steel side of Polish and German imports, read [what a Polish steel importer should ask its suppliers](/climate-intelligence/polish-steel-importers-cbam-supplier-data).
+
+This is general guidance, not legal advice.`,
+    tags: ['fertilisers', 'germany', 'poland', 'cbam', 'urea', 'ammonia', 'importers'],
     category: 'regulations',
     createdAt: '2026-10-13',
     featured: false
