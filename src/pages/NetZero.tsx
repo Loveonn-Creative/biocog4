@@ -547,7 +547,7 @@ const NetZero = () => {
                   {isPremium ? (
                     <button onClick={() => navigate('/intelligence')} className={backBtn}>Ask ESG Intelligence</button>
                   ) : (
-                    <button onClick={() => navigate('/pricing')} className={backBtn}><Lock className="w-3 h-3 mr-1.5" /> Unlock with Premium</button>
+                    <button onClick={() => navigate('/pricing')} className={backBtn}><Lock className="w-3 h-3 mr-1.5" /> See plans with ESG Intelligence</button>
                   )}
                 </div>
               </div>

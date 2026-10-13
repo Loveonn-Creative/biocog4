@@ -1,5 +1,5 @@
-import { lazy, Suspense, useCallback, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { lazy, Suspense, useCallback, useRef, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CarbonParticles } from '@/components/CarbonParticles';
 import { Navigation } from '@/components/Navigation';
@@ -76,8 +76,18 @@ const Pricing = () => {
   const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
   // The plan the meter recommends (or the visitor picks on a phone): ringed on
   // desktop, shown on phones, and used by the add-on estimate.
-  const [focusPlan, setFocusPlan] = useState<PlanTier>('essential');
-  const onRecommend = useCallback((p: PlanTier) => setFocusPlan(p), []);
+  // A link can open on one plan (/pricing?plan=scale#plans); visitors can still pick any other.
+  const [searchParams] = useSearchParams();
+  const [focusPlan, setFocusPlan] = useState<PlanTier>(() => {
+    const p = searchParams.get('plan');
+    return p === 'snapshot' || p === 'essential' || p === 'pro' || p === 'scale' ? p : 'essential';
+  });
+  // The meter suggests a plan when it first renders; a plan named in the link wins over that first suggestion.
+  const planFromLink = useRef(searchParams.has('plan'));
+  const onRecommend = useCallback((p: PlanTier) => {
+    if (planFromLink.current) { planFromLink.current = false; return; }
+    setFocusPlan(p);
+  }, []);
   const [hoverCol, setHoverCol] = useState<string | null>(null);
   
   // Partner-specific tiers
@@ -527,7 +537,7 @@ const Pricing = () => {
           </section>
         ) : (
           /* MSME Pricing Cards */
-          <section className="container mx-auto px-4 pb-16">
+          <section id="plans" className="container mx-auto px-4 pb-16 scroll-mt-20">
             {/* Yearly / Monthly toggle */}
             <div className="flex flex-col items-center mb-8">
               <div className="inline-flex items-center rounded-full border bg-background p-1 shadow-sm">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useT } from "@/lib/i18n/useT";
 import { scrollToSection } from "./lazy";
 
@@ -37,7 +38,10 @@ export const SectionNav = ({ groups, visible, onTalk }: { groups: NavGroup[]; vi
             {t(`ent.nav.${g.id}`, g.label)}
           </button>
         ))}
-        <button tabIndex={visible ? 0 : -1} onClick={onTalk} className="hidden sm:inline-flex shrink-0 ml-auto rounded-full bg-foreground text-background px-4 py-1.5 text-sm font-medium">
+        <Link to="/pricing?plan=scale#plans" tabIndex={visible ? 0 : -1} className="hidden sm:inline-flex shrink-0 ml-auto px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          {t("ent.nav.pricing", "Pricing")}
+        </Link>
+        <button tabIndex={visible ? 0 : -1} onClick={onTalk} className="hidden sm:inline-flex shrink-0 rounded-full bg-foreground text-background px-4 py-1.5 text-sm font-medium">
           {t("ent.nav.talk", "Talk to us")}
         </button>
       </div>
