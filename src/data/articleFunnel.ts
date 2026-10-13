@@ -162,4 +162,11 @@ export const articleFunnel: Record<string, { stage: FunnelStage; anchor: string 
   'become-cbam-authorised-declarant': { stage: 'decision', anchor: 'becoming a CBAM authorised declarant' },
   'turkey-emissions-trading-system': { stage: 'awareness', anchor: 'Turkey\'s emissions trading system' },
   'vietnam-grid-emission-factor': { stage: 'awareness', anchor: 'Vietnam\'s grid emission factor' },
+  'eu-steel-import-quota-2026': { stage: 'consideration', anchor: 'EU steel import quotas from July 2026' },
+  'cbam-downstream-products-2028': { stage: 'awareness', anchor: 'CBAM extension to downstream products' },
+  'eu-forced-labour-regulation-suppliers': { stage: 'awareness', anchor: 'the EU forced labour regulation for suppliers' },
+  'digital-product-passport-textile-exporters': { stage: 'awareness', anchor: 'the EU digital product passport for textiles' },
+  'wheeling-renewable-power-south-africa-factories': { stage: 'consideration', anchor: 'wheeling renewable power for factories in South Africa' },
+  'pakistan-green-taxonomy': { stage: 'awareness', anchor: 'the Pakistan green taxonomy' },
+  'vietnam-green-taxonomy-decision-21': { stage: 'awareness', anchor: 'Vietnam\'s green taxonomy and green credit' },
 };

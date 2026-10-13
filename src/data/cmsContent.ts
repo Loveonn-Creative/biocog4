@@ -7539,6 +7539,385 @@ Check the environment ministry's official announcement for the factor that appli
     createdAt: '2026-10-13',
     featured: false
   },
+  // Sources researched October 2026 (kept here, not on the page):
+  // wam.ae "EU approves stricter measures to protect steel market" (Council
+  // adoption 8 June 2026, 25 of 27 in favour, from 1 July); news.metal.com
+  // "EU's permanent steel safeguard takes hold: 50% out-of-quota duty, quotas
+  // cut 47%" (about 18.3 Mt duty-free; 50% beyond quota vs 25%; stacks on
+  // anti-dumping and countervailing duties; quotas by product category on
+  // 2022-2024 import shares, quarterly, no carryover; possible
+  // country-specific quotas; melt-and-pour evidence from 1 Oct 2026);
+  // akingump.com proposal alert.
+  {
+    id: '173',
+    slug: 'eu-steel-import-quota-2026',
+    title: 'EU Steel Import Quotas From July 2026: What Exporters Need to Know',
+    subtitle: 'Carbon Regulations',
+    content: `For steel exporters to Europe, 2026 brought two border changes in six months. CBAM began charging for embedded emissions in January. Then in July, the EU replaced its 2018 steel safeguard with a permanent import regime: smaller duty-free quotas, a much higher duty above them, and a new rule on where steel was first made.
+
+This article explains the new quota regime and how it interacts with CBAM.
+
+## What changed
+
+As reported by trade press and agencies:
+
+- **Adopted:** the Council of the EU adopted the measure on 8 June 2026, with 25 of 27 member states in favour. It applies from **1 July 2026**.
+- **Duty-free quotas cut by about 47 percent,** to about **18.3 million tonnes** a year.
+- **Duty above quota: 50 percent,** up from 25 percent under the old safeguard. It applies on top of any anti-dumping or countervailing duties already in place.
+- **How quotas work:** allocated by product category based on each category's share of imports in 2022 to 2024, managed quarterly, with no carryover of unused volume. The Commission may set country-specific quotas or restrictions where needed.
+- **Melt and pour:** from **1 October 2026**, importers must show where the steel was first produced in liquid form.
+
+Check the Official Journal text for your product categories before quoting.
+
+## Why melt-and-pour matters
+
+Melt-and-pour evidence stops steel from being relabelled by a country that only rolled or finished it. For a re-roller who buys slab or billet from one country and exports finished products from another, the origin of the melt now has to be documented. It is the same chain of evidence CBAM needs for precursors: where the crude steel came from and how much it emitted.
+
+## How the quota and CBAM combine
+
+A tonne of steel entering the EU can now face three costs:
+
+1. **Ordinary duty,** where applicable.
+2. **The 50 percent out-of-quota duty,** once the quarterly quota for that category is used up.
+3. **CBAM certificates** for its embedded emissions.
+
+Quotas fill early in each quarter in busy categories, so timing becomes a commercial weapon: steel that clears customs inside the quota avoids the 50 percent duty. CBAM costs apply either way, which is why verified low emissions matter even for steel that makes the quota.
+
+## What exporters should do
+
+- **Plan shipments around quarterly quota openings** with your importer.
+- **Prepare melt-and-pour evidence** from your mill or your slab supplier for every shipment from October 2026.
+- **Get verified actual emissions,** so the CBAM cost on top is as low as your plant allows; see [how to get CBAM emissions verified](/climate-intelligence/cbam-verification-non-eu-producer).
+
+Senseible keeps purchase records, mill certificates and energy invoices linked to each emissions figure, which supports both the melt-and-pour trail and CBAM precursor data. For costs, see [CBAM cost for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) and [financing CBAM compliance for steel exporters in Vietnam](/climate-intelligence/finance-cbam-compliance-steel-vietnam).
+
+This is general guidance, not legal advice.`,
+    tags: ['eu steel safeguard', 'steel quota', 'melt and pour', 'steel exporters', 'cbam', 'trade'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // vajiramandravi.com and basispointinsight.com (EU proposal to bring about
+  // 180 more steel- and aluminium-intensive downstream products into CBAM
+  // from 1 Jan 2028); fastenershows.com news 144738 (draft would cover
+  // fabricated metal parts, pipes and other components; not final);
+  // eurometal.net tag/steel-derivatives (Italian minister called 1 Jan 2028
+  // too distant); bilaterals.org (EU examining indirect emissions extension,
+  // possibly from end-2027).
+  {
+    id: '174',
+    slug: 'cbam-downstream-products-2028',
+    title: 'Will CBAM Cover Your Product From 2028? The Downstream Extension Explained',
+    subtitle: 'Carbon Regulations',
+    content: `CBAM today covers basic materials: iron and steel, aluminium, cement, fertilisers, hydrogen and electricity. A European buyer who imports a finished machine part made from Indian steel pays nothing under CBAM, while one who imports the steel itself does. That gap invites a simple dodge: export the finished product instead of the metal.
+
+The EU has proposed closing it. This article explains what is proposed, what is still uncertain, and how exporters of finished goods should prepare.
+
+## What is proposed
+
+The EU is preparing to bring **about 180 additional steel- and aluminium-intensive downstream products** into CBAM, with a proposed start date of **1 January 2028**. Industry reporting on the draft says it would cover fabricated metal parts, pipes and other components made largely of steel or aluminium.
+
+The proposal was not final at the time of writing. Some member states want it sooner: Italy's industry minister called the 2028 date too distant, with the Italian steel federation present.
+
+## What else is under discussion
+
+Reporting on the India-EU trade agreement noted that the EU is also examining whether to extend CBAM to **indirect emissions** from electricity for more products, possibly from the end of 2027. Today, iron, steel and aluminium are charged on direct emissions only. A change would matter most for producers on coal-heavy grids.
+
+## How a downstream product would be charged
+
+For a covered downstream product, the embedded emissions are mostly those of the steel or aluminium inside it, plus the emissions of the processing steps. That means:
+
+- **Your metal supplier's data matters most.** The emissions of the wire rod, sheet or billet you bought will dominate.
+- **Your own process adds the rest:** cutting, forming, welding, heat treatment and coating, measured through your electricity and fuel use.
+- **Default values will apply if you cannot show actual data,** with the same mark-up schedule as other CBAM goods.
+
+## How to prepare now
+
+1. **Check your product list against the draft** when the final text is published; until then, assume metal-heavy parts may be in scope.
+2. **Ask metal suppliers for installation-level emissions,** as CBAM-covered producers are already being asked.
+3. **Measure your own process** by product family: kWh and fuel per tonne of output.
+4. **Watch your EU customers.** Importers of downstream goods will start asking before the start date, as they did for steel in 2025.
+
+Senseible builds product-level emissions from your purchase records and energy bills, each figure linked to its source, so the same record can serve today's customer questionnaires and a future CBAM declaration. For producers already covered, see [CBAM for fastener exporters in India](/climate-intelligence/cbam-fastener-exporters-india) and [CBAM for aluminium exporters in India](/climate-intelligence/cbam-aluminium-exporter-india).
+
+This is general guidance. Check the final regulation for the products and dates that apply.`,
+    tags: ['cbam', 'downstream products', 'cbam extension', '2028', 'steel', 'aluminium'],
+    category: 'regulations',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page): Regulation
+  // (EU) 2024/3015; jonesday.com 2026/07 "EU forced labor guidelines:
+  // mandatory due diligence in disguise" (guidelines 26 June 2026,
+  // nonbinding, six-step due diligence framework); osborneclarke.com
+  // regulatory outlook Sept 2026 (OJ notice 3 Sept 2026; applies to all
+  // operators incl. non-EU and all products; obligation of result);
+  // sedex.com blog (applies 14 Dec 2027; member states notify penalties by
+  // 14 Dec 2026); garrigues.com (database of risk areas or products).
+  {
+    id: '175',
+    slug: 'eu-forced-labour-regulation-suppliers',
+    title: 'What Does the EU Forced Labour Regulation Mean for Suppliers in Asia?',
+    subtitle: 'Supply Chain Emissions',
+    content: `From 14 December 2027, a product made with forced labour cannot be sold in the EU or exported from it, whatever the product and wherever it was made. That is the EU Forced Labour Regulation. Unlike Germany's supply chain act or the EU due diligence directive, it does not target only large companies. It targets the product.
+
+For a supplier in India, Bangladesh, Pakistan, Vietnam or Turkey, that changes what a European buyer needs to know. This article explains how.
+
+## What the regulation does
+
+- **Scope:** all products, of any origin, at any stage of production, and all economic operators, including businesses outside the EU.
+- **The ban:** products made in whole or in part with forced labour are prohibited on the EU market and from EU export.
+- **Enforcement:** national authorities and the European Commission investigate and can order products withdrawn. The Commission is building a database of forced labour risk areas and products to support those decisions.
+- **Dates:** the regulation applies from **14 December 2027**. Member states had to notify their penalty frameworks by 14 December 2026.
+
+## The guidance
+
+The Commission published guidelines on 26 June 2026, followed by a notice in the Official Journal in September 2026. They are not legally binding, but law firms note that they set out a six-step due diligence framework that, in practice, buyers will be expected to follow. The regulation is an obligation of result: a company must not place a forced-labour product on the market. Due diligence is how it shows it took that seriously.
+
+## What European buyers will ask suppliers
+
+Expect requests to cover:
+
+1. **Your own workforce:** recruitment, fees, contracts, wages, working hours, freedom to leave, identity documents.
+2. **Your inputs:** where cotton, yarn, metals, minerals and chemicals come from, and whether any come from regions or sectors flagged as high risk.
+3. **Evidence:** audit reports, corrective actions, purchase records and traceability documents.
+
+Because the ban applies to products, buyers will trace specific inputs into specific orders, not just assess your company in general.
+
+## How to prepare
+
+- **Map your tier 2 suppliers** for high-risk inputs and keep purchase records that link inputs to products.
+- **Keep labour records current** and ready to share.
+- **Fix issues before audits find them,** and document the fix.
+- **Answer consistently.** The same buyer may ask about forced labour, emissions and environmental permits in one questionnaire.
+
+Senseible covers the environmental side of those questionnaires: energy and emissions from your own bills and invoices, with the source of every number recorded. For related EU rules, see [Germany's supply chain act for Indian suppliers](/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers) and [exporting textiles to Europe from Karachi](/climate-intelligence/export-textiles-to-europe-from-karachi).
+
+This is general guidance, not legal advice.`,
+    tags: ['forced labour regulation', 'eu', 'suppliers', 'due diligence', 'asia', 'textiles'],
+    category: 'supply-chain',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // carbonfact.com "Digital Product Passport for textiles: what fashion brands
+  // need to know" (covers all apparel and footwear sold in the EU; at least 18
+  // months to comply after the act; footwear study by end-2027); cosh.eco
+  // 11 May 2026 (textile delegated act second half of 2027; non-EU
+  // manufacturers supply data through brands; DPP registration system
+  // reported live 20 July 2026, single source); mintlify Avelero compliance
+  // timeline (adoption late 2026 to Q2 2027, passports around mid-2028, dates
+  // not locked); makeinfluence.com (2028 enforcement an industry estimate).
+  {
+    id: '176',
+    slug: 'digital-product-passport-textile-exporters',
+    title: 'What Does the EU Digital Product Passport Mean for Textile Exporters?',
+    subtitle: 'Supply Chain Emissions',
+    content: `Somewhere in the next few years, a garment sold in Europe will carry a code that opens a record of what it is made of, where it was made and how to repair or recycle it. That record is the Digital Product Passport, required under the EU's Ecodesign for Sustainable Products Regulation (ESPR). The brand will publish it, but much of the data has to come from the mills and factories that make the product.
+
+This article explains what is known, what is not yet fixed, and what a textile exporter can do now.
+
+## What it is
+
+The ESPR lets the EU set product rules for durability, recyclability, recycled content and environmental footprint, and requires a digital passport carrying that information. Textiles and apparel are a priority group. The passport is expected to cover all apparel sold in the EU, regardless of where the brand is based or how big it is.
+
+## When it arrives
+
+The dates are not locked in law yet, and sources differ:
+
+- **The textile rules (delegated act):** expected between late 2026 and the end of 2027, with several sources pointing to the second half of 2027.
+- **Compliance:** one industry source says brands will get at least 18 months after the act; others estimate passports becoming mandatory for new textile products around 2028. That year is an industry estimate, not a Commission date.
+- **The registry:** one source reports that the EU's passport registration system went live on 20 July 2026; check the Commission's own pages.
+- **Footwear:** not in the first group; a study is due by the end of 2027.
+
+The exact data fields, and which are mandatory, will be fixed only when the textile act is published.
+
+## What exporters will be asked for
+
+Brands will need data from their supply chains to build each passport. Likely requests include:
+
+- **Materials and composition,** including recycled content with evidence.
+- **Where each stage happened:** spinning, weaving or knitting, dyeing, making up.
+- **Chemicals of concern** used or present.
+- **Environmental data** such as energy, water and, in time, product footprint under the EU's Product Environmental Footprint method.
+
+## What to do now
+
+1. **Organise purchase records** so fibre and fabric can be traced to orders.
+2. **Measure energy and water by month and by process,** tied to output.
+3. **Keep certification evidence** such as GOTS or the Global Recycled Standard current.
+4. **Ask your buyers** which data platform they will use, so you answer once.
+
+Senseible builds energy and emissions per kilogram from your bills, fuel invoices and purchase records, each linked to its source document, a starting point for the environmental part of a passport. For cluster examples, see [green finance for textile recyclers in Panipat](/climate-intelligence/green-finance-textile-recycling-panipat) and [green finance for textile exporters in Turkey](/climate-intelligence/green-finance-textile-exporter-turkey).
+
+This is general guidance. Check the Commission's ESPR pages for the final textile requirements.`,
+    tags: ['digital product passport', 'espr', 'textiles', 'apparel', 'exporters', 'eu'],
+    category: 'supply-chain',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // greenbuildingafrica.co.za (Anthem 475 MW Notsi solar reached financial
+  // close 5 March 2026 with traders Discovery Green and NOA Group; supply to
+  // commercial and industrial customers via Eskom grid; 20+ year contracts;
+  // trader-led wheeling); engineeringnews.co.za opinion 2026-06-09 (NERSA
+  // oversight; two tariff methodologies; 2022 licensing change; trader-led
+  // aggregation); bizcommunity.com SolarAfrica 2026 realities (Eskom +8.76%
+  // for direct customers from 1 April 2026, 9.01% municipal from 1 July 2026;
+  // fixed share of generation capacity charge 20% to 30% in FY2027, excluded
+  // from wheeling credit; developer savings targets 20 to 30%).
+  {
+    id: '177',
+    slug: 'wheeling-renewable-power-south-africa-factories',
+    title: 'Can a Factory in South Africa Buy Renewable Power Through Wheeling?',
+    subtitle: 'Green Finance',
+    content: `For years, a South African manufacturer that wanted cleaner or cheaper power had two choices: put solar on its own roof, or keep buying from Eskom. Wheeling adds a third. A private generator puts power into the grid somewhere else, and the grid carries it to your factory under a contract, with the transport charges set by regulation.
+
+This article explains how wheeling works in 2026, what it costs and who it suits.
+
+## How it works
+
+A wind or solar plant, often hundreds of kilometres away, sells power to you, directly or through an electricity trader. Eskom's network, or a municipal network, carries it. Your bill then reflects the power you bought privately and the use-of-system charges for moving it.
+
+Two things made this practical:
+
+- **Licensing:** in 2022 the energy regulator, NERSA, lifted licensing requirements that had limited the size of private projects.
+- **Tariff rules:** NERSA approves wheeling tariffs and currently allows two methods, either a credit based on avoided grid costs or a separate use-of-system fee.
+
+## The market is moving to traders
+
+Instead of each factory signing a 20-year contract with one wind farm, electricity traders now aggregate several plants and sell to many customers. In March 2026, Anthem's 475 MW Notsi solar project reached financial close on the back of agreements with two traders, Discovery Green and NOA Group, to supply commercial and industrial customers over the Eskom grid. For a mid-sized factory, buying from a trader is usually simpler than negotiating its own power purchase agreement.
+
+## What it costs, and what can erode the saving
+
+- **Eskom's prices keep rising.** NERSA approved an average increase of 8.76 percent for Eskom's direct customers from 1 April 2026, and 9.01 percent for municipal bulk purchasers from 1 July 2026.
+- **More of the bill is fixed.** The fixed share of Eskom's generation capacity charge rises from 20 percent in its 2026 financial year to 30 percent in 2027, and that portion is not offset by the wheeling credit. This reduces the value of wheeled power.
+- **Claimed savings:** some trader contracts target 20 to 30 percent below Eskom's wholesale tariffs. Those are developer targets, not audited results. Model your own load and tariff.
+
+## Why it matters beyond the bill
+
+For exporters, cleaner electricity lowers the carbon in every product. Under CBAM, electricity emissions do not count yet for iron, steel and aluminium, but they do for cement and fertilisers, and the EU is examining wider coverage. European customers also ask for Scope 2 data. Keep the wheeling contracts and certificates with your energy records so the renewable share can be shown.
+
+## How to start
+
+1. Pull twelve months of Eskom or municipal bills, with time-of-use data.
+2. Ask two or three traders for offers based on your load profile.
+3. Check the network charges that will apply at your connection point.
+4. Compare the landed cost with your current tariff, including the fixed charges you will still pay.
+
+Senseible reads your electricity bills for units and billing periods and keeps grid and renewable supply separate, so both your cost saving and your emissions can be shown. For heavy users, see [renewable power for ferrochrome smelters in South Africa](/climate-intelligence/renewable-power-ferrochrome-smelter-south-africa) and [green loans for steel businesses in Johannesburg](/climate-intelligence/green-loan-steel-business-johannesburg).
+
+Check NERSA's current wheeling rules and your network operator's charges before signing.`,
+    tags: ['south africa', 'wheeling', 'renewable power', 'factories', 'eskom', 'nersa'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // profit.pakistantoday.com.pk ?p=220766 (SBP advised banks and DFIs to
+  // reference the Pakistan Green Taxonomy in green banking policies; released
+  // full document, FAQs and a web navigation tool) and ?p=209654 (developed by
+  // the Ministry of Climate Change with the Ministry of Finance, SBP and the
+  // World Bank; approved by the ECC); issi.org.pk issue brief (Jan 2025
+  // draft); icmainternational.com brief (79% of banks with green policies, 69%
+  // integrating E&S risk); SBP archive (renewable energy scheme discontinued
+  // from 1 July 2024).
+  {
+    id: '178',
+    slug: 'pakistan-green-taxonomy',
+    title: 'What Is the Pakistan Green Taxonomy, and How Does It Affect Business Loans?',
+    subtitle: 'Green Finance',
+    content: `When a Pakistani bank calls a loan green, it now needs a reason it can point to. That reason is the Pakistan Green Taxonomy: a national list of activities that count as environmentally sustainable, with the criteria they must meet. For a business owner hoping to finance solar, efficiency or cleaner production, it is the rulebook the bank will read your project against.
+
+## What it is
+
+The taxonomy was developed by the Ministry of Climate Change and Environmental Coordination, with the Ministry of Finance, the State Bank of Pakistan and the World Bank, and approved by the Economic Coordination Committee. A draft circulated in January 2025.
+
+The State Bank has advised all banks and development finance institutions to reference it when writing or revising their green banking policies, and has published the full document, a set of FAQs and a web-based navigation tool.
+
+## Why it matters now
+
+Until mid-2024, the easiest green loan in Pakistan came through the State Bank's renewable energy refinancing scheme. That scheme is listed as discontinued from 1 July 2024. Since then, green lending has moved into banks' ordinary credit processes, judged against their own green policies, which the taxonomy now anchors.
+
+Green banking is still developing. A professional accountants' brief reported that 79 percent of banks had adopted green policies and 69 percent integrated environmental and social risk into lending.
+
+## How a bank uses it on your loan
+
+1. **Classification:** the bank checks whether your project matches an activity in the taxonomy, such as renewable energy, energy efficiency or pollution control.
+2. **Criteria:** it checks the project against the technical criteria for that activity.
+3. **Evidence:** it asks for documents that show the project meets them, before and after.
+4. **Reporting:** it reports its green lending, so it will ask you for results during the loan.
+
+## How to use it in your application
+
+- **Find your activity in the navigation tool** and use its wording in your proposal.
+- **Show the baseline:** twelve months of electricity and fuel bills, in units.
+- **Show the expected result** and how you will measure it after installation.
+- **Keep reporting:** the evidence that won the loan is also what keeps it classified as green.
+
+Senseible turns bills and invoices into a monthly energy and emissions record linked to each source document, the evidence a bank needs for classification and reporting. For worked examples, see [green loan for a textile business in Karachi](/climate-intelligence/green-loan-textile-business-karachi) and [green loan for a cement plant in Pakistan](/climate-intelligence/green-loan-cement-plant-pakistan).
+
+Check the State Bank's taxonomy documents and your bank's green policy before you apply.`,
+    tags: ['pakistan', 'green taxonomy', 'sbp', 'green loans', 'banks', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // wfw.com "Vietnam's green taxonomy: new legal framework for green credit
+  // and green bonds"; fpt-is.com "Standardizing green credit in Vietnam:
+  // breakthrough from Decision 21" (Decision 21/2025/QD-TTg signed 4 July
+  // 2025, effective 22 Aug 2025; legal compliance with an EIA or permit plus
+  // environmental benefit in seven sectors in the appendix; certification by
+  // state authorities or accredited independent bodies);
+  // viettonkinconsulting.com (seven categories incl. low-carbon industry);
+  // Circular 17/2022/TT-NHNN (environmental risk management in lending).
+  {
+    id: '179',
+    slug: 'vietnam-green-taxonomy-decision-21',
+    title: "What Is Vietnam's Green Taxonomy, and How Do You Qualify for Green Credit?",
+    subtitle: 'Green Finance',
+    content: `Until 2025, a Vietnamese bank deciding whether a loan was green had guidelines but no binding national definition. Decision 21 changed that. It is Vietnam's first legally binding green taxonomy, and it decides which projects can be financed as green credit or green bonds.
+
+This article explains what it says and how a company can use it to get a project financed.
+
+## What Decision 21 is
+
+**Decision 21/2025/QĐ-TTg** was signed by the Prime Minister on 4 July 2025 and took effect on 22 August 2025. It sets the national green taxonomy: the list of environmental objectives and project types that count as green, the criteria they must meet, and how they are confirmed.
+
+## The two tests
+
+A project qualifies as green when it meets both:
+
+1. **Legal compliance:** it follows environmental law, with an approved environmental impact assessment, or a permit or confirmation that none is needed.
+2. **Environmental benefit:** it delivers a benefit in one of the sectors listed in the decision's appendix. Seven sectors are listed, including renewable energy, energy efficiency and low-carbon industry.
+
+Projects are confirmed by state authorities or by accredited independent bodies.
+
+## How banks use it
+
+Banks already manage environmental and social risk in lending under the State Bank of Vietnam's Circular 17/2022. Decision 21 adds a common definition of what green means, so a loan can be labelled and reported as green credit consistently across banks.
+
+For a borrower, that means:
+
+- **Find the matching category** in the appendix before you design the application.
+- **Have your environmental permits in order;** without them, the project fails the first test whatever its benefits.
+- **Quantify the benefit:** energy saved, emissions avoided, pollution reduced, with how you will measure it.
+- **Budget for confirmation** by an accredited body where the bank requires it.
+
+## Where it meets other rules
+
+Many Vietnamese companies face carbon rules from two directions at once. Steel, cement and thermal power plants have emission quotas under Vietnam's pilot carbon market. Exporters of steel, aluminium, cement and fertiliser to the EU face CBAM. A project that cuts emissions per tonne can qualify as green credit, lower a quota shortfall and lower a CBAM bill at the same time. See [financing emission cuts at cement plants in Vietnam](/climate-intelligence/finance-emission-cuts-cement-plant-vietnam) and [financing CBAM compliance for steel exporters in Vietnam](/climate-intelligence/finance-cbam-compliance-steel-vietnam).
+
+Senseible builds the before-and-after record banks and verifiers ask for: monthly energy and emissions from your bills and invoices, each linked to its source document. For the grid factor behind electricity emissions, see [Vietnam's grid emission factor](/climate-intelligence/vietnam-grid-emission-factor).
+
+Check the decision's appendix and your bank's green credit policy for the criteria that apply.`,
+    tags: ['vietnam', 'green taxonomy', 'decision 21', 'green credit', 'green bonds', 'banks'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
 ];
 
 // Get featured articles for landing page
