@@ -49,12 +49,22 @@ export interface UserContext {
   is_active: boolean;
 }
 
+// A database error (permission, missing table, bad request) will not fix itself
+// on retry, and re-firing a failed query on every component mount made records
+// pages reload in a loop. Only a network failure (no error code) is retried, once.
+const ORG_QUERY_OPTIONS = {
+  retry: (failureCount: number, error: unknown) => !(error as { code?: string })?.code && failureCount < 1,
+  retryOnMount: false,
+  refetchOnWindowFocus: false,
+  staleTime: 60_000,
+} as const;
+
 export function useOrganization() {
   const { user } = useSession();
   const queryClient = useQueryClient();
 
   // Fetch user's organizations
-  const { data: organizations = [], isLoading: orgsLoading, error: organizationsError } = useQuery({
+  const orgsQuery = useQuery({
     queryKey: ['organizations', user?.id],
     queryFn: async () => {
       if (!user?.id) return [];
@@ -67,9 +77,12 @@ export function useOrganization() {
       return data as Organization[];
     },
     enabled: !!user?.id,
-    // A permission error will not fix itself on retry; surface it straight away.
-    retry: (failureCount, error) => (error as { code?: string })?.code !== '42501' && failureCount < 3,
+    ...ORG_QUERY_OPTIONS,
   });
+  const { data: organizations = [], isLoading: orgsLoading, error: organizationsError } = orgsQuery;
+  // Settled once the first answer (data or error) is in. Records pages wait on
+  // this, so a failing or refetching query must not hold them in loading.
+  const organizationsSettled = !user?.id || orgsQuery.dataUpdatedAt > 0 || orgsQuery.errorUpdatedAt > 0;
 
   // Fetch user's contexts (for role switching)
   const { data: contexts = [], isLoading: contextsLoading } = useQuery({
@@ -85,6 +98,7 @@ export function useOrganization() {
       return data as UserContext[];
     },
     enabled: !!user?.id,
+    ...ORG_QUERY_OPTIONS,
   });
 
   // Get active context
@@ -170,6 +184,8 @@ export function useOrganization() {
     activeContext,
     activeOrganization,
     isLoading: orgsLoading || contextsLoading,
+    /** True once organisations have answered (or failed): what records pages wait for. */
+    organizationsSettled,
     organizationsError: organizationsError as (Error & { code?: string }) | null,
     createOrganization,
     switchContext,
