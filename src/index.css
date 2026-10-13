@@ -610,3 +610,10 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @media (prefers-reduced-motion: reduce) {
   .pt-anim *, .pt-anim *::before, .pt-anim *::after { animation: none !important; transition: none !important; }
 }
+
+/* Mission (/mission). */
+@keyframes mission-flow { to { stroke-dashoffset: -24; } }
+.mission-flow { animation: mission-flow 1.2s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .mission-anim *, .mission-anim *::before, .mission-anim *::after { animation: none !important; transition: none !important; }
+}
