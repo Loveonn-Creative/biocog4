@@ -624,3 +624,9 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @media (prefers-reduced-motion: reduce) {
   .pl-anim *, .pl-anim *::before, .pl-anim *::after { animation: none !important; transition: none !important; }
 }
+
+/* Loading indicators appear only when a wait is long enough to notice, so a
+   fast load never flashes a spinner. Reduced motion shows them at once. */
+.reveal-after-delay { animation: reveal-late 0.2s ease-out 0.4s both; }
+@keyframes reveal-late { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .reveal-after-delay { animation: none; } }

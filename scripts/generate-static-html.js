@@ -17,6 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { loadRegistry } from './seo/load-registry.mjs';
+import { routeChunkMap, chunksForPath, chunksFor, compactChunkMap } from './seo/route-chunks.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -86,14 +87,33 @@ ${R.blocksToHtml(route.blocks)}
 </main></noscript>`;
 }
 
-function renderPage(template, route, R) {
+// The page's own code chunks, fetched in parallel with the main bundle.
+const preloadTags = chunks => chunks.map(f => `<link rel="modulepreload" crossorigin href="${f}">`).join('\n    ');
+
+function withPreloads(html, chunks) {
+  if (!chunks.length) return html;
+  if (!html.includes('</head>')) throw new Error('index.html is missing </head>');
+  return html.replace('</head>', `  ${preloadTags(chunks)}\n  </head>`);
+}
+
+function renderPage(template, route, R, chunks = []) {
   const start = template.indexOf(HEAD_START);
   const end = template.indexOf(HEAD_END);
   if (start === -1 || end === -1) throw new Error('index.html is missing the <!--seo:head--> markers');
   let html = template.slice(0, start + HEAD_START.length) + '\n    ' + headTags(route, R) + '\n    ' + template.slice(end);
   if (!html.includes('<div id="root"></div>')) throw new Error('index.html is missing <div id="root"></div>');
   html = html.replace('<div id="root"></div>', `<div id="root"></div>\n${bodyHtml(route, R)}`);
-  return html;
+  return withPreloads(html, chunks);
+}
+
+// Signed-in and transactional routes are not prerendered for search, but a
+// direct visit should still fetch the page's code at once, and should not be
+// served the home page's head by the SPA fallback.
+function renderAppShell(template, chunks) {
+  const start = template.indexOf(HEAD_START);
+  const end = template.indexOf(HEAD_END);
+  const head = '<title>Senseible</title>\n    <meta name="robots" content="noindex, nofollow" data-rh="true" />';
+  return withPreloads(template.slice(0, start + HEAD_START.length) + '\n    ' + head + '\n    ' + template.slice(end), chunks);
 }
 
 function sitemapXml(routes, R) {
@@ -179,13 +199,40 @@ async function main() {
   // Each route is written as both {route}.html and {route}/index.html, so hosts
   // that resolve clean URLs either way serve the prerendered page for /route
   // without a trailing-slash redirect away from the canonical URL.
+  const manifestPath = path.join(DIST_DIR, '.vite', 'manifest.json');
+  if (!fs.existsSync(manifestPath)) throw new Error('dist/.vite/manifest.json not found. Enable build.manifest in vite.config.ts.');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  const appSource = fs.readFileSync(path.join(ROOT, 'src', 'App.tsx'), 'utf-8');
+  const serviceSlugs = [...fs.readFileSync(path.join(ROOT, 'src', 'data', 'services', 'nav.ts'), 'utf-8').matchAll(/slug: "([^"]+)"/g)].map(m => m[1]);
+  const chunkMap = routeChunkMap(appSource, manifest, serviceSlugs);
+  const articleChunks = p => {
+    const m = p.match(/^\/climate-intelligence\/([^/]+)$/);
+    return m ? chunksFor(manifest, `src/data/articleBodies/${m[1]}`) : [];
+  };
+  const routeChunks = p => [...new Set([...chunksForPath(chunkMap, p), ...articleChunks(p)])];
+
   for (const r of routes) {
-    const html = renderPage(template, r, R);
+    const html = renderPage(template, r, R, routeChunks(r.path));
     if (r.path === '/') { writeFile(indexPath, html); continue; }
     writeFile(path.join(DIST_DIR, `${r.path}.html`), html);
     writeFile(path.join(DIST_DIR, r.path, 'index.html'), html);
   }
   writeSupportFiles(DIST_DIR, routes, R);
+
+  // App routes without params that are not prerendered for search.
+  const seo = new Set(routes.map(r => r.path));
+  let shells = 0;
+  for (const [pattern, chunks] of Object.entries(chunkMap)) {
+    if (seo.has(pattern) || pattern.includes(':') || pattern === '*') continue;
+    const html = renderAppShell(template, chunks);
+    writeFile(path.join(DIST_DIR, `${pattern}.html`), html);
+    writeFile(path.join(DIST_DIR, pattern, 'index.html'), html);
+    shells++;
+  }
+  // In-app prefetching reads the same map (src/lib/routePrefetch.ts).
+  writeFile(path.join(DIST_DIR, 'route-chunks.json'), JSON.stringify(compactChunkMap(chunkMap)));
+  fs.rmSync(path.join(DIST_DIR, '.vite'), { recursive: true, force: true });
+  console.log(`⚡ Page chunks preloaded on ${routes.length} prerendered routes and ${shells} app routes`);
 
   // Retired URLs: instant meta refresh plus a canonical to the new URL, which
   // search engines treat as a permanent redirect on hosts without 301 support.

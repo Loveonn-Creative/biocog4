@@ -55,6 +55,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    // Read by scripts/generate-static-html.js to preload each page's chunks; removed after.
+    manifest: true,
     rollupOptions: {
       output: {
         manualChunks: vendorChunk,
