@@ -489,7 +489,6 @@
   "ent.rec.source": "Source",
   "ent.status.live": "Live",
   "ent.status.pilot": "Pilot",
-  "ent.graph.aria": "Network of suppliers sending records to the buyer at the centre",
   "ent.graph.primary": "Primary data",
   "ent.graph.document": "From documents",
   "ent.graph.estimate": "Spend estimate",

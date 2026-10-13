@@ -14,7 +14,9 @@ describe('/enterprise suite claims stay honest', () => {
     for (const m of suiteModules) {
       expect(['live', 'pilot', 'custom']).toContain(m.status);
       expect(m.note && m.input && m.output).toBeTruthy();
-      expect(routeExists(m.to)).toBe(true);
+      expect(routeExists(m.to.split('#')[0])).toBe(true);
+      // "See how it works" lands on the service page's working tool.
+      if (m.to.includes('#')) expect(m.to.split('#')[1]).toBe('tool');
     }
   });
 
@@ -47,5 +49,16 @@ describe('/enterprise suite claims stay honest', () => {
     const act = y(calculateCBAM({ ...base, actualEmissionsIntensity: 1.9 }));
     expect(def).toBeGreaterThan(act);
     expect(act).toBeGreaterThan(0);
+  });
+});
+
+describe('hero ledger', () => {
+  test('only the spend-only example is flagged for a person; every other row carries a source hash', async () => {
+    const { EXAMPLES } = await import('../src/components/enterprise/RecordTransform');
+    for (const e of EXAMPLES) {
+      const flagged = Number(e.record.confidence) < 0.6;
+      expect(flagged).toBe(e.key === 'spend');
+      if (!flagged) expect(e.record.source).toMatch(/^sha256 /);
+    }
   });
 });
