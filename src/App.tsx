@@ -18,6 +18,7 @@ import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { serviceNav } from "@/data/services/nav";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
+import { RoutePrefetcher } from "./components/RoutePrefetcher";
 
 // Perf: Auth was eager; lazy keeps it (and its form deps) out of the homepage bundle.
 const Auth = lazy(() => import("./pages/Auth"));
@@ -88,9 +89,11 @@ const LogisticsCalculator = lazy(() => import("./pages/calculators/LogisticsCalc
 const CarbonPricingCalculator = lazy(() => import("./pages/calculators/CarbonPricingCalculator"));
 const CloudEmissionsCalculator = lazy(() => import("./pages/calculators/CloudEmissionsCalculator"));
 
+// Shown only on a first visit to a page whose code is still loading (in-app
+// navigation keeps the current page on screen instead, see BrowserRouter).
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
-    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+    <Loader2 className="w-8 h-8 animate-spin text-primary reveal-after-delay" />
   </div>
 );
 
@@ -134,7 +137,10 @@ const App = () => (
           <GuestImportPrompt />
         </Suspense>
         <Sonner />
-        <BrowserRouter>
+        {/* v7_startTransition: opening a page whose code is not loaded yet keeps
+            the current page on screen until it is ready, instead of a blank spinner. */}
+        <BrowserRouter future={{ v7_startTransition: true }}>
+          <RoutePrefetcher />
           <AnalyticsTracker />
           <RouteSEO />
           <TranslationScope />
