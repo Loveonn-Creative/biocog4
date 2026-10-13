@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Handshake } from 'lucide-react';
 import { FlowLanes, FlipReasons, type PartnerType } from '@/components/partners/PartnerVisuals';
+import { COUNTRY_CONFIGS } from '@/lib/countryConfig';
 
 const PARTNER_TYPES: PartnerType[] = [
   {
@@ -16,7 +17,8 @@ const PARTNER_TYPES: PartnerType[] = [
     description: 'Access verified MSME carbon credits directly from the source. High-quality, transparent, and traceable.',
     flow: { label: 'Verified credit records' },
     benefits: [
-      'Pre-verified credits with AI-powered MRV',
+      // Issuance and validation belong to the crediting programme; the platform supplies the MRV record.
+      'MRV records behind each listing, hashed to their source documents',
       'Direct access to MSME credit supply',
       'Transparent pricing and provenance',
       'SDG-aligned project portfolios',
@@ -44,8 +46,9 @@ const PARTNER_TYPES: PartnerType[] = [
     description: 'Integrate carbon tracking into your existing workflows. API-first design for seamless adoption.',
     flow: { label: 'Carbon data by API' },
     benefits: [
-      'REST API for carbon data',
-      'Webhook integrations',
+      // Same status as the API on /enterprise (src/data/enterpriseCapabilities.ts).
+      { text: 'REST API for carbon data', status: 'custom' },
+      { text: 'Webhook integrations', status: 'custom' },
       'White-label reporting',
       'Automated emissions tracking',
     ],
@@ -71,7 +74,8 @@ const PARTNER_TYPES: PartnerType[] = [
 const TRUST_INDICATORS = [
   { label: 'Scope 1-3', description: 'GHG Protocol aligned' },
   { label: 'SHA-256', description: 'Evidence hash per document' },
-  { label: '10', description: 'Countries with local grid factors' },
+  // Counted from the grid factors the platform actually carries.
+  { label: String(Object.keys(COUNTRY_CONFIGS).length), description: 'Countries with local grid factors' },
   { label: 'Built in India', description: 'For emerging markets' },
 ];
 
@@ -165,9 +169,9 @@ const Partners = () => {
             </div>
 
             <FlipReasons reasons={[
-              { title: 'MRV-Grade Verification', body: 'AI-powered verification that meets international standards. CBAM-ready, CCTS-aligned.', mark: 'M20 5 L32 10 V19 C32 27 26 33 20 35 C14 33 8 27 8 19 V10 Z M14 20 L18 24 L26 15' },
+              { title: 'MRV-Grade Verification', body: 'AI-powered verification following the GHG Protocol and ISO 14064-1 methods. CBAM-ready, CCTS-aligned.', mark: 'M20 5 L32 10 V19 C32 27 26 33 20 35 C14 33 8 27 8 19 V10 Z M14 20 L18 24 L26 15' },
               { title: 'India-First, Global-Ready', body: "Built for India's unique MSME landscape, designed for emerging market expansion.", mark: 'M20 5 A15 15 0 1 0 20.01 5 M5 20 H35 M20 5 C13 12 13 28 20 35 M20 5 C27 12 27 28 20 35' },
-              { title: 'Real-Time Intelligence', body: 'Live carbon data streams. Portfolio analytics. Impact tracking at scale.', mark: 'M4 22 H12 L16 12 L22 30 L26 18 L29 22 H36' },
+              { title: 'Real-Time Intelligence', body: 'Live carbon data streams. Portfolio analytics. Impact tracking at scale.', note: 'Live data streams from connected meters and systems are built to your requirements (Custom).', mark: 'M4 22 H12 L16 12 L22 30 L26 18 L29 22 H36' },
             ]} />
           </div>
         </section>

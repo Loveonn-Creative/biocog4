@@ -600,7 +600,7 @@ const PartnerMarketplace = () => {
                 <div>
                   <p className="font-semibold">MRV-Backed Verification</p>
                   <p className="text-sm text-muted-foreground">
-                    All credits are verified using AI-powered MRV technology
+                    Each listing carries the AI-powered MRV records behind it; issuance and validation stay with the crediting programme
                   </p>
                 </div>
               </div>

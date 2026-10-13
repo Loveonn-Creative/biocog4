@@ -368,7 +368,7 @@ export const answers: Answer[] = [
   {
     slug: 'sensors-fenceline-methane', topic: 'not-offered', title: 'Sensors, fenceline or methane monitoring?', status: 'not-offered',
     q: 'Does Senseible provide fenceline, methane or real-time sensor monitoring?',
-    short: 'No. Senseible does not sell sensors or run fenceline, methane-leak or satellite monitoring. It works from the documents a business already keeps. For enterprises, meter data from equipment a supplier already has can be connected on request.',
+    short: 'No. Senseible does not sell sensors or run fenceline or methane-leak monitoring. It works from the documents a business already keeps. For enterprises, satellite mapping of supplier sites and plots is available on request, and meter data from equipment a supplier already has can be connected.',
     body: [],
     links: [{ label: 'Enterprise capabilities', to: '/enterprise' }],
   },
