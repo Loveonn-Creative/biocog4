@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import { pageMeta, fitTitle, canonicalUrl as toCanonicalUrl, CANONICAL_ALIASES, canonicalPath, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo/seoMeta";
+import { pageMeta, fitTitle, canonicalUrl as toCanonicalUrl, CANONICAL_ALIASES, canonicalPath, SITE_URL, ogImageFor, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "@/lib/seo/seoMeta";
 
 interface BreadcrumbItem {
   name: string;
@@ -33,7 +33,7 @@ export const SEOHead = ({
   description,
   canonical,
   type = 'website',
-  image = DEFAULT_OG_IMAGE,
+  image,
   keywords = [],
   article,
   noIndex = false,
@@ -51,6 +51,10 @@ export const SEOHead = ({
     description = registered.description;
   }
   const fullTitle = fitTitle(title);
+  // Pages with their own preview always use it, so the live head matches the
+  // prerendered HTML that link previewers read; others may pass an image.
+  const og = ogImageFor(canonical ?? pathname);
+  const previewImage = og.specific || !image ? og.url : image;
   const siteUrl = SITE_URL;
   // Without an explicit canonical, RouteSEO supplies one from the current path.
   const canonicalUrl = canonical
@@ -105,7 +109,7 @@ export const SEOHead = ({
     "@type": "Article",
     "headline": title,
     "description": description,
-    "image": image,
+    "image": previewImage,
     "datePublished": article.publishedTime,
     "dateModified": article.modifiedTime || article.publishedTime,
     "author": { "@type": "Organization", "name": article.author || "Senseible", "url": siteUrl },
@@ -169,7 +173,10 @@ export const SEOHead = ({
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={previewImage} />
+      {previewImage === og.url && <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />}
+      {previewImage === og.url && <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />}
+      {previewImage === og.url && <meta property="og:image:alt" content={og.alt} />}
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:site_name" content="Senseible" />
       
@@ -177,7 +184,8 @@ export const SEOHead = ({
       <meta name="twitter:site" content="@senseible_earth" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={previewImage} />
+      {previewImage === og.url && <meta name="twitter:image:alt" content={og.alt} />}
       
       {article?.publishedTime && (
         <meta property="article:published_time" content={article.publishedTime} />
