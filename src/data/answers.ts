@@ -103,6 +103,16 @@ export const answers: Answer[] = [
     links: [{ label: 'Plans and pricing', to: '/pricing' }, { label: 'Methodology and trust', to: '/trust' }],
   },
   {
+    slug: 'what-is-a-carbon-intelligence-platform', topic: 'about', title: 'What is a carbon intelligence platform?',
+    q: 'What is a carbon intelligence platform?',
+    short: 'A carbon intelligence platform turns a business’s own activity data into emission figures it can act on and defend. Senseible does this from bills and invoices: it reads each line, applies a published emission factor with its source, verifies the record and prepares it for buyers, lenders and reports.',
+    body: [
+      'The difference from a spreadsheet or a one-off audit is traceability: every number links back to the document it came from, and each document is fingerprinted so it cannot be counted twice. The same record can then answer a buyer’s Scope 3 request, a CBAM data request or a lender’s question without being rebuilt.',
+      'For enterprises, the same approach gives supplier-level evidence for Scope 3, with each supplier’s figure tied to its invoices.',
+    ],
+    links: [{ label: 'The platform', to: '/platform' }, { label: 'Supplier emissions for enterprises', to: '/enterprise' }],
+  },
+  {
     slug: 'who-founded-senseible', topic: 'about', title: 'Who founded Senseible?',
     q: 'Who founded Senseible, and what is its mission for MSMEs?',
     short: 'Senseible was founded by Ankit Kumar, Chief of Climate Equity and AI. Its mission is to make verified climate data affordable for small businesses, so MSMEs and exporters can answer buyers, lenders and regulators with evidence instead of estimates.',
@@ -250,6 +260,18 @@ export const answers: Answer[] = [
       'An importer bringing in 50 tonnes or less of covered goods in a calendar year is exempt; the threshold does not apply to electricity or hydrogen.',
     ],
     links: [{ label: 'CBAM calculator', to: '/cbam-calculator' }],
+    sources: [{ label: 'Regulation (EU) 2023/956', url: EUR_LEX_CBAM }, { label: 'Regulation (EU) 2025/2083', url: EUR_LEX_CBAM_OMNIBUS }],
+  },
+  {
+    slug: 'how-to-calculate-cbam-cost', topic: 'compliance', title: 'How to calculate CBAM cost (worked example)',
+    q: 'How do you calculate CBAM cost?',
+    short: '100 t of blast-furnace steel from India in 2026 costs about €6,816 in CBAM at default values: (231 t embedded − 148.2 t free allocation) × €82.32 certificate price. In general, CBAM cost = (embedded emissions − EU benchmark × free share still granted) × certificate price − carbon price paid abroad.',
+    body: [
+      'Step by step for that example: the calculator’s default intensity for blast-furnace steel is 2.1 tCO2 per tonne, plus the 10% default-value mark-up for 2026, so 2.31 t per tonne, or 231 t in all. The calculator’s EU benchmark of 1.52 t per tonne, at the 97.5% free share still granted in 2026, removes 148.2 t. The remaining 82.8 t × €82.32 = €6,816.',
+      'India has no explicit carbon price yet, so nothing is deducted for carbon paid at origin. Verified actual emissions from the producer replace the default value and its mark-up, which rises to 30% from 2028.',
+      'The intensity above is the calculator’s default for this production route; official EU default values are set per product and should be checked before a declaration. Certificates for 2026 imports go on sale on 1 February 2027. Costs for every covered sector and year are on [CBAM cost per tonne by sector](/cbam-cost).',
+    ],
+    links: [{ label: 'Free CBAM calculator', to: '/cbam-calculator' }, { label: 'CBAM cost by sector', to: '/cbam-cost' }],
     sources: [{ label: 'Regulation (EU) 2023/956', url: EUR_LEX_CBAM }, { label: 'Regulation (EU) 2025/2083', url: EUR_LEX_CBAM_OMNIBUS }],
   },
   {

@@ -16,7 +16,7 @@ describe('answers hub content', () => {
     }
   });
   test('internal links point to known routes', () => {
-    const known = /^\/(|auth(\?mode=signup)?|platform|pricing|trust|mission|about|contact|calculators(\/product-carbon-footprint)?|net-zero|msme-carbon-number|scope-3-supplier-evidence|carbon-accounting|esg-reporting|green-finance|climate-finance|carbon-credits|cbam-calculator|enterprise|partners|industries\/[a-z-]+|legal\/(terms|privacy|dpa)|answers\/[a-z0-9-]+)$/;
+    const known = /^\/(|auth(\?mode=signup)?|platform|pricing|trust|mission|about|contact|calculators(\/product-carbon-footprint)?|net-zero|msme-carbon-number|scope-3-supplier-evidence|carbon-accounting|esg-reporting|green-finance|climate-finance|carbon-credits|cbam-calculator|cbam-cost(\/[a-z-]+)?|emission-factors(\/[a-z-]+)?|enterprise|partners|industries\/[a-z-]+|legal\/(terms|privacy|dpa)|answers\/[a-z0-9-]+)$/;
     for (const a of answers) for (const l of a.links) expect(l.to).toMatch(known);
   });
   test('no superlatives or invented guarantees', () => {
