@@ -3,6 +3,13 @@
 // H1 keeps the full headline. Used by both the client (SEOHead) and the
 // build-time prerender (scripts/generate-static-html.js) via src/lib/seo.
 export const articleMetaTitles: Record<string, string> = {
+  'eu-steel-import-quota-2026': 'EU Steel Import Quotas 2026: What Exporters Need to Know',
+  'cbam-downstream-products-2028': 'CBAM Extension to Downstream Products From 2028',
+  'eu-forced-labour-regulation-suppliers': 'EU Forced Labour Regulation: What Suppliers in Asia Need',
+  'digital-product-passport-textile-exporters': 'EU Digital Product Passport for Textile Exporters',
+  'wheeling-renewable-power-south-africa-factories': 'Wheeling Renewable Power for Factories in South Africa',
+  'pakistan-green-taxonomy': 'Pakistan Green Taxonomy: How It Affects Business Loans',
+  'vietnam-green-taxonomy-decision-21': 'Vietnam Green Taxonomy (Decision 21) and Green Credit',
   'vietnam-grid-emission-factor': 'Vietnam Grid Emission Factor and How to Use It',
   'cbam-support-for-indian-msmes': 'Government Support for Indian MSMEs on CBAM Compliance',
   'cbam-50-tonne-exemption': 'CBAM 50-Tonne Exemption: Is Your Import Exempt?',
