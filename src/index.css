@@ -577,5 +577,6 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .ent-orbit-dot { offset-path: path("M40 60 C 80 10, 220 10, 260 60 C 220 110, 80 110, 40 60"); animation: ent-orbit 6s linear infinite; }
 @media (prefers-reduced-motion: reduce) {
   .ent-anim *, .ent-anim *::before, .ent-anim *::after { animation: none !important; transition: none !important; }
+  .ent-anim [class*="ent-draw"] { stroke-dashoffset: 0 !important; }
   .ent-orbit-dot { display: none; }
 }
