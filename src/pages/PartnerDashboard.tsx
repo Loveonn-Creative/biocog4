@@ -442,7 +442,7 @@ const PartnerDashboard = () => {
                 <div className="text-3xl font-bold text-foreground font-mono">
                   {isLoading ? <Skeleton className="h-8 w-12" /> : `${Math.round(clusterData.additionalityScore * 100)}%`}
                 </div>
-                <p className="text-sm text-muted-foreground">CBAM Readiness</p>
+                <p className="text-sm text-muted-foreground">Additionality score</p>
               </CardContent>
             </Card>
           </div>
@@ -450,12 +450,10 @@ const PartnerDashboard = () => {
 
         {/* Compliance Signals */}
         <ComplianceSignals 
-          cbamStatus={clusterData.additionalityScore >= 0.7 ? 'compliant' : 'pending'}
+          cbamStatus="not_assessed"
           euTaxonomyStatus={clusterData.additionalityScore >= 0.6 ? 'eligible' : 'pending'}
           pcafStatus="aligned"
-          cctsStatus={clusterData.totalReductions > 0 ? 'eligible' : 'pending'}
-          lastVerified={new Date().toISOString()}
-          auditHash={`SHA256-${Date.now().toString(16).toUpperCase()}`}
+          cctsStatus="not_assessed"
         />
 
         {/* Charts Row */}

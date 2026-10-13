@@ -9,8 +9,6 @@ interface DisputeSimulationProps {
   score: number;
   scopeBreakdown: { scope1: number; scope2: number; scope3: number };
   qualityGrade: string;
-  cctsEligible: boolean;
-  cbamCompliant: boolean;
 }
 
 interface DisputePoint {
@@ -20,7 +18,7 @@ interface DisputePoint {
 }
 
 export const DisputeSimulation = ({
-  flags, greenwashingRisk, greenwashingFactors, score, scopeBreakdown, qualityGrade, cctsEligible, cbamCompliant
+  flags, greenwashingRisk, greenwashingFactors, score, scopeBreakdown, qualityGrade
 }: DisputeSimulationProps) => {
   const [open, setOpen] = useState(false);
 
@@ -33,12 +31,8 @@ export const DisputeSimulation = ({
   if (qualityGrade === 'A' || qualityGrade === 'B') {
     points.push({ label: `Quality Grade ${qualityGrade}`, type: 'defensible', detail: 'Meets carbon credit issuance standard' });
   }
-  if (cctsEligible) {
-    points.push({ label: 'CCTS eligibility confirmed', type: 'defensible', detail: 'Passes Indian carbon trading system criteria' });
-  }
-  if (cbamCompliant) {
-    points.push({ label: 'CBAM compliant', type: 'defensible', detail: 'Meets EU carbon border requirements' });
-  }
+  // No CCTS or CBAM point: verification does not assess either scheme, and a
+  // readiness claim needs a documented expert review.
   if (greenwashingRisk === 'low') {
     points.push({ label: 'Low greenwashing risk', type: 'defensible', detail: 'Data patterns consistent with genuine reporting' });
   }

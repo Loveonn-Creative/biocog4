@@ -111,7 +111,9 @@ export function formatForCCTS(entries: LedgerEntry[]) {
     'Evidence Hash': e.document_hash,
     'Fiscal Year': e.fiscal_year || '',
     'Quarter': e.fiscal_quarter || '',
-    'CCTS Eligible': e.verification_status === 'verified' ? 'Yes' : 'No',
+    // Platform verification status, not CCTS eligibility: eligibility is set
+    // by the scheme and is not assessed here.
+    'Platform Verification': e.verification_status === 'verified' ? 'Verified' : 'Not verified',
   }));
 }
 

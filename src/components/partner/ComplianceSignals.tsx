@@ -2,11 +2,14 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Clock, AlertTriangle, Shield, FileCheck, Leaf } from 'lucide-react';
 
+// CBAM and CCTS carry no status of their own: a readiness claim needs a
+// documented review by a Senseible analyst or subject expert, and no such
+// record exists in the platform yet, so both read "Not assessed".
 interface ComplianceSignalsProps {
-  cbamStatus: 'compliant' | 'pending' | 'non-compliant';
+  cbamStatus: 'not_assessed';
   euTaxonomyStatus: 'eligible' | 'pending' | 'not-eligible';
   pcafStatus: 'aligned' | 'pending' | 'not-aligned';
-  cctsStatus: 'eligible' | 'pending' | 'not-eligible';
+  cctsStatus: 'not_assessed';
   lastVerified?: string;
   auditHash?: string;
 }
@@ -19,6 +22,7 @@ const statusConfig = {
   'non-compliant': { icon: AlertTriangle, color: 'text-destructive', bg: 'bg-destructive/10', label: 'Non-Compliant' },
   'not-eligible': { icon: AlertTriangle, color: 'text-muted-foreground', bg: 'bg-muted', label: 'Not Eligible' },
   'not-aligned': { icon: AlertTriangle, color: 'text-muted-foreground', bg: 'bg-muted', label: 'Not Aligned' },
+  not_assessed: { icon: Clock, color: 'text-muted-foreground', bg: 'bg-muted', label: 'Not assessed' },
 };
 
 export const ComplianceSignals = ({
@@ -60,7 +64,7 @@ export const ComplianceSignals = ({
           })}
         </div>
         
-        <div className="flex items-center justify-between pt-3 border-t border-border/50 text-xs text-muted-foreground">
+        {(lastVerified || auditHash) && <div className="flex items-center justify-between pt-3 border-t border-border/50 text-xs text-muted-foreground">
           <span>
             Last Verified: {lastVerified ? new Date(lastVerified).toLocaleDateString('en-IN', { 
               day: 'numeric', 
@@ -73,7 +77,7 @@ export const ComplianceSignals = ({
               Audit: {auditHash.substring(0, 12)}...
             </span>
           )}
-        </div>
+        </div>}
       </CardContent>
     </Card>
   );

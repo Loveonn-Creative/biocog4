@@ -252,12 +252,10 @@ const PartnerReports = () => {
             Compliance Status
           </h2>
           <ComplianceSignals
-            cbamStatus="compliant"
+            cbamStatus="not_assessed"
             euTaxonomyStatus="eligible"
             pcafStatus="aligned"
-            cctsStatus="eligible"
-            lastVerified={new Date().toISOString()}
-            auditHash="SHA256-a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6"
+            cctsStatus="not_assessed"
           />
         </section>
 

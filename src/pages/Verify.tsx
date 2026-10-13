@@ -621,8 +621,6 @@ const Verify = () => {
                       score={verificationResult.score}
                       scopeBreakdown={verificationResult.analysis.scopeBreakdown}
                       qualityGrade={verificationResult.analysis.creditEligibility.qualityGrade}
-                      cctsEligible={verificationResult.cctsEligible}
-                      cbamCompliant={verificationResult.cbamCompliant}
                     />
                   </div>
                 )}

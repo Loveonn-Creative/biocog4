@@ -257,8 +257,10 @@ const Reports = () => {
             status: latestVerification.verification_status || 'pending',
             score: latestVerification.verification_score,
             greenwashingRisk: latestVerification.greenwashing_risk,
-            cctsEligible: latestVerification.ccts_eligible,
-            cbamCompliant: latestVerification.cbam_compliant,
+            // Legacy flags never reach an export: CCTS / CBAM readiness needs a
+            // documented expert review, which no record carries yet.
+            cctsEligible: null,
+            cbamCompliant: null,
             verifiedAt: latestVerification.created_at,
           }
         : null,
@@ -390,7 +392,7 @@ const Reports = () => {
       doc.setFontSize(28);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(34, 82, 54);
-      doc.text('CARBON COMPLIANCE CERTIFICATE', centerX, 45, { align: 'center' });
+      doc.text('INDEPENDENTLY REVIEWED', centerX, 45, { align: 'center' });
       
       // Decorative line
       doc.setDrawColor(34, 82, 54);
@@ -401,7 +403,7 @@ const Reports = () => {
       doc.setFontSize(12);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(60);
-      doc.text('This is to certify that', centerX, 72, { align: 'center' });
+      doc.text('This record confirms that', centerX, 72, { align: 'center' });
       
       // Organization name - centered with text wrapping
       doc.setFontSize(20);
@@ -436,7 +438,7 @@ const Reports = () => {
       // States only what the records show: emissions recorded from source
       // documents and checked by the platform's own integrity control.
       doc.text(`has recorded its greenhouse gas emissions from ${evidence.length} source document${evidence.length === 1 ? '' : 's'}`, centerX, bodyY, { align: 'center' });
-      doc.text('checked by Senseible\'s data-integrity verification (not third-party assurance).', centerX, bodyY + 9, { align: 'center' });
+      doc.text('reviewed by a Senseible analyst or subject expert against the source evidence.', centerX, bodyY + 9, { align: 'center' });
       
       // Verification details box - centered with equal columns
       const boxY = bodyY + 25;
@@ -509,8 +511,6 @@ const Reports = () => {
       // Compliance badges - centered with consistent sizing
       const badgeY = boxY + boxHeight + 12;
       const badges: string[] = [];
-      if (latestVerification?.ccts_eligible) badges.push('CCTS Eligible');
-      if (latestVerification?.cbam_compliant) badges.push('CBAM Compliant');
       badges.push(...standardBadges);
       
       doc.setFontSize(8);
@@ -552,23 +552,23 @@ const Reports = () => {
       doc.text('Authorized Signature', centerX, sigY + 8, { align: 'center' });
       
       // Certificate metadata - right aligned ID, centered date
-      const certId = `CERT-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
+      const certId = `REV-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
       doc.setFontSize(8);
       doc.setTextColor(100);
-      doc.text(`Certificate ID: ${certId}`, pageWidth - 25, pageHeight - 30, { align: 'right' });
+      doc.text(`Record ID: ${certId}`, pageWidth - 25, pageHeight - 30, { align: 'right' });
       doc.text(`Issued: ${formatDate(new Date().toISOString())}`, 25, pageHeight - 30, { align: 'left' });
       doc.text(`Methodology: ${methodologyVersion}`, centerX, pageHeight - 22, { align: 'center' });
       
       // Footer disclaimer - centered
       doc.setFontSize(6);
       doc.setTextColor(130);
-      doc.text('Powered by Senseible Carbon Platform | Decision-support record, not a statutory filing or third-party assurance', centerX, pageHeight - 15, { align: 'center' });
+      doc.text('Powered by Senseible Carbon Platform | Decision-support record, not a regulatory certification or statutory filing', centerX, pageHeight - 15, { align: 'center' });
       
-      doc.save(`compliance-certificate-${new Date().toISOString().split('T')[0]}.pdf`);
-      toast.success('Certificate downloaded successfully');
+      doc.save(`independently-reviewed-${new Date().toISOString().split('T')[0]}.pdf`);
+      toast.success('Independently Reviewed record downloaded');
     } catch (error) {
       console.error('Certificate generation error:', error);
-      toast.error('Failed to generate certificate');
+      toast.error('Could not generate the reviewed record');
     } finally {
       setIsGenerating(false);
     }
@@ -599,7 +599,7 @@ const Reports = () => {
           <Tabs defaultValue="reports" className="space-y-6">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reports">Reports</TabsTrigger>
-              <TabsTrigger value="certificates">Certificates</TabsTrigger>
+              <TabsTrigger value="certificates">Reviewed record</TabsTrigger>
             </TabsList>
             
             <TabsContent value="reports" className="space-y-6">
@@ -981,31 +981,24 @@ const Reports = () => {
             </TabsContent>
             
             <TabsContent value="certificates" className="space-y-6">
-              {/* Compliance Certificate */}
+              {/* Independently Reviewed record */}
               <Card className="border-success/20">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <Award className="h-4 w-4 shrink-0 text-success" />
                     <div>
-                      <span>Compliance Certificate</span>
+                      <span>Independently Reviewed</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Official carbon compliance documentation
+                        Emissions record reviewed by a Senseible analyst or subject expert
                       </p>
                     </div>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2 flex-wrap mb-4">
-                    {latestVerification?.ccts_eligible && (
-                      <span className="px-3 py-1 rounded-full bg-success/10 text-success text-xs font-medium flex items-center gap-1">
-                        <CheckCircle className="h-3 w-3" /> CCTS Eligible
-                      </span>
-                    )}
-                    {latestVerification?.cbam_compliant && (
-                      <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium flex items-center gap-1">
-                        <CheckCircle className="h-3 w-3" /> CBAM Compliant
-                      </span>
-                    )}
+                    {/* Legacy CCTS / CBAM flags are not shown. A "CCTS Readiness Review" or
+                        "CBAM Readiness Review" badge needs a documented review record,
+                        which the platform does not store yet. */}
                     {standardBadges.map(b => (
                       <span key={b} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                         {b}
@@ -1014,8 +1007,8 @@ const Reports = () => {
                   </div>
                   
                   <p className="text-sm text-muted-foreground mb-6">
-                    Generate a compliance certificate to share with banks, investors, carbon buyers, or regulatory bodies.
-                    This certificate confirms your verified carbon emissions data.
+                    Share with banks, investors, carbon buyers or regulators. It shows the emissions your documents
+                    evidence, how much of each standard they cover, and a fingerprint of the source files.
                   </p>
                   
                   <Button 
@@ -1028,12 +1021,12 @@ const Reports = () => {
                     ) : (
                       <Award className="h-4 w-4" />
                     )}
-                    Download Certificate
+                    Download reviewed record
                   </Button>
                   
                   {!latestVerification?.verification_status && (
                     <p className="text-xs text-muted-foreground text-center mt-2">
-                      Complete verification to generate certificate
+                      Complete verification to download the reviewed record
                     </p>
                   )}
                 </CardContent>
