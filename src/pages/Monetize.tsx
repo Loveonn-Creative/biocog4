@@ -189,8 +189,8 @@ const Monetize = () => {
 
       if (error) throw error;
 
-      // Saved on the account only: nothing is sent to the partner from here.
-      toast.success(`Interest in ${partnerName} saved to your account. Nothing is shared with them without your go-ahead.`);
+      // The Senseible team follows up on each request by hand; there is no direct partner link.
+      toast.success(`Request received. The Senseible team will contact you about ${partnerName}.`);
       setPathwayStatuses(prev => ({ ...prev, [pathwayType]: 'applied' }));
     } catch (err) {
       console.error('Error applying for pathway:', err);
@@ -485,8 +485,8 @@ const Monetize = () => {
                   <div>
                     <h4 className="font-semibold mb-1">How monetization works</h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Each pathway shows what your verified records already meet. Apply Now saves your interest
-                      on your account; nothing is shared with a buyer, lender or programme without your go-ahead.
+                      Each pathway shows what your verified records already meet. Apply Now sends your request
+                      to the Senseible team, who contact you about that pathway and its partner.
                     </p>
                     <div className="flex gap-3 flex-wrap">
                       {ledgerEntries.length > 0 && (
