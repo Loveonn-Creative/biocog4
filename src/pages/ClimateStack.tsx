@@ -7,8 +7,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { getFeaturedArticles, searchArticles, getArticlesByCategory, cmsCategories, cmsArticles, type CMSArticle } from "@/data/cmsContent";
-import { extractPreview } from "@/lib/formatContent";
+import { getFeaturedArticles, searchArticles, getArticlesByCategory, cmsCategories, articleIndex as cmsArticles, type CMSArticleMeta as CMSArticle } from "@/data/articleIndex";
 import { competitorData } from "@/data/competitorData";
 
 const ClimateStack = () => {
@@ -203,7 +202,7 @@ const ClimateStack = () => {
 };
 
 const ArticleCard = memo(({ article, index }: { article: CMSArticle; index: number }) => {
-  const preview = useMemo(() => extractPreview(article.content, 120), [article.content]);
+  const preview = useMemo(() => (article.excerpt.length > 120 ? article.excerpt.slice(0, article.excerpt.lastIndexOf(" ", 120)) + "…" : article.excerpt), [article.excerpt]);
   
   return (
     <Link

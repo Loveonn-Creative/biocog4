@@ -1,0 +1,37 @@
+// Article body (markdown subset). Metadata lives in ../articleIndex.ts.
+export default `In an era of trade wars and protectionism, the India-EU FTA represents strategic diversification. Sustainability is the entry ticket.
+
+**The Geopolitical Context:**
+- US-China tensions disrupting supply chains
+- EU seeking "friend-shoring" partners
+- India positioned as manufacturing alternative
+- Sustainability requirements as quality filter
+
+**Why Sustainability Matters More Now:**
+EU isn't just looking for cheap production. It wants:
+- Reliable supply chains
+- ESG-compliant partners
+- Carbon-competitive goods
+- Traceable sustainability data
+
+**MSME Strategic Position:**
+Indian MSMEs that build sustainability capability become:
+- Preferred suppliers in EU value chains
+- Alternative to China for conscious consumers
+- Better placed to use preferential trade access
+- Investable for green finance
+
+**The Diversification Play:**
+Instead of over-reliance on any single market:
+- EU for sustainability-conscious demand
+- UAE/Australia via existing FTAs
+- Africa via growing trade ties
+- ASEAN via regional integration
+
+**Building Your Shield:**
+1. [Create your carbon baseline](/): the foundation
+2. Document your sustainability journey
+3. Get [verified credentials](/verify)
+4. Access [climate-linked finance](/climate-finance)
+
+The world is reshuffling supply chains. MSMEs with verified sustainability data are better placed to benefit from diversification.`;

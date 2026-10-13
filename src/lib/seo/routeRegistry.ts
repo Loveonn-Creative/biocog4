@@ -4,6 +4,7 @@
 // Markdown mirror and an llms.txt line. Consumed by scripts/generate-static-html.js
 // and scripts/validate-seo.mjs; never imported by the client.
 import { cmsArticles, cmsCategories } from '@/data/cmsContent';
+import { relatedArticles, anchorFor } from '@/data/articleRelated';
 import { solutionPages } from '@/data/solutionsData';
 import { servicePages } from '@/data/services';
 import { competitorData } from '@/data/competitorData';
@@ -275,7 +276,7 @@ function articleRoutes(): SeoRoute[] {
     const meta = articleMeta(a);
     const path = `/climate-intelligence/${a.slug}`;
     const crumbs = [{ name: 'Home', path: '/' }, { name: 'Climate Intelligence', path: '/climate-intelligence' }, { name: a.title, path }];
-    const related = cmsArticles.filter(x => x.category === a.category && x.slug !== a.slug).slice(0, 3);
+    const related = relatedArticles(a.slug);
     return {
       path,
       section: 'guide' as const,
@@ -284,7 +285,7 @@ function articleRoutes(): SeoRoute[] {
       blocks: [
         { p: articleByline(path, a.updatedAt ?? a.createdAt, !!a.updatedAt) },
         ...markdownToBlocks(a.content),
-        ...(related.length ? [{ h2: 'Related guides' } as Block, { ul: related.map(r => `[${r.title}](/climate-intelligence/${r.slug})`) } as Block] : []),
+        ...(related.length ? [{ h2: 'Related guides' } as Block, { ul: related.map(r => `[${anchorFor(r)}](/climate-intelligence/${r.slug})`) } as Block] : []),
       ],
       breadcrumbs: crumbs,
       jsonLd: [
