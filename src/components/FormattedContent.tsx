@@ -1,5 +1,26 @@
-import { memo } from 'react';
+import { memo, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { parseContentToSections, type FormattedSection } from '@/lib/formatContent';
+
+const MD_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+
+/** Turns [text](href) into real links: in-site paths as router links, others as external links. */
+export function renderInline(text: string): ReactNode {
+  if (!text.includes('](')) return text;
+  const out: ReactNode[] = [];
+  let last = 0;
+  for (const m of text.matchAll(MD_LINK)) {
+    const [whole, label, href] = m;
+    const at = m.index ?? 0;
+    if (at > last) out.push(text.slice(last, at));
+    out.push(href.startsWith('/')
+      ? <Link key={at} to={href} className="text-primary underline underline-offset-2 hover:no-underline">{label}</Link>
+      : <a key={at} href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:no-underline">{label}</a>);
+    last = at + whole.length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
 
 interface FormattedContentProps {
   content: string;
@@ -35,7 +56,7 @@ export const FormattedContent = memo(({ content, className = '' }: FormattedCont
                 {g.items.map((it, j) => (
                   <li key={j} className="flex items-start gap-3 text-foreground/80">
                     <span className="text-primary mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span className="flex-1">{it}</span>
+                    <span className="flex-1">{renderInline(it)}</span>
                   </li>
                 ))}
               </ul>
@@ -43,7 +64,7 @@ export const FormattedContent = memo(({ content, className = '' }: FormattedCont
           }
           return (
             <ol key={i} className="space-y-2 list-decimal list-inside marker:text-primary marker:font-semibold">
-              {g.items.map((it, j) => <li key={j} className="text-foreground/80 pl-1">{it}</li>)}
+              {g.items.map((it, j) => <li key={j} className="text-foreground/80 pl-1">{renderInline(it)}</li>)}
             </ol>
           );
         }
@@ -60,7 +81,7 @@ export const FormattedContent = memo(({ content, className = '' }: FormattedCont
                   <tbody>
                     {g.rows?.map((r, ri) => (
                       <tr key={ri} className="border-t border-border">
-                        {r.map((c, ci) => <td key={ci} className="p-3 text-foreground/85">{c}</td>)}
+                        {r.map((c, ci) => <td key={ci} className="p-3 text-foreground/85">{renderInline(c)}</td>)}
                       </tr>
                     ))}
                   </tbody>
@@ -74,17 +95,17 @@ export const FormattedContent = memo(({ content, className = '' }: FormattedCont
           case 'callout':
             return (
               <blockquote key={i} className="border-l-4 border-primary/60 bg-primary/5 pl-4 py-3 rounded-r-md text-foreground/85 italic">
-                {g.content}
+                {renderInline(g.content)}
               </blockquote>
             );
           case 'keyValue':
             return (
               <p key={i} className="text-foreground/85 leading-relaxed">
-                <span className="font-semibold text-foreground">{g.key}:</span> {g.content}
+                <span className="font-semibold text-foreground">{g.key}:</span> {renderInline(g.content)}
               </p>
             );
           case 'paragraph':
-            return <p key={i} className="text-foreground/80 leading-relaxed">{g.content}</p>;
+            return <p key={i} className="text-foreground/80 leading-relaxed">{renderInline(g.content)}</p>;
           default:
             return null;
         }
