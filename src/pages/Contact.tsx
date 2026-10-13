@@ -1,6 +1,7 @@
-import { useState, memo } from "react";
+import { useEffect, useState, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, Mail, MapPin, MessageCircle, Send, Check, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Send } from "lucide-react";
+import { ChannelMark, PlaneFlight } from "@/components/contact/ContactVisuals";
 import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -24,6 +25,16 @@ const categories = [
   { id: 'enterprise', label: 'Enterprise & API' },
   { id: 'general', label: 'General Inquiry' },
 ];
+
+// What fits each topic best: which channel to lead with, and a page that may answer it first.
+const TOPIC_HELP: Record<string, { lead: 'chat' | 'mail'; hint: string; link: { to: string; label: string } }> = {
+  sales: { lead: 'chat', hint: 'For plans and partnerships, a quick chat is usually fastest.', link: { to: '/pricing', label: 'See plans and add-ons' } },
+  technical: { lead: 'mail', hint: 'Email works best: include the invoice name and what you saw on screen.', link: { to: '/answers', label: 'Browse answers' } },
+  climate: { lead: 'mail', hint: 'Email lets us reply with sources you can keep.', link: { to: '/climate-intelligence', label: 'Climate Intelligence Hub' } },
+  monetization: { lead: 'chat', hint: 'Tell us whether it is invoice records or rooftop solar.', link: { to: '/carbon-credits', label: 'How the credit gates work' } },
+  enterprise: { lead: 'mail', hint: 'Email suits team size, systems and API questions.', link: { to: '/enterprise', label: 'Enterprise overview' } },
+  general: { lead: 'chat', hint: 'Pick whichever is easier for you.', link: { to: '/answers', label: 'Browse answers' } },
+};
 
 const Contact = () => {
   const location = useLocation();
@@ -69,6 +80,11 @@ const Contact = () => {
     }
   };
 
+  const help = TOPIC_HELP[form.category] ?? TOPIC_HELP.general;
+
+  // The confirmation is shorter than the form: start it at the top so it is seen.
+  useEffect(() => { if (isSubmitted) window.scrollTo({ top: 0 }); }, [isSubmitted]);
+
   const openWhatsApp = () => {
     const message = encodeURIComponent("Hi Senseible, I have a query about carbon intelligence and ESG solutions.");
     window.open(`https://wa.me/917260064476?text=${message}`, '_blank', 'noopener,noreferrer');
@@ -87,9 +103,7 @@ const Contact = () => {
         
         <main className="container max-w-3xl mx-auto px-6 py-24 sm:py-32 flex-1 flex items-center justify-center">
           <div className="text-center animate-fade-in">
-            <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-6">
-              <Check className="w-8 h-8 text-success" />
-            </div>
+            <PlaneFlight />
             <h1 className="text-3xl font-semibold text-foreground mb-4">{scopeInput ? 'Scope review saved' : 'Message Sent'}</h1>
             <p className="text-muted-foreground mb-8">{notificationPending ? 'Your request is saved, but the email notification could not be confirmed. You can also contact impact@senseible.earth.' : 'We will get back to you within 24 hours.'}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -182,19 +196,18 @@ const Contact = () => {
               
               <div className="space-y-3">
                 <Label>How can we help?</Label>
-                  <RadioGroup
+                <RadioGroup
                   value={form.category}
                   onValueChange={(value) => setForm({...form, category: value})}
-                  className="grid grid-cols-2 gap-2"
-                    disabled={Boolean(scopeInput)}
+                  className="flex flex-wrap gap-2"
+                  disabled={Boolean(scopeInput)}
                 >
                   {categories.map((cat) => (
-                    <div key={cat.id} className="flex items-center space-x-2">
-                      <RadioGroupItem value={cat.id} id={cat.id} />
-                      <Label htmlFor={cat.id} className="text-sm font-normal cursor-pointer">
-                        {cat.label}
-                      </Label>
-                    </div>
+                    <Label key={cat.id} htmlFor={cat.id}
+                      className={`cursor-pointer rounded-full border px-3.5 py-1.5 focus-within:ring-2 focus-within:ring-ring text-sm font-normal transition-colors ${form.category === cat.id ? 'border-primary bg-primary text-primary-foreground' : 'border-border hover:border-foreground/40'} ${scopeInput ? 'cursor-not-allowed opacity-60' : ''}`}>
+                      <RadioGroupItem value={cat.id} id={cat.id} className="sr-only" />
+                      {cat.label}
+                    </Label>
                   ))}
                 </RadioGroup>
               </div>
@@ -238,45 +251,51 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="p-6 rounded-xl border border-border bg-card">
-              <h3 className="font-medium text-foreground mb-4">Quick Connect</h3>
-              
-              <div className="space-y-4">
+              <h3 className="font-medium text-foreground">Best way to reach us</h3>
+              <p className="mt-1 mb-4 text-sm text-muted-foreground" aria-live="polite">{help.hint}</p>
+
+              <div className={`flex flex-col gap-3 ${help.lead === 'mail' ? 'flex-col-reverse' : ''}`}>
                 <button
+                  type="button"
                   onClick={openWhatsApp}
-                  className="w-full flex items-center gap-4 p-4 rounded-lg bg-success/10 hover:bg-success/20 transition-colors text-left group"
+                  className={`w-full flex items-center gap-4 p-4 rounded-lg border text-left transition-colors group ${help.lead === 'chat' ? 'border-success/50 bg-success/10' : 'border-transparent bg-secondary hover:bg-secondary/70'}`}
                 >
-                  <MessageCircle className="w-6 h-6 text-success group-hover:scale-110 transition-transform" />
+                  <ChannelMark kind="chat" className="text-success transition-transform group-hover:-rotate-6" />
                   <div>
                     <p className="font-medium text-foreground">WhatsApp</p>
                     <p className="text-sm text-muted-foreground">Chat with us instantly</p>
                   </div>
                 </button>
-                
+
                 <a
                   href="mailto:impact@senseible.earth"
-                  className="flex items-center gap-4 p-4 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
+                  className={`flex items-center gap-4 p-4 rounded-lg border transition-colors group ${help.lead === 'mail' ? 'border-primary/50 bg-primary/10' : 'border-transparent bg-secondary hover:bg-secondary/70'}`}
                 >
-                  <Mail className="w-6 h-6 text-primary" />
-                  <div>
+                  <ChannelMark kind="mail" className="text-primary transition-transform group-hover:-rotate-6" />
+                  <div className="min-w-0">
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">impact@senseible.earth</p>
+                    <p className="text-sm text-muted-foreground break-all">impact@senseible.earth</p>
                   </div>
                 </a>
-                
-                <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary">
-                  <MapPin className="w-6 h-6 text-muted-foreground mt-0.5" />
-                  <div>
-                    <p className="font-medium text-foreground">Headquarters</p>
-                    <p className="text-sm text-muted-foreground">
-                      Minarch Tower, Sector 44<br />
-                      Gurugram, 122003<br />
-                      India
-                    </p>
-                  </div>
+              </div>
+
+              <Link to={help.link.to} className="mt-4 inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                {help.link.label} <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+
+              <div className="mt-5 flex items-start gap-4 border-t border-border pt-5">
+                <ChannelMark kind="pin" className="text-muted-foreground" />
+                <div>
+                  <p className="font-medium text-foreground">Headquarters</p>
+                  <p className="text-sm text-muted-foreground">
+                    Minarch Tower, Sector 44<br />
+                    Gurugram, 122003<br />
+                    India
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             {/* Quick Links */}
             <div className="p-6 rounded-xl border border-border bg-card">
               <h3 className="font-medium text-foreground mb-4">Explore</h3>
@@ -299,7 +318,7 @@ const Contact = () => {
             {/* Newsletter */}
             <NewsletterSignup 
               title="Stay updated on climate tech"
-              subtitle="Join thousands of MSMEs getting weekly carbon insights."
+              subtitle="Weekly notes on carbon accounting, ESG compliance and climate finance."
             />
           </div>
         </div>
