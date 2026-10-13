@@ -3,6 +3,16 @@
 // H1 keeps the full headline. Used by both the client (SEOHead) and the
 // build-time prerender (scripts/generate-static-html.js) via src/lib/seo.
 export const articleMetaTitles: Record<string, string> = {
+  'climate-finance-analyst-salary-india-2026': 'Climate Finance Analyst Salary in India (2026 Estimates)',
+  'how-karachi-textile-exporters-access-green-loans': 'How Karachi Textile Exporters Can Get a Green Loan (2026)',
+  'how-karachi-textile-exporters-supply-european-markets': 'How Karachi Textile Exporters Can Keep Selling to the EU',
+  'green-finance-johannesburg-steel-metals-firms': 'Green Finance for Johannesburg Steel and Metals Firms',
+  'green-finance-dhaka-gazipur-garment-exporters': 'Green Finance for Dhaka and Gazipur Garment Exporters',
+  'green-finance-ludhiana-raipur-steel-msmes': 'Green Finance for Ludhiana and Raipur Steel MSMEs',
+  'green-finance-tamil-nadu-textile-clusters': 'Green Finance for Tamil Nadu Textile Clusters',
+  'vietnam-steel-exporters-cbam-green-finance': 'How Vietnamese Steel Exporters Can Finance CBAM Readiness',
+  'turkish-steel-cement-exporters-cbam-green-finance': 'Green Finance for Turkish Steel and Cement Exporters',
+  'esg-jobs-bengaluru-2026': 'ESG Jobs in Bengaluru: Roles, Employers and Pay (2026)',
   'how-to-trace-emission-data-to-source': 'How to Trace Emission Data Back to Source Invoices',
   'maintain-historical-carbon-data-methodology-changes': 'Keeping Carbon Data Comparable When Methods Change',
   'ghg-gases-warming-impact-beyond-co2': 'The Six GHGs: Calculating Warming Impact Beyond CO2',

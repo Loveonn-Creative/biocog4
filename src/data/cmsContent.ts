@@ -36,6 +36,8 @@ export const cmsCategories = [
   { id: 'agriculture', name: 'Agriculture Emissions', icon: 'Leaf' },
   { id: 'logistics', name: 'Logistics & Transport', icon: 'Navigation' },
   { id: 'regional', name: 'Regional Guidelines', icon: 'Globe' },
+  { id: 'careers', name: 'Climate Careers', icon: 'Briefcase' },
+  { id: 'green-finance', name: 'Green Finance', icon: 'Landmark' },
 ];
 
 // Full CMS content database
@@ -1498,7 +1500,7 @@ Once a year at minimum, using 12 months of bills. Update sooner after a major ch
     slug: 'green-loan-eligibility-pakistani-small-businesses',
     title: 'Green Loan Eligibility for Pakistani Small Businesses: What Banks Need',
     subtitle: 'Carbon Accounting Standards',
-    content: `State Bank of Pakistan (SBP) Green Banking Guidelines encourage banks to expand lending to green projects. For SMEs, this can mean access to preferential financing for businesses with verified environmental data. Pakistani small businesses in textile, leather, and food processing sectors can seek green loans from banks participating in SBP refinancing schemes. The key requirement: documented carbon footprint and a credible reduction plan. Use the latest official Pakistan grid emission factor for Scope 2. Green loan application process: (1) Calculate your baseline carbon footprint using Senseible, (2) Identify reduction opportunities in energy efficiency, (3) Generate a 3-year reduction roadmap, (4) Submit to bank with NTN (tax ID) and verified emission data. World Bank and ADB also run climate finance programmes in Pakistan.`,
+    content: `State Bank of Pakistan (SBP) Green Banking Guidelines encourage banks to expand lending to green projects. For SMEs, this can mean access to preferential financing for businesses with verified environmental data. Pakistani small businesses in textile, leather, and food processing sectors can seek green loans from banks that follow SBP's Green Banking Guidelines and reference the Pakistan Green Taxonomy (SBP's renewable energy refinancing scheme was discontinued from 1 July 2024). The key requirement: documented carbon footprint and a credible reduction plan. Use the latest official Pakistan grid emission factor for Scope 2. Green loan application process: (1) Calculate your baseline carbon footprint using Senseible, (2) Identify reduction opportunities in energy efficiency, (3) Generate a 3-year reduction roadmap, (4) Submit to bank with NTN (tax ID) and verified emission data. World Bank and ADB also run climate finance programmes in Pakistan.`,
     tags: ['Pakistan', 'green loan', 'SBP', 'small business', 'SECP', 'green finance'],
     category: 'carbon-standards',
     createdAt: '2026-04-06',
@@ -5090,6 +5092,538 @@ The same line-item, evidence-linked, hash-anchored discipline that audit-grade S
     category: 'supply-chain',
     createdAt: '2026-05-23',
     featured: true
+  },
+  // Sources researched October 2026 (kept here, not on the page). Salary
+  // figures are as published by each source on that date:
+  // corpready.in/salary/esg-analyst, /carbon-markets-analyst, /climate-risk-analyst;
+  // teamlease.com TERI University research associate listing (Delhi);
+  // in.indeed.com/career/analyst/salaries; payscale.com Sustainability Manager,
+  // Mumbai (average, early-career, experienced); talentup.io sustainability
+  // manager Pune; ambitionbox.com/profile/manager-environment-salary (city
+  // filters); frontlinesmedia.in/environmental-jobs-salary-in-india.
+  {
+    id: '126',
+    slug: 'climate-finance-analyst-salary-india-2026',
+    title: 'Climate finance analyst salary in India: what the data actually supports (2026)',
+    subtitle: 'Climate Careers',
+    content: `Ask what a climate finance analyst earns in India and you will get a confident number from almost anyone. Ask where the number comes from and the confidence fades. The job is new enough that no public salary survey tracks it by name. What exists is a scatter of adjacent figures: salary sites that report "analyst" in general, recruiters that publish bands for carbon-market roles, payroll aggregators that track sustainability managers, and the odd job listing that prints a number. This article puts those figures side by side, says how far each can be trusted, and calculates a working range from the places where independent sources agree.
+
+The short version: **entry-level climate and ESG analyst roles in India pay about ₹6 to 8 lakh a year, and analysts with three to seven years of experience earn about ₹14 to 21 lakh**, with tier-1 metros paying more than smaller cities. Those are Senseible's calculated estimates, not an official statistic, and the method is below.
+
+## What the job is
+
+A climate finance analyst works where money meets emissions. In a bank or an NBFC, the work is deciding whether a loan qualifies as green, tracking that the money was used as promised, and checking the borrower's sustainability-linked targets each year. In a fund or a ratings house, it is turning company disclosures into scores and portfolio emissions. In an advisory firm, it is building the evidence a borrower needs before a lender will say yes.
+
+The common skill is not finance or climate science alone. It is the ability to trace a number back to its source document and defend it. The working toolkit is the GHG Protocol for corporate emissions, PCAF for the emissions a lender finances, India's BRSR for listed companies and their value chains, and the EU's CBAM for exporters of steel, aluminium, cement, fertiliser and hydrogen. An analyst who can read an electricity bill and a loan agreement with the same care is rarer than either specialist.
+
+## What the published figures say
+
+| Source | Role it measures | Figure published | How far to trust it |
+|---|---|---|---|
+| CorpReady | ESG analyst, India | ₹6 to 12 lakh (0 to 2 years); ₹15 to 35 lakh (3 to 7 years) | Promotional site; derived estimate, sourcing vague |
+| CorpReady | Carbon markets analyst | ₹8 to 16 lakh (0 to 2 years); ₹18 to 45 lakh (3 to 7 years) | Same caveat |
+| CorpReady | Climate risk analyst | ₹8 to 15 lakh (entry); ₹18 to 45 lakh (mid-career) | Same caveat |
+| TeamLease listing | Research associate, climate policy, Delhi | ₹50,000 to 60,000 (period not stated; about ₹6 to 7.2 lakh a year if monthly) | One real listing; the period is ambiguous |
+| Indeed | Analyst, all fields, India | Average ₹6,67,435 a year | Large sample, but not climate-specific |
+| Payscale | Sustainability manager, Mumbai | Average ₹13.5 lakh; experienced ₹20.95 lakh; early-career base ₹4.3 lakh | Self-reported; the pages disagree with each other |
+| TalentUp | Sustainability manager, Pune | ₹21.2 lakh base | Method not stated |
+| AmbitionBox | Environment manager, by city (5 to 19 years) | Mumbai ₹4.5 to 28 lakh; Pune ₹4 to 29 lakh; Hyderabad ₹6 to 30.6 lakh; Chennai ₹5.6 to 18 lakh | Large self-reported base; adjacent title, not ESG |
+
+Two things stand out. The promotional bands run well above the figures that come from payroll or self-reported data. And nobody publishes a "climate finance analyst" number at all.
+
+## How we calculated the working range
+
+We used one rule: **a range counts only where at least two independent publishers agree.** A figure from a single source is reported, not estimated.
+
+- **Entry level (0 to 2 years): about ₹6 to 8 lakh a year.** The Delhi research listing (about ₹6 to 7.2 lakh if monthly), Indeed's all-analyst average (₹6.67 lakh) and the floor of CorpReady's ESG band (₹6 lakh) overlap here. Specialist carbon-market and climate-risk roles are reported higher, at ₹8 to 16 lakh, but by one source only.
+- **Three to seven years: about ₹14 to 21 lakh a year.** Payscale's Mumbai average for sustainability managers (₹13.5 lakh) and its experienced figure (₹20.95 lakh) bracket the range; TalentUp's Pune figure (₹21.2 lakh) sits at the top, and CorpReady's mid-career ESG band starts at ₹15 lakh.
+- **Eight years and more: not estimated.** Adjacent environment-manager data tops out around ₹28 to 31 lakh in Mumbai, Pune and Hyderabad. One source reports senior ESG investing roles far higher, but nothing independent corroborates it.
+
+## City by city
+
+Salary data for these roles exists at city level, not by state, so the table follows the cities. A regional employment site reports that environmental and sustainability pay in tier-1 cities runs 15 to 25 percent above smaller cities.
+
+| State | City | What the published data shows | Working estimate |
+|---|---|---|---|
+| Maharashtra | Mumbai | Sustainability manager average ₹13.5 lakh, experienced ₹20.95 lakh; environment managers up to about ₹28 lakh | Tier-1 range: ₹6 to 8 lakh entry, ₹14 to 21 lakh mid |
+| Maharashtra | Pune | Sustainability manager ₹21.2 lakh; environment managers up to about ₹29 lakh | Tier-1 range |
+| Telangana | Hyderabad | Environment managers ₹6 to 30.6 lakh | Tier-1 range |
+| Tamil Nadu | Chennai | Environment managers ₹5.6 to 18 lakh, a lower top end than the other metros | Entry similar; mid-career upper end likely lower |
+| Karnataka | Bengaluru | No city-specific figure found | Tier-1 range applies; see [ESG jobs in Bengaluru](/climate-intelligence/esg-jobs-bengaluru-2026) |
+| Delhi NCR | Delhi, Gurugram, Noida | Climate policy research listing about ₹6 to 7.2 lakh a year | Tier-1 range |
+
+Outside the metros, expect the same roles to pay less, in line with the tier-1 premium above, though remote roles for global teams blur the line.
+
+## What moves the number
+
+Three things lift pay faster than years of experience. The first is evidence skills: analysts who can build an emission figure from source documents, rather than accept one, are what assurance and lenders now ask for. The second is regulatory reach: BRSR Core assurance phases in to all top 1,000 listed companies by FY 2026-27, and EU importers declare embedded emissions under CBAM from 2026, so people who understand both the Indian and the EU rule are scarce. The third is the employer: global ratings, data and advisory firms tend to pay at the top of the range; domestic lenders building their first green book often start lower but promote quickly.
+
+## A note on reading salary data
+
+Salary aggregators are self-reported, small for new job titles and slow to update. Use the ranges above to judge whether an offer is in the right territory, not to the nearest lakh. When a figure looks unusually high, ask whether it is base pay or total pay, whether it is for a global role paid in India, and how many people reported it.
+
+For how verified emission records support green loans in practice, see [how to get green loans in India using carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data).`,
+    tags: ['climate finance', 'esg careers', 'salary', 'india', 'green loans'],
+    category: 'careers',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page): job
+  // postings on career.io (ABB sustainability data analyst, Bengaluru),
+  // careers.ey.com (Consultant, Risk Consulting ESG, Bangalore, July 2026),
+  // southasiacareers.deloitte.com, in.indeed.com ESG and sustainability
+  // listings (Apex Group, Credit Saison India, ERM, Quest Global).
+  {
+    id: '127',
+    slug: 'esg-jobs-bengaluru-2026',
+    title: 'ESG jobs in Bengaluru: where the work is, and what it pays',
+    subtitle: 'Climate Careers',
+    content: `Bengaluru did not set out to become a place where companies count carbon. It became one the way it became everything else: global firms needed large teams that could work with data, follow a method precisely and keep up with rules written in Brussels, Washington and Mumbai at the same time. Sustainability reporting turned out to need exactly those people.
+
+Search for ESG or sustainability roles in the city in October 2026 and the openings fall into a few clear groups. None of them is the job most people imagine when they hear "sustainability", which is campaigning or policy. Almost all of them are about evidence.
+
+## Where the work is
+
+**Reporting and data teams inside multinationals.** ABB, for example, has advertised a Bengaluru role for an HR sustainability and ESG data analyst on a hybrid basis. The job is to gather and validate workforce and ESG data and report it against ESRS, GRI, SASB and TCFD. This is the most common entry point: a global company needs one consistent dataset for disclosures in many countries, and the team that builds it sits in Bengaluru.
+
+**Advisory and consulting.** EY has posted a Bengaluru consultant role in risk consulting focused on ESG, dated July 2026. Deloitte's Bengaluru postings ask for familiarity with ESG frameworks and sustainability reporting, and ERM and Quest Global list sustainability roles in the city. Here the work is client-facing: helping companies build their first inventory, prepare for assurance or answer a buyer's questionnaire.
+
+**Investment and data services.** Apex Group has advertised for people to analyse sustainability data for investors and decision-makers. This is the investor side of the same evidence: turning what companies disclose into something a fund can compare.
+
+**Lending.** Credit Saison India has advertised a Bengaluru role to embed its ESG and impact framework into its lending strategy. It is a small but telling group: lenders building green and sustainability-linked books need people who can judge whether a borrower's numbers are real.
+
+These are point-in-time openings, not a census. They show the shape of demand, not its size.
+
+## Why the demand exists
+
+Three rules sit behind most of these jobs. India's BRSR requires the top 1,000 listed companies to report every year, and BRSR Core assurance phases in to all of them by FY 2026-27, with value-chain disclosures for the top 250 voluntary from FY 2025-26. The EU's CBAM moved to its definitive period on 1 January 2026, so importers of steel, aluminium, cement, fertiliser and hydrogen now declare embedded emissions and need data from their Indian suppliers. And European reporting standards such as ESRS reach Indian subsidiaries and suppliers of European groups. Each rule creates the same need: someone who can produce a number and show where it came from.
+
+## What it pays
+
+No public source publishes an ESG salary for Bengaluru specifically. Using the method in our [climate finance analyst salary guide](/climate-intelligence/climate-finance-analyst-salary-india-2026), which counts a range only where at least two independent sources agree, the working estimate for tier-1 Indian cities is **about ₹6 to 8 lakh a year at entry level and about ₹14 to 21 lakh with three to seven years of experience**. Bengaluru sits in that tier. Roles in global data and advisory firms tend to pay toward the top of the range.
+
+## How to get in
+
+The candidates who stand out are not the ones with the most passion for the climate. They are the ones who can show they understand evidence:
+
+- **Learn one method properly.** The GHG Protocol's Scope 1, 2 and 3 logic is the common language. Be able to explain why a diesel invoice is Scope 1 and a purchased-goods invoice is Scope 3.
+- **Know one disclosure framework in depth.** For listed Indian companies that is BRSR; for European groups, ESRS; for investors, the frameworks named in the postings above.
+- **Show a worked example.** A small, complete inventory built from real bills, with every factor and source written down, says more than a certificate. The [emission factors Senseible uses](/emission-factors) are a good place to start checking your arithmetic.
+- **Read the rule, not the summary.** Interviewers notice when a candidate has read the CBAM regulation or a SEBI circular rather than a blog post about it.
+
+## The longer view
+
+The early wave of ESG work in India was about writing reports. The current wave is about proving the numbers in them, because assurance, lenders and EU importers now check. That shift favours people who are patient with documents and precise with units. Bengaluru has a great many of them, which is why the work keeps arriving.`,
+    tags: ['esg jobs', 'bengaluru', 'bangalore', 'sustainability careers', 'india'],
+    category: 'careers',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // sbp.org.pk speech, Governor Jameel Ahmad, 8 Nov 2024 (Rs94.7bn, 4,500+
+  // projects, ~2,061 MW by end June 2024); archive.sbp.org.pk/Incen-others
+  // (renewable energy scheme discontinued from 1 July 2024);
+  // profit.pakistantoday.com.pk ?p=220766 (SBP directs banks to reference the
+  // Pakistan Green Taxonomy), ?p=209654 (MoCC, MoF, SBP, World Bank; ECC);
+  // profit.pakistantoday.com.pk 2025/11/14 (draft Textile and Apparel Policy
+  // 2025-30); giz.de policy brief, energy transition in textiles, Oct 2025.
+  {
+    id: '128',
+    slug: 'how-karachi-textile-exporters-access-green-loans',
+    title: 'How does a Karachi textile exporter get a green loan?',
+    subtitle: 'Green Finance',
+    content: `A spinning mill in Korangi and a stitching unit in SITE have the same problem with their power bills. Grid electricity is expensive and unreliable, captive gas is no longer cheap, and the obvious fix, rooftop solar or a more efficient boiler, needs money up front. The question owners ask is whether a green loan can pay for it, and how to get one.
+
+The honest answer in 2026 is that a green loan in Pakistan is now mostly an ordinary bank loan judged against green rules, not a cheap refinance line. Getting one depends less on finding a special scheme and more on showing the bank evidence it can classify.
+
+## What changed
+
+For eight years the default route was the State Bank of Pakistan's Financing Scheme for Renewable Energy, launched in 2016. By the end of June 2024 it had financed more than 4,500 renewable energy projects worth Rs94.7 billion, with about 2,061 MW of capacity, according to the SBP Governor. The SBP lists the scheme as discontinued from 1 July 2024.
+
+What replaced it is a rulebook rather than a fund. The SBP has told banks and development finance institutions to reference the **Pakistan Green Taxonomy** when they write or revise their green banking policies. The taxonomy was developed by the Ministry of Climate Change with the Ministry of Finance, the SBP and the World Bank, and approved by the Economic Coordination Committee. It sits on top of the SBP's Green Banking Guidelines from 2017.
+
+In practice this means a bank decides whether your project is green by checking it against the taxonomy, then prices the loan through its normal credit process.
+
+## What may come next
+
+In November 2025, Profit reported a draft Textile and Apparel Policy 2025-30 that would ask the SBP and EXIM Bank to relaunch renewable energy financing for MSMEs and offer low mark-up loans for clean-energy upgrades in textiles. At the time it was still in inter-ministerial review. Check with your bank whether any part of it has been notified before you plan around it.
+
+## What the bank will ask for
+
+A green loan application succeeds when the bank can answer three questions from your file, not from your pitch:
+
+1. **Is the project in the taxonomy?** Solar, energy-efficient motors and boilers, heat recovery and water recycling are the usual candidates. Name the activity in the taxonomy's own words.
+2. **What is the baseline?** Twelve months of electricity and gas bills, with units consumed, not just rupees paid. A lender wants to see the starting point before it believes a saving.
+3. **How will the result be shown?** A simple monitoring plan: meter readings or bills after installation, compared with the same months before.
+
+The third question is where most applications stall. A bank officer cannot verify a projected saving; they can verify bills.
+
+## A practical sequence
+
+- Collect a year of utility bills and fuel invoices and turn them into kWh, cubic metres and litres by month.
+- Get supplier quotations that state rated capacity and expected output.
+- Match the project to the taxonomy activity and keep the reference.
+- Ask two or three banks with active SME and green desks; compare mark-up, tenor and collateral, not just the label.
+- After installation, keep the bills coming. They are your evidence at the annual review, and they are also what European buyers ask for.
+
+Senseible turns bills and invoices into a monthly record of energy use and emissions with each number linked to its source document, which is the baseline a lender asks for. For the wider eligibility picture, see [green loan eligibility for Pakistani small businesses](/climate-intelligence/green-loan-eligibility-pakistani-small-businesses). If the loan is part of keeping European customers, read [how a Karachi textile exporter keeps selling to Europe](/climate-intelligence/how-karachi-textile-exporters-supply-european-markets).
+
+Scheme terms change. Confirm current eligibility and pricing with the lender before you apply.`,
+    tags: ['karachi', 'pakistan', 'green loans', 'textile exporters', 'pakistan green taxonomy'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // tribune.com.pk/story/2630168 (EU envoy Raimundas Karoblis, Sept 2026;
+  // GSP+ to 2027; Council adopted revised GSP regulation 22 May 2026);
+  // pbc.org.pk "Woven In or Locked Out?" (CSDDD reaches suppliers through
+  // buyer due diligence; textiles outside CBAM); aptma.org.pk APTMA
+  // Compliance Handbook 2025 (GSP+ conventions, ESPR, CSDDD, CSRD);
+  // Regulation (EU) 2024/3015 (forced labour, applies from 14 Dec 2027).
+  {
+    id: '129',
+    slug: 'how-karachi-textile-exporters-supply-european-markets',
+    title: 'How does a Karachi textile exporter keep selling to Europe?',
+    subtitle: 'Green Finance',
+    content: `For a Karachi home-textile or denim exporter, Europe has been the easy market for a decade. Since 2014 the EU's GSP+ arrangement has let most Pakistani textiles in without duty, which is a large part of why a towel from Korangi can compete with one from Turkey or Portugal.
+
+The question now is not whether Europe still buys. It is what a European buyer needs from a Pakistani supplier before it can keep buying, and that list has grown.
+
+## The tariff advantage comes with conditions
+
+The current GSP+ arrangement runs through 2027. In September 2026 the EU Ambassador to Pakistan, Raimundas Karoblis, told exporters that keeping it depends on meeting the 27 international conventions it is tied to, covering labour, human rights, environment and governance, and that doing so could support an extension for ten years, as the Express Tribune reported. The Council of the EU adopted a revised GSP regulation on 22 May 2026 with stronger monitoring and faster suspension when there are serious violations.
+
+None of this is a carbon rule. But it means the duty-free price depends on Pakistan's record as a country, and an exporter's own records are part of how buyers show they are managing that risk.
+
+## Carbon: not at the border yet, already in the contract
+
+Textiles are not covered by the EU's Carbon Border Adjustment Mechanism, which applies to iron and steel, aluminium, cement, fertilisers, electricity and hydrogen. A Karachi exporter does not pay CBAM.
+
+The carbon question arrives another way. Large European brands report their own value-chain emissions, and fabric and garment production is usually a big part of that. So the buyer asks the supplier for energy use and emissions per order or per kilogram, and increasingly sets reduction targets in the supply agreement. The Pakistan Business Council's study of EU standards and the APTMA Compliance Handbook both name this buyer-led pressure, alongside the EU's Ecodesign for Sustainable Products Regulation, which will set product rules for textiles.
+
+## Due diligence travels down the chain
+
+The EU's Corporate Sustainability Due Diligence Directive applies to large EU companies, not to Pakistani mills. Its effect reaches Karachi through the buyer, who must check environmental and human-rights risks across its suppliers, often beyond the first tier. Separately, the EU's Forced Labour Regulation applies from 14 December 2027 and lets authorities stop products made with forced labour at the border. For a vertically integrated exporter, that means knowing where cotton, yarn and dyes come from, and being able to show it.
+
+## What to have ready
+
+A supplier that can hand over four things quickly is easier to keep than one that cannot:
+
+| What the buyer asks | What answers it |
+|---|---|
+| Energy and emissions per unit | Twelve months of electricity, gas and fuel bills, converted to kWh and tonnes CO2 by month |
+| Reduction plan | Planned solar, efficiency or fuel-switch projects with dates and expected savings |
+| Traceability | Supplier list for fibre, yarn, fabric and chemicals, with purchase records |
+| Social compliance | Audit reports and corrective-action records |
+
+The first row is the one most exporters cannot produce on request, and it is also the one a bank needs for a green loan. Building it once serves both. See [how a Karachi exporter gets a green loan](/climate-intelligence/how-karachi-textile-exporters-access-green-loans) and [Scope 3 data that EU buyers ask Pakistani textile suppliers for](/climate-intelligence/pakistan-textile-scope-3-emissions-eu-buyers).
+
+Senseible reads bills and invoices and keeps every emission figure linked to its source document, so the numbers sent to a buyer can be checked.`,
+    tags: ['karachi', 'pakistan', 'eu market', 'gsp plus', 'textile exporters', 'due diligence'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // werksmans.com "South African exporters take note" (phase-in 2.5% to 100%
+  // by 2034; carbon tax deduction; EU default carbon-price references from
+  // 2027); dailyinvestor.com/energy/136783 (only direct emissions for iron and
+  // steel for now; grid risk); businessday.co.za 2026-05-27 (Minister Parks
+  // Tau; steel value chain roadmap); idc.co.za "IDC, German Development Bank
+  // launch GEEF" (R500m, R1m to R50m, prime less 2%, up to 15 years).
+  {
+    id: '130',
+    slug: 'green-finance-johannesburg-steel-metals-firms',
+    title: 'How can a Johannesburg steel or metals firm use green finance for EU exports?',
+    subtitle: 'Green Finance',
+    content: `Gauteng's metals economy is a chain of mills, foundries, fabricators, merchants and scrap processors. Some ship to Europe directly; many more sell to someone who does. Since 1 January 2026 that European trade carries a carbon cost, and the firms in the chain that can show lower emissions per tonne are the ones whose steel costs a European buyer less.
+
+The question for a Johannesburg owner is practical: can green finance pay for the changes that lower that cost, and what does a lender need to see?
+
+## Where the cost lands
+
+Under the EU's Carbon Border Adjustment Mechanism, the EU importer buys certificates for the embedded emissions in the steel, aluminium or other covered goods it brings in. The South African producer does not pay the EU directly. The importer does, and it prices that cost into what it will pay or whom it buys from. The charge phases in: as EU free allocation falls, the share of embedded emissions that is paid for rises from 2.5 percent in 2026 to 100 percent by 2034.
+
+Two details matter for South Africa in particular, as reported by local law firms and business press in 2026:
+
+- **For iron and steel, only direct emissions count for now.** Electricity emissions are outside the calculation at present, and their future treatment is the main risk for producers on a coal-heavy grid.
+- **South Africa's carbon tax can count.** CBAM lets an importer deduct a carbon price effectively paid in the country of origin, but only when it is documented and verified. Werksmans reports that the EU will publish default carbon-price references for third countries from 2027.
+
+Trade minister Parks Tau said in May 2026 that export competitiveness increasingly depends on carbon intensity, and that a steel value chain roadmap is being developed with industry and labour.
+
+## What green finance can pay for
+
+The projects that lower embedded emissions per tonne are the ones a green lender understands: furnace and reheating efficiency, waste-heat recovery, fuel switching, more scrap in the charge, and on-site solar to cut grid exposure ahead of any change in the electricity rule.
+
+The Industrial Development Corporation and Germany's KfW set up a Green Energy Efficiency Fund of R500 million, with loans of R1 million to R50 million at prime less 2 percent and terms of up to 15 years. Those were the launch terms. Ask the IDC whether the fund is still open and on what terms before you plan on it. Commercial banks also run green and sustainability-linked loans; their price depends on the bank's credit view and on the evidence you bring.
+
+## What the lender and the buyer both need
+
+The same file answers both:
+
+1. **Emissions per tonne, by product and route,** built from fuel, electricity and raw-material records for each installation.
+2. **Carbon tax paid,** with the returns that show it, if you want an importer to claim the deduction.
+3. **A before-and-after plan** for the project being financed, with the metering that will prove the result.
+
+Default values are the fallback when a producer cannot supply actual data, and for steel they carry a mark-up that grows from 2028. Actual, verified data is usually the cheaper answer for your buyer. Work out the cost with the [CBAM calculator](/cbam-calculator), which lets you pick the country of origin and enter a carbon price paid, and see [CBAM default values versus actual emissions](/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide).
+
+Senseible turns fuel, electricity and purchase invoices into emission records linked to their source documents, the evidence both an EU importer and a lender can check. Confirm eligibility and terms with the lender before you apply.`,
+    tags: ['johannesburg', 'south africa', 'steel', 'metals', 'cbam', 'green finance', 'idc'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // thefinancialexpress.com.bd "BB introduces $200m green transformation
+  // fund" and thedailystar.net "BB lines up $200m green fund" (2016 fund,
+  // eligible uses, EUR 200m tranche, opened to all manufacturer-exporters for
+  // green capital machinery from Sept 2019); thedailystar.net "BB fixes
+  // interest rate for loans from green fund" (5%: BB 2% plus bank 3%, from
+  // 1 July); tbsnews.net node/266263 (Tk778 crore of Tk3,720 crore, 21%) and
+  // 1331196 (5% client-end cap on green refinancing for water projects);
+  // bd.apparelresources.com "green financing not satisfactory" (about 2% of
+  // advances vs 5% guideline).
+  {
+    id: '131',
+    slug: 'green-finance-dhaka-gazipur-garment-exporters',
+    title: 'How can a Dhaka or Gazipur garment exporter get green finance?',
+    subtitle: 'Green Finance',
+    content: `Drive north from Dhaka through Tongi into Gazipur and the factories never really stop. Knit, woven, denim and the washing and dyeing plants that serve them sit side by side, and between them they make a large share of what Bangladesh sells to Europe. Many have already invested in efficiency, and Bangladesh has become known for its certified green garment factories.
+
+What owners ask is how to pay for the next round: the effluent plant upgrade, the solar roof, the boiler replacement. Bangladesh Bank has run green funds for years. The difficulty is less whether money exists than whether a given factory can reach it.
+
+## The main windows
+
+**Green Transformation Fund (GTF).** Bangladesh Bank set up the GTF in 2016 as a US$200 million foreign-currency window for export-oriented textile and leather firms, and later added a €200 million tranche. It finances imported capital machinery for water efficiency in wet processing, waste management and recycling, renewable energy, energy efficiency, heat management and better working conditions. From September 2019 it was opened to all manufacturer-exporters importing green capital machinery. The Daily Star reported that the rate on GTF loans was fixed at 5 percent a year: Bangladesh Bank's 2 percent plus up to 3 percent for the lending bank.
+
+**Taka refinancing for green products.** Bangladesh Bank also refinances banks for listed green products and projects. The Business Standard reported a 5 percent client-end cap on green refinancing for water-saving and wastewater recycling.
+
+Terms on both have changed over time. Ask your bank for the current circular.
+
+## Why so few factories use them
+
+The numbers suggest the funds are under-used. The Business Standard reported that only Tk778 crore of the Tk3,720 crore GTF had been disbursed, about 21 percent. Apparel Resources reported green finance at about 2 percent of total bank advances, against a Bangladesh Bank guideline of at least 5 percent.
+
+Owners give consistent reasons. The GTF pays for imported machinery, which one factory owner put at about a third of a green project's cost, leaving civil works, installation and local equipment to other loans. Smaller factories face higher borrowing costs and tougher collateral demands, which can make an otherwise sound project unviable.
+
+## How to make an application work
+
+- **Size the whole project, then split it.** Put the imported machinery through the GTF and plan separate finance for the rest, so the project does not stall halfway.
+- **Bring a baseline.** Twelve months of electricity, gas, diesel and water records, by month and in physical units. That is what shows the saving.
+- **Match the eligible list exactly.** Use the circular's category names in your proposal.
+- **Plan the evidence after installation.** Meter readings and bills are what your bank, and your European buyers, will ask for next year.
+
+The same baseline answers the buyer. EU brands now ask Bangladeshi suppliers for energy and emissions data, as covered in [CBAM and CSDDD for Bangladesh garment exporters](/climate-intelligence/bangladesh-rmg-exporters-eu-cbam-csddd-2026) and the [Scope 3 calculator guide for Bangladesh textile exporters](/climate-intelligence/scope-3-calculator-bangladesh-textile-exporters). For a wider view of lenders, see [accessing green finance in Bangladesh manufacturing](/climate-intelligence/bangladesh-manufacturing-green-finance-access-guide).
+
+Senseible turns utility bills and fuel invoices into monthly energy and emission records linked to their source documents. Confirm current eligibility and rates with your bank before you apply.`,
+    tags: ['dhaka', 'gazipur', 'bangladesh', 'garment exporters', 'green transformation fund', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // themachinemaker.com SIDBI schemes report (4E: audits, DPRs, implementation,
+  // concessional lending); secondary sources for the ₹10 lakh to ₹1.5 crore
+  // range (unacademy); beeindia.gov.in Ludhiana forging cluster documents
+  // (BEE SME programme with LAPMA); eparlib.sansad.in Lok Sabha answer 3080
+  // (iron and steel MSMEs energy inefficient; MSE-GIFT, ZED); Ministry of
+  // Steel Green Steel Taxonomy, December 2024 (green below 2.2 tCO2e per
+  // tonne of finished steel); outlookbusiness.com Chhattisgarh CM (support
+  // for green energy adopters); nsearchives.nseindia.com Shri Hare-Krishna
+  // Sponge Iron press release, 13 Nov 2025 (5 MW green captive plant).
+  {
+    id: '132',
+    slug: 'green-finance-ludhiana-raipur-steel-msmes',
+    title: 'How can a Ludhiana or Raipur steel MSME get green finance?',
+    subtitle: 'Green Finance',
+    content: `Ludhiana and Raipur sit at two ends of India's small-steel economy. Raipur, with Siltara and Urla, makes sponge iron, billets and rolled products close to the iron ore and coal. Ludhiana turns steel into forgings, fasteners, cycle parts and auto components for buyers across India and abroad. Both run on furnaces, and both pay heavily for power and fuel.
+
+The question owners ask is whether green finance can pay for the next furnace, the waste-heat system or the solar plant, and what a lender will want to see.
+
+## The schemes worth knowing
+
+**SIDBI's End-to-End Energy Efficiency (4E) product.** SIDBI pairs technical help with a concessional loan: a walk-through audit, a detailed energy audit, a bankable project report, help with implementation, then finance for the measures the audit finds. Secondary sources put 4E loans at ₹10 lakh to ₹1.5 crore; confirm the current range with SIDBI.
+
+**Cluster programmes.** The Bureau of Energy Efficiency has run its SME energy efficiency programme in the Ludhiana forging cluster with the Ludhiana Auto Parts Manufacturers Association, installing efficient technology in demonstration units for the rest of the cluster to copy. Ask the association whether a current round is open.
+
+**Central MSME schemes.** A Lok Sabha answer on iron and steel MSMEs describes the sector as highly energy inefficient and names MSE-GIFT and the ZED scheme as current support, while acknowledging that much more green financing is needed.
+
+**State support.** In Chhattisgarh, the Chief Minister has said that industries adopting green energy will receive additional support, including special grants. The details depend on the state's current industrial policy; check with the state industries department.
+
+## Why evidence decides the price
+
+Two standards now shape how a lender and a buyer read a steel MSME's numbers.
+
+India's **Green Steel Taxonomy**, released by the Ministry of Steel in December 2024, classes steel made with less than 2.2 tonnes of CO2e per tonne of finished steel as green, with star ratings for lower intensities. It gives a bank a common yardstick for "green steel" rather than a marketing claim.
+
+The EU's **Carbon Border Adjustment Mechanism** applies to iron and steel imports from 2026. A Ludhiana forger exporting steel goods covered by CBAM, or a Raipur mill supplying one, will be asked for embedded emissions per tonne. Without actual data, the importer uses EU default values, which carry a mark-up that grows from 2028. See [the CBAM cost guide for Indian steel exporters](/climate-intelligence/cbam-compliance-cost-indian-steel-exporters-2026-2034) or work out a shipment with the [CBAM calculator](/cbam-calculator).
+
+In both cases the cheaper answer comes from measured data: what went into the furnace, how much power it drew, and how many tonnes came out.
+
+## A practical sequence
+
+- Pull twelve months of electricity bills, coal, gas and fuel invoices, and production records. Put them in physical units by month.
+- Get an energy audit, through 4E or a BEE-empanelled auditor, so the project report rests on measured numbers.
+- Choose the measures with the shortest payback first. In Raipur, one listed sponge iron maker, Shri Hare-Krishna Sponge Iron, has reported commissioning a 5 MW green captive power plant to cut power costs.
+- Apply with the audit, the baseline and supplier quotations. After installation, keep the bills: they are the proof at review time and for your buyers.
+
+For how verified records support a loan, read [how to get green loans in India using carbon data](/climate-intelligence/how-to-get-green-loans-india-carbon-data). Senseible reads bills and invoices and links each emission figure to its source document.
+
+Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['ludhiana', 'raipur', 'steel msme', 'sidbi 4e', 'green steel taxonomy', 'green finance', 'cbam'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // dtnext.in "Tamil Nadu clean energy shift can save textiles Rs 3,250 cr"
+  // (Climate Risk Horizons and Energy Transition Ventures study, up to 41.5%);
+  // indiantextilemagazine.in Tirupur sustainable hub (TEA president: 2,000 MW
+  // wind, 250 MW solar, 350 MW used by industry); alchempro.com Bharat Tex
+  // Tiruppur (13 crore litres recycled daily, CETP costs); textileexcellence
+  // .com news 6887 (RBI interaction: credit flow, Basel III, compliance
+  // costs); insights.dsij.in article 27811 (SIDBI sustainable finance uses and
+  // track-record condition).
+  {
+    id: '133',
+    slug: 'green-finance-tamil-nadu-textile-clusters',
+    title: 'How can Tamil Nadu textile clusters use green finance?',
+    subtitle: 'Green Finance',
+    content: `Tamil Nadu's textile economy is a set of clusters that each do one thing well: spinning around Coimbatore, knitwear in Tiruppur, power looms in Erode and Karur's home textiles. Tiruppur in particular has done much of what green finance is meant to fund. Its dyeing units run zero liquid discharge systems that the cluster says recycle about 13 crore litres of water a day, and its industry body says members own about 2,000 MW of wind and 250 MW of solar capacity.
+
+So the question here is different from most places. Not whether to start, but how to finance the next step and turn what has been done into something a lender and a European buyer will credit.
+
+## Where the next saving is
+
+Electricity is the biggest one. A study by Climate Risk Horizons and Energy Transition Ventures, reported by DT Next, estimated that a full shift of Tamil Nadu's textile sector to renewable power through green tariffs and open access could cut its electricity bill by up to 41.5 percent, about ₹3,250 crore a year. That is a sector-wide estimate, not a promise for any one mill, but it shows where the money is.
+
+The other costs are familiar to every owner. Running common effluent treatment plants is expensive, and at an April interaction with the Reserve Bank of India, cluster leaders raised tight credit flow, Basel III lending norms, compliance costs and weak credit ratings as barriers.
+
+## What lenders offer
+
+**SIDBI.** SIDBI's sustainable finance products cover clean energy, green buildings and environmentally friendly labelling, and its energy efficiency product adds audits and a bankable project report before the loan. A Dalal Street Investment Journal article notes that an exporter applying should have no defaults and a healthy operating track record.
+
+**Commercial banks.** Most large banks now run green loan products for solar, efficient machinery and water recycling. Price depends on the bank's credit view and the quality of the evidence.
+
+**State support.** Tamil Nadu has its own incentives that can stack with central schemes; see [Tamil Nadu MSME decarbonisation incentives](/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives).
+
+## Turning past investment into credit
+
+A windmill bought fifteen years ago lowers a mill's emissions today, but only if the records show it. Lenders and buyers want the same three things:
+
+1. **Monthly energy by source.** Grid units, wind and solar units adjusted through the wheeling statement, and fuel used, in physical units.
+2. **Output for the same months.** Kilograms of yarn or pieces stitched, so energy and emissions can be stated per unit.
+3. **A dated plan for the next step.** Open access, a new solar roof or efficient compressors, with expected savings that bills can later confirm.
+
+European brands ask Tamil Nadu suppliers for exactly this when they report their own value-chain emissions. Textiles are outside the EU's CBAM, but buyer questionnaires are not; see [what EU rules ask of Indian textile exporters](/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026) and [green finance for textile exporters, step by step](/climate-intelligence/green-finance-textile-exporters-step-by-step).
+
+Senseible reads electricity bills, wheeling statements and fuel invoices and links each emission figure to its source document. Confirm current eligibility and terms with the lender before you apply.`,
+    tags: ['tamil nadu', 'tiruppur', 'textile clusters', 'green finance', 'sidbi', 'renewable energy'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // wfw.com "Vietnam's green taxonomy" and fpt-is.com "Standardizing green
+  // credit in Vietnam" (Decision 21/2025/QD-TTg signed 4 July 2025, effective
+  // 22 Aug 2025; two tests; certification); Circular 17/2022/TT-NHNN
+  // (environmental risk in credit); news.metal.com and wam.ae (EU steel
+  // measure adopted 8 June 2026, from 1 July 2026, ~47% quota cut to 18.3 Mt,
+  // 50% out-of-quota duty, melt-and-pour from 1 Oct 2026); vnsteel.vn "CBAM
+  // warrants steel exporter reaction" (VSA warning).
+  {
+    id: '134',
+    slug: 'vietnam-steel-exporters-cbam-green-finance',
+    title: 'How can Vietnamese steel exporters finance CBAM readiness?',
+    subtitle: 'Green Finance',
+    content: `For a Vietnamese steel exporter, 2026 brought two changes from Brussels at once. From 1 January, EU importers of steel started owing CBAM certificates for the embedded emissions in what they buy. From 1 July, a permanent EU steel import regime replaced the old safeguard, with lower duty-free quotas and a higher duty beyond them, as trade press reported.
+
+Both make the same thing valuable: steel whose emissions per tonne are measured, lower and provable. The question this article answers is how a Vietnamese mill or processor pays for getting there.
+
+## What the EU now asks
+
+**CBAM.** The importer declares the embedded emissions in each tonne and buys certificates for them, with certificate sales for 2026 imports from February 2027 and the first annual declaration due by 30 September 2027. If the supplier cannot provide actual emissions, the importer uses EU default values, and for steel those carry a mark-up that grows from 2028. A mill with measured data is cheaper to buy from.
+
+**The steel import regime.** Reported by trade press and agencies: the Council adopted the measure on 8 June 2026; from 1 July duty-free quotas fell by about 47 percent to about 18.3 million tonnes a year, imports above quota pay 50 percent, and from 1 October 2026 importers must show where the steel was first melted and poured. Check the Official Journal text for your products.
+
+The Vietnam Steel Association has warned that weak preparation could cost exporters their EU business.
+
+## Where green finance fits
+
+Vietnam now has a legal definition of green. **Decision 21/2025/QĐ-TTg**, signed on 4 July 2025 and in force from 22 August 2025, sets the national green taxonomy. A project qualifies when it meets environmental law, with an approved impact assessment or a permit, and delivers environmental benefits under the categories listed in its appendix, with certification by state authorities or accredited independent bodies. Banks also apply the State Bank of Vietnam's Circular 17/2022 on environmental risk in lending.
+
+For a steel company, the likely candidates are energy efficiency in furnaces and rolling, waste-heat recovery, rooftop solar and more scrap in the charge. Whether a given project qualifies depends on the appendix criteria, so ask the bank to confirm the category before you build the application around it.
+
+## What to prepare
+
+The same evidence serves the importer and the bank:
+
+1. **Emissions per tonne by product and production route,** from fuel, electricity and raw-material records for each installation.
+2. **A monitoring plan** that meets the CBAM methodology, so the numbers can be verified.
+3. **The project file:** baseline, expected reduction, supplier quotations and the taxonomy category.
+4. **Melt-and-pour records** for each shipment, now that the import regime asks for them.
+
+For a step-by-step readiness plan, see [the 90-day CBAM plan for Vietnamese steel exporters](/climate-intelligence/vietnamese-exporters-prepare-eu-cbam-90-days). To see how actual data changes the bill, use the [CBAM calculator](/cbam-calculator), which lets you choose Vietnam as the country of origin, and [CBAM default values versus actual emissions](/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide).
+
+Senseible turns fuel, power and purchase invoices into emission records linked to their source documents. Confirm eligibility and terms with the lender before you apply.`,
+    tags: ['vietnam', 'steel exporters', 'cbam', 'green taxonomy', 'decision 21', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
+  },
+  // Sources researched October 2026 (kept here, not on the page):
+  // legal500.com Kesikli "The emissions trading system under Turkish law"
+  // (Climate Law No. 7552, July 2025; cement nearly 30% of EU imports);
+  // ember-energy.org "What does the Turkish ETS introduce" (27 Aug 2026;
+  // product benchmarks); oenergetice.cz (pilot 2026 to 2027, MRV only in
+  // 2026, first obligation for 2027 emissions, surrender by end Nov 2028,
+  // 50,000 tCO2e threshold, five sectors); carbonmarketwatch.org Turkish ETS
+  // (May 2026); gmk.center Turk Eximbank EUR 1bn Green Export Project loan
+  // (Deutsche Bank, Standard Chartered, BNP Paribas, ING; IBRD EUR 600m
+  // first-loss guarantee; uses).
+  {
+    id: '135',
+    slug: 'turkish-steel-cement-exporters-cbam-green-finance',
+    title: 'How can Turkish steel and cement exporters use green finance to cut CBAM costs?',
+    subtitle: 'Green Finance',
+    content: `Turkey sells more steel and cement to the European Union than most countries that face CBAM, and it sells them close by. A law-firm estimate puts Turkish cement at nearly 30 percent of the EU's cement imports. That closeness has been an advantage on freight. Under CBAM, it means Turkish producers feel the carbon price early and in full.
+
+Turkey has answered with its own carbon market, and its exporters now have green finance aimed at exactly this problem. This article explains how the two fit together.
+
+## Turkey's ETS and why it matters at the EU border
+
+Climate Law No. 7552, published in July 2025, provides the legal basis for a Turkish emissions trading system. As reported by Ember and others, the pilot phase runs in 2026 and 2027:
+
+- **2026:** monitoring, reporting and verification only.
+- **2027:** the first year with an obligation, with allowances for 2027 emissions surrendered by the end of November 2028.
+- **Coverage:** electricity generation, cement, iron and steel, aluminium and fertilisers, for installations emitting at least 50,000 tonnes of CO2e a year, using product-based benchmarks.
+
+The overlap with CBAM is deliberate. CBAM lets an EU importer deduct a carbon price effectively paid in the country of origin. Once Turkish installations pay a domestic carbon price, part of the money that would otherwise go to Brussels can stay in Turkey. Carbon Market Watch has warned that a weak Turkish ETS would protect neither the climate nor exporters, because a low price would leave most of the CBAM bill in place.
+
+For the importer to claim the deduction, the price paid has to be documented for the specific goods. Good records at the installation decide whether it counts.
+
+## The green finance on offer
+
+The largest dedicated facility reported so far is the **Türkiye Green Export Project**. GMK Center reported that Turk Eximbank raised a €1 billion, 10-year commercial loan from Deutsche Bank, Standard Chartered, BNP Paribas and ING. The World Bank's IBRD provides a €600 million first-loss guarantee, counter-guaranteed by the Turkish Treasury. Proceeds go to exporters for environmentally friendly products, renewable energy, energy efficiency and working capital. Ask Turk Eximbank or your bank how to apply and on what terms.
+
+Commercial banks and development lenders active in Turkey also offer green and sustainability-linked loans to industrial companies.
+
+## What the money should buy
+
+The aim is fewer tonnes of CO2 per tonne of product, measured. For steel that means more scrap-based electric arc capacity, furnace efficiency and renewable power. For cement, it means less clinker per tonne of cement, alternative fuels, waste-heat recovery and kiln efficiency. Each lowers the CBAM bill for the buyer and, from 2027, the ETS obligation for the producer.
+
+## The evidence that ties it together
+
+One set of records now does three jobs: the Turkish ETS report, the actual emissions an EU importer declares under CBAM instead of default values, and the before-and-after case a lender needs. Build it at installation level, by product and month, from fuel, electricity and raw-material records.
+
+Work out the CBAM cost for a shipment with the [CBAM calculator](/cbam-calculator), which takes the country of origin and any carbon price paid, and see the [CBAM cost per tonne of cement](/cbam-cost/cement) for how the charge grows to 2034. Senseible keeps every emission figure linked to the invoice it came from.
+
+Confirm eligibility and terms with the lender before you apply.`,
+    tags: ['turkey', 'steel', 'cement', 'turkish ets', 'cbam', 'turk eximbank', 'green finance'],
+    category: 'green-finance',
+    createdAt: '2026-10-13',
+    featured: false
   },
 ];
 
