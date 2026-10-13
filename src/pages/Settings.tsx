@@ -17,6 +17,7 @@ import { COMPANY_SECTORS } from '@/lib/organizationProfile';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
 import { LanguagePreference } from '@/components/settings/LanguagePreference';
+import { useFinanceDetail } from '@/hooks/useFinanceDetail';
 
 
 interface CompanyProfile {
@@ -49,6 +50,7 @@ const Settings = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
   const { prefs, toggleFeature, isPremium, features } = useTrustLayerSettings();
+  const financeDetail = useFinanceDetail();
 
   const countryConfig = getCountryConfig(profile.location);
   const countries = getCountryList();
@@ -368,6 +370,27 @@ const Settings = () => {
                   />
                 </div>
               ))}
+            </CardContent>
+          </Card>
+
+          {/* Finance detail (Pro and Scale) */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Finance detail</CardTitle>
+              <CardDescription>
+                Adds energy evidence, spend intensity, supplier concentration and the evidence trail to the finance card on your Dashboard. Off keeps the simple view.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between gap-4">
+                <div className="space-y-0.5">
+                  <Label htmlFor="finance-detail" className={!financeDetail.available ? 'text-muted-foreground' : ''}>Show finance detail</Label>
+                  <p className="text-xs text-muted-foreground">
+                    {financeDetail.available ? 'Saved on this device.' : <>Available on Pro and Scale. <Link to="/pricing" className="underline">View plans</Link></>}
+                  </p>
+                </div>
+                <Switch id="finance-detail" checked={financeDetail.enabled} onCheckedChange={financeDetail.setEnabled} disabled={!financeDetail.available} />
+              </div>
             </CardContent>
           </Card>
 
