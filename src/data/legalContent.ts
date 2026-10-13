@@ -19,7 +19,7 @@ export const legalDocuments: LegalDocument[] = [
     title: 'Terms of Service',
     slug: 'terms',
     effectiveDate: '27 August 2024',
-    lastUpdated: '25 September 2026',
+    lastUpdated: '13 October 2026',
     sections: [
       {
         title: '0. Parties & Legal Identity',
@@ -99,7 +99,9 @@ Senseible does not guarantee verification, registry approval, or avoidance of gr
 Senseible makes no representation that:
 - Emissions are certified or verified,
 - Outputs meet any registry methodology,
-- Use prevents greenwashing claims. Final authority rests with independent third parties.`
+- Use prevents greenwashing claims. Final authority rests with independent third parties.
+
+Illustrative estimates may be used for informational purposes and are not independently verified evidence for legal or regulatory proceedings.`
       },
       {
         title: '7. Financial & Investment Non-Advice',

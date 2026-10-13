@@ -87,7 +87,6 @@ const TierCurve = () => {
       <figcaption className="mt-3 grid grid-cols-2 gap-3 text-xs sm:text-sm">
         <div><p className="font-medium">{t("ent.tier.top", "Top spend")}</p><p className="text-muted-foreground">{t("ent.tier.top.line", "Primary data and documents")}</p></div>
         <div><p className="font-medium">{t("ent.tier.tail", "Long tail")}</p><p className="text-muted-foreground">{t("ent.tier.tail.line", "Spend-based estimates, upgraded over time")}</p></div>
-        <p className="col-span-2 text-[11px] text-muted-foreground">{t("ent.tier.note", "Illustration, not customer data.")}</p>
       </figcaption>
     </figure>
   );
