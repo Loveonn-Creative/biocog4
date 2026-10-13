@@ -72,3 +72,15 @@ describe('computeFinanceEvidence', () => {
     expect(r.summary.invoices).toBe(3);
   });
 });
+
+describe('billing periods', () => {
+  test('a bill covering two months fills both; uncovered months stay missing', () => {
+    const rows = [
+      row({ document_hash: 'b1', activity_data: 500, activity_unit: 'kWh', co2_kg: 355, invoice_date: '2025-05-15' }),
+      row({ document_hash: 'b2', activity_data: 500, activity_unit: 'kWh', co2_kg: 355, invoice_date: '2025-08-15' }),
+    ];
+    const r = computeFinanceEvidence(rows, { b1: { start: '2025-04-12', end: '2025-05-11' } });
+    expect(r.detail.electricity.months).toBe(3); // Apr, May from b1's period; Aug from b2's invoice month
+    expect(r.detail.electricity.missingMonths).toEqual(['2025-06', '2025-07']);
+  });
+});

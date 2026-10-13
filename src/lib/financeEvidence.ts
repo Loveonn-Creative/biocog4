@@ -47,7 +47,7 @@ export interface FinanceEvidence {
       /** kg CO2e per kWh implied by the records; null without kWh. */
       impliedFactor: number | null;
       months: number;
-      /** Months between the first and last electricity bill with no bill. */
+      /** Months between the first and last electricity bill that no bill covers (billing period when printed, else invoice month). */
       missingMonths: string[];
     };
     /** kg CO2e per ₹1,000 of invoice spend (INR invoices with an amount only); null without spend. */
@@ -84,7 +84,20 @@ function monthRange(first: string, last: string): string[] {
   return out;
 }
 
-export function computeFinanceEvidence(rows: FinanceLedgerRow[]): FinanceEvidence {
+/** Billing periods printed on electricity bills, by document hash (see electricityBillMeta). */
+export type BillingPeriods = Record<string, { start: string; end: string }>;
+
+/** Months a record covers: every month its bill's billing period touches, else its invoice month. */
+function monthsOfRow(r: FinanceLedgerRow, periods: BillingPeriods): string[] {
+  const p = r.document_hash ? periods[r.document_hash] : undefined;
+  if (p && /^\d{4}-\d{2}-\d{2}$/.test(p.start) && /^\d{4}-\d{2}-\d{2}$/.test(p.end) && p.start <= p.end) {
+    return monthRange(p.start.slice(0, 7), p.end.slice(0, 7));
+  }
+  const m = monthOf(r.invoice_date);
+  return m ? [m] : [];
+}
+
+export function computeFinanceEvidence(rows: FinanceLedgerRow[], periods: BillingPeriods = {}): FinanceEvidence {
   const verified = latestLedgerRowPerEmission(rows).filter((r) => r.verification_status === 'verified');
   const invoiceKey = (r: FinanceLedgerRow) => r.document_id || r.document_hash || r.id;
 
@@ -99,7 +112,7 @@ export function computeFinanceEvidence(rows: FinanceLedgerRow[]): FinanceEvidenc
   const elec = verified.filter((r) => isKwh(r.activity_unit) && typeof r.activity_data === 'number' && r.activity_data > 0);
   const kwh = elec.reduce((s, r) => s + (r.activity_data as number), 0);
   const elecKg = elec.reduce((s, r) => s + grossKg(r.co2_kg), 0);
-  const elecMonths = [...new Set(elec.map((r) => monthOf(r.invoice_date)).filter(Boolean) as string[])].sort();
+  const elecMonths = [...new Set(elec.flatMap((r) => monthsOfRow(r, periods)))].sort();
   const missingMonths = elecMonths.length > 1
     ? monthRange(elecMonths[0], elecMonths[elecMonths.length - 1]).filter((m) => !elecMonths.includes(m))
     : [];
