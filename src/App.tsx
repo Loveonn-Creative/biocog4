@@ -2,8 +2,8 @@ import { lazy, Suspense, type ReactNode } from "react";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { onIdentityReset } from "@/lib/identity";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
@@ -100,20 +100,6 @@ const PageLoader = () => (
 
 installChunkRecovery();
 
-// Retry only what a retry can fix: never auth, permission or validation
-// errors (4xx, Postgres 42501/PGRST), at most twice for network or 5xx.
-const isPermanentError = (err: unknown) => {
-  const e = err as { status?: number; code?: string } | null;
-  if (typeof e?.status === "number" && e.status >= 400 && e.status < 500) return true;
-  return typeof e?.code === "string" && /^(42501|PGRST\d+|22\w{3}|23\w{3})$/.test(e.code);
-};
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { retry: (count, err) => count < 2 && !isPermanentError(err) },
-  },
-});
-// One person's cached queries must never render for the next person on this device.
-onIdentityReset(() => queryClient.clear());
 
 /** Error boundary that resets on navigation. */
 const RoutedBoundary = ({ children }: { children: ReactNode }) => {

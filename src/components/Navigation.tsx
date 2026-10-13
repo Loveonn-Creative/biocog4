@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { accountKey, ACCOUNT_STALE_MS } from '@/lib/queryClient';
 import { Link, useLocation } from 'react-router-dom';
 import { useSession } from '@/hooks/useSession';
 import { usePersonalization } from '@/hooks/usePersonalization';
@@ -42,21 +44,16 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
   const { user, isAuthenticated, signOut } = useSession();
   const { greeting, isPersonalized } = usePersonalization();
   const { activeContext } = useOrganization();
-  const [businessName, setBusinessName] = useState<string>('');
-
-  // Fetch profile for business name
-  useEffect(() => {
-    const fetchProfile = async () => {
-      if (!user?.id) return;
-      const { data } = await supabase
-        .from('profiles')
-        .select('business_name')
-        .eq('id', user.id)
-        .single();
-      if (data?.business_name) setBusinessName(data.business_name);
-    };
-    fetchProfile();
-  }, [user?.id]);
+  // Read once per account and kept across pages; Profile and Settings refresh it on save.
+  const { data: businessName = '' } = useQuery({
+    queryKey: accountKey(user?.id, 'business_name'),
+    enabled: !!user?.id,
+    staleTime: ACCOUNT_STALE_MS,
+    queryFn: async () => {
+      const { data } = await supabase.from('profiles').select('business_name').eq('id', user!.id).single();
+      return data?.business_name ?? '';
+    },
+  });
 
   const handleSignOut = async () => {
     await signOut();

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { refreshAccount } from '@/lib/queryClient';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
@@ -204,6 +205,7 @@ const Profile = () => {
       if (error) throw error;
 
       setSavedDataConsent(profile.data_consent);
+      void refreshAccount(user.id);
       toast.success('Profile updated successfully');
     } catch (error) {
       console.error('Error saving profile:', error);

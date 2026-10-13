@@ -1,4 +1,6 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { RECORDS_KEY, RECORDS_STALE_MS } from '@/lib/queryClient';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
@@ -7,7 +9,6 @@ import { toast } from 'sonner';
 import type { GovFormat } from '@/lib/govComplianceAdapter';
 import { latestLedgerRowPerEmission, verifiedLedgerTotalKg } from '@/lib/emissionLedger';
 
-import { useRecordsChanged } from '@/lib/recordsEvents';
 export interface ComplianceLedgerEntry {
   id: string;
   emission_id: string | null;
@@ -43,46 +44,41 @@ export interface ComplianceLedgerEntry {
   fiscal_quarter: string | null;
 }
 
+export const ledgerQueryKey = (userId: string | undefined, key: string) => [RECORDS_KEY, 'ledger', userId ?? null, key] as const;
+
+/**
+ * The audit ledger for the signed-in user's current workspace, shared through
+ * the query cache (one request however many components ask; cached rows shown
+ * at once on a return visit) and refreshed when records change. Guests have no
+ * ledger.
+ */
 export const useComplianceLedger = () => {
   const { user } = useSession();
-  const [rawEntries, setRawEntries] = useState<ComplianceLedgerEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  // Which account and workspace the entries belong to; null until a read succeeds.
-  const [loadedFor, setLoadedFor] = useState<string | null>(null);
   const userId = user?.id;
   const { scope, ready } = useWorkspace();
   const key = scopeKey(scope);
 
-  const fetchEntries = useCallback(async () => {
-    // The ledger is only ever read for the signed-in user. Guests have no ledger.
-    if (!ready) return;
-    const query = userId
-      ? applyScope(supabase.from('compliance_ledger').select('*').order('created_at', { ascending: false }), scope)
-      : null;
-    if (!query) {
-      setRawEntries([]);
-      setLoadedFor(null);
-      setIsLoading(false);
-      return;
-    }
-    setIsLoading(true);
-    const { data, error } = await query;
-
-    if (error) {
-      console.error('Error fetching audit ledger:', error);
-    } else {
-      setRawEntries((data || []) as unknown as ComplianceLedgerEntry[]);
-      setLoadedFor(`${userId}:${key}`);
-    }
-    setIsLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- key captures scope
-  }, [userId, key, ready]);
-
-  useEffect(() => {
-    void fetchEntries();
-  }, [fetchEntries]);
+  const query = useQuery({
+    queryKey: ledgerQueryKey(userId, key),
+    enabled: ready && !!userId,
+    staleTime: RECORDS_STALE_MS,
+    queryFn: async () => {
+      const q = applyScope(supabase.from('compliance_ledger').select('*').order('created_at', { ascending: false }), scope);
+      if (!q) return [] as ComplianceLedgerEntry[];
+      const { data, error } = await q;
+      if (error) {
+        console.error('Error fetching audit ledger:', error);
+        throw error;
+      }
+      return (data || []) as unknown as ComplianceLedgerEntry[];
+    },
+  });
+  const rawEntries = useMemo(() => (userId ? query.data ?? [] : []), [query.data, userId]);
+  const isLoading = !ready || (!!userId && query.isPending);
   /** True once the ledger was read for the current account and workspace. */
-  const loaded = !!userId && loadedFor === `${userId}:${key}`;
+  const loaded = !!userId && query.data !== undefined;
+  const refetchQuery = query.refetch;
+  const fetchEntries = useCallback(async () => { if (userId) await refetchQuery(); }, [refetchQuery, userId]);
 
   // A re-verification writes a new ledger row for the same emission. Show and
   // export only the latest row per emission so nothing is counted twice.
@@ -172,8 +168,6 @@ export const useComplianceLedger = () => {
     }
   };
 
-  // Refetch when records change anywhere (verify, delete, upload).
-  useRecordsChanged(() => { void fetchEntries(); });
 
   return { entries, verifiedTotalKg, isLoading, loaded, refetch: fetchEntries, exportComplianceXLSX, exportGovFormat };
 };
