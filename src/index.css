@@ -580,3 +580,14 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .ent-anim [class*="ent-draw"] { stroke-dashoffset: 0 !important; }
   .ent-orbit-dot { display: none; }
 }
+
+/* Net zero (/net-zero): game feedback. Reduced motion keeps every state, no movement. */
+@keyframes nz-pop { 0% { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: none; } }
+@keyframes nz-float { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-28px); opacity: 0; } }
+@keyframes nz-burst { 0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 1; } 100% { transform: rotate(var(--a)) translateX(22px) scale(.3); opacity: 0; } }
+@keyframes nz-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .nz-anim *, .nz-anim *::before, .nz-anim *::after { animation: none !important; transition: none !important; }
+  .nz-anim [class*="nz-draw"] { stroke-dashoffset: 0 !important; }
+  .nz-burst-wrap { display: none; }
+}
