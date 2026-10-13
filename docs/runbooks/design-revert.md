@@ -29,3 +29,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /carbon-credits | [Loveonn-Creative/biocog4#45](https://github.com/Loveonn-Creative/biocog4/pull/45) | `9b5d119` (merge `ea925b0`) |
 | /about | [Loveonn-Creative/biocog4#46](https://github.com/Loveonn-Creative/biocog4/pull/46) | `ea925b0` (merge `914e0db`) |
 | /contact | [Loveonn-Creative/biocog4#47](https://github.com/Loveonn-Creative/biocog4/pull/47) | `914e0db` (merge `944bcaf`) |
+| /careers | [Loveonn-Creative/biocog4#68](https://github.com/Loveonn-Creative/biocog4/pull/68) | `d2bcee6` (merge `eadd071`) |
