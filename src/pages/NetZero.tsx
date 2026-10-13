@@ -13,15 +13,15 @@ import { toast } from "@/hooks/use-toast";
 import { usePremiumStatus } from "@/hooks/usePremiumStatus";
 import {
   SECTOR_BENCHMARKS,
-  SCOPE_SHARE,
+  baselineFromUsage,
   calculateFeasibility,
   sbtiPace,
   estimatedCutKg,
   earnedBadges,
   targetDateFor,
   timelineFromGoal,
-  formatInr,
   formatCo2,
+  formatParam,
   type FeasibilityResult,
   type BadgeKey,
 } from "@/lib/netZeroEngine";
@@ -70,6 +70,10 @@ const NetZero = () => {
   // Goal settings
   const [sectorId, setSectorId] = useState('other');
   const [targetPct, setTargetPct] = useState('30');
+  // Without uploaded records the baseline comes from monthly usage the visitor
+  // enters (the defaults are an example and say so), at the platform's factors.
+  const [monthlyKwh, setMonthlyKwh] = useState(10000);
+  const [monthlyDiesel, setMonthlyDiesel] = useState(500);
   const [timeline, setTimeline] = useState('12');
   const [feasibility, setFeasibility] = useState<FeasibilityResult | null>(null);
 
@@ -146,10 +150,12 @@ const NetZero = () => {
 
   // Calculate feasibility when goal params change
   useEffect(() => {
-    const baseline = baselineData?.total || SECTOR_BENCHMARKS.find(b => b.id === sectorId)?.typicalBaseline || 120000;
+    const baseline = baselineData && baselineData.total > 0
+      ? { scope1Kg: baselineData.scope1, scope2Kg: baselineData.scope2, scope3Kg: baselineData.scope3, totalKg: baselineData.total }
+      : baselineFromUsage(monthlyKwh, monthlyDiesel);
     const result = calculateFeasibility(baseline, parseFloat(targetPct) || 30, parseFloat(timeline) || 12, sectorId);
     setFeasibility(result);
-  }, [sectorId, targetPct, timeline, baselineData]);
+  }, [sectorId, targetPct, timeline, baselineData, monthlyKwh, monthlyDiesel]);
 
   const baselineTotal = baselineData?.total || 0;
   const hasData = baselineTotal > 0;
@@ -245,8 +251,7 @@ const NetZero = () => {
     setTaskStatuses(updated);
     if (next === 'done' && feasibility) {
       const a = actions.find(x => x.id === id)!;
-      const kg = feasibility.baselineCo2Kg * (a.reductionPct / 100) * SCOPE_SHARE[a.scope as 1 | 2 | 3];
-      setCelebrate({ id, label: `−${formatCo2(kg)}`, n: Date.now() });
+      setCelebrate({ id, label: `−${formatCo2(a.cutKg)}`, n: Date.now() });
     }
     window.clearTimeout(saveTimer.current);
     saveTimer.current = window.setTimeout(() => { void saveGoal(updated); }, 600);
@@ -331,7 +336,7 @@ const NetZero = () => {
                   <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
                     <div>
                       <p className="text-4xl font-semibold text-foreground tabular-nums">{formatCo2(baselineTotal)}</p>
-                      <p className="text-sm text-muted-foreground mb-5">Total annual emissions</p>
+                      <p className="text-sm text-muted-foreground mb-5">Total from your verified records</p>
                       <div className="space-y-2.5">
                         {[
                           { label: 'Scope 1 (Direct)', value: baselineData!.scope1, color: 'hsl(var(--primary))' },
@@ -354,8 +359,24 @@ const NetZero = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-6 grid gap-4 sm:grid-cols-[1fr_auto] sm:items-center">
-                    <p className="text-sm text-muted-foreground">No emissions data yet. Upload your first invoice to establish a baseline. Until then, the goal uses a typical baseline for your sector.</p>
+                  <div className="mt-6 space-y-5">
+                    <p className="text-sm text-muted-foreground">No emissions data yet. Upload your first invoice to establish a baseline, or enter your monthly use below. The numbers shown are an example until you change them.</p>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="block text-sm">
+                        <span className="font-medium">Grid electricity per month</span>
+                        <span className="mt-1.5 flex items-center gap-2"><input type="number" min={0} inputMode="numeric" value={monthlyKwh} onChange={e => setMonthlyKwh(Math.max(0, Number(e.target.value) || 0))} className="h-11 w-full rounded-xl border border-input bg-background px-3 tabular-nums" /><span className="text-muted-foreground">kWh</span></span>
+                      </label>
+                      <label className="block text-sm">
+                        <span className="font-medium">Diesel per month</span>
+                        <span className="mt-1.5 flex items-center gap-2"><input type="number" min={0} inputMode="numeric" value={monthlyDiesel} onChange={e => setMonthlyDiesel(Math.max(0, Number(e.target.value) || 0))} className="h-11 w-full rounded-xl border border-input bg-background px-3 tabular-nums" /><span className="text-muted-foreground">litres</span></span>
+                      </label>
+                    </div>
+                    {feasibility && (
+                      <p className="text-sm">
+                        Baseline <span className="font-semibold tabular-nums">{formatCo2(feasibility.baselineCo2Kg)}</span> a year
+                        <span className="block text-xs text-muted-foreground mt-1">= 12 × ({monthlyKwh.toLocaleString('en-IN')} kWh × 0.710 kgCO2/kWh CEA grid factor + {monthlyDiesel.toLocaleString('en-IN')} L × 2.68 kgCO2/L diesel)</span>
+                      </p>
+                    )}
                     <button onClick={() => navigate('/')} className={backBtn}><Upload className="w-4 h-4 mr-1.5" />Upload Invoice</button>
                   </div>
                 )}
@@ -412,7 +433,7 @@ const NetZero = () => {
                       <div><dt className="text-xs text-muted-foreground">Baseline</dt><dd className="text-lg font-semibold tabular-nums">{formatCo2(feasibility.baselineCo2Kg)}</dd></div>
                       <div><dt className="text-xs text-muted-foreground">Target Cut</dt><dd className="text-lg font-semibold tabular-nums text-destructive">−{formatCo2(feasibility.targetReductionKg)}</dd></div>
                       <div><dt className="text-xs text-muted-foreground">Goal</dt><dd className="text-lg font-semibold tabular-nums text-primary">{formatCo2(feasibility.targetCo2Kg)}</dd></div>
-                      <div><dt className="text-xs text-muted-foreground">Est. Investment</dt><dd className="text-lg font-semibold tabular-nums">{formatInr(feasibility.totalEstimatedCost)}</dd></div>
+                      <div><dt className="text-xs text-muted-foreground">Roadmap cut (est.)</dt><dd className="text-lg font-semibold tabular-nums">{formatCo2(feasibility.totalEstimatedCutKg)}</dd></div>
                     </dl>
                   </div>
                 )}
@@ -436,11 +457,11 @@ const NetZero = () => {
             <section className="space-y-6">
               <div className="rounded-3xl border border-border p-5 sm:p-8">
                 <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">Reduction Roadmap</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Ranked by impact for the effort. Each quest shows its estimated cut toward your target.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Ranked by cut for the effort. Each quest shows its estimated cut and how it is calculated, with every assumption you can replace from an energy audit.</p>
                 {feasibility && (
                   <ol className="mt-6 grid gap-3 sm:grid-cols-2">
                     {actions.map((action, i) => {
-                      const kg = feasibility.baselineCo2Kg * (action.reductionPct / 100) * SCOPE_SHARE[action.scope as 1 | 2 | 3];
+                      const kg = action.cutKg;
                       const share = feasibility.targetReductionKg > 0 ? Math.min(100, (kg / feasibility.targetReductionKg) * 100) : 0;
                       return (
                         <li key={action.id} className="rounded-2xl border border-border p-4">
@@ -452,9 +473,23 @@ const NetZero = () => {
                             </div>
                           </div>
                           <div className="mt-3 h-1.5 rounded-full bg-secondary overflow-hidden"><div className="h-full rounded-full bg-primary" style={{ width: `${share}%` }} /></div>
-                          <p className="mt-2 text-xs text-muted-foreground">
-                            −{formatCo2(kg)} est. · {formatInr(action.estimatedCostInr)}{action.paybackMonths > 0 ? ` · ${action.paybackMonths}mo payback` : ''} · {action.effort} effort
-                          </p>
+                          <p className="mt-2 text-xs text-muted-foreground">−{formatCo2(kg)} est. · {action.effort} effort</p>
+                          <details className="mt-2 text-xs">
+                            <summary className="cursor-pointer text-foreground underline underline-offset-4">How this is calculated</summary>
+                            <p className="mt-2 font-mono text-[11px]">{action.formula} = {Math.round(action.fraction * 1000) / 10}% of Scope {action.scope}</p>
+                            {action.params.length > 0 && (
+                              <ul className="mt-2 space-y-1">
+                                {action.params.map(p => (
+                                  <li key={p.label} className="flex flex-wrap gap-x-2">
+                                    <span className={`rounded px-1 font-mono text-[10px] uppercase ${p.kind === 'constant' ? 'bg-primary/10 text-primary' : 'bg-warning/15 text-warning'}`}>{p.kind}</span>
+                                    <span>{p.label}: <span className="font-medium">{formatParam(p)}</span></span>
+                                    <span className="w-full text-muted-foreground">{p.source}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            {action.note && <p className="mt-2 text-muted-foreground">{action.note}</p>}
+                          </details>
                         </li>
                       );
                     })}
@@ -518,7 +553,7 @@ const NetZero = () => {
                               </span>
                               <span className="flex-1 min-w-0">
                                 <span className={`block text-sm ${status === 'done' ? 'line-through text-muted-foreground' : 'text-foreground'}`}>{action.title}</span>
-                                <span className="block text-xs text-muted-foreground">↓ {action.reductionPct}% of scope · {formatInr(action.estimatedCostInr)}</span>
+                                <span className="block text-xs text-muted-foreground">−{formatCo2(action.cutKg)} est. · Scope {action.scope}</span>
                               </span>
                               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] rounded-full border border-border px-2 py-0.5">{status}</span>
                             </button>
@@ -556,7 +591,7 @@ const NetZero = () => {
                   <div className="p-3 rounded-xl bg-secondary/50"><dt className="text-xs text-muted-foreground">Baseline</dt><dd className="text-sm font-medium">{feasibility ? formatCo2(feasibility.baselineCo2Kg) : '-'}</dd></div>
                   <div className="p-3 rounded-xl bg-secondary/50"><dt className="text-xs text-muted-foreground">Target</dt><dd className="text-sm font-medium">−{targetPct}% {timelineLabel}</dd></div>
                   <div className="p-3 rounded-xl bg-secondary/50"><dt className="text-xs text-muted-foreground">Sector</dt><dd className="text-sm font-medium">{sectorName}</dd></div>
-                  <div className="p-3 rounded-xl bg-secondary/50"><dt className="text-xs text-muted-foreground">Investment</dt><dd className="text-sm font-medium">{feasibility ? formatInr(feasibility.totalEstimatedCost) : '-'}</dd></div>
+                  <div className="p-3 rounded-xl bg-secondary/50"><dt className="text-xs text-muted-foreground">Roadmap cut (est.)</dt><dd className="text-sm font-medium">{feasibility ? formatCo2(feasibility.totalEstimatedCutKg) : '-'}</dd></div>
                 </dl>
 
                 <p className={`mt-6 text-xs ${pace.meets ? 'text-primary' : 'text-muted-foreground'}`}>
