@@ -193,6 +193,8 @@ function coreRoutes(): SeoRoute[] {
         .filter(p => p.startsWith('/calculators/'))
         .map(p => `[${STATIC_CONTENT[p]?.h1 ?? STATIC_PAGE_META[p].title}](${p})`)
         .concat('[CBAM cost calculator](/cbam-calculator)', '[CBAM cost per tonne by sector](/cbam-cost)', '[Emission factor library](/emission-factors)') },
+      { h2: 'Free checks by service' },
+      { ul: servicePages.map(sp => `[${sp.nav}](/${sp.slug})`) },
     ],
   });
 
