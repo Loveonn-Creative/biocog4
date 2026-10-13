@@ -59,6 +59,68 @@ export const REDUCTION_STRATEGIES: ReductionAction[] = [
   { id: 'supplier-engagement', title: 'Supplier carbon disclosure program', scope: 3, reductionPct: 12, estimatedCostInr: 50000, paybackMonths: 0, effort: 'low', applicableSectors: ['all'] },
 ];
 
+/** Assumed share of total emissions per scope, used when an action's cut is estimated. */
+export const SCOPE_SHARE: Record<1 | 2 | 3, number> = { 1: 0.3, 2: 0.4, 3: 0.3 };
+
+/**
+ * SBTi near-term criteria: a 1.5°C-aligned Scope 1 and 2 target needs at
+ * least a 4.2% linear absolute reduction a year (SBTi Corporate Near-Term
+ * Criteria, absolute contraction approach).
+ */
+export const SBTI_MIN_ANNUAL_PCT = 4.2;
+
+export function sbtiPace(targetReductionPct: number, timelineMonths: number): { annualPct: number; meets: boolean } {
+  const years = Math.max(timelineMonths, 1) / 12;
+  const annualPct = targetReductionPct / years;
+  return { annualPct: Math.round(annualPct * 10) / 10, meets: annualPct >= SBTI_MIN_ANNUAL_PCT };
+}
+
+/** Estimated kgCO2e cut by the actions marked done, with the engine's scope shares. Never above the baseline. */
+export function estimatedCutKg(baselineCo2Kg: number, actions: ReductionAction[], statuses: Record<string, string>): number {
+  const kg = actions
+    .filter(a => statuses[a.id] === 'done')
+    .reduce((sum, a) => sum + baselineCo2Kg * (a.reductionPct / 100) * SCOPE_SHARE[a.scope as 1 | 2 | 3], 0);
+  return Math.min(baselineCo2Kg, Math.round(kg));
+}
+
+export type BadgeKey = 'baseline' | 'locked' | 'pace' | 'first' | 'halfway' | 'target' | 'report';
+
+export interface GameState {
+  hasBaselineData: boolean;
+  goalSaved: boolean;
+  paceMeets: boolean;
+  doneCount: number;
+  progressPct: number;
+  reportExported: boolean;
+}
+
+/** Badges are earned from real state only: data uploaded, goal saved, actions marked done, report exported. */
+export function earnedBadges(s: GameState): BadgeKey[] {
+  const out: BadgeKey[] = [];
+  if (s.hasBaselineData) out.push('baseline');
+  if (s.goalSaved) out.push('locked');
+  if (s.paceMeets) out.push('pace');
+  if (s.doneCount > 0) out.push('first');
+  if (s.progressPct >= 50) out.push('halfway');
+  if (s.progressPct >= 100) out.push('target');
+  if (s.reportExported) out.push('report');
+  return out;
+}
+
+/** Target date stored for a timeline choice: 12 or 36 months from `from`, or the end of 2030. */
+export function targetDateFor(timelineMonths: number, from = new Date()): string {
+  if (timelineMonths >= 60) return '2030-12-31';
+  const d = new Date(Date.UTC(from.getUTCFullYear(), from.getUTCMonth() + timelineMonths, from.getUTCDate()));
+  return d.toISOString().slice(0, 10);
+}
+
+/** The timeline choice a stored goal was saved with. */
+export function timelineFromGoal(targetDate: string, createdAt: string): '12' | '36' | '60' {
+  if (targetDate.startsWith('2030-12-31')) return '60';
+  const months = (new Date(targetDate).getTime() - new Date(createdAt).getTime()) / (30.44 * 86_400_000);
+  return months > 24 ? '36' : '12';
+}
+
 export interface FeasibilityResult {
   baselineCo2Kg: number;
   targetReductionPct: number;
@@ -103,8 +165,7 @@ export function calculateFeasibility(
   for (const action of sorted) {
     if (cumulativeReduction >= targetReductionPct) break;
     // Rough: each action's % applies to its scope share of total
-    const scopeShare = action.scope === 1 ? 0.3 : action.scope === 2 ? 0.4 : 0.3;
-    const effectiveReduction = action.reductionPct * scopeShare;
+    const effectiveReduction = action.reductionPct * SCOPE_SHARE[action.scope as 1 | 2 | 3];
     cumulativeReduction += effectiveReduction;
     totalCost += action.estimatedCostInr;
     recommended.push(action);
