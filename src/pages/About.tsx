@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { MinimalNav } from "@/components/MinimalNav";
 import { ChapterStory, BecomesLine, type Chapter } from "@/components/about/AboutStory";
 import { Footer } from "@/components/Footer";
@@ -8,10 +7,8 @@ import { SEOHead } from "@/components/SEOHead";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import aboutOg from "@/assets/og/about.jpg";
 
-const Source = ({ href, children }: { href: string; children: ReactNode }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs text-muted-foreground underline decoration-dotted underline-offset-4 hover:text-foreground">{children}</a>
-);
-
+// Sources (kept here, not on the page): CBAM Regulation (EU) 2023/956, eur-lex.europa.eu;
+// CCTS 2023, Bureau of Energy Efficiency, beeindia.gov.in; ~63 million MSMEs, Ministry of MSME Annual Report, msme.gov.in.
 const chapters: Chapter[] = [
   {
     id: "problem", label: "The Problem",
@@ -24,12 +21,10 @@ const chapters: Chapter[] = [
           <div className="border-l-2 border-primary/40 pl-4">
             <p className="text-2xl font-semibold text-foreground">EU CBAM</p>
             <p className="text-sm text-muted-foreground mt-1">Importers of covered goods into the EU report their embedded emissions. The definitive period begins in 2026.</p>
-            <Source href="https://eur-lex.europa.eu/eli/reg/2023/956/oj">Regulation (EU) 2023/956</Source>
           </div>
           <div className="border-l-2 border-primary/40 pl-4">
             <p className="text-2xl font-semibold text-foreground">India CCTS</p>
             <p className="text-sm text-muted-foreground mt-1">The Carbon Credit Trading Scheme, 2023 sets up India's domestic carbon market under the Energy Conservation Act.</p>
-            <Source href="https://beeindia.gov.in/">Bureau of Energy Efficiency</Source>
           </div>
         </div>
         <p className="text-muted-foreground mt-6 leading-relaxed">
@@ -56,7 +51,6 @@ const chapters: Chapter[] = [
         <p className="text-muted-foreground mt-6 leading-relaxed">
           India alone has around 63 million MSMEs, and most have no practical way to measure and prove their emissions.
         </p>
-        <Source href="https://msme.gov.in/">Ministry of MSME, Annual Report</Source>
       </>
     ),
   },
