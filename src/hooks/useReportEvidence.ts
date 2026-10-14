@@ -4,6 +4,7 @@ import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { applyScope, scopeKey } from '@/lib/workspaceScope';
 import { readOrganizationProfile } from '@/lib/organizationProfile';
+import { countryCodeFromLocation } from '@/lib/countryConfig';
 import { useEmissions } from '@/hooks/useEmissions';
 import { grossKg, latestLedgerRowPerEmission, type LedgerRowLike } from '@/lib/emissionLedger';
 import {
@@ -55,18 +56,8 @@ export interface TargetRecord {
 
 const ENERGY_CATEGORY = /electric|energy|grid|fuel|diesel|petrol|lpg|coal|gas|power/i;
 
-const countryFromLocation = (location: string | null): string => {
-  if (!location) return 'IN';
-  const l = location.trim().toLowerCase();
-  const map: Record<string, string> = {
-    india: 'IN', indonesia: 'ID', vietnam: 'VN', thailand: 'TH',
-    philippines: 'PH', bangladesh: 'BD', pakistan: 'PK',
-    malaysia: 'MY', singapore: 'SG', 'sri lanka': 'LK',
-  };
-  if (map[l]) return map[l];
-  if (/^[a-z]{2}$/.test(l)) return l.toUpperCase();
-  return 'IN';
-};
+// Saved country names ("United States", "Germany") map to their codes; not set means India, as Settings shows.
+const countryFromLocation = (location: string | null): string => countryCodeFromLocation(location);
 
 export function useReportEvidence() {
   const { user } = useSession();

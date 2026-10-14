@@ -8,7 +8,7 @@ import { PlatformMarquee } from "@/components/PlatformMarquee";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/lib/i18n/useTranslation";
-import { COUNTRY_CONFIGS } from "@/lib/countryConfig";
+import { COUNTRY_CONFIGS, gridFactorUnit } from "@/lib/countryConfig";
 import platformOg from "@/assets/og/platform.jpg";
 import { Reveal, SectionHead } from "@/components/platform/Reveal";
 import { WhySwitcher } from "@/components/platform/WhySwitcher";
@@ -310,7 +310,7 @@ const Platform = () => {
                     {countries.map(c => (
                       <li key={c.code} className="flex justify-between gap-3 border-b border-border py-2 text-[13px]">
                         <span className="text-foreground">{c.name}</span>
-                        <span className="font-mono text-muted-foreground">{c.taxIdLabel} · {c.gridFactor} kgCO₂e/kWh</span>
+                        <span className="font-mono text-muted-foreground">{c.taxIdLabel} · {c.gridFactor} {gridFactorUnit(c.code)}</span>
                       </li>
                     ))}
                   </ul>

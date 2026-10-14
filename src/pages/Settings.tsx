@@ -13,7 +13,7 @@ import { useSession } from '@/hooks/useSession';
 import { supabase } from '@/integrations/supabase/client';
 import { Settings as SettingsIcon, Building2, Globe, Target, Shield, Save, Check, Layers, Lock } from 'lucide-react';
 import { toast } from 'sonner';
-import { getCountryList, getCountryConfig } from '@/lib/countryConfig';
+import { getCountryList, getCountryConfig, gridFactorUnit } from '@/lib/countryConfig';
 import { COMPANY_SECTORS } from '@/lib/organizationProfile';
 import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLayerSettings';
 import { Link } from 'react-router-dom';
@@ -258,7 +258,7 @@ const Settings = () => {
                   </SelectContent>
                 </Select>
                 <p className="text-xs text-muted-foreground">
-                  Grid factor: {countryConfig.gridFactor} kgCO₂e/kWh • Gov body: {countryConfig.govBody}
+                  Grid factor: {countryConfig.gridFactor} {gridFactorUnit(countryConfig.code)} • Gov body: {countryConfig.govBody}
                 </p>
               </div>
             </CardContent>

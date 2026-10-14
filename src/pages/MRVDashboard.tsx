@@ -22,6 +22,7 @@ import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
 import { useScope3Visibility } from '@/hooks/useScope3Trail';
 
 const Scope3Trail = lazy(() => import('@/components/scope3/Scope3Trail').then((m) => ({ default: m.Scope3Trail })));
+const Scope2Panel = lazy(() => import('@/components/scope2/Scope2Panel').then((m) => ({ default: m.Scope2Panel })));
 import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
@@ -709,6 +710,11 @@ const MRVDashboard = () => {
             </div>
           </>
         )}
+
+        {/* Scope 2: location- and market-based, once the Scope 2 engine is enabled */}
+        <div className="mt-6 empty:hidden">
+          <Suspense fallback={null}><Scope2Panel /></Suspense>
+        </div>
 
         {/* Scope 3 supplier visibility */}
         <div className="mt-6">
