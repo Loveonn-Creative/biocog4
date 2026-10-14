@@ -175,6 +175,8 @@ const Monetize = () => {
       const { data, error } = await supabase
         .from('monetization_pathways')
         .insert({
+          // The row's owner: required by the table's access rule (user_id = auth.uid()).
+          ...(user ? { user_id: user.id } : { session_id: sessionId }),
           verification_id: verifications[0].id,
           pathway_type: pathwayType,
           partner_name: partnerName,
@@ -195,8 +197,8 @@ const Monetize = () => {
       toast.success(`Request received. The Senseible team will contact you about ${partnerName}.`);
       setPathwayStatuses(prev => ({ ...prev, [pathwayType]: 'applied' }));
     } catch (err) {
-      console.error('Error applying for pathway:', err);
-      toast.error('Application failed. Please try again.');
+      console.error('Error applying for pathway:', (err as { code?: string })?.code ?? 'error');
+      toast.error('Could not send your request. Check your connection and try again.');
     } finally {
       setApplyingPathway(null);
     }

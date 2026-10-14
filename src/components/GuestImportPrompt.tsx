@@ -22,6 +22,8 @@ export function GuestImportPrompt() {
   const { user } = useSession();
   if (!pending) return null;
 
+  // Close for now; the uploads stay on this device (24 hours) and are offered again next visit.
+  const later = () => { setPendingGuestImport(null); setError(null); };
   const decline = () => {
     forgetGuestSession(pending.sessionId);
     void forgetLocalGuestResults();
@@ -78,6 +80,7 @@ export function GuestImportPrompt() {
         </AlertDialogHeader>
         {error && <p className="text-sm text-destructive" role="alert">{error}</p>}
         <AlertDialogFooter>
+          <Button variant="ghost" onClick={later} disabled={busy}>Later</Button>
           <Button variant="outline" onClick={decline} disabled={busy}>Not mine</Button>
           <Button onClick={accept} disabled={busy}>{busy ? "Adding..." : "Yes, add them"}</Button>
         </AlertDialogFooter>

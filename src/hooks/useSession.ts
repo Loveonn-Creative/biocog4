@@ -198,7 +198,9 @@ export function useSession() {
 
           // Guest uploads on this device are never adopted automatically. The
           // person who signed in is asked first (GuestImportPrompt).
-          if (event === 'SIGNED_IN') {
+          // INITIAL_SESSION covers a reload after "Later", and email-link or
+          // OAuth landings where SIGNED_IN may not reach this listener.
+          if (event === 'SIGNED_IN' || event === 'INITIAL_SESSION') {
             const anonSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
             if (anonSessionId && !guestChecksStarted.has(anonSessionId)) {
               guestChecksStarted.add(anonSessionId);
@@ -230,13 +232,24 @@ export function useSession() {
     const deviceFingerprint = getDeviceFingerprint();
     // Results kept in this browser (guest uploads are no longer stored on the server).
     const { listGuestResults } = await import('@/lib/guestResults');
-    const localInvoices = (await listGuestResults().catch(() => [])).length;
+    const local = await listGuestResults().catch(() => []);
+    let localInvoices = local.length;
     let counts: GuestCounts = { documents: 0, emissions: 0, verifications: 0, reports: 0 };
     try {
       const supabase = await loadSupabase();
       const { data, error } = await supabase.functions.invoke('merge-session', { body: { sessionId, deviceFingerprint } });
       if (error) console.error('Guest upload check failed');
-      else if (data?.preview && hasGuestData(data?.counts as GuestCounts | undefined)) counts = data.counts as GuestCounts;
+      else if (data?.preview && hasGuestData(data?.counts as GuestCounts | undefined)) {
+        counts = data.counts as GuestCounts;
+        // The same upload can exist on the server (older reader) and in this
+        // browser; count it once.
+        if (Array.isArray(data.hashes)) {
+          const serverHashes = new Set<string>(data.hashes);
+          localInvoices = local.filter((r) => !serverHashes.has(r.hash)).length;
+        } else if (localInvoices && counts.documents) {
+          localInvoices = Math.max(0, localInvoices - counts.documents);
+        }
+      }
     } catch {
       console.error('Guest upload check failed');
     }

@@ -25,6 +25,8 @@ import { checkUploadPages } from '@/lib/pdfLimit';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
+import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
+import { emitRecordsChanged } from '@/lib/recordsEvents';
 interface FileStatus {
   file: File;
   status: 'pending' | 'processing' | 'success' | 'duplicate' | 'error';
@@ -109,8 +111,17 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
     setFiles(queue);
     const totalFiles = queue.length;
 
+    // Set when reading is paused on our side (402) or a limit is reached (429):
+    // the remaining files are not sent, and say why.
+    let stopReason: string | null = null;
     for (let i = 0; i < queue.length; i++) {
       const fileStatus = queue[i];
+      if (stopReason) {
+        setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'error' as const, message: `Not sent: ${stopReason}` } : f));
+        results.errors++;
+        setProgress(((i + 1) / totalFiles) * 100);
+        continue;
+      }
       if (fileStatus.status === 'error') { results.errors++; setProgress(((i + 1) / totalFiles) * 100); continue; }
       
       // Update status to processing
@@ -126,7 +137,18 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           body: { imageBase64, mimeType, sessionId, organizationId }
         });
 
-        if (error) throw error;
+        if (error) {
+          const status = functionErrorStatus(error);
+          const message = await getFunctionErrorMessage(error, 'Could not be read');
+          if (status === 402 || status === 429) stopReason = message;
+          if (status === 409) {
+            setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'duplicate' as const, message: 'Already processed' } : f));
+            results.duplicates++;
+            setProgress(((i + 1) / totalFiles) * 100);
+            continue;
+          }
+          throw new Error(message);
+        }
 
         if (data?.isDuplicate && !data?.success) {
           // Duplicate blocked
@@ -152,19 +174,19 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             .select('id')
             .eq('document_hash', data.documentHash);
           // In an organisation workspace the invoice is the organisation's, whoever uploaded it.
-          const { data: document } = await (organizationId
+          const { data: ownerDocs } = await (organizationId
             ? docLookup.eq('organization_id', organizationId)
             : docLookup.eq('user_id', user?.id || ''))
-            .order('created_at', { ascending: false })
-            .limit(1)
-            .maybeSingle();
+            .order('created_at', { ascending: false });
+          const document = ownerDocs?.[0];
 
           if (!document) throw new Error('Processed evidence could not be linked to its source document');
 
+          // Any document this owner holds for the same file counts: never record an invoice twice.
           const { data: existingEmissions } = await supabase
             .from('emissions')
             .select('id')
-            .eq('document_id', document.id)
+            .in('document_id', (ownerDocs ?? []).map((d: { id: string }) => d.id))
             .limit(1);
 
           if (!existingEmissions?.length) {
@@ -192,12 +214,13 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         } else {
           throw new Error(data?.error || 'Unknown error');
         }
-      } catch (err: any) {
+      } catch (err) {
+        const message = err instanceof Error && err.message && !/non-2xx/i.test(err.message) ? err.message : 'Processing failed';
         setFiles(prev => prev.map((f, idx) => 
           idx === i ? { 
             ...f, 
             status: 'error' as const,
-            message: err.message || 'Processing failed'
+            message
           } : f
         ));
         results.errors++;
@@ -214,7 +237,11 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
     if (results.duplicates > 0) parts.push(`${results.duplicates} duplicates skipped`);
     if (results.errors > 0) parts.push(`${results.errors} errors`);
     
-    toast.success(`Bulk upload complete: ${parts.join(', ')}`);
+    if (results.processed > 0) emitRecordsChanged('upload');
+    if (results.processed > 0) toast.success(`Bulk upload complete: ${parts.join(', ')}`);
+    else if (stopReason) toast.error(stopReason, { duration: 8000 });
+    else if (results.duplicates > 0 && results.errors === 0) toast.info(`Nothing new: ${parts.join(', ')}`);
+    else toast.error(`Nothing was processed: ${parts.join(', ')}. See each file below.`);
     onComplete?.(results);
   };
 

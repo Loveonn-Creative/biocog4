@@ -127,13 +127,29 @@ Deno.serve(async (req) => {
       );
     }
 
-    // What this guest session holds that has no owner yet.
-    const [docCount, emissionCount, verificationCount, reportCount] = await Promise.all(
-      ['documents', 'emissions', 'carbon_verifications', 'reports'].map(t =>
-        supabaseAdmin.from(t).select('id', { count: 'exact', head: true }).eq('session_id', sessionId).is('user_id', null)),
+    // What this guest session holds that has no owner yet. Only documents
+    // with a result count: placeholders left by a failed read are not
+    // invoices. A file this account already holds is not moved again, so
+    // nothing is counted twice.
+    const { data: guestDocs } = await supabaseAdmin.from('documents')
+      .select('id, document_hash, cached_result').eq('session_id', sessionId).is('user_id', null);
+    const realDocs = (guestDocs ?? []).filter((d: { cached_result: unknown }) => d.cached_result != null);
+    const hashes = [...new Set(realDocs.map((d: { document_hash: string | null }) => d.document_hash).filter((h): h is string => !!h))];
+    const { data: owned } = hashes.length
+      ? await supabaseAdmin.from('documents').select('document_hash').eq('user_id', user.id).in('document_hash', hashes)
+      : { data: [] as Array<{ document_hash: string }> };
+    const ownedHashes = new Set((owned ?? []).map((d: { document_hash: string }) => d.document_hash));
+    const moveDocIds = realDocs.filter((d: { document_hash: string | null }) => !d.document_hash || !ownedHashes.has(d.document_hash)).map((d: { id: string }) => d.id);
+    const skipDocIds = (guestDocs ?? []).map((d: { id: string }) => d.id).filter((id: string) => !moveDocIds.includes(id));
+    const [emissionCount, verificationCount, reportCount] = await Promise.all(
+      ['emissions', 'carbon_verifications', 'reports'].map(t => {
+        let q = supabaseAdmin.from(t).select('id', { count: 'exact', head: true }).eq('session_id', sessionId).is('user_id', null);
+        if (t === 'emissions' && skipDocIds.length) q = q.or(`document_id.is.null,document_id.not.in.(${skipDocIds.join(',')})`);
+        return q;
+      }),
     );
     const counts = {
-      documents: docCount.count || 0,
+      documents: moveDocIds.length,
       emissions: emissionCount.count || 0,
       verifications: verificationCount.count || 0,
       reports: reportCount.count || 0,
@@ -142,7 +158,7 @@ Deno.serve(async (req) => {
     // Nothing moves without the signed-in person's explicit confirmation.
     if (confirm !== true) {
       return new Response(
-        JSON.stringify({ success: true, preview: true, counts }),
+        JSON.stringify({ success: true, preview: true, counts, hashes: realDocs.filter((d: { id: string }) => moveDocIds.includes(d.id)).map((d: { document_hash: string | null }) => d.document_hash).filter(Boolean) }),
         { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
@@ -150,11 +166,15 @@ Deno.serve(async (req) => {
     // Move table by table and stop at the first error. The session stays open
     // on failure, so a retry moves exactly the rows that are left.
     for (const table of GUEST_TABLES) {
-      const { error } = await supabaseAdmin
+      let move = supabaseAdmin
         .from(table)
         .update({ user_id: user.id, session_id: null })
         .eq('session_id', sessionId)
         .is('user_id', null);
+      // Placeholders and files the account already holds stay behind.
+      if (table === 'documents') move = move.in('id', moveDocIds.length ? moveDocIds : ['00000000-0000-0000-0000-000000000000']);
+      if (table === 'emissions' && skipDocIds.length) move = move.or(`document_id.is.null,document_id.not.in.(${skipDocIds.join(',')})`);
+      const { error } = await move;
       if (error) {
         console.error('Merge failed at', table, error.code);
         await supabaseAdmin.from('security_audit_log').insert({
