@@ -283,3 +283,19 @@ The real edge function was also run against a schema without this migration (2 c
 Retention: schedule a daily call to `finance-application` with `{"action":"purge_expired"}` and the service-role key. It removes files and rows past `retain_until`.
 
 Roll back with `rollback/20261023100000_finance_applications.rollback.sql`. First remove stored files through the Storage API. The rollback refuses while applications exist unless run with `SET LOCAL finance.rollback_confirm = 'drop finance applications';`.
+
+## 20261024100000_intelligence_usage.sql (Biocog Intelligence limits)
+
+One new table and three functions. Nothing existing is touched.
+
+- `intelligence_usage`: counts per subject, kind and India-time day. Kinds: `message` (daily question limit) and `voice_session` (monthly real-time voice cap). Subjects are `u:<user id>` or `g:<hash>` for guests. The guest hash is an HMAC of the network address and the day, keyed with a server secret, so no address is stored and a guest cannot be followed across days.
+- `intelligence_take(subject, kind, day, window_start, limit)`: counts one use only if under the limit, locked per subject and kind so two requests at once cannot both take the last use.
+- `intelligence_used(...)`: reads the count. `intelligence_usage_purge()`: deletes rows older than 400 days (schedule it like `purge_expired`).
+
+No browser access at all; only the `intelligence-chat` and `elevenlabs-conversation-token` functions (service role) use it. Until it is applied, both functions keep a per-instance count, which is weaker but never unlimited.
+
+Limits (in `supabase/functions/_shared/intelligence.ts`): questions per day are guest 10, Snapshot 20, Essential 20, Pro 200, Scale 500 (default until a quote sets its own). Voice is Pro 100 and Scale 300 minutes a month, as 20 and 60 sessions of 5 minutes. **Set the ElevenLabs agent's maximum conversation duration to 5 minutes** so the minutes hold.
+
+Tested with `tests/run_intelligence_usage.sh`. It replays every migration, applies this one, rolls back to the identical catalog, re-applies and runs `tests/20261024100000_intelligence_usage.test.sql` (17 checks: limits, day and month windows, refused uses not stored, raw addresses refused, purge, no browser or anonymous access).
+
+Roll back with `rollback/20261024100000_intelligence_usage.rollback.sql` (counts only, so no confirmation step).
