@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { MinimalNav } from '@/components/MinimalNav';
 import { SEOHead } from '@/components/SEOHead';
+import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -74,7 +75,7 @@ export default function GreenLoanCheck() {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Green loan check for MSMEs | Senseible" description="A two-minute check of what a lender will ask for in a green loan application, and the one piece most MSMEs are missing." noIndex />
+      <SEOHead title={STATIC_PAGE_META['/green-loan-check'].title} description={STATIC_PAGE_META['/green-loan-check'].description} canonical="/green-loan-check" />
       <MinimalNav />
       <main className="mx-auto max-w-xl px-4 pb-16 pt-24">
         <p className="text-xs uppercase tracking-wider text-primary">Green loan check · 2 minutes</p>

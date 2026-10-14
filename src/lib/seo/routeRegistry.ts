@@ -228,7 +228,7 @@ function coreRoutes(): SeoRoute[] {
     ['/net-zero', 'tool', 0.7], ['/enterprise', 'core', 0.8], ['/cbam-calculator', 'tool', 0.9],
     ['/marketplace', 'core', 0.5], ['/intelligence', 'tool', 0.5],
     ...servicePages.map(sp => [`/${sp.slug}`, 'core', 0.8] as [string, RouteSection, number]),
-    ['/scope-3-supplier-evidence', 'tool', 0.7], ['/msme-carbon-number', 'tool', 0.7],
+    ['/scope-3-supplier-evidence', 'tool', 0.7], ['/msme-carbon-number', 'tool', 0.7], ['/green-loan-check', 'tool', 0.7],
   ];
   const calculators = Object.keys(STATIC_PAGE_META)
     .filter(p => p.startsWith('/calculators/'))
