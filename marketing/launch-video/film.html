@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Carbon proof film</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Indic'; font-weight: 600; src: url('node_modules/@fontsource/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-600-normal.woff2') format('woff2'); unicode-range: U+0900-097F; }
+@font-face { font-family: 'Indic'; font-weight: 600; src: url('node_modules/@fontsource/noto-sans-tamil/files/noto-sans-tamil-tamil-600-normal.woff2') format('woff2'); unicode-range: U+0B80-0BFF; }
+@font-face { font-family: 'Indic'; font-weight: 600; src: url('node_modules/@fontsource/noto-sans-bengali/files/noto-sans-bengali-bengali-600-normal.woff2') format('woff2'); unicode-range: U+0980-09FF; }
+:root {
+  --ink: #16181d; --muted: #6b6f78; --pen: #2643c4; --red: #c8372d;
+  --green: hsl(152 45% 24%); --saffron: #f08a24; --paper: #fffdf8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', 'Indic', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #e6e8ec; }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .07; pointer-events: none; z-index: 50; mix-blend-mode: multiply; }
+#world { position: absolute; inset: 0; perspective: 1900px; }
+.obj { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; backface-visibility: hidden; }
+svg.ink { position: absolute; overflow: visible; pointer-events: none; }
+svg.ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* kinetic type */
+.cap { position: absolute; left: 130px; width: 880px; font-size: 72px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.cap .w > span { display: inline-block; }
+#cA1 { top: 380px; } #cA2 { top: 380px; }
+#cA3 { top: 472px; font-size: 54px; color: var(--red); font-weight: 500; }
+#cB { top: 250px; font-size: 50px; line-height: 1.16; font-weight: 500; }
+#cB .li { display: block; }
+#cB2 { top: 392px; } #cC1 { top: 392px; }
+#cD1 { top: 380px; } #cD2 { top: 470px; color: var(--green); }
+
+/* loan form */
+#form { width: 620px; height: 800px; background: var(--paper); border-radius: 6px; padding: 46px 48px;
+  box-shadow: 0 1px 0 #ddd, 0 60px 90px -40px rgba(20,25,40,.45); }
+#form .fh { border-bottom: 3px solid var(--ink); padding-bottom: 18px; margin-bottom: 14px; }
+#form .fh .mono { font-size: 15px; color: var(--muted); letter-spacing: .08em; }
+#form .fh b { display: block; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; margin-top: 6px; }
+.frow { position: relative; display: flex; justify-content: space-between; align-items: center; height: 84px; border-bottom: 1px solid #e7e3da; font-size: 26px; }
+.box { width: 46px; height: 46px; border: 2.5px solid var(--ink); border-radius: 4px; }
+.frow.em { height: 150px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 12px; border-bottom: 0; }
+.frow.em .wide { width: 100%; height: 66px; border: 2.5px solid var(--ink); border-radius: 4px; position: relative; }
+#fill { position: absolute; left: 16px; top: 4px; font-size: 46px; color: var(--pen); white-space: nowrap; }
+.sig { position: absolute; left: 48px; right: 48px; bottom: 54px; border-top: 1.5px solid #bbb; font-size: 16px; color: var(--muted); padding-top: 8px; }
+.stamp { position: absolute; font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .12em; border: 6px solid currentColor;
+  border-radius: 10px; padding: 8px 22px; font-size: 52px; white-space: nowrap; filter: url(#rough); mix-blend-mode: multiply; }
+#redStamp { color: var(--red); left: 128px; top: 360px; }
+#greenStamp { color: var(--green); left: 150px; top: 300px; }
+
+/* stack + bill */
+.sheet b { display: block; font-size: 34px; font-weight: 600; letter-spacing: -0.01em; border-bottom: 3px solid #2a2d33; padding-bottom: 14px; }
+.sheet .mono { display: block; margin-top: 14px; font-size: 18px; color: #7a7d85; }
+.sheet { width: 520px; height: 680px; background: #f7f7f5; border-radius: 4px; padding: 38px 40px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 46px, #e2e2de 46px 48px); background-size: 100% 100%; background-position: 0 150px; background-repeat: no-repeat;
+  box-shadow: 0 2px 0 #c9c9c4, 0 3px 0 #ededea, 0 30px 50px -30px rgba(0,0,0,.35); }
+#bill { width: 520px; height: 680px; background: var(--paper); border-radius: 6px; padding: 40px 42px;
+  box-shadow: 0 1px 0 #ddd, 0 60px 90px -40px rgba(30,25,10,.45); }
+#bill .bh { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 16px; height: 78px; }
+#billTitle { font-size: 38px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; }
+#bill .bh .mono { font-size: 15px; color: var(--muted); padding-bottom: 6px; }
+.redact { display: flex; flex-direction: column; gap: 10px; padding: 22px 0; border-bottom: 1px dashed #ddd; }
+.redact i { display: block; height: 13px; border-radius: 7px; background: #ebe8e1; }
+.brow { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; font-size: 25px; border-bottom: 1px solid #efebe3; }
+.brow .k { color: var(--muted); } .brow .v { font-weight: 600; }
+#unitsV { position: relative; }
+
+/* the maths */
+#math { position: absolute; left: 1010px; top: 250px; width: 820px; }
+#math .lbl { font-size: 22px; color: var(--muted); }
+#math .ln { font-size: 56px; font-weight: 600; letter-spacing: -0.02em; margin: 4px 0 18px; }
+#math .ln small { font-size: 26px; color: var(--muted); font-weight: 500; margin-left: 8px; }
+#math .op { color: var(--muted); font-weight: 400; margin-right: 12px; }
+#mRule { height: 4px; background: var(--ink); transform-origin: left; margin: 6px 0 18px; }
+#mBig { font-size: 168px; font-weight: 600; letter-spacing: -0.05em; line-height: .95; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#mBig small { font-size: 52px; letter-spacing: 0; margin-left: 14px; font-weight: 500; }
+#mStampWrap { position: relative; height: 96px; margin-top: 26px; }
+#mStamp { position: absolute; left: 0; top: 0; color: var(--green); font-size: 32px; border-width: 5px; padding: 8px 18px; }
+#mCap { font-size: 40px; font-weight: 500; letter-spacing: -0.02em; margin-top: 10px; }
+#fly { position: absolute; left: 0; top: 0; font-size: 25px; font-weight: 600; white-space: nowrap; transform-origin: left top; z-index: 30; }
+
+/* end */
+#end { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#end .big { position: relative; font-size: 128px; font-weight: 600; letter-spacing: -0.045em; line-height: 1.0; text-align: center; }
+#end .big .u { position: relative; display: inline-block; }
+#end .mark { margin-top: 84px; font-size: 44px; letter-spacing: .34em; padding-left: .34em; }
+#end .sub { margin-top: 20px; font-size: 26px; color: var(--muted); }
+#end .sub b { color: var(--green); font-weight: 600; }
+
+/* portrait 9:16 */
+body.portrait .cap { left: 70px; width: 950px; font-size: 80px; }
+body.portrait #cA1 { top: 190px; } body.portrait #cA2 { top: 190px; } body.portrait #cA3 { top: 300px; font-size: 62px; }
+body.portrait #cB { top: 150px; font-size: 62px; }
+body.portrait #cB2, body.portrait #cC1 { top: 220px; }
+body.portrait #cD1 { top: 200px; } body.portrait #cD2 { top: 300px; }
+body.portrait #math { left: 80px; top: 1180px; width: 920px; }
+body.portrait #mBig { font-size: 190px; }
+body.portrait #mCap { font-size: 46px; }
+body.portrait #end .big { font-size: 112px; padding: 0 40px; }
+.psp { display: none; } body.portrait .psp { display: inline; } body.portrait .lsp { display: none; }
+body.portrait #end .mark { font-size: 56px; } body.portrait #end .sub { font-size: 32px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.55"/><feComposite in="SourceGraphic" operator="in"/></filter>
+  </svg>
+  <svg id="grain"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="9"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+
+  <div id="world">
+    <!-- the loan file -->
+    <div class="obj" id="form">
+      <div class="fh"><span class="mono">FORM GL-01 · MSME TERM LOAN</span><b>Green loan application</b></div>
+      <div class="frow"><span>Udyam registration</span><span class="box"></span></div>
+      <div class="frow"><span>GST returns, 12 months</span><span class="box"></span></div>
+      <div class="frow"><span>Bank statements</span><span class="box"></span></div>
+      <div class="frow"><span>Collateral details</span><span class="box"></span></div>
+      <div class="frow em"><span>Emissions baseline (t CO₂ / year)</span><div class="wide" id="emBox"><span id="fill" class="hand"></span></div></div>
+      <div class="sig">Applicant signature</div>
+      <svg class="ink" id="formInk" style="left:0;top:0;width:620px;height:800px"></svg>
+      <div class="stamp" id="redStamp">INCOMPLETE</div>
+      <div class="stamp" id="greenStamp">COMPLETE</div>
+    </div>
+
+    <!-- what people use instead: the pile -->
+    <div class="obj" id="bill">
+      <div class="bh"><span id="billTitle">Electricity bill</span><span class="mono">LT · INDUSTRIAL</span></div>
+      <div class="redact"><i style="width:56%"></i><i style="width:80%"></i><i style="width:38%"></i></div>
+      <div class="brow"><span class="k">Billing period</span><span class="v">Sep 2026</span></div>
+      <div class="brow"><span class="k">Sanctioned load</span><span class="v">45 kW</span></div>
+      <div class="brow"><span class="k">Units consumed</span><span class="v" id="unitsV">4,820 kWh</span></div>
+      <div class="brow" style="border:0"><span class="k">Amount payable</span><span class="v">₹ 41,970</span></div>
+      <svg class="ink" id="billInk" style="left:0;top:0;width:520px;height:680px"></svg>
+    </div>
+    <div class="obj sheet" id="s1"><b>Consultant quotation</b><span class="mono">Scope: carbon baseline · fee on request</span></div>
+    <div class="obj sheet" id="s2"><b>Site visit report</b><span class="mono">Visit 1 of 3 · pending</span></div>
+    <div class="obj sheet" id="s3"><b>emissions_FINAL_v7.xlsx</b><span class="mono">#REF! #REF! #REF!</span></div>
+    <div class="obj sheet" id="s4"><b>ESG suite · annual licence</b><span class="mono">Built for 10,000+ employees</span></div>
+    <div class="obj sheet" id="s5"><b>Supplier disclosure form</b><span class="mono">English only · 46 pages</span></div>
+    <div class="obj sheet" id="s6"><b>Project timeline</b><span class="mono">Month 1 ▸ Month 2 ▸ Month 3 ▸ …</span></div>
+  </div>
+
+  <div class="cap" id="cA1">Everything was ready.</div>
+  <div class="cap" id="cA2">Except one line.</div>
+  <div class="cap" id="cA3">Emissions baseline.</div>
+  <div class="cap" id="cB">
+    <span class="li">Hire a consultant.</span><span class="li">Site visits.</span><span class="li">Spreadsheets.</span>
+    <span class="li">Software built for big companies.</span><span class="li">Mostly in English.</span><span class="li" style="color:var(--red)">Months.</span>
+  </div>
+  <div class="cap" id="cB2">It's already in your bills.</div>
+  <div class="cap" id="cC1">In the language you read.</div>
+  <div class="cap" id="cD1">Locked out by one line.</div>
+  <div class="cap" id="cD2">Back in with one bill.</div>
+
+  <div id="math">
+    <div id="m1"><div class="lbl">Units consumed</div><div class="ln" id="mUnits">4,820<small>kWh</small></div></div>
+    <div id="m2"><div class="lbl">India grid emission factor</div><div class="ln"><span class="op">×</span>0.710<small>kg CO₂ per kWh</small></div></div>
+    <div id="mRule"></div>
+    <div id="mBig"><span id="mN">0.00</span><small>t CO₂</small></div>
+    <div id="mStampWrap"><div class="stamp" id="mStamp">VERIFIED · COUNTED ONCE</div></div>
+    <div id="mCap">A number a lender can underwrite.</div>
+  </div>
+  <div id="fly">4,820 kWh</div>
+
+  <div id="end">
+    <div class="big" id="eBig"><span class="w1">Your <span class="u" id="uBills">bills</span> are<span class="lsp"> your</span></span><br><span class="w2"><span class="psp" style="color:var(--ink)">your </span>carbon proof.</span>
+      <svg class="ink" id="endInk" style="left:0;top:0;width:100%;height:100%"></svg></div>
+    <div class="mark" id="eMark">Senseible</div>
+    <div class="sub" id="eSub">First report free · <b>senseible.earth</b></div>
+  </div>
+</div>
+
+<script>
+// Positioning: MSMEs locked out of green finance for want of one number. Alternatives named on
+// src/pages/About.tsx ("Consultants, site visits, spreadsheets") and src/data/competitorData.ts
+// (enterprise suites, months-long engagements). Copy echoes AskCards/HomeStory/Platform.
+// 4,820 kWh x 0.710 kgCO2/kWh = 3,422 kg = 3.42 t. Factor: supabase/functions/_shared/emissionFactors.ts.
+// Bill shows billing fields only; personal details are redacted (AGENTS.md).
+const portrait = new URLSearchParams(location.search).get('o') === 'portrait';
+if (portrait) document.body.classList.add('portrait');
+const W = portrait ? 1080 : 1920, H = portrait ? 1920 : 1080;
+const LAY = portrait
+  ? { ox: 540, oy: 1200, billC: [540, 790, .72], stack: [540, 1330] }
+  : { ox: 1330, oy: 575, billC: [560, 560, .95], stack: [1440, 610] };
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = {
+  out3: x => 1 - Math.pow(1 - x, 3), out5: x => 1 - Math.pow(1 - x, 5),
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  in2: x => x * x,
+};
+const p = (t, s, d, e = E.out3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const mixHex = (a, b, k) => { const pa = a.match(/\w\w/g).map(h => parseInt(h, 16)), pb = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + pa.map((v, i) => Math.round(lerp(v, pb[i], k)).toString(16).padStart(2, '0')).join(''); };
+
+// ---------- hand-drawn ink: deterministic wobble ----------
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function loop(cx, cy, rx, ry, turns = 1.18) {
+  let d = ''; const n = 48;
+  for (let i = 0; i <= n; i++) {
+    const a = -2.4 + (i / n) * Math.PI * 2 * turns, j = 1 + (rnd() - .5) * .06 + i / n * .07;
+    d += (i ? 'L' : 'M') + (cx + Math.cos(a) * rx * j).toFixed(1) + ' ' + (cy + Math.sin(a) * ry * j).toFixed(1);
+  }
+  return d;
+}
+const tick = (x, y, s = 1) => `M${x} ${y + 4 * s} C ${x + 6 * s} ${y + 10 * s}, ${x + 10 * s} ${y + 18 * s}, ${x + 13 * s} ${y + 24 * s} C ${x + 20 * s} ${y + 6 * s}, ${x + 32 * s} ${y - 10 * s}, ${x + 46 * s} ${y - 22 * s}`;
+const underline = (x1, x2, y) => `M${x1} ${y} C ${lerp(x1, x2, .3)} ${y - 9}, ${lerp(x1, x2, .6)} ${y + 8}, ${x2} ${y - 4} M${lerp(x1, x2, .1)} ${y + 12} C ${lerp(x1, x2, .45)} ${y + 6}, ${lerp(x1, x2, .75)} ${y + 15}, ${lerp(x1, x2, .95)} ${y + 9}`;
+function ink(svg, d, color, w) {
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', d); path.setAttribute('stroke', color); path.setAttribute('stroke-width', w);
+  path.setAttribute('pathLength', 1); path.style.strokeDasharray = 1; path.style.strokeDashoffset = 1;
+  svg.appendChild(path); return path;
+}
+const draw = (path, k) => { path.style.strokeDashoffset = 1 - k; };
+
+// form ink: blue ticks in the four boxes, a scribbled signature, a red loop round the empty line, a final blue tick
+const fi = $('formInk');
+const formTicks = [0, 1, 2, 3].map(i => ink(fi, tick(530, 196 + i * 84 + 10, 1), 'var(--pen)', 4.5));
+const sig = ink(fi, 'M70 718 c 14 -30, 26 -34, 22 -6 s -10 22, 6 0 s 18 -30, 24 -6 s 4 14, 16 -4 c 10 -14, 18 -10, 26 -2 s 30 -8, 60 -4', 'var(--pen)', 3);
+const redLoop = ink(fi, loop(310, 621, 300, 92), 'var(--red)', 5);
+const blueTick = ink(fi, tick(500, 618, 1.25), 'var(--pen)', 5.5);
+// bill ink: saffron loop round the units
+const bi = $('billInk');
+const unitsLoop = ink(bi, loop(412, 400, 104, 34), 'var(--saffron)', 5);
+// end ink: underline under "bills"
+let endLine;
+
+// ---------- kinetic captions: words rise from a mask ----------
+function splitWords(el) {
+  if (el.id === 'cB') { el.querySelectorAll('.li').forEach(li => split(li)); return; }
+  split(el);
+  function split(node) { node.innerHTML = node.textContent.split(' ').map(w => `<span class="w"><span>${w}</span></span>`).join(' '); }
+}
+['cA1', 'cA2', 'cA3', 'cB2', 'cC1', 'cD1', 'cD2'].forEach(id => splitWords($(id)));
+function cap(el, t, tin, tout, stagger = .06) {
+  const words = el.querySelectorAll('.w > span');
+  const o = tout == null ? 1 : 1 - p(t, tout, .35, E.io);
+  el.style.opacity = o;
+  el.style.visibility = (t >= tin - .01 && o > 0) ? 'visible' : 'hidden';
+  words.forEach((w, i) => { const k = p(t, tin + i * stagger, .55, E.out5); w.style.transform = `translateY(${(1 - k) * 110}%)`; });
+}
+
+// ---------- 3D pose helper ----------
+function pose(el, { x, y, z = 0, rx = 0, ry = 0, rz = 0, s = 1, o = 1 }) {
+  el.style.left = (x - el.offsetWidth / 2) + 'px'; el.style.top = (y - el.offsetHeight / 2) + 'px';
+  el.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s * (portrait ? 1.3 : 1)})`;
+  el.style.opacity = o; el.style.visibility = o > 0.001 ? 'visible' : 'hidden';
+}
+const ISO = { rx: 56, rz: -34 };
+const FORM = { rx: 22, rz: -5 };
+
+const TITLES = [['बिजली बिल', 9.75], ['மின் கட்டணம்', 10.15], ['বিদ্যুৎ বিল', 10.55], ['Electricity bill', 10.95]];
+
+function render(t) {
+  // background: cold grey while locked out, warm paper once the bill turns
+  const warm = p(t, 8.0, 1.4, E.io);
+  $('stage').style.background = mixHex('#e4e7ec', '#f4eee2', warm);
+  $('world').style.perspectiveOrigin = `${LAY.ox}px ${LAY.oy}px`;
+
+  // ---------- A: the loan file, incomplete (0 – 4.8)
+  // ---------- D: the same file, completed (14.8 – 18.9)
+  const formA = p(t, 0, .9, E.out5), formAOut = p(t, 4.25, .6, E.io);
+  const formD = p(t, 14.75, .8, E.out5), formDOut = p(t, 18.4, .5, E.io);
+  const push = lerp(.9, 1.0, p(t, 0, 4.6, E.io));
+  const shake = (t > 2.62 && t < 2.95) ? Math.sin(t * 90) * 7 * (1 - (t - 2.62) / .33) : 0;
+  const form = $('form');
+  if (t < 6) pose(form, { x: LAY.ox + shake, y: LAY.oy + (1 - formA) * 120, z: -formAOut * 700, ...FORM, rz: FORM.rz - formAOut * 12, s: push, o: formA * (1 - formAOut) });
+  else pose(form, { x: LAY.ox, y: LAY.oy + (1 - formD) * 140, z: -formDOut * 700, ...FORM, rz: FORM.rz - formDOut * 12, s: lerp(.92, 1, formD) - formDOut * .05, o: formD * (1 - formDOut) });
+  formTicks.forEach((pth, i) => draw(pth, p(t, .55 + i * .28, .3, E.io)));
+  draw(sig, p(t, 1.6, .45, E.io));
+  draw(redLoop, t < 14 ? p(t, 2.0, .5, E.io) : 1 - p(t, 15.3, .3));
+  // red stamp slams, then peels off in D
+  const rs = $('redStamp'), slam = p(t, 2.55, .2, E.in2);
+  const peel = p(t, 15.35, .6, E.io);
+  rs.style.opacity = t < 2.55 ? 0 : (1 - peel);
+  rs.style.transform = `translateY(${peel * 260}px) rotate(${-9 + peel * 30}deg) scale(${lerp(2.4, 1, slam) + peel * .1})`;
+  // handwritten fill + blue tick + green stamp
+  const fillTxt = '3.42 t CO₂ · verified';
+  const fk = clamp((t - 15.85) / .8);
+  $('fill').textContent = t > 15.85 && t < 19 ? fillTxt.slice(0, Math.round(fillTxt.length * fk)) : '';
+  draw(blueTick, p(t, 16.7, .3, E.io));
+  const gs = $('greenStamp'), gslam = p(t, 17.05, .2, E.in2);
+  gs.style.opacity = t > 17.05 && t < 19 ? 1 : 0;
+  gs.style.transform = `rotate(-7deg) scale(${lerp(2.4, 1, gslam)})`;
+
+  // ---------- B: the usual way — a pile that keeps growing (4.7 – 8.6)
+  const drops = [4.75, 5.25, 5.7, 6.1, 6.45, 6.75];
+  const [sx, sy] = LAY.stack;
+  const pileOut = p(t, 7.85, .55, E.io);
+  for (let i = 1; i <= 6; i++) {
+    const d = p(t, drops[i - 1], .42, E.back);
+    const fall = t > drops[i - 1] ? 1 : 0;
+    const settle = i * 30 - pileOut * 30;
+    const jx = [0, 40, -46, 52, -30, 24, -12][i], jy = [0, -26, 22, -38, 30, -16, 20][i], jr = [0, 6, -8, 10, -5, 8, -11][i];
+    pose($('s' + i), { x: sx + jx + pileOut * 140, y: sy + jy - pileOut * 60, z: lerp(900, settle, d), ...ISO, rz: ISO.rz + jr, s: .84, o: fall * (1 - pileOut) * clamp(d * 3) });
+  }
+  // bill: bottom of the pile, then pulled out, then turned to face you, then slides aside for the maths
+  const bill = $('bill');
+  const billIn = p(t, 4.7, .45, E.back);
+  const pull = p(t, 7.25, .7, E.io);
+  const face = p(t, 8.0, 1.0, E.io);
+  const aside = p(t, 11.0, .55, E.io);
+  const billOut = p(t, 14.35, .45, E.io);
+  const fx = lerp(lerp(sx, sx - 380, pull), LAY.ox, face), fy = lerp(sy + pull * 60, LAY.oy, face);
+  const [cx, cy, cs] = LAY.billC;
+  const bx = portrait ? lerp(fx, cx, aside) : lerp(fx, cx, aside), by = lerp(fy, cy, aside);
+  const bOpacity = (t < 4.7 ? 0 : clamp(billIn * 3)) * (1 - billOut);
+  pose(bill, { x: bx, y: by, z: lerp(900, 0, billIn) - billOut * 500 + face * 60 * (1 - aside),
+    rx: lerp(ISO.rx, 0, face), rz: lerp(ISO.rz, 0, face) + Math.sin(pull * Math.PI) * 6, s: lerp(lerp(.84, 1, face), cs, aside), o: bOpacity });
+  // the bill speaks your language
+  let title = TITLES[TITLES.length - 1][0];
+  if (t < 9.75) title = 'Electricity bill'; else for (const [s, at] of TITLES) if (t >= at) title = s;
+  $('billTitle').textContent = title;
+  draw(unitsLoop, p(t, 11.55, .45, E.io));
+
+  // ---------- C: the number (11.9 – 14.6)
+  const math = $('math'), mOut = p(t, 14.3, .45, E.io);
+  math.style.opacity = 1 - mOut; math.style.visibility = t > 11.5 && t < 14.9 ? 'visible' : 'hidden';
+  // fly the units off the paper
+  const src = $('unitsV').getBoundingClientRect(), dst = $('mUnits').getBoundingClientRect();
+  const fp = p(t, 11.95, .65, E.io), fly = $('fly');
+  fly.style.opacity = t > 11.95 && t < 12.62 ? 1 : 0;
+  const scaleTo = 56 / 25;
+  fly.style.transform = `translate(${lerp(src.left, dst.left, fp)}px, ${lerp(src.top, dst.top, fp) - Math.sin(fp * Math.PI) * 90}px) scale(${lerp(1, scaleTo, fp)})`;
+  $('m1').style.opacity = t > 11.6 ? 1 : 0; $('mUnits').style.opacity = t > 12.6 ? 1 : 0;
+  const m2 = p(t, 12.7, .4, E.out5); $('m2').style.opacity = m2; $('m2').style.transform = `translateY(${(1 - m2) * 20}px)`;
+  $('mRule').style.transform = `scaleX(${p(t, 13.0, .35, E.io)})`;
+  const cnt = p(t, 13.1, .9, E.out3);
+  $('mBig').style.opacity = t > 13.05 ? 1 : 0;
+  $('mN').textContent = (3.42 * cnt).toFixed(2);
+  const ms = $('mStamp'), msl = p(t, 13.75, .18, E.in2);
+  ms.style.opacity = t > 13.75 ? 1 : 0; ms.style.transform = `rotate(-4deg) scale(${lerp(2.2, 1, msl)})`;
+  const mc = p(t, 13.95, .5, E.out5); $('mCap').style.opacity = mc; $('mCap').style.transform = `translateY(${(1 - mc) * 16}px)`;
+
+  // ---------- captions
+  cap($('cA1'), t, .35, 2.45);
+  cap($('cA2'), t, 2.7, 4.3);
+  cap($('cA3'), t, 3.25, 4.3);
+  // B list: one line per sheet, in rhythm
+  const lis = $('cB').querySelectorAll('.li');
+  const bOut = 1 - p(t, 7.3, .4, E.io);
+  $('cB').style.visibility = t > 4.7 && bOut > 0 ? 'visible' : 'hidden'; $('cB').style.opacity = bOut;
+  lis.forEach((li, i) => {
+    li.querySelectorAll('.w > span').forEach((w, j) => { const k = p(t, drops[i] + .05 + j * .04, .4, E.out5); w.style.transform = `translateY(${(1 - k) * 110}%)`; });
+    li.style.opacity = i === lis.length - 1 ? 1 : lerp(1, .38, p(t, drops[i] + .45, .4));
+  });
+  cap($('cB2'), t, 7.75, 9.45);
+  cap($('cC1'), t, 9.7, 11.0);
+  cap($('cD1'), t, 15.05, 18.35);
+  cap($('cD2'), t, 16.2, 18.35);
+
+  // ---------- end (18.9 – 23)
+  const end = $('end');
+  end.style.visibility = t > 18.8 ? 'visible' : 'hidden';
+  const e1 = p(t, 18.95, .8, E.out5), e2 = p(t, 19.35, .8, E.out5);
+  $('eBig').querySelector('.w1').style.cssText = `display:inline-block;opacity:${e1};transform:translateY(${(1 - e1) * 40}px)`;
+  $('eBig').querySelector('.w2').style.cssText = `display:inline-block;color:var(--green);opacity:${e2};transform:translateY(${(1 - e2) * 40}px)`;
+  if (!endLine) { const u = $('uBills');
+    endLine = ink($('endInk'), underline(u.offsetLeft + 4, u.offsetLeft + u.offsetWidth - 4, u.offsetTop + u.offsetHeight + 2), 'var(--saffron)', 7); }
+  draw(endLine, p(t, 20.1, .55, E.io));
+  const m = p(t, 20.6, .9, E.out5); $('eMark').style.opacity = m; $('eMark').style.transform = `translateY(${(1 - m) * 14}px)`;
+  const sb = p(t, 21.0, .8, E.out5); $('eSub').style.opacity = sb;
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>

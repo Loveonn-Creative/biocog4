@@ -19,3 +19,18 @@ ffmpeg -i v-l.mp4 -i sfx.wav -c:v copy -c:a aac -b:a 192k -shortest out/senseibl
 ```
 
 If Chromium lives elsewhere, set its path in `render.mjs`.
+
+## "Carbon proof", a 23-second positioning film (`film.html`)
+
+- **Pain:** an MSME's green loan file is complete except one line, the emissions baseline.
+- **What people use instead:** a pile of consultant quotes, site visits, spreadsheets, enterprise suites and English-only forms, taking months.
+- **The turn:** the answer is the bill at the bottom of the pile. Its title is shown in Hindi, Tamil and Bengali. 4,820 kWh × 0.710 = 3.42 t CO₂, stamped "verified, counted once".
+- **The payoff:** the same form is completed and stamped. The end line reads "Your bills are your carbon proof."
+
+Colour carries the arc: cold grey and red ink while the MSME is locked out, warm paper, green and saffron once the bill turns.
+
+```sh
+python3 sfx2.py
+FILE=film.html DUR=23 node render.mjs video landscape f-l.mp4   # or portrait f-p.mp4
+ffmpeg -i f-l.mp4 -i sfx2.wav -c:v copy -c:a aac -b:a 192k -shortest out/carbon-proof-16x9.mp4
+```

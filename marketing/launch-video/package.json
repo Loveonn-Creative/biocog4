@@ -5,6 +5,10 @@
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "@fontsource-variable/space-grotesk": "^5.2.5",
-    "playwright": "1.56.1"
+    "playwright": "1.56.1",
+    "@fontsource/caveat": "^5.2.5",
+    "@fontsource/noto-sans-bengali": "^5.2.5",
+    "@fontsource/noto-sans-devanagari": "^5.2.5",
+    "@fontsource/noto-sans-tamil": "^5.2.5"
   }
 }

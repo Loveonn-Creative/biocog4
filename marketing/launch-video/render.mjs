@@ -6,8 +6,8 @@ import path from 'node:path';
 
 const [mode, orient = 'landscape', arg] = process.argv.slice(2);
 const size = orient === 'portrait' ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };
-const FPS = 30, DUR = 20;
-const url = 'file://' + path.resolve('launch.html') + '?o=' + orient;
+const FPS = 30, DUR = Number(process.env.DUR || 20);
+const url = 'file://' + path.resolve(process.env.FILE || 'launch.html') + '?o=' + orient;
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 const page = await browser.newPage({ viewport: size, deviceScaleFactor: 1 });
@@ -17,7 +17,7 @@ await page.evaluate(() => document.fonts.ready);
 if (mode === 'stills') {
   for (const t of arg.split(',').map(Number)) {
     await page.evaluate(t => window.render(t), t);
-    await page.screenshot({ path: `still-${orient}-${t}.png` });
+    await page.screenshot({ path: `${process.env.PFX || 'still'}-${orient}-${t}.png` });
   }
 } else {
   const ff = spawn('ffmpeg', ['-y', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-',
