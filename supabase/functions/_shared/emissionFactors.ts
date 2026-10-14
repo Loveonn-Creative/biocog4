@@ -417,6 +417,23 @@ export function calculateEmissions(
   return null;
 }
 
+/**
+ * The published factor (per canonical unit) behind a factorSource this
+ * methodology version writes, e.g. 'BIOCOG_MVR_INDIA_v1.1:DIESEL'. null for
+ * sources from other versions or methods, which are checked elsewhere.
+ */
+export function publishedFactorFor(factorSource: string | null | undefined): number | null {
+  const [src, key] = String(factorSource ?? '').split(':');
+  if (src !== SRC || !key) return null;
+  if (key === 'INDIA_GRID_AVG') return INDIA_GRID_FACTOR_KG_PER_KWH;
+  if (key in FUEL_FACTORS) {
+    const f = FUEL_FACTORS[key as FuelType];
+    const u = normalizeUnit(f.unit);
+    return u ? round6(f.value / u.multiplier) : null;
+  }
+  return null;
+}
+
 /** Sum line-item emissions and avoided emissions separately, both >= 0. */
 export function totalsFor(items: Array<{ co2Kg?: number | null; avoidedCo2Kg?: number | null }>): { grossCo2Kg: number; avoidedCo2Kg: number } {
   let gross = 0;

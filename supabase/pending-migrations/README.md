@@ -243,3 +243,17 @@ The real `extract-document` and `scope2-engine` handlers were run against this s
 Before results appear, two people must enter and approve factor rows from the publications: the CEA weighted average for India, with its edition confirmed, and any residual-mix or other-country rows.
 
 Roll back with `rollback/20261021100000_electricity_engine.rollback.sql`. It refuses unless run with `SET LOCAL scope2.rollback_confirm = 'drop scope2 engine';` in the same transaction.
+
+## 20261022100000_emissions_write_guard.sql (browser writes to emissions)
+
+**Requires 20261011120000_protect_privileged_columns.sql.** Trigger only; no data is changed. Approved by the owner in October 2026.
+
+- A browser INSERT is stored only if `co2_kg = activity_data x emission_factor`, within the tolerance verify-carbon uses, with a positive quantity and no negative factor or kgCO2e. `verified` is forced to false.
+- A browser UPDATE is refused: the app never edits a stored row. Activity data, factor, kgCO2e, scope, category, verification and ownership change only through service-role functions (verify-carbon) or a reviewed migration.
+- verify-carbon also re-derives the factor for rows written by the current methodology (`publishedFactorFor`) instead of trusting the stored value.
+
+Tested with `tests/run_emissions_guard.sh`. It replays every migration and applies 20261011120000, then applies this migration, rolls back to the identical catalog, re-applies and runs `tests/20261022100000_emissions_write_guard.test.sql`. That runs 12 checks: consistent insert stored; verified forced false; inconsistent and negative inserts refused; edits and self-verification refused; service role can still verify; and, through 20261011170000, verified rows held.
+
+Roll back with `rollback/20261022100000_emissions_write_guard.rollback.sql`.
+
+**Change to 20261011170000_recalculate_emissions.sql (owner decision, October 2026):** verified rows are no longer recalculated. They keep the factor they were verified with, so they stay identical to their compliance_ledger and carbon_verifications snapshots. Only unverified rows are corrected. The dry run reports how many verified rows still carry an earlier factor.
