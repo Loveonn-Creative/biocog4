@@ -97,26 +97,27 @@ VALUES
    '<GWP basis stated in the GLEC Framework>', 'Smart Freight Centre, GLEC Framework for Logistics Emissions Accounting and Reporting',
    '<module, table and page of the air default intensities>', <publication year>, '2023-04-01', '<author user id>');
 
--- Sea, average container ship per tonne-km. GLEC gives container defaults per
--- TEU-km (not a unit this registry converts), so the UK DESNZ per-tonne-km
--- factor is drafted. DESNZ freight factors are direct emissions: add the
--- matching well-to-tank factor from the "WTT- delivery vehicles & freight"
--- sheet if the boundary is to be well-to-wake like the rail factor.
+-- Sea, average container ship per tonne-km, WELL-TO-WAKE (decided: the same
+-- boundary as the rail factor). GLEC gives container defaults per TEU-km (not
+-- a unit this registry converts), so the UK DESNZ per-tonne-km factors are
+-- used: the direct factor ("Freighting goods") PLUS the matching well-to-tank
+-- factor ("WTT- delivery vehicles & freight"), both for Cargo ship, Container
+-- ship, Average, 2025. Enter the sum; record both parts in source_ref.
 INSERT INTO public.scope3_factors (factor_key, version, scope3_category, material_key, geography, unit, kg_co2e_per_unit,
   data_class, boundary, gwp_basis, source_name, source_ref, publication_year, valid_from, created_by)
 VALUES
-  ('DESNZ_GLOBAL_SEA_CONTAINER_AVG', '2025', 4, 'freight:sea', 'GLOBAL', 'tkm',
-   <DESNZ 2025 "Freighting goods", Cargo ship, Container ship, Average, kg CO2e per tonne.km (plus WTT if well-to-wake is chosen); a secondary listing quotes 0.01612 for the direct factor>,
-   'secondary_factor', '<"Direct (tank-to-wake)" or "Well-to-wake (direct + WTT)", as chosen>; average container ship',
+  ('DESNZ_GLOBAL_SEA_CONTAINER_AVG_WTW', '2025', 4, 'freight:sea', 'GLOBAL', 'tkm',
+   <DESNZ 2025 container ship average: direct kg CO2e/tonne.km + WTT kg CO2e/tonne.km; a secondary listing quotes the direct part as 0.01612>,
+   'secondary_factor', 'Well-to-wake (direct + well-to-tank); average container ship',
    '<GWP basis stated in the DESNZ 2025 methodology paper>',
    'UK Department for Energy Security and Net Zero, Greenhouse gas reporting: conversion factors 2025 (full set)',
-   '<sheet and row of the container ship average factor>', 2025, '2025-01-01', '<author user id>');
+   '<"Freighting goods" row value + "WTT- delivery vehicles & freight" row value, with sheet and row of each>', 2025, '2025-01-01', '<author user id>');
 
 -- ---------------------------------------------------------------------------
 -- Approval (a second person, after checking the same pages):
 -- UPDATE public.scope3_factors SET status = 'approved', approved_by = '<approver user id>', approved_at = now()
 --  WHERE status = 'draft' AND (factor_key = 'SFC_IN_RAIL_FREIGHT_WTW' OR factor_key LIKE 'MOS_IN_STEEL_%'
---    OR factor_key IN ('GLEC_GLOBAL_AIR_LONG', 'GLEC_GLOBAL_AIR_SHORT', 'DESNZ_GLOBAL_SEA_CONTAINER_AVG'));
+--    OR factor_key IN ('GLEC_GLOBAL_AIR_LONG', 'GLEC_GLOBAL_AIR_SHORT', 'DESNZ_GLOBAL_SEA_CONTAINER_AVG_WTW'));
 -- ---------------------------------------------------------------------------
 
 COMMIT;
