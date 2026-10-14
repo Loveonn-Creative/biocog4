@@ -20,6 +20,7 @@ import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
 import { RoutePrefetcher } from "./components/RoutePrefetcher";
 import { ScrollManager } from "./components/ScrollManager";
+import { AuthLinkRouter } from "./components/AuthLinkRouter";
 
 // Perf: Auth was eager; lazy keeps it (and its form deps) out of the homepage bundle.
 const Auth = lazy(() => import("./pages/Auth"));
@@ -130,6 +131,7 @@ const App = () => (
         {/* v7_startTransition: opening a page whose code is not loaded yet keeps
             the current page on screen until it is ready, instead of a blank spinner. */}
         <BrowserRouter future={{ v7_startTransition: true }}>
+          <AuthLinkRouter />
           <RoutePrefetcher />
           <ScrollManager />
           <AnalyticsTracker />
