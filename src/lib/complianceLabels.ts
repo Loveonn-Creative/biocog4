@@ -42,6 +42,10 @@ const INDIA_LABELS: Record<string, ComplianceLabel[]> = {
   ],
 };
 
+// ISO 14064-1:2018 categories: 1 direct; 2 indirect from imported energy;
+// 3 indirect from transportation (freight, business travel, commuting);
+// 4 indirect from products the organisation uses (purchased goods and
+// services, capital goods, waste disposal); 5 use of its products; 6 other.
 const GLOBAL_LABELS: Record<string, ComplianceLabel[]> = {
   fuel: [
     { framework: 'GHG Protocol', label: 'Category: Direct Emissions (Scope 1)', region: 'global' },
@@ -49,37 +53,37 @@ const GLOBAL_LABELS: Record<string, ComplianceLabel[]> = {
   ],
   electricity: [
     { framework: 'GHG Protocol', label: 'Category: Energy Indirect (Scope 2)', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 2: Indirect from Energy', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 2: Indirect from Imported Energy', region: 'global' },
   ],
   transport: [
     { framework: 'GHG Protocol', label: 'Category 4: Upstream Transport', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 4: Transport Emissions', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 3: Indirect from Transportation', region: 'global' },
   ],
   materials: [
     { framework: 'GHG Protocol', label: 'Category 1: Purchased Goods', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 3: Indirect from Transport', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 4: Products Used by the Organisation', region: 'global' },
   ],
   waste: [
     { framework: 'GHG Protocol', label: 'Category 5: Waste in Operations', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 5: Waste Disposal', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 4: Waste Disposal', region: 'global' },
   ],
   cloud: [
     { framework: 'GHG Protocol', label: 'Category 1: Purchased Services', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 3: Other Indirect', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 4: Purchased Services', region: 'global' },
   ],
   software: [
     { framework: 'GHG Protocol', label: 'Category 1: Purchased Services', region: 'global' },
   ],
   it_hardware: [
     { framework: 'GHG Protocol', label: 'Category 2: Capital Goods', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 3: Capital Goods', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 4: Capital Goods', region: 'global' },
   ],
   services: [
     { framework: 'GHG Protocol', label: 'Category 1: Purchased Services', region: 'global' },
   ],
   travel: [
     { framework: 'GHG Protocol', label: 'Category 6: Business Travel', region: 'global' },
-    { framework: 'ISO 14064-1', label: 'Category 4: Business Travel', region: 'global' },
+    { framework: 'ISO 14064-1', label: 'Category 3: Business Travel', region: 'global' },
   ],
 };
 
