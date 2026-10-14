@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { AuthError, User } from '@supabase/supabase-js';
 import { toast } from 'sonner';
 import { Loader2, Shield, KeyRound } from 'lucide-react';
@@ -64,6 +64,15 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
   const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [linkSent, setLinkSent] = useState(false);
+  // Forgot the current password: a code sent to the account email stands in for
+  // it. The signed-in session plus that code is enough to set a new password.
+  const [forgotMode, setForgotMode] = useState(false);
+  const [codeCooldown, setCodeCooldown] = useState(0);
+  useEffect(() => {
+    if (codeCooldown <= 0) return;
+    const t = window.setTimeout(() => setCodeCooldown((c) => c - 1), 1000);
+    return () => window.clearTimeout(t);
+  }, [codeCooldown]);
 
   const reset = () => {
     setCurrentPassword('');
@@ -71,7 +80,28 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
     setConfirmPassword('');
     setNonce('');
     setAwaitingNonce(false);
+    setForgotMode(false);
     setErrorMessage(null);
+  };
+
+  const sendCode = async () => {
+    if (!user?.email || codeCooldown > 0) return;
+    setIsSaving(true);
+    setErrorMessage(null);
+    try {
+      const { error } = await supabase.auth.reauthenticate();
+      if (error) {
+        setErrorMessage(describeUpdateError(error));
+        return;
+      }
+      setForgotMode(true);
+      setCodeCooldown(60);
+      toast.success(`We emailed a 6-digit code to ${user.email}.`);
+    } catch {
+      setErrorMessage('Could not send the code. Check your connection and try again.');
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   if (!user) return null;
@@ -127,6 +157,33 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
+
+    if (forgotMode) {
+      if (!/^\d{6}$/.test(nonce.trim())) {
+        setErrorMessage('Enter the 6-digit code from your email.');
+        return;
+      }
+      if (!isPasswordStrong(newPassword)) {
+        setErrorMessage('Please choose a stronger new password.');
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        setErrorMessage('The new passwords do not match.');
+        return;
+      }
+      setIsSaving(true);
+      try {
+        if (await applyUpdate(nonce.trim())) {
+          toast.success('Password updated. Use it next time you sign in.');
+          reset();
+        }
+      } catch {
+        setErrorMessage('Could not update your password. Please try again.');
+      } finally {
+        setIsSaving(false);
+      }
+      return;
+    }
 
     if (awaitingNonce) {
       if (!nonce.trim()) {
@@ -229,8 +286,34 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
 
             {!awaitingNonce ? (
               <>
+                {forgotMode ? (
+                  <div className="space-y-2">
+                    <Label htmlFor="reset_code">Code from your email</Label>
+                    <Input
+                      id="reset_code"
+                      inputMode="numeric"
+                      autoComplete="one-time-code"
+                      maxLength={6}
+                      value={nonce}
+                      onChange={(e) => setNonce(e.target.value.replace(/\D/g, ''))}
+                      disabled={isSaving}
+                      placeholder="6-digit code"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Sent to {user.email}.{' '}
+                      <button type="button" className="text-primary hover:underline disabled:text-muted-foreground disabled:no-underline" onClick={sendCode} disabled={isSaving || codeCooldown > 0}>
+                        {codeCooldown > 0 ? `Resend in ${codeCooldown}s` : 'Resend code'}
+                      </button>
+                    </p>
+                  </div>
+                ) : (
                 <div className="space-y-2">
-                  <Label htmlFor="current_password">Current password</Label>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <Label htmlFor="current_password">Current password</Label>
+                    <button type="button" className="text-xs text-primary hover:underline" onClick={sendCode} disabled={isSaving}>
+                      Forgot it?
+                    </button>
+                  </div>
                   <Input
                     id="current_password"
                     type="password"
@@ -240,6 +323,7 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
                     disabled={isSaving}
                   />
                 </div>
+                )}
                 <div className="space-y-2">
                   <Label htmlFor="new_password">New password</Label>
                   <Input
@@ -292,7 +376,7 @@ export const ChangePasswordCard = ({ user }: ChangePasswordCardProps) => {
             )}
 
             <div className="flex flex-wrap justify-end gap-2 pt-2">
-              {awaitingNonce && (
+              {(awaitingNonce || forgotMode) && (
                 <Button type="button" variant="ghost" onClick={reset} disabled={isSaving}>
                   Cancel
                 </Button>

@@ -71,7 +71,8 @@ describe('browser-held results', () => {
 describe('source contracts', () => {
   const extract = src('supabase/functions/extract-document/index.ts');
   test('extract-document: guests are capped and never written', () => {
-    expect(extract).toContain("takeUse(admin, device, 'guest_scan', GUEST_DAILY_SCANS)");
+    expect(extract).toContain("readUse(admin, device, 'guest_scan', GUEST_DAILY_SCANS)");
+    expect(extract).toContain('await countGuestRead();'); // counted only after a successful read
     expect(extract).toContain('guestFileCheck(imageBase64, mimeType)');
     expect(extract).toContain('if (supabaseUrl && supabaseKey && isAuthenticated && userId) {');
     expect(extract).not.toMatch(/document_type: 'pending'/);
@@ -97,5 +98,25 @@ describe('source contracts', () => {
     expect(block).not.toMatch(/\.insert\(|\.update\(|\.rpc\(|ai\.gateway/);
     expect(block).toContain("previewVerification(rows)");
     expect(block).toContain('Preview only. Nothing was recorded or verified.');
+  });
+});
+
+describe('flow contracts (audit fixes)', () => {
+  test('Monetize sends the owner so the access rule accepts the request', () => {
+    expect(src('src/pages/Monetize.tsx')).toContain('...(user ? { user_id: user.id } : { session_id: sessionId })');
+  });
+  test('an invoice already in the account is never recorded twice (import and bulk upload)', () => {
+    expect(src('src/lib/guestImportLocal.ts')).toContain(".in('document_id', (docs ?? []).map(");
+    expect(src('src/components/BulkUpload.tsx')).toContain(".in('document_id', (ownerDocs ?? []).map(");
+    const merge = src('supabase/functions/merge-session/index.ts');
+    expect(merge).toContain('d.cached_result != null');
+    expect(merge).toContain("ownedHashes.has(d.document_hash)");
+  });
+  test('402 is shown as paused on our side everywhere uploads are read', async () => {
+    const { getFunctionErrorMessage, AI_PAUSED_MESSAGE } = await import('../src/lib/functionErrors');
+    const err = Object.assign(new Error('Edge Function returned a non-2xx status code'), { context: new Response(JSON.stringify({ error: 'AI usage limit reached. Please add credits to continue.' }), { status: 402 }) });
+    expect(await getFunctionErrorMessage(err, 'x')).toBe(AI_PAUSED_MESSAGE);
+    const coded = Object.assign(new Error('x'), { context: new Response(JSON.stringify({ code: 'ai_unavailable', error: 'paused' }), { status: 500 }) });
+    expect(await getFunctionErrorMessage(coded, 'x')).toBe(AI_PAUSED_MESSAGE);
   });
 });

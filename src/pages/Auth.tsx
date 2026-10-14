@@ -94,6 +94,42 @@ const Auth = () => {
     return () => window.clearTimeout(t);
   }, [cooldown]);
 
+  // Sign in without a password: a one-time link to the account email. Never
+  // creates an account, and says the same thing whether or not one exists.
+  const [linkSending, setLinkSending] = useState(false);
+  const [linkCooldown, setLinkCooldown] = useState(0);
+  useEffect(() => {
+    if (linkCooldown <= 0) return;
+    const t = window.setTimeout(() => setLinkCooldown((c) => c - 1), 1000);
+    return () => window.clearTimeout(t);
+  }, [linkCooldown]);
+  const sendSignInLink = async () => {
+    const target = email.trim();
+    if (!EMAIL_RE.test(target)) {
+      toast.error("Enter your email first, then tap the link option.");
+      document.getElementById("auth-email")?.focus();
+      return;
+    }
+    if (linkSending || linkCooldown > 0) return;
+    setLinkSending(true);
+    try {
+      const { error } = await supabase.auth.signInWithOtp({ email: target, options: { shouldCreateUser: false, emailRedirectTo: EMAIL_REDIRECT_URL } });
+      if (error && (error.status === 429 || error.code === "over_email_send_rate_limit")) {
+        toast.error("Too many emails sent. Wait a minute, then try again.");
+        setLinkCooldown(RESEND_COOLDOWN_S);
+        return;
+      }
+      if (error && isNetworkError(error)) { toast.error(NETWORK_MSG); return; }
+      // Same reply for unknown addresses, so the form never reveals who has an account.
+      setLinkCooldown(RESEND_COOLDOWN_S);
+      toast.success(`If ${target} has an account, a sign-in link is on its way. It works once, on this device.`);
+    } catch {
+      toast.error(NETWORK_MSG);
+    } finally {
+      setLinkSending(false);
+    }
+  };
+
   const resend = async (address: string) => {
     const target = address.trim();
     if (!EMAIL_RE.test(target)) {
@@ -158,7 +194,7 @@ const Auth = () => {
         }
       }
       forgetPendingEmail();
-      toast.success(ok.type === "signup" ? "Email confirmed. Signing you in…" : "Signed in. Taking you to your dashboard…");
+      toast.success(ok.type === "signup" ? "Email confirmed. Signing you in…" : ok.type === "magiclink" ? "Signed in with your email link." : "Signed in. Taking you to your dashboard…");
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -689,6 +725,13 @@ const Auth = () => {
                 )}
               </button>
             </form>
+
+            {mode === "signin" && (
+              <button type="button" onClick={() => void sendSignInLink()} disabled={linkSending || linkCooldown > 0}
+                className="mt-4 w-full text-center text-sm text-muted-foreground transition-colors hover:text-foreground disabled:opacity-60">
+                {linkSending ? "Sending…" : linkCooldown > 0 ? `Sign-in link sent. Resend in ${linkCooldown}s` : "Email me a sign-in link instead"}
+              </button>
+            )}
 
             {(mode === "forgot" || isPartnerMode) && (
               <div className="mt-8 border-t border-border pt-6 text-center">

@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
-import { clientIp, guestSubject, takeUse } from '../_shared/intelligenceUsage.ts';
+import { clientIp, guestSubject, readUse, takeUse } from '../_shared/intelligenceUsage.ts';
 import { dayIst } from '../_shared/intelligence.ts';
 import { GUEST_DAILY_SCANS, GUEST_IP_DAILY_SCANS, guestFileCheck } from '../_shared/guestScan.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
@@ -666,6 +666,20 @@ serve(async (req) => {
       );
     }
 
+    // Set for guests once their limit has been checked; the read is counted after it succeeds.
+    let guestCounters: { admin: ReturnType<typeof createClient>; device: string; network: string } | null = null;
+    const countGuestRead = async () => {
+      if (!guestCounters) return;
+      const c = guestCounters;
+      guestCounters = null; // once per request
+      try {
+        await takeUse(c.admin, c.device, 'guest_scan', GUEST_DAILY_SCANS + 1000);
+        await takeUse(c.admin, c.network, 'guest_scan', GUEST_IP_DAILY_SCANS + 1000);
+      } catch (e) {
+        console.error('Guest read count failed:', (e as Error)?.name ?? 'error');
+      }
+    };
+
     // ============= GUEST: EPHEMERAL, CAPPED =============
     // Guests can test freely, but nothing they upload is kept on the server:
     // no file, no document row, no cached result. Their result lives in their
@@ -685,8 +699,11 @@ serve(async (req) => {
           const ip = clientIp(req.headers);
           const device = await guestSubject(typeof sessionId === 'string' && sessionId ? `session|${sessionId}` : `ip|${ip}`, day, supabaseKey);
           const network = await guestSubject(`net|${ip}`, day, supabaseKey);
-          const perDevice = await takeUse(admin, device, 'guest_scan', GUEST_DAILY_SCANS);
-          const perNetwork = perDevice.allowed ? await takeUse(admin, network, 'guest_scan', GUEST_IP_DAILY_SCANS) : perDevice;
+          // Checked now, counted only after a successful read (below), so a
+          // read that fails on our side never uses up one of the 30.
+          const perDevice = await readUse(admin, device, 'guest_scan', GUEST_DAILY_SCANS);
+          const perNetwork = perDevice.allowed ? await readUse(admin, network, 'guest_scan', GUEST_IP_DAILY_SCANS) : perDevice;
+          guestCounters = { admin, device, network };
           if (!perDevice.allowed || !perNetwork.allowed) {
             return new Response(JSON.stringify({
               error: `You've tried ${GUEST_DAILY_SCANS} invoices today without an account. Sign in free to keep going and save your results.`,
@@ -791,6 +808,7 @@ serve(async (req) => {
     // Check document relevance
     const relevanceCheck = isDocumentRelevant(ocrData);
     if (!relevanceCheck.relevant) {
+      await countGuestRead(); // the AI did read it
       return new Response(
         JSON.stringify({ success: false, error: relevanceCheck.message, isIrrelevant: true }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -1060,6 +1078,9 @@ serve(async (req) => {
     };
 
     console.log(`DETERMINISTIC RESULT: ${classificationStatus}, ${verifiedItems} items, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}%`);
+
+    // A guest read that succeeded counts toward the daily limit.
+    await countGuestRead();
 
     // ============= CACHE THE RESULT (signed-in only) =============
     // Stored so the same invoice always returns the same result for this

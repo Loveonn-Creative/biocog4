@@ -19,7 +19,7 @@ import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/work
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
-import { getFunctionErrorMessage } from '@/lib/functionErrors';
+import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
@@ -368,6 +368,7 @@ const Index = () => {
 
       if (emissionRows.length === 0) {
         console.info('[MRV] No independently calculable line items; document retained for review without an emissions row');
+        emitRecordsChanged('upload'); // History lists the document
         return { documentId, emissionIds: [] };
       }
 
@@ -420,7 +421,14 @@ const Index = () => {
         const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
           body: { imageBase64, mimeType: 'application/pdf', sessionId, organizationId: uploadOrganizationId() },
         });
-        if (error) { notes.push(`${range}: ${await getFunctionErrorMessage(error, 'could not be read')}`); continue; }
+        if (error) {
+          const msg = await getFunctionErrorMessage(error, 'could not be read');
+          notes.push(`${range}: ${msg}`);
+          // Paused on our side or a limit reached: the remaining parts would fail the same way.
+          const status = functionErrorStatus(error);
+          if (status === 402 || status === 429) { notes.push(`The remaining parts were not sent.`); break; }
+          continue;
+        }
         if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
         if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); continue; }
         // Page numbers of this part, mapped back to the original PDF.
@@ -772,7 +780,10 @@ const Index = () => {
   };
 
   const handleConfirm = () => {
-    toast.success("Saved! Your carbon data has been recorded.");
+    // Say what actually happened: guests keep results in this browser; a
+    // result with no countable line saved nothing to verify.
+    if (!user) toast.info("Checking your result. It stays in this browser until you sign in.");
+    else if (result?.recordCount) toast.success("Saved to your account. Next: verify it.");
     // Pass extracted data via navigation state to ensure Verify page has data
     navigate('/verify', { 
       state: { 
@@ -862,7 +873,7 @@ const Index = () => {
                     setDocumentType("Retrying save...");
                     const savedIds = await saveEmissionToDatabase(pendingRetry.extractedData, pendingRetry.documentHash);
                     if (savedIds) {
-                      toast.success('Data saved successfully!');
+                      toast.success('Saved to your account.');
                       setPendingRetry(null);
                       const extractedData = pendingRetry.extractedData;
                       const emissionCat = getCategoryFromOCR(extractedData);
@@ -873,7 +884,9 @@ const Index = () => {
                         extractedData,
                         documentId: savedIds.documentId,
                         emissionId: savedIds.emissionId,
+                        recordCount: savedIds.emissionIds.length,
                       });
+                      if (savedIds.emissionIds.length) emitRecordsChanged('upload');
                       setDocumentType(formatDocumentType(extractedData.documentType, emissionCat));
                       setState("result");
                     } else {
@@ -920,8 +933,8 @@ const Index = () => {
                     <Suspense fallback={null}>
                       <BulkUpload 
                         onComplete={(results) => {
-                          toast.success(`Processed ${results.processed} invoices, ${results.duplicates} duplicates skipped`);
-                          navigate('/history');
+                          // The summary toast comes from BulkUpload; go to History only when something new is there.
+                          if (results.processed > 0) navigate('/history');
                         }}
                         maxFiles={10}
                       />

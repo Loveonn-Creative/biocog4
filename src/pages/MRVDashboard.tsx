@@ -61,7 +61,7 @@ const MRVDashboard = () => {
   const { scope, ready: workspaceReady } = useWorkspace();
   const workspaceKey = scopeKey(scope);
   const { activeContext } = useOrganization();
-  const { summary, emissions, getVerifiedEmissions } = useEmissions();
+  const { summary, emissions, getVerifiedEmissions, isLoading: emissionsLoading } = useEmissions();
   const { documents } = useDocuments();
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
@@ -264,7 +264,9 @@ const MRVDashboard = () => {
           </p>
         </div>
 
-        {emissions.length === 0 ? (
+        {emissionsLoading && emissions.length === 0 ? (
+          <div className="py-16 text-center text-sm text-muted-foreground" role="status">Loading your records…</div>
+        ) : emissions.length === 0 ? (
           <Card className="py-12">
             <CardContent className="text-center">
               <FileCheck className="h-12 w-12 text-muted-foreground/50 mx-auto mb-3" />

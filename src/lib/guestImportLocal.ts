@@ -4,7 +4,7 @@
 // apply), and the records are built from that answer, exactly as an upload.
 
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
-import { getFunctionErrorMessage } from '@/lib/functionErrors';
+import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
 import { clearGuestSources, getGuestSource } from '@/lib/guestSourceCache';
 import { clearGuestResults, listGuestResults } from '@/lib/guestResults';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
@@ -32,14 +32,18 @@ export async function importLocalGuestResults(userId: string): Promise<LocalImpo
     if (error) {
       const msg = await getFunctionErrorMessage(error, 'could not be read');
       // The monthly allowance or our AI being unavailable stops the rest too.
-      if (/month|paused|unavailable|limit/i.test(msg)) { out.stoppedAt = `${name}: ${msg}`; break; }
+      const status = functionErrorStatus(error);
+      if (status === 402 || status === 429 || /month|paused|unavailable|limit/i.test(msg)) { out.stoppedAt = `${name}: ${msg}`; break; }
       out.skipped.push(`${name}: ${msg}`); continue;
     }
     if (!data?.success || !data?.data) { out.skipped.push(`${name}: ${data?.error || 'could not be read'}`); continue; }
-    const { data: doc } = await supabase.from('documents').select('id').eq('document_hash', data.documentHash).eq('user_id', userId)
-      .order('created_at', { ascending: false }).limit(1).maybeSingle();
+    // Every document this account holds for the same file: the invoice may
+    // already be there (uploaded earlier, or moved from an older guest row).
+    const { data: docs } = await supabase.from('documents').select('id, created_at').eq('document_hash', data.documentHash).eq('user_id', userId)
+      .order('created_at', { ascending: false });
+    const doc = docs?.[0];
     if (!doc?.id) { out.skipped.push(`${name}: could not be saved`); continue; }
-    const { data: existing } = await supabase.from('emissions').select('id').eq('document_id', doc.id).limit(1);
+    const { data: existing } = await supabase.from('emissions').select('id').in('document_id', (docs ?? []).map((d: { id: string }) => d.id)).limit(1);
     if (existing?.length) { out.alreadyThere += 1; continue; }
     const rows = buildEmissionRows(data.data as PersistableExtraction, { documentId: doc.id, sessionId: null, userId });
     if (rows.length) {
