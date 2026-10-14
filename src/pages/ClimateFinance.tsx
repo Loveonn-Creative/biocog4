@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LenderLens, RouteRecord, Doodle, CbamScrubber } from "@/components/climate-finance/FinanceVisuals";
 import climateFinanceOg from "@/assets/og/climate-finance.jpg";
+import { GreenLoanEntry } from "@/components/climate-finance/GreenLoanEntry";
 
 const lenderMechanics = [
   { key: "hash", title: "Hash-pinned, spot-auditable", body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices." },
@@ -65,6 +66,7 @@ const ClimateFinance = () => {
           <p className="text-xs text-muted-foreground -mt-12 mb-16 max-w-2xl">
             Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
           </p>
+          <GreenLoanEntry className="-mt-8 mb-16" />
 
           {/* 1. Lender mechanics: inspect the record the way a lender does */}
           <section className="mb-20">

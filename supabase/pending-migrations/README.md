@@ -257,3 +257,29 @@ Tested with `tests/run_emissions_guard.sh`. It replays every migration and appli
 Roll back with `rollback/20261022100000_emissions_write_guard.rollback.sql`.
 
 **Change to 20261011170000_recalculate_emissions.sql (owner decision, October 2026):** verified rows are no longer recalculated. They keep the factor they were verified with, so they stay identical to their compliance_ledger and carbon_verifications snapshots. Only unverified rows are corrected. The dry run reports how many verified rows still carry an earlier factor.
+
+## 20261023100000_finance_applications.sql (green loan applications)
+
+New tables and one private storage bucket. Nothing existing is touched.
+
+- `finance_applications`: one row per application, owned by the applicant. `kind` is `green_loan` today; grants, tenders and contracts can be added as further kinds.
+  - Status runs: draft, submitted, under review, more information needed, shared with a partner (with consent), closed.
+  - Each row stores the consent version and time, the indicative 2 to 4 week update window, and `retain_until`, set to 365 days.
+  - Only one draft is open per applicant and kind.
+- `finance_application_events`: the status timeline. It is append-only, even for the service role. Deleting the application (erasure) removes it.
+- `finance_application_documents`: ITR, bank statement, financial statement or project quote. PDF, JPEG or PNG only, at most 2 MB per file, no duplicates.
+- `finance_application_reviews`: the internal, indicative review (allow-listed figures, ratios, email delivery). The browser cannot read it.
+- Storage bucket `finance-documents`: private, 2 MB limit, PDF/JPEG/PNG, no storage policies (service role only).
+
+Owners can read their own application, timeline and document list. Browsers cannot write anything; every write goes through the `finance-application` edge function.
+
+Tested with `tests/run_finance_applications.sh`. It replays every migration, applies this one, rolls back to the identical catalog, re-applies and runs `tests/20261023100000_finance_applications.test.sql`:
+
+- 14 checks: one draft per applicant; a submission time is required; files over 2 MB and other file types are refused; the timeline is append-only; owners read their own rows; the review is hidden; the browser cannot write; other applicants and anonymous visitors see nothing; the bucket is private; erasure cascades.
+- It then proves the rollback refuses while data exists, and that a confirmed rollback restores the catalog.
+
+The real edge function was also run against a schema without this migration (2 checks: the probe reports it disabled and nothing breaks) and with it (26 checks).
+
+Retention: schedule a daily call to `finance-application` with `{"action":"purge_expired"}` and the service-role key. It removes files and rows past `retain_until`.
+
+Roll back with `rollback/20261023100000_finance_applications.rollback.sql`. First remove stored files through the Storage API. The rollback refuses while applications exist unless run with `SET LOCAL finance.rollback_confirm = 'drop finance applications';`.

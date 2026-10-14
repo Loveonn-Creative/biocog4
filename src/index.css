@@ -676,3 +676,11 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .reveal-after-delay { animation: reveal-late 0.2s ease-out 0.4s both; }
 @keyframes reveal-late { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .reveal-after-delay { animation: none; } }
+
+/* Green loan application: the credit file fills tab by tab (src/pages/GreenLoan.tsx). */
+.gl-file { max-width: 100%; }
+.gl-tabs { display: flex; flex-wrap: wrap; gap: 4px; padding-left: 12px; }
+.gl-tab { font-size: 11px; padding: 4px 10px; border-radius: 8px 8px 0 0; background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); transform: translateY(4px); transition: transform var(--motion-base, 300ms) cubic-bezier(.2,.8,.2,1), background-color var(--motion-base, 300ms), color var(--motion-base, 300ms); }
+.gl-tab-on { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); transform: translateY(0); }
+.gl-sheet { border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); padding: 16px; box-shadow: 0 1px 0 hsl(var(--border)); }
+@media (prefers-reduced-motion: reduce) { .gl-tab { transition: none; } }
