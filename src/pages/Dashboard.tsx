@@ -19,7 +19,7 @@ import { FinanceEvidenceCard } from '@/components/dashboard/FinanceEvidenceCard'
 import { sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 import { VerificationStatusCard } from '@/components/dashboard/VerificationStatusCard';
 import { Helmet } from 'react-helmet-async';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -27,6 +27,9 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Trash2, Loader2, ArrowRight, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
+import { useScope3Visibility } from '@/hooks/useScope3Trail';
+
+const Scope3Preview = lazy(() => import('@/components/scope3/Scope3Preview').then((m) => ({ default: m.Scope3Preview })));
 import { EnterpriseAuditLog } from '@/components/enterprise/EnterpriseAuditLog';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { useCredibility } from '@/hooks/useCredibility';
@@ -57,6 +60,7 @@ const Dashboard = () => {
   const { scope, ready: workspaceReady, organization } = useWorkspace();
   const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
+  const scope3 = useScope3Visibility();
   const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
@@ -436,6 +440,13 @@ const Dashboard = () => {
               scope2={summary.scope2}
               scope3={summary.scope3}
             />
+          </div>
+        )}
+
+        {/* Scope 3 evidence trail preview: paid plans, Enterprise Mode, switched on in Settings */}
+        {scope3.showBasic && (
+          <div className="mt-6">
+            <Suspense fallback={null}><Scope3Preview fullAvailable={scope3.fullAvailable} /></Suspense>
           </div>
         )}
       </main>
