@@ -121,6 +121,11 @@ body.land #big5 { left: 110px; top: 640px; width: 560px; } body.land #big5 b { f
 body.land #yearBig { left: 110px; top: 720px; } body.land #yearBig b { font-size: 104px; }
 body.land #tl { left: 110px; top: 690px; width: 760px; transform: scale(.78); transform-origin: left top; }
 body.land #end .l1, body.land #end .l2 { font-size: 92px; }
+
+/* Instagram Reels cut: keep text out of the top bar and the bottom caption/UI zone */
+body.reel .cap { margin-top: 140px; }
+body.reel #big5 { top: 1330px; } body.reel #yearBig { top: 1360px; }
+body.reel #end { padding-bottom: 160px; }
 </style>
 </head>
 <body>
@@ -382,8 +387,14 @@ function render(t) {
   const flick = t >= 33.8 && t < 34.4 ? (Math.sin(t * 90) > -.2 ? 1 : .25) : 1;
   [['eL1', 33.3], ['eL2', 33.8], ['eL3', 35.0], ['eUrl', 35.6], ['eMark', 36.1]].forEach(([id, s]) => { const k = p(t, s, .7, E.o5); show($(id), k * (id === 'eL2' ? flick : 1), (1 - k) * 26); });
 }
-window.render = render;
-render(Number(new URLSearchParams(location.search).get('t') || 0));
+// 15 s Reels cut: output time → source time, five beats
+const REEL = [[0.9, 4.9], [5.0, 8.5], [15.8, 17.5], [23.6, 25.6], [33.2, 37.0]];
+const isReel = new URLSearchParams(location.search).get('cut') === 'reel';
+if (isReel) { document.body.classList.add('reel'); L.sy = 860; }
+function mapT(t) { let acc = 0; for (const [a, b] of REEL) { if (t < acc + (b - a)) return a + (t - acc); acc += b - a; } const [a, b] = REEL[REEL.length - 1]; return b; }
+const baseRender = render;
+window.render = isReel ? (t => baseRender(mapT(t))) : baseRender;
+window.render(Number(new URLSearchParams(location.search).get('t') || 0));
 </script>
 </body>
 </html>

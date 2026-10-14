@@ -57,3 +57,5 @@ Every number matches the live calculator: 100 t, Iron & Steel BF-BOF, India, €
 ```sh
 python3 sfx4.py && bash cbrender.sh
 ```
+
+Reels cut (15 s): `QS="&cut=reel" FILE=cbam.html DUR=15 node render.mjs video portrait rl.mp4`, then mux `sfx4-reel.wav` (sfx4.wav cut to the same beats).
