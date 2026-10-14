@@ -7,6 +7,7 @@ import {
   totalsFor,
   FUEL_FACTORS,
   INDIA_GRID_FACTOR_KG_PER_KWH,
+  publishedFactorFor,
 } from '../supabase/functions/_shared/emissionFactors.ts';
 
 describe('fuel factors', () => {
@@ -112,5 +113,25 @@ describe('no generic Scope 3 factors', () => {
   test('freight and waste lines get no number here (the Scope 3 trail handles them with approved factors)', () => {
     expect(calculateEmissions(1000, 'ton-km', 3, 'TRANSPORT')).toBeNull();
     expect(calculateEmissions(500, 'kg', 3, 'WASTE')).toBeNull();
+  });
+});
+
+describe('publishedFactorFor (verification re-derives the factor)', () => {
+  test('current sources map to their published factor', () => {
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:INDIA_GRID_AVG')).toBe(0.71);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:DIESEL')).toBe(2.68);
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:LPG')).toBe(2.98);
+  });
+  test('earlier versions and unknown keys are not re-derived here', () => {
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.0:INDIA_GRID_AVG')).toBeNull();
+    expect(publishedFactorFor('BIOCOG_MVR_INDIA_v1.1:SOLAR_AVOIDED_GRID')).toBeNull();
+    expect(publishedFactorFor(null)).toBeNull();
+  });
+  test('every factor the calculator writes re-derives to itself', () => {
+    const cases: Array<[number, string, number, string, string?]> = [[342, 'kWh', 2, 'ELECTRICITY'], [100, 'litre', 1, 'FUEL', 'DIESEL'], [14.2, 'kg', 1, 'FUEL', 'LPG'], [2, 'kl', 1, 'FUEL', 'DIESEL']];
+    for (const [q, u, s, c, f] of cases) {
+      const r = calculateEmissions(q, u, s, c, f);
+      expect(r && r.kind === 'emission' && publishedFactorFor(r.factorSource)).toBe(r && r.kind === 'emission' ? r.emissionFactor : -1);
+    }
   });
 });

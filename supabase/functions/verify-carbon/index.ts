@@ -3,7 +3,7 @@ import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { creditValuation, CREDIT_VALUE_WITHHELD } from "../_shared/carbonValue.ts";
 import { activityDate, fiscalPeriod } from "../_shared/invoiceDate.ts";
-import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION } from "../_shared/emissionFactors.ts";
+import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG, FACTOR_SET_VERSION, publishedFactorFor } from "../_shared/emissionFactors.ts";
 import { decideRecordAccess, idempotencyCanonical, orgCan } from "../_shared/workspaceAccess.ts";
 
 const corsHeaders = {
@@ -354,6 +354,14 @@ serve(async (req) => {
         try { provenance = JSON.parse(emission.verification_notes || 'null'); } catch { /* legacy notes */ }
         if (!provenance || typeof provenance.factorSource !== 'string' || !provenance.factorSource.trim()) fields.push('factor source');
         if (!provenance || typeof provenance.sourceDescription !== 'string' || !provenance.sourceDescription.trim()) fields.push('source line item');
+        // A row written by the current methodology must carry its published
+        // factor: the stored value is re-derived, not trusted. Earlier versions
+        // keep their own factors and are not re-derived here; repair replays
+        // an earlier result and creates nothing new.
+        const published = provenance ? publishedFactorFor(provenance.factorSource as string) : null;
+        if (!repairOnly && published !== null && Number.isFinite(emission.emission_factor) && Math.abs(emission.emission_factor - published) > 1e-6) {
+          fields.push('emission factor does not match the published factor for its source');
+        }
         if (Number.isFinite(emission.activity_data) && Number.isFinite(emission.emission_factor) && Number.isFinite(emission.co2_kg) &&
           Math.abs(emission.activity_data * emission.emission_factor - emission.co2_kg) > Math.max(0.01, Math.abs(emission.co2_kg) * 0.001)) {
           fields.push('quantity × factor does not match stored emissions');

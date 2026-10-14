@@ -25,9 +25,10 @@
 -- are copied to public.emissions_recalc_backup_20261011, and the rollback
 -- (rollback/20261011170000_recalculate_emissions.sql) restores them exactly.
 --
--- Not changed here, by design: compliance_ledger rows and
--- carbon_verifications.total_co2_kg are snapshots of what was verified at
--- the time. The dry run reports how many of them reference affected rows.
+-- Not changed here, by design: verified emissions, compliance_ledger rows and
+-- carbon_verifications.total_co2_kg are records of what was verified at the
+-- time. Only unverified rows are recalculated. The dry run reports how many
+-- verified rows still carry an earlier factor (left as they are).
 --
 -- Runs as the migration/DB owner. The pending trigger
 -- protect_emissions_verification_columns (20261011120000) lets trusted DB
@@ -54,6 +55,11 @@ WITH src AS (
     FROM public.emissions e
    WHERE e.co2_kg >= 0
      AND e.activity_data > 0
+     -- Verified rows are never rewritten: they must keep matching their
+     -- compliance_ledger and carbon_verifications snapshots. They keep the
+     -- factor they were verified with; a correction is a new, re-verified
+     -- record, not an edit (owner decision, October 2026).
+     AND NOT coalesce(e.verified, false)
 ), keyed AS (
   SELECT s.*,
          nullif(split_part(coalesce(s.notes ->> 'factorSource', ''), ':', 2), '') AS src_key,
@@ -102,6 +108,13 @@ SELECT change_key,
   FROM emissions_recalc_plan
  GROUP BY change_key
  ORDER BY change_key;
+
+SELECT count(*) AS verified_rows_left_unchanged
+  FROM public.emissions e
+ WHERE e.verified
+   AND (e.emission_factor IN (1.51, 2.30, 3.15, 0.708, 3.00)
+        OR (lower(trim(coalesce(e.activity_unit, ''))) IN ('litre', 'liter') AND e.emission_factor = 2.68
+            AND coalesce(e.verification_notes, '') ~* '(kerosene|\msko\M)'));
 
 SELECT count(DISTINCT l.id)                    AS ledger_rows_referencing_changed_emissions,
        count(DISTINCT v.id)                    AS verifications_referencing_changed_emissions
