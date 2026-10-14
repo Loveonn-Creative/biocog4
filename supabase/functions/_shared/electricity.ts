@@ -403,6 +403,7 @@ export interface BillInput {
   currency?: string | null;
   unitsConsumedKwh?: number | string | null;
   unitsConsumedText?: string | null;
+  unitsConsumedUnit?: string | null;
   billingPeriodStart?: string | null;
   billingPeriodEnd?: string | null;
   lineItems?: Array<{ description?: string | null; quantity?: number | string | null; unit?: string | null; hsn_code?: string | null; sourceText?: string | null }> | null;
@@ -424,8 +425,8 @@ export interface ActivityDraft {
 
 const numOrNull = (v: unknown) => { const n = typeof v === 'string' ? Number(v.replace(/,/g, '')) : Number(v); return Number.isFinite(n) && n > 0 ? n : null; };
 const ELEC_LINE = /\b(electricity|energy|units?\s*(consumed|billed)|billed\s*units|consumption|kwh)\b/i;
-const NET = /\b(net\s*(units|consumption|import)?|export(ed)?)\b/i;
-const TOTAL_LABEL = /\b(total|billed)\b/i;
+export const NET = /\b(net\s*(units|consumption|import)?|export(ed)?)\b/i;
+export const TOTAL_LABEL = /\b(total|billed)\b|^\s*electricity\s+consumed\b/i;
 
 /**
  * The consumption a bill prints, as one activity (or one per meter when the
@@ -437,11 +438,19 @@ const TOTAL_LABEL = /\b(total|billed)\b/i;
  * - Net or export figures are not grid import: Needs Data.
  * - kVAh / kvarh is not kWh: Needs Data.
  */
-export function activitiesFromBill(bill: BillInput, profileLocation: string | null): ActivityDraft[] {
+/**
+ * Country of supply for a bill: the account's saved country first, then the
+ * bill itself (INR, or an Indian distribution company), otherwise unknown.
+ */
+export function gridCountryFor(bill: Pick<BillInput, 'vendor' | 'currency'>, profileLocation: string | null): { country: string | null; source: ActivityDraft['countrySource'] } {
   const profileCountry = countryFromLocation(profileLocation);
+  if (profileCountry) return { country: profileCountry, source: 'profile' };
   const billSaysIndia = (bill.currency ?? '').toUpperCase() === 'INR' || INDIAN_DISCOM.test(bill.vendor ?? '');
-  const country = profileCountry ?? (billSaysIndia ? 'IN' : null);
-  const countrySource: ActivityDraft['countrySource'] = profileCountry ? 'profile' : billSaysIndia ? 'bill' : 'unknown';
+  return billSaysIndia ? { country: 'IN', source: 'bill' } : { country: null, source: 'unknown' };
+}
+
+export function activitiesFromBill(bill: BillInput, profileLocation: string | null): ActivityDraft[] {
+  const { country, source: countrySource } = gridCountryFor(bill, profileLocation);
   const periodStart = isDate(bill.billingPeriodStart) ? bill.billingPeriodStart : null;
   const periodEnd = isDate(bill.billingPeriodEnd) && (!periodStart || bill.billingPeriodEnd >= periodStart) ? bill.billingPeriodEnd : null;
   const supplierRef = typeof bill.vendor === 'string' && bill.vendor.trim() ? bill.vendor.trim().toUpperCase().replace(/\s+/g, ' ').slice(0, 80) : null;
@@ -464,7 +473,8 @@ export function activitiesFromBill(bill: BillInput, profileLocation: string | nu
   const printed = numOrNull(bill.unitsConsumedKwh);
   if (printed !== null) {
     const text = bill.unitsConsumedText ?? null;
-    const unit = text && /kvarh/i.test(text) ? 'kvarh' : text && /kvah/i.test(text) ? 'kVAh' : 'kWh';
+    const printedUnit = `${bill.unitsConsumedUnit ?? ''} ${text ?? ''}`;
+    const unit = /kvarh/i.test(printedUnit) ? 'kvarh' : /kvah/i.test(printedUnit) ? 'kVAh' : 'kWh';
     return [make('billed', printed, unit, text)];
   }
   const lines = (bill.lineItems ?? [])

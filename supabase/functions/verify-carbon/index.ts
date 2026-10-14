@@ -11,21 +11,18 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Country grid factors. India uses the shared factor (see
-// ../_shared/emissionFactors.ts for its source note); the others are the
-// earlier values labelled "IEA 2023" and are unchanged.
-const COUNTRY_GRID_FACTORS: Record<string, number> = {
-  IN: INDIA_GRID_FACTOR_KG_PER_KWH,
-  PH: 0.505,
-  ID: 0.761,
-  BD: 0.623,
-  PK: 0.495,
-  SG: 0.408,
-  VN: 0.625,
-  TH: 0.493,
-  MY: 0.585,
-  LK: 0.462,
-};
+// The only grid factor set records are calculated with is India's (see
+// ../_shared/emissionFactors.ts). Electricity supplied elsewhere is not
+// calculated, so the methodology label always names the set actually used,
+// whatever country the request names. Other countries' Scope 2 lives in the
+// Scope 2 engine (../_shared/electricity.ts) with approved, sourced factors.
+const METHODOLOGY = {
+  name: 'BIOCOG_MVR_INDIA',
+  version: METHODOLOGY_VERSION_TAG,
+  country: 'IN',
+  factorVersion: FACTOR_SET_VERSION,
+  gridFactor: INDIA_GRID_FACTOR_KG_PER_KWH,
+} as const;
 
 // Industry benchmarks (kgCO₂e per INR of revenue)
 const INDUSTRY_BENCHMARKS: Record<string, number> = {
@@ -178,8 +175,11 @@ function validateEmission(emission: EmissionRecord): { valid: boolean; flags: st
     confidence -= 10;
   }
   
-  // Check for abnormal quantities (simple threshold check)
-  if (emission.activity_data && emission.activity_data > 1000000) {
+  // Check for abnormal quantities (simple threshold check). A large HT
+  // electricity bill is routinely above a million kWh (1,000 MWh), so grid
+  // electricity is flagged only above 100 million kWh on one record.
+  const highQuantity = emission.category === 'electricity' ? 100_000_000 : 1_000_000;
+  if (emission.activity_data && emission.activity_data > highQuantity) {
     flags.push('Abnormally high quantity - requires verification');
     confidence -= 25;
   }
@@ -233,9 +233,11 @@ function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResult
     factors.push(`Average data confidence ${avgConfidence.toFixed(0)}% — moderate quality`);
   }
   
-  // Check for consistent emission factors
-  const factorSet = new Set(emissions.map(e => e.emission_factor));
-  if (factorSet.size === 1 && emissions.length > 3) {
+  // Check for consistent emission factors. Grid electricity shares one
+  // national factor by design, so it is left out of this check.
+  const nonGrid = emissions.filter(e => e.category !== 'electricity');
+  const factorSet = new Set(nonGrid.map(e => e.emission_factor));
+  if (factorSet.size === 1 && nonGrid.length > 3) {
     riskScore += 10;
     factors.push('Identical emission factor across all records — suggests generic classification');
   }
@@ -257,10 +259,8 @@ serve(async (req) => {
 
   try {
     // includeIoT is still accepted from older clients but no longer changes any number.
-    const { emissionIds, sessionId: bodySessionId, country = 'IN', inspectOnly = false, repairOnly = false } = await req.json();
-
-    const countryCode = (typeof country === 'string' && COUNTRY_GRID_FACTORS[country.toUpperCase()]) ? country.toUpperCase() : 'IN';
-    const gridFactor = COUNTRY_GRID_FACTORS[countryCode] || INDIA_GRID_FACTOR_KG_PER_KWH;
+    // A "country" field from older clients is ignored: it never changed a number.
+    const { emissionIds, sessionId: bodySessionId, inspectOnly = false, repairOnly = false } = await req.json();
 
     if (!Array.isArray(emissionIds) || emissionIds.length === 0 || emissionIds.length > 100 ||
         emissionIds.some((id) => typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(id)) ||
@@ -615,13 +615,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         indicativeValue,
         complianceAssessment,
         verifiedEmissionIds: verifiedIds,
-        methodology: {
-          name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
-          version: METHODOLOGY_VERSION_TAG,
-          country: countryCode,
-          factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
-          gridFactor,
-        },
+        methodology: { ...METHODOLOGY },
       },
       // null = not assessed (see complianceAssessment above).
       ccts_eligible: null,
@@ -772,7 +766,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
           validation_result: validationResult,
           validation_failure_reason: validationFailureReason,
           greenwashing_risk: greenwashingRisk,
-          methodology_version: `BIOCOG_MVR_${countryCode}_${METHODOLOGY_VERSION_TAG}`,
+          methodology_version: `BIOCOG_MVR_IN_${METHODOLOGY_VERSION_TAG}`,
           classification_method: classificationMethod,
           gstin: supplierGstin,
           hsn_code: hsnCode,
@@ -925,13 +919,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       totalCO2Kg,
       netEmissions,
       verifiedReductions,
-      methodology: {
-        name: countryCode === 'IN' ? 'BIOCOG_MVR_INDIA' : `BIOCOG_MVR_${countryCode}`,
-        version: METHODOLOGY_VERSION_TAG,
-        country: countryCode,
-        factorVersion: countryCode === 'IN' ? FACTOR_SET_VERSION : `${countryCode}_EF_2025`,
-        gridFactor,
-      },
+      methodology: { ...METHODOLOGY },
       indicativeValue,
       complianceAssessment,
     };

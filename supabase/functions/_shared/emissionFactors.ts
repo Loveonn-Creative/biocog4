@@ -373,9 +373,17 @@ function applyFactor(quantity: number, rawUnit: string, factor: Factor): { quant
   };
 }
 
+/** Countries whose grid factor this file holds. Electricity elsewhere is not calculated here. */
+export const GRID_FACTOR_COUNTRIES: readonly string[] = ['IN'];
+const GRID_DEPENDENT = new Set(['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY']);
+
 /**
  * Deterministic emission calculation for one classified line item.
  * Returns null when no factor applies to this category and unit.
+ * opts.gridCountry: the country the electricity was supplied in. The India
+ * grid factor (and the avoided-emission factors built on it) applies only to
+ * 'IN'; any other country, or null, gets no factor. Omitted = India, for
+ * callers that only ever handle Indian data.
  */
 export function calculateEmissions(
   quantity: number,
@@ -383,8 +391,10 @@ export function calculateEmissions(
   scope: number,
   productCategory: string,
   fuelType?: string,
+  opts?: { gridCountry?: string | null },
 ): EmissionCalc | AvoidedCalc | null {
   if (!Number.isFinite(quantity) || quantity <= 0 || !unit) return null;
+  if (opts && GRID_DEPENDENT.has(productCategory) && !GRID_FACTOR_COUNTRIES.includes(String(opts.gridCountry ?? ''))) return null;
 
   if (scope === 1 && productCategory === 'FUEL' && fuelType && fuelType in FUEL_FACTORS) {
     const f = FUEL_FACTORS[fuelType as FuelType];
