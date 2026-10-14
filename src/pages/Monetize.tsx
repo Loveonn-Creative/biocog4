@@ -524,6 +524,23 @@ const Monetize = () => {
           </span>
           <ArrowRight className="h-4 w-4 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
         </Link>
+
+        {/* Fuel switch and efficiency: the same signal contract, from bills and logs */}
+        <Link to="/reduction-signal" className="group mt-3 flex items-center gap-4 rounded-2xl border border-dashed border-primary/40 p-4 transition-colors hover:bg-primary/5">
+          <svg viewBox="0 0 64 44" className="h-11 w-16 shrink-0" aria-hidden="true">
+            <path d="M6 12 H24 V22 M6 34 H24 V24" fill="none" stroke="hsl(var(--foreground))" strokeOpacity=".4" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M6 34 H24 V24" fill="none" stroke="hsl(var(--primary))" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="24" cy="23" r="4" fill="hsl(var(--background))" stroke="hsl(var(--foreground))" strokeOpacity=".6" strokeWidth="1.6" />
+            <rect x="34" y="10" width="24" height="26" rx="5" fill="none" stroke="hsl(var(--foreground))" strokeOpacity=".5" strokeWidth="1.6" />
+            <path d="M28 23 H34" stroke="hsl(var(--primary))" strokeWidth="2.4" strokeLinecap="round" />
+            <path d="M44 30 c-4 -4 -1 -9 2 -12 c0 4 4 5 3 9 c2 -2 2 -4 1 -6 c4 3 4 9 -1 10 Z" fill="hsl(var(--primary))" />
+          </svg>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">Switched fuel or cut energy per unit?</span>
+            <span className="block text-sm text-muted-foreground">Turn fuel invoices, energy bills and production logs into a reduction signal.</span>
+          </span>
+          <ArrowRight className="h-4 w-4 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
+        </Link>
       </main>
     </div>
   );

@@ -224,6 +224,7 @@ export default function SolarSignal() {
                 <Link to="/auth" state={{ returnTo: '/solar-signal' }} className="mt-4 inline-flex w-full justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground">Sign in to save</Link>
               )}
             </div>
+            <p className="text-sm text-muted-foreground">Switched fuel or made a process more efficient? <Link to="/reduction-signal" className="font-medium text-primary underline-offset-4 hover:underline">Open the fuel switch and efficiency signal</Link></p>
           </section>
         </div>
       </main>

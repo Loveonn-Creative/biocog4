@@ -602,6 +602,26 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .ent-orbit-dot { display: none; }
 }
 
+/* Reduction signal (/reduction-signal). Fuel switch: energy flows along the
+   feed that is in use and the valve turns at the change. Efficiency: the
+   baseline band draws in and each period settles onto the chart. Reduced
+   motion shows the same final state, still. */
+@keyframes rs-flow { to { stroke-dashoffset: -24; } }
+@keyframes rs-band { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes rs-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.rs-flow { stroke-dasharray: 6 6; animation: rs-flow 1.2s linear infinite; transition: opacity var(--motion-base) var(--ease-out); }
+.rs-flow-off { opacity: 0; animation-play-state: paused; }
+.rs-valve { transform-box: view-box; transform-origin: 0 0; transition: transform var(--motion-slow) var(--ease-out); }
+.rs-level { transform-box: fill-box; transform-origin: bottom; transition: transform var(--motion-slow) var(--ease-out); }
+.rs-flame { transition: fill var(--motion-base) var(--ease-out); }
+.rs-band { transform-box: fill-box; transform-origin: left; animation: rs-band var(--motion-slow) var(--ease-draw) both; }
+.rs-draw { animation: rs-draw var(--motion-slow) var(--ease-draw) both; }
+.rs-dot { transform-box: fill-box; transform-origin: center; animation: ent-pop var(--motion-base) var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) {
+  .rs-flow, .rs-band, .rs-draw, .rs-dot { animation: none; }
+  .rs-flow, .rs-valve, .rs-level, .rs-flame { transition: none; }
+}
+
 /* Net zero (/net-zero): game feedback. Reduced motion keeps every state, no movement. */
 @keyframes nz-pop { 0% { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: none; } }
 @keyframes nz-float { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-28px); opacity: 0; } }

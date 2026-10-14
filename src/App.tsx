@@ -43,6 +43,7 @@ const History = lazy(() => import("./pages/History"));
 const Verify = lazy(() => import("./pages/Verify"));
 const Monetize = lazy(() => import("./pages/Monetize"));
 const SolarSignal = lazy(() => import("./pages/SolarSignal"));
+const ReductionSignal = lazy(() => import("./pages/ReductionSignal"));
 const Reports = lazy(() => import("./pages/Reports"));
 const MRVDashboard = lazy(() => import("./pages/MRVDashboard"));
 const PartnerDashboard = lazy(() => import("./pages/PartnerDashboard"));
@@ -148,6 +149,7 @@ const App = () => (
               <Route path="/verify" element={<Verify />} />
               <Route path="/monetize" element={<Monetize />} />
               <Route path="/solar-signal" element={<SolarSignal />} />
+              <Route path="/reduction-signal" element={<ReductionSignal />} />
               <Route path="/reports" element={<RequireAuth><Reports /></RequireAuth>} />
               <Route path="/mrv-dashboard" element={<RequireAuth><MRVDashboard /></RequireAuth>} />
               <Route path="/partner" element={<RequireAuth><PartnerDashboard /></RequireAuth>} />
