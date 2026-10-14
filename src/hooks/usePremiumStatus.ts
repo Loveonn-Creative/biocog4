@@ -106,7 +106,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
     fullGstCarbonAutomation: true,
     verifiedClimateScore: true,
     greenLoanEligibility: true,
-    govtIncentivesFinder: true,
+    govtIncentivesFinder: false,
     aiSavingsInsights: true,
     teamMembers: 3,
     emailSupport: true,

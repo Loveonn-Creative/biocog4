@@ -80,18 +80,21 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
       ${data.tier === 'essential' ? `
         <li>Full GST→Carbon Automation</li>
         <li>Verified Climate Score</li>
-        <li>Green Loan Eligibility Check</li>
-        <li>Government Incentives Finder</li>
+        <li>Green Loan Signal</li>
         <li>3 Team Members</li>
       ` : data.tier === 'pro' ? `
         <li>Everything in Essential, plus:</li>
-        <li>Carbon Monetization Setup</li>
+        <li>Monetization Signal</li>
+        <li>Government Incentives Finder</li>
+        <li>WhatsApp Chat + Email Support</li>
+        <li>Eligible for add-ons and limited custom builds</li>
         <li>Automated ESG Reports</li>
         <li>AI ESG Head (Voice AI)</li>
         <li>Biocog Superintelligence</li>
         <li>10 Team Members</li>
       ` : `
         <li>Everything in Pro, plus:</li>
+        <li>Credit Monetization Setup</li>
         <li>Real-time MRV Pipeline</li>
         <li>Multi-entity Support</li>
         <li>API & Integrations</li>
@@ -103,7 +106,7 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
   <p><strong>Next Steps:</strong></p>
   <ol>
     <li>Upload your invoices to see your carbon footprint</li>
-    <li>Check your green loan eligibility</li>
+    <li>See your green loan signal</li>
     <li>Explore AI-powered insights in the Intelligence tab</li>
   </ol>
   

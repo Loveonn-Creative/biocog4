@@ -35,16 +35,19 @@ const PaymentSuccess = () => {
     essential: [
       'Full GST→Carbon Automation',
       'Verified Climate Score',
-      'Green Loan Eligibility',
+      'Green Loan Signal',
       '3 Team Members',
     ],
     pro: [
-      'Carbon Monetization',
+      'Monetization Signal',
+      'Government Incentives Finder',
+      'WhatsApp Chat Support',
       'AI ESG Head (Voice AI)',
       'Automated Reports',
       '10 Team Members',
     ],
     scale: [
+      'Credit Monetization Setup',
       'Real-time MRV Pipeline',
       'API & Integrations',
       'Dedicated Support',
