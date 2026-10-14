@@ -117,6 +117,29 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       ] },
     ],
   },
+  '/green-loan-check': {
+    h1: 'Green loan check for MSMEs',
+    blocks: [
+      { p: 'A two-minute, one-tap-per-question check of what a credit team will look for in a green loan or sustainability-linked application, and where your business stands today. The result is a preparation checklist, not an eligibility decision.' },
+      { h2: 'What the check asks' },
+      { ol: [
+        'What your business does, how much funding you need and your turnover range.',
+        'What the money will go into: rooftop solar, efficient machinery, cleaner fuel, electric vehicles, or a waste or water upgrade.',
+        'Whether you know your carbon footprint, measured from your own invoices and bills.',
+        'Two basics: GST registration and income tax returns for recent years.',
+      ] },
+      { h2: 'Why the carbon footprint matters' },
+      { p: 'A green loan application asks you to show the environmental benefit of the project. A footprint measured from your own invoices and bills is that evidence. Senseible reads one electricity bill or fuel invoice and shows the emissions behind it, keeping the source document as proof.' },
+      { h2: 'What happens next' },
+      { ul: [
+        'You get your readiness checklist on screen straight away.',
+        '[Measure your footprint from one invoice](/) if it is the missing piece.',
+        'Signed-in users on Essential and higher can prepare a full application with documents kept private.',
+        '[How verified data is used in climate finance](/climate-finance)',
+      ] },
+      { p: 'Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.' },
+    ],
+  },
   '/cbam-calculator': {
     h1: 'CBAM cost calculator for EU imports, 2026 to 2034',
     blocks: [

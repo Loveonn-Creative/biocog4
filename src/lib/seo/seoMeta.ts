@@ -162,6 +162,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Partner with Senseible: Lenders, Auditors, Buyers',
     description: 'Partner programme for banks, auditors, carbon credit buyers and ERP providers that need verified MSME emission data inside their own products.',
   },
+  '/green-loan-check': {
+    title: 'Green Loan Check for MSMEs: 2-Minute Readiness',
+    description: 'Answer six quick questions to see what a lender will ask for in a green loan application, and measure the carbon footprint most MSMEs are missing.',
+  },
   '/grants': {
     title: 'Climate Grants and Funding Applications',
     description: 'Apply to Senseible grant and pilot programmes for climate-tech work in emerging markets, and see what we look for in an application.',
