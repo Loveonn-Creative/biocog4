@@ -62,3 +62,6 @@ Reels cut (15 s): `QS="&cut=reel" FILE=cbam.html DUR=15 node render.mjs video po
 
 ## "You can't underwrite fog": lender film (90 s, 16:9) and 30 s teaser (9:16)
 Sources are in the HTML comments of `fog.html`. The record is labelled illustrative. No lender or partner is named.
+
+## "Will revert by EOD": enterprise Scope 3 film (70 s, 16:9) and 20 s cut (9:16)
+Every claim quotes the Enterprise page (sources in the comments of `revert.html`). No self-serve supplier portal is shown. The replies are fiction played for comedy.

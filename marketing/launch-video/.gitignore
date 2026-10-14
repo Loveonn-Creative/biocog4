@@ -14,3 +14,7 @@ cb-*
 fg-*.png
 fg-*.wav
 fg-part*
+rv-*.png
+rv-*.wav
+rv-cs*/
+rv-part*

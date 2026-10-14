@@ -1,0 +1,773 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Will revert by EOD</title>
+<!--
+  "Will revert by EOD" — enterprise Scope 3 film for Senseible.
+  Long cut: 16:9, ~70 s (default). Short cut: 9:16, 20 s (?cut=short&o=portrait, or a copy named revert-short.html).
+
+  SOURCES (kept here, never on screen):
+  - Audience context: BRSR value-chain disclosures are voluntary for the top 250 listed entities from FY 2025-26,
+    so listed customers ask suppliers for data. src/components/services/esg-reporting/logic.ts (header comment).
+  - "1,000 suppliers" is the viewer's hypothetical programme, echoing /enterprise beat 05:
+    "A thousand suppliers, one queue for humans" (src/pages/Enterprise.tsx, ent.b2.title). Not a product statistic.
+  - Problem: "Scope 3 programmes stall on supplier chasing and spreadsheets that never reconcile." (Enterprise.tsx ent.hero.line)
+  - "Ask for the bill they already have": "Senseible collects what suppliers already have, ties each figure to its
+    source document, and keeps estimates labelled until real data replaces them" (Enterprise.tsx ent.hero.line).
+  - "Every figure tied to its source document": same line; and outputs "Each figure links to its document hash,
+    factor and method version" (status live, src/data/enterpriseCapabilities.ts outputs.lineage).
+  - "Estimates stay labelled until real data replaces them": Enterprise.tsx ent.hero.line. Grey = spend estimate
+    (LedgerHero legend "Spend estimate"; scaleControls.tiering "Primary, factor-derived or spend-only", live).
+  - "Open any figure and walk back to the document it came from." exact: Enterprise.tsx ent.b4.line.
+  - Bill read by AI: ingestionChannels.docs "Invoices, bills and PDFs read by AI" (live).
+  - Diesel maths: 1,250 L x 2.68 kgCO2e/L = 3,350 kgCO2e. Factor DIESEL 2.68 per litre,
+    supabase/functions/_shared/emissionFactors.ts (methodology: quantity x factor = kgCO2e, BIOCOG_MVR_INDIA).
+    Rate 90.10/L from the fuel-slip example in src/components/enterprise/RecordTransform.tsx: 1,250 x 90.10 = 1,12,625.
+    Hash "41d0…c3b8" is the shortened illustrative hash used for the diesel example in RecordTransform.tsx.
+  - How bills reach Senseible is NOT depicted (supplier invitations/portal = custom; collect = pilot, "Documents today").
+    A bill simply arrives. No portal, no ERP, no automatic onboarding shown.
+  - CTA: "Start with your supplier list. Send three details. We reply with how your first wave of suppliers would run."
+    (Enterprise.tsx ent.talk.title / ent.talk.line) -> "We'll show you which dots turn green first."
+  - Status line, exact: "Live today: documents to verified records. Custom: integrations and supplier-network features
+    built to your requirements." (Enterprise.tsx ent.hero.status)
+  - Reply texts, vendor numbers and the spreadsheet are fictional comedy, not data.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 700; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --ink: #16181d; --muted: #6b6f78; --green: #1f5139; --lit: #6ee7a4; --saffron: #f08a24; --red: #c8372d; --paper: #f5f1e8; --cold: #e4e7ec; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: var(--cold); }
+#night { position: absolute; inset: 0; }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .1; pointer-events: none; z-index: 80; mix-blend-mode: overlay; }
+#world { position: absolute; inset: 0; perspective: 1700px; }
+.obj { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; visibility: hidden; }
+svg.ink { position: absolute; overflow: visible; pointer-events: none; }
+svg.ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+#screenInk { left: 0; top: 0; width: 100%; height: 100%; z-index: 60; }
+
+/* captions: words rise from a mask */
+.cap { position: absolute; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; z-index: 40; visibility: hidden; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.cap .w > span { display: inline-block; }
+
+/* the form */
+#form { width: 440px; height: 580px; background: #fff; border-radius: 6px; padding: 34px 36px; box-shadow: 0 2px 0 #cfd3da, 0 40px 70px -40px rgba(20,25,40,.5); }
+#form b { display: block; font-size: 34px; line-height: 1.08; letter-spacing: -0.02em; border-bottom: 3px solid var(--ink); padding-bottom: 16px; }
+#form .mono { display: block; font-size: 15px; color: var(--muted); margin-top: 12px; letter-spacing: .04em; }
+#form .q { margin-top: 18px; height: 16px; border-radius: 8px; background: #eceef1; }
+
+/* reply bubbles */
+.bub { background: #fff; border-radius: 30px; padding: 16px 30px 22px; font-size: 44px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; white-space: nowrap; color: var(--ink);
+  box-shadow: 0 2px 0 #cdd1d8, 0 26px 40px -26px rgba(20,25,40,.55); }
+.bub::after { content: ''; position: absolute; left: 34px; bottom: -17px; border-right: 24px solid transparent; border-top: 19px solid #fff; }
+.bub .from { display: block; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; color: #8b9099; letter-spacing: .01em; margin-bottom: 6px; }
+.bub .att { display: block; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; color: #6b6f78; border: 1.5px dashed #b9bdc5; border-radius: 10px; padding: 6px 12px; width: fit-content; }
+.bub.g { background: #d6dae1; } .bub.g::after { border-top-color: #d6dae1; }
+.bub.rd { color: var(--red); }
+.bub .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.bub .w > span { display: inline-block; }
+
+/* spreadsheet cells */
+.cell { width: 210px; height: 62px; background: #fff; border: 1.5px solid #c3c8d0; display: flex; align-items: center; padding: 0 14px; font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #5d626b; white-space: nowrap; overflow: hidden; }
+.cell.h { background: #e9ecf0; font-family: 'Space Grotesk'; font-size: 18px; font-weight: 600; color: #3a3e46; }
+.cell.n { font-family: 'Space Grotesk'; font-size: 20px; font-weight: 500; color: #3a3e46; }
+.cell.r { background: #f9dfdb; border-color: var(--red); color: var(--red); font-weight: 600; }
+.cell.r::before { content: ''; position: absolute; left: 0; top: 0; border-right: 16px solid transparent; border-top: 16px solid var(--red); }
+#sheetName { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #3a3e46; background: #fff; border: 1.5px solid #c3c8d0; padding: 10px 16px; white-space: nowrap; border-radius: 6px 6px 0 0; }
+
+/* the punchline bubble */
+#final { background: var(--ink); color: var(--paper); border-radius: 56px; padding: 30px 60px 44px; font-size: 118px; font-weight: 600; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; z-index: 3000;
+  box-shadow: 0 50px 90px -40px rgba(0,0,0,.6); }
+#final::after { content: ''; position: absolute; left: 70px; bottom: -34px; border-right: 46px solid transparent; border-top: 36px solid var(--ink); }
+#final .from { display: block; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 500; color: #9aa0aa; letter-spacing: .01em; margin-bottom: 14px; }
+#finalMeta { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 26px; color: var(--red); white-space: nowrap; z-index: 3001; visibility: hidden; }
+
+/* the bill */
+#bill { width: 520px; height: 680px; background: #fffdf8; border-radius: 6px; padding: 40px 42px; z-index: 30;
+  box-shadow: 0 1px 0 #ddd, 0 60px 90px -40px rgba(30,25,10,.45); }
+#bill .bh { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 16px; height: 78px; }
+#bill .bh b { font-size: 38px; font-weight: 600; letter-spacing: -0.01em; }
+#bill .bh .mono { font-size: 15px; color: var(--muted); padding-bottom: 6px; }
+.redact { display: flex; flex-direction: column; gap: 10px; padding: 22px 0; border-bottom: 1px dashed #ddd; }
+.redact i { display: block; height: 13px; border-radius: 7px; background: #ebe8e1; }
+.brow { display: flex; justify-content: space-between; align-items: baseline; padding: 19px 0; font-size: 25px; border-bottom: 1px solid #efebe3; }
+.brow .k { color: var(--muted); } .brow .v { font-weight: 600; }
+#qtyV { position: relative; }
+
+/* kinetic maths */
+#math { position: absolute; z-index: 35; visibility: hidden; }
+#math .ln { font-size: 60px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 14px; white-space: nowrap; }
+#math .ln small { font-size: 28px; color: var(--muted); font-weight: 500; margin-left: 10px; }
+#math .op { color: var(--muted); font-weight: 400; margin-right: 14px; }
+#mRule { height: 4px; background: var(--ink); transform-origin: left; margin: 4px 0 16px; width: 640px; }
+#mBig { font-size: 150px; font-weight: 600; letter-spacing: -0.05em; line-height: .95; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--green); }
+#mBig small { font-size: 46px; letter-spacing: 0; margin-left: 14px; font-weight: 500; }
+#mCap { font-size: 38px; font-weight: 500; letter-spacing: -0.02em; margin-top: 22px; color: var(--ink); }
+
+/* night annotations */
+.tag { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 17px; letter-spacing: .12em; color: #a7adb7; white-space: nowrap; z-index: 20; visibility: hidden; }
+.tag i { position: absolute; left: 50%; top: 100%; width: 1px; height: 30px; background: #7d838d; }
+#ann { position: absolute; z-index: 36; visibility: hidden; color: var(--paper); }
+#ann .h { font-family: 'Hand'; font-size: 60px; color: var(--saffron); line-height: 1; white-space: nowrap; }
+#ann .big { font-size: 96px; font-weight: 600; letter-spacing: -0.045em; color: var(--lit); margin-top: 8px; white-space: nowrap; }
+#ann .big small { font-size: 36px; letter-spacing: 0; margin-left: 10px; font-weight: 500; }
+#ann .tr { font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #c9ccd2; margin-top: 16px; white-space: nowrap; }
+#ann .tr span { color: #7f858f; display: inline-block; width: 120px; }
+
+/* end */
+#end { position: absolute; left: 0; top: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--paper); z-index: 45; visibility: hidden; }
+#end .l1, #end .l2 { font-size: 96px; font-weight: 600; letter-spacing: -0.045em; line-height: 1.02; }
+#end .l2 { color: var(--lit); margin-top: 10px; }
+#end .mark { margin-top: 64px; font-size: 42px; letter-spacing: .34em; padding-left: .34em; font-weight: 500; }
+#end .url { margin-top: 14px; font-size: 28px; color: #c9ccd2; }
+#end .stat { margin-top: 30px; font-size: 22px; color: #8f959f; letter-spacing: .01em; }
+
+body.portrait #end .l1, body.portrait #end .l2 { font-size: 88px; padding: 0 70px; text-wrap: balance; }
+body.portrait #end .mark { font-size: 54px; }
+body.portrait #end .url { font-size: 34px; }
+body.portrait #final { font-size: 104px; white-space: normal; width: 760px; }
+body.portrait .bub { font-size: 46px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="night"></canvas>
+  <svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.55"/><feComposite in="SourceGraphic" operator="in"/></filter></svg>
+  <svg id="grain"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="9"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+  <div id="world">
+    <div class="obj" id="form"><b>Supplier ESG questionnaire</b><span class="mono">FY 2025-26 · SECTIONS A–J · 46 PAGES</span>
+      <div class="q" style="width:80%"></div><div class="q" style="width:62%"></div><div class="q" style="width:90%"></div><div class="q" style="width:48%"></div><div class="q" style="width:74%"></div><div class="q" style="width:66%"></div><div class="q" style="width:84%"></div><div class="q" style="width:40%"></div><div class="q" style="width:70%"></div><div class="q" style="width:58%"></div></div>
+    <div id="pile"></div>
+    <div id="veil" style="position:absolute;inset:-100px;background:#c9ced6;z-index:2999;visibility:hidden"></div>
+    <div class="obj" id="final"><span class="from">vendor 0731 · re: supplier ESG questionnaire</span><span class="tx">Will revert by EOD.</span></div>
+    <div class="obj" id="bill">
+      <div class="bh"><b>Tax invoice</b><span class="mono">HSD · DIESEL</span></div>
+      <div class="redact"><i style="width:56%"></i><i style="width:80%"></i><i style="width:38%"></i></div>
+      <div class="brow"><span class="k">Invoice date</span><span class="v">12 Sep 2026</span></div>
+      <div class="brow"><span class="k">Product</span><span class="v">High-speed diesel</span></div>
+      <div class="brow"><span class="k">Quantity</span><span class="v" id="qtyV">1,250 L</span></div>
+      <div class="brow" style="border:0"><span class="k">Amount</span><span class="v">₹ 1,12,625</span></div>
+      <svg class="ink" id="billInk" style="left:0;top:0;width:520px;height:680px"></svg>
+    </div>
+  </div>
+  <div id="finalMeta">sent 19 days ago</div>
+  <div id="math">
+    <div class="ln" id="m1">1,250<small>litres of diesel</small></div>
+    <div class="ln" id="m2"><span class="op">×</span>2.68<small>kg CO₂e per litre</small></div>
+    <div id="mRule"></div>
+    <div id="mBig"><span id="mN">0</span><small>kg CO₂e</small></div>
+    <div id="mCap">Read from the bill. Not typed into a form.</div>
+  </div>
+  <div id="ann">
+    <div class="h" id="a1">1,250 L × 2.68</div>
+    <div class="big" id="a2">= 3,350<small>kg CO₂e</small></div>
+    <div class="tr" id="a3"><span>source</span>this bill · sha256 41d0…c3b8</div>
+    <div class="tr" id="a4"><span>factor</span>2.68 kg CO₂e per litre of diesel</div>
+    <div class="tr" id="a5"><span>method</span>BIOCOG_MVR_INDIA</div>
+  </div>
+  <div id="tags"></div>
+  <div id="caps"></div>
+  <div id="end"><div class="l1" id="eL1">Send us your supplier list.</div><div class="l2" id="eL2">We'll show you which dots turn green first.</div>
+    <div class="mark" id="eMark">Senseible</div><div class="url" id="eUrl">senseible.earth/enterprise</div>
+    <div class="stat" id="eStat">Live today: documents to verified records. Custom: integrations and supplier-network features built to your requirements.</div></div>
+  <svg class="ink" id="screenInk"></svg>
+</div>
+
+<script>
+const Q = new URLSearchParams(location.search);
+const portrait = Q.get('o') === 'portrait';
+const SHORT = Q.get('cut') === 'short' || /short/.test(location.pathname);
+if (portrait) document.body.classList.add('portrait');
+const W = portrait ? 1080 : 1920, H = portrait ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = {
+  out3: x => 1 - Math.pow(1 - x, 3), out5: x => 1 - Math.pow(1 - x, 5),
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  in2: x => x * x, lin: x => x,
+};
+const p = (t, s, d, e = E.out3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const mixHex = (a, b, k) => { const pa = a.match(/\w\w/g).map(h => parseInt(h, 16)), pb = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + pa.map((v, i) => Math.round(lerp(v, pb[i], k)).toString(16).padStart(2, '0')).join(''); };
+function rng(s) { return () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+// ================= schedule (one per cut) =================
+const LONG = {
+  end: 70, hook: [.3, 2.6], back: [2.9, 4.3], stream: [.7, 2.5], ret: [3.0, 4.6], formOut: 3.3,
+  feat: [
+    [4.6, 'PFA.', 'vendor 0012 · 09:14', 'ESG_Questionnaire_FY26.xlsx · 0 KB'],
+    [5.55, 'Kindly find attached.', 'vendor 0047 · 09:31', 'scan0001.pdf · page 1 of 1 (blank)'],
+    [6.45, 'Who is handling this?', 'vendor 0103 · 10:02'],
+    [7.3, 'Noted.', 'vendor 0388 · 10:40'],
+    [8.1, 'Sir, what is Scope 3?', 'vendor 0412 · 11:17'],
+    [8.85, '#N/A', 'vendor 0519 · 11:58', null, 'rd'],
+    [9.55, 'Please share in Excel format.', 'vendor 0606 · 12:30'],
+    [10.2, 'Kindly do the needful.', 'vendor 0688 · 13:05'],
+  ],
+  sheet: { in: 10.65, fill: [10.95, 12.1], ink: 12.15, shatter: 13.05 },
+  rain: [14.0, 17.9, 46], final: 18.05, cut: 19.8,
+  caps: [], // filled below
+  bill: 24.35, loop: 25.35, math: 25.95, fold: 29.9, night: 30.2, land: 31.6,
+  lights: [31.6, 35.9, 37.6, 38.45, 39.15, 39.75], waves: [[40.1, 46.6, 150], [55.4, 67.5, 190]],
+  tags: [43.5, 47.0], tap: 47.3, tapEnd: 55.2, cta: 58.4,
+};
+const SHORTS = {
+  end: 20, hook: [.15, 2.0], back: [2.05, 2.95], stream: [.35, 1.9], ret: [2.1, 3.0], formOut: 2.1,
+  feat: [
+    [3.0, 'PFA.', 'vendor 0012 · 09:14', 'ESG_Questionnaire_FY26.xlsx · 0 KB'],
+    [3.72, 'Kindly find attached.', 'vendor 0047 · 09:31'],
+    [4.4, 'Who is handling this?', 'vendor 0103 · 10:02'],
+    [5.05, '#N/A', 'vendor 0519 · 11:58', null, 'rd'],
+  ],
+  sheet: null, rain: [5.55, 7.75, 38], final: 7.85, cut: 9.35,
+  caps: [],
+  bill: 10.75, loop: 11.45, math: null, fold: 11.95, night: 12.2, land: 13.2,
+  lights: [13.2, 13.95, 14.5, 14.95], waves: [[15.25, 19.6, 170]],
+  tags: null, tap: null, cta: 15.9,
+};
+const S = SHORT ? SHORTS : LONG;
+const DARK = '#f5f1e8';
+if (!SHORT) S.caps = [
+  { k: 'hook', text: 'You sent 1,000 suppliers an ESG form.', tin: .3, tout: 2.55 },
+  { k: 'hook', text: "Here's what came back.", tin: 2.85, tout: 4.35 },
+  { k: 'center', text: 'Stop asking suppliers to do ESG.', tin: 20.35, tout: 22.45 },
+  { k: 'center', text: 'Ask for the bill they already have.', tin: 22.6, tout: 24.25, color: 'var(--green)' },
+  { k: 'sky', text: "That's one supplier, on real data.", tin: 32.3, tout: 35.3, color: DARK },
+  { k: 'sky', text: 'Then another.', tin: 35.75, tout: 37.35, color: DARK },
+  { k: 'sky', text: 'And another.', tin: 37.5, tout: 39.5, color: DARK },
+  { k: 'sky', text: 'Every figure tied to its source document.', tin: 39.95, tout: 43.15, color: DARK },
+  { k: 'sky', text: 'Estimates stay labelled until real data replaces them.', tin: 43.45, tout: 46.95, color: DARK },
+  { k: 'sky', text: 'Open any figure and walk back to the document it came from.', tin: 47.5, tout: 54.9, color: DARK },
+];
+else S.caps = [
+  { k: 'hook', text: 'You sent 1,000 suppliers an ESG form.', tin: .15, tout: 1.95 },
+  { k: 'hook', text: "Here's what came back.", tin: 2.05, tout: 2.95 },
+  { k: 'center', text: 'Ask for the bill they already have.', tin: 9.55, tout: 12.0, color: 'var(--green)' },
+  { k: 'sky', text: 'Every figure tied to its source document.', tin: 13.55, tout: 15.6, color: DARK },
+];
+
+// ================= layout =================
+const LAY = portrait ? {
+  form: [540, 1180], hook: { x: 70, y: 210, w: 940, fs: 86 }, center: { y: 250, fs: 84, pad: 80 }, sky: { x: 70, y: 150, w: 940, fs: 68 },
+  feat: [540, 720], featS: 1.8, heapX: [20, 1060], floor: 1880, rs: .95, overlap: .42,
+  final: [540, 980], bill: [540, 1240], billS: 1.12, billAside: [540, 760], billAsideS: .8, math: [90, 1150],
+  f: 1000, camY: 420, hy0: .40, hy1: .66, lightTargets: [[560, 1330], [300, 1150], [820, 1220], [430, 1520], [800, 1020], [620, 1060]],
+  tapAt: [540, 1500], annAt: [80, 1250], billTap: [540, 760], billTapS: .78,
+} : {
+  form: [1360, 560], hook: { x: 120, y: 400, w: 860, fs: 78 }, center: { y: 470, fs: 92, pad: 120 }, sky: { x: 120, y: 92, w: 1500, fs: 64 },
+  feat: [960, 430], featS: 2.0, heapX: [90, 1830], floor: 1050, rs: .98, overlap: .42,
+  final: [960, 520], bill: [960, 560], billS: 1.0, billAside: [600, 560], billAsideS: .96, math: [1000, 300],
+  f: 900, camY: 420, hy0: .30, hy1: .60, lightTargets: [[1010, 720], [720, 600], [1330, 640], [470, 780], [1560, 560], [1180, 520]],
+  tapAt: [1000, 860], annAt: [1050, 330], billTap: [640, 600], billTapS: .78,
+};
+
+// ================= captions =================
+const capsEl = $('caps');
+const CAPS = S.caps.map(c => {
+  const el = document.createElement('div'); el.className = 'cap';
+  el.innerHTML = c.text.split(' ').map(w => `<span class="w"><span>${w}</span></span>`).join(' ');
+  if (c.k === 'hook') Object.assign(el.style, { left: LAY.hook.x + 'px', top: LAY.hook.y + 'px', width: LAY.hook.w + 'px', fontSize: LAY.hook.fs + 'px' });
+  if (c.k === 'center') Object.assign(el.style, { left: 0, width: W + 'px', padding: `0 ${LAY.center.pad}px`, textAlign: 'center', top: LAY.center.y + 'px', fontSize: LAY.center.fs + 'px' });
+  if (c.k === 'sky') Object.assign(el.style, { left: LAY.sky.x + 'px', top: LAY.sky.y + 'px', width: LAY.sky.w + 'px', fontSize: LAY.sky.fs + 'px' });
+  if (c.color) el.style.color = c.color;
+  capsEl.appendChild(el); return { ...c, el };
+});
+function cap(c, t) {
+  const words = c.el.querySelectorAll('.w > span');
+  const o = 1 - p(t, c.tout, .35, E.io);
+  c.el.style.opacity = o;
+  c.el.style.visibility = (t >= c.tin - .01 && o > 0) ? 'visible' : 'hidden';
+  words.forEach((w, i) => { const k = p(t, c.tin + i * .055, .55, E.out5); w.style.transform = `translateY(${(1 - k) * 110}%)`; });
+}
+
+// ================= ink =================
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function loop(cx, cy, rx, ry, turns = 1.16) {
+  let d = ''; const n = 48;
+  for (let i = 0; i <= n; i++) {
+    const a = -2.4 + (i / n) * Math.PI * 2 * turns, j = 1 + (rnd() - .5) * .06 + i / n * .07;
+    d += (i ? 'L' : 'M') + (cx + Math.cos(a) * rx * j).toFixed(1) + ' ' + (cy + Math.sin(a) * ry * j).toFixed(1);
+  }
+  return d;
+}
+function ink(svg, d, color, w) {
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', d); path.setAttribute('stroke', color); path.setAttribute('stroke-width', w);
+  path.setAttribute('pathLength', 1); path.style.strokeDasharray = 1; path.style.strokeDashoffset = 1;
+  svg.appendChild(path); return path;
+}
+const draw = (path, k) => { path.style.strokeDashoffset = 1 - k; path.style.opacity = k > 0 ? 1 : 0; };
+const qtyLoop = ink($('billInk'), loop(408, 418, 100, 34), 'var(--saffron)', 5);
+
+// ================= pose =================
+function sz(el) { if (!el._w || document.fonts.status !== 'loaded') { el._w = el.offsetWidth; el._h = el.offsetHeight; } return el; }
+function pose(el, { x, y, z = 0, rx = 0, ry = 0, rz = 0, s = 1, o = 1 }) {
+  sz(el);
+  el.style.left = (x - el._w / 2) + 'px'; el.style.top = (y - el._h / 2) + 'px';
+  el.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s})`;
+  el.style.opacity = o; el.style.visibility = o > .001 ? 'visible' : 'hidden';
+}
+
+// ================= the pile: replies and cells =================
+const CUES = [];
+const pile = $('pile');
+const items = [];
+function mkBubble(text, from, att, cls) {
+  const el = document.createElement('div'); el.className = 'obj bub' + (cls ? ' ' + cls : '');
+  el.innerHTML = (from ? `<span class="from">${from}</span>` : '') + `<span class="tx">${text.split(' ').map(w => `<span class="w"><span>${w}</span></span>`).join(' ')}</span>` + (att ? `<span class="att">${att}</span>` : '');
+  pile.appendChild(el); return el;
+}
+function mkCell(text, cls) { const el = document.createElement('div'); el.className = 'obj cell' + (cls ? ' ' + cls : ''); el.textContent = text; pile.appendChild(el); return el; }
+
+// featured replies: fly in from depth, hold to be read, then drop on the pile
+S.feat.forEach((f, i) => {
+  const next = i + 1 < S.feat.length ? S.feat[i + 1][0] : (S.sheet ? S.sheet.in + .1 : S.rain[0] + .05);
+  const el = mkBubble(f[1], f[2], f[3], f[4]);
+  items.push({ el, kind: 'feat', t0: f[0], tf: next - .12, tl: next - .12 + .42, i });
+  CUES.push([f[0] + .3, 'ping', i]); CUES.push([next + .3, 'thud', i]);
+});
+// spreadsheet
+const SHEET = { cells: [] };
+if (S.sheet) {
+  const cols = portrait ? 4 : 6;
+  const HEAD = ['Supplier', 'Electricity (kWh)', 'Diesel (L)', 'Scope 1 (t)', 'Scope 2 (t)', 'Source'];
+  const ROWS = [
+    ['Vendor 0012', '#N/A', 'TBD', '', '0', 'see mail'],
+    ['Vendor 0047', 'will share', '', '#REF!', 'NA', 'PFA'],
+    ['Vendor 0103', '', '??', '#N/A', '', 'call me'],
+    ['Vendor 0388', 'approx', '#VALUE!', 'TBD', '#N/A', ''],
+    ['Vendor 0412', 'what is this', '0', '', '', 'revert EOD'],
+  ];
+  const bad = v => v === '' || /^#|TBD|\?\?|NA|approx|what|revert|see|call|will|PFA/.test(v) || v === '0';
+  const nameEl = document.createElement('div'); nameEl.className = 'obj'; nameEl.id = 'sheetName'; nameEl.textContent = 'supplier_ESG_consolidated_v12_FINAL(3).xlsx'; pile.appendChild(nameEl);
+  SHEET.name = nameEl;
+  [HEAD, ...ROWS].forEach((row, r) => row.slice(0, cols).forEach((v, c) => {
+    const isBad = r > 0 && c > 0 && bad(v);
+    const el = mkCell(r === 0 || c === 0 ? v : '', r === 0 ? 'h' : c === 0 ? 'n' : '');
+    SHEET.cells.push({ el, r, c, v, bad: isBad });
+  }));
+  SHEET.cols = cols; SHEET.rows = ROWS.length + 1;
+  // fill order: data cells one by one
+  const data = SHEET.cells.filter(x => x.r > 0 && x.c > 0);
+  const r0 = rng(5); data.forEach(x => x.ord = r0()); data.sort((a, b) => a.ord - b.ord);
+  data.forEach((x, k) => { x.tfill = lerp(S.sheet.fill[0], S.sheet.fill[1], k / (data.length - 1)); CUES.push([x.tfill, x.bad ? 'err' : 'key']); });
+  // shatter: every cell drops onto the pile
+  const r1 = rng(9);
+  SHEET.cells.forEach((x, k) => { x.tf = S.sheet.shatter + r1() * .55; x.tl = x.tf + .5; items.push({ el: x.el, kind: 'cell', tf: x.tf, tl: x.tl, sheetCell: x }); });
+  items.push({ el: nameEl, kind: 'cell', tf: S.sheet.shatter, tl: S.sheet.shatter + .45, sheetName: true });
+  CUES.push([S.sheet.in, 'whoosh']); CUES.push([S.sheet.ink, 'scratch']); CUES.push([S.sheet.shatter, 'shatter']);
+}
+// the drumroll: replies and broken cells rain down, faster and faster
+const RAIN_TXT = ['RE: RE: FW:', 'Reminder 2', 'Noted.', 'Out of office', 'PFA', 'Our CA will check.', 'Which form?', 'Call me.', 'Sent from my phone', 'Will check and revert.',
+  'Please resend.', '?', 'Revised. Use this one.', 'FW: ESG', 'Ok', 'Ignore previous mail.', 'Attached again.', 'Reminder 3', 'Who is the SPOC?', 'Is this mandatory?', 'Kindly confirm.', 'Noted with thanks.'];
+const RAIN_CELL = ['#N/A', 'TBD', '#REF!', '', '0', 'NA', '#VALUE!', 'approx', '??', 'see mail'];
+{
+  const [a, b, n] = S.rain, r = rng(21);
+  for (let k = 0; k < n; k++) {
+    const tl = a + (b - a) * Math.pow(k / (n - 1), .62);
+    let el, kind;
+    if (k % 3 === 2) { const v = RAIN_CELL[Math.floor(r() * RAIN_CELL.length)]; el = mkCell(v, /^#|TBD|\?\?|NA/.test(v) || v === '' ? 'r' : ''); kind = 'cell'; }
+    else { el = mkBubble(RAIN_TXT[(k * 7) % RAIN_TXT.length], null, null, r() < .35 ? 'g' : ''); kind = 'rain'; }
+    items.push({ el, kind, tf: tl - .42, tl });
+    CUES.push([tl, kind === 'cell' ? 'cellhit' : 'hit', k / n]);
+  }
+}
+CUES.push([S.final, 'final']); CUES.push([S.cut, 'cut']);
+
+let heapDone = false;
+function buildHeap() {
+  const r = rng(77);
+  const [x0, x1] = LAY.heapX, floor = LAY.floor, bw = 16;
+  const nb = Math.ceil((x1 - x0) / bw), hts = new Array(nb).fill(0);
+  const order = items.slice().sort((a, b) => a.tl - b.tl);
+  order.forEach((it, k) => {
+    sz(it.el);
+    it.rs = it.kind === 'cell' ? LAY.rs * 1.15 : it.kind === 'feat' ? LAY.rs * .85 : LAY.rs; it.RX = (r() - .3) * 40;
+    const w = it.el._w * it.rs, h = it.el._h * it.rs;
+    let best = null;
+    for (let c = 0; c < 4; c++) {
+      const cx = x0 + w / 2 + r() * Math.max(1, x1 - x0 - w);
+      const b0 = Math.max(0, Math.floor((cx - w / 2 - x0) / bw)), b1 = Math.min(nb - 1, Math.floor((cx + w / 2 - x0) / bw));
+      let m = 0; for (let b = b0; b <= b1; b++) m = Math.max(m, hts[b]);
+      if (!best || m < best.m) best = { cx, m, b0, b1 };
+    }
+    const top = best.m + h * LAY.overlap;
+    for (let b = best.b0; b <= best.b1; b++) hts[b] = Math.max(hts[b], top);
+    it.X = best.cx; it.Y = floor - top + h / 2; it.RZ = (r() - .5) * (it.kind === 'cell' ? 44 : 16); it.Z = (r() - .5) * 200;
+    it.RZ0 = it.RZ + (r() - .5) * 70; it.X0 = it.X + (r() - .5) * 260; it.order = k;
+    it.el.style.zIndex = 2 + k;
+  });
+  heapDone = document.fonts.status === 'loaded';
+}
+
+// ================= the night city =================
+const cv = $('night'), cx2 = cv.getContext('2d');
+cv.width = W; cv.height = H;
+const fogC = document.createElement('canvas'); fogC.width = W; fogC.height = H; const fx = fogC.getContext('2d');
+function cam(t) {
+  const n = S.night, tf = S.tap || 1e9;
+  const z = Math.max(0, 14 * (Math.min(t, tf) - n) + 3 * Math.max(0, t - tf) + (S.tapEnd ? 10 * Math.max(0, t - S.tapEnd) : 0));
+  const x = 70 * Math.sin(Math.max(0, t - n) * .045);
+  const hy = H * lerp(LAY.hy0, LAY.hy1, S.cta ? p(t, S.cta - 1.4, 2.6, E.io) : 0);
+  return { z, x, hy };
+}
+function proj(X, Z, c) { const zr = Z - c.z; if (zr < 60) return null; const k = LAY.f / zr; return { x: W / 2 + (X - c.x) * k, y: c.hy + LAY.camY * k, k, zr }; }
+function unproj(sx, sy, t) { const c = cam(t); const zr = LAY.f * LAY.camY / (sy - c.hy); return { X: (sx - W / 2) * zr / LAY.f + c.x, Z: zr + c.z }; }
+const DOTS = [];
+{
+  const r = rng(404);
+  const hubs = [];
+  for (let h = 0; h < 18; h++) hubs.push({ X: (r() - .5) * 4200, Z: 520 + Math.pow(r(), 1.25) * 4200 });
+  // special lights first: world positions chosen so each sits where the story needs it
+  S.lights.forEach((tOn, i) => {
+    const at = (i === 0 && S.tap) ? unproj(LAY.tapAt[0], LAY.tapAt[1], S.tap) : unproj(LAY.lightTargets[i][0], LAY.lightTargets[i][1], tOn);
+    hubs.push({ X: at.X + (r() - .5) * 300, Z: at.Z + 200 + r() * 200 });
+    DOTS.push({ X: at.X, Z: at.Z, hub: hubs.length - 1, on: tOn, special: i });
+  });
+  while (DOTS.length < 1000) {
+    const hi = Math.floor(r() * hubs.length), hb = hubs[hi];
+    if (r() < .72) {
+      const sg = 90 + r() * 200, a = r() * Math.PI * 2, d = Math.sqrt(-2 * Math.log(r() + 1e-6)) * sg;
+      DOTS.push({ X: hb.X + Math.cos(a) * d * 1.6, Z: hb.Z + Math.sin(a) * d, hub: hi, on: 1e9 });
+    } else {
+      const h2 = hubs[Math.floor(r() * hubs.length)], u = r();
+      DOTS.push({ X: lerp(hb.X, h2.X, u) + (r() - .5) * 40, Z: lerp(hb.Z, h2.Z, u) + (r() - .5) * 40, hub: hi, on: 1e9 });
+    }
+  }
+  DOTS.forEach(d => { d.tw = r() * 6.28; d.sz = .7 + r() * .6; });
+  S.HUBS = hubs;
+  // waves: the city comes on outward from the first lights
+  const specials = DOTS.filter(d => d.special != null);
+  const rest = DOTS.filter(d => d.special == null).map(d => ({ d, s: Math.min(...specials.map(q => Math.hypot(q.X - d.X, (q.Z - d.Z) * 1.4))) + r() * 500 }));
+  rest.sort((a, b) => a.s - b.s);
+  let k0 = 0;
+  S.waves.forEach(([a, b, n]) => {
+    for (let j = 0; j < n && k0 < rest.length; j++, k0++) rest[k0].d.on = a + (b - a) * Math.pow(j / n, .75) + r() * .25;
+  });
+}
+S.lights.forEach((tOn, i) => CUES.push([tOn, 'light', i]));
+DOTS.filter(d => d.special == null && d.on < 1e8).forEach((d, j) => { if (j % 4 === 0) CUES.push([d.on, 'spark', j]); });
+CUES.push([S.bill + .5, 'slap']); CUES.push([S.loop, 'scratch']);
+if (S.math) { CUES.push([S.math + .2, 'whoosh']); CUES.push([S.math + 1.35, 'count']); }
+CUES.push([S.fold, 'fold']); CUES.push([S.night, 'dark']);
+if (S.tap) { CUES.push([S.tap, 'scratch']); CUES.push([S.tap + .6, 'unfold']); CUES.push([S.tap + 1.9, 'scratch']); CUES.push([S.tapEnd, 'fold']); }
+CUES.push([S.cta, 'cta']);
+CUES.push([S.stream[0], 'send']); CUES.push([S.ret[0], 'return']);
+window.CUES = CUES.sort((a, b) => a[0] - b[0]); window.DUR = S.end;
+
+// grey dots wearing an ESTIMATE tag (long cut)
+const TAGS = [];
+if (S.tags) {
+  const tm = (S.tags[0] + S.tags[1]) / 2, c = cam(tm);
+  const cand = DOTS.filter(d => d.on > S.tags[1] + 1).map(d => ({ d, q: proj(d.X, d.Z, c) }))
+    .filter(o => o.q && o.q.x > 260 && o.q.x < W - 260 && o.q.y > c.hy + 150 && o.q.y < H - 90 && o.q.zr < 1800);
+  const r = rng(8); const picks = [];
+  for (const o of cand.sort(() => r() - .5)) { if (picks.length >= 5) break; if (picks.every(p2 => Math.hypot(p2.q.x - o.q.x, p2.q.y - o.q.y) > 300)) picks.push(o); }
+  picks.forEach((o, i) => { const el = document.createElement('div'); el.className = 'tag'; el.innerHTML = 'ESTIMATE<i></i>'; $('tags').appendChild(el); TAGS.push({ el, d: o.d, t0: S.tags[0] + .3 + i * .22 }); });
+}
+
+let prevSky = null;
+function drawNight(t, alpha) {
+  const g = cx2, c = cam(t);
+  g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
+  // sky and ground
+  const sky = g.createLinearGradient(0, 0, 0, H);
+  sky.addColorStop(0, '#04060a'); sky.addColorStop(clamp(c.hy / H - .01), '#0e141c'); sky.addColorStop(clamp(c.hy / H + .004), '#0b1017'); sky.addColorStop(1, '#06090d');
+  g.fillStyle = sky; g.fillRect(0, 0, W, H);
+  const hz = g.createLinearGradient(0, c.hy - 120, 0, c.hy + 60);
+  hz.addColorStop(0, 'rgba(60,80,90,0)'); hz.addColorStop(.7, 'rgba(70,95,105,.10)'); hz.addColorStop(1, 'rgba(60,80,90,0)');
+  g.fillStyle = hz; g.fillRect(0, c.hy - 120, W, 180);
+  const P = DOTS.map(d => proj(d.X, d.Z, c));
+  const hubP = S.HUBS.map(h => proj(h.X, h.Z, c));
+  // network lines
+  g.lineWidth = 1;
+  DOTS.forEach((d, i) => {
+    const q = P[i], hq = hubP[d.hub]; if (!q || !hq) return;
+    const lit = clamp((t - d.on) / .4);
+    const fade = clamp(1 - q.zr / 5200);
+    g.strokeStyle = lit > 0 ? `rgba(110,231,164,${(.05 + .28 * lit) * fade})` : `rgba(150,158,170,${.07 * fade})`;
+    g.beginPath(); g.moveTo(q.x, q.y); g.lineTo(hq.x, hq.y); g.stroke();
+  });
+  // grey dots (estimates)
+  DOTS.forEach((d, i) => {
+    const q = P[i]; if (!q || d.on <= t) return;
+    const fade = clamp(1 - q.zr / 5400), r = Math.max(.8, 3.4 * q.k * d.sz);
+    g.fillStyle = `rgba(160,166,176,${(.45 + .1 * Math.sin(t * 1.3 + d.tw)) * fade})`;
+    g.beginPath(); g.arc(q.x, q.y, r, 0, 6.283); g.fill();
+  });
+  // estimate fog, with holes where real data has arrived
+  const fogAmt = lerp(.85, .55, S.cta ? p(t, S.cta, 4) : 0);
+  fx.globalCompositeOperation = 'source-over'; fx.clearRect(0, 0, W, H);
+  const fg = fx.createLinearGradient(0, c.hy - 40, 0, H);
+  fg.addColorStop(0, 'rgba(120,128,140,.22)'); fg.addColorStop(.35, 'rgba(110,118,130,.15)'); fg.addColorStop(1, 'rgba(100,108,120,.08)');
+  fx.fillStyle = fg; fx.fillRect(0, c.hy - 40, W, H);
+  for (let b = 0; b < 7; b++) { // drifting haze banks
+    const bx = ((b * 397 + t * (14 + b * 3)) % (W + 800)) - 400, by = c.hy + 40 + (b * 131) % Math.max(60, H - c.hy - 40);
+    const rg = fx.createRadialGradient(bx, by, 0, bx, by, 420); rg.addColorStop(0, 'rgba(130,138,150,.16)'); rg.addColorStop(1, 'rgba(130,138,150,0)');
+    fx.fillStyle = rg; fx.fillRect(bx - 420, by - 420, 840, 840);
+  }
+  fx.globalCompositeOperation = 'destination-out';
+  DOTS.forEach((d, i) => {
+    const q = P[i]; if (!q || d.on > t) return;
+    const k = p(t, d.on, 1.6), R = 230 * q.k * k + 6;
+    const rg = fx.createRadialGradient(q.x, q.y, 0, q.x, q.y, R); rg.addColorStop(0, 'rgba(0,0,0,.7)'); rg.addColorStop(.5, 'rgba(0,0,0,.3)'); rg.addColorStop(1, 'rgba(0,0,0,0)');
+    fx.fillStyle = rg; fx.fillRect(q.x - R, q.y - R, 2 * R, 2 * R);
+  });
+  g.globalAlpha = fogAmt; g.drawImage(fogC, 0, 0); g.globalAlpha = 1;
+  // green lights
+  g.globalCompositeOperation = 'lighter';
+  DOTS.forEach((d, i) => {
+    const q = P[i]; if (!q || d.on > t) return;
+    const u = (t - d.on) / .32;
+    const flick = u >= 1 ? 1 : (Math.sin(u * 37) > -.2 ? .35 + .65 * u : .1);
+    const fade = clamp(1 - q.zr / 6000), r = Math.max(1, 3.6 * q.k * d.sz);
+    const big = d.special != null ? 1.6 : 1;
+    const gr = r * 9 * big, gg = g.createRadialGradient(q.x, q.y, 0, q.x, q.y, gr);
+    gg.addColorStop(0, `rgba(110,231,164,${.55 * flick * fade})`); gg.addColorStop(.25, `rgba(60,200,120,${.18 * flick * fade})`); gg.addColorStop(1, 'rgba(40,160,90,0)');
+    g.fillStyle = gg; g.fillRect(q.x - gr, q.y - gr, gr * 2, gr * 2);
+    g.fillStyle = `rgba(210,255,228,${flick * fade})`; g.beginPath(); g.arc(q.x, q.y, r * (d.special != null ? 1.35 : 1), 0, 6.283); g.fill();
+    if (d.special != null) { // a ring for the first lights
+      const rp = clamp((t - d.on) / 1.4);
+      if (rp > 0 && rp < 1) { g.strokeStyle = `rgba(110,231,164,${(1 - rp) * .8})`; g.lineWidth = 2.5; g.beginPath(); g.arc(q.x, q.y, 8 + rp * 120 * q.k, 0, 6.283); g.stroke(); }
+    }
+  });
+  g.globalCompositeOperation = 'source-over';
+  // a bill drifts down into each of the first lights (not the first: that is the big bill)
+  DOTS.forEach((d, i) => {
+    if (d.special == null || d.special === 0) return;
+    const q = P[i]; if (!q) return;
+    const u = clamp((t - (d.on - .75)) / .75); if (u <= 0 || u >= 1) return;
+    const e = E.in2(u), y = lerp(-60, q.y, e), x = q.x + Math.sin(u * 7) * 26 * (1 - u);
+    const s = lerp(1.2, .3, e);
+    g.save(); g.translate(x, y); g.rotate(Math.sin(u * 5) * .5); g.fillStyle = `rgba(255,253,248,${.95})`;
+    g.fillRect(-14 * s, -18 * s, 28 * s, 36 * s); g.fillStyle = 'rgba(22,24,29,.5)'; g.fillRect(-9 * s, -11 * s, 18 * s, 2.5 * s); g.fillRect(-9 * s, -5 * s, 13 * s, 2 * s); g.restore();
+  });
+  cv.style.opacity = alpha;
+  return { c, P };
+}
+
+// hook: copies of the form stream out, replies stream back
+function drawStream(t) {
+  const g = cx2; g.clearRect(0, 0, W, H); g.globalCompositeOperation = 'source-over';
+  const [ox, oy] = LAY.form; const r = rng(3);
+  for (let i = 0; i < 1000; i++) {
+    const a = r() * 6.283, sp = .5 + r() * .8, d0 = r() * .9, sz2 = .6 + r() * .8;
+    const u = clamp((t - S.stream[0] - d0 * (S.stream[1] - S.stream[0]) * .6) / (.9 / sp));
+    if (u > 0 && u < 1) { // out: away into depth
+      const R = 40 + E.out3(u) * (600 + r() * 500), s = (1 - u) * 12 * sz2;
+      g.fillStyle = `rgba(255,255,255,${.9 * (1 - u)})`; g.fillRect(ox + Math.cos(a) * R * 1.4 - s / 2, oy + Math.sin(a) * R * .8 - s * .65, s, s * 1.3);
+    }
+    const v = clamp((t - S.ret[0] - d0 * (S.ret[1] - S.ret[0]) * .7) / .55);
+    if (v > 0 && v < 1) { // back: towards the camera, faster and bigger
+      const R = 900 * Math.pow(1 - v, 1.5) + 20, s = 3 + E.in2(v) * 46 * sz2;
+      const cx = LAY.feat[0] + Math.cos(a + 1) * R * 1.3 + Math.cos(a) * E.in2(v) * 900, cy = LAY.feat[1] + Math.sin(a + 1) * R * .7 + Math.sin(a) * E.in2(v) * 600;
+      g.fillStyle = `rgba(255,255,255,${Math.min(1, v * 3) * .92})`;
+      g.beginPath(); g.roundRect ? g.roundRect(cx - s, cy - s * .45, s * 2, s * .9, s * .3) : g.rect(cx - s, cy - s * .45, s * 2, s * .9); g.fill();
+    }
+  }
+  cv.style.opacity = 1;
+}
+
+// ================= render =================
+const screenInk = $('screenInk');
+const sheetLoops = [];
+let tapRing = null, annArrow = null;
+function render(t) {
+  if (!heapDone) buildHeap();
+  const night = t >= S.fold + .3;
+  // ---- background: cold corporate grey, an empty pale room after the cut, then night
+  let bg;
+  if (t < S.cut) bg = mixHex('#e4e7ec', '#d5d9df', p(t, S.feat[0][0], S.cut - S.feat[0][0], E.lin));
+  else bg = t >= S.fold + 1.45 ? '#05070b' : '#f2f1ec';
+  $('stage').style.background = bg;
+  $('grain').style.opacity = night ? .07 : .1;
+
+  // ---- canvas: stream in the hook, the city at night
+  if (t < S.cut) { if (t < S.ret[1] + .2) drawStream(t); else { cx2.clearRect(0, 0, W, H); } }
+  else if (t >= S.fold + .2) drawNight(t, p(t, S.fold + .2, 1.1, E.io) * (S.tap ? 1 - .6 * p(t, S.tap + .5, .8, E.io) * (1 - p(t, S.tapEnd, .9, E.io)) : 1));
+  else { cx2.clearRect(0, 0, W, H); cv.style.opacity = 0; }
+
+  // ---- the form
+  const fIn = p(t, 0, .8, E.out5), fOut = p(t, S.formOut, .7, E.io);
+  pose($('form'), { x: LAY.form[0], y: LAY.form[1] + (1 - fIn) * 80, z: -fOut * 1800, rx: 18, ry: -14, rz: -4 + fOut * 20, s: portrait ? 1.25 : 1, o: t < S.cut ? fIn * (1 - fOut) : 0 });
+
+  // ---- camera shake on heavy landings
+  let shake = 0;
+  if (t < S.cut) for (const it of items) { const dt = t - it.tl; if (dt > 0 && dt < .2) shake += (it.kind === 'feat' ? 9 : 4) * (1 - dt / .2) * Math.sin(dt * 120 + it.tl * 10); }
+  { const dt = t - S.final; if (dt > 0 && dt < .35) shake += 22 * (1 - dt / .35) * Math.sin(dt * 95); }
+  const push = lerp(1, 1.05, p(t, S.feat[0][0], S.cut - S.feat[0][0], E.lin));
+  $('world').style.transform = t < S.cut ? `translate(${shake}px, ${shake * .6}px) scale(${push})` : 'none';
+
+  // ---- the pile
+  for (const it of items) {
+    const el = it.el;
+    if (t >= S.cut) { el.style.visibility = 'hidden'; continue; }
+    const rest = { x: it.X, y: it.Y, z: it.Z, rx: it.RX, rz: it.RZ, s: it.rs };
+    if (it.kind === 'feat') {
+      if (t < it.t0) { el.style.visibility = 'hidden'; continue; }
+      const a = p(t, it.t0, .38, E.out5), fall = clamp((t - it.tf) / .42);
+      const words = el.querySelectorAll('.w > span');
+      words.forEach((w, j) => { const k = p(t, it.t0 + .12 + j * .06, .45, E.out5); w.style.transform = `translateY(${(1 - k) * 110}%)`; });
+      const hold = { x: LAY.feat[0] + Math.sin(t * 1.7 + it.i) * 6, y: LAY.feat[1] + (t - it.t0) * 10, z: 0, rz: (it.i % 2 ? 2.5 : -2.5), s: LAY.featS };
+      if (fall <= 0) {
+        pose(el, { x: lerp(LAY.feat[0] + (it.i % 2 ? 500 : -500) * (portrait ? .5 : 1), hold.x, a), y: lerp(LAY.feat[1] - 260, hold.y, a), z: lerp(-2600, 0, a), rx: lerp(-35, 0, a), rz: lerp(it.i % 2 ? 18 : -18, hold.rz, a), s: hold.s, o: clamp(a * 3) });
+        el.style.zIndex = 900;
+      } else {
+        const e = E.in2(fall), bounce = fall >= 1 ? Math.sin(clamp((t - it.tl) / .25) * Math.PI) * -18 * (1 - clamp((t - it.tl) / .25)) : 0;
+        pose(el, { x: lerp(hold.x, rest.x, E.io(fall)), y: lerp(hold.y, rest.y, e) + bounce, z: lerp(0, rest.z, fall), rx: rest.rx * fall, rz: lerp(hold.rz, rest.rz, fall), s: lerp(hold.s, rest.s, E.out3(fall)), o: 1 });
+        el.style.zIndex = fall < 1 ? 900 : 2 + it.order;
+      }
+    } else if (it.sheetCell || it.sheetName) {
+      // laid out as a spreadsheet until it shatters
+      const sh = S.sheet, sIn = p(t, sh.in, .55, E.out5);
+      if (t < sh.in) { el.style.visibility = 'hidden'; continue; }
+      const cw = 214, ch = 64, cols = SHEET.cols, rows = SHEET.rows, sc = portrait ? .98 : .92;
+      const gx = LAY.feat[0] + (1 - sIn) * W * .7, gy = LAY.feat[1] - 10, grot = lerp(14, -3, sIn) * Math.PI / 180;
+      let lx, ly;
+      if (it.sheetName) { lx = -cols * cw / 2 + 300; ly = -rows * ch / 2 - 44; }
+      else { const x = it.sheetCell; lx = (x.c - (cols - 1) / 2) * cw; ly = (x.r - (rows - 1) / 2) * ch; }
+      const sx0 = gx + (lx * Math.cos(grot) - ly * Math.sin(grot)) * sc, sy0 = gy + (lx * Math.sin(grot) + ly * Math.cos(grot)) * sc;
+      if (it.sheetCell) {
+        const x = it.sheetCell;
+        if (x.r > 0 && x.c > 0) { const on = t >= x.tfill; el.textContent = on ? x.v : ''; el.classList.toggle('r', on && x.bad); }
+      }
+      const fall = clamp((t - it.tf) / .5);
+      if (fall <= 0) pose(el, { x: sx0, y: sy0, z: (1 - sIn) * -600, ry: (1 - sIn) * -40, rz: grot * 180 / Math.PI, s: sc, o: sIn });
+      else pose(el, { x: lerp(sx0, rest.x, E.io(fall)), y: lerp(sy0, rest.y, E.in2(fall)), z: lerp(0, rest.z, fall), rx: rest.rx * fall, rz: lerp(grot * 180 / Math.PI, rest.rz, E.out3(fall)) + Math.sin(fall * 3) * 30 * (1 - fall), s: lerp(sc, rest.s, fall), o: 1 });
+      el.style.zIndex = fall > 0 && fall < 1 ? 800 : (fall >= 1 ? 2 + it.order : 700);
+    } else {
+      const fall = clamp((t - it.tf) / .42);
+      if (fall <= 0) { el.style.visibility = 'hidden'; continue; }
+      const e = E.in2(fall), bounce = fall >= 1 ? Math.sin(clamp((t - it.tl) / .2) * Math.PI) * -10 * (1 - clamp((t - it.tl) / .2)) : 0;
+      pose(el, { x: lerp(it.X0, rest.x, fall), y: lerp(-150, rest.y, e) + bounce, z: rest.z, rx: rest.rx, rz: lerp(it.RZ0, rest.rz, E.out3(fall)), s: rest.s, o: 1 });
+      el.style.zIndex = 2 + it.order;
+    }
+  }
+  // red ink on the spreadsheet's worst cells
+  if (S.sheet) {
+    if (!sheetLoops.length) {
+      const bads = []; SHEET.cells.filter(x => x.bad && /^#|\?\?/.test(x.v)).forEach(x => { if (bads.length < 3 && bads.every(b => Math.abs(b.r - x.r) + Math.abs(b.c - x.c) > 2)) bads.push(x); });
+      bads.forEach((x, i) => sheetLoops.push({ x, path: null }));
+    }
+    sheetLoops.forEach((L, i) => {
+      const vis = t > S.sheet.ink && t < S.sheet.shatter + .05;
+      if (vis && !L.path) { const r = L.x.el.getBoundingClientRect(); L.path = ink(screenInk, loop(r.left + r.width / 2, r.top + r.height / 2, r.width * .62, r.height * .9), 'var(--red)', 5); }
+      if (L.path) { draw(L.path, vis ? p(t, S.sheet.ink + i * .22, .35, E.io) : 0); }
+    });
+  }
+
+  // ---- the punchline
+  const fin = $('final'), fm = $('finalMeta'), veil = $('veil');
+  { const v = t < S.cut ? p(t, S.final, .25) * .55 : 0; veil.style.opacity = v; veil.style.visibility = v > 0 ? 'visible' : 'hidden'; }
+  if (t >= S.final && t < S.cut) {
+    const sl = p(t, S.final, .22, E.in2);
+    pose(fin, { x: LAY.final[0], y: LAY.final[1], z: 0, rz: -2.5, s: lerp(2.3, 1, sl), o: clamp(sl * 4) });
+    const words = fin.querySelectorAll('.tx');
+    const m = p(t, S.final + .75, .4, E.out5);
+    fm.style.visibility = m > 0 ? 'visible' : 'hidden'; fm.style.opacity = m;
+    sz(fin); const fmW = fm.offsetWidth;
+    fm.style.left = (LAY.final[0] + fin._w / 2 - fmW - 30) + 'px'; fm.style.top = (LAY.final[1] + fin._h / 2 + 40 + (1 - m) * 10) + 'px';
+  } else { fin.style.visibility = 'hidden'; fm.style.visibility = 'hidden'; }
+
+  // ---- the bill: dropped into the silence
+  const bill = $('bill');
+  if (t >= S.bill && t < S.fold + 1.4 && !(S.tap && t >= S.tap)) {
+    const d = p(t, S.bill, .5, E.in2), bnc = t > S.bill + .5 ? Math.sin(clamp((t - S.bill - .5) / .3) * Math.PI) * -14 * (1 - clamp((t - S.bill - .5) / .3)) : 0;
+    const aside = S.math ? p(t, S.math, .6, E.io) : 0;
+    let x = lerp(LAY.bill[0], LAY.billAside[0], aside), y = lerp(-500, LAY.bill[1], d) + bnc, s = lerp(LAY.billS, LAY.billAsideS, aside);
+    y = lerp(y, LAY.billAside[1], aside);
+    let rx = lerp(30, 0, d), rz = lerp(-14, -3, d), o = 1, z = 0;
+    // fold into a point of light, which drops to where its supplier sits
+    const fo = p(t, S.fold, 1.2, E.io);
+    if (fo > 0) {
+      const dot = DOTS.find(q => q.special === 0), q = proj(dot.X, dot.Z, cam(S.land));
+      x = lerp(x, q.x, fo); y = lerp(y, q.y, E.in2(fo)); s = lerp(s, .02, E.out3(fo)); rx = lerp(rx, 70, fo); rz = lerp(rz, 30, fo); o = 1 - p(t, S.fold + .9, .3);
+      bill.style.filter = `brightness(${1 + fo * 1.5})`;
+    } else bill.style.filter = 'none';
+    pose(bill, { x, y, z, rx, rz, s, o });
+    draw(qtyLoop, p(t, S.loop, .45, E.io));
+  } else if (S.tap && t >= S.tap + .55 && t < S.tapEnd + .9) {
+    // tap: the light unfolds back into its source bill
+    const dot = DOTS.find(q => q.special === 0), c = cam(t), q = proj(dot.X, dot.Z, c);
+    const u = p(t, S.tap + .55, 1.0, E.io), back = p(t, S.tapEnd, .85, E.io);
+    const k = u * (1 - back);
+    pose(bill, { x: lerp(q.x, LAY.billTap[0], k), y: lerp(q.y, LAY.billTap[1], k), rx: lerp(80, 0, k), ry: lerp(-30, 0, k), rz: lerp(25, -2, k), s: lerp(.02, LAY.billTapS, k), o: clamp(k * 4) });
+    bill.style.filter = `brightness(${1 + (1 - k) * 1.5})`;
+    draw(qtyLoop, p(t, S.tap + 1.75, .45, E.io) * (1 - back));
+  } else { bill.style.visibility = 'hidden'; }
+
+  // ---- kinetic maths
+  const math = $('math');
+  if (S.math && t > S.math && t < S.fold + .5) {
+    const mo = 1 - p(t, S.fold - .1, .4, E.io);
+    math.style.visibility = 'visible'; math.style.opacity = mo;
+    math.style.left = LAY.math[0] + 'px'; math.style.top = LAY.math[1] + 'px';
+    const a = (s0, el) => { const k = p(t, s0, .5, E.out5); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 30}px)`; };
+    a(S.math + .35, $('m1')); a(S.math + .8, $('m2'));
+    $('mRule').style.transform = `scaleX(${p(t, S.math + 1.25, .35, E.io)})`;
+    const cn = p(t, S.math + 1.35, 1.0, E.out3); $('mBig').style.opacity = t > S.math + 1.3 ? 1 : 0;
+    $('mN').textContent = Math.round(3350 * cn).toLocaleString('en-IN');
+    a(S.math + 2.4, $('mCap'));
+  } else math.style.visibility = 'hidden';
+
+  // ---- tap ring and annotations
+  const ann = $('ann');
+  if (S.tap && t >= S.tap - .1 && t < S.tapEnd + .9) {
+    const dot = DOTS.find(q => q.special === 0), q = proj(dot.X, dot.Z, cam(S.tap));
+    if (!tapRing) tapRing = ink(screenInk, loop(q.x, q.y, 46, 30, 1.25), 'var(--saffron)', 4.5);
+    draw(tapRing, p(t, S.tap, .45, E.io) * (1 - p(t, S.tap + .9, .3)));
+    const on = t > S.tap + 1.9 && t < S.tapEnd + .3;
+    const ao = 1 - p(t, S.tapEnd - .3, .4, E.io);
+    ann.style.visibility = on ? 'visible' : 'hidden'; ann.style.opacity = ao;
+    ann.style.left = LAY.annAt[0] + 'px'; ann.style.top = LAY.annAt[1] + 'px';
+    const a = (s0, el) => { const k = p(t, s0, .5, E.out5); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 24}px)`; };
+    const txt = '1,250 L × 2.68', hk = clamp((t - S.tap - 2.3) / .7);
+    $('a1').textContent = txt.slice(0, Math.round(txt.length * hk)) || ' ';
+    a(S.tap + 3.1, $('a2')); a(S.tap + 3.9, $('a3')); a(S.tap + 4.2, $('a4')); a(S.tap + 4.5, $('a5'));
+    if (!annArrow && t > S.tap + 1.9) {
+      const b = $('qtyV').getBoundingClientRect(), a1 = $('a1').getBoundingClientRect();
+      const x1 = b.right + 30, y1 = b.top + b.height / 2, x2 = a1.left - 24, y2 = a1.top + a1.height * .55;
+      annArrow = ink(screenInk, `M${x1} ${y1} C ${lerp(x1, x2, .35)} ${y1 - 70}, ${lerp(x1, x2, .7)} ${y2 + 40}, ${x2} ${y2} M${x2 - 22} ${y2 - 14} L ${x2} ${y2} L ${x2 - 20} ${y2 + 17}`, 'var(--saffron)', 4.5);
+    }
+    if (annArrow) draw(annArrow, p(t, S.tap + 2.0, .45, E.io) * ao);
+  } else { ann.style.visibility = 'hidden'; if (tapRing) draw(tapRing, 0); if (annArrow) draw(annArrow, 0); }
+
+  // ---- ESTIMATE tags
+  if (TAGS.length) {
+    const c = cam(t);
+    TAGS.forEach(g => {
+      const q = proj(g.d.X, g.d.Z, c), k = p(t, g.t0, .5, E.out5) * (1 - p(t, S.tags[1] - .3, .4));
+      if (!q || k <= 0) { g.el.style.visibility = 'hidden'; return; }
+      g.el.style.visibility = 'visible'; g.el.style.opacity = k;
+      g.el.style.left = (q.x - g.el.offsetWidth / 2) + 'px'; g.el.style.top = (q.y - 56 - (1 - k) * 12) + 'px';
+    });
+  }
+
+  // ---- captions
+  CAPS.forEach(c => cap(c, t));
+
+  // ---- end
+  const end = $('end');
+  if (t >= S.cta) {
+    const c = cam(t);
+    end.style.visibility = 'visible'; end.style.height = (c.hy - 30) + 'px';
+    const a = (s0, el, d = 30) => { const k = p(t, s0, .8, E.out5); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * d}px)`; };
+    a(S.cta + .2, $('eL1')); a(S.cta + (SHORT ? .9 : 1.5), $('eL2'));
+    a(S.cta + (SHORT ? 1.9 : 3.8), $('eMark'), 14); a(S.cta + (SHORT ? 2.2 : 4.2), $('eUrl'), 10);
+    if (SHORT) $('eStat').style.display = 'none'; else a(S.cta + 5.0, $('eStat'), 8);
+  } else end.style.visibility = 'hidden';
+}
+window.render = render;
+render(Number(Q.get('t') || 0));
+</script>
+</body>
+</html>
