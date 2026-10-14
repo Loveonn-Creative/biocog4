@@ -9,13 +9,13 @@ describe('failure messages', () => {
     expect(f.message.toLowerCase()).not.toContain('upgrade');
   });
   test('daily limit: guests are offered sign-in, free and Essential see Pro, Pro sees no upsell', () => {
-    const body = { error: 'daily_limit', limit: 10, resetsAt: 'x' };
-    expect(chatFailure(429, body, 'guest')).toMatchObject({ kind: 'daily_limit', retry: false, action: { to: '/auth?next=/intelligence' } });
+    const body = { error: 'monthly_limit', limit: 10, resetsAt: 'x' };
+    expect(chatFailure(429, body, 'guest')).toMatchObject({ kind: 'limit', retry: false, action: { to: '/auth?next=/intelligence' } });
     expect(chatFailure(429, { ...body, limit: 20 }, 'snapshot').action?.to).toBe('/pricing');
-    expect(chatFailure(429, { ...body, limit: 200 }, 'pro').action).toBeUndefined();
-    expect(chatFailure(429, body, 'guest').message).toBe("You've used today's 10 questions. They reset at midnight India time.");
+    expect(chatFailure(429, { ...body, limit: 2000 }, 'pro').action).toBeUndefined();
+    expect(chatFailure(429, body, 'guest').message).toBe("You've used this month's 10 questions. More on the 1st.");
   });
-  test('a provider rate limit (429 without daily_limit) is temporary and retryable', () => {
+  test('a provider rate limit (429 without monthly_limit) is temporary and retryable', () => {
     expect(chatFailure(429, { error: 'unavailable' }, 'pro').kind).toBe('unavailable');
   });
   test('a rejected question shows the server reason', () => {

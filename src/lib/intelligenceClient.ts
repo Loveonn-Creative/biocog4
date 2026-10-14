@@ -2,7 +2,7 @@
 // status the person can act on, and a reply into chat-sized bits. Pure, so it
 // is tested directly. Never produces an answer; only says what happened.
 
-export type ChatFailureKind = 'daily_limit' | 'unavailable' | 'rejected' | 'network' | 'timeout' | 'empty' | 'server';
+export type ChatFailureKind = 'limit' | 'unavailable' | 'rejected' | 'network' | 'timeout' | 'empty' | 'server';
 
 export interface ChatFailure {
   kind: ChatFailureKind;
@@ -18,11 +18,11 @@ export type Audience = 'guest' | 'snapshot' | 'essential' | 'pro' | 'scale';
 export function chatFailure(status: number, body: unknown, audience: Audience | null): ChatFailure {
   const b = (body && typeof body === 'object' ? body : {}) as Record<string, unknown>;
   const text = typeof b.message === 'string' ? b.message : typeof b.error === 'string' ? b.error : '';
-  if (status === 429 && b.error === 'daily_limit') {
+  if (status === 429 && (b.error === 'monthly_limit' || b.error === 'daily_limit')) {
     const limit = typeof b.limit === 'number' ? b.limit : null;
     return {
-      kind: 'daily_limit',
-      message: `You've used today's ${limit ?? ''} questions. They reset at midnight India time.`.replace('  ', ' '),
+      kind: 'limit',
+      message: `You've used this month's ${limit ?? ''} questions. More on the 1st.`.replace('  ', ' '),
       retry: false,
       action: audience === 'guest' || audience === null
         ? { label: 'Sign in for more', to: '/auth?next=/intelligence' }
