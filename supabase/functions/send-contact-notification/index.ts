@@ -46,6 +46,7 @@ const categoryLabels: Record<string, string> = {
   monetization: 'Carbon Monetization',
   enterprise: 'Enterprise & API',
   general: 'General Inquiry',
+  'green-loan-check': 'Green Loan Check',
 };
 
 function escapeHtml(str: string | undefined | null): string {

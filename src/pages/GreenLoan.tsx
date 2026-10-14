@@ -177,6 +177,7 @@ export default function GreenLoan() {
           <p className="mt-4 text-muted-foreground">A green loan application includes your income tax returns and bank statements. Sign in so they are tied to your account, sent over an encrypted connection and kept private: nobody else can see them, and nothing goes to a lender without your consent.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild><Link to="/auth?next=/green-loan">Sign in to apply</Link></Button>
+            <Button asChild variant="outline"><Link to="/green-loan-check">2-minute readiness check</Link></Button>
           </div>
         </div>
         <CreditFile filled={[false, false, false, false]} docs={0} carbon={0} />

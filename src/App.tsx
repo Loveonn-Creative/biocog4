@@ -39,6 +39,7 @@ const Principles = lazy(() => import("./pages/Principles"));
 const CarbonCredits = lazy(() => import("./pages/CarbonCredits"));
 const ClimateFinance = lazy(() => import("./pages/ClimateFinance"));
 const GreenLoan = lazy(() => import("./pages/GreenLoan"));
+const GreenLoanCheck = lazy(() => import("./pages/GreenLoanCheck"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const History = lazy(() => import("./pages/History"));
 const Verify = lazy(() => import("./pages/Verify"));
@@ -165,6 +166,7 @@ const App = () => (
               <Route path="/carbon-credits" element={<CarbonCredits />} />
               <Route path="/climate-finance" element={<ClimateFinance />} />
               <Route path="/green-loan" element={<GreenLoan />} />
+              <Route path="/green-loan-check" element={<GreenLoanCheck />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/intelligence" element={<Intelligence />} />
               <Route path="/legal" element={<Legal />} />
