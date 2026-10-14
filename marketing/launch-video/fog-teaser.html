@@ -1,0 +1,678 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>You can't underwrite fog</title>
+<!--
+  FACT SOURCES (kept in code, never on screen)
+  - Positioning, exact: src/pages/ClimateFinance.tsx SEO description: "Senseible is the verification primitive, not the lender."
+  - Lender mechanics, src/pages/ClimateFinance.tsx `lenderMechanics`:
+      hash:  "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices."
+      band:  "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate."
+      lock:  "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve."
+      score: "Climate Credibility Score (0-100) ... graded A+ to D" (inputs: verification quality, completeness, history depth, green-benefit ratio)
+      decision: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth; borrower documents stay private."
+  - Grades: src/lib/credibilityScore.ts  >=90 A+, >=75 A, >=55 B, >=35 C, else D. 72 -> B.
+    (The score measures how far the climate data can be trusted; it is not a credit decision.)
+  - Illustrative record values mirror the LenderLens sample in src/components/climate-finance/FinanceVisuals.tsx:
+      2,982 kgCO2e; sha256 9f2c...a71e electricity bill Sep 2026; band 2,833 to 3,131 kg; 12 documents; invoices stay with the borrower.
+      4,200 kWh x 0.710 kg/kWh = 2,982 kg.  Grid factor: supabase/functions/_shared/emissionFactors.ts INDIA_GRID_FACTOR_KG_PER_KWH = 0.710.
+      Methodology label BIOCOG_MVR_INDIA v1.0: supabase/functions/_shared/emissionFactors.ts (CEA edition not shown: unconfirmed in code).
+  - SHA-256 evidence hash per document: src/pages/Partners.tsx TRUST_INDICATORS.
+  - Bill shows billing fields only (period, tariff category, sanctioned load, units), no personal details: AGENTS.md.
+  - CTA: no "ten borrower" pilot offer exists in code, so the softened CTA is used. /partners route: src/App.tsx.
+  - No bank, lender or partner is named. No certification claimed. No rates or approvals quoted.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 700; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --ink: #16181d; --muted: #6b6f78; --green: #1f5139; --saffron: #f08a24; --red: #c8372d; --paper: #f5f1e8; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #d9dce0; }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 90; }
+canvas.fog { position: absolute; left: 0; top: 0; pointer-events: none; transform-origin: 50% 50%; }
+#fogBack { z-index: 2; } #fogMid { z-index: 30; } #fogFront { z-index: 31; }
+#world { position: absolute; inset: 0; perspective: 2000px; z-index: 10; }
+.obj { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; }
+svg.ink { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+svg.ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- sheets ---------- */
+.sheet { width: 820px; height: 1100px; background: #fbf9f4; border-radius: 8px; padding: 50px 60px; position: relative;
+  box-shadow: 0 1px 0 #ddd8cc, 0 70px 110px -50px rgba(20,25,35,.5), 0 20px 40px -24px rgba(20,25,35,.25); }
+.sh { display: flex; justify-content: space-between; font-size: 17px; letter-spacing: .12em; color: var(--muted); }
+.st { font-size: 50px; font-weight: 600; letter-spacing: -0.025em; margin-top: 18px; }
+.ss { font-size: 22px; color: var(--muted); margin-top: 4px; }
+.rule { height: 3px; background: var(--ink); margin: 24px 0 6px; }
+.rw { position: relative; display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid #e9e4d8; }
+.rw .k { font-size: 23px; color: var(--muted); white-space: nowrap; }
+.rw .v { font-size: 28px; font-weight: 600; text-align: right; }
+.rw .v.mono { font-size: 23px; font-weight: 500; line-height: 1.45; }
+.rw.tot .v { font-size: 30px; }
+.rw.tot .num { font-size: 66px; font-weight: 600; letter-spacing: -0.03em; margin-right: 6px; }
+.rw.band { flex-wrap: wrap; }
+.rw.band svg.axis { width: 700px; height: 64px; margin-top: 12px; overflow: visible; }
+.gl span { display: inline-block; margin-left: 16px; color: #a3a6ad; font-weight: 600; }
+.gl span.on { color: var(--ink); }
+.foot { position: absolute; left: 60px; right: 60px; bottom: 40px; display: flex; justify-content: space-between; font-size: 16px; color: #9a9da4; letter-spacing: .1em; }
+.fogs .v.hand { font-family: 'Hand'; font-size: 44px; font-weight: 600; color: #3b4a7a; line-height: .9; }
+.fogs .v.dash { color: #b5b7bc; font-size: 34px; }
+.stamp { position: absolute; font-family: 'JetBrains Mono', monospace; font-weight: 700; letter-spacing: .1em; border: 6px solid currentColor; border-radius: 10px;
+  padding: 8px 20px; white-space: nowrap; filter: url(#rough); mix-blend-mode: multiply; }
+.fogs .stamp { color: #b2453b; font-size: 40px; right: 70px; top: 120px; transform: rotate(-8deg); opacity: .85; }
+
+/* lens clones */
+.clone { position: absolute; left: 0; top: 0; transform-origin: 0 0; box-shadow: none; }
+
+/* bill behind frosted glass */
+#billGroup { width: 520px; height: 660px; transform-style: preserve-3d; }
+#bill { position: absolute; left: 40px; top: 30px; width: 440px; height: 580px; background: #fffdf8; border-radius: 6px; padding: 34px 34px; filter: blur(9px);
+  box-shadow: 0 40px 70px -40px rgba(30,25,10,.5); }
+#bill .bh { font-size: 32px; font-weight: 600; border-bottom: 3px solid var(--ink); padding-bottom: 12px; }
+#bill .red { display: flex; flex-direction: column; gap: 10px; padding: 18px 0; } #bill .red i { display: block; height: 12px; border-radius: 6px; background: #e4e0d6; }
+#bill .br { display: flex; justify-content: space-between; padding: 15px 0; font-size: 22px; border-bottom: 1px solid #eee; } #bill .br b { font-weight: 600; }
+#pane { position: absolute; left: 0; top: 0; width: 520px; height: 660px; border-radius: 22px; transform: translateZ(50px);
+  background: linear-gradient(135deg, rgba(255,255,255,.62), rgba(236,240,244,.42) 45%, rgba(255,255,255,.55));
+  border: 2px solid rgba(255,255,255,.9); box-shadow: inset 0 0 0 1px rgba(150,160,170,.25), 0 30px 60px -30px rgba(20,30,40,.35); overflow: hidden; }
+#pane .lab { position: absolute; left: 30px; top: 26px; font-size: 16px; letter-spacing: .14em; color: #59606b; }
+#pane .shine { position: absolute; left: -200px; top: -100px; width: 160px; height: 1000px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); transform: rotate(24deg); }
+#tag { position: absolute; left: 34px; top: 300px; background: #fffdf6; border-radius: 6px 14px 14px 6px; padding: 16px 22px 16px 46px; box-shadow: 0 10px 22px -12px rgba(0,0,0,.4);
+  transform: translateZ(70px) rotate(-3deg); border: 1px solid #e6e0d2; }
+#tag .hole { position: absolute; left: 14px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; border: 3px solid #b9b2a2; background: #f0ece2; }
+#tag .h { font-size: 22px; font-weight: 500; }
+#tag .m { font-size: 19px; color: var(--green); font-weight: 600; margin-top: 4px; }
+
+/* wax seal + grade stamp */
+#seal { position: absolute; width: 230px; height: 230px; left: 0; top: 0; }
+#gStamp { color: var(--green); font-size: 30px; line-height: 1; text-align: center; padding: 12px 22px; border-width: 6px; }
+#gStamp b { display: block; font-size: 92px; letter-spacing: 0; font-family: 'Space Grotesk'; font-weight: 700; }
+
+/* lens */
+#lens { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 40; }
+#lensShadow { position: absolute; width: 380px; height: 380px; left: -150px; top: -150px; border-radius: 50%; background: radial-gradient(closest-side, rgba(20,25,35,.28), rgba(20,25,35,0)); }
+#glass { position: absolute; width: 340px; height: 340px; left: -170px; top: -170px; border-radius: 50%; overflow: hidden; background: #fbf9f4; }
+#glass .lfog { position: absolute; left: -130px; top: -130px; }
+#glass .hl { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 26%, rgba(255,255,255,.55), rgba(255,255,255,0) 38%), radial-gradient(circle at 70% 80%, rgba(255,255,255,.18), rgba(255,255,255,0) 30%);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.6), inset 0 0 40px rgba(20,30,40,.25); }
+#lensRing { position: absolute; left: -230px; top: -230px; width: 460px; height: 460px; overflow: visible; }
+#handle { position: absolute; left: 150px; top: 150px; width: 54px; height: 230px; border-radius: 27px; background: linear-gradient(90deg, #2a2d34, #16181d 60%, #0f1013);
+  transform-origin: 27px 0; transform: rotate(-45deg); }
+#handle i { position: absolute; left: 0; right: 0; top: 34px; height: 14px; background: var(--saffron); }
+#readout { position: absolute; left: 0; top: -262px; transform: translateX(-50%); white-space: nowrap; font-size: 19px; font-weight: 600; letter-spacing: .1em;
+  padding: 8px 16px; border-radius: 999px; background: rgba(251,249,244,.92); border: 2px solid currentColor; }
+
+/* captions */
+.capb { position: absolute; z-index: 60; }
+.ln { display: block; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; }
+.ln.sub { font-weight: 500; letter-spacing: -0.01em; line-height: 1.22; color: #4b4f58; }
+.ln .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.ln .w > span { display: inline-block; }
+.g { color: var(--green); } .r { color: var(--red); } .s { color: var(--saffron); } .m { color: var(--muted); }
+
+/* hook */
+#hook { position: absolute; z-index: 20; }
+#hookA { font-size: 74px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.06; position: relative; }
+#hookB { font-size: 104px; font-weight: 600; letter-spacing: -0.045em; line-height: 1.0; margin-top: 70px; }
+#hook .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+#hook .w > span { display: inline-block; }
+
+/* years (method freeze) */
+#years { position: absolute; z-index: 55; font-size: 30px; color: #4b4f58; }
+#years b { font-family: 'JetBrains Mono'; font-weight: 600; font-size: 46px; color: var(--ink); display: inline-block; min-width: 140px; }
+
+/* portfolio wall */
+#wall { position: absolute; left: 0; top: 0; width: 1236px; height: 938px; z-index: 12; transform-origin: 50% 50%; }
+.tile { position: absolute; width: 220px; height: 290px; background: #fbf9f4; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 50px -30px rgba(20,25,35,.45), 0 1px 0 #ddd8cc; }
+.tin { position: absolute; inset: 0; padding: 20px 20px; }
+.tin .tn { font-size: 13px; letter-spacing: .1em; color: var(--muted); }
+.tin .tt { font-size: 22px; font-weight: 600; margin-top: 6px; letter-spacing: -0.01em; }
+.tin i { display: block; height: 9px; border-radius: 5px; background: #e6e1d6; margin-top: 14px; }
+.tin .tr { height: 2px; background: var(--ink); margin: 12px 0 4px; }
+.tg { position: absolute; right: 16px; bottom: 10px; font-size: 92px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.tfog { position: absolute; left: -60px; top: -60px; }
+
+/* end */
+#cta { position: absolute; inset: 0; z-index: 25; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #f5f1e8; text-align: center; }
+#cta .big { font-size: 104px; font-weight: 600; letter-spacing: -0.045em; line-height: 1.02; position: relative; }
+#cta .big .w { display: inline-block; }
+#cta .talk { color: var(--saffron); }
+#cta .url { margin-top: 64px; font-size: 38px; font-weight: 500; letter-spacing: .02em; }
+#cta .mark { margin-top: 56px; font-size: 42px; letter-spacing: .34em; padding-left: .34em; font-weight: 500; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.55"/><feComposite in="SourceGraphic" operator="in"/></filter>
+    <radialGradient id="wax" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#d9574a"/><stop offset=".55" stop-color="#b3302a"/><stop offset="1" stop-color="#7c1d17"/></radialGradient>
+    <path id="sealArc" d="M115 115 m -74 0 a 74 74 0 1 1 148 0 a 74 74 0 1 1 -148 0"/>
+  </svg>
+  <canvas id="grain"></canvas>
+
+  <div id="hook">
+    <div id="hookA"><span class="txt">You stopped lending on balance sheets you couldn't check.</span><svg class="ink" id="hookInk"></svg></div>
+    <div id="hookB">Why lend green on emissions you can't?</div>
+  </div>
+
+  <div id="world">
+    <div class="obj" id="fshWrap"></div>
+    <div class="obj" id="rshWrap"></div>
+    <div class="obj" id="billGroup">
+      <div id="bill">
+        <div class="bh">Electricity bill</div>
+        <div class="red"><i style="width:60%"></i><i style="width:82%"></i><i style="width:40%"></i></div>
+        <div class="br"><span>Billing period</span><b>Sep 2026</b></div>
+        <div class="br"><span>Tariff category</span><b>LT industrial</b></div>
+        <div class="br"><span>Sanctioned load</span><b>45 kW</b></div>
+        <div class="br"><span>Units consumed</span><b>4,200 kWh</b></div>
+      </div>
+      <div id="pane"><div class="lab mono">STAYS WITH THE BORROWER</div><div class="shine" id="shine"></div></div>
+      <div id="tag"><span class="hole" id="hole"></span><div class="h mono">sha256 9f2c…a71e</div><div class="m">matches the record</div></div>
+    </div>
+  </div>
+  <div id="wall"></div>
+  <div id="cta">
+    <div class="big" id="ctaBig"><span class="l1"></span><br><span class="l2 talk"></span><svg class="ink" id="ctaInk"></svg></div>
+    <div class="url mono" id="ctaUrl">senseible.earth/partners</div>
+    <div class="mark" id="ctaMark">Senseible</div>
+  </div>
+  <svg class="ink" id="thread" style="z-index:28;width:100%;height:100%"></svg>
+  <div id="years" class="capb"><span>Re-opened in </span><b id="yearN">2026</b><br><span id="yearNote" class="g" style="font-weight:600">Still v1.0 · 0.710</span></div>
+
+  <div id="lens">
+    <div id="lensShadow"></div>
+    <div id="handle"><i></i></div>
+    <div id="glass"><div id="lc"></div><canvas class="lfog" id="lensFog"></canvas><div class="hl"></div></div>
+    <svg id="lensRing" viewBox="-230 -230 460 460"></svg>
+    <div id="readout" class="mono"></div>
+  </div>
+  <div id="haze" style="position:absolute;inset:0;z-index:29;background:#e2e5e9"></div>
+  <div id="caps"></div>
+</div>
+
+<script>
+const Q = new URLSearchParams(location.search);
+const portrait = Q.get('o') === 'portrait';
+const SHORT = true; // teaser cut
+if (portrait) document.body.classList.add('portrait');
+const W = portrait ? 1080 : 1920, H = portrait ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = {
+  out3: x => 1 - Math.pow(1 - x, 3), out5: x => 1 - Math.pow(1 - x, 5),
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  in2: x => x * x, lin: x => x,
+};
+const p = (t, s, d, e = E.out3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const mixHex = (a, b, k) => { const pa = a.match(/\w\w/g).map(h => parseInt(h, 16)), pb = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + pa.map((v, i) => Math.round(lerp(v, pb[i], k)).toString(16).padStart(2, '0')).join(''); };
+const vis = (el, on) => { el.style.visibility = on ? 'visible' : 'hidden'; };
+
+// Teaser cut (30 s, portrait): hook, the fog, the snap, the CTA. Film time per teaser time.
+const MAP = [[0, 7.6, 0], [7.6, 15.6, 12.5], [15.6, 23.6, 21.0], [23.6, 30.01, 82.0]];
+const ft = t => { if (!SHORT) return t; for (const [a, b, f] of MAP) if (t < b) return f + (t - a); return 88.4; };
+
+// ---------------- deterministic noise + fog textures ----------------
+{ // film grain, drawn once (an SVG turbulence filter per frame is too slow to render)
+  const g = $('grain'); g.width = W / 2; g.height = H / 2; const x = g.getContext('2d'), im = x.createImageData(g.width, g.height); const r = (() => { let s = 99; return () => (s = (s * 16807) % 2147483647) / 2147483647; })();
+  for (let i = 0; i < im.data.length; i += 4) { const v = r() < .5 ? 0 : 255; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = r() * (v ? 9 : 13); }
+  x.putImageData(im, 0, 0);
+}
+const rng = seed => { let s = seed; return () => (s = (s * 16807) % 2147483647) / 2147483647; };
+function noiseGen(seed) {
+  const r = rng(seed), P = new Float32Array(65536); for (let i = 0; i < P.length; i++) P[i] = r();
+  const at = (x, y) => P[((y & 255) << 8) | (x & 255)];
+  return (x, y) => { const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi, u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+    const a = at(xi, yi), b = at(xi + 1, yi), c = at(xi, yi + 1), d = at(xi + 1, yi + 1); return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v; };
+}
+function fogTex(cw, ch, seed, feat, thr, gain, rgb, amax) {
+  const c = document.createElement('canvas'); c.width = cw; c.height = ch; const g = c.getContext('2d'); const im = g.createImageData(cw, ch); const N = noiseGen(seed);
+  for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) {
+    let n = 0, a = .5, f = 1 / feat; for (let o = 0; o < 5; o++) { n += a * N(x * f + o * 17.3, y * f * 1.6 + o * 9.1); a *= .5; f *= 2.07; }
+    let k = clamp((n / .97 - thr) * gain); k = k * k * (3 - 2 * k);
+    const i = (y * cw + x) * 4; im.data[i] = rgb[0]; im.data[i + 1] = rgb[1]; im.data[i + 2] = rgb[2]; im.data[i + 3] = k * amax * 255;
+  }
+  g.putImageData(im, 0, 0); c.className = 'fog'; return c;
+}
+const FW = Math.round(W * 2), FH = Math.round(H * 2);
+const fogBack = fogTex(320, Math.round(320 * FH / FW), 7, 40, .28, 1.35, [168, 175, 186], .8);
+const fogMid = fogTex(320, Math.round(320 * FH / FW), 21, 30, .33, 1.4, [242, 244, 247], .85);
+const fogFront = fogTex(260, Math.round(260 * FH / FW), 44, 22, .40, 1.45, [250, 251, 252], .72);
+[[fogBack, 'fogBack'], [fogMid, 'fogMid'], [fogFront, 'fogFront']].forEach(([c, id]) => { c.id = id; c.style.width = FW + 'px'; c.style.height = FH + 'px'; $('stage').appendChild(c); });
+const lensFogC = fogTex(120, 120, 63, 16, .30, 1.4, [238, 241, 245], .8);
+const lf = $('lensFog'); lf.width = 120; lf.height = 120; lf.getContext('2d').drawImage(lensFogC, 0, 0); lf.style.width = '600px'; lf.style.height = '600px';
+
+// ---------------- sheets ----------------
+const recHTML = `
+  <div class="sh mono"><span>VERIFIED RECORD · SCOPE 2</span><span>ILLUSTRATIVE</span></div>
+  <div class="st">Borrower 014</div><div class="ss">Forging unit · Sep 2026</div><div class="rule"></div>
+  <div class="rw" data-r="units"><span class="k">Electricity</span><span class="v">4,200 kWh</span></div>
+  <div class="rw tot" data-r="total"><span class="k">Scope 2 total</span><span class="v"><b class="num">2,982</b> kg CO₂e</span></div>
+  <div class="rw band" data-r="band"><span class="k">Band</span><span class="v">2,833 – 3,131 kg</span><svg class="axis"></svg></div>
+  <div class="rw" data-r="src"><span class="k">Source</span><span class="v mono">sha256 9f2c…a71e</span></div>
+  <div class="rw" data-r="method"><span class="k">Method</span><span class="v mono">BIOCOG_MVR_INDIA v1.0<br>grid 0.710 kg CO₂/kWh</span></div>
+  <div class="rw" data-r="grade"><span class="k">Credibility</span><span class="v">72 / 100<span class="gl"><span>A+</span><span>A</span><span class="on">B</span><span>C</span><span>D</span></span></span></div>
+  <div class="rw" data-r="fit"><span class="k">Instrument fit</span><span class="v"><span class="fitg">Green loan</span> · Factoring · SLL</span></div>
+  <div class="rw" data-r="docs" style="border:0"><span class="k">Evidence depth</span><span class="v">12 documents · private</span></div>
+  <div class="foot mono"><span>SENSEIBLE</span><span>SCOPE 2 · SEP 2026</span></div>`;
+const fogHTML = `
+  <div class="sh mono"><span>BORROWER FILE · ESG ANNEX</span><span>P. 7</span></div>
+  <div class="st">Borrower 014</div><div class="ss">Emissions, as stated by the borrower</div><div class="rule"></div>
+  <div class="rw" data-r="s1"><span class="k">Scope 1</span><span class="v hand">around 40 t ?</span></div>
+  <div class="rw" data-r="s2"><span class="k">Scope 2</span><span class="v hand">≈ 3 t, est.</span></div>
+  <div class="rw" data-r="s3"><span class="k">Scope 3</span><span class="v hand">not known</span></div>
+  <div class="rw" data-r="src"><span class="k">Source</span><span class="v dash">—</span></div>
+  <div class="rw" data-r="method"><span class="k">Method</span><span class="v dash">—</span></div>
+  <div class="rw" data-r="basis"><span class="k">Basis</span><span class="v hand">owner's estimate</span></div>
+  <div class="rw" data-r="sig" style="border:0"><span class="k">Signed</span><span class="v hand">R. — </span></div>
+  <div class="stamp">SELF-DECLARED</div>`;
+function mkSheet(cls, html) { const d = document.createElement('div'); d.className = 'sheet ' + cls; d.innerHTML = html; return d; }
+const fsh = mkSheet('fogs', fogHTML), rsh = mkSheet('rec', recHTML);
+$('fshWrap').appendChild(fsh); $('rshWrap').appendChild(rsh);
+const fClone = mkSheet('fogs clone', fogHTML), rClone = mkSheet('rec clone', recHTML);
+$('lc').appendChild(fClone); $('lc').appendChild(rClone);
+const row = (sheet, r) => sheet.querySelector(`[data-r="${r}"]`);
+
+// ---------------- ink ----------------
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function loopPath(cx, cy, rx, ry, turns = 1.16, start = -2.5) {
+  let d = ''; const n = 56;
+  for (let i = 0; i <= n; i++) { const a = start + (i / n) * Math.PI * 2 * turns, j = 1 + (rnd() - .5) * .05 + i / n * .06;
+    d += (i ? 'L' : 'M') + (cx + Math.cos(a) * rx * j).toFixed(1) + ' ' + (cy + Math.sin(a) * ry * j).toFixed(1); }
+  return d;
+}
+function ink(svg, d, color, w) {
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', d); path.setAttribute('stroke', color); path.setAttribute('stroke-width', w);
+  path.setAttribute('pathLength', 1); path.style.strokeDasharray = 1; path.style.strokeDashoffset = 1;
+  svg.appendChild(path); return path;
+}
+const draw = (path, k) => { path.style.strokeDashoffset = 1 - k; };
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+
+// record ink layer (moves with the sheet)
+const recInk = el('svg', { class: 'ink', width: 820, height: 1100 }, rsh);
+let INK = null;
+function buildInk() {
+  // positions measured inside the sheet (fonts ready)
+  const off = (node) => { let x = 0, y = 0, n = node; while (n && n !== rsh) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; } return { x, y, w: node.offsetWidth, h: node.offsetHeight }; };
+  const num = off(rsh.querySelector('.num'));
+  const bLoop = ink(recInk, loopPath(num.x + num.w / 2, num.y + num.h / 2 + 4, num.w / 2 + 34, num.h / 2 + 8), 'var(--green)', 5);
+  const gB = off(rsh.querySelector('.gl .on'));
+  const gLoop = ink(recInk, loopPath(gB.x + gB.w / 2, gB.y + gB.h / 2 + 2, 24, 24, 1.12, -2.2), 'var(--green)', 4.5);
+  const fg = off(rsh.querySelector('.fitg'));
+  const fLoop = ink(recInk, loopPath(fg.x + fg.w / 2, fg.y + fg.h / 2 + 3, fg.w / 2 + 12, fg.h / 2 + 9, 1.14, -2.3), 'var(--saffron)', 5);
+  // the band axis: drawn in the band row's own svg (700 x 64). Scale 2,700 .. 3,250 kg.
+  const ax = rsh.querySelector('svg.axis'); const X = v => 20 + (v - 2700) / 550 * 660;
+  const axLine = ink(ax, `M20 30 L680 30`, '#b9b4a8', 2.5);
+  const cap = el('rect', { x: X(2982), y: 18, width: 0, height: 24, rx: 12, fill: 'var(--green)', 'fill-opacity': .22, stroke: 'var(--green)', 'stroke-width': 2.5 }, ax);
+  const mid = el('line', { x1: X(2982), x2: X(2982), y1: 8, y2: 52, stroke: 'var(--ink)', 'stroke-width': 4, 'stroke-linecap': 'round' }, ax);
+  const lo = el('text', { x: X(2833), y: 72, 'text-anchor': 'middle', 'font-size': 19, 'font-family': 'JetBrains Mono', fill: '#4b4f58' }, ax); lo.textContent = '2,833';
+  const hi = el('text', { x: X(3131), y: 72, 'text-anchor': 'middle', 'font-size': 19, 'font-family': 'JetBrains Mono', fill: '#4b4f58' }, ax); hi.textContent = '3,131';
+  // wax seal: placed on the method row
+  const mr = off(row(rsh, 'method'));
+  const seal = document.createElement('div'); seal.id = 'seal'; seal.style.left = '75px'; seal.style.top = (mr.h / 2 - 115) + 'px'; seal.style.transformOrigin = '115px 115px';
+  let sd = ''; for (let i = 0; i <= 40; i++) { const a = i / 40 * Math.PI * 2, rr = 98 + Math.sin(a * 7) * 4 + Math.sin(a * 13 + 1) * 3 + (rnd() - .5) * 3;
+    sd += (i ? 'L' : 'M') + (115 + Math.cos(a) * rr).toFixed(1) + ' ' + (115 + Math.sin(a) * rr).toFixed(1); }
+  seal.innerHTML = `<svg width="230" height="230" viewBox="0 0 230 230" style="overflow:visible">
+    <ellipse cx="121" cy="128" rx="100" ry="96" fill="rgba(60,10,8,.28)" filter="url(#rough)"/>
+    <path d="${sd}Z" fill="url(#wax)"/>
+    <circle cx="115" cy="115" r="80" fill="none" stroke="#e57a6c" stroke-opacity=".55" stroke-width="3"/>
+    <circle cx="115" cy="115" r="56" fill="none" stroke="#6e1712" stroke-opacity=".5" stroke-width="2"/>
+    <text font-family="JetBrains Mono" font-size="13.5" font-weight="700" letter-spacing="2.6" fill="#f3c2b9" fill-opacity=".9"><textPath href="#sealArc">METHOD · FACTOR · FROZEN · METHOD · FACTOR · FROZEN ·</textPath></text>
+    <text x="115" y="132" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="46" fill="#5e130f" fill-opacity=".55" dx="1.5" dy="1.5">2026</text>
+    <text x="115" y="132" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="46" fill="#f6d2ca">2026</text></svg>`;
+  seal.style.width = '230px'; seal.style.zIndex = 3; row(rsh, 'method').appendChild(seal); seal.querySelector('svg').style.transform = 'scale(.78)';
+  // grade stamp
+  const gr = off(row(rsh, 'grade'));
+  const gs = document.createElement('div'); gs.className = 'stamp'; gs.id = 'gStamp'; gs.innerHTML = 'GRADE<b>B</b>';
+  gs.style.left = '170px'; gs.style.top = (gr.h - 70) + 'px'; gs.style.zIndex = 4; row(rsh, 'grade').appendChild(gs);
+  INK = { bLoop, gLoop, fLoop, axLine, cap, mid, lo, hi, X, seal, gs };
+}
+
+// hook ink: red strike through "balance sheets you couldn't check"
+let hookStrike = null;
+
+// ---------------- lens ring ----------------
+const ring = $('lensRing');
+el('circle', { cx: 0, cy: 0, r: 180, fill: 'none', stroke: '#16181d', 'stroke-width': 20 }, ring);
+el('circle', { cx: 0, cy: 0, r: 170, fill: 'none', stroke: '#3a3e47', 'stroke-width': 2 }, ring);
+const focusG = el('g', {}, ring);
+el('circle', { cx: 0, cy: 0, r: 203, fill: 'none', stroke: '#23262d', 'stroke-width': 26 }, focusG);
+for (let i = 0; i < 96; i++) { const a = i / 96 * Math.PI * 2;
+  el('line', { x1: Math.cos(a) * 193, y1: Math.sin(a) * 193, x2: Math.cos(a) * 213, y2: Math.sin(a) * 213, stroke: i % 8 === 0 ? '#f08a24' : '#5b606b', 'stroke-width': i % 8 === 0 ? 3 : 2 }, focusG); }
+const ringFlash = el('circle', { cx: 0, cy: 0, r: 182, fill: 'none', stroke: '#f08a24', 'stroke-width': 8, opacity: 0 }, ring);
+const ringIdx = el('path', { d: 'M0 -226 L-9 -240 L9 -240 Z', fill: '#f5f1e8' }, ring);
+
+// ---------------- captions ----------------
+// lines: [text, tin, cls]; *word* = green, _word_ = saffron, ~word~ = red
+const CAPS = [
+  { id: 'c1', L: [120, 430, 640], P: [80, 250, 920], tout: 13.0, lines: [['Self-declared emissions.', 9.6, 64]] },
+  { id: 'c2', L: [120, 360, 660], P: [80, 230, 920], tout: 20.4, lines: [["You can't underwrite fog.", 13.9, 104]] },
+  { id: 'c3', L: [120, 420, 600], P: [80, 250, 920], tout: 25.0, lines: [['Swap in a *Senseible* record.', 21.6, 66]] },
+  { id: 'c4', L: [120, 420, 600], P: [80, 250, 920], tout: 28.8, lines: [['Any line.', 25.75, 80], ['*In* *focus.*', 26.3, 80]] },
+  { id: 'c5', L: [1060, 96, 790], P: [80, 150, 920], tout: 34.5, lines: [['Every total traces to its source document.', 30.0, 56]] },
+  { id: 'c6', L: [1060, 96, 790], P: [80, 150, 920], tout: 38.8, lines: [['Spot-check any line.', 34.8, 56], ['*Never* *hold* *the* *paper.*', 35.6, 56]] },
+  { id: 'c7', L: [120, 300, 470], P: [80, 150, 920], tout: 47.6, lines: [['Every figure carries its band.', 40.0, 62], ['The range, not a fabricated point estimate.', 41.3, 34, 'sub']] },
+  { id: 'c8', L: [120, 280, 470], P: [80, 150, 920], tout: 56.6, lines: [['Method and factor, frozen with the output.', 49.0, 62], ['A 2026 disclosure stays a 2026 disclosure.', 50.8, 36, 'sub']] },
+  { id: 'c9', L: [120, 300, 470], P: [80, 150, 920], tout: 64.2, lines: [['One signal, graded A+ to D.', 57.9, 62], ['Verification quality, completeness, history depth, green-benefit ratio.', 59.3, 32, 'sub']] },
+  { id: 'c10', L: [120, 320, 470], P: [80, 150, 920], tout: 70.6, lines: [['Instrument fit. Eligibility band.', 65.5, 62], ['Borrower documents stay private.', 66.9, 36, 'sub']] },
+  { id: 'c11', L: [120, 64, 1700], P: [80, 150, 920], tout: 77.9, lines: [['Inspect any line, across the whole book.', 74.0, 58]] },
+  { id: 'c12', L: [120, 64, 1700], P: [80, 150, 920], tout: 80.8, lines: [['*Senseible* is the verification primitive, not the lender.', 78.1, 58]] },
+];
+const wordsHTML = s => s.split(' ').map(w => {
+  let cls = ''; if (/^\*.*\*$/.test(w)) { cls = 'g'; w = w.slice(1, -1); } else if (/^_.*_$/.test(w)) { cls = 's'; w = w.slice(1, -1); } else if (/^~.*~$/.test(w)) { cls = 'r'; w = w.slice(1, -1); }
+  return `<span class="w"><span class="${cls}">${w}</span></span>`; }).join(' ');
+CAPS.forEach(c => {
+  const b = document.createElement('div'); b.className = 'capb'; b.id = c.id; const [x, y, w] = portrait ? c.P : c.L;
+  b.style.left = x + 'px'; b.style.top = y + 'px'; b.style.width = w + 'px';
+  c.lines.forEach(([txt, tin, fs, cls], i) => { const d = document.createElement('div'); d.className = 'ln' + (cls ? ' ' + cls : ''); d.style.fontSize = (portrait ? Math.round(fs * (fs > 60 ? 1.15 : 1.3)) : fs) + 'px';
+    if (i) d.style.marginTop = (cls === 'sub' ? 26 : 0) + 'px'; d.innerHTML = wordsHTML(txt); b.appendChild(d); });
+  $('caps').appendChild(b); c.el = b;
+});
+// "fog." itself is out of focus
+CAPS[1].el.querySelectorAll('.w')[3].querySelector('span').style.filter = 'blur(3.5px)';
+function capRender(c, t) {
+  const o = 1 - p(t, c.tout, .4, E.io);
+  vis(c.el, t >= c.lines[0][1] - .01 && o > 0); c.el.style.opacity = o;
+  c.el.querySelectorAll('.ln').forEach((ln, i) => { const tin = c.lines[i][1];
+    ln.querySelectorAll('.w > span').forEach((w, j) => { const k = p(t, tin + j * .055, .55, E.out5); w.style.transform = `translateY(${(1 - k) * 112}%)`; }); });
+}
+
+// ---------------- hook ----------------
+['hookA', 'hookB'].forEach(id => { const n = id === 'hookA' ? $('hookA').querySelector('.txt') : $('hookB'); n.innerHTML = wordsHTML(n.textContent); });
+const hook = $('hook');
+hook.style.left = (portrait ? 80 : 150) + 'px'; hook.style.top = (portrait ? 560 : 250) + 'px'; hook.style.width = (portrait ? 920 : 1560) + 'px';
+if (portrait) { $('hookA').style.fontSize = '84px'; $('hookB').style.fontSize = '124px'; }
+
+// ---------------- CTA text (set before any measuring) ----------------
+$('cta').querySelector('.l1').innerHTML = 'Clear the fog on your portfolio.'.split(' ').map(w => `<span class="w">${w}</span>`).join(' ');
+$('cta').querySelector('.l2').innerHTML = 'Talk to us.'.split(' ').map(w => `<span class="w">${w}</span>`).join(' ');
+if (portrait) { $('ctaBig').style.fontSize = '112px'; $('ctaBig').style.padding = '0 50px'; $('ctaUrl').style.fontSize = '44px'; $('ctaMark').style.fontSize = '54px'; }
+
+// ---------------- wall ----------------
+const GRADES = ['A', 'B', 'C', 'A+', 'B', 'D', 'A', 'B', 'C', 'A', 'B', 'A+', 'C', 'B', 'A'];
+const gCol = g => g === 'A+' || g === 'A' ? 'var(--green)' : g === 'B' ? 'var(--ink)' : g === 'C' ? 'var(--saffron)' : 'var(--red)';
+const tiles = GRADES.map((g, i) => {
+  const d = document.createElement('div'); d.className = 'tile'; const c = i % 5, r = Math.floor(i / 5);
+  d.style.left = (c * 254) + 'px'; d.style.top = (r * 324) + 'px';
+  const ws = [70, 54, 82, 46, 64, 58, 76, 50, 68, 60, 72, 44, 80, 56, 62];
+  d.innerHTML = `<div class="tin"><div class="tn mono">BORROWER ${String(9 + i * 1 + (i > 6 ? 0 : 0)).padStart(3, '0')}</div><div class="tt">Scope 1–2</div><div class="tr"></div>
+    <i style="width:${ws[i]}%"></i><i style="width:${ws[(i + 5) % 15]}%"></i><i style="width:${ws[(i + 9) % 15]}%"></i>
+    <div class="tg" style="color:${gCol(g)}">${g}</div></div>`;
+  const fc = fogTex(48, 60, 100 + i * 7, 9, .28, 2.2, [236, 239, 243], .95); fc.className = 'tfog'; fc.style.width = '340px'; fc.style.height = '410px';
+  d.appendChild(fc); $('wall').appendChild(d); return { d, tin: d.querySelector('.tin'), tg: d.querySelector('.tg'), fc, c, r };
+});
+tiles[7].d.querySelector('.tn').textContent = 'BORROWER 014';
+// serpentine sweep order, skipping the centre tile (our record)
+const ORDER = [0, 1, 2, 3, 4, 9, 8, 6, 5, 10, 11, 12, 13, 14];
+const SWEEP0 = 74.3, SWEEPD = .25;
+
+// ---------------- layout ----------------
+const LAY = portrait
+  ? { fogPose: { x: 540, y: 1230, s: 1.1 }, recPose: { x: 540, y: 1230, s: 1.1 }, threadPose: { x: 540, y: 820, s: .62 }, bill: { x: 540, y: 1520, s: .62 },
+      focus: { cx: 540, cy: 1150, s: 1.2 }, wall: { x: 540, y: 1100, s: .7 } }
+  : { fogPose: { x: 1180, y: 560, s: .86 }, recPose: { x: 1180, y: 560, s: .86 }, threadPose: { x: 610, y: 560, s: .95 }, bill: { x: 1450, y: 700, s: 1.02 },
+      focus: { cx: 1265, cy: 540, s: 1.5 }, wall: { x: 960, y: 600, s: .88 } };
+
+function pose(el, { x, y, z = 0, rx = 0, ry = 0, rz = 0, s = 1, o = 1 }) {
+  el.style.left = (x - el.offsetWidth / 2) + 'px'; el.style.top = (y - el.offsetHeight / 2) + 'px';
+  el.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s})`;
+  el.style.opacity = o; vis(el, o > .001);
+}
+// pose that lands a record row's centre at (cx, cy)
+function focusPose(r, s, cx = LAY.focus.cx, cy = LAY.focus.cy, dy = 0) {
+  const n = row(rsh, r); const ry = n.offsetTop + n.offsetHeight / 2 + dy;
+  return { x: cx, y: cy - (ry - rsh.offsetHeight / 2) * s, s };
+}
+function kf(t, keys) { // keys: [time, pose]; ease between consecutive keys
+  if (t <= keys[0][0]) return { ...keys[0][1] };
+  for (let i = 1; i < keys.length; i++) { const [t1, b] = keys[i], [t0, a] = keys[i - 1];
+    if (t <= t1) { const k = E.io(clamp((t - t0) / (t1 - t0))); const o = {}; for (const key of new Set([...Object.keys(a), ...Object.keys(b)])) o[key] = lerp(a[key] ?? 0, b[key] ?? 0, k); return o; } }
+  return { ...keys[keys.length - 1][1] };
+}
+let REC_KEYS = null;
+function buildKeys() {
+  const L = LAY, F = L.focus;
+  const z = { rx: 0, ry: 0, rz: 0, z: 0 };
+  const fTot = focusPose('total', F.s, F.cx, F.cy - 40, 30), fMeth = focusPose('method', F.s), fGr = focusPose('grade', F.s, F.cx, F.cy + 20), fFit = focusPose('fit', 1.42, F.cx, F.cy, 40);
+  const pin = { x: L.wall.x, y: L.wall.y, s: .86 };
+  REC_KEYS = [
+    [21.2, { x: L.recPose.x, y: H + 700, s: L.recPose.s, rx: 34, ry: 0, rz: 6, z: -200 }],
+    [22.7, { ...L.recPose, ...z }],
+    [28.9, { ...L.recPose, ...z }], [30.1, { ...L.threadPose, ...z }],
+    [38.9, { ...L.threadPose, ...z }], [39.9, { ...fTot, ...z }],
+    [47.9, { ...fTot, ...z }], [48.9, { ...fMeth, ...z }],
+    [56.9, { ...fMeth, ...z }], [57.9, { ...fGr, ...z }],
+    [64.4, { ...fGr, ...z }], [65.4, { ...fFit, ...z }],
+    [71.0, { ...fFit, ...z }], [72.2, { ...pin, ...z }],
+  ];
+}
+// rows in focus (others dim + soften, like depth of field)
+const FOCUS = [[29.6, 38.8, ['total', 'src']], [39.7, 47.8, ['total', 'band']], [48.7, 56.8, ['method']], [57.7, 64.3, ['grade']], [65.2, 70.9, ['fit', 'docs']]];
+const RROWS = ['units', 'total', 'band', 'src', 'method', 'grade', 'fit', 'docs'];
+
+// ---------------- render ----------------
+let built = false;
+function render(T) {
+  const t = ft(T);
+  if (!built) { buildInk(); buildKeys(); built = true;
+    const tx = $('hookA').querySelectorAll('.w'); const a = tx[4], b = tx[8];
+    const x1 = a.offsetLeft - 6, x2 = b.offsetLeft + b.offsetWidth + 6, y1 = a.offsetTop + a.offsetHeight * .55, y2 = b.offsetTop + b.offsetHeight * .55;
+    const hs = $('hookInk'); hs.setAttribute('width', 10); hs.setAttribute('height', 10);
+    hookStrike = ink(hs, y1 === y2 ? `M${x1} ${y1} C ${lerp(x1, x2, .3)} ${y1 - 8}, ${lerp(x1, x2, .7)} ${y1 + 9}, ${x2} ${y1 - 3}`
+      : `M${x1} ${y1} L${$('hookA').offsetWidth} ${y1 + 2} M0 ${y2} C ${x2 * .3} ${y2 - 7}, ${x2 * .7} ${y2 + 8}, ${x2} ${y2 - 2}`, 'var(--red)', 7);
+  }
+
+  // ---- fog density and colour arc
+  const rollIn = p(t, 5.4, 3.8, E.io);
+  const snapK = p(t, 25.4, .7, E.out3);
+  const ctaFog = .5 * p(t, 80.3, 1.2, E.io) * (1 - p(t, 82.95, .55, E.out3));
+  const D = Math.max(rollIn * (1 - snapK), ctaFog);
+  const warm = p(t, 25.4, .8, E.out3), green = p(t, 80.3, 1.0, E.io);
+  let bg = mixHex('#dadde1', '#bcc2ca', rollIn); bg = mixHex(bg, '#f3eee3', warm); bg = mixHex(bg, '#1f5139', green);
+  $('stage').style.background = bg;
+  const rush = 1 + snapK * .7 * (t < 40 ? 1 : 0) + p(t, 82.95, .6) * .6 * (t > 80 ? 1 : 0);
+  const drift = (c, sp, amp, ph, op) => {
+    const x = -(FW - W) / 2 + Math.sin(t * sp + ph) * amp * W + (1 - rollIn) * W * (t < 20 ? .3 : 0) * (c === fogFront ? 1.2 : 1);
+    const y = -(FH - H) / 2 + Math.sin(t * sp * .7 + ph * 2) * amp * .5 * H;
+    c.style.transform = `translate(${x}px, ${y}px) scale(${rush * (1 + .04 * Math.sin(t * .2 + ph))})`;
+    c.style.opacity = op; vis(c, op > .002);
+  };
+  $('haze').style.opacity = t < 40 ? D * .32 : 0; vis($('haze'), t < 40 && D > .01);
+  drift(fogBack, .05, .1, 0, D * (t > 79 ? .5 : 1));
+  drift(fogMid, .08, .13, 2, D * .95);
+  drift(fogFront, .13, .16, 4, D * .8);
+
+  // ---- hook (0 - 9.5)
+  const hA = $('hookA'), hB = $('hookB');
+  const hookOut = p(t, 8.4, .9, E.io);
+  vis(hook, t < 9.4); hook.style.opacity = 1 - hookOut;
+  hA.querySelectorAll('.w > span').forEach((w, j) => { const k = p(t, .35 + j * .06, .6, E.out5); w.style.transform = `translateY(${(1 - k) * 112}%)`; });
+  hA.style.color = mixHex('#16181d', '#7b7f88', p(t, 3.4, .6));
+  draw(hookStrike, p(t, 2.25, .6, E.io));
+  const hbw = hB.querySelectorAll('.w');
+  hbw.forEach((w, j) => { const k = p(t, 3.6 + j * .09, .6, E.out5); const sp = w.querySelector('span'); sp.style.transform = `translateY(${(1 - k) * 112}%)`;
+    w.style.overflow = k >= 1 ? 'visible' : 'hidden';
+    const fogged = j >= 4 ? p(t, 5.6 + (j - 4) * .35, 1.6, E.io) : 0; sp.style.filter = fogged > .01 ? `blur(${fogged * 14}px)` : 'none'; sp.style.opacity = 1 - fogged * .35; });
+
+  // ---- fog sheet (8.2 - 22.4)
+  const fIn = p(t, 8.2, 1.8, E.out5), lean = p(t, 10.4, 1.6, E.io), fOut = p(t, 21.2, 1.2, E.io);
+  const fp = LAY.fogPose;
+  pose($('fshWrap'), { x: fp.x, y: fp.y + (1 - fIn) * 260 + fOut * (H * .75) + Math.sin(t * .8) * 5 * (1 - fOut), z: lerp(-900, 0, fIn) - fOut * 300,
+    rx: lerp(40, lerp(14, 3, lean), fIn) + fOut * 30, rz: lerp(-12, lerp(-4, -1, lean), fIn), s: fp.s * lerp(1, 1.04, lean), o: (t < 8.2 ? 0 : clamp(fIn * 2)) * (1 - p(t, 22.0, .4)) });
+  fsh.style.filter = 'blur(3.2px)';
+
+  // ---- record (21.2 - 74)
+  const rp = kf(t, REC_KEYS);
+  { // after the pin, the record shrinks with the wall's pull-back so it lands exactly on its tile
+    const k0 = .86 / (220 / 820) / LAY.wall.s, kz = lerp(k0, 1, p(t, 72.2, 1.9, E.io)); if (t > 72.2) rp.s = .86 * kz / k0; }
+  const recO = t < 21.2 ? 0 : 1 - p(t, 73.5, .45, E.io);
+  pose($('rshWrap'), { ...rp, o: recO });
+  rsh.style.filter = t < 25.4 ? 'blur(2.4px)' : 'none';
+  // depth of field across rows
+  let fset = null, fk = 0;
+  for (const [a, b, rows] of FOCUS) { const k = p(t, a, .5, E.io) * (1 - p(t, b, .5, E.io)); if (k > fk) { fk = k; fset = rows; } }
+  RROWS.forEach(r => { const n = row(rsh, r); const off = fset && !fset.includes(r) ? fk : 0; n.style.opacity = 1 - off * .74; n.style.filter = off > .02 ? `blur(${off * 2.2}px)` : 'none'; });
+  ['.sh', '.st', '.ss', '.rule', '.foot'].forEach(s => { const n = rsh.querySelector(s); n.style.opacity = 1 - fk * .74; });
+
+  // ---- B1: thread to the source behind frosted glass (29.4 - 39.6)
+  const bg1 = p(t, 29.4, 1.0, E.out5), bgOut = p(t, 38.8, .8, E.io);
+  const bl = LAY.bill;
+  pose($('billGroup'), { x: bl.x + (1 - bg1) * 500 + bgOut * 600, y: bl.y, s: bl.s, ry: portrait ? 0 : -16, rx: portrait ? 8 : 4, o: t < 29.4 ? 0 : bg1 * (1 - bgOut) });
+  $('shine').style.transform = `translateX(${lerp(-100, 900, p(t, 31.7, 1.4, E.io))}px) rotate(24deg)`;
+  const th = $('thread'); th.innerHTML = '';
+  if (t > 29.9 && t < 39.6) {
+    const sr = row(rsh, 'src').querySelector('.v').getBoundingClientRect(), hr = $('hole').getBoundingClientRect();
+    const ax = sr.right + 14, ay = sr.top + sr.height / 2, bx = hr.left + hr.width / 2, by = hr.top + hr.height / 2;
+    const taut = p(t, 31.3, .55, E.in2);
+    let sag = lerp(170, 0, taut); if (t > 31.85) sag = 26 * Math.sin((t - 31.85) * 2 * Math.PI * 6.5) * Math.exp(-(t - 31.85) * 4.5);
+    const mx = (ax + bx) / 2, my = (ay + by) / 2 + sag * 2;
+    const path = el('path', { d: `M${ax} ${ay} Q ${mx} ${my} ${bx} ${by}`, stroke: '#1f5139', 'stroke-width': 4.5, fill: 'none', 'stroke-linecap': 'round', pathLength: 1 }, th);
+    path.style.strokeDasharray = 1; path.style.strokeDashoffset = 1 - p(t, 29.9, .9, E.io); th.style.opacity = 1 - bgOut;
+    el('circle', { cx: ax, cy: ay, r: 8, fill: '#1f5139' }, th);
+    const knot = p(t, 30.7, .3);
+    el('circle', { cx: bx, cy: by, r: 7 * knot, fill: '#1f5139' }, th);
+  }
+
+  // ---- B2: the band (39.6 - 48)
+  if (INK) {
+    draw(INK.bLoop, t < 47.6 ? p(t, 40.3, .75, E.io) : 1 - p(t, 47.6, .4));
+    draw(INK.axLine, p(t, 41.0, .5, E.io));
+    const st = p(t, 41.5, 1.0, E.back), x0 = INK.X(2982), w0 = INK.X(3131) - INK.X(2833);
+    INK.cap.setAttribute('x', x0 - w0 / 2 * st - (INK.X(2982) - (INK.X(2833) + INK.X(3131)) / 2) * st); INK.cap.setAttribute('width', w0 * st);
+    INK.cap.style.opacity = t > 41.5 ? 1 : 0; INK.mid.style.opacity = t > 41.2 ? 1 : 0;
+    const lab = p(t, 42.3, .5); INK.lo.style.opacity = lab; INK.hi.style.opacity = lab;
+
+    // ---- B3: wax seal (48.6 - 57)
+    const sl = p(t, 49.7, .32, E.in2), squash = t > 50.02 ? Math.exp(-(t - 50.02) * 9) * Math.sin((t - 50.02) * 30) * .07 : 0;
+    INK.seal.style.opacity = t > 49.7 ? clamp(sl * 3) : 0;
+    INK.seal.style.transform = `translateY(${(1 - sl) * -60}px) rotate(${lerp(-24, -8, sl)}deg) scale(${lerp(2.6, 1, sl) * (1 + squash)}, ${lerp(2.6, 1, sl) * (1 - squash)})`;
+
+    // ---- B4: grade (57.6 - 64.4)
+    draw(INK.gLoop, p(t, 59.9, .5, E.io));
+    const gsl = p(t, 58.7, .2, E.in2);
+    INK.gs.style.opacity = t > 58.7 ? 1 : 0; INK.gs.style.transform = `rotate(-7deg) scale(${lerp(2.4, 1, gsl)})`;
+    // ---- B5: fit (65.2 - 71)
+    draw(INK.fLoop, p(t, 66.2, .55, E.io));
+  }
+  // years ticking past the sealed method
+  const yr = $('years'); const yIn = p(t, 52.6, .5), yOut = p(t, 56.4, .4);
+  vis(yr, t > 52.5 && t < 56.9); yr.style.opacity = yIn * (1 - yOut);
+  if (portrait) { yr.style.left = '80px'; yr.style.top = '520px'; } else { yr.style.left = '120px'; yr.style.top = '700px'; }
+  const yrs = ['2026', '2027', '2028', '2029']; const yi = Math.min(3, Math.floor(clamp((t - 52.9) / .8) * 3.999));
+  $('yearN').textContent = t < 52.9 ? '2026' : yrs[Math.min(3, Math.floor((t - 52.9) / .8) + 1)] || '2029';
+  $('yearNote').style.opacity = p(t, 53.0, .4);
+
+  // ---- wall (71.6 - 81)
+  const wl = LAY.wall, wall = $('wall');
+  const zoom = p(t, 72.2, 1.9, E.io), wallOut = p(t, 80.2, .9, E.io);
+  const k = lerp(.86 / (220 / 820) / wl.s, 1, zoom);
+  vis(wall, t > 71.9 && wallOut < 1);
+  const tilt = p(t, 73.9, 2.5, E.io);
+  wall.style.left = (wl.x - 618) + 'px'; wall.style.top = (wl.y - 469) + 'px';
+  wall.style.transform = `perspective(2200px) rotateX(${tilt * 9}deg) rotateY(${-tilt * 7}deg) scale(${wl.s * k * (1 - wallOut * .12)})`;
+  wall.style.opacity = clamp((t - 71.9) / .5) * (1 - wallOut);
+  wall.style.filter = wallOut > .01 ? `blur(${wallOut * 10}px)` : 'none';
+  tiles.forEach((tl, i) => {
+    const order = ORDER.indexOf(i); const tc = i === 7 ? -10 : SWEEP0 + order * SWEEPD;
+    const clr = i === 7 ? 1 : p(t, tc, .35, E.out3);
+    tl.tin.style.filter = clr < .99 ? `blur(${(1 - clr) * 7}px)` : 'none';
+    tl.fc.style.opacity = (1 - clr) * .95;
+    tl.fc.style.transform = `translate(${Math.sin(t * .4 + i) * 30}px, ${Math.cos(t * .3 + i) * 20}px)`;
+    const gk = i === 7 ? 1 : p(t, tc + .1, .22, E.in2);
+    tl.tg.style.opacity = t > tc + .1 || i === 7 ? 1 : 0; tl.tg.style.transform = `scale(${lerp(2.2, 1, gk)}) rotate(${-6 + (i % 3) * 3}deg)`;
+  });
+  tiles[7].d.style.opacity = p(t, 73.4, .4);
+
+  // ---- lens
+  const lens = $('lens'); let lx = W + 400, ly = H + 400, ls = 1, mode = 'fog', lblur = 0, ang = 0, lo = 1;
+  const at = n => { const r = n.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; };
+  const fT = at(row(fsh, 's2').querySelector('.v'));
+  const rT = at(rsh.querySelector('.num'));
+  if (t < 21.0) {
+    const en = p(t, 10.4, 1.5, E.out5);
+    const wx = fT[0] + Math.sin(t * .7) * 70 - 30, wy = fT[1] + Math.sin(t * 1.1 + 1) * 40 - 30 + (portrait ? 0 : 0);
+    lx = lerp(W + 380, wx, en); ly = lerp(H + 380, wy, en);
+    lblur = clamp(5 + 3.4 * Math.sin(t * 1.6) * Math.sin(t * .53 + 1) + 1.4 * Math.sin(t * 3.3), 2.6, 10);
+    ang = 40 * Math.sin(t * .9) + 22 * Math.sin(t * 2.4) + (1 - en) * -90;
+    mode = 'fog';
+  } else if (t < 29.2) {
+    const mv = p(t, 21.3, 1.6, E.io);
+    lx = lerp(fT[0] - 30, rT[0], mv); ly = lerp(fT[1] - 30, rT[1], mv); mode = t < 21.9 ? 'fog' : 'rec';
+    const conv = p(t, 23.0, 2.4, E.io);
+    lblur = t < 25.4 ? lerp(7, 2.2, conv) + Math.sin(t * 5) * 1.3 * (1 - conv) + 1.2 * Math.sin(t * 2.2) * (1 - conv) : 0;
+    ang = 40 * Math.sin(t * .9) * (1 - conv) + conv * 150 + (t > 25.4 ? 12 * Math.exp(-(t - 25.4) * 6) * Math.sin((t - 25.4) * 40) : 0);
+    const mR = at(row(rsh, 'method').querySelector('.v')), sR = at(row(rsh, 'src').querySelector('.v'));
+    const h1 = p(t, 26.3, .45, E.io), h2 = p(t, 27.3, .45, E.io), ex = p(t, 28.3, .8, E.in2);
+    lx = lerp(lerp(lx, mR[0] - 40, h1), sR[0] - 30, h2); ly = lerp(lerp(ly, mR[1], h1), sR[1], h2);
+    lx = lerp(lx, W + 400, ex); ly = lerp(ly, H + 300, ex);
+    ang += h1 * 60 + h2 * 60;
+  } else if (t > 73.6 && t < 78.6) {
+    mode = 'clear'; ls = .55;
+    const pos = i => at(tiles[i].d);
+    const idx = (t - SWEEP0) / SWEEPD;
+    if (idx < 0) { const e = p(t, 73.6, .7, E.out3); const a = pos(ORDER[0]); lx = lerp(-300, a[0], e); ly = lerp(a[1] - 200, a[1], e); }
+    else if (idx >= ORDER.length - 1) { const a = pos(ORDER[ORDER.length - 1]); const e = p(t, SWEEP0 + (ORDER.length - 1) * SWEEPD + .2, .7, E.in2); lx = lerp(a[0], W + 300, e); ly = lerp(a[1], a[1] + 200, e); }
+    else { const i0 = Math.floor(idx), f = E.io(idx - i0); const a = pos(ORDER[i0]), b = pos(ORDER[i0 + 1]); lx = lerp(a[0], b[0], f); ly = lerp(a[1], b[1], f); }
+    ang = t * 120;
+  } else if (t > 81.3 && t < 84.4) {
+    mode = 'clear'; ls = portrait ? .8 : .9;
+    const r = $('ctaBig').getBoundingClientRect();
+    const e = p(t, 81.5, 1.5, E.io), ex = p(t, 83.2, .9, E.in2);
+    lx = lerp(r.left - 260, r.right + 40, e); ly = r.top + (portrait ? 140 : 60) + Math.sin(e * Math.PI) * 30;
+    lx = lerp(lx, W + 400, ex); ly = lerp(ly, -400, ex);
+    ang = e * 200 + (t > 82.95 ? 14 * Math.exp(-(t - 82.95) * 6) * Math.sin((t - 82.95) * 40) : 0);
+  }
+  lens.style.left = lx + 'px'; lens.style.top = ly + 'px'; lens.style.transform = `scale(${ls * (portrait && mode !== 'clear' ? 1.22 : 1)})`;
+  vis(lens, lx > -500 && lx < W + 380 && ly < H + 380 && ly > -380);
+  focusG.setAttribute('transform', `rotate(${ang})`);
+  const flash = Math.max(t > 25.4 ? Math.exp(-(t - 25.4) * 2.5) : 0, t > 82.95 && t < 85 ? Math.exp(-(t - 82.95) * 2.5) : 0);
+  ringFlash.setAttribute('opacity', flash);
+  $('glass').style.background = mode === 'clear' ? 'transparent' : '#fbf9f4';
+  $('lc').style.display = mode === 'clear' ? 'none' : 'block';
+  fClone.style.display = mode === 'fog' ? 'block' : 'none'; rClone.style.display = mode === 'rec' ? 'block' : 'none';
+  if (mode !== 'clear') {
+    const S = mode === 'fog' ? fsh : rsh, C = mode === 'fog' ? fClone : rClone;
+    const R = S.getBoundingClientRect(), s = R.width / 820 || 1, m = 2.05;
+    const u0x = (lx - R.left) / s, u0y = (ly - R.top) / s;
+    C.style.transform = `translate(${170 - m * s * u0x}px, ${170 - m * s * u0y}px) scale(${m * s})`;
+    C.style.filter = lblur > .05 ? `blur(${lblur}px)` : 'none';
+  }
+  lf.style.opacity = mode === 'clear' ? 0 : D * .85; lf.style.transform = `translate(${Math.sin(t * .5) * 60}px, ${Math.cos(t * .37) * 40}px)`;
+  const ro = $('readout');
+  if (t < 25.4) { ro.textContent = 'NO SOURCE · NO FOCUS'; ro.style.color = 'var(--red)'; }
+  else { ro.textContent = 'SOURCE · sha256 9f2c…a71e'; ro.style.color = 'var(--green)'; }
+  ro.style.opacity = mode === 'clear' ? 0 : p(t, 11.4, .5) * (t > 25.4 ? p(t, 25.5, .3) : 1);
+
+  // ---- captions
+  CAPS.forEach(c => capRender(c, t));
+
+  // ---- CTA (80.6 - 90)
+  const cta = $('cta'); vis(cta, t > 80.6); cta.style.opacity = p(t, 80.6, .8);
+  const l1 = cta.querySelector('.l1'), l2 = cta.querySelector('.l2');
+  const lensX = lx;
+  l1.querySelectorAll('.w').forEach(w => { const r = w.getBoundingClientRect(); const cx = r.left + r.width / 2;
+    const passed = t > 82.95 ? 1 : (t > 81.5 && lensX > cx ? .6 : 0);
+    const b = (1 - passed) * 11 * (1 - p(t, 82.95, .12)); w.style.filter = b > .05 ? `blur(${b}px)` : 'none'; w.style.opacity = lerp(.55, 1, passed); });
+  l2.querySelectorAll('.w').forEach((w, j) => { const k = p(t, 84.5 + j * .12, .6, E.out5); w.style.opacity = k; w.style.transform = `translateY(${(1 - k) * 30}px)`; });
+  if (!INK || !INK.ctaU) { const port = l1.querySelectorAll('.w')[5]; const big = $('ctaBig');
+    if (port && port.offsetWidth) { const x1 = port.offsetLeft + 4, x2 = port.offsetLeft + port.offsetWidth - 26, y = port.offsetTop + port.offsetHeight + 2;
+      INK.ctaU = ink($('ctaInk'), `M${x1} ${y} C ${lerp(x1, x2, .3)} ${y - 9}, ${lerp(x1, x2, .6)} ${y + 8}, ${x2} ${y - 4} M${lerp(x1, x2, .1)} ${y + 12} C ${lerp(x1, x2, .45)} ${y + 6}, ${lerp(x1, x2, .75)} ${y + 15}, ${lerp(x1, x2, .95)} ${y + 9}`, 'var(--saffron)', 7); } }
+  if (INK.ctaU) draw(INK.ctaU, p(t, 83.7, .6, E.io));
+  const u = p(t, 85.3, .7, E.out5); $('ctaUrl').style.opacity = u; $('ctaUrl').style.transform = `translateY(${(1 - u) * 16}px)`;
+  const mk = p(t, 86.1, .9, E.out5); $('ctaMark').style.opacity = mk; $('ctaMark').style.transform = `translateY(${(1 - mk) * 14}px)`;
+}
+window.render = render;
+document.fonts.ready.then(() => render(Number(Q.get('t') || 0)));
+</script>
+</body>
+</html>

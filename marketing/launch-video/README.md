@@ -59,3 +59,6 @@ python3 sfx4.py && bash cbrender.sh
 ```
 
 Reels cut (15 s): `QS="&cut=reel" FILE=cbam.html DUR=15 node render.mjs video portrait rl.mp4`, then mux `sfx4-reel.wav` (sfx4.wav cut to the same beats).
+
+## "You can't underwrite fog": lender film (90 s, 16:9) and 30 s teaser (9:16)
+Sources are in the HTML comments of `fog.html`. The record is labelled illustrative. No lender or partner is named.
