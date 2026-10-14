@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
@@ -19,6 +19,9 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useEnterpriseMode } from '@/hooks/useEnterpriseMode';
+import { useScope3Visibility } from '@/hooks/useScope3Trail';
+
+const Scope3Trail = lazy(() => import('@/components/scope3/Scope3Trail').then((m) => ({ default: m.Scope3Trail })));
 import { EnterpriseAuditLedger } from '@/components/enterprise/EnterpriseAuditLedger';
 import { EnterpriseComplianceLabels } from '@/components/enterprise/EnterpriseComplianceLabels';
 import { SupplierCoveragePanel } from '@/components/mrv/SupplierCoveragePanel';
@@ -60,6 +63,7 @@ const MRVDashboard = () => {
   const { summary, emissions, getVerifiedEmissions } = useEmissions();
   const { documents } = useDocuments();
   const { isEnterprise } = useEnterpriseMode();
+  const scope3 = useScope3Visibility();
   const [verifications, setVerifications] = useState<VerificationRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -710,6 +714,13 @@ const MRVDashboard = () => {
         <div className="mt-6">
           <SupplierCoveragePanel />
         </div>
+
+        {/* Full Scope 3 evidence trail: Pro and Scale, switched on in Profile */}
+        {scope3.showFull && (
+          <div className="mt-6">
+            <Suspense fallback={null}><Scope3Trail /></Suspense>
+          </div>
+        )}
 
         {/* Enterprise Mode Panels */}
         {isEnterprise && emissions.length > 0 && (

@@ -23,7 +23,7 @@ export const ScrollManager = () => {
     const find = () => {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ block: "start" });
-      else if (++tries < 40) raf = requestAnimationFrame(find);
+      else if (++tries < 120) raf = requestAnimationFrame(find);
     };
     find();
     return () => cancelAnimationFrame(raf);

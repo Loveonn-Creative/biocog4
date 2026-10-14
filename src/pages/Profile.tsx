@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
+import { Scope3FullTrailCard } from '@/components/scope3/Scope3FullTrailCard';
 import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
 
 const tierIcons = {
@@ -482,6 +483,7 @@ const Profile = () => {
 
           {/* Enterprise Mode */}
           <EnterpriseModeCard />
+          <Scope3FullTrailCard />
 
           {/* Security */}
           <ChangePasswordCard user={user} />

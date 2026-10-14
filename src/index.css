@@ -622,6 +622,11 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
   .rs-flow, .rs-valve, .rs-level, .rs-flame { transition: none; }
 }
 
+/* Scope 3 trail: coverage segments grow in from the left once. */
+@keyframes s3-grow { from { transform: scaleX(0); } to { transform: none; } }
+.s3-seg { display: block; height: 100%; transform-origin: left; animation: s3-grow var(--motion-slow) var(--ease-draw) both; }
+@media (prefers-reduced-motion: reduce) { .s3-seg { animation: none; } }
+
 /* Net zero (/net-zero): game feedback. Reduced motion keeps every state, no movement. */
 @keyframes nz-pop { 0% { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: none; } }
 @keyframes nz-float { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-28px); opacity: 0; } }

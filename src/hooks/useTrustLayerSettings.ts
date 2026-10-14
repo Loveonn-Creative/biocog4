@@ -77,9 +77,14 @@ export function useTrustLayerSettings() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newPrefs));
 
     if (user?.id) {
+      // Merge into the stored object so other switches kept there (such as
+      // the Scope 3 trail) are not overwritten by this page's copy.
+      const { data } = await supabase.from('profiles').select('trust_layer_prefs').eq('id', user.id).single();
+      const stored = (data?.trust_layer_prefs && typeof data.trust_layer_prefs === 'object' ? data.trust_layer_prefs : {}) as Record<string, unknown>;
+      const own = Object.fromEntries(TRUST_FEATURES.map((f) => [f.key, newPrefs[f.key]]));
       await supabase
         .from('profiles')
-        .update({ trust_layer_prefs: newPrefs as any })
+        .update({ trust_layer_prefs: { ...stored, ...own } as never })
         .eq('id', user.id);
     }
   }, [user?.id]);

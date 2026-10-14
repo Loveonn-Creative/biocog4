@@ -19,6 +19,7 @@ import { useTrustLayerSettings, type TrustFeatureKey } from '@/hooks/useTrustLay
 import { Link } from 'react-router-dom';
 import { LanguagePreference } from '@/components/settings/LanguagePreference';
 import { useFinanceDetail } from '@/hooks/useFinanceDetail';
+import { useScope3Visibility } from '@/hooks/useScope3Trail';
 
 
 interface CompanyProfile {
@@ -52,6 +53,7 @@ const Settings = () => {
   const [hasChanges, setHasChanges] = useState(false);
   const { prefs, toggleFeature, isPremium, features } = useTrustLayerSettings();
   const financeDetail = useFinanceDetail();
+  const scope3 = useScope3Visibility();
 
   const countryConfig = getCountryConfig(profile.location);
   const countries = getCountryList();
@@ -392,6 +394,33 @@ const Settings = () => {
                   </p>
                 </div>
                 <Switch id="finance-detail" checked={financeDetail.enabled} onCheckedChange={financeDetail.setEnabled} disabled={!financeDetail.available} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Scope 3 evidence trail preview (paid plans) */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Scope 3 evidence trail</CardTitle>
+              <CardDescription>
+                Adds a short Scope 3 preview to your Dashboard while Enterprise Mode is on: verified emissions by category, supplier coverage and the lines still missing data. Off keeps the Dashboard as it is.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between gap-4">
+                <div className="space-y-0.5">
+                  <Label htmlFor="scope3-trail" className={!scope3.basicAvailable ? 'text-muted-foreground' : ''}>Show the Scope 3 preview</Label>
+                  <p className="text-xs text-muted-foreground">
+                    {!scope3.basicAvailable
+                      ? <>Available on paid plans. <Link to="/pricing" className="underline">View plans</Link></>
+                      : scope3.basicOn && !scope3.isEnterprise
+                        ? <>Turn on Enterprise Mode in your <Link to="/profile" className="underline">profile</Link> to see it.</>
+                        : 'Saved to your account. The line-by-line trail is switched on in your profile.'}
+                  </p>
+                </div>
+                <Switch id="scope3-trail" checked={scope3.basicAvailable && scope3.basicOn}
+                  onCheckedChange={async (c) => { if (!(await scope3.setBasic(c))) toast.error('Could not save this setting. Try again.'); }}
+                  disabled={!scope3.basicAvailable || scope3.loading} />
               </div>
             </CardContent>
           </Card>
