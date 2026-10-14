@@ -14,7 +14,8 @@ import { verifyListState } from '@/lib/emissionLedger';
 import { CREDIT_VALUE_WITHHELD } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { useSession } from '@/hooks/useSession';
+import { useAuthStatus, useSession } from '@/hooks/useSession';
+import { GuestVerifyPreview } from '@/components/verify/GuestVerifyPreview';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { CAPABILITY_REASON } from '@/lib/workspaceScope';
 import { Helmet } from 'react-helmet-async';
@@ -90,6 +91,8 @@ const Verify = () => {
   const location = useLocation();
   const navState = location.state as NavigationState | null;
   const { sessionId, user } = useSession();
+  // Visitors without an account verify a preview of the results in their browser.
+  const authStatus = useAuthStatus();
   const { can } = useWorkspace();
   const canVerify = can('records.verify');
   const { activeContext } = useOrganization();
@@ -239,6 +242,7 @@ const Verify = () => {
         
         {isEnterprise && <EnterpriseVerificationBadge />}
 
+        {authStatus === 'signedOut' ? <GuestVerifyPreview /> : <>
         {/* Verification Input Card */}
         <Card className="mb-6">
           <CardHeader>
@@ -693,6 +697,7 @@ const Verify = () => {
             </Card>
           </div>
         )}
+        </>}
       </main>
     </div>
   );

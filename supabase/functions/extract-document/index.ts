@@ -3,6 +3,9 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
+import { clientIp, guestSubject, takeUse } from '../_shared/intelligenceUsage.ts';
+import { dayIst } from '../_shared/intelligence.ts';
+import { GUEST_DAILY_SCANS, GUEST_IP_DAILY_SCANS, guestFileCheck } from '../_shared/guestScan.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
 import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, printedBilledKwh, isGridRenewableLine, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
@@ -417,7 +420,8 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
 
   if (!response.ok) {
     const errorText = await response.text();
-    console.error(`AI API error (${response.status}):`, errorText);
+    // Status only: the gateway's error body can echo request content.
+    console.error(`AI API error (${response.status})`);
     const error = new Error(`AI extraction failed: ${response.status}`);
     (error as any).status = response.status;
     throw error;
@@ -631,7 +635,7 @@ serve(async (req) => {
           );
         }
       } catch (lookupError) {
-        console.error('Profile or duplicate lookup failed:', lookupError);
+        console.error('Profile or duplicate lookup failed:', (lookupError as { code?: string })?.code ?? 'error');
       }
 
       // ============= MONTHLY PLAN ALLOWANCE =============
@@ -662,80 +666,42 @@ serve(async (req) => {
       );
     }
 
-    // ============= GUEST USER: CHECK FOR CACHED RESULT =============
-    // Same invoice in the same guest session returns the same result. The
-    // cache is scoped to this session only: another visitor's result for the
-    // same file is never returned.
+    // ============= GUEST: EPHEMERAL, CAPPED =============
+    // Guests can test freely, but nothing they upload is kept on the server:
+    // no file, no document row, no cached result. Their result lives in their
+    // own browser for 24 hours. A device may read 30 invoices a day (keyed by
+    // a hashed guest session, or the hashed network address without one) and
+    // one network address 300, so scripts cannot run up AI cost. Counters hold
+    // no content.
     if (!isAuthenticated) {
-      console.log(`Guest user processing. Hash: ${documentHash.substring(0, 16)}... SessionId: ${sessionId ? String(sessionId).substring(0, 8) + '...' : 'MISSING'}`);
-      if (!sessionId) {
-        console.warn('[WARN] No sessionId provided for guest user - result will not be cached or saved');
+      const fileCheck = guestFileCheck(imageBase64, mimeType);
+      if (!fileCheck.ok) {
+        return new Response(JSON.stringify({ error: fileCheck.message, code: fileCheck.code }), { status: fileCheck.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
       }
-
-      if (supabaseUrl && supabaseKey && sessionId) {
-        const supabase = createClient(supabaseUrl, supabaseKey);
-
-        const { data: cachedDoc } = await supabase
-          .from('documents')
-          .select('cached_result, document_hash, created_at')
-          .eq('document_hash', documentHash)
-          .eq('session_id', sessionId)
-          .is('user_id', null)
-          .not('cached_result', 'is', null)
-          .order('created_at', { ascending: false })
-          .limit(1)
-          .maybeSingle();
-
-        if (cachedDoc?.cached_result) {
-          console.log(`CACHE HIT: Returning this session's cached result`);
-          return new Response(
-            JSON.stringify({
-              success: true,
-              data: cachedDoc.cached_result,
-              documentHash,
-              userTier: 'guest',
-              cached: true,
-              message: 'Returning the earlier result for this invoice from your session.'
-            }),
-            { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-          );
+      if (supabaseUrl && supabaseKey) {
+        try {
+          const admin = createClient(supabaseUrl, supabaseKey);
+          const day = dayIst();
+          const ip = clientIp(req.headers);
+          const device = await guestSubject(typeof sessionId === 'string' && sessionId ? `session|${sessionId}` : `ip|${ip}`, day, supabaseKey);
+          const network = await guestSubject(`net|${ip}`, day, supabaseKey);
+          const perDevice = await takeUse(admin, device, 'guest_scan', GUEST_DAILY_SCANS);
+          const perNetwork = perDevice.allowed ? await takeUse(admin, network, 'guest_scan', GUEST_IP_DAILY_SCANS) : perDevice;
+          if (!perDevice.allowed || !perNetwork.allowed) {
+            return new Response(JSON.stringify({
+              error: `You've tried ${GUEST_DAILY_SCANS} invoices today without an account. Sign in free to keep going and save your results.`,
+              code: 'guest_daily_limit', limit: GUEST_DAILY_SCANS,
+            }), { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+          }
+        } catch (e) {
+          // The counter itself failed: refuse rather than read without a limit.
+          console.error('Guest limit check failed:', (e as Error)?.name ?? 'error');
+          return new Response(JSON.stringify({ error: 'Could not start reading right now. Please try again in a moment.', code: 'guest_limit_unavailable' }), { status: 503, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
         }
       }
     }
 
     console.log(`Processing document for ${userTier} user...`);
-
-    // ============= GAP 1 FIX: INSERT DOCUMENT STUB BEFORE MRV =============
-    // Every invoice becomes a permanent system entry BEFORE AI processing begins.
-    // This prevents greenwashing by ensuring the document is recorded even if processing fails.
-    let stubDocumentId: string | null = null;
-    if (!isAuthenticated && sessionId) {
-      const stubUrl = Deno.env.get('SUPABASE_URL');
-      const stubKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-      if (stubUrl && stubKey) {
-        try {
-          const stubClient = createClient(stubUrl, stubKey);
-          const { data: stubDoc, error: stubError } = await stubClient
-            .from('documents')
-            .insert({
-              document_hash: documentHash,
-              document_type: 'pending',
-              session_id: sessionId,
-              confidence: 0,
-            })
-            .select('id')
-            .single();
-          if (stubError) {
-            console.error('Document stub insert failed:', stubError);
-          } else {
-            stubDocumentId = stubDoc.id;
-            console.log(`Document stub created: ${stubDocumentId} (hash: ${documentHash.substring(0, 16)}...)`);
-          }
-        } catch (e) {
-          console.error('Stub creation error:', e);
-        }
-      }
-    }
 
     // ============= AI EXTRACTION (DATA ONLY) =============
     let content: string | null = null;
@@ -754,12 +720,12 @@ serve(async (req) => {
       }
       if (error.status === 402) {
         return new Response(
-          JSON.stringify({ error: 'AI usage limit reached. Please add credits to continue.' }),
+          JSON.stringify({ error: 'Invoice reading is paused on our side right now. Please try again later.', code: 'ai_unavailable' }),
           { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
       if (error.truncated) truncated = true;
-      console.error('Flash model failed:', error);
+      console.error('Flash model failed:', error?.status ?? error?.name ?? 'error');
     }
 
     // Parse response
@@ -773,7 +739,7 @@ serve(async (req) => {
         }
         ocrData = JSON.parse(jsonStr);
       } catch (e) {
-        console.error('Failed to parse flash response:', e);
+        console.error('Failed to parse flash response:', (e as Error)?.name ?? 'error');
       }
     }
 
@@ -798,7 +764,7 @@ serve(async (req) => {
             { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
-        console.error('Pro model failed:', error);
+        console.error('Pro model failed:', error?.status ?? error?.name ?? 'error');
         if (error.truncated || (truncated && !ocrData)) {
           // The reads were cut off: refuse rather than keep a partial answer.
           return new Response(
@@ -1095,90 +1061,61 @@ serve(async (req) => {
 
     console.log(`DETERMINISTIC RESULT: ${classificationStatus}, ${verifiedItems} items, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}%`);
 
-    // ============= CACHE THE RESULT =============
-    // Store in database so future requests for same document get same result
-    // For guests with a stub: UPDATE the existing stub. For auth users: INSERT new.
-    
-    if (supabaseUrl && supabaseKey) {
+    // ============= CACHE THE RESULT (signed-in only) =============
+    // Stored so the same invoice always returns the same result for this
+    // account. Guests are never stored (see GUEST above).
+    if (supabaseUrl && supabaseKey && isAuthenticated && userId) {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
-        
-        if (stubDocumentId) {
-          // UPDATE the stub created before processing
-          const { error: updateError } = await supabase
-            .from('documents')
-            .update({
-              document_type: extractedData.documentType,
-              vendor: extractedData.vendor,
-              invoice_number: extractedData.invoiceNumber,
-              invoice_date: parseInvoiceDate(extractedData.date),
-              amount: extractedData.amount,
-              confidence: Math.min(extractedData.confidence, 999.99),
-              cached_result: extractedData,
-              cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-            })
-            .eq('id', stubDocumentId);
-          
-          if (updateError) {
-            console.error('Failed to update document stub:', updateError);
-          } else {
-            console.log('Document stub updated with MRV result');
-          }
+        // Original file as evidence.
+        sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
+        const { data: savedDoc, error: cacheError } = await supabase
+          .from('documents')
+          .insert({
+            document_hash: documentHash,
+            document_type: extractedData.documentType,
+            vendor: extractedData.vendor,
+            invoice_number: extractedData.invoiceNumber,
+            invoice_date: parseInvoiceDate(extractedData.date),
+            amount: extractedData.amount,
+            confidence: Math.min(extractedData.confidence, 999.99),
+            cached_result: extractedData,
+            cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+            user_id: userId,
+            file_url: sourcePath,
+            session_id: null,
+            ...(organizationId ? { organization_id: organizationId } : {}),
+          })
+          .select('id')
+          .single();
+        if (cacheError) {
+          console.error('Failed to cache result:', cacheError.code);
         } else {
-          // Original file as evidence (signed-in only; guests' files are never stored).
-          if (isAuthenticated && userId) {
-            sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
+          console.log('Result cached for deterministic retrieval');
+          // Scope 3 trail: seal the OCR fields and record each line. No-op
+          // until the pending migration is applied; never affects this response.
+          if (sealed && isAuthenticated && userId && savedDoc?.id) {
+            const trail = sealAndRecord(supabase, {
+              documentId: savedDoc.id, userId, organizationId: organizationId || null, documentHash,
+              sealed, model: usedModel, sourcePath,
+            });
+            const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+            if (rt?.waitUntil) rt.waitUntil(trail); else await trail;
           }
-          // Insert cache record (authenticated users or fallback)
-          const { data: savedDoc, error: cacheError } = await supabase
-            .from('documents')
-            .insert({
-              document_hash: documentHash,
-              document_type: extractedData.documentType,
-              vendor: extractedData.vendor,
-              invoice_number: extractedData.invoiceNumber,
-              invoice_date: parseInvoiceDate(extractedData.date),
-              amount: extractedData.amount,
-              confidence: Math.min(extractedData.confidence, 999.99),
-              cached_result: extractedData,
-              cache_expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-              user_id: userId,
-              file_url: sourcePath,
-              session_id: isAuthenticated ? null : (sessionId || null),
-              ...(isAuthenticated && organizationId ? { organization_id: organizationId } : {}),
-            })
-            .select('id')
-            .single();
-          
-          if (cacheError) {
-            console.error('Failed to cache result:', cacheError);
-          } else {
-            console.log('Result cached for deterministic retrieval');
-            // Scope 3 trail: seal the OCR fields and record each line. No-op
-            // until the pending migration is applied; never affects this response.
-            if (sealed && isAuthenticated && userId && savedDoc?.id) {
-              const trail = sealAndRecord(supabase, {
-                documentId: savedDoc.id, userId, organizationId: organizationId || null, documentHash,
-                sealed, model: usedModel, sourcePath,
-              });
-              const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
-              if (rt?.waitUntil) rt.waitUntil(trail); else await trail;
-            }
-            // Scope 2 engine: record the bill's consumption and recalculate
-            // location- and market-based results. No-op until the pending
-            // migration is applied; never affects this response.
-            if (billForScope2 && isAuthenticated && userId && savedDoc?.id) {
-              const work = (async () => {
-                const { data: prof } = await supabase.from('profiles').select('location').eq('id', userId).maybeSingle();
-                await recordBillAndRecalculate(supabase, { documentId: savedDoc.id, userId, organizationId: organizationId || null, bill: billForScope2, profileLocation: (prof as { location?: string } | null)?.location ?? null });
-              })();
-              const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
-              if (rt?.waitUntil) rt.waitUntil(work); else await work;
-            }
+          // Scope 2 engine: record the bill's consumption and recalculate
+          // location- and market-based results. No-op until the pending
+          // migration is applied; never affects this response.
+          if (billForScope2 && isAuthenticated && userId && savedDoc?.id) {
+            const work = (async () => {
+              const { data: prof } = await supabase.from('profiles').select('location').eq('id', userId).maybeSingle();
+              await recordBillAndRecalculate(supabase, { documentId: savedDoc.id, userId, organizationId: organizationId || null, bill: billForScope2, profileLocation: (prof as { location?: string } | null)?.location ?? null });
+            })();
+            const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+            if (rt?.waitUntil) rt.waitUntil(work); else await work;
           }
         }
       } catch (e) {
-        console.error('Cache error:', e);
+        console.error('Cache error:', (e as Error)?.name ?? 'error');
       }
     }
 
@@ -1195,13 +1132,15 @@ serve(async (req) => {
         success: true, 
         data: extractedData,
         documentHash,
-        userTier
+        userTier,
+        // Guests: nothing was stored; the browser keeps the result.
+        ...(isAuthenticated ? {} : { ephemeral: true }),
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
 
   } catch (error) {
-    console.error('Error processing document:', error);
+    console.error('Error processing document:', error instanceof Error ? error.name : 'error');
     return new Response(
       JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }

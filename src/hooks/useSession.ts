@@ -227,20 +227,24 @@ export function useSession() {
   // Ask the server what this device's guest session holds. Nothing moves here;
   // the person decides in GuestImportPrompt.
   const previewGuestUploads = async (sessionId: string) => {
+    const deviceFingerprint = getDeviceFingerprint();
+    // Results kept in this browser (guest uploads are no longer stored on the server).
+    const { listGuestResults } = await import('@/lib/guestResults');
+    const localInvoices = (await listGuestResults().catch(() => [])).length;
+    let counts: GuestCounts = { documents: 0, emissions: 0, verifications: 0, reports: 0 };
     try {
-      const deviceFingerprint = getDeviceFingerprint();
       const supabase = await loadSupabase();
       const { data, error } = await supabase.functions.invoke('merge-session', { body: { sessionId, deviceFingerprint } });
-      if (error) { console.error('Guest upload check failed'); return; }
-      const counts = data?.counts as GuestCounts | undefined;
-      if (data?.preview && hasGuestData(counts)) {
-        setPendingGuestImport({ sessionId, deviceFingerprint, counts });
-      } else {
-        // Empty, stale or already used: nothing to offer, so forget it.
-        forgetGuestSession(sessionId);
-      }
+      if (error) console.error('Guest upload check failed');
+      else if (data?.preview && hasGuestData(data?.counts as GuestCounts | undefined)) counts = data.counts as GuestCounts;
     } catch {
       console.error('Guest upload check failed');
+    }
+    if (hasGuestData(counts) || localInvoices > 0) {
+      setPendingGuestImport({ sessionId, deviceFingerprint, counts, localInvoices });
+    } else {
+      // Empty, stale or already used: nothing to offer, so forget it.
+      forgetGuestSession(sessionId);
     }
   };
 
