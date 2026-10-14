@@ -65,3 +65,6 @@ Sources are in the HTML comments of `fog.html`. The record is labelled illustrat
 
 ## "Will revert by EOD": enterprise Scope 3 film (70 s, 16:9) and 20 s cut (9:16)
 Every claim quotes the Enterprise page (sources in the comments of `revert.html`). No self-serve supplier portal is shown. The replies are fiction played for comedy.
+
+## "Read the label": credibility film (37.5 s, 9:16 and 16:9)
+Do not publish until the CEA edition of the 0.710 grid factor is confirmed (FACTOR_SOURCE constant at the top of `label.html`).

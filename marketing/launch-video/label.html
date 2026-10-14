@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Read the label</title>
+<!--
+  SOURCES (every on-screen fact; nothing here is shown on screen)
+  - 4,820 kWh x 0.710 kg CO2/kWh = 3,422 kg = 3.42 t CO2. Same worked example as film.html.
+    Factor value: supabase/functions/_shared/emissionFactors.ts INDIA_GRID_FACTOR_KG_PER_KWH = 0.710.
+    Factor source: same file, INDIA_GRID_FACTOR_SOURCE = 'CEA CO2 Baseline Database, India weighted
+    average (edition to be confirmed)'. The edition is NOT confirmed, so no edition or fiscal year is
+    printed. (src/components/home/HomeStory.tsx step 02 prints "v21.0"; that conflicts with the
+    factor file and is deliberately not used.) The printed text lives in FACTOR_SOURCE below.
+  - "Method v1.1, frozen with this result": emissionFactors.ts METHODOLOGY_VERSION_TAG = 'v1.1',
+    FACTOR_SET_VERSION = 'IND_EF_2026_10'; verify-carbon/index.ts writes methodology {name, version,
+    factorVersion, gridFactor} into each verification result; src/pages/ClimateFinance.tsx
+    "The factor source and methodology version are frozen with the output."
+  - "Counted: once" / "bill fingerprinted at upload": extract-document/index.ts generateDocumentHash
+    (SHA-256 over the full file bytes) and DUPLICATE DETECTION ("Each invoice can only be counted
+    once", once per organisation); src/components/home/HomeStory.tsx step 03 "Each document is hashed
+    so it cannot be counted twice."
+  - "How sure: a band that narrows as bills are added" (1 / 4 / 9 bills drawn at 1/sqrt(n) width):
+    HomeStory.tsx step 03 "More evidence narrows the uncertainty band, roughly with the square root of
+    the number of records"; ClimateFinance.tsx "Each figure carries the uncertainty band ... the range,
+    not a fabricated point estimate". No +/- number is printed: src/lib/frameworkReports.ts states
+    "no numeric uncertainty range is asserted", and ConfidenceBand.tsx's +/- is on read confidence,
+    not on tonnes.
+  - "Contains no: guesses": extract-document/index.ts prompt "DO NOT: Calculate or estimate CO2
+    emissions, Infer quantities from amounts, Guess units". "personal details": AGENTS.md (electricity
+    bills: never extract consumer name, address, phone, consumer, account or meter numbers) and the
+    same rule in the extract-document prompt. "double counting": hash dedup above + verify-carbon
+    idempotency key ("reuse one result instead of counting it twice").
+  - CTA senseible.earth/trust: src/pages/Trust.tsx, route /trust in src/App.tsx.
+  - Rival packet is a generic, unnamed illustration (no brand). Biscuit packet is generic, unbranded.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root {
+  --ink: #16181d; --muted: #6b6f78; --red: #c8372d; --green: #1f5139; --saffron: #f08a24;
+  --paper: #f5f1e8; --cold: #e4e7ec;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: var(--cold); }
+#vignette { position: absolute; inset: 0; pointer-events: none; z-index: 40;
+  background: radial-gradient(ellipse 75% 65% at 50% 48%, transparent 55%, rgba(22,24,29,.16) 100%); }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .07; pointer-events: none; z-index: 50; mix-blend-mode: multiply; }
+#world { position: absolute; inset: 0; perspective: 2000px; }
+svg.ink { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 30; }
+svg.ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- shelf ---------- */
+#shelf { position: absolute; left: -40px; right: -40px; height: 150px; }
+#shelf .top { position: absolute; left: 0; right: 0; top: 0; height: 34px; background: linear-gradient(#d3d6dc, #c3c7ce); }
+#shelf .edge { position: absolute; left: 0; right: 0; top: 34px; height: 54px; background: linear-gradient(#a9aeb7, #959aa4);
+  box-shadow: 0 30px 50px -18px rgba(20,24,32,.35); }
+#shelf .strip { position: absolute; top: 46px; height: 30px; white-space: pre; font-size: 17px; letter-spacing: .22em; color: #eef0f3; }
+#shelf .tag { position: absolute; top: 42px; width: 150px; height: 38px; margin-left: -75px; background: #fffdf8; border-radius: 3px;
+  font-size: 16px; display: grid; place-items: center; letter-spacing: .06em; color: var(--ink); box-shadow: 0 2px 0 rgba(0,0,0,.12); }
+
+/* ---------- packets ---------- */
+.pk { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
+.face { position: absolute; left: 0; top: 0; overflow: hidden; backface-visibility: hidden; }
+.face .sh, .face .sn, .face .pl, .face .cr { position: absolute; inset: 0; pointer-events: none; }
+.face .sh { background: #0b0d12; opacity: 0; }
+.face .sn { background: linear-gradient(100deg, transparent 0 38%, rgba(255,255,255,.75) 48%, rgba(255,255,255,.0) 60%); background-size: 340% 100%; mix-blend-mode: screen; }
+.face .pl { background: radial-gradient(ellipse 70% 58% at 46% 44%, rgba(255,255,255,.16), transparent 70%),
+  linear-gradient(90deg, rgba(0,0,0,.14), transparent 10%, transparent 90%, rgba(0,0,0,.16)); }
+.face .cr { opacity: 0; background:
+  linear-gradient(112deg, transparent 0 22%, rgba(255,255,255,.35) 22.4%, rgba(0,0,0,.12) 23.4%, transparent 25%),
+  linear-gradient(64deg, transparent 0 58%, rgba(255,255,255,.3) 58.3%, rgba(0,0,0,.12) 59.3%, transparent 61%),
+  linear-gradient(97deg, transparent 0 74%, rgba(0,0,0,.1) 74.5%, rgba(255,255,255,.3) 75.3%, transparent 77%),
+  linear-gradient(8deg, transparent 0 40%, rgba(0,0,0,.08) 40.4%, rgba(255,255,255,.25) 41%, transparent 43%); }
+.seal { position: absolute; left: 0; right: 0; height: 40px;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,.09) 0 3px, rgba(255,255,255,.12) 3px 5px, transparent 5px 9px); }
+.seal.t { top: 0; border-bottom: 1px solid rgba(0,0,0,.12); } .seal.b { bottom: 0; border-top: 1px solid rgba(0,0,0,.12); }
+
+/* our packet: front */
+.fr { position: absolute; inset: 0; background: linear-gradient(170deg, #fbf8f0, #efe8d8); }
+.fr .brand { position: absolute; left: 0; right: 0; top: 74px; text-align: center; font-size: 22px; letter-spacing: .5em; padding-left: .5em; color: var(--green); font-weight: 600; }
+.fr .kind { position: absolute; left: 0; right: 0; top: 122px; text-align: center; font-size: 17px; letter-spacing: .22em; color: var(--muted); }
+.fr .num { position: absolute; left: 0; right: 0; top: 196px; text-align: center; font-size: 214px; font-weight: 600; letter-spacing: -.06em; color: var(--green); line-height: 1; }
+.fr .unit { position: absolute; left: 0; right: 0; top: 418px; text-align: center; font-size: 62px; font-weight: 500; letter-spacing: -.02em; color: var(--green); }
+.fr .band { position: absolute; left: 0; right: 0; top: 548px; height: 92px; background: var(--green); color: #f5f1e8; display: flex; align-items: center; justify-content: center; font-size: 22px; letter-spacing: .16em; }
+.fr .band b { color: var(--saffron); font-weight: 700; margin: 0 .5em; }
+.fr .net { position: absolute; left: 44px; right: 44px; bottom: 66px; display: flex; justify-content: space-between; font-size: 16px; color: var(--muted); letter-spacing: .08em; }
+
+/* our packet: back label */
+.bk { position: absolute; inset: 0; background: linear-gradient(175deg, #fbf9f3, #f1ece0); }
+.lab { position: absolute; left: 30px; right: 30px; top: 58px; font-family: 'JetBrains Mono', monospace; color: var(--ink); }
+.lab .hd { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 6px solid var(--ink); padding-bottom: 6px; }
+.lab .hd b { font-size: 34px; font-weight: 800; letter-spacing: .02em; }
+.lab .hd span { font-size: 14px; color: var(--muted); letter-spacing: .08em; }
+.lab .r { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0 8px; border-bottom: 1.5px solid #2a2d33; font-size: 19px; }
+.lab .r .k { color: #30333a; } .lab .r .v { font-weight: 700; font-size: 21px; text-align: right; white-space: nowrap; }
+.lab .r .s { display: block; font-size: 14.5px; color: var(--muted); margin-top: 3px; }
+.lab .r.thick { border-bottom: 6px solid var(--ink); }
+.lab .bands { display: flex; flex-direction: column; gap: 7px; width: 230px; }
+.lab .bands div { position: relative; height: 16px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.lab .bands div span { width: 62px; text-align: right; flex-shrink: 0; }
+.lab .bands i { position: relative; display: block; flex: 1; height: 2px; background: #c9c3b5; }
+.lab .bands i em { position: absolute; top: -6px; height: 14px; left: 50%; border-radius: 7px; background: rgba(31,81,57,.25); border: 2px solid var(--green); transform: translateX(-50%); }
+.lab .bands i u { position: absolute; top: -9px; left: 50%; width: 3px; height: 20px; margin-left: -1.5px; background: var(--ink); }
+.lab .cn { padding-top: 10px; }
+.lab .cn b { font-size: 22px; font-weight: 800; letter-spacing: .04em; }
+.lab .cn .it { font-size: 26px; font-weight: 700; margin-top: 4px; position: relative; display: table; }
+.lab .foot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 18px; }
+.lab .foot .bc { display: flex; gap: 0; height: 46px; align-items: stretch; }
+.lab .foot .bc i { display: block; background: var(--ink); }
+.lab .foot .net { font-size: 15px; text-align: right; color: #30333a; line-height: 1.35; }
+.lab .foot .net b { font-size: 22px; color: var(--green); }
+
+/* biscuit packet */
+.bf { position: absolute; inset: 0; background: linear-gradient(165deg, #e2552f, #c23a24); color: #fff7e8; }
+.bf .t1 { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-size: 104px; font-weight: 700; letter-spacing: -.04em; line-height: .9; }
+.bf .t2 { position: absolute; left: 0; right: 0; top: 368px; text-align: center; font-size: 26px; letter-spacing: .3em; padding-left: .3em; }
+.bf .disc { position: absolute; left: 50%; top: 470px; width: 230px; height: 230px; margin-left: -115px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #f3c77d, #d9963f 70%, #b97529); box-shadow: 0 14px 0 -4px #a8642a, 0 30px 40px -10px rgba(0,0,0,.35); }
+.bf .disc::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background:
+  radial-gradient(circle at 30% 30%, #8a4f1e 3px, transparent 4px), radial-gradient(circle at 55% 28%, #8a4f1e 3px, transparent 4px),
+  radial-gradient(circle at 70% 50%, #8a4f1e 3px, transparent 4px), radial-gradient(circle at 45% 55%, #8a4f1e 3px, transparent 4px),
+  radial-gradient(circle at 30% 70%, #8a4f1e 3px, transparent 4px), radial-gradient(circle at 60% 75%, #8a4f1e 3px, transparent 4px); }
+.bf .wt { position: absolute; left: 40px; right: 40px; bottom: 64px; display: flex; justify-content: space-between; font-size: 18px; letter-spacing: .1em; }
+.bb { position: absolute; inset: 0; background: linear-gradient(175deg, #fbf7ee, #efe7d6); }
+.bb .lab .r { font-size: 20px; }
+.bb .ing { font-size: 22px; line-height: 1.45; padding: 12px 0; border-bottom: 1.5px solid #2a2d33; }
+.bb .ing b { font-weight: 800; }
+
+/* rival packet */
+.rf { position: absolute; inset: 0; background: linear-gradient(160deg, #eef1f5 0%, #b9c0ca 38%, #e6eaef 55%, #a3abb6 100%); }
+.rf .num { position: absolute; left: 0; right: 0; top: 230px; text-align: center; font-size: 230px; font-weight: 700; letter-spacing: -.07em; color: #16181d; line-height: 1; }
+.rf .unit { position: absolute; left: 0; right: 0; top: 462px; text-align: center; font-size: 62px; font-weight: 600; color: #16181d; }
+.rf .burst { position: absolute; left: 0; right: 0; top: 112px; text-align: center; font-size: 22px; letter-spacing: .34em; padding-left: .34em; font-weight: 700; color: #16181d; }
+.rf .stripe { position: absolute; left: 0; right: 0; top: 590px; height: 18px; background: #16181d; }
+.rb { position: absolute; inset: 0; background: linear-gradient(170deg, #e9ecf0 0%, #bfc5ce 45%, #dfe3e8 62%, #aab1bb 100%); }
+.rb .tiny { position: absolute; right: 46px; bottom: 60px; font-size: 13px; color: #6b6f78; letter-spacing: .02em; }
+
+/* plain shelf packet */
+.xf { position: absolute; inset: 0; background: linear-gradient(165deg, #9aa7b8, #7d8a9c); color: #f4f6f9; }
+.xf .num { position: absolute; left: 0; right: 0; top: 250px; text-align: center; font-size: 190px; font-weight: 700; letter-spacing: -.06em; line-height: 1; }
+.xf .unit { position: absolute; left: 0; right: 0; top: 450px; text-align: center; font-size: 56px; font-weight: 500; }
+.xf .k { position: absolute; left: 0; right: 0; top: 130px; text-align: center; font-size: 22px; letter-spacing: .3em; padding-left: .3em; }
+
+.shadow { position: absolute; left: 0; top: 0; border-radius: 50%; background: radial-gradient(closest-side, rgba(16,18,24,.42), rgba(16,18,24,0)); }
+
+/* ---------- kinetic captions ---------- */
+.cap { position: absolute; left: 120px; width: 780px; font-size: 76px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.04; z-index: 20; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.cap .w > span { display: inline-block; }
+.cap .red { color: var(--red); } .cap .grn { color: var(--green); } .cap .saf { color: var(--saffron); }
+#c1 { top: 300px; } #c2 { top: 380px; }
+#c3, #c4, #c5 { top: 400px; }
+.kick { position: absolute; left: 120px; font-size: 24px; letter-spacing: .2em; color: var(--muted); z-index: 20; font-family: 'JetBrains Mono', monospace; }
+#k3 { top: 340px; }
+#huh { position: absolute; font-size: 64px; color: var(--red); z-index: 31; white-space: nowrap; transform-origin: left center; }
+
+/* ---------- end ---------- */
+#end { position: absolute; left: 860px; top: 0; height: 100%; width: 980px; display: flex; flex-direction: column; justify-content: center; z-index: 20; }
+#eBig { position: relative; font-size: 132px; font-weight: 600; letter-spacing: -0.05em; line-height: .98; }
+#eBig .ln { display: block; overflow: hidden; padding-bottom: .08em; }
+#eBig .ln > span { display: inline-block; }
+#eBig .u { position: relative; display: inline-block; }
+#eMark { margin-top: 70px; font-size: 44px; letter-spacing: .34em; font-weight: 500; }
+#eCta { margin-top: 18px; font-size: 30px; color: var(--green); font-weight: 600; letter-spacing: .01em; }
+
+/* ---------- portrait 9:16 ---------- */
+body.portrait .cap { left: 70px; width: 940px; font-size: 86px; }
+body.portrait #c1 { top: 150px; } body.portrait #c2 { top: 190px; }
+body.portrait #c3, body.portrait #c4, body.portrait #c5 { top: 190px; }
+body.portrait .kick { left: 72px; font-size: 28px; } body.portrait #k3 { top: 132px; }
+body.portrait #end { left: 0; width: 100%; top: 860px; height: auto; align-items: center; text-align: center; justify-content: flex-start; }
+body.portrait #eBig { font-size: 136px; }
+body.portrait #eMark { margin-top: 90px; font-size: 52px; padding-left: .34em; }
+body.portrait #eCta { font-size: 38px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="grain"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="9"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+  <div id="vignette"></div>
+
+  <div id="shelf"><div class="top"></div><div class="edge"></div><div class="strip mono" id="strip"></div></div>
+
+  <div id="world">
+    <div class="shadow" id="shB"></div><div class="shadow" id="shX"></div><div class="shadow" id="shP"></div><div class="shadow" id="shR"></div>
+    <div class="pk" id="B"></div>
+    <div class="pk" id="X"></div>
+    <div class="pk" id="R"></div>
+    <div class="pk" id="P"></div>
+    <div class="pk" id="G"></div>
+  </div>
+  <svg class="ink" id="inkL"></svg>
+  <div id="huh" class="hand">that's it?</div>
+
+  <div class="cap" id="c1">A packet of biscuits tells you what's inside.</div>
+  <div class="cap" id="c2">Most carbon numbers <span class="red">don't.</span></div>
+  <div class="kick" id="k3">EVERY SENSEIBLE NUMBER SAYS</div>
+  <div class="cap" id="c3">Where it came from.</div>
+  <div class="cap" id="c4">How it was worked out.</div>
+  <div class="cap" id="c5">How sure we are.</div>
+
+  <div id="end">
+    <div id="eBig"><span class="ln"><span>Turn your</span></span><span class="ln"><span><span class="u" id="uNum">number</span> over.</span></span></div>
+    <div id="eMark">Senseible</div>
+    <div id="eCta" class="mono">senseible.earth/trust</div>
+  </div>
+</div>
+
+<script>
+// ONE place to change the printed factor source once the CEA edition / fiscal year is confirmed
+// (emissionFactors.ts: "edition to be confirmed"). Do not add an edition until it is.
+const FACTOR_SOURCE = 'India grid · CEA';
+
+const portrait = new URLSearchParams(location.search).get('o') === 'portrait';
+if (portrait) document.body.classList.add('portrait');
+const W = portrait ? 1080 : 1920, H = portrait ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const E = {
+  out3: x => 1 - Math.pow(1 - x, 3), out5: x => 1 - Math.pow(1 - x, 5),
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  io2: x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2,
+  back: x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  in2: x => x * x, in3: x => x * x * x,
+  // a damped settle: overshoots once, comes back, rests
+  spring: x => x >= 1 ? 1 : 1 - Math.exp(-6.5 * x) * Math.cos(9.5 * x),
+};
+const p = (t, s, d, e = E.out3) => e(clamp((t - s) / d));
+const mixHex = (a, b, k) => { const pa = a.match(/\w\w/g).map(h => parseInt(h, 16)), pb = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + pa.map((v, i) => Math.round(lerp(v, pb[i], k)).toString(16).padStart(2, '0')).join(''); };
+
+// ---------------- packet construction ----------------
+const PW = 560, PH = 840, PD = 46;
+function zigzag(w, h, tooth = 14, amp = 6) {
+  const pts = [];
+  for (let x = 0; x <= w; x += tooth) pts.push(`${x}px ${(x / tooth) % 2 ? amp : 0}px`);
+  pts.push(`${w}px 0px`, `${w}px ${h}px`);
+  for (let x = w; x >= 0; x -= tooth) pts.push(`${x}px ${h - ((x / tooth) % 2 ? amp : 0)}px`);
+  pts.push(`0px ${h}px`);
+  return `polygon(${pts.join(',')})`;
+}
+function build(el, front, back, side, foil) {
+  el.style.width = PW + 'px'; el.style.height = PH + 'px';
+  const faces = [];
+  const mk = (html, w, h, tf, n, cls = '') => {
+    const f = document.createElement('div'); f.className = 'face ' + cls;
+    f.style.width = w + 'px'; f.style.height = h + 'px';
+    f.style.left = (PW - w) / 2 + 'px'; f.style.top = (PH - h) / 2 + 'px';
+    f.style.transform = tf;
+    f.innerHTML = html + '<div class="pl"></div><div class="cr"></div><div class="sn"></div><div class="sh"></div>';
+    el.appendChild(f);
+    faces.push({ n, sh: f.querySelector('.sh'), sn: f.querySelector('.sn'), cr: f.querySelector('.cr'), el: f });
+    return f;
+  };
+  const seals = '<div class="seal t"></div><div class="seal b"></div>';
+  const fF = mk(front + seals, PW, PH, `translateZ(${PD / 2}px)`, [0, 0, 1]);
+  const fB = mk(back + seals, PW, PH, `rotateY(180deg) translateZ(${PD / 2}px)`, [0, 0, -1]);
+  fF.style.clipPath = fB.style.clipPath = zigzag(PW, PH);
+  const sideH = PH - 84;
+  mk(`<div style="position:absolute;inset:0;background:${side}"></div>`, PD, sideH, `rotateY(-90deg) translateZ(${PW / 2}px)`, [-1, 0, 0]);
+  mk(`<div style="position:absolute;inset:0;background:${side}"></div>`, PD, sideH, `rotateY(90deg) translateZ(${PW / 2}px)`, [1, 0, 0]);
+  el._faces = faces; el._foil = foil;
+}
+// CSS rotations: x right, y down, z toward viewer. transform = Rx * Ry * Rz.
+function rotN([x, y, z], rx, ry, rz) {
+  const r = Math.PI / 180, cz = Math.cos(rz * r), sz = Math.sin(rz * r), cy = Math.cos(ry * r), sy = Math.sin(ry * r), cx = Math.cos(rx * r), sx = Math.sin(rx * r);
+  let a = [x * cz - y * sz, x * sz + y * cz, z];
+  a = [a[0] * cy + a[2] * sy, a[1], -a[0] * sy + a[2] * cy];
+  return [a[0], a[1] * cx - a[2] * sx, a[1] * sx + a[2] * cx];
+}
+const LIGHT = (() => { const v = [-0.42, -0.5, 0.76], m = Math.hypot(...v); return v.map(c => c / m); })();
+const HALF = (() => { const v = [LIGHT[0], LIGHT[1], LIGHT[2] + 1], m = Math.hypot(...v); return v.map(c => c / m); })();
+function pk(el, { x, y, s = 1, rx = 0, ry = 0, rz = 0, z = 0, o = 1, crease = 0, squash = 0 }) {
+  el.style.left = (x - PW / 2) + 'px'; el.style.top = (y - PH / 2) + 'px';
+  el.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s * (1 + squash)}, ${s * (1 - squash)})`;
+  // opacity goes on each face: opacity on the preserve-3d parent would flatten the packet
+  el.style.visibility = o > 0.002 ? 'visible' : 'hidden';
+  for (const f of el._faces) {
+    f.el.style.opacity = o;
+    const n = rotN(f.n, rx, ry, rz);
+    const lam = Math.max(0, n[0] * LIGHT[0] + n[1] * LIGHT[1] + n[2] * LIGHT[2]);
+    const spec = Math.pow(Math.max(0, n[0] * HALF[0] + n[1] * HALF[1] + n[2] * HALF[2]), 24);
+    f.sh.style.opacity = clamp(.8 - lam * 1.08, 0, .62).toFixed(3);
+    f.sn.style.opacity = (el._foil * (.22 + spec * .9)).toFixed(3);
+    f.sn.style.backgroundPosition = `${(50 + n[0] * 260 + ry * 0.0).toFixed(1)}% 0`;
+    f.cr.style.opacity = crease.toFixed(3);
+  }
+}
+function shadow(el, x, y, w, o) {
+  el.style.width = w + 'px'; el.style.height = w * .16 + 'px';
+  el.style.left = (x - w / 2) + 'px'; el.style.top = (y - w * .08) + 'px'; el.style.opacity = o;
+}
+
+// ---- our packet
+const barcode = (() => { let s = 7, h = ''; for (let i = 0; i < 34; i++) { s = (s * 16807) % 2147483647; const w = 1 + s % 4; h += `<i style="width:${w}px;margin-right:${1 + (s >> 3) % 3}px"></i>`; } return h; })();
+build($('P'),
+  `<div class="fr"><div class="brand">SENSEIBLE</div><div class="kind mono">CARBON FOOTPRINT</div>
+    <div class="num">3.42</div><div class="unit">t CO₂</div>
+    <div class="band mono">SEP<b>·</b>2026<b>·</b>1 SITE</div>
+    <div class="net mono"><span>NET QTY: ONE MONTH</span><span>SCOPE 2</span></div></div>`,
+  `<div class="bk"><div class="lab" id="lab">
+    <div class="hd"><b>INGREDIENTS</b><span>PER BILL</span></div>
+    <div class="r" id="r1"><span class="k">Electricity, Sep 2026 bill</span><span class="v">4,820 kWh</span></div>
+    <div class="r" id="r2"><span class="k">Grid factor<span class="s" id="fsrc"></span></span><span class="v">0.710 kg CO₂/kWh</span></div>
+    <div class="r" id="r3"><span class="k">Worked out</span><span class="v">4,820 × 0.710 = 3,422 kg</span></div>
+    <div class="r thick" id="r4"><span class="k">Method v1.1</span><span class="v">frozen with this result</span></div>
+    <div class="r" id="r5"><span class="k">Counted<span class="s">bill fingerprinted at upload</span></span><span class="v" style="font-size:26px">once</span></div>
+    <div class="r thick" id="r6"><span class="k">How sure<span class="s">a band, not a guess.<br>Narrows as bills add up.</span></span>
+      <span class="bands" id="bands">
+        <div><span>1 bill</span><i><em style="width:100%"></em><u></u></i></div>
+        <div><span>4 bills</span><i><em style="width:50%"></em><u></u></i></div>
+        <div><span>9 bills</span><i><em style="width:33.3%"></em><u></u></i></div>
+      </span></div>
+    <div class="cn" id="cn"><b>CONTAINS NO:</b>
+      <span class="it" id="i1">guesses</span><span class="it" id="i2">personal details</span><span class="it" id="i3">double counting</span></div>
+    <div class="foot"><span class="bc">${barcode}</span><span class="net">NET RESULT<br><b>3.42 t CO₂</b></span></div>
+  </div></div>`, '#d9d2c1', 1);
+$('fsrc').textContent = FACTOR_SOURCE;
+// the ghost for the double-counting gag: same packet, back only
+build($('G'), '<div class="fr"></div>', $('P').querySelector('.bk').outerHTML.replace(/ id="[^"]+"/g, ''), '#d9d2c1', 1);
+$('G').querySelector('.bk').style.filter = 'saturate(.4)';
+
+// ---- biscuit packet (generic, unbranded)
+build($('B'),
+  `<div class="bf"><div class="t1">Milk<br>biscuits</div><div class="t2 mono">CRISP · BAKED</div><div class="disc"></div>
+    <div class="wt mono"><span>NET WT 75 g</span><span>MRP ₹10</span></div></div>`,
+  `<div class="bb"><div class="lab">
+    <div class="hd"><b>INGREDIENTS</b><span>PER 100 g</span></div>
+    <div class="ing">Wheat flour <b>(62%)</b>, sugar, edible vegetable oil, milk solids <b>(4%)</b>, salt, raising agents.</div>
+    <div class="r"><span class="k">Energy</span><span class="v">455 kcal</span></div>
+    <div class="r"><span class="k">Protein</span><span class="v">7 g</span></div>
+    <div class="r"><span class="k">Sugar</span><span class="v">24 g</span></div>
+    <div class="r thick"><span class="k">Best before</span><span class="v">6 months</span></div>
+    <div class="cn"><b>CONTAINS:</b><span class="it">wheat, milk</span></div>
+  </div></div>`, '#b8402a', .8);
+
+// ---- a plain shelf packet, and the rival
+build($('X'), `<div class="xf"><div class="k mono">APPROX.</div><div class="num">≈12</div><div class="unit">t CO₂</div></div>`, `<div class="xf"></div>`, '#6f7b8c', .6);
+build($('R'),
+  `<div class="rf"><div class="burst">INSTANT</div><div class="num">2.9</div><div class="unit">t CO₂</div><div class="stripe"></div></div>`,
+  `<div class="rb"><div class="tiny mono">AI-estimated</div></div>`, '#9aa2ad', 1.25);
+
+// shelf strip text
+$('strip').innerHTML = Array(14).fill('CARBON NUMBERS · AISLE 7 · ').join('');
+
+// ---------------- hand-drawn ink ----------------
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function loop(cx, cy, rx, ry, turns = 1.16) {
+  let d = ''; const n = 52;
+  for (let i = 0; i <= n; i++) {
+    const a = -2.5 + (i / n) * Math.PI * 2 * turns, j = 1 + (rnd() - .5) * .07 + i / n * .08;
+    d += (i ? 'L' : 'M') + (cx + Math.cos(a) * rx * j).toFixed(1) + ' ' + (cy + Math.sin(a) * ry * j).toFixed(1);
+  }
+  return d;
+}
+const NS = 'http://www.w3.org/2000/svg';
+function ink(svg, d, color, w) {
+  const path = document.createElementNS(NS, 'path');
+  path.setAttribute('d', d); path.setAttribute('stroke', color); path.setAttribute('stroke-width', w);
+  path.setAttribute('pathLength', 1); path.style.strokeDasharray = 1; path.style.strokeDashoffset = 1;
+  svg.appendChild(path); return path;
+}
+const draw = (path, k) => { path.style.strokeDashoffset = (1 - k).toFixed(4); path.style.visibility = k > 0 ? 'visible' : 'hidden'; };
+const inkL = $('inkL');
+// label highlights are drawn in screen space from element rects each frame
+const hl = {
+  b1: ink(inkL, '', 'var(--saffron)', 6), b2: ink(inkL, '', 'var(--saffron)', 6), b3: ink(inkL, '', 'var(--saffron)', 6),
+  ticks: [0, 1, 2].map(() => ink(inkL, '', 'var(--green)', 6)),
+  circ: ink(inkL, '', 'var(--red)', 6),
+  hand: [ink(inkL, '', 'var(--saffron)', 7), ink(inkL, '', 'var(--saffron)', 7), ink(inkL, '', 'var(--saffron)', 7)],
+  under: ink(inkL, '', 'var(--saffron)', 9),
+};
+// a bracket hugging the left of a set of rows
+function bracket(r1, r2, pad = 14) {
+  const x = Math.min(r1.left, r2.left) - pad, y1 = r1.top + 4, y2 = r2.bottom - 4;
+  return `M${x + 16} ${y1} C ${x + 2} ${y1 + 2}, ${x - 2} ${y1 + 10}, ${x} ${(y1 + y2) / 2} S ${x + 4} ${y2 - 2}, ${x + 18} ${y2}`;
+}
+function rectOf(el) { return el.getBoundingClientRect(); }
+const tickPath = (x, y, s) => `M${x} ${y} C ${x + 6 * s} ${y + 6 * s}, ${x + 9 * s} ${y + 12 * s}, ${x + 12 * s} ${y + 18 * s} C ${x + 18 * s} ${y + 2 * s}, ${x + 28 * s} ${y - 12 * s}, ${x + 40 * s} ${y - 22 * s}`;
+
+// ---------------- kinetic captions ----------------
+function split(el) {
+  const walk = node => {
+    const out = [];
+    node.childNodes.forEach(c => {
+      if (c.nodeType === 3) c.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) out.push(document.createTextNode(' ')); else { const s = document.createElement('span'); s.className = 'w'; s.innerHTML = `<span>${w}</span>`; out.push(s); } });
+      else { const cl = c.cloneNode(false); walk(c).forEach(x => cl.appendChild(x)); out.push(cl); }
+    });
+    return out;
+  };
+  const parts = walk(el); el.innerHTML = ''; parts.forEach(x => el.appendChild(x));
+}
+['c1', 'c2', 'c3', 'c4', 'c5'].forEach(id => split($(id)));
+function cap(el, t, tin, tout, stagger = .07) {
+  const words = el.querySelectorAll('.w > span');
+  const o = tout == null ? 1 : 1 - p(t, tout, .4, E.io);
+  el.style.opacity = o;
+  el.style.visibility = (t >= tin - .01 && o > 0) ? 'visible' : 'hidden';
+  words.forEach((w, i) => { const k = p(t, tin + i * stagger, .6, E.out5); w.style.transform = `translateY(${((1 - k) * 112).toFixed(2)}%)`; });
+}
+
+// ---------------- layout per orientation ----------------
+const L = portrait ? {
+  shelfY: 1470, bigS: .8, B: [540, 0], row: [-330, 0, 330], rowS: .5,
+  lift: [540, 1060, .78], read: [540, 1190, 1.68], cn: [540, 830, 1.95],
+  rival: [540, 1130, 1.18], tinyS: 3.1, end: [540, 470, .52],
+} : {
+  shelfY: 920, bigS: .78, B: [1380, 0], row: [-370, 0, 370], rowS: .56,
+  lift: [1340, 560, .8], read: [1360, 545, 1.12], cn: [1360, 160, 1.5],
+  rival: [1300, 540, .95], tinyS: 2.6, end: [500, 540, .66],
+};
+const ROWC = portrait ? 540 : 1380;
+
+// background: cold aisle, warm once you read the label, cold for the blank rival, warm to close
+function bg(t) {
+  const warm = p(t, 8.6, 1.8, E.io) * (1 - p(t, 25.0, 1.0, E.io)) + p(t, 31.4, 1.0, E.io);
+  return mixHex('#e4e7ec', '#f5f1e8', clamp(warm));
+}
+
+// ---------------- the timeline ----------------
+function render(t) {
+  $('stage').style.background = bg(t);
+  const pan = p(t, 4.3, 1.5, E.io);           // shelf slides from the biscuits to the carbon numbers
+  const panPx = pan * (portrait ? 1080 : 1500);
+  const shelfOut = p(t, 8.7, 1.0, E.io);      // shelf drops away once you pick a packet up
+  const shelfY = L.shelfY + shelfOut * (portrait ? 700 : 520);
+  $('shelf').style.top = shelfY + 'px';
+  $('shelf').style.opacity = 1 - p(t, 9.0, .8);
+  $('strip').style.transform = `translateX(${-panPx * .999 - 200}px)`;
+
+  // ---- biscuits: on the shelf, turned to show what's inside, then slid away
+  const bx = L.B[0] - panPx, bS = L.bigS;
+  const bIn = p(t, 0, 1.0, E.out5);
+  const bTurn = p(t, 1.75, 1.05, E.spring) - p(t, 3.75, .7, E.io);
+  const bCy = shelfY - PH * bS / 2 + 26 * bS;
+  const lift = Math.sin(clamp((t - 1.65) / 1.2) * Math.PI) * 30 + Math.sin(clamp((t - 3.7) / .8) * Math.PI) * 20;
+  pk($('B'), { x: bx, y: bCy - lift + (1 - bIn) * 60, s: bS, ry: bTurn * 180 - 14 + Math.sin(t * .9) * 3, rx: 4, rz: -2 * (1 - bTurn), o: bIn * (1 - p(t, 5.0, .6)),
+    crease: Math.sin(clamp((t - 1.75) / .9) * Math.PI) * .9 + Math.sin(clamp((t - 3.75) / .7) * Math.PI) * .6 });
+  shadow($('shB'), bx, shelfY + 16, PW * bS * 1.15, bIn * (1 - lift / 90));
+
+  // ---- the carbon shelf
+  const rowX = i => ROWC + L.row[i] + (portrait ? 1080 : 1500) - panPx;
+  const rS = L.rowS, rCy = shelfY - PH * rS / 2 + 26 * rS;
+  const sway = Math.sin(t * 1.1) * 2;
+  // the others fade as you pick ours
+  const othersOut = p(t, 8.5, .8, E.io);
+  // plain packet
+  pk($('X'), { x: rowX(0), y: rCy + othersOut * 120, s: rS, ry: 16 + sway, rx: 3, o: 1 - othersOut });
+  shadow($('shX'), rowX(0), shelfY + 12, PW * rS * 1.1, 1 - othersOut);
+
+  // ---- rival: on the shelf at first; returns at 25.2 to be turned over
+  const R = $('R');
+  const rvIn = p(t, 25.25, 1.0, E.out5), rvTurn = p(t, 26.35, .55, E.io2), rvPush = p(t, 28.85, 1.25, E.io), rvOut = p(t, 31.2, .6, E.io);
+  if (t < 20) {
+    pk(R, { x: rowX(2), y: rCy + othersOut * 120, s: rS, ry: -16 - sway, rx: 3, o: 1 - othersOut });
+    shadow($('shR'), rowX(2), shelfY + 12, PW * rS * 1.1, 1 - othersOut);
+  } else {
+    const [rx0, ry0, rs0] = L.rival;
+    // the tiny text sits bottom-right of the back; push the camera onto it
+    const tx = PW / 2 - 46 - 50, ty = PH / 2 - 60 - 8;
+    const sP = lerp(rs0, L.tinyS, rvPush);
+    const cx = lerp(rx0, (portrait ? 540 : 960) - tx * L.tinyS, rvPush), cy = lerp(ry0, (portrait ? 980 : 540) - ty * L.tinyS, rvPush);
+    pk(R, { x: cx + (1 - rvIn) * (portrait ? 900 : 1100) - rvOut * 300, y: cy, s: sP * (1 + rvOut * .3), ry: lerp(-30, 0, rvIn) + rvTurn * 180, rx: lerp(6, 0, rvIn), rz: (1 - rvIn) * 6,
+      o: (t > 25.2 ? 1 : 0) * (1 - rvOut) });
+    shadow($('shR'), cx, cy + PH * sP / 2 + 70, PW * sP, .35 * rvIn * (1 - rvPush) * (1 - rvOut));
+  }
+
+  // ---- ours: on the shelf → picked up → turned → read → aside → back at the end
+  const P = $('P');
+  const pick = p(t, 8.55, 1.15, E.io);          // up off the shelf
+  const turn = p(t, 9.75, 1.35, E.spring);      // the turn, with a settle
+  const toRead = p(t, 10.0, 1.4, E.io);
+  const toCn = p(t, 20.3, 1.1, E.io);           // push into "contains no"
+  const aside = p(t, 24.85, .9, E.io);          // slides away for the rival
+  const endIn = p(t, 31.7, 1.2, E.out5);
+  const endFlip = p(t, 33.2, 1.1, E.spring);
+  const [lx, ly, ls] = L.lift, [rx_, ry_, rs_] = L.read, [cx_, cy_, cs_] = L.cn;
+  let x = lerp(rowX(1), lx, pick), y = lerp(rCy, ly, pick), s = lerp(rS, ls, pick);
+  x = lerp(x, rx_, toRead); y = lerp(y, ry_, toRead); s = lerp(s, rs_, toRead);
+  x = lerp(x, cx_, toCn); y = lerp(y, cy_, toCn); s = lerp(s, cs_, toCn);
+  x -= aside * (portrait ? 1300 : 2600);
+  let ry = turn * 180 + Math.sin(pick * Math.PI) * -12, rx = Math.sin(pick * Math.PI) * 8 + Math.sin(turn * Math.PI) * 6 + 2 * (1 - toRead);
+  let rz = Math.sin(pick * Math.PI) * -4 + aside * -8;
+  const crinkle = Math.sin(clamp((t - 9.75) / 1.1) * Math.PI) * .95 + Math.sin(clamp((t - 8.6) / .7) * Math.PI) * .5;
+  // the "double counting" gag: a ghost copy slides out, hesitates, gets yanked back in
+  const gOut = p(t, 23.15, .38, E.out3), gBack = p(t, 23.9, .2, E.in3);
+  const g = gOut * (1 - gBack);
+  const snap = Math.sin(clamp((t - 24.1) / .35) * Math.PI) * Math.exp(-clamp((t - 24.1) / .35) * 2);
+  let o = 1;
+  if (t > 31) {   // end: small, turned to the back, flips front then back again
+    const [ex, ey, es] = L.end;
+    x = lerp(portrait ? -700 : -600, ex, endIn); y = ey; s = es; rz = 0; rx = 4;
+    ry = 180 + endFlip * 360 - (1 - endIn) * 40;
+    o = 1;
+  }
+  pk(P, { x, y, s, rx, ry, rz, o: (t > 0.05 ? 1 : 0) * o, crease: t > 31 ? Math.sin(clamp((t - 33.2) / 1) * Math.PI) * .6 : crinkle, squash: snap * .045 });
+  shadow($('shP'), x, (pick < .02 ? shelfY + 12 : y + PH * s / 2 + 70 * s + 20), PW * s * (pick < .02 ? 1.1 : .95), pick < .02 ? 1 : .32 * (1 - aside) * (t > 31 ? 0 : 1) + (t > 31 ? .3 * endIn : 0));
+  const G = $('G');
+  pk(G, { x: x + g * PW * s * (portrait ? .42 : .55), y: y - g * 40, s, rx, ry, rz: rz + g * 6, o: g > .001 ? .9 * Math.min(1, g * 4) : 0 });
+
+  // ---- the label reading: dim what isn't being talked about
+  const rows = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6'].map($);
+  const focus = t < 11.4 ? null : t < 14.3 ? [0] : t < 17.5 ? [1, 2, 3] : t < 20.4 ? [4, 5] : 'cn';
+  const dimK = p(t, 11.4, .5) * (1 - p(t, 24.4, .4));
+  rows.forEach((r, i) => { const on = focus === null || (Array.isArray(focus) && focus.includes(i)); r.style.opacity = on ? 1 : lerp(1, .26, dimK); });
+  $('cn').style.opacity = (focus === null || focus === 'cn') ? 1 : lerp(1, .26, dimK);
+  // contains-no items land one by one, comic beat on the last
+  const it = ['i1', 'i2', 'i3'].map($), itT = [21.15, 21.85, 22.85];
+  it.forEach((e, i) => { const k = t < 20 ? 1 : p(t, itT[i], .28, E.back); e.style.opacity = t < 20 ? 1 : clamp(k * 2); e.style.transform = `translateY(${(1 - k) * 18}px)`; });
+  // band rows: 1 bill, 4 bills, 9 bills, revealed in turn while "How sure" is up
+  $('bands').querySelectorAll('div').forEach((d, i) => {
+    const k = t < 17.4 ? 1 : p(t, 18.0 + i * .5, .45, E.out5);
+    d.querySelector('em').style.transform = `translateX(-50%) scaleX(${t < 17.4 ? 1 : k})`;
+    d.style.opacity = t < 17.4 ? 1 : clamp(.25 + k);
+  });
+
+  // ---- ink in screen space (positions follow the packet)
+  const visBack = t > 10.9 && t < 25.4;
+  if (visBack) {
+    hl.b1.setAttribute('d', bracket(rectOf(rows[0]), rectOf(rows[0])));
+    hl.b2.setAttribute('d', bracket(rectOf(rows[1]), rectOf(rows[3])));
+    hl.b3.setAttribute('d', bracket(rectOf(rows[4]), rectOf(rows[5])));
+    it.forEach((e, i) => { const r = rectOf(e); const sz = r.height / 34; hl.ticks[i].setAttribute('d', tickPath(r.right + 18 * sz, r.top + r.height * .5, sz * 1.1)); });
+  }
+  const off = k => k * (1 - p(t, 24.5, .3));
+  draw(hl.b1, visBack ? off(p(t, 11.5, .45, E.io)) * (1 - p(t, 14.2, .25)) : 0);
+  draw(hl.b2, visBack ? off(p(t, 14.4, .45, E.io)) * (1 - p(t, 17.4, .25)) : 0);
+  draw(hl.b3, visBack ? off(p(t, 17.6, .45, E.io)) * (1 - p(t, 20.3, .25)) : 0);
+  hl.ticks.forEach((tk, i) => draw(tk, visBack ? off(p(t, itT[i] + .18, .3, E.io)) : 0));
+  // red circle round the rival's tiny print
+  const tiny = R.querySelector('.tiny').getBoundingClientRect();
+  if (t > 29) hl.circ.setAttribute('d', (seed = 21, loop(tiny.left + tiny.width / 2, tiny.top + tiny.height / 2, tiny.width * .78, tiny.height * 1.25)));
+  draw(hl.circ, t > 29 ? p(t, 30.0, .55, E.io) * (1 - p(t, 31.2, .3)) : 0);
+  const huh = $('huh');
+  const hk = p(t, 30.5, .5, E.out5) * (1 - p(t, 31.2, .3));
+  huh.style.opacity = hk;
+  huh.style.left = (portrait ? tiny.left - 330 : tiny.left - 420) + 'px';
+  huh.style.top = (portrait ? tiny.top - 230 : tiny.top - 170) + 'px';
+  huh.style.transform = `rotate(-6deg) translateY(${(1 - hk) * 20}px)`;
+
+  // a hand, drawn in saffron ink, comes up and takes the packet: thumb on the front, fingertips round the edge
+  {
+    const sNow = lerp(rS, ls, pick);
+    const hx = lerp(rowX(1), lx, pick), hy = lerp(rCy, ly, pick) + PH * sNow / 2;
+    const handIn = p(t, 7.8, .6, E.out3), handOut = p(t, 9.3, .45, E.in2);
+    const u = PW * sNow / 2;
+    const dy = (1 - handIn) * 300 + handOut * 700;
+    const P2 = (a, b) => `${(hx + a * u).toFixed(1)} ${(hy + dy + b * u).toFixed(1)}`;
+    const d = `M${P2(-.66, 4)} C ${P2(-.64, 2.4)}, ${P2(-.7, 1.1)}, ${P2(-.72, .55)} C ${P2(-.86, .3)}, ${P2(-.9, -.1)}, ${P2(-.84, -.42)}`
+      + ` C ${P2(-.8, -.7)}, ${P2(-.56, -.82)}, ${P2(-.45, -.62)} C ${P2(-.4, -.45)}, ${P2(-.42, -.22)}, ${P2(-.32, -.06)}`
+      + ` C ${P2(.05, -.12)}, ${P2(.6, -.14)}, ${P2(.98, -.1)}`
+      + ` C ${P2(1.16, -.12)}, ${P2(1.18, -.3)}, ${P2(1.0, -.33)} C ${P2(1.2, -.36)}, ${P2(1.2, -.58)}, ${P2(1.0, -.6)} C ${P2(1.17, -.64)}, ${P2(1.16, -.84)}, ${P2(.99, -.86)}`
+      + ` C ${P2(1.04, -.4)}, ${P2(1.06, .2)}, ${P2(.92, .5)} C ${P2(.8, .9)}, ${P2(.66, 1.4)}, ${P2(.64, 4)}`;
+    const h0 = hl.hand[0];
+    h0.setAttribute('d', d);
+    const k = handIn * (1 - handOut);
+    draw(h0, p(t, 7.8, .7, E.io));
+    h0.style.fill = `rgba(240,138,36,${(.92 * p(t, 8.25, .35)).toFixed(3)})`;
+    h0.style.opacity = k > 0 ? 1 : 0;
+    h0.setAttribute('stroke', '#c9661a'); h0.setAttribute('stroke-width', 6);
+    // knuckle crease on the thumb
+    hl.hand[1].setAttribute('d', `M${P2(-.78, -.3)} C ${P2(-.7, -.26)}, ${P2(-.6, -.27)}, ${P2(-.52, -.32)}`);
+    hl.hand[1].setAttribute('stroke', '#c9661a'); hl.hand[1].setAttribute('stroke-width', 5);
+    draw(hl.hand[1], p(t, 8.35, .3, E.io)); hl.hand[1].style.opacity = k > 0 ? 1 : 0;
+    draw(hl.hand[2], 0);
+  }
+
+  // ---- captions
+  cap($('c1'), t, .45, 4.05);
+  cap($('c2'), t, 5.05, 8.2, .09);
+  const k3 = p(t, 11.2, .5, E.out5) * (1 - p(t, 20.0, .4, E.io));
+  $('k3').style.opacity = k3; $('k3').style.transform = `translateY(${(1 - k3) * 12}px)`;
+  cap($('c3'), t, 11.4, 14.0);
+  cap($('c4'), t, 14.35, 17.2);
+  cap($('c5'), t, 17.55, 20.0);
+
+  // ---- end
+  const end = $('end');
+  end.style.visibility = t > 31.8 ? 'visible' : 'hidden';
+  end.querySelectorAll('#eBig .ln > span').forEach((s2, i) => { const k = p(t, 32.0 + i * .25, .75, E.out5); s2.style.transform = `translateY(${(1 - k) * 105}%)`; });
+  const u = $('uNum').getBoundingClientRect();
+  if (t > 32) { seed = 5; hl.under.setAttribute('d', `M${u.left + 6} ${u.bottom - 2} C ${lerp(u.left, u.right, .3)} ${u.bottom - 12}, ${lerp(u.left, u.right, .65)} ${u.bottom + 8}, ${u.right - 4} ${u.bottom - 6}`); }
+  draw(hl.under, t > 32 ? p(t, 33.0, .6, E.io) : 0);
+  const m = p(t, 34.0, .9, E.out5); $('eMark').style.opacity = m; $('eMark').style.transform = `translateY(${(1 - m) * 14}px)`;
+  const c = p(t, 34.5, .8, E.out5); $('eCta').style.opacity = c; $('eCta').style.transform = `translateY(${(1 - c) * 10}px)`;
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
