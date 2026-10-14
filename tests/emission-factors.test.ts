@@ -107,3 +107,10 @@ describe('avoided emissions are separate', () => {
     expect(t).toEqual({ grossCo2Kg: 100, avoidedCo2Kg: 500 });
   });
 });
+
+describe('no generic Scope 3 factors', () => {
+  test('freight and waste lines get no number here (the Scope 3 trail handles them with approved factors)', () => {
+    expect(calculateEmissions(1000, 'ton-km', 3, 'TRANSPORT')).toBeNull();
+    expect(calculateEmissions(500, 'kg', 3, 'WASTE')).toBeNull();
+  });
+});

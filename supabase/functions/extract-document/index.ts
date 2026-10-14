@@ -6,6 +6,8 @@ import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
 import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
+import { sealExtraction } from '../_shared/scope3.ts';
+import { sealAndRecord } from '../_shared/scope3Record.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import {
@@ -198,9 +200,15 @@ function getHumorousRejection(ocrText: string, category?: string): string {
   return HUMOROUS_REJECTIONS.default[0];
 }
 
+// Income tax returns and financial statements are never read here (they are
+// reserved for a later, separately approved server-side process).
+const FINANCIAL_STATEMENT_PATTERN = /\b(income tax return|itr-?v?\s?[1-7]|balance sheet|statement of profit and loss|profit (and|&) loss (account|statement)|financial statements?)\b/i;
+const FINANCIAL_STATEMENT_MESSAGE = 'Income tax returns and financial statements are not read here. Upload an invoice, bill or receipt instead.';
+
 function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string } {
   const docType = (ocrData.documentType || '').toLowerCase();
   const allText = JSON.stringify(ocrData).toLowerCase();
+  if (FINANCIAL_STATEMENT_PATTERN.test(allText)) return { relevant: false, message: FINANCIAL_STATEMENT_MESSAGE };
   
   if (docType === 'unknown') {
     for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
@@ -335,6 +343,11 @@ CRITICAL EXTRACTION RULES:
       - total: Line total if shown
      - sourcePage: PDF page number where the item is visible; use 1 for a single image
      - sourceText: Short exact text fragment supporting the quantity and unit
+     - logistics: ONLY for freight, transport or courier lines, and ONLY the
+       values printed on the document, otherwise null:
+       { "mode": "road"/"rail"/"air"/"sea" as printed, "distanceKm": number,
+         "weightKg": number (convert only if printed in tonnes: x 1000),
+         "origin": city as printed, "destination": city as printed }
 
 2. For electricity bills specifically:
    - Find the billed consumption: "Units Consumed", "Billed Units", "Net Units"
@@ -814,6 +827,14 @@ serve(async (req) => {
 
     console.log(`AI OCR complete (${usedModel}), applying DETERMINISTIC classification...`);
 
+    // The OCR fields as read, before any classification, for the Scope 3
+    // evidence trail. Electricity bills (Scope 2, personal data) are not sealed;
+    // a supplier invoice that merely mentions "electric" still is.
+    const utilityBill = ocrData.unitsConsumedKwh != null || electricityBillMeta(ocrData) !== null
+      || (Array.isArray(ocrData.lineItems) && ocrData.lineItems.some((l: { hsn_code?: unknown }) => String(l?.hsn_code ?? '').startsWith('2716')));
+    const sealed = utilityBill || !['invoice', 'bill', 'receipt'].includes(String(ocrData.documentType || '').toLowerCase())
+      ? null : sealExtraction(ocrData, pdfPageCount);
+
     // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
     // This is where all math happens - deterministic, no AI
     const validationFlags: string[] = [];
@@ -1066,7 +1087,7 @@ serve(async (req) => {
             sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
           }
           // Insert cache record (authenticated users or fallback)
-          const { error: cacheError } = await supabase
+          const { data: savedDoc, error: cacheError } = await supabase
             .from('documents')
             .insert({
               document_hash: documentHash,
@@ -1082,12 +1103,24 @@ serve(async (req) => {
               file_url: sourcePath,
               session_id: isAuthenticated ? null : (sessionId || null),
               ...(isAuthenticated && organizationId ? { organization_id: organizationId } : {}),
-            });
+            })
+            .select('id')
+            .single();
           
           if (cacheError) {
             console.error('Failed to cache result:', cacheError);
           } else {
             console.log('Result cached for deterministic retrieval');
+            // Scope 3 trail: seal the OCR fields and record each line. No-op
+            // until the pending migration is applied; never affects this response.
+            if (sealed && isAuthenticated && userId && savedDoc?.id) {
+              const trail = sealAndRecord(supabase, {
+                documentId: savedDoc.id, userId, organizationId: organizationId || null, documentHash,
+                sealed, model: usedModel, sourcePath,
+              });
+              const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+              if (rt?.waitUntil) rt.waitUntil(trail); else await trail;
+            }
           }
         }
       } catch (e) {
