@@ -71,6 +71,8 @@ const ResetPassword = () => {
           markValid();
         } else {
           setLinkState((prev) => (prev === "checking" ? "invalid" : prev));
+          // An expired or used link (#error_code=otp_expired) leaves its error in the address; clear it.
+          window.history.replaceState({}, "", "/reset-password");
         }
       } catch {
         if (!cancelled) setLinkState((prev) => (prev === "checking" ? "invalid" : prev));

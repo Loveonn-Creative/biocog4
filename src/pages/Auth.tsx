@@ -12,6 +12,18 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { analyticsEvents } from "@/lib/analytics";
 import { INDIA_GRID_FACTOR_KG_PER_KWH, METHODOLOGY_VERSION_TAG } from "@/lib/factors";
 import { AccountStack, StackStrip, type StackLayer } from "@/components/auth/AccountStack";
+import {
+  cleanAuthUrl, EMAIL_REDIRECT_URL, forgetPendingEmail, parseAuthLinkError, parseAuthLinkSuccess, pendingEmail,
+  rememberPendingEmail, resendErrorMessage, type AuthLinkError,
+} from "@/lib/authLink";
+import { takeAuthLinkSnapshot } from "@/lib/authLinkSnapshot";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const RESEND_COOLDOWN_S = 60;
+const NETWORK_MSG = 'Could not reach Senseible. Check your connection and try again.';
+/** supabase-js reports a failed request as an error (status 0 / AuthRetryableFetchError), not a throw. */
+const isNetworkError = (e: { name?: string; status?: number; message?: string }) =>
+  e.name === 'AuthRetryableFetchError' || e.status === 0 || /failed to fetch|network/i.test(e.message ?? '');
 
 /** The three fears at a sign-up form, each answered with a fact the product already backs. */
 const AUTH_ASSURANCES = [
@@ -70,6 +82,87 @@ const Auth = () => {
   const [organizationType, setOrganizationType] = useState("");
   const [website, setWebsite] = useState("");
 
+  // Email-link outcomes: a link that failed, or a sign-up waiting for its confirmation.
+  const [linkError, setLinkError] = useState<AuthLinkError | null>(null);
+  const [awaitingEmail, setAwaitingEmail] = useState<string | null>(null);
+  const [resendEmail, setResendEmail] = useState("");
+  const [resending, setResending] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const t = window.setTimeout(() => setCooldown((c) => c - 1), 1000);
+    return () => window.clearTimeout(t);
+  }, [cooldown]);
+
+  const resend = async (address: string) => {
+    const target = address.trim();
+    if (!EMAIL_RE.test(target)) {
+      toast.error("Enter the email you signed up with, then press Resend.");
+      document.getElementById("auth-resend-email")?.focus();
+      return;
+    }
+    if (resending || cooldown > 0) return;
+    setResending(true);
+    try {
+      const { error } = await supabase.auth.resend({ type: "signup", email: target, options: { emailRedirectTo: EMAIL_REDIRECT_URL } });
+      if (error) {
+        toast.error(resendErrorMessage(error));
+        if (error.status === 429 || error.code === "over_email_send_rate_limit") setCooldown(RESEND_COOLDOWN_S);
+        return;
+      }
+      rememberPendingEmail(target);
+      setAwaitingEmail(target);
+      setLinkError(null);
+      setCooldown(RESEND_COOLDOWN_S);
+      toast.success(`New link sent to ${target}. Check spam if it is not in your inbox.`);
+    } catch {
+      toast.error(resendErrorMessage({ message: "network" }));
+    } finally {
+      setResending(false);
+    }
+  };
+
+  // Read what an email link brought, once, then clear it from the address bar.
+  useEffect(() => {
+    const snap = takeAuthLinkSnapshot();
+    if (!snap) return;
+    window.history.replaceState(window.history.state, "", cleanAuthUrl(window.location.pathname, snap.search));
+    const err = parseAuthLinkError(snap.hash, snap.search);
+    if (err) {
+      const remembered = pendingEmail();
+      setLinkError(err);
+      setResendEmail(remembered);
+      setMode("signin");
+      toast.error(err.title, {
+        description: err.detail,
+        duration: 12000,
+        action: err.canResend ? { label: "Resend email", onClick: () => void resend(remembered || (document.getElementById("auth-resend-email") as HTMLInputElement | null)?.value || "") } : undefined,
+      });
+      return;
+    }
+    const ok = parseAuthLinkSuccess(snap.hash);
+    if (!ok) return;
+    void (async () => {
+      // The auth client normally reads the tokens itself; if it had already
+      // started, set the session from them so the link still signs the user in.
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) {
+        const h = new URLSearchParams(snap.hash.replace(/^#/, ""));
+        const access_token = h.get("access_token"), refresh_token = h.get("refresh_token");
+        const { error } = access_token && refresh_token ? await supabase.auth.setSession({ access_token, refresh_token }) : { error: new Error("missing") };
+        if (error) {
+          setLinkError(parseAuthLinkError("#error_code=otp_expired", ""));
+          setResendEmail(pendingEmail());
+          toast.error("Link expired or already used", { description: "Sign in, or send yourself a fresh link." });
+          return;
+        }
+      }
+      forgetPendingEmail();
+      toast.success(ok.type === "signup" ? "Email confirmed. Signing you in…" : "Signed in. Taking you to your dashboard…");
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Get context-aware redirect path
   const getRedirectPath = async (userId: string): Promise<string> => {
     const { data } = await supabase
@@ -101,7 +194,34 @@ const Auth = () => {
   const redirectTo = async (userId: string) => {
     if (redirectStarted.current) return;
     redirectStarted.current = true;
+    forgetPendingEmail();
+    await completePendingPartner(userId);
     navigate(await getRedirectPath(userId), { replace: true });
+  };
+
+  // A partner who had to confirm their email first: their organisation details
+  // waited in the account metadata; create the application on first sign-in.
+  const completePendingPartner = async (userId: string) => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const intent = user?.user_metadata?.partner_intent as { organization_name?: string; organization_type?: string; website?: string; email?: string } | undefined;
+      if (!intent?.organization_type) return;
+      const { data: existing } = await supabase.from('user_contexts').select('id').eq('user_id', userId).eq('context_type', 'partner').maybeSingle();
+      if (!existing) {
+        const { error: appError } = await supabase.from('partner_applications').insert({
+          user_id: userId, organization_name: intent.organization_name || 'Unnamed Organization', organization_type: intent.organization_type,
+          contact_email: intent.email || user?.email || '', website: intent.website || null, status: 'pending',
+        });
+        if (appError) { console.error('Partner application error:', appError.code); return; }
+        const { error: ctxError } = await supabase.from('user_contexts').insert({
+          user_id: userId, context_type: 'partner', context_id: userId, context_name: intent.organization_name || 'Unnamed Organization', is_active: true,
+        });
+        if (ctxError) { console.error('Partner context error:', ctxError.code); return; }
+      }
+      await supabase.auth.updateUser({ data: { partner_intent: null } });
+    } catch (e) {
+      console.error('Partner completion failed', e instanceof Error ? e.message : 'unknown');
+    }
   };
 
   // Redirect if already authenticated (the session already holds the user,
@@ -155,8 +275,19 @@ const Auth = () => {
         });
         
         if (error) {
-          if (error.message.includes('Invalid login credentials')) {
-            toast.error('Invalid email or password. Please try again.');
+          if (isNetworkError(error)) {
+            toast.error(NETWORK_MSG);
+          } else if (error.code === 'email_not_confirmed' || /email not confirmed/i.test(error.message)) {
+            setAwaitingEmail(email);
+            setResendEmail(email);
+            toast.error('Confirm your email first', {
+              description: 'Open the link we emailed you. Lost it? Send a fresh one.',
+              action: { label: 'Resend email', onClick: () => void resend(email) },
+            });
+          } else if (error.code === 'invalid_credentials' || error.message.includes('Invalid login credentials')) {
+            toast.error('Invalid email or password. Please try again, or reset your password.');
+          } else if (error.status === 429 || error.code === 'over_request_rate_limit') {
+            toast.error('Too many attempts. Wait a minute, then try again.');
           } else {
             toast.error(error.message);
           }
@@ -171,8 +302,8 @@ const Auth = () => {
       } else if (mode === "signup") {
         // ALWAYS use production domain for email verification - never use Lovable preview URLs
         // This ensures all verification emails redirect to senseible.earth
-        const PRODUCTION_DOMAIN = 'https://senseible.earth';
-        const redirectUrl = `${PRODUCTION_DOMAIN}/`;
+        // The link returns to /auth, which signs the user in or explains a failed link.
+        const redirectUrl = EMAIL_REDIRECT_URL;
         
         const { data, error } = await supabase.auth.signUp({
           email,
@@ -195,21 +326,51 @@ const Auth = () => {
                  : undefined,
                data_consent: true,
                data_consent_at: new Date().toISOString(),
-               data_consent_version: '2026-09-25'
+               data_consent_version: '2026-09-25',
+               // Created on first sign-in if the account must confirm its email first.
+               partner_intent: isPartnerMode && organizationType
+                 ? { organization_name: businessName, organization_type: organizationType, website: website || undefined, email }
+                 : undefined,
             }
           }
         });
         
         if (error) {
-          if (error.message.includes('already registered')) {
+          if (isNetworkError(error)) {
+            toast.error(NETWORK_MSG);
+          } else if (error.code === 'user_already_exists' || error.message.includes('already registered')) {
             toast.error('This email is already registered. Please sign in instead.');
             setMode('signin');
+          } else if (error.code === 'weak_password') {
+            toast.error('Please choose a stronger password.');
+          } else if (error.status === 429 || error.code === 'over_email_send_rate_limit') {
+            toast.error('Too many sign-up emails sent. Wait a minute, then try again.');
           } else {
             toast.error(error.message);
           }
           return;
         }
-        
+
+        // With email confirmation on, an address that already has an account
+        // comes back as a user with no identities and no email is sent.
+        if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+          toast.error('An account may already exist for this email. Sign in, or reset your password.');
+          setMode('signin');
+          return;
+        }
+
+        // Confirmation required: no session yet. Stay here and say what to do next.
+        if (data.user && !data.session) {
+          analyticsEvents.signUp('password', isPartnerMode ? 'partner' : 'msme');
+          rememberPendingEmail(email);
+          setAwaitingEmail(email);
+          setResendEmail(email);
+          setLinkError(null);
+          setCooldown(RESEND_COOLDOWN_S);
+          toast.success('Check your inbox to confirm your email.');
+          return;
+        }
+
         if (data.user) {
           analyticsEvents.signUp('password', isPartnerMode ? 'partner' : 'msme');
           // Update profile with additional data
@@ -278,16 +439,16 @@ const Auth = () => {
         });
         
         if (error) {
-          toast.error(error.message);
+          toast.error(isNetworkError(error) ? NETWORK_MSG : error.status === 429 || error.code === 'over_email_send_rate_limit' ? 'Too many emails sent. Wait a minute, then try again.' : error.message);
           return;
         }
         
-        toast.success("Password reset link sent to your email.");
+        toast.success("If an account exists for that email, a reset link is on its way. Check spam too.");
         setMode('signin');
       }
     } catch (err) {
-      console.error('Auth error:', err);
-      toast.error('An unexpected error occurred. Please try again.');
+      console.error('Auth error:', err instanceof Error ? err.message : 'unknown');
+      toast.error(NETWORK_MSG);
     } finally {
       submitting.current = false;
       setIsLoading(false);
@@ -364,6 +525,42 @@ const Auth = () => {
                 {mode === "signup" && "Register to access the partner marketplace and carbon credit purchasing."}
                 {mode === "forgot" && "We'll send you a reset link."}
               </p>
+            )}
+
+            {(linkError || awaitingEmail) && (
+              <section role="status" aria-live="polite" className="mb-6 rounded-2xl border border-border bg-secondary/40 p-4 sm:p-5">
+                {awaitingEmail && !linkError ? (
+                  <>
+                    <p className="font-medium text-foreground">Check your inbox</p>
+                    <p className="mt-1 text-sm text-muted-foreground">We sent a confirmation link to <span className="font-medium text-foreground">{awaitingEmail}</span>. Open it on this device to finish signing up.</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <button type="button" onClick={() => void resend(awaitingEmail)} disabled={resending || cooldown > 0}
+                        className="h-10 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground disabled:opacity-60">
+                        {resending ? "Sending…" : cooldown > 0 ? `Resend in ${cooldown}s` : "Resend email"}
+                      </button>
+                      <button type="button" onClick={() => { setAwaitingEmail(null); forgetPendingEmail(); setMode("signup"); }} className="h-10 rounded-full border border-border px-4 text-sm">Use a different email</button>
+                      <button type="button" onClick={() => { setAwaitingEmail(null); setMode("signin"); }} className="h-10 rounded-full px-3 text-sm text-muted-foreground hover:text-foreground">Back to sign in</button>
+                    </div>
+                  </>
+                ) : linkError && (
+                  <>
+                    <p className="font-medium text-foreground">{linkError.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{linkError.detail}</p>
+                    {linkError.canResend && (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <label htmlFor="auth-resend-email" className="sr-only">Email you signed up with</label>
+                        <input id="auth-resend-email" type="email" autoComplete="email" inputMode="email" placeholder="you@business.com"
+                          value={resendEmail} onChange={(e) => setResendEmail(e.target.value)} className={`${field} h-10 min-w-0 flex-1`} />
+                        <button type="button" onClick={() => void resend(resendEmail)} disabled={resending || cooldown > 0}
+                          className="h-10 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground disabled:opacity-60">
+                          {resending ? "Sending…" : cooldown > 0 ? `Resend in ${cooldown}s` : "Resend email"}
+                        </button>
+                      </div>
+                    )}
+                    <p className="mt-3 text-xs text-muted-foreground">Already confirmed? Sign in below.</p>
+                  </>
+                )}
+              </section>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
