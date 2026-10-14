@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The invisible line</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --glow: #d6ff4a; --uv: #7b57ff; --ink: #16181d; --pen: #2643c4; --red: #c8372d; --green: hsl(152 45% 30%); --saffron: #f08a24; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #07080c; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: #f2f0ea; -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #07080c; }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+#lamp { background: radial-gradient(ellipse 46% 38% at var(--lx) var(--ly), rgba(255,204,140,.30), rgba(255,170,90,.08) 55%, transparent 75%); }
+#uvhaze { background: radial-gradient(circle at var(--bx) var(--by), rgba(123,87,255,.42), rgba(80,40,200,.12) 30%, transparent 60%); mix-blend-mode: screen; }
+#cone { mix-blend-mode: screen; }
+#day { background: linear-gradient(180deg, #eef2f6, #dfe6ee); }
+svg.layer { width: 100%; height: 100%; }
+#grain { opacity: .08; mix-blend-mode: overlay; z-index: 80; }
+#flare { background: radial-gradient(circle at 50% 55%, #fff 0%, #cdbbff 12%, rgba(123,87,255,.85) 32%, rgba(40,10,120,.0) 70%); z-index: 70; }
+#world { position: absolute; inset: 0; perspective: 1900px; }
+.obj { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; }
+
+/* invoice */
+#inv { width: 680px; height: 900px; border-radius: 6px; padding: 46px 48px; background: var(--paper, #f3efe6); color: var(--pink, #1b1b1f);
+  box-shadow: 0 60px 90px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(0,0,0,.05); }
+#inv .top { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid currentColor; padding-bottom: 14px; }
+#inv .top b { font-family: 'JetBrains Mono'; font-size: 22px; letter-spacing: .16em; font-weight: 600; }
+#inv .top span { font-family: 'JetBrains Mono'; font-size: 14px; opacity: .7; }
+.party { display: flex; gap: 30px; margin-top: 22px; font-size: 17px; line-height: 1.45; }
+.party div { flex: 1; } .party i { font-style: normal; display: block; font-family: 'JetBrains Mono'; font-size: 12px; letter-spacing: .12em; opacity: .6; }
+.tbl { margin-top: 26px; border-top: 1.5px solid currentColor; font-size: 17px; }
+.tr { display: grid; grid-template-columns: 1fr 70px 70px 120px; gap: 8px; padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,.12); }
+.tr.h { font-family: 'JetBrains Mono'; font-size: 12px; letter-spacing: .1em; opacity: .65; }
+.tr span:last-child { text-align: right; }
+.tot { display: flex; justify-content: space-between; margin-top: 14px; font-size: 20px; font-weight: 600; }
+.sign { position: absolute; left: 48px; right: 48px; bottom: 44px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono'; font-size: 12px; opacity: .55; border-top: 1px solid currentColor; padding-top: 8px; }
+/* hidden ink */
+#hid { position: absolute; left: 48px; right: 48px; top: 470px; color: var(--glow); text-shadow: 0 0 6px rgba(214,255,74,.9), 0 0 24px rgba(190,255,60,.55); }
+#h1 { display: flex; justify-content: space-between; align-items: baseline; border-top: 2px dashed rgba(214,255,74,.7); padding-top: 14px; }
+#h1 .l { font-size: 27px; font-weight: 600; line-height: 1.2; } #h1 .l small { display: block; font-family: 'JetBrains Mono'; font-size: 15px; letter-spacing: .1em; opacity: .85; }
+#hAmt { font-size: 62px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+#h2 { margin-top: 12px; font-family: 'JetBrains Mono'; font-size: 16px; letter-spacing: .04em; }
+#bar { position: absolute; left: 48px; top: 640px; height: 46px; display: flex; }
+#barBase { height: 100%; background: var(--glow); box-shadow: 0 0 18px rgba(214,255,74,.85), 0 0 50px rgba(190,255,60,.45); border-radius: 0 4px 4px 0; }
+#barPen { height: 100%; border-radius: 4px 0 0 4px; background: repeating-linear-gradient(-45deg, var(--glow) 0 7px, rgba(214,255,74,.25) 7px 14px);
+  box-shadow: 0 0 18px rgba(214,255,74,.6); position: relative; }
+#penLbl { position: absolute; left: 0; top: 58px; white-space: nowrap; color: var(--glow); font-size: 34px; text-shadow: 0 0 10px rgba(214,255,74,.8); }
+#yearTag { position: absolute; top: -46px; right: 0; white-space: nowrap; color: var(--glow); font-family: 'JetBrains Mono'; font-size: 22px; font-weight: 600; text-shadow: 0 0 10px rgba(214,255,74,.8); }
+
+/* beam spot on the paper */
+#spot { position: absolute; width: 360px; height: 360px; margin: -180px 0 0 -180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(190,170,255,.55), rgba(123,87,255,.25) 40%, transparent 70%); mix-blend-mode: screen; pointer-events: none; }
+#mark { position: absolute; width: 2px; height: 2px; }
+
+/* Hamburg */
+#sheet { width: 900px; height: 720px; background: #fbfcfd; border-radius: 4px; padding: 44px 50px; color: #111;
+  box-shadow: 0 50px 80px -40px rgba(30,45,70,.45), 0 0 0 1px rgba(0,0,0,.05); }
+#sheet .hd { display: flex; justify-content: space-between; border-bottom: 3px solid #111; padding-bottom: 14px; }
+#sheet .hd b { font-size: 28px; font-weight: 600; letter-spacing: -0.01em; } #sheet .hd span { font-family: 'JetBrains Mono'; font-size: 14px; color: #666; }
+.cmp { margin-top: 18px; }
+.cr { display: grid; grid-template-columns: 1.25fr 1fr 1fr; padding: 15px 0; border-bottom: 1px solid #e3e6ea; font-size: 22px; align-items: baseline; }
+.cr span:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.cr.h { font-family: 'JetBrains Mono'; font-size: 14px; letter-spacing: .08em; color: #555; }
+.cr.cb { font-weight: 600; } .cr.pen { color: var(--red); font-size: 19px; }
+.cr.tot { font-weight: 700; font-size: 26px; border-bottom: 3px solid #111; }
+.fn { margin-top: 14px; font-family: 'JetBrains Mono'; font-size: 12.5px; color: #777; line-height: 1.5; }
+#sheetInk { position: absolute; left: 0; top: 0; overflow: visible; }
+
+/* your invoice */
+#yours { width: 640px; height: 760px; border-radius: 6px; padding: 46px 48px; background: #221b45; color: rgba(190,180,240,.55);
+  box-shadow: 0 60px 90px -40px rgba(0,0,0,.85); }
+#yours .top { display: flex; justify-content: space-between; border-bottom: 3px solid currentColor; padding-bottom: 14px; font-family: 'JetBrains Mono'; font-size: 22px; letter-spacing: .16em; font-weight: 600; }
+.fld { margin-top: 34px; } .fld i { font-style: normal; font-family: 'JetBrains Mono'; font-size: 14px; letter-spacing: .12em; display: block; }
+.fld .v { height: 58px; border-bottom: 2px dashed rgba(190,180,240,.45); color: var(--glow); font-size: 46px; line-height: 58px; text-shadow: 0 0 8px rgba(214,255,74,.8); white-space: nowrap; }
+#yRes { margin-top: 44px; color: var(--glow); text-shadow: 0 0 8px rgba(214,255,74,.85), 0 0 26px rgba(190,255,60,.5); }
+#yRes small { display: block; font-family: 'JetBrains Mono'; font-size: 15px; letter-spacing: .1em; }
+#yRes b { font-size: 76px; font-weight: 700; letter-spacing: -0.02em; }
+
+/* captions */
+.cap { position: absolute; left: 80px; width: 920px; font-size: 88px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; z-index: 60; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.cap .w > span { display: inline-block; }
+.cap.sm { font-size: 54px; font-weight: 500; letter-spacing: -0.015em; }
+.cap .g { color: var(--glow); text-shadow: 0 0 14px rgba(214,255,74,.6); }
+.cap.dark { color: #111; }
+#cA1 { top: 150px; } #cA2 { top: 150px; }
+#cB1 { top: 150px; } #cB2 { top: 238px; }
+#cC1 { top: 150px; } #cC2 { top: 238px; }
+#cD1 { top: 150px; } #cD2 { top: 238px; } #cD3 { top: 300px; }
+#cE1 { top: 150px; } #cE2 { top: 320px; }
+#big5 { position: absolute; left: 80px; top: 1630px; z-index: 60; color: var(--red); }
+#big5 b { display: block; font-size: 120px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+#big5 span { display: block; font-size: 40px; font-weight: 500; color: #222; margin-top: 10px; }
+#yearBig { position: absolute; left: 80px; top: 1640px; z-index: 60; font-family: 'JetBrains Mono'; color: var(--glow); text-shadow: 0 0 16px rgba(214,255,74,.7); }
+#yearBig b { font-size: 120px; font-weight: 600; letter-spacing: -0.02em; display: block; line-height: 1; }
+#yearBig span { font-size: 26px; letter-spacing: .06em; opacity: .9; }
+#tl { position: absolute; left: 80px; top: 1690px; width: 920px; height: 200px; z-index: 60; }
+#tl svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.tlt { position: absolute; color: var(--glow); text-shadow: 0 0 10px rgba(214,255,74,.7); }
+.tlt b { font-family: 'JetBrains Mono'; font-size: 24px; font-weight: 600; display: block; } .tlt span { font-size: 26px; }
+
+/* end */
+#end { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 60; }
+#end .l1 { font-size: 112px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.02; }
+#end .l2 { font-size: 112px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.02; color: var(--glow); text-shadow: 0 0 18px rgba(214,255,74,.75), 0 0 60px rgba(150,255,40,.35); }
+#end .l3 { margin-top: 90px; font-size: 60px; font-weight: 500; letter-spacing: -0.02em; }
+#end .url { margin-top: 26px; font-family: 'JetBrains Mono'; font-size: 28px; color: #bdb6dd; }
+#end .mark { margin-top: 70px; font-size: 40px; letter-spacing: .34em; padding-left: .34em; color: #fff; }
+
+/* landscape */
+body.land .cap { left: 110px; width: 760px; font-size: 68px; }
+body.land .cap.sm { font-size: 40px; }
+body.land #cA1, body.land #cA2, body.land #cB1, body.land #cC1, body.land #cD1, body.land #cE1 { top: 250px; }
+body.land #cB2, body.land #cC2 { top: 340px; } body.land #cE2 { top: 430px; }
+body.land #big5 { left: 110px; top: 640px; width: 560px; } body.land #big5 b { font-size: 104px; } body.land #big5 span { font-size: 36px; }
+body.land #yearBig { left: 110px; top: 720px; } body.land #yearBig b { font-size: 104px; }
+body.land #tl { left: 110px; top: 690px; width: 760px; transform: scale(.78); transform-origin: left top; }
+body.land #end .l1, body.land #end .l2 { font-size: 92px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="layer" id="day"></div>
+  <div class="layer" id="lamp"></div>
+  <div id="world">
+    <div class="obj" id="inv">
+      <div class="top"><b>COMMERCIAL INVOICE</b><span>No. EXP/26-27/0418 · 12.10.2026</span></div>
+      <div class="party"><div><i>EXPORTER</i>Demo Steel Works<br>Ludhiana, Punjab, India</div><div><i>CONSIGNEE</i>Muster Handels GmbH<br>Hamburg, Germany</div></div>
+      <div class="tbl">
+        <div class="tr h"><span>DESCRIPTION</span><span>CN</span><span>QTY</span><span>AMOUNT</span></div>
+        <div class="tr"><span>Hot-rolled steel bars</span><span>7214</span><span>100 t</span><span>€ 61,500</span></div>
+      </div>
+      <div class="tot"><span>Total (FOB)</span><span>€ 61,500</span></div>
+      <div id="hid">
+        <div id="h1"><span class="l"><small id="hYear">CBAM CERTIFICATES · 2026</small>Paid by your buyer</span><span id="hAmt">€ 6,816</span></div>
+        <div id="h2">on the EU default value · 2.10 t CO₂ per tonne · + 10% mark-up</div>
+      </div>
+      <div id="bar"><div id="barPen"><div id="penLbl" class="hand">penalty for no data</div></div><div id="barBase"></div></div>
+      <div class="sign"><span>Authorised signatory</span><span>Page 1 of 1</span></div>
+      <div id="spot"></div><div id="mark"></div>
+    </div>
+
+    <div class="obj" id="sheet">
+      <div class="hd"><b>Supplier comparison · steel bars</b><span>Einkauf · Hamburg</span></div>
+      <div class="cmp">
+        <div class="cr h"><span>100 t · 2028</span><span>SUPPLIER A</span><span>SUPPLIER B</span></div>
+        <div class="cr" data-r><span>Steel price</span><span>€ 61,500</span><span>€ 61,500</span></div>
+        <div class="cr" data-r><span>Data sent</span><span>EU default</span><span>Own data</span></div>
+        <div class="cr cb" data-r><span>CBAM certificates</span><span>€ 11,212</span><span>€ 6,026</span></div>
+        <div class="cr pen" data-r><span>of which mark-up</span><span>€ 5,186</span><span>€ 0</span></div>
+        <div class="cr tot" data-r id="totRow"><span>Landed cost</span><span id="totA">€ 72,712</span><span id="totB">€ 67,526</span></div>
+      </div>
+      <div class="fn">Certificate price €82.32 (Q3 2026). B shown at the same intensity, without the default-value mark-up.</div>
+      <svg id="sheetInk" width="900" height="720"></svg>
+    </div>
+
+    <div class="obj" id="yours">
+      <div class="top"><span>YOUR INVOICE</span><span style="opacity:.6">?</span></div>
+      <div class="fld"><i>SECTOR</i><div class="v hand" id="f1"></div></div>
+      <div class="fld"><i>PRODUCTION ROUTE</i><div class="v hand" id="f2"></div></div>
+      <div class="fld"><i>TONNES A YEAR TO THE EU</i><div class="v hand" id="f3"></div></div>
+      <div id="yRes"><small>YOUR INVISIBLE LINE · 2026</small><b id="yAmt">€ 6,816</b></div>
+    </div>
+  </div>
+  <svg class="layer" id="cone"><defs><linearGradient id="cg" gradientUnits="userSpaceOnUse" id2="x"><stop offset="0" stop-color="#7b57ff" stop-opacity="0"/><stop offset="1" stop-color="#9d85ff" stop-opacity=".38"/></linearGradient></defs><polygon id="conePoly" fill="url(#cg)"/></svg>
+  <div class="layer" id="uvhaze"></div>
+
+  <div class="cap" id="cA1">Your steel invoice to Europe</div>
+  <div class="cap" id="cA2">now carries a line <span class="g">you can't see.</span></div>
+  <div class="cap" id="cB1">Your buyer pays it.</div>
+  <div class="cap sm" id="cB2">On a number Europe guessed for you.</div>
+  <div class="cap" id="cC1">It grows every year.</div>
+  <div class="cap sm" id="cC2">Part of it is a penalty for not sending your own number.</div>
+  <div class="cap dark" id="cD1">In Hamburg, it's printed.</div>
+  <div class="cap dark sm" id="cD2">Same steel. Same price.</div>
+  <div class="cap dark sm" id="cD3">Which supplier keeps the order?</div>
+  <div class="cap" id="cE1">Shine the torch on <span class="g">your own invoice</span> first.</div>
+  <div class="cap sm" id="cE2">Free CBAM calculator. No sign-up.</div>
+  <div id="yearBig"><b id="ybY">2026</b><span id="ybA">€ 6,816 per 100 t</span></div>
+  <div id="big5"><b>€ 5,186</b><span>per 100 t. The cost of not knowing your number.</span></div>
+  <div id="tl"><svg id="tlSvg" width="920" height="200"></svg>
+    <div class="tlt" id="tl1"><b>1 FEB 2027</b><span>certificates go on sale</span></div>
+    <div class="tlt" id="tl2"><b>30 SEP 2027</b><span>first annual declaration</span></div></div>
+
+  <div id="end">
+    <div class="l1" id="eL1">Duty is printed.</div>
+    <div class="l2" id="eL2">CBAM isn't.</div>
+    <div class="l3" id="eL3">Know your invisible line.</div>
+    <div class="url" id="eUrl">senseible.earth/cbam-calculator</div>
+    <div class="mark" id="eMark">Senseible</div>
+  </div>
+
+  <div class="layer" id="flare"></div>
+  <svg class="layer" id="grain"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="12"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+
+<script>
+// FACTS (verified 14 Oct 2026; all numbers reproduce the live senseible.earth/cbam-calculator for
+// Iron & Steel, BF-BOF route, India, 100 t, €82.32, which returned €6,816 (2026) … €22,473 (2034)):
+//  - Engine: src/lib/cbamEngine.ts (Reg. (EU) 2023/956 as amended by 2025/2083; defaults per 2025/2621).
+//  - Certificate price €82.32 = official Q3 2026 CBAM price, published 5 Oct 2026 (DEFAULT_EU_ETS_PRICE).
+//  - Default 2.10 tCO2/t (BF-BOF); mark-up 10% 2026, 20% 2027, 30% from 2028 (defaultValueMarkup).
+//  - EU benchmark 1.52; free allocation 97.5% (2026) … 0% (2034) (FREE_ALLOCATION_PCT).
+//  - 2028: A (default+30%) = (2.73 − 1.368) × 82.32 × 100 = €11,212; B (2.10, no mark-up) = €6,026; mark-up = €5,186.
+//  - Certificates for 2026 imports on sale from 1 Feb 2027; first declaration by 30 Sep 2027 (src/pages/CBAMCalculator.tsx).
+//  - CBAM is paid by the EU importer (authorised declarant), i.e. the buyer. Importers at or under 50 t a year are exempt
+//    (src/data/articleBodies/cbam-compliance-indian-exporters.ts); this example ships 100 t.
+//  - Calculator works signed out ("No sign-up" verified live). Invoice parties are fictional ("Muster" = sample).
+const land = new URLSearchParams(location.search).get('o') !== 'portrait';
+if (land) document.body.classList.add('land');
+const W = land ? 1920 : 1080, H = land ? 1080 : 1920;
+const L = land ? { ix: 1330, iy: 560, is: .86, sx: 1330, sy: 560, ss: .9, yx: 1330, yy: 560, ys: .9 }
+               : { ix: 540, iy: 1100, is: 1.24, sx: 540, sy: 1020, ss: 1.12, yx: 540, yy: 1060, ys: 1.12 };
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  in2: x => x * x, back: x => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); } };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const mix = (a, b, k) => { const A = a.match(/\w\w/g).map(h => parseInt(h, 16)), B = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + A.map((v, i) => Math.round(lerp(v, B[i], k)).toString(16).padStart(2, '0')).join(''); };
+const eur = n => '€ ' + Math.round(n).toLocaleString('en-IN').replace(/(\d)(?=(\d{3})+$)/, '$1');
+const eurW = n => '€ ' + Math.round(n).toLocaleString('en-US');
+
+// yearly CBAM cost, 100 t, defaults (identical to the live calculator)
+const YEARS = [2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034];
+const FA = { 2026: .975, 2027: .95, 2028: .9, 2029: .775, 2030: .515, 2031: .39, 2032: .265, 2033: .14, 2034: 0 };
+const MK = y => y <= 2026 ? .10 : y === 2027 ? .20 : .30;
+const cost = y => Math.max(0, 2.1 * (1 + MK(y)) - 1.52 * FA[y]) * 82.32 * 100;
+const pen = y => 2.1 * MK(y) * 82.32 * 100;
+
+// ink helpers
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+function inkPath(svg, d, color, w) { const el = document.createElementNS('http://www.w3.org/2000/svg', 'path'); el.setAttribute('d', d);
+  el.setAttribute('stroke', color); el.setAttribute('stroke-width', w); el.setAttribute('fill', 'none'); el.setAttribute('stroke-linecap', 'round');
+  el.setAttribute('pathLength', 1); el.style.strokeDasharray = 1; el.style.strokeDashoffset = 1; svg.appendChild(el); return el; }
+const draw = (el, k) => el.style.strokeDashoffset = 1 - k;
+function loop(cx, cy, rx, ry) { let d = ''; for (let i = 0; i <= 48; i++) { const a = -2.3 + i / 48 * Math.PI * 2.2, j = 1 + (rnd() - .5) * .07 + i / 48 * .06;
+  d += (i ? 'L' : 'M') + (cx + Math.cos(a) * rx * j).toFixed(1) + ' ' + (cy + Math.sin(a) * ry * j).toFixed(1); } return d; }
+
+// captions: words rise from a mask
+['cA1', 'cA2', 'cB1', 'cB2', 'cC1', 'cC2', 'cD1', 'cD2', 'cD3', 'cE1', 'cE2'].forEach(id => {
+  const el = $(id); const walk = n => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const f = document.createDocumentFragment();
+    c.textContent.split(/(\s+)/).forEach(s => { if (!s) return; if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(' ')); else { const w = document.createElement('span'); w.className = 'w'; w.innerHTML = `<span>${s}</span>`; f.appendChild(w); } });
+    n.replaceChild(f, c); } else if (c.nodeType === 1 && !c.classList.contains('w')) walk(c); }); }; walk(el); });
+function cap(id, t, tin, tout, st = .055) { const el = $(id), o = tout == null ? 1 : 1 - p(t, tout, .35, E.io);
+  el.style.opacity = o; el.style.visibility = t >= tin - .02 && o > 0 ? 'visible' : 'hidden';
+  el.querySelectorAll('.w > span').forEach((w, i) => { const k = p(t, tin + i * st, .55, E.o5); w.style.transform = `translateY(${(1 - k) * 112}%)`; }); }
+
+function pose(el, x, y, { rx = 0, ry = 0, rz = 0, s = 1, z = 0, o = 1 } = {}) {
+  el.style.left = (x - el.offsetWidth / 2) + 'px'; el.style.top = (y - el.offsetHeight / 2) + 'px';
+  el.style.transform = `translateZ(${z}px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s})`;
+  el.style.opacity = o; el.style.visibility = o > .001 ? 'visible' : 'hidden'; }
+function show(el, o, dy = 0) { el.style.opacity = o; el.style.visibility = o > .001 ? 'visible' : 'hidden'; el.style.transform = `translateY(${dy}px)`; }
+
+// sheet ink (buyer's blue pen)
+const si = $('sheetInk');
+let strikeA, loopB;
+function sheetInk() { const a = $('totA'), b = $('totB'), sh = $('sheet');
+  const off = el => { let x = 0, y = 0; while (el && el !== sh) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return { x, y }; };
+  const pa = off(a), pb = off(b), ya = pa.y + a.offsetHeight * .55, yb = pb.y + b.offsetHeight * .5;
+  strikeA = inkPath(si, `M${pa.x - 14} ${ya + 2} C ${pa.x + 40} ${ya - 6}, ${pa.x + 100} ${ya + 6}, ${pa.x + a.offsetWidth + 14} ${ya - 3}`, 'var(--pen)', 5);
+  loopB = inkPath(si, loop(pb.x + b.offsetWidth / 2, yb, b.offsetWidth / 2 + 34, 34), 'var(--pen)', 4.5); }
+// timeline doodle
+const tsvg = $('tlSvg');
+const tLine = inkPath(tsvg, 'M8 40 C 200 30, 420 50, 600 38 S 860 30, 900 42', 'var(--glow)', 4);
+const tT1 = inkPath(tsvg, 'M140 22 L 142 60', 'var(--glow)', 5), tT2 = inkPath(tsvg, 'M600 20 L 602 58', 'var(--glow)', 5);
+
+function render(t) {
+  // ---------- light: warm lamp → UV → daylight → UV → dark ----------
+  const lampOn = p(t, .25, .5) * (1 - (t >= 5.1 ? 1 : 0));
+  const uv = (t >= 5.1 && t < 18) || (t >= 26.5 && t < 33.1) ? 1 : 0;
+  const day = t >= 18 && t < 26.5 ? 1 : 0;
+  $('day').style.opacity = day;
+  $('lamp').style.setProperty('--lx', L.ix + 'px'); $('lamp').style.setProperty('--ly', L.iy + 'px');
+  $('lamp').style.opacity = lampOn * (0.85 + 0.15 * Math.sin(t * 7) * Math.sin(t * 3.1) * .3);
+  $('stage').style.background = day ? '#e9eef3' : '#07080c';
+
+  // ---------- invoice in 3D ----------
+  const inv = $('inv');
+  const inA = p(t, .2, 1.4, E.o5), pullC = p(t, 11.2, 1.1, E.io), outC = p(t, 17.6, .4, E.io);
+  const push = lerp(.94, 1.02, p(t, 0, 11, E.io));
+  const invScale = L.is * lerp(push, .74, pullC);
+  const invX = L.ix + (land ? lerp(0, -220, pullC) : lerp(0, -170, pullC));
+  pose(inv, invX, L.iy + (1 - inA) * 160 - (land ? 0 : pullC * 120), { rx: lerp(32, 40, pullC), rz: lerp(-7, -13, pullC), s: invScale, o: t < 18 ? inA * (1 - outC) : 0 });
+  // paper under UV
+  const uvk = p(t, 5.1, .45, E.o3);
+  inv.style.setProperty('--paper', mix('f3efe6', '231c48', uvk));
+  inv.style.setProperty('--pink', t < 5.1 ? '#1b1b1f' : `rgba(${Math.round(lerp(27, 160, uvk))},${Math.round(lerp(27, 150, uvk))},${Math.round(lerp(31, 210, uvk))},${lerp(1, .55, uvk)})`);
+
+  // beam position in invoice coordinates: enters, sweeps the hidden line, then follows the bar
+  let bx = 760, by = 1000;
+  const enter = p(t, 5.1, .7, E.o5), sweep = p(t, 5.8, 1.9, E.io), toH2 = p(t, 7.8, .8, E.io);
+  bx = lerp(820, 70, enter); by = lerp(1100, 520, enter);
+  if (t > 5.8) { bx = lerp(70, 560, sweep); by = 520; }
+  if (t > 7.8) { bx = lerp(560, 300, toH2); by = lerp(520, 560, toH2); }
+  const barW0 = (y => cost(y) * .055);
+  if (t > 11.2) { const yk = clamp((t - 11.6) / .62); bx = lerp(300, 48 + barW0(2034), p(t, 11.6, 5.2, E.io)); by = lerp(560, 665, p(t, 11.2, .8, E.io)); }
+  const spot = $('spot'), mk = $('mark');
+  spot.style.left = mk.style.left = bx + 'px'; spot.style.top = mk.style.top = by + 'px';
+  spot.style.opacity = (t >= 5.1 && t < 17.8) ? 1 : 0;
+  // reveal: fluorescence stays once charged
+  const revX = t < 5.8 ? -100 : (t < 7.8 ? lerp(-40, 600, sweep) : 700);
+  const hid = $('hid');
+  hid.style.webkitMaskImage = hid.style.maskImage = `linear-gradient(90deg, #000 ${revX}px, transparent ${revX + 90}px)`;
+  hid.style.opacity = t >= 5.1 ? 1 : 0;
+  $('h2').style.opacity = p(t, 8.0, .6);
+
+  // ---------- the bar grows year by year ----------
+  let yi = Math.floor(clamp((t - 11.6) / .62, 0, 8.999));
+  const yk = clamp(((t - 11.6) / .62) - yi);
+  const y = YEARS[yi], yN = YEARS[Math.min(8, yi + 1)];
+  const grow = t < 11.6 ? 0 : (yi >= 8 ? 1 : E.io(clamp(yk * 1.6)));
+  const cNow = lerp(cost(y), cost(yN), yi >= 8 ? 0 : grow), pNow = lerp(pen(y), pen(yN), yi >= 8 ? 0 : grow);
+  const barOn = p(t, 11.3, .4);
+  const shownYear = t < 11.6 ? 2026 : (grow > .5 && yi < 8 ? yN : y);
+  $('barBase').style.width = Math.max(0, (cNow - pNow) * .055) * barOn + 'px';
+  $('barPen').style.width = pNow * .055 * barOn + 'px';
+  $('bar').style.opacity = barOn * (t < 17.8 ? 1 : 0);
+    $('penLbl').style.opacity = p(t, 13.0, .5);
+  $('hAmt').textContent = eurW(cost(shownYear));
+  $('hYear').textContent = 'CBAM CERTIFICATES · ' + shownYear;
+  $('h2').textContent = `on the EU default value · 2.10 t CO₂ per tonne · + ${Math.round(MK(shownYear) * 100)}% mark-up`;
+  show($('yearBig'), p(t, 11.5, .5) * (1 - p(t, 17.4, .4)));
+  $('ybY').textContent = shownYear; $('ybA').textContent = eurW(cost(shownYear)) + ' per 100 t';
+
+  // ---------- cone + haze follow the beam ----------
+  const cone = $('cone'), haze = $('uvhaze');
+  const coneOn = (t >= 5.1 && t < 17.8) ? Math.min(1, enter * 2) : 0;
+  cone.style.opacity = coneOn; haze.style.opacity = uv * (t < 18 ? coneOn : 0) * .9;
+  if (coneOn > 0) {
+    const r = mk.getBoundingClientRect(); const cx = r.left, cy = r.top;
+    const ax = land ? W + 160 : W + 120, ay = H + 260; const dx = cx - ax, dy = cy - ay, len = Math.hypot(dx, dy), nx = -dy / len, ny = dx / len, rad = 150 * invScale;
+    $('conePoly').setAttribute('points', `${ax - nx * 26},${ay - ny * 26} ${ax + nx * 26},${ay + ny * 26} ${cx + nx * rad},${cy + ny * rad} ${cx - nx * rad},${cy - ny * rad}`);
+    const g = $('cg'); g.setAttribute('x1', ax); g.setAttribute('y1', ay); g.setAttribute('x2', cx); g.setAttribute('y2', cy);
+    haze.style.setProperty('--bx', cx + 'px'); haze.style.setProperty('--by', cy + 'px');
+  }
+
+  // ---------- Hamburg: the same line, printed ----------
+  const sheet = $('sheet'), sIn = p(t, 18.1, .8, E.o5), sOut = p(t, 26.1, .4, E.io);
+  pose(sheet, L.sx, L.sy + (1 - sIn) * 140 + (land ? 0 : 60), { rx: 24, rz: 3, s: L.ss * lerp(.95, 1, sIn), o: t >= 18 && t < 26.5 ? sIn * (1 - sOut) : 0 });
+  document.querySelectorAll('[data-r]').forEach((r, i) => { const k = p(t, 19.0 + i * .25, .4, E.o5); r.style.opacity = k; r.style.transform = `translateX(${(1 - k) * -20}px)`; });
+  if (!strikeA) sheetInk();
+  draw(strikeA, p(t, 22.0, .35, E.io)); draw(loopB, p(t, 22.5, .55, E.io));
+  show($('big5'), p(t, 23.6, .5, E.back) * (1 - p(t, 26.1, .35)), (1 - p(t, 23.6, .5, E.o5)) * 30);
+
+  // ---------- torch turns to you ----------
+  const fl = $('flare');
+  const flIn = p(t, 26.4, .45, E.in2), flOut = p(t, 26.9, .6, E.o3);
+  fl.style.opacity = t >= 26.4 && t < 27.6 ? flIn * (1 - flOut) : (t >= 17.85 && t < 18.25 ? (1 - p(t, 17.85, .4)) * .9 : 0);
+  if (t >= 17.85 && t < 18.25) fl.style.background = 'radial-gradient(circle at 50% 50%, #fff, #eef2f6 60%)'; else fl.style.background = '';
+  const yours = $('yours'), yIn = p(t, 26.9, .8, E.o5), yOut = p(t, 32.7, .4, E.io);
+  pose(yours, L.yx, L.yy + (1 - yIn) * 120 + (land ? 0 : 40), { rx: 26, rz: -5, s: L.ys * lerp(.92, 1, yIn), o: t >= 26.8 && t < 33.1 ? yIn * (1 - yOut) : 0 });
+  const typ = (id, s, txt, cps = 14) => { const n = Math.max(0, Math.min(txt.length, Math.floor((t - s) * cps))); $(id).textContent = t < s ? '' : txt.slice(0, n); };
+  typ('f1', 27.8, 'Iron & steel'); typ('f2', 28.5, 'Blast furnace'); typ('f3', 29.2, '100');
+  show($('yRes'), p(t, 29.7, .5, E.back), (1 - p(t, 29.7, .5, E.o5)) * 20);
+  const tlOn = t >= 30.4 && t < 33.1 ? 1 - p(t, 32.7, .4) : 0;
+  $('tl').style.opacity = tlOn; $('tl').style.visibility = tlOn ? 'visible' : 'hidden';
+  draw(tLine, p(t, 30.4, .7, E.io)); draw(tT1, p(t, 30.8, .2)); draw(tT2, p(t, 31.2, .2));
+  const tl1 = $('tl1'), tl2 = $('tl2');
+  tl1.style.left = '100px'; tl1.style.top = '74px'; tl2.style.left = land ? '470px' : '540px'; tl2.style.top = '74px';
+  show(tl1, p(t, 30.9, .4)); show(tl2, p(t, 31.3, .4));
+
+  // ---------- captions ----------
+  cap('cA1', t, .9, 2.0); cap('cA2', t, 2.1, 4.8);
+  cap('cB1', t, 7.9, 10.9); cap('cB2', t, 8.9, 10.9);
+  cap('cC1', t, 11.5, 17.4); cap('cC2', t, 13.4, 17.4, .04);
+  cap('cD1', t, 18.4, 20.5); cap('cD2', t, 20.6, 26.1); cap('cD3', t, 21.4, 26.1);
+  cap('cE1', t, 27.3, 32.7); cap('cE2', t, 29.9, 32.7);
+  // landscape: second-line captions sit under the first; portrait: they share the top band
+  if (!land) { $('cA2').style.top = '150px'; $('cB2').style.top = '262px'; $('cC2').style.top = '262px'; $('cD2').style.top = '150px'; $('cD3').style.top = '226px'; $('cE2').style.top = '360px'; }
+  else { $('cD2').style.top = '250px'; $('cD3').style.top = '330px'; }
+
+  // ---------- end ----------
+  const end = $('end'); end.style.visibility = t >= 33.1 ? 'visible' : 'hidden';
+  const flick = t >= 33.8 && t < 34.4 ? (Math.sin(t * 90) > -.2 ? 1 : .25) : 1;
+  [['eL1', 33.3], ['eL2', 33.8], ['eL3', 35.0], ['eUrl', 35.6], ['eMark', 36.1]].forEach(([id, s]) => { const k = p(t, s, .7, E.o5); show($(id), k * (id === 'eL2' ? flick : 1), (1 - k) * 26); });
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>

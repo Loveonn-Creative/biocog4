@@ -47,3 +47,13 @@ Five stops (Account → Business → Plan → Pay → Check). A saffron ring mar
 ```sh
 python3 sfx3.py && bash g1render.sh   # renders four chunks in parallel, then muxes the audio
 ```
+
+## "The invisible line": CBAM film (38 seconds, `cbam.html`)
+
+The story: a UV torch reveals the CBAM cost hidden in an Indian steel export invoice. That cost grows every year from 2026 to 2034. In the buyer's office in Hamburg the same line is printed, and the buyer chooses the supplier that sent its own data. The film ends: "Duty is printed. CBAM isn't."
+
+Every number matches the live calculator: 100 t, Iron & Steel BF-BOF, India, €82.32. Sources are in the code comments. The film makes no claim that Senseible provides CBAM verification.
+
+```sh
+python3 sfx4.py && bash cbrender.sh
+```
