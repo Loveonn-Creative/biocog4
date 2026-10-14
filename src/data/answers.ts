@@ -323,7 +323,7 @@ export const answers: Answer[] = [
     slug: 'green-loan-with-senseible', topic: 'finance', title: 'Green loans and Senseible data',
     q: 'Can Senseible help me get a green loan or a lower interest rate?',
     short: 'Senseible gives lenders a verified emissions baseline and a Climate Credibility Score, which green and sustainability-linked loans need before terms can be set. It does not guarantee approval or any particular interest rate; that is the lender’s decision.',
-    body: ['The Green Loan Eligibility check is included from the Essential plan.'],
+    body: ['The Green Loan Signal is included from the Essential plan.'],
     links: [{ label: 'Climate finance', to: '/climate-finance' }, { label: 'Green finance', to: '/green-finance' }],
   },
   {

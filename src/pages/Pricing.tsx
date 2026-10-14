@@ -277,8 +277,7 @@ const Pricing = () => {
         'Everything in Snapshot',
         'Full GST→Carbon Automation',
         'Verified Climate Score',
-        'Green Loan Eligibility Check',
-        'Government Incentives Finder',
+        'Green Loan Signal',
         'AI Savings Insights',
         '3 Team Members',
         'Email Support',
@@ -300,16 +299,18 @@ const Pricing = () => {
       popular: true,
       features: [
         'Everything in Basic',
-        'Carbon Monetization Setup',
+        'Monetization Signal',
+        'Government Incentives Finder',
         'Automated ESG Reports (PDF)',
         'Bank-grade Verification Ledger',
         'Predictive AI Models',
         'Priority Green Finance Access',
         '10 Team Members',
-        'Phone + Email Support',
+        'WhatsApp Chat + Email Support',
         'AI ESG Head',
         'Biocog Superintelligence',
         'All Reporting Frameworks',
+        'Eligible for add-ons and limited custom builds',
       ],
     },
     {
@@ -324,6 +325,7 @@ const Pricing = () => {
       ctaVariant: 'secondary',
       features: [
         'Everything in Pro',
+        'Credit Monetization Setup',
         'Real-time MRV Pipeline',
         'Multi-entity Support',
         'API & integrations (custom build)',
@@ -337,11 +339,14 @@ const Pricing = () => {
 
   const comparisonFeatures = [
     { name: 'GST → Carbon Automation', snapshot: 'Limited', essential: true, pro: true, scale: true },
-    { name: 'Green Loan Eligibility', snapshot: false, essential: true, pro: 'Priority', scale: 'Priority' },
+    { name: 'Green Loan Signal', snapshot: false, essential: true, pro: 'Priority', scale: 'Priority' },
+    { name: 'Government Incentives Finder', snapshot: false, essential: false, pro: true, scale: true },
     { name: 'ESG Score', snapshot: 'Basic', essential: 'Verified', pro: 'Verified', scale: 'Certified' },
-    { name: 'Carbon Monetization', snapshot: false, essential: false, pro: true, scale: true },
+    { name: 'Monetization Signal', snapshot: false, essential: false, pro: true, scale: true },
+    { name: 'Credit Monetization Setup', snapshot: false, essential: false, pro: false, scale: true },
     { name: 'Reports', snapshot: 'Preview', essential: 'Basic', pro: 'Automated', scale: 'Custom' },
-    { name: 'Support', snapshot: 'Help Center', essential: 'Email', pro: 'Phone + Email', scale: 'Dedicated' },
+    { name: 'Support', snapshot: 'Help Center', essential: 'Email', pro: 'WhatsApp chat + Email', scale: 'Dedicated' },
+    { name: 'Add-ons & custom builds', snapshot: false, essential: false, pro: 'Add-ons + limited custom build', scale: 'Custom build' },
     { name: 'Team Members', snapshot: '1', essential: '3', pro: '10', scale: 'Per quote' },
   ];
 

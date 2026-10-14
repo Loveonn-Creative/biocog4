@@ -225,10 +225,12 @@ const Subscription = () => {
                   `${limits.reports} ESG reports/month`,
                   planSeatsLabel(tier),
                   tier !== 'snapshot' && 'Verified Climate Score',
-                  tier !== 'snapshot' && 'Green Loan Eligibility',
-                  isPremium && 'Carbon Monetization',
+                  tier !== 'snapshot' && 'Green Loan Signal',
+                  (tier === 'pro' || tier === 'scale') && 'Monetization Signal',
+                  (tier === 'pro' || tier === 'scale') && 'Government Incentives Finder',
+                  tier === 'scale' && 'Credit Monetization Setup',
                   isPremium && 'AI ESG Head',
-                  tier === 'pro' || tier === 'scale' ? 'Priority Support' : 'Help Center',
+                  tier === 'scale' ? 'Dedicated Support' : tier === 'pro' ? 'WhatsApp Chat Support' : tier === 'essential' ? 'Email Support' : 'Help Center',
                 ].filter(Boolean).map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm">
                     <Check className="w-4 h-4 text-success" />
