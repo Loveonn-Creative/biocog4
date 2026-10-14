@@ -17,8 +17,12 @@ import type { PlanTier } from './planLimits.ts';
 
 export type Audience = 'guest' | PlanTier;
 
-/** Questions per day (India time). Scale is the default before a quote sets its own. */
-export const DAILY_MESSAGES: Record<Audience, number> = { guest: 10, snapshot: 20, essential: 20, pro: 200, scale: 500 };
+/**
+ * Questions per calendar month (India time), a pool used at any pace (owner
+ * decision, October 2026: free stays at 20). Guests are counted per network
+ * address per month. Scale is the default before a quote sets its own.
+ */
+export const MONTHLY_MESSAGES: Record<Audience, number> = { guest: 10, snapshot: 20, essential: 300, pro: 2000, scale: 5000 };
 
 /**
  * Real-time voice: sessions per calendar month (India time). Each session is
@@ -59,7 +63,13 @@ export function dayIst(now = new Date()): string {
 export function monthStartDayIst(now = new Date()): string {
   return `${dayIst(now).slice(0, 7)}-01`;
 }
-/** When the daily count resets: the next midnight in India, as an ISO instant. */
+/** When the monthly pool resets: midnight India time on the 1st of next month, as an ISO instant. */
+export function nextMonthlyResetIso(now = new Date()): string {
+  const d = istDate(now);
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1) - IST_OFFSET_MS).toISOString();
+}
+
+/** The next midnight in India, as an ISO instant. */
 export function nextDailyResetIso(now = new Date()): string {
   const d = istDate(now);
   const next = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1) - IST_OFFSET_MS;

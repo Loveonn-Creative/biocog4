@@ -8,7 +8,7 @@
 //    calculation behind each total, uncertainty labels and a trend projection.
 // Identity comes from the verified JWT, never from the body. Records are read
 // with the caller's own token, so row-level security applies as well as the
-// explicit owner filter. Every question counts against a daily limit.
+// explicit owner filter. Every question counts against a monthly pool.
 //
 // Actions: "brief" (what this caller may see, usage and the figures panel; no
 // model call, not counted) and the default chat (one counted question).
@@ -16,7 +16,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { sanitizeChatInput } from "../_shared/chatInput.ts";
 import {
-  accessFor, buildBrief, cleanText, DAILY_MESSAGES, dayIst, looksLikePromptLeak, nextDailyResetIso, projectTrend, PROMPT_CANARY,
+  accessFor, buildBrief, cleanText, MONTHLY_MESSAGES, dayIst, looksLikePromptLeak, nextMonthlyResetIso, projectTrend, PROMPT_CANARY,
   SAMPLE_BRIEF, savingsInsights, VOICE_MINUTES_PER_MONTH, VOICE_SESSION_MAX_MINUTES, voiceSessionsPerMonth,
   type Audience, type DocumentRow, type EmissionRow,
 } from "../_shared/intelligence.ts";
@@ -254,8 +254,8 @@ Deno.serve(async (req) => {
     }
     const audience: Audience = userId ? await planForUser(admin, userId) : "guest";
     const access = accessFor(audience);
-    const limit = DAILY_MESSAGES[audience];
-    const subject = userId ? `u:${userId}` : await guestSubject(clientIp(req.headers), dayIst(), serviceKey);
+    const limit = MONTHLY_MESSAGES[audience];
+    const subject = userId ? `u:${userId}` : await guestSubject(clientIp(req.headers), dayIst().slice(0, 7), serviceKey);
 
     // Which workspace: personal by default; an organisation only for a member allowed to view its records.
     let scope: Scope | null = userId ? { kind: "personal", userId } : null;
@@ -266,8 +266,8 @@ Deno.serve(async (req) => {
     }
 
     const limits = {
-      messagesPerDay: limit,
-      resetsAt: nextDailyResetIso(),
+      messagesPerMonth: limit,
+      resetsAt: nextMonthlyResetIso(),
       voice: access.voice ? { minutesPerMonth: VOICE_MINUTES_PER_MONTH[audience], sessionsPerMonth: voiceSessionsPerMonth(audience), sessionMaxMinutes: VOICE_SESSION_MAX_MINUTES } : null,
     };
 
@@ -298,8 +298,8 @@ Deno.serve(async (req) => {
     const usageHeaders = { "x-intelligence-used": String(take.used), "x-intelligence-limit": String(limit) };
     if (!take.allowed) {
       return json({
-        error: "daily_limit",
-        message: `You have used today's ${limit} questions. They reset at midnight India time.`,
+        error: "monthly_limit",
+        message: `You have used this month's ${limit} questions. More on the 1st.`,
         limit, resetsAt: limits.resetsAt,
       }, 429, usageHeaders);
     }

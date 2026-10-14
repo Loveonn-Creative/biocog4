@@ -27,7 +27,7 @@ import {
 interface Brief {
   audience: Audience;
   access: { ownRecords: boolean; savingsInsights: boolean; projection: boolean; voice: boolean };
-  limits: { messagesPerDay: number; resetsAt: string; voice: { minutesPerMonth: number; sessionsPerMonth: number; sessionMaxMinutes: number } | null };
+  limits: { messagesPerMonth: number; resetsAt: string; voice: { minutesPerMonth: number; sessionsPerMonth: number; sessionMaxMinutes: number } | null };
   usage: { messagesUsed: number; voiceSessionsUsed: number };
   brief: null | {
     basis: 'verified' | 'unverified' | 'none';
@@ -270,7 +270,7 @@ const Intelligence = () => {
     setSpeakingMessageId(null);
   };
 
-  const left = brief && usedToday !== null ? Math.max(0, brief.limits.messagesPerDay - usedToday) : null;
+  const left = brief && usedToday !== null ? Math.max(0, brief.limits.messagesPerMonth - usedToday) : null;
   const canVoice = !!brief?.access.voice;
 
   return (
@@ -302,10 +302,10 @@ const Intelligence = () => {
           </div>
 
           <div className="flex shrink-0 items-center gap-0.5 sm:gap-2">
-            {/* Questions left today (server count) */}
+            {/* Questions left this month (server count) */}
             {left !== null && (
-              <Badge variant="secondary" className="text-xs tabular-nums" title={`Resets at midnight India time`}>
-                {left}<span className="hidden sm:inline">&nbsp;left today</span><span className="sr-only sm:hidden"> questions left today</span>
+              <Badge variant="secondary" className="text-xs tabular-nums" title={`Resets on the 1st`}>
+                {left}<span className="hidden sm:inline">&nbsp;left this month</span><span className="sr-only sm:hidden"> questions left this month</span>
               </Badge>
             )}
 

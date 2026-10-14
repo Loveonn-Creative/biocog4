@@ -1,5 +1,5 @@
 -- =============================================
--- PENDING (NOT APPLIED). Daily Biocog Intelligence message counts, guest
+-- PENDING (NOT APPLIED). Monthly Biocog Intelligence question counts, guest
 -- invoice-read counts (30 a day per device, 300 per network address) and
 -- monthly real-time voice session counts, so plan limits hold on the server.
 -- Rollback: rollback/20261024100000_intelligence_usage.rollback.sql
@@ -8,8 +8,8 @@
 -- intelligence-chat, elevenlabs-conversation-token and extract-document edge functions
 -- (service role) read or write it; browsers have no access. Subjects are
 -- 'u:<user id>' for signed-in users and 'g:<keyed hash>' for guests: the
--- guest hash is of the network address and the day, keyed with a server
--- secret, so no address is stored and a guest cannot be followed across days.
+-- guest hash is of the network address and the period (day for invoice reads,
+-- month for questions), keyed with a server secret, so no address is stored.
 -- Counts are operational data: rows older than 400 days can be purged with
 -- public.intelligence_usage_purge().
 -- =============================================

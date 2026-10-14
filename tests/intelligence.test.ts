@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any -- a minimal fake Supabase client */
 import { beforeEach, describe, expect, test } from 'bun:test';
 import {
-  accessFor, buildBrief, cleanText, DAILY_MESSAGES, dayIst, looksLikePromptLeak, monthStartDayIst, nextDailyResetIso,
+  accessFor, buildBrief, cleanText, MONTHLY_MESSAGES, dayIst, looksLikePromptLeak, monthStartDayIst, nextDailyResetIso, nextMonthlyResetIso,
   projectTrend, PROMPT_CANARY, SAMPLE_BRIEF, savingsInsights, VOICE_MINUTES_PER_MONTH, VOICE_SESSION_MAX_MINUTES,
   voiceSessionsPerMonth, type EmissionRow,
 } from '../supabase/functions/_shared/intelligence';
@@ -21,8 +21,8 @@ describe('entitlements', () => {
     expect(accessFor('pro')).toEqual({ ownRecords: true, savingsInsights: true, projection: true, voice: true });
     expect(accessFor('scale')).toEqual({ ownRecords: true, savingsInsights: true, projection: true, voice: true });
   });
-  test('daily limits and voice caps are the agreed figures', () => {
-    expect(DAILY_MESSAGES).toEqual({ guest: 10, snapshot: 20, essential: 20, pro: 200, scale: 500 });
+  test('monthly question pools and voice caps are the agreed figures', () => {
+    expect(MONTHLY_MESSAGES).toEqual({ guest: 10, snapshot: 20, essential: 300, pro: 2000, scale: 5000 });
     expect(VOICE_SESSION_MAX_MINUTES).toBe(5);
     expect(voiceSessionsPerMonth('pro')).toBe(20);
     expect(voiceSessionsPerMonth('scale')).toBe(60);
@@ -36,6 +36,8 @@ describe('India-time windows', () => {
     const t = new Date('2026-10-14T19:00:00Z'); // 00:30 IST on the 15th
     expect(dayIst(t)).toBe('2026-10-15');
     expect(nextDailyResetIso(t)).toBe('2026-10-15T18:30:00.000Z');
+    expect(nextMonthlyResetIso(t)).toBe('2026-10-31T18:30:00.000Z');
+    expect(nextMonthlyResetIso(new Date('2026-10-31T19:00:00Z'))).toBe('2026-11-30T18:30:00.000Z'); // already 1 Nov in India
   });
   test('month start follows India time', () => {
     expect(monthStartDayIst(new Date('2026-10-31T20:00:00Z'))).toBe('2026-11-01');
@@ -187,6 +189,10 @@ describe('usage counts', () => {
   beforeEach(() => resetMemoryUse());
   test('uses the database function with India-time windows', async () => {
     const admin = fakeAdmin({ rpc: () => ({ data: [{ allowed: true, used: 3 }], error: null }) });
+    const q = await takeUse(admin, 'u:x', 'message', 20, new Date('2026-10-14T19:00:00Z'));
+    expect(q.allowed).toBe(true);
+    expect(admin.calls[0][1]).toMatchObject({ p_kind: 'message', p_window_start: '2026-10-01' });
+    admin.calls.length = 0;
     const r = await takeUse(admin, 'u:x', 'voice_session', 20, new Date('2026-10-14T19:00:00Z'));
     expect(r).toEqual({ allowed: true, used: 3, limit: 20, store: 'database' });
     expect(admin.calls[0]).toEqual(['intelligence_take', { p_subject: 'u:x', p_kind: 'voice_session', p_day: '2026-10-15', p_window_start: '2026-10-01', p_limit: 20 }]);

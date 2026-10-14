@@ -53,7 +53,8 @@ const missing = (e: { code?: string; message?: string } | null) =>
 
 function window(kind: UseKind, now: Date) {
   const day = dayIst(now);
-  return { day, start: kind === 'voice_session' ? monthStartDayIst(now) : day };
+  // Questions and voice are monthly pools; guest invoice reads are daily.
+  return { day, start: kind === 'guest_scan' ? day : monthStartDayIst(now) };
 }
 
 /** Counts one use if under the limit. */
