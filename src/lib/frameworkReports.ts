@@ -619,7 +619,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.entity,
         note(
           'BRSR Core: basis and assurance',
-          'BRSR Core specifies a set of KPIs subject to reasonable assurance when filed with the exchange. This output is the underlying, unassured source data for those KPIs. It is not an assurance statement and does not itself satisfy the assurance requirement.',
+          'BRSR Core specifies a set of KPIs subject to reasonable assurance or a third-party assessment when filed with the exchange. This output is the underlying, unassured source data for those KPIs. It is not an assurance statement and does not itself satisfy the assurance or assessment requirement.',
         ),
         inventorySection(ds, ['Attribute 1: Scope 1 emissions', 'Attribute 1: Scope 2 emissions', 'Attribute 9: value chain emissions']),
         note(

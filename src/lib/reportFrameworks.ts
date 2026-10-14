@@ -506,7 +506,7 @@ export const FRAMEWORKS: Record<string, FrameworkCoverage> = {
       'Attribute 9: Value chain emissions': 'valueChainEmissions',
     },
     status: 'partial',
-    note: 'BRSR Core KPIs are subject to reasonable assurance when filed. This output is unassured and is source data for that filing, not the filing itself.',
+    note: 'BRSR Core KPIs are subject to reasonable assurance or a third-party assessment when filed. This output is unassured and is source data for that filing, not the filing itself.',
   },
   LENDER_VIEW: {
     id: 'LENDER_VIEW',

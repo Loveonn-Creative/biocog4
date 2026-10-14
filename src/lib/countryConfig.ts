@@ -328,7 +328,8 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     taxIdPlaceholder: '12-3456789',
     taxIdPattern: /^\d{2}-?\d{7}$/,
     gridFactor: 0.369,
-    frameworks: ['GHGP', 'SEC-CLIMATE', 'CDP', 'SASB'],
+    // SEC climate rule omitted: stayed since April 2024, rescission proposed May 2026.
+    frameworks: ['GHGP', 'CDP', 'SASB'],
     govBody: 'EPA',
     languages: ['en', 'es'],
     cbamExposed: true,
