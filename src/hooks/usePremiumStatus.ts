@@ -5,7 +5,7 @@ import { useRealtimeRefresh } from '@/lib/sharedRealtime';
 import { reconcilePayments } from './useRazorpay';
 import { useSession } from './useSession';
 import { supabase } from '@/integrations/supabase/client';
-import { PLAN_INVOICE_SCANS_PER_MONTH } from '../../supabase/functions/_shared/planLimits';
+import { PLAN_INVOICE_SCANS_PER_MONTH, planStatus, type PlanState } from '../../supabase/functions/_shared/planLimits';
 
 export type PremiumTier = 'snapshot' | 'essential' | 'pro' | 'scale';
 
@@ -56,6 +56,9 @@ export interface PremiumStatus {
   /** New invoice reads per month; the server enforces the same figure (planLimits.ts). */
   invoiceLimit: number;
   expiresAt: Date | null;
+  /** 'grace': the paid period ended but access continues until graceEndsAt (planLimits.GRACE_DAYS). */
+  planState: PlanState;
+  graceEndsAt: Date | null;
   isLoading: boolean;
   canAccessFeature: (feature: keyof PremiumFeatures) => boolean;
   refreshTier: () => Promise<void>;
@@ -227,29 +230,33 @@ async function readPlan(userId: string): Promise<PlanRead> {
     // An expired paid plan reads as Snapshot. The profile row is not
     // rewritten here: the active subscription row below is the record of
     // payment, and the server applies the same expiry rule.
+    // In force through the grace period, as the server counts it (planLimits.planStatus).
     const dbTier = normalizeTier(profile.subscription_tier);
     const expiry = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-    if (!(expiry && expiry < new Date())) {
+    if (planStatus(dbTier, profile.subscription_expires_at).plan !== 'snapshot') {
       nextTier = dbTier;
       nextExpiry = expiry;
     }
   }
 
   // Also check active subscriptions table for latest info
-  const { data: subscription, error: subscriptionError } = await supabase
+  // Every active row: a renewal paid early starts when the current period
+  // ends, so the plan in force is the highest one still in force, with the
+  // latest end date on that plan.
+  const { data: subscriptions, error: subscriptionError } = await supabase
     .from('subscriptions')
     .select('tier, expires_at, status')
     .eq('user_id', userId)
-    .eq('status', 'active')
-    .order('created_at', { ascending: false })
-    .limit(1)
-    .maybeSingle();
+    .eq('status', 'active');
+  const subscription = (subscriptions ?? [])
+    .filter((r) => r.expires_at && planStatus(r.tier, r.expires_at).plan !== 'snapshot')
+    .sort((a, b) => TIER_RANK[normalizeTier(b.tier)] - TIER_RANK[normalizeTier(a.tier)] || Date.parse(b.expires_at!) - Date.parse(a.expires_at!))[0];
 
   if (subscription && subscription.expires_at) {
     const subExpiry = new Date(subscription.expires_at);
     const subTier = normalizeTier(subscription.tier);
     // Use the paid subscription when it is in force and at least as high as the profile copy.
-    if (subExpiry > new Date() && TIER_RANK[subTier] >= TIER_RANK[nextTier]) {
+    if (TIER_RANK[subTier] > TIER_RANK[nextTier] || (TIER_RANK[subTier] === TIER_RANK[nextTier] && (!nextExpiry || subExpiry > nextExpiry))) {
       nextTier = subTier;
       nextExpiry = subExpiry;
     }
@@ -324,6 +331,8 @@ export const usePremiumStatus = (): PremiumStatus => {
   const expiresAt = useMemo(() => (expiresIso ? new Date(expiresIso) : null), [expiresIso]);
   const features = TIER_FEATURES[tier];
   const isPremium = tier !== 'snapshot';
+  const status = useMemo(() => planStatus(tier, expiresIso), [tier, expiresIso]);
+  const graceEndsAt = useMemo(() => (status.state === 'grace' && status.graceEndsAt ? new Date(status.graceEndsAt) : null), [status]);
 
   const canAccessFeature = useCallback((feature: keyof PremiumFeatures): boolean => {
     return !!features[feature];
@@ -336,6 +345,8 @@ export const usePremiumStatus = (): PremiumStatus => {
     features,
     invoiceLimit: features.invoiceScansPerMonth,
     expiresAt,
+    planState: status.state,
+    graceEndsAt,
     isLoading: (!!uid && query.isPending) || refreshing,
     canAccessFeature,
     refreshTier,

@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
-import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan } from '../_shared/planLimits.ts';
+import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
 import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, printedBilledKwh, isGridRenewableLine, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
@@ -571,14 +571,12 @@ serve(async (req) => {
 
         // An active paid subscription row counts too, so a profile copy that
         // failed to update after payment cannot cut a paying customer's limit.
-        const { data: activeSub } = await supabase
+        const { data: activeRows } = await supabase
           .from('subscriptions')
           .select('tier, expires_at')
           .eq('user_id', userId)
-          .eq('status', 'active')
-          .order('expires_at', { ascending: false })
-          .limit(1)
-          .maybeSingle();
+          .eq('status', 'active');
+        const activeSub = strongestRow(activeRows ?? []);
         const plan = strongerPlan(
           { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
           { tier: activeSub?.tier, expiresAt: activeSub?.expires_at },

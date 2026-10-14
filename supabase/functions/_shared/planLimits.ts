@@ -20,12 +20,38 @@ export function normalizePlanTier(tier: string | null | undefined): PlanTier {
   return 'snapshot';
 }
 
-/** The plan in force: a paid tier whose subscription has expired falls back to Snapshot. */
-export function effectivePlanTier(tier: string | null | undefined, expiresAt: string | null | undefined, now = new Date()): PlanTier {
-  const plan = normalizePlanTier(tier);
-  if (plan === 'snapshot' || !expiresAt) return plan;
+/**
+ * Days a paid plan stays in force after its paid period ends, so a renewal
+ * paid a few days late does not cut access. During grace the account keeps
+ * its plan and is told when access changes; after grace it moves to Snapshot
+ * (records are kept; only paid allowances stop).
+ */
+export const GRACE_DAYS = 7;
+const DAY_MS = 86_400_000;
+
+export type PlanState = 'none' | 'active' | 'grace' | 'lapsed';
+
+/**
+ * Where a paid plan stands: active until its paid period ends, then in grace
+ * for GRACE_DAYS, then lapsed. A free or unknown tier is 'none'. A paid tier
+ * without an expiry (manual grant) is active.
+ */
+export function planStatus(tier: string | null | undefined, expiresAt: string | null | undefined, now = new Date()): { plan: PlanTier; paidTier: PlanTier; state: PlanState; graceEndsAt: string | null } {
+  const paidTier = normalizePlanTier(tier);
+  if (paidTier === 'snapshot') return { plan: 'snapshot', paidTier, state: 'none', graceEndsAt: null };
+  if (!expiresAt) return { plan: paidTier, paidTier, state: 'active', graceEndsAt: null };
   const t = Date.parse(expiresAt);
-  return Number.isFinite(t) && t < now.getTime() ? 'snapshot' : plan;
+  if (!Number.isFinite(t)) return { plan: 'snapshot', paidTier, state: 'lapsed', graceEndsAt: null };
+  const graceEnd = t + GRACE_DAYS * DAY_MS;
+  const graceEndsAt = new Date(graceEnd).toISOString();
+  if (now.getTime() <= t) return { plan: paidTier, paidTier, state: 'active', graceEndsAt };
+  if (now.getTime() <= graceEnd) return { plan: paidTier, paidTier, state: 'grace', graceEndsAt };
+  return { plan: 'snapshot', paidTier, state: 'lapsed', graceEndsAt };
+}
+
+/** The plan in force: a paid plan stays in force through its grace period, then falls back to Snapshot. */
+export function effectivePlanTier(tier: string | null | undefined, expiresAt: string | null | undefined, now = new Date()): PlanTier {
+  return planStatus(tier, expiresAt, now).plan;
 }
 
 export function invoiceScanLimit(tier: string | null | undefined, expiresAt?: string | null, now = new Date()): number {
@@ -58,4 +84,15 @@ export function strongerPlan(
   const pa = effectivePlanTier(a.tier, a.expiresAt, now);
   const pb = effectivePlanTier(b.tier, b.expiresAt, now);
   return PLAN_RANK[pb] > PLAN_RANK[pa] ? b : a;
+}
+
+/**
+ * The subscription row that decides the plan in force: the highest plan still
+ * in force (paid period or grace), latest end date first. Renewals paid early
+ * start when the current period ends, so several active rows can exist.
+ */
+export function strongestRow<T extends { tier: string | null | undefined; expires_at: string | null | undefined }>(rows: T[], now = new Date()): T | null {
+  const live = rows.filter((r) => effectivePlanTier(r.tier, r.expires_at, now) !== 'snapshot' && r.expires_at);
+  live.sort((a, b) => PLAN_RANK[normalizePlanTier(b.tier)] - PLAN_RANK[normalizePlanTier(a.tier)] || Date.parse(b.expires_at as string) - Date.parse(a.expires_at as string));
+  return live[0] ?? null;
 }

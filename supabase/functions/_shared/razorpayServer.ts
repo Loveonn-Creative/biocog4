@@ -1,7 +1,7 @@
 // Server adapters for razorpayActivation.ts: the Razorpay REST API, the
 // service-role Supabase store, and signature helpers. Used only by edge
 // functions (they pass in a service-role client and the Razorpay keys).
-import type { RazorpayApi, RazorpayPayment, SubscriptionRow, SubscriptionStore } from './razorpayActivation.ts';
+import type { RazorpayApi, RazorpayPayment, RevocationStore, SubscriptionRow, SubscriptionStore } from './razorpayActivation.ts';
 
 export async function hmacSha256Hex(message: string, key: string): Promise<string> {
   const enc = new TextEncoder();
@@ -56,13 +56,28 @@ export function razorpayApi(keyId: string, keySecret: string, fetcher: typeof fe
 }
 
 // deno-lint-ignore no-explicit-any
-export function supabaseStore(admin: any): SubscriptionStore {
+export function supabaseStore(admin: any): SubscriptionStore & RevocationStore {
   const cols = 'id, user_id, tier, billing_cycle, amount, status, razorpay_order_id, expires_at, created_at';
   return {
     async findByOrderId(orderId) {
       const { data, error } = await admin.from('subscriptions').select(cols).eq('razorpay_order_id', orderId).maybeSingle();
       if (error) throw new Error(`subscription lookup failed: ${error.code ?? 'unknown'}`);
       return (data as SubscriptionRow) ?? null;
+    },
+    async listActiveForUser(userId) {
+      const { data, error } = await admin.from('subscriptions').select(cols).eq('user_id', userId).eq('status', 'active');
+      if (error) throw new Error(`active lookup failed: ${error.code ?? 'unknown'}`);
+      return (data as SubscriptionRow[]) ?? [];
+    },
+    async findByPaymentId(paymentId) {
+      const { data, error } = await admin.from('subscriptions').select(cols).eq('razorpay_payment_id', paymentId).maybeSingle();
+      if (error) throw new Error(`subscription lookup failed: ${error.code ?? 'unknown'}`);
+      return (data as SubscriptionRow) ?? null;
+    },
+    async cancelIfActive(subscriptionId) {
+      const { data, error } = await admin.from('subscriptions').update({ status: 'cancelled' }).eq('id', subscriptionId).eq('status', 'active').select('id');
+      if (error) throw new Error(`cancel write failed: ${error.code ?? 'unknown'}`);
+      return Array.isArray(data) && data.length > 0;
     },
     async activateIfPending(orderId, patch) {
       const { data, error } = await admin
