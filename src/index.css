@@ -684,3 +684,20 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .gl-tab-on { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); transform: translateY(0); }
 .gl-sheet { border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); padding: 16px; box-shadow: 0 1px 0 hsl(var(--border)); }
 @media (prefers-reduced-motion: reduce) { .gl-tab { transition: none; } }
+
+/* Guest green-loan check: each answer lays a plank (src/pages/GreenLoanCheck.tsx). */
+.gc-bridge { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin: 12px 0 20px; }
+.gc-plank { position: relative; height: 10px; border-radius: 3px; background: hsl(var(--muted)); transform: translateY(-6px); opacity: .55; transition: transform var(--motion-base, 300ms) cubic-bezier(.2,.8,.2,1), opacity var(--motion-base, 300ms), background-color var(--motion-base, 300ms); }
+.gc-plank-on { background: hsl(var(--primary)); transform: translateY(0); opacity: 1; }
+.gc-plank-carbon:not(.gc-plank-on) { background: repeating-linear-gradient(90deg, hsl(var(--primary) / .35) 0 4px, transparent 4px 7px); }
+.gc-plank-label { position: absolute; top: 14px; left: 0; right: 0; font-size: 9px; text-align: center; color: hsl(var(--muted-foreground)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gc-card { margin-top: 20px; border: 1px solid hsl(var(--border)); border-radius: 20px; background: hsl(var(--card)); padding: 20px; animation: gc-in var(--motion-base, 300ms) cubic-bezier(.2,.8,.2,1); }
+@keyframes gc-in { from { opacity: .4; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.gc-choice { min-height: 48px; border: 1px solid hsl(var(--border)); border-radius: 14px; padding: 10px 14px; text-align: left; font-size: 15px; background: hsl(var(--background)); transition: border-color 150ms, background-color 150ms; }
+.gc-choice:hover, .gc-choice:focus-visible { border-color: hsl(var(--primary)); outline: none; }
+.gc-choice-on { border-color: hsl(var(--primary)); background: hsl(var(--primary) / .08); }
+.gc-line { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: start; }
+.gc-dot { width: 22px; height: 22px; border-radius: 999px; border: 2px solid hsl(var(--border)); display: grid; place-items: center; margin-top: 1px; }
+.gc-line-ready .gc-dot { background: hsl(var(--primary)); border-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.gc-line-carbon .gc-dot { border-color: hsl(var(--primary)); border-style: dashed; }
+@media (prefers-reduced-motion: reduce) { .gc-plank { transition: none; } .gc-card { animation: none; } }
