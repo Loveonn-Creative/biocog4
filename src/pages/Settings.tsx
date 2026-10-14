@@ -1,3 +1,4 @@
+import { saveProfileFields } from '@/lib/profileSave';
 import { useState, useEffect } from 'react';
 import { refreshAccount } from '@/lib/queryClient';
 import { Helmet } from 'react-helmet-async';
@@ -101,19 +102,17 @@ const Settings = () => {
     
     try {
       if (user?.id) {
-        const { error } = await supabase
-          .from('profiles')
-          .upsert({
-            id: user.id,
-            business_name: profile.businessName,
-            sector: profile.sector,
-            size: profile.size,
-            location: profile.location,
-            gstin: profile.gstin,
-            updated_at: new Date().toISOString(),
-          });
+        const result = await saveProfileFields((fields) => supabase.from('profiles').upsert({ id: user.id, ...fields }), {
+          business_name: profile.businessName,
+          sector: profile.sector,
+          size: profile.size,
+          location: profile.location,
+          gstin: profile.gstin,
+          updated_at: new Date().toISOString(),
+        });
 
-        if (error) throw error;
+        if (!result.ok) throw new Error(result.error);
+        if (result.sizeSkipped) toast.info('Company size "Large" will save after our next update; everything else is saved.');
         void refreshAccount(user.id);
         
         localStorage.setItem('senseible_profile_triggers', JSON.stringify({
@@ -128,8 +127,8 @@ const Settings = () => {
       setHasChanges(false);
       toast.success('Profile saved successfully');
     } catch (error) {
-      console.error('Save error:', error);
-      toast.error('Failed to save profile');
+      console.error('Save error:', error instanceof Error ? error.message : 'unknown');
+      toast.error('Could not save your profile. Check your connection and try again.');
     } finally {
       setIsSaving(false);
     }
