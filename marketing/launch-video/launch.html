@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Senseible launch</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+:root {
+  --bg: #fbfbf9; --fg: #141414; --muted: #737373; --border: #ebebeb;
+  --primary: hsl(152 45% 22%); --primary-soft: hsl(152 40% 94%);
+  --secondary: hsl(200 15% 95%); --saffron: #FF9933;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--fg); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+.scene { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+[data-a] { will-change: transform, opacity; }
+
+/* ---------- Scene 1 + 4: the asks ---------- */
+.chat { display: flex; flex-direction: column; gap: 22px; width: 820px; }
+.bubble { display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid var(--border);
+  border-radius: 28px; border-top-left-radius: 8px; padding: 20px 26px; width: fit-content; max-width: 760px;
+  box-shadow: 0 24px 48px -32px rgba(0,0,0,.35); }
+.bubble .ic { width: 52px; height: 52px; border-radius: 50%; background: var(--secondary); display: grid; place-items: center; flex-shrink: 0; }
+.bubble .ic svg { width: 26px; height: 26px; stroke: #333; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.bubble .from { font-size: 21px; color: var(--muted); font-weight: 500; display: flex; gap: 12px; }
+.bubble .from .tm { color: #a3a3a3; }
+.bubble .txt { font-size: 31px; line-height: 1.25; margin-top: 2px; }
+.cap { font-size: 58px; font-weight: 600; letter-spacing: -0.02em; text-align: center; line-height: 1.1; }
+#cap1 { margin-top: 64px; }
+#cap1 em { font-style: normal; color: var(--primary); }
+
+.pair { display: flex; flex-direction: column; gap: 10px; }
+.reply { align-self: flex-end; display: flex; align-items: center; gap: 16px; background: var(--primary); color: #fff;
+  border-radius: 24px; border-bottom-right-radius: 8px; padding: 14px 20px 14px 14px; box-shadow: 0 24px 40px -30px rgba(0,40,20,.6); }
+.reply .doc { width: 46px; height: 54px; border-radius: 8px; background: rgba(255,255,255,.14); display: grid; place-items: center; }
+.reply .doc svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 1.8; }
+.reply .t1 { font-size: 23px; font-weight: 600; }
+.reply .t2 { font-size: 18px; opacity: .78; }
+.reply .ticks { font-size: 18px; margin-left: 8px; opacity: .55; }
+#s4 .bubble { padding: 14px 22px; }
+#s4 .bubble .ic { width: 42px; height: 42px; } #s4 .bubble .ic svg { width: 22px; height: 22px; }
+#s4 .bubble .txt { font-size: 25px; } #s4 .bubble .from { font-size: 18px; }
+#s4 .chat { gap: 26px; width: 900px; }
+#cap4 { margin-top: 54px; font-size: 54px; }
+
+/* ---------- Scene 2 + 3: bill to number ---------- */
+#head2 { position: absolute; top: 92px; left: 0; right: 0; }
+.work { display: flex; align-items: center; gap: 120px; margin-top: 90px; }
+.bill { position: relative; width: 560px; background: #fff; border: 1px solid var(--border); border-radius: 18px;
+  padding: 34px 36px 30px; box-shadow: 0 40px 80px -50px rgba(0,0,0,.45); overflow: hidden; }
+.bill .bh { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 2px solid var(--fg); }
+.bill .bh b { font-size: 26px; font-weight: 600; }
+.bill .bh span { font-size: 16px; color: var(--muted); }
+.redact { display: flex; flex-direction: column; gap: 9px; padding: 18px 0; border-bottom: 1px dashed var(--border); }
+.redact i { display: block; height: 12px; border-radius: 6px; background: #ececec; }
+.row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 10px; margin: 0 -10px; border-radius: 10px; font-size: 22px; }
+.row .k { color: var(--muted); }
+.row .v { font-weight: 600; }
+.row.total { border-top: 1px solid var(--border); margin-top: 6px; border-radius: 0; }
+#units { position: relative; }
+#unitsHl { position: absolute; inset: 0; border-radius: 10px; background: var(--primary-soft); box-shadow: inset 0 0 0 2px var(--primary); z-index: 0; }
+#units > span { position: relative; z-index: 1; }
+#scan { position: absolute; left: 0; right: 0; height: 110px; top: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(31,81,58,0) 0%, rgba(31,81,58,.10) 85%, rgba(31,81,58,.9) 100%); }
+
+.calc { width: 640px; }
+.calc .lbl { font-size: 20px; color: var(--muted); }
+.calc .line { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 14px 0; }
+.calc .line .val { font-size: 44px; font-weight: 600; letter-spacing: -0.01em; }
+.calc .line .val small { font-size: 22px; font-weight: 500; color: var(--muted); margin-left: 6px; }
+.calc .op { font-size: 32px; color: var(--muted); width: 36px; display: inline-block; }
+.calc .rule { height: 3px; background: var(--fg); transform-origin: left; margin: 10px 0 14px; }
+.calc .big { font-size: 132px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.calc .big small { font-size: 40px; font-weight: 500; letter-spacing: 0; margin-left: 12px; }
+.tags { display: flex; gap: 14px; align-items: center; margin-top: 26px; }
+.tag { font-size: 20px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--fg); }
+.stamp { display: inline-flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 600; color: #fff; background: var(--primary);
+  padding: 9px 18px 9px 12px; border-radius: 999px; }
+.stamp svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2.6; }
+.hash { font-size: 17px; color: var(--muted); margin-top: 16px; height: 22px; }
+#chip { position: absolute; left: 0; top: 0; font-size: 22px; font-weight: 600; background: var(--primary); color: #fff;
+  padding: 8px 14px; border-radius: 10px; z-index: 20; white-space: nowrap; box-shadow: 0 18px 30px -18px rgba(0,40,20,.7); }
+
+/* ---------- Scene 5: end ---------- */
+#s5 .end { font-size: 104px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; text-align: center; }
+#s5 .mark { margin-top: 70px; font-size: 46px; font-weight: 400; letter-spacing: .32em; padding-left: .32em; }
+#s5 .url { margin-top: 18px; font-size: 26px; color: var(--muted); }
+#s5 .sub { margin-top: 28px; font-size: 26px; color: var(--muted); }
+#s5 .sub b { color: var(--primary); font-weight: 600; }
+
+/* ---------- Portrait (9:16) ---------- */
+body.portrait .chat { width: 940px; }
+body.portrait .bubble .txt { font-size: 36px; }
+body.portrait .bubble .from { font-size: 24px; }
+body.portrait .cap { font-size: 70px; padding: 0 60px; }
+body.portrait #head2 { top: 170px; }
+body.portrait .work { flex-direction: column; gap: 70px; margin-top: 210px; }
+body.portrait .bill { width: 760px; padding: 40px 44px 34px; }
+body.portrait .row { font-size: 29px; }
+body.portrait .bill .bh b { font-size: 32px; }
+body.portrait .calc { width: 760px; }
+body.portrait #s4 .chat { width: 960px; }
+body.portrait #s4 .bubble .txt { font-size: 30px; }
+body.portrait .reply .t1 { font-size: 27px; } body.portrait .reply .t2 { font-size: 21px; }
+body.portrait #cap4 { font-size: 66px; }
+body.portrait #s5 .end { font-size: 118px; }
+
+body.portrait .bubble { max-width: 960px; padding: 24px 30px; }
+body.portrait .bubble .txt { font-size: 42px; }
+body.portrait .bubble .from { font-size: 27px; }
+body.portrait .bubble .ic { width: 62px; height: 62px; }
+body.portrait .cap { font-size: 82px; }
+body.portrait #head2 { font-size: 78px; }
+body.portrait .bill { width: 940px; padding: 46px 50px 40px; }
+body.portrait .row { font-size: 36px; padding: 18px 12px; }
+body.portrait .bill .bh b { font-size: 40px; } body.portrait .bill .bh span { font-size: 22px; }
+body.portrait .redact i { height: 16px; }
+body.portrait .work { gap: 60px; margin-top: 150px; }
+body.portrait .calc { width: 940px; }
+body.portrait .calc .lbl { font-size: 28px; }
+body.portrait .calc .line .val { font-size: 60px; } body.portrait .calc .line .val small { font-size: 30px; }
+body.portrait .calc .big { font-size: 190px; } body.portrait .calc .big small { font-size: 54px; }
+body.portrait .tag, body.portrait .stamp { font-size: 28px; } body.portrait .stamp svg { width: 28px; height: 28px; }
+body.portrait .hash { font-size: 22px; }
+body.portrait #chip { font-size: 32px; }
+body.portrait #s4 .chat { width: 1000px; gap: 34px; }
+body.portrait #s4 .bubble .txt { font-size: 36px; } body.portrait #s4 .bubble .from { font-size: 24px; }
+body.portrait .reply .t1 { font-size: 32px; } body.portrait .reply .t2 { font-size: 25px; }
+body.portrait .reply .doc { width: 56px; height: 66px; }
+body.portrait #cap4 { font-size: 80px; margin-top: 80px; }
+body.portrait #s5 .end { font-size: 150px; padding: 0 40px; }
+body.portrait #s5 .mark { font-size: 60px; } body.portrait #s5 .url { font-size: 34px; }
+body.portrait #s5 .sub { font-size: 34px; padding: 0 80px; text-align: center; }
+
+.cap { text-wrap: balance; } .pbr { display: none; }
+body.portrait .lbr { display: none; } body.portrait .pbr { display: inline; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- Scene 1: everyone is asking -->
+  <section class="scene" id="s1">
+    <div class="chat">
+      <div class="bubble" data-a id="a1" style="margin-left:0">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg></div>
+        <div><div class="from">EU buyer <span class="tm">09:12</span></div><div class="txt">Please send CO₂ per tonne for your 2026 shipments.</div></div>
+      </div>
+      <div class="bubble" data-a id="a2" style="margin-left:34px">
+        <div class="ic"><svg viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+        <div><div class="from">Your bank <span class="tm">11:40</span></div><div class="txt">Add your emissions baseline to the green loan file.</div></div>
+      </div>
+      <div class="bubble" data-a id="a3" style="margin-left:68px">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></div>
+        <div><div class="from">Listed customer <span class="tm">16:05</span></div><div class="txt">Fill in our supplier ESG data form.</div></div>
+      </div>
+    </div>
+    <div class="cap" id="cap1" data-a>Suddenly, everyone wants<br class="lbr"> your <em>carbon number</em>.</div>
+  </section>
+
+  <!-- Scene 2 + 3: the bill becomes the number -->
+  <section class="scene" id="s2">
+    <div class="cap" id="head2" data-a>It's already in your bills.</div>
+    <div class="work">
+      <div class="bill" id="bill" data-a>
+        <div class="bh"><b>Electricity bill</b><span class="mono">LT · Industrial</span></div>
+        <div class="redact" id="redact"><i style="width:58%"></i><i style="width:82%"></i><i style="width:40%"></i></div>
+        <div class="row" data-r><span class="k">Billing period</span><span class="v">01–30 Sep 2026</span></div>
+        <div class="row" data-r><span class="k">Sanctioned load</span><span class="v">45 kW</span></div>
+        <div class="row" data-r id="units"><div id="unitsHl" data-a></div><span class="k">Units consumed</span><span class="v">4,820 kWh</span></div>
+        <div class="row total" data-r><span class="k">Amount payable</span><span class="v">₹ 41,970</span></div>
+        <div id="scan" data-a></div>
+      </div>
+      <div class="calc" id="calc">
+        <div data-a id="c1"><div class="lbl">Units consumed</div>
+          <div class="line"><span class="val" id="c1v" data-a>4,820<small>kWh</small></span></div></div>
+        <div data-a id="c2"><div class="lbl">India grid emission factor</div>
+          <div class="line"><span class="val"><span class="op">×</span>0.710<small>kg CO₂ / kWh</small></span></div></div>
+        <div class="rule" id="rule" data-a></div>
+        <div class="big" id="big" data-a><span id="bigN">0</span><small>kg CO₂</small></div>
+        <div class="tags">
+          <span class="tag" id="tag" data-a>Scope 2 · Electricity</span>
+          <span class="stamp" id="stamp" data-a><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Verified · counted once</span>
+        </div>
+        <div class="hash mono" id="hash"></div>
+      </div>
+    </div>
+    <div id="chip" data-a>4,820 kWh</div>
+  </section>
+
+  <!-- Scene 4: the same asks, answered -->
+  <section class="scene" id="s4">
+    <div class="chat">
+      <div class="pair">
+        <div class="bubble" data-a id="b1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/></svg></div><div><div class="from">EU buyer</div><div class="txt">Please send CO₂ per tonne for your 2026 shipments.</div></div></div>
+        <div class="reply" data-a id="r1"><div class="doc"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div><div class="t1">Verified carbon record</div><div class="t2">Sep 2026 · 3.42 t CO₂</div></div><span class="ticks" data-a id="k1">✓✓</span></div>
+      </div>
+      <div class="pair">
+        <div class="bubble" data-a id="b2"><div class="ic"><svg viewBox="0 0 24 24"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div><div><div class="from">Your bank</div><div class="txt">Add your emissions baseline to the green loan file.</div></div></div>
+        <div class="reply" data-a id="r2"><div class="doc"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div><div class="t1">Verified carbon record</div><div class="t2">Sep 2026 · 3.42 t CO₂</div></div><span class="ticks" data-a id="k2">✓✓</span></div>
+      </div>
+      <div class="pair">
+        <div class="bubble" data-a id="b3"><div class="ic"><svg viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></div><div><div class="from">Listed customer</div><div class="txt">Fill in our supplier ESG data form.</div></div></div>
+        <div class="reply" data-a id="r3"><div class="doc"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div><div class="t1">Verified carbon record</div><div class="t2">Sep 2026 · 3.42 t CO₂</div></div><span class="ticks" data-a id="k3">✓✓</span></div>
+      </div>
+    </div>
+    <div class="cap" id="cap4" data-a>One bill. Three answers.</div>
+  </section>
+
+  <!-- Scene 5: the action -->
+  <section class="scene" id="s5">
+    <div class="end" data-a id="e1">Start with <br class="pbr">one bill.</div>
+    <div class="mark" data-a id="e2">Senseible</div>
+    <div class="url mono" data-a id="e3">senseible.earth</div>
+    <div class="sub" data-a id="e4">Free audit-ready carbon report from your <b>first bill</b>.</div>
+  </section>
+</div>
+
+<script>
+// Sources (kept off-screen per AGENTS.md):
+//  - Grid factor 0.710 kgCO2/kWh: CEA CO2 Baseline Database v21.0 (src/components/home/HomeStory.tsx)
+//  - Asks + end-card copy: src/components/home/AskCards.tsx, HomeStory.tsx
+//  - 4,820 kWh x 0.710 = 3,422.2 kg CO2 (3.42 t). Bill shows billing fields only; personal details are redacted.
+if (new URLSearchParams(location.search).get('o') === 'portrait') document.body.classList.add('portrait');
+
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const outCubic = x => 1 - Math.pow(1 - x, 3);
+const outQuint = x => 1 - Math.pow(1 - x, 5);
+const inOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const outBack = x => { const c1 = 1.5, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const p = (t, s, d, e = outCubic) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const style = (el, o, tf) => { el.style.opacity = o; el.style.transform = tf || ''; };
+
+function show(id, on) { $(id).style.visibility = on ? 'visible' : 'hidden'; }
+
+// Arrive: rise + fade. Leave: drift up + fade.
+function inOutEl(el, t, tin, tout, dy = 26, dur = .55) {
+  const a = p(t, tin, dur, outQuint);
+  const b = tout == null ? 0 : p(t, tout, .45, inOut);
+  style(el, a * (1 - b), `translateY(${(1 - a) * dy - b * 30}px)`);
+}
+
+function render(t) {
+  // Scene visibility windows
+  show('s1', t < 4.9); show('s2', t >= 4.2 && t < 12.9); show('s4', t >= 12.3 && t < 16.4); show('s5', t >= 15.9);
+
+  // ---- Scene 1
+  inOutEl($('a1'), t, 0.25, 4.15);
+  inOutEl($('a2'), t, 0.95, 4.2);
+  inOutEl($('a3'), t, 1.65, 4.25);
+  inOutEl($('cap1'), t, 2.45, 4.3, 18, .7);
+
+  // ---- Scene 2: headline + bill
+  inOutEl($('head2'), t, 4.5, 7.6, 20, .7);
+  const bIn = p(t, 4.85, .9, outQuint);
+  const leave = p(t, 12.25, .5, inOut);
+  // the bill starts centred, then steps aside when the maths appears
+  const portrait = document.body.classList.contains('portrait');
+  const W = innerWidth, H = innerHeight, bl = $('bill');
+  const cx = W / 2 - (bl.offsetLeft + bl.offsetWidth / 2), cy = H / 2 - (bl.offsetTop + bl.offsetHeight / 2) + 60;
+  const slide = 1 - p(t, 7.2, .6, inOut);
+  const ox = portrait ? 0 : cx * slide, oy = portrait ? cy * slide : 0;
+  style(bl, bIn * (1 - leave), `translate(${ox}px, ${oy + (1 - bIn) * 220 - leave * 40}px) rotate(${(1 - bIn) * -3}deg)`);
+
+  // scan sweep over the bill, then units row locks in
+  const bill = $('bill'), bh = bill.offsetHeight;
+  const sp = p(t, 6.0, 1.15, inOut);
+  $('scan').style.opacity = (t > 6.0 && t < 7.25) ? 1 - p(t, 7.0, .25) : 0;
+  $('scan').style.transform = `translateY(${lerp(-110, bh, sp)}px)`;
+  const scanY = lerp(-110, bh, sp) + 110;
+  document.querySelectorAll('[data-r]').forEach(r => {
+    const read = scanY > r.offsetTop + r.offsetHeight * .6 && t > 6.0;
+    r.querySelector('.v').style.color = read && r.id !== 'units' ? '#141414' : '';
+    r.style.opacity = t < 6.0 ? 1 : (read ? 1 : .55);
+  });
+  const hl = p(t, 7.05, .4, outBack);
+  style($('unitsHl'), clamp(hl), `scale(${lerp(.96, 1, clamp(hl))})`);
+
+  // ---- Scene 3: chip flies from the bill to the calculation
+  const units = $('units').querySelector('.v').getBoundingClientRect();
+  const target = $('c1v').getBoundingClientRect();
+  const stage = $('stage').getBoundingClientRect();
+  const fp = p(t, 7.8, .7, inOut);
+  const chip = $('chip');
+  const x = lerp(units.left - 14, target.left - 14, fp) - stage.left;
+  const y = lerp(units.top - 8, target.top - 2, fp) - stage.top - Math.sin(fp * Math.PI) * 70;
+  chip.style.opacity = (t > 7.8 && t < 8.55) ? 1 : 0;
+  chip.style.transform = `translate(${x}px, ${y}px) scale(${lerp(1, 1.5, fp)})`;
+  chip.style.transformOrigin = 'left top';
+
+  style($('c1'), (t > 8.5 ? 1 : 0) * (1 - leave), `translateX(${-leave * 40}px)`);
+  $('c1').style.opacity = t > 7.6 ? (1 - leave) : 0;
+  $('c1v').style.opacity = t > 8.5 ? 1 : 0;
+  inOutEl($('c2'), t, 8.7, 12.2, 20);
+  const rp = p(t, 9.15, .45, inOut);
+  $('rule').style.transform = `scaleX(${rp})`; $('rule').style.opacity = 1 - leave;
+  const cp = p(t, 9.3, 1.3, outCubic);
+  style($('big'), t > 9.25 ? 1 - leave : 0, `translateY(${(1 - p(t, 9.25, .4)) * 16}px)`);
+  $('bigN').textContent = Math.round(3422 * cp).toLocaleString('en-IN');
+  const tg = p(t, 10.7, .45, outBack);
+  style($('tag'), clamp(tg * 2) * (1 - leave), `scale(${lerp(.8, 1, tg)})`);
+  const st = p(t, 11.05, .38, outBack);
+  style($('stamp'), clamp(st * 3) * (1 - leave), `scale(${lerp(1.7, 1, st)}) rotate(${lerp(-6, 0, st)}deg)`);
+  const hash = 'sha256 9f3c0b7e…d21aa71e · duplicate check passed';
+  const hp = clamp((t - 11.45) / .65);
+  $('hash').textContent = t > 11.45 ? hash.slice(0, Math.round(hash.length * hp)) : '';
+  $('hash').style.opacity = 1 - leave;
+  // the number holds centre stage alone for a beat
+  $('calc').style.transform = `translateX(${-leave * 40}px)`;
+  $('calc').style.visibility = t > 7.5 ? 'visible' : 'hidden';
+
+  // ---- Scene 4: answered
+  const out4 = 15.85;
+  inOutEl($('b1'), t, 12.55, out4, 20, .5);
+  inOutEl($('b2'), t, 12.7, out4, 20, .5);
+  inOutEl($('b3'), t, 12.85, out4, 20, .5);
+  [['r1', 13.35], ['r2', 13.75], ['r3', 14.15]].forEach(([id, s], i) => {
+    const k = p(t, s, .5, outBack);
+    const o = clamp(k * 2) * (1 - p(t, out4, .45, inOut));
+    style($(id), o, `translateX(${(1 - k) * 60}px) scale(${lerp(.9, 1, clamp(k))})`);
+    const tk = $('k' + (i + 1));
+    tk.style.opacity = t > s + .55 ? 1 : .45;
+    tk.style.color = t > s + .55 ? '#9ff0c4' : '';
+  });
+  inOutEl($('cap4'), t, 14.6, out4, 18, .6);
+
+  // ---- Scene 5
+  inOutEl($('e1'), t, 16.25, null, 30, .8);
+  inOutEl($('e2'), t, 17.15, null, 14, .9);
+  inOutEl($('e3'), t, 17.55, null, 10, .7);
+  inOutEl($('e4'), t, 17.9, null, 10, .7);
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
