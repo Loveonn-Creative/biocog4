@@ -1,4 +1,5 @@
 // Country Intelligence Layer — Config-driven, not hardcoded
+import { INDIA_GRID_FACTOR_KG_PER_KWH } from './factors';
 // Grid emission factors sourced from IEA 2023 published data
 
 export interface CountryConfig {
@@ -29,7 +30,8 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     taxIdLabel: 'GSTIN',
     taxIdPlaceholder: '22AAAAA0000A1Z5',
     taxIdPattern: /^\d{2}[A-Z]{5}\d{4}[A-Z]\d[A-Z\d][A-Z]$/,
-    gridFactor: 0.708,
+    // The factor the extraction pipeline calculates with (CEA weighted average, CO2 only).
+    gridFactor: INDIA_GRID_FACTOR_KG_PER_KWH,
     frameworks: ['GCP', 'BRSR', 'CCTS', 'PAT'],
     govBody: 'MoEFCC',
     languages: ['en', 'hi', 'bn', 'mr', 'te', 'ta'],
@@ -559,6 +561,18 @@ export const LOCATION_TO_CODE: Record<string, string> = {
   'Japan': 'JP',
   'South Korea': 'KR',
 };
+
+/** Unit of a country's grid factor: India's CEA factor covers CO2 only. */
+export const gridFactorUnit = (code: string) => (code === 'IN' ? 'kgCO₂/kWh' : 'kgCO₂e/kWh');
+
+/** ISO code for a saved location (name in any case, or a code); India when not set or not recognised, as Settings shows. */
+export function countryCodeFromLocation(location: string | null | undefined): string {
+  const v = (location ?? '').trim();
+  if (!v) return 'IN';
+  if (/^[A-Za-z]{2}$/.test(v) && COUNTRY_CONFIGS[v.toUpperCase()]) return v.toUpperCase();
+  const hit = Object.entries(LOCATION_TO_CODE).find(([name]) => name.toLowerCase() === v.toLowerCase());
+  return hit ? hit[1] : 'IN';
+}
 
 export function getCountryConfig(locationOrCode: string): CountryConfig {
   const code = LOCATION_TO_CODE[locationOrCode] || locationOrCode;

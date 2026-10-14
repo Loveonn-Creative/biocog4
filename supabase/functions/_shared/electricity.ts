@@ -41,7 +41,7 @@ const ENERGY: Record<string, number> = {
 };
 const NOT_ENERGY = /^(kvah|kvarh|kw|kva|mw|mva|kvar)$/;
 
-export type UnitResult = { kwh: number; multiplier: number } | { kwh: null; reason: 'apparent_or_reactive_energy' | 'power_not_energy' | 'unknown_unit' | 'missing_quantity' };
+export type UnitResult = { kwh: number; multiplier: number; reason?: never } | { kwh: null; multiplier?: never; reason: 'apparent_or_reactive_energy' | 'power_not_energy' | 'unknown_unit' | 'missing_quantity' };
 
 /**
  * Printed quantity and unit to kWh. "units" counts as kWh only on an
@@ -130,8 +130,8 @@ export interface ElectricityFactor {
 }
 
 export type FactorPick =
-  | { factor: ElectricityFactor; tier: 'region' | 'national'; vintage: 'covers_period' | 'prior_vintage' }
-  | { factor: null; reason: 'no_factor' | 'factor_ambiguous' | 'kind_not_allowed' };
+  | { factor: ElectricityFactor; tier: 'region' | 'national'; vintage: 'covers_period' | 'prior_vintage'; reason?: never }
+  | { factor: null; tier?: never; vintage?: never; reason: 'no_factor' | 'factor_ambiguous' | 'kind_not_allowed' };
 
 /**
  * One factor of one kind for a period: the grid region's, then the country's.
