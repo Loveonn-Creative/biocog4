@@ -41,7 +41,7 @@ export function clientIp(headers: Headers): string {
   return fwd || headers.get('cf-connecting-ip') || headers.get('x-real-ip') || 'unknown';
 }
 
-export type UseKind = 'message' | 'voice_session';
+export type UseKind = 'message' | 'voice_session' | 'guest_scan';
 export interface UseResult { allowed: boolean; used: number; limit: number; store: 'database' | 'memory' }
 
 // Until the intelligence_usage migration is applied, counts are kept per

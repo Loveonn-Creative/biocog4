@@ -30,6 +30,8 @@ BEGIN
   PERFORM pg_temp.ok('a limit of 0 refuses', NOT r.allowed);
   SELECT * INTO r FROM public.intelligence_take('g:0123456789abcdef0123456789abcdef', 'message', '2026-10-14', '2026-10-14', 1);
   PERFORM pg_temp.ok('guest subjects are hashed keys', r.allowed);
+  SELECT * INTO r FROM public.intelligence_take('g:0123456789abcdef0123456789abcdef', 'guest_scan', '2026-10-14', '2026-10-14', 30);
+  PERFORM pg_temp.ok('guest invoice reads are counted apart from questions', r.allowed AND r.used = 1);
 END $$;
 DO $$ BEGIN
   PERFORM public.intelligence_take('192.168.1.1', 'message', '2026-10-14', '2026-10-14', 5);
@@ -38,7 +40,7 @@ EXCEPTION WHEN check_violation THEN RAISE NOTICE 'ok a raw network address canno
 DO $$ BEGIN
   PERFORM public.intelligence_take('u:00000000-0000-4000-8000-0000000000a1', 'other', '2026-10-14', '2026-10-14', 5);
   RAISE EXCEPTION 'FAIL: unknown kind';
-EXCEPTION WHEN check_violation THEN RAISE NOTICE 'ok only messages and voice sessions are counted'; END $$;
+EXCEPTION WHEN check_violation THEN RAISE NOTICE 'ok only messages, voice sessions and guest reads are counted'; END $$;
 DO $$ BEGIN
   INSERT INTO public.intelligence_usage (subject, kind, day, count) VALUES ('u:00000000-0000-4000-8000-0000000000b2', 'message', current_date - 401, 3);
   PERFORM pg_temp.ok('purge removes rows older than 400 days', public.intelligence_usage_purge() = 1);

@@ -57,6 +57,7 @@ export async function cacheGuestSource(hash: string | null | undefined, file: Bl
 }
 
 export async function getGuestSource(hash: string): Promise<Entry | null> {
+  await purgeExpiredGuestSources();
   return (await run<Entry | undefined>('readonly', (s) => s.get(hash) as IDBRequest<Entry | undefined>)) ?? null;
 }
 
@@ -69,5 +70,15 @@ export async function clearGuestSources(): Promise<void> {
   await run('readwrite', (s) => s.clear());
 }
 
+/** Guest files are kept as long as their results: 24 hours. */
+export const GUEST_SOURCE_TTL_MS = 24 * 60 * 60 * 1000;
+export async function purgeExpiredGuestSources(now = Date.now()): Promise<void> {
+  const all = (await run<Entry[]>('readonly', (s) => s.getAll() as IDBRequest<Entry[]>)) ?? [];
+  const old = all.filter((e) => now - e.savedAt >= GUEST_SOURCE_TTL_MS).map((e) => e.hash);
+  if (old.length) await run('readwrite', (s) => { old.forEach((h) => s.delete(h)); });
+}
+
 // A different person on this device never sees the previous guest's files.
-onIdentityReset(() => { void clearGuestSources(); });
+// Guest to signed-in keeps them until the import prompt is answered (the
+// files are re-read under the new account if the person says they are theirs).
+onIdentityReset((t) => { if (!(t && t.from === '' && t.to)) void clearGuestSources(); });

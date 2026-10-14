@@ -24,6 +24,7 @@ import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
+import { getGuestResult, guestDocumentId, guestRowsFor, putGuestResult } from '@/lib/guestResults';
 // Perf: components not needed for first paint are code-split out of the
 // homepage's initial bundle. Each is rendered inside its own
 // <Suspense fallback={null}> so the route-level PageLoader never flashes.
@@ -248,6 +249,21 @@ const Index = () => {
   const [pendingRetry, setPendingRetry] = useState<{ extractedData: ExtractedData; documentHash?: string } | null>(null);
   const t = useT();
 
+  // Guests: nothing is stored on the server. The result and its records stay
+  // in this browser for 24 hours (guestResults.ts); signing in can add them.
+  const keepGuestResult = async (extractedData: ExtractedData, documentHash: string, fileName: string) => {
+    const rows = guestRowsFor(extractedData, documentHash);
+    const kept = await putGuestResult({ hash: documentHash, fileName, extracted: extractedData, rows });
+    if (!kept) toast.info('This browser is not keeping data, so this result disappears when you leave the page.', { duration: 5000 });
+    return { documentId: guestDocumentId(documentHash), emissionId: rows[0]?.id, emissionIds: rows.map((r) => r.id) };
+  };
+  const fileSha256 = async (file: Blob): Promise<string | null> => {
+    try {
+      const digest = await crypto.subtle.digest('SHA-256', await file.arrayBuffer());
+      return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
+    } catch { return null; }
+  };
+
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -410,7 +426,7 @@ const Index = () => {
         // Page numbers of this part, mapped back to the original PDF.
         const partData = data.data as ExtractedData;
         const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
-        const saved = await saveEmissionToDatabase(extracted, data.documentHash);
+        const saved = user ? await saveEmissionToDatabase(extracted, data.documentHash) : await keepGuestResult(extracted, data.documentHash, part.file.name);
         if (!user) void cacheGuestSource(data.documentHash, part.file, part.file.name);
         if (!saved) { notes.push(`${range}: could not be saved`); continue; }
         done.push({ extracted, saved });
@@ -466,6 +482,29 @@ const Index = () => {
     setDocumentType("Analyzing document...");
 
     try {
+      // A guest re-uploading the same file within 24 hours sees the same
+      // result from this browser, without another read.
+      if (!user) {
+        const hash = await fileSha256(file);
+        const earlier = hash ? await getGuestResult(hash) : null;
+        if (earlier) {
+          const extractedEarlier = earlier.extracted as ExtractedData;
+          const cat = getCategoryFromOCR(extractedEarlier);
+          toast.info('Showing your earlier result for this invoice. Results stay in this browser for 24 hours.', { duration: 5000 });
+          setDocumentType(formatDocumentType(extractedEarlier.documentType, cat));
+          setResult({
+            type: extractedEarlier.documentType === 'certificate' || cat === 'other' ? "compliance" : "revenue",
+            amount: 0,
+            documentType: formatDocumentType(extractedEarlier.documentType, cat),
+            extractedData: extractedEarlier,
+            documentId: guestDocumentId(earlier.hash),
+            emissionId: earlier.rows[0]?.id,
+            recordCount: earlier.rows.length,
+          });
+          setState("result");
+          return;
+        }
+      }
       const imageBase64 = await fileToBase64(file);
       const mimeType = file.type || 'image/jpeg';
 
@@ -551,7 +590,9 @@ const Index = () => {
         uniqueWarnings.forEach(w => toast.warning(w, { duration: 4000 }));
       }
 
-      const savedIds = await saveEmissionToDatabase(extractedData, data.documentHash);
+      const savedIds = user
+        ? await saveEmissionToDatabase(extractedData, data.documentHash)
+        : await keepGuestResult({ ...extractedData, validationFlags: uniqueWarnings }, data.documentHash, file.name);
       // Guests: the original stays in this browser only (never uploaded for storage).
       if (!user) void cacheGuestSource(data.documentHash, file, file.name);
 
@@ -564,7 +605,9 @@ const Index = () => {
         return;
       }
 
-      if (savedIds.emissionIds.length > 0) {
+      if (!user) {
+        toast.success('Result ready. It stays in this browser for 24 hours; sign in to save it.', { duration: 4000 });
+      } else if (savedIds.emissionIds.length > 0) {
         toast.success('Verified activity data saved successfully!', { duration: 2000 });
       } else {
         toast.warning('Document saved for review. No emissions were recorded without verified activity data.', { duration: 5000 });

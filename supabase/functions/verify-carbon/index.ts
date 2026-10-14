@@ -252,6 +252,44 @@ function calculateGreenwashingRisk(emissions: EmissionRecord[], validationResult
   return { risk, factors };
 }
 
+/**
+ * What a record still needs before it can be verified. The same gate runs on
+ * stored records and on a guest's browser-held preview. Pure.
+ */
+function evidenceGaps(emission: EmissionRecord & { document_id?: string | null }, repairOnly: boolean): string[] {
+  const fields: string[] = [];
+  const doc = emission.documents;
+  if (!emission.document_id || !doc) fields.push('source invoice');
+  if (!doc?.document_hash) fields.push('document fingerprint');
+  if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
+  // Scope 3 is verified line by line in the supplier evidence trail
+  // (approved, sourced factors; reconciled, deduplicated invoices), not
+  // here. Repair of an earlier result still runs: it creates nothing new.
+  if (emission.scope === 3 && !repairOnly) fields.push('Scope 3 is verified in the supplier evidence trail');
+  if (!emission.category || emission.category === 'other') fields.push('activity classification');
+  if (!Number.isFinite(emission.activity_data) || emission.activity_data <= 0) fields.push('activity quantity');
+  if (!emission.activity_unit?.trim()) fields.push('activity unit');
+  if (!Number.isFinite(emission.emission_factor) || emission.emission_factor <= 0) fields.push('emission factor');
+  if (!Number.isFinite(emission.co2_kg) || emission.co2_kg < 0) fields.push('calculated emissions');
+  let provenance: Record<string, unknown> | null = null;
+  try { provenance = JSON.parse(emission.verification_notes || 'null'); } catch { /* legacy notes */ }
+  if (!provenance || typeof provenance.factorSource !== 'string' || !provenance.factorSource.trim()) fields.push('factor source');
+  if (!provenance || typeof provenance.sourceDescription !== 'string' || !provenance.sourceDescription.trim()) fields.push('source line item');
+  // A row written by the current methodology must carry its published
+  // factor: the stored value is re-derived, not trusted. Earlier versions
+  // keep their own factors and are not re-derived here; repair replays
+  // an earlier result and creates nothing new.
+  const published = provenance ? publishedFactorFor(provenance.factorSource as string) : null;
+  if (!repairOnly && published !== null && Number.isFinite(emission.emission_factor) && Math.abs(emission.emission_factor - published) > 1e-6) {
+    fields.push('emission factor does not match the published factor for its source');
+  }
+  if (Number.isFinite(emission.activity_data) && Number.isFinite(emission.emission_factor) && Number.isFinite(emission.co2_kg) &&
+    Math.abs(emission.activity_data * emission.emission_factor - emission.co2_kg) > Math.max(0.01, Math.abs(emission.co2_kg) * 0.001)) {
+    fields.push('quantity × factor does not match stored emissions');
+  }
+  return fields;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -260,7 +298,66 @@ serve(async (req) => {
   try {
     // includeIoT is still accepted from older clients but no longer changes any number.
     // A "country" field from older clients is ignored: it never changed a number.
-    const { emissionIds, sessionId: bodySessionId, inspectOnly = false, repairOnly = false } = await req.json();
+    const body = await req.json();
+    const { emissionIds, sessionId: bodySessionId, inspectOnly = false, repairOnly = false } = body;
+
+    // ============= GUEST PREVIEW =============
+    // A guest's results live only in their browser, so there are no stored
+    // records to verify. The same evidence gate and scoring run on the records
+    // the browser sends; nothing is written, no AI is called, and the answer is
+    // a preview: it never marks anything verified.
+    if (body?.preview) {
+      const authHeader = req.headers.get('Authorization');
+      const tok = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : '';
+      if (tok && tok !== Deno.env.get('SUPABASE_ANON_KEY') && tok !== req.headers.get('apikey')) {
+        const role = (() => { try { return JSON.parse(atob(tok.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))).role; } catch { return null; } })();
+        if (role === 'authenticated') {
+          return new Response(JSON.stringify({ error: 'Signed in: verify your stored records instead.' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+        }
+      }
+      const records = Array.isArray(body.preview?.records) ? body.preview.records : null;
+      if (!records || records.length === 0 || records.length > 100) {
+        return new Response(JSON.stringify({ error: 'Send between 1 and 100 records to preview' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+      const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : NaN);
+      const str = (v: unknown, max = 500) => (typeof v === 'string' ? v.slice(0, max) : null);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- untrusted JSON, every field is checked below
+      const rows: Array<EmissionRecord & { document_id: string | null }> = records.map((r: Record<string, any>, i: number) => ({
+        id: str(r?.id, 80) || `preview-${i}`,
+        document_id: str(r?.document_id, 80),
+        category: str(r?.category, 60) || '',
+        scope: num(r?.scope),
+        co2_kg: num(r?.co2_kg),
+        activity_data: num(r?.activity_data),
+        activity_unit: str(r?.activity_unit, 30),
+        emission_factor: num(r?.emission_factor),
+        data_quality: str(r?.data_quality, 10),
+        verification_notes: str(r?.verification_notes, 4000),
+        documents: r?.documents && typeof r.documents === 'object' ? {
+          vendor: str(r.documents.vendor, 200), invoice_number: str(r.documents.invoice_number, 100),
+          amount: Number.isFinite(r.documents.amount) ? r.documents.amount : null, confidence: Number.isFinite(r.documents.confidence) ? r.documents.confidence : null,
+          document_hash: str(r.documents.document_hash, 64), invoice_date: str(r.documents.invoice_date, 20),
+        } : undefined,
+      }));
+      const missingInputs = rows.map((e) => ({ emissionId: e.id, fields: evidenceGaps(e, false) })).filter((m) => m.fields.length);
+      const validation = new Map(rows.map((e) => [e.id, validateEmission(e)] as const));
+      const { risk, factors } = calculateGreenwashingRisk(rows, validation);
+      const validRatio = [...validation.values()].filter((v) => v.valid).length / rows.length;
+      const wouldBe = missingInputs.length ? 'needs_inputs' : validRatio >= 0.8 && risk === 'low' ? 'would_verify' : validRatio >= 0.5 && risk !== 'high' ? 'needs_review' : 'would_reject';
+      const scopeBreakdown = { scope1: 0, scope2: 0, scope3: 0 };
+      for (const e of rows) if (e.scope === 1 || e.scope === 2 || e.scope === 3) scopeBreakdown[`scope${e.scope}` as 'scope1'] += Number.isFinite(e.co2_kg) ? e.co2_kg : 0;
+      return new Response(JSON.stringify({
+        success: true, preview: true,
+        data: {
+          outcome: wouldBe, score: validRatio, greenwashingRisk: risk, riskFactors: factors,
+          flags: [...new Set([...validation.values()].flatMap((v) => v.flags))],
+          missingInputs, scopeBreakdown,
+          totalCO2Kg: Math.round((scopeBreakdown.scope1 + scopeBreakdown.scope2 + scopeBreakdown.scope3) * 1000) / 1000,
+          methodology: { name: METHODOLOGY.name, version: METHODOLOGY.version },
+          note: 'Preview only. Nothing was recorded or verified. Sign in to record and verify these results.',
+        },
+      }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
     if (!Array.isArray(emissionIds) || emissionIds.length === 0 || emissionIds.length > 100 ||
         emissionIds.some((id) => typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(id)) ||
@@ -336,36 +433,7 @@ serve(async (req) => {
     {
       const missingInputs: Array<{ emissionId: string; fields: string[] }> = [];
       for (const emission of emissions) {
-        const fields: string[] = [];
-        const doc = emission.documents;
-        if (!emission.document_id || !doc) fields.push('source invoice');
-        if (!doc?.document_hash) fields.push('document fingerprint');
-        if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
-        // Scope 3 is verified line by line in the supplier evidence trail
-        // (approved, sourced factors; reconciled, deduplicated invoices), not
-        // here. Repair of an earlier result still runs: it creates nothing new.
-        if (emission.scope === 3 && !repairOnly) fields.push('Scope 3 is verified in the supplier evidence trail');
-        if (!emission.category || emission.category === 'other') fields.push('activity classification');
-        if (!Number.isFinite(emission.activity_data) || emission.activity_data <= 0) fields.push('activity quantity');
-        if (!emission.activity_unit?.trim()) fields.push('activity unit');
-        if (!Number.isFinite(emission.emission_factor) || emission.emission_factor <= 0) fields.push('emission factor');
-        if (!Number.isFinite(emission.co2_kg) || emission.co2_kg < 0) fields.push('calculated emissions');
-        let provenance: Record<string, unknown> | null = null;
-        try { provenance = JSON.parse(emission.verification_notes || 'null'); } catch { /* legacy notes */ }
-        if (!provenance || typeof provenance.factorSource !== 'string' || !provenance.factorSource.trim()) fields.push('factor source');
-        if (!provenance || typeof provenance.sourceDescription !== 'string' || !provenance.sourceDescription.trim()) fields.push('source line item');
-        // A row written by the current methodology must carry its published
-        // factor: the stored value is re-derived, not trusted. Earlier versions
-        // keep their own factors and are not re-derived here; repair replays
-        // an earlier result and creates nothing new.
-        const published = provenance ? publishedFactorFor(provenance.factorSource as string) : null;
-        if (!repairOnly && published !== null && Number.isFinite(emission.emission_factor) && Math.abs(emission.emission_factor - published) > 1e-6) {
-          fields.push('emission factor does not match the published factor for its source');
-        }
-        if (Number.isFinite(emission.activity_data) && Number.isFinite(emission.emission_factor) && Number.isFinite(emission.co2_kg) &&
-          Math.abs(emission.activity_data * emission.emission_factor - emission.co2_kg) > Math.max(0.01, Math.abs(emission.co2_kg) * 0.001)) {
-          fields.push('quantity × factor does not match stored emissions');
-        }
+        const fields = evidenceGaps(emission, repairOnly);
         if (fields.length) missingInputs.push({ emissionId: emission.id, fields });
       }
       if (inspectOnly || missingInputs.length) {

@@ -6,7 +6,14 @@
  */
 
 export interface GuestCounts { documents: number; emissions: number; verifications: number; reports: number }
-export interface PendingGuestImport { sessionId: string; deviceFingerprint: string; counts: GuestCounts }
+export interface PendingGuestImport {
+  sessionId: string;
+  deviceFingerprint: string;
+  /** Older guest rows held on the server (before guest uploads became browser-only). */
+  counts: GuestCounts;
+  /** Invoices kept in this browser for 24 hours (guestResults.ts). */
+  localInvoices?: number;
+}
 
 let pending: PendingGuestImport | null = null;
 const listeners = new Set<() => void>();
@@ -20,8 +27,9 @@ export function setPendingGuestImport(p: PendingGuestImport | null) { pending = 
 export const hasGuestData = (c: GuestCounts | undefined | null): c is GuestCounts =>
   !!c && (c.documents > 0 || c.emissions > 0);
 
-export function describeGuestCounts(c: GuestCounts): string {
-  const n = c.documents || c.emissions;
-  const noun = c.documents ? (n === 1 ? 'invoice' : 'invoices') : (n === 1 ? 'record' : 'records');
+export function describeGuestCounts(c: GuestCounts, localInvoices = 0): string {
+  const docs = c.documents + localInvoices;
+  const n = docs || c.emissions;
+  const noun = docs ? (n === 1 ? 'invoice' : 'invoices') : (n === 1 ? 'record' : 'records');
   return `${n} ${noun}`;
 }

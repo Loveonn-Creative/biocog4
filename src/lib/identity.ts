@@ -19,7 +19,9 @@ export const PERSONAL_STORAGE_KEYS = [
 
 export const IDENTITY_CHANGED_EVENT = 'senseible:identity-changed';
 
-type Reset = () => void;
+/** from/to: the previous and new identity ('' = guest). */
+export interface IdentityTransition { from: string | null; to: string }
+type Reset = (t?: IdentityTransition) => void;
 const resets = new Set<Reset>();
 
 /** Register a cache to clear on identity change (for example the query cache). Returns an unregister function. */
@@ -47,7 +49,7 @@ export function syncIdentity(uid: string | null): boolean {
   write(LAST_UID_KEY, next);
   if (!changed) return false;
   for (const k of PERSONAL_STORAGE_KEYS) write(k, null);
-  resets.forEach(fn => { try { fn(); } catch { /* keep clearing the rest */ } });
+  resets.forEach(fn => { try { fn({ from: last, to: next }); } catch { /* keep clearing the rest */ } });
   if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(IDENTITY_CHANGED_EVENT, { detail: { uid } }));
   return true;
 }

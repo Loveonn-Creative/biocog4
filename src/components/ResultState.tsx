@@ -21,7 +21,20 @@ interface ExtractedData {
   confidence: number;
   validationFlags?: string[];
   classificationMethod?: string;
+  lineItems?: Array<{
+    description?: string;
+    quantity?: number;
+    unit?: string;
+    scope?: number;
+    co2Kg?: number;
+    emissionFactor?: number;
+    factorSource?: string;
+    productCategory?: string;
+    avoidedCo2Kg?: number;
+  }>;
 }
+
+const fmt = (n: number, dp = 2) => n.toLocaleString("en-IN", { maximumFractionDigits: dp });
 
 interface ResultStateProps {
   type: "revenue" | "compliance";
@@ -137,6 +150,37 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
             ))}
           </ul>
         </div>
+      )}
+
+      {/* How the figure was calculated: every line, its quantity, factor and source. Collapsed. */}
+      {!!extractedData?.lineItems?.length && (
+        <details className="w-full rounded-lg border border-border p-3 text-left">
+          <summary className="cursor-pointer text-sm font-medium">How this was calculated</summary>
+          <ul className="mt-3 space-y-2.5 text-xs">
+            {extractedData.lineItems.map((li, i) => {
+              const counted = typeof li.co2Kg === "number" && typeof li.quantity === "number" && typeof li.emissionFactor === "number";
+              return (
+                <li key={i} className="border-b border-border/60 pb-2 last:border-0">
+                  <p className="font-medium text-foreground break-words">{li.description || "Line " + (i + 1)}</p>
+                  {counted ? (
+                    <p className="mt-0.5 text-muted-foreground">
+                      {fmt(li.quantity!)} {li.unit} × {fmt(li.emissionFactor!, 4)} kg CO2e per {li.unit} = <span className="font-medium text-foreground">{fmt(li.co2Kg!)} kg CO2e</span>
+                      {li.scope ? ` · Scope ${li.scope}` : ""}
+                      {li.factorSource ? <span className="block">Factor source: {li.factorSource}</span> : null}
+                    </p>
+                  ) : (
+                    <p className="mt-0.5 text-muted-foreground">
+                      Not counted: {typeof li.quantity !== "number" || !li.unit ? "no quantity with a unit on this line" : "no documented emission factor for this item yet"}.
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Total = sum of counted lines = {fmt(co2Value)} kg CO2e. Calculated from the bill, not yet verified.
+          </p>
+        </details>
       )}
 
       {/* Innovation 3: Auto-Validation Before Submission (opt-in) */}

@@ -1,10 +1,11 @@
 -- =============================================
--- PENDING (NOT APPLIED). Daily Biocog Intelligence message counts and
+-- PENDING (NOT APPLIED). Daily Biocog Intelligence message counts, guest
+-- invoice-read counts (30 a day per device, 300 per network address) and
 -- monthly real-time voice session counts, so plan limits hold on the server.
 -- Rollback: rollback/20261024100000_intelligence_usage.rollback.sql
 --
 -- One new table and one function; nothing existing is touched. Only the
--- intelligence-chat and elevenlabs-conversation-token edge functions
+-- intelligence-chat, elevenlabs-conversation-token and extract-document edge functions
 -- (service role) read or write it; browsers have no access. Subjects are
 -- 'u:<user id>' for signed-in users and 'g:<keyed hash>' for guests: the
 -- guest hash is of the network address and the day, keyed with a server
@@ -17,7 +18,7 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS public.intelligence_usage (
   subject text NOT NULL CHECK (subject ~ '^(u:[0-9a-f-]{36}|g:[0-9a-f]{32})$'),
   day date NOT NULL,
-  kind text NOT NULL CHECK (kind IN ('message', 'voice_session')),
+  kind text NOT NULL CHECK (kind IN ('message', 'voice_session', 'guest_scan')),
   count integer NOT NULL DEFAULT 0 CHECK (count >= 0),
   updated_at timestamptz NOT NULL DEFAULT now(),
   PRIMARY KEY (subject, kind, day)
