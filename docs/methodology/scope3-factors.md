@@ -20,6 +20,20 @@ The primary documents could not be opened from the research session: the hosts w
 | `SFC_IN_RAIL_FREIGHT_WTW` v1.0 | 4 / `freight:rail` | 0.0106 kg CO2e per tonne-km (WTW = WTT 0.0064 + TTW 0.0041, as rounded in the source) | Smart Freight Centre, *India Default GHG Emission Values V1.0*, complementing the GLEC Framework; co-developed with the TCI-IIMB Supply Chain Sustainability Lab | Two independent excerpts give the same split and total | The latest version of the document (copies are labelled V1.0, v1.2 and V1_3), the table and page, the publication year, and the GWP basis. Method as described: Ministry of Railways annual-report data, a five-year average, IPCC 2006 fuel factors, TTW uplifted to WTW with the GLEC ratio |
 | `MOS_IN_STEEL_<heading>` FY2023-24, for headings 7206, 7207, 7208, 7213, 7214, 7216 | 1 / `hsn:<heading>` | 2540 kg CO2 per tonne (2.54 tCO2 per tonne of crude steel, FY2023-24 national average) | Ministry of Steel, *Greening the Steel Sector in India: Roadmap and Action Plan*. The same figure appears in the draft National Steel Policy Vision 2047 | Several independent reports of the Ministry's figure. A Ministry slide deck shows 2.5490 | The boundary (which scopes; not stated in any excerpt), the section or slide, and the publication year. Then decide whether a crude-steel figure is acceptable per tonne of product (see caveats) |
 
+### Air and sea freight: global defaults (approved approach; values to be read from the source)
+
+Air and sea freight have no India-specific intensity: the SFC India defaults cover road and rail only. So the published international defaults are drafted with geography `GLOBAL`. Pending migration `20261020100000_scope3_global_freight.sql` allows `GLOBAL` only for air and sea freight. The method uses a global default only after the supplier's own factor and an India factor are both missing.
+
+| Factor key | Material | Value | Source | Confidence | Approver must check |
+|---|---|---|---|---|---|
+| `GLEC_GLOBAL_AIR_LONG` | `freight:air:long` (printed distance of 1,500 km or more) | Placeholder. A secondary source quotes GLEC v3.2 Table 1 long haul as 0.936 (belly) and 0.608 (freighter) kg CO2e/tkm WTW | Smart Freight Centre, GLEC Framework | One secondary source | Use the GLEC default for an unknown aircraft type, since invoices rarely say belly or freighter. Also check the version, table, GWP basis and year |
+| `GLEC_GLOBAL_AIR_SHORT` | `freight:air:short` (under 1,500 km) | Placeholder. The same source quotes freighter short haul as 1.516 | as above | One secondary source | as above |
+| `DESNZ_GLOBAL_SEA_CONTAINER_AVG` | `freight:sea` | Placeholder. A secondary listing quotes DESNZ 2025 average container ship as 0.01612 kg CO2e/tkm (direct) | UK DESNZ, GHG conversion factors 2025 | One secondary source | Decide the boundary: direct only, or direct plus the WTT factor for well-to-wake (consistent with rail). Also check the sheet, row and GWP basis. GLEC's container defaults are per TEU-km, a unit the registry does not convert, so they are not used |
+
+Rule applied: a number confirmed by two or more independent excerpts is filled in (rail, steel). A number seen in only one secondary source is named in a hint, and the SQL fails until the author enters the value from the publication.
+
+The air band (1,500 km) follows the GLEC short- and long-haul split and is chosen from the distance printed on the freight document. A line without a printed distance stays at Needs Data.
+
 Steel caveats, recorded in the row:
 
 - The figure is per tonne of crude steel. Applying it per tonne of finished product leaves out yield loss and rolling, so it understates. That is why cold-rolled (7209), coated (7210) and alloy-steel headings are not drafted.
@@ -38,7 +52,6 @@ Checked with the calculation module (`supabase/functions/_shared/scope3.ts`):
 | Material | Why not | Route |
 |---|---|---|
 | Road freight, India (`freight:road`) | The India values are given per vehicle class (LCV, MCV, HCV by GVW). The excerpts were garbled across classes, and one secondary article quotes about 66 g/tkm for heavy trucks, which could not be confirmed. A single road factor would also hide the vehicle class | Read the road table in the SFC India document. Then either add vehicle-class material keys (for example `freight:road:hcv`, a small schema change) or use an India average row if the document gives one |
-| Air and sea freight | The available defaults are global (GLEC Framework v3.x, Module 2), not India-specific. The registry stores a country | Decide whether a global mode default may be used for Indian suppliers. If yes, read the GLEC table and add rows that state "global default" in the source reference |
 | Cement (2523) | No official national average was found. Research figures differ: about 0.66 tCO2/t (CEEW) against 0.627 (TERI). The intensity also depends heavily on cement type (OPC, PPC, PSC), which HSN 2523 does not separate | Supplier EPDs: many Indian cement producers publish them. Add them as `SUPPLIER:<GSTIN>` factors with the EPD as evidence |
 | Aluminium, plastics, paper and board, chemicals | No India-specific official averages were found | Supplier product carbon footprints or EPDs |
 | Business travel, hotel stays | Not researched in this round. The India GHG Programme passenger factors date from 2015 | A later round |

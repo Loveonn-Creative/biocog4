@@ -73,9 +73,50 @@ FROM unnest(ARRAY[
 ]) AS h;
 
 -- ---------------------------------------------------------------------------
+-- Category 4, air and sea freight: GLOBAL defaults (needs pending migration
+-- 20261020100000_scope3_global_freight.sql). No India-specific air or sea
+-- freight intensity was found (the SFC India defaults cover road and rail
+-- only), so the published international defaults are used; a country or
+-- supplier factor always takes precedence. The values below were each seen in
+-- ONE secondary source only, so the number itself is left for the author to
+-- read from the publication (the hint names the secondary figure to check).
+-- ---------------------------------------------------------------------------
+-- Air, by GLEC distance band (short < 1,500 km, long >= 1,500 km), for an
+-- unknown aircraft type (passenger belly or freighter), well-to-wake.
+INSERT INTO public.scope3_factors (factor_key, version, scope3_category, material_key, geography, unit, kg_co2e_per_unit,
+  data_class, boundary, gwp_basis, source_name, source_ref, publication_year, valid_from, created_by)
+VALUES
+  ('GLEC_GLOBAL_AIR_LONG', '<GLEC version, e.g. 3.1>', 4, 'freight:air:long', 'GLOBAL', 'tkm',
+   <GLEC default for long-haul air freight, aircraft type unknown, WTW, kg CO2e/tkm; a secondary source quotes GLEC v3.2 Table 1 as 0.936 belly and 0.608 freighter>,
+   'secondary_factor', 'Well-to-wake; long haul (>= 1,500 km); aircraft type unknown',
+   '<GWP basis stated in the GLEC Framework>', 'Smart Freight Centre, GLEC Framework for Logistics Emissions Accounting and Reporting',
+   '<module, table and page of the air default intensities>', <publication year>, '2023-04-01', '<author user id>'),
+  ('GLEC_GLOBAL_AIR_SHORT', '<GLEC version, e.g. 3.1>', 4, 'freight:air:short', 'GLOBAL', 'tkm',
+   <GLEC default for short-haul air freight, aircraft type unknown, WTW, kg CO2e/tkm; a secondary source quotes GLEC v3.2 Table 1 freighter short haul as 1.516>,
+   'secondary_factor', 'Well-to-wake; short haul (< 1,500 km); aircraft type unknown',
+   '<GWP basis stated in the GLEC Framework>', 'Smart Freight Centre, GLEC Framework for Logistics Emissions Accounting and Reporting',
+   '<module, table and page of the air default intensities>', <publication year>, '2023-04-01', '<author user id>');
+
+-- Sea, average container ship per tonne-km. GLEC gives container defaults per
+-- TEU-km (not a unit this registry converts), so the UK DESNZ per-tonne-km
+-- factor is drafted. DESNZ freight factors are direct emissions: add the
+-- matching well-to-tank factor from the "WTT- delivery vehicles & freight"
+-- sheet if the boundary is to be well-to-wake like the rail factor.
+INSERT INTO public.scope3_factors (factor_key, version, scope3_category, material_key, geography, unit, kg_co2e_per_unit,
+  data_class, boundary, gwp_basis, source_name, source_ref, publication_year, valid_from, created_by)
+VALUES
+  ('DESNZ_GLOBAL_SEA_CONTAINER_AVG', '2025', 4, 'freight:sea', 'GLOBAL', 'tkm',
+   <DESNZ 2025 "Freighting goods", Cargo ship, Container ship, Average, kg CO2e per tonne.km (plus WTT if well-to-wake is chosen); a secondary listing quotes 0.01612 for the direct factor>,
+   'secondary_factor', '<"Direct (tank-to-wake)" or "Well-to-wake (direct + WTT)", as chosen>; average container ship',
+   '<GWP basis stated in the DESNZ 2025 methodology paper>',
+   'UK Department for Energy Security and Net Zero, Greenhouse gas reporting: conversion factors 2025 (full set)',
+   '<sheet and row of the container ship average factor>', 2025, '2025-01-01', '<author user id>');
+
+-- ---------------------------------------------------------------------------
 -- Approval (a second person, after checking the same pages):
 -- UPDATE public.scope3_factors SET status = 'approved', approved_by = '<approver user id>', approved_at = now()
---  WHERE status = 'draft' AND (factor_key = 'SFC_IN_RAIL_FREIGHT_WTW' OR factor_key LIKE 'MOS_IN_STEEL_%');
+--  WHERE status = 'draft' AND (factor_key = 'SFC_IN_RAIL_FREIGHT_WTW' OR factor_key LIKE 'MOS_IN_STEEL_%'
+--    OR factor_key IN ('GLEC_GLOBAL_AIR_LONG', 'GLEC_GLOBAL_AIR_SHORT', 'DESNZ_GLOBAL_SEA_CONTAINER_AVG'));
 -- ---------------------------------------------------------------------------
 
 COMMIT;

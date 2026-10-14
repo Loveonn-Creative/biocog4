@@ -51,7 +51,7 @@ const isoDate = (v: unknown) => (v instanceof Date ? v.toISOString() : String(v)
 
 /** Approved factors that could apply to this invoice: its supplier's own, and its country's. */
 async function factorsFor(client: Client, doc: SealedDocument): Promise<Scope3Factor[] | null> {
-  const geos = ['IN', ...(doc.supplierGstin ? [`SUPPLIER:${doc.supplierGstin}`] : [])];
+  const geos = ['IN', 'GLOBAL', ...(doc.supplierGstin ? [`SUPPLIER:${doc.supplierGstin}`] : [])];
   const { data, error } = await client.from('scope3_factors')
     .select('id, factor_key, version, scope3_category, material_key, geography, unit, kg_co2e_per_unit, data_class, source_name, source_ref, publication_year, valid_from, valid_to')
     .eq('status', 'approved').in('geography', geos);

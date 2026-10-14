@@ -204,3 +204,33 @@ describe('aggregation', () => {
     expect(a.bySupplier.get(GSTIN)).toMatchObject({ kg: 4000, verifiedLines: 1, lines: 2 });
   });
 });
+
+describe('global defaults for air and sea freight only', () => {
+  const air = (km: number) => line({ description: 'Air freight BOM to FRA', hsn: '996531', quantity: 1, unit: 'shipment', unitPrice: 90000, total: 90000,
+    logistics: { mode: 'Air', weightKg: 500, distanceKm: km, origin: null, destination: null } });
+  const G_LONG: Scope3Factor = { ...STEEL, id: 'g-air-long', factorKey: 'TEST_AIR_LONG', scope3Category: 4, materialKey: 'freight:air:long', geography: 'GLOBAL', unit: 'tkm', kgPerUnit: 0.6 };
+  const G_SHORT: Scope3Factor = { ...G_LONG, id: 'g-air-short', factorKey: 'TEST_AIR_SHORT', materialKey: 'freight:air:short', kgPerUnit: 1.5 };
+  const G_SEA: Scope3Factor = { ...G_LONG, id: 'g-sea', factorKey: 'TEST_SEA', materialKey: 'freight:sea', kgPerUnit: 0.016 };
+  test('the band follows the printed distance (GLEC 1,500 km)', () => {
+    expect(classifyLine(air(6300)).materialKeys).toEqual(['freight:air:long', 'freight:air']);
+    expect(classifyLine(air(900)).materialKeys).toEqual(['freight:air:short', 'freight:air']);
+    const r = evaluateDocument(doc([air(6300)]), [G_LONG, G_SHORT]).lines[0];
+    expect(r.status).toBe('verified');
+    expect(r.factor?.factorKey).toBe('TEST_AIR_LONG');
+    expect(r.kgCo2e).toBe(1890); // 0.5 t x 6300 km x 0.6
+  });
+  test('a country factor beats a global default, even a more specific one', () => {
+    const IN_AIR: Scope3Factor = { ...G_LONG, id: 'in-air', factorKey: 'TEST_IN_AIR', materialKey: 'freight:air', geography: 'IN', kgPerUnit: 0.9 };
+    expect(resolveFactor(classifyLine(air(6300)), doc([air(6300)]), [G_LONG, IN_AIR])).toMatchObject({ factor: { id: 'in-air' }, tier: 'country' });
+  });
+  test('sea freight uses a global default', () => {
+    const sea = line({ description: 'Ocean freight Nhava Sheva to Rotterdam', hsn: '996521', quantity: 1, unit: 'container', unitPrice: 120000, total: 120000,
+      logistics: { mode: 'Sea', weightKg: 18000, distanceKm: 11500, origin: null, destination: null } });
+    expect(resolveFactor(classifyLine(sea), doc([sea]), [G_SEA])).toMatchObject({ tier: 'global' });
+  });
+  test('nothing else falls back to GLOBAL', () => {
+    expect(resolveFactor(classifyLine(line()), doc([line()]), [{ ...STEEL, geography: 'GLOBAL' }])).toMatchObject({ factor: null, reason: 'no_factor' });
+    const road = line({ description: 'Road freight', hsn: '996511', logistics: { mode: 'Road', weightKg: 1000, distanceKm: 100, origin: null, destination: null } });
+    expect(resolveFactor(classifyLine(road), doc([road]), [{ ...ROAD, geography: 'GLOBAL' }])).toMatchObject({ factor: null });
+  });
+});
