@@ -34,3 +34,16 @@ python3 sfx2.py
 FILE=film.html DUR=23 node render.mjs video landscape f-l.mp4   # or portrait f-p.mp4
 ffmpeg -i f-l.mp4 -i sfx2.wav -c:v copy -c:a aac -b:a 192k -shortest out/carbon-proof-16x9.mp4
 ```
+
+## Guide 1: set up your account (80 seconds, `guide1.html`)
+
+Five stops (Account → Business → Plan → Pay → Check). A saffron ring marks each tap, and red "If you see" notes give the fix for common errors.
+
+- **Checked on the live site (14 Oct 2026):** the sign-up form, the password checks, the GSTIN check-digit error and success states (the state fills in from the GSTIN), and pricing.
+- **Checked against code:** the Profile, Subscription and payment messages (`src/hooks/useRazorpay.ts`).
+- **Simulated, by request:** the payment window and the screens after payment. No payment was made.
+- **Fictional data:** all business details. GSTIN `03AAKCS4821M1Z6` is format-valid and made up.
+
+```sh
+python3 sfx3.py && bash g1render.sh   # renders four chunks in parallel, then muxes the audio
+```

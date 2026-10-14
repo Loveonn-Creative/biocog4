@@ -1,0 +1,530 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Senseible setup guide</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root {
+  --ink: #16181d; --muted: #6f737b; --line: #e6e6e6; --green: #1f5139; --green2: #2e9e5b; --greenSoft: #e9f3ed;
+  --saffron: #f08a24; --red: #c8372d; --paper: #f5f1e8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .06; mix-blend-mode: multiply; pointer-events: none; z-index: 60; }
+
+/* route rail */
+#rail { position: absolute; left: 0; top: 0; width: 1920px; height: 150px; }
+#rail svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.stop { position: absolute; top: 58px; transform: translateX(-50%); text-align: center; }
+.stop .dot { width: 34px; height: 34px; border-radius: 50%; margin: 0 auto; border: 3px solid #b9b4a8; background: var(--paper); position: relative; }
+.stop .nm { margin-top: 10px; font-size: 21px; font-weight: 500; color: #9a958a; white-space: nowrap; }
+.stop.on .dot { border-color: var(--saffron); background: var(--saffron); box-shadow: 0 0 0 8px rgba(240,138,36,.18); }
+.stop.on .nm { color: var(--ink); font-weight: 600; }
+.stop.done .dot { border-color: var(--green); background: var(--green); }
+.stop.done .nm { color: var(--green); }
+.stop svg.tk { position: absolute; left: 7px; top: 8px; }
+
+/* teaching column */
+#col { position: absolute; left: 130px; top: 200px; width: 860px; }
+.stepk { font-size: 22px; color: var(--saffron); letter-spacing: .14em; font-weight: 600; }
+.title { font-size: 80px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; margin-top: 12px; }
+.lines { margin-top: 44px; display: flex; flex-direction: column; gap: 26px; }
+.ln { font-size: 38px; line-height: 1.22; letter-spacing: -0.01em; display: flex; gap: 22px; align-items: baseline; }
+.ln .n { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #a39d90; width: 34px; flex-shrink: 0; transform: translateY(-4px); }
+.ln b { font-weight: 600; } .ln .tap { color: var(--saffron); font-weight: 600; }
+.ln.hint { font-size: 30px; color: var(--muted); }
+.err { position: absolute; left: 0; width: 760px; border: 3px solid var(--red); border-radius: 18px; padding: 20px 26px 22px; background: rgba(200,55,45,.04); }
+.err .if { font-family: 'Hand'; font-size: 36px; color: var(--red); line-height: 1; }
+.err .msg { margin-top: 8px; font-size: 25px; color: var(--red); font-weight: 500; line-height: 1.3; }
+.err .fix { margin-top: 10px; font-size: 30px; line-height: 1.28; }
+.err .fix b { font-weight: 600; }
+.plans { margin-top: 6px; display: grid; grid-template-columns: repeat(4, auto); gap: 6px 34px; font-size: 26px; width: fit-content; }
+.plans .h { font-size: 19px; color: var(--muted); }
+.plans .v { font-weight: 600; font-size: 32px; }
+.plans .pro { color: var(--saffron); }
+
+/* intro + outro */
+#intro, #outro { position: absolute; left: 130px; top: 0; height: 1080px; width: 900px; display: flex; flex-direction: column; justify-content: center; }
+#intro .big, #outro .big { font-size: 104px; font-weight: 600; letter-spacing: -0.045em; line-height: .98; }
+#intro .sub, #outro .sub { margin-top: 28px; font-size: 38px; color: var(--muted); line-height: 1.25; }
+.legend { margin-top: 64px; display: flex; flex-direction: column; gap: 22px; font-size: 30px; }
+.legend div { display: flex; align-items: center; gap: 22px; }
+.legend .ring { width: 46px; height: 46px; border-radius: 50%; border: 5px solid var(--saffron); }
+.legend .note { width: 46px; height: 34px; border-radius: 8px; border: 3px solid var(--red); }
+#outro .mark { margin-top: 70px; font-size: 40px; letter-spacing: .32em; }
+
+/* phone */
+#phoneWrap { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; perspective: 2200px; perspective-origin: 1390px 600px; }
+#phone { position: absolute; left: 1181px; top: 160px; width: 418px; height: 872px; border-radius: 60px; background: #121316; padding: 14px;
+  box-shadow: 0 2px 0 #2a2c31 inset, 0 70px 110px -50px rgba(30,25,10,.55), 0 30px 50px -30px rgba(30,25,10,.35); transform-style: preserve-3d; }
+#vp { position: relative; width: 390px; height: 844px; border-radius: 46px; overflow: hidden; background: #fff; }
+.scr { position: absolute; left: 0; top: 0; width: 390px; height: 844px; background: #fff; overflow: hidden; }
+.in { position: absolute; left: 0; top: 0; width: 390px; padding: 0 24px; }
+#notch { position: absolute; left: 50%; top: 10px; width: 110px; height: 30px; margin-left: -55px; background: #121316; border-radius: 20px; z-index: 40; }
+
+/* app look (matched to live senseible.earth) */
+.topbar { display: flex; justify-content: space-between; align-items: center; height: 70px; padding-top: 22px; }
+.wm { font-size: 11px; letter-spacing: .32em; }
+.circ { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #e3e3e3; display: inline-grid; place-items: center; }
+.circ i { display: block; width: 16px; height: 2px; background: #222; box-shadow: 0 -5px 0 #222, 0 5px 0 #222; }
+.lbl { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
+.inp { height: 48px; border: 1px solid #e3e3e3; border-radius: 14px; padding: 0 16px; display: flex; align-items: center; font-size: 15.5px; position: relative; background: #fff; }
+.inp.ph { color: #a3a3a3; }
+.inp.mono { font-size: 17px; letter-spacing: .04em; }
+.inp.bad { border-color: var(--red); box-shadow: 0 0 0 1px var(--red); }
+.inp.good { border-color: var(--green2); }
+.caret { display: inline-block; width: 2px; height: 20px; background: var(--ink); margin-left: 1px; vertical-align: middle; }
+.btn { height: 50px; border-radius: 999px; background: var(--green); color: #fff; display: grid; place-items: center; font-size: 17px; font-weight: 600; }
+.tabs { display: flex; background: #f4f5f5; border: 1px solid #ececec; border-radius: 999px; padding: 4px; margin-top: 18px; }
+.tabs div { flex: 1; text-align: center; padding: 11px 0; border-radius: 999px; font-size: 16px; color: #777; }
+.tabs .act { background: #fff; color: #111; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.meter { display: flex; gap: 5px; margin-top: 10px; } .meter i { flex: 1; height: 5px; border-radius: 3px; background: #ececec; }
+.meter i.f { background: var(--green2); }
+.chk { font-size: 13px; color: #9a9a9a; margin-top: 5px; } .chk.ok { color: var(--green2); }
+.strength { font-size: 13px; color: var(--green2); font-weight: 600; margin-top: 6px; height: 16px; }
+.biz { border: 1px solid #e6e6e6; border-radius: 16px; padding: 4px 16px 16px; margin-top: 22px; overflow: hidden; }
+.biz .lg { font-size: 15px; font-weight: 600; margin-top: 12px; } .biz .lg span { font-weight: 400; color: #888; }
+.note { font-size: 12.5px; color: #777; margin-top: 7px; line-height: 1.35; }
+.note.bad { color: var(--red); }
+.idpanel { background: #f6f6f5; border-radius: 12px; padding: 10px 14px; margin-top: 8px; font-size: 13px; line-height: 1.7; }
+.idpanel span { color: #888; display: inline-block; width: 58px; }
+.consent { display: flex; gap: 12px; margin-top: 20px; font-size: 13px; color: #666; line-height: 1.45; }
+.box { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #333; flex-shrink: 0; position: relative; margin-top: 2px; }
+.box.on { background: var(--green); border-color: var(--green); }
+.gates { display: flex; gap: 8px; margin-top: 16px; } .gates div { flex: 1; font-size: 11px; color: #888; }
+.gates i { display: block; height: 4px; border-radius: 2px; background: #e8e8e8; margin-bottom: 5px; } .gates i.f { background: var(--green); }
+.foot { font-size: 12px; color: #888; text-align: center; margin-top: 14px; }
+.link { font-size: 15px; font-weight: 600; margin-top: 18px; } .link span { font-weight: 400; color: #888; }
+
+.h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+.sm { font-size: 14px; color: #777; }
+.card { border: 1px solid #e8e8e8; border-radius: 16px; padding: 16px; margin-top: 14px; background: #fff; }
+.badge { display: inline-block; font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: #f0f0f0; vertical-align: middle; }
+.badge.g { background: #e7f6ec; color: #18794e; }
+.badge.p { background: var(--green); color: #fff; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; display: grid; place-items: center; font-size: 15px; font-weight: 600; }
+.qa { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.qa div { border: 1px solid #ececec; border-radius: 12px; padding: 14px 12px; font-size: 13.5px; font-weight: 600; }
+.menu { position: absolute; right: 18px; top: 74px; width: 230px; background: #fff; border: 1px solid #e6e6e6; border-radius: 14px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.35); padding: 6px; z-index: 20; transform-origin: top right; }
+.menu .mh { padding: 10px 12px 8px; font-size: 13px; color: #777; border-bottom: 1px solid #f0f0f0; }
+.menu .mi { padding: 11px 12px; font-size: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.menu .mi.hl { background: #f4f5f5; }
+.sel { height: 48px; border: 1px solid #e3e3e3; border-radius: 14px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; font-size: 15.5px; }
+.ptabs { display: flex; gap: 6px; margin-top: 14px; } .ptabs div { flex: 1; text-align: center; padding: 10px 0; border-radius: 12px; font-size: 14px; border: 1px solid #e8e8e8; }
+.ptabs .act { background: var(--ink); color: #fff; border-color: var(--ink); }
+.cyc { display: flex; background: #f4f5f5; border-radius: 999px; padding: 4px; margin-top: 12px; font-size: 13px; }
+.cyc div { flex: 1; text-align: center; padding: 9px 0; border-radius: 999px; color: #777; } .cyc .act { background: #fff; color: #111; font-weight: 600; }
+.price { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; }
+.feat { font-size: 13.5px; margin-top: 8px; color: #333; }
+.feat::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green2); margin-right: 10px; vertical-align: middle; }
+.bar { height: 7px; border-radius: 4px; background: #eee; margin-top: 8px; }
+.row { display: flex; justify-content: space-between; font-size: 14px; margin-top: 12px; }
+
+.toast { position: absolute; left: 14px; right: 14px; bottom: 22px; background: #fff; border: 1px solid #e6e6e6; border-radius: 12px; padding: 14px 16px; font-size: 14px; font-weight: 500;
+  box-shadow: 0 16px 34px -14px rgba(0,0,0,.35); z-index: 30; display: flex; gap: 10px; align-items: center; }
+.toast i { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+.dim { position: absolute; inset: 0; background: rgba(10,12,16,.45); z-index: 24; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 600px; background: #fff; border-radius: 22px 22px 0 0; z-index: 25; padding: 22px 22px; }
+.sheet .sh { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid #eee; }
+.sheet .sh b { font-size: 18px; } .sheet .amt { font-size: 22px; font-weight: 700; }
+.pm { display: flex; justify-content: space-between; align-items: center; padding: 18px 14px; border: 1px solid #ececec; border-radius: 12px; margin-top: 12px; font-size: 16px; font-weight: 500; }
+.pm small { color: #888; font-weight: 400; font-size: 13px; }
+.pm.hl { border-color: var(--green2); background: #f2faf5; }
+.secured { position: absolute; left: 0; right: 0; bottom: 24px; text-align: center; font-size: 12.5px; color: #888; }
+
+/* tap ring */
+#tap { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; border: 5px solid var(--saffron); z-index: 35; pointer-events: none; }
+#tapDot { position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--saffron); z-index: 35; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="grain"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="4"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+
+  <div id="rail"><svg width="1920" height="150"><path id="railPath" fill="none" stroke="#b9b4a8" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/></svg></div>
+
+  <div id="intro">
+    <div class="big" id="iBig">Set up your<br>Senseible account</div>
+    <div class="sub" id="iSub">5 steps. Free to start, no card needed.</div>
+    <div class="legend" id="iLeg">
+      <div id="lg1"><span class="ring"></span><span>Saffron circle: <b>tap here</b></span></div>
+      <div id="lg2"><span class="note"></span><span>Red note: <b>if you see this</b>, here's the fix</span></div>
+    </div>
+  </div>
+
+  <div id="col">
+    <div class="stepk mono" id="stepk"></div>
+    <div class="title" id="title"></div>
+    <div class="lines" id="lines"></div>
+    <div class="err" id="err"><div class="if">If you see</div><div class="msg" id="errMsg"></div><div class="fix" id="errFix"></div></div>
+  </div>
+
+  <div id="outro">
+    <div class="big" id="oBig">You're all set.</div>
+    <div class="sub" id="oSub">Next video: upload your first bill and read your carbon report.</div>
+    <div class="mark" id="oMark">Senseible</div>
+  </div>
+
+  <div id="phoneWrap"><div id="phone"><div id="vp">
+    <div id="notch"></div>
+
+    <!-- home -->
+    <div class="scr" id="home"><div class="in">
+      <div class="topbar" style="justify-content:flex-end;gap:8px"><span class="btn" id="hSignin" style="height:40px;padding:0 18px;font-size:15px">Sign in</span><span class="circ" style="font-size:12px;font-weight:600">EN</span><span class="circ" style="font-size:15px">?</span></div>
+      <div style="text-align:center;font-size:26px;font-weight:600;margin-top:14px">senseible</div>
+      <div style="text-align:center;font-size:21px;font-weight:600;margin-top:190px;line-height:1.25">Turn invoices into<br>verified <span style="color:var(--green)">carbon data</span></div>
+      <div style="display:flex;justify-content:center;gap:34px;margin-top:40px"><div style="width:110px;height:110px;border:2px dashed #e4e4e4;border-radius:18px"></div><div style="width:110px;height:110px;border:2px solid #ececec;border-radius:18px"></div></div>
+      <div style="display:flex;justify-content:center;gap:90px;margin-top:14px;font-size:14px;color:#666;font-weight:600"><span>Document</span><span>Voice</span></div>
+      <div style="text-align:center;font-size:14px;color:#777;margin-top:30px">Upload an invoice, get an<br>audit-ready carbon report</div>
+    </div></div>
+
+    <!-- auth -->
+    <div class="scr" id="auth"><div class="in" id="authIn">
+      <div class="topbar"><span class="wm">Senseible</span><span><span class="circ" style="font-size:13px">◯</span> <span class="circ"><i></i></span></span></div>
+      <div class="sm" style="margin-top:18px">← Back</div>
+      <div class="tabs"><div id="tSign" class="act">Sign in</div><div id="tCreate">Create account</div></div>
+      <div class="lbl">Email address</div><div class="inp ph" id="fEmail">you@business.com</div>
+      <div class="lbl">Password</div><div class="inp" id="fPass"></div>
+      <div id="pwBlock">
+        <div class="meter" id="meter"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="strength" id="strength"></div>
+        <div class="chk" data-c>✓ At least 8 characters</div><div class="chk" data-c>✓ Contains uppercase letter</div><div class="chk" data-c>✓ Contains lowercase letter</div>
+        <div class="chk" data-c>✓ Contains a number</div><div class="chk" data-c>✓ Contains special character</div>
+      </div>
+      <div class="link" id="bizLink">+ Add business details <span>(optional)</span></div>
+      <div class="biz" id="biz">
+        <div class="lg">Your business <span>(optional)</span></div>
+        <div class="lbl">Business name</div><div class="inp" id="fName"></div>
+        <div class="lbl">GSTIN, CIN or company PAN</div><div class="inp mono" id="fGst"></div>
+        <div class="note" id="gstNote"></div>
+        <div class="idpanel" id="idp"><div><span>State</span>Punjab</div><div><span>PAN</span><b class="mono" style="font-weight:500">AAKCS4821M</b></div><div><span>Entity</span>Company</div><div style="color:#888">Read from the number itself, not from a registry.</div></div>
+        <div class="lbl">Phone</div><div class="inp" id="fPhone"></div>
+        <div class="lbl">City, State</div><div class="inp" id="fCity"></div>
+      </div>
+      <div class="consent"><span class="box" id="cBox"></span><span>I consent to Senseible collecting, processing, uploading and parsing my business data. Read the <u>Privacy Policy</u> and <u>Data Processing Addendum</u>.</span></div>
+      <div class="gates"><div><i class="f" id="g1"></i>Email</div><div><i id="g2"></i>Strong password</div><div><i id="g3"></i>Consent</div></div>
+      <div class="btn" id="bCreate" style="margin-top:16px">Create account →</div>
+      <div class="foot">Free to start · No card · DPA for India's DPDP Act, 2023</div>
+      <div style="height:120px"></div>
+    </div></div>
+
+    <!-- dashboard -->
+    <div class="scr" id="dash"><div class="in">
+      <div class="topbar"><span class="wm">Senseible</span><span class="avatar" id="av1">DF</span></div>
+      <div class="h1" style="margin-top:20px">Good morning</div>
+      <div style="margin-top:8px"><span class="badge" id="dBadge">Snapshot</span> <span class="sm" id="dUp" style="margin-left:8px;color:var(--green);font-weight:600">Upgrade</span></div>
+      <div class="card"><div class="sm">Evidence score</div><div style="font-size:30px;font-weight:700;margin-top:6px">—</div><div class="sm" style="margin-top:4px">Upload a bill to begin</div></div>
+      <div class="card"><div style="font-weight:600">Quick Actions</div><div class="qa"><div>Upload Invoice</div><div>Verify Emissions</div><div>Generate Report</div></div></div>
+      <div class="card"><div style="font-weight:600">Emissions Overview</div><div class="row"><span>Scope 1 · Direct emissions</span><span>0</span></div><div class="row"><span>Scope 2 · Indirect (energy)</span><span>0</span></div><div class="row"><span>Scope 3 · Value chain</span><span>0</span></div></div>
+    </div></div>
+
+    <!-- profile -->
+    <div class="scr" id="prof"><div class="in" id="profIn">
+      <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
+      <div class="h1" style="margin-top:16px">Profile</div>
+      <div class="card"><div style="font-weight:600;font-size:17px">Business Details</div><div class="sm">Your own business details.</div>
+        <div class="lbl">Business Name</div><div class="inp">Demo Forgings Pvt Ltd</div>
+        <div class="lbl">GSTIN</div><div class="inp mono">03AAKCS4821M1Z6</div>
+        <div class="lbl">Phone</div><div class="inp">+91 98765 43210</div>
+        <div class="lbl">Location</div><div class="inp">Punjab</div>
+        <div class="lbl">Sector</div><div class="inp" id="pSector"></div>
+        <div class="lbl">Company Size</div><div class="inp" id="pSize"></div>
+      </div>
+      <div class="btn" id="bSave" style="margin-top:16px;border-radius:12px">Save Changes</div>
+      <div style="height:80px"></div>
+    </div></div>
+
+    <!-- subscription -->
+    <div class="scr" id="sub"><div class="in" id="subIn">
+      <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
+      <div class="h1" style="margin-top:16px">Subscription</div><div class="sm">Manage your plan and usage</div>
+      <div class="card" id="planCard" style="border-width:2px;background:#f6f6f6">
+        <div style="font-size:20px;font-weight:700" id="planName">Biocog Snapshot</div>
+        <div class="sm" id="planPrice" style="margin-top:4px">Free forever</div>
+        <div class="btn" id="bUpgrade" style="margin-top:14px;border-radius:12px;height:46px;font-size:15px">Upgrade Plan →</div>
+      </div>
+      <div class="card"><div style="font-weight:600">Usage This Month</div><div class="sm">Your current usage against plan limits</div>
+        <div class="row"><span>Invoice Scans</span><span id="uInv">0 / 10</span></div><div class="bar"></div>
+        <div class="row"><span>Reports Generated</span><span id="uRep">0 / 1</span></div><div class="bar"></div>
+        <div class="row"><span>AI ESG Head</span><span id="uAi">Trial</span></div></div>
+      <div class="card" id="payHist"><div style="font-weight:600">Payment History</div><div class="sm">Your recent transactions</div>
+        <div class="row" style="align-items:center"><span><b style="font-weight:600">Biocog Pro</b><br><span class="sm">14 Oct 2026</span></span><span style="text-align:right"><b style="font-weight:600">₹59,988</b><br><span class="badge p">active</span></span></div></div>
+      <div style="height:80px"></div>
+    </div></div>
+
+    <!-- pricing -->
+    <div class="scr" id="price"><div class="in" id="priceIn">
+      <div class="topbar"><span class="wm" style="background:#111;color:#fff;padding:9px 10px">Senseible</span><span class="avatar">DF</span></div>
+      <div class="cyc"><div class="act">Billed Yearly <span style="color:var(--green2)">SAVE UP TO 75%</span></div><div>Billed Monthly</div></div>
+      <div class="ptabs"><div>Snapshot</div><div id="ptE" class="act">Essential</div><div id="ptP">Pro</div><div>Scale</div></div>
+      <div class="card" style="border-width:2px;border-color:var(--green)">
+        <div style="font-size:19px;font-weight:700" id="pcName">Biocog Essential</div>
+        <div class="sm" id="pcTag">Best Value · Billed Yearly</div>
+        <div style="margin-top:12px" class="sm"><s id="pcWas">₹1,999</s> <span class="badge g" id="pcOff">75% OFF</span></div>
+        <div><span class="price" id="pcPrice">₹499</span><span class="sm"> /month</span></div>
+        <div class="sm" id="pcKeep" style="color:var(--green2);font-weight:600">You keep ₹18,000 a year (75%)</div>
+        <div class="btn" id="bStart" style="margin-top:14px;border-radius:12px">Unlock Savings</div>
+        <div class="sm" id="pcBilled" style="text-align:center;margin-top:8px">Billed ₹5,988/yr. Save ₹18,000.</div>
+        <div id="pcFeat"></div>
+      </div>
+    </div></div>
+
+    <!-- overlays -->
+    <div class="menu" id="menu"><div class="mh">you@yourbusiness.in</div>
+      <div class="mi" id="miProf">Profile</div><div class="mi">Settings</div>
+      <div class="mi" id="miSub">Subscription <span class="badge" id="miBadge">Upgrade</span></div><div class="mi">Billing</div><div class="mi" style="color:#999">Sign Out</div></div>
+    <div class="dim" id="dim"></div>
+    <div class="sheet" id="sheet">
+      <div class="sh"><div><b>Senseible</b><div class="sm">Biocog Pro</div></div><div class="amt">₹59,988</div></div>
+      <div class="sm" style="margin-top:16px">Pay with</div>
+      <div class="pm" id="pmUpi">UPI <small>Any UPI app</small></div><div class="pm">Cards <small>Debit or credit</small></div>
+      <div class="pm">Netbanking <small>All Indian banks</small></div><div class="pm">Wallet</div>
+      <div class="secured">Secured by Razorpay</div>
+    </div>
+    <div class="toast" id="toast"><i id="toastDot"></i><span id="toastTxt"></span></div>
+    <div id="tap"></div><div id="tapDot"></div>
+  </div></div></div>
+</div>
+
+<script>
+// Verified on 14 Oct 2026 against live senseible.earth (/auth sign-up form, GSTIN check, /pricing)
+// and against src/pages/{Auth,Profile,Subscription,Pricing}.tsx, src/hooks/useRazorpay.ts and
+// supabase/functions/create-razorpay-order (Biocog Pro: ₹59,988/yr). All business data is fictional;
+// the GSTIN 03AAKCS4821M1Z6 is format-valid and made up. The payment window is shown, never paid.
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.5; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); } };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const between = (t, a, b) => t >= a && t < b;
+function typed(el, text, t, s, cps = 16, opts = {}) {
+  const n = Math.max(0, Math.min(text.length, Math.floor((t - s) * cps)));
+  const shown = t < s ? (opts.ph || '') : (opts.mask ? '•'.repeat(n) : text.slice(0, n));
+  el.classList.toggle('ph', t < s && !!opts.ph);
+  const caret = t >= s && (n < text.length || (t - s - text.length / cps) < (opts.hold ?? .5)) && Math.floor(t * 2.4) % 2 === 0;
+  el.innerHTML = shown + (caret ? '<span class="caret"></span>' : '');
+  return n;
+}
+
+// ---------- the 5-stop route ----------
+const STOPS = [['Account', 300], ['Business', 640], ['Plan', 980], ['Pay', 1320], ['Check', 1660]];
+const rail = $('rail');
+STOPS.forEach(([nm, x], i) => { const d = document.createElement('div'); d.className = 'stop'; d.id = 'st' + i; d.style.left = x + 'px';
+  d.innerHTML = `<div class="dot"><svg class="tk" width="20" height="18" style="opacity:0"><path d="M2 9 L8 15 L18 3" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="nm">${nm}</div>`; rail.appendChild(d); });
+(() => { let d = `M${STOPS[0][1]} 75`; for (let i = 1; i < STOPS.length; i++) { const a = STOPS[i - 1][1], b = STOPS[i][1]; d += ` C ${a + 110} ${i % 2 ? 52 : 98}, ${b - 110} ${i % 2 ? 98 : 52}, ${b} 75`; } $('railPath').setAttribute('d', d); })();
+const railLen = $('railPath').getTotalLength();
+
+// ---------- steps: what the left column says ----------
+const STEPS = [
+  { at: 5.2, out: 19.0, k: 'STEP 1 OF 5', title: 'Create your account', lines: [
+    [5.6, 'Tap <span class="tap">Sign in</span>, then <span class="tap">Create account</span>.'],
+    [7.2, 'Enter your work email and a password.'],
+    [9.8, 'A strong password has 8+ characters, a capital letter, a number and a symbol.', 'hint']],
+    err: [12.0, 18.6, 'This email is already registered. Please sign in instead.', 'You already have an account. Switch to <b>Sign in</b>, or tap <b>Forgot password?</b>'] },
+  { at: 19.2, out: 40.2, k: 'STEP 2 OF 5', title: 'Add your business', lines: [
+    [19.6, 'Tap <span class="tap">+ Add business details</span>. It is optional.'],
+    [22.6, 'Type your GSTIN. Your state fills in by itself.'],
+    [29.8, 'Tick the consent box, then tap <span class="tap">Create account</span>.'],
+    [34.4, 'Add sector and size any time: <b>Menu → Profile → Save Changes</b>.', 'hint']],
+    err: [24.9, 29.4, 'Invalid. The check character does not match.', 'Copy the GSTIN exactly from your <b>GST registration certificate</b>.'] },
+  { at: 40.4, out: 49.0, k: 'STEP 3 OF 5', title: 'Choose a plan', lines: [
+    [40.8, 'Open <b>Menu → Subscription</b> and tap <span class="tap">Upgrade Plan</span>.'],
+    [43.0, 'Choose by how many bills you add each month:', 'plans'],
+    [46.0, 'Yearly billing costs least. Pro: ₹4,999 a month, paid ₹59,988 a year.', 'hint']] },
+  { at: 49.2, out: 62.0, k: 'STEP 4 OF 5', title: 'Pay securely', lines: [
+    [49.6, 'Pay by UPI, card or net banking in the Razorpay window.'],
+    [53.4, 'Keep the page open until you see <b>Payment confirmed</b>.']],
+    err: [56.8, 61.6, 'Payment gateway could not load.', 'Allow <b>checkout.razorpay.com</b> in your ad-blocker, then tap again.'] },
+  { at: 62.2, out: 76.4, k: 'STEP 5 OF 5', title: 'Check your plan is on', lines: [
+    [62.6, 'Open <b>Menu → Subscription</b>.'],
+    [63.8, 'You should see <b>Biocog Pro</b> and <b>Active</b>.'],
+    [66.0, 'You can now add up to 1,000 bills a month.']],
+    err: [69.4, 76.0, 'Money was deducted but the plan is not active.', '<b>Do not pay again.</b> It switches on once confirmed. Email <b>billing@senseible.earth</b> with your payment reference.'] },
+];
+function stepAt(t) { for (let i = STEPS.length - 1; i >= 0; i--) if (t >= STEPS[i].at) return i; return -1; }
+let builtStep = -2;
+function buildStep(i) {
+  const s = STEPS[i]; $('stepk').textContent = s.k; $('title').textContent = s.title;
+  $('lines').innerHTML = s.lines.map(([, html, kind], j) => kind === 'plans'
+    ? `<div class="ln" data-j="${j}"><span class="n">${String(j + 1).padStart(2, '0')}</span><span>${html}<div class="plans" style="margin-top:16px">
+        <span class="h">Snapshot</span><span class="h">Essential</span><span class="h pro">Pro</span><span class="h">Scale</span>
+        <span class="v">10 <small style="font-size:18px;font-weight:400">free</small></span><span class="v">100</span><span class="v pro">1,000</span><span class="v" style="font-size:24px;font-weight:500">Custom</span></div></span></div>`
+    : `<div class="ln ${kind || ''}" data-j="${j}"><span class="n">${String(j + 1).padStart(2, '0')}</span><span>${html}</span></div>`).join('');
+  if (s.err) { $('errMsg').textContent = s.err[2]; $('errFix').innerHTML = s.err[3]; }
+}
+
+// ---------- phone screens ----------
+const SCREENS = ['home', 'auth', 'dash', 'prof', 'sub', 'price'];
+// [time it arrives, screen]
+const NAV = [[0, 'home'], [5.45, 'auth'], [33.3, 'dash'], [35.2, 'prof'], [41.35, 'sub'], [42.75, 'price'], [55.6, 'dash'], [63.3, 'sub']];
+function screenAt(t) { let cur = NAV[0], prev = null; for (const n of NAV) if (t >= n[0]) { prev = cur; cur = n; } return { cur, prev }; }
+
+// taps: [time, element id, (optional) dx, dy]
+const TAPS = [[5.05, 'hSignin'], [6.3, 'tCreate'], [19.9, 'bizLink'], [30.0, 'cBox'], [30.8, 'bCreate'], [34.0, 'av1'], [34.85, 'miProf'], [38.3, 'bSave'],
+  [40.6, 'av1'], [41.1, 'miSub'], [42.45, 'bUpgrade'], [44.0, 'ptP'], [48.6, 'bStart'], [51.4, 'pmUpi'], [62.3, 'av1'], [63.0, 'miSub']];
+function offsetIn(el, root) { let x = 0, y = 0; while (el && el !== root) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return { x, y }; }
+
+function render(t) {
+  // ---- route
+  const st = stepAt(t);
+  const railIn = p(t, .8, 1.6, E.io);
+  $('railPath').style.strokeDashoffset = 0;
+  $('railPath').style.clipPath = `inset(0 ${100 - railIn * 100}% 0 0)`;
+  STOPS.forEach((_, i) => { const el = $('st' + i); el.style.opacity = p(t, .9 + i * .18, .5);
+    el.className = 'stop' + (i === st ? ' on' : i < st || t > 76.4 ? ' done' : '');
+    el.querySelector('.tk').style.opacity = (i < st || t > 76.4) ? 1 : 0; });
+  $('rail').style.opacity = 1 - p(t, 77.0, .6);
+
+  // ---- intro / outro
+  const iOut = p(t, 4.7, .5, E.io);
+  $('intro').style.visibility = t < 5.3 ? 'visible' : 'hidden';
+  [['iBig', .2], ['iSub', 1.0], ['lg1', 1.9], ['lg2', 2.5]].forEach(([id, s]) => { const k = p(t, s, .7, E.o5); $(id).style.opacity = k * (1 - iOut); $(id).style.transform = `translateY(${(1 - k) * 30 - iOut * 20}px)`; });
+  $('outro').style.visibility = t > 76.6 ? 'visible' : 'hidden';
+  [['oBig', 76.8], ['oSub', 77.6], ['oMark', 78.6]].forEach(([id, s]) => { const k = p(t, s, .8, E.o5); $(id).style.opacity = k; $(id).style.transform = `translateY(${(1 - k) * 30}px)`; });
+
+  // ---- teaching column
+  $('col').style.visibility = st >= 0 && t < 76.6 ? 'visible' : 'hidden';
+  if (st >= 0 && st !== builtStep) { buildStep(st); builtStep = st; }
+  if (st >= 0) {
+    const S = STEPS[st], sin = p(t, S.at, .6, E.o5), sout = p(t, S.out - .45, .45, E.io);
+    $('stepk').style.opacity = sin * (1 - sout);
+    $('title').style.opacity = sin * (1 - sout); $('title').style.transform = `translateY(${(1 - sin) * 40 - sout * 20}px)`;
+    $('lines').querySelectorAll('.ln').forEach((el, j) => { const k = p(t, S.lines[j][0], .55, E.o5); el.style.opacity = k * (1 - sout); el.style.transform = `translateX(${(1 - k) * -30}px)`; });
+    const err = $('err');
+    if (S.err) { const [a, b] = S.err; const k = p(t, a, .45, E.back), o = 1 - p(t, b - .35, .35);
+      err.style.visibility = t >= a && t < b ? 'visible' : 'hidden'; err.style.opacity = clamp(k * 2) * o;
+      err.style.transform = `rotate(${lerp(-4, -1.2, clamp(k))}deg) scale(${lerp(.86, 1, k)})`;
+      err.style.top = ($('lines').offsetTop + $('lines').offsetHeight + 48) + 'px';
+    } else err.style.visibility = 'hidden';
+  }
+
+  // ---- phone in 3D
+  const ph = $('phone');
+  const pin = p(t, .5, 1.4, E.o5), pout = p(t, 76.4, .9, E.io);
+  const swing = STEPS.reduce((acc, s) => acc + Math.sin(clamp((t - s.at + .1) / .9) * Math.PI) * 9, 0);
+  const sway = Math.sin(t * .45) * 2.5;
+  ph.style.transform = `translateY(${(1 - pin) * 900 - 34}px) rotateY(${-13 + sway + swing}deg) rotateX(${3 + Math.cos(t * .37) * 1.2}deg) rotateZ(${lerp(6, 0, pin)}deg) scale(1.08)`;
+  ph.style.opacity = 1 - pout;
+  ph.style.left = lerp(1181, 1181 + 60, pout) + 'px';
+
+  // screens slide in from the right
+  const { cur, prev } = screenAt(t);
+  const k = p(t, cur[0], .45, E.io);
+  SCREENS.forEach(id => { const el = $(id); el.style.visibility = 'hidden'; el.style.zIndex = 1; });
+  if (prev && k < 1) { const e = $(prev[1]); e.style.visibility = 'visible'; e.style.transform = `translateX(${-k * 120}px)`; e.style.filter = `brightness(${1 - k * .15})`; }
+  const ce = $(cur[1]); ce.style.visibility = 'visible'; ce.style.zIndex = 2; ce.style.transform = `translateX(${(1 - k) * 390}px)`; ce.style.filter = '';
+
+  // ---- auth screen state
+  const create = t >= 6.4;
+  $('tSign').className = create ? '' : 'act'; $('tCreate').className = create ? 'act' : '';
+  typed($('fEmail'), 'you@yourbusiness.in', t, 7.2, 13, { ph: 'you@business.com' });
+  const pn = typed($('fPass'), 'Forge@2026', t, 9.8, 7, { mask: true });
+  const score = !create ? 0 : [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5][Math.min(10, pn)];
+  $('pwBlock').style.display = create ? 'block' : 'none';
+  $('meter').querySelectorAll('i').forEach((el, i) => el.className = i < score ? 'f' : '');
+  $('strength').textContent = score >= 5 ? 'Very Strong' : score >= 4 ? 'Strong' : score >= 3 ? 'Good' : score >= 1 ? 'Weak' : '';
+  document.querySelectorAll('[data-c]').forEach((el, i) => el.className = 'chk' + (i < score ? ' ok' : ''));
+  const bizOpen = t >= 20.0;
+  $('bizLink').style.display = create && !bizOpen ? 'block' : 'none';
+  $('biz').style.display = bizOpen ? 'block' : 'none';
+  $('biz').style.opacity = p(t, 20.0, .35);
+  typed($('fName'), 'Demo Forgings Pvt Ltd', t, 20.6, 15);
+  // GSTIN: typed with a slip in the last character, then corrected
+  let gst = '';
+  if (t >= 22.6) gst = '03AAKCS4821M1Z7'.slice(0, Math.min(15, Math.floor((t - 22.6) * 8)));
+  if (t >= 26.3) gst = '03AAKCS4821M1Z'; if (t >= 26.6) gst = '03AAKCS4821M1Z6';
+  const gBad = t >= 24.6 && t < 26.3, gOk = t >= 26.7;
+  $('fGst').innerHTML = gst + ((t >= 22.6 && t < 27 && Math.floor(t * 2.4) % 2 === 0) ? '<span class="caret"></span>' : '');
+  $('fGst').className = 'inp mono' + (gBad ? ' bad' : gOk ? ' good' : '');
+  $('gstNote').className = 'note' + (gBad ? ' bad' : '');
+  $('gstNote').textContent = gBad ? 'Invalid. The check character does not match. Please re-check the number.' : gOk ? 'GSTIN format checked. Registry check unavailable right now, so please confirm your details below.' : '';
+  $('idp').style.display = gOk ? 'block' : 'none';
+  $('fCity').textContent = gOk ? 'Punjab' : '';
+  $('fCity').style.background = gOk ? `rgba(240,138,36,${.22 * (1 - p(t, 27.4, 1.2))})` : '';
+  typed($('fPhone'), '+91 98765 43210', t, 27.8, 14);
+  $('cBox').className = 'box' + (t >= 30.05 ? ' on' : '');
+  $('g2').className = score >= 3 ? 'f' : ''; $('g3').className = t >= 30.05 ? 'f' : '';
+  // scroll the form as the steps move down it
+  const sc = lerp(0, 300, p(t, 19.1, .7, E.io)) + lerp(0, 330, p(t, 27.5, .6, E.io)) + lerp(0, 150, p(t, 29.3, .5, E.io));
+  $('authIn').style.transform = `translateY(${-sc}px)`;
+
+  // ---- profile
+  typed($('pSector'), 'Manufacturing', t, 35.9, 14, { ph: 'Manufacturing, IT, Retail...' });
+  typed($('pSize'), '10-50 employees', t, 37.0, 14, { ph: '10-50 employees' });
+  $('profIn').style.transform = `translateY(${-lerp(0, 330, p(t, 35.4, .6, E.io))}px)`;
+
+  // ---- dashboard + subscription after payment
+  const pro = t >= 55.3;
+  $('dBadge').textContent = pro ? 'Pro' : 'Snapshot'; $('dBadge').className = 'badge' + (pro ? ' p' : '');
+  $('dUp').style.display = pro ? 'none' : 'inline';
+  $('miBadge').textContent = pro ? 'Pro' : 'Upgrade'; $('miBadge').className = 'badge' + (pro ? ' p' : '');
+  $('planName').innerHTML = pro ? 'Biocog Pro <span class="badge g">Active</span>' : 'Biocog Snapshot';
+  $('planPrice').textContent = pro ? 'Paid ₹59,988 per year' : 'Free forever';
+  $('bUpgrade').textContent = pro ? 'Change Plan →' : 'Upgrade Plan →';
+  $('planCard').style.background = pro ? '#eef5f0' : '#f6f6f6';
+  $('uInv').textContent = pro ? '0 / 1000' : '0 / 10'; $('uRep').textContent = pro ? '0 / 50' : '0 / 1'; $('uAi').textContent = pro ? 'Unlimited' : 'Trial';
+  $('payHist').style.display = pro ? 'block' : 'none';
+  $('subIn').style.transform = `translateY(${-(lerp(0, 120, p(t, 65.6, .7, E.io)) + lerp(0, 210, p(t, 68.6, .7, E.io)))}px)`;
+  // highlight the lines step 5 talks about
+  $('planCard').style.boxShadow = between(t, 63.6, 66) ? '0 0 0 4px rgba(240,138,36,.55)' : '';
+
+  // ---- pricing: Pro tab
+  const isPro = t >= 44.1;
+  $('ptE').className = isPro ? '' : 'act'; $('ptP').className = isPro ? 'act' : '';
+  $('pcName').textContent = isPro ? 'Biocog Pro' : 'Biocog Essential';
+  $('pcTag').textContent = isPro ? 'Most Popular · Billed Yearly' : 'Best Value · Billed Yearly';
+  $('pcWas').textContent = isPro ? '₹9,999' : '₹1,999'; $('pcOff').textContent = isPro ? '50% OFF' : '75% OFF';
+  $('pcPrice').textContent = isPro ? '₹4,999' : '₹499';
+  $('pcKeep').textContent = isPro ? 'You keep ₹60,000 a year (50%)' : 'You keep ₹18,000 a year (75%)';
+  $('bStart').textContent = isPro ? 'Start Earning' : 'Unlock Savings';
+  $('pcBilled').textContent = isPro ? 'Billed ₹59,988/yr. Save ₹60,000.' : 'Billed ₹5,988/yr. Save ₹18,000.';
+  $('pcFeat').innerHTML = (isPro ? ['Monetization Signal', 'Government Incentives Finder', 'Automated ESG Reports (PDF)', '10 Team Members']
+    : ['Full GST→Carbon Automation', 'Verified Climate Score', 'Green Loan Signal', '3 Team Members']).map(f => `<div class="feat">${f}</div>`).join('');
+
+  // ---- overlays: menu, checkout, toasts
+  const menuOpen = between(t, 34.15, 35.15) || between(t, 40.75, 41.3) || between(t, 62.45, 63.25);
+  const mo = menuOpen ? 1 : 0;
+  $('menu').style.visibility = mo ? 'visible' : 'hidden';
+  $('menu').style.transform = `scale(${mo ? 1 : .95})`;
+  $('miProf').className = 'mi' + (between(t, 34.7, 35.2) ? ' hl' : ''); $('miSub').className = 'mi' + (between(t, 40.95, 41.3) || between(t, 62.85, 63.3) ? ' hl' : '');
+  const shIn = p(t, 48.85, .5, E.o5), shOut = p(t, 52.6, .4, E.io);
+  const sheetOn = t > 48.85 && shOut < 1;
+  $('dim').style.opacity = sheetOn ? Math.min(shIn, 1 - shOut) : 0; $('dim').style.visibility = sheetOn ? 'visible' : 'hidden';
+  $('sheet').style.visibility = sheetOn ? 'visible' : 'hidden';
+  $('sheet').style.transform = `translateY(${(1 - shIn) * 620 + shOut * 620}px)`;
+  $('pmUpi').className = 'pm' + (t >= 51.45 ? ' hl' : '');
+  const TOASTS = [[31.0, 33.1, 'Account created! Redirecting...', 'var(--green2)'], [38.45, 40.1, 'Profile updated successfully', 'var(--green2)'],
+    [53.0, 55.1, 'Confirming your payment...', '#bbb'], [55.2, 58.8, 'Payment confirmed. Welcome to Biocog Pro', 'var(--green2)']];
+  const to = TOASTS.find(([a, b]) => between(t, a, b));
+  $('toast').style.visibility = to ? 'visible' : 'hidden';
+  if (to) { $('toastTxt').textContent = to[2]; $('toastDot').style.background = to[3]; const k2 = p(t, to[0], .35, E.o5), k3 = p(t, to[1] - .3, .3);
+    $('toast').style.transform = `translateY(${(1 - k2) * 90 + k3 * 90}px)`; $('toast').style.opacity = 1 - k3; }
+
+  // ---- tap ring: drawn round the target just before the tap, then pressed
+  const tap = TAPS.find(([at]) => t >= at - .55 && t < at + .45);
+  const ring = $('tap'), dot = $('tapDot');
+  if (tap) {
+    const el = $(tap[1]); const scr = el.closest('.scr, .menu, .sheet') || $('vp');
+    const o = offsetIn(el, $('vp'));
+    let tr = { x: 0, y: 0 }; const inner = el.closest('.in'); if (inner) { const m = new DOMMatrix(getComputedStyle(inner).transform); tr = { x: m.m41, y: m.m42 }; }
+    const scrEl = el.closest('.scr'); if (scrEl) { const m = new DOMMatrix(getComputedStyle(scrEl).transform); tr.x += m.m41; tr.y += m.m42; }
+    const cx = o.x + el.offsetWidth / 2 + tr.x, cy = o.y + el.offsetHeight / 2 + tr.y;
+    const pre = p(t, tap[0] - .55, .4, E.o5), press = p(t, tap[0], .45, E.o3);
+    ring.style.visibility = dot.style.visibility = 'visible';
+    ring.style.transform = `translate(${cx}px, ${cy}px) scale(${lerp(1.6, 1, pre) + press * .9})`; ring.style.opacity = pre * (1 - press);
+    dot.style.transform = `translate(${cx}px, ${cy}px) scale(${t >= tap[0] ? lerp(1, 2.2, press) : 0})`; dot.style.opacity = t >= tap[0] ? .55 * (1 - press) : 0;
+  } else ring.style.visibility = dot.style.visibility = 'hidden';
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
