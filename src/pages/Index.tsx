@@ -671,8 +671,10 @@ const Index = () => {
       setState("idle");
 
       if (response.error) {
-        console.error("Voice AI error:", response.error);
-        toast.error("Voice processing unavailable. Please upload a document.");
+        // Daily question limit or our AI being unavailable: say which, never a made-up answer.
+        let reason = "";
+        try { const body = await (response.error as { context?: Response }).context?.json(); reason = body?.message || ""; } catch { /* no body */ }
+        toast.error(reason || "Voice answers are unavailable right now. You can still upload a bill.");
         return;
       }
 

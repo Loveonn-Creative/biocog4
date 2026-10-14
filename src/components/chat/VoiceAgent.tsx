@@ -63,8 +63,10 @@ export const VoiceAgent = ({ onTranscript, disabled, className }: VoiceAgentProp
       const { data, error } = await supabase.functions.invoke('elevenlabs-conversation-token');
       
       if (error || !data?.token) {
-        console.error('Token error:', error);
-        throw new Error(data?.error || 'Failed to initialize voice AI');
+        // The server says why (plan, monthly voice limit, not configured); show that.
+        let reason = '';
+        try { const body = await (error as { context?: Response })?.context?.json(); reason = body?.message || ''; } catch { /* no body */ }
+        throw new Error(reason || 'Voice is unavailable right now. Try again in a few minutes.');
       }
 
       // Start the conversation with WebRTC

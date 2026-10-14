@@ -7,34 +7,42 @@ import { ChatInput } from '@/components/chat/ChatInput';
 import { LanguageSelector } from '@/components/chat/LanguageSelector';
 import { VoiceAgent } from '@/components/chat/VoiceAgent';
 import { useVoiceOutput, useVoiceInput } from '@/components/VoiceOutput';
-import { PremiumBadge, FeatureLock } from '@/components/PremiumBadge';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
-import { useEmissions } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { Language, detectBrowserLanguage, getLanguageByCode } from '@/lib/languages';
 import { matchVoiceCommand, getCommandSuggestions } from '@/lib/voiceCommands';
-import { Brain, Sparkles, Zap, Volume2, VolumeX, Info, Mic, Navigation as NavIcon, Phone, PhoneOff } from 'lucide-react';
+import { Brain, Sparkles, Volume2, VolumeX, Info, Mic, Navigation as NavIcon, Phone, PhoneOff, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import {
+  chatBits, chatFailure, CHAT_TIMEOUT_MS, EMPTY_FAILURE, NETWORK_FAILURE, readSse, TIMEOUT_FAILURE,
+  type Audience, type ChatFailure,
+} from '@/lib/intelligenceClient';
 
-const TRIAL_DAYS = 15;
+// What the server says this visitor may see (intelligence-chat action "brief").
+interface Brief {
+  audience: Audience;
+  access: { ownRecords: boolean; savingsInsights: boolean; projection: boolean; voice: boolean };
+  limits: { messagesPerDay: number; resetsAt: string; voice: { minutesPerMonth: number; sessionsPerMonth: number; sessionMaxMinutes: number } | null };
+  usage: { messagesUsed: number; voiceSessionsUsed: number };
+  brief: null | {
+    basis: 'verified' | 'unverified' | 'none';
+    verified: { records: number; kg: number };
+    unverified: { records: number; kg: number };
+    hotspots: Array<{ category: string; scope: number; kg: number; share: number; records: number; recordIds: string[] }>;
+    complete: boolean;
+    calculation: string;
+  };
+  insights: null | Array<{ finding: string; label: string; next: { label: string; path: string } }>;
+  projection: null | { next12Kg: number; lowKg: number; highKg: number; method: string };
+  sample: null | { label: string; calculation: string };
+}
 
-const getTrialStatus = () => {
-  const firstUse = localStorage.getItem('biocog_intelligence_first_use');
-  if (!firstUse) {
-    localStorage.setItem('biocog_intelligence_first_use', Date.now().toString());
-    return { inTrial: true, daysLeft: TRIAL_DAYS };
-  }
-  
-  const daysSinceFirst = (Date.now() - parseInt(firstUse)) / (1000 * 60 * 60 * 24);
-  const daysLeft = Math.max(0, TRIAL_DAYS - Math.floor(daysSinceFirst));
-  
-  return { inTrial: daysLeft > 0, daysLeft };
-};
+const kgText = (kg: number) => kg >= 1000 ? `${(kg / 1000).toLocaleString('en-IN', { maximumFractionDigits: 2 })} t CO2e` : `${kg.toLocaleString('en-IN', { maximumFractionDigits: 1 })} kg CO2e`;
 
 const WELCOME_MESSAGES: Record<string, string> = {
   en: "I'm your AI ESG Head. Ask me about reducing emissions, saving costs, or building your net-zero strategy.",
@@ -48,10 +56,12 @@ const WELCOME_MESSAGES: Record<string, string> = {
 
 const Intelligence = () => {
   const navigate = useNavigate();
-  const { tier, isPremium, canAccessFeature, isAuthenticated } = usePremiumStatus();
+  const { isAuthenticated } = usePremiumStatus();
   const { user } = useSession();
-  const { emissions } = useEmissions();
-  const trialStatus = getTrialStatus();
+  const [brief, setBrief] = useState<Brief | null>(null);
+  const [failure, setFailure] = useState<(ChatFailure & { question: string }) | null>(null);
+  const [usedToday, setUsedToday] = useState<number | null>(null);
+  const sendingRef = useRef(false);
 
   // Language state
   const [language, setLanguage] = useState<Language>(() => {
@@ -129,13 +139,29 @@ const Intelligence = () => {
     onError: handleVoiceError,
   });
 
-  // The assistant's figures are assembled server-side from the signed-in
-  // user's own records. The client only passes non-authoritative hints.
-  const context = {
-    isAuthenticated,
-    userTier: tier,
-  };
 
+
+  const authHeaders = async () => {
+    const { data: sessionData } = await supabase.auth.getSession();
+    const key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+    return { 'Content-Type': 'application/json', apikey: key, Authorization: `Bearer ${sessionData?.session?.access_token || key}` };
+  };
+  const endpoint = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/intelligence-chat`;
+
+  // Plan, limits and the figures behind answers, decided on the server.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(endpoint, { method: 'POST', headers: await authHeaders(), body: JSON.stringify({ action: 'brief' }) });
+        if (!res.ok) return; // an older deployment has no brief; chat still works
+        const data = await res.json();
+        if (!cancelled && data?.audience) { setBrief(data); setUsedToday(data.usage?.messagesUsed ?? null); }
+      } catch { /* offline: the first question will say so */ }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);
 
   // Save language preference
   useEffect(() => {
@@ -160,119 +186,76 @@ const Intelligence = () => {
     }]);
   }, []);
 
-  const handleSend = async (content: string) => {
-    const userMessage: Message = {
-      id: `user-${Date.now()}`,
-      role: 'user',
-      content,
-      timestamp: new Date(),
-    };
-    
-    setMessages(prev => [...prev, userMessage]);
+  const handleSend = async (content: string, opts: { retry?: boolean } = {}) => {
+    // One question at a time: a double tap or Enter while answering does nothing.
+    if (sendingRef.current || !content.trim()) return;
+    sendingRef.current = true;
+    setFailure(null);
+    const userMessage: Message = { id: `user-${Date.now()}`, role: 'user', content, timestamp: new Date() };
+    // On retry the question is already on screen.
+    const history = opts.retry ? messages : [...messages, userMessage];
+    if (!opts.retry) setMessages(history);
     setIsLoading(true);
 
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
+    const assistantId = `assistant-${Date.now()}`;
+    let assistantContent = '';
     try {
-      // Send the user's own access token when signed in so the function can
-      // ground its answer in that user's records (falls back to the
-      // publishable key for guests).
-      const { data: sessionData } = await supabase.auth.getSession();
-      const accessToken =
-        sessionData?.session?.access_token || import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/intelligence-chat`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-            'Authorization': `Bearer ${accessToken}`,
-          },
-          body: JSON.stringify({
-            messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-            context,
-            language: language.name,
-          }),
-        }
-      );
-
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: await authHeaders(),
+        signal: controller.signal,
+        body: JSON.stringify({
+          messages: history.filter((m) => m.id !== 'welcome').map((m) => ({ role: m.role, content: m.content })),
+          language: language.name,
+        }),
+      });
+      const used = Number(response.headers.get('x-intelligence-used'));
+      if (Number.isFinite(used) && used > 0) setUsedToday(used);
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to get response');
+        const body = await response.json().catch(() => null);
+        setFailure({ ...chatFailure(response.status, body, brief?.audience ?? (isAuthenticated ? null : 'guest')), question: content });
+        return;
       }
-
-      // Stream the response
       const reader = response.body?.getReader();
-      if (!reader) throw new Error('No response stream');
+      if (!reader) { setFailure({ ...EMPTY_FAILURE, question: content }); return; }
 
       const decoder = new TextDecoder();
-      let assistantContent = '';
-      const assistantId = `assistant-${Date.now()}`;
-
-      // Add empty assistant message
-      setMessages(prev => [...prev, {
-        id: assistantId,
-        role: 'assistant',
-        content: '',
-        timestamp: new Date(),
-      }]);
-
       let buffer = '';
-      
+      let started = false;
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-
+        window.clearTimeout(timer);
         buffer += decoder.decode(value, { stream: true });
-        
-        // Process line by line
-        let newlineIndex: number;
-        while ((newlineIndex = buffer.indexOf('\n')) !== -1) {
-          let line = buffer.slice(0, newlineIndex);
-          buffer = buffer.slice(newlineIndex + 1);
-
-          if (line.endsWith('\r')) line = line.slice(0, -1);
-          if (line.startsWith(':') || line.trim() === '') continue;
-          if (!line.startsWith('data: ')) continue;
-
-          const jsonStr = line.slice(6).trim();
-          if (jsonStr === '[DONE]') continue;
-
-          try {
-            const parsed = JSON.parse(jsonStr);
-            const delta = parsed.choices?.[0]?.delta?.content;
-            if (delta) {
-              assistantContent += delta;
-              setMessages(prev => prev.map(m => 
-                m.id === assistantId 
-                  ? { ...m, content: assistantContent }
-                  : m
-              ));
-            }
-          } catch {
-            // Incomplete JSON, keep in buffer
-            buffer = line + '\n' + buffer;
-            break;
+        const read = readSse(buffer);
+        buffer = read.rest;
+        if (read.deltas.length) {
+          assistantContent += read.deltas.join('');
+          if (!started) {
+            started = true;
+            setMessages((prev) => [...prev, { id: assistantId, role: 'assistant', content: assistantContent, timestamp: new Date() }]);
+          } else {
+            setMessages((prev) => prev.map((m) => (m.id === assistantId ? { ...m, content: assistantContent } : m)));
           }
         }
+        if (read.done) break;
       }
+      if (!assistantContent.trim()) { setFailure({ ...EMPTY_FAILURE, question: content }); return; }
 
-      // Auto-speak if enabled
-      if (autoSpeak && assistantContent) {
+      if (autoSpeak) {
         setSpeakingMessageId(assistantId);
         speak(assistantContent);
       }
-
     } catch (error) {
-      console.error('Chat error:', error);
-      setMessages(prev => [...prev, {
-        id: `error-${Date.now()}`,
-        role: 'assistant',
-        content: "I apologize, but I'm having trouble responding right now. Please try again in a moment.",
-        timestamp: new Date(),
-      }]);
+      const aborted = error instanceof DOMException && error.name === 'AbortError';
+      // Keep any part of the answer that arrived; say it was cut short.
+      setFailure({ ...(aborted ? TIMEOUT_FAILURE : NETWORK_FAILURE), question: content, ...(assistantContent ? { message: 'The answer was cut short. Try again for the full reply.' } : {}) });
     } finally {
+      window.clearTimeout(timer);
+      sendingRef.current = false;
       setIsLoading(false);
     }
   };
@@ -287,30 +270,8 @@ const Intelligence = () => {
     setSpeakingMessageId(null);
   };
 
-  // Check access
-  const hasAccess = canAccessFeature('aiEsgHead') || trialStatus.inTrial;
-  const hasMultilingual = canAccessFeature('biocogSuperintelligence') || trialStatus.inTrial;
-
-  if (!hasAccess) {
-    return (
-      <div className="min-h-screen bg-background flex flex-col">
-        <Navigation />
-        <main className="flex-1 flex items-center justify-center p-4">
-          <div className="text-center max-w-md">
-            <Brain className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-            <h1 className="text-2xl font-bold mb-2">AI ESG Head</h1>
-            <p className="text-muted-foreground mb-6">
-              Get personalized sustainability guidance from your AI-powered ESG advisor.
-            </p>
-            <PremiumBadge tier="pro" showUpgrade />
-            <Button asChild className="mt-4">
-              <Link to="/pricing">Upgrade to Pro</Link>
-            </Button>
-          </div>
-        </main>
-      </div>
-    );
-  }
+  const left = brief && usedToday !== null ? Math.max(0, brief.limits.messagesPerDay - usedToday) : null;
+  const canVoice = !!brief?.access.voice;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -321,36 +282,35 @@ const Intelligence = () => {
 
       {/* Header */}
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-20">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="hidden sm:flex w-10 h-10 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 items-center justify-center">
               <Brain className="w-5 h-5 text-emerald-600" />
             </div>
-            <div>
-              <h1 className="text-lg font-semibold flex items-center gap-2">
-                Biocog Intelligence
-                <Badge variant="outline" className="text-xs font-normal">
+            <div className="min-w-0">
+              <h1 className="whitespace-nowrap text-base sm:text-lg font-semibold flex items-center gap-2">
+                <span className="truncate">Biocog Intelligence</span>
+                <Badge variant="outline" className="hidden sm:inline-flex text-xs font-normal">
                   <Sparkles className="w-3 h-3 mr-1" />
                   AI ESG Head
                 </Badge>
               </h1>
-              <p className="text-xs text-muted-foreground">
+              <p className="hidden sm:block text-xs text-muted-foreground">
                 Your net-zero strategy advisor
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            {/* Trial badge */}
-            {trialStatus.inTrial && !isPremium && (
-              <Badge variant="secondary" className="text-xs">
-                <Zap className="w-3 h-3 mr-1" />
-                {trialStatus.daysLeft} days left
+          <div className="flex shrink-0 items-center gap-0.5 sm:gap-2">
+            {/* Questions left today (server count) */}
+            {left !== null && (
+              <Badge variant="secondary" className="text-xs tabular-nums" title={`Resets at midnight India time`}>
+                {left}<span className="hidden sm:inline">&nbsp;left today</span><span className="sr-only sm:hidden"> questions left today</span>
               </Badge>
             )}
 
             {/* Voice Agent Toggle - Premium Feature */}
-            {isPremium && (
+            {canVoice && (
               <Button
                 variant={showVoiceAgent ? "default" : "ghost"}
                 size="sm"
@@ -398,13 +358,11 @@ const Intelligence = () => {
             </Button>
 
             {/* Language selector */}
-            <FeatureLock isLocked={!hasMultilingual} tier="pro">
-              <LanguageSelector
-                selectedLanguage={language}
-                onLanguageChange={setLanguage}
-                compact
-              />
-            </FeatureLock>
+            <LanguageSelector
+              selectedLanguage={language}
+              onLanguageChange={setLanguage}
+              compact
+            />
           </div>
         </div>
       </header>
@@ -418,7 +376,7 @@ const Intelligence = () => {
         >
           <div ref={chatContainerRef} className="space-y-6">
             {/* Voice Agent Panel - Premium Feature */}
-            {showVoiceAgent && isPremium && (
+            {showVoiceAgent && canVoice && (
               <div className="mb-6">
                 <VoiceAgent 
                   onTranscript={(text, role) => {
@@ -433,43 +391,17 @@ const Intelligence = () => {
               </div>
             )}
 
-            {/* Fallback message for non-premium users */}
-            {!isPremium && !trialStatus.inTrial && (
-              <div className="p-4 rounded-lg bg-gradient-to-r from-primary/10 to-emerald-500/10 border border-primary/20 text-sm">
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-foreground mb-1">Unlock Real-time Voice AI</p>
-                    <p className="text-muted-foreground text-xs">
-                      For real-time voice conversations with your AI ESG Head, upload more invoices to unlock personalized guidance. 
-                      Your AI learns from your reports to provide founder-level precision.
-                    </p>
-                    <Link to="/pricing" className="text-primary text-xs hover:underline mt-2 inline-block">
-                      Upgrade to Pro →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-
             {/* Context info - different for guest vs authenticated */}
             {!isAuthenticated && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-sm">
                 <Info className="w-4 h-4 text-amber-600 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  <Link to="/auth" className="text-primary hover:underline">Sign in</Link> to save your conversation and get personalized insights based on your emission data.
+                  <Link to="/auth?next=/intelligence" className="text-primary hover:underline">Sign in</Link> for more questions a day. Answers from your own records are part of Pro and Scale.
                 </span>
               </div>
             )}
 
-            {isAuthenticated && (emissions?.length ?? 0) > 0 && (
-              <div className="flex items-center gap-2 p-3 rounded-lg bg-secondary/50 text-sm">
-                <Info className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Answers are grounded in your own records: {emissions?.length || 0} emission sources, plus your documents, verifications and reports.
-                </span>
-              </div>
-            )}
+            {brief && <FiguresBehindAnswers brief={brief} />}
 
 
             {/* Voice command hint */}
@@ -482,18 +414,37 @@ const Intelligence = () => {
               </div>
             )}
 
-            {messages.map((message) => (
-              <div key={message.id} className="group">
-                <ChatMessage
-                  message={message}
-                  onSpeak={(text) => handleSpeak(text, message.id)}
-                  isSpeaking={isSpeaking && speakingMessageId === message.id}
-                  onStopSpeaking={handleStopSpeaking}
-                />
-              </div>
-            ))}
+            {messages.map((message) => {
+              const bits = message.role === 'assistant' ? chatBits(message.content) : [message.content];
+              return bits.map((bit, i) => (
+                <div key={`${message.id}-${i}`} className="group">
+                  <ChatMessage
+                    message={{ ...message, id: `${message.id}-${i}`, content: bit }}
+                    onSpeak={(text) => handleSpeak(i === 0 ? message.content : text, message.id)}
+                    isSpeaking={isSpeaking && speakingMessageId === message.id}
+                    onStopSpeaking={handleStopSpeaking}
+                  />
+                </div>
+              ));
+            })}
 
             {isLoading && <TypingIndicator />}
+
+            {/* What went wrong and what to do; never shown as an answer. */}
+            {failure && !isLoading && (
+              <div role="alert" className="flex flex-wrap items-center gap-3 rounded-lg border border-border bg-secondary/40 p-3 text-sm">
+                <Info className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <span className="min-w-0 flex-1 text-muted-foreground">{failure.message}</span>
+                {failure.retry && (
+                  <Button size="sm" variant="outline" className="h-8" onClick={() => void handleSend(failure.question, { retry: true })}>
+                    <RotateCcw className="w-3.5 h-3.5 mr-1.5" />Try again
+                  </Button>
+                )}
+                {failure.action && (
+                  <Button size="sm" asChild className="h-8"><Link to={failure.action.to}>{failure.action.label}</Link></Button>
+                )}
+              </div>
+            )}
           </div>
         </ScrollArea>
 
@@ -533,5 +484,55 @@ const Intelligence = () => {
     </div>
   );
 };
+
+/** The figures an answer may use, with where each comes from. Collapsed by default. */
+function FiguresBehindAnswers({ brief }: { brief: Brief }) {
+  const b = brief.brief;
+  if (brief.access.ownRecords && b && b.basis !== 'none') {
+    const label = b.basis === 'verified' ? 'Verified' : 'Estimate';
+    return (
+      <details className="rounded-lg bg-secondary/50 p-3 text-sm">
+        <summary className="cursor-pointer text-muted-foreground">
+          Figures behind answers: {kgText(b.basis === 'verified' ? b.verified.kg : b.unverified.kg)} ({label.toLowerCase()}, {b.basis === 'verified' ? b.verified.records : b.unverified.records} records)
+        </summary>
+        <ul className="mt-2 space-y-1.5 text-muted-foreground">
+          {b.hotspots.slice(0, 3).map((h) => (
+            <li key={`${h.scope}-${h.category}`}>
+              <span className="capitalize text-foreground">{h.category.replace(/[_-]+/g, ' ')}</span>: {kgText(h.kg)}, {Math.round(h.share * 100)}% · {label} · records {h.recordIds.slice(0, 3).map((id) => id.slice(0, 8)).join(', ')}{h.records > 3 ? '…' : ''}
+            </li>
+          ))}
+          {brief.insights?.map((i) => (
+            <li key={i.finding}>{i.finding} <Link to={i.next.path} className="text-primary hover:underline">{i.next.label}</Link></li>
+          ))}
+          {brief.projection && (
+            <li>Projection, next 12 months: {kgText(brief.projection.next12Kg)} (range {kgText(brief.projection.lowKg)} to {kgText(brief.projection.highKg)}). {brief.projection.method}</li>
+          )}
+          <li className="text-xs">{b.calculation}{b.complete ? '' : ' Only the most recent records were read.'} <Link to="/history" className="text-primary hover:underline">See records</Link></li>
+        </ul>
+      </details>
+    );
+  }
+  if (brief.access.savingsInsights && brief.insights?.length) {
+    return (
+      <details className="rounded-lg bg-secondary/50 p-3 text-sm">
+        <summary className="cursor-pointer text-muted-foreground">Savings Insights from your records</summary>
+        <ul className="mt-2 space-y-1.5 text-muted-foreground">
+          {brief.insights.map((i) => (
+            <li key={i.finding}>{i.finding} <Link to={i.next.path} className="text-primary hover:underline">{i.next.label}</Link></li>
+          ))}
+        </ul>
+      </details>
+    );
+  }
+  if (brief.sample) {
+    return (
+      <details className="rounded-lg bg-secondary/50 p-3 text-sm">
+        <summary className="cursor-pointer text-muted-foreground">{brief.sample.label}: how an answer shows its maths</summary>
+        <p className="mt-2 text-muted-foreground">{brief.sample.calculation}</p>
+      </details>
+    );
+  }
+  return null;
+}
 
 export default Intelligence;
