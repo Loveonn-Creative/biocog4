@@ -10,6 +10,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
@@ -36,6 +37,8 @@ const grantSchema = z.object({
   useCase: z.string().min(20, "Please describe your use case (min 20 characters)").max(500),
   pitch: z.string().min(50, "Please share your pitch (min 50 characters)").max(1000),
   carbonFocus: z.string().optional(),
+  // DPDP: an active, specific agreement, not implied by submitting.
+  consent: z.boolean().refine((v) => v === true, "Please agree so we can review your application"),
 });
 
 type GrantFormData = z.infer<typeof grantSchema>;
@@ -119,6 +122,7 @@ const Grants = () => {
       useCase: "",
       pitch: "",
       carbonFocus: "",
+      consent: false,
     },
   });
 
@@ -604,6 +608,27 @@ const Grants = () => {
                     />
                   </div>
 
+                  {/* Consent (DPDP) */}
+                  <FormField
+                    control={form.control}
+                    name="consent"
+                    render={({ field }) => (
+                      <FormItem className="rounded-2xl border border-border bg-background p-4">
+                        <div className="flex items-start gap-3">
+                          <FormControl>
+                            <Checkbox id="grant-consent" checked={field.value} onCheckedChange={(v) => field.onChange(v === true)} className="mt-0.5" />
+                          </FormControl>
+                          <label htmlFor="grant-consent" className="text-sm leading-relaxed text-muted-foreground">
+                            I agree that Senseible may store and use these details only to review this application and contact me about it, as set out in the{" "}
+                            <Link to="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link> and{" "}
+                            <Link to="/legal/terms" className="text-primary hover:underline">Terms</Link>. I can withdraw consent at any time by writing to impact@senseible.earth.
+                          </label>
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
                   {/* Submit */}
                   <div>
                     <Button
@@ -621,11 +646,8 @@ const Grants = () => {
                         </>
                       )}
                     </Button>
-                    <p className="mt-3 text-center text-sm text-muted-foreground">
-                      By submitting, you agree to our{" "}
-                      <Link to="/legal/terms" className="text-primary hover:underline">Terms</Link>
-                      {" "}and{" "}
-                      <Link to="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
+                    <p className="mt-3 text-center text-xs text-muted-foreground">
+                      Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
                     </p>
                   </div>
                 </form>

@@ -68,7 +68,7 @@ export const LenderLens = ({ properties }: { properties: Property[] }) => {
                   <path d="M3 18 A15 15 0 0 1 33 18" fill="none" stroke="hsl(var(--border))" strokeWidth="4" strokeLinecap="round" />
                   <path d="M3 18 A15 15 0 0 1 30 10" fill="none" stroke="hsl(var(--primary))" strokeWidth="4" strokeLinecap="round" />
                 </svg>
-                <span className="text-sm font-semibold">B+ · 72</span>
+                <span className="text-sm font-semibold">B · 72</span>
               </div>
             </div>
             <div className={`rounded-xl bg-background px-3 py-2.5 transition-all duration-300 ${on("peers")}`}>
@@ -81,7 +81,7 @@ export const LenderLens = ({ properties }: { properties: Property[] }) => {
           </div>
 
           <div className={`rounded-xl bg-foreground text-background px-3 py-2.5 transition-all duration-300 ${on("decision")}`}>
-            <p className="text-[10px] uppercase tracking-wider text-background/60">What the lender receives</p>
+            <p className="text-[10px] uppercase tracking-wider text-background/60">What the borrower can share</p>
             <p className="text-sm mt-0.5">Instrument fit: green working-capital loan · Evidence depth: 12 documents · Invoices stay with the borrower</p>
           </div>
         </div>

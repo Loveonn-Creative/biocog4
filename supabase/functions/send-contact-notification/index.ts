@@ -113,7 +113,8 @@ const handler = async (req: Request): Promise<Response> => {
     const message = escapeHtml(rawBody.message);
     const newsletter = rawBody.newsletter;
     
-    console.log("Processing contact from:", name, "Category:", category);
+    // No personal details in logs (DPDP): the category is enough to trace a request.
+    console.log("Processing contact request, category:", category);
 
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
@@ -192,13 +193,12 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error("Resend API error:", response.status, errorData);
+      console.error("Resend API error:", response.status);
       throw new Error(`Email sending failed: ${response.status}`);
     }
 
     const emailResponse = await response.json();
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Contact email sent");
 
     return new Response(
       JSON.stringify({ success: true, messageId: emailResponse.id }),
@@ -208,7 +208,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in send-contact-notification:", error);
+    console.error("Error in send-contact-notification:", error?.message ?? "unknown");
     return new Response(
       JSON.stringify({ error: error.message }),
       {
