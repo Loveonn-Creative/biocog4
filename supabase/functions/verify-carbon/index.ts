@@ -341,6 +341,10 @@ serve(async (req) => {
         if (!emission.document_id || !doc) fields.push('source invoice');
         if (!doc?.document_hash) fields.push('document fingerprint');
         if (!Number.isInteger(emission.scope) || emission.scope < 1 || emission.scope > 3) fields.push('scope');
+        // Scope 3 is verified line by line in the supplier evidence trail
+        // (approved, sourced factors; reconciled, deduplicated invoices), not
+        // here. Repair of an earlier result still runs: it creates nothing new.
+        if (emission.scope === 3 && !repairOnly) fields.push('Scope 3 is verified in the supplier evidence trail');
         if (!emission.category || emission.category === 'other') fields.push('activity classification');
         if (!Number.isFinite(emission.activity_data) || emission.activity_data <= 0) fields.push('activity quantity');
         if (!emission.activity_unit?.trim()) fields.push('activity unit');

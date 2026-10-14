@@ -70,11 +70,12 @@ export const FUEL_FACTORS: Record<FuelType, Factor> = {
 export const INDIA_GRID_FACTOR_KG_PER_KWH = 0.710;
 export const INDIA_GRID_FACTOR_SOURCE = 'CEA CO2 Baseline Database, India weighted average (edition to be confirmed)';
 
-export const OTHER_FACTORS = {
-  // Unchanged v1.0 values.
-  ROAD_HEAVY_PER_TKM: 0.18,
-  LANDFILL_ORGANIC_PER_KG: 1.90,
-};
+// Scope 3 has no factors here. The former road-freight (0.18 kg/t-km) and
+// landfill-organic (1.90 kg/kg) values had no publication, mode, material or
+// geography, so they applied one number to air freight, sea freight and scrap
+// metal alike. Scope 3 lines are calculated only in the supplier evidence
+// trail (scope3.ts), from approved, sourced, material- and geography-specific
+// factors; a freight or waste line here is flagged as having no verified factor.
 
 // Avoided-emission factors for green purchases (positive numbers = kgCO2e
 // avoided per unit). Reported separately; never netted against emissions.
@@ -395,18 +396,6 @@ export function calculateEmissions(
   if (scope === 2 && productCategory === 'ELECTRICITY') {
     const r = applyFactor(quantity, unit, { value: INDIA_GRID_FACTOR_KG_PER_KWH, unit: 'kWh', source: INDIA_GRID_FACTOR_SOURCE });
     if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:INDIA_GRID_AVG` };
-    return null;
-  }
-
-  if (scope === 3 && productCategory === 'TRANSPORT') {
-    const r = applyFactor(quantity, unit, { value: OTHER_FACTORS.ROAD_HEAVY_PER_TKM, unit: 'ton-km', source: 'v1.0' });
-    if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:ROAD_HEAVY` };
-    return null;
-  }
-
-  if (scope === 3 && productCategory === 'WASTE') {
-    const r = applyFactor(quantity, unit, { value: OTHER_FACTORS.LANDFILL_ORGANIC_PER_KG, unit: 'kg', source: 'v1.0' });
-    if (r) return { kind: 'emission', quantity: r.quantity, unit: r.unit, emissionFactor: r.perUnit, co2Kg: r.kg, factorSource: `${SRC}:LANDFILL_ORGANIC` };
     return null;
   }
 

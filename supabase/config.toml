@@ -47,3 +47,5 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.reduction-signal]
     verify_jwt = false
+  [functions.scope3-trail]
+    verify_jwt = false
