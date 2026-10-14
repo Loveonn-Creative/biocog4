@@ -95,7 +95,7 @@ describe('source contracts', () => {
     const block = v.slice(start, end);
     expect(start).toBeGreaterThan(0);
     expect(block).not.toMatch(/\.insert\(|\.update\(|\.rpc\(|ai\.gateway/);
-    expect(block).toContain("evidenceGaps(e, false)");
+    expect(block).toContain("previewVerification(rows)");
     expect(block).toContain('Preview only. Nothing was recorded or verified.');
   });
 });

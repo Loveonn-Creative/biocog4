@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { AlertTriangle, ArrowRight, CheckCircle, Info, Loader2, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { supabase } from '@/integrations/supabase/client';
-import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import { listGuestResults, rowsForPreview, type GuestResult } from '@/lib/guestResults';
+import { previewVerification } from '../../../supabase/functions/_shared/verifyGate';
 
 interface PreviewResult {
   outcome: 'would_verify' | 'needs_review' | 'would_reject' | 'needs_inputs';
@@ -14,7 +13,6 @@ interface PreviewResult {
   riskFactors: string[];
   missingInputs: Array<{ emissionId: string; fields: string[] }>;
   totalCO2Kg: number;
-  note: string;
 }
 
 const OUTCOME: Record<PreviewResult['outcome'], { title: string; tone: string }> = {
@@ -40,16 +38,16 @@ export function GuestVerifyPreview() {
   const rows = results ? rowsForPreview(results) : [];
   const label = (id: string) => rows.find((r) => r.id === id)?.category ?? 'record';
 
-  const run = async () => {
+  // The same evidence gate and scoring as a stored verification
+  // (_shared/verifyGate.ts), run here on the records in this browser. Nothing
+  // is sent or recorded, so it works offline and needs no account.
+  const run = () => {
     if (running || rows.length === 0) return;
     setRunning(true); setError(null); setPreview(null);
     try {
-      const { data, error: err } = await supabase.functions.invoke('verify-carbon', { body: { preview: { records: rows.slice(0, 100) } } });
-      if (err) { setError(await getFunctionErrorMessage(err, 'The check could not run. Try again.')); return; }
-      if (!data?.preview || !data?.data) { setError('The check returned no result. Try again.'); return; }
-      setPreview(data.data as PreviewResult);
+      setPreview(previewVerification(rows.slice(0, 100)) as PreviewResult);
     } catch {
-      setError('No connection. Check your internet and try again.');
+      setError('The check could not run on these records. Upload the bill again and retry.');
     } finally {
       setRunning(false);
     }
