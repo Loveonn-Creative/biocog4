@@ -38,3 +38,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /principles | [Loveonn-Creative/biocog4#87](https://github.com/Loveonn-Creative/biocog4/pull/87) | `2d09dc0` |
 | /enterprise (ledger hero, traceability threads) | [Loveonn-Creative/biocog4#96](https://github.com/Loveonn-Creative/biocog4/pull/96) | `8ce3eed` |
 | /reduction-signal (fuel switch and efficiency) | "Fuel switch and efficiency signal page" | `07bfa17` |
+| /grants (application as a letter) | "Grants: application as a fill-in letter" | `75519be` |

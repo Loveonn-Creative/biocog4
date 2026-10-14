@@ -701,3 +701,33 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .gc-line-ready .gc-dot { background: hsl(var(--primary)); border-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
 .gc-line-carbon .gc-dot { border-color: hsl(var(--primary)); border-style: dashed; }
 @media (prefers-reduced-motion: reduce) { .gc-plank { transition: none; } .gc-card { animation: none; } }
+
+/* Grants application as a letter: blanks in sentences, ink draws under each as it is filled (src/pages/Grants.tsx). */
+.lt-ink { height: 3px; border-radius: 999px; background: hsl(var(--border)); overflow: hidden; }
+.lt-ink > span { display: block; height: 100%; background: hsl(var(--primary)); transform-origin: left; transition: transform 500ms cubic-bezier(.6,0,.2,1); }
+.lt-paper { border: 1px solid hsl(var(--border)); border-radius: 24px; background: hsl(var(--card)); padding: 22px 18px; font-size: 17px; overflow-wrap: anywhere; }
+@media (min-width: 768px) { .lt-paper { padding: 40px 44px; font-size: 19px; } }
+.lt-greeting { font-weight: 600; margin-bottom: 14px; }
+.lt-line { line-height: 2.25; margin-bottom: 14px; }
+.lt-blank { font: inherit; color: hsl(var(--foreground)); max-width: 100%; min-width: 0; padding: 0 3px 1px; border: 0; border-bottom: 1.5px dashed hsl(var(--muted-foreground) / .55); border-radius: 0;
+  background: linear-gradient(hsl(var(--primary)), hsl(var(--primary))) left bottom / 0% 2px no-repeat; outline: none; vertical-align: baseline;
+  transition: background-size 450ms cubic-bezier(.6,0,.2,1), border-color 200ms, background-color 200ms; }
+.lt-blank::placeholder { color: hsl(var(--muted-foreground) / .75); }
+.lt-blank:focus, .lt-filled { background-size: 100% 2px; border-bottom-color: transparent; }
+.lt-blank:focus { background-color: hsl(var(--primary) / .07); }
+.lt-blank[aria-invalid="true"] { border-bottom: 1.5px solid hsl(var(--destructive)); }
+.lt-pick { position: relative; display: inline-block; max-width: 100%; }
+.lt-pick::after { content: "▾"; position: absolute; right: 4px; bottom: .35em; font-size: .7em; color: hsl(var(--muted-foreground)); pointer-events: none; }
+.lt-select { appearance: none; -webkit-appearance: none; padding-right: 1.2em; cursor: pointer; }
+.lt-select:not(.lt-filled) { color: hsl(var(--muted-foreground) / .9); }
+.lt-select option { color: hsl(var(--foreground)); background: hsl(var(--background)); }
+.lt-para { margin-bottom: 18px; }
+.lt-lead { display: block; line-height: 1.5; margin: 6px 0 8px; }
+.lt-area { --lt-rule: hsl(var(--border)); display: block; width: 100%; font: inherit; line-height: 1.9em; padding: 0 3px; border: 0; outline: none; resize: vertical; color: hsl(var(--foreground));
+  background: repeating-linear-gradient(transparent 0 calc(1.9em - 1px), var(--lt-rule) calc(1.9em - 1px) 1.9em) local; transition: background-color 200ms; }
+.lt-area:focus { --lt-rule: hsl(var(--primary) / .45); background-color: hsl(var(--primary) / .04); }
+.lt-area[aria-invalid="true"] { --lt-rule: hsl(var(--destructive) / .6); }
+.lt-sign { margin-top: 26px; padding-top: 20px; border-top: 1px dashed hsl(var(--border)); }
+.lt-signoff { margin-top: 18px; }
+.lt-signature { display: block; min-height: 1.6em; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.35em; color: hsl(var(--primary)); }
+@media (prefers-reduced-motion: reduce) { .lt-ink > span, .lt-blank, .lt-area { transition: none; } }

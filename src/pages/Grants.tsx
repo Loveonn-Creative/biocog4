@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm, useFormContext } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { ArrowRight } from "lucide-react";
@@ -8,11 +8,7 @@ import { MinimalNav } from "@/components/MinimalNav";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Reveal } from "@/components/platform/Reveal";
@@ -97,6 +93,97 @@ const Counter = ({ value, min, max }: { value: string; min: number; max: number 
     <span className={`text-xs tabular-nums ${ok ? "text-muted-foreground" : "text-muted-foreground/70"}`} aria-live="polite">
       {ok ? `${n}/${max}` : `${min - n} more characters`}
     </span>
+  );
+};
+
+const teamSizes = ["1-5", "6-20", "21-50", "51-200", "200+"].map((v) => ({ value: v, label: v }));
+
+type FieldName = keyof GrantFormData;
+type Option = { value: string; label: string };
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/** What each blank needs, in the letter's own words. */
+const NEEDS: Partial<Record<FieldName, string>> = {
+  applicantName: "your name", email: "an email we can reply to", companyName: "your company's name",
+  website: "a website like yourcompany.com, or leave it blank", country: "your country", companyStage: "your stage", sector: "your sector",
+};
+
+/** The blanks that must be filled before the letter can be sent; they drive the ink line. */
+const REQUIRED: Array<[FieldName, (v: GrantFormData) => boolean]> = [
+  ["applicantName", (v) => v.applicantName.trim().length >= 2],
+  ["email", (v) => EMAIL_RE.test(v.email.trim())],
+  ["companyName", (v) => v.companyName.trim().length >= 2],
+  ["country", (v) => !!v.country],
+  ["companyStage", (v) => !!v.companyStage],
+  ["sector", (v) => !!v.sector],
+  ["useCase", (v) => v.useCase.trim().length >= 20],
+  ["pitch", (v) => v.pitch.trim().length >= 50],
+  ["consent", (v) => v.consent],
+];
+
+/** Accept "yourcompany.com" as well as a full URL. */
+const withScheme = (v: unknown) => {
+  const t = String(v ?? "").trim();
+  return t && !/^https?:\/\//i.test(t) ? `https://${t}` : t;
+};
+
+/** A blank inside a sentence that grows with what is typed. */
+const Blank = ({ name, label, placeholder, type = "text", autoComplete, inputMode }: {
+  name: FieldName; label: string; placeholder: string; type?: string; autoComplete?: string;
+  inputMode?: "text" | "email" | "tel" | "url";
+}) => {
+  const { register, watch, formState: { errors } } = useFormContext<GrantFormData>();
+  const value = String(watch(name) ?? "");
+  const width = Math.min(Math.max(value.length, placeholder.length) + 2, 40);
+  return (
+    <input {...register(name, name === "website" ? { setValueAs: withScheme } : undefined)} type={type} aria-label={label}
+      placeholder={placeholder} autoComplete={autoComplete} inputMode={inputMode} aria-invalid={!!errors[name]}
+      className={`lt-blank ${value.trim() ? "lt-filled" : ""}`} style={{ width: `${width}ch` }} />
+  );
+};
+
+/** A choice inside a sentence: a native select, so phones show their own picker. */
+const Pick = ({ name, label, placeholder, options }: { name: FieldName; label: string; placeholder: string; options: Option[] }) => {
+  const { register, watch, formState: { errors } } = useFormContext<GrantFormData>();
+  const value = String(watch(name) ?? "");
+  const shown = options.find((o) => o.value === value)?.label ?? placeholder;
+  return (
+    <span className="lt-pick">
+      <select {...register(name)} aria-label={label} aria-invalid={!!errors[name]}
+        className={`lt-blank lt-select ${value ? "lt-filled" : ""}`} style={{ width: `${Math.min(shown.length + 3, 34)}ch` }}>
+        <option value="" disabled>{placeholder}</option>
+        {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+      </select>
+    </span>
+  );
+};
+
+/** One gentle line under a sentence naming what is still missing in it. */
+const Missing = ({ names }: { names: FieldName[] }) => {
+  const { formState: { errors } } = useFormContext<GrantFormData>();
+  const needs = names.filter((n) => errors[n]).map((n) => NEEDS[n]);
+  if (!needs.length) return null;
+  return <p className="-mt-2 mb-4 text-sm text-destructive" role="alert">Still needed: {needs.join(", ")}.</p>;
+};
+
+/** A paragraph the applicant writes, on ruled lines, with a live count. */
+const Para = ({ name, lead, placeholder, rows, min, max }: {
+  name: "useCase" | "pitch" | "carbonFocus"; lead: string; placeholder: string; rows: number; min?: number; max?: number;
+}) => {
+  const { register, watch, formState: { errors } } = useFormContext<GrantFormData>();
+  const value = watch(name) ?? "";
+  const err = errors[name];
+  const id = `lt-${name}`;
+  return (
+    <div className="lt-para">
+      <div className="flex items-baseline justify-between gap-3">
+        <label htmlFor={id} className="lt-lead">{lead}</label>
+        {min && max ? <Counter value={value} min={min} max={max} /> : null}
+      </div>
+      <textarea id={id} {...register(name)} rows={rows} maxLength={max} placeholder={placeholder}
+        aria-invalid={!!err} aria-describedby={err ? `${id}-err` : undefined} className={`lt-area ${value.trim() ? "lt-filled" : ""}`} />
+      {err && <p id={`${id}-err`} className="text-sm text-destructive" role="alert">{err.message}</p>}
+    </div>
   );
 };
 
@@ -237,17 +324,11 @@ const Grants = () => {
     );
   }
 
-  const useCase = form.watch("useCase") ?? "";
-  const pitch = form.watch("pitch") ?? "";
-
-  const sectionTitle = (n: string, label: string, hint: string) => (
-    <div className="flex items-baseline justify-between gap-4 border-b border-border pb-4 mb-5">
-      <h3 className="flex items-baseline gap-3 text-lg font-semibold">
-        <span className="font-mono text-xs text-primary">{n}</span>{label}
-      </h3>
-      <span className="text-xs text-muted-foreground">{hint}</span>
-    </div>
-  );
+  const values = form.watch();
+  const filled = REQUIRED.filter(([, ok]) => ok(values)).length;
+  const consent = values.consent;
+  const applicantName = values.applicantName ?? "";
+  const errors = form.formState.errors;
 
   return (
     <>
@@ -353,306 +434,62 @@ const Grants = () => {
           </div>
         </section>
 
-        {/* 4. The application: three short parts, with feedback as you type */}
+        {/* 4. The application as a short letter: blanks in plain sentences, the ink settles as each one is filled */}
         <section id="application-form" className="scroll-mt-20 py-16 md:py-24 bg-secondary/30 border-t border-border">
-          <div className="container max-w-5xl mx-auto px-5">
-            <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-              <div className="lg:sticky lg:top-24 lg:self-start">
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Apply Now</h2>
-                <p className="mt-3 text-muted-foreground">
-                  Takes less than 5 minutes. No login required.
-                </p>
-                <ol className="mt-8 hidden space-y-3 text-sm lg:block">
-                  {["Your Details", "Company Details", "Your Application"].map((l, i) => (
-                    <li key={l} className="flex items-center gap-3 text-muted-foreground">
-                      <span className="font-mono text-xs text-primary">0{i + 1}</span>{l}
-                    </li>
-                  ))}
-                </ol>
-                <p className="mt-8 hidden text-sm text-muted-foreground lg:block">Our team will review your application and respond within 5 business days.</p>
-              </div>
-
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
-                  {/* Personal Info */}
-                  <div className="rounded-3xl bg-background border border-border p-5 md:p-7">
-                    {sectionTitle("01", "Your Details", "3 fields")}
-                    <div className="grid md:grid-cols-2 gap-4 mb-4">
-                      <FormField
-                        control={form.control}
-                        name="applicantName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Full Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Your name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email *</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="you@company.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone (Optional)</FormLabel>
-                          <FormControl>
-                            <Input placeholder="+91 98765 43210" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  {/* Company Info */}
-                  <div className="rounded-3xl bg-background border border-border p-5 md:p-7 space-y-4">
-                    {sectionTitle("02", "Company Details", "6 fields")}
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="companyName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Your company" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="website"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Website</FormLabel>
-                            <FormControl>
-                              <Input placeholder="https://yourcompany.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="country"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Country *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select country" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {countries.map((country) => (
-                                  <SelectItem key={country} value={country}>{country}</SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="companyStage"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company Stage *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select stage" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {companyStages.map((stage) => (
-                                  <SelectItem key={stage.value} value={stage.value}>{stage.label}</SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="sector"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Sector *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select sector" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {sectors.map((sector) => (
-                                  <SelectItem key={sector} value={sector}>{sector}</SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="employeeCount"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Team Size</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select size" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="1-5">1-5</SelectItem>
-                                <SelectItem value="6-20">6-20</SelectItem>
-                                <SelectItem value="21-50">21-50</SelectItem>
-                                <SelectItem value="51-200">51-200</SelectItem>
-                                <SelectItem value="200+">200+</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Application Details */}
-                  <div className="rounded-3xl bg-background border border-border p-5 md:p-7 space-y-5">
-                    {sectionTitle("03", "Your Application", "3 answers")}
-                    <FormField
-                      control={form.control}
-                      name="useCase"
-                      render={({ field }) => (
-                        <FormItem>
-                          <div className="flex items-baseline justify-between gap-3"><FormLabel>How will you use Senseible? *</FormLabel><Counter value={useCase} min={20} max={500} /></div>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Describe your primary use case for the platform..."
-                              className="min-h-[110px] resize-y" maxLength={500}
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="pitch"
-                      render={({ field }) => (
-                        <FormItem>
-                          <div className="flex items-baseline justify-between gap-3"><FormLabel>Your 60-Second Pitch *</FormLabel><Counter value={pitch} min={50} max={1000} /></div>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="What problem are you solving, and why now? What makes your approach unique?"
-                              className="min-h-[140px] resize-y" maxLength={1000}
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="carbonFocus"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Carbon / Climate Focus (Optional)</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Any specific carbon reduction, measurement, or finance goals?"
-                              className="min-h-[90px] resize-y"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  {/* Consent (DPDP) */}
-                  <FormField
-                    control={form.control}
-                    name="consent"
-                    render={({ field }) => (
-                      <FormItem className="rounded-2xl border border-border bg-background p-4">
-                        <div className="flex items-start gap-3">
-                          <FormControl>
-                            <Checkbox id="grant-consent" checked={field.value} onCheckedChange={(v) => field.onChange(v === true)} className="mt-0.5" />
-                          </FormControl>
-                          <label htmlFor="grant-consent" className="text-sm leading-relaxed text-muted-foreground">
-                            I agree that Senseible may store and use these details only to review this application and contact me about it, as set out in the{" "}
-                            <Link to="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link> and{" "}
-                            <Link to="/legal/terms" className="text-primary hover:underline">Terms</Link>. I can withdraw consent at any time by writing to impact@senseible.earth.
-                          </label>
-                        </div>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  {/* Submit */}
-                  <div>
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="h-14 w-full rounded-full text-base"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <span className="animate-pulse">Submitting...</span>
-                      ) : (
-                        <>
-                          Submit Application
-                          <ArrowRight className="ml-2 w-4 h-4" />
-                        </>
-                      )}
-                    </Button>
-                    <p className="mt-3 text-center text-xs text-muted-foreground">
-                      Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
-                    </p>
-                  </div>
-                </form>
-              </Form>
+          <div className="container max-w-3xl mx-auto px-5">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Write to us</h2>
+            <p className="mt-3 text-muted-foreground">Fill the blanks. Less than 5 minutes, no login.</p>
+            <div className="lt-ink mt-6" role="progressbar" aria-label="Letter completed" aria-valuemin={0} aria-valuemax={REQUIRED.length} aria-valuenow={filled}>
+              <span style={{ transform: `scaleX(${filled / REQUIRED.length})` }} />
             </div>
+
+            <FormProvider {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} noValidate className="lt-paper mt-4">
+              <p className="lt-greeting">Dear Senseible team,</p>
+
+              <p className="lt-line">
+                I'm <Blank name="applicantName" label="Your full name" placeholder="your name" autoComplete="name" />, and you can reach me at{" "}
+                <Blank name="email" label="Email" placeholder="you@company.com" type="email" autoComplete="email" inputMode="email" />{" "}
+                or on <Blank name="phone" label="Phone (optional)" placeholder="phone, optional" type="tel" autoComplete="tel" inputMode="tel" />.
+              </p>
+              <Missing names={["applicantName", "email"]} />
+
+              <p className="lt-line">
+                I run <Blank name="companyName" label="Company name" placeholder="company name" autoComplete="organization" />{" "}
+                (online at <Blank name="website" label="Website (optional)" placeholder="website, optional" autoComplete="url" inputMode="url" />) from{" "}
+                <Pick name="country" label="Country" placeholder="country" options={countries.map((c) => ({ value: c, label: c }))} />.
+                {" "}We're at the <Pick name="companyStage" label="Company stage" placeholder="stage" options={companyStages} /> stage, working in{" "}
+                <Pick name="sector" label="Sector" placeholder="sector" options={sectors.map((s) => ({ value: s, label: s }))} />, with a team of{" "}
+                <Pick name="employeeCount" label="Team size (optional)" placeholder="size" options={teamSizes} />.
+              </p>
+              <Missing names={["companyName", "website", "country", "companyStage", "sector"]} />
+
+              <Para name="useCase" lead="Here's how we'd use Senseible:" placeholder="The invoices, reports or buyer requests you want to handle first" min={20} max={500} rows={3} />
+              <Para name="pitch" lead="And our 60-second pitch:" placeholder="The problem, why now, and what makes your approach different" min={50} max={1000} rows={5} />
+              <Para name="carbonFocus" lead="On carbon specifically (optional):" placeholder="Any reduction, measurement or finance goal" rows={2} />
+
+              <div className="lt-sign">
+                <label htmlFor="grant-consent" className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+                  <Checkbox id="grant-consent" checked={consent} aria-invalid={!!errors.consent}
+                    onCheckedChange={(v) => form.setValue("consent", v === true, { shouldValidate: true, shouldTouch: true })} className="mt-0.5" />
+                  <span>
+                    I agree that Senseible may store and use these details only to review this application and contact me about it, as set out in the{" "}
+                    <Link to="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link> and{" "}
+                    <Link to="/legal/terms" className="text-primary hover:underline">Terms</Link>. I can withdraw consent at any time by writing to impact@senseible.earth.
+                  </span>
+                </label>
+                {errors.consent && <p className="mt-2 text-sm text-destructive" role="alert">{errors.consent.message}</p>}
+                <p className="lt-signoff">Warm regards,<span className="lt-signature">{applicantName.trim() || " "}</span></p>
+                <Button type="submit" size="lg" className="mt-5 h-14 w-full rounded-full text-base" disabled={isSubmitting}>
+                  {isSubmitting ? <span className="animate-pulse">Sending…</span> : <>Send application <ArrowRight className="ml-2 h-4 w-4" /></>}
+                </Button>
+                <p className="mt-3 text-center text-xs text-muted-foreground">
+                  Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
+                </p>
+              </div>
+            </form>
+            </FormProvider>
+            <p className="mt-6 text-center text-sm text-muted-foreground">Our team will review your application and respond within 5 business days.</p>
           </div>
         </section>
 
