@@ -184,11 +184,19 @@ const WASTE_ROUTES: Array<[RegExp, string]> = [
   [/\bcompost/i, 'composting'], [/\bco-?process/i, 'co_processing'],
 ];
 
+/** GLEC Framework air freight bands: short haul below 1,500 km, long haul from 1,500 km. */
+export const AIR_LONG_HAUL_KM = 1500;
+
 function freight(line: SealedLine, method: Classification['method'], basis: string): Classification {
   const fm = freightMode(line);
+  const d = line.logistics?.distanceKm ?? null;
+  // Air: the distance band from the printed distance first, then an all-distance factor.
+  const keys = !fm.mode ? []
+    : fm.mode === 'air' && d ? [`freight:air:${d >= AIR_LONG_HAUL_KM ? 'long' : 'short'}`, 'freight:air']
+    : [`freight:${fm.mode}`];
   return {
     scope: 3, category: 4, method, basis: `${basis}; ${fm.basis}`, mode: fm.mode, activity: 'freight',
-    materialKeys: fm.mode ? [`freight:${fm.mode}`] : [], review: [], missing: fm.mode ? [] : ['missing_mode'],
+    materialKeys: keys, review: [], missing: fm.mode ? [] : ['missing_mode'],
   };
 }
 function travel(line: SealedLine, method: Classification['method'], basis: string): Classification {
@@ -262,7 +270,7 @@ export interface Scope3Factor {
   version: string;
   scope3Category: number;
   materialKey: string;
-  /** 'IN' style country code, or 'SUPPLIER:<GSTIN>' for a supplier's own figure. */
+  /** 'IN' style country code, 'SUPPLIER:<GSTIN>' for a supplier's own figure, or 'GLOBAL' (air and sea freight only). */
   geography: string;
   unit: string;
   kgPerUnit: number;
@@ -274,22 +282,34 @@ export interface Scope3Factor {
   validTo: string | null;
 }
 
-type Resolution = { factor: Scope3Factor; tier: 'supplier' | 'country' } | { factor: null; reason: 'no_factor' | 'factor_ambiguous' | 'supplier_identity' };
+type Resolution = { factor: Scope3Factor; tier: 'supplier' | 'country' | 'global' } | { factor: null; reason: 'no_factor' | 'factor_ambiguous' | 'supplier_identity' };
+
+/** Air and sea freight are international by nature, so a GLOBAL default may follow the supplier and country tiers. Nothing else falls back to GLOBAL. */
+export const allowsGlobal = (materialKey: string) => /^freight:(air|sea)(:|$)/.test(materialKey);
 
 /** The supplier's own factor first, then the supplier's country; same material, category and date only. */
 export function resolveFactor(c: Classification, doc: SealedDocument, factors: Scope3Factor[]): Resolution {
   if (!isValidGstin(doc.supplierGstin)) return { factor: null, reason: 'supplier_identity' };
   const date = doc.date;
   const valid = (f: Scope3Factor) => !date || (f.validFrom <= date && (!f.validTo || date <= f.validTo));
+  const pick = (key: string, geo: string): Resolution | null => {
+    const hits = factors.filter((f) => f.scope3Category === c.category && f.materialKey === key && f.geography === geo && valid(f));
+    if (!hits.length) return null;
+    if (new Set(hits.map((f) => f.factorKey)).size > 1) return { factor: null, reason: 'factor_ambiguous' };
+    const latest = hits.sort((a, b) => (a.validFrom < b.validFrom ? 1 : a.validFrom > b.validFrom ? -1 : 0))[0];
+    return { factor: latest, tier: geo === 'GLOBAL' ? 'global' : geo === 'IN' ? 'country' : 'supplier' };
+  };
+  // The supplier's own figure, then its country, for every material key; a
+  // global default only after both, and only for air and sea freight.
   for (const key of c.materialKeys) {
-    for (const [tier, geo] of [['supplier', `SUPPLIER:${doc.supplierGstin}`], ['country', 'IN']] as const) {
-      const hits = factors.filter((f) => f.scope3Category === c.category && f.materialKey === key && f.geography === geo && valid(f));
-      if (!hits.length) continue;
-      const keys = new Set(hits.map((f) => f.factorKey));
-      if (keys.size > 1) return { factor: null, reason: 'factor_ambiguous' };
-      const latest = hits.sort((a, b) => (a.validFrom < b.validFrom ? 1 : a.validFrom > b.validFrom ? -1 : 0))[0];
-      return { factor: latest, tier };
+    for (const geo of [`SUPPLIER:${doc.supplierGstin}`, 'IN']) {
+      const r = pick(key, geo);
+      if (r) return r;
     }
+  }
+  for (const key of c.materialKeys.filter(allowsGlobal)) {
+    const r = pick(key, 'GLOBAL');
+    if (r) return r;
   }
   return { factor: null, reason: 'no_factor' };
 }
