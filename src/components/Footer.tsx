@@ -37,8 +37,6 @@ const footerLinks = {
   solutions: [
     { name: 'Calculators', path: '/calculators' },
     { name: 'CBAM Calculator', path: '/cbam-calculator' },
-    { name: 'CBAM Cost by Sector', path: '/cbam-cost' },
-    { name: 'Emission Factors', path: '/emission-factors' },
     { name: 'Net-Zero Engine', path: '/net-zero' },
     { name: 'Green Loans', path: '/climate-finance' },
     { name: 'Industries', path: '/industries' },
