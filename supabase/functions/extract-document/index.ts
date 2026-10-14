@@ -8,6 +8,7 @@ import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
 import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
 import { sealExtraction } from '../_shared/scope3.ts';
 import { sealAndRecord } from '../_shared/scope3Record.ts';
+import { recordBillAndRecalculate } from '../_shared/scope2Record.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import {
@@ -834,6 +835,16 @@ serve(async (req) => {
       || (Array.isArray(ocrData.lineItems) && ocrData.lineItems.some((l: { hsn_code?: unknown }) => String(l?.hsn_code ?? '').startsWith('2716')));
     const sealed = utilityBill || !['invoice', 'bill', 'receipt'].includes(String(ocrData.documentType || '').toLowerCase())
       ? null : sealExtraction(ocrData, pdfPageCount);
+    // Scope 2 engine: the bill's billing details as printed (period, units,
+    // vendor, currency, lines), before any line is rewritten. No personal data.
+    const billForScope2 = utilityBill ? {
+      vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null,
+      unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null,
+      billingPeriodStart: ocrData.billingPeriodStart ?? null, billingPeriodEnd: ocrData.billingPeriodEnd ?? null,
+      lineItems: Array.isArray(ocrData.lineItems) ? ocrData.lineItems.map((l: Record<string, unknown>) => ({
+        description: l?.description ?? null, quantity: l?.quantity ?? null, unit: l?.unit ?? null, hsn_code: l?.hsn_code ?? null, sourceText: l?.sourceText ?? null,
+      })) : [],
+    } : null;
 
     // ============= RULE-BASED CLASSIFICATION & CALCULATION =============
     // This is where all math happens - deterministic, no AI
@@ -1120,6 +1131,17 @@ serve(async (req) => {
               });
               const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
               if (rt?.waitUntil) rt.waitUntil(trail); else await trail;
+            }
+            // Scope 2 engine: record the bill's consumption and recalculate
+            // location- and market-based results. No-op until the pending
+            // migration is applied; never affects this response.
+            if (billForScope2 && isAuthenticated && userId && savedDoc?.id) {
+              const work = (async () => {
+                const { data: prof } = await supabase.from('profiles').select('location').eq('id', userId).maybeSingle();
+                await recordBillAndRecalculate(supabase, { documentId: savedDoc.id, userId, organizationId: organizationId || null, bill: billForScope2, profileLocation: (prof as { location?: string } | null)?.location ?? null });
+              })();
+              const rt = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+              if (rt?.waitUntil) rt.waitUntil(work); else await work;
             }
           }
         }

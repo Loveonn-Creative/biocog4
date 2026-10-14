@@ -49,3 +49,5 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.scope3-trail]
     verify_jwt = false
+  [functions.scope2-engine]
+    verify_jwt = false

@@ -205,3 +205,41 @@ Roll back with `rollback/20261019100000_scope3_trail.rollback.sql`. It refuses w
 Tested with `tests/run_scope3_global.sh`: replays every migration, applies the trail migration and this one, runs `tests/20261020100000_scope3_global_freight.test.sql` (7 checks: GLOBAL air bands and sea accepted, a country air band accepted; GLOBAL road, rail and materials refused; unknown bands and region names refused), proves the rollback refuses while GLOBAL factors exist, rolls back to the identical catalog, re-applies, and the trail's own 46 checks still pass on top.
 
 Roll back with `rollback/20261020100000_scope3_global_freight.rollback.sql`. It refuses while any GLOBAL or air-band factor exists.
+
+## 20261021100000_electricity_engine.sql (Scope 2: location- and market-based electricity)
+
+New tables only; nothing existing is altered and no factor or framework rows are seeded. It adds:
+
+- `electricity_factors`: a versioned grid-factor registry. Kinds are `grid_average`, `residual_mix`, `supplier_specific` and `project_combined_margin`. Each row carries its country, optional grid region, gases (CO2 or CO2e, with a GWP basis for CO2e), validity window, source, publication year and uncertainty. Rows need four-eyes approval and become immutable once approved.
+- `reporting_frameworks`: a registry of reporting frameworks. Mandatory, voluntary and customer frameworks are kept apart; each row has its jurisdiction, effective dates, Scope 2 rules and a source URL.
+- `electricity_activities`: consumption printed on a bill, one row per document line. It holds billing details only (period, units, kWh, country and how the country was known); no consumer name, address or account or meter number has a column.
+- `electricity_instruments`: certificates, PPAs and supplier contracts with their evidence document, vintage, generation market, retirement and beneficiary. A certificate (scheme plus reference) can be claimed once across the whole platform.
+- `electricity_allocations` and `electricity_calculations`: append-only ledgers with `is_current`. The database refuses three things: allocating more than an instrument's quantity or an activity's kWh, any location-based result that uses an instrument or a non-grid-average factor, and any result that uses a combined-margin factor. Every result must satisfy `kg = instrument kg + factor kWh x factor`, with instrument kWh plus factor kWh equal to the consumption.
+- `scope2_record(p)`: the only writer (service role). It runs under a per-owner lock, replaces the owner's allocations as a set, and writes a calculation only when its inputs hash changed.
+- `scope2_totals`: dual totals per reporting year.
+
+The method is in `_shared/electricity.ts`; reads and writes are in `_shared/scope2Record.ts`. The method:
+
+- Splits consumption across reporting years by days. India uses April to March; other countries use the calendar year.
+- Location-based results take the regional grid average, then the national one. A factor covering the period is preferred; otherwise the most recent earlier edition is used and flagged. A later edition or another country's factor is never used.
+- Market-based results take eligible instruments first, then a supplier-specific rate, then the residual mix. If none exists, the grid average is used and disclosed (`residual_mix_unavailable`).
+- An instrument is allocated only when it has evidence, is retired, has a confirmed beneficiary, sits in the same market and has a vintage in the reporting year.
+- kVAh, kvarh and kW are refused as energy. Net-metered and ambiguous totals are left as Needs Data.
+
+`extract-document` records a bill's consumption after upload. `scope2-engine` registers instruments and recalculates. Both do nothing until this migration is applied.
+
+Tested with `tests/run_scope2.sh`. It replays every migration, applies this one and runs `tests/20261021100000_electricity_engine.test.sql`: 39 checks, each rejection confirmed to fire for its own reason. It then proves the rollback refuses with data, rolls back to the identical catalog and re-applies.
+
+The real `extract-document` and `scope2-engine` handlers were run against this schema with test-fixture factors and passed 19 acceptance checks:
+
+- A bill across the fiscal-year boundary is split, with results for both methods.
+- The formula is recorded, and an earlier factor edition is flagged.
+- The market-based fallback is disclosed, and the combined-margin factor is never used.
+- An I-REC allocates 500 kWh and lowers market-based only.
+- The same certificate from another account is refused with 409, and an unretired one is not allocated.
+- Recalculating writes nothing when nothing changed.
+- kVAh gives Needs Data, a German account gets no India factor, and owners see only their own rows.
+
+Before results appear, two people must enter and approve factor rows from the publications: the CEA weighted average for India, with its edition confirmed, and any residual-mix or other-country rows.
+
+Roll back with `rollback/20261021100000_electricity_engine.rollback.sql`. It refuses unless run with `SET LOCAL scope2.rollback_confirm = 'drop scope2 engine';` in the same transaction.
