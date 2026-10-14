@@ -5,10 +5,11 @@ import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UN
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan } from '../_shared/planLimits.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
-import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
+import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, printedBilledKwh, isGridRenewableLine, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
 import { sealExtraction } from '../_shared/scope3.ts';
 import { sealAndRecord } from '../_shared/scope3Record.ts';
 import { recordBillAndRecalculate } from '../_shared/scope2Record.ts';
+import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import {
@@ -351,15 +352,18 @@ CRITICAL EXTRACTION RULES:
          "origin": city as printed, "destination": city as printed }
 
 2. For electricity bills specifically:
-   - Find the billed consumption: "Units Consumed", "Billed Units", "Net Units"
-     or "Consumption (kWh)". Use the billed figure printed on the bill (it
+   - Find the billed consumption: "Units Consumed", "Billed Units" or
+     "Consumption (kWh)". Use the billed figure printed on the bill (it
      already includes any multiplying factor). Do not subtract meter readings
      yourself.
+   - If the bill shows both import and export (net metering or rooftop
+     solar), use the import units, never the net units.
    - Return it at the top level as "unitsConsumedKwh" (number exactly as
-     printed) and "unitsConsumedText" (the exact printed text, e.g.
-     "Units Consumed: 342").
+     printed), "unitsConsumedUnit" (the unit printed with it: "kWh", or
+     "kVAh" if the bill is in kVAh) and "unitsConsumedText" (the exact printed
+     text, e.g. "Units Consumed: 342").
    - Also add it as a line item: description "Electricity consumed",
-     quantity = that number, unit "kWh", hsn_code "2716".
+     quantity = that number, unit as printed ("kWh" or "kVAh"), hsn_code "2716".
    - Charge lines (energy charges, fixed charges, duty) keep quantity null
      unless a kWh quantity is printed on that same line.
    - Vendor should include the power company name
@@ -522,6 +526,8 @@ serve(async (req) => {
     // downgraded to the guest path.
     let userId: string | null = null;
     let isAuthenticated = false;
+    // Country saved in Settings; decides which grid factor applies to electricity.
+    let profileLocation: string | null = null;
     let userTier = 'guest';
     let scanLimit: number | null = null; // signed-in users only
     let sourcePath: string | null = null; // stored original file (signed-in only)
@@ -558,9 +564,10 @@ serve(async (req) => {
         const supabase = authClient;
         const { data: profile } = await supabase
           .from('profiles')
-          .select('subscription_tier, subscription_expires_at')
+          .select('subscription_tier, subscription_expires_at, location')
           .eq('id', userId)
           .single();
+        profileLocation = typeof profile?.location === 'string' ? profile.location : null;
 
         // An active paid subscription row counts too, so a profile copy that
         // failed to update after payment cannot cut a paying customer's limit.
@@ -839,7 +846,7 @@ serve(async (req) => {
     // vendor, currency, lines), before any line is rewritten. No personal data.
     const billForScope2 = utilityBill ? {
       vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null,
-      unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null,
+      unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null, unitsConsumedUnit: ocrData.unitsConsumedUnit ?? null,
       billingPeriodStart: ocrData.billingPeriodStart ?? null, billingPeriodEnd: ocrData.billingPeriodEnd ?? null,
       lineItems: Array.isArray(ocrData.lineItems) ? ocrData.lineItems.map((l: Record<string, unknown>) => ({
         description: l?.description ?? null, quantity: l?.quantity ?? null, unit: l?.unit ?? null, hsn_code: l?.hsn_code ?? null, sourceText: l?.sourceText ?? null,
@@ -855,6 +862,12 @@ serve(async (req) => {
       ocrData.lineItems = prepared.lines;
       validationFlags.push(...prepared.notes);
     }
+    // Country of supply: the saved country, then the bill (INR or an Indian
+    // distribution company). With neither, India: the country Settings shows
+    // until another is chosen. The India grid factor applies only to India.
+    const supply = gridCountryFor({ vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null }, profileLocation);
+    const gridCountry = supply.country ?? 'IN';
+    let gridNoteAdded = false;
     let verifiedItems = 0;
     let unverifiableItems = 0;
     let missingEmissionFactorCount = 0;
@@ -917,6 +930,20 @@ serve(async (req) => {
         }
       }
 
+      // Grid-delivered solar or wind on an electricity bill is grid electricity:
+      // it counts in location-based Scope 2. A lower market-based figure needs
+      // certificate evidence (Scope 2 engine), not an avoided-emission claim.
+      if (isGridRenewableLine(utilityBill, classifiedItem.productCategory, classifiedItem.unit)) {
+        const grid = classifyByHSN('2716');
+        if (grid) {
+          classifiedItem.productCategory = grid.productCategory;
+          classifiedItem.industryCode = grid.industryCode;
+          classifiedItem.industryName = grid.industryName;
+          classifiedItem.scope = grid.scope;
+          classifiedItem.validationFlags!.push('Renewable electricity on a grid bill counts in location-based Scope 2; a lower market-based figure needs certificate evidence');
+        }
+      }
+
       // Step 3: Mark unverifiable if no classification
       if (!classifiedItem.productCategory) {
         classifiedItem.classificationMethod = 'UNVERIFIABLE';
@@ -933,8 +960,13 @@ serve(async (req) => {
           classifiedItem.unit,
           classifiedItem.scope,
           classifiedItem.productCategory,
-          classifiedItem.fuelType
+          classifiedItem.fuelType,
+          { gridCountry }
         );
+        if (!gridNoteAdded && classifiedItem.productCategory === 'ELECTRICITY' && supply.source === 'unknown') {
+          gridNoteAdded = true;
+          validationFlags.push('India grid factor used: no country is set in Settings');
+        }
 
         if (result) {
           // Store the quantity in the factor's unit (e.g. MWh -> kWh, t -> kg)
@@ -959,7 +991,9 @@ serve(async (req) => {
           }
         } else {
           missingEmissionFactorCount++;
-          const reason = `No verified factor for ${classifiedItem.productCategory}${classifiedItem.fuelType ? ` (${classifiedItem.fuelType})` : ''} with unit ${classifiedItem.unit}`;
+          const reason = ['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY'].includes(classifiedItem.productCategory) && gridCountry !== 'IN'
+            ? `No approved grid factor for ${gridCountry} yet; this electricity is not calculated`
+            : `No verified factor for ${classifiedItem.productCategory}${classifiedItem.fuelType ? ` (${classifiedItem.fuelType})` : ''} with unit ${classifiedItem.unit}`;
           classifiedItem.validationFlags?.push(reason);
           validationFlags.push(`${reason}: ${classifiedItem.description.substring(0, 40)}`);
         }
@@ -977,7 +1011,7 @@ serve(async (req) => {
       return classifiedItem;
     });
     // The same consumption printed on several lines is counted once.
-    consolidateElectricity(classifiedItems);
+    consolidateElectricity(classifiedItems, { billedKwh: printedBilledKwh(ocrData).kwh });
 
     // Gross emissions and avoided emissions are totalled separately and both
     // stay >= 0. Avoided emissions are never subtracted from gross.
