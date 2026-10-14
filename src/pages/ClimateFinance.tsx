@@ -10,9 +10,9 @@ const lenderMechanics = [
   { key: "hash", title: "Hash-pinned, spot-auditable", body: "Every scope total traces to the source document. The lender can spot-check any line item without ever taking custody of the borrower's invoices." },
   { key: "band", title: "Confidence bands, never false precision", body: "Each figure carries the uncertainty band that produced it. The lender sees the range, not a fabricated point estimate." },
   { key: "lock", title: "Methodology locked at disclosure time", body: "The factor source and methodology version are frozen with the output. A 2026 disclosure stays a 2026 disclosure even after factors evolve." },
-  { key: "score", title: "Climate Credibility Score (0–100)", body: "A single underwriting-ready signal aggregating verification quality, completeness, history depth, and green-benefit ratio, graded A+ to D." },
-  { key: "peers", title: "Cross-MSME peer comparison", body: "The borrower is benchmarked against verified peers in the same sector and country, not against a self-reported claim or a global average." },
-  { key: "decision", title: "Decision-grade, not raw", body: "Lenders receive instrument fit (green loan, factoring, SLL), eligibility band, and evidence depth; borrower documents stay private." },
+  { key: "score", title: "Climate Credibility Score (0–100)", body: "One evidence-quality grade a credit team reads in a minute: verification quality, completeness, history depth and green-benefit ratio, graded A+ to D." },
+  { key: "peers", title: "Comparable file to file", body: "Every borrower's record uses the same method, factors and evidence rules, so a credit team compares files like for like instead of reconciling self-reported claims." },
+  { key: "decision", title: "Credit-file ready, not raw", body: "The borrower chooses to share a summary of instrument fit (green loan, factoring, SLL), evidence depth and open data gaps. The credit decision stays with the lender; borrower documents stay private." },
 ];
 
 const useCases = [
@@ -62,10 +62,13 @@ const ClimateFinance = () => {
           <p className="text-sm text-muted-foreground mb-16 max-w-2xl">
             Senseible is not a lender, factor, or registry. It is the verification layer each of those institutions trusts when they price climate-linked risk.
           </p>
+          <p className="text-xs text-muted-foreground -mt-12 mb-16 max-w-2xl">
+            Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
+          </p>
 
           {/* 1. Lender mechanics: inspect the record the way a lender does */}
           <section className="mb-20">
-            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Why lenders can underwrite against this data</p>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">What a credit team can check in this data</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Six properties of every figure that reaches a bank</h2>
             <LenderLens properties={lenderMechanics} />
           </section>
@@ -85,7 +88,7 @@ const ClimateFinance = () => {
             <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Opportunities this unlocks for MSMEs</h2>
             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
               {[
-                { d: "loan" as const, t: "Green loans", b: "Verified baselines pre-qualify MSMEs for potentially preferential rates on working capital from banks that recognise verified sustainability data.", n: "Positioning, not a guaranteed rate." },
+                { d: "loan" as const, t: "Green loans", b: "A documented emissions baseline is the evidence banks ask for when assessing green working-capital and sustainability-linked lines.", n: "Rates and approval are the lender's decision." },
                 { d: "incentive" as const, t: "Government incentives", b: "Qualify for state and central schemes with documented emission reductions, across SIDBI/IREDA in India and equivalents wired through country config elsewhere.", n: "Multiple schemes per market." },
                 { d: "export" as const, t: "Export compliance", b: "Meet EU CBAM requirements with verified actuals before defaults apply. Position for international buyers who require carbon disclosure.", n: "Export-access protection." },
                 { d: "linked" as const, t: "Sustainability-Linked Credit", b: "Access emerging credit facilities tied to verified sustainability KPIs: early positioning for TCFD- and ISSB-aligned financing.", n: "Aligned with global standards." },

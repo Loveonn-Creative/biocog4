@@ -116,7 +116,7 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
   <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
   
   <p style="color: #9ca3af; font-size: 12px; text-align: center;">
-    Senseible by INSPYR FINNOVATION PRIVATE LIMITED<br>
+    Senseible Earth Pvt. Ltd. · operated by INSPYR FINNOVATION PRIVATE LIMITED<br>
     CIN: U74999TG2024PTC182629 | GSTIN: On File<br>
     Turning carbon data into revenue for MSMEs
   </p>
@@ -151,7 +151,7 @@ const getRenewalReminderEmail = (data: PaymentNotificationRequest) => `
   <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
   
   <p style="color: #9ca3af; font-size: 12px; text-align: center;">
-    Senseible by INSPYR FINNOVATION PRIVATE LIMITED<br>
+    Senseible Earth Pvt. Ltd. · operated by INSPYR FINNOVATION PRIVATE LIMITED<br>
     Turning carbon data into revenue for MSMEs
   </p>
 </body>

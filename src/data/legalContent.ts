@@ -36,10 +36,12 @@ By accessing the Platform (Senseible), You acknowledge that You have read, under
 **1.1 Platform Classification**
 
 For avoidance of doubt, Senseible is NOT:
-- a statutory auditor or verifier
+- a statutory auditor or accredited verifier
 - a carbon registry or exchange
-- a financial advisor, NBFC, or investment intermediary
+- a financial advisor, NBFC, lender, or investment intermediary
 - a government authority or regulator
+
+Senseible Earth Pvt. Ltd. acts as a data verifier only: it checks the consistency of the data users provide and the evidence behind it. Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
 
 All outputs are assistive, inferential, and non-binding in nature.
 

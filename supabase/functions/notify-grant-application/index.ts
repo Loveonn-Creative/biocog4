@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
@@ -17,7 +18,7 @@ function escapeHtml(str: string | undefined | null): string {
     .replace(/'/g, '&#39;');
 }
 
-async function sendEmail(to: string[], subject: string, html: string, from: string): Promise<ResendEmailResponse> {
+async function sendEmail(to: string[], subject: string, html: string, from: string): Promise<ResendEmailResponse & { ok: boolean }> {
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -26,8 +27,16 @@ async function sendEmail(to: string[], subject: string, html: string, from: stri
     },
     body: JSON.stringify({ from, to, subject, html }),
   });
-  return response.json();
+  const body = await response.json().catch(() => ({}));
+  return { ...body, ok: response.ok };
 }
+
+// Emails go out only for an application that was really submitted: a
+// grant_applications row with this email, created in the last few minutes.
+// Content comes from that stored row, not from the request, so this endpoint
+// cannot be used to send branded email to arbitrary addresses or text.
+const RECENT_MS = 15 * 60_000;
+const EMAIL_RE = /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/;
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -51,11 +60,31 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const raw: GrantApplicationRequest = await req.json();
-
-    if (!raw.applicantName || !raw.email || !raw.companyName) {
-      throw new Error("Missing required fields: applicantName, email, companyName");
+    const body: Partial<GrantApplicationRequest> = await req.json().catch(() => ({}));
+    const requested = String(body.email ?? '').trim().slice(0, 320);
+    if (!EMAIL_RE.test(requested)) {
+      return new Response(JSON.stringify({ error: "A valid email is required" }), { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } });
     }
+    const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+    const { data: row, error: rowErr } = await admin
+      .from("grant_applications")
+      .select("applicant_name, email, company_name, country, company_stage, sector, pitch, created_at")
+      .ilike("email", requested.replace(/[%_\\]/g, (c) => `\\${c}`))
+      .gte("created_at", new Date(Date.now() - RECENT_MS).toISOString())
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (rowErr) {
+      console.error("Grant application lookup failed:", rowErr.code ?? 'unknown');
+      return new Response(JSON.stringify({ error: "Failed to process application" }), { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+    if (!row) {
+      return new Response(JSON.stringify({ error: "No recent application found for this email" }), { status: 404, headers: { "Content-Type": "application/json", ...corsHeaders } });
+    }
+    const raw: GrantApplicationRequest = {
+      applicantName: row.applicant_name, email: row.email, companyName: row.company_name,
+      country: row.country, companyStage: row.company_stage, sector: row.sector, pitch: row.pitch,
+    };
 
     // Length limits to prevent abuse via huge payloads
     const limit = (s: string | undefined | null, n: number) => (s ?? '').toString().slice(0, n);
@@ -183,13 +212,13 @@ const handler = async (req: Request): Promise<Response> => {
       "Senseible System <system@senseible.earth>"
     );
 
+    // Delivery outcome only; provider responses are not returned to the browser.
+    if (!applicantEmailResponse.ok || !internalEmailResponse.ok) {
+      console.error("Grant notification delivery failed:", { applicant: applicantEmailResponse.ok, internal: internalEmailResponse.ok });
+    }
     return new Response(
-      JSON.stringify({
-        success: true,
-        applicantEmail: applicantEmailResponse,
-        internalEmail: internalEmailResponse,
-      }),
-      { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      JSON.stringify({ success: applicantEmailResponse.ok && internalEmailResponse.ok }),
+      { status: applicantEmailResponse.ok && internalEmailResponse.ok ? 200 : 502, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
   } catch (error: any) {
     console.error("Error in notify-grant-application:", error?.message ?? 'unknown');
