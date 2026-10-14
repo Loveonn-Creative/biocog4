@@ -1,3 +1,4 @@
+import { COMPANY_SIZES, normaliseSize, saveProfileFields } from '@/lib/profileSave';
 import { useState, useEffect } from 'react';
 import { refreshAccount } from '@/lib/queryClient';
 import { useNavigate } from 'react-router-dom';
@@ -185,9 +186,7 @@ const Profile = () => {
     setIsSaving(true);
     try {
       const consentChanged = profile.data_consent !== savedDataConsent;
-      const { error } = await supabase
-        .from('profiles')
-        .update({
+      const result = await saveProfileFields((fields) => supabase.from('profiles').update(fields).eq('id', user.id), {
           business_name: profile.business_name,
           phone: profile.phone,
           gstin: profile.gstin,
@@ -200,17 +199,16 @@ const Profile = () => {
             data_consent_at: profile.data_consent ? new Date().toISOString() : null,
             data_consent_version: profile.data_consent ? '2026-09-25' : null,
           } : {}),
-        })
-        .eq('id', user.id);
+        });
 
-      if (error) throw error;
+      if (!result.ok) throw new Error(result.error);
 
       setSavedDataConsent(profile.data_consent);
       void refreshAccount(user.id);
-      toast.success('Profile updated successfully');
+      toast.success(result.sizeSkipped ? 'Saved. Company size "Large" will save after our next update.' : 'Profile updated');
     } catch (error) {
-      console.error('Error saving profile:', error);
-      toast.error('Failed to save profile');
+      console.error('Error saving profile:', error instanceof Error ? error.message : 'unknown');
+      toast.error('Could not save your profile. Check your connection and try again.');
     } finally {
       setIsSaving(false);
     }
@@ -408,12 +406,15 @@ const Profile = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="size">Company Size</Label>
-                  <Input
+                  <select
                     id="size"
-                    value={profile.size}
+                    value={normaliseSize(profile.size) ?? ''}
                     onChange={(e) => setProfile({ ...profile, size: e.target.value })}
-                    placeholder="10-50 employees"
-                  />
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <option value="">Not set</option>
+                    {COMPANY_SIZES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
+                  </select>
                 </div>
               </div>
             </CardContent>

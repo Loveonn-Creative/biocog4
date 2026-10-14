@@ -299,3 +299,9 @@ Limits (in `supabase/functions/_shared/intelligence.ts`): questions are a monthl
 Tested with `tests/run_intelligence_usage.sh`. It replays every migration, applies this one, rolls back to the identical catalog, re-applies and runs `tests/20261024100000_intelligence_usage.test.sql` (18 checks: limits, day and month windows, guest reads counted apart, refused uses not stored, raw addresses refused, purge, no browser or anonymous access).
 
 Roll back with `rollback/20261024100000_intelligence_usage.rollback.sql` (counts only, so no confirmation step).
+
+## 20261025100000_profile_size_large.sql (company size "Large")
+
+Widens `profiles_size_check` from micro/small/medium to also allow `large`, which Settings has always offered (saving it failed). Existing rows are untouched; empty text and free text are still refused (the app now sends NULL for "Not set").
+
+Until applied, the app saves every other detail and says "Large" will save later (`src/lib/profileSave.ts`). Tested with `tests/run_profile_size.sh` (4 checks). Rollback refuses while any profile is `large`.

@@ -89,6 +89,7 @@ const Pricing = () => {
     setFocusPlan(p);
   }, []);
   const [hoverCol, setHoverCol] = useState<string | null>(null);
+  const [cmpPlan, setCmpPlan] = useState<'snapshot' | 'essential' | 'pro' | 'scale'>('pro');
   
   // Partner-specific tiers
   const partnerTiers: PartnerTier[] = [
@@ -741,7 +742,35 @@ const Pricing = () => {
         {!isPartnerContext && (
           <section className="container mx-auto px-4 pb-16">
             <h2 className="text-2xl font-bold text-center mb-8">Compare Plans</h2>
-            <div className="max-w-5xl mx-auto overflow-x-auto">
+
+            {/* Phones: one plan at a time, Pro first, so nothing is squeezed. */}
+            <div className="md:hidden mx-auto max-w-md">
+              <div role="tablist" aria-label="Compare plan" className="grid grid-cols-4 gap-1 rounded-full border border-border bg-secondary/40 p-1 text-sm">
+                {(['snapshot', 'essential', 'pro', 'scale'] as const).map((col) => (
+                  <button key={col} type="button" role="tab" aria-selected={cmpPlan === col} onClick={() => setCmpPlan(col)}
+                    className={cn("h-9 rounded-full font-medium capitalize transition-colors", cmpPlan === col ? "bg-background text-foreground shadow-sm" : "text-muted-foreground")}>
+                    {col}
+                  </button>
+                ))}
+              </div>
+              <ul className={cn("mt-4 divide-y divide-border/60 rounded-2xl border p-1", cmpPlan === 'pro' ? "border-primary/30 bg-primary/5" : "border-border")}>
+                {comparisonFeatures.map((feature) => {
+                  const v = feature[cmpPlan];
+                  return (
+                    <li key={feature.name} className="flex items-center justify-between gap-4 px-3 py-3 text-sm">
+                      <span className="min-w-0 text-foreground">{feature.name}</span>
+                      <span className="shrink-0 text-right max-w-[50%]">
+                        {typeof v === 'boolean'
+                          ? (v ? <Check className="ml-auto h-4 w-4 text-success" aria-label="Included" /> : <span className="text-muted-foreground" aria-label="Not included">-</span>)
+                          : <span className={cn(v === 'Priority' && "text-primary font-medium")}>{v}</span>}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <div className="hidden md:block max-w-5xl mx-auto overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b">
