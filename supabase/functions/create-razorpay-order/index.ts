@@ -2,20 +2,17 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { reconcileUser } from "../_shared/razorpayReconcile.ts";
 import { blocksNewOrder } from "../_shared/razorpayActivation.ts";
+import { LAUNCH_PRICES, orderPrice, REGULAR_PRICING_STARTS_AT } from "../_shared/planPricing.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Prices in paise. Yearly = listed monthly price * 12 (the discounted "yearly" headline).
-// Monthly (no discount) is roughly 4x the discounted monthly equivalent.
-// Keys are the tier values allowed by the subscriptions.tier CHECK constraint
-// ('snapshot','basic','pro','scale'). Essential is stored as 'basic'.
-const PLAN_PRICES: Record<string, { monthly: number; yearly: number; name: string }> = {
-  basic: { monthly: 199900, yearly: 598800, name: 'Biocog Essential' },   // Essential: ₹1,999/mo OR ₹5,988/yr
-  pro:   { monthly: 999900, yearly: 5998800, name: 'Biocog Pro' },        // ₹9,999/mo OR ₹59,988/yr
-};
+// Prices in paise come from ../_shared/planPricing.ts (launch prices today;
+// regular prices only once that file sets a start date). Keys are the tier
+// values allowed by the subscriptions.tier CHECK constraint; Essential is 'basic'.
+const PLAN_PRICES = LAUNCH_PRICES;
 // Scale has no list price. It is custom priced and can only be bought against an
 // admin-issued row in public.scale_price_quotes (see
 // supabase/pending-migrations/20261011160000_scale_price_quotes.sql).
@@ -85,13 +82,15 @@ serve(async (req) => {
     let planName: string;
     let quoteId: string | null = null;
     let seats: number | null = null;
+    // Active rows (any expiry), for launch-price retention. null = not read.
+    let priceHistory: { tier: string; amount: number | null; expires_at: string | null }[] | null = null;
 
     // ============= NO DOUBLE CHARGES =============
     // 1. A payment Razorpay captured earlier but that never activated (closed
     //    tab, lost callback) is activated now instead of taking a second payment.
     // 2. An account already on this plan or a higher one, with more than 30
     //    days left, is not sent to checkout again.
-    if (tier === 'scale' || PLAN_PRICES[tier]) {
+    if (tier === 'scale' || PLAN_PRICES[tier as keyof typeof PLAN_PRICES]) {
       try {
         const recovered = await reconcileUser(supabase, userId, {
           supabaseUrl: SUPABASE_URL!, serviceKey: SUPABASE_SERVICE_ROLE_KEY!, keyId: RAZORPAY_KEY_ID, keySecret: RAZORPAY_KEY_SECRET,
@@ -105,12 +104,12 @@ serve(async (req) => {
       }
       const { data: activeRows, error: activeErr } = await supabase
         .from('subscriptions')
-        .select('tier, expires_at')
+        .select('tier, amount, expires_at')
         .eq('user_id', userId)
-        .eq('status', 'active')
-        .gt('expires_at', new Date().toISOString());
+        .eq('status', 'active');
+      priceHistory = activeErr ? null : (activeRows ?? []);
       if (!activeErr) {
-        const block = blocksNewOrder(tier, activeRows ?? []);
+        const block = blocksNewOrder(tier, (activeRows ?? []).filter((r: { expires_at: string | null }) => r.expires_at && Date.parse(r.expires_at) > Date.now()));
         if (block) {
           return json({ error: `You already have this plan or a higher one until ${block.until.slice(0, 10)}. You can renew within 30 days of that date.`, alreadyActive: true }, 409);
         }
@@ -151,9 +150,16 @@ serve(async (req) => {
       planName = SCALE_PLAN_NAME;
       quoteId = quote.id;
       seats = typeof quote.seats === 'number' ? quote.seats : null;
-    } else if (PLAN_PRICES[tier]) {
-      amount = PLAN_PRICES[tier][cycle];
-      planName = PLAN_PRICES[tier].name;
+    } else if (PLAN_PRICES[tier as keyof typeof PLAN_PRICES]) {
+      // Once regular pricing is in force, a launch customer's retention must be
+      // proven from their rows; if they could not be read, do not quote at all.
+      if (priceHistory === null && REGULAR_PRICING_STARTS_AT) {
+        return json({ error: 'Could not check your current plan. Please try again in a moment.' }, 503);
+      }
+      const price = orderPrice(tier as 'basic' | 'pro', cycle, priceHistory ?? []);
+      amount = price.paise;
+      planName = price.name;
+      if (price.basis !== 'launch') console.log('Order price basis:', price.basis);
     } else {
       return json({ error: 'Invalid plan selected' }, 400);
     }

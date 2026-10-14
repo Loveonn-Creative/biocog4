@@ -2,6 +2,7 @@ import { useEmissions } from '@/hooks/useEmissions';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { GraceNotice } from '@/components/billing/GraceNotice';
 import { usePersonalization } from '@/hooks/usePersonalization';
 import { useOrganization } from '@/hooks/useOrganization';
 import { useWorkspace } from '@/hooks/useWorkspace';
@@ -264,6 +265,7 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-8">
+        <GraceNotice className="mb-4" />
         {/* Welcome Section - Personalized */}
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-8">
           <div className="space-y-1">

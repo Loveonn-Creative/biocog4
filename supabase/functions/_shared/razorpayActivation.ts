@@ -37,9 +37,15 @@ export interface RazorpayApi {
 
 export interface SubscriptionStore {
   findByOrderId(orderId: string): Promise<SubscriptionRow | null>;
+  /**
+   * The user's subscriptions with status 'active' (any expiry). Optional for
+   * older callers: without it a new period starts at payment time and the
+   * profile copy is always set to the plan just bought.
+   */
+  listActiveForUser?(userId: string): Promise<SubscriptionRow[]>;
   /** Sets the row active only if it is still pending; returns true when this call activated it. */
   activateIfPending(orderId: string, patch: { razorpay_payment_id: string; billing_cycle: 'monthly' | 'yearly'; starts_at: string; expires_at: string }): Promise<boolean>;
-  updateProfileTier(userId: string, tier: string, expiresAt: string): Promise<{ ok: boolean }>;
+  updateProfileTier(userId: string, tier: string, expiresAt: string | null): Promise<{ ok: boolean }>;
 }
 
 export type ActivationResult =
@@ -48,11 +54,42 @@ export type ActivationResult =
 
 export const normalizeCycle = (c: unknown): 'monthly' | 'yearly' => (c === 'monthly' ? 'monthly' : 'yearly');
 
+/**
+ * End of a paid period. Calendar months and years, clamped to the last day of
+ * the target month (31 January + 1 month = 28 or 29 February, not 3 March).
+ */
 export function computeExpiry(cycle: 'monthly' | 'yearly', from = new Date()): Date {
   const d = new Date(from);
-  if (cycle === 'yearly') d.setFullYear(d.getFullYear() + 1);
-  else d.setMonth(d.getMonth() + 1);
+  const day = d.getUTCDate();
+  d.setUTCDate(1);
+  if (cycle === 'yearly') d.setUTCFullYear(d.getUTCFullYear() + 1);
+  else d.setUTCMonth(d.getUTCMonth() + 1);
+  const lastDay = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
+  d.setUTCDate(Math.min(day, lastDay));
   return d;
+}
+
+const RANK_OF = (tier: string) => ({ snapshot: 0, basic: 1, essential: 1, pro: 2, scale: 3 } as Record<string, number>)[tier] ?? 0;
+
+/**
+ * When a newly paid period starts. A renewal of the same plan, or a purchase
+ * of a lower plan, starts when the paid time already held on that plan or a
+ * higher one ends, so paying early never loses days. An upgrade starts now.
+ * Rows in grace (expired) do not push the start: the new period starts at
+ * payment, and grace days are not charged.
+ */
+export function periodStart(tier: string, others: Pick<SubscriptionRow, 'tier' | 'expires_at'>[], now: Date): Date {
+  const want = RANK_OF(tier);
+  const ends = others
+    .filter(o => RANK_OF(o.tier) >= want && o.expires_at)
+    .map(o => Date.parse(o.expires_at as string))
+    .filter(t => Number.isFinite(t) && t > now.getTime());
+  return ends.length ? new Date(Math.max(...ends)) : now;
+}
+
+/** Highest plan rank paid and not yet expired among these rows (0 = none). */
+function strongestInForce(rows: Pick<SubscriptionRow, 'tier' | 'expires_at'>[], now: Date): number {
+  return rows.reduce((m, r) => (r.expires_at && Date.parse(r.expires_at) > now.getTime() ? Math.max(m, RANK_OF(r.tier)) : m), 0);
 }
 
 /** Expected charge in paise for a stored subscription row. */
@@ -109,7 +146,9 @@ export async function activateOrder(
   }
 
   const cycle = normalizeCycle(row.billing_cycle);
-  const startsAt = now();
+  const at = now();
+  const others = deps.store.listActiveForUser ? (await deps.store.listActiveForUser(row.user_id)).filter(o => o.id !== row.id) : [];
+  const startsAt = periodStart(row.tier, others, at);
   const expiresAt = computeExpiry(cycle, startsAt).toISOString();
   const activated = await deps.store.activateIfPending(input.orderId, {
     razorpay_payment_id: payment.id,
@@ -127,6 +166,12 @@ export async function activateOrder(
     return { ok: false, code: 'order_not_activatable', detail: current?.status ?? 'unknown' };
   }
 
+  // The profile copy names the plan in force now. A lower plan bought while a
+  // higher one runs starts after it, so it does not replace the profile copy;
+  // readers fall back to the subscription rows once the higher plan ends.
+  if (RANK_OF(row.tier) < strongestInForce(others, at)) {
+    return { ok: true, activated: true, tier: row.tier, cycle, expiresAt, subscriptionId: row.id, userId: row.user_id, payment, profileUpdated: true };
+  }
   const profile = await deps.store.updateProfileTier(row.user_id, row.tier, expiresAt);
   return { ok: true, activated: true, tier: row.tier, cycle, expiresAt, subscriptionId: row.id, userId: row.user_id, payment, profileUpdated: profile.ok };
 }
@@ -156,4 +201,48 @@ export function blocksNewOrder(requestedTier: string, active: { tier: string; ex
     .filter(a => a.expires_at && Date.parse(a.expires_at) > horizon && (RANK[a.tier] ?? 0) >= want)
     .sort((x, y) => Date.parse(y.expires_at!) - Date.parse(x.expires_at!))[0];
   return blocking ? { until: blocking.expires_at! } : null;
+}
+
+// ---------------------------------------------------------------------------
+// Refunds
+// ---------------------------------------------------------------------------
+export interface RevocationStore {
+  findByPaymentId(paymentId: string): Promise<SubscriptionRow | null>;
+  /** Sets status 'cancelled' only if the row is still active; returns true when this call changed it. expires_at is kept for the record. */
+  cancelIfActive(subscriptionId: string): Promise<boolean>;
+  listActiveForUser(userId: string): Promise<SubscriptionRow[]>;
+  updateProfileTier(userId: string, tier: string, expiresAt: string | null): Promise<{ ok: boolean }>;
+}
+
+export type RevocationResult =
+  | { ok: true; revoked: boolean; userId: string; subscriptionId: string; profileTier: string }
+  | { ok: false; code: 'not_fully_refunded' | 'payment_unknown' | 'subscription_missing'; detail?: string };
+
+/**
+ * A fully refunded payment ends the plan it paid for. Razorpay is asked for
+ * the payment's state (status 'refunded' means the whole amount came back; a
+ * partial refund leaves it 'captured' and changes nothing). The subscription
+ * row is marked cancelled once, keeping its payment and dates as the audit
+ * record, and the profile copy is set to whatever other paid plan is still in
+ * force, or Snapshot. Repeated or late refund events change nothing further.
+ */
+export async function revokeRefundedPayment(
+  deps: { store: RevocationStore; razorpay: Pick<RazorpayApi, 'getPayment'>; now?: () => Date },
+  paymentId: string,
+): Promise<RevocationResult> {
+  const now = (deps.now ?? (() => new Date()))();
+  const payment = await deps.razorpay.getPayment(paymentId);
+  if (!payment) return { ok: false, code: 'payment_unknown' };
+  if (payment.status !== 'refunded') return { ok: false, code: 'not_fully_refunded', detail: payment.status };
+  const row = await deps.store.findByPaymentId(paymentId);
+  if (!row) return { ok: false, code: 'subscription_missing' };
+  if (row.status !== 'active') return { ok: true, revoked: false, userId: row.user_id, subscriptionId: row.id, profileTier: '' };
+  const revoked = await deps.store.cancelIfActive(row.id);
+  if (!revoked) return { ok: true, revoked: false, userId: row.user_id, subscriptionId: row.id, profileTier: '' };
+  const remaining = (await deps.store.listActiveForUser(row.user_id))
+    .filter(r => r.id !== row.id && r.expires_at && Date.parse(r.expires_at) > now.getTime())
+    .sort((a, b) => RANK_OF(b.tier) - RANK_OF(a.tier) || Date.parse(b.expires_at as string) - Date.parse(a.expires_at as string));
+  const next = remaining[0];
+  await deps.store.updateProfileTier(row.user_id, next ? next.tier : 'snapshot', next ? next.expires_at ?? null : null);
+  return { ok: true, revoked: true, userId: row.user_id, subscriptionId: row.id, profileTier: next ? next.tier : 'snapshot' };
 }

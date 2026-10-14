@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { GraceNotice } from '@/components/billing/GraceNotice';
 import { supabase } from '@/integrations/supabase/client';
 import { Navigation } from '@/components/Navigation';
 import { CarbonParticles } from '@/components/CarbonParticles';
@@ -72,7 +73,7 @@ interface Invoice {
 const Billing = () => {
   const navigate = useNavigate();
   const { user, isLoading: sessionLoading, isAuthenticated } = useSession();
-  const { tier, isPremium } = usePremiumStatus();
+  const { tier, isPremium, expiresAt: planExpiresAt } = usePremiumStatus();
   const tierLabel = TIER_LABELS[tier] || 'Snapshot';
   
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([]);
@@ -245,6 +246,8 @@ const Billing = () => {
           </p>
         </div>
 
+        <GraceNotice className="mb-6" />
+
         {/* Current Plan */}
         <Card className="mb-6">
           <CardHeader className="pb-3">
@@ -257,9 +260,9 @@ const Billing = () => {
                   <CardTitle className="text-lg">{tierLabel} Plan</CardTitle>
                   <CardDescription>
                     {isPremium
-                      ? `${activeSub?.billing_cycle === 'yearly' ? 'Yearly' : activeSub?.billing_cycle === 'monthly' ? 'Monthly' : 'Active'} billing${
-                          activeSub?.expires_at
-                            ? ` · Renews ${new Date(activeSub.expires_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`
+                      ? `${activeSub?.billing_cycle === 'yearly' ? 'Yearly' : activeSub?.billing_cycle === 'monthly' ? 'Monthly' : 'Active'} plan${
+                          planExpiresAt
+                            ? ` · Paid until ${planExpiresAt.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`
                             : ''
                         }`
                       : 'Upgrade to unlock more features'}
@@ -347,19 +350,13 @@ const Billing = () => {
 
               <Separator className="my-4" />
 
-              {/* Auto-pay Toggle */}
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
-                  <p className="text-sm font-medium">Auto-pay</p>
-                  <p className="text-xs text-muted-foreground">
-                    Automatically renew subscription
-                  </p>
-                </div>
-                <Switch
-                  checked={autopayEnabled}
-                  onCheckedChange={toggleAutopay}
-                  disabled={paymentMethods.length === 0}
-                />
+              {/* Renewal: plans are paid per period through Razorpay Checkout.
+                  Nothing charges automatically, so no auto-pay switch is shown. */}
+              <div className="space-y-0.5">
+                <p className="text-sm font-medium">Renewal</p>
+                <p className="text-xs text-muted-foreground">
+                  Nothing is charged automatically. Renew from the Pricing page before your paid period ends; a renewal paid early starts when the current period ends, so no days are lost.
+                </p>
               </div>
             </CardContent>
           </Card>

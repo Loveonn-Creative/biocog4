@@ -2,8 +2,13 @@
 // customer's browser never returns from Checkout (closed tab, lost network,
 // UPI app switch). Configure in the Razorpay Dashboard: Settings > Webhooks,
 // URL https://<project>.supabase.co/functions/v1/razorpay-webhook, events
-// payment.captured and order.paid, and a secret stored here as
-// RAZORPAY_WEBHOOK_SECRET.
+// payment.captured, order.paid and refund.processed, and a secret stored here
+// as RAZORPAY_WEBHOOK_SECRET.
+//
+// Ordering: events can arrive late, twice or out of order. payment.failed is
+// acknowledged and changes nothing, because a later attempt on the same order
+// can still succeed. A refund that arrives before activation leaves the
+// payment 'refunded' at Razorpay, so the order never activates.
 //
 // Security: the raw body must carry a valid X-Razorpay-Signature
 // (HMAC-SHA256 with the webhook secret). Without the secret configured the
@@ -14,7 +19,7 @@
 // callback and reconciliation.
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { activateOrder } from "../_shared/razorpayActivation.ts";
+import { activateOrder, revokeRefundedPayment } from "../_shared/razorpayActivation.ts";
 import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
@@ -40,9 +45,22 @@ serve(async (req) => {
     return json({ error: 'Invalid signature' }, 400);
   }
 
-  let event: { event?: string; payload?: { payment?: { entity?: { id?: string; order_id?: string } }; order?: { entity?: { id?: string } } } };
+  let event: { event?: string; payload?: { payment?: { entity?: { id?: string; order_id?: string } }; order?: { entity?: { id?: string } }; refund?: { entity?: { payment_id?: string } } } };
   try { event = JSON.parse(raw); } catch { return json({ error: 'Bad payload' }, 400); }
   const type = event.event ?? '';
+  if (type === 'refund.processed') {
+    const refundedPayment = event.payload?.refund?.entity?.payment_id ?? event.payload?.payment?.entity?.id ?? null;
+    if (!refundedPayment) return json({ ok: true, ignored: 'no payment' });
+    try {
+      const admin = createClient(SUPABASE_URL, SERVICE_KEY);
+      const r = await revokeRefundedPayment({ store: supabaseStore(admin), razorpay: razorpayApi(KEY_ID, KEY_SECRET) }, refundedPayment);
+      console.log('Refund processed:', { payment: mask(refundedPayment), result: r.ok ? (r.revoked ? 'plan ended' : 'already ended') : r.code });
+      return json({ ok: true, revoked: r.ok ? r.revoked : false, code: r.ok ? undefined : r.code });
+    } catch (e) {
+      console.error('Refund processing error:', e instanceof Error ? e.message : 'unknown');
+      return json({ error: 'Processing failed' }, 500);
+    }
+  }
   if (!HANDLED.has(type)) return json({ ok: true, ignored: type });
 
   const paymentId = event.payload?.payment?.entity?.id ?? null;
