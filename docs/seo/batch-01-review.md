@@ -39,3 +39,11 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - indian-coal-emissions-by-gcv: grade bands and NCV/GCV rule from memory. OWNER REVIEW: the page says Senseible's single 2.42 kg/kg coal factor overstates low-grade coal by about 55%. Product-fact statement; hold or reword until the owner decides.
 - eu-rules-besides-cbam-asking-exporters-carbon-data: Omnibus I CSDDD cuts, Batteries Reg Art 7 scope, ESPR first product groups from memory.
 - methane-n2o-from-diesel-combustion: road CH4/N2O defaults (3.9 kg/TJ) from memory; states Senseible factors are CO2 only (confirmed in code).
+
+## chunks 06 and 09 (resume)
+- is-renewable-energy-loan-priority-sector: Rs 35 crore (2025 Master Directions) and Rs 10 lakh households from memory; confirm on rbi.org.in.
+- rbi-climate-risk-disclosure-for-borrowers: treats the 2024 framework and stress-test guidance as drafts; status unconfirmed.
+- state-wise-grid-emission-factor-india: single all-India CEA factor since southern grid integration (end 2013) from memory.
+- how-to-find-the-right-carbon-methodology: CDM small-scale types and limits, Verra/GS grid-renewable restrictions, ICVCM decision from memory (hedged).
+- what-cbam-clause-to-put-in-export-contract: uses CBAM calculator figures (2.1 t default, 1.52 t benchmark, 97.5% free share, EUR 82.32) and an illustrative actual of 1.90 t/t.
+- furnace-oil-to-png-switch-emissions-saving: energy back-calculated from Senseible factors and IPCC per-GJ defaults; boiler efficiencies labelled estimates.
