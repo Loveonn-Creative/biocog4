@@ -12,3 +12,11 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - green-climate-fund-for-small-businesses: NABARD, SIDBI as accredited entities and MoEFCC as NDA; confirm in the GCF directory; cites unfccc.int home page.
 - etp-wastewater-methane-emissions: MCF defaults (0, 0.3, 0.8, 0.2, 0.8) recalled from IPCC 2006 Vol 5 Table 6.8.
 - vehicle-emissions-from-fuel-spend: PPAC named in text only (no allowlisted URL).
+
+## chunk-10
+- what-if-plant-misses-ccts-target: environmental compensation stated as twice the average certificate price, via CPCB; check against the 2025 target rules gazette. Rs 500 price labelled illustrative.
+- issa-5000-vs-isae-3410-vs-iso-14064-3: ICAI SSAE 3000 named without dates; no IAASB URL on the allowlist.
+- motor-vehicle-loan-financed-emissions: PCAF data quality score mapping from memory; EV charging attribution needs checking.
+- biochar-carbon-credits-india: H/Corg stability named without threshold; Puro.earth named but verra.org cited.
+- pact-pathfinder-framework-explained: version history kept general.
+- free-grid-emission-factors-by-country: IFI dataset described as combined-margin oriented; confirm current version.
