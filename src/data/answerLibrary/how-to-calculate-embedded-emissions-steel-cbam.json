@@ -56,15 +56,32 @@
   },
   "senseible": "Senseible turns fuel invoices (coal 2.42 kg CO2 per kg, furnace oil 2.97 kg per litre, diesel 2.68 kg per litre) into documented direct emissions for each period. Process emissions, the carbon mass balance, production tonnes and precursor values come from the plant; Senseible does not read them from invoices.",
   "links": [
-    { "label": "How to calculate CBAM cost", "to": "/answers/how-to-calculate-cbam-cost" },
-    { "label": "Does CBAM count electricity for steel?", "to": "/answers/does-cbam-count-electricity-emissions-steel" },
-    { "label": "Indian coal emissions by GCV", "to": "/answers/indian-coal-emissions-by-gcv" },
-    { "label": "CBAM for steel exporters in India", "to": "/solutions/cbam-steel-india" }
+    {
+      "label": "How to calculate CBAM cost",
+      "to": "/answers/how-to-calculate-cbam-cost"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "CBAM for steel exporters in India",
+      "to": "/solutions/cbam-steel-india"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes II and IV", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj" },
-    { "label": "2006 IPCC Guidelines, Vol. 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "European Commission, CBAM definitive regime", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en" }
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Definitive-period monitoring rules are set in Commission implementing acts; recheck allowed default factors and boundaries before each declaration."

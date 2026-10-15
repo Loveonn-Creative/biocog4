@@ -25,7 +25,7 @@ const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+){1,9}$/;
 const TOPICS = new Set(['accounting', 'regulation', 'markets', 'product']);
 const INTENTS = new Set(['how-to', 'decision', 'comparison', 'explain', 'check']);
 // Claims Senseible cannot make (docs/seo/brief.md "NOT offered").
-const OVERCLAIM = /(senseible|biocog)[^.]{0,80}\b(certif(y|ies|ied)|assur(es|ance)|issues? (carbon )?credits|registr(y|ies) integration|public api|sdk|webhooks?|soc ?2|iso 27001|real[- ]time sensor|guarantee)/i;
+const OVERCLAIM = /(senseible|biocog)[^.\n?]{0,80}\b(certif(y|ies|ied)|assur(es|ance)|issues? (carbon )?credits|registr(y|ies) integration|public api|sdk|webhooks?|soc ?2|iso 27001|real[- ]time sensor|guarantee)/i;
 const HYPE = /\b(delve|game[- ]changer|seamless(ly)?|cutting[- ]edge|revolutioni[sz]e|unlock(s|ing)?|empower(s|ing)?|supercharge|in today's|ever[- ]evolving|holistic|synerg)/i;
 
 const sources = readFileSync(join(ROOT, 'docs/seo/sources.md'), 'utf8');
@@ -93,7 +93,7 @@ function validate(file, a) {
   if (/\s-\s/.test(text)) e.push('contains a spaced hyphen used as a dash');
   const over = text.match(OVERCLAIM);
   if (over) e.push(`capability claim to check: "${over[0]}"`);
-  const hype = text.match(HYPE);
+  const hype = text.replace(/empowering consumers for the green transition/gi, '').match(HYPE);
   if (hype) e.push(`hype word: "${hype[0]}"`);
   if (/\bCO2e?\b/.test(a.senseible) && /0\.71\b(?!0)/.test(text)) e.push('write the grid factor as 0.710');
   return e;

@@ -2,7 +2,7 @@
   "slug": "incoterms-freight-scope-3-category-4-or-9",
   "q": "Who reports freight emissions under FOB, CIF or ex-works: Category 4 or Category 9?",
   "title": "Incoterms and freight: Category 4 or 9?",
-  "short": "For the seller, each leg it pays for is Category 4 and each leg after that, paid by the buyer, is Category 9. So ex-works puts all outbound legs in Category 9, FOB splits at the loading port, and CIF or DDP keeps the main carriage in Category 4. For the buyer, inbound transport from a tier 1 supplier is Category 4 whoever pays.",
+  "short": "For the seller, each leg it pays for is Category 4 and each later leg paid by the buyer is Category 9. Ex-works puts all outbound legs in Category 9, FOB splits at the loading port, and CIF or DDP keeps main carriage in Category 4. For the buyer, inbound transport is Category 4.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Exporters, procurement managers and EU buyers",
@@ -52,14 +52,32 @@
   },
   "senseible": "Senseible reads transporter and freight invoices and keeps those lines in the Scope 3 supplier evidence trail, each linked to its source document. It does not estimate buyer-paid legs for which you hold no invoice.",
   "links": [
-    { "label": "Freight: Category 4 or 9 basics", "to": "/answers/is-freight-scope-3-category-4-or-9" },
-    { "label": "GLEC Framework for freight emissions", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" },
-    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
-    { "label": "Emissions from a freight bill", "to": "/answers/how-to-calculate-emissions-from-a-freight-bill" }
+    {
+      "label": "Freight: Category 4 or 9 basics",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "GLEC Framework for freight emissions",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Table 5.4", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
-    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 4 and 9", "url": "https://ghgprotocol.org" }
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Table 5.4",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 4 and 9",
+      "url": "https://ghgprotocol.org"
+    }
   ],
   "reviewed": "2026-10-15"
 }

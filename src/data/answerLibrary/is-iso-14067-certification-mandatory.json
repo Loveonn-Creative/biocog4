@@ -15,7 +15,9 @@
         "A CFP study report documenting data, assumptions, allocation and limitations.",
         "Rules for communicating a footprint publicly are left to other standards, such as ISO 14026 on footprint communication."
       ],
-      "p": ["There is no ISO 14067 certificate issued by ISO. ISO writes standards; it does not audit companies."]
+      "p": [
+        "There is no ISO 14067 certificate issued by ISO. ISO writes standards; it does not audit companies."
+      ]
     },
     {
       "h": "Who can verify a footprint",
@@ -32,7 +34,9 @@
         "A programme, label or product passport scheme names verification as a condition.",
         "A lender uses the figure for a sustainability linked loan."
       ],
-      "p": ["If a buyer only wants a figure for their own Scope 3 estimate, a well documented self-declared footprint is often accepted. Ask before paying for verification."]
+      "p": [
+        "If a buyer only wants a figure for their own Scope 3 estimate, a well documented self-declared footprint is often accepted. Ask before paying for verification."
+      ]
     },
     {
       "h": "How to make verification cheaper",
@@ -46,14 +50,32 @@
   ],
   "senseible": "Senseible's calculator gives a cradle to gate estimate, and its records keep the document trail a verifier can sample. It is not a verification body and issues no verification statement.",
   "links": [
-    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
-    { "label": "Is Senseible a certifier?", "to": "/answers/is-senseible-a-certifier" },
-    { "label": "What goes in an ISO 14067 report", "to": "/answers/what-goes-in-an-iso-14067-report" },
-    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-ghg" }
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Is Senseible a certifier?",
+      "to": "/answers/is-senseible-a-certifier"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
   ],
   "sources": [
-    { "label": "ISO 14067:2018, Carbon footprint of products (iso.org)", "url": "https://www.iso.org" },
-    { "label": "ISO 14064-3:2019 validation and verification of GHG statements; ISO 14065:2020 requirements for verification bodies (iso.org)", "url": "https://www.iso.org" }
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019 validation and verification of GHG statements; ISO 14065:2020 requirements for verification bodies (iso.org)",
+      "url": "https://www.iso.org"
+    }
   ],
   "reviewed": "2026-10-15"
 }

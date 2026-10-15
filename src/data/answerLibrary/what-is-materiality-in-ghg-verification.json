@@ -51,14 +51,32 @@
   },
   "senseible": "Senseible's rule checks and its recompute tolerance (the larger of 0.01 or 0.1%) help show where errors sit, and \"Verified\" in Senseible means those checks passed. It does not set materiality and it does not provide third-party assurance.",
   "links": [
-    { "label": "Acceptable error in a carbon audit", "to": "/answers/acceptable-error-in-carbon-audit-materiality" },
-    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-ghg" },
-    { "label": "What auditors check in GHG assurance", "to": "/answers/what-auditors-check-in-ghg-assurance" },
-    { "label": "MRV vs a traditional audit", "to": "/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared" }
+    {
+      "label": "Acceptable error in a carbon audit",
+      "to": "/answers/acceptable-error-in-carbon-audit-materiality"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "MRV vs a traditional audit",
+      "to": "/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared"
+    }
   ],
   "sources": [
-    { "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of GHG statements", "url": "https://www.iso.org" },
-    { "label": "Implementing Regulation (EU) 2018/2067, EU ETS verification and accreditation, Article 23 (materiality)", "url": "https://eur-lex.europa.eu" }
+    {
+      "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2018/2067, EU ETS verification and accreditation, Article 23 (materiality)",
+      "url": "https://eur-lex.europa.eu"
+    }
   ],
   "reviewed": "2026-10-15"
 }

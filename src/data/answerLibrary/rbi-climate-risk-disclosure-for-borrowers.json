@@ -54,15 +54,32 @@
   },
   "senseible": "Senseible builds a borrower's Scope 1 and Scope 2 figures from electricity bills and fuel invoices, with the factor and source on every line, which a lender can use for its financed emissions estimate. It does not run a bank's scenario analysis or stress test, and it does not report to RBI.",
   "links": [
-    { "label": "Financed emissions for banks in India", "to": "/climate-intelligence/financed-emissions-banks-india" },
-    { "label": "RBI climate disclosure rules for banks", "to": "/answers/rbi-climate-disclosure-requirements-banks" },
-    { "label": "Physical vs transition climate risk", "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions" },
-    { "label": "Green loan readiness check", "to": "/green-loan-check" }
+    {
+      "label": "Financed emissions for banks in India",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Physical vs transition climate risk",
+      "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
   ],
   "sources": [
-    { "label": "RBI, Draft Disclosure Framework on Climate-related Financial Risks, 2024 (rbi.org.in)", "url": "https://www.rbi.org.in" },
-    { "label": "RBI, Draft Guidance Note on Climate Scenario Analysis and Stress Testing, 2024 (rbi.org.in)", "url": "https://www.rbi.org.in" },
-    { "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry", "url": "https://carbonaccountingfinancials.com" }
+    {
+      "label": "RBI, Draft Disclosure Framework on Climate-related Financial Risks, 2024 (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "RBI, Draft Guidance Note on Climate Scenario Analysis and Stress Testing, 2024 (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry",
+      "url": "https://carbonaccountingfinancials.com"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Both RBI documents were released as drafts in 2024; check whether RBI has issued final directions and their timelines before relying on dates."

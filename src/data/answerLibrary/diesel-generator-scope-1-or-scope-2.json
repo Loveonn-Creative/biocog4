@@ -2,7 +2,7 @@
   "slug": "diesel-generator-scope-1-or-scope-2",
   "q": "Is diesel generator (DG set) power Scope 1 or Scope 2, and how do I calculate it?",
   "title": "Is DG set power Scope 1 or Scope 2?",
-  "short": "Power from a DG set you own or operate is Scope 1, because you burn the diesel yourself. Calculate it from litres of diesel, not kWh: litres x 2.68 kg CO2 per litre. It becomes Scope 2 only when you buy DG power from someone else, such as a landlord or park operator who runs the set and bills you per unit.",
+  "short": "Power from a DG set you own or operate is Scope 1, because you burn the diesel yourself. Calculate it from litres, not kWh: litres x 2.68 kg CO2 per litre. It is Scope 2 only when you buy DG power from someone else, such as a landlord who runs the set and bills you per unit.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "MSME owners and plant managers",
@@ -54,15 +54,36 @@
   },
   "senseible": "Senseible reads diesel quantities from fuel slips and invoices and calculates Scope 1 at 2.68 kg CO2 per litre, the IPCC 2006 default, showing the source on each line. It does not read DG meters or estimate litres from kWh.",
   "links": [
-    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
-    { "label": "Scope 1 emissions in Indian manufacturing", "to": "/climate-intelligence/manufacturing-scope-1-emissions-india" },
-    { "label": "Rented DG set: Scope 1 or Scope 3?", "to": "/answers/rented-diesel-generator-scope-1-or-scope-3" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Scope 1 emissions in Indian manufacturing",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    },
+    {
+      "label": "Rented DG set: Scope 1 or Scope 3?",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 4", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (DG sets)", "url": "https://beeindia.gov.in" }
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (DG sets)",
+      "url": "https://beeindia.gov.in"
+    }
   ],
   "reviewed": "2026-10-15"
 }

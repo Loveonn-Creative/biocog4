@@ -2,7 +2,7 @@
   "slug": "does-india-coal-gst-count-as-carbon-price-cbam",
   "q": "Does India's tax on coal (the former clean energy cess, now GST) count as a carbon price that reduces CBAM?",
   "title": "Does India's coal tax reduce CBAM?",
-  "short": "Almost certainly not, as the rules read today. CBAM allows a deduction only for a carbon price effectively paid under a carbon emissions reduction scheme and calculated on the greenhouse gases released in making the goods. GST on coal is a general tax on the value of the coal, mostly recovered as input tax credit, so it does not fit that definition.",
+  "short": "Almost certainly not, as the rules read today. CBAM deducts only a carbon price effectively paid under a scheme priced on the greenhouse gases released in making the goods. GST on coal is a general tax on the coal's value, mostly recovered as input tax credit, so it does not fit.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian steel, cement and aluminium exporters, EU importers",
@@ -38,14 +38,32 @@
   ],
   "senseible": "Senseible keeps your coal purchase invoices with their HSN code and tax lines as read, and its CBAM cost calculator estimates certificate costs. It does not give legal opinions on Article 9 deductions.",
   "links": [
-    { "label": "India carbon markets and the EU price", "to": "/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price" },
-    { "label": "South Africa's carbon tax and CBAM", "to": "/climate-intelligence/south-africa-carbon-tax-cbam" },
-    { "label": "How to calculate CBAM cost", "to": "/answers/how-to-calculate-cbam-cost" },
-    { "label": "CBAM calculator", "to": "/cbam-calculator" }
+    {
+      "label": "India carbon markets and the EU price",
+      "to": "/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price"
+    },
+    {
+      "label": "South Africa's carbon tax and CBAM",
+      "to": "/climate-intelligence/south-africa-carbon-tax-cbam"
+    },
+    {
+      "label": "How to calculate CBAM cost",
+      "to": "/answers/how-to-calculate-cbam-cost"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 3 and Article 9", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
-    { "label": "European Commission, CBAM definitive regime", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en" }
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 3 and Article 9",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Confirm the September 2025 GST change on coal from the CBIC notification, and check Commission rules on carbon price deductions for new guidance."

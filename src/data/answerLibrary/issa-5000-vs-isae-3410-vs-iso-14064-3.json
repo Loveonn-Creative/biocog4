@@ -9,7 +9,9 @@
   "sections": [
     {
       "h": "ISAE 3410: GHG statements, by professional accountants",
-      "p": ["Issued by the International Auditing and Assurance Standards Board (IAASB) for assurance on a greenhouse gas statement. It covers limited and reasonable assurance and sets out procedures specific to emissions, such as testing activity data and emission factors. It is written for practitioners who follow the IAASB quality management and ethics framework."]
+      "p": [
+        "Issued by the International Auditing and Assurance Standards Board (IAASB) for assurance on a greenhouse gas statement. It covers limited and reasonable assurance and sets out procedures specific to emissions, such as testing activity data and emission factors. It is written for practitioners who follow the IAASB quality management and ethics framework."
+      ]
     },
     {
       "h": "ISSA 5000: all sustainability information",
@@ -20,7 +22,9 @@
     },
     {
       "h": "ISO 14064-3: verification of GHG statements",
-      "p": ["ISO 14064-3:2019 sets out how to verify or validate GHG statements, for an organisation's inventory, a project or a product footprint. It is used by verification bodies, often accredited against ISO 14065, and by many carbon programmes and buyer schemes. It is a GHG-only standard."]
+      "p": [
+        "ISO 14064-3:2019 sets out how to verify or validate GHG statements, for an organisation's inventory, a project or a product footprint. It is used by verification bodies, often accredited against ISO 14065, and by many carbon programmes and buyer schemes. It is a GHG-only standard."
+      ]
     },
     {
       "h": "In India",
@@ -42,14 +46,32 @@
   ],
   "senseible": "Senseible does not carry out any of these engagements. Its records give the practitioner a source file, a SHA-256 fingerprint and a recomputable calculation for each line, whichever standard they work under.",
   "links": [
-    { "label": "Limited vs reasonable assurance for GHG", "to": "/answers/limited-vs-reasonable-assurance-ghg" },
-    { "label": "What auditors check in GHG assurance", "to": "/answers/what-auditors-check-in-ghg-assurance" },
-    { "label": "BRSR Core: assurance or assessment", "to": "/answers/brsr-core-assurance-or-assessment-which" }
+    {
+      "label": "Limited vs reasonable assurance for GHG",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "BRSR Core: assurance or assessment",
+      "to": "/answers/brsr-core-assurance-or-assessment-which"
+    }
   ],
   "sources": [
-    { "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of greenhouse gas statements", "url": "https://www.iso.org" },
-    { "label": "SEBI circular on BRSR Core (12 July 2023)", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
-    { "label": "SEBI circular on assurance or assessment of ESG disclosures (March 2025)", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" }
+    {
+      "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI circular on BRSR Core (12 July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment of ESG disclosures (March 2025)",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "ISSA 5000 takes effect for periods beginning on or after 15 December 2026; check ICAI's adoption in India and IAASB's position on ISAE 3410."
