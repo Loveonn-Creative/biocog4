@@ -1,0 +1,75 @@
+{
+  "slug": "net-zero-vs-carbon-neutral",
+  "q": "What is the difference between net zero and carbon neutral for a company?",
+  "title": "Net zero vs carbon neutral",
+  "short": "Carbon neutral means your measured emissions for a period are balanced, mostly by buying and retiring carbon credits, after a reduction plan. Net zero is a long-term target: cut emissions across Scopes 1, 2 and 3 by about 90 percent or more, then remove only the small residual. You can be carbon neutral this year; net zero is usually a 2050 commitment.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "MSME owners and sustainability leads",
+  "sections": [
+    {
+      "h": "What a carbon neutral claim needs",
+      "p": [
+        "ISO 14068-1:2023 sets the requirements. You define the subject (the company, a site or a product), quantify its footprint, commit to a reduction plan, and offset the remaining emissions for the period with carbon credits that meet quality criteria. The claim is for a stated period and must be renewed.",
+        "Credits can come from avoidance or removal projects, and the standard expects you to keep reducing over time rather than buying the same volume forever."
+      ]
+    },
+    {
+      "h": "What a net zero target needs",
+      "p": [
+        "Under the SBTi Corporate Net-Zero Standard (version 1.2), a company sets near-term targets for 5 to 10 years and a long-term target to cut emissions by at least 90 percent across all scopes by 2050 at the latest. Only the residual, at most about 10 percent, is neutralised with permanent carbon removals.",
+        "Carbon credits do not count towards the reduction targets. Buying credits for emissions you have not yet cut is encouraged as extra action beyond the value chain, but it does not make you net zero."
+      ]
+    },
+    {
+      "h": "Side by side",
+      "ul": [
+        "Time frame: carbon neutral is claimed for a past or current period; net zero is a future end state.",
+        "Scope: carbon neutral covers the defined subject footprint; net zero covers Scopes 1, 2 and 3, including suppliers and product use.",
+        "Role of credits: central for carbon neutral; only removals, and only for the residual, for net zero.",
+        "Reduction depth: carbon neutral needs a credible plan; net zero needs deep cuts in line with 1.5 degrees."
+      ]
+    },
+    {
+      "h": "Which one to say",
+      "p": [
+        "If you buy credits this year to cover a measured footprint, call it carbon neutral and name the standard, the period and the credits retired. Say you are working towards net zero only if you have a dated, science-based target. Claiming net zero today on the strength of credits is the most common greenwashing finding for small companies."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the Scope 1 and 2 baseline from your fuel and electricity invoices, with Scope 3 supplier lines kept as a separate evidence trail, which either claim starts from. It does not certify claims, validate targets or retire credits on your behalf.",
+  "links": [
+    {
+      "label": "Net zero roadmap tool",
+      "to": "/net-zero"
+    },
+    {
+      "label": "A 12-month net zero roadmap for MSMEs",
+      "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants"
+    },
+    {
+      "label": "ISO 14068 carbon neutral requirements",
+      "to": "/answers/iso-14068-carbon-neutral-requirements"
+    },
+    {
+      "label": "How many carbon credits do I need?",
+      "to": "/answers/how-many-carbon-credits-do-i-need"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Net-Zero Standard, version 1.2",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "ISO 14068-1:2023, Carbon neutrality",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "VCMI Claims Code of Practice",
+      "url": "https://vcmintegrity.org"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SBTi is revising the Corporate Net-Zero Standard (version 2); check whether the rules on residuals and credits have changed."
+}

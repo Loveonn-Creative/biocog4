@@ -1,0 +1,55 @@
+{
+  "slug": "brsr-core-assurance-or-assessment-which",
+  "q": "Should a listed company choose reasonable assurance or the new assessment for BRSR Core, and who can provide each?",
+  "title": "BRSR Core: assurance or assessment?",
+  "short": "Since SEBI's circular of 28 March 2025, a listed company in the BRSR Core glide path can get either reasonable assurance or an assessment of its BRSR Core. Choose assurance when investors, lenders or a parent want an audit-standard opinion; choose assessment when the board is satisfied with a check against the Industry Standards. Both need an independent, conflict-free provider.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "CFOs, company secretaries, sustainability leads",
+  "sections": [
+    {
+      "h": "What changed in March 2025",
+      "p": [
+        "SEBI's July 2023 circular introduced BRSR Core, a set of key indicators under nine attributes, and required reasonable assurance of it on a glide path by market capitalisation: the top 150 listed companies from FY 2023-24, then the top 250, 500 and 1,000 in the following years.",
+        "The circular of 28 March 2025 (SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42) kept the glide path but let companies choose assessment or assurance. Assessment is carried out against the Industry Standards on Reporting of BRSR Core, which SEBI recognises for this purpose."
+      ]
+    },
+    {
+      "h": "How the two differ in practice",
+      "ul": [
+        "Reasonable assurance: an engagement under a sustainability assurance standard, ending in a positive opinion that the BRSR Core is free of material misstatement. In India it is usually done by audit firms working to ICAI's assurance standards.",
+        "Assessment: an independent check of the BRSR Core data and the way it was prepared against the Industry Standards. It gives the market a view on the figures without being framed as an audit-standard assurance opinion.",
+        "Both work from the same evidence: meter readings, bills, invoices, payroll and safety records behind each indicator. Weak records fail either route."
+      ]
+    },
+    {
+      "h": "Who can provide each",
+      "p": [
+        "SEBI leaves the appointment to the company and its board, with two conditions that matter most: the provider must have the necessary expertise for the work, and there must be no conflict of interest. Other services the provider or its network sells to the company or its group are the usual source of conflict; read the exact conflict wording in the circulars before you appoint.",
+        "Assurance providers are normally chartered accountant firms. For assessment, check the provider requirements in the Industry Standards themselves, because they set who may act as an assessor."
+      ]
+    },
+    {
+      "h": "A simple way to decide",
+      "ol": [
+        "Ask your largest investors, lenders and any foreign parent what they accept. If anyone needs an assurance opinion for their own reporting, choose assurance.",
+        "If your statutory auditor network would be conflicted, line up a second provider early, for either route.",
+        "If this is your first year in the glide path and your data trail is thin, an assessment can show gaps before you commit to an assurance opinion.",
+        "Whatever you pick, record the board's reasoning and the provider's independence check in the board minutes."
+      ]
+    }
+  ],
+  "senseible": "Senseible links each emission and energy figure to the source bill or invoice, so an assurer or assessor can sample the document behind a number. Senseible does not perform assessment or audit work itself, and its \"Verified\" status means internal rule checks passed.",
+  "links": [
+    { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
+    { "label": "BRSR Core's nine attributes", "to": "/answers/brsr-core-nine-attributes-explained" },
+    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-emissions" },
+    { "label": "BRSR reports with Senseible", "to": "/answers/brsr-report-senseible" }
+  ],
+  "sources": [
+    { "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" },
+    { "label": "SEBI circular on BRSR Core, 12 July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Check for later SEBI amendments to the glide path, the conflict-of-interest wording and the circular that recognises the Industry Standards."
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "how-long-to-get-carbon-credits-issued",
+  "q": "How long does it take from project start to the first carbon credit issuance?",
+  "title": "How long until carbon credits are issued?",
+  "short": "Plan for roughly 12 to 24 months from a ready project to the first credits. That is an estimate: the path runs through design, listing, validation, registration, a monitoring period, verification and issuance review, and each step waits in a queue at the auditor or the registry. Missing monitoring data is the most common cause of extra delay.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, CFOs",
+  "sections": [
+    {
+      "h": "The stages under Verra",
+      "ol": [
+        "Project description: write the design document using an approved methodology, with baseline, additionality and monitoring plan.",
+        "Pipeline listing: the project is listed publicly for comment.",
+        "Validation: an accredited validation and verification body (VVB) checks the design against the methodology.",
+        "Registration: Verra reviews the validated project and registers it.",
+        "Monitoring period: the project runs and records data, such as metered energy or fuel, for the period you will claim.",
+        "Verification: a VVB audits the monitoring report and confirms the reductions.",
+        "Issuance: Verra reviews the verification and issues credits into your registry account."
+      ],
+      "p": ["Verra allows validation and the first verification to be done together, which can save one audit cycle if records are complete."]
+    },
+    {
+      "h": "The stages under Gold Standard",
+      "p": [
+        "Gold Standard uses its own labels: preliminary review of the design, design certification after validation, then performance certification after each verification, followed by issuance. The sequence of checks is similar, so the overall time is of the same order."
+      ]
+    },
+    {
+      "h": "What makes it slower or faster",
+      "ul": [
+        "Slower: gaps in monitoring data, a baseline that cannot be shown from records, findings the VVB raises that need corrections, VVB availability, and registry review backlogs.",
+        "Slower: methodology changes during the process that require the design to be updated.",
+        "Faster: a methodology you already understand, a grouped programme that is already registered, and continuous dated records from the first day of operation.",
+        "Credits are issued only for reductions after the project start and inside a verified monitoring period, so delays in verification delay cash but do not erase earlier tonnes if they were monitored."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: a plausible first-issuance timeline",
+    "lines": [
+      "Design document and listing: 2 to 4 months",
+      "Validation and registration review: 4 to 8 months",
+      "First monitoring period: 6 to 12 months, partly overlapping validation",
+      "Verification and issuance review: 3 to 6 months",
+      "Total, allowing for overlap: about 12 to 24 months"
+    ],
+    "note": "Stage durations are planning assumptions, not registry figures. Ask your VVB and the registry for current queue times."
+  },
+  "senseible": "Senseible keeps dated, fingerprinted invoices and bills from day one, which is the activity data a monitoring report and a VVB ask for. It does not issue credits, act as a registry or carry out validation or verification.",
+  "links": [
+    { "label": "What is a VVB and how to choose one", "to": "/answers/what-is-a-vvb-and-how-to-choose-one" },
+    { "label": "Carbon project validation cost", "to": "/answers/carbon-project-validation-cost" },
+    { "label": "Realistic income from carbon credits", "to": "/climate-intelligence/realistic-income-from-selling-carbon-credits-msme" },
+    { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" }
+  ],
+  "sources": [
+    { "label": "Verra VCS Program Guide and registration procedures", "url": "https://verra.org" },
+    { "label": "Gold Standard project cycle and certification", "url": "https://www.goldstandard.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Timelines are estimates and registry backlogs change; recheck before quoting dates to investors."
+}
