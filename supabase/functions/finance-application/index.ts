@@ -1,4 +1,4 @@
-import { aiFetch } from '../_shared/aiFetch.ts';
+import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // Sustainable-finance applications (green loans first). The only writer of
 // finance_applications, its timeline, documents and internal review
 // (pending migration 20261023100000). Signed-in applicants on Essential or
@@ -57,12 +57,12 @@ function bytesToB64(bytes: Uint8Array): string {
 }
 
 /** Reads the allow-listed figures from one document. Never throws; null on failure. */
-async function readFigures(apiKey: string | undefined, mime: string, bytes: Uint8Array): Promise<DocFigures | null> {
-  if (!apiKey) return null;
+async function readFigures(aiReady: boolean, mime: string, bytes: Uint8Array): Promise<DocFigures | null> {
+  if (!aiReady) return null;
   try {
     const res = await aiFetch({
       method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'google/gemini-2.5-flash',
         temperature: 0,
@@ -262,12 +262,12 @@ Deno.serve(async (req) => {
 
       // Internal review: allow-listed figures only, then the indicative summary.
       const figures: DocFigures[] = [];
-      const geminiKey = Deno.env.get('GEMINI_API_KEY');
+      const aiReady = aiConfigured();
       for (const d of (docs ?? []) as Array<{ doc_type: string; mime_type: string; storage_path: string }>) {
         if (!['itr', 'bank_statement', 'financial_statement'].includes(d.doc_type)) continue;
         const { data: blob } = await admin.storage.from(BUCKET).download(d.storage_path);
         if (!blob) continue;
-        const f = await readFigures(geminiKey, d.mime_type, new Uint8Array(await blob.arrayBuffer()));
+        const f = await readFigures(aiReady, d.mime_type, new Uint8Array(await blob.arrayBuffer()));
         if (f) figures.push({ ...f, document_kind: f.document_kind ?? d.doc_type });
       }
       const summary = reviewSummary(v.value, figures, { priority: plan === 'pro' || plan === 'scale' });

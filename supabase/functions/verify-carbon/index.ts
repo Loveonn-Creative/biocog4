@@ -1,4 +1,4 @@
-import { aiFetch } from '../_shared/aiFetch.ts';
+import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -442,12 +442,11 @@ serve(async (req) => {
     const indicativeValue = creditValueField(verifiedKg, verifiedReductions);
 
     // Use AI for additional analysis and recommendations
-    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
     let aiRecommendations: string[] = [];
     let methodologyCompliance = 'GHG Protocol / ISO 14064 compliant emission factors applied';
     let dataQualityAssessment = `${validCount}/${emissions.length} records passed validation`;
 
-    if (GEMINI_API_KEY) {
+    if (aiConfigured()) {
       try {
         const aiPrompt = `You are a carbon verification expert. Analyze this emission data summary and provide 3-5 specific recommendations:
 
@@ -463,7 +462,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const aiResponse = await aiFetch({
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${GEMINI_API_KEY}`,
+            'Authorization': 'Bearer server',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
