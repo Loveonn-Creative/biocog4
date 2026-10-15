@@ -50,6 +50,27 @@
       "when": 1792063689154,
       "tag": "0006_atomic_verify_and_delete",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792063749154,
+      "tag": "0007_invoice_source_files",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792063809154,
+      "tag": "0008_scope3_trail",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792063869154,
+      "tag": "0009_scope3_global_freight",
+      "breakpoints": true
     }
   ]
 }

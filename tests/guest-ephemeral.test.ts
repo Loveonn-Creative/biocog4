@@ -86,8 +86,9 @@ describe('source contracts', () => {
   });
   test('home page: guests keep results in the browser, never insert rows', () => {
     const index = src('src/pages/Index.tsx');
-    expect(index).toContain('user\n        ? await saveEmissionToDatabase(extractedData, data.documentHash)\n        : await keepGuestResult(');
-    expect(index).toContain("user ? await saveEmissionToDatabase(extracted, data.documentHash) : await keepGuestResult(extracted, data.documentHash, part.file.name)");
+    // Signed in: the server's rows, or the browser fallback. Guests: browser only.
+    expect(index).toContain('user\n        ? (serverSaved(data) ?? await saveEmissionToDatabase(extractedData, data.documentHash))\n        : await keepGuestResult(');
+    expect(index).toContain("user ? (serverSaved(data) ?? await saveEmissionToDatabase(extracted, data.documentHash)) : await keepGuestResult(extracted, data.documentHash, part.file.name)");
   });
   test('verify-carbon preview writes nothing and calls no AI', () => {
     const v = src('supabase/functions/verify-carbon/index.ts');

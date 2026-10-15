@@ -298,6 +298,15 @@ const Index = () => {
   };
 
   // Save emission record to database (document is cached by edge function)
+  // The server stores the document and its emission rows itself (signed-in
+  // reads). Use its ids; the browser save below is only a fallback for an
+  // older function version or a failed server write.
+  const serverSaved = (data: { serverSaved?: boolean; documentId?: string; emissionIds?: string[] } | null | undefined) => {
+    if (!data?.serverSaved || !data.documentId || !Array.isArray(data.emissionIds)) return null;
+    emitRecordsChanged('upload');
+    return { documentId: data.documentId, emissionId: data.emissionIds[0], emissionIds: data.emissionIds };
+  };
+
   const saveEmissionToDatabase = async (extractedData: ExtractedData, documentHash?: string): Promise<{ documentId: string; emissionId?: string; emissionIds: string[] } | null> => {
     // CRITICAL: Validate session before saving
     if (!user && !sessionId) {
@@ -454,7 +463,7 @@ const Index = () => {
         // Page numbers of this part, mapped back to the original PDF.
         const partData = data.data as ExtractedData;
         const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
-        const saved = user ? await saveEmissionToDatabase(extracted, data.documentHash) : await keepGuestResult(extracted, data.documentHash, part.file.name);
+        const saved = user ? (serverSaved(data) ?? await saveEmissionToDatabase(extracted, data.documentHash)) : await keepGuestResult(extracted, data.documentHash, part.file.name);
         if (!user) void cacheGuestSource(data.documentHash, part.file, part.file.name);
         if (!saved) { notes.push(`${range}: could not be saved`); continue; }
         done.push({ extracted, saved });
@@ -619,7 +628,7 @@ const Index = () => {
       const uniqueWarnings = [...new Set(warnings)];
 
       const savedIds = user
-        ? await saveEmissionToDatabase(extractedData, data.documentHash)
+        ? (serverSaved(data) ?? await saveEmissionToDatabase(extractedData, data.documentHash))
         : await keepGuestResult({ ...extractedData, validationFlags: uniqueWarnings }, data.documentHash, file.name);
       // Guests: the original stays in this browser only (never uploaded for storage).
       if (!user) void cacheGuestSource(data.documentHash, file, file.name);
