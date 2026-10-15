@@ -1,4 +1,4 @@
-import { aiFetch } from '../_shared/aiFetch.ts';
+import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // Real-time UI string translation with persistent cache.
 // Request: { locale: string, strings: string[] }
 // Response: { translations: Record<string, string> }  // keyed by source string
@@ -104,8 +104,7 @@ Deno.serve(async (req) => {
 
     // 2. Translate misses via Lovable AI Gateway
     if (missing.length > 0) {
-      const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
-      if (!GEMINI_API_KEY) {
+      if (!aiConfigured()) {
         // Fallback: return English for misses
         for (const m of missing) translations[m.source] = m.source;
       } else {
@@ -124,7 +123,6 @@ Deno.serve(async (req) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${GEMINI_API_KEY}`,
           },
           body: JSON.stringify({
             model: "google/gemini-2.5-flash",
