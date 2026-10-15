@@ -122,7 +122,7 @@ export const answers: Answer[] = [
   {
     slug: 'where-is-senseible-headquartered', topic: 'about', title: 'Where is Senseible headquartered?',
     q: 'Where is Senseible headquartered, and which markets does it serve?',
-    short: 'Senseible is headquartered at Minarch Tower, Sector 44, Gurugram, India. The platform is configured for 19 countries, each with its own business identifier and grid emission factor, with India as its home market.',
+    short: 'Senseible is headquartered at Minarch Tower, Sector 44, Gurugram, India. India is its home market, and the platform is configured for 19 countries with their own business identifiers. Electricity is calculated with India’s CEA grid factor today; other countries’ grid factors are added once reviewed.',
     body: ['Exporters in these countries use Senseible to answer requests from EU and other overseas buyers.'],
     links: [{ label: 'Where it works', to: '/platform' }, { label: 'Contact', to: '/contact' }],
   },
@@ -292,7 +292,7 @@ export const answers: Answer[] = [
   {
     slug: 'scope-3-category-1-spend-based', topic: 'compliance', title: 'Scope 3 Category 1: spend vs activity',
     q: 'How do I calculate Scope 3 Category 1 emissions with Senseible?',
-    short: 'The GHG Protocol ranks Category 1 methods from supplier-specific and hybrid to average-data and spend-based. Senseible uses suppliers’ own bills where they exist and marks spend-based lines clearly, so you can see how much of the figure is evidence.',
+    short: 'The GHG Protocol ranks Category 1 methods from supplier-specific and hybrid to average-data and spend-based. Senseible works from the quantities printed on supplier invoices and approved factors; it does not fill gaps with spend-based estimates, so a line without activity data shows as needing data.',
     body: ['The supplier evidence check shows how many of your suppliers are backed by bills today and the pace needed to close the gap.'],
     links: [{ label: 'Scope 3 supplier evidence check', to: '/scope-3-supplier-evidence' }],
   },
