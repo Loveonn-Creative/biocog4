@@ -47,3 +47,11 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - how-to-find-the-right-carbon-methodology: CDM small-scale types and limits, Verra/GS grid-renewable restrictions, ICVCM decision from memory (hedged).
 - what-cbam-clause-to-put-in-export-contract: uses CBAM calculator figures (2.1 t default, 1.52 t benchmark, 97.5% free share, EUR 82.32) and an illustrative actual of 1.90 t/t.
 - furnace-oil-to-png-switch-emissions-saving: energy back-calculated from Senseible factors and IPCC per-GJ defaults; boiler efficiencies labelled estimates.
+
+## chunk-02
+- who-is-still-in-scope-of-csrd: non-EU EUR 450m threshold, first-wave relief, start years (FY2027 / 2028 non-EU) need checking against Directive 2026/470.
+- why-icvcm-rejected-renewable-energy-credits / verra-or-gold-standard-which-to-choose: Verra and Gold Standard restrictions on new grid-connected renewables in India; both named CCP-eligible programmes.
+- what-esrs-e1-requires-on-climate: E1-5 / E1-6 details (fossil split for high-impact sectors, intensity per net revenue).
+- how-to-measure-savings-from-energy-efficiency-project: "whole facility for savings above ~10%" attributed to IPMVP.
+- well-to-tank-emissions-from-diesel-invoices: diesel WTT ~0.6 kg CO2e/L (DESNZ) and ~36 MJ/L labelled estimates.
+- DUPLICATE: limited-vs-reasonable-assurance-ghg overlaps limited-vs-reasonable-assurance-emissions. Hold out of batch 1.
