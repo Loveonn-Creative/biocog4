@@ -102,6 +102,11 @@ export function prepareElectricityLines(ocr: RawOcr): { lines: RawLine[]; notes:
     if (typeof l.unit === 'string' && UNIT_WORD.test(l.unit.trim())) {
       l.unit = 'kWh';
       notes.push(`"${l.description ?? 'line'}": unit "units" read as kWh (electricity billing unit)`);
+    }    // A printed kWh quantity on an electricity line of a discom bill (e.g.
+    // "Energy Charges 18303 kWh") is grid electricity even without an HSN.
+    if (num(l.quantity) !== null && /^kwh$/i.test(String(l.unit ?? '').trim()) && !String(l.hsn_code ?? '').startsWith('2716')) {
+      l.hsn_code = '2716';
+      notes.push(`"${l.description ?? 'line'}": printed kWh read as grid electricity`);
     }
   }
 
