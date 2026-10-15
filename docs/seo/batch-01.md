@@ -29,7 +29,7 @@ In batch-01.tsv change the first column for any row: `propose` stays, `drop` rem
 - Duplicate check: SHA-256 catches only byte-identical files. A re-scan or new photo of the same paper bill is not caught. Pages will say this and recommend invoice number plus supplier GSTIN checks.
 - No published accuracy rate for AI bill reading exists; pages describe failure modes and controls, not a percentage.
 - Fuel factors: confirm whether they are CO2 only or CO2e. Coal 2.42 kg/kg may overstate low-grade Indian coal by roughly 20 to 40%.
-- CEA edition behind the 0.710 kg/kWh grid factor.
+- CEA edition behind the 0.710 kg/kWh grid factor: version 21.0 (confirmed by the owner). Product facts stay unchanged for now; CO2 vs CO2e and duplicate handling are being fixed by the owner as we go.
 - Whether records can be tagged by facility (needed before a multi-plant page claims plant totals).
 
 ## Rules held for every page

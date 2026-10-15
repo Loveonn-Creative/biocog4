@@ -2,7 +2,7 @@
 
 ## What Senseible actually does (verified in code and published pages)
 - Reads tax invoices, electricity bills, fuel slips and freight records (image or PDF; PDFs over 10 pages are read in parts) and returns line items with an AI vision model at temperature 0, fixed schema, absent fields null.
-- Classifies lines by HSN/tax code first, then keyword match only when the unit agrees. Scope 1 (fuels), Scope 2 (grid electricity, India grid factor 0.710 kg CO2/kWh from CEA, edition to be confirmed), Scope 3 lines go to a separate supplier evidence trail.
+- Classifies lines by HSN/tax code first, then keyword match only when the unit agrees. Scope 1 (fuels), Scope 2 (grid electricity, India grid factor 0.710 kg CO2/kWh from the CEA CO2 Baseline Database version 21.0, per the owner), Scope 3 lines go to a separate supplier evidence trail.
 - Emissions = activity x published factor. Fuel factors from IPCC 2006 defaults (diesel 2.68 kg/L, petrol 2.31 kg/L, LPG 2.98 kg/kg, PNG 2.05 kg/scm, furnace oil 2.97 kg/L, coal 2.42 kg/kg, kerosene 2.52 kg/L, naphtha 3.26 kg/kg, CNG 2.75 kg/kg). No factor, no figure.
 - Electricity bills: reads billing period, tariff, sanctioned load, units. kVAh lines get no grid factor (needs kWh); net-metered units are not treated as consumption.
 - Every file gets a SHA-256 fingerprint; duplicates are not counted twice. Ledger entries are hash-chained.
