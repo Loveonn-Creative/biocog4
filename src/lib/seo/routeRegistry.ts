@@ -15,6 +15,7 @@ import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
 import * as di from '@/data/decarbonizeIndia';
+import { WP_PATH, WP_PUBLISHED } from '@/data/whitePaper';
 import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
@@ -187,6 +188,28 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  const wpCrumbs = [{ name: 'Home', path: '/' }, { name: 'White Paper', path: WP_PATH }];
+  const whitePaper = staticRoute(WP_PATH, 'core', 0.7, {
+    breadcrumbs: wpCrumbs,
+    lastmod: WP_PUBLISHED,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        headline: STATIC_PAGE_META[WP_PATH].title,
+        description: STATIC_PAGE_META[WP_PATH].description,
+        datePublished: WP_PUBLISHED,
+        dateModified: WP_PUBLISHED,
+        author: ORG_REF,
+        publisher: { ...ORG_REF, logo: ORGANIZATION.logo },
+        mainEntityOfPage: canonicalUrl(WP_PATH),
+        about: ['Greenhouse gas accounting', 'Emission factors', 'Measurement uncertainty', 'Audit trail'],
+        proficiencyLevel: 'Expert',
+      },
+      breadcrumbLd(wpCrumbs),
+    ],
+  });
+
   const decarbonizeIndia = staticRoute(di.DI_PATH, 'core', 0.8, {
     h1: 'Decarbonize India: Impact Ambassador Program',
     changefreq: 'weekly',
@@ -237,7 +260,7 @@ function coreRoutes(): SeoRoute[] {
     }));
 
   return [
-    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia,
+    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];

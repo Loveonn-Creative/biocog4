@@ -7,6 +7,7 @@ import type { Block } from './render';
 import { servicePages } from '@/data/services';
 import { MSME_CARBON_FAQS, MSME_CARBON_META, SUPPLIER_EVIDENCE_FAQS, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
 import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
+import { whitePaperBlocks } from './whitePaperBlocks';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
 
 const STATUS = { live: 'Live', pilot: 'Pilot', custom: 'Custom' } as const;
@@ -116,6 +117,10 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
         '[Monetise](/carbon-credits): records that clear additionality become credit-readiness signals.',
       ] },
     ],
+  },
+  '/white-paper': {
+    h1: 'Senseible White Paper',
+    blocks: whitePaperBlocks(),
   },
   '/green-loan-check': {
     h1: 'Green loan check for MSMEs',

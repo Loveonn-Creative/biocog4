@@ -162,6 +162,10 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     title: 'Partner with Senseible: Lenders, Auditors, Buyers',
     description: 'Partner programme for banks, auditors, carbon credit buyers and ERP providers that need verified MSME emission data inside their own products.',
   },
+  '/white-paper': {
+    title: 'Senseible White Paper: Emissions Method, AI and Audit Trail',
+    description: 'How Senseible turns invoices into emission figures: GHG Protocol equations, factor governance, uncertainty, AI limits and a SHA-256 audit trail.',
+  },
   '/green-loan-check': {
     title: 'Green Loan Check for MSMEs: 2-Minute Readiness',
     description: 'Answer six quick questions to see what a lender will ask for in a green loan application, and measure the carbon footprint most MSMEs are missing.',
