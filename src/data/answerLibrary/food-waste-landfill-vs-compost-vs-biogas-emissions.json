@@ -2,7 +2,7 @@
   "slug": "food-waste-landfill-vs-compost-vs-biogas-emissions",
   "q": "For a food processing plant, how much do emissions change if organic waste goes to compost or biogas instead of landfill?",
   "title": "Food waste: landfill, compost or biogas",
-  "short": "A lot. Food waste rotting in a landfill releases methane, so published factors put landfill at several hundred kg CO2e per tonne, while composting and anaerobic digestion sit at roughly ten kg per tonne. Moving most organic waste away from landfill or open dumping is often the biggest single Scope 3 waste cut a food plant can make.",
+  "short": "A lot. Food waste rotting in a landfill releases methane, so landfill factors per tonne are far higher than those for composting or anaerobic digestion. Check the current DESNZ waste disposal table for the values. Moving most organic waste away from landfill or open dumping is often a large Scope 3 waste cut for a food plant.",
   "topic": "accounting",
   "intent": "comparison",
   "audience": "Food processors in India, Vietnam, Indonesia and Turkey",
@@ -22,7 +22,7 @@
         "Factor = tonnes of waste sent by each route x the factor for that route."
       ],
       "p": [
-        "These factors assume managed landfills, many with some gas capture. Open dumpsites in South Asia and Southeast Asia behave differently: shallow, unmanaged dumps can produce less methane per tonne than a deep landfill, while burning at dumpsites adds other emissions. Say which factor you used and why."
+        "These factors are built for UK and US conditions; check the DESNZ methodology paper for its landfill assumptions. Open dumpsites in South Asia and Southeast Asia behave differently: shallow, unmanaged dumps can produce less methane per tonne than a deep landfill, while burning at dumpsites adds other emissions. Say which factor you used and why."
       ]
     },
     {
@@ -41,15 +41,15 @@
     }
   ],
   "example": {
-    "title": "Worked example: 500 tonnes of food waste a year (labelled estimate)",
+    "title": "Worked example: 500 tonnes of food waste a year (illustrative)",
     "lines": [
       "Landfill, illustrative factor 600 kg CO2e per t: 500 x 600 = 300,000 kg, about 300 t CO2e",
       "Composting, illustrative factor 10 kg CO2e per t: 500 x 10 = 5,000 kg, about 5 t CO2e",
       "Difference: 300 t minus 5 t = about 295 t CO2e a year"
     ],
-    "note": "Factors are rounded illustrations of the order of the DESNZ values. Use the exact figures from the current edition, and treat results for unmanaged dumpsites as uncertain."
+    "note": "Both factors are illustrative numbers chosen to show the arithmetic, not official DESNZ values. Use the exact figures from the current edition, and treat results for unmanaged dumpsites as uncertain."
   },
-  "senseible": "Senseible keeps waste contractor invoices in the separate Scope 3 evidence trail with the source page and SHA-256 fingerprint. A line gets a figure only when its printed quantity and unit match an approved factor for that category and geography; otherwise it shows Needs Data, with no spend-based fill.",
+  "senseible": "Senseible keeps waste contractor invoices in the separate Scope 3 supplier evidence trail, each file with a SHA-256 fingerprint so duplicates are not counted twice. Emissions are activity times a published factor: no factor, no figure.",
   "links": [
     {
       "label": "Food processing industry",

@@ -2,22 +2,22 @@
   "slug": "steel-supplier-benchmark-carbon-intensity",
   "q": "How do I benchmark a steel supplier's carbon intensity: what is a good number for BF-BOF, DRI and scrap EAF routes?",
   "title": "Benchmarking a steel supplier's intensity",
-  "short": "Compare the supplier against its own production route, not one global number. As labelled estimates, the world average is about 1.9 t CO2 per tonne of crude steel, blast furnace steel sits above 2, scrap based electric arc furnace steel sits well under 1, and coal based DRI is often higher than the blast furnace route.",
+  "short": "Compare the supplier against its own production route, not one global number. Blast furnace steel carries a high intensity, scrap based electric arc furnace steel a much lower one, and coal based DRI is often higher than the blast furnace route. Check worldsteel's latest indicators for current averages.",
   "topic": "product",
   "intent": "comparison",
   "audience": "Steel buyers, EU importers, Indian auto and engineering firms",
   "sections": [
     {
-      "h": "Route ranges to start from (labelled estimates)",
+      "h": "How the routes compare",
       "ul": [
-        "Global average: about 1.9 t CO2 per t crude steel, from worldsteel's sustainability indicators. Check the latest year.",
-        "Blast furnace and basic oxygen furnace (BF-BOF): typically about 2 to 2.5 t CO2 per t crude steel.",
-        "Scrap based electric arc furnace (EAF): well under 1 t, depending heavily on the grid factor of the electricity used.",
+        "Global average: check the latest year in worldsteel's sustainability indicators.",
+        "Blast furnace and basic oxygen furnace (BF-BOF): at the high end among the main routes.",
+        "Scrap based electric arc furnace (EAF): much lower, depending heavily on the grid factor of the electricity used.",
         "Gas based DRI with EAF: usually between the two.",
         "Coal based DRI, common in India: often above BF-BOF, because coal fired rotary kilns are less efficient."
       ],
       "p": [
-        "These are ranges to spot outliers, not targets. A supplier far below its route's range should be able to explain why, for example renewable power, high scrap share or a narrow boundary."
+        "Use the route comparison to spot outliers, not as targets. A supplier far below others on its route should be able to explain why, for example renewable power, high scrap share or a narrow boundary."
       ]
     },
     {
@@ -32,7 +32,7 @@
     {
       "h": "India's Green Steel Taxonomy",
       "p": [
-        "In December 2024 the Ministry of Steel published a Taxonomy of Green Steel that rates steel by emission intensity per tonne of finished steel, with star ratings below about 2.2 t CO2e per tonne. Ask Indian suppliers whether they hold a rating and on what boundary. Thresholds and the rating process may be revised, so read the current text."
+        "The Ministry of Steel has published a Taxonomy of Green Steel that rates steel by emission intensity per tonne of finished steel. Ask Indian suppliers whether they hold a rating and on what boundary, and read the current Ministry of Steel text for the thresholds and rating process."
       ]
     },
     {
@@ -68,5 +68,5 @@
     }
   ],
   "reviewed": "2026-10-15",
-  "reviewNote": "Green Steel Taxonomy thresholds and worldsteel averages change; confirm the latest editions before relying on these ranges."
+  "reviewNote": "Green Steel Taxonomy thresholds and worldsteel averages change; confirm the latest editions before relying on them."
 }
