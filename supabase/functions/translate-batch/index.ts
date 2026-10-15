@@ -104,7 +104,7 @@ Deno.serve(async (req) => {
 
     // 2. Translate misses via Lovable AI Gateway
     if (missing.length > 0) {
-      const GEMINI_API_KEY = (Deno.env.get('GEMINI_API_KEY') || Deno.env.get('LOVABLE_API_KEY'));
+      const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
       if (!GEMINI_API_KEY) {
         // Fallback: return English for misses
         for (const m of missing) translations[m.source] = m.source;
