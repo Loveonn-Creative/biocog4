@@ -1012,15 +1012,9 @@ const Index = () => {
           >
             Contact
           </Link>
-          {/* Auth-aware: Dashboard for signed-in, Sign In for guests */}
-          {user ? (
-            <Link 
-              to="/dashboard" 
-              className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-            >
-              Dashboard
-            </Link>
-          ) : (
+          {/* Guests get Sign In. Signed-in users already have Verify, History
+              and Open dashboard as buttons above, so no Dashboard link here. */}
+          {!user && !sessionLoading && (
             <Link 
               to="/auth" 
               className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
