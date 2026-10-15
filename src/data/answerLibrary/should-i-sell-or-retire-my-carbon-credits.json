@@ -1,0 +1,53 @@
+{
+  "slug": "should-i-sell-or-retire-my-carbon-credits",
+  "q": "If my project earns carbon credits, should I sell them or retire them for my own claim?",
+  "title": "Sell or retire your own carbon credits?",
+  "short": "If the project is inside your own operations, retiring its credits for your own claim counts the cut twice, because your inventory already shows lower emissions. Sell them if you need the money, and then stop presenting that cut as your own climate claim. Retiring for your own claim makes sense only for projects outside your boundary.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME owners, CFOs",
+  "sections": [
+    {
+      "h": "Why retiring your own credits adds nothing",
+      "p": [
+        "Say you switched a boiler from furnace oil to PNG and the project earns 500 credits a year. Your Scope 1 already falls by about 500 t, because your fuel invoices show it. Retiring the 500 credits against your own footprint would subtract the same tonnes a second time."
+      ]
+    },
+    {
+      "h": "What selling changes",
+      "ul": [
+        "Your inventory still reports actual emissions, so your Scope 1 stays lower. That is a physical fact.",
+        "The buyer now holds the right to claim the reduction. You should not also call it an offset, a carbon neutral claim or a reduction you achieved for someone else.",
+        "The GHG Protocol Corporate Standard lists reductions inside your boundary that you sold as offsets as information to report, so readers can see the overlap.",
+        "Your customers may count your lower emissions in their Scope 3. Some ask suppliers to confirm whether a reduction was sold as credits; answer plainly."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "The project needs credit revenue to pay for itself: sell, and disclose the tonnes sold.",
+        "A key customer needs your lower footprint for its own targets or product footprints, and the credit revenue is small: consider not selling, so the reduction carries no competing claim.",
+        "You funded a project outside your operations, such as a community biogas plant: retire its credits for your own claim, following a claims code such as VCMI's or ISO 14068-1 for carbon neutrality."
+      ]
+    },
+    {
+      "h": "What not to say after selling",
+      "p": [
+        "Avoid \"carbon neutral\", \"offset\" or \"we removed X tonnes\" about the sold tonnes. You can still say your fuel use and emissions fell, with the figures, and that the related credits were sold."
+      ]
+    }
+  ],
+  "senseible": "Senseible's inventory reports the physical emissions read from your bills and invoices, so a fuel switch shows up as lower Scope 1 whether or not credits are sold. It does not register, sell or retire credits; that happens on a carbon credit programme's registry.",
+  "links": [
+    { "label": "Realistic income from selling credits", "to": "/climate-intelligence/realistic-income-from-selling-carbon-credits-msme" },
+    { "label": "VCMI claims: Silver, Gold, Platinum", "to": "/answers/vcmi-claims-code-silver-gold-platinum" },
+    { "label": "ISO 14068-1 carbon neutral rules", "to": "/answers/iso-14068-carbon-neutral-requirements" },
+    { "label": "Carbon credits for MSMEs", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "VCMI Claims Code of Practice", "url": "https://vcmintegrity.org" },
+    { "label": "ISO 14068-1:2023, Carbon neutrality", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Corporate Standard, accounting for reductions and offsets", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

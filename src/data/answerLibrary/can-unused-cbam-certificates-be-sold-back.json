@@ -1,0 +1,77 @@
+{
+  "slug": "can-unused-cbam-certificates-be-sold-back",
+  "q": "Can an EU importer sell back unused CBAM certificates, and what happens to them after a year?",
+  "title": "Selling back unused CBAM certificates",
+  "short": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, at the price paid, up to one third of the certificates bought in the previous calendar year. Certificates that are neither surrendered nor repurchased in time are cancelled with no compensation. They cannot be sold to other importers.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers and CFOs",
+  "sections": [
+    {
+      "h": "Repurchase under Article 23",
+      "p": [
+        "After the annual declaration and surrender, the declarant can request that the Commission buy back excess certificates still in its registry account. The price is what the declarant paid for them. The number is capped at one third of the total certificates the declarant bought during the previous calendar year, so overbuying more than that is money lost."
+      ]
+    },
+    {
+      "h": "Cancellation under Article 24",
+      "p": [
+        "Certificates bought during a year and still in the account after the following year's surrender and repurchase window are cancelled by the Commission. No payment is made for cancelled certificates."
+      ]
+    },
+    {
+      "h": "No secondary market",
+      "p": [
+        "CBAM certificates are not EU ETS allowances. They are sold by a central platform to authorised declarants only, and cannot be traded or transferred between declarants. The only exits are surrender, repurchase or cancellation."
+      ]
+    },
+    {
+      "h": "Dates after the 2025 simplification",
+      "p": [
+        "Regulation (EU) 2025/2083 moved the annual declaration and surrender to 30 September of the following year and started certificate sales in February 2027 for 2026 imports. The repurchase and cancellation timing moved with it. Take the exact dates from the consolidated CBAM Regulation before planning purchases."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how much can be sold back",
+    "lines": [
+      "Certificates bought during the previous calendar year: 900",
+      "Certificates surrendered for the declaration: 700",
+      "Excess: 900 minus 700 = 200",
+      "Repurchase cap: 900 / 3 = 300",
+      "200 is under the cap, so all 200 can be repurchased at the price paid"
+    ],
+    "note": "If the excess had been 400, only 300 could be repurchased and the other 100 would face cancellation."
+  },
+  "senseible": "Senseible does not buy, hold or sell CBAM certificates. Its CBAM cost calculator estimates certificate cost from 2026 to 2034, which helps an importer size purchases.",
+  "links": [
+    {
+      "label": "CBAM certificate price",
+      "to": "/climate-intelligence/cbam-certificate-price"
+    },
+    {
+      "label": "How many CBAM certificates to hold each quarter",
+      "to": "/answers/how-many-cbam-certificates-to-hold-each-quarter"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text, Articles 23 and 24",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 (CBAM simplification)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission: price of CBAM certificates",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Repurchase limits and dates may be changed again by implementing acts; confirm against the consolidated CBAM Regulation."
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "india-ccts-vs-eu-ets-difference",
+  "q": "How is India's Carbon Credit Trading Scheme different from the EU ETS?",
+  "title": "India CCTS vs EU ETS: the key differences",
+  "short": "The EU ETS caps total emissions and makes covered plants surrender one allowance per tonne they emit. India's CCTS sets each obligated plant a target for emissions per tonne of product, issues certificates to plants that beat it and makes plants that miss it buy certificates. A growing Indian plant can raise total emissions and still comply.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian plant managers, exporters and investors",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Design: EU ETS is cap and trade on absolute tonnes. CCTS compliance is baseline and credit on intensity, tonnes of CO2e per tonne of product.",
+        "Who holds what: EU plants must surrender allowances for all verified emissions. CCTS plants trade only the gap between actual and target intensity.",
+        "Where units come from: EU allowances are auctioned or partly allocated free against benchmarks. CCTS carbon credit certificates are issued for performance better than target.",
+        "Legal base: EU Directive 2003/87/EC, running since 2005. CCTS, notified by the Ministry of Power in June 2023 under the Energy Conservation Act, with targets set by MoEFCC rules from October 2025.",
+        "Offsets: the EU ETS does not accept international offsets today. CCTS has a separate offset mechanism, added by the December 2023 amendment, for entities outside the obligation."
+      ]
+    },
+    {
+      "h": "Why intensity targets behave differently",
+      "p": [
+        "Under an intensity target, compliance depends on emissions per tonne, not total emissions. A plant that expands output while getting more efficient can earn certificates even as its absolute emissions rise. Under the EU ETS the same plant would need more allowances for every extra tonne emitted."
+      ]
+    },
+    {
+      "h": "What it means for an Indian exporter",
+      "p": [
+        "A carbon price paid in India can in principle be deducted from CBAM under Article 9 of the CBAM Regulation, but only for a price effectively paid. How, or whether, CCTS certificate costs will count has not been settled, so do not budget a CBAM deduction from CCTS yet.",
+        "The data overlap is real either way. Both systems need monthly fuel, electricity and production records that a verifier can trace."
+      ]
+    },
+    {
+      "h": "Who is covered",
+      "p": [
+        "CCTS obligations apply to notified entities in energy-intensive sectors. Most MSMEs are not obligated, but they can be asked for data by customers that are. The EU ETS covers EU installations only; Indian plants meet it indirectly through CBAM."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: the same plant under each design",
+    "lines": [
+      "Baseline: 100,000 t product at 1.00 t CO2e per tonne = 100,000 t CO2e",
+      "CCTS target this year: 0.95 t CO2e per tonne",
+      "Actual: 120,000 t product at 0.93 t CO2e per tonne = 111,600 t CO2e",
+      "CCTS: (0.95 minus 0.93) x 120,000 = 2,400 certificates earned",
+      "EU ETS logic: 111,600 allowances to surrender, 11,600 more than at baseline"
+    ],
+    "note": "Illustrative numbers, not a real target. EU ETS free allocation would reduce the allowances bought, not the allowances surrendered."
+  },
+  "senseible": "Senseible keeps monthly fuel and electricity records from your invoices and bills, each linked to its document, which you can divide by production to track intensity. It does not register entities, issue certificates or trade on either scheme.",
+  "links": [
+    { "label": "CCTS targets by sector", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" },
+    { "label": "EU ETS vs CBAM", "to": "/answers/eu-ets-vs-cbam-difference" },
+    { "label": "What if a plant misses its CCTS target?", "to": "/answers/what-if-plant-misses-ccts-target" },
+    { "label": "CCTS offset mechanism for MSMEs", "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits" }
+  ],
+  "sources": [
+    { "label": "Carbon Credit Trading Scheme, 2023, Ministry of Power S.O. 2825(E), and December 2023 amendment", "url": "https://powermin.gov.in" },
+    { "label": "MoEFCC Greenhouse Gases Emission Intensity Target Rules, 2025", "url": "https://moef.gov.in" },
+    { "label": "Directive 2003/87/EC (EU Emissions Trading System)", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "CCTS sector targets are being notified in batches and CBAM treatment of Indian carbon prices is unsettled; check both before relying on this page."
+}

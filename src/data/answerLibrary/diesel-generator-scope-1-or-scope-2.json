@@ -1,0 +1,68 @@
+{
+  "slug": "diesel-generator-scope-1-or-scope-2",
+  "q": "Is diesel generator (DG set) power Scope 1 or Scope 2, and how do I calculate it?",
+  "title": "Is DG set power Scope 1 or Scope 2?",
+  "short": "Power from a DG set you own or operate is Scope 1, because you burn the diesel yourself. Calculate it from litres of diesel, not kWh: litres x 2.68 kg CO2 per litre. It becomes Scope 2 only when you buy DG power from someone else, such as a landlord or park operator who runs the set and bills you per unit.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners and plant managers",
+  "sections": [
+    {
+      "h": "Which scope, case by case",
+      "ul": [
+        "Your own DG set, your diesel: Scope 1, stationary combustion.",
+        "A rented DG set that you operate and fuel: Scope 1 under operational control, because you control the combustion.",
+        "Backup power billed by a landlord, mall or industrial park per kWh: Scope 2, purchased electricity, using a factor for that supply if you can get one.",
+        "Diesel bought for vehicles or forklifts: Scope 1 mobile combustion, kept separate from the DG set."
+      ]
+    },
+    {
+      "h": "Calculate from fuel, not from units",
+      "ol": [
+        "Total the litres of diesel bought for the DG set from fuel slips or invoices for the period.",
+        "Adjust for stock: opening tank level plus purchases minus closing level gives litres burnt.",
+        "Multiply by 2.68 kg CO2 per litre, the IPCC 2006 default for diesel.",
+        "Do not also count the DG kWh in Scope 2. The kWh are only useful for comparing cost and intensity with grid power."
+      ]
+    },
+    {
+      "h": "DG power versus grid power per kWh",
+      "p": [
+        "A healthy DG set at good load typically delivers about 3 to 3.5 kWh per litre, the specific fuel consumption range in BEE guidance. That gives roughly 0.77 to 0.89 kg CO2 per kWh (2.68 divided by 3.5 and by 3.0), above the India grid figure of 0.710 kg CO2 per kWh. At light load a set may give only 2.5 kWh per litre, which is about 1.07 kg CO2 per kWh. These are labelled estimates; your own litres and meter reading give the real figure."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Using diesel spend in rupees instead of litres.",
+        "Counting diesel twice: once from the slip and again as DG kWh in Scope 2.",
+        "Mixing vehicle diesel with DG diesel, which hides how much backup power costs in emissions.",
+        "Leaving out diesel bought in cash with no invoice; record it with a note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of backup power",
+    "lines": [
+      "Diesel burnt in the DG set: 1,200 litres",
+      "Scope 1: 1,200 x 2.68 = 3,216 kg CO2",
+      "DG meter reading: 3,900 kWh, so 3,900 / 1,200 = 3.25 kWh per litre",
+      "Per kWh: 3,216 / 3,900 = about 0.825 kg CO2 per kWh",
+      "Same units from the grid: 3,900 x 0.710 = 2,769 kg CO2, about 447 kg less"
+    ],
+    "note": "The 2.68 factor covers CO2 only; methane and nitrous oxide from diesel add a small amount if your framework asks for them."
+  },
+  "senseible": "Senseible reads diesel quantities from fuel slips and invoices and calculates Scope 1 at 2.68 kg CO2 per litre, the IPCC 2006 default, showing the source on each line. It does not read DG meters or estimate litres from kWh.",
+  "links": [
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "Scope 1 emissions in Indian manufacturing", "to": "/climate-intelligence/manufacturing-scope-1-emissions-india" },
+    { "label": "Rented DG set: Scope 1 or Scope 3?", "to": "/answers/rented-diesel-generator-scope-1-or-scope-3" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 4", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (DG sets)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "eu-ets-vs-cbam-difference",
+  "q": "What is the difference between the EU ETS and CBAM, and how are they linked?",
+  "title": "EU ETS vs CBAM: the difference",
+  "short": "The EU ETS puts a carbon price on emissions from plants inside the EU. CBAM puts the same price on the embedded emissions of certain imported goods. They are linked in two ways: the CBAM certificate price follows EU ETS auction prices, and CBAM charges grow as free ETS allowances for EU producers are phased out.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian exporters, EU importers",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Who pays: ETS, operators of EU installations such as steel works, cement kilns and power plants. CBAM, the authorised CBAM declarant who imports covered goods into the EU.",
+        "What is priced: ETS, the installation's own verified emissions each year. CBAM, the embedded emissions in imported cement, iron and steel, aluminium, fertilisers, hydrogen and electricity.",
+        "The unit: ETS, allowances (one tonne CO2e each). CBAM, CBAM certificates (one tonne CO2e each).",
+        "Trading: ETS allowances are auctioned and traded freely. CBAM certificates are bought through the central platform and cannot be traded between declarants.",
+        "Law: ETS, Directive 2003/87/EC. CBAM, Regulation (EU) 2023/956."
+      ]
+    },
+    {
+      "h": "Link 1: the price",
+      "p": [
+        "The CBAM certificate price is set from EU ETS allowance auction prices. For certificates covering 2026 imports the price is a quarterly average of auction prices; from 2027 it is a weekly average. An Indian exporter's CBAM exposure therefore moves with the EU carbon market even though the exporter is not in the ETS."
+      ]
+    },
+    {
+      "h": "Link 2: free allocation",
+      "p": [
+        "EU producers in CBAM sectors still receive some free ETS allowances. To avoid charging importers more than domestic producers, the number of CBAM certificates owed is reduced by an amount that reflects that free allocation. As free allocation is phased down from 2026 to 2034, that reduction shrinks and the CBAM charge on the same tonne rises, reaching the full price in 2034."
+      ]
+    },
+    {
+      "h": "What this means for an Indian exporter",
+      "ul": [
+        "You do not buy ETS allowances or CBAM certificates; your EU buyer does, and the cost shows up in price negotiations.",
+        "Actual, verified embedded emissions usually cost the buyer less than default values, which carry mark-ups.",
+        "A carbon price effectively paid in India can be deducted under CBAM Article 9, but only with evidence; check whether any Indian charge qualifies before relying on it."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator applies the 2026 to 2034 free allocation phase-out and default value mark-ups, and its document-backed fuel and electricity records can be handed to an EU buyer or verifier. Senseible does not verify embedded emissions or file CBAM declarations.",
+  "links": [
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
+    { "label": "CBAM certificate price", "to": "/climate-intelligence/cbam-certificate-price" },
+    { "label": "Carbon pricing impact calculator", "to": "/calculators/carbon-pricing-impact" },
+    { "label": "India CCTS vs EU ETS", "to": "/answers/india-ccts-vs-eu-ets-difference" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated text", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission: price of CBAM certificates", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en" },
+    { "label": "Regulation (EU) 2025/2083 amending the CBAM Regulation", "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "CBAM pricing and certificate rules were amended in 2025; check the Commission's certificate price page before quoting a figure."
+}

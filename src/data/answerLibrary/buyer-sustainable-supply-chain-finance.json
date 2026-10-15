@@ -1,0 +1,71 @@
+{
+  "slug": "buyer-sustainable-supply-chain-finance",
+  "q": "How can a supplier qualify for a buyer's sustainable supply chain finance programme?",
+  "title": "Qualify for sustainable supply chain finance",
+  "short": "Get onboarded to the buyer's supply chain finance programme, then meet the sustainability criteria it prices on. These are usually set by the buyer and its bank: sharing emissions data, an external sustainability rating, a reduction target or certifications. Ask the buyer for the written criteria and keep the evidence current every year.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Exporters and MSME suppliers",
+  "sections": [
+    {
+      "h": "How these programmes work",
+      "p": [
+        "In supply chain finance, often called reverse factoring, a bank pays the supplier's approved invoices early, at a discount based on the large buyer's credit rather than the supplier's. A sustainable version links the discount to the supplier's sustainability performance, so a supplier that meets the criteria pays less for early payment.",
+        "The terms are private contracts between buyer, bank and supplier. There is no public rule on the size of the discount."
+      ]
+    },
+    {
+      "h": "Criteria buyers commonly use",
+      "ul": [
+        "Sharing Scope 1 and 2 emissions, sometimes Scope 3, each year.",
+        "A score from an external sustainability rating provider.",
+        "A set emissions reduction target, or progress against one.",
+        "Certifications or audits on labour and environmental practice."
+      ],
+      "p": [
+        "Where the pricing is tied to targets, banks often borrow ideas from the Sustainability-Linked Loan Principles: KPIs that are material, measurable and verified."
+      ]
+    },
+    {
+      "h": "Steps for a supplier",
+      "ol": [
+        "Ask your buyer's procurement or treasury team whether a programme exists and for its written criteria.",
+        "Complete the bank's onboarding and know-your-customer checks.",
+        "Build an emissions record from your own invoices and bills, so the number can be traced.",
+        "Submit the required data or rating on time each cycle; missing a cycle usually means standard pricing."
+      ]
+    },
+    {
+      "h": "How this differs from LkSG and due diligence",
+      "p": [
+        "Germany's Supply Chain Act and similar laws oblige the buyer to check suppliers for human rights and environmental risks. That is a legal duty and a condition of doing business. Sustainable supply chain finance is a voluntary reward: better payment terms for suppliers who perform."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives a supplier a document-backed Scope 1 and 2 record from its own invoices and bills, the kind of KPI these programmes ask for; \"Verified\" in Senseible means its rule checks passed. It does not run or arrange supply chain finance, and it does not give an external rating.",
+  "links": [
+    {
+      "label": "Germany's Supply Chain Act for Indian suppliers",
+      "to": "/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers"
+    },
+    {
+      "label": "Do buyers pay more for low carbon suppliers",
+      "to": "/answers/do-buyers-pay-more-for-low-carbon-suppliers"
+    },
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

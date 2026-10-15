@@ -1,0 +1,68 @@
+{
+  "slug": "green-loan-reporting-after-disbursement",
+  "q": "What do I have to report to the bank after a green loan is disbursed?",
+  "title": "Green loan reporting after disbursement",
+  "short": "Expect to report at least once a year until the loan is repaid: proof the money went to the agreed green project, the amount spent, and the project's impact, such as kWh generated, energy saved or tonnes CO2 avoided, with the method used. Your loan agreement sets the exact items and dates.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners, CFOs",
+  "sections": [
+    {
+      "h": "Allocation: show where the money went",
+      "ul": [
+        "Supplier invoices and payment proof for the equipment or works the loan funded.",
+        "An end-use or utilisation certificate if the bank asks for one, often signed by your chartered accountant.",
+        "A note of any unspent balance and where it is held until used."
+      ],
+      "p": [
+        "This is usually needed once, soon after the project is complete, and again if the loan funds several projects over time."
+      ]
+    },
+    {
+      "h": "Impact: show what the project achieved",
+      "ul": [
+        "Solar: units generated from the inverter or generation meter, and the grid emissions avoided.",
+        "Energy efficiency: energy use before and after, normalised for production, from electricity and fuel bills.",
+        "Fuel switch: litres or kg of the old fuel no longer bought, and the new fuel used.",
+        "The method and factors used, so the bank can repeat the calculation."
+      ]
+    },
+    {
+      "h": "Why banks now ask for this",
+      "p": [
+        "The Green Loan Principles make annual reporting one of four core components. In India, banks that raise green deposits must allocate that money to eligible green activities under the RBI framework of 2023 and report on the allocation and impact, so they pass the request on to borrowers."
+      ]
+    },
+    {
+      "h": "Keep the reporting cheap",
+      "ol": [
+        "Agree the indicators and the method with the bank before disbursement, in writing.",
+        "Keep a baseline: twelve months of bills before the project.",
+        "File bills and meter readings monthly, so the annual report is a sum, not a search.",
+        "Report actuals once a full year of data exists, and explain any gap from the estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: annual impact line for a 200 kW rooftop solar loan",
+    "lines": [
+      "Generation meter, April to March: 270,000 kWh",
+      "Grid emissions avoided (location-based): 270,000 x 0.710 kg CO2 per kWh = 191,700 kg",
+      "Reported impact: 191.7 tonnes CO2 avoided, CEA CO2 Baseline Database version 21.0",
+      "Allocation line: ₹80 lakh disbursed, ₹80 lakh spent on the solar plant per supplier invoices"
+    ],
+    "note": "Use the generation meter, not the net-meter export figure, for units generated."
+  },
+  "senseible": "Senseible keeps invoice-based kWh and fuel records month by month, which supply the before and after figures and the allocation evidence for this report, and its green loan readiness check and finance application organise them. It is not a lender and does not sign utilisation certificates or provide an external review.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" },
+    { "label": "Proving energy savings to a lender", "to": "/answers/how-to-prove-energy-savings-to-a-lender" },
+    { "label": "RBI green deposits: what banks finance", "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance" }
+  ],
+  "sources": [
+    { "label": "LMA, APLMA and LSTA Green Loan Principles, reporting component", "url": "https://www.lma.eu.com" },
+    { "label": "RBI Framework for acceptance of Green Deposits (2023)", "url": "https://www.rbi.org.in" }
+  ],
+  "reviewed": "2026-10-15"
+}
