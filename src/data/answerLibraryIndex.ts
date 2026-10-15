@@ -947,6 +947,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "indian-coal-emissions-by-gcv",
+  "q": "How do I calculate emissions from Indian coal when my bill shows grade or GCV, not tonnes of standard coal?",
+  "title": "Indian coal emissions from grade or GCV",
+  "short": "Convert the coal's calorific value into energy, then multiply by an IPCC CO2 factor per terajoule. Take GCV from the lab report or the grade's band, convert kcal/kg to MJ/kg, reduce GCV to NCV, and apply the IPCC default for the coal type, such as 94.6 t CO2 per TJ for other bituminous coal.",
+  "topic": "accounting",
+  "reviewed": "2026-10-15"
+ },
+ {
   "slug": "indian-fiscal-year-vs-cbam-reporting-period",
   "q": "My plant keeps accounts April to March. Which reporting period do I use for CBAM embedded emissions data?",
   "title": "April to March accounts and CBAM periods",
