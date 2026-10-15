@@ -189,15 +189,21 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             .in('document_id', (ownerDocs ?? []).map((d: { id: string }) => d.id))
             .limit(1);
 
+          // Saved, but nothing on it can be counted yet: say what it needs.
+          let reviewNote: string | null = null;
           if (!existingEmissions?.length) {
             const rows = buildEmissionRows(extractedData, {
               documentId: document.id,
               sessionId: null,
               userId: user?.id || null,
             });
-            if (rows.length === 0) throw new Error('No verified activity and factor pair was found');
-            const { error: saveError } = await supabase.from('emissions').insert(rows);
-            if (saveError) throw saveError;
+            if (rows.length === 0) {
+              const next = (extractedData as { guidance?: { nextStep?: string | null } }).guidance?.nextStep;
+              reviewNote = `Saved, nothing counted yet${next ? `. ${next}` : ''}`;
+            } else {
+              const { error: saveError } = await supabase.from('emissions').insert(rows);
+              if (saveError) throw saveError;
+            }
           }
 
           // Success (including cached results)
@@ -205,7 +211,7 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             idx === i ? { 
               ...f, 
               status: 'success' as const,
-              message: data.cached ? 'Cached result' : 'Processed',
+              message: reviewNote ?? (data.isDuplicate ? 'Already in your records, counted once' : data.cached ? 'Saved result' : 'Processed'),
               documentHash: data.documentHash,
               extractedData
             } : f

@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Upload } from "lucide-react";
+import { toast } from "sonner";
 
 interface DocumentInputProps {
   onFileSelect: (file: File) => void;
@@ -23,9 +24,9 @@ export const DocumentInput = ({ onFileSelect, isProcessing }: DocumentInputProps
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    if (file && (file.type.includes("image") || file.type === "application/pdf")) {
-      onFileSelect(file);
-    }
+    if (!file) return;
+    if (file.type.includes("image") || file.type === "application/pdf") onFileSelect(file);
+    else toast.error("Upload a PDF or a photo (JPG, PNG, WEBP or HEIC) of the invoice or bill.");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

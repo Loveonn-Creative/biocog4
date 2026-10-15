@@ -64,12 +64,30 @@ describe('aiFetch provider order', () => {
     expect(calls[0].url).toContain('ai.gateway.lovable.dev');
   });
 
-  test('Gemini fails and no Lovable key: clear 503, not a crash', async () => {
+  for (const status of [429, 402, 500]) {
+    test(`Gemini ${status} and no Lovable key: the caller sees Gemini's status`, async () => {
+      env.set('GEMINI_API_KEY', 'g');
+      route(() => reply(status, { error: 'x' }));
+      expect((await ask()).status).toBe(status);
+      expect(calls).toHaveLength(1);
+    });
+  }
+
+  test('Gemini unreachable and no Lovable key: clear 503, not a crash', async () => {
     env.set('GEMINI_API_KEY', 'g');
-    route(() => reply(500));
+    route(() => { throw new TypeError('network'); });
     const res = await ask();
     expect(res.status).toBe(503);
     expect((await res.json()).error).toMatch(/temporarily unavailable/);
+  });
+
+  test('Gemini-only reasoning_effort is not sent to the gateway', async () => {
+    env.set('GEMINI_API_KEY', 'g'); env.set('LOVABLE_API_KEY', 'l');
+    route((url) => (url.includes('googleapis') ? reply(400) : reply(200)));
+    await aiFetch({ method: 'POST', body: JSON.stringify({ model: 'google/gemini-2.5-flash', reasoning_effort: 'low', response_format: { type: 'json_object' }, messages: [] }) });
+    expect(calls[0].body.reasoning_effort).toBe('low');
+    expect(calls[1].body.reasoning_effort).toBeUndefined();
+    expect(calls[1].body.response_format).toEqual({ type: 'json_object' });
   });
 
   test('both fail: the gateway status reaches the caller', async () => {
