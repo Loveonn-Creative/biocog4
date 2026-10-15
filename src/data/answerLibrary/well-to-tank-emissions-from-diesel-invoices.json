@@ -1,0 +1,66 @@
+{
+  "slug": "well-to-tank-emissions-from-diesel-invoices",
+  "q": "How do I calculate Scope 3 Category 3 well-to-tank emissions from the diesel and LPG I already report in Scope 1?",
+  "title": "Well-to-tank emissions from diesel and LPG",
+  "short": "Take the same litres of diesel and kilograms of LPG you used for Scope 1 and multiply them by well-to-tank factors, which cover extracting, refining and transporting the fuel. Report the result in Scope 3 Category 3. India has no official well-to-tank set, so most companies use the UK DESNZ table and say so.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Logistics fleets and manufacturers",
+  "sections": [
+    {
+      "h": "Which fuels belong here",
+      "p": [
+        "The GHG Protocol Scope 3 guidance puts upstream emissions of purchased fuels in Category 3, activity (a). It covers fuels your company burns, the same fuels in your Scope 1. Diesel bought by a transporter you hire is not yours: its upstream and combustion emissions belong in Category 4 or 9, inside the freight figure."
+      ]
+    },
+    {
+      "h": "The calculation, step by step",
+      "ol": [
+        "Start from the Scope 1 quantities by fuel and unit: litres of diesel, kg of LPG, scm of PNG.",
+        "Pick the well-to-tank factor for each fuel in the same unit. The DESNZ conversion factors publish a well-to-tank fuels table per litre, per kg and per kWh.",
+        "Multiply quantity by factor for each fuel and add them up.",
+        "Label the result kg CO2e: upstream factors include methane and nitrous oxide from extraction and processing, unlike the CO2-only combustion factors.",
+        "Record the table edition and year, and update it each reporting year."
+      ]
+    },
+    {
+      "h": "Watch for these errors",
+      "ul": [
+        "Unit mismatch: an LPG invoice in kg needs the per kg factor, not the per litre one.",
+        "Blends: DESNZ publishes diesel with an average biofuel blend and 100% mineral diesel. Indian diesel at the pump is mostly mineral, so the mineral line is usually closer.",
+        "Double counting: if you already included fuel purchases in a spend-based Category 1 figure, remove them there.",
+        "Mixing in combustion: the 2.68 kg CO2 per litre combustion factor stays in Scope 1 and is never added again here."
+      ]
+    },
+    {
+      "h": "How to describe the factor choice",
+      "p": [
+        "Write one line: well-to-tank factors from the UK DESNZ conversion factors for company reporting, year stated, used because no Indian government source publishes them; they reflect UK supply chains. A reviewer will accept a borrowed factor that is named and dated far more readily than an unnamed one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fleet and canteen (estimate)",
+    "lines": [
+      "Diesel used: 24,000 litres; Scope 1 = 24,000 x 2.68 = 64,320 kg CO2",
+      "LPG used: 3,000 kg; Scope 1 = 3,000 x 2.98 = 8,940 kg CO2",
+      "Diesel well-to-tank: 24,000 x about 0.6 kg CO2e per litre = about 14,400 kg CO2e",
+      "LPG well-to-tank: 3,000 kg x the DESNZ LPG per kg factor for your reporting year",
+      "Category 3 (fuels) for diesel alone is about 22% on top of its Scope 1 figure"
+    ],
+    "note": "About 0.6 kg CO2e per litre is a labelled estimate from the DESNZ diesel well-to-tank value for UK supply; use the current edition when you report. Check: 14,400 divided by 64,320 is about 0.22."
+  },
+  "senseible": "Senseible reads litres and kg from fuel slips and invoices and applies the IPCC 2006 combustion factors for Scope 1, so the quantities for this calculation are already on record with their source documents. It does not apply well-to-tank factors; you multiply the same quantities by the DESNZ values yourself.",
+  "links": [
+    { "label": "Category 3: fuel and transmission losses", "to": "/answers/scope-3-category-3-transmission-losses" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "LPG emission factor", "to": "/emission-factors/lpg" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance for Calculating Scope 3 Emissions (2013), Category 3", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting, well-to-tank fuels", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy (combustion side)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "DESNZ well-to-tank values change every year and reflect UK supply chains; check for an India-specific government set before each report."
+}

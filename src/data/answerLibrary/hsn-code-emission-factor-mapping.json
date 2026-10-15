@@ -2,7 +2,7 @@
   "slug": "hsn-code-emission-factor-mapping",
   "q": "Can I use HSN codes on invoices to assign emission factors?",
   "title": "Mapping HSN codes to emission factors",
-  "short": "Partly. An HSN code can narrow a line to a material family and point to a shortlist of factors, but it cannot choose the factor alone. Use the description to pick the exact item and the unit to confirm the factor fits. India has no official HSN to emission factor table, so the mapping is your method and must be documented.",
+  "short": "Partly. An HSN code can narrow a line to a material family and point to a shortlist of factors, but it cannot choose the factor alone. Use the description to pick the exact item and the unit to confirm the factor fits. India has no official HSN to factor table, so the mapping is your own documented method.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Sustainability analysts and accountants",
