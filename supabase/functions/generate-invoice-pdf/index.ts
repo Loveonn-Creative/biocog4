@@ -33,6 +33,8 @@ interface InvoiceData {
   periodStart?: string | null;
   periodEnd?: string | null;
   amount: number; // in paise
+  /** Platform fee in paise (card, netbanking or wallet via Razorpay), shown as its own line; part of the taxable value. */
+  platformFeePaise?: number;
   currency: string;
   transactionId: string;
   orderId: string;
@@ -93,7 +95,9 @@ const getLineDescription = (data: InvoiceData) => {
 };
 
 const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
-  const baseAmount = data.amount / 1.18; // Remove GST to get base
+  const baseAmount = data.amount / 1.18; // Remove GST to get the taxable value
+  const fee = Number.isFinite(data.platformFeePaise) && (data.platformFeePaise ?? 0) > 0 ? Math.min(data.platformFeePaise as number, baseAmount) : 0;
+  const planAmount = baseAmount - fee;
   const cgst = baseAmount * 0.09;
   const sgst = baseAmount * 0.09;
   const igst = baseAmount * 0.18;
@@ -207,9 +211,19 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
           </td>
           <td>998314</td>
           <td>1</td>
-          <td class="text-right">${escapeHtml(formatCurrency(baseAmount, data.currency))}</td>
-          <td class="text-right">${escapeHtml(formatCurrency(baseAmount, data.currency))}</td>
+          <td class="text-right">${escapeHtml(formatCurrency(planAmount, data.currency))}</td>
+          <td class="text-right">${escapeHtml(formatCurrency(planAmount, data.currency))}</td>
         </tr>
+        ${fee > 0 ? `<tr>
+          <td>
+            <div class="item-desc">Platform fee</div>
+            <div class="item-sub">Card, netbanking or wallet payment (4%)</div>
+          </td>
+          <td>998314</td>
+          <td>1</td>
+          <td class="text-right">${escapeHtml(formatCurrency(fee, data.currency))}</td>
+          <td class="text-right">${escapeHtml(formatCurrency(fee, data.currency))}</td>
+        </tr>` : ''}
       </tbody>
     </table>
 
