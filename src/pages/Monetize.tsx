@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -67,7 +68,7 @@ const Monetize = () => {
   const { sessionId, user } = useSession();
   const { scope, ready: workspaceReady } = useWorkspace();
   const workspaceKey = scopeKey(scope);
-  const { summary, getVerifiedEmissions } = useEmissions();
+  const { summary, getVerifiedEmissions, error: emissionsError, refetch: refetchEmissions } = useEmissions();
   const { isPremium, canAccessFeature, tier } = usePremiumStatus();
   const { activeContext } = useOrganization();
   const { entries: ledgerEntries, exportComplianceXLSX } = useComplianceLedger();
@@ -133,7 +134,7 @@ const Monetize = () => {
       if (!scoped) return;
       query = scoped;
       
-      const { data, error } = await query.eq('verification_status', 'verified');
+      const { data, error } = await query.eq('verification_status', 'verified').order('created_at', { ascending: false });
       
       if (error) throw error;
       setVerifications((data || []) as unknown as Verification[]);
@@ -316,6 +317,7 @@ const Monetize = () => {
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Monetize | Senseible</title></Helmet>
       <Navigation />
+      {emissionsError && <RecordsLoadError onRetry={() => void refetchEmissions()} />}
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">

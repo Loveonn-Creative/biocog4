@@ -10,7 +10,7 @@ import {
   Coins, FileBarChart, BarChart3, Upload
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
-import { verifyListState } from '@/lib/emissionLedger';
+import { verifyBuckets } from '@/lib/emissionLedger';
 import { CREDIT_VALUE_WITHHELD } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -96,7 +96,7 @@ const Verify = () => {
   const { can } = useWorkspace();
   const canVerify = can('records.verify');
   const { activeContext } = useOrganization();
-  const { emissions, refetch, isLoading: emissionsLoading } = useEmissions();
+  const { emissions, refetch, isLoading: emissionsLoading, error: emissionsError } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
@@ -114,12 +114,32 @@ const Verify = () => {
   const expectsNewRows = Boolean(navState?.fromUpload || navState?.emissionId || documentId);
 
   // Only stored rows are shown. When navigation names a document, scope to it.
-  const { scoped, pending, allVerified } = useMemo(
-    // Verify always works on every pending record on the account (all invoices),
-    // including the one just uploaded.
-    () => verifyListState(emissions, null),
-    [emissions],
+  // Records already checked that did not pass: re-sending them replays the
+  // same result, so they are shown with a next step instead of as pending.
+  const [checkedIds, setCheckedIds] = useState<ReadonlySet<string>>(new Set());
+  const openIds = useMemo(() => emissions.filter((e) => e.verified !== true && e.scope !== 3).map((e) => e.id), [emissions]);
+  useEffect(() => {
+    if (!user || openIds.length === 0) { setCheckedIds(new Set()); return; }
+    let live = true;
+    void (async () => {
+      const found = new Set<string>();
+      for (const ids of chunk(openIds)) {
+        const { data } = await supabase.from('compliance_ledger').select('emission_id, verification_status')
+          .in('emission_id', ids).in('verification_status', ['needs_review', 'rejected']);
+        for (const r of data ?? []) if (r.emission_id) found.add(r.emission_id);
+      }
+      if (live) setCheckedIds(found);
+    })();
+    return () => { live = false; };
+  }, [user, openIds]);
+
+  // Verify works on every open Scope 1 and 2 record on the account (all
+  // invoices), including the one just uploaded.
+  const { toVerify: pending, reviewed, scope3Held, done: allVerified } = useMemo(
+    () => verifyBuckets(emissions, checkedIds),
+    [emissions, checkedIds],
   );
+  const scoped = emissions;
 
   // Just after upload, the stored rows may not be readable yet. Refetch a few
   // times instead of showing a placeholder row that does not exist.
@@ -200,6 +220,7 @@ const Verify = () => {
       await refetch();
       if (failed) toast.error(`${failed} invoice${failed === 1 ? '' : 's'} could not be verified. See below.`);
       else if (blocked && !verified) toast.info('Nothing verified yet: every invoice needs more inputs.');
+      else if (!verified) toast.warning('Checked, but nothing passed. See the result below for what to fix.');
       else toast.success(`${verified} invoice${verified === 1 ? '' : 's'} verified${blocked ? `, ${blocked} need${blocked === 1 ? 's' : ''} inputs` : ''}.`);
     } catch (err) {
       console.error('Verification error:', err);
@@ -253,9 +274,9 @@ const Verify = () => {
           </CardHeader>
           <CardContent>
             <div className="mb-6">
-              <p className="text-sm text-muted-foreground mb-4">
-                {pending.length} {pending.length === 1 ? 'record' : 'records'} pending verification using BIOCOG_MVR_INDIA_v1.0 methodology
-              </p>
+              {!emissionsError && <p className="text-sm text-muted-foreground mb-4">
+                {pending.length} {pending.length === 1 ? 'record' : 'records'} ready to check against the source evidence
+              </p>}
               
               {/* Innovation 9: Data Connectors (opt-in) */}
               {isEnabled('data_connectors') && (
@@ -263,7 +284,13 @@ const Verify = () => {
               )}
             </div>
             
-            {emissionsLoading ? (
+            {emissionsError ? (
+              <div className="text-center py-8">
+                <p className="font-medium mb-2">Your records could not be loaded</p>
+                <p className="text-sm text-muted-foreground mb-4">This is a connection problem, not missing data. Nothing has changed.</p>
+                <Button variant="outline" onClick={() => void refetch()}>Try again</Button>
+              </div>
+            ) : emissionsLoading ? (
               <div className="text-center py-8 text-muted-foreground">
                 <Loader2 className="h-5 w-5 animate-spin mx-auto mb-2" />
                 Loading stored records...
@@ -317,7 +344,7 @@ const Verify = () => {
                   <CheckCircle className="h-8 w-8 text-success" />
                 </div>
                 <p className="font-medium text-lg mb-2">
-                  All emissions verified
+                  {reviewed.length || scope3Held.length ? 'Everything that can be checked here is verified' : 'All emissions verified'}
                 </p>
                 <p className="text-sm text-muted-foreground mb-4">Verified records are listed in History and the audit ledger</p>
                 <Button onClick={() => navigate('/monetize')} size="lg">
@@ -345,10 +372,36 @@ const Verify = () => {
                   <Button variant="ghost" onClick={() => navigate('/history')}>Open History</Button>
                 </div>
               </div>
+            ) : reviewed.length || scope3Held.length ? (
+              <p className="py-4 text-sm text-muted-foreground">Nothing left to check here. The records below need something else first.</p>
             ) : (
               <div className="text-center py-8">
                 <p className="text-muted-foreground mb-4">No emissions data yet</p>
                 <Button variant="outline" onClick={() => navigate('/')}>Upload Invoice</Button>
+              </div>
+            )}
+
+            {/* Checked already and did not pass: one click cannot change them. */}
+            {!emissionsError && reviewed.length > 0 && (
+              <div className="mt-6 rounded-lg border border-warning/40 bg-warning/5 p-4 text-sm">
+                <p className="font-medium">{reviewed.length} {reviewed.length === 1 ? 'record needs' : 'records need'} review</p>
+                <p className="mt-1 text-muted-foreground">
+                  These were checked and did not pass, so checking again gives the same result. Open the invoice in History to see why. If the invoice was read wrongly, delete it there and upload a clearer copy; if you think the check is wrong, ask us for a review.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Button size="sm" variant="outline" onClick={() => navigate('/history')}>Open History</Button>
+                  <Button size="sm" variant="ghost" onClick={() => navigate('/contact?topic=support&msg=' + encodeURIComponent('Please review my verification result.'))}>Ask for a review</Button>
+                </div>
+              </div>
+            )}
+
+            {/* Scope 3 is verified in the supplier evidence trail, not here. */}
+            {!emissionsError && scope3Held.length > 0 && (
+              <div className="mt-4 rounded-lg border border-border bg-secondary/30 p-4 text-sm">
+                <p className="font-medium">{scope3Held.length} Scope 3 {scope3Held.length === 1 ? 'record' : 'records'} kept as evidence</p>
+                <p className="mt-1 text-muted-foreground">
+                  Supplier (Scope 3) emissions are checked line by line in the supplier evidence trail, which is not switched on for your account yet. They stay saved with their invoices and are not counted in verified totals until then.
+                </p>
               </div>
             )}
           </CardContent>
@@ -400,7 +453,7 @@ const Verify = () => {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-4">
-                These invoices were not verified. Their records are missing inputs that verification needs. Upload a clearer invoice or correct the source data, then try again.
+                These invoices were not verified because inputs are missing. Upload a clearer copy of the invoice (or the bill page that prints the quantity) and check again.
               </p>
               {missingInputs.length === 0 ? (
                 <p className="text-sm">The verifier did not list the missing inputs.</p>

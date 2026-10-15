@@ -1,4 +1,5 @@
 import { useEmissions } from '@/hooks/useEmissions';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { useDocuments } from '@/hooks/useDocuments';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
@@ -62,7 +63,7 @@ const Dashboard = () => {
   const workspaceKey = scopeKey(scope);
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
-  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch } = useEmissions();
+  const { summary, emissions, isLoading: emissionsLoading, getUnverifiedEmissions, getVerifiedEmissions, refetch, error: emissionsError } = useEmissions();
   const { documents, isLoading: docsLoading } = useDocuments();
   const [verificationScore, setVerificationScore] = useState(0);
   const [latestStatus, setLatestStatus] = useState<'verified' | 'needs_review' | 'pending' | null>(null);
@@ -262,6 +263,7 @@ const Dashboard = () => {
       
       <CarbonParticles />
       <Navigation onSignOut={() => navigate('/')} />
+      {emissionsError && <RecordsLoadError onRetry={() => void refetch()} />}
 
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 py-8">

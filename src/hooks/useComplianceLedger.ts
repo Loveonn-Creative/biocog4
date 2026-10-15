@@ -96,7 +96,8 @@ export const useComplianceLedger = () => {
       const wb = XLSX.utils.book_new();
       const data = entries.map(e => ({
         'Emission ID': e.emission_id || '',
-        'Document Hash': (e.document_hash || '').substring(0, 16) + '...',
+        // Full SHA-256, so an auditor can match the file itself.
+        'Document Hash': e.document_hash || '',
         'Invoice #': e.invoice_number || '',
         'Vendor': e.vendor || '',
         'Date': e.invoice_date || '',
@@ -125,7 +126,8 @@ export const useComplianceLedger = () => {
         'Fiscal Year': e.fiscal_year || '',
         'Fiscal Quarter': e.fiscal_quarter || '',
         'Proof Chain': `Invoice → ${e.emission_category} → EF:${e.emission_factor ?? 'N/A'} → ${e.co2_kg}kg CO₂ → ${e.verification_status || 'unknown'}`,
-        'Audit Grade': e.verification_score ? (e.verification_score >= 0.9 ? 'A' : e.verification_score >= 0.75 ? 'B' : e.verification_score >= 0.5 ? 'C' : 'D') : 'N/A',
+        // An automated rule-check score, not an audit opinion.
+        'Platform Check Grade': e.verification_score ? (e.verification_score >= 0.9 ? 'A' : e.verification_score >= 0.75 ? 'B' : e.verification_score >= 0.5 ? 'C' : 'D') : 'N/A',
       }));
 
       const ws = XLSX.utils.json_to_sheet(data);
@@ -134,10 +136,11 @@ export const useComplianceLedger = () => {
       const summaryData = [{
         'Export Date': new Date().toISOString(),
         'Total Entries': entries.length,
-        'Methodology': 'BIOCOG_MVR_INDIA_v1.0',
+        // The versions actually recorded on the rows, not a fixed label.
+        'Methodology': [...new Set(entries.map(e => e.methodology_version).filter(Boolean))].join(', ') || 'Not recorded',
         'Verified CO₂ (kg)': verifiedTotalKg.toFixed(2),
         'Verified Entries': entries.filter(e => e.verification_status === 'verified').length,
-        'Audit Note': 'Audit ledger export. One row per emission (latest verification). Verified CO₂ counts verified rows only. Each row traces from source invoice to the stored calculation.',
+        'Audit Note': 'Audit ledger export. One row per emission (latest verification). Verified CO₂ counts verified rows only. Each row traces from source invoice to the stored calculation. "Verified" means the platform\'s rule checks passed; it is not third-party assurance.',
       }];
       const ws2 = XLSX.utils.json_to_sheet(summaryData);
       XLSX.utils.book_append_sheet(wb, ws2, 'Audit Summary');

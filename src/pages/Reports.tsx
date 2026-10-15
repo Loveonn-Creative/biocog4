@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -82,7 +83,7 @@ const ALL_FRAMEWORKS = Object.values(FRAMEWORKS).map(fw => ({
 
 const Reports = () => {
   const navigate = useNavigate();
-  const { summary, emissions } = useEmissions();
+  const { summary, emissions, error: emissionsError, refetch: refetchEmissions } = useEmissions();
   const { user, sessionId } = useSession();
   const { scope, ready: workspaceReady } = useWorkspace();
   const workspaceKey = scopeKey(scope);
@@ -363,6 +364,9 @@ const Reports = () => {
   const generateLenderReport = () => downloadFramework('LENDER_VIEW', 'pdf');
 
   
+  // Distinct source files behind verified records: what the certificate may cite.
+  const verifiedDocCount = new Set(evidence.filter((e) => e.verificationStatus === 'verified').map((e) => e.documentHash)).size;
+
   const generateComplianceCertificate = async () => {
     setIsGenerating(true);
     
@@ -437,7 +441,7 @@ const Reports = () => {
       doc.setTextColor(60);
       // States only what the records show: emissions recorded from source
       // documents and checked by the platform's own integrity control.
-      doc.text(`has recorded its greenhouse gas emissions from ${evidence.length} source document${evidence.length === 1 ? '' : 's'}`, centerX, bodyY, { align: 'center' });
+      doc.text(`has recorded its greenhouse gas emissions from ${verifiedDocCount} source document${verifiedDocCount === 1 ? '' : 's'}`, centerX, bodyY, { align: 'center' });
       doc.text('reviewed by a Senseible analyst or subject expert against the source evidence.', centerX, bodyY + 9, { align: 'center' });
       
       // Verification details box - centered with equal columns
@@ -586,6 +590,7 @@ const Reports = () => {
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Reports | Senseible</title></Helmet>
       <Navigation />
+      {emissionsError && <RecordsLoadError onRetry={() => void refetchEmissions()} />}
       
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
@@ -1014,7 +1019,7 @@ const Reports = () => {
                   <Button 
                     className="w-full gap-2"
                     onClick={generateComplianceCertificate}
-                    disabled={isGenerating || !latestVerification?.verification_status}
+                    disabled={isGenerating || latestVerification?.verification_status !== 'verified'}
                   >
                     {isGenerating ? (
                       <Loader2 className="h-4 w-4 animate-spin" />

@@ -29,6 +29,11 @@ export interface ReportCategory {
 }
 
 export interface ReportEvidenceRow {
+  /** Emission row id: ties the register line to History and the audit ledger. */
+  emissionId?: string | null;
+  activityData?: number | null;
+  activityUnit?: string | null;
+  emissionFactor?: number | null;
   documentHash: string;
   invoiceNumber: string | null;
   vendor: string | null;
@@ -226,21 +231,35 @@ const dataQualitySection = (ds: ReportDataset, assessment: FrameworkAssessment):
   };
 };
 
-const evidenceSection = (ds: ReportDataset): Section => ({
-  kind: 'table',
-  title: 'Evidence register',
-  head: ['Evidence hash', 'Document', 'Vendor', 'Date', 'Scope', 'tCO2e', 'Status'],
-  rows: ds.evidence.slice(0, 200).map((e) => [
-    e.documentHash.substring(0, 16),
-    e.invoiceNumber || '-',
-    e.vendor || '-',
-    e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '-',
-    `Scope ${e.scope}`,
-    tL(e.co2Kg, ds.locale),
-    e.verificationStatus,
-  ]),
-  note: ds.evidence.length > 200 ? `Showing first 200 of ${ds.evidence.length} evidence records.` : undefined,
-});
+// Verified records only, so the register adds up to the verified totals above.
+// Each line carries its emission id, activity and factor so it can be
+// recomputed and matched to the audit ledger export (full ids and hashes there).
+const evidenceSection = (ds: ReportDataset): Section => {
+  const rows = ds.evidence.filter((e) => e.verificationStatus === 'verified');
+  const left = ds.evidence.length - rows.length;
+  const notes = [
+    rows.length > 200 ? `Showing first 200 of ${rows.length} verified records.` : '',
+    left > 0 ? `${left} unverified ${left === 1 ? 'record is' : 'records are'} not listed and not counted.` : '',
+    'IDs and hashes show their first characters; the audit ledger export has them in full.',
+  ].filter(Boolean).join(' ');
+  return {
+    kind: 'table',
+    title: 'Evidence register',
+    head: ['Emission ID', 'Evidence hash', 'Document', 'Vendor', 'Date', 'Scope', 'Activity', 'Factor', 'tCO2e'],
+    rows: rows.slice(0, 200).map((e) => [
+      (e.emissionId || '-').substring(0, 8),
+      e.documentHash.substring(0, 16),
+      e.invoiceNumber || '-',
+      e.vendor || '-',
+      e.invoiceDate ? fmtDate(e.invoiceDate, ds.locale) : '-',
+      `Scope ${e.scope}`,
+      e.activityData != null ? `${e.activityData} ${e.activityUnit || ''}`.trim() : '-',
+      e.emissionFactor != null ? String(e.emissionFactor) : '-',
+      tL(e.co2Kg, ds.locale),
+    ]),
+    note: notes,
+  };
+};
 
 /**
  * Scope 3 supplier annex — the same verified evidence, grouped by counterparty.
@@ -662,7 +681,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
         common.target,
         note(
           'What a KPI can be written against',
-          'A sustainability-linked KPI needs a baseline the lender can re-derive. Every figure above is reproducible from the evidence register: each record carries its document hash, activity data, emission factor and factor source. Figures marked as data gaps must not be used as KPI baselines.',
+          'A sustainability-linked KPI needs a baseline the lender can re-derive. Every verified figure above is reproducible from the evidence register: each record carries its emission id, document hash, activity data and emission factor, and the audit ledger export adds the factor source. Figures marked as data gaps must not be used as KPI baselines.',
         ),
         common.categories,
         common.methodology,

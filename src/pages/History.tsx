@@ -1,4 +1,5 @@
 import { useDocuments } from '@/hooks/useDocuments';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { useEmissions } from '@/hooks/useEmissions';
 import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '@/components/Navigation';
@@ -38,7 +39,7 @@ const History = () => {
   const canDelete = (doc: { user_id: string | null }) =>
     scope.kind !== 'organization' || can('records.manage') || (can('records.upload') && doc.user_id === user?.id);
   const { documents, isLoading: docsLoading, refetch: refreshDocuments } = useDocuments();
-  const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions } = useEmissions();
+  const { emissions, isLoading: emissionsLoading, refetch: refreshEmissions, error: emissionsError } = useEmissions();
   const { isEnterprise } = useEnterpriseMode();
   const { entries: ledgerEntries, verifiedTotalKg: ledgerVerifiedKg, loaded: ledgerLoaded, exportComplianceXLSX, refetch: refreshLedger } = useComplianceLedger();
   const [restoring, setRestoring] = useState(false);
@@ -193,6 +194,7 @@ const History = () => {
     <div className="relative min-h-screen w-full bg-background pb-16 md:pb-0">
       <Helmet><title>Invoice History | Senseible</title></Helmet>
       <Navigation />
+      {emissionsError && <RecordsLoadError onRetry={() => void refreshEmissions()} />}
       <main className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h1 className="text-2xl font-semibold">Invoice History</h1>
