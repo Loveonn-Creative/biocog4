@@ -1,10 +1,10 @@
 # Pending migrations (NOT applied)
 
-> **Queued for Lovable (drizzle):** `drizzle/migrations/0007_invoice_source_files`,
-> `0008_scope3_trail` and `0009_scope3_global_freight` are copies of
+> **Queued for Lovable (drizzle):** `drizzle/migrations/0008_invoice_source_files`,
+> `0009_scope3_trail` and `0010_scope3_global_freight` are copies of
 > `20261016100000`, `20261019100000` and `20261020100000` below (top-level
 > BEGIN/COMMIT removed; drizzle wraps each file in a transaction). Tested on a
-> replay of `supabase/migrations` plus drizzle 0000 to 0006, each file applied in
+> replay of `supabase/migrations` plus drizzle 0000 to 0007, each file applied in
 > its own transaction, with all three behaviour test files passing.
 
 SQL in this folder has **not** been applied to any database. It lives outside

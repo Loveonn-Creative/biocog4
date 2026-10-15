@@ -1290,6 +1290,7 @@ export type Database = {
           data_consent: boolean | null
           data_consent_at: string | null
           data_consent_version: string | null
+          email: string | null
           enterprise_mode: boolean | null
           gstin: string | null
           id: string
@@ -1317,6 +1318,7 @@ export type Database = {
           data_consent?: boolean | null
           data_consent_at?: string | null
           data_consent_version?: string | null
+          email?: string | null
           enterprise_mode?: boolean | null
           gstin?: string | null
           id: string
@@ -1344,6 +1346,7 @@ export type Database = {
           data_consent?: boolean | null
           data_consent_at?: string | null
           data_consent_version?: string | null
+          email?: string | null
           enterprise_mode?: boolean | null
           gstin?: string | null
           id?: string
