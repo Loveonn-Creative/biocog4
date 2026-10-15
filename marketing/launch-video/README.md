@@ -68,3 +68,6 @@ Every claim quotes the Enterprise page (sources in the comments of `revert.html`
 
 ## "Read the label": credibility film (37.5 s, 9:16 and 16:9)
 Do not publish until the CEA edition of the 0.710 grid factor is confirmed (FACTOR_SOURCE constant at the top of `label.html`).
+
+## "Same bill, different line": green-loan film (51 s, 9:16 and 16:9)
+The KYC fact (an electricity bill is accepted as address proof) is sourced to the RBI KYC Master Direction in the comments of `samebill.html`. The bill is fictional. Check the Bank Disclosure Report on the live site before publishing.

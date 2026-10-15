@@ -1,0 +1,743 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Same bill film</title>
+<!--
+  "Same bill, different line" (green-loan readiness). 51 s. 9:16 primary (?o=portrait), 16:9 default.
+
+  FACTS AND SOURCES (kept out of the frame on purpose)
+  - "Your bank already trusts this bill": RBI Master Direction - Know Your Customer (KYC) Direction, 2016
+    (updated as on 14 Aug 2025), definition of Officially Valid Document, proviso on simplified measures:
+    "utility bill which is not more than two months old of any service provider (electricity, telephone,
+    post-paid mobile phone, piped gas, water bill)" is deemed an OVD "for the limited purpose of proof of address".
+    https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566
+    RBI FAQs on the KYC Master Direction (9 Jun 2025): https://www.rbi.org.in/commonman/Upload/English/FAQs/PDFs/KYC09062025.pdf
+  - "We read the units. Not your address.": AGENTS.md (repo root) - electricity bills: read only billing details
+    (period, tariff category, sanctioned load, units); never extract consumer name, address, phone, consumer,
+    account or meter numbers.
+  - 4,820 kWh x 0.710 kg CO2/kWh = 3,422 kg = 3.42 t CO2. Factor: INDIA_GRID_FACTOR_KG_PER_KWH = 0.710 in
+    supabase/functions/_shared/emissionFactors.ts (CEA CO2 Baseline Database, India weighted average; edition to be confirmed).
+  - Meter readings 1,25,180 - 1,20,360 = 4,820 kWh (internally consistent sample bill; all bill details fictional).
+  - "We don't lend.": src/pages/ClimateFinance.tsx - "Senseible is the verification primitive, not the lender."
+  - Bank report: src/pages/Reports.tsx card "Bank Disclosure Report" ("For green loan applications & ESG financing",
+    button "Download Bank Report") -> LENDER_VIEW pack (src/lib/frameworkReports.ts, src/lib/reportFrameworks.ts):
+    purchased energy (Scope 2) baseline, evidence register where each record carries document hash, activity data,
+    emission factor and factor source; "not a credit assessment, a rating, or a statement of eligibility for any facility".
+  - No bank is named, no rate or approval is promised. "Bring three bills" is an invitation, not a product minimum.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 700; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root {
+  --ink: #16181d; --muted: #6b6f78; --green: #1f5139; --greenInk: #1d6b45; --saffron: #f08a24; --red: #c8372d;
+  --paper: #fbf8f1; --pen: #2643c4; --manila: #dcc48e;
+  --hlY: rgba(255, 214, 0, .62); --hlG: rgba(62, 196, 120, .55);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; background: #b9c0c8; }
+#view { position: absolute; inset: 0; perspective: 2200px; }
+#desk { position: absolute; left: 0; top: 0; width: 4400px; height: 4400px; }
+#deskTex { position: absolute; inset: 0; opacity: .5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.012 .5' numOctaves='3' seed='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .16 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
+.obj { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; }
+.paperTex { background-color: var(--paper);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .4  0 0 0 0 .3  0 0 0 .10 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"),
+    linear-gradient(160deg, rgba(255,255,255,.55), rgba(255,255,255,0) 45%, rgba(120,100,60,.05)); }
+.sheetShadow { box-shadow: 0 1px 1px rgba(20,25,35,.18), 0 8px 14px -4px rgba(20,25,35,.22), 26px 40px 60px -14px rgba(20,25,35,.42); }
+
+/* ---------- the bill ---------- */
+#bill { width: 700px; height: 990px; padding: 46px 44px; border-radius: 3px; }
+#bill .bh { display: flex; justify-content: space-between; align-items: flex-end; }
+#bill .bh b { font-size: 36px; font-weight: 700; letter-spacing: -.01em; }
+#bill .bh .mono { font-size: 15px; color: var(--muted); letter-spacing: .1em; padding-bottom: 6px; }
+#bill .sub { font-size: 15px; color: var(--muted); margin-top: 8px; letter-spacing: .04em; }
+#bill .rule { height: 3px; background: var(--ink); margin: 18px 0 0; }
+#addr { position: relative; margin-top: 26px; padding: 6px 0 4px; }
+#addrC { position: relative; }
+#addrC .al { position: relative; display: block; width: fit-content; white-space: nowrap; }
+#aName { font-size: 27px; font-weight: 600; }
+#aL2 { font-size: 23px; margin-top: 10px; }
+#aL3 { font-size: 23px; margin-top: 6px; }
+#aIds { font-size: 16px; color: var(--muted); margin-top: 16px; letter-spacing: .04em; }
+svg.hl { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+svg.hl path { fill: none; stroke-linecap: butt; }
+#frost { position: absolute; left: -26px; right: -26px; top: -12px; bottom: -14px; pointer-events: none; }
+#frostIn { position: absolute; inset: 0; overflow: hidden; border-radius: 2px;
+  background: rgba(236, 240, 242, .62);
+  box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 -1px 0 rgba(0,0,0,.05) inset, 0 3px 6px -2px rgba(20,25,35,.18); }
+#frostIn .tex { position: absolute; inset: 0; opacity: .9;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' seed='8'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 -.1'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>"),
+    linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.45) 42%, rgba(255,255,255,0) 52%); }
+#frostClone { position: absolute; left: 26px; top: 18px; filter: blur(7px); opacity: .75; }
+#note { position: absolute; left: 230px; top: 0; font-size: 44px; color: var(--greenInk); white-space: nowrap; transform: rotate(-4deg); transform-origin: left center; }
+#tbl { margin-top: 70px; border-top: 1px solid #e4dfd3; }
+.brow { position: relative; display: flex; justify-content: space-between; align-items: center; height: 72px; padding: 0 2px; font-size: 26px; border-bottom: 1px solid #e9e4d8; }
+.brow .k { color: var(--muted); position: relative; z-index: 1; } .brow .v { font-weight: 600; position: relative; z-index: 1; }
+#unitsRow .v { font-weight: 700; }
+#unitsRow svg.hl { z-index: 0; }
+#scar { position: absolute; left: 0; top: 0; width: 612px; height: 72px; visibility: hidden;
+  background: #efe9dc; box-shadow: inset 0 0 0 1px rgba(80,60,30,.08), inset 0 2px 5px rgba(80,60,30,.12); }
+#scar i { position: absolute; left: 8px; right: 8px; top: 14px; bottom: 14px; background: rgba(62,196,120,.16); filter: blur(5px); }
+#meter { margin-top: 30px; font-size: 15px; color: var(--muted); letter-spacing: .03em; line-height: 1.7; }
+#bill .foot { position: absolute; left: 44px; right: 44px; bottom: 40px; display: flex; justify-content: space-between; font-size: 14px; color: #9a9688; letter-spacing: .08em; border-top: 1px dashed #d8d2c4; padding-top: 14px; }
+
+/* ---------- loan file ---------- */
+#file { width: 860px; height: 1010px; }
+#folder { position: absolute; inset: 0; background: var(--manila); border-radius: 6px 6px 8px 8px;
+  background-image: linear-gradient(170deg, rgba(255,255,255,.22), rgba(255,255,255,0) 40%, rgba(90,60,10,.10)); }
+#folder .tab { position: absolute; left: 40px; top: -46px; width: 330px; height: 56px; background: var(--manila); border-radius: 8px 8px 0 0;
+  font-family: 'JetBrains Mono', monospace; font-size: 16px; letter-spacing: .12em; color: #6e5a2c; padding: 14px 22px; }
+#sheet { position: absolute; left: 50px; top: 46px; width: 760px; height: 920px; padding: 44px 46px; border-radius: 2px; }
+#sheet .mono.h { font-size: 15px; color: var(--muted); letter-spacing: .1em; }
+#sheet b.t { display: block; font-size: 40px; font-weight: 700; letter-spacing: -.02em; margin-top: 6px; padding-bottom: 16px; border-bottom: 3px solid var(--ink); }
+.frow { position: relative; display: grid; grid-template-columns: 1fr 210px 60px; align-items: center; height: 104px; border-bottom: 1px solid #e7e1d4; font-size: 25px; }
+.frow .src { font-size: 19px; color: var(--muted); position: relative; width: fit-content; }
+.frow .src span { position: relative; z-index: 1; }
+.box { width: 44px; height: 44px; border: 2.5px solid var(--ink); border-radius: 4px; justify-self: end; }
+.frow.em { height: 196px; grid-template-columns: 1fr 210px 60px; align-content: center; row-gap: 14px; border-bottom: 0; }
+.frow.em .lab { grid-column: 1 / 2; }
+#emBox { grid-column: 1 / 2; grid-row: 2; position: relative; width: 448px; height: 66px; border: 2.5px dashed #9e9888; border-radius: 4px; }
+#emSrc { grid-column: 2; grid-row: 2; }
+#emTick { grid-column: 3; grid-row: 2; }
+#stuck { position: absolute; left: 8px; top: 6px; width: 612px; height: 72px; visibility: hidden; transform-origin: 0 0; }
+#emHand { position: absolute; left: 0; top: -6px; font-family: 'Hand', cursive; font-size: 34px; color: var(--greenInk); white-space: nowrap; }
+svg.ink { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+svg.ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+#sheet .sig { position: absolute; left: 46px; right: 46px; bottom: 50px; border-top: 1.5px solid #bbb; font-size: 16px; color: var(--muted); padding-top: 8px; }
+
+/* ---------- report ---------- */
+#report { width: 700px; height: 900px; padding: 50px 48px; border-radius: 3px; }
+#report .mono.h { font-size: 15px; color: var(--green); letter-spacing: .12em; }
+#report b.t { display: block; font-size: 46px; font-weight: 700; letter-spacing: -.025em; line-height: 1.05; margin-top: 10px; }
+#report .s { font-size: 20px; color: var(--muted); margin-top: 12px; padding-bottom: 24px; border-bottom: 3px solid var(--green); }
+#report .r { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; border-bottom: 1px solid #e7e1d4; font-size: 24px; }
+#report .r .v { font-weight: 600; }
+#report .fn { position: absolute; left: 48px; right: 48px; bottom: 48px; font-size: 16px; color: var(--muted); }
+
+/* ---------- hand tools ---------- */
+.tool { position: absolute; left: 0; top: 0; display: flex; align-items: center; transform-origin: 0 50%; }
+.hlr { height: 64px; width: 500px; }
+.hlr .tip { width: 30px; height: 34px; clip-path: polygon(0 28%, 100% 0, 100% 100%, 0 72%); }
+.hlr .collar { width: 44px; height: 52px; border-radius: 5px; }
+.hlr .barrel { flex: 1; height: 64px; border-radius: 10px 22px 22px 10px; position: relative; }
+.hlr .barrel i { position: absolute; left: 40px; top: 25px; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .3em; opacity: .55; }
+#hlY .tip { background: #ffd200; } #hlY .collar { background: linear-gradient(to bottom, #fff07a, #e8c000 45%, #a98a00); }
+#hlY .barrel { background: linear-gradient(to bottom, #fff4a0 0%, #ffe12e 22%, #f3c900 60%, #b99300 100%); color: #6d5600; }
+#hlG .tip { background: #3ec478; } #hlG .collar { background: linear-gradient(to bottom, #8fe6b4, #3ec478 45%, #1f7a4a); }
+#hlG .barrel { background: linear-gradient(to bottom, #4f8d6e 0%, #2a6a4b 22%, #1f5139 60%, #0f2d1f 100%); color: #cfe9da; }
+.pen { height: 30px; width: 560px; }
+.pen .tip { width: 46px; height: 30px; background: linear-gradient(to bottom, #f2f2f2, #b9bcc2 50%, #6c7078); clip-path: polygon(0 50%, 100% 8%, 100% 92%); }
+.pen .barrel { flex: 1; height: 30px; border-radius: 4px 15px 15px 4px; background: linear-gradient(to bottom, #4a5a86 0%, #1f2b4f 30%, #141c35 70%, #070a14 100%); position: relative; }
+.pen .clip { position: absolute; right: 50px; top: 6px; width: 170px; height: 8px; border-radius: 4px; background: linear-gradient(to bottom, #fff, #a9adb5); }
+
+/* ---------- the ribbon (screen-space 3D) ---------- */
+#air { position: absolute; inset: 0; perspective: 1700px; pointer-events: none; }
+#ribShadow { position: absolute; left: 0; top: 0; border-radius: 6px; background: rgba(15,20,30,.55); }
+#rib { position: absolute; left: 0; top: 0; width: 612px; height: 72px; transform-style: preserve-3d; transform-origin: 50% 50%; }
+.seg, .pan { position: absolute; top: 0; height: 72px; transform-style: preserve-3d; }
+.seg { transform-origin: 100% 50%; }
+.pan { transform-origin: 0 50%; }
+.face, .back { position: absolute; inset: 0; backface-visibility: hidden; overflow: hidden; }
+.seg > .face, .seg > .back { right: -1.5px; }
+.back { transform: rotateY(180deg); background: #ece6d9; }
+.face .inner { position: absolute; top: 0; height: 72px; }
+.face .shade, .back .shade { position: absolute; inset: 0; background: #000; opacity: 0; }
+.pan .face { background-color: var(--paper); }
+.prow { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 2px; font-size: 26px; white-space: nowrap; }
+.prow .k { color: var(--muted); position: relative; z-index: 1; } .prow .v { font-weight: 600; position: relative; z-index: 1; }
+.prow .v small { font-size: 17px; color: var(--muted); font-weight: 500; }
+.prow .v.big { font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+.face.sum { border-top: 4px solid var(--ink); }
+.pcell { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 12px; white-space: nowrap; }
+.pcell .big { font-size: 38px; font-weight: 700; letter-spacing: -.02em; position: relative; z-index: 1; }
+.pcell .sm { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--muted); line-height: 1.25; position: relative; z-index: 1; }
+.band { position: absolute; left: 4px; right: 4px; top: 8px; bottom: 8px; background: var(--hlG); filter: blur(.6px); border-radius: 2px 6px 3px 5px; }
+#tag { position: absolute; left: 0; top: 0; width: 612px; height: 72px; transform-origin: 50% 50%; visibility: hidden; }
+
+/* ---------- type ---------- */
+.cap { position: absolute; left: 110px; width: 800px; font-size: 76px; font-weight: 600; letter-spacing: -0.035em; line-height: 1.04; z-index: 20; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.cap .w > span { display: inline-block; }
+.g { color: var(--green); } .m { color: #4a4e57; }
+#scrim { position: absolute; left: 0; top: 0; z-index: 15; pointer-events: none; }
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .075; pointer-events: none; z-index: 50; mix-blend-mode: multiply; }
+#light { position: absolute; inset: 0; pointer-events: none; z-index: 14;
+  background: radial-gradient(120% 90% at 30% 20%, rgba(255,250,240,.16), rgba(255,250,240,0) 55%), radial-gradient(140% 120% at 50% 50%, rgba(0,0,0,0) 55%, rgba(10,15,25,.22)); }
+
+/* end card */
+#endc { position: absolute; left: -4%; top: 0; width: 108%; height: 100%; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 -30px 60px rgba(20,25,35,.28); }
+#endc .big { position: relative; font-size: 104px; font-weight: 600; letter-spacing: -0.045em; line-height: 1.02; text-align: center; }
+#endc .big > span { display: block; }
+#endc .big .u { position: relative; display: inline-block; }
+#eMark { margin-top: 90px; font-size: 44px; letter-spacing: .34em; padding-left: .34em; font-weight: 500; }
+#eUrl { margin-top: 18px; font-size: 30px; color: var(--green); font-weight: 600; letter-spacing: .01em; }
+
+/* portrait */
+body.portrait .cap { left: 72px; width: 940px; font-size: 88px; }
+body:not(.portrait) #c6b { width: 700px; }
+body.portrait #endc .big { font-size: 96px; max-width: 900px; }
+body.portrait #eMark { font-size: 54px; margin-top: 120px; }
+body.portrait #eUrl { font-size: 36px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="bleed" filterUnits="userSpaceOnUse" x="-120" y="-160" width="1400" height="560">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.55" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="3" result="b"/>
+      <feComponentTransfer in="b" result="bl"><feFuncA type="linear" slope=".5"/></feComponentTransfer>
+      <feMerge><feMergeNode in="bl"/><feMergeNode in="d"/></feMerge>
+    </filter>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.55"/><feComposite in="SourceGraphic" operator="in"/></filter>
+  </svg>
+  <svg id="grain"><filter id="gr"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="9"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gr)"/></svg>
+
+  <div id="view"><div id="desk">
+    <div id="deskTex"></div>
+
+    <!-- loan file (bank's folder) -->
+    <div class="obj" id="file">
+      <div id="folder" class="sheetShadow"><div class="tab">LOAN FILE · MSME</div></div>
+      <div id="sheet" class="paperTex sheetShadow">
+        <span class="mono h">TERM LOAN · DOCUMENT CHECKLIST</span>
+        <b class="t">Loan file</b>
+        <div class="frow" id="fr1"><span>KYC · address proof</span><span class="src" id="src1"><svg class="hl" id="hlSrc1"></svg><span>Electricity bill</span></span><span class="box"></span></div>
+        <div class="frow"><span>Udyam registration</span><span class="src"><span>Certificate</span></span><span class="box"></span></div>
+        <div class="frow"><span>GST returns, 12 months</span><span class="src"><span>GSTR-3B</span></span><span class="box"></span></div>
+        <div class="frow"><span>Bank statements</span><span class="src"><span>6 months</span></span><span class="box"></span></div>
+        <div class="frow em"><span class="lab">Emissions baseline · Scope 2</span>
+          <div id="emBox"><div id="stuck"></div></div>
+          <span class="src" id="emSrc"><svg class="hl" id="hlSrc5"></svg><span id="emHand"></span></span>
+          <span class="box" id="emTick"></span></div>
+        <div class="sig">Checked by</div>
+        <svg class="ink" id="fileInk" width="760" height="920"></svg>
+      </div>
+    </div>
+
+    <!-- the electricity bill (all details fictional) -->
+    <div class="obj paperTex sheetShadow" id="bill">
+      <div class="bh"><b>Electricity bill</b><span class="mono">LT · INDUSTRIAL</span></div>
+      <div class="sub mono">Bill month SEP 2026 · Due 15 OCT 2026</div>
+      <div class="rule"></div>
+      <div id="addr">
+        <div id="addrC">
+          <svg class="hl" id="hlAddr"></svg>
+          <span class="al" id="aName">Shakti Engineering Works</span>
+          <span class="al" id="aL2">Plot 22, Industrial Estate</span>
+          <span class="al" id="aL3">Rajkot 360003</span>
+          <span class="al mono" id="aIds">Consumer no. 4417 0093 2210 · Meter no. 82 4471</span>
+        </div>
+        <div id="frost"><div id="frostIn"><div id="frostClone"></div><div class="tex"></div></div></div>
+        <div id="note" class="hand">we never read this line</div>
+        <svg class="ink" id="noteInk" width="612" height="300"></svg>
+      </div>
+      <div id="tbl">
+        <div class="brow"><span class="k">Billing period</span><span class="v">01 – 30 Sep 2026</span></div>
+        <div class="brow"><span class="k">Tariff category</span><span class="v">LT Industrial</span></div>
+        <div class="brow"><span class="k">Sanctioned load</span><span class="v">45 kW</span></div>
+        <div class="brow" id="unitsRow"><div id="scar"><i></i></div><svg class="hl" id="hlUnits"></svg><span class="k">Units consumed</span><span class="v">4,820 kWh</span></div>
+        <div class="brow" style="border:0"><span class="k">Amount payable</span><span class="v">₹ 41,970</span></div>
+      </div>
+      <div id="meter" class="mono">Meter reading · present 1,25,180 · previous 1,20,360</div>
+      <div class="foot mono"><span>PAY ONLINE OR AT ANY COLLECTION CENTRE</span><span>PAGE 1 / 1</span></div>
+      <!-- tools that touch the bill -->
+      <div class="tool hlr" id="hlY"><div class="tip"></div><div class="collar"></div><div class="barrel"><i>FLUO</i></div></div>
+      <div class="tool hlr" id="hlG"><div class="tip"></div><div class="collar"></div><div class="barrel"></div></div>
+    </div>
+
+    <svg class="ink" id="deskInk" width="4400" height="4400"></svg>
+    <!-- the report -->
+    <div class="obj paperTex sheetShadow" id="report">
+      <span class="mono h">SENSEIBLE · FOR GREEN LOAN APPLICATIONS</span>
+      <b class="t">Bank Disclosure Report</b>
+      <div class="s">Purchased energy baseline, ready for the loan file.</div>
+      <div class="r"><span>Scope 2 baseline</span><span class="v">from your bills</span></div>
+      <div class="r"><span>Evidence records</span><span class="v">3 bills</span></div>
+      <div class="r"><span>Emission factor</span><span class="v">0.710 · source shown</span></div>
+      <div class="r"><span>Each figure</span><span class="v">traced to its bill</span></div>
+      <div class="fn">Not a credit rating or an eligibility decision.</div>
+    </div>
+
+    <div class="tool pen" id="pen"><div class="tip"></div><div class="barrel"><div class="clip"></div></div></div>
+  </div></div>
+
+  <div id="air">
+    <div id="ribShadow"></div>
+    <div id="rib"></div>
+    <div id="tag"></div>
+  </div>
+
+  <div id="light"></div>
+  <div id="scrim"></div>
+
+  <div class="cap" id="c1">Your bank already trusts this bill.</div>
+  <div class="cap" id="c2">For your address.</div>
+  <div class="cap" id="c3">Just not <span class="g">this line.</span></div>
+  <div class="cap" id="c4a">We read the units.</div>
+  <div class="cap m" id="c4b">Not your address.</div>
+  <div class="cap" id="c5a">Same bill.</div>
+  <div class="cap g" id="c5b">Different line.</div>
+  <div class="cap" id="c6a">We don't lend.</div>
+  <div class="cap g" id="c6b">We fill the missing line.</div>
+
+  <div id="endc" class="paperTex">
+    <div class="big" id="eBig"><span id="e1">Bring three bills.</span><span id="e2">Leave with a <span class="u g" id="eU">bank report.</span></span>
+      <svg class="ink" id="endInk" style="width:100%;height:100%"></svg></div>
+    <div id="eMark">Senseible</div>
+    <div id="eUrl">senseible.earth</div>
+  </div>
+</div>
+
+<script>
+const portrait = new URLSearchParams(location.search).get('o') === 'portrait';
+if (portrait) document.body.classList.add('portrait');
+const W = portrait ? 1080 : 1920, H = portrait ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = {
+  o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5),
+  io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  io2: x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2,
+  back: x => { const c = 1.5; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  in2: x => x * x, lin: x => x,
+};
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const mixHex = (a, b, k) => { const pa = a.match(/\w\w/g).map(h => parseInt(h, 16)), pb = b.match(/\w\w/g).map(h => parseInt(h, 16));
+  return '#' + pa.map((v, i) => Math.round(lerp(v, pb[i], k)).toString(16).padStart(2, '0')).join(''); };
+const NS = 'http://www.w3.org/2000/svg';
+function mkPath(svg, d, color, w, opts = {}) {
+  const pth = document.createElementNS(NS, 'path');
+  pth.setAttribute('d', d); pth.setAttribute('stroke', color); pth.setAttribute('stroke-width', w);
+  if (opts.filter) pth.setAttribute('filter', opts.filter);
+  pth.setAttribute('pathLength', 1); pth.style.strokeDasharray = '1 1.02'; pth.style.strokeDashoffset = 1;
+  svg.appendChild(pth); return pth;
+}
+const draw = (pth, k) => { pth.style.strokeDashoffset = 1 - k; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// ---------- layout ----------
+const SC = portrait ? { x: 540, y: 1180 } : { x: 1300, y: 560 };      // where the camera looks on screen
+const BILL = { x: 1500, y: 1500, rz: -2 };
+const FILE = portrait ? { x: 1720, y: 2600, rz: 3 } : { x: 2450, y: 1540, rz: 3 };
+const REPORT = portrait ? { x: 1640, y: 2560, rz: -5 } : { x: 2400, y: 1500, rz: -5 };
+function place(el, o, extra = '') {
+  el.style.left = (o.x - el.offsetWidth / 2) + 'px'; el.style.top = (o.y - el.offsetHeight / 2) + 'px';
+  el.style.transform = `rotate(${o.rz}deg) ${extra}`;
+}
+place($('bill'), BILL); place($('file'), FILE);
+
+// local point inside an object -> desk coordinates
+function offsetIn(el, root) { let x = 0, y = 0; while (el && el !== root) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return { x, y }; }
+function toDesk(obj, o, lx, ly) {
+  const dx = lx - obj.offsetWidth / 2, dy = ly - obj.offsetHeight / 2, a = o.rz * Math.PI / 180;
+  return { x: o.x + dx * Math.cos(a) - dy * Math.sin(a), y: o.y + dx * Math.sin(a) + dy * Math.cos(a) };
+}
+const bill = $('bill'), file = $('file');
+const ur = $('unitsRow'), urO = offsetIn(ur, bill);
+const UNITS = toDesk(bill, BILL, urO.x + 306, urO.y + 36);
+const ad = $('addr'), adO = offsetIn(ad, bill);
+const ADDR = toDesk(bill, BILL, adO.x + 300, adO.y + 110);
+const emO = offsetIn($('emBox'), file);
+const EMB = toDesk(file, FILE, emO.x + 215, emO.y + 42);
+const BILLC = toDesk(bill, BILL, 350, 520);
+
+// ---------- highlighter strokes (bill-local svg inside #addrC / #unitsRow) ----------
+const hlAddr = $('hlAddr');
+const addrStrokes = ['aName', 'aL2', 'aL3'].map((id, i) => {
+  const el = $(id), x0 = el.offsetLeft - 10, x1 = el.offsetLeft + el.offsetWidth + 12, y = el.offsetTop + el.offsetHeight * .54;
+  const d = `M${x0} ${y + 2} C ${lerp(x0, x1, .3)} ${y - 3}, ${lerp(x0, x1, .7)} ${y + 3}, ${x1} ${y - 1}`;
+  return mkPath(hlAddr, d, 'var(--hlY)', el.offsetHeight * .92, { filter: 'url(#bleed)' });
+});
+const hlUnits = $('hlUnits');
+const unitsStroke = mkPath(hlUnits, `M-6 38 C 160 34, 420 41, 618 35`, 'var(--hlG)', 50, { filter: 'url(#bleed)' });
+// file: the same source written twice, yellow for KYC, green for the baseline
+const src1 = $('src1');
+const srcY = mkPath($('hlSrc1'), `M-6 ${src1.offsetHeight * .55} L ${src1.offsetWidth + 6} ${src1.offsetHeight * .5}`, 'var(--hlY)', 30, { filter: 'url(#bleed)' });
+draw(srcY, 1);
+
+// file ticks (officer's blue ballpoint)
+const tick = (x, y, s = 1) => `M${x} ${y + 4 * s} C ${x + 6 * s} ${y + 10 * s}, ${x + 10 * s} ${y + 18 * s}, ${x + 13 * s} ${y + 24 * s} C ${x + 20 * s} ${y + 6 * s}, ${x + 32 * s} ${y - 10 * s}, ${x + 46 * s} ${y - 22 * s}`;
+const fileInk = $('fileInk'), sheet = $('sheet');
+document.querySelectorAll('#sheet .frow').forEach((row, i) => {
+  if (i > 3) return;
+  const b = row.querySelector('.box'), o = offsetIn(b, sheet);
+  draw(mkPath(fileInk, tick(o.x + 6, o.y + 14, 1), 'var(--pen)', 4.5), 1);
+});
+const emT = offsetIn($('emTick'), sheet);
+const emTickPath = mkPath(fileInk, tick(emT.x + 6, emT.y + 14, 1), 'var(--pen)', 5);
+
+// margin note arrow (bill-local inside #addr)
+const noteEl = $('note');
+const aIds = $('aIds');
+noteEl.style.top = (aIds.offsetTop + aIds.offsetHeight + 34) + 'px';
+const nTop = aIds.offsetTop + aIds.offsetHeight + 40;
+const noteArrow = mkPath($('noteInk'), `M218 ${nTop + 18} C 170 ${nTop + 12}, 140 ${nTop - 6}, 128 ${nTop - 34} M128 ${nTop - 34} l -12 18 M128 ${nTop - 34} l 18 8`, 'var(--greenInk)', 4);
+const noteUnder = mkPath($('noteInk'), `M236 ${nTop + 62} C 330 ${nTop + 54}, 430 ${nTop + 50}, 560 ${nTop + 40}`, 'var(--greenInk)', 3.5);
+
+// frosted tape clone of the address (blurred)
+const clone = $('addrC').cloneNode(true); clone.removeAttribute('id');
+clone.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+clone.querySelectorAll('path').forEach(pth => pth.style.strokeDashoffset = 0);
+$('frostClone').appendChild(clone);
+
+// ---------- ribbon: the units row peels off as a 3D strip and folds through the maths ----------
+const RW = 612, RH = 72, N = 9, SW = RW / N, W2 = 300, W3 = 400;
+const rowClone = () => { const c = ur.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+  c.querySelector('div').remove(); c.style.borderBottom = '0'; c.style.width = RW + 'px';
+  c.querySelectorAll('path').forEach(pth => pth.style.strokeDashoffset = 0); return c; };
+const segs = []; let parent = $('rib');
+for (let j = N - 1; j >= 0; j--) {
+  const s = document.createElement('div'); s.className = 'seg';
+  s.style.width = SW + 'px'; s.style.left = (j === N - 1 ? RW - SW : -SW) + 'px';
+  const f = document.createElement('div'); f.className = 'face paperTex';
+  f.style.backgroundPosition = `${-(urO.x + j * SW)}px ${-urO.y}px, 0 0`;
+  const inner = document.createElement('div'); inner.className = 'inner'; inner.style.left = (-j * SW) + 'px'; inner.style.width = RW + 'px';
+  inner.appendChild(rowClone()); f.appendChild(inner);
+  const sh = document.createElement('div'); sh.className = 'shade'; f.appendChild(sh);
+  const bk = document.createElement('div'); bk.className = 'back'; const bs = document.createElement('div'); bs.className = 'shade'; bk.appendChild(bs);
+  s.appendChild(f); s.appendChild(bk); parent.appendChild(s); segs[j] = { el: s, sh, bs }; parent = s;
+}
+function panel(html, cls = '') {
+  const pn = document.createElement('div'); pn.className = 'pan';
+  pn.style.cssText = `left:0;top:100%;width:${RW}px;height:${RH}px;transform-origin:50% 0`;
+  const f = document.createElement('div'); f.className = 'face paperTex ' + cls;
+  f.innerHTML = `<svg class="hl" width="${RW}" height="72"><path d="M-8 38 C ${RW*.3} 34, ${RW*.7} 41, ${RW+8} 35" stroke="var(--hlG)" stroke-width="50" filter="url(#bleed)"/></svg><div class="prow">${html}</div><div class="shade"></div>`;
+  const bk = document.createElement('div'); bk.className = 'back'; bk.innerHTML = '<div class="shade"></div>';
+  pn.appendChild(f); pn.appendChild(bk); return pn;
+}
+const P2 = panel(`<span class="k">India grid factor</span><span class="v">× 0.710 <small>kg CO₂/kWh</small></span>`);
+const P3 = panel(`<span class="k">Emissions</span><span class="v g big"><span class="n3">3.42</span> t CO₂</span>`, 'sum');
+$('rib').appendChild(P2); P2.appendChild(P3);
+const P3face = P3.querySelector('.face');
+// the landed tag and the strip stuck on the file are copies of panel 3
+const tagHTML = `<div class="face paperTex sum" style="backface-visibility:visible">${P3face.innerHTML.replace('<span class="n3">3.42</span>', '3.42')}</div>`;
+$('tag').innerHTML = tagHTML; $('stuck').innerHTML = tagHTML;
+
+
+// ---------- camera ----------
+// keys: [t, x, y, zoom, tilt, rz]
+const Z = portrait ? 1 : .68;
+const fileTop = toDesk(file, FILE, 430, 330);
+const both = portrait ? { x: lerp(BILLC.x, EMB.x, .5) + 40, y: lerp(BILL.y, FILE.y, .5) + 40 } : { x: lerp(BILL.x, FILE.x, .5), y: 1540 };
+const KEYS = [
+  [0.0,  BILLC.x + 40, BILLC.y + 120, 1.02 * Z, 16, -4],
+  [4.4,  BILLC.x, BILLC.y - 20, 1.12 * Z, 10, -1],
+  [5.4,  ADDR.x + 10, ADDR.y + 70, 1.42 * Z, 7, 0],
+  [9.2,  ADDR.x + 10, ADDR.y + 50, 1.46 * Z, 6, 0],
+  [10.4, UNITS.x, UNITS.y - 40, 1.5 * Z, 6, 1],
+  [13.3, UNITS.x, UNITS.y - 30, 1.52 * Z, 5, 1],
+  [14.3, ADDR.x + 20, ADDR.y + 40, 1.5 * Z, 4, 0],
+  [19.0, ADDR.x + 20, ADDR.y + 30, 1.52 * Z, 3, 0],
+  [20.2, UNITS.x, UNITS.y - 60, 1.3 * Z, 0, 0],
+  [28.4, UNITS.x, UNITS.y - 60, 1.3 * Z, 0, 0],
+  [30.0, EMB.x + (portrait ? 170 : 40), EMB.y - (portrait ? 60 : 90), (portrait ? 1.2 : 1.6) * Z, 0, 0],
+  [32.0, EMB.x + (portrait ? 170 : 40), EMB.y - (portrait ? 50 : 80), (portrait ? 1.24 : 1.66) * Z, 0, 0],
+  [34.2, both.x, both.y, (portrait ? .6 : .86) * Z, 8, -2],
+  [37.4, both.x, both.y + 10, (portrait ? .62 : .88) * Z, 8, -2],
+  [42.6, both.x + 30, both.y + 40, (portrait ? .55 : .78) * Z, 14, -5],
+];
+function cam(t) {
+  if (t <= KEYS[0][0]) return KEYS[0].slice(1);
+  for (let i = 0; i < KEYS.length - 1; i++) {
+    const a = KEYS[i], b = KEYS[i + 1];
+    if (t < b[0]) { const k = E.io((t - a[0]) / (b[0] - a[0])); return a.map((v, j) => lerp(v, b[j], k)).slice(1); }
+  }
+  return KEYS[KEYS.length - 1].slice(1);
+}
+
+// ---------- tools ----------
+function toolPose(el, x, y, ang, lift) {
+  el.style.left = x + 'px'; el.style.top = (y - el.offsetHeight / 2) + 'px';
+  const sh = 6 + lift * 46, bl = 5 + lift * 18;
+  el.style.transform = `translate(${-lift * 14}px, ${-lift * 22}px) rotate(${ang}deg) scale(${1 + lift * .07})`;
+  el.style.filter = `drop-shadow(${sh * .6}px ${sh}px ${bl}px rgba(15,20,30,${.42 - lift * .14}))`;
+}
+// a highlighter plan: strokes are [path, t0, t1]; it arrives lifted, drags along each path, hops between, leaves
+function plan(t, strokes, enter, leave, off, offOut) {
+  const pt = (pth, k) => { const L = pth.getTotalLength(); const q = pth.getPointAtLength(L * k); return q; };
+  const loc = (pth) => { // path coords are relative to its svg; svg sits inside an element in the bill
+    const svg = pth.ownerSVGElement, o = offsetIn(svg.parentElement, bill); return { x: o.x, y: o.y };
+  };
+  const P = (pth, k) => { const q = pt(pth, k), o = loc(pth); return { x: q.x + o.x, y: q.y + o.y }; };
+  const first = strokes[0], last = strokes[strokes.length - 1];
+  if (t < first[1]) { const k = p(t, enter, first[1] - enter, E.io); const s = P(first[0], 0);
+    return { x: lerp(off.x, s.x, k), y: lerp(off.y, s.y, k), lift: 1 - p(t, first[1] - .25, .25, E.io) }; }
+  for (let i = 0; i < strokes.length; i++) {
+    const [pth, a, b] = strokes[i];
+    if (t >= a && t < b) { const q = P(pth, E.io2((t - a) / (b - a))); return { x: q.x, y: q.y, lift: 0 }; }
+    const nx = strokes[i + 1];
+    if (nx && t >= b && t < nx[1]) { const k = E.io((t - b) / (nx[1] - b)); const e = P(pth, 1), s = P(nx[0], 0);
+      return { x: lerp(e.x, s.x, k), y: lerp(e.y, s.y, k), lift: Math.sin(k * Math.PI) * .45 }; }
+  }
+  const e = P(last[0], 1), k = p(t, last[2], leave - last[2], E.io);
+  return { x: lerp(e.x, offOut.x, k), y: lerp(e.y, offOut.y, k), lift: p(t, last[2], .2, E.o3) };
+}
+const Y_STROKES = [[addrStrokes[0], 5.5, 6.1], [addrStrokes[1], 6.35, 6.95], [addrStrokes[2], 7.2, 7.55]];
+const G_STROKES = [[unitsStroke, 11.6, 12.5]];
+
+// ---------- captions ----------
+function splitWords(el) {
+  const walk = node => [...node.childNodes].map(n => n.nodeType === 3
+    ? n.textContent.split(/(\s+)/).map(w => /^\s+$/.test(w) ? ' ' : w ? `<span class="w"><span>${w}</span></span>` : '').join('')
+    : `<span class="${n.className}">${walk(n)}</span>`).join('');
+  el.innerHTML = walk(el);
+}
+const CAPS = portrait
+  ? { c1: 150, c2: 150, c3: 150, c4a: 150, c4b: 250, c5a: 150, c5b: 250, c6a: 150, c6b: 250 }
+  : { c1: 330, c2: 400, c3: 400, c4a: 380, c4b: 470, c5a: 380, c5b: 470, c6a: 340, c6b: 430 };
+Object.entries(CAPS).forEach(([id, top]) => { $(id).style.top = top + 'px'; splitWords($(id)); });
+function cap(id, t, tin, tout, stagger = .07) {
+  const el = $(id), words = el.querySelectorAll('.w > span');
+  const o = 1 - p(t, tout, .4, E.io);
+  el.style.opacity = o; el.style.visibility = (t >= tin - .01 && o > 0) ? 'visible' : 'hidden';
+  words.forEach((w, i) => { const k = p(t, tin + i * stagger, .6, E.o5); w.style.transform = `translateY(${(1 - k) * 112}%)`; });
+}
+// scrim behind captions
+$('scrim').style.width = W + 'px';
+$('scrim').style.height = (portrait ? 660 : H) + 'px';
+$('scrim').style.background = portrait
+  ? 'linear-gradient(to bottom, rgba(236,238,240,.88) 0, rgba(236,238,240,.7) 280px, rgba(236,238,240,.3) 470px, rgba(236,238,240,0) 640px)'
+  : 'linear-gradient(to right, rgba(236,238,240,.86), rgba(236,238,240,.62) 34%, rgba(236,238,240,0) 50%)';
+
+// thread and end ink
+const deskInk = $('deskInk');
+const scarPt = toDesk(bill, BILL, urO.x + 520, urO.y + 36);
+const scarL = toDesk(bill, BILL, urO.x + 90, urO.y + 36);
+const emL = toDesk(file, FILE, emO.x + offsetIn(sheet, file).x - 10, emO.y + offsetIn(sheet, file).y + 42);
+let thread, threadLoop, threadY;
+{
+  const a = portrait ? toDesk(file, FILE, offsetIn($('emBox'), file).x + 215, offsetIn($('emBox'), file).y - 8) : emL;
+  const b = portrait ? toDesk(bill, BILL, urO.x + 330, urO.y + 66) : scarPt;
+  const c1 = portrait ? { x: a.x - 380, y: a.y - 260 } : { x: a.x - 260, y: a.y + 260 };
+  const c2 = portrait ? { x: b.x + 260, y: b.y + 420 } : { x: b.x + 300, y: b.y + 260 };
+  thread = mkPath(deskInk, `M${a.x} ${a.y} C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${b.x} ${b.y}`, 'var(--greenInk)', 6);
+  const lp = []; const cx = (scarL.x + scarPt.x) / 2 + 40, cy = (scarL.y + scarPt.y) / 2;
+  for (let i = 0; i <= 50; i++) { const an = -1.2 + i / 50 * Math.PI * 2.15, j = 1 + (rnd() - .5) * .05; lp.push(`${i ? 'L' : 'M'}${(cx + Math.cos(an) * 360 * j).toFixed(1)} ${(cy + Math.sin(an) * 62 * j).toFixed(1)}`); }
+  threadLoop = mkPath(deskInk, lp.join(' '), 'var(--greenInk)', 6);
+  // the KYC row points back to the address: same paper, the bank's own habit
+  const so = offsetIn($('src1'), file), ya = toDesk(file, FILE, so.x - 14, so.y + 14);
+  const yb = toDesk(bill, BILL, adO.x + 560, adO.y + 40);
+  const yc1 = portrait ? { x: ya.x + 420, y: ya.y - 300 } : { x: ya.x - 160, y: ya.y - 220 };
+  const yc2 = portrait ? { x: yb.x + 420, y: yb.y + 160 } : { x: yb.x + 260, y: yb.y - 200 };
+  threadY = mkPath(deskInk, `M${ya.x} ${ya.y} C ${yc1.x} ${yc1.y}, ${yc2.x} ${yc2.y}, ${yb.x} ${yb.y}`, '#e2a400', 6);
+}
+let endLine;
+
+function render(t) {
+  // ---- colour arc: cold bank laminate -> warm desk
+  const warm = p(t, 29.5, 8, E.io);
+  const deskCol = mixHex('#b4bcc6', '#cdb894', warm);
+  $('stage').style.background = deskCol; $('desk').style.background = deskCol;
+  const scr = mixHex('#e6e9ec', '#efe6d6', warm);
+
+  // ---- camera
+  const [cx, cy, cz, tilt, crz] = cam(t);
+  const desk = $('desk');
+  desk.style.left = (SC.x - cx) + 'px'; desk.style.top = (SC.y - cy) + 'px';
+  desk.style.transformOrigin = `${cx}px ${cy}px`;
+  desk.style.transform = `rotateX(${tilt}deg) rotateZ(${crz}deg) scale(${cz})`;
+  $('view').style.perspectiveOrigin = `${SC.x}px ${SC.y}px`;
+  // depth of field while the ribbon is in the air
+  const dof = p(t, 21.6, 1.2, E.io) * (1 - p(t, 28.6, 1.0, E.io));
+  $('view').style.filter = dof > .001 ? `blur(${dof * 5}px) brightness(${1 - dof * .1})` : 'none';
+
+  // ---- bill arrives
+  const bIn = p(t, .1, 1.2, E.o5);
+  place(bill, BILL, `translate(${(1 - bIn) * -160}px, ${(1 - bIn) * 700}px) rotate(${(1 - bIn) * 9}deg)`);
+  bill.style.visibility = 'visible';
+  place(file, FILE);
+
+  // ---- yellow: the KYC habit
+  const yp = plan(t, Y_STROKES, 4.7, 8.4, { x: 900, y: -260 }, { x: 980, y: -420 });
+  toolPose($('hlY'), yp.x, yp.y, 24, yp.lift);
+  $('hlY').style.visibility = t > 4.6 && t < 8.5 ? 'visible' : 'hidden';
+  Y_STROKES.forEach(([pth, a, b]) => draw(pth, E.io2(clamp((t - a) / (b - a)))));
+  // ---- green: the line that matters
+  const gp = plan(t, G_STROKES, 10.7, 13.2, { x: 760, y: 1100 }, { x: 900, y: 1300 });
+  toolPose($('hlG'), gp.x, gp.y, 22, gp.lift);
+  $('hlG').style.visibility = t > 10.6 && t < 13.3 ? 'visible' : 'hidden';
+  draw(unitsStroke, E.io2(clamp((t - 11.6) / .9)));
+
+  // ---- privacy: frosted tape rolls over the address, a margin note
+  const fr = p(t, 14.3, 1.1, E.io);
+  const frost = $('frost');
+  frost.style.visibility = fr > 0 ? 'visible' : 'hidden';
+  const edge = fr * 112 - 6;
+  frost.style.webkitMaskImage = `linear-gradient(90deg, #000 ${edge}%, transparent ${edge + 6}%)`;
+  frost.style.transform = `translateY(${(1 - p(t, 14.3, .5)) * -6}px)`;
+  const nk = p(t, 15.5, 1.3, E.lin);
+  noteEl.style.clipPath = `inset(-20px ${(1 - nk) * 100}% -20px -10px)`;
+  noteEl.style.visibility = nk > 0 ? 'visible' : 'hidden';
+  draw(noteArrow, p(t, 16.85, .45, E.io));
+  draw(noteUnder, p(t, 17.35, .4, E.io));
+
+  // ---- the peel
+  const peeling = t >= 20.5;
+  ur.querySelectorAll('.k, .v, svg').forEach(n => n.style.visibility = peeling ? 'hidden' : 'visible');
+  $('scar').style.visibility = peeling ? 'visible' : 'hidden';
+  const rib = $('rib'), air = $('air');
+  const airOn = peeling && t < 28.9;
+  rib.style.visibility = airOn ? 'visible' : 'hidden';
+  $('ribShadow').style.visibility = airOn ? 'visible' : 'hidden';
+  air.style.perspectiveOrigin = `${SC.x}px ${SC.y}px`;
+  if (airOn || t < 29.5) {
+    // start pose = where the row sits on screen
+    const r = ur.getBoundingClientRect();
+    const start = { x: r.left + r.width / 2, y: r.top + r.height / 2, s: cz, rz: BILL.rz + crz };
+    const q = p(t, 20.5, 1.6, E.lin);                    // peel front, left -> right
+    const lift = p(t, 21.7, 1.3, E.io);                  // whole strip leaves the paper
+    const u2 = p(t, 23.5, 1.0, E.io), u3 = p(t, 25.2, 1.0, E.io);   // unfolds
+    const c = p(t, 27.3, 1.2, E.io);                     // collapse into a tag
+    const AS = portrait ? 1.42 : 1.5;                     // air scale
+    const ext = RH * (1 + u2 + u3) * (1 - c) + RH * c;    // height of the unfolded stack
+    const airX = portrait ? 540 : 960, airY = portrait ? 1000 : 520;
+    const bob = Math.sin(t * 1.3) * 6 * lift;
+    const s = lerp(start.s, AS, lift) * (1 + c * .1);
+    const x = lerp(start.x, airX, lift);
+    const y = lerp(start.y, airY - ((ext - RH) / 2) * s + bob, lift);
+    const rz = lerp(start.rz, -1.5 + Math.sin(t * .9) * .8, lift);
+    const rx = lerp(0, 14, lift) * (1 - c * .6) + Math.sin(t * 1.1) * 2 * lift;
+    const ry = lerp(0, -7, lift) * (1 - c) + Math.sin(t * .7) * 2.5 * lift;
+    const z = Math.sin(lift * Math.PI) * 140 + lift * 40;
+    rib.style.left = (x - RW / 2) + 'px'; rib.style.top = (y - RH / 2) + 'px';
+    rib.style.transformOrigin = `${RW / 2}px 50%`;
+    rib.style.transform = `translateZ(${z}px) rotateZ(${rz}deg) rotateX(${rx}deg) rotateY(${ry}deg) scale(${s})`;
+    // curl: each segment left of the peel front bends a little more (cumulative = a rolling curl)
+    const front = q * (N + 3) - 2;
+    for (let j = 0; j < N; j++) {
+      // the bend lives only at the peel front, so the peeled part rises as a straight flap (like a sticker)
+      const wj = clamp(front - j, 0, 1) - clamp(front - j - 1, 0, 1);
+      const inc = 62 * wj * (1 - lift);
+      const sg = segs[j];
+      sg.el.style.transform = `rotateY(${inc}deg)`;
+      const shade = clamp(inc / 60) * .22;
+      sg.el.querySelector('.face .shade').style.opacity = shade;
+    }
+    // panels: folded behind the strip, swing down toward camera, then accordion back up into one tag
+    const a2 = lerp(179, 0, u2) + lerp(0, 178, c);
+    const a3 = lerp(179, 0, u3) + lerp(0, -178, c);
+    P2.style.transform = `rotateX(${a2}deg)`;
+    P3.style.transform = `rotateX(${a3}deg)`;
+    P2.querySelector('.face .shade').style.opacity = Math.abs(Math.sin(a2 * Math.PI / 180)) * .3;
+    P3.querySelector('.face .shade').style.opacity = Math.abs(Math.sin((a2 + a3) * Math.PI / 180)) * .3;
+    P2.style.visibility = u2 > 0 ? 'inherit' : 'hidden';
+    P3.style.visibility = u3 > 0 ? 'inherit' : 'hidden';
+    P3.querySelector('.n3').textContent = (3.42 * p(t, 25.3, 1.0, E.o3)).toFixed(2);
+    // hide the strip faces once folded away, so panel 3 reads clean
+    segs.forEach(sg => sg.el.querySelector('.face').style.visibility = c > .85 ? 'hidden' : 'inherit');
+    P2.querySelector('.face').style.visibility = c > .85 ? 'hidden' : 'inherit';
+    // shadow cast on the paper/desk
+    const sh = $('ribShadow');
+    const off = 10 + lift * 120 + z * .2;
+    const shW = (q < 1 ? q : 1) * RW * s, shH = lerp(RH, ext, lift) * s * .9;
+    sh.style.width = Math.max(0, shW) + 'px'; sh.style.height = shH + 'px';
+    sh.style.left = (x - (RW / 2) * s + off * .5) + 'px';
+    sh.style.top = (y - RH * s * .45 + off) + 'px';
+    sh.style.transform = `rotate(${rz}deg)`;
+    sh.style.filter = `blur(${6 + lift * 26}px)`;
+    sh.style.opacity = (.35 - lift * .12) * (1 - c * .6);
+  }
+
+  // ---- the tag flies to the loan file
+  const tag = $('tag'), fly = p(t, 28.6, 1.6, E.io);
+  const landed = t >= 30.2;
+  tag.style.visibility = t >= 28.6 && !landed ? 'visible' : 'hidden';
+  $('stuck').style.visibility = landed ? 'visible' : 'hidden';
+  if (t >= 28.6 && !landed) {
+    const r0 = P3face.getBoundingClientRect(), r1 = $('emBox').getBoundingClientRect();
+    const s0 = r0.width / RW, s1 = cz * .7;
+    const x0 = r0.left + r0.width / 2, y0 = r0.top + r0.height / 2, x1 = r1.left + r1.width / 2, y1 = r1.top + r1.height / 2;
+    const sMid = lerp(s0, s1, .3);
+    const sc = fly < .5 ? lerp(s0, sMid, E.io(fly * 2)) : lerp(sMid, s1, E.io((fly - .5) * 2));
+    tag.style.left = (lerp(x0, x1, fly) - RW / 2) + 'px';
+    tag.style.top = (lerp(y0, y1, fly) - Math.sin(fly * Math.PI) * 90 - 36) + 'px';
+    tag.style.transform = `rotate(${lerp(-1.5, FILE.rz + crz - .8, fly)}deg) scale(${sc})`;
+    tag.style.filter = `drop-shadow(${12 + Math.sin(fly * Math.PI) * 30}px ${18 + Math.sin(fly * Math.PI) * 50}px ${10 + Math.sin(fly * Math.PI) * 20}px rgba(15,20,30,.3))`;
+  }
+  // landing squash
+  const ld = p(t, 30.2, .25, E.o3);
+  $('stuck').style.transform = `rotate(-.8deg) scale(${.7 * (landed ? lerp(1.04, 1, ld) : 1)})`;
+  $('stuck').style.filter = `drop-shadow(2px 3px 3px rgba(15,20,30,.25))`;
+
+  // ---- the officer's pen taps it, ticks, writes the source
+  const pen = $('pen');
+  const penOn = t > 30.3 && t < 34.6;
+  pen.style.visibility = penOn ? 'visible' : 'hidden';
+  if (penOn) {
+    const tip = toDesk(file, FILE, emO.x + offsetIn(sheet, file).x + 360, emO.y + offsetIn(sheet, file).y + 50);
+    const tk = offsetIn($('emTick'), sheet), tipTick = toDesk(file, FILE, tk.x + offsetIn(sheet, file).x + 30, tk.y + offsetIn(sheet, file).y + 20);
+    const srcE = offsetIn($('emSrc'), sheet), tipSrc = toDesk(file, FILE, srcE.x + offsetIn(sheet, file).x + 150, srcE.y + offsetIn(sheet, file).y + 22);
+    const inP = p(t, 30.3, .7, E.io), toTick = p(t, 31.95, .4, E.io), toSrc = p(t, 32.6, .3, E.io), out = p(t, 33.9, .7, E.io);
+    let x = lerp(tip.x + 700, tip.x, inP), y = lerp(tip.y + 500, tip.y, inP);
+    x = lerp(x, tipTick.x, toTick); y = lerp(y, tipTick.y, toTick);
+    const tickDraw = p(t, 32.3, .3, E.io);
+    x += tickDraw * 30; y -= Math.sin(tickDraw * Math.PI) * 10 + tickDraw * 30;
+    x = lerp(x, tipSrc.x - 120, toSrc); y = lerp(y, tipSrc.y, toSrc);
+    const wr = p(t, 32.9, .9, E.lin); x += wr * 200; y += Math.sin(wr * 40) * 4;
+    x = lerp(x, x + 600, out); y = lerp(y, y + 600, out);
+    const taps = [31.15, 31.5];
+    let lift = 1 - inP * .7 + out;
+    taps.forEach(a => { const k = clamp((t - a) / .3); if (k > 0 && k < 1) lift = Math.min(lift, Math.abs(Math.cos(k * Math.PI)) * .3); });
+    if (t > 31.8) lift = Math.min(1, .25 + out);
+    if (t > 32.3 && t < 32.6) lift = 0; if (t > 32.9 && t < 33.8) lift = .02;
+    toolPose(pen, x, y, 32, clamp(lift));
+  }
+  // tap ripple: a small ink dot
+  draw(emTickPath, p(t, 32.3, .3, E.io));
+  const hw = 'Electricity bill', wk = p(t, 32.9, .9, E.lin);
+  $('emHand').textContent = t > 32.9 ? hw.slice(0, Math.round(hw.length * wk)) : '';
+
+  // ---- the thread back to the bill
+  draw(threadY, p(t, 33.7, 1.0, E.io));
+  draw(thread, p(t, 34.5, 1.3, E.io));
+  draw(threadLoop, p(t, 35.7, .7, E.io));
+
+  // ---- report slides onto the file
+  const rp = p(t, 39.6, 1.0, E.o5);
+  const rep = $('report');
+  rep.style.visibility = t > 39.5 ? 'visible' : 'hidden';
+  place(rep, { x: REPORT.x + (1 - rp) * 900, y: REPORT.y + (1 - rp) * (portrait ? 900 : 200), rz: REPORT.rz + (1 - rp) * 14 });
+
+  // ---- captions
+  $('scrim').style.opacity = (p(t, 0, .6) * (1 - p(t, 19.4, .8, E.io)) + p(t, 33.8, .8, E.io)) * (1 - p(t, 42.8, .3));
+  cap('c1', t, .7, 4.5);
+  cap('c2', t, 5.0, 9.4);
+  cap('c3', t, 9.9, 13.6);
+  cap('c4a', t, 14.4, 19.5);
+  cap('c4b', t, 15.0, 19.5);
+  cap('c5a', t, 34.2, 38.4);
+  cap('c5b', t, 34.9, 38.4);
+  cap('c6a', t, 38.9, 42.6);
+  cap('c6b', t, 39.6, 42.6);
+
+  // ---- end card: a clean sheet slides over the desk
+  const ec = $('endc'), ek = p(t, 42.6, .9, E.io);
+  ec.style.visibility = t > 42.55 ? 'visible' : 'hidden';
+  ec.style.transform = `translateY(${(1 - ek) * 105}%) rotate(${(1 - ek) * -4}deg)`;
+  const e1 = p(t, 43.3, .8, E.o5), e2 = p(t, 43.9, .8, E.o5);
+  $('e1').style.cssText = `opacity:${e1};transform:translateY(${(1 - e1) * 40}px)`;
+  $('e2').style.cssText = `opacity:${e2};transform:translateY(${(1 - e2) * 40}px)`;
+  if (!endLine && t > 42.55) {
+    const u = $('eU'), e2el = $('e2');
+    const x0 = e2el.offsetLeft + u.offsetLeft + 4, x1 = x0 + u.offsetWidth - 14, y = e2el.offsetTop + u.offsetTop + u.offsetHeight + 4;
+    endLine = mkPath($('endInk'), `M${x0} ${y} C ${lerp(x0, x1, .3)} ${y - 9}, ${lerp(x0, x1, .6)} ${y + 8}, ${x1} ${y - 4} M${lerp(x0, x1, .12)} ${y + 13} C ${lerp(x0, x1, .45)} ${y + 7}, ${lerp(x0, x1, .75)} ${y + 16}, ${lerp(x0, x1, .96)} ${y + 10}`, 'var(--green)', 7);
+  }
+  if (endLine) draw(endLine, p(t, 45.0, .6, E.io));
+  const m = p(t, 45.6, .9, E.o5); $('eMark').style.opacity = m; $('eMark').style.transform = `translateY(${(1 - m) * 14}px)`;
+  const ur2 = p(t, 46.1, .8, E.o5); $('eUrl').style.opacity = ur2;
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
