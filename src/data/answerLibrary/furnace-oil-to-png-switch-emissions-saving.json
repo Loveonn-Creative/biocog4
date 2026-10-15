@@ -2,7 +2,7 @@
   "slug": "furnace-oil-to-png-switch-emissions-saving",
   "q": "How much CO2 do I save by switching my boiler from furnace oil to PNG?",
   "title": "Furnace oil to PNG: CO2 saved",
-  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. If the gas boiler or burner is also more efficient, the saving per unit of steam is higher, often around 30%. Confirm with your own fuel bills before and after.",
+  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. If the boiler also gets more efficient, the saving per unit of steam is higher: about 32% if efficiency rises from 80% to 85%. Confirm with fuel bills before and after.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "MSME owners, CFOs, plant heads",

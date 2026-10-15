@@ -32,3 +32,10 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - what-gri-305-asks-for-emissions: 305-6 and 305-7 status after GRI 102 unconfirmed.
 - do-re100-and-cdp-accept-indian-recs: 15-year plant age rule and single-market claim need confirming.
 - should-i-sell-or-retire-my-carbon-credits: check the Corporate Standard clause on sold reductions.
+
+## chunks 01, 05, 08 (resume)
+- how-are-carbon-credits-taxed-in-india: only source is unfccc.int labelled s.115BBG; Income-tax Act 2025 section not named; 115BBG wording from memory; no GST position.
+- rbi-climate-disclosure-requirements-banks: TSV said drop unless status confirmed; relies on the live article's note that the framework is still a draft. Confirm or drop before merge.
+- indian-coal-emissions-by-gcv: grade bands and NCV/GCV rule from memory. OWNER REVIEW: the page says Senseible's single 2.42 kg/kg coal factor overstates low-grade coal by about 55%. Product-fact statement; hold or reword until the owner decides.
+- eu-rules-besides-cbam-asking-exporters-carbon-data: Omnibus I CSDDD cuts, Batteries Reg Art 7 scope, ESPR first product groups from memory.
+- methane-n2o-from-diesel-combustion: road CH4/N2O defaults (3.9 kg/TJ) from memory; states Senseible factors are CO2 only (confirmed in code).
