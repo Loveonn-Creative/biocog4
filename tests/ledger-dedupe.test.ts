@@ -117,3 +117,24 @@ describe('document emission status', () => {
     expect(documentEmissionStatus([{ verified: true }, { verified: false }], null)).toEqual({ kind: 'pending', count: 1 });
   });
 });
+
+import { verifyBuckets } from '../src/lib/emissionLedger';
+describe('verify buckets', () => {
+  const row = (id: string, scope: number, verified: boolean) => ({ id, scope, co2_kg: 1, verified, created_at: '2026-10-01' });
+  test('scope 3 and already-checked records never block "done"', () => {
+    const rows = [row('a', 1, true), row('b', 3, false), row('c', 2, false)];
+    const b = verifyBuckets(rows, new Set(['c']));
+    expect(b.toVerify).toHaveLength(0);
+    expect(b.reviewed.map((r) => r.id)).toEqual(['c']);
+    expect(b.scope3Held.map((r) => r.id)).toEqual(['b']);
+    expect(b.done).toBe(true);
+  });
+  test('unchecked scope 1/2 records are the ones to verify', () => {
+    const b = verifyBuckets([row('a', 1, false), row('b', 2, false)], new Set());
+    expect(b.toVerify.map((r) => r.id)).toEqual(['a', 'b']);
+    expect(b.done).toBe(false);
+  });
+  test('nothing verified is never done', () => {
+    expect(verifyBuckets([row('b', 3, false)], new Set()).done).toBe(false);
+  });
+});

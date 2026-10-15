@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
+import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '@/components/Navigation';
@@ -61,7 +62,7 @@ const MRVDashboard = () => {
   const { scope, ready: workspaceReady } = useWorkspace();
   const workspaceKey = scopeKey(scope);
   const { activeContext } = useOrganization();
-  const { summary, emissions, getVerifiedEmissions, isLoading: emissionsLoading } = useEmissions();
+  const { summary, emissions, getVerifiedEmissions, isLoading: emissionsLoading, error: emissionsError, refetch: refetchEmissions } = useEmissions();
   const { documents } = useDocuments();
   const { isEnterprise } = useEnterpriseMode();
   const scope3 = useScope3Visibility();
@@ -249,6 +250,7 @@ const MRVDashboard = () => {
       </Helmet>
       
       <Navigation />
+      {emissionsError && <RecordsLoadError onRetry={() => void refetchEmissions()} />}
 
       <main className="relative z-10 container mx-auto px-4 py-8 max-w-6xl">
         {/* Title Section */}

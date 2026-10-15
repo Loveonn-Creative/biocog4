@@ -78,7 +78,7 @@ export function useReportEvidence() {
       if (!ready) return;
       const ledgerQuery = user?.id ? applyScope(supabase
           .from('compliance_ledger')
-          .select('id, emission_id, created_at, verified_at, document_hash, invoice_number, vendor, invoice_date, co2_kg, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
+          .select('id, emission_id, created_at, verified_at, document_hash, invoice_number, vendor, invoice_date, co2_kg, activity_data, activity_unit, emission_factor, scope, emission_category, factor_source, methodology_version, verification_status, hsn_code')
           .order('created_at', { ascending: false }), scope) : null;
       const docQuery = user?.id ? applyScope(supabase.from('documents').select('currency').limit(200), scope) : null;
       if (!user?.id || !ledgerQuery || !docQuery) {
@@ -141,6 +141,10 @@ export function useReportEvidence() {
       // total and the audit export count them.
       setEvidence(
         latestLedgerRowPerEmission((ledgerRes.data ?? []) as Array<LedgerRowLike & Record<string, any>>).map((e) => ({
+          emissionId: e.emission_id ?? null,
+          activityData: e.activity_data ?? null,
+          activityUnit: e.activity_unit ?? null,
+          emissionFactor: e.emission_factor ?? null,
           documentHash: e.document_hash,
           invoiceNumber: e.invoice_number,
           vendor: e.vendor,

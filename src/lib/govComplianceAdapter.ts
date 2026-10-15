@@ -11,6 +11,7 @@
 import { toast } from 'sonner';
 
 interface LedgerEntry {
+  emission_id?: string | null;
   document_hash: string;
   invoice_number: string | null;
   vendor: string | null;
@@ -56,16 +57,20 @@ const getStateFromGSTIN = (gstin: string | null): string => {
   return stateMap[gstin.substring(0, 2)] || `State-${gstin.substring(0, 2)}`;
 };
 
+// Every sheet: verified rows only (see exportGovCompliance), the emission id
+// that ties each row to History and the audit ledger, and the supplier's
+// GSTIN labelled as the supplier's (the invoice's issuer, not the reporting entity).
 export function formatForGCP(entries: LedgerEntry[]) {
   return entries.map(e => ({
+    'Emission ID': e.emission_id || '',
     'Activity Type': e.emission_category,
     'Evidence Hash': e.document_hash,
-    'State/Region': getStateFromGSTIN(e.gstin),
-    'GSTIN': e.gstin || '',
+    'Supplier State': getStateFromGSTIN(e.gstin),
+    'Supplier GSTIN': e.gstin || '',
     'HSN Code': e.hsn_code || '',
     'Quantity': e.activity_data || '',
     'Quantity Unit': e.activity_unit || '',
-    'Verified CO₂ (kg)': e.co2_kg,
+    'CO₂ (kg)': e.co2_kg,
     'Green Benefit': e.is_green_benefit ? 'Yes' : 'No',
     'Green Category': e.green_category || '',
     'Methodology': e.methodology_version,
@@ -79,25 +84,27 @@ export function formatForGCP(entries: LedgerEntry[]) {
 
 export function formatForBRSR(entries: LedgerEntry[]) {
   return entries.map(e => ({
+    'Emission ID': e.emission_id || '',
     'Scope': `Scope ${e.scope}`,
     'Category': e.emission_category,
     'Total Emissions (tCO₂e)': (e.co2_kg / 1000).toFixed(4),
     'Activity Data': e.activity_data || '',
     'Unit': e.activity_unit || '',
     'Emission Factor': e.emission_factor || '',
-    'Data Source': e.factor_source || 'IND_EF_2025',
+    'Data Source': e.factor_source || 'Not recorded',
     'Reporting Period': `${e.fiscal_year || 'N/A'} ${e.fiscal_quarter || ''}`.trim(),
     'Verification Status': e.verification_status,
     'Green Initiative': e.is_green_benefit ? e.green_category || 'Yes' : 'No',
     'Methodology': e.methodology_version,
-    'Evidence Hash': e.document_hash.substring(0, 16),
+    'Evidence Hash': e.document_hash,
   }));
 }
 
 export function formatForCCTS(entries: LedgerEntry[]) {
   return entries.map(e => ({
-    'Entity GSTIN': e.gstin || '',
-    'State': getStateFromGSTIN(e.gstin),
+    'Emission ID': e.emission_id || '',
+    'Supplier GSTIN': e.gstin || '',
+    'Supplier State': getStateFromGSTIN(e.gstin),
     'Scope': e.scope,
     'Emission Source': e.emission_category,
     'CO₂ (tonnes)': (e.co2_kg / 1000).toFixed(4),
@@ -120,20 +127,26 @@ export function formatForCCTS(entries: LedgerEntry[]) {
 export type GovFormat = 'GCP' | 'BRSR' | 'CCTS';
 
 export async function exportGovCompliance(entries: LedgerEntry[], format: GovFormat) {
-  if (entries.length === 0) {
-    toast.error('No compliance data to export');
+  // Only records that passed verification go into a government-format sheet.
+  const verified = entries.filter((e) => e.verification_status === 'verified');
+  if (verified.length === 0) {
+    toast.error(entries.length ? 'No verified records yet. Verify your records first; only verified records are exported.' : 'No compliance data to export');
     return;
   }
 
   const formatters = { GCP: formatForGCP, BRSR: formatForBRSR, CCTS: formatForCCTS };
   const sheetNames = { GCP: 'Green Credit Programme', BRSR: 'BRSR Disclosure', CCTS: 'CCTS Registry' };
 
-  const data = formatters[format](entries);
+  const data = formatters[format](verified);
   // Loaded only when an export is requested, so xlsx stays out of page bundles.
   const XLSX = await import('xlsx');
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.json_to_sheet(data);
   XLSX.utils.book_append_sheet(wb, ws, sheetNames[format]);
+  const note = XLSX.utils.json_to_sheet([{
+    'About this file': `Self-declared draft prepared from your verified records in Senseible (${verified.length} rows; ${entries.length - verified.length} unverified rows left out). "Verified" means the platform's rule checks passed against the source invoice; it is not third-party assurance and not a filing with any authority.`,
+  }]);
+  XLSX.utils.book_append_sheet(wb, note, 'Read me');
   
   XLSX.writeFile(wb, `${format.toLowerCase()}-compliance-${new Date().toISOString().split('T')[0]}.xlsx`);
   toast.success(`${format} compliance report exported`);

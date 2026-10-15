@@ -130,6 +130,33 @@ export function verifyListState<T extends VerifiableEmissionRow>(rows: T[], docu
   return { scoped, pending, verifiedCount, allVerified: verifiedCount > 0 && pending.length === 0 };
 }
 
+export interface VerifyBuckets<T> {
+  /** Scope 1 and 2 records never checked: the Verify button sends these. */
+  toVerify: T[];
+  /** Checked already and did not pass (needs review or rejected). Re-sending replays the same result. */
+  reviewed: T[];
+  /** Scope 3: verified through the supplier evidence trail, not here. Never in verified totals. */
+  scope3Held: T[];
+  verifiedCount: number;
+  /** At least one verified record and nothing left that Verify can act on. */
+  done: boolean;
+}
+
+/**
+ * Splits unverified records by what can happen next, so Verify never shows a
+ * record as pending that one click cannot change.
+ * `checked` holds emission ids that already have a ledger outcome other than verified.
+ */
+export function verifyBuckets<T extends VerifiableEmissionRow>(rows: T[], checked: ReadonlySet<string>): VerifyBuckets<T> {
+  const open = rows.filter((r) => r.verified !== true);
+  const scope3Held = open.filter((r) => r.scope === 3);
+  const rest = open.filter((r) => r.scope !== 3);
+  const reviewed = rest.filter((r) => checked.has(r.id));
+  const toVerify = rest.filter((r) => !checked.has(r.id));
+  const verifiedCount = rows.length - open.length;
+  return { toVerify, reviewed, scope3Held, verifiedCount, done: verifiedCount > 0 && toVerify.length === 0 };
+}
+
 export type DocumentEmissionStatus =
   | { kind: 'verified' }
   | { kind: 'pending'; count: number }

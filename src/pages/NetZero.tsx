@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { grossKg } from '@/lib/emissionLedger';
 import { ORG_REF } from "@/lib/seo/entity";
 import { Helmet } from "react-helmet-async";
 import { MinimalNav } from "@/components/MinimalNav";
@@ -98,7 +99,7 @@ const NetZero = () => {
     const loadBaseline = async () => {
       if (!workspaceReady) return;
       setLoadingBaseline(true);
-      const query = isAuthenticated && user?.id ? applyScope(supabase.from('emissions').select('scope, co2_kg'), scope) : null;
+      const query = isAuthenticated && user?.id ? applyScope(supabase.from('emissions').select('scope, co2_kg, verified'), scope) : null;
       if (!query) {
         setLoadingBaseline(false);
         return;
@@ -106,10 +107,12 @@ const NetZero = () => {
 
       const { data } = await query;
 
-      if (data && data.length > 0) {
-        const scope1 = data.filter(e => e.scope === 1).reduce((s, e) => s + Number(e.co2_kg), 0);
-        const scope2 = data.filter(e => e.scope === 2).reduce((s, e) => s + Number(e.co2_kg), 0);
-        const scope3 = data.filter(e => e.scope === 3).reduce((s, e) => s + Number(e.co2_kg), 0);
+      // Verified records only, gross kg: the same totals every other page shows.
+      const verified = (data ?? []).filter(e => e.verified === true);
+      if (verified.length > 0) {
+        const scope1 = verified.filter(e => e.scope === 1).reduce((s, e) => s + grossKg(e.co2_kg), 0);
+        const scope2 = verified.filter(e => e.scope === 2).reduce((s, e) => s + grossKg(e.co2_kg), 0);
+        const scope3 = verified.filter(e => e.scope === 3).reduce((s, e) => s + grossKg(e.co2_kg), 0);
         setBaselineData({ scope1, scope2, scope3, total: scope1 + scope2 + scope3 });
       }
       setLoadingBaseline(false);

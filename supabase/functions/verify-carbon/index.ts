@@ -443,7 +443,8 @@ serve(async (req) => {
 
     // Use AI for additional analysis and recommendations
     let aiRecommendations: string[] = [];
-    let methodologyCompliance = 'GHG Protocol / ISO 14064 compliant emission factors applied';
+    // What was done, not a compliance claim: factors are named on each record.
+    let methodologyCompliance = 'Published emission factors applied; the source is recorded on each line';
     let dataQualityAssessment = `${validCount}/${emissions.length} records passed validation`;
 
     if (aiConfigured()) {
@@ -846,9 +847,10 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
     );
 
   } catch (error) {
-    console.error('Verification error:', error);
+    // Status only to the user: database messages can name tables and columns.
+    console.error('Verification error:', error instanceof Error ? error.name : 'error');
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
+      JSON.stringify({ error: 'Verification could not complete. Nothing was changed; please try again.', code: 'internal' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }

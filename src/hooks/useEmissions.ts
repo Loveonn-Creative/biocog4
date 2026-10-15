@@ -45,7 +45,7 @@ function calculateSummary(rows: Emission[]): EmissionsSummary {
   const sumScope = (n: number) => emissionsData.filter(e => e.scope === n).reduce((sum, e) => sum + grossKg(e.co2_kg), 0);
   const scope1 = sumScope(1);
   const scope2 = sumScope(2);
-  const scope3 = emissionsData.filter(e => e.scope !== 1 && e.scope !== 2).reduce((sum, e) => sum + grossKg(e.co2_kg), 0);
+  const scope3 = sumScope(3);
 
   const byCategory: Record<string, number> = {};
   emissionsData.forEach(e => {
