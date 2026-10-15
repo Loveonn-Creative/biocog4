@@ -2,11 +2,12 @@
 // No Lovable AI Gateway fallback: if the key is missing, the call fails fast.
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
 
-const GEMINI_MODELS = new Set(['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-lite']);
-
+// Google retired gemini-2.5-* for new API keys; use the stable "latest" aliases.
 export function toGeminiModel(model: unknown): string {
   const m = String(model ?? '').replace(/^google\//, '');
-  return GEMINI_MODELS.has(m) ? m : 'gemini-2.5-flash';
+  if (m.includes('lite')) return 'gemini-flash-lite-latest';
+  if (m.includes('pro')) return 'gemini-pro-latest';
+  return 'gemini-flash-latest';
 }
 
 export async function aiFetch(init: RequestInit): Promise<Response> {
