@@ -305,8 +305,8 @@ Deno.serve(async (req) => {
       }, 429, usageHeaders);
     }
 
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
+    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+    if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
     let userData: string;
     if (!scope || !db) userData = recordsBlock("guest", {}, null);
@@ -338,7 +338,7 @@ Answer in ${language}. Keep technical identifiers, units, framework names and co
 
     const response = await aiFetch({
       method: "POST",
-      headers: { Authorization: `Bearer ${LOVABLE_API_KEY}`, "Content-Type": "application/json" },
+      headers: { Authorization: `Bearer ${GEMINI_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "google/gemini-3.6-flash",
         messages: [{ role: "system", content: systemPrompt }, ...messages],

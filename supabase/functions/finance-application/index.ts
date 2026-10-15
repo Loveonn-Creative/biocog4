@@ -262,12 +262,12 @@ Deno.serve(async (req) => {
 
       // Internal review: allow-listed figures only, then the indicative summary.
       const figures: DocFigures[] = [];
-      const lovable = Deno.env.get('LOVABLE_API_KEY');
+      const geminiKey = Deno.env.get('GEMINI_API_KEY');
       for (const d of (docs ?? []) as Array<{ doc_type: string; mime_type: string; storage_path: string }>) {
         if (!['itr', 'bank_statement', 'financial_statement'].includes(d.doc_type)) continue;
         const { data: blob } = await admin.storage.from(BUCKET).download(d.storage_path);
         if (!blob) continue;
-        const f = await readFigures(lovable, d.mime_type, new Uint8Array(await blob.arrayBuffer()));
+        const f = await readFigures(geminiKey, d.mime_type, new Uint8Array(await blob.arrayBuffer()));
         if (f) figures.push({ ...f, document_kind: f.document_kind ?? d.doc_type });
       }
       const summary = reviewSummary(v.value, figures, { priority: plan === 'pro' || plan === 'scale' });
