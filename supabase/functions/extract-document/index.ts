@@ -463,7 +463,7 @@ serve(async (req) => {
       );
     }
 
-    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
+    const GEMINI_API_KEY = (Deno.env.get('GEMINI_API_KEY') || Deno.env.get('LOVABLE_API_KEY'));
     if (!GEMINI_API_KEY) {
       return new Response(
         JSON.stringify({ error: 'AI service not configured' }),
@@ -732,7 +732,7 @@ serve(async (req) => {
     } catch (error: any) {
       if (error.status === 429) {
         return new Response(
-          JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }),
+          JSON.stringify({ error: 'AI is handling a lot of requests right now. Please wait a minute and try again.' }),
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }

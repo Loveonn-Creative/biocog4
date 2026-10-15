@@ -1,4 +1,4 @@
-import { aiFetch } from '../_shared/aiFetch.ts';
+import { aiFetch, aiErrorMessage } from '../_shared/aiFetch.ts';
 // Biocog Intelligence / Superintelligence chat.
 //
 // What each plan gets is decided here, on the server (_shared/intelligence.ts):
@@ -305,7 +305,7 @@ Deno.serve(async (req) => {
       }, 429, usageHeaders);
     }
 
-    const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+    const GEMINI_API_KEY = (Deno.env.get('GEMINI_API_KEY') || Deno.env.get('LOVABLE_API_KEY'));
     if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
     let userData: string;
@@ -348,9 +348,9 @@ Answer in ${language}. Keep technical identifiers, units, framework names and co
     });
 
     if (!response.ok) {
-      console.error("AI gateway error:", response.status);
+      console.error("AI error:", response.status);
       // 402/429 here are Senseible's own AI capacity, never the user's plan.
-      return json({ error: "unavailable", message: "Biocog Intelligence is busy right now. Please try again in a moment." }, response.status === 429 ? 503 : 502, usageHeaders);
+      return json({ error: "unavailable", message: aiErrorMessage(response.status) }, response.status === 429 ? 429 : 503, usageHeaders);
     }
 
     if (stream && response.body) {

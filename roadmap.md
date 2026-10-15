@@ -17,3 +17,4 @@
 - [x] Complete managed email setup for notify.senseible.earth: infrastructure, auth templates, and hook deployment.
 - [x] Audit and implement only missing privacy, DPA, consent, data-rights, enterprise trust, and Data Officer requirements.
 - [x] Fix the Contact WhatsApp redirect and safely provision the requested one-month Scale access.
+- [x] Route all AI via Lovable AI Gateway (Gemini optional, auto-fallback)
