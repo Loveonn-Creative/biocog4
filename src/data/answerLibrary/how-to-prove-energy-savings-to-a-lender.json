@@ -1,0 +1,66 @@
+{
+  "slug": "how-to-prove-energy-savings-to-a-lender",
+  "q": "How do I prove the energy and emission savings from an efficiency project to my bank?",
+  "title": "Proving energy savings to your bank",
+  "short": "Give the bank a short savings file: 12 months of electricity bills before and after the project, production records for both years, the equipment invoice and commissioning date, and one page showing the calculation and its method. The bank wants measured savings it can trace to bills, not the vendor's brochure estimate.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners, lenders",
+  "sections": [
+    {
+      "h": "What the bank is really checking",
+      "p": [
+        "Under a green loan the bank must show the money went to an eligible project and report its impact. The Green Loan Principles ask borrowers to report the use of proceeds and, where possible, measurable environmental results. A lender's technical reviewer looks for three things: the project was installed, energy actually fell, and the fall was not just lower output."
+      ]
+    },
+    {
+      "h": "The savings file, in order",
+      "ol": [
+        "Project proof: equipment invoice, installation and commissioning report, photos with dates.",
+        "Baseline: 12 monthly bills before commissioning, with units in kWh, plus production for the same months.",
+        "Reporting period: 12 monthly bills after commissioning, plus production.",
+        "Method note: how you adjusted for production, which meters you used, and any months excluded and why.",
+        "Result: kWh saved, CO2 saved with the factor and its source, and rupees saved at your actual tariff."
+      ]
+    },
+    {
+      "h": "Mistakes that get a file sent back",
+      "ul": [
+        "Using the vendor's rated saving instead of metered data.",
+        "Comparing a busy year with a slow one without normalising for production.",
+        "Mixing kVAh and kWh between the two years.",
+        "Claiming lifetime savings as if they had already happened.",
+        "Leaving out a connection, such as a second meter for the new shed."
+      ]
+    },
+    {
+      "h": "After the first year",
+      "p": [
+        "Most green loan agreements ask for impact reporting at least once a year until the loan is repaid. Keep the same method and the same factor edition each year, and if you change either, show the earlier year recalculated so the trend stays comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a motor and drive upgrade",
+    "lines": [
+      "Before: 420,000 kWh a year; after: 350,000 kWh a year, at the same output",
+      "Saving: 420,000 minus 350,000 = 70,000 kWh a year",
+      "CO2: 70,000 x 0.710 = 49,700 kg, about 49.7 t CO2 a year",
+      "Rupees, at an assumed ₹8 per kWh: 70,000 x 8 = ₹5,60,000, about ₹5.6 lakh a year"
+    ],
+    "note": "The tariff is an assumption; use the energy charge from your own bills. If output changed, adjust the baseline first."
+  },
+  "senseible": "Senseible reads the before and after bills, records a SHA-256 fingerprint of each file, and its green loan readiness check and finance application help you package the evidence. The bank or its technical reviewer decides whether the savings are accepted.",
+  "links": [
+    { "label": "Measuring savings from an efficiency project", "to": "/answers/how-to-measure-savings-from-energy-efficiency-project" },
+    { "label": "Green loan reporting after disbursement", "to": "/answers/green-loan-reporting-after-disbursement" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Green loans in India with carbon data", "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data" }
+  ],
+  "sources": [
+    { "label": "Green Loan Principles (Loan Market Association)", "url": "https://www.lma.eu.com" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "Bureau of Energy Efficiency, energy audit guidance", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "eu-rules-besides-cbam-asking-exporters-carbon-data",
+  "q": "Which EU rules besides CBAM will ask Indian exporters for carbon data?",
+  "title": "EU rules beyond CBAM that ask for carbon data",
+  "short": "Four, mostly through your EU customer rather than directly: the CSRD, through value chain data requests; the Batteries Regulation, which requires a carbon footprint for certain batteries; the Ecodesign for Sustainable Products Regulation, through product rules and digital passports; and the CSDDD, for the largest EU buyers. Omnibus I has narrowed the CSRD and CSDDD.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters of textiles, engineering goods and auto parts",
+  "sections": [
+    {
+      "h": "CSRD: questionnaires from large EU customers",
+      "p": [
+        "EU companies reporting under the CSRD disclose Scope 3 emissions under ESRS E1 where climate is material, so they ask suppliers for data. After Omnibus I (Directive (EU) 2026/470) only very large companies report, and for smaller suppliers, below an employee limit set in the directive, the customer may not require more than the voluntary VSME-based standard covers; check the directive for that limit. Most Indian MSMEs will be asked for Scope 1 and 2 totals and an energy breakdown, not a full ESRS report."
+      ]
+    },
+    {
+      "h": "Batteries Regulation: a carbon footprint declaration",
+      "p": [
+        "Regulation (EU) 2023/1542, Article 7, requires a carbon footprint declaration for certain categories of battery, starting with electric vehicle batteries. It applies in stages once the Commission's delegated act on the calculation method is in force. Check Article 7 and the delegated acts on EUR-Lex for the categories covered and the current dates. Indian makers of cells, packs and battery materials can expect to be asked for their share of the footprint."
+      ]
+    },
+    {
+      "h": "ESPR: product rules and digital product passports",
+      "p": [
+        "Regulation (EU) 2024/1781 is a framework. It sets no carbon number by itself; requirements arrive through product-specific delegated acts, in the order set by the Commission's ESPR working plan; check that plan for whether your product group comes early. Those acts can require carbon footprint information carried in a digital product passport, so exporters in covered product groups should expect product-level requests."
+      ]
+    },
+    {
+      "h": "CSDDD: due diligence by the very largest buyers",
+      "p": [
+        "Directive (EU) 2024/1760 asks large EU companies to identify and address environmental and human rights harm in their chains of activity. Omnibus I cut its scope to the very largest groups and pushed its start back. Suppliers to those groups can expect questions on energy use, emissions and pollution as part of supplier audits, rather than a fixed carbon format."
+      ]
+    },
+    {
+      "h": "One record that answers all four",
+      "ul": [
+        "Scope 1 and 2 totals by site and year, each traced to electricity bills and fuel invoices.",
+        "Energy use in kWh and fuel quantities, which most questionnaires ask for separately.",
+        "Production volumes, so a buyer can work out emissions per unit or per kg of product.",
+        "A short method note naming every factor's source and edition."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the invoice-backed Scope 1 and 2 record and energy figures that several of these requests share, with drafts for formats such as GHG Protocol and CBAM data. Its reports are self-declared; it does not prepare battery carbon footprint declarations or digital product passports.",
+  "links": [
+    { "label": "India textile exporters and EU rules", "to": "/climate-intelligence/india-textile-exporters-cbam-eu-compliance-2026" },
+    { "label": "Digital product passports for textiles", "to": "/climate-intelligence/digital-product-passport-textile-exporters" },
+    { "label": "VSME standard for small suppliers", "to": "/answers/vsme-standard-for-small-suppliers" },
+    { "label": "Product compliance", "to": "/product-compliance" }
+  ],
+  "sources": [
+    { "label": "Directive (EU) 2026/470 (Omnibus I) amending the CSRD and CSDDD", "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng" },
+    { "label": "Council of the EU: simplification of sustainability reporting and due diligence signed off, 24 February 2026", "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/" },
+    { "label": "Regulation (EU) 2023/1542 (Batteries), Article 7, and Regulation (EU) 2024/1781 (ESPR), on EUR-Lex", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "CSDDD and CSRD scope and dates changed under Omnibus I, and Batteries carbon footprint and ESPR timing depend on delegated acts; recheck all four every six months."
+}

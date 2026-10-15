@@ -1,0 +1,88 @@
+{
+  "slug": "how-to-calculate-embedded-emissions-steel-cbam",
+  "q": "How do I calculate embedded emissions per tonne of steel for CBAM, with a worked example?",
+  "title": "Embedded emissions per tonne of steel",
+  "short": "Add the plant's direct emissions attributed to the product (fuel combustion plus process emissions) to the embedded emissions of precursors consumed, such as bought pig iron or DRI, then divide by tonnes produced. For steel, CBAM counts direct emissions only; electricity emissions are not part of the obligation.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian steel plant managers and sustainability leads",
+  "sections": [
+    {
+      "h": "The formula in Annex IV",
+      "p": [
+        "Specific embedded emissions = (attributed direct emissions + embedded emissions of precursors) / activity level. All three are for the same production process and the same reporting period. The activity level is the tonnes of the good produced in that process.",
+        "Attributed direct emissions are the CO2 from fuels burnt and from process inputs (limestone, electrodes, carbon in charge materials) within the process boundary, adjusted for heat and waste gases sent to or received from other processes."
+      ]
+    },
+    {
+      "h": "Where each number comes from",
+      "ul": [
+        "Fuel combustion: quantity of each fuel from invoices and stock records, times an emission factor. A verifier will ask whether you used defaults or lab analyses of your own coal.",
+        "Process emissions: from a mass balance of carbon in and out (scrap, pig iron, electrodes, lime, alloys, product and slag). This does not come from fuel invoices.",
+        "Precursors: tonnes of each precursor consumed, times its specific embedded emissions, from the supplier's verified data or the EU default value.",
+        "Activity level: tonnes produced, from production records for the period."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Using fuel purchased instead of fuel consumed. Adjust for opening and closing stock.",
+        "Counting a precursor twice: once as a purchase and again inside the plant's own direct emissions.",
+        "Adding grid electricity. For iron and steel, CBAM uses direct emissions only.",
+        "Mixing periods, such as a financial-year fuel total with calendar-year production."
+      ]
+    },
+    {
+      "h": "When to use actual data instead of defaults",
+      "p": [
+        "Actual data needs monitoring and an accredited verifier, which costs money every year. It pays when your intensity is below the EU default value, because defaults for steel carry a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028. Run both through a cost calculator before you commit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a rolling mill with bought pig iron (illustrative)",
+    "lines": [
+      "Coal: 500 t = 500,000 kg x 2.42 kg CO2 per kg = 1,210.0 t CO2",
+      "Furnace oil: 100,000 L x 2.97 kg CO2 per litre = 297.0 t CO2",
+      "Diesel: 20,000 L x 2.68 kg CO2 per litre = 53.6 t CO2",
+      "Fuel combustion total: 1,210.0 + 297.0 + 53.6 = 1,560.6 t CO2",
+      "Process emissions from the carbon mass balance (plant data, assumed): 100.0 t CO2",
+      "Attributed direct emissions: 1,560.6 + 100.0 = 1,660.6 t CO2",
+      "Precursor: 300 t pig iron x 1.5 t CO2 per t (supplier figure, assumed) = 450.0 t CO2",
+      "Output: 1,000 t of hot-rolled product",
+      "Specific embedded emissions: (1,660.6 + 450.0) / 1,000 = 2.11 t CO2 per tonne"
+    ],
+    "note": "Factors are IPCC 2006 defaults; process and precursor figures are assumed for illustration. Low-grade Indian coal often emits less per kg than the 2.42 default, so a GCV-based factor may lower the result."
+  },
+  "senseible": "Senseible turns fuel invoices (coal 2.42 kg CO2 per kg, furnace oil 2.97 kg per litre, diesel 2.68 kg per litre) into documented direct emissions for each period. Process emissions, the carbon mass balance, production tonnes and precursor values come from the plant; Senseible does not read them from invoices.",
+  "links": [
+    {
+      "label": "How to calculate CBAM cost",
+      "to": "/answers/how-to-calculate-cbam-cost"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "CBAM for steel exporters in India",
+      "to": "/solutions/cbam-steel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Definitive-period monitoring rules are set in Commission implementing acts; recheck allowed default factors and boundaries before each declaration."
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "does-india-coal-gst-count-as-carbon-price-cbam",
+  "q": "Does India's tax on coal (the former clean energy cess, now GST) count as a carbon price that reduces CBAM?",
+  "title": "Does India's coal tax reduce CBAM?",
+  "short": "Almost certainly not, as the rules read today. CBAM deducts only a carbon price effectively paid under a scheme priced on the greenhouse gases released in making the goods. GST on coal is a general tax on the coal's value, mostly recovered as input tax credit, so it does not fit.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian steel, cement and aluminium exporters, EU importers",
+  "sections": [
+    {
+      "h": "What CBAM counts as a carbon price",
+      "p": [
+        "Article 3 of the CBAM Regulation defines a carbon price as the monetary amount paid in a third country, under a carbon emissions reduction scheme, as a tax, levy, fee or emission allowances, calculated on greenhouse gases covered by that measure and released during production of the goods. Article 9 lets the declarant claim a reduction in the CBAM certificates to surrender for a carbon price effectively paid, net of any rebate or compensation, with evidence certified by an independent person."
+      ]
+    },
+    {
+      "h": "Why India's coal tax does not fit",
+      "ul": [
+        "India's levy on coal began as the clean energy cess of 2010 and was folded into the GST compensation cess in 2017. In the September 2025 GST rate changes the cess on coal was removed and the GST rate on coal raised, so today the charge is ordinary GST.",
+        "GST is charged on the value of the coal, not on tonnes of CO2, and a manufacturer usually claims it back as input tax credit, so it is not effectively paid as a cost.",
+        "It is not part of a scheme whose purpose is reducing emissions, and it applies whatever the emissions of the final product."
+      ]
+    },
+    {
+      "h": "What could count in future",
+      "p": [
+        "India's Carbon Credit Trading Scheme puts a price on emissions intensity through tradable certificates. Whether costs under it can be deducted depends on how the Commission's implementing rules treat intensity-based schemes and how much an installation actually pays. That question is open; keep CCTS purchase and surrender records for each installation in case a claim becomes possible."
+      ]
+    },
+    {
+      "h": "What to keep anyway",
+      "ul": [
+        "Coal purchase invoices with HSN 2701 and the tax lines, by installation and month.",
+        "Fuel consumption and production records that tie the coal to the exported goods.",
+        "Any CCTS certificate purchase and surrender records."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your coal purchase invoices with their HSN code and tax lines as read, and its CBAM cost calculator estimates certificate costs. It does not give legal opinions on Article 9 deductions.",
+  "links": [
+    {
+      "label": "India carbon markets and the EU price",
+      "to": "/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price"
+    },
+    {
+      "label": "South Africa's carbon tax and CBAM",
+      "to": "/climate-intelligence/south-africa-carbon-tax-cbam"
+    },
+    {
+      "label": "How to calculate CBAM cost",
+      "to": "/answers/how-to-calculate-cbam-cost"
+    },
+    {
+      "label": "CBAM calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 3 and Article 9",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm the September 2025 GST change on coal from the CBIC notification, and check Commission rules on carbon price deductions for new guidance."
+}

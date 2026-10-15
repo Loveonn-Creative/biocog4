@@ -1,0 +1,63 @@
+{
+  "slug": "carbon-footprint-financial-or-calendar-year",
+  "q": "Should my carbon footprint follow the April to March financial year or the calendar year?",
+  "title": "Financial year or calendar year footprint?",
+  "short": "Follow the year of whoever relies on the number most. BRSR and Indian lenders work on the April to March financial year. CBAM and many EU buyers work on the calendar year. The GHG Protocol accepts either if you keep it consistent. If you serve both, record data monthly and total it both ways.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "CFOs, exporters",
+  "sections": [
+    {
+      "h": "What each framework expects",
+      "ul": [
+        "GHG Protocol Corporate Standard: an annual reporting period, not a fixed calendar. Pick one and keep it.",
+        "SEBI BRSR: the financial year, April to March, matching the annual report.",
+        "EU CBAM: the importer's annual declaration covers the calendar year, January to December.",
+        "Buyer questionnaires and CDP: usually let you state your own 12 month period, but ask which one you used."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Listed, filing BRSR, or reporting to an Indian bank: use April to March as the main year.",
+        "Exporting CBAM goods, or most data requests come from EU buyers: produce calendar-year figures for them.",
+        "Both: keep the main report on April to March and produce a calendar-year cut from the same monthly data. Never stretch or scale one year into the other."
+      ]
+    },
+    {
+      "h": "Monthly data makes both easy",
+      "p": [
+        "If every invoice and bill is recorded against the month it covers, any 12 month window is a simple sum. Bills that cover parts of two months, such as an electricity bill from 15 March to 14 April, should be split by days so each month gets its share. Fuel is counted in the month it was bought or issued from stock, consistently."
+      ]
+    },
+    {
+      "h": "Changing your period later",
+      "p": [
+        "You can switch, but treat it as a methodology change: say so in the report, restate the base year on the new period if you have a target, and do not leave a gap or overlap of months between the old and new reports."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one data set, two years",
+    "lines": [
+      "January to March 2025: 300 t CO2",
+      "April to December 2025: 900 t CO2",
+      "January to March 2026: 320 t CO2",
+      "Calendar year 2025: 300 + 900 = 1,200 t CO2",
+      "Financial year 2025-26: 900 + 320 = 1,220 t CO2"
+    ],
+    "note": "The two totals differ because they cover different months; both are correct for their period."
+  },
+  "senseible": "Senseible keeps the billing period and date of every document, so the same records can be totalled by financial year or calendar year; its Scope 2 summary groups by either. It does not pick the period for you.",
+  "links": [
+    { "label": "Indian fiscal year vs CBAM reporting period", "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period" },
+    { "label": "Splitting a bill across months", "to": "/answers/split-electricity-bill-across-months-for-carbon" },
+    { "label": "How often to measure your carbon footprint", "to": "/climate-intelligence/carbon-accounting-frequency-msme-when-to-measure" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition (2004)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "SEBI circular on BRSR Core, 12 July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 6", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" }
+  ],
+  "reviewed": "2026-10-15"
+}

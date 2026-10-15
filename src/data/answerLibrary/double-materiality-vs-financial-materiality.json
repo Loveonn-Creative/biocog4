@@ -1,0 +1,53 @@
+{
+  "slug": "double-materiality-vs-financial-materiality",
+  "q": "What is the difference between double materiality (CSRD) and financial materiality (ISSB, IFRS S2)?",
+  "title": "Double vs financial materiality",
+  "short": "Financial materiality, used by the ISSB in IFRS S1 and S2, asks how sustainability matters affect the company's cash flows, finance and cost of capital. Double materiality, used by CSRD through ESRS, adds a second test: the company's impact on people and the environment. A topic is reported if it passes either test.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian listed-company sustainability leads, CFOs",
+  "sections": [
+    {
+      "h": "Financial materiality under IFRS S1 and S2",
+      "p": [
+        "IFRS S1 treats information as material if leaving it out, misstating it or obscuring it could reasonably be expected to influence decisions by investors, lenders and other creditors. The question is outside-in: which sustainability risks and opportunities could affect the company's cash flows, access to finance or cost of capital over the short, medium or long term.",
+        "IFRS S2 applies this test to climate. Scope 1, 2 and 3 emissions are required disclosures under S2, but the wider choice of what to explain follows the investor lens."
+      ]
+    },
+    {
+      "h": "Double materiality under ESRS",
+      "p": [
+        "ESRS 1 sets two tests. Impact materiality asks whether the company causes, contributes to or is linked to actual or potential effects on people or the environment, judged by severity and likelihood. Financial materiality asks the same investor question as the ISSB.",
+        "A matter is material if it meets either test. So a severe local impact, such as effluent into a river, is reported even when it has not yet cost the company money."
+      ]
+    },
+    {
+      "h": "Where BRSR sits",
+      "p": [
+        "SEBI's BRSR format asks companies to list their material responsible business conduct issues, say whether each is a risk or an opportunity, and give the rationale and financial implications. In practice it mixes both views: the nine principles cover impacts on employees, communities and the environment, while the material issues question is framed around risk to the business."
+      ]
+    },
+    {
+      "h": "What changes in the work",
+      "ul": [
+        "Stakeholders: double materiality needs input from affected groups such as workers, communities and suppliers, not only investors.",
+        "Scope of topics: expect more topics under ESRS, especially pollution, water, biodiversity and workers in the value chain.",
+        "Evidence: both need a documented process. Under ESRS the assessment itself is disclosed and is in scope for assurance.",
+        "Reuse: an ESRS assessment usually covers what ISSB needs, because its financial test is close to the ISSB one. The reverse is not true."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not run materiality assessments. It supplies document-backed Scope 1 and Scope 2 figures, and a Scope 3 supplier evidence trail, that either framework then asks you to disclose.",
+  "links": [
+    { "label": "CSRD double materiality for MSME suppliers", "to": "/climate-intelligence/csrd-double-materiality-assessment-msme-supplier" },
+    { "label": "BRSR vs GRI vs ISSB: which framework?", "to": "/answers/brsr-vs-gri-vs-issb-which-framework" },
+    { "label": "Does CSRD apply to Indian companies?", "to": "/answers/does-csrd-apply-to-indian-companies" }
+  ],
+  "sources": [
+    { "label": "Commission Delegated Regulation (EU) 2023/2772 (ESRS Set 1), ESRS 1 section 3", "url": "https://eur-lex.europa.eu" },
+    { "label": "IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information, ISSB, June 2023", "url": "https://www.ifrs.org" },
+    { "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2021/562, 10 May 2021 (BRSR format)", "url": "https://www.sebi.gov.in" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The EU simplified ESRS in 2025 and 2026; check the current ESRS text for changes to how the materiality assessment is performed and disclosed."
+}

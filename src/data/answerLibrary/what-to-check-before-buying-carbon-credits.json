@@ -1,0 +1,58 @@
+{
+  "slug": "what-to-check-before-buying-carbon-credits",
+  "q": "What should I check on a specific carbon credit before buying it?",
+  "title": "Checks before buying a carbon credit",
+  "short": "Check that the credit sits on a recognised registry with unique serial numbers, has not been retired, comes from a project with a current methodology and a recent vintage, carries an ICVCM CCP label where available, has a buffer for reversal risk if it is nature-based, and matches the claim you plan to make.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Credit buyers, sustainability leads",
+  "sections": [
+    {
+      "h": "Registry and serial numbers",
+      "ul": [
+        "Ask for the registry name, project ID and the exact serial number range of the credits you are buying.",
+        "Open the public registry yourself and confirm the serials exist, are active and are held by the seller or their broker.",
+        "Make sure the same project is not also issuing on a second registry for the same period. Double issuance is rare but checkable.",
+        "After purchase, the retirement must be in your company's name, with the purpose stated, and you should keep the retirement certificate or link."
+      ]
+    },
+    {
+      "h": "Project quality",
+      "ul": [
+        "Methodology: confirm the version is still active. Credits issued under withdrawn or revised methodologies, for example older cookstove methods that overestimated fuel savings, carry more risk.",
+        "CCP label: the ICVCM assesses methodologies against its Core Carbon Principles. A credit tagged CCP-approved has passed that programme and methodology review.",
+        "Validation and verification: read the latest verification report and note the validation and verification body that signed it.",
+        "Additionality story: if the project would clearly have happened anyway, such as large grid-connected solar in a market where it is already cheap, expect buyer and press scrutiny."
+      ]
+    },
+    {
+      "h": "Vintage and permanence",
+      "p": [
+        "Vintage is the year the reduction happened. Many buyers set a limit, such as no credits more than five years old, because old vintages often come from methods since tightened.",
+        "For forestry and other removals that can be reversed, check that the project contributes to the registry's buffer pool and that its risk rating is published."
+      ]
+    },
+    {
+      "h": "Fit with your claim",
+      "ul": [
+        "If you will use the credits under the VCMI Claims Code, check its quality and claim conditions before buying.",
+        "If a buyer, airline scheme or government programme needs credits authorised by the host country, ask whether a corresponding adjustment applies. Most voluntary credits from India have none.",
+        "Do not count credits as a reduction in your Scope 1, 2 or 3 inventory. Report them separately."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not rate, verify or score individual carbon credits, including listings on its own marketplace. Apply the same checks to any credit, wherever you buy it.",
+  "links": [
+    { "label": "How to vet a carbon credit platform", "to": "/climate-intelligence/how-to-vet-a-legitimate-carbon-credit-platform" },
+    { "label": "How to check a retirement", "to": "/answers/how-to-check-carbon-credit-retirement" },
+    { "label": "ICVCM Core Carbon Principles", "to": "/answers/what-are-icvcm-core-carbon-principles" },
+    { "label": "What is a corresponding adjustment?", "to": "/answers/what-is-a-corresponding-adjustment" }
+  ],
+  "sources": [
+    { "label": "ICVCM Core Carbon Principles and Assessment Framework", "url": "https://icvcm.org" },
+    { "label": "VCMI Claims Code of Practice", "url": "https://vcmintegrity.org" },
+    { "label": "Verra VCS Program Guide (registry and buffer rules)", "url": "https://verra.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "ICVCM CCP approvals are added methodology by methodology; check the current list before relying on a label."
+}

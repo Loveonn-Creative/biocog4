@@ -1,0 +1,63 @@
+{
+  "slug": "indian-coal-emissions-by-gcv",
+  "q": "How do I calculate emissions from Indian coal when my bill shows grade or GCV, not tonnes of standard coal?",
+  "title": "Indian coal emissions from grade or GCV",
+  "short": "Convert the coal's calorific value into energy, then multiply by an IPCC CO2 factor per terajoule. Take GCV from the lab report or the grade's band, convert kcal/kg to MJ/kg, reduce GCV to NCV, and apply about 95 t CO2 per TJ. Low-grade Indian coal often comes to 1.3 to 1.7 kg CO2 per kg, well below a generic factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler and kiln operators, plant managers",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "GCV in MJ/kg = GCV in kcal/kg x 4.1868 / 1,000.",
+        "NCV = GCV x 0.95. The IPCC notes that for coal NCV is about 5% below GCV; for wet, high-ash coal the gap can be larger, so use a lab NCV if you have one.",
+        "Energy in TJ = tonnes of coal x NCV in MJ/kg / 1,000.",
+        "CO2 in tonnes = energy in TJ x the IPCC default factor: 94.6 t CO2 per TJ for other bituminous coal, 96.1 for sub-bituminous."
+      ]
+    },
+    {
+      "h": "Reading the grade on an Indian coal invoice",
+      "p": [
+        "Non-coking coal in India is graded by GCV in bands of 300 kcal/kg, from G1 above 7,000 down to G17 at 2,201 to 2,500. If you only have the grade, use the midpoint of its band and say so. A lab report of the GCV for each consignment is better, because the grade is measured on a standardised basis and the coal you actually burn may be wetter."
+      ]
+    },
+    {
+      "h": "Why a single factor per kg can mislead",
+      "p": [
+        "A generic factor such as 2.42 kg CO2 per kg is close to what IPCC defaults give for other bituminous coal: 25.8 MJ/kg NCV x 94.6 t CO2 per TJ is about 2.44 kg per kg. Indian non-coking coal is high in ash and much lower in calorific value, so each kilogram holds less carbon. Applying the generic factor to a G11 coal overstates emissions by about half. Imported coal near 6,000 kcal/kg comes out at about 2.26 kg per kg by the same formula, much closer to the generic value."
+      ]
+    },
+    {
+      "h": "What to keep as evidence",
+      "ul": [
+        "Purchase invoices or weighbridge slips with tonnes received.",
+        "The supplier's or a third-party lab's GCV report for each consignment, with its moisture basis.",
+        "Stock at the start and end of the year, so you count coal burned, not coal bought."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 tonnes of G11 coal",
+    "lines": [
+      "G11 band 4,001 to 4,300 kcal/kg; midpoint about 4,150 kcal/kg GCV",
+      "GCV: 4,150 x 4.1868 / 1,000 = 17.375 MJ/kg; NCV: 17.375 x 0.95 = 16.506 MJ/kg",
+      "Energy: 20 x 16.506 / 1,000 = 0.330 TJ",
+      "CO2: 0.330 x 94.6 = 31.2 t CO2, or 1.56 kg CO2 per kg of coal",
+      "With a generic 2.42 kg per kg: 20,000 x 2.42 = 48,400 kg, about 48.4 t, 17 t more"
+    ],
+    "note": "An estimate from the grade midpoint and the IPCC 5% GCV to NCV rule. A lab NCV and the sub-bituminous factor (96.1) would shift it by a few percent."
+  },
+  "senseible": "Senseible reads tonnes or kilograms from coal invoices and applies a single factor of 2.42 kg CO2 per kg, from IPCC 2006 defaults. It does not read the grade or GCV and adjust the factor, so for low-grade Indian coal its figure will be higher than a GCV-based calculation; keep your own GCV working alongside it.",
+  "links": [
+    { "label": "Coal emission factor", "to": "/emission-factors/coal" },
+    { "label": "Coal vs PNG vs biomass boilers", "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions" },
+    { "label": "Scope 1 emissions in Indian manufacturing", "to": "/climate-intelligence/manufacturing-scope-1-emissions-india" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1, Tables 1.2 (NCV) and 1.4 (CO2 per TJ)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database for the Indian Power Sector, User Guide", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The grade-to-emissions figures are labelled estimates; Senseible's single coal factor may overstate low-GCV coal and is under product review."
+}

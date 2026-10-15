@@ -1,0 +1,62 @@
+{
+  "slug": "leased-factory-emissions-which-scope",
+  "q": "If I rent my factory or office, are its electricity and diesel emissions my Scope 1 and 2 or Scope 3?",
+  "title": "Rented factory: Scope 1 and 2 or Scope 3?",
+  "short": "Under operational control, the approach most companies use, a factory you rent and run is yours: diesel, gas and boiler fuel go in Scope 1, purchased electricity in Scope 2. Only under financial control or equity share, with an operating lease, do they move to Scope 3 Category 8, upstream leased assets.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners, sustainability leads",
+  "sections": [
+    {
+      "h": "The decision table",
+      "ul": [
+        "Operational control, any lease type, you run the site: Scope 1 for fuels burnt, Scope 2 for electricity.",
+        "Financial control or equity share, finance lease: Scope 1 and 2, because a finance lease is treated as owning the asset.",
+        "Financial control or equity share, operating lease: Scope 3 Category 8.",
+        "Pick one consolidation approach for the whole company and use it for every lease, owned site and joint venture."
+      ]
+    },
+    {
+      "h": "Fuel and power you never see a bill for",
+      "ul": [
+        "Landlord runs the backup diesel generator and charges you per unit: you are buying electricity, so report it under Scope 2 using the generator's fuel per kWh if the landlord shares it.",
+        "Your own generator in the rented shed, your diesel: Scope 1 under operational control.",
+        "Electricity included in rent: still your Scope 2. Ask for sub-meter readings, or allocate the building bill by area and label it an estimate."
+      ]
+    },
+    {
+      "h": "Why this matters in a buyer questionnaire",
+      "p": [
+        "Many MSMEs leave rented sites out because the bills are in the landlord's name. That understates Scope 1 and 2, and a buyer comparing you with peers who own their plants will see an unusually low figure. Who holds the discom connection does not decide the scope; control does."
+      ]
+    },
+    {
+      "h": "What to record",
+      "p": [
+        "Note the consolidation approach, each lease and its type, who operates each energy-using asset, and the source of every quantity: your bill, the landlord's sub-meter, or an area-based estimate. The landlord, if it reports, puts the same energy in its Category 13, so the two reports do not overlap."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a rented unit under operational control",
+    "lines": [
+      "Electricity on the landlord's bill, sub-metered to you: 18,000 kWh a month",
+      "Scope 2: 18,000 x 0.710 = 12,780 kg CO2 a month, about 153 t CO2 a year",
+      "Your diesel generator: 1,500 litres a year; Scope 1 = 1,500 x 2.68 = 4,020 kg CO2",
+      "Category 8: nothing, because both are already in your Scope 1 and 2"
+    ],
+    "note": "12,780 x 12 = 153,360 kg. Under financial control with an operating lease, the same 157 t or so would be reported in Category 8 instead."
+  },
+  "senseible": "Senseible reads tenant-paid electricity bills and fuel slips under your account as Scope 2 and Scope 1, with the source document on each line. Electricity bundled into rent needs readings or an allocation you provide.",
+  "links": [
+    { "label": "Indonesia manufacturing Scope 2", "to": "/climate-intelligence/indonesia-manufacturing-scope-2-electricity-emissions" },
+    { "label": "Rented warehouse electricity", "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3" },
+    { "label": "Operational control vs equity share", "to": "/answers/operational-control-vs-equity-share" },
+    { "label": "Sub-metered electricity in a rented unit", "to": "/answers/sub-metered-electricity-rented-unit" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition (2004), Chapter 3 and Appendix F on leased assets", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 8 upstream leased assets", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

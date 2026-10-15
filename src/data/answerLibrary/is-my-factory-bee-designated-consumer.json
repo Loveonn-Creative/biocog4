@@ -1,0 +1,82 @@
+{
+  "slug": "is-my-factory-bee-designated-consumer",
+  "q": "Is my factory a BEE designated consumer, and what does that require?",
+  "title": "Is my factory a BEE designated consumer?",
+  "short": "Your factory is a designated consumer only if its sector is listed under the Energy Conservation Act and the government has notified it, which depends on annual energy use crossing the sector's threshold. Designated consumers must appoint an energy manager, have accredited energy audits, report energy use and meet notified norms.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian plant owners and energy managers",
+  "sections": [
+    {
+      "h": "How the threshold test works",
+      "p": [
+        "The Schedule to the Energy Conservation Act, 2001 lists energy intensive industries and establishments. Ministry of Power notification S.O. 394(E) of 12 March 2007 set a minimum annual energy consumption, in tonnes of oil equivalent (toe), for each sector. A unit in a listed sector that uses more than its sector threshold can be notified as a designated consumer.",
+        "The test counts all energy brought into the plant: coal, furnace oil, gas, biomass and purchased electricity, each converted to toe. One toe is 10 million kcal."
+      ]
+    },
+    {
+      "h": "Thresholds in the 2007 notification",
+      "ul": [
+        "Aluminium: 7,500 toe a year.",
+        "Chlor-alkali: 12,000 toe a year.",
+        "Textiles: 3,000 toe a year.",
+        "Cement, fertiliser, iron and steel, pulp and paper, and thermal power stations: 30,000 toe a year."
+      ],
+      "p": [
+        "Later notifications added sectors such as refineries, petrochemicals, railways and electricity distribution companies, and the Energy Conservation (Amendment) Act, 2022 widened the Act. Read the current notification for your sector before you rely on any number here."
+      ]
+    },
+    {
+      "h": "What a designated consumer must do",
+      "ol": [
+        "Appoint or designate a certified energy manager and inform BEE and the State Designated Agency.",
+        "Get an energy audit done by an accredited energy auditor at the intervals set in the BEE (Manner and Intervals for Conduct of Energy Audit) Regulations, 2010.",
+        "File annual returns on energy consumed and the action taken on the auditor's recommendations.",
+        "Meet the energy consumption norms notified for the unit, which under the Perform, Achieve and Trade (PAT) scheme are specific energy consumption targets."
+      ]
+    },
+    {
+      "h": "If you are below the threshold",
+      "p": [
+        "Nothing under Section 14 applies until you are notified, but the same toe arithmetic tells you how close you are. A plant growing fast, or adding a furnace, can cross the line within a year or two. Many plants of that size are also named as obligated entities under the Carbon Credit Trading Scheme, which builds on the PAT list."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a textile processing unit",
+    "lines": [
+      "Coal: 6,000 t at 4,000 kcal/kg = 24,000 million kcal = 2,400 toe",
+      "Furnace oil: 500 kL at 0.95 kg/L = 475 t, at 10,000 kcal/kg = 4,750 million kcal = 475 toe",
+      "Grid electricity: 5,000,000 kWh at 860 kcal/kWh = 4,300 million kcal = 430 toe",
+      "Total: 2,400 + 475 + 430 = 3,305 toe, above the 3,000 toe textile threshold"
+    ],
+    "note": "Calorific values, density and the 860 kcal/kWh electricity conversion are labelled estimates for illustration. Use the gross calorific values from your fuel test reports and the conversion BEE prescribes in its forms."
+  },
+  "senseible": "Senseible reads fuel and electricity quantities (tonnes, litres, kWh) from your invoices and bills, so you have a documented annual total for each energy source. It does not convert them to toe or decide whether you are a designated consumer.",
+  "links": [
+    {
+      "label": "Energy audits for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "How to calculate specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "PAT and ESCerts after CCTS",
+      "to": "/answers/pat-escerts-after-ccts"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation Act, 2001, as amended in 2022, and S.O. 394(E), 12 March 2007 (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "BEE (Manner and Intervals for Conduct of Energy Audit) Regulations, 2010",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Designated consumer sectors and thresholds have been amended since 2007; check the latest Ministry of Power notification for your sector."
+}

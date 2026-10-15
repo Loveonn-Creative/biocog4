@@ -1,0 +1,86 @@
+{
+  "slug": "rbi-climate-risk-disclosure-for-borrowers",
+  "q": "What does RBI's climate risk disclosure framework mean for MSME borrowers?",
+  "title": "RBI climate disclosure: what borrowers face",
+  "short": "The RBI framework is addressed to banks and large NBFCs, not to MSMEs. But a lender can only report climate risk and financed emissions if borrowers give it data. Expect questions on energy and fuel use, emissions, site location and transition plans, first from large exposures and carbon-heavy sectors.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSME owners and finance heads, relationship managers",
+  "sections": [
+    {
+      "h": "What RBI has proposed, and to whom",
+      "p": [
+        "In February 2024 RBI released a draft Disclosure Framework on Climate-related Financial Risks, addressed to regulated entities such as banks, all-India financial institutions and larger NBFCs. It follows the four familiar pillars: governance, strategy, risk management, and metrics and targets. Check rbi.org.in for whether RBI has issued final directions, which entities they cover and from when.",
+        "RBI also issued a draft guidance note on climate scenario analysis and stress testing; check its current status on rbi.org.in. Together the two documents push lenders to measure how exposed their loan book is to physical risk (floods, heat, water stress) and transition risk (carbon pricing, CBAM, changing demand)."
+      ]
+    },
+    {
+      "h": "Why the borrower ends up supplying the data",
+      "p": [
+        "The draft's metrics pillar asks lenders, over time, to report emissions including financed emissions: the share of each borrower's emissions that the loan represents. A bank cannot compute that without the borrower's own Scope 1 and 2 figures, or it falls back on sector averages, which usually look worse for an efficient borrower.",
+        "Scenario analysis works the same way. A lender assessing a steel, textile or chemicals portfolio needs to know which borrowers burn coal or furnace oil, which export to the EU, and where their plants sit."
+      ]
+    },
+    {
+      "h": "What a lender is likely to ask you",
+      "ul": [
+        "Annual electricity in kWh and fuel by type and quantity, with bills to back them.",
+        "Scope 1 and Scope 2 emissions, the factors used, and the year they cover.",
+        "Plant addresses or coordinates, for flood, heat and water stress screening.",
+        "Export exposure, especially CBAM-covered goods sold to the EU.",
+        "Any plan to cut emissions: solar, fuel switch, efficiency, with costs and timing."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "ol": [
+        "Keep a year of electricity and fuel bills in one place, matched to your accounts.",
+        "Calculate Scope 1 and 2 with published factors and write down the source of each.",
+        "Use the same figures in every lender, buyer and green loan conversation, so they match.",
+        "Treat a lender's questionnaire as an opportunity: measured data usually beats the sector average a bank would assume."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what your bank reports for your loan (illustrative figures)",
+    "lines": [
+      "Electricity: 300,000 kWh x 0.710 kg CO2 per kWh = 213,000 kg CO2 (Scope 2)",
+      "Diesel: 20,000 L x 2.68 kg CO2 per L = 53,600 kg CO2 (Scope 1)",
+      "Borrower total: 266,600 kg, about 266.6 t CO2",
+      "Loan outstanding Rs 2 crore; company equity plus debt Rs 8 crore; attribution 2 / 8 = 25%",
+      "Financed emissions the bank reports: 266.6 x 25% = about 66.7 t CO2"
+    ],
+    "note": "Attribution follows the PCAF method for business loans to unlisted companies: outstanding amount divided by total equity plus debt."
+  },
+  "senseible": "Senseible builds a borrower's Scope 1 and Scope 2 figures from electricity bills and fuel invoices, with the factor and source on every line, which a lender can use for its financed emissions estimate. It does not run a bank's scenario analysis or stress test, and it does not report to RBI.",
+  "links": [
+    {
+      "label": "Financed emissions for banks in India",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Physical vs transition climate risk",
+      "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI, Draft Disclosure Framework on Climate-related Financial Risks, 2024 (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "RBI, Draft Guidance Note on Climate Scenario Analysis and Stress Testing (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry",
+      "url": "https://carbonaccountingfinancials.com"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Both RBI documents were released as drafts; check whether RBI has issued final directions, their scope and their timelines before relying on this page."
+}

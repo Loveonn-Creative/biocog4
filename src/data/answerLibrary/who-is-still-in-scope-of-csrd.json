@@ -1,0 +1,51 @@
+{
+  "slug": "who-is-still-in-scope-of-csrd",
+  "q": "After the EU Omnibus, which companies still have to report under CSRD, and from when?",
+  "title": "Who is still in scope of CSRD?",
+  "short": "After Directive (EU) 2026/470, CSRD covers EU companies with more than 1,000 employees and net turnover above €450 million, and non-EU groups with EU turnover above €450 million and a large EU subsidiary or branch. Start years depend on the company and on national transposition, so check both.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU importers, Indian groups with EU entities, consultants",
+  "sections": [
+    {
+      "h": "The size test for EU companies",
+      "p": [
+        "A company, or the parent of a group on a consolidated basis, is in scope when it has more than 1,000 employees on average over the year and net turnover above €450 million. Both conditions must be met. Listed small and medium companies, which the original CSRD covered, are no longer in scope."
+      ]
+    },
+    {
+      "h": "The test for non-EU groups, including Indian ones",
+      "p": [
+        "A non-EU parent is caught when the group's net turnover generated in the EU exceeds €450 million and it has an EU subsidiary or branch above the size limit set in the amended Article 40a. The EU entity files the group report. Exporting to the EU with no EU entity does not bring a company into scope."
+      ]
+    },
+    {
+      "h": "When reporting starts",
+      "ul": [
+        "Companies already reporting since financial year 2024 (the first wave) continue if they still meet the new tests. For those that fall below them, the transition depends on Directive 2026/470 and national law; check both.",
+        "Other large EU companies in scope: the 2025 stop-the-clock directive postponed their start by two years. Check Directive 2026/470 and your member state's transposition for the first financial year you report on.",
+        "Non-EU groups: the first reporting year is set in the amended Article 40a; check it in Directive 2026/470 and in the law of the member state where the EU entity sits."
+      ]
+    },
+    {
+      "h": "What changes for suppliers outside scope",
+      "p": [
+        "Companies in scope still need value chain data, but Directive (EU) 2026/470 limits what they may demand from smaller value chain companies, below an employee limit set in the directive, to what the voluntary VSME standard covers. In practice an Indian supplier will still get questions on energy use and Scope 1 and 2 emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not decide whether a company falls in CSRD scope. It helps a supplier answer customers that do report, by turning fuel invoices and electricity bills into Scope 1 and 2 figures with the source document behind each line.",
+  "links": [
+    { "label": "Does CSRD apply to Indian companies?", "to": "/answers/does-csrd-apply-to-indian-companies" },
+    { "label": "VSME standard for small suppliers", "to": "/answers/vsme-standard-for-small-suppliers" },
+    { "label": "What ESRS E1 asks on climate", "to": "/answers/what-esrs-e1-requires-on-climate" },
+    { "label": "ESG reporting", "to": "/esg-reporting" }
+  ],
+  "sources": [
+    { "label": "Directive (EU) 2026/470 (Omnibus I) amending the CSRD", "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng" },
+    { "label": "Council of the EU: simplification of sustainability reporting signed off, 24 February 2026", "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/" },
+    { "label": "Directive (EU) 2025/794 (stop-the-clock) and Directive (EU) 2022/2464 (CSRD), EUR-Lex", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Thresholds, the Article 40a subsidiary limit, first-wave relief and start years depend on the adopted text and national transposition; recheck them each reporting season."
+}

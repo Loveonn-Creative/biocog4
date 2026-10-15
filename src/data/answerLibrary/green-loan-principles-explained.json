@@ -1,0 +1,56 @@
+{
+  "slug": "green-loan-principles-explained",
+  "q": "What are the Green Loan Principles, and how does a lender check each one?",
+  "title": "Green Loan Principles explained",
+  "short": "The Green Loan Principles, published by the LMA, APLMA and LSTA, are a voluntary framework with four core components: use of proceeds, project evaluation and selection, management of proceeds, and reporting. A lender checks each with documents, such as invoices for spending and annual impact figures for reporting.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, lenders",
+  "sections": [
+    {
+      "h": "1. Use of proceeds",
+      "p": [
+        "The money must fund an eligible green project, such as renewable energy, energy efficiency, clean transport, pollution prevention, green buildings or sustainable water management. The lender checks the project description, quotations and, after disbursement, the supplier invoices that show the money went to that equipment or work."
+      ]
+    },
+    {
+      "h": "2. Project evaluation and selection",
+      "p": [
+        "The borrower explains its environmental objectives, how it decided the project is eligible, and any environmental or social risks. For an MSME this can be a short note: the problem, the project, the expected saving in energy or emissions, and how the estimate was made."
+      ]
+    },
+    {
+      "h": "3. Management of proceeds",
+      "p": [
+        "Green loan money should be credited to a dedicated account or tracked so it can be shown separately from other borrowing. The lender checks the account statement or the borrower's internal tracking against disbursements."
+      ]
+    },
+    {
+      "h": "4. Reporting",
+      "p": [
+        "The borrower reports at least once a year while the loan is outstanding: which projects were funded, how much was spent, and the expected or actual impact, for example kWh generated, energy saved or tonnes CO2 avoided, with the method stated. The principles also recommend a green loan framework and, where suitable, an external review, which an MSME borrower should agree with its lender up front."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative impact figure for a rooftop solar loan",
+    "lines": [
+      "System: 100 kW rooftop solar",
+      "Expected generation: about 1,400 kWh per kW per year (labelled estimate; use the installer's site estimate) = 140,000 kWh",
+      "Grid electricity displaced: 140,000 x 0.710 kg CO2 per kWh (CEA version 21.0) = 99,400 kg",
+      "Reported impact: about 99.4 tonnes CO2 a year, location-based, replaced by metered generation once a full year of data exists"
+    ]
+  },
+  "senseible": "Senseible's green loan readiness check and finance application organise the invoices and electricity records a lender asks for under use of proceeds and reporting. It is not a lender, does not decide eligibility under the principles and does not provide an external review.",
+  "links": [
+    { "label": "Green finance", "to": "/green-finance" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "How to get a green loan with carbon data", "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data" },
+    { "label": "Green loan reporting after disbursement", "to": "/answers/green-loan-reporting-after-disbursement" }
+  ],
+  "sources": [
+    { "label": "LMA, APLMA and LSTA Green Loan Principles and Guidance (latest edition)", "url": "https://www.lma.eu.com" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The Green Loan Principles are revised every few years; check the latest edition on the LMA site before quoting component wording."
+}

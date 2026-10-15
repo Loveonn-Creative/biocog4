@@ -1,0 +1,86 @@
+{
+  "slug": "what-auditors-check-in-ghg-assurance",
+  "q": "What does an auditor actually check in a GHG emissions assurance engagement?",
+  "title": "What auditors check in GHG assurance",
+  "short": "An assurer checks that your boundary is right, your activity data traces to source documents, your emission factors are correct and current, and your arithmetic recalculates. They test a sample, not every line, and the depth depends on whether the engagement gives limited or reasonable assurance.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sustainability leads and CFOs preparing for first assurance",
+  "sections": [
+    {
+      "h": "The stages of an engagement",
+      "ol": [
+        "Acceptance and scope: which statement, which period, limited or reasonable assurance, and which standard (ISAE 3410, ISO 14064-3 or ISSA 5000).",
+        "Understanding the business: sites, processes, fuels, the consolidation approach and how data flows from bills to the report.",
+        "Risk assessment and materiality: where errors are most likely and how big an error would change a reader's view, often set as a percentage of total emissions.",
+        "Testing: inquiry, analytical review and tests of detail on sampled lines.",
+        "Conclusion: a written statement, either 'nothing has come to our attention' (limited) or a positive opinion (reasonable)."
+      ]
+    },
+    {
+      "h": "The tests that take the most time",
+      "ul": [
+        "Vouching: pick sampled lines in the inventory and trace each back to the invoice, bill or meter reading.",
+        "Completeness: trace from source documents forward, for example every electricity account in the ledger, to check nothing was left out.",
+        "Recalculation: activity times factor, re-performed independently, including unit conversions.",
+        "Factor checks: the source, edition and unit of each factor, such as the CEA database version for grid power and IPCC 2006 defaults for fuels.",
+        "Cut-off: bills that span two periods are split correctly, and none are counted twice.",
+        "Analytical review: month-to-month and year-on-year swings compared with production, with explanations for outliers."
+      ]
+    },
+    {
+      "h": "Limited versus reasonable in practice",
+      "p": [
+        "Limited assurance relies mostly on inquiry and analytical review, with smaller samples. Reasonable assurance needs larger samples, tests of controls and more detailed evidence, and costs much more. BRSR Core started with reasonable assurance for the largest listed companies, so check which level your engagement letter states."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "ul": [
+        "Keep one file per source document, named so it matches the inventory line.",
+        "Write a one-page methodology note: boundary, factor sources and editions, estimates used and why.",
+        "Reconcile fuel and power quantities to the purchase ledger before the auditor arrives.",
+        "List every estimate and exclusion with its size, so materiality can be judged quickly."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: recalculating one sampled line",
+    "lines": [
+      "Sampled bill: 42,000 kWh, location-based Scope 2",
+      "Factor claimed: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0",
+      "Auditor recalculates: 42,000 x 0.710 = 29,820 kg CO2",
+      "Inventory shows 29,820 kg: agrees. Any other figure would point to a different factor edition or a unit error, and the auditor would ask why"
+    ]
+  },
+  "senseible": "Senseible links each figure to its source file, fingerprints every file with SHA-256, hash-chains ledger entries and recomputes each line within max(0.01, 0.1%), which shortens vouching and recalculation. Its Verified status means internal rule checks passed. An independent assurer still has to perform the engagement.",
+  "links": [
+    {
+      "label": "Why auditors prefer document trails",
+      "to": "/answers/auditors-and-senseible-reports"
+    },
+    {
+      "label": "What audit-grade carbon data means",
+      "to": "/climate-intelligence/audit-grade-carbon-data-what-it-actually-means"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "ISSA 5000, ISAE 3410 or ISO 14064-3",
+      "to": "/answers/issa-5000-vs-isae-3410-vs-iso-14064-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI circular on BRSR Core assurance, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

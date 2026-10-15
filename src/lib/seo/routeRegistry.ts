@@ -10,6 +10,8 @@ import { servicePages } from '@/data/services';
 import { competitorData } from '@/data/competitorData';
 import { industries } from '@/data/industriesData';
 import { answers, ANSWER_TOPICS } from '@/data/answers';
+import { answerLibraryAll } from '@/data/answerLibraryAll';
+import { LIBRARY_TOPICS, type LibraryAnswer, type LibraryTopic } from '@/data/answerLibraryTypes';
 import { legalDocuments } from '@/data/legalContent';
 import { careersRoles } from '@/data/careersRoles';
 import { trustSafeguards } from '@/data/trustSafeguards';
@@ -383,7 +385,10 @@ function answerRoutes(): SeoRoute[] {
     blocks: (Object.keys(ANSWER_TOPICS) as (keyof typeof ANSWER_TOPICS)[]).flatMap(t => [
       { h2: ANSWER_TOPICS[t].label } as Block,
       { ul: answers.filter(a => a.topic === t).map(a => `[${a.q}](/answers/${a.slug})`) } as Block,
-    ]),
+    ]).concat((Object.keys(LIBRARY_TOPICS) as LibraryTopic[]).flatMap(t => {
+      const group = answerLibraryAll.filter(a => a.topic === t);
+      return group.length ? [{ h2: LIBRARY_TOPICS[t].label } as Block, { ul: group.map(a => `[${a.q}](/answers/${a.slug})`) } as Block] : [];
+    })),
     breadcrumbs: hubCrumbs, jsonLd: [breadcrumbLd(hubCrumbs), faqLd(answers.map(a => ({ question: a.q, answer: a.short })))],
     priority: 0.7, changefreq: 'monthly',
   };
@@ -405,7 +410,44 @@ function answerRoutes(): SeoRoute[] {
       }],
       priority: 0.6, changefreq: 'monthly' as const,
     };
-  })];
+  }), ...answerLibraryAll.map(a => libraryRoute(a, hubCrumbs))];
+}
+
+/** One answer library page: sections, worked example, what Senseible does, links and sources. */
+export function libraryBlocks(a: LibraryAnswer): Block[] {
+  return [
+    { p: a.short },
+    ...a.sections.flatMap(s => [
+      { h2: s.h } as Block,
+      ...(s.p ?? []).map(p => ({ p }) as Block),
+      ...(s.ul?.length ? [{ ul: s.ul } as Block] : []),
+      ...(s.ol?.length ? [{ ol: s.ol } as Block] : []),
+    ]),
+    ...(a.example ? [{ h2: a.example.title } as Block, { ul: a.example.lines } as Block, ...(a.example.note ? [{ p: a.example.note } as Block] : [])] : []),
+    { h2: 'What Senseible does here' }, { p: a.senseible },
+    { ul: a.links.map(l => `[${l.label}](${l.to})`) },
+    { p: `Sources: ${a.sources.map(s => `[${s.label}](${s.url})`).join(', ')}` },
+    { p: `Last reviewed ${a.reviewed}.${a.reviewNote ? ` ${a.reviewNote}` : ''}` },
+  ];
+}
+
+function libraryRoute(a: LibraryAnswer, hubCrumbs: { name: string; path: string }[]): SeoRoute {
+  const path = `/answers/${a.slug}`;
+  const crumbs = [...hubCrumbs, { name: a.title, path }];
+  const text = [a.short, ...a.sections.flatMap(s => [...(s.p ?? []), ...(s.ul ?? []), ...(s.ol ?? [])])].join(' ');
+  return {
+    path, section: 'guide', ...answerMeta(a), h1: a.q,
+    blocks: libraryBlocks(a),
+    breadcrumbs: crumbs,
+    jsonLd: [breadcrumbLd(crumbs), {
+      '@context': 'https://schema.org', '@type': 'QAPage', dateModified: a.reviewed,
+      mainEntity: {
+        '@type': 'Question', name: a.q, answerCount: 1,
+        acceptedAnswer: { '@type': 'Answer', text, dateModified: a.reviewed, author: ORG_REF, citation: a.sources.map(s => s.url) },
+      },
+    }],
+    lastmod: a.reviewed, priority: 0.6, changefreq: 'monthly',
+  };
 }
 
 function industryRoutes(): SeoRoute[] {

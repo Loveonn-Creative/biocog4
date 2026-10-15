@@ -1,0 +1,68 @@
+{
+  "slug": "use-of-sold-products-category-11-calculation",
+  "q": "How do I calculate Scope 3 Category 11 for motors, pumps or appliances I sell?",
+  "title": "Calculating Category 11, use of sold products",
+  "short": "For each product type sold in the year, multiply units sold by the energy one unit uses over its expected life, then by the emission factor where it will be used. Report the whole lifetime in the year of sale. Direct use-phase emissions, from energy the product consumes or gases it releases, are the required minimum.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pump or motor manufacturers, sustainability leads",
+  "sections": [
+    {
+      "h": "Which products count",
+      "ul": [
+        "Products that use electricity: motors, pumps, fans, compressors, appliances. Usually the biggest share.",
+        "Products that burn fuel: generators, engines, boilers, vehicles.",
+        "Fuels and feedstocks you sell, which release CO2 when burnt.",
+        "Products that contain and leak greenhouse gases: air conditioners and refrigeration units with HFC refrigerants.",
+        "Indirect use-phase emissions, such as the energy to heat water a detergent needs, are optional and should be reported separately if included."
+      ]
+    },
+    {
+      "h": "The formula by product type",
+      "ul": [
+        "Electricity: units sold x rated input kW x load factor x hours a year x lifetime years x grid factor.",
+        "Fuel: units sold x fuel a year x lifetime years x fuel factor.",
+        "Refrigerant: units sold x charge x share leaked over life x GWP, in CO2e."
+      ]
+    },
+    {
+      "h": "Choices to make and disclose",
+      "ol": [
+        "Hours and load: from field data, test standards or customer surveys, not best case.",
+        "Lifetime: from warranty, design life or replacement data.",
+        "Grid factor: where the product is used. For India use 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0); for exports, the destination country's factor.",
+        "Whether the product is final or intermediate. A motor sold to a pump maker still uses energy directly, so it is usually reported; check the exclusion rules for intermediate products before leaving it out."
+      ]
+    },
+    {
+      "h": "Do not discount the future",
+      "p": [
+        "The GHG Protocol asks for total expected lifetime emissions of products sold in the reporting year, reported in that year. Do not spread them over future years, and do not apply a grid that you hope will be cleaner unless you disclose it as a scenario alongside the main figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 5 kW motor sold in India (assumptions labelled)",
+    "lines": [
+      "Assumed use: 4,000 hours a year for 15 years, at full rated input",
+      "Lifetime energy: 5 x 4,000 x 15 = 300,000 kWh",
+      "Emissions: 300,000 x 0.710 = 213,000 kg, about 213 t CO2 per motor",
+      "At an assumed 75% average load: 213 x 0.75 = about 160 t CO2 per motor",
+      "200 motors sold in the year at 75% load: 200 x 159.75 = 31,950 t CO2"
+    ],
+    "note": "Hours, lifetime and load are assumptions for illustration; publish your own with the result."
+  },
+  "senseible": "Senseible does not model use-phase emissions of products you sell. The grid factor it applies to your own bills, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, is the same figure you can use for products run in India.",
+  "links": [
+    { "label": "Use-phase emissions for pumps and motors", "to": "/answers/use-phase-emissions-for-pumps-and-motors" },
+    { "label": "Excluding downstream categories for intermediate products", "to": "/answers/exclude-downstream-scope-3-intermediate-products" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
+    { "label": "Manufacturing Scope 3 in India", "to": "/climate-intelligence/manufacturing-scope-3-emissions-india" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 11", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Hours, lifetime and load in the example are labelled assumptions; refresh the grid factor when the CEA publishes a new edition."
+}

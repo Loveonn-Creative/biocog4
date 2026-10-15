@@ -1,0 +1,79 @@
+{
+  "slug": "answer-a-tfs-pcf-request-chemical-supplier",
+  "q": "A chemical customer asked for a PCF under the TfS guideline. What do I need to provide, and how is it different from a GHG inventory?",
+  "title": "Answering a TfS PCF request",
+  "short": "Send a cradle-to-gate carbon footprint for one kilogram of the specific product, built the way the Together for Sustainability (TfS) guideline sets out: your own site energy and process data, your raw material footprints, a stated allocation method and a data quality note. A company GHG inventory is not a PCF, though it supplies much of the site data.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Specialty and intermediate chemical makers",
+  "sections": [
+    {
+      "h": "How a PCF differs from your GHG inventory",
+      "ul": [
+        "Unit: the inventory is tonnes CO2e for the whole company in a year; the PCF is kg CO2e per kg of one product leaving your gate.",
+        "Boundary: the inventory splits emissions into Scope 1, 2 and 3; the PCF follows the product from raw material extraction to your factory gate and ignores scopes.",
+        "Allocation: the inventory needs none; the PCF must share site emissions among the products made on the same lines.",
+        "Raw materials: in the inventory they sit in Scope 3 Category 1, often spend-based; in a PCF they are usually the largest part and should use supplier or database footprints per kg."
+      ]
+    },
+    {
+      "h": "What the customer will expect in the file",
+      "ol": [
+        "Product identity and declared unit, normally 1 kg of product at your gate.",
+        "Reference period, usually the last 12 months of production.",
+        "Total cradle-to-gate footprint in kg CO2e per kg, with fossil and biogenic parts reported separately as the guideline asks.",
+        "Primary data share: how much comes from your own measured data rather than databases.",
+        "Allocation method used and why, and any cut-offs or exclusions.",
+        "Sources of secondary data and emission factors, with versions.",
+        "Data exchanged in the PACT format if the customer uses a PACT-conformant system."
+      ]
+    },
+    {
+      "h": "The order of work for a small chemical plant",
+      "ol": [
+        "Collect 12 months of site energy: electricity bills, fuel invoices for boilers and thermic fluid heaters, steam purchases.",
+        "Get production volumes for each product on the same lines and in the same months.",
+        "Allocate site energy to the requested product. The guideline prefers splitting by process step or measured use; fall back to a physical basis such as mass only when that is not possible, and say so.",
+        "List every raw material per kg of product with its footprint, using supplier PCFs where you have them and a named database otherwise.",
+        "Add inbound transport, packaging and waste treatment where material.",
+        "Write the result and method note, and keep the working file so the customer or a reviewer can trace each number."
+      ]
+    },
+    {
+      "h": "Mistakes that get a PCF sent back",
+      "ul": [
+        "Dividing the whole company inventory by total tonnes sold. That mixes products and leaves out raw materials.",
+        "Using spend-based raw material factors when the customer asked for primary data.",
+        "No allocation statement, or allocating by revenue without saying so.",
+        "Mixing grid factors from different years or countries without naming them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: gate-to-gate energy share for one product (illustrative)",
+    "lines": [
+      "Site energy in the period: 120,000 kWh grid electricity and 8,000 litres furnace oil",
+      "Electricity: 120,000 x 0.710 = 85,200 kg CO2",
+      "Furnace oil: 8,000 x 2.97 = 23,760 kg CO2",
+      "Site total: 85,200 + 23,760 = 108,960 kg CO2",
+      "Output: 400 t in total, of which the requested product is 100 t, so a 25% mass share",
+      "Allocated: 108,960 x 0.25 = 27,240 kg CO2 for 100,000 kg of product",
+      "Gate-to-gate energy part: 27,240 / 100,000 = about 0.27 kg CO2 per kg"
+    ],
+    "note": "This is only your own energy step. Raw material footprints are added on top and are usually much larger. The grid and fuel factors here cover CO2 only; a PCF is in CO2e, so note that methane and nitrous oxide from combustion are left out or add them."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 records with the factor and source on each line, which is the site energy data a PCF starts from. It does not produce TfS or PACT-conformant product footprints, raw material footprints or the allocation itself.",
+  "links": [
+    { "label": "Scope 3 for chemical makers in India", "to": "/solutions/scope3-chemicals-india" },
+    { "label": "Allocating factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "The PACT Pathfinder framework", "to": "/answers/pact-pathfinder-framework-explained" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "WBCSD PACT Methodology for product carbon footprints", "url": "https://www.wbcsd.org" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel factors)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The TfS PCF Guideline is revised from time to time to stay aligned with PACT; confirm which version your customer cites before sending."
+}

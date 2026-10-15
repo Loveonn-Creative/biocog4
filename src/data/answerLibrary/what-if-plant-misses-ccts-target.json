@@ -1,0 +1,84 @@
+{
+  "slug": "what-if-plant-misses-ccts-target",
+  "q": "What happens if an obligated plant misses its CCTS emission intensity target?",
+  "title": "Missing a CCTS intensity target",
+  "short": "The plant must buy and surrender carbon credit certificates equal to its shortfall, one certificate per tonne of CO2e. If it fails to surrender them, the Greenhouse Gases Emission Intensity Target Rules, 2025 provide for environmental compensation; check the gazette text for the rate and timeline.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Plant heads and CFOs of CCTS obligated entities",
+  "sections": [
+    {
+      "h": "How the shortfall is measured",
+      "ol": [
+        "Your target is an emission intensity: tonnes of CO2e per tonne of product, set against the baseline year named in your sector's target notification.",
+        "After the compliance year, verified emissions are divided by verified output to get achieved intensity.",
+        "Shortfall in tonnes = (achieved intensity minus target intensity) x output in that year.",
+        "One carbon credit certificate covers one tonne of CO2e of shortfall."
+      ]
+    },
+    {
+      "h": "Ways to cover a shortfall",
+      "ul": [
+        "Buy certificates on a power exchange in the trading sessions held under the scheme.",
+        "Use certificates you banked from an earlier year when you beat your target.",
+        "Cut intensity during the year, which is cheaper when the abatement cost is below the certificate price."
+      ]
+    },
+    {
+      "h": "If certificates are not surrendered",
+      "p": [
+        "The 2025 target rules, notified by the Ministry of Environment, Forest and Climate Change for the first sectors, provide for environmental compensation on entities that do not surrender enough certificates. Check the gazette text of the rules for the rate, which body levies it and the payment timeline.",
+        "Separately, the Energy Conservation Act, 2001, as amended in 2022, carries penalty provisions for non-compliance by designated consumers. Read the gazette text for the exact amounts, timelines and whether the unmet obligation carries forward."
+      ]
+    },
+    {
+      "h": "What to do during the year",
+      "ul": [
+        "Track intensity monthly from documented fuel, power and production, not only at year end.",
+        "Estimate your likely shortfall each quarter and budget at a range of certificate prices.",
+        "Keep monitoring records ready for verification; unverified emissions cannot establish compliance."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a cement plant",
+    "lines": [
+      "Target 0.80 t CO2e per tonne of cement; achieved 0.83; output 500,000 tonnes (all illustrative)",
+      "Shortfall: (0.83 minus 0.80) x 500,000 = 0.03 x 500,000 = 15,000 tonnes, so 15,000 certificates",
+      "At an illustrative average price of Rs 500 per certificate: 15,000 x 500 = Rs 75 lakh to buy and surrender",
+      "If not surrendered, environmental compensation applies at the rate set in the target rules"
+    ],
+    "note": "The Rs 500 price is an assumption for the arithmetic only. Use the actual average trading price once the exchanges publish results."
+  },
+  "senseible": "Senseible builds a monthly record of fuel and electricity emissions from invoices and bills, each linked to its source document, which you can set against production to track intensity. It is not a CCTS verifier, does not trade certificates and does not calculate your penalty.",
+  "links": [
+    {
+      "label": "India CCTS sectors and targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "India CCTS vs EU ETS",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025 (MoEFCC)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "PIB: CCTS obligated entities",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Energy Conservation Act, 2001, as amended in 2022 (BEE)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm the environmental compensation rate, payment timeline, sectors covered and Energy Conservation Act penalties against the current gazette text."
+}

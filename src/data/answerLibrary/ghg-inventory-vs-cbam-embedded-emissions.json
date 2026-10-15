@@ -1,0 +1,66 @@
+{
+  "slug": "ghg-inventory-vs-cbam-embedded-emissions",
+  "q": "Can I use my GHG Protocol carbon footprint for CBAM, or is CBAM embedded emissions data different?",
+  "title": "GHG inventory or CBAM embedded emissions?",
+  "short": "Not directly. A GHG Protocol footprint totals a company's emissions for a year. CBAM needs emissions per tonne of a specific product, calculated for one installation under the EU monitoring rules, including precursors and, for steel and aluminium, direct emissions only. The same invoices feed both, but the boundary and the arithmetic differ.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian exporters of steel or aluminium, EU importers",
+  "sections": [
+    {
+      "h": "Five differences that matter",
+      "ul": [
+        "Boundary: the corporate inventory covers the whole company, offices and vehicles included. CBAM covers one installation and its production processes.",
+        "Unit: the inventory gives tonnes a year. CBAM gives tonnes CO2e per tonne of goods, by CN code.",
+        "Precursors: CBAM adds the embedded emissions of precursors you bought, such as pig iron or unwrought aluminium. In a corporate inventory those sit in Scope 3.",
+        "Indirect emissions: the inventory always reports Scope 2. In the CBAM definitive period, electricity emissions count for cement and fertilisers but not for iron and steel, aluminium or hydrogen.",
+        "Period and verification: CBAM uses the calendar year, and actual values must be verified by an accredited verifier."
+      ]
+    },
+    {
+      "h": "What you can reuse",
+      "p": [
+        "Fuel quantities, process inputs such as limestone or electrodes, and electricity units are the same data in both. If your inventory is built from invoices and meter readings by site and month, most of the CBAM activity data is already there. What you add is the split by production process and the production tonnage."
+      ]
+    },
+    {
+      "h": "What you cannot reuse",
+      "ul": [
+        "Company-wide totals that mix several sites.",
+        "Spend-based estimates; CBAM needs physical quantities.",
+        "Factors chosen for the inventory if the CBAM monitoring rules require a different calculation, for example measured carbon content for some process inputs."
+      ]
+    },
+    {
+      "h": "Keep the two consistent",
+      "p": [
+        "A buyer or verifier may put your BRSR or CDP footprint next to your CBAM declaration. Reconcile them once a year: installation direct emissions plus other sites and vehicles should come back to your Scope 1. A gap you can explain is fine; a gap you cannot explain invites questions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a steel rolling unit",
+    "lines": [
+      "Corporate Scope 1: 8,500 t CO2, of which 500 t is trucks and the head office",
+      "Installation direct emissions: 8,500 minus 500 = 8,000 t CO2",
+      "Production: 20,000 t of covered goods, no precursors bought in",
+      "CBAM direct embedded emissions: 8,000 divided by 20,000 = 0.40 t CO2 per t",
+      "Scope 2 of 4,000 t stays in the inventory but is not counted in the CBAM figure for steel"
+    ],
+    "note": "A real unit that buys billets would add their embedded emissions per tonne used; that is often the larger figure."
+  },
+  "senseible": "Senseible builds the corporate inventory from the same invoices and bills that CBAM activity data starts from, drafts a self-declared CBAM data report, and its CBAM calculator estimates cost. The installation-level monitoring and the accredited verification are outside what it does.",
+  "links": [
+    { "label": "CBAM default or actual values", "to": "/answers/cbam-default-vs-actual" },
+    { "label": "Embedded emissions for steel under CBAM", "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam" },
+    { "label": "Does CBAM count electricity for steel?", "to": "/answers/does-cbam-count-electricity-emissions-steel" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annexes II and IV", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, CBAM definitive regime", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en" },
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition (2004)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Definitive-period implementing acts may amend the monitoring methodology and Annex II; confirm the current text before each declaration."
+}

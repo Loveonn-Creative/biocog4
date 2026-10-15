@@ -1,0 +1,72 @@
+{
+  "slug": "steel-supplier-benchmark-carbon-intensity",
+  "q": "How do I benchmark a steel supplier's carbon intensity: what is a good number for BF-BOF, DRI and scrap EAF routes?",
+  "title": "Benchmarking a steel supplier's intensity",
+  "short": "Compare the supplier against its own production route, not one global number. Blast furnace steel carries a high intensity, scrap based electric arc furnace steel a much lower one, and coal based DRI is often higher than the blast furnace route. Check worldsteel's latest indicators for current averages.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Steel buyers, EU importers, Indian auto and engineering firms",
+  "sections": [
+    {
+      "h": "How the routes compare",
+      "ul": [
+        "Global average: check the latest year in worldsteel's sustainability indicators.",
+        "Blast furnace and basic oxygen furnace (BF-BOF): at the high end among the main routes.",
+        "Scrap based electric arc furnace (EAF): much lower, depending heavily on the grid factor of the electricity used.",
+        "Gas based DRI with EAF: usually between the two.",
+        "Coal based DRI, common in India: often above BF-BOF, because coal fired rotary kilns are less efficient."
+      ],
+      "p": [
+        "Use the route comparison to spot outliers, not as targets. A supplier far below others on its route should be able to explain why, for example renewable power, high scrap share or a narrow boundary."
+      ]
+    },
+    {
+      "h": "Make sure the numbers are comparable",
+      "ol": [
+        "Same boundary: crude steel or finished product, and whether upstream steps such as pellets, coke, lime and oxygen are included.",
+        "Same gases and units: t CO2 or t CO2e per tonne.",
+        "Same electricity basis: location-based grid factor, or market-based with certificates.",
+        "Same year and same method: worldsteel, the CBAM method, or an EPD under ISO 14025."
+      ]
+    },
+    {
+      "h": "India's Green Steel Taxonomy",
+      "p": [
+        "The Ministry of Steel has published a Taxonomy of Green Steel that rates steel by emission intensity per tonne of finished steel. Ask Indian suppliers whether they hold a rating and on what boundary, and read the current Ministry of Steel text for the thresholds and rating process."
+      ]
+    },
+    {
+      "h": "Using CBAM default values as a ceiling",
+      "p": [
+        "The EU publishes default embedded emission values for steel goods by CN code and country, with mark-ups that rise over the definitive period. A supplier with verified actual emissions below the default saves the importer CBAM cost, which makes the default a practical benchmark for EU-bound steel."
+      ]
+    }
+  ],
+  "senseible": "Senseible holds the supplier's fuel and electricity evidence and computes only from approved factors, so you can see what a supplier's own number rests on. It does not rate or rank suppliers or publish steel benchmarks.",
+  "links": [
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    },
+    {
+      "label": "CBAM cost: blast furnace vs EAF vs DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Supplier emissions risk calculator",
+      "to": "/calculators/supplier-emissions-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "worldsteel Sustainability Indicators report (annual)",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Green Steel Taxonomy thresholds and worldsteel averages change; confirm the latest editions before relying on them."
+}

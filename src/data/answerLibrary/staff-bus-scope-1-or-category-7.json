@@ -1,0 +1,63 @@
+{
+  "slug": "staff-bus-scope-1-or-category-7",
+  "q": "Is a company bus or contracted staff transport Scope 1 or Scope 3 Category 7?",
+  "title": "Staff bus: Scope 1 or Category 7?",
+  "short": "It depends on who operates the bus. A bus you own, or lease and run with your own drivers and fuel, is Scope 1. A bus run by a transport contractor who supplies vehicle, driver and fuel is Scope 3; Category 7, employee commuting, is the closer fit, though some companies use Category 1. Disclose your choice.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factory HR and admin heads",
+  "sections": [
+    {
+      "h": "Four common set-ups and where each goes",
+      "ul": [
+        "Company-owned bus, company driver, company buys diesel: Scope 1.",
+        "Bus on lease, company driver and fuel: Scope 1 under the operational control approach most companies use. Under financial control, an operating lease moves it to Scope 3 Category 8.",
+        "Company-owned bus, but a contractor drives it and buys the fuel: decided by who has operational control under the contract. Read the contract, record the answer, and treat every such bus the same way.",
+        "Contractor's bus, driver and fuel, paid per month or per trip: Scope 3."
+      ]
+    },
+    {
+      "h": "Category 7 or Category 1 for a contracted bus",
+      "p": [
+        "The GHG Protocol Scope 3 guidance describes Category 7 as transporting employees between their homes and worksites in vehicles the company does not own or operate. A contracted factory bus fits that wording. Category 1, purchased services, is also defended because the service arrives on an invoice. Either is acceptable if disclosed and applied every year; the error to avoid is counting the same trips in both."
+      ]
+    },
+    {
+      "h": "How to calculate it",
+      "ol": [
+        "Best: fuel used. For your own buses this is the diesel slips; for a contractor, ask for litres bought for your routes.",
+        "Next: distance. Route km per day x days run x the bus's km per litre gives litres; then multiply by the fuel factor.",
+        "Last resort: spend. Monthly charges x a spend-based factor, labelled an estimate."
+      ]
+    },
+    {
+      "h": "Keep the rest of commuting separate",
+      "p": [
+        "Staff who come on their own scooters or by public transport are also Category 7 but need a commuting survey. Trips to clients, airports or other plants are Category 6, business travel, even if the same bus does them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two contracted buses",
+    "lines": [
+      "Route: 60 km a day per bus, 2 buses, 300 days a year = 36,000 km",
+      "Contractor's figure: 4 km per litre, so 36,000 divided by 4 = 9,000 litres of diesel",
+      "Emissions: 9,000 x 2.68 kg CO2 per litre (IPCC 2006 default) = 24,120 kg, about 24.1 t CO2",
+      "Reported in Scope 3 Category 7; if the buses were yours, the same 24.1 t would be Scope 1"
+    ],
+    "note": "The km per litre is the contractor's number; ask for the fuel log to confirm it."
+  },
+  "senseible": "Senseible reads diesel slips for buses you run as Scope 1 fuel, and keeps contractor invoices in the Scope 3 supplier evidence trail with the document attached. It does not convert route kilometres into fuel; you supply that calculation.",
+  "links": [
+    { "label": "Night-shift cabs: Scope 1 or Scope 3", "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3" },
+    { "label": "Employee commuting survey", "to": "/answers/employee-commuting-emissions-survey" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition (2004), Chapter 4 and Appendix F on leased assets", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 7", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel default)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Classifying contracted buses is a judgement under current guidance; check whether the GHG Protocol revision clarifies it."
+}

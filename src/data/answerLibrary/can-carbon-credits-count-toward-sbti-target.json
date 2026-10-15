@@ -1,0 +1,61 @@
+{
+  "slug": "can-carbon-credits-count-toward-sbti-target",
+  "q": "Can carbon credits count toward my SBTi target?",
+  "title": "Do carbon credits count toward SBTi targets?",
+  "short": "No. Under the current SBTi criteria, credits cannot be counted as reductions toward a near-term or long-term science-based target. Your progress is measured on your own Scope 1, 2 and 3 inventory. Credits can be reported separately as beyond value chain mitigation, and permanent removals neutralise only residual emissions at net zero.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Sustainability leads, CFOs",
+  "sections": [
+    {
+      "h": "Where credits do fit in the SBTi model",
+      "ul": [
+        "Near-term and long-term targets: met only by cutting your own emissions. Avoidance or removal credits do not reduce the inventory you report against.",
+        "Beyond value chain mitigation: SBTi encourages companies to fund climate action outside their value chain, including through credits, and to report it separately, not netted off.",
+        "Net zero: at the target year, after the required deep cuts (at least 90% for most sectors), the small residual must be neutralised with permanent carbon removals."
+      ]
+    },
+    {
+      "h": "This is not the same as India's CCTS",
+      "p": [
+        "Under India's Carbon Credit Trading Scheme, an obligated plant can surrender carbon credit certificates to meet its emission intensity target. That is a legal compliance route, and it is valid for CCTS. It does not carry over to an SBTi target, so the same certificate cannot be used to show progress on a science-based target."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "SBTi is revising its Corporate Net-Zero Standard. Drafts have discussed whether removals could play a role before the net-zero year and whether some instruments could be recognised for Scope 3. Until a revised standard is published and in force, plan on credits counting for nothing toward the target."
+      ]
+    },
+    {
+      "h": "How to report credits honestly alongside a target",
+      "ol": [
+        "Report gross emissions against the target, with no credits subtracted.",
+        "Report credits retired in a separate line: type, standard, vintage and serial numbers.",
+        "Describe them as a contribution, not as offsetting progress toward the target."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 42% near-term target",
+    "lines": [
+      "Base year emissions (Scope 1 and 2): 10,000 t CO2e",
+      "Target: 42% lower, so 10,000 x 0.58 = 5,800 t CO2e",
+      "Retiring 4,200 credits leaves the reported inventory at 10,000 t: no progress",
+      "Cutting 4,200 t through fuel switching and efficiency brings it to 5,800 t: target met"
+    ]
+  },
+  "senseible": "Senseible measures the gross Scope 1 and 2 emissions your target is tracked against, from your own invoices and bills. It does not net credits off that figure and does not validate SBTi targets.",
+  "links": [
+    { "label": "India CCTS targets", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" },
+    { "label": "SBTi SME route eligibility", "to": "/answers/sbti-sme-route-eligibility" },
+    { "label": "What 42% by 2030 means", "to": "/answers/what-does-42-percent-by-2030-mean" },
+    { "label": "Net zero vs carbon neutral", "to": "/answers/net-zero-vs-carbon-neutral" }
+  ],
+  "sources": [
+    { "label": "SBTi Corporate Net-Zero Standard (v1.2), neutralisation and beyond value chain mitigation", "url": "https://sciencebasedtargets.org" },
+    { "label": "SBTi Corporate Near-Term Criteria", "url": "https://sciencebasedtargets.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SBTi's Net-Zero Standard version 2 and its consultation on credits for Scope 3 may change this; check the standard in force before relying on it."
+}

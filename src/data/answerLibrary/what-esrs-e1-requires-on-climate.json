@@ -1,0 +1,70 @@
+{
+  "slug": "what-esrs-e1-requires-on-climate",
+  "q": "What climate data does ESRS E1 require, and which parts would a supplier be asked for?",
+  "title": "What ESRS E1 asks on climate",
+  "short": "ESRS E1 has nine disclosures, E1-1 to E1-9, from transition plan and targets to energy use, gross Scope 1, 2 and 3 emissions, carbon credits, internal carbon prices and financial effects. A supplier is usually asked only for inputs to E1-5 and E1-6: energy consumption by source and Scope 1 and 2 emissions.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters, EU subsidiary finance teams",
+  "sections": [
+    {
+      "h": "The nine disclosures in ESRS E1",
+      "ul": [
+        "E1-1 Transition plan for climate change mitigation",
+        "E1-2 Policies on mitigation and adaptation",
+        "E1-3 Actions and resources",
+        "E1-4 Targets",
+        "E1-5 Energy consumption and mix",
+        "E1-6 Gross Scope 1, 2, 3 and total GHG emissions",
+        "E1-7 GHG removals and mitigation projects financed through carbon credits",
+        "E1-8 Internal carbon pricing",
+        "E1-9 Anticipated financial effects of climate risks and opportunities"
+      ]
+    },
+    {
+      "h": "What E1-5 and E1-6 need in ESRS Set 1",
+      "ul": [
+        "Energy in MWh, split into fossil, nuclear and renewable sources, with fossil broken down by fuel type for high climate impact sectors.",
+        "Scope 1 in t CO2e, and the share covered by regulated emission trading schemes.",
+        "Scope 2 both location-based and market-based.",
+        "Scope 3 by significant category, and GHG intensity per net revenue."
+      ]
+    },
+    {
+      "h": "What a supplier is actually asked for",
+      "p": [
+        "Your EU customer needs your emissions to build its own Scope 3, usually Category 1. So expect requests for your Scope 1 and 2 for the year, energy by source, sometimes a product carbon footprint per unit sold, and whether you have targets. Under Directive (EU) 2026/470, a customer may not demand more from a smaller supplier, below an employee limit set in the directive, than the voluntary VSME standard covers; check the directive for that limit."
+      ]
+    },
+    {
+      "h": "Simplified ESRS are coming",
+      "p": [
+        "EFRAG has prepared simplified ESRS that cut the number of datapoints, for the Commission to adopt by delegated act. The E1 datapoints above are from ESRS Set 1 and may differ in the simplified version, so check which version your customer reports under before you fill its template."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a supplier's E1-5 and E1-6 inputs",
+    "lines": [
+      "Grid electricity: 600,000 kWh = 600 MWh; Scope 2 location-based = 600,000 x 0.710 = 426,000 kg, 426 t CO2",
+      "Diesel: 20,000 litres; Scope 1 = 20,000 x 2.68 = 53,600 kg, 53.6 t CO2",
+      "Diesel energy, estimate: 20,000 litres x about 36 MJ per litre = about 720,000 MJ, about 200 MWh",
+      "Total energy: 600 + 200 = about 800 MWh, with the diesel share reported as fossil"
+    ],
+    "note": "About 36 MJ per litre is an estimate from the IPCC 2006 net calorific value for diesel (43 MJ per kg) and an assumed density of 0.84 kg per litre. Grid electricity is reported by its source mix, not as fossil by default; ask your customer how they want it split."
+  },
+  "senseible": "Senseible turns fuel invoices and electricity bills into gross Scope 1 and location-based Scope 2 figures and the energy quantities behind them, the inputs a customer maps to E1-5 and E1-6. Market-based Scope 2 needs your certificate or contract data, and it does not prepare an ESRS statement.",
+  "links": [
+    { "label": "Who is still in scope of CSRD", "to": "/answers/who-is-still-in-scope-of-csrd" },
+    { "label": "VSME standard for small suppliers", "to": "/answers/vsme-standard-for-small-suppliers" },
+    { "label": "CSRD double materiality for suppliers", "to": "/climate-intelligence/csrd-double-materiality-assessment-msme-supplier" },
+    { "label": "ESG reporting", "to": "/esg-reporting" }
+  ],
+  "sources": [
+    { "label": "Commission Delegated Regulation (EU) 2023/2772 (ESRS Set 1), ESRS E1 Climate change", "url": "https://eur-lex.europa.eu" },
+    { "label": "EFRAG, simplified ESRS", "url": "https://www.efrag.org" },
+    { "label": "Directive (EU) 2026/470 (Omnibus I) amending the CSRD", "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The simplified ESRS delegated act may change E1 datapoints; recheck against the version in force for the customer's reporting year."
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "which-scope-3-categories-are-mandatory",
+  "q": "Which Scope 3 categories are mandatory to report, and can I leave some out?",
+  "title": "Which Scope 3 categories are mandatory?",
+  "short": "No single category is mandatory for everyone. The GHG Protocol Scope 3 Standard requires you to account for all relevant categories and to disclose and justify any you exclude. What becomes mandatory depends on who asks: SBTi target coverage, IFRS S2, CSRD or a buyer's questionnaire each set their own rule.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads and exporter suppliers",
+  "sections": [
+    {
+      "h": "What the GHG Protocol requires",
+      "ul": [
+        "Scope 3 is optional under the Corporate Standard. It becomes required only if you claim to follow the Scope 3 Standard.",
+        "If you do, you must account for Scope 3 emissions across the 15 categories, report each relevant category separately, and disclose and justify any exclusion.",
+        "Relevance is judged by size, influence, risk, stakeholder interest, outsourcing and sector guidance (Table 6.1). A category can be left out only if it does not apply or is not relevant on these tests."
+      ]
+    },
+    {
+      "h": "What other frameworks add",
+      "ul": [
+        "SBTi near-term criteria: if Scope 3 is 40% or more of total Scope 1, 2 and 3 emissions, the Scope 3 target must cover at least 67% of Scope 3 emissions.",
+        "IFRS S2: disclose Scope 3 emissions and which of the 15 categories are included, using the GHG Protocol; a first-year relief lets entities defer Scope 3.",
+        "CSRD (ESRS E1): disclose significant Scope 3 categories, with the scope now limited by the 2026 simplification of who must report.",
+        "BRSR: Scope 3 sits among the leadership indicators, which are voluntary for listed companies.",
+        "Buyers: an EU customer may ask only for your Scope 1 and 2 and the product footprint of what you sell them."
+      ]
+    },
+    {
+      "h": "How to justify an exclusion",
+      "ol": [
+        "Screen every category with a rough estimate, even spend-based.",
+        "Mark categories that do not apply, for example franchises for a factory with none.",
+        "For small categories, record the estimate and the reason, such as below 1% of the total in your screening.",
+        "Write the exclusion and reason in the report so a reader or verifier can test it.",
+        "Rescreen when the business changes, for example a new product line or outsourced logistics."
+      ]
+    },
+    {
+      "h": "Categories that usually matter for Indian manufacturers",
+      "p": [
+        "Category 1 purchased goods, Category 3 fuel and energy related activities, Category 4 upstream transport, Category 5 waste and, for exporters on delivered terms, outbound freight. For makers of motors, pumps or vehicles, Category 11 use of sold products can be the largest of all."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: does the SBTi 67% rule apply?",
+    "lines": [
+      "Scope 1: 800 t CO2e; Scope 2: 1,200 t CO2e; Scope 3 screening: 6,000 t CO2e",
+      "Total: 800 + 1,200 + 6,000 = 8,000 t CO2e",
+      "Scope 3 share: 6,000 / 8,000 = 75%, above the 40% trigger",
+      "Target must cover at least 67% of 6,000 = 4,020 t CO2e of Scope 3"
+    ]
+  },
+  "senseible": "Senseible separates Scope 3 lines from your invoices into a supplier evidence trail, so you can see which categories have documented data. It does not screen categories you hold no documents for or decide which exclusions a framework will accept.",
+  "links": [
+    { "label": "Scope 3 for MSME supply chains", "to": "/climate-intelligence/scope-3-emissions-supply-chain-msme-calculator" },
+    { "label": "Can we exclude a Scope 3 category?", "to": "/answers/can-we-exclude-a-scope-3-category" },
+    { "label": "Does BRSR require Scope 3?", "to": "/answers/does-brsr-require-scope-3" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Chapters 6 and 11", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "SBTi Corporate Near-Term Criteria", "url": "https://sciencebasedtargets.org" },
+    { "label": "IFRS S2 Climate-related Disclosures (ISSB, 2023)", "url": "https://www.ifrs.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SBTi is revising its corporate standard and the GHG Protocol is under revision; check the coverage thresholds before setting a target."
+}

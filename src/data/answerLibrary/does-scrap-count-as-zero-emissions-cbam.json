@@ -1,0 +1,83 @@
+{
+  "slug": "does-scrap-count-as-zero-emissions-cbam",
+  "q": "Does steel or aluminium scrap count as zero embedded emissions under CBAM?",
+  "title": "Is scrap zero emissions under CBAM?",
+  "short": "In the transitional-period CBAM rules, scrap was not a relevant precursor, so it carried no embedded emissions into your calculation; check the definitive-period implementing act for 2026 onward. The emissions of melting and refining it still count, and so do precursors you add, such as pig iron, DRI, ferro-alloys or primary aluminium.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EAF steel mills, secondary aluminium exporters",
+  "sections": [
+    {
+      "h": "What still counts in a scrap-based route",
+      "ul": [
+        "Direct emissions at your installation: graphite electrode consumption, carbon added to the charge, natural gas or oil burners, and fuel for reheating and ladles.",
+        "Embedded emissions of relevant precursors you buy: pig iron, DRI, ferro-alloys such as ferromanganese or ferrochrome, and crude steel or unwrought aluminium bought in.",
+        "Electricity: for iron, steel and aluminium, Annex II of the CBAM Regulation counts only direct emissions toward certificates. You still need the electricity data for reporting."
+      ]
+    },
+    {
+      "h": "Why the scrap share matters so much",
+      "p": [
+        "Blast furnace steel carries the emissions of making iron from ore. An EAF charged mostly with scrap avoids that step, so its embedded emissions per tonne are far lower. The same is true for secondary aluminium compared with primary smelting. The more scrap and the fewer bought precursors, the lower the figure."
+      ]
+    },
+    {
+      "h": "Records your EU importer will expect",
+      "ol": [
+        "Scrap purchase invoices and weighbridge slips, to show input quantities.",
+        "Precursor invoices with the supplier's embedded emissions, or default values where you have none.",
+        "Fuel invoices and electrode consumption records for direct emissions.",
+        "Production records for the CBAM goods, to divide emissions by output."
+      ]
+    },
+    {
+      "h": "Points to watch",
+      "ul": [
+        "Do not label primary metal or ingots bought from another plant as scrap. They are precursors with embedded emissions.",
+        "The EU has discussed how scrap should be treated to prevent shifting the cleanest material to EU buyers. Confirm the rule in force for the year you export."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of EAF steel (illustrative figures)",
+    "lines": [
+      "Scrap charged: 1.1 t x 0 = 0 t CO2e",
+      "Direct emissions at the plant: 0.10 t CO2 per tonne of steel (illustrative, from electrodes, charge carbon and gas)",
+      "Ferromanganese: 0.01 t x 1.5 t CO2e per t (illustrative supplier figure) = 0.015 t CO2e",
+      "Embedded emissions counted: 0.10 + 0.015 = 0.115 t CO2e per tonne",
+      "Electricity: 500 kWh x 0.710 kg CO2 per kWh = 355 kg CO2, reported but not counted toward certificates for steel"
+    ],
+    "note": "Replace every illustrative figure with your own measured data or the official default values."
+  },
+  "senseible": "Senseible reads your scrap and precursor purchase invoices, fuel invoices and electricity bills as evidence of quantities, and its CBAM cost calculator estimates certificate costs with default values. It does not perform the installation-level CBAM emissions calculation or decide how a material is treated.",
+  "links": [
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    },
+    {
+      "label": "CBAM for Indian steel exporters",
+      "to": "/solutions/cbam-steel-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (calculation implementing rules)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm the treatment of scrap in the definitive-period calculation implementing act and any later amendment before relying on this page."
+}

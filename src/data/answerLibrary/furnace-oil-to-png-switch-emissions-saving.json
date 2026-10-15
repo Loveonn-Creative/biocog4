@@ -1,0 +1,80 @@
+{
+  "slug": "furnace-oil-to-png-switch-emissions-saving",
+  "q": "How much CO2 do I save by switching my boiler from furnace oil to PNG?",
+  "title": "Furnace oil to PNG: CO2 saved",
+  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. A more efficient boiler saves more per unit of steam: about 32% in an illustrative case of 80% rising to 85%. Confirm with fuel bills before and after.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners, CFOs, plant heads",
+  "sections": [
+    {
+      "h": "Compare per unit of energy, not per litre",
+      "p": [
+        "A litre of furnace oil and a standard cubic metre of PNG carry different energy, so per-unit factors (2.97 kg CO2 per litre and 2.05 kg CO2 per scm) cannot be compared directly. Compare per gigajoule of fuel energy: 56.1 / 77.4 = 0.725, so gas emits about 27.5% less CO2 for the same heat input.",
+        "Then adjust for boiler efficiency. What you need is steam or hot oil, so divide fuel energy by efficiency to get useful heat."
+      ]
+    },
+    {
+      "h": "What changes the real saving",
+      "ul": [
+        "Boiler efficiency before and after. Gas burns cleaner, needs no fuel heating and leaves less soot on tubes, so efficiency often rises a few points. Measure it, do not assume it.",
+        "Calorific value on your bills. Furnace oil grades and gas supplies differ; your supplier's GCV lets you check the energy you actually bought.",
+        "Load pattern. A boiler that cycles a lot may not reach its rated efficiency on either fuel.",
+        "Upstream emissions. Producing and transporting each fuel adds Scope 3 emissions, and the comparison there can differ from the combustion figures."
+      ]
+    },
+    {
+      "h": "Benefits beyond CO2",
+      "ul": [
+        "Almost no sulphur dioxide and far less particulate matter than furnace oil, which helps with pollution board consent conditions.",
+        "No fuel storage tanks, heating or sludge handling.",
+        "Price: compare cost per GJ of useful heat from current quotes, since PNG and furnace oil prices move differently."
+      ]
+    },
+    {
+      "h": "How to evidence the switch",
+      "ol": [
+        "Keep 12 months of furnace oil invoices and production records before the switch.",
+        "Keep PNG bills for the months after, with the same production records.",
+        "Calculate Scope 1 for both periods with named factors, and per tonne of product, so a change in output does not hide or inflate the saving."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 2 lakh litres of furnace oil a year",
+    "lines": [
+      "Furnace oil: 200,000 L x 2.97 kg CO2 per L = 594,000 kg, so 594 t CO2",
+      "Fuel energy: 594,000 / 77.4 = about 7,674 GJ; useful heat at 80% efficiency = about 6,140 GJ",
+      "PNG at the same 80%: 7,674 GJ x 56.1 = about 430.5 t; saving about 163.5 t (27.5%)",
+      "PNG at 85% efficiency: 6,140 / 0.85 = about 7,223 GJ x 56.1 = about 405.2 t; saving about 188.8 t (31.8%)",
+      "On PNG bills that is 405,200 / 2.05 = about 1.98 lakh scm a year"
+    ],
+    "note": "The 80% and 85% boiler efficiencies are illustrative assumptions, not measured values; the energy figures are implied by the IPCC-based per-unit factors. Use your measured efficiency and the GCV on your bills."
+  },
+  "senseible": "Senseible reads furnace oil invoices and PNG bills and applies IPCC 2006 factors (2.97 kg CO2 per litre and 2.05 kg CO2 per scm) to the billed quantity, so you can measure Scope 1 before and after the switch, and those figures can support a green loan readiness check. It does not model boiler efficiency or compare fuel prices.",
+  "links": [
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 and Chapter 2 default CO2 factors (residual fuel oil 77,400 and natural gas 56,100 kg CO2 per TJ)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

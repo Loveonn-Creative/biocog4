@@ -1,0 +1,61 @@
+{
+  "slug": "how-to-find-the-right-carbon-methodology",
+  "q": "How do I find which Verra, Gold Standard or CDM methodology fits my project?",
+  "title": "Finding the right carbon methodology",
+  "short": "Start from what physically changes in your project, such as grid power replaced by solar or furnace oil replaced by biomass. Search each standard's approved methodology list for that activity, then test the applicability conditions, size limits, baseline and monitoring rules against your site. Finally check the standard still accepts that project type in India.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Project developers, MSME owners exploring carbon credits",
+  "sections": [
+    {
+      "h": "Step by step",
+      "ol": [
+        "Describe the change in one line: what was used before (the baseline), what replaces it, and which emissions fall.",
+        "Search the methodology lists: Verra's VCS methodologies (VM series, plus the CDM methodologies it accepts), Gold Standard's approved methodologies, and the UNFCCC CDM methodology booklet, which groups CDM methods by sector and technology.",
+        "Read the applicability conditions first. They decide eligibility before any calculation: technology, fuel, whether the plant is new or a retrofit, and size limits.",
+        "Check the baseline and additionality approach, and whether you can show the project would not happen without carbon revenue.",
+        "Check the monitoring plan: every parameter it asks for must be measurable at your site, such as metered output, fuel quantity or calorific value.",
+        "Check eligibility rules for the standard and country, and any quality label buyers want."
+      ]
+    },
+    {
+      "h": "Common MSME project types and where to look",
+      "ul": [
+        "Captive rooftop solar: CDM small-scale methodologies for renewable electricity, such as AMS-I.D for grid-connected supply and AMS-I.F for captive use.",
+        "Fossil boiler switched to biomass: AMS-I.C, renewable thermal energy for the user.",
+        "Furnace oil or coal switched to natural gas: AMS-III.B, switching fossil fuels.",
+        "Energy efficiency in an industrial plant: AMS-II.D, efficiency and fuel switching measures for industrial facilities.",
+        "Many small sites doing the same thing: look at grouped projects or programmes of activities rather than one project per site."
+      ]
+    },
+    {
+      "h": "Size limits that decide small-scale or large-scale",
+      "p": [
+        "CDM small-scale rules set three types: Type I renewable energy up to 15 MW of electrical capacity, or an equivalent thermal limit; Type II efficiency projects saving up to 60 GWh a year; Type III other projects cutting up to 60,000 t CO2e a year. Small-scale methods are simpler to apply and monitor, so check the current version of each methodology for its exact limits."
+      ]
+    },
+    {
+      "h": "Rules that can rule a project out",
+      "ul": [
+        "Verra and Gold Standard both limit new grid-connected renewable energy projects in countries such as India, so a grid-connected solar plant may not be eligible. Check each standard's current eligibility rules for your project type.",
+        "ICVCM has assessed methodology categories against its Core Carbon Principles and did not approve the methodologies for grid-connected renewable energy; buyers seeking the CCP label will check this.",
+        "India's Carbon Credit Trading Scheme has its own offset mechanism with a separate list of approved methodologies from BEE, which is the route for credits used in India's compliance market.",
+        "Methodologies are revised and withdrawn. Always use the latest version and note its number and validity dates."
+      ]
+    }
+  ],
+  "senseible": "Senseible's invoice-classified activity data shows which emission sources dominate at your site, which narrows the candidate methodologies, and it gives carbon credit eligibility signals. It does not select or apply a methodology, validate a project or issue credits.",
+  "links": [
+    { "label": "What additionality means", "to": "/answers/what-is-additionality-in-carbon-credits" },
+    { "label": "Verra or Gold Standard?", "to": "/answers/verra-or-gold-standard-which-to-choose" },
+    { "label": "What is a VVB and how to choose one", "to": "/answers/what-is-a-vvb-and-how-to-choose-one" },
+    { "label": "Carbon credits", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "Verra, VCS Program methodologies list", "url": "https://verra.org" },
+    { "label": "Gold Standard, approved methodologies", "url": "https://www.goldstandard.org" },
+    { "label": "UNFCCC, CDM Methodology Booklet and small-scale methodologies (AMS series)", "url": "https://unfccc.int" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Methodology eligibility, ICVCM decisions and the CCTS offset methodology list change often; recheck before starting a project."
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "how-auditors-verify-activity-data",
+  "q": "How does an auditor verify activity data in a GHG inventory?",
+  "title": "How auditors verify activity data",
+  "short": "An auditor checks activity data in three ways. They trace a sample of reported quantities back to invoices, bills and meter readings. They trace a sample of source documents forward into the totals to test completeness. And they reconcile your totals against independent records such as purchase ledgers, stock registers and production.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Auditors, sustainability leads preparing for assurance",
+  "sections": [
+    {
+      "h": "Step 1: understand how the numbers were built",
+      "p": [
+        "Before testing anything, the verifier maps the data flow: which documents feed each emission source, who enters them, which spreadsheet or system adds them up, and where factors are applied. ISO 14064-3 calls this assessing the risk of misstatement. Sources that are large, manual or estimated get the most testing."
+      ]
+    },
+    {
+      "h": "Step 2: vouching and tracing a sample",
+      "ul": [
+        "Vouching (testing accuracy): pick reported lines, for example March diesel of 4,200 litres, and find the fuel invoice or slip that supports the quantity, unit, date and site.",
+        "Tracing (testing completeness): pick source documents from the purchase ledger or the discom account, and check each one appears in the inventory in the right month.",
+        "Sample size grows with the size of the source and the level of assurance. Large sources may be tested in full."
+      ]
+    },
+    {
+      "h": "Step 3: reconcile to records the carbon team does not control",
+      "ul": [
+        "Fuel bought per invoices against accounts payable or the general ledger.",
+        "Fuel used against purchases adjusted for opening and closing stock in the store register.",
+        "Electricity units against the discom bills for every connection, including small ones.",
+        "Energy use against production: a month where output rose but kWh fell gets a question."
+      ]
+    },
+    {
+      "h": "Step 4: check periods, units and recalculation",
+      "p": [
+        "Verifiers look for bills that straddle two reporting periods, kVAh read as kWh, kilolitres read as litres, and net-metered units counted as consumption. Then they recalculate a sample: quantity times the stated factor, to the stated rounding. Any difference above their materiality threshold is reported to you as a misstatement to correct."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: reconciling a year of diesel",
+    "lines": [
+      "Diesel bought per invoices: 52,000 litres",
+      "Opening stock 3,000 litres, closing stock 5,000 litres",
+      "Diesel used: 52,000 plus 3,000 minus 5,000 = 50,000 litres",
+      "Scope 1: 50,000 x 2.68 kg CO2 per litre (IPCC 2006 default) = 134,000 kg CO2, 134 t",
+      "If the inventory reports 52,000 litres instead, it overstates by 2,000 x 2.68 = 5,360 kg CO2"
+    ],
+    "note": "The stock register is the independent record here; without it, purchases are only a proxy for use."
+  },
+  "senseible": "Senseible links every line to its source invoice or bill, records a SHA-256 fingerprint of each file and keeps a hash-chained ledger, so a verifier can vouch and recalculate without hunting for paper. Its Verified status means its own rule checks passed; the sampling, reconciliation and opinion remain the auditor's work.",
+  "links": [
+    { "label": "What auditors check in GHG assurance", "to": "/answers/what-auditors-check-in-ghg-assurance" },
+    { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" },
+    { "label": "What audit-grade carbon data means", "to": "/climate-intelligence/audit-grade-carbon-data-what-it-actually-means" }
+  ],
+  "sources": [
+    { "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of GHG statements", "url": "https://www.iso.org" },
+    { "label": "SEBI circular on BRSR Core, 12 July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel default)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15"
+}

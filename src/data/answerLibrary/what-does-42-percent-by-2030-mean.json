@@ -1,0 +1,65 @@
+{
+  "slug": "what-does-42-percent-by-2030-mean",
+  "q": "What does a 42 percent emissions cut by 2030 mean for my factory in real numbers?",
+  "title": "A 42% cut by 2030 in real numbers",
+  "short": "It means your Scope 1 and 2 emissions in 2030 must be 58 percent of your base year, in absolute tonnes, whatever happens to output. For a factory at 500 tonnes that is about 290 tonnes, a cut of about 210 tonnes, which is the same as about 296,000 kWh of grid power a year.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners, plant heads",
+  "sections": [
+    {
+      "h": "Where the 42 percent comes from",
+      "p": [
+        "The Science Based Targets initiative (SBTi) offers small and medium businesses a predefined near-term target: cut absolute Scope 1 and 2 emissions 42 percent by 2030. For larger companies the near-term criteria ask for at least 4.2 percent a year of linear reduction, which over ten years is the same 42 percent."
+      ]
+    },
+    {
+      "h": "Turn the target into tonnes",
+      "ol": [
+        "Add up base year Scope 1 (fuels) and Scope 2 (electricity) in tonnes.",
+        "Multiply by 0.58 to get the 2030 ceiling.",
+        "Subtract to get the tonnes you must remove.",
+        "Divide by the years left to get a yearly pace."
+      ]
+    },
+    {
+      "h": "Turn tonnes into litres and kWh",
+      "ul": [
+        "Grid power: tonnes x 1,000 / 0.710 = kWh (India grid factor, kg CO2 per kWh).",
+        "Diesel: tonnes x 1,000 / 2.68 = litres.",
+        "Furnace oil: tonnes x 1,000 / 2.97 = litres.",
+        "Coal: tonnes x 1,000 / 2.42 = kg of coal."
+      ],
+      "p": ["This shows which lever matters. Switching a diesel generator to grid power saves less than it looks, because the grid power you add back also has emissions."]
+    },
+    {
+      "h": "Absolute means growth counts against you",
+      "p": [
+        "The target is in tonnes, not per unit of product. If output grows 30 percent by 2030, you must cut intensity much further than 42 percent to stay under the ceiling. Plan efficiency, fuel switching and renewable power together, and track the total every year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory with a 500 tonne base year",
+    "lines": [
+      "Base year: 500,000 kWh grid x 0.710 = 355 t CO2, plus about 54,100 litres diesel x 2.68 = about 145 t CO2; total about 500 t",
+      "2030 ceiling: 500 x 0.58 = 290 t",
+      "Cut needed: 500 minus 290 = 210 t",
+      "If all from grid power: 210,000 / 0.710 = about 295,800 kWh, roughly 59 percent of today's grid use",
+      "Pace from a 2023 base: 210 / 7 years = 30 t a year"
+    ]
+  },
+  "senseible": "Senseible builds your base year from fuel invoices and electricity bills, so you can see how many litres and kWh the target implies. It does not set or submit targets to SBTi, and SBTi validation is a separate process.",
+  "links": [
+    { "label": "Net zero roadmaps", "to": "/net-zero" },
+    { "label": "SBTi SME route eligibility", "to": "/answers/sbti-sme-route-eligibility" },
+    { "label": "SBTi near-term target validation", "to": "/climate-intelligence/msme-sbti-fln-near-term-target-validation" }
+  ],
+  "sources": [
+    { "label": "SBTi SME target route and Corporate Near-Term Criteria", "url": "https://sciencebasedtargets.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 (Energy)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SBTi is revising its corporate standard; check the current SME route terms and base year rules before committing."
+}

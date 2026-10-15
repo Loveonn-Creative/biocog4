@@ -1,0 +1,59 @@
+{
+  "slug": "methane-n2o-from-diesel-combustion",
+  "q": "Do I need to include methane and nitrous oxide from burning diesel, or is CO2 enough?",
+  "title": "Methane and N2O from diesel: include them?",
+  "short": "Strictly, yes: Scope 1 covers all greenhouse gases, and CH4 and N2O come out of every diesel engine. In practice they are small. At IPCC defaults they add about 0.3% for stationary diesel in factories, such as generators, and about 1.5% for road vehicles. CO2 alone is acceptable only if you state the exclusion and its size.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads and auditors",
+  "sections": [
+    {
+      "h": "The IPCC defaults per terajoule of diesel",
+      "ul": [
+        "CO2: 74,100 kg per TJ, for any use.",
+        "Stationary combustion in manufacturing industries and construction, such as factory generators and boilers: CH4 3 kg and N2O 0.6 kg per TJ. For generators in commercial or residential buildings, use the IPCC table for that sector instead.",
+        "Road transport: CH4 3.9 kg and N2O 3.9 kg per TJ."
+      ],
+      "p": [
+        "Converted with AR5 global warming potentials (CH4 28, N2O 265), stationary CH4 and N2O come to 243 kg CO2e per TJ, or 0.33% of the CO2. Road transport comes to about 1,143 kg CO2e per TJ, or 1.54%. AR6 values (fossil CH4 29.8, N2O 273) give 0.34% and 1.59%."
+      ]
+    },
+    {
+      "h": "When leaving them out is defensible",
+      "p": [
+        "The GHG Protocol allows you to exclude small sources if you disclose and justify the exclusion. Leaving out 0.3% from factory generator diesel rarely changes a decision. For a transport fleet, 1.5% of fleet emissions can matter if you set a target or report to a buyer that sums many suppliers, so include it there."
+      ]
+    },
+    {
+      "h": "What BRSR and auditors look for",
+      "ul": [
+        "BRSR asks for Scope 1 in tonnes of CO2 equivalent, with a break-up by gas where available. A CO2-only figure should not be labelled CO2e without a note.",
+        "Say in your method note whether factors are CO2 only or CO2e, and which GWP set you used.",
+        "Do not mix: if one site reports CO2e with CH4 and N2O and another reports CO2 only, the total is inconsistent."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 litres of diesel in trucks",
+    "lines": [
+      "CO2: 10,000 x 2.68 = 26,800 kg CO2",
+      "Energy: 26,800 / 74,100 kg per TJ = 0.362 TJ",
+      "CH4: 0.362 x 3.9 = 1.41 kg, x 28 = 39 kg CO2e",
+      "N2O: 0.362 x 3.9 = 1.41 kg, x 265 = 374 kg CO2e",
+      "Total: 26,800 + 39 + 374 = 27,213 kg CO2e, 1.5% above CO2 alone"
+    ],
+    "note": "Uses IPCC 2006 road transport defaults and AR5 GWPs. Vehicle-specific factors, by engine standard, can differ."
+  },
+  "senseible": "Senseible's fuel factors are CO2 only (diesel 2.68 kg CO2 per litre, from IPCC 2006 defaults), so its figures do not include CH4 or N2O from combustion. If you report CO2e, add those gases in your own working and say so in your method note.",
+  "links": [
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "Greenhouse gases beyond CO2", "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2" },
+    { "label": "AR5 vs AR6 GWP: which to use", "to": "/answers/ar5-vs-ar6-gwp-which-to-use" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Table 2.3 and Ch. 3 Table 3.2.2", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "IPCC AR6 Working Group I, global warming potentials (AR5 values from WG1 Ch. 8)", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

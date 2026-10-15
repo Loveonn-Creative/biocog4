@@ -32,3 +32,26 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - what-gri-305-asks-for-emissions: 305-6 and 305-7 status after GRI 102 unconfirmed.
 - do-re100-and-cdp-accept-indian-recs: 15-year plant age rule and single-market claim need confirming.
 - should-i-sell-or-retire-my-carbon-credits: check the Corporate Standard clause on sold reductions.
+
+## chunks 01, 05, 08 (resume)
+- how-are-carbon-credits-taxed-in-india: only source is unfccc.int labelled s.115BBG; Income-tax Act 2025 section not named; 115BBG wording from memory; no GST position.
+- rbi-climate-disclosure-requirements-banks: TSV said drop unless status confirmed; relies on the live article's note that the framework is still a draft. Confirm or drop before merge.
+- indian-coal-emissions-by-gcv: grade bands and NCV/GCV rule from memory. OWNER REVIEW: the page says Senseible's single 2.42 kg/kg coal factor overstates low-grade coal by about 55%. Product-fact statement; hold or reword until the owner decides.
+- eu-rules-besides-cbam-asking-exporters-carbon-data: Omnibus I CSDDD cuts, Batteries Reg Art 7 scope, ESPR first product groups from memory.
+- methane-n2o-from-diesel-combustion: road CH4/N2O defaults (3.9 kg/TJ) from memory; states Senseible factors are CO2 only (confirmed in code).
+
+## chunks 06 and 09 (resume)
+- is-renewable-energy-loan-priority-sector: Rs 35 crore (2025 Master Directions) and Rs 10 lakh households from memory; confirm on rbi.org.in.
+- rbi-climate-risk-disclosure-for-borrowers: treats the 2024 framework and stress-test guidance as drafts; status unconfirmed.
+- state-wise-grid-emission-factor-india: single all-India CEA factor since southern grid integration (end 2013) from memory.
+- how-to-find-the-right-carbon-methodology: CDM small-scale types and limits, Verra/GS grid-renewable restrictions, ICVCM decision from memory (hedged).
+- what-cbam-clause-to-put-in-export-contract: uses CBAM calculator figures (2.1 t default, 1.52 t benchmark, 97.5% free share, EUR 82.32) and an illustrative actual of 1.90 t/t.
+- furnace-oil-to-png-switch-emissions-saving: energy back-calculated from Senseible factors and IPCC per-GJ defaults; boiler efficiencies labelled estimates.
+
+## chunk-02
+- who-is-still-in-scope-of-csrd: non-EU EUR 450m threshold, first-wave relief, start years (FY2027 / 2028 non-EU) need checking against Directive 2026/470.
+- why-icvcm-rejected-renewable-energy-credits / verra-or-gold-standard-which-to-choose: Verra and Gold Standard restrictions on new grid-connected renewables in India; both named CCP-eligible programmes.
+- what-esrs-e1-requires-on-climate: E1-5 / E1-6 details (fossil split for high-impact sectors, intensity per net revenue).
+- how-to-measure-savings-from-energy-efficiency-project: "whole facility for savings above ~10%" attributed to IPMVP.
+- well-to-tank-emissions-from-diesel-invoices: diesel WTT ~0.6 kg CO2e/L (DESNZ) and ~36 MJ/L labelled estimates.
+- DUPLICATE: limited-vs-reasonable-assurance-ghg overlaps limited-vs-reasonable-assurance-emissions. Hold out of batch 1.

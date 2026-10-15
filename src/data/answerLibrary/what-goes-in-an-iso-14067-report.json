@@ -1,0 +1,57 @@
+{
+  "slug": "what-goes-in-an-iso-14067-report",
+  "q": "What does an ISO 14067 product carbon footprint study report have to include?",
+  "title": "What goes in an ISO 14067 report",
+  "short": "An ISO 14067 study report must state the functional or declared unit, the system boundary and what was left out, data sources and quality, allocation choices, the results by life cycle stage, fossil and biogenic emissions shown separately, the GWP values used, and the assumptions and limitations. A single kg CO2e number is not a compliant report.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Sustainability leads preparing a buyer submission",
+  "sections": [
+    {
+      "h": "Scope and method",
+      "ul": [
+        "Functional unit (for a full life cycle) or declared unit (for cradle to gate), and the reference flow, for example 1 kg of finished yarn.",
+        "System boundary: life cycle stages included, and every process excluded with the reason and cut-off criteria.",
+        "Time period the data represents.",
+        "Allocation procedures for co-products and recycling, and why they were chosen.",
+        "How electricity was treated: grid average, or supplier-specific with the contractual instrument named."
+      ]
+    },
+    {
+      "h": "Data",
+      "ul": [
+        "Which processes use primary data from your own site and which use secondary data from databases, with the database names and versions.",
+        "A data quality assessment: how recent, how geographically and technologically representative, how complete.",
+        "Emission factors and the GWP values used, normally 100 year values from the latest IPCC assessment report."
+      ]
+    },
+    {
+      "h": "Results, shown in parts",
+      "ul": [
+        "The total CFP in kg CO2e per unit, and the split by life cycle stage.",
+        "Fossil GHG emissions and removals, and biogenic GHG emissions and removals, reported separately.",
+        "Emissions from direct land use change, where relevant.",
+        "Items the standard asks to document separately, such as emissions from aircraft transport and carbon stored in the product."
+      ]
+    },
+    {
+      "h": "Interpretation and limits",
+      "p": [
+        "The report ends with the main contributors, a sensitivity check on the choices that move the result most, the assumptions and value choices, and limitations, including that a CFP covers climate change only. If a critical review was done, include the reviewer's statement. Check clause numbers against your purchased copy of the standard before you cite them."
+      ]
+    }
+  ],
+  "senseible": "Senseible can supply the energy and fuel inputs for the gate to gate part, each with its factor, factor source and document fingerprint, and its product carbon footprint calculator gives a first estimate. It does not produce a complete ISO 14067 study report.",
+  "links": [
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
+    { "label": "Is ISO 14067 certification mandatory?", "to": "/answers/is-iso-14067-certification-mandatory" },
+    { "label": "How to disclose a product carbon footprint", "to": "/answers/how-to-disclose-a-product-carbon-footprint" },
+    { "label": "ISO 14067 vs the GHG Protocol Product Standard", "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products, requirements for the CFP study report", "url": "https://www.iso.org" },
+    { "label": "IPCC Sixth Assessment Report, Working Group I (GWP values)", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Contents are summarised from ISO 14067:2018; confirm clause wording against the purchased standard and any revision."
+}

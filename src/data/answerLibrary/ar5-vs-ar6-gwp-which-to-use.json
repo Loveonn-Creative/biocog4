@@ -1,0 +1,68 @@
+{
+  "slug": "ar5-vs-ar6-gwp-which-to-use",
+  "q": "Should I use AR5 or AR6 GWP values for methane and other gases?",
+  "title": "AR5 or AR6 GWP values: which to use",
+  "short": "Use the GWP set your reporting framework names. UNFCCC national inventories under the Paris rules use AR5 100-year values. The GHG Protocol asks for the most recent IPCC values, now AR6. If nobody specifies, use AR6 100-year values, say so, and keep one set for the whole inventory and its base year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Sustainability leads and auditors",
+  "sections": [
+    {
+      "h": "How much the numbers differ",
+      "ul": [
+        "Methane: AR5 28; AR6 29.8 for fossil methane and 27.0 for non-fossil methane.",
+        "Nitrous oxide: AR5 265; AR6 273.",
+        "HFC-134a (R-134a refrigerant): AR5 1,300; AR6 1,526.",
+        "Sulphur hexafluoride: AR5 23,500; AR6 25,200.",
+        "CO2 is 1 in every set, so a CO2-only inventory does not change."
+      ],
+      "p": ["These are 100-year values without climate-carbon feedbacks for AR5 (Table 8.7) and from AR6 Working Group I, Table 7.15."]
+    },
+    {
+      "h": "Which framework asks for which",
+      "ul": [
+        "UNFCCC Paris Agreement transparency rules (Decision 18/CMA.1): AR5 100-year values for national inventories.",
+        "GHG Protocol: use GWPs from the most recent IPCC assessment report; its published table was updated to AR6 in 2024.",
+        "Buyer questionnaires and programmes: follow their instructions; many still accept AR5 if you disclose it.",
+        "Older AR4 values (methane 25, nitrous oxide 298) are out of date; replace them when you next restate."
+      ]
+    },
+    {
+      "h": "Switching sets without breaking your trend",
+      "ol": [
+        "Pick one set for every gas in the inventory. Do not mix AR5 methane with AR6 refrigerants.",
+        "When you switch, recalculate the base year with the new set so year on year changes show real reductions, not a change of constants.",
+        "State the set and time horizon in the report, for example \"GWP100, IPCC AR6\".",
+        "Ask suppliers which set their figures use before you add them to your Scope 3."
+      ]
+    },
+    {
+      "h": "When the choice matters",
+      "p": [
+        "For most factories burning fuel and buying power, CO2 is almost the whole footprint and the choice moves the total very little. It matters when refrigerant leaks, wastewater methane, fertiliser use or livestock are a large share, because those lines scale directly with the GWP."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a refrigerant top-up",
+    "lines": [
+      "Refrigerant added to replace leaks: 10 kg of R-134a",
+      "AR5: 10 x 1,300 = 13,000 kg CO2e, 13.0 tonnes",
+      "AR6: 10 x 1,526 = 15,260 kg CO2e, about 15.3 tonnes",
+      "Difference: 2,260 kg CO2e, about 17% higher under AR6"
+    ]
+  },
+  "senseible": "Senseible's fuel and grid factors are CO2 factors (for example 2.68 kg CO2 per litre of diesel and 0.710 kg CO2 per kWh), so the AR5 or AR6 choice does not change those lines. For refrigerants or methane, apply the GWP set your framework requires and record which one you used.",
+  "links": [
+    { "label": "Gases beyond CO2 and their warming impact", "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2" },
+    { "label": "Choosing emission factors", "to": "/climate-intelligence/emission-factors-selection-guidance" },
+    { "label": "Methane and N2O from diesel combustion", "to": "/answers/methane-n2o-from-diesel-combustion" }
+  ],
+  "sources": [
+    { "label": "IPCC AR6 Working Group I (2021), Chapter 7, Table 7.15", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "IPCC AR5 Working Group I (2013), Chapter 8, Table 8.7", "url": "https://www.ipcc.ch" },
+    { "label": "GHG Protocol Global Warming Potential Values (2024)", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Framework GWP requirements change with new IPCC reports and the GHG Protocol revision; recheck each reporting year."
+}

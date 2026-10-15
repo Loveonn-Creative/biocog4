@@ -1,0 +1,64 @@
+{
+  "slug": "how-does-the-india-rec-mechanism-work",
+  "q": "How does India's Renewable Energy Certificate (REC) mechanism work?",
+  "title": "How India's REC mechanism works",
+  "short": "A renewable generator that does not sell its green attribute with the power can get one Renewable Energy Certificate for each MWh it injects. Grid-India, the central registry, issues the certificates. They trade on power exchanges or through traders, and a buyer uses them to meet a renewable obligation or support a renewable electricity claim.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "CFOs, sustainability leads",
+  "sections": [
+    {
+      "h": "The rules that govern RECs",
+      "p": [
+        "The mechanism runs under the CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022. Grid-India, formerly POSOCO, is the Central Agency that registers generators, issues certificates and keeps the registry. Under the 2022 regulations a certificate stays valid until it is sold, there is no floor or forbearance price, and the old split between solar and non-solar RECs is gone."
+      ]
+    },
+    {
+      "h": "Who can get RECs",
+      "ul": [
+        "Renewable generators that sell the electricity without the green attribute attached, subject to the eligibility conditions in the regulations.",
+        "Captive users and distribution companies, for renewable energy they consume or buy beyond their own obligation."
+      ],
+      "p": ["The regulations also allow multipliers for some newer technologies, so one MWh can earn more than one certificate. Check the current list before you assume one REC equals one physical MWh for a given project."]
+    },
+    {
+      "h": "How certificates move to a buyer",
+      "ol": [
+        "The generator applies for registration and then for issuance against metered injection.",
+        "Grid-India issues the certificates into the generator's registry account.",
+        "The certificates are sold on a power exchange, such as IEX or PXIL, or bilaterally through a licensed trader.",
+        "The buyer's certificates are redeemed, which retires them so they cannot be sold again."
+      ]
+    },
+    {
+      "h": "What buyers use them for",
+      "ul": [
+        "Obligated entities, such as discoms, open access consumers and captive users, use RECs toward renewable purchase or consumption obligations.",
+        "Companies use them for a market-based Scope 2 figure under the GHG Protocol, provided the certificates match their consumption period and are redeemed in their name.",
+        "The same certificates cannot count toward an obligation and a voluntary claim at once."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what RECs change for a factory",
+    "lines": [
+      "Annual consumption from discom bills: 600,000 kWh = 600 MWh",
+      "Certificates to cover it fully: 600",
+      "Location-based Scope 2: 600,000 x 0.710 = 426,000 kg CO2 = 426 t, unchanged by RECs",
+      "Market-based Scope 2 for the covered units: reported as zero, with the redemption record as evidence"
+    ]
+  },
+  "senseible": "Senseible reads the kWh on your electricity bills, which tells you how many RECs you would need, and reports market-based Scope 2 when you add your certificate data. It does not issue, trade or redeem RECs.",
+  "links": [
+    { "label": "How to buy RECs in India", "to": "/answers/how-to-buy-recs-in-india" },
+    { "label": "I-REC vs India REC", "to": "/answers/i-rec-vs-india-rec" },
+    { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
+    { "label": "Who must meet the renewable consumption obligation", "to": "/answers/renewable-consumption-obligation-who-must-comply" }
+  ],
+  "sources": [
+    { "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, Ministry of Power", "url": "https://powermin.gov.in" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Multipliers and the renewable consumption obligation trajectory change by notification; check the current CERC and Ministry of Power texts."
+}

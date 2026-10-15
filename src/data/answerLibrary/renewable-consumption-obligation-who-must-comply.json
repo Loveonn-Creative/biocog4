@@ -1,0 +1,64 @@
+{
+  "slug": "renewable-consumption-obligation-who-must-comply",
+  "q": "Does the Renewable Consumption Obligation apply to my factory?",
+  "title": "Does the RCO apply to my factory?",
+  "short": "Only if your factory is a designated consumer under the Energy Conservation Act and falls in a category the Ministry of Power has notified for the obligation. Most MSMEs are not. If you are not covered, you still pay for renewable power indirectly through your discom, which carries its own obligation.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and plant heads",
+  "sections": [
+    {
+      "h": "Where the obligation comes from",
+      "p": [
+        "The Energy Conservation (Amendment) Act, 2022 lets the central government require designated consumers to meet a minimum share of their energy use from non-fossil sources. The Ministry of Power used this power in 2023 to notify a renewable consumption obligation, starting with distribution licensees, open access consumers and captive users among designated consumers, with a total share that starts at 29.91% for 2024-25 and rises to 43.33% by 2029-30, split into wind, hydro, distributed renewable and other renewable parts."
+      ]
+    },
+    {
+      "h": "Quick check for your factory",
+      "ol": [
+        "Is your plant a designated consumer? This depends on your sector and annual energy use against BEE thresholds.",
+        "If yes, does the notification cover you: as an open access consumer, a captive user, or under any later sector notification?",
+        "If you are covered, the share applies to the electricity the notification names, not automatically to all fuel you burn.",
+        "If you are not a designated consumer, the RCO does not bind you directly; state rules on open access and captive power may still carry a renewable purchase obligation."
+      ]
+    },
+    {
+      "h": "How covered consumers comply",
+      "ul": [
+        "Renewable power from open access or a captive solar or wind plant.",
+        "Renewable energy certificates (RECs), one per MWh of renewable generation.",
+        "Distributed renewable generation counted toward its own sub-target.",
+        "Keep monthly records of each source in MWh; the obligation is checked against consumption, not contracts signed."
+      ]
+    },
+    {
+      "h": "Why it matters even if you are not covered",
+      "p": [
+        "Large customers with the obligation, or with their own renewable targets, may ask suppliers for renewable power data. Open access and RECs used for the RCO are the same instruments you would use for a market-based Scope 2 figure, so the records serve both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a covered consumer in 2024-25",
+    "lines": [
+      "Electricity consumption covered by the obligation: 10,000 MWh",
+      "Total share for 2024-25: 29.91%, so 10,000 x 0.2991 = 2,991 MWh from renewables",
+      "Met by: 2,000 MWh of open access solar plus 991 RECs",
+      "Sub-targets for wind, hydro and distributed renewables must also be met within that total"
+    ],
+    "note": "Illustrative only. Check the notification for your category and year."
+  },
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from electricity bills, which shows grid consumption and supports market-based Scope 2 when you add instrument data. It does not track RCO compliance, buy RECs or file returns.",
+  "links": [
+    { "label": "Is my factory a BEE designated consumer?", "to": "/answers/is-my-factory-bee-designated-consumer" },
+    { "label": "Renewable power through open access", "to": "/climate-intelligence/green-energy-open-access-india" },
+    { "label": "How the India REC mechanism works", "to": "/answers/how-does-the-india-rec-mechanism-work" },
+    { "label": "How to buy RECs in India", "to": "/answers/how-to-buy-recs-in-india" }
+  ],
+  "sources": [
+    { "label": "Ministry of Power, renewable consumption obligation notification for designated consumers (2023)", "url": "https://powermin.gov.in" },
+    { "label": "Energy Conservation (Amendment) Act, 2022 (Bureau of Energy Efficiency)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Verify the notification number, covered categories and yearly shares against the gazette; later notifications and state RPO rules may overlap."
+}

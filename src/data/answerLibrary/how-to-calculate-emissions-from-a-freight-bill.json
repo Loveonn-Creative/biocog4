@@ -1,0 +1,66 @@
+{
+  "slug": "how-to-calculate-emissions-from-a-freight-bill",
+  "q": "How do I calculate emissions from a freight invoice or lorry receipt?",
+  "title": "Emissions from a freight bill or LR",
+  "short": "Take the actual weight carried and the distance travelled from the lorry receipt, freight bill or e-way bill, multiply them to get tonne-kilometres, then multiply by a well-to-wheel emission factor for that transport mode. Use actual weight, not charged weight, and record where each number came from.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Logistics managers, MSME exporters",
+  "sections": [
+    {
+      "h": "Where each input sits on Indian paperwork",
+      "ul": [
+        "Weight: the lorry receipt (LR, bilty or consignment note) shows actual weight and often a separate charged weight. Use actual weight. Charged weight can be a minimum or a volumetric figure.",
+        "Distance: the LR shows from and to. The e-way bill for the same consignment records the approximate distance in km, which is the best printed source. If neither has it, use a road distance between the two pincodes and note the tool used.",
+        "Mode and vehicle: the LR or e-way bill gives the vehicle number and mode (road, rail, air, ship). Vehicle size helps choose a truck factor.",
+        "The freight invoice itself: SAC 9965 (goods transport) or 9968 (courier), the amount and GST. The amount alone is not activity data."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "Emissions (kg CO2e) = weight (tonnes) x distance (km) x emission factor (kg CO2e per tonne-km).",
+        "ISO 14083 and the GLEC Framework ask for well-to-wheel factors, which include fuel production as well as burning it. Take the factor from the GLEC default tables, your carrier's own data, or a sourced national figure, and write the source and edition next to the result."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Part load: if your goods shared the truck, weight x distance already allocates by mass. Do not use the full truck's fuel.",
+        "Full truckload with fuel data: if the carrier gives litres of diesel for your trip, fuel x factor is more accurate than tonne-km.",
+        "Multi-leg shipments: calculate each leg (truck to port, ship, truck) with its own mode and distance, then add.",
+        "Empty return trips: GLEC default factors already assume typical empty running. Do not add them again."
+      ]
+    },
+    {
+      "h": "Which scope it goes in",
+      "p": [
+        "Freight you pay a transporter for is Scope 3: Category 4 for inbound goods and outbound goods where you pay for the transport, Category 9 where the buyer pays. Your own trucks burning your own diesel are Scope 1, calculated from fuel slips instead."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one truck consignment",
+    "lines": [
+      "LR actual weight: 12 t (charged weight 15 t, ignored)",
+      "E-way bill approximate distance: 1,650 km",
+      "Activity: 12 x 1,650 = 19,800 tonne-km",
+      "Factor (illustrative): 0.10 kg CO2e per tonne-km, well-to-wheel",
+      "19,800 x 0.10 = 1,980 kg CO2e, about 2.0 tonnes"
+    ],
+    "note": "The 0.10 factor is illustrative only. Replace it with a sourced road freight factor for the vehicle class, from the GLEC Framework or your carrier."
+  },
+  "senseible": "Senseible reads freight invoices and lorry receipts and classifies transport lines (SAC 9965, 9967 or 9968) as Scope 3 Category 4. A line gets a figure only when the weight, distance and mode are printed and an approved factor exists for that mode; otherwise it shows Needs Data instead of guessing from the amount.",
+  "links": [
+    { "label": "GLEC Framework explained", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "Freight bill with no weight or distance", "to": "/answers/freight-bill-has-no-weight-or-distance" },
+    { "label": "Is freight Category 4 or 9?", "to": "/answers/is-freight-scope-3-category-4-or-9" }
+  ],
+  "sources": [
+    { "label": "Smart Freight Centre, GLEC Framework v3 (2023)", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "ISO 14083:2023, GHG emissions arising from transport chain operations (iso.org)", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 4", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

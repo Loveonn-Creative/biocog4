@@ -1,0 +1,82 @@
+{
+  "slug": "what-is-materiality-in-ghg-verification",
+  "q": "What is the materiality threshold in a GHG verification, and is 5% the rule?",
+  "title": "Materiality in GHG verification: is it 5%?",
+  "short": "No standard fixes 5%. ISO 14064-3 leaves the verifier to set materiality from the programme's rules and the needs of the people relying on the statement, and ISAE 3410 treats it as professional judgement. 5% of total emissions is a common choice, and some programmes write a number into their rules, but it is a convention, not a law.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads, auditors, exporters preparing for verification",
+  "sections": [
+    {
+      "h": "Where the threshold actually comes from",
+      "ol": [
+        "The programme, if there is one. A scheme's verification rules may set the figure; the EU ETS, for example, uses 5% for most installations and 2% for the largest.",
+        "The intended user. For a buyer report, a bank or a voluntary disclosure, the verifier agrees the level with you and records it in the verification plan or engagement letter.",
+        "The level of assurance. Reasonable assurance work is designed to detect smaller misstatements than limited assurance, so the planning is tighter."
+      ]
+    },
+    {
+      "h": "Quantitative and qualitative materiality",
+      "p": [
+        "The quantitative test compares misstatements with the total, usually as a percentage. The qualitative test asks whether an error would change a reader's decision regardless of size: a missing site, an excluded gas, the wrong scope, a claim such as carbon neutral that the data does not support. A small error of that kind can still be material."
+      ]
+    },
+    {
+      "h": "How a verifier applies it",
+      "ul": [
+        "Plans the work around higher-risk sources, the ones large enough that an error could cross the threshold.",
+        "Adds up misstatements found, both those you correct and those you leave, and compares the sum, not just each error, with materiality.",
+        "Projects sample errors to the whole population: an error found in 1 of 20 sampled invoices suggests more in the rest.",
+        "Reports non-conformities with the programme rules whatever their size."
+      ]
+    },
+    {
+      "h": "What to agree before the verifier starts",
+      "ul": [
+        "The threshold as a figure and what it is a percentage of: total Scope 1 and 2, or each scope separately.",
+        "Whether Scope 3 is in the boundary of the statement, since its uncertainty is much higher.",
+        "How uncorrected misstatements below the threshold will be reported."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two errors against a 5% threshold",
+    "lines": [
+      "Reported Scope 1 and 2: 2,400 t CO2; 5% materiality = 120 t",
+      "Missed diesel invoice: 3,000 L x 2.68 kg per L = 8,040 kg, about 8.0 t",
+      "Electricity bill left out: 150,000 kWh x 0.710 kg per kWh = 106,500 kg, about 106.5 t",
+      "Combined: 8.04 + 106.5 = 114.54 t, or 4.8% of 2,400 t",
+      "Below 120 t in total, but close; the verifier will ask for both to be corrected and test for more missing bills"
+    ]
+  },
+  "senseible": "Senseible's rule checks and its recompute tolerance (the larger of 0.01 or 0.1%) help show where errors sit, and \"Verified\" in Senseible means those checks passed. It does not set materiality and it does not provide third-party assurance.",
+  "links": [
+    {
+      "label": "Acceptable error in a carbon audit",
+      "to": "/answers/acceptable-error-in-carbon-audit-materiality"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "MRV vs a traditional audit",
+      "to": "/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2018/2067, EU ETS verification and accreditation, Article 23 (materiality)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

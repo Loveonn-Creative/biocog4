@@ -1,0 +1,62 @@
+{
+  "slug": "carbon-footprint-exclusion-threshold",
+  "q": "Is there a 5% de minimis rule for leaving small emission sources out of a carbon footprint?",
+  "title": "Is there a 5% rule for small sources?",
+  "short": "No. The GHG Protocol Corporate Standard sets no fixed de minimis percentage. You may leave out a source only if you disclose it and justify why, for example that it is tiny and hard to measure. The 5% figure people quote usually comes from verification materiality or from target-setting rules, not from permission to omit.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads, auditors",
+  "sections": [
+    {
+      "h": "What each standard actually says",
+      "ul": [
+        "GHG Protocol Corporate Standard: account for all Scope 1 and 2 sources within the boundary; any exclusion must be disclosed and justified under the completeness principle. No percentage is set.",
+        "GHG Protocol Scope 3 Standard: report all relevant categories, and disclose and justify any category left out.",
+        "ISO 14064-1:2018: an organisation may exclude sources whose contribution is not material or whose quantification is not technically feasible or cost effective, but must identify and explain each exclusion."
+      ]
+    },
+    {
+      "h": "Where the 5% figure comes from",
+      "ul": [
+        "Verification: verifiers often use 5% of total emissions as the materiality level for misstatement. That tests whether errors and omissions together distort the total; it is not an allowance to drop sources.",
+        "SBTi: near-term targets must cover at least 95% of company-wide Scope 1 and 2 emissions, so up to 5% may sit outside the target boundary. The inventory still has to include them."
+      ]
+    },
+    {
+      "h": "When leaving a source out is defensible",
+      "ol": [
+        "Estimate it roughly first, so you can show it is small.",
+        "Check that all exclusions together stay well below the materiality level your verifier or buyer uses.",
+        "Write down each exclusion, the estimate and the reason.",
+        "Revisit every year; a source that grows must come back in."
+      ]
+    },
+    {
+      "h": "Sources people often drop that should stay",
+      "p": [
+        "Refrigerant top-ups for air conditioners and cold rooms, diesel for a backup generator, and LPG in the canteen are often left out because they are small or awkward. Refrigerants in particular can be large per kg because of their high global warming potential, so estimate before excluding."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: is canteen LPG worth counting?",
+    "lines": [
+      "Total footprint: 1,000 t CO2",
+      "Canteen LPG: 400 kg a year x 2.98 kg CO2 per kg (IPCC 2006 default) = 1,192 kg, about 1.2 t",
+      "Share: 1.2 / 1,000 = 0.12% of the total"
+    ],
+    "note": "It is small enough to exclude with a note, but if the LPG invoices exist, counting it costs one line and removes a question from the auditor."
+  },
+  "senseible": "Senseible counts every uploaded record that has a published factor and does not drop small sources on its own; a line without a factor shows as a gap, not as zero. Deciding and justifying any exclusion is your call.",
+  "links": [
+    { "label": "Can we exclude a Scope 3 category", "to": "/answers/can-we-exclude-a-scope-3-category" },
+    { "label": "Acceptable error in a carbon audit", "to": "/answers/acceptable-error-in-carbon-audit-materiality" },
+    { "label": "Carbon accounting", "to": "/carbon-accounting" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (2004), completeness principle", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "ISO 14064-1:2018, Specification for quantification and reporting of GHG emissions", "url": "https://www.iso.org" },
+    { "label": "SBTi Corporate Near-Term Criteria", "url": "https://sciencebasedtargets.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

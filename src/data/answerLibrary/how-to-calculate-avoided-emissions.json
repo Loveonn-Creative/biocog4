@@ -1,0 +1,66 @@
+{
+  "slug": "how-to-calculate-avoided-emissions",
+  "q": "How do I calculate and report avoided emissions from my product or project?",
+  "title": "How to calculate avoided emissions",
+  "short": "Avoided emissions are the difference between emissions in a reference scenario, what would have happened without your product, and emissions with it. Report them separately from your Scope 1, 2 and 3 inventory. You cannot subtract them from your footprint, and they are not carbon credits.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sustainability leads and exporters selling cleaner products",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Define the solution and the function it delivers, for example 1 kWh of electricity or one year of pumping.",
+        "Choose the reference scenario: what customers would use otherwise, based on the market today, not the worst option available.",
+        "Work out emissions for both over the same function and period, across the life cycle where it matters.",
+        "Avoided emissions = reference emissions minus solution emissions.",
+        "State your role: whether your product does the reduction directly or enables it as one component."
+      ]
+    },
+    {
+      "h": "Your own reductions are not avoided emissions",
+      "p": [
+        "If you replace your own diesel genset with rooftop solar, your Scope 1 falls because you buy less diesel. That reduction already shows in your inventory, so do not report it again as avoided emissions. Avoided emissions are about the effect your product or project has outside your own inventory, such as solar systems you sell or surplus solar you export to the grid."
+      ]
+    },
+    {
+      "h": "Reporting rules",
+      "ul": [
+        "Report avoided emissions next to the inventory, never netted against it. The GHG Protocol keeps them outside Scope 1, 2 and 3.",
+        "Do not call them offsets or sell them as credits. A credit needs a registered project, a methodology and verification.",
+        "Disclose the reference scenario, the period, the data and the assumptions, so a reader can test them.",
+        "The WBCSD guidance also sets eligibility tests before a company claims avoided emissions, including a credible plan to cut its own emissions."
+      ]
+    },
+    {
+      "h": "Where companies overclaim",
+      "ul": [
+        "Counting the full lifetime of a product in a single year.",
+        "Picking a reference scenario that is dirtier than what customers actually use.",
+        "Claiming the whole benefit when the product is one part, such as a component in a solar plant."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: solar systems sold to factories that ran diesel gensets",
+    "lines": [
+      "Customers' diesel use replaced in one year: 20,000 L",
+      "Reference emissions: 20,000 x 2.68 kg CO2 per litre = 53,600 kg CO2",
+      "Solar operating emissions in the use phase: taken as zero here",
+      "Avoided emissions: 53,600 kg, about 54 t CO2 for that year",
+      "Reported beside your Scope 1 to 3 totals, not subtracted from them"
+    ],
+    "note": "Diesel factor is the IPCC 2006 default. A full assessment would add the solar system's manufacturing emissions spread over its life."
+  },
+  "senseible": "Senseible's activity records give the inputs for a reference scenario, such as the diesel litres on fuel invoices, and it keeps any avoided figure beside the inventory, never subtracted from gross emissions. It does not set your reference scenario or turn avoided emissions into credits.",
+  "links": [
+    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" },
+    { "label": "Rooftop solar and net metering in Scope 2", "to": "/answers/rooftop-solar-net-metering-scope-2" },
+    { "label": "Measuring savings from an efficiency project", "to": "/answers/how-to-measure-savings-from-energy-efficiency-project" }
+  ],
+  "sources": [
+    { "label": "WBCSD Guidance on Avoided Emissions (2023)", "url": "https://www.wbcsd.org" },
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

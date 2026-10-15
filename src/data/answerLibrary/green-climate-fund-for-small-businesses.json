@@ -1,0 +1,65 @@
+{
+  "slug": "green-climate-fund-for-small-businesses",
+  "q": "Can a small business get money from the Green Climate Fund?",
+  "title": "Green Climate Fund for small businesses",
+  "short": "Not directly. The Green Climate Fund does not take applications from individual small businesses. It funds programmes run by accredited entities, such as development banks and national institutions, which may then lend to or support MSMEs. Your route in is a bank or institution running a GCF-funded programme in your country.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners in India and emerging markets",
+  "sections": [
+    {
+      "h": "How GCF money reaches businesses",
+      "p": [
+        "The GCF is an operating entity of the financial mechanism of the UNFCCC. It approves funding proposals submitted by accredited entities, with the support of each country's National Designated Authority. Funds then flow through that entity as credit lines, guarantees, equity or grants, often through local banks, to the end projects."
+      ]
+    },
+    {
+      "h": "Who the accredited entities are in India",
+      "p": [
+        "Indian national institutions such as NABARD have been accredited to the GCF, along with international development banks and agencies that operate in India. The Ministry of Environment, Forest and Climate Change is India's National Designated Authority. The list changes, so check the GCF accredited entities directory for the current names."
+      ]
+    },
+    {
+      "h": "What a small business can actually do",
+      "ol": [
+        "Ask your bank, SIDBI or the relevant development finance institution whether it runs a climate credit line or programme funded by GCF or other climate funds.",
+        "Prepare a clear project: what you will install, the cost, the energy or emission saving, and repayment from savings.",
+        "Expect normal credit checks plus impact reporting: baseline energy use and emissions before, and measured savings after.",
+        "Consider other routes too: green loans from commercial banks and government schemes for MSME energy efficiency."
+      ]
+    },
+    {
+      "h": "What GCF does not do",
+      "p": [
+        "It does not give small grants to individual firms on request. Be wary of consultants who promise direct GCF funding for a fee."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a baseline of fuel and electricity emissions from your invoices, the kind of record a lender or accredited entity needs for impact reporting, and its green loan readiness check shows gaps. It does not apply to the GCF or arrange funding on your behalf.",
+  "links": [
+    {
+      "label": "Climate grants",
+      "to": "/grants"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "MSME climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UNFCCC: financial mechanism of the Convention, of which the Green Climate Fund is an operating entity",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Ministry of Environment, Forest and Climate Change, National Designated Authority for the GCF in India",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "GCF accreditation changes over time; confirm the current Indian accredited entities in the GCF directory."
+}

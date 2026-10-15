@@ -1,0 +1,53 @@
+{
+  "slug": "why-icvcm-rejected-renewable-energy-credits",
+  "q": "Why were renewable energy carbon credits not approved for the ICVCM CCP label?",
+  "title": "Why ICVCM rejected renewable energy credits",
+  "short": "In August 2024 the ICVCM decided that the main grid-connected renewable power methodologies do not meet its additionality test. Solar and wind are now often profitable without carbon revenue, and the methods did not show convincingly that credits caused the projects. The credits remain valid but cannot carry the CCP label.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Carbon credit buyers, Indian project owners",
+  "sections": [
+    {
+      "h": "What the ICVCM actually assessed",
+      "p": [
+        "The Integrity Council for the Voluntary Carbon Market assesses methodologies against its Core Carbon Principles. One of them is additionality: the reductions would not have happened without the carbon credit revenue. The renewable energy decision covered the widely used methodologies for grid-connected wind, solar and hydro, many of them inherited from the Clean Development Mechanism."
+      ]
+    },
+    {
+      "h": "Why additionality failed",
+      "ul": [
+        "Falling costs: utility-scale solar and wind are now often the cheapest new power in many markets, so credit income rarely decides whether a plant is built.",
+        "Weak investment tests: the methods rely on financial analysis that is easy to tune with assumptions about tariffs and costs.",
+        "Common practice: where renewables are already a normal choice, being renewable is not evidence that a project is additional."
+      ]
+    },
+    {
+      "h": "What it means for existing credits",
+      "p": [
+        "The decision does not cancel anything. Credits stay on their registries and can still be bought, sold and retired. What changes is the label: buyers who require CCP-labelled credits will not buy them, and buyers who treat CCP as a floor will look elsewhere, which can weigh on demand for these credits."
+      ]
+    },
+    {
+      "h": "Options for Indian renewable energy owners",
+      "ul": [
+        "Sell the attribute as a renewable energy certificate instead: India RECs or I-RECs let a buyer report lower market-based Scope 2. That is a different claim from an offset.",
+        "Sell power under a green tariff or open access contract where the buyer gets the attribute.",
+        "Do not sell the same megawatt hours as both a carbon credit and a REC; that double counts the same benefit.",
+        "Watch for revised methodologies. The ICVCM can assess new versions if programmes submit them."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills for location-based Scope 2 and reports market-based Scope 2 when you hold certificate or contract data, which is where a renewable attribute is usually claimed. It shows carbon credit eligibility signals but does not issue, rate or label credits.",
+  "links": [
+    { "label": "What the ICVCM Core Carbon Principles are", "to": "/answers/what-are-icvcm-core-carbon-principles" },
+    { "label": "What additionality means", "to": "/answers/what-is-additionality-in-carbon-credits" },
+    { "label": "I-REC or India REC", "to": "/answers/i-rec-vs-india-rec" },
+    { "label": "Carbon credit pricing explained", "to": "/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026" }
+  ],
+  "sources": [
+    { "label": "ICVCM decision on renewable energy methodologies (August 2024)", "url": "https://icvcm.org" },
+    { "label": "ICVCM Core Carbon Principles and Assessment Framework", "url": "https://icvcm.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Check whether the ICVCM has since assessed any revised renewable energy methodology."
+}

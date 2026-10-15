@@ -1,0 +1,62 @@
+{
+  "slug": "state-wise-grid-emission-factor-india",
+  "q": "Is there a state-wise grid emission factor in India, and can I use a lower one for my state?",
+  "title": "Is there a state-wise grid factor in India?",
+  "short": "No. The CEA, which publishes India's official grid factor, gives one all-India figure, because the country runs a single synchronised grid. For location-based Scope 2 use that national factor even if your state has a lot of solar or wind. To report lower Scope 2, use market-based reporting with renewable energy you actually buy.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME owners in high-renewable states",
+  "sections": [
+    {
+      "h": "Why India has one grid factor",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance says the location-based factor should reflect the grid where electricity is consumed, defined by where power physically flows. India's regional grids are now synchronised into one national grid, and the CEA CO2 Baseline Database publishes a single all-India factor for it. Check the user guide of the current edition for the grid boundary it uses.",
+        "Power moves freely between states over this grid, so a state's generation mix is not the mix behind the units your meter records."
+      ]
+    },
+    {
+      "h": "Why a lower state figure will not hold up",
+      "ul": [
+        "It is not an official grid factor. Analyses by state agencies, researchers or consultants can be useful, but only the CEA figure is the national reference an auditor or buyer will recognise.",
+        "It claims renewable generation that is not yours. If every consumer in a windy state used a lower factor, the same clean power would be counted by many companies, and by the discoms buying it to meet their renewable obligations.",
+        "It breaks comparability with other Indian suppliers your buyer is comparing you against."
+      ]
+    },
+    {
+      "h": "How to legitimately report lower Scope 2",
+      "ul": [
+        "On-site rooftop solar: units you generate and use behind the meter never appear as grid consumption.",
+        "Green tariff from your discom, or green energy open access: report these under market-based Scope 2, with the supply contract as evidence.",
+        "Renewable Energy Certificates: retired RECs matched to your consumption support a market-based figure.",
+        "Report both: location-based with the CEA factor, and market-based with your instruments, as the Scope 2 Guidance requires."
+      ]
+    },
+    {
+      "h": "How this compares with other countries",
+      "p": [
+        "Countries with separate, unconnected grids publish factors per grid region; others, like India and Vietnam, publish a single national figure. Use the figure the national authority publishes for the grid you are connected to."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a plant with a part green tariff",
+    "lines": [
+      "Units billed: 100,000 kWh, of which 60,000 kWh on a discom green tariff",
+      "Location-based: 100,000 x 0.710 kg CO2 per kWh = 71,000 kg CO2",
+      "Market-based: green tariff units at 0; remaining 40,000 x 0.710 = 28,400 kg CO2"
+    ],
+    "note": "India does not publish a residual mix factor, so the national grid factor is used for the remaining units; say so in your method note."
+  },
+  "senseible": "Senseible applies the national CEA weighted average factor (0.710 kg CO2 per kWh, CO2 Baseline Database version 21.0) to the kWh on your bill for location-based Scope 2. It does not use state-level factors; market-based Scope 2 needs your green tariff, open access or REC documents.",
+  "links": [
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
+    { "label": "Vietnam's grid emission factor", "to": "/climate-intelligence/vietnam-grid-emission-factor" },
+    { "label": "Does a green tariff make Scope 2 zero?", "to": "/answers/green-tariff-zero-scope-2" },
+    { "label": "CEA or IEA grid factor?", "to": "/answers/cea-vs-iea-grid-emission-factor-india" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database for the Indian Power Sector, User Guide", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15"
+}

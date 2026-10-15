@@ -1,0 +1,65 @@
+{
+  "slug": "do-buyers-pay-more-for-low-carbon-suppliers",
+  "q": "Will lowering my carbon footprint win orders or better terms from big buyers?",
+  "title": "Do buyers reward low-carbon suppliers?",
+  "short": "Sometimes, but do not plan on a price premium. The reliable gains are staying on approved supplier lists as buyers chase their own Scope 3 targets, lower CBAM cost for EU importers of covered goods, and better loan terms. Fund reductions that pay back on energy savings alone, and treat any buyer reward as extra.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Exporters and MSME owners",
+  "sections": [
+    {
+      "h": "Why big buyers now ask",
+      "ul": [
+        "Companies with SBTi targets must cut Scope 3 emissions, and the near-term criteria let them meet part of that with a supplier engagement target: a share of suppliers, by emissions, setting science-based targets within five years.",
+        "CDP's supply chain programme sends emissions questionnaires to suppliers on behalf of large member buyers.",
+        "For CBAM goods such as steel, aluminium, cement and fertilisers, the EU importer pays for embedded emissions from 2026 imports, so your actual, verified figure can lower their cost compared with default values."
+      ]
+    },
+    {
+      "h": "What the evidence supports",
+      "p": [
+        "Public evidence of buyers paying a higher unit price to low-carbon MSME suppliers is thin. What is better documented is the requirement trend: more questionnaires, carbon data in supplier scorecards, and targets that push buyers to concentrate orders with suppliers who can report.",
+        "The real risk for most MSMEs is not missing a premium. It is losing a place on the list to a competitor who can answer the questionnaire with documented numbers."
+      ]
+    },
+    {
+      "h": "Where a lower footprint does pay",
+      "ul": [
+        "CBAM goods: lower embedded emissions reduce the certificates your EU customer must buy, which you can raise in price talks.",
+        "Lenders: some banks offer green loans with lower rates or fees for eligible projects, and they ask for the same emissions data.",
+        "Energy cost: most cuts in fuel and electricity save money directly, buyer or no buyer."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Measure first. A documented Scope 1 and 2 number costs little and keeps you eligible.",
+        "Ask your top buyers directly whether carbon data or targets enter supplier scoring, and by when.",
+        "Fund reduction projects on their energy payback. Use buyer demand to decide the order, not whether to do them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a reduction that pays without a premium",
+    "lines": [
+      "Diesel saved by moving a generator load to grid power: 5,000 litres a year",
+      "Fuel saving at an illustrative ₹90 per litre: 5,000 x 90 = ₹4,50,000",
+      "Emissions avoided from diesel: 5,000 x 2.68 = 13,400 kg CO2, about 13.4 tonnes",
+      "The grid power that replaces it adds its own Scope 2 at 0.710 kg CO2 per kWh, so net savings are smaller"
+    ],
+    "note": "Diesel price is an illustration. Count the new grid kWh before claiming a net reduction to a buyer."
+  },
+  "senseible": "Senseible turns your invoices and bills into a documented Scope 1 and 2 number that buyers and banks can trace to source files. It cannot tell you whether a buyer will pay more or place more orders.",
+  "links": [
+    { "label": "Your carbon number for buyers and banks", "to": "/msme-carbon-number" },
+    { "label": "Small vendor asked for Scope 3 data", "to": "/answers/small-vendor-scope-3" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" }
+  ],
+  "sources": [
+    { "label": "SBTi Corporate Near-Term Criteria (supplier engagement targets)", "url": "https://sciencebasedtargets.org" },
+    { "label": "CDP Supply Chain programme", "url": "https://www.cdp.net" },
+    { "label": "Regulation (EU) 2023/956 establishing CBAM", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj" }
+  ],
+  "reviewed": "2026-10-15"
+}

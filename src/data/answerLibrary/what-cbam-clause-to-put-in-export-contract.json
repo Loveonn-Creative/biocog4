@@ -1,0 +1,75 @@
+{
+  "slug": "what-cbam-clause-to-put-in-export-contract",
+  "q": "What CBAM clauses should an Indian exporter agree in a contract with an EU buyer?",
+  "title": "CBAM clauses for an export contract",
+  "short": "Agree four things in writing: what emissions data you will send, in which format and by when; who pays for verification; how the CBAM certificate cost is shared; and what happens if your data is late and the buyer must use default values with a mark-up. Treat this as a negotiation checklist, not legal advice.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters, CFOs, sales heads",
+  "sections": [
+    {
+      "h": "Data delivery clause",
+      "ul": [
+        "Scope: embedded emissions per CN code and per installation, direct and indirect where required, calculated under Article 7 of Regulation (EU) 2023/956 and its implementing rules.",
+        "Format: the Commission's communication template for operators, or a format the buyer names.",
+        "Period and timing: the calendar year (not the Indian fiscal year) and a firm date, early enough for the buyer's annual declaration for 2026 imports, which is filed in 2027.",
+        "Corrections: how quickly you notify the buyer of errors and send revised figures."
+      ]
+    },
+    {
+      "h": "Verification clause",
+      "p": [
+        "In the definitive period, actual emissions must be verified by an accredited verifier (Article 8) before the importer can use them. The contract should say who appoints and pays the verifier, that you will allow site visits, and that the buyer may rely on the verified report. Verification costs are largely per installation, so spreading them across several EU buyers lowers the cost per tonne."
+      ]
+    },
+    {
+      "h": "Cost sharing clause",
+      "ul": [
+        "Who bears the certificate cost: the buyer alone, the exporter through a price reduction, or a split.",
+        "Basis: tie any price adjustment to verified emissions per tonne, so a cleaner plant pays less, rather than a flat CBAM surcharge.",
+        "Price reference: the CBAM certificate price for the relevant quarter or year, as published by the Commission.",
+        "Carbon price paid in India: Article 9 lets the importer deduct a carbon price effectively paid at origin. Say who claims it and who provides the evidence if one applies later."
+      ]
+    },
+    {
+      "h": "Default value risk clause",
+      "p": [
+        "If verified data is missing or late, the importer declares default values from Implementing Regulation (EU) 2025/2621. For steel, aluminium, cement and hydrogen they carry a mark-up of 10% in 2026, 20% in 2027 and 30% from 2028. Agree whether the extra cost from defaults caused by your delay is charged back to you, and cap it. Agree the reverse too: if your verified figure is below the default, whether you share the saving."
+      ]
+    },
+    {
+      "h": "Points that are easy to miss",
+      "ul": [
+        "Importers bringing in under 50 tonnes of CBAM goods a year are exempt under Regulation (EU) 2025/2083; a small buyer may not need data at all.",
+        "Confidentiality: limit use of your process data to CBAM compliance.",
+        "Registration: actual data is easier to reuse if your installation is registered in the CBAM operator registry.",
+        "Review: rules are still changing, so add a clause to reopen terms if the regulation changes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of blast furnace steel in 2026",
+    "lines": [
+      "Default route: 2.1 t CO2 per t x 1.10 mark-up = 2.31 t per t; 100 t gives 231 t embedded",
+      "Free allocation deduction: 1.52 t indicative benchmark x 97.5% x 100 t = 148.2 t",
+      "Certificates on defaults: 231 minus 148.2 = 82.8 t",
+      "Verified actual (illustrative): 1.90 t per t gives 190 t; certificates 190 minus 148.2 = 41.8 t",
+      "Difference: 41 t x EUR 82.32 = about EUR 3,375 on this shipment"
+    ],
+    "note": "The default intensity, the indicative benchmark and the EUR 82.32 price (Q3 2026) are the Senseible CBAM calculator's 2026 assumptions, not the official default value and benchmark for your CN code; the 1.90 t actual figure is illustrative. This gap is what the default value risk clause is about."
+  },
+  "senseible": "Senseible gives you a dated, source-linked emissions record built from your invoices and bills to commit to in a data delivery clause, and its CBAM cost calculator estimates the default versus actual gap. It does not draft contracts, verify emissions or file CBAM declarations.",
+  "links": [
+    { "label": "CBAM compliance for Indian exporters", "to": "/climate-intelligence/cbam-compliance-indian-exporters" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
+    { "label": "Default values vs actual emissions", "to": "/climate-intelligence/cbam-default-values-vs-actual-emissions-msme-decision-guide" },
+    { "label": "CBAM communication template for suppliers", "to": "/answers/cbam-communication-template-for-suppliers" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Articles 7 to 9", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Implementing Regulation (EU) 2025/2621, default values and mark-ups", "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng" },
+    { "label": "Regulation (EU) 2025/2083, CBAM simplification", "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "This is a negotiation checklist, not legal advice. CBAM rules and mark-ups were amended in 2025 and 2026; recheck before signing."
+}

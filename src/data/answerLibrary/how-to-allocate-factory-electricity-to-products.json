@@ -1,0 +1,88 @@
+{
+  "slug": "how-to-allocate-factory-electricity-to-products",
+  "q": "How do I divide my factory's electricity bill between different products for a carbon footprint?",
+  "title": "Splitting factory electricity by product",
+  "short": "First measure what you can: sub-meters on lines or machines give each product its own kWh. Split only the shared remainder, using a physical driver such as machine hours or mass of output. Then multiply each product's kWh by the grid factor and divide by units made. Use money only as a last resort.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Plant heads and MSME owners with several product lines",
+  "sections": [
+    {
+      "h": "The order ISO standards ask for",
+      "ol": [
+        "Avoid allocation: split the process into parts. A sub-metered line, or a machine that makes only one product, gets its own measured kWh.",
+        "Allocate by a physical relationship that reflects how electricity is used: machine hours, motor run time, tonnes processed.",
+        "Only if no physical link exists, allocate by another relationship, such as economic value."
+      ],
+      "p": [
+        "This hierarchy is in ISO 14044:2006 clause 4.3.4, and ISO 14067:2018 and the GHG Protocol Product Standard follow it."
+      ]
+    },
+    {
+      "h": "Choosing the driver for the shared part",
+      "ul": [
+        "Machine hours: best when products share the same machines but take different times.",
+        "Mass of output: fine when products are similar and pass through the same steps, such as two grades of the same casting.",
+        "Floor area or headcount: only for lighting and air conditioning, never for process loads.",
+        "Revenue: last resort, because a price rise would change the footprint without any change in energy."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Splitting the whole bill by mass when one product goes through an extra energy-heavy step, such as heat treatment or painting.",
+        "Forgetting compressors, chillers and lighting, which can be a large share of a plant bill.",
+        "Using kVAh or billed demand instead of kWh: the grid factor applies to kWh.",
+        "Mixing periods: the bill period and the production period must match."
+      ]
+    },
+    {
+      "h": "Write down the method",
+      "p": [
+        "State the driver, the sub-meter readings, the period and the grid factor with its source. An auditor or buyer will check that the product totals add back to the bill, so keep that reconciliation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two product lines, one month",
+    "lines": [
+      "Bill: 120,000 kWh x 0.710 kg CO2/kWh = 85,200 kg CO2",
+      "Line A paint shop is sub-metered: 45,000 kWh, all to Line A",
+      "Shared 75,000 kWh split by machine hours (600 h Line A, 900 h Line B): 30,000 kWh to A, 45,000 kWh to B",
+      "Line A: 75,000 kWh x 0.710 = 53,250 kg CO2; over 25,000 units = 2.13 kg CO2 per unit",
+      "Line B: 45,000 kWh x 0.710 = 31,950 kg CO2; over 18,000 units = 1.775 kg CO2 per unit",
+      "Check: 53,250 + 31,950 = 85,200 kg CO2"
+    ],
+    "note": "Splitting the same bill by mass alone would have given Line B part of the paint shop it never uses."
+  },
+  "senseible": "Senseible reads the kWh from each electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh, giving the bill total you allocate. The split between products by sub-meter, machine hours or mass is your own calculation.",
+  "links": [
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products; ISO 14044:2006 clause 4.3.4",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), chapter 9",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

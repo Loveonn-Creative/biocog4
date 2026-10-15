@@ -1,0 +1,70 @@
+{
+  "slug": "do-re100-and-cdp-accept-indian-recs",
+  "q": "Do RE100 and CDP accept unbundled RECs from India?",
+  "title": "Do RE100 and CDP accept Indian RECs?",
+  "short": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and the age of the generating plant. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Exporters, sustainability leads",
+  "sections": [
+    {
+      "h": "The checks a certificate must pass",
+      "ol": [
+        "Issued in a recognised tracking system: the India REC registry or the I-REC registry.",
+        "Retired or redeemed in your company's name, with a record you can show.",
+        "Vintage close to the period of the electricity you claim, normally the same reporting year.",
+        "Same market as your consumption. Check the RE100 Technical Criteria for how market boundaries apply to India.",
+        "For RE100, the generating plant must be within the plant age limit in the current RE100 Technical Criteria; check the limit and its exemptions there.",
+        "Not counted twice: not used for a renewable purchase obligation, and not sold again."
+      ]
+    },
+    {
+      "h": "Where Indian certificates often fail",
+      "ul": [
+        "Old plants: certificates from wind or hydro plants older than the RE100 age limit fail that test.",
+        "Vintage mismatch: buying old certificates to cover the current year.",
+        "No retirement proof in the company's own name, only a broker's statement.",
+        "The same units counted toward a discom's or company's renewable obligation."
+      ]
+    },
+    {
+      "h": "How it shows up in your reporting",
+      "p": [
+        "Certificates affect only your market-based Scope 2. Your location-based Scope 2, using the CEA grid factor, stays the same. Report both, and in CDP give the certificate details the questionnaire asks for, such as certificate type, country, vintage and volume."
+      ]
+    },
+    {
+      "h": "Bundled options that avoid most of these questions",
+      "p": [
+        "An on-site solar plant, a power purchase agreement or a green tariff from your discom carries the renewable attribute with the power. These are generally treated as stronger evidence than unbundled certificates, but you still need the contract or tariff document."
+      ]
+    }
+  ],
+  "senseible": "Senseible reports location-based Scope 2 from your bills and market-based Scope 2 when you add certificate or contract data. It does not buy, sell or retire RECs, and it does not check certificates against RE100 or CDP criteria.",
+  "links": [
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RE100 Technical Criteria (RE100 is led by Climate Group in partnership with CDP)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "RE100 criteria, CDP guidance and the GHG Protocol Scope 2 rules are all under revision; recheck before reporting."
+}

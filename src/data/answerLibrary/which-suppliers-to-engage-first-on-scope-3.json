@@ -1,0 +1,70 @@
+{
+  "slug": "which-suppliers-to-engage-first-on-scope-3",
+  "q": "Which suppliers should I ask for emissions data first?",
+  "title": "Which suppliers to ask for data first",
+  "short": "Start with the few suppliers behind most of your estimated Scope 3 emissions, not most of your spend. Rank purchases by spend or quantity times a rough factor, take the suppliers that make up about 80% of the total, then move up anyone selling CBAM goods or whom your buyer names.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Procurement managers and sustainability leads",
+  "sections": [
+    {
+      "h": "Step 1: screen every supplier roughly",
+      "ol": [
+        "Export a year of purchases by supplier, with spend, quantity, unit and HSN code.",
+        "Assign each supplier a rough factor for what they sell: a spend-based factor per rupee, or a material factor per tonne where you know the quantity.",
+        "Multiply and rank. The point is the order, not the exact tonnes; screening factors can be off by a wide margin and are fine for this job."
+      ]
+    },
+    {
+      "h": "Step 2: apply the GHG Protocol screening criteria",
+      "p": [
+        "The Scope 3 Standard (chapter 6) suggests weighing more than size. After ranking by estimated emissions, move a supplier up the list if:"
+      ],
+      "ul": [
+        "You have influence: a large share of their sales, a long contract, or a renewal coming up.",
+        "They create risk: CBAM-covered goods such as steel, aluminium or fertilisers, where actual data cuts your EU buyer's cost.",
+        "A stakeholder asks: your customer, lender or an SBTi target names that category.",
+        "You outsourced a process you used to run, such as heat treatment or plating, because those emissions used to sit in your own Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "Who can wait",
+      "ul": [
+        "Large spend with low emissions: software, professional services, rent. Spend-based estimates are good enough.",
+        "Traders who resell without processing, unless you can reach the manufacturer behind them.",
+        "One-off purchases you will not repeat next year."
+      ]
+    },
+    {
+      "h": "A decision rule for the first round",
+      "p": [
+        "Ask the top five to ten suppliers by estimated emissions, plus any CBAM-goods supplier, for activity data or a product footprint. Use averages for everyone else this year, and redo the ranking each year as supplier data replaces estimates."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: ranking six supplier groups",
+    "lines": [
+      "Steel coil: ₹200 lakh x 4.0 t CO2e per lakh = 800 t",
+      "Aluminium extrusions: ₹50 lakh x 5.0 = 250 t",
+      "Plastic granules: ₹60 lakh x 1.5 = 90 t",
+      "Machining job work: ₹80 lakh x 0.5 = 40 t",
+      "Corrugated boxes: ₹40 lakh x 0.8 = 32 t",
+      "40 other suppliers: ₹170 lakh x 0.3 = 51 t",
+      "Total: ₹600 lakh and 1,263 t; steel and aluminium are 1,050 t, about 83% of emissions on 42% of spend"
+    ],
+    "note": "Factors here are illustrations chosen to show the method, not published values. Among single suppliers, job work is second by spend but fourth by emissions."
+  },
+  "senseible": "Senseible reads purchase invoices and keeps spend, quantity and HSN code by supplier in a separate supplier evidence trail, which gives you the list to rank. It does not apply spend-based factors; use the supplier emissions risk calculator or your own factors for the screen.",
+  "links": [
+    { "label": "Supplier emissions risk calculator", "to": "/calculators/supplier-emissions-risk" },
+    { "label": "Supplier data collection playbook", "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme" },
+    { "label": "Senseible for enterprise supply chains", "to": "/enterprise" },
+    { "label": "Getting data from tier 2 suppliers", "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), chapter 6", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

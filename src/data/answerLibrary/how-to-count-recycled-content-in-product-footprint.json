@@ -1,0 +1,58 @@
+{
+  "slug": "how-to-count-recycled-content-in-product-footprint",
+  "q": "How do I count recycled content in a product carbon footprint: cut-off or avoided burden?",
+  "title": "Recycled content: cut-off or avoided burden?",
+  "short": "Use the cut-off (recycled content) method if your product's value lies in the recycled material it contains: recycled inputs carry only their recycling burden and you get no end-of-life credit. Use an avoided burden (end-of-life) method only where your sector rules or buyer require it. Never claim both, and state which one you used.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Metals, plastics and packaging manufacturers",
+  "sections": [
+    {
+      "h": "How the two methods work",
+      "ul": [
+        "Cut-off, also called the recycled content method or 100:0: recycled input enters with the emissions of collecting and reprocessing it, and nothing from the original product. When your product is recycled at end of life, you get no credit.",
+        "Avoided burden, also called the end-of-life or closed loop approximation method: inputs are counted as if virgin, and you get a credit for the virgin material avoided by recycling your product at end of life.",
+        "The GHG Protocol Product Standard describes both. ISO 14067 points to the ISO 14044 rules for allocation in reuse and recycling."
+      ]
+    },
+    {
+      "h": "Which one to choose",
+      "ol": [
+        "If a product category rule, sector method or your buyer specifies a method, use it.",
+        "If you sell on recycled content, such as recycled PET or secondary aluminium, cut-off rewards what you actually buy.",
+        "If the material is recycled at high rates in a closed loop, such as steel or aluminium in building products, some sector methods use an end-of-life approach; follow that sector's convention.",
+        "If nobody specifies, cut-off is simpler to evidence, because it rests on purchase records rather than assumptions about future recycling."
+      ]
+    },
+    {
+      "h": "Rules that apply either way",
+      "ul": [
+        "Do not use a recycled content benefit and an end-of-life credit on the same material in one result.",
+        "Evidence the recycled share with supplier declarations or chain of custody records, not a percentage from a brochure.",
+        "Report the method in the study and, where it matters to the buyer, show the result under the other method as a sensitivity check."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg aluminium part, 60% recycled input (illustrative factors)",
+    "lines": [
+      "Illustrative factors: primary aluminium 16.5 kg CO2e per kg, recycled 0.5 kg CO2e per kg",
+      "Cut-off: 0.4 x 16.5 + 0.6 x 0.5 = 6.6 + 0.3 = 6.9 kg CO2e",
+      "Simplified end-of-life method, 90% recycled after use: 0.1 x 16.5 + 0.9 x 0.5 = 1.65 + 0.45 = 2.1 kg CO2e",
+      "Same part, two results that differ by more than three times: the method must be stated"
+    ],
+    "note": "Factors are illustrative and leave out processing, yield losses and transport. The end-of-life figure depends on a future recycling rate you cannot evidence today."
+  },
+  "senseible": "Senseible's product carbon footprint calculator has separate virgin and recycled lines for materials such as steel and aluminium and accepts your own factor with a source label, which fits a cut-off approach. It does not calculate end-of-life recycling credits.",
+  "links": [
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
+    { "label": "Aluminium recycling and Scope 3 savings", "to": "/climate-intelligence/msme-aluminium-recycling-scope-3-savings" },
+    { "label": "Does scrap count as zero emissions under CBAM?", "to": "/answers/does-scrap-count-as-zero-emissions-cbam" },
+    { "label": "Mass balance or segregation", "to": "/answers/chain-of-custody-mass-balance-vs-segregation" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), recycling allocation methods", "url": "https://ghgprotocol.org/standards" },
+    { "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14044:2006, allocation for reuse and recycling", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "what-is-a-corresponding-adjustment",
+  "q": "What is a corresponding adjustment, and do Indian carbon credits need one?",
+  "title": "Corresponding adjustments explained",
+  "short": "It is an accounting entry under Article 6 of the Paris Agreement: when India authorises a reduction for use by another country or an international scheme, India adds it back to its own emissions balance so the tonne counts once. Credits for a voluntary company claim usually do not need one; credits used toward another country's target or CORSIA do.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Credit buyers, Indian project owners",
+  "sections": [
+    {
+      "h": "How the adjustment works",
+      "p": [
+        "Every country reports progress against its national target (NDC). A project in India that cuts emissions helps India's total. If that same tonne is sold to another country to count toward its target, both countries would claim it.",
+        "Under Article 6.2 and the guidance in decision 2/CMA.3, the host country first authorises the transfer. It then adds the transferred tonnes to its reported balance, and the buying country subtracts them. The pair of entries is the corresponding adjustment."
+      ]
+    },
+    {
+      "h": "When a credit needs one",
+      "ul": [
+        "Used by another country toward its NDC: yes, always.",
+        "Used for other international mitigation purposes the host has authorised, such as airline offsetting under CORSIA: yes.",
+        "Bought by a company for a voluntary claim: not required under current market practice. Integrity bodies such as the ICVCM label whether a credit is authorised, so buyers can choose.",
+        "Credits from the Article 6.4 mechanism: only units the host country authorises carry an adjustment; check the current Article 6.4 rules for how the others are issued and labelled."
+      ]
+    },
+    {
+      "h": "Where India stands",
+      "p": [
+        "India has set up a national authority for Article 6 and published a list of activities it will consider for transfer under Article 6.2. Check MoEFCC for the current authority and the current list before assuming a project type qualifies.",
+        "If your project type is not on that list, an authorisation is unlikely. Its credits can still support voluntary claims that do not say the tonne counts toward another country's target."
+      ]
+    },
+    {
+      "h": "What buyers should write in their claim",
+      "p": [
+        "With an unadjusted credit, describe the purchase as a contribution to climate action in India, not as an offset that India will not also count. With an adjusted credit, keep the letter of authorisation and the registry record showing the adjustment."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not deal with Article 6 authorisations, corresponding adjustments or carbon credit registries. It keeps the invoice-based records of a company's own emissions.",
+  "links": [
+    {
+      "label": "What to check before buying a credit",
+      "to": "/answers/what-to-check-before-buying-carbon-credits"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles",
+      "to": "/answers/what-are-icvcm-core-carbon-principles"
+    },
+    {
+      "label": "India's CCTS offset mechanism",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Paris Agreement Article 6.2 and decision 2/CMA.3 (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "MoEFCC list of activities for bilateral cooperation under Article 6.2",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles and authorisation labels",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "India's authorisation process and the Article 6.4 rules are still evolving; check the latest MoEFCC notifications and UNFCCC decisions."
+}

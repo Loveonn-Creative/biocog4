@@ -1,0 +1,68 @@
+{
+  "slug": "hsn-code-emission-factor-mapping",
+  "q": "Can I use HSN codes on invoices to assign emission factors?",
+  "title": "Mapping HSN codes to emission factors",
+  "short": "Partly. An HSN code can narrow a line to a material family and point to a shortlist of factors, but it cannot choose the factor alone. Use the description to pick the exact item and the unit to confirm the factor fits. India has no official HSN to factor table, so the mapping is your own documented method.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sustainability analysts and accountants",
+  "sections": [
+    {
+      "h": "How to build the mapping table",
+      "ol": [
+        "List the HSN prefixes that appear in a year of your purchase invoices, at the longest length you have: eight digits, then six, four and two.",
+        "For each prefix, record the material family it covers and the candidate factors, each with its unit, source, edition and valid-from date.",
+        "Match a line to the longest prefix in your table, then use the description to choose between candidates.",
+        "Accept the factor only if the invoice unit matches the factor unit, or converts without an assumption you cannot support.",
+        "If nothing fits, leave the line without a figure and flag it. A blank is honest; a wrong factor is not."
+      ]
+    },
+    {
+      "h": "Where HSN maps well and where it does not",
+      "ul": [
+        "Good: 2716 electricity goes to the grid factor in kWh. 2701 coal goes to a coal factor per kg or tonne.",
+        "Needs the description: 2710 covers diesel, petrol, kerosene, furnace oil and lubricants alike. 2711 covers both LPG and natural gas.",
+        "Weak: chapters 84 and 85 machinery and electrical goods. A pump and a transformer share chapters but not emissions, and invoices often give pieces, not mass.",
+        "Spend only: SAC codes in chapter 99 for services. There is no physical quantity, so only a spend-based factor applies."
+      ]
+    },
+    {
+      "h": "What to write in your method note",
+      "p": [
+        "State that HSN was used to classify lines and shortlist factors, not as a factor source. Name each factor's publication, such as the 2006 IPCC Guidelines for fuels, and say how ties between candidates were broken. Keep the table under version control so a factor change shows which lines it moved."
+      ]
+    },
+    {
+      "h": "Traps that produce wrong numbers",
+      "ul": [
+        "Small suppliers using a generic or wrong code: check it against the description.",
+        "Non-combustion products inside fuel headings, such as lubricating oil or bitumen, getting a combustion factor.",
+        "A factor per tonne applied to a quantity in pieces or metres.",
+        "Fuel bought for resale or stock counted as burned in the year of purchase."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two lines under the same heading",
+    "lines": [
+      "Line 1: HSN 2710, HSD (high speed diesel), 1,500 litres",
+      "Prefix 2710 shortlists liquid fuels; description says diesel; unit litres matches 2.68 kg CO2 per litre (IPCC 2006 default)",
+      "1,500 x 2.68 = 4,020 kg CO2, Scope 1",
+      "Line 2: HSN 2710, lubricating oil, 200 litres",
+      "Same prefix, but lubricant is not burned as fuel, so no combustion factor applies: flag it, no figure"
+    ],
+    "note": "The HSN code was the same for both lines. The description decided the result."
+  },
+  "senseible": "Senseible classifies each line by HSN or tax code first, at four digits and then chapter, and uses a keyword only when the unit agrees. A line gets a figure only when its quantity and unit match a published factor; Senseible does not publish an HSN to factor table for others to use.",
+  "links": [
+    { "label": "Using HSN codes to classify Scope 3", "to": "/answers/can-hsn-codes-be-used-for-scope-3" },
+    { "label": "How Senseible calculates emissions", "to": "/answers/how-senseible-calculates-emissions" },
+    { "label": "Invoice in litres, factor in kg", "to": "/answers/invoice-unit-mismatch-litres-kg" },
+    { "label": "Emission factors used in India", "to": "/emission-factors" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines for National GHG Inventories, Vol. 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions v1.0 (2013)", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

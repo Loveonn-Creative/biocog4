@@ -1,0 +1,63 @@
+{
+  "slug": "split-electricity-bill-across-months-for-carbon",
+  "q": "How do I split an electricity bill that spans two months or two financial years?",
+  "title": "Splitting a bill across months or years",
+  "short": "Split the units in proportion to days. Count the days of the billing period that fall in each month or financial year, divide each count by the total days, and multiply by the units billed. Apply the grid factor to each part. If the bill has interim meter readings, use those instead.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants and sustainability leads preparing BRSR",
+  "sections": [
+    {
+      "h": "The method, step by step",
+      "ol": [
+        "Take the billing period from the bill: the previous and present meter reading dates.",
+        "Count days in each reporting period, including both end dates once. A period from 16 March to 14 April has 30 days: 16 in March and 14 in April.",
+        "Units for each period = total units x days in that period / total days.",
+        "Emissions for each part = its units x the grid factor valid for those days. If the factor edition changes inside the bill, split by days for that too.",
+        "Check that the parts add back to the units on the bill."
+      ]
+    },
+    {
+      "h": "Why the year-end split matters most",
+      "p": [
+        "Indian companies report BRSR on the April to March financial year, and discom billing cycles rarely end on 31 March. Counting a March to April bill wholly in one year moves up to a month of electricity between years. The GHG Protocol asks for a consistent reporting period, so pick day-based proration and use it every year."
+      ]
+    },
+    {
+      "h": "When day-based splitting is not good enough",
+      "ul": [
+        "Seasonal or shift changes inside the period, such as a plant shutdown in early April: use meter readings on the cut-off date if you can take them.",
+        "Smart meter or time-of-day data with daily readings: sum the actual days instead of prorating.",
+        "Revised bills and arrears: assign corrected units to the period they relate to, not the month the revision arrived.",
+        "Overlapping bills where one ends on the day the next begins: make sure that day is counted once."
+      ]
+    },
+    {
+      "h": "What not to split",
+      "p": [
+        "Fixed charges, demand charges and taxes carry no kWh and get no emissions. Units in kVAh need conversion to kWh using the bill's own kWh reading or power factor before any factor applies. Net-metered export units are not consumption."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a bill crossing 31 March",
+    "lines": [
+      "Billing period: 16 March 2026 to 14 April 2026, 30 days; units billed 12,000 kWh",
+      "FY2025-26: 16 days, 12,000 x 16 / 30 = 6,400 kWh, x 0.710 = 4,544 kg CO2",
+      "FY2026-27: 14 days, 12,000 x 14 / 30 = 5,600 kWh, x 0.710 = 3,976 kg CO2",
+      "Check: 6,400 + 5,600 = 12,000 kWh; 4,544 + 3,976 = 8,520 kg CO2"
+    ],
+    "note": "Uses the CEA weighted average factor of 0.710 kg CO2 per kWh (version 21.0) for both parts."
+  },
+  "senseible": "Senseible reads the billing period from each bill and splits the kWh by days across reporting years, April to March for India, and across factor validity periods, as described in its white paper. It splits by days only, so if you have interim meter readings, split that bill by readings in your own working.",
+  "links": [
+    { "label": "Method and proration in the white paper", "to": "/white-paper" },
+    { "label": "Financial or calendar year for a footprint", "to": "/answers/carbon-footprint-financial-or-calendar-year" },
+    { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (revised edition, 2004)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15"
+}

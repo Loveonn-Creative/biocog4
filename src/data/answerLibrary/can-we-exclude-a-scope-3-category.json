@@ -1,0 +1,66 @@
+{
+  "slug": "can-we-exclude-a-scope-3-category",
+  "q": "Can we leave a Scope 3 category out of our inventory, and what justification do auditors and buyers accept?",
+  "title": "Can we exclude a Scope 3 category?",
+  "short": "Yes, if you disclose the exclusion and justify it. The GHG Protocol Scope 3 Standard asks you to report all relevant categories and explain any you leave out. Accepted reasons are that the category does not apply to your business, or a documented screening estimate shows it is small and no stakeholder relies on it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Mid-size exporters, suppliers to listed companies",
+  "sections": [
+    {
+      "h": "Not applicable is different from excluded",
+      "ul": [
+        "Not applicable: the activity does not exist. A company with no franchises has no Category 14; one that leases nothing out has no Category 13. Say so in one line.",
+        "Excluded: the activity exists but you chose not to calculate it. This needs a written justification.",
+        "Mixing the two up is the most common thing reviewers query."
+      ]
+    },
+    {
+      "h": "The relevance tests reviewers look for",
+      "p": [
+        "The Scope 3 Standard lists criteria for deciding which activities are relevant: size compared with your other emissions, your ability to influence them, risk exposure, what stakeholders such as buyers and lenders care about, whether the activity was outsourced, and any sector guidance. A justification that walks through these is far stronger than \"data not available\"."
+      ]
+    },
+    {
+      "h": "A justification that holds up",
+      "ol": [
+        "A screening estimate, even rough, with the method and data used.",
+        "Its share of total Scope 3 and of total emissions.",
+        "Why the other relevance tests do not make it important: no buyer asks, little influence, no outsourcing of a core activity.",
+        "When you will review it again, usually each reporting year."
+      ]
+    },
+    {
+      "h": "When you should not exclude",
+      "ul": [
+        "A buyer or lender has asked for that category by name.",
+        "It is a core activity you outsourced, such as contract manufacturing or freight.",
+        "You are setting a science-based target and need its coverage to meet SBTi's Scope 3 rules.",
+        "A screening estimate exists. Reporting it as a labelled estimate is usually better than leaving the category out."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: screening employee commuting (illustrative)",
+    "lines": [
+      "150 employees x 20 km a day round trip x 300 working days = 900,000 km",
+      "At an illustrative 0.1 kg CO2e per passenger km: 900,000 x 0.1 = 90,000 kg, 90 t CO2e",
+      "Total screened Scope 3: 12,000 t CO2e",
+      "Share: 90 divided by 12,000 = 0.75%"
+    ],
+    "note": "The factor is illustrative. With a result this small you could justify exclusion, but reporting the 90 t as an estimate costs little and closes the question."
+  },
+  "senseible": "Senseible's Scope 3 supplier evidence trail marks lines that need data, which shows where coverage is thin before you decide what to exclude. It does not decide relevance for you.",
+  "links": [
+    { "label": "Which Scope 3 categories are mandatory", "to": "/answers/which-scope-3-categories-are-mandatory" },
+    { "label": "Excluding downstream categories for intermediate products", "to": "/answers/exclude-downstream-scope-3-intermediate-products" },
+    { "label": "Scope 3 data quality tiers", "to": "/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), boundary chapter and relevance criteria", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "ISO 14064-1:2018, significance criteria for indirect emissions", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The GHG Protocol standards are under revision; check whether exclusion and relevance rules have changed."
+}

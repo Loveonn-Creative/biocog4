@@ -1,0 +1,53 @@
+{
+  "slug": "no-emission-factor-for-material",
+  "q": "What do I do when there is no emission factor for a material I buy?",
+  "title": "No emission factor for a material",
+  "short": "Work down a ladder: ask the supplier for a product footprint, then look for a published factor for the same material, then use a documented proxy for a similar material, then fall back to a spend-based factor. If the line is small, you may exclude it with a stated reason. Never leave a guessed number unlabelled.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Sustainability analysts",
+  "sections": [
+    {
+      "h": "The ladder, best option first",
+      "ol": [
+        "Supplier-specific data: an ISO 14067 product footprint or an environmental product declaration for the exact product.",
+        "A published factor for the same material from a recognised database, matched as closely as possible on technology and region.",
+        "A proxy: a factor for a similar material or a main ingredient, for example a generic polymer factor for a specialty compound. Write down why it is similar.",
+        "Spend-based: rupees spent x an economic input-output factor for that product group. Fast, but an average across many products.",
+        "Exclude, only if the purchase is small against your total and you state the reason and estimated size."
+      ]
+    },
+    {
+      "h": "How to judge a proxy",
+      "p": ["The GHG Protocol Scope 3 Standard asks you to rate data on five indicators: technological, temporal and geographical representativeness, completeness, and reliability. A proxy usually scores poorly on technology. Record the score, so readers know which figures are weak and which to replace first."]
+    },
+    {
+      "h": "Mistakes to avoid",
+      "ul": [
+        "Using a factor in the wrong unit, such as a per-kg factor on a per-piece quantity.",
+        "Mixing CO2-only factors with CO2e factors in one total without saying so.",
+        "Using spend-based factors without adjusting for currency and price year, which can move results by a large margin.",
+        "Filling the gap with zero. A line with no factor is a gap, not a zero."
+      ]
+    },
+    {
+      "h": "What to record for every gap",
+      "ul": [
+        "The material, quantity and spend.",
+        "Which rung of the ladder you used, the factor, its source and year.",
+        "The data quality rating and the plan to get better data, usually a supplier request."
+      ]
+    }
+  ],
+  "senseible": "Senseible follows a strict rule here: no factor, no figure. A purchase line with no matching factor is flagged in the supplier evidence trail and left without an emissions number, rather than filled with a guess. Choosing and documenting a proxy or spend-based factor is your decision.",
+  "links": [
+    { "label": "Selecting emission factors", "to": "/climate-intelligence/emission-factors-selection-guidance" },
+    { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" },
+    { "label": "Filling gaps in Scope 3 data", "to": "/answers/how-to-fill-gaps-in-scope-3-data" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Chapter 7: data quality", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

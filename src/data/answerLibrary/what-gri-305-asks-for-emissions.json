@@ -1,0 +1,88 @@
+{
+  "slug": "what-gri-305-asks-for-emissions",
+  "q": "What does GRI 305 require a company to disclose on emissions?",
+  "title": "What GRI 305 asks you to disclose",
+  "short": "GRI 305: Emissions 2016 has seven disclosures: Scope 1, Scope 2, Scope 3, emissions intensity, reductions, ozone-depleting substances, and NOx, SOx and other air emissions. You report the ones that fit your material topics. For the greenhouse gas items it asks for gross tonnes CO2e plus the method behind them.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "First-time GRI reporters",
+  "sections": [
+    {
+      "h": "The seven disclosures",
+      "ol": [
+        "305-1 Direct (Scope 1) GHG emissions.",
+        "305-2 Energy indirect (Scope 2) GHG emissions, location-based, plus market-based where you have contractual instruments.",
+        "305-3 Other indirect (Scope 3) GHG emissions.",
+        "305-4 GHG emissions intensity: emissions divided by a metric you choose, such as tonnes of output or revenue.",
+        "305-5 Reduction of GHG emissions achieved through initiatives.",
+        "305-6 Emissions of ozone-depleting substances.",
+        "305-7 Nitrogen oxides, sulphur oxides and other significant air emissions."
+      ]
+    },
+    {
+      "h": "What goes with each GHG figure",
+      "ul": [
+        "Gross emissions in metric tonnes of CO2 equivalent.",
+        "Gases included: CO2, CH4, N2O, HFCs, PFCs, SF6, NF3 or all.",
+        "Biogenic CO2 shown separately.",
+        "Base year, the reason for choosing it, and any recalculation.",
+        "Sources of emission factors and GWP values used.",
+        "Consolidation approach: equity share, financial control or operational control.",
+        "Standards, methods and assumptions used."
+      ]
+    },
+    {
+      "h": "Which ones a small manufacturer usually reports",
+      "p": [
+        "If climate is a material topic, report 305-1, 305-2 and 305-4 as a minimum, and 305-3 for the Scope 3 categories you have measured. Report 305-7 if you run boilers or furnaces whose stack emissions the pollution control board already monitors. 305-6 matters mainly if you make, use or service refrigerants at scale."
+      ]
+    },
+    {
+      "h": "GRI 305 is being replaced for climate",
+      "p": [
+        "GRI 102: Climate Change 2025 replaces the climate disclosures of GRI 305 for reports covering periods from 1 January 2027, and adds transition plan and target requirements. Reports for earlier periods still use GRI 305. Check GRI's current text for which other GRI 305 disclosures, such as 305-6 and 305-7, remain in force after that date."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 305-4 intensity for a foundry",
+    "lines": [
+      "Scope 1: 700 t CO2e; Scope 2: 500 t CO2e",
+      "Scope 1 and 2 together: 700 + 500 = 1,200 t CO2e",
+      "Output: 4,000 t of castings",
+      "Intensity: 1,200 / 4,000 = 0.30 t CO2e per tonne of castings"
+    ],
+    "note": "State which scopes the intensity includes; GRI asks you to say so."
+  },
+  "senseible": "Senseible produces the 305-1 and 305-2 figures from your fuel invoices and electricity bills, with factor sources on each line, and drafts a GRI report from that data that you declare yourself. Its fuel and grid factors cover CO2 only, so note that in your GHG gases statement.",
+  "links": [
+    {
+      "label": "GRI 102 climate standard changes",
+      "to": "/answers/gri-102-climate-change-standard-changes"
+    },
+    {
+      "label": "GRI in accordance or with reference",
+      "to": "/answers/gri-in-accordance-vs-with-reference"
+    },
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "ESG reporting",
+      "to": "/esg-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GRI 305: Emissions 2016",
+      "url": "https://www.globalreporting.org"
+    },
+    {
+      "label": "GRI 102: Climate Change 2025",
+      "url": "https://www.globalreporting.org"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "GRI 102 takes effect for periods from 1 January 2027; check which GRI 305 disclosures, such as 305-6 and 305-7, remain in force."
+}

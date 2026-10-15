@@ -1,0 +1,62 @@
+{
+  "slug": "gold-standard-microscale-projects",
+  "q": "What is a Gold Standard microscale project and does it cut costs for small emitters?",
+  "title": "Gold Standard microscale projects",
+  "short": "A microscale project is a small Gold Standard project, generally one expected to deliver up to 10,000 tonnes CO2e of reductions a year, that follows simplified requirements and lower fees. It can cut costs for small activities such as efficient boilers or rooftop solar, but monitoring and audit steps still apply, so very small single sites may still not pay.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, NGO developers",
+  "sections": [
+    {
+      "h": "What makes a project microscale",
+      "p": [
+        "Gold Standard sets a size limit on expected annual reductions, generally 10,000 tonnes CO2e a year, and the project must use an eligible technology and methodology. The project still has to show it is additional, meets safeguarding principles and contributes to the Sustainable Development Goals, as every Gold Standard project must."
+      ]
+    },
+    {
+      "h": "What is simpler",
+      "ul": [
+        "Lighter documentation for project design.",
+        "Simplified review and audit arrangements compared with a full-size project.",
+        "Lower registration and issuance fees under the Gold Standard fee schedule."
+      ],
+      "p": ["The exact audit route and fees are set in the current microscale requirements and fee schedule. Confirm both before you budget."]
+    },
+    {
+      "h": "What stays the same",
+      "ul": [
+        "You need monitoring data for every claimed period: meter readings, fuel invoices, output records.",
+        "Reductions must be verified before credits are issued.",
+        "You must own the right to claim the reductions, and no one else can claim them.",
+        "Stakeholder consultation and safeguards still apply."
+      ]
+    },
+    {
+      "h": "When it makes sense",
+      "p": [
+        "Microscale suits a set of similar small sites run by one developer, such as a cluster of factories switching boiler fuel, more than a single MSME acting alone. If your expected reductions are a few hundred tonnes a year, compare the fixed costs with likely revenue first, or join an existing programme."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: how many sites fit under the limit",
+    "lines": [
+      "Assumed saving per factory boiler switch: 800 t CO2e a year",
+      "Microscale limit: 10,000 t CO2e a year",
+      "Sites that fit: 10,000 / 800 = 12.5, so 12 sites",
+      "A single site at 800 t a year must cover all fixed costs from 800 credits"
+    ],
+    "note": "The per-site saving is an assumption for illustration."
+  },
+  "senseible": "Senseible keeps the activity records for each monitoring period traceable to source invoices and bills. It is not a Gold Standard auditor, developer or registry, and it does not issue Gold Standard credits.",
+  "links": [
+    { "label": "Senseible and Gold Standard compared", "to": "/vs/gold-standard" },
+    { "label": "Verra or Gold Standard?", "to": "/answers/verra-or-gold-standard-which-to-choose" },
+    { "label": "Carbon project validation cost", "to": "/answers/carbon-project-validation-cost" }
+  ],
+  "sources": [
+    { "label": "Gold Standard for the Global Goals, Principles and Requirements, and Microscale Projects requirements", "url": "https://www.goldstandard.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm the current microscale threshold, document name and fees with Gold Standard before relying on them."
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "transmission-and-distribution-losses-india-scope-3",
+  "q": "How do I calculate T&D loss emissions for Scope 3 Category 3 in India, and should I use T&D losses or AT&C losses?",
+  "title": "T&D loss emissions in India",
+  "short": "Multiply the grid electricity you consumed by India's transmission and distribution (T&D) loss rate from the CEA, then by the CEA grid factor. Use the T&D loss figure, not AT&C losses: AT&C adds unpaid bills, which is a money measure, not electricity that was generated and lost.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian manufacturers, IT and BPO campuses",
+  "sections": [
+    {
+      "h": "Why T&D losses sit in Scope 3 and not Scope 2",
+      "p": [
+        "Your Scope 2 covers the kWh your meter recorded. To deliver those units, power plants had to generate more, because some electricity is lost in lines and transformers. The GHG Protocol puts the generation of that lost electricity in Scope 3 Category 3, activity (c), for every end user.",
+        "The CEA grid factor is calculated per kWh of net generation, so applying it to your metered kWh does not already include the losses. Counting them separately is not double counting."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "The GHG Protocol Scope 3 technical guidance gives: T&D emissions = kWh consumed x T&D loss rate x grid emission factor.",
+        "A stricter version grosses up the loss, because losses are measured as a share of electricity put into the grid, not of electricity delivered: kWh consumed x loss / (1 minus loss) x factor. Either is defensible; say which one you used and keep it every year."
+      ]
+    },
+    {
+      "h": "T&D losses or AT&C losses",
+      "ul": [
+        "T&D loss (CEA): energy available to the system minus energy sold, as a share of energy available. It covers transmission and distribution and includes theft and metering errors, because that energy was generated and not billed.",
+        "AT&C loss (Ministry of Power, for discoms): T&D loss inside the discom plus the effect of bills not collected. Collection is about money, not electricity, so it does not belong in an emissions calculation.",
+        "Decision rule: use the CEA all India T&D loss percentage for the same year as your grid factor. Use a state figure only if you use it consistently and can cite it."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Rooftop solar used on site has no grid T&D loss; apply the calculation only to grid units.",
+        "Net-metered units you export are not your consumption and get no T&D figure.",
+        "If you buy power through open access, the units you consume still travelled the grid, so the same method applies."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory using 100,000 kWh of grid power a year (illustrative loss rate)",
+    "lines": [
+      "Loss rate: 18%, an illustrative figure only, not a CEA value; take the current all India T&D loss from the latest CEA General Review",
+      "Simple method: 100,000 x 0.18 x 0.710 = 12,780 kg CO2, about 12.8 t",
+      "Gross-up method: 0.18 / 0.82 = 0.2195; 100,000 x 0.2195 x 0.710 = about 15,585 kg CO2, about 15.6 t",
+      "Scope 2 for the same year: 100,000 x 0.710 = 71,000 kg CO2"
+    ],
+    "note": "The CEA factor covers CO2 only, so these results are in kg CO2."
+  },
+  "senseible": "Senseible reads consumed kWh and the billing period from your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh for Scope 2, leaving net-metered exports out. It does not calculate T&D loss emissions; you take the kWh from it and apply the loss rate yourself.",
+  "links": [
+    {
+      "label": "Full Scope 3 Category 3 in India",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Scope 2 for manufacturers in India",
+      "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 3",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "CEA General Review, All India Electricity Statistics (T&D losses)",
+      "url": "https://cea.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The all India T&D loss percentage changes every year and differs by state; confirm the latest CEA General Review figure."
+}

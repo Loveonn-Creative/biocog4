@@ -1,0 +1,65 @@
+{
+  "slug": "how-to-read-gwp-on-an-epd",
+  "q": "How do I read the GWP figures on an EPD: GWP-total, GWP-fossil and GWP-biogenic?",
+  "title": "Reading GWP figures on an EPD",
+  "short": "Under EN 15804+A2, GWP-total is the sum of GWP-fossil, GWP-biogenic and GWP-luluc (land use change), in kg CO2e per declared unit, reported for each life cycle module. For most comparisons, use GWP-total across the same modules, and check GWP-biogenic separately, because stored carbon in timber or paper is released again at end of life.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Procurement managers, architects, contractors",
+  "sections": [
+    {
+      "h": "What each indicator means",
+      "ul": [
+        "GWP-fossil: greenhouse gases from fossil fuels and fossil materials, such as clinker production or burning gas. For steel, cement and glass this is nearly all of it.",
+        "GWP-biogenic: carbon taken up by plants and stored in the product (shown as a negative number), and its later release (positive).",
+        "GWP-luluc: emissions from land use and land use change, such as clearing forest for a plantation. Usually small.",
+        "GWP-total: the sum of the three."
+      ]
+    },
+    {
+      "h": "Read the modules, not just one number",
+      "ul": [
+        "A1 to A3: raw materials, transport to the factory and manufacturing (cradle to gate).",
+        "A4 and A5: transport to site and installation.",
+        "B1 to B7: use stage, often not declared for simple materials.",
+        "C1 to C4: end of life, where stored biogenic carbon is released.",
+        "D: benefits beyond the system boundary, such as recycling credits. Report it separately; do not add it into A to C totals."
+      ]
+    },
+    {
+      "h": "Check the unit before comparing",
+      "p": [
+        "The declared unit can be 1 kg, 1 tonne, 1 m3 or 1 m2 of a given thickness. Two EPDs can only be compared on the same functional unit, for example per m2 of wall with the same strength or insulation value. Also check that both follow the same product category rules and EN 15804 version, because A1 and A2 EPDs report climate change differently."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Comparing a negative A1 to A3 GWP-total for timber with steel, without adding module C where the biogenic carbon comes back.",
+        "Adding module D into the total and double counting recycling benefits.",
+        "Mixing per kg and per m3 values.",
+        "Treating an expired EPD as current; EPDs usually state a validity period."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a timber product EPD, per m3",
+    "lines": [
+      "A1 to A3: GWP-fossil 120, GWP-biogenic minus 700, GWP-luluc 1, so GWP-total = 120 minus 700 plus 1 = minus 579 kg CO2e",
+      "C3 and C4: GWP-biogenic plus 700, GWP-fossil 15, so module C GWP-total = 715 kg CO2e",
+      "A1 to C4 total: minus 579 plus 715 = 136 kg CO2e per m3, and biogenic carbon nets to zero"
+    ],
+    "note": "Figures are illustrative, not from a real EPD."
+  },
+  "senseible": "Senseible does not read or check third-party EPDs. Its product carbon footprint calculator and invoice records cover your own factory inputs, not supplier EPD data.",
+  "links": [
+    { "label": "What is embodied carbon A1 to A3?", "to": "/answers/what-is-embodied-carbon-a1-a3" },
+    { "label": "Embodied carbon from quantities", "to": "/answers/how-to-calculate-embodied-carbon-from-quantities" },
+    { "label": "Construction industry", "to": "/industries/construction" }
+  ],
+  "sources": [
+    { "label": "EN 15804:2012+A2:2019 core rules, with ISO 14025:2006 (Type III environmental declarations)", "url": "https://www.iso.org" },
+    { "label": "IPCC AR6 Working Group I (global warming potentials)", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+  ],
+  "reviewed": "2026-10-15"
+}

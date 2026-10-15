@@ -1,0 +1,64 @@
+{
+  "slug": "verify-sha-256-fingerprint-carbon-report",
+  "q": "What is the SHA-256 fingerprint on a carbon report, and how do I check it myself?",
+  "title": "Checking a SHA-256 fingerprint yourself",
+  "short": "A SHA-256 fingerprint is a 64 character code calculated from the exact bytes of a file. Change one byte and the code changes completely. To check it, get the original file, run a built-in command such as sha256sum, certutil or shasum, and compare your result with the code on the report. A match means it is the same file.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auditors, buyers reviewing supplier data",
+  "sections": [
+    {
+      "h": "The command for each computer",
+      "ul": [
+        "Windows (Command Prompt): certutil -hashfile invoice.pdf SHA256",
+        "Windows (PowerShell): Get-FileHash invoice.pdf -Algorithm SHA256",
+        "Mac (Terminal): shasum -a 256 invoice.pdf",
+        "Linux: sha256sum invoice.pdf"
+      ],
+      "p": ["Each prints 64 hexadecimal characters, 0 to 9 and a to f. Upper or lower case does not matter when you compare."]
+    },
+    {
+      "h": "Steps to check a report line",
+      "ol": [
+        "Ask the supplier for the original file they uploaded: the same PDF or photo, not a printout, a rescan or a copy forwarded through a chat app that recompresses images.",
+        "Run the command on that file.",
+        "Compare all 64 characters with the fingerprint in the report or audit export. If the report shows only the first characters, compare those and ask for the full export.",
+        "Record the result in your working papers."
+      ]
+    },
+    {
+      "h": "What a match proves, and what it does not",
+      "ul": [
+        "It proves the file you hold is byte for byte the file the figure was calculated from, and that it has not been edited since.",
+        "It does not prove the invoice is genuine or that the quantity on it is right. That still needs normal checks against the vendor, payment and stock records.",
+        "It only catches identical files. A second scan or photo of the same paper invoice has a different fingerprint, so duplicate checks by hash alone will not catch it."
+      ]
+    },
+    {
+      "h": "If the fingerprints do not match",
+      "p": [
+        "Most mismatches are innocent: the file was re-saved, compressed or exported again. Ask for the file exactly as uploaded. If the supplier cannot produce a file that matches, treat the line as unsupported until other evidence backs it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Test the tool on a known value",
+    "lines": [
+      "Create an empty file and run the command on it",
+      "Every correct SHA-256 tool returns e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "The three letters abc, with no line break, return ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+    ],
+    "note": "These are the standard test values for SHA-256 under NIST FIPS 180-4; if your tool returns them, it works."
+  },
+  "senseible": "Senseible records the SHA-256 fingerprint of every uploaded source file. Framework reports show the first characters next to each emission line and the audit ledger export carries them in full, so anyone holding the original file can recompute and compare. A fingerprint shows the file is unchanged, not that its contents are true.",
+  "links": [
+    { "label": "Making carbon data tamper-evident", "to": "/answers/how-to-make-carbon-data-tamper-evident" },
+    { "label": "How auditors use Senseible reports", "to": "/answers/auditors-and-senseible-reports" },
+    { "label": "Duplicate invoices and double counting", "to": "/answers/duplicate-invoices-double-counting-emissions" },
+    { "label": "Trust and security", "to": "/trust" }
+  ],
+  "sources": [
+    { "label": "NIST FIPS PUB 180-4, Secure Hash Standard (2015)", "url": "https://csrc.nist.gov" }
+  ],
+  "reviewed": "2026-10-15"
+}
