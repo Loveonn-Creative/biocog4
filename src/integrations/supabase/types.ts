@@ -1756,6 +1756,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      commit_verification: { Args: { p: Json }; Returns: Json }
       create_organization: {
         Args: { p_name: string }
         Returns: {
@@ -1779,6 +1780,15 @@ export type Database = {
       create_secure_session: {
         Args: { fingerprint: string; ip_hash?: string }
         Returns: string
+      }
+      delete_document_atomic: {
+        Args: {
+          p_actor: string
+          p_allowed: boolean
+          p_document_id: string
+          p_user_agent?: string
+        }
+        Returns: Json
       }
       get_active_context: {
         Args: never
