@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      ambassador_applications: {
+        Row: {
+          city: string
+          commitment: string
+          confirmations: Json
+          created_at: string
+          email: string
+          email_status: string
+          first_move: string
+          id: string
+          lanes: string[]
+          name: string
+          request_ip_hash: string
+          status: string
+          whatsapp: string | null
+          work_link: string | null
+        }
+        Insert: {
+          city: string
+          commitment: string
+          confirmations: Json
+          created_at?: string
+          email: string
+          email_status?: string
+          first_move: string
+          id?: string
+          lanes: string[]
+          name: string
+          request_ip_hash: string
+          status?: string
+          whatsapp?: string | null
+          work_link?: string | null
+        }
+        Update: {
+          city?: string
+          commitment?: string
+          confirmations?: Json
+          created_at?: string
+          email?: string
+          email_status?: string
+          first_move?: string
+          id?: string
+          lanes?: string[]
+          name?: string
+          request_ip_hash?: string
+          status?: string
+          whatsapp?: string | null
+          work_link?: string | null
+        }
+        Relationships: []
+      }
       billing_addresses: {
         Row: {
           address_line_1: string | null
@@ -570,6 +621,30 @@ export type Database = {
           use_case?: string
           user_id?: string | null
           website?: string | null
+        }
+        Relationships: []
+      }
+      intelligence_usage: {
+        Row: {
+          count: number
+          day: string
+          kind: string
+          subject: string
+          updated_at: string
+        }
+        Insert: {
+          count?: number
+          day: string
+          kind: string
+          subject: string
+          updated_at?: string
+        }
+        Update: {
+          count?: number
+          day?: string
+          kind?: string
+          subject?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -1581,6 +1656,29 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      intelligence_take: {
+        Args: {
+          p_day: string
+          p_kind: string
+          p_limit: number
+          p_subject: string
+          p_window_start: string
+        }
+        Returns: {
+          allowed: boolean
+          used: number
+        }[]
+      }
+      intelligence_usage_purge: { Args: never; Returns: number }
+      intelligence_used: {
+        Args: {
+          p_day: string
+          p_kind: string
+          p_subject: string
+          p_window_start: string
+        }
+        Returns: number
       }
       is_org_admin: {
         Args: { _org_id: string; _user_id: string }
