@@ -395,6 +395,123 @@ export type Database = {
           },
         ]
       }
+      compliance_ledger_duplicates_backup: {
+        Row: {
+          activity_data: number | null
+          activity_unit: string | null
+          amount: number | null
+          backed_up_at: string
+          classification_method: string | null
+          co2_kg: number
+          confidence_score: number | null
+          created_at: string | null
+          currency: string | null
+          document_hash: string
+          document_id: string | null
+          emission_category: string
+          emission_factor: number | null
+          emission_id: string | null
+          factor_source: string | null
+          fiscal_quarter: string | null
+          fiscal_year: string | null
+          green_category: string | null
+          greenwashing_risk: string | null
+          gstin: string | null
+          hsn_code: string | null
+          id: string
+          invoice_date: string | null
+          invoice_number: string | null
+          is_green_benefit: boolean | null
+          kept_ledger_id: string | null
+          methodology_version: string
+          scope: number
+          user_id: string
+          validation_failure_reason: string | null
+          validation_result: string | null
+          vendor: string | null
+          verification_id: string | null
+          verification_score: number | null
+          verification_status: string | null
+          verified_at: string | null
+        }
+        Insert: {
+          activity_data?: number | null
+          activity_unit?: string | null
+          amount?: number | null
+          backed_up_at?: string
+          classification_method?: string | null
+          co2_kg: number
+          confidence_score?: number | null
+          created_at?: string | null
+          currency?: string | null
+          document_hash: string
+          document_id?: string | null
+          emission_category: string
+          emission_factor?: number | null
+          emission_id?: string | null
+          factor_source?: string | null
+          fiscal_quarter?: string | null
+          fiscal_year?: string | null
+          green_category?: string | null
+          greenwashing_risk?: string | null
+          gstin?: string | null
+          hsn_code?: string | null
+          id?: string
+          invoice_date?: string | null
+          invoice_number?: string | null
+          is_green_benefit?: boolean | null
+          kept_ledger_id?: string | null
+          methodology_version: string
+          scope: number
+          user_id: string
+          validation_failure_reason?: string | null
+          validation_result?: string | null
+          vendor?: string | null
+          verification_id?: string | null
+          verification_score?: number | null
+          verification_status?: string | null
+          verified_at?: string | null
+        }
+        Update: {
+          activity_data?: number | null
+          activity_unit?: string | null
+          amount?: number | null
+          backed_up_at?: string
+          classification_method?: string | null
+          co2_kg?: number
+          confidence_score?: number | null
+          created_at?: string | null
+          currency?: string | null
+          document_hash?: string
+          document_id?: string | null
+          emission_category?: string
+          emission_factor?: number | null
+          emission_id?: string | null
+          factor_source?: string | null
+          fiscal_quarter?: string | null
+          fiscal_year?: string | null
+          green_category?: string | null
+          greenwashing_risk?: string | null
+          gstin?: string | null
+          hsn_code?: string | null
+          id?: string
+          invoice_date?: string | null
+          invoice_number?: string | null
+          is_green_benefit?: boolean | null
+          kept_ledger_id?: string | null
+          methodology_version?: string
+          scope?: number
+          user_id?: string
+          validation_failure_reason?: string | null
+          validation_result?: string | null
+          vendor?: string | null
+          verification_id?: string | null
+          verification_score?: number | null
+          verification_status?: string | null
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           amount: number | null
@@ -1639,6 +1756,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      commit_verification: { Args: { p: Json }; Returns: Json }
       create_organization: {
         Args: { p_name: string }
         Returns: {
@@ -1662,6 +1780,15 @@ export type Database = {
       create_secure_session: {
         Args: { fingerprint: string; ip_hash?: string }
         Returns: string
+      }
+      delete_document_atomic: {
+        Args: {
+          p_actor: string
+          p_allowed: boolean
+          p_document_id: string
+          p_user_agent?: string
+        }
+        Returns: Json
       }
       get_active_context: {
         Args: never

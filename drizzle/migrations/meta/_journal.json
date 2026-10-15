@@ -36,6 +36,20 @@
       "when": 1792049221683,
       "tag": "0004_team_seat_limits_and_member_rpcs",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792063494164,
+      "tag": "0005_compliance_ledger_dedupe",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792063689154,
+      "tag": "0006_atomic_verify_and_delete",
+      "breakpoints": true
     }
   ]
 }
