@@ -62,7 +62,7 @@ for (const c of ranked) {
     const best = inventory.map((p) => ({ p, j: jaccard(p.tok, tok) })).sort((a, b) => b.j - a.j)[0];
     // 0.5+: probably the same intent as a live page, held for a decision.
     // 0.3 to 0.5: related page; the writer must differentiate and link it.
-    if (best && best.j >= 0.5) { status = 'review'; notes.push(`likely same intent as live ${best.p.path} (${best.j.toFixed(2)})`); issues.dup_live++; }
+    if (best && best.j >= 0.5 && !c._cleared) { status = 'review'; notes.push(`likely same intent as live ${best.p.path} (${best.j.toFixed(2)})`); issues.dup_live++; }
     else if (best && best.j >= 0.3) notes.push(`related live page ${best.p.path}: differentiate and link`);
     seen.push({ slug, tok });
   }
