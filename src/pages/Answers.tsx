@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Fragment, lazy, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
@@ -9,6 +9,8 @@ import { answerMeta, STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { TwoVoices } from '@/components/doodles/Doodles';
 
 const TOPICS = Object.keys(ANSWER_TOPICS) as AnswerTopic[];
+// Only loaded for an /answers address that has no page.
+const QuestionRadar = lazy(() => import('@/components/answers/QuestionRadar'));
 
 /** Renders [label](/path) links inside answer text; everything else stays plain. */
 function RichText({ text }: { text: string }) {
@@ -173,10 +175,7 @@ const Answers = () => {
   useEffect(() => { window.scrollTo({ top: 0 }); }, [slug]);
   const meta: { title: string; description: string } = a ? answerMeta(a) : STATIC_PAGE_META['/answers'];
   const content: ReactNode = slug && !a ? (
-    <div className="container max-w-2xl mx-auto px-5 py-24 text-center">
-      <h1 className="text-3xl font-semibold">That answer has moved</h1>
-      <Link to="/answers" className="mt-6 inline-flex h-11 items-center rounded-full bg-primary px-6 font-medium text-primary-foreground">See all answers</Link>
-    </div>
+    <Suspense fallback={<div className="min-h-[60vh]" />}><QuestionRadar key={slug} slug={slug} /></Suspense>
   ) : a ? <Article a={a} /> : <Hub />;
 
   return (
