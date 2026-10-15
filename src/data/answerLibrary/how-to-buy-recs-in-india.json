@@ -1,0 +1,65 @@
+{
+  "slug": "how-to-buy-recs-in-india",
+  "q": "How do I buy RECs on IEX or PXIL as a company, and what do they cost?",
+  "title": "How to buy RECs in India",
+  "short": "Open a client account with a trading member of a power exchange such as IEX or PXIL, then bid in a REC trading session. One REC equals one MWh of renewable electricity. Under the CERC REC Regulations 2022 there is no floor or ceiling price, so the cost is the session's clearing price plus fees.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "CFOs, sustainability leads",
+  "sections": [
+    {
+      "h": "Steps to buy",
+      "ol": [
+        "Work out how many RECs you need: annual kWh divided by 1,000, rounded up.",
+        "Choose a trading member registered with IEX, PXIL or another power exchange and complete client registration and KYC.",
+        "Place a buy bid for the quantity and the maximum price you will pay in the REC session.",
+        "If your bid clears, pay the clearing price plus exchange and trading member charges.",
+        "Keep the trade confirmation and the record showing the RECs were redeemed in your name for the reporting year. That record is your evidence for a market-based Scope 2 claim."
+      ]
+    },
+    {
+      "h": "What sets the price",
+      "p": [
+        "The CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022 removed the earlier floor and forbearance prices. Prices are set by supply and demand in each session, and they can move a lot between months. Look up the latest monthly trade results published by the exchange before you budget, and note the date of the price you use."
+      ]
+    },
+    {
+      "h": "Using RECs for a market-based Scope 2 figure",
+      "ul": [
+        "Match the generation period of the RECs to your reporting year as closely as you can.",
+        "Buy only for electricity you used in India; Indian RECs do not cover sites abroad.",
+        "Report location-based Scope 2 as well. RECs change the market-based figure only.",
+        "Do not count the same RECs towards a renewable purchase obligation and a voluntary claim at once."
+      ]
+    },
+    {
+      "h": "Who can buy",
+      "p": [
+        "Obligated entities buy RECs to meet renewable purchase or consumption obligations. Voluntary buyers, such as companies making a renewable electricity claim, can also buy on the exchanges through a trading member."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: sizing a purchase",
+    "lines": [
+      "Annual electricity from discom bills: 600,000 kWh = 600 MWh",
+      "RECs needed for 100% coverage: 600",
+      "Cost = 600 x the clearing price in the session you buy in, plus fees",
+      "Location-based Scope 2 stays 600,000 x 0.710 = 426,000 kg CO2; the market-based figure can be reported as near zero for the covered units"
+    ],
+    "note": "No price is given here on purpose. REC prices change every session; use the latest dated result from the exchange."
+  },
+  "senseible": "Senseible reads the kWh from your electricity bills, which sets how many RECs you need, and reports location-based and market-based Scope 2 when you add your instrument data. It does not buy, hold or trade RECs.",
+  "links": [
+    { "label": "How the India REC mechanism works", "to": "/answers/how-does-the-india-rec-mechanism-work" },
+    { "label": "I-REC vs India REC", "to": "/answers/i-rec-vs-india-rec" },
+    { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
+    { "label": "Green energy open access in India", "to": "/climate-intelligence/green-energy-open-access-india" }
+  ],
+  "sources": [
+    { "label": "CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022, Ministry of Power", "url": "https://powermin.gov.in" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "REC prices move every trading session; quote only a dated exchange result."
+}

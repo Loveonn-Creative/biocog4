@@ -1,0 +1,54 @@
+{
+  "slug": "brsr-vs-gri-vs-issb-which-framework",
+  "q": "BRSR, GRI or ISSB: which sustainability framework does an Indian company actually need?",
+  "title": "BRSR, GRI or ISSB: which do you need?",
+  "short": "If you are among India's top 1,000 listed companies by market capitalisation, BRSR is mandatory. GRI is voluntary and suits companies whose global buyers or investors ask for an impact report. ISSB standards (IFRS S1 and S2) are not yet mandatory in India; use them when foreign investors or a parent ask for them.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian listed and unlisted companies, exporters",
+  "sections": [
+    {
+      "h": "BRSR: the legal requirement for large listed companies",
+      "p": [
+        "Regulation 34(2)(f) of the SEBI (LODR) Regulations requires the top 1,000 listed entities by market capitalisation to include a Business Responsibility and Sustainability Report in the annual report. The format came with SEBI's circular of 10 May 2021 and became mandatory from FY 2022-23.",
+        "BRSR is organised around the nine principles of the National Guidelines on Responsible Business Conduct. Its subset, BRSR Core, needs assurance or assessment on a glide path."
+      ]
+    },
+    {
+      "h": "GRI: an impact report for any company",
+      "p": [
+        "The GRI Standards cover a company's impacts on the economy, environment and people. Anyone can use them, listed or not. Many Indian exporters use GRI because European buyers and rating agencies recognise it.",
+        "You can report in accordance with GRI, which requires all of GRI 1's conditions, or with reference to GRI, which is lighter. GRI and BRSR overlap heavily on emissions, energy, water, waste and workforce data."
+      ]
+    },
+    {
+      "h": "ISSB: investor-focused climate and sustainability disclosure",
+      "p": [
+        "The ISSB issued IFRS S1 (general requirements) and IFRS S2 (climate) in June 2023. They ask what sustainability and climate risks could affect the company's cash flows and value, the investor view rather than the impact view.",
+        "India has not made them mandatory as of this review. Indian subsidiaries of groups reporting under ISSB-based rules in other countries may still be asked for the data."
+      ]
+    },
+    {
+      "h": "Which one to start with",
+      "ul": [
+        "Top 1,000 listed: BRSR first, because it is the law. Map the same data to GRI or ISSB only if a stakeholder asks.",
+        "Unlisted supplier to a top-250 listed company: expect BRSR value chain questions on energy, emissions and water; answer those with documented data.",
+        "Exporter or unlisted MSME: GRI with reference, or simply the buyer's questionnaire, is usually enough. Start with a Scope 1 and 2 inventory under the GHG Protocol, which all three frameworks use."
+      ]
+    }
+  ],
+  "senseible": "Senseible drafts BRSR, GRI and GHG Protocol sections from the bills and invoices you upload, and the drafts are self-declared until you or a provider review them. It does not decide which framework applies to you or file reports with SEBI.",
+  "links": [
+    { "label": "ESG reporting: BRSR, GRI, ISSB", "to": "/esg-reporting" },
+    { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
+    { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" },
+    { "label": "What GRI 305 asks for", "to": "/answers/what-gri-305-asks-for-emissions" }
+  ],
+  "sources": [
+    { "label": "SEBI (LODR) Regulations 2015, Regulation 34(2)(f), and circular of 10 May 2021 on BRSR format", "url": "https://www.sebi.gov.in" },
+    { "label": "GRI 1: Foundation 2021", "url": "https://www.globalreporting.org" },
+    { "label": "IFRS S1 and IFRS S2, ISSB, June 2023", "url": "https://www.ifrs.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Check whether India has announced adoption of ISSB-based standards and any change to the BRSR value chain timeline."
+}
