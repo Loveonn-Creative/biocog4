@@ -49,7 +49,7 @@ export async function splitPdf(file: File, size = MAX_PDF_PAGES): Promise<SplitR
       // Plain object layout so the server's page counter can read each part.
       const bytes = await out.save({ useObjectStreams: false });
       parts.push({
-        file: new File([bytes], `${base} (pages ${from}-${to}).pdf`, { type: 'application/pdf' }),
+        file: new File([bytes as Uint8Array<ArrayBuffer>], `${base} (pages ${from}-${to}).pdf`, { type: 'application/pdf' }),
         fromPage: from, toPage: to, totalPages: total,
       });
     }
