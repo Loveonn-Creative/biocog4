@@ -976,6 +976,24 @@ export type Database = {
         }
         Relationships: []
       }
+      organizations_max_members_backup: {
+        Row: {
+          backed_up_at: string
+          max_members: number | null
+          organization_id: string
+        }
+        Insert: {
+          backed_up_at?: string
+          max_members?: number | null
+          organization_id: string
+        }
+        Update: {
+          backed_up_at?: string
+          max_members?: number | null
+          organization_id?: string
+        }
+        Relationships: []
+      }
       partner_access: {
         Row: {
           expires_at: string | null
@@ -1621,6 +1639,26 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      create_organization: {
+        Args: { p_name: string }
+        Returns: {
+          created_at: string | null
+          id: string
+          logo_url: string | null
+          max_members: number | null
+          metadata: Json | null
+          name: string
+          owner_id: string | null
+          subscription_tier: string | null
+          updated_at: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "organizations"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       create_secure_session: {
         Args: { fingerprint: string; ip_hash?: string }
         Returns: string
@@ -1693,11 +1731,17 @@ export type Database = {
         Returns: boolean
       }
       is_trusted_db_writer: { Args: never; Returns: boolean }
+      owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
       }
+      remove_member: {
+        Args: { p_organization_id: string; p_user_id: string }
+        Returns: undefined
+      }
+      seat_limit_for_tier: { Args: { p_tier: string }; Returns: number }
       service_accept_team_invitation: {
         Args: { p_token: string; p_user_email: string; p_user_id: string }
         Returns: {
@@ -1735,6 +1779,27 @@ export type Database = {
       switch_user_context: {
         Args: { p_context_id: string; p_context_type: string }
         Returns: boolean
+      }
+      update_member_role: {
+        Args: { p_organization_id: string; p_role: string; p_user_id: string }
+        Returns: {
+          created_at: string | null
+          id: string
+          invite_expires_at: string | null
+          invite_token: string | null
+          invited_by: string | null
+          invited_email: string | null
+          joined_at: string | null
+          organization_id: string
+          role: string | null
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "organization_members"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       update_session_activity: {
         Args: { fingerprint: string; session_uuid: string }
