@@ -2,7 +2,7 @@
   "slug": "does-scrap-count-as-zero-emissions-cbam",
   "q": "Does steel or aluminium scrap count as zero embedded emissions under CBAM?",
   "title": "Is scrap zero emissions under CBAM?",
-  "short": "Under the CBAM calculation rules published so far, scrap is not a relevant precursor, so it enters your calculation with zero embedded emissions. The emissions of melting and refining it still count, and so do precursors you add, such as pig iron, DRI, ferro-alloys or primary aluminium.",
+  "short": "In the transitional-period CBAM rules, scrap was not a relevant precursor, so it carried no embedded emissions into your calculation; check the definitive-period implementing act for 2026 onward. The emissions of melting and refining it still count, and so do precursors you add, such as pig iron, DRI, ferro-alloys or primary aluminium.",
   "topic": "regulation",
   "intent": "check",
   "audience": "EAF steel mills, secondary aluminium exporters",
@@ -51,14 +51,32 @@
   },
   "senseible": "Senseible reads your scrap and precursor purchase invoices, fuel invoices and electricity bills as evidence of quantities, and its CBAM cost calculator estimates certificate costs with default values. It does not perform the installation-level CBAM emissions calculation or decide how a material is treated.",
   "links": [
-    { "label": "Embedded emissions for steel under CBAM", "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam" },
-    { "label": "Does CBAM count electricity for steel?", "to": "/answers/does-cbam-count-electricity-emissions-steel" },
-    { "label": "CBAM cost for aluminium", "to": "/cbam-cost/aluminium" },
-    { "label": "CBAM for Indian steel exporters", "to": "/solutions/cbam-steel-india" }
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    },
+    {
+      "label": "CBAM for Indian steel exporters",
+      "to": "/solutions/cbam-steel-india"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Annexes II and IV", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
-    { "label": "European Commission, CBAM legislation and guidance (calculation implementing rules)", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated, Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (calculation implementing rules)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Confirm the treatment of scrap in the definitive-period calculation implementing act and any later amendment before relying on this page."

@@ -40,7 +40,7 @@
     {
       "h": "GRI 305 is being replaced for climate",
       "p": [
-        "GRI 102: Climate Change 2025 replaces the climate disclosures of GRI 305 for reports covering periods from 1 January 2027, and adds transition plan and target requirements. Reports for earlier periods still use GRI 305."
+        "GRI 102: Climate Change 2025 replaces the climate disclosures of GRI 305 for reports covering periods from 1 January 2027, and adds transition plan and target requirements. Reports for earlier periods still use GRI 305. Check GRI's current text for which other GRI 305 disclosures, such as 305-6 and 305-7, remain in force after that date."
       ]
     }
   ],
@@ -56,14 +56,32 @@
   },
   "senseible": "Senseible produces the 305-1 and 305-2 figures from your fuel invoices and electricity bills, with factor sources on each line, and drafts a GRI report from that data that you declare yourself. Its fuel and grid factors cover CO2 only, so note that in your GHG gases statement.",
   "links": [
-    { "label": "GRI 102 climate standard changes", "to": "/answers/gri-102-climate-change-standard-changes" },
-    { "label": "GRI in accordance or with reference", "to": "/answers/gri-in-accordance-vs-with-reference" },
-    { "label": "Which carbon intensity metric to use", "to": "/answers/which-carbon-intensity-metric-to-use" },
-    { "label": "ESG reporting", "to": "/esg-reporting" }
+    {
+      "label": "GRI 102 climate standard changes",
+      "to": "/answers/gri-102-climate-change-standard-changes"
+    },
+    {
+      "label": "GRI in accordance or with reference",
+      "to": "/answers/gri-in-accordance-vs-with-reference"
+    },
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "ESG reporting",
+      "to": "/esg-reporting"
+    }
   ],
   "sources": [
-    { "label": "GRI 305: Emissions 2016", "url": "https://www.globalreporting.org" },
-    { "label": "GRI 102: Climate Change 2025", "url": "https://www.globalreporting.org" }
+    {
+      "label": "GRI 305: Emissions 2016",
+      "url": "https://www.globalreporting.org"
+    },
+    {
+      "label": "GRI 102: Climate Change 2025",
+      "url": "https://www.globalreporting.org"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "GRI 102 takes effect for periods from 1 January 2027; check which GRI 305 disclosures, such as 305-6 and 305-7, remain in force."

@@ -390,7 +390,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "do-re100-and-cdp-accept-indian-recs",
   "q": "Do RE100 and CDP accept unbundled RECs from India?",
   "title": "Do RE100 and CDP accept Indian RECs?",
-  "short": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and, from 2024, that the plant is no more than 15 years old. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
+  "short": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and the age of the generating plant. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
   "topic": "markets",
   "reviewed": "2026-10-15"
  },
@@ -454,7 +454,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "does-scrap-count-as-zero-emissions-cbam",
   "q": "Does steel or aluminium scrap count as zero embedded emissions under CBAM?",
   "title": "Is scrap zero emissions under CBAM?",
-  "short": "Under the CBAM calculation rules published so far, scrap is not a relevant precursor, so it enters your calculation with zero embedded emissions. The emissions of melting and refining it still count, and so do precursors you add, such as pig iron, DRI, ferro-alloys or primary aluminium.",
+  "short": "In the transitional-period CBAM rules, scrap was not a relevant precursor, so it carried no embedded emissions into your calculation; check the definitive-period implementing act for 2026 onward. The emissions of melting and refining it still count, and so do precursors you add, such as pig iron, DRI, ferro-alloys or primary aluminium.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
  },
@@ -1182,7 +1182,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "scope-3-category-3-transmission-losses",
   "q": "How do I calculate Scope 3 Category 3 for T&D losses and well-to-tank fuel emissions in India?",
   "title": "Scope 3 Category 3: fuel and energy",
-  "short": "Category 3 has two parts for most companies. Multiply the litres, kg or scm of fuel in your Scope 1 by well-to-tank factors, and multiply the grid kWh in your Scope 2 by the T&D loss rate and the grid factor. India publishes no official well-to-tank factors, so name the database you borrow.",
+  "short": "Category 3 has two parts for most companies. Multiply the litres, kg or scm of fuel in your Scope 1 by well-to-tank factors, and multiply the grid kWh in your Scope 2 by the T&D loss rate and the grid factor. Name the well-to-tank database you use and the country its values describe.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
  },
@@ -1198,7 +1198,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "should-i-sell-or-retire-my-carbon-credits",
   "q": "If my project earns carbon credits, should I sell them or retire them for my own claim?",
   "title": "Sell or retire your own carbon credits?",
-  "short": "If the project is inside your own operations, retiring its credits for your own claim counts the cut twice, because your inventory already shows lower emissions. Sell them if you need the money, and then stop presenting that cut as your own climate claim. Retiring for your own claim makes sense only for projects outside your boundary.",
+  "short": "If the project is inside your own operations, retiring its credits for your own claim counts the cut twice, because your inventory already shows lower emissions. Sell them if you need the money, and then do not use that cut for an offset or carbon neutral claim. Retiring for your own claim makes sense only for projects outside your boundary.",
   "topic": "markets",
   "reviewed": "2026-10-15"
  },
