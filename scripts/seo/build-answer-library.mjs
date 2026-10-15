@@ -31,12 +31,17 @@ const HYPE = /\b(delve|game[- ]changer|seamless(ly)?|cutting[- ]edge|revolutioni
 const sources = readFileSync(join(ROOT, 'docs/seo/sources.md'), 'utf8');
 const ALLOWED_URLS = new Set([...sources.matchAll(/^- (https:\/\/\S+)/gm)].map((m) => m[1]));
 
-const inventory = readFileSync(join(ROOT, 'docs/seo/url-inventory.tsv'), 'utf8').trim().split('\n').map((l) => l.split('\t'));
-const LIVE = new Set(inventory.map(([p]) => p));
-const liveTitles = new Map(inventory.map(([p, t]) => [p, (t || '').toLowerCase()]));
-
 const allFiles = existsSync(DIR) ? readdirSync(DIR).filter((f) => f.endsWith('.json')).sort() : [];
 const librarySlugs = new Set(allFiles.map((f) => basename(f, '.json')));
+
+// The inventory also lists the library's own published answers (for register
+// duplicate checks); a page is never a duplicate of its own inventory row.
+// Hand-written answers in src/data/answers.ts stay reserved.
+const handSlugs = new Set([...readFileSync(join(ROOT, 'src/data/answers.ts'), 'utf8').matchAll(/slug: '([a-z0-9-]+)'/g)].map((m) => m[1]));
+const isOwnRow = (p) => p.startsWith('/answers/') && librarySlugs.has(p.slice(9)) && !handSlugs.has(p.slice(9));
+const inventory = readFileSync(join(ROOT, 'docs/seo/url-inventory.tsv'), 'utf8').trim().split('\n').map((l) => l.split('\t'));
+const LIVE = new Set(inventory.map(([p]) => p));
+const liveTitles = new Map(inventory.filter(([p]) => !isOwnRow(p)).map(([p, t]) => [p, (t || '').toLowerCase()]));
 const planned = new Set();
 if (plannedPath) {
   for (const line of readFileSync(plannedPath, 'utf8').split('\n').slice(1)) {
@@ -59,7 +64,7 @@ function validate(file, a) {
   if (e.length) return e;
   if (a.slug !== slug) e.push(`slug "${a.slug}" does not match file name`);
   if (!SLUG_RE.test(a.slug)) e.push('slug is not a natural lowercase query (2 to 10 words)');
-  if (LIVE.has(`/answers/${a.slug}`) || LIVE.has(`/climate-intelligence/${a.slug}`)) e.push('slug already used by a live page');
+  if ((LIVE.has(`/answers/${a.slug}`) && !isOwnRow(`/answers/${a.slug}`)) || LIVE.has(`/climate-intelligence/${a.slug}`)) e.push('slug already used by a live page');
   if (a.title.length > 46) e.push(`title ${a.title.length} chars (max 46)`);
   const sw = wordCount(a.short);
   if (sw < 25 || sw > 60) e.push(`short answer ${sw} words (25 to 60)`);
