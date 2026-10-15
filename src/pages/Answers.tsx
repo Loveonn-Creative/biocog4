@@ -7,27 +7,8 @@ import { Footer } from '@/components/Footer';
 import { answers, answerBySlug, ANSWER_TOPICS, type Answer, type AnswerTopic } from '@/data/answers';
 import { answerMeta, STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { TwoVoices } from '@/components/doodles/Doodles';
-import { answerLibraryIndex } from '@/data/answerLibraryIndex';
-import { LIBRARY_TOPICS, type LibraryTopic } from '@/data/answerLibraryTypes';
 
-const LibraryArticle = lazy(() => import('@/components/answers/LibraryArticle'));
-const librarySlug = new Map(answerLibraryIndex.map((e) => [e.slug, e]));
-
-// Hub groups: the product answers first, then the answer library by topic.
-type GroupKey = AnswerTopic | `lib-${LibraryTopic}`;
-interface HubItem { slug: string; q: string; text: string; group: GroupKey }
-const GROUPS: { key: GroupKey; label: string; line: string }[] = [
-  ...(Object.keys(ANSWER_TOPICS) as AnswerTopic[]).map((t) => ({ key: t as GroupKey, ...ANSWER_TOPICS[t] })),
-  ...(Object.keys(LIBRARY_TOPICS) as LibraryTopic[])
-    .filter((t) => answerLibraryIndex.some((e) => e.topic === t))
-    .map((t) => ({ key: `lib-${t}` as GroupKey, ...LIBRARY_TOPICS[t] })),
-];
-const HUB_ITEMS: HubItem[] = [
-  ...answers.map((a) => ({ slug: a.slug, q: a.q, text: `${a.q} ${a.title} ${a.short}`, group: a.topic as GroupKey })),
-  ...answerLibraryIndex.map((e) => ({ slug: e.slug, q: e.q, text: `${e.q} ${e.title} ${e.short}`, group: `lib-${e.topic}` as GroupKey })),
-];
-// Long groups show this many until opened, so the hub stays scannable.
-const PREVIEW = 8;
+const TOPICS = Object.keys(ANSWER_TOPICS) as AnswerTopic[];
 // Only loaded for an /answers address that has no page.
 const QuestionRadar = lazy(() => import('@/components/answers/QuestionRadar'));
 
@@ -57,8 +38,7 @@ const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[^\p{L}\p
 
 const Hub = () => {
   const [query, setQuery] = useState('');
-  const [topic, setTopic] = useState<GroupKey | 'all'>('all');
-  const [open, setOpen] = useState<Set<GroupKey>>(new Set());
+  const [topic, setTopic] = useState<AnswerTopic | 'all'>('all');
   const input = useRef<HTMLInputElement>(null);
 
   // "/" jumps to search, as on most help centres.
@@ -72,8 +52,8 @@ const Hub = () => {
 
   const results = useMemo(() => {
     const terms = norm(query).split(/\s+/).filter(Boolean);
-    return HUB_ITEMS.filter(a => (topic === 'all' || a.group === topic)
-      && terms.every(t => norm(a.text).includes(t)));
+    return answers.filter(a => (topic === 'all' || a.topic === topic)
+      && terms.every(t => norm(`${a.q} ${a.title} ${a.short}`).includes(t)));
   }, [query, topic]);
 
   return (
@@ -95,10 +75,10 @@ const Hub = () => {
         </div>
         <div className="-mx-5 mt-4 overflow-x-auto px-5">
           <div role="radiogroup" aria-label="Topic" className="flex w-max gap-2">
-            {[{ key: 'all' as const, label: 'All' }, ...GROUPS].map(g => (
-              <button key={g.key} type="button" role="radio" aria-checked={topic === g.key} onClick={() => setTopic(g.key)}
-                className={`whitespace-nowrap rounded-full border px-3.5 py-1.5 text-sm transition-colors ${topic === g.key ? 'border-foreground bg-foreground text-background' : 'border-border hover:border-foreground/40'}`}>
-                {g.label}
+            {(['all', ...TOPICS] as const).map(t => (
+              <button key={t} type="button" role="radio" aria-checked={topic === t} onClick={() => setTopic(t)}
+                className={`whitespace-nowrap rounded-full border px-3.5 py-1.5 text-sm transition-colors ${topic === t ? 'border-foreground bg-foreground text-background' : 'border-border hover:border-foreground/40'}`}>
+                {t === 'all' ? 'All' : ANSWER_TOPICS[t].label}
               </button>
             ))}
           </div>
@@ -112,16 +92,12 @@ const Hub = () => {
             <p className="mt-2 text-muted-foreground">Ask us directly and we will reply within 24 hours.</p>
             <Link to="/contact" className="mt-5 inline-flex h-11 items-center rounded-full bg-primary px-6 font-medium text-primary-foreground">Ask a question</Link>
           </div>
-        ) : GROUPS.filter(g => results.some(a => a.group === g.key)).map(g => {
-          const items = results.filter(a => a.group === g.key);
-          const all = open.has(g.key) || !!query.trim() || topic !== 'all';
-          const shown = all ? items : items.slice(0, PREVIEW);
-          return (
-          <div key={g.key} className="mb-12">
-            <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-primary">{g.label}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{g.line}</p>
+        ) : TOPICS.filter(t => results.some(a => a.topic === t)).map(t => (
+          <div key={t} className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-[0.14em] text-primary">{ANSWER_TOPICS[t].label}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{ANSWER_TOPICS[t].line}</p>
             <ul className="mt-4 divide-y divide-border border-y border-border">
-              {shown.map(a => (
+              {results.filter(a => a.topic === t).map(a => (
                 <li key={a.slug}>
                   <Link to={`/answers/${a.slug}`} className="group flex items-center justify-between gap-4 py-4">
                     <span className="text-[17px] leading-snug text-foreground group-hover:text-primary transition-colors">{a.q}</span>
@@ -130,15 +106,8 @@ const Hub = () => {
                 </li>
               ))}
             </ul>
-            {shown.length < items.length && (
-              <button type="button" onClick={() => setOpen(new Set(open).add(g.key))}
-                className="mt-4 inline-flex h-10 items-center rounded-full border border-border px-4 text-sm font-medium hover:bg-secondary">
-                Show all {items.length}
-              </button>
-            )}
           </div>
-          );
-        })}
+        ))}
       </section>
     </>
   );
@@ -203,13 +172,9 @@ const Article = ({ a }: { a: Answer }) => {
 const Answers = () => {
   const { slug } = useParams();
   const a = slug ? answerBySlug(slug) : undefined;
-  const lib = slug && !a ? librarySlug.get(slug) : undefined;
-  const page = a ?? lib;
   useEffect(() => { window.scrollTo({ top: 0 }); }, [slug]);
-  const meta: { title: string; description: string } = page ? answerMeta(page) : STATIC_PAGE_META['/answers'];
-  const content: ReactNode = lib ? (
-    <Suspense fallback={<div className="min-h-[60vh]" />}><LibraryArticle key={lib.slug} entry={lib} /></Suspense>
-  ) : slug && !a ? (
+  const meta: { title: string; description: string } = a ? answerMeta(a) : STATIC_PAGE_META['/answers'];
+  const content: ReactNode = slug && !a ? (
     <Suspense fallback={<div className="min-h-[60vh]" />}><QuestionRadar key={slug} slug={slug} /></Suspense>
   ) : a ? <Article a={a} /> : <Hub />;
 
@@ -218,10 +183,10 @@ const Answers = () => {
       <SEOHead
         title={meta.title}
         description={meta.description}
-        canonical={page ? `/answers/${page.slug}` : '/answers'}
-        noIndex={!!slug && !page}
-        breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Answers', url: '/answers' }, ...(page ? [{ name: page.title, url: `/answers/${page.slug}` }] : [])]}
-        faqSchema={page ? [{ question: page.q, answer: page.short }] : undefined}
+        canonical={a ? `/answers/${a.slug}` : '/answers'}
+        noIndex={!!slug && !a}
+        breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Answers', url: '/answers' }, ...(a ? [{ name: a.title, url: `/answers/${a.slug}` }] : [])]}
+        faqSchema={a ? [{ question: a.q, answer: a.short }] : undefined}
       />
       <Navigation />
       <main className="overflow-x-clip pt-16">{content}</main>

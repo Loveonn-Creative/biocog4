@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Radar, Send } from 'lucide-react';
 import { answers } from '@/data/answers';
-import { answerLibraryIndex } from '@/data/answerLibraryIndex';
 import { STATIC_PAGE_META } from '@/lib/seo/seoMeta';
 import { askLink, scan, slugToQuestion, type RadarHit, type RadarItem } from '@/lib/answerRadar';
 
@@ -14,7 +13,6 @@ import { askLink, scan, slugToQuestion, type RadarHit, type RadarItem } from '@/
 
 const ANSWER_ITEMS: RadarItem[] = [
   ...answers.map((a) => ({ kind: 'answer' as const, title: a.q, to: `/answers/${a.slug}`, text: `${a.title} ${a.short}` })),
-  ...answerLibraryIndex.map((e) => ({ kind: 'answer' as const, title: e.q, to: `/answers/${e.slug}`, text: `${e.title} ${e.short}` })),
   // Free tools: a question that a calculator answers should find the calculator.
   ...Object.entries(STATIC_PAGE_META)
     .filter(([path]) => path.startsWith('/calculators/') || path === '/cbam-calculator' || path === '/green-loan-check')
