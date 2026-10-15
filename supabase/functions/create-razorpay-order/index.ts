@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { reconcileUser } from "../_shared/razorpayReconcile.ts";
 import { blocksNewOrder } from "../_shared/razorpayActivation.ts";
 import { LAUNCH_PRICES, orderPrice, REGULAR_PRICING_STARTS_AT } from "../_shared/planPricing.ts";
+import { checkoutTotal, isPaymentMethod, type CheckoutTotal } from "../_shared/checkoutTotals.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -76,12 +77,18 @@ serve(async (req) => {
     // The DB CHECK constraint only allows 'basic' for Essential.
     const tier = rawTier === 'essential' ? 'basic' : rawTier;
     let cycle: 'monthly' | 'yearly' = body?.billingCycle === 'monthly' ? 'monthly' : 'yearly';
+    // UPI (no platform fee) or Razorpay card/netbanking/wallet (+4%), both +18%
+    // GST (_shared/checkoutTotals.ts). A client from before this change sends
+    // no method and is charged the list price it was shown, as before.
+    const paymentMethod = isPaymentMethod(body?.paymentMethod) ? body.paymentMethod : null;
     console.log('Creating order for:', { tier, cycle, userId });
 
     let amount: number;
     let planName: string;
     let quoteId: string | null = null;
     let seats: number | null = null;
+    // Scale quotes are charged exactly as quoted; only list-price plans get a breakdown.
+    let breakdown: CheckoutTotal | null = null;
     // Active rows (any expiry), for launch-price retention. null = not read.
     let priceHistory: { tier: string; amount: number | null; expires_at: string | null }[] | null = null;
 
@@ -157,7 +164,8 @@ serve(async (req) => {
         return json({ error: 'Could not check your current plan. Please try again in a moment.' }, 503);
       }
       const price = orderPrice(tier as 'basic' | 'pro', cycle, priceHistory ?? []);
-      amount = price.paise;
+      breakdown = paymentMethod ? checkoutTotal(price.paise, paymentMethod) : null;
+      amount = breakdown ? breakdown.totalPaise : price.paise;
       planName = price.name;
       if (price.basis !== 'launch') console.log('Order price basis:', price.basis);
     } else {
@@ -184,6 +192,12 @@ serve(async (req) => {
           user_email: userEmail,
           ...(quoteId ? { scale_quote_id: quoteId } : {}),
           ...(seats !== null ? { seats } : {}),
+          ...(breakdown ? {
+            payment_method: breakdown.method,
+            base_paise: breakdown.basePaise,
+            platform_fee_paise: breakdown.feePaise,
+            gst_paise: breakdown.gstPaise,
+          } : {}),
         },
       }),
     });
@@ -210,7 +224,10 @@ serve(async (req) => {
         tier,
         billing_cycle: cycle,
         razorpay_order_id: order.id,
-        amount: amount / 100, // Store in rupees
+        // Whole rupees (integer column): the list price. The total charged,
+        // with GST and any platform fee, is the Razorpay order amount, which
+        // activation checks the payment against.
+        amount: Math.round((breakdown ? breakdown.basePaise : amount) / 100),
         status: 'pending',
       });
 
@@ -225,6 +242,8 @@ serve(async (req) => {
       currency: order.currency,
       keyId: RAZORPAY_KEY_ID,
       planName,
+      paymentMethod: breakdown?.method ?? null,
+      breakdown,
     });
 
   } catch (error) {

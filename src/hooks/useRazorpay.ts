@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { checkoutDisplayConfig } from '@/lib/pricing/checkoutDisplay';
+import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
 
 
 const FN = (name: string) => `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/${name}`;
@@ -44,6 +46,8 @@ interface RazorpayOptions {
   tier: string;
   teamSize?: number;
   billingCycle?: 'monthly' | 'yearly';
+  /** 'upi' opens Checkout with UPI only (no platform fee); 'razorpay' shows card, netbanking and wallets. */
+  paymentMethod?: PaymentMethod;
   userId: string;
   userEmail: string;
   onSuccess: (tier: string) => void;
@@ -72,6 +76,7 @@ export const useRazorpay = () => {
     tier,
     teamSize,
     billingCycle = 'yearly',
+    paymentMethod,
     userId,
     userEmail,
     onSuccess,
@@ -91,7 +96,7 @@ export const useRazorpay = () => {
       if (!session?.access_token) {
         throw new Error('Please sign in to subscribe');
       }
-      const { status: orderStatus, data: responseData } = await authedPost('create-razorpay-order', { tier, teamSize, billingCycle });
+      const { status: orderStatus, data: responseData } = await authedPost('create-razorpay-order', { tier, teamSize, billingCycle, paymentMethod });
 
       if (orderStatus === 409 && responseData?.alreadyActive) {
         // An earlier payment was confirmed, or the account already holds this plan: no new charge.
@@ -171,6 +176,9 @@ export const useRazorpay = () => {
         prefill: {
           email: userEmail,
         },
+        // The order amount already reflects the method (no platform fee for
+        // UPI), so Checkout offers only the matching instruments.
+        ...(responseData.paymentMethod ? { config: checkoutDisplayConfig(responseData.paymentMethod) } : {}),
         theme: {
           color: '#22c55e',
         },

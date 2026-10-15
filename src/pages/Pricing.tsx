@@ -26,8 +26,11 @@ import { SubscriptionStatusBanner } from '@/components/SubscriptionStatusBanner'
 import { PlanMeter } from '@/components/pricing/PlanMeter';
 import { MAX_SAVING_PERCENT, TIER_PRICES, yearlySaving } from '@/lib/pricing/pricingMath';
 import type { PlanTier } from '../../supabase/functions/_shared/planLimits';
+import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTotals';
+import type { CheckoutPlan } from '@/components/pricing/CheckoutSummary';
 
 // Below the fold: loaded after the plans are on screen.
+const CheckoutSummary = lazy(() => import('@/components/pricing/CheckoutSummary'));
 const CustomScopeEstimator = lazy(() => import('@/components/pricing/CustomScopeEstimator').then((m) => ({ default: m.CustomScopeEstimator })));
 const AddonBuilder = lazy(() => import('@/components/pricing/AddonBuilder'));
 
@@ -74,6 +77,8 @@ const Pricing = () => {
   const [processingTier, setProcessingTier] = useState<string | null>(null);
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly');
   const [pendingMonthlyTier, setPendingMonthlyTier] = useState<string | null>(null);
+  // Plan waiting for the payment-method choice (UPI vs card) before checkout.
+  const [checkout, setCheckout] = useState<{ plan: CheckoutPlan; cycle: 'yearly' | 'monthly' } | null>(null);
   // The plan the meter recommends (or the visitor picks on a phone): ringed on
   // desktop, shown on phones, and used by the add-on estimate.
   // A link can open on one plan (/pricing?plan=scale#plans); visitors can still pick any other.
@@ -194,14 +199,23 @@ const Pricing = () => {
     // One checkout at a time: a click while Checkout is open must not start a second order.
     if (isPaymentLoading) return;
 
-    // Initiate payment
-    setProcessingTier(tierId);
+    // Paid list plans: choose UPI or card first (CheckoutSummary), then pay.
     setPendingMonthlyTier(null);
-    
+    if (tierId === 'essential' || tierId === 'pro') {
+      setCheckout({ plan: tierId, cycle });
+      return;
+    }
+  };
+
+  const payWith = async (method: PaymentMethod) => {
+    if (!checkout || !user || isPaymentLoading) return;
+    const { plan: tierId, cycle } = checkout;
+    setProcessingTier(tierId);
     try {
       await initiatePayment({
         tier: tierId,
         billingCycle: cycle,
+        paymentMethod: method,
         userId: user.id,
         userEmail: user.email || '',
         onSuccess: async () => {
@@ -215,6 +229,7 @@ const Pricing = () => {
       });
     } finally {
       setProcessingTier(null);
+      setCheckout(null);
     }
   };
 
@@ -887,6 +902,19 @@ const Pricing = () => {
         </section>
       </main>
       
+      {checkout && (
+        <Suspense fallback={null}>
+          <CheckoutSummary
+            open
+            plan={checkout.plan}
+            cycle={checkout.cycle}
+            busy={isPaymentLoading || processingTier !== null}
+            onOpenChange={(o) => { if (!o) setCheckout(null); }}
+            onPay={payWith}
+          />
+        </Suspense>
+      )}
+
       <Footer />
     </div>
   );

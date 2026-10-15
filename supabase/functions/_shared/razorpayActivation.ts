@@ -33,6 +33,14 @@ export interface RazorpayApi {
   getPayment(paymentId: string): Promise<RazorpayPayment | null>;
   listOrderPayments(orderId: string): Promise<RazorpayPayment[]>;
   capture(paymentId: string, amount: number, currency: string): Promise<RazorpayPayment | null>;
+  /**
+   * The order's amount in paise as Razorpay holds it (only our server creates
+   * orders, with the secret key). Orders that add GST and the platform fee
+   * carry paise the integer subscriptions.amount column cannot hold, so the
+   * charge is checked against this. Optional for older callers and tests;
+   * without it the stored row amount is used, as before.
+   */
+  getOrderAmount?(orderId: string): Promise<number | null>;
 }
 
 export interface SubscriptionStore {
@@ -119,7 +127,13 @@ export async function activateOrder(
   if (!row) return { ok: false, code: 'order_missing' };
   if (input.expectedUserId && row.user_id !== input.expectedUserId) return { ok: false, code: 'order_missing' };
 
-  const paise = expectedPaise(row);
+  let paise = expectedPaise(row);
+  if (deps.razorpay.getOrderAmount) {
+    const orderPaise = await deps.razorpay.getOrderAmount(input.orderId);
+    // Not readable right now: retry later rather than refuse a real payment.
+    if (orderPaise === null || !Number.isInteger(orderPaise) || orderPaise <= 0) return { ok: false, code: 'no_payment', detail: 'order amount not readable' };
+    paise = orderPaise;
+  }
 
   // Ask Razorpay, never the caller, whether this order was paid.
   let payment: RazorpayPayment | null = null;

@@ -52,6 +52,11 @@ export function razorpayApi(keyId: string, keySecret: string, fetcher: typeof fe
       // If capture failed because it was already captured, read the current state.
       return captured ?? toPayment(await call(`/payments/${encodeURIComponent(id)}`));
     },
+    async getOrderAmount(orderId) {
+      const o = await call(`/orders/${encodeURIComponent(orderId)}`);
+      const paise = Number(o?.amount);
+      return o && (o.currency ?? 'INR') === 'INR' && Number.isInteger(paise) && paise > 0 ? paise : null;
+    },
   };
 }
 
@@ -122,7 +127,7 @@ export async function recentPendingOrders(admin: any, userId: string, days = 30)
 
 /** Fire the invoice email for a newly activated plan. Never throws. */
 // deno-lint-ignore no-explicit-any
-export async function triggerInvoice(admin: any, supabaseUrl: string, serviceKey: string, a: { userId: string; tier: string; cycle: string; subscriptionId: string; amount: number; currency: string; paymentId: string; orderId: string }) {
+export async function triggerInvoice(admin: any, supabaseUrl: string, serviceKey: string, a: { userId: string; tier: string; cycle: string; subscriptionId: string; amount: number; currency: string; paymentId: string; orderId: string; platformFeePaise?: number }) {
   try {
     const { data } = await admin.auth.admin.getUserById(a.userId);
     const email = data?.user?.email;
@@ -133,6 +138,7 @@ export async function triggerInvoice(admin: any, supabaseUrl: string, serviceKey
       body: JSON.stringify({
         userId: a.userId, email, tier: a.tier, billingCycle: a.cycle, subscriptionId: a.subscriptionId,
         amount: a.amount, currency: a.currency, transactionId: a.paymentId, orderId: a.orderId,
+        ...(a.platformFeePaise ? { platformFeePaise: a.platformFeePaise } : {}),
       }),
     });
   } catch {
@@ -178,5 +184,9 @@ export async function afterActivation(admin: any, env: { supabaseUrl: string; se
   const order = await fetchOrder(env.keyId, env.keySecret, a.orderId);
   const quoteId = typeof order?.notes?.scale_quote_id === 'string' ? order.notes.scale_quote_id : null;
   if (a.tier === 'scale' && quoteId) await consumeScaleQuote(admin, quoteId, a.userId, a.orderId);
-  await triggerInvoice(admin, env.supabaseUrl, env.serviceKey, { ...a, amount: order?.amount ?? 0, currency: order?.currency ?? 'INR' });
+  const fee = Number(order?.notes?.platform_fee_paise);
+  await triggerInvoice(admin, env.supabaseUrl, env.serviceKey, {
+    ...a, amount: order?.amount ?? 0, currency: order?.currency ?? 'INR',
+    ...(Number.isInteger(fee) && fee > 0 ? { platformFeePaise: fee } : {}),
+  });
 }
