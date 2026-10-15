@@ -16,6 +16,7 @@ import { recordBillAndRecalculate } from '../_shared/scope2Record.ts';
 import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
+import { cylinderToKg, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -289,6 +290,8 @@ interface LineItem {
   sourcePage?: number;
   sourceText?: string;
   validationFlags?: string[];
+  /** Why the line was or was not counted, and the next step. */
+  guidance?: LineGuidance;
 }
 
 interface ExtractedData {
@@ -311,6 +314,10 @@ interface ExtractedData {
   avoidedCO2Kg?: number;
   /** Electricity bills only: billing details as printed, validated. */
   electricityBill?: ElectricityBillMeta;
+  /** Counts per line status and the one next step that unlocks the most. */
+  guidance?: ReturnType<typeof guideDocument>;
+  /** Printed identity of the invoice (supplier, number, date), so a second copy is counted once. */
+  invoiceKey?: string;
   confidence: number;
   validationFlags: string[];
   classificationStatus: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
@@ -414,8 +421,12 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
           ]
         }
       ],
-      max_tokens: 4096,
+      // Room for long invoices plus the model's own reasoning, which counts
+      // against the cap on current Gemini models; JSON only, little reasoning.
+      max_tokens: 16384,
       temperature: 0, // Minimize variability
+      response_format: { type: 'json_object' },
+      reasoning_effort: 'low',
     }),
   });
 
@@ -445,7 +456,10 @@ serve(async (req) => {
   }
 
   try {
-    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId } = await req.json();
+    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId, reread } = await req.json();
+    const started = Date.now();
+    // Set when the user asks to read again an invoice that produced no emissions.
+    let rereadDocId: string | null = null;
     // Set when a signed-in member uploads in an organisation workspace.
     const organizationId: string | null =
       typeof rawOrganizationId === 'string' && UUID_RE.test(rawOrganizationId) ? rawOrganizationId : null;
@@ -557,6 +571,11 @@ serve(async (req) => {
       userId = authData.user.id;
       isAuthenticated = true;
 
+      const check = fileCheck(imageBase64, mimeType);
+      if (!check.ok) {
+        return new Response(JSON.stringify({ error: check.message, code: check.code }), { status: check.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+
       if (organizationId && !(await orgCan(authClient, userId, organizationId, 'records.upload'))) {
         return new Response(
           JSON.stringify({ error: 'Your team role cannot add invoices to this organisation. Ask an admin for analyst or data manager access.' }),
@@ -603,7 +622,14 @@ serve(async (req) => {
           .limit(1)
           .maybeSingle();
 
-        if (existingDoc) {
+        // "Read again" is allowed only while the stored read produced no
+        // emissions, so a counted invoice can never change under the user.
+        if (existingDoc && reread === true) {
+          const { count: rows } = await supabase.from('emissions').select('id', { count: 'exact', head: true }).eq('document_id', existingDoc.id);
+          if ((rows ?? 0) === 0) rereadDocId = existingDoc.id;
+        }
+
+        if (existingDoc && !rereadDocId) {
           console.log(`DUPLICATE DETECTED: Hash ${documentHash.substring(0, 16)}... for user ${userId}`);
 
           // The same file always returns the result stored for it, on every
@@ -617,7 +643,7 @@ serve(async (req) => {
                 isDuplicate: true,
                 originalDocumentId: existingDoc.id,
                 documentHash,
-                message: `This invoice was already processed on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Using verified results.`
+                message: `You uploaded this invoice on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Showing the result saved then; it is counted once.`
               }),
               { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
             );
@@ -642,7 +668,7 @@ serve(async (req) => {
       // New reads this calendar month (India time), counted from the
       // invoices this user stored. Stored invoices returned above are free.
       // A failed count does not block the upload (quota, not access control).
-      if (scanLimit !== null) {
+      if (scanLimit !== null && !rereadDocId) {
         const { count, error: countError } = await authClient
           .from('documents')
           .select('id', { count: 'exact', head: true })
@@ -724,23 +750,19 @@ serve(async (req) => {
     let content: string | null = null;
     let usedModel = 'google/gemini-2.5-flash';
     let truncated = false;
+    // Last AI provider status, so a failure on our side is never reported as a bad image.
+    let providerStatus: number | undefined;
+    const failOnOurSide = (status: number | undefined) => {
+      const f = providerFailure(status);
+      return new Response(JSON.stringify({ error: f.message, code: f.code }), { status: f.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    };
 
     try {
       content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', '', 'google/gemini-2.5-flash');
       console.log('Flash model extraction complete');
     } catch (error: any) {
-      if (error.status === 429) {
-        return new Response(
-          JSON.stringify({ error: 'AI is handling a lot of requests right now. Please wait a minute and try again.' }),
-          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      if (error.status === 402) {
-        return new Response(
-          JSON.stringify({ error: 'Invoice reading is paused on our side right now. Please try again later.', code: 'ai_unavailable' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
+      if (error.status === 429 || error.status === 402) return failOnOurSide(error.status);
+      if (typeof error.status === 'number') providerStatus = error.status;
       if (error.truncated) truncated = true;
       console.error('Flash model failed:', error?.status ?? error?.name ?? 'error');
     }
@@ -749,12 +771,7 @@ serve(async (req) => {
     let ocrData: any = null;
     if (content) {
       try {
-        let jsonStr = content;
-        const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
-        if (jsonMatch) {
-          jsonStr = jsonMatch[1].trim();
-        }
-        ocrData = JSON.parse(jsonStr);
+        ocrData = parseAiJson(content);
       } catch (e) {
         console.error('Failed to parse flash response:', (e as Error)?.name ?? 'error');
       }
@@ -762,25 +779,22 @@ serve(async (req) => {
 
     // Retry with pro model if needed
     if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown')) {
+      // A second, slower read only while it can finish inside the edge limit.
+      if (Date.now() - started > 70_000) {
+        if (ocrData) { /* keep the first read */ } else if (truncated) {
+          return new Response(JSON.stringify({ error: INCOMPLETE_EXTRACTION_MESSAGE, code: 'incomplete_extraction' }), { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+        } else return failOnOurSide(providerStatus);
+      } else {
       console.log('Retrying with pro model...');
       try {
         content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', '', 'google/gemini-2.5-pro');
         usedModel = 'google/gemini-2.5-pro';
         truncated = false;
         
-        let jsonStr = content || '';
-        const jsonMatch = content?.match(/```(?:json)?\s*([\s\S]*?)```/);
-        if (jsonMatch) {
-          jsonStr = jsonMatch[1].trim();
-        }
-        ocrData = JSON.parse(jsonStr);
+        ocrData = parseAiJson(content || '');
       } catch (error: any) {
-        if (error.status === 429) {
-          return new Response(
-            JSON.stringify({ error: 'Rate limit exceeded. Please try again.' }),
-            { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-          );
-        }
+        if (error.status === 429 || error.status === 402) return failOnOurSide(error.status);
+        if (typeof error.status === 'number') providerStatus = error.status;
         console.error('Pro model failed:', error?.status ?? error?.name ?? 'error');
         if (error.truncated || (truncated && !ocrData)) {
           // The reads were cut off: refuse rather than keep a partial answer.
@@ -790,19 +804,28 @@ serve(async (req) => {
           );
         }
         if (!ocrData) {
+          // Both reads failed: if a provider refused, that is on our side.
+          if (providerStatus !== undefined) return failOnOurSide(providerStatus);
           return new Response(
-            JSON.stringify({ error: 'Failed to extract data. Please try a clearer image.' }),
-            { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+            JSON.stringify({ error: 'We could not read this file. Try a sharper photo with the whole page in view, or the original PDF.', code: 'unreadable' }),
+            { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
         }
+      }
       }
     }
 
     if (!ocrData) {
       return new Response(
-        JSON.stringify({ error: 'Failed to parse extracted data' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: 'We could not read this file. Try a sharper photo with the whole page in view, or the original PDF.', code: 'unreadable' }),
+        { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
+    }
+    // Model wording varies ("Tax Invoice", "Electricity Bill", "₹12,345"):
+    // normalise the type and read money fields as numbers, never guessing.
+    ocrData.documentType = normalizeDocumentType(ocrData.documentType);
+    for (const k of ['amount', 'taxAmount', 'subtotal']) {
+      if (ocrData[k] != null) ocrData[k] = parseAmount(ocrData[k]) ?? undefined;
     }
 
     // Check document relevance
@@ -861,16 +884,25 @@ serve(async (req) => {
       const classifiedItem: LineItem = {
         description: item.description || '',
         hsn_code: item.hsn_code,
-        quantity: Number.isFinite(Number(item.quantity)) && Number(item.quantity) > 0 ? Number(item.quantity) : undefined,
+        quantity: parseQuantity(item.quantity),
         unit: item.unit || detectUnit(item.description || '') || undefined,
-        unitPrice: item.unitPrice,
-        total: item.total,
+        unitPrice: parseAmount(item.unitPrice) ?? undefined,
+        total: parseAmount(item.total) ?? undefined,
         // Checked against the real page count; an out-of-range page is
         // reported as unknown, never moved to page 1.
         sourcePage: checkedSourcePage(item.sourcePage, pdfPageCount) ?? undefined,
         sourceText: typeof item.sourceText === 'string' ? item.sourceText.slice(0, 240) : undefined,
         validationFlags: [],
       };
+
+      // Cylinders with their size printed on the line ("LPG cylinder 19 kg",
+      // 2 Nos) are converted to kg from that printed size; nothing else is.
+      const cyl = cylinderToKg(classifiedItem);
+      if (cyl) {
+        classifiedItem.validationFlags!.push(`Converted ${classifiedItem.quantity} ${classifiedItem.unit} to ${cyl.quantity} kg using the cylinder size printed on this line`);
+        classifiedItem.quantity = cyl.quantity;
+        classifiedItem.unit = cyl.unit;
+      }
 
       if (item.sourcePage != null && classifiedItem.sourcePage === undefined) {
         classifiedItem.validationFlags!.push(`Page reference ${String(item.sourcePage).slice(0, 8)} is outside this document; page unknown`);
@@ -994,6 +1026,7 @@ serve(async (req) => {
     });
     // The same consumption printed on several lines is counted once.
     consolidateElectricity(classifiedItems, { billedKwh: printedBilledKwh(ocrData).kwh });
+    for (const item of classifiedItems) item.guidance = guideLine(item);
 
     // Gross emissions and avoided emissions are totalled separately and both
     // stay >= 0. Avoided emissions are never subtracted from gross.
@@ -1075,7 +1108,48 @@ serve(async (req) => {
       classificationStatus,
       methodology: METHODOLOGY_VERSION,
       electricityBill: electricityBillMeta(ocrData) ?? undefined,
+      guidance: guideDocument(classifiedItems),
+      invoiceKey: invoiceIdentity({
+        supplierGstin: ocrData.supplierGstin, vendor: ocrData.vendor, invoiceNumber: ocrData.invoiceNumber,
+        date: parseInvoiceDate(ocrData.date) ?? undefined, billingPeriodStart: ocrData.billingPeriodStart,
+        billingPeriodEnd: ocrData.billingPeriodEnd, unitsConsumedKwh: ocrData.unitsConsumedKwh, amount: ocrData.amount,
+      }) ?? undefined,
     };
+
+    // ============= SAME INVOICE, DIFFERENT FILE =============
+    // A second photo or a PDF of an invoice already stored is the same
+    // invoice: when that copy already has emissions, return its stored result
+    // (and its file hash, so the browser links to the stored document and its
+    // emissions) and store nothing.
+    if (supabaseUrl && supabaseKey && isAuthenticated && userId && extractedData.invoiceKey && !rereadDocId) {
+      try {
+        const db = createClient(supabaseUrl, supabaseKey);
+        const owned = (q: any) => (organizationId ? q.eq('organization_id', organizationId) : q.eq('user_id', userId));
+        const cols = 'id, document_hash, created_at, cached_result';
+        const byKey = await owned(db.from('documents').select(cols).eq('cached_result->>invoiceKey', extractedData.invoiceKey).neq('document_hash', documentHash)).limit(1);
+        let twin = (byKey.data ?? [])[0] ?? null;
+        // Invoices stored before invoiceKey existed: match number and date, then compare identities.
+        if (!twin && extractedData.invoiceNumber && parseInvoiceDate(extractedData.date)) {
+          const byNumber = await owned(db.from('documents').select(cols).eq('invoice_number', extractedData.invoiceNumber).eq('invoice_date', parseInvoiceDate(extractedData.date)).neq('document_hash', documentHash)).limit(5);
+          twin = (byNumber.data ?? []).find((d: any) => d.cached_result && invoiceIdentity({
+            supplierGstin: d.cached_result.supplierGstin, vendor: d.cached_result.vendor, invoiceNumber: d.cached_result.invoiceNumber,
+            date: parseInvoiceDate(d.cached_result.date) ?? undefined,
+          }) === extractedData.invoiceKey) ?? null;
+        }
+        // Only a copy that is already counted blocks this one; a clearer copy
+        // of an invoice that produced nothing is read and saved normally.
+        const twinCounted = twin ? ((await db.from('emissions').select('id', { count: 'exact', head: true }).eq('document_id', twin.id)).count ?? 0) > 0 : false;
+        if (twin?.cached_result && twinCounted) {
+          return new Response(JSON.stringify({
+            success: true, cached: true, isDuplicate: true, duplicateReason: 'same_invoice',
+            data: twin.cached_result, originalDocumentId: twin.id, documentHash: twin.document_hash,
+            message: `This invoice is already in your records (uploaded ${new Date(twin.created_at).toLocaleDateString('en-IN')} as a different file). It is counted once.`,
+          }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+        }
+      } catch (e) {
+        console.error('Same-invoice check failed:', (e as Error)?.name ?? 'error');
+      }
+    }
 
     console.log(`DETERMINISTIC RESULT: ${classificationStatus}, ${verifiedItems} items, ${totalCO2Kg.toFixed(2)} kgCO₂e, confidence: ${finalConfidence}%`);
 
@@ -1089,6 +1163,16 @@ serve(async (req) => {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
         // Original file as evidence.
+        if (rereadDocId) {
+          // Read again: replace the stored read of the same file (it had no
+          // emissions, see above). The file and row stay the same.
+          const { error: updError } = await supabase.from('documents').update({
+            document_type: extractedData.documentType, vendor: extractedData.vendor, invoice_number: extractedData.invoiceNumber,
+            invoice_date: parseInvoiceDate(extractedData.date), amount: extractedData.amount,
+            confidence: Math.min(extractedData.confidence, 999.99), cached_result: extractedData,
+          }).eq('id', rereadDocId);
+          if (updError) console.error('Re-read update failed:', updError.code);
+        } else {
         sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
         const { data: savedDoc, error: cacheError } = await supabase
           .from('documents')
@@ -1135,6 +1219,7 @@ serve(async (req) => {
             if (rt?.waitUntil) rt.waitUntil(work); else await work;
           }
         }
+        }
       } catch (e) {
         console.error('Cache error:', (e as Error)?.name ?? 'error');
       }
@@ -1154,6 +1239,7 @@ serve(async (req) => {
         data: extractedData,
         documentHash,
         userTier,
+        ...(rereadDocId ? { reread: true, originalDocumentId: rereadDocId } : {}),
         // Guests: nothing was stored; the browser keeps the result.
         ...(isAuthenticated ? {} : { ephemeral: true }),
       }),
@@ -1163,7 +1249,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error processing document:', error instanceof Error ? error.name : 'error');
     return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }),
+      JSON.stringify({ error: 'Something went wrong while reading this file. Please try again; nothing was counted.', code: 'internal' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }

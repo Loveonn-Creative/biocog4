@@ -103,7 +103,13 @@ interface ExtractedData {
   confidence: number;
   validationFlags?: string[];
   classificationStatus?: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
+  guidance?: { counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null };
 }
+
+// Signed-in files above this are refused by the server (inline AI requests top out near 20 MB).
+const MAX_UPLOAD_BYTES = 15 * 1024 * 1024;
+// The read runs inside a 150 s edge limit; stop waiting a little after it.
+const READ_TIMEOUT_MS = 160_000;
 
 interface ProcessingResult {
   type: "revenue" | "compliance";
@@ -229,6 +235,8 @@ const Index = () => {
   // workspaces only exist once the team migration is live; until then this is
   // always the personal workspace.
   const uploadScopeRef = useRef<(WorkspaceScope & { organizationName?: string }) | null>(null);
+  // The last file read, so "Read this file again" needs no second pick.
+  const lastFileRef = useRef<File | null>(null);
   const prepareWorkspace = async (): Promise<boolean> => {
     if (!user) {
       uploadScopeRef.current = sessionId ? { kind: 'guest', sessionId } : { kind: 'none' };
@@ -487,7 +495,12 @@ const Index = () => {
     setState("result");
   };
 
-  const processDocument = async (file: File) => {
+  const processDocument = async (file: File, opts: { reread?: boolean } = {}) => {
+    lastFileRef.current = file;
+    if (file.size > MAX_UPLOAD_BYTES) {
+      toast.error(`This file is ${(file.size / 1048576).toFixed(1)} MB; the limit is 15 MB. Take a photo of the page, or save the PDF at a lower quality.`, { duration: 7000 });
+      return;
+    }
     const pageCheck = await checkUploadPages(file);
     if (!pageCheck.ok && pageCheck.reason === 'unknown_page_count') {
       toast.error(pageCheck.message, { duration: 8000 });
@@ -530,9 +543,17 @@ const Index = () => {
 
       
       // Pass sessionId to edge function for guest user data linking
-      const { data, error } = await (await loadSupabase()).functions.invoke('extract-document', {
-        body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId() }
+      const invoke = (await loadSupabase()).functions.invoke('extract-document', {
+        body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId(), ...(opts.reread ? { reread: true } : {}) }
       });
+      const timedOut = new Promise<{ data: null; error: 'timeout' }>((resolve) => setTimeout(() => resolve({ data: null, error: 'timeout' }), READ_TIMEOUT_MS));
+      const { data, error } = await Promise.race([invoke, timedOut]) as Awaited<typeof invoke> | { data: null; error: 'timeout' };
+
+      if (error === 'timeout') {
+        toast.error('Reading this file is taking too long. Try again, or upload a photo of just the page with the totals. Nothing was counted.', { duration: 8000 });
+        setState("idle");
+        return;
+      }
 
       if (error) {
         console.error("OCR Error:", error);
@@ -541,24 +562,14 @@ const Index = () => {
         return;
       }
 
-      // Handle cached results (guest or paid users)
-      if (data?.cached) {
-        toast.info(data.message || "Using previously verified results for accuracy.", {
-          duration: 5000,
-          icon: "🔒"
-        });
-        // Continue processing with cached data
-      }
-      
-      // Handle duplicate invoice detection for authenticated users
+      // Same file, or the same invoice as a different file: the stored
+      // result is shown and the invoice stays counted once.
       if (data?.isDuplicate) {
         if (data.success && data.data) {
-          // Paid user - show cached result with notification
-          toast.info(data.message || "Using previously verified results for this invoice.", {
-            duration: 5000,
+          toast.info(data.message || "You uploaded this invoice before. Showing the saved result; it is counted once.", {
+            duration: 6000,
             icon: "🔒"
           });
-          // Continue processing with cached data
         } else {
           // Free/snapshot user - block duplicate processing
           toast.error(data.error || "This invoice was already processed.", {
@@ -604,11 +615,8 @@ const Index = () => {
         warnings.push('Invoice date not detected');
       }
       
-      // Show warnings to user
+      // Shown on the result screen with one next step, not as a stack of toasts.
       const uniqueWarnings = [...new Set(warnings)];
-      if (uniqueWarnings.length > 0) {
-        uniqueWarnings.forEach(w => toast.warning(w, { duration: 4000 }));
-      }
 
       const savedIds = user
         ? await saveEmissionToDatabase(extractedData, data.documentHash)
@@ -628,13 +636,10 @@ const Index = () => {
       if (!user) {
         toast.success('Result ready. It stays in this browser for 24 hours; sign in to save it.', { duration: 4000 });
       } else if (savedIds.emissionIds.length > 0) {
-        toast.success('Verified activity data saved successfully!', { duration: 2000 });
-      } else {
-        toast.warning('Document saved for review. No emissions were recorded without verified activity data.', { duration: 5000 });
+        toast.success(data.reread ? 'Read again and saved. Not verified yet.' : 'Saved. Not verified yet.', { duration: 2500 });
       }
       setPendingRetry(null);
 
-      const calculatedCO2 = extractedData.totalCO2Kg ?? extractedData.estimatedCO2Kg ?? 0;
       const emissionCat = getCategoryFromOCR(extractedData);
       
       const isCompliance = extractedData.documentType === 'certificate' || 
@@ -658,11 +663,6 @@ const Index = () => {
       setResult(processingResult);
       setState("result");
 
-      if (calculatedCO2 > 0) {
-        toast.success(`Extracted ${calculatedCO2.toFixed(2)} kg CO₂ from ${extractedData.documentType}`);
-      } else if (warnings.length === 0) {
-        toast.info('Document processed. No carbon emissions detected.');
-      }
 
     } catch (err) {
       console.error("Processing error:", err);
@@ -707,6 +707,10 @@ const Index = () => {
     const formattedCategory = categoryMap[category || ''] || '';
     
     return formattedCategory ? `${formattedCategory} ${formattedType}` : formattedType;
+  };
+
+  const handleReread = () => {
+    if (lastFileRef.current) void processDocument(lastFileRef.current, { reread: true });
   };
 
   const handleFileSelect = (file: File) => {
@@ -971,6 +975,7 @@ const Index = () => {
               onConfirm={handleConfirm}
               onReset={handleReset}
               hasRecords={result.recordCount !== 0}
+              onReread={user && lastFileRef.current ? handleReread : undefined}
             />
           </Suspense>
         )}

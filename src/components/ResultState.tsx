@@ -31,8 +31,13 @@ interface ExtractedData {
     factorSource?: string;
     productCategory?: string;
     avoidedCo2Kg?: number;
+    guidance?: LineGuidance;
   }>;
+  /** Server summary: lines counted, lines needing a document, and the one next step. */
+  guidance?: { counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null };
 }
+
+interface LineGuidance { status: 'counted' | 'avoided' | 'needs_data' | 'not_covered' | 'unclassified'; need: string | null; nextStep: string | null }
 
 const fmt = (n: number, dp = 2) => n.toLocaleString("en-IN", { maximumFractionDigits: dp });
 
@@ -45,9 +50,11 @@ interface ResultStateProps {
   onReset: () => void;
   /** False when no line item had a printed quantity and unit, so nothing was saved to verify. */
   hasRecords?: boolean;
+  /** Read the same file again (signed in, only while nothing from it is counted). */
+  onReread?: () => void;
 }
 
-export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, hasRecords = true }: ResultStateProps) => {
+export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, hasRecords = true, onReread }: ResultStateProps) => {
   const { isEnabled } = useTrustLayerSettings();
   const hasWarnings = extractedData?.validationFlags && extractedData.validationFlags.length > 0;
   // Gross emissions and avoided emissions are separate and both >= 0. Older
@@ -59,6 +66,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
     ? extractedData.avoidedCO2Kg
     : rawTotal < 0 ? -rawTotal : 0;
   const isGreenBenefit = co2Value === 0 && avoidedKg > 0;
+  const guide = extractedData?.guidance;
+  const lineCount = extractedData?.lineItems?.length ?? 0;
   const greenCategory = extractedData?.emissionCategory ? getGreenCategoryFromEmissionCategory(extractedData.emissionCategory) : null;
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-IN", {
@@ -104,6 +113,11 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
             </div>
             <p className="text-sm text-success/80 mt-1">CO₂e avoided, reported separately from emissions</p>
           </>
+        ) : type === "revenue" && co2Value === 0 ? (
+          <>
+            <p className="text-sm text-muted-foreground mb-2">Document read</p>
+            <p className="text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">No emissions counted yet</p>
+          </>
         ) : type === "revenue" ? (
           <>
             <p className="text-sm text-muted-foreground mb-2">Emissions recorded</p>
@@ -137,18 +151,34 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
         <MonetizationPreview pendingKg={co2Value} verifiedKg={0} />
       )}
 
-      {/* Validation Warnings */}
-      {hasWarnings && (
-        <div className="w-full p-3 rounded-lg bg-warning/10 border border-warning/30 space-y-2">
-          <div className="flex items-center gap-2 text-sm font-medium text-warning">
-            <AlertTriangle className="w-4 h-4" />
-            <span>Data Extraction Warnings</span>
-          </div>
-          <ul className="text-xs text-muted-foreground space-y-1 pl-6">
-            {extractedData?.validationFlags?.map((flag, i) => (
-              <li key={i} className="list-disc">{flag}</li>
-            ))}
-          </ul>
+      {/* What this document still needs: counts and one next step. The
+          checks behind it stay available for an auditor, folded away. */}
+      {(guide || hasWarnings) && (
+        <div className="w-full rounded-lg border border-warning/30 bg-warning/10 p-3 text-left">
+          {guide && (guide.needsData > 0 || guide.unclassified > 0 || guide.notCovered > 0) && (
+            <>
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+                <AlertTriangle className="h-4 w-4 text-warning" aria-hidden="true" />
+                <span>{guide.counted} of {lineCount} {lineCount === 1 ? 'line' : 'lines'} counted</span>
+              </div>
+              <ul className="mt-1.5 space-y-0.5 pl-6 text-xs text-muted-foreground">
+                {guide.needsData > 0 && <li className="list-disc">{guide.needsData} need a document that prints the quantity or unit</li>}
+                {guide.notCovered > 0 && <li className="list-disc">{guide.notCovered} kept as evidence (purchased goods are not converted to emissions yet)</li>}
+                {guide.unclassified > 0 && <li className="list-disc">{guide.unclassified} not recognised as fuel or electricity</li>}
+              </ul>
+              {guide.nextStep && <p className="mt-2 text-sm text-foreground"><span className="font-medium">Next step:</span> {guide.nextStep}</p>}
+            </>
+          )}
+          {hasWarnings && (
+            <details className={guide ? 'mt-2' : ''}>
+              <summary className="cursor-pointer text-xs font-medium text-muted-foreground">Checks on this document ({extractedData!.validationFlags!.length})</summary>
+              <ul className="mt-1.5 space-y-1 pl-6 text-xs text-muted-foreground">
+                {extractedData?.validationFlags?.map((flag, i) => (
+                  <li key={i} className="list-disc">{flag}</li>
+                ))}
+              </ul>
+            </details>
+          )}
         </div>
       )}
 
@@ -170,7 +200,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
                     </p>
                   ) : (
                     <p className="mt-0.5 text-muted-foreground">
-                      Not counted: {typeof li.quantity !== "number" || !li.unit ? "no quantity with a unit on this line" : "no documented emission factor for this item yet"}.
+                      Not counted: {li.guidance?.need ? `${li.guidance.need} not printed` : typeof li.quantity !== "number" || !li.unit ? "no quantity with a unit on this line" : "no documented emission factor for this item yet"}.
+                      {li.guidance?.nextStep && <span className="block">{li.guidance.nextStep}</span>}
                     </p>
                   )}
                 </li>
@@ -248,14 +279,22 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
       {/* Nothing to verify: say why, plainly, before any button */}
       {!hasRecords && (
         <p className="w-full rounded-xl border border-warning/30 bg-warning/10 px-4 py-3 text-sm text-foreground">
-          {extractedData?.validationFlags?.find(f => /not found|missing explicit activity quantity|missing explicit activity unit/i.test(f))
-            ?? 'No quantity with a unit (kWh, litres, kg) was found on this document, so there is nothing to verify yet.'}
+          Nothing from this document can be counted yet, so there is nothing to verify.{' '}
+          {guide?.nextStep ?? 'Emissions need a quantity with a unit (kWh, litres, kg) printed on the document.'}
         </p>
       )}
 
       {/* Action buttons */}
       <div className="flex flex-col gap-3 w-full">
-        <button
+        {!hasRecords && onReread && (
+          <button
+            onClick={onReread}
+            className="flex items-center justify-center gap-2 w-full py-4 px-6 bg-carbon text-carbon-foreground rounded-full font-medium transition-colors hover:bg-carbon/90"
+          >
+            Read this file again
+          </button>
+        )}
+        {hasRecords && <button
           onClick={onConfirm}
           className="
             flex items-center justify-center gap-2
@@ -269,7 +308,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
         >
           <span>Continue to Verify</span>
           <ArrowRight className="w-4 h-4" />
-        </button>
+        </button>}
         
         {co2Value > 0 && (
           <a
@@ -293,7 +332,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
             hover:text-foreground
           "
         >
-          Process another
+          {hasRecords ? 'Process another' : 'Upload a different document'}
         </button>
       </div>
     </div>

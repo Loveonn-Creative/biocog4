@@ -41,6 +41,7 @@ export function aiErrorMessage(status: number): string {
 const json = (status: number, error: string) =>
   new Response(JSON.stringify({ error }), { status, headers: { 'Content-Type': 'application/json' } });
 
+// Gemini's answer, or null when it never answered (unreachable or too slow).
 async function tryGemini(key: string, body: Record<string, unknown>): Promise<Response | null> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), GEMINI_HEADER_TIMEOUT_MS);
@@ -52,13 +53,10 @@ async function tryGemini(key: string, body: Record<string, unknown>): Promise<Re
       signal: ctrl.signal,
     });
     clearTimeout(timer);
-    if (res.ok) return res;
-    console.warn('Gemini error, switching to Lovable AI', res.status);
-    await res.body?.cancel();
-    return null;
+    return res;
   } catch (e) {
     clearTimeout(timer);
-    console.warn('Gemini unreachable or slow, switching to Lovable AI', (e as Error)?.name ?? 'error');
+    console.warn('Gemini unreachable or slow', (e as Error)?.name ?? 'error');
     return null;
   }
 }
@@ -72,14 +70,19 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
 
   if (gemini) {
     const res = await tryGemini(gemini, body);
-    if (res) return res;
-    if (!lovable) return json(503, aiErrorMessage(0));
+    if (res?.ok) return res;
+    // Without a gateway key, the caller still learns why Gemini refused
+    // (429 busy, 402 no credit) instead of a generic failure.
+    if (!lovable) return res ?? json(503, aiErrorMessage(0));
+    if (res) { console.warn('Gemini error, switching to Lovable AI', res.status); await res.body?.cancel(); }
   }
+  // Gemini-only options (reasoning effort) are not sent to the gateway.
+  const { reasoning_effort: _effort, ...gatewayBody } = body;
   try {
     const res = await fetch(GATEWAY_URL, {
       method: 'POST',
       headers: { Authorization: `Bearer ${lovable}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body, model: toGatewayModel(body.model) }),
+      body: JSON.stringify({ ...gatewayBody, model: toGatewayModel(body.model) }),
     });
     if (!res.ok) console.error('Lovable AI error', res.status);
     return res;
