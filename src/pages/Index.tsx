@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { loadSupabase } from "@/integrations/supabase/lazyClient";
 import { getLocaleMeta } from "@/lib/i18n/locales";
 import { toast } from "sonner";
-import { useSession } from "@/hooks/useSession";
+import { useAuthStatus, useSession } from "@/hooks/useSession";
 import { Files } from "lucide-react";
 import { IndiaAIBadge } from "@/components/IndiaAIBadge";
 import { buildEmissionRows } from "@/lib/mrvPersistence";
@@ -42,9 +42,18 @@ const ResultState = lazy(() =>
 );
 // Below-the-fold story, sticky phone CTA and the sample result load after
 // first paint in their own chunks.
-const HomeStory = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.HomeStory })));
-const StickyCta = lazy(() => import("@/components/home/HomeStory").then((m) => ({ default: m.StickyCta })));
-const SignedInNextStep = lazy(() => import("@/components/home/SignedInNextStep"));
+const loadHomeStory = () => import("@/components/home/HomeStory");
+const loadSignedInNextStep = () => import("@/components/home/SignedInNextStep");
+const HomeStory = lazy(() => loadHomeStory().then((m) => ({ default: m.HomeStory })));
+const StickyCta = lazy(() => loadHomeStory().then((m) => ({ default: m.StickyCta })));
+const SignedInNextStep = lazy(loadSignedInNextStep);
+// Start fetching the below-the-fold chunk with the page instead of after the
+// sign-in check: a stored Supabase sign-in token means the signed-in strip,
+// otherwise the story. A wrong guess only costs one small extra chunk.
+try {
+  const signedInHint = Object.keys(localStorage).some((k) => /^sb-.*-auth-token$/.test(k));
+  void (signedInHint ? loadSignedInNextStep() : loadHomeStory()).catch(() => {});
+} catch { /* storage blocked: the chunk loads on render instead */ }
 
 /** Opens the upload picker from anywhere on the page (must run in a click handler). */
 const openUploadPicker = () => {
@@ -212,7 +221,10 @@ const getScopeFromCategory = (category: string): number => {
 
 const Index = () => {
   const navigate = useNavigate();
-  const { sessionId, user, isLoading: sessionLoading } = useSession();
+  const { sessionId, user } = useSession();
+  // Signed in or not is known from the stored sign-in alone; the guest
+  // session check (network, up to 8 s) must not hold the page below the hero.
+  const authStatus = useAuthStatus();
   // Workspace for the current upload, resolved once per upload. Organisation
   // workspaces only exist once the team migration is live; until then this is
   // always the personal workspace.
@@ -967,9 +979,9 @@ const Index = () => {
 
       {/* Signed out: the landing story. Signed in: the next step only; the
           story is for people who have not started yet. */}
-      {!sessionLoading && (
+      {authStatus !== 'loading' && (
         <Suspense fallback={null}>
-          {user ? (
+          {authStatus === 'signedIn' ? (
             <SignedInNextStep />
           ) : (
             <>
@@ -1014,7 +1026,7 @@ const Index = () => {
           </Link>
           {/* Guests get Sign In. Signed-in users already have Verify, History
               and Open dashboard as buttons above, so no Dashboard link here. */}
-          {!user && !sessionLoading && (
+          {authStatus === 'signedOut' && (
             <Link 
               to="/auth" 
               className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
