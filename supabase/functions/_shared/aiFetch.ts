@@ -1,7 +1,6 @@
-// Routes chat-completion calls to Google's Gemini API when GEMINI_API_KEY is set,
-// otherwise to the Lovable AI Gateway. Same OpenAI-compatible request/response shape.
+// Routes all chat-completion calls to Google's Gemini API using GEMINI_API_KEY.
+// No Lovable AI Gateway fallback: if the key is missing, the call fails fast.
 const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
-const LOVABLE_URL = 'https://ai.gateway.lovable.dev/v1/chat/completions';
 
 const GEMINI_MODELS = new Set(['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-lite']);
 
@@ -23,7 +22,8 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
     if (!res.ok) console.error('Gemini API error', res.status);
     return res;
   }
-  const headers = new Headers(init.headers);
-  headers.set('Authorization', `Bearer ${Deno.env.get('LOVABLE_API_KEY') ?? ''}`);
-  return fetch(LOVABLE_URL, { ...init, headers });
+  return new Response(JSON.stringify({ error: 'GEMINI_API_KEY is not configured' }), {
+    status: 503,
+    headers: { 'Content-Type': 'application/json' },
+  });
 }
