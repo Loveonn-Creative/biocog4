@@ -71,3 +71,8 @@ Do not publish until the CEA edition of the 0.710 grid factor is confirmed (FACT
 
 ## "Same bill, different line": green-loan film (51 s, 9:16 and 16:9)
 The KYC fact (an electricity bill is accepted as address proof) is sourced to the RBI KYC Master Direction in the comments of `samebill.html`. The bill is fictional. Check the Bank Disclosure Report on the live site before publishing.
+
+## Guide 2: your first carbon report (93 s, `guide2.html`)
+- **Upload, Read, Check:** match the live site on 15 Oct 2026 (sample bill: 3,412.56 kg, which uses the live factor 0.708).
+- **Save, Use:** built from code (guest import prompt, Dashboard, Reports, Monetize).
+- **When extract-document is redeployed with 0.710:** re-check the live site and re-render.
