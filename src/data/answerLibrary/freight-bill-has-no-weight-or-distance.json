@@ -1,0 +1,67 @@
+{
+  "slug": "freight-bill-has-no-weight-or-distance",
+  "q": "My freight bill shows only the amount, not weight or distance. How do I estimate emissions?",
+  "title": "Freight bill with no weight or distance",
+  "short": "First rebuild the missing numbers from other papers for the same shipment: weight from your sales or purchase invoice and packing list, distance from the e-way bill or the two pincodes. Then use tonne-km times a mode factor. Fall back to a spend-based estimate only when that fails, and label it as one.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants, logistics managers",
+  "sections": [
+    {
+      "h": "Where to find the weight",
+      "ul": [
+        "The goods invoice for the same consignment: quantity in kg or tonnes, or units you can convert with a unit weight.",
+        "The packing list or delivery challan: gross weight per carton or pallet.",
+        "The lorry receipt (LR or bilty), if the transporter issued one separately from the bill.",
+        "Use the gross weight shipped, including packaging, not a charged or minimum weight."
+      ]
+    },
+    {
+      "h": "Where to find the distance",
+      "ul": [
+        "The e-way bill for the consignment, which records an approximate distance in km.",
+        "The from and to on the LR or invoice: compute road distance between the two pincodes with a mapping tool and record which one.",
+        "For a regular lane, measure it once and reuse the same figure, so your numbers are consistent."
+      ]
+    },
+    {
+      "h": "When nothing else works: spend-based",
+      "p": [
+        "The GHG Protocol Scope 3 guidance allows a spend-based method: freight spend x an emission factor per rupee or dollar for transport services. It is quick but rough. Freight rates move with diesel prices, lane and urgency, so the same tonnes can show very different emissions. Remove GST before multiplying, use a factor for the right currency and year, and flag the line as spend-based so you can replace it later."
+      ]
+    },
+    {
+      "h": "Stop it happening again",
+      "ol": [
+        "Ask transporters to print actual weight and distance on every bill or LR.",
+        "Keep the e-way bill and the goods invoice with the freight bill.",
+        "For regular carriers, ask for fuel used per trip or their own emission figures under ISO 14083 or the GLEC Framework, and state which default values you used where data was missing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a Mumbai to Delhi shipment",
+    "lines": [
+      "Freight bill: Rs 45,000, no weight or distance",
+      "Sales invoice: 400 cartons x 25 kg = 10,000 kg, so 10 t",
+      "Distance: about 1,400 km by road between the two pincodes (estimate from a mapping tool)",
+      "Activity: 10 x 1,400 = 14,000 tonne-km",
+      "Factor (illustrative): 0.10 kg CO2e per tonne-km, well-to-wheel",
+      "14,000 x 0.10 = 1,400 kg CO2e, about 1.4 t"
+    ],
+    "note": "The 0.10 factor is illustrative. Use a sourced road freight factor for the truck class, from the GLEC Framework or your carrier, and keep the rebuilt weight and distance with their sources."
+  },
+  "senseible": "Senseible reads freight bills and classifies transport lines as Scope 3, but when weight, distance or mode is missing it marks the line as needing data rather than guessing an emission from the amount. It does not run a spend-based estimate for you.",
+  "links": [
+    { "label": "Emissions from a freight bill", "to": "/answers/how-to-calculate-emissions-from-a-freight-bill" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "Spend-based Scope 3: GST and inflation", "to": "/answers/spend-based-scope-3-gst-inflation-currency" },
+    { "label": "GLEC Framework explained", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 4", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "ISO 14083:2023, GHG emissions arising from transport chain operations", "url": "https://www.iso.org" },
+    { "label": "Smart Freight Centre, GLEC Framework", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" }
+  ],
+  "reviewed": "2026-10-15"
+}

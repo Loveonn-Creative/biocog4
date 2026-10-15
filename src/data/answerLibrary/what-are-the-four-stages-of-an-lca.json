@@ -1,0 +1,60 @@
+{
+  "slug": "what-are-the-four-stages-of-an-lca",
+  "q": "What are the four phases of a life cycle assessment, and what does each one produce?",
+  "title": "The four phases of an LCA",
+  "short": "ISO 14040 sets four phases: goal and scope definition, inventory analysis, impact assessment and interpretation. Each produces something specific: a scope statement with a functional unit and boundary, an inventory table of inputs and outputs, impact results per category, and conclusions with their limits. The phases loop back as you learn more.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "MSME owners and sustainability leads new to LCA",
+  "sections": [
+    {
+      "h": "Phase 1: goal and scope",
+      "p": [
+        "You write down why the study is done, who will read it, and whether it will be used for public comparisons. Then you fix the functional unit (what is being compared, such as one finished flange), the system boundary (cradle to gate or cradle to grave), allocation rules, cut-off criteria and data quality needs. Output: a scope statement every later number must follow."
+      ]
+    },
+    {
+      "h": "Phase 2: inventory analysis (LCI)",
+      "p": [
+        "You collect every input and output inside the boundary per functional unit: materials, energy, fuels, water, transport, waste and emissions. Output: an inventory table in physical units, such as kg of steel, kWh, litres of fuel and kg of scrap, with the data source for each."
+      ]
+    },
+    {
+      "h": "Phase 3: impact assessment (LCIA)",
+      "p": [
+        "You convert the inventory into impact categories with published characterisation factors. Climate change in kg CO2e is one category; a full LCA usually adds others such as acidification, eutrophication and resource use. Output: a result per category per functional unit. A product carbon footprint is this phase limited to climate change."
+      ]
+    },
+    {
+      "h": "Phase 4: interpretation",
+      "p": [
+        "You find which inputs drive the result, test how sensitive it is to key assumptions, check completeness and consistency, and state conclusions, limitations and recommendations. Output: the findings section, and often a decision to go back and improve data for the biggest contributor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one forged steel flange, climate change only (illustrative)",
+    "lines": [
+      "Goal and scope: footprint of one 2.0 kg flange, cradle to gate, for a buyer enquiry",
+      "Inventory: 2.4 kg steel billet, 1.5 kWh grid electricity, 0.12 litres furnace oil, 0.4 kg scrap sent for recycling",
+      "Impact, billet: 2.4 x 2.0 kg CO2e per kg (illustrative supplier figure) = 4.8 kg CO2e",
+      "Impact, electricity: 1.5 x 0.710 = 1.065 kg CO2",
+      "Impact, furnace oil: 0.12 x 2.97 = about 0.356 kg CO2",
+      "Total: 4.8 + 1.065 + 0.356 = about 6.2 kg per flange",
+      "Interpretation: the billet is 4.8 / 6.221 = about 77% of the result, so billet source and yield matter most"
+    ],
+    "note": "The grid and fuel factors cover CO2 only, while the billet figure is CO2e; a full study would use CO2e throughout."
+  },
+  "senseible": "Senseible supplies the electricity and fuel quantities from your bills that feed the inventory phase for your own factory step. It does not run full LCAs, impact categories other than climate, or raw material footprints.",
+  "links": [
+    { "label": "LCA vs product carbon footprint", "to": "/answers/lca-vs-product-carbon-footprint" },
+    { "label": "What you can leave out of an LCA", "to": "/answers/what-can-i-leave-out-of-an-lca" },
+    { "label": "ISO 14067 vs GHG Protocol product standard", "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14040:2006, LCA principles and framework", "url": "https://www.iso.org" },
+    { "label": "ISO 14044:2006, LCA requirements and guidelines", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

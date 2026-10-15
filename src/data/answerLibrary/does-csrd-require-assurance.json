@@ -1,0 +1,66 @@
+{
+  "slug": "does-csrd-require-assurance",
+  "q": "Does CSRD require assurance of sustainability reports, and is it limited or reasonable?",
+  "title": "Does CSRD require assurance?",
+  "short": "Yes. A company reporting under CSRD must have its sustainability statement checked by a statutory auditor or, where a member state allows it, an independent assurance provider. The level is limited assurance. The 2026 Omnibus I amendment dropped the planned later move to reasonable assurance.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "CFOs and auditors",
+  "sections": [
+    {
+      "h": "What the rule says",
+      "p": [
+        "CSRD, Directive (EU) 2022/2464, amended the Accounting Directive and the Audit Directive. The statutory auditor, or another auditor or firm, gives an opinion on whether the sustainability statement complies with the reporting standards, the process used to find what to report, and the digital tagging rules. Member states may also let accredited independent assurance service providers do the work."
+      ]
+    },
+    {
+      "h": "Limited, not reasonable",
+      "p": [
+        "Limited assurance is a negative conclusion: nothing came to the assurer's attention suggesting the statement is materially misstated. The original CSRD planned to assess a move to reasonable assurance later. Directive (EU) 2026/470, part of the Omnibus I simplification signed off in February 2026, removed that plan, so limited assurance is the level that applies."
+      ]
+    },
+    {
+      "h": "Which standard the assurer uses",
+      "p": [
+        "The Commission was asked to adopt EU assurance standards or guidance. Until it does, member states apply national rules, and assurers commonly work to ISAE 3000, ISAE 3410 for greenhouse gas statements, or the newer ISSA 5000. Ask your assurer which standard they will use before the engagement starts."
+      ]
+    },
+    {
+      "h": "What this means for a non-EU supplier",
+      "p": [
+        "CSRD assurance applies to the reporting company, not to its suppliers. But the assurer will test the value chain figures the company reports, so an EU customer may ask you for evidence behind the data you send: invoices, meter readings and the factors used."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each figure linked to its source document, SHA-256 fingerprint and factor, which is the trail an assurer samples. The opinion itself must come from an auditor or independent provider; Senseible does not give one.",
+  "links": [
+    {
+      "label": "Limited vs reasonable assurance on emissions",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "Who is still in scope of CSRD",
+      "to": "/answers/who-is-still-in-scope-of-csrd"
+    },
+    {
+      "label": "ISSA 5000, ISAE 3410 or ISO 14064-3",
+      "to": "/answers/issa-5000-vs-isae-3410-vs-iso-14064-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2026/470 amending CSRD",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "Council of the EU: sign-off of the sustainability reporting simplification, 24 February 2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/"
+    },
+    {
+      "label": "Directive (EU) 2022/2464 (CSRD)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The timing of EU limited assurance standards or guidance is still open; check for Commission adoption."
+}

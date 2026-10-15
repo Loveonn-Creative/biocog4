@@ -1,0 +1,54 @@
+{
+  "slug": "cea-weighted-average-vs-combined-margin",
+  "q": "CEA weighted average vs combined margin: which grid factor do I use for my footprint?",
+  "title": "CEA weighted average or combined margin?",
+  "short": "For your carbon footprint, use the CEA weighted average emission factor. It describes the average power you actually drew from the grid. The operating, build and combined margin figures describe the power a project displaces, so they are for estimating project reductions and carbon credits, not for Scope 2.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Sustainability leads, consultants",
+  "sections": [
+    {
+      "h": "What each CEA figure means",
+      "ul": [
+        "Weighted average: total CO2 from all grid-connected stations divided by total net generation. This is the average intensity of grid power.",
+        "Operating margin: the intensity of the stations whose output changes when demand changes. It leaves out low-cost and must-run sources such as hydro, nuclear and renewables, so it is higher than the average.",
+        "Build margin: the intensity of the most recently built capacity, a proxy for what new plants are being added.",
+        "Combined margin: a weighted mix of operating and build margins, defined by the UNFCCC CDM Tool 07 for project baselines."
+      ]
+    },
+    {
+      "h": "Why your inventory uses the weighted average",
+      "p": [
+        "Location-based Scope 2 under the GHG Protocol Scope 2 Guidance asks for the average emission intensity of the grid where you consume power. The weighted average is exactly that. Using a margin figure would overstate a normal factory's Scope 2, because margins exclude the zero-carbon stations that are part of the power you buy."
+      ]
+    },
+    {
+      "h": "When a margin figure is correct",
+      "ul": [
+        "Estimating emission reductions from rooftop solar, wind or an efficiency project for a carbon credit methodology. Tool 07 sets the weights; for wind and solar it puts more weight on the operating margin.",
+        "Avoided emissions claims, such as how much grid power a project displaces. Keep these outside your inventory.",
+        "Internal analysis of how a demand cut affects grid emissions at the margin."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ol": [
+        "The factor type in words: weighted average or combined margin.",
+        "The CEA database version and the fiscal year.",
+        "Never mix types in one total. A footprint built on weighted average and a solar saving built on combined margin can sit side by side, labelled, but should not be added together."
+      ]
+    }
+  ],
+  "senseible": "Senseible uses the CEA weighted average factor, 0.710 kg CO2 per kWh from version 21.0, for location-based Scope 2 on every electricity bill. It does not apply operating, build or combined margin factors.",
+  "links": [
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
+    { "label": "CEA or IEA grid factor?", "to": "/answers/cea-vs-iea-grid-emission-factor-india" },
+    { "label": "How to calculate avoided emissions", "to": "/answers/how-to-calculate-avoided-emissions" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database for the Indian Power Sector, User Guide", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "UNFCCC CDM Tool 07, Tool to calculate the emission factor for an electricity system", "url": "https://unfccc.int" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15"
+}

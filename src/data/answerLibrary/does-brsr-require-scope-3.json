@@ -1,0 +1,54 @@
+{
+  "slug": "does-brsr-require-scope-3",
+  "q": "Does BRSR require Scope 3 emissions, and does BRSR Core?",
+  "title": "Does BRSR require Scope 3?",
+  "short": "No. In the BRSR format, Scope 1 and Scope 2 emissions are essential indicators under Principle 6, while Scope 3 is a leadership indicator, which is voluntary. BRSR Core, the subset that needs assurance or assessment, covers Scope 1 and Scope 2 and their intensity, not Scope 3.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian listed companies and their MSME suppliers",
+  "sections": [
+    {
+      "h": "Where Scope 3 sits in the BRSR format",
+      "p": [
+        "The BRSR format came with SEBI's circular of 10 May 2021 and is mandatory for the top 1,000 listed companies by market capitalisation. Section C is organised by nine principles, and each principle has essential indicators, which must be reported, and leadership indicators, which are voluntary.",
+        "Principle 6 (environment) puts total Scope 1 and Scope 2 emissions, with intensity per rupee of turnover, among the essential indicators. Total Scope 3 emissions and Scope 3 intensity appear only among the leadership indicators. A company that leaves Scope 3 out is compliant, but it should say so rather than leave the line blank."
+      ]
+    },
+    {
+      "h": "What BRSR Core adds, and what it leaves out",
+      "p": [
+        "SEBI's circular of 12 July 2023 created BRSR Core, a smaller set of key indicators that must be independently checked. Its greenhouse gas footprint attribute is Scope 1 and Scope 2 emissions and their intensity. Scope 3 is not a BRSR Core indicator.",
+        "The check applies on a glide path, starting with the top 150 listed companies for FY2023-24 and widening to the top 1,000. SEBI's circular of 28 March 2025 allowed this check to be an assessment or an assurance."
+      ]
+    },
+    {
+      "h": "The value chain disclosure is not Scope 3 reporting",
+      "p": [
+        "The July 2023 circular also asked large listed companies for BRSR Core indicators of their key upstream and downstream partners. The March 2025 circular made this voluntary for the top 250 listed companies from FY2025-26 and limited it to partners who individually make up 2% or more of purchases or sales by value.",
+        "This asks for your partners' own figures, such as their Scope 1 and 2 emissions, reported as a separate section. It is not a requirement for the listed company to report its own Scope 3 total."
+      ]
+    },
+    {
+      "h": "What this means for an MSME supplier",
+      "ul": [
+        "A listed customer that reports Scope 3 voluntarily, or collects value chain data, will ask for your Scope 1 and Scope 2 for the year, usually April to March.",
+        "Your Scope 1 comes from fuel invoices and your Scope 2 from electricity bills, so keep those for the full financial year.",
+        "Send the figures with their factor sources so the customer can show where its numbers came from if its own assessor asks."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates Scope 1 and Scope 2 from fuel and electricity invoices and keeps Scope 3 lines in a separate supplier evidence trail, so a supplier can answer a listed customer's request with sourced figures. Its BRSR output is a self-declared draft built from your uploaded data; the BRSR Core check must come from an independent provider.",
+  "links": [
+    { "label": "Senseible for listed companies", "to": "/enterprise" },
+    { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
+    { "label": "Can I report only Scope 1 and 2?", "to": "/answers/can-i-report-only-scope-1-and-2" },
+    { "label": "BRSR Core: assurance or assessment?", "to": "/answers/brsr-core-assurance-or-assessment-which" }
+  ],
+  "sources": [
+    { "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122 on BRSR Core, 12 July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" },
+    { "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2021/562, BRSR format, 10 May 2021", "url": "https://www.sebi.gov.in" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SEBI revises BRSR timelines often; recheck the glide path and value chain rules against the latest circular."
+}

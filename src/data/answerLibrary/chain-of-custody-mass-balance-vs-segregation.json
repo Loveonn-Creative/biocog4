@@ -1,0 +1,64 @@
+{
+  "slug": "chain-of-custody-mass-balance-vs-segregation",
+  "q": "What is the difference between mass balance and segregated chain of custody for low-carbon materials?",
+  "title": "Mass balance vs segregated chain of custody",
+  "short": "Segregation keeps certified or low-carbon material physically apart from ordinary material, so what you receive actually contains it. Mass balance lets the two mix and tracks the certified share on paper, so the low-carbon volume you sell never exceeds what went in over a period. The physical link is weaker, but the volumes still reconcile.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Procurement managers, EU buyers, steel and plastics suppliers",
+  "sections": [
+    {
+      "h": "The five models in ISO 22095",
+      "ul": [
+        "Identity preserved: material from one known source kept separate all the way. Strongest claim, highest cost.",
+        "Segregated: certified material from several sources may be combined, but never with uncertified material.",
+        "Controlled blending: certified and uncertified material mix in a known proportion, and that proportion is passed on with each batch.",
+        "Mass balance: material mixes freely; certified quantities are tracked in an account, and outputs are allocated certified status up to the amount that went in.",
+        "Book and claim: no physical link at all; certificates are traded separately from the material."
+      ]
+    },
+    {
+      "h": "What each lets you claim",
+      "p": [
+        "With segregation, a buyer can say the product contains the low-carbon or recycled material. With mass balance, the honest claim is that an equal quantity of certified input was bought and allocated to this product; any given batch may contain more or less of it. Claims should name the model used."
+      ]
+    },
+    {
+      "h": "Where you meet each in practice",
+      "ul": [
+        "Plastics and chemicals: recycled or bio-based feedstock often runs through shared crackers and reactors, so mass balance is common.",
+        "Steel and aluminium: scrap and primary metal are usually melted together; some producers sell a mass-balanced share of an emission cut as low-carbon steel.",
+        "Textiles: organic or recycled fibre can be segregated by lot, but blends often move to controlled blending or mass balance."
+      ]
+    },
+    {
+      "h": "What to check before relying on a mass balance claim",
+      "ol": [
+        "Which scheme certifies it, and is the site certificate valid for your supplier.",
+        "The balancing period and the allocation rules, such as whether losses in conversion are deducted.",
+        "Whether your buyer's product footprint rules accept an allocated figure in place of the physical average. Many product carbon footprint rules treat mass-balanced emission reductions cautiously, so confirm before using it in a footprint you publish.",
+        "That the same certified quantity is not also sold as a separate certificate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: recycled resin in a moulding plant",
+    "lines": [
+      "Inputs in one balancing period: 300 t recycled resin, 700 t virgin resin, all mixed",
+      "Conversion yield: 95%, so total output 1,000 x 0.95 = 950 t",
+      "Mass balance: 300 x 0.95 = 285 t of output may be sold as recycled; each batch physically holds about 30%",
+      "Segregated: only output from the line fed solely with recycled resin, again up to 285 t, may carry the claim, and it physically contains it"
+    ]
+  },
+  "senseible": "Senseible does not run chain-of-custody certification or keep mass balance accounts. It keeps the purchase invoices for certified and ordinary inputs in a supplier evidence trail, which a certifier or buyer can check against your volume records.",
+  "links": [
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" },
+    { "label": "Recycled content in a product footprint", "to": "/answers/how-to-count-recycled-content-in-product-footprint" },
+    { "label": "Using a supplier's product footprint", "to": "/answers/can-i-use-my-suppliers-product-footprint" },
+    { "label": "Supplier due diligence", "to": "/supplier-due-diligence" }
+  ],
+  "sources": [
+    { "label": "ISO 22095:2020, Chain of custody: general terminology and models", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

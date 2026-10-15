@@ -1,0 +1,53 @@
+{
+  "slug": "carbon-audit-vs-energy-audit-vs-esg-audit",
+  "q": "Carbon audit vs energy audit vs ESG audit: which one does my company need?",
+  "title": "Carbon, energy or ESG audit: which?",
+  "short": "An energy audit finds where you waste energy and money, and is mandatory for BEE designated consumers. A carbon audit measures and checks your greenhouse gas emissions, which buyers, lenders and CBAM ask for. An ESG audit reviews environmental, social and governance practices, usually because a buyer or listing rule demands it.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "MSME owners, plant managers",
+  "sections": [
+    {
+      "h": "The three side by side",
+      "ul": [
+        "Energy audit: question answered, where can we cut energy use and cost. Output, a list of savings measures with payback. Basis, ISO 50002 and, for designated consumers, the BEE energy audit regulations of 2010, carried out by an accredited energy auditor.",
+        "Carbon audit: question answered, how many tonnes of greenhouse gas we emit and whether that figure holds up. Output, a GHG inventory and, if verified, a verification statement. Basis, the GHG Protocol and ISO 14064-1, with verification under ISO 14064-3.",
+        "ESG audit: question answered, do our practices on environment, labour, safety and governance meet a buyer's or regulator's code. Output, findings against that code. Basis, the buyer's supplier code or a disclosure framework such as BRSR; there is no single ESG audit standard."
+      ]
+    },
+    {
+      "h": "Which one you need, by trigger",
+      "ul": [
+        "Notified as a BEE designated consumer: energy audit, on the mandated cycle.",
+        "A buyer asks for emissions, a product footprint or CBAM data: carbon audit.",
+        "A bank asks for impact figures for a green loan: carbon audit, often with energy data.",
+        "High energy bills and no outside request: energy audit first; the savings pay for it.",
+        "A brand's supplier code of conduct or a listed customer's BRSR value chain request: ESG audit or questionnaire."
+      ]
+    },
+    {
+      "h": "How they feed each other",
+      "p": [
+        "The same electricity and fuel bills underpin all three. An energy audit tells you where kWh and litres go; the carbon audit turns the same kWh and litres into tonnes; the ESG audit's environment section usually asks for both. Do the data collection once and keep it in one place."
+      ]
+    },
+    {
+      "h": "What none of them is",
+      "p": [
+        "A carbon audit is not a carbon credit. An energy audit report is not a verified emissions statement. An ESG audit is not a credit rating. Each answers a different question, so be clear which one the person asking actually needs before you hire anyone."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a carbon inventory from bills and invoices, which is the data side of a carbon audit. It does not carry out energy audits or ESG audits, and its Verified status means rule checks passed, not an independent auditor's opinion.",
+  "links": [
+    { "label": "Energy audit for MSMEs in India", "to": "/climate-intelligence/energy-audit-for-msme-india" },
+    { "label": "Carbon audit guide for Indian small business", "to": "/climate-intelligence/carbon-audit-small-business-india-complete-guide" },
+    { "label": "Carbon audit checklist, Singapore manufacturing", "to": "/climate-intelligence/carbon-audit-checklist-singapore-manufacturing" },
+    { "label": "Is my factory a BEE designated consumer", "to": "/answers/is-my-factory-bee-designated-consumer" }
+  ],
+  "sources": [
+    { "label": "BEE (Manner and Intervals for Conduct of Energy Audit) Regulations, 2010", "url": "https://beeindia.gov.in" },
+    { "label": "ISO 50002 Energy audits; ISO 14064-1:2018 and ISO 14064-3:2019", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

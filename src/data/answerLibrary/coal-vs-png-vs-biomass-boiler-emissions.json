@@ -1,0 +1,65 @@
+{
+  "slug": "coal-vs-png-vs-biomass-boiler-emissions",
+  "q": "Should I switch my boiler from coal to PNG or biomass, and how much CO2 does it save?",
+  "title": "Coal, PNG or biomass boiler: CO2 saved",
+  "short": "Compare fuels per unit of useful heat, not per kg. Per gigajoule of steam, a gas-fired boiler emits roughly half the CO2 of a coal-fired one. Biomass cuts reported Scope 1 by over 95%, because its CO2 is biogenic and reported outside the scopes, but only if the fuel supply is reliable and sustainable.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Plant heads in textiles, food processing and chemicals",
+  "sections": [
+    {
+      "h": "Why per kg comparisons mislead",
+      "p": [
+        "A kg of coal and a standard cubic metre of PNG carry different amounts of energy, and Indian coal varies widely by grade. Compare on CO2 per gigajoule (GJ) of fuel energy, then divide by boiler efficiency to get CO2 per GJ of useful heat.",
+        "IPCC 2006 defaults per GJ of fuel (net calorific value): about 94.6 kg CO2 for bituminous coal and 56.1 kg CO2 for natural gas. Indian coal is graded on gross calorific value (GCV); the net value is roughly 5% lower for coal and 10% lower for gas."
+      ]
+    },
+    {
+      "h": "How biomass is reported",
+      "ul": [
+        "The CO2 from burning biomass is biogenic. Under the GHG Protocol you report it separately, outside Scope 1, 2 and 3.",
+        "Methane and nitrous oxide from burning it still count in Scope 1. With IPCC defaults for wood (30 kg CH4 and 4 kg N2O per TJ) that is about 1.9 kg CO2e per GJ of fuel.",
+        "Harvesting, processing and trucking the briquettes or husk are Scope 3. Long haul distances can add up.",
+        "The low figure holds only if the biomass is a residue or sustainably grown. Fuel from land that was cleared for it does not qualify."
+      ]
+    },
+    {
+      "h": "Beyond CO2: what decides the switch",
+      "ul": [
+        "Fuel cost per GJ of useful heat, using your own quotes and measured efficiency, not per tonne prices.",
+        "PNG: is a pipeline within reach, and what does the connection cost? Gas boilers usually run at higher efficiency and need less handling.",
+        "Biomass: can you get a steady supply of consistent moisture and size all year? Wet or mixed fuel lowers efficiency and raises particulate emissions, which your state pollution board consent must allow.",
+        "Burner or boiler changes: a coal boiler rarely burns PNG without a new burner or a new boiler, and some can take biomass with modifications."
+      ]
+    },
+    {
+      "h": "A simple decision rule",
+      "p": [
+        "If gas is available at an acceptable cost per useful GJ, PNG gives a certain, easy to evidence cut of about half. If a reliable residue biomass supply exists nearby, biomass gives the deepest cut in reported Scope 1, with more operational risk. Measure boiler efficiency before and after the change, so the saving rests on your own data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 GJ of useful heat a year",
+    "lines": [
+      "Coal at 72% efficiency (estimate): 10,000 / 0.72 = 13,889 GJ of fuel x 94.6 kg = 1,314 t CO2",
+      "PNG at 88% efficiency (estimate): 10,000 / 0.88 = 11,364 GJ x 56.1 kg = 638 t CO2",
+      "Biomass at 70% efficiency (estimate): 10,000 / 0.70 = 14,286 GJ x 1.9 kg CO2e = 27 t CO2e in Scope 1",
+      "Biomass biogenic CO2, reported separately: 14,286 GJ x 112 kg (IPCC default for wood) = about 1,600 t",
+      "Saving from coal: about 676 t CO2 with PNG (51%), about 1,287 t in Scope 1 with biomass"
+    ],
+    "note": "Efficiencies are labelled estimates for typical small industrial boilers. Use your measured efficiency and the calorific values on your fuel bills."
+  },
+  "senseible": "Senseible reads coal and PNG bills and applies its IPCC-based factors (coal 2.42 kg CO2 per kg, PNG 2.05 kg CO2 per scm) to the billed quantity, so you can measure Scope 1 before and after a switch. It does not model boiler efficiency or price fuel options.",
+  "links": [
+    { "label": "Coal emission factor", "to": "/emission-factors/coal" },
+    { "label": "PNG emission factor", "to": "/emission-factors/png" },
+    { "label": "Biomass or waste fuel in a boiler", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (revised edition, 2004)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "use-phase-emissions-for-pumps-and-motors",
+  "q": "How does a pump or motor manufacturer calculate Category 11 use-phase emissions, with a worked example?",
+  "title": "Use-phase emissions for pumps and motors",
+  "short": "Multiply units sold in the year by each unit's lifetime electricity use and by the grid factor where the product will run. Lifetime use is input power times hours a year times years of life. Report the whole lifetime in the year of sale, and disclose every assumption, because this figure often dwarfs the rest of your inventory.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Pump and motor makers, exporters",
+  "sections": [
+    {
+      "h": "Why pumps and motors must report it",
+      "p": [
+        "The GHG Protocol Scope 3 Standard treats direct use-phase emissions of products that consume energy as a required part of Category 11, use of sold products. A pump or motor draws grid electricity for its whole life, so its emissions in use are direct use-phase emissions. For most makers they are far larger than factory Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "The formula and its inputs",
+      "ol": [
+        "Units sold in the reporting year, by model.",
+        "Electrical input power in kW. A motor's rated output is shaft power; divide it by the motor efficiency to get input power, or use the input figure from your test certificate.",
+        "Operating hours a year, from field studies, customer segments or a stated assumption such as an irrigation season.",
+        "Product lifetime in years, from warranty and service data or a stated assumption.",
+        "Grid emission factor of the country where the product is used: CEA for India, a local or licensed database for export markets."
+      ],
+      "p": ["Category 11 = units sold x input kW x hours a year x years x grid factor."]
+    },
+    {
+      "h": "Choices you must disclose",
+      "ul": [
+        "Most companies use today's grid factor for the whole life. If you model a cleaner grid over time, say so and show the factors used.",
+        "Split sales by market, since an export pump runs on a different grid from one sold in India.",
+        "Use the same hours and lifetime each year unless your evidence changes, and explain any change.",
+        "Category 11 counts emissions in the year the product is sold, not spread over its life."
+      ]
+    },
+    {
+      "h": "How to make the figure smaller honestly",
+      "p": [
+        "Higher efficiency models cut input power for the same duty, which reduces Category 11 directly. Selling solar pumps moves emissions to near zero for those units. Both are real reductions you can report, provided you show the per-model arithmetic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 1.5 kW pump sold in India",
+    "lines": [
+      "Assumed input power: 1.5 kW (labelled assumption; use input, not shaft, power)",
+      "Hours: 6 h a day x 300 days = 1,800 h a year",
+      "Annual use: 1.5 x 1,800 = 2,700 kWh",
+      "Lifetime use over 10 years: 2,700 x 10 = 27,000 kWh",
+      "Emissions: 27,000 x 0.710 = 19,170 kg CO2, about 19.2 t per pump",
+      "For 5,000 pumps sold in the year: 5,000 x 19.17 = 95,850 t CO2"
+    ],
+    "note": "Hours, days and lifetime are assumptions for illustration. Replace them with your own evidence and publish them with the result."
+  },
+  "senseible": "Senseible does not calculate Category 11 use-phase emissions. It can give you your factory's Scope 1 and 2 from your bills, which you report alongside this figure.",
+  "links": [
+    { "label": "Category 11 calculation, all products", "to": "/answers/use-of-sold-products-category-11-calculation" },
+    { "label": "Product carbon footprint", "to": "/answers/product-carbon-footprint" },
+    { "label": "Manufacturing Scope 3 in India", "to": "/climate-intelligence/manufacturing-scope-3-emissions-india" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance for Calculating Scope 3 Emissions, Category 11", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Hours and lifetime are labelled assumptions; factors for export markets come from licensed or local databases."
+}

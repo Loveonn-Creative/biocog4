@@ -1,0 +1,63 @@
+{
+  "slug": "indian-fiscal-year-vs-cbam-reporting-period",
+  "q": "My plant keeps accounts April to March. Which reporting period do I use for CBAM embedded emissions data?",
+  "title": "April to March accounts and CBAM periods",
+  "short": "Your EU importer declares by calendar year, January to December, so plan to give calendar-year figures. The safest route is to keep fuel, power and production data month by month, then total January to December. Use your April to March year for installation data only if the current CBAM rules and your verifier accept it, and say so.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian plant accountants and exporters",
+  "sections": [
+    {
+      "h": "What is fixed and what is not",
+      "ul": [
+        "Fixed: the authorised declarant's annual CBAM declaration covers goods imported in a calendar year. For 2026 imports it is due by 30 September 2027.",
+        "Less settled: the period over which an installation measures its emissions. Commission guidance for operators in the transitional period allowed a fiscal year in place of the calendar year under conditions. Check whether the definitive-period implementing rules keep that option before relying on it."
+      ]
+    },
+    {
+      "h": "Why monthly data solves the problem",
+      "p": [
+        "If you hold fuel, electricity and production by month, you can produce any 12-month total: your April to March books for Indian reporting, and January to December for CBAM. You avoid prorating a whole fiscal year, which goes wrong when output or the fuel mix changes across the year, for example after a furnace conversion in October."
+      ]
+    },
+    {
+      "h": "Steps for a plant on April to March books",
+      "ol": [
+        "Split every fuel invoice and electricity bill into the month it relates to, not the month it was paid.",
+        "Record production in tonnes for each month for each CBAM product.",
+        "For a calendar year, take January to March from one fiscal year and April to December from the next.",
+        "Compute specific embedded emissions: total attributed emissions divided by tonnes produced in the same months.",
+        "Write the period and method in the data you send the importer, and keep the monthly workings for the verifier."
+      ]
+    },
+    {
+      "h": "Bills that straddle months",
+      "p": [
+        "An electricity bill for 15 December to 14 January covers two calendar years. Split it by days or by meter readings if you have them. Small differences between methods are acceptable if you use one method consistently and record it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: building calendar 2026 from two fiscal years",
+    "lines": [
+      "January to March 2026 (from FY 2025-26): 3,150 t CO2 and 5,000 t of product",
+      "April to December 2026 (from FY 2026-27): 9,450 t CO2 and 15,000 t of product",
+      "Calendar 2026: 3,150 + 9,450 = 12,600 t CO2 for 5,000 + 15,000 = 20,000 t",
+      "Specific embedded emissions: 12,600 / 20,000 = 0.63 t CO2 per tonne"
+    ],
+    "note": "Illustrative figures for direct emissions only."
+  },
+  "senseible": "Senseible stores each record against its billing period, so emissions can be totalled for any 12-month window, calendar or fiscal. It does not record production tonnes from your books or attribute emissions to CBAM products for you.",
+  "links": [
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
+    { "label": "Embedded emissions for steel under CBAM", "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam" },
+    { "label": "Financial or calendar year footprint?", "to": "/answers/carbon-footprint-financial-or-calendar-year" },
+    { "label": "Split a bill across months", "to": "/answers/split-electricity-bill-across-months-for-carbon" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956, consolidated text (Article 6 and Annex IV)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm whether the definitive-period implementing rules let operators use a non-calendar reporting period for installation data."
+}

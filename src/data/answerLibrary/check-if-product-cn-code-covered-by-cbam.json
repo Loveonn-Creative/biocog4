@@ -1,0 +1,64 @@
+{
+  "slug": "check-if-product-cn-code-covered-by-cbam",
+  "q": "How do I check whether my product's CN or HS code is covered by CBAM?",
+  "title": "Is my product's CN code covered by CBAM?",
+  "short": "Take the 8 digit ITC-HS code from your shipping bill, keep the first 4 or 6 digits, and look them up in Annex I of the CBAM Regulation. If Annex I lists the heading in full, or lists your exact subheading, the goods are covered. Then confirm the full 8 digit CN code with your EU importer.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian MSME exporters, freight forwarders",
+  "sections": [
+    {
+      "h": "Why the first six digits are the bridge",
+      "p": [
+        "India's ITC-HS code and the EU's Combined Nomenclature (CN) are both 8 digits, and both are built on the international Harmonized System. The first 6 digits are the same worldwide. The last 2 are set nationally and can differ, so an Indian 8 digit code is not automatically the EU code."
+      ]
+    },
+    {
+      "h": "The lookup, step by step",
+      "ol": [
+        "Find the ITC-HS code on your shipping bill or export invoice, not only the HSN on your GST invoice, which may be shorter.",
+        "Open Annex I of Regulation (EU) 2023/956 and go to the sector: cement, electricity, fertilisers, iron and steel, aluminium or hydrogen.",
+        "Match at the level Annex I uses. Some entries are 4 digit headings (all goods under them are covered), some are 6 or 8 digit codes (only those goods are covered).",
+        "Where Annex I lists only some subheadings, or excludes some, check your code against each line.",
+        "Ask your importer which CN code they will declare. The importer's customs declaration is what decides the CBAM duty, and the EU TARIC database shows the current CN codes."
+      ]
+    },
+    {
+      "h": "Common traps",
+      "ul": [
+        "Made of steel is not the test. A machine under Chapter 84 is not covered today even if it is mostly steel; only the Annex I codes count.",
+        "Fasteners are covered: bolts, nuts and screws under heading 7318 are in Annex I.",
+        "Two exporters can classify the same item differently. If your classification and the importer's differ, settle it before shipment.",
+        "Annex I can be amended. The Commission has proposed adding downstream products from 2028."
+      ]
+    },
+    {
+      "h": "What to do once you know it is covered",
+      "p": [
+        "Your importer will ask for the embedded emissions per tonne of the goods, or will use EU default values. Start collecting installation data for the calendar year: fuels, electricity, production and any precursors bought in."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a hex bolt",
+    "lines": [
+      "Shipping bill code: ITC-HS 7318 15 xx (other screws and bolts)",
+      "First 6 digits: 7318 15, same as the HS subheading the EU uses",
+      "Annex I lists heading 7318 under iron and steel, so every code under it is covered",
+      "Result: covered; confirm the 8 digit CN code with the importer"
+    ]
+  },
+  "senseible": "Senseible reads the HSN or tax code printed on each invoice line and keeps it with the line, which helps you group purchases and sales by heading. It does not decide CBAM coverage; check each code against Annex I and your importer's declaration.",
+  "links": [
+    { "label": "CBAM for fastener exporters", "to": "/climate-intelligence/cbam-fastener-exporters-india" },
+    { "label": "CBAM downstream products from 2028", "to": "/climate-intelligence/cbam-downstream-products-2028" },
+    { "label": "CBAM 50 tonne exemption", "to": "/climate-intelligence/cbam-50-tonne-exemption" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "European Commission, CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The proposed downstream extension would amend Annex I from 2028; recheck the annex before relying on this lookup."
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "can-carbon-accounting-be-fully-automated",
+  "q": "Can carbon accounting be fully automated, or what still needs a human?",
+  "title": "Can carbon accounting be fully automated?",
+  "short": "No. Reading documents, classifying lines, applying published factors and checking arithmetic can be automated. Setting the boundary, choosing a base year, deciding which Scope 3 categories matter, accepting renewable energy claims and resolving flagged lines need a person who can be held to the decision.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Finance heads, sustainability leads, developers",
+  "sections": [
+    {
+      "h": "What software can do reliably",
+      "ul": [
+        "Read invoices, electricity bills, fuel slips and freight records into structured fields.",
+        "Classify lines by HSN or tax code, and match fuels and electricity to a scope.",
+        "Multiply activity by a published factor and record the factor's source.",
+        "Recompute stored results, catch identical duplicate files and flag missing units or quantities.",
+        "Produce the same output from the same input every time."
+      ]
+    },
+    {
+      "h": "Decisions the GHG Protocol leaves to people",
+      "ul": [
+        "Organisational boundary and consolidation approach: operational control, financial control or equity share.",
+        "Base year and the policy for recalculating it after an acquisition, sale or method change.",
+        "Which Scope 3 categories are relevant, and any exclusions with their reason.",
+        "Market-based Scope 2: whether a REC, green tariff or power purchase agreement meets the Scope 2 Guidance quality criteria.",
+        "Estimates where data is missing, and how they are labelled."
+      ]
+    },
+    {
+      "h": "Work that stays manual in practice",
+      "ul": [
+        "Lines flagged for missing units, unknown items or unusual quantities.",
+        "Supplier data: asking for it, judging its quality, and following up.",
+        "Documents the system cannot read clearly.",
+        "Sign-off by a named person before the figures go to a buyer, lender or regulator."
+      ],
+      "p": ["Automation shrinks this list from every line to the exceptions. It does not remove it, and a tool that promises a finished number with no review is filling gaps with guesses."]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how many exceptions a batch can carry",
+    "lines": [
+      "A batch has 50 lines; Senseible's Verified status needs at least 80% of lines to pass rule checks, with low risk",
+      "50 x 0.8 = 40 lines must pass, so up to 10 lines can fail and the batch still qualifies",
+      "Those failed lines are still a person's job: fix, replace or exclude each one with a reason"
+    ]
+  },
+  "senseible": "Senseible automates reading, classification, factor application, duplicate detection and recomputation, and marks what it cannot decide for review. It does not set your boundary, base year or Scope 3 relevance, accept market instruments without your evidence, or replace your sign-off.",
+  "links": [
+    { "label": "Which compliance tasks can be automated", "to": "/answers/which-carbon-compliance-tasks-can-be-automated" },
+    { "label": "Excel or carbon accounting software", "to": "/answers/excel-or-carbon-accounting-software" },
+    { "label": "How Senseible calculates emissions", "to": "/answers/how-senseible-calculates-emissions" },
+    { "label": "Senseible white paper", "to": "/white-paper" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition (2004)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Scope 2 Guidance (2015)", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15"
+}

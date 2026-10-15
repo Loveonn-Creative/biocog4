@@ -1,0 +1,55 @@
+{
+  "slug": "exclude-downstream-scope-3-intermediate-products",
+  "q": "My products are components sold to other manufacturers. Can I exclude downstream Scope 3?",
+  "title": "Downstream Scope 3 for component makers",
+  "short": "Partly. The GHG Protocol Scope 3 Standard lets a company selling intermediate products disclose and justify excluding downstream categories when the eventual end use is unknown, as with a part that goes into many different products. If you know the end use, you should estimate it. Either way, upstream categories and Scope 1 and 2 stay in.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Auto component and chemical MSMEs",
+  "sections": [
+    {
+      "h": "What counts as an intermediate product",
+      "p": [
+        "An intermediate product is something another company processes, assembles or turns into a final product: a forged gear, a casting, a resin, a dye intermediate, a PCB. A final product is used as sold by the end customer."
+      ]
+    },
+    {
+      "h": "Which downstream categories the exclusion can cover",
+      "ul": [
+        "Category 9, downstream transport you do not pay for.",
+        "Category 10, processing of sold products by your customers.",
+        "Category 11, use of sold products.",
+        "Category 12, end-of-life treatment of sold products."
+      ],
+      "p": ["The exclusion is a disclosed choice, not a silent gap. Write which categories you left out and why the end use cannot be reasonably estimated."]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "If one part goes to many customers and many applications, and you cannot say what share ends up where, the exclusion is reasonable for Categories 10 to 12.",
+        "If you supply one known part for a known product, such as a component for one vehicle model, estimate Category 10 and 12 from your customer's process data and the part's mass and material.",
+        "A passive part, such as a bracket or a gear, has no direct use-phase emissions of its own, so Category 11 is usually zero or not relevant, even when the end use is known.",
+        "If your product burns fuel, uses electricity or releases a gas when used, such as a refrigerant or a solvent, Category 11 usually matters and should be estimated."
+      ]
+    },
+    {
+      "h": "What still has to be reported",
+      "p": [
+        "Scope 1 and 2, every relevant upstream category, Category 4 if you pay for outbound freight, and Category 5 for waste from your own operations. Excluding downstream does not shrink these."
+      ]
+    }
+  ],
+  "senseible": "Senseible's work is upstream: it reads your fuel, electricity and purchase invoices for Scope 1 and 2 and keeps Scope 3 supplier lines in a separate evidence trail. It does not estimate downstream processing, use or end-of-life emissions.",
+  "links": [
+    { "label": "Can we exclude a Scope 3 category?", "to": "/answers/can-we-exclude-a-scope-3-category" },
+    { "label": "Calculating use of sold products", "to": "/answers/use-of-sold-products-category-11-calculation" },
+    { "label": "Which Scope 3 categories are mandatory", "to": "/answers/which-scope-3-categories-are-mandatory" },
+    { "label": "Scope 3 for Indian manufacturers", "to": "/climate-intelligence/manufacturing-scope-3-emissions-india" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Chapter 6 on intermediate products", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The GHG Protocol is revising its standards; check whether the intermediate product exclusion wording changes in the revised Scope 3 Standard."
+}

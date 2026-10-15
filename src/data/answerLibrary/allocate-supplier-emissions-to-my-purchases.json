@@ -1,0 +1,61 @@
+{
+  "slug": "allocate-supplier-emissions-to-my-purchases",
+  "q": "My fabric supplier gave me its total factory emissions. How do I work out the share that belongs to my order?",
+  "title": "Allocating a supplier's total emissions",
+  "short": "Multiply the supplier's emissions by your share of its output. Use a physical basis, such as tonnes or metres of fabric, when its products are similar, and an economic basis, your share of its revenue, only when products differ a lot in value. Ask first whether the supplier can give a figure for your product line, which avoids allocation.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Garment brands, buyers and procurement teams sourcing from shared mills",
+  "sections": [
+    {
+      "h": "Try to avoid allocation first",
+      "p": [
+        "The GHG Protocol Scope 3 Standard says to avoid allocation where possible. Ask the mill whether the line or process that makes your fabric is sub-metered, or whether it can give a footprint per kg for your quality. A figure for your product is always better than a share of a factory total."
+      ]
+    },
+    {
+      "h": "Physical or economic allocation",
+      "ul": [
+        "Physical (mass, metres, machine hours): best when the products go through similar processes. It follows how energy is actually used.",
+        "Economic (revenue): use when products share a process but differ greatly in value, or when no physical measure fits. It moves with prices, so a price change shifts emissions without any change on the factory floor.",
+        "Choose one basis, write it down, and use it every year for that supplier."
+      ]
+    },
+    {
+      "h": "Check what the total includes",
+      "ul": [
+        "Which scopes: the mill's Scope 1 and 2 only, or also its own purchased yarn and chemicals. A cradle-to-gate figure needs both.",
+        "Which period and which sites, so it matches your purchase period.",
+        "Whether it covers non-fabric outputs, such as yarn sold to others or power exported, which should be taken out before you take your share."
+      ]
+    },
+    {
+      "h": "Record the basis with the number",
+      "p": [
+        "Keep the supplier's document, the total, the denominator (total output or revenue), your purchase quantity and the method. An auditor will recompute the share, and a supplier figure with no stated basis is hard to defend."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one fabric order, two allocation bases",
+    "lines": [
+      "Mill emissions for the year: 8,000 t CO2e; mill output: 12,000 t of fabric",
+      "Your purchases: 600 t of fabric",
+      "By mass: 8,000 x 600 / 12,000 = 400 t CO2e",
+      "Mill revenue: Rs 300 crore; your purchases: Rs 24 crore, which is 8%",
+      "By revenue: 8,000 x 0.08 = 640 t CO2e"
+    ],
+    "note": "Your fabric is priced above the mill average, so economic allocation gives it more emissions. Use mass unless your fabric takes much more processing per tonne."
+  },
+  "senseible": "Senseible keeps the supplier's figure with its source document in the Scope 3 supplier evidence trail, so the allocation basis can be traced. It does not choose the allocation method or check the supplier's own total.",
+  "links": [
+    { "label": "Supplier emissions data collection playbook", "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme" },
+    { "label": "Can I use my supplier's product footprint?", "to": "/answers/can-i-use-my-suppliers-product-footprint" },
+    { "label": "Is supplier Scope 1 double counted?", "to": "/answers/supplier-scope-1-double-counted-in-scope-3" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Accounting and Reporting Standard (2011), allocation chapter", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

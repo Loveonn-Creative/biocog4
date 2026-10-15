@@ -1,0 +1,58 @@
+{
+  "slug": "limited-vs-reasonable-assurance-ghg",
+  "q": "What is the difference between limited and reasonable assurance on a GHG report, and what must I prepare for each?",
+  "title": "Preparing for limited or reasonable assurance",
+  "short": "Limited assurance gives a negative conclusion built mostly on enquiry, analytical review and small samples. Reasonable assurance gives a positive opinion and adds testing of your controls, larger samples and full recalculation. For your team, the step up means documented controls and complete reconciliations, not just tidy totals.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "CFOs, sustainability leads, auditors",
+  "sections": [
+    {
+      "h": "What the assurer does at each level",
+      "ul": [
+        "Limited: asks how each figure was built, compares it with last year and with production, vouches a modest sample to invoices and bills, and recalculates selected lines.",
+        "Reasonable: does all of that, then tests whether your controls work (who checks data entry, who approves factor changes), uses larger samples, traces sources in both directions and often visits the site.",
+        "Both work to a materiality threshold agreed at the start. ISAE 3410 and ISO 14064-3 describe the procedures for greenhouse gas statements."
+      ]
+    },
+    {
+      "h": "What you need ready for limited assurance",
+      "ol": [
+        "A boundary note: entities, sites and the consolidation approach.",
+        "A list of emission sources with the document type behind each one.",
+        "Source documents filed so any line can be found in minutes.",
+        "Factors with their source, edition and unit.",
+        "A short explanation of any big change from the prior year."
+      ]
+    },
+    {
+      "h": "What reasonable assurance adds",
+      "ol": [
+        "Written controls: who enters data, who reviews it, and evidence that the review happened, such as sign-offs.",
+        "Full reconciliations: fuel purchases to the ledger and stock register, every electricity connection to its discom account.",
+        "A change log for corrections, factor updates and restatements.",
+        "Estimates documented with method and data, since an assurer cannot give a positive opinion on a guess.",
+        "Time: plan for more weeks and a higher fee than a limited engagement on the same data."
+      ]
+    },
+    {
+      "h": "How to step up without failing",
+      "p": [
+        "Run one year at limited assurance and treat the assurer's observations as a work list. An observation at limited level, such as a missing invoice, can become a qualification at reasonable level. When the observations are closed and the reconciliations run every month rather than at year end, you are ready for reasonable assurance."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps each line tied to its source document with a SHA-256 fingerprint and a hash-chained ledger, which covers much of the document and recalculation trail an assurer asks for. It is not an assurer, and its Verified status means its own rule checks passed, not a limited or reasonable conclusion.",
+  "links": [
+    { "label": "Which assurance level each framework asks for", "to": "/answers/limited-vs-reasonable-assurance-emissions" },
+    { "label": "How auditors verify activity data", "to": "/answers/how-auditors-verify-activity-data" },
+    { "label": "ISSA 5000, ISAE 3410 or ISO 14064-3", "to": "/answers/issa-5000-vs-isae-3410-vs-iso-14064-3" },
+    { "label": "MRV vs traditional audit", "to": "/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared" }
+  ],
+  "sources": [
+    { "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of GHG statements", "url": "https://www.iso.org" },
+    { "label": "SEBI circular on BRSR Core, 12 July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "SEBI circular on assurance or assessment of ESG disclosures, March 2025", "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "how-to-measure-savings-from-energy-efficiency-project",
+  "q": "How do I prove the energy and CO2 savings from an efficiency project, such as a new compressor or motor?",
+  "title": "Measuring savings from an efficiency project",
+  "short": "Set a baseline from at least 12 months of metered energy before the project, model how it varies with production or hours, then compare actual use after the project with what the baseline predicts for the same conditions. The difference is the saving. Multiply kWh saved by the grid factor to get CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant heads, lenders' technical reviewers",
+  "sections": [
+    {
+      "h": "Why before minus after is not enough",
+      "p": [
+        "If output rose 10% after you installed a new compressor, raw kWh may barely fall even though the machine is far better. If output fell, raw kWh will overstate the saving. Measurement and verification standards, such as ISO 50015 and the IPMVP protocol, therefore compare actual use with an adjusted baseline: what the old system would have used under the new conditions."
+      ]
+    },
+    {
+      "h": "Choose a measurement boundary",
+      "ul": [
+        "Retrofit isolation: meter just the compressor or motor. Best when the project is small compared with the site, since a whole-site bill hides it. IPMVP calls these Options A and B.",
+        "Whole facility: use the main discom meter. Workable when the expected saving is large compared with normal month to month swings in the bill (IPMVP's rule of thumb is above about 10%), and little else changes. IPMVP Option C.",
+        "Record the boundary, the meters used and their calibration dates before the project starts."
+      ]
+    },
+    {
+      "h": "Build the baseline",
+      "ol": [
+        "Collect 12 months of energy before the project, so every season and production cycle is included.",
+        "Collect the variable that drives energy in the same months: tonnes produced, machine hours or, for cooling, temperature.",
+        "Fit the relationship. The simplest is specific energy consumption (kWh per tonne); where there is a large fixed load, use a regression with a fixed and a variable part, as ISO 50006 describes for energy baselines.",
+        "Note any one-off events, such as a shutdown, and adjust or exclude those months with a written reason."
+      ]
+    },
+    {
+      "h": "Report the saving",
+      "p": [
+        "After commissioning, apply the baseline model to the reporting period's production, subtract actual metered use, and convert. For grid power in India use 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database; for diesel saved use 2.68 kg CO2 per litre. Report savings as measured for the period, not as a lifetime projection, and repeat each year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a compressor replacement",
+    "lines": [
+      "Baseline year: 240,000 kWh for 4,000 t produced = 60 kWh per t",
+      "Reporting year: 4,400 t produced, 220,000 kWh metered",
+      "Adjusted baseline: 4,400 x 60 = 264,000 kWh",
+      "Saving: 264,000 minus 220,000 = 44,000 kWh",
+      "CO2: 44,000 x 0.710 = 31,240 kg, about 31.2 t CO2"
+    ],
+    "note": "Raw kWh fell only 20,000; the production adjustment shows the real saving. A flat kWh per tonne assumes no fixed load; check that with a regression first."
+  },
+  "senseible": "Senseible gives you the monthly kWh and fuel quantities from your bills and slips, each tied to its document, which form the before and after series. It does not build the baseline model or adjust for production; that is your input or your energy auditor's.",
+  "links": [
+    { "label": "Proving savings to a lender", "to": "/answers/how-to-prove-energy-savings-to-a-lender" },
+    { "label": "Calculating specific energy consumption", "to": "/answers/how-to-calculate-specific-energy-consumption" },
+    { "label": "Energy audit for MSMEs in India", "to": "/climate-intelligence/energy-audit-for-msme-india" },
+    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" }
+  ],
+  "sources": [
+    { "label": "ISO 50015:2014, Measurement and verification of energy performance of organizations", "url": "https://www.iso.org" },
+    { "label": "ISO 50006, Energy baselines and energy performance indicators", "url": "https://www.iso.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15"
+}

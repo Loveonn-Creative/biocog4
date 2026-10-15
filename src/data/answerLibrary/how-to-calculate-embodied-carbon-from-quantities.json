@@ -1,0 +1,66 @@
+{
+  "slug": "how-to-calculate-embodied-carbon-from-quantities",
+  "q": "How do I calculate the embodied carbon of materials in a project from my bill of quantities?",
+  "title": "Embodied carbon from a bill of quantities",
+  "short": "For each material line in the bill of quantities, convert the quantity to the unit used in the product's EPD, multiply by its A1 to A3 global warming potential, and add the lines. Add wastage, transport and site stages only if your scope covers them, and name every EPD you used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Contractors, developers, procurement managers",
+  "sections": [
+    {
+      "h": "The steps",
+      "ol": [
+        "Pick the materials that matter. Concrete, cement, reinforcement steel, structural steel, aluminium, glass and masonry usually make up most of a building's embodied carbon. Smaller items can be grouped or left out with a stated cut-off.",
+        "Convert each quantity to the EPD's declared unit: m3 of concrete, tonnes of steel, m2 of glazing. Use density from the product data where the bill and the EPD differ.",
+        "Take the A1 to A3 GWP figure (raw material supply, transport to the factory, manufacturing) from an EPD for that product, ideally from your actual supplier and plant.",
+        "Multiply quantity by GWP for each line and add them up. Report the total and per m2 of built-up area."
+      ]
+    },
+    {
+      "h": "Which stages to include",
+      "p": [
+        "EN 15978 splits a building's life into modules. A1 to A3 is the product stage and is what most EPDs declare. A4 is transport to site, A5 is construction including wastage, B covers use and replacement, C covers end of life.",
+        "For a procurement comparison or a tender, A1 to A3 is usually enough. For a whole-building assessment, add A4 and A5 at least: wastage on site means you buy more material than the drawings show, and that extra carries its full A1 to A3 carbon."
+      ]
+    },
+    {
+      "h": "Choosing the factor for each line",
+      "ul": [
+        "Best: a product-specific EPD from your supplier, verified under EN 15804 or ISO 21930.",
+        "Next: an industry-average EPD for that product in India.",
+        "Last: a generic database value, labelled as such. Generic figures for cement and steel vary widely by plant and production route, so they can move the total a lot.",
+        "Match the EPD to what you buy: OPC and blended cement, or blast furnace and scrap-based steel, have very different figures."
+      ]
+    },
+    {
+      "h": "Mistakes that distort the total",
+      "ul": [
+        "Mixing units: a GWP per tonne applied to a quantity in m3.",
+        "Counting cement twice: once as cement and again inside ready-mix concrete.",
+        "Using a figure that includes module D (benefits beyond the life, such as recycling credits) as if it were A1 to A3.",
+        "Leaving out the EPD name, version and plant, so nobody can check the number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: frame of a 2,000 m2 building (illustrative factors)",
+    "lines": [
+      "Ready-mix concrete: 400 m3 x 300 kg CO2e per m3 = 120,000 kg CO2e",
+      "Reinforcement steel: 48 t x 2,000 kg CO2e per t = 96,000 kg CO2e",
+      "A1 to A3 total: 120,000 + 96,000 = 216,000 kg CO2e, or 216 t",
+      "Per m2 of built-up area: 216,000 / 2,000 = 108 kg CO2e per m2"
+    ],
+    "note": "The 300 and 2,000 figures are illustrative only, not authoritative values. Replace each with the A1 to A3 GWP from the EPD of the product you actually buy. CO2e is used because EPD figures include all greenhouse gases."
+  },
+  "senseible": "Senseible can read purchase invoices for steel, cement and other materials to give you the quantities and HSN codes actually bought, and keeps them in a Scope 3 supplier evidence trail. It applies a material factor only where an approved factor exists; it does not hold an EPD database or run a whole-building assessment.",
+  "links": [
+    { "label": "What embodied carbon A1 to A3 means", "to": "/answers/what-is-embodied-carbon-a1-a3" },
+    { "label": "How to read GWP on an EPD", "to": "/answers/how-to-read-gwp-on-an-epd" },
+    { "label": "Construction industry", "to": "/industries/construction" }
+  ],
+  "sources": [
+    { "label": "ISO 21930:2017, Core rules for EPDs of construction products (counterpart to EN 15804+A2); EN 15978:2011 is the CEN building-level method", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1 purchased goods", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

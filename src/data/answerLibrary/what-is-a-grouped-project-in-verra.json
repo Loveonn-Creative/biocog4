@@ -1,0 +1,54 @@
+{
+  "slug": "what-is-a-grouped-project-in-verra",
+  "q": "What is a grouped project under Verra, and can several MSMEs join one?",
+  "title": "Verra grouped projects for MSMEs",
+  "short": "A grouped project is one Verra project that can add new sites, called project activity instances, after it is validated. Several MSMEs can join as instances if each site meets the eligibility criteria written into the project description. One project proponent runs the project and the audits, which spreads fixed costs across many small sites.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, aggregators",
+  "sections": [
+    {
+      "h": "How a grouped project works",
+      "ol": [
+        "The proponent writes one project description with a methodology, a geographic area and eligibility criteria for any future instance.",
+        "The project is validated with its initial instances.",
+        "New sites that meet the criteria can be added later, and each new instance is checked at the next verification.",
+        "Credits are issued to the project, and the proponent shares them or their proceeds with participants under private contracts."
+      ]
+    },
+    {
+      "h": "What each MSME has to bring",
+      "ul": [
+        "A site that fits the eligibility criteria: same technology or measure, inside the stated area, using the same baseline and additionality logic.",
+        "A written agreement giving the proponent the right to claim the reductions from that site, so no one else can claim them.",
+        "Monitoring data for every period: meter readings, fuel invoices or output records, as the methodology requires.",
+        "A start date and records that show the activity began when stated."
+      ]
+    },
+    {
+      "h": "Why grouping matters for small sites",
+      "p": [
+        "Validation, verification and registry steps carry fixed costs whether a project earns 500 credits or 50,000. A single small boiler or solar site rarely earns enough to cover them. Grouping lets those costs be shared, and new sites can join without a fresh validation of the whole project."
+      ]
+    },
+    {
+      "h": "Risks to understand before joining",
+      "ul": [
+        "One weak instance can hold up a verification for everyone, so the proponent may drop sites with poor records.",
+        "Your share of credits or revenue depends entirely on your contract with the proponent; read how costs are deducted.",
+        "Once you sign over the claim, you cannot sell the same reductions elsewhere or count them under another programme."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps dated, fingerprinted fuel and electricity records per site, which gives a proponent consistent monitoring evidence for each instance. Senseible is not a project proponent and does not register projects. Credit issuance stays with Verra.",
+  "links": [
+    { "label": "Realistic income from carbon credits", "to": "/climate-intelligence/realistic-income-from-selling-carbon-credits-msme" },
+    { "label": "Can a small business generate credits?", "to": "/answers/can-a-small-business-generate-carbon-credits" },
+    { "label": "Verra or Gold Standard?", "to": "/answers/verra-or-gold-standard-which-to-choose" }
+  ],
+  "sources": [
+    { "label": "Verra VCS Standard (v4), grouped project requirements", "url": "https://verra.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Verra revises the VCS Standard periodically; check the current version's grouped project rules before signing up."
+}

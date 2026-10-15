@@ -1,0 +1,65 @@
+{
+  "slug": "business-car-travel-which-scope",
+  "q": "Is fuel for company cars, employee-owned cars and taxis Scope 1 or Scope 3?",
+  "title": "Company cars, own cars, taxis: which scope?",
+  "short": "It depends on who owns or controls the vehicle. Fuel burnt in cars your company owns or leases and controls is Scope 1. Business trips in employees' own cars, taxis, app cabs and rental cars are Scope 3 Category 6, business travel. Daily travel between home and work is Category 7, commuting.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners, finance managers",
+  "sections": [
+    {
+      "h": "The decision rule",
+      "ul": [
+        "Company-owned car or van, any driver: Scope 1, from the fuel bought.",
+        "Car on lease that you operate (operational control approach): Scope 1, because you control how it is used.",
+        "Employee's own car used for a business trip, with mileage or fuel reimbursed: Scope 3 Category 6.",
+        "Taxis, app cabs, rental cars and hired cars with driver for trips: Scope 3 Category 6.",
+        "Employee's own car, bus or two-wheeler for daily commuting: Scope 3 Category 7, even if you pay a conveyance allowance."
+      ]
+    },
+    {
+      "h": "Grey areas and how to settle them",
+      "p": [
+        "A car hired on a monthly contract with a driver, used only by your company, where you buy the fuel, is close to a leased vehicle. Many companies report its fuel in Scope 1 because they direct its use and pay for the fuel. If the provider buys fuel and bills you a package, it sits in Scope 3. Pick one treatment, write down why, and apply it to every such contract.",
+        "Fuel cards and reimbursements are the usual trap: a fuel slip shows litres and a pump, not whose car was filled. Keep reimbursed fuel for employee-owned cars separate from fuel for company vehicles."
+      ]
+    },
+    {
+      "h": "How to calculate each type",
+      "ul": [
+        "Company vehicles: litres of fuel x fuel factor, from fuel slips or a fuel card statement.",
+        "Employee cars on reimbursement: claimed km divided by the car's mileage gives litres, then x fuel factor; or claimed km x a per km vehicle factor.",
+        "Taxis and app cabs: trip distance x a per km factor for the car type. Ride receipts usually show the distance. Spend-based estimates are a last resort."
+      ]
+    },
+    {
+      "h": "Why the split matters",
+      "p": [
+        "Scope 1 is always reported, and most buyers, lenders and BRSR ask for it. Category 6 is reported if it is relevant to you. Putting employee or taxi travel in Scope 1 overstates the emissions you directly control; leaving leased cars out understates them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of road travel",
+    "lines": [
+      "Company car: 1,200 L diesel x 2.68 kg CO2 per L = 3,216 kg CO2, Scope 1",
+      "Employee car: 6,000 km reimbursed at 15 km per L = 400 L petrol",
+      "400 L x 2.31 kg CO2 per L = 924 kg CO2, Scope 3 Category 6",
+      "Taxis: calculated separately from trip distance, also Category 6"
+    ],
+    "note": "15 km per litre is an assumed mileage; use the car's actual figure where you know it."
+  },
+  "senseible": "Senseible reads fuel slips and applies IPCC 2006 factors (diesel 2.68, petrol 2.31 kg CO2 per litre) as Scope 1, and keeps taxi and travel invoices in the Scope 3 evidence trail. It cannot tell from a slip whose car was filled, so keep reimbursement slips for employee-owned cars out of your Scope 1 uploads.",
+  "links": [
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "Petrol emission factor", "to": "/emission-factors/petrol" },
+    { "label": "Night shift cabs: Scope 1 or 3?", "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3" },
+    { "label": "Vehicle emissions from fuel spend", "to": "/answers/vehicle-emissions-from-fuel-spend" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, revised edition, Chapter 4", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 6 and 7", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol, Appendix F: Categorizing GHG Emissions Associated with Leased Assets", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-15"
+}

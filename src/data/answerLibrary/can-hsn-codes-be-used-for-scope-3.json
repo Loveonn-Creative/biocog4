@@ -1,0 +1,67 @@
+{
+  "slug": "can-hsn-codes-be-used-for-scope-3",
+  "q": "Can I use HSN codes on GST invoices to classify purchases for Scope 3?",
+  "title": "Using HSN codes to classify Scope 3",
+  "short": "Yes, as a classification aid. The HSN code tells you what was bought, such as flat-rolled steel, plastics or machinery, which points to the Scope 3 category and the material. It does not give you an emission factor. You still need the quantity and unit from the invoice and a factor chosen for that material.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Accountants and sustainability leads in India",
+  "sections": [
+    {
+      "h": "What an HSN code tells you",
+      "ul": [
+        "The chapter (first two digits) gives the broad material: 39 plastics, 48 paper and paperboard, 72 iron and steel, 73 articles of iron or steel, 76 aluminium, 84 machinery.",
+        "The heading (four digits) narrows it: 7208 is hot-rolled flat steel, 8457 is machining centres.",
+        "SAC codes in chapter 99 cover services, such as 9965 for goods transport."
+      ],
+      "p": [
+        "GST invoices for business buyers must show at least four digits, or six digits for suppliers with turnover above ₹5 crore, so most B2B lines carry a usable code."
+      ]
+    },
+    {
+      "h": "From code to category",
+      "ul": [
+        "Materials and parts you consume, such as steel coil or plastic granules: Category 1, purchased goods.",
+        "Machinery and equipment you capitalise (chapters 84 and 85 mostly): Category 2, capital goods. Confirm with your fixed asset register, because the same code can be a spare part you expense.",
+        "Fuel (chapter 27) burned on site: Scope 1, not Scope 3. Electricity (2716): Scope 2.",
+        "Freight services: Category 4 or 9, depending on who pays."
+      ]
+    },
+    {
+      "h": "What HSN cannot do",
+      "p": [
+        "There is no official mapping from HSN codes to emission factors. A code covers a product class, while emissions depend on how and where the item was made: steel from a blast furnace and steel from a scrap-based electric furnace share a code but differ widely. Pick the factor separately, from the supplier if possible, and record its source."
+      ]
+    },
+    {
+      "h": "Traps to check",
+      "ul": [
+        "Wrong or generic codes on small suppliers' invoices: read the description too.",
+        "Units: steel by the tonne, cable by the metre, fasteners by the piece. The factor's unit must match.",
+        "Mixed invoices: one invoice with several codes needs each line classified separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one invoice line",
+    "lines": [
+      "Line: HSN 7208, hot-rolled steel coil, 10 tonnes",
+      "Category: 1, purchased goods; material: flat steel",
+      "Factor (proxy, no supplier figure): about 1.9 t CO2 per t steel, worldsteel global average",
+      "10 x 1.9 = 19 t CO2, labelled as an average-data estimate"
+    ],
+    "note": "The HSN code chose the category and material; the factor came from a separate, named source."
+  },
+  "senseible": "Senseible classifies invoice lines by HSN or SAC code first, and by keyword only when the unit agrees. A line gets a figure only when its quantity and unit match an approved factor for that category and material; otherwise it shows Needs Data.",
+  "links": [
+    { "label": "HSN code to emission factor mapping", "to": "/answers/hsn-code-emission-factor-mapping" },
+    { "label": "Footprint from invoices", "to": "/answers/how-to-calculate-carbon-footprint-from-invoices" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 1", "url": "https://ghgprotocol.org/standards" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "worldsteel sustainability indicators (CO2 intensity of steel)", "url": "https://worldsteel.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

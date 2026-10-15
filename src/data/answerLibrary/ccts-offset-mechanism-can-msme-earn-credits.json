@@ -1,0 +1,56 @@
+{
+  "slug": "ccts-offset-mechanism-can-msme-earn-credits",
+  "q": "Can an MSME earn carbon credit certificates under India's CCTS offset mechanism?",
+  "title": "Can an MSME earn CCTS offset credits?",
+  "short": "Yes, in principle. The offset mechanism, added to the Carbon Credit Trading Scheme in December 2023, lets non-obligated entities register projects that reduce, remove or avoid emissions and earn carbon credit certificates. The project must follow a BEE-approved methodology and pass verification by an accredited agency, so it only works where an approved method fits.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners, solar or biomass project developers",
+  "sections": [
+    {
+      "h": "Two routes inside CCTS",
+      "ul": [
+        "Compliance mechanism: obligated entities in notified sectors get emission intensity targets. Those that beat their target earn certificates; those that miss must buy them.",
+        "Offset mechanism: entities that are not obligated can register voluntary projects and earn certificates for verified reductions or removals."
+      ],
+      "p": ["Most MSMEs are not obligated entities, so the offset route is the one that could apply to them."]
+    },
+    {
+      "h": "Who does what",
+      "ul": [
+        "Bureau of Energy Efficiency (BEE): administers the scheme, approves methodologies and recommends issuance.",
+        "Accredited carbon verification agencies: validate and verify projects.",
+        "Grid Controller of India: acts as the registry.",
+        "Power exchanges: trading of certificates, under CERC regulation."
+      ]
+    },
+    {
+      "h": "Steps for a project",
+      "ol": [
+        "Check that your activity matches a methodology BEE has approved for the offset mechanism.",
+        "Prepare the project documents as the BEE detailed procedure requires, including baseline and monitoring plan.",
+        "Have the project validated and registered.",
+        "Monitor and keep records for the crediting period.",
+        "Get each period verified, then receive certificates in the registry and sell them."
+      ]
+    },
+    {
+      "h": "Is it worth it for a single MSME?",
+      "p": [
+        "The same economics as voluntary credits apply. Validation and verification are fixed costs, while revenue depends on tonnes reduced. A single small rooftop solar or boiler project may not earn enough tonnes to cover them. Check whether a larger developer or cluster body can bundle projects before committing."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows carbon credit eligibility signals from your fuel and electricity records and keeps that evidence traceable. It is not a registry, does not register CCTS projects and plays no part in BEE issuance.",
+  "links": [
+    { "label": "India CCTS targets", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" },
+    { "label": "India CCTS vs EU ETS", "to": "/answers/india-ccts-vs-eu-ets-difference" },
+    { "label": "Carbon credits at Senseible", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "Carbon Credit Trading Scheme, 2023 (S.O. 2825(E), 28 June 2023) and December 2023 amendment, Ministry of Power", "url": "https://powermin.gov.in" },
+    { "label": "BEE Detailed Procedure for the Offset Mechanism and approved methodologies", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The list of approved offset methodologies and the registration process are still changing; check BEE's current list before planning a project."
+}

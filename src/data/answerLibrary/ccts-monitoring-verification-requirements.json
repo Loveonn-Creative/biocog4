@@ -1,0 +1,77 @@
+{
+  "slug": "ccts-monitoring-verification-requirements",
+  "q": "What monitoring, reporting and verification does a CCTS obligated entity need, and who can verify?",
+  "title": "CCTS monitoring and verification",
+  "short": "An obligated entity under India's Carbon Credit Trading Scheme monitors its emissions and production each year by BEE's detailed procedure, reports its emission intensity, and has that report verified by a carbon verification agency accredited by BEE. Only an accredited agency can verify; the verified result decides whether credits are issued or must be bought.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Energy managers at obligated entities",
+  "sections": [
+    {
+      "h": "The legal base",
+      "ul": [
+        "Carbon Credit Trading Scheme, 2023: Ministry of Power notification S.O. 2825(E), 28 June 2023, amended in December 2023 to add the offset mechanism.",
+        "BEE's Detailed Procedure for the Compliance Mechanism under CCTS (2024), which sets monitoring, reporting and verification steps.",
+        "Sector greenhouse gas emission intensity targets, notified in 2025 for the first sectors, in t CO2e per tonne of product."
+      ]
+    },
+    {
+      "h": "What to monitor",
+      "ul": [
+        "Every fuel used, by quantity and calorific value, from purchase invoices, stock records and lab reports.",
+        "Process emissions where the sector has them, for example calcination in cement.",
+        "Purchased electricity in kWh from discom or open access bills, and any electricity exported.",
+        "Production of the product the target is set on, by the sector's normalisation rules."
+      ],
+      "p": [
+        "Keep the source documents for each figure. The verifier will trace a sample from the report back to invoices, meters and lab results."
+      ]
+    },
+    {
+      "h": "Who can verify",
+      "p": [
+        "Only an Accredited Carbon Verification Agency (ACVA) accredited by BEE for your sector. The agency checks the monitoring data, the calculation and the production figures, and sends its verification report into the compliance process. Expect independence rules that stop an agency verifying an entity it has advised."
+      ]
+    },
+    {
+      "h": "The yearly cycle",
+      "ol": [
+        "Monitor through the compliance year.",
+        "Prepare the emissions and production report in the BEE format.",
+        "Have it verified by an accredited agency.",
+        "BEE assesses the verified intensity against the target: entities that beat it can be issued carbon credit certificates; entities that miss it must buy and surrender certificates to cover the shortfall."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a source-linked ledger of fuel and electricity quantities from invoices and bills, which is the evidence a verifier samples. It is not an accredited carbon verification agency and does not prepare BEE compliance forms.",
+  "links": [
+    {
+      "label": "India CCTS vs EU ETS",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    },
+    {
+      "label": "What if a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    },
+    {
+      "label": "CCTS offset mechanism for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Carbon Credit Trading Scheme, 2023, S.O. 2825(E), 28 June 2023 (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "BEE Detailed Procedure for Compliance Mechanism under CCTS",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "PIB: CCTS obligated entities",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "CCTS procedures, sector targets and the list of accredited agencies are still being issued; check BEE for the current versions."
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "does-an-lca-need-a-critical-review",
+  "q": "Does my LCA or carbon footprint study need a critical review, and who can do it?",
+  "title": "Does an LCA need a critical review?",
+  "short": "A critical review is mandatory under ISO 14044 only when the study supports a comparative assertion disclosed to the public, such as \"our product has a lower footprint than theirs\". That review must be done by a panel of interested parties. For internal studies or non-comparative claims it is optional, but buyers often expect one.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters making public product claims, marketing leads",
+  "sections": [
+    {
+      "h": "When a review is required",
+      "ul": [
+        "Required: an LCA used for a comparative assertion that is shared publicly. ISO 14044 calls for a panel review.",
+        "Optional: an internal study, a footprint sent to one buyer, or a public footprint that makes no comparison.",
+        "Contract or programme rules: a buyer, an EPD programme or a label may require a review or verification even when ISO does not."
+      ]
+    },
+    {
+      "h": "Who can carry it out",
+      "ul": [
+        "Internal or external expert review: one reviewer independent of the study, for non-comparative studies. They must know ISO 14040 and 14044 and the technology studied.",
+        "Panel review: a chair, who is an external independent expert, plus at least two other reviewers, who may include interested parties. This is required for public comparative assertions.",
+        "ISO/TS 14071 sets out the review process and the competence reviewers need."
+      ]
+    },
+    {
+      "h": "Critical review is not the same as verification",
+      "p": [
+        "A critical review checks that the method follows the ISO standard and that the interpretation is supported. Verification of a carbon footprint of a product, for example against ISO 14067 by a verification body under ISO 14064-3 rules, checks the data and the claimed figure. EPDs need verification under ISO 14025. A buyer asking for a verified footprint usually means verification."
+      ]
+    },
+    {
+      "h": "How to make the review quicker",
+      "ol": [
+        "Appoint the reviewer at the start, so goal and scope are agreed before data collection.",
+        "Keep a data trail for every input, with source documents for energy and materials.",
+        "Document allocation choices, cut-offs and assumptions in one place.",
+        "Answer reviewer comments in writing and keep the log as part of the report."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not a critical reviewer or a verification body. It can give your reviewer a traceable record of factory energy and fuel inputs, each linked to its source invoice or bill.",
+  "links": [
+    { "label": "LCA vs product carbon footprint", "to": "/answers/lca-vs-product-carbon-footprint" },
+    { "label": "Is ISO 14067 certification mandatory?", "to": "/answers/is-iso-14067-certification-mandatory" },
+    { "label": "Is Senseible a certifier?", "to": "/answers/is-senseible-a-certifier" }
+  ],
+  "sources": [
+    { "label": "ISO 14044:2006, LCA requirements and guidelines (clause 6, critical review)", "url": "https://www.iso.org" },
+    { "label": "ISO/TS 14071:2014, critical review processes and reviewer competencies", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

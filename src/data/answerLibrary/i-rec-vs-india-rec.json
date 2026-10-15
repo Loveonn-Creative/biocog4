@@ -1,0 +1,64 @@
+{
+  "slug": "i-rec-vs-india-rec",
+  "q": "I-REC or India REC: which should an Indian company use for Scope 2 and export buyers?",
+  "title": "I-REC or India REC for Scope 2?",
+  "short": "Use India RECs if you need them for a regulatory obligation such as a renewable purchase or consumption obligation; I-RECs do not count there. For a voluntary market-based Scope 2 claim, either can work if it is retired in your name for the same year. Let your buyer's reporting rules decide.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Exporters, sustainability leads",
+  "sections": [
+    {
+      "h": "How the two certificates differ",
+      "ul": [
+        "Who runs it: India RECs sit under the CERC REC Regulations 2022, with Grid-India as the central agency. I-RECs are issued under the I-REC Standard, run by a private foundation, through a local issuer.",
+        "Size: both represent 1 MWh of renewable electricity.",
+        "Where bought: India RECs trade on Indian power exchanges. I-RECs are bought from generators or brokers, usually through a contract.",
+        "Use: India RECs meet Indian regulatory obligations and can be bought voluntarily. I-RECs are voluntary only."
+      ]
+    },
+    {
+      "h": "What the GHG Protocol asks of either one",
+      "p": [
+        "The Scope 2 Guidance sets quality criteria for any certificate used in a market-based figure: it carries the renewable attribute, it is claimed once, it is retired or cancelled for you, its generation period is close to your consumption period, and it comes from the same market as your consumption. An Indian certificate for Indian consumption meets the market test; the others depend on how it was bought and retired."
+      ]
+    },
+    {
+      "h": "Watch for double issuance",
+      "p": [
+        "The same MWh must not earn both an India REC and an I-REC, or a REC and a carbon credit. Ask the seller for the generator's declaration and check the issuer's rules on projects registered in both systems. If you buy from a project that also sells carbon credits, ask how the attribute is kept separate."
+      ]
+    },
+    {
+      "h": "A simple decision rule",
+      "ol": [
+        "Regulatory obligation in India: India RECs.",
+        "A buyer or group names a certificate type or a reporting platform's rules: follow them, and get their confirmation in writing.",
+        "Neither: choose the one you can get retired in your company's name, for the right year, with a retirement record you can show an auditor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: partial coverage for one year",
+    "lines": [
+      "Consumption: 2,000 MWh (2,000,000 kWh)",
+      "Location-based Scope 2: 2,000,000 x 0.710 kg CO2 per kWh = 1,420,000 kg, 1,420 tonnes",
+      "Certificates retired for the same year: 1,200 MWh",
+      "Uncovered: 800,000 kWh x 0.710 = 568,000 kg",
+      "Market-based Scope 2: 568 tonnes, reported alongside the 1,420 tonnes location-based figure"
+    ],
+    "note": "India has no published residual mix, so the uncovered part here uses the grid average and the report says so."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from electricity bills and a market-based figure when you supply the certificate data, such as quantity and generation period. It does not buy, sell, retire or check certificates.",
+  "links": [
+    { "label": "How the India REC mechanism works", "to": "/answers/how-does-the-india-rec-mechanism-work" },
+    { "label": "Do RE100 and CDP accept Indian RECs", "to": "/answers/do-re100-and-cdp-accept-indian-recs" },
+    { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria", "url": "https://ghgprotocol.org/scope-2-guidance" },
+    { "label": "CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022 (Ministry of Power)", "url": "https://powermin.gov.in" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Rules on projects registered for both I-REC and India REC, and buyer acceptance, change; check the current issuer rules before buying."
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "cbam-cost-blast-furnace-vs-eaf-vs-dri-steel",
+  "q": "How much lower is CBAM cost for electric arc furnace or DRI steel than blast furnace steel?",
+  "title": "CBAM cost: BF-BOF vs EAF vs DRI steel",
+  "short": "With verified actual data, scrap-based EAF and gas-based DRI steel can owe little or no CBAM in 2026, while blast furnace steel pays on emissions above the benchmark. By 2034, when free allocation ends, EAF scrap steel costs roughly a fifth of BF-BOF. The saving only appears with verified actual emissions, not default values.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian steel exporters, EU steel importers",
+  "sections": [
+    {
+      "h": "Why the route matters",
+      "p": [
+        "CBAM charges the EU importer for embedded emissions above a free-allocation adjustment: the EU benchmark times the share of free allocation still granted (97.5% in 2026, falling to zero in 2034). A route whose intensity is below the adjusted benchmark owes nothing in the early years. Every tonne above it is charged in full from the first year."
+      ]
+    },
+    {
+      "h": "Default values do not reward a cleaner route",
+      "p": [
+        "The EU default values in Implementing Regulation (EU) 2025/2621 are set by product (CN code) and country of origin, not by your furnace. An EAF mill whose buyer declares default values pays as if it were a typical Indian producer, plus the mark-up. The lower cost of EAF or DRI steel shows up only through actual emissions, monitored and verified under the CBAM rules."
+      ]
+    },
+    {
+      "h": "Electricity and coal-based DRI",
+      "ul": [
+        "For iron and steel, CBAM currently counts direct emissions only. Most of an EAF's footprint is grid electricity, which is not in the CBAM figure for steel, so the CBAM gap between EAF and BF-BOF is larger than the full carbon footprint gap.",
+        "Much of India's DRI is coal-based, with intensity of about 2.5 to 3 t CO2 per tonne in published literature, at or above blast furnace levels. Coal DRI does not get the gas DRI benefit."
+      ]
+    },
+    {
+      "h": "Caveats on these figures",
+      "p": [
+        "The Senseible calculator applies one indicative benchmark of 1.52 t CO2 per tonne to all steel routes. The official benchmarks differ by product, so a real declaration can come out higher or lower. The certificate price after 2026 is unknown; the example holds it flat."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of steel, actual verified intensity, €82.32 per certificate",
+    "lines": [
+      "Adjustment in 2026: 1.52 x 100 x 97.5% = 148.2 t",
+      "BF-BOF at 2.1 t/t: 210 minus 148.2 = 61.8 t x €82.32 = €5,087 in 2026; 210 t x €82.32 = €17,287 in 2034",
+      "Gas DRI at 1.1 t/t: 110 t is below 148.2 t, so €0 in 2026; 110 t x €82.32 = €9,055 in 2034",
+      "EAF scrap at 0.4 t/t: 40 t, so €0 in 2026; 40 t x €82.32 = €3,293 in 2034",
+      "Coal DRI at 2.5 to 3.0 t/t (literature estimate, not in the calculator): €8,380 to €12,496 in 2026",
+      "BF-BOF on default values with the 10% mark-up: 231 t, minus 148.2 = 82.8 t x €82.32 = €6,816 in 2026"
+    ],
+    "note": "Labelled estimates from the Senseible CBAM calculator's indicative route intensities and benchmark, holding the Q3 2026 price flat. Your plant's verified intensity and the official benchmark for your CN code decide the real cost."
+  },
+  "senseible": "The Senseible CBAM calculator runs this comparison for 2026 to 2034 with the free-allocation phase-out and default mark-ups, and Senseible keeps document-backed fuel and electricity records an exporter can hand to its EU buyer or verifier. Senseible does not verify emissions or file CBAM declarations.",
+  "links": [
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
+    { "label": "CBAM for steel exporters in India", "to": "/solutions/cbam-steel-india" },
+    { "label": "Does CBAM count electricity for steel?", "to": "/answers/does-cbam-count-electricity-emissions-steel" },
+    { "label": "Which steel upgrades cut CBAM most", "to": "/answers/which-steel-plant-upgrades-cut-cbam-most" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Implementing Regulation (EU) 2025/2621, default values and mark-ups", "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng" },
+    { "label": "European Commission, price of CBAM certificates", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/price-cbam-certificates_en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The calculator uses one indicative steel benchmark for all routes; recheck against the official CBAM benchmarks per CN code and any extension of indirect emissions to steel."
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "should-flight-emissions-include-radiative-forcing",
+  "q": "Should business travel flight emissions include radiative forcing, and how much does it change the number?",
+  "title": "Flight emissions and radiative forcing",
+  "short": "The GHG Protocol leaves it optional: you may include non-CO2 effects of flying, such as contrails and nitrogen oxides at altitude, if you disclose it. UK DESNZ factors are published with and without radiative forcing, and the with-RF figures are roughly 1.7 times higher in recent editions. Pick one basis, state it, and keep it every year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "IT, BPO and export firms reporting travel to EU clients",
+  "sections": [
+    {
+      "h": "What radiative forcing means here",
+      "p": [
+        "Burning jet fuel at cruising altitude warms the climate by more than its CO2 alone. Contrails, cirrus clouds formed from them, and nitrogen oxides add extra warming for a short time. Factors that include radiative forcing scale up the CO2 to reflect this. The size of the extra effect is uncertain, and it is not one of the Kyoto gases, which is why standards treat it as optional."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "If a client, parent or programme specifies a basis, use theirs.",
+        "If you report to UK or EU clients that use DESNZ factors, the with-RF factors are the common choice in their own reports, so matching them helps comparison.",
+        "If you have no instruction, choosing with-RF is the more conservative option; choosing without-RF matches strict Kyoto-gas accounting.",
+        "Whichever you choose, state it in the method note and do not switch between years without restating the earlier year."
+      ]
+    },
+    {
+      "h": "How to report it clearly",
+      "ul": [
+        "Name the factor set and edition, for example DESNZ conversion factors for the reporting year.",
+        "Say whether the figure includes radiative forcing.",
+        "Where practical, give both numbers, so a reader can compare with other companies.",
+        "Use passenger-km by cabin class, because business and first class seats carry higher factors than economy."
+      ]
+    },
+    {
+      "h": "How much it changes the number",
+      "p": [
+        "In recent DESNZ editions the with-RF factor is about 1.7 times the without-RF factor for the same flight and class. This is a labelled estimate from the published tables: check the uplift in the edition you use, because it has changed between editions. For a company where flights are most of Scope 3, this choice can move the total more than any other single decision."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: effect of the RF choice (illustrative)",
+    "lines": [
+      "Flights for the year, without radiative forcing: 40 t CO2e",
+      "Uplift in a recent DESNZ edition: about 1.7 times (check the current table)",
+      "With radiative forcing: 40 x 1.7 = 68 t CO2e",
+      "Difference from the choice alone: 28 t CO2e"
+    ]
+  },
+  "senseible": "Senseible files air tickets as business travel lines in its Scope 3 evidence trail and keeps the invoices. It does not calculate flight emissions from tickets today, so the radiative forcing choice and the calculation sit with you or your travel data provider.",
+  "links": [
+    { "label": "Flight emissions for business travel in India", "to": "/answers/flight-emissions-business-travel-india" },
+    { "label": "Warming beyond CO2", "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2" },
+    { "label": "Can we exclude a Scope 3 category?", "to": "/answers/can-we-exclude-a-scope-3-category" }
+  ],
+  "sources": [
+    { "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting, business travel air tables", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 6", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "IPCC AR6 Working Group I, aviation effects", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The DESNZ radiative forcing uplift changes between annual editions; recheck it when each new edition is published."
+}

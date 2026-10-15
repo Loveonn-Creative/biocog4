@@ -1,0 +1,62 @@
+{
+  "slug": "how-are-carbon-credits-taxed-in-india",
+  "q": "How is income from selling carbon credits taxed in India?",
+  "title": "How carbon credit income is taxed in India",
+  "short": "Income from transferring carbon credits is taxed at a flat 10% on the gross amount, plus surcharge and cess, under section 115BBG of the Income-tax Act, 1961, introduced by the Finance Act 2017. No expenses can be deducted against it. GST treatment is not settled, so take written advice before you invoice.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners and CFOs selling carbon credits",
+  "sections": [
+    {
+      "h": "What the 10% rule covers",
+      "ul": [
+        "It applies to income by way of transfer of carbon credits, for every type of taxpayer: company, firm, LLP or individual.",
+        "The rate is 10% of the gross income. Surcharge, where your income level attracts it, and the 4% health and education cess are added on top, so the effective rate without surcharge is 10.4%.",
+        "No deduction for any expenditure or allowance is allowed against this income. Project design, validation, verification and registry fees do not reduce the taxable amount."
+      ]
+    },
+    {
+      "h": "Which credits the definition reaches",
+      "p": [
+        "The explanation to section 115BBG defines a carbon credit as a reduction of one tonne of carbon dioxide or its equivalent that is validated under the United Nations climate change framework and can be traded at a market price. That wording was written for UNFCCC credits such as CDM credits.",
+        "Whether credits from voluntary standards like Verra or Gold Standard, or carbon credit certificates under India's Carbon Credit Trading Scheme, sit inside that definition is a question to put to your tax adviser in writing. The answer changes whether the flat 10% or your normal business rate applies."
+      ]
+    },
+    {
+      "h": "The years before 2017 and the new Income-tax Act",
+      "p": [
+        "Before section 115BBG, several tribunal and High Court decisions treated carbon credit receipts as capital receipts, outside business income. The 2017 amendment settled that the income is taxable, at the concessional flat rate.",
+        "The Income-tax Act, 2025 replaced the 1961 Act from 1 April 2026 and renumbered its sections. If you sell credits in the 2026-27 tax year or later, ask your adviser for the corresponding provision in the new Act rather than citing 115BBG in a return."
+      ]
+    },
+    {
+      "h": "GST and contracts",
+      "ul": [
+        "There is no single CBIC rate notification for carbon credits that this page can point to, and advisers differ on whether a credit is a good, a service or neither. Get the position in writing before your first sale.",
+        "In the sale agreement, say who bears any GST, TDS or other tax if the treatment changes later.",
+        "Keep the registry transfer record, the buyer invoice and the bank receipt together. They are the evidence for the date and amount of the income."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one sale, illustrative price",
+    "lines": [
+      "Credits sold: 2,000 at ₹800 each = ₹16,00,000 gross income",
+      "Tax at 10%: ₹1,60,000",
+      "Cess at 4% of tax: ₹6,400; total ₹1,66,400 (no surcharge assumed)",
+      "Verification and registry costs of ₹4,00,000: not deductible, so tax is still on ₹16,00,000"
+    ],
+    "note": "The price is an illustration, not a market quote. Surcharge depends on your total income and entity type."
+  },
+  "senseible": "Senseible does not give tax advice or compute tax on credit sales. It shows carbon credit eligibility signals from your own records and keeps the invoices behind them; credit issuance and transfers happen on a registry, outside Senseible.",
+  "links": [
+    { "label": "Realistic income from selling carbon credits", "to": "/climate-intelligence/realistic-income-from-selling-carbon-credits-msme" },
+    { "label": "Should I sell or retire my credits", "to": "/answers/should-i-sell-or-retire-my-carbon-credits" },
+    { "label": "Carbon credits with Senseible", "to": "/answers/carbon-credits-with-senseible" }
+  ],
+  "sources": [
+    { "label": "UNFCCC, the framework that the section 115BBG definition refers to (Income-tax Act, 1961, section 115BBG, inserted by Finance Act 2017)", "url": "https://unfccc.int" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The Income-tax Act, 2025 renumbered sections from 1 April 2026 and the GST position on carbon credits is unsettled; confirm both with a tax source before relying on this page."
+}

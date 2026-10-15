@@ -1,0 +1,56 @@
+{
+  "slug": "rbi-climate-disclosure-requirements-banks",
+  "q": "What climate-related disclosures does the RBI require from banks and NBFCs in India?",
+  "title": "RBI climate disclosure rules for banks",
+  "short": "None are binding yet. The RBI issued a draft Disclosure Framework on Climate-related Financial Risks on 28 February 2024, covering governance, strategy, risk management, and metrics and targets, including Scope 1, 2 and 3 emissions. As of October 2026 it has not been finalised, so banks and NBFCs should prepare but not cite it as a rule.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Bank and NBFC risk and sustainability teams",
+  "sections": [
+    {
+      "h": "Who the draft would cover",
+      "p": [
+        "The draft would apply to scheduled commercial banks and to NBFCs in the top and upper layers of the RBI's scale-based regulation. Other regulated entities could adopt it voluntarily. Listed banks and NBFCs already report under SEBI's BRSR, where Scope 1 and 2 are required and Scope 3 is voluntary."
+      ]
+    },
+    {
+      "h": "The four pillars in the draft",
+      "ul": [
+        "Governance: how the board and senior management oversee climate-related risks and opportunities.",
+        "Strategy: the climate risks the entity faces over short, medium and long horizons, and their effect on its business and financial planning.",
+        "Risk management: how climate risks are identified, assessed and folded into credit, market and operational risk processes.",
+        "Metrics and targets: the measures used, including greenhouse gas emissions of the entity's own operations and of its lending and investments, and any targets set."
+      ],
+      "p": [
+        "The structure follows the TCFD recommendations, which the ISSB's IFRS S2 has since absorbed."
+      ]
+    },
+    {
+      "h": "Timing proposed in the draft",
+      "p": [
+        "The draft phased disclosures in, with governance, strategy and risk management first and metrics and targets later, from 2027-28 for the largest entities. Because no final direction has been issued, none of these dates has taken effect. When final directions come, read their own start dates rather than the draft's."
+      ]
+    },
+    {
+      "h": "What to do while it is still a draft",
+      "ol": [
+        "Measure your own Scope 1 and 2 from branch electricity bills, generator diesel and vehicle fuel. This is small but expected first.",
+        "Pick a method for financed emissions, usually PCAF, and record a data quality score for each borrower estimate.",
+        "Collect borrower electricity bills and fuel invoices at onboarding and renewal, so MSME estimates can move from revenue proxies to activity data.",
+        "Read the RBI's separate draft guidance on climate scenario analysis and stress testing alongside the disclosure draft; the two are meant to fit together."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not prepare a bank's RBI climate disclosure or its financed emissions figure. It turns borrowers' electricity bills and fuel invoices into Scope 1 and 2 records with the source document attached, which a lender can use as activity data for financed emissions.",
+  "links": [
+    { "label": "Financed emissions for banks in India", "to": "/climate-intelligence/financed-emissions-banks-india" },
+    { "label": "What the RBI framework means for borrowers", "to": "/answers/rbi-climate-risk-disclosure-for-borrowers" },
+    { "label": "Climate risk vs ESG for lenders", "to": "/climate-intelligence/climate-risk-vs-esg-difference-financial-institutions" }
+  ],
+  "sources": [
+    { "label": "RBI Draft Disclosure framework on Climate-related Financial Risks, 2024 (28 February 2024)", "url": "https://www.rbi.org.in" },
+    { "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry", "url": "https://carbonaccountingfinancials.com" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Draft status was last confirmed in September 2026; check the RBI site for final directions and their start dates before each review."
+}

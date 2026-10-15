@@ -1,0 +1,60 @@
+{
+  "slug": "can-a-small-business-generate-carbon-credits",
+  "q": "Can a small manufacturing business in India generate carbon credits, and what decides eligibility?",
+  "title": "Can a small factory earn carbon credits?",
+  "short": "Yes, but only from a specific project, not from the business as a whole. The project must cut or remove emissions against a baseline, fit an approved methodology, be additional, be owned by you, start within the programme's time limits and produce enough tonnes to cover the costs. Small sites usually qualify through a grouped or bundled project.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners",
+  "sections": [
+    {
+      "h": "The six tests a project has to pass",
+      "ol": [
+        "Activity: there is an approved methodology for what you changed, such as a fuel switch, an efficiency upgrade or waste heat recovery, in Verra's VCS, Gold Standard or another programme.",
+        "Baseline and measurement: you can show what was emitted before the change and measure what is emitted after it, with records such as fuel invoices, electricity bills and production logs.",
+        "Additionality: the project would not have happened anyway. It is not required by law, and it is not clearly profitable without credit revenue. Tests follow tools such as the CDM additionality tool.",
+        "Timing: the programme limits how long after the project start you can still register it. A project started years ago without any credit intention often fails here.",
+        "Ownership: you hold the right to the reductions. If equipment was financed or supplied under a contract that assigns credits to someone else, you do not.",
+        "Volume: validation, verification and registry fees are fixed costs, so a project producing a few dozen tonnes a year rarely pays its way on its own."
+      ]
+    },
+    {
+      "h": "Common reasons small factories are turned down",
+      "ul": [
+        "The change was required by a pollution control board order or another rule, so it is not additional.",
+        "Grid-connected renewable power in India: most programmes no longer register it outside least developed countries, because it is now seen as viable without credits.",
+        "No records from before the change, so the baseline cannot be shown.",
+        "The same reduction is already claimed elsewhere, for example under a renewable energy certificate or a government scheme."
+      ]
+    },
+    {
+      "h": "How small sites get over the volume problem",
+      "p": [
+        "Programmes allow grouped or programme-of-activities structures, where one developer registers a project and adds many small sites over time. Each site still needs its own baseline records and monitoring, but validation and registration costs are shared. Gold Standard also has simplified rules for microscale projects."
+      ]
+    },
+    {
+      "h": "What to have ready before you speak to a developer",
+      "ul": [
+        "Twelve months of fuel and electricity bills from before the change, and every month since.",
+        "Production records in the same periods, so energy per unit of output can be compared.",
+        "The equipment purchase order and commissioning date.",
+        "Any contract, subsidy or loan document that mentions emission reductions or credits."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the baseline and post-change activity record from your fuel invoices and electricity bills and shows an eligibility signal for fuel-switch and efficiency projects. It does not validate projects, decide eligibility or issue credits; a programme and an independent validator do that.",
+  "links": [
+    { "label": "Carbon audit for small businesses in India", "to": "/climate-intelligence/carbon-audit-small-business-india-complete-guide" },
+    { "label": "Carbon credits for MSMEs", "to": "/carbon-credits" },
+    { "label": "What is additionality?", "to": "/answers/what-is-additionality-in-carbon-credits" },
+    { "label": "Grouped projects in Verra", "to": "/answers/what-is-a-grouped-project-in-verra" }
+  ],
+  "sources": [
+    { "label": "Verra VCS Standard (v4), project eligibility and additionality", "url": "https://verra.org" },
+    { "label": "Gold Standard for the Global Goals, Principles and Requirements", "url": "https://www.goldstandard.org" },
+    { "label": "CDM Methodological Tool 01, demonstration and assessment of additionality", "url": "https://unfccc.int" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Programme rules on eligible activities and start-date windows change with each version; check the current Verra and Gold Standard documents."
+}

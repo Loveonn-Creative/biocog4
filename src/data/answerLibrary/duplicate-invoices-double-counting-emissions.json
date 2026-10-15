@@ -1,0 +1,54 @@
+{
+  "slug": "duplicate-invoices-double-counting-emissions",
+  "q": "How do I stop the same purchase being counted twice in my carbon footprint?",
+  "title": "Stop double counting in a footprint",
+  "short": "Choose one document type as the record for each kind of activity, usually the tax invoice, and key every record on supplier GSTIN, invoice number and date. Then reconcile totals against your purchase ledger. File hashes catch exact copies only; a re-scanned invoice, a delivery challan or a monthly statement for the same supply needs these extra checks.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Accountants, sustainability analysts",
+  "sections": [
+    {
+      "h": "Where double counting comes from",
+      "ul": [
+        "The same invoice uploaded twice, or once as a PDF and once as a phone photo.",
+        "Two documents for one supply: a delivery challan or weighbridge slip and the tax invoice, or a fuel slip and the fuel card's monthly statement.",
+        "A proforma or advance invoice and the final tax invoice for the same goods.",
+        "Credit notes not netted off, so returned goods stay in the total.",
+        "Two plants or two team members recording a shared supplier's bill."
+      ]
+    },
+    {
+      "h": "Controls that work",
+      "ol": [
+        "Set a record rule per activity: tax invoices for purchases, discom bills for electricity, fuel slips or the fuel card statement, never both.",
+        "Give each record a key from printed fields: supplier GSTIN, invoice number and date for invoices; discom, billing period and units for electricity.",
+        "Block a second record with the same key, whatever the file looks like.",
+        "Net credit notes against the invoice they reverse.",
+        "Each month, reconcile quantities with the purchase register or Tally ledger and investigate gaps both ways."
+      ]
+    },
+    {
+      "h": "What a file hash can and cannot do",
+      "p": [
+        "A SHA-256 hash is a fingerprint of a file's exact bytes. Two identical files give the same hash, so an exact re-upload is caught. A new photo, a rescanned copy or a PDF exported again gives a different hash even when the content is the same, so the key on printed fields is still needed."
+      ]
+    },
+    {
+      "h": "Double counting across scopes",
+      "p": [
+        "Fuel you buy and burn is Scope 1. Do not also put the same diesel invoice into Scope 3 Category 1 as a purchased good. Upstream emissions of producing that fuel go in Category 3, calculated separately, not by counting the invoice again."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives every file a SHA-256 fingerprint so an identical file is not counted twice, and also matches invoices on supplier GSTIN (or supplier name), invoice number and date, so the same invoice sent as a photo and a PDF is counted once. It does not link a delivery challan or fuel card statement to the matching invoice, so keep one record type per activity.",
+  "links": [
+    { "label": "Stop the same invoice being counted twice", "to": "/answers/how-to-stop-same-invoice-counted-twice" },
+    { "label": "Trace emission data to source", "to": "/climate-intelligence/how-to-trace-emission-data-to-source" },
+    { "label": "How auditors verify activity data", "to": "/answers/how-auditors-verify-activity-data" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (revised edition, 2004), Chapter 7 Managing inventory quality", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "ISO 14064-1:2018, quantification and reporting of GHG emissions and removals (iso.org)", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

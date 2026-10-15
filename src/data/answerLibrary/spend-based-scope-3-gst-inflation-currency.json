@@ -1,0 +1,62 @@
+{
+  "slug": "spend-based-scope-3-gst-inflation-currency",
+  "q": "In spend-based Scope 3, do I remove GST and adjust for inflation and currency before applying factors?",
+  "title": "Spend-based Scope 3: GST, inflation, FX",
+  "short": "Yes, all three. Use the taxable value before GST, convert rupees to the factor's currency, and deflate to the factor's base year, because spend factors are per unit of money in a stated currency and year. Skipping these steps can overstate emissions by 20% or more.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sustainability analysts and finance teams",
+  "sections": [
+    {
+      "h": "Why GST comes out",
+      "p": [
+        "GST is a tax, not a payment for goods produced, and most businesses claim it back as input tax credit. Spend-based factors are built from economic output, so they expect a price without taxes. On an 18% GST item, using the invoice total overstates the line by 18%. Take customs duty out for the same reason."
+      ]
+    },
+    {
+      "h": "Matching the factor's currency and year",
+      "ul": [
+        "US EPA USEEIO factors are in US dollars of a stated year, given with and without trade and transport margins.",
+        "EXIOBASE gives factors by country and sector, including India, in euros of a stated year at basic prices.",
+        "Convert rupees using the average exchange rate for the year of spend, then deflate to the factor's base year with a price index, or deflate in rupees first and convert at the base-year rate. Pick one order and keep it every year."
+      ]
+    },
+    {
+      "h": "There is no official Indian factor set",
+      "p": [
+        "India has no government-published spend-based emission factors. A US factor describes how US industry makes the product, and an EXIOBASE India factor is a modelled average. Both are rough. Label spend-based results as estimates, and replace the biggest lines with quantity-based or supplier data first."
+      ]
+    },
+    {
+      "h": "Other cleaning steps",
+      "ul": [
+        "Remove freight charged on the same invoice if you count it in Category 4.",
+        "Remove intra-group transfers and items already counted elsewhere, such as fuel in Scope 1.",
+        "Use the 'with margins' factor when your spend includes the trader's and transporter's share, which is usually the case for a purchase price."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Rs 10 lakh of packaging (illustrative figures)",
+    "lines": [
+      "Invoice total Rs 11,80,000 = taxable value Rs 10,00,000 + GST at 18% Rs 1,80,000",
+      "Use the taxable value: Rs 10,00,000",
+      "Convert at an assumed average rate of Rs 85 per USD: 10,00,000 / 85 = USD 11,765",
+      "Deflate to the factor's base year, assuming 10% cumulative US price change: 11,765 / 1.10 = USD 10,695",
+      "Apply an assumed factor of 0.5 kg CO2e per USD: 10,695 x 0.5 = 5,348 kg CO2e, about 5.3 tonnes",
+      "Using the GST-inclusive total at the same steps would give about 6.3 tonnes, 18% too high"
+    ],
+    "note": "Exchange rate, price change and factor are assumptions for illustration; take the real values from the factor dataset's documentation."
+  },
+  "senseible": "Senseible reads the taxable value and GST as separate fields on each invoice line, so the pre-tax amount is available. It does not apply spend-based factors; its Scope 3 trail calculates only from printed quantities and approved factors and marks other lines as needing data.",
+  "links": [
+    { "label": "Scope 3 Category 1, spend-based", "to": "/answers/scope-3-category-1-spend-based" },
+    { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" },
+    { "label": "How to fill gaps in Scope 3 data", "to": "/answers/how-to-fill-gaps-in-scope-3-data" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions v1.0 (2013), Category 1", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "US EPA Supply Chain GHG Emission Factors for US Commodities and Industries (USEEIO)", "url": "https://www.epa.gov/climateleadership" }
+  ],
+  "reviewed": "2026-10-15"
+}

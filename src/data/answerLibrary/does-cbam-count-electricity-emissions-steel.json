@@ -1,0 +1,79 @@
+{
+  "slug": "does-cbam-count-electricity-emissions-steel",
+  "q": "Does CBAM count the emissions from the electricity my steel or aluminium plant uses?",
+  "title": "Does CBAM count electricity for steel?",
+  "short": "Not in the definitive period. For iron and steel, aluminium and hydrogen, the CBAM Regulation counts only direct emissions, listed in its Annex II. Electricity emissions (indirect) are counted for cement and fertilisers, not for steel or aluminium. You reported indirect emissions for all goods during the 2023 to 2025 transitional period, and the Commission may extend them later.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian steel and aluminium plants, EU importers",
+  "sections": [
+    {
+      "h": "Which goods count electricity",
+      "ul": [
+        "Direct emissions only (Annex II): iron and steel, aluminium, hydrogen.",
+        "Direct and indirect emissions: cement and fertilisers.",
+        "Electricity imported as a good: the emissions of its generation."
+      ],
+      "p": [
+        "Article 7 and Annex IV of Regulation (EU) 2023/956 set the method. The definitive period started on 1 January 2026, and 2026 imports are the first that need certificates, bought and surrendered in 2027."
+      ]
+    },
+    {
+      "h": "Captive power counts as indirect too",
+      "p": [
+        "Annex IV defines indirect emissions as emissions from producing the electricity consumed in production, wherever that electricity is produced. So power from your own coal-fired captive plant is still indirect for CBAM and is not charged on steel or aluminium. Heat and steam used in the process are different: emissions from fuel burnt to make them are direct and do count."
+      ]
+    },
+    {
+      "h": "What still counts for steel and aluminium",
+      "p": [
+        "Direct emissions from your own processes: fuel combustion in furnaces and boilers, process emissions such as coke and limestone reactions, and anode consumption in aluminium smelting. Embedded emissions of precursors also count, such as pig iron, DRI or unwrought aluminium bought from another plant, again on a direct emissions basis."
+      ]
+    },
+    {
+      "h": "Why you should still keep electricity data",
+      "ul": [
+        "Article 30 asks the Commission to assess including indirect emissions for Annex II goods, so the rule can change.",
+        "EU buyers often want the full footprint for their own Scope 3 and product claims, not just the CBAM figure.",
+        "The transitional reports already carried indirect emissions, and some buyers compare figures year to year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: electricity in an EAF rolling route",
+    "lines": [
+      "Assumed electricity use: 500 kWh per tonne of steel (illustrative, not a benchmark)",
+      "Indirect emissions: 500 x 0.710 kg CO2/kWh = 355 kg CO2 per tonne",
+      "CBAM definitive period: these 355 kg are not counted for steel",
+      "For a buyer's full footprint they are: report them separately with the CEA source"
+    ],
+    "note": "Cement and fertiliser exporters would include the same indirect figure in CBAM embedded emissions."
+  },
+  "senseible": "Senseible reads kWh from your electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, so the indirect figure is ready if a buyer or a later rule change asks for it. It does not produce the verified CBAM embedded emissions report for an installation.",
+  "links": [
+    {
+      "label": "CBAM compliance for Indian exporters",
+      "to": "/climate-intelligence/cbam-compliance-indian-exporters"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 7, Article 30, Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission: CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "The Commission may extend indirect emissions to more goods under Article 30; confirm Annex II as amended before relying on this."
+}

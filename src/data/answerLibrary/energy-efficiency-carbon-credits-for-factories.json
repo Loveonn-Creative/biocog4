@@ -1,0 +1,58 @@
+{
+  "slug": "energy-efficiency-carbon-credits-for-factories",
+  "q": "Can energy-efficiency upgrades at a factory (motors, compressors, furnaces) earn carbon credits?",
+  "title": "Factory energy efficiency and carbon credits",
+  "short": "Yes, in principle. Small-scale CDM methods AMS-II.C and AMS-II.D cover efficient equipment and industrial efficiency projects. In practice a single MSME upgrade saves too few tonnes to pay for validation and verification, so these projects usually earn credits only when many sites are grouped under one programme with clean before and after records.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners, plant heads",
+  "sections": [
+    {
+      "h": "Which methodologies apply",
+      "ul": [
+        "AMS-II.C, demand-side energy efficiency for specific technologies: replacing or retrofitting equipment such as motors, pumps, lighting or compressors with more efficient units.",
+        "AMS-II.D, energy efficiency and fuel switching for industrial facilities: process changes across a plant, such as furnace upgrades, heat recovery or switching a boiler fuel.",
+        "Both are small-scale Type II methods, capped at energy savings of 60 GWh a year. Registries that accept CDM methods, and India's CCTS offset mechanism through its own approved list, decide which versions are currently allowed."
+      ]
+    },
+    {
+      "h": "What evidence the baseline needs",
+      "ol": [
+        "Energy use before the change: at least a year of electricity bills and fuel invoices, plus production, so savings are not just lower output.",
+        "Equipment details: nameplate ratings, running hours, and what the old unit would have used.",
+        "Monitoring after the change: metered kWh or fuel per unit of output, kept for every monitoring period.",
+        "Proof the project is additional: that it would not have happened anyway, which is hard when an upgrade pays back in a year or two."
+      ]
+    },
+    {
+      "h": "Why most single projects do not qualify alone",
+      "p": [
+        "Validation, registration and each verification carry fixed fees, whether the project avoids 40 tonnes or 40,000. A factory saving a few dozen tonnes a year cannot cover those costs. Grouped or programme projects let an aggregator add sites over time under one validated design, spreading the fixed cost across many small savings.",
+        "Credits also go to whoever holds the rights. If an ESCO, lessor or equipment supplier funded the upgrade, settle ownership in the contract first."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: a variable speed drive on a 75 kW fan",
+    "lines": [
+      "Assumed saving: 60,000 kWh a year",
+      "Grid factor: 0.710 kg CO2 per kWh (CEA weighted average, version 21.0)",
+      "60,000 x 0.710 = 42,600 kg CO2, about 43 tonnes a year"
+    ],
+    "note": "Credit methods usually require the CEA combined margin factor rather than the weighted average, so the creditable figure will differ. At this size the project needs grouping to be viable."
+  },
+  "senseible": "Senseible reads the electricity bills and fuel invoices from before and after the upgrade and keeps them as dated evidence, and it shows carbon credit eligibility signals. It does not issue credits, run validation or register projects.",
+  "links": [
+    { "label": "What is a grouped project in Verra", "to": "/answers/what-is-a-grouped-project-in-verra" },
+    { "label": "Measure savings from an efficiency project", "to": "/answers/how-to-measure-savings-from-energy-efficiency-project" },
+    { "label": "Realistic income from carbon credits", "to": "/climate-intelligence/realistic-income-from-selling-carbon-credits-msme" },
+    { "label": "Carbon credits for MSMEs", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "CDM methodologies AMS-II.C and AMS-II.D (UNFCCC)", "url": "https://unfccc.int" },
+    { "label": "Verra VCS Standard", "url": "https://verra.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Registries have been retiring or revising CDM methods they accept; confirm AMS-II.C and AMS-II.D are still eligible before starting."
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "operational-control-vs-equity-share",
+  "q": "Should a family business group with several units use operational control or equity share for its carbon footprint?",
+  "title": "Operational control or equity share?",
+  "short": "Most family groups should use operational control: count 100% of every unit the group runs day to day, and nothing from units it only invests in. Use equity share when partly owned units run by partners are a large part of the group and your buyers or lenders want emissions in line with ownership.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners, CFOs of family groups",
+  "sections": [
+    {
+      "h": "What the three approaches mean",
+      "ul": [
+        "Operational control: 100% of emissions from every unit where the group has full authority to introduce and run its operating policies, whatever the ownership share.",
+        "Financial control: 100% of units whose financial and operating policies the group directs to gain economic benefit, usually those consolidated as subsidiaries in the accounts.",
+        "Equity share: each unit's emissions multiplied by the group's ownership share."
+      ],
+      "p": [
+        "These come from chapter 3 of the GHG Protocol Corporate Standard. ISO 14064-1:2018 allows the same choice between control and equity share."
+      ]
+    },
+    {
+      "h": "Why operational control fits most family groups",
+      "ul": [
+        "The family usually runs the units it owns, even when shares are spread across relatives, trusts and holding companies, so control is clearer than the ownership chain.",
+        "You hold the bills for the units you run, so the data is available.",
+        "Buyers mostly ask a supplier for the emissions of the plant that makes their product, which matches control."
+      ]
+    },
+    {
+      "h": "When equity share is the better choice",
+      "ul": [
+        "The group has large stakes in joint ventures that a partner manages.",
+        "Lenders or investors want emissions to follow the financial interest in each unit.",
+        "Ownership is stable and documented, so the percentages can be shown."
+      ]
+    },
+    {
+      "h": "Rules once you choose",
+      "ol": [
+        "Apply one approach to every unit and every gas, and state it in the report.",
+        "Under a control approach, a unit you hold shares in but do not control drops out of Scope 1 and 2; its emissions can appear in Scope 3 Category 15, investments.",
+        "If units are bought, sold or merged, recalculate the base year so the trend stays comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a group with three units",
+    "lines": [
+      "Unit A: 100% owned, run by the family, 800 t CO2",
+      "Unit B: 60% owned, run by the family, 500 t CO2",
+      "Unit C: 30% owned, run by a partner, 1,000 t CO2",
+      "Operational control: 800 + 500 = 1,300 t (Unit C left out of Scope 1 and 2)",
+      "Equity share: 800 + (60% x 500 = 300) + (30% x 1,000 = 300) = 1,400 t"
+    ],
+    "note": "The choice changes the total by 100 t here, and changes which bills the group must collect."
+  },
+  "senseible": "Senseible counts the bills and invoices you upload to an account. Which units belong in the boundary, and at what share, is your decision; Senseible does not apply equity percentages.",
+  "links": [
+    { "label": "Carbon accounting", "to": "/carbon-accounting" },
+    { "label": "Scope 1, 2 and 3 explained simply", "to": "/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business" },
+    { "label": "Leased factory: which scope", "to": "/answers/leased-factory-emissions-which-scope" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (2004), chapter 3, setting organisational boundaries", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "ISO 14064-1:2018, clause 5.1, organisational boundaries", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

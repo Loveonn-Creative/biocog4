@@ -1,0 +1,62 @@
+{
+  "slug": "cea-vs-iea-grid-emission-factor-india",
+  "q": "Should I use the CEA or the IEA grid emission factor for India?",
+  "title": "CEA or IEA grid factor for India?",
+  "short": "For electricity used in India, use the Central Electricity Authority (CEA) factor. It is the official national figure, it is free, and it comes with a published method. Use an IEA factor only when a buyer or programme asks for it by name, and say which one you used.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Sustainability leads, exporters answering EU buyers, auditors",
+  "sections": [
+    {
+      "h": "Why the CEA factor is the default in India",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance asks you to use the most precise location-based factor available for where the electricity was used. In India that is the CEA CO2 Baseline Database, which the CEA updates every year from plant-level data on fuel burnt and power sent out.",
+        "It is public, it names its edition and fiscal year, and an auditor can open the same table you used. That traceability matters more than small differences between databases."
+      ]
+    },
+    {
+      "h": "When an IEA factor is the better choice",
+      "ul": [
+        "A buyer or group parent sets one factor source for every country so their totals are comparable, and names IEA.",
+        "You report a multi-country footprint and the methodology note promises one consistent database.",
+        "A programme or questionnaire asks for IEA figures specifically."
+      ],
+      "p": ["IEA factors are a licensed database. If you use one, record the edition and year, and do not mix IEA and CEA within one total."]
+    },
+    {
+      "h": "Which CEA figure to pick",
+      "p": [
+        "For a normal Scope 2 inventory use the weighted average emission factor for the grid. The combined margin figures in the same database are built for estimating project reductions, such as solar or efficiency projects in carbon credit methods, not for reporting your purchased electricity."
+      ]
+    },
+    {
+      "h": "What to write in your report",
+      "ol": [
+        "Name the source: CEA CO2 Baseline Database, the version and the fiscal year it covers.",
+        "State the factor and unit, for example 0.710 kg CO2 per kWh.",
+        "Say it is location-based Scope 2, and report market-based separately if you hold certificates or a green tariff.",
+        "Keep the same edition for the whole reporting year; when a new edition comes out, apply it going forward and note the change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of a factory bill",
+    "lines": [
+      "Units billed: 42,000 kWh",
+      "Factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
+      "42,000 x 0.710 = 29,820 kg CO2, about 29.8 tonnes for the month"
+    ],
+    "note": "If a buyer insists on a different factor, recalculate with theirs and keep both figures with their sources."
+  },
+  "senseible": "Senseible reads the kWh from your electricity bill and applies the CEA weighted average factor (0.710 kg CO2 per kWh, version 21.0) for location-based Scope 2, showing the source on every line. It does not apply IEA factors or grid factors for other countries.",
+  "links": [
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
+    { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
+    { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-15"
+}

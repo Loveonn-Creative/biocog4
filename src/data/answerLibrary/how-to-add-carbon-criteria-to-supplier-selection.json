@@ -1,0 +1,89 @@
+{
+  "slug": "how-to-add-carbon-criteria-to-supplier-selection",
+  "q": "How do I add carbon criteria to supplier selection and purchase decisions?",
+  "title": "Carbon criteria in supplier selection",
+  "short": "Start with the few categories where most of your purchased emissions sit. Ask suppliers in those categories for document-backed emissions data in every quote, give carbon a fixed weight in your scoring or an internal carbon price in total cost, and write data sharing and reduction expectations into contracts.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Procurement managers",
+  "sections": [
+    {
+      "h": "Step 1: find the hotspots",
+      "p": [
+        "Rank purchased goods by spend and by a rough emissions estimate. Steel, aluminium, cement, chemicals, plastics and freight usually dominate for manufacturers. Apply carbon criteria to those first; for low impact spend, leave procurement unchanged."
+      ]
+    },
+    {
+      "h": "Step 2: ask for the data in the quote",
+      "ul": [
+        "Supplier Scope 1 and 2 emissions for the last year, with the invoices or bills behind them.",
+        "For key materials, a product carbon footprint per tonne or per unit, with its boundary.",
+        "Production route or recycled content where it drives emissions.",
+        "Any reduction target or plan."
+      ],
+      "p": [
+        "The GHG Protocol Scope 3 guidance prefers supplier-specific data over averages, so data you collect here also improves your own Scope 3 inventory."
+      ]
+    },
+    {
+      "h": "Step 3: put carbon into the decision",
+      "ul": [
+        "Weighted scoring: give carbon a fixed share of the technical score and publish it in the tender.",
+        "Total cost of ownership: add tonnes x an internal carbon price to each quoted price.",
+        "Minimum requirement: for some items, refuse quotes with no emissions data at all."
+      ],
+      "p": [
+        "ISO 20400:2017 gives guidance on building sustainability into procurement policy, criteria and contract management."
+      ]
+    },
+    {
+      "h": "Step 4: write it into the contract",
+      "ol": [
+        "Annual sharing of emissions data in an agreed format.",
+        "Notice if the production route or energy source changes.",
+        "A reduction expectation, reviewed yearly, rather than a penalty on day one.",
+        "Right to see the evidence behind the figures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two steel quotes with an internal carbon price",
+    "lines": [
+      "Order: 1,000 t of steel; illustrative internal carbon price Rs 1,500 per t CO2e",
+      "Supplier A: Rs 55,000 per t, 2.4 t CO2e per t. Price Rs 5.50 crore + carbon 2,400 x 1,500 = Rs 36 lakh. Total Rs 5.86 crore",
+      "Supplier B: Rs 56,000 per t, 1.6 t CO2e per t. Price Rs 5.60 crore + carbon 1,600 x 1,500 = Rs 24 lakh. Total Rs 5.84 crore",
+      "Supplier B wins by Rs 2 lakh once carbon is priced in"
+    ],
+    "note": "The carbon price is an internal choice, not a market price. Test the decision at two or three prices."
+  },
+  "senseible": "Suppliers can share a document-backed Senseible record of their fuel and electricity emissions, and the supplier emissions risk calculator screens exposure across a supplier list. Senseible does not score tenders or rank suppliers for you.",
+  "links": [
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Supplier emissions risk calculator",
+      "to": "/calculators/supplier-emissions-risk"
+    },
+    {
+      "label": "Which suppliers to engage first on Scope 3",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "Benchmarking a steel supplier's intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 20400:2017, Sustainable procurement: guidance",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

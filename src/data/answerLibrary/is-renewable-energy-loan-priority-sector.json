@@ -1,0 +1,60 @@
+{
+  "slug": "is-renewable-energy-loan-priority-sector",
+  "q": "Do renewable energy loans to MSMEs count as priority sector lending in India?",
+  "title": "Are MSME solar loans priority sector?",
+  "short": "Usually yes. A bank loan to a Udyam-registered micro, small or medium enterprise counts under the MSME category of priority sector lending whatever it funds, including solar or other renewable energy. A separate renewable energy category covers loans to borrowers for solar, biomass, wind and micro-hydel generation up to a per-borrower ceiling set in RBI's Master Directions.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners, bank and NBFC credit teams",
+  "sections": [
+    {
+      "h": "Two routes into priority sector",
+      "ul": [
+        "MSME category: loans to enterprises classified as micro, small or medium under the MSMED Act, as evidenced by Udyam registration. The purpose of the loan does not need to be green; a rooftop solar plant, a new boiler or working capital all qualify.",
+        "Renewable energy category: loans to borrowers for solar power generators, biomass power generators, windmills, micro-hydel plants and non-conventional energy based public utilities such as street lighting and remote village electrification, up to a per-borrower limit. A separate, lower limit applies to individual households.",
+        "A bank reports each loan under one category only, so the same loan is not counted twice."
+      ]
+    },
+    {
+      "h": "Which route applies to your loan",
+      "p": [
+        "If you hold a Udyam certificate, the bank will normally classify your solar or efficiency loan under MSME, where there is no renewable energy ceiling. The renewable energy category matters mainly for borrowers that are not MSMEs, such as a project company or a larger firm setting up captive generation, and for households."
+      ]
+    },
+    {
+      "h": "The limits to check",
+      "p": [
+        "The renewable energy ceiling has been raised over time: it was Rs 30 crore per borrower in the 2020 Master Directions, and the 2025 revision raised it to Rs 35 crore, with Rs 10 lakh for individual households. Always check the latest Master Direction on Priority Sector Lending on rbi.org.in, because RBI updates these limits."
+      ]
+    },
+    {
+      "h": "How this differs from green deposits and green loans",
+      "ul": [
+        "Priority sector status is a bank's regulatory classification. It can make a lender keener to lend, but it does not by itself lower your interest rate.",
+        "Green deposits (RBI framework, 2023) are money banks raise from depositors and must allocate to listed green activities, including renewable energy. That is separate from PSL.",
+        "A green loan in the market sense follows the Green Loan Principles: use of proceeds, project selection, management of proceeds and reporting. A loan can be PSL, green, both or neither."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a 400 kW rooftop plant",
+    "lines": [
+      "Borrower: Udyam-registered small manufacturer; loan Rs 1.6 crore for rooftop solar",
+      "Classification: MSME category of priority sector (renewable energy ceiling not needed)",
+      "Same plant, borrower not an MSME: renewable energy category, eligible while the loan is within the per-borrower ceiling"
+    ]
+  },
+  "senseible": "Senseible does not decide priority sector classification; that is the bank's call under RBI rules. Its green loan readiness check and document-backed emissions record help you show a lender what the loan will change.",
+  "links": [
+    { "label": "Solar loans for MSMEs in India", "to": "/climate-intelligence/solar-loan-for-msme-india" },
+    { "label": "RBI green deposits: what banks finance", "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance" },
+    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" }
+  ],
+  "sources": [
+    { "label": "RBI, Master Directions on Priority Sector Lending (latest revision), renewable energy and MSME categories (rbi.org.in)", "url": "https://www.rbi.org.in" },
+    { "label": "Loan Market Association, Green Loan Principles", "url": "https://www.lma.eu.com" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "PSL limits change with each revision of the Master Directions; confirm the current renewable energy ceiling on rbi.org.in."
+}

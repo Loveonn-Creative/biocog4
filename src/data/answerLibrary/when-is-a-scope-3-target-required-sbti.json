@@ -1,0 +1,62 @@
+{
+  "slug": "when-is-a-scope-3-target-required-sbti",
+  "q": "When does SBTi require a Scope 3 target?",
+  "title": "When SBTi requires a Scope 3 target",
+  "short": "Under SBTi's corporate near-term criteria, you need a Scope 3 target when Scope 3 is 40 percent or more of your total Scope 1, 2 and 3 emissions, and the target must cover at least two thirds of Scope 3. Companies on the SME route do not set a Scope 3 target; they commit to measure and reduce it.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Sustainability leads",
+  "sections": [
+    {
+      "h": "The 40 percent test",
+      "ol": [
+        "Screen all 15 Scope 3 categories, using spend-based estimates where you have nothing better.",
+        "Add Scope 1, Scope 2 and Scope 3 for the base year.",
+        "Divide Scope 3 by the total.",
+        "If the share is 40 percent or more, a near-term Scope 3 target is required."
+      ]
+    },
+    {
+      "h": "What the target must cover",
+      "p": [
+        "The near-term Scope 3 target must cover at least 67 percent of Scope 3 emissions. You can choose an absolute reduction, an intensity reduction, or a supplier engagement target, where a share of suppliers by emissions set their own science-based targets. Most companies combine purchased goods, transport and use of sold products to reach the coverage."
+      ]
+    },
+    {
+      "h": "The SME route",
+      "p": [
+        "SBTi's SME route has a fixed Scope 1 and 2 target and no Scope 3 target. The company commits to measure and reduce its Scope 3 emissions. Check the SME eligibility criteria first, because a company that does not qualify must follow the corporate route and the 40 percent test."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Land-intensive businesses may also need a separate forest, land and agriculture (FLAG) target.",
+        "If a screening estimate puts you close to 40 percent, improve the largest categories with activity data before deciding.",
+        "Base year recalculation after an acquisition can move you across the threshold."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory testing the threshold",
+    "lines": [
+      "Scope 1: 300 t; Scope 2: 400 t; Scope 3 (screened): 900 t",
+      "Total: 300 + 400 + 900 = 1,600 t",
+      "Scope 3 share: 900 / 1,600 = 56.25 percent, above 40 percent, so a target is required",
+      "Minimum coverage: 900 x 0.67 = 603 t of Scope 3 inside the target boundary"
+    ]
+  },
+  "senseible": "Senseible keeps Scope 3 lines from purchase invoices in a separate supplier evidence trail, which helps estimate the 40 percent test. It does not submit or validate SBTi targets.",
+  "links": [
+    { "label": "SBTi SME route eligibility", "to": "/answers/sbti-sme-route-eligibility" },
+    { "label": "SBTi near-term target validation", "to": "/climate-intelligence/msme-sbti-fln-near-term-target-validation" },
+    { "label": "Which Scope 3 categories are mandatory?", "to": "/answers/which-scope-3-categories-are-mandatory" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "SBTi Corporate Near-Term Criteria and SME target route", "url": "https://sciencebasedtargets.org" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "SBTi's Corporate Net-Zero Standard version 2 may change the Scope 3 threshold and coverage rules; recheck before setting a target."
+}

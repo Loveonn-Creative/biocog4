@@ -1,0 +1,63 @@
+{
+  "slug": "how-to-stop-same-invoice-counted-twice",
+  "q": "How do I stop the same invoice being counted twice in my carbon report?",
+  "title": "Stop one invoice being counted twice",
+  "short": "Use two checks. A file fingerprint (SHA-256 hash) blocks the exact same file being uploaded again. A business key, the supplier's GSTIN plus invoice number and date, catches the same invoice arriving as a new scan, photo or email copy, which a file hash cannot. Review any match before deleting it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Accountants, sustainability leads, auditors",
+  "sections": [
+    {
+      "h": "What a file hash catches and what it misses",
+      "p": [
+        "SHA-256 turns a file's bytes into a fixed 64-character fingerprint. The same file always gives the same fingerprint, so re-uploading it is caught. Change one byte, such as a new scan of the same paper bill or the same PDF saved again, and the fingerprint is completely different. A hash proves a file is identical; it cannot tell that two different files show the same invoice."
+      ]
+    },
+    {
+      "h": "The business key check",
+      "ol": [
+        "Build a key from supplier GSTIN, invoice number and invoice date.",
+        "For e-invoices, use the Invoice Reference Number (IRN), which is unique per e-invoice.",
+        "For electricity bills, compare the site, billing period and units billed.",
+        "Flag any second document with the same key and hold it out of the totals until someone reviews it."
+      ]
+    },
+    {
+      "h": "Where double counting usually comes from",
+      "ul": [
+        "The same bill uploaded by two people in one company.",
+        "A proforma invoice and the final tax invoice for one purchase.",
+        "A delivery challan and the invoice for the same diesel.",
+        "Monthly statements that repeat invoices already uploaded.",
+        "Electricity bills with arrears that rebill units from a previous period.",
+        "Credit notes and revised invoices: the revision should replace, not add to, the original."
+      ]
+    },
+    {
+      "h": "Why it matters for your report",
+      "p": [
+        "The GHG Protocol accuracy principle asks that emissions are neither overstated nor understated. A duplicate overstates your footprint, distorts your base year and can mislead a buyer or lender. Auditors test for it by sorting the listing on supplier and invoice number, so check this yourself before they do."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a diesel invoice counted twice",
+    "lines": [
+      "Invoice: 1,000 litres of diesel x 2.68 = 2,680 kg CO2",
+      "A photo of the same invoice and the emailed PDF both uploaded: 5,360 kg CO2 reported",
+      "Different files, so different SHA-256 fingerprints: the hash check does not catch it",
+      "Same GSTIN, invoice number and date: the business key check flags it, and 2,680 kg is removed"
+    ]
+  },
+  "senseible": "Senseible fingerprints every file with SHA-256 and counts an identical file once, including when different members of one organisation upload it. That check matches byte-identical files only, so a re-scan or a photo of the same bill needs the invoice number and GSTIN check described here.",
+  "links": [
+    { "label": "Duplicate invoices and double counting", "to": "/answers/duplicate-invoices-double-counting-emissions" },
+    { "label": "Verify a SHA-256 fingerprint", "to": "/answers/verify-sha-256-fingerprint-carbon-report" },
+    { "label": "Greenwashing detection", "to": "/answers/greenwashing-detection" }
+  ],
+  "sources": [
+    { "label": "NIST FIPS PUB 180-4, Secure Hash Standard", "url": "https://csrc.nist.gov" },
+    { "label": "GHG Protocol Corporate Standard (accuracy principle)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-15"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "how-to-allocate-emissions-between-co-products",
+  "q": "How do I split emissions between two products that come out of the same process?",
+  "title": "Allocating emissions between co-products",
+  "short": "Follow the ISO 14044 order. First avoid splitting, by dividing the process or by system expansion. If you cannot, split by a physical relationship, usually mass. Use economic value only when no physical link reflects how the process works. Whatever you choose, the product shares must add back to the process total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Plant heads and sustainability leads at multi-product units",
+  "sections": [
+    {
+      "h": "What counts as a co-product",
+      "p": [
+        "A co-product is a second output with value that the same process produces unavoidably: bran and husk from milling rice, secondary or cut-length steel from a rolling mill, molasses from sugar. An output with no value that you pay to dispose of is waste, not a co-product, and carries no share of the emissions."
+      ]
+    },
+    {
+      "h": "The three steps, in order",
+      "ol": [
+        "Avoid allocation. Subdivide the process if a step serves only one product, for example a polisher used only for rice. Or expand the system: credit the main product with what the co-product replaces elsewhere, if you can show that substitution.",
+        "Allocate by a physical relationship that reflects how the inputs and emissions change with the outputs, most often mass, sometimes energy content.",
+        "Allocate by another relationship, usually economic value, when no physical link is meaningful, such as when the co-product is a small, low-value share of mass."
+      ],
+      "p": [
+        "This hierarchy is ISO 14044:2006 clause 4.3.4. ISO 14067:2018 and the GHG Protocol Product Standard follow it."
+      ]
+    },
+    {
+      "h": "Rules auditors check",
+      "ul": [
+        "Apply the same method to similar inputs and outputs, and keep it from year to year.",
+        "When more than one method looks reasonable, ISO 14044 asks for a sensitivity check: show the result under the alternative and explain the choice.",
+        "For economic allocation, use average prices over a stated period, not one month's spot price."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a rice mill, one month",
+    "lines": [
+      "Process total: 60,000 kWh x 0.710 = 42,600 kg CO2, plus 1,000 L diesel x 2.68 = 2,680 kg CO2; total 45,280 kg CO2",
+      "Outputs: 400 t milled rice and 40 t bran (husk left out to keep the example short)",
+      "By mass: rice 400/440 = 90.9%, 41,164 kg; bran 4,116 kg; both 102.9 kg CO2 per tonne",
+      "By value (illustrative prices ₹30,000/t rice, ₹15,000/t bran): rice ₹1.20 crore, bran ₹6 lakh, total ₹1.26 crore",
+      "Rice 95.2%, 43,124 kg, 107.8 kg CO2 per tonne; bran 4.8%, 2,156 kg, 53.9 kg CO2 per tonne",
+      "Check: 41,164 + 4,116 = 45,280 and 43,124 + 2,156 = 45,280"
+    ],
+    "note": "A real mill also has husk, broken rice and often its own husk-fired boiler; each changes the split, so state what you included."
+  },
+  "senseible": "Senseible gives the process total from fuel and electricity bills, such as the month's Scope 1 and 2 above. The split between co-products is your documented choice; Senseible does not allocate emissions to products.",
+  "links": [
+    { "label": "Splitting factory electricity by product", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "ISO 14067 vs GHG Protocol Product Standard", "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14044:2006 clause 4.3.4, allocation; ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), chapter 9", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-15"
+}

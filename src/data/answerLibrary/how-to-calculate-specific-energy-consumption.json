@@ -1,0 +1,81 @@
+{
+  "slug": "how-to-calculate-specific-energy-consumption",
+  "q": "How do I calculate specific energy consumption (SEC) for my plant in toe per tonne?",
+  "title": "Calculating specific energy consumption",
+  "short": "Specific energy consumption is the total energy entering your plant boundary in a year, converted to tonnes of oil equivalent, divided by the tonnes of product made in that year. One toe is 10 million kcal. Convert each fuel with its gross calorific value and electricity with the factor BEE prescribes, then divide by production.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant heads and energy managers",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "SEC (toe per tonne) = total energy input in toe / production in tonnes.",
+        "Energy in toe = quantity x gross calorific value (kcal per unit) / 10,000,000. Do this for each fuel and for purchased electricity, then add them up. Under the PAT scheme the boundary is the plant gate: count energy that comes in, and subtract energy that leaves, such as electricity exported to the grid."
+      ]
+    },
+    {
+      "h": "Step by step",
+      "ol": [
+        "Collect a full year of fuel receipts and electricity bills for the plant. Use consumption, not purchases, if stock levels changed: opening stock + receipts minus closing stock.",
+        "Use the gross calorific value from your own fuel test reports. Default values hide large differences, especially for Indian coal.",
+        "Convert purchased electricity using the factor in the BEE forms for your sector.",
+        "Use the same product definition every year, for example tonnes of cement, clinker equivalent or finished cloth, as notified for your sector.",
+        "Divide, and keep the workings with the source documents."
+      ]
+    },
+    {
+      "h": "Why your SEC can move without any real change",
+      "ul": [
+        "Capacity utilisation: running at 60 percent load raises SEC because fixed loads are spread over less output.",
+        "Product mix: finer counts in textiles or special grades in steel take more energy per tonne.",
+        "Fuel quality: lower calorific value coal means more tonnes for the same heat, but the toe total should stay similar."
+      ],
+      "p": [
+        "PAT applies normalisation for these factors before comparing a designated consumer against its target, so compare your raw SEC only with your own past years."
+      ]
+    },
+    {
+      "h": "SEC and carbon intensity are related but different",
+      "p": [
+        "SEC measures energy. Carbon intensity, tonnes CO2 per tonne of product, also depends on which fuel supplies that energy. Switching coal to gas can leave SEC almost unchanged while cutting carbon intensity sharply. CCTS targets are set as greenhouse gas intensity, so plants moving from PAT to CCTS need both numbers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year at a small plant",
+    "lines": [
+      "Coal: 8,000 t x 4,200 kcal/kg = 33,600 million kcal = 3,360 toe",
+      "Grid electricity: 6,000,000 kWh x 860 kcal/kWh = 5,160 million kcal = 516 toe",
+      "Total energy: 3,360 + 516 = 3,876 toe",
+      "Production: 50,000 t, so SEC = 3,876 / 50,000 = 0.0775 toe per tonne"
+    ],
+    "note": "The coal calorific value and the 860 kcal/kWh electricity conversion are illustrative; use your test reports and the BEE prescribed conversion."
+  },
+  "senseible": "Senseible reads fuel and electricity quantities from your bills, which gives you the documented numerator for each energy source. Production is your own input, and Senseible does not convert energy to toe or apply PAT normalisation.",
+  "links": [
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "Energy audits for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Perform, Achieve and Trade scheme: normalisation and Form 1 documents",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Energy Conservation Act, 2001 and Energy Consumption Norms and Standards notifications (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-15"
+}

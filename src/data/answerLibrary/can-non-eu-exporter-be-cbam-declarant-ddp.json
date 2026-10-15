@@ -1,0 +1,54 @@
+{
+  "slug": "can-non-eu-exporter-be-cbam-declarant-ddp",
+  "q": "If I sell DDP to an EU customer, can my Indian company be the CBAM declarant, or do I need an indirect customs representative?",
+  "title": "Selling DDP: who is the CBAM declarant?",
+  "short": "An Indian company cannot itself be an authorised CBAM declarant, because the status is only granted to persons established in an EU Member State. If you sell DDP and act as importer, an indirect customs representative in the EU must take the CBAM declarant role for you, or you import through an EU entity of your own.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian exporters selling on DDP or DAP terms",
+  "sections": [
+    {
+      "h": "What the CBAM Regulation says",
+      "ul": [
+        "Article 5: an importer must hold authorised CBAM declarant status before importing CBAM goods above the de minimis threshold.",
+        "Where the importer is not established in a Member State, the application is made by the indirect customs representative, who then carries the CBAM obligations.",
+        "Article 17: authorisation is granted only to an applicant established in a Member State, with no serious or repeated infringements, and with the financial and operational capacity to meet its obligations."
+      ]
+    },
+    {
+      "h": "Why DDP puts the question on you",
+      "p": [
+        "Under DDP the seller clears the goods for import and pays the duties. That usually makes your company, or someone acting for you, the importer for customs. Under DAP or DPU the buyer normally clears import, so the buyer is the importer and the CBAM declarant. Customs law (Union Customs Code, Article 18) lets a non-EU importer use a representative, but the representative takes on CBAM duties only by agreement, and many will charge for the risk."
+      ]
+    },
+    {
+      "h": "Your realistic options",
+      "ol": [
+        "Find an EU indirect customs representative who agrees to be the authorised CBAM declarant for your shipments, and agree in writing who buys and surrenders certificates.",
+        "Import through an EU subsidiary or branch that applies for declarant status itself.",
+        "Move to a term where your customer clears import, and supply the embedded emissions data they need.",
+        "Stay under the 50 tonne annual threshold per importer, which only works for small CBAM volumes."
+      ]
+    },
+    {
+      "h": "Costs that follow the declarant role",
+      "p": [
+        "The declarant files the annual CBAM declaration, buys and surrenders certificates, and holds the required share of certificates each quarter. For 2026 imports, certificates are bought and surrendered in 2027. Whoever takes the role will want the cost priced in, and will want your installation data to avoid default values with their mark-ups."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not act as a declarant or customs representative and does not advise on contract terms. It keeps the fuel and production records behind your embedded emissions, and its CBAM calculator gives an estimate of the certificate cost to discuss with whoever declares.",
+  "links": [
+    { "label": "Become a CBAM authorised declarant", "to": "/climate-intelligence/become-cbam-authorised-declarant" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" },
+    { "label": "CBAM clause for an export contract", "to": "/answers/what-cbam-clause-to-put-in-export-contract" },
+    { "label": "The 50 tonne CBAM exemption", "to": "/climate-intelligence/cbam-50-tonne-exemption" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956, consolidated text (Articles 5 and 17)", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Regulation (EU) No 952/2013, Union Customs Code, Article 18", "url": "https://eur-lex.europa.eu" },
+    { "label": "European Commission, CBAM definitive regime", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Legal edge case under rules amended in 2025; an EU customs adviser should confirm the arrangement before you ship on DDP terms."
+}

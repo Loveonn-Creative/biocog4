@@ -1,0 +1,81 @@
+{
+  "slug": "flight-emissions-business-travel-india",
+  "q": "How do I calculate flight emissions for business travel from India?",
+  "title": "Flight emissions for business travel",
+  "short": "Multiply each trip's passenger kilometres by a published air travel factor for that distance band and cabin class. Get the distance from the airport pair, add the uplift your factor source requires, and use the UK DESNZ conversion factors or the ICAO calculator. Report the result as Scope 3 Category 6, business travel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance managers and sustainability leads",
+  "sections": [
+    {
+      "h": "The data you need for each flight",
+      "ul": [
+        "Origin and destination airports, and whether the ticket was one way or return.",
+        "Cabin class: economy, premium economy, business or first. On long-haul flights a business seat takes more floor space, so its factor is higher.",
+        "Number of travellers on the booking.",
+        "The travel agent invoice or ticket as evidence. A rupee amount alone is not enough for a distance-based figure."
+      ]
+    },
+    {
+      "h": "The calculation, step by step",
+      "ol": [
+        "Find the great circle distance between the two airports.",
+        "Add the routing uplift your factor source applies. DESNZ adds 8 percent to great circle distance for indirect routes and holding.",
+        "Pick the factor for the distance band and class from the same edition: DESNZ splits domestic, short-haul and long-haul, and has an international category for flights that do not touch the UK.",
+        "Multiply passenger km by the factor, then by the number of travellers and legs.",
+        "State whether the figure includes radiative forcing, the extra warming from emissions at altitude. DESNZ publishes factors with and without it."
+      ]
+    },
+    {
+      "h": "DESNZ or ICAO",
+      "p": [
+        "The ICAO Carbon Emissions Calculator estimates CO2 per passenger for a specific route from aircraft type, seat count and load factor data. It reports CO2 only, without radiative forcing, and does not separate business class in detail.",
+        "The DESNZ conversion factors give kg CO2e per passenger km by class, with and without radiative forcing, and are updated every year. Their domestic category is built for flights within the UK, so for flights within India many companies use the short-haul or international factors instead. Whichever you choose, use one source for the whole year and name the edition."
+      ]
+    },
+    {
+      "h": "Where flights sit in your inventory",
+      "p": [
+        "Flights in aircraft the company does not own or operate are Scope 3 Category 6 under the GHG Protocol. Hotel stays can be reported in the same category if you choose to include them. Flights in a company owned aircraft would be Scope 1. Flights of customers or visitors you pay for are not business travel of your employees; note how you treat them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Delhi to Mumbai return, one traveller, economy",
+    "lines": [
+      "Great circle distance: about 1,150 km each way",
+      "With the 8 percent DESNZ uplift: 1,150 x 1.08 = 1,242 km each way",
+      "Return trip: 1,242 x 2 = 2,484 passenger km",
+      "Illustrative factor: 0.25 kg CO2e per passenger km (labelled estimate, of the order of a short-haul economy factor with radiative forcing)",
+      "2,484 x 0.25 = 621 kg CO2e, about 0.6 tonnes"
+    ],
+    "note": "The factor here is an illustration only. Take the exact value for your band, class and radiative forcing choice from the current DESNZ edition and record it."
+  },
+  "senseible": "Senseible can keep travel agent invoices as Scope 3 evidence with their source file. It does not apply flight emission factors, so it gives no flight figure; you calculate that from the route and class.",
+  "links": [
+    {
+      "label": "Should flight emissions include radiative forcing",
+      "to": "/answers/should-flight-emissions-include-radiative-forcing"
+    },
+    {
+      "label": "Business car travel: which scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK Government GHG Conversion Factors for Company Reporting (DESNZ), business travel air, and methodology paper",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "DESNZ factors change every year; update the factor and edition each reporting year."
+}
