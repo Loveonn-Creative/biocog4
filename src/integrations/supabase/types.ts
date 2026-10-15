@@ -1070,7 +1070,12 @@ export type Database = {
       }
       profiles: {
         Row: {
+          business_id_checked_at: string | null
+          business_id_status: string | null
+          business_id_type: string | null
           business_name: string | null
+          cin: string | null
+          company_pan: string | null
           created_at: string | null
           data_consent: boolean | null
           data_consent_at: string | null
@@ -1092,7 +1097,12 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
+          business_id_checked_at?: string | null
+          business_id_status?: string | null
+          business_id_type?: string | null
           business_name?: string | null
+          cin?: string | null
+          company_pan?: string | null
           created_at?: string | null
           data_consent?: boolean | null
           data_consent_at?: string | null
@@ -1114,7 +1124,12 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
+          business_id_checked_at?: string | null
+          business_id_status?: string | null
+          business_id_type?: string | null
           business_name?: string | null
+          cin?: string | null
+          company_pan?: string | null
           created_at?: string | null
           data_consent?: boolean | null
           data_consent_at?: string | null
@@ -1202,6 +1217,51 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      scale_price_quotes: {
+        Row: {
+          amount_inr: number
+          billing_cycle: string
+          consumed_at: string | null
+          consumed_order_id: string | null
+          created_at: string
+          created_by: string | null
+          id: string
+          notes: string | null
+          seats: number | null
+          status: string
+          user_id: string
+          valid_until: string
+        }
+        Insert: {
+          amount_inr: number
+          billing_cycle?: string
+          consumed_at?: string | null
+          consumed_order_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          seats?: number | null
+          status?: string
+          user_id: string
+          valid_until: string
+        }
+        Update: {
+          amount_inr?: number
+          billing_cycle?: string
+          consumed_at?: string | null
+          consumed_order_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          seats?: number | null
+          status?: string
+          user_id?: string
+          valid_until?: string
+        }
+        Relationships: []
       }
       scope_review_requests: {
         Row: {

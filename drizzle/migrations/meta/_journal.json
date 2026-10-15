@@ -8,6 +8,20 @@
       "when": 1792048376283,
       "tag": "0000_protect_privileged_columns",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792048399957,
+      "tag": "0001_business_ids_on_profiles",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792048404114,
+      "tag": "0002_scale_price_quotes",
+      "breakpoints": true
     }
   ]
 }
