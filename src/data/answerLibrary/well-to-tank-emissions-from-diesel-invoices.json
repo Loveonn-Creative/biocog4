@@ -40,15 +40,15 @@
     }
   ],
   "example": {
-    "title": "Worked example: a fleet and canteen (estimate)",
+    "title": "Worked example: a fleet and canteen (illustrative)",
     "lines": [
       "Diesel used: 24,000 litres; Scope 1 = 24,000 x 2.68 = 64,320 kg CO2",
       "LPG used: 3,000 kg; Scope 1 = 3,000 x 2.98 = 8,940 kg CO2",
-      "Diesel well-to-tank: 24,000 x about 0.6 kg CO2e per litre = about 14,400 kg CO2e",
+      "Diesel well-to-tank: 24,000 x 0.6 kg CO2e per litre (illustrative) = 14,400 kg CO2e",
       "LPG well-to-tank: 3,000 kg x the DESNZ LPG per kg factor for your reporting year",
-      "Category 3 (fuels) for diesel alone is about 22% on top of its Scope 1 figure"
+      "In this illustration, Category 3 (fuels) for diesel alone is about 22% on top of its Scope 1 figure"
     ],
-    "note": "About 0.6 kg CO2e per litre is a labelled estimate from the DESNZ diesel well-to-tank value for UK supply; use the current edition when you report. Check: 14,400 divided by 64,320 is about 0.22."
+    "note": "0.6 kg CO2e per litre is an illustrative round number, not an official value; take the diesel well-to-tank factor from the current DESNZ edition when you report. Check: 14,400 divided by 64,320 is about 0.22."
   },
   "senseible": "Senseible reads litres and kg from fuel slips and invoices and applies the IPCC 2006 combustion factors for Scope 1, so the quantities for this calculation are already on record with their source documents. It does not apply well-to-tank factors; you multiply the same quantities by the DESNZ values yourself.",
   "links": [

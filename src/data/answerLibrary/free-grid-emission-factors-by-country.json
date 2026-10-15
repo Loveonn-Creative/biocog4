@@ -9,13 +9,15 @@
   "sections": [
     {
       "h": "What the GHG Protocol asks for",
-      "p": ["The Scope 2 Guidance asks for the most precise location-based factor available for where the power was used: a regional or sub-national figure first, then a national figure. A national government publication usually meets that test and an auditor can open it."]
+      "p": [
+        "The Scope 2 Guidance asks for the most precise location-based factor available for where the power was used: a regional or sub-national figure first, then a national figure. A national government publication usually meets that test and an auditor can open it."
+      ]
     },
     {
       "h": "Free sources to check, in order",
       "ol": [
         "The national grid authority or ministry. India publishes the CEA CO2 Baseline Database; the UK publishes government conversion factors each year; the US EPA publishes eGRID by sub-region; several Asian countries publish a factor through their environment or energy ministry.",
-        "The IFI Harmonised Grid Emission Factor Data Set, prepared by the international financial institutions' technical working group and hosted by the UNFCCC. It covers many countries with one method.",
+        "The IFI Harmonised Grid Emission Factor Data Set, prepared by the international financial institutions' technical working group and hosted by the UNFCCC. It covers many countries with a harmonised method.",
         "Your electricity supplier's published fuel mix or emission rate, which suits a market-based figure if it meets the Scope 2 Guidance quality criteria."
       ]
     },
@@ -23,25 +25,45 @@
       "h": "Watch the type of factor",
       "ul": [
         "Inventory factors are averages of all generation on the grid. That is what location-based Scope 2 needs.",
-        "Combined margin and build margin factors estimate what a new project displaces. They are built for project assessment and carbon credit methods. The IFI data set is designed mainly for that use, so say so if you use it for Scope 2.",
+        "Combined margin and build margin factors estimate what a new project displaces. They are built for project assessment and carbon credit methods. Check which factor type the current IFI data set version gives before using it for Scope 2, and say so if you use a margin factor.",
         "Some factors include transmission losses or upstream emissions; others are generation only. Do not mix them in one total."
       ]
     },
     {
       "h": "If you do use IEA",
-      "p": ["Buy the licence, record the edition and year, and check what you may disclose. Many companies report results calculated with IEA values but do not publish the factors themselves. Use one source consistently across countries if your methodology promises that."]
+      "p": [
+        "Buy the licence, record the edition and year, and check what you may disclose. Many companies report results calculated with IEA values but do not publish the factors themselves. Use one source consistently across countries if your methodology promises that."
+      ]
     }
   ],
   "senseible": "Senseible has one grid factor built in: India's 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0. It does not hold IEA factors or grid factors for other countries, so electricity used abroad needs a factor you supply.",
   "links": [
-    { "label": "Vietnam grid emission factor", "to": "/climate-intelligence/vietnam-grid-emission-factor" },
-    { "label": "CEA or IEA grid factor for India", "to": "/answers/cea-vs-iea-grid-emission-factor-india" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Vietnam grid emission factor",
+      "to": "/climate-intelligence/vietnam-grid-emission-factor"
+    },
+    {
+      "label": "CEA or IEA grid factor for India",
+      "to": "/answers/cea-vs-iea-grid-emission-factor-india"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Scope 2 Guidance (2015)", "url": "https://ghgprotocol.org/scope-2-guidance" },
-    { "label": "IFI Harmonised Grid Emission Factor Data Set (UNFCCC)", "url": "https://unfccc.int" },
-    { "label": "IEA Emissions Factors database (licensed)", "url": "https://www.iea.org" }
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "IFI Harmonised Grid Emission Factor Data Set (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "IEA Emissions Factors database (licensed)",
+      "url": "https://www.iea.org"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Check IEA licence terms and the latest IFI data set version before quoting values."

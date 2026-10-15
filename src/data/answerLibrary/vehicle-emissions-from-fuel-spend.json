@@ -32,7 +32,7 @@
     {
       "h": "Improving the data",
       "p": [
-        "A spend-based estimate is the lowest data quality. Ask drivers to keep pump slips or ask your card provider for a litre-level statement; most fuel card statements can show litres and price per transaction. Then replace the estimate with actual litres."
+        "A spend-based estimate is the lowest data quality. Ask drivers to keep pump slips, or ask your card provider whether it can give a statement with litres and price per transaction. Then replace the estimate with actual litres."
       ]
     }
   ],
@@ -44,7 +44,7 @@
       "Litres: 1,00,000 / 90 = about 1,111 L",
       "Emissions: 1,111 x 2.68 = 2,977 kg CO2, about 3.0 t CO2"
     ],
-    "note": "A Rs 5 change in the price per litre moves this result by about 5 percent."
+    "note": "A Rs 5 change in the price per litre moves this result by about 5 to 6 percent."
   },
   "senseible": "Senseible calculates emissions from fuel slips and invoices that show litres, using the IPCC defaults of 2.68 kg CO2 per litre for diesel and 2.31 for petrol. It does not convert rupee-only lines into litres; with no quantity, it gives no figure.",
   "links": [

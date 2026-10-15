@@ -39,9 +39,9 @@
     }
   ],
   "example": {
-    "title": "Worked example: a factory using 100,000 kWh of grid power a year",
+    "title": "Worked example: a factory using 100,000 kWh of grid power a year (illustrative loss rate)",
     "lines": [
-      "Loss rate: 18%, an illustrative figure close to the all India T&D loss CEA has reported in recent years; use the current year's number",
+      "Loss rate: 18%, an illustrative figure only, not a CEA value; take the current all India T&D loss from the latest CEA General Review",
       "Simple method: 100,000 x 0.18 x 0.710 = 12,780 kg CO2, about 12.8 t",
       "Gross-up method: 0.18 / 0.82 = 0.2195; 100,000 x 0.2195 x 0.710 = about 15,585 kg CO2, about 15.6 t",
       "Scope 2 for the same year: 100,000 x 0.710 = 71,000 kg CO2"
@@ -50,14 +50,32 @@
   },
   "senseible": "Senseible reads consumed kWh and the billing period from your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh for Scope 2, leaving net-metered exports out. It does not calculate T&D loss emissions; you take the kWh from it and apply the loss rate yourself.",
   "links": [
-    { "label": "Full Scope 3 Category 3 in India", "to": "/answers/scope-3-category-3-transmission-losses" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" },
-    { "label": "Scope 2 for manufacturers in India", "to": "/climate-intelligence/manufacturing-scope-2-emissions-india" }
+    {
+      "label": "Full Scope 3 Category 3 in India",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Scope 2 for manufacturers in India",
+      "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 3", "url": "https://ghgprotocol.org" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
-    { "label": "CEA General Review, All India Electricity Statistics (T&D losses)", "url": "https://cea.nic.in" }
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 3",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "CEA General Review, All India Electricity Statistics (T&D losses)",
+      "url": "https://cea.nic.in"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "The all India T&D loss percentage changes every year and differs by state; confirm the latest CEA General Review figure."

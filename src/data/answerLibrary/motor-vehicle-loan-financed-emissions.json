@@ -14,30 +14,36 @@
         "Vehicle emissions = litres of fuel used in the year x the fuel's emission factor. If fuel is unknown, litres = kilometres driven / fuel economy in km per litre.",
         "Financed emissions = attribution factor x vehicle emissions. Add up across all loans and report the total with its data quality score."
       ],
-      "p": ["The motor vehicle loans asset class in the PCAF Global GHG Accounting and Reporting Standard, Part A (second edition, 2022) covers loans taken to buy a vehicle, for consumers and businesses. A general working capital loan to a transporter falls under business loans instead."]
+      "p": [
+        "The motor vehicle loans asset class in the PCAF Global GHG Accounting and Reporting Standard, Part A (second edition, 2022) covers loans taken to buy a vehicle, for consumers and businesses. A general working capital loan to a transporter falls under business loans instead."
+      ]
     },
     {
       "h": "Data quality scores from 1 to 5",
       "ul": [
-        "Better scores (1 and 2): actual fuel consumption, or actual distance with the fuel economy of the known make and model.",
-        "Middle score (3): known make and model, with estimated distance.",
-        "Weaker scores (4 and 5): only the vehicle type, or nothing specific, with average distance and average fuel economy."
+        "Better scores: actual fuel consumption, or actual distance with the fuel economy of the known make and model.",
+        "Weaker scores: estimated distance, average fuel economy, or only the vehicle type.",
+        "Check the motor vehicle loans table in PCAF Part A for which data option maps to which score."
       ],
-      "p": ["Most Indian vehicle loan books will sit at score 4 or 5 in the first year, because the lender records make, model and price but not kilometres. Say so in the disclosure and show how you plan to improve it, for example by collecting odometer readings at service or renewal."]
+      "p": [
+        "Many vehicle loan books start on the weaker end, because the lender records make, model and price but not kilometres. Say so in the disclosure and show how you plan to improve it, for example by collecting odometer readings at service or renewal."
+      ]
     },
     {
       "h": "Choices that change the answer most",
       "ul": [
-        "Annual kilometres. A commercial vehicle may run five to ten times more than a private car or scooter. Use segment averages, not one figure for the whole book.",
-        "Fuel economy. A two-wheeler and a light goods vehicle differ several times over. Keep a table by vehicle type and fuel.",
+        "Annual kilometres. A commercial vehicle usually runs far more than a private car or scooter. Use segment averages, not one figure for the whole book.",
+        "Fuel economy. A two-wheeler and a light goods vehicle differ widely. Keep a table by vehicle type and fuel.",
         "Fuel type. Use the matching IPCC 2006 default: diesel 2.68 kg CO2 per litre, petrol 2.31 kg CO2 per litre, CNG 2.75 kg CO2 per kg.",
-        "Electric vehicles. PCAF counts the electricity used for charging as the vehicle's emissions; estimate kWh from distance and apply the grid factor, 0.710 kg CO2 per kWh for India.",
-        "Vehicle value. Use the on-road value recorded at origination, the same figure across reporting years."
+        "Electric vehicles. Check how the current PCAF standard treats electricity used for charging. If you include it, estimate kWh from distance and apply the grid factor, 0.710 kg CO2 per kWh for India.",
+        "Vehicle value. Use the total vehicle value recorded at origination, the same figure across reporting years."
       ]
     },
     {
       "h": "What to put in the disclosure",
-      "p": ["State the asset class, the number of loans and outstanding amount covered, the method for distance and fuel economy, the emission factors and their source, and the weighted data quality score. These are CO2 figures from fuel combustion only; say so if you do not add methane and nitrous oxide."]
+      "p": [
+        "State the asset class, the number of loans and outstanding amount covered, the method for distance and fuel economy, the emission factors and their source, and the weighted data quality score. These are CO2 figures from fuel combustion only; say so if you do not add methane and nitrous oxide."
+      ]
     }
   ],
   "example": {
@@ -50,17 +56,32 @@
       "8,000 km a year / 45 km per litre = 177.8 litres; 177.8 x 2.31 = 410.7 kg CO2",
       "Financed: 0.5 x 410.7 = 205 kg CO2"
     ],
-    "note": "Distance and fuel economy here are assumptions, so these are score 4 or 5 figures. Replace them with actual readings as you collect them."
+    "note": "Distance and fuel economy here are assumptions, so these figures sit at the weaker end of the PCAF data quality scale. Replace them with actual readings as you collect them."
   },
   "senseible": "Senseible does not calculate financed emissions for a loan book. It reads fuel invoices, so a transport borrower can give its lender documented litres of diesel or petrol instead of an estimate, which improves the data quality score for that loan.",
   "links": [
-    { "label": "Financed emissions for banks in India", "to": "/climate-intelligence/financed-emissions-banks-india" },
-    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
-    { "label": "Vehicle emissions from fuel spend", "to": "/answers/vehicle-emissions-from-fuel-spend" }
+    {
+      "label": "Financed emissions for banks in India",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Vehicle emissions from fuel spend",
+      "to": "/answers/vehicle-emissions-from-fuel-spend"
+    }
   ],
   "sources": [
-    { "label": "PCAF Global GHG Accounting and Reporting Standard, Part A: Financed Emissions, second edition (2022)", "url": "https://carbonaccountingfinancials.com" },
-    { "label": "IPCC 2006 Guidelines, Volume 2: Energy (mobile combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard, Part A: Financed Emissions, second edition (2022)",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy (mobile combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Distance and mileage assumptions drive this estimate; check for a newer PCAF edition before publishing figures."

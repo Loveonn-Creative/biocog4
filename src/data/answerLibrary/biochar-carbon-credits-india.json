@@ -2,7 +2,7 @@
   "slug": "biochar-carbon-credits-india",
   "q": "Can I earn carbon removal credits from biochar in India, and under which methodology?",
   "title": "Biochar carbon credits in India",
-  "short": "Yes. Indian producers can register biochar projects in the voluntary market, most commonly under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
+  "short": "Yes. Indian producers can register biochar projects in the voluntary market, for example under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
   "topic": "markets",
   "intent": "explain",
   "audience": "Agri-processors and MSME owners with crop or wood residue",
@@ -12,7 +12,7 @@
       "ul": [
         "Eligible feedstock: waste biomass such as crop residue, husk, shells or sawdust, not crops grown for the purpose, with records of source and quantity.",
         "Controlled production: pyrolysis or gasification in equipment where temperature and emissions are managed, not open pits.",
-        "Carbon content and stability from accredited lab tests on samples of each batch. Stability is judged by the ratio of hydrogen to organic carbon; a lower ratio means the carbon lasts longer.",
+        "Carbon content and stability from accredited lab tests on biochar samples. Stability is judged by the ratio of hydrogen to organic carbon; a lower ratio means the carbon lasts longer. Check the methodology version for the threshold and sampling rules.",
         "End use: records that the biochar was applied to soil or built into a durable material, and not burnt as fuel.",
         "Project emissions deducted: fuel and power for pyrolysis, drying and transport of feedstock and biochar."
       ]
@@ -20,7 +20,7 @@
     {
       "h": "Which methodology and programme",
       "p": [
-        "Verra VM0044 (Methodology for Biochar Utilization in Soil and Non-Soil Applications) is the main voluntary route registered under the Verified Carbon Standard. Puro.earth runs a separate biochar methodology for its carbon removal registry. Both need a project design document, validation by an independent body and periodic verification.",
+        "Verra VM0044 (Methodology for Biochar Utilization in Soil and Non-Soil Applications) is the biochar route under the Verified Carbon Standard. Puro.earth runs a separate biochar methodology for its carbon removal registry. Both need a project design document, validation by an independent body and periodic verification.",
         "India's own Carbon Credit Trading Scheme has an offset mechanism with its own list of approved methodologies. Check the Bureau of Energy Efficiency's latest list before assuming biochar is included."
       ]
     },
@@ -39,7 +39,7 @@
       "h": "What small producers should watch",
       "ul": [
         "Fixed costs of validation and verification fall heavily on small volumes. Grouping several kilns into one project can help.",
-        "Weak end-use tracking is the most common gap. Keep dispatch notes and farmer or buyer acknowledgements.",
+        "Weak end-use tracking can hold up verification. Keep dispatch notes and farmer or buyer acknowledgements.",
         "A buyer agreement for the credits, at a price that covers costs, matters before you invest in kilns."
       ]
     }
@@ -56,13 +56,28 @@
   },
   "senseible": "Senseible can read feedstock purchase, fuel and electricity invoices, which support the project's production and project emissions records, and it shows carbon credit eligibility signals. It does not measure carbon content or stability, track end use, or issue credits.",
   "links": [
-    { "label": "Finding the right carbon methodology", "to": "/answers/how-to-find-the-right-carbon-methodology" },
-    { "label": "Can a small business generate credits", "to": "/answers/can-a-small-business-generate-carbon-credits" },
-    { "label": "Types of carbon credits", "to": "/climate-intelligence/carbon-credit-types-voluntary-markets" }
+    {
+      "label": "Finding the right carbon methodology",
+      "to": "/answers/how-to-find-the-right-carbon-methodology"
+    },
+    {
+      "label": "Can a small business generate credits",
+      "to": "/answers/can-a-small-business-generate-carbon-credits"
+    },
+    {
+      "label": "Types of carbon credits",
+      "to": "/climate-intelligence/carbon-credit-types-voluntary-markets"
+    }
   ],
   "sources": [
-    { "label": "Verra VM0044, Methodology for Biochar Utilization in Soil and Non-Soil Applications", "url": "https://verra.org" },
-    { "label": "ICVCM Core Carbon Principles and Assessment Framework", "url": "https://icvcm.org" }
+    {
+      "label": "Verra VM0044, Methodology for Biochar Utilization in Soil and Non-Soil Applications",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles and Assessment Framework",
+      "url": "https://icvcm.org"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "Check the current VM0044 version and the CCTS offset methodology list before relying on this page."

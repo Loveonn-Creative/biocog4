@@ -2,7 +2,7 @@
   "slug": "furnace-oil-to-png-switch-emissions-saving",
   "q": "How much CO2 do I save by switching my boiler from furnace oil to PNG?",
   "title": "Furnace oil to PNG: CO2 saved",
-  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. If the boiler also gets more efficient, the saving per unit of steam is higher: about 32% if efficiency rises from 80% to 85%. Confirm with fuel bills before and after.",
+  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. A more efficient boiler saves more per unit of steam: about 32% in an illustrative case of 80% rising to 85%. Confirm with fuel bills before and after.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "MSME owners, CFOs, plant heads",
@@ -49,7 +49,7 @@
       "PNG at 85% efficiency: 6,140 / 0.85 = about 7,223 GJ x 56.1 = about 405.2 t; saving about 188.8 t (31.8%)",
       "On PNG bills that is 405,200 / 2.05 = about 1.98 lakh scm a year"
     ],
-    "note": "The 80% and 85% efficiencies are labelled estimates; the energy figures are implied by the IPCC-based per-unit factors. Use your measured efficiency and the GCV on your bills."
+    "note": "The 80% and 85% boiler efficiencies are illustrative assumptions, not measured values; the energy figures are implied by the IPCC-based per-unit factors. Use your measured efficiency and the GCV on your bills."
   },
   "senseible": "Senseible reads furnace oil invoices and PNG bills and applies IPCC 2006 factors (2.97 kg CO2 per litre and 2.05 kg CO2 per scm) to the billed quantity, so you can measure Scope 1 before and after the switch, and those figures can support a green loan readiness check. It does not model boiler efficiency or compare fuel prices.",
   "links": [

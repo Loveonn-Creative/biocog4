@@ -2,7 +2,7 @@
   "slug": "how-are-carbon-credits-taxed-in-india",
   "q": "How is income from selling carbon credits taxed in India?",
   "title": "How carbon credit income is taxed in India",
-  "short": "Income from transferring carbon credits is taxed at a flat 10% on the gross amount, plus surcharge and cess, under section 115BBG of the Income-tax Act, 1961, introduced by the Finance Act 2017. No expenses can be deducted against it. GST treatment is not settled, so take written advice before you invoice.",
+  "short": "Income from transferring carbon credits has been taxed at a flat 10% of the gross amount, plus surcharge and cess, under section 115BBG of the Income-tax Act, 1961, with no expenses deductible. The Income-tax Act, 2025 renumbered sections from April 2026 and GST treatment is unsettled, so take written advice.",
   "topic": "markets",
   "intent": "explain",
   "audience": "MSME owners and CFOs selling carbon credits",
@@ -18,15 +18,15 @@
     {
       "h": "Which credits the definition reaches",
       "p": [
-        "The explanation to section 115BBG defines a carbon credit as a reduction of one tonne of carbon dioxide or its equivalent that is validated under the United Nations climate change framework and can be traded at a market price. That wording was written for UNFCCC credits such as CDM credits.",
+        "The explanation to section 115BBG defines a carbon credit by reference to a reduction of one tonne of carbon dioxide or its equivalent validated under the United Nations climate change framework and tradable at market price. Read the exact wording of the section on the Income Tax Department's website; it points to UNFCCC credits such as CDM credits.",
         "Whether credits from voluntary standards like Verra or Gold Standard, or carbon credit certificates under India's Carbon Credit Trading Scheme, sit inside that definition is a question to put to your tax adviser in writing. The answer changes whether the flat 10% or your normal business rate applies."
       ]
     },
     {
       "h": "The years before 2017 and the new Income-tax Act",
       "p": [
-        "Before section 115BBG, several tribunal and High Court decisions treated carbon credit receipts as capital receipts, outside business income. The 2017 amendment settled that the income is taxable, at the concessional flat rate.",
-        "The Income-tax Act, 2025 replaced the 1961 Act from 1 April 2026 and renumbered its sections. If you sell credits in the 2026-27 tax year or later, ask your adviser for the corresponding provision in the new Act rather than citing 115BBG in a return."
+        "Before section 115BBG, the tax treatment of carbon credit receipts was disputed, and some rulings treated them as capital receipts outside business income. Since the 2017 amendment the income has been taxable at the flat rate.",
+        "The Income-tax Act, 2025 replaced the 1961 Act from 1 April 2026 and renumbered its sections. If you sell credits in the 2026-27 tax year or later, ask your adviser for the corresponding provision in the new Act, and whether the rate and the no deduction rule carry over, rather than citing 115BBG in a return."
       ]
     },
     {
@@ -46,7 +46,7 @@
       "Cess at 4% of tax: ₹6,400; total ₹1,66,400 (no surcharge assumed)",
       "Verification and registry costs of ₹4,00,000: not deductible, so tax is still on ₹16,00,000"
     ],
-    "note": "The price is an illustration, not a market quote. Surcharge depends on your total income and entity type."
+    "note": "The price is an illustration, not a market quote, and the arithmetic follows section 115BBG of the 1961 Act. Surcharge depends on your total income and entity type; confirm the rate under the 2025 Act with your adviser."
   },
   "senseible": "Senseible does not give tax advice or compute tax on credit sales. It shows carbon credit eligibility signals from your own records and keeps the invoices behind them; credit issuance and transfers happen on a registry, outside Senseible.",
   "links": [
@@ -55,7 +55,7 @@
     { "label": "Carbon credits with Senseible", "to": "/answers/carbon-credits-with-senseible" }
   ],
   "sources": [
-    { "label": "UNFCCC, the framework that the section 115BBG definition refers to (Income-tax Act, 1961, section 115BBG, inserted by Finance Act 2017)", "url": "https://unfccc.int" }
+    { "label": "UNFCCC, the UN climate change framework that the carbon credit definition in section 115BBG of the Income-tax Act, 1961 refers to (read the section itself on the Income Tax Department's website)", "url": "https://unfccc.int" }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "The Income-tax Act, 2025 renumbered sections from 1 April 2026 and the GST position on carbon credits is unsettled; confirm both with a tax source before relying on this page."

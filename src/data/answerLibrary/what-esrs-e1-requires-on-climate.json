@@ -22,7 +22,7 @@
       ]
     },
     {
-      "h": "What E1-5 and E1-6 need in detail",
+      "h": "What E1-5 and E1-6 need in ESRS Set 1",
       "ul": [
         "Energy in MWh, split into fossil, nuclear and renewable sources, with fossil broken down by fuel type for high climate impact sectors.",
         "Scope 1 in t CO2e, and the share covered by regulated emission trading schemes.",
@@ -33,13 +33,13 @@
     {
       "h": "What a supplier is actually asked for",
       "p": [
-        "Your EU customer needs your emissions to build its own Scope 3, usually Category 1. So expect requests for your Scope 1 and 2 for the year, energy by source, sometimes a product carbon footprint per unit sold, and whether you have targets. Under Directive (EU) 2026/470, a customer may not demand more from a supplier with 1,000 or fewer employees than the voluntary VSME standard covers."
+        "Your EU customer needs your emissions to build its own Scope 3, usually Category 1. So expect requests for your Scope 1 and 2 for the year, energy by source, sometimes a product carbon footprint per unit sold, and whether you have targets. Under Directive (EU) 2026/470, a customer may not demand more from a smaller supplier, below an employee limit set in the directive, than the voluntary VSME standard covers; check the directive for that limit."
       ]
     },
     {
       "h": "Simplified ESRS are coming",
       "p": [
-        "EFRAG has prepared simplified ESRS that cut the number of datapoints, and the Commission is adopting them by delegated act. The core of E1, energy and gross Scope 1, 2 and 3, is expected to stay. Check which version your customer reports under before you fill its template."
+        "EFRAG has prepared simplified ESRS that cut the number of datapoints, for the Commission to adopt by delegated act. The E1 datapoints above are from ESRS Set 1 and may differ in the simplified version, so check which version your customer reports under before you fill its template."
       ]
     }
   ],

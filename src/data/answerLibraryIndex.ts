@@ -46,7 +46,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "biochar-carbon-credits-india",
   "q": "Can I earn carbon removal credits from biochar in India, and under which methodology?",
   "title": "Biochar carbon credits in India",
-  "short": "Yes. Indian producers can register biochar projects in the voluntary market, most commonly under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
+  "short": "Yes. Indian producers can register biochar projects in the voluntary market, for example under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
   "topic": "markets",
   "reviewed": "2026-10-15"
  },
@@ -198,7 +198,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "can-unused-cbam-certificates-be-sold-back",
   "q": "Can an EU importer sell back unused CBAM certificates, and what happens to them after a year?",
   "title": "Selling back unused CBAM certificates",
-  "short": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, at the price paid, up to one third of the certificates bought in the previous calendar year. Certificates that are neither surrendered nor repurchased in time are cancelled with no compensation. They cannot be sold to other importers.",
+  "short": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, within a cap and a deadline set in Article 23. Certificates that are neither surrendered nor repurchased in time are cancelled under Article 24. They cannot be sold to other importers.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
  },
@@ -542,7 +542,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "food-waste-landfill-vs-compost-vs-biogas-emissions",
   "q": "For a food processing plant, how much do emissions change if organic waste goes to compost or biogas instead of landfill?",
   "title": "Food waste: landfill, compost or biogas",
-  "short": "A lot. Food waste rotting in a landfill releases methane, so published factors put landfill at several hundred kg CO2e per tonne, while composting and anaerobic digestion sit at roughly ten kg per tonne. Moving most organic waste away from landfill or open dumping is often the biggest single Scope 3 waste cut a food plant can make.",
+  "short": "A lot. Food waste rotting in a landfill releases methane, so landfill factors per tonne are far higher than those for composting or anaerobic digestion. Check the current DESNZ waste disposal table for the values. Moving most organic waste away from landfill or open dumping is often a large Scope 3 waste cut for a food plant.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
  },
@@ -566,7 +566,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "furnace-oil-to-png-switch-emissions-saving",
   "q": "How much CO2 do I save by switching my boiler from furnace oil to PNG?",
   "title": "Furnace oil to PNG: CO2 saved",
-  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. If the boiler also gets more efficient, the saving per unit of steam is higher: about 32% if efficiency rises from 80% to 85%. Confirm with fuel bills before and after.",
+  "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. A more efficient boiler saves more per unit of steam: about 32% in an illustrative case of 80% rising to 85%. Confirm with fuel bills before and after.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
  },
@@ -654,7 +654,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "how-are-carbon-credits-taxed-in-india",
   "q": "How is income from selling carbon credits taxed in India?",
   "title": "How carbon credit income is taxed in India",
-  "short": "Income from transferring carbon credits is taxed at a flat 10% on the gross amount, plus surcharge and cess, under section 115BBG of the Income-tax Act, 1961, introduced by the Finance Act 2017. No expenses can be deducted against it. GST treatment is not settled, so take written advice before you invoice.",
+  "short": "Income from transferring carbon credits has been taxed at a flat 10% of the gross amount, plus surcharge and cess, under section 115BBG of the Income-tax Act, 1961, with no expenses deductible. The Income-tax Act, 2025 renumbered sections from April 2026 and GST treatment is unsettled, so take written advice.",
   "topic": "markets",
   "reviewed": "2026-10-15"
  },
@@ -1062,7 +1062,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "methane-n2o-from-diesel-combustion",
   "q": "Do I need to include methane and nitrous oxide from burning diesel, or is CO2 enough?",
   "title": "Methane and N2O from diesel: include them?",
-  "short": "Strictly, yes: Scope 1 covers all greenhouse gases, and CH4 and N2O come out of every diesel engine. In practice they are small. At IPCC defaults they add about 0.3% for stationary diesel such as generators and about 1.5% for road vehicles. CO2 alone is acceptable only if you state the exclusion and its size.",
+  "short": "Strictly, yes: Scope 1 covers all greenhouse gases, and CH4 and N2O come out of every diesel engine. In practice they are small. At IPCC defaults they add about 0.3% for stationary diesel in factories, such as generators, and about 1.5% for road vehicles. CO2 alone is acceptable only if you state the exclusion and its size.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
  },
@@ -1174,7 +1174,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "sbti-sme-route-eligibility",
   "q": "Is my company eligible for the SBTi SME target route?",
   "title": "Who qualifies for the SBTi SME route?",
-  "short": "Under the SBTi's revised SME definition, you qualify if you are an independent company, not a subsidiary of a larger group, with fewer than 250 employees, turnover under 50 million euros and total assets under 25 million euros, and you are not a financial institution or oil and gas company. Check the current criteria before applying.",
+  "short": "You qualify only if you meet every point of the SBTi's current SME definition: limits on employees, turnover and total assets, independence from any larger group, and not being a financial institution or oil and gas company. Check the exact limits on the SBTi site before applying.",
   "topic": "markets",
   "reviewed": "2026-10-15"
  },
@@ -1238,7 +1238,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "steel-supplier-benchmark-carbon-intensity",
   "q": "How do I benchmark a steel supplier's carbon intensity: what is a good number for BF-BOF, DRI and scrap EAF routes?",
   "title": "Benchmarking a steel supplier's intensity",
-  "short": "Compare the supplier against its own production route, not one global number. As labelled estimates, the world average is about 1.9 t CO2 per tonne of crude steel, blast furnace steel sits above 2, scrap based electric arc furnace steel sits well under 1, and coal based DRI is often higher than the blast furnace route.",
+  "short": "Compare the supplier against its own production route, not one global number. Blast furnace steel carries a high intensity, scrap based electric arc furnace steel a much lower one, and coal based DRI is often higher than the blast furnace route. Check worldsteel's latest indicators for current averages.",
   "topic": "product",
   "reviewed": "2026-10-15"
  },
@@ -1414,7 +1414,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "what-if-plant-misses-ccts-target",
   "q": "What happens if an obligated plant misses its CCTS emission intensity target?",
   "title": "Missing a CCTS intensity target",
-  "short": "The plant must buy and surrender carbon credit certificates equal to its shortfall, one certificate per tonne of CO2e. If it fails to surrender them, the Greenhouse Gases Emission Intensity Target Rules, 2025 provide for environmental compensation, set at twice the average certificate trading price for that compliance year.",
+  "short": "The plant must buy and surrender carbon credit certificates equal to its shortfall, one certificate per tonne of CO2e. If it fails to surrender them, the Greenhouse Gases Emission Intensity Target Rules, 2025 provide for environmental compensation; check the gazette text for the rate and timeline.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
  },
@@ -1542,7 +1542,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "who-is-still-in-scope-of-csrd",
   "q": "After the EU Omnibus, which companies still have to report under CSRD, and from when?",
   "title": "Who is still in scope of CSRD?",
-  "short": "After Directive (EU) 2026/470, CSRD covers EU companies with more than 1,000 employees and net turnover above €450 million. Non-EU groups report when EU turnover passes €450 million and they have a large EU subsidiary or branch. Most newly covered companies first report on financial year 2027, and non-EU groups on 2028.",
+  "short": "After Directive (EU) 2026/470, CSRD covers EU companies with more than 1,000 employees and net turnover above €450 million, and non-EU groups with EU turnover above €450 million and a large EU subsidiary or branch. Start years depend on the company and on national transposition, so check both.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
  },

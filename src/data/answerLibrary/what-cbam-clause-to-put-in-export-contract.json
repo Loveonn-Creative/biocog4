@@ -19,7 +19,7 @@
     {
       "h": "Verification clause",
       "p": [
-        "In the definitive period, actual emissions must be verified by an accredited verifier (Article 8) before the importer can use them. The contract should say who appoints and pays the verifier, that you will allow site visits, and that the buyer may rely on the verified report. Verification costs are fixed per installation, so spreading them across several EU buyers lowers the cost per tonne."
+        "In the definitive period, actual emissions must be verified by an accredited verifier (Article 8) before the importer can use them. The contract should say who appoints and pays the verifier, that you will allow site visits, and that the buyer may rely on the verified report. Verification costs are largely per installation, so spreading them across several EU buyers lowers the cost per tonne."
       ]
     },
     {
@@ -51,12 +51,12 @@
     "title": "Worked example: 100 t of blast furnace steel in 2026",
     "lines": [
       "Default route: 2.1 t CO2 per t x 1.10 mark-up = 2.31 t per t; 100 t gives 231 t embedded",
-      "Free allocation deduction: 1.52 t benchmark x 97.5% x 100 t = 148.2 t",
+      "Free allocation deduction: 1.52 t indicative benchmark x 97.5% x 100 t = 148.2 t",
       "Certificates on defaults: 231 minus 148.2 = 82.8 t",
       "Verified actual (illustrative): 1.90 t per t gives 190 t; certificates 190 minus 148.2 = 41.8 t",
       "Difference: 41 t x EUR 82.32 = about EUR 3,375 on this shipment"
     ],
-    "note": "Default intensity, benchmark and the EUR 82.32 price are the Senseible CBAM calculator's 2026 assumptions; the 1.90 t actual figure is illustrative. This gap is what the default value risk clause is about."
+    "note": "The default intensity, the indicative benchmark and the EUR 82.32 price (Q3 2026) are the Senseible CBAM calculator's 2026 assumptions, not the official default value and benchmark for your CN code; the 1.90 t actual figure is illustrative. This gap is what the default value risk clause is about."
   },
   "senseible": "Senseible gives you a dated, source-linked emissions record built from your invoices and bills to commit to in a data delivery clause, and its CBAM cost calculator estimates the default versus actual gap. It does not draft contracts, verify emissions or file CBAM declarations.",
   "links": [

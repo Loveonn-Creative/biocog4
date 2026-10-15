@@ -12,7 +12,7 @@
       "ul": [
         "MSME category: loans to enterprises classified as micro, small or medium under the MSMED Act, as evidenced by Udyam registration. The purpose of the loan does not need to be green; a rooftop solar plant, a new boiler or working capital all qualify.",
         "Renewable energy category: loans to borrowers for solar power generators, biomass power generators, windmills, micro-hydel plants and non-conventional energy based public utilities such as street lighting and remote village electrification, up to a per-borrower limit. A separate, lower limit applies to individual households.",
-        "A bank reports each loan under one category only, so the same loan is not counted twice."
+        "Ask your bank which of the two categories it reports your loan under."
       ]
     },
     {
@@ -24,7 +24,7 @@
     {
       "h": "The limits to check",
       "p": [
-        "The renewable energy ceiling has been raised over time: it was Rs 30 crore per borrower in the 2020 Master Directions, and the 2025 revision raised it to Rs 35 crore, with Rs 10 lakh for individual households. Always check the latest Master Direction on Priority Sector Lending on rbi.org.in, because RBI updates these limits."
+        "The per-borrower renewable energy ceiling, and the lower limit for individual households, are set in RBI's Master Directions on Priority Sector Lending and have been revised over time. Check the current Master Direction on rbi.org.in for both limits before you rely on them."
       ]
     },
     {
@@ -37,9 +37,9 @@
     }
   ],
   "example": {
-    "title": "Example: a 400 kW rooftop plant",
+    "title": "Example: a 400 kW rooftop plant (illustrative figures)",
     "lines": [
-      "Borrower: Udyam-registered small manufacturer; loan Rs 1.6 crore for rooftop solar",
+      "Borrower: Udyam-registered small manufacturer; loan Rs 1.6 crore (illustrative) for rooftop solar",
       "Classification: MSME category of priority sector (renewable energy ceiling not needed)",
       "Same plant, borrower not an MSME: renewable energy category, eligible while the loan is within the per-borrower ceiling"
     ]

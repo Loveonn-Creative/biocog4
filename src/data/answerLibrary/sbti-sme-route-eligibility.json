@@ -2,7 +2,7 @@
   "slug": "sbti-sme-route-eligibility",
   "q": "Is my company eligible for the SBTi SME target route?",
   "title": "Who qualifies for the SBTi SME route?",
-  "short": "Under the SBTi's revised SME definition, you qualify if you are an independent company, not a subsidiary of a larger group, with fewer than 250 employees, turnover under 50 million euros and total assets under 25 million euros, and you are not a financial institution or oil and gas company. Check the current criteria before applying.",
+  "short": "You qualify only if you meet every point of the SBTi's current SME definition: limits on employees, turnover and total assets, independence from any larger group, and not being a financial institution or oil and gas company. Check the exact limits on the SBTi site before applying.",
   "topic": "markets",
   "intent": "check",
   "audience": "MSME owners, sustainability leads",
@@ -10,25 +10,27 @@
     {
       "h": "The checklist",
       "ol": [
-        "Fewer than 250 employees.",
-        "Annual turnover below 50 million euros.",
-        "Total assets below 25 million euros.",
+        "Employees below the SBTi's current SME limit.",
+        "Annual turnover below the current limit.",
+        "Total assets below the current limit.",
         "Not a subsidiary whose parent group is above these limits. A group decides for its members.",
         "Not a financial institution and not in the oil and gas sector.",
-        "Not in a sector where the SBTi requires a sector-specific route, such as companies that must set land-use (FLAG) targets."
+        "Check whether your sector must use a sector-specific route instead, for example if you have land-use (FLAG) emissions."
       ],
-      "p": ["You must meet every point. Failing one sends you to the standard validation route."]
+      "p": [
+        "You must meet every point. Failing one sends you to the standard validation route. Take the exact employee, turnover and asset limits from the current SBTi SME definition."
+      ]
     },
     {
       "h": "What the limits mean in rupees",
       "p": [
-        "As a rough guide, 50 million euros is about Rs 450 to 500 crore of turnover and 25 million euros about half that in assets, depending on the exchange rate on the date you check. Use your audited figures for the last financial year and the exchange rate the SBTi form asks for."
+        "The limits are set in euros. Convert them at the exchange rate the SBTi form asks for, on the date you check, and compare them with your audited figures for the last financial year."
       ]
     },
     {
       "h": "What you commit to on the SME route",
       "ul": [
-        "A predefined near-term target for Scope 1 and 2, in line with 1.5°C, currently framed as a 42% absolute cut by 2030.",
+        "A predefined near-term target for Scope 1 and 2, in line with 1.5°C. Check the SBTi site for the current target wording, cut and target year.",
         "A commitment to measure and reduce Scope 3, without a numeric Scope 3 target.",
         "Annual public reporting of emissions and progress.",
         "A flat fee that is lower than the standard route; check the current fee schedule."
@@ -38,20 +40,35 @@
       "h": "What you need before you apply",
       "ul": [
         "A Scope 1 and 2 baseline for the base year, built from fuel invoices and electricity bills.",
-        "Your boundary choice, normally operational control, applied to every site.",
+        "Your boundary choice under the GHG Protocol, such as operational control, applied to every site.",
         "A first view of your largest Scope 3 categories, since you commit to measuring them."
       ]
     }
   ],
   "senseible": "Senseible builds the Scope 1 and 2 baseline from your fuel invoices and electricity bills, with the factor and source on every line, which is the core data the SME route needs. It does not submit or validate targets; the SBTi does that.",
   "links": [
-    { "label": "What 42% by 2030 means", "to": "/answers/what-does-42-percent-by-2030-mean" },
-    { "label": "When SBTi requires a Scope 3 target", "to": "/answers/when-is-a-scope-3-target-required-sbti" },
-    { "label": "SBTi FLAG targets for MSMEs", "to": "/climate-intelligence/msme-sbti-fln-near-term-target-validation" },
-    { "label": "Net zero planning", "to": "/net-zero" }
+    {
+      "label": "What 42% by 2030 means",
+      "to": "/answers/what-does-42-percent-by-2030-mean"
+    },
+    {
+      "label": "When SBTi requires a Scope 3 target",
+      "to": "/answers/when-is-a-scope-3-target-required-sbti"
+    },
+    {
+      "label": "SBTi FLAG targets for MSMEs",
+      "to": "/climate-intelligence/msme-sbti-fln-near-term-target-validation"
+    },
+    {
+      "label": "Net zero planning",
+      "to": "/net-zero"
+    }
   ],
   "sources": [
-    { "label": "SBTi SME target-setting route, SME definition (revised 2024) and fee schedule", "url": "https://sciencebasedtargets.org" }
+    {
+      "label": "SBTi SME target-setting route, SME definition (revised 2024) and fee schedule",
+      "url": "https://sciencebasedtargets.org"
+    }
   ],
   "reviewed": "2026-10-15",
   "reviewNote": "The SBTi has revised the SME definition, target wording and fees more than once; confirm all three on the SBTi site before applying."

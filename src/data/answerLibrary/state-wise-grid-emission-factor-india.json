@@ -10,7 +10,7 @@
     {
       "h": "Why India has one grid factor",
       "p": [
-        "The GHG Protocol Scope 2 Guidance says the location-based factor should reflect the grid where electricity is consumed, defined by where power physically flows. Once the southern grid was synchronised with the rest of the country at the end of 2013, India became one national grid. The CEA CO2 Baseline Database has since published a single all-India factor; earlier editions gave separate figures for the NEWNE and Southern grids.",
+        "The GHG Protocol Scope 2 Guidance says the location-based factor should reflect the grid where electricity is consumed, defined by where power physically flows. India's regional grids are now synchronised into one national grid, and the CEA CO2 Baseline Database publishes a single all-India factor for it. Check the user guide of the current edition for the grid boundary it uses.",
         "Power moves freely between states over this grid, so a state's generation mix is not the mix behind the units your meter records."
       ]
     },
@@ -25,7 +25,7 @@
     {
       "h": "How to legitimately report lower Scope 2",
       "ul": [
-        "Rooftop or captive solar: units you generate and use never appear as grid consumption.",
+        "On-site rooftop solar: units you generate and use behind the meter never appear as grid consumption.",
         "Green tariff from your discom, or green energy open access: report these under market-based Scope 2, with the supply contract as evidence.",
         "Renewable Energy Certificates: retired RECs matched to your consumption support a market-based figure.",
         "Report both: location-based with the CEA factor, and market-based with your instruments, as the Scope 2 Guidance requires."

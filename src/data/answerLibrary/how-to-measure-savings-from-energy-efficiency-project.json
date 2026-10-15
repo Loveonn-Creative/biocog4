@@ -17,7 +17,7 @@
       "h": "Choose a measurement boundary",
       "ul": [
         "Retrofit isolation: meter just the compressor or motor. Best when the project is small compared with the site, since a whole-site bill hides it. IPMVP calls these Options A and B.",
-        "Whole facility: use the main discom meter. Workable when the expected saving is large compared with normal month to month swings in the bill (IPMVP's rule of thumb is above about 10%), and little else changes. IPMVP Option C.",
+        "Whole facility: use the main discom meter. Workable when the expected saving is large compared with normal month to month swings in the bill, and little else changes; check the current IPMVP guidance for how large. IPMVP Option C.",
         "Record the boundary, the meters used and their calibration dates before the project starts."
       ]
     },
@@ -26,7 +26,7 @@
       "ol": [
         "Collect 12 months of energy before the project, so every season and production cycle is included.",
         "Collect the variable that drives energy in the same months: tonnes produced, machine hours or, for cooling, temperature.",
-        "Fit the relationship. The simplest is specific energy consumption (kWh per tonne); where there is a large fixed load, use a regression with a fixed and a variable part, as ISO 50006 describes for energy baselines.",
+        "Fit the relationship. The simplest is specific energy consumption (kWh per tonne); where there is a large fixed load, use a regression with a fixed and a variable part, as ISO 50006 discusses for energy baselines.",
         "Note any one-off events, such as a shutdown, and adjust or exclude those months with a written reason."
       ]
     },

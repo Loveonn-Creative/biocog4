@@ -2,7 +2,7 @@
   "slug": "methane-n2o-from-diesel-combustion",
   "q": "Do I need to include methane and nitrous oxide from burning diesel, or is CO2 enough?",
   "title": "Methane and N2O from diesel: include them?",
-  "short": "Strictly, yes: Scope 1 covers all greenhouse gases, and CH4 and N2O come out of every diesel engine. In practice they are small. At IPCC defaults they add about 0.3% for stationary diesel such as generators and about 1.5% for road vehicles. CO2 alone is acceptable only if you state the exclusion and its size.",
+  "short": "Strictly, yes: Scope 1 covers all greenhouse gases, and CH4 and N2O come out of every diesel engine. In practice they are small. At IPCC defaults they add about 0.3% for stationary diesel in factories, such as generators, and about 1.5% for road vehicles. CO2 alone is acceptable only if you state the exclusion and its size.",
   "topic": "accounting",
   "intent": "check",
   "audience": "Sustainability leads and auditors",
@@ -11,8 +11,8 @@
       "h": "The IPCC defaults per terajoule of diesel",
       "ul": [
         "CO2: 74,100 kg per TJ, for any use.",
-        "Stationary combustion (generators, boilers in manufacturing): CH4 3 kg and N2O 0.6 kg per TJ.",
-        "Road transport: CH4 3.9 kg and N2O 3.9 kg per TJ. N2O is higher because of engine and exhaust treatment conditions."
+        "Stationary combustion in manufacturing industries and construction, such as factory generators and boilers: CH4 3 kg and N2O 0.6 kg per TJ. For generators in commercial or residential buildings, use the IPCC table for that sector instead.",
+        "Road transport: CH4 3.9 kg and N2O 3.9 kg per TJ."
       ],
       "p": [
         "Converted with AR5 global warming potentials (CH4 28, N2O 265), stationary CH4 and N2O come to 243 kg CO2e per TJ, or 0.33% of the CO2. Road transport comes to about 1,143 kg CO2e per TJ, or 1.54%. AR6 values (fossil CH4 29.8, N2O 273) give 0.34% and 1.59%."
@@ -21,7 +21,7 @@
     {
       "h": "When leaving them out is defensible",
       "p": [
-        "The GHG Protocol allows you to exclude small sources if you disclose and justify the exclusion. Leaving out 0.3% from generator diesel rarely changes a decision. For a transport fleet, 1.5% of fleet emissions can matter if you set a target or report to a buyer that sums many suppliers, so include it there."
+        "The GHG Protocol allows you to exclude small sources if you disclose and justify the exclusion. Leaving out 0.3% from factory generator diesel rarely changes a decision. For a transport fleet, 1.5% of fleet emissions can matter if you set a target or report to a buyer that sums many suppliers, so include it there."
       ]
     },
     {

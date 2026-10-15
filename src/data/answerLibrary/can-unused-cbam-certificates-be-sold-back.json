@@ -2,7 +2,7 @@
   "slug": "can-unused-cbam-certificates-be-sold-back",
   "q": "Can an EU importer sell back unused CBAM certificates, and what happens to them after a year?",
   "title": "Selling back unused CBAM certificates",
-  "short": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, at the price paid, up to one third of the certificates bought in the previous calendar year. Certificates that are neither surrendered nor repurchased in time are cancelled with no compensation. They cannot be sold to other importers.",
+  "short": "Partly. An authorised CBAM declarant can ask the Commission to repurchase certificates left over after the annual surrender, within a cap and a deadline set in Article 23. Certificates that are neither surrendered nor repurchased in time are cancelled under Article 24. They cannot be sold to other importers.",
   "topic": "regulation",
   "intent": "explain",
   "audience": "EU importers and CFOs",
@@ -10,13 +10,13 @@
     {
       "h": "Repurchase under Article 23",
       "p": [
-        "After the annual declaration and surrender, the declarant can request that the Commission buy back excess certificates still in its registry account. The price is what the declarant paid for them. The number is capped at one third of the total certificates the declarant bought during the previous calendar year, so overbuying more than that is money lost."
+        "After the annual declaration and surrender, the declarant can request that the Commission buy back excess certificates still in its registry account. The Regulation sets the repurchase price and caps how many certificates can be repurchased, so buying well above need can mean money lost. Check the current consolidated text of Article 23 for the price and the cap."
       ]
     },
     {
       "h": "Cancellation under Article 24",
       "p": [
-        "Certificates bought during a year and still in the account after the following year's surrender and repurchase window are cancelled by the Commission. No payment is made for cancelled certificates."
+        "Certificates still in the account after the surrender and repurchase window are cancelled by the Commission. Check the current consolidated text of Article 24 for which certificates are cancelled, when, and whether any payment applies."
       ]
     },
     {
@@ -33,15 +33,14 @@
     }
   ],
   "example": {
-    "title": "Worked example: how much can be sold back",
+    "title": "Worked example: how much might be sold back (illustrative)",
     "lines": [
-      "Certificates bought during the previous calendar year: 900",
+      "Certificates bought: 900 (illustrative)",
       "Certificates surrendered for the declaration: 700",
       "Excess: 900 minus 700 = 200",
-      "Repurchase cap: 900 / 3 = 300",
-      "200 is under the cap, so all 200 can be repurchased at the price paid"
+      "Compare the 200 with the repurchase cap in the current Article 23: only certificates within the cap can be repurchased"
     ],
-    "note": "If the excess had been 400, only 300 could be repurchased and the other 100 would face cancellation."
+    "note": "Anything above the cap and not surrendered faces cancellation under Article 24."
   },
   "senseible": "Senseible does not buy, hold or sell CBAM certificates. Its CBAM cost calculator estimates certificate cost from 2026 to 2034, which helps an importer size purchases.",
   "links": [
@@ -73,5 +72,5 @@
     }
   ],
   "reviewed": "2026-10-15",
-  "reviewNote": "Repurchase limits and dates may be changed again by implementing acts; confirm against the consolidated CBAM Regulation."
+  "reviewNote": "Repurchase limits and dates were changed by Regulation (EU) 2025/2083 and may change again; confirm Articles 23 and 24 against the consolidated CBAM Regulation."
 }
