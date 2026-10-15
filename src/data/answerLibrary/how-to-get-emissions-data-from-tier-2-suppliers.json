@@ -1,0 +1,65 @@
+{
+  "slug": "how-to-get-emissions-data-from-tier-2-suppliers",
+  "q": "How do I get emissions data from tier-2 suppliers I don't buy from directly?",
+  "title": "Emissions data from tier-2 suppliers",
+  "short": "Mostly through your tier-1 supplier. Ask them for a cradle-to-gate footprint of what they sell you, which already includes their own suppliers, and ask them to request material-level data from their key sub-suppliers. Go to tier 2 directly only for a few high-impact materials, such as steel, aluminium, resins or chemicals.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Procurement and sustainability leads at OEMs and exporters",
+  "sections": [
+    {
+      "h": "Why tier 2 is already inside a tier-1 footprint",
+      "p": [
+        "Under the GHG Protocol Scope 3 Standard, Category 1 covers the cradle-to-gate emissions of what you buy: everything from extracting raw materials to the product leaving your supplier's gate. A tier-1 product footprint done properly therefore includes tier 2, tier 3 and beyond. If you add tier-2 emissions on top of it, you count them twice."
+      ]
+    },
+    {
+      "h": "Find where tier 2 matters",
+      "ol": [
+        "Rank your purchases by spend and mass, then by material carbon intensity.",
+        "For the top items, ask the tier-1 supplier what the main input material is, how much they use per unit, and which mill, smelter or plant it comes from.",
+        "Focus on the few materials that make up most of the footprint. Basic metals, cement, plastics and chemicals usually dominate; packaging and consumables rarely do."
+      ]
+    },
+    {
+      "h": "Three ways to get the data",
+      "ul": [
+        "Cascade: tier 1 asks its key sub-suppliers for product-level figures and builds them into its own footprint, then passes the total to you. The PACT Pathfinder Framework sets out how product footprints are calculated and exchanged along a chain so each tier can reuse the one before.",
+        "Hybrid: tier 1 gives you its own allocated Scope 1 and 2 plus the quantity of each main input; you multiply inputs by the producer's published intensity or a sourced factor.",
+        "Direct: for a large, concentrated input, such as steel from one mill, ask the producer for its plant-specific intensity, or use what it publishes, and record that you did."
+      ]
+    },
+    {
+      "h": "Making it stick",
+      "ul": [
+        "Put a data clause in tier-1 contracts that requires them to pass on requests to key sub-suppliers.",
+        "Give one template and one deadline across all suppliers, and accept estimates first, with a plan to replace them.",
+        "Record for each figure whether it is primary from tier 1, primary from tier 2, or a secondary factor, so data quality is visible.",
+        "Revisit yearly; a change of mill or resin grade can move the footprint more than any process change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: hybrid footprint for forged parts (illustrative)",
+    "lines": [
+      "Purchase: 100 t of forgings from a tier-1 forging supplier",
+      "Tier 1 own Scope 1 and 2, allocated: 0.35 t CO2e per t x 100 t = 35 t",
+      "Steel bar input at 91% yield: 110 t, from a mill reporting 2.2 t CO2e per t",
+      "Tier 2 steel: 110 x 2.2 = 242 t",
+      "Cradle-to-gate total: 35 + 242 = 277 t, or 2.77 t CO2e per t of forgings"
+    ],
+    "note": "All factors are illustrative. Here tier 2 is almost 90% of the total, which is why the mill's figure matters more than the forging shop's."
+  },
+  "senseible": "A tier-1 supplier can build a document-backed emissions number from its own invoices and bills in Senseible and pass it on, and Senseible's enterprise offer supports supplier programmes. It does not reach tier-2 suppliers on your behalf or exchange data automatically along the chain.",
+  "links": [
+    { "label": "Supplier data collection playbook", "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme" },
+    { "label": "PACT Pathfinder Framework explained", "to": "/answers/pact-pathfinder-framework-explained" },
+    { "label": "Which suppliers to engage first", "to": "/answers/which-suppliers-to-engage-first-on-scope-3" },
+    { "label": "Supplier emissions for enterprises", "to": "/enterprise" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Scope 3 Technical Guidance, Category 1", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "WBCSD, PACT Pathfinder Framework and Technical Specifications for PCF data exchange", "url": "https://www.wbcsd.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

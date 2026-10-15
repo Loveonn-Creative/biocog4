@@ -19,13 +19,13 @@
     {
       "h": "Reading the grade on an Indian coal invoice",
       "p": [
-        "Non-coking coal in India is graded by GCV in bands of 300 kcal/kg, from G1 above 7,000 down to G17 at 2,201 to 2,500. Many power and industrial buyers receive G10 to G13 coal, roughly 3,400 to 4,600 kcal/kg. If you only have the grade, use the midpoint of its band and say so. A lab report of the GCV for each consignment is better, because the grade is measured on a standardised basis and the coal you actually burn may be wetter."
+        "Non-coking coal in India is graded by GCV in bands of 300 kcal/kg, from G1 above 7,000 down to G17 at 2,201 to 2,500. If you only have the grade, use the midpoint of its band and say so. A lab report of the GCV for each consignment is better, because the grade is measured on a standardised basis and the coal you actually burn may be wetter."
       ]
     },
     {
       "h": "Why a single factor per kg can mislead",
       "p": [
-        "Generic factors such as 2.42 kg CO2 per kg come from IPCC default calorific values for traded bituminous coal, around 25.8 MJ/kg NCV. Indian non-coking coal often carries 35 to 45% ash and has a much lower calorific value, so each kilogram holds less carbon. Applying the generic factor to a G11 coal overstates emissions by about half. Imported coal near 6,000 kcal/kg, by contrast, sits close to the generic value."
+        "A generic factor such as 2.42 kg CO2 per kg is close to what IPCC defaults give for other bituminous coal: 25.8 MJ/kg NCV x 94.6 t CO2 per TJ is about 2.44 kg per kg. Indian non-coking coal is high in ash and much lower in calorific value, so each kilogram holds less carbon. Applying the generic factor to a G11 coal overstates emissions by about half. Imported coal near 6,000 kcal/kg comes out at about 2.26 kg per kg by the same formula, much closer to the generic value."
       ]
     },
     {
