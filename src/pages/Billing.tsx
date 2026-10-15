@@ -456,7 +456,22 @@ const Billing = () => {
                         className="h-8 gap-1.5"
                         disabled={!invoice.pdf_url}
                         aria-label="View invoice"
-                        onClick={() => invoice.pdf_url && window.open(invoice.pdf_url, '_blank', 'noopener,noreferrer')}
+                        onClick={async () => {
+                          if (!invoice.pdf_url) return;
+                          // Storage serves the stored invoice as plain text, so re-type it as HTML before opening.
+                          const w = window.open('', '_blank');
+                          try {
+                            const res = await fetch(invoice.pdf_url);
+                            if (!res.ok) throw new Error('fetch failed');
+                            const html = await res.text();
+                            const url = URL.createObjectURL(new Blob([html], { type: 'text/html;charset=utf-8' }));
+                            if (w) w.location.href = url; else window.location.href = url;
+                            setTimeout(() => URL.revokeObjectURL(url), 60_000);
+                          } catch {
+                            w?.close();
+                            toast.error('Could not open the invoice. Please try again.');
+                          }
+                        }}
                       >
                         <Download className="w-4 h-4" aria-hidden="true" />
                         View invoice
