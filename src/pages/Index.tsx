@@ -995,12 +995,6 @@ const Index = () => {
             About
           </Link>
           <Link 
-            to="/climate-intelligence" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            Climate Intelligence
-          </Link>
-          <Link 
             to="/pricing" 
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
@@ -1017,12 +1011,6 @@ const Index = () => {
             className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
           >
             Contact
-          </Link>
-          <Link 
-            to="/white-paper" 
-            className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
-          >
-            White Paper
           </Link>
           {/* Auth-aware: Dashboard for signed-in, Sign In for guests */}
           {user ? (
