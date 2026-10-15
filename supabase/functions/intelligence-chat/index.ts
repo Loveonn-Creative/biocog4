@@ -348,9 +348,9 @@ Answer in ${language}. Keep technical identifiers, units, framework names and co
     });
 
     if (!response.ok) {
-      console.error("AI gateway error:", response.status);
+      console.error("AI error:", response.status);
       // 402/429 here are Senseible's own AI capacity, never the user's plan.
-      return json({ error: "unavailable", message: "Biocog Intelligence is busy right now. Please try again in a moment." }, response.status === 429 ? 503 : 502, usageHeaders);
+      return json({ error: "unavailable", message: aiErrorMessage(response.status) }, response.status === 429 ? 429 : 503, usageHeaders);
     }
 
     if (stream && response.body) {
