@@ -43,6 +43,13 @@
       "when": 1792063494164,
       "tag": "0005_compliance_ledger_dedupe",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792063689154,
+      "tag": "0006_atomic_verify_and_delete",
+      "breakpoints": true
     }
   ]
 }
