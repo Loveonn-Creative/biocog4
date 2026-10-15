@@ -258,7 +258,7 @@ const recHTML = `
   <div class="rw band" data-r="band"><span class="k">Band</span><span class="v">2,833 – 3,131 kg</span><svg class="axis"></svg></div>
   <div class="rw" data-r="src"><span class="k">Source</span><span class="v mono">sha256 9f2c…a71e</span></div>
   <div class="rw" data-r="method"><span class="k">Method</span><span class="v mono">BIOCOG_MVR_INDIA v1.0<br>grid 0.710 kg CO₂/kWh</span></div>
-  <div class="rw" data-r="grade"><span class="k">Credibility</span><span class="v">72 / 100<span class="gl"><span>A+</span><span>A</span><span class="on">B</span><span>C</span><span>D</span></span></span></div>
+  <div class="rw" data-r="grade"><span class="k">Credibility</span><span class="v">72 / 100<span class="gl"><span>A+</span><span>A</span><span class="on">B+</span><span>B</span><span>C</span><span>D</span></span></span></div>
   <div class="rw" data-r="fit"><span class="k">Instrument fit</span><span class="v"><span class="fitg">Green loan</span> · Factoring · SLL</span></div>
   <div class="rw" data-r="docs" style="border:0"><span class="k">Evidence depth</span><span class="v">12 documents · private</span></div>
   <div class="foot mono"><span>SENSEIBLE</span><span>SCOPE 2 · SEP 2026</span></div>`;
@@ -333,7 +333,7 @@ function buildInk() {
   seal.style.width = '230px'; seal.style.zIndex = 3; row(rsh, 'method').appendChild(seal); seal.querySelector('svg').style.transform = 'scale(.78)';
   // grade stamp
   const gr = off(row(rsh, 'grade'));
-  const gs = document.createElement('div'); gs.className = 'stamp'; gs.id = 'gStamp'; gs.innerHTML = 'GRADE<b>B</b>';
+  const gs = document.createElement('div'); gs.className = 'stamp'; gs.id = 'gStamp'; gs.innerHTML = 'GRADE<b>B+</b>';
   gs.style.left = '170px'; gs.style.top = (gr.h - 70) + 'px'; gs.style.zIndex = 4; row(rsh, 'grade').appendChild(gs);
   INK = { bLoop, gLoop, fLoop, axLine, cap, mid, lo, hi, X, seal, gs };
 }
@@ -399,8 +399,8 @@ $('cta').querySelector('.l2').innerHTML = 'Talk to us.'.split(' ').map(w => `<sp
 if (portrait) { $('ctaBig').style.fontSize = '112px'; $('ctaBig').style.padding = '0 50px'; $('ctaUrl').style.fontSize = '44px'; $('ctaMark').style.fontSize = '54px'; }
 
 // ---------------- wall ----------------
-const GRADES = ['A', 'B', 'C', 'A+', 'B', 'D', 'A', 'B', 'C', 'A', 'B', 'A+', 'C', 'B', 'A'];
-const gCol = g => g === 'A+' || g === 'A' ? 'var(--green)' : g === 'B' ? 'var(--ink)' : g === 'C' ? 'var(--saffron)' : 'var(--red)';
+const GRADES = ['A', 'B+', 'C', 'A+', 'B', 'D', 'A', 'B+', 'C', 'A', 'B', 'A+', 'C', 'B+', 'A'];
+const gCol = g => g === 'A+' || g === 'A' ? 'var(--green)' : g === 'B' || g === 'B+' ? 'var(--ink)' : g === 'C' ? 'var(--saffron)' : 'var(--red)';
 const tiles = GRADES.map((g, i) => {
   const d = document.createElement('div'); d.className = 'tile'; const c = i % 5, r = Math.floor(i / 5);
   d.style.left = (c * 254) + 'px'; d.style.top = (r * 324) + 'px';

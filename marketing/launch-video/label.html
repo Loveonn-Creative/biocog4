@@ -214,7 +214,7 @@ body.portrait #eCta { font-size: 38px; }
 <script>
 // ONE place to change the printed factor source once the CEA edition / fiscal year is confirmed
 // (emissionFactors.ts: "edition to be confirmed"). Do not add an edition until it is.
-const FACTOR_SOURCE = 'India grid · CEA';
+const FACTOR_SOURCE = 'India grid · CEA · Scope 2, location-based'; // owner-confirmed 15 Oct 2026
 
 const portrait = new URLSearchParams(location.search).get('o') === 'portrait';
 if (portrait) document.body.classList.add('portrait');
