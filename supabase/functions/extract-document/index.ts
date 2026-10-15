@@ -16,6 +16,7 @@ import { recordBillAndRecalculate } from '../_shared/scope2Record.ts';
 import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
+import { buildEmissionRows } from '../_shared/emissionRows.ts';
 import { cylinderToKg, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
   calculateEmissions,
@@ -450,6 +451,31 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
   return data.choices?.[0]?.message?.content;
 }
 
+// Emission rows are created here, on the server, from this function's own
+// read, so a browser cannot change the activity, factor or result. Only when
+// the document has no rows yet. Returns the new ids, or null when nothing was
+// written (the browser then falls back to its own copy of the same rows).
+async function createEmissionRows(
+  db: ReturnType<typeof createClient>,
+  extracted: unknown,
+  owner: { documentId: string; userId: string; organizationId: string | null },
+): Promise<string[] | null> {
+  try {
+    const { count, error: countError } = await db.from('emissions').select('id', { count: 'exact', head: true }).eq('document_id', owner.documentId);
+    if (countError || (count ?? 0) > 0) return null;
+    const rows = buildEmissionRows(extracted as Parameters<typeof buildEmissionRows>[0], {
+      documentId: owner.documentId, sessionId: null, userId: owner.userId, organizationId: owner.organizationId,
+    });
+    if (rows.length === 0) return [];
+    const { data, error } = await db.from('emissions').insert(rows).select('id');
+    if (error) { console.error('Server emission insert failed:', error.code); return null; }
+    return (data ?? []).map((r: { id: string }) => r.id);
+  } catch (e) {
+    console.error('Server emission insert failed:', (e as Error)?.name ?? 'error');
+    return null;
+  }
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -460,6 +486,9 @@ serve(async (req) => {
     const started = Date.now();
     // Set when the user asks to read again an invoice that produced no emissions.
     let rereadDocId: string | null = null;
+    // Set once the document and its emission rows are stored on the server.
+    let savedDocumentId: string | null = null;
+    let savedEmissionIds: string[] | null = null;
     // Set when a signed-in member uploads in an organisation workspace.
     const organizationId: string | null =
       typeof rawOrganizationId === 'string' && UUID_RE.test(rawOrganizationId) ? rawOrganizationId : null;
@@ -635,6 +664,9 @@ serve(async (req) => {
           // The same file always returns the result stored for it, on every
           // tier, so one invoice never shows two different sets of numbers.
           if (existingDoc.cached_result) {
+            // A stored read whose rows were never saved (an earlier browser
+            // save failed): create them now from the stored read.
+            const ids = await createEmissionRows(supabase, existingDoc.cached_result, { documentId: existingDoc.id, userId, organizationId });
             return new Response(
               JSON.stringify({
                 success: true,
@@ -643,6 +675,7 @@ serve(async (req) => {
                 isDuplicate: true,
                 originalDocumentId: existingDoc.id,
                 documentHash,
+                ...(ids && ids.length ? { serverSaved: true, documentId: existingDoc.id, emissionIds: ids } : {}),
                 message: `You uploaded this invoice on ${new Date(existingDoc.created_at).toLocaleDateString('en-IN')}. Showing the result saved then; it is counted once.`
               }),
               { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -1172,6 +1205,10 @@ serve(async (req) => {
             confidence: Math.min(extractedData.confidence, 999.99), cached_result: extractedData,
           }).eq('id', rereadDocId);
           if (updError) console.error('Re-read update failed:', updError.code);
+          else {
+            savedDocumentId = rereadDocId;
+            savedEmissionIds = await createEmissionRows(supabase, extractedData, { documentId: rereadDocId, userId, organizationId: organizationId || null });
+          }
         } else {
         sourcePath = await storeSourceFile(supabase, userId, documentHash, mimeType || 'image/jpeg', imageBase64);
         const { data: savedDoc, error: cacheError } = await supabase
@@ -1197,6 +1234,10 @@ serve(async (req) => {
           console.error('Failed to cache result:', cacheError.code);
         } else {
           console.log('Result cached for deterministic retrieval');
+          if (savedDoc?.id) {
+            savedDocumentId = savedDoc.id;
+            savedEmissionIds = await createEmissionRows(supabase, extractedData, { documentId: savedDoc.id, userId, organizationId: organizationId || null });
+          }
           // Scope 3 trail: seal the OCR fields and record each line. No-op
           // until the pending migration is applied; never affects this response.
           if (sealed && isAuthenticated && userId && savedDoc?.id) {
@@ -1240,6 +1281,8 @@ serve(async (req) => {
         documentHash,
         userTier,
         ...(rereadDocId ? { reread: true, originalDocumentId: rereadDocId } : {}),
+        // Rows stored here: the browser uses these ids and writes nothing.
+        ...(savedDocumentId && savedEmissionIds !== null ? { serverSaved: true, documentId: savedDocumentId, emissionIds: savedEmissionIds } : {}),
         // Guests: nothing was stored; the browser keeps the result.
         ...(isAuthenticated ? {} : { ephemeral: true }),
       }),

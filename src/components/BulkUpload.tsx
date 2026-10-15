@@ -169,12 +169,14 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           const extractedData: PersistableExtraction = fileStatus.fromPage
             ? { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], fileStatus.fromPage) }
             : partData;
+          // Stored by the server with its emission rows: nothing to write here.
+          const stored = data.serverSaved && data.documentId && Array.isArray(data.emissionIds);
           const docLookup = supabase
             .from('documents')
             .select('id')
             .eq('document_hash', data.documentHash);
           // In an organisation workspace the invoice is the organisation's, whoever uploaded it.
-          const { data: ownerDocs } = await (organizationId
+          const { data: ownerDocs } = stored ? { data: [{ id: data.documentId as string }] } : await (organizationId
             ? docLookup.eq('organization_id', organizationId)
             : docLookup.eq('user_id', user?.id || ''))
             .order('created_at', { ascending: false });
@@ -191,7 +193,10 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
           // Saved, but nothing on it can be counted yet: say what it needs.
           let reviewNote: string | null = null;
-          if (!existingEmissions?.length) {
+          if (stored && (data.emissionIds as string[]).length === 0) {
+            const next = (extractedData as { guidance?: { nextStep?: string | null } }).guidance?.nextStep;
+            reviewNote = `Saved, nothing counted yet${next ? `. ${next}` : ''}`;
+          } else if (!stored && !existingEmissions?.length) {
             const rows = buildEmissionRows(extractedData, {
               documentId: document.id,
               sessionId: null,
