@@ -20,8 +20,8 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
       headers: { Authorization: `Bearer ${gemini}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-    if (res.ok || !Deno.env.get('LOVABLE_API_KEY')) return res;
-    console.error('Gemini API error', res.status, '- falling back to gateway');
+    if (!res.ok) console.error('Gemini API error', res.status);
+    return res;
   }
   const headers = new Headers(init.headers);
   headers.set('Authorization', `Bearer ${Deno.env.get('LOVABLE_API_KEY') ?? ''}`);
