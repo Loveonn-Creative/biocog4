@@ -209,9 +209,14 @@ export const Footer = () => {
           <p className="text-xs text-muted-foreground">
             {new Date().getFullYear()} Senseible. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            HQ: Minarch Tower, Sector 44, Gurugram, India
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <Link to="/white-paper" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              White Paper
+            </Link>
+            <p className="text-xs text-muted-foreground">
+              HQ: Minarch Tower, Sector 44, Gurugram, India
+            </p>
+          </div>
         </div>
       </div>
     </footer>
