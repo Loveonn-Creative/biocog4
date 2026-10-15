@@ -1,0 +1,55 @@
+{
+  "slug": "verra-or-gold-standard-which-to-choose",
+  "q": "Verra or Gold Standard: which registry should a small project choose?",
+  "title": "Verra or Gold Standard for a small project?",
+  "short": "Choose the standard that has an approved methodology for your activity and that your likely buyers prefer. Verra's VCS has the widest range of methods and the largest market. Gold Standard requires proof of sustainable development benefits and suits community projects such as cookstoves, water and small energy. Fees and eligibility rules change, so check both.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Project developers, MSME owners",
+  "sections": [
+    {
+      "h": "How the two differ",
+      "ul": [
+        "Verra (VCS): the largest voluntary programme by volume, with methods across energy, industry, waste, agriculture and forests. Co-benefits can be shown with add-on labels such as CCB.",
+        "Gold Standard for the Global Goals: every project must show contribution to sustainable development goals beyond climate, follow safeguarding principles and run stakeholder consultation. Its microscale rules make very small projects workable.",
+        "Both run a public registry with serial numbers, and both programmes have been approved as CCP-eligible by the ICVCM, though each methodology is assessed separately."
+      ]
+    },
+    {
+      "h": "Questions that decide it",
+      "ol": [
+        "Is there an approved methodology for exactly your activity under each standard? If only one has it, the choice is made.",
+        "Is your project type still eligible? Both have restricted new grid-connected renewable power projects in countries like India.",
+        "Who will buy? Some buyers pay more for Gold Standard's certified co-benefits; others want the liquidity of VCS.",
+        "Can you meet the extra requirements: Gold Standard's consultation and SDG monitoring, or Verra's grouped project rules if you plan to add sites over time?",
+        "What will validation, verification and registry fees cost against your expected credit volume?"
+      ]
+    },
+    {
+      "h": "What stays the same whichever you pick",
+      "p": [
+        "Both need a project design document, validation by an approved validation and verification body, monitoring to the methodology, and periodic verification before credits are issued. The quality of your monitoring data, meter readings, fuel records and logbooks, matters more to the outcome than the choice of registry."
+      ]
+    },
+    {
+      "h": "A rule of thumb for small projects",
+      "p": [
+        "Community and household projects with clear social benefits usually fit Gold Standard. Industrial efficiency, waste and land projects with a matching VCS methodology usually fit Verra. Check the ICVCM decision for your methodology too, since the label affects price more than the registry does."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps activity records such as fuel, electricity and freight documents that can support either standard's monitoring report, and shows carbon credit eligibility signals. It is neutral between registries. It does not issue credits or connect to either registry.",
+  "links": [
+    { "label": "Senseible compared with Verra", "to": "/vs/verra" },
+    { "label": "Senseible compared with Gold Standard", "to": "/vs/gold-standard" },
+    { "label": "Grouped projects in Verra", "to": "/answers/what-is-a-grouped-project-in-verra" },
+    { "label": "Gold Standard microscale projects", "to": "/answers/gold-standard-microscale-projects" }
+  ],
+  "sources": [
+    { "label": "Verra, VCS Program Guide and VCS Standard", "url": "https://verra.org" },
+    { "label": "Gold Standard for the Global Goals, Principles & Requirements and Safeguarding Principles", "url": "https://www.goldstandard.org" },
+    { "label": "ICVCM, CCP-eligible programme decisions", "url": "https://icvcm.org" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Fees, eligible project types and ICVCM methodology decisions change; date-stamp the comparison and recheck before starting a project."
+}
