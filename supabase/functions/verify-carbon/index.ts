@@ -442,12 +442,12 @@ serve(async (req) => {
     const indicativeValue = creditValueField(verifiedKg, verifiedReductions);
 
     // Use AI for additional analysis and recommendations
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
     let aiRecommendations: string[] = [];
     let methodologyCompliance = 'GHG Protocol / ISO 14064 compliant emission factors applied';
     let dataQualityAssessment = `${validCount}/${emissions.length} records passed validation`;
 
-    if (LOVABLE_API_KEY) {
+    if (GEMINI_API_KEY) {
       try {
         const aiPrompt = `You are a carbon verification expert. Analyze this emission data summary and provide 3-5 specific recommendations:
 
@@ -463,7 +463,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
         const aiResponse = await aiFetch({
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+            'Authorization': `Bearer ${GEMINI_API_KEY}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({

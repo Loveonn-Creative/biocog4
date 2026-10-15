@@ -463,8 +463,8 @@ serve(async (req) => {
       );
     }
 
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
+    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
+    if (!GEMINI_API_KEY) {
       return new Response(
         JSON.stringify({ error: 'AI service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -727,7 +727,7 @@ serve(async (req) => {
     let truncated = false;
 
     try {
-      content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-flash');
+      content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', GEMINI_API_KEY, 'google/gemini-2.5-flash');
       console.log('Flash model extraction complete');
     } catch (error: any) {
       if (error.status === 429) {
@@ -765,7 +765,7 @@ serve(async (req) => {
     if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown')) {
       console.log('Retrying with pro model...');
       try {
-        content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', LOVABLE_API_KEY, 'google/gemini-2.5-pro');
+        content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', GEMINI_API_KEY, 'google/gemini-2.5-pro');
         usedModel = 'google/gemini-2.5-pro';
         truncated = false;
         
