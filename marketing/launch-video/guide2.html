@@ -256,7 +256,7 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
         <div class="row"><span>Scope 1 <span class="sm">· Direct emissions</span></span><span>0</span></div>
         <div class="row" id="dS2" style="font-weight:600"><span>Scope 2 <span class="sm" style="font-weight:400">· Indirect (energy)</span></span><span>3,412.6 kg</span></div>
         <div class="row"><span>Scope 3 <span class="sm">· Value chain</span></span><span>0</span></div></div>
-      <div class="card"><div style="font-weight:600">Quick Actions</div><div class="qa"><div>Upload Invoice</div><div>Verify Emissions</div><div id="qaRep">Generate Report</div></div></div>
+      <div class="card"><div style="font-weight:600">Quick Actions</div><div class="qa"><div>Upload Invoice</div><div id="qaRep">Generate Report</div></div></div>
       <div class="card"><div style="font-weight:600">Recent Documents</div><div class="row"><span>Demo Power Distribution<br><span class="sm">Electricity · Sep 2026</span></span><span>₹41,970</span></div></div>
     </div></div>
 
@@ -268,9 +268,9 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
       <div class="card"><div style="font-weight:600;font-size:17px">Carbon Accounting Report</div>
         <div class="row"><span>Scope 1</span><span>0</span></div><div class="row"><span>Scope 2</span><span>3,412.6 kg</span></div><div class="row"><span>Scope 3</span><span>0</span></div>
         <div style="display:flex;gap:8px;margin-top:14px"><div class="btn" id="bPdf" style="flex:1;border-radius:10px;height:44px;font-size:14px">Download PDF</div><div class="btn" style="flex:1;border-radius:10px;height:44px;font-size:14px;background:#fff;color:#111;border:1px solid #e3e3e3">Download Excel</div></div></div>
-      <div class="card" id="bankCard"><div style="font-weight:600;font-size:17px">Bank Disclosure Report</div>
+      <div class="card" id="bankCard"><div style="font-weight:600;font-size:17px">Bank Disclosure Report</div><div class="sm" style="font-size:12.5px">For green loan applications &amp; ESG financing</div>
         <div class="row"><span class="sm">Total Emissions</span><span>3,412.6 kg CO₂e</span></div>
-        <div class="row"><span class="sm">Evidence records</span><span>1</span></div>
+        <div class="row"><span class="sm">Verification Status</span><span class="sm" style="font-weight:600">PENDING</span></div><div class="row"><span class="sm">Evidence records</span><span>1</span></div>
         <div class="btn" id="bBank" style="margin-top:14px;border-radius:10px;height:44px;font-size:14px">Download Bank Report</div></div>
       <div style="height:120px"></div>
     </div></div>
@@ -280,10 +280,10 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
       <div class="topbar"><span class="wm">Senseible</span><span class="avatar">DF</span></div>
       <div class="h1" style="margin-top:16px">Monetize</div>
       <div class="card" id="rupee" style="background:#f6f6f6"><div style="font-size:13.5px;line-height:1.5">No rupee value is shown. Carbon credits are issued for verified reductions, and none are recorded yet. A value also needs a dated, sourced market price.</div></div>
-      <div class="card"><b>Green Loans</b><div class="sm" style="font-size:12.5px">Eligibility checks</div></div>
-      <div class="card"><b>Govt Incentives</b><div class="sm" style="font-size:12.5px">Eligibility checks</div></div>
-      <div class="card"><b>Green Invoice Factoring</b><div class="sm" style="font-size:12.5px">Eligibility checks</div></div>
-      <div class="card"><b>Carbon Credits</b><div class="sm" style="font-size:12.5px">Needs verified reductions</div></div>
+      <div class="card"><b>Green Loans</b><div class="sm" style="font-size:12.5px">Lenders set their own terms for green loans. No saving is estimated here.</div></div>
+      <div class="card"><b>Govt Incentives</b><div class="sm" style="font-size:12.5px">Scheme benefits depend on each scheme's rules. No benefit is estimated here.</div></div>
+      <div class="card"><b>Green Invoice Factoring</b><div class="sm" style="font-size:12.5px">Advance terms are set by the financier. No advance is estimated here.</div></div>
+      <div class="card"><b>Carbon Credits</b><div class="sm" style="font-size:12.5px">Credits must first be issued under a recognised programme.</div></div>
     </div></div>
 
     <!-- overlays -->
@@ -303,6 +303,7 @@ body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--ink); -
 </div>
 
 <script>
+// Signed-in screens re-checked against live senseible.earth on 15 Oct 2026 (demo login, view only; partner names omitted).
 // Guide 2: first successful report. Steps 1–3 match the live senseible.earth flow run on 15 Oct 2026
 // with a fictional sample bill (result 3,412.56 kg CO2e, Trust Index 43/100, the same warnings, and the
 // guest verification text). Steps 4–5 are signed-in screens built from code: GuestImportPrompt.tsx,
