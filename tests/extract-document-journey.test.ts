@@ -6,7 +6,8 @@ import { beforeEach, describe, expect, mock, test } from 'bun:test';
 
 type Row = Record<string, any>;
 const db: Record<string, Row[]> = {};
-const KNOWN = ['profiles', 'subscriptions', 'documents', 'emissions'];
+const KNOWN = ['profiles', 'subscriptions', 'documents', 'emissions', 'financial_documents'];
+const stored: Record<string, string[]> = {};
 const USERS: Record<string, string> = { 'token-a': '00000000-0000-4000-8000-00000000000a' };
 let seq = 0;
 
@@ -62,7 +63,15 @@ class Query {
 const client = {
   from: (t: string) => new Query(t),
   rpc: async () => ({ data: null, error: { code: 'PGRST202', message: 'function not found' } }),
-  storage: { from: () => ({ upload: async () => ({ error: { message: 'not ready' } }) }) },
+  // Only the financial bucket accepts files in these tests (the invoice
+  // source bucket is "not ready", as before its migration).
+  storage: { from: (bucket: string) => ({
+    upload: async (path: string) => {
+      if (bucket !== 'financial-documents') return { error: { message: 'not ready' } };
+      (stored[bucket] ??= []).push(path); return { error: null };
+    },
+    remove: async (paths: string[]) => { stored[bucket] = (stored[bucket] ?? []).filter((p) => !paths.includes(p)); return { error: null }; },
+  }) },
   auth: { getUser: async (token: string) => (USERS[token] ? { data: { user: { id: USERS[token] } }, error: null } : { data: { user: null }, error: { message: 'bad' } }) },
 };
 
@@ -76,9 +85,15 @@ const env: Record<string, string> = { SUPABASE_URL: 'http://db.local', SUPABASE_
 
 // What the AI "reads" next, or an HTTP status to fail with.
 let ocr: Row | number = {};
-globalThis.fetch = (async (url: string) => {
+let lastBody: unknown = null;
+let figures: Row = {};
+globalThis.fetch = (async (url: string, init?: RequestInit) => {
+  lastBody = init?.body;
   if (!String(url).includes('generativelanguage')) return new Response('{}', { status: 404 });
   if (typeof ocr === 'number') return new Response('{"error":"x"}', { status: ocr });
+  if (String(lastBody).includes('Indian business financial documents')) {
+    return new Response(JSON.stringify({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(figures) } }] }), { status: 200 });
+  }
   return new Response(JSON.stringify({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(ocr) } }] }), { status: 200 });
 }) as typeof fetch;
 
@@ -100,7 +115,7 @@ const diesel = (qty: string | null, number = 'INV-118') => ({
   lineItems: [{ description: 'HSD Diesel', hsn_code: '2710', quantity: qty, unit: qty ? 'litre' : null, total: '4,690' }],
 });
 
-beforeEach(() => { for (const k of Object.keys(db)) delete db[k]; seq = 0; });
+beforeEach(() => { for (const k of Object.keys(db)) delete db[k]; for (const k of Object.keys(stored)) delete stored[k]; seq = 0; });
 
 describe('invoice to stored records, through the real handler', () => {
   test('a readable fuel invoice: document and emission row are created on the server', async () => {
@@ -197,5 +212,56 @@ describe('invoice to stored records, through the real handler', () => {
     const big = Buffer.alloc(16 * 1024 * 1024).toString('base64');
     const res = await handler(new Request('http://fn', { method: 'POST', headers: { Authorization: 'Bearer token-a', apikey: 'anon' }, body: JSON.stringify({ imageBase64: big, mimeType: 'image/jpeg' }) }));
     expect(res.status).toBe(413);
+  });
+
+  test('a financial statement is not rejected: stored privately with allow-listed figures only', async () => {
+    ocr = { documentType: 'Financial Statements', vendor: 'Asha Textiles Pvt Ltd', lineItems: [], notes: 'Balance Sheet as at 31 March 2026; Statement of Profit and Loss' };
+    figures = { document_kind: 'financial_statement', financial_year: '2025-26', gross_turnover_inr: '48500000', net_profit_inr: 3100000, pan: 'ABCDE1234F', director_name: 'R. Mehta' };
+    const r = await upload('fin');
+    expect(r.status).toBe(200);
+    expect(r.body).toMatchObject({ success: true, financialDocument: true, stored: true });
+    expect(r.body.data).toBeUndefined();
+    expect(db.documents ?? []).toHaveLength(0);
+    expect(db.emissions ?? []).toHaveLength(0);
+    expect(db.financial_documents).toHaveLength(1);
+    const row = db.financial_documents[0];
+    expect(row).toMatchObject({ user_id: USERS['token-a'], doc_kind: 'financial_statement', mime_type: 'image/jpeg' });
+    expect(row.figures).toEqual({ document_kind: 'financial_statement', financial_year: '2025-26', gross_turnover_inr: 48500000, net_profit_inr: 3100000 });
+    expect(JSON.stringify(row)).not.toMatch(/ABCDE1234F|Mehta/);
+    expect(stored['financial-documents']).toEqual([row.storage_path]);
+  });
+
+  test('the same financial document twice is stored once', async () => {
+    ocr = { documentType: 'unknown', notes: 'Income Tax Return ITR-4 Acknowledgement Number 123 Assessment Year 2026-27', lineItems: [] };
+    figures = { document_kind: 'itr', total_income_inr: 900000 };
+    await upload('itr');
+    // The fake database has no unique index, so mimic Postgres refusing the repeat.
+    const realInsert = Query.prototype.insert;
+    Query.prototype.insert = function (this: any, rows: any) { if ((this as any).table === 'financial_documents') { (this as any).run = () => ({ data: null, error: { code: '23505' } }); return this; } return realInsert.call(this, rows); } as any;
+    const again = await upload('itr');
+    Query.prototype.insert = realInsert;
+    expect(again.body).toMatchObject({ financialDocument: true, stored: true, alreadyStored: true });
+    expect(db.financial_documents).toHaveLength(1);
+  });
+
+  test('an accountant\'s tax invoice for ITR filing stays an invoice', async () => {
+    ocr = { documentType: 'Tax Invoice', vendor: 'Gupta & Co', invoiceNumber: 'GC/77', date: '2026-08-01', supplierGstin: '27AAPFU0939F1ZV', amount: 5900,
+      lineItems: [{ description: 'Professional fees: ITR filing and preparation of financial statements', hsn_code: '998221', total: 5000 }] };
+    const r = await upload('ca');
+    expect(r.body.financialDocument).toBeUndefined();
+    expect(r.body.success).toBe(true);
+    expect(db.documents).toHaveLength(1);
+    expect(db.financial_documents ?? []).toHaveLength(0);
+  });
+
+  test('before the storage migration: nothing kept, a clear message', async () => {
+    ocr = { documentType: 'Bank Statement', notes: 'Bank Statement for account, IFSC HDFC0001234, branch Pune; opening balance 10,000 closing balance 12,000', lineItems: [] };
+    figures = {};
+    const realFrom = client.from;
+    client.from = ((t: string) => (t === 'financial_documents' ? { insert: () => Promise.resolve({ error: { code: '42P01' } }) } : realFrom(t))) as any;
+    const r = await upload('bank');
+    client.from = realFrom;
+    expect(r.body).toMatchObject({ financialDocument: true, stored: false });
+    expect(stored['financial-documents'] ?? []).toHaveLength(0);
   });
 });

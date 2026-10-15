@@ -150,7 +150,11 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
           throw new Error(message);
         }
 
-        if (data?.isDuplicate && !data?.success) {
+        if (data?.financialDocument) {
+          // Kept privately on the server for climate finance; not a record.
+          setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: data.stored ? 'success' as const : 'error' as const, message: data.stored ? 'Financial document, stored securely' : 'Financial document, not kept' } : f));
+          if (data.stored) results.processed++; else results.errors++;
+        } else if (data?.isDuplicate && !data?.success) {
           // Duplicate blocked
           setFiles(prev => prev.map((f, idx) => 
             idx === i ? { 

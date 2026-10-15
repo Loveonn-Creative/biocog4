@@ -78,6 +78,13 @@
       "when": 1792070116433,
       "tag": "0010_scope3_global_freight",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792070176433,
+      "tag": "0011_financial_documents",
+      "breakpoints": true
     }
   ]
 }

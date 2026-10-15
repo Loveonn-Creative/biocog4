@@ -17,6 +17,7 @@ import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import { buildEmissionRows } from '../_shared/emissionRows.ts';
+import { financialKind, financialPath, readFinancialFigures, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
 import { cylinderToKg, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
   calculateEmissions,
@@ -208,15 +209,11 @@ function getHumorousRejection(ocrText: string, category?: string): string {
   return HUMOROUS_REJECTIONS.default[0];
 }
 
-// Income tax returns and financial statements are never read here (they are
-// reserved for a later, separately approved server-side process).
-const FINANCIAL_STATEMENT_PATTERN = /\b(income tax return|itr-?v?\s?[1-7]|balance sheet|statement of profit and loss|profit (and|&) loss (account|statement)|financial statements?)\b/i;
-const FINANCIAL_STATEMENT_MESSAGE = 'Income tax returns and financial statements are not read here. Upload an invoice, bill or receipt instead.';
+// Financial documents are handled before this check (financialDocuments.ts).
 
 function isDocumentRelevant(ocrData: any): { relevant: boolean; message?: string } {
   const docType = (ocrData.documentType || '').toLowerCase();
   const allText = JSON.stringify(ocrData).toLowerCase();
-  if (FINANCIAL_STATEMENT_PATTERN.test(allText)) return { relevant: false, message: FINANCIAL_STATEMENT_MESSAGE };
   
   if (docType === 'unknown') {
     for (const keyword of IRRELEVANT_DOCUMENT_KEYWORDS) {
@@ -859,6 +856,46 @@ serve(async (req) => {
     ocrData.documentType = normalizeDocumentType(ocrData.documentType);
     for (const k of ['amount', 'taxAmount', 'subtotal']) {
       if (ocrData[k] != null) ocrData[k] = parseAmount(ocrData[k]) ?? undefined;
+    }
+
+    // ============= FINANCIAL DOCUMENTS (owner approval, Oct 2026) =============
+    // Income tax returns, bank statements and financial statements are not
+    // rejected. Signed in: the file goes to a private, server-only bucket and
+    // only the allow-listed figures are read and kept, for financial
+    // modelling, risk and climate finance. Nothing from the first read is
+    // kept, no document or emission row is made, and nothing is shown in the
+    // user's records or returned to a browser. Guests: nothing is kept.
+    const finKind = financialKind(ocrData);
+    if (finKind) {
+      await countGuestRead();
+      const reply = (body: Record<string, unknown>) => new Response(JSON.stringify(body), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      if (!isAuthenticated || !userId || !supabaseUrl || !supabaseKey) {
+        return reply({ success: true, financialDocument: true, stored: false, error: FINANCIAL_GUEST_MESSAGE, message: FINANCIAL_GUEST_MESSAGE });
+      }
+      const admin = createClient(supabaseUrl, supabaseKey);
+      const mime = (mimeType || 'image/jpeg').toLowerCase();
+      const path = financialPath(userId, documentHash, mime);
+      const unavailable = () => reply({ success: true, financialDocument: true, stored: false, error: FINANCIAL_UNAVAILABLE_MESSAGE, message: FINANCIAL_UNAVAILABLE_MESSAGE });
+      if (!path) return unavailable();
+      const clean = imageBase64.replace(/\s+/g, '');
+      const bin = atob(clean);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      const up = await admin.storage.from(FINANCIAL_BUCKET).upload(path, bytes, { contentType: mime, upsert: false });
+      const alreadyThere = up.error && /exist|duplicate/i.test(up.error.message || '');
+      if (up.error && !alreadyThere) { console.error('Financial file not stored:', up.error.message); return unavailable(); }
+      const figures = await readFinancialFigures(mime, clean);
+      const { error: rowError } = await admin.from('financial_documents').insert({
+        user_id: userId, organization_id: organizationId || null, doc_kind: finKind, storage_path: path,
+        sha256: documentHash, mime_type: mime, size_bytes: bytes.length, figures,
+        figures_read_at: Object.keys(figures).length ? new Date().toISOString() : null,
+      });
+      if (rowError && rowError.code !== '23505') {
+        console.error('Financial document row not stored:', rowError.code);
+        if (!alreadyThere) await admin.storage.from(FINANCIAL_BUCKET).remove([path]);
+        return unavailable();
+      }
+      return reply({ success: true, financialDocument: true, stored: true, alreadyStored: rowError?.code === '23505', error: FINANCIAL_STORED_MESSAGE, message: FINANCIAL_STORED_MESSAGE });
     }
 
     // Check document relevance

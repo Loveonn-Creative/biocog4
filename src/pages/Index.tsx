@@ -458,6 +458,7 @@ const Index = () => {
           if (status === 402 || status === 429) { notes.push(`The remaining parts were not sent.`); break; }
           continue;
         }
+        if (data?.financialDocument) { notes.push(`${range}: ${data.stored ? 'financial document, stored securely' : 'financial document, not kept'}`); continue; }
         if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
         if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); continue; }
         // Page numbers of this part, mapped back to the original PDF.
@@ -591,6 +592,15 @@ const Index = () => {
           setState("idle");
           return;
         }
+      }
+
+      // Financial documents (ITR, bank or financial statements) are kept
+      // privately on the server for climate finance; nothing to show here.
+      if (data?.financialDocument) {
+        if (data.stored) toast.success(data.message, { duration: 8000, icon: "🔒" });
+        else toast.info(data.message, { duration: 8000 });
+        setState("idle");
+        return;
       }
 
       // Handle irrelevant document rejection
