@@ -305,7 +305,7 @@ Deno.serve(async (req) => {
       }, 429, usageHeaders);
     }
 
-    const GEMINI_API_KEY = (Deno.env.get('GEMINI_API_KEY') || Deno.env.get('LOVABLE_API_KEY'));
+    const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY');
     if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY is not configured");
 
     let userData: string;
