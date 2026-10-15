@@ -1,0 +1,52 @@
+{
+  "slug": "carbon-pricing-mechanisms-in-india",
+  "q": "What carbon pricing mechanisms does India have today?",
+  "title": "Carbon pricing mechanisms in India",
+  "short": "India has no economy-wide carbon tax. Its main carbon price is the Carbon Credit Trading Scheme (CCTS) of 2023: a compliance market with emission intensity targets for notified sectors, plus a voluntary offset mechanism. Older market tools sit alongside it: PAT energy saving certificates and Renewable Energy Certificates. Fuel taxes add an implicit price.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "CFOs, exporters and policy researchers",
+  "sections": [
+    {
+      "h": "Carbon Credit Trading Scheme (CCTS)",
+      "p": [
+        "The Ministry of Power notified the scheme on 28 June 2023 (S.O. 2825(E)) under the Energy Conservation Act. The compliance mechanism gives obligated entities in notified sectors a target for greenhouse gas emissions per unit of output. Entities that beat their target earn carbon credit certificates; those that miss it must buy certificates to cover the gap.",
+        "The Bureau of Energy Efficiency administers the scheme, and certificates are to trade on power exchanges. Targets for the first sectors began to be notified in 2025."
+      ]
+    },
+    {
+      "h": "The CCTS offset mechanism",
+      "p": [
+        "A December 2023 amendment added a voluntary offset mechanism. Entities outside the compliance sectors can register projects under approved methodologies and earn credits for reductions or removals. This is the route by which a smaller company could earn Indian credits, subject to project registration and verification."
+      ]
+    },
+    {
+      "h": "Older tools that put a price on energy or carbon",
+      "ul": [
+        "Perform, Achieve and Trade (PAT): BEE's scheme for energy-intensive designated consumers, trading energy saving certificates (ESCerts). It is being folded into the CCTS.",
+        "Renewable Energy Certificates: under CERC's 2022 regulations, each REC stands for 1 MWh of renewable generation and helps obligated buyers meet renewable purchase obligations. It prices renewable attributes, not tonnes of CO2.",
+        "Taxes on fuels: excise and GST on petrol, diesel and coal raise fuel costs. These are not designed as carbon prices, and the levy on coal changed with the 2025 GST rate rationalisation."
+      ]
+    },
+    {
+      "h": "Why this matters for exporters",
+      "p": [
+        "Article 9 of the EU CBAM Regulation lets a carbon price effectively paid in the country of origin reduce the CBAM certificates owed, if it can be documented. Whether CCTS payments or Indian fuel levies qualify depends on EU rules for that deduction, so do not assume a reduction until the method is set and your payment is evidenced."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not calculate CCTS obligations or trade certificates. Its invoice-backed Scope 1 and 2 records give the emissions base that a carbon price, internal or external, would apply to.",
+  "links": [
+    { "label": "India CCTS sector targets", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" },
+    { "label": "India CCTS vs EU ETS", "to": "/answers/india-ccts-vs-eu-ets-difference" },
+    { "label": "Does coal GST count as a carbon price for CBAM?", "to": "/answers/does-india-coal-gst-count-as-carbon-price-cbam" },
+    { "label": "Carbon pricing impact calculator", "to": "/calculators/carbon-pricing-impact" }
+  ],
+  "sources": [
+    { "label": "Carbon Credit Trading Scheme, 2023, Ministry of Power notification S.O. 2825(E), 28 June 2023, and December 2023 amendment", "url": "https://powermin.gov.in" },
+    { "label": "Bureau of Energy Efficiency, PAT scheme and CCTS", "url": "https://beeindia.gov.in" },
+    { "label": "Regulation (EU) 2023/956 (CBAM Regulation), Article 9", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "CCTS sector targets, trading start and the coal levy are changing; recheck against current BEE, Ministry of Power and CBIC notifications."
+}

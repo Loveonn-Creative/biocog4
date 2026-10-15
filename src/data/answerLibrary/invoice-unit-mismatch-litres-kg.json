@@ -1,0 +1,64 @@
+{
+  "slug": "invoice-unit-mismatch-litres-kg",
+  "q": "My invoice gives fuel in kg but the factor is per litre: how do I convert?",
+  "title": "Fuel invoice in kg, factor per litre",
+  "short": "Divide the kilograms by the fuel's density in kg per litre to get litres, then apply the per-litre factor. For diesel, density is about 0.83 to 0.84 kg per litre, so 1,000 kg is about 1,200 litres. Better still, use the supplier's measured density from the invoice or test certificate, and record which value you used.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants, plant managers",
+  "sections": [
+    {
+      "h": "Two correct ways to convert",
+      "ol": [
+        "Volume route: litres = kg / density (kg per litre). Then emissions = litres x factor per litre.",
+        "Energy route: emissions = kg x net calorific value (MJ per kg) x factor per MJ. This uses the IPCC 2006 per-energy defaults directly and skips density."
+      ],
+      "p": ["Both give nearly the same answer when the inputs are consistent. Use one route for each fuel and keep it the same every period."]
+    },
+    {
+      "h": "Where to find the density",
+      "ul": [
+        "The supplier's invoice or delivery note often states density at 15 degrees Celsius for bulk diesel and furnace oil.",
+        "Test certificates from the refinery or depot give measured density and calorific value.",
+        "Published fuel properties, such as those in the UK government conversion factors methodology, give typical values when you have nothing better. Label them as estimates."
+      ]
+    },
+    {
+      "h": "Common mismatches on Indian invoices",
+      "ul": [
+        "Bulk diesel or furnace oil sold by weight in kg or tonnes, while factors are per litre.",
+        "LPG sold in kg cylinders. The LPG factor is already per kg, so no conversion is needed.",
+        "PNG billed in standard cubic metres (scm), sometimes with an energy figure in MMBtu. Use the factor that matches the billed unit.",
+        "kL on the invoice: 1 kL is 1,000 litres, not 1,000 kg."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "p": [
+        "Do not apply a per-litre factor to a kg quantity as if they were the same. For diesel that understates litres by about 17 percent, and the error flows straight into Scope 1. If no density is available and the energy route is not possible, leave the line out of the total and flag it rather than guess."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 kg of diesel",
+    "lines": [
+      "Density: 0.835 kg per litre (labelled estimate, midpoint of 0.83 to 0.84)",
+      "Litres: 1,000 / 0.835 = 1,197.6 L",
+      "Emissions: 1,197.6 x 2.68 = 3,209.6 kg CO2, about 3.2 t",
+      "Check by the energy route: 1,000 kg x 43.0 MJ/kg = 43,000 MJ; 43,000 x 0.0741 kg CO2/MJ = 3,186 kg CO2",
+      "The two routes differ by under 1 percent, which comes from the density assumed"
+    ]
+  },
+  "senseible": "Senseible matches a fuel line to a factor by keyword only when the invoice unit agrees with the factor's unit. A line in kg against a per-litre factor gets no figure rather than a guess, so you can add the density and confirm it.",
+  "links": [
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "Furnace oil emission factor", "to": "/emission-factors/furnace-oil" },
+    { "label": "How to spot a wrong emission factor", "to": "/answers/how-to-spot-a-wrong-emission-factor" },
+    { "label": "HSN code to emission factor mapping", "to": "/answers/hsn-code-emission-factor-mapping" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 1 (net calorific values and CO2 factors)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "UK Government GHG Conversion Factors for Company Reporting, fuel properties", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" }
+  ],
+  "reviewed": "2026-10-15"
+}

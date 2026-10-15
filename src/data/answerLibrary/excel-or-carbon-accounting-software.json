@@ -1,0 +1,61 @@
+{
+  "slug": "excel-or-carbon-accounting-software",
+  "q": "When should a small company move carbon accounting from Excel to software?",
+  "title": "Excel or carbon accounting software?",
+  "short": "Stay in Excel while you have one site, a few fuel and electricity sources, one person keeping the sheet and nobody checking the evidence. Move when a buyer, lender or auditor wants to trace figures to documents, when you add sites or Scope 3 supplier lines, or when more than one person edits the numbers.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "MSME owners, finance heads",
+  "sections": [
+    {
+      "h": "When Excel is enough",
+      "ul": [
+        "One site, a monthly electricity bill and a few fuel purchases: twenty to forty rows a year.",
+        "The figure is for your own planning, not for a buyer, bank or regulator.",
+        "One careful person owns the sheet and the factors are written next to each row with their source."
+      ],
+      "p": [
+        "A well-kept sheet that names each factor and links each row to a scanned bill meets the GHG Protocol's principles of accuracy, consistency and transparency."
+      ]
+    },
+    {
+      "h": "Signs you have outgrown it",
+      "ul": [
+        "Someone outside the company will check the numbers and asks where each one came from.",
+        "You add a second plant or warehouse, and bills arrive from more than one discom or fuel supplier.",
+        "Scope 3 enters: hundreds of supplier invoice lines that need a category, a unit and a factor each.",
+        "The same invoice could be entered twice by two people, and nothing would stop it.",
+        "Factors change between years and you need old reports to keep their old factors."
+      ]
+    },
+    {
+      "h": "What any tool should do that a sheet does not",
+      "ol": [
+        "Keep the source document attached to every figure, with the page or line it came from.",
+        "Stop the same file being counted twice.",
+        "Record which factor and version was applied, so a past figure can be recomputed.",
+        "Show what changed, by whom and when."
+      ],
+      "p": [
+        "These are what an ISO 14064-3 verifier looks for in an evidence trail. If software does not do them, it is a prettier spreadsheet."
+      ]
+    },
+    {
+      "h": "A middle path",
+      "p": [
+        "Many small companies keep Excel for planning and targets, and use software only to turn bills and invoices into a traceable record. That way the sheet stays simple and the evidence sits in one place."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads bills and invoices into line items with the source page, the factor applied and a SHA-256 fingerprint per file, so the same file is not counted twice. For a handful of rows a year with no outside checker, a well-kept spreadsheet does the job and Senseible adds little.",
+  "links": [
+    { "label": "DIY or consultant for carbon accounting", "to": "/climate-intelligence/diy-vs-consultant-carbon-accounting-msme-decision-framework" },
+    { "label": "Can carbon accounting be fully automated", "to": "/answers/can-carbon-accounting-be-fully-automated" },
+    { "label": "Auditors and Senseible reports", "to": "/answers/auditors-and-senseible-reports" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (2004), chapter 1, accounting principles", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "ISO 14064-3:2019, Validation and verification of GHG statements", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

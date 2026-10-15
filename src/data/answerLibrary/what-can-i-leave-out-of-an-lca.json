@@ -1,0 +1,72 @@
+{
+  "slug": "what-can-i-leave-out-of-an-lca",
+  "q": "What can I leave out of an LCA or product footprint, and what are the cut-off rules?",
+  "title": "What an LCA can leave out: cut-off rules",
+  "short": "You can leave out small inputs only if you set cut-off criteria in your goal and scope, test them against mass, energy and environmental significance, and report what you excluded. ISO 14044 and ISO 14067 do not fix one percentage. An input that is light but carbon heavy may still have to stay in.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Sustainability leads and LCA practitioners at MSMEs",
+  "sections": [
+    {
+      "h": "The three tests in ISO 14044",
+      "ul": [
+        "Mass: leave out inputs whose combined mass is below a share of the product you set and state.",
+        "Energy: the same test on energy content.",
+        "Environmental significance: keep any input that would change the result noticeably, whatever its mass."
+      ],
+      "p": ["Cut-off decisions belong in the goal and scope, and a sensitivity check should confirm they do not change the conclusions."]
+    },
+    {
+      "h": "What is commonly excluded, with a reason",
+      "ul": [
+        "Capital goods such as machines and buildings, which the GHG Protocol Product Standard treats as non-attributable and allows you to exclude with disclosure.",
+        "Overheads like office lighting or staff commuting, also non-attributable in the Product Standard.",
+        "Trace auxiliaries such as lubricants or labels, if your screening shows them insignificant.",
+        "Consumer travel to a shop, for cradle to grave studies of retail products."
+      ]
+    },
+    {
+      "h": "What you should not cut",
+      "ul": [
+        "Electricity and fuel used in your own process, however small they look per unit.",
+        "Packaging, if the footprint is per item sold and packaging is part of what the buyer receives.",
+        "Coatings, adhesives, catalysts or refrigerants with high carbon intensity per kg.",
+        "Anything left out only because data was hard to find; use a proxy and label it."
+      ]
+    },
+    {
+      "h": "How to document exclusions",
+      "ol": [
+        "State the cut-off rule in the goal and scope, for example the mass and energy shares you used.",
+        "List each excluded input and the reason.",
+        "Give a rough estimate of the excluded total, so a reader can judge it.",
+        "Run a sensitivity check with the exclusions added back.",
+        "Repeat the check when the product or supplier changes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: a light input that matters",
+    "lines": [
+      "1 kg product: 920 g steel, 60 g plastic, 15 g paint, 5 g adhesive",
+      "Adhesive by mass: 5 / 1,000 = 0.5%, so a 1% mass rule would drop it",
+      "Assumed factors: steel 2.0, plastic 3.0, paint 5.0, adhesive 6.0 kg CO2e per kg",
+      "Footprint: 1.84 + 0.18 + 0.075 + 0.03 = 2.125 kg CO2e",
+      "Adhesive share of impact: 0.03 / 2.125 = about 1.4%, more than its mass share"
+    ],
+    "note": "The 1% rule and all factors here are assumptions for illustration only. The standards leave the threshold to your study."
+  },
+  "senseible": "Senseible applies no factor, no figure: an invoice line with no matching factor is shown as a gap, not dropped, so missing inputs stay visible. It does not run a full LCA or set cut-off criteria for you.",
+  "links": [
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
+    { "label": "LCA vs product carbon footprint", "to": "/answers/lca-vs-product-carbon-footprint" },
+    { "label": "Carbon footprint exclusion threshold", "to": "/answers/carbon-footprint-exclusion-threshold" },
+    { "label": "The four stages of an LCA", "to": "/answers/what-are-the-four-stages-of-an-lca" }
+  ],
+  "sources": [
+    { "label": "ISO 14044:2006, Life cycle assessment, requirements and guidelines (cut-off criteria)", "url": "https://www.iso.org" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-15"
+}

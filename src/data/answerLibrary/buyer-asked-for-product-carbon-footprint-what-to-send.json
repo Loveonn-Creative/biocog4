@@ -1,0 +1,59 @@
+{
+  "slug": "buyer-asked-for-product-carbon-footprint-what-to-send",
+  "q": "My EU buyer asked for a product carbon footprint. What exactly should I send?",
+  "title": "What to send for a buyer's PCF request",
+  "short": "Send one figure per product in kg CO2e per declared unit (per kg, per piece or per metre), cradle-to-gate, with the reference period, the standard followed (ISO 14067 or the GHG Protocol Product Standard), the share of primary data, the factor sources and whether it was verified. A company footprint is not a product footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian MSME exporters",
+  "sections": [
+    {
+      "h": "The fields most buyers expect",
+      "p": ["Many large buyers follow the WBCSD PACT data model for exchanging product footprints. Its core fields are:"],
+      "ul": [
+        "Product identifier and description, matching the buyer's item or part number.",
+        "Declared unit and amount, for example 1 kg of dyed cotton fabric or 1 piece.",
+        "PCF excluding biogenic emissions, in kg CO2e per declared unit, plus biogenic figures where relevant.",
+        "Boundary: cradle-to-gate, from raw material extraction to your factory gate.",
+        "Reference period: the 12 months the data covers.",
+        "Standards used, primary data share, data quality notes, and verification status."
+      ]
+    },
+    {
+      "h": "How to build the number",
+      "ol": [
+        "Take your factory's fuel and electricity for the reference period and work out Scope 1 and 2 emissions.",
+        "Allocate those to the product, by machine hours, mass or another physical basis, and say which.",
+        "Add the materials: kg of each input per declared unit times a cradle-to-gate factor, preferably from your supplier.",
+        "Add inbound transport and packaging if the buyer's boundary includes them.",
+        "Divide by output in declared units, and record every factor and source."
+      ]
+    },
+    {
+      "h": "Primary data share matters",
+      "p": [
+        "Buyers increasingly ask how much of the footprint comes from your own measured data rather than database averages. Your own energy bills count as primary data; a generic factor for cotton yarn does not. Raising the primary share, for example by getting a yarn supplier's own figure, makes your footprint more credible even if the number barely moves."
+      ]
+    },
+    {
+      "h": "What not to send",
+      "ul": [
+        "Your company's total Scope 1 and 2 divided by revenue. That is an organisation intensity, not a PCF.",
+        "A number with no boundary or period. The buyer cannot compare it.",
+        "A carbon neutral claim in place of a footprint. Buyers want gross emissions."
+      ]
+    }
+  ],
+  "senseible": "Senseible's product carbon footprint calculator gives a cradle-to-gate figure per unit with the source of every factor, and the factory kWh and fuel you enter can come from bills already read in Senseible. It does not verify the footprint or send it in the PACT exchange format.",
+  "links": [
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
+    { "label": "Textile footprints for EU buyers", "to": "/climate-intelligence/vietnam-textile-carbon-footprint-eu-buyers" },
+    { "label": "Allocating factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "PACT Pathfinder Framework explained", "to": "/answers/pact-pathfinder-framework-explained" }
+  ],
+  "sources": [
+    { "label": "WBCSD PACT Pathfinder Framework and Technical Specifications for PCF data exchange", "url": "https://www.wbcsd.org" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-15"
+}

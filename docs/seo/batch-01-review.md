@@ -20,3 +20,15 @@ Points each writer asked a reviewer to check before the batch ships. Resolve or 
 - biochar-carbon-credits-india: H/Corg stability named without threshold; Puro.earth named but verra.org cited.
 - pact-pathfinder-framework-explained: version history kept general.
 - free-grid-emission-factors-by-country: IFI dataset described as combined-margin oriented; confirm current version.
+
+## chunk-03
+- answer-a-tfs-pcf-request-chemical-supplier: TfS guideline version unconfirmed; no allowlisted URL.
+- sbti-sme-route-eligibility: SME limits and "42% by 2030" from memory; rupee conversion labelled estimate.
+- transmission-and-distribution-losses-india-scope-3 / scope-3-category-3-transmission-losses: 18% T&D loss is illustrative; current CEA figure unconfirmed.
+- scope-3-category-3: diesel WTT ~0.6 kg CO2e/L labelled estimate from DESNZ.
+- exclude-downstream-scope-3-intermediate-products: check the Categories 9 to 12 claim against Scope 3 Standard Ch. 6.
+- what-is-a-corresponding-adjustment: India Article 6.2 activity list and national authority need confirming.
+- does-scrap-count-as-zero-emissions-cbam: check the definitive-period implementing act.
+- what-gri-305-asks-for-emissions: 305-6 and 305-7 status after GRI 102 unconfirmed.
+- do-re100-and-cdp-accept-indian-recs: 15-year plant age rule and single-market claim need confirming.
+- should-i-sell-or-retire-my-carbon-credits: check the Corporate Standard clause on sold reductions.

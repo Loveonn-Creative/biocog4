@@ -1,0 +1,68 @@
+{
+  "slug": "how-to-calculate-carbon-footprint-from-invoices",
+  "q": "Can I calculate my carbon footprint from purchase invoices, and which invoice fields matter?",
+  "title": "Carbon footprint from purchase invoices",
+  "short": "Yes. Fuel invoices and electricity bills give the activity data for Scope 1 and Scope 2, and purchase invoices start your Scope 3. The fields that matter are quantity, unit, item description, HSN or SAC code, invoice or billing date and supplier GSTIN. Emissions are quantity times a published factor for that unit.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners and accountants",
+  "sections": [
+    {
+      "h": "Which invoice fields to use, and why",
+      "ul": [
+        "Quantity and unit: the activity data. 1,000 litres of diesel or 12,000 kWh can be multiplied by a factor; a rupee amount cannot, without a spend-based method.",
+        "Description and HSN or SAC code: tell you what the item is, and so which factor and which scope apply. HSN 2710 points to petroleum oils, SAC 9964 to passenger transport.",
+        "Date or billing period: puts the activity in the right month and financial year.",
+        "Supplier GSTIN and invoice number: identify the document, so the same invoice is not counted twice.",
+        "Taxable value: needed only if you use spend-based factors for Scope 3, and always before GST."
+      ]
+    },
+    {
+      "h": "Which invoices go to which scope",
+      "ul": [
+        "Scope 1: fuels you burn in your own equipment or vehicles: diesel, petrol, LPG, PNG, CNG, coal, furnace oil.",
+        "Scope 2: purchased electricity, from the discom bill or an open access invoice.",
+        "Scope 3: everything else you buy: raw materials, packaging, freight, travel, waste services, machinery."
+      ]
+    },
+    {
+      "h": "Activity data beats spend data",
+      "p": [
+        "The GHG Protocol Scope 3 Technical Guidance ranks supplier-specific and quantity-based methods above spend-based ones. A spend-based factor turns rupees into emissions using an economy-wide average, so a price rise looks like an emissions rise. Use quantities wherever the invoice prints them, and keep spend-based estimates for lines that show only an amount."
+      ]
+    },
+    {
+      "h": "Edge cases to handle",
+      "ul": [
+        "Fuel bought for stock: emissions happen when fuel is burnt, so adjust large purchases for opening and closing stock.",
+        "Credit notes and returns: subtract the returned quantity.",
+        "Units that do not match the factor: litres on an invoice and a factor per kg need a density; do not guess.",
+        "Duplicates: the same bill uploaded twice, or a scanned copy and the original PDF.",
+        "Electricity bills in kVAh only: a kWh figure is needed for the grid factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a small factory",
+    "lines": [
+      "Diesel invoice: 1,000 L x 2.68 kg CO2 per litre = 2,680 kg CO2 (Scope 1)",
+      "LPG invoice: 500 kg x 2.98 kg CO2 per kg = 1,490 kg CO2 (Scope 1)",
+      "Electricity bill: 12,000 kWh x 0.710 kg CO2 per kWh = 8,520 kg CO2 (Scope 2)",
+      "Total Scope 1 and 2: 2,680 + 1,490 + 8,520 = 12,690 kg CO2, about 12.7 tonnes"
+    ],
+    "note": "Fuel factors are IPCC 2006 defaults; the grid factor is from the CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "This is Senseible's core job: it reads invoice lines, classifies them by HSN or tax code first and keyword only when the unit agrees, and multiplies quantity by a published factor, with no figure where no factor fits. Scope 3 lines go to a separate supplier evidence trail; Senseible does not apply spend-based factors.",
+  "links": [
+    { "label": "How Senseible calculates emissions", "to": "/answers/how-senseible-calculates-emissions" },
+    { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" },
+    { "label": "Using HSN codes to assign factors", "to": "/answers/hsn-code-emission-factor-mapping" },
+    { "label": "Invoice in litres, factor in kg", "to": "/answers/invoice-unit-mismatch-litres-kg" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard (revised edition, 2004)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013)", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-15"
+}

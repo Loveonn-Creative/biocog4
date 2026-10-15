@@ -1,0 +1,67 @@
+{
+  "slug": "hazardous-waste-emissions-from-manifest-india",
+  "q": "How do I calculate Scope 3 waste emissions for a chemical plant from hazardous waste manifests and TSDF invoices in India?",
+  "title": "Hazardous waste emissions from manifests",
+  "short": "Group the tonnes on your manifests and TSDF invoices by waste type and treatment route (secured landfill, incineration, co-processing, recycling), then multiply each group by a factor for that route. Incineration of solvent or organic waste usually dominates; calculate it from the waste's fossil carbon content. Report the total as Scope 3 Category 5.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and pharma units in Gujarat, Maharashtra and Telangana",
+  "sections": [
+    {
+      "h": "Which documents carry the numbers",
+      "ul": [
+        "The manifest under the Hazardous and Other Wastes Rules, 2016 (Form 10) travels with each consignment and records the waste category, quantity and the receiving facility.",
+        "The TSDF or recycler invoice gives the billed tonnes and usually names the service: landfill, incineration or co-processing. This is the cleanest activity data.",
+        "Your annual return to the state pollution control board totals the year by category, and is a good cross-check.",
+        "A waste analysis or acceptance report from the TSDF gives calorific value or carbon content, needed for incineration."
+      ]
+    },
+    {
+      "h": "The calculation by route",
+      "ul": [
+        "Incineration: CO2 = tonnes x carbon content (fraction of wet weight) x fossil share of that carbon x oxidation factor x 44/12. Use the TSDF's analysis for carbon content; IPCC 2006 Volume 5, Chapter 5 gives the method and default oxidation.",
+        "Secured landfill: tonnes x a landfill factor for the waste type. Mostly inorganic hazardous waste produces little methane; organic sludge produces more.",
+        "Co-processing in cement kilns and recycling: the guidance generally assigns combustion or recycling emissions to the user of the recovered energy or material. Report transport, or a sourced route factor, and state the approach you took.",
+        "Waste transport to the TSDF may be included in Category 5; say whether you did."
+      ]
+    },
+    {
+      "h": "Where factors come from",
+      "p": [
+        "There is no official Indian factor set for hazardous waste treatment. Options, in order of preference: data from your TSDF, calculation from the waste's own composition, or a published route factor such as the UK DESNZ waste disposal tables, labelled as a non-Indian proxy. Write the source and year with every factor."
+      ]
+    },
+    {
+      "h": "Mistakes to avoid",
+      "ul": [
+        "Using the rupee amount on the invoice as activity data. TSDF rates vary with waste type and distance, not emissions.",
+        "Counting a consignment twice, once from the manifest and again from the invoice. Pick one as the record and reconcile tonnes.",
+        "Treating ETP sludge and spent solvent with one factor. Their carbon content differs widely.",
+        "Leaving out wastewater sent off site, which also belongs in Category 5."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: spent solvent sent for incineration",
+    "lines": [
+      "TSDF invoice: 20 t of spent solvent waste, route: incineration",
+      "TSDF analysis: carbon content 60% of wet weight (assumed for this example), all fossil",
+      "Oxidation factor: 1.0 (assumed)",
+      "20 x 0.60 x 1.0 x 1.0 x 44/12 = 44 t CO2"
+    ],
+    "note": "The carbon content is an assumption for illustration. Use your TSDF's waste analysis, and remember that waste with biogenic carbon has a lower fossil share."
+  },
+  "senseible": "Senseible keeps TSDF and waste service invoice lines in a separate Scope 3 evidence trail with the source page and the file's SHA-256 fingerprint. A line gets a figure only when its printed quantity, unit and treatment route match an approved factor; otherwise it shows Needs Data, with no spend-based fill. It does not read manifests or calculate incineration from waste composition.",
+  "links": [
+    { "label": "Circular economy and waste", "to": "/circular-economy" },
+    { "label": "Food waste: landfill, compost or biogas", "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 5", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "IPCC 2006 Guidelines, Volume 5 Waste, Chapter 5 Incineration and Open Burning", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 (moef.gov.in)", "url": "https://moef.gov.in" }
+  ],
+  "reviewed": "2026-10-15",
+  "reviewNote": "Confirm the manifest form number against the current text of the 2016 Rules and its amendments before relying on it."
+}
