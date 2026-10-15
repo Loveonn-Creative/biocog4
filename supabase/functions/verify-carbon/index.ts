@@ -1,3 +1,4 @@
+import { aiFetch } from '../_shared/aiFetch.ts';
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { avoidedFromDocuments, estimateGreenScore } from '../_shared/greenScore.ts';
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -459,7 +460,7 @@ Validation Issues: ${allFlags.slice(0, 5).join(', ') || 'None'}
 
 Respond with ONLY a JSON array of recommendation strings, like: ["recommendation 1", "recommendation 2"]`;
 
-        const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        const aiResponse = await aiFetch({
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${LOVABLE_API_KEY}`,

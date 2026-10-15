@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      ambassador_applications: {
+        Row: {
+          city: string
+          commitment: string
+          confirmations: Json
+          created_at: string
+          email: string
+          email_status: string
+          first_move: string
+          id: string
+          lanes: string[]
+          name: string
+          request_ip_hash: string
+          status: string
+          whatsapp: string | null
+          work_link: string | null
+        }
+        Insert: {
+          city: string
+          commitment: string
+          confirmations: Json
+          created_at?: string
+          email: string
+          email_status?: string
+          first_move: string
+          id?: string
+          lanes: string[]
+          name: string
+          request_ip_hash: string
+          status?: string
+          whatsapp?: string | null
+          work_link?: string | null
+        }
+        Update: {
+          city?: string
+          commitment?: string
+          confirmations?: Json
+          created_at?: string
+          email?: string
+          email_status?: string
+          first_move?: string
+          id?: string
+          lanes?: string[]
+          name?: string
+          request_ip_hash?: string
+          status?: string
+          whatsapp?: string | null
+          work_link?: string | null
+        }
+        Relationships: []
+      }
       billing_addresses: {
         Row: {
           address_line_1: string | null
@@ -573,6 +624,30 @@ export type Database = {
         }
         Relationships: []
       }
+      intelligence_usage: {
+        Row: {
+          count: number
+          day: string
+          kind: string
+          subject: string
+          updated_at: string
+        }
+        Insert: {
+          count?: number
+          day: string
+          kind: string
+          subject: string
+          updated_at?: string
+        }
+        Update: {
+          count?: number
+          day?: string
+          kind?: string
+          subject?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       invoices: {
         Row: {
           amount: number
@@ -1070,7 +1145,12 @@ export type Database = {
       }
       profiles: {
         Row: {
+          business_id_checked_at: string | null
+          business_id_status: string | null
+          business_id_type: string | null
           business_name: string | null
+          cin: string | null
+          company_pan: string | null
           created_at: string | null
           data_consent: boolean | null
           data_consent_at: string | null
@@ -1092,7 +1172,12 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
+          business_id_checked_at?: string | null
+          business_id_status?: string | null
+          business_id_type?: string | null
           business_name?: string | null
+          cin?: string | null
+          company_pan?: string | null
           created_at?: string | null
           data_consent?: boolean | null
           data_consent_at?: string | null
@@ -1114,7 +1199,12 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
+          business_id_checked_at?: string | null
+          business_id_status?: string | null
+          business_id_type?: string | null
           business_name?: string | null
+          cin?: string | null
+          company_pan?: string | null
           created_at?: string | null
           data_consent?: boolean | null
           data_consent_at?: string | null
@@ -1202,6 +1292,51 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      scale_price_quotes: {
+        Row: {
+          amount_inr: number
+          billing_cycle: string
+          consumed_at: string | null
+          consumed_order_id: string | null
+          created_at: string
+          created_by: string | null
+          id: string
+          notes: string | null
+          seats: number | null
+          status: string
+          user_id: string
+          valid_until: string
+        }
+        Insert: {
+          amount_inr: number
+          billing_cycle?: string
+          consumed_at?: string | null
+          consumed_order_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          seats?: number | null
+          status?: string
+          user_id: string
+          valid_until: string
+        }
+        Update: {
+          amount_inr?: number
+          billing_cycle?: string
+          consumed_at?: string | null
+          consumed_order_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          notes?: string | null
+          seats?: number | null
+          status?: string
+          user_id?: string
+          valid_until?: string
+        }
+        Relationships: []
       }
       scope_review_requests: {
         Row: {
@@ -1522,6 +1657,29 @@ export type Database = {
         }
         Returns: boolean
       }
+      intelligence_take: {
+        Args: {
+          p_day: string
+          p_kind: string
+          p_limit: number
+          p_subject: string
+          p_window_start: string
+        }
+        Returns: {
+          allowed: boolean
+          used: number
+        }[]
+      }
+      intelligence_usage_purge: { Args: never; Returns: number }
+      intelligence_used: {
+        Args: {
+          p_day: string
+          p_kind: string
+          p_subject: string
+          p_window_start: string
+        }
+        Returns: number
+      }
       is_org_admin: {
         Args: { _org_id: string; _user_id: string }
         Returns: boolean
@@ -1534,6 +1692,7 @@ export type Database = {
         Args: { _partner_id: string; _user_id: string }
         Returns: boolean
       }
+      is_trusted_db_writer: { Args: never; Returns: boolean }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
         Args: { fingerprint: string; session_uuid: string }
