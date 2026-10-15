@@ -1,3 +1,4 @@
+import { aiFetch } from '../_shared/aiFetch.ts';
 // Real-time UI string translation with persistent cache.
 // Request: { locale: string, strings: string[] }
 // Response: { translations: Record<string, string> }  // keyed by source string
@@ -119,7 +120,7 @@ Deno.serve(async (req) => {
           `Keep punctuation, capitalization style, and sentence-ending punctuation intact. Do not add commentary, quotes, or notes. ` +
           `Return ONLY a JSON object of shape {"1":"...","2":"..."} with the translated string for each number. No prose, no code fences.`;
 
-        const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+        const aiRes = await aiFetch({
           method: "POST",
           headers: {
             "Content-Type": "application/json",

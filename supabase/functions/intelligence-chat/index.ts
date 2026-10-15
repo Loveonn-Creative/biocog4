@@ -1,3 +1,4 @@
+import { aiFetch } from '../_shared/aiFetch.ts';
 // Biocog Intelligence / Superintelligence chat.
 //
 // What each plan gets is decided here, on the server (_shared/intelligence.ts):
@@ -335,7 +336,7 @@ ${userData}
 
 Answer in ${language}. Keep technical identifiers, units, framework names and codes in their original form.`;
 
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    const response = await aiFetch({
       method: "POST",
       headers: { Authorization: `Bearer ${LOVABLE_API_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({

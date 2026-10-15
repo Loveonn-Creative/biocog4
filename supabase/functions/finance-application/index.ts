@@ -1,3 +1,4 @@
+import { aiFetch } from '../_shared/aiFetch.ts';
 // Sustainable-finance applications (green loans first). The only writer of
 // finance_applications, its timeline, documents and internal review
 // (pending migration 20261023100000). Signed-in applicants on Essential or
@@ -59,7 +60,7 @@ function bytesToB64(bytes: Uint8Array): string {
 async function readFigures(apiKey: string | undefined, mime: string, bytes: Uint8Array): Promise<DocFigures | null> {
   if (!apiKey) return null;
   try {
-    const res = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const res = await aiFetch({
       method: 'POST',
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
