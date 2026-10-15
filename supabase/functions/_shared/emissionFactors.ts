@@ -37,7 +37,9 @@ export const FUEL_FACTORS: Record<FuelType, Factor> = {
   // Unchanged from v1.0 (not part of the 2026-10 review).
   DIESEL: { value: 2.68, unit: 'litre', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
   PETROL: { value: 2.31, unit: 'litre', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
-  CNG: { value: 2.75, unit: 'kg', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
+  // Was 2.75 (v1.0, unsourced). CNG is natural gas sold by mass; IPCC natural
+  // gas: 56,100 kgCO2/TJ x 48.0 TJ/Gg = 2.693 kgCO2/kg, the same basis as PNG.
+  CNG: { value: 2.69, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: natural gas (CNG, per kg)' },
   COAL: { value: 2.42, unit: 'kg', source: 'BIOCOG_MVR_INDIA v1.0 (unchanged)' },
   // Was 1.51. IPCC LPG: 63,100 kgCO2/TJ x 47.3 TJ/Gg = 2.985 kgCO2/kg.
   LPG: { value: 2.98, unit: 'kg', source: 'IPCC 2006 V2 Tables 1.2/1.4: LPG' },
@@ -432,6 +434,18 @@ export function publishedFactorFor(factorSource: string | null | undefined): num
     return u ? round6(f.value / u.multiplier) : null;
   }
   return null;
+}
+
+// Factors a source key carried before a correction. Rows saved with them stay
+// valid (they are not recalculated); new rows use the current value.
+const EARLIER_PUBLISHED: Partial<Record<FuelType, number[]>> = { CNG: [2.75] };
+
+/** True when the stored factor is the current published value, or one this key published before. */
+export function isPublishedFactor(factorSource: string | null | undefined, value: number): boolean {
+  const current = publishedFactorFor(factorSource);
+  if (current === null || Math.abs(value - current) <= 1e-6) return true;
+  const key = String(factorSource ?? '').split(':')[1] as FuelType;
+  return (EARLIER_PUBLISHED[key] ?? []).some((v) => Math.abs(value - v) <= 1e-6);
 }
 
 /** Sum line-item emissions and avoided emissions separately, both >= 0. */

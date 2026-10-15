@@ -34,7 +34,7 @@
       "ul": [
         "Annual kilometres. A commercial vehicle usually runs far more than a private car or scooter. Use segment averages, not one figure for the whole book.",
         "Fuel economy. A two-wheeler and a light goods vehicle differ widely. Keep a table by vehicle type and fuel.",
-        "Fuel type. Use the matching IPCC 2006 default: diesel 2.68 kg CO2 per litre, petrol 2.31 kg CO2 per litre, CNG 2.75 kg CO2 per kg.",
+        "Fuel type. Use the matching IPCC 2006 default: diesel 2.68 kg CO2 per litre, petrol 2.31 kg CO2 per litre, CNG 2.69 kg CO2 per kg.",
         "Electric vehicles. Check how the current PCAF standard treats electricity used for charging. If you include it, estimate kWh from distance and apply the grid factor, 0.710 kg CO2 per kWh for India.",
         "Vehicle value. Use the total vehicle value recorded at origination, the same figure across reporting years."
       ]

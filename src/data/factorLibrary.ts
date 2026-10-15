@@ -47,7 +47,7 @@ export const FACTOR_PAGES: FactorPage[] = [
   {
     slug: 'cng', name: 'CNG', noun: 'CNG', value: FUEL_FACTORS.CNG.value, unit: 'kg', unitPlural: 'kg', scope: 1,
     hsn: '2711', hsnLabel: 'Petroleum gases', invoiceTerms: 'CNG, compressed natural gas (sold by kg)', exampleQty: 300,
-    basis: `${V1}.`,
+    basis: `${IPCC}: natural gas 56,100 kg CO2 per TJ × 48.0 TJ per Gg = 2.69 kg CO2 per kg. CNG is natural gas sold by mass, so it uses the same IPCC basis as PNG.`,
   },
   {
     slug: 'png', name: 'Piped natural gas (PNG)', titleName: 'PNG', noun: 'piped natural gas', value: FUEL_FACTORS.PNG.value, unit: 'scm', unitPlural: 'scm', scope: 1,

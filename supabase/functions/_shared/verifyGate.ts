@@ -3,7 +3,7 @@
 // preview (records kept in their browser), and the website tests run it too.
 // A preview never records or verifies anything.
 
-import { publishedFactorFor } from './emissionFactors.ts';
+import { isPublishedFactor, publishedFactorFor } from './emissionFactors.ts';
 
 export interface EmissionRecord {
   id: string;
@@ -152,7 +152,7 @@ export function evidenceGaps(emission: EmissionRecord & { document_id?: string |
   // keep their own factors and are not re-derived here; repair replays
   // an earlier result and creates nothing new.
   const published = provenance ? publishedFactorFor(provenance.factorSource as string) : null;
-  if (!repairOnly && published !== null && Number.isFinite(emission.emission_factor) && Math.abs(emission.emission_factor - published) > 1e-6) {
+  if (!repairOnly && published !== null && Number.isFinite(emission.emission_factor) && !isPublishedFactor(provenance?.factorSource as string, emission.emission_factor)) {
     fields.push('emission factor does not match the published factor for its source');
   }
   if (Number.isFinite(emission.activity_data) && Number.isFinite(emission.emission_factor) && Number.isFinite(emission.co2_kg) &&
