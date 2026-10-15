@@ -29,6 +29,13 @@
       "when": 1792048450505,
       "tag": "0003_profile_size_large_and_usage",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792049221683,
+      "tag": "0004_team_seat_limits_and_member_rpcs",
+      "breakpoints": true
     }
   ]
 }
