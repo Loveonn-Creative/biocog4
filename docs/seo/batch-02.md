@@ -6,9 +6,8 @@ Source: four research passes over topic lists 4 to 18 (docs/seo/topics-queue.md)
 
 | Status | Count | Meaning |
 |---|---|---|
-| propose | 200 | New /answers/ pages for batch 2 (66 priority 1, 134 priority 2) |
+| propose | 202 | New /answers/ pages for batch 2 (includes the 2 product rows the owner kept) |
 | update | 20 | Same intent as a live page: improve that page instead of adding a competitor |
-| review | 2 | Close to a live page; keep only if you want a product-specific version |
 | merge | 10 | Duplicate intent inside the batch; folded into the stronger candidate |
 | later | 76 | Valid but lower priority (49 priority 3); first in line for batch 3 |
 | reject | 0 | |
@@ -25,21 +24,18 @@ Skipped on purpose: consumer and lifestyle topics; claims Senseible cannot make 
 - **Finance:** India's climate finance taxonomy, sustainability-linked loan KPIs, CGTMSE, priority sector, SIDBI energy efficiency loans, MACC curves, Article 6.2 host authorisation.
 - **Honest product questions:** which plan for my volume, what happens when a plan ends, guest use, what Senseible does not calculate, auditor access, multiple GSTINs.
 
-## Fix first: live pages that contradict the code or the flags
+## Live pages checked (owner, October 2026)
 
-These are proposed as updates (status "update") and should be corrected before batch 2 adds related pages:
-1. **/answers/carbon-credits-with-senseible** says "credit-ready signals" and mentions an additionality check (both on the flags list).
-2. **/answers/senseible-carbon-api** mentions a partner programme the flags list as unverified.
-3. **/answers/scope-3-category-1-spend-based** says Senseible "marks spend-based lines clearly"; the Scope 3 method uses no spend-based factor and shows "Needs data" instead.
-4. **/answers/where-is-senseible-headquartered** claims grid factors for 19 countries; the code labels non-India factors "IEA 2023", which conflicts with the CEA-only rule.
+- Fixed: **/answers/scope-3-category-1-spend-based** (Senseible does not fill gaps with spend-based estimates; such lines show as needing data) and **/answers/where-is-senseible-headquartered** (electricity is calculated with India's CEA factor today; other countries' factors are added once reviewed).
+- Kept as they are, because the product has them: **/answers/carbon-credits-with-senseible** (the Carbon Credits section runs the three gates and shows a credit-ready signal) and **/answers/senseible-carbon-api** (the partner programme has its own Partners page).
 
-## Decisions needed from you
+## Decisions taken (owner, October 2026)
 
-1. **Hardware, IoT and meter feeds.** You said Senseible already takes hardware feeds, but no meter or IoT ingestion is visible in the code. Pages on smart meters, telematics and sensors currently say Senseible reads bills, not meters. Tell us how the feed works (which devices or files, who sets it up, what plan) and those pages will describe it accurately.
-2. **Cancellation.** The refund policy says data export stays available for 30 days; the plan code keeps records and moves the account to Snapshot after a 7-day grace period. Which is right for the "what happens when my plan ends" page?
-3. **Brief vs code.** The product brief says ledger entries are hash-chained; no hash chain was found in code (each file has a SHA-256 fingerprint and duplicates are blocked). Confirm before any page mentions a chained ledger.
-4. **Scope of fuel and freight pages.** The fuel table has no MMBtu unit and no coke factor, and Scope 3 freight is calculated only with printed weight, distance and an approved factor. Pages will say this unless you want them changed first.
-5. **The two "review" rows** (what Senseible does not calculate; can Senseible calculate freight): keep as product pages, or fold into the existing method pages?
+1. **Capabilities outside the code exist.** Hardware and meter feeds are taken, set up with the Senseible team for each customer. Rows about meters, telematics and sensors now say so.
+2. **Plan terms:** records stay saved on the server and the 7-day period is for renewal. Plan terms are not published as instructions unless the owner asks, so the plan-expiry page stays in "later".
+3. **Hash-chained ledger:** pages may mention it; the chained-ledger hardening is built separately and deployed only after a risk and use-case review.
+4. **Fuel and freight:** checked against IPCC 2006. One correction: CNG was 2.75 kg CO2 per kg; IPCC natural gas gives 2.69 (the basis PNG already uses), corrected in its own PR with earlier records still valid. No MMBtu unit or coke factor yet and freight needs printed weight, distance and an approved factor: these are scope limits, not errors, so pages state them.
+5. **Both review rows are kept** as product pages (now "propose": 202 in total).
 
 ## How to validate
 
