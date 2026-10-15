@@ -312,3 +312,7 @@ Roll back with `rollback/20261024100000_intelligence_usage.rollback.sql` (counts
 Widens `profiles_size_check` from micro/small/medium to also allow `large`, which Settings has always offered (saving it failed). Existing rows are untouched; empty text and free text are still refused (the app now sends NULL for "Not set").
 
 Until applied, the app saves every other detail and says "Large" will save later (`src/lib/profileSave.ts`). Tested with `tests/run_profile_size.sh` (4 checks). Rollback refuses while any profile is `large`.
+
+## 20261027100000_ledger_hash_chain.sql
+
+**Do not apply until the owner has reviewed `docs/ledger-hash-chain.md` (risks and use cases).** Adds `ledger_chain_events`, an append-only, per-account hash chain recording every INSERT, UPDATE and DELETE on `compliance_ledger` (ids and SHA-256 digests only), a baseline event for each existing row, and `verify_ledger_chain(uuid)` (service role only), which reports an altered or missing event, a broken link, or a ledger row changed or removed outside the chain. RLS on, no policies, no browser grants; nothing existing is changed. Test: `tests/run_ledger_chain.sh` (27 checks, rollback restores the catalog, 4 concurrent writers keep one chain). Roll back with `rollback/20261027100000_ledger_hash_chain.rollback.sql`; ledger rows are untouched.
