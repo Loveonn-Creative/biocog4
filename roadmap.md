@@ -19,5 +19,5 @@
 - [x] Fix the Contact WhatsApp redirect and safely provision the requested one-month Scale access.
 - [x] Route all AI via Lovable AI Gateway (Gemini optional, auto-fallback)
 - [x] Redeploy extract-document, verify-carbon, intelligence-chat, finance-application, translate-batch (Gemini first, Lovable fallback).
-- [ ] Show account email on profiles for internal plan reconciliation (Razorpay/UPI), kept private to owner and admins.
+- [x] Show account email on profiles for internal plan reconciliation (Razorpay/UPI), kept private to owner and admins.
 - [ ] Audit invoice-to-report journey: missing-input guidance, documented factors, Scope 3 evidence trail.

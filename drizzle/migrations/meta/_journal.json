@@ -50,6 +50,13 @@
       "when": 1792063689154,
       "tag": "0006_atomic_verify_and_delete",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792069936433,
+      "tag": "0007_profile_email_for_reconciliation",
+      "breakpoints": true
     }
   ]
 }
