@@ -1,5 +1,7 @@
 // Electricity (Scope 2) emissions engine. Pure: no Deno imports, so the
 // website tests run the same code the edge functions run.
+
+import { BASIS_LABEL, consumptionFromMeterReadings, kwhForKvahBill, type Basis, type RawOcr } from './electricityBill.ts';
 //
 // GHG Protocol Scope 2 Guidance (2015):
 // - Location-based: consumption x the average emission factor of the grid
@@ -13,7 +15,11 @@
 // - Factors are kept apart by kind. A project combined-margin factor (CEA,
 //   CDM TOOL07) is for project baselines and credit signals only and is
 //   NEVER returned for a corporate Scope 2 inventory.
-// - Energy only: kVAh, kvarh, kW and kVA are refused, never converted.
+// - Energy only: kvarh, kW and kVA are refused, never converted. kVAh is not
+//   kWh either: a kVAh bill uses the kWh printed on the same bill, or, when
+//   only a power factor is printed, kWh = kVAh x that printed power factor,
+//   recorded as a labelled estimate (see ./electricityBill.ts). No power
+//   factor is ever assumed.
 // - Nothing is defaulted: no factor means an unresolved result with a reason,
 //   never zero and never a factor from another country.
 // - A bill that spans reporting years is split pro rata by days.
@@ -300,7 +306,9 @@ export const SCOPE2_REASONS: Record<string, string> = {
   prior_vintage: 'The latest published factor predates this period (grid data lag); disclosed',
   residual_mix_unavailable: 'No residual mix for this market; the grid average is used for uncovered consumption, as the Scope 2 Guidance allows with disclosure',
   co2_only: 'The factor covers CO2 only (no CH4 or N2O)',
-  apparent_or_reactive_energy: 'Billed in kVAh or kvarh, not kWh: it cannot be converted without the power factor; a printed kWh figure is needed',
+  apparent_or_reactive_energy: 'Billed in kVAh or kvarh, not kWh: the kWh or the power factor printed on the bill is needed',
+  single_meter_reading: 'One meter reading only: the previous reading or the bill for this period is needed',
+  meter_readings_unusable: 'The meter readings in the photo do not give a plausible consumption',
   power_not_energy: 'A demand or load figure (kW, kVA), not energy consumed',
   unknown_unit: 'The unit is not an energy unit this engine converts',
   missing_quantity: 'No consumption figure printed',
@@ -407,6 +415,13 @@ export interface BillInput {
   billingPeriodStart?: string | null;
   billingPeriodEnd?: string | null;
   lineItems?: Array<{ description?: string | null; quantity?: number | string | null; unit?: string | null; hsn_code?: string | null; sourceText?: string | null }> | null;
+  /** kWh and power factor printed on a kVAh bill (never computed by the model). */
+  activeEnergyKwh?: number | string | null;
+  activeEnergyText?: string | null;
+  powerFactor?: number | string | null;
+  powerFactorText?: string | null;
+  documentCapture?: string | null;
+  meterReadings?: RawOcr['meterReadings'];
 }
 export interface ActivityDraft {
   lineKey: string;
@@ -421,6 +436,8 @@ export interface ActivityDraft {
   status: 'valid' | 'needs_data';
   reasons: string[];
   sourceText: string | null;
+  /** How kwh was obtained (stored in source_text as a label; there is no column for it). */
+  basis: Basis | null;
 }
 
 const numOrNull = (v: unknown) => { const n = typeof v === 'string' ? Number(v.replace(/,/g, '')) : Number(v); return Number.isFinite(n) && n > 0 ? n : null; };
@@ -436,7 +453,9 @@ export const TOTAL_LABEL = /\b(total|billed)\b|^\s*electricity\s+consumed\b/i;
  *   sum of separate readings. An unlabelled line equal to the sum of the
  *   others is ambiguous (a total, or a third meter?) and is not guessed.
  * - Net or export figures are not grid import: Needs Data.
- * - kVAh / kvarh is not kWh: Needs Data.
+ * - kVAh is not kWh: the bill's printed kWh is used, else kVAh x its printed
+ *   power factor (labelled estimate), else Needs Data. kvarh: Needs Data.
+ * - A meter photo with two readings: later minus earlier (labelled).
  */
 /**
  * Country of supply for a bill: the account's saved country first, then the
@@ -466,22 +485,44 @@ export function activitiesFromBill(bill: BillInput, profileLocation: string | nu
     const uniq = [...new Set(reasons)];
     return {
       lineKey, country, countrySource, supplierRef, periodStart, periodEnd, quantityPrinted: qty, unitPrinted: unit,
-      kwh: conv.kwh, status: uniq.length ? 'needs_data' : 'valid', reasons: uniq, sourceText: text ? text.slice(0, 240) : null,
+      kwh: conv.kwh, status: uniq.length ? 'needs_data' : 'valid', reasons: uniq, sourceText: text ? text.slice(0, 240) : null, basis: conv.kwh !== null ? 'read_from_bill' : null,
     };
   };
+  // kVAh printed: kWh from the same bill's printed kWh, else kVAh x its printed
+  // power factor (labelled estimate). The kVAh stays as the printed quantity.
+  const fromKvah = (lineKey: string, kvah: number, text: string | null): ActivityDraft => {
+    const r = kwhForKvahBill({ kvah, kvahText: text, activeEnergyKwh: bill.activeEnergyKwh, activeEnergyText: bill.activeEnergyText, powerFactor: bill.powerFactor, powerFactorText: bill.powerFactorText });
+    if ('reason' in r) return make(lineKey, kvah, 'kVAh', text);
+    const d = make(lineKey, r.kwh, 'kWh', text);
+    const label = `${BASIS_LABEL[r.basis]}: ${r.sourceText}`;
+    return { ...d, quantityPrinted: kvah, unitPrinted: 'kVAh', basis: r.basis, sourceText: `${label}${text ? ` | ${text}` : ''}`.slice(0, 240) };
+  };
+
+  // A meter photo: later reading minus earlier, worked out here.
+  if (String(bill.documentCapture ?? '') === 'meter_photo' && Array.isArray(bill.meterReadings) && bill.meterReadings.length) {
+    const m = consumptionFromMeterReadings(bill.meterReadings);
+    if ('reason' in m) return [make('meter', null, null, null, [m.reason === 'single_reading' || m.reason === 'no_readings' ? 'single_meter_reading' : 'meter_readings_unusable'])];
+    const d = make('meter', m.kwh, 'kWh', m.sourceText);
+    return [{ ...d, basis: 'meter_readings', sourceText: `${BASIS_LABEL.meter_readings}: ${m.sourceText}`.slice(0, 240) }];
+  }
 
   const printed = numOrNull(bill.unitsConsumedKwh);
   if (printed !== null) {
     const text = bill.unitsConsumedText ?? null;
     const printedUnit = `${bill.unitsConsumedUnit ?? ''} ${text ?? ''}`;
     const unit = /kvarh/i.test(printedUnit) ? 'kvarh' : /kvah/i.test(printedUnit) ? 'kVAh' : 'kWh';
+    if (unit === 'kVAh') return [fromKvah('billed', printed, text)];
     return [make('billed', printed, unit, text)];
   }
   const lines = (bill.lineItems ?? [])
     .map((l, i) => ({ i, qty: numOrNull(l.quantity), unit: l.unit ?? null, text: `${l.description ?? ''} ${l.sourceText ?? ''}`.trim(), hsn: String(l.hsn_code ?? '') }))
     .filter((l) => l.qty !== null && (l.hsn.startsWith('2716') || ELEC_LINE.test(l.text) || /kv?a?r?h/i.test(l.unit ?? '')));
   if (!lines.length) return [make('billed', null, null, null)];
-  if (lines.length === 1) return [make(`line:${lines[0].i}`, lines[0].qty, lines[0].unit, lines[0].text)];
+  if (lines.length === 1) {
+    const only = lines[0];
+    if (/^kvah$/i.test(String(only.unit ?? '').trim()) || (/kvah/i.test(only.text) && !/kvarh/i.test(only.text) && !/kwh/i.test(String(only.unit ?? '')))) return [fromKvah(`line:${only.i}`, only.qty as number, only.text)];
+    return [make(`line:${only.i}`, only.qty, only.unit, only.text)];
+  }
   const energy = lines.filter((l) => toKwh(l.qty, l.unit, { unitsMeanKwh }).kwh !== null);
   const kwhOf = (l: typeof lines[number]) => (toKwh(l.qty, l.unit, { unitsMeanKwh }) as { kwh: number }).kwh;
   const sum = energy.reduce((a, l) => a + kwhOf(l), 0);

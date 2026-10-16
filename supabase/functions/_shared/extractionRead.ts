@@ -1,6 +1,8 @@
 // Pure helpers for reading an AI extraction safely and explaining, in plain
 // words, what an invoice is missing. No I/O, so it is unit tested.
 
+import { KVAH_GUIDANCE, SINGLE_READING_GUIDANCE, type ElectricityBlocker } from './electricityBill.ts';
+
 /** "1,250.5", "₹ 12,345", "Rs. 900", 42 -> number; anything else -> null. Never guesses. */
 export function parseAmount(v: unknown): number | null {
   if (typeof v === 'number') return Number.isFinite(v) ? v : null;
@@ -106,14 +108,31 @@ export function providerFailure(status: number | undefined): { status: number; c
 // ----------------------------------------------------------------------------
 // Missing data: one plain next step per line, and one for the whole invoice.
 
-export type LineStatus = 'counted' | 'avoided' | 'needs_data' | 'not_covered' | 'unclassified';
+export type LineStatus = 'counted' | 'avoided' | 'needs_data' | 'not_covered' | 'unclassified' | 'bill_charge' | 'reference';
 
-export interface LineGuidance { status: LineStatus; need: string | null; nextStep: string | null }
+/**
+ * `deterministic`: the blocker is printed on the document itself (kVAh with no
+ * kWh or power factor, net units), so reading the same file again cannot help.
+ */
+export interface LineGuidance { status: LineStatus; need: string | null; nextStep: string | null; deterministic?: boolean }
 
 interface LineLike {
   description?: string; productCategory?: string; fuelType?: string; quantity?: number; unit?: string;
   co2Kg?: number; avoidedCo2Kg?: number; validationFlags?: string[];
+  /** Kept for its printed figure only; its consumption is counted on another line. */
+  referenceNote?: string;
 }
+
+/** What the document is, as far as guidance needs to know. */
+export interface GuideContext {
+  /** A recognised electricity bill (or meter photo): charge lines are costs, not activities. */
+  electricityBill?: boolean;
+  /** A blocker found on the document as a whole (see electricityBill.ts). */
+  blocker?: ElectricityBlocker | null;
+}
+
+export const BILL_CHARGE_GUIDANCE = 'Part of this electricity bill: a cost, not a separate activity.';
+const POWER_OR_REACTIVE_UNIT = /^(kw|kva|kvar|kvarh|mw|mva|hp)$/i;
 
 const isFuel = (l: LineLike) => l.productCategory === 'FUEL';
 const isPower = (l: LineLike) => ['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY'].includes(String(l.productCategory));
@@ -123,18 +142,28 @@ const isPower = (l: LineLike) => ['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY'].
  * can do about it. Only inputs printed on a document are ever used, so every
  * step points to a document, never to typing a number in.
  */
-export function guideLine(l: LineLike): LineGuidance {
+export function guideLine(l: LineLike, ctx: GuideContext = {}): LineGuidance {
   if (typeof l.co2Kg === 'number' && l.co2Kg > 0) return { status: 'counted', need: null, nextStep: null };
   if (typeof l.avoidedCo2Kg === 'number' && l.avoidedCo2Kg > 0) return { status: 'avoided', need: null, nextStep: null };
-  const flags = (l.validationFlags ?? []).join(' ').toLowerCase();
+  const allFlags = l.validationFlags ?? [];
+  const flags = allFlags.join(' ').toLowerCase();
+  if (l.referenceNote) return { status: 'reference', need: null, nextStep: l.referenceNote };
+  const twice = allFlags.find((f) => /not counted twice/i.test(f));
+  if (twice) return { status: 'reference', need: null, nextStep: twice };
+  // On an electricity bill a line with no quantity (demand, wheeling, FAC,
+  // duty, rebates) or a demand / reactive figure is money, not energy used.
+  if (ctx.electricityBill && (!l.quantity || POWER_OR_REACTIVE_UNIT.test(String(l.unit ?? '').trim()))) {
+    return { status: 'bill_charge', need: null, nextStep: BILL_CHARGE_GUIDANCE };
+  }
   if (!l.productCategory) {
+    if (ctx.electricityBill) return { status: 'unclassified', need: null, nextStep: 'Nothing needed: this is not electricity use.' };
     return { status: 'unclassified', need: 'What this item is', nextStep: 'Nothing needed if this is not fuel or electricity. Otherwise ask the supplier to print the HSN code on the invoice.' };
   }
   if (flags.includes('kvah')) {
-    return { status: 'needs_data', need: 'Units in kWh', nextStep: 'This bill shows kVAh only. Upload a bill or meter statement that prints kWh.' };
+    return { status: 'needs_data', need: 'kWh or power factor', nextStep: KVAH_GUIDANCE, deterministic: true };
   }
   if (flags.includes('import units')) {
-    return { status: 'needs_data', need: 'Imported units', nextStep: 'Upload the bill page that shows import units (net units cannot be used).' };
+    return { status: 'needs_data', need: 'Imported units', nextStep: 'Upload the bill page that shows import units (net units cannot be used).', deterministic: true };
   }
   if (flags.includes('no approved grid factor')) {
     return { status: 'not_covered', need: null, nextStep: 'Electricity outside India is not calculated yet. Your country is set in Settings.' };
@@ -156,19 +185,42 @@ export function guideLine(l: LineLike): LineGuidance {
   return { status: 'not_covered', need: null, nextStep: 'Purchased goods and services are not converted to emissions yet; this line is kept as evidence for Scope 3.' };
 }
 
-const RANK: Record<LineStatus, number> = { needs_data: 0, unclassified: 1, not_covered: 2, avoided: 3, counted: 4 };
+const RANK: Record<LineStatus, number> = { needs_data: 0, unclassified: 1, not_covered: 2, bill_charge: 3, reference: 3, avoided: 4, counted: 5 };
+
+/** The next step for a document-wide blocker, and whether reading the file again could change it. */
+const BLOCKER_STEP: Record<ElectricityBlocker, { step: string; deterministic: boolean }> = {
+  kvah_needs_kwh: { step: KVAH_GUIDANCE, deterministic: true },
+  net_units: { step: 'Upload the bill page that shows import units (net units cannot be used).', deterministic: true },
+  single_meter_reading: { step: SINGLE_READING_GUIDANCE, deterministic: true },
+  kvah_mismatch: { step: 'The kWh printed looks larger than the kVAh. Check both figures on the bill, then upload a clearer copy.', deterministic: false },
+  meter_readings_unusable: { step: 'Upload the bill for this period, or a photo that shows only this period\'s two meter readings.', deterministic: false },
+};
 
 /** Counts and the one next step that unlocks the most, for the result screen. */
-export function guideDocument(lines: LineLike[]): {
-  counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null;
+export function guideDocument(lines: LineLike[], ctx: GuideContext = {}): {
+  counted: number; needsData: number; notCovered: number; unclassified: number;
+  /** Electricity bill charge lines (money, not energy); never part of "not recognised". */
+  billCharges: number;
+  nextStep: string | null;
+  /** True when nothing is counted and the only blockers are printed on the document, so reading it again cannot help. */
+  deterministicBlocker: boolean;
 } {
-  const g = lines.map(guideLine);
+  const g = lines.map((l) => guideLine(l, ctx));
   const count = (s: LineStatus) => g.filter((x) => x.status === s).length;
   const first = [...g].sort((a, b) => RANK[a.status] - RANK[b.status])[0];
-  const actionable = first && (first.status === 'needs_data' || (first.status === 'unclassified' && count('counted') === 0));
+  const counted = count('counted');
+  const actionable = first && (first.status === 'needs_data' || (first.status === 'unclassified' && counted === 0 && !ctx.electricityBill));
+  let nextStep = actionable ? first.nextStep : null;
+  const blocker = ctx.blocker ? BLOCKER_STEP[ctx.blocker] : null;
+  if (counted === 0 && blocker && !(first?.status === 'needs_data' && !first.deterministic)) nextStep = blocker.step;
+  else if (!nextStep && ctx.electricityBill && counted === 0) nextStep = 'Upload the bill page that prints units consumed (kWh).';
+  const needs = g.filter((x) => x.status === 'needs_data');
+  const deterministicBlocker = counted === 0
+    && ((blocker?.deterministic ?? false) || (!blocker && needs.length > 0))
+    && needs.every((x) => x.deterministic === true);
   return {
-    counted: count('counted'), needsData: count('needs_data'), notCovered: count('not_covered'), unclassified: count('unclassified'),
-    nextStep: actionable ? first.nextStep : null,
+    counted, needsData: needs.length, notCovered: count('not_covered'), unclassified: count('unclassified'),
+    billCharges: count('bill_charge'), nextStep, deterministicBlocker,
   };
 }
 

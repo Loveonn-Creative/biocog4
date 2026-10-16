@@ -80,6 +80,9 @@ interface ExtractedLineItem {
   emissionFactor?: number;
   factorSource?: string;
   classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
+  /** How the quantity was obtained (e.g. estimated_kvah_pf) and its plain label; kept with the emission row. */
+  basis?: string;
+  basisLabel?: string;
 }
 
 interface ExtractedData {
@@ -103,7 +106,7 @@ interface ExtractedData {
   confidence: number;
   validationFlags?: string[];
   classificationStatus?: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'UNVERIFIABLE';
-  guidance?: { counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null };
+  guidance?: { counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null; billCharges?: number; deterministicBlocker?: boolean };
 }
 
 // Signed-in files above this are refused by the server (inline AI requests top out near 20 MB).
