@@ -330,7 +330,7 @@ export function documentChecks(doc: SealedDocument): DocumentChecks {
   const lineTotals = doc.lines.map((l) => l.total);
   if (!doc.lines.length || lineTotals.some((t) => t === null)) { reasons.push('line_totals_missing'); detail = 'Not every line prints its total'; }
   else {
-    const sum = Math.round(lineTotals.reduce((a, t) => a + (t as number), 0) * 100) / 100;
+    const sum = Math.round((lineTotals as number[]).reduce((a, t) => a + t, 0) * 100) / 100;
     const target = doc.subtotal ?? (doc.amount !== null && doc.taxAmount !== null ? doc.amount - doc.taxAmount : doc.amount);
     const label = doc.subtotal !== null ? 'subtotal' : doc.taxAmount !== null ? 'amount less tax' : 'amount';
     if (target === null) { reasons.push('invoice_totals'); detail = 'No subtotal or total is printed'; }
