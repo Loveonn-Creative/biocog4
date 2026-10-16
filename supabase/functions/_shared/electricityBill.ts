@@ -135,10 +135,15 @@ export interface EnergyEvidence {
   meterReadings?: MeterReading[];
 }
 
-/** Power factor exactly as printed, when it is a valid one (0 < PF <= 1); otherwise null. */
+/** Lowest power factor accepted for an estimate. Below this a misread is more
+ *  likely than a real reading, and kVAh x PF would understate emissions, so the
+ *  bill asks for its kWh instead. */
+export const MIN_POWER_FACTOR = 0.5;
+
+/** Power factor exactly as printed, when it is a usable one (0.5 <= PF <= 1); otherwise null. */
 export function printedPowerFactor(v: unknown): number | null {
   const n = num(v);
-  return n !== null && n <= 1 ? n : null;
+  return n !== null && n >= MIN_POWER_FACTOR && n <= 1 ? n : null;
 }
 
 export type KvahResolution =

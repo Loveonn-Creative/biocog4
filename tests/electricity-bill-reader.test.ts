@@ -155,3 +155,14 @@ describe('basis: data quality and verification', () => {
     expect(evidenceGaps(rec('meter_readings'), false)).toEqual([]);
   });
 });
+
+describe('power factor floor', () => {
+  test('a power factor below 0.5 is not used for an estimate', async () => {
+    const { printedPowerFactor, MIN_POWER_FACTOR } = await import('../supabase/functions/_shared/electricityBill');
+    expect(MIN_POWER_FACTOR).toBe(0.5);
+    expect(printedPowerFactor(0.2)).toBeNull();
+    expect(printedPowerFactor(0.5)).toBe(0.5);
+    expect(printedPowerFactor(0.998)).toBe(0.998);
+    expect(printedPowerFactor(1.2)).toBeNull();
+  });
+});
