@@ -98,8 +98,9 @@ Deno.serve(async (req) => {
     const action = String(body?.action ?? '');
 
     if (action === 'probe') {
-      const { error } = await admin.from('finance_applications').select('id', { head: true, count: 'exact' }).limit(1);
-      return json({ enabled: !(error && MISSING.has(error.code ?? '')) && !error });
+      // A plain read, not a HEAD request: HEAD carries no error body, so a missing table could pass as open.
+      const { error } = await admin.from('finance_applications').select('id').limit(1);
+      return json({ enabled: !error });
     }
 
     // Retention: removes documents past retain_until. Service role only (scheduled job).

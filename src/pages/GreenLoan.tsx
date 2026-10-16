@@ -32,9 +32,16 @@ interface State { plan: string; canApply: boolean; prefill: Record<string, strin
 const call = async (body: object) => {
   const supabase = await loadSupabase();
   const { data, error } = await supabase.functions.invoke('finance-application', { body });
-  if (error) throw new Error(await getFunctionErrorMessage(error, 'Something went wrong. Try again.'));
+  if (error) {
+    const message = await getFunctionErrorMessage(error, 'Something went wrong. Try again.');
+    // The server answers 'not_open' until its tables exist; never show that code to a person.
+    throw Object.assign(new Error(message === NOT_OPEN ? CLOSED_MESSAGE : message), { notOpen: message === NOT_OPEN });
+  }
   return data;
 };
+const NOT_OPEN = 'not_open';
+const CLOSED_MESSAGE = 'Green loan applications are opening shortly. Your carbon record is safe and ready when they do.';
+const isNotOpen = (e: unknown) => Boolean((e as { notOpen?: boolean })?.notOpen);
 const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '');
 const kb = (n: number) => `${Math.max(1, Math.round(n / 1024))} KB`;
 const STEPS = ['Business', 'Financing', 'Financials', 'Documents'] as const;
@@ -80,6 +87,7 @@ export default function GreenLoan() {
   const [form, setForm] = useState<Record<string, string>>({ purpose: '', amountInr: '', tenureMonths: '36', annualTurnoverInr: '', netProfitInr: '', depreciationInr: '', existingMonthlyEmiInr: '0', quotedAnnualRatePct: '', purposeNote: '' });
   const [consent, setConsent] = useState(false);
   const [starting, setStarting] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const draft = state?.applications.find((a) => a.status === 'draft') ?? null;
   const submitted = state?.applications.filter((a) => a.status !== 'draft') ?? [];
@@ -101,7 +109,10 @@ export default function GreenLoan() {
     void call({ action: 'probe' }).then((r) => setEnabled(!!r?.enabled)).catch(() => setEnabled(false));
   }, []);
   useEffect(() => {
-    if (enabled && user) refresh().catch((e) => toast.error(e.message));
+    if (!enabled || !user) return;
+    setLoadError(null);
+    // A failed load must end in a message, not an endless placeholder.
+    refresh().catch((e) => { if (isNotOpen(e)) setEnabled(false); else setLoadError((e as Error).message); });
   }, [enabled, user, refresh]);
 
   const payload = useMemo(() => ({ kind: 'green_loan', ...form, tenureMonths: Number(form.tenureMonths), consent }), [form, consent]);
@@ -181,6 +192,15 @@ export default function GreenLoan() {
           </div>
         </div>
         <CreditFile filled={[false, false, false, false]} docs={0} carbon={0} />
+      </div>,
+    );
+  }
+  if (!state && loadError) {
+    return shell(
+      <div className="max-w-xl" role="alert">
+        <h1 className="text-3xl font-semibold tracking-tight">Green loan applications</h1>
+        <p className="mt-3 text-muted-foreground">We could not load your application just now. {loadError}</p>
+        <Button className="mt-6" onClick={() => { setLoadError(null); refresh().catch((e) => { if (isNotOpen(e)) setEnabled(false); else setLoadError((e as Error).message); }); }}>Try again</Button>
       </div>,
     );
   }
