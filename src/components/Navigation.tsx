@@ -11,7 +11,8 @@ import { Badge } from '@/components/ui/badge';
 import { UserMenu } from '@/components/UserMenu';
 import { ContextSwitcher } from '@/components/ContextSwitcher';
 import { WorkspaceSwitcher } from '@/components/WorkspaceSwitcher';
-import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock, Building2, Handshake } from 'lucide-react';
+import { User, Upload, LayoutDashboard, Shield, Coins, FileBarChart, BarChart3, Brain, Clock, Building2, Handshake, MoreHorizontal } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 // Perf: 384x153 downscale of senseible-logo.png (same aspect ratio, rendered at 28px tall); 6.5 KB vs 212 KB.
 import senseibleLogo from '@/assets/senseible-logo-384.png';
 
@@ -30,6 +31,10 @@ const msmeNavItems = [
   { path: '/monetize', label: 'Monetize', icon: Coins },
   { path: '/reports', label: 'Reports', icon: FileBarChart },
 ];
+
+// Phone bottom bar: five slots. Reports is always one tap away; the rest of
+// the MSME pages sit under More, so nothing is removed from phones.
+const MOBILE_PRIMARY = ['/', '/dashboard', '/history', '/reports'];
 
 // Partner navigation items
 const partnerNavItems = [
@@ -150,7 +155,7 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
       {/* Mobile Bottom Nav */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm safe-area-inset-bottom">
         <div className="flex justify-around py-2">
-          {navItems.slice(0, 5).map((item) => {
+          {(navItems.length > 5 ? navItems.filter((i) => MOBILE_PRIMARY.includes(i.path)) : navItems).map((item) => {
             const Icon = item.icon;
             return (
               <Link
@@ -167,6 +172,34 @@ export const Navigation = ({ onSignOut }: NavigationProps) => {
               </Link>
             );
           })}
+          {navItems.length > 5 && (() => {
+            const more = navItems.filter((i) => !MOBILE_PRIMARY.includes(i.path));
+            const moreActive = more.some((i) => isActive(i.path));
+            return (
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  aria-label="More pages"
+                  className={`flex flex-col items-center py-1 px-2 text-xs transition-colors ${moreActive ? 'text-primary' : 'text-muted-foreground'}`}
+                >
+                  <MoreHorizontal className="h-5 w-5 mb-1" />
+                  <span>More</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent side="top" align="end" className="mb-2 min-w-[11rem]">
+                  {more.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <DropdownMenuItem key={item.path} asChild>
+                        <Link to={item.path} className={`flex items-center gap-2 py-2.5 ${isActive(item.path) ? 'text-primary' : ''}`}>
+                          <Icon className="h-4 w-4" />
+                          {item.label}
+                        </Link>
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            );
+          })()}
         </div>
       </nav>
     </>

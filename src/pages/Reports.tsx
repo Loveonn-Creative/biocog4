@@ -618,15 +618,15 @@ const Reports = () => {
           <Tabs defaultValue="reports" className="space-y-6">
             {isDraft ? (
               <div role="status" className="rounded-xl border border-warning/40 bg-warning/10 p-4">
-                <p className="font-medium text-foreground">Draft: not verified yet</p>
+                <p className="font-medium text-foreground">Measured from your bills · verification pending</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  These figures come from {pendingRows.length} {pendingRows.length === 1 ? 'record' : 'records'} read from your bills. None has been verified yet, so every download is marked Draft. Verify them to get a report you can send to a bank or buyer.
+                  These figures come from {pendingRows.length} {pendingRows.length === 1 ? 'record' : 'records'} measured from your documents. Downloads are marked "Pre-verification" until you verify them. Verify to get a report a bank or buyer can rely on.
                 </p>
                 <Button size="sm" className="mt-3" onClick={() => navigate('/verify')}>Verify now</Button>
               </div>
             ) : pendingRows.length > 0 ? (
               <p className="text-sm text-muted-foreground">
-                {pendingRows.length} {pendingRows.length === 1 ? 'record is' : 'records are'} not verified yet and not included below.{' '}
+                {pendingRows.length} {pendingRows.length === 1 ? 'record is' : 'records are'} awaiting verification and not included below.{' '}
                 <Link to="/verify" className="font-medium text-foreground underline underline-offset-2">Verify now</Link>
               </p>
             ) : null}
@@ -779,7 +779,7 @@ const Reports = () => {
                     <div>
                       <span>Framework Reports</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Each framework renders the same {isDraft ? 'unverified (draft)' : 'verified'} records in its own disclosure structure
+                        Each framework renders the same {isDraft ? 'measured (pre-verification)' : 'verified'} records in its own disclosure structure
                       </p>
                     </div>
                   </CardTitle>

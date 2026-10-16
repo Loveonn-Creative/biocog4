@@ -242,7 +242,7 @@ const evidenceSection = (ds: ReportDataset): Section => {
   const rows = ds.draft ? ds.evidence : ds.evidence.filter((e) => e.verificationStatus === 'verified');
   const left = ds.evidence.length - rows.length;
   const notes = [
-    ds.draft ? 'Draft: none of these records is verified yet.' : '',
+    ds.draft ? 'Pre-verification: these records are awaiting verification.' : '',
     rows.length > 200 ? `Showing first 200 of ${rows.length} ${ds.draft ? '' : 'verified '}records.` : '',
     left > 0 ? `${left} unverified ${left === 1 ? 'record is' : 'records are'} not listed and not counted.` : '',
     'IDs and hashes show their first characters; the audit ledger export has them in full.',
@@ -747,7 +747,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
 }
 
 
-const DRAFT_NOTE = 'DRAFT, NOT VERIFIED: these figures come from uploaded documents that have not been verified yet. Do not submit this as a verified report.';
+const DRAFT_NOTE = 'PRE-VERIFICATION: these figures are measured from your uploaded documents and are awaiting verification. Do not submit this as a verified report.';
 const FOOTER_NOTE =
   'Decision-support disclosure generated from the entity\'s own evidence. Not a statutory filing and not an assurance or certification statement. Unevidenced disclosures are declared as gaps in the disclosure index.';
 
@@ -785,7 +785,7 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text(doc.splitTextToSize(ds.draft ? `Draft: ${fw.name}` : fw.name, width), margin, 20);
+  doc.text(doc.splitTextToSize(ds.draft ? `Pre-verification: ${fw.name}` : fw.name, width), margin, 20);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.text(`${ds.organizationName} · ${kgL(ds.totalKg, ds.locale)} total · ${assessment.completeness}% of mapped references evidenced`, margin, 35);
@@ -900,7 +900,7 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
     doc.text(`${i}/${pages}`, pageWidth - margin, pageHeight - 13, { align: 'right' });
   }
 
-  doc.save(`${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'draft-unverified' : 'report'}-${ds.generatedAt.split('T')[0]}.pdf`);
+  doc.save(`${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'pre-verification' : 'report'}-${ds.generatedAt.split('T')[0]}.pdf`);
   return true;
 }
 
@@ -926,7 +926,7 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
   // Cover sheet identifies the framework and the shared dataset it draws on.
   const cover: Array<Array<string | number>> = [
     ...(ds.draft ? [[DRAFT_NOTE]] : []),
-    [ds.draft ? `Draft: ${fw.name}` : fw.name],
+    [ds.draft ? `Pre-verification: ${fw.name}` : fw.name],
     ['Framework ID', fw.id],
     ['Organization', ds.organizationName],
     ['Generated', ds.generatedAt],
@@ -956,6 +956,6 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
     XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), sheetName(section.title));
   });
 
-  XLSX.writeFile(wb, `${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'draft-unverified' : 'report'}-${ds.generatedAt.split('T')[0]}.xlsx`);
+  XLSX.writeFile(wb, `${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'pre-verification' : 'report'}-${ds.generatedAt.split('T')[0]}.xlsx`);
   return true;
 }
