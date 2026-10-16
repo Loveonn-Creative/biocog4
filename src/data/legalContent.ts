@@ -19,7 +19,7 @@ export const legalDocuments: LegalDocument[] = [
     title: 'Terms of Service',
     slug: 'terms',
     effectiveDate: '27 August 2024',
-    lastUpdated: '13 October 2026',
+    lastUpdated: '16 October 2026',
     sections: [
       {
         title: '0. Parties & Legal Identity',
@@ -83,6 +83,20 @@ Data may be shared solely to enable:
 - green loans or climate finance
 - carbon credit issuance or trading
 - compliance with regulatory requirements`
+      },
+      {
+        title: '4A. Customer Stories and Feedback',
+        content: `**(a) Your choice.** Sharing feedback is optional and unpaid. Nothing is published without your explicit consent at the time you submit. If Senseible ever offers an incentive for a story, that will be disclosed on the story itself.
+
+**(b) What you approve.** Before you submit, you see the story exactly as it will appear. You choose to be named, to show only your company, or to stay anonymous. Senseible may shorten text or correct spelling. If any other change would alter what the story says, Senseible will ask you to approve it again.
+
+**(c) Licence.** By consenting, you grant Senseible a non-exclusive, royalty-free, worldwide licence to publish the approved story, and (if you chose) your name, company name and logo, on senseible.earth and Senseible's own channels. The licence lasts until you withdraw. Withdrawal ends future use; it cannot recall copies already made by others.
+
+**(d) Accuracy and authority.** You confirm that what you share is true to the best of your knowledge. If you choose to name your company, you confirm that you are authorised to approve this on its behalf.
+
+**(e) How results are shown.** Every figure in a story is labelled as reported by you, calculated by Senseible from your documents, verified (with who verified it), or estimated. A story describes one customer's experience. It does not guarantee similar results, a loan, credit approval, carbon credits or regulatory acceptance.
+
+**(f) Withdrawal.** Use the link in your confirmation email, or contact us as set out in the Privacy Policy. The story comes down from senseible.earth within seven (7) business days.`
       },
       {
         title: '5. AI Outputs, Limitations & No-Reliance (Disclaimers)',
@@ -173,7 +187,7 @@ Email us with your request and sufficient information to identify your account. 
     title: 'Privacy Policy',
     slug: 'privacy',
     effectiveDate: '27 August 2024',
-    lastUpdated: '25 September 2026',
+    lastUpdated: '16 October 2026',
     sections: [
       {
         title: '0. Introduction & Legal Identity',
@@ -211,7 +225,13 @@ Voice inputs, transcripts, conversational logs used for onboarding and support.
 Device information, IP address, logs, access timestamps, platform usage metrics and patterns.
 
 **(e) Account & Identity Data**
-Name, email, authentication credentials, organization details.`
+Name, email, authentication credentials, organization details.
+
+**(f) Requests You Make**
+When you ask for a report, guide or other resource: your name, work email, company, industry, role, the reason you give, and whether you agreed to receive updates.
+
+**(g) Stories and Feedback You Share**
+When you tell us about your experience: your answers, any quote you choose to add, your attribution choice (named, company only, or anonymous), and a record of your consent (what you agreed to, the version of the text shown, and when). If you are signed in and choose to, figures already in your account (such as verified emissions by scope and the number of documents processed) are added to your story.`
       },
       {
         title: '3. Purpose of Data Processing',
@@ -221,7 +241,13 @@ Name, email, authentication credentials, organization details.`
 - Climate finance, carbon monetization enablement and credit eligibility signals
 - Fraud, anomaly, risk, and misuse detection
 - Platform security and integrity
-- Improving AI carbon models, services, and platform performance`
+- Improving AI carbon models, services, and platform performance
+
+Data is also processed for the following, each only as described:
+- Sending you a resource you asked for, confirming that your email address can receive it, and understanding who uses our resources.
+- Sending you updates about Senseible, only if you separately agree. You can withdraw at any time.
+- Improving Senseible using the feedback you give.
+- Publishing your story as a case study, only with your separate, explicit consent, in the form and attribution you approved.`
       },
       {
         title: '4. AI Processing & Model Training',
@@ -239,7 +265,9 @@ Name, email, authentication credentials, organization details.`
 
 Data may be disclosed only:
 - to enable green loans, registries, partners, financing, climate finance, or carbon credit transactions,
-- to comply with legal or regulatory obligations.`
+- to comply with legal or regulatory obligations.
+
+A story you consent to publish becomes public on senseible.earth and may be shared on Senseible's own channels. Once something is public, copies made by others (for example search engines or social shares) cannot be fully recalled.`
       },
       {
         title: '6. Data Storage & Security',
@@ -271,13 +299,21 @@ Processing is based on user consent, contractual necessity, or legitimate intere
 - withdraw consent for AI training,
 - raise grievances or complaints.
 
-Certain rights may be limited where data has been anonymized or aggregated.`
+Certain rights may be limited where data has been anonymized or aggregated.
+
+Users may also:
+- withdraw consent to publication of their story at any time. We take it down from senseible.earth within seven (7) business days and stop using it in new material,
+- change their attribution to company only or anonymous at any time.`
       },
       {
         title: '9. Data Retention & Deletion',
         content: `Data is retained only for as long as necessary for stated purposes, contractual obligations, or legal requirements. The default periods described in this Policy are up to three (3) months for unauthenticated data and up to eighteen (18) months for authenticated or paid-user data.
 
-Upon termination, data may be deleted or anonymized except where retention is legally required or incorporated into aggregated intelligence. Retention periods may be extended for regulatory, audit, training, or dispute resolution purposes.`
+Upon termination, data may be deleted or anonymized except where retention is legally required or incorporated into aggregated intelligence. Retention periods may be extended for regulatory, audit, training, or dispute resolution purposes.
+
+Details given to request a resource are kept for up to ninety (90) days, or up to eighteen (18) months when the request comes from a signed-in account, unless you ask us to delete them sooner.
+
+Feedback that is not published is kept under the default periods above. A published story is kept while it is published and deleted within thirty (30) days of withdrawal. The record of your consent (what you agreed to and when, not the story itself) is kept for three (3) years after withdrawal, as proof that the story was published with your permission.`
       },
       {
         title: '10. Sub-Processors & Third Parties',
