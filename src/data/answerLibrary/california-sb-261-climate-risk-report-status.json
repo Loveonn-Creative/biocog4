@@ -1,0 +1,68 @@
+{
+  "slug": "california-sb-261-climate-risk-report-status",
+  "q": "Do I still need a California SB 261 climate risk report?",
+  "title": "Is the SB 261 climate risk report on hold?",
+  "short": "Not for now. In November 2025 the Ninth Circuit paused enforcement of SB 261 while an appeal is heard, and CARB said it would not enforce the reporting duty while that order stands. The law has not been repealed, so a US subsidiary above USD 500 million revenue should keep a report ready.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian groups with US subsidiaries above USD 500 million revenue",
+  "sections": [
+    {
+      "h": "Who SB 261 applies to",
+      "p": [
+        "SB 261, at California Health and Safety Code section 38533, covers business entities formed under US law with total annual revenue above USD 500 million that do business in California. Insurance companies are excluded. As with SB 253, a company incorporated in India is not covered itself; its US subsidiaries may be."
+      ]
+    },
+    {
+      "h": "What the report would contain",
+      "ul": [
+        "Climate-related financial risk, meaning physical risks such as floods and heat, and transition risks such as carbon pricing and changing customer demand.",
+        "The measures the company has taken to reduce and adapt to those risks.",
+        "Prepared in line with the TCFD recommendations or an equivalent framework such as IFRS S2.",
+        "Published on the company's own website every two years. A parent can publish one consolidated report covering its qualifying subsidiaries."
+      ]
+    },
+    {
+      "h": "Where the case stands",
+      "p": [
+        "The US Chamber of Commerce and others challenged SB 253 and SB 261 in federal court. In November 2025 the Ninth Circuit granted an injunction pending appeal for SB 261 only, just before the first reports were due on 1 January 2026. CARB then issued an advisory that it would not enforce SB 261 while the injunction is in force. SB 253 was not paused. The final outcome depends on the appeal, so the position can change quickly."
+      ]
+    },
+    {
+      "h": "A sensible plan while it is paused",
+      "ol": [
+        "Confirm whether each US entity would cross the USD 500 million line on its prior year revenue.",
+        "Keep a draft climate risk report, or reuse the TCFD or IFRS S2 work your group already does for investors.",
+        "Check CARB's site each quarter and when appeal rulings come out.",
+        "If enforcement resumes, work to the deadline CARB then sets, and leave time to have the report approved by management before it goes on your website."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not prepare SB 261 reports or physical climate risk assessments for US entities. Its records give Indian sites document-backed Scope 1 and 2 data, which can feed the transition risk part of a group report.",
+  "links": [
+    {
+      "label": "Does SB 253 cover our US subsidiary?",
+      "to": "/answers/sb-253-who-must-report"
+    },
+    {
+      "label": "SB 253 and Indian suppliers",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "Climate risk assessment",
+      "to": "/climate-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TCFD recommendations, the framework SB 261 names",
+      "url": "https://www.fsb-tcfd.org"
+    },
+    {
+      "label": "IFRS S2 Climate-related Disclosures",
+      "url": "https://www.ifrs.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SB 261 is under an injunction pending appeal in Chamber of Commerce v. CARB; check the Ninth Circuit's ruling and CARB's enforcement advisory on ww2.arb.ca.gov before acting."
+}

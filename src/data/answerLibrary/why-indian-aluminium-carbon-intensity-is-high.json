@@ -1,0 +1,63 @@
+{
+  "slug": "why-indian-aluminium-carbon-intensity-is-high",
+  "q": "Why is Indian primary aluminium so carbon-intensive?",
+  "title": "Why Indian aluminium is carbon-intensive",
+  "short": "Indian primary aluminium is carbon-intensive because smelting needs about 14 to 15 MWh of electricity per tonne, and Indian smelters mostly run on their own coal-fired captive power plants. At about 1 t CO2 per MWh, power alone adds roughly 14 to 15 t CO2 per tonne, several times the smelter's direct emissions.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Aluminium exporters and EU importers",
+  "sections": [
+    {
+      "h": "Smelting is an electricity process",
+      "p": [
+        "Primary aluminium is made by passing a large direct current through alumina dissolved in a molten bath, the Hall-Heroult process. The electricity use per tonne of metal is close to fixed by the chemistry and cell design. Industry statistics from the International Aluminium Institute put smelting power at about 14 to 15 MWh per tonne. Better cells save a few percent, not half.",
+        "So the carbon intensity of the metal is decided mostly by where that electricity comes from."
+      ]
+    },
+    {
+      "h": "Why the power is coal",
+      "ul": [
+        "Smelters need steady power around the clock; a short outage can freeze the pots. Indian producers therefore built captive coal plants next to their smelters rather than relying on the grid.",
+        "Indian coal is plentiful and close to the main smelting belt in Odisha, Chhattisgarh and Jharkhand.",
+        "Large hydro, which powers smelters in Canada, Norway and Iceland, is not available at that scale for Indian smelters.",
+        "Coal power stations in the CEA CO2 Baseline Database typically emit around 1 t CO2 per MWh sent out, so 14 to 15 MWh carries roughly 14 to 15 t CO2. Use the station's own figure where you can get it."
+      ]
+    },
+    {
+      "h": "The smaller direct part",
+      "p": [
+        "The smelter also emits CO2 as carbon anodes are consumed, and perfluorocarbons during anode effects. These direct emissions are usually a small fraction of the power emissions for a coal-powered smelter. Refining bauxite to alumina adds more, mostly from coal-fired steam and calcination, before the metal reaches the smelter."
+      ]
+    },
+    {
+      "h": "What this means for CBAM and buyers",
+      "p": [
+        "Annex II of the CBAM Regulation lists aluminium for direct emissions only, so for now the electricity emissions behind most of the footprint do not enter the CBAM embedded emissions figure. EU buyers who report Scope 3 or ask for product footprints do count them, and their footprint for Indian primary metal will be much higher than for hydro-based metal.",
+        "Recycled aluminium needs a small fraction of the energy of primary metal, which is why purchase records proving scrap content carry weight with buyers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Estimate: power emissions per tonne of primary aluminium",
+    "lines": [
+      "Smelting electricity: 14.5 MWh per tonne (mid-point of 14 to 15)",
+      "Captive coal plant intensity: 1.0 t CO2 per MWh (assumed; use the station figure)",
+      "14.5 x 1.0 = 14.5 t CO2 per tonne of aluminium from power",
+      "Same smelter on hydro power: close to zero from power"
+    ],
+    "note": "An estimate for explanation only. Actual figures depend on the smelter's metered power use and its plant's measured emissions."
+  },
+  "senseible": "Senseible does not hold aluminium smelter or captive plant factors. For a downstream extruder or foil maker it reads electricity bills and fuel invoices and keeps metal purchase records as evidence, which supports a CBAM data request but not the smelter's own figure.",
+  "links": [
+    { "label": "CBAM for Indian aluminium exporters", "to": "/climate-intelligence/cbam-aluminium-exporter-india" },
+    { "label": "CBAM cost for aluminium", "to": "/cbam-cost/aluminium" },
+    { "label": "Does CBAM count electricity emissions?", "to": "/answers/does-cbam-count-electricity-emissions-steel" },
+    { "label": "Aluminium industry", "to": "/industries/aluminium" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), Annex II", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj" },
+    { "label": "CEA CO2 Baseline Database, station-level data", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The EU may extend CBAM to indirect emissions for aluminium; recheck Annex II before relying on the direct-only point."
+}

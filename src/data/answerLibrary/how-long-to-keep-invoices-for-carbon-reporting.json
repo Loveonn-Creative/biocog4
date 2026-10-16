@@ -1,0 +1,77 @@
+{
+  "slug": "how-long-to-keep-invoices-for-carbon-reporting",
+  "q": "How long should I keep invoices and bills used for carbon reporting in India?",
+  "title": "How long to keep carbon reporting invoices",
+  "short": "Keep them for at least eight financial years if you are a company, because the Companies Act sets that period for books of account and their vouchers. GST law requires 72 months from the due date of the annual return. No carbon standard sets a shorter period, so the longest legal period wins.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Indian MSMEs and listed companies",
+  "sections": [
+    {
+      "h": "The Indian legal periods",
+      "ul": [
+        "CGST Act 2017, section 36: accounts and records are kept until 72 months after the due date of the annual return for that year. If an appeal, revision or other proceeding is pending, keep them for one year after it is finally disposed of, or for the 72 months, whichever is later.",
+        "Companies Act 2013, section 128(5): books of account and the vouchers behind them are kept for at least the eight financial years before the current one.",
+        "Fuel invoices, electricity bills and freight invoices are already part of these records, so the same files serve tax, company law and carbon reporting."
+      ]
+    },
+    {
+      "h": "What carbon standards say",
+      "p": [
+        "The GHG Protocol and ISO 14064-1 ask you to keep documentation that lets someone reproduce your inventory, but they leave the period to you. Assurance providers and BRSR Core assurance look at the year being reported and often the prior year for comparison. Neither shortens the legal periods above."
+      ]
+    },
+    {
+      "h": "Keep base year evidence for as long as you use the base year",
+      "p": [
+        "If your target is measured against a base year, you may need to show how that figure was built ten or more years later, or restate it after an acquisition. Keep the base year bills, factors and calculations until the target ends, even after the legal periods have passed."
+      ]
+    },
+    {
+      "h": "Exporters selling into the EU",
+      "p": [
+        "The CBAM Regulation asks EU declarants to keep records until the end of the fourth year after the declaration year. That is shorter than the Indian periods, so if you keep to the Companies Act or GST period you already cover your EU buyer's needs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an electricity bill from FY 2025-26",
+    "lines": [
+      "GST annual return for FY 2025-26 due by 31 December 2026",
+      "72 months from 31 December 2026: keep until 31 December 2032",
+      "Companies Act: in FY 2034-35 the eight preceding years are FY 2026-27 to FY 2033-34, so keep until 31 March 2034",
+      "Keep until 31 March 2034, or longer if FY 2025-26 is your base year"
+    ],
+    "note": "The GST annual return due date can be extended by notification; count from the due date that applied."
+  },
+  "senseible": "Senseible keeps each file you upload while signed in under your account, with its SHA-256 fingerprint, so the evidence behind a figure can be retrieved later. It does not replace the books of account and GST records you must keep under Indian law; keep your originals.",
+  "links": [
+    {
+      "label": "How long to keep CBAM records",
+      "to": "/answers/how-long-to-keep-cbam-records"
+    },
+    {
+      "label": "Carbon data governance policy",
+      "to": "/answers/carbon-data-governance-policy-what-to-include"
+    },
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), record-keeping provisions",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "ISO 14064-1:2018, documentation and record keeping",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "sb-253-who-must-report",
+  "q": "Does California SB 253 apply to an Indian company's US subsidiary?",
+  "title": "Does SB 253 cover our US subsidiary?",
+  "short": "It does if the subsidiary is formed under US law, has total annual revenue above USD 1 billion and does business in California. The Indian parent itself is not a reporting entity because it is not formed in the US. A US subsidiary below the revenue line is outside SB 253 on the statute's wording.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian groups with US subsidiaries (IT services, pharma, auto parts)",
+  "sections": [
+    {
+      "h": "The three tests in the law",
+      "ol": [
+        "Formation: a partnership, corporation, LLC or other business entity formed under the laws of California, another US state, the District of Columbia or an act of Congress. A Delaware or New Jersey subsidiary meets this; a company incorporated in India does not.",
+        "Revenue: total annual revenue above USD 1 billion, based on the prior fiscal year. Total means all revenue, not only California sales.",
+        "Doing business in California: the meaning comes from California Revenue and Taxation Code section 23101. An entity is caught if it actively trades in California for profit, is commercially based there, or has California sales, property or payroll above thresholds the Franchise Tax Board indexes each year."
+      ]
+    },
+    {
+      "h": "Group revenue or entity revenue",
+      "p": [
+        "The statute looks at the US entity. Whether revenue of affiliates is added in, for example when a US holding company consolidates several operating companies, depends on how CARB defines revenue in its regulation. Take the definition from CARB's current rules and get a tax or legal view on your structure, rather than assuming either way."
+      ]
+    },
+    {
+      "h": "Common Indian group structures",
+      "ul": [
+        "US subsidiary of an IT services group with USD 1.3 billion revenue and a client office in San Jose: likely in scope.",
+        "US distribution subsidiary of a pharma group with USD 400 million revenue, selling into California: below the revenue line, so outside SB 253, though it may still get Scope 3 requests from its own customers.",
+        "Indian company billing US clients directly from India with no US entity: not a reporting entity under the statute's formation test.",
+        "Branch of the Indian company registered to trade in a US state: the branch is not a separately formed US entity, so the position is unclear; take advice."
+      ]
+    },
+    {
+      "h": "If the subsidiary is in scope",
+      "p": [
+        "It reports Scope 1 and Scope 2 first, under the GHG Protocol, with Scope 3 to follow on CARB's timetable, plus limited assurance that tightens over time. CARB has allowed a report to be prepared at parent level, so a group may report once for several qualifying subsidiaries. That report then covers the parent's whole operations, including the Indian plants, which is a much larger job than the US entity alone."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not decide whether SB 253 applies to you; that is a legal question on your structure. It can produce invoice-backed Scope 1 and Scope 2 figures for Indian sites, with factor sources on each line, but it does not provide the third-party assurance SB 253 requires.",
+  "links": [
+    {
+      "label": "SB 253 and Indian suppliers",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "SB 261 climate risk report status",
+      "to": "/answers/california-sb-261-climate-risk-report-status"
+    },
+    {
+      "label": "US SEC climate rule status",
+      "to": "/answers/sec-climate-rule-status-us-buyers"
+    },
+    {
+      "label": "Which ESG rules apply to you",
+      "to": "/esg-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, the basis SB 253 requires for Scope 1 and 2",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol standards, including the Scope 3 Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "How affiliate revenue counts and the first reporting dates depend on CARB's regulation (California Health and Safety Code section 38532); confirm on ww2.arb.ca.gov."
+}

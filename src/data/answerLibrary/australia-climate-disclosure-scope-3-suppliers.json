@@ -1,0 +1,55 @@
+{
+  "slug": "australia-climate-disclosure-scope-3-suppliers",
+  "q": "Will Australia's mandatory climate reporting reach Indian exporters through Scope 3?",
+  "title": "Australia climate reporting and suppliers",
+  "short": "Yes, indirectly. Large Australian companies must report Scope 3 emissions from their second reporting year under AASB S2, so Indian suppliers can expect data requests from 2026. The law puts no duty on the supplier, and customers may use estimates, but your own figures replace industry averages.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian exporters to Australian companies",
+  "sections": [
+    {
+      "h": "Who reports in Australia, and when",
+      "p": [
+        "The Treasury Laws Amendment (Financial Market Infrastructure and Other Measures) Act 2024 added sustainability reports to the Corporations Act 2001. Reports follow AASB S2 Climate-related Disclosures, issued in September 2024 and based on IFRS S2. Entities are phased in by size; an entity is in a group if it meets two of the three tests."
+      ],
+      "ul": [
+        "Group 1, financial years starting on or after 1 January 2025: 500 or more employees, consolidated revenue of A$500 million or more, or gross assets of A$1 billion or more. Large emitters under the NGER scheme are also included.",
+        "Group 2, years starting on or after 1 July 2026: 250 employees, A$200 million revenue, or A$500 million assets.",
+        "Group 3, years starting on or after 1 July 2027: 100 employees, A$50 million revenue, or A$25 million assets; they report only where they have material climate risks or opportunities."
+      ]
+    },
+    {
+      "h": "When Scope 3 starts",
+      "p": [
+        "Scope 3 is required from an entity's second reporting year. For a Group 1 company with a July to June year, the first year starts 1 July 2025 and the second 1 July 2026, so supplier requests for that year's data can arrive during 2026 and 2027. Calendar-year Group 1 companies reach their second year on 1 January 2026."
+      ]
+    },
+    {
+      "h": "What an Indian supplier may be asked for",
+      "ul": [
+        "Scope 1 and 2 emissions for a stated period, with the factors used, for example the CEA grid factor for Indian sites.",
+        "An allocation of those emissions to the products or volumes sold to that customer.",
+        "Product carbon footprints for higher spend items, mainly from manufacturers.",
+        "The method and any estimates, so the customer can judge data quality."
+      ]
+    },
+    {
+      "h": "Do you have to answer",
+      "p": [
+        "No Australian law applies to you directly. AASB S2 lets the customer use reasonable and supportable information available without undue cost or effort, including spend-based estimates. Liability for Scope 3 statements is also limited during the first years. The pressure is commercial: a supplier with documented figures gives the customer better data than an industry average, and that can count in supplier selection."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds your Scope 1 and 2 figures from electricity bills and fuel invoices, each traced to its document, which you can share when an Australian customer asks. It does not prepare the customer's AASB S2 report or its Scope 3 total.",
+  "links": [
+    { "label": "California SB 253 and Indian suppliers", "to": "/answers/california-sb-253-indian-suppliers-data" },
+    { "label": "Allocate emissions to a customer", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
+    { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" }
+  ],
+  "sources": [
+    { "label": "IFRS S2 Climate-related Disclosures (basis of AASB S2, Australia)", "url": "https://www.ifrs.org" },
+    { "label": "GHG Protocol Scope 3 Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Group thresholds and start dates come from the Corporations Act as amended in 2024 and ASIC Regulatory Guide 280; recheck before relying on them."
+}

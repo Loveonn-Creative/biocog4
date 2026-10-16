@@ -1,0 +1,66 @@
+{
+  "slug": "refrigerant-top-up-invoice-to-co2e",
+  "q": "How do I turn a refrigerant top-up invoice (R-32, R-410A, R-134a) into CO2e?",
+  "title": "Refrigerant top-up invoice to CO2e",
+  "short": "Multiply the kilograms of gas charged into the equipment by that gas's 100-year global warming potential (GWP). For a blend such as R-410A, first work out its GWP from the component shares. The result is Scope 1 CO2e. State whether you used IPCC AR5 or AR6 values.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Facility and EHS managers at Indian factories and cold stores",
+  "sections": [
+    {
+      "h": "Why a top-up equals leakage",
+      "p": [
+        "A sealed AC or chiller only needs gas when some has escaped. When a technician recharges it to its rated charge, the kilograms added are a fair measure of what leaked since the last service. This is the simplified mass balance the GHG Protocol's HFC guidance uses for equipment you operate. HFCs are Kyoto gases, so the result goes in your Scope 1 total."
+      ]
+    },
+    {
+      "h": "What to take from the invoice",
+      "ul": [
+        "The gas name or R-number, for example R-32, R-410A or R-134a.",
+        "Net kilograms charged into the equipment. If the invoice shows cylinders, use the net gas weight, not the gross cylinder weight.",
+        "The equipment and site serviced, so you can place it in the right facility and year.",
+        "Leave out gas for a new installation's first charge, gas bought and kept in stock, and gas recovered and sent back. None of these is leakage."
+      ]
+    },
+    {
+      "h": "GWP values for common gases",
+      "ul": [
+        "HFC-32 (R-32): 677 in AR5, 771 in AR6.",
+        "HFC-134a (R-134a): 1,300 in AR5, 1,530 in AR6.",
+        "HFC-125: 3,170 in AR5, 3,740 in AR6.",
+        "R-410A is 50% HFC-32 and 50% HFC-125 by mass: 0.5 x 677 + 0.5 x 3,170 = 1,923.5 in AR5; 0.5 x 771 + 0.5 x 3,740 = 2,255.5 in AR6."
+      ],
+      "p": [
+        "Use one basis for the whole inventory. Many programmes now ask for AR6; some buyer templates still use AR5. Write the basis next to the figure."
+      ]
+    },
+    {
+      "h": "Who reports it",
+      "p": [
+        "If you control the equipment, the leak is your Scope 1, even when an outside AMC contractor does the service and bills you. If the landlord runs a central chiller for the building and you only pay a share, it is usually the landlord's Scope 1, and your share can sit in Scope 3. R-22 and other HCFCs follow a different rule; they are reported outside the Scope 1 total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of service invoices at a cold store",
+    "lines": [
+      "Top-ups: R-410A 12 kg (split ACs), R-134a 5 kg (chiller), R-32 3 kg (office ACs)",
+      "AR5: 12 x 1,923.5 + 5 x 1,300 + 3 x 677 = 23,082 + 6,500 + 2,031 = 31,613 kg CO2e, about 31.6 t",
+      "AR6: 12 x 2,255.5 + 5 x 1,530 + 3 x 771 = 27,066 + 7,650 + 2,313 = 37,029 kg CO2e, about 37.0 t",
+      "Same gas, same kilograms: the AR6 figure is about 17% higher, so the basis must be stated"
+    ],
+    "note": "For comparison, 31.6 t CO2e is roughly what 44,500 kWh of grid electricity emits at 0.710 kg CO2 per kWh. Small refrigerant top-ups can matter."
+  },
+  "senseible": "Senseible reads service and purchase invoices and keeps them as evidence. It calculates refrigerant emissions only when you supply the measured data, such as the gas and kilograms charged, and does not treat a gas purchase alone as leakage.",
+  "links": [
+    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" },
+    { "label": "Does R-22 count in Scope 1?", "to": "/answers/does-r22-count-in-scope-1" },
+    { "label": "Estimate leakage without records", "to": "/answers/estimate-refrigerant-leakage-without-records" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, with the GHG Protocol tool for HFC and PFC emissions from refrigeration and air conditioning", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "IPCC AR5 WG1, Chapter 8, Appendix 8.A, Table 8.A.1 (GWP100)", "url": "https://www.ipcc.ch" }
+  ],
+  "reviewed": "2026-10-16"
+}

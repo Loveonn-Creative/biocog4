@@ -1,0 +1,53 @@
+{
+  "slug": "cdm-projects-transition-to-article-6-4",
+  "q": "Can an old Indian CDM project move to the Article 6.4 mechanism?",
+  "title": "Can a CDM project move to Article 6.4?",
+  "short": "Only if its transition request reached the UNFCCC by 31 December 2023 and India, as host country, approves the transition before the approval deadline. A registered CDM project that missed the 2023 request cannot transition; it would have to apply to the Article 6.4 mechanism as a new activity.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Owners of registered Indian CDM projects",
+  "sections": [
+    {
+      "h": "The rule that sets the conditions",
+      "p": [
+        "Decision 3/CMA.3, taken at Glasgow in 2021, lets registered CDM activities move to the mechanism under Article 6.4 of the Paris Agreement. Paragraph 73 of its annex sets two gates: the project participants had to send a transition request to the UNFCCC secretariat by 31 December 2023, and the host Party must approve the transition by a deadline. That approval deadline was first 31 December 2025 and was later extended by the CMA."
+      ]
+    },
+    {
+      "h": "How to check your project",
+      "ol": [
+        "Find the project on the UNFCCC CDM transition pages and confirm a request was recorded before 31 December 2023.",
+        "Check whether India's approval has been given or is pending. Approval comes from India's national authority for the Paris Agreement under the Ministry of Environment, Forest and Climate Change.",
+        "Confirm the current host approval deadline on unfccc.int; do not rely on a date quoted elsewhere.",
+        "If both are in place, the project continues as an Article 6.4 activity, with the Supervisory Body's transition standard deciding which rules and methodologies apply."
+      ]
+    },
+    {
+      "h": "What changes after transition",
+      "ul": [
+        "Methodology: a transitioned project may keep its CDM methodology only until the end of its current crediting period or 31 December 2025, whichever came first, and must then apply an approved Article 6.4 methodology.",
+        "Share of proceeds and cancellation: Article 6.4 issuances carry a share for the Adaptation Fund and a cancellation for overall mitigation in global emissions, so fewer units reach the owner than were earned.",
+        "Authorisation: units used for another country's NDC or international purposes need India's authorisation and a corresponding adjustment; without it they are mitigation contribution units."
+      ]
+    },
+    {
+      "h": "If the project did not request transition",
+      "p": [
+        "The CDM route is closed for it. Options are a new registration under Article 6.4 as a fresh activity, which means meeting current additionality and baseline rules, or a voluntary standard such as Verra or Gold Standard where the project is eligible and not double registered."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not handle CDM or Article 6.4 transitions and is not a registry. It shows carbon credit eligibility signals from your records and keeps the energy and fuel documents a project baseline would draw on.",
+  "links": [
+    { "label": "India's approved Article 6.2 activities", "to": "/answers/india-article-6-2-approved-activities" },
+    { "label": "India host country authorisation letter", "to": "/answers/india-host-country-authorization-letter" },
+    { "label": "What is a corresponding adjustment?", "to": "/answers/what-is-a-corresponding-adjustment" },
+    { "label": "Types of carbon credits", "to": "/climate-intelligence/carbon-credit-types-voluntary-markets" }
+  ],
+  "sources": [
+    { "label": "Decision 3/CMA.3, Annex, paragraph 73 (CDM transition)", "url": "https://unfccc.int" },
+    { "label": "Article 6.4 Supervisory Body, CDM transition standard and transition data", "url": "https://unfccc.int" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The host Party approval deadline has been extended once; confirm the current date and India's approval status on unfccc.int before relying on this page."
+}

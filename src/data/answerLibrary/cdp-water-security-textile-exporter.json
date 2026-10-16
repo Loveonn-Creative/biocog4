@@ -10,7 +10,7 @@
     {
       "h": "The volume figures and how they fit together",
       "ul": [
-        "Withdrawal: all water brought in, split by source: surface water, groundwater (renewable and non-renewable), rainwater harvested, third-party supply such as municipal or tanker water, and seawater.",
+        "Withdrawal: all water brought in, split by source: fresh surface water (CDP counts harvested rainwater here), groundwater (renewable and non-renewable), third-party supply such as municipal or tanker water, and brackish water or seawater.",
         "Discharge: all water sent out, split by destination (surface water, groundwater, third party such as a CETP or sewer) and by treatment level.",
         "Consumption: withdrawal minus discharge. It is the water evaporated, built into product or held in sludge.",
         "Report in megalitres. One megalitre is 1,000 kilolitres, or 1,000 cubic metres."
@@ -54,15 +54,30 @@
     ],
     "note": "Figures are illustrative. A zero liquid discharge unit reports discharge near zero, so its consumption is close to its withdrawal."
   },
-  "senseible": "Senseible does not calculate water figures; it reads energy and fuel documents, not water meters or effluent reports. It can supply the energy and Scope 1 and 2 figures that the climate part of a CDP response asks for.",
+  "senseible": "Senseible's document reader is built for invoices, energy bills, fuel slips and freight records, so it does not produce the withdrawal, discharge and consumption balance this module asks for. It can supply the energy and Scope 1 and 2 figures that the climate part of a CDP response asks for.",
   "links": [
-    { "label": "Water and carbon in textiles and leather", "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather" },
-    { "label": "A customer sent a CDP request: what to do", "to": "/answers/cdp-supply-chain-request-what-to-do" },
-    { "label": "Methane from ETP wastewater", "to": "/answers/etp-wastewater-methane-emissions" }
+    {
+      "label": "Water and carbon in textiles and leather",
+      "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather"
+    },
+    {
+      "label": "A customer sent a CDP request: what to do",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "Methane from ETP wastewater",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    }
   ],
   "sources": [
-    { "label": "CDP corporate questionnaire, water security module (cdp.net)", "url": "https://www.cdp.net" },
-    { "label": "CPCB discharge standards for textile and tannery industries (cpcb.nic.in)", "url": "https://cpcb.nic.in" }
+    {
+      "label": "CDP corporate questionnaire, water security module (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "CPCB discharge standards for textile and tannery industries (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "CDP revises its water security questions each cycle; check the current module before filling it."

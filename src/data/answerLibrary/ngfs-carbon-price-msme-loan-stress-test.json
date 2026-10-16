@@ -1,0 +1,70 @@
+{
+  "slug": "ngfs-carbon-price-msme-loan-stress-test",
+  "q": "How does a lender apply an NGFS carbon price to an MSME borrower?",
+  "title": "NGFS carbon price on an MSME borrower",
+  "short": "Multiply the borrower's annual Scope 1 and 2 emissions in tonnes by the scenario's carbon price for a given year, adjust for how much of the cost the borrower can pass on, and subtract the result from EBITDA. Then recompute the debt service coverage ratio and compare it with your covenant.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian bank and NBFC risk teams; MSME borrowers",
+  "sections": [
+    {
+      "h": "Inputs the test needs",
+      "ul": [
+        "Borrower emissions: Scope 1 from fuel bills and Scope 2 from electricity bills, in tonnes a year, with the factors stated. Estimates from sector averages are a fallback and should be flagged.",
+        "A price path: the carbon price for the chosen NGFS scenario and region, taken from the latest NGFS phase (Phase V was published in November 2024). Note the currency and price year of the dataset and convert to rupees.",
+        "Financials: EBITDA, annual debt service, and the DSCR covenant in the sanction letter.",
+        "A pass-through assumption: the share of the carbon cost the borrower can recover through prices, by sector and customer power."
+      ]
+    },
+    {
+      "h": "The calculation, step by step",
+      "ol": [
+        "Gross cost = tonnes CO2 x scenario carbon price for the test year.",
+        "Net cost = gross cost x (1 minus pass-through share).",
+        "Stressed EBITDA = EBITDA minus net cost.",
+        "Stressed DSCR = stressed EBITDA / annual debt service.",
+        "Flag the loan if stressed DSCR falls below the covenant or below your internal floor, and record the scenario, year and assumptions."
+      ]
+    },
+    {
+      "h": "Choices that change the answer",
+      "ul": [
+        "Scenario: an orderly or disorderly transition scenario gives the steep price paths; a current policies scenario gives low prices and is better for physical risk.",
+        "Scope 2: a carbon price on power usually reaches the borrower through tariffs, not as a direct charge. Treat it as a cost pass-through from the discom, and test it separately.",
+        "Exporters: a borrower selling steel, aluminium, cement or fertiliser to the EU already faces CBAM costs from 2026; test that alongside the NGFS price rather than adding both to the same tonnes.",
+        "Attribution: the stress test uses the borrower's full emissions because the borrower bears the full cost. PCAF attribution, which uses your share of the borrower's debt and equity, is for reporting financed emissions, not for this test."
+      ]
+    },
+    {
+      "h": "What the RBI expects",
+      "p": [
+        "The RBI issued draft guidance on climate scenario analysis and stress testing for regulated entities in 2024. It asks lenders to build climate scenario analysis into their risk management. Check whether a final version has been issued before you fix your method, and keep each borrower's inputs on file so the test can be rerun."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forging unit (illustrative price)",
+    "lines": [
+      "Scope 2: 10,00,000 kWh x 0.710 kg CO2 per kWh = 710 t CO2",
+      "Scope 1: 1,50,000 L diesel x 2.68 kg CO2 per L = 402 t CO2",
+      "Total: 710 + 402 = 1,112 t CO2",
+      "Illustrative carbon price for 2030: ₹8,000 per tonne; gross cost 1,112 x 8,000 = ₹88,96,000",
+      "No pass-through: EBITDA ₹4 crore falls to ₹3.11 crore; with ₹2.5 crore debt service, DSCR falls from 1.60 to 1.24",
+      "50% pass-through: net cost ₹44,48,000; EBITDA ₹3.56 crore; DSCR 1.42"
+    ],
+    "note": "The ₹8,000 price is invented to show the mechanics and is not an NGFS figure. Use the price for your chosen scenario, region and year from the current NGFS dataset."
+  },
+  "senseible": "Senseible gives the borrower's Scope 1 and 2 from fuel invoices and electricity bills, with the factor and source document behind each line, which is the emissions input a stress test needs. Its climate risk page also shows the cost of those emissions at a price you enter. It does not hold NGFS price paths or run portfolio stress tests.",
+  "links": [
+    { "label": "Which NGFS scenario should I use?", "to": "/answers/which-ngfs-scenario-should-i-use" },
+    { "label": "Carbon pricing impact calculator", "to": "/calculators/carbon-pricing-impact" },
+    { "label": "CBAM exposure in a bank stress test", "to": "/answers/cbam-exposure-in-bank-stress-test" },
+    { "label": "Climate risk assessment", "to": "/climate-risk" }
+  ],
+  "sources": [
+    { "label": "RBI draft guidance on climate scenario analysis and stress testing (2024), rbi.org.in", "url": "https://www.rbi.org.in" },
+    { "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry", "url": "https://carbonaccountingfinancials.com" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check whether the RBI has finalised its climate scenario guidance and whether NGFS has published a newer scenario phase than Phase V; NGFS has no approved source link here."
+}

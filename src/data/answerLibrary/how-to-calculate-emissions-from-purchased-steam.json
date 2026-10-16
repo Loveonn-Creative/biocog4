@@ -1,0 +1,74 @@
+{
+  "slug": "how-to-calculate-emissions-from-purchased-steam",
+  "q": "How do I calculate emissions from steam bought from a park boiler or neighbouring plant?",
+  "title": "Emissions from purchased steam",
+  "short": "Multiply the tonnes of steam on your invoices by the supplier's CO2 per tonne of steam, and report the result as Scope 2. The supplier's factor is its fuel CO2 divided by the steam it produced. If the supplier will not share it, estimate one from the boiler fuel and label it as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile, chemical and food units buying steam in clusters such as Surat, Vapi and Tiruppur",
+  "sections": [
+    {
+      "h": "What to ask the steam supplier for",
+      "ul": [
+        "Fuel burnt each month, by type, with quantities and the tested calorific value for coal or biomass.",
+        "Total steam produced in the same month, from its header flow meter.",
+        "Whether the same boilers also make electricity. If they do, the CO2 must first be split between power and steam.",
+        "Whether its figure is per tonne produced at the boiler or per tonne delivered at customer meters, since pipeline losses make these differ.",
+        "The share of biomass in the fuel mix, if any."
+      ],
+      "p": [
+        "Put this request in the steam supply contract. A park utility serving many units can send one monthly statement to every customer."
+      ]
+    },
+    {
+      "h": "The calculation with supplier data",
+      "ol": [
+        "Supplier CO2 for the month = each fuel quantity x its emission factor, added up.",
+        "Supplier factor = supplier CO2 / tonnes of steam on the same basis as your meter.",
+        "Your Scope 2 = tonnes of steam on your invoice x supplier factor."
+      ],
+      "p": [
+        "Use the steam quantity from your invoice or your own inlet meter, not the rupee amount. Steam tariffs change with coal prices, so a spend figure tells you little about tonnes."
+      ]
+    },
+    {
+      "h": "When the supplier will not share fuel data",
+      "p": [
+        "Build an estimate and label it. Take the energy added per tonne of steam (steam enthalpy at the delivery pressure minus feedwater enthalpy, from steam tables), divide by an assumed boiler efficiency of 75 to 85%, and multiply by the IPCC 2006 default CO2 factor per GJ for the supplier's fuel. Ask again each year, and switch to supplier data as soon as you get it; note the change so earlier years can be compared."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Biomass-fired supplier: its biomass CO2 is biogenic and is reported separately, outside the scopes. Methane and nitrous oxide from burning it still count in your Scope 2 share.",
+        "Steam from a cogeneration plant: allocate the plant's CO2 between steam and power with a stated method before applying it to your steam.",
+        "Condensate returned to the supplier lowers the energy it needs per tonne, which its factor should already reflect.",
+        "If you own or run the boiler yourself, even inside a shared park, the emissions are your Scope 1, not Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 600 t of steam in a month",
+    "lines": [
+      "With supplier data: 800 t coal x 2.42 kg CO2 per kg = 1,936 t CO2 for 6,000 t steam produced",
+      "Supplier factor: 1,936 / 6,000 = 0.3227 t CO2 per t steam",
+      "Your Scope 2: 600 t x 0.3227 = 193.6 t CO2",
+      "Estimate without supplier data: 10 bar steam 2,781 kJ/kg minus 90 degree C feedwater 377 kJ/kg = 2,404 kJ/kg, so 2.404 GJ per t",
+      "Coal boiler at an assumed 80% efficiency: 2.404 / 0.80 x 94.6 kg CO2 per GJ = about 284 kg CO2 per t; 600 t x 0.284 = about 170.6 t CO2 (estimate)"
+    ],
+    "note": "The 80% efficiency is an assumption and the 94.6 kg per GJ is the IPCC 2006 default for bituminous coal on a net calorific value basis. The gap between 193.6 t and 170.6 t is why supplier data is worth chasing."
+  },
+  "senseible": "Senseible can keep your steam invoices as evidence, but it has no steam factor in its published factor set, so it does not calculate purchased steam emissions automatically. You apply the supplier's factor or your labelled estimate yourself.",
+  "links": [
+    { "label": "CO2 per tonne of steam", "to": "/answers/co2-per-tonne-of-steam" },
+    { "label": "CHP emissions: power and steam", "to": "/answers/chp-emissions-allocation-electricity-and-steam" },
+    { "label": "Manufacturing Scope 2 emissions in India", "to": "/climate-intelligence/manufacturing-scope-2-emissions-india" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Scope 2 Guidance (purchased steam, heat and cooling)", "url": "https://ghgprotocol.org/scope-2-guidance" },
+    { "label": "GHG Protocol, Allocation of GHG emissions from a combined heat and power (CHP) plant", "url": "https://ghgprotocol.org" },
+    { "label": "2006 IPCC Guidelines, Volume 2: Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The estimate route uses labelled assumptions for boiler efficiency and steam conditions; replace them with the supplier's figures when available."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "how-much-of-my-credits-go-to-buffer-pool",
+  "q": "How much of my carbon credits go into the buffer pool, and why?",
+  "title": "How much of my credits go to the buffer?",
+  "short": "Under Verra, a land-based project usually gives up between 10 and 60 percent of the carbon stored in each verification to a shared buffer pool. The exact share is its non-permanence risk rating. The buffer exists because trees, soil carbon and mangroves can lose that carbon later, through fire, drought or a change of land use.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Agroforestry, soil and mangrove project developers in India",
+  "sections": [
+    {
+      "h": "What the buffer pool is for",
+      "p": [
+        "A tonne avoided at a chimney stays avoided. A tonne stored in a tree or in soil can go back to the air. Registries handle that risk by holding back part of every land project's credits in a common pool that no one can sell. When any project in the pool loses carbon, the registry cancels buffer credits to cover the loss, so the credits buyers already retired stay whole.",
+        "It works like pooled insurance: every project pays a premium in credits, and the pool pays out for the ones that suffer a loss."
+      ]
+    },
+    {
+      "h": "What sets your share",
+      "ul": [
+        "Internal risk: how sound the project's management and finances are, how long the project commits to, and whether the landholders have a reason to keep the carbon in place.",
+        "External risk: land tenure and use rights, community engagement and political risk in the region.",
+        "Natural risk: fire, flood, drought, pests and storms, judged by how likely and how severe they are at your site.",
+        "Verra's AFOLU Non-Permanence Risk Tool adds these scores into one rating. The rating cannot go below a set floor, and a project whose rating is too high fails the tool and cannot issue."
+      ]
+    },
+    {
+      "h": "What the Indian project types tend to face",
+      "p": [
+        "Agroforestry on smallholder farms often scores higher on internal and external risk, because thousands of farmers each control their own trees and can cut them. Soil carbon projects depend on farmers keeping the practice going after payments end. Coastal mangrove projects carry cyclone and tidal surge risk on the natural side. Clear farmer agreements, documented land rights and fire or grazing controls are what bring a rating down."
+      ]
+    },
+    {
+      "h": "What happens when carbon is lost",
+      "ul": [
+        "You report a loss event to the registry within the time its rules set.",
+        "Buffer credits equal to the lost tonnes are cancelled.",
+        "Your project receives no new credits until the loss has been made up from later gains.",
+        "If the loss was avoidable, for example the land was cleared on purpose, the rules put more of the burden on the project rather than the shared pool."
+      ]
+    },
+    {
+      "h": "Other programmes handle it differently",
+      "p": [
+        "Gold Standard land-use projects hold back a fixed share rather than a project-specific rating. ICVCM's Core Carbon Principles treat permanence as one of the tests a credit type must pass, so a programme needs some reversal protection, such as a buffer, before its land credits can carry the CCP label."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not calculate risk ratings, run a registry or hold buffer credits. Its carbon credit eligibility signals show whether your records look ready for a methodology; they are not credits and not a non-permanence assessment.",
+  "links": [
+    {
+      "label": "Carbon credits with Senseible",
+      "to": "/answers/carbon-credits-with-senseible"
+    },
+    {
+      "label": "Worked buffer pool calculation",
+      "to": "/answers/how-is-buffer-pool-contribution-calculated"
+    },
+    {
+      "label": "AFOLU non-permanence risk rating",
+      "to": "/answers/afolu-non-permanence-risk-rating"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra, VCS AFOLU Non-Permanence Risk Tool and VCS Standard (buffer and reversal rules)",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard, Land Use and Forests requirements (reversal buffer)",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM, Core Carbon Principles (permanence)",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Verra revises the Non-Permanence Risk Tool from time to time; check the current version for the minimum rating and the pass limit before relying on the 10 to 60 percent range."
+}

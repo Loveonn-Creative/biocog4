@@ -1,0 +1,67 @@
+{
+  "slug": "urea-application-emissions-per-tonne",
+  "q": "What are the emissions from applying a tonne of urea on farms?",
+  "title": "Emissions from applying a tonne of urea",
+  "short": "Applying one tonne of urea on a field emits about 0.73 t CO2 from the urea itself plus about 1.97 t CO2e of direct nitrous oxide, using IPCC defaults and the AR6 GWP. Adding indirect nitrous oxide takes it to about 3.35 t CO2e. Making the urea is extra.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fertiliser marketers, agri-food buyers and FPOs in India",
+  "sections": [
+    {
+      "h": "The three parts of the field emission",
+      "ul": [
+        "CO2 from urea: urea carries carbon that is released after application. IPCC 2006 Vol 4 Ch 11, Equation 11.13, uses 0.20 t C per t urea, which is 0.20 x 44/12 = 0.733 t CO2.",
+        "Direct N2O: urea is 46% nitrogen, so a tonne holds 460 kg N. The IPCC 2006 default EF1 is 0.01 kg N2O-N per kg N applied (Equation 11.1). Multiply by 44/28 to get N2O.",
+        "Indirect N2O: part of the nitrogen volatilises as ammonia and part leaches, and some of each later turns into N2O. IPCC 2006 defaults: 10% volatilised with EF4 0.01, and 30% leached with EF5 0.0075, where leaching occurs."
+      ]
+    },
+    {
+      "h": "Choices that change the answer",
+      "ul": [
+        "Flooded rice: the IPCC 2006 default EF1 for flooded rice fields is 0.003, not 0.01, which cuts direct N2O by 70%.",
+        "Climate split: the 2019 Refinement gives 0.016 for wet climates and 0.005 for dry climates. Over 460 kg N that is 3.16 or 0.99 t CO2e of direct N2O at the AR6 GWP.",
+        "Leaching: drop the leaching term for dry, unirrigated land where water does not drain through the soil.",
+        "GWP: N2O is 265 in AR5 and 273 in AR6. Use the set your inventory uses."
+      ]
+    },
+    {
+      "h": "Whose emissions these are",
+      "p": [
+        "For the farmer, all of it is Scope 1. For a food company buying the crop, it is part of Scope 3 Category 1, spread over the crop's yield. For a fertiliser marketer, N2O and CO2 released after use are use-phase emissions of a sold product, reported under Category 11 of the GHG Protocol Scope 3 Standard.",
+        "Emissions from producing the urea, mainly ammonia made from natural gas, are a separate cradle-to-gate figure and are not in the numbers above."
+      ]
+    },
+    {
+      "h": "How to write it up",
+      "p": [
+        "Show each factor with its IPCC table, the nitrogen content, the climate or crop choice and the GWP set. Report CO2 from urea and N2O as separate lines; they come from different equations and an auditor will check them separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of urea, upland crop, IPCC 2006 defaults, AR6 GWP",
+    "lines": [
+      "CO2 from urea: 1,000 kg x 0.20 x 44/12 = 733 kg CO2",
+      "Direct N2O: 460 kg N x 0.01 x 44/28 = 7.23 kg N2O; x 273 = 1,973 kg CO2e",
+      "Volatilisation: 460 x 0.10 x 0.01 = 0.46 kg N2O-N",
+      "Leaching: 460 x 0.30 x 0.0075 = 1.035 kg N2O-N",
+      "Indirect N2O: (0.46 + 1.035) x 44/28 = 2.35 kg N2O; x 273 = 641 kg CO2e",
+      "Total: 733 + 1,973 + 641 = 3,347 kg CO2e, about 3.35 t CO2e per tonne applied"
+    ],
+    "note": "On flooded rice, direct N2O with EF1 0.003 is 460 x 0.003 x 44/28 x 273 = 592 kg CO2e instead of 1,973."
+  },
+  "senseible": "Senseible does not calculate field emissions from fertiliser; it has no urea application factor. It can read and keep fertiliser purchase invoices with quantities as evidence for the calculation.",
+  "links": [
+    { "label": "Fertiliser N2O calculation", "to": "/answers/fertiliser-n2o-emissions-calculation" },
+    { "label": "Scope 3 from paddy you buy", "to": "/answers/rice-procurement-scope-3-emissions" },
+    { "label": "Scope 1 emissions in agriculture", "to": "/climate-intelligence/agriculture-scope-1-emissions-india" },
+    { "label": "AR5 or AR6 GWP values", "to": "/answers/ar5-vs-ar6-gwp-which-to-use" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Vol 4 Ch 11, Equations 11.1 and 11.13", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "IPCC AR6 WG1, global warming potentials", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "GHG Protocol Scope 3 Standard, Categories 1 and 11", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Whether irrigated land in dry Indian regions should take the 2019 Refinement wet-climate EF1 of 0.016 needs checking against the Refinement text before relying on that case."
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "carbon-data-governance-policy-what-to-include",
+  "q": "What should a carbon data governance policy include?",
+  "title": "What a carbon data policy should include",
+  "short": "A carbon data governance policy should say who owns each number, which documents count as evidence, which emission factors you use and how you change them, how errors are corrected without overwriting, when the base year is recalculated, how long records are kept, and who reviews the figures before they leave the company.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "CFOs, ESG managers, internal auditors at MSMEs and mid-caps",
+  "sections": [
+    {
+      "h": "Roles and boundary",
+      "ul": [
+        "Name one owner for the inventory, usually in finance, and a preparer and reviewer for each site or data stream. The reviewer must not be the preparer.",
+        "State the boundary: which entities and sites are in, whether you use operational control, financial control or equity share, and which Scope 3 categories you report.",
+        "Set who approves the final figures before they go into BRSR, a buyer questionnaire or a loan file."
+      ]
+    },
+    {
+      "h": "Evidence and factor rules",
+      "ul": [
+        "List the accepted evidence for each source: electricity bills for grid power, fuel invoices or slips for diesel and gas, weighbridge slips for solid fuel, freight invoices for transport.",
+        "Say what happens when evidence is missing: an estimate is allowed only with a written basis and a label, and it is replaced when the bill arrives.",
+        "Keep a factor register: the factor, its unit, its source and edition, and the date it was adopted. Change a factor only by a dated entry, never by editing past lines, and apply new editions from a stated date."
+      ]
+    },
+    {
+      "h": "Quality checks and corrections",
+      "ol": [
+        "Check completeness monthly: every meter, site and fuel has a record for every month.",
+        "Recalculate a sample: activity x factor must reproduce the reported figure.",
+        "Investigate outliers, such as a month more than double the usual.",
+        "Correct by adding a reversing entry with a reason, so the original and the fix are both visible."
+      ]
+    },
+    {
+      "h": "Base year and recalculation",
+      "p": [
+        "The GHG Protocol asks you to recalculate the base year when structural changes, such as an acquisition, a divestment or outsourcing, or a discovered error, change it significantly. It leaves the significance threshold to you. Many companies use 5 percent; whatever you choose, write it in the policy and apply it the same way every year."
+      ]
+    },
+    {
+      "h": "Retention, access and assurance",
+      "ul": [
+        "Retention: keep evidence for the longest period any law or buyer asks of you, which in India is usually the eight years the Companies Act sets for books of account.",
+        "Access: limit who can upload, edit and approve, and treat names and phone numbers on bills as personal data under the DPDP Act, 2023.",
+        "Tamper evidence: fingerprint source files and keep a change log that cannot be silently edited.",
+        "Assurance readiness: for listed companies, BRSR Core figures go to independent assurance, so the policy should let an assurer trace any reported number back to a document."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: does an acquisition trigger a base year recalculation?",
+    "lines": [
+      "Base year Scope 1 and 2: 1,000 t CO2",
+      "Acquired plant's emissions in the base year: 80 t CO2",
+      "Change: 80 / 1,000 = 8%",
+      "Policy threshold: 5%, so 8% is above it and the base year is restated to 1,080 t CO2"
+    ],
+    "note": "The 5 percent threshold is a common choice, not a rule; the GHG Protocol leaves it to the company."
+  },
+  "senseible": "Senseible fingerprints each uploaded file with SHA-256, records the factor and its source on every line, keeps hash-chained ledger entries and runs rule checks before a line is marked Verified, which covers the evidence, factor and correction parts of a policy. It does not write the policy, assign roles or replace independent assurance.",
+  "links": [
+    {
+      "label": "Make carbon data tamper-evident",
+      "to": "/answers/how-to-make-carbon-data-tamper-evident"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Method white paper",
+      "to": "/white-paper"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, chapters on tracking emissions over time and managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, GHG inventory quality management",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI circular on BRSR Core and assurance, July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

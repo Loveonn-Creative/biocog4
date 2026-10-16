@@ -1,0 +1,67 @@
+{
+  "slug": "sll-kpi-verification-what-verifier-checks",
+  "q": "What does a verifier check on a sustainability-linked loan KPI?",
+  "title": "What an SLL KPI verifier checks",
+  "short": "A verifier checks that your KPI figure was calculated exactly as the loan agreement defines it, that the underlying bills and invoices support it, that the method matches the baseline year, and whether the target was met. The result is a statement the lender uses to move the interest margin.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME borrowers with SLLs, relationship managers",
+  "sections": [
+    {
+      "h": "Why verification is required at all",
+      "p": [
+        "Under the LMA, APLMA and LSTA Sustainability-Linked Loan Principles, the borrower must get independent external verification of its performance against each target at least once a year. Self-reported figures are not enough, because the borrower gains a lower interest margin by reporting good numbers. The verifier is usually an audit firm or a specialist assurance provider, and the lender relies on its statement before applying any margin change."
+      ]
+    },
+    {
+      "h": "The checks, in the order most verifiers work",
+      "ol": [
+        "Definition: the KPI, its boundary (which sites, which scopes) and its formula, as written in the facility agreement.",
+        "Baseline: the baseline year figure, and whether it was restated after any change in sites or method.",
+        "Activity data: a sample of electricity bills, fuel invoices and production records traced to the monthly totals.",
+        "Factors: each emission factor's source and edition, and that the same edition was applied as agreed.",
+        "Arithmetic: a recalculation of the reported figure from the source data.",
+        "Target test: the result compared with the target for that test date."
+      ]
+    },
+    {
+      "h": "Errors that verifiers find most often in MSME files",
+      "ul": [
+        "kVAh units treated as kWh on industrial electricity bills.",
+        "A month missing, or a bill counted twice when it was paid in two instalments.",
+        "Production figures taken from sales instead of output, which shifts the intensity.",
+        "A new shed or DG set added during the year but left out of the boundary.",
+        "A change of factor edition without restating the baseline."
+      ]
+    },
+    {
+      "h": "Level of assurance and what you receive",
+      "p": [
+        "Most sustainability-linked loans ask for limited assurance, a negative-form conclusion that nothing came to the verifier's attention to suggest the figure is materially wrong. Common standards are ISAE 3000 (Revised) with ISAE 3410 for greenhouse gas statements, or ISO 14064-3. Reasonable assurance is deeper and costs more. Agree the standard, the level and the materiality threshold with the lender before the first test year, and time the work so the statement is ready before the margin adjustment date."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one error found in a sample check",
+    "lines": [
+      "Reported electricity: 2,050,000 kWh, so 2,050,000 x 0.710 = 1,455.5 t CO2",
+      "Sampled bill shows 60,000 kVAh entered as kWh; printed power factor 0.95, so true kWh = 60,000 x 0.95 = 57,000",
+      "Overstatement: 3,000 kWh x 0.710 = 2.13 t CO2",
+      "Share of a 2,375.1 t CO2 total: 2.13 / 2,375.1 = 0.09%, well under a 5% materiality threshold, but corrected anyway"
+    ],
+    "note": "5% is a common materiality choice, not a fixed rule; the verifier or the loan agreement sets it."
+  },
+  "senseible": "Senseible keeps the KPI data from your bills and invoices with a fingerprint and a source on every line, so a verifier can trace figures quickly. It is not a verifier and does not issue verification statements.",
+  "links": [
+    { "label": "SLL KPI examples for MSMEs", "to": "/answers/sustainability-linked-loan-kpi-examples" },
+    { "label": "ISSA 5000, ISAE 3410 and ISO 14064-3", "to": "/answers/issa-5000-vs-isae-3410-vs-iso-14064-3" },
+    { "label": "How auditors verify activity data", "to": "/answers/how-auditors-verify-activity-data" },
+    { "label": "Proving energy savings to your bank", "to": "/answers/how-to-prove-energy-savings-to-a-lender" }
+  ],
+  "sources": [
+    { "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles and Guidance (March 2025 edition)", "url": "https://www.lma.eu.com" },
+    { "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of greenhouse gas statements", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Verification wording in the principles was revised in March 2025; check the current edition and your facility agreement before relying on it."
+}

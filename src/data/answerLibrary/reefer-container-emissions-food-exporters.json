@@ -1,0 +1,62 @@
+{
+  "slug": "reefer-container-emissions-food-exporters",
+  "q": "How do I add reefer (refrigerated container) emissions to my export shipment footprint?",
+  "title": "Adding reefer emissions to a shipment",
+  "short": "Calculate the leg as if it were a dry container, then use a reefer-specific factor or apply a reefer uplift for the power the refrigeration unit draws. Add refrigerant leakage only if the carrier reports it, converted to CO2e with a stated GWP. Label any default uplift as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian exporters of fruit, seafood, dairy and pharmaceuticals",
+  "sections": [
+    {
+      "h": "Why a reefer emits more than a dry box",
+      "p": [
+        "A reefer container has its own refrigeration unit, powered from the ship's generators at sea, from shore plugs at the terminal, and from a diesel genset on the truck or rail leg. That extra fuel is burnt for your cargo, so a refrigerated shipment carries more emissions per tonne-km than the same weight in a dry container. Frozen cargo at minus 18°C or below usually needs more power than chilled cargo at plus 2 to plus 8°C."
+      ]
+    },
+    {
+      "h": "Three ways to get the reefer figure, best first",
+      "ol": [
+        "Carrier data: ask the shipping line for a reefer emission figure for your booking or trade lane, and whether it is well-to-wake or tank-to-wake.",
+        "Reefer factors: the Clean Cargo methodology, published through Smart Freight Centre, gives separate reefer and dry factors per TEU-km for trade lanes. Use the reefer one, and note that these are tank-to-wake CO2.",
+        "Default uplift: multiply the dry container result by a temperature-controlled uplift, such as those in GLEC Framework v3, when nothing better exists. Name the uplift's source and label the result an estimate."
+      ]
+    },
+    {
+      "h": "Refrigerant leakage",
+      "p": [
+        "Reefer units use HFC or HFO refrigerants such as R-134a. Leaks are a separate source in CO2e, because the gas is a greenhouse gas in its own right. Carriers rarely report leakage per shipment; include it only when they do, and state the GWP set, for example R-134a at 1,300 in IPCC AR5 or 1,430 in AR4. Do not invent a leak rate to fill the gap."
+      ]
+    },
+    {
+      "h": "The legs to cover on land",
+      "ul": [
+        "Factory or pack house to port: a refrigerated truck with a diesel reefer unit. If the transporter bills reefer diesel separately, convert it at 2.68 kg CO2 per litre; otherwise apply a temperature-controlled road uplift.",
+        "Pre-cooling and terminal plug-in time: part of the hub emissions under ISO 14083; include it if the terminal or carrier gives a figure.",
+        "Which legs sit in your Scope 3 depends on who pays for them under your Incoterm."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 22 t of frozen shrimp, Nhava Sheva to Rotterdam (illustrative uplift)",
+    "lines": [
+      "Sea leg as dry cargo: 22 t x 11,700 km = 2,57,400 tonne-km; x 0.008 kg CO2e per tonne-km = 2,059.2 kg CO2e",
+      "Reefer uplift of 1.4 (illustrative, replace with a carrier or Clean Cargo reefer figure): 2,059.2 x 1.4 = 2,882.9 kg CO2e",
+      "Carrier reports 0.2 kg R-134a leaked for the voyage: 0.2 x 1,300 (AR5) = 260 kg CO2e",
+      "Sea leg total: 2,882.9 + 260 = 3,142.9 kg CO2e, about 3.1 t"
+    ],
+    "note": "The 0.008 factor is the container ship default in Senseible's logistics calculator, built on GLEC Framework v3.0. The uplift and leak figures are invented to show the arithmetic."
+  },
+  "senseible": "Senseible reads freight records, and its logistics calculator applies GLEC-based defaults by mode, distance and weight for the dry leg. It has no reefer uplift or refrigerant leakage figure, so add the reefer share from your carrier's data yourself.",
+  "links": [
+    { "label": "Sea freight emissions per container", "to": "/answers/sea-freight-emissions-per-container-india-to-europe" },
+    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "Refrigerant top-up invoice to CO2e", "to": "/answers/refrigerant-top-up-invoice-to-co2e" }
+  ],
+  "sources": [
+    { "label": "GLEC Framework v3.0, Smart Freight Centre", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "Clean Cargo methodology, reefer and dry container factors, Smart Freight Centre", "url": "https://www.smartfreightcentre.org" },
+    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16"
+}

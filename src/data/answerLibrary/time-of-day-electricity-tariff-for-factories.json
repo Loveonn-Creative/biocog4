@@ -1,0 +1,64 @@
+{
+  "slug": "time-of-day-electricity-tariff-for-factories",
+  "q": "How does the time-of-day electricity tariff work for Indian factories?",
+  "title": "Time of day tariff for Indian factories",
+  "short": "Under a time of day (ToD) tariff, the rate per unit depends on when you use it: higher in peak hours, lower in solar hours, normal otherwise. Central rules made ToD compulsory from 1 April 2024 for commercial and industrial consumers above 10 kW maximum demand. Your state commission sets the hours and exact rates.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Commercial and industrial consumers in India",
+  "sections": [
+    {
+      "h": "What the 2023 central rules require",
+      "ul": [
+        "The Electricity (Rights of Consumers) Amendment Rules, 2023, notified by the Ministry of Power in June 2023, require ToD tariffs for commercial and industrial consumers with maximum demand above 10 kW from 1 April 2024, and for most other consumers, except agriculture, from 1 April 2025.",
+        "Peak hour tariff for commercial and industrial consumers is at least 1.20 times the normal tariff, and at least 1.10 times for other consumers.",
+        "Solar hours, a block of eight hours a day fixed by the state commission, carry a lower tariff than normal hours. The Ministry described the cut as 10 to 20%.",
+        "For consumers with smart meters, ToD applies as soon as the smart meter is installed."
+      ]
+    },
+    {
+      "h": "What your state tariff order decides",
+      "p": [
+        "The central rules set floors and dates. The state electricity regulatory commission's tariff order fixes the actual peak, off-peak and solar hour slots, the percentage surcharge or rebate, which categories it applies to, and whether it applies to demand charges or only energy charges. These change at each tariff revision, often every year, so read the order in force for your billing month. Many states had ToD for HT industry well before 2024; the rules made it universal and set minimums."
+      ]
+    },
+    {
+      "h": "How to read ToD on your bill",
+      "ol": [
+        "Find units by time block, usually labelled peak, normal and off-peak or solar hours. They should add up to total units.",
+        "Each block shows a surcharge or rebate, as a percentage of the energy rate or as rupees per unit.",
+        "The net ToD amount is added to or taken from the energy charge. Demand charges, power factor adjustment, fuel cost adjustment and duty sit on separate lines."
+      ]
+    },
+    {
+      "h": "Does shifting load to solar hours cut your emissions?",
+      "p": [
+        "Not in your reported Scope 2 today. Location-based Scope 2 in India uses one annual grid average, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, so a unit in peak hours and a unit at noon carry the same factor. Shifting load lowers your bill, and it can lower real grid emissions when midday power is mostly solar, but that shows only if a buyer or programme asks for hourly factors, which India does not publish officially."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: shifting 10,000 units from peak to solar hours",
+    "lines": [
+      "Normal rate assumed at Rs 8.00 per kWh; peak at the 1.20 floor = Rs 9.60; solar hours at 20% below = Rs 6.40",
+      "Use: 1,00,000 kWh, of which 30,000 peak, 30,000 normal, 40,000 solar hours",
+      "Energy cost: 30,000 x 9.60 + 30,000 x 8.00 + 40,000 x 6.40 = 2,88,000 + 2,40,000 + 2,56,000 = Rs 7,84,000",
+      "Move 10,000 kWh from peak to solar hours: saving 10,000 x (9.60 minus 6.40) = Rs 32,000 a month",
+      "Location-based Scope 2 before and after: 1,00,000 x 0.710 = 71,000 kg CO2, unchanged"
+    ],
+    "note": "Rates are assumptions built from the central rule multipliers, not any state's tariff order. Use the slots and rebates in your own state commission's current order."
+  },
+  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh. It does not check ToD charges or model tariff savings.",
+  "links": [
+    { "label": "How to read an HT electricity bill", "to": "/answers/how-to-read-an-ht-industrial-electricity-bill" },
+    { "label": "Maximum demand charges and peak shaving", "to": "/answers/maximum-demand-charges-peak-shaving" },
+    { "label": "Hourly grid emission factors for India", "to": "/answers/hourly-grid-emission-factors-india" },
+    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" }
+  ],
+  "sources": [
+    { "label": "Electricity (Rights of Consumers) Amendment Rules, 2023, Ministry of Power gazette notification of 14 June 2023 (powermin.gov.in)", "url": "https://powermin.gov.in" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "State tariff orders set ToD slots and rebates and change yearly; check the order in force for each billing month."
+}

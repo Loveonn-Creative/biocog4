@@ -1,0 +1,65 @@
+{
+  "slug": "cold-storage-energy-per-tonne",
+  "q": "How much electricity should a cold storage use per tonne stored?",
+  "title": "Cold storage electricity per tonne",
+  "short": "There is no single right figure: it depends on the storage temperature, how much warm produce comes in, insulation and climate. Measure kWh per tonne-month, monthly units divided by the average tonnes in store, and compare it with your design heat load, your own past seasons and similar stores.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cold storage owners and food exporters",
+  "sections": [
+    {
+      "h": "The metric to track",
+      "p": [
+        "kWh per tonne-month = units on the month's electricity bill / average tonnes in store that month. Take the average stock from your stock register, for example the mean of daily closing stock. Track it every month, and keep chilled and frozen chambers apart if they are sub-metered.",
+        "Per tonne of capacity is a weaker measure, because an empty chamber still draws power. Use it only to compare designs, not running performance."
+      ]
+    },
+    {
+      "h": "What pushes the figure up",
+      "ul": [
+        "Temperature regime: frozen storage at minus 18°C or colder needs far more compressor work than chilled storage at plus 2 to plus 8°C.",
+        "Product load: warm produce brought in at harvest needs pull-down cooling; the loading months show the highest figures.",
+        "Low occupancy: insulation and fan losses stay fixed while stock falls, so kWh per tonne rises at the end of the season.",
+        "Envelope and doors: thin or damaged insulated panels, missing strip curtains and long door-open times.",
+        "Plant condition: dirty condensers, poor defrost control and old compressors."
+      ]
+    },
+    {
+      "h": "What to compare it against",
+      "ol": [
+        "Your design heat load: the refrigeration contractor's calculation, usually done with ASHRAE methods, gives the expected kW at design conditions.",
+        "Your own history: the same month last season, adjusted for stock and ambient temperature.",
+        "Similar stores: technical standards from the National Centre for Cold-chain Development (NCCD) and BEE energy studies on cold storages give indicative design guidance. Treat any outside figure as a range, not a target, unless it matches your product and temperature."
+      ]
+    },
+    {
+      "h": "Turning the units into emissions",
+      "p": [
+        "Grid units go to Scope 2 at the CEA factor of 0.710 kg CO2 per kWh. Diesel for backup generators is Scope 1 at 2.68 kg CO2 per litre. Refrigerant top-ups in HFC plants are a separate Scope 1 source, counted in CO2e; ammonia has a global warming potential of zero."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a potato cold store in March",
+    "lines": [
+      "Units billed: 1,20,000 kWh; average stock from the register: 4,000 t",
+      "Energy intensity: 1,20,000 / 4,000 = 30 kWh per tonne-month",
+      "Scope 2: 1,20,000 x 0.710 = 85,200 kg CO2, or 30 x 0.710 = 21.3 kg CO2 per tonne-month",
+      "Backup diesel: 2,000 L x 2.68 = 5,360 kg CO2 (Scope 1)",
+      "If stock falls to 2,000 t in October at 80,000 kWh: 80,000 / 2,000 = 40 kWh per tonne-month, higher only because the store is half empty"
+    ],
+    "note": "Figures are illustrative. Compare like months and like stock levels before concluding that efficiency changed."
+  },
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, and converts diesel bills at the IPCC default. It does not read stock registers or set an energy benchmark for your store.",
+  "links": [
+    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" },
+    { "label": "How to calculate specific energy consumption", "to": "/answers/how-to-calculate-specific-energy-consumption" },
+    { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" },
+    { "label": "Estimate refrigerant leakage without records", "to": "/answers/estimate-refrigerant-leakage-without-records" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "BEE energy efficiency studies and guidance for cold storages (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "how-is-buffer-pool-contribution-calculated",
+  "q": "How much of my carbon credits go to the buffer pool, with a worked example?",
+  "title": "Buffer pool contribution, worked example",
+  "short": "Multiply the change in carbon stocks verified for the period by your project's non-permanence risk rating. At a 15 percent rating, 10,000 tonnes of verified removals puts 1,500 credits into the buffer pool and issues 8,500 to you. The rating comes from Verra's AFOLU Non-Permanence Risk Tool.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Project developers and credit buyers",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Take the net change in carbon stocks for the monitoring period, after baseline and leakage deductions, in tonnes CO2e.",
+        "Take the overall risk rating from your latest non-permanence risk report, as a percentage.",
+        "Buffer credits = change in carbon stocks x risk rating.",
+        "Credits issued to you = net reductions and removals for the period minus buffer credits."
+      ]
+    },
+    {
+      "h": "What the rating applies to",
+      "p": [
+        "Under Verra the withholding applies to carbon held in stocks such as biomass and soil, because that is what can be reversed. Reductions that cannot reverse, such as avoided methane from changed rice cultivation, are not exposed to the same risk, so check your methodology for which parts of the total are multiplied by the rating.",
+        "The rating is reassessed at each verification. If your risk management improves, later periods withhold less; credits already in the pool stay there."
+      ]
+    },
+    {
+      "h": "Gold Standard and other programmes",
+      "p": [
+        "Gold Standard land-use projects use a fixed compensation buffer, 20 percent of the removals for afforestation and similar projects, instead of a site-specific score. The arithmetic is the same: multiply the verified tonnes by the buffer share and subtract."
+      ]
+    },
+    {
+      "h": "How to use this in a project budget",
+      "ul": [
+        "Plan revenue on issued credits, not on verified tonnes. A 20 percent buffer is a 20 percent cut in what you can sell.",
+        "If you sell forward, write the contract on issued credits, so the buyer does not expect tonnes that went to the pool.",
+        "Keep the fire, grazing and land agreement records that lower the rating; they pay for themselves at every verification."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: one verification of an agroforestry project",
+    "lines": [
+      "Net removals verified for the period: 10,000 t CO2e, all from carbon stock change",
+      "Risk rating: 15% (illustrative; your rating comes from the tool)",
+      "Buffer credits: 10,000 x 0.15 = 1,500",
+      "Credits issued: 10,000 minus 1,500 = 8,500",
+      "At a 20% fixed buffer instead: 2,000 to the buffer and 8,000 issued"
+    ],
+    "note": "Removals are CO2 equivalent because they come from the methodology's stock calculations; any non-CO2 parts follow the methodology's own rule."
+  },
+  "senseible": "Senseible does not work out buffer contributions or risk ratings, and it is not a registry. Its eligibility signals and records can feed the evidence a validator asks for, but the buffer arithmetic is done under the registry's own tools.",
+  "links": [
+    {
+      "label": "Why buffer pools exist",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
+    },
+    {
+      "label": "AFOLU non-permanence risk rating",
+      "to": "/answers/afolu-non-permanence-risk-rating"
+    },
+    {
+      "label": "How long credits take to issue",
+      "to": "/answers/how-long-to-get-carbon-credits-issued"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra, VCS AFOLU Non-Permanence Risk Tool",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard, Land Use and Forests requirements (compensation buffer)",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM, Core Carbon Principles (permanence)",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The 15 percent rating is illustrative and the 20 percent Gold Standard share is from its land-use requirements; check the current tool version and programme rules."
+}

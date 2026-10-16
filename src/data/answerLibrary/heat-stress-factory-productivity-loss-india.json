@@ -1,0 +1,67 @@
+{
+  "slug": "heat-stress-factory-productivity-loss-india",
+  "q": "How much productivity can Indian factories lose to extreme heat, and how do I estimate it?",
+  "title": "Heat stress and lost factory hours",
+  "short": "The ILO projects that India will lose 5.8% of its working hours to heat stress in 2030, about 34 million full-time jobs. For your own factory, estimate it as hours above a safe heat limit, times the share of those hours workers must rest, times workers and wage.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factory owners, HR and lenders assessing chronic heat risk",
+  "sections": [
+    {
+      "h": "Measure heat the way the standards do",
+      "p": [
+        "Air temperature alone understates heat stress. ISO 7243:2017 uses the wet bulb globe temperature (WBGT), which combines humidity, radiant heat and air movement. Indoors, or without sun, WBGT = 0.7 x natural wet bulb temperature + 0.3 x globe temperature. Outdoors in sun, WBGT = 0.7 x natural wet bulb + 0.2 x globe + 0.1 x air temperature.",
+        "A humid shed at 34°C can carry more strain than a dry one at 40°C, so log WBGT at the workstations that run hottest: near furnaces, dryers, boilers and under metal roofs."
+      ]
+    },
+    {
+      "h": "Why heavy work loses more hours",
+      "p": [
+        "ISO 7243 sets reference WBGT values by metabolic rate: the heavier the work, the lower the WBGT at which strain begins, and acclimatised workers tolerate more than new ones. Above the reference value, employers add rest breaks, rotate tasks or cool the space. Each rest minute is a working minute lost, so loading, forging and manual handling lose far more than seated assembly at the same WBGT."
+      ]
+    },
+    {
+      "h": "A five-step estimate for one site",
+      "ol": [
+        "Log hourly WBGT through the hot season, or derive it from a nearby weather station and correct with a few spot readings.",
+        "For each work type, count the hours per day above its reference WBGT value.",
+        "Set the rest share for those hours from your heat action plan or occupational health advice, for example 25% rest in each hour.",
+        "Hours lost = hours above limit x rest share x workers x days in the season.",
+        "Cost = hours lost x loaded hourly wage, plus overtime or output shortfall if orders are fixed. Write every assumption next to the number."
+      ]
+    },
+    {
+      "h": "Signals that the loss is already happening",
+      "ul": [
+        "Output per shift drops in April to June while machine uptime stays normal.",
+        "Absenteeism, heat illness first aid entries and afternoon rejects rise together.",
+        "IMD heatwave alerts for your district: in the plains, IMD declares a heatwave when the maximum reaches at least 40°C and is 4.5°C or more above normal, or reaches 45°C regardless of normal.",
+        "Night shift output beats day shift on the same line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 200 workers on a hot shop floor (illustrative)",
+    "lines": [
+      "Hot season: 60 working days with 3 afternoon hours a day above the reference WBGT",
+      "Rest share in those hours: 25% (assumption from the site heat plan)",
+      "Hours lost per worker per day: 3 x 0.25 = 0.75 hours",
+      "Season total: 0.75 x 200 workers x 60 days = 9,000 hours",
+      "At ₹100 per hour loaded wage: 9,000 x 100 = ₹9,00,000",
+      "Share of the year: 200 x 8 hours x 300 days = 4,80,000 hours; 9,000 / 4,80,000 = 1.9%"
+    ],
+    "note": "All inputs are illustrative. Replace them with your WBGT log, actual rest regime and wage register; a forging or loading bay will lose more than this."
+  },
+  "senseible": "Senseible's climate risk page lets you flag frequent days above 40°C at your site as a heat hazard to check. It does not calculate lost working hours, WBGT or wage losses; use your own site log for that.",
+  "links": [
+    { "label": "Climate risk assessment", "to": "/climate-risk" },
+    { "label": "Physical vs transition climate risk", "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions" },
+    { "label": "Which NGFS scenario should I use?", "to": "/answers/which-ngfs-scenario-should-i-use" }
+  ],
+  "sources": [
+    { "label": "ISO 7243:2017, Ergonomics of the thermal environment, assessment of heat stress using the WBGT index (iso.org)", "url": "https://www.iso.org" },
+    { "label": "IPCC AR6 Working Group I, chapter on weather and climate extremes", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The 5.8% and 34 million figures come from the ILO report Working on a Warmer Planet (2019), which has no approved link here; IMD heatwave criteria can be revised."
+}

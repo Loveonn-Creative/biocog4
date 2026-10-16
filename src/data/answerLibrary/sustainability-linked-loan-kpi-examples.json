@@ -1,0 +1,72 @@
+{
+  "slug": "sustainability-linked-loan-kpi-examples",
+  "q": "What KPIs work in a sustainability-linked loan for an MSME?",
+  "title": "SLL KPI examples for MSMEs",
+  "short": "For most MSMEs the best sustainability-linked loan KPIs are Scope 1 and 2 emissions per unit of output, energy used per unit of output, and the share of renewable electricity. Each must be core to the business, measured from bills and invoices, and checked by an outside verifier every year.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME borrowers and relationship managers",
+  "sections": [
+    {
+      "h": "How a sustainability-linked loan differs from a green loan",
+      "p": [
+        "A green loan funds a named project, such as a solar plant or a new boiler. A sustainability-linked loan can fund anything, including working capital. What makes it sustainability-linked is that the interest margin moves up or down depending on whether the borrower hits targets agreed in advance. So the KPI, not the use of the money, carries the whole structure.",
+        "The LMA, APLMA and LSTA Sustainability-Linked Loan Principles set five core components: selection of KPIs, calibration of sustainability performance targets (SPTs), loan characteristics, reporting, and verification."
+      ]
+    },
+    {
+      "h": "KPIs that suit a manufacturing MSME",
+      "ul": [
+        "Scope 1 and 2 emission intensity: tonnes CO2 per tonne of product, or per lakh pieces. Fits steel, foundry, ceramics, textile processing and chemicals, where fuel and power are the main sources.",
+        "Specific energy consumption: kWh or GJ per tonne of output. Easier to measure than emissions and close to what BEE energy audits already track.",
+        "Renewable electricity share: kWh from rooftop solar, open access or a green tariff divided by total kWh. Simple, but weak if renewables are already cheap and planned anyway.",
+        "Water intake per unit of output, for dyeing, food processing and other water-heavy units.",
+        "Waste sent to landfill as a share of total waste, where waste is a material issue."
+      ],
+      "p": [
+        "Pick one or two KPIs. Each extra KPI adds a baseline, a target and a verification line, and a small borrower rarely gains from that."
+      ]
+    },
+    {
+      "h": "What makes a KPI acceptable to the lender",
+      "ol": [
+        "Material: it covers a large part of the business's environmental impact, not a side issue.",
+        "Measurable with a fixed method: the boundary, the factors and the formula are written into the loan file.",
+        "Has a baseline: usually one full year of data before the loan, with the same boundary.",
+        "Can be verified: every number traces to documents an outside reviewer can check.",
+        "Can be benchmarked: against your own history, sector peers or a published pathway."
+      ]
+    },
+    {
+      "h": "How to set the target",
+      "p": [
+        "The SPT must go beyond business as usual. A target you would hit anyway, such as a cut that only comes from a production rise spreading fixed energy over more output, will not pass a lender's review. Tie the target to real actions in your capex plan, such as a furnace upgrade or solar installation, and set a yearly path so each annual test date has a clear number.",
+        "Use an intensity KPI if you expect to grow. An absolute emissions target can be missed simply because you won more orders."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an emission intensity KPI for a casting unit",
+    "lines": [
+      "Baseline year: 400 t coal x 2.42 kg CO2 per kg = 968 t CO2 (Scope 1)",
+      "Baseline year: 2,000,000 kWh x 0.710 kg CO2 per kWh = 1,420 t CO2 (Scope 2, location-based)",
+      "Baseline intensity: 2,388 t CO2 / 8,000 t castings = 0.2985 t CO2 per t",
+      "SPT for year 3: 10% lower, so 0.2985 x 0.90 = 0.2687 t CO2 per t",
+      "Year 2 actual: 919.6 t + 1,455.5 t = 2,375.1 t CO2 for 8,600 t = 0.2762 t CO2 per t, 7.5% below baseline and on track"
+    ],
+    "note": "The 10% target and the plant figures are illustrative. Factors: IPCC 2006 coal default and the CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "Senseible builds invoice-based Scope 1 and 2 records with rule checks, which a borrower can use to report an emissions or energy KPI each year. It does not set KPIs or targets, price the loan, or act as the independent verifier the principles require.",
+  "links": [
+    { "label": "Green finance", "to": "/green-finance" },
+    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" },
+    { "label": "What an SLL verifier checks", "to": "/answers/sll-kpi-verification-what-verifier-checks" },
+    { "label": "Which carbon intensity metric to use", "to": "/answers/which-carbon-intensity-metric-to-use" }
+  ],
+  "sources": [
+    { "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles and Guidance (March 2025 edition)", "url": "https://www.lma.eu.com" },
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Sustainability-Linked Loan Principles were last updated in March 2025 and are revised every few years; check the current edition before quoting its wording."
+}
