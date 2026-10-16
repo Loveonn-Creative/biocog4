@@ -320,6 +320,7 @@ Feedback that is not published is kept under the default periods above. A publis
         content: `Senseible uses service providers only where needed to operate the platform. Current provider categories and confirmed services include:
 - Lovable for managed platform hosting, cloud services, authentication and email delivery,
 - Google for analytics and supported AI processing,
+- Microsoft Clarity to understand how visitors use our pages (clicks, scrolling and page views), with form entries and pages showing financial details masked so they are not recorded,
 - ElevenLabs for voice interactions when that feature is used,
 - Razorpay for payment processing.
 

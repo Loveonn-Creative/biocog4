@@ -93,3 +93,11 @@ These are separate choices, none ticked by default.
   - ASCI's guidelines on testimonials ask for genuine, verifiable claims and disclosure of any material connection; (a) and (e) cover this.
 - **EU visitors (GDPR):** explicit, granular, withdrawable consent, which this provides.
 - **Retention:** the three-year period for consent records is a proposal. Shorten it if you prefer, but some proof period is needed in case a published story is ever disputed.
+
+---
+
+## Addition, 16 October 2026 (approved by the owner): Microsoft Clarity
+
+Privacy Policy §10 Sub-Processors & Third Parties, one bullet added; nothing else changed:
+
+> - Microsoft Clarity to understand how visitors use our pages (clicks, scrolling and page views), with form entries and pages showing financial details masked so they are not recorded,
