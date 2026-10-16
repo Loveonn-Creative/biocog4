@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, test } from 'bun:test';
 // aiFetch reads keys from Deno.env; give it a small stand-in.
 const env = new Map<string, string>();
 (globalThis as any).Deno = { env: { get: (k: string) => env.get(k) } };
-const { aiFetch, aiConfigured, toGatewayModel, toGeminiModel } = await import('../supabase/functions/_shared/aiFetch.ts');
+const { aiFetch, aiConfigured, toGatewayModel, toGeminiModel, resetAiFallbackState } = await import('../supabase/functions/_shared/aiFetch.ts');
 
 const realFetch = globalThis.fetch;
 let calls: { url: string; body: any; auth: string | null }[] = [];
@@ -16,7 +16,7 @@ const route = (handler: (url: string) => Response | Promise<Response>) => {
 };
 const ask = () => aiFetch({ method: 'POST', headers: { Authorization: 'Bearer client-must-be-ignored' }, body: JSON.stringify({ model: 'google/gemini-2.5-pro', messages: [] }) });
 
-beforeEach(() => { env.clear(); calls = []; });
+beforeEach(() => { env.clear(); calls = []; resetAiFallbackState(); });
 afterEach(() => { globalThis.fetch = realFetch; });
 
 describe('aiFetch provider order', () => {
@@ -101,5 +101,24 @@ describe('aiFetch provider order', () => {
     expect(toGatewayModel('google/gemini-3.6-flash')).toBe('google/gemini-2.5-flash');
     expect(toGatewayModel('google/gemini-2.5-pro')).toBe('google/gemini-2.5-pro');
     expect(toGatewayModel('google/gemini-2.5-flash-lite')).toBe('google/gemini-2.5-flash-lite');
+  });
+});
+
+describe('aiFetch Gemini cooldown', () => {
+  test('after Gemini 429, the next request goes straight to the gateway', async () => {
+    env.set('GEMINI_API_KEY', 'g'); env.set('LOVABLE_API_KEY', 'l');
+    route((url) => reply(url.includes('generativelanguage') ? 429 : 200));
+    expect((await ask()).status).toBe(200);
+    calls = [];
+    expect((await ask()).status).toBe(200);
+    expect(calls.map((c) => c.url)).toEqual([expect.stringContaining('ai.gateway.lovable.dev')]);
+  });
+
+  test('without a gateway key, Gemini is retried even after a 429', async () => {
+    env.set('GEMINI_API_KEY', 'g');
+    route(() => reply(429));
+    expect((await ask()).status).toBe(429);
+    expect((await ask()).status).toBe(429);
+    expect(calls).toHaveLength(2);
   });
 });

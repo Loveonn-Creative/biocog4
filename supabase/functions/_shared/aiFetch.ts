@@ -56,10 +56,19 @@ async function tryGemini(key: string, body: Record<string, unknown>): Promise<Re
     return res;
   } catch (e) {
     clearTimeout(timer);
-    console.warn('Gemini unreachable or slow', (e as Error)?.name ?? 'error');
+    console.info('Gemini unreachable or slow', (e as Error)?.name ?? 'error');
     return null;
   }
 }
+
+// Fallback to the gateway is the designed path, not a fault: it is logged at
+// info level, once per cooldown. While Gemini is rate-limited or out of quota
+// (429/402) or unreachable, it is skipped for a short cooldown in this
+// instance instead of being retried (and logged) on every request.
+const GEMINI_COOLDOWN_MS = 5 * 60_000;
+let geminiSkipUntil = 0;
+/** Test hook: forget any Gemini cooldown. */
+export function resetAiFallbackState(): void { geminiSkipUntil = 0; }
 
 export async function aiFetch(init: RequestInit): Promise<Response> {
   let body: Record<string, unknown>;
@@ -68,13 +77,17 @@ export async function aiFetch(init: RequestInit): Promise<Response> {
   const lovable = Deno.env.get('LOVABLE_API_KEY');
   if (!gemini && !lovable) return json(503, 'AI is not configured');
 
-  if (gemini) {
+  // Without a gateway key there is nothing to fall back to, so always try Gemini.
+  if (gemini && (!lovable || Date.now() >= geminiSkipUntil)) {
     const res = await tryGemini(gemini, body);
-    if (res?.ok) return res;
+    if (res?.ok) { geminiSkipUntil = 0; return res; }
     // Without a gateway key, the caller still learns why Gemini refused
     // (429 busy, 402 no credit) instead of a generic failure.
     if (!lovable) return res ?? json(503, aiErrorMessage(0));
-    if (res) { console.warn('Gemini error, switching to Lovable AI', res.status); await res.body?.cancel(); }
+    const status = res?.status ?? 0;
+    if (!res || status === 429 || status === 402 || status >= 500) geminiSkipUntil = Date.now() + GEMINI_COOLDOWN_MS;
+    console.info('AI fallback: using Lovable AI', status || 'no response');
+    await res?.body?.cancel();
   }
   // Gemini-only options (reasoning effort) are not sent to the gateway.
   const { reasoning_effort: _effort, ...gatewayBody } = body;
