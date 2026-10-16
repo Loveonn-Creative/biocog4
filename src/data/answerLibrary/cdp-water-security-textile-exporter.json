@@ -1,0 +1,69 @@
+{
+  "slug": "cdp-water-security-textile-exporter",
+  "q": "What does CDP Water Security ask a textile or leather exporter to report?",
+  "title": "CDP water questions for textile exporters",
+  "short": "CDP Water Security asks for total water withdrawal, discharge and consumption in megalitres, withdrawal split by source, discharge split by destination and treatment, how much you draw from water-stressed areas, and your water risks, targets and pollutant controls. For a dyeing unit or tannery, effluent quality is central.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian textile dyeing, leather and food exporters",
+  "sections": [
+    {
+      "h": "The volume figures and how they fit together",
+      "ul": [
+        "Withdrawal: all water brought in, split by source: surface water, groundwater (renewable and non-renewable), rainwater harvested, third-party supply such as municipal or tanker water, and seawater.",
+        "Discharge: all water sent out, split by destination (surface water, groundwater, third party such as a CETP or sewer) and by treatment level.",
+        "Consumption: withdrawal minus discharge. It is the water evaporated, built into product or held in sludge.",
+        "Report in megalitres. One megalitre is 1,000 kilolitres, or 1,000 cubic metres."
+      ]
+    },
+    {
+      "h": "Water stress and risk questions",
+      "p": [
+        "CDP asks what share of your withdrawal comes from areas with water stress, and which tool you used to decide. WRI Aqueduct is the common choice: enter each plant's coordinates and record the baseline water stress class. Many textile and leather clusters in Tamil Nadu, Gujarat, Rajasthan and Punjab sit in high-stress basins, so expect this to apply.",
+        "You then describe risks to operations, such as falling groundwater, tanker dependence in summer, or tighter discharge rules, with the likely financial effect and what you are doing about them."
+      ]
+    },
+    {
+      "h": "Effluent questions a dyeing unit or tannery should prepare for",
+      "ul": [
+        "Which pollutants you control and how, for example COD, BOD, total dissolved solids, colour, and chromium for tanneries.",
+        "The standard you meet: the CPCB and State Pollution Control Board discharge standards for your sector, and zero liquid discharge conditions where your consent requires them.",
+        "Whether effluent goes to your own ETP or a common CETP, with monitoring records.",
+        "Any buyer wastewater programme you follow, alongside the legal standard."
+      ]
+    },
+    {
+      "h": "Records that back each answer",
+      "ol": [
+        "Flow meter readings at borewells, municipal connections and tanker receipts for withdrawal.",
+        "ETP inlet and outlet meters, CETP bills and treated water reuse logs for discharge.",
+        "Consent to Operate and the CGWA or state groundwater permission for limits and conditions.",
+        "Laboratory reports on effluent quality, on the frequency your consent sets."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a dyeing unit's annual water balance",
+    "lines": [
+      "Borewell withdrawal: 95,000 kL = 95 ML",
+      "Tanker water: 25,000 kL = 25 ML",
+      "Total withdrawal: 95 + 25 = 120 ML",
+      "Treated effluent sent to CETP: 90,000 kL = 90 ML",
+      "Consumption: 120 minus 90 = 30 ML",
+      "Water recycled inside the plant through the ETP is reported as reuse, not as extra withdrawal"
+    ],
+    "note": "Figures are illustrative. A zero liquid discharge unit reports discharge near zero, so its consumption is close to its withdrawal."
+  },
+  "senseible": "Senseible does not calculate water figures; it reads energy and fuel documents, not water meters or effluent reports. It can supply the energy and Scope 1 and 2 figures that the climate part of a CDP response asks for.",
+  "links": [
+    { "label": "Water and carbon in textiles and leather", "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather" },
+    { "label": "A customer sent a CDP request: what to do", "to": "/answers/cdp-supply-chain-request-what-to-do" },
+    { "label": "Methane from ETP wastewater", "to": "/answers/etp-wastewater-methane-emissions" }
+  ],
+  "sources": [
+    { "label": "CDP corporate questionnaire, water security module (cdp.net)", "url": "https://www.cdp.net" },
+    { "label": "CPCB discharge standards for textile and tannery industries (cpcb.nic.in)", "url": "https://cpcb.nic.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CDP revises its water security questions each cycle; check the current module before filling it."
+}

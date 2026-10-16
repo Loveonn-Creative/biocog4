@@ -1,0 +1,60 @@
+{
+  "slug": "credit-guarantee-for-msme-green-loans-india",
+  "q": "Is there a credit guarantee or first-loss cover for MSME green loans in India?",
+  "title": "Credit guarantees for MSME green loans",
+  "short": "There is no India-wide guarantee scheme only for green loans. A green loan to a micro or small enterprise is usually covered the same way as any other, through CGTMSE, which the lender takes. Energy efficiency loans have also had SIDBI-run risk-sharing facilities backed by the World Bank.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and bankers",
+  "sections": [
+    {
+      "h": "CGTMSE covers green purposes too",
+      "p": [
+        "CGTMSE does not ask whether a loan is green. A loan for a rooftop solar plant, an efficient boiler or a heat pump qualifies on the same terms as a machinery or working capital loan, as long as the borrower is a micro or small enterprise and the lender is a member institution. Medium enterprises are outside it. The ceiling and fee schedule are on the related CGTMSE page."
+      ]
+    },
+    {
+      "h": "Risk-sharing facilities for energy efficiency",
+      "ul": [
+        "SIDBI has run the Partial Risk Sharing Facility for Energy Efficiency (PRSF), supported by the World Bank and the Global Environment Facility. It shares part of a lender's loss on energy efficiency projects, often those delivered by energy service companies (ESCOs).",
+        "SIDBI's own green lines, such as the 4E scheme for end-to-end energy efficiency, are direct loans, not guarantees. They lower the cost or ease the terms of borrowing rather than covering another bank's loss.",
+        "Programmes like these open and close as funding rounds end, so ask SIDBI which facility is taking new projects before you plan around one."
+      ]
+    },
+    {
+      "h": "First-loss cover sits with the lender, not you",
+      "p": [
+        "First-loss and partial guarantees from development banks and blended finance funds are usually signed between the fund and a bank or NBFC for a whole portfolio. The MSME does not apply. What you see is the result: a lender more willing to finance a green project, sometimes with less collateral. Ask your bank directly whether it has a guarantee-backed green portfolio."
+      ]
+    },
+    {
+      "h": "A guarantee protects the lender, not the borrower",
+      "p": [
+        "If you default, the guarantor pays the bank part of its loss. You still owe the full amount, the default still reaches your credit record, and the bank still recovers what it can. A guarantee makes approval more likely; it does not reduce what you must repay. Its fee is usually passed on to you, so add it to the cost of the loan."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: how a guarantee splits a loss",
+    "lines": [
+      "Green loan: Rs 2 crore for an efficient furnace, covered under CGTMSE",
+      "Amount unpaid after default and recovery: Rs 80 lakh",
+      "At an assumed cover of 75%, the guarantee pays the bank Rs 60 lakh and the bank bears Rs 20 lakh",
+      "The borrower still owes the bank the full outstanding amount"
+    ],
+    "note": "The cover percentage varies by borrower category and loan size; take it from the current CGTMSE schedule."
+  },
+  "senseible": "Senseible does not arrange loans or decide eligibility for any cover scheme. Its green loan readiness check and finance application organise the carbon and energy evidence a lender looks at when appraising a green project.",
+  "links": [
+    { "label": "CGTMSE collateral-free loan limit", "to": "/answers/cgtmse-collateral-free-loan-limit" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Climate finance instruments compared", "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026" },
+    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" }
+  ],
+  "sources": [
+    { "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises Sector (rbi.org.in)", "url": "https://www.rbi.org.in" },
+    { "label": "Bureau of Energy Efficiency, energy efficiency financing and risk-sharing facilities for MSMEs (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CGTMSE limits and SIDBI or multilateral risk-sharing programmes change; confirm on cgtmse.in and sidbi.in before relying on a facility."
+}

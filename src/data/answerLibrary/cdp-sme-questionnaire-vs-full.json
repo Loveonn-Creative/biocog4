@@ -1,0 +1,53 @@
+{
+  "slug": "cdp-sme-questionnaire-vs-full",
+  "q": "Should a small supplier answer CDP's SME questionnaire or the full corporate questionnaire?",
+  "title": "CDP SME or full questionnaire?",
+  "short": "Answer the SME questionnaire if CDP's size test says you are eligible and your customer accepts it. Choose the full corporate questionnaire only when a customer asks for it by name, when you want a chance at a leadership score, or when your group already reports Scope 3, targets and verified data.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian MSME suppliers",
+  "sections": [
+    {
+      "h": "How the two questionnaires differ",
+      "ul": [
+        "Coverage: the full corporate questionnaire has general modules on governance, strategy, risks and opportunities, then theme modules for climate change, water security, forests, plastics and biodiversity. The SME questionnaire keeps to a core set of environmental questions in one shorter form.",
+        "Depth: the full version asks for Scope 3 by category, scenario analysis, financial impact of risks, detailed targets and verification statements. The SME version asks for the basics a small company can actually measure.",
+        "Effort: a full response needs input from finance, operations and management. An SME response can usually be prepared by one person with a year of fuel and electricity records.",
+        "Scoring: check on cdp.net whether and how the SME response is scored in the current cycle. The full questionnaire is scored on CDP's four levels, from Disclosure to Leadership."
+      ]
+    },
+    {
+      "h": "Who is eligible for the SME version",
+      "p": [
+        "CDP sets the eligibility test each cycle using headcount and annual revenue. Larger companies, and companies that are part of a group above the limits, are routed to the full questionnaire. Read the current limits on cdp.net before you register, because the portal decides which form you get from the details you enter."
+      ]
+    },
+    {
+      "h": "A decision rule for a small supplier",
+      "ol": [
+        "If you are not eligible for the SME version, you answer the full questionnaire. There is no choice to make.",
+        "If you are eligible and the customer accepts the SME version, take it in your first one or two years.",
+        "Move to the full version when you can report Scope 3, have a dated reduction target, and can get your Scope 1 and 2 independently verified. Without those, extra modules mostly add blank answers.",
+        "If a customer's supplier policy names the full questionnaire or a minimum score, follow the customer. Ask in writing so the requirement is clear."
+      ]
+    },
+    {
+      "h": "Data that carries over when you move up",
+      "p": [
+        "The emissions figures are the same in both forms: Scope 1 from fuels, Scope 2 from electricity, the reporting year and the factors used. Keep the workings and source bills from your SME year, and the first full response becomes an extension of that file rather than a new project."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates Scope 1 and Scope 2 from your fuel invoices and electricity bills, with the factor and source document behind each figure, which covers the emissions questions in either form. It does not choose the questionnaire for you, submit to CDP, or verify your figures.",
+  "links": [
+    { "label": "A customer sent a CDP request: what to do", "to": "/answers/cdp-supply-chain-request-what-to-do" },
+    { "label": "CDP and ESG ratings support", "to": "/esg-ratings" },
+    { "label": "Can I report only Scope 1 and 2?", "to": "/answers/can-i-report-only-scope-1-and-2" }
+  ],
+  "sources": [
+    { "label": "CDP corporate questionnaire, SME questionnaire and eligibility guidance (cdp.net)", "url": "https://www.cdp.net" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CDP revises its SME eligibility limits, modules and scoring each cycle; check cdp.net for the current year."
+}

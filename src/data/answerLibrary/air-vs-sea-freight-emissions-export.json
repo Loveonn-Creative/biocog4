@@ -1,0 +1,65 @@
+{
+  "slug": "air-vs-sea-freight-emissions-export",
+  "q": "How much more carbon does air freight emit than sea freight for an export order?",
+  "title": "Air vs sea freight emissions for exports",
+  "short": "Per tonne-km, air cargo emits tens of times more than a container ship; with GLEC-based defaults of 0.602 and 0.008 kg CO2e per tonne-km the gap is about 75 times. For a whole order the door to door gap is smaller, often 20 to 30 times, because the sea route is longer and needs extra road legs.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Exporters choosing between air and sea for urgent orders",
+  "sections": [
+    {
+      "h": "Why the per tonne-km gap is so large",
+      "p": [
+        "An aircraft burns fuel to stay in the air and climbs with every kilogram it carries, while a large container ship moves thousands of boxes at low speed on a hull that floats. GLEC Framework defaults reflect this: long haul air freight is counted in tenths of a kilogram of CO2e per tonne-km, deep sea container shipping in thousandths. Short haul air, below 1,500 km, is higher still per tonne-km because take-off and climb make up more of the trip."
+      ]
+    },
+    {
+      "h": "Why the order level gap is smaller",
+      "ul": [
+        "Air flies close to the great circle. GLEC adds 95 km to the great circle distance for routing and holding.",
+        "Ships follow sea lanes, so Mumbai to Europe by sea is nearly twice the flight distance, more if the vessel goes around the Cape.",
+        "Sea cargo usually needs a longer truck or rail leg at the European end, from Rotterdam or Hamburg to an inland buyer, and road freight has a much higher factor than the ship."
+      ]
+    },
+    {
+      "h": "Weight and factor traps",
+      "ul": [
+        "Use actual gross weight. The air waybill's chargeable weight can be a volumetric figure and overstates mass for light, bulky goods.",
+        "Belly cargo on passenger flights and dedicated freighters have different factors; use the one that matches the flight if you know it.",
+        "Say whether the air figure includes non-CO2 effects at altitude. GLEC defaults do not; some buyers ask for them shown separately.",
+        "Keep both modes on the same basis, well-to-wake, from the same factor set and edition."
+      ]
+    },
+    {
+      "h": "A decision rule for urgent orders",
+      "p": [
+        "If a buyer tracks supplier emissions, compare the extra air emissions with the order's other emissions before choosing. Splitting an order, flying only the urgent share and shipping the rest, often cuts most of the difference. Record the mode and reason on the shipment file so the figure you report later matches the paperwork."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 kg order, Mumbai to a buyer in Frankfurt",
+    "lines": [
+      "Air: great circle Mumbai to Frankfurt about 6,570 km + 95 km = 6,665 km",
+      "Air: 0.5 t x 6,665 km = 3,332.5 tonne-km; x 0.602 = 2,006.2 kg CO2e",
+      "Sea: Nhava Sheva to Rotterdam about 11,700 km; 0.5 t x 11,700 = 5,850 tonne-km; x 0.008 = 46.8 kg CO2e",
+      "Road Rotterdam to Frankfurt about 450 km: 0.5 t x 450 = 225 tonne-km; x 0.182 (rigid truck) = 40.95 kg CO2e",
+      "Sea door to Frankfurt: 46.8 + 40.95 = 87.75 kg CO2e",
+      "Ratio: 2,006.2 / 87.75 = about 23 times"
+    ],
+    "note": "Factors are the long haul air, container ship and rigid truck defaults in Senseible's logistics calculator, built on the GLEC Framework v3.0. The Indian road legs to the airport and port are left out because they are similar. Other factor sets, such as the UK DESNZ conversion factors, give different values, so treat the ratio as a range, not one number."
+  },
+  "senseible": "Senseible reads freight records and applies weight x distance x mode factor when all three are printed; a record without weight or distance gets no figure. You can compare both routings leg by leg in the logistics calculator. Senseible does not add non-CO2 altitude effects to air freight.",
+  "links": [
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "One container, India to Europe", "to": "/answers/sea-freight-emissions-per-container-india-to-europe" },
+    { "label": "Should flights include radiative forcing?", "to": "/answers/should-flight-emissions-include-radiative-forcing" },
+    { "label": "GLEC Framework explained", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" }
+  ],
+  "sources": [
+    { "label": "GLEC Framework v3.0, Smart Freight Centre", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" },
+    { "label": "UK DESNZ greenhouse gas conversion factors for company reporting, freighting goods", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" }
+  ],
+  "reviewed": "2026-10-16"
+}
