@@ -92,6 +92,13 @@
       "when": 1792070236433,
       "tag": "0012_resource_leads",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1792070296433,
+      "tag": "0013_finance_applications",
+      "breakpoints": true
     }
   ]
 }
