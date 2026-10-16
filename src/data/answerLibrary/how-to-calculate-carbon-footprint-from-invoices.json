@@ -52,7 +52,7 @@
     ],
     "note": "Fuel factors are IPCC 2006 defaults; the grid factor is from the CEA CO2 Baseline Database, version 21.0."
   },
-  "senseible": "This is Senseible's core job: it reads invoice lines, classifies them by HSN or tax code first and keyword only when the unit agrees, and multiplies quantity by a published factor, with no figure where no factor fits. Scope 3 lines go to a separate supplier evidence trail; Senseible does not apply spend-based factors.",
+  "senseible": "This is Senseible's core job: it reads invoice lines, classifies them by HSN or tax code first and keyword only when the unit agrees, and multiplies quantity by a published factor, with no figure where no factor fits. Scope 3 lines go to a separate supplier evidence trail; the reader does not apply spend-based factors on its own, and where only spend is available Senseible can provide a spend-based estimate, labelled as such.",
   "links": [
     { "label": "How Senseible calculates emissions", "to": "/answers/how-senseible-calculates-emissions" },
     { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" },

@@ -48,7 +48,7 @@
     ],
     "note": "Exchange rate, price change and factor are assumptions for illustration; take the real values from the factor dataset's documentation."
   },
-  "senseible": "Senseible reads the taxable value and GST as separate fields on each invoice line, so the pre-tax amount is available. It does not apply spend-based factors; its Scope 3 trail calculates only from printed quantities and approved factors and marks other lines as needing data.",
+  "senseible": "Senseible reads the taxable value and GST as separate fields on each invoice line, so the pre-tax amount is available. The automatic Scope 3 trail calculates only from printed quantities and approved factors and marks other lines as needing data; where only spend is available, Senseible can provide a spend-based estimate, labelled as spend-based with its wider uncertainty.",
   "links": [
     { "label": "Scope 3 Category 1, spend-based", "to": "/answers/scope-3-category-1-spend-based" },
     { "label": "Spend-based vs activity-based Scope 3", "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice" },

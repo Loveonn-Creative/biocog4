@@ -292,7 +292,7 @@ export const answers: Answer[] = [
   {
     slug: 'scope-3-category-1-spend-based', topic: 'compliance', title: 'Scope 3 Category 1: spend vs activity',
     q: 'How do I calculate Scope 3 Category 1 emissions with Senseible?',
-    short: 'The GHG Protocol ranks Category 1 methods from supplier-specific and hybrid to average-data and spend-based. Senseible works from the quantities printed on supplier invoices and approved factors; it does not fill gaps with spend-based estimates, so a line without activity data shows as needing data.',
+    short: 'The GHG Protocol ranks Category 1 methods from supplier-specific and hybrid to average-data and spend-based. Senseible works from the quantities printed on supplier invoices and approved factors; the automatic reader shows a line without activity data as needing data, and where only spend is available Senseible can provide a spend-based estimate, labelled as such.',
     body: ['The supplier evidence check shows how many of your suppliers are backed by bills today and the pace needed to close the gap.'],
     links: [{ label: 'Scope 3 supplier evidence check', to: '/scope-3-supplier-evidence' }],
   },

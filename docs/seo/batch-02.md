@@ -33,7 +33,7 @@ Skipped on purpose: consumer and lifestyle topics; claims Senseible cannot make 
 
 ## Live pages checked (owner, October 2026)
 
-- Fixed: **/answers/scope-3-category-1-spend-based** (Senseible does not fill gaps with spend-based estimates; such lines show as needing data) and **/answers/where-is-senseible-headquartered** (electricity is calculated with India's CEA factor today; other countries' factors are added once reviewed).
+- Fixed: **/answers/scope-3-category-1-spend-based** (the automatic reader shows lines without activity data as needing data; spend-based estimates are provided separately, labelled as such, per the owner rule in brief.md) and **/answers/where-is-senseible-headquartered** (electricity is calculated with India's CEA factor today; other countries' factors are added once reviewed).
 - Kept as they are, because the product has them: **/answers/carbon-credits-with-senseible** (the Carbon Credits section runs the three gates and shows a credit-ready signal) and **/answers/senseible-carbon-api** (the partner programme has its own Partners page).
 
 ## Decisions taken (owner, October 2026)
