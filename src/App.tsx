@@ -11,6 +11,16 @@ import { Loader2 } from "lucide-react";
 // Eagerly load the homepage only; everything else is route-split.
 import Index from "./pages/Index";
 import { AnalyticsTracker } from "./components/AnalyticsTracker";
+// Loaded only on app pages, so public pages keep their small first download.
+const AutoVerifier = lazy(() => import("./components/AutoVerifier"));
+// App pages where pending records are verified in the background. /verify runs
+// its own visible check, so it is not listed.
+const AUTO_VERIFY_PATHS = new Set(["/", "/dashboard", "/history", "/reports", "/monetize", "/mrv-dashboard", "/intelligence"]);
+function AutoVerifyGate() {
+  const { pathname } = useLocation();
+  if (!AUTO_VERIFY_PATHS.has(pathname)) return null;
+  return <Suspense fallback={null}><AutoVerifier /></Suspense>;
+}
 import { RequireAuth } from "./components/RequireAuth";
 import { RouteSEO } from "./components/RouteSEO";
 import { TranslationScope } from "./components/TranslationScope";
@@ -137,6 +147,7 @@ const App = () => (
           <RoutePrefetcher />
           <ScrollManager />
           <AnalyticsTracker />
+          <AutoVerifyGate />
           <RouteSEO />
           <TranslationScope />
           <RoutedBoundary>

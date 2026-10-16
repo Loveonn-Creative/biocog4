@@ -9,7 +9,7 @@ import {
   AlertCircle, TrendingUp, Leaf, Award, XCircle, Info,
   Coins, FileBarChart, BarChart3, Upload
 } from 'lucide-react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { verifyBuckets } from '@/lib/emissionLedger';
 import { CREDIT_VALUE_WITHHELD } from '@/lib/carbonValue';
 import { supabase } from '@/integrations/supabase/client';
@@ -27,7 +27,7 @@ import { DisputeSimulation } from '@/components/trust/DisputeSimulation';
 import { DataConnectors } from '@/components/trust/DataConnectors';
 import { GreenwashingExplainer } from '@/components/trust/GreenwashingExplainer';
 import { useTrustLayerSettings } from '@/hooks/useTrustLayerSettings';
-import { chunk, groupByInvoice, planBulk } from '@/lib/bulkVerify';
+import { chunk, runBulkVerify, type InvoiceOutcome } from '@/lib/bulkVerify';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 
@@ -76,15 +76,6 @@ interface BatchRow {
   scope: number;
 }
 
-/** Outcome per invoice in a bulk run. */
-interface InvoiceOutcome {
-  key: string;
-  emissionIds: string[];
-  status: 'verified' | 'needs_review' | 'rejected' | 'needs_inputs' | 'error';
-  score?: number;
-  totalCO2Kg?: number;
-  message?: string;
-}
 
 const Verify = () => {
   const navigate = useNavigate();
@@ -165,7 +156,7 @@ const Verify = () => {
   // then each invoice whose lines all have evidence is verified on its own.
   // Invoices with gaps are listed and left untouched. Re-running sends the
   // same id set per invoice, so the verifier replays the same result.
-  const handleVerify = async () => {
+  const handleVerify = async (auto = false) => {
     if (pending.length === 0) return;
     setIsVerifying(true);
     setVerificationResult(null);
@@ -175,37 +166,11 @@ const Verify = () => {
     setLastBatch(pending.map(e => ({ id: e.id, category: e.category, scope: e.scope })));
 
     try {
-      const missing: MissingInput[] = [];
-      for (const ids of chunk(pending.map(e => e.id))) {
-        const { data, error } = await supabase.functions.invoke('verify-carbon', {
-          body: { emissionIds: ids, sessionId, userId: user?.id, inspectOnly: true },
-        });
-        if (error) throw new Error(await getFunctionErrorMessage(error, 'The evidence check could not run.'));
-        if (Array.isArray(data?.missingInputs)) missing.push(...data.missingInputs);
-      }
-
-      const plan = planBulk(groupByInvoice(pending), missing);
-      const results: InvoiceOutcome[] = plan.blocked.map(g => ({ key: g.key, emissionIds: g.emissionIds, status: 'needs_inputs' as const }));
-      let single: VerificationResult | null = null;
-
-      for (const g of plan.ready) {
-        for (const ids of chunk(g.emissionIds)) {
-          const { data, error } = await supabase.functions.invoke('verify-carbon', {
-            body: { emissionIds: ids, sessionId, userId: user?.id },
-          });
-          if (error) {
-            results.push({ key: g.key, emissionIds: ids, status: 'error', message: await getFunctionErrorMessage(error, 'Verification could not complete.') });
-          } else if (data?.ready === false) {
-            if (Array.isArray(data.missingInputs)) missing.push(...data.missingInputs);
-            results.push({ key: g.key, emissionIds: ids, status: 'needs_inputs' });
-          } else if (data?.success && data?.data) {
-            single = data.data as VerificationResult;
-            results.push({ key: g.key, emissionIds: ids, status: single.status, score: single.score, totalCO2Kg: single.totalCO2Kg });
-          } else {
-            results.push({ key: g.key, emissionIds: ids, status: 'error', message: data?.error || 'Verification returned no outcome.' });
-          }
-        }
-      }
+      const { results, missing, last } = await runBulkVerify(pending, async (body) => {
+        const { data, error } = await supabase.functions.invoke('verify-carbon', { body });
+        return { data, errorMessage: error ? await getFunctionErrorMessage(error, body.inspectOnly ? 'The evidence check could not run.' : 'Verification could not complete.') : null };
+      }, { sessionId, userId: user?.id });
+      const single = last as VerificationResult | null;
 
       setOutcomes(results);
       const gaps = missing.filter(m => m.fields.length);
@@ -219,7 +184,7 @@ const Verify = () => {
       if (results.some(r => r.status !== 'needs_inputs' && r.status !== 'error')) emitRecordsChanged('verify');
       await refetch();
       if (failed) toast.error(`${failed} invoice${failed === 1 ? '' : 's'} could not be verified. See below.`);
-      else if (blocked && !verified) toast.info('Nothing verified yet: every invoice needs more inputs.');
+      else if (blocked && !verified) { if (!auto) toast.info('Nothing verified yet: every invoice needs more inputs.'); }
       else if (!verified) toast.warning('Checked, but nothing passed. See the result below for what to fix.');
       else toast.success(`${verified} invoice${verified === 1 ? '' : 's'} verified${blocked ? `, ${blocked} need${blocked === 1 ? 's' : ''} inputs` : ''}.`);
     } catch (err) {
@@ -230,6 +195,17 @@ const Verify = () => {
       setIsVerifying(false);
     }
   };
+
+  // Every invoice is checked automatically: on opening this page, pending
+  // records are verified once without a click (same per-invoice evidence
+  // gates). The button stays for re-running after adding missing details.
+  const autoRan = useRef(false);
+  useEffect(() => {
+    if (autoRan.current || !user || !canVerify || emissionsLoading || isVerifying || pending.length === 0) return;
+    autoRan.current = true;
+    void handleVerify(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- run once when pending rows first load
+  }, [user, canVerify, emissionsLoading, pending.length]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -318,7 +294,7 @@ const Verify = () => {
                 
                 <Button 
                   className="w-full glow-primary" 
-                  onClick={handleVerify} 
+                  onClick={() => void handleVerify()} 
                   disabled={isVerifying || !canVerify}
                   size="lg"
                 >
@@ -487,7 +463,7 @@ const Verify = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 No verification outcome was recorded. Your records are unchanged. Details: {verifyError}
               </p>
-              <Button variant="outline" onClick={handleVerify} disabled={isVerifying || pending.length === 0 || !canVerify}>Retry verification</Button>
+              <Button variant="outline" onClick={() => void handleVerify()} disabled={isVerifying || pending.length === 0 || !canVerify}>Retry verification</Button>
             </CardContent>
           </Card>
         )}

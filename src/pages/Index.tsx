@@ -818,7 +818,7 @@ const Index = () => {
     // Say what actually happened: guests keep results in this browser; a
     // result with no countable line saved nothing to verify.
     if (!user) toast.info("Checking your result. It stays in this browser until you sign in.");
-    else if (result?.recordCount) toast.success("Saved to your account. Next: verify it.");
+    else if (result?.recordCount) toast.success("Saved to your account. Verifying it now.");
     // Pass extracted data via navigation state to ensure Verify page has data
     navigate('/verify', { 
       state: { 
