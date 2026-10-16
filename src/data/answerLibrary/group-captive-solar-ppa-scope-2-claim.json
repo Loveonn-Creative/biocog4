@@ -24,7 +24,7 @@
     {
       "h": "Decision rule",
       "p": [
-        "Claim zero only for units that clear all three, counted at your meter in the reporting year. Every other unit stays in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh, disclosed as a stand-in because India publishes no residual mix. Location-based Scope 2 does not move: it is total consumption times the grid factor, whatever the PPA says. For how to count adjusted, banked and lapsed units on the bill, see the group captive reporting answer linked below."
+        "Claim zero only for units that clear all three, counted at your meter in the reporting year. Every other unit stays in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh, disclosed as a stand-in because India publishes no residual mix. Location-based Scope 2 does not move: every kWh you consume still carries the grid factor, regardless of the PPA. For how to count adjusted, banked and lapsed units on the bill, see the group captive reporting answer linked below."
       ]
     },
     {
