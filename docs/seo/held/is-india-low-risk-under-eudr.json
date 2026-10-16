@@ -1,0 +1,54 @@
+{
+  "slug": "is-india-low-risk-under-eudr",
+  "q": "What risk category is India under EUDR, and what does it change for due diligence?",
+  "title": "Is India low risk under EUDR?",
+  "short": "Yes. The Commission's 2025 benchmarking lists India as low risk under EUDR. For an Indian exporter this lightens the buyer's checks, not your paperwork: you still owe plot geolocation, proof of no deforestation after 31 December 2020, and proof the goods were produced legally.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters and EU importers of EUDR commodities",
+  "sections": [
+    {
+      "h": "What an Indian supplier still has to hand over",
+      "ol": [
+        "Geolocation of every plot where the commodity was grown, or of every establishment where cattle were kept for hides and leather.",
+        "The date or period of production and the quantity per lot.",
+        "Evidence that each plot was not deforested, and for wood not degraded, after 31 December 2020.",
+        "Evidence of legality under Indian law: land title or lease, forest and environmental clearances where relevant, and labour and tax compliance.",
+        "A clear chain from plot to shipment, so the lot on the invoice can be traced back to the plots listed."
+      ]
+    },
+    {
+      "h": "What actually gets lighter",
+      "p": [
+        "The EU buyer can skip the formal risk assessment and risk mitigation steps under Article 13 of Regulation (EU) 2023/1115, and authorities check a smaller share of operators sourcing from low risk origins. That means fewer questionnaires about country governance and less pressure for third-party field audits. It does not mean fewer data fields per shipment."
+      ]
+    },
+    {
+      "h": "Small primary producers: the simplified declaration",
+      "p": [
+        "The December 2025 amendment to the EUDR added a lighter route for micro and small primary operators in low risk countries who place on the market or export what they themselves produced. Instead of a due diligence statement for every placement, they file a one-off simplified declaration in the EU Information System and pass its identifier down the chain. Check the final amended text for who qualifies and which location data it accepts before relying on it."
+      ]
+    },
+    {
+      "h": "When low risk stops helping",
+      "ul": [
+        "The lot mixes raw material from India with material from a standard or high risk country; the whole product then needs full due diligence.",
+        "The buyer receives a substantiated concern, for example a plot that overlaps notified forest land; full due diligence applies to that supply.",
+        "India's category changes at a later review of the benchmarking list."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not collect plot geolocation or check deforestation for EUDR. Its supplier due diligence page flags EUDR exposure so you know which supplier relationships need this data pack.",
+  "links": [
+    { "label": "India's EUDR category and your buyer", "to": "/answers/eudr-country-risk-category-india" },
+    { "label": "Due diligence statement: supplier data", "to": "/answers/eudr-due-diligence-statement-supplier-data" },
+    { "label": "Check a plot is deforestation-free since 2020", "to": "/answers/check-plot-deforestation-free-since-2020" },
+    { "label": "Supplier due diligence", "to": "/supplier-due-diligence" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/1115 (EUDR), Articles 2, 9 and 13, as amended by Regulation (EU) 2025/2650 (EUR-Lex)", "url": "https://eur-lex.europa.eu" },
+    { "label": "Commission Implementing Regulation (EU) 2025/1093, country benchmarking annex (EUR-Lex)", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The simplified declaration and application dates come from the December 2025 amendment, and a Commission simplification review was due in 2026; re-check both and India's category."
+}

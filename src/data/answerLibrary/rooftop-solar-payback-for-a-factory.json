@@ -1,0 +1,63 @@
+{
+  "slug": "rooftop-solar-payback-for-a-factory",
+  "q": "How do I calculate the payback of rooftop solar for my factory?",
+  "title": "Rooftop solar payback for a factory",
+  "short": "Simple payback is capex divided by net annual savings. Estimate yearly generation as plant size in kWp times specific yield in kWh per kWp, value each unit at the grid tariff it replaces, subtract yearly maintenance, and divide the installed cost by that figure. Use your own bills and a site yield estimate, not a vendor's headline.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners considering capex or RESCO solar",
+  "sections": [
+    {
+      "h": "Step 1: estimate generation",
+      "p": [
+        "Annual kWh = plant size in kWp x specific yield. Much of India sees roughly 1,400 to 1,600 kWh per kWp per year for a well-oriented, unshaded rooftop system, lower in cloudy or dusty sites. Get a site estimate from a simulation tool or the installer's shading study, and allow for module output falling slowly each year."
+      ]
+    },
+    {
+      "h": "Step 2: value each unit at the tariff it actually replaces",
+      "ul": [
+        "Solar you use on site saves your energy charge plus per unit add-ons such as fuel adjustment and electricity duty, usually in your highest-priced daytime block.",
+        "Solar rarely lowers your demand charge, because a cloudy half hour can still set the month's maximum demand.",
+        "Exported units are worth what your state's metering rule pays: under net metering they offset imports within the settlement period; under gross metering or net billing they earn a feed-in rate that is usually below your tariff.",
+        "On Sundays and holidays a factory may export most of its output, so estimate how much you will use on site."
+      ]
+    },
+    {
+      "h": "Step 3: capex, RESCO and tax",
+      "p": [
+        "Use the installer's firm quote for capex, including structure, inverter, net meter, discom fees and any civil work. Add yearly cleaning and maintenance, and an inverter replacement within the plant's life.",
+        "Under a RESCO or OPEX model you pay nothing upfront and buy solar units at a contracted tariff, so there is no payback; compare the contracted rate with your grid tariff over the contract term. Depreciation on solar equipment lowers tax and shortens payback for a profitable company; ask your CA for the rate that applies to you."
+      ]
+    },
+    {
+      "h": "Step 4: the carbon figure",
+      "p": [
+        "Solar used on site cuts grid imports, and lower imports mean lower location-based Scope 2. Multiply the units you no longer import by 0.710 kg CO2 per kWh, the CEA grid factor. Do not subtract exported units from imports in your Scope 2 figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 kWp on a factory roof (labelled assumptions)",
+    "lines": [
+      "Generation: 100 kWp x 1,450 kWh per kWp = 1,45,000 kWh a year, all used on site (assumed)",
+      "Avoided tariff Rs 8 per kWh (assumed) = Rs 11,60,000; less maintenance Rs 45,000 = Rs 11,15,000 net",
+      "Capex Rs 45,00,000 (assumed quote): payback = 45,00,000 / 11,15,000 = 4.0 years",
+      "If the avoided tariff is Rs 7: 10,15,000 less 45,000 = Rs 9,70,000; payback 4.6 years",
+      "CO2: 1,45,000 kWh x 0.710 = 1,02,950 kg, about 103 tonnes a year"
+    ],
+    "note": "Capex, tariff and yield are illustrative, not market figures; use your quote, your bill and your site estimate."
+  },
+  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills, applies 0.710 kg CO2 per kWh, and its energy transition savings calculator gives a payback and CO2 estimate. It does not design solar plants, read inverter data or quote installation prices.",
+  "links": [
+    { "label": "Solar ROI calculator", "to": "/calculators/energy-transition-savings" },
+    { "label": "Solar loans for MSMEs in India", "to": "/climate-intelligence/solar-loan-for-msme-india" },
+    { "label": "Net metering and Scope 2", "to": "/answers/rooftop-solar-net-metering-scope-2" },
+    { "label": "Rooftop solar loan, Bangladesh factories", "to": "/climate-intelligence/rooftop-solar-loan-factory-bangladesh" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "State net metering and gross metering rules change; check your state commission's current regulation."
+}

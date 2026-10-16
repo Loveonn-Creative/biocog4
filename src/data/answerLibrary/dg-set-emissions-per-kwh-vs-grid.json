@@ -1,0 +1,85 @@
+{
+  "slug": "dg-set-emissions-per-kwh-vs-grid",
+  "q": "How many kg of CO2 does a diesel generator emit per kWh, and is DG power cleaner or dirtier than grid power in India?",
+  "title": "DG set kg CO2 per kWh versus the grid",
+  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plant heads and MSME owners running DG sets for backup or peak load",
+  "sections": [
+    {
+      "h": "kg CO2 per kWh at different loads",
+      "ul": [
+        "0.25 litres per kWh (4 kWh per litre, large set at high load): 0.25 x 2.68 = 0.67 kg CO2 per kWh.",
+        "0.30 litres per kWh (3.3 kWh per litre, typical good load): 0.30 x 2.68 = 0.80 kg CO2 per kWh.",
+        "0.40 litres per kWh (2.5 kWh per litre, light load): 0.40 x 2.68 = 1.07 kg CO2 per kWh.",
+        "0.50 litres per kWh (2 kWh per litre, very light load or a poorly kept set): 1.34 kg CO2 per kWh."
+      ],
+      "p": [
+        "These consumption figures are typical ranges, not a published standard. Use your set's own litres and energy meter reading."
+      ]
+    },
+    {
+      "h": "The break-even point with the grid",
+      "p": [
+        "A DG set matches the grid only when it delivers 2.68 / 0.710 = about 3.77 kWh per litre, or uses 0.265 litres per kWh. Few sets reach that outside a narrow band near rated load. Below it, every kWh from the DG set carries more CO2 than a kWh from the grid."
+      ]
+    },
+    {
+      "h": "Reading a data sheet in grams per kWh",
+      "p": [
+        "Manufacturers often quote specific fuel consumption in grams of diesel per kWh. Diesel gives about 3.2 kg CO2 per kg, from the IPCC 2006 default of 74,100 kg CO2 per TJ and a net calorific value of about 43 TJ per thousand tonnes. So a data sheet figure of, say, 220 g per kWh gives 220 x 3.2 = about 0.70 kg CO2 per kWh. Data sheet figures are for rated load on a test bed; real sets at part load use more."
+      ]
+    },
+    {
+      "h": "How to cut DG kg per kWh",
+      "ul": [
+        "Run the set between about 60% and 80% of its rating; avoid long hours below 40%.",
+        "Split loads across two smaller sets instead of one large set running half empty.",
+        "Move essential low loads such as lights and servers to a UPS or battery during outages.",
+        "Log litres and kWh every refill, so a rising litres per kWh shows up early as a maintenance issue."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the same set at two loads",
+    "lines": [
+      "Week 1, near 75% load: 400 litres for 1,360 kWh = 0.294 litres per kWh",
+      "400 x 2.68 = 1,072 kg CO2, so 1,072 / 1,360 = 0.79 kg CO2 per kWh",
+      "Week 2, near 30% load: 400 litres for 960 kWh = 0.417 litres per kWh",
+      "1,072 / 960 = 1.12 kg CO2 per kWh",
+      "The same 960 kWh from the grid: 960 x 0.710 = 682 kg CO2"
+    ],
+    "note": "The litres and kWh are illustrative; the factor 2.68 kg CO2 per litre is the IPCC 2006 diesel default and covers CO2 only."
+  },
+  "senseible": "Senseible reads litres from diesel invoices and fuel slips at 2.68 kg CO2 per litre for Scope 1, and kWh from electricity bills at 0.710 kg CO2 per kWh, showing the factor and source on every line. It does not meter DG output, so kg per kWh needs your DG meter reading.",
+  "links": [
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Is DG set power Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (DG sets chapter)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

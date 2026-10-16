@@ -1,0 +1,76 @@
+{
+  "slug": "plastic-epr-recycled-content-targets",
+  "q": "What recycled plastic content must my packaging have under India's EPR rules?",
+  "title": "Recycled content targets for plastic packaging",
+  "short": "Rigid plastic packaging (Category I) must contain 30% recycled plastic in 2025-26, rising to 40%, 50% and then 60% from 2028-29, under Schedule II of India's Plastic Waste Management Rules. Flexible packaging starts at 10% and multilayer at 5%, rising later; confirm each year's figure in the current Schedule II.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Producers, importers and brand owners using plastic packaging in India",
+  "sections": [
+    {
+      "h": "Targets by category and year",
+      "ul": [
+        "Category I, rigid plastic packaging: 30% in 2025-26, 40% in 2026-27, 50% in 2027-28, 60% from 2028-29.",
+        "Category II, flexible single or multilayer packaging of one plastic type, including carry bags and sachets: 10% in the first years, rising to 20%.",
+        "Category III, multilayer packaging with at least one non-plastic layer: 5% in the first years, rising to 10%.",
+        "Compostable plastic packaging: no recycled content target."
+      ],
+      "p": [
+        "The targets were first notified in the 2022 amendment and the rules have been amended again since, including on when the higher Category II and III figures start and how shortfalls are treated. Read the current Schedule II on the CPCB centralised EPR portal or the latest MoEFCC gazette notification for your reporting year."
+      ]
+    },
+    {
+      "h": "Food contact packaging",
+      "p": [
+        "Recycled plastic in packaging that touches food is allowed only where food safety rules permit it. Where FSSAI rules do not allow recycled plastic for a use, check how the current Schedule II treats that packaging, including any relief for shortfalls, before you plan around the targets."
+      ]
+    },
+    {
+      "h": "How recycled content is counted",
+      "ul": [
+        "It is measured as a share of the plastic in the packaging you introduce in the year, by weight, per category.",
+        "Only recycled plastic from registered recyclers, with records, counts. Keep purchase invoices and recycler certificates for the resin.",
+        "Annual returns on the CPCB centralised EPR portal report the quantity of packaging and the recycled plastic used."
+      ]
+    },
+    {
+      "h": "How this differs from your EPR obligation",
+      "p": [
+        "Recycled content is about what goes into your packaging. Your EPR obligation is about collecting and recycling packaging after use, met through EPR certificates from registered processors. You need to meet both, and each has its own targets and returns."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: rigid bottles in 2026-27",
+    "lines": [
+      "Rigid plastic packaging introduced: 200 tonnes",
+      "Target for Category I in 2026-27: 40%",
+      "Recycled plastic needed: 200 x 0.40 = 80 tonnes",
+      "If suppliers' recycled resin invoices show 65 tonnes: shortfall = 15 tonnes"
+    ],
+    "note": "Category I figures as notified in Schedule II; check the current amendment before reporting."
+  },
+  "senseible": "Senseible does not calculate plastic EPR or recycled content obligations. It can read the purchase invoices for packaging and recycled resin that you would keep as evidence.",
+  "links": [
+    {
+      "label": "Circular economy services",
+      "to": "/circular-economy"
+    },
+    {
+      "to": "/answers",
+      "label": "More answers on reporting rules"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Plastic Waste Management (Amendment) Rules, 2022, MoEFCC notification of 16 February 2022, Schedule II",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CPCB centralised EPR portal for plastic packaging, guidance",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Plastic packaging categories and recycled content targets have been amended since 2022; recheck the latest MoEFCC amendment before each reporting year."
+}

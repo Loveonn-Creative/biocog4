@@ -1,0 +1,97 @@
+{
+  "slug": "group-captive-solar-scope-2",
+  "q": "How do I report Scope 2 when my factory buys solar power through a group captive or open access arrangement?",
+  "title": "Reporting group captive solar in Scope 2",
+  "short": "Report both ways. Location-based Scope 2 applies the grid factor to all the electricity you consume, including the wheeled solar. Market-based Scope 2 can treat the solar units adjusted on your bill as zero, if your contract gives you their renewable attributes and nobody sold RECs for them.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories in Tamil Nadu, Gujarat, Maharashtra and Karnataka using group captive or open access solar",
+  "sections": [
+    {
+      "h": "Why location-based Scope 2 does not fall",
+      "p": [
+        "Wheeled solar travels over the same grid as everyone else's power. The GHG Protocol Scope 2 Guidance defines location-based Scope 2 as the average intensity of the grid where you consume, so it is total consumption times the grid factor, whatever you contracted. Only a direct private line from a plant to your factory, with no grid in between, changes that."
+      ]
+    },
+    {
+      "h": "When the solar can count as zero in market-based",
+      "p": [
+        "The guidance sets quality criteria for contractual instruments. For a group captive or open access deal, check each one:"
+      ],
+      "ul": [
+        "The contract conveys the renewable attributes of the generation to you.",
+        "Only you claim them: no RECs issued and sold for the same MWh, and the generator does not claim them elsewhere.",
+        "The units are from the reporting period, or close to it.",
+        "The plant is in the same market as your load. Plants on India's national grid are generally treated as one market."
+      ]
+    },
+    {
+      "h": "Which units to claim",
+      "ul": [
+        "Claim the units adjusted at your meter on the discom bill, after transmission and wheeling losses, not the units the plant injected.",
+        "Banked units are claimed when they are adjusted against your consumption; note their generation months, since the guidance asks for instruments as close as possible to the period of use.",
+        "Lapsed banked units that were never adjusted against your load cannot be claimed."
+      ]
+    },
+    {
+      "h": "What to use for the remaining grid power",
+      "p": [
+        "India does not publish a residual mix factor. Use the CEA grid average for the units still drawn from the grid, and say in your report that it is a proxy for the residual mix. This slightly understates market-based Scope 2, because the grid average still contains renewables that others have claimed."
+      ]
+    },
+    {
+      "h": "Evidence to keep",
+      "ol": [
+        "The power purchase or shareholder agreement clause on renewable attributes.",
+        "Monthly discom bills showing units adjusted.",
+        "The energy account from the state load despatch centre or the generator.",
+        "A declaration from the generator that no RECs were issued or sold for your units."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year with group captive solar",
+    "lines": [
+      "Total consumption: 1,000 MWh, of which 600 MWh adjusted as group captive solar",
+      "Location-based: 1,000 MWh x 0.710 t CO2 per MWh = 710 t CO2",
+      "Market-based: solar 600 MWh at zero; grid 400 MWh x 0.710 = 284 t CO2",
+      "Report both: 710 t CO2 location-based and 284 t CO2 market-based, with the residual mix proxy disclosed"
+    ],
+    "note": "The 284 t figure holds only if the solar attributes are contractually yours and not sold as RECs."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from the kWh on your electricity bills at 0.710 kg CO2 per kWh, and market-based Scope 2 when you supply the contract or certificate data. It does not verify that the attribute claim is valid.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity Rules, 2005, Rule 3, and Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 guidance and Rule 3 of the Electricity Rules was amended in 2026; check both before the next report."
+}

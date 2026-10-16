@@ -1,0 +1,78 @@
+{
+  "slug": "eudr-country-risk-category-india",
+  "q": "Is India a low, standard or high risk country under EUDR, and what changes for my buyer?",
+  "title": "India's EUDR risk category and your buyer",
+  "short": "India is classified as low risk under the EU's 2025 country benchmarking (Implementing Regulation (EU) 2025/1093). Your EU buyer can use simplified due diligence and skip the formal risk assessment, but still needs plot geolocation, deforestation-free and legality evidence, and a due diligence statement for every placement.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian EUDR-commodity exporters and EU importers",
+  "sections": [
+    {
+      "h": "How the three EUDR risk categories work",
+      "p": [
+        "Article 29 of the EU Deforestation Regulation (EU) 2023/1115 asks the Commission to place every country, or part of a country, in one of three groups: low, standard or high risk. The first list was adopted in May 2025 as Implementing Regulation (EU) 2025/1093. The annex names the low risk countries and four high risk ones (Belarus, Myanmar, North Korea and Russia); every country not named is standard risk. India is named as low risk.",
+        "The list is reviewed periodically, so a buyer should check the annex in force on the date the goods are placed on the EU market, not a summary from last year."
+      ]
+    },
+    {
+      "h": "What low risk changes for the EU operator",
+      "ul": [
+        "Simplified due diligence under Article 13: the operator does not have to run the full risk assessment (Article 10) or risk mitigation (Article 11) steps.",
+        "Fewer checks by authorities: Article 16 sets minimum check rates of 1% of operators for low risk origins, against 3% for standard and 9% for high risk.",
+        "Lower cost per shipment, because the buyer does not need to commission field audits or satellite risk studies by default."
+      ]
+    },
+    {
+      "h": "What low risk does not change",
+      "ul": [
+        "The information duty under Article 9 stays in full: geolocation of every plot, the quantity, the supplier, and evidence that the land was not deforested after 31 December 2020.",
+        "The product must still be legal under Indian law where it was produced, covering land use rights, environmental, labour and tax rules.",
+        "The buyer must still file a due diligence statement in the EU Information System before placing the goods on the market or exporting them.",
+        "If the buyer learns of information pointing to a risk, such as a plot overlapping forest land, the full Article 10 and 11 steps apply again."
+      ]
+    },
+    {
+      "h": "The condition that trips buyers up: no mixing",
+      "p": [
+        "Simplified due diligence applies only when all the relevant commodities in the product come from low risk countries or regions. A coffee blend with beans from India and a standard risk origin, or a rubber compound using latex from more than one source country, needs full due diligence for the whole product unless the operator can keep the streams separate. Indian exporters who source raw material from neighbouring countries should show the origin of each lot, not only the country of export."
+      ]
+    },
+    {
+      "h": "Micro and small primary producers: a lighter route",
+      "p": [
+        "The December 2025 amendment, Regulation (EU) 2025/2650, added a simplified declaration for micro and small primary operators in low risk countries who place on the EU market what they themselves produced. They file a one-off simplified declaration in the EU Information System instead of a due diligence statement for each placement. Most Indian growers sell through exporters and never place goods on the EU market themselves, so check the amended text for who qualifies before relying on it."
+      ]
+    }
+  ],
+  "senseible": "Senseible's supplier due diligence page flags where a supplier or product may be exposed to EUDR. It does not hold plot geolocation, check satellite deforestation data or file due diligence statements in the EU Information System.",
+  "links": [
+    {
+      "label": "Does EUDR apply to your exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR polygon or single point",
+      "to": "/answers/eudr-geolocation-polygon-or-point"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 on deforestation-free products (EUDR), Articles 9, 13, 16 and 29 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/1093 on country benchmarking under the EUDR (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR (simplified declaration, application dates) (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Country benchmarking was due for its first review in 2026, and the EUDR applies from 30 December 2026 (30 June 2027 for micro and small operators); re-check India's category and the simplified declaration rules before relying on this page."
+}

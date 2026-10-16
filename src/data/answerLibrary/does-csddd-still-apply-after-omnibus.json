@@ -1,0 +1,77 @@
+{
+  "slug": "does-csddd-still-apply-after-omnibus",
+  "q": "Does CSDDD still apply to Indian suppliers after the 2026 Omnibus changes?",
+  "title": "Does CSDDD still apply after the Omnibus?",
+  "short": "Not directly. After Omnibus I (Directive (EU) 2026/470), CSDDD binds only the largest companies, those with more than 5,000 employees and EUR 1.5 billion turnover, from July 2029. An Indian supplier is reached through those buyers' due diligence: questionnaires, contract clauses and audits, not an obligation of its own.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to large EU buyers in textiles, leather, auto parts and chemicals",
+  "sections": [
+    {
+      "h": "Who CSDDD now covers",
+      "ul": [
+        "EU companies, or parents of groups, with more than 5,000 employees and net worldwide turnover above EUR 1.5 billion.",
+        "Non-EU companies, including Indian groups, with net turnover above EUR 1.5 billion generated in the EU. Employee numbers do not count for this test.",
+        "Below these thresholds a company has no CSDDD duty of its own, even if it sells heavily into the EU."
+      ],
+      "p": [
+        "Very few Indian groups cross the EU turnover test. For almost every Indian exporter the question is not whether CSDDD applies to you, but whether one of your customers is in scope."
+      ]
+    },
+    {
+      "h": "When the duties start",
+      "p": [
+        "Omnibus I gives member states until July 2028 to write the amended directive into national law, and in-scope companies apply it from July 2029. Large EU buyers usually start preparing a year or two before that, so supplier questionnaires and revised contracts can arrive well before 2029. Check the dates in Article 37 of the CSDDD as amended by Directive 2026/470, and your buyer's national law, which sets the detail."
+      ]
+    },
+    {
+      "h": "What changed for suppliers",
+      "ul": [
+        "The scope cut means far fewer EU buyers will run formal CSDDD programmes.",
+        "Due diligence is more risk based: buyers are expected to focus on where harm is most likely and severe, rather than map every supplier at once.",
+        "The amended text limits how much information buyers should demand from smaller business partners; read the amended Articles 8 and 10 for the exact wording.",
+        "The duty to adopt a climate transition plan was taken out by Omnibus I, so a CSDDD request is less likely to ask for your emissions targets, though CSRD reporting buyers may still ask for emissions data."
+      ]
+    },
+    {
+      "h": "What an in-scope buyer will still ask you for",
+      "ul": [
+        "A signed supplier code of conduct and contract clauses on labour, environment and audit rights.",
+        "Answers on working hours, wages, child and forced labour, health and safety, and grievance channels.",
+        "Environmental information such as hazardous chemicals, effluent and waste handling.",
+        "Evidence behind your answers: policies, licences, audit reports and records, not just ticked boxes."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions that you can share when a large EU buyer's due diligence asks for environmental data. It does not run human rights or labour due diligence, and its reports are self-declared.",
+  "links": [
+    {
+      "label": "EU rules beyond CBAM that ask for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Who is still in scope of CSRD",
+      "to": "/answers/who-is-still-in-scope-of-csrd"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2026/470 (Omnibus I) amending the CSRD and CSDDD",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "Council of the EU: simplification of sustainability reporting and due diligence signed off, 24 February 2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/"
+    },
+    {
+      "label": "Directive (EU) 2024/1760 (CSDDD), Articles 2, 8 and 10, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Thresholds, the July 2028 and July 2029 dates and the removal of the transition plan duty should be rechecked against the consolidated text of Directive 2026/470 and national transposition laws."
+}

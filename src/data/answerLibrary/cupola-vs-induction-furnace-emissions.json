@@ -1,0 +1,85 @@
+{
+  "slug": "cupola-vs-induction-furnace-emissions",
+  "q": "Does switching from a coke cupola to an induction furnace cut a foundry's carbon footprint in India?",
+  "title": "Cupola to induction: does CO2 fall?",
+  "short": "Not always. On Indian grid power at 0.710 kg CO2 per kWh, an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Foundry owners weighing a furnace change for EU buyers or a green loan",
+  "sections": [
+    {
+      "h": "The two calculations side by side",
+      "ul": [
+        "Cupola: kg coke per tonne melted x 3.02 kg CO2 per kg (IPCC 2006 default for coke oven coke), plus limestone at 0.44 kg CO2 per kg, plus blower electricity.",
+        "Induction: kWh per tonne of liquid metal x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0) for grid power.",
+        "Compare per tonne of good castings, not per tonne melted, because the two furnaces can give different yields and rejection rates."
+      ]
+    },
+    {
+      "h": "Why grid power narrows the gap",
+      "p": [
+        "India's grid still runs mostly on coal, so each kWh carries about 0.710 kg CO2. At 600 kWh per tonne, that is 426 kg CO2 before any losses, which is more than the CO2 from 120 kg of coke. The cupola's emissions are on site (Scope 1); the induction furnace's move to the power station (Scope 2), but the total does not fall by itself."
+      ]
+    },
+    {
+      "h": "What makes induction win",
+      "ul": [
+        "Renewable power through rooftop or ground-mounted solar, open access or a green tariff, reported under market-based Scope 2 with the contract or certificate as evidence.",
+        "Lower kWh per tonne from a modern medium-frequency furnace, full loading, lid discipline and less holding time.",
+        "Better yield and fewer rejects, so less metal is melted per tonne of castings.",
+        "The grid factor falling as India adds renewable capacity; a lower CEA weighted average lowers the induction figure, while coke stays at 3.02."
+      ]
+    },
+    {
+      "h": "How to present it to a buyer or lender",
+      "p": [
+        "Show the arithmetic from your own bills: coke invoices and stock for the cupola months, metered kWh for the induction months, and tonnes of good castings in each. Give location-based and, if you buy renewable power, market-based results separately. A lender's green loan test usually looks at energy saved and the claimed CO2 cut, so a projection that assumes grid power and still claims a large cut will not hold up."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per tonne of metal melted",
+    "lines": [
+      "Cupola: 120 kg coke x 3.02 = 362 kg CO2; blower 30 kWh x 0.710 = 21 kg; total about 384 kg CO2",
+      "Induction on grid: 600 kWh x 0.710 = 426 kg CO2",
+      "Induction with half the power from solar (market-based): 300 kWh x 0.710 = 213 kg CO2",
+      "Result: on grid power induction is about 42 kg higher per tonne melted; with 50% solar it is about 171 kg lower"
+    ],
+    "note": "Coke ratio, blower kWh and induction kWh are labelled assumptions for illustration; foundry cluster studies show wide ranges. Limestone is left out of the cupola line here, which flatters the cupola slightly."
+  },
+  "senseible": "Senseible reads electricity bills (kWh at 0.710 kg CO2 per kWh), so the induction side comes from your own bills. It has no coke factor and gives no figure for coke, so the cupola side needs the 3.02 factor applied by you, and it does not model a furnace change in advance.",
+  "links": [
+    {
+      "label": "Cupola coke CO2 per tonne of castings",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Green loan for a foundry in Kolhapur",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 1 (coke oven coke defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE SME Programme, foundry cluster energy mapping reports (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The induction kWh per tonne and coke ratio ranges are labelled estimates; replace them with BEE cluster study or plant-metered figures where available."
+}

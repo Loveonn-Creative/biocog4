@@ -1,0 +1,71 @@
+{
+  "slug": "ccpa-greenwashing-guidelines-india",
+  "q": "What do India's CCPA greenwashing guidelines require for environmental claims?",
+  "title": "India's CCPA greenwashing guidelines",
+  "short": "India's CCPA greenwashing guidelines, notified in October 2024 under the Consumer Protection Act 2019, require every environmental claim to be specific, backed by verifiable evidence and disclosed where consumers can check it. Generic words like green, eco-friendly or sustainable need qualifiers, and future targets need a clear, actionable plan.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian brands and exporters making green, eco or carbon neutral claims",
+  "sections": [
+    {
+      "h": "Who the guidelines cover",
+      "p": [
+        "The Central Consumer Protection Authority issued the Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024 on 15 October 2024, using its powers under section 18 of the Consumer Protection Act, 2019. They apply to environmental claims made to consumers in India by manufacturers, service providers, product sellers, advertisers, advertising agencies and endorsers, in ads, on packs, on websites and on social media."
+      ]
+    },
+    {
+      "h": "The core requirements",
+      "ul": [
+        "Generic terms such as eco-friendly, green, natural, pure or sustainable must be qualified with accurate, accessible disclosure of what they mean for that product.",
+        "Claims need substantiation: a certificate from a statutory or credible independent body, or internal evidence that can be verified, with the method and data disclosed.",
+        "Disclosure must be easy to reach, for example through a QR code or web link, not buried in fine print.",
+        "A claim about one part, stage or feature must say so; a recycled cap does not make the bottle recycled.",
+        "Comparative claims must rest on verifiable data and a like-for-like basis.",
+        "Aspirational or future claims, such as net zero by a year, are allowed only with clear and actionable plans for how they will be met.",
+        "Claims such as compostable or recyclable call for verification by a statutory body or an independent third party."
+      ]
+    },
+    {
+      "h": "What happens if a claim breaks the rules",
+      "p": [
+        "A misleading environmental claim is treated as a misleading advertisement or unfair trade practice under the Act. Under section 21 the CCPA can order the ad withdrawn or modified and impose a penalty of up to 10 lakh rupees on a manufacturer or endorser, rising to 50 lakh rupees for a repeat offence. It can also bar an endorser from endorsing for up to a year, or up to three years for a repeat offence."
+      ]
+    },
+    {
+      "h": "Applying it to a carbon claim",
+      "ol": [
+        "Say what the figure covers: product or company, which scopes, which year.",
+        "Name the method and factors, for example the GHG Protocol and the CEA grid factor, and keep the calculation and source documents.",
+        "If a carbon neutral claim relies on offsets, say so, and name the credits and their retirement.",
+        "For a target, publish the plan with dates and interim steps; a bare year is not enough."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives measured emissions figures with the source document and factor on every line, which can back a specific, scoped claim. It does not approve, vouch for or label claims, and its Verified status means rule checks passed, not third-party verification.",
+  "links": [
+    {
+      "label": "Greenwashing self-audit: 18 checks",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    },
+    {
+      "label": "What a product footprint claim must state",
+      "to": "/answers/how-to-disclose-a-product-carbon-footprint"
+    },
+    {
+      "label": "Can Senseible spot greenwashing?",
+      "to": "/answers/greenwashing-detection"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021, Environmental labels and declarations: self-declared environmental claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Primary text: CCPA Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024 (15 October 2024), on the Department of Consumer Affairs website, consumeraffairs.nic.in; no approved source URL exists for it yet, and enforcement practice is still developing."
+}

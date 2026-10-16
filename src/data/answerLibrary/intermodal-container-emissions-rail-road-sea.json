@@ -1,0 +1,89 @@
+{
+  "slug": "intermodal-container-emissions-rail-road-sea",
+  "q": "How do I calculate emissions for an export container moved by truck, rail and ship?",
+  "title": "Emissions for a truck, rail and ship container",
+  "short": "Split the trip into legs, calculate each one as cargo weight x leg distance x that mode's factor, then add the legs and the terminal handling in between. ISO 14083 calls this a transport chain. Use the real route and the same factor basis, well-to-wheel, for every leg.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian exporters shipping via ICDs, the Dedicated Freight Corridor and JNPA or Mundra",
+  "sections": [
+    {
+      "h": "Break the chain into elements",
+      "ol": [
+        "Pre-carriage by road: factory to the ICD or rail siding.",
+        "Main carriage by rail: ICD to the port, often over the Dedicated Freight Corridor.",
+        "Sea leg: Indian port to the EU port, with any transhipment port.",
+        "On-carriage by road at destination, if you pay for it.",
+        "Hub operations: container handling at the ICD and at each port. ISO 14083 treats these as their own elements, with their own emissions."
+      ]
+    },
+    {
+      "h": "Which documents give which leg",
+      "ul": [
+        "Road legs: the lorry receipt or e-way bill for distance; the packing list for weight.",
+        "Rail: the railway receipt or the container train operator's invoice, which names the ICD and port.",
+        "Sea: the bill of lading gives the port of loading, any transhipment and the port of discharge. Use the route actually sailed; a diversion round the Cape of Good Hope is far longer than the Suez route.",
+        "Your Incoterm decides which legs are yours. Under FOB you pay up to the ship; under CIF or DAP you also pay the sea leg and beyond."
+      ]
+    },
+    {
+      "h": "Choosing a factor for each leg",
+      "p": [
+        "Use one basis for all legs. GLEC Framework and ISO 14083 defaults are well-to-wheel CO2e per tonne-km. Take each default from the GLEC v3.0 tables with its load assumption, or from the carrier.",
+        "For sea, carriers and Clean Cargo trade lane factors are often given per TEU-km. Convert with the cargo weight per TEU stated by the source, or stay per TEU throughout. Electric rail factors depend on the grid behind them; India's grid is coal heavy, so a default built on another grid can understate an Indian electric train."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Using one distance, port to port, for the whole chain.",
+        "Leaving out the road legs because they are short. Per tonne-km they are the most carbon intensive part.",
+        "Using the container's gross weight on one leg and cargo weight on another.",
+        "Adding empty container repositioning on top of defaults that already allow for it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 t of cargo, Ludhiana to Rotterdam via Mundra",
+    "lines": [
+      "Road, factory to ICD: 20 t x 25 km = 500 tonne-km x 0.062 = 31.0 kg CO2e",
+      "Rail, ICD to Mundra: 20 t x 1,350 km = 27,000 tonne-km x 0.022 = 594.0 kg CO2e",
+      "Sea, Mundra to Rotterdam via Suez: 20 t x 11,500 km = 230,000 tonne-km x 0.008 = 1,840.0 kg CO2e",
+      "Road, Rotterdam to consignee: 20 t x 150 km = 3,000 tonne-km x 0.062 = 186.0 kg CO2e",
+      "Transport legs total: 31.0 + 594.0 + 1,840.0 + 186.0 = 2,651 kg CO2e, about 2.65 t",
+      "Hub operations at the ICD, Mundra and Rotterdam: add from terminal data or GLEC hub defaults"
+    ],
+    "note": "Distances are illustrative. Factors are the defaults in Senseible's logistics calculator, which labels them GLEC v3.0 well-to-wheel: articulated truck 0.062, diesel rail 0.022, container ship 0.008 kg CO2e per tonne-km, each at the calculator's default load. Diesel rail is used as a cautious choice for the rail leg. Check each against the current GLEC tables or your carrier's figure before reporting."
+  },
+  "senseible": "Senseible reads weight and distance from freight bills where they are printed; a leg gets a figure only with both and an approved factor for its mode, otherwise it is marked as needing data. Its logistics calculator adds legs by mode, but it has no hub or terminal factors, so terminal handling must come from your carrier or terminal.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Incoterms and Scope 3 category",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework v3.0 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Clean Cargo trade lane emission factors (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Default intensities in the example are taken from Senseible's calculator; confirm them against the current GLEC Framework tables."
+}

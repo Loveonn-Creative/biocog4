@@ -1,6 +1,12 @@
 # Batch 2: register for validation
 
-**Status: awaiting founder validation. Nothing here is written or published.**
+**Status: approved by the owner (October 2026). Publishing in reviewed batches of 50.**
+
+| Group | Drafted | Reviewed | Held | Live |
+|---|---|---|---|---|
+| A (priority 1, rows 1 to 50) | 50 | 50 | 2 (duplicates: dg-power-vs-grid-electricity-carbon-per-kwh, is-india-low-risk-under-eudr; in docs/seo/held/) | 48 |
+
+Each page is drafted, then independently reviewed for accuracy against primary sources, originality against the nearest live page, search intent, quality and duplication. Pages that cannot be made certain are held, not published. Links to batch 2 pages not yet live are deferred and added when those pages publish.
 
 Source: four research passes over topic lists 4 to 18 (docs/seo/topics-queue.md) plus the 68 "later" rows from batch 1, checked against all 506 live URLs (docs/seo/url-inventory.tsv, including the 198 batch 1 answers). Full register, one row per candidate with question, intent, audience, overlap check, evidence, Senseible tie-in, estimate basis and flags: **docs/seo/batch-02.tsv**.
 

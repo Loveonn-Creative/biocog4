@@ -1,0 +1,62 @@
+{
+  "slug": "cgtmse-collateral-free-loan-limit",
+  "q": "How much can an MSME borrow without collateral in India?",
+  "title": "Collateral-free MSME loan limit in India",
+  "short": "A micro or small enterprise can borrow up to Rs 10 lakh without collateral under RBI rules, and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under the CGTMSE scheme. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Micro and small enterprises seeking loans",
+  "sections": [
+    {
+      "h": "The two limits and how they differ",
+      "ul": [
+        "Up to Rs 10 lakh: RBI's Master Direction on lending to the MSME sector tells banks not to take collateral for loans to micro and small enterprises up to this amount.",
+        "Up to Rs 10 crore: the Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) covers loans up to this ceiling, raised from Rs 5 crore with effect from 1 April 2025 after the Union Budget 2025-26. The bank takes CGTMSE cover instead of property or a personal guarantor."
+      ],
+      "p": [
+        "The bank still appraises your repayment capacity. CGTMSE cover reduces the bank's loss if you default; it does not oblige the bank to lend."
+      ]
+    },
+    {
+      "h": "Who qualifies for CGTMSE cover",
+      "ul": [
+        "Micro and small enterprises with Udyam registration, in manufacturing or services, including retail trade.",
+        "Medium enterprises are outside CGTMSE. Under the MSME Ministry's notification S.O. 1364(E) of 21 March 2025, in force from 1 April 2025, micro means investment up to Rs 2.5 crore and turnover up to Rs 10 crore; small means up to Rs 25 crore and Rs 100 crore.",
+        "The loan must come from a member lending institution: most scheduled commercial banks, small finance banks and many registered NBFCs."
+      ]
+    },
+    {
+      "h": "What it costs",
+      "p": [
+        "CGTMSE charges an annual fee on the amount covered, which the lender usually passes to the borrower. The rate depends on loan size and borrower category, and the share of the loan CGTMSE covers also varies by category. Both are set in CGTMSE's current fee and cover schedule, so ask your bank for the figure in writing before you sign."
+      ]
+    },
+    {
+      "h": "How to ask for it",
+      "ol": [
+        "Tell the branch at the start that you want the loan covered under CGTMSE and do not want to offer collateral.",
+        "Keep Udyam registration, GST returns, the financial records your bank lists and a project or working capital plan ready for the bank's appraisal.",
+        "If the bank asks for collateral on a loan up to Rs 10 lakh, refer to the RBI Master Direction and escalate to the bank's grievance officer if needed."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not arrange loans or decide eligibility for CGTMSE cover. Its green loan readiness check and finance application organise your carbon evidence for a lender reviewing an energy or green loan.",
+  "links": [
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Green loans with carbon data",
+      "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises Sector (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CGTMSE fees, cover ratios and ceilings are revised from time to time; check the current ceiling and fee schedule on cgtmse.in. The Rs 10 crore ceiling applies from 1 April 2025."
+}

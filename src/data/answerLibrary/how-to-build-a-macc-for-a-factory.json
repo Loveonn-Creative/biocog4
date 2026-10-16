@@ -1,0 +1,91 @@
+{
+  "slug": "how-to-build-a-macc-for-a-factory",
+  "q": "How do I build a marginal abatement cost curve for my factory?",
+  "title": "Build a MACC for your factory",
+  "short": "List each emission cutting measure, work out its yearly tonnes cut and its annualised net cost, divide cost by tonnes, and sort from cheapest to dearest. Plot each measure as a bar: width is tonnes cut, height is cost per tonne. Bars below zero save money.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian MSME owners, energy managers, lenders",
+  "sections": [
+    {
+      "h": "Start from a baseline you can defend",
+      "p": [
+        "Take twelve months of electricity bills and fuel invoices, convert them to tonnes of CO2 with one set of factors, and split them by use: motors, compressed air, lighting, boilers, furnaces, DG sets. A measure can only cut what is in the baseline, so the total of the curve can never exceed it."
+      ]
+    },
+    {
+      "h": "For each measure, find four numbers",
+      "ul": [
+        "Capital cost, from a vendor quote or a BEE energy audit report.",
+        "Life in years, the realistic working life of the equipment.",
+        "Yearly change in running cost: energy saved at your actual tariff, minus any extra maintenance or fuel.",
+        "Yearly tonnes cut: energy saved x the factor for that energy."
+      ],
+      "p": [
+        "Annualised net cost = capital x capital recovery factor + extra running cost minus energy savings. For a 10 percent rate, the factor is 0.1627 over 10 years and 0.1102 over 25 years; for other rates use r(1+r)^n divided by ((1+r)^n minus 1)."
+      ]
+    },
+    {
+      "h": "Draw the curve",
+      "ol": [
+        "Sort measures by cost per tonne, most negative first.",
+        "Draw each as a bar. Its width is tonnes cut a year, so bars sit side by side along a cumulative tonnes axis.",
+        "Its height is cost per tonne, below the axis if it saves money.",
+        "Draw a horizontal line at any carbon price that matters to you, such as a CBAM certificate price or a buyer's internal price. Measures below that line are worth doing on carbon alone."
+      ]
+    },
+    {
+      "h": "Where curves go wrong",
+      "ul": [
+        "Overlap: fitting a VFD and replacing the motor on one pump does not give two full savings. Put the first measure in, then size the second on the load that remains.",
+        "Solar and efficiency interact: if efficiency cuts your daytime load, part of the solar output may be exported instead of used. Check the bill structure.",
+        "Different discount rates for different measures, which reorders the curve. Use one rate.",
+        "Treating the order as a plan. The curve ignores downtime, cash limits and which measures must come first."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three measures at a 10% discount rate (illustrative)",
+    "lines": [
+      "LED retrofit: capex Rs 3,00,000, 10 years, CRF 0.1627, so Rs 48,810 a year. Saves 60,000 kWh x Rs 8 = Rs 4,80,000. Net: minus Rs 4,31,190. Cut: 60,000 x 0.710 = 42.6 t CO2. About minus Rs 10,100 per tonne",
+      "Rooftop solar 200 kWp: capex Rs 80,00,000, 25 years, CRF 0.1102, so Rs 8,81,600 a year, plus Rs 80,000 upkeep. Makes 2,80,000 kWh x Rs 8 = Rs 22,40,000. Net: minus Rs 12,78,400. Cut: 2,80,000 x 0.710 = 198.8 t CO2. About minus Rs 6,400 per tonne",
+      "Furnace oil to PNG: burner capex Rs 10,00,000, 10 years, so Rs 1,62,700 a year. 1,00,000 L of oil at Rs 55 (Rs 55,00,000) replaced by 1,08,000 scm of PNG at Rs 50 (Rs 54,00,000), saving Rs 1,00,000. Net: Rs 62,700. Cut: 297.0 minus 221.4 = 75.6 t CO2 (2.97 kg per litre, 2.05 kg per scm). About Rs 830 per tonne",
+      "Curve order: LED (0 to 42.6 t), solar (42.6 to 241.4 t), PNG (241.4 to 317.0 t)"
+    ],
+    "note": "Prices, savings and the 1.08 scm of PNG per litre of oil are illustrative assumptions; use quotes, your tariff and a burner trial. Factors: CEA grid 0.710 kg CO2 per kWh and IPCC 2006 fuel defaults."
+  },
+  "senseible": "Senseible builds the baseline from your invoices and bills, by fuel and site, with the CEA and IPCC factors shown on each line, and its energy transition savings calculator helps size individual options. It does not draw the MACC or hold project costs for you.",
+  "links": [
+    {
+      "label": "Cost per tonne of CO2 abated",
+      "to": "/answers/cost-per-tonne-of-co2-abated"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Furnace oil to PNG saving",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "Decarbonisation",
+      "to": "/decarbonization"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (baseline)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE energy audit reports and guidance",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

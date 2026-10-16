@@ -1,0 +1,71 @@
+{
+  "slug": "group-captive-solar-26-percent-rule",
+  "q": "What are the group captive rules for buying solar power in India?",
+  "title": "Group captive solar: the 26% and 51% test",
+  "short": "Under Rule 3 of the Electricity Rules, 2005, captive users together must own at least 26% of the solar plant's equity with voting rights and consume at least 51% of its yearly generation. Since 1 April 2026 the group is tested as a whole. Pass and you avoid the cross subsidy surcharge.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Industrial consumers sourcing renewable power off-site",
+  "sections": [
+    {
+      "h": "The two tests in Rule 3, as amended in 2026",
+      "ul": [
+        "Ownership: captive users hold not less than 26% of the ownership of the plant, counted as equity share capital with voting rights. Where the plant sits in a special purpose vehicle, the test can apply to the unit identified for captive use.",
+        "Consumption: captive users consume not less than 51% of the electricity generated, worked out on an annual basis.",
+        "Collective test: the Electricity (Amendment) Rules, 2026 check both conditions on all captive users together, replacing the old rule that each user consume in proportion to its share within a 10% variation.",
+        "Individual cap: a user's consumption counts as captive only up to its proportionate share based on ownership, unless that user alone holds 26% or more. A company, its holding company and their subsidiaries count as one user."
+      ]
+    },
+    {
+      "h": "What passing the test is worth",
+      "p": [
+        "Section 9 of the Electricity Act, 2003 lets anyone build a captive plant, and Section 42 exempts captive users from the cross subsidy surcharge on open access power. That surcharge is often a large part of the landed cost, so the captive status can decide whether the deal makes sense. Other charges, such as wheeling, transmission and banking, still apply under state regulations."
+      ]
+    },
+    {
+      "h": "What happens if you fail",
+      "p": [
+        "Compliance is checked after the financial year closes: by the state's designated nodal agency for a plant and users in one state, and by the National Load Despatch Centre for inter-state supply. While verification is pending, cross subsidy and additional surcharge are not charged if the users file the declaration the nodal agency asks for. If the group then fails, the power for that year is treated as ordinary open access supply and those surcharges become payable. One user dropping out or cutting production can sink the collective test, so the shareholder agreement should cover exits and shortfalls."
+      ]
+    },
+    {
+      "h": "How the power shows up in your Scope 2",
+      "p": [
+        "Group captive solar wheeled over the grid is still grid-delivered electricity for location-based Scope 2. In market-based Scope 2 you can count it as solar only if the contract gives you the renewable attributes and no RECs were sold for the same units."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three factories in one solar SPV",
+    "lines": [
+      "Plant generation: 30,000 MWh a year; users hold 26% of equity in the ratio 50 : 30 : 20",
+      "Minimum captive consumption for the group: 30,000 x 51% = 15,300 MWh",
+      "Actual consumption: A 8,000, B 3,500, C 4,000 = 15,500 MWh, above 15,300 on the collective test",
+      "B used 1,090 MWh less than 30% of 15,300 (4,590); A and C made up the gap, but each user's captive units are capped at its proportionate share"
+    ],
+    "note": "Illustrative. How the proportionate share is worked out decides whether A's and C's extra units count; read the notified 2026 rule text and your nodal agency's procedure before relying on a surplus."
+  },
+  "senseible": "Senseible reports location-based and market-based Scope 2; market-based needs the solar contract or certificate data from you. It does not check captive ownership or consumption compliance.",
+  "links": [
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Group captive solar in Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity Rules, 2005, Rule 3, as amended by the Electricity (Amendment) Rules, 2026, and Electricity Act, 2003, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Rule 3 was amended in March 2026, with the collective test and verification procedure in force from 1 April 2026; check the notified text and your state nodal agency's procedure."
+}

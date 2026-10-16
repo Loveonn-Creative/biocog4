@@ -1,0 +1,72 @@
+{
+  "slug": "grid-electricity-hydrogen-carbon-intensity",
+  "q": "What is the carbon intensity of hydrogen made with Indian grid electricity?",
+  "title": "Carbon intensity of grid-powered hydrogen",
+  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Developers and buyers testing electrolyser projects",
+  "sections": [
+    {
+      "h": "The calculation",
+      "ol": [
+        "Electricity per kg of hydrogen: the electrolyser system's consumption, including power electronics and balance of plant. About 50 to 55 kWh per kg is a common planning range; 52 is used here as an assumption.",
+        "Grid share: the fraction of that electricity not matched by renewable supply.",
+        "Intensity from power: kWh per kg x grid share x 0.710 kg CO2 per kWh.",
+        "Add other emissions inside the boundary, such as water treatment, compression and any fuel use."
+      ]
+    },
+    {
+      "h": "How much grid power fits under 2 kg",
+      "p": [
+        "With 52 kWh per kg, the average intensity of all power used must stay below 2 / 52 = 0.038 kg CO2 per kWh. If the rest is renewable at zero, the grid share must be below 0.038 / 0.710 = about 5.4%. In practice the ceiling is lower, because compression, purification and water treatment also use energy and count toward the limit."
+      ]
+    },
+    {
+      "h": "Points that trip up first calculations",
+      "ul": [
+        "The CEA grid factor is CO2 only; the hydrogen threshold is in CO2e. The difference is small for electricity but should be stated.",
+        "Annual averages hide hours when the electrolyser runs on grid power at night. The Green Hydrogen Standard for India averages emissions over the preceding 12 months; check how your certifying scheme measures it.",
+        "Rated stack efficiency is better than real system consumption. Use measured or guaranteed system kWh per kg.",
+        "The Indian standard is framed around renewable energy, including renewable power banked with the grid. Check whether unmatched grid power is allowed at all before planning around the 5% figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of hydrogen",
+    "lines": [
+      "Electricity: 1,000 kg x 52 kWh = 52,000 kWh",
+      "All grid: 52,000 x 0.710 = 36,920 kg CO2, or 36.9 kg CO2 per kg H2",
+      "95% renewable, 5% grid: 2,600 kWh x 0.710 = 1,846 kg CO2, or 1.85 kg CO2 per kg H2",
+      "Headroom left for compression and other inputs: 2.00 to 1.85 = 0.15 kg per kg"
+    ],
+    "note": "52 kWh per kg is an assumption for illustration; use your electrolyser supplier's system figure."
+  },
+  "senseible": "Senseible does not calculate hydrogen carbon intensity. Green hydrogen status comes from the national scheme's accredited process, not from Senseible. It reads kWh from electricity bills at 0.710 kg CO2 per kWh, which covers the grid share of a plant's power use.",
+  "links": [
+    {
+      "label": "India's 2 kg green hydrogen threshold",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Green hydrogen cost economics for MSMEs",
+      "to": "/climate-intelligence/green-hydrogen-msme-cost-economics-2026"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IRENA, Green Hydrogen Cost Reduction (2020), electrolyser efficiency ranges",
+      "url": "https://www.irena.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Green Hydrogen Standard for India and its certification rules may be revised; recheck the boundary and grid power rules before relying on the 5% ceiling."
+}

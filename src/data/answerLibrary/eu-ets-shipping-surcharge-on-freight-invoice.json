@@ -1,0 +1,77 @@
+{
+  "slug": "eu-ets-shipping-surcharge-on-freight-invoice",
+  "q": "How do I account for an EU ETS surcharge on my sea freight invoice?",
+  "title": "EU ETS surcharge on a freight invoice",
+  "short": "Book the EU ETS surcharge as part of freight cost, borne by whoever pays the freight under your Incoterm. It is not an emissions figure and not a carbon price on your goods, so do not convert it into tonnes and do not claim it against CBAM. Calculate shipping emissions separately.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Exporters and importers seeing ETS or FuelEU surcharges from carriers",
+  "sections": [
+    {
+      "h": "Reading the surcharge lines",
+      "ul": [
+        "Names vary by carrier, such as ETS surcharge, emissions surcharge or EU ETS. If a line is unclear, ask the carrier which regulation it covers.",
+        "It is usually charged per container or per TEU and tied to a period, because carriers revise it with the allowance price. Note the period the invoice uses.",
+        "Check whether it is a separate line or folded into the base rate. A separate line is easier to track and compare.",
+        "The charge exists because shipping lines must surrender EU allowances for voyages to and from EU ports; why it applies and how to test the amount is on the exporters page linked below."
+      ]
+    },
+    {
+      "h": "The FuelEU line is a separate thing",
+      "p": [
+        "Regulation (EU) 2023/1805, FuelEU Maritime, applies from 1 January 2025. It caps the greenhouse gas intensity of energy used on board, tightening over time, with penalties for ships that miss it. Carriers often pass on the cost of cleaner fuel or penalties as a second surcharge. It is also a freight cost and also has nothing to do with CBAM."
+      ]
+    },
+    {
+      "h": "Why it does not reduce CBAM",
+      "ul": [
+        "Article 9 of the CBAM Regulation (EU) 2023/956 allows a reduction only for a carbon price effectively paid in the country of origin on the embedded emissions of the goods.",
+        "Embedded emissions under CBAM are the emissions of producing the goods. Sea transport emissions are not part of them.",
+        "The EU ETS maritime charge is an EU carbon price paid by the ship operator, not a price paid in India by the producer."
+      ]
+    },
+    {
+      "h": "How to treat it in your own accounts",
+      "ol": [
+        "Book it as part of freight cost; whoever pays the freight under the Incoterm bears it.",
+        "Do not convert the rupee or euro amount into tonnes of CO2. The formula is commercial and varies by carrier.",
+        "Calculate shipping emissions from activity data instead: container weight, route distance and a sea freight factor, under the GLEC Framework, and report them as Scope 3 Category 4 or 9 depending on who paid for the freight."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads freight records, but a surcharge line is a cost, not activity data, so it is not converted to emissions. It does not split carrier surcharges or count them toward CBAM.",
+  "links": [
+    {
+      "label": "EU ETS vs CBAM: the difference",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "ETS shipping surcharge for exporters",
+      "to": "/answers/eu-ets-shipping-surcharge-indian-exporters"
+    },
+    {
+      "label": "Incoterms and freight: Category 4 or 9?",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Freight emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Article 9",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Directive (EU) 2023/959 amending the EU ETS for maritime transport; Regulation (EU) 2023/1805 FuelEU Maritime (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "GLEC Framework, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Carrier surcharge formulas are commercial and change often; the EU ETS maritime scope may be widened to smaller ships in later reviews."
+}

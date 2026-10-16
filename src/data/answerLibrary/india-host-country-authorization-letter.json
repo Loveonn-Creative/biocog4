@@ -1,0 +1,67 @@
+{
+  "slug": "india-host-country-authorization-letter",
+  "q": "How does a project get India's host country authorization for Article 6?",
+  "title": "India's Article 6 host country authorisation",
+  "short": "You apply to India's National Designated Authority for Article 6, a committee notified by the Ministry of Environment, Forest and Climate Change. It checks the activity against India's approved list, decides whether to authorise the credits, and states their permitted uses. Without that authorisation, credits cannot be used as ITMOs.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian project developers",
+  "sections": [
+    {
+      "h": "What an authorisation does under Article 6",
+      "p": [
+        "Under the Article 6.2 guidance (Decision 2/CMA.3), a mitigation outcome becomes an internationally transferred mitigation outcome (ITMO) only when the host country authorises it. The authorisation states the uses, such as another country's NDC or international mitigation purposes like CORSIA, and when the first transfer happens.",
+        "Once India authorises and the outcome is first transferred, India must apply a corresponding adjustment: it adds those tonnes back to its own emissions balance, so the same reduction is not counted twice."
+      ]
+    },
+    {
+      "h": "Who decides in India",
+      "p": [
+        "The National Designated Authority, a committee notified by MoEFCC and chaired by the ministry's Secretary, decides which activity types can be authorised and approves individual projects. It was first set up in 2022 as the NDAIAPA, and its notification has been revised since, so check moef.gov.in for the current one. Its published activity list favours newer technologies such as green hydrogen and renewable energy with storage over reductions India expects to make on its own for its NDC."
+      ]
+    },
+    {
+      "h": "The steps for a developer",
+      "ol": [
+        "Check that the activity type is on India's published list. If it is not, authorisation is unlikely.",
+        "Find the buyer country or programme, and the cooperative arrangement it relies on, such as a bilateral agreement with India or the Article 6.4 mechanism.",
+        "Prepare the project description, the methodology, the baseline and the additionality case, and the expected tonnes per year.",
+        "Apply to the National Designated Authority through MoEFCC with these documents, following the format and timelines in the current MoEFCC notice.",
+        "If approved, the authorisation names the quantity or the vintages, the authorised uses and the buyer side. Keep it with the project records; validators and buyers will ask for it."
+      ]
+    },
+    {
+      "h": "Article 6.4 projects need a host approval too",
+      "p": [
+        "Under the Paris Agreement crediting mechanism (Article 6.4), the host country first approves the activity and confirms how it fits its NDC. Credits can then be issued as authorised A6.4ERs, which carry a corresponding adjustment, or as mitigation contribution units, which do not. India must state which one applies, so ask for it explicitly."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not prepare or file Article 6 applications and does not deal with authorisations or corresponding adjustments. Its carbon credit eligibility signals are an early screen on your own data, not credit issuance.",
+  "links": [
+    {
+      "label": "India's approved Article 6.2 activities",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "What is a corresponding adjustment",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Decision 2/CMA.3, Guidance on cooperative approaches under Article 6.2 (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "MoEFCC notification constituting the National Designated Authority for Article 6, and its list of Article 6.2 activities",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "India's application format, timelines and activity list are set by MoEFCC notices and may be revised; check the latest notice before applying."
+}
