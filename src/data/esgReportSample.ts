@@ -25,29 +25,23 @@ export const ESG_SAMPLE_FACTS = [
   { value: '19', label: 'BRSR Core codes mapped' },
 ];
 
+/** When to open the report: the situation, the short answer, one line of detail. Written for skimming. */
+export const ESG_SAMPLE_USES_TITLE = 'Open it when one of these lands on your desk';
 export const ESG_SAMPLE_PROBLEMS = [
-  {
-    title: 'A buyer or bank asked for your ESG report, and you have never written one.',
-    body: 'See the structure reviewers expect before you start: environment, social and governance in 31 sections, a materiality matrix, dated targets, and a ready email for sending the report to partners.',
-  },
-  {
-    title: 'Every request names a different framework.',
-    body: 'GRI, BRSR Core, TCFD, CSRD. The report answers them from one dataset: a GRI Content Index and a BRSR Core map point each disclosure to the page that covers it.',
-  },
-  {
-    title: 'Numbers nobody can check get sent back.',
-    body: 'Every emission factor, its source, the reporting boundary and the known gaps are printed, so a buyer, lender or auditor can recompute the figures instead of taking them on trust.',
-  },
+  { ask: 'A buyer or bank wants your ESG report.', answer: 'Borrow the structure.', detail: '31 sections, a materiality matrix and dated targets, laid out the way reviewers read them.' },
+  { ask: 'Every request names a different framework.', answer: 'Answer them all from one dataset.', detail: 'A GRI index and a BRSR Core map point each disclosure to its page.' },
+  { ask: 'Your numbers keep getting questioned.', answer: 'Show the working.', detail: 'Every factor, source and boundary is printed, so anyone can recompute.' },
 ];
 
+export const ESG_SAMPLE_TAKEAWAYS_TITLE = 'What’s inside, page by page';
 export const ESG_SAMPLE_TAKEAWAYS = [
-  { text: 'How a double materiality assessment is presented: 15 topics on one matrix, and the four steps behind it.', pages: 'Pages 6 to 8' },
-  { text: 'A Scope 1, 2 and 3 inventory with each scope’s share, year-on-year change and a pathway to the 2030 target.', pages: 'Page 16' },
-  { text: 'The factor tables: diesel, petrol, natural gas, LPG, grid electricity and the Scope 3 categories, each with its source.', pages: 'Pages 59 and 60' },
-  { text: 'Climate risks and opportunities in TCFD terms, each with a time horizon and a response.', pages: 'Page 23' },
-  { text: 'A GRI Content Index of 56 disclosures and a BRSR Core map of 19 codes.', pages: 'Pages 50 to 55' },
-  { text: 'What honest limits look like: which Scope 3 categories are not yet covered, and why the report is not yet assured.', pages: 'Page 60' },
-  { text: 'A ready-to-send email for sharing an ESG report with buyers and partners.', pages: 'Page 63' },
+  { text: 'Double materiality, presented: 15 topics on one matrix and the four steps behind it.', pages: 'pp. 6-8' },
+  { text: 'A Scope 1, 2 and 3 inventory with shares, year-on-year change and a 2030 pathway.', pages: 'p. 16' },
+  { text: 'Every emission factor with its source: fuels, grid electricity, Scope 3.', pages: 'pp. 59-60' },
+  { text: 'Climate risks in TCFD terms, each with a time horizon and a response.', pages: 'p. 23' },
+  { text: 'A GRI index (56 disclosures) and a BRSR Core map (19 codes).', pages: 'pp. 50-55' },
+  { text: 'Honest limits: what is not covered yet, and why it is not assured.', pages: 'p. 60' },
+  { text: 'A ready email for sending the report to buyers and partners.', pages: 'p. 63' },
 ];
 
 export type AskerId = 'listed_customer' | 'eu_buyer' | 'lender' | 'global';
@@ -82,23 +76,13 @@ export const ESG_SAMPLE_ASKERS: { id: AskerId; label: string; frameworks: string
   },
 ];
 
+export const ESG_SAMPLE_OBJECTIONS_TITLE = 'Fair questions, short answers';
+/** Verdict first, then one line of why: readers see the answer at a glance. */
 export const ESG_SAMPLE_OBJECTIONS = [
-  {
-    q: 'Will auditors and buyers accept a report like this?',
-    a: 'It is built to be checked, not taken on trust. Every factor and source is printed, the boundary and gaps are stated, and the report says plainly that it has not been independently assured. Assurance is an independent assurer’s job; the report gives them a clean trail to start from.',
-  },
-  {
-    q: 'We are an MSME. We do not have this kind of data.',
-    a: 'Most of it comes from documents you already keep: electricity and water bills, fuel invoices, waste manifests and payroll records. Senseible reads bills and invoices directly, so nobody types numbers into a spreadsheet.',
-  },
-  {
-    q: 'Which framework do we actually need?',
-    a: 'Usually the one your customer or lender names. The report maps one dataset to GRI, BRSR Core, TCFD, the UN SDGs and the UN Global Compact, so every request is answered from the same numbers.',
-  },
-  {
-    q: 'Will you spam me or share my details?',
-    a: 'No. We use your details only to send the report and to see who reads it. We never sell them, we keep them for 90 days, and we send updates only if you tick the box. You can ask us to delete them at any time; our Privacy Policy shows how.',
-  },
+  { q: 'Will auditors and buyers accept it?', verdict: 'It is built to be checked.', a: 'Factors, sources, boundary and gaps are all printed. It also says plainly that it is not independently assured, so an assurer knows where to start.' },
+  { q: 'We are an MSME. We do not have this data.', verdict: 'You probably do.', a: 'Most of it sits in electricity and water bills, fuel invoices, waste manifests and payroll. Senseible reads the bills and invoices for you.' },
+  { q: 'Which framework do we need?', verdict: 'Usually the one your customer or lender names.', a: 'One dataset maps to GRI, BRSR Core, TCFD, the UN SDGs and the UN Global Compact.' },
+  { q: 'Will you spam me or share my details?', verdict: 'No.', a: 'We use them only to send the report and see who reads it. Never sold, kept 90 days, deleted sooner if you ask. Updates only if you tick the box.' },
 ];
 
 /** Honest comparison: the other columns describe common practice, not a named competitor. */

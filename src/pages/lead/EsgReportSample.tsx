@@ -7,7 +7,8 @@ import { leadEvents } from "@/components/lead/leadEvents";
 import { ReportAccessCard } from "@/components/lead/ReportAccessCard";
 import {
   ESG_SAMPLE_ANSWER, ESG_SAMPLE_ASKERS, ESG_SAMPLE_COMPARE, ESG_SAMPLE_FACTS, ESG_SAMPLE_INTRO, ESG_SAMPLE_META,
-  ESG_SAMPLE_OBJECTIONS, ESG_SAMPLE_PREVIEWS, ESG_SAMPLE_PROBLEMS, ESG_SAMPLE_TAKEAWAYS, type AskerId,
+  ESG_SAMPLE_OBJECTIONS, ESG_SAMPLE_OBJECTIONS_TITLE, ESG_SAMPLE_PREVIEWS, ESG_SAMPLE_PROBLEMS, ESG_SAMPLE_TAKEAWAYS,
+  ESG_SAMPLE_TAKEAWAYS_TITLE, ESG_SAMPLE_USES_TITLE, type AskerId,
 } from "@/data/esgReportSample";
 
 const PAGE = "esg_report_sample";
@@ -19,9 +20,6 @@ const toForm = (where: string) => {
   window.setTimeout(() => (document.getElementById("rp-name") as HTMLInputElement | null)?.focus({ preventScroll: true }), 450);
 };
 
-const Check = () => (
-  <svg viewBox="0 0 20 20" className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden="true"><path d="M3 11 L8 15 L17 4" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-);
 
 const EsgReportSample = () => {
   const [asker, setAsker] = useState<AskerId>("listed_customer");
@@ -38,7 +36,7 @@ const EsgReportSample = () => {
         image="/resources/esg-report-sample/cover.webp"
         keywords={["sample ESG report India", "ESG report example", "BRSR Core report sample", "GRI content index example", "TCFD disclosure example", "ESG report for MSME"]}
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Sample ESG report", url: ESG_SAMPLE_META.path }]}
-        faqSchema={ESG_SAMPLE_OBJECTIONS.map(f => ({ question: f.q, answer: f.a }))}
+        faqSchema={ESG_SAMPLE_OBJECTIONS.map(f => ({ question: f.q, answer: `${f.verdict} ${f.a}` }))}
       />
       <LeadHeader />
 
@@ -88,32 +86,32 @@ const EsgReportSample = () => {
           </div>
         </section>
 
-        {/* 2. Three problems it solves */}
+        {/* 2. When to open it: situation in muted ink, the answer in bold, one line of detail */}
         <section className="border-y border-border bg-secondary/40">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
-            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight [text-wrap:balance] md:text-3xl">Three problems this report helps you solve</h2>
-            <ol className="mt-8 grid gap-6 md:grid-cols-3 md:gap-8">
-              {ESG_SAMPLE_PROBLEMS.map((p, i) => (
-                <li key={p.title} className="min-w-0">
-                  <span className="text-sm font-semibold tabular-nums text-primary">0{i + 1}</span>
-                  <h3 className="mt-2 text-[18px] font-semibold leading-snug">{p.title}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
+            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight [text-wrap:balance] md:text-3xl">{ESG_SAMPLE_USES_TITLE}</h2>
+            <ul className="mt-8 grid gap-4 md:grid-cols-3">
+              {ESG_SAMPLE_PROBLEMS.map(p => (
+                <li key={p.ask} className="min-w-0 rounded-2xl border border-border bg-background p-5">
+                  <p className="text-[14px] text-muted-foreground">{p.ask}</p>
+                  <p className="mt-3 text-[19px] font-semibold leading-snug">{p.answer}</p>
+                  <p className="mt-1.5 text-[14.5px] leading-relaxed text-foreground/75">{p.detail}</p>
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
         {/* 3. Inside the 64 pages, and the pages for whoever is asking */}
         <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-5 md:py-20 lg:grid-cols-2 lg:gap-14">
           <div className="min-w-0">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">What you will take away</h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{ESG_SAMPLE_ANSWER}</p>
-            <ul className="mt-6 space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{ESG_SAMPLE_TAKEAWAYS_TITLE}</h2>
+            <p className="mt-3 max-w-[60ch] text-[15px] leading-relaxed text-muted-foreground">{ESG_SAMPLE_ANSWER}</p>
+            <ul className="mt-6 divide-y divide-border border-y border-border">
               {ESG_SAMPLE_TAKEAWAYS.map(t => (
-                <li key={t.text} className="flex gap-3 text-[15px] leading-relaxed">
-                  <Check />
-                  <span>{t.text} <span className="whitespace-nowrap text-[13px] text-muted-foreground">{t.pages}</span></span>
+                <li key={t.text} className="grid grid-cols-[4.75rem_1fr] items-baseline gap-3 py-3">
+                  <span className="text-[13px] font-medium tabular-nums text-primary">{t.pages}</span>
+                  <span className="text-[15px] leading-snug">{t.text}</span>
                 </li>
               ))}
             </ul>
@@ -152,17 +150,20 @@ const EsgReportSample = () => {
         {/* 4. Fears, answered plainly, and an honest comparison */}
         <section className="border-t border-border bg-secondary/40">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
-            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight [text-wrap:balance] md:text-3xl">Before you download</h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight [text-wrap:balance] md:text-3xl">{ESG_SAMPLE_OBJECTIONS_TITLE}</h2>
+            <dl className="mt-8 grid gap-x-10 md:grid-cols-2">
               {ESG_SAMPLE_OBJECTIONS.map(o => (
-                <div key={o.q} className="rounded-2xl border border-border bg-background p-5 sm:p-6">
-                  <h3 className="text-[17px] font-semibold leading-snug">{o.q}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{o.a}</p>
+                <div key={o.q} className="border-t border-border py-5">
+                  <dt className="text-[15px] text-muted-foreground">{o.q}</dt>
+                  <dd className="mt-1.5">
+                    <p className="text-[18px] font-semibold leading-snug">{o.verdict}</p>
+                    <p className="mt-1 max-w-[56ch] text-[14.5px] leading-relaxed text-foreground/75">{o.a}</p>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
 
-            <h3 className="mt-14 text-xl font-semibold tracking-tight">How it compares with the usual ways to get a report</h3>
+            <h3 className="mt-12 text-xl font-semibold tracking-tight">How it compares with the usual ways to get a report</h3>
             {/* Cards on phones, a table from md up: no sideways scrolling at 390px. */}
             <div className="mt-5 space-y-3 md:hidden">
               {ESG_SAMPLE_COMPARE.rows.map(r => (

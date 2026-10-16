@@ -233,7 +233,7 @@ function coreRoutes(): SeoRoute[] {
         about: ['ESG reporting', 'GRI Standards', 'BRSR Core', 'TCFD', 'Greenhouse gas inventory'],
         isAccessibleForFree: true,
       },
-      faqLd(ESG_SAMPLE_OBJECTIONS.map(o => ({ question: o.q, answer: o.a }))),
+      faqLd(ESG_SAMPLE_OBJECTIONS.map(o => ({ question: o.q, answer: `${o.verdict} ${o.a}` }))),
       breadcrumbLd(esgCrumbs),
     ],
   });
