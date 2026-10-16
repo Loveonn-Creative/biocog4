@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { useEmissions } from '@/hooks/useEmissions';
+import { useEmissions, calculateSummary } from '@/hooks/useEmissions';
 import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { applyScope, scopeKey } from '@/lib/workspaceScope';
@@ -180,11 +180,24 @@ const Reports = () => {
   // One verified dataset, shared by every framework output.
   // Categories use exactly the rows behind the totals: verified rows for
   // signed-in users (as useEmissions' summary does), each emission id once.
+  // Records read from documents but not verified yet. With no verified record,
+  // the page shows these as a draft, marked unverified everywhere, rather than
+  // an empty page; once anything is verified, outputs use verified rows only.
+  const pendingRows = useMemo(() => {
+    if (!user) return [];
+    const seen = new Set<string>();
+    return emissions.filter(e => e.verified !== true && (seen.has(e.id) ? false : (seen.add(e.id), true)));
+  }, [emissions, user]);
+  const pendingSummary = useMemo(() => calculateSummary(pendingRows), [pendingRows]);
+  const isDraft = !!user && summary.total <= 0 && pendingSummary.total > 0;
+  const shown = isDraft ? pendingSummary : summary;
+
   const reportRows = useMemo(() => {
+    if (isDraft) return pendingRows;
     const rows = user ? emissions.filter(e => e.verified === true) : emissions;
     const seen = new Set<string>();
     return rows.filter(e => (seen.has(e.id) ? false : (seen.add(e.id), true)));
-  }, [emissions, user]);
+  }, [emissions, user, isDraft, pendingRows]);
 
   const dataset: ReportDataset = useMemo(() => {
     // Reporting period from invoice dates (upload date when an invoice has none).
@@ -225,6 +238,7 @@ const Reports = () => {
     ).sort((a, b) => b.co2Kg - a.co2Kg);
 
     return {
+      draft: isDraft,
       organizationName,
       gstin: dbProfile?.gstin ?? null,
       sector: dbProfile?.sector ?? null,
@@ -234,10 +248,10 @@ const Reports = () => {
       generatedAt: new Date().toISOString(),
       periodStart: dates[0] ?? null,
       periodEnd: dates[dates.length - 1] ?? null,
-      scope1Kg: summary.scope1,
-      scope2Kg: summary.scope2,
-      scope3Kg: summary.scope3,
-      totalKg: summary.total,
+      scope1Kg: shown.scope1,
+      scope2Kg: shown.scope2,
+      scope3Kg: shown.scope3,
+      totalKg: shown.total,
       categories,
       evidence: evidence.map(e => ({
         documentHash: e.documentHash,
@@ -274,7 +288,7 @@ const Reports = () => {
           }
         : null,
     };
-  }, [reportRows, summary, evidence, availability, methodologyVersion, factorSources, latestVerification, target, dbProfile, organizationName, dateLocale]);
+  }, [reportRows, shown, isDraft, evidence, availability, methodologyVersion, factorSources, latestVerification, target, dbProfile, organizationName, dateLocale]);
 
   const assessments = useMemo(
     () =>
@@ -318,8 +332,8 @@ const Reports = () => {
 
 
   const downloadFramework = async (fwId: string, kind: 'pdf' | 'xlsx') => {
-    if (summary.total <= 0) {
-      toast.error('No verified emissions data to report yet');
+    if (shown.total <= 0) {
+      toast.error('No emissions data to report yet');
       return;
     }
     setIsGenerating(true);
@@ -600,8 +614,22 @@ const Reports = () => {
           </p>
         </div>
         
-        {summary.total > 0 ? (
+        {shown.total > 0 ? (
           <Tabs defaultValue="reports" className="space-y-6">
+            {isDraft ? (
+              <div role="status" className="rounded-xl border border-warning/40 bg-warning/10 p-4">
+                <p className="font-medium text-foreground">Draft: not verified yet</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  These figures come from {pendingRows.length} {pendingRows.length === 1 ? 'record' : 'records'} read from your bills. None has been verified yet, so every download is marked Draft. Verify them to get a report you can send to a bank or buyer.
+                </p>
+                <Button size="sm" className="mt-3" onClick={() => navigate('/verify')}>Verify now</Button>
+              </div>
+            ) : pendingRows.length > 0 ? (
+              <p className="text-sm text-muted-foreground">
+                {pendingRows.length} {pendingRows.length === 1 ? 'record is' : 'records are'} not verified yet and not included below.{' '}
+                <Link to="/verify" className="font-medium text-foreground underline underline-offset-2">Verify now</Link>
+              </p>
+            ) : null}
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reports">Reports</TabsTrigger>
               <TabsTrigger value="certificates">Reviewed record</TabsTrigger>
@@ -624,15 +652,15 @@ const Reports = () => {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     <div className="p-4 rounded-lg bg-orange-500/10 text-center">
-                      <div className="text-xl font-mono font-bold text-orange-600">{formatNumber(summary.scope1)}</div>
+                      <div className="text-xl font-mono font-bold text-orange-600">{formatNumber(shown.scope1)}</div>
                       <div className="text-xs text-muted-foreground">Scope 1</div>
                     </div>
                     <div className="p-4 rounded-lg bg-blue-500/10 text-center">
-                      <div className="text-xl font-mono font-bold text-blue-600">{formatNumber(summary.scope2)}</div>
+                      <div className="text-xl font-mono font-bold text-blue-600">{formatNumber(shown.scope2)}</div>
                       <div className="text-xs text-muted-foreground">Scope 2</div>
                     </div>
                     <div className="p-4 rounded-lg bg-teal-500/10 text-center">
-                      <div className="text-xl font-mono font-bold text-teal-600">{formatNumber(summary.scope3)}</div>
+                      <div className="text-xl font-mono font-bold text-teal-600">{formatNumber(shown.scope3)}</div>
                       <div className="text-xs text-muted-foreground">Scope 3</div>
                     </div>
                   </div>
@@ -751,7 +779,7 @@ const Reports = () => {
                     <div>
                       <span>Framework Reports</span>
                       <p className="text-sm font-normal text-muted-foreground mt-1">
-                        Each framework renders the same verified records in its own disclosure structure
+                        Each framework renders the same {isDraft ? 'unverified (draft)' : 'verified'} records in its own disclosure structure
                       </p>
                     </div>
                   </CardTitle>

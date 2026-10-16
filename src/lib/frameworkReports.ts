@@ -46,6 +46,9 @@ export interface ReportEvidenceRow {
 }
 
 export interface ReportDataset {
+  /** True when no record is verified yet: every figure comes from unverified
+   *  records and every output is marked as a draft, never as a verified report. */
+  draft?: boolean;
   organizationName: string;
   gstin: string | null;
   sector: string | null;
@@ -235,10 +238,12 @@ const dataQualitySection = (ds: ReportDataset, assessment: FrameworkAssessment):
 // Each line carries its emission id, activity and factor so it can be
 // recomputed and matched to the audit ledger export (full ids and hashes there).
 const evidenceSection = (ds: ReportDataset): Section => {
-  const rows = ds.evidence.filter((e) => e.verificationStatus === 'verified');
+  // A draft lists the unverified records its figures come from, each marked as such.
+  const rows = ds.draft ? ds.evidence : ds.evidence.filter((e) => e.verificationStatus === 'verified');
   const left = ds.evidence.length - rows.length;
   const notes = [
-    rows.length > 200 ? `Showing first 200 of ${rows.length} verified records.` : '',
+    ds.draft ? 'Draft: none of these records is verified yet.' : '',
+    rows.length > 200 ? `Showing first 200 of ${rows.length} ${ds.draft ? '' : 'verified '}records.` : '',
     left > 0 ? `${left} unverified ${left === 1 ? 'record is' : 'records are'} not listed and not counted.` : '',
     'IDs and hashes show their first characters; the audit ledger export has them in full.',
   ].filter(Boolean).join(' ');
@@ -742,6 +747,7 @@ function buildSections(fwId: string, ds: ReportDataset, assessment: FrameworkAss
 }
 
 
+const DRAFT_NOTE = 'DRAFT, NOT VERIFIED: these figures come from uploaded documents that have not been verified yet. Do not submit this as a verified report.';
 const FOOTER_NOTE =
   'Decision-support disclosure generated from the entity\'s own evidence. Not a statutory filing and not an assurance or certification statement. Unevidenced disclosures are declared as gaps in the disclosure index.';
 
@@ -779,11 +785,21 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text(doc.splitTextToSize(fw.name, width), margin, 20);
+  doc.text(doc.splitTextToSize(ds.draft ? `Draft: ${fw.name}` : fw.name, width), margin, 20);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.text(`${ds.organizationName} · ${kgL(ds.totalKg, ds.locale)} total · ${assessment.completeness}% of mapped references evidenced`, margin, 35);
   y = 54;
+  if (ds.draft) {
+    doc.setFillColor(255, 243, 214);
+    const draftLines = doc.splitTextToSize(DRAFT_NOTE, width - 8);
+    doc.rect(margin, y - 6, width, draftLines.length * 4.6 + 6, 'F');
+    doc.setTextColor(110, 70, 0);
+    doc.setFont('helvetica', 'bold');
+    doc.text(draftLines, margin + 4, y);
+    doc.setFont('helvetica', 'normal');
+    y += draftLines.length * 4.6 + 8;
+  }
 
   sections.forEach((section) => {
     ensure(20);
@@ -880,11 +896,11 @@ export function generateFrameworkPDF(fwId: string, ds: ReportDataset): boolean {
     doc.line(margin, pageHeight - 18, pageWidth - margin, pageHeight - 18);
     doc.setFontSize(6.5);
     doc.setTextColor(130);
-    doc.text(doc.splitTextToSize(FOOTER_NOTE, width - 30), margin, pageHeight - 13);
+    doc.text(doc.splitTextToSize(ds.draft ? `${DRAFT_NOTE} ${FOOTER_NOTE}` : FOOTER_NOTE, width - 30), margin, pageHeight - 13);
     doc.text(`${i}/${pages}`, pageWidth - margin, pageHeight - 13, { align: 'right' });
   }
 
-  doc.save(`${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-report-${ds.generatedAt.split('T')[0]}.pdf`);
+  doc.save(`${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'draft-unverified' : 'report'}-${ds.generatedAt.split('T')[0]}.pdf`);
   return true;
 }
 
@@ -909,7 +925,8 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
 
   // Cover sheet identifies the framework and the shared dataset it draws on.
   const cover: Array<Array<string | number>> = [
-    [fw.name],
+    ...(ds.draft ? [[DRAFT_NOTE]] : []),
+    [ds.draft ? `Draft: ${fw.name}` : fw.name],
     ['Framework ID', fw.id],
     ['Organization', ds.organizationName],
     ['Generated', ds.generatedAt],
@@ -939,6 +956,6 @@ export function generateFrameworkExcel(fwId: string, ds: ReportDataset): boolean
     XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), sheetName(section.title));
   });
 
-  XLSX.writeFile(wb, `${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-report-${ds.generatedAt.split('T')[0]}.xlsx`);
+  XLSX.writeFile(wb, `${fw.shortName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${ds.draft ? 'draft-unverified' : 'report'}-${ds.generatedAt.split('T')[0]}.xlsx`);
   return true;
 }
