@@ -69,6 +69,7 @@ export const servicePages: ServiceConfig[] = [
     objections: { price: PRICE_SELF_SERVE, time: 'The check takes a minute. Report timelines are set against your filing date on the scoping call.', data: 'Last year\'s bills, headcount, revenue and any report your customer sent you.', who: WHO_BOTH },
     plan: 'pro',
     product: [
+      { label: 'Sample ESG report (64 pages)', to: '/esg-report-sample' },
       { label: 'CBAM cost calculator', to: '/cbam-calculator' },
       { label: 'BRSR rules explained', to: '/climate-intelligence/brsr-reporting-requirements-india' },
       { label: 'CSRD double materiality for suppliers', to: '/climate-intelligence/csrd-double-materiality-assessment-msme-supplier' },

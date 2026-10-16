@@ -213,6 +213,9 @@ export const Footer = () => {
             <Link to="/white-paper" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               White Paper
             </Link>
+            <Link to="/esg-report-sample" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              Sample ESG Report
+            </Link>
             <p className="text-xs text-muted-foreground">
               HQ: Minarch Tower, Sector 44, Gurugram, India
             </p>
