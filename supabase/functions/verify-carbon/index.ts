@@ -753,7 +753,7 @@ Respond with ONLY a JSON array of recommendation strings, like: ["recommendation
       if ((committed as { reused?: boolean } | null)?.reused && userId && idempotencyKey) return await replayExisting();
     } else if (!rpcMissing) {
       // The transaction rolled back: nothing was written.
-      console.error('commit_verification failed:', commitError.code);
+      console.error('commit_verification failed:', commitError.code, commitError.message, commitError.details ?? '', commitError.hint ?? '');
       const changed = commitError.code === '40001' || !!commitError.message?.includes('records_changed');
       return new Response(
         JSON.stringify({ error: changed
