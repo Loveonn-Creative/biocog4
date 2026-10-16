@@ -41,27 +41,48 @@
     }
   ],
   "example": {
-    "title": "Worked example: action table for a plant emitting 800 t CO2 a year",
+    "title": "Worked example: action table for a plant emitting 1,000 t CO2 a year (hypothetical plant)",
     "lines": [
-      "Baseline FY 2024-25: 800 t CO2 (Scope 1 and 2)",
-      "Rooftop solar, 3,00,000 kWh a year: 3,00,000 x 0.710 = 213,000 kg = 213 t",
-      "Cut diesel generator use by 20,000 L a year: 20,000 x 2.68 = 53,600 kg = 53.6 t",
-      "Total from actions: 213 + 53.6 = 266.6 t, which is 266.6 / 800 = 33.3% of the baseline",
-      "A 42% target would need 0.42 x 800 = 336 t, so the plan must name about 69.4 t more"
+      "Baseline FY 2024-25: 1,000 t CO2 (Scope 1 and 2), hypothetical",
+      "Rooftop solar, 4,00,000 kWh a year: 4,00,000 x 0.710 = 2,84,000 kg = 284 t",
+      "Cut diesel generator use by 15,000 L a year: 15,000 x 2.68 = 40,200 kg = 40.2 t",
+      "Total from actions: 284 + 40.2 = 324.2 t, which is 324.2 / 1,000 = 32.4% of the baseline",
+      "A 42% target would need 0.42 x 1,000 = 420 t, so the plan must name about 95.8 t more"
     ],
-    "note": "Illustrative plant. The 0.710 kg CO2 per kWh grid factor is from the CEA CO2 Baseline Database version 21.0 and the diesel factor is the IPCC 2006 default."
+    "note": "The plant, its baseline and the 42% target are hypothetical. The 0.710 kg CO2 per kWh grid factor is from the CEA CO2 Baseline Database version 21.0 and the diesel factor is the IPCC 2006 default."
   },
   "senseible": "Senseible gives you a measured Scope 1 and 2 baseline from your invoices and bills, with the factor and source document behind each line, and its net zero roadmap builder helps lay out actions. It does not write your transition plan, set or validate your target, or assure it.",
   "links": [
-    { "label": "Writing a transition plan as a small company", "to": "/answers/how-to-write-climate-transition-plan-small-company" },
-    { "label": "Net zero roadmap builder", "to": "/net-zero" },
-    { "label": "MSME net zero roadmap in 12 months", "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants" },
-    { "label": "SBTi SME route eligibility", "to": "/answers/sbti-sme-route-eligibility" }
+    {
+      "label": "Writing a transition plan as a small company",
+      "to": "/answers/how-to-write-climate-transition-plan-small-company"
+    },
+    {
+      "label": "Net zero roadmap builder",
+      "to": "/net-zero"
+    },
+    {
+      "label": "MSME net zero roadmap in 12 months",
+      "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants"
+    },
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    }
   ],
   "sources": [
-    { "label": "Transition Plan Taskforce Disclosure Framework (October 2023), now hosted by the IFRS Foundation", "url": "https://www.ifrs.org" },
-    { "label": "ESRS E1 Climate change, disclosure E1-1 transition plan (efrag.org)", "url": "https://www.efrag.org" },
-    { "label": "SBTi Corporate Net-Zero Standard", "url": "https://sciencebasedtargets.org" }
+    {
+      "label": "Transition Plan Taskforce Disclosure Framework (October 2023), now hosted by the IFRS Foundation",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "ESRS E1 Climate change, disclosure E1-1 transition plan (efrag.org)",
+      "url": "https://www.efrag.org"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard",
+      "url": "https://sciencebasedtargets.org"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "ESRS E1 is being simplified under the EU Omnibus; recheck the transition plan disclosure before quoting it to a buyer."

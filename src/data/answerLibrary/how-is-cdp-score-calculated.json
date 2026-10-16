@@ -37,24 +37,36 @@
     }
   ],
   "example": {
-    "title": "Illustrative example: reading level percentages",
+    "title": "Hypothetical example: reading level percentages",
     "lines": [
       "Disclosure: 76 of 80 points = 95%",
       "Awareness: 54 of 72 points = 75%",
       "Management: 33 of 66 points = 50%",
       "Leadership: 6 of 40 points = 15%",
-      "If the pass mark to move up were 80% (illustrative), this response would pass Disclosure, stop at Awareness, and score in the C band"
+      "If the pass mark to move up were 80% (hypothetical), this response would pass Disclosure, stop at Awareness, and score in the C band"
     ],
     "note": "Point totals and the pass mark are invented to show the mechanics. CDP publishes the real thresholds and weightings in its scoring methodology for each cycle."
   },
   "senseible": "Senseible gives you Scope 1 and Scope 2 figures from your invoices and bills, with the source document and factor behind each line, which supports the Disclosure and Management questions on emissions. Its data is self-declared: a \"Verified\" status in Senseible means rule checks passed, not the third-party verification CDP Leadership points require.",
   "links": [
-    { "label": "A customer sent a CDP request: what to do", "to": "/answers/cdp-supply-chain-request-what-to-do" },
-    { "label": "CDP SME or full questionnaire?", "to": "/answers/cdp-sme-questionnaire-vs-full" },
-    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-emissions" }
+    {
+      "label": "A customer sent a CDP request: what to do",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "CDP SME or full questionnaire?",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
   ],
   "sources": [
-    { "label": "CDP Scoring Introduction and climate change scoring methodology, current cycle (cdp.net)", "url": "https://www.cdp.net" }
+    {
+      "label": "CDP Scoring Introduction and climate change scoring methodology, current cycle (cdp.net)",
+      "url": "https://www.cdp.net"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "CDP updates scoring thresholds, weightings and A List essential criteria each cycle; recheck the current methodology."

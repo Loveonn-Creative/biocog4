@@ -2,7 +2,7 @@
   "slug": "how-much-of-my-credits-go-to-buffer-pool",
   "q": "How much of my carbon credits go into the buffer pool, and why?",
   "title": "How much of my credits go to the buffer?",
-  "short": "Under Verra, a land-based project usually gives up between 10 and 60 percent of the carbon stored in each verification to a shared buffer pool. The exact share is its non-permanence risk rating. The buffer exists because trees, soil carbon and mangroves can lose that carbon later, through fire, drought or a change of land use.",
+  "short": "Under Verra, a land-based project puts a share of each verification's carbon stock gain into a shared buffer pool, equal to its non-permanence risk rating; a project rated above 60 percent fails. The buffer exists because trees, soil and mangroves can lose stored carbon later, through fire, drought or land clearing.",
   "topic": "markets",
   "intent": "explain",
   "audience": "Agroforestry, soil and mangrove project developers in India",
@@ -20,7 +20,7 @@
         "Internal risk: how sound the project's management and finances are, how long the project commits to, and whether the landholders have a reason to keep the carbon in place.",
         "External risk: land tenure and use rights, community engagement and political risk in the region.",
         "Natural risk: fire, flood, drought, pests and storms, judged by how likely and how severe they are at your site.",
-        "Verra's AFOLU Non-Permanence Risk Tool adds these scores into one rating. The rating cannot go below a set floor, and a project whose rating is too high fails the tool and cannot issue."
+        "Verra's AFOLU Non-Permanence Risk Tool adds these scores into one rating, which becomes the percentage withheld. The rating cannot go below a floor the tool sets, and a project rated above 60 fails the analysis and cannot issue until it reduces its risks. Take the floor from the current tool version, as Verra has revised it."
       ]
     },
     {
@@ -33,15 +33,15 @@
       "h": "What happens when carbon is lost",
       "ul": [
         "You report a loss event to the registry within the time its rules set.",
-        "Buffer credits equal to the lost tonnes are cancelled.",
-        "Your project receives no new credits until the loss has been made up from later gains.",
+        "Buffer credits equal to the lost tonnes are cancelled, so credits already sold stay whole.",
+        "Whether new issuance from your project pauses until the loss is made up is set by the current VCS Standard; check it before you plan around a loss.",
         "If the loss was avoidable, for example the land was cleared on purpose, the rules put more of the burden on the project rather than the shared pool."
       ]
     },
     {
       "h": "Other programmes handle it differently",
       "p": [
-        "Gold Standard land-use projects hold back a fixed share rather than a project-specific rating. ICVCM's Core Carbon Principles treat permanence as one of the tests a credit type must pass, so a programme needs some reversal protection, such as a buffer, before its land credits can carry the CCP label."
+        "Gold Standard land-use projects hold back a fixed 20 percent rather than a project-specific rating, and that pool is kept even after the crediting period ends. ICVCM's Core Carbon Principles treat permanence as one of the tests a credit type must pass, so a programme needs some reversal protection, such as a buffer, before its land credits can carry the CCP label."
       ]
     }
   ],
@@ -50,10 +50,6 @@
     {
       "label": "Carbon credits with Senseible",
       "to": "/answers/carbon-credits-with-senseible"
-    },
-    {
-      "label": "Worked buffer pool calculation",
-      "to": "/answers/how-is-buffer-pool-contribution-calculated"
     },
     {
       "label": "AFOLU non-permanence risk rating",
@@ -79,5 +75,16 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "Verra revises the Non-Permanence Risk Tool from time to time; check the current version for the minimum rating and the pass limit before relying on the 10 to 60 percent range."
+  "reviewNote": "Verra revises the Non-Permanence Risk Tool; check the current version for the minimum rating and reversal rules. The above-60 fail line and the Gold Standard 20 percent buffer were checked in October 2026; the 15 percent rating is illustrative.",
+  "example": {
+    "title": "Illustrative: one verification of an agroforestry project",
+    "lines": [
+      "Net carbon stock gain verified for the period: 10,000 t CO2e",
+      "Risk rating: 15% (illustrative; yours comes from the tool)",
+      "Buffer credits: 10,000 x 0.15 = 1,500",
+      "Credits issued to you: 10,000 minus 1,500 = 8,500",
+      "Under a fixed 20% buffer instead: 2,000 to the pool and 8,000 issued"
+    ],
+    "note": "The rating multiplies only the carbon stock change. Reductions that cannot reverse, such as avoided methane, follow your methodology's own rule. Plan revenue and forward sales on issued credits, not verified tonnes."
+  }
 }

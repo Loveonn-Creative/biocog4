@@ -2,7 +2,7 @@
   "slug": "india-climate-finance-taxonomy-what-msmes-need",
   "q": "What does India's climate finance taxonomy mean for an MSME borrower?",
   "title": "India's climate taxonomy and MSMEs",
-  "short": "For now, very little changes. India's climate finance taxonomy is still a draft framework, released by the Ministry of Finance in May 2025, with sector rules yet to come. Banks still use the RBI green deposit list. An MSME should start keeping emissions and energy records that will show which category its project fits.",
+  "short": "For an MSME borrower, India's climate finance taxonomy changes little for now: it is still a May 2025 Ministry of Finance draft with sector rules to come, and banks still use the RBI green deposit list. Start keeping emissions and energy records that show which category your project fits.",
   "topic": "markets",
   "intent": "explain",
   "audience": "MSME owners and lenders in India",
@@ -26,7 +26,7 @@
     {
       "h": "What banks use today",
       "p": [
-        "Until the taxonomy is final, the working list for regulated entities is the RBI Framework for Acceptance of Green Deposits (April 2023). Banks that raise green deposits may lend them only to listed activities, including renewable energy, energy efficiency, clean transportation, climate change adaptation, sustainable water and waste management, pollution prevention and green buildings. It excludes fossil fuel projects, among others. Many green loan products for MSMEs follow this list."
+        "Until the taxonomy is final, the working list for regulated entities is the RBI Framework for Acceptance of Green Deposits (April 2023). Banks that raise green deposits may lend them only to listed activities, including renewable energy, energy efficiency, clean transportation, climate change adaptation, sustainable water and waste management, pollution prevention and green buildings. It excludes fossil fuel projects, among others."
       ]
     },
     {
@@ -41,13 +41,28 @@
   ],
   "senseible": "Senseible's green loan readiness check and its invoice-backed emission records give a lender the before and after evidence it needs to test eligibility. It does not classify activities under the taxonomy or decide whether a loan qualifies.",
   "links": [
-    { "label": "Green finance", "to": "/green-finance" },
-    { "label": "RBI green deposits: what banks finance", "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance" },
-    { "label": "India vs EU taxonomy", "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy" },
-    { "label": "Green loan readiness check", "to": "/green-loan-check" }
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    },
+    {
+      "label": "RBI green deposits: what banks finance",
+      "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance"
+    },
+    {
+      "label": "India vs EU taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
   ],
   "sources": [
-    { "label": "Reserve Bank of India, Framework for Acceptance of Green Deposits (April 2023)", "url": "https://www.rbi.org.in" }
+    {
+      "label": "Reserve Bank of India, Framework for Acceptance of Green Deposits (April 2023)",
+      "url": "https://www.rbi.org.in"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The taxonomy was still a May 2025 draft when reviewed; check finmin.gov.in for a final framework or sector annexures before relying on this page."

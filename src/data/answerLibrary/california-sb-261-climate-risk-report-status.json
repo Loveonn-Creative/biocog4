@@ -2,7 +2,7 @@
   "slug": "california-sb-261-climate-risk-report-status",
   "q": "Do I still need a California SB 261 climate risk report?",
   "title": "Is the SB 261 climate risk report on hold?",
-  "short": "Not for now. In November 2025 the Ninth Circuit paused enforcement of SB 261 while an appeal is heard, and CARB said it would not enforce the reporting duty while that order stands. The law has not been repealed, so a US subsidiary above USD 500 million revenue should keep a report ready.",
+  "short": "Not for now. In November 2025 the Ninth Circuit paused enforcement of SB 261 while an appeal is heard, and CARB said it would not enforce the reporting duty while that order stands. As of October 2026 no ruling has lifted it, but the law stands, so keep a report ready.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian groups with US subsidiaries above USD 500 million revenue",
@@ -25,7 +25,7 @@
     {
       "h": "Where the case stands",
       "p": [
-        "The US Chamber of Commerce and others challenged SB 253 and SB 261 in federal court. In November 2025 the Ninth Circuit granted an injunction pending appeal for SB 261 only, just before the first reports were due on 1 January 2026. CARB then issued an advisory that it would not enforce SB 261 while the injunction is in force. SB 253 was not paused. The final outcome depends on the appeal, so the position can change quickly."
+        "The US Chamber of Commerce and others challenged SB 253 and SB 261 in federal court. On 18 November 2025 the Ninth Circuit granted an injunction pending appeal for SB 261 only, weeks before the first reports were due on 1 January 2026. On 1 December 2025 CARB said it would not enforce that deadline while the injunction is in force and would set a new date once the appeal is decided. The appeal was argued in January 2026 and, as of October 2026, no decision has been published. SB 253 was not paused."
       ]
     },
     {
@@ -34,7 +34,7 @@
         "Confirm whether each US entity would cross the USD 500 million line on its prior year revenue.",
         "Keep a draft climate risk report, or reuse the TCFD or IFRS S2 work your group already does for investors.",
         "Check CARB's site each quarter and when appeal rulings come out.",
-        "If enforcement resumes, work to the deadline CARB then sets, and leave time to have the report approved by management before it goes on your website."
+        "If enforcement resumes, work to the new date CARB sets, and leave time to have the report approved by management before it goes on your website."
       ]
     }
   ],
@@ -64,5 +64,5 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "SB 261 is under an injunction pending appeal in Chamber of Commerce v. CARB; check the Ninth Circuit's ruling and CARB's enforcement advisory on ww2.arb.ca.gov before acting."
+  "reviewNote": "Status as of 16 October 2026: injunction pending appeal still in force, no merits ruling published. Check the Ninth Circuit docket (No. 25-5327) and CARB's SB 261 page on ww2.arb.ca.gov before acting; review this page when the court rules."
 }

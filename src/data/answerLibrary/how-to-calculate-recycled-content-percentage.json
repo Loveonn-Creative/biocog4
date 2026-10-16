@@ -39,7 +39,7 @@
     }
   ],
   "example": {
-    "title": "Worked example: a 50 g plastic container",
+    "title": "Worked example: a 50 g plastic container (hypothetical masses)",
     "lines": [
       "Post-consumer recycled resin: 15 g",
       "Pre-consumer recycled resin bought from a recycler: 5 g",
@@ -52,14 +52,32 @@
   },
   "senseible": "Senseible reads purchase invoices into line items, so where a supplier states the recycled grade and quantity on the invoice, those lines are kept as evidence for your calculation. It does not calculate the percentage for you or certify a recycled content claim.",
   "links": [
-    { "label": "Recycled content in a product footprint", "to": "/answers/how-to-count-recycled-content-in-product-footprint" },
-    { "label": "Plastic EPR recycled content targets", "to": "/answers/plastic-epr-recycled-content-targets" },
-    { "label": "ISO 59020 circularity reporting", "to": "/climate-intelligence/msme-circular-economy-iso-59020-reporting" },
-    { "label": "Circular economy services", "to": "/circular-economy" }
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Plastic EPR recycled content targets",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "ISO 59020 circularity reporting",
+      "to": "/climate-intelligence/msme-circular-economy-iso-59020-reporting"
+    },
+    {
+      "label": "Circular economy services",
+      "to": "/circular-economy"
+    }
   ],
   "sources": [
-    { "label": "ISO 14021:2016, Environmental labels and declarations, self-declared environmental claims (iso.org)", "url": "https://www.iso.org" },
-    { "label": "ISO 59020:2024, Circular economy, measuring and assessing circularity performance (iso.org)", "url": "https://www.iso.org" }
+    {
+      "label": "ISO 14021:2016, Environmental labels and declarations, self-declared environmental claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 59020:2024, Circular economy, measuring and assessing circularity performance (iso.org)",
+      "url": "https://www.iso.org"
+    }
   ],
   "reviewed": "2026-10-16"
 }

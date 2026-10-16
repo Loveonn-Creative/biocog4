@@ -35,7 +35,7 @@
     {
       "h": "When the bill does not show the adjusted units",
       "p": [
-        "Some discoms print only net units and a credit line in rupees. Ask for the monthly energy account from the state load despatch centre or the generator, and reconcile it with the bill month by month. Without the units, you have no basis for the market-based claim, and location-based Scope 2 should be built from the meter reading, not the net figure."
+        "Some discoms print only net units and a credit line in rupees. Get the monthly energy account from the generator or the state load despatch centre and match its adjusted units to each bill. Without the units, you have no basis for the market-based claim, and location-based Scope 2 should be built from the meter reading, not the net figure."
       ]
     }
   ],
@@ -47,7 +47,7 @@
       "Market-based: 1,20,000 kWh at zero, plus 80,000 x 0.710 = 56,800 kg CO2, 56.8 t",
       "Wrong location-based figure from net units only: 80,000 x 0.710 = 56,800 kg CO2, which understates by 85.2 t"
     ],
-    "note": "The 56.8 t market-based figure holds only if the attributes of the 1,20,000 kWh are contractually yours and not sold as RECs. The grid average stands in for a residual mix, which India does not publish; say so in the report."
+    "note": "The 56.8 t market-based figure needs a contract that passes you the attributes of the 1,20,000 kWh, and no RECs sold against them. The grid average stands in for a residual mix, which India does not publish; say so in the report."
   },
   "senseible": "Senseible reads billing details from the HT bill (period, tariff category, sanctioned load, units) and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based alongside when you record the open access units and their contract evidence. It does not check your contract or confirm that RECs were not sold for the same units.",
   "links": [

@@ -40,7 +40,7 @@
     }
   ],
   "example": {
-    "title": "Worked example: a potato cold store in March",
+    "title": "Worked example: a potato cold store in March (hypothetical figures)",
     "lines": [
       "Units billed: 1,20,000 kWh; average stock from the register: 4,000 t",
       "Energy intensity: 1,20,000 / 4,000 = 30 kWh per tonne-month",
@@ -48,18 +48,36 @@
       "Backup diesel: 2,000 L x 2.68 = 5,360 kg CO2 (Scope 1)",
       "If stock falls to 2,000 t in October at 80,000 kWh: 80,000 / 2,000 = 40 kWh per tonne-month, higher only because the store is half empty"
     ],
-    "note": "Figures are illustrative. Compare like months and like stock levels before concluding that efficiency changed."
+    "note": "All figures are hypothetical. Compare like months and like stock levels before concluding that efficiency changed."
   },
   "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, and converts diesel bills at the IPCC default. It does not read stock registers or set an energy benchmark for your store.",
   "links": [
-    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" },
-    { "label": "How to calculate specific energy consumption", "to": "/answers/how-to-calculate-specific-energy-consumption" },
-    { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" },
-    { "label": "Estimate refrigerant leakage without records", "to": "/answers/estimate-refrigerant-leakage-without-records" }
+    {
+      "label": "Cold chain refrigerant leaks and carbon",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    },
+    {
+      "label": "How to calculate specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Estimate refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    }
   ],
   "sources": [
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
-    { "label": "BEE energy efficiency studies and guidance for cold storages (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE energy efficiency studies and guidance for cold storages (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
   ],
   "reviewed": "2026-10-16"
 }

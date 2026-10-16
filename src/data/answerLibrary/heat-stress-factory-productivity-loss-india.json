@@ -2,7 +2,7 @@
   "slug": "heat-stress-factory-productivity-loss-india",
   "q": "How much productivity can Indian factories lose to extreme heat, and how do I estimate it?",
   "title": "Heat stress and lost factory hours",
-  "short": "The ILO projects that India will lose 5.8% of its working hours to heat stress in 2030, about 34 million full-time jobs. For your own factory, estimate it as hours above a safe heat limit, times the share of those hours workers must rest, times workers and wage.",
+  "short": "The ILO projects India will lose 5.8% of working hours to heat stress in 2030, about 34 million full-time jobs, assuming 1.5°C of warming by 2100, with most of it in farming and construction. For your factory, multiply hours above a safe heat limit by the rest share, workers and wage.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Factory owners, HR and lenders assessing chronic heat risk",
@@ -41,7 +41,7 @@
     }
   ],
   "example": {
-    "title": "Worked example: 200 workers on a hot shop floor (illustrative)",
+    "title": "Worked example: 200 workers on a hot shop floor (hypothetical)",
     "lines": [
       "Hot season: 60 working days with 3 afternoon hours a day above the reference WBGT",
       "Rest share in those hours: 25% (assumption from the site heat plan)",
@@ -50,18 +50,33 @@
       "At ₹100 per hour loaded wage: 9,000 x 100 = ₹9,00,000",
       "Share of the year: 200 x 8 hours x 300 days = 4,80,000 hours; 9,000 / 4,80,000 = 1.9%"
     ],
-    "note": "All inputs are illustrative. Replace them with your WBGT log, actual rest regime and wage register; a forging or loading bay will lose more than this."
+    "note": "All inputs are hypothetical. Replace them with your WBGT log, actual rest regime and wage register; a forging or loading bay will lose more than this."
   },
   "senseible": "Senseible's climate risk page lets you flag frequent days above 40°C at your site as a heat hazard to check. It does not calculate lost working hours, WBGT or wage losses; use your own site log for that.",
   "links": [
-    { "label": "Climate risk assessment", "to": "/climate-risk" },
-    { "label": "Physical vs transition climate risk", "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions" },
-    { "label": "Which NGFS scenario should I use?", "to": "/answers/which-ngfs-scenario-should-i-use" }
+    {
+      "label": "Climate risk assessment",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "Physical vs transition climate risk",
+      "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions"
+    },
+    {
+      "label": "Which NGFS scenario should I use?",
+      "to": "/answers/which-ngfs-scenario-should-i-use"
+    }
   ],
   "sources": [
-    { "label": "ISO 7243:2017, Ergonomics of the thermal environment, assessment of heat stress using the WBGT index (iso.org)", "url": "https://www.iso.org" },
-    { "label": "IPCC AR6 Working Group I, chapter on weather and climate extremes", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+    {
+      "label": "ISO 7243:2017, Ergonomics of the thermal environment, assessment of heat stress using the WBGT index (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, chapter on weather and climate extremes",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "The 5.8% and 34 million figures come from the ILO report Working on a Warmer Planet (2019), which has no approved link here; IMD heatwave criteria can be revised."
+  "reviewNote": "The 5.8% and 34 million figures are from the ILO report Working on a Warmer Planet (July 2019), a projection under a 1.5°C warming scenario; ilo.org is not yet on the approved source list. IMD heatwave criteria can be revised."
 }

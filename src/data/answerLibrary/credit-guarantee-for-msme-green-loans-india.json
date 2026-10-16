@@ -44,16 +44,34 @@
     ],
     "note": "The cover percentage varies by borrower category and loan size; take it from the current CGTMSE schedule."
   },
-  "senseible": "Senseible does not arrange loans or decide eligibility for any cover scheme. Its green loan readiness check and finance application organise the carbon and energy evidence a lender looks at when appraising a green project.",
+  "senseible": "Senseible does not lend, arrange loans or decide who qualifies for cover. What it gives you is the evidence side: the green loan readiness check and the finance application put your energy and carbon records in the form a banker appraising a green project asks for.",
   "links": [
-    { "label": "CGTMSE collateral-free loan limit", "to": "/answers/cgtmse-collateral-free-loan-limit" },
-    { "label": "Green loan readiness check", "to": "/green-loan-check" },
-    { "label": "Climate finance instruments compared", "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026" },
-    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" }
+    {
+      "label": "CGTMSE collateral-free loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    },
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    }
   ],
   "sources": [
-    { "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises Sector (rbi.org.in)", "url": "https://www.rbi.org.in" },
-    { "label": "Bureau of Energy Efficiency, energy efficiency financing and risk-sharing facilities for MSMEs (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+    {
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises Sector (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency financing and risk-sharing facilities for MSMEs (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "CGTMSE limits and SIDBI or multilateral risk-sharing programmes change; confirm on cgtmse.in and sidbi.in before relying on a facility."

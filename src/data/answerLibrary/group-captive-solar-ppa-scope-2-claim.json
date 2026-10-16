@@ -2,37 +2,35 @@
   "slug": "group-captive-solar-ppa-scope-2-claim",
   "q": "Does a group captive solar PPA let me report lower market-based Scope 2?",
   "title": "Group captive PPA and market-based Scope 2",
-  "short": "Yes, but only for the solar units adjusted against your load whose renewable attributes the PPA gives to you alone. Captive status under the Electricity Rules saves surcharges; it does not by itself prove a carbon claim. If RECs or credits were sold for the same units, or the contract is silent, those units take the grid factor.",
+  "short": "Only for the solar units adjusted against your load whose renewable attributes the PPA gives to you alone. Captive status under Rule 3 of the Electricity Rules saves surcharges; it does not prove a carbon claim. Units with RECs or carbon credits sold against them, or a contract silent on attributes, stay at the grid factor.",
   "topic": "markets",
   "intent": "decision",
   "audience": "Indian manufacturers signing open-access or group captive PPAs",
   "sections": [
     {
-      "h": "Captive status and the carbon claim are two separate tests",
+      "h": "Captive status and the carbon claim are separate tests",
       "p": [
-        "Rule 3 of the Electricity Rules, 2005 decides whether a plant is captive: users holding at least 26% of the equity and consuming at least 51% of the output. Passing it removes the cross subsidy surcharge. The GHG Protocol Scope 2 Quality Criteria decide whether you can use the power to lower market-based Scope 2. A plant can pass the first and fail the second, for example if the attributes were sold to someone else. A group captive plant need not be renewable either, so confirm the source."
+        "Rule 3 of the Electricity Rules, 2005, as amended in March 2026, decides whether the plant is captive: captive users together hold at least 26% of the equity and consume at least 51% of the output in the year. Passing it is worth money, because Section 42 of the Electricity Act, 2003 exempts captive users from the cross subsidy surcharge. It says nothing about who owns the renewable attributes. That is decided by your contract and tested against the GHG Protocol Scope 2 Quality Criteria. A plant can pass Rule 3 and still give you no carbon claim, and a group captive plant need not be solar at all, so confirm the source in the agreement."
       ]
     },
     {
-      "h": "Five checks before you claim",
+      "h": "Three things that break the claim",
       "ol": [
-        "Attributes: the PPA or shareholder agreement says the renewable attributes of the units supplied pass to you, and the generator will not sell or claim them elsewhere.",
-        "No RECs for your units: the generator has not been issued RECs for the same MWh under the CERC REC Regulations, 2022, or, if it has, you hold and redeem them.",
-        "No double claim through credits: if the plant sells carbon credits for the same generation, many buyers and programmes treat the attribute as already used. Ask, and get it in writing.",
-        "Units and period: you claim units adjusted at your meter in the reporting year, from the load despatch centre energy account, after losses. Lapsed banked units are out.",
-        "Same market: the plant is on India's grid. Indian plants are generally treated as one market for Indian load."
+        "The contract is silent. Many group captive deals are written as share subscription and power supply agreements focused on tariff and surcharge. If no clause transfers the renewable attributes to you, and bars the developer from claiming them, you have power but no attribute.",
+        "RECs were issued for your units. Under the CERC REC Regulations, 2022 a generator can be issued RECs for its output. If it sells RECs for MWh that were also supplied to you, those MWh are claimed by the REC buyer, not you. Ask for the REC registry statement, not just a letter.",
+        "Carbon credits were sold for the same generation. Older solar parks were often registered for carbon credits. A buyer of those credits is paying for the same generation's emission reduction, and many customers and programmes will not accept you also reporting it as zero-carbon power. Ask whether the project is registered with Verra, Gold Standard or another programme, and get the answer in writing."
       ]
     },
     {
       "h": "Decision rule",
       "p": [
-        "Claim zero for a unit only if all five checks pass for it. Units that fail any check stay in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh, disclosed as a proxy because India publishes no residual mix. Location-based Scope 2 stays at total consumption times the grid factor whatever the PPA says."
+        "Claim zero only for units that clear all three, counted at your meter in the reporting year. Every other unit stays in market-based Scope 2 at the grid average, 0.710 kg CO2 per kWh, disclosed as a stand-in because India publishes no residual mix. Location-based Scope 2 does not move: it is total consumption times the grid factor, whatever the PPA says. For how to count adjusted, banked and lapsed units on the bill, see the group captive reporting answer linked below."
       ]
     },
     {
-      "h": "Watch the GHG Protocol revision",
+      "h": "Signing a long PPA now",
       "p": [
-        "The GHG Protocol is revising its Scope 2 Guidance. Proposals under discussion include hourly matching of renewable supply to consumption and tighter deliverability rules. A solar PPA that covers your annual units may cover far fewer once matched hour by hour, because solar does not generate at night. If you are signing a long PPA now, ask for hourly generation data in the contract so you can recalculate later."
+        "The GHG Protocol is revising the Scope 2 Guidance, and its draft has floated hourly matching and stricter deliverability tests. Solar produces nothing at night, so a PPA sized to your annual units could cover much less of your load if claims are later matched hour by hour. Ask for hourly generation data and an attribute clause that covers any future certificate scheme, so you can recalculate without renegotiating."
       ]
     }
   ],
@@ -43,21 +41,39 @@
       "The generator sold RECs for 500 MWh of that solar, so only 1,500 MWh pass",
       "Location-based: 3,000 MWh x 0.710 t CO2 per MWh = 2,130 t CO2",
       "Market-based: 1,500 MWh at zero; (3,000 minus 1,500) x 0.710 = 1,065 t CO2",
-      "If all 2,000 MWh had passed: 1,000 x 0.710 = 710 t CO2"
+      "If all 2,000 MWh had passed: 1,000 x 0.710 = 710 t CO2, so the REC sale costs you 355 t of claimed reduction"
     ],
-    "note": "Illustrative figures. The test applies unit by unit, so one clause in the PPA can move hundreds of tonnes."
+    "note": "Illustrative figures. The test applies unit by unit, so a single REC sale or contract clause can move hundreds of tonnes."
   },
-  "senseible": "Senseible reports location-based Scope 2 from your bills at 0.710 kg CO2 per kWh and market-based Scope 2 when you supply the PPA, energy account or REC data. It does not test captive compliance or check whether the generator sold RECs or credits for your units.",
+  "senseible": "Senseible works out location-based Scope 2 from the kWh on your bills at the CEA factor, and adds market-based Scope 2 once you give it the PPA attribute clause, energy account and REC statement. Checking captive compliance, REC registry entries or carbon credit registrations is your job, not Senseible's.",
   "links": [
-    { "label": "Group captive solar in Scope 2", "to": "/answers/group-captive-solar-scope-2" },
-    { "label": "The 26% group captive rule", "to": "/answers/group-captive-solar-26-percent-rule" },
-    { "label": "What a PPA should say for a carbon claim", "to": "/answers/what-to-put-in-ppa-for-carbon-claim" },
-    { "label": "Green energy open access in India", "to": "/climate-intelligence/green-energy-open-access-india" }
+    {
+      "label": "Group captive solar in Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "The 26% group captive rule",
+      "to": "/answers/group-captive-solar-26-percent-rule"
+    },
+    {
+      "label": "What a PPA should say for a carbon claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria", "url": "https://ghgprotocol.org/scope-2-guidance" },
-    { "label": "Electricity Rules, 2005, Rule 3, and Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, Ministry of Power", "url": "https://powermin.gov.in" }
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity Rules, 2005, Rule 3, and Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "The GHG Protocol Scope 2 revision (hourly matching, deliverability) may change this test; recheck before each reporting cycle."
+  "reviewNote": "The GHG Protocol Scope 2 revision (hourly matching, deliverability) may change this test, and Rule 3 was amended in March 2026; recheck both before each reporting cycle."
 }

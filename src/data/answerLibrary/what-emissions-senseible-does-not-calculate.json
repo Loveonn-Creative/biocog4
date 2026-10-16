@@ -10,13 +10,13 @@
     {
       "h": "Sources that an invoice cannot measure",
       "p": [
-        "An invoice records a purchase, not what escaped or reacted on site. A refrigerant top-up invoice shows gas bought, not gas leaked; SF6 in switchgear, CO2 released when limestone or dolomite is heated, methane from effluent treatment and emissions from captive generation all need measured or metered data. Senseible's methodology calculates these only when that data is supplied, for example through a meter or log set up with the Senseible team."
+        "An invoice records a purchase, not what escaped or reacted on site. A refrigerant top-up invoice shows gas bought, not gas leaked; SF6 in switchgear, CO2 released when limestone or dolomite is heated, methane from effluent treatment and emissions from captive generation all need measured or metered data. Senseible gives no figure for them from documents. Meter and hardware feeds are set up with the Senseible team for each customer, so ask the team what can be measured at your site."
       ]
     },
     {
       "h": "Limits on fuel figures",
       "ul": [
-        "Fuel factors are CO2 only, from IPCC 2006 defaults. Methane and nitrous oxide from combustion are not added.",
+        "Fuel factors are CO2 only, from IPCC 2006 defaults. Methane and nitrous oxide from combustion are not added; at IPCC stationary combustion defaults they add well under 1%.",
         "A factor applies only in its own unit: diesel, petrol, furnace oil and kerosene per litre; coal, LPG, CNG and naphtha per kg; PNG per scm. Diesel billed in kg, or naphtha billed in litres, gets no figure rather than an assumed density.",
         "Biomass CO2 is recorded as zero because it is biogenic, and it is never credited against other emissions.",
         "Purchased steam and heat have no factor in the published set."
@@ -34,7 +34,7 @@
     {
       "h": "Limits on Scope 3 lines",
       "p": [
-        "A Scope 3 invoice line gets a figure only from printed activity data, such as quantity and unit, or weight and distance for freight, times an approved factor for that material and geography. If any input is missing the line is marked Needs Data and left out of totals. Avoided emissions from green purchases are shown separately and never subtracted from the inventory."
+        "A Scope 3 invoice line gets a figure only from printed activity data, such as quantity and unit, or weight and distance for freight, times an approved factor for that material and geography. No spend-based or generic factor is used, so a line with only a rupee amount gets no figure. If any input is missing the line is marked Needs Data, and if a reconciliation check fails it is marked Needs Review; neither counts in totals. Avoided emissions from green purchases are shown separately and never subtracted from the inventory."
       ]
     }
   ],
@@ -51,15 +51,36 @@
   },
   "senseible": "This page states Senseible's coverage under methodology BIOCOG_MVR_INDIA v1.1, so nobody relies on a figure it does not produce. It flags the missing items instead of estimating them; filling those gaps needs your measured data or a sourced factor.",
   "links": [
-    { "label": "How Senseible calculates emissions", "to": "/answers/how-senseible-calculates-emissions" },
-    { "label": "Senseible core features", "to": "/answers/senseible-core-features" },
-    { "label": "White paper", "to": "/white-paper" },
-    { "label": "Estimate refrigerant leakage without records", "to": "/answers/estimate-refrigerant-leakage-without-records" }
+    {
+      "label": "How Senseible calculates emissions",
+      "to": "/answers/how-senseible-calculates-emissions"
+    },
+    {
+      "label": "Senseible core features",
+      "to": "/answers/senseible-core-features"
+    },
+    {
+      "label": "White paper",
+      "to": "/white-paper"
+    },
+    {
+      "label": "Estimate refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    }
   ],
   "sources": [
-    { "label": "2006 IPCC Guidelines, Volume 2: Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "GHG Protocol Corporate Accounting and Reporting Standard", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Coverage changes with each methodology version (currently BIOCOG_MVR_INDIA v1.1); re-check this list against the code on every release."

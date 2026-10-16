@@ -44,17 +44,38 @@
     ],
     "note": "Figures are illustrative. Use AR6 values throughout if your buyer or programme asks for them: 1,960 for HCFC-22 and 771 for HFC-32."
   },
-  "senseible": "Senseible reads service and purchase invoices and keeps them as evidence. It calculates refrigerant emissions only when you supply the measured data, such as the gas and kilograms charged, and does not treat a gas purchase alone as leakage.",
+  "senseible": "Senseible keeps R-22 service invoices as evidence. It does not assign a GWP to a gas from an invoice alone; refrigerant emissions, R-22 included, are worked out only from measured data you provide, such as the gas type and kilograms charged. Report the HCFC figure as its own line outside the Scope 1 total.",
   "links": [
-    { "label": "Refrigerant top-up invoice to CO2e", "to": "/answers/refrigerant-top-up-invoice-to-co2e" },
-    { "label": "India's HFC phase-down schedule", "to": "/answers/india-hfc-phase-down-schedule-kigali" },
-    { "label": "Low GWP refrigerant for a new chiller", "to": "/answers/low-gwp-refrigerant-choice-new-chiller" },
-    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" }
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "India's HFC phase-down schedule",
+      "to": "/answers/india-hfc-phase-down-schedule-kigali"
+    },
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    },
+    {
+      "label": "Cold chain refrigerant leaks and carbon",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Standard, Chapters 4 and 9", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "Ozone Cell, MoEFCC: Montreal Protocol HCFC Phase-out Management Plan and ODS Rules, 2000", "url": "https://www.ozonecell.nic.in" },
-    { "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Ozone Cell, MoEFCC: Montreal Protocol HCFC Phase-out Management Plan and ODS Rules, 2000",
+      "url": "https://www.ozonecell.nic.in"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "India's HCFC phase-out stages and servicing allowances should be checked on ozonecell.nic.in before relying on a date."

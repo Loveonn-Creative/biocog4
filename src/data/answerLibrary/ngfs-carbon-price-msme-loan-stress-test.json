@@ -38,33 +38,51 @@
     {
       "h": "What the RBI expects",
       "p": [
-        "The RBI issued draft guidance on climate scenario analysis and stress testing for regulated entities in 2024. It asks lenders to build climate scenario analysis into their risk management. Check whether a final version has been issued before you fix your method, and keep each borrower's inputs on file so the test can be rerun."
+        "In February 2023 the RBI said it would issue guidance to regulated entities on climate scenario analysis and stress testing, and in February 2024 it published a draft disclosure framework on climate-related financial risks. Check the notifications page on rbi.org.in for whether a stress testing guidance note has been issued and whether it is still a draft before you fix your method, and keep each borrower's inputs on file so the test can be rerun."
       ]
     }
   ],
   "example": {
-    "title": "Worked example: a forging unit (illustrative price)",
+    "title": "Worked example: a forging unit (hypothetical price and financials)",
     "lines": [
       "Scope 2: 10,00,000 kWh x 0.710 kg CO2 per kWh = 710 t CO2",
       "Scope 1: 1,50,000 L diesel x 2.68 kg CO2 per L = 402 t CO2",
       "Total: 710 + 402 = 1,112 t CO2",
-      "Illustrative carbon price for 2030: ₹8,000 per tonne; gross cost 1,112 x 8,000 = ₹88,96,000",
-      "No pass-through: EBITDA ₹4 crore falls to ₹3.11 crore; with ₹2.5 crore debt service, DSCR falls from 1.60 to 1.24",
+      "Hypothetical carbon price for 2030, not an NGFS figure: ₹8,000 per tonne; gross cost 1,112 x 8,000 = ₹88,96,000",
+      "No pass-through, hypothetical EBITDA ₹4 crore and debt service ₹2.5 crore: EBITDA falls to ₹3.11 crore and DSCR from 1.60 to 1.24",
       "50% pass-through: net cost ₹44,48,000; EBITDA ₹3.56 crore; DSCR 1.42"
     ],
-    "note": "The ₹8,000 price is invented to show the mechanics and is not an NGFS figure. Use the price for your chosen scenario, region and year from the current NGFS dataset."
+    "note": "The price, EBITDA and debt service are hypothetical, chosen to show the mechanics. Use the price for your chosen scenario, region and year from the current NGFS dataset."
   },
   "senseible": "Senseible gives the borrower's Scope 1 and 2 from fuel invoices and electricity bills, with the factor and source document behind each line, which is the emissions input a stress test needs. Its climate risk page also shows the cost of those emissions at a price you enter. It does not hold NGFS price paths or run portfolio stress tests.",
   "links": [
-    { "label": "Which NGFS scenario should I use?", "to": "/answers/which-ngfs-scenario-should-i-use" },
-    { "label": "Carbon pricing impact calculator", "to": "/calculators/carbon-pricing-impact" },
-    { "label": "CBAM exposure in a bank stress test", "to": "/answers/cbam-exposure-in-bank-stress-test" },
-    { "label": "Climate risk assessment", "to": "/climate-risk" }
+    {
+      "label": "Which NGFS scenario should I use?",
+      "to": "/answers/which-ngfs-scenario-should-i-use"
+    },
+    {
+      "label": "Carbon pricing impact calculator",
+      "to": "/calculators/carbon-pricing-impact"
+    },
+    {
+      "label": "CBAM exposure in a bank stress test",
+      "to": "/answers/cbam-exposure-in-bank-stress-test"
+    },
+    {
+      "label": "Climate risk assessment",
+      "to": "/climate-risk"
+    }
   ],
   "sources": [
-    { "label": "RBI draft guidance on climate scenario analysis and stress testing (2024), rbi.org.in", "url": "https://www.rbi.org.in" },
-    { "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry", "url": "https://carbonaccountingfinancials.com" }
+    {
+      "label": "RBI statements and draft disclosure framework on climate-related financial risks (February 2024), rbi.org.in",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry",
+      "url": "https://carbonaccountingfinancials.com"
+    }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "Check whether the RBI has finalised its climate scenario guidance and whether NGFS has published a newer scenario phase than Phase V; NGFS has no approved source link here."
+  "reviewNote": "NGFS Climate Scenarios Phase V (November 2024) is the price path source; ngfs.net is not yet on the approved source list. Check rbi.org.in for any climate scenario analysis and stress testing guidance issued after this review, and ngfs.net for a newer phase."
 }

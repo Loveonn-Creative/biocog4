@@ -11,7 +11,7 @@
       "h": "The three tests in the law",
       "ol": [
         "Formation: a partnership, corporation, LLC or other business entity formed under the laws of California, another US state, the District of Columbia or an act of Congress. A Delaware or New Jersey subsidiary meets this; a company incorporated in India does not.",
-        "Revenue: total annual revenue above USD 1 billion, based on the prior fiscal year. Total means all revenue, not only California sales.",
+        "Revenue: total annual revenue above USD 1 billion, based on the prior fiscal year. Total means all revenue, not only California sales, and CARB's regulation measures it using the gross receipts definition in the California Revenue and Taxation Code, which can be wider than revenue in the accounts.",
         "Doing business in California: the meaning comes from California Revenue and Taxation Code section 23101. An entity is caught if it actively trades in California for profit, is commercially based there, or has California sales, property or payroll above thresholds the Franchise Tax Board indexes each year."
       ]
     },
@@ -33,7 +33,7 @@
     {
       "h": "If the subsidiary is in scope",
       "p": [
-        "It reports Scope 1 and Scope 2 first, under the GHG Protocol, with Scope 3 to follow on CARB's timetable, plus limited assurance that tightens over time. CARB has allowed a report to be prepared at parent level, so a group may report once for several qualifying subsidiaries. That report then covers the parent's whole operations, including the Indian plants, which is a much larger job than the US entity alone."
+        "It reports Scope 1 and Scope 2 under the GHG Protocol. CARB has moved the first Scope 1 and 2 report to 10 November 2026; Scope 3 follows from 2027, with limited assurance phased in on CARB's timetable. The law lets a report be consolidated at parent level, so a group may report once for several qualifying subsidiaries. If the Indian parent files that report, it covers the whole group, including the Indian plants, which is a much larger job than the US entity alone."
       ]
     }
   ],
@@ -46,10 +46,6 @@
     {
       "label": "SB 261 climate risk report status",
       "to": "/answers/california-sb-261-climate-risk-report-status"
-    },
-    {
-      "label": "US SEC climate rule status",
-      "to": "/answers/sec-climate-rule-status-us-buyers"
     },
     {
       "label": "Which ESG rules apply to you",
@@ -67,5 +63,5 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "How affiliate revenue counts and the first reporting dates depend on CARB's regulation (California Health and Safety Code section 38532); confirm on ww2.arb.ca.gov."
+  "reviewNote": "First report date (10 November 2026, after CARB deferred it from 10 August 2026) and the revenue measure come from CARB's 2026 regulation under California Health and Safety Code section 38532; confirm on ww2.arb.ca.gov, as CARB was still making limited revisions."
 }

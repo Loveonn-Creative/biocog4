@@ -43,7 +43,7 @@
     }
   ],
   "example": {
-    "title": "Worked example: a dyeing unit's annual water balance",
+    "title": "Worked example: a dyeing unit's water balance (hypothetical figures)",
     "lines": [
       "Borewell withdrawal: 95,000 kL = 95 ML",
       "Tanker water: 25,000 kL = 25 ML",
@@ -52,7 +52,7 @@
       "Consumption: 120 minus 90 = 30 ML",
       "Water recycled inside the plant through the ETP is reported as reuse, not as extra withdrawal"
     ],
-    "note": "Figures are illustrative. A zero liquid discharge unit reports discharge near zero, so its consumption is close to its withdrawal."
+    "note": "All volumes are hypothetical. A zero liquid discharge unit reports discharge near zero, so its consumption is close to its withdrawal."
   },
   "senseible": "Senseible's document reader is built for invoices, energy bills, fuel slips and freight records, so it does not produce the withdrawal, discharge and consumption balance this module asks for. It can supply the energy and Scope 1 and 2 figures that the climate part of a CDP response asks for.",
   "links": [

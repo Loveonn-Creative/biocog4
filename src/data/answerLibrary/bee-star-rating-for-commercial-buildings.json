@@ -39,7 +39,7 @@
     }
   ],
   "example": {
-    "title": "Worked example: a 12,000 m2 office block",
+    "title": "Worked example: a 12,000 m2 office block (hypothetical)",
     "lines": [
       "Built-up area: 12,000 m2, less 2,000 m2 unconditioned basement parking = 10,000 m2",
       "Annual electricity from twelve bills: 14,00,000 kWh",
@@ -47,17 +47,32 @@
       "Scope 2: 14,00,000 x 0.710 = 9,94,000 kg CO2, about 994 t a year",
       "A 10% cut in units: EPI 126, and 99.4 t CO2 less a year"
     ],
-    "note": "Read the star level for an EPI of 140 from BEE's current table for your building type, climate zone and air-conditioned share."
+    "note": "The building and its consumption are hypothetical. Read the star level for an EPI of 140 from BEE's current table for your building type, climate zone and air-conditioned share."
   },
   "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, so the year's kWh and Scope 2 are ready for the EPI. It does not calculate the EPI, apply for or award a BEE star rating.",
   "links": [
-    { "label": "Does ECBC apply to my building?", "to": "/answers/does-ecbc-apply-to-my-building" },
-    { "label": "Footprint from an electricity bill", "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "BEE Star Rating Programme for Buildings, application guidelines and EPI bands (beeindia.gov.in)", "url": "https://beeindia.gov.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "BEE Star Rating Programme for Buildings, application guidelines and EPI bands (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "BEE revises building types, eligibility and EPI bands from time to time; read the current guidelines before applying."

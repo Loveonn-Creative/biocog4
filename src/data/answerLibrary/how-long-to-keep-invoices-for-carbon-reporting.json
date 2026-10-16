@@ -2,7 +2,7 @@
   "slug": "how-long-to-keep-invoices-for-carbon-reporting",
   "q": "How long should I keep invoices and bills used for carbon reporting in India?",
   "title": "How long to keep carbon reporting invoices",
-  "short": "Keep them for at least eight financial years if you are a company, because the Companies Act sets that period for books of account and their vouchers. GST law requires 72 months from the due date of the annual return. No carbon standard sets a shorter period, so the longest legal period wins.",
+  "short": "Keep them for at least eight financial years if you are a company, because the Companies Act sets that period for books of account and their vouchers. GST law requires 72 months from the annual return's due date. Carbon standards set no fixed period, so the longest legal period applies.",
   "topic": "product",
   "intent": "check",
   "audience": "Indian MSMEs and listed companies",
@@ -44,7 +44,7 @@
     ],
     "note": "The GST annual return due date can be extended by notification; count from the due date that applied."
   },
-  "senseible": "Senseible keeps each file you upload while signed in under your account, with its SHA-256 fingerprint, so the evidence behind a figure can be retrieved later. It does not replace the books of account and GST records you must keep under Indian law; keep your originals.",
+  "senseible": "When you are signed in, Senseible stores each uploaded bill or invoice in your account and records its SHA-256 fingerprint next to the figures it supports, so you can pull up the evidence years later. Your originals still count as the legal books and GST records; keep them.",
   "links": [
     {
       "label": "How long to keep CBAM records",
