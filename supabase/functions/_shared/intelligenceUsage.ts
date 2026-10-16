@@ -10,7 +10,8 @@ import { dayIst, monthStartDayIst } from './intelligence.ts';
 interface Client {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   from: (t: string) => any;
-  rpc: (fn: string, args: Record<string, unknown>) => PromiseLike<{ data: unknown; error: { code?: string; message?: string } | null }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  rpc: (fn: string, args?: any) => PromiseLike<{ data: unknown; error: { code?: string; message?: string } | null }>;
 }
 
 /** The plan in force for a user: the stronger of the profile copy and the best active subscription. */

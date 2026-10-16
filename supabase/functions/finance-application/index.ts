@@ -216,7 +216,7 @@ Deno.serve(async (req) => {
       if (!mime) return json({ error: 'Upload a PDF, JPG or PNG.' }, 415);
       const { count } = await admin.from('finance_application_documents').select('id', { count: 'exact', head: true }).eq('application_id', app.id);
       if ((count ?? 0) >= MAX_FILES) return json({ error: `Up to ${MAX_FILES} documents per application.` }, 409);
-      const sha = hex(await crypto.subtle.digest('SHA-256', bytes));
+      const sha = hex(await crypto.subtle.digest('SHA-256', bytes as BufferSource));
       const path = `${user.id}/${app.id}/${sha}.${EXT[mime]}`;
       const { error: upErr } = await admin.storage.from(BUCKET).upload(path, bytes, { contentType: mime, upsert: false });
       if (upErr && !/exists/i.test(upErr.message ?? '')) return json({ error: 'Upload failed. Try again.' }, 500);
