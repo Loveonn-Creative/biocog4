@@ -34,7 +34,7 @@
     {
       "h": "Limits on Scope 3 lines",
       "p": [
-        "A Scope 3 invoice line gets a figure only from printed activity data, such as quantity and unit, or weight and distance for freight, times an approved factor for that material and geography. No spend-based or generic factor is used, so a line with only a rupee amount gets no figure. If any input is missing the line is marked Needs Data, and if a reconciliation check fails it is marked Needs Review; neither counts in totals. Avoided emissions from green purchases are shown separately and never subtracted from the inventory."
+        "A Scope 3 invoice line gets a figure only from printed activity data, such as quantity and unit, or weight and distance for freight, times an approved factor for that material and geography. The document reader does not turn a rupee amount into emissions on its own; where only spend is available, Senseible can provide a spend-based estimate, labelled as spend-based and shown with its wider uncertainty. If any input is missing the line is marked Needs Data, and if a reconciliation check fails it is marked Needs Review; neither counts in totals. Avoided emissions from green purchases are shown separately and never subtracted from the inventory."
       ]
     }
   ],
