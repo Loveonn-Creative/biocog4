@@ -1,6 +1,7 @@
 import { serviceNav } from '@/data/services/nav';
 import { OG_VERSION } from './ogVersion';
 import { MSME_CARBON_META, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
+import { ESG_SAMPLE_META } from '@/data/esgReportSample';
 // Single source of truth for page metadata, shared by the client (SEOHead,
 // RouteSEO) and the build-time prerender + validator (scripts/). Keep this file
 // free of large data imports so it stays cheap in the client bundle; the full
@@ -253,6 +254,7 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
   // Lead magnet pages (src/data/leadMagnets.ts). Not linked from navigation.
   [SUPPLIER_EVIDENCE_META.path]: { title: SUPPLIER_EVIDENCE_META.title, description: SUPPLIER_EVIDENCE_META.description },
   [MSME_CARBON_META.path]: { title: MSME_CARBON_META.title, description: MSME_CARBON_META.description },
+  [ESG_SAMPLE_META.path]: { title: ESG_SAMPLE_META.title, description: ESG_SAMPLE_META.description },
   // Service lead pages (src/data/services).
   ...Object.fromEntries(serviceNav.map(s => [`/${s.slug}`, { title: s.title, description: s.description }])),
 };

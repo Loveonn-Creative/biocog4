@@ -18,6 +18,7 @@ import { trustSafeguards } from '@/data/trustSafeguards';
 import { articleRedirects } from '@/data/articleRedirects';
 import * as di from '@/data/decarbonizeIndia';
 import { WP_PATH, WP_PUBLISHED } from '@/data/whitePaper';
+import { ESG_SAMPLE_META, ESG_SAMPLE_OBJECTIONS } from '@/data/esgReportSample';
 import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
@@ -212,6 +213,31 @@ function coreRoutes(): SeoRoute[] {
     ],
   });
 
+  const esgCrumbs = [{ name: 'Home', path: '/' }, { name: 'Sample ESG report', path: ESG_SAMPLE_META.path }];
+  const esgReportSample = staticRoute(ESG_SAMPLE_META.path, 'core', 0.7, {
+    breadcrumbs: esgCrumbs,
+    lastmod: ESG_SAMPLE_META.published,
+    jsonLd: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Report',
+        name: 'Senseible Sample ESG Report 2026',
+        description: STATIC_PAGE_META[ESG_SAMPLE_META.path].description,
+        datePublished: ESG_SAMPLE_META.published,
+        numberOfPages: 64,
+        inLanguage: 'en',
+        author: ORG_REF,
+        publisher: { ...ORG_REF, logo: ORGANIZATION.logo },
+        image: canonicalUrl('/resources/esg-report-sample/cover.webp'),
+        mainEntityOfPage: canonicalUrl(ESG_SAMPLE_META.path),
+        about: ['ESG reporting', 'GRI Standards', 'BRSR Core', 'TCFD', 'Greenhouse gas inventory'],
+        isAccessibleForFree: true,
+      },
+      faqLd(ESG_SAMPLE_OBJECTIONS.map(o => ({ question: o.q, answer: o.a }))),
+      breadcrumbLd(esgCrumbs),
+    ],
+  });
+
   const decarbonizeIndia = staticRoute(di.DI_PATH, 'core', 0.8, {
     h1: 'Decarbonize India: Impact Ambassador Program',
     changefreq: 'weekly',
@@ -262,7 +288,7 @@ function coreRoutes(): SeoRoute[] {
     }));
 
   return [
-    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper,
+    home, pricing, careers, guidesHub, industriesHub, legalHub, toolsHub, trust, decarbonizeIndia, whitePaper, esgReportSample,
     ...simple.map(([p, s, pr]) => withEntityPage(staticRoute(p, s, pr))),
     ...calculators,
   ];

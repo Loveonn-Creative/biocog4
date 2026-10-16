@@ -6,6 +6,7 @@
 import type { Block } from './render';
 import { servicePages } from '@/data/services';
 import { MSME_CARBON_FAQS, MSME_CARBON_META, SUPPLIER_EVIDENCE_FAQS, SUPPLIER_EVIDENCE_META } from '@/data/leadMagnets';
+import * as esg from '@/data/esgReportSample';
 import { SUPPLIER_REQUEST } from '@/lib/leadMagnets/supplierEvidence';
 import { whitePaperBlocks } from './whitePaperBlocks';
 import { ingestionChannels, pipelineStages, scaleControls, controlAndSecurity, outputs, suiteModules, type Capability } from '@/data/enterpriseCapabilities';
@@ -233,6 +234,27 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Annual emissions = monthly kWh × 12 × 0.710 kg CO₂ per kWh (India grid average used by Senseible) + monthly diesel litres × 12 × 2.68 kg CO₂ per litre. It is an estimate from typed numbers; a Senseible record built from the bills shows the factor and source for every line.' },
       { h2: 'Questions' },
       ...MSME_CARBON_FAQS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+    ] as Block[],
+  },
+  [esg.ESG_SAMPLE_META.path]: {
+    h1: esg.ESG_SAMPLE_META.h1,
+    blocks: [
+      { p: esg.ESG_SAMPLE_INTRO },
+      { p: esg.ESG_SAMPLE_ANSWER },
+      { ul: esg.ESG_SAMPLE_FACTS.map(f => `${f.value} ${f.label}`) },
+      { h2: 'Three problems this report helps you solve' },
+      ...esg.ESG_SAMPLE_PROBLEMS.flatMap(p => [{ h3: p.title } as Block, { p: p.body } as Block]),
+      { h2: 'What you will take away' },
+      { ul: esg.ESG_SAMPLE_TAKEAWAYS.map(t => `${t.text} (${t.pages})`) },
+      { h2: 'Who is asking you for ESG data?' },
+      { ul: esg.ESG_SAMPLE_ASKERS.map(a => `${a.label}: usually ${a.frameworks}. ${a.why} See ${a.sections.map(s => `${s.name} (page ${s.page})`).join(', ')}.`) },
+      { h2: 'How it compares with the usual ways to get a report' },
+      { ul: esg.ESG_SAMPLE_COMPARE.rows.map(r => `${r.label}: ${esg.ESG_SAMPLE_COMPARE.columns.map((c, i) => `${c}, ${r.cells[i].toLowerCase()}`).join('; ')}.`) },
+      { h2: 'How to get the report' },
+      { p: 'Answer six quick questions and a private download link is emailed to your work address, valid for 7 days. Signed-in Senseible users download it directly. Temporary and made-up email addresses cannot receive the link.' },
+      { h2: 'Questions' },
+      ...esg.ESG_SAMPLE_OBJECTIONS.flatMap(f => [{ h3: f.q } as Block, { p: f.a } as Block]),
+      { p: '[ESG reporting with Senseible](/esg-reporting) · [Your carbon number from one bill](/msme-carbon-number)' },
     ] as Block[],
   },
   ...Object.fromEntries(servicePages.map(s => [`/${s.slug}`, {
