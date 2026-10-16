@@ -37,7 +37,7 @@ export interface EmissionsSummary {
   monthlyTrend: Array<{ month: string; scope1: number; scope2: number; scope3: number }>;
 }
 
-function calculateSummary(rows: Emission[]): EmissionsSummary {
+export function calculateSummary(rows: Emission[]): EmissionsSummary {
   // Each emission id once, gross kg only (the rule verify-carbon uses).
   const byId = new Map<string, Emission>();
   for (const e of rows) byId.set(e.id, e);

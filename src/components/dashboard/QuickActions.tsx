@@ -45,7 +45,7 @@ export function QuickActions({ unverifiedCount, totalEmissions }: QuickActionsPr
             </Button>
           )}
 
-          {totalEmissions > 0 && (
+          {(totalEmissions > 0 || unverifiedCount > 0) && (
             <Button 
               variant="outline" 
               className="w-full justify-between group"
@@ -53,7 +53,7 @@ export function QuickActions({ unverifiedCount, totalEmissions }: QuickActionsPr
             >
               <div className="flex items-center gap-3">
                 <FileBarChart className="h-4 w-4 text-success" />
-                <span>Generate Report</span>
+                <span>{totalEmissions > 0 ? 'Generate Report' : 'See your report'}</span>
               </div>
               <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
