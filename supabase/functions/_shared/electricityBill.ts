@@ -53,10 +53,12 @@ export interface RawOcr {
   documentCapture?: string | null;
   /** Meter photos only: cumulative register values visible in the photo (never the meter number). */
   meterReadings?: Array<{ readingKwh?: number | string | null; readingDate?: string | null; sourceText?: string | null }> | null;
+  /** kWh the owner typed for a kVAh bill that prints neither kWh nor a power factor (set by the server from the request, never by the model). */
+  enteredKwh?: number | null;
   [k: string]: unknown;
 }
 
-/** How a counted quantity was obtained. `entered_by_you` is reserved for a later UI. */
+/** How a counted quantity was obtained. */
 export type Basis = 'read_from_bill' | 'estimated_kvah_pf' | 'handwritten' | 'meter_readings' | 'entered_by_you';
 
 /** Plain label shown next to a counted line ("How this was calculated") and stored with the record. */
@@ -133,6 +135,8 @@ export interface EnergyEvidence {
   powerFactorText?: string | null;
   activeEnergyText?: string | null;
   meterReadings?: MeterReading[];
+  /** kWh typed by the owner (basis entered_by_you). */
+  enteredKwh?: number;
 }
 
 /** Lowest power factor accepted for an estimate. Below this a misread is more
@@ -147,7 +151,7 @@ export function printedPowerFactor(v: unknown): number | null {
 }
 
 export type KvahResolution =
-  | { kwh: number; basis: 'read_from_bill' | 'estimated_kvah_pf'; sourceText: string; note: string; evidence: EnergyEvidence }
+  | { kwh: number; basis: 'read_from_bill' | 'estimated_kvah_pf' | 'entered_by_you'; sourceText: string; note: string; evidence: EnergyEvidence }
   | { kwh: null; reason: 'kvah_needs_kwh' | 'active_exceeds_apparent'; note: string; evidence: EnergyEvidence };
 
 /**
@@ -155,13 +159,16 @@ export type KvahResolution =
  *  1. the kWh it prints (meter-reading table), basis read_from_bill;
  *  2. otherwise kVAh x the power factor it prints, basis estimated_kvah_pf
  *     (deterministic, rounded to 0.01 kWh, labelled as an estimate);
- *  3. otherwise nothing.
+ *  3. otherwise the kWh the owner typed for this bill, basis entered_by_you,
+ *     only when it fits the printed kVAh (kVAh x 0.5 <= kWh <= kVAh);
+ *  4. otherwise nothing.
  * A printed kWh larger than the printed kVAh cannot be right (PF <= 1), so
  * neither is used.
  */
 export function kwhForKvahBill(o: {
   kvah: number | null; kvahText?: string | null;
   activeEnergyKwh?: unknown; activeEnergyText?: unknown; powerFactor?: unknown; powerFactorText?: unknown;
+  enteredKwh?: unknown;
 }): KvahResolution {
   const evidence: EnergyEvidence = {};
   if (o.kvah !== null) { evidence.kvah = o.kvah; evidence.kvahText = text240(o.kvahText); }
@@ -189,6 +196,16 @@ export function kwhForKvahBill(o: {
       kwh, basis: 'estimated_kvah_pf', evidence,
       sourceText: `${o.kvah} kVAh × PF ${pf} = ${kwh} kWh`.slice(0, 240),
       note: `Estimated: kWh worked out from kVAh x the power factor printed on the bill (kVAh × PF): ${o.kvah} kVAh × ${pf} = ${kwh} kWh`,
+    };
+  }
+  const entered = num(o.enteredKwh);
+  if (entered !== null && o.kvah !== null && entered >= o.kvah * MIN_POWER_FACTOR && entered <= o.kvah * 1.02) {
+    const kwh = round2(entered);
+    evidence.enteredKwh = kwh;
+    return {
+      kwh, basis: 'entered_by_you', evidence,
+      sourceText: `Entered by you: ${kwh} kWh (bill: ${o.kvah} kVAh)`.slice(0, 240),
+      note: `Entered by you: ${kwh} kWh for a bill printed in kVAh (${o.kvah} kVAh); check it against the bill before relying on it`,
     };
   }
   return { kwh: null, reason: 'kvah_needs_kwh', evidence, note: 'Electricity bill: billed consumption is printed in kVAh (apparent energy), not kWh, and no kWh or power factor is printed, so emissions cannot be calculated' };
@@ -365,7 +382,7 @@ export function prepareElectricityLines(ocr: RawOcr): PreparedElectricity {
       const total = kvahLines.find(l => TOTAL.test(String(l.description ?? ''))) ?? (distinct.length === 1 ? kvahLines[0] : undefined);
       if (total) { kvah = num(total.quantity); kvahText = text240(total.sourceText) ?? `${total.description ?? 'Consumption'}: ${kvah} kVAh`; }
     }
-    const r = kwhForKvahBill({ kvah, kvahText, activeEnergyKwh: ocr.activeEnergyKwh, activeEnergyText: ocr.activeEnergyText, powerFactor: ocr.powerFactor, powerFactorText: ocr.powerFactorText });
+    const r = kwhForKvahBill({ kvah, kvahText, activeEnergyKwh: ocr.activeEnergyKwh, activeEnergyText: ocr.activeEnergyText, powerFactor: ocr.powerFactor, powerFactorText: ocr.powerFactorText, enteredKwh: ocr.enteredKwh });
     if (!('reason' in r)) {
       for (const l of kvahLines) {
         l.printedQuantity = num(l.quantity);

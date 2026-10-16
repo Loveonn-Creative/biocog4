@@ -322,6 +322,34 @@ describe('electricity bill reader: kVAh, charges, handwritten bills and meter ph
     expect(r.body.data.guidance.deterministicBlocker).toBe(true);
   });
 
+  test('kVAh bill with neither, owner types the kWh: counted, labelled "Entered by you", lower data quality', async () => {
+    ocr = msedclHt();
+    const r = await upload('ht-entered', { enteredKwh: 19300 });
+    expect(r.body.emissionIds).toHaveLength(1);
+    expect(db.emissions[0]).toMatchObject({ scope: 2, activity_data: 19300, activity_unit: 'kWh' });
+    const [line] = counted(r);
+    expect(line).toMatchObject({ basis: 'entered_by_you', basisLabel: 'Entered by you' });
+    expect(line.evidence).toMatchObject({ kvah: 20000, enteredKwh: 19300 });
+    expect(['medium', 'low']).toContain(db.emissions[0].data_quality);
+    expect(JSON.parse(db.emissions[0].verification_notes).basis).toBe('entered_by_you');
+  });
+
+  test('typed kWh that does not fit the bill (above its kVAh, or below kVAh x 0.5) is not used', async () => {
+    for (const [seed, kwh] of [['ht-entered-high', 25000], ['ht-entered-low', 5000]] as const) {
+      ocr = msedclHt();
+      const r = await upload(seed, { enteredKwh: kwh });
+      expect(r.body.emissionIds).toEqual([]);
+      expect(r.body.data.guidance.deterministicBlocker).toBe(true);
+    }
+  });
+
+  test('a printed kWh wins over a typed one', async () => {
+    ocr = msedclHt({ activeEnergyKwh: 19100, activeEnergyText: 'kWh Consumption 19100' });
+    const r = await upload('ht-entered-printed', { enteredKwh: 19300 });
+    expect(db.emissions[0]).toMatchObject({ activity_data: 19100 });
+    expect(counted(r)[0].basis).toBe('read_from_bill');
+  });
+
   test('charge lines on an electricity bill are bill charges: not unrecognised, never an HSN request', async () => {
     ocr = msedclHt({ activeEnergyKwh: 19100, activeEnergyText: 'kWh 19100' });
     const r = await upload('ht-charges');

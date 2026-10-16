@@ -204,6 +204,8 @@ export function guideDocument(lines: LineLike[], ctx: GuideContext = {}): {
   nextStep: string | null;
   /** True when nothing is counted and the only blockers are printed on the document, so reading it again cannot help. */
   deterministicBlocker: boolean;
+  /** Which electricity blocker applies (e.g. kvah_needs_kwh), so the screen can ask for the one missing figure. */
+  blocker: string | null;
 } {
   const g = lines.map((l) => guideLine(l, ctx));
   const count = (s: LineStatus) => g.filter((x) => x.status === s).length;
@@ -221,6 +223,7 @@ export function guideDocument(lines: LineLike[], ctx: GuideContext = {}): {
   return {
     counted, needsData: needs.length, notCovered: count('not_covered'), unclassified: count('unclassified'),
     billCharges: count('bill_charge'), nextStep, deterministicBlocker,
+    blocker: counted === 0 ? (ctx.blocker ?? null) : null,
   };
 }
 
