@@ -489,7 +489,8 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
 // the document has no rows yet. Returns the new ids, or null when nothing was
 // written (the browser then falls back to its own copy of the same rows).
 async function createEmissionRows(
-  db: SupabaseClient,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  db: SupabaseClient<any, any, any>,
   extracted: unknown,
   owner: { documentId: string; userId: string; organizationId: string | null },
 ): Promise<string[] | null> {
