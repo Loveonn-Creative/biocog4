@@ -27,8 +27,6 @@ BEGIN
   END IF;
 END $$;
 
--- Already private since 20260122104318; restated so the file store never becomes public.
-UPDATE storage.buckets SET public = false WHERE id = 'documents' AND public IS DISTINCT FROM false;
 
 DROP POLICY IF EXISTS "Authenticated users can upload their own documents" ON storage.objects;
 DROP POLICY IF EXISTS "Authenticated users can update their own documents" ON storage.objects;

@@ -98,9 +98,7 @@ CREATE POLICY "Owners read their application timeline" ON public.finance_applica
 CREATE POLICY "Owners read their document list" ON public.finance_application_documents FOR SELECT TO authenticated USING (user_id = auth.uid());
 
 -- Private bucket: no storage.objects policy, so only the service role reaches it.
-INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-VALUES ('finance-documents', 'finance-documents', false, 2097152, ARRAY['application/pdf', 'image/jpeg', 'image/png'])
-ON CONFLICT (id) DO NOTHING;
+-- Bucket finance-documents (private, 2 MB) is created with the storage tool, not SQL.
 
 COMMENT ON TABLE public.finance_applications IS 'Sustainable-finance applications (green loans). Written only by the finance-application edge function. Senseible does not approve, provide or disburse financing.';
 COMMENT ON TABLE public.finance_application_reviews IS 'Internal, indicative review of an application. Senseible team only; never shown to applicants; not a credit decision.';
