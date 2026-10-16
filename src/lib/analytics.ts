@@ -1,15 +1,14 @@
 // Google Analytics (GA4) — single initialisation + SPA page-view tracking.
-// Measurement ID comes from the linked Google Analytics connector, with the
-// project's production property as a fallback.
+// One GA4 property, G-L8FJQ42YQK (set by the owner in October 2026; earlier
+// IDs were retired). It is fixed here so a stale connector value cannot route
+// events elsewhere.
 //
 // IMPORTANT: gtag.js only processes entries pushed to dataLayer as the
 // `arguments` object. Pushing a plain Array silently does nothing (the tag
 // loads but never sends a hit), so the helper below must keep using
 // `arguments`.
 
-const MEASUREMENT_ID =
-  (import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY as string | undefined) ||
-  'G-7DJ1WVE5R3';
+const MEASUREMENT_ID = 'G-L8FJQ42YQK';
 
 declare global {
   interface Window {
