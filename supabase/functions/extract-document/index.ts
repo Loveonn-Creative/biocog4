@@ -515,7 +515,11 @@ serve(async (req) => {
   }
 
   try {
-    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId, reread } = await req.json();
+    const { imageBase64, mimeType, sessionId, organizationId: rawOrganizationId, reread, enteredKwh: rawEnteredKwh } = await req.json();
+    // kWh the owner typed for a kVAh bill that prints neither kWh nor a power
+    // factor. Used only in that case, checked against the printed kVAh, and
+    // labelled "Entered by you" (electricityBill.ts kwhForKvahBill).
+    const enteredKwh = typeof rawEnteredKwh === 'number' && Number.isFinite(rawEnteredKwh) && rawEnteredKwh > 0 && rawEnteredKwh <= 10_000_000 ? rawEnteredKwh : null;
     const started = Date.now();
     // Set when the user asks to read again an invoice that produced no emissions.
     let rereadDocId: string | null = null;
@@ -964,7 +968,7 @@ serve(async (req) => {
       vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null,
       unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null, unitsConsumedUnit: ocrData.unitsConsumedUnit ?? null,
       activeEnergyKwh: ocrData.activeEnergyKwh ?? null, activeEnergyText: ocrData.activeEnergyText ?? null,
-      powerFactor: ocrData.powerFactor ?? null, powerFactorText: ocrData.powerFactorText ?? null,
+      powerFactor: ocrData.powerFactor ?? null, powerFactorText: ocrData.powerFactorText ?? null, enteredKwh,
       documentCapture: capture, meterReadings: Array.isArray(ocrData.meterReadings) ? ocrData.meterReadings : null,
       billingPeriodStart: ocrData.billingPeriodStart ?? null, billingPeriodEnd: ocrData.billingPeriodEnd ?? null,
       lineItems: Array.isArray(ocrData.lineItems) ? ocrData.lineItems.map((l: Record<string, unknown>) => ({
@@ -979,6 +983,7 @@ serve(async (req) => {
     // kVAh bills use the printed kWh, else kVAh x the printed power factor
     // (labelled estimate); meter photos use two readings (later - earlier).
     const elecBill = isElectricityBill(ocrData);
+    if (enteredKwh !== null) ocrData.enteredKwh = enteredKwh;
     const prepared = prepareElectricityLines(ocrData);
     ocrData.lineItems = prepared.lines;
     validationFlags.push(...prepared.notes);

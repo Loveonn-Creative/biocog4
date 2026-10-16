@@ -508,7 +508,7 @@ const Index = () => {
     setState("result");
   };
 
-  const processDocument = async (file: File, opts: { reread?: boolean } = {}) => {
+  const processDocument = async (file: File, opts: { reread?: boolean; enteredKwh?: number } = {}) => {
     lastFileRef.current = file;
     if (file.size > MAX_UPLOAD_BYTES) {
       toast.error(`This file is ${(file.size / 1048576).toFixed(1)} MB; the limit is 15 MB. Take a photo of the page, or save the PDF at a lower quality.`, { duration: 7000 });
@@ -557,7 +557,7 @@ const Index = () => {
       
       // Pass sessionId to edge function for guest user data linking
       const invoke = (await loadSupabase()).functions.invoke('extract-document', {
-        body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId(), ...(opts.reread ? { reread: true } : {}) }
+        body: { imageBase64, mimeType, sessionId, organizationId: uploadOrganizationId(), ...(opts.reread ? { reread: true } : {}), ...(opts.enteredKwh ? { enteredKwh: opts.enteredKwh } : {}) }
       });
       const timedOut = new Promise<{ data: null; error: 'timeout' }>((resolve) => setTimeout(() => resolve({ data: null, error: 'timeout' }), READ_TIMEOUT_MS));
       const { data, error } = await Promise.race([invoke, timedOut]) as Awaited<typeof invoke> | { data: null; error: 'timeout' };
@@ -658,7 +658,7 @@ const Index = () => {
       if (!user) {
         toast.success('Result ready. It stays in this browser for 24 hours; sign in to save it.', { duration: 4000 });
       } else if (savedIds.emissionIds.length > 0) {
-        toast.success(data.reread ? 'Read again and saved. Not verified yet.' : 'Saved. Not verified yet.', { duration: 2500 });
+        toast.success(data.reread ? 'Read again and saved. Verifying it now.' : 'Saved. Verifying it now.', { duration: 2500 });
       }
       setPendingRetry(null);
 
@@ -734,6 +734,14 @@ const Index = () => {
   const handleReread = () => {
     if (lastFileRef.current) void processDocument(lastFileRef.current, { reread: true });
   };
+  // A kVAh bill with no printed kWh or power factor: read it again with the
+  // kWh the owner typed. The server checks it against the bill's kVAh and
+  // labels it "Entered by you"; signed-in documents with nothing counted are
+  // replaced in place (the same rule as reading again).
+  const handleEnterKwh = (kwh: number) => {
+    if (lastFileRef.current) void processDocument(lastFileRef.current, { reread: !!user, enteredKwh: kwh });
+  };
+
 
   const handleFileSelect = (file: File) => {
     processDocument(file);
@@ -998,6 +1006,7 @@ const Index = () => {
               onReset={handleReset}
               hasRecords={result.recordCount !== 0}
               onReread={user && lastFileRef.current ? handleReread : undefined}
+              onEnterKwh={lastFileRef.current ? handleEnterKwh : undefined}
             />
           </Suspense>
         )}

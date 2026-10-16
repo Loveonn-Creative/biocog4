@@ -417,6 +417,8 @@ export interface BillInput {
   lineItems?: Array<{ description?: string | null; quantity?: number | string | null; unit?: string | null; hsn_code?: string | null; sourceText?: string | null }> | null;
   /** kWh and power factor printed on a kVAh bill (never computed by the model). */
   activeEnergyKwh?: number | string | null;
+  /** kWh typed by the owner for a kVAh bill (basis entered_by_you). */
+  enteredKwh?: number | null;
   activeEnergyText?: string | null;
   powerFactor?: number | string | null;
   powerFactorText?: string | null;
@@ -491,7 +493,7 @@ export function activitiesFromBill(bill: BillInput, profileLocation: string | nu
   // kVAh printed: kWh from the same bill's printed kWh, else kVAh x its printed
   // power factor (labelled estimate). The kVAh stays as the printed quantity.
   const fromKvah = (lineKey: string, kvah: number, text: string | null): ActivityDraft => {
-    const r = kwhForKvahBill({ kvah, kvahText: text, activeEnergyKwh: bill.activeEnergyKwh, activeEnergyText: bill.activeEnergyText, powerFactor: bill.powerFactor, powerFactorText: bill.powerFactorText });
+    const r = kwhForKvahBill({ kvah, kvahText: text, activeEnergyKwh: bill.activeEnergyKwh, activeEnergyText: bill.activeEnergyText, powerFactor: bill.powerFactor, powerFactorText: bill.powerFactorText, enteredKwh: bill.enteredKwh });
     if ('reason' in r) return make(lineKey, kvah, 'kVAh', text);
     const d = make(lineKey, r.kwh, 'kWh', text);
     const label = `${BASIS_LABEL[r.basis]}: ${r.sourceText}`;
