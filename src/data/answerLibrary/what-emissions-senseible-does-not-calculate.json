@@ -62,10 +62,6 @@
     {
       "label": "White paper",
       "to": "/white-paper"
-    },
-    {
-      "label": "Estimate refrigerant leakage without records",
-      "to": "/answers/estimate-refrigerant-leakage-without-records"
     }
   ],
   "sources": [

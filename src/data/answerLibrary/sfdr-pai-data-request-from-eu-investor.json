@@ -62,16 +62,16 @@
   "senseible": "Senseible prepares Scope 1 and Scope 2 and the underlying energy figures (kWh, litres, kg of fuel) from your invoices and bills as a self-declared data pack; Scope 3 appears only where supplier evidence exists. It does not compute the fund's PAI ratios or collect pay gap, board, biodiversity or weapons data.",
   "links": [
     {
-      "label": "Why an EU fund asks for PAI data",
-      "to": "/answers/why-eu-fund-asks-for-sfdr-pai-data"
-    },
-    {
-      "label": "Article 8 vs Article 9 funds",
-      "to": "/answers/article-8-vs-article-9-fund-investee-company"
-    },
-    {
       "label": "Does CSRD apply to Indian companies?",
       "to": "/answers/does-csrd-apply-to-indian-companies"
+    },
+    {
+      "label": "How banks and NBFCs measure financed emissions",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "ESG data management and audit-ready data",
+      "to": "/esg-data-management"
     }
   ],
   "sources": [

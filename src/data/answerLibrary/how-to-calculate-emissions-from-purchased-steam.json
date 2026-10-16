@@ -65,10 +65,6 @@
       "to": "/answers/co2-per-tonne-of-steam"
     },
     {
-      "label": "CHP emissions: power and steam",
-      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
-    },
-    {
       "label": "Manufacturing Scope 2 emissions in India",
       "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
     }

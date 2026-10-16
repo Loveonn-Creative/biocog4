@@ -57,15 +57,32 @@
   },
   "senseible": "Senseible's carbon credit eligibility signals can show where a project might qualify, using your fuel and electricity records. It does not perform the investment analysis, decide additionality or handle credit issuance, which belong to the programme and its validation body.",
   "links": [
-    { "label": "What is additionality", "to": "/answers/what-is-additionality-in-carbon-credits" },
-    { "label": "Additionality for an efficiency project", "to": "/answers/prove-additionality-energy-efficiency-project" },
-    { "label": "Is a legally required project additional", "to": "/answers/is-a-legally-required-project-additional-india" },
-    { "label": "Carbon credits", "to": "/carbon-credits" }
+    {
+      "label": "What is additionality",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "Is a legally required project additional",
+      "to": "/answers/is-a-legally-required-project-additional-india"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
   ],
   "sources": [
-    { "label": "UNFCCC CDM Methodological Tool 01 (demonstration and assessment of additionality) and Tool 27 (investment analysis)", "url": "https://unfccc.int" },
-    { "label": "Gold Standard for the Global Goals, additionality requirements", "url": "https://www.goldstandard.org" },
-    { "label": "Verra VCS Standard", "url": "https://verra.org" }
+    {
+      "label": "UNFCCC CDM Methodological Tool 01 (demonstration and assessment of additionality) and Tool 27 (investment analysis)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, additionality requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "Verra VCS Standard",
+      "url": "https://verra.org"
+    }
   ],
   "reviewed": "2026-10-16"
 }

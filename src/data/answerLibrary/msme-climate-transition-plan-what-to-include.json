@@ -54,10 +54,6 @@
   "senseible": "Senseible gives you a measured Scope 1 and 2 baseline from your invoices and bills, with the factor and source document behind each line, and its net zero roadmap builder helps lay out actions. It does not write your transition plan, set or validate your target, or assure it.",
   "links": [
     {
-      "label": "Writing a transition plan as a small company",
-      "to": "/answers/how-to-write-climate-transition-plan-small-company"
-    },
-    {
       "label": "Net zero roadmap builder",
       "to": "/net-zero"
     },

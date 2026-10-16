@@ -49,15 +49,32 @@
   },
   "senseible": "Senseible reads electricity bills (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to kWh consumed; net-metered units are not treated as consumption. Location-based figures use the annual average, so shifting grid charging in time does not change them.",
   "links": [
-    { "label": "Rooftop solar, net metering and Scope 2", "to": "/answers/rooftop-solar-net-metering-scope-2" },
-    { "label": "Hourly grid emission factors in India", "to": "/answers/hourly-grid-emission-factors-india" },
-    { "label": "Market vs location-based Scope 2", "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Rooftop solar, net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Scope 2 Guidance (2015)", "url": "https://ghgprotocol.org/scope-2-guidance" },
-    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
-    { "label": "GHG Protocol standards and revision updates", "url": "https://ghgprotocol.org/standards" }
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol standards and revision updates",
+      "url": "https://ghgprotocol.org/standards"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The GHG Protocol Scope 2 revision, including hourly matching, is under consultation; recheck before relying on the timing point."

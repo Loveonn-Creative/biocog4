@@ -51,13 +51,24 @@
   ],
   "senseible": "Senseible reads electricity bills and fuel invoices for your plant and keeps purchase records as evidence, which feed the factory part of a battery footprint. It does not calculate a battery carbon footprint to the EU method or create battery passports.",
   "links": [
-    { "label": "Digital product passport for textiles", "to": "/climate-intelligence/digital-product-passport-textile-exporters" },
-    { "label": "Footprint of imported lithium-ion cells", "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells" },
-    { "label": "EU rules asking exporters for carbon data", "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data" }
+    {
+      "label": "Digital product passport for textiles",
+      "to": "/climate-intelligence/digital-product-passport-textile-exporters"
+    },
+    {
+      "label": "EU rules asking exporters for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Articles 7, 47 to 52, 77 and Annex XIII", "url": "https://eur-lex.europa.eu" },
-    { "label": "Battery Waste Management Rules 2022, MoEFCC", "url": "https://moef.gov.in" }
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Articles 7, 47 to 52, 77 and Annex XIII",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Battery Waste Management Rules 2022, MoEFCC",
+      "url": "https://moef.gov.in"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The carbon footprint delegated acts and the postponed due diligence dates are moving; recheck EUR-Lex before relying on any date other than 18 February 2027."

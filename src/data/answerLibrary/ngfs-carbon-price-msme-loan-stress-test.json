@@ -65,10 +65,6 @@
       "to": "/calculators/carbon-pricing-impact"
     },
     {
-      "label": "CBAM exposure in a bank stress test",
-      "to": "/answers/cbam-exposure-in-bank-stress-test"
-    },
-    {
       "label": "Climate risk assessment",
       "to": "/climate-risk"
     }

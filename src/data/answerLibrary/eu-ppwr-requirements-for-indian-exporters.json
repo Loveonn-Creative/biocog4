@@ -52,13 +52,24 @@
   },
   "senseible": "Senseible does not check packaging against the PPWR, test substances or register you for EPR. It can keep your packaging supplier invoices with your other records, but the declarations and test reports come from your suppliers and labs.",
   "links": [
-    { "label": "EU rules besides CBAM asking for data", "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data" },
-    { "label": "Packaging footprint of an export shipment", "to": "/answers/packaging-carbon-footprint-export-shipment" },
-    { "label": "India plastic EPR recycled content targets", "to": "/answers/plastic-epr-recycled-content-targets" },
-    { "label": "Product compliance", "to": "/product-compliance" }
+    {
+      "label": "EU rules besides CBAM asking for data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "India plastic EPR recycled content targets",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Product compliance",
+      "to": "/product-compliance"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2025/40 on packaging and packaging waste (PPWR), OJ L, 22 January 2025, on EUR-Lex", "url": "https://eur-lex.europa.eu" }
+    {
+      "label": "Regulation (EU) 2025/40 on packaging and packaging waste (PPWR), OJ L, 22 January 2025, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Delegated and implementing acts on recyclability grades, recycled content method and labelling are still pending, and some dates depend on them; recheck every six months."

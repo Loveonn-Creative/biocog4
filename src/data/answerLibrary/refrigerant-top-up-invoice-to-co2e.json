@@ -53,14 +53,28 @@
   },
   "senseible": "Senseible reads service and purchase invoices and keeps them as evidence. It calculates refrigerant emissions only when you supply the measured data, such as the gas and kilograms charged, and does not treat a gas purchase alone as leakage.",
   "links": [
-    { "label": "Cold chain refrigerant leaks and carbon", "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026" },
-    { "label": "Does R-22 count in Scope 1?", "to": "/answers/does-r22-count-in-scope-1" },
-    { "label": "Estimate leakage without records", "to": "/answers/estimate-refrigerant-leakage-without-records" }
+    {
+      "label": "Cold chain refrigerant leaks and carbon",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    },
+    {
+      "label": "Does R-22 count in Scope 1?",
+      "to": "/answers/does-r22-count-in-scope-1"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Standard, with the GHG Protocol tool for HFC and PFC emissions from refrigeration and air conditioning", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
-    { "label": "IPCC AR5 WG1, Chapter 8, Appendix 8.A, Table 8.A.1 (GWP100)", "url": "https://www.ipcc.ch" }
+    {
+      "label": "GHG Protocol Corporate Standard, with the GHG Protocol tool for HFC and PFC emissions from refrigeration and air conditioning",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "IPCC AR5 WG1, Chapter 8, Appendix 8.A, Table 8.A.1 (GWP100)",
+      "url": "https://www.ipcc.ch"
+    }
   ],
   "reviewed": "2026-10-16"
 }

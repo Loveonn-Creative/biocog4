@@ -53,14 +53,28 @@
   },
   "senseible": "Senseible applies no grid factor to a kVAh figure. It uses the kWh printed on the same bill; if there is none, kVAh x the power factor printed on it, labelled as an estimate, and not used when that power factor is below 0.5; if neither is printed, kWh you type in, labelled \"Entered by you\". It never assumes a power factor; otherwise the line shows Needs Data.",
   "links": [
-    { "label": "How to read an HT electricity bill", "to": "/answers/how-to-read-an-ht-industrial-electricity-bill" },
-    { "label": "Can AI read an electricity bill?", "to": "/answers/can-ai-read-my-electricity-bill-accurately" },
-    { "label": "Power factor penalties and rebates", "to": "/answers/power-factor-rebate-and-penalty" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "How to read an HT electricity bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Can AI read an electricity bill?",
+      "to": "/answers/can-ai-read-my-electricity-bill-accurately"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
-    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
   ],
   "reviewed": "2026-10-16"
 }

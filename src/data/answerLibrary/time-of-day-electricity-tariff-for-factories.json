@@ -55,14 +55,6 @@
       "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
     },
     {
-      "label": "Maximum demand charges and peak shaving",
-      "to": "/answers/maximum-demand-charges-peak-shaving"
-    },
-    {
-      "label": "Hourly grid emission factors for India",
-      "to": "/answers/hourly-grid-emission-factors-india"
-    },
-    {
       "label": "Energy transition savings calculator",
       "to": "/calculators/energy-transition-savings"
     }
