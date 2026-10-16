@@ -62,7 +62,5 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON public.resource_leads TO service_role;
 -- Private bucket for the gated files themselves (the report PDF is uploaded
 -- here once by the team; the repository is public, so it never goes in code).
 -- No storage.objects policy, so only the service role can read it.
-INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-VALUES ('gated-resources', 'gated-resources', false, 20971520, ARRAY['application/pdf'])
-ON CONFLICT (id) DO NOTHING;
+-- Bucket gated-resources (private, 20 MB) is created with the storage tool, not SQL.
 

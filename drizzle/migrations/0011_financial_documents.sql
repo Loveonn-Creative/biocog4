@@ -40,7 +40,4 @@ GRANT ALL ON public.financial_documents TO service_role;
 COMMENT ON TABLE public.financial_documents IS 'ITRs, bank statements and financial statements from the invoice reader. Server only: allow-listed figures for financial modelling, risk and climate finance. Never shown on any page or returned to a browser.';
 
 -- Private bucket: no storage.objects policy, so only the service role reaches it.
-INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-VALUES ('financial-documents', 'financial-documents', false, 15728640,
-        ARRAY['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'])
-ON CONFLICT (id) DO NOTHING;
+-- Bucket financial-documents (private, 15 MB) is created with the storage tool, not SQL.
