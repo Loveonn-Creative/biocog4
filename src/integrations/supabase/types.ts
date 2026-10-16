@@ -512,6 +512,56 @@ export type Database = {
         }
         Relationships: []
       }
+      document_extractions: {
+        Row: {
+          created_at: string
+          document_hash: string
+          document_id: string
+          extraction: Json
+          extraction_sha256: string
+          id: string
+          method_version: string
+          model: string | null
+          organization_id: string | null
+          source_file_path: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          document_hash: string
+          document_id: string
+          extraction: Json
+          extraction_sha256: string
+          id?: string
+          method_version: string
+          model?: string | null
+          organization_id?: string | null
+          source_file_path?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          document_hash?: string
+          document_id?: string
+          extraction?: Json
+          extraction_sha256?: string
+          id?: string
+          method_version?: string
+          model?: string | null
+          organization_id?: string | null
+          source_file_path?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "document_extractions_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: true
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       documents: {
         Row: {
           amount: number | null
@@ -668,6 +718,225 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      finance_application_documents: {
+        Row: {
+          application_id: string
+          doc_type: string
+          file_name: string
+          id: string
+          mime_type: string
+          retain_until: string
+          sha256: string
+          size_bytes: number
+          storage_path: string
+          uploaded_at: string
+          user_id: string
+        }
+        Insert: {
+          application_id: string
+          doc_type: string
+          file_name: string
+          id?: string
+          mime_type: string
+          retain_until?: string
+          sha256: string
+          size_bytes: number
+          storage_path: string
+          uploaded_at?: string
+          user_id: string
+        }
+        Update: {
+          application_id?: string
+          doc_type?: string
+          file_name?: string
+          id?: string
+          mime_type?: string
+          retain_until?: string
+          sha256?: string
+          size_bytes?: number
+          storage_path?: string
+          uploaded_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "finance_application_documents_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "finance_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      finance_application_events: {
+        Row: {
+          application_id: string
+          created_at: string
+          id: string
+          note: string | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          application_id: string
+          created_at?: string
+          id?: string
+          note?: string | null
+          status: string
+          user_id: string
+        }
+        Update: {
+          application_id?: string
+          created_at?: string
+          id?: string
+          note?: string | null
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "finance_application_events_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "finance_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      finance_application_reviews: {
+        Row: {
+          application_id: string
+          created_at: string
+          email_status: string
+          figures: Json
+          summary: Json
+          updated_at: string
+        }
+        Insert: {
+          application_id: string
+          created_at?: string
+          email_status?: string
+          figures?: Json
+          summary?: Json
+          updated_at?: string
+        }
+        Update: {
+          application_id?: string
+          created_at?: string
+          email_status?: string
+          figures?: Json
+          summary?: Json
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "finance_application_reviews_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: true
+            referencedRelation: "finance_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      finance_applications: {
+        Row: {
+          application: Json
+          carbon_snapshot: Json
+          consent_version: string
+          consented_at: string
+          created_at: string
+          id: string
+          kind: string
+          organization_id: string | null
+          retain_until: string
+          status: string
+          submitted_at: string | null
+          update_window_from: string | null
+          update_window_to: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          application: Json
+          carbon_snapshot?: Json
+          consent_version: string
+          consented_at: string
+          created_at?: string
+          id?: string
+          kind: string
+          organization_id?: string | null
+          retain_until?: string
+          status?: string
+          submitted_at?: string | null
+          update_window_from?: string | null
+          update_window_to?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          application?: Json
+          carbon_snapshot?: Json
+          consent_version?: string
+          consented_at?: string
+          created_at?: string
+          id?: string
+          kind?: string
+          organization_id?: string | null
+          retain_until?: string
+          status?: string
+          submitted_at?: string | null
+          update_window_from?: string | null
+          update_window_to?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      financial_documents: {
+        Row: {
+          created_at: string
+          doc_kind: string
+          figures: Json
+          figures_read_at: string | null
+          id: string
+          mime_type: string
+          organization_id: string | null
+          sha256: string
+          size_bytes: number
+          source: string
+          storage_path: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          doc_kind: string
+          figures?: Json
+          figures_read_at?: string | null
+          id?: string
+          mime_type: string
+          organization_id?: string | null
+          sha256: string
+          size_bytes: number
+          source?: string
+          storage_path: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          doc_kind?: string
+          figures?: Json
+          figures_read_at?: string | null
+          id?: string
+          mime_type?: string
+          organization_id?: string | null
+          sha256?: string
+          size_bytes?: number
+          source?: string
+          storage_path?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       grant_applications: {
         Row: {
@@ -1431,6 +1700,105 @@ export type Database = {
           },
         ]
       }
+      resource_leads: {
+        Row: {
+          company: string | null
+          consented_at: string
+          created_at: string
+          delivery_status: string | null
+          downloads: number
+          email: string
+          email_hash: string
+          expires_at: string
+          first_downloaded_at: string | null
+          free_mailbox: boolean
+          id: string
+          industry: string | null
+          last_downloaded_at: string | null
+          last_sent_at: string | null
+          marketing_consent: boolean
+          mx_status: string
+          name: string | null
+          notice_version: string
+          notify_status: string | null
+          primary_need: string | null
+          request_ip_hash: string | null
+          resource: string
+          role: string | null
+          send_count: number
+          send_day: string | null
+          sends_on_day: number
+          source: string
+          updated_at: string
+          user_id: string | null
+          verified_at: string | null
+        }
+        Insert: {
+          company?: string | null
+          consented_at?: string
+          created_at?: string
+          delivery_status?: string | null
+          downloads?: number
+          email: string
+          email_hash: string
+          expires_at?: string
+          first_downloaded_at?: string | null
+          free_mailbox?: boolean
+          id?: string
+          industry?: string | null
+          last_downloaded_at?: string | null
+          last_sent_at?: string | null
+          marketing_consent?: boolean
+          mx_status?: string
+          name?: string | null
+          notice_version: string
+          notify_status?: string | null
+          primary_need?: string | null
+          request_ip_hash?: string | null
+          resource: string
+          role?: string | null
+          send_count?: number
+          send_day?: string | null
+          sends_on_day?: number
+          source: string
+          updated_at?: string
+          user_id?: string | null
+          verified_at?: string | null
+        }
+        Update: {
+          company?: string | null
+          consented_at?: string
+          created_at?: string
+          delivery_status?: string | null
+          downloads?: number
+          email?: string
+          email_hash?: string
+          expires_at?: string
+          first_downloaded_at?: string | null
+          free_mailbox?: boolean
+          id?: string
+          industry?: string | null
+          last_downloaded_at?: string | null
+          last_sent_at?: string | null
+          marketing_consent?: boolean
+          mx_status?: string
+          name?: string | null
+          notice_version?: string
+          notify_status?: string | null
+          primary_need?: string | null
+          request_ip_hash?: string | null
+          resource?: string
+          role?: string | null
+          send_count?: number
+          send_day?: string | null
+          sends_on_day?: number
+          source?: string
+          updated_at?: string
+          user_id?: string | null
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
       scale_price_quotes: {
         Row: {
           amount_inr: number
@@ -1523,6 +1891,332 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      scope3_documents: {
+        Row: {
+          document_id: string
+          duplicate_of: string | null
+          extraction_id: string
+          id: string
+          invoice_key: string | null
+          method_version: string
+          organization_id: string | null
+          owner_scope: string | null
+          processed_at: string
+          reconciliation: Json
+          status: string
+          user_id: string
+        }
+        Insert: {
+          document_id: string
+          duplicate_of?: string | null
+          extraction_id: string
+          id?: string
+          invoice_key?: string | null
+          method_version: string
+          organization_id?: string | null
+          owner_scope?: string | null
+          processed_at?: string
+          reconciliation: Json
+          status: string
+          user_id: string
+        }
+        Update: {
+          document_id?: string
+          duplicate_of?: string | null
+          extraction_id?: string
+          id?: string
+          invoice_key?: string | null
+          method_version?: string
+          organization_id?: string | null
+          owner_scope?: string | null
+          processed_at?: string
+          reconciliation?: Json
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scope3_documents_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: true
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_documents_duplicate_of_fkey"
+            columns: ["duplicate_of"]
+            isOneToOne: false
+            referencedRelation: "scope3_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_documents_extraction_id_fkey"
+            columns: ["extraction_id"]
+            isOneToOne: false
+            referencedRelation: "document_extractions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      scope3_factors: {
+        Row: {
+          approved_at: string | null
+          approved_by: string | null
+          boundary: string
+          created_at: string
+          created_by: string
+          data_class: string
+          evidence_document_id: string | null
+          factor_key: string
+          geography: string
+          gwp_basis: string
+          id: string
+          kg_co2e_per_unit: number
+          material_key: string
+          publication_year: number
+          scope3_category: number
+          source_name: string
+          source_ref: string
+          status: string
+          unit: string
+          valid_from: string
+          valid_to: string | null
+          version: string
+        }
+        Insert: {
+          approved_at?: string | null
+          approved_by?: string | null
+          boundary: string
+          created_at?: string
+          created_by: string
+          data_class: string
+          evidence_document_id?: string | null
+          factor_key: string
+          geography: string
+          gwp_basis: string
+          id?: string
+          kg_co2e_per_unit: number
+          material_key: string
+          publication_year: number
+          scope3_category: number
+          source_name: string
+          source_ref: string
+          status?: string
+          unit: string
+          valid_from: string
+          valid_to?: string | null
+          version: string
+        }
+        Update: {
+          approved_at?: string | null
+          approved_by?: string | null
+          boundary?: string
+          created_at?: string
+          created_by?: string
+          data_class?: string
+          evidence_document_id?: string | null
+          factor_key?: string
+          geography?: string
+          gwp_basis?: string
+          id?: string
+          kg_co2e_per_unit?: number
+          material_key?: string
+          publication_year?: number
+          scope3_category?: number
+          source_name?: string
+          source_ref?: string
+          status?: string
+          unit?: string
+          valid_from?: string
+          valid_to?: string | null
+          version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scope3_factors_evidence_document_id_fkey"
+            columns: ["evidence_document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      scope3_lines: {
+        Row: {
+          activity_qty: number | null
+          activity_unit: string | null
+          calculated_at: string
+          checks: Json
+          classification_basis: string
+          classification_method: string
+          confidence: string | null
+          data_class: string
+          description: string
+          document_id: string
+          extraction_id: string
+          factor_geography: string | null
+          factor_id: string | null
+          factor_key: string | null
+          factor_material: string | null
+          factor_source: string | null
+          factor_unit: string | null
+          factor_value: number | null
+          factor_version: string | null
+          formula: string | null
+          hsn_code: string | null
+          id: string
+          inputs_sha256: string
+          invoice_date: string | null
+          invoice_number: string | null
+          is_current: boolean
+          kg_co2e: number | null
+          line_index: number
+          line_total: number | null
+          logistics: Json | null
+          material_key: string | null
+          method_version: string
+          next_action: string | null
+          organization_id: string | null
+          quantity: number | null
+          reasons: string[]
+          scope: number | null
+          scope3_category: number | null
+          scope3_document_id: string
+          source_page: number | null
+          source_text: string | null
+          status: string
+          supplier_gstin: string | null
+          supplier_name: string | null
+          unit: string | null
+          user_id: string
+        }
+        Insert: {
+          activity_qty?: number | null
+          activity_unit?: string | null
+          calculated_at?: string
+          checks?: Json
+          classification_basis: string
+          classification_method: string
+          confidence?: string | null
+          data_class: string
+          description: string
+          document_id: string
+          extraction_id: string
+          factor_geography?: string | null
+          factor_id?: string | null
+          factor_key?: string | null
+          factor_material?: string | null
+          factor_source?: string | null
+          factor_unit?: string | null
+          factor_value?: number | null
+          factor_version?: string | null
+          formula?: string | null
+          hsn_code?: string | null
+          id?: string
+          inputs_sha256: string
+          invoice_date?: string | null
+          invoice_number?: string | null
+          is_current?: boolean
+          kg_co2e?: number | null
+          line_index: number
+          line_total?: number | null
+          logistics?: Json | null
+          material_key?: string | null
+          method_version: string
+          next_action?: string | null
+          organization_id?: string | null
+          quantity?: number | null
+          reasons?: string[]
+          scope?: number | null
+          scope3_category?: number | null
+          scope3_document_id: string
+          source_page?: number | null
+          source_text?: string | null
+          status: string
+          supplier_gstin?: string | null
+          supplier_name?: string | null
+          unit?: string | null
+          user_id: string
+        }
+        Update: {
+          activity_qty?: number | null
+          activity_unit?: string | null
+          calculated_at?: string
+          checks?: Json
+          classification_basis?: string
+          classification_method?: string
+          confidence?: string | null
+          data_class?: string
+          description?: string
+          document_id?: string
+          extraction_id?: string
+          factor_geography?: string | null
+          factor_id?: string | null
+          factor_key?: string | null
+          factor_material?: string | null
+          factor_source?: string | null
+          factor_unit?: string | null
+          factor_value?: number | null
+          factor_version?: string | null
+          formula?: string | null
+          hsn_code?: string | null
+          id?: string
+          inputs_sha256?: string
+          invoice_date?: string | null
+          invoice_number?: string | null
+          is_current?: boolean
+          kg_co2e?: number | null
+          line_index?: number
+          line_total?: number | null
+          logistics?: Json | null
+          material_key?: string | null
+          method_version?: string
+          next_action?: string | null
+          organization_id?: string | null
+          quantity?: number | null
+          reasons?: string[]
+          scope?: number | null
+          scope3_category?: number | null
+          scope3_document_id?: string
+          source_page?: number | null
+          source_text?: string | null
+          status?: string
+          supplier_gstin?: string | null
+          supplier_name?: string | null
+          unit?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scope3_lines_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_extraction_id_fkey"
+            columns: ["extraction_id"]
+            isOneToOne: false
+            referencedRelation: "document_extractions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_factor_id_fkey"
+            columns: ["factor_id"]
+            isOneToOne: false
+            referencedRelation: "scope3_factors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_scope3_document_id_fkey"
+            columns: ["scope3_document_id"]
+            isOneToOne: false
+            referencedRelation: "scope3_documents"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       security_audit_log: {
         Row: {
@@ -1756,7 +2450,131 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      scope3_category_totals: {
+        Row: {
+          organization_id: string | null
+          scope3_category: number | null
+          supplier_data_lines: number | null
+          user_id: string | null
+          verified_kg: number | null
+          verified_lines: number | null
+        }
+        Relationships: []
+      }
+      scope3_supplier_ledger: {
+        Row: {
+          needs_data_lines: number | null
+          needs_review_lines: number | null
+          organization_id: string | null
+          primary_lines: number | null
+          scope3_lines: number | null
+          secondary_lines: number | null
+          spend: number | null
+          supplier_factor_lines: number | null
+          supplier_key: string | null
+          supplier_name: string | null
+          user_id: string | null
+          verified_kg: number | null
+          verified_lines: number | null
+          verified_spend: number | null
+        }
+        Relationships: []
+      }
+      scope3_trail: {
+        Row: {
+          activity_qty: number | null
+          activity_unit: string | null
+          calculated_at: string | null
+          checks: Json | null
+          classification_basis: string | null
+          classification_method: string | null
+          confidence: string | null
+          data_class: string | null
+          description: string | null
+          document_hash: string | null
+          document_id: string | null
+          duplicate_of: string | null
+          extraction_id: string | null
+          extraction_model: string | null
+          extraction_sha256: string | null
+          factor_geography: string | null
+          factor_id: string | null
+          factor_key: string | null
+          factor_material: string | null
+          factor_source: string | null
+          factor_unit: string | null
+          factor_value: number | null
+          factor_version: string | null
+          formula: string | null
+          hsn_code: string | null
+          id: string | null
+          inputs_sha256: string | null
+          invoice_date: string | null
+          invoice_number: string | null
+          invoice_status: string | null
+          is_current: boolean | null
+          kg_co2e: number | null
+          line_index: number | null
+          line_total: number | null
+          logistics: Json | null
+          material_key: string | null
+          method_version: string | null
+          next_action: string | null
+          organization_id: string | null
+          quantity: number | null
+          reasons: string[] | null
+          reconciliation: Json | null
+          scope: number | null
+          scope3_category: number | null
+          scope3_document_id: string | null
+          sealed_at: string | null
+          source_file_path: string | null
+          source_page: number | null
+          source_text: string | null
+          status: string | null
+          supplier_gstin: string | null
+          supplier_name: string | null
+          unit: string | null
+          user_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scope3_documents_duplicate_of_fkey"
+            columns: ["duplicate_of"]
+            isOneToOne: false
+            referencedRelation: "scope3_documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_extraction_id_fkey"
+            columns: ["extraction_id"]
+            isOneToOne: false
+            referencedRelation: "document_extractions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_factor_id_fkey"
+            columns: ["factor_id"]
+            isOneToOne: false
+            referencedRelation: "scope3_factors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scope3_lines_scope3_document_id_fkey"
+            columns: ["scope3_document_id"]
+            isOneToOne: false
+            referencedRelation: "scope3_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       commit_verification: { Args: { p: Json }; Returns: Json }
@@ -1848,6 +2666,7 @@ export type Database = {
         }
         Returns: number
       }
+      invoice_source_storage_ready: { Args: never; Returns: boolean }
       is_org_admin: {
         Args: { _org_id: string; _user_id: string }
         Returns: boolean
@@ -1871,6 +2690,7 @@ export type Database = {
         Args: { p_organization_id: string; p_user_id: string }
         Returns: undefined
       }
+      scope3_record_document: { Args: { p: Json }; Returns: Json }
       seat_limit_for_tier: { Args: { p_tier: string }; Returns: number }
       service_accept_team_invitation: {
         Args: { p_token: string; p_user_email: string; p_user_id: string }
