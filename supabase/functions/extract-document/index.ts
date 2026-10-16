@@ -1,6 +1,6 @@
 import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
@@ -489,7 +489,7 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
 // the document has no rows yet. Returns the new ids, or null when nothing was
 // written (the browser then falls back to its own copy of the same rows).
 async function createEmissionRows(
-  db: ReturnType<typeof createClient>,
+  db: SupabaseClient,
   extracted: unknown,
   owner: { documentId: string; userId: string; organizationId: string | null },
 ): Promise<string[] | null> {
