@@ -17,7 +17,7 @@ export const RESOURCE = {
 } as const;
 
 /** Version of the notice shown beside the form; stored with each lead as proof of what was shown. */
-export const NOTICE_VERSION = 'resource-lead-2026-10-16';
+export const NOTICE_VERSION = 'resource-lead-2026-10-16b';
 /** Visitors' details are kept 90 days, inside the Privacy Policy's three months for unauthenticated data. */
 export const LEAD_RETENTION_DAYS = 90;
 export const LINK_VALID_DAYS = 7;

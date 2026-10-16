@@ -100,7 +100,7 @@ describe('form request', () => {
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ success: true, sent: true, email: 'a***@acmeforge.in' });
     expect(s.rows).toHaveLength(1);
-    expect(s.rows[0]).toMatchObject({ email: 'asha@acmeforge.in', company: 'Acme Forgings', source: 'form', marketing_consent: true, mx_status: 'ok', delivery_status: 'sent', notify_status: 'sent', notice_version: 'resource-lead-2026-10-16' });
+    expect(s.rows[0]).toMatchObject({ email: 'asha@acmeforge.in', company: 'Acme Forgings', source: 'form', marketing_consent: true, mx_status: 'ok', delivery_status: 'sent', notify_status: 'sent', notice_version: 'resource-lead-2026-10-16b' });
     expect(s.rows[0].request_ip_hash).toMatch(/^[0-9a-f]{64}$/);
     expect(JSON.stringify(s.rows[0])).not.toContain('203.0.113.9');
     const [delivery, notice] = s.sent;

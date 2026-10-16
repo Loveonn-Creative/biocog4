@@ -284,7 +284,7 @@ export function ReportAccessCard({ onReady }: { onReady?: () => void }) {
       {formError && <p className="mt-3 text-[14px] text-destructive" role="alert">{formError}</p>}
 
       <p className="mt-4 text-[12.5px] leading-relaxed text-muted-foreground">
-        We use these details only to send the report and to understand who reads it. We never sell them, keep them for 90 days, and delete them sooner if you ask our Data Officer (sneha@senseible.earth). Temporary and made-up addresses cannot receive the link. See our <Link to="/legal/privacy" className="underline underline-offset-2">Privacy Policy</Link>.
+        We use your details only to send you this report and to see who reads it. We never sell them. We keep them for 90 days, and you can ask us to delete them sooner. Temporary or made-up emails won’t receive the link. <Link to="/legal/privacy" className="underline underline-offset-2">How we handle your data</Link>.
       </p>
       {!user && !isLoading && (
         <p className="mt-3 text-[13px] text-muted-foreground">Have an account? <Link to={`/auth?next=${encodeURIComponent(RESOURCE.path)}`} className="font-medium text-foreground underline underline-offset-2">Sign in</Link> and download instantly.</p>
