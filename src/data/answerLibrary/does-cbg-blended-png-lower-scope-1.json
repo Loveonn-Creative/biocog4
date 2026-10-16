@@ -1,0 +1,81 @@
+{
+  "slug": "does-cbg-blended-png-lower-scope-1",
+  "q": "Does compressed biogas blended into PNG lower my Scope 1 emissions?",
+  "title": "Does CBG blended PNG lower Scope 1?",
+  "short": "Only slightly, and only with proof. CO2 from the compressed biogas share of your gas is biogenic and sits outside Scope 1, so fossil CO2 falls by that share. But India's blending obligation covers CNG for transport and domestic PNG, not industrial PNG, and gas bills rarely state a blend.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories on piped natural gas",
+  "sections": [
+    {
+      "h": "What the blending obligation covers",
+      "p": [
+        "The CBG Blending Obligation, announced in November 2023 by the National Biofuels Coordination Committee chaired by the Petroleum Minister, is voluntary until FY2024-25 and mandatory from FY2025-26. It is set at 1%, 3% and 4% of total CNG and PNG consumption for FY2025-26, FY2026-27 and FY2027-28, and 5% from FY2028-29. It applies to the CNG (transport) and PNG (domestic) segments of city gas distribution. A factory on an industrial PNG connection is outside those segments, so the obligation alone does not put biogas in your supply."
+      ]
+    },
+    {
+      "h": "How biogenic CO2 is reported",
+      "p": [
+        "Compressed biogas is mainly methane made from crop residue, cattle dung or press mud. When it burns, its CO2 is biogenic. Under the GHG Protocol Corporate Standard that CO2 goes in a separate line, outside the three scopes, and the IPCC 2006 Guidelines also keep it out of energy-sector CO2 totals. Methane and nitrous oxide from burning it are not biogenic and stay in Scope 1."
+      ]
+    },
+    {
+      "h": "What evidence a blend claim needs",
+      "ul": [
+        "A written statement from your gas supplier giving the CBG share of the gas delivered to your connection, by month, and whether it is by volume or energy.",
+        "Confirmation that the supplier has not sold or claimed the same CBG for another customer or for its own obligation.",
+        "Your invoiced scm for the same months, so the share applies to gas you actually received."
+      ],
+      "p": [
+        "The current GHG Protocol Corporate Standard has no market-based method for Scope 1. A certificate for biogas injected somewhere else on the grid, with no physical link to your supply, does not reduce your Scope 1 under it. Without a supplier statement, keep reporting the full volume as fossil gas, which is the conservative figure."
+      ]
+    },
+    {
+      "h": "Bigger levers than the blend",
+      "p": [
+        "A 1% to 5% blend moves Scope 1 by 1% to 5%. Boiler and furnace efficiency, condensate return, waste heat recovery and switching heat loads to electricity usually move it more. Buying CBG directly from a nearby plant for a dedicated burner, with its own invoices, is a much clearer claim than a pipeline blend."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100,000 scm of PNG in a year",
+    "lines": [
+      "No blend evidence: 100,000 x 2.05 kg CO2 per scm = 205 t CO2 in Scope 1",
+      "Supplier certifies 1% CBG by volume: 100,000 x 2.05 x 0.99 = 202.95 t CO2 in Scope 1",
+      "Biogenic CO2 from the 1,000 scm of CBG: about 1,000 x 2.05 = 2.05 t, reported separately",
+      "At a certified 5%: 100,000 x 2.05 x 0.95 = 194.75 t CO2 in Scope 1"
+    ],
+    "note": "Treats CBG as having the same CO2 per scm as pipeline gas, which holds roughly for upgraded biomethane; an energy-based share would differ slightly. 2.05 kg CO2 per scm is the IPCC natural gas default at an assumed 0.76 kg per scm."
+  },
+  "senseible": "Senseible applies 2.05 kg CO2 per scm to the PNG volume on your invoice. It does not deduct a biogenic share automatically; any CBG share needs a supplier statement, and the adjustment and its disclosure are yours to make.",
+  "links": [
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Does E20 petrol lower Scope 1",
+      "to": "/answers/does-e20-petrol-lower-scope-1"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Blend percentages are targets under the CBG Blending Obligation and the segments covered may be widened; check the current Ministry of Petroleum and Natural Gas guidelines each year."
+}

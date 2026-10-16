@@ -1,0 +1,64 @@
+{
+  "slug": "biomass-fuel-supplier-evidence",
+  "q": "What documents prove my boiler biomass is agricultural residue?",
+  "title": "Proving boiler biomass is crop residue",
+  "short": "Keep four things for every load: the supplier's GST invoice naming the fuel and its HSN code, a signed feedstock declaration stating the residue type and where it came from, the weighbridge slip, and a periodic fuel test. Reconcile them with your boiler's fuel register so the tonnes match.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Boiler users burning briquettes, husk or pellets",
+  "sections": [
+    {
+      "h": "Why the evidence matters for your inventory",
+      "p": [
+        "The GHG Protocol lets you report CO2 from burning biomass as a separate biogenic figure, outside Scope 1. That treatment only holds if the fuel really is biomass. Briquettes blended with coal fines, plastic or used oil carry fossil carbon, and that share belongs in Scope 1. The documents are how you show a reviewer which case you are in."
+      ]
+    },
+    {
+      "h": "The documents to collect for each supply",
+      "ul": [
+        "Tax invoice: fuel description, quantity in tonnes, rate, supplier GSTIN and HSN code. Wood fuel, chips, sawdust and pellets or briquettes of wood waste usually fall under HSN 4401; unprepared cereal straw and husks under 1213. Ask the supplier how agro briquettes are classified and keep the answer.",
+        "Feedstock declaration from the supplier: residue type (rice husk, groundnut shell, mustard stalk, bagasse), source district or mills, and a statement that no coal, plastic or other fossil material is blended. Renew it each year or when the source changes.",
+        "Weighbridge slip for each truck, with vehicle number, date, gross, tare and net weight.",
+        "Delivery challan or e-way bill linking the truck to the invoice.",
+        "Fuel test report from a lab: moisture, ash, calorific value. Run one at least every quarter, and whenever a new supplier starts."
+      ]
+    },
+    {
+      "h": "How to reconcile the paper trail",
+      "ol": [
+        "Match each invoice to its weighbridge slips. Small gaps from moisture loss are normal; record them.",
+        "Work out consumption as opening stock plus net weight received minus closing stock, and compare it with the boiler log.",
+        "Flag any invoice where the description or HSN code suggests coal, lignite or petcoke.",
+        "Keep the lab reports next to the months they cover, so a high ash or high calorific value result can be checked against the supplier's declaration."
+      ]
+    },
+    {
+      "h": "What this evidence does not prove",
+      "p": [
+        "These documents support biogenic treatment in your own inventory. They do not, on their own, make the fuel switch eligible for carbon credits. Credit methodologies add their own tests, such as whether the residue would otherwise have been burnt in the field, whether diverting it pushes other users onto fossil fuel, and whether the project is additional. Do not describe biomass use as a credit or a removal on the strength of invoices alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of rice husk briquettes",
+    "lines": [
+      "Invoiced: 1,200 t; net weight on weighbridge slips: 1,184 t",
+      "Gap: 16 t, or 1.3% of invoiced weight, recorded as moisture loss",
+      "Consumption: 60 t opening stock + 1,184 t received minus 90 t closing stock = 1,154 t",
+      "Boiler log shows 1,150 t, within 0.4% of the stock calculation, so the trail holds"
+    ],
+    "note": "Use the weighbridge figure, not the invoiced figure, as your activity data when the two differ."
+  },
+  "senseible": "Senseible reads your fuel invoices, classifies lines by HSN code and fingerprints each file with SHA-256, so the invoice side of the trail is kept. Biomass lines get a biogenic CO2 value of zero and are never counted as a credit; Senseible does not verify where the residue came from or calculate CH4 and N2O from biomass combustion.",
+  "links": [
+    { "label": "Biomass or waste fuel in Scope 1", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "Coal to biomass boiler carbon credits", "to": "/answers/coal-to-biomass-boiler-carbon-credits" },
+    { "label": "Biogenic carbon accounting guide", "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 (stationary combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "Ministry of Power, National Mission on use of Biomass in thermal power plants (SAMARTH), biomass pellet specifications (powermin.gov.in)", "url": "https://powermin.gov.in" }
+  ],
+  "reviewed": "2026-10-16"
+}

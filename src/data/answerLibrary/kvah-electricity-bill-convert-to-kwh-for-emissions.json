@@ -1,0 +1,80 @@
+{
+  "slug": "kvah-electricity-bill-convert-to-kwh-for-emissions",
+  "q": "My electricity bill is in kVAh. How do I calculate emissions?",
+  "title": "Electricity bill in kVAh: emissions",
+  "short": "Convert to kWh first, then multiply by the grid factor. Use the kWh reading printed on the same bill if there is one. If not, kWh = kVAh x the power factor printed for that billing period. Applying the 0.710 kg CO2 per kWh factor straight to kVAh overstates your emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian HT and LT industrial consumers billed in kVAh",
+  "sections": [
+    {
+      "h": "Why kVAh is not the same as kWh",
+      "p": [
+        "kWh is active energy, the energy your machines actually used. kVAh is apparent energy, which also counts the reactive power that motors, transformers and welding sets draw back and forth without doing work. The ratio between them is the power factor: kWh = kVAh x power factor.",
+        "Because the power factor is never above 1, kVAh is always equal to or larger than kWh. Grid emission factors, including the CEA figure, are per kWh of electricity generated and sent out, so they only apply to kWh."
+      ]
+    },
+    {
+      "h": "Where to find kWh on a kVAh bill",
+      "ol": [
+        "Look in the meter readings block. Most HT meters record kWh, kVAh and kvarh together, and many bills print all three even when the energy charge is on kVAh.",
+        "If only kVAh and an average power factor are printed, multiply them for the same billing period.",
+        "If neither is printed, ask the discom for the kWh reading or a meter data download for that period. Do not assume a power factor.",
+        "Check the result: kWh can never exceed kVAh. If the bill shows kWh larger than kVAh, one of the readings is wrong; ask before you use either."
+      ]
+    },
+    {
+      "h": "Edge cases that change the number",
+      "ul": [
+        "Leading and lagging power factor: some states count both in kVAh billing. Use the average power factor the bill prints for the whole period, not a single time block.",
+        "Time of day blocks: if kVAh is split by block, convert the total, or each block with its own power factor if printed. Do not mix totals and blocks.",
+        "Rooftop solar or open access: kVAh billed may be net of adjusted units. Your consumption for Scope 2 is total import at the meter plus any adjusted units, converted to kWh.",
+        "Power factor penalties and rebates: these change the rupee total only. They do not change the kWh or the emissions."
+      ]
+    },
+    {
+      "h": "What to record for an auditor",
+      "ul": [
+        "The kVAh, the kWh or power factor you used, and where on the bill each was printed.",
+        "Whether the kWh was read from the bill or worked out from kVAh x power factor. Label the second as a calculated figure.",
+        "The factor and source: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0, location-based Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a kVAh tariff",
+    "lines": [
+      "Billed energy: 50,000 kVAh; average power factor printed on the bill: 0.96",
+      "kWh = 50,000 x 0.96 = 48,000 kWh",
+      "Emissions = 48,000 x 0.710 = 34,080 kg CO2, about 34.1 tonnes",
+      "Wrong way: 50,000 x 0.710 = 35,500 kg CO2, which overstates by 1,420 kg, about 4.2%"
+    ],
+    "note": "The lower the power factor, the bigger the overstatement. At 0.90 the error is about 11%."
+  },
+  "senseible": "Senseible applies no grid factor to a kVAh figure. It uses the kWh printed on the same bill; if there is none, kVAh x the power factor printed on it, labelled as an estimate, and not used when that power factor is below 0.5; if neither is printed, kWh you type in, labelled \"Entered by you\". It never assumes a power factor; otherwise the line shows Needs Data.",
+  "links": [
+    {
+      "label": "How to read an HT electricity bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Can AI read an electricity bill?",
+      "to": "/answers/can-ai-read-my-electricity-bill-accurately"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

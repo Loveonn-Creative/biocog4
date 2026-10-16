@@ -1,0 +1,77 @@
+{
+  "slug": "share-emissions-with-buyer-without-invoices",
+  "q": "How do I share emissions data with a buyer without revealing supplier prices or invoices?",
+  "title": "Share emissions without sharing invoices",
+  "short": "Send figures, not documents: your Scope 1 and 2 totals or a per-unit intensity, the activity quantities, the emission factors with their sources, and a list of evidence with each file's fingerprint. Show the invoices themselves only to an auditor, under a confidentiality agreement, if the buyer needs them checked.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "MSME suppliers asked for Scope 1, 2 data by EU and Indian buyers",
+  "sections": [
+    {
+      "h": "What the buyer actually needs",
+      "ul": [
+        "Your Scope 1 and Scope 2 for the year, in t CO2, with the method: GHG Protocol, location-based Scope 2, and the factor for each fuel and for grid power.",
+        "Either a per-unit intensity, such as t CO2 per tonne of product, or the share allocated to what that buyer bought.",
+        "Quantities of fuel and electricity, if asked. These are not prices.",
+        "A note on what is measured from bills and what is estimated."
+      ]
+    },
+    {
+      "h": "What you can leave out",
+      "p": [
+        "Rupee amounts, supplier names, rates, discounts and payment terms do not change the emissions figure. The WBCSD PACT Technical Specifications, which many buyers use for product footprints, exchange a footprint per declared unit with its method and data quality, not the transactions behind it."
+      ]
+    },
+    {
+      "h": "Proof without the paper",
+      "ol": [
+        "Give each source document a SHA-256 fingerprint and list it next to the line it supports.",
+        "Send the list with the figures. The buyer cannot read the invoice from a fingerprint.",
+        "If the buyer or its verifier wants to test a sample, let them see the originals at your site or in a data room under a confidentiality agreement, and recompute the fingerprints.",
+        "Do not send redacted copies as proof: blacking out prices changes the file, so its fingerprint no longer matches the one you listed."
+      ]
+    },
+    {
+      "h": "Personal data in your documents",
+      "p": [
+        "Electricity bills for proprietorships and small units often carry a person's name, address and phone number. Under the Digital Personal Data Protection Act, 2023, sharing them needs a lawful basis. Figure-level sharing avoids the question altogether."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: allocating to one buyer",
+    "lines": [
+      "Plant Scope 1 and 2: 1,200 t CO2 for the year",
+      "Output: 4,000 t of castings, so intensity is 1,200 / 4,000 = 0.30 t CO2 per tonne",
+      "Buyer purchased 500 t: 500 x 0.30 = 150 t CO2 allocated",
+      "You share 0.30 t CO2 per tonne and 150 t CO2; your total volume and prices stay private"
+    ],
+    "note": "Mass allocation suits plants with one main product; use the allocation rule your buyer's programme asks for if it names one."
+  },
+  "senseible": "Senseible reports carry each figure with its emission factor and source and the SHA-256 fingerprint of the document behind it, so you can send figures plus proof without sending invoices. Bill reading leaves out consumer name, address and account numbers. There is no buyer share link; you send the exported report yourself.",
+  "links": [
+    {
+      "label": "How Senseible protects your data",
+      "to": "/answers/senseible-data-protection"
+    },
+    {
+      "label": "Allocate supplier emissions to purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "PACT Pathfinder framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "WBCSD, PACT Technical Specifications for product footprint data exchange",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

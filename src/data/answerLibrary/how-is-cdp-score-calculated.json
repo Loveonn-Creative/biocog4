@@ -1,0 +1,73 @@
+{
+  "slug": "how-is-cdp-score-calculated",
+  "q": "How is a CDP climate score calculated, from D to A?",
+  "title": "How a CDP climate score is calculated",
+  "short": "CDP scores each answer at four levels: Disclosure (D), Awareness (C), Management (B) and Leadership (A). Your points at each level are turned into a percentage, you must pass one level to be scored on the next, and an A also needs essential criteria such as third-party verification of emissions.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian suppliers and listed companies",
+  "sections": [
+    {
+      "h": "What each level rewards",
+      "ul": [
+        "Disclosure (D): you answered the questions fully. Blank or skipped questions earn nothing.",
+        "Awareness (C): your answers show you understand how climate issues affect your business, for example you have assessed risks.",
+        "Management (B): you act on it, with policies, targets, reduction projects and Scope 1 and 2 data that is complete.",
+        "Leadership (A): best practice, such as verified emissions, science-based targets, a credible transition plan and engagement with your value chain."
+      ]
+    },
+    {
+      "h": "How the percentages become a letter",
+      "p": [
+        "Each scored question carries points at one or more levels, and CDP weights categories such as governance, targets and emissions. Points earned at a level are divided by points available at that level. A minimum percentage at one level is needed before the next level counts. The final letter is the highest level you passed, and a lower percentage within that level gives the minus grade, such as B minus instead of B.",
+        "A company that was asked to respond and did not, or gave too little to score, gets an F. That is a mark of non-response, not a measure of emissions."
+      ]
+    },
+    {
+      "h": "Why a supplier with good data can still get a C",
+      "p": [
+        "Management and Leadership points depend on actions and evidence, not just numbers. A supplier that reports accurate Scope 1 and 2 but has no target, no risk assessment and no Scope 3 screening tops out early. The fastest gains usually come from a board-approved target, a documented risk process, and screening the Scope 3 categories that matter."
+      ]
+    },
+    {
+      "h": "What an A needs beyond points",
+      "p": [
+        "CDP sets essential criteria for the A List. They include a public response, third-party verification of Scope 1 and 2 emissions and of part of Scope 3 to a standard CDP accepts, and other criteria CDP lists for the cycle. Self-declared figures, however careful, do not earn the verification points. Read the current scoring methodology on cdp.net for the exact shares required."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Hypothetical example: reading level percentages",
+    "lines": [
+      "Disclosure: 76 of 80 points = 95%",
+      "Awareness: 54 of 72 points = 75%",
+      "Management: 33 of 66 points = 50%",
+      "Leadership: 6 of 40 points = 15%",
+      "If the pass mark to move up were 80% (hypothetical), this response would pass Disclosure, stop at Awareness, and score in the C band"
+    ],
+    "note": "Point totals and the pass mark are invented to show the mechanics. CDP publishes the real thresholds and weightings in its scoring methodology for each cycle."
+  },
+  "senseible": "Senseible gives you Scope 1 and Scope 2 figures from your invoices and bills, with the source document and factor behind each line, which supports the Disclosure and Management questions on emissions. Its data is self-declared: a \"Verified\" status in Senseible means rule checks passed, not the third-party verification CDP Leadership points require.",
+  "links": [
+    {
+      "label": "A customer sent a CDP request: what to do",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "CDP SME or full questionnaire?",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP Scoring Introduction and climate change scoring methodology, current cycle (cdp.net)",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CDP updates scoring thresholds, weightings and A List essential criteria each cycle; recheck the current methodology."
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "india-climate-finance-taxonomy-what-msmes-need",
+  "q": "What does India's climate finance taxonomy mean for an MSME borrower?",
+  "title": "India's climate taxonomy and MSMEs",
+  "short": "For an MSME borrower, India's climate finance taxonomy changes little for now: it is still a May 2025 Ministry of Finance draft with sector rules to come, and banks still use the RBI green deposit list. Start keeping emissions and energy records that show which category your project fits.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners and lenders in India",
+  "sections": [
+    {
+      "h": "Where the taxonomy stands",
+      "p": [
+        "The Union Budget 2024-25 announced a climate finance taxonomy. The Department of Economic Affairs published a Draft Framework of India's Climate Finance Taxonomy on 7 May 2025 and took public comments until 25 June 2025. The draft sets principles and categories. The sector annexures, which would list the activities and any numeric thresholds, were to follow, and no final version had been published when this page was reviewed."
+      ]
+    },
+    {
+      "h": "The two categories in the draft",
+      "ul": [
+        "Climate-supportive: activities that directly cut emissions or help adapt to climate change, such as renewable power or efficient buildings.",
+        "Transition-supportive: activities in hard-to-abate sectors, such as iron and steel or cement, that lower emission intensity even though they still emit."
+      ],
+      "p": [
+        "The second category matters to Indian MSMEs. A foundry or a ceramic kiln that switches fuel or upgrades a furnace may never be green, but it can show a measured fall in emissions per tonne. That is the kind of evidence a transition-supportive label is likely to need."
+      ]
+    },
+    {
+      "h": "What banks use today",
+      "p": [
+        "Until the taxonomy is final, the working list for regulated entities is the RBI Framework for Acceptance of Green Deposits (April 2023). Banks that raise green deposits may lend them only to listed activities, including renewable energy, energy efficiency, clean transportation, climate change adaptation, sustainable water and waste management, pollution prevention and green buildings. It excludes fossil fuel projects, among others."
+      ]
+    },
+    {
+      "h": "What an MSME borrower can do now",
+      "ol": [
+        "Keep a clean baseline: 12 months of electricity bills, fuel invoices and production records before any project.",
+        "Describe the project in terms of energy or emissions per unit of output, not only rupees saved.",
+        "Ask your bank which list it applies today, the RBI green deposit list or its own policy.",
+        "Expect to re-check eligibility once sector annexures are notified, especially in steel, cement and other hard-to-abate sectors."
+      ]
+    }
+  ],
+  "senseible": "Senseible's green loan readiness check and its invoice-backed emission records give a lender the before and after evidence it needs to test eligibility. It does not classify activities under the taxonomy or decide whether a loan qualifies.",
+  "links": [
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    },
+    {
+      "label": "RBI green deposits: what banks finance",
+      "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Reserve Bank of India, Framework for Acceptance of Green Deposits (April 2023)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The taxonomy was still a May 2025 draft when reviewed; check finmin.gov.in for a final framework or sector annexures before relying on this page."
+}

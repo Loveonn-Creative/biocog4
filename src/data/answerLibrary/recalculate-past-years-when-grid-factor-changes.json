@@ -1,0 +1,63 @@
+{
+  "slug": "recalculate-past-years-when-grid-factor-changes",
+  "q": "Should I restate past years when the CEA grid factor changes?",
+  "title": "Restate past years for a new grid factor?",
+  "short": "Usually no. A new CEA version for a later year reflects a real change in the grid, so you apply it going forward and leave past years alone. Restate past years only when CEA corrects the figure for a year you already reported, or you change method, and the effect passes your significance threshold.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "ESG managers and auditors in India",
+  "sections": [
+    {
+      "h": "Three situations, three answers",
+      "ul": [
+        "New version, new year: version 21.0 covers FY 2024-25 at 0.710 kg CO2 per kWh. Using it for a later report while earlier years keep their own factors shows the grid getting cleaner or dirtier. That is a real change in emissions, not a method change, so no restatement.",
+        "Revised figure for a past year: CEA sometimes revises earlier years' figures in a new version. That is an improvement in accuracy for a year you already reported. Recalculate that year if the change is significant.",
+        "You switch method: for example, moving to a different factor source, from a state figure to the national one, or from one version to another for every year. Under GHG Protocol Corporate Standard Chapter 5 this is a methodology change, so recalculate the base year and the years you compare against, if significant."
+      ]
+    },
+    {
+      "h": "What counts as significant",
+      "p": [
+        "The GHG Protocol Corporate Standard leaves the threshold to you but asks you to set it in advance and apply it every time. Many companies use 5% of base year emissions; that is common practice, not a rule. ISO 14064-1:2018 clause 6.4 also asks you to document a base year recalculation policy and follow it.",
+        "Test the change against total base year emissions in the scopes you report, not against Scope 2 alone."
+      ]
+    },
+    {
+      "h": "If you restate, do it consistently",
+      "ol": [
+        "Recalculate the base year and every year shown in the trend with the same factor treatment.",
+        "Keep the original figures and the factors they used; do not overwrite them.",
+        "Disclose the reason, the old and new totals, and the factor versions, in the report and the method note."
+      ]
+    },
+    {
+      "h": "If you do not restate",
+      "p": [
+        "Say so in one line: each year uses the CEA version available when it was closed, and past years are not restated for later versions. Auditors accept this when it is written down and applied the same way every year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: CEA revises your base year factor",
+    "lines": [
+      "Base year: Scope 1 = 300 t CO2; grid use 1,000,000 kWh at 0.720 kg CO2/kWh = 720 t CO2",
+      "Base year total: 300 + 720 = 1,020 t CO2",
+      "Revised factor for that same year: 0.740 kg CO2/kWh, so 1,000,000 x 0.740 = 740 t CO2",
+      "Change: 740 minus 720 = 20 t; 20 / 1,020 = 2.0% of the base year",
+      "Below a 5% threshold: no restatement; note the revision in the method note"
+    ],
+    "note": "0.720 and 0.740 are invented to show the test; they are not CEA figures."
+  },
+  "senseible": "Each Senseible entry keeps the factor and source it was calculated with, so older records are not overwritten when a newer factor is used. It does not decide your recalculation policy or restate past years for you.",
+  "links": [
+    { "label": "Historical data and method changes", "to": "/climate-intelligence/maintain-historical-carbon-data-methodology-changes" },
+    { "label": "Which CEA version for which year", "to": "/answers/which-cea-grid-factor-version-for-which-year" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, Chapter 5 (tracking emissions over time)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "ISO 14064-1:2018, clause 6.4 (base year)", "url": "https://www.iso.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16"
+}

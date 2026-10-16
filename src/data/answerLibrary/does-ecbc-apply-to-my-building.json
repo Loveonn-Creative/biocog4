@@ -1,0 +1,55 @@
+{
+  "slug": "does-ecbc-apply-to-my-building",
+  "q": "Does the Energy Conservation Building Code apply to my commercial building?",
+  "title": "Does ECBC apply to my building?",
+  "short": "The Energy Conservation Building Code applies to a commercial building with a connected load of 100 kW or more, or a contract demand of 120 kVA or more, but it is enforceable only where your state has notified it. It mainly covers new buildings and major additions, checked at plan approval.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Owners of offices, hotels, hospitals and malls in India",
+  "sections": [
+    {
+      "h": "The two-step test",
+      "ol": [
+        "Load: is the building's connected load 100 kW or more, or its contract demand 120 kVA or more? That is the ECBC 2017 threshold set by the Bureau of Energy Efficiency.",
+        "State: has your state or union territory notified the code, with or without amendments, and does your local body check it during building plan approval? If not, the code is a voluntary benchmark for you."
+      ],
+      "p": [
+        "Both must be true for compliance to be mandatory. Some states have changed thresholds or details in their own version, so read your state notification."
+      ]
+    },
+    {
+      "h": "Reading the load from your electricity bill",
+      "p": [
+        "A commercial building on an HT supply usually has a contract demand in kVA printed on the bill. An LT connection shows a sanctioned or connected load in kW or kVA. For a new building, the designed connected load in the electrical drawings is the figure the authority uses. A building at 150 kVA contract demand is in scope where the code is notified; a shop at 60 kW sanctioned load is not."
+      ]
+    },
+    {
+      "h": "What the code asks for",
+      "ul": [
+        "Minimum performance for the building envelope: walls, roofs, glazing and shading.",
+        "Efficiency levels for air conditioning, lighting, pumps, motors and transformers.",
+        "Metering and controls, and in some cases renewable energy readiness.",
+        "Three levels: ECBC compliant, ECBC+ and Super ECBC, with the higher levels used for incentives and green ratings."
+      ]
+    },
+    {
+      "h": "The newer code under the 2022 amendment",
+      "p": [
+        "The Energy Conservation (Amendment) Act 2022 widened the building code into the Energy Conservation and Sustainable Building Code, which adds sustainability requirements and brings large residential buildings in. States adopt it through their own notifications, so in practice you may face either the older ECBC text or the new code, depending on where you build. The 2024 edition of the new code keeps the same 100 kW or 120 kVA test for commercial buildings, so the load check above still holds. Ask the planning authority which version applies to your plan."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not check building code compliance. It reads electricity bills, including sanctioned load, tariff category and units, which gives a quick first check against the threshold and a record of the building's actual use.",
+  "links": [
+    { "label": "BEE star rating for commercial buildings", "to": "/answers/bee-star-rating-for-commercial-buildings" },
+    { "label": "Is my factory a BEE designated consumer?", "to": "/answers/is-my-factory-bee-designated-consumer" },
+    { "label": "Reading an HT electricity bill", "to": "/answers/how-to-read-an-ht-industrial-electricity-bill" },
+    { "label": "Energy audit for MSMEs in India", "to": "/climate-intelligence/energy-audit-for-msme-india" }
+  ],
+  "sources": [
+    { "label": "Energy Conservation Building Code 2017, Bureau of Energy Efficiency", "url": "https://beeindia.gov.in" },
+    { "label": "Energy Conservation (Amendment) Act 2022 and the Energy Conservation and Sustainable Building Code", "url": "https://powermin.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Energy Conservation and Sustainable Building Code is replacing ECBC terminology and states adopt it at different times; confirm thresholds and your state's adoption before relying on this page."
+}

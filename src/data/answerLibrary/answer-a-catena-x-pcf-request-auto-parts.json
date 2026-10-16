@@ -1,0 +1,67 @@
+{
+  "slug": "answer-a-catena-x-pcf-request-auto-parts",
+  "q": "My German OEM customer wants product carbon footprints via Catena-X. What does an Indian or Turkish auto parts supplier need?",
+  "title": "Answering a Catena-X PCF request",
+  "short": "You need three things: a cradle-to-gate footprint per part calculated to the Catena-X PCF Rulebook, which follows ISO 14067 and the PACT methodology; a Catena-X identity, the Business Partner Number; and a certified Catena-X application or service provider that sends the data through a dataspace connector.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auto component suppliers in Pune, Chennai, Bursa and Kocaeli",
+  "sections": [
+    {
+      "h": "What Catena-X adds to a normal PCF request",
+      "p": [
+        "Catena-X is the automotive data network used by German OEMs and their tier 1 suppliers. For carbon it does two things. Its PCF Rulebook fixes how the footprint is calculated for automotive parts, building on ISO 14067 and the WBCSD PACT methodology. Its data model and exchange rules fix how the number travels: as a structured record, aligned with the PACT Technical Specifications, sent peer to peer between companies rather than as a spreadsheet by email."
+      ]
+    },
+    {
+      "h": "Getting connected",
+      "ol": [
+        "Ask the OEM's purchasing or sustainability team which onboarding route they support and by when they need the first footprints.",
+        "Register through a Catena-X operating company to receive your Business Partner Number, which identifies your company and sites in the network.",
+        "Choose a certified Catena-X application or service provider for PCF. It hosts the connector and the data model so you do not have to run your own.",
+        "Agree the part numbers and declared unit, usually per piece, with the customer before you calculate."
+      ]
+    },
+    {
+      "h": "Calculating the footprint to the Rulebook",
+      "ul": [
+        "Boundary: cradle to gate, from raw material extraction to the part leaving your plant.",
+        "Unit: kg CO2e per declared unit, including all greenhouse gases.",
+        "Your plant energy: metered electricity and fuels for the reporting period, allocated to parts by mass, machine hours or another stated rule. Apply the Rulebook's rules for electricity factors; for an Indian plant the CEA grid factor is the usual location-based figure.",
+        "Purchased materials: supplier footprints for steel, aluminium and polymers where you have them; database values otherwise.",
+        "Data quality: report the primary data share and the data quality ratings the Rulebook asks for."
+      ]
+    },
+    {
+      "h": "What to have ready before the platform",
+      "p": [
+        "The platform carries the number; it does not create your activity data. Before onboarding, collect twelve months of electricity bills, fuel invoices, production output by part family and material purchase quantities. Most delays come from missing allocation keys, not from the connector."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one machined part, Indian plant",
+    "lines": [
+      "Plant electricity for the period: 300,000 kWh x 0.710 = 213,000 kg CO2",
+      "Piped natural gas: 20,000 scm x 2.05 = 41,000 kg CO2",
+      "Plant energy total: 254,000 kg CO2 over 100,000 parts = 2.54 kg CO2 per part",
+      "Steel: 1.2 kg per part x 2.0 kg CO2e per kg (assumed database value) = 2.40 kg CO2e",
+      "Footprint: 2.54 + 2.40 = 4.94 kg CO2e per part",
+      "Primary data share: 2.54 / 4.94 = 51%"
+    ],
+    "note": "Steel factor and volumes are assumed for the arithmetic. The grid and gas factors are CO2-only; a full PCF adds other gases and upstream fuel emissions where the Rulebook requires them."
+  },
+  "senseible": "Senseible gives document-backed electricity and fuel data per period, each figure linked to its bill or invoice, which is the plant energy input to a part footprint. It does not connect to Catena-X; the PCF is sent through a certified Catena-X application or your customer's tool.",
+  "links": [
+    { "label": "PACT Pathfinder Framework explained", "to": "/answers/pact-pathfinder-framework-explained" },
+    { "label": "Buyer asked for a product footprint", "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send" },
+    { "label": "Allocate factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "WBCSD PACT Methodology and PACT Technical Specifications", "url": "https://www.wbcsd.org" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Catena-X onboarding steps and the PCF Rulebook version change often; confirm the current Rulebook and the customer's route before starting."
+}

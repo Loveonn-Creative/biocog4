@@ -1,0 +1,64 @@
+{
+  "slug": "sea-freight-emissions-per-container-india-to-europe",
+  "q": "How do I calculate the emissions of one container shipped from India to Europe?",
+  "title": "Emissions of one container, India to Europe",
+  "short": "Multiply the cargo's gross weight in tonnes by the port to port sea distance in km, then by a well-to-wake container ship factor in kg CO2e per tonne-km. Add the truck or rail legs to and from the ports separately. If you only know the container count, use a per TEU-km factor and label it an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters asked by EU buyers for Scope 3 Category 4 or 9 data",
+  "sections": [
+    {
+      "h": "What to take from the bill of lading",
+      "ul": [
+        "Port of loading and port of discharge, for example Nhava Sheva and Rotterdam. These fix the sea leg.",
+        "Gross weight of the cargo in kg, which includes packaging. Do not add the container's tare weight; the ship factor already covers the box.",
+        "Number and size of containers: a 20 ft box is 1 TEU, a 40 ft box is 2 TEU. You need this only for the per TEU method.",
+        "Place of receipt and place of delivery, if printed. They tell you which road or rail legs to add."
+      ]
+    },
+    {
+      "h": "Getting the sea distance right",
+      "p": [
+        "The bill of lading does not print a distance. Use a port to port sea distance table or the carrier's own figure, and note which one. Nhava Sheva to Rotterdam is roughly 6,300 nautical miles through Suez, about 11,700 km. Ships diverted around the Cape of Good Hope sail roughly 10,500 nautical miles, about 19,400 km, so ask the carrier which route the vessel actually took. One nautical mile is 1.852 km."
+      ]
+    },
+    {
+      "h": "Two methods, and when to use each",
+      "ol": [
+        "Tonne-km method (preferred): gross cargo weight in tonnes x sea distance in km x a well-to-wake container ship factor. ISO 14083 and the GLEC Framework both work this way, and it allocates the ship's emissions to you by the mass you shipped.",
+        "Per TEU method (fallback): number of TEU x distance x a trade lane factor in g CO2 per TEU-km, such as the Clean Cargo averages published through Smart Freight Centre. Use it when the weight is missing or the buyer asks for per container figures. Check whether the Clean Cargo figure you use is tank-to-wake or well-to-wake, state which, and label the result an estimate."
+      ]
+    },
+    {
+      "h": "Which legs belong in the figure",
+      "p": [
+        "A door to door figure is the sum of every leg: factory to the Indian port by truck or rail, the sea leg, and port to buyer in Europe. Calculate each leg with its own mode, weight and distance. Whether the shipment sits in your Category 4 or the buyer's depends on who pays for that leg under your Incoterm, so tell the buyer which legs your number covers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 20 ft container, Pune to Rotterdam via Nhava Sheva",
+    "lines": [
+      "Bill of lading gross weight: 18,000 kg = 18 t, one 20 ft container (1 TEU)",
+      "Sea leg: 18 t x 11,700 km = 2,10,600 tonne-km; x 0.008 kg CO2e per tonne-km = 1,684.8 kg CO2e",
+      "Road leg Pune to Nhava Sheva: 18 t x 150 km = 2,700 tonne-km; x 0.062 kg CO2e per tonne-km = 167.4 kg CO2e",
+      "Total to Rotterdam: 1,684.8 + 167.4 = 1,852.2 kg CO2e, about 1.85 t",
+      "Same box around the Cape: 18 t x 19,400 km x 0.008 = 2,793.6 kg CO2e for the sea leg alone"
+    ],
+    "note": "Factors are the container ship and articulated truck defaults in Senseible's logistics calculator, built on the GLEC Framework v3.0. Distances are approximate. Replace both with your carrier's data or the current GLEC table for the trade lane."
+  },
+  "senseible": "Senseible reads freight records and calculates weight x distance x mode factor when the weight, distance and mode are on the document; a bill of lading has no distance, so the line shows Needs Data until you supply one. The logistics calculator lets you work out each leg yourself. Senseible does not look up sea distances or carrier routings.",
+  "links": [
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "GLEC Framework explained", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" },
+    { "label": "Emissions from a road freight bill", "to": "/answers/how-to-calculate-emissions-from-a-freight-bill" },
+    { "label": "Incoterms and Category 4 or 9", "to": "/answers/incoterms-freight-scope-3-category-4-or-9" }
+  ],
+  "sources": [
+    { "label": "GLEC Framework v3.0, Smart Freight Centre", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" },
+    { "label": "Clean Cargo methodology and trade lane emission factors, Smart Freight Centre", "url": "https://www.smartfreightcentre.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Red Sea routing has changed sailing distances since 2024 and GLEC defaults are updated between versions; check the route and factor table for each shipment year."
+}

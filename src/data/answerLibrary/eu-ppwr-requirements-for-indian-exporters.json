@@ -1,0 +1,76 @@
+{
+  "slug": "eu-ppwr-requirements-for-indian-exporters",
+  "q": "What does the EU Packaging and Packaging Waste Regulation require from Indian exporters?",
+  "title": "EU PPWR rules for Indian exporters",
+  "short": "From 12 August 2026 the EU Packaging and Packaging Waste Regulation applies to all packaging placed on the EU market, including packaging on goods shipped from India. It sets substance limits now, then recyclability, recycled plastic content, empty space and labelling rules from 2028 to 2030. Your EU importer carries the legal duty and will ask you for proof.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters shipping packaged goods to the EU",
+  "sections": [
+    {
+      "h": "Who carries the legal duty",
+      "p": [
+        "Regulation (EU) 2025/40 places duties on the manufacturer of the packaging or packaged product and on the importer, the EU business that places goods from outside the EU on its market. An Indian exporter is usually not the regulated party. In practice the EU importer must hold technical documentation and an EU declaration of conformity for the packaging, so it passes the questions down to you and your packaging suppliers. Extended producer responsibility registration is also required in each EU country where packaging is first made available, and a producer outside the EU must appoint an authorised representative there."
+      ]
+    },
+    {
+      "h": "What applies from 12 August 2026",
+      "ul": [
+        "Heavy metals: lead, cadmium, mercury and hexavalent chromium together may not exceed 100 mg per kg of packaging or its components.",
+        "PFAS in food-contact packaging: no more than 25 ppb of any single PFAS, 250 ppb for the sum of PFAS, and 50 ppm for total PFAS.",
+        "Conformity paperwork: technical documentation and a declaration of conformity for packaging placed on the market."
+      ]
+    },
+    {
+      "h": "What follows from 2028 to 2030",
+      "ul": [
+        "Labelling: a harmonised label showing material composition, from 12 August 2028 or later if the implementing act is delayed.",
+        "Recyclability: from 1 January 2030 packaging must meet design-for-recycling criteria; grades are set in delegated acts still being written.",
+        "Recycled content in plastic packaging from 2030: 30% for contact-sensitive packaging mainly of PET, 10% for other contact-sensitive plastic, 30% for single-use plastic drinks bottles and 35% for other plastic packaging, rising in 2040.",
+        "Empty space: from 1 January 2030, grouped, transport and e-commerce packaging may not exceed a 50% empty space ratio."
+      ]
+    },
+    {
+      "h": "What to prepare now",
+      "ol": [
+        "List every packaging item per export product: material, weight, colour, coatings, inks and adhesives.",
+        "Get supplier declarations on heavy metals and, for food contact, PFAS test reports from an accredited lab.",
+        "For plastic packaging, ask suppliers for post-consumer recycled content with certificates, since the 2030 targets count only post-consumer material.",
+        "Agree with your EU importer, in the contract, who registers for EPR and who holds the documentation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: recycled content in a 40 g HDPE bottle",
+    "lines": [
+      "Bottle weight: 40 g, of which 12 g is post-consumer recycled HDPE",
+      "Recycled content: 12 / 40 = 30%",
+      "2030 target for other plastic packaging: 35%, so 40 x 0.35 = 14 g needed",
+      "Gap: 2 g more recycled resin per bottle, or a lighter bottle with the same 12 g"
+    ],
+    "note": "The regulation calculates recycled content as an average per manufacturing plant and year, with the method set in an implementing act. This per-bottle figure is a quick check, not the legal calculation."
+  },
+  "senseible": "Senseible does not check packaging against the PPWR, test substances or register you for EPR. It can keep your packaging supplier invoices with your other records, but the declarations and test reports come from your suppliers and labs.",
+  "links": [
+    {
+      "label": "EU rules besides CBAM asking for data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "India plastic EPR recycled content targets",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Product compliance",
+      "to": "/product-compliance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2025/40 on packaging and packaging waste (PPWR), OJ L, 22 January 2025, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Delegated and implementing acts on recyclability grades, recycled content method and labelling are still pending, and some dates depend on them; recheck every six months."
+}

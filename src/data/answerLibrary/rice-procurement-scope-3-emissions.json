@@ -1,0 +1,69 @@
+{
+  "slug": "rice-procurement-scope-3-emissions",
+  "q": "How do rice exporters estimate Scope 3 emissions from rice bought from farmers?",
+  "title": "Scope 3 emissions from paddy you buy",
+  "short": "Rice exporters estimate it per tonne of paddy: work out methane from flooded fields and nitrous oxide from fertiliser per hectare using IPCC methods, divide by the paddy yield per hectare, then multiply by the tonnes bought. It is GHG Protocol Scope 3 Category 1, and methane usually dominates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Basmati and non-basmati rice millers and exporters in India",
+  "sections": [
+    {
+      "h": "Where paddy sits in your inventory",
+      "p": [
+        "Paddy bought from farmers, aggregators or mandis is a purchased good, so its farm emissions are your Scope 3 Category 1 under the GHG Protocol Scope 3 Standard. The same emissions are the farmer's Scope 1. Your own milling, parboiling and drying energy is your Scope 1 and 2, and trucking paddy in is Category 4 if you pay for it.",
+        "Unlike cotton or yarn bought by a textile unit, there is rarely a supplier footprint or a trusted per tonne factor to apply. You build the factor yourself from a few farm inputs."
+      ]
+    },
+    {
+      "h": "The formula per tonne of paddy",
+      "ol": [
+        "Methane per hectare = daily emission factor x scaling factors x days the field is flooded (IPCC 2006 Vol 4 Ch 5, Equation 5.1). The IPCC 2006 default for continuously flooded fields with no organic amendment is 1.30 kg CH4 per hectare per day; the 2019 Refinement gives updated global and regional values.",
+        "Nitrous oxide per hectare = nitrogen applied x emission factor x 44/28 (IPCC 2006 Vol 4 Ch 11). For flooded rice the 2006 default is 0.003 kg N2O-N per kg N.",
+        "Convert both to CO2e with one GWP set: methane 28 and nitrous oxide 265 (AR5), or 27 and 273 (AR6, non-fossil methane).",
+        "Divide the hectare total by paddy yield in tonnes per hectare, using state figures from the Directorate of Economics and Statistics or your own procurement records."
+      ]
+    },
+    {
+      "h": "What moves the number most",
+      "ul": [
+        "Water regime. IPCC scaling factors fall well below 1 for fields drained once or several times in the season, about 0.5 for multiple drainage, and lower still for rainfed fields. Continuous flooding assumed for a district that practises alternate wetting and drying overstates the result.",
+        "Season length. Days of flooding scale methane directly; short duration varieties cut it.",
+        "Organic inputs. Straw or farmyard manure worked into flooded soil raises methane through a separate scaling factor.",
+        "Yield. A 20% higher yield means a 20% lower figure per tonne, so use yields for the districts you actually buy from.",
+        "GWP basis. Switching between AR5 and AR6 changes the methane part by about 4%. State which you used."
+      ]
+    },
+    {
+      "h": "What this estimate leaves out",
+      "p": [
+        "The two terms above cover most of a paddy footprint but not all of it. Diesel or electricity for irrigation pumps, tractor fuel, CO2 from urea, fertiliser manufacture and residue burning can be added as separate lines when you have data. Report the factor as an estimate, list every input and its source, and present a low and high case rather than one precise number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 5,000 tonnes of paddy from flooded fields",
+    "lines": [
+      "Methane: 1.30 kg CH4/ha/day x 1.0 (continuous flooding) x 120 days = 156 kg CH4 per ha",
+      "156 x 28 (AR5) = 4,368 kg CO2e per ha",
+      "Nitrous oxide: 120 kg N/ha x 0.003 x 44/28 = 0.566 kg N2O; x 265 = 150 kg CO2e per ha",
+      "Total: 4,368 + 150 = 4,518 kg CO2e per ha",
+      "Per tonne at 4.0 t paddy/ha: 4,518 / 4.0 = 1,130 kg CO2e, about 1.13 t CO2e",
+      "5,000 t x 1.13 = 5,650 t CO2e in Category 1"
+    ],
+    "note": "Season length, nitrogen rate and yield here are assumed for the arithmetic. With a multiple drainage scaling factor of about 0.5, the methane line roughly halves."
+  },
+  "senseible": "Senseible reads your paddy purchase invoices and keeps tonnes, suppliers and dates as Scope 3 evidence. It has no rice cultivation factor, so it shows these lines as activity without an emissions figure; the farm calculation above is done outside it.",
+  "links": [
+    { "label": "Scope 1 emissions in agriculture", "to": "/climate-intelligence/agriculture-scope-1-emissions-india" },
+    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" },
+    { "label": "Emissions from a tonne of urea", "to": "/answers/urea-application-emissions-per-tonne" },
+    { "label": "AR5 or AR6 GWP values", "to": "/answers/ar5-vs-ar6-gwp-which-to-use" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Vol 4 Ch 5 (rice cultivation) and Ch 11 (N2O from managed soils)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "GHG Protocol Scope 3 Standard, Category 1", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "IPCC AR6 WG1, global warming potentials", "url": "https://www.ipcc.ch/report/ar6/wg1/" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The result depends on the methane factor version (IPCC 2006 or 2019 Refinement), the water regime assumed and the GWP set; state each one."
+}

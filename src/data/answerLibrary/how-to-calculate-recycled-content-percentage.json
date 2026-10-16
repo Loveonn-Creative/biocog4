@@ -1,0 +1,83 @@
+{
+  "slug": "how-to-calculate-recycled-content-percentage",
+  "q": "How do I calculate the recycled content percentage of my product?",
+  "title": "Calculating recycled content percentage",
+  "short": "Divide the mass of recycled material in the product by the total mass of the product and multiply by 100. Under ISO 14021, only pre-consumer and post-consumer material counts, and scrap you regrind and reuse in the same process does not.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Packaging, metals and plastics manufacturers, EU buyers",
+  "sections": [
+    {
+      "h": "What counts as recycled under ISO 14021",
+      "ul": [
+        "Post-consumer material: waste from households, shops, offices or industry in their role as end users, which can no longer serve its purpose. Returns from the distribution chain are included.",
+        "Pre-consumer material: material diverted from the waste stream during manufacturing at another process or company, such as trimmings sold to a recycler.",
+        "Excluded: rework, regrind or scrap generated in a process and capable of being reclaimed within the same process that generated it. Your own sprue and runners fed back into the same moulding line do not count."
+      ]
+    },
+    {
+      "h": "The formula and the mass basis",
+      "p": [
+        "Recycled content % = A / P x 100, where A is the mass of recycled material and P is the mass of the product. Use the same unit for both and use mass, not volume or cost. If you claim recycled content for packaging, calculate it for the packaging separately from the product inside.",
+        "When you buy a blended input, such as a resin with 30% post-consumer content, the recycled mass it brings is 0.30 x the mass of that resin in the product. Use the supplier's declared share for that batch, not a range from a data sheet."
+      ]
+    },
+    {
+      "h": "Rules for making the claim",
+      "ol": [
+        "State the percentage as a number, not as \"made with recycled material\" alone.",
+        "If you show pre-consumer and post-consumer shares, calculate each one separately; buyers and EPR rules often value post-consumer more.",
+        "Base it on a defined period or batch, and recalculate when the input mix changes.",
+        "Keep supplier declarations, invoices showing recycled grades and quantities, and recycler certificates as evidence."
+      ]
+    },
+    {
+      "h": "How this links to circularity and footprint figures",
+      "p": [
+        "ISO 59020:2024 uses the same idea at company level: the share of recycled or reused material in all material inflows, by mass. The percentage on your product is also the starting point for a product footprint, where the recycled share decides how much of the input carries virgin emissions. Choosing the footprint method is a separate question from calculating the share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 50 g plastic container (hypothetical masses)",
+    "lines": [
+      "Post-consumer recycled resin: 15 g",
+      "Pre-consumer recycled resin bought from a recycler: 5 g",
+      "Own regrind from the same moulding line: 2 g (excluded)",
+      "Virgin resin: 28 g; total 15 + 5 + 2 + 28 = 50 g",
+      "Recycled content: (15 + 5) / 50 x 100 = 40%",
+      "Of which post-consumer: 15 / 50 x 100 = 30%; pre-consumer: 5 / 50 x 100 = 10%"
+    ],
+    "note": "The 2 g of regrind stays in the product mass P but not in the recycled mass A."
+  },
+  "senseible": "Senseible reads purchase invoices into line items, so where a supplier states the recycled grade and quantity on the invoice, those lines are kept as evidence for your calculation. It does not calculate the percentage for you or certify a recycled content claim.",
+  "links": [
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Plastic EPR recycled content targets",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "ISO 59020 circularity reporting",
+      "to": "/climate-intelligence/msme-circular-economy-iso-59020-reporting"
+    },
+    {
+      "label": "Circular economy services",
+      "to": "/circular-economy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021:2016, Environmental labels and declarations, self-declared environmental claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 59020:2024, Circular economy, measuring and assessing circularity performance (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

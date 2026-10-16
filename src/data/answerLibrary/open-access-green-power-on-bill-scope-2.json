@@ -1,0 +1,66 @@
+{
+  "slug": "open-access-green-power-on-bill-scope-2",
+  "q": "Open access green power shows on my HT bill. How do I report it in Scope 2?",
+  "title": "Open access green power on an HT bill",
+  "short": "Take total consumption at your meter, including the open access units the discom adjusted, for location-based Scope 2 at the grid factor. For market-based, count only the adjusted green units at zero, and only if your contract and green certificate give you their attributes. The discom units that remain take the grid average.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian factories buying green energy open access or group captive power",
+  "sections": [
+    {
+      "h": "The lines to find on the bill",
+      "ul": [
+        "Units recorded at your meter for the month: everything you drew from the grid connection, in kWh (or kVAh, which you convert to kWh first).",
+        "Open access units adjusted: the green units credited against your consumption, usually taken from the state load despatch centre's energy account, after transmission and wheeling losses.",
+        "Banked units drawn: green units generated in earlier months and adjusted now, under your state's banking rules.",
+        "Net units billed by the discom: recorded units minus adjusted units. This is what the energy charge is on.",
+        "Wheeling, transmission, cross subsidy surcharge, additional surcharge and banking charges. These are rupee lines and carry no units for Scope 2."
+      ]
+    },
+    {
+      "h": "The common mistake: reporting only the net units",
+      "p": [
+        "Many bills put the net discom units in the largest box. If you multiply only that by the grid factor, your location-based Scope 2 is too low, because the open access power still reached you over the same grid. Location-based Scope 2 under the GHG Protocol covers all electricity you consumed, so add the adjusted units back before you apply 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Which green units count in market-based",
+      "ul": [
+        "Count the units adjusted at your meter, not the units the plant injected at its end.",
+        "Count banked units in the month they are adjusted against your load, and note the months they were generated. Banked units that lapsed without adjustment cannot be claimed.",
+        "Keep the green certificate or statement that the Green Energy Open Access Rules, 2022 provide for, plus the contract clause that passes the renewable attributes to you.",
+        "Leave out any units for which the generator also sold RECs, unless you hold and redeem those RECs yourself."
+      ]
+    },
+    {
+      "h": "When the bill does not show the adjusted units",
+      "p": [
+        "Some discoms print only net units and a credit line in rupees. Get the monthly energy account from the generator or the state load despatch centre and match its adjusted units to each bill. Without the units, you have no basis for the market-based claim, and location-based Scope 2 should be built from the meter reading, not the net figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month with solar open access",
+    "lines": [
+      "Recorded at meter: 2,00,000 kWh; open access solar adjusted: 1,20,000 kWh; net billed by discom: 80,000 kWh",
+      "Location-based: 2,00,000 x 0.710 = 1,42,000 kg CO2, 142 t",
+      "Market-based: 1,20,000 kWh at zero, plus 80,000 x 0.710 = 56,800 kg CO2, 56.8 t",
+      "Wrong location-based figure from net units only: 80,000 x 0.710 = 56,800 kg CO2, which understates by 85.2 t"
+    ],
+    "note": "The 56.8 t market-based figure needs a contract that passes you the attributes of the 1,20,000 kWh, and no RECs sold against them. The grid average stands in for a residual mix, which India does not publish; say so in the report."
+  },
+  "senseible": "Senseible reads billing details from the HT bill (period, tariff category, sanctioned load, units) and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based alongside when you record the open access units and their contract evidence. It does not check your contract or confirm that RECs were not sold for the same units.",
+  "links": [
+    { "label": "Green energy open access in India", "to": "/climate-intelligence/green-energy-open-access-india" },
+    { "label": "Does a green tariff make Scope 2 zero?", "to": "/answers/green-tariff-zero-scope-2" },
+    { "label": "Group captive solar in Scope 2", "to": "/answers/group-captive-solar-scope-2" },
+    { "label": "How to read an HT electricity bill", "to": "/answers/how-to-read-an-ht-industrial-electricity-bill" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria", "url": "https://ghgprotocol.org/scope-2-guidance" },
+    { "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)", "url": "https://powermin.gov.in" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance, including hourly matching; check whether the market-based test has changed."
+}

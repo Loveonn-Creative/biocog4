@@ -1,0 +1,79 @@
+{
+  "slug": "bee-star-rating-for-commercial-buildings",
+  "q": "How does the BEE star rating for office buildings work?",
+  "title": "BEE star rating for office buildings",
+  "short": "The BEE star rating gives an existing office building one to five stars based on its Energy Performance Index (EPI): annual kWh divided by built-up area. Fewer kWh per square metre earns more stars. The bands differ by climate zone and by how much of the building is air-conditioned.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Commercial building owners and tenants in India",
+  "sections": [
+    {
+      "h": "Which buildings it covers",
+      "p": [
+        "The Bureau of Energy Efficiency runs the star rating programme for existing commercial buildings: day-use offices, BPOs, shopping malls and hospitals, each with its own bands. It is voluntary and based on actual use, which makes it different from the Energy Conservation Building Code, a design code for new buildings. Check the current eligibility conditions in BEE's application guidelines before you apply."
+      ]
+    },
+    {
+      "h": "How the EPI is worked out",
+      "ol": [
+        "Add up the building's electricity use for a full year, from twelve months of bills, plus any other energy the BEE application format asks you to report.",
+        "Take the built-up area in square metres, leaving out areas BEE excludes, such as unconditioned basement parking.",
+        "EPI = annual kWh / built-up area, in kWh per square metre per year.",
+        "Find the band for your building type, climate zone and air-conditioned share in BEE's tables to read off the star level."
+      ]
+    },
+    {
+      "h": "Why climate zone and air-conditioned share matter",
+      "p": [
+        "A fully air-conditioned office in a warm and humid city such as Chennai or Mumbai needs more cooling than one in a moderate climate. BEE sets separate EPI bands for each climate zone, and for buildings above and below half air-conditioned area, so a building is compared with others that face similar loads."
+      ]
+    },
+    {
+      "h": "Moving up a star",
+      "ul": [
+        "Cooling is usually the largest load: chiller and AHU efficiency, set points, and controls that shut down after hours.",
+        "Lighting: LED retrofits with occupancy and daylight sensors.",
+        "Envelope: reflective roofs, shading and glazing in the worst-facing facades.",
+        "On-site solar lowers grid units; check how the current BEE format treats it before counting it in the EPI."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 12,000 m2 office block (hypothetical)",
+    "lines": [
+      "Built-up area: 12,000 m2, less 2,000 m2 unconditioned basement parking = 10,000 m2",
+      "Annual electricity from twelve bills: 14,00,000 kWh",
+      "EPI: 14,00,000 / 10,000 = 140 kWh per m2 per year",
+      "Scope 2: 14,00,000 x 0.710 = 9,94,000 kg CO2, about 994 t a year",
+      "A 10% cut in units: EPI 126, and 99.4 t CO2 less a year"
+    ],
+    "note": "The building and its consumption are hypothetical. Read the star level for an EPI of 140 from BEE's current table for your building type, climate zone and air-conditioned share."
+  },
+  "senseible": "Senseible reads your electricity bills (billing period, tariff category, sanctioned load and units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, so the year's kWh and Scope 2 are ready for the EPI. It does not calculate the EPI, apply for or award a BEE star rating.",
+  "links": [
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Star Rating Programme for Buildings, application guidelines and EPI bands (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "BEE revises building types, eligibility and EPI bands from time to time; read the current guidelines before applying."
+}

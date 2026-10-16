@@ -1,0 +1,65 @@
+{
+  "slug": "sec-climate-rule-status-us-buyers",
+  "q": "Is the SEC climate disclosure rule in force, and do US buyers still need my emissions?",
+  "title": "SEC climate rule status and US buyers",
+  "short": "No. The SEC adopted climate disclosure rules in March 2024, paused them in April 2024, stopped defending them in March 2025 and proposed repealing them in May 2026, so they have never applied. US buyers still ask for supplier emissions because of their own targets, CDP, California's SB 253 and EU rules.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to US companies; Indian companies with US listings",
+  "sections": [
+    {
+      "h": "Where the SEC rules stand, step by step",
+      "ul": [
+        "6 March 2024: the SEC adopted its climate disclosure rules (Release No. 33-11275).",
+        "4 April 2024: the SEC stayed the rules while challenges, consolidated as Iowa v. SEC in the US Court of Appeals for the Eighth Circuit, were heard.",
+        "27 March 2025: the SEC voted to stop defending the rules. In September 2025 the court put the case on hold until the SEC either reconsiders the rules through notice and comment or resumes its defence.",
+        "29 May 2026: the SEC proposed rescinding the rules (Release No. 33-11421); comments closed on 3 August 2026. A final vote is still needed before the rescission takes effect.",
+        "Result: the rules are stayed, never reached a compliance date, and are on track to be withdrawn."
+      ]
+    },
+    {
+      "h": "Who would have been covered",
+      "p": [
+        "Only SEC registrants. The final rules covered a filer's own climate risks and, for larger filers where material, its Scope 1 and Scope 2; Scope 3 had already been dropped. Whether that ever reached an Indian supplier is a separate question, answered in the linked page on Indian suppliers. The practical point here: an SEC rule in limbo is not why your US customer is asking."
+      ]
+    },
+    {
+      "h": "Why US buyers still send data requests",
+      "ul": [
+        "Their own climate targets, many validated by SBTi, which include supplier emissions in Scope 3.",
+        "CDP supply chain programmes, run on behalf of large buyers each year.",
+        "California's SB 253, which requires US companies above USD 1 billion in revenue doing business in California to report Scope 3 from 2027.",
+        "EU subsidiaries of US groups that report under the CSRD."
+      ]
+    },
+    {
+      "h": "What to send a US buyer",
+      "p": [
+        "A full year of Scope 1 and location-based Scope 2 in tonnes, built on the GHG Protocol, with each factor and its source, plus market-based Scope 2 if you hold certificates or green power contracts. Add your output or revenue for the same year so the buyer can allocate a share, and say which figures come from bills and which are estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares Scope 1 and Scope 2 from your invoices and electricity bills, with the factor and source on every line, as a self-declared data pack you can send to a buyer. It does not track SEC litigation or fill in a buyer's portal for you.",
+  "links": [
+    {
+      "label": "California SB 253 and Indian suppliers",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "Answering a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "As of 16 October 2026 the SEC's May 2026 rescission proposal (Release No. 33-11421) awaited a final vote and Iowa v. SEC was in abeyance; confirm on sec.gov before relying on this status."
+}

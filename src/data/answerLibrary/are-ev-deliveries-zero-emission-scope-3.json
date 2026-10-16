@@ -1,0 +1,80 @@
+{
+  "slug": "are-ev-deliveries-zero-emission-scope-3",
+  "q": "Are electric vehicle deliveries zero emission in my Scope 3?",
+  "title": "Are EV deliveries zero in Scope 3?",
+  "short": "No. An electric delivery has no tailpipe emissions, but the electricity that charged the vehicle was generated somewhere, and in India most of it from coal. Your Scope 3 transport figure is the carrier's kWh times the grid factor, which is lower than diesel but not zero.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Brands and D2C exporters using EV last-mile partners",
+  "sections": [
+    {
+      "h": "Where EV deliveries sit in your inventory",
+      "p": [
+        "Deliveries you pay a carrier for, inbound or out to customers, are Scope 3 Category 4, upstream transportation. Deliveries you do not pay for, such as a marketplace's own logistics, are Category 9. The vehicle's charging electricity is in the carrier's Scope 2; in yours it shows up as transport emissions."
+      ]
+    },
+    {
+      "h": "How to calculate it",
+      "ol": [
+        "Get the energy used: kWh per km for the vehicle type from the carrier or the manufacturer, and the km driven for your shipments.",
+        "Multiply km x kWh per km to get kWh.",
+        "Multiply by the grid factor for where the vehicle was charged, 0.710 kg CO2 per kWh for India from the CEA CO2 Baseline Database, version 21.0.",
+        "If the carrier shares only total kWh for a shared fleet, ask how it allocates to your parcels, by weight, parcel count or distance."
+      ]
+    },
+    {
+      "h": "What the standards add",
+      "p": [
+        "ISO 14083:2023 and the GLEC Framework count the energy supply of a transport chain, so electricity generation is part of an EV's transport emissions, the same way diesel production is part of a diesel van's on a well-to-wheel basis. They also count hub and warehouse energy between legs. A carrier quoting zero is reporting tailpipe only."
+      ]
+    },
+    {
+      "h": "Claims to check before you repeat them",
+      "ul": [
+        "Carbon-neutral delivery usually means the carrier bought offsets. Offsets are reported separately and do not reduce your Scope 3 figure.",
+        "Solar-charged fleets: ask for evidence, such as on-site generation records or certificates covering the kWh. If the carrier cannot show it, use the grid factor.",
+        "Do not write zero-emission delivery on your packaging or website on the basis of EVs alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: one month with a shared EV fleet",
+    "lines": [
+      "Carrier's fleet charging for the month: 24,000 kWh across 60,000 parcels (assumed figures)",
+      "Your parcels: 9,000, so your share is 24,000 x 9,000 / 60,000 = 3,600 kWh",
+      "3,600 x 0.710 = 2,556 kg CO2 for the month",
+      "Per parcel: 2,556 / 9,000 = 0.284 kg CO2, where the carrier's report said zero"
+    ],
+    "note": "This allocates by parcel count. If your parcels are heavier or travel further than the fleet average, ask the carrier to allocate by weight or distance instead."
+  },
+  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh to electricity and reads freight invoices into a separate supplier evidence trail. It does not get kWh from a carrier's fleet; that has to come from the carrier, and the same factor then applies.",
+  "links": [
+    {
+      "label": "Freight: Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Diesel to electric van saving",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard and Technical Guidance, Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification of GHG emissions from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

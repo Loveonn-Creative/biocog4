@@ -1,0 +1,74 @@
+{
+  "slug": "does-r22-count-in-scope-1",
+  "q": "Does R-22 (HCFC-22) leakage count in my Scope 1 emissions?",
+  "title": "Does R-22 leakage count in Scope 1?",
+  "short": "No, not in the Scope 1 total. R-22 is an HCFC controlled by the Montreal Protocol, not one of the Kyoto gases the GHG Protocol counts in scopes. Report its leakage separately, as kilograms of gas and its CO2e, next to your inventory. Replacement gases such as R-32, R-410A and R-407C do go into Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian MSMEs with older ACs and chillers",
+  "sections": [
+    {
+      "h": "Why the GHG Protocol leaves R-22 out of the scopes",
+      "p": [
+        "The GHG Protocol Corporate Standard counts the Kyoto Protocol gases in Scope 1, 2 and 3: CO2, methane, nitrous oxide, HFCs, PFCs, SF6 and NF3. HCFCs and CFCs damage the ozone layer and are phased out under the Montreal Protocol, so the Kyoto basket excluded them. The Standard says emissions of gases outside that basket may be reported separately, outside the scopes. It is still a warming gas: R-22 has a 100-year GWP of 1,760 in IPCC AR5 and 1,960 in AR6."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Work out leakage the same way as for HFCs: kilograms topped up in the year, from service invoices or logbooks.",
+        "Multiply by the GWP and state the basis, AR5 or AR6.",
+        "Show it as a separate line, for example \"Other emissions, not in Scope 1: HCFC-22\", with kg and t CO2e.",
+        "Do not add it to the Scope 1 total or use it in your intensity figures, unless a buyer or programme explicitly asks you to. If they do, say so in the method note."
+      ]
+    },
+    {
+      "h": "The phase-out and what it means for old equipment",
+      "p": [
+        "Under the Montreal Protocol schedule for developing countries (Article 5 parties), HCFC consumption must be fully phased out by 2030, with a small allowance for servicing existing equipment until 2040. India runs this through its HCFC Phase-out Management Plan under the Ozone Depleting Substances (Regulation and Control) Rules, 2000, as amended. Expect R-22 for top-ups to get scarcer and dearer over time. Check the Ozone Cell of the Ministry of Environment for the current stage before planning around a date."
+      ]
+    },
+    {
+      "h": "Retrofit or replace: the Scope 1 effect",
+      "p": [
+        "When you retrofit an R-22 system with an HFC blend, or replace it with an R-32 or R-410A unit, future leaks of the new gas count in Scope 1. Your reported Scope 1 can therefore rise even as total warming impact falls. Explain the switch in your report so a buyer reading year on year figures understands the jump."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an old R-22 chiller replaced mid year",
+    "lines": [
+      "April to September: 20 kg R-22 topped up; 20 x 1,760 = 35,200 kg CO2e (AR5), reported separately, not in Scope 1",
+      "October to March: new R-32 chiller, 4 kg topped up; 4 x 677 = 2,708 kg CO2e (AR5), in Scope 1",
+      "Scope 1 refrigerant line for the year: 2.7 t CO2e; separate HCFC line: 35.2 t CO2e"
+    ],
+    "note": "Figures are illustrative. Use AR6 values throughout if your buyer or programme asks for them: 1,960 for HCFC-22 and 771 for HFC-32."
+  },
+  "senseible": "Senseible keeps R-22 service invoices as evidence. It does not assign a GWP to a gas from an invoice alone; refrigerant emissions, R-22 included, are worked out only from measured data you provide, such as the gas type and kilograms charged. Report the HCFC figure as its own line outside the Scope 1 total.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Cold chain refrigerant leaks and carbon",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Ozone Cell, MoEFCC: Montreal Protocol HCFC Phase-out Management Plan and ODS Rules, 2000",
+      "url": "https://www.ozonecell.nic.in"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "India's HCFC phase-out stages and servicing allowances should be checked on ozonecell.nic.in before relying on a date."
+}

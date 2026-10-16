@@ -1,0 +1,85 @@
+{
+  "slug": "msme-climate-transition-plan-what-to-include",
+  "q": "What should a supplier's climate transition plan include when a buyer asks for one?",
+  "title": "Supplier transition plan: what to include",
+  "short": "A buyer-ready transition plan needs six things: a measured baseline, a dated reduction target, named actions with the tonnes each saves, the money and timing behind them, who owns the plan, and how you will report progress. Keep it to a few pages and back every number with records.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian MSME suppliers to EU and UK buyers",
+  "sections": [
+    {
+      "h": "Why buyers are asking",
+      "p": [
+        "Large EU buyers in scope of the CSRD disclose their transition plan, or say they do not have one, under ESRS E1, and their targets usually include Scope 3. Your emissions are part of their Scope 3, so they want to see that your numbers will fall, by how much and when. The Transition Plan Taskforce framework, now maintained by the IFRS Foundation, is the reference many UK buyers use to judge a plan."
+      ]
+    },
+    {
+      "h": "The six sections a buyer looks for",
+      "ol": [
+        "Baseline: the year, Scope 1 and Scope 2 in tonnes, the factors and their sources, and what is excluded.",
+        "Target: a percentage cut from the baseline by a named year. Say whether it follows a science-based pathway, and whether SBTi has validated it.",
+        "Actions: each project with its start date and the tonnes it removes, such as rooftop solar, a fuel switch, or replacing an old compressor.",
+        "Resources: capex, financing such as a green loan, and anything you depend on, such as discom approval for open access.",
+        "Governance: the person responsible, and board or owner approval with a date.",
+        "Tracking: the metric you will report each year and how the buyer will receive it."
+      ]
+    },
+    {
+      "h": "How to treat offsets and renewable certificates",
+      "p": [
+        "Show reductions first. ISO 14068-1:2023 and the SBTi Corporate Net-Zero Standard both put cutting your own emissions ahead of compensation, and SBTi does not count carbon credits toward a near-term target. If you plan to buy renewable energy certificates or a green tariff, say so and show the market-based Scope 2 separately from the location-based figure."
+      ]
+    },
+    {
+      "h": "Mistakes that make a buyer reject the plan",
+      "ul": [
+        "A net zero year with no near-term target or actions.",
+        "Totals with no baseline year or no factor source.",
+        "Actions whose savings add up to more than the baseline.",
+        "Scope 3 claims you cannot support; if you have not screened Scope 3, say when you will."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: action table for a plant emitting 1,000 t CO2 a year (hypothetical plant)",
+    "lines": [
+      "Baseline FY 2024-25: 1,000 t CO2 (Scope 1 and 2), hypothetical",
+      "Rooftop solar, 4,00,000 kWh a year: 4,00,000 x 0.710 = 2,84,000 kg = 284 t",
+      "Cut diesel generator use by 15,000 L a year: 15,000 x 2.68 = 40,200 kg = 40.2 t",
+      "Total from actions: 284 + 40.2 = 324.2 t, which is 324.2 / 1,000 = 32.4% of the baseline",
+      "A 42% target would need 0.42 x 1,000 = 420 t, so the plan must name about 95.8 t more"
+    ],
+    "note": "The plant, its baseline and the 42% target are hypothetical. The 0.710 kg CO2 per kWh grid factor is from the CEA CO2 Baseline Database version 21.0 and the diesel factor is the IPCC 2006 default."
+  },
+  "senseible": "Senseible gives you a measured Scope 1 and 2 baseline from your invoices and bills, with the factor and source document behind each line, and its net zero roadmap builder helps lay out actions. It does not write your transition plan, set or validate your target, or assure it.",
+  "links": [
+    {
+      "label": "Net zero roadmap builder",
+      "to": "/net-zero"
+    },
+    {
+      "label": "MSME net zero roadmap in 12 months",
+      "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants"
+    },
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Transition Plan Taskforce Disclosure Framework (October 2023), now hosted by the IFRS Foundation",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "ESRS E1 Climate change, disclosure E1-1 transition plan (efrag.org)",
+      "url": "https://www.efrag.org"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "ESRS E1 is being simplified under the EU Omnibus; recheck the transition plan disclosure before quoting it to a buyer."
+}

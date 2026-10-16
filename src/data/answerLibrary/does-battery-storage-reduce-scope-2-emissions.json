@@ -1,0 +1,81 @@
+{
+  "slug": "does-battery-storage-reduce-scope-2-emissions",
+  "q": "Does adding battery storage reduce my Scope 2 emissions?",
+  "title": "Does battery storage cut Scope 2?",
+  "short": "Not on its own. Charging a battery from the grid and using it later does not lower location-based Scope 2 in India, because the CEA factor is an annual average, and battery losses add grid kWh. Storage reduces Scope 2 only when it stores on-site solar that would otherwise be exported or wasted.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Factories considering battery storage with or without rooftop solar",
+  "sections": [
+    {
+      "h": "Grid charging: losses add emissions",
+      "p": [
+        "Location-based Scope 2 under the GHG Protocol Scope 2 Guidance is grid kWh consumed x the grid factor. The CEA CO2 Baseline Database gives one annual weighted average, 0.710 kg CO2 per kWh in version 21.0, with no hourly or time-of-day values. Charging at night and discharging at peak therefore gives the same factor at both ends.",
+        "What changes is the kWh. A battery returns less than it takes in. Extra grid kWh = kWh cycled x (1 minus round-trip efficiency), so at 90% round-trip efficiency, about 10% of the cycled energy is added to your bill and your Scope 2."
+      ]
+    },
+    {
+      "h": "Solar storage: the case that does cut Scope 2",
+      "p": [
+        "With rooftop or ground-mounted solar, surplus at midday is either exported, curtailed or stored. Storing it and using it in the evening means less power drawn from the grid. Because Scope 2 counts the grid electricity you consume, gross imports fall and so does Scope 2. Under net metering, exported units earn a bill credit but do not cancel imported units in a GHG inventory, which is why storage changes the carbon figure even where the rupee saving is small."
+      ]
+    },
+    {
+      "h": "Other cases worth checking",
+      "ul": [
+        "Replacing a diesel generator: if the battery covers outages the DG set used to cover, the saving shows in Scope 1 diesel, not Scope 2.",
+        "Peak shaving only: lower maximum demand charges save money but do not reduce kWh, so Scope 2 stays the same or rises slightly.",
+        "Market-based Scope 2: storage does not create renewable attributes. Only certificates, a green tariff or contracts for the electricity change the market-based figure."
+      ]
+    },
+    {
+      "h": "Why hourly accounting could change this",
+      "p": [
+        "The GHG Protocol is revising its Scope 2 Guidance, and hourly matching of clean electricity to consumption is part of the consultation. If hourly factors or hourly matching become the rule, charging when the grid is cleaner could start to count. Until then, an annual factor gives no credit for timing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two ways to run the same battery",
+    "lines": [
+      "Grid charging: 300,000 kWh cycled a year at 90% round-trip efficiency",
+      "Losses: 300,000 x (1 minus 0.90) = 30,000 kWh extra from the grid",
+      "30,000 x 0.710 = 21,300 kg CO2 added to location-based Scope 2",
+      "Solar storage: 200,000 kWh of surplus stored instead of exported",
+      "Delivered: 200,000 x 0.90 = 180,000 kWh not drawn from the grid",
+      "180,000 x 0.710 = 127,800 kg CO2, about 128 t, removed from Scope 2"
+    ],
+    "note": "Use the round-trip efficiency on your battery's data sheet and metered charge and discharge figures."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to kWh consumed; net-metered units are not treated as consumption. Location-based figures use the annual average, so shifting grid charging in time does not change them.",
+  "links": [
+    {
+      "label": "Rooftop solar, net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol standards and revision updates",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The GHG Protocol Scope 2 revision, including hourly matching, is under consultation; recheck before relying on the timing point."
+}
