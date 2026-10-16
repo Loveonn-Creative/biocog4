@@ -170,7 +170,7 @@ export default function GreenLoan() {
     <div className="min-h-screen bg-background">
       <SEOHead title="Green loan application | Senseible" description="Prepare a sustainable-finance application with your business data and emissions record." noIndex />
       <Navigation onSignOut={() => navigate('/')} />
-      <main className="container mx-auto max-w-5xl px-4 pb-28 pt-8 md:pb-10">
+      <main data-clarity-mask="True" className="container mx-auto max-w-5xl px-4 pb-28 pt-8 md:pb-10">
         <Link to="/climate-finance" className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" />Climate finance</Link>
         {children}
         <p className="mt-10 max-w-2xl text-xs text-muted-foreground">{DISCLOSURE}</p>
