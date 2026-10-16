@@ -289,6 +289,7 @@ export type Database = {
           invoice_number: string | null
           is_green_benefit: boolean | null
           methodology_version: string
+          organization_id: string | null
           scope: number
           user_id: string
           validation_failure_reason: string | null
@@ -325,6 +326,7 @@ export type Database = {
           invoice_number?: string | null
           is_green_benefit?: boolean | null
           methodology_version: string
+          organization_id?: string | null
           scope: number
           user_id: string
           validation_failure_reason?: string | null
@@ -361,6 +363,7 @@ export type Database = {
           invoice_number?: string | null
           is_green_benefit?: boolean | null
           methodology_version?: string
+          organization_id?: string | null
           scope?: number
           user_id?: string
           validation_failure_reason?: string | null
@@ -384,6 +387,13 @@ export type Database = {
             columns: ["emission_id"]
             isOneToOne: false
             referencedRelation: "emissions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "compliance_ledger_organization_id_fkey"
+            columns: ["organization_id"]
+            isOneToOne: false
+            referencedRelation: "organizations"
             referencedColumns: ["id"]
           },
           {
@@ -512,6 +522,94 @@ export type Database = {
         }
         Relationships: []
       }
+      credit_signals: {
+        Row: {
+          asset_id: string | null
+          baseline_tco2e: number | null
+          central_tco2e: number | null
+          checks: Json
+          conservative_tco2e: number | null
+          created_at: string
+          details: Json | null
+          eligible_kwh: number
+          factor_id: string | null
+          id: string
+          inputs_hash: string
+          method_id: string
+          method_version: string
+          monitoring_end: string | null
+          monitoring_start: string | null
+          project_id: string | null
+          project_tco2e: number | null
+          status: string
+          uncertainty_pct: number
+        }
+        Insert: {
+          asset_id?: string | null
+          baseline_tco2e?: number | null
+          central_tco2e?: number | null
+          checks: Json
+          conservative_tco2e?: number | null
+          created_at?: string
+          details?: Json | null
+          eligible_kwh?: number
+          factor_id?: string | null
+          id?: string
+          inputs_hash: string
+          method_id: string
+          method_version: string
+          monitoring_end?: string | null
+          monitoring_start?: string | null
+          project_id?: string | null
+          project_tco2e?: number | null
+          status: string
+          uncertainty_pct: number
+        }
+        Update: {
+          asset_id?: string | null
+          baseline_tco2e?: number | null
+          central_tco2e?: number | null
+          checks?: Json
+          conservative_tco2e?: number | null
+          created_at?: string
+          details?: Json | null
+          eligible_kwh?: number
+          factor_id?: string | null
+          id?: string
+          inputs_hash?: string
+          method_id?: string
+          method_version?: string
+          monitoring_end?: string | null
+          monitoring_start?: string | null
+          project_id?: string | null
+          project_tco2e?: number | null
+          status?: string
+          uncertainty_pct?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "credit_signals_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "solar_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "credit_signals_factor_id_fkey"
+            columns: ["factor_id"]
+            isOneToOne: false
+            referencedRelation: "grid_emission_factors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "credit_signals_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "reduction_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       document_extractions: {
         Row: {
           created_at: string
@@ -639,6 +737,388 @@ export type Database = {
             columns: ["session_id"]
             isOneToOne: false
             referencedRelation: "sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      electricity_activities: {
+        Row: {
+          country: string | null
+          country_source: string
+          created_at: string
+          document_id: string
+          grid_region: string | null
+          id: string
+          kwh: number | null
+          line_key: string
+          method_version: string
+          organization_id: string | null
+          period_end: string | null
+          period_start: string | null
+          quantity_printed: number | null
+          reasons: string[]
+          source_text: string | null
+          status: string
+          supplier_ref: string | null
+          unit_printed: string | null
+          user_id: string
+        }
+        Insert: {
+          country?: string | null
+          country_source: string
+          created_at?: string
+          document_id: string
+          grid_region?: string | null
+          id?: string
+          kwh?: number | null
+          line_key: string
+          method_version: string
+          organization_id?: string | null
+          period_end?: string | null
+          period_start?: string | null
+          quantity_printed?: number | null
+          reasons?: string[]
+          source_text?: string | null
+          status: string
+          supplier_ref?: string | null
+          unit_printed?: string | null
+          user_id: string
+        }
+        Update: {
+          country?: string | null
+          country_source?: string
+          created_at?: string
+          document_id?: string
+          grid_region?: string | null
+          id?: string
+          kwh?: number | null
+          line_key?: string
+          method_version?: string
+          organization_id?: string | null
+          period_end?: string | null
+          period_start?: string | null
+          quantity_printed?: number | null
+          reasons?: string[]
+          source_text?: string | null
+          status?: string
+          supplier_ref?: string | null
+          unit_printed?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "electricity_activities_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      electricity_allocations: {
+        Row: {
+          activity_id: string
+          created_at: string
+          id: string
+          instrument_id: string
+          is_current: boolean
+          kwh: number
+          method_version: string
+          reporting_year: string
+          user_id: string
+        }
+        Insert: {
+          activity_id: string
+          created_at?: string
+          id?: string
+          instrument_id: string
+          is_current?: boolean
+          kwh: number
+          method_version: string
+          reporting_year: string
+          user_id: string
+        }
+        Update: {
+          activity_id?: string
+          created_at?: string
+          id?: string
+          instrument_id?: string
+          is_current?: boolean
+          kwh?: number
+          method_version?: string
+          reporting_year?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "electricity_allocations_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "electricity_activities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "electricity_allocations_instrument_id_fkey"
+            columns: ["instrument_id"]
+            isOneToOne: false
+            referencedRelation: "electricity_instruments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      electricity_calculations: {
+        Row: {
+          activity_id: string
+          calculated_at: string
+          factor_gases: string | null
+          factor_id: string | null
+          factor_key: string | null
+          factor_kind: string | null
+          factor_kwh: number | null
+          factor_source: string | null
+          factor_value: number | null
+          factor_version: string | null
+          formula: string | null
+          id: string
+          inputs_sha256: string
+          instrument_kg: number
+          instrument_kwh: number
+          is_current: boolean
+          kg: number | null
+          kwh: number
+          method: string
+          method_version: string
+          organization_id: string | null
+          period_end: string
+          period_start: string
+          reasons: string[]
+          reporting_year: string
+          status: string
+          user_id: string
+          warnings: string[]
+        }
+        Insert: {
+          activity_id: string
+          calculated_at?: string
+          factor_gases?: string | null
+          factor_id?: string | null
+          factor_key?: string | null
+          factor_kind?: string | null
+          factor_kwh?: number | null
+          factor_source?: string | null
+          factor_value?: number | null
+          factor_version?: string | null
+          formula?: string | null
+          id?: string
+          inputs_sha256: string
+          instrument_kg?: number
+          instrument_kwh?: number
+          is_current?: boolean
+          kg?: number | null
+          kwh: number
+          method: string
+          method_version: string
+          organization_id?: string | null
+          period_end: string
+          period_start: string
+          reasons?: string[]
+          reporting_year: string
+          status: string
+          user_id: string
+          warnings?: string[]
+        }
+        Update: {
+          activity_id?: string
+          calculated_at?: string
+          factor_gases?: string | null
+          factor_id?: string | null
+          factor_key?: string | null
+          factor_kind?: string | null
+          factor_kwh?: number | null
+          factor_source?: string | null
+          factor_value?: number | null
+          factor_version?: string | null
+          formula?: string | null
+          id?: string
+          inputs_sha256?: string
+          instrument_kg?: number
+          instrument_kwh?: number
+          is_current?: boolean
+          kg?: number | null
+          kwh?: number
+          method?: string
+          method_version?: string
+          organization_id?: string | null
+          period_end?: string
+          period_start?: string
+          reasons?: string[]
+          reporting_year?: string
+          status?: string
+          user_id?: string
+          warnings?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "electricity_calculations_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "electricity_activities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "electricity_calculations_factor_id_fkey"
+            columns: ["factor_id"]
+            isOneToOne: false
+            referencedRelation: "electricity_factors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      electricity_factors: {
+        Row: {
+          approved_at: string | null
+          approved_by: string | null
+          country: string
+          created_at: string
+          created_by: string
+          factor_key: string
+          gases: string
+          grid_region: string | null
+          gwp_basis: string | null
+          id: string
+          kg_per_kwh: number
+          kind: string
+          licence_note: string | null
+          methodology: string
+          publication_year: number
+          source_name: string
+          source_ref: string
+          source_url: string | null
+          status: string
+          supplier_ref: string | null
+          uncertainty_pct: number | null
+          valid_from: string
+          valid_to: string | null
+          version: string
+        }
+        Insert: {
+          approved_at?: string | null
+          approved_by?: string | null
+          country: string
+          created_at?: string
+          created_by: string
+          factor_key: string
+          gases: string
+          grid_region?: string | null
+          gwp_basis?: string | null
+          id?: string
+          kg_per_kwh: number
+          kind: string
+          licence_note?: string | null
+          methodology: string
+          publication_year: number
+          source_name: string
+          source_ref: string
+          source_url?: string | null
+          status?: string
+          supplier_ref?: string | null
+          uncertainty_pct?: number | null
+          valid_from: string
+          valid_to?: string | null
+          version: string
+        }
+        Update: {
+          approved_at?: string | null
+          approved_by?: string | null
+          country?: string
+          created_at?: string
+          created_by?: string
+          factor_key?: string
+          gases?: string
+          grid_region?: string | null
+          gwp_basis?: string | null
+          id?: string
+          kg_per_kwh?: number
+          kind?: string
+          licence_note?: string | null
+          methodology?: string
+          publication_year?: number
+          source_name?: string
+          source_ref?: string
+          source_url?: string | null
+          status?: string
+          supplier_ref?: string | null
+          uncertainty_pct?: number | null
+          valid_from?: string
+          valid_to?: string | null
+          version?: string
+        }
+        Relationships: []
+      }
+      electricity_instruments: {
+        Row: {
+          beneficiary_confirmed: boolean
+          certificate_ref: string | null
+          created_at: string
+          evidence_document_id: string | null
+          generation_country: string
+          generation_region: string | null
+          id: string
+          kg_per_kwh: number
+          mwh: number
+          organization_id: string | null
+          retired: boolean
+          retirement_ref: string | null
+          scheme: string
+          type: string
+          user_id: string
+          vintage_end: string
+          vintage_start: string
+        }
+        Insert: {
+          beneficiary_confirmed?: boolean
+          certificate_ref?: string | null
+          created_at?: string
+          evidence_document_id?: string | null
+          generation_country: string
+          generation_region?: string | null
+          id?: string
+          kg_per_kwh: number
+          mwh: number
+          organization_id?: string | null
+          retired?: boolean
+          retirement_ref?: string | null
+          scheme: string
+          type: string
+          user_id: string
+          vintage_end: string
+          vintage_start: string
+        }
+        Update: {
+          beneficiary_confirmed?: boolean
+          certificate_ref?: string | null
+          created_at?: string
+          evidence_document_id?: string | null
+          generation_country?: string
+          generation_region?: string | null
+          id?: string
+          kg_per_kwh?: number
+          mwh?: number
+          organization_id?: string | null
+          retired?: boolean
+          retirement_ref?: string | null
+          scheme?: string
+          type?: string
+          user_id?: string
+          vintage_end?: string
+          vintage_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "electricity_instruments_evidence_document_id_fkey"
+            columns: ["evidence_document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
             referencedColumns: ["id"]
           },
         ]
@@ -1010,6 +1490,39 @@ export type Database = {
         }
         Relationships: []
       }
+      grid_emission_factors: {
+        Row: {
+          created_at: string
+          id: string
+          kg_per_kwh: number
+          kind: string
+          region: string
+          source: string
+          valid_from: string | null
+          version: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kg_per_kwh: number
+          kind: string
+          region: string
+          source: string
+          valid_from?: string | null
+          version: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kg_per_kwh?: number
+          kind?: string
+          region?: string
+          source?: string
+          valid_from?: string | null
+          version?: string
+        }
+        Relationships: []
+      }
       intelligence_usage: {
         Row: {
           count: number
@@ -1102,6 +1615,45 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      ledger_chain_events: {
+        Row: {
+          chain_key: string
+          chain_seq: number
+          emission_id: string | null
+          event_hash: string
+          event_type: string
+          ledger_id: string
+          prev_hash: string
+          recorded_at: string
+          row_digest: string
+          seq: number
+        }
+        Insert: {
+          chain_key: string
+          chain_seq: number
+          emission_id?: string | null
+          event_hash: string
+          event_type: string
+          ledger_id: string
+          prev_hash: string
+          recorded_at: string
+          row_digest: string
+          seq?: never
+        }
+        Update: {
+          chain_key?: string
+          chain_seq?: number
+          emission_id?: string | null
+          event_hash?: string
+          event_type?: string
+          ledger_id?: string
+          prev_hash?: string
+          recorded_at?: string
+          row_digest?: string
+          seq?: never
+        }
+        Relationships: []
       }
       marketplace_listings: {
         Row: {
@@ -1631,6 +2183,192 @@ export type Database = {
           subscription_tier?: string | null
           trust_layer_prefs?: Json | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      reduction_periods: {
+        Row: {
+          created_at: string
+          document_id: string | null
+          energy_qty: number | null
+          evidence: string
+          id: string
+          new_energy_qty: number | null
+          old_fuel_qty: number | null
+          output_qty: number | null
+          period_end: string
+          period_start: string
+          phase: string
+          project_id: string
+        }
+        Insert: {
+          created_at?: string
+          document_id?: string | null
+          energy_qty?: number | null
+          evidence: string
+          id?: string
+          new_energy_qty?: number | null
+          old_fuel_qty?: number | null
+          output_qty?: number | null
+          period_end: string
+          period_start: string
+          phase: string
+          project_id: string
+        }
+        Update: {
+          created_at?: string
+          document_id?: string | null
+          energy_qty?: number | null
+          evidence?: string
+          id?: string
+          new_energy_qty?: number | null
+          old_fuel_qty?: number | null
+          output_qty?: number | null
+          period_end?: string
+          period_start?: string
+          phase?: string
+          project_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reduction_periods_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reduction_periods_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "reduction_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      reduction_projects: {
+        Row: {
+          additionality: string
+          created_at: string
+          energy_carrier: string | null
+          equipment: string | null
+          id: string
+          lever: string
+          meter_accuracy_pct: number
+          name: string
+          new_energy: string | null
+          old_equipment_retired: boolean | null
+          old_fuel: string | null
+          output_unit: string | null
+          region: string
+          registered_elsewhere: boolean | null
+          started_on: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          additionality?: string
+          created_at?: string
+          energy_carrier?: string | null
+          equipment?: string | null
+          id?: string
+          lever: string
+          meter_accuracy_pct?: number
+          name: string
+          new_energy?: string | null
+          old_equipment_retired?: boolean | null
+          old_fuel?: string | null
+          output_unit?: string | null
+          region?: string
+          registered_elsewhere?: boolean | null
+          started_on: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          additionality?: string
+          created_at?: string
+          energy_carrier?: string | null
+          equipment?: string | null
+          id?: string
+          lever?: string
+          meter_accuracy_pct?: number
+          name?: string
+          new_energy?: string | null
+          old_equipment_retired?: boolean | null
+          old_fuel?: string | null
+          output_unit?: string | null
+          region?: string
+          registered_elsewhere?: boolean | null
+          started_on?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      reporting_frameworks: {
+        Row: {
+          applicability: Json
+          approved_at: string | null
+          approved_by: string | null
+          code: string
+          created_at: string
+          created_by: string
+          effective_from: string | null
+          effective_to: string | null
+          id: string
+          jurisdiction: string
+          kind: string
+          name: string
+          scope2_rules: Json
+          source_name: string
+          source_ref: string
+          source_url: string
+          status: string
+          status_note: string | null
+          version: string
+        }
+        Insert: {
+          applicability: Json
+          approved_at?: string | null
+          approved_by?: string | null
+          code: string
+          created_at?: string
+          created_by: string
+          effective_from?: string | null
+          effective_to?: string | null
+          id?: string
+          jurisdiction: string
+          kind: string
+          name: string
+          scope2_rules: Json
+          source_name: string
+          source_ref: string
+          source_url: string
+          status?: string
+          status_note?: string | null
+          version: string
+        }
+        Update: {
+          applicability?: Json
+          approved_at?: string | null
+          approved_by?: string | null
+          code?: string
+          created_at?: string
+          created_by?: string
+          effective_from?: string | null
+          effective_to?: string | null
+          id?: string
+          jurisdiction?: string
+          kind?: string
+          name?: string
+          scope2_rules?: Json
+          source_name?: string
+          source_ref?: string
+          source_url?: string
+          status?: string
+          status_note?: string | null
+          version?: string
         }
         Relationships: []
       }
@@ -2278,6 +3016,186 @@ export type Database = {
         }
         Relationships: []
       }
+      solar_assets: {
+        Row: {
+          additionality: string
+          capacity_kwp: number
+          commissioned_on: string
+          created_at: string
+          id: string
+          meter_accuracy_pct: number
+          name: string
+          region: string
+          registered_elsewhere: boolean | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          additionality?: string
+          capacity_kwp: number
+          commissioned_on: string
+          created_at?: string
+          id?: string
+          meter_accuracy_pct?: number
+          name?: string
+          region?: string
+          registered_elsewhere?: boolean | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          additionality?: string
+          capacity_kwp?: number
+          commissioned_on?: string
+          created_at?: string
+          id?: string
+          meter_accuracy_pct?: number
+          name?: string
+          region?: string
+          registered_elsewhere?: boolean | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      solar_readings: {
+        Row: {
+          asset_id: string
+          created_at: string
+          document_id: string | null
+          evidence: string
+          id: string
+          kwh: number
+          period_end: string
+          period_start: string
+        }
+        Insert: {
+          asset_id: string
+          created_at?: string
+          document_id?: string | null
+          evidence: string
+          id?: string
+          kwh: number
+          period_end: string
+          period_start: string
+        }
+        Update: {
+          asset_id?: string
+          created_at?: string
+          document_id?: string | null
+          evidence?: string
+          id?: string
+          kwh?: number
+          period_end?: string
+          period_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "solar_readings_asset_id_fkey"
+            columns: ["asset_id"]
+            isOneToOne: false
+            referencedRelation: "solar_assets"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "solar_readings_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      story_submissions: {
+        Row: {
+          account_figures: Json | null
+          answers: Json | null
+          attribution: string
+          buyer: string
+          consent_text_hash: string
+          consent_version: string
+          consented_at: string
+          contact_email: string | null
+          created_at: string
+          erase_after: string | null
+          id: string
+          industry: string
+          notify_status: string | null
+          publish_consent: boolean
+          published_at: string | null
+          request_ip_hash: string | null
+          review_note: string | null
+          review_removals: Json | null
+          reviewed_at: string | null
+          reviewer_id: string | null
+          slug: string | null
+          status: string
+          story: Json | null
+          story_hash: string | null
+          updated_at: string
+          user_id: string | null
+          withdrawn_at: string | null
+        }
+        Insert: {
+          account_figures?: Json | null
+          answers?: Json | null
+          attribution: string
+          buyer: string
+          consent_text_hash: string
+          consent_version: string
+          consented_at?: string
+          contact_email?: string | null
+          created_at?: string
+          erase_after?: string | null
+          id?: string
+          industry: string
+          notify_status?: string | null
+          publish_consent?: boolean
+          published_at?: string | null
+          request_ip_hash?: string | null
+          review_note?: string | null
+          review_removals?: Json | null
+          reviewed_at?: string | null
+          reviewer_id?: string | null
+          slug?: string | null
+          status?: string
+          story?: Json | null
+          story_hash?: string | null
+          updated_at?: string
+          user_id?: string | null
+          withdrawn_at?: string | null
+        }
+        Update: {
+          account_figures?: Json | null
+          answers?: Json | null
+          attribution?: string
+          buyer?: string
+          consent_text_hash?: string
+          consent_version?: string
+          consented_at?: string
+          contact_email?: string | null
+          created_at?: string
+          erase_after?: string | null
+          id?: string
+          industry?: string
+          notify_status?: string | null
+          publish_consent?: boolean
+          published_at?: string | null
+          request_ip_hash?: string | null
+          review_note?: string | null
+          review_removals?: Json | null
+          reviewed_at?: string | null
+          reviewer_id?: string | null
+          slug?: string | null
+          status?: string
+          story?: Json | null
+          story_hash?: string | null
+          updated_at?: string
+          user_id?: string | null
+          withdrawn_at?: string | null
+        }
+        Relationships: []
+      }
       subscriptions: {
         Row: {
           amount: number
@@ -2450,6 +3368,44 @@ export type Database = {
       }
     }
     Views: {
+      case_studies_public: {
+        Row: {
+          buyer: string | null
+          industry: string | null
+          published_at: string | null
+          slug: string | null
+          story: Json | null
+        }
+        Insert: {
+          buyer?: string | null
+          industry?: string | null
+          published_at?: string | null
+          slug?: string | null
+          story?: Json | null
+        }
+        Update: {
+          buyer?: string | null
+          industry?: string | null
+          published_at?: string | null
+          slug?: string | null
+          story?: Json | null
+        }
+        Relationships: []
+      }
+      scope2_totals: {
+        Row: {
+          instrument_kwh: number | null
+          kg: number | null
+          kwh: number | null
+          method: string | null
+          organization_id: string | null
+          reporting_year: string | null
+          unresolved_kwh: number | null
+          user_id: string | null
+          warning_rows: number | null
+        }
+        Relationships: []
+      }
       scope3_category_totals: {
         Row: {
           organization_id: string | null
@@ -2680,6 +3636,30 @@ export type Database = {
         Returns: boolean
       }
       is_trusted_db_writer: { Args: never; Returns: boolean }
+      ledger_chain_append: {
+        Args: {
+          p_chain_key: string
+          p_emission_id: string
+          p_event_type: string
+          p_ledger_id: string
+          p_row_digest: string
+        }
+        Returns: undefined
+      }
+      ledger_event_hash: {
+        Args: {
+          p_chain_key: string
+          p_chain_seq: number
+          p_event_type: string
+          p_ledger_id: string
+          p_prev_hash: string
+          p_recorded_at: string
+          p_row_digest: string
+        }
+        Returns: string
+      }
+      ledger_row_digest: { Args: { r: Json }; Returns: string }
+      my_org_permissions: { Args: { p_organization_id: string }; Returns: Json }
       owner_seat_limit: { Args: { p_owner_id: string }; Returns: number }
       owns_guest_session: { Args: { _session_id: string }; Returns: boolean }
       owns_session: {
@@ -2690,6 +3670,7 @@ export type Database = {
         Args: { p_organization_id: string; p_user_id: string }
         Returns: undefined
       }
+      scope2_record: { Args: { p: Json }; Returns: Json }
       scope3_record_document: { Args: { p: Json }; Returns: Json }
       seat_limit_for_tier: { Args: { p_tier: string }; Returns: number }
       service_accept_team_invitation: {
@@ -2726,6 +3707,14 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      service_org_can: {
+        Args: {
+          p_capability: string
+          p_organization_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       switch_user_context: {
         Args: { p_context_id: string; p_context_type: string }
         Returns: boolean
@@ -2758,6 +3747,15 @@ export type Database = {
       validate_session_access: {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
+      }
+      verify_ledger_chain: {
+        Args: { p_chain_key: string }
+        Returns: {
+          at_chain_seq: number
+          events: number
+          ok: boolean
+          problem: string
+        }[]
       }
     }
     Enums: {
