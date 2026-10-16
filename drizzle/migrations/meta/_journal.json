@@ -183,6 +183,13 @@
       "when": 1792154141940,
       "tag": "0025_commit_verification_dedupe_ledger",
       "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1792154845196,
+      "tag": "0026_commit_verification_safeupdate_where",
+      "breakpoints": true
     }
   ]
 }
