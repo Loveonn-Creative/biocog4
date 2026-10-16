@@ -97,7 +97,7 @@ export const ESG_SAMPLE_OBJECTIONS = [
   },
   {
     q: 'Will you spam me or share my details?',
-    a: 'No. Your details are used to send the report and to understand who reads it. They are never sold, they are kept for at most 90 days, and updates come only if you tick the box. Ask our Data Officer to delete them at any time.',
+    a: 'No. We use your details only to send the report and to see who reads it. We never sell them, we keep them for 90 days, and we send updates only if you tick the box. You can ask us to delete them at any time; our Privacy Policy shows how.',
   },
 ];
 

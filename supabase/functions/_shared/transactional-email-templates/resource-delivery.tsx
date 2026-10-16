@@ -1,5 +1,5 @@
 import * as React from 'npm:react@18.3.1'
-import { Body, Button, Container, Head, Heading, Html, Preview, Text } from 'npm:@react-email/components@0.0.22'
+import { Body, Button, Container, Head, Heading, Html, Link, Preview, Text } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
 interface Props {
@@ -28,7 +28,7 @@ const ResourceDelivery = ({ name, link, validDays = 7, title = 'Sample ESG Repor
         <Text style={item}>The methodology pages list every emission factor and its source, so the numbers can be recomputed.</Text>
         <Text style={item}>The last section has a ready email for sharing a report with buyers and partners.</Text>
         <Text>When you want one built from your own bills and invoices, reply to this email or start at senseible.earth.</Text>
-        <Text style={note}>You received this because this address was entered on senseible.earth to request the report. We will not email you again unless you agreed to updates. To have your details deleted, reply to this email.</Text>
+        <Text style={note}>You’re getting this because this address was used to request the report on senseible.earth. We won’t email you again unless you asked for updates. Want your details deleted? Reply to this email, or see how in our <Link href="https://senseible.earth/legal/privacy">Privacy Policy</Link>.</Text>
       </Container>
     </Body>
   </Html>
