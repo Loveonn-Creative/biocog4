@@ -64,7 +64,7 @@ export function createHandler(deps: Deps) {
   const pdfResponse = async () => {
     const bytes = await deps.loadPdf();
     if (!bytes) return json({ error: 'unavailable' }, 503);
-    return new Response(bytes, {
+    return new Response(bytes as unknown as BodyInit, {
     status: 200,
     headers: {
       ...corsHeaders,
