@@ -27,7 +27,7 @@
       "ul": [
         "Boundary: cradle to gate, from raw material extraction to the part leaving your plant.",
         "Unit: kg CO2e per declared unit, including all greenhouse gases.",
-        "Your plant energy: metered electricity and fuels for the reporting period, allocated to parts by mass, machine hours or another stated rule. Use your country's official grid factor.",
+        "Your plant energy: metered electricity and fuels for the reporting period, allocated to parts by mass, machine hours or another stated rule. Apply the Rulebook's rules for electricity factors; for an Indian plant the CEA grid factor is the usual location-based figure.",
         "Purchased materials: supplier footprints for steel, aluminium and polymers where you have them; database values otherwise.",
         "Data quality: report the primary data share and the data quality ratings the Rulebook asks for."
       ]

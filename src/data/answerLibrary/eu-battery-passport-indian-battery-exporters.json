@@ -10,7 +10,7 @@
     {
       "h": "Which batteries need a passport",
       "ul": [
-        "EV batteries: traction batteries for electric cars and for L-category vehicles above 25 kg.",
+        "EV batteries: traction batteries for electric cars, vans and trucks, and traction batteries weighing more than 25 kg for L-category vehicles such as motorcycles.",
         "LMT batteries: sealed traction batteries of 25 kg or less for e-bikes, e-scooters and similar light vehicles. Most e-2W packs sold to the EU fall here or under EV batteries, depending on weight and vehicle type.",
         "Industrial batteries with capacity above 2 kWh, which covers most stationary energy storage.",
         "Portable batteries and SLI starter batteries do not need a passport, though other parts of the Regulation still apply to them."
@@ -32,7 +32,7 @@
     {
       "h": "The carbon footprint timeline is not fixed yet",
       "p": [
-        "Article 7 requires a carbon footprint declaration for EV, LMT and rechargeable industrial batteries above 2 kWh, but each date runs from a delegated act setting the calculation method, with the obligation starting 12 months after that act. The act for EV batteries was delayed. The due diligence duties in Articles 47 to 52 were postponed by the 2025 Omnibus IV simplification. Treat 18 February 2027 as fixed for the passport itself, and check EUR-Lex for the footprint and due diligence dates."
+        "Article 7 requires a carbon footprint declaration for EV, LMT and rechargeable industrial batteries above 2 kWh, but each date runs from a delegated act setting the calculation method, with the obligation starting 12 months after that act. The act for EV batteries was delayed. The due diligence duties in Articles 47 to 52 were postponed to 18 August 2027 by Regulation (EU) 2025/1561, part of the 2025 Omnibus IV simplification. Treat 18 February 2027 as fixed for the passport itself, and check EUR-Lex for the footprint and due diligence dates."
       ]
     },
     {

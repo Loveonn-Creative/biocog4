@@ -19,7 +19,7 @@
       "h": "Choices that change the answer",
       "ul": [
         "Flooded rice: the IPCC 2006 default EF1 for flooded rice fields is 0.003, not 0.01, which cuts direct N2O by 70%.",
-        "Climate split: the 2019 Refinement gives 0.016 for wet climates and 0.005 for dry climates. Over 460 kg N that is 3.16 or 0.99 t CO2e of direct N2O at the AR6 GWP.",
+        "Climate split: the 2019 Refinement gives 0.016 for wet climates and 0.005 for dry climates. Over 460 kg N that is 3.16 or 0.99 t CO2e of direct N2O at the AR6 GWP. For irrigated land in a dry region, read the notes to Table 11.1 in the Refinement before choosing.",
         "Leaching: drop the leaching term for dry, unirrigated land where water does not drain through the soil.",
         "GWP: N2O is 265 in AR5 and 273 in AR6. Use the set your inventory uses."
       ]

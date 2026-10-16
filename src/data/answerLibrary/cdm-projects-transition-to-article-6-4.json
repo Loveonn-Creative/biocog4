@@ -2,7 +2,7 @@
   "slug": "cdm-projects-transition-to-article-6-4",
   "q": "Can an old Indian CDM project move to the Article 6.4 mechanism?",
   "title": "Can a CDM project move to Article 6.4?",
-  "short": "Only if its transition request reached the UNFCCC by 31 December 2023 and India, as host country, approves the transition before the approval deadline. A registered CDM project that missed the 2023 request cannot transition; it would have to apply to the Article 6.4 mechanism as a new activity.",
+  "short": "Only if its transition request reached the UNFCCC by 31 December 2023 and India, as host country, sent its approval by the deadline, which was extended to 30 June 2026. A project that missed either step cannot transition; it would have to apply to the Article 6.4 mechanism as a new activity.",
   "topic": "markets",
   "intent": "check",
   "audience": "Owners of registered Indian CDM projects",
@@ -10,7 +10,7 @@
     {
       "h": "The rule that sets the conditions",
       "p": [
-        "Decision 3/CMA.3, taken at Glasgow in 2021, lets registered CDM activities move to the mechanism under Article 6.4 of the Paris Agreement. Paragraph 73 of its annex sets two gates: the project participants had to send a transition request to the UNFCCC secretariat by 31 December 2023, and the host Party must approve the transition by a deadline. That approval deadline was first 31 December 2025 and was later extended by the CMA."
+        "Decision 3/CMA.3, taken at Glasgow in 2021, lets registered CDM activities move to the mechanism under Article 6.4 of the Paris Agreement. Paragraph 73 of its annex sets two gates: the project participants had to send a transition request to the UNFCCC secretariat by 31 December 2023, and the host Party must approve the transition by a deadline. That approval deadline was first 31 December 2025; at COP30 in Belem in November 2025 the CMA extended it to 30 June 2026."
       ]
     },
     {
@@ -18,7 +18,7 @@
       "ol": [
         "Find the project on the UNFCCC CDM transition pages and confirm a request was recorded before 31 December 2023.",
         "Check whether India's approval has been given or is pending. Approval comes from India's national authority for the Paris Agreement under the Ministry of Environment, Forest and Climate Change.",
-        "Confirm the current host approval deadline on unfccc.int; do not rely on a date quoted elsewhere.",
+        "Confirm on unfccc.int that India's approval reached the Supervisory Body by 30 June 2026, or whether any later extension applies.",
         "If both are in place, the project continues as an Article 6.4 activity, with the Supervisory Body's transition standard deciding which rules and methodologies apply."
       ]
     },
@@ -49,5 +49,5 @@
     { "label": "Article 6.4 Supervisory Body, CDM transition standard and transition data", "url": "https://unfccc.int" }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "The host Party approval deadline has been extended once; confirm the current date and India's approval status on unfccc.int before relying on this page."
+  "reviewNote": "The host Party approval deadline was extended from 31 December 2025 to 30 June 2026 at COP30; check unfccc.int for any further CMA decision and India's approval status before relying on this page."
 }
