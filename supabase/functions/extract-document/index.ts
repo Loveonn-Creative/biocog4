@@ -9,7 +9,7 @@ import { dayIst } from '../_shared/intelligence.ts';
 import { GUEST_DAILY_SCANS, GUEST_IP_DAILY_SCANS, guestFileCheck } from '../_shared/guestScan.ts';
 import { parseInvoiceDate } from '../_shared/invoiceDate.ts';
 import { SOURCE_BUCKET, sourceFilePath } from '../_shared/sourceFiles.ts';
-import { consolidateElectricity, electricityBillMeta, prepareElectricityLines, printedBilledKwh, isGridRenewableLine, type ElectricityBillMeta } from '../_shared/electricityBill.ts';
+import { BASIS_LABEL, consolidateElectricity, documentCaptureOf, electricityBillMeta, isElectricityBill, prepareElectricityLines, isGridRenewableLine, type Basis, type ElectricityBillMeta, type EnergyEvidence } from '../_shared/electricityBill.ts';
 import { sealExtraction } from '../_shared/scope3.ts';
 import { sealAndRecord } from '../_shared/scope3Record.ts';
 import { recordBillAndRecalculate } from '../_shared/scope2Record.ts';
@@ -290,6 +290,15 @@ interface LineItem {
   validationFlags?: string[];
   /** Why the line was or was not counted, and the next step. */
   guidance?: LineGuidance;
+  /** Counted lines: how the quantity was obtained, and its plain label. */
+  basis?: Basis;
+  basisLabel?: string;
+  /** Printed figures behind a derived quantity (kVAh, power factor, meter readings). */
+  evidence?: EnergyEvidence;
+  /** Kept for its printed figure only (e.g. kVAh once kWh is counted); not counted. */
+  referenceNote?: string;
+  printedQuantity?: number;
+  printedUnit?: string;
 }
 
 interface ExtractedData {
@@ -312,6 +321,8 @@ interface ExtractedData {
   avoidedCO2Kg?: number;
   /** Electricity bills only: billing details as printed, validated. */
   electricityBill?: ElectricityBillMeta;
+  /** How the document was captured: printed, handwritten or a meter photo. */
+  documentCapture?: 'printed' | 'handwritten' | 'meter_photo';
   /** Counts per line status and the one next step that unlocks the most. */
   guidance?: ReturnType<typeof guideDocument>;
   /** Printed identity of the invoice (supplier, number, date), so a second copy is counted once. */
@@ -373,8 +384,21 @@ CRITICAL EXTRACTION RULES:
      text, e.g. "Units Consumed: 342").
    - Also add it as a line item: description "Electricity consumed",
      quantity = that number, unit as printed ("kWh" or "kVAh"), hsn_code "2716".
-   - Charge lines (energy charges, fixed charges, duty) keep quantity null
-     unless a kWh quantity is printed on that same line.
+   - kVAh billing (some HT and LT tariffs bill in kVAh): still return the
+     billed figure as above with unit "kVAh". In addition, ONLY if printed on
+     the bill, return at the top level:
+       "activeEnergyKwh": the kWh consumption printed for this period (often
+       in the meter-reading table as kWh consumption, even when billing is
+       in kVAh), number exactly as printed, and "activeEnergyText": the exact
+       printed text;
+       "powerFactor": the average or billed power factor exactly as printed
+       (greater than 0 and at most 1, e.g. 0.95), and "powerFactorText": the
+       exact printed text.
+     Never work these out yourself: do not multiply, divide or subtract
+     anything. If not printed, set them to null.
+   - Charge lines (energy charges, fixed charges, demand charges, wheeling,
+     FAC, duty, taxes, rebates, discounts) keep quantity null unless a kWh
+     quantity is printed on that same line.
    - Vendor should include the power company name
    - If printed, also return at the top level: "billingPeriodStart" and
      "billingPeriodEnd" (the billing period, YYYY-MM-DD), "tariffCategory"
@@ -396,6 +420,18 @@ CRITICAL EXTRACTION RULES:
    it to null and copy what you can see into sourceText. Never pick the more
    likely reading.
    Also return "legibility": "printed", "handwritten" or "mixed" at the top level.
+
+5a. Return "documentCapture" at the top level: "printed" for a printed bill or
+   invoice, "handwritten" when the quantities are handwritten (a handwritten
+   bill or slip), or "meter_photo" for a photograph of an electricity meter
+   display or register (not a bill).
+   For "meter_photo": set documentType to "bill", lineItems to [], and return
+   "meterReadings": an array of the cumulative kWh register readings visible
+   in the photo, each { "readingKwh": number as shown, "readingDate":
+   "YYYY-MM-DD" if a date is visible with it, else null, "sourceText": the
+   exact visible text of that reading }. Only kWh register values: never the
+   meter number, serial number, consumer or account number. Do not subtract
+   readings yourself. If a digit is unclear, leave that reading out.
 
 5. If this is NOT a business document (selfie, ID card, etc.), set documentType to "unknown".
 
@@ -808,7 +844,8 @@ serve(async (req) => {
     }
 
     // Retry with pro model if needed
-    if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown')) {
+    const meterPhotoRead = !!ocrData && Array.isArray(ocrData.meterReadings) && ocrData.meterReadings.length > 0 && documentCaptureOf(ocrData) === 'meter_photo';
+    if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown' && !meterPhotoRead)) {
       // A second, slower read only while it can finish inside the edge limit.
       if (Date.now() - started > 70_000) {
         if (ocrData) { /* keep the first read */ } else if (truncated) {
@@ -854,6 +891,9 @@ serve(async (req) => {
     // Model wording varies ("Tax Invoice", "Electricity Bill", "₹12,345"):
     // normalise the type and read money fields as numbers, never guessing.
     ocrData.documentType = normalizeDocumentType(ocrData.documentType);
+    // A photo of an electricity meter with readings is evidence for a bill.
+    const capture = documentCaptureOf(ocrData);
+    if (capture === 'meter_photo' && Array.isArray(ocrData.meterReadings) && ocrData.meterReadings.length > 0) ocrData.documentType = 'bill';
     for (const k of ['amount', 'taxAmount', 'subtotal']) {
       if (ocrData[k] != null) ocrData[k] = parseAmount(ocrData[k]) ?? undefined;
     }
@@ -914,6 +954,7 @@ serve(async (req) => {
     // evidence trail. Electricity bills (Scope 2, personal data) are not sealed;
     // a supplier invoice that merely mentions "electric" still is.
     const utilityBill = ocrData.unitsConsumedKwh != null || electricityBillMeta(ocrData) !== null
+      || (capture === 'meter_photo' && isElectricityBill(ocrData))
       || (Array.isArray(ocrData.lineItems) && ocrData.lineItems.some((l: { hsn_code?: unknown }) => String(l?.hsn_code ?? '').startsWith('2716')));
     const sealed = utilityBill || !['invoice', 'bill', 'receipt'].includes(String(ocrData.documentType || '').toLowerCase())
       ? null : sealExtraction(ocrData, pdfPageCount);
@@ -922,6 +963,9 @@ serve(async (req) => {
     const billForScope2 = utilityBill ? {
       vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null,
       unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null, unitsConsumedUnit: ocrData.unitsConsumedUnit ?? null,
+      activeEnergyKwh: ocrData.activeEnergyKwh ?? null, activeEnergyText: ocrData.activeEnergyText ?? null,
+      powerFactor: ocrData.powerFactor ?? null, powerFactorText: ocrData.powerFactorText ?? null,
+      documentCapture: capture, meterReadings: Array.isArray(ocrData.meterReadings) ? ocrData.meterReadings : null,
       billingPeriodStart: ocrData.billingPeriodStart ?? null, billingPeriodEnd: ocrData.billingPeriodEnd ?? null,
       lineItems: Array.isArray(ocrData.lineItems) ? ocrData.lineItems.map((l: Record<string, unknown>) => ({
         description: l?.description ?? null, quantity: l?.quantity ?? null, unit: l?.unit ?? null, hsn_code: l?.hsn_code ?? null, sourceText: l?.sourceText ?? null,
@@ -932,11 +976,19 @@ serve(async (req) => {
     // This is where all math happens - deterministic, no AI
     const validationFlags: string[] = [];
     // Electricity bills: read printed billed units; "units" means kWh there.
-    {
-      const prepared = prepareElectricityLines(ocrData);
-      ocrData.lineItems = prepared.lines;
-      validationFlags.push(...prepared.notes);
+    // kVAh bills use the printed kWh, else kVAh x the printed power factor
+    // (labelled estimate); meter photos use two readings (later - earlier).
+    const elecBill = isElectricityBill(ocrData);
+    const prepared = prepareElectricityLines(ocrData);
+    ocrData.lineItems = prepared.lines;
+    validationFlags.push(...prepared.notes);
+    // Dated meter readings give the period when no billing period is printed.
+    if (prepared.readingPeriod && !ocrData.billingPeriodStart && !ocrData.billingPeriodEnd) {
+      ocrData.billingPeriodStart = prepared.readingPeriod.start;
+      ocrData.billingPeriodEnd = prepared.readingPeriod.end;
+      if (billForScope2) { billForScope2.billingPeriodStart = prepared.readingPeriod.start; billForScope2.billingPeriodEnd = prepared.readingPeriod.end; }
     }
+    if (capture === 'handwritten') validationFlags.push(`${BASIS_LABEL.handwritten}: quantities are labelled and carry lower data quality`);
     // Country of supply: the saved country, then the bill (INR or an Indian
     // distribution company). With neither, India: the country Settings shows
     // until another is chosen. The India grid factor applies only to India.
@@ -963,7 +1015,15 @@ serve(async (req) => {
         sourcePage: checkedSourcePage(item.sourcePage, pdfPageCount) ?? undefined,
         sourceText: typeof item.sourceText === 'string' ? item.sourceText.slice(0, 240) : undefined,
         validationFlags: [],
+        ...(typeof item.basis === 'string' && item.basis in BASIS_LABEL ? { basis: item.basis as Basis } : {}),
+        ...(item.evidence && typeof item.evidence === 'object' ? { evidence: item.evidence as EnergyEvidence } : {}),
+        ...(typeof item.referenceNote === 'string' ? { referenceNote: item.referenceNote } : {}),
+        ...(typeof item.printedQuantity === 'number' ? { printedQuantity: item.printedQuantity, printedUnit: typeof item.printedUnit === 'string' ? item.printedUnit : undefined } : {}),
       };
+      // On an electricity bill a line with no quantity is a charge (money, not
+      // energy), and a line kept only for its printed kVAh is evidence: neither
+      // is an unrecognised item or a missing factor.
+      const billCharge = elecBill && (!classifiedItem.quantity || !!classifiedItem.referenceNote);
 
       // Cylinders with their size printed on the line ("LPG cylinder 19 kg",
       // 2 Nos) are converted to kg from that printed size; nothing else is.
@@ -1031,8 +1091,10 @@ serve(async (req) => {
       // Step 3: Mark unverifiable if no classification
       if (!classifiedItem.productCategory) {
         classifiedItem.classificationMethod = 'UNVERIFIABLE';
-        unverifiableItems++;
-        validationFlags.push(`Unclassified: ${item.description?.substring(0, 30) || 'Unknown'}`);
+        if (!billCharge) {
+          unverifiableItems++;
+          validationFlags.push(`Unclassified: ${item.description?.substring(0, 30) || 'Unknown'}`);
+        }
       } else {
         verifiedItems++;
       }
@@ -1081,7 +1143,7 @@ serve(async (req) => {
           classifiedItem.validationFlags?.push(reason);
           validationFlags.push(`${reason}: ${classifiedItem.description.substring(0, 40)}`);
         }
-      } else if (classifiedItem.productCategory) {
+      } else if (classifiedItem.productCategory && !billCharge) {
         missingEmissionFactorCount++;
         const reason = !classifiedItem.quantity
           ? 'Missing explicit activity quantity'
@@ -1095,8 +1157,21 @@ serve(async (req) => {
       return classifiedItem;
     });
     // The same consumption printed on several lines is counted once.
-    consolidateElectricity(classifiedItems, { billedKwh: printedBilledKwh(ocrData).kwh });
-    for (const item of classifiedItems) item.guidance = guideLine(item);
+    consolidateElectricity(classifiedItems, { billedKwh: prepared.billedKwh });
+    // Every counted line says how its quantity was obtained: a derived basis
+    // set above (kVAh x PF, meter readings), else handwritten or printed.
+    for (const item of classifiedItems) {
+      if (typeof item.co2Kg === 'number' || typeof item.avoidedCo2Kg === 'number') {
+        item.basis ??= capture === 'handwritten' ? 'handwritten' : 'read_from_bill';
+        item.basisLabel = BASIS_LABEL[item.basis];
+        if (item.basis !== 'read_from_bill') item.validationFlags?.push(item.basisLabel);
+      } else if (item.basis) {
+        // Not counted (e.g. no factor): no basis claim on it.
+        delete item.basis;
+      }
+    }
+    const guideCtx = { electricityBill: elecBill, blocker: prepared.blocker };
+    for (const item of classifiedItems) item.guidance = guideLine(item, guideCtx);
 
     // Gross emissions and avoided emissions are totalled separately and both
     // stay >= 0. Avoided emissions are never subtracted from gross.
@@ -1178,7 +1253,8 @@ serve(async (req) => {
       classificationStatus,
       methodology: METHODOLOGY_VERSION,
       electricityBill: electricityBillMeta(ocrData) ?? undefined,
-      guidance: guideDocument(classifiedItems),
+      guidance: guideDocument(classifiedItems, guideCtx),
+      documentCapture: capture,
       invoiceKey: invoiceIdentity({
         supplierGstin: ocrData.supplierGstin, vendor: ocrData.vendor, invoiceNumber: ocrData.invoiceNumber,
         date: parseInvoiceDate(ocrData.date) ?? undefined, billingPeriodStart: ocrData.billingPeriodStart,

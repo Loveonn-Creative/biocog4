@@ -1,6 +1,11 @@
 // Emission rows from a server extraction. Shared by extract-document (which
 // creates the rows for signed-in users) and the browser (guest results, and a
 // fallback when an older function version did not create them). Pure.
+
+// How a counted quantity was obtained (see electricityBill.ts). Estimated,
+// handwritten and meter-reading quantities are stored one data-quality level
+// below a printed reading, and the basis travels in the provenance notes.
+import { LOWER_QUALITY_BASES } from './electricityBill.ts';
 export interface PersistableLineItem {
   description: string;
   hsn_code?: string;
@@ -12,6 +17,9 @@ export interface PersistableLineItem {
   emissionFactor?: number;
   factorSource?: string;
   classificationMethod?: 'HSN' | 'KEYWORD' | 'UNVERIFIABLE';
+  /** read_from_bill | estimated_kvah_pf | handwritten | meter_readings | entered_by_you */
+  basis?: string;
+  basisLabel?: string;
 }
 
 export interface PersistableExtraction {
@@ -75,6 +83,9 @@ export interface StoredProvenance {
   classificationMethod: 'HSN' | 'KEYWORD';
   hsnCode: string | null;
   sourceDescription: string;
+  /** How the quantity was obtained, and its plain label (absent on rows written before this field). */
+  basis?: string;
+  basisLabel?: string;
 }
 
 export function encodeEmissionProvenance(
@@ -85,6 +96,8 @@ export function encodeEmissionProvenance(
     classificationMethod: item.classificationMethod,
     hsnCode: item.hsn_code || null,
     sourceDescription: item.description,
+    ...(item.basis ? { basis: item.basis } : {}),
+    ...(item.basis && item.basisLabel ? { basisLabel: item.basisLabel } : {}),
   } satisfies StoredProvenance);
 }
 
@@ -114,6 +127,7 @@ export function buildEmissionRows(
       return [];
     }
 
+    const lower = !!item.basis && LOWER_QUALITY_BASES.has(item.basis);
     return [{
       document_id: ownership.documentId,
       ...(ownership.organizationId ? { organization_id: ownership.organizationId } : {}),
@@ -125,7 +139,7 @@ export function buildEmissionRows(
       activity_data: item.quantity,
       activity_unit: item.unit,
       emission_factor: item.emissionFactor,
-      data_quality: dataQuality,
+      data_quality: lower ? (dataQuality === 'high' ? 'medium' : 'low') : dataQuality,
       verification_notes: encodeEmissionProvenance({ ...item, factorSource, classificationMethod }),
       verified: false,
     }];

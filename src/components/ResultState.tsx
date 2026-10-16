@@ -32,12 +32,21 @@ interface ExtractedData {
     productCategory?: string;
     avoidedCo2Kg?: number;
     guidance?: LineGuidance;
+    /** How the quantity was obtained (read from the bill, estimated, handwritten, meter readings) and its plain label. */
+    basis?: string;
+    basisLabel?: string;
   }>;
   /** Server summary: lines counted, lines needing a document, and the one next step. */
-  guidance?: { counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null };
+  guidance?: {
+    counted: number; needsData: number; notCovered: number; unclassified: number; nextStep: string | null;
+    /** Electricity bill charge lines (money, not energy). */
+    billCharges?: number;
+    /** Nothing counted and the blocker is printed on the document: reading it again gives the same result. */
+    deterministicBlocker?: boolean;
+  };
 }
 
-interface LineGuidance { status: 'counted' | 'avoided' | 'needs_data' | 'not_covered' | 'unclassified'; need: string | null; nextStep: string | null }
+interface LineGuidance { status: 'counted' | 'avoided' | 'needs_data' | 'not_covered' | 'unclassified' | 'bill_charge' | 'reference'; need: string | null; nextStep: string | null }
 
 const fmt = (n: number, dp = 2) => n.toLocaleString("en-IN", { maximumFractionDigits: dp });
 
@@ -165,6 +174,7 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
                 {guide.needsData > 0 && <li className="list-disc">{guide.needsData} need a document that prints the quantity or unit</li>}
                 {guide.notCovered > 0 && <li className="list-disc">{guide.notCovered} kept as evidence (purchased goods are not converted to emissions yet)</li>}
                 {guide.unclassified > 0 && <li className="list-disc">{guide.unclassified} not recognised as fuel or electricity</li>}
+                {(guide.billCharges ?? 0) > 0 && <li className="list-disc">{guide.billCharges} bill {guide.billCharges === 1 ? 'charge' : 'charges'} (money, not energy)</li>}
               </ul>
               {guide.nextStep && <p className="mt-2 text-sm text-foreground"><span className="font-medium">Next step:</span> {guide.nextStep}</p>}
             </>
@@ -188,6 +198,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
           <summary className="cursor-pointer text-sm font-medium">How this was calculated</summary>
           <ul className="mt-3 space-y-2.5 text-xs">
             {extractedData.lineItems.map((li, i) => {
+              // Bill charges are grouped into one line below.
+              if (li.guidance?.status === "bill_charge") return null;
               const counted = typeof li.co2Kg === "number" && typeof li.quantity === "number" && typeof li.emissionFactor === "number";
               return (
                 <li key={i} className="border-b border-border/60 pb-2 last:border-0">
@@ -197,7 +209,10 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
                       {fmt(li.quantity!)} {li.unit} × {fmt(li.emissionFactor!, 4)} kg CO2e per {li.unit} = <span className="font-medium text-foreground">{fmt(li.co2Kg!)} kg CO2e</span>
                       {li.scope ? ` · Scope ${li.scope}` : ""}
                       {li.factorSource ? <span className="block">Factor source: {li.factorSource}</span> : null}
+                      {li.basisLabel ? <span className="block">Basis: {li.basisLabel}</span> : null}
                     </p>
+                  ) : li.guidance?.status === "reference" ? (
+                    <p className="mt-0.5 text-muted-foreground">Not counted separately. {li.guidance.nextStep}</p>
                   ) : (
                     <p className="mt-0.5 text-muted-foreground">
                       Not counted: {li.guidance?.need ? `${li.guidance.need} not printed` : typeof li.quantity !== "number" || !li.unit ? "no quantity with a unit on this line" : "no documented emission factor for this item yet"}.
@@ -207,6 +222,15 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
                 </li>
               );
             })}
+            {(() => {
+              const charges = extractedData.lineItems.filter((li) => li.guidance?.status === "bill_charge").length;
+              return charges > 0 ? (
+                <li className="border-b border-border/60 pb-2 last:border-0">
+                  <p className="font-medium text-foreground">{charges} bill {charges === 1 ? "charge" : "charges"} (money, not energy)</p>
+                  <p className="mt-0.5 text-muted-foreground">Part of this electricity bill: costs, not separate activities.</p>
+                </li>
+              ) : null;
+            })()}
           </ul>
           <p className="mt-3 text-xs text-muted-foreground">
             Total = sum of counted lines = {fmt(co2Value)} kg CO2e. Calculated from the bill, not yet verified.
@@ -286,7 +310,8 @@ export const ResultState = ({ type, amount, extractedData, onConfirm, onReset, h
 
       {/* Action buttons */}
       <div className="flex flex-col gap-3 w-full">
-        {!hasRecords && onReread && (
+        {/* Reading again cannot change a blocker printed on the document (kVAh with no kWh or power factor, one meter reading, net units). */}
+        {!hasRecords && onReread && !guide?.deterministicBlocker && (
           <button
             onClick={onReread}
             className="flex items-center justify-center gap-2 w-full py-4 px-6 bg-carbon text-carbon-foreground rounded-full font-medium transition-colors hover:bg-carbon/90"

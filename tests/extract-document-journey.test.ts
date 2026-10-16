@@ -265,3 +265,117 @@ describe('invoice to stored records, through the real handler', () => {
     expect(stored['financial-documents'] ?? []).toHaveLength(0);
   });
 });
+
+// Owner-approved bill reader rules (October 2026): printed kWh on kVAh bills,
+// kVAh x printed power factor as a labelled estimate, bill charges as money,
+// handwritten bills and meter photos labelled. Through the real handler.
+describe('electricity bill reader: kVAh, charges, handwritten bills and meter photos', () => {
+  const msedclHt = (extra: Row = {}) => ({
+    documentType: 'Electricity Bill', vendor: 'MSEDCL', date: '2026-09-05', invoiceNumber: 'HT-9', amount: '1,95,000', currency: 'INR',
+    billingPeriodStart: '2026-08-01', billingPeriodEnd: '2026-08-31',
+    unitsConsumedKwh: 20000, unitsConsumedUnit: 'kVAh', unitsConsumedText: 'Billed Demand Consumption 20000 kVAh',
+    lineItems: [
+      { description: 'Electricity consumed', hsn_code: '2716', quantity: 20000, unit: 'kVAh' },
+      { description: 'Demand Charges', total: 45000 }, { description: 'Wheeling Charge', total: 12000 },
+      { description: 'TOD Tariff EC', total: 3000 }, { description: 'FAC', total: 2000 },
+      { description: 'Electricity Duty', total: 9000 }, { description: 'Tax on Sale', total: 600 },
+      { description: 'Prompt Payment Discount', total: -1500 }, { description: 'Incremental Consumption Rebate', total: -800 },
+    ],
+    ...extra,
+  });
+  const counted = (r: { body: any }) => r.body.data.lineItems.filter((l: any) => typeof l.co2Kg === 'number');
+
+  test('kVAh bill with printed kWh: the printed kWh is used, basis read_from_bill, kVAh kept as evidence', async () => {
+    ocr = msedclHt({ activeEnergyKwh: 19100, activeEnergyText: 'kWh Consumption 19100', powerFactor: 0.955, powerFactorText: 'Avg PF 0.955' });
+    const r = await upload('ht-kwh');
+    expect(r.body.emissionIds).toHaveLength(1);
+    expect(db.emissions[0]).toMatchObject({ scope: 2, activity_data: 19100, activity_unit: 'kWh' });
+    expect(db.emissions[0].co2_kg).toBeCloseTo(19100 * 0.71, 6);
+    const [line] = counted(r);
+    expect(line).toMatchObject({ basis: 'read_from_bill', basisLabel: 'Read from the bill' });
+    expect(line.evidence.kvah).toBe(20000);
+    expect(JSON.parse(db.emissions[0].verification_notes)).toMatchObject({ basis: 'read_from_bill' });
+    expect(JSON.stringify(r.body.data)).not.toMatch(/HSN code/i);
+  });
+
+  test('kVAh bill with only a printed power factor: kWh = kVAh x PF, labelled estimate, lower data quality', async () => {
+    ocr = msedclHt({ powerFactor: '0.95', powerFactorText: 'Average PF 0.95' });
+    const r = await upload('ht-pf');
+    expect(r.body.emissionIds).toHaveLength(1);
+    expect(db.emissions[0]).toMatchObject({ activity_data: 19000, activity_unit: 'kWh' });
+    const [line] = counted(r);
+    expect(line.basis).toBe('estimated_kvah_pf');
+    expect(line.evidence).toMatchObject({ kvah: 20000, powerFactor: 0.95 });
+    expect(r.body.data.validationFlags.join(' ')).toContain('Estimated: kWh worked out from kVAh x the power factor printed on the bill (kVAh × PF)');
+    const notes = JSON.parse(db.emissions[0].verification_notes);
+    expect(notes.basis).toBe('estimated_kvah_pf');
+    expect(notes.basisLabel).toMatch(/^Estimated/);
+    expect(['medium', 'low']).toContain(db.emissions[0].data_quality);
+  });
+
+  test('kVAh bill with neither: no emissions, friendly guidance, reading again is not offered', async () => {
+    ocr = msedclHt();
+    const r = await upload('ht-none');
+    expect(r.body.emissionIds).toEqual([]);
+    expect(db.emissions ?? []).toHaveLength(0);
+    expect(r.body.data.guidance.nextStep).toBe('Your bill is in kVAh. We need the kWh or power factor printed on it — usually near the meter readings.');
+    expect(r.body.data.guidance.deterministicBlocker).toBe(true);
+  });
+
+  test('charge lines on an electricity bill are bill charges: not unrecognised, never an HSN request', async () => {
+    ocr = msedclHt({ activeEnergyKwh: 19100, activeEnergyText: 'kWh 19100' });
+    const r = await upload('ht-charges');
+    const g = r.body.data.guidance;
+    expect(g.billCharges).toBe(8);
+    expect(g.unclassified).toBe(0);
+    expect(g.needsData).toBe(0);
+    const charges = r.body.data.lineItems.filter((l: any) => l.guidance?.status === 'bill_charge');
+    expect(charges).toHaveLength(8);
+    for (const c of charges) expect(c.guidance.nextStep).toBe('Part of this electricity bill: a cost, not a separate activity.');
+    expect(r.body.data.validationFlags.join(' ')).not.toMatch(/Unclassified/);
+    expect(JSON.stringify(r.body.data)).not.toMatch(/HSN code/i);
+  });
+
+  test('handwritten bill: read normally, labelled, one data-quality level lower', async () => {
+    ocr = { ...diesel('100', 'HW-1'), documentCapture: 'handwritten' };
+    const r = await upload('hw');
+    expect(r.body.emissionIds).toHaveLength(1);
+    const [line] = counted(r);
+    expect(line).toMatchObject({ basis: 'handwritten', basisLabel: 'Read from a handwritten bill' });
+    ocr = diesel('100', 'PR-1');
+    const printed = await upload('printed');
+    const [hw, pr] = db.emissions;
+    expect(counted(printed)[0].basis).toBe('read_from_bill');
+    const rank = { high: 3, medium: 2, low: 1 } as Record<string, number>;
+    expect(rank[hw.data_quality]).toBeLessThan(rank[pr.data_quality]);
+  });
+
+  test('meter photo with two readings: consumption is the difference, worked out in code', async () => {
+    ocr = { documentType: 'unknown', documentCapture: 'meter_photo', lineItems: [],
+      meterReadings: [{ readingKwh: 48215, readingDate: '2026-09-01', sourceText: '48215 kWh' }, { readingKwh: 47815, readingDate: '2026-08-01', sourceText: '47815 kWh' }] };
+    const r = await upload('meter2');
+    expect(r.status).toBe(200);
+    expect(r.body.emissionIds).toHaveLength(1);
+    expect(db.emissions[0]).toMatchObject({ scope: 2, activity_data: 400, activity_unit: 'kWh' });
+    const [line] = counted(r);
+    expect(line).toMatchObject({ basis: 'meter_readings', basisLabel: 'Calculated from two meter readings in the photo' });
+    expect(r.body.data.documentCapture).toBe('meter_photo');
+  });
+
+  test('meter photo with one reading: no emissions, asks for the previous reading', async () => {
+    ocr = { documentType: 'bill', documentCapture: 'meter_photo', lineItems: [], meterReadings: [{ readingKwh: 48215, readingDate: null, sourceText: '48215' }] };
+    const r = await upload('meter1');
+    expect(r.status).toBe(200);
+    expect(r.body.emissionIds).toEqual([]);
+    expect(r.body.data.guidance.nextStep).toBe('Add your previous meter reading or the bill for this period.');
+    expect(r.body.data.guidance.deterministicBlocker).toBe(true);
+  });
+
+  test('meter photo whose later reading is lower: rejected, nothing counted', async () => {
+    ocr = { documentType: 'bill', documentCapture: 'meter_photo', lineItems: [],
+      meterReadings: [{ readingKwh: 47815, readingDate: '2026-09-01', sourceText: '47815' }, { readingKwh: 48215, readingDate: '2026-08-01', sourceText: '48215' }] };
+    const r = await upload('meter-neg');
+    expect(r.body.emissionIds).toEqual([]);
+    expect(r.body.data.validationFlags.join(' ')).toMatch(/not higher than the earlier/);
+  });
+});

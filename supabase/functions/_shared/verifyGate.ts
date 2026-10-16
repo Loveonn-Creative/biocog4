@@ -4,6 +4,7 @@
 // A preview never records or verifies anything.
 
 import { isPublishedFactor, publishedFactorFor } from './emissionFactors.ts';
+import { LOWER_QUALITY_BASES } from './electricityBill.ts';
 
 export interface EmissionRecord {
   id: string;
@@ -56,6 +57,16 @@ export function validateEmission(emission: EmissionRecord): { valid: boolean; fl
     confidence -= 25;
   }
   
+  // A quantity estimated (kVAh x printed power factor), read from a
+  // handwritten bill or worked out from meter readings is verifiable (its
+  // evidence is on file) but never ranks above a printed reading.
+  let basis: unknown = null;
+  try { basis = (JSON.parse(emission.verification_notes || 'null') as { basis?: unknown } | null)?.basis ?? null; } catch { /* legacy notes */ }
+  if (typeof basis === 'string' && LOWER_QUALITY_BASES.has(basis)) {
+    flags.push('Activity estimated or hand-read (labelled); lower data quality than a printed reading');
+    confidence -= 5;
+  }
+
   // Check document confidence if available
   if (emission.documents?.confidence !== null && emission.documents?.confidence !== undefined && emission.documents.confidence < 70) {
     flags.push('Low OCR confidence on source document');
