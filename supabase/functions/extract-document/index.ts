@@ -764,7 +764,8 @@ serve(async (req) => {
     }
 
     // Set for guests once their limit has been checked; the read is counted after it succeeds.
-    let guestCounters: { admin: ReturnType<typeof createClient>; device: string; network: string } | null = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let guestCounters: { admin: SupabaseClient<any, any, any>; device: string; network: string } | null = null;
     const countGuestRead = async () => {
       if (!guestCounters) return;
       const c = guestCounters;
