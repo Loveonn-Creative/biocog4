@@ -53,6 +53,11 @@ const GreenLoan = lazy(() => import("./pages/GreenLoan"));
 const GreenLoanCheck = lazy(() => import("./pages/GreenLoanCheck"));
 const WhitePaper = lazy(() => import("./pages/WhitePaper"));
 const EsgReportSample = lazy(() => import("./pages/lead/EsgReportSample"));
+const CaseStudies = lazy(() => import("./pages/stories/CaseStudies"));
+const CaseStudy = lazy(() => import("./pages/stories/CaseStudy"));
+const ShareStory = lazy(() => import("./pages/stories/ShareStory"));
+const WithdrawStory = lazy(() => import("./pages/stories/WithdrawStory"));
+const StoryReview = lazy(() => import("./pages/stories/StoryReview"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const History = lazy(() => import("./pages/History"));
 const Verify = lazy(() => import("./pages/Verify"));
@@ -184,6 +189,11 @@ const App = () => (
               <Route path="/green-loan-check" element={<GreenLoanCheck />} />
               <Route path="/white-paper" element={<WhitePaper />} />
               <Route path="/esg-report-sample" element={<EsgReportSample />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/case-studies/share" element={<ShareStory />} />
+              <Route path="/case-studies/withdraw" element={<WithdrawStory />} />
+              <Route path="/case-studies/:slug" element={<CaseStudy />} />
+              <Route path="/admin/stories" element={<StoryReview />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/intelligence" element={<Intelligence />} />
               <Route path="/legal" element={<Legal />} />

@@ -25,6 +25,10 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.esg-report-access]
     verify_jwt = false
+  [functions.story-submit]
+    verify_jwt = false
+  [functions.story-review]
+    verify_jwt = false
   [functions.preview-transactional-email]
     verify_jwt = false
   [functions.send-partner-notification]
