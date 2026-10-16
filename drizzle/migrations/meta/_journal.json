@@ -169,6 +169,13 @@
       "when": 1792148491166,
       "tag": "0023_customer_stories",
       "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1792151288959,
+      "tag": "0024_0015_org_workspace_roles",
+      "breakpoints": true
     }
   ]
 }
