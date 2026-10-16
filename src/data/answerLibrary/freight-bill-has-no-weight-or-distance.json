@@ -51,7 +51,7 @@
     ],
     "note": "The 0.10 factor is illustrative. Use a sourced road freight factor for the truck class, from the GLEC Framework or your carrier, and keep the rebuilt weight and distance with their sources."
   },
-  "senseible": "Senseible reads freight bills and classifies transport lines as Scope 3, but when weight, distance or mode is missing it marks the line as needing data rather than guessing an emission from the amount. It does not run a spend-based estimate for you.",
+  "senseible": "Senseible reads freight bills and classifies transport lines as Scope 3, but when weight, distance or mode is missing it marks the line as needing data rather than guessing an emission from the amount. The reader does not turn the amount into emissions on its own; where only the freight cost is known, Senseible can provide a spend-based estimate, labelled as spend-based and shown with its wider uncertainty.",
   "links": [
     { "label": "Emissions from a freight bill", "to": "/answers/how-to-calculate-emissions-from-a-freight-bill" },
     { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },

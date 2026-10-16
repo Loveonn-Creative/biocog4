@@ -55,7 +55,7 @@
     ],
     "note": "Factors here are illustrations chosen to show the method, not published values. Among single suppliers, job work is second by spend but fourth by emissions."
   },
-  "senseible": "Senseible reads purchase invoices and keeps spend, quantity and HSN code by supplier in a separate supplier evidence trail, which gives you the list to rank. It does not apply spend-based factors; use the supplier emissions risk calculator or your own factors for the screen.",
+  "senseible": "Senseible reads purchase invoices and keeps spend, quantity and HSN code by supplier in a separate supplier evidence trail, which gives you the list to rank. The reader does not apply spend-based factors on its own; for the screen, use the supplier emissions risk calculator, your own factors, or a spend-based estimate from Senseible, labelled as such.",
   "links": [
     { "label": "Supplier emissions risk calculator", "to": "/calculators/supplier-emissions-risk" },
     { "label": "Supplier data collection playbook", "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme" },
