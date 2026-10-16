@@ -1,0 +1,71 @@
+{
+  "slug": "cdm-additionality-investment-analysis-explained",
+  "q": "How does the investment analysis test for additionality work?",
+  "title": "Additionality investment analysis",
+  "short": "The investment analysis shows that, without carbon credit revenue, your project is not financially attractive. Under CDM Tool 01 and Tool 27 you usually compare the project's IRR without credits against a benchmark return, then run a sensitivity check showing the result holds when key inputs change by about 10% either way.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian factory owners and developers considering carbon credits",
+  "sections": [
+    {
+      "h": "Pick the right option",
+      "ul": [
+        "Simple cost analysis: for a project that earns nothing except credits, such as flaring gas that has no other use. Showing the costs is enough.",
+        "Investment comparison: when the alternative is another investment, such as a new coal boiler versus a biomass boiler, compare the financial indicator of each.",
+        "Benchmark analysis: the usual choice for factory projects that also save money. The project's return without credits is compared with a benchmark rate."
+      ]
+    },
+    {
+      "h": "Choose a benchmark that matches the indicator",
+      "p": [
+        "Match like with like. A project IRR, based on total investment, is compared with a weighted average cost of capital. An equity IRR is compared with a required return on equity. CDM Tool 27 publishes default expected returns on equity by country and sector group, and also accepts a company's own internal hurdle rate if you can show it was used for earlier decisions. Use values that applied when the investment decision was taken, not today's."
+      ]
+    },
+    {
+      "h": "Build the cash flow and test it",
+      "ol": [
+        "List capital cost from quotations or invoices, and annual savings or revenue from your own bills and tariffs.",
+        "Use the project's technical life or the assessment period the tool sets, with residual value where relevant.",
+        "Calculate the IRR without any credit revenue and compare it with the benchmark.",
+        "Vary capital cost, savings, operating cost and load factor by at least 10% each way. The project stays additional only if no realistic change lifts it above the benchmark.",
+        "Keep the board minute, loan appraisal or email showing credits were considered before the decision to invest."
+      ]
+    },
+    {
+      "h": "Where the test usually fails",
+      "ul": [
+        "Savings understated compared with the energy bills a validator can check.",
+        "A benchmark picked to suit the answer, or a post-tax IRR compared with a pre-tax rate.",
+        "No proof that credits were considered before construction started.",
+        "A sensitivity case that crosses the benchmark with only a small change in tariff."
+      ],
+      "p": [
+        "Gold Standard and Verra accept CDM tools in many methodologies but set their own rules, including positive lists for some small or clearly uneconomic project types. The methodology you apply decides whether an investment analysis is needed at all."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative benchmark test: a waste heat recovery project",
+    "lines": [
+      "Capital cost ₹4 crore; net savings ₹70 lakh a year for 10 years; no residual value",
+      "IRR without credits: about 11.7%, below an illustrative 15% benchmark",
+      "Sensitivity: savings 10% higher (₹77 lakh) gives about 14.1%; capital cost 10% lower (₹3.6 crore) gives about 14.4%; both still below 15%",
+      "With credits: 2,500 t CO2 a year x an illustrative ₹800 per tonne = ₹20 lakh, so ₹90 lakh a year and an IRR of about 18.3%",
+      "Result: credit revenue changes the decision, which supports additionality"
+    ],
+    "note": "All figures are illustrative. A real test uses the benchmark and input rules in the applicable methodology and is checked by the validation body."
+  },
+  "senseible": "Senseible's carbon credit eligibility signals can show where a project might qualify, using your fuel and electricity records. It does not perform the investment analysis, decide additionality or handle credit issuance, which belong to the programme and its validation body.",
+  "links": [
+    { "label": "What is additionality", "to": "/answers/what-is-additionality-in-carbon-credits" },
+    { "label": "Additionality for an efficiency project", "to": "/answers/prove-additionality-energy-efficiency-project" },
+    { "label": "Is a legally required project additional", "to": "/answers/is-a-legally-required-project-additional-india" },
+    { "label": "Carbon credits", "to": "/carbon-credits" }
+  ],
+  "sources": [
+    { "label": "UNFCCC CDM Methodological Tool 01 (demonstration and assessment of additionality) and Tool 27 (investment analysis)", "url": "https://unfccc.int" },
+    { "label": "Gold Standard for the Global Goals, additionality requirements", "url": "https://www.goldstandard.org" },
+    { "label": "Verra VCS Standard", "url": "https://verra.org" }
+  ],
+  "reviewed": "2026-10-16"
+}

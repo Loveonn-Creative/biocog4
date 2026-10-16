@@ -1,0 +1,74 @@
+{
+  "slug": "sfdr-pai-data-request-from-eu-investor",
+  "q": "An EU fund under SFDR Article 8 asked my Indian company for PAI data. What do I send?",
+  "title": "SFDR PAI data request: what to send",
+  "short": "Send the raw figures behind the 14 mandatory principal adverse impact (PAI) indicators for investee companies: Scope 1, 2 and 3 emissions, revenue, energy use split into renewable and non-renewable, plus the waste, water, social and governance data points. The fund calculates the ratios, such as carbon footprint and GHG intensity, from what you send.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian companies with EU private equity or fund investors; CFOs",
+  "sections": [
+    {
+      "h": "The climate and energy figures (PAI 1 to 6)",
+      "ul": [
+        "PAI 1, GHG emissions: Scope 1, Scope 2 and Scope 3 in tonnes CO2e for your financial year, with the method. Give Scope 3 even as an estimate, labelled as one.",
+        "PAI 2 and 3, carbon footprint and GHG intensity: the fund works these out from your emissions, your revenue and its holding. Send revenue for the same year, and the exchange rate if you report in rupees.",
+        "PAI 4, fossil fuel exposure: whether you earn any revenue from fossil fuel activities such as coal, oil or gas extraction, refining, distribution or storage.",
+        "PAI 5, non-renewable energy share: energy you consumed (and produced, if any) in MWh, split into renewable and non-renewable sources.",
+        "PAI 6, energy intensity: total energy consumption in GWh, used by the fund per EUR million of revenue if you are in a high-impact climate sector (NACE sections A to H and L, which include manufacturing)."
+      ]
+    },
+    {
+      "h": "The other eight mandatory indicators",
+      "ul": [
+        "PAI 7: whether you have sites in or near biodiversity-sensitive areas where your activities harm them.",
+        "PAI 8: emissions to water, in tonnes of listed pollutants.",
+        "PAI 9: hazardous waste and radioactive waste generated, in tonnes.",
+        "PAI 10 and 11: any violations of the UN Global Compact or OECD Guidelines for Multinational Enterprises, and whether you have processes to monitor compliance with them.",
+        "PAI 12: unadjusted gender pay gap.",
+        "PAI 13: board gender diversity, women as a share of board members.",
+        "PAI 14: any involvement in controversial weapons."
+      ]
+    },
+    {
+      "h": "Choices to state in your reply",
+      "ul": [
+        "Grid electricity: India's grid is mostly fossil, so count it as non-renewable unless you hold certificates or green power contracts for it, or the fund asks you to apply the grid's renewable share. Say which you did.",
+        "Scope 2 basis: location-based, market-based, or both. Funds often take whichever their data provider uses, so label it.",
+        "Year: give your Indian financial year dates. The fund will map them to its own reference period.",
+        "Gaps: where you have no data, say so. A clear \"not measured\" is better than a guess the fund will later report as fact."
+      ]
+    },
+    {
+      "h": "Why the fund needs this from you",
+      "p": [
+        "Under Regulation (EU) 2019/2088 (SFDR), an Article 8 fund promotes environmental or social characteristics and must explain how it considers adverse impacts. Delegated Regulation (EU) 2022/1288, Annex I, Table 1 sets the mandatory indicators the manager reports across its holdings. Without company data the fund falls back on estimates from data vendors, which tend to be cautious, so your own figures usually present you better."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a mid-sized Indian manufacturer's climate figures",
+    "lines": [
+      "Scope 1: diesel 50,000 L x 2.68 kg CO2 per L = 134,000 kg CO2, 134 t",
+      "Scope 2 (location-based): grid 2,000 MWh x 0.710 t CO2 per MWh = 1,420 t CO2",
+      "Scope 3: 6,000 t CO2e, spend-based estimate, labelled",
+      "Revenue Rs 200 crore at an illustrative Rs 90 per EUR = EUR 22.22 million",
+      "GHG intensity the fund will compute: (134 + 1,420 + 6,000) / 22.22 = about 340 t CO2e per EUR million",
+      "Energy: grid 2,000 MWh + rooftop solar used 500 MWh + diesel about 502 MWh = 3,002 MWh; non-renewable share 2,502 / 3,002 = 83.3%",
+      "Energy intensity: 3.002 GWh / 22.22 = about 0.135 GWh per EUR million"
+    ],
+    "note": "Diesel energy is an estimate: 50,000 L x 0.84 kg per L (assumed density) x 43.0 MJ per kg (IPCC 2006 default net calorific value) = 1,806,000 MJ, about 502 MWh. Use the fund's exchange rate if it gives one."
+  },
+  "senseible": "Senseible prepares Scope 1 and Scope 2 and the underlying energy figures (kWh, litres, kg of fuel) from your invoices and bills as a self-declared data pack; Scope 3 appears only where supplier evidence exists. It does not compute the fund's PAI ratios or collect pay gap, board, biodiversity or weapons data.",
+  "links": [
+    { "label": "Why an EU fund asks for PAI data", "to": "/answers/why-eu-fund-asks-for-sfdr-pai-data" },
+    { "label": "Article 8 vs Article 9 funds", "to": "/answers/article-8-vs-article-9-fund-investee-company" },
+    { "label": "Does CSRD apply to Indian companies?", "to": "/answers/does-csrd-apply-to-indian-companies" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2019/2088 on sustainability-related disclosures (SFDR), Articles 4 and 8 (eur-lex.europa.eu)", "url": "https://eur-lex.europa.eu" },
+    { "label": "Commission Delegated Regulation (EU) 2022/1288, Annex I, Tables 1 to 3 (eur-lex.europa.eu)", "url": "https://eur-lex.europa.eu" },
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Commission proposed SFDR changes in November 2025 that would replace Article 8 and 9 disclosures with product categories; check whether the PAI indicators have changed."
+}

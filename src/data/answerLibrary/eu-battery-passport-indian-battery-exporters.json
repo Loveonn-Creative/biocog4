@@ -1,0 +1,64 @@
+{
+  "slug": "eu-battery-passport-indian-battery-exporters",
+  "q": "What does the EU battery passport require from Indian battery and cell exporters?",
+  "title": "EU battery passport for Indian exporters",
+  "short": "From 18 February 2027, every EV battery, light means of transport battery and industrial battery above 2 kWh placed on the EU market needs a digital battery passport reached by QR code. The EU importer or manufacturer is responsible, but Indian exporters must supply most of the data, including the carbon footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian battery pack, e-2W and energy storage exporters",
+  "sections": [
+    {
+      "h": "Which batteries need a passport",
+      "ul": [
+        "EV batteries: traction batteries for electric cars and for L-category vehicles above 25 kg.",
+        "LMT batteries: sealed traction batteries of 25 kg or less for e-bikes, e-scooters and similar light vehicles. Most e-2W packs sold to the EU fall here or under EV batteries, depending on weight and vehicle type.",
+        "Industrial batteries with capacity above 2 kWh, which covers most stationary energy storage.",
+        "Portable batteries and SLI starter batteries do not need a passport, though other parts of the Regulation still apply to them."
+      ]
+    },
+    {
+      "h": "What the passport holds",
+      "p": [
+        "Article 77 and Annex XIII of Regulation (EU) 2023/1542 set the content. Some is public, some is open only to authorities and recyclers."
+      ],
+      "ul": [
+        "Manufacturer, model, battery category, chemistry, weight, capacity and place and date of manufacture.",
+        "Carbon footprint declaration and, later, performance class.",
+        "Hazardous substances, critical raw materials and recycled content shares.",
+        "Performance and durability data, and for EV and LMT batteries information on state of health.",
+        "Supply chain due diligence information, once those obligations apply."
+      ]
+    },
+    {
+      "h": "The carbon footprint timeline is not fixed yet",
+      "p": [
+        "Article 7 requires a carbon footprint declaration for EV, LMT and rechargeable industrial batteries above 2 kWh, but each date runs from a delegated act setting the calculation method, with the obligation starting 12 months after that act. The act for EV batteries was delayed. The due diligence duties in Articles 47 to 52 were postponed by the 2025 Omnibus IV simplification. Treat 18 February 2027 as fixed for the passport itself, and check EUR-Lex for the footprint and due diligence dates."
+      ]
+    },
+    {
+      "h": "What an Indian exporter should prepare",
+      "ol": [
+        "Bill of materials per battery model with cell supplier, chemistry and mass of cobalt, lithium, nickel and lead.",
+        "Energy and fuel use of your pack or cell plant by period and production volume, the main input you control in the footprint.",
+        "Cell supplier footprints and origin records, since cells carry most of a pack's footprint.",
+        "Recycled content evidence from purchase records.",
+        "A unique identifier and QR code scheme agreed with your EU importer."
+      ],
+      "p": [
+        "India's Battery Waste Management Rules 2022 impose EPR on batteries sold in India; they do not satisfy any EU requirement."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices for your plant and keeps purchase records as evidence, which feed the factory part of a battery footprint. It does not calculate a battery carbon footprint to the EU method or create battery passports.",
+  "links": [
+    { "label": "Digital product passport for textiles", "to": "/climate-intelligence/digital-product-passport-textile-exporters" },
+    { "label": "Footprint of imported lithium-ion cells", "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells" },
+    { "label": "EU rules asking exporters for carbon data", "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Articles 7, 47 to 52, 77 and Annex XIII", "url": "https://eur-lex.europa.eu" },
+    { "label": "Battery Waste Management Rules 2022, MoEFCC", "url": "https://moef.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The carbon footprint delegated acts and the postponed due diligence dates are moving; recheck EUR-Lex before relying on any date other than 18 February 2027."
+}

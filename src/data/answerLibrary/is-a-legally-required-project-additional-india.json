@@ -1,0 +1,56 @@
+{
+  "slug": "is-a-legally-required-project-additional-india",
+  "q": "If a law or PAT target already requires my project, can it earn carbon credits?",
+  "title": "Can a legally required project earn credits?",
+  "short": "Usually not. A project that an enforced law, permit condition or PAT target already requires fails the regulatory surplus test, so its reductions are not additional and cannot earn voluntary carbon credits. Only the part that goes beyond the legal requirement may qualify, and then only where the methodology allows it.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian BEE designated consumers and CCTS obligated entities",
+  "sections": [
+    {
+      "h": "What the regulatory surplus test asks",
+      "p": [
+        "CDM Tool 01 starts by checking that the project complies with the law but is not required by it. The Verra VCS Standard applies the same idea, called regulatory surplus: the activity must not be mandated by any law, statute or regulatory framework. If the law requires it, the cut would happen anyway, so a credit would not represent a real extra tonne.",
+        "There is one narrow exception. Where a law exists but is systematically not enforced and non-compliance is widespread, some programmes still allow the project. You must prove that with data, not assert it."
+      ]
+    },
+    {
+      "h": "How Indian obligations apply",
+      "ul": [
+        "PAT designated consumers: savings needed to meet your notified specific energy consumption target are required. Savings beyond the target earned ESCerts under PAT, not voluntary credits.",
+        "CCTS obligated entities: cuts within your plant boundary count toward your emission intensity target, and beating it earns carbon credit certificates under the compliance mechanism. The CCTS offset mechanism is for non-obligated entities.",
+        "Renewable consumption obligation for designated consumers: renewable power bought to meet it is required.",
+        "Pollution control orders and consent conditions, such as directions that bar coal use in industries in the NCR: a fuel switch they require is not surplus."
+      ]
+    },
+    {
+      "h": "A quick decision rule",
+      "ol": [
+        "Is the activity named in a law, notification, permit or target that applies to your unit? If no, it passes this test; the other additionality tests still apply.",
+        "If yes, is the requirement enforced? If it is, the required part fails.",
+        "Does your project go beyond the requirement, in size, timing or performance? Only that extra part can be considered, and only if the methodology allows a partial baseline.",
+        "Will the same tonne count toward a compliance target and a credit? If yes, stop: that is double counting."
+      ]
+    },
+    {
+      "h": "When the law changes after registration",
+      "p": [
+        "A project registered before a new rule may keep its crediting period, but programmes recheck regulatory surplus at renewal. If the activity has since become mandatory, renewal can be refused. Check the renewal rules of your programme and any BEE notification before planning on a second crediting period."
+      ]
+    }
+  ],
+  "senseible": "Senseible's carbon credit eligibility signals point to projects that might qualify, using your fuel and electricity records. It does not test regulatory surplus or additionality, and it has no part in PAT, CCTS or registry decisions.",
+  "links": [
+    { "label": "CCTS offset mechanism for MSMEs", "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits" },
+    { "label": "What happens to PAT ESCerts after CCTS", "to": "/answers/pat-escerts-after-ccts" },
+    { "label": "What is additionality", "to": "/answers/what-is-additionality-in-carbon-credits" },
+    { "label": "Additionality investment analysis", "to": "/answers/cdm-additionality-investment-analysis-explained" }
+  ],
+  "sources": [
+    { "label": "UNFCCC CDM Methodological Tool 01, demonstration and assessment of additionality", "url": "https://unfccc.int" },
+    { "label": "Verra VCS Standard, regulatory surplus requirements", "url": "https://verra.org" },
+    { "label": "BEE, Detailed Procedure for the Offset Mechanism under the Carbon Credit Trading Scheme", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CCTS offset eligibility depends on BEE notifications that are still being issued; check the current detailed procedure before relying on it."
+}

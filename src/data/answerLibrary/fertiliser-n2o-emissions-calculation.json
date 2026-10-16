@@ -1,0 +1,66 @@
+{
+  "slug": "fertiliser-n2o-emissions-calculation",
+  "q": "How do I calculate N2O and CO2 emissions from synthetic fertiliser use?",
+  "title": "Fertiliser N2O and CO2 emissions",
+  "short": "Work out the kg of nitrogen applied, multiply by the IPCC default of 0.01 kg N2O-N per kg N, convert to N2O with 44/28 and to CO2e with a GWP of 273. Add indirect N2O from volatilisation and leaching, and for urea add 0.733 t CO2 per tonne applied.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Food processors and agri-exporters estimating farm-level Scope 3",
+  "sections": [
+    {
+      "h": "Step 1: convert fertiliser to kg of nitrogen",
+      "p": [
+        "Multiply the product weight by its nitrogen content. Urea is 46% N, DAP is 18% N, and NPK grades state their N share first, so 10:26:26 is 10% N. Use the quantity actually applied to the field, not what was bought, if stock is carried over between seasons."
+      ]
+    },
+    {
+      "h": "Step 2: direct and indirect N2O",
+      "ul": [
+        "Direct N2O-N = kg N x EF1. The IPCC 2006 Guidelines (Volume 4, Chapter 11, Equation 11.1) give EF1 = 0.01 kg N2O-N per kg N. For flooded rice the default is 0.003.",
+        "Indirect from volatilisation = kg N x 0.10 (share lost as ammonia and NOx) x 0.01.",
+        "Indirect from leaching and runoff = kg N x 0.30 x 0.0075, applied only where water moves through the soil, such as irrigated or high-rainfall fields.",
+        "Convert N2O-N to N2O by multiplying by 44/28, then to CO2e with 273, the 100-year GWP of N2O in IPCC AR6."
+      ],
+      "p": [
+        "The 2019 Refinement to the IPCC Guidelines splits EF1 by climate, higher in wet climates and lower in dry ones. If you use it, use it for every field and say so."
+      ]
+    },
+    {
+      "h": "Step 3: CO2 from urea",
+      "p": [
+        "Urea releases its carbon as CO2 after it is spread. IPCC 2006 (Volume 4, section 11.4) uses 0.20 t of carbon per tonne of urea, which is 0.20 x 44/12 = 0.733 t CO2 per tonne. DAP and most NPK grades contain no carbon, so this step applies to urea only."
+      ]
+    },
+    {
+      "h": "Which scope this falls in",
+      "ul": [
+        "Farms you own or run: Scope 1.",
+        "Crops you buy from farmers: their field emissions sit in your Scope 3, Category 1, purchased goods. Divide the per-hectare result by yield to get emissions per tonne of crop.",
+        "Making the fertiliser itself, mainly ammonia production, is a separate upstream emission. Do not mix it into the field figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one hectare with 250 kg urea and 125 kg DAP",
+    "lines": [
+      "Nitrogen: 250 x 0.46 = 115 kg N, plus 125 x 0.18 = 22.5 kg N, total 137.5 kg N",
+      "Direct: 137.5 x 0.01 = 1.375 kg N2O-N x 44/28 = 2.161 kg N2O x 273 = 590 kg CO2e",
+      "Indirect: 137.5 x 0.10 x 0.01 + 137.5 x 0.30 x 0.0075 = 0.447 kg N2O-N x 44/28 = 0.702 kg N2O x 273 = 192 kg CO2e",
+      "Urea CO2: 0.25 t x 0.733 = 183 kg CO2",
+      "Total: 590 + 192 + 183 = about 965 kg CO2e per hectare; at a 4.5 t yield, about 214 kg CO2e per tonne of crop"
+    ],
+    "note": "IPCC Tier 1 defaults; the leaching term assumes an irrigated field and the yield is illustrative. Fertiliser manufacture is not included."
+  },
+  "senseible": "Senseible does not calculate field N2O or urea CO2; it has no fertiliser emission factors. It can keep your fertiliser purchase invoices, which give the product quantities this calculation starts from.",
+  "links": [
+    { "label": "Urea application emissions per tonne", "to": "/answers/urea-application-emissions-per-tonne" },
+    { "label": "Agriculture Scope 1 emissions in India", "to": "/climate-intelligence/agriculture-scope-1-emissions-india" },
+    { "label": "AR5 or AR6 GWP values", "to": "/answers/ar5-vs-ar6-gwp-which-to-use" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Volume 4 AFOLU, Chapter 11 (Equation 11.1, Table 11.1, section 11.4)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "IPCC AR6 Working Group I, Chapter 7, Table 7.15 (GWP100 of N2O)", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-16"
+}

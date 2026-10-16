@@ -2,7 +2,7 @@
   "slug": "air-vs-sea-freight-emissions-export",
   "q": "How much more carbon does air freight emit than sea freight for an export order?",
   "title": "Air vs sea freight emissions for exports",
-  "short": "Per tonne-km, air cargo emits tens of times more than a container ship; with GLEC-based defaults of 0.602 and 0.008 kg CO2e per tonne-km the gap is about 75 times. For a whole order the door to door gap is smaller, often 20 to 30 times, because the sea route is longer and needs extra road legs.",
+  "short": "Per tonne-km, air cargo emits tens of times more than a container ship; with GLEC-based defaults of 0.602 and 0.008 kg CO2e per tonne-km the gap is about 75 times. For a whole order the gap is smaller, about 23 times in the Mumbai to Frankfurt example below, because the sea route is longer and needs extra road legs.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "Exporters choosing between air and sea for urgent orders",
@@ -51,15 +51,36 @@
   },
   "senseible": "Senseible reads freight records and applies weight x distance x mode factor when all three are printed; a record without weight or distance gets no figure. You can compare both routings leg by leg in the logistics calculator. Senseible does not add non-CO2 altitude effects to air freight.",
   "links": [
-    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
-    { "label": "One container, India to Europe", "to": "/answers/sea-freight-emissions-per-container-india-to-europe" },
-    { "label": "Should flights include radiative forcing?", "to": "/answers/should-flight-emissions-include-radiative-forcing" },
-    { "label": "GLEC Framework explained", "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions" }
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "One container, India to Europe",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Should flights include radiative forcing?",
+      "to": "/answers/should-flight-emissions-include-radiative-forcing"
+    },
+    {
+      "label": "GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    }
   ],
   "sources": [
-    { "label": "GLEC Framework v3.0, Smart Freight Centre", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
-    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" },
-    { "label": "UK DESNZ greenhouse gas conversion factors for company reporting, freighting goods", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" }
+    {
+      "label": "GLEC Framework v3.0, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "UK DESNZ greenhouse gas conversion factors for company reporting, freighting goods",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
   ],
   "reviewed": "2026-10-16"
 }

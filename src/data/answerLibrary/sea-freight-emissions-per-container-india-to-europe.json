@@ -26,7 +26,7 @@
       "h": "Two methods, and when to use each",
       "ol": [
         "Tonne-km method (preferred): gross cargo weight in tonnes x sea distance in km x a well-to-wake container ship factor. ISO 14083 and the GLEC Framework both work this way, and it allocates the ship's emissions to you by the mass you shipped.",
-        "Per TEU method (fallback): number of TEU x distance x a trade lane factor in g CO2 per TEU-km, such as the Clean Cargo averages published through Smart Freight Centre. Use it when the weight is missing or the buyer asks for per container figures. Clean Cargo figures are tank-to-wake CO2, so state that, or add a fuel production uplift, and label the result an estimate."
+        "Per TEU method (fallback): number of TEU x distance x a trade lane factor in g CO2 per TEU-km, such as the Clean Cargo averages published through Smart Freight Centre. Use it when the weight is missing or the buyer asks for per container figures. Check whether the Clean Cargo figure you use is tank-to-wake or well-to-wake, state which, and label the result an estimate."
       ]
     },
     {

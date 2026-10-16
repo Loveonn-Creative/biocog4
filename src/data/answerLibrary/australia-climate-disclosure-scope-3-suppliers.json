@@ -43,7 +43,7 @@
   "senseible": "Senseible builds your Scope 1 and 2 figures from electricity bills and fuel invoices, each traced to its document, which you can share when an Australian customer asks. It does not prepare the customer's AASB S2 report or its Scope 3 total.",
   "links": [
     { "label": "California SB 253 and Indian suppliers", "to": "/answers/california-sb-253-indian-suppliers-data" },
-    { "label": "Allocate emissions to a customer", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
+    { "label": "How buyers allocate supplier emissions", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
     { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" }
   ],
   "sources": [
