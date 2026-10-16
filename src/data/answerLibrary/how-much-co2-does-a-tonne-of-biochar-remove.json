@@ -1,0 +1,85 @@
+{
+  "slug": "how-much-co2-does-a-tonne-of-biochar-remove",
+  "q": "How much CO2 does one tonne of biochar remove?",
+  "title": "CO2 removed by one tonne of biochar",
+  "short": "One dry tonne of biochar with 75% organic carbon holds 2.75 tonnes of CO2. After the IPCC permanence factor for high-temperature biochar (0.89), about 2.4 tonnes count as stored for 100 years. Subtract production and transport emissions to get the net removal.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Biochar producers, agri-waste processors and FPOs in India",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Net removal (t CO2) = dry biochar mass x organic carbon fraction x 44/12 x permanence factor, minus project emissions."
+      ],
+      "ul": [
+        "Dry mass: weigh after drying, or correct the wet weight for moisture.",
+        "Organic carbon fraction: from an accredited lab test on samples of your batch, not a book value.",
+        "44/12: converts tonnes of carbon to tonnes of CO2.",
+        "Permanence factor: the share of carbon expected to stay in the soil for 100 years.",
+        "Project emissions: fuel and power for collecting, drying, shredding and pyrolysis, transport to the field, and methane released by the kiln."
+      ]
+    },
+    {
+      "h": "IPCC permanence factors by production temperature",
+      "p": [
+        "The 2019 Refinement to the IPCC Guidelines (Volume 4, Chapter 2, Appendix 4) gives a default fraction of biochar carbon remaining after 100 years:"
+      ],
+      "ul": [
+        "Low temperature pyrolysis, 350 to 450 degrees C: 0.65",
+        "Medium temperature, 450 to 600 degrees C: 0.80",
+        "High temperature, above 600 degrees C: 0.89"
+      ]
+    },
+    {
+      "h": "Methodologies set their own stability tests",
+      "p": [
+        "Carbon credit programmes do not all use the IPCC table. Puro.earth and the European Biochar Certificate require a hydrogen to organic carbon (H/Corg) ratio below 0.7 as a stability test. Verra's VM0044 has its own rules for permanence and sampling. Use the factor from the methodology version you register under, not the one that gives the biggest number."
+      ]
+    },
+    {
+      "h": "Common mistakes that inflate the figure",
+      "ul": [
+        "Using total carbon instead of organic carbon, which counts carbonates that are not a removal.",
+        "Weighing biochar wet. At 30% moisture, a wet tonne is only 0.7 dry tonnes.",
+        "Leaving out kiln methane from simple pit or drum kilns.",
+        "Counting biochar that was sold as fuel. Burnt biochar removes nothing."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 dry tonnes of high-temperature biochar",
+    "lines": [
+      "Carbon: 100 t x 0.75 = 75 t C",
+      "As CO2: 75 x 44 / 12 = 275 t CO2",
+      "Stored for 100 years: 275 x 0.89 = 244.75 t CO2",
+      "Diesel for transport: 3,000 L x 2.68 kg CO2 per L = 8.04 t CO2",
+      "Grid power for shredding: 15,000 kWh x 0.710 kg CO2 per kWh = 10.65 t CO2",
+      "Net removal: 244.75 minus 18.69 = about 226 t CO2, or 2.26 t CO2 per dry tonne"
+    ],
+    "note": "Illustrative only. Kiln methane, feedstock collection and any buffer or uncertainty deduction from the programme would lower the credited amount further."
+  },
+  "senseible": "Senseible does not calculate biochar removals or run lab tests. It can read the diesel slips and electricity bills for the kiln site and apply the IPCC and CEA factors, which gives part of the project emission deduction.",
+  "links": [
+    {
+      "label": "Biochar carbon credits in India",
+      "to": "/answers/biochar-carbon-credits-india"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 2, Appendix 4 (biochar)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "Verra VM0044, Methodology for Biochar Utilization in Soil and Non-Soil Applications",
+      "url": "https://verra.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Permanence factors are the IPCC 2019 defaults; methodology versions update their own stability rules, so check the version in force."
+}

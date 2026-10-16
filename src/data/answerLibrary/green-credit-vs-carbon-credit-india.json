@@ -1,0 +1,70 @@
+{
+  "slug": "green-credit-vs-carbon-credit-india",
+  "q": "What is a Green Credit under India's Green Credit Programme, and how is it different from a carbon credit?",
+  "title": "Green Credit vs carbon credit in India",
+  "short": "A Green Credit is a unit the Environment Ministry's Green Credit Programme awards for an approved environmental action, mainly tree plantation on degraded land. It does not measure a tonne of CO2. A carbon credit represents one tonne of CO2e reduced or removed, and only carbon credits can be used toward carbon targets or offset claims.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Indian companies, CSR teams and MSMEs offered tree plantation green credits",
+  "sections": [
+    {
+      "h": "Where Green Credits come from",
+      "p": [
+        "The Green Credit Rules, 2023 were notified by the Ministry of Environment, Forest and Climate Change on 12 October 2023 (G.S.R. 761(E)) under the Environment (Protection) Act. The Indian Council of Forestry Research and Education (ICFRE) administers the programme. The rules list activities such as tree plantation, water management, sustainable agriculture, waste management, air pollution reduction and mangrove conservation, but tree plantation is the activity most offers to companies are built on.",
+        "Under the tree plantation methodology revised on 29 August 2025, an entity funds planting on degraded land identified by a state forest department, and credits are awarded only after the restoration period, tied to tree survival and canopy density, not to the number of saplings planted."
+      ]
+    },
+    {
+      "h": "Side by side",
+      "ul": [
+        "Unit: a Green Credit counts an approved action; a carbon credit is one tonne of CO2e reduced or removed, measured against a baseline.",
+        "Rules: Green Credits come from MoEFCC's Green Credit Rules; India's compliance carbon credits are Carbon Credit Certificates under the Carbon Credit Trading Scheme, 2023, made under the Energy Conservation (Amendment) Act, 2022; voluntary carbon credits come from programmes such as Verra or Gold Standard.",
+        "Trading: tree plantation Green Credits are not tradable, except transfer between a holding company and its subsidiaries; carbon credits can be sold or retired.",
+        "Carbon link: a Green Credit is not measured in tonnes of CO2e against a baseline, so it is not a carbon credit; do not count it as one unless a later notification says otherwise."
+      ]
+    },
+    {
+      "h": "What a Green Credit can be used for",
+      "ul": [
+        "A one-time exchange against a compensatory afforestation, CSR or other plantation requirement under another law; the credit ends once used.",
+        "Voluntary disclosure in a listed company's BRSR, which SEBI added in March 2025.",
+        "It cannot reduce your Scope 1, 2 or 3 emissions, count toward a CCTS target, or support a carbon neutral claim."
+      ]
+    },
+    {
+      "h": "Before you pay for a plantation offer",
+      "ol": [
+        "Ask whether the land is registered under the Green Credit Programme and allotted by the state forest department.",
+        "Read what the seller calls the product. If it is sold as carbon offsets or tonnes of CO2, it is not a Green Credit, and a carbon claim needs a carbon credit programme with its own verification.",
+        "Budget for a wait of several years before any credit is awarded, and for survival risk."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not handle Green Credits. It keeps emissions records and shows carbon credit eligibility signals for carbon projects, which is a separate track from the Green Credit Programme.",
+  "links": [
+    {
+      "label": "Carbon pricing mechanisms in India",
+      "to": "/answers/carbon-pricing-mechanisms-in-india"
+    },
+    {
+      "label": "Biochar carbon credits in India",
+      "to": "/answers/biochar-carbon-credits-india"
+    },
+    {
+      "label": "Carbon offset vs carbon credit",
+      "to": "/climate-intelligence/carbon-offsets-vs-carbon-credits-difference-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MoEFCC, Green Credit Rules, 2023 (G.S.R. 761(E)) and the revised tree plantation methodology, August 2025",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "SEBI circular, March 2025, introducing voluntary disclosure on green credits",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Green Credit Rules and methodology were amended after 2023 and the government has not ruled out tradable credits later; re-check permitted uses and tradability."
+}

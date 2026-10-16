@@ -1,0 +1,74 @@
+{
+  "slug": "residual-mix-factor-india-market-based-scope-2",
+  "q": "What residual mix factor should I use for market-based Scope 2 in India?",
+  "title": "Residual mix factor for India",
+  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Companies reporting dual Scope 2 for CDP, BRSR or EU buyers",
+  "sections": [
+    {
+      "h": "What a residual mix is for",
+      "p": [
+        "In market-based Scope 2, electricity you cover with RECs, I-RECs, green open access or a green tariff takes the factor of that contract. The rest should take a residual mix factor: the grid's emissions after removing the renewable power that others have already claimed. That stops the same green kWh being counted by two buyers."
+      ]
+    },
+    {
+      "h": "What the GHG Protocol says when none exists",
+      "p": [
+        "The Scope 2 Guidance accepts the grid average as the fallback where no residual mix is available, and asks you to disclose that you used it. It also notes the weakness: because claimed renewable power is still inside the average, the figure is slightly low, and some double counting remains.",
+        "We could find no official residual mix for India from the CEA or Grid-India as of October 2026. Until one is published, the CEA weighted average is the defensible choice."
+      ]
+    },
+    {
+      "h": "Why not adjust the factor yourself",
+      "p": [
+        "You could try to remove REC and green open access volumes from the CEA average, but you would need national generation data and certificate volumes for the same year, and every reporter would get a different number. Auditors usually prefer the published average with a clear note to a private estimate. If a buyer supplies its own residual mix figure for India, use it only as they ask, and report its source."
+      ]
+    },
+    {
+      "h": "What to write in the report",
+      "ol": [
+        "Location-based: total kWh x 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Market-based: kWh covered by each instrument, with the instrument type, vintage and retirement proof, at that instrument's factor.",
+        "Uncovered kWh in market-based: the same CEA grid average, labelled as used in the absence of a published residual mix for India."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory with some I-RECs",
+    "lines": [
+      "Electricity used: 500,000 kWh; I-RECs retired for 200,000 kWh",
+      "Location-based: 500,000 x 0.710 = 355,000 kg CO2, 355 t",
+      "Market-based: 200,000 kWh at 0 for the I-RECs, plus 300,000 x 0.710 = 213,000 kg CO2, 213 t",
+      "Note in report: uncovered kWh use the CEA grid average because no Indian residual mix is published"
+    ]
+  },
+  "senseible": "Senseible reports location-based Scope 2 with the CEA factor, 0.710 kg CO2 per kWh, and market-based Scope 2 when you supply instrument data such as certificates. It does not calculate or publish a residual mix for India.",
+  "links": [
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Do RE100 and CDP accept Indian RECs",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (residual mix)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check whether the CEA or Grid-India has since published a residual mix, and whether the GHG Protocol Scope 2 revision changes the fallback rule."
+}

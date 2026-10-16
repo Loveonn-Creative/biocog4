@@ -1,0 +1,73 @@
+{
+  "slug": "cdp-supply-chain-request-what-to-do",
+  "q": "A customer sent me a CDP supply chain request. Do I have to respond, and what does it cost?",
+  "title": "CDP supply chain request: respond or not?",
+  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. CDP charges responders an annual administration fee that depends on company size and region; check the current fee on cdp.net before you register.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian MSME suppliers to multinationals",
+  "sections": [
+    {
+      "h": "Who is asking, and what they see",
+      "p": [
+        "A CDP supply chain request comes from a customer that is a CDP supply chain member. It pays CDP to send questionnaires to its suppliers and to see their answers in one place.",
+        "Your customer sees whether you responded and, if you did, your answers and score. A missing response is visible to them as a non-response, which usually leads to a follow-up from their procurement or sustainability team."
+      ]
+    },
+    {
+      "h": "How to decide whether to respond",
+      "ul": [
+        "Respond if the customer is a large share of your revenue, if the request comes with a supplier code or contract clause on climate data, or if they have said non-response affects supplier ratings.",
+        "Ask first if you are unsure: some buyers accept a short emissions summary by email in the first year and expect CDP from the next cycle.",
+        "Decline only after telling the customer why and what you can send instead. Silence is the worst option."
+      ]
+    },
+    {
+      "h": "What the fee covers and how to check it",
+      "p": [
+        "CDP's responder fee is an administration charge for using the platform and receiving your score and feedback. It is set per reporting cycle, and the amount differs by organisation size and region, with lower or waived fees for some smaller companies.",
+        "The fee is listed in CDP's fee policy on cdp.net and is shown when you register for the cycle. Some customers pay or reimburse it for priority suppliers, so ask before you pay."
+      ]
+    },
+    {
+      "h": "Full questionnaire or SME questionnaire",
+      "p": [
+        "Since 2024 CDP uses one integrated corporate questionnaire, covering climate, forests, water and other themes, and a shorter SME questionnaire. Revenue and employee numbers decide which one you are eligible for. The SME version asks for the basics: governance, Scope 1 and Scope 2 emissions, and targets if you have them.",
+        "Confirm with your customer which version they expect. If they accept the SME version, it is usually the right start for an MSME."
+      ]
+    },
+    {
+      "h": "What to prepare before you open the portal",
+      "ol": [
+        "Pick the reporting year, usually your financial year April to March, and the organisational boundary (which plants and offices).",
+        "Calculate Scope 1 from fuel purchases and Scope 2 from electricity bills, with the emission factors and their sources.",
+        "Note any Scope 3 categories you can estimate, or say plainly that you have not yet calculated them.",
+        "Write a short description of reduction actions with dates and numbers, such as a solar install or a boiler fuel switch.",
+        "Decide with your management whether the response is public or shared only with requesting customers."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives you Scope 1 and Scope 2 figures calculated from your invoices and electricity bills, with the factor and source document behind each line, to fill the emissions questions. Questionnaire support is described on the ESG ratings page. The figures are self-declared; Senseible does not submit to CDP or score your response.",
+  "links": [
+    {
+      "label": "CDP and ESG ratings support",
+      "to": "/esg-ratings"
+    },
+    {
+      "label": "Do CDP and RE100 accept Indian RECs?",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP Supply Chain programme, responder fee policy and SME questionnaire (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CDP sets its responder fees and questionnaire each cycle; check cdp.net for the current year."
+}

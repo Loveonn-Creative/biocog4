@@ -1,0 +1,80 @@
+{
+  "slug": "does-eudr-apply-to-my-indian-exports",
+  "q": "Does the EU Deforestation Regulation apply to my exports from India (coffee, rubber, leather, wood)?",
+  "title": "Does EUDR apply to my Indian exports?",
+  "short": "It applies if your product's HS code is listed in Annex I of Regulation (EU) 2023/1115: products of cattle, cocoa, coffee, oil palm, rubber, soya or wood, such as coffee, natural rubber, new tyres, soya meal, plywood, wooden furniture and paper. Leather was taken out in 2026. Your EU buyer files the declaration, but needs plot origin data from you.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters of coffee, natural rubber, leather, wooden furniture, paper and soy meal",
+  "sections": [
+    {
+      "h": "Check your product against Annex I",
+      "ul": [
+        "Coffee: green, roasted or decaffeinated coffee, HS 0901.",
+        "Rubber: natural rubber, HS 4001, and listed rubber products such as new tyres (4011).",
+        "Wood: logs, sawn wood, plywood (4412), pulp and paper (chapters 47 and 48) and listed wooden furniture under 9403.",
+        "Soya: soya beans (1201) and soya meal or oilcake (2304).",
+        "Cattle: live cattle and beef. Cocoa and oil palm products, if you export them."
+      ],
+      "p": [
+        "Annex I lists exact HS codes, and only those codes are covered. If your code is not there, EUDR does not apply to that product, even if it contains a little of a listed commodity."
+      ]
+    },
+    {
+      "h": "Indian products now out of scope",
+      "ul": [
+        "Leather: a Commission delegated act adopted in July 2026 removes cattle hides, skins and leather (4101, 4104, 4107) from Annex I, along with retreaded tyres and some vulcanised rubber articles. Check on EUR-Lex that the change is in force for your shipment date.",
+        "Printed matter (chapter 49): removed by the December 2025 amendment.",
+        "Tea, spices, rice and cotton: never listed.",
+        "Synthetic rubber products, unless they also contain natural rubber under a listed code."
+      ]
+    },
+    {
+      "h": "Who has the legal duty",
+      "p": [
+        "The EU company that places the product on the EU market, or exports it from the EU, is the operator. It submits a due diligence statement in the EU information system. As the Indian exporter you are not filing, but the operator cannot file without your geolocation of every production plot, the quantity, the production date and evidence that the land was not deforested after 31 December 2020 and the product was made legally in India."
+      ]
+    },
+    {
+      "h": "When it starts",
+      "p": [
+        "The December 2025 amendment, Regulation (EU) 2025/2650, moved the start to 30 December 2026 for large and medium operators and 30 June 2027 for micro and small ones. India is low risk under the Commission's country benchmarking, which lightens your buyer's checks but not the data you must supply. Confirm both on EUR-Lex before agreeing timelines with buyers."
+      ]
+    }
+  ],
+  "senseible": "Senseible's supplier due diligence page screens which supply chain laws, including EUDR, apply to your commodities and markets. It does not collect plot geolocation or file EUDR due diligence statements.",
+  "links": [
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "EU rules beyond CBAM that ask for carbon data",
+      "to": "/answers/eu-rules-besides-cbam-asking-exporters-carbon-data"
+    },
+    {
+      "label": "India's EUDR risk category and your buyer",
+      "to": "/answers/eudr-country-risk-category-india"
+    },
+    {
+      "label": "EUDR geolocation for smallholder farms",
+      "to": "/answers/eudr-geolocation-requirements-smallholders"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Annex I, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR (application dates, chapter 49), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission delegated act amending EUDR Annex I, adopted 13 July 2026, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Annex I was narrowed by the December 2025 amendment and a July 2026 delegated act (leather removed; some products added from 30 December 2027); recheck the consolidated Annex I, application dates and India's risk category before relying on this page."
+}

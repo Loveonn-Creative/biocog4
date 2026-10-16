@@ -1,0 +1,68 @@
+{
+  "slug": "india-green-hydrogen-vs-eu-rfnbo-threshold",
+  "q": "Will hydrogen certified green in India qualify as RFNBO in the EU?",
+  "title": "Indian green hydrogen as EU RFNBO?",
+  "short": "Not automatically. India's 2 kg CO2e per kg limit is stricter in number than the EU's RFNBO limit of about 3.38 kg CO2e per kg, but it covers only production up to the plant gate. The EU counts transport and delivery too, and adds rules on new renewable capacity and timing, checked under an EU-recognised scheme.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian green hydrogen and ammonia exporters",
+  "sections": [
+    {
+      "h": "Both thresholds on one basis",
+      "ul": [
+        "EU: Delegated Regulation (EU) 2023/1185 requires at least a 70% saving against a fossil comparator of 94 g CO2e per MJ. That leaves 94 x 0.30 = 28.2 g CO2e per MJ.",
+        "Converted with hydrogen's lower heating value of 120 MJ per kg: 28.2 x 120 = 3,384 g, about 3.38 kg CO2e per kg of hydrogen.",
+        "India: MNRE's Green Hydrogen Standard allows 2 kg CO2e per kg, as a 12-month average."
+      ]
+    },
+    {
+      "h": "Why the boundary decides the answer",
+      "p": [
+        "India's limit stops at the plant gate: water treatment, electrolysis, purification, drying and compression. The EU method is a full life cycle. It adds emissions from transport and distribution, including conversion to ammonia, shipping and any cracking back to hydrogen, and the input electricity's own emissions. For an Indian exporter, shipping ammonia to Rotterdam and the energy for conversion can use a large part of the gap between 2 and 3.38 kg."
+      ]
+    },
+    {
+      "h": "Rules India's standard does not have",
+      "p": [
+        "Delegated Regulation (EU) 2023/1184 sets when electricity counts as fully renewable:"
+      ],
+      "ul": [
+        "Additionality: renewable plants supplying the electrolyser should be new, not existing capacity diverted from the grid, with transition rules for early projects.",
+        "Temporal correlation: renewable supply must match electrolyser use within the same calendar month, moving to the same hour from 2030.",
+        "Geographic correlation: the renewable plant must be in the same bidding zone as the electrolyser, or an interconnected one under set conditions.",
+        "India's standard uses a 12-month average and accepts banked renewable power, so a plant can pass India's test and still fail the monthly or hourly match."
+      ]
+    },
+    {
+      "h": "How certification works for an exporter",
+      "ol": [
+        "Get certified under a voluntary scheme the European Commission has recognised for RFNBOs; an Indian certificate alone is not accepted as proof.",
+        "Keep hourly metering of renewable supply and electrolyser load, so the correlation tests can be shown.",
+        "Calculate emissions on the EU life-cycle method, including your shipping route and carrier.",
+        "Hold the Indian certificate too if you sell in India or apply for Indian incentives; the two run side by side."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one cargo of hydrogen shipped as ammonia",
+    "lines": [
+      "Production at the gate: 1.6 kg CO2e per kg H2, passes India's 2 kg limit",
+      "Conversion to ammonia, shipping and cracking: 1.4 kg CO2e per kg H2 (an assumption for illustration)",
+      "EU life-cycle total: 1.6 + 1.4 = 3.0 kg CO2e per kg, under 3.38, so it passes the saving test",
+      "If shipping and cracking were 2.0 kg instead: 1.6 + 2.0 = 3.6 kg, which fails the EU limit while still passing India's"
+    ],
+    "note": "Passing the emissions test is not enough on its own; the electricity rules in 2023/1184 must also be met."
+  },
+  "senseible": "Senseible does not calculate RFNBO life-cycle emissions or prepare EU hydrogen certification. Its CBAM cost page for hydrogen estimates CBAM charges, which is a separate question from RFNBO status.",
+  "links": [
+    { "label": "India's green hydrogen 2 kg limit", "to": "/answers/india-green-hydrogen-standard-2kg-threshold" },
+    { "label": "CBAM cost per tonne of hydrogen", "to": "/cbam-cost/hydrogen" },
+    { "label": "Green hydrogen economics for MSMEs", "to": "/climate-intelligence/green-hydrogen-msme-cost-economics-2026" }
+  ],
+  "sources": [
+    { "label": "Commission Delegated Regulations (EU) 2023/1184 and 2023/1185 on renewable fuels of non-biological origin (EUR-Lex)", "url": "https://eur-lex.europa.eu" },
+    { "label": "MNRE, Green Hydrogen Standard for India (August 2023); BEE is the nodal accreditation authority (beeindia.gov.in)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The list of EU-recognised certification schemes and the transition rules for additionality change over time; re-check before quoting to a buyer."
+}

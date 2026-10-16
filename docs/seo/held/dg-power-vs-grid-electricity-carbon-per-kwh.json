@@ -1,0 +1,82 @@
+{
+  "slug": "dg-power-vs-grid-electricity-carbon-per-kwh",
+  "q": "Is diesel generator power more carbon-intensive than grid electricity in India?",
+  "title": "Is DG power dirtier than grid power?",
+  "short": "Yes, in most real operation. A DG set typically gives about 0.8 kg CO2 per kWh at good load and more at part load, against 0.710 kg CO2 per kWh for the India grid. The gap widens further against grid power backed by renewable contracts, which can count near zero market-based.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Factories and commercial buildings with DG backup",
+  "sections": [
+    {
+      "h": "A fair comparison, like for like",
+      "ul": [
+        "Both figures here are direct CO2 at the point of combustion: diesel at 2.68 kg per litre (IPCC 2006) and the grid at 0.710 kg per kWh (CEA weighted average, version 21.0).",
+        "Neither includes upstream emissions: refining and transporting diesel, or grid transmission and distribution losses. If you add one, add the other.",
+        "Compare the same kWh delivered to your panel, measured on the DG meter and the grid meter."
+      ]
+    },
+    {
+      "h": "How much DG share changes your site's intensity",
+      "p": [
+        "Most sites run DG for a small share of hours, so the effect on total emissions is modest but real. A site's blended figure is: (grid kWh x 0.710 + DG litres x 2.68) / total kWh. Track it monthly; a jump usually means more outages or a set running at light load."
+      ]
+    },
+    {
+      "h": "Against market-based grid power",
+      "p": [
+        "If you buy renewable power through open access, a green tariff or certificates, your market-based Scope 2 can be close to zero for those units. DG kWh stay in Scope 1 at their full intensity whatever you buy, so as the grid side gets cleaner, DG becomes the largest share of electricity emissions."
+      ]
+    },
+    {
+      "h": "When DG power may look comparable",
+      "p": [
+        "A large, well maintained set running near its rated load can approach about 3.7 to 4 kWh per litre, which is 0.67 to 0.72 kg CO2 per kWh, roughly level with the grid figure. That is the best case, not the usual one for backup duty, and it does not hold against cleaner grid supply."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a commercial building's monthly blend",
+    "lines": [
+      "Grid: 90,000 kWh x 0.710 = 63,900 kg CO2",
+      "DG: 3,000 litres giving 9,600 kWh (3.2 kWh per litre); 3,000 x 2.68 = 8,040 kg CO2",
+      "DG intensity: 8,040 / 9,600 = 0.84 kg CO2 per kWh",
+      "Blended: (63,900 + 8,040) / 99,600 = 0.722 kg CO2 per kWh",
+      "If the same 9,600 kWh had come from the grid: 99,600 x 0.710 = 70,716 kg CO2, about 1,224 kg less"
+    ],
+    "note": "Litres and kWh are illustrative; use your own DG log."
+  },
+  "senseible": "Senseible reads fuel slips and invoices and applies IPCC 2006 defaults (diesel 2.68 kg CO2 per litre) for Scope 1, and grid kWh at the CEA factor of 0.710 kg CO2 per kWh for Scope 2. It does not read DG meters, so the per kWh comparison uses your own meter log.",
+  "links": [
+    {
+      "label": "DG set kg CO2 per kWh at different loads",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Is DG set power Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Solar diesel microgrid carbon intensity",
+      "to": "/answers/solar-diesel-microgrid-carbon-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

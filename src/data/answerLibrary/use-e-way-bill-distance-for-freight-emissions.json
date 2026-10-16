@@ -1,0 +1,92 @@
+{
+  "slug": "use-e-way-bill-distance-for-freight-emissions",
+  "q": "Can I use e-way bill distance and weight to calculate freight emissions?",
+  "title": "E-way bill distance for freight emissions",
+  "short": "Yes for distance, not for weight. The e-way bill records an approximate road distance for the consignment, which is a fair input for tonne-km. It does not record gross weight, so take the weight from the goods invoice or packing list, then multiply weight x distance x a road emission factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian manufacturers and traders moving goods by road",
+  "sections": [
+    {
+      "h": "What the e-way bill actually holds",
+      "ul": [
+        "The GSTINs and places of dispatch and delivery of the supplier and recipient, the invoice or challan number and date, HSN codes and the value of the goods.",
+        "The vehicle number, or the transport document number for rail, air or ship.",
+        "An approximate distance in km for the movement.",
+        "Quantity per line in the unit the supplier chose, such as numbers, boxes or kg. That is not the gross weight of the load."
+      ],
+      "p": [
+        "Rule 138 of the CGST Rules makes an e-way bill necessary for most goods movements above Rs 50,000 in consignment value, so for regular dispatches the distance is usually already on record."
+      ]
+    },
+    {
+      "h": "How reliable the e-way bill distance is",
+      "p": [
+        "The portal works out a pincode to pincode road distance, and the person generating the bill can enter a figure up to about 10 percent above it. Validity is also tied to distance, so some transporters enter the upper end. Treat the figure as an approximate route length, not a measured one.",
+        "For a regular lane, compare the e-way bill figure once with a mapping tool. If they differ by more than about 10 percent, pick one source for that lane, write it down and keep using it."
+      ]
+    },
+    {
+      "h": "Where to take the weight from instead",
+      "ol": [
+        "The goods invoice for the same consignment, if quantity is in kg or tonnes.",
+        "The packing list or delivery challan, which usually gives gross weight per carton or pallet.",
+        "The lorry receipt, if it shows actual weight. Ignore charged weight, which can be a minimum or a volume based figure."
+      ],
+      "p": [
+        "Match the documents by invoice number, which the e-way bill also carries. Do not estimate weight from the taxable value."
+      ]
+    },
+    {
+      "h": "Cases where the e-way bill misleads",
+      "ul": [
+        "One e-way bill, several drops: the distance is to the billed address, not the full route. Use your trip sheet.",
+        "Goods moved from transporter's godown to a second vehicle: Part B changes but the distance does not. The total is still one consignment.",
+        "Consignments below the value limit have no e-way bill. Use the pincodes on the invoice.",
+        "Return trips and empty running are not on the e-way bill. GLEC style default factors are meant to cover typical empty running, so do not add it again unless your factor excludes it. Senseible's logistics calculator adds an empty return share only if you enter one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one dispatch from Ludhiana to Pune",
+    "lines": [
+      "E-way bill approximate distance: 1,180 km",
+      "Packing list gross weight: 8,000 kg, so 8 t",
+      "Activity: 8 x 1,180 = 9,440 tonne-km",
+      "Factor: 0.062 kg CO2e per tonne-km, the articulated truck (over 17 t) default in Senseible's logistics calculator, which labels it GLEC v3.0 well-to-wheel at a 70 percent default load",
+      "9,440 x 0.062 = 585.3 kg CO2e, about 0.59 t"
+    ],
+    "note": "The factor is a default that assumes a large truck at typical load. A part loaded rigid truck has a much higher factor per tonne-km; use your carrier's data where you have it."
+  },
+  "senseible": "Senseible reads weight and distance from freight records; a line gets a figure only when both are printed and an approved factor matches the mode, otherwise it is marked as needing data. To use an e-way bill distance, enter it with the weight in the logistics calculator.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework v3.0 (Smart Freight Centre)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "E-way bill thresholds and portal distance rules are set under the CGST Rules and can change by notification; check the current rule before relying on them."
+}

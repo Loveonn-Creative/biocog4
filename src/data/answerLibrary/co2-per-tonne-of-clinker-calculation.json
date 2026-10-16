@@ -1,0 +1,70 @@
+{
+  "slug": "co2-per-tonne-of-clinker-calculation",
+  "q": "How do I calculate CO2 per tonne of clinker?",
+  "title": "How to calculate CO2 per tonne of clinker",
+  "short": "Add two parts. Calcination CO2 comes from the lime in the clinker: CaO fraction x 44/56 plus MgO fraction x 44/40.3, in tonnes CO2 per tonne clinker. Kiln fuel CO2 is fuel burnt per tonne clinker times its emission factor. Then correct for kiln dust that leaves the system.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cement plants and grinding units in India, CBAM declarants",
+  "sections": [
+    {
+      "h": "Step 1: calcination CO2 from clinker chemistry",
+      "p": [
+        "When limestone (CaCO3) is heated it splits into lime (CaO) and CO2. The molecular weights fix the ratio: 44 g of CO2 for every 56 g of CaO, and 44 g of CO2 for every 40.3 g of MgO from magnesium carbonate.",
+        "Use the CaO and MgO content of your clinker from the plant laboratory, as an annual weighted average. If part of the CaO comes from non-carbonate inputs such as slag or fly ash in the raw mix, subtract that CaO first, because it releases no process CO2."
+      ]
+    },
+    {
+      "h": "The IPCC default when you have no lab data",
+      "p": [
+        "IPCC 2006 Guidelines (Volume 3, Chapter 2) give a Tier 1 default of 0.52 t CO2 per tonne clinker. It is based on 65% CaO, all from carbonate, which gives about 0.51, plus a small default correction for cement kiln dust.",
+        "A default is acceptable for a first estimate. For CBAM actual emissions or a lender review, use measured clinker chemistry."
+      ]
+    },
+    {
+      "h": "Step 2: kiln fuel CO2",
+      "ul": [
+        "Take the fuel fired in the kiln and precalciner for the period: coal, petcoke, alternative fuels, and any oil used at start-up.",
+        "Multiply each fuel by its emission factor, from your fuel analysis or a published default, and divide by clinker produced.",
+        "Report biomass and the biogenic part of alternative fuels separately; under the GHG Protocol their CO2 is shown outside the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Step 3: kiln dust and the two calculation routes",
+      "p": [
+        "Cement kiln dust (CKD) that leaves the kiln system is partly calcined, so its CO2 is not counted in clinker output. Add it based on the dust quantity and its degree of calcination.",
+        "The WBCSD Cement Sustainability Initiative CO2 and Energy Protocol allows two routes for process CO2: the clinker output method above, or the raw meal method, which works from raw meal consumed and its loss on ignition. Pick one, use it every year, and state it."
+      ]
+    },
+    {
+      "h": "What EU CBAM asks for",
+      "p": [
+        "Cement clinker is a CBAM good. From 1 January 2026, in the definitive period, declarants report embedded emissions per tonne using the monitoring rules in the CBAM implementing acts, which include both calcination and fuel CO2 for the clinker production route. For cement goods, indirect emissions from electricity are also reported. Without verified actual data, EU default values with mark-ups apply."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of clinker (labelled assumptions)",
+    "lines": [
+      "Clinker CaO 65%, MgO 1.5%, all from carbonates (assumed)",
+      "Calcination: 0.65 x 44/56 = 0.511 t; 0.015 x 44/40.3 = 0.016 t; total 0.527 t CO2",
+      "Kiln coal: 130 kg per tonne clinker (assumed) x 2.42 kg CO2 per kg (IPCC 2006 default) = 315 kg CO2",
+      "Total before kiln dust correction: 527 + 315 = 842 kg CO2 per tonne clinker"
+    ],
+    "note": "Coal rate and quality vary widely between Indian kilns; use your own fuel records and fuel analysis."
+  },
+  "senseible": "Senseible reads kiln fuel invoices and applies IPCC 2006 factors, such as 2.42 kg CO2 per kg of coal, for the fuel part. Calcination CO2 needs your clinker CaO and MgO data, which it calculates only when you supply measured figures; it does not read laboratory reports or kiln instruments by itself.",
+  "links": [
+    { "label": "Cement industry page", "to": "/industries/cement" },
+    { "label": "CBAM cost for cement", "to": "/cbam-cost/cement" },
+    { "label": "Process CO2 from limestone", "to": "/answers/process-co2-from-limestone-calcination" },
+    { "label": "PPC vs OPC carbon footprint", "to": "/answers/ppc-vs-opc-cement-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 3, Chapter 2, Mineral Industry Emissions", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "WBCSD CSI Cement CO2 and Energy Protocol, version 3.1", "url": "https://www.wbcsd.org" },
+    { "label": "EU CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CBAM monitoring rules for the definitive period are set in implementing acts that may be amended; check the Commission guidance page."
+}

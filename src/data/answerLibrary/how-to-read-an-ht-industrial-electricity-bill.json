@@ -1,0 +1,72 @@
+{
+  "slug": "how-to-read-an-ht-industrial-electricity-bill",
+  "q": "How do I read an HT industrial electricity bill in India?",
+  "title": "How to read an HT industrial power bill",
+  "short": "An HT industrial bill has two main charges: a demand charge on your billing demand in kVA, and an energy charge on units in kWh or kVAh. On top come time of day surcharges or rebates, a power factor adjustment, the fuel and power purchase cost adjustment, and state electricity duty.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Factory owners and finance teams",
+  "sections": [
+    {
+      "h": "Demand charge: contract demand, recorded demand and billing demand",
+      "p": [
+        "Contract demand is the kVA you agreed with the discom. Recorded maximum demand is the highest average load the meter saw in any demand interval, often 15 or 30 minutes, during the month.",
+        "Billing demand is usually the higher of the recorded maximum demand and a set percentage of contract demand, as fixed in your state commission's tariff order. Demand above contract demand often attracts a penalty rate. The demand charge is billing demand times a rupee rate per kVA per month."
+      ]
+    },
+    {
+      "h": "Energy charge: kWh or kVAh",
+      "p": [
+        "The energy charge is units times a rupee rate. Some states bill HT consumers in kWh and others in kVAh. kVAh billing already includes the effect of a poor power factor, so a separate power factor penalty or rebate usually applies only to kWh billing.",
+        "For a carbon calculation you need the kWh reading. If only kVAh is billed, take the kWh figure from the meter readings section of the bill or ask the discom for it."
+      ]
+    },
+    {
+      "h": "Time of day, power factor and fuel adjustment lines",
+      "ul": [
+        "Time of day (ToD): the Electricity (Rights of Consumers) Amendment Rules, 2023 require ToD tariffs for commercial and industrial consumers with maximum demand above 10 kW from 1 April 2024. The peak rate is at least 1.2 times the normal rate, and the solar hour rate at least 20% below it. The bill shows units by time block.",
+        "Power factor: an incentive above a set power factor or a penalty below it, as a percentage of the energy charge, where billing is in kWh.",
+        "Fuel and power purchase cost adjustment (FPPCA or FPPAS): a per unit charge that passes changes in the discom's fuel and power purchase costs to you, made automatic and monthly by the Electricity (Amendment) Rules, 2022."
+      ]
+    },
+    {
+      "h": "Duty, taxes and open access lines",
+      "p": [
+        "Electricity duty is a state levy, charged as a percentage of charges or per unit depending on the state. Some states add a tax on sale or a cess. If you buy power through open access, separate lines appear for wheeling, cross-subsidy surcharge, additional surcharge and banking, and the units received under open access are shown apart from discom units."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month (round numbers, not any discom's tariff)",
+    "lines": [
+      "Contract demand 500 kVA; recorded maximum demand 380 kVA; minimum billing at 75% of contract demand = 375 kVA; billing demand = 380 kVA",
+      "Energy: 1,20,000 kWh, split into peak, normal and solar hour blocks for ToD",
+      "Carbon: 1,20,000 kWh x 0.710 kg CO2 per kWh = 85,200 kg CO2, about 85.2 tonnes",
+      "Demand, ToD, power factor, FPPCA and duty lines change the rupee total but not the CO2"
+    ],
+    "note": "Use the percentages and rates in your own state commission's current tariff order; they differ by state and year."
+  },
+  "senseible": "Senseible reads only the billing details from an electricity bill: billing period, tariff category, sanctioned load and units. It applies the CEA grid factor of 0.710 kg CO2 per kWh to kWh units, gives kVAh lines no factor, and does not check your tariff charges or demand calculation.",
+  "links": [
+    {
+      "label": "Can AI read an electricity bill?",
+      "to": "/answers/can-ai-read-my-electricity-bill-accurately"
+    },
+    {
+      "label": "Footprint from electricity bills",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Rights of Consumers) Amendment Rules, 2023, and Electricity (Amendment) Rules, 2022 (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Tariff structures change with each state commission's annual tariff order; check your current order."
+}

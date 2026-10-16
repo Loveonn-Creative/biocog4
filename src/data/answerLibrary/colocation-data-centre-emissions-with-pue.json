@@ -1,0 +1,78 @@
+{
+  "slug": "colocation-data-centre-emissions-with-pue",
+  "q": "How do I calculate emissions for servers in a colocation data centre using PUE?",
+  "title": "Colocation server emissions with PUE",
+  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian SaaS, fintech and IT firms with colocation racks",
+  "sections": [
+    {
+      "h": "The formula and what each part means",
+      "ol": [
+        "IT energy: the kWh your racks actually draw, from the provider's metered power reports. If you only have a contracted kW, use average draw, not the breaker rating.",
+        "PUE: total facility energy divided by IT equipment energy, as defined in ISO/IEC 30134-2. It adds your share of cooling, UPS losses and lighting. Use the measured annual figure for the site.",
+        "Facility energy for your racks: IT kWh x PUE.",
+        "Emissions: facility kWh x the grid factor for where the data centre sits. For India, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, version 21.0."
+      ]
+    },
+    {
+      "h": "What to request from the colocation provider",
+      "ul": [
+        "Monthly metered kWh for your cage, racks or power strips, for the full reporting year.",
+        "The site's measured annual PUE, with the period it covers and whether it is a 12 month average.",
+        "Whether your power bill is already grossed up for PUE. Some providers bill facility power, not IT power; if so, do not multiply by PUE again.",
+        "Any renewable supply contracted for the site: open access, a green tariff or certificates, with quantities and periods, if you want a market-based figure."
+      ]
+    },
+    {
+      "h": "Scope 2 or Scope 3",
+      "p": [
+        "If you contract and pay for metered power for your space and you treat the cage as a leased asset under your operational control, report it as Scope 2 purchased electricity. If power is bundled into a service fee and you control nothing on site, it is Scope 3: Category 1 purchased services, or Category 8 upstream leased assets if you report leased space there. Pick one treatment, write it in your method note and keep it every year."
+      ]
+    },
+    {
+      "h": "Location-based and market-based results",
+      "p": [
+        "The location-based figure uses the grid factor regardless of contracts. A market-based figure can be lower only if the provider passes you a share of renewable power backed by instruments for the same period, and you have the documents. A provider's statement that the site is green, with no quantities, does not change your market-based number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 20 kW colocation footprint in Mumbai",
+    "lines": [
+      "Average IT draw: 20 kW, running all year",
+      "IT energy: 20 x 8,760 hours = 175,200 kWh",
+      "Annual PUE from the provider: 1.6, so facility energy = 175,200 x 1.6 = 280,320 kWh",
+      "Location-based: 280,320 x 0.710 = 199,027 kg CO2, about 199 tonnes a year",
+      "If the provider documents that 40% of your share is renewable: 280,320 x 0.60 x 0.710 = 119,416 kg CO2 market-based"
+    ],
+    "note": "The 40% renewable share is an assumption for illustration; use only shares backed by certificates or contracts for the period."
+  },
+  "senseible": "Senseible's cloud and data centre calculator gives a quick estimate, and where your company pays the electricity bill for its space directly, Senseible reads the kWh from the bill and applies 0.710 kg CO2 per kWh. It does not read colocation providers' power dashboards or PUE reports.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 30134-2:2016, Key performance indicators, Power usage effectiveness (PUE)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

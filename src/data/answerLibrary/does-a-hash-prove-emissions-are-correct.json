@@ -1,0 +1,82 @@
+{
+  "slug": "does-a-hash-prove-emissions-are-correct",
+  "q": "Does a SHA-256 hash prove that reported emissions are correct?",
+  "title": "Does a hash prove emissions are correct?",
+  "short": "No. A SHA-256 hash proves that a file or record has not changed since it was hashed. It says nothing about whether the invoice was genuine, the quantity was read correctly, the right emission factor was used, or every source was included. Correctness needs recalculation and evidence checks.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Buyers, lenders and auditors reviewing digital carbon records",
+  "sections": [
+    {
+      "h": "What a hash does prove",
+      "p": [
+        "SHA-256, specified in NIST FIPS 180-4, turns any file into a 64 character code. If the code you compute today matches the one recorded earlier, the file is byte for byte the same. No practical way is known to make two different files with the same SHA-256 code, so a match is strong evidence of integrity.",
+        "When records are hash-chained, each entry includes the hash of the one before, so editing or deleting an old entry breaks every later link."
+      ]
+    },
+    {
+      "h": "Errors a hash cannot catch",
+      "ul": [
+        "A fake, inflated or wrongly dated invoice: it hashes just as well as a real one.",
+        "A misread quantity or unit, such as 1,000 litres captured as 10,000.",
+        "A wrong or outdated emission factor, or a line put in the wrong scope.",
+        "Missing sources: a hash covers only the files you hashed, not the bills you never uploaded.",
+        "Double counting across formats: a scan and a PDF of the same bill have different hashes, because a hash matches identical files only."
+      ]
+    },
+    {
+      "h": "What does test correctness",
+      "ol": [
+        "Recalculation: activity x factor reproduces the reported figure within a stated tolerance.",
+        "Evidence checks: each line traces to a source document, and quantities and units are plausible.",
+        "Completeness: sites, meters and fuel types are reconciled against the boundary, for example against purchase ledgers.",
+        "Independent verification: a verifier working to ISO 14064-3 tests a sample of these and gives a limited or reasonable assurance opinion."
+      ]
+    },
+    {
+      "h": "How hashes help a verifier",
+      "p": [
+        "Hashes make verification cheaper, not unnecessary. A verifier who samples ten invoices can confirm they are the exact files behind the reported lines, and that none has changed since its hash was recorded, without re-collecting every document. A hash alone does not show when it was recorded; that needs a trusted timestamp or an independent copy of the hash."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a misread diesel invoice",
+    "lines": [
+      "Invoice shows 1,000 L of diesel; the record captured 10,000 L",
+      "Reported: 10,000 x 2.68 = 26,800 kg CO2; correct: 1,000 x 2.68 = 2,680 kg CO2",
+      "The invoice hash matches perfectly in both cases",
+      "Only checking the quantity against the document, or an abnormal quantity flag, finds the 24,120 kg error"
+    ]
+  },
+  "senseible": "Senseible fingerprints every uploaded file with SHA-256, so an identical file is not counted twice, and its ledger entries are hash-chained, with further hardening of the chained ledger under way. That makes later edits detectable; it does not show the activity or factor is right. Its Verified status means rule checks passed, including evidence and recomputation checks, not third-party assurance.",
+  "links": [
+    {
+      "label": "Verify a SHA-256 fingerprint",
+      "to": "/answers/verify-sha-256-fingerprint-carbon-report"
+    },
+    {
+      "label": "Make carbon data tamper-evident",
+      "to": "/answers/how-to-make-carbon-data-tamper-evident"
+    },
+    {
+      "label": "Can AI calculate a footprint accurately?",
+      "to": "/answers/can-ai-calculate-carbon-footprint-accurately"
+    }
+  ],
+  "sources": [
+    {
+      "label": "NIST FIPS 180-4, Secure Hash Standard (csrc.nist.gov)",
+      "url": "https://csrc.nist.gov"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

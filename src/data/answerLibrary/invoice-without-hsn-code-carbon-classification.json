@@ -1,0 +1,81 @@
+{
+  "slug": "invoice-without-hsn-code-carbon-classification",
+  "q": "What happens to carbon classification when an invoice has no HSN code?",
+  "title": "No HSN code on invoice: carbon classification",
+  "short": "The line can still be classified, but only from its description and unit. If the description clearly names a fuel or energy item and the unit matches a published factor, it gets a figure. If not, the honest result is no factor and a flag for review, not a guess from the amount.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "MSMEs uploading supplier invoices, including from small vendors",
+  "sections": [
+    {
+      "h": "Why so many invoices have short or missing HSN codes",
+      "ul": [
+        "Under CGST Notification 78/2020, a business with turnover up to Rs 5 crore must print a 4 digit HSN on B2B tax invoices, and may leave it off B2C invoices. Above Rs 5 crore, 6 digits are required.",
+        "Suppliers below the GST registration threshold are not registered and issue plain bills with no HSN.",
+        "Composition dealers issue a bill of supply instead of a tax invoice, and in practice many small vendors' bills carry no code.",
+        "Petrol and diesel are outside GST, so pump slips and many fuel bills rarely show a code."
+      ]
+    },
+    {
+      "h": "What a 4 digit code can and cannot tell you",
+      "p": [
+        "A 4 digit heading narrows the family. 2716 is electricity and 2701 is coal, so the heading nearly decides the factor. 2710 covers diesel, petrol, kerosene, furnace oil and lubricating oil together, so the description has to settle it. Chapter 84 or 85 goods, such as pumps and motors, cannot be given a physical factor from the code at all.",
+        "So a short code is a starting point, and the description and unit carry the rest of the decision."
+      ]
+    },
+    {
+      "h": "The decision rule for a line with no code",
+      "ol": [
+        "Read the description. It should name one item clearly, such as HSD, LPG cylinder or PNG.",
+        "Check the unit. Litres for diesel, kg for LPG and scm for PNG match the published factors. Numbers, lots or a rupee amount do not.",
+        "If both pass, apply the factor and record that the line was classified by description, not by code.",
+        "If either fails, leave the line without a figure and send it back for a quantity, a unit or a clearer description."
+      ],
+      "p": [
+        "Classifying by amount alone turns price changes into emission changes, so it is kept apart as a spend-based estimate, if used at all."
+      ]
+    },
+    {
+      "h": "How it affects your data quality",
+      "p": [
+        "The GHG Protocol asks you to describe data quality. Lines classified by description are usually fine for Scope 1 and 2 when the unit matches. Mark them in your method note, track how many lines needed it, and ask regular vendors to print at least the 4 digit HSN and a physical unit on every bill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three lines from a small vendor's bill",
+    "lines": [
+      "Line 1: \"HSD\", 500 litres, no HSN. Description names diesel, unit matches 2.68 kg CO2 per litre (IPCC 2006). 500 x 2.68 = 1,340 kg CO2, Scope 1",
+      "Line 2: \"LPG 19 kg cylinder\", 10 numbers, no HSN. Unit is cylinders; 10 x 19 = 190 kg only if the cylinder size is confirmed. 190 x 2.98 = 566.2 kg CO2, flagged as converted",
+      "Line 3: \"Fuel\", 1 lot, Rs 46,000, no HSN. Item and unit both unclear: no figure, sent back for detail"
+    ],
+    "note": "Line 2 relies on a stated cylinder size. If your process does not allow that conversion, leave it without a figure until the vendor gives kg."
+  },
+  "senseible": "Senseible classifies by HSN or tax code first and falls back to a keyword match only when the unit agrees with the factor; otherwise the line is left without a factor rather than guessed. It does not estimate emissions from the rupee amount of an unclassified line.",
+  "links": [
+    {
+      "label": "Mapping HSN codes to emission factors",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Invoice unit in litres or kg",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    },
+    {
+      "label": "Carbon footprint from invoices",
+      "to": "/answers/how-to-calculate-carbon-footprint-from-invoices"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (data quality)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "HSN digit rules are set by GST notification and can be changed; check the current requirement for your turnover band."
+}

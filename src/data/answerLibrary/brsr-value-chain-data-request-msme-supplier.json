@@ -1,0 +1,92 @@
+{
+  "slug": "brsr-value-chain-data-request-msme-supplier",
+  "q": "My listed customer asked for BRSR value chain data. Am I required to give it, and what do they need from an MSME supplier?",
+  "title": "BRSR value chain data from MSME suppliers",
+  "short": "No law requires an MSME supplier to give it. SEBI's rules bind the listed company, and since March 2025 value chain disclosure is voluntary even for the top 250. Your customer will usually want your Scope 1 and Scope 2 emissions, energy, water and waste for the financial year, with evidence.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME suppliers to India's top listed companies",
+  "sections": [
+    {
+      "h": "Who counts as a value chain partner",
+      "p": [
+        "SEBI's July 2023 circular defined the value chain as the listed company's top upstream and downstream partners, together making up 75% of its purchases or sales by value. The March 2025 circular changed the test: a value chain partner is one that individually accounts for 2% or more of the listed company's purchases or sales by value. The company may limit its disclosure to partners that together cover 75%.",
+        "If you are below 2% of the customer's purchases, you are outside the SEBI definition, though a customer may still ask for its own Scope 3 work."
+      ]
+    },
+    {
+      "h": "What is voluntary, and from when",
+      "ul": [
+        "Value chain disclosures: voluntary for the top 250 listed companies by market capitalisation, from FY 2025-26.",
+        "Assurance or assessment of those disclosures: voluntary, from FY 2026-27.",
+        "Nothing in either circular places a reporting duty on the supplier itself."
+      ],
+      "p": [
+        "A contract or supplier code can still make it a commercial condition. Read your purchase order terms before you decline."
+      ]
+    },
+    {
+      "h": "What the customer typically asks for",
+      "ul": [
+        "Scope 1 emissions, from fuels you burn: diesel, coal, furnace oil, LPG, PNG.",
+        "Scope 2 emissions, from grid electricity in kWh.",
+        "Total energy, and the share from renewables.",
+        "Water withdrawal and consumption, and waste generated and recovered.",
+        "Sometimes safety and employee figures that sit in other BRSR Core attributes."
+      ],
+      "p": [
+        "Ask for the customer's template. It sets the period, almost always April to March, and the units."
+      ]
+    },
+    {
+      "h": "How to answer without over-sharing",
+      "ol": [
+        "Send totals for the financial year with the emission factor and its source for each line.",
+        "Offer the underlying bills for inspection, not for keeping. Invoices show prices, which you may not want a buyer to hold.",
+        "State what you left out, such as Scope 3, and why.",
+        "Keep a copy of what you sent and the date, so next year's figures can be compared on the same basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: is this supplier in scope, and what does it send?",
+    "lines": [
+      "Customer's annual purchases: Rs 2,000 crore; your sales to it: Rs 45 crore",
+      "Share: 45 / 2,000 = 2.25%, so above the 2% test",
+      "Grid electricity: 1,20,000 kWh x 0.710 kg CO2 per kWh = 85.2 t CO2 (Scope 2)",
+      "Diesel for DG set and forklifts: 6,000 L x 2.68 kg CO2 per L = 16.08 t CO2 (Scope 1)",
+      "Scope 1 and 2 total: 101.28 t CO2 for the financial year"
+    ]
+  },
+  "senseible": "Senseible builds a supplier's energy use and Scope 1 and Scope 2 figures from its own fuel invoices and electricity bills, with each number traced to its document, and drafts a self-declared BRSR view of that data. Water, waste, safety and the other BRSR Core attributes are outside Senseible.",
+  "links": [
+    {
+      "label": "Does BRSR require Scope 3?",
+      "to": "/answers/does-brsr-require-scope-3"
+    },
+    {
+      "label": "BRSR reporting requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "BRSR Core nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "BRSR report with Senseible",
+      "to": "/answers/brsr-report-senseible"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122 on BRSR Core and value chain, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SEBI revises BRSR value chain rules often; check the latest circular before relying on the 2% test or voluntary status."
+}

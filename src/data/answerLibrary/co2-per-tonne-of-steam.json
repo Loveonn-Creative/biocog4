@@ -1,0 +1,85 @@
+{
+  "slug": "co2-per-tonne-of-steam",
+  "q": "How many kg of CO2 does one tonne of steam produce?",
+  "title": "CO2 per tonne of steam",
+  "short": "For saturated steam at about 10 bar from 60 degree feedwater, one tonne of steam emits roughly 320 kg CO2 from a coal boiler, 230 kg from furnace oil and 160 kg from piped natural gas. These are estimates from IPCC factors and typical efficiencies; your own fuel and steam records give the real figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile processors, food, pharma and paper units buying or making steam",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "kg CO2 per t steam = (enthalpy rise per t of steam / boiler efficiency) x fuel emission factor per unit of energy."
+      ],
+      "ul": [
+        "Enthalpy rise: steam enthalpy minus feedwater enthalpy, from steam tables. Saturated steam at 10 bar gauge is about 2,781 kJ/kg and feedwater at 60 degrees C about 251 kJ/kg, so the rise is about 2,530 kJ/kg, or 2.53 GJ per tonne.",
+        "Efficiency: fuel energy that ends up in the steam. Use the same basis as the fuel figure. If efficiency is on gross calorific value (GCV), as Indian test reports usually state it, use GCV-based fuel data.",
+        "Emission factor: IPCC 2006 defaults per GJ of net calorific value are 94.6 kg CO2 for bituminous coal, 77.4 for residual fuel oil and 56.1 for natural gas."
+      ]
+    },
+    {
+      "h": "Use your own records when you have them",
+      "p": [
+        "The best figure comes from your plant: fuel burnt in the month times its factor, divided by steam produced. A steam flow meter on the header gives the tonnes. Without one, feedwater flow is a reasonable proxy, minus blowdown.",
+        "Indian coal varies widely in calorific value, so a per-kg coal factor can be off for your supply. Coal bought on a GCV basis is best converted with its tested GCV."
+      ]
+    },
+    {
+      "h": "Bought steam is Scope 2, made steam is Scope 1",
+      "p": [
+        "If you burn the fuel in your own boiler, the CO2 is Scope 1. If you buy steam from a neighbour, a CETP or a park utility, it is Scope 2 under the GHG Protocol, and the supplier should give you kg CO2 per tonne with its fuel basis. Where the supplier also makes power from the same boiler, the emissions have to be split between steam and electricity."
+      ]
+    },
+    {
+      "h": "What moves the number most",
+      "ul": [
+        "Fuel: coal emits about 70% more CO2 per GJ than natural gas.",
+        "Efficiency: every 5 points gained cuts CO2 per tonne of steam by roughly 5 to 7%.",
+        "Condensate return: hotter feedwater means a smaller enthalpy rise per tonne.",
+        "Steam pressure: higher pressure and superheat raise enthalpy per tonne, so compare like with like."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of 10 bar steam",
+    "lines": [
+      "Enthalpy rise: 2,781 minus 251 = 2,530 kJ/kg, so 2.53 GJ per tonne",
+      "Coal at 75% efficiency: 2.53 / 0.75 = 3.37 GJ x 94.6 = about 319 kg CO2",
+      "Furnace oil at 85%: 2.53 / 0.85 = 2.98 GJ x 77.4 = about 230 kg CO2",
+      "PNG at 88%: 2.53 / 0.88 = 2.88 GJ x 56.1 = about 161 kg CO2",
+      "From plant records: 180 t coal x 2.42 kg CO2 per kg = 435.6 t CO2 for 1,400 t steam = about 311 kg CO2 per t"
+    ],
+    "note": "Efficiencies are illustrative assumptions on an NCV basis. Replace them with your boiler test results."
+  },
+  "senseible": "Senseible reads coal, furnace oil and PNG invoices and applies the IPCC 2006 defaults (coal 2.42 kg CO2 per kg, furnace oil 2.97 per litre, PNG 2.05 per scm) for Scope 1. It does not read steam meters or work out CO2 per tonne of steam; you divide by your own steam figure.",
+  "links": [
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 4, Chapter 1: Boilers",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

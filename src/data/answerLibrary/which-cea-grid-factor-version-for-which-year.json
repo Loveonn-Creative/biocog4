@@ -1,0 +1,78 @@
+{
+  "slug": "which-cea-grid-factor-version-for-which-year",
+  "q": "Which CEA grid emission factor version should I use for each reporting year?",
+  "title": "Which CEA factor version for which year?",
+  "short": "Use the latest CEA CO2 Baseline Database version published before you close your inventory, and name its version and fiscal year. Each version covers a past fiscal year: version 21.0 covers FY 2024-25 at 0.710 kg CO2 per kWh, so it is the usual choice for FY 2025-26 reports until a newer version appears.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian companies preparing BRSR and buyer reports",
+  "sections": [
+    {
+      "h": "Why the factor year lags your reporting year",
+      "p": [
+        "The CEA builds each version from a full year of plant data, so it publishes after that fiscal year ends. A factor for the year you are reporting usually does not exist when you report. The GHG Protocol Scope 2 Guidance accepts this: use the most recent factor available and disclose which year it represents."
+      ]
+    },
+    {
+      "h": "Two accepted ways to match versions to years",
+      "ol": [
+        "Latest available: apply the newest version at the time you close each year's inventory, and keep it for that year. Simple, and the usual choice for BRSR and buyer questionnaires.",
+        "Matched year: report first with the latest available version, then restate when the version for your actual fiscal year is published. More precise, but it changes figures you have already sent."
+      ],
+      "p": [
+        "Choose one, write it in your method note and use it every year. Do not mix versions inside one year's total."
+      ]
+    },
+    {
+      "h": "How to check what a version covers",
+      "p": [
+        "Open the version on the CEA website and read the cover page and the weighted average table, which state the fiscal year covered. Earlier versions step back one fiscal year each, but confirm on the document rather than assuming, because CEA occasionally revises past years' figures in a new version."
+      ]
+    },
+    {
+      "h": "What to do when a new version comes out mid-year",
+      "ul": [
+        "Keep the version you started the year with for that year's report.",
+        "Apply the new version from the next reporting year.",
+        "If you restate past years for comparability, restate all of them with the same version and say so in the report.",
+        "Other countries publish on their own cycles; a factor for a foreign site follows that country's source, not CEA."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: FY 2025-26 report closed in June 2026",
+    "lines": [
+      "Latest available version at closing: 21.0, covering FY 2024-25",
+      "Electricity used in FY 2025-26: 500,000 kWh",
+      "500,000 x 0.710 = 355,000 kg CO2, or 355 tonnes, location-based",
+      "Method note: CEA CO2 Baseline Database version 21.0 (FY 2024-25), weighted average"
+    ]
+  },
+  "senseible": "Senseible applies 0.710 kg CO2 per kWh from CEA version 21.0 to the kWh on each electricity bill and records the factor and source with every entry, so you can see which version each figure used. It does not switch versions by reporting year on its own.",
+  "links": [
+    {
+      "label": "State-wise grid emission factor for India",
+      "to": "/answers/state-wise-grid-emission-factor-india"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Vietnam grid emission factor",
+      "to": "/climate-intelligence/vietnam-grid-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CEA publishes a new version roughly once a year; check cea.nic.in for a version newer than 21.0 and the fiscal year it covers."
+}

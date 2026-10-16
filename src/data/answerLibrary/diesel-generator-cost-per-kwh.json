@@ -1,0 +1,79 @@
+{
+  "slug": "diesel-generator-cost-per-kwh",
+  "q": "What does diesel generator power cost per kWh in India?",
+  "title": "Diesel generator cost per kWh in India",
+  "short": "Divide the diesel price per litre by the kWh your DG set gives per litre. At an assumed Rs 90 a litre and 3.3 kWh per litre, fuel alone costs about Rs 27 per kWh before maintenance, and more than Rs 35 at light load. Your own fuel log and DG meter give the real figure.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs comparing DG, grid and solar power",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Fuel cost per kWh = diesel price per litre / kWh generated per litre.",
+        "Maintenance cost per kWh = yearly service, AMC, oil, filters and repairs / kWh generated in the year.",
+        "Total running cost per kWh = fuel cost + maintenance cost. Add capital recovery only if you are comparing a new DG purchase with another option."
+      ]
+    },
+    {
+      "h": "Where to get kWh per litre",
+      "p": [
+        "Read the DG energy meter and the diesel added over the same period, adjusting for the tank level at the start and end. A healthy set at good load often gives about 3 to 3.5 kWh per litre; treat that as a planning range, not a standard, and check your set against its own data sheet. At light load it can fall to 2.5 kWh per litre or less, which raises the cost per kWh by a third or more. If the set has no energy meter, the cost per kWh cannot be worked out honestly; fit one."
+      ]
+    },
+    {
+      "h": "How to compare with grid and solar",
+      "ul": [
+        "Grid: divide the total electricity bill, including fixed and demand charges, by the kWh billed. That all-in rate is the fair comparison.",
+        "DG fuel cost is usually several times the grid rate, so the business case for backup is uptime, not cost.",
+        "Solar: compare against the hours you actually run the DG. Solar does not cover night outages without storage.",
+        "Running a DG at very low load to cover a small essential circuit is often the most expensive kWh in the plant. A smaller set or a UPS for that circuit may cost less."
+      ]
+    },
+    {
+      "h": "Cost and carbon move together",
+      "p": [
+        "Every litre burnt adds about 2.68 kg CO2, the IPCC 2006 default for diesel, to Scope 1. A set that wastes fuel at light load raises both the rupee cost and the kg CO2 per kWh, so the same fuel log serves the cost check and the carbon record."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 125 kVA set over one year",
+    "lines": [
+      "Diesel used: 18,000 litres at an assumed Rs 90 per litre = Rs 16,20,000",
+      "DG meter: 59,400 kWh, so 59,400 / 18,000 = 3.3 kWh per litre",
+      "Fuel cost: 90 / 3.3 = Rs 27.3 per kWh",
+      "Maintenance and AMC: Rs 1,50,000 / 59,400 kWh = Rs 2.5 per kWh",
+      "Running cost: 27.3 + 2.5 = about Rs 29.8 per kWh",
+      "Scope 1: 18,000 x 2.68 = 48,240 kg CO2"
+    ],
+    "note": "Rs 90 per litre is an assumed price for illustration; diesel prices differ by state and change often, so use the price on your own invoices."
+  },
+  "senseible": "Senseible reads litres and price from your diesel invoices and fuel slips and gives the Scope 1 figure at 2.68 kg CO2 per litre. It does not read DG energy meters, so the cost per kWh needs your own meter reading.",
+  "links": [
+    {
+      "label": "DG set kg CO2 per kWh versus grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (DG sets chapter, on testing specific fuel consumption)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The example uses an assumed diesel price; retail diesel prices change, so redo the arithmetic with a dated price from your invoices."
+}

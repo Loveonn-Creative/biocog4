@@ -1,0 +1,88 @@
+{
+  "slug": "compressed-air-leak-cost-and-emissions",
+  "q": "How much do compressed air leaks cost in electricity and CO2?",
+  "title": "Compressed air leaks: cost and CO2",
+  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Engineering and auto-component MSMEs",
+  "sections": [
+    {
+      "h": "Run the leak test",
+      "ol": [
+        "Pick a time when no air is being used, such as a lunch break or before a shift, with all machines idle but the air network pressurised.",
+        "Run the compressor. Because only leaks draw air, it will cycle between load and unload.",
+        "Time several load periods (T) and unload periods (t) and average them.",
+        "Leakage share = T / (T + t). This is the method in the BEE energy auditor guide book on compressed air systems."
+      ],
+      "p": [
+        "Leak flow in m3 per minute is the leakage share times the compressor's free air delivery."
+      ]
+    },
+    {
+      "h": "Turn leakage into kWh, rupees and CO2",
+      "ul": [
+        "Leak kWh a year = compressor input kW at load x leakage share x hours the network stays pressurised.",
+        "Cost = leak kWh x your energy charge per kWh, including fuel adjustment and duty.",
+        "CO2 = leak kWh x 0.710 kg CO2 per kWh, the CEA grid factor, if the power comes from the grid."
+      ],
+      "p": [
+        "This slightly overstates the saving, because a compressor still draws some power when unloaded. Use the compressor's unload power if you know it."
+      ]
+    },
+    {
+      "h": "What leakage level is normal",
+      "p": [
+        "The Compressed Air Challenge fact sheet on leaks, written with the US Department of Energy, says leaks can waste 20 to 30% of a compressor's output, and that a well-maintained system should lose less than 10%. Test again after each repair round to see the change."
+      ]
+    },
+    {
+      "h": "Where leaks usually are",
+      "ul": [
+        "Quick couplings, hoses and push fittings at machines.",
+        "Filters, regulators and lubricators, and condensate drains stuck open.",
+        "Old pipe joints and threads, and pneumatic tools left connected overnight."
+      ],
+      "p": [
+        "An ultrasonic leak detector finds leaks while the plant runs; soapy water works for accessible joints. Tag each leak, fix it, and log the repair date."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 75 kW screw compressor (labelled assumptions)",
+    "lines": [
+      "Test: average load time 20 s, unload time 60 s; leakage share = 20 / (20 + 60) = 25%",
+      "Leak kWh: 75 kW x 0.25 x 6,000 hours a year (assumed) = 1,12,500 kWh",
+      "Cost at Rs 8 per kWh (assumed): 1,12,500 x 8 = Rs 9,00,000 a year",
+      "CO2: 1,12,500 x 0.710 = 79,875 kg, about 79.9 tonnes a year",
+      "Cutting leakage to 10% saves 75 x 0.15 x 6,000 = 67,500 kWh, Rs 5,40,000 and about 47.9 tonnes CO2 a year"
+    ],
+    "note": "Hours, tariff and test times are illustrative; use your own measurements."
+  },
+  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from your electricity bills and applies 0.710 kg CO2 per kWh, so a drop in units after a leak repair shows in your Scope 2 figure. It does not run leak tests or read compressor data.",
+  "links": [
+    {
+      "label": "Energy audit for MSMEs",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Build a MACC for a factory",
+      "to": "/answers/how-to-build-a-macc-for-a-factory"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Auditor Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 3, Compressed Air System",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

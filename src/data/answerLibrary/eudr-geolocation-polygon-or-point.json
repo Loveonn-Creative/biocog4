@@ -1,0 +1,76 @@
+{
+  "slug": "eudr-geolocation-polygon-or-point",
+  "q": "When does EUDR need a polygon instead of a single geolocation point?",
+  "title": "EUDR: polygon or single point?",
+  "short": "EUDR needs a polygon for any plot larger than four hectares used to grow coffee, cocoa, rubber, soy, oil palm or wood. A plot of four hectares or less can be given as one latitude and longitude point. Cattle are the exception: you give the location of each establishment where the animals were kept.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters of coffee, rubber, wood and soy",
+  "sections": [
+    {
+      "h": "The rule in the regulation",
+      "p": [
+        "Article 2(28) of Regulation (EU) 2023/1115 defines geolocation as the latitude and longitude of a plot using at least one point with at least six decimal digits. For plots of more than four hectares used for commodities other than cattle, it must be a polygon with enough points to describe the plot's perimeter. Article 9(1)(d) then requires the geolocation of every plot where the commodity in the shipment was produced."
+      ]
+    },
+    {
+      "h": "Quick decision rule",
+      "ul": [
+        "Plot of 4.0 hectares or less (40,000 square metres or less): one point with six decimals is enough.",
+        "Plot of more than 4.0 hectares: polygon of the boundary.",
+        "Cattle: the location of every farm or establishment where the animals were kept, whatever its size.",
+        "A shipment drawn from many plots: geolocation of all of them, mixing points and polygons as each plot's size requires."
+      ]
+    },
+    {
+      "h": "Getting the data into an acceptable form",
+      "ol": [
+        "Record coordinates in decimal degrees on the WGS 84 system that phones and GPS units use by default, with six decimals. Six decimals is about 0.1 metre of precision, so a two-decimal reading copied from a map is not enough.",
+        "Walk or trace the plot boundary for polygons and close the shape, with no lines that cross each other.",
+        "Use the GeoJSON format that the EU Information System accepts, as described in the Commission's EUDR guidance and FAQ.",
+        "Keep one record per plot with the producer's name and the plot's area, so the area itself shows why a point or a polygon was used."
+      ]
+    },
+    {
+      "h": "Edge cases Indian exporters meet",
+      "ul": [
+        "A coffee estate made of several separate parcels: each parcel is its own plot, judged on its own area.",
+        "A rubber smallholding just over four hectares: a point is not compliant; trace the boundary.",
+        "Land records give area in acres: 4 hectares is about 9.88 acres, so anything over that needs a polygon."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a rubber aggregator's lot",
+    "lines": [
+      "Grower A: 1.6 ha, so one point with six decimals",
+      "Grower B: 3.9 ha, so one point",
+      "Grower C: 12 acres x 0.4047 = 4.86 ha, more than 4 ha, so a polygon",
+      "The lot's file holds two points and one polygon, and the statement covers all three plots"
+    ],
+    "note": "1 acre = 0.4047 hectares. Check areas from the land record, not an estimate from the grower."
+  },
+  "senseible": "Senseible does not capture plot coordinates or build GeoJSON files for EUDR. Its supplier due diligence page flags which suppliers may be exposed so you know where geolocation is needed.",
+  "links": [
+    {
+      "label": "EUDR geolocation for smallholders",
+      "to": "/answers/eudr-geolocation-requirements-smallholders"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Article 2(28) and Article 9(1)(d) (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR application dates (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The EUDR now applies from 30 December 2026 for large and medium operators and 30 June 2027 for micro and small ones, and a 2026 simplification review may change details; re-check."
+}

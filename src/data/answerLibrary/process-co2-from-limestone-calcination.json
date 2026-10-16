@@ -1,0 +1,78 @@
+{
+  "slug": "process-co2-from-limestone-calcination",
+  "q": "How do I calculate process CO2 from limestone or dolomite calcination?",
+  "title": "Process CO2 from limestone calcination",
+  "short": "Multiply the tonnes of each carbonate heated by its purity and by its IPCC emission factor: 0.43971 t CO2 per tonne of calcium carbonate, 0.47732 for dolomite, 0.52197 for magnesium carbonate. Then multiply by the share actually calcined. This is Scope 1 process CO2, counted separately from the fuel burnt in the kiln.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Lime kilns, ceramics, glass, steel (flux) and cement plants in India",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Process CO2 (t) = carbonate consumed (t) x carbonate fraction x emission factor (t CO2 per t carbonate) x fraction calcined.",
+        "The factors in Table 2.1 of the IPCC 2006 Guidelines, Volume 3, Chapter 2, are stoichiometric: they come from molecular weights, so they hold anywhere. CaCO3 0.43971, MgCO3 0.52197, CaMg(CO3)2 0.47732, Na2CO3 0.41492, all in t CO2 per t of pure carbonate."
+      ]
+    },
+    {
+      "h": "Where each input comes from",
+      "ul": [
+        "Carbonate consumed: purchase invoices adjusted for opening and closing stock, or weighbridge records of what entered the kiln.",
+        "Carbonate fraction: the supplier's chemical analysis or your own lab assay, as CaCO3 and MgCO3 percent. Do not assume 100 percent; Indian limestone grades vary widely.",
+        "Fraction calcined: 1.0 unless you can show unburnt carbonate in the product or dust. If you lose kiln dust that is only partly calcined, its CO2 is lower; IPCC gives a correction for this.",
+        "Output check: you can also work back from product. Each tonne of CaO formed releases 44.01 / 56.08, about 0.785 t CO2."
+      ]
+    },
+    {
+      "h": "Which uses count and which do not",
+      "ul": [
+        "Count: lime burning, clinker making, glass batch (limestone, dolomite, soda ash), limestone or dolomite flux in a blast furnace or steel furnace, carbonates in ceramic clay that are fired, and limestone used to scrub sulphur from flue gas.",
+        "Do not count: limestone used as a filler or aggregate that is never heated, or CaO bought in as lime, whose CO2 was released at the lime maker.",
+        "Do not double count: if a stack monitor already measures total CO2, do not add the calculated process CO2 on top."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "p": [
+        "Report process CO2 as its own Scope 1 line, next to combustion CO2 from coal, petcoke or gas in the same kiln. CBAM monitoring for cement treats them as separate source streams, and a fuel switch cuts only the combustion part."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a lime kiln, one month",
+    "lines": [
+      "Limestone fed: 1,000 t, assay 92% CaCO3 and 3% MgCO3",
+      "CaCO3: 1,000 x 0.92 x 0.43971 = 404.53 t CO2",
+      "MgCO3: 1,000 x 0.03 x 0.52197 = 15.66 t CO2",
+      "Total at full calcination: 420.19 t CO2",
+      "With 98% calcined: 420.19 x 0.98 = 411.79 t CO2, Scope 1 process emissions"
+    ],
+    "note": "The coal or petcoke burnt in the kiln is added separately from fuel invoices. The assay and calcination fraction are illustrative; use your own lab results."
+  },
+  "senseible": "Senseible reads fuel invoices, so the coal, gas or oil burnt in the kiln is calculated from them. It does not calculate the carbonate share: process emissions are calculated only when you supply the measured data, such as tonnes fed and assay.",
+  "links": [
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Cement carbon accounting",
+      "to": "/industries/cement"
+    },
+    {
+      "label": "Ceramics carbon accounting",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 2 Mineral Industry Emissions, Table 2.1",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

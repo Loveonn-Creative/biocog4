@@ -1,0 +1,82 @@
+{
+  "slug": "map-indian-hsn-code-to-eu-cn-code",
+  "q": "How do I match my Indian HSN code to the EU CN code for CBAM?",
+  "title": "Match Indian HSN to the EU CN code",
+  "short": "Match on the first six digits. They come from the World Customs Organization's Harmonized System and are the same in India and the EU. Then pick the EU 8 digit CN code under that subheading whose description fits your goods, and confirm it with your EU importer, who declares it.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters of steel, aluminium, fertiliser and cement",
+  "sections": [
+    {
+      "h": "The three codes you will meet",
+      "ul": [
+        "GST HSN on your tax invoice: usually 4 or 6 digits depending on your turnover. Often too short for this job.",
+        "ITC-HS on your shipping bill: 8 digits, India's national split of the HS.",
+        "CN in the EU: 8 digits, set in Annex I to Council Regulation (EEC) No 2658/87. The EU's 10 digit TARIC code adds more detail, but CBAM Annex I works with CN codes."
+      ],
+      "p": [
+        "Only the first six digits are shared. Digits 7 and 8 are national, so an Indian code and an EU code with the same eight digits can still describe different goods."
+      ]
+    },
+    {
+      "h": "The match, step by step",
+      "ol": [
+        "Start from the ITC-HS code your customs broker put on the shipping bill. The GST invoice code is often too short.",
+        "Keep the first six digits. This is the HS subheading.",
+        "Open the current year's CN and list every 8 digit code under that subheading. Often there is only one, ending in 00.",
+        "Where there are several, choose by the CN description, which may split by thickness, alloy, nitrogen content or end use.",
+        "Write down your proposed CN code and send it to the importer with the product specification. Use the code they declare."
+      ]
+    },
+    {
+      "h": "Where the last two digits matter for CBAM",
+      "p": [
+        "If Annex I of the CBAM Regulation lists a whole 4 digit heading, such as 7604 for aluminium bars, rods and profiles, every CN code under it is covered and the last digits do not change the answer.",
+        "Where Annex I lists a single 8 digit code, they decide it. Under cement, CN 2507 00 80 (other kaolinic clays) is covered while kaolin itself, in a different code under the same heading, is not. A wrong last pair can put goods in or out of CBAM."
+      ]
+    },
+    {
+      "h": "Keep the match current",
+      "p": [
+        "The CN is republished every year and applies from 1 January, and the HS itself is revised every few years. Re-check your codes each January, and keep a short table of ITC-HS code, CN code, description and the date you confirmed it with each importer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an aluminium hollow profile",
+    "lines": [
+      "Shipping bill: ITC-HS 7604 21 xx (aluminium alloy hollow profiles)",
+      "First six digits: 7604 21",
+      "EU CN under 7604 21: 7604 21 00, hollow profiles",
+      "CBAM Annex I lists heading 7604 under aluminium, so the goods are covered",
+      "Send 7604 21 00 and the alloy specification to the importer to confirm"
+    ]
+  },
+  "senseible": "Senseible uses the HSN or tax code on each invoice line as the first step in classifying it for emissions. It does not convert Indian codes to CN codes or decide CBAM coverage; the CBAM cost calculator works from the sector and tonnes you enter.",
+  "links": [
+    {
+      "label": "Is my CN code covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "CBAM guide for Indian exporters",
+      "to": "/climate-intelligence/cbam-compliance-indian-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Council Regulation (EEC) No 2658/87, Annex I Combined Nomenclature (current year)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The CN is revised every January and CBAM Annex I may be extended to downstream goods; re-check codes each year."
+}

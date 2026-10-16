@@ -1,0 +1,65 @@
+{
+  "slug": "eudr-geolocation-requirements-smallholders",
+  "q": "What geolocation data does EUDR need from Indian smallholder farms?",
+  "title": "EUDR geolocation for smallholder farms",
+  "short": "EUDR needs the location of every plot where the coffee, rubber or other commodity was grown: one latitude and longitude point for plots under 4 hectares, and a boundary polygon for larger plots. Each lot sold must trace back to its plots, with proof of no deforestation after 31 December 2020.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Coffee and rubber exporters and their aggregators in Karnataka, Kerala and the North East",
+  "sections": [
+    {
+      "h": "What the regulation asks for",
+      "ul": [
+        "Geolocation of all plots of land where the commodity in a shipment was produced (Article 9(1)(d)).",
+        "Coordinates in latitude and longitude with at least six decimal places (Article 2(28)).",
+        "Plots of 4 hectares or less: a single point is enough. Plots over 4 hectares, for commodities other than cattle: a polygon with enough points to describe the boundary.",
+        "The date or time range of production, and the quantity."
+      ]
+    },
+    {
+      "h": "How to collect it from smallholders",
+      "ol": [
+        "Build a farmer register: name of the grower, village, plot area and crop, with consent to share location data with buyers.",
+        "Take a GPS point at the plot with a phone app, standing inside the plot, not at the house or collection centre.",
+        "For plots over 4 hectares, walk the boundary or trace it on satellite imagery and save the polygon.",
+        "Store each plot with an ID and link every purchase receipt from that grower to the plot ID.",
+        "Export the plots in a format your buyer's system accepts, usually GeoJSON in WGS84 coordinates."
+      ]
+    },
+    {
+      "h": "Keeping lots traceable to plots",
+      "p": [
+        "Coffee or rubber from plots with geolocation cannot be mixed with produce of unknown origin in the same lot. If an aggregator bulks produce, the lot's declaration must list every plot that could have contributed. Keep separate stock for traceable and untraceable produce, or the whole lot fails."
+      ]
+    },
+    {
+      "h": "Proving no deforestation since 2020",
+      "p": [
+        "Geolocation lets the buyer check each plot against satellite forest maps for the cut-off date of 31 December 2020. Plots that were plantations or farmland before that date pass; plots cleared from forest after it do not. Shade coffee and rubber grown within forest areas need particular care, as forest maps may flag them."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not collect farm geolocation or check plots for deforestation. Its supplier due diligence page only screens whether EUDR applies to your commodities and markets.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my Indian exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR polygon or point",
+      "to": "/answers/eudr-geolocation-polygon-or-point"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Articles 2(28) and 9(1)(d), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "EUDR simplification amendments may change requirements for smallholders and low-risk countries; recheck the current text and Commission guidance before collecting data."
+}

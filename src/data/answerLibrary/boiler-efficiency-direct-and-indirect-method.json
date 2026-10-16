@@ -1,0 +1,97 @@
+{
+  "slug": "boiler-efficiency-direct-and-indirect-method",
+  "q": "How do I calculate boiler efficiency by the direct and indirect methods?",
+  "title": "Boiler efficiency: direct and indirect",
+  "short": "Direct method: efficiency = steam output x (steam enthalpy minus feedwater enthalpy) / (fuel burnt x fuel GCV) x 100. Indirect method: efficiency = 100 minus the sum of measured heat losses, such as dry flue gas, moisture, unburnt carbon and radiation. The indirect method shows where the losses are.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers and energy auditors in India",
+  "sections": [
+    {
+      "h": "Direct method, step by step",
+      "ol": [
+        "Run the boiler at steady load for a fixed period, such as one shift.",
+        "Measure steam generated (kg), steam pressure and temperature, and feedwater temperature.",
+        "Weigh the fuel burnt and get its GCV from a lab test on samples from the same lot.",
+        "Read enthalpies from steam tables, in kcal/kg or kJ/kg.",
+        "Efficiency = Q x (hg minus hf) / (q x GCV) x 100, with Q steam and q fuel in kg per hour."
+      ],
+      "p": [
+        "It is quick and needs few instruments. It gives no clue why efficiency is low, and a 2% error in fuel weight is a 2% error in the result."
+      ]
+    },
+    {
+      "h": "Indirect method, the losses to measure",
+      "p": [
+        "The BEE Energy Auditor Guide Book 4 lists these losses as a share of fuel GCV:"
+      ],
+      "ul": [
+        "L1 dry flue gas loss, from flue gas O2 or CO2, exit gas temperature and ambient temperature.",
+        "L2 loss from hydrogen in fuel, which forms water vapour.",
+        "L3 loss from moisture in fuel.",
+        "L4 loss from moisture in combustion air.",
+        "L5 loss from partial combustion, from CO in the flue gas.",
+        "L6 surface radiation and convection loss.",
+        "L7 and L8 unburnt carbon in fly ash and bottom ash, for solid fuels."
+      ]
+    },
+    {
+      "h": "Readings you need for the indirect method",
+      "ul": [
+        "Fuel ultimate analysis: carbon, hydrogen, sulphur, nitrogen, oxygen, moisture and ash, with GCV.",
+        "Flue gas O2 and CO at the boiler exit, and flue gas temperature.",
+        "Ambient temperature and humidity.",
+        "Ash samples tested for unburnt carbon.",
+        "Excess air, worked out as O2 / (21 minus O2) x 100."
+      ]
+    },
+    {
+      "h": "Which method to use",
+      "p": [
+        "Use the direct method for a routine check on fuel per tonne of steam. Use the indirect method for an energy audit, because each loss points to a fix: high L1 means excess air or a fouled economiser, high L7 means poor combustion or grate settings. The two results should agree within a few points; a large gap usually means a metering problem. IS 8753 and ASME PTC 4 give the full test procedures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a coal-fired boiler over one shift",
+    "lines": [
+      "Direct: 40,000 kg steam, hg 665 kcal/kg, feedwater 85 kcal/kg; 8,000 kg coal at GCV 4,000 kcal/kg",
+      "40,000 x (665 minus 85) / (8,000 x 4,000) = 23,200,000 / 32,000,000 = 72.5%",
+      "Indirect losses (illustrative): L1 12.0, L2 4.5, L3 3.0, L4 0.3, L5 0.7, L6 1.5, L7 3.0, L8 2.5 = 27.5%",
+      "Indirect efficiency: 100 minus 27.5 = 72.5%",
+      "If efficiency rises to 78% at the same steam: coal = 8,000 x 72.5 / 78 = 7,436 kg",
+      "Saving: 564 kg coal x 2.42 kg CO2 per kg = 1,365 kg, about 1.4 t CO2 per shift"
+    ],
+    "note": "Loss figures are illustrative. The 2.42 kg CO2 per kg coal factor is the IPCC 2006 default; Indian coal with a lower GCV emits less per kg."
+  },
+  "senseible": "Senseible works out Scope 1 from your actual fuel invoices, so a more efficient boiler shows up as fewer tonnes of coal or litres of oil billed. It does not calculate boiler efficiency or read flue gas analyser data.",
+  "links": [
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Auditor Guide Book 4 (Energy Performance Assessment), Chapter 1: Boilers",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

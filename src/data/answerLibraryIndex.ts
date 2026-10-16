@@ -59,6 +59,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "boiler-efficiency-direct-and-indirect-method",
+  "q": "How do I calculate boiler efficiency by the direct and indirect methods?",
+  "title": "Boiler efficiency: direct and indirect",
+  "short": "Direct method: efficiency = steam output x (steam enthalpy minus feedwater enthalpy) / (fuel burnt x fuel GCV) x 100. Indirect method: efficiency = 100 minus the sum of measured heat losses, such as dry flue gas, moisture, unburnt carbon and radiation. The indirect method shows where the losses are.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "brsr-core-assurance-or-assessment-which",
   "q": "Should a listed company choose reasonable assurance or the new assessment for BRSR Core, and who can provide each?",
   "title": "BRSR Core: assurance or assessment?",
@@ -81,6 +89,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide total Scope 1 plus Scope 2 emissions in tonnes of CO2e by revenue from operations converted to international dollars at the PPP conversion rate for India. Turnover of Rs 500 crore and 10,000 tonnes at about 20.5 rupees per PPP dollar gives roughly 41 tonnes per million PPP dollars.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "brsr-value-chain-data-request-msme-supplier",
+  "q": "My listed customer asked for BRSR value chain data. Am I required to give it, and what do they need from an MSME supplier?",
+  "title": "BRSR value chain data from MSME suppliers",
+  "short": "No law requires an MSME supplier to give it. SEBI's rules bind the listed company, and since March 2025 value chain disclosure is voluntary even for the top 250. Your customer will usually want your Scope 1 and Scope 2 emissions, energy, water and waste for the financial year, with evidence.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "brsr-vs-gri-vs-issb-which-framework",
@@ -113,6 +129,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Get onboarded to the buyer's supply chain finance programme, then meet the sustainability criteria it prices on. These are usually set by the buyer and its bank: sharing emissions data, an external sustainability rating, a reduction target or certifications. Ask the buyer for the written criteria and keep the evidence current every year.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "california-sb-253-indian-suppliers-data",
+  "q": "Will California SB 253 make US customers ask Indian suppliers for emissions data?",
+  "title": "California SB 253 and Indian suppliers",
+  "short": "Yes, many will. SB 253 makes US companies with over USD 1 billion in revenue that do business in California report Scope 3 from 2027, and purchased goods are usually their largest category. The law places no duty on Indian suppliers, but their customers will ask for Scope 1 and 2 data.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "can-a-small-business-generate-carbon-credits",
@@ -283,6 +307,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ccpa-greenwashing-guidelines-india",
+  "q": "What do India's CCPA greenwashing guidelines require for environmental claims?",
+  "title": "India's CCPA greenwashing guidelines",
+  "short": "India's CCPA greenwashing guidelines, notified in October 2024 under the Consumer Protection Act 2019, require every environmental claim to be specific, backed by verifiable evidence and disclosed where consumers can check it. Generic words like green, eco-friendly or sustainable need qualifiers, and future targets need a clear, actionable plan.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "ccts-monitoring-verification-requirements",
   "q": "What monitoring, reporting and verification does a CCTS obligated entity need, and who can verify?",
   "title": "CCTS monitoring and verification",
@@ -299,6 +331,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "cdp-supply-chain-request-what-to-do",
+  "q": "A customer sent me a CDP supply chain request. Do I have to respond, and what does it cost?",
+  "title": "CDP supply chain request: respond or not?",
+  "short": "No law makes you respond to a CDP supply chain request, but your customer will see whether you did, and many buyers use it in supplier reviews. CDP charges responders an annual administration fee that depends on company size and region; check the current fee on cdp.net before you register.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "cea-vs-iea-grid-emission-factor-india",
   "q": "Should I use the CEA or the IEA grid emission factor for India?",
   "title": "CEA or IEA grid factor for India?",
@@ -313,6 +353,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "For your carbon footprint, use the CEA weighted average emission factor. It describes the average power you actually drew from the grid. The operating, build and combined margin figures describe the power a project displaces, so they are for estimating project reductions and carbon credits, not for Scope 2.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cgtmse-collateral-free-loan-limit",
+  "q": "How much can an MSME borrow without collateral in India?",
+  "title": "Collateral-free MSME loan limit in India",
+  "short": "A micro or small enterprise can borrow up to Rs 10 lakh without collateral under RBI rules, and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under the CGTMSE scheme. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "chain-of-custody-mass-balance-vs-segregation",
@@ -339,6 +387,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "co2-per-tonne-of-clinker-calculation",
+  "q": "How do I calculate CO2 per tonne of clinker?",
+  "title": "How to calculate CO2 per tonne of clinker",
+  "short": "Add two parts. Calcination CO2 comes from the lime in the clinker: CaO fraction x 44/56 plus MgO fraction x 44/40.3, in tonnes CO2 per tonne clinker. Kiln fuel CO2 is fuel burnt per tonne clinker times its emission factor. Then correct for kiln dust that leaves the system.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "co2-per-tonne-of-steam",
+  "q": "How many kg of CO2 does one tonne of steam produce?",
+  "title": "CO2 per tonne of steam",
+  "short": "For saturated steam at about 10 bar from 60 degree feedwater, one tonne of steam emits roughly 320 kg CO2 from a coal boiler, 230 kg from furnace oil and 160 kg from piped natural gas. These are estimates from IPCC factors and typical efficiencies; your own fuel and steam records give the real figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "coal-to-biomass-boiler-carbon-credits",
   "q": "Does switching a boiler from coal to biomass qualify for carbon credits?",
   "title": "Coal to biomass boiler: carbon credits?",
@@ -353,6 +417,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Compare fuels per unit of useful heat, not per kg. Per gigajoule of steam, a gas-fired boiler emits roughly half the CO2 of a coal-fired one. Biomass cuts reported Scope 1 by over 95%, because its CO2 is biogenic and reported outside the scopes, but only if the fuel supply is reliable and sustainable.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "colocation-data-centre-emissions-with-pue",
+  "q": "How do I calculate emissions for servers in a colocation data centre using PUE?",
+  "title": "Colocation server emissions with PUE",
+  "short": "Multiply your servers' average IT power in kW by the hours in the year, then by the facility's annual PUE, then by the grid factor. In India: kWh x PUE x 0.710 kg CO2 per kWh. Ask the provider for your metered IT kWh and their measured annual PUE, not the design figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "compressed-air-leak-cost-and-emissions",
+  "q": "How much do compressed air leaks cost in electricity and CO2?",
+  "title": "Compressed air leaks: cost and CO2",
+  "short": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "cost-per-tonne-of-co2-abated",
@@ -371,12 +451,52 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "cupola-furnace-coke-emissions-per-tonne",
+  "q": "How do I calculate CO2 from coke in a foundry cupola per tonne of castings?",
+  "title": "Cupola coke CO2 per tonne of castings",
+  "short": "Multiply the coke burnt in the period, in kg, by about 3.02 kg CO2 per kg (the IPCC 2006 default for coke oven coke), add limestone flux and electricity, then divide by tonnes of good castings, not tonnes of metal melted. State the casting yield beside the result.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "cupola-vs-induction-furnace-emissions",
+  "q": "Does switching from a coke cupola to an induction furnace cut a foundry's carbon footprint in India?",
+  "title": "Cupola to induction: does CO2 fall?",
+  "short": "Not always. On Indian grid power at 0.710 kg CO2 per kWh, an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "dg-set-emissions-per-kwh-vs-grid",
+  "q": "How many kg of CO2 does a diesel generator emit per kWh, and is DG power cleaner or dirtier than grid power in India?",
+  "title": "DG set kg CO2 per kWh versus the grid",
+  "short": "A DG set emits about 0.67 to 0.80 kg CO2 per kWh near full load and over 1.0 kg at light load, from litres per kWh x 2.68. The India grid is 0.710 kg CO2 per kWh, so a DG set is roughly level with the grid at best and clearly dirtier at part load.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "diesel-generator-cost-per-kwh",
+  "q": "What does diesel generator power cost per kWh in India?",
+  "title": "Diesel generator cost per kWh in India",
+  "short": "Divide the diesel price per litre by the kWh your DG set gives per litre. At an assumed Rs 90 a litre and 3.3 kWh per litre, fuel alone costs about Rs 27 per kWh before maintenance, and more than Rs 35 at light load. Your own fuel log and DG meter give the real figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "diesel-generator-scope-1-or-scope-2",
   "q": "Is diesel generator (DG set) power Scope 1 or Scope 2, and how do I calculate it?",
   "title": "Is DG set power Scope 1 or Scope 2?",
   "short": "Power from a DG set you own or operate is Scope 1, because you burn the diesel yourself. Calculate it from litres, not kWh: litres x 2.68 kg CO2 per litre. It is Scope 2 only when you buy DG power from someone else, such as a landlord who runs the set and bills you per unit.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "diesel-to-electric-van-emissions-saving-india",
+  "q": "How much CO2 does switching a diesel delivery van to electric save in India?",
+  "title": "Diesel to electric van: CO2 saved in India",
+  "short": "On India's grid average, an electric delivery van usually emits less CO2 per km than a diesel van: about 37% less in a typical worked case, and more when charged from rooftop solar. The saving depends on the diesel van's mileage and the EV's kWh per km, so use your own vehicles' figures.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "do-buyers-pay-more-for-low-carbon-suppliers",
@@ -393,6 +513,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and the age of the generating plant. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "does-a-hash-prove-emissions-are-correct",
+  "q": "Does a SHA-256 hash prove that reported emissions are correct?",
+  "title": "Does a hash prove emissions are correct?",
+  "short": "No. A SHA-256 hash proves that a file or record has not changed since it was hashed. It says nothing about whether the invoice was genuine, the quantity was read correctly, the right emission factor was used, or every source was included. Correctness needs recalculation and evidence checks.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "does-an-lca-need-a-critical-review",
@@ -419,6 +547,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "does-csddd-still-apply-after-omnibus",
+  "q": "Does CSDDD still apply to Indian suppliers after the 2026 Omnibus changes?",
+  "title": "Does CSDDD still apply after the Omnibus?",
+  "short": "Not directly. After Omnibus I (Directive (EU) 2026/470), CSDDD binds only the largest companies, those with more than 5,000 employees and EUR 1.5 billion turnover, from July 2029. An Indian supplier is reached through those buyers' due diligence: questionnaires, contract clauses and audits, not an obligation of its own.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "does-csrd-apply-to-indian-companies",
   "q": "Does the CSRD apply to an Indian company that has an EU subsidiary or sells into the EU?",
   "title": "Does CSRD apply to an Indian group?",
@@ -435,6 +571,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "does-e20-petrol-lower-scope-1",
+  "q": "Does E20 petrol lower my fleet's Scope 1 emissions?",
+  "title": "Does E20 petrol lower Scope 1?",
+  "short": "Yes, a little. In E20, a fifth of each litre is ethanol, whose CO2 is biogenic and reported outside Scope 1. Fossil CO2 per litre falls by about 20%, but vehicles burn a few per cent more litres per km, so the net Scope 1 cut is closer to 15%, as an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "does-eudr-apply-to-my-indian-exports",
+  "q": "Does the EU Deforestation Regulation apply to my exports from India (coffee, rubber, leather, wood)?",
+  "title": "Does EUDR apply to my Indian exports?",
+  "short": "It applies if your product's HS code is listed in Annex I of Regulation (EU) 2023/1115: products of cattle, cocoa, coffee, oil palm, rubber, soya or wood, such as coffee, natural rubber, new tyres, soya meal, plywood, wooden furniture and paper. Leather was taken out in 2026. Your EU buyer files the declaration, but needs plot origin data from you.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "does-ifrs-s2-apply-in-india",
   "q": "Does IFRS S2 apply to Indian companies, and what will customers who report under it ask suppliers for?",
   "title": "Does IFRS S2 apply in India?",
@@ -449,6 +601,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Almost certainly not, as the rules read today. CBAM deducts only a carbon price effectively paid under a scheme priced on the greenhouse gases released in making the goods. GST on coal is a general tax on the coal's value, mostly recovered as input tax credit, so it does not fit.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "does-iso-14001-require-climate-change",
+  "q": "Does ISO 14001 now require companies to consider climate change?",
+  "title": "Does ISO 14001 now require climate change?",
+  "short": "Yes. A February 2024 amendment, now built into ISO 14001:2026, requires you to decide whether climate change is a relevant issue for your organisation, and notes that interested parties can have climate requirements. It does not require a carbon footprint or a target, but auditors check that the question was considered.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "does-scrap-count-as-zero-emissions-cbam",
@@ -499,6 +659,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "eu-ets-shipping-surcharge-indian-exporters",
+  "q": "Why are shipping lines adding an EU ETS surcharge to my export freight, and is it correct?",
+  "title": "EU ETS shipping surcharge on exports",
+  "short": "Since 2024, shipping lines must buy EU carbon allowances for ships calling at EU ports, covering half the emissions of a voyage into the EU from a port outside it. They pass that cost on as a surcharge. It is legitimate, but each carrier sets the amount, so check its basis, phase-in rate and allowance price.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "eu-ets-shipping-surcharge-on-freight-invoice",
+  "q": "How do I account for an EU ETS surcharge on my sea freight invoice?",
+  "title": "EU ETS surcharge on a freight invoice",
+  "short": "Book the EU ETS surcharge as part of freight cost, borne by whoever pays the freight under your Incoterm. It is not an emissions figure and not a carbon price on your goods, so do not convert it into tonnes and do not claim it against CBAM. Calculate shipping emissions separately.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "eu-ets-vs-cbam-difference",
   "q": "What is the difference between the EU ETS and CBAM, and how are they linked?",
   "title": "EU ETS vs CBAM: the difference",
@@ -513,6 +689,38 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Four, mostly through your EU customer rather than directly: the CSRD, through value chain data requests; the Batteries Regulation, which requires a carbon footprint for certain batteries; the Ecodesign for Sustainable Products Regulation, through product rules and digital passports; and the CSDDD, for the largest EU buyers. Omnibus I has narrowed the CSRD and CSDDD.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "eudr-country-risk-category-india",
+  "q": "Is India a low, standard or high risk country under EUDR, and what changes for my buyer?",
+  "title": "India's EUDR risk category and your buyer",
+  "short": "India is classified as low risk under the EU's 2025 country benchmarking (Implementing Regulation (EU) 2025/1093). Your EU buyer can use simplified due diligence and skip the formal risk assessment, but still needs plot geolocation, deforestation-free and legality evidence, and a due diligence statement for every placement.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "eudr-geolocation-polygon-or-point",
+  "q": "When does EUDR need a polygon instead of a single geolocation point?",
+  "title": "EUDR: polygon or single point?",
+  "short": "EUDR needs a polygon for any plot larger than four hectares used to grow coffee, cocoa, rubber, soy, oil palm or wood. A plot of four hectares or less can be given as one latitude and longitude point. Cattle are the exception: you give the location of each establishment where the animals were kept.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "eudr-geolocation-requirements-smallholders",
+  "q": "What geolocation data does EUDR need from Indian smallholder farms?",
+  "title": "EUDR geolocation for smallholder farms",
+  "short": "EUDR needs the location of every plot where the coffee, rubber or other commodity was grown: one latitude and longitude point for plots under 4 hectares, and a boundary polygon for larger plots. Each lot sold must trace back to its plots, with proof of no deforestation after 31 December 2020.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ev-fleet-charging-emissions-which-scope",
+  "q": "Is electricity used to charge company EVs Scope 1, Scope 2 or Scope 3?",
+  "title": "EV charging electricity: which scope?",
+  "short": "Electricity used to charge EVs your company owns or controls is Scope 2, never Scope 1, because the emissions happen at the power station. Charging of employees' own EVs for business trips is Scope 3 Category 6, and for commuting Category 7. Public charger electricity for company EVs is where practice differs.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "excel-or-carbon-accounting-software",
@@ -603,6 +811,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "green-credit-vs-carbon-credit-india",
+  "q": "What is a Green Credit under India's Green Credit Programme, and how is it different from a carbon credit?",
+  "title": "Green Credit vs carbon credit in India",
+  "short": "A Green Credit is a unit the Environment Ministry's Green Credit Programme awards for an approved environmental action, mainly tree plantation on degraded land. It does not measure a tonne of CO2. A carbon credit represents one tonne of CO2e reduced or removed, and only carbon credits can be used toward carbon targets or offset claims.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "green-loan-principles-explained",
   "q": "What are the Green Loan Principles, and how does a lender check each one?",
   "title": "Green Loan Principles explained",
@@ -641,6 +857,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Most small companies should start with \"with reference to\". It lets you report selected GRI disclosures, provided you publish a GRI content index, a statement of use and notify GRI. \"In accordance with\" needs all nine requirements in GRI 1, including every material topic and the full general disclosures, so claim it only when you can meet them all.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "grid-electricity-hydrogen-carbon-intensity",
+  "q": "What is the carbon intensity of hydrogen made with Indian grid electricity?",
+  "title": "Carbon intensity of grid-powered hydrogen",
+  "short": "About 37 kg CO2 per kg of hydrogen, if the electrolyser uses about 52 kWh per kg and all power comes from the grid at 0.710 kg CO2 per kWh. That is more than 18 times India's 2 kg CO2e per kg green hydrogen threshold, so grid power can only be a small share.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "group-captive-solar-26-percent-rule",
+  "q": "What are the group captive rules for buying solar power in India?",
+  "title": "Group captive solar: the 26% and 51% test",
+  "short": "Under Rule 3 of the Electricity Rules, 2005, captive users together must own at least 26% of the solar plant's equity with voting rights and consume at least 51% of its yearly generation. Since 1 April 2026 the group is tested as a whole. Pass and you avoid the cross subsidy surcharge.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "group-captive-solar-scope-2",
+  "q": "How do I report Scope 2 when my factory buys solar power through a group captive or open access arrangement?",
+  "title": "Reporting group captive solar in Scope 2",
+  "short": "Report both ways. Location-based Scope 2 applies the grid factor to all the electricity you consume, including the wheeled solar. Market-based Scope 2 can treat the solar units adjusted on your bill as zero, if your contract gives you their renewable attributes and nobody sold RECs for them.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "hazardous-waste-emissions-from-manifest-india",
@@ -707,6 +947,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "how-many-years-of-data-for-carbon-project-baseline",
+  "q": "How many years of historical data does a carbon project baseline need?",
+  "title": "Years of data for a project baseline",
+  "short": "For an existing factory, many energy efficiency and fuel switch methodologies ask for about three years of historical data before the project starts, taken from the same plant and boundary. The exact period is set by the methodology you register under, so read its baseline section before collecting records.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "how-much-co2-does-a-tonne-of-biochar-remove",
+  "q": "How much CO2 does one tonne of biochar remove?",
+  "title": "CO2 removed by one tonne of biochar",
+  "short": "One dry tonne of biochar with 75% organic carbon holds 2.75 tonnes of CO2. After the IPCC permanence factor for high-temperature biochar (0.89), about 2.4 tonnes count as stored for 100 years. Subtract production and transport emissions to get the net removal.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "how-non-eu-producer-registers-cbam-registry",
   "q": "How does a non-EU steel or aluminium producer register as an operator in the CBAM Registry, and is it worth doing?",
   "title": "Registering as a CBAM operator",
@@ -737,6 +993,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "First measure what you can: sub-meters on lines or machines give each product its own kWh. Split only the shared remainder, using a physical driver such as machine hours or mass of output. Then multiply each product's kWh by the grid factor and divide by units made. Use money only as a last resort.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "how-to-build-a-macc-for-a-factory",
+  "q": "How do I build a marginal abatement cost curve for my factory?",
+  "title": "Build a MACC for your factory",
+  "short": "List each emission cutting measure, work out its yearly tonnes cut and its annualised net cost, divide cost by tonnes, and sort from cheapest to dearest. Plot each measure as a bar: width is tonnes cut, height is cost per tonne. Bars below zero save money.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "how-to-buy-recs-in-india",
@@ -883,6 +1147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "how-to-read-an-ht-industrial-electricity-bill",
+  "q": "How do I read an HT industrial electricity bill in India?",
+  "title": "How to read an HT industrial power bill",
+  "short": "An HT industrial bill has two main charges: a demand charge on your billing demand in kVA, and an energy charge on units in kWh or kVAh. On top come time of day surcharges or rebates, a power factor adjustment, the fuel and power purchase cost adjustment, and state electricity duty.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "how-to-read-gwp-on-an-epd",
   "q": "How do I read the GWP figures on an EPD: GWP-total, GWP-fossil and GWP-biogenic?",
   "title": "Reading GWP figures on an EPD",
@@ -939,12 +1211,44 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "india-article-6-2-approved-activities",
+  "q": "Which activities has India approved for Article 6.2 carbon trading?",
+  "title": "India's Article 6.2 activity list",
+  "short": "The Article 6.2 list MoEFCC issued in February 2023 named 13 activities: renewable power with storage, solar thermal, offshore wind, green hydrogen, compressed biogas, fuel cell mobility, high-end energy efficiency, sustainable aviation fuel, process upgrades in hard-to-abate sectors, ocean energy, HVDC lines for renewables, carbon capture and green ammonia.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "india-ccts-vs-eu-ets-difference",
   "q": "How is India's Carbon Credit Trading Scheme different from the EU ETS?",
   "title": "India CCTS vs EU ETS: the key differences",
   "short": "The EU ETS caps total emissions and makes covered plants surrender one allowance per tonne they emit. India's CCTS sets each obligated plant a target for emissions per tonne of product, issues certificates to plants that beat it and makes plants that miss it buy certificates. A growing Indian plant can raise total emissions and still comply.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "india-green-hydrogen-standard-2kg-threshold",
+  "q": "What does India's Green Hydrogen Standard require (the 2 kg CO2e per kg limit)?",
+  "title": "India's green hydrogen 2 kg CO2e limit",
+  "short": "India's Green Hydrogen Standard, notified by MNRE in August 2023, calls hydrogen green only if it is made from renewable energy and its well-to-gate emissions are no more than 2 kg CO2e per kg of hydrogen, averaged over the last 12 months. The Bureau of Energy Efficiency accredits the agencies that check it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "india-green-hydrogen-vs-eu-rfnbo-threshold",
+  "q": "Will hydrogen certified green in India qualify as RFNBO in the EU?",
+  "title": "Indian green hydrogen as EU RFNBO?",
+  "short": "Not automatically. India's 2 kg CO2e per kg limit is stricter in number than the EU's RFNBO limit of about 3.38 kg CO2e per kg, but it covers only production up to the plant gate. The EU counts transport and delivery too, and adds rules on new renewable capacity and timing, checked under an EU-recognised scheme.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "india-host-country-authorization-letter",
+  "q": "How does a project get India's host country authorization for Article 6?",
+  "title": "India's Article 6 host country authorisation",
+  "short": "You apply to India's National Designated Authority for Article 6, a committee notified by the Ministry of Environment, Forest and Climate Change. It checks the activity against India's approved list, decides whether to authorise the credits, and states their permitted uses. Without that authorisation, credits cannot be used as ITMOs.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "indian-coal-emissions-by-gcv",
@@ -963,12 +1267,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "intermodal-container-emissions-rail-road-sea",
+  "q": "How do I calculate emissions for an export container moved by truck, rail and ship?",
+  "title": "Emissions for a truck, rail and ship container",
+  "short": "Split the trip into legs, calculate each one as cargo weight x leg distance x that mode's factor, then add the legs and the terminal handling in between. ISO 14083 calls this a transport chain. Use the real route and the same factor basis, well-to-wheel, for every leg.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "invoice-unit-mismatch-litres-kg",
   "q": "My invoice gives fuel in kg but the factor is per litre: how do I convert?",
   "title": "Fuel invoice in kg, factor per litre",
   "short": "Divide the kilograms by the fuel's density in kg per litre to get litres, then apply the per-litre factor. For diesel, density is about 0.83 to 0.84 kg per litre, so 1,000 kg is about 1,200 litres. Better still, use the supplier's measured density from the invoice or test certificate, and record which value you used.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "invoice-without-hsn-code-carbon-classification",
+  "q": "What happens to carbon classification when an invoice has no HSN code?",
+  "title": "No HSN code on invoice: carbon classification",
+  "short": "The line can still be classified, but only from its description and unit. If the description clearly names a fuel or energy item and the unit matches a published factor, it gets a figure. If not, the honest result is no factor and a flag for review, not a guess from the amount.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "is-freight-scope-3-category-4-or-9",
@@ -1067,6 +1387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "map-indian-hsn-code-to-eu-cn-code",
+  "q": "How do I match my Indian HSN code to the EU CN code for CBAM?",
+  "title": "Match Indian HSN to the EU CN code",
+  "short": "Match on the first six digits. They come from the World Customs Organization's Harmonized System and are the same in India and the EU. Then pick the EU 8 digit CN code under that subheading whose description fits your goods, and confirm it with your EU importer, who declares it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "methane-n2o-from-diesel-combustion",
   "q": "Do I need to include methane and nitrous oxide from burning diesel, or is CO2 enough?",
   "title": "Methane and N2O from diesel: include them?",
@@ -1139,6 +1467,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "plastic-epr-recycled-content-targets",
+  "q": "What recycled plastic content must my packaging have under India's EPR rules?",
+  "title": "Recycled content targets for plastic packaging",
+  "short": "Rigid plastic packaging (Category I) must contain 30% recycled plastic in 2025-26, rising to 40%, 50% and then 60% from 2028-29, under Schedule II of India's Plastic Waste Management Rules. Flexible packaging starts at 10% and multilayer at 5%, rising later; confirm each year's figure in the current Schedule II.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ppc-vs-opc-cement-carbon-footprint",
+  "q": "How much lower is the carbon footprint of PPC or PSC cement than OPC?",
+  "title": "PPC and PSC vs OPC: carbon footprint",
+  "short": "As a rough guide, PPC has about 20 to 30% lower CO2 per tonne than OPC, and PSC about 40 to 55% lower, because they contain less clinker. The real gap depends on the plant's clinker share, kiln fuel and power, so compare plant EPDs where you can.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "process-co2-from-limestone-calcination",
+  "q": "How do I calculate process CO2 from limestone or dolomite calcination?",
+  "title": "Process CO2 from limestone calcination",
+  "short": "Multiply the tonnes of each carbonate heated by its purity and by its IPCC emission factor: 0.43971 t CO2 per tonne of calcium carbonate, 0.47732 for dolomite, 0.52197 for magnesium carbonate. Then multiply by the share actually calcined. This is Scope 1 process CO2, counted separately from the fuel burnt in the kiln.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "rbi-climate-risk-disclosure-for-borrowers",
   "q": "What does RBI's climate risk disclosure framework mean for MSME borrowers?",
   "title": "RBI climate disclosure: what borrowers face",
@@ -1171,12 +1523,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "residual-mix-factor-india-market-based-scope-2",
+  "q": "What residual mix factor should I use for market-based Scope 2 in India?",
+  "title": "Residual mix factor for India",
+  "short": "India has no official residual mix factor, so use the CEA grid weighted average, 0.710 kg CO2 per kWh (CO2 Baseline Database version 21.0), for electricity not covered by certificates or contracts. Say in your report that it is a grid average used because no residual mix is published.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "rooftop-solar-net-metering-scope-2",
   "q": "How do I count rooftop solar with net metering in Scope 2?",
   "title": "Rooftop solar and net metering in Scope 2",
   "short": "Report Scope 2 on the units you imported from the grid, not on the net units your discom bills. Solar you generate and use on site has no Scope 2 emissions. Units you export do not cancel units you import, so never subtract exports from imports when calculating emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "rooftop-solar-payback-for-a-factory",
+  "q": "How do I calculate the payback of rooftop solar for my factory?",
+  "title": "Rooftop solar payback for a factory",
+  "short": "Simple payback is capex divided by net annual savings. Estimate yearly generation as plant size in kWp times specific yield in kWh per kWp, value each unit at the grid tariff it replaces, subtract yearly maintenance, and divide the installed cost by that figure. Use your own bills and a site yield estimate, not a vendor's headline.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "sbti-sme-route-eligibility",
@@ -1281,6 +1649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Best is to build it from your own trips: fuel per km times 2.68 kg CO2 per litre of diesel, divided by the average payload, with empty running included. Without trip data, use a published default for the truck class, such as GLEC Framework values, and state the load factor it assumes.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "use-e-way-bill-distance-for-freight-emissions",
+  "q": "Can I use e-way bill distance and weight to calculate freight emissions?",
+  "title": "E-way bill distance for freight emissions",
+  "short": "Yes for distance, not for weight. The e-way bill records an approximate road distance for the consignment, which is a fair input for tonne-km. It does not record gross weight, so take the weight from the goods invoice or packing list, then multiply weight x distance x a road emission factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "use-of-sold-products-category-11-calculation",
@@ -1513,6 +1889,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Manufacturers should lead with emissions per tonne (or unit) of product, because it moves only when real emissions or output change. Report per rupee of revenue when BRSR or a lender asks for it. Use per employee only for offices and services, where people are the main driver of energy use.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "which-cea-grid-factor-version-for-which-year",
+  "q": "Which CEA grid emission factor version should I use for each reporting year?",
+  "title": "Which CEA factor version for which year?",
+  "short": "Use the latest CEA CO2 Baseline Database version published before you close your inventory, and name its version and fiscal year. Each version covers a past fiscal year: version 21.0 covers FY 2024-25 at 0.710 kg CO2 per kWh, so it is the usual choice for FY 2025-26 reports until a newer version appears.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "which-ngfs-scenario-should-i-use",

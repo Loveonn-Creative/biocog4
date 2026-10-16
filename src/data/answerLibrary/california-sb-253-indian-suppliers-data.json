@@ -1,0 +1,73 @@
+{
+  "slug": "california-sb-253-indian-suppliers-data",
+  "q": "Will California SB 253 make US customers ask Indian suppliers for emissions data?",
+  "title": "California SB 253 and Indian suppliers",
+  "short": "Yes, many will. SB 253 makes US companies with over USD 1 billion in revenue that do business in California report Scope 3 from 2027, and purchased goods are usually their largest category. The law places no duty on Indian suppliers, but their customers will ask for Scope 1 and 2 data.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to large US companies",
+  "sections": [
+    {
+      "h": "What SB 253 requires, and from when",
+      "ul": [
+        "Who: US-formed companies with total annual revenue above USD 1 billion that do business in California. Revenue is global, not California sales.",
+        "Scope 1 and Scope 2: first reports due by 10 November 2026 under CARB's regulation, approved in October 2026. Assurance requirements phase in under the statute and CARB rules.",
+        "Scope 3: from 2027, following the GHG Protocol standards. CARB is still writing the detailed Scope 3 rules.",
+        "Regulator: the California Air Resources Board (CARB), which sets deadlines and fees by regulation."
+      ],
+      "p": [
+        "SB 219, passed in 2024, left the Scope 3 reporting date to be set by CARB. Check ww2.arb.ca.gov for the current schedule and assurance timing."
+      ]
+    },
+    {
+      "h": "Why an Indian supplier gets asked",
+      "p": [
+        "Scope 3 Category 1, purchased goods and services, includes the emissions of everything the US company buys. It can use spend-based estimates, but those make its suppliers look like an industry average. Supplier figures replace the average with your actual numbers. Expect requests through procurement portals, CDP supply chain questionnaires or a buyer's own form, tied to the US company's financial year."
+      ]
+    },
+    {
+      "h": "What a reasonable answer contains",
+      "ol": [
+        "Your Scope 1 and Scope 2 for a full year, in t CO2 or t CO2e, with the factors and their sources.",
+        "Your output for the same year, so the customer can allocate a share to what it bought.",
+        "The method: GHG Protocol, location-based Scope 2, and market-based if you hold certificates.",
+        "A note on what is estimated and what is from bills."
+      ]
+    },
+    {
+      "h": "Risk in sharing, and the safe harbour",
+      "p": [
+        "Under SB 253, a reporter is not penalised for Scope 3 misstatements made with a reasonable basis and disclosed in good faith, and from 2027 to 2030 Scope 3 penalties apply only for not filing at all. That lowers the pressure on suppliers to hand over audited figures."
+      ]
+    },
+    {
+      "h": "SB 261 is a separate law",
+      "p": [
+        "SB 261 requires climate-related financial risk reports from companies above USD 500 million in revenue. In November 2025 the US Court of Appeals for the Ninth Circuit paused its enforcement pending appeal, and CARB said it would not enforce SB 261 while that order stands. SB 253 was not paused. SB 261 does not ask suppliers for emissions data."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives suppliers invoice-backed Scope 1 and Scope 2 figures, each line traced to its fuel invoice or electricity bill, that a US customer can use in its Scope 3. It does not provide the third-party assurance the US reporter needs for its own disclosure.",
+  "links": [
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "to": "/esg-reporting",
+      "label": "Which ESG rules apply to you"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, the basis SB 253 requires",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol standards",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CARB's Scope 3 rules and the Ninth Circuit appeals were still open in October 2026; confirm on ww2.arb.ca.gov before relying on dates."
+}

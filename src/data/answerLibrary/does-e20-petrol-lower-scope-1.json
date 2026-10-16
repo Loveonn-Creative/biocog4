@@ -1,0 +1,81 @@
+{
+  "slug": "does-e20-petrol-lower-scope-1",
+  "q": "Does E20 petrol lower my fleet's Scope 1 emissions?",
+  "title": "Does E20 petrol lower Scope 1?",
+  "short": "Yes, a little. In E20, a fifth of each litre is ethanol, whose CO2 is biogenic and reported outside Scope 1. Fossil CO2 per litre falls by about 20%, but vehicles burn a few per cent more litres per km, so the net Scope 1 cut is closer to 15%, as an estimate.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Businesses with petrol vehicles in India",
+  "sections": [
+    {
+      "h": "How the GHG Protocol treats the ethanol share",
+      "p": [
+        "CO2 from burning biofuels is biogenic: the plants took that carbon from the air while growing. The GHG Protocol Corporate Standard asks you to report biogenic CO2 from combustion separately, outside the scopes. The IPCC 2006 Guidelines treat it the same way in national inventories.",
+        "Methane and nitrous oxide from burning the ethanol are not biogenic. They stay in Scope 1, but for cars they are a small part of the total."
+      ]
+    },
+    {
+      "h": "Why the cut is smaller than 20%",
+      "p": [
+        "Ethanol carries about two thirds of the energy of petrol per litre. A blend with 20% ethanol therefore has a few per cent less energy per litre, and most vehicles need slightly more fuel for the same distance. More litres means more fossil petrol burnt than a simple 20% cut suggests. Judge the effect on litres per km from your own fuel and odometer records, not a fixed figure."
+      ]
+    },
+    {
+      "h": "What you can claim, and what to disclose",
+      "ul": [
+        "Most pump receipts do not state the blend. If you apply an ethanol share, base it on the blend actually sold in your area and period, and say so.",
+        "Report the biogenic CO2 from ethanol as a separate line, not as a deduction from your total.",
+        "Keep using the unadjusted petrol factor if you cannot support the blend. It overstates fossil CO2 slightly, which is the conservative direction.",
+        "Do not apply the ethanol adjustment to diesel. Diesel at Indian pumps is not part of the E20 programme."
+      ]
+    },
+    {
+      "h": "How this differs from cutting fuel use",
+      "p": [
+        "E20 lowers the carbon in each litre; it does nothing about how many litres you buy. Route planning, load factors, idling and moving delivery vans to electric change the litres themselves. For a petrol fleet, those usually move Scope 1 more than the blend does."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 km in one petrol car (estimate)",
+    "lines": [
+      "Pure petrol at 15 km per L: 666.7 L x 2.31 kg CO2 per L = 1,540 kg CO2",
+      "E20 with an assumed 6% more fuel: 706.7 L",
+      "Fossil share: 706.7 x 0.8 x 2.31 = 1,306 kg CO2 in Scope 1",
+      "Biogenic CO2 from ethanol: 706.7 x 0.2 x 1.51 kg per L = 213 kg, reported separately",
+      "Scope 1 change: 1,540 to 1,306 kg, about 15% lower"
+    ],
+    "note": "Estimate. The 6% fuel increase is an assumption; 1.51 kg CO2 per litre of ethanol comes from its carbon content and density. Applying 0.8 x 2.31 treats the petrol part as ordinary motor gasoline."
+  },
+  "senseible": "Senseible applies the IPCC petrol default of 2.31 kg CO2 per litre to every invoiced litre. There is no automatic E20 adjustment: it does not split out the ethanol share, so its petrol figure is the unadjusted, conservative one, and any ethanol adjustment is yours to make and disclose.",
+  "links": [
+    {
+      "label": "Logistics Scope 1 emissions in India",
+      "to": "/climate-intelligence/logistics-scope-1-emissions-india"
+    },
+    {
+      "label": "Petrol emission factor",
+      "to": "/emission-factors/petrol"
+    },
+    {
+      "label": "Vehicle emissions from fuel spend",
+      "to": "/answers/vehicle-emissions-from-fuel-spend"
+    },
+    {
+      "label": "Diesel to electric van savings",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Blend levels under India's ethanol blending programme may rise beyond 20%; check the current blend before applying a share."
+}

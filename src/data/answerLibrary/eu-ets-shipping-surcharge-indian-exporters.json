@@ -1,0 +1,90 @@
+{
+  "slug": "eu-ets-shipping-surcharge-indian-exporters",
+  "q": "Why are shipping lines adding an EU ETS surcharge to my export freight, and is it correct?",
+  "title": "EU ETS shipping surcharge on exports",
+  "short": "Since 2024, shipping lines must buy EU carbon allowances for ships calling at EU ports, covering half the emissions of a voyage into the EU from a port outside it. They pass that cost on as a surcharge. It is legitimate, but each carrier sets the amount, so check its basis, phase-in rate and allowance price.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters and freight forwarders shipping to EU ports",
+  "sections": [
+    {
+      "h": "What the law requires of the shipping line",
+      "ul": [
+        "Directive (EU) 2023/959 brought shipping into the EU Emissions Trading System from 1 January 2024, for ships of 5,000 gross tonnage and above.",
+        "Voyages between a non-EU port and an EU port: 50 percent of emissions are covered. Voyages within the EU and time at berth in EU ports: 100 percent.",
+        "Phase-in of allowances to surrender: 40 percent of 2024 emissions, 70 percent of 2025, 100 percent from 2026.",
+        "CO2 from 2024; methane and nitrous oxide added from 2026.",
+        "The obligation sits with the shipping company. Nothing in the law fixes how much it charges you."
+      ]
+    },
+    {
+      "h": "How to test whether the surcharge is reasonable",
+      "ol": [
+        "Ask the carrier for its published method: emissions per TEU for your lane, the share covered, the phase-in rate and the allowance price and date used.",
+        "Check that it applies 50 percent, not 100 percent, for India to EU voyages.",
+        "Check the phase-in rate matches the year the voyage took place.",
+        "Check the transhipment rule: a stop at a listed neighbouring transhipment port, currently Tanger Med and East Port Said, does not count as the last port of call, so it does not shrink the covered share.",
+        "Compare two or three carriers on the same lane. Large gaps usually come from different emission or price assumptions."
+      ]
+    },
+    {
+      "h": "Which of your shipments it applies to",
+      "ul": [
+        "Exports to an EU port: covered. The law counts the ship's emissions from its last port of call outside the EU to the EU port, at 50 percent.",
+        "Transhipment at a hub such as Colombo: the covered voyage starts at that hub, not in India. Carriers usually average this into one rate per lane, which is why they quote per TEU.",
+        "Transhipment at Tanger Med or East Port Said: these are on the Commission's list of neighbouring transhipment ports, so the covered voyage still starts at the port before them.",
+        "Exports to the US, the Gulf or other non-EU destinations on a ship that does not call at an EU port: no EU ETS cost arises, so there should be no EU ETS surcharge.",
+        "A separate FuelEU Maritime surcharge may also appear from 2025; see the freight invoice page linked below for how to read it."
+      ]
+    },
+    {
+      "h": "Who pays, and pricing it into quotes",
+      "p": [
+        "Under FOB the buyer books the ocean freight, so the surcharge lands on their bill. Under CFR or CIF you book it, so build it into your quote and ask the carrier to show it as a separate line, which lets you compare carriers and years.",
+        "Because the phase-in reached 100 percent for 2026 emissions, expect the line on a 2026 voyage to be higher than on the same lane in 2025 at the same allowance price."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: checking a surcharge per TEU (illustrative)",
+    "lines": [
+      "Carrier's stated CO2 for one TEU, Mundra to Rotterdam: 1.2 t (illustrative)",
+      "Covered share, non-EU to EU voyage: 50%, so 0.6 t",
+      "Phase-in for a 2026 voyage: 100%, so 0.6 allowances",
+      "At an illustrative allowance price of EUR 75: 0.6 x 75 = EUR 45 per TEU",
+      "Same voyage in 2025, 70% phase-in: 1.2 x 0.5 x 0.7 = 0.42 x 75 = EUR 31.50 per TEU"
+    ],
+    "note": "The emissions per TEU and the allowance price are illustrative. Use the carrier's own figure and the allowance price and date it states."
+  },
+  "senseible": "Senseible reads freight invoices, but it does not compute or check a shipping line's ETS pass-through, and a surcharge line is not converted to emissions. Its CBAM cost calculator covers goods you export, not freight.",
+  "links": [
+    {
+      "label": "EU ETS surcharge on a freight invoice",
+      "to": "/answers/eu-ets-shipping-surcharge-on-freight-invoice"
+    },
+    {
+      "label": "EU ETS vs CBAM",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "Incoterms and Scope 3 category",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2023/959 amending the EU ETS Directive 2003/87/EC (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2023/2297, neighbouring container transhipment ports (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Allowance prices and carrier surcharge methods change often; any figure needs a date. Check the Commission's current list of neighbouring transhipment ports (Implementing Regulation (EU) 2023/2297 and later acts)."
+}

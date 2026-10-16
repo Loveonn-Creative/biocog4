@@ -1,0 +1,67 @@
+{
+  "slug": "does-iso-14001-require-climate-change",
+  "q": "Does ISO 14001 now require companies to consider climate change?",
+  "title": "Does ISO 14001 now require climate change?",
+  "short": "Yes. A February 2024 amendment, now built into ISO 14001:2026, requires you to decide whether climate change is a relevant issue for your organisation, and notes that interested parties can have climate requirements. It does not require a carbon footprint or a target, but auditors check that the question was considered.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSMEs holding or seeking ISO 14001 or ISO 9001",
+  "sections": [
+    {
+      "h": "What changed in the text in 2024",
+      "ul": [
+        "Clause 4.1, context of the organisation: a new sentence, \"The organization shall determine whether climate change is a relevant issue.\"",
+        "Clause 4.2, interested parties: a new note, \"Relevant interested parties can have requirements related to climate change.\"",
+        "The same wording went into ISO 9001, ISO 45001, ISO 50001 and other management system standards through amendments published together (for example ISO 14001:2015/Amd 1:2024)."
+      ],
+      "p": [
+        "The amendments took effect on publication. Certification bodies began checking them at the next routine audit, without a separate transition period."
+      ]
+    },
+    {
+      "h": "What an auditor will look for",
+      "ol": [
+        "A record, usually in your context or SWOT analysis, of whether climate change is relevant and why.",
+        "Buyer, lender or regulator climate requests listed among interested party requirements, such as a BRSR value chain request, a CBAM data request or a buyer's emissions questionnaire.",
+        "Where climate is relevant, the risks and opportunities in clause 6.1 that follow from it, such as heat stress, water shortage, energy prices or buyer demands.",
+        "Any objectives or controls you set as a result, followed through like any other issue."
+      ]
+    },
+    {
+      "h": "What it does not require",
+      "p": [
+        "The amendment does not oblige you to calculate Scope 1, 2 or 3 emissions, set a net zero target or buy credits. Deciding that climate change is not relevant is allowed, but for most manufacturers and exporters that answer is hard to defend, because buyers already ask for emissions data."
+      ]
+    },
+    {
+      "h": "ISO 14001:2026 and your certificate",
+      "p": [
+        "A revised edition, ISO 14001:2026, was published in April 2026. It keeps the climate change requirement and also changes other clauses, including risks and opportunities and life cycle thinking.",
+        "Certification bodies are moving certificates to the new edition over a transition period of about three years. Ask yours when it will audit you against the 2026 text, and update your clause 4.1 and 4.2 records then."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives you an emissions record built from your invoices and bills, which you can cite as evidence that climate change was considered and measured. It does not audit management systems, and an ISO auditor still decides whether your clause 4.1 and 4.2 records are adequate.",
+  "links": [
+    {
+      "label": "Climate risk for a small business",
+      "to": "/answers/climate-risk-assessment-for-small-business"
+    },
+    {
+      "to": "/esg-reporting",
+      "label": "Which ESG frameworks apply to you"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14001:2015/Amd 1:2024 and ISO 9001:2015/Amd 1:2024, climate action changes (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14001:2026, Environmental management systems (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check the transition end date for ISO 14001:2015 certificates with the IAF or your certification body."
+}

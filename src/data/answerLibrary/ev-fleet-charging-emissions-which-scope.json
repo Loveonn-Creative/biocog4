@@ -1,0 +1,80 @@
+{
+  "slug": "ev-fleet-charging-emissions-which-scope",
+  "q": "Is electricity used to charge company EVs Scope 1, Scope 2 or Scope 3?",
+  "title": "EV charging electricity: which scope?",
+  "short": "Electricity used to charge EVs your company owns or controls is Scope 2, never Scope 1, because the emissions happen at the power station. Charging of employees' own EVs for business trips is Scope 3 Category 6, and for commuting Category 7. Public charger electricity for company EVs is where practice differs.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Fleet and admin managers switching to electric cars, 3-wheelers or vans",
+  "sections": [
+    {
+      "h": "Why EV charging is not Scope 1",
+      "p": [
+        "Scope 1 covers fuel burnt in sources you own or control, such as diesel in a company van. An EV burns nothing. The GHG Protocol Scope 2 Guidance puts purchased electricity consumed by equipment you own or control in Scope 2, so switching a van from diesel to electric moves its emissions from Scope 1 to Scope 2."
+      ]
+    },
+    {
+      "h": "The charging location cases",
+      "ul": [
+        "Company EV charged at your own premises: Scope 2. The units are already on your electricity bill.",
+        "Company EV charged at an employee's home, with the cost reimbursed: most companies report it in Scope 2, because the vehicle is yours, though the supply contract is the employee's. Use the kWh from the reimbursement claim, a charger app or telematics, and state the choice.",
+        "Employee-owned EV used for business trips: Scope 3 Category 6, business travel. For daily travel to work: Category 7, commuting.",
+        "Employees or visitors charging their own EVs at your chargers: the units are on your bill, so they sit in your Scope 2 like any other site load."
+      ]
+    },
+    {
+      "h": "Public chargers: state the choice you make",
+      "p": [
+        "Read strictly, electricity bought at a public charger and used by a company-owned vehicle is purchased electricity consumed by your equipment, which points to Scope 2. Some companies and programmes report it in Scope 3 instead, because the company has no meter or supply contract at that site.",
+        "Either way, use the kWh on the charging receipt, apply the grid factor for where the charging happened, and write in your method note which scope you used. Do not count it twice."
+      ]
+    },
+    {
+      "h": "Leased EVs and transport contractors",
+      "p": [
+        "For leased vehicles the answer follows your consolidation approach. Under operational control, an EV you lease and run is treated like an owned one, so its charging is Scope 2. Charging of EVs run by a logistics contractor for your goods is in your Scope 3, Category 4 or 9, and in the contractor's Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three company e-vans charged at the factory",
+    "lines": [
+      "Distance: 3 vans x 2,000 km a month = 6,000 km",
+      "Energy at 0.18 kWh per km (assumed, including charging losses) = 1,080 kWh",
+      "Scope 2: 1,080 x 0.710 kg CO2 per kWh = 766.8 kg CO2 a month",
+      "These units are already in the factory bill, so do not add them again; show them as a sub-total if you want to track the fleet"
+    ],
+    "note": "Use the charger's metered kWh where you have it rather than a per km estimate."
+  },
+  "senseible": "Charging electricity on your factory bill is part of grid Scope 2 in Senseible, at the CEA factor of 0.710 kg CO2 per kWh. Public charger receipts are not parsed as a separate category today, so add those units with your own note on the scope you chose.",
+  "links": [
+    {
+      "label": "Scope 1, 2 and 3 for small businesses",
+      "to": "/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business"
+    },
+    {
+      "label": "Business car travel: which scope?",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Diesel to electric van CO2 saving",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4, Setting operational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Categories 6 and 7",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Treatment of public charging is interpreted differently across guidance and the GHG Protocol Scope 2 revision is under way; check for updates."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "how-many-years-of-data-for-carbon-project-baseline",
+  "q": "How many years of historical data does a carbon project baseline need?",
+  "title": "Years of data for a project baseline",
+  "short": "For an existing factory, many energy efficiency and fuel switch methodologies ask for about three years of historical data before the project starts, taken from the same plant and boundary. The exact period is set by the methodology you register under, so read its baseline section before collecting records.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian factories considering energy efficiency or fuel switch credits",
+  "sections": [
+    {
+      "h": "Why three years is the common answer",
+      "p": [
+        "Many methodologies for existing plants, including those carried over from the Clean Development Mechanism (CDM), use the most recent three years of operation. Three years smooths out one bad monsoon, a long shutdown or a single large order. The methodology then turns that history into a baseline, usually energy or fuel per unit of output.",
+        "Treat three years as a planning figure, not a rule. The methodology clause decides the period, and a validator checks it line by line."
+      ]
+    },
+    {
+      "h": "What records count as historical data",
+      "ul": [
+        "Fuel purchase invoices and stock registers, in litres, tonnes or scm.",
+        "Electricity bills with kWh for every connection inside the project boundary.",
+        "Production records in the unit the baseline uses, such as tonnes of output or steam.",
+        "Equipment logs or meter readings where the methodology asks for them.",
+        "Any change in product mix, capacity or shift pattern during those years, with dates."
+      ],
+      "p": [
+        "Records must match the boundary of the project. Bills for a godown outside the boundary do not belong in a boiler baseline."
+      ]
+    },
+    {
+      "h": "When you have less than three years",
+      "p": [
+        "A newer plant or a line that changed recently may not have enough history. Whether a shorter record is allowed, and how it must be adjusted, is again set by the methodology. Some ask for a conservative default in place of missing history. Do not fill gaps with estimates on your own, because a validator can reject the whole baseline for it."
+      ]
+    },
+    {
+      "h": "How long the baseline lasts",
+      "p": [
+        "The baseline is fixed for the crediting period. Under the Verified Carbon Standard, it is reassessed when a renewable crediting period is renewed, using the methodology version in force then. Keep the original records for the life of the project, because a verifier may ask for them at any issuance."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a coal-fired boiler baseline from three years",
+    "lines": [
+      "Year 1: 1,200 t coal for 6,000 t output (0.200 t coal per t)",
+      "Year 2: 1,250 t coal for 6,400 t output (0.195 t coal per t)",
+      "Year 3: 1,300 t coal for 6,500 t output (0.200 t coal per t)",
+      "Three-year average: 3,750 / 18,900 = 0.198 t coal per t output",
+      "After the project: 7,000 t output with 1,050 t coal",
+      "Baseline coal for that output: 7,000 x 0.198 = 1,389 t, so 339 t coal saved",
+      "Reduction: 339 x 2.42 kg CO2 per kg (IPCC 2006 default for coal) = about 820 t CO2"
+    ],
+    "note": "If the methodology asks for the lowest of the three years (Year 2, 1,250 / 6,400 = 0.1953), baseline coal is 7,000 x 0.1953 = 1,367 t, saving 317 t and about 768 t CO2. Methodologies differ on this, so check yours."
+  },
+  "senseible": "Senseible can read three years of fuel invoices and electricity bills into a dated record, with a SHA-256 fingerprint on each file, which you can offer as baseline evidence. It does not choose the methodology, set the baseline or validate the project.",
+  "links": [
+    {
+      "label": "Energy efficiency carbon credits",
+      "to": "/answers/energy-efficiency-carbon-credits-for-factories"
+    },
+    {
+      "label": "Carbon credits at Senseible",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDM methodologies and tools for baseline emissions (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Verra VCS Standard, baseline and crediting period requirements",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy (coal factor)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Historical data periods differ by methodology and version; confirm the exact clause in the methodology you register under."
+}

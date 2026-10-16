@@ -1,0 +1,89 @@
+{
+  "slug": "cupola-furnace-coke-emissions-per-tonne",
+  "q": "How do I calculate CO2 from coke in a foundry cupola per tonne of castings?",
+  "title": "Cupola coke CO2 per tonne of castings",
+  "short": "Multiply the coke burnt in the period, in kg, by about 3.02 kg CO2 per kg (the IPCC 2006 default for coke oven coke), add limestone flux and electricity, then divide by tonnes of good castings, not tonnes of metal melted. State the casting yield beside the result.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Grey iron foundries in Kolhapur, Rajkot, Coimbatore, Belagavi and Howrah",
+  "sections": [
+    {
+      "h": "Where the 3.02 kg CO2 per kg coke comes from",
+      "p": [
+        "IPCC 2006 Guidelines, Volume 2, Chapter 1 give coke oven coke a default net calorific value of 28.2 TJ per Gg (28.2 MJ per kg) and a default carbon dioxide factor of 107,000 kg CO2 per TJ. So 28.2 MJ x 0.107 kg CO2 per MJ = 3.02 kg CO2 per kg of coke.",
+        "If your coke supplier gives a tested calorific value or fixed carbon content, a factor built from those numbers is more precise than the default. Record which one you used."
+      ]
+    },
+    {
+      "h": "The four inputs, and where to find them",
+      "ol": [
+        "Coke burnt: from coke purchase invoices adjusted for opening and closing stock, in kg.",
+        "Limestone flux: the CO2 released when limestone is calcined is 44/100 of its weight, so 0.44 kg CO2 per kg of pure limestone.",
+        "Electricity for blowers, sand plant, fettling and moulding: kWh from the electricity bill x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database version 21.0).",
+        "Output: tonnes of good castings dispatched or accepted after inspection in the same period."
+      ]
+    },
+    {
+      "h": "Why divide by good castings, and state yield",
+      "p": [
+        "Runners, risers and rejects go back into the cupola, so the same iron can be melted twice. Dividing by metal melted makes a low-yield foundry look as good as a high-yield one. Buyers asking for a product footprint want CO2 per tonne of castings they receive, so divide by good castings and state the yield (good castings divided by metal charged) beside the figure."
+      ]
+    },
+    {
+      "h": "Mistakes that change the answer",
+      "ul": [
+        "Using a coal factor for coke. A coal factor such as 2.42 kg CO2 per kg is about a fifth lower than 3.02, because coke carries more carbon per kg.",
+        "Counting coke purchases instead of coke burnt in a month with a large delivery.",
+        "Leaving out limestone, which is a process emission, not a fuel.",
+        "Reporting CO as a separate gas. Inventory methods assume the carbon in coke ends up as CO2, so the 3.02 factor already covers it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a grey iron foundry",
+    "lines": [
+      "Metal charged: 150 t; coke ratio 12% (an assumption, use your own records), so 18,000 kg coke",
+      "Coke: 18,000 kg x 3.02 = 54,360 kg CO2",
+      "Limestone: 4,500 kg x 0.44 = 1,980 kg CO2",
+      "Electricity: 9,000 kWh x 0.710 = 6,390 kg CO2",
+      "Total: 54,360 + 1,980 + 6,390 = 62,730 kg CO2",
+      "Good castings: 97.5 t (yield 65% of 150 t)",
+      "Intensity: 62,730 / 97.5 = 643 kg CO2, about 0.64 t CO2 per tonne of good castings"
+    ],
+    "note": "The coke ratio, limestone use and kWh here are illustrative. Coke ratios in foundry cluster studies vary widely with cupola design and practice."
+  },
+  "senseible": "Senseible has no emission factor for coke and does not map coke to its coal factor, so it gives no figure for coke; work out coke CO2 yourself with the 3.02 factor. Senseible reads electricity bills in kWh at 0.710 kg CO2 per kWh, which covers the blower and fettling share.",
+  "links": [
+    {
+      "label": "Cupola vs induction furnace emissions",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Green loan for a foundry in Kolhapur",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 1, Tables 1.2 and 1.4",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE SME Programme, foundry cluster energy mapping reports (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

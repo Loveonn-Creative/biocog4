@@ -1,0 +1,79 @@
+{
+  "slug": "diesel-to-electric-van-emissions-saving-india",
+  "q": "How much CO2 does switching a diesel delivery van to electric save in India?",
+  "title": "Diesel to electric van: CO2 saved in India",
+  "short": "On India's grid average, an electric delivery van usually emits less CO2 per km than a diesel van: about 37% less in a typical worked case, and more when charged from rooftop solar. The saving depends on the diesel van's mileage and the EV's kWh per km, so use your own vehicles' figures.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs and logistics firms evaluating EV cargo vehicles",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "ul": [
+        "Diesel: km / km per litre x 2.68 kg CO2 per litre (IPCC 2006 default).",
+        "Electric: km x kWh per km, plus charging losses, x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)."
+      ],
+      "p": [
+        "Take km per litre from your fuel slips and trip logs, and the EV's energy use from its ARAI homologated figure or, better, from your charger meter after a month of real routes."
+      ]
+    },
+    {
+      "h": "What moves the answer most",
+      "ul": [
+        "EV efficiency: a heavier load, hills, air conditioning and stop-start city routes raise kWh per km.",
+        "Diesel mileage: an old or overloaded van at 9 to 10 km per litre makes the EV saving larger.",
+        "Charging source: units from your own rooftop solar carry no grid emissions; units from the grid carry 0.710 kg CO2 per kWh.",
+        "Charging losses: the meter at the wall reads more than the battery stores, so include them."
+      ]
+    },
+    {
+      "h": "What this comparison leaves out",
+      "p": [
+        "It covers emissions from fuel burnt and electricity generated only. It does not include the extra emissions from making the battery, or the emissions from producing and transporting diesel. A full lifecycle comparison needs a vehicle LCA, which is a different question from your annual Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "How it shows in your inventory",
+      "p": [
+        "For an owned van, diesel was Scope 1; charging electricity is Scope 2. Your Scope 1 falls by the full diesel figure and your Scope 2 rises by the charging figure, so report both scopes, not just the drop in Scope 1. If a transporter runs the van for you, both figures sit in your Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one van, 100 km a day (labelled assumptions)",
+    "lines": [
+      "Diesel van at 12 km per litre: 100 / 12 = 8.33 L x 2.68 = 22.3 kg CO2 a day",
+      "EV at 0.18 kWh per km plus 10% charging loss: 18 x 1.1 = 19.8 kWh x 0.710 = 14.1 kg CO2 a day",
+      "Saving: 22.33 minus 14.06 = 8.3 kg a day, about 37% lower; over 300 days about 2.5 tonnes a year",
+      "Half the charging from own rooftop solar: 9.9 kWh x 0.710 = 7.0 kg a day, about 69% lower than diesel",
+      "Sensitivity: EV at 0.25 kWh per km: 27.5 kWh x 0.710 = 19.5 kg a day, only about 13% lower"
+    ],
+    "note": "Mileage, kWh per km and charging loss are assumptions; replace them with your vehicles' figures."
+  },
+  "senseible": "Senseible reads diesel slips and electricity bills and applies 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, so you get the before and after figures from your own documents. It does not compare vehicle models, read telematics or calculate battery lifecycle emissions.",
+  "links": [
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "EV charging: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

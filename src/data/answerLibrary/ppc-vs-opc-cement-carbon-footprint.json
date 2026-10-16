@@ -1,0 +1,93 @@
+{
+  "slug": "ppc-vs-opc-cement-carbon-footprint",
+  "q": "How much lower is the carbon footprint of PPC or PSC cement than OPC?",
+  "title": "PPC and PSC vs OPC: carbon footprint",
+  "short": "As a rough guide, PPC has about 20 to 30% lower CO2 per tonne than OPC, and PSC about 40 to 55% lower, because they contain less clinker. The real gap depends on the plant's clinker share, kiln fuel and power, so compare plant EPDs where you can.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Builders, precast makers and procurement teams in India",
+  "sections": [
+    {
+      "h": "Why clinker share drives the difference",
+      "p": [
+        "Almost all of a cement's CO2 comes from making clinker: the CO2 released when limestone is calcined and the fuel burnt in the kiln. Fly ash and blast furnace slag replace part of the clinker, so each percentage point of clinker removed cuts emissions roughly in proportion."
+      ]
+    },
+    {
+      "h": "What the Indian standards allow",
+      "ul": [
+        "OPC (IS 269:2015): mostly clinker plus gypsum, typically around 95% clinker.",
+        "PPC (IS 1489 Part 1:2015): 15 to 35% fly ash, so roughly 60 to 80% clinker.",
+        "PSC (IS 455:2015): 25 to 70% slag, so clinker can range from under 30% to over 70%."
+      ],
+      "p": [
+        "Because the allowed range is wide, two bags both labelled PPC or PSC can differ a lot. Ask the supplier for the actual blend."
+      ]
+    },
+    {
+      "h": "Compare on concrete, not just on cement",
+      "p": [
+        "Blended cements gain strength more slowly. If a mix needs more cement, or a longer curing time, to reach the same grade, part of the saving is lost. For a building or precast product, compare CO2 per cubic metre of concrete at the specified strength and age."
+      ]
+    },
+    {
+      "h": "How fly ash and slag are counted",
+      "p": [
+        "Most cement EPDs treat fly ash and slag as residues of power and steel plants, carrying only drying, grinding and transport, not a share of the power or steel plant's emissions. If a method allocates part of the steel plant's emissions to slag, PSC looks less favourable. Check the allocation rule stated in the EPD before comparing two products."
+      ]
+    },
+    {
+      "h": "Which figure to use in a report",
+      "ol": [
+        "Best: a plant-specific EPD for the exact product, prepared under ISO 21930 or EN 15804.",
+        "Next: the manufacturer's declared clinker factor and plant CO2 per tonne of clinker.",
+        "Last: the labelled estimate in the example below, stated as an estimate with its assumptions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate per tonne of cement",
+    "lines": [
+      "Assumed: 850 kg CO2 per tonne clinker (calcination plus kiln fuel), 80 kWh plant power per tonne cement at 0.710 kg CO2 per kWh = 56.8 kg",
+      "OPC, 95% clinker: 0.95 x 850 + 56.8 = 864 kg CO2 per tonne",
+      "PPC, 70% clinker: 0.70 x 850 + 56.8 = 652 kg CO2 per tonne, about 25% lower than OPC",
+      "PSC, 45% clinker: 0.45 x 850 + 56.8 = 439 kg CO2 per tonne, about 49% lower than OPC"
+    ],
+    "note": "All inputs are assumptions for illustration. Slag grinding often uses more power than this, and plants with captive coal power have a higher power factor than the grid average."
+  },
+  "senseible": "Senseible does not hold cement EPDs or calculate cement product footprints from plant data. It reads your cement purchase invoices and keeps them in the separate Scope 3 supplier evidence trail; the product figure itself should come from your supplier's EPD.",
+  "links": [
+    {
+      "label": "Cement industry page",
+      "to": "/industries/cement"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Use a supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 2, cement production",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "WBCSD CSI Cement CO2 and Energy Protocol",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "ISO 21930:2017, core rules for environmental product declarations of construction products and services",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Percentages are labelled estimates; replace them with plant EPD figures where available."
+}

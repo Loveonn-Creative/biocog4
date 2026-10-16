@@ -1,0 +1,85 @@
+{
+  "slug": "india-article-6-2-approved-activities",
+  "q": "Which activities has India approved for Article 6.2 carbon trading?",
+  "title": "India's Article 6.2 activity list",
+  "short": "The Article 6.2 list MoEFCC issued in February 2023 named 13 activities: renewable power with storage, solar thermal, offshore wind, green hydrogen, compressed biogas, fuel cell mobility, high-end energy efficiency, sustainable aviation fuel, process upgrades in hard-to-abate sectors, ocean energy, HVDC lines for renewables, carbon capture and green ammonia.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian project developers and foreign credit buyers",
+  "sections": [
+    {
+      "h": "The 13 activities on the February 2023 list",
+      "p": [
+        "MoEFCC issued the list as an office memorandum in February 2023, on the recommendation of the national designated authority. It sorts the activities into three groups: mitigation, removal and alternative materials. As issued, it names:"
+      ],
+      "ul": [
+        "Renewable energy with storage, where only the stored component counts.",
+        "Solar thermal power.",
+        "Offshore wind.",
+        "Green hydrogen.",
+        "Compressed biogas.",
+        "Emerging mobility solutions such as fuel cells.",
+        "High-end technology for energy efficiency.",
+        "Sustainable aviation fuel.",
+        "Best available technology for process improvement in hard-to-abate sectors.",
+        "Tidal, ocean thermal, ocean salt gradient, ocean wave and ocean current energy.",
+        "High voltage direct current transmission built with renewable energy projects.",
+        "Carbon capture, utilisation and storage, as a removal activity.",
+        "Green ammonia, as an alternative material."
+      ]
+    },
+    {
+      "h": "Why ordinary solar and wind are left out",
+      "p": [
+        "The list favours technologies that India cannot easily pay for on its own. Low-cost reductions, such as grid-connected solar or onshore wind without storage, help India meet its own national target. If India transferred those tonnes abroad, it would have to add them back to its balance through a corresponding adjustment and find the reduction elsewhere.",
+        "So a project outside the list is unlikely to get an Article 6.2 authorisation. It can still sell credits for voluntary claims that do not count toward another country's target."
+      ]
+    },
+    {
+      "h": "Being on the list is not an approval",
+      "p": [
+        "The list only tells you which project types India is willing to consider. Every project still needs its own letter of authorisation from the National Designated Authority for the Implementation of the Paris Agreement (NDAIAPA), constituted in 2022. That approval is given project by project, and it can set conditions on how many credits leave India, at what price and over what period."
+      ]
+    },
+    {
+      "h": "Checks before you build a deal on it",
+      "ol": [
+        "Read the current list on moef.gov.in. The 2023 list was approved for an initial three years and the ministry has reissued its Article 6 activity lists since, so activities may have been added or dropped.",
+        "Confirm that the buying country has a bilateral agreement or cooperation framework with India under Article 6.2.",
+        "Check that the methodology the buyer wants fits the project type on the list.",
+        "Agree in the contract who bears the risk if authorisation is refused or delayed."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not handle Article 6.2 authorisations, corresponding adjustments or credit transfers. It shows carbon credit eligibility signals from a company's own records and keeps the energy and fuel invoices a developer may need as project evidence.",
+  "links": [
+    {
+      "label": "What is a corresponding adjustment",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "India host country authorisation letter",
+      "to": "/answers/india-host-country-authorization-letter"
+    },
+    {
+      "label": "Carbon credits at Senseible",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MoEFCC list of activities for trading of carbon credits under Article 6.2 (2023)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Paris Agreement Article 6.2 and decision 2/CMA.3 (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "India's host Party form for Article 6.4 (A6.4-FORM-GOV-001), noting the activity list applies for an initial three years (UNFCCC)",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The 2023 list was approved for an initial three years and later lists have been issued; confirm the current version on moef.gov.in before relying on it."
+}
