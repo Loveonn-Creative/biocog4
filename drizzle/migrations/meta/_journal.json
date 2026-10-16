@@ -162,6 +162,13 @@
       "when": 1792148431166,
       "tag": "0022_ledger_hash_chain",
       "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1792148491166,
+      "tag": "0023_customer_stories",
+      "breakpoints": true
     }
   ]
 }
