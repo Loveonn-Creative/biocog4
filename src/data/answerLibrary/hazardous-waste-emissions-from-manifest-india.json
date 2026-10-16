@@ -51,7 +51,7 @@
     ],
     "note": "The carbon content is an assumption for illustration. Use your TSDF's waste analysis, and remember that waste with biogenic carbon has a lower fossil share."
   },
-  "senseible": "Senseible keeps TSDF and waste service invoice lines in a separate Scope 3 evidence trail with the source page and the file's SHA-256 fingerprint. A line gets a figure only when its printed quantity, unit and treatment route match an approved factor; otherwise it shows Needs Data, with no spend-based fill. It does not read manifests or calculate incineration from waste composition.",
+  "senseible": "Senseible keeps TSDF and waste service invoice lines in a separate Scope 3 evidence trail with the source page and the file's SHA-256 fingerprint. A line gets a figure only when its printed quantity, unit and treatment route match an approved factor; otherwise it shows Needs Data rather than filling the gap automatically; a spend-based estimate, labelled as such, can be provided separately where only the disposal cost is known. It does not read manifests or calculate incineration from waste composition.",
   "links": [
     { "label": "Circular economy and waste", "to": "/circular-economy" },
     { "label": "Food waste: landfill, compost or biogas", "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions" },
