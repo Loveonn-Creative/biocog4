@@ -1,0 +1,67 @@
+{
+  "slug": "zld-plant-energy-and-carbon-per-kl",
+  "q": "How much energy and CO2 does a zero liquid discharge (ZLD) plant add per kilolitre?",
+  "title": "ZLD plant energy and CO2 per kilolitre",
+  "short": "It depends on how much reject goes to thermal evaporation and what fuel makes the steam, so measure it. CO2 per kL = (ZLD electricity in kWh x 0.710 + boiler fuel for ZLD steam x its fuel factor) / kL treated. Evaporator steam from a coal boiler usually outweighs RO electricity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile dyeing, pharma and tannery units under ZLD orders in Tamil Nadu, Gujarat and elsewhere",
+  "sections": [
+    {
+      "h": "Where a ZLD plant uses energy",
+      "ul": [
+        "Pre-treatment and biological stages: pumps, blowers and mixers, all electricity.",
+        "Reverse osmosis in two or three stages: high-pressure pumps, electricity.",
+        "Multiple effect evaporator (MEE) for the RO reject: steam, plus some electricity for pumps and vacuum.",
+        "Mechanical vapour recompression (MVR), where used instead of MEE: electricity in place of most of the steam.",
+        "Agitated thin film dryer or crystalliser for the final salt: steam."
+      ]
+    },
+    {
+      "h": "What to meter",
+      "ol": [
+        "An electricity sub-meter on the ZLD section, read at the start and end of each month.",
+        "Steam to the MEE and dryer, from a steam flow meter, or boiler fuel apportioned by steam share if there is none.",
+        "Boiler fuel per tonne of steam from your boiler log (for example tonnes of coal or wood per tonne of steam).",
+        "Effluent volume treated and water recovered, in kL, from inlet and permeate flow meters."
+      ]
+    },
+    {
+      "h": "Turning the meter readings into CO2",
+      "p": [
+        "Electricity: kWh x 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0). Steam: tonnes of steam x boiler fuel per tonne of steam x the fuel factor, such as 2.42 kg CO2 per kg coal or 2.97 kg CO2 per litre furnace oil (IPCC 2006 defaults). Wood or briquette firing produces biogenic CO2, which is reported separately rather than in the Scope 1 total.",
+        "Divide by kL of effluent treated for an intensity you can track, or by kL of water recovered if you want to compare ZLD water with fresh water."
+      ]
+    },
+    {
+      "h": "MEE or MVR: how to compare",
+      "p": [
+        "MVR cuts steam but adds electricity. Run both options through the same formula with your own fuel and grid factors before choosing. On a coal-fired steam supply the switch to MVR often lowers CO2 per kL; with biomass steam it may not lower fossil CO2 at all. Use vendor guarantees for kWh and steam per kL, labelled as design figures, until you have meter data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of metered data (figures assumed for this example)",
+    "lines": [
+      "Effluent treated: 200 kL a day x 30 days = 6,000 kL",
+      "ZLD electricity: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "MEE and dryer steam: 300 t; boiler log 0.2 t coal per t steam = 60 t coal; 60,000 x 2.42 = 145,200 kg CO2",
+      "Total: 12,780 + 145,200 = 157,980 kg CO2",
+      "Per kL: 157,980 / 6,000 = about 26.3 kg CO2 per kL, of which steam is 92%"
+    ],
+    "note": "These are example readings, not typical values for ZLD plants. Use your own sub-meter and boiler log."
+  },
+  "senseible": "Senseible reads the electricity bills and fuel invoices for your plant, including two meter readings in a photo of a sub-meter, whose difference it takes as units, and applies the CEA grid factor and IPCC 2006 fuel factors. Effluent and recovered water volumes come from your own flow meters.",
+  "links": [
+    { "label": "Water and carbon for textile and leather MSMEs", "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather" },
+    { "label": "CO2 per tonne of steam", "to": "/answers/co2-per-tonne-of-steam" },
+    { "label": "Coal emission factor", "to": "/emission-factors/coal" },
+    { "label": "Effluent sent to a CETP", "to": "/answers/cetp-effluent-emissions-which-scope" }
+  ],
+  "sources": [
+    { "label": "CPCB Guidelines on Techno-Economic Feasibility of Implementation of Zero Liquid Discharge for Water Polluting Industries, 2015 (cpcb.nic.in)", "url": "https://cpcb.nic.in" },
+    { "label": "2006 IPCC Guidelines, Volume 2 (stationary combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "higg-fem-energy-and-emissions-data",
+  "q": "What energy and emissions data does the Higg FEM ask textile suppliers for?",
+  "title": "Higg FEM energy and GHG data",
+  "short": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian textile and apparel suppliers to global brands",
+  "sections": [
+    {
+      "h": "The data to collect for a typical Indian mill",
+      "ul": [
+        "Grid electricity: 12 monthly bills with kWh, for every connection on site.",
+        "Diesel for DG sets and site vehicles: purchase invoices in litres, with DG generation or run hours if logged.",
+        "Boiler and thermic fluid heater fuel: coal, PNG, furnace oil, or biomass such as briquettes and wood, in tonnes, scm or litres.",
+        "Purchased steam or hot water, if a neighbour or park supplies it.",
+        "On-site solar: generation from the solar meter, and separately what was exported under net metering.",
+        "Renewable energy purchases: open access green power or certificates, with contracts and certificate records.",
+        "Production volume for the same year, so intensity per kg or per piece can be shown."
+      ]
+    },
+    {
+      "h": "What the higher levels ask for",
+      "p": [
+        "The FEM is scored in levels. The first level is about tracking every energy source with good data. Higher levels ask whether you have set a baseline and a target, whether there is a reduction plan, and whether you can show actual reductions or growth in renewable share. Each answer needs evidence, not only a yes."
+      ]
+    },
+    {
+      "h": "What verifiers look at",
+      "p": [
+        "In a verified FEM (vFEM), an approved verifier checks your entries against source documents. In recent cycles the verification scope covers the quantitative energy and GHG data. Expect them to compare monthly kWh with bills, fuel totals with invoices and stock registers, and production with dispatch records. Gaps or round numbers with no paper behind them are the usual reasons answers are marked down."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Leaving out DG diesel bought in cash or for a contractor's equipment on site.",
+        "Entering biomass as zero energy; it is still energy use, even though its CO2 is treated as biogenic.",
+        "Mixing units, for example coal in kg one month and tonnes the next.",
+        "Counting net-metered solar export as reduced consumption instead of reporting generation and grid import separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: checking your own totals before entry",
+    "lines": [
+      "Grid electricity: 1,200,000 kWh x 0.710 kg CO2 per kWh = 852 t CO2",
+      "DG diesel: 60,000 L x 2.68 kg CO2 per L = 160.8 t CO2",
+      "Boiler coal: 1,500 t x 2.42 kg CO2 per kg = 3,630 t CO2",
+      "Total: 852 + 160.8 + 3,630 = 4,642.8 t CO2"
+    ],
+    "note": "Factors are the CEA grid factor (version 21.0) and IPCC 2006 defaults. The FEM applies its own factors, so its total may differ; enter activity data in original units."
+  },
+  "senseible": "Senseible gives you fuel and electricity records with the source document and factor behind each line, which you can use when filling the FEM energy section. It is not part of the Higg platform and its records are not FEM-verified.",
+  "links": [
+    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" },
+    { "label": "Textile industry", "to": "/industries/textile" },
+    { "label": "Biomass fuel supplier evidence", "to": "/answers/biomass-fuel-supplier-evidence" },
+    { "label": "Rooftop solar with net metering", "to": "/answers/rooftop-solar-net-metering-scope-2" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "2006 IPCC Guidelines, Volume 2 (Energy)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Higg FEM question set and verification scope change each cycle; check the current Cascale and Worldly guidance before filling it."
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "waste-emissions-scope-3-category-5",
+  "q": "How do I calculate emissions from my factory's waste for Scope 3 Category 5?",
+  "title": "Factory waste emissions for Category 5",
+  "short": "Weigh your waste by type and disposal route from weighbridge slips and contractor invoices, then multiply each tonnage by an emission factor for that type and route, and add them up. This is the GHG Protocol's waste-type-specific method. Landfilled organic waste usually dominates; recycled material carries only a small factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs doing a waste audit for their inventory",
+  "sections": [
+    {
+      "h": "The three methods the GHG Protocol allows",
+      "ul": [
+        "Supplier-specific: the waste contractor gives you emissions for your waste. Rare in India, but ask.",
+        "Waste-type-specific: tonnes by waste type and treatment route x a factor for each. The usual choice for a factory.",
+        "Average-data: total tonnes x an average factor for the disposal route. Use it only for small, mixed streams."
+      ],
+      "p": ["Category 5 covers treatment by third parties. Transport to the site is optional in this category; if you include it, say so."]
+    },
+    {
+      "h": "Building the tonnage table",
+      "ol": [
+        "List streams: mixed general waste, cardboard and paper, plastic film, wood pallets, metal scrap, canteen food waste.",
+        "Take tonnes from weighbridge slips; where only trips are billed, multiply trips by a measured average load.",
+        "Record the route for each stream from the contractor's disposal certificate: landfill or dump, incineration, recycling, composting.",
+        "Keep hazardous waste and food waste as separate lines, since they need their own factors (see the linked pages)."
+      ]
+    },
+    {
+      "h": "Where the factors come from",
+      "p": [
+        "India has no national waste factor table. The UK DESNZ conversion factors include waste disposal tables by material and route, and many companies use them as a labelled proxy. They reflect UK landfill gas capture, so they can understate methane from Indian dumps without capture. For large organic streams, the IPCC 2006 Volume 5 first-order decay method lets you build a site-specific landfill estimate instead.",
+        "Recycling factors in the DESNZ tables cover only getting the material to the recycler; the benefit of recycled content is counted by whoever uses it."
+      ]
+    },
+    {
+      "h": "What does not belong here",
+      "ul": [
+        "Scrap you sell as a product is not waste; it leaves your inventory as a sale.",
+        "Your own on-site incinerator or ETP is Scope 1.",
+        "Effluent sent to a CETP is Category 5 too, but it is calculated from COD, not tonnes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of factory waste (placeholder factors)",
+    "lines": [
+      "Mixed general waste to landfill: 120 t x 500 kg CO2e per t = 60,000 kg CO2e",
+      "Cardboard to recycling: 80 t x 20 kg CO2e per t = 1,600 kg CO2e",
+      "Canteen waste composted: 10 t x 10 kg CO2e per t = 100 kg CO2e",
+      "Total: 60,000 + 1,600 + 100 = 61,700 kg CO2e, about 61.7 t CO2e; landfill is 97%"
+    ],
+    "note": "The factors are placeholders to show the arithmetic, not DESNZ values. Take current values from the latest DESNZ waste disposal table and label them as UK-based proxies."
+  },
+  "senseible": "Senseible keeps waste contractor invoices in its separate Scope 3 supplier evidence trail, each file with a SHA-256 fingerprint so duplicates are not counted twice. A line gets a figure only when its printed quantity and unit match an approved factor; otherwise it shows Needs Data, and where only the disposal cost is known a spend-based estimate, labelled as such, can be provided.",
+  "links": [
+    { "label": "Hazardous waste from manifests", "to": "/answers/hazardous-waste-emissions-from-manifest-india" },
+    { "label": "Food waste: landfill, compost or biogas", "to": "/answers/food-waste-landfill-vs-compost-vs-biogas-emissions" },
+    { "label": "Effluent sent to a CETP", "to": "/answers/cetp-effluent-emissions-which-scope" },
+    { "label": "Circular economy and waste management", "to": "/circular-economy" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 5", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting, waste disposal", "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" },
+    { "label": "2006 IPCC Guidelines, Volume 5, Chapter 3 (solid waste disposal)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" }
+  ],
+  "reviewed": "2026-10-16"
+}

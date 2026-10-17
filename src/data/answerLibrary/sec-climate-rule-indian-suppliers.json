@@ -1,0 +1,64 @@
+{
+  "slug": "sec-climate-rule-indian-suppliers",
+  "q": "Does the US SEC climate disclosure rule apply to Indian suppliers?",
+  "title": "SEC climate rule and Indian suppliers",
+  "short": "No. The SEC climate disclosure rule never placed any duty on suppliers. It covered only companies that file reports with the SEC, it dropped Scope 3 before adoption, and it has been stayed since April 2024 without ever taking effect. An Indian supplier with no US listing has nothing to file under it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to US listed companies",
+  "sections": [
+    {
+      "h": "Three Indian situations, three answers",
+      "ul": [
+        "Indian supplier with no US listing: never in scope. The rule had no supplier or value chain reporting duty.",
+        "Indian company with US listed shares that files annual reports with the SEC, for example on Form 20-F: it would have been a registrant itself, with its own risk disclosures and, if a large filer and material, its own Scope 1 and Scope 2. With the rule stayed and set for rescission, nothing applies today.",
+        "Indian subsidiary of a US registrant: not a filer, but its sites sit inside the parent's consolidated Scope 1 and Scope 2, so the parent would have needed its fuel and electricity data."
+      ]
+    },
+    {
+      "h": "Why Scope 3 matters to this answer",
+      "p": [
+        "The SEC proposal of March 2022 included Scope 3 for some filers, and that was the only part that could have reached outside suppliers. The final rule adopted in March 2024 (Release No. 33-11275) removed Scope 3 entirely, so even in its adopted form no buyer needed supplier emissions to comply with it."
+      ]
+    },
+    {
+      "h": "Where the rule stands",
+      "p": [
+        "The SEC stayed the rule in April 2024 pending the Iowa v. SEC challenge in the Eighth Circuit, voted in March 2025 to stop defending it, and proposed rescinding it in May 2026. The step by step history is on the linked status page."
+      ]
+    },
+    {
+      "h": "If a US customer still asks you for data",
+      "p": [
+        "The request comes from something else: the buyer's own targets, a CDP supply chain programme, California's SB 253 or EU rules on a European subsidiary. Ask which one, because it decides the year, scopes and format they need. Your reply is the same in each case: Scope 1 and Scope 2 by the GHG Protocol, with factors and sources."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares Scope 1 and Scope 2 from your invoices and electricity bills, with the factor and source on every line, as a self-declared data pack you can send to a US customer. It does not give legal advice on SEC filing duties.",
+  "links": [
+    {
+      "label": "SEC climate rule status and US buyers",
+      "to": "/answers/sec-climate-rule-status-us-buyers"
+    },
+    {
+      "label": "California SB 253 and Indian suppliers",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "Answering a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (Scope 1 and 2 boundaries)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "As of October 2026 the SEC's May 2026 rescission proposal awaited a final vote and Iowa v. SEC was on hold; confirm the status on sec.gov before relying on it."
+}

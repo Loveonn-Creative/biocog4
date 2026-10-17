@@ -1,0 +1,79 @@
+{
+  "slug": "why-eu-fund-asks-for-sfdr-pai-data",
+  "q": "Why is an EU investor asking my company for SFDR principal adverse impact data?",
+  "title": "Why EU funds ask for SFDR PAI data",
+  "short": "An EU fund asks for principal adverse impact (PAI) data because SFDR makes the fund report the harm its investments cause, such as emissions, using figures from each company it holds. Without your numbers it must use estimates and say so. The fund carries the legal duty; you supply the inputs.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian companies with EU private equity or fund investors",
+  "sections": [
+    {
+      "h": "The duties that fall on the fund",
+      "ul": [
+        "Entity level (Article 4): a fund manager with more than 500 employees, or one that chooses to, publishes a yearly statement of principal adverse impacts across all its investments, built on the mandatory indicators in Delegated Regulation (EU) 2022/1288, Annex I.",
+        "Article 8 funds: they promote environmental or social characteristics and must explain in their reports whether and how they consider adverse impacts.",
+        "Article 9 funds, and Article 8 funds that claim a share of sustainable investments: they must show each such holding does no significant harm, and the PAI indicators are the test. A missing figure can mean your company cannot be counted as a sustainable investment."
+      ]
+    },
+    {
+      "h": "How your figures are used",
+      "p": [
+        "The yearly entity statement covers the calendar year and is due by 30 June of the next year. Each indicator is the average of the fund's position at four dates: 31 March, 30 June, 30 September and 31 December. Your emissions are scaled by the fund's share of your company's value, so a larger stake means more of your tonnes appear in its figures."
+      ]
+    },
+    {
+      "h": "What happens if you do not reply",
+      "p": [
+        "The fund must make best efforts to get the data and describe them in its statement, then fill gaps with estimates from data vendors or sector averages. Those estimates may overstate a company that runs cleaner than its sector, and they become the public record of your impact in the fund's report. Your own figures, with sources, usually serve you better."
+      ]
+    },
+    {
+      "h": "Where this request may sit in your agreements",
+      "p": [
+        "Private equity and venture investors often write ESG reporting into the shareholder agreement or a side letter. Check what you agreed to supply and by when, because the fund's deadline is driven by its own reporting calendar, not yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how your emissions reach the fund's carbon footprint",
+    "lines": [
+      "Your Scope 1, 2 and 3 for the year: 8,000 t CO2e",
+      "Fund stake: EUR 10 million; your enterprise value including cash: EUR 100 million",
+      "Attributed to the fund: 10 / 100 x 8,000 = 800 t CO2e",
+      "Fund's total investments: EUR 500 million",
+      "Your contribution to its carbon footprint: 800 / 500 = 1.6 t CO2e per EUR million invested"
+    ],
+    "note": "Figures are illustrative. The fund computes this; you supply the emissions and, if unlisted, the inputs it needs for enterprise value."
+  },
+  "senseible": "Senseible prepares Scope 1 and Scope 2 and the underlying energy figures from your invoices and bills as a self-declared data pack, with Scope 3 shown where supplier evidence exists. It does not compute the fund's PAI ratios or prepare its SFDR statements.",
+  "links": [
+    {
+      "label": "SFDR PAI data request: what to send",
+      "to": "/answers/sfdr-pai-data-request-from-eu-investor"
+    },
+    {
+      "label": "Article 8 vs Article 9 funds",
+      "to": "/answers/article-8-vs-article-9-fund-investee-company"
+    },
+    {
+      "label": "ESG data management",
+      "to": "/esg-data-management"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2019/2088 on sustainability-related disclosures (SFDR), Articles 4, 8 and 9 (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2022/1288, Articles 4 to 7 and Annex I (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, SFDR review proposal (November 2025)",
+      "url": "https://finance.ec.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Commission's November 2025 SFDR proposal was under negotiation in October 2026 and may change entity level PAI duties and the Article 8 and 9 labels; recheck before relying on this page."
+}
