@@ -15,3 +15,27 @@ export async function checkUploadPages(file: File): Promise<{ ok: boolean; reaso
   if (pages < 1) return { ok: false, reason: 'unknown_page_count', message: UNKNOWN_PAGE_COUNT_MESSAGE };
   return pages > MAX_PDF_PAGES ? { ok: false, reason: 'too_many_pages', message: pageLimitMessage(pages) } : { ok: true };
 }
+
+/** Pages in a picked file: a PDF's page count (0 when unknown), 1 for an image. */
+export async function pageCountOf(file: File): Promise<number> {
+  if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) return 1;
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  if (!isPdf(bytes)) return 1;
+  const quick = countPdfPages(bytes);
+  return quick > 0 ? quick : exactPageCount(bytes);
+}
+
+/**
+ * Reads a batch is expected to use, counted as the server counts them today:
+ * one per file, and one per part of up to MAX_PDF_PAGES pages for a longer
+ * PDF. An estimate: repeat uploads of a stored invoice are free.
+ */
+export function estimateReads(pageCounts: number[]): { reads: number; pages: number } {
+  let reads = 0, pages = 0;
+  for (const n of pageCounts) {
+    const p = Math.max(1, n);
+    pages += p;
+    reads += p > MAX_PDF_PAGES ? Math.ceil(p / MAX_PDF_PAGES) : 1;
+  }
+  return { reads, pages };
+}

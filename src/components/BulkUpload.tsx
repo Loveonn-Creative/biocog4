@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useSession } from '@/hooks/useSession';
 import { useWorkspace } from '@/hooks/useWorkspace';
@@ -21,11 +21,13 @@ import {
 import { cn } from '@/lib/utils';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
-import { checkUploadPages } from '@/lib/pdfLimit';
+import { checkUploadPages, estimateReads, pageCountOf } from '@/lib/pdfLimit';
+import { usePremiumStatus } from '@/hooks/usePremiumStatus';
+import { monthStartIst } from '../../supabase/functions/_shared/planLimits';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
-import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
+import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 interface FileStatus {
   file: File;
@@ -33,9 +35,14 @@ interface FileStatus {
   message?: string;
   documentHash?: string;
   extractedData?: any;
-  /** First page of this part in the original PDF, for split files. */
+  /** Page range of this part in the original PDF, for split files. */
   fromPage?: number;
+  toPage?: number;
+  totalPages?: number;
 }
+
+/** Files read at the same time. Each part of a long PDF counts as one. */
+const CONCURRENT_READS = 2;
 
 interface BulkUploadProps {
   onComplete?: (results: { processed: number; duplicates: number; errors: number }) => void;
@@ -49,6 +56,27 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
   const [files, setFiles] = useState<FileStatus[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
+  const { invoiceLimit } = usePremiumStatus();
+  // This month's reads, counted the way the server counts them (signed in only).
+  const [usedThisMonth, setUsedThisMonth] = useState<number | null>(null);
+  const [estimate, setEstimate] = useState<{ reads: number; pages: number } | null>(null);
+  const refreshUsed = useCallback(async () => {
+    if (!user) { setUsedThisMonth(null); return; }
+    const { count, error } = await supabase.from('documents').select('id', { count: 'exact', head: true })
+      .eq('user_id', user.id).gte('created_at', monthStartIst());
+    setUsedThisMonth(error ? null : count ?? 0);
+  }, [user]);
+  useEffect(() => { void refreshUsed(); }, [refreshUsed]);
+  // Estimate before upload, from the page count of each pending file.
+  useEffect(() => {
+    const pending = files.filter(f => f.status === 'pending' && f.fromPage === undefined).map(f => f.file);
+    if (pending.length === 0) { setEstimate(null); return; }
+    let live = true;
+    void Promise.all(pending.map(pageCountOf)).then(counts => { if (live) setEstimate(estimateReads(counts)); });
+    return () => { live = false; };
+  }, [files]);
+  const remaining = usedThisMonth !== null ? Math.max(0, invoiceLimit - usedThisMonth) : null;
+  const overAllowance = !isProcessing && estimate !== null && remaining !== null && estimate.reads > remaining;
 
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -105,28 +133,24 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       if (check.ok) { queue.push(f); continue; }
       if (check.reason === 'unknown_page_count') { queue.push({ ...f, status: 'error' as const, message: check.message }); continue; }
       const split = await splitPdf(f.file);
-      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage })));
+      if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage, toPage: p.toPage, totalPages: p.totalPages })));
       else queue.push({ ...f, status: 'error' as const, message: split.message });
     }
     setFiles(queue);
     const totalFiles = queue.length;
 
-    // Set when reading is paused on our side (402) or a limit is reached (429):
-    // the remaining files are not sent, and say why.
+    // Set when reading is paused or down on our side (402/503), busy, or a
+    // limit is reached (429): the remaining files are not sent, and say why.
     let stopReason: string | null = null;
-    for (let i = 0; i < queue.length; i++) {
-      const fileStatus = queue[i];
-      if (stopReason) {
-        setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'error' as const, message: `Not sent: ${stopReason}` } : f));
-        results.errors++;
-        setProgress(((i + 1) / totalFiles) * 100);
-        continue;
-      }
-      if (fileStatus.status === 'error') { results.errors++; setProgress(((i + 1) / totalFiles) * 100); continue; }
-      
+    // Two files (or parts) at a time; each finishes on its own.
+    let done = 0;
+    const tick = () => setProgress((++done / totalFiles) * 100);
+    const readOne = async (fileStatus: FileStatus, i: number) => {
+      if (fileStatus.status === 'error') { results.errors++; tick(); return; }
+    
       // Update status to processing
-      setFiles(prev => prev.map((f, idx) => 
-        idx === i ? { ...f, status: 'processing' as const } : f
+      setFiles(prev => prev.map((f, idx) =>
+        idx === i ? { ...f, status: 'processing' as const, message: f.fromPage ? `Reading pages ${f.fromPage}–${f.toPage} of ${f.totalPages}` : undefined } : f
       ));
 
       try {
@@ -140,12 +164,12 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         if (error) {
           const status = functionErrorStatus(error);
           const message = await getFunctionErrorMessage(error, 'Could not be read');
-          if (status === 402 || status === 429) stopReason = message;
+          if (await stopsBatch(error)) stopReason = message;
           if (status === 409) {
             setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'duplicate' as const, message: 'Already processed' } : f));
             results.duplicates++;
-            setProgress(((i + 1) / totalFiles) * 100);
-            continue;
+            tick();
+            return;
           }
           throw new Error(message);
         }
@@ -240,12 +264,17 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
         ));
         results.errors++;
       }
-
-      setProgress(((i + 1) / totalFiles) * 100);
-    }
+      tick();
+    };
+    await runPool(queue, CONCURRENT_READS, readOne, () => stopReason !== null, (_f, i) => {
+      setFiles(prev => prev.map((f, idx) => idx === i ? { ...f, status: 'error' as const, message: `Not sent: ${stopReason}` } : f));
+      results.errors++;
+      tick();
+    });
 
     setIsProcessing(false);
-    
+    void refreshUsed();
+
     // Show summary
     const parts = [];
     if (results.processed > 0) parts.push(`${results.processed} processed`);
@@ -277,8 +306,8 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
   const getStatusBadge = (status: FileStatus['status'], message?: string) => {
     switch (status) {
-      case 'processing': 
-        return <Badge variant="secondary" className="text-xs">Processing...</Badge>;
+      case 'processing':
+        return <Badge variant="secondary" className="text-xs">{message || 'Processing...'}</Badge>;
       case 'success': 
         return <Badge variant="secondary" className="text-xs bg-success/10 text-success border-success/20">{message || 'Done'}</Badge>;
       case 'duplicate': 
@@ -383,12 +412,21 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
               </div>
             )}
 
+            {/* Estimate before upload; the count after comes from the server's records. */}
+            {user && !isProcessing && (estimate || usedThisMonth !== null) && (
+              <p className={cn("pt-2 text-xs", overAllowance ? "text-destructive" : "text-muted-foreground")} role={overAllowance ? 'alert' : undefined}>
+                {estimate && pendingCount > 0 && `About ${estimate.reads} ${estimate.reads === 1 ? 'read' : 'reads'} (${estimate.pages} ${estimate.pages === 1 ? 'page' : 'pages'}). `}
+                {remaining !== null && `${remaining.toLocaleString('en-IN')} of ${invoiceLimit.toLocaleString('en-IN')} reads left this month.`}
+                {overAllowance && ' This batch needs more than you have left. Remove some files, upgrade on the Subscription page, or wait for the new month.'}
+              </p>
+            )}
+
             {/* Action Button */}
             {pendingCount > 0 && (
               <Button 
                 className="w-full mt-2" 
                 onClick={processFiles}
-                disabled={isProcessing}
+                disabled={isProcessing || overAllowance}
               >
                 {isProcessing ? (
                   <>
