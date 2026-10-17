@@ -269,7 +269,7 @@ const Intelligence = () => {
 
   const planBlock = plan && (
     <div className="min-w-0">
-      <p className="truncate text-xs text-muted-foreground">{plan}</p>
+      <p className="text-xs text-muted-foreground">{plan}</p>
       <div className="mt-1 h-[3px] w-40 max-w-full overflow-hidden rounded-full bg-border" role="meter" aria-label="Questions used this month" aria-valuemin={0} aria-valuemax={limit ?? 0} aria-valuenow={used ?? 0}>
         <div className="h-full rounded-full bg-primary" style={{ width: `${meter}%` }} />
       </div>

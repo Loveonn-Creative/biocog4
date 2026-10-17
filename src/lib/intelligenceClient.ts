@@ -144,6 +144,8 @@ export interface SuggestionInput {
 }
 
 const nice = (c: string) => c.replace(/[_-]+/g, ' ').trim();
+const UNIT_NAMES: Record<string, string> = { kwh: 'kWh', kvah: 'kVAh', mwh: 'MWh', l: 'L', litre: 'litre', kg: 'kg', scm: 'scm' };
+const unitName = (u: string) => UNIT_NAMES[u.toLowerCase()] ?? u;
 
 /** Suggestion chips by plan and by what this person's data can answer. */
 export function suggestionsFor(i: SuggestionInput): Suggestion[] {
@@ -161,7 +163,7 @@ export function suggestionsFor(i: SuggestionInput): Suggestion[] {
     const top = b.hotspots[0];
     if (top) out.push({ label: 'Biggest hotspot this quarter', prompt: `What is driving my ${nice(top.category)} emissions this quarter, and which records make it up?` });
     const unit = i.insights?.find((x) => x.unitCostInr);
-    if (unit?.unitCostInr) out.push({ label: `Unit cost per ${unit.unitCostInr.unit}`, prompt: `How has my cost per ${unit.unitCostInr.unit} changed, and what does it mean for emissions?` });
+    if (unit?.unitCostInr) out.push({ label: `Unit cost per ${unitName(unit.unitCostInr.unit)}`, prompt: `How has my cost per ${unitName(unit.unitCostInr.unit)} changed, and what does it mean for emissions?` });
     if (i.projection) out.push({ label: 'Next 3 months', prompt: 'Project my emissions for the next 3 months from my records.' });
     if (b.basis === 'unverified') out.push({ label: 'Verify my records', prompt: 'Which of my records still need verification, and how do I verify them?' });
     if (b.hotspots[1]) out.push({ label: `${nice(b.hotspots[1].category)[0].toUpperCase()}${nice(b.hotspots[1].category).slice(1)} breakdown`, prompt: `Break down my ${nice(b.hotspots[1].category)} emissions by record.` });

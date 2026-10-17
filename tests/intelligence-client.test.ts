@@ -97,7 +97,7 @@ describe('suggestion chips', () => {
     expect(withP[0].prompt).toContain('diesel');
     expect(labels(withP)).toContain('Next 3 months');
     expect(labels(suggestionsFor({ audience: 'scale', brief, projection: null }))).not.toContain('Next 3 months');
-    expect(labels(suggestionsFor({ audience: 'pro', brief, insights: [{ unitCostInr: { value: 9, unit: 'kwh' } }] }))).toContain('Unit cost per kwh');
+    expect(labels(suggestionsFor({ audience: 'pro', brief, insights: [{ unitCostInr: { value: 9, unit: 'kwh' } }] }))).toContain('Unit cost per kWh');
   });
   test('Pro with no records is pointed to the first upload', () => {
     expect(suggestionsFor({ audience: 'pro', brief: { basis: 'none', hotspots: [] } })[0].label).toBe('Add my first invoice');
