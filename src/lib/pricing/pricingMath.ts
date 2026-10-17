@@ -48,16 +48,16 @@ export function invoicesToSlider(n: number): number {
 // ---- Add-ons ----
 
 export type AddonCadence = 'monthly' | 'one-time' | 'per-report' | 'per-pack';
-export interface Addon { id: string; name: string; price: string; amount: number; cadence: AddonCadence; unit?: string; /** Bought directly on the profile (Top up and services). */ buyOnProfile?: boolean }
+export interface Addon { id: string; name: string; price: string; amount: number; cadence: AddonCadence; unit?: string }
 
 /** Labels and prices exactly as published; amount and cadence drive the builder. */
 export const ADDONS: Addon[] = [
-  // Prices match supabase/functions/_shared/addonPurchases.ts, which charges them.
-  { id: 'scans', name: 'Extra Invoice Scans', price: '₹79 per 100 scans', amount: 79, cadence: 'per-pack', unit: 'packs of 100 scans', buyOnProfile: true },
+  // Prices match supabase/functions/_shared/addonPurchases.ts, which charges them (bought on the profile).
+  { id: 'scans', name: 'Extra Invoice Scans', price: '₹79 per 100 scans', amount: 79, cadence: 'per-pack', unit: 'packs of 100 scans a month' },
   { id: 'dashboard', name: 'Custom Dashboard', price: '₹999/month', amount: 999, cadence: 'monthly' },
   { id: 'entities', name: 'Multi-entity Support', price: '₹1,999/month', amount: 1999, cadence: 'monthly' },
-  { id: 'audit', name: 'Expert Climate Audit', price: '₹7,999 one-time', amount: 7999, cadence: 'one-time', buyOnProfile: true },
-  { id: 'fasttrack', name: 'Fast-track Verification', price: '₹2,999 per report', amount: 2999, cadence: 'per-report', unit: 'reports, results in 24–72 hours', buyOnProfile: true },
+  { id: 'audit', name: 'Expert Climate Audit', price: '₹7,999 one-time', amount: 7999, cadence: 'one-time' },
+  { id: 'fasttrack', name: 'Fast-track Verification', price: '₹2,999 per report', amount: 2999, cadence: 'per-report', unit: 'reports' },
   { id: 'streaming', name: 'Real-time Data Streaming', price: '₹1,499/month', amount: 1499, cadence: 'monthly' },
 ];
 
@@ -65,7 +65,7 @@ export interface AddonTotals { planPerMonth: number | null; monthly: number; one
 
 /**
  * Builder totals: the chosen plan's per-month price (null for Scale, quoted),
- * recurring add-ons per month, and one-time items (scan packs are bought as needed).
+ * recurring add-ons per month (scan packs count as monthly), and one-time items.
  */
 export function addonTotals(plan: PlanTier, cycle: BillingCycle, qty: Record<string, number>): AddonTotals {
   const planPerMonth = plan === 'snapshot' ? 0 : plan === 'scale' ? null : TIER_PRICES[plan][cycle];
@@ -75,7 +75,7 @@ export function addonTotals(plan: PlanTier, cycle: BillingCycle, qty: Record<str
     const q = Math.max(0, Math.floor(qty[a.id] ?? 0));
     if (!q) continue;
     const amount = a.amount * q;
-    if (a.cadence === 'monthly') { monthly += amount; lines.push({ name: a.name, amount, when: 'a month' }); }
+    if (a.cadence === 'monthly' || a.cadence === 'per-pack') { monthly += amount; lines.push({ name: a.cadence === 'per-pack' ? `${a.name} × ${q}` : a.name, amount, when: 'a month' }); }
     else { oneTime += amount; lines.push({ name: q > 1 ? `${a.name} × ${q}` : a.name, amount, when: a.cadence === 'per-report' ? 'for those reports' : 'once' }); }
   }
   return { planPerMonth, monthly, oneTime, lines };
