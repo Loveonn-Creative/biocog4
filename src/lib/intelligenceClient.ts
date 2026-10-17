@@ -114,6 +114,9 @@ export function parseEvidence(v: unknown): Evidence | undefined {
   };
 }
 
+/** History, focused on the invoice one record came from. */
+export const historyLink = (id: string) => `/history?record=${encodeURIComponent(id)}`;
+
 /** The answer as shown: bracketed record IDs become the evidence list, so they are hidden from the prose. */
 export function displayAnswer(text: string): string {
   return text.replace(/\s?\[[0-9a-f]{8}(?:-[0-9a-f]{4}){0,3}(?:-[0-9a-f]{12})?\]/gi, '').replace(/ +([.,;:])/g, '$1');

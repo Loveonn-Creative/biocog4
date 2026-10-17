@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import type { Evidence } from '@/lib/intelligenceClient';
+import { historyLink, type Evidence } from '@/lib/intelligenceClient';
 
 const BASIS: Record<Evidence['basis'], { label: string; className: string }> = {
   verified: { label: 'Verified records', className: 'bg-primary/10 text-primary' },
@@ -16,7 +16,6 @@ export function BasisTag({ basis, className }: { basis: Evidence['basis']; class
 
 const kg = (n: number) => (n >= 1000 ? `${(n / 1000).toLocaleString('en-IN', { maximumFractionDigits: 2 })} t` : `${n.toLocaleString('en-IN', { maximumFractionDigits: 1 })} kg`);
 
-export const historyLink = (id: string) => `/history?record=${encodeURIComponent(id)}`;
 
 /** What an answer rests on: records (each opening in History), calculation, basis, projection and further reading. */
 export function AnswerReceipt({ evidence }: { evidence: Evidence }) {

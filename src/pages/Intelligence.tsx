@@ -5,7 +5,7 @@ import { SEOHead } from '@/components/SEOHead';
 import { TypingIndicator } from '@/components/chat/ChatMessage';
 import { ChatInput } from '@/components/chat/ChatInput';
 import { VoiceAgent } from '@/components/chat/VoiceAgent';
-import { AnswerReceipt, BasisTag, historyLink } from '@/components/intelligence/AnswerReceipt';
+import { AnswerReceipt, BasisTag } from '@/components/intelligence/AnswerReceipt';
 import { ContextCard, type BriefSummary } from '@/components/intelligence/ContextCard';
 import { useVoiceOutput, useVoiceInput } from '@/components/VoiceOutput';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import {
-  chatBits, chatFailure, CHAT_TIMEOUT_MS, displayAnswer, EMPTY_FAILURE, NETWORK_FAILURE, planLine, readSse, suggestionsFor, TIMEOUT_FAILURE,
+  chatBits, chatFailure, CHAT_TIMEOUT_MS, displayAnswer, historyLink, EMPTY_FAILURE, NETWORK_FAILURE, planLine, readSse, suggestionsFor, TIMEOUT_FAILURE,
   type Audience, type ChatFailure, type Evidence, type Suggestion,
 } from '@/lib/intelligenceClient';
 import { limitSentence } from '../../supabase/functions/_shared/intelligence';

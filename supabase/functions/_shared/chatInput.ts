@@ -39,6 +39,7 @@ export function stripClientEvidence(content: string): string {
     .join('\n')
     .replace(RECORD_ID_RE, '')
     .replace(/[ \t]{2,}/g, ' ')
+    .replace(/ +([.,;:])/g, '$1')
     .trim();
 }
 

@@ -21,13 +21,13 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 const mon = (ym: string) => MONTHS[Number(ym.slice(5, 7)) - 1] ?? ym;
 
 /** "Apr to Oct" in one year, "Nov 2025 to Oct 2026" across years. */
-export function periodText(first: string | null, last: string | null): string {
+function periodText(first: string | null, last: string | null): string {
   if (!first || !last) return '';
   if (first === last) return `${mon(first)} ${first.slice(0, 4)}`;
   return first.slice(0, 4) === last.slice(0, 4) ? `${mon(first)} to ${mon(last)}` : `${mon(first)} ${first.slice(0, 4)} to ${mon(last)} ${last.slice(0, 4)}`;
 }
 
-export const tonnes = (kg: number) => `${(kg / 1000).toLocaleString('en-IN', { maximumFractionDigits: kg < 10000 ? 2 : 1 })} t`;
+const tonnes = (kg: number) => `${(kg / 1000).toLocaleString('en-IN', { maximumFractionDigits: kg < 10000 ? 2 : 1 })} t`;
 
 /** What answers on this plan rest on: the person's own records, their insights, or a labelled sample. */
 export function ContextCard({ data, className = '' }: { data: ContextBrief; className?: string }) {
