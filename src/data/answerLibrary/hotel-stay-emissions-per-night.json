@@ -1,0 +1,77 @@
+{
+  "slug": "hotel-stay-emissions-per-night",
+  "q": "How do I calculate emissions from hotel stays on business trips?",
+  "title": "Hotel stay emissions per room night",
+  "short": "Multiply the room nights by a hotel emission factor for the country of stay, given in kg CO2e per room per night. The UK government conversion factors publish one for India and many other countries. Count rooms, not guests, and report the result in Scope 3 Category 6, business travel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Finance and admin teams",
+  "sections": [
+    {
+      "h": "Are hotel stays required in Category 6?",
+      "p": [
+        "The GHG Protocol Scope 3 Standard sets the minimum boundary of Category 6 as the transport of employees on business trips. Emissions from hotel stays are optional. Many buyers and questionnaires still ask for them, so include them when travel is a visible part of your business, and say in your method note that you did."
+      ]
+    },
+    {
+      "h": "How to count room nights",
+      "ul": [
+        "Take the nights from the hotel's tax invoice or your travel agency's report. The invoice usually shows the number of nights and the room tariff apart from food and other charges.",
+        "Two colleagues sharing one room is one room night, not two.",
+        "Keep a separate count for each country, because the factor changes by country.",
+        "A flat your company leases for a long deputation is not a hotel stay. Treat it under your rules for leased assets."
+      ]
+    },
+    {
+      "h": "Choosing the factor",
+      "p": [
+        "The UK government (DESNZ) conversion factors include a hotel stay table in kg CO2e per room per night by country, including India, the UK, the US and EU countries. Use the edition that matches your reporting year and name it. Values differ by country because grid electricity and hotel energy use differ.",
+        "These factors come from benchmark data on a sample of hotels, so treat them as averages. If a hotel gives you its own figure per room night, you may use it, and record where it came from."
+      ]
+    },
+    {
+      "h": "When you only have the spend",
+      "p": [
+        "If you know only what you paid, a spend-based estimate in kg CO2e per rupee is possible, but its uncertainty is much wider than a room night method. Prefer counting nights from invoices, and do not mix both methods for the same stays."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of travel for a 40 person IT firm",
+    "lines": [
+      "Room nights: 120 in India, 30 on deputation in Germany",
+      "Factors (illustrative only, not DESNZ values): India 50, Germany 15 kg CO2e per room night",
+      "India: 120 x 50 = 6,000 kg CO2e",
+      "Germany: 30 x 15 = 450 kg CO2e",
+      "Total hotel stays: 6,450 kg CO2e, about 6.5 tonnes, reported in Category 6"
+    ],
+    "note": "Replace the illustrative factors with the country values from the DESNZ edition you use."
+  },
+  "senseible": "Senseible reads hotel tax invoices and keeps them in its Scope 3 supplier evidence trail, each file with a SHA-256 fingerprint. Where only the amount is known, Senseible can provide a spend-based estimate, labelled as spend-based with wider uncertainty; the automatic reader does not apply spend factors on its own.",
+  "links": [
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Company cars and taxis: which scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category?",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting, hotel stay tables and methodology paper",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance (2013), Category 6",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "DESNZ publishes a new edition of its conversion factors each year; hotel values change between editions."
+}

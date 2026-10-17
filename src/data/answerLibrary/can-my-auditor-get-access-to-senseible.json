@@ -1,0 +1,47 @@
+{
+  "slug": "can-my-auditor-get-access-to-senseible",
+  "q": "Can I give my auditor or verifier read-only access to my Senseible records?",
+  "title": "Give your auditor access to Senseible",
+  "short": "Yes. The owner or an admin of your organisation workspace can invite the auditor with the Viewer role, which reads records and reports and changes nothing. If the auditor should also mark records as verified and build reports, use the Carbon auditor role, which still cannot add or change invoices.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSMEs preparing for buyer audits, BRSR assessment or green loan checks",
+  "sections": [
+    {
+      "h": "Viewer or Carbon auditor: which role to give",
+      "ul": [
+        "Viewer: reads records and reports. Cannot upload, correct, remove or verify anything. Use it for a reviewer who only needs to look.",
+        "Carbon auditor: views records, runs verification and creates reports. Cannot add or change invoices, so the person checking cannot alter what is being checked.",
+        "Neither role can invite members, change roles or edit the organisation profile; only the owner and admins can."
+      ]
+    },
+    {
+      "h": "How access works",
+      "ol": [
+        "Your records need to sit in an organisation workspace, not a personal one. The auditor sees the records of that workspace only.",
+        "The owner or an admin invites the auditor by email and picks the role.",
+        "When the audit ends, the owner or an admin removes the member or changes the role."
+      ],
+      "p": [
+        "Seats come from the owner's plan: one team member on Snapshot, three on Essential, ten on Pro, and as quoted on Scale. The owner takes one seat, and the auditor and any pending invitation each take one, so on Snapshot there is no seat left to invite an auditor."
+      ]
+    },
+    {
+      "h": "Keeping the audit clean",
+      "p": [
+        "Separate who adds data from who checks it. An Analyst can add invoices and build reports but cannot verify, so a second person, such as a Carbon auditor or data manager, checks the numbers. A Verified status records that the rule checks passed. Any assurance opinion is the outside auditor's own, issued separately."
+      ]
+    }
+  ],
+  "senseible": "This page describes Senseible's own team roles. If you prefer not to add the auditor as a member, share the exported report and audit trail instead.",
+  "links": [
+    { "label": "What auditors see in Senseible reports", "to": "/answers/auditors-and-senseible-reports" },
+    { "label": "How Senseible protects your data", "to": "/answers/senseible-data-protection" },
+    { "label": "Senseible pricing", "to": "/pricing" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard, Chapter 10, verification of GHG emissions", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Roles and seat counts match the live code and pricing page on 17 October 2026; recheck if team roles change."
+}

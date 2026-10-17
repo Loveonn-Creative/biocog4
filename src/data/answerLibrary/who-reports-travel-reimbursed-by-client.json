@@ -1,0 +1,79 @@
+{
+  "slug": "who-reports-travel-reimbursed-by-client",
+  "q": "If a client reimburses our staff travel, is it our Scope 3 Category 6 or the client's?",
+  "title": "Client-reimbursed travel: whose Scope 3?",
+  "short": "It is your Category 6. Business travel is counted by the company whose employees travel, whoever pays in the end. The client may also count the same trip in its Scope 3, usually Category 1, as part of the service it buys from you. Both entries are allowed; neither company puts it in Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "IT and BPO firms, consultancies and inspection agencies",
+  "sections": [
+    {
+      "h": "Why payment does not decide the category",
+      "p": [
+        "The GHG Protocol Scope 3 Standard defines Category 6 as the transport of the reporting company's employees for business, in vehicles it does not own or operate. The test is whose employees travel. A reimbursement is a commercial term between you and the client: it moves the cost, not the emissions. The same applies when the travel is billed as a separate line on your invoice or built into a day rate."
+      ]
+    },
+    {
+      "h": "How the client sees the same trip",
+      "p": [
+        "For the client, your consultant's flight is part of the service it purchased. It can include it in Category 1, purchased goods and services, either through your supplier-specific figures or through a spend-based factor on your invoice. Two companies reporting the same tonnes in their Scope 3 is normal; Scope 3 overlaps by design. Double counting is a problem only inside one company's own total."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "The client books and pays the airline directly: your staff still travelled, so it stays in your Category 6. The client may record it as a purchased service.",
+        "Your staff drive their own cars and claim mileage: Category 6 for you.",
+        "Your staff travel in a car your company owns or leases and operates: that fuel is your Scope 1, not Category 6.",
+        "Hotel nights on the trip: the standard lets you include them in Category 6 as an option; say whether you did.",
+        "Staff posted at the client's site for months: their daily travel to that site is commuting, Category 7, and the site's electricity is the client's own Scope 2."
+      ]
+    },
+    {
+      "h": "What to tell the client",
+      "p": [
+        "If the client asks for travel emissions on its account, send the trips, distances, modes and the factor source, and say that the same tonnes sit in your Category 6. That lets the client add them to its Category 1 without guessing, and lets its auditor see the link."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a reimbursed site visit by road",
+    "lines": [
+      "An engineer drives their own petrol car 600 km to a client plant and back; the client reimburses mileage",
+      "Fuel use at an assumed 15 km per litre: 600 / 15 = 40 L",
+      "Emissions: 40 x 2.31 kg CO2 per litre (IPCC 2006 petrol default) = 92.4 kg CO2",
+      "Your report: 92.4 kg CO2 in Category 6. The client may show the same 92.4 kg in its Category 1"
+    ],
+    "note": "Fuel economy is an assumption; use fuel receipts where the claim includes them."
+  },
+  "senseible": "Senseible reads fuel slips into litres and applies the IPCC 2006 factors, such as 2.31 kg CO2 per litre of petrol. Fuel lines are filed as Scope 1 fuels, so keep slips from staff-owned cars apart and report them as Category 6. Which company reports the trip in which category stays a judgement for you and your client.",
+  "links": [
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Business car travel: which scope?",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Categories 1, 6 and 7",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 6",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

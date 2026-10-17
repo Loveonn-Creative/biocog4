@@ -1,0 +1,78 @@
+{
+  "slug": "train-travel-emissions-factor-india",
+  "q": "What emission factor should I use for business travel by Indian Railways?",
+  "title": "Emission factor for train travel in India",
+  "short": "Use the India GHG Program's India Specific Rail Transport Emission Factors for passenger travel, in kg CO2 per passenger-km, times the rail distance each traveller covers. The factors date from 2015, before most of Indian Railways was electrified, so state the vintage and expect them to overstate today's emissions.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Finance and admin teams logging staff travel in India",
+  "sections": [
+    {
+      "h": "Why an India factor rather than a UK or global one",
+      "p": [
+        "Train emissions per passenger depend on traction (electric or diesel), the grid behind the electric trains, and how full the coaches run. UK conversion factors reflect British trains and the British grid, so they do not describe Indian Railways. The India GHG Program factors were built from Indian Railways data and are the published India-specific set, which an auditor can open and check."
+      ]
+    },
+    {
+      "h": "Match the factor to the trip, and record the class anyway",
+      "p": [
+        "Open the table and use the passenger factor for the type of service travelled, such as a long-distance train rather than a suburban one, if the table splits them. Do not assume it has a value per class: if it gives one average per passenger-km, apply that to every class and say so in the method note. AC coaches carry fewer passengers and use power for cooling, so an average is likely to understate an AC trip. Record the class on every ticket all the same, so you can switch to class factors if an official set appears. Use one table edition for the whole reporting year."
+      ]
+    },
+    {
+      "h": "How old the factor is, and what to say about it",
+      "ul": [
+        "The factors were published in 2015. Since then most of the broad gauge network has moved to electric traction, which generally cuts emissions per passenger-km against diesel.",
+        "Using the 2015 values therefore errs on the high side. That is acceptable for business travel, which is usually a small part of Scope 3, as long as you say so.",
+        "Write the source, year and service type in the method note, for example: India GHG Program rail passenger factors (2015), non-suburban.",
+        "If a newer official India factor is published, switch to it from that year and note the change."
+      ]
+    },
+    {
+      "h": "The calculation and the records to keep",
+      "ol": [
+        "Passenger-km = rail distance between the two stations x number of travellers x number of legs. The e-ticket or the railway's distance for the station pair gives the km.",
+        "Emissions = passenger-km x the factor for that class.",
+        "Report it as Scope 3 Category 6, business travel, next to flights and taxis.",
+        "Keep the ticket or travel agent invoice as evidence; a rupee total alone does not give distance or class."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Delhi to Mumbai and back, two staff (illustrative factor)",
+    "lines": [
+      "Rail distance New Delhi to Mumbai Central: about 1,385 km",
+      "Passenger-km: 1,385 x 2 legs x 2 travellers = 5,540 passenger-km",
+      "Illustrative factor: 0.008 kg CO2 per passenger-km (an illustration, not the India GHG Program value)",
+      "5,540 x 0.008 = 44.3 kg CO2"
+    ],
+    "note": "Replace the illustrative factor with the India GHG Program value for the service travelled. Even several times higher, the trip is a small fraction of the same journey by air."
+  },
+  "senseible": "Senseible keeps train tickets and travel agent invoices you upload as Scope 3 evidence with their source files. The rail figure itself comes from the distance, class and factor described above.",
+  "links": [
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Business car travel: which scope",
+      "to": "/answers/business-car-travel-which-scope"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "India GHG Program (WRI India, CII, TERI), India Specific Rail Transport Emission Factors for Passenger Travel and Material Transport (2015)",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 6, distance-based method",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The India rail factors date from 2015; check for a newer official edition before each reporting year."
+}

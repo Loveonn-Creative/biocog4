@@ -1,0 +1,63 @@
+{
+  "slug": "work-from-home-emissions-category-7",
+  "q": "Should work-from-home emissions be counted in Scope 3 Category 7?",
+  "title": "Work from home in Scope 3 Category 7",
+  "short": "Yes, if you count them at all, work-from-home emissions go in Scope 3 Category 7, employee commuting. The GHG Protocol makes them optional. Include them when hybrid work is a large share of your days, or when you report lower commuting from hybrid work, so the saving is not overstated.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian IT services firms and offices with hybrid policies",
+  "sections": [
+    {
+      "h": "Why it is Category 7 and not Scope 2",
+      "p": [
+        "The GHG Protocol Scope 3 Standard says companies may include emissions from employees teleworking in Category 7. Scope 2 covers electricity the company buys for sites in its own boundary. A home is not in your boundary and the bill is the employee's, so even if you pay a home internet or electricity allowance, the emissions stay in Scope 3."
+      ]
+    },
+    {
+      "h": "When to include it",
+      "ul": [
+        "You report a fall in commuting emissions because staff come in fewer days. Leaving out the home side makes the drop look larger than it is.",
+        "A large share of working days are remote, as in many IT and BPO firms, so Category 7 would be incomplete without it.",
+        "A client, investor or rating questionnaire asks for remote work emissions by name.",
+        "You are setting a target that covers Category 7 and want the boundary fixed from the base year."
+      ]
+    },
+    {
+      "h": "When leaving it out is defensible",
+      "p": [
+        "If few days are remote, or a screening estimate shows the figure is a small fraction of total Scope 3, you can leave it out. Say so in the methodology note: teleworking excluded, the reason, and the screening figure. Apply the same choice every year so the trend stays comparable."
+      ]
+    },
+    {
+      "h": "What does not belong here",
+      "ul": [
+        "Business trips, hotel stays and client visits: Category 6.",
+        "A coworking desk or satellite office the company rents: report it as leased space or a purchased service, not as telework, and state which.",
+        "Laptops and furniture the company buys for home use: Category 1 or 2, depending on how you treat capital goods."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one remote day against one office day (assumptions labelled)",
+    "lines": [
+      "Office day by car, 20 km round trip at 0.154 kg CO2 per km (petrol car at 15 km per litre): 20 x 0.154 = 3.08 kg CO2",
+      "Home day without AC, about 1.16 kWh: 1.16 x 0.710 = 0.82 kg CO2",
+      "Home day with a 1.2 kW AC for 6 hours, 1.16 + 7.2 = 8.36 kWh: 8.36 x 0.710 = 5.94 kg CO2",
+      "Without AC the remote day saves about 2.3 kg; with AC it emits about 2.9 kg more than the drive"
+    ],
+    "note": "The car economy, home load and AC hours are assumptions. The point is that counting only the avoided commute can show a saving that is not there in summer."
+  },
+  "senseible": "Senseible records the electricity and fuel bills of your own sites. Home electricity of remote staff is not on your bills, so a teleworking estimate is something you calculate and add to your Scope 3 notes.",
+  "links": [
+    { "label": "Can we exclude a Scope 3 category", "to": "/answers/can-we-exclude-a-scope-3-category" },
+    { "label": "Estimate work-from-home emissions", "to": "/answers/work-from-home-emissions-calculation" },
+    { "label": "Commuting emissions from a staff survey", "to": "/answers/employee-commuting-emissions-survey" },
+    { "label": "Scope 3 categories for IT services", "to": "/answers/which-scope-3-categories-matter-for-it-services" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 7, employee commuting", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 7", "url": "https://ghgprotocol.org/standards" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "regenerative-agriculture-scope-3-claims",
+  "q": "Can a food company count regenerative agriculture in its Scope 3 reductions?",
+  "title": "Regenerative farming in your Scope 3",
+  "short": "Yes, if you can trace what you buy to the farms that changed practice and use their own data. Lower fertiliser, diesel or rice methane can cut your Scope 3 Category 1 figure. Soil carbon gains are reported separately as removals, need ongoing monitoring, and cannot also be sold as credits.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Food and agri exporters with farmer sourcing programmes",
+  "sections": [
+    {
+      "h": "Reductions and removals are two different claims",
+      "ul": [
+        "Emission reductions: less nitrous oxide from better fertiliser use, less methane from alternate wetting and drying in rice, less diesel in field operations. These lower the emission factor of the crop you buy, so your Category 1 total falls.",
+        "Removals: extra carbon stored in soil or trees on the farm. Under the GHG Protocol Land Sector and Removals Standard these are reported as a separate line, not netted against emissions, and only with ongoing storage monitoring. If the carbon is later lost, the loss is reported as an emission.",
+        "Keep the two apart in your report. A buyer or verifier will ask which part of the change is which."
+      ]
+    },
+    {
+      "h": "Tests to pass before you count anything",
+      "ol": [
+        "Traceability: the crop you bought came from the enrolled farms or a defined sourcing region the programme covers. For removals, the Land Sector and Removals Standard requires physical traceability to at least the sourcing region. Buying from a trader's mixed pool with no link to those farms does not qualify.",
+        "Primary data: practice and input records for those farms, such as fertiliser applied per hectare, diesel used, irrigation pattern, and soil samples for any soil carbon claim.",
+        "Same method both years: the baseline and the reporting year use the same calculation method and factors, so the change is real and not a method switch.",
+        "Your share only: you claim the part of the farms' change that matches your share of their output.",
+        "No double claim: if the same tonnes were issued and sold as carbon credits, you cannot also count them in your inventory."
+      ]
+    },
+    {
+      "h": "How this fits an SBTi FLAG target",
+      "p": [
+        "Companies with an SBTi FLAG target track land emissions, including fertiliser, rice methane and land use change in the supply chain, against a separate FLAG pathway. Removals inside your own value chain can count toward that target when they meet the measurement and monitoring rules. Carbon credits bought from outside the value chain do not count toward the target."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "p": [
+        "Count reductions when you have traceability and farm-level records for the same season you bought from. Report soil carbon as removals only if a sampling and monitoring plan is in place for years ahead. Where you have neither, describe the programme in words and keep your Scope 3 figure on the average crop factor; that is honest and still useful to a buyer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: fertiliser cut on enrolled wheat farms (illustrative)",
+    "lines": [
+      "Enrolled area: 500 ha; nitrogen cut by 20 kg N per ha, so 500 x 20 = 10,000 kg N less",
+      "Direct N2O avoided: 10,000 x 0.01 (IPCC 2006 default, kg N2O-N per kg N) x 44/28 = 157.1 kg N2O",
+      "In CO2e: 157.1 x 273 (AR6 GWP of N2O) = 42,900 kg, about 42.9 t CO2e",
+      "You buy 60% of these farms' wheat: 42.9 x 0.60 = 25.7 t CO2e off your Category 1"
+    ],
+    "note": "Direct soil N2O only; indirect N2O from leaching and volatilisation and the avoided emissions from making the fertiliser would add to this. For flooded rice the IPCC 2006 default is 0.003, not 0.01, so the same cut there gives about 7.7 t CO2e. Area and nitrogen cut are assumptions for the arithmetic."
+  },
+  "senseible": "Senseible reads diesel and other fuel invoices into documented emissions and keeps purchase lines such as fertiliser in a supplier evidence trail, records a farm programme can use as activity data. Soil sampling and the removals claim sit with the programme and its verifier.",
+  "links": [
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    },
+    {
+      "label": "Do you need an SBTi FLAG target?",
+      "to": "/answers/does-my-company-need-sbti-flag-target"
+    },
+    {
+      "label": "Rice procurement Scope 3 emissions",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Land Sector and Removals Standard v1.1 (June 2026, effective 1 January 2027)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance (2022)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 4, Chapter 11 (N2O from managed soils)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Land Sector and Removals Standard takes effect on 1 January 2027 and SBTi is revising its standards; re-check both before a claim is published."
+}

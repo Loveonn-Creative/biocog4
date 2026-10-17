@@ -1,0 +1,80 @@
+{
+  "slug": "zero-waste-to-landfill-certification-criteria",
+  "q": "What diversion rate do zero waste to landfill certifications require?",
+  "title": "Zero waste to landfill: diversion rates",
+  "short": "The main schemes start at 90% diversion by weight. UL 2799 grades a site Silver at 90 to 94%, Gold at 95 to 99% and Platinum at 100%. TRUE certification also needs 90% or more, but it counts waste sent to incineration, including waste-to-energy, as not diverted.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters asked by buyers for zero waste to landfill claims",
+  "sections": [
+    {
+      "h": "How the diversion rate is calculated",
+      "p": [
+        "Diversion rate = waste diverted from landfill / total waste generated x 100, by weight, over a 12 month period. Reuse, recycling and composting count as diverted in every scheme. Open dumping and burning without energy recovery never count. Energy recovery is where schemes differ."
+      ]
+    },
+    {
+      "h": "UL 2799 and TRUE side by side",
+      "ul": [
+        "UL 2799 (UL Solutions, Environmental Claim Validation Procedure for Zero Waste to Landfill): a validated claim with tiers at 90%, 95% and 100%. Energy recovery can count towards diversion, and the validation states how much of the waste went that way.",
+        "TRUE (run by GBCI): certification for facilities that divert 90% or more of waste from landfill, incineration and the environment, scored on a points system. Waste-to-energy does not count as diverted.",
+        "A buyer asking for zero waste to landfill usually names one of these. Ask which, because the same site can pass one and fail the other."
+      ]
+    },
+    {
+      "h": "Indian waste streams that often break the claim",
+      "ul": [
+        "Hazardous waste sent to a TSDF for secure landfill under the Hazardous and Other Wastes Rules, 2016 counts as landfilled.",
+        "ETP sludge from textile and chemical units often goes to the same secure landfill.",
+        "Co-processing in cement kilns: check how your scheme treats it before you rely on it.",
+        "Scrap sold to small dealers without weight slips or invoices, and municipal pickup with no record of where it went, are hard to prove as diverted."
+      ]
+    },
+    {
+      "h": "Evidence a validator asks for",
+      "ul": [
+        "Weighbridge slips or weighed records for every stream, for the full 12 months.",
+        "Recycler and compost buyer invoices showing weights.",
+        "Form 10 manifests for hazardous waste movements.",
+        "Authorisation or registration of the recyclers and processors you use, issued by the State Pollution Control Board or CPCB."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one site, one year, two schemes",
+    "lines": [
+      "Total waste: 400 tonnes. Recycled 330, composted 30, waste-to-energy 25, landfilled 15",
+      "Counting energy recovery as diverted: (330 + 30 + 25) / 400 = 385 / 400 = 96.25%, in the 95 to 99% tier",
+      "Not counting energy recovery: (330 + 30) / 400 = 360 / 400 = 90%, just at the TRUE threshold",
+      "Moving the 15 tonnes of landfill to recycling would give 100% on the first basis and 93.75% on the second"
+    ],
+    "note": "Figures are illustrative. Hazardous waste sent to a secure landfill belongs in the landfilled total."
+  },
+  "senseible": "Senseible keeps waste contractor invoices in its Scope 3 supplier evidence trail with a SHA-256 fingerprint per file, which helps when a validator asks for disposal records. The diversion audit and the zero waste claim itself come from the scheme's validator.",
+  "links": [
+    {
+      "label": "Waste emissions: Scope 3 Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Hazardous waste from manifests",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    },
+    {
+      "label": "Circular economy and waste",
+      "to": "/circular-economy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 (CPCB)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "Solid Waste Management Rules, 2026 (MoEFCC), in force from 1 April 2026, replacing the 2016 Rules",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "UL 2799 and TRUE revise their criteria; confirm the current edition, especially how each treats waste-to-energy and co-processing."
+}

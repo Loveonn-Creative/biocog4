@@ -1,0 +1,66 @@
+{
+  "slug": "what-happens-when-senseible-plan-expires",
+  "q": "What happens to my Senseible records if my paid plan expires or I cancel?",
+  "title": "When a Senseible plan expires",
+  "short": "Your records stay. When a paid Senseible plan ends, it stays in force for 7 more days so you can renew. After that the account moves to the free Snapshot plan: your invoices, emission records and reports remain saved on the server, and only the paid allowances stop.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Paying Senseible users and prospects checking for lock-in",
+  "sections": [
+    {
+      "h": "The 7 days after the paid period ends",
+      "p": [
+        "The plan you paid for, Essential or Pro, keeps working for 7 days after its paid period ends. This covers a renewal paid a few days late. During those days the account is told when access will change."
+      ]
+    },
+    {
+      "h": "After the 7 days: Snapshot",
+      "ul": [
+        "The account falls back to Snapshot, the free plan.",
+        "New invoice reads drop to Snapshot's allowance of 10 a month.",
+        "The paid plan's allowances stop, and Snapshot's features apply until you renew.",
+        "Nothing you already uploaded is deleted because the plan lapsed: documents, emission lines, verification status and earlier reports are kept."
+      ]
+    },
+    {
+      "h": "Credits and add-ons you bought",
+      "p": [
+        "Extra Invoice Scans (₹79 per 100 scans, before GST, bought on your profile) keep their own validity: 12 months when bought on a yearly plan, 30 days otherwise. A lapsed plan does not cancel scans that are still valid. Fast-track Verification and the Expert Climate Audit are paid per report or once, not tied to the subscription."
+      ]
+    },
+    {
+      "h": "Renewing",
+      "p": [
+        "Pay for a plan again from the pricing page and its allowances come back on the same account, with your history in place. There is no re-upload and no new account. Keeping that history matters: the GHG Protocol Corporate Standard expects you to compare each year against a base year you can recalculate from the original records.",
+        "Refund terms for cancelled subscriptions are set out in the Refund and Cancellation Policy."
+      ]
+    }
+  ],
+  "senseible": "This page describes how Senseible plans behave: a 7-day period after a paid plan ends, then the free Snapshot plan, with your records kept on the server. For a specific billing question, write to the Senseible team.",
+  "links": [
+    {
+      "label": "Senseible pricing",
+      "to": "/answers/senseible-pricing"
+    },
+    {
+      "label": "Senseible free plan",
+      "to": "/answers/senseible-free-plan"
+    },
+    {
+      "label": "Refund and Cancellation Policy",
+      "to": "/legal/refund"
+    },
+    {
+      "label": "Plans and add-ons",
+      "to": "/pricing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (base year and record keeping)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Plan terms can change; re-check the grace period, Snapshot allowance and credit validity against the live pricing page."
+}

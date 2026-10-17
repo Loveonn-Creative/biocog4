@@ -1,0 +1,90 @@
+{
+  "slug": "equipment-lessor-category-13",
+  "q": "We rent out generators or construction equipment. Do we report the fuel our customers burn in them?",
+  "title": "Renting out generators: Category 13?",
+  "short": "Usually yes. If customers run your generators or machines and buy the fuel, that fuel is your Scope 3 Category 13, downstream leased assets, under the operational control approach. If your own crew runs the machine and you supply the diesel, it is your Scope 1. Never report the same litres in both.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Equipment rental firms in India, South Africa, Pakistan",
+  "sections": [
+    {
+      "h": "Decide by who runs the machine",
+      "ul": [
+        "Dry hire, operational control approach: the customer operates the set or excavator and buys the fuel. Category 13 for you, Scope 1 for the customer.",
+        "Wet hire: you send the operator and supply the diesel. You control the operation, so the fuel is your Scope 1.",
+        "Your operator, customer's fuel: your crew still runs the machine, so most firms treat it as their Scope 1. Write down your reasoning and apply it to every contract.",
+        "Financial control or equity share with an operating lease: the GHG Protocol treats the leased asset as yours, so the fuel moves to your Scope 1.",
+        "Finance lease: the customer holds control and economic ownership, so Category 13 under any approach."
+      ]
+    },
+    {
+      "h": "Is Category 13 required for a rental business?",
+      "p": [
+        "Scope 3 categories are reported when relevant. For a firm whose revenue comes from renting fuel-burning equipment, customer fuel is often its largest Scope 3 source, so leaving it out needs a written reason. The minimum boundary is the Scope 1 and 2 emissions from operating the leased asset during the lease, which for a generator or excavator is mainly fuel combustion."
+      ]
+    },
+    {
+      "h": "Where the fuel figure comes from, best first",
+      "ol": [
+        "Litres you refuel on return and bill to the customer.",
+        "Fuel records the customer shares under the contract.",
+        "Run hours from hour meters or telematics x fuel use per hour at typical load from the maker's data.",
+        "Rental days x assumed hours per day x litres per hour, labelled as an estimate."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Testing and idling in your own yard: your Scope 1, not Category 13.",
+        "The customer also reports this fuel as its Scope 1. That overlap between two companies is expected; double counting means counting the same litres twice inside your own inventory.",
+        "Long leases with the customer in full charge stay in Category 13 for the whole term.",
+        "Methane and nitrous oxide from diesel engines add a little on top of CO2; include them if you report in CO2e."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fleet of 10 rented generator sets for one year",
+    "lines": [
+      "Hour meters show 4,800 run hours across the fleet on dry hire",
+      "Fuel use: 15 litres per hour at typical load, from the maker's datasheet (an estimate)",
+      "4,800 x 15 = 72,000 litres",
+      "72,000 x 2.68 kg CO2 per litre = 1,92,960 kg CO2, about 193 tonnes, reported in Category 13",
+      "Diesel burnt in yard testing, 600 litres: 600 x 2.68 = 1,608 kg CO2 in your Scope 1"
+    ],
+    "note": "Run hours and fuel use are illustrative. 2.68 kg CO2 per litre is the IPCC 2006 default for diesel. Replace the 15 litres per hour with your refuelling records wherever you have them."
+  },
+  "senseible": "Senseible reads diesel invoices and refuelling slips in litres and counts diesel at 2.68 kg CO2 per litre as Scope 1. Moving litres that customers burned into Category 13 follows your boundary approach and is your decision.",
+  "links": [
+    {
+      "label": "Rented diesel generator: which scope",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    },
+    {
+      "label": "Leasing out sheds: Category 13",
+      "to": "/answers/landlord-reporting-tenant-emissions-industrial-sheds"
+    },
+    {
+      "label": "Diesel generator fuel use per kWh",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 13",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Appendix F on leased assets",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

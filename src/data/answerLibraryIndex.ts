@@ -211,6 +211,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "brsr-sustainability-committee-question",
+  "q": "Does BRSR require a board sustainability committee?",
+  "title": "BRSR and a board sustainability committee",
+  "short": "No. BRSR does not make a board sustainability committee mandatory. It asks you to name the highest authority responsible for your business responsibility policies and to answer Yes or No on whether a board committee or director is responsible for sustainability decisions, with details if Yes. A No is allowed, but investors will see it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "brsr-value-chain-data-request-msme-supplier",
   "q": "My listed customer asked for BRSR value chain data. Am I required to give it, and what do they need from an MSME supplier?",
   "title": "BRSR value chain data from MSME suppliers",
@@ -361,6 +369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, and it is usually better than an average factor, provided it fits your footprint. Check that it covers cradle to the supplier's gate, uses the same allocation and GWP rules as yours, refers to the same unit you buy, and is recent. Then multiply it by the quantity you use per unit of your product.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "can-my-auditor-get-access-to-senseible",
+  "q": "Can I give my auditor or verifier read-only access to my Senseible records?",
+  "title": "Give your auditor access to Senseible",
+  "short": "Yes. The owner or an admin of your organisation workspace can invite the auditor with the Viewer role, which reads records and reports and changes nothing. If the auditor should also mark records as verified and build reports, use the Carbon auditor role, which still cannot add or change invoices.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "can-non-eu-exporter-be-cbam-declarant-ddp",
@@ -827,6 +843,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "depreciation-on-solar-and-energy-saving-equipment",
+  "q": "What depreciation can an Indian business claim on rooftop solar and energy-saving equipment?",
+  "title": "Depreciation on solar and energy savers",
+  "short": "Under the Income-tax Rules, 1962 depreciation table, rooftop solar and listed energy-saving devices are depreciated at 40% a year on written down value, against 15% for general plant. Manufacturers on the old regime could add 20% additional depreciation in year one. For assets bought from April 2026, confirm both in the Income-tax Act, 2025 schedule.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "desalinated-water-carbon-footprint",
   "q": "What is the carbon footprint of using desalinated water in a factory?",
   "title": "Carbon footprint of desalinated water",
@@ -1075,12 +1099,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "does-tnfd-apply-to-indian-companies",
+  "q": "Does TNFD apply to Indian companies, and how does it relate to BRSR?",
+  "title": "Does TNFD apply to Indian companies?",
+  "short": "No Indian law or SEBI rule makes TNFD mandatory today. It reaches Indian companies through investors and buyers who have adopted it and ask for nature data. A listed company filing BRSR already reports several of the same facts, such as sites near ecologically sensitive areas, water withdrawal and waste.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "double-materiality-vs-financial-materiality",
   "q": "What is the difference between double materiality (CSRD) and financial materiality (ISSB, IFRS S2)?",
   "title": "Double vs financial materiality",
   "short": "Financial materiality, used by the ISSB in IFRS S1 and S2, asks how sustainability matters affect the company's cash flows, finance and cost of capital. Double materiality, used by CSRD through ESRS, adds a second test: the company's impact on people and the environment. A topic is reported if it passes either test.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "downstream-warehousing-category-9",
+  "q": "Do I have to count my distributor's warehouse and retail storage in my Scope 3?",
+  "title": "Distributor storage in Scope 3 Category 9",
+  "short": "Yes, when it is relevant. Category 9 covers storage of your sold products in warehouses, distribution centres and shops you do not own, control or pay for. Storage you pay a third party for goes in Category 4 instead. It matters most for chilled and frozen products that sit in refrigerated rooms and coolers.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "dual-fuel-dg-set-gas-kit-emissions-saving",
@@ -1137,6 +1177,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, in principle. Small-scale CDM methods AMS-II.C and AMS-II.D cover efficient equipment and industrial efficiency projects. In practice a single MSME upgrade saves too few tonnes to pay for validation and verification, so these projects usually earn credits only when many sites are grouped under one programme with clean before and after records.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "equipment-lessor-category-13",
+  "q": "We rent out generators or construction equipment. Do we report the fuel our customers burn in them?",
+  "title": "Renting out generators: Category 13?",
+  "short": "Usually yes. If customers run your generators or machines and buy the fuel, that fuel is your Scope 3 Category 13, downstream leased assets, under the operational control approach. If your own crew runs the machine and you supply the diesel, it is your Scope 1. Never report the same litres in both.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "equity-stake-in-joint-venture-scope-3",
+  "q": "We hold a 26% stake in a joint venture we don't control. How do we report its emissions?",
+  "title": "Reporting a 26% stake in a joint venture",
+  "short": "If your group uses a control approach, report 26% of the joint venture's Scope 1 and 2 emissions in Scope 3 Category 15, investments. If your group uses the equity share approach, the same 26% goes into your own Scope 1 and 2 instead. Never count it in both places.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "estimate-refrigerant-leakage-without-records",
@@ -1347,6 +1403,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "franchisor-scope-3-category-14-data-collection",
+  "q": "How does a franchisor collect franchisee electricity and fuel data for Category 14 without seeing their accounts?",
+  "title": "Franchisee energy data for Category 14",
+  "short": "Ask each franchisee for activity figures only: kWh from electricity bills and litres or kilograms of fuel, by month and outlet. You do not need their ledgers, costs or bank records. Where some outlets do not report, estimate them from the average of those that did, and label that part as estimated.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "free-climate-hazard-data-india-factory",
   "q": "Where can I get free climate hazard data for a factory location in India?",
   "title": "Free climate hazard data for Indian sites",
@@ -1393,6 +1457,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "About 27% less CO2 for the same fuel energy, from IPCC 2006 defaults of 77.4 kg CO2 per GJ for furnace oil and 56.1 kg for natural gas. A more efficient boiler saves more per unit of steam: about 32% in an illustrative case of 80% rising to 85%. Confirm with fuel bills before and after.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "garment-end-of-life-emissions-eu-market",
+  "q": "How should a garment exporter estimate end-of-life emissions for clothing sold in the EU?",
+  "title": "End-of-life emissions of garments in the EU",
+  "short": "Take the tonnes of garments you ship to the EU, split them by fibre, apply an EU disposal mix (incineration, landfill, collection for reuse or recycling), and multiply each share by a route factor. Report it as Scope 3 Category 12 and label the disposal mix as an estimate.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "ghg-inventory-uncertainty-calculation",
@@ -1577,6 +1649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "hotel-stay-emissions-per-night",
+  "q": "How do I calculate emissions from hotel stays on business trips?",
+  "title": "Hotel stay emissions per room night",
+  "short": "Multiply the room nights by a hotel emission factor for the country of stay, given in kg CO2e per room per night. The UK government conversion factors publish one for India and many other countries. Count rooms, not guests, and report the result in Scope 3 Category 6, business travel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "hourly-grid-emission-factors-india",
@@ -2387,6 +2467,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "multi-page-ht-electricity-bill-carbon",
+  "q": "My HT electricity bill runs to several pages with ToD slabs, demand charges and solar adjustments. Which numbers go into the carbon calculation?",
+  "title": "Multi-page HT bill: which numbers count",
+  "short": "Only the electricity you consumed, in kWh, goes into the carbon calculation: the units recorded at your meter for the month, including any open access or captive units adjusted against it. Demand in kVA, time of day rates, power factor, fuel adjustment and duty change the rupee total, not the CO2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "net-zero-vs-carbon-neutral",
   "q": "What is the difference between net zero and carbon neutral for a company?",
   "title": "Net zero vs carbon neutral",
@@ -2595,12 +2683,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "refrigerant-leakage-in-use-of-sold-acs",
+  "q": "Do AC and refrigeration equipment makers report refrigerant leakage during customers' use, and how?",
+  "title": "Refrigerant leaks from ACs you sell",
+  "short": "Yes. Refrigerant that leaks from ACs and refrigeration units while customers use them is a direct use-phase emission, so the maker reports it in Scope 3 Category 11. Estimate it as units sold x refrigerant charge x annual leak rate x lifetime years x the gas's GWP, in kg CO2e.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "refrigerant-top-up-invoice-to-co2e",
   "q": "How do I turn a refrigerant top-up invoice (R-32, R-410A, R-134a) into CO2e?",
   "title": "Refrigerant top-up invoice to CO2e",
   "short": "Multiply the kilograms of gas charged into the equipment by that gas's 100-year global warming potential (GWP). For a blend such as R-410A, first work out its GWP from the component shares. The result is Scope 1 CO2e. State whether you used IPCC AR5 or AR6 values.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "regenerative-agriculture-scope-3-claims",
+  "q": "Can a food company count regenerative agriculture in its Scope 3 reductions?",
+  "title": "Regenerative farming in your Scope 3",
+  "short": "Yes, if you can trace what you buy to the farms that changed practice and use their own data. Lower fertiliser, diesel or rice methane can cut your Scope 3 Category 1 figure. Soil carbon gains are reported separately as removals, need ongoing monitoring, and cannot also be sold as credits.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "renewable-capacity-per-tonne-green-hydrogen",
@@ -2744,6 +2848,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Carbon credit for selling scrap?",
   "short": "No. Selling or recycling your production scrap does not earn a carbon credit and cannot be subtracted from your footprint. Credits come only from registered, verified projects, and the GHG Protocol keeps avoided emissions outside your inventory totals. The benefit of recycling is counted by whoever uses the recycled material.",
   "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "senseible-multiple-plants-or-gstins",
+  "q": "Can one Senseible account cover several plants, GSTINs or group companies?",
+  "title": "Several plants or GSTINs in Senseible",
+  "short": "Yes. One Senseible account can hold invoices from several plants, and team members can work in it together. For separate GSTINs or group companies, Senseible sells Multi-entity Support as an add-on at ₹1,999 a month before GST on Pro, and includes it in the Scale plan, which is quoted for your entities and team.",
+  "topic": "product",
   "reviewed": "2026-10-17"
  },
  {
@@ -2979,6 +3091,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "tnfd-leap-for-indian-manufacturer",
+  "q": "How would an Indian textile or food manufacturer apply TNFD's LEAP approach?",
+  "title": "TNFD LEAP for an Indian manufacturer",
+  "short": "Work through the four LEAP steps one site and one key raw material at a time: Locate where you touch nature, Evaluate what you depend on and affect, Assess the risks and opportunities, then Prepare your response and disclosure. For a textile or food unit, start with water at the plant and the farms behind cotton or crops.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "train-travel-emissions-factor-india",
+  "q": "What emission factor should I use for business travel by Indian Railways?",
+  "title": "Emission factor for train travel in India",
+  "short": "Use the India GHG Program's India Specific Rail Transport Emission Factors for passenger travel, in kg CO2 per passenger-km, times the rail distance each traveller covers. The factors date from 2015, before most of Indian Railways was electrified, so state the vintage and expect them to overstate today's emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "transmission-and-distribution-losses-india-scope-3",
   "q": "How do I calculate T&D loss emissions for Scope 3 Category 3 in India, and should I use T&D losses or AT&C losses?",
   "title": "T&D loss emissions in India",
@@ -3099,6 +3227,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "waste-sent-to-waste-to-energy-scope-3",
+  "q": "How do I account for emissions when my factory waste goes to a waste-to-energy plant?",
+  "title": "Factory waste sent to waste-to-energy",
+  "short": "Report it in Scope 3 Category 5. Count the fossil CO2, methane and nitrous oxide released when your waste is burnt, add transport if you choose to, and do not subtract anything for the electricity or steam the plant makes. That avoided energy can be described separately, never netted from your total.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "water-intensity-calculation-for-brsr",
   "q": "How do I calculate water withdrawal, consumption and water intensity for BRSR?",
   "title": "Water withdrawal and intensity for BRSR",
@@ -3209,6 +3345,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "GRI 305: Emissions 2016 has seven disclosures: Scope 1, Scope 2, Scope 3, emissions intensity, reductions, ozone-depleting substances, and NOx, SOx and other air emissions. You report the ones that fit your material topics. For the greenhouse gas items it asks for gross tonnes CO2e plus the method behind them.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "what-happens-when-senseible-plan-expires",
+  "q": "What happens to my Senseible records if my paid plan expires or I cancel?",
+  "title": "When a Senseible plan expires",
+  "short": "Your records stay. When a paid Senseible plan ends, it stays in force for 7 more days so you can renew. After that the account moves to the free Snapshot plan: your invoices, emission records and reports remain saved on the server, and only the paid allowances stop.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "what-if-plant-misses-ccts-target",
@@ -3355,6 +3499,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "which-senseible-plan-do-i-need",
+  "q": "Which Senseible plan do I need for the number of bills and invoices I upload each month?",
+  "title": "Which Senseible plan fits my monthly volume",
+  "short": "Pick the smallest plan whose monthly invoice reads cover your normal month: Snapshot is free for 10, Essential covers 100, Pro covers 1,000 and Scale covers 10,000. For a month that runs over, Extra Invoice Scans at ₹79 per 100 are usually cheaper than moving up a plan.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "which-steel-plant-upgrades-cut-cbam-most",
   "q": "Which upgrades cut a steel plant's CBAM cost the most per rupee spent?",
   "title": "Steel upgrades that cut CBAM cost most",
@@ -3393,6 +3545,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Whoever can prove the right to the emission reductions, and that is decided by contract, not by who owns the machine. Verra and Gold Standard both require the project proponent to show documented rights. If the supplier, lender, lessor and user have not agreed in writing, expect no one to be able to register the credits.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "who-reports-travel-reimbursed-by-client",
+  "q": "If a client reimburses our staff travel, is it our Scope 3 Category 6 or the client's?",
+  "title": "Client-reimbursed travel: whose Scope 3?",
+  "short": "It is your Category 6. Business travel is counted by the company whose employees travel, whoever pays in the end. The client may also count the same trip in its Scope 3, usually Category 1, as part of the service it buys from you. Both entries are allowed; neither company puts it in Scope 1.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "who-runs-india-carbon-market-registry",
@@ -3449,6 +3609,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, if the evidence holds up. An auditor or verifier does not approve or reject a tool. They test whether sampled figures trace to source documents, whether the calculation recomputes, and whether your process catches errors. AI extraction passes when every value links to its original file and the controls around it are documented.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "work-from-home-emissions-calculation",
+  "q": "Do I have to report work-from-home emissions for hybrid staff in India, and how do I estimate them?",
+  "title": "Estimate work-from-home emissions in India",
+  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "work-from-home-emissions-category-7",
+  "q": "Should work-from-home emissions be counted in Scope 3 Category 7?",
+  "title": "Work from home in Scope 3 Category 7",
+  "short": "Yes, if you count them at all, work-from-home emissions go in Scope 3 Category 7, employee commuting. The GHG Protocol makes them optional. Include them when hybrid work is a large share of your days, or when you report lower commuting from hybrid work, so the saving is not overstated.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "zero-waste-to-landfill-certification-criteria",
+  "q": "What diversion rate do zero waste to landfill certifications require?",
+  "title": "Zero waste to landfill: diversion rates",
+  "short": "The main schemes start at 90% diversion by weight. UL 2799 grades a site Silver at 90 to 94%, Gold at 95 to 99% and Platinum at 100%. TRUE certification also needs 90% or more, but it counts waste sent to incineration, including waste-to-energy, as not diverted.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "zigzag-kiln-conversion-carbon-credits",
