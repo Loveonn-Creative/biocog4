@@ -1,0 +1,87 @@
+{
+  "slug": "fire-extinguisher-refill-scope-1",
+  "q": "Do fire extinguisher refills count in Scope 1?",
+  "title": "Do fire extinguisher refills count?",
+  "short": "Yes, when the refill replaces gas that was released. The kilograms refilled after a discharge or leak are a Scope 1 fugitive emission. CO2 extinguishers count kg for kg. HFC agents such as HFC-227ea (FM-200) count at their GWP and can be material. Dry powder, water, foam and FK-5-1-12 add nothing material.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Facility and EHS managers at factories and warehouses",
+  "sections": [
+    {
+      "h": "Which refills are emissions",
+      "ul": [
+        "Refill after a fire, a drill or an accidental discharge: the gas went to the air, so the kilograms refilled are the emission.",
+        "Top-up after a slow leak found at inspection: same rule, the top-up equals the loss.",
+        "First fill of a new extinguisher or system: no emission, nothing has been released yet.",
+        "Gas recovered into a cylinder during hydrostatic testing and put back: no emission, provided it was really recovered.",
+        "Disposal of an old unit: count any gas vented rather than recovered."
+      ]
+    },
+    {
+      "h": "What each agent is worth",
+      "ul": [
+        "CO2 extinguishers and CO2 flooding systems: 1 kg released = 1 kg CO2.",
+        "HFC-227ea (FM-200), common in server rooms and panel rooms: GWP 3,600 under IPCC AR6 (3,350 under AR5), so 1 kg released is 3.6 t CO2e.",
+        "FK-5-1-12 (Novec 1230 type agents): GWP under 1, so negligible.",
+        "Dry chemical powder (ABC, mono ammonium phosphate), water mist and foam: no greenhouse gas.",
+        "Halons 1211 and 1301: ozone depleting substances under the Montreal Protocol. The GHG Protocol keeps them out of the Scope 1 total; report them separately if you still hold any."
+      ]
+    },
+    {
+      "h": "When it is worth the effort",
+      "p": [
+        "For a site with only CO2 and powder extinguishers, refills after drills add a few hundred kilograms of CO2 a year at most. Record them for completeness, but they will not move your total.",
+        "A clean agent system on HFC-227ea is different. One accidental discharge of a 100 kg system is 360 t CO2e under AR6, more than many MSMEs emit from diesel in a year. Track these systems by serial number."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ol": [
+        "The refill or service invoice showing agent name and kilograms filled.",
+        "The reason for the refill: fire, drill, leak, test or first fill.",
+        "The GWP edition used, AR5 or AR6, applied to the whole inventory.",
+        "For fixed systems, the cylinder weight log from each inspection, since a weight drop is a leak."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year at a warehouse",
+    "lines": [
+      "30 CO2 extinguishers refilled after a drill, 4.5 kg each: 30 x 4.5 = 135 kg CO2",
+      "Server room FM-200 system discharged by fault, 80 kg refilled: 80 x 3,600 = 288,000 kg CO2e (AR6)",
+      "Total fire suppression Scope 1: 135 + 288,000 = 288,135 kg, about 288.1 t CO2e",
+      "Same FM-200 refill under AR5: 80 x 3,350 = 268,000 kg CO2e"
+    ],
+    "note": "The HFC line includes a gas other than CO2, so the total is CO2e."
+  },
+  "senseible": "Senseible reads refill and service invoices with the agent and kilograms and keeps them as evidence for a Scope 1 line. A refill invoice alone does not prove a release, so record why each refill happened, then multiply the kilograms released by the agent's GWP and note the IPCC edition.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "AR5 or AR6 GWP values",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Scope 1 for Indian manufacturers",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, Direct Fugitive Emissions from Refrigeration, Air Conditioning, Fire Suppression, and Industrial Gases (mass balance method)",
+      "url": "https://www.epa.gov/climateleadership"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

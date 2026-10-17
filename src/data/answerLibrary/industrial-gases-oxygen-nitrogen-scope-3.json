@@ -1,0 +1,64 @@
+{
+  "slug": "industrial-gases-oxygen-nitrogen-scope-3",
+  "q": "How do I estimate Scope 3 emissions from purchased oxygen, nitrogen or argon?",
+  "title": "Scope 3 from oxygen, nitrogen and argon",
+  "short": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundries, fabricators, pharma and food plants buying industrial gases",
+  "sections": [
+    {
+      "h": "Why electricity is the whole story",
+      "p": [
+        "Oxygen, nitrogen and argon are separated from air in an air separation unit. Nothing is burnt; the plant runs large compressors and chillers on electricity. So the footprint of the gas is, to a first estimate, the supplier's power use per cubic metre times the emission factor of that power. Cylinder filling, cryogenic tanker transport and cylinder returns add a little on top."
+      ]
+    },
+    {
+      "h": "Getting the quantity into cubic metres",
+      "ul": [
+        "Invoices in Nm3 or m3: use the figure as printed and note whether it is normal or standard conditions.",
+        "Invoices in kg (common for liquid supply): divide by the gas density at 0 degrees C and 1 atmosphere: oxygen 1.429 kg per Nm3, nitrogen 1.251, argon 1.784.",
+        "Cylinder supply: use the cubic metres per cylinder printed on the delivery challan, times the cylinders filled, not cylinders rented.",
+        "Pipeline supply from an on-site plant run by the gas company: the plant's own meter reading of kWh is the best data."
+      ]
+    },
+    {
+      "h": "What to ask the supplier",
+      "ol": [
+        "kWh per cubic metre for the product and supply mode you buy, because liquid gas needs much more power than gas piped straight from the plant.",
+        "Whether that power is grid, captive or renewable, with certificates if they claim renewable.",
+        "Whether the figure includes liquefaction, transport and cylinder handling."
+      ],
+      "p": [
+        "A supplier-stated figure counts as supplier-specific data. Without it, use an assumed kWh per cubic metre, say where it came from and mark the line as an estimate."
+      ]
+    },
+    {
+      "h": "Gases that are not Scope 3",
+      "p": [
+        "Acetylene, LPG and propane bought for cutting or heating are burnt in your equipment, so they are Scope 1 fuel. Purchased CO2 used for welding shielding, beverages or dry ice is released at your site; treat it with its own rule rather than as an air gas. Keep these on separate lines."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: liquid oxygen for a foundry",
+    "lines": [
+      "Purchased: 50,000 m3 of liquid oxygen in a year",
+      "Assumed power use: 0.9 kWh per m3 (an estimate for liquid supply; replace with the supplier's figure)",
+      "Electricity: 50,000 x 0.9 = 45,000 kWh",
+      "45,000 x 0.710 kg CO2 per kWh = 31,950 kg CO2, about 32 t CO2, Scope 3 Category 1"
+    ],
+    "note": "If the supplier states 0.6 kWh per m3 for the same product, the figure drops to 21.3 t CO2. The kWh per m3 is the number that matters."
+  },
+  "senseible": "Senseible reads industrial gas invoices with their quantity into the supplier evidence trail, separate from your Scope 1 and 2. A kWh per cubic metre figure from the supplier can be kept with that evidence as supplier-specific data.",
+  "links": [
+    { "label": "Using your supplier's product footprint", "to": "/answers/can-i-use-my-suppliers-product-footprint" },
+    { "label": "Allocating supplier emissions to purchases", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Scope 3 Standard, Category 1 Purchased goods and services", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17"
+}

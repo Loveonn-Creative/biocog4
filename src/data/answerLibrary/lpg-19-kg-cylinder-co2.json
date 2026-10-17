@@ -1,0 +1,79 @@
+{
+  "slug": "lpg-19-kg-cylinder-co2",
+  "q": "How much CO2 does one 19 kg commercial LPG cylinder emit?",
+  "title": "CO2 from one 19 kg LPG cylinder",
+  "short": "A full 19 kg commercial LPG cylinder emits about 56.6 kg CO2 when all the gas is burnt: 19 kg x 2.98 kg CO2 per kg of LPG. A 14.2 kg domestic cylinder gives about 42.3 kg and a 47.5 kg cylinder about 141.6 kg.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Restaurants, food processors and small factories buying LPG by the cylinder",
+  "sections": [
+    {
+      "h": "Per cylinder figures for common Indian sizes",
+      "ul": [
+        "5 kg cylinder: 5 x 2.98 = 14.9 kg CO2",
+        "14.2 kg domestic cylinder: 14.2 x 2.98 = 42.3 kg CO2",
+        "19 kg commercial cylinder: 19 x 2.98 = 56.6 kg CO2",
+        "47.5 kg commercial cylinder: 47.5 x 2.98 = 141.6 kg CO2"
+      ],
+      "p": [
+        "The 2.98 kg CO2 per kg comes from the IPCC 2006 default for LPG, 63,100 kg CO2 per TJ, times its net calorific value of 47.3 TJ per thousand tonnes. It is Scope 1 because you burn the gas in your own stoves, ovens or furnaces."
+      ]
+    },
+    {
+      "h": "Use the net gas mass, not the cylinder weight",
+      "p": [
+        "The size printed on the cylinder and the invoice is the net LPG content. A filled cylinder on a weighing scale is much heavier because of the steel shell. Multiply only the net kg of gas by 2.98.",
+        "If your distributor bills by cylinder count, convert to kg first: count x net kg per cylinder. If the invoice already shows total kg, use that figure directly."
+      ]
+    },
+    {
+      "h": "Cylinders returned with gas left in them",
+      "p": [
+        "Emissions follow gas burnt, not gas bought. If a cylinder goes back with gas still in it and the supplier gives you a credit for the residue, subtract the credited kg. If there is no credit, most small businesses count the full cylinder, which slightly overstates and is the safe side.",
+        "For a year end total, add the kg on all invoices, then adjust for full cylinders still in stock at the start and end of the year."
+      ]
+    },
+    {
+      "h": "Methane and nitrous oxide from LPG are small",
+      "p": [
+        "Burning LPG also releases tiny amounts of methane and nitrous oxide. On IPCC defaults for commercial use they add well under 1% to the CO2 figure, so most inventories report LPG as CO2 only and say so in the method note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a restaurant's monthly LPG invoices",
+    "lines": [
+      "19 kg cylinders: 30 x 19 = 570 kg LPG",
+      "47.5 kg cylinders: 2 x 47.5 = 95 kg LPG",
+      "Total LPG: 570 + 95 = 665 kg",
+      "665 x 2.98 = 1,981.7 kg CO2, about 1.98 tonnes for the month (Scope 1)"
+    ],
+    "note": "If one 19 kg cylinder went back half full with a credit of 9.5 kg, use 655.5 kg: 655.5 x 2.98 = 1,953.4 kg CO2."
+  },
+  "senseible": "Senseible reads the net kg from LPG invoices, or converts a cylinder count to kg when the cylinder size is printed on the line, classifies it as Scope 1 and applies 2.98 kg CO2 per kg, the IPCC 2006 default, with the factor source shown on the line. Stock adjustments for full cylinders on hand are yours to make.",
+  "links": [
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "Fuel purchased vs fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "HSN codes for fuels in Scope 1",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapters 1 and 2 (Tables 1.2 and 2.2)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "coastal-shipping-vs-road-emissions-india",
+  "q": "Is coastal shipping lower carbon than road freight within India?",
+  "title": "Coastal shipping or road freight?",
+  "short": "Per tonne-km a coastal ship is usually far below a truck, but door to door it depends on the route. Sea distances around the coast are often longer than the highway, and trucks still haul to and from both ports. Work out the break-even sea factor for your lane and compare.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Shippers moving bulk and containers between Gujarat, Maharashtra, Tamil Nadu and the east coast",
+  "sections": [
+    {
+      "h": "Three things that decide the answer",
+      "ul": [
+        "Sea distance against road distance. Gujarat to Tamil Nadu by sea goes round the peninsula and can be longer than the highway.",
+        "Port drayage: the truck legs from your plant to the load port and from the discharge port to the customer, at the truck's per tonne-km factor.",
+        "Vessel type and size. Small coastal feeders and general cargo ships have higher factors per tonne-km than large ocean vessels, so do not borrow a deep-sea container figure for a coastal leg."
+      ]
+    },
+    {
+      "h": "How to compute it door to door",
+      "ol": [
+        "Road only: tonnes x road km x the truck class factor.",
+        "Coastal: tonnes x drayage km x truck factor, plus tonnes x sea km x the vessel factor, for each leg.",
+        "Add port handling at each port if the operator reports it; ISO 14083 counts hub emissions as part of the chain.",
+        "Compare totals on the same basis, well-to-wheel CO2e per the GLEC Framework, and name the edition of the defaults."
+      ]
+    },
+    {
+      "h": "The break-even test",
+      "p": [
+        "Subtract the drayage emissions from the road-only total and divide what is left by the sea tonne-km. That is the highest vessel factor at which coastal still wins. If the GLEC default or the operator's figure for your vessel is well below it, coastal is lower carbon. If it is close, the answer turns on load factor and port handling, and it is not a safe claim."
+      ]
+    },
+    {
+      "h": "When coastal clearly wins",
+      "p": [
+        "Long lanes with ports close to both ends, such as plant and customer each within a few dozen kilometres of a port, and full shipments of bulk or containers. Short lanes with long drayage at both ends rarely gain much, and part loads on a small vessel can lose to a full tractor-trailer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: break-even for a 40 t load (illustrative distances)",
+    "lines": [
+      "Road only: 40 t x 2,000 km = 80,000 tonne-km x 0.0551 (tractor-trailer) = 4,408 kg CO2e",
+      "Coastal drayage: 40 t x (50 + 50) km = 4,000 tonne-km x 0.0551 = 220.4 kg CO2e",
+      "Left for the sea leg: 4,408 minus 220.4 = 4,187.6 kg CO2e",
+      "Sea leg: 40 t x 2,600 km = 1,04,000 tonne-km",
+      "Break-even vessel factor: 4,187.6 / 1,04,000 = 0.0403 kg CO2e per tonne-km",
+      "Decision: coastal wins only if the vessel's factor, plus port handling, is below about 0.040"
+    ],
+    "note": "0.0551 is the default for a 30 to 60 t GVW tractor-trailer in India. Take the vessel factor from the GLEC defaults for your ship type and size."
+  },
+  "senseible": "Senseible's logistics calculator estimates freight emissions leg by leg from tonnes and kilometres, using default intensities by mode and Indian truck class or a carrier's factor as given. Freight bills are read into the evidence trail.",
+  "links": [
+    {
+      "label": "Rail or road freight in India",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Truck, rail and ship container chains",
+      "to": "/answers/intermodal-container-emissions-rail-road-sea"
+    },
+    {
+      "label": "Truck freight factor per tonne-km",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, GHG emissions from transport chains",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "GLEC default intensities are revised between editions; recheck the vessel factor and state the edition used.",
+  "reviewed": "2026-10-17"
+}

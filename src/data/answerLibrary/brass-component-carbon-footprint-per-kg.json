@@ -1,0 +1,87 @@
+{
+  "slug": "brass-component-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of brass components from Jamnagar?",
+  "title": "Carbon footprint per kg of brass parts",
+  "short": "Work it out as metal bought per kg of finished parts times the footprint of that metal, plus melting, machining and plating energy per kg. The metal usually decides the result: brass melted from scrap carries far less than brass made from new copper and zinc, so state the recycled share and method.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Brass parts makers in Jamnagar exporting to EU, UK and US",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Footprint per kg = metal input per kg of finished parts x metal factor + (kWh x 0.710 + fuel x its factor) / kg of finished parts despatched.",
+        "Metal input per kg is net of turnings and swarf that you melt again in your own furnace. Only the metal that leaves as sold scrap or melt loss raises it."
+      ]
+    },
+    {
+      "h": "The metal factor and recycled content",
+      "p": [
+        "ISO 14067:2018 asks you to state how recycled content is treated. Under the common cut-off approach, scrap you buy carries only the emissions of collecting, sorting and transporting it, while new copper cathode and zinc carry their mining and refining emissions. A part melted mostly from bought scrap can therefore have a much lower footprint than one made from virgin metal.",
+        "Get the factor from your ingot or rod supplier, with its recycled share. If you melt scrap yourself, record purchased scrap and virgin metal separately from invoices and apply a factor to each. Use the same method every year, and say if a buyer uses a different one."
+      ]
+    },
+    {
+      "h": "Energy at the plant",
+      "ul": [
+        "Induction or oil-fired melting and holding furnaces: kWh x 0.710, or litres of furnace oil x 2.97.",
+        "Extrusion, hot stamping or forging presses, and CNC or automatic turning machines: kWh x 0.710.",
+        "Plating, pickling and tumbling: kWh and any LPG or diesel used.",
+        "DG sets: litres x 2.68.",
+        "Job work done outside, such as plating at another unit, is a purchased service in Scope 3; ask the job worker for kWh per kg or use your share of its bills."
+      ]
+    },
+    {
+      "h": "Brass and CBAM",
+      "p": [
+        "Brass is a copper alloy and copper and zinc goods are not in Annex I of the EU CBAM Regulation, so brass parts carry no CBAM obligation today. The footprint is still asked for by EU and UK buyers for their own Scope 3 reporting."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month at a turned-parts unit",
+    "lines": [
+      "Finished parts despatched: 1,00,000 kg; net metal bought: 1,05,000 kg, so 1.05 kg per kg",
+      "Electricity for melting, turning and plating: 1,50,000 kWh x 0.710 = 106,500 kg CO2",
+      "DG diesel: 2,000 L x 2.68 = 5,360 kg CO2",
+      "Energy per kg: (106,500 + 5,360) / 100,000 = 1.12 kg CO2",
+      "Metal with a placeholder factor F from your supplier: 1.05 x F",
+      "If F = 0.5 kg CO2e per kg (placeholder for scrap-based brass): total about 1.119 + 0.525 = 1.64 kg CO2e per kg"
+    ],
+    "note": "F is a placeholder, not data. Replace it with your supplier's figure; a virgin-metal brass factor would be much higher and would dominate the result."
+  },
+  "senseible": "Senseible reads furnace, machining and DG bills, giving the Scope 1 and 2 energy you divide by kg despatched. Scrap, ingot and rod invoices go to the supplier evidence trail, and a supplier's recycled content statement can sit beside each one.",
+  "links": [
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Is copper covered by EU CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

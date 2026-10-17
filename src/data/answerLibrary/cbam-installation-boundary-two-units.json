@@ -1,0 +1,85 @@
+{
+  "slug": "cbam-installation-boundary-two-units",
+  "q": "Is each of my factory units a separate CBAM installation?",
+  "title": "Is each factory unit a CBAM installation?",
+  "short": "Units at different sites are separate CBAM installations, each with its own emissions data. Units on one site that share a location and operate together are usually one installation. Inside one installation, each production process, such as making billets and rolling bars, gets its own attributed emissions.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "MSMEs with two or more plants or sheds producing CBAM goods",
+  "sections": [
+    {
+      "h": "What the regulation means by installation",
+      "p": [
+        "The CBAM Regulation defines an installation as a stationary technical unit where a production process is carried out. In practice that is one site with its equipment. Separate addresses, separate power connections and separate consents point to separate installations. The goods leaving each are reported with that installation's embedded emissions."
+      ]
+    },
+    {
+      "h": "One site, several sheds",
+      "p": [
+        "Two sheds inside one compound, on one power connection and one fuel supply, are normally one installation. You do not split them into two installations just because they have different GST registrations or different shed numbers. What you do split is production processes."
+      ]
+    },
+    {
+      "h": "Production processes inside an installation",
+      "ul": [
+        "Each production process covers one aggregated goods category, for example crude steel, or iron and steel products.",
+        "Fuel, power and process emissions are attributed to each process, by sub-meters where you have them, otherwise by a documented basis.",
+        "A process that uses the output of another, such as rolling mill using in-house billets, carries the billets' embedded emissions as a precursor.",
+        "Specific embedded emissions = attributed emissions of the process, plus precursors, divided by its output in tonnes."
+      ]
+    },
+    {
+      "h": "Why the boundary matters",
+      "ul": [
+        "Mixing two sites can lower a high emitting site's figure by averaging, which a verifier will reject.",
+        "Each installation needs its own monitoring records and, for actual values, its own verification.",
+        "Registering in the CBAM Registry as an operator is done per installation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: billets and bars on one site",
+    "lines": [
+      "Induction furnace process: 2,400 t billets, attributed emissions 1,560 t CO2, so 0.65 t CO2 per t billet",
+      "Rolling mill process: 2,000 t bars from 2,100 t billets, own attributed emissions 180 t CO2",
+      "Precursor: 2,100 x 0.65 = 1,365 t CO2",
+      "Bars: (180 + 1,365) / 2,000 = 0.773 t CO2 per t bar"
+    ],
+    "note": "Figures are illustrative to show the arithmetic, not typical values. Purchased scrap and other precursors bought in need their own embedded emissions."
+  },
+  "senseible": "Senseible keeps each fuel invoice and electricity bill with its billing period and the GSTIN printed on it, so the records for each site can be kept apart and totalled. Drawing the CBAM boundary and attributing emissions to production processes is your monitoring decision, and it can be checked against those records.",
+  "links": [
+    {
+      "label": "Register as a non-EU producer",
+      "to": "/answers/how-non-eu-producer-registers-cbam-registry"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "GHG inventory vs CBAM embedded emissions",
+      "to": "/answers/ghg-inventory-vs-cbam-embedded-emissions"
+    },
+    {
+      "label": "CBAM verification for non-EU producers",
+      "to": "/climate-intelligence/cbam-verification-non-eu-producer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Article 3 definitions and Annex IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (monitoring rules)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "Definitive period monitoring rules and guidance on boundaries are still being issued; recheck the Commission guidance.",
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "caustic-soda-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint per tonne of caustic soda made in India?",
+  "title": "Caustic soda carbon footprint per tonne",
+  "short": "It depends mostly on where the cell power comes from. Multiply electrolysis kWh per tonne of chlorine by your grid or captive plant factor, add steam fuel for concentration, then share the total by mass across chlorine, caustic soda and hydrogen. On grid power at 0.710 the figure is usually lower than on a captive coal plant.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Chlor-alkali producers and buyers of caustic soda in textiles, aluminium and pulp",
+  "sections": [
+    {
+      "h": "One process, three products",
+      "p": [
+        "Membrane cell electrolysis of brine gives chlorine, caustic soda and hydrogen together. From the chemistry, each tonne of chlorine comes with about 1.128 t of caustic soda (100% NaOH basis) and 0.028 t of hydrogen. You cannot run the cell for caustic alone, so the emissions must be shared.",
+        "Mass allocation, used in the Euro Chlor eco-profile method, gives every tonne of product the same footprint: total CO2 divided by about 2.156 t of products per tonne of chlorine."
+      ]
+    },
+    {
+      "h": "What goes into the total",
+      "ul": [
+        "Electrolysis power, the largest item. Use your plant's measured kWh per tonne, which varies with membrane age and current density.",
+        "Power for brine treatment, chlorine liquefaction and utilities.",
+        "Steam fuel to concentrate cell liquor to 48% or 50% lye, and more again for flakes.",
+        "Captive power plant coal, where you generate your own: CO2 per kWh is the plant's coal kg x 2.42 divided by kWh generated.",
+        "Hydrogen burnt as boiler fuel on site reduces the fuel you buy; account for it once, not twice."
+      ]
+    },
+    {
+      "h": "Grid or captive power changes everything",
+      "p": [
+        "Many Indian chlor-alkali plants run captive coal units. A small captive coal unit's CO2 per kWh can be well above the grid's 0.710 kg, so the same plant can show a much higher footprint on captive power. Calculate the factor from the captive plant's own fuel and generation records each year, and report it with the source."
+      ]
+    },
+    {
+      "h": "For buyers of caustic soda",
+      "p": [
+        "Ask the supplier for the footprint per tonne on a stated basis: 100% NaOH or as lye, allocation method, power source and year. Convert lye quantities on your invoices to 100% NaOH before multiplying, or you will overstate the figure. Chlor-alkali is also a sector under India's Carbon Credit Trading Scheme, so large producers already track plant-level intensity."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per tonne of products (illustrative)",
+    "lines": [
+      "Assumed electrolysis and utilities: 2,500 kWh per t of chlorine (replace with your plant figure)",
+      "On grid power: 2,500 x 0.710 = 1,775 kg CO2 per t of chlorine",
+      "Products per t of chlorine: 1 + 1.128 + 0.028 = 2.156 t; 1,775 / 2.156 = 823 kg CO2 per t of each product",
+      "Captive coal: 45,000 t coal x 2.42 = 1,08,900 t CO2 for 100 million kWh = 1.089 kg CO2 per kWh",
+      "On captive power: 2,500 x 1.089 = 2,723 kg per t of chlorine; / 2.156 = 1,263 kg CO2 per t of caustic",
+      "Steam for concentration is extra in both cases; add it from the boiler fuel records"
+    ],
+    "note": "Mass allocation shown. An economic or energy-based split gives different per-product figures; state the method."
+  },
+  "senseible": "Senseible reads power bills and captive plant coal invoices and applies 0.710 kg CO2 per kWh and 2.42 kg CO2 per kg of coal, with the source on each line. For buyers, caustic soda purchases go to the supplier evidence trail.",
+  "links": [
+    {
+      "label": "Allocate emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "India CCTS targets by sector",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "Scope 3 for chemicals in India",
+      "to": "/solutions/scope3-chemicals-india"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "CCTS intensity targets for chlor-alkali were notified in 2025; check for revisions before quoting them.",
+  "reviewed": "2026-10-17"
+}

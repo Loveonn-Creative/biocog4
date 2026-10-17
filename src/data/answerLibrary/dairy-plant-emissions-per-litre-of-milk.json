@@ -1,0 +1,84 @@
+{
+  "slug": "dairy-plant-emissions-per-litre-of-milk",
+  "q": "What are the emissions per litre of milk processed at a dairy plant?",
+  "title": "Dairy plant emissions per litre of milk",
+  "short": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dairy cooperatives, private dairies and milk chilling centres",
+  "sections": [
+    {
+      "h": "What belongs in the plant figure",
+      "ul": [
+        "Electricity for chilling, refrigeration compressors, homogenisers, pumps and cold rooms: kWh x 0.710 kg CO2.",
+        "Boiler fuel for pasteurisation, CIP and evaporation: coal, furnace oil, PNG or briquettes, each with its own factor. Biomass briquettes are biogenic and reported separately.",
+        "DG diesel during outages, often large in rural plants: litres x 2.68.",
+        "Refrigerant: ammonia systems add nothing (GWP 0); HFC top-ups add kg x GWP as CO2e.",
+        "Bulk milk chillers at village centres, if you operate them."
+      ]
+    },
+    {
+      "h": "What it leaves out",
+      "p": [
+        "Methane from the cows and manure is a farm emission. For a dairy company it is Scope 3 Category 1, purchased milk, and usually far larger than anything at the plant. Milk tankers from collection centres are Category 4 if a transporter runs them, or your Scope 1 if you own the trucks."
+      ]
+    },
+    {
+      "h": "When products need separate figures",
+      "p": [
+        "A plant making pouch milk, curd, ghee and skim milk powder cannot quote one per litre figure for all of them. Spray drying and evaporation take many times more steam per litre of milk than pasteurising. Meter steam and power by section where possible. Where energy is shared, the IDF Global Carbon Footprint Standard for the Dairy Sector (Bulletin 520/2022) sets out how to allocate between dairy products; name the method you used."
+      ]
+    },
+    {
+      "h": "Litres or kilograms",
+      "p": [
+        "Plants record milk received in litres or kilograms; 1 litre of milk weighs about 1.03 kg. Pick one, state it, and keep it. Buyers comparing farm footprints often use fat and protein corrected milk, which is a farm stage measure, not a plant measure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a liquid milk plant",
+    "lines": [
+      "Electricity: 450,000 kWh x 0.710 = 319,500 kg CO2",
+      "Boiler PNG: 60,000 scm x 2.05 = 123,000 kg CO2",
+      "DG diesel: 4,000 L x 2.68 = 10,720 kg CO2",
+      "Total: 319,500 + 123,000 + 10,720 = 453,220 kg CO2",
+      "Milk received: 3,000,000 L, so 453,220 / 3,000,000 = 0.151 kg CO2 per litre, about 151 g"
+    ],
+    "note": "An HFC refrigerant top-up would be added as CO2e, which turns the total into CO2e."
+  },
+  "senseible": "Senseible reads plant electricity bills, boiler fuel and DG diesel invoices and gives Scope 1 and 2 per period, with the factor on each line. Refrigerant service invoices are kept as evidence; multiply the kilograms charged by the gas's GWP. Litres received and the split between product sections come from your plant records.",
+  "links": [
+    {
+      "label": "Dairy enteric methane in India",
+      "to": "/answers/dairy-enteric-methane-emissions-india"
+    },
+    {
+      "label": "Ammonia or HFC for cold storage",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

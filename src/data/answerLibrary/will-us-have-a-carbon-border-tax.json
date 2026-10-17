@@ -1,0 +1,82 @@
+{
+  "slug": "will-us-have-a-carbon-border-tax",
+  "q": "Will the US bring in a carbon border tax on Indian imports?",
+  "title": "Will the US bring in a carbon border tax?",
+  "short": "Not yet. No US federal carbon border tax is law. Bills such as the Clean Competition Act and the Foreign Pollution Fee Act would charge imports by their carbon intensity above a US benchmark, but none has passed Congress. Exporters should still keep embedded emissions per tonne ready, because the EU already charges for them.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to the US in steel, aluminium and chemicals",
+  "sections": [
+    {
+      "h": "What the proposals would do",
+      "ul": [
+        "Clean Competition Act: a charge on carbon intensity above a benchmark for energy intensive goods, applied to both US producers and importers.",
+        "Foreign Pollution Fee Act: a fee on imports whose emissions intensity is higher than comparable US products.",
+        "Both use emissions per tonne of product as the base, the same quantity that EU CBAM asks for."
+      ]
+    },
+    {
+      "h": "Why it may matter even without a law",
+      "ul": [
+        "US buyers with their own targets already ask suppliers for product emissions.",
+        "California's SB 253 requires large companies doing business there to report emissions, with Scope 3 to follow.",
+        "Existing US tariffs on steel and aluminium are not carbon based, and do not reward low carbon production."
+      ]
+    },
+    {
+      "h": "How it differs from EU CBAM",
+      "p": [
+        "EU CBAM is in force: the definitive period started on 1 January 2026, and certificates for 2026 imports are bought and surrendered in 2027. It covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity. The US proposals have no start date, no product list in force and no method published as law."
+      ]
+    },
+    {
+      "h": "What to prepare now",
+      "ol": [
+        "Plant level Scope 1 and 2 per tonne of each product family, from fuel invoices and electricity bills.",
+        "Embedded emissions of purchased precursors such as billets, ingots or slabs.",
+        "A method note naming factors and sources, so the same figure can serve EU CBAM, a US buyer or any future scheme."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: embedded intensity for a month",
+    "lines": [
+      "Coal: 300 t, 300,000 kg x 2.42 = 726,000 kg CO2",
+      "Electricity: 900,000 kWh x 0.710 = 639,000 kg CO2",
+      "Total: 1,365,000 kg CO2; output 2,500 t",
+      "Intensity: 1,365 / 2,500 = 0.546 t CO2 per tonne, before precursors"
+    ],
+    "note": "Illustrative figures for the arithmetic, not a typical value for any sector."
+  },
+  "senseible": "Senseible's CBAM tools cover the EU scheme, including a cost calculator for 2026 to 2034. The per tonne emissions it builds from plant fuel invoices and electricity bills are the same evidence any border scheme would ask for.",
+  "links": [
+    {
+      "label": "SEC climate rule status",
+      "to": "/answers/sec-climate-rule-status-us-buyers"
+    },
+    {
+      "label": "EU CBAM explained",
+      "to": "/climate-intelligence/eu-cbam-explained-emerging-market-exporters"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), for comparison",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "US border carbon bills are proposals only, not enacted as of 17 October 2026; check the latest action on each bill on congress.gov before relying on this page.",
+  "reviewed": "2026-10-17"
+}

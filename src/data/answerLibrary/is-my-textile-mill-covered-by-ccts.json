@@ -1,0 +1,79 @@
+{
+  "slug": "is-my-textile-mill-covered-by-ccts",
+  "q": "Is my textile mill covered by India's Carbon Credit Trading Scheme?",
+  "title": "Is my textile mill covered by CCTS?",
+  "short": "Only if your mill is named in the notified list of obligated textile entities. Textile targets were notified on 13 January 2026 for named plants only. If your plant is not on that list, you have no CCTS target, but you can earn credits through the offset mechanism under a BEE approved methodology.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Spinning, weaving and processing mills",
+  "sections": [
+    {
+      "h": "How coverage works",
+      "p": [
+        "Under the Carbon Credit Trading Scheme, 2023, obligated entities are named plant by plant in GHG emission intensity target notifications. A sector being notified does not bring in every mill in it. Your mill is covered only if its name and location appear in the list, with a baseline and target intensity in tonnes CO2e per unit of product."
+      ]
+    },
+    {
+      "h": "The quick test",
+      "ol": [
+        "Check whether you are a BEE designated consumer under PAT for textiles. The threshold is 3,000 toe a year.",
+        "Search the 13 January 2026 textile target notification, and any later amendment to it, for your plant name.",
+        "If you appear, read your baseline year, the targets for each compliance year and the product unit used.",
+        "If you do not appear, you have no CCTS obligation today."
+      ]
+    },
+    {
+      "h": "Working out your toe",
+      "p": [
+        "1 toe = 10 million kcal, or 41.868 GJ. Add fuel energy from GCV on lab reports, and electricity at the conversion BEE uses for your sector. A mill burning 6,000 t of coal a year at 4,000 kcal per kg uses 24,000 million kcal, which is 2,400 toe from coal alone, before electricity."
+      ]
+    },
+    {
+      "h": "If you are not covered",
+      "ul": [
+        "Large customers who are obligated may ask you for energy and emissions data to cut their own intensity.",
+        "The offset mechanism lets non-obligated entities earn carbon credit certificates from projects under methodologies BEE has approved; check its current list before planning a project.",
+        "Future notifications could lower thresholds; keep annual energy records ready."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel invoices and electricity bills and adds up annual energy quantities and emissions, which is the evidence you need to check yourself against a threshold or answer a covered customer. It also shows carbon credit eligibility signals from the same records.",
+  "links": [
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "CCTS targets by sector",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "Can an MSME earn CCTS offset credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "What if a plant misses its CCTS target",
+      "to": "/answers/what-if-plant-misses-ccts-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, Government notifies GHG emission intensity targets for 208 more industries (textiles included), January 2026",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023 (S.O. 2825(E), 28 June 2023) and amendments, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules and sector notifications, MoEFCC",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "BEE, PAT scheme designated consumer thresholds",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "CCTS sector notifications are still rolling out; check the latest gazette for the textile list and compliance years.",
+  "reviewed": "2026-10-17"
+}

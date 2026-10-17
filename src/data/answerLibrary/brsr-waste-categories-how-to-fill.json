@@ -1,0 +1,68 @@
+{
+  "slug": "brsr-waste-categories-how-to-fill",
+  "q": "How do I fill the BRSR waste table by category?",
+  "title": "Filling the BRSR waste table",
+  "short": "Enter tonnes of waste generated in each BRSR category (plastic, e-waste, bio-medical, construction and demolition, battery, radioactive, other hazardous, other non-hazardous) from manifests and recycler invoices. Then split the same waste into recovered (recycled, reused, other recovery) and disposed (incinerated, landfilled, other), and divide the total by turnover for waste intensity.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies and suppliers asked for BRSR Core waste data",
+  "sections": [
+    {
+      "h": "The categories and where each number comes from",
+      "ul": [
+        "Plastic waste: EPR records, plastic recycler invoices and scrap sale bills under the Plastic Waste Management Rules.",
+        "E-waste: invoices or receipts from authorised dismantlers and recyclers under the E-Waste (Management) Rules.",
+        "Bio-medical waste: weights from the common bio-medical waste treatment facility, mainly for sites with health centres.",
+        "Construction and demolition waste: debris removal challans from projects and expansions.",
+        "Battery waste: lead acid and lithium batteries handed to recyclers under the Battery Waste Management Rules.",
+        "Radioactive waste: only if you handle sources under the atomic energy rules; most companies report zero.",
+        "Other hazardous waste: Form 10 manifests and TSDF invoices under the Hazardous and Other Wastes Rules 2016, such as ETP sludge, spent solvent, used oil and contaminated containers. Name the main streams.",
+        "Other non-hazardous waste: scrap metal, paper, wood, canteen and garden waste, from scrap sale bills and municipal collection records. Give a break-up by composition."
+      ]
+    },
+    {
+      "h": "Recovered or disposed",
+      "p": [
+        "For each category, report tonnes sent for recycling, re-use and other recovery operations, and separately tonnes incinerated, landfilled or sent to other disposal. Co-processing in a cement kiln is usually treated as recovery; incineration at a TSDF is disposal. Waste stored on site at year end is generated but not yet recovered or disposed, so the two splits will not always add up to the total; explain the difference."
+      ]
+    },
+    {
+      "h": "Waste intensity",
+      "p": [
+        "BRSR asks for waste intensity per rupee of turnover, and BRSR Core also asks for it adjusted for purchasing power parity. You may add an intensity per unit of physical output, such as per tonne of product, which is often more useful for a manufacturer."
+      ]
+    },
+    {
+      "h": "Checks before you submit",
+      "ol": [
+        "Tie hazardous waste tonnes to the annual return in Form 4 filed with the State Pollution Control Board.",
+        "Use the same units throughout; convert kg and litres to tonnes, stating densities used for liquids.",
+        "Report the previous year alongside, using the same categories.",
+        "Keep manifests and invoices for each figure; BRSR Core figures may be assured or assessed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: totals and intensity for one year",
+    "lines": [
+      "Other hazardous waste (ETP sludge, spent solvent): 180 t; other non-hazardous (metal scrap, paper, wood): 950 t; plastic: 60 t; e-waste: 4 t; battery: 6 t",
+      "Total generated: 180 + 950 + 60 + 4 + 6 = 1,200 t",
+      "Turnover: ₹250 crore, which is ₹2,500,000,000",
+      "Waste intensity: 1,200 / 2,500,000,000 = 0.00000048 t per rupee, or 4.8 t per ₹ crore"
+    ],
+    "note": "State the unit you used for intensity clearly. Many companies show tonnes per crore alongside the per rupee figure because it is easier to read."
+  },
+  "senseible": "Senseible keeps waste disposal and recycler invoices as evidence lines, and its BRSR drafts reflect the data you upload. Tonnes from manifests that are not on invoices need to be entered from your records.",
+  "links": [
+    { "label": "Hazardous waste emissions from manifests", "to": "/answers/hazardous-waste-emissions-from-manifest-india" },
+    { "label": "BRSR intensity per rupee and PPP", "to": "/answers/brsr-emission-intensity-per-rupee-ppp" },
+    { "label": "Water intensity for BRSR", "to": "/answers/water-intensity-calculation-for-brsr" },
+    { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" }
+  ],
+  "sources": [
+    { "label": "SEBI circular on BRSR Core (July 2023), with the BRSR format, Principle 6", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016", "url": "https://moef.gov.in" }
+  ],
+  "reviewNote": "SEBI revises BRSR and BRSR Core formats from time to time; check the format for the year being reported.",
+  "reviewed": "2026-10-17"
+}

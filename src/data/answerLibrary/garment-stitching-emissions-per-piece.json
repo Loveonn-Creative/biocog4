@@ -1,0 +1,87 @@
+{
+  "slug": "garment-stitching-emissions-per-piece",
+  "q": "How do I calculate emissions per garment for a cut-make-trim export unit?",
+  "title": "Emissions per garment in a CMT unit",
+  "short": "Add the month's grid electricity at 0.710 kg CO2 per kWh, DG diesel at 2.68 kg per litre and any boiler fuel, then divide by pieces produced. If styles differ a lot, divide by standard allowed minutes instead and multiply back by each style's minutes. Fabric is separate.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Garment exporters in Tiruppur, Bengaluru and NCR asked for per-piece figures",
+  "sections": [
+    {
+      "h": "What goes into the factory figure",
+      "ul": [
+        "Grid electricity for sewing machines, cutting, lights, fans and compressors: Scope 2 at 0.710 kg CO2 per kWh.",
+        "Diesel for the DG set during power cuts: Scope 1 at 2.68 kg CO2 per litre.",
+        "Boiler or steam generator fuel for pressing and finishing, for example LPG at 2.98 kg per kg or PNG at 2.05 kg per scm. Biomass briquettes are biogenic and reported separately.",
+        "Leave out staff colony power, and keep washing done by a job worker in that supplier's figure, not yours."
+      ]
+    },
+    {
+      "h": "Choosing the divisor",
+      "p": [
+        "ISO 14067 asks you to allocate by a physical relationship. If the unit makes similar basics, pieces are fair. If it makes T-shirts one week and lined jackets the next, a jacket uses several times the machine time, so divide by total standard allowed minutes (SAM) produced, then multiply by each style's SAM. Machine time tracks the electricity better than piece count.",
+        "Use the same month for energy and output. A month with heavy sampling or rework will show a higher figure; note it rather than smoothing it away."
+      ]
+    },
+    {
+      "h": "What the per-piece figure leaves out",
+      "p": [
+        "This is a gate-to-gate figure for cut, make and trim. Fabric, trims and packaging come from your suppliers and usually far outweigh sewing. A buyer asking for a product footprint needs those added as cradle-to-gate inputs, so say clearly which boundary your number covers."
+      ]
+    },
+    {
+      "h": "Keeping it repeatable",
+      "ol": [
+        "Use 12 months of bills and DG logs so seasonal power cuts are averaged.",
+        "Take output from your production register, the same source your buyer audits.",
+        "Report the boundary, the factors and the divisor next to the number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a CMT unit",
+    "lines": [
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "DG diesel: 2,000 L x 2.68 = 5,360 kg CO2",
+      "Total: 47,960 kg CO2 for 200,000 pieces = 0.240 kg CO2 per piece",
+      "By SAM: 150,000 T-shirts at 10 SAM + 50,000 hoodies at 30 SAM = 3,000,000 minutes",
+      "47,960 / 3,000,000 = 0.0160 kg per minute; T-shirt 0.160 kg, hoodie 0.480 kg",
+      "Check: 150,000 x 0.160 + 50,000 x 0.480 = 24,000 + 24,000 = 48,000 kg, matching 47,960 within rounding"
+    ],
+    "note": "Excludes fabric, trims and packaging. Figures are illustrative."
+  },
+  "senseible": "Senseible reads the unit's electricity bills, DG diesel and boiler fuel invoices and applies its published factors line by line; fabric and trim purchases go to the supplier evidence trail. Production counts and SAM come from your own register.",
+  "links": [
+    {
+      "label": "Which textile tier has the most emissions",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Scope 3 for textile exporters in India",
+      "to": "/solutions/scope3-textile-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

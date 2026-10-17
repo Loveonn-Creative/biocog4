@@ -1,0 +1,84 @@
+{
+  "slug": "bill-of-entry-imported-materials-scope-3",
+  "q": "How do I use a customs bill of entry to calculate Scope 3 for imported materials?",
+  "title": "Scope 3 from a customs bill of entry",
+  "short": "Take the quantity, tariff heading and country of origin from each bill of entry and multiply the quantity by an emission factor for that material and route. Use the assessable value only for a spend-based estimate, after removing duty and IGST. Ocean freight from the supplier to you goes in Category 4.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian importers of steel, polymers, chemicals and components",
+  "sections": [
+    {
+      "h": "What the bill of entry gives you",
+      "ul": [
+        "Quantity and unit for each item, often net weight in kg or tonnes. This is the best input for Category 1.",
+        "Customs tariff heading (CTH), the 8 digit code. It tells you exactly what the material is, for example hot rolled coil or polypropylene granules.",
+        "Country of origin. It points to the likely production route and grid, which can change the factor a lot.",
+        "Assessable value, close to the CIF value, plus basic customs duty, social welfare surcharge and IGST shown separately.",
+        "Incoterm and invoice details, which tell you who paid the ocean freight."
+      ]
+    },
+    {
+      "h": "Activity-based: quantity times factor",
+      "p": [
+        "Multiply the net quantity by a cradle-to-gate factor for that material. Best is the supplier's own product footprint. Next is a factor for the production route in the country of origin, for example blast furnace steel against scrap-based electric arc furnace steel, which can differ several times over. Last is a generic world average for the material.",
+        "Group lines by tariff heading and origin before you multiply, so one factor applies to one group. Keep the bill of entry number on each line as evidence."
+      ]
+    },
+    {
+      "h": "Spend-based fallback: strip the taxes first",
+      "p": [
+        "If no quantity is usable, use the assessable value converted to the currency of your spend factor. Remove basic customs duty, social welfare surcharge and IGST first. On CIF terms the assessable value also includes freight and insurance, so do not add a separate freight estimate on top of a spend figure. They are taxes, not purchases of goods, and IGST is usually claimed back as input credit. Label the result spend-based, with wider uncertainty."
+      ]
+    },
+    {
+      "h": "Where the ocean freight goes",
+      "ul": [
+        "The Scope 3 Standard puts transport of purchased goods from your tier 1 supplier to your site in Category 4, whether you pay for it separately or it is inside the price.",
+        "FOB or FCA terms: you buy the ocean freight, so the forwarder's invoice gives weight and route for Category 4.",
+        "CIF or CFR terms: the supplier paid, so estimate the ocean leg yourself from tonnes and sea distance. A cradle-to-gate material factor stops at the supplier's gate and does not already include it.",
+        "Inland haulage from port to your plant is Category 4 as well. Customs broker and clearing charges are services and belong in Category 1 if you include them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one bill of entry for imported steel coil",
+    "lines": [
+      "Item: hot rolled coil, net quantity 50,000 kg, origin country A, CIF terms",
+      "Activity-based, assumed factor 2.0 kg CO2e per kg (illustrative database value for blast furnace route steel): 50,000 x 2.0 = 100,000 kg CO2e, 100 t",
+      "Duties on an assessable value of ₹30,00,000: BCD 7.5% = ₹2,25,000; SWS 10% of BCD = ₹22,500; IGST 18% on ₹32,47,500 = ₹5,84,550",
+      "Total on the bill of entry: ₹38,32,050; spend base for a fallback estimate: ₹30,00,000 only",
+      "Freight: CIF terms, so the ocean leg is estimated separately in Category 4 from tonnes and sea distance"
+    ],
+    "note": "Duty rates here are illustrative. Use the rates on your own bill of entry and a factor you can name."
+  },
+  "senseible": "Senseible reads tax invoices and freight records; purchased material lines go to the supplier evidence trail with quantity, HSN code and supplier. Where only value is available it provides a spend-based estimate, labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Incoterms and freight in Category 4 or 9",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Emissions hidden in semi-finished imports",
+      "to": "/climate-intelligence/emissions-data-hidden-in-semi-finished-imports"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions, Categories 1 and 4",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

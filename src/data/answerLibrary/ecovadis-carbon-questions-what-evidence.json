@@ -1,0 +1,73 @@
+{
+  "slug": "ecovadis-carbon-questions-what-evidence",
+  "q": "What carbon evidence does EcoVadis ask an Indian supplier for?",
+  "title": "EcoVadis carbon evidence for suppliers",
+  "short": "EcoVadis wants documents, not answers alone: a climate or energy policy, Scope 1 and 2 totals with the method used, Scope 3 where you have it, a reduction target, and records of actions taken. Each claim needs a supporting document, and claims without one score little.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters rated by EcoVadis for EU and US buyers",
+  "sections": [
+    {
+      "h": "How EcoVadis scores the carbon part",
+      "p": [
+        "Carbon sits in the Environment theme. EcoVadis scores management systems through indicators such as policies, actions (measures and certifications), how much of the business they cover, and reporting. A policy that exists only in the questionnaire, with no document, is treated much like no policy."
+      ]
+    },
+    {
+      "h": "The documents to prepare",
+      "ol": [
+        "A signed climate or energy policy with a named owner and a date.",
+        "A GHG inventory: Scope 1 and Scope 2 totals in tonnes CO2e for a stated year, with the method (GHG Protocol), factors and their sources.",
+        "Scope 3 categories you have measured, even if only purchased goods or freight.",
+        "A reduction target with a base year and target year, and whether it is validated by SBTi.",
+        "Evidence of actions: energy audit reports, solar or efficiency project records, and before and after consumption.",
+        "Any public report or sustainability page where the figures appear."
+      ]
+    },
+    {
+      "h": "What makes evidence count",
+      "ul": [
+        "It is dated and covers the period claimed.",
+        "It names your company and site, and matches what you wrote in the questionnaire.",
+        "Figures trace back to bills and invoices if a reviewer asks.",
+        "It covers the whole company or says which sites it leaves out."
+      ]
+    },
+    {
+      "h": "Common reasons for a low carbon score",
+      "ul": [
+        "Totals with no year or method.",
+        "A target with no base year.",
+        "Actions described in words with no records.",
+        "Data for one site presented as the whole company."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills, fuel and purchase invoices into a Scope 1, 2 and 3 record with the source document behind each line, which you can attach as evidence. Its reports are self-declared drafts, and the EcoVadis rating itself comes from EcoVadis.",
+  "links": [
+    {
+      "label": "EcoVadis, CDP and ESG ratings support",
+      "to": "/esg-ratings"
+    },
+    {
+      "label": "CDP SME questionnaire vs full",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Trace emission data to source",
+      "to": "/climate-intelligence/how-to-trace-emission-data-to-source"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SBTi target validation",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewNote": "EcoVadis updates its methodology regularly; confirm the current edition before a rating cycle.",
+  "reviewed": "2026-10-17"
+}

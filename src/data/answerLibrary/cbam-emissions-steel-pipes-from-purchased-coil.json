@@ -1,0 +1,65 @@
+{
+  "slug": "cbam-emissions-steel-pipes-from-purchased-coil",
+  "q": "How do I calculate CBAM embedded emissions for steel pipes made from purchased coil?",
+  "title": "CBAM emissions for pipes made from coil",
+  "short": "Per tonne of pipe, take the coil you consumed per tonne times the coil's embedded emissions, then add your mill's own direct emissions per tonne, such as gas burnt in normalising, annealing or galvanising furnaces. For steel, electricity for welding and forming is not counted. In most pipe mills the coil figure dominates.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "ERW and welded pipe exporters to the EU",
+  "sections": [
+    {
+      "h": "Why pipes are a complex good",
+      "p": [
+        "Tubes and pipes under headings 7304 to 7306 are iron and steel goods in Annex I of the CBAM Regulation. A pipe made from bought hot-rolled coil is a complex good: its embedded emissions are your own process emissions plus the embedded emissions of the coil, which is the relevant precursor. Annex IV of the regulation sets this method, and the definitive-period implementing rules give the detail."
+      ]
+    },
+    {
+      "h": "What counts as your own direct emissions",
+      "ul": [
+        "PNG, LPG or furnace oil burnt in normalising, stress relieving or annealing furnaces.",
+        "Fuel for zinc kettles and pre-heating on a galvanising line.",
+        "Fuel for drying and coating ovens inside the installation boundary.",
+        "Not counted for steel: electricity for HF welding, forming mills, cutting and hydro testing. Under the current rules indirect emissions count for cement and fertilisers, not steel, but keep the kWh on record anyway.",
+        "Zinc and coating materials are not CBAM precursors for steel."
+      ]
+    },
+    {
+      "h": "Getting the coil figure",
+      "p": [
+        "Ask each coil supplier for the specific embedded emissions of the coil it shipped you, per tonne, with its reporting period. If a supplier cannot give it, use the official default value for that coil's CN code and country of origin, which includes the mark-up set in Implementing Regulation (EU) 2025/2621. Keep the supplier's communication with the coil invoice."
+      ]
+    },
+    {
+      "h": "Yield losses stay with the pipe",
+      "p": [
+        "Slitting edges, end cuts, trim and rejected lengths mean you consume more coil than you despatch as pipe. Charge all coil consumed in the period to the good pipe produced, unless the mill makes other goods from the same coil, in which case share by tonnes. Measure the ratio from coil issued to production and pipe despatched, not from a design figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year at an ERW pipe mill",
+    "lines": [
+      "Pipe produced: 5,000 t; coil consumed: 5,250 t, so 1.05 t of coil per t of pipe",
+      "Coil embedded emissions from the supplier: 2.1 t CO2 per t (assumed)",
+      "Precursor: 5,250 x 2.1 = 11,025 t CO2",
+      "Normalising furnace PNG: 1,40,000 scm x 2.05 kg CO2 per scm = 287,000 kg, so 287 t CO2",
+      "Total: 11,025 + 287 = 11,312 t CO2",
+      "Per tonne of pipe: 11,312 / 5,000 = 2.26 t CO2 per t"
+    ],
+    "note": "The coil share is 97 percent here. Better coil data moves the result far more than any change at the pipe mill."
+  },
+  "senseible": "Senseible's CBAM cost calculator applies default values and mark-ups to estimate certificate cost. It reads the pipe mill's fuel and power bills, which give the own-process share, and coil supplier statements can be kept with the coil invoices.",
+  "links": [
+    { "label": "CBAM emissions for cold-rolled coil", "to": "/answers/cold-rolled-coil-cbam-embedded-emissions" },
+    { "label": "Embedded emissions for steel under CBAM", "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam" },
+    { "label": "Where to find official CBAM default values", "to": "/answers/where-to-find-official-cbam-default-values" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), Annexes I, II and IV", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj" },
+    { "label": "Commission Implementing Regulation (EU) 2023/1773, Annex II (precursors), and the definitive-period implementing rules", "url": "https://eur-lex.europa.eu" },
+    { "label": "Commission Implementing Regulation (EU) 2025/2621 (default values)", "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng" }
+  ],
+  "reviewNote": "Check the precursor list and indirect emissions treatment for iron and steel in the current definitive-period implementing rules before each declaration.",
+  "reviewed": "2026-10-17"
+}

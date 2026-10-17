@@ -1,0 +1,74 @@
+{
+  "slug": "plastic-credits-vs-carbon-credits-epr",
+  "q": "What is the difference between EPR plastic credits and carbon credits?",
+  "title": "EPR plastic credits vs carbon credits",
+  "short": "EPR certificates prove that a registered processor recycled or processed a quantity of plastic, so a producer, importer or brand owner can meet its legal EPR target. A carbon credit represents one tonne of CO2e reduced or removed, verified under a carbon standard. EPR certificates cannot offset emissions.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Brand owners, importers and recyclers under India's plastic EPR rules",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Unit: EPR certificate, a quantity of plastic of a given category recycled or processed. Carbon credit, one tonne of CO2e.",
+        "Purpose: EPR, compliance with the Plastic Waste Management Rules 2016 and the 2022 EPR guidelines. Carbon credit, voluntary claims or compliance offset schemes.",
+        "Issued by: EPR, generated on the CPCB centralised EPR portal by registered plastic waste processors. Carbon credit, a carbon standard such as Verra or Gold Standard, or India's CCTS offset mechanism, after verification.",
+        "Buyer: EPR, producers, importers and brand owners with an obligation. Carbon credit, any company making a climate claim."
+      ]
+    },
+    {
+      "h": "Why an EPR certificate is not a carbon credit",
+      "p": [
+        "An EPR certificate counts mass handled. It does not measure the emissions avoided, it has no baseline or additionality test, and it is not verified as a greenhouse gas reduction. It also exists to meet a legal duty that you have anyway, so it cannot be claimed again as a voluntary climate action."
+      ]
+    },
+    {
+      "h": "Voluntary plastic credits are different again",
+      "p": [
+        "Verra's Plastic Waste Reduction Standard issues plastic credits for tonnes of waste collected or recycled. These are also measured in tonnes of plastic, not CO2e, and are not carbon credits. Buying them does not change your greenhouse gas inventory."
+      ]
+    },
+    {
+      "h": "How each shows up in your reporting",
+      "ul": [
+        "Your Scope 3 end-of-life emissions follow how your sold products are actually treated. Buying EPR certificates does not reduce that figure.",
+        "Carbon credits, if you buy and retire them, are reported separately from your inventory, never subtracted from Scope 1, 2 or 3.",
+        "In BRSR, report EPR compliance under Principle 2 and any credits as a separate disclosure."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices for EPR certificate purchases as evidence and its carbon credit pages explain eligibility signals for real emission reductions. EPR certificates are not treated as carbon credits.",
+  "links": [
+    {
+      "label": "How to calculate a plastic EPR obligation",
+      "to": "/answers/how-to-calculate-plastic-epr-obligation"
+    },
+    {
+      "label": "Green credit vs carbon credit in India",
+      "to": "/answers/green-credit-vs-carbon-credit-india"
+    },
+    {
+      "label": "What to check before buying carbon credits",
+      "to": "/answers/what-to-check-before-buying-carbon-credits"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Plastic Waste Management Rules 2016 and EPR Guidelines for Plastic Packaging 2022 (MoEFCC)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CPCB centralised EPR portal for plastic packaging",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "Verra Plastic Waste Reduction Standard",
+      "url": "https://verra.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

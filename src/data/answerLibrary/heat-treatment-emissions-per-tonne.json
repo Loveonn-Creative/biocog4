@@ -1,0 +1,86 @@
+{
+  "slug": "heat-treatment-emissions-per-tonne",
+  "q": "How do I calculate emissions per tonne for a heat treatment shop?",
+  "title": "Heat treatment emissions per tonne",
+  "short": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Captive and job heat treatment shops doing carburising, hardening and annealing",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Electricity for furnaces, washers, tempering ovens and compressors: kWh x 0.710 kg CO2.",
+        "LPG or PNG burnt in radiant tubes or endothermic gas generators: kg x 2.98 for LPG, scm x 2.05 for PNG.",
+        "Methanol cracked as carrier gas: its carbon leaves as CO2 when the gas burns at the furnace door, 44/32 = 1.375 kg CO2 per kg methanol.",
+        "DG diesel during power cuts: litres x 2.68.",
+        "Purchased nitrogen and quench oil are Scope 3 purchases, not Scope 1. Add them only for a cradle to gate product figure."
+      ]
+    },
+    {
+      "h": "Splitting between processes",
+      "p": [
+        "Carburising runs long cycles at high temperature; annealing and tempering use far less energy per tonne. If one figure covers everything, a buyer of tempered parts pays for someone else's carburising. Meter each furnace line if you can. If not, share energy by furnace hours times rated kW, which is a physical basis that ISO 14067 accepts, and state it."
+      ]
+    },
+    {
+      "h": "Quoting to a principal",
+      "p": [
+        "A job shop that bills per kg can quote the same figure per kg: divide the per tonne result by 1,000. The principal records it in its Scope 3 Category 1 as a purchased service. Give the month or year it covers and the process, for example 'gas carburising, case depth 0.8 to 1.0 mm'."
+      ]
+    },
+    {
+      "h": "Common mistakes",
+      "ul": [
+        "Dividing by tonnes invoiced instead of tonnes through the furnace, which hides rework.",
+        "Counting the LPG cylinder purchases of the month when stock has changed. Use consumption.",
+        "Leaving out the endo gas generator because it is not a furnace."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a job shop",
+    "lines": [
+      "Electricity: 180,000 kWh x 0.710 = 127,800 kg CO2",
+      "LPG for endo gas and burners: 6,000 kg x 2.98 = 17,880 kg CO2",
+      "Methanol: 2,000 kg x 1.375 = 2,750 kg CO2",
+      "Total: 127,800 + 17,880 + 2,750 = 148,430 kg CO2",
+      "Tonnes treated: 400, so 148,430 / 400 = 371 kg CO2 per tonne, or 0.371 kg per kg"
+    ],
+    "note": "Methanol at 1.375 kg CO2 per kg is the full oxidation of its carbon; record the basis beside it."
+  },
+  "senseible": "Senseible reads furnace electricity bills and LPG or PNG invoices and gives Scope 1 and 2 totals per period, with the factor and source on each line. The tonnes treated and the split between furnaces come from your production records.",
+  "links": [
+    {
+      "label": "Job work: which scope",
+      "to": "/answers/job-work-emissions-which-scope"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "Scope 1 for Indian manufacturers",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (allocation)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

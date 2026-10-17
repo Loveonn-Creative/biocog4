@@ -1,0 +1,57 @@
+{
+  "slug": "psci-questionnaire-pharma-supplier-emissions",
+  "q": "What emissions data does a PSCI questionnaire ask pharma suppliers for?",
+  "title": "PSCI questionnaire: emissions data to give",
+  "short": "Expect to give Scope 1 and Scope 2 emissions and energy use for each manufacturing site, how you calculated them, any reduction target, and how you manage solvents, refrigerants, air emissions and waste. Answer per site, not only as a group total, and keep the bills and records behind every figure ready.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian API and formulation suppliers to global pharma companies",
+  "sections": [
+    {
+      "h": "What PSCI is and why buyers send it",
+      "p": [
+        "The Pharmaceutical Supply Chain Initiative is a group of pharma and healthcare companies that share one set of supplier principles covering ethics, labour, health and safety, environment and management systems. Members send suppliers its self-assessment questionnaire, and may follow up with a site audit. The environment part asks how you control your impacts; the climate questions feed the buyer's own Scope 3 reporting."
+      ]
+    },
+    {
+      "h": "Emissions and energy figures to have ready",
+      "ul": [
+        "Scope 1 per site: fuels in boilers, thermic fluid heaters and DG sets, plus refrigerant top-ups in CO2e.",
+        "Scope 2 per site: grid electricity in kWh and tonnes CO2, location-based, and market-based if you buy renewable power under open access or hold certificates.",
+        "Total energy use in GJ or MWh, and the share from renewable sources.",
+        "The reporting period, the factors used and their sources.",
+        "A reduction target with base year, if you have one, and the projects behind it."
+      ]
+    },
+    {
+      "h": "Environmental controls that sit next to the numbers",
+      "ul": [
+        "Solvent use, recovery and incineration, since solvent incineration can be a large source at API sites.",
+        "Consents to operate, hazardous waste authorisation and the annual returns filed with the State Pollution Control Board.",
+        "Effluent treatment, including whether the site is zero liquid discharge.",
+        "Spills and releases in the period, and how they were handled."
+      ]
+    },
+    {
+      "h": "How to answer well",
+      "ol": [
+        "Check which version of the questionnaire you received; content changes between versions and buyers sometimes add their own questions.",
+        "Answer every question; write zero or not applicable with a reason rather than leaving a blank.",
+        "Use the same figures you give in BRSR, CDP or other buyer requests, so totals match across documents.",
+        "Attach or offer evidence: a sample of fuel invoices and electricity bills, the calculation sheet and consent documents."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads site bills and invoices into Scope 1, 2 and 3 records, with each figure linked to its source document, which gives you per-site totals and evidence for the questionnaire. Filling in and submitting the questionnaire stays with you.",
+  "links": [
+    { "label": "NHS carbon reduction plan for pharma", "to": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india" },
+    { "label": "API carbon footprint per kg", "to": "/answers/api-carbon-footprint-per-kg" },
+    { "label": "Solvent incineration emissions", "to": "/answers/solvent-incineration-emissions-pharma-api" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard (Scope 1 and 2 by site)", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Scope 2 Guidance (location and market-based)", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewNote": "PSCI updates its principles and questionnaire; check the version a buyer sends.",
+  "reviewed": "2026-10-17"
+}

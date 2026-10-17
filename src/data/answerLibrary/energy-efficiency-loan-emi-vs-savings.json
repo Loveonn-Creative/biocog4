@@ -1,0 +1,81 @@
+{
+  "slug": "energy-efficiency-loan-emi-vs-savings",
+  "q": "Will energy savings pay the EMI on an energy efficiency loan?",
+  "title": "Will energy savings pay the loan EMI?",
+  "short": "Compare the annual EMI with the measured annual saving in rupees. A saving of at least 1.3 times the EMI, our rule of thumb rather than a bank norm, leaves room for a bad year. Use your own before and after bills, not the vendor's estimate, and test a 30% shortfall.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs replacing compressors, motors, furnaces or boilers with a loan",
+  "sections": [
+    {
+      "h": "The EMI side",
+      "p": [
+        "EMI = P x r x (1 + r)^n / ((1 + r)^n minus 1), where P is the loan, r the monthly interest rate (annual rate / 12) and n the number of months. Multiply by 12 for the annual outflow. Your bank's sanction letter gives the rate and tenure; processing fees and insurance add to the cost."
+      ]
+    },
+    {
+      "h": "The savings side",
+      "ul": [
+        "Energy saved per year, from a measured baseline: kWh or fuel before the project at the same production level, minus kWh or fuel after.",
+        "Rupee value at your actual tariff, the energy charge per kWh including fuel adjustment and duties, not the all-in average if demand charges will not change.",
+        "Demand charge savings, if a smaller contract demand in kVA becomes possible.",
+        "Lower maintenance on the old machine, if you can show it from past invoices.",
+        "Do not count tax depreciation as a saving here; it improves the return but does not pay the monthly EMI in cash."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "p": [
+        "Cover ratio = annual saving / annual EMI. Above about 1.3, a working rule of thumb and not a lender requirement, the project pays its loan with headroom; your bank may apply its own test. Between 1.0 and 1.3, it works only if savings hold every month. Below 1.0, you are paying part of the EMI from other cash; that can still be worth it for reliability or capacity, but decide knowingly. Run the test again with savings 30% lower, because production drops and tariff changes happen."
+      ]
+    },
+    {
+      "h": "What the lender wants to see",
+      "p": [
+        "Lenders size energy efficiency loans on credible savings. An energy audit, quotations, the equipment's rated performance and 12 months of bills for the baseline make the case. After installation, the same bills prove the saving and support the next loan."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a compressor and motor upgrade",
+    "lines": [
+      "Loan ₹40,00,000 at 9.5% a year for 5 years: r = 0.095 / 12 = 0.0079167; n = 60",
+      "EMI = about ₹84,007 a month; ₹10,08,089 a year; total repaid about ₹50.4 lakh",
+      "Saving: 2,50,000 kWh a year x ₹8 = ₹20,00,000 a year",
+      "Cover ratio: 20,00,000 / 10,08,089 = 1.98",
+      "Stress test, savings 30% lower: ₹14,00,000 / 10,08,089 = 1.39, still above 1.3",
+      "CO2 avoided: 2,50,000 x 0.710 = 1,77,500 kg, about 177.5 t a year"
+    ],
+    "note": "Interest rate and tariff are illustrative. Use the rate in your sanction letter and your own tariff."
+  },
+  "senseible": "Senseible reads your electricity and fuel bills before and after the project, so the baseline and the saving are traceable to source documents, and the green loan readiness check uses that record. It does not set loan terms or approve credit; the lender does.",
+  "links": [
+    {
+      "label": "Prove energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "SIDBI energy efficiency loan for MSMEs",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE, investment grade energy audit guidance",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

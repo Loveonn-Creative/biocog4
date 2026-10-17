@@ -1,0 +1,85 @@
+{
+  "slug": "spinning-mill-carbon-footprint-per-kg-yarn",
+  "q": "What is the carbon footprint per kg of cotton yarn from an Indian spinning mill?",
+  "title": "Carbon footprint per kg of cotton yarn",
+  "short": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Spinning mills supplying weavers and knitters who sell to EU and UK brands",
+  "sections": [
+    {
+      "h": "What goes into the mill figure",
+      "ul": [
+        "Grid electricity from HT bills: kWh x 0.710 kg CO2 per kWh (CEA, version 21.0).",
+        "DG diesel during outages: litres x 2.68 kg CO2.",
+        "Any boiler or heating fuel, for example coal at 2.42 kg CO2 per kg.",
+        "Divide the total by kg of yarn packed in the same period."
+      ]
+    },
+    {
+      "h": "Why power per kg differs so much between mills",
+      "p": [
+        "Spinning is a motor and air conditioning process. Finer counts need more spindle hours per kg, so kWh per kg rises with count. Compact spinning and high humidification loads add more. Open end yarn of a coarse count uses far less per kg than a fine combed ring yarn. Use your own kWh per kg by count group, not a sector average."
+      ]
+    },
+    {
+      "h": "Adding the cotton for a cradle to gate figure",
+      "p": [
+        "A buyer asking for a cradle to gate footprint under ISO 14067 or the GHG Protocol Product Standard wants the fibre too. Multiply the fibre factor by the kg of cotton per kg of yarn, which is above 1 because of comber noil and other waste.",
+        "If you sell comber noil or waste, you can allocate part of the burden to it, by mass or by value. State which and keep it the same each year."
+      ]
+    },
+    {
+      "h": "Multi count mills: share the energy fairly",
+      "p": [
+        "If the mill runs several counts, do not divide total kWh by total kg. Share kWh by spindle hours or by machine group metering, so a fine count carries more energy than a coarse one. Buyers comparing quotes notice when every count has the same figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, electricity and DG only",
+    "lines": [
+      "Yarn produced: 6,00,000 kg",
+      "Grid power: 19,20,000 kWh (3.2 kWh per kg, illustrative) x 0.710 = 13,63,200 kg CO2",
+      "DG diesel: 6,000 litres x 2.68 = 16,080 kg CO2",
+      "Total: 13,63,200 + 16,080 = 13,79,280 kg CO2",
+      "Per kg yarn: 13,79,280 / 6,00,000 = 2.30 kg CO2, before cotton fibre"
+    ],
+    "note": "3.2 kWh per kg is an illustrative mid count figure; use the mill's own bills and output."
+  },
+  "senseible": "Senseible reads the mill's HT electricity bills, DG diesel and fuel invoices and gives Scope 1 and 2 totals with the factor on each line; you divide by your yarn output. Cotton and other purchases go to the supplier evidence trail.",
+  "links": [
+    {
+      "label": "Which textile tier has most emissions",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "Energy norms vary by count and spinning system; check the mill's own figures each year.",
+  "reviewed": "2026-10-17"
+}

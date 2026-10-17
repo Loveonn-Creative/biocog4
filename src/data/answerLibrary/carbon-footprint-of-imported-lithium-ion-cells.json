@@ -1,0 +1,81 @@
+{
+  "slug": "carbon-footprint-of-imported-lithium-ion-cells",
+  "q": "What emission factor should I use for imported lithium-ion cells in my Scope 3?",
+  "title": "Emission factor for imported Li-ion cells",
+  "short": "Use the cell maker's own product carbon footprint in kg CO2e per kWh first. If it has none, use a published figure for the same chemistry (LFP or NMC) and producing country, label it as an estimate, and multiply by the kWh of cells you bought. It goes in Scope 3 Category 1.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian EV, e-2W and energy storage assemblers importing cells",
+  "sections": [
+    {
+      "h": "Work in kWh, not number of cells",
+      "p": [
+        "Cell footprints are quoted per kWh of capacity. Convert your purchase: nominal voltage x amp hours / 1,000 = kWh per cell, then multiply by the number of cells. Bills of entry and supplier invoices usually show the cell model, which gives voltage and capacity."
+      ]
+    },
+    {
+      "h": "Which factor, in order of preference",
+      "ol": [
+        "The supplier's product carbon footprint for that cell, with its boundary and year. Cell makers selling into the EU are preparing these for the Batteries Regulation.",
+        "A published figure for the same chemistry and manufacturing country, labelled as secondary data.",
+        "A spend-based estimate only if you have no capacity data, labelled as spend-based with wider uncertainty."
+      ]
+    },
+    {
+      "h": "Why chemistry and country matter",
+      "p": [
+        "NMC cells need nickel and cobalt, which usually carry more emissions per kWh than LFP materials. Cell and cathode plants run on electricity, so a cell made on a coal-heavy grid carries more than the same cell made on cleaner power. Published figures vary widely for these reasons, so name the one you used."
+      ]
+    },
+    {
+      "h": "What to keep with the number",
+      "ul": [
+        "The source, its table or page, and the chemistry it covers.",
+        "Whether it is cradle to gate for the cell or includes the pack.",
+        "The kWh calculation for each purchase.",
+        "A note to replace it with the supplier figure when you get one."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one shipment of LFP cells",
+    "lines": [
+      "Cells: 2,000 x 3.2 V x 100 Ah",
+      "kWh per cell: 3.2 x 100 / 1,000 = 0.32 kWh; shipment: 2,000 x 0.32 = 640 kWh",
+      "Factor: 80 kg CO2e per kWh (illustrative placeholder, replace with supplier PCF or a published figure)",
+      "640 x 80 = 51,200 kg CO2e, about 51 tonnes in Scope 3 Category 1"
+    ],
+    "note": "80 kg CO2e per kWh is a placeholder for the arithmetic, not a recommended value."
+  },
+  "senseible": "Senseible reads cell quantities from purchase invoices into the supplier evidence trail, where the supplier's footprint can be kept with the invoice. The automatic reader applies no battery factor, so the line shows no figure from it; where only spend is known, Senseible provides a spend-based estimate labelled as such.",
+  "links": [
+    {
+      "label": "EU battery passport for exporters",
+      "to": "/answers/eu-battery-passport-indian-battery-exporters"
+    },
+    {
+      "label": "Using a supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Regulation (EU) 2023/1542 (Batteries Regulation), Article 7",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "IEA, The Role of Critical Minerals in Clean Energy Transitions (2021)",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewNote": "Published cell footprints vary widely and EU carbon footprint rules for batteries are still being set; recheck the source each year.",
+  "reviewed": "2026-10-17"
+}

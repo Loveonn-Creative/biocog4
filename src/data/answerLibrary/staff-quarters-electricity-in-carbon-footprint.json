@@ -1,0 +1,82 @@
+{
+  "slug": "staff-quarters-electricity-in-carbon-footprint",
+  "q": "Should electricity used in staff quarters and the factory canteen be in my carbon footprint?",
+  "title": "Staff quarters and canteen electricity",
+  "short": "Yes, in your company footprint, if you operate the colony or canteen and the power comes through your meter: it is Scope 2. In a product footprint you can leave colony power out, because it does not make the product, but keep the canteen and say what you excluded.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factory owners with a residential colony, hostel or canteen on the same meter",
+  "sections": [
+    {
+      "h": "Company footprint: follow operational control",
+      "p": [
+        "Under the GHG Protocol Corporate Standard most companies use the operational control approach. If your company runs the staff colony, hostel or canteen, sets its rules and pays its electricity, the power used there is your Scope 2, even though nothing is manufactured there.",
+        "If quarters are let to an outside party who runs them and pays its own separately metered bill, they are outside your boundary. A canteen run by a contractor on your meter is usually kept in, because you pay the bill and control the premises; say so in your boundary note."
+      ]
+    },
+    {
+      "h": "BRSR energy figures",
+      "p": [
+        "SEBI's BRSR format asks for the entity's total energy consumption under Principle 6. Use the same boundary as your GHG figures, so colony and canteen power that is in Scope 2 is also in total energy. Do not drop it to make energy intensity look better; if you want a production-only intensity, show it separately and explain the subtraction."
+      ]
+    },
+    {
+      "h": "Product footprint: allocate only what makes the product",
+      "p": [
+        "ISO 14067 and the GHG Protocol Product Standard allocate plant inputs to the products that use them. Electricity for family housing does not make a single unit, so subtract it before you divide plant power across products, and state the exclusion. The canteen serves the workforce during production, so most practitioners keep it in plant overheads.",
+        "You need a sub-meter or a defensible estimate to subtract anything. Without one, keep the full figure and note that it includes residential use."
+      ]
+    },
+    {
+      "h": "Recharges to employees",
+      "p": [
+        "Deducting a power charge from salaries does not move the emissions out of Scope 2. The meter is still yours. Recharges are a payroll matter; the kWh stay in your inventory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a single HT meter",
+    "lines": [
+      "HT bill: 60,000 kWh; colony sub-meter: 6,000 kWh; canteen sub-meter: 1,500 kWh",
+      "Company Scope 2: 60,000 x 0.710 = 42,600 kg CO2",
+      "Electricity for product allocation: 60,000 minus 6,000 = 54,000 kWh (canteen kept in)",
+      "Product basis: 54,000 x 0.710 = 38,340 kg CO2 shared across the month's output",
+      "Excluded from products: 6,000 x 0.710 = 4,260 kg CO2, still in company Scope 2"
+    ],
+    "note": "Keep the monthly sub-meter log as evidence for the split."
+  },
+  "senseible": "Senseible reads the units on your main electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh for Scope 2, so the colony share stays in the company total. Keep your sub-meter log alongside the record as the evidence for any split you make for product or intensity figures.",
+  "links": [
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Scope 2 emissions in manufacturing",
+      "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    },
+    {
+      "label": "BRSR reporting requirements",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI BRSR format (July 2023), Principle 6",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

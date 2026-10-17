@@ -1,0 +1,66 @@
+{
+  "slug": "forging-carbon-footprint-per-tonne",
+  "q": "What is the carbon footprint per tonne of steel forgings?",
+  "title": "Carbon footprint per tonne of forgings",
+  "short": "There is no single figure. Work it out as the furnace fuel and electricity emissions per good tonne despatched, plus the steel bar you consumed per tonne times your bar supplier's footprint. The steel usually dominates, and yield losses mean each tonne of forgings carries more than a tonne of bar.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Forging units in Pune, Rajkot, Ludhiana supplying auto OEMs and EU buyers",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Footprint per tonne = (heating fuel x its factor + kWh x 0.710) / good tonnes despatched + bar consumed per good tonne x steel factor.",
+        "Use a full year or at least a full quarter of data, so furnace start-ups, holidays and die changes are averaged out."
+      ]
+    },
+    {
+      "h": "Step 1: energy at the forge shop",
+      "ul": [
+        "Furnace oil billet heaters: litres x 2.97 kg CO2 per litre.",
+        "PNG heaters and heat treatment furnaces: scm x 2.05 kg CO2 per scm.",
+        "Induction heaters, presses, hammers, shot blasting and machining: kWh x 0.710 kg CO2 per kWh, location-based.",
+        "DG sets during power cuts: litres x 2.68 kg CO2 per litre.",
+        "If the plant also makes other products, share energy by machine hours or tonnes through each line and state the rule."
+      ]
+    },
+    {
+      "h": "Step 2: steel input, the biggest part",
+      "p": [
+        "Flash, scale, end cuts and rejected parts mean you buy more bar than you despatch. Measure the ratio from purchase and despatch records: bar consumed divided by good forgings. Closed die forgings for auto parts often need noticeably more than one tonne of bar per tonne despatched.",
+        "Multiply that ratio by the bar mill's own footprint per tonne, from its environmental product declaration or a supplier statement. An electric arc furnace or scrap-based mill and a blast furnace mill can differ by a factor of two or more, so this one number decides most of your result. Do not credit yourself for the scrap you sell unless you state that method."
+      ]
+    },
+    {
+      "h": "What to send the buyer",
+      "p": [
+        "Give the figure per tonne and per part, the boundary (cradle to gate), the period, the bar supplier factor and its source, and the yield ratio. Say that energy figures are CO2 only and the steel figure is CO2e if the mill reports it that way. Keep the invoices behind each line ready for review."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one quarter at a closed die forge",
+    "lines": [
+      "Furnace oil: 60,000 L x 2.97 = 178,200 kg CO2",
+      "Electricity: 4,00,000 kWh x 0.710 = 284,000 kg CO2",
+      "Energy total: 462,200 kg CO2 for 1,000 t of good forgings, so 462 kg CO2 per tonne",
+      "Bar consumed: 1,300 t, so 1.3 t of bar per tonne of forgings",
+      "Assumed bar footprint: 2.0 t CO2e per t (placeholder; use your mill's figure): 1.3 x 2.0 = 2.6 t CO2e per tonne",
+      "Total: 0.46 + 2.6 = about 3.06 t CO2e per tonne of forgings"
+    ],
+    "note": "All inputs are illustrative. The steel line is 85 percent of the total here, which is why the bar mill's figure matters more than any furnace change."
+  },
+  "senseible": "Senseible reads furnace oil, PNG, diesel and electricity bills into Scope 1 and 2, which gives the energy part per tonne. Steel bar purchases go to the supplier evidence trail, where the mill's own footprint statement can be kept with the invoice.",
+  "links": [
+    { "label": "How scrap rate affects carbon per unit", "to": "/answers/how-scrap-rate-affects-carbon-per-unit" },
+    { "label": "Steel supplier benchmark intensity", "to": "/answers/steel-supplier-benchmark-carbon-intensity" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" },
+    { "label": "Automobile components", "to": "/industries/automobile" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "worldsteel, steel climate and life cycle data", "url": "https://worldsteel.org" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17"
+}

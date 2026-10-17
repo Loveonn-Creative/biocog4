@@ -95,6 +95,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much CO2 does acetylene used for cutting and welding emit?",
+  "text": "Each kg of acetylene burnt in a cutting or welding torch releases about 3.38 kg CO2, because one molecule of acetylene (C2H2) burns to two molecules of CO2. A cylinder holding 7 cubic metres of gas, about 7.7 kg, gives roughly 26 kg CO2.",
+  "url": "https://senseible.earth/answers/acetylene-gas-cylinder-co2"
+ },
+ {
+  "kind": "answer",
   "title": "Should freight emissions use the actual route distance or the shortest distance?",
   "text": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework charge each shipment on the shortest feasible distance, with detours and empty running carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
   "url": "https://senseible.earth/answers/actual-vs-shortest-distance-freight-emissions"
@@ -116,6 +122,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "My fabric supplier gave me its total factory emissions. How do I work out the share that belongs to my order?",
   "text": "Multiply the supplier's emissions by your share of its output. Use a physical basis, such as tonnes or metres of fabric, when its products are similar, and an economic basis, your share of its revenue, only when products differ a lot in value. Ask first whether the supplier can give a figure for your product line, which avoids allocation.",
   "url": "https://senseible.earth/answers/allocate-supplier-emissions-to-my-purchases"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint per kg of an aluminium die casting?",
+  "text": "Per kg of good casting, add the alloy ingot's footprint times the kg of metal bought per kg of good casting, plus melting and machine energy per kg. The ingot route decides most of the answer: secondary alloy ingot carries a small fraction of the footprint of primary aluminium.",
+  "url": "https://senseible.earth/answers/aluminium-die-casting-carbon-footprint-per-kg"
  },
  {
   "kind": "answer",
@@ -155,9 +167,33 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Are aluminium die castings covered by CBAM?",
+  "text": "It depends on the CN code. Aluminium castings declared under heading 7616, other articles of aluminium, are covered by EU CBAM. Castings classified as parts of a vehicle, engine, pump or electrical machine, in Chapters 84, 85 or 87, are not covered today. The code your EU importer declares decides.",
+  "url": "https://senseible.earth/answers/are-aluminium-castings-covered-by-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Are ceramic tiles and sanitaryware covered by EU or UK CBAM?",
+  "text": "No. Ceramic tiles (HS 6907) and sanitaryware (HS 6910) are not in Annex I of the EU CBAM Regulation, and the UK dropped ceramics from its CBAM before the 2027 start. No CBAM is due on Morbi tiles today, though buyers may still ask for a product footprint.",
+  "url": "https://senseible.earth/answers/are-ceramic-tiles-covered-by-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "Are electric vehicle deliveries zero emission in my Scope 3?",
   "text": "No. An electric delivery has no tailpipe emissions, but the electricity that charged the vehicle was generated somewhere, and in India most of it from coal. Your Scope 3 transport figure is the carrier's kWh times the grid factor, which is lower than diesel but not zero.",
   "url": "https://senseible.earth/answers/are-ev-deliveries-zero-emission-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "Are steel and aluminium kitchenware and handicrafts covered by CBAM?",
+  "text": "No, not today. Steel table and kitchen articles (heading 7323) and aluminium ones (7615) are not in Annex I of the CBAM Regulation. But other articles of steel (7326) and aluminium (7616) are covered, so a steel or aluminium item classified there pays CBAM. Brass artware (chapter 74) is not covered.",
+  "url": "https://senseible.earth/answers/are-kitchen-utensils-covered-by-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Are steel forgings and flanges covered by CBAM?",
+  "text": "Mostly yes. Flanges and pipe fittings under CN 7307, forged articles under 7326 and forged bars in Chapter 72 are iron and steel goods in CBAM Annex I. Forgings machined into recognisable machine or vehicle parts, such as crankshafts and gears under 8483 or vehicle parts under 8708, are not covered today.",
+  "url": "https://senseible.earth/answers/are-steel-forgings-covered-by-cbam"
  },
  {
   "kind": "answer",
@@ -173,9 +209,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is on a bank's ESG exclusion list for MSME loans?",
+  "text": "An exclusion list names activities a lender will not finance at all. Lists used for MSME loans, especially credit lines funded by development banks, usually exclude forced or harmful child labour, illegal products, banned chemicals and pesticides, ozone-depleting substances, unbonded asbestos, trade in protected wildlife, weapons, tobacco and gambling. Many now restrict new coal power.",
+  "url": "https://senseible.earth/answers/bank-esg-exclusion-list-msme-loan"
+ },
+ {
+  "kind": "answer",
   "title": "How does the BEE star rating for office buildings work?",
   "text": "The BEE star rating gives an existing office building one to five stars based on its Energy Performance Index (EPI): annual kWh divided by built-up area. Fewer kWh per square metre earns more stars. The bands differ by climate zone and by how much of the building is air-conditioned.",
   "url": "https://senseible.earth/answers/bee-star-rating-for-commercial-buildings"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I use a customs bill of entry to calculate Scope 3 for imported materials?",
+  "text": "Take the quantity, tariff heading and country of origin from each bill of entry and multiply the quantity by an emission factor for that material and route. Use the assessable value only for a spend-based estimate, after removing duty and IGST. Ocean freight from the supplier to you goes in Category 4.",
+  "url": "https://senseible.earth/answers/bill-of-entry-imported-materials-scope-3"
  },
  {
   "kind": "answer",
@@ -215,9 +263,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per kg of brass components from Jamnagar?",
+  "text": "Work it out as metal bought per kg of finished parts times the footprint of that metal, plus melting, machining and plating energy per kg. The metal usually decides the result: brass melted from scrap carries far less than brass made from new copper and zinc, so state the recycled share and method.",
+  "url": "https://senseible.earth/answers/brass-component-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate CO2 per 1,000 bricks for a coal-fired brick kiln, and how much does a zigzag kiln reduce it?",
   "text": "Divide the season's coal use by bricks fired, then multiply by the coal factor: kg coal per 1,000 bricks x 2.42 kg CO2 per kg (IPCC 2006 default) gives kg CO2 per 1,000 bricks. A zigzag kiln cuts this only as far as it cuts your coal per brick, so measure coal per lakh bricks before and after conversion.",
   "url": "https://senseible.earth/answers/brick-kiln-emissions-per-1000-bricks"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate NOx, SOx and PM for the BRSR air emissions table?",
+  "text": "Use your stack monitoring reports. For each stack, multiply the measured concentration in mg/Nm3 by the flue gas flow in Nm3/h and the operating hours, then divide by 10^9 to get tonnes. Add all stacks. Where a stack has no monitoring, estimate SOx from fuel sulphur and say so.",
+  "url": "https://senseible.earth/answers/brsr-air-emissions-nox-sox-pm"
  },
  {
   "kind": "answer",
@@ -239,9 +299,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate energy intensity per rupee of turnover for BRSR?",
+  "text": "Divide total energy consumed in gigajoules by revenue from operations in rupees. Convert each fuel and electricity to GJ first: 1 kWh is 0.0036 GJ, a litre of diesel about 0.0359 GJ. For the PPP figure, divide revenue by India's PPP conversion rate before dividing.",
+  "url": "https://senseible.earth/answers/brsr-energy-intensity-calculation"
+ },
+ {
+  "kind": "answer",
   "title": "What is the voluntary green credits disclosure in BRSR, and what counts?",
   "text": "It is a voluntary BRSR line, added by SEBI in March 2025, where a listed company reports Green Credits generated or procured by itself and by its top ten value chain partners. Only Green Credits under MoEFCC's Green Credit Rules, 2023 count; carbon credits and RECs do not.",
   "url": "https://senseible.earth/answers/brsr-green-credits-disclosure"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I split energy into renewable and non-renewable in BRSR?",
+  "text": "In BRSR Principle 6, list electricity, fuel and other energy twice: once from renewable sources and once from non-renewable sources, all in gigajoules. Grid power, DG diesel, coal and gas are non-renewable. Self-consumed solar, contracted green power with supply proof and biomass are renewable. Convert kWh to GJ by multiplying by 0.0036.",
+  "url": "https://senseible.earth/answers/brsr-renewable-vs-non-renewable-energy"
  },
  {
   "kind": "answer",
@@ -260,6 +332,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "BRSR, GRI or ISSB: which sustainability framework does an Indian company actually need?",
   "text": "If you are among India's top 1,000 listed companies by market capitalisation, BRSR is mandatory. GRI is voluntary and suits companies whose global buyers or investors ask for an impact report. ISSB standards (IFRS S1 and S2) are not yet mandatory in India; use them when foreign investors or a parent ask for them.",
   "url": "https://senseible.earth/answers/brsr-vs-gri-vs-issb-which-framework"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I fill the BRSR waste table by category?",
+  "text": "Enter tonnes of waste generated in each BRSR category (plastic, e-waste, bio-medical, construction and demolition, battery, radioactive, other hazardous, other non-hazardous) from manifests and recycler invoices. Then split the same waste into recovered (recycled, reused, other recovery) and disposed (incinerated, landfilled, other), and divide the total by turnover for waste intensity.",
+  "url": "https://senseible.earth/answers/brsr-waste-categories-how-to-fill"
  },
  {
   "kind": "answer",
@@ -425,6 +503,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What emission factor should I use for imported lithium-ion cells in my Scope 3?",
+  "text": "Use the cell maker's own product carbon footprint in kg CO2e per kWh first. If it has none, use a published figure for the same chemistry (LFP or NMC) and producing country, label it as an estimate, and multiply by the kWh of cells you bought. It goes in Scope 3 Category 1.",
+  "url": "https://senseible.earth/answers/carbon-footprint-of-imported-lithium-ion-cells"
+ },
+ {
+  "kind": "answer",
   "title": "How do I run a sensitivity analysis on a carbon footprint?",
   "text": "Change one input at a time, such as a factor, a quantity or an allocation choice, by a set amount like 10%, recalculate the total and record how much it moves. Inputs that move the total most are the ones to measure better and to explain in your report.",
   "url": "https://senseible.earth/answers/carbon-footprint-sensitivity-analysis"
@@ -449,6 +533,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per tonne of caustic soda made in India?",
+  "text": "It depends mostly on where the cell power comes from. Multiply electrolysis kWh per tonne of chlorine by your grid or captive plant factor, add steam fuel for concentration, then share the total by mass across chlorine, caustic soda and hydrogen. On grid power at 0.710 the figure is usually lower than on a captive coal plant.",
+  "url": "https://senseible.earth/answers/caustic-soda-carbon-footprint-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "Is there an official template for sending CBAM emissions data to my EU buyer?",
   "text": "Yes, but it is voluntary. The European Commission publishes an Excel communication template, with guidance, for installation operators outside the EU to send embedded emissions data to EU importers. Your buyer may accept another format, but using the Commission template makes the data easier for them to check and file.",
   "url": "https://senseible.earth/answers/cbam-communication-template-for-suppliers"
@@ -461,9 +551,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate CBAM embedded emissions for steel pipes made from purchased coil?",
+  "text": "Per tonne of pipe, take the coil you consumed per tonne times the coil's embedded emissions, then add your mill's own direct emissions per tonne, such as gas burnt in normalising, annealing or galvanising furnaces. For steel, electricity for welding and forming is not counted. In most pipe mills the coil figure dominates.",
+  "url": "https://senseible.earth/answers/cbam-emissions-steel-pipes-from-purchased-coil"
+ },
+ {
+  "kind": "answer",
   "title": "How do Indian banks stress test MSME borrowers for CBAM and carbon price risk?",
   "text": "A bank estimates the CBAM cost on the borrower's EU-bound goods each year: embedded emissions minus the free allocation adjustment, times a scenario certificate price. It then assumes how much of that cost the EU buyer pushes back through a lower price or lost orders, and tests the hit against EBITDA and the DSCR covenant.",
   "url": "https://senseible.earth/answers/cbam-exposure-in-bank-stress-test"
+ },
+ {
+  "kind": "answer",
+  "title": "Is each of my factory units a separate CBAM installation?",
+  "text": "Units at different sites are separate CBAM installations, each with its own emissions data. Units on one site that share a location and operate together are usually one installation. Inside one installation, each production process, such as making billets and rolling bars, gets its own attributed emissions.",
+  "url": "https://senseible.earth/answers/cbam-installation-boundary-two-units"
  },
  {
   "kind": "answer",
@@ -641,6 +743,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is coastal shipping lower carbon than road freight within India?",
+  "text": "Per tonne-km a coastal ship is usually far below a truck, but door to door it depends on the route. Sea distances around the coast are often longer than the highway, and trucks still haul to and from both ports. Work out the break-even sea factor for your lane and compare.",
+  "url": "https://senseible.earth/answers/coastal-shipping-vs-road-emissions-india"
+ },
+ {
+  "kind": "answer",
   "title": "Does cold rolling add CBAM embedded emissions on top of the hot-rolled coil it is made from?",
   "text": "Yes, but only a little. Cold-rolled coil carries the embedded emissions of all the hot-rolled coil consumed, plus the direct emissions of the cold mill, such as gas or oil burnt in annealing and galvanising furnaces. Electricity for the rolling stands is not counted for steel under CBAM.",
   "url": "https://senseible.earth/answers/cold-rolled-coil-cbam-embedded-emissions"
@@ -713,9 +821,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a dairy biogas plant earn carbon credits in India?",
+  "text": "Yes, if it fits an approved methodology and the reductions are real against the baseline. Credits come from two places: methane avoided from manure that would otherwise rot in pits or lagoons, and fossil fuel displaced by the biogas. For dung that was dried as cakes, most of the credit comes from displaced LPG, diesel or firewood.",
+  "url": "https://senseible.earth/answers/dairy-biogas-plant-carbon-credits"
+ },
+ {
+  "kind": "answer",
   "title": "How do I estimate enteric methane from dairy cattle and buffalo in India?",
   "text": "Multiply the average number of animals by a methane factor per head per year, then by methane's warming potential. With the IPCC 2006 Tier 1 factor for dairy cattle in the Indian subcontinent, 58 kg CH4 a year, times 27 under AR6, each cow comes to about 1.57 tonnes CO2e. Buffalo have their own factor.",
   "url": "https://senseible.earth/answers/dairy-enteric-methane-emissions-india"
+ },
+ {
+  "kind": "answer",
+  "title": "What are the emissions per litre of milk processed at a dairy plant?",
+  "text": "Divide the plant's monthly Scope 1 and 2 emissions by the litres of milk received. Electricity at 0.710 kg CO2 per kWh, boiler fuel and DG diesel make up most of it, plus any HFC refrigerant top-ups. Liquid milk plants land far lower per litre than plants making powder or ghee.",
+  "url": "https://senseible.earth/answers/dairy-plant-emissions-per-litre-of-milk"
  },
  {
   "kind": "answer",
@@ -779,6 +899,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do lubricating oils count in Scope 1 emissions?",
+  "text": "Only the small share of lubricating oil that oxidises inside your own engines and machines counts, and it is Scope 1. IPCC assumes 20 percent of lube oil oxidises in use, which works out to about 0.59 tonnes of CO2 per tonne bought. For most plants this is small enough to exclude, if you say so.",
+  "url": "https://senseible.earth/answers/do-lubricants-count-in-scope-1"
+ },
+ {
+  "kind": "answer",
   "title": "Do RE100 and CDP accept unbundled RECs from India?",
   "text": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and the age of the generating plant. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
   "url": "https://senseible.earth/answers/do-re100-and-cdp-accept-indian-recs"
@@ -794,6 +920,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Does a SHA-256 hash prove that reported emissions are correct?",
   "text": "No. A SHA-256 hash proves that a file or record has not changed since it was hashed. It says nothing about whether the invoice was genuine, the quantity was read correctly, the right emission factor was used, or every source was included. Correctness needs recalculation and evidence checks.",
   "url": "https://senseible.earth/answers/does-a-hash-prove-emissions-are-correct"
+ },
+ {
+  "kind": "answer",
+  "title": "Does AdBlue or DEF used in BS-VI trucks add to CO2 emissions?",
+  "text": "Yes, a little. The urea in AdBlue (DEF) breaks down in the exhaust and releases about 0.26 kg CO2 per litre. At a typical dose of a few litres per 100 litres of diesel it adds well under 1% to a truck's CO2, so you can report it or record it as immaterial.",
+  "url": "https://senseible.earth/answers/does-adblue-def-emit-co2"
  },
  {
   "kind": "answer",
@@ -911,9 +1043,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does SECR apply to the UK subsidiary of an Indian company?",
+  "text": "Yes, if the UK subsidiary passes two of three SECR tests on its own figures: turnover over £36 million, balance sheet over £18 million, more than 250 employees. These SECR limits did not rise with the April 2025 company size changes. An Indian parent does not exempt it.",
+  "url": "https://senseible.earth/answers/does-secr-apply-to-uk-subsidiary-of-indian-company"
+ },
+ {
+  "kind": "answer",
   "title": "Does TNFD apply to Indian companies, and how does it relate to BRSR?",
   "text": "No Indian law or SEBI rule makes TNFD mandatory today. It reaches Indian companies through investors and buyers who have adopted it and ask for nature data. A listed company filing BRSR already reports several of the same facts, such as sites near ecologically sensitive areas, water withdrawal and waste.",
   "url": "https://senseible.earth/answers/does-tnfd-apply-to-indian-companies"
+ },
+ {
+  "kind": "answer",
+  "title": "Does ZED certification help an MSME get a cheaper loan?",
+  "text": "Sometimes. ZED certification itself does not lower your interest rate by rule, but some banks and state schemes offer concessions to ZED certified units, and the certificate is credible evidence of energy and environment practices. Check your bank's current circular before counting on a rate cut.",
+  "url": "https://senseible.earth/answers/does-zed-certification-help-get-a-loan"
  },
  {
   "kind": "answer",
@@ -926,6 +1070,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Do I have to count my distributor's warehouse and retail storage in my Scope 3?",
   "text": "Yes, when it is relevant. Category 9 covers storage of your sold products in warehouses, distribution centres and shops you do not own, control or pay for. Storage you pay a third party for goes in Category 4 instead. It matters most for chilled and frozen products that sit in refrigerated rooms and coolers.",
   "url": "https://senseible.earth/answers/downstream-warehousing-category-9"
+ },
+ {
+  "kind": "answer",
+  "title": "How do auto component suppliers answer the climate section of the Drive Sustainability SAQ?",
+  "text": "Answer only what you can evidence: your environmental management system and ISO 14001 status, Scope 1 and 2 totals with year and method, the share of renewable electricity, any reduction target, and the documents behind each answer. A short honest 'not yet' scores better than an unsupported 'yes'.",
+  "url": "https://senseible.earth/answers/drive-sustainability-saq-auto-supplier"
  },
  {
   "kind": "answer",
@@ -953,6 +1103,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What carbon evidence does EcoVadis ask an Indian supplier for?",
+  "text": "EcoVadis wants documents, not answers alone: a climate or energy policy, Scope 1 and 2 totals with the method used, Scope 3 where you have it, a reduction target, and records of actions taken. Each claim needs a supporting document, and claims without one score little.",
+  "url": "https://senseible.earth/answers/ecovadis-carbon-questions-what-evidence"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the emissions saved by a waste heat recovery system?",
   "text": "Measure the useful heat the system recovers in a year, divide by the efficiency of the boiler or furnace it replaces to get the fuel energy avoided, and multiply by the IPCC emission factor for that fuel. Then subtract the CO2 from any extra electricity the recovery system uses for fans and pumps.",
   "url": "https://senseible.earth/answers/emissions-saved-by-waste-heat-recovery"
@@ -968,6 +1124,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can energy-efficiency upgrades at a factory (motors, compressors, furnaces) earn carbon credits?",
   "text": "Yes, in principle. Small-scale CDM methods AMS-II.C and AMS-II.D cover efficient equipment and industrial efficiency projects. In practice a single MSME upgrade saves too few tonnes to pay for validation and verification, so these projects usually earn credits only when many sites are grouped under one programme with clean before and after records.",
   "url": "https://senseible.earth/answers/energy-efficiency-carbon-credits-for-factories"
+ },
+ {
+  "kind": "answer",
+  "title": "Will energy savings pay the EMI on an energy efficiency loan?",
+  "text": "Compare the annual EMI with the measured annual saving in rupees. A saving of at least 1.3 times the EMI, our rule of thumb rather than a bank norm, leaves room for a bad year. Use your own before and after bills, not the vendor's estimate, and test a 30% shortfall.",
+  "url": "https://senseible.earth/answers/energy-efficiency-loan-emi-vs-savings"
  },
  {
   "kind": "answer",
@@ -1127,6 +1289,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do fire extinguisher refills count in Scope 1?",
+  "text": "Yes, when the refill replaces gas that was released. The kilograms refilled after a discharge or leak are a Scope 1 fugitive emission. CO2 extinguishers count kg for kg. HFC agents such as HFC-227ea (FM-200) count at their GWP and can be material. Dry powder, water, foam and FK-5-1-12 add nothing material.",
+  "url": "https://senseible.earth/answers/fire-extinguisher-refill-scope-1"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate flight emissions for business travel from India?",
   "text": "Multiply each trip's passenger kilometres by a published air travel factor for that distance band and cabin class. Get the distance from the airport pair, add the uplift your factor source requires, and use the UK DESNZ conversion factors or the ICAO calculator. Report the result as Scope 3 Category 6, business travel.",
   "url": "https://senseible.earth/answers/flight-emissions-business-travel-india"
@@ -1136,6 +1304,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "For a food processing plant, how much do emissions change if organic waste goes to compost or biogas instead of landfill?",
   "text": "A lot. Food waste rotting in a landfill releases methane, so landfill factors per tonne are far higher than those for composting or anaerobic digestion. Check the current DESNZ waste disposal table for the values. Moving most organic waste away from landfill or open dumping is often a large Scope 3 waste cut for a food plant.",
   "url": "https://senseible.earth/answers/food-waste-landfill-vs-compost-vs-biogas-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint per tonne of steel forgings?",
+  "text": "There is no single figure. Work it out as the furnace fuel and electricity emissions per good tonne despatched, plus the steel bar you consumed per tonne times your bar supplier's footprint. The steel usually dominates, and yield losses mean each tonne of forgings carries more than a tonne of bar.",
+  "url": "https://senseible.earth/answers/forging-carbon-footprint-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate carbon per tonne of good castings in a foundry?",
+  "text": "Total the month's CO2 from electricity, coke and fuels, then divide by tonnes of good castings dispatched, not tonnes melted. Equivalently, divide CO2 per tonne of liquid metal by casting yield: at 65% yield every good tonne carries the melting of about 1.54 tonnes.",
+  "url": "https://senseible.earth/answers/foundry-carbon-footprint-per-tonne-good-casting"
  },
  {
   "kind": "answer",
@@ -1187,6 +1367,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate emissions per garment for a cut-make-trim export unit?",
+  "text": "Add the month's grid electricity at 0.710 kg CO2 per kWh, DG diesel at 2.68 kg per litre and any boiler fuel, then divide by pieces produced. If styles differ a lot, divide by standard allowed minutes instead and multiply back by each style's minutes. Fabric is separate.",
+  "url": "https://senseible.earth/answers/garment-stitching-emissions-per-piece"
+ },
+ {
+  "kind": "answer",
   "title": "How do I estimate uncertainty in a company GHG inventory?",
   "text": "Give each activity figure and each emission factor a percentage uncertainty, combine the two for each source by root-sum-square, then combine sources weighted by their emissions. This is IPCC Approach 1. The result is a plus or minus percentage for the whole inventory.",
   "url": "https://senseible.earth/answers/ghg-inventory-uncertainty-calculation"
@@ -1214,6 +1400,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is a Gold Standard microscale project and does it cut costs for small emitters?",
   "text": "A microscale project is a small Gold Standard project, generally one expected to deliver up to 10,000 tonnes CO2e of reductions a year, that follows simplified requirements and lower fees. It can cut costs for small activities such as efficient boilers or rooftop solar, but monitoring and audit steps still apply, so very small single sites may still not pay.",
   "url": "https://senseible.earth/answers/gold-standard-microscale-projects"
+ },
+ {
+  "kind": "answer",
+  "title": "Which emission factor applies when I buy steel or chemicals from a trader, not the mill?",
+  "text": "Use the factor of the producer that made the goods, not the trader. A trader adds little beyond storage and transport. Find the mill or plant from the mill test certificate or the trader's purchase records, then multiply your quantity by that producer's per tonne factor.",
+  "url": "https://senseible.earth/answers/goods-bought-from-trader-scope-3"
  },
  {
   "kind": "answer",
@@ -1319,9 +1511,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate emissions per tonne for a heat treatment shop?",
+  "text": "Add a month's furnace electricity, LPG or PNG and any methanol carrier gas, convert each to CO2 with its factor, and divide by the tonnes treated that month. Electricity at 0.710 kg CO2 per kWh and LPG at 2.98 kg CO2 per kg usually make up nearly all of it.",
+  "url": "https://senseible.earth/answers/heat-treatment-emissions-per-tonne"
+ },
+ {
+  "kind": "answer",
   "title": "What energy and emissions data does the Higg FEM ask textile suppliers for?",
   "text": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
   "url": "https://senseible.earth/answers/higg-fem-energy-and-emissions-data"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate the carbon footprint of hot-dip galvanizing per tonne of steel?",
+  "text": "Per tonne of steel galvanized, add zinc consumed times the zinc footprint, kettle fuel times its factor and electricity times 0.710, then divide by tonnes coated. Zinc is usually the largest item, because each tonne of steel picks up tens of kg of zinc.",
+  "url": "https://senseible.earth/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
  },
  {
   "kind": "answer",
@@ -1739,6 +1943,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I estimate Scope 3 emissions from purchased oxygen, nitrogen or argon?",
+  "text": "Purchased oxygen, nitrogen and argon go in Scope 3 Category 1. Estimate them as cubic metres bought x the electricity the supplier's plant uses per cubic metre x the grid factor, 0.710 kg CO2 per kWh in India. Ask the supplier for its kWh per cubic metre; label any assumed figure as an estimate.",
+  "url": "https://senseible.earth/answers/industrial-gases-oxygen-nitrogen-scope-3"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint per kg of an injection moulded plastic part, and how do I calculate it?",
   "text": "Calculate it as resin used per kg of good parts times the resin's cradle-to-gate factor, plus the electricity per kg of good parts times the grid factor. The resin usually makes up most of the total, so the polymer grade, runner waste and reject rate matter more than the machine.",
   "url": "https://senseible.earth/answers/injection-moulding-carbon-footprint-per-kg"
@@ -1793,6 +2003,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is my textile mill covered by India's Carbon Credit Trading Scheme?",
+  "text": "Only if your mill is named in the notified list of obligated textile entities. Textile targets were notified on 13 January 2026 for named plants only. If your plant is not on that list, you have no CCTS target, but you can earn credits through the offset mechanism under a BEE approved methodology.",
+  "url": "https://senseible.earth/answers/is-my-textile-mill-covered-by-ccts"
+ },
+ {
+  "kind": "answer",
   "title": "Do renewable energy loans to MSMEs count as priority sector lending in India?",
   "text": "Usually yes. A bank loan to a Udyam-registered micro, small or medium enterprise counts under the MSME category of priority sector lending whatever it funds, including solar or other renewable energy. A separate renewable energy category covers loans to borrowers for solar, biomass, wind and micro-hydel generation up to a per-borrower ceiling set in RBI's Master Directions.",
   "url": "https://senseible.earth/answers/is-renewable-energy-loan-priority-sector"
@@ -1835,6 +2051,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I count emissions from job work under GST in my carbon footprint?",
+  "text": "If you are the principal, the job worker's fuel and power used on your goods are Scope 3 Category 1, purchased services. The material you sent stays counted once, at its purchase. If you are the job worker, the same energy is your own Scope 1 and Scope 2. The GST challan does not change either answer.",
+  "url": "https://senseible.earth/answers/job-work-emissions-which-scope"
+ },
+ {
+  "kind": "answer",
   "title": "My electricity bill is in kVAh. How do I calculate emissions?",
   "text": "Convert to kWh first, then multiply by the grid factor. Use the kWh reading printed on the same bill if there is one. If not, kWh = kVAh x the power factor printed for that billing period. Applying the 0.710 kg CO2 per kWh factor straight to kVAh overstates your emissions.",
   "url": "https://senseible.earth/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
@@ -1871,15 +2093,33 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per square foot of finished leather from an Indian tannery?",
+  "text": "Add the tannery's Scope 1 and 2 emissions, chemicals and effluent treatment for a period, and divide by square feet of finished leather produced. Convert to square metres by multiplying by 10.764. Whether hides carry part of the cattle's emissions depends on the allocation rule, so name the rule you used.",
+  "url": "https://senseible.earth/answers/leather-tannery-carbon-footprint-per-square-foot"
+ },
+ {
+  "kind": "answer",
   "title": "Limited vs reasonable assurance on emissions data: what is the difference and which do I need?",
   "text": "Limited assurance means the assurer found nothing suggesting your emissions are materially wrong. Reasonable assurance is a positive opinion that they are fairly stated, backed by far more testing. You need whichever your regulator, lender or buyer names: CSRD asks for limited, SEBI's BRSR Core asks large listed companies for reasonable assurance or an assessment.",
   "url": "https://senseible.earth/answers/limited-vs-reasonable-assurance-emissions"
  },
  {
   "kind": "answer",
+  "title": "How do I calculate CO2 from an LNG tanker invoice in tonnes or MMBtu?",
+  "text": "Multiply the LNG delivered by about 2.69 kg CO2 per kg, so one tonne of LNG gives about 2.69 tonnes of CO2. If the invoice is in MMBtu, use about 53.3 kg CO2 per MMBtu on a gross calorific value basis. Both come from the IPCC 2006 default for natural gas.",
+  "url": "https://senseible.earth/answers/lng-invoice-co2-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "Which refrigerant should a new chiller or cold room use to stay ahead of the HFC phase-down?",
   "text": "For a large water-cooled chiller, look first at HFO-1234ze or an HFO blend such as R-513A. For industrial cold stores, ammonia is the long-standing choice; for smaller systems, CO2 or propane. Pick from what your service network can maintain safely, then compare GWP and running efficiency.",
   "url": "https://senseible.earth/answers/low-gwp-refrigerant-choice-new-chiller"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does one 19 kg commercial LPG cylinder emit?",
+  "text": "A full 19 kg commercial LPG cylinder emits about 56.6 kg CO2 when all the gas is burnt: 19 kg x 2.98 kg CO2 per kg of LPG. A 14.2 kg domestic cylinder gives about 42.3 kg and a 47.5 kg cylinder about 141.6 kg.",
+  "url": "https://senseible.earth/answers/lpg-19-kg-cylinder-co2"
  },
  {
   "kind": "answer",
@@ -1922,6 +2162,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I calculate my carbon footprint if some months of electricity bills are missing?",
   "text": "First try to recover the real figure: download duplicate bills from your discom or use the meter readings on the next bill. Only then estimate the gap, from the average of the months either side or the same month last year scaled to production, and label it as an estimate in your report.",
   "url": "https://senseible.earth/answers/missing-electricity-bills-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 did ceramic units save by moving from coal gasifiers to natural gas?",
+  "text": "Roughly 55 to 60 percent of fuel CO2 for the same kiln heat. Coal fed through a gasifier gives about 126 to 135 kg CO2 per GJ of fuel gas reaching the kiln, assuming 70 to 75 percent gasifier efficiency, against 56 kg for natural gas. Confirm with your own fuel per square metre before and after.",
+  "url": "https://senseible.earth/answers/morbi-coal-gasifier-vs-natural-gas-emissions"
  },
  {
   "kind": "answer",
@@ -2003,6 +2249,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can paddy straw collection or pellets earn carbon credits?",
+  "text": "Possibly, but not just for selling pellets. Supplying straw pellets to a coal plant that must co-fire biomass by policy is hard to prove additional. A project where straw replaces coal or oil at a user with no mandate has a better case, under an approved methodology with monitoring.",
+  "url": "https://senseible.earth/answers/paddy-straw-carbon-credits-punjab"
+ },
+ {
+  "kind": "answer",
   "title": "How does parametric heat or rainfall insurance work for Indian MSMEs and workers?",
   "text": "Parametric insurance pays a fixed amount when a measured index, such as temperature or rainfall at a named weather station, crosses a set trigger, without a loss survey. Payouts can come within days. The catch is basis risk: you can suffer a loss without the index triggering, or be paid without a loss.",
   "url": "https://senseible.earth/answers/parametric-heat-insurance-msme-india"
@@ -2015,15 +2267,39 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the CO2 emission factor for pet coke used in kilns in India?",
+  "text": "Pet coke gives about 3.17 tonnes of CO2 per tonne burnt, using the IPCC 2006 defaults of 32.5 GJ per tonne and 97.5 kg CO2 per GJ. That is roughly 30% more than Indian coal per tonne. If your lab reports a calorific value for your own lots, use it instead.",
+  "url": "https://senseible.earth/answers/petcoke-emission-factor-india"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate the carbon footprint per 1,000 tablets for a formulation plant?",
+  "text": "Add the plant's electricity, DG diesel and boiler fuel emissions for a period, share them across products, and divide by thousands of tablets made. A plant using 4 million kWh a year for 2 billion tablets has 2 kWh per 1,000 tablets, which is 1.42 kg CO2 from grid power, before the API.",
+  "url": "https://senseible.earth/answers/pharma-formulation-carbon-footprint-per-1000-tablets"
+ },
+ {
+  "kind": "answer",
   "title": "Can an Indian company use a virtual PPA for market-based Scope 2?",
   "text": "Yes, through the RECs it delivers. A virtual PPA settles only the price difference, so no power reaches you; your market-based claim rests on the Indian RECs transferred to you and retired in your name. CERC issued guidelines for virtual PPAs on 24 December 2025, under which those RECs cannot be traded.",
   "url": "https://senseible.earth/answers/physical-vs-virtual-ppa-india-scope-2"
  },
  {
   "kind": "answer",
+  "title": "What is the difference between EPR plastic credits and carbon credits?",
+  "text": "EPR certificates prove that a registered processor recycled or processed a quantity of plastic, so a producer, importer or brand owner can meet its legal EPR target. A carbon credit represents one tonne of CO2e reduced or removed, verified under a carbon standard. EPR certificates cannot offset emissions.",
+  "url": "https://senseible.earth/answers/plastic-credits-vs-carbon-credits-epr"
+ },
+ {
+  "kind": "answer",
   "title": "What recycled plastic content must my packaging have under India's EPR rules?",
   "text": "Rigid plastic packaging (Category I) must contain 30% recycled plastic in 2025-26, rising to 40%, 50% and then 60% from 2028-29, under Schedule II of India's Plastic Waste Management Rules. Flexible packaging starts at 10% and multilayer at 5%, rising later; confirm each year's figure in the current Schedule II.",
   "url": "https://senseible.earth/answers/plastic-epr-recycled-content-targets"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I convert an industrial PNG bill in SCM or MMBtu to CO2?",
+  "text": "Billed in MMBtu: multiply by 1.055 to get GJ, by 0.90 to move from gross to net calorific value, then by 56.1 kg CO2 per GJ. That is about 53.3 kg CO2 per MMBtu. Billed in SCM: multiply by 2.05 kg CO2 per scm, or convert using the GCV printed on the bill.",
+  "url": "https://senseible.earth/answers/png-bill-mmbtu-to-co2"
  },
  {
   "kind": "answer",
@@ -2063,6 +2339,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What emissions data does a PSCI questionnaire ask pharma suppliers for?",
+  "text": "Expect to give Scope 1 and Scope 2 emissions and energy use for each manufacturing site, how you calculated them, any reduction target, and how you manage solvents, refrigerants, air emissions and waste. Answer per site, not only as a group total, and keep the bills and records behind every figure ready.",
+  "url": "https://senseible.earth/answers/psci-questionnaire-pharma-supplier-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate PUE for a server room or data centre?",
   "text": "Divide the total energy used by the server room or data centre by the energy used by the IT equipment alone, over the same period, ideally a full year. PUE = total facility kWh / IT equipment kWh. A result of 1.0 is the floor; the further above it, the more goes to cooling and losses.",
   "url": "https://senseible.earth/answers/pue-formula-and-good-pue"
@@ -2072,6 +2354,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Should I calculate Scope 3 purchased goods from purchase orders, goods receipt notes or invoices?",
   "text": "Use the tax invoice as the record, checked against the goods receipt note for the date and quantity actually received. Do not use purchase orders: a PO shows what you intended to buy, not what arrived, and Category 1 counts goods purchased or acquired in the reporting year.",
   "url": "https://senseible.earth/answers/purchase-order-or-invoice-for-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "Does CO2 gas we buy for welding, carbonation or dry ice count in Scope 1?",
+  "text": "Usually yes. CO2 you buy and release at your own site, as welding shield gas, from dry ice you pack or as carbonation gas lost in your process, is a direct release you control. Report the kilograms used as kg CO2 in Scope 1, one for one, and state the basis.",
+  "url": "https://senseible.earth/answers/purchased-co2-gas-scope-1"
  },
  {
   "kind": "answer",
@@ -2096,6 +2384,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I add reefer (refrigerated container) emissions to my export shipment footprint?",
   "text": "Calculate the leg as if it were a dry container, then use a reefer-specific factor or apply a reefer uplift for the power the refrigeration unit draws. Add refrigerant leakage only if the carrier reports it, converted to CO2e with a stated GWP. Label any default uplift as an estimate.",
   "url": "https://senseible.earth/answers/reefer-container-emissions-food-exporters"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate emissions from a refrigerated truck with a diesel refrigeration unit?",
+  "text": "Add three parts: the truck engine's diesel x 2.68 kg CO2 per litre, the refrigeration unit's own diesel x 2.68, and any refrigerant topped up x its global warming potential. The refrigeration unit and refrigerant are what a dry-truck factor misses, so count them from fuel logs and service invoices.",
+  "url": "https://senseible.earth/answers/reefer-truck-refrigeration-unit-emissions"
  },
  {
   "kind": "answer",
@@ -2153,6 +2447,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per tonne of rice from a rice mill?",
+  "text": "At the mill, add grid electricity, DG diesel and the non-CO2 gases from any husk boiler, then divide by tonnes of paddy or rice. Milling at an assumed 25 kWh per tonne of paddy gives about 18 kg CO2 per tonne of paddy, or about 27 kg per tonne of rice at 65% outturn.",
+  "url": "https://senseible.earth/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+ },
+ {
+  "kind": "answer",
   "title": "How do rice exporters estimate Scope 3 emissions from rice bought from farmers?",
   "text": "Rice exporters estimate it per tonne of paddy: work out methane from flooded fields and nitrous oxide from fertiliser per hectare using IPCC methods, divide by the paddy yield per hectare, then multiply by the tonnes bought. It is GHG Protocol Scope 3 Category 1, and methane usually dominates.",
   "url": "https://senseible.earth/answers/rice-procurement-scope-3-emissions"
@@ -2174,6 +2474,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can SAF certificates (book and claim) reduce my Scope 3 business travel or air freight emissions?",
   "text": "Not inside your GHG Protocol inventory today. The Scope 3 Standard has no market-based method, so Category 6 travel and Category 4 or 9 air freight stay at their activity-based figure. You can report SAF certificate claims separately, next to the inventory, with full certificate details. Rules are under revision.",
   "url": "https://senseible.earth/answers/saf-certificates-scope-3-business-travel"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate the carbon footprint of a sanitaryware piece for an export buyer?",
+  "text": "Work out kiln fuel and power emissions per kilogram of good fired ware, multiply by the piece's fired weight, then add clay, glaze and packaging for a cradle to gate figure. Divide by good output, not by everything loaded into the kiln, so refiring and rejects are carried by the pieces you sell.",
+  "url": "https://senseible.earth/answers/sanitaryware-carbon-footprint-per-piece"
  },
  {
   "kind": "answer",
@@ -2267,6 +2573,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per kg of frozen shrimp from an Indian processing plant?",
+  "text": "Work it out from your own plant: grid kWh x 0.710 kg CO2, plus DG diesel litres x 2.68, plus kilograms of refrigerant charged x that gas's GWP, divided by kg of frozen product packed. In an HFC plant the refrigerant line can be as large as the power line.",
+  "url": "https://senseible.earth/answers/shrimp-processing-carbon-footprint-per-kg"
+ },
+ {
+  "kind": "answer",
   "title": "What energy efficiency loans does SIDBI offer MSMEs?",
   "text": "SIDBI's dedicated energy efficiency product is the 4E scheme, End to End Energy Efficiency: an energy audit and project report, then a SIDBI loan for the measures the audit recommends. SIDBI also ran the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Check current terms on sidbi.in.",
   "url": "https://senseible.earth/answers/sidbi-energy-efficiency-loan-for-msme"
@@ -2315,9 +2627,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the embodied carbon of rooftop solar panels per kWp for Scope 3?",
+  "text": "There is no single figure. Crystalline silicon modules carry several hundred kilograms of CO2e per kWp, and more when made on a coal heavy grid. Use the module maker's EPD if you can get one. Report the whole amount in Scope 3 Category 2, capital goods, in the year you buy the system.",
+  "url": "https://senseible.earth/answers/solar-panel-embodied-carbon-per-kwp"
+ },
+ {
+  "kind": "answer",
   "title": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
   "text": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
   "url": "https://senseible.earth/answers/solar-project-finance-financed-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Can I deduct steam or electricity I sell to a neighbour from my Scope 1?",
+  "text": "No. If your boiler or captive power plant burns the fuel, all of its emissions stay in your Scope 1, even the share that makes steam or power you sell. You may report the emissions linked to sold energy as a separate, optional figure, and use that split for your product intensity.",
+  "url": "https://senseible.earth/answers/sold-steam-or-power-deduct-from-scope-1"
  },
  {
   "kind": "answer",
@@ -2330,6 +2654,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "In spend-based Scope 3, do I remove GST and adjust for inflation and currency before applying factors?",
   "text": "Yes, all three. Use the taxable value before GST, convert rupees to the factor's currency, and deflate to the factor's base year, because spend factors are per unit of money in a stated currency and year. Skipping these steps can overstate emissions by 20% or more.",
   "url": "https://senseible.earth/answers/spend-based-scope-3-gst-inflation-currency"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the carbon footprint per kg of cotton yarn from an Indian spinning mill?",
+  "text": "Divide the mill's yearly Scope 1 and 2 emissions by kg of yarn produced. Electricity dominates: kWh per kg of yarn times 0.710 kg CO2 per kWh. A mill using 3.2 kWh per kg gets about 2.27 kg CO2 per kg from grid power alone, before adding cotton fibre.",
+  "url": "https://senseible.earth/answers/spinning-mill-carbon-footprint-per-kg-yarn"
  },
  {
   "kind": "answer",
@@ -2348,6 +2678,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is a company bus or contracted staff transport Scope 1 or Scope 3 Category 7?",
   "text": "It depends on who operates the bus. A bus you own, or lease and run with your own drivers and fuel, is Scope 1. A bus run by a transport contractor who supplies vehicle, driver and fuel is Scope 3; Category 7, employee commuting, is the closer fit, though some companies use Category 1. Disclose your choice.",
   "url": "https://senseible.earth/answers/staff-bus-scope-1-or-category-7"
+ },
+ {
+  "kind": "answer",
+  "title": "Should electricity used in staff quarters and the factory canteen be in my carbon footprint?",
+  "text": "Yes, in your company footprint, if you operate the colony or canteen and the power comes through your meter: it is Scope 2. In a product footprint you can leave colony power out, because it does not make the product, but keep the canteen and say what you excluded.",
+  "url": "https://senseible.earth/answers/staff-quarters-electricity-in-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -2393,6 +2729,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is the carbon footprint per kg of made tea from an Indian tea factory?",
+  "text": "Add up the factory's fuel and electricity emissions for the season and divide by kg of made tea. In formula: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
+  "url": "https://senseible.earth/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+ },
+ {
+  "kind": "answer",
   "title": "Should fleet emissions use telematics distance data or fuel invoices?",
   "text": "Use fuel invoices for fleet CO2 whenever you have litres. The GHG Protocol prefers the fuel-based method because CO2 depends on fuel burnt, not kilometres. Use telematics distance to check the litres, fill gaps and work out fuel economy, and to estimate methane and nitrous oxide.",
   "url": "https://senseible.earth/answers/telematics-or-fuel-invoices-for-fleet-emissions"
@@ -2432,6 +2774,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can I try Senseible on a bill without signing up, and what happens to the file?",
   "text": "Yes. You can upload an invoice or electricity bill from the Senseible home page without an account. The file is read, but nothing is stored on Senseible's servers: no file, record or result. Your results stay only in your own browser for 24 hours, and then they expire and are removed.",
   "url": "https://senseible.earth/answers/try-senseible-without-an-account"
+ },
+ {
+  "kind": "answer",
+  "title": "Do Indian suppliers to UK government contracts need a Carbon Reduction Plan?",
+  "text": "Yes, if you bid for an in scope UK central government contract. Under PPN 006, which replaced PPN 06/21 for procurements started from 24 February 2025, contracts above 5 million pounds a year require a Carbon Reduction Plan wherever the supplier is based. It covers Scope 1, Scope 2 and five Scope 3 categories, with net zero by 2050.",
+  "url": "https://senseible.earth/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+ },
+ {
+  "kind": "answer",
+  "title": "Does the UK CBAM apply to Indian exporters from 2027?",
+  "text": "Yes, indirectly. From 1 January 2027 the UK CBAM taxes imports of aluminium, cement, fertiliser, hydrogen, and iron and steel. The UK importer pays once its covered imports pass £50,000 in 12 months. The Indian exporter does not pay, but is asked for embedded emissions per tonne.",
+  "url": "https://senseible.earth/answers/uk-cbam-indian-exporters"
+ },
+ {
+  "kind": "answer",
+  "title": "What is the difference between the UK CBAM and the EU CBAM for an exporter?",
+  "text": "The EU CBAM applies from 2026: an authorised declarant buys certificates for embedded emissions, above 50 tonnes of covered goods a year. The UK CBAM starts on 1 January 2027 as a tax the UK importer pays to HMRC once its CBAM imports reach £50,000 in 12 months. Both need the same plant emissions data from you.",
+  "url": "https://senseible.earth/answers/uk-cbam-vs-eu-cbam-differences"
  },
  {
   "kind": "answer",
@@ -2792,6 +3152,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Will an auditor accept carbon data that was extracted by AI?",
   "text": "Yes, if the evidence holds up. An auditor or verifier does not approve or reject a tool. They test whether sampled figures trace to source documents, whether the calculation recomputes, and whether your process catches errors. AI extraction passes when every value links to its original file and the controls around it are documented.",
   "url": "https://senseible.earth/answers/will-auditors-accept-ai-extracted-carbon-data"
+ },
+ {
+  "kind": "answer",
+  "title": "Will the US bring in a carbon border tax on Indian imports?",
+  "text": "Not yet. No US federal carbon border tax is law. Bills such as the Clean Competition Act and the Foreign Pollution Fee Act would charge imports by their carbon intensity above a US benchmark, but none has passed Congress. Exporters should still keep embedded emissions per tonne ready, because the EU already charges for them.",
+  "url": "https://senseible.earth/answers/will-us-have-a-carbon-border-tax"
  },
  {
   "kind": "answer",

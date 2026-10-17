@@ -1,0 +1,71 @@
+{
+  "slug": "uk-cbam-indian-exporters",
+  "q": "Does the UK CBAM apply to Indian exporters from 2027?",
+  "title": "UK CBAM for Indian exporters",
+  "short": "Yes, indirectly. From 1 January 2027 the UK CBAM taxes imports of aluminium, cement, fertiliser, hydrogen, and iron and steel. The UK importer pays once its covered imports pass £50,000 in 12 months. The Indian exporter does not pay, but is asked for embedded emissions per tonne.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian steel, aluminium and fertiliser exporters to the UK",
+  "sections": [
+    {
+      "h": "Who pays",
+      "p": [
+        "The liability sits with the person responsible for the import into the UK, usually the importer of record. An Indian company is affected through its buyer: if the buyer passes the cost back in price, or chooses suppliers on emissions data, the exporter feels it."
+      ]
+    },
+    {
+      "h": "Which goods",
+      "p": [
+        "Aluminium, cement, fertiliser, hydrogen, and iron and steel. Ceramics and glass were proposed earlier and removed in the October 2024 policy update. Check the exact commodity codes in the UK legislation with your importer before each contract."
+      ]
+    },
+    {
+      "h": "The £50,000 threshold",
+      "p": [
+        "From 2027 an importer checks each month whether its covered imports in the previous 12 months reached £50,000, and must also register if it expects to import £50,000 or more in the next 30 days. Below that, it does not register or pay. Above it, the importer files returns and pays based on the embedded emissions; the first return, for 2027, is due by 31 May 2028. Small UK buyers of Indian fasteners or sections may stay below it; large steel importers will not."
+      ]
+    },
+    {
+      "h": "What the exporter should supply",
+      "ol": [
+        "Embedded emissions per tonne for each product, from your own fuel, electricity and input data.",
+        "The method and data period behind the figure.",
+        "Any carbon price paid in India, if one applies to the goods.",
+        "Without supplier data the importer falls back on default values, which may be higher than your actual figure, so actual data tends to help your buyer."
+      ]
+    },
+    {
+      "h": "How it differs from the EU scheme",
+      "p": [
+        "The UK charge is a tax paid to HMRC through returns, not a certificate system, and it leaves out electricity. The per tonne data an Indian plant prepares for EU CBAM also serves a UK buyer; the full comparison is in the UK vs EU CBAM answer."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM tools are built for the EU scheme. The embedded emissions data it builds from the fuel and power bills it reads support a UK importer's return in the same way.",
+  "links": [
+    {
+      "label": "CBAM compliance for Indian exporters",
+      "to": "/climate-intelligence/cbam-compliance-indian-exporters"
+    },
+    {
+      "label": "Embedded emissions for steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "UK CBAM vs EU CBAM",
+      "to": "/answers/uk-cbam-vs-eu-cbam-differences"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), for comparison with the UK scheme",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewNote": "UK CBAM is legislated in Part 5 of the Finance Act 2026, with HMRC regulations; recheck the commodity codes, the rate, registration timing and default values on gov.uk before 1 January 2027.",
+  "reviewed": "2026-10-17"
+}

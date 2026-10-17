@@ -1,0 +1,80 @@
+{
+  "slug": "brsr-energy-intensity-calculation",
+  "q": "How do I calculate energy intensity per rupee of turnover for BRSR?",
+  "title": "BRSR energy intensity per rupee",
+  "short": "Divide total energy consumed in gigajoules by revenue from operations in rupees. Convert each fuel and electricity to GJ first: 1 kWh is 0.0036 GJ, a litre of diesel about 0.0359 GJ. For the PPP figure, divide revenue by India's PPP conversion rate before dividing.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed company sustainability teams",
+  "sections": [
+    {
+      "h": "Where it sits in BRSR",
+      "p": [
+        "Principle 6, Essential Indicator 1 asks for total energy consumed, split into renewable and non-renewable, and energy intensity per rupee of turnover. BRSR Core adds the same intensity adjusted for purchasing power parity. Energy is reported in joules or multiples, usually GJ."
+      ]
+    },
+    {
+      "h": "Converting to GJ",
+      "ul": [
+        "Grid electricity: kWh x 0.0036.",
+        "Diesel: litres x about 0.0359 GJ (IPCC net calorific value of 43.0 GJ per tonne at about 0.835 kg per litre).",
+        "LPG: kg x 0.0473 GJ (IPCC net calorific value of 47.3 GJ per tonne).",
+        "Coal and gas: use the calorific value on the supplier's test report or gas bill, because Indian coal grades vary widely."
+      ]
+    },
+    {
+      "h": "Avoiding double counting",
+      "ul": [
+        "Electricity from your own DG set: count the diesel, not the kWh it produced.",
+        "Rooftop solar used on site: count the kWh generated and used as renewable energy.",
+        "Steam bought from a neighbour: count it once, as purchased energy.",
+        "Use the same reporting boundary for energy as for revenue."
+      ]
+    },
+    {
+      "h": "The PPP version",
+      "p": [
+        "Divide revenue from operations by the PPP conversion factor for India, in rupees per international dollar, for the reporting year, then divide energy by the result. Name the source and year of the factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year",
+    "lines": [
+      "Electricity: 50,00,000 kWh x 0.0036 = 18,000 GJ",
+      "Diesel: 2,00,000 litres x 0.0359 = 7,180 GJ",
+      "LPG: 1,00,000 kg x 0.0473 = 4,730 GJ",
+      "Total energy: 18,000 + 7,180 + 4,730 = 29,910 GJ",
+      "Revenue from operations: ₹500 crore = ₹5,00,00,00,000",
+      "Per rupee: 29,910 / 5,00,00,00,000 = 0.0000060 GJ per rupee (59.8 GJ per crore)",
+      "PPP (illustrative 20.5 rupees per international dollar): 5,00,00,00,000 / 20.5 = 243.9 million; 29,910 / 243.9 = 122.6 GJ per million PPP dollars"
+    ],
+    "note": "Use the PPP factor for your reporting year; 20.5 is illustrative."
+  },
+  "senseible": "Senseible reads kWh, litres and kg from electricity bills and fuel invoices, which give the activity totals for the GJ conversion above, and prepares BRSR drafts from the uploaded data. Reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "BRSR emission intensity per rupee and PPP",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    },
+    {
+      "label": "BRSR Core nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "BRSR reporting requirements",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on BRSR Core, 12 July 2023",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 Table 1.2 (net calorific values)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

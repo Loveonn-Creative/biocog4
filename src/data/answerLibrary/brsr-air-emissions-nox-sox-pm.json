@@ -1,0 +1,81 @@
+{
+  "slug": "brsr-air-emissions-nox-sox-pm",
+  "q": "How do I calculate NOx, SOx and PM for the BRSR air emissions table?",
+  "title": "NOx, SOx and PM for BRSR",
+  "short": "Use your stack monitoring reports. For each stack, multiply the measured concentration in mg/Nm3 by the flue gas flow in Nm3/h and the operating hours, then divide by 10^9 to get tonnes. Add all stacks. Where a stack has no monitoring, estimate SOx from fuel sulphur and say so.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed manufacturers and suppliers filling BRSR Principle 6",
+  "sections": [
+    {
+      "h": "What the BRSR table asks for",
+      "p": [
+        "Principle 6 of the BRSR format has an essential indicator on air emissions other than greenhouse gases: NOx, SOx, particulate matter, persistent organic pollutants, volatile organic compounds, hazardous air pollutants and others, each with a unit, for the current and previous year. It also asks whether an external agency assessed the figures. Report what you measure; write not applicable only for pollutants your processes do not emit."
+      ]
+    },
+    {
+      "h": "Where the numbers come from",
+      "ul": [
+        "Stack monitoring reports from a laboratory recognised under the Environment (Protection) Act, required by your consent to operate under the Air (Prevention and Control of Pollution) Act 1981.",
+        "Continuous emission monitoring data, if your sector must run online monitoring for the CPCB.",
+        "Operating hours per stack from the boiler, furnace or DG logbook.",
+        "Fuel quantity and sulphur content, for a mass balance where no monitoring exists."
+      ]
+    },
+    {
+      "h": "Calculating from monitoring data",
+      "ol": [
+        "For each stack and pollutant, take the average concentration across the year's reports.",
+        "Use flow and concentration on the same basis. Reports often correct concentration to a reference oxygen level; do not combine a corrected concentration with an uncorrected flow.",
+        "Tonnes = mg/Nm3 x Nm3/h x hours / 1,000,000,000.",
+        "Sum the stacks, including DG sets, and keep the calculation sheet with the reports."
+      ]
+    },
+    {
+      "h": "Estimating SOx from fuel when there is no stack data",
+      "p": [
+        "Sulphur burns to SO2, which weighs twice the sulphur. SO2 in kg = fuel burnt in kg x sulphur fraction x 2, assuming all sulphur leaves the stack. Take sulphur content from the fuel supplier's test certificate. Label the figure as calculated, not measured."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one boiler stack and a fuel-based SOx check",
+    "lines": [
+      "PM: 150 mg/Nm3 x 20,000 Nm3/h x 6,000 h = 18,000,000,000 mg; / 10^9 = 18 t a year",
+      "NOx on the same stack at 300 mg/Nm3: 300 x 20,000 x 6,000 / 10^9 = 36 t",
+      "SOx by mass balance: furnace oil 5,00,000 kg at an assumed 3.5% sulphur",
+      "5,00,000 x 0.035 x 2 = 35,000 kg SO2, 35 t, labelled calculated"
+    ],
+    "note": "Concentrations and sulphur content are illustrative. Use your monitoring reports and fuel certificates."
+  },
+  "senseible": "Senseible reads fuel invoices and keeps the fuel quantities, which are the starting point for a sulphur mass balance. NOx, SOx and PM figures for BRSR come from your stack monitoring reports; Senseible's own calculations cover greenhouse gases.",
+  "links": [
+    {
+      "label": "BRSR reporting requirements",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    },
+    {
+      "label": "BRSR Core nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "ESG reporting",
+      "to": "/esg-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI BRSR format (July 2023), Principle 6",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "CPCB emission standards and stack monitoring under the Air (Prevention and Control of Pollution) Act, 1981",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

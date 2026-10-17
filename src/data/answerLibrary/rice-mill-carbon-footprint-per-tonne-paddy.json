@@ -1,0 +1,83 @@
+{
+  "slug": "rice-mill-carbon-footprint-per-tonne-paddy",
+  "q": "What is the carbon footprint per tonne of rice from a rice mill?",
+  "title": "Rice mill carbon footprint per tonne",
+  "short": "At the mill, add grid electricity, DG diesel and the non-CO2 gases from any husk boiler, then divide by tonnes of paddy or rice. Milling at an assumed 25 kWh per tonne of paddy gives about 18 kg CO2 per tonne of paddy, or about 27 kg per tonne of rice at 65% outturn.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Basmati and non-basmati rice millers and exporters",
+  "sections": [
+    {
+      "h": "What the mill figure covers",
+      "ul": [
+        "Grid electricity for hulling, whitening, polishing, sorting and drying: kWh x 0.710 kg CO2 per kWh.",
+        "DG diesel: litres x 2.68 kg CO2.",
+        "Parboiling and drying steam: fuel x its factor; for husk, only methane and nitrous oxide count in Scope 1.",
+        "Not included here: paddy cultivation, which happens on the farm and is far larger per tonne."
+      ]
+    },
+    {
+      "h": "Husk fired boilers: biogenic CO2 is reported separately",
+      "p": [
+        "Under the GHG Protocol Corporate Standard, CO2 from burning biomass such as rice husk is biogenic. Report it outside the scopes as a separate line. The small amounts of methane and nitrous oxide from burning it do go into Scope 1.",
+        "If you buy coal or briquettes made with coal for the boiler, that part is fossil and fully in Scope 1."
+      ]
+    },
+    {
+      "h": "Per tonne of paddy or per tonne of rice",
+      "p": [
+        "Per tonne of paddy is simplest for the mill. Buyers want per tonne of rice. If you put all the burden on rice, divide by the outturn, so 65% outturn means multiplying the paddy figure by about 1.54.",
+        "ISO 14067 allows you to share the burden with bran, broken rice and husk sold, by mass or by value. Economic allocation leaves most of it on head rice. State the method next to the number."
+      ]
+    },
+    {
+      "h": "Why the mill is the small part of rice's footprint",
+      "p": [
+        "Flooded paddy fields emit methane, and fertiliser adds nitrous oxide. Per tonne of paddy that is usually far larger than milling energy. An exporter asked for a product footprint needs both: the mill figure here, and the farm figure from the procurement method."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 2,000 tonnes of paddy",
+    "lines": [
+      "Electricity: 50,000 kWh (25 kWh per tonne, illustrative) x 0.710 = 35,500 kg CO2",
+      "DG diesel: 1,000 litres x 2.68 = 2,680 kg CO2",
+      "Husk boiler: 100 t husk x 11.6 GJ per t (IPCC default for other primary solid biomass) = 1,160 GJ",
+      "Methane: 1.16 TJ x 30 kg = 34.8 kg x 28 (AR5) = 974 kg CO2e; nitrous oxide: 1.16 x 4 kg = 4.64 kg x 265 (AR5) = 1,230 kg CO2e",
+      "Mill total: 35,500 + 2,680 + 974 + 1,230 = 40,384 kg CO2e, or 20.2 kg per tonne of paddy",
+      "All on rice at 65% outturn (1,300 t): 40,384 / 1,300 = 31.1 kg CO2e per tonne of rice",
+      "Biogenic CO2 from husk, reported separately: 1.16 TJ x 100,000 kg = 116 t CO2"
+    ],
+    "note": "25 kWh per tonne is an illustrative assumption; use your own bills and husk records. Husk values are IPCC 2006 defaults for other primary solid biomass in manufacturing (Table 2.3)."
+  },
+  "senseible": "Senseible reads mill electricity bills and DG diesel invoices into Scope 2 and Scope 1 with the factor shown. Husk purchase invoices are kept with the record, so the husk tonnes for the biogenic and non-CO2 calculation above trace back to source.",
+  "links": [
+    {
+      "label": "Rice procurement Scope 3 emissions",
+      "to": "/answers/rice-procurement-scope-3-emissions"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapters 1 and 2 (Tables 1.2 and 2.3)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

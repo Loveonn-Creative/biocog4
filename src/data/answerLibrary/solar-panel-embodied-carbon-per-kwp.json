@@ -1,0 +1,80 @@
+{
+  "slug": "solar-panel-embodied-carbon-per-kwp",
+  "q": "What is the embodied carbon of rooftop solar panels per kWp for Scope 3?",
+  "title": "Solar panel embodied carbon per kWp",
+  "short": "There is no single figure. Crystalline silicon modules carry several hundred kilograms of CO2e per kWp, and more when made on a coal heavy grid. Use the module maker's EPD if you can get one. Report the whole amount in Scope 3 Category 2, capital goods, in the year you buy the system.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories installing rooftop or ground mounted solar who report Scope 3 Category 2",
+  "sections": [
+    {
+      "h": "Where the figure should come from, best first",
+      "ol": [
+        "An EPD or product carbon footprint for the exact module, which states kg CO2e per module or per kWp. Divide by the module's rated watts if needed.",
+        "The manufacturer's declared footprint, for example from a tender or a low carbon module label.",
+        "A published life cycle range for crystalline silicon, such as the IEA PVPS Task 12 life cycle studies, with the manufacturing country stated.",
+        "A spend-based estimate on the EPC value, labelled, as a last resort."
+      ]
+    },
+    {
+      "h": "What to include in the boundary",
+      "p": [
+        "A module figure covers only the panels. A rooftop system also has inverters, mounting structure, cables and, for ground mounted plants, foundations. Steel or aluminium structures can add a meaningful share. Say whether your figure is module only or the full system."
+      ]
+    },
+    {
+      "h": "Which year it lands in",
+      "p": [
+        "The Scope 3 Standard puts the full cradle to gate emissions of capital goods in Category 2 in the year of acquisition. You do not spread them over the plant's life the way the accounts depreciate it. A large solar purchase can therefore make one year's Scope 3 jump; explain it in the report rather than smoothing it."
+      ]
+    },
+    {
+      "h": "When it is not your Category 2",
+      "ul": [
+        "Under a RESCO or OPEX model the developer owns the plant, so the panels are its capital goods, not yours. You buy electricity.",
+        "Solar bought by a landlord for a building you rent is the landlord's capital good."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 500 kWp rooftop plant",
+    "lines": [
+      "Assumed embodied carbon: 0.6 t CO2e per kWp (illustrative; replace with the module EPD)",
+      "500 kWp x 0.6 = 300 t CO2e in Category 2 in the purchase year",
+      "Assumed yield: 1,400 kWh per kWp a year, so 500 x 1,400 = 700,000 kWh a year",
+      "Grid electricity avoided: 700,000 x 0.710 = 497,000 kg, about 497 t CO2 a year less location-based Scope 2"
+    ],
+    "note": "The 0.6 t and 1,400 kWh figures are labelled assumptions for the arithmetic, not published values for any product or site."
+  },
+  "senseible": "Senseible reads the solar EPC or module invoice into the capital goods line of the supplier evidence trail, kept with its HSN code and a SHA-256 fingerprint; the embodied figure comes from the module EPD or your labelled estimate. After commissioning, the lower grid kWh on your electricity bills shows up as lower Scope 2.",
+  "links": [
+    {
+      "label": "How to count a new machine in Scope 3",
+      "to": "/answers/how-to-count-a-new-machine-in-scope-3"
+    },
+    {
+      "label": "Rooftop solar and net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "RESCO solar: who claims Scope 2",
+      "to": "/answers/resco-opex-solar-who-claims-scope-2"
+    },
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IEA PVPS Task 12, Life Cycle Inventories and Life Cycle Assessments of Photovoltaic Systems",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Module footprints vary widely with manufacturing location and year; prefer a current module EPD over any range.",
+  "reviewed": "2026-10-17"
+}

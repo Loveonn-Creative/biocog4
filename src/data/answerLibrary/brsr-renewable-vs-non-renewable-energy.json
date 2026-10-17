@@ -1,0 +1,89 @@
+{
+  "slug": "brsr-renewable-vs-non-renewable-energy",
+  "q": "How do I split energy into renewable and non-renewable in BRSR?",
+  "title": "BRSR renewable vs non-renewable energy",
+  "short": "In BRSR Principle 6, list electricity, fuel and other energy twice: once from renewable sources and once from non-renewable sources, all in gigajoules. Grid power, DG diesel, coal and gas are non-renewable. Self-consumed solar, contracted green power with supply proof and biomass are renewable. Convert kWh to GJ by multiplying by 0.0036.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies and value chain suppliers filling BRSR Principle 6",
+  "sections": [
+    {
+      "h": "The rows in the table",
+      "ul": [
+        "From renewable sources: total electricity consumption (A), total fuel consumption (B), energy from other sources (C), total (A+B+C).",
+        "From non-renewable sources: total electricity consumption (D), total fuel consumption (E), energy from other sources (F), total (D+E+F).",
+        "Total energy consumed, and energy intensity per rupee of turnover, per rupee adjusted for PPP, and per physical output if you choose."
+      ]
+    },
+    {
+      "h": "Which line each source goes in",
+      "ul": [
+        "Grid electricity from the discom: D, non-renewable, even though the grid includes some renewable power.",
+        "Rooftop or captive solar used on site: A. Exported units under net metering are not consumption.",
+        "Green open access, group captive or a discom green tariff: A, only with supply evidence such as the open access schedule or the green tariff bill.",
+        "Diesel, petrol, coal, furnace oil, LPG, PNG: E.",
+        "Biomass, briquettes, bagasse, biogas: B.",
+        "Solar thermal water heating: C. Purchased steam from a fossil boiler: F."
+      ]
+    },
+    {
+      "h": "Converting to gigajoules",
+      "ul": [
+        "Electricity: kWh x 0.0036 = GJ. 1,000,000 kWh = 3,600 GJ.",
+        "Diesel: about 0.0359 GJ per litre, from the IPCC 2006 NCV of 43.0 GJ per tonne and a density of about 0.835 kg per litre.",
+        "LPG: about 0.0473 GJ per kg, the IPCC 2006 NCV.",
+        "Coal: use the NCV from your lab report, because Indian coal varies widely by grade."
+      ]
+    },
+    {
+      "h": "Points assurance providers check",
+      "ul": [
+        "Renewable claims backed by documents, not by the generator's name.",
+        "No double counting of solar: generation used on site goes in A, and the grid units on the bill stay in D.",
+        "The same conversion factors in the current and previous year, with the basis disclosed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a mid sized plant's year",
+    "lines": [
+      "Grid electricity: 1,000,000 kWh x 0.0036 = 3,600 GJ (D)",
+      "Rooftop solar used on site: 200,000 kWh x 0.0036 = 720 GJ (A)",
+      "DG diesel: 20,000 L x 0.0359 = 718 GJ (E)",
+      "Non-renewable total: 3,600 + 718 = 4,318 GJ; renewable total: 720 GJ",
+      "Total energy: 5,038 GJ; renewable share: 720 / 5,038 = 14.3%"
+    ],
+    "note": "The diesel conversion is an estimate from IPCC default NCV and a typical density; use your supplier's figures if available."
+  },
+  "senseible": "Senseible reads electricity bills, solar generation records and fuel invoices, keeps net-metered exports out of consumption, and drafts BRSR fields from the uploaded data as a self-declared draft.",
+  "links": [
+    {
+      "label": "BRSR reporting requirements",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "BRSR emission intensity per rupee PPP",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    },
+    {
+      "label": "Rooftop solar and net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Group captive solar in Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on BRSR Core, 12 July 2023, Principle 6 Essential Indicator 1",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 Table 1.2 (NCV)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "SEBI revised BRSR value chain and assurance rules in 2025; check the current format before filing.",
+  "reviewed": "2026-10-17"
+}

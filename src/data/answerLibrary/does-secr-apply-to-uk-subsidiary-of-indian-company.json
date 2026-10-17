@@ -1,0 +1,79 @@
+{
+  "slug": "does-secr-apply-to-uk-subsidiary-of-indian-company",
+  "q": "Does SECR apply to the UK subsidiary of an Indian company?",
+  "title": "Does SECR apply to an Indian group's UK arm?",
+  "short": "Yes, if the UK subsidiary passes two of three SECR tests on its own figures: turnover over £36 million, balance sheet over £18 million, more than 250 employees. These SECR limits did not rise with the April 2025 company size changes. An Indian parent does not exempt it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian groups with UK subsidiaries in IT, pharma, auto and textiles",
+  "sections": [
+    {
+      "h": "Who SECR covers",
+      "ul": [
+        "UK quoted companies, whatever their size, which report global energy use and emissions.",
+        "Unquoted companies and LLPs registered in the UK that exceed two of the three SECR tests, which report UK energy use and emissions.",
+        "The tests are in the energy and carbon reporting rules themselves: turnover over £36 million, balance sheet total over £18 million, more than 250 employees, on the company's own figures.",
+        "For financial years starting on or after 6 April 2025 the Companies Act accounts thresholds rose to £54 million turnover and £27 million balance sheet, but the SECR tests were not changed. A company can now be medium-sized for its accounts and still have to give SECR figures."
+      ]
+    },
+    {
+      "h": "Why the Indian parent does not change it",
+      "p": [
+        "A subsidiary can skip its own SECR statement only when a UK parent includes it in a group energy and carbon report filed in the UK. An Indian parent files no UK directors' report, so that route is not open unless there is a UK intermediate holding company that prepares one. In that case the holding company reports for the UK group."
+      ]
+    },
+    {
+      "h": "The low energy exemption",
+      "p": [
+        "A large company that used 40,000 kWh of energy or less in the UK in the year does not have to give the figures, but must say in its directors' report that it is exempt for that reason. A small UK sales office may qualify; a factory or warehouse almost never will."
+      ]
+    },
+    {
+      "h": "What the directors' report must contain",
+      "ol": [
+        "UK energy use in kWh from gas, electricity and transport fuel, with business travel in company or employee-owned cars where the company buys the fuel.",
+        "The greenhouse gas emissions from that energy, in tonnes CO2e.",
+        "At least one intensity ratio, such as tonnes CO2e per £ million turnover or per employee.",
+        "The methodology used, normally the UK government conversion factors for the year.",
+        "Energy efficiency actions taken in the year, and prior year figures from the second year onwards."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: testing a UK pharma distribution subsidiary",
+    "lines": [
+      "Financial year starting 1 April 2026: turnover £60 million, balance sheet £22 million, 140 employees",
+      "SECR tests: turnover over £36 million, yes; balance sheet over £18 million, yes; more than 250 employees, no",
+      "Two of three tests met, so the subsidiary gives SECR figures in its directors' report",
+      "For its accounts it is medium-sized (balance sheet under £27 million, under 250 employees), but that does not lift the SECR duty"
+    ],
+    "note": "Illustrative figures. Check how the tests apply over consecutive years with the company's UK auditors before relying on the result."
+  },
+  "senseible": "Senseible reads energy bills and fuel invoices and keeps each figure tied to its document. For UK sites, the subsidiary applies the UK government conversion factors for the reporting year.",
+  "links": [
+    {
+      "label": "UK Carbon Reduction Plan for Indian suppliers",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    },
+    {
+      "label": "NHS carbon reduction plan for pharma",
+      "to": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india"
+    },
+    {
+      "label": "Carbon footprint: financial or calendar year",
+      "to": "/answers/carbon-footprint-financial-or-calendar-year"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK government GHG conversion factors for company reporting, and the Environmental Reporting Guidelines including SECR (2019); SECR tests in SI 2008/410 Schedule 7 Part 7A (legislation.gov.uk)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "SECR tests (£36 million, £18 million, more than 250 employees) checked against professional summaries of the 2024 size threshold changes, which left SI 2008/410 Schedule 7 Part 7A unchanged; confirm paragraph 20B on legislation.gov.uk for the financial year being reported.",
+  "reviewed": "2026-10-17"
+}

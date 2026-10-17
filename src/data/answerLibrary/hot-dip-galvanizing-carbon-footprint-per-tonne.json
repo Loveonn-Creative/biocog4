@@ -1,0 +1,80 @@
+{
+  "slug": "hot-dip-galvanizing-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint of hot-dip galvanizing per tonne of steel?",
+  "title": "Galvanizing carbon footprint per tonne",
+  "short": "Per tonne of steel galvanized, add zinc consumed times the zinc footprint, kettle fuel times its factor and electricity times 0.710, then divide by tonnes coated. Zinc is usually the largest item, because each tonne of steel picks up tens of kg of zinc.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Galvanizers coating towers, structures and fasteners for export",
+  "sections": [
+    {
+      "h": "The three parts",
+      "ul": [
+        "Zinc: kg consumed x the zinc ingot footprint from your supplier.",
+        "Kettle heating: LPG at 2.98 kg CO2 per kg, PNG at 2.05 kg per scm, or furnace oil at 2.97 kg per litre.",
+        "Electricity for cranes, pickling pumps, fume extraction and the dryer: kWh x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Measure zinc consumed, not zinc on the steel",
+      "p": [
+        "Coating pick-up is only part of the zinc that leaves the kettle. Dross and zinc ash also use metal. Work out consumption from purchases plus opening kettle and store stock, minus closing stock. If you sell dross and ash for recovery, you can deduct their zinc content, but say so in the method note."
+      ]
+    },
+    {
+      "h": "Smaller items to include or note",
+      "ul": [
+        "Hydrochloric acid for pickling and flux salts, as purchased goods in Scope 3.",
+        "Spent acid and sludge disposal, as waste in Scope 3.",
+        "Customer steel is not your footprint; a buyer will add it separately per tonne of steel."
+      ]
+    },
+    {
+      "h": "Per tonne of what",
+      "p": [
+        "Divide by tonnes of black steel received for coating, the basis galvanizers charge on. Thin sections pick up more zinc per tonne than heavy sections, so if you serve both, report figures by product type."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 1,000 tonnes galvanized",
+    "lines": [
+      "Zinc consumed: 70,000 kg (70 kg per tonne, illustrative) x 3.0 kg CO2e per kg (illustrative) = 2,10,000 kg CO2e",
+      "Kettle PNG: 30,000 scm x 2.05 = 61,500 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Total: 2,10,000 + 61,500 + 42,600 = 3,14,100 kg",
+      "Per tonne galvanized: 3,14,100 / 1,000 = 314 kg CO2e, of which zinc is 67%"
+    ],
+    "note": "Zinc consumption and the zinc factor are illustrative; ask your zinc supplier for its figure."
+  },
+  "senseible": "Senseible reads kettle fuel and electricity invoices into Scope 1 and 2 with the factor shown. Zinc ingot and acid purchases go to the supplier evidence trail by HSN code and kg.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fuel purchased vs fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

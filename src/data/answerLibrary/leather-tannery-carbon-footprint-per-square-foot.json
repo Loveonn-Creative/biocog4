@@ -1,0 +1,87 @@
+{
+  "slug": "leather-tannery-carbon-footprint-per-square-foot",
+  "q": "What is the carbon footprint per square foot of finished leather from an Indian tannery?",
+  "title": "Tannery carbon footprint per square foot",
+  "short": "Add the tannery's Scope 1 and 2 emissions, chemicals and effluent treatment for a period, and divide by square feet of finished leather produced. Convert to square metres by multiplying by 10.764. Whether hides carry part of the cattle's emissions depends on the allocation rule, so name the rule you used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tanneries and leather goods exporters in Kanpur, Ambur, Vaniyambadi and Chennai",
+  "sections": [
+    {
+      "h": "What goes into a gate to gate figure",
+      "ul": [
+        "Electricity for drums, splitting, shaving, dryers, sprayers and the ETP: kWh x 0.710 kg CO2.",
+        "Boiler fuel for hot water and drying: coal, firewood, briquettes or furnace oil. Biomass is reported as biogenic, outside the fossil total.",
+        "DG diesel during outages: litres x 2.68.",
+        "Effluent treatment: your own ETP's power is already in the electricity line; CETP charges are Scope 3 Category 5, waste."
+      ]
+    },
+    {
+      "h": "Adding inputs for cradle to gate",
+      "ul": [
+        "Tanning chemicals: basic chromium sulphate, syntans, fatliquors, dyes and finishes, from supplier data where possible, per kg used.",
+        "Wet blue or crust bought from another tannery: Category 1, with that tannery's own per square foot figure.",
+        "Salt for preservation and packaging.",
+        "Raw hides: see the allocation question below."
+      ]
+    },
+    {
+      "h": "The allocation question for hides",
+      "p": [
+        "Most of a leather footprint can sit in the animal, if hides take a share of farm emissions. Some studies treat hides as a slaughterhouse residue with no farm burden. The EU Product Environmental Footprint Category Rules for leather use square metres of finished leather as the unit and share slaughterhouse burdens between meat and hides by economic value, which leaves hides a small share. Check the current PEFCR text for the exact rule before you quote it. A buyer will compare like with like only if you state which rule you followed."
+      ]
+    },
+    {
+      "h": "Units buyers use",
+      "p": [
+        "Indian tanneries sell by square foot; EU footprint rules use square metres. 1 m2 = 10.764 sq ft. Measure area after finishing, from the area measuring machine, and state the thickness range, because a 1.4 mm upholstery leather and a 2.0 mm shoe upper differ in material and energy per square foot."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Scope 1 and 2 per square foot",
+    "lines": [
+      "Electricity: 220,000 kWh x 0.710 = 156,200 kg CO2",
+      "Boiler coal: 120 t, 120,000 kg x 2.42 = 290,400 kg CO2",
+      "DG diesel: 6,000 L x 2.68 = 16,080 kg CO2",
+      "Total: 462,680 kg CO2; finished leather: 400,000 sq ft",
+      "Per sq ft: 462,680 / 400,000 = 1.157 kg CO2; per m2: 1.1567 x 10.764 = 12.45 kg CO2"
+    ],
+    "note": "This is the tannery's own energy only. Chemicals, effluent and any hide allocation are added on top."
+  },
+  "senseible": "Senseible reads tannery electricity bills, boiler fuel and diesel invoices and gives Scope 1 and 2 with the factor on each line. Chemical purchases go to the supplier evidence trail; area produced and the hide allocation rule come from you.",
+  "links": [
+    {
+      "label": "EUDR and leather hides",
+      "to": "/answers/eudr-leather-cattle-hides-india"
+    },
+    {
+      "label": "Water and carbon in textiles and leather",
+      "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather"
+    },
+    {
+      "label": "ETP sludge and wastewater in Scope 3",
+      "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Allocation of livestock emissions to hides is contested and buyer rules differ; confirm the rule a buyer expects.",
+  "reviewed": "2026-10-17"
+}
