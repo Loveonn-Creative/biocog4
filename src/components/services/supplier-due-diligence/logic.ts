@@ -6,8 +6,11 @@
 // - UFLPA: US imports linked to Xinjiang presumed made with forced labour since
 //   21 June 2022. High-priority sectors: cotton/apparel, polysilicon/solar,
 //   aluminium, PVC, tomatoes, seafood.
-// - EUDR: cattle, cocoa, coffee, oil palm, rubber, soya and wood, and products
-//   made from them, into the EU need deforestation-free and legality evidence.
+// - EUDR: cattle, cocoa, coffee, oil palm, rubber, soya and wood, and the
+//   products listed in Annex I of Regulation (EU) 2023/1115, into the EU need
+//   deforestation-free and legality evidence. Cattle hides, skins and leather
+//   (ex 4101, 4104, 4107) were removed from Annex I by Delegated Regulation
+//   (EU) 2026/2102 (OJ 17 September 2026); live cattle and beef stay in scope.
 // - Conflict minerals: tin, tantalum, tungsten and gold (3TG); many buyers also
 //   screen cobalt and mica.
 // - EU CSDDD: the largest EU companies, not before July 2028.
@@ -34,7 +37,7 @@ export interface SupplyInput {
 export const COMMODITY_LABEL: Record<Commodity, string> = {
   cotton: "Cotton, apparel", polysilicon: "Polysilicon, solar", aluminium: "Aluminium", pvc: "PVC",
   tomatoes: "Tomatoes", seafood: "Seafood", "3tg": "Tin, tantalum, tungsten, gold", cobalt: "Cobalt", mica: "Mica",
-  cattle: "Cattle, leather", cocoa: "Cocoa", coffee: "Coffee", palm: "Oil palm", rubber: "Rubber", soya: "Soya", wood: "Wood, paper",
+  cattle: "Cattle, beef", cocoa: "Cocoa", coffee: "Coffee", palm: "Oil palm", rubber: "Rubber", soya: "Soya", wood: "Wood, paper",
 };
 /** Short names for the canvas. */
 export const COMMODITY_SHORT: Record<Commodity, string> = {
