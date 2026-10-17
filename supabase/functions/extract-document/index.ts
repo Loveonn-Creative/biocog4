@@ -352,7 +352,12 @@ interface ExtractedData {
 // ============= AI OCR EXTRACTION (DATA ONLY - NO CALCULATIONS) =============
 // AI extracts ONLY: invoice_id, date, vendor, gstin, line_items (description, hsn, quantity, unit, amount)
 // AI does NOT calculate CO2 values - that's done by deterministic math above
-async function extractWithAI(imageBase64: string, mimeType: string, apiKey: string, model: string): Promise<any> {
+// Flash only (owner rule, October 2026). The first read is capped at 4,096
+// output tokens; one second read, with a larger cap and more reasoning, runs
+// only when the first was cut off or found no lines.
+const FIRST_READ = { maxTokens: 4096, effort: 'low' } as const;
+const SECOND_READ = { maxTokens: 16384, effort: 'medium' } as const;
+async function extractWithAI(imageBase64: string, mimeType: string, apiKey: string, model: string, read: { maxTokens: number; effort: string } = FIRST_READ): Promise<any> {
   const systemPrompt = `You are an expert OCR document analyzer for Indian MSMEs. Your ONLY job is to extract data fields from invoices. You do NOT calculate emissions or carbon values.
 
 CRITICAL EXTRACTION RULES:
@@ -468,12 +473,11 @@ Respond with ONLY valid JSON, no markdown code blocks.`;
           ]
         }
       ],
-      // Room for long invoices plus the model's own reasoning, which counts
-      // against the cap on current Gemini models; JSON only, little reasoning.
-      max_tokens: 16384,
+      // Reasoning counts against the cap on current Gemini models.
+      max_tokens: read.maxTokens,
       temperature: 0, // Minimize variability
       response_format: { type: 'json_object' },
-      reasoning_effort: 'low',
+      reasoning_effort: read.effort,
     }),
   });
 
@@ -862,7 +866,7 @@ serve(async (req) => {
       }
     }
 
-    // Retry with pro model if needed
+    // One second read if the first was cut off or found nothing
     const meterPhotoRead = !!ocrData && Array.isArray(ocrData.meterReadings) && ocrData.meterReadings.length > 0 && documentCaptureOf(ocrData) === 'meter_photo';
     if (!ocrData || (ocrData.lineItems?.length === 0 && ocrData.documentType !== 'unknown' && !meterPhotoRead)) {
       // A second, slower read only while it can finish inside the edge limit.
@@ -871,17 +875,16 @@ serve(async (req) => {
           return new Response(JSON.stringify({ error: INCOMPLETE_EXTRACTION_MESSAGE, code: 'incomplete_extraction' }), { status: 422, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
         } else return failOnOurSide(providerStatus);
       } else {
-      console.log('Retrying with pro model...');
+      console.log('Second read (flash, larger cap)...');
       try {
-        content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', '', 'google/gemini-2.5-pro');
-        usedModel = 'google/gemini-2.5-pro';
+        content = await extractWithAI(imageBase64, mimeType || 'image/jpeg', '', 'google/gemini-2.5-flash', SECOND_READ);
         truncated = false;
         
         ocrData = parseAiJson(content || '');
       } catch (error: any) {
         if (error.status === 429 || error.status === 402) return failOnOurSide(error.status);
         if (typeof error.status === 'number') providerStatus = error.status;
-        console.error('Pro model failed:', error?.status ?? error?.name ?? 'error');
+        console.error('Second read failed:', error?.status ?? error?.name ?? 'error');
         if (error.truncated || (truncated && !ocrData)) {
           // The reads were cut off: refuse rather than keep a partial answer.
           return new Response(

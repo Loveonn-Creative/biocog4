@@ -19,7 +19,7 @@ import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/work
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
-import { functionErrorStatus, getFunctionErrorMessage } from '@/lib/functionErrors';
+import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { parseInvoiceDate } from '../../supabase/functions/_shared/invoiceDate';
@@ -443,9 +443,11 @@ const Index = () => {
       setState("idle");
       return;
     }
-    const done: { extracted: ExtractedData; saved: { documentId: string; emissionIds: string[] } }[] = [];
+    const done: { extracted: ExtractedData; saved: { documentId: string; emissionIds: string[] }; from?: number }[] = [];
     const notes: string[] = [];
-    for (const part of split.parts) {
+    // Two parts at a time; results are put back in page order below.
+    let stopped = false;
+    await runPool(split.parts, 2, async (part) => {
       const range = `pages ${part.fromPage}-${part.toPage}`;
       setDocumentType(`Reading ${range} of ${part.totalPages}...`);
       try {
@@ -456,25 +458,25 @@ const Index = () => {
         if (error) {
           const msg = await getFunctionErrorMessage(error, 'could not be read');
           notes.push(`${range}: ${msg}`);
-          // Paused on our side or a limit reached: the remaining parts would fail the same way.
-          const status = functionErrorStatus(error);
-          if (status === 402 || status === 429) { notes.push(`The remaining parts were not sent.`); break; }
-          continue;
+          // Paused or down on our side, or a limit reached: the remaining parts would fail the same way.
+          if (await stopsBatch(error)) stopped = true;
+          return;
         }
-        if (data?.financialDocument) { notes.push(`${range}: ${data.stored ? 'financial document, stored securely' : 'financial document, not kept'}`); continue; }
-        if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); continue; }
-        if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); continue; }
+        if (data?.financialDocument) { notes.push(`${range}: ${data.stored ? 'financial document, stored securely' : 'financial document, not kept'}`); return; }
+        if (data?.isIrrelevant) { notes.push(`${range}: no bill or invoice found`); return; }
+        if (!data?.success || !data?.data) { notes.push(`${range}: ${data?.error || 'could not be read'}`); return; }
         // Page numbers of this part, mapped back to the original PDF.
         const partData = data.data as ExtractedData;
         const extracted: ExtractedData = { ...partData, lineItems: offsetSourcePages(partData.lineItems || [], part.fromPage) };
         const saved = user ? (serverSaved(data) ?? await saveEmissionToDatabase(extracted, data.documentHash)) : await keepGuestResult(extracted, data.documentHash, part.file.name);
         if (!user) void cacheGuestSource(data.documentHash, part.file, part.file.name);
-        if (!saved) { notes.push(`${range}: could not be saved`); continue; }
-        done.push({ extracted, saved });
+        if (!saved) { notes.push(`${range}: could not be saved`); return; }
+        done.push({ extracted, saved, from: part.fromPage });
       } catch {
         notes.push(`${range}: could not be read`);
       }
-    }
+    }, () => stopped, (part) => notes.push(`pages ${part.fromPage}-${part.toPage}: not sent`));
+    done.sort((a, b) => (a.from ?? 0) - (b.from ?? 0));
     if (done.length === 0) {
       toast.error(notes[0] ? `Nothing could be read from this PDF (${notes[0]}).` : 'Nothing could be read from this PDF.', { duration: 8000 });
       setState("idle");

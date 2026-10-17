@@ -463,3 +463,13 @@ describe('document kinds through the real handler', () => {
     expect(line.guidance.status).toBe('counted');
   });
 });
+
+describe('reading budget', () => {
+  test('first read is flash with a 4,096-token cap', async () => {
+    ocr = { ...diesel('10', 'INV-970'), documentTitle: 'Tax Invoice' };
+    await upload('k7');
+    const body = JSON.parse(String(lastBody));
+    expect(body.max_tokens).toBe(4096);
+    expect(body.model).toContain('flash');
+  });
+});
