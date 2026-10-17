@@ -1,0 +1,82 @@
+{
+  "slug": "emissions-saved-by-waste-heat-recovery",
+  "q": "How do I calculate the emissions saved by a waste heat recovery system?",
+  "title": "Emissions saved by waste heat recovery",
+  "short": "Measure the useful heat the system recovers in a year, divide by the efficiency of the boiler or furnace it replaces to get the fuel energy avoided, and multiply by the IPCC emission factor for that fuel. Then subtract the CO2 from any extra electricity the recovery system uses for fans and pumps.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Foundries, forging, ceramics, glass and cement units",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Heat recovered (GJ) = flow x specific heat x temperature rise, summed over the operating hours. A heat meter on the recovered stream gives this directly.",
+        "Fuel energy avoided (GJ) = heat recovered / efficiency of the equipment that would otherwise supply that heat.",
+        "CO2 avoided = fuel energy avoided x IPCC default CO2 factor for that fuel, per unit of energy.",
+        "Net saving = CO2 avoided minus extra kWh used by the recovery system x the grid factor."
+      ]
+    },
+    {
+      "h": "Count only heat that displaces fuel",
+      "p": [
+        "The saving is real only if the recovered heat replaces fuel you would otherwise burn. Heat that preheats combustion air, feed water or a dryer that already ran on fuel counts. Heat dumped because the process cannot use it does not. If production changes, use the heat you actually used, not the design rating of the unit. If the recovered heat makes electricity instead, the saving is in grid purchases, which is a Scope 2 question covered separately."
+      ]
+    },
+    {
+      "h": "The efficiency figure is an assumption, so record it",
+      "p": [
+        "Use the measured efficiency of the boiler or furnace being displaced, from your last energy audit if you have one. BEE's energy auditor guide books set out the direct and indirect methods for measuring boiler efficiency. If you use a design or typical value, label it an assumption: a lower efficiency gives a larger saving, so an auditor will check it."
+      ]
+    },
+    {
+      "h": "How the saving shows in your inventory",
+      "p": [
+        "Your inventory does not get a negative line for avoided emissions. The saving shows as fewer litres, kilograms or cubic metres of fuel on later invoices, so your Scope 1 falls. Keep the calculation as a separate project record, so you can explain to a lender or buyer why fuel use dropped."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: recovered heat replacing furnace oil for one year",
+    "lines": [
+      "Recovered heat: 500 kW average x 6,000 hours = 3,000,000 kWh = 10,800 GJ",
+      "Assumed boiler efficiency: 85% (assumption, label it)",
+      "Fuel energy avoided: 10,800 / 0.85 = 12,705.9 GJ, or 12.7059 TJ",
+      "Furnace oil factor: 77,400 kg CO2 per TJ (IPCC 2006 default for residual fuel oil)",
+      "CO2 avoided: 12.7059 x 77,400 = 983,435 kg, about 983.4 t CO2",
+      "Furnace oil avoided: 12,705.9 GJ / 40.4 GJ per t (IPCC default net calorific value) = 314.5 t",
+      "Extra power for pumps and fans: 15 kW x 6,000 h = 90,000 kWh x 0.710 kg CO2 per kWh = 63.9 t CO2",
+      "Net saving: 983.4 minus 63.9 = 919.5 t CO2 a year"
+    ],
+    "note": "Use your heat meter reading, your measured efficiency and your own fuel analysis where you have them."
+  },
+  "senseible": "Senseible calculates Scope 1 from your actual fuel invoices, so a working recovery system shows as lower litres or kilograms in later periods, each tied to its invoice. Keep the heat balance and avoided-emissions calculation as your project record alongside it.",
+  "links": [
+    {
+      "label": "Measuring energy efficiency savings",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Waste heat recovery power: which scope?",
+      "to": "/answers/waste-heat-recovery-power-which-scope"
+    },
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2, default net calorific values and CO2 factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 2, Energy Efficiency in Thermal Utilities, waste heat recovery chapter",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

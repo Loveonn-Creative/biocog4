@@ -1,0 +1,83 @@
+{
+  "slug": "ghg-inventory-uncertainty-calculation",
+  "q": "How do I estimate uncertainty in a company GHG inventory?",
+  "title": "Estimating uncertainty in a GHG inventory",
+  "short": "Give each activity figure and each emission factor a percentage uncertainty, combine the two for each source by root-sum-square, then combine sources weighted by their emissions. This is IPCC Approach 1. The result is a plus or minus percentage for the whole inventory.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "ESG managers and auditors",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "p": [
+        "For one source, emissions = activity x factor. Its uncertainty is the square root of (activity uncertainty squared plus factor uncertainty squared), with both as percentages.",
+        "For a total, multiply each source's percentage by its emissions to get an absolute figure, square these, add them, take the square root, and divide by the total emissions. The IPCC 2006 Guidelines (Volume 1, Chapter 3) call this Approach 1."
+      ]
+    },
+    {
+      "h": "Where the input percentages come from",
+      "ul": [
+        "Metered or invoiced quantities: the meter's accuracy class or the supplier's measurement, usually a few percent.",
+        "Default emission factors: the range published with the factor; IPCC tables give ranges for many fuel factors.",
+        "Spend-based or estimated figures: wide, often tens of percent; record your basis.",
+        "Expert judgement where nothing is published, written down with the reasoning."
+      ],
+      "p": [
+        "Uncertainty here means half the 95% confidence range, as a share of the value."
+      ]
+    },
+    {
+      "h": "Limits of the simple method",
+      "p": [
+        "Approach 1 assumes errors are independent and roughly symmetric. IPCC notes the equations hold well while the standard deviation stays under about 30% of the mean, which is roughly plus or minus 60% on the 95% range used here. For large or one-sided ranges, or inputs that move together, use Monte Carlo simulation (IPCC Approach 2). Uncertainty is not the same as an error: a duplicated invoice is a mistake to fix, not a range to report."
+      ]
+    },
+    {
+      "h": "How to use the result",
+      "p": [
+        "Report the overall range and name the sources that drive it. Reduce uncertainty where it is largest in absolute tonnes, not where the percentage looks worst on a small source. ISO 14064-1 asks for an uncertainty assessment in the inventory report, and a verifier will compare your range with the materiality threshold agreed for the engagement."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three sources (illustrative percentages)",
+    "lines": [
+      "Electricity: 1,000 t CO2; activity 2%, factor 5%; combined = square root of (4 + 25) = 5.39%, so plus or minus 53.9 t",
+      "Diesel: 300 t CO2; activity 5%, factor 2%; combined 5.39%, so plus or minus 16.2 t",
+      "Scope 1 and 2 total: 1,300 t; square root of (53.9 squared + 16.2 squared) = square root of (2,905 + 262) = 56.3 t, about plus or minus 4.3%",
+      "Add spend-based purchased goods: 2,000 t at 50%, so plus or minus 1,000 t",
+      "New total 3,300 t: square root of (2,905 + 262 + 1,000,000) = 1,001.6 t, about plus or minus 30%"
+    ],
+    "note": "The percentages are illustrative. One wide Scope 3 estimate swamps everything else, which is why primary supplier data matters most."
+  },
+  "senseible": "Senseible ties each activity figure to its source document and runs rule checks on quantity, unit and factor, and spend-based estimates it provides are labelled with their wider uncertainty. It does not calculate an uncertainty range for your inventory.",
+  "links": [
+    {
+      "label": "Acceptable error in a carbon audit",
+      "to": "/answers/acceptable-error-in-carbon-audit-materiality"
+    },
+    {
+      "label": "Sensitivity analysis on a footprint",
+      "to": "/answers/carbon-footprint-sensitivity-analysis"
+    },
+    {
+      "label": "Tier 1 vs Tier 2 emission factors",
+      "to": "/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 1, Chapter 3 (Uncertainties, Approach 1 and 2)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol guidance on uncertainty assessment in GHG inventories and its calculation tool",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "ISO 14064-1:2018, Greenhouse gases, organisation level",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

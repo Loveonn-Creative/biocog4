@@ -1,0 +1,80 @@
+{
+  "slug": "land-use-change-emissions-in-scope-3",
+  "q": "Do I need to count land use change emissions from crops or timber I buy?",
+  "title": "Land use change in purchased crops and timber",
+  "short": "You need to count land use change emissions if a buyer with an SBTi FLAG target asks, if you publish a product carbon footprint where it is significant, or if land-based materials are a large part of your footprint. For a basic Scope 1 and 2 inventory you do not. It is a carbon question, separate from EUDR.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Food, cotton textile and furniture exporters with EU or SBTi buyers",
+  "sections": [
+    {
+      "h": "When you have to include it",
+      "ul": [
+        "Your buyer has, or is setting, an SBTi FLAG target. SBTi requires a FLAG target from companies in land-intensive sectors and from others whose land-related emissions are 20 percent or more of their total, and FLAG emissions include land use change in the supply chain.",
+        "You publish a product carbon footprint under ISO 14067 or PAS 2050, which ask for direct land use change to be assessed and reported in the footprint.",
+        "Your own Scope 3 Category 1 is dominated by crops, cotton, timber or leather, so leaving land use change out would understate it by a material amount."
+      ]
+    },
+    {
+      "h": "Direct versus statistical land use change",
+      "p": [
+        "Direct land use change applies when you know the farm or forest and can show whether it was converted from forest or grassland within the last 20 years. Statistical land use change applies when you only know the country: the emissions from land converted to that crop in that country over 20 years are spread across all of the crop's production. Most Indian exporters buying through traders will be on the statistical route, using a published country and crop dataset, labelled as such."
+      ]
+    },
+    {
+      "h": "How the 20 year amortisation works",
+      "p": [
+        "The carbon lost when land is cleared is not charged to one harvest. It is spread over the 20 years after conversion, and after 20 years that land carries no land use change emissions. PAS 2050 spreads it evenly, 5 percent a year. The GHG Protocol Land Sector and Removals Standard makes linear discounting the usual method, which puts a larger share in the first years after clearing and less later. Say which method you used, because the two give different figures for the same land."
+      ]
+    },
+    {
+      "h": "Not the same test as EUDR",
+      "p": [
+        "The EU Deforestation Regulation is a legal test: covered commodities must come from land not deforested after 31 December 2020, proven with geolocation. It covers cattle, cocoa, coffee, oil palm, rubber, soya and wood, but not cotton. Meeting EUDR does not give you a land use change figure, and a land use change figure does not prove EUDR compliance."
+      ]
+    },
+    {
+      "h": "Where the guidance stands",
+      "p": [
+        "The GHG Protocol published its Land Sector and Removals Standard in January 2026 (version 1.1 in June 2026), effective from 1 January 2027. It covers agriculture and CO2 removals; carbon accounting for managed forest land is left for a later version, though deforestation in commodity supply chains is covered. So for timber, follow the standard on land use change but check its current scope before claiming forest removals."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: amortising one hectare of cleared land evenly",
+    "lines": [
+      "Carbon released when 1 ha is converted to cropland: 150 t CO2 (illustrative)",
+      "Spread over 20 years: 150 / 20 = 7.5 t CO2 per year",
+      "Crop yield on that hectare: 5 t a year",
+      "Land use change per tonne of crop: 7.5 / 5 = 1.5 t CO2 per t, for 20 years after clearing"
+    ],
+    "note": "All inputs are illustrative and use even (PAS 2050) amortisation. Linear discounting under the GHG Protocol standard would charge more than 7.5 t in the early years and less later. In practice use a published country and crop land use change factor and name the dataset and version."
+  },
+  "senseible": "Senseible's document reader puts invoices for purchased crops, cotton or timber into its supplier evidence trail as Scope 3 lines with their quantities; it applies no land use change factor on its own, so you multiply those quantities by a named country and crop factor.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "Biogenic carbon for food and textiles",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Land Sector and Removals Standard v1.1 (June 2026, effective 1 January 2027)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Regulation (EU) 2023/1115 on deforestation-free products (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Re-check the Land Sector and Removals Standard version and scope (forestry) and the SBTi FLAG guidance version each year."
+}

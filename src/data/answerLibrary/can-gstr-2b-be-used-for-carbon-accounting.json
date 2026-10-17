@@ -1,0 +1,86 @@
+{
+  "slug": "can-gstr-2b-be-used-for-carbon-accounting",
+  "q": "Can GSTR-2B or the purchase register be used for carbon accounting?",
+  "title": "GSTR-2B for carbon accounting?",
+  "short": "Only as a checklist, not as the data. GSTR-2B gives invoice totals by supplier but no item lines or quantities, and it leaves out diesel, petrol and electricity, which sit outside GST. Use it to confirm no purchase is missed, then calculate from the invoices and bills themselves.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Indian MSME accountants and CFOs",
+  "sections": [
+    {
+      "h": "What GSTR-2B contains",
+      "p": [
+        "GSTR-2B is the auto-drafted input tax credit statement under Rule 60 of the CGST Rules, 2017, generated each month from what your suppliers report. It lists each supplier invoice with GSTIN, invoice number and date, taxable value, tax and whether credit is available, plus imports on bills of entry.",
+        "It does not carry the item description, HSN code, quantity or unit for each line. Those are what an activity-based emission calculation needs."
+      ]
+    },
+    {
+      "h": "What GSTR-2B leaves out",
+      "ul": [
+        "Petrol, diesel, ATF and natural gas: outside GST, so fuel pump and gas invoices do not appear. These are most MSMEs' Scope 1.",
+        "Grid electricity: exempt from GST, so the discom bill does not appear. That is Scope 2.",
+        "Purchases from unregistered suppliers and small vendors who do not file invoice-wise returns.",
+        "Expenses booked without a GST invoice, such as some freight and local services."
+      ]
+    },
+    {
+      "h": "When the purchase register is better",
+      "p": [
+        "A purchase register in Tally or another ERP is better than GSTR-2B if stock items are kept with quantity and unit. Then each line already has an item, quantity and often an HSN code, and you can apply a factor per unit.",
+        "If the register is kept at ledger level, as rupee amounts per supplier, it supports only a spend-based estimate. Under the GHG Protocol Scope 3 Standard that is the least precise method for Category 1, and it should be labelled so. E-invoices from suppliers above the e-invoicing turnover threshold carry an HSN code on every line, and usually quantity and unit, so they are a good source where available."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Fuel and electricity: always from the invoices and bills, in litres, kg, scm or kWh.",
+        "Material purchases: from the purchase register if it holds quantities, otherwise from the invoices.",
+        "Lines with no quantity anywhere: a spend-based estimate on the taxable value before GST, labelled as spend-based.",
+        "GSTR-2B: reconcile the supplier and invoice count each month so nothing is missed or counted twice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what GSTR-2B would miss in one month",
+    "lines": [
+      "Diesel for a generator and forklifts, from pump invoices: 10,000 litres x 2.68 kg CO2 per litre = 26,800 kg CO2",
+      "Grid electricity, from the discom bill: 175,000 kWh x 0.710 kg CO2 per kWh = 124,250 kg CO2",
+      "Total not visible in GSTR-2B: 26,800 + 124,250 = 151,050 kg CO2, about 151 tonnes"
+    ],
+    "note": "Diesel factor is the IPCC 2006 default; grid factor is the CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "Senseible reads the invoices and bills themselves, classifies each line by HSN code first and applies a factor only when a printed quantity and unit match; lines without a quantity show Needs Data. Where only spend exists, Senseible provides a spend-based estimate labelled as spend-based, and ERP feeds are set up for enterprise customers on request.",
+  "links": [
+    {
+      "label": "Carbon footprint from invoices",
+      "to": "/answers/how-to-calculate-carbon-footprint-from-invoices"
+    },
+    {
+      "label": "Mapping HSN codes to emission factors",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Spend-based Scope 3: GST and inflation",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Tally, SAP and ERP integration",
+      "to": "/answers/tally-sap-integration"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

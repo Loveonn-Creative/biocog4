@@ -64,6 +64,10 @@
     {
       "label": "Carbon credits at Senseible",
       "to": "/carbon-credits"
+    },
+    {
+      "label": "CDM projects moving to Article 6.4",
+      "to": "/answers/cdm-projects-transition-to-article-6-4"
     }
   ],
   "sources": [

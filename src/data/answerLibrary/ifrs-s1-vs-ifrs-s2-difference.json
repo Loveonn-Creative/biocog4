@@ -1,0 +1,74 @@
+{
+  "slug": "ifrs-s1-vs-ifrs-s2-difference",
+  "q": "What does IFRS S1 cover that IFRS S2 does not?",
+  "title": "IFRS S1 vs IFRS S2: what S1 adds",
+  "short": "IFRS S1 covers every sustainability risk and opportunity that could affect a company's prospects, such as water, labour or supply chains, and sets the general rules for any sustainability report. IFRS S2 covers climate only. S2 adds the climate specifics: emissions by scope, scenario analysis, transition plans and climate metrics.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian listed companies, CFOs, lenders",
+  "sections": [
+    {
+      "h": "What only IFRS S1 does",
+      "ul": [
+        "Requires disclosure on all sustainability-related risks and opportunities that could reasonably be expected to affect cash flows, access to finance or cost of capital, not just climate.",
+        "Tells you how to find those topics: consider the SASB Standards, and you may also look at CDSB guidance, the GRI Standards or ESRS.",
+        "Sets the core content for any topic: governance, strategy, risk management, and metrics and targets."
+      ]
+    },
+    {
+      "h": "The general rules in S1 that S2 relies on",
+      "p": [
+        "IFRS S2 does not repeat these, so a climate-only report still has to follow them through S1."
+      ],
+      "ul": [
+        "Same reporting entity as the financial statements, and the same reporting period.",
+        "Publish at the same time as the financial statements.",
+        "Connected information: explain links between sustainability data and the financial statements.",
+        "Materiality judged by what could influence investors' decisions.",
+        "Comparative figures, a statement of compliance, and how to handle estimates, judgements and errors."
+      ]
+    },
+    {
+      "h": "What only IFRS S2 does",
+      "ul": [
+        "Scope 1, 2 and 3 greenhouse gas emissions, measured under the GHG Protocol Corporate Standard.",
+        "Climate resilience assessed with scenario analysis.",
+        "Climate transition plans and climate targets.",
+        "Cross-industry climate metrics, such as assets exposed to transition and physical risk, internal carbon prices and climate-linked pay.",
+        "Industry-based climate metrics, with guidance drawn from SASB."
+      ]
+    },
+    {
+      "h": "The climate-first relief",
+      "p": [
+        "In the first annual reporting period, IFRS S1 Appendix E (paragraph E5) lets a company report only on climate, applying S2, and leave other sustainability topics for later. In the second year the full S1 scope applies, though comparative figures for the non-climate topics are not required that year. So a company using the relief should know by the end of year one which non-climate topics are material."
+      ]
+    }
+  ],
+  "senseible": "Senseible drafts IFRS S1 and S2 outputs from your uploaded data, as self-declared drafts: the metrics part, built from document-backed Scope 1 and 2 figures from your invoices and bills. Governance, strategy and risk management narratives are written by your company.",
+  "links": [
+    {
+      "label": "IFRS S2 vs TCFD",
+      "to": "/answers/ifrs-s2-vs-tcfd-difference"
+    },
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "IFRS S2 cross-industry metrics",
+      "to": "/answers/ifrs-s2-cross-industry-metrics-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information, ISSB, June 2023 (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "IFRS S2 Climate-related Disclosures, ISSB, June 2023 (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

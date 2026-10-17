@@ -60,6 +60,10 @@
     {
       "label": "Grid electricity factor for India",
       "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Hourly grid emission factors in India",
+      "to": "/answers/hourly-grid-emission-factors-india"
     }
   ],
   "sources": [

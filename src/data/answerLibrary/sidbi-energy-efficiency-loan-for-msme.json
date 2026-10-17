@@ -1,0 +1,69 @@
+{
+  "slug": "sidbi-energy-efficiency-loan-for-msme",
+  "q": "What energy efficiency loans does SIDBI offer MSMEs?",
+  "title": "SIDBI energy efficiency loans for MSMEs",
+  "short": "SIDBI's dedicated energy efficiency product is the 4E scheme, End to End Energy Efficiency: an energy audit and project report, then a SIDBI loan for the measures the audit recommends. SIDBI also ran the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Check current terms on sidbi.in.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs planning energy efficiency upgrades",
+  "sections": [
+    {
+      "h": "The 4E scheme",
+      "p": [
+        "4E pairs technical help with a direct SIDBI loan. An energy audit identifies the measures, such as efficient motors, compressors, furnaces or waste heat recovery, a project report sets out the cost and saving, and SIDBI finances the measures. Check on sidbi.in or with your SIDBI branch whether 4E is open, and its current minimum loan, rate and margin, as these sit in its scheme terms and are revised from time to time."
+      ]
+    },
+    {
+      "h": "The Partial Risk Sharing Facility",
+      "p": [
+        "The Partial Risk Sharing Facility for Energy Efficiency, PRSF, was set up with World Bank and Global Environment Facility support and run by SIDBI. It does not lend to you. It covers part of the loss a participating bank or NBFC would take on an energy efficiency loan, often one made through an energy service company. Programmes like this open and close as funding rounds end, so ask which ones are taking new projects."
+      ]
+    },
+    {
+      "h": "How these differ from ADEETIE",
+      "p": [
+        "ADEETIE is a Ministry of Power scheme run by BEE, not a SIDBI loan. It pays interest subvention, 5 percent for micro and small and 3 percent for medium enterprises, on loans for energy-efficient technology from participating lenders, for Udyam-registered units in 60 identified clusters. A unit may be able to combine an audit under one programme with finance from another; check each scheme's rules before assuming they stack."
+      ]
+    },
+    {
+      "h": "What to have ready before you apply",
+      "ul": [
+        "Twelve months of electricity bills and fuel invoices, to set the baseline.",
+        "Production records for the same months, so savings can be shown per tonne or per unit.",
+        "Quotations for the equipment and the expected energy saving from an auditor.",
+        "Udyam registration and the usual financial documents your lender asks for."
+      ]
+    }
+  ],
+  "senseible": "Senseible's green loan readiness check organises the energy and emissions evidence lenders ask for, from your bills and invoices. It does not arrange SIDBI loans or confirm scheme eligibility.",
+  "links": [
+    {
+      "label": "ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Credit guarantees for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "Energy audit for MSMEs",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, ADEETIE scheme: 5% and 3% interest subvention, 60 clusters (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Ministry of Power, energy efficiency programmes (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SIDBI 4E terms, PRSF availability and ADEETIE subvention rates change; verify live terms with SIDBI and BEE before applying."
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "eu-taxonomy-dnsh-criteria-explained",
+  "q": "What does 'do no significant harm' mean in the EU Taxonomy, with an example?",
+  "title": "EU Taxonomy do no significant harm",
+  "short": "Do no significant harm (DNSH) means an activity that helps one environmental objective, such as cutting emissions, must not seriously damage any of the other five: climate adaptation, water, circular economy, pollution and biodiversity. Each activity has its own DNSH checklist, and failing any one item means the activity is not taxonomy aligned.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "EU-facing manufacturers, lenders and Indian suppliers to EU buyers",
+  "sections": [
+    {
+      "h": "Where the rule comes from",
+      "p": [
+        "Article 17 of the Taxonomy Regulation (EU) 2020/852 defines significant harm for each of the six objectives. For example, an activity harms the circular economy objective if it leads to significant inefficiency in material use or a large increase in waste, and harms pollution prevention if it significantly increases emissions to air, water or land. The test looks at the life cycle of the activity, not only the site."
+      ]
+    },
+    {
+      "h": "The generic appendices used across activities",
+      "ul": [
+        "Appendix A, climate adaptation: a climate risk and vulnerability assessment of the physical risks to the activity, with a plan for adaptation solutions.",
+        "Appendix B, water: risks to water quality and water stress identified and addressed, for example through an environmental impact assessment and a water use and protection plan.",
+        "Appendix C, pollution: limits on manufacturing, placing on the market or using listed hazardous substances.",
+        "Appendix D, biodiversity: an environmental impact assessment where required, and mitigation for sites in or near protected areas. Outside the EU, equivalent national rules or international standards apply."
+      ]
+    },
+    {
+      "h": "How DNSH differs from minimum safeguards",
+      "p": [
+        "DNSH is about environmental damage. Minimum safeguards, under Article 18, are a separate company-level test: procedures that follow the OECD Guidelines for Multinational Enterprises, the UN Guiding Principles on Business and Human Rights, the ILO core labour conventions and the International Bill of Human Rights. An activity needs both, plus a substantial contribution, to be aligned."
+      ]
+    },
+    {
+      "h": "What evidence an Indian supplier is asked for",
+      "ul": [
+        "A physical climate risk assessment for the plant: heat, flooding, cyclone and water scarcity.",
+        "Consent to operate and discharge permits from the State Pollution Control Board, with recent monitoring results.",
+        "Environmental clearance or impact assessment documents, and any forest or wildlife clearance for the site.",
+        "Records of stack emissions compared with the limits the activity's DNSH table refers to."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: an electric arc furnace steel plant",
+    "lines": [
+      "Substantial contribution claimed: climate mitigation, under activity 3.9 Manufacture of iron and steel",
+      "Adaptation: Appendix A risk assessment finds monsoon flood risk; drainage upgrade planned, so it passes",
+      "Water: Appendix B, cooling water use and discharge covered by permits and a water management plan, so it passes",
+      "Pollution: emissions must sit within the BAT-associated emission levels in the iron and steel BAT conclusions, Implementing Decision 2012/135/EU; one stack exceeds the dust level",
+      "Result: not aligned, even though its CO2 intensity meets the threshold, until the dust problem is fixed"
+    ],
+    "note": "Read the 3.9 DNSH table in the current Climate Delegated Act for the exact references."
+  },
+  "senseible": "Senseible does not assess DNSH or Taxonomy alignment. Its fuel and electricity records support the emissions side of a climate mitigation claim, not the water, pollution or biodiversity checks.",
+  "links": [
+    {
+      "label": "Steel threshold for EU Taxonomy",
+      "to": "/answers/eu-taxonomy-steel-substantial-contribution-threshold"
+    },
+    {
+      "label": "India's taxonomy vs the EU Taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    },
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2020/852 (Taxonomy Regulation), Articles 17 and 18, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2021/2139 (Climate Delegated Act), Appendices A to D and activity 3.9, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Commission was reviewing the Taxonomy delegated acts in 2026, including DNSH criteria; check the current consolidated text."
+}

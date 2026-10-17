@@ -68,6 +68,10 @@
     {
       "label": "Diesel emission factor",
       "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "How much of my credits go to buffer",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
     }
   ],
   "sources": [

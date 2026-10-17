@@ -43,7 +43,7 @@
       ]
     }
   ],
-  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions that you can share when a large EU buyer's due diligence asks for environmental data. It does not run human rights or labour due diligence, and its reports are self-declared.",
+  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions that you can share when a large EU buyer's due diligence asks for environmental data. For the human rights and labour side, Senseible's supplier due diligence service helps you answer the buyer and pass the same questions on to your own suppliers. Its reports are self-declared.",
   "links": [
     {
       "label": "EU rules beyond CBAM that ask for carbon data",
@@ -56,6 +56,10 @@
     {
       "label": "Who is still in scope of CSRD",
       "to": "/answers/who-is-still-in-scope-of-csrd"
+    },
+    {
+      "label": "CSDDD clause from an EU buyer",
+      "to": "/answers/csddd-contract-clause-from-eu-buyer"
     }
   ],
   "sources": [

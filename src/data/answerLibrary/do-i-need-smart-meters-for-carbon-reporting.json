@@ -1,0 +1,78 @@
+{
+  "slug": "do-i-need-smart-meters-for-carbon-reporting",
+  "q": "Do I need IoT or smart meters to report Scope 2 emissions?",
+  "title": "Do I need smart meters for Scope 2?",
+  "short": "No, your monthly electricity bills are enough to report Scope 2. The GHG Protocol accepts utility bills as activity data: add up the kWh for the year and multiply by the grid factor. IoT or smart meters help you find where power is wasted and split use between lines, but reporting does not require them.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners pitched IoT energy monitoring",
+  "sections": [
+    {
+      "h": "What Scope 2 reporting actually needs",
+      "ul": [
+        "Twelve months of electricity bills, or the discom's consumption statements, for every connection you control.",
+        "The kWh on each bill. On a kVAh bill, use the printed kWh, or convert with the printed power factor and label it an estimate.",
+        "A grid factor with its source: in India, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database, version 21.0.",
+        "Any renewable contracts or certificates, if you also report market-based Scope 2."
+      ]
+    },
+    {
+      "h": "When extra metering is worth paying for",
+      "ul": [
+        "You must split electricity across products or lines, for a product footprint or CBAM data on specific goods.",
+        "You generate power yourself, from diesel generators or rooftop solar, and need generation readings.",
+        "You want to cut the bill: interval data shows idle loads, compressed air leaks and peak demand.",
+        "You share a building and have no discom bill of your own."
+      ]
+    },
+    {
+      "h": "Questions to ask an IoT vendor",
+      "ol": [
+        "Will the monthly totals reconcile with my discom bill, and what happens to the gap?",
+        "Can I export raw readings, with timestamps, in a common file format?",
+        "Are the meters calibrated, and will I get the certificates?",
+        "Who owns the data if I stop paying?"
+      ]
+    },
+    {
+      "h": "A sensible order for an MSME",
+      "p": [
+        "Start with bills, since that gives you a reportable Scope 2 figure today. Add metering only where you have a decision that needs it, such as a product split or an energy saving project, and size the spend to that decision."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: annual Scope 2 from bills alone",
+    "lines": [
+      "Twelve monthly bills add up to 300,000 kWh",
+      "Factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
+      "300,000 x 0.710 = 213,000 kg CO2, 213 tonnes location-based Scope 2"
+    ]
+  },
+  "senseible": "Senseible reads kWh from your electricity bills and calculates location-based Scope 2, so bills alone are enough to start. If you later add meters, Senseible can take hardware and meter feeds, set up with its team for your site rather than self-serve.",
+  "links": [
+    {
+      "label": "Smart meter data vs bills",
+      "to": "/answers/smart-meter-data-vs-bills-for-carbon-reporting"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Sensors and real-time monitoring",
+      "to": "/answers/sensors-fenceline-methane"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

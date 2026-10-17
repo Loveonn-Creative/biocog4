@@ -50,6 +50,14 @@
     {
       "to": "/esg-reporting",
       "label": "Which ESG frameworks apply to you"
+    },
+    {
+      "label": "ISO 14001 cost in India",
+      "to": "/answers/iso-14001-certification-cost-india"
+    },
+    {
+      "label": "ISO 50001 or ISO 14001 first",
+      "to": "/answers/iso-50001-vs-iso-14001-which-first"
     }
   ],
   "sources": [

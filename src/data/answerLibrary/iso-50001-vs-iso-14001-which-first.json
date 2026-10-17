@@ -1,0 +1,83 @@
+{
+  "slug": "iso-50001-vs-iso-14001-which-first",
+  "q": "Should an MSME get ISO 50001 or ISO 14001 first?",
+  "title": "ISO 50001 or ISO 14001 first?",
+  "short": "Get ISO 14001 first if buyers ask for an environmental management certificate, which is the common case for exporters. Get ISO 50001 first if energy is one of your biggest costs and the goal is to cut it or back a lender's energy-efficiency case. The second system is cheaper once one is running.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "MSMEs seeking certification for buyers or green loans",
+  "sections": [
+    {
+      "h": "What each standard actually covers",
+      "ul": [
+        "ISO 14001 is an environmental management system. It covers all your significant environmental aspects: waste, effluent, air emissions, chemicals, energy and your legal compliance obligations. The current edition, ISO 14001:2026 (published April 2026), keeps the requirement added by the 2024 climate amendment to decide whether climate change is a relevant issue for you.",
+        "ISO 50001:2018 (with its 2024 climate amendment) is an energy management system. It goes deeper on one thing: an energy review, your significant energy uses, an energy baseline and energy performance indicators (EnPIs), and it expects you to show measured improvement in energy performance over time."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Check your buyer contracts, vendor registration forms and supplier questionnaires. If any of them names ISO 14001, start there. A buyer requirement decides the order.",
+        "If no buyer asks, look at your energy bill. Where fuel and electricity are a large share of operating cost, as in foundries, forging, ceramics, textiles processing and cold chain, ISO 50001 pays for itself faster because it is built around finding and holding savings.",
+        "If a lender, scheme or green loan wants evidence of energy savings, ISO 50001's baseline and EnPIs give you that evidence directly.",
+        "If you need both, pick the one that removes a sales or finance blocker first, then add the other within a year."
+      ]
+    },
+    {
+      "h": "Why the second one is easier",
+      "p": [
+        "Both standards use the same ISO high-level structure: context, leadership, planning, support, operation, performance evaluation and improvement. Document control, internal audit, management review and corrective action can be shared. Many certification bodies will run a combined audit, which reduces the total audit days compared with two separate audits."
+      ]
+    },
+    {
+      "h": "What to have ready before either audit",
+      "ul": [
+        "Twelve months of electricity bills and fuel purchase records, so the energy baseline or energy aspect is built on real data.",
+        "Production figures for the same months, so energy per tonne or per piece can be tracked.",
+        "Your consents to establish and operate from the State Pollution Control Board, hazardous waste records and any monitoring reports, for ISO 14001 compliance obligations.",
+        "A named person who owns the system day to day."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an ISO 50001 energy performance indicator",
+    "lines": [
+      "Baseline year: 14,40,000 kWh for 3,600 t of castings = 400 kWh per t",
+      "Target set in the energy plan: 5 percent lower, so 380 kWh per t",
+      "At the same 3,600 t output: 3,600 x (400 minus 380) = 72,000 kWh saved",
+      "CO2 avoided: 72,000 x 0.710 kg CO2 per kWh = 51,120 kg, about 51 t a year"
+    ],
+    "note": "Illustrative figures. ISO 50001 expects the EnPI to be normalised for output, so a drop in production is not counted as an energy saving."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel slips into a monthly energy and emissions record that can serve as the baseline data for either system. It is not a certification body and does not run or sign off ISO audits.",
+  "links": [
+    {
+      "label": "Does ISO 14001 require climate change?",
+      "to": "/answers/does-iso-14001-require-climate-change"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "ISO 14001 certification cost",
+      "to": "/answers/iso-14001-certification-cost-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 50001:2018 and Amendment 1:2024, Energy management systems (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14001:2026, Environmental management systems (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "ISO 14001:2015 certificates move to the 2026 edition over a transition of about three years; confirm the deadline and the edition you will be audited against with your certification body."
+}

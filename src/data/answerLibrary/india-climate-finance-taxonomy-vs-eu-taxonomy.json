@@ -1,0 +1,74 @@
+{
+  "slug": "india-climate-finance-taxonomy-vs-eu-taxonomy",
+  "q": "What is India's climate finance taxonomy and how is it different from the EU Taxonomy?",
+  "title": "India's climate taxonomy vs the EU Taxonomy",
+  "short": "India's climate finance taxonomy is a Ministry of Finance draft from May 2025 that sorts activities into climate-supportive and transition-supportive, with sector rules still to come. The EU Taxonomy is law, sets numeric thresholds per activity, and adds do no significant harm and minimum safeguards tests.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Indian borrowers, lenders and green bond issuers",
+  "sections": [
+    {
+      "h": "Legal status",
+      "ul": [
+        "India: a Ministry of Finance draft framework, released by the Department of Economic Affairs in May 2025 for public comment. It sets principles and two categories; the sector annexures that would name activities and thresholds had not been issued, and the framework was not final, at this page's review date.",
+        "EU: Regulation (EU) 2020/852 is in force, and the Climate Delegated Act (EU) 2021/2139 has set technical screening criteria for climate activities since 2022."
+      ]
+    },
+    {
+      "h": "How an activity qualifies",
+      "p": [
+        "Under the EU Taxonomy an activity is aligned only if it makes a substantial contribution to one of six environmental objectives, does no significant harm to the other five, meets minimum social safeguards, and passes the activity's technical screening criteria, which are often numeric, such as tonnes CO2e per tonne of product.",
+        "India's draft works at the level of principles and two categories. Climate-supportive covers activities that cut emissions or build adaptation directly. Transition-supportive covers hard-to-abate sectors, such as steel and cement, that lower emission intensity while still emitting."
+      ]
+    },
+    {
+      "h": "The biggest practical difference: transition",
+      "p": [
+        "The EU has transitional activities, but they must meet best-in-class thresholds, so most existing Indian steel or cement plants would not qualify. India's draft is designed to recognise measured improvement in such plants. For an Indian borrower that means a credible before and after record of emissions per unit of output matters more than meeting an absolute EU threshold."
+      ]
+    },
+    {
+      "h": "Disclosure and bonds",
+      "ul": [
+        "EU: companies in scope of Article 8 report the share of turnover, capital expenditure and operating expenditure that is taxonomy aligned. The EU Green Bond Standard, Regulation (EU) 2023/2631, ties proceeds to aligned activities.",
+        "India: the draft is a classification framework. Any reporting duty would come through regulators. Green bonds in India today follow SEBI's framework for green debt securities, and banks raising green deposits follow the RBI list.",
+        "An Indian exporter with EU owners or EU lenders may need to answer against the EU Taxonomy anyway, whatever the Indian status."
+      ]
+    }
+  ],
+  "senseible": "Senseible's green loan readiness check uses measured emissions from your bills and invoices to give a lender before and after evidence. It does not classify activities under either taxonomy or decide whether finance is aligned.",
+  "links": [
+    {
+      "label": "India's climate taxonomy and MSMEs",
+      "to": "/answers/india-climate-finance-taxonomy-what-msmes-need"
+    },
+    {
+      "label": "EU Taxonomy do no significant harm",
+      "to": "/answers/eu-taxonomy-dnsh-criteria-explained"
+    },
+    {
+      "label": "Transition vs green finance",
+      "to": "/climate-intelligence/transition-finance-vs-green-finance-borrower-guide"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2020/852 (Taxonomy Regulation) and Climate Delegated Act (EU) 2021/2139, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "SEBI framework for green debt securities",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "RBI Framework for Acceptance of Green Deposits (April 2023)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "India's taxonomy was a May 2025 draft when reviewed, and the EU simplified Taxonomy reporting in 2025 and 2026; check dea.gov.in and EUR-Lex for the current texts."
+}

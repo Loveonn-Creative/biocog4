@@ -59,6 +59,10 @@
     {
       "label": "Diesel to electric van CO2 saving",
       "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Are EV deliveries zero emission?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
     }
   ],
   "sources": [

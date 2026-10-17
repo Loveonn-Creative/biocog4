@@ -1,0 +1,83 @@
+{
+  "slug": "renewable-capacity-per-tonne-green-hydrogen",
+  "q": "How much solar or wind capacity is needed per tonne of green hydrogen a year?",
+  "title": "Solar or wind MW per tonne of hydrogen",
+  "short": "Roughly 30 kW of solar or 20 kW of wind for each tonne of green hydrogen a year, before storage and curtailment. That assumes 52 kWh per kg for the electrolyser system and capacity factors of 20 percent for solar and 30 percent for wind. Capacity rises in step with consumption, so use your own figures.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Developers and industrial buyers sizing captive green hydrogen in India",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Electricity needed (MWh a year) = hydrogen (tonnes a year) x system consumption (MWh per tonne).",
+        "Energy from 1 MW of capacity (MWh a year) = 8,760 hours x capacity utilisation factor (CUF).",
+        "Capacity needed (MW) = electricity needed / energy per MW.",
+        "Add a margin for curtailment, transmission losses, module and stack degradation, and any storage losses."
+      ]
+    },
+    {
+      "h": "Choosing the inputs",
+      "ul": [
+        "System consumption: IRENA's 2020 green hydrogen cost report gives a range for alkaline and PEM systems that starts at about 50 kWh per kg and runs to around 80, and its cost model uses about 51 kWh per kg at nominal capacity. The 52 used here sits near the low end; take your supplier's guaranteed figure. Compression, purification and water treatment add more.",
+        "Solar CUF: about 18 to 22 percent AC for many Indian sites, an estimate; use the plant's P50 yield study or CEA generation data for your state.",
+        "Wind CUF: about 25 to 35 percent depending on site and hub height, also an estimate.",
+        "Hybrid: solar plus wind gives more running hours per day, which means a smaller electrolyser for the same output."
+      ]
+    },
+    {
+      "h": "Electrolyser size is a separate question",
+      "p": [
+        "Generation sets the energy; the electrolyser must also absorb the power when it comes. With solar alone the electrolyser runs only in daylight, so it has to be close to the solar plant's peak output, about 30 MW in the example below. Running round the clock, the same 52 GWh needs only about 6 MW of electrolyser, but then you need wind, storage, open access banking or grid power to fill the night hours."
+      ]
+    },
+    {
+      "h": "Grid top-up and the 2 kg threshold",
+      "p": [
+        "India's Green Hydrogen Standard allows at most 2 kg CO2e per kg of hydrogen, well to gate, averaged over 12 months. At 52 kWh per kg, pure grid power at 0.710 kg CO2 per kWh gives about 36.9 kg CO2 per kg of hydrogen. Even with every other source at zero, grid power could supply only about 5 percent of the electricity before the threshold is breached."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1,000 tonnes of hydrogen a year",
+    "lines": [
+      "Electricity: 1,000 t x 52 MWh per t = 52,000 MWh (52 GWh)",
+      "Solar at 20% CUF: 8,760 x 0.20 = 1,752 MWh per MW; 52,000 / 1,752 = 29.7 MW",
+      "Wind at 30% CUF: 8,760 x 0.30 = 2,628 MWh per MW; 52,000 / 2,628 = 19.8 MW",
+      "Electrolyser running all year: 52,000 MWh / 8,760 h = 5.9 MW",
+      "Grid share limit: 2 / (52 x 0.710) = 2 / 36.9 = about 5% of electricity"
+    ],
+    "note": "All inputs are labelled assumptions. Real projects add 10 to 20 percent or more for curtailment and losses; treat that margin as a planning estimate."
+  },
+  "senseible": "Capacity sizing is an engineering calculation outside Senseible's document reader. Senseible reads electricity bills and fuel invoices, so a plant's grid and fuel use can sit in the same invoice-backed record it keeps for Scope 1 and 2.",
+  "links": [
+    {
+      "label": "India's 2 kg green hydrogen threshold",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Grid electricity and hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    },
+    {
+      "label": "Green hydrogen economics for MSMEs",
+      "to": "/climate-intelligence/green-hydrogen-msme-cost-economics-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IRENA, Green Hydrogen Cost Reduction: Scaling up electrolysers to meet the 1.5C climate goal (2020)",
+      "url": "https://www.irena.org"
+    },
+    {
+      "label": "Central Electricity Authority, generation and capacity data",
+      "url": "https://cea.nic.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Green Hydrogen Standard threshold and its rules on grid and banked power may be revised; check MNRE notifications."
+}

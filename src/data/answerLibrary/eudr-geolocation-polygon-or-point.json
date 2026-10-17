@@ -59,6 +59,10 @@
     {
       "label": "Supplier due diligence",
       "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "What coffee and rubber exporters provide",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
     }
   ],
   "sources": [

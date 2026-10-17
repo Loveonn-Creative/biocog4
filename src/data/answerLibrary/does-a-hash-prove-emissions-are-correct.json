@@ -62,6 +62,10 @@
     {
       "label": "Can AI calculate a footprint accurately?",
       "to": "/answers/can-ai-calculate-carbon-footprint-accurately"
+    },
+    {
+      "label": "Hash vs trusted timestamp",
+      "to": "/answers/sha-256-hash-vs-trusted-timestamp"
     }
   ],
   "sources": [

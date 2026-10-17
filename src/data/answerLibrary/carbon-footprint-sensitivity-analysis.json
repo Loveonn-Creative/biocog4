@@ -1,0 +1,89 @@
+{
+  "slug": "carbon-footprint-sensitivity-analysis",
+  "q": "How do I run a sensitivity analysis on a carbon footprint?",
+  "title": "Sensitivity analysis on a carbon footprint",
+  "short": "Change one input at a time, such as a factor, a quantity or an allocation choice, by a set amount like 10%, recalculate the total and record how much it moves. Inputs that move the total most are the ones to measure better and to explain in your report.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Exporters preparing product footprints for buyers",
+  "sections": [
+    {
+      "h": "What the standards ask for",
+      "p": [
+        "ISO 14044 lists a sensitivity check (clause 4.5.3.3) as part of interpreting results. ISO 14067 asks for a sensitivity analysis of significant inputs and methodological choices in a product footprint, and the GHG Protocol Product Standard asks you to report uncertainty and the choices behind it.",
+        "None of them sets a single required percentage. You choose the test and state it."
+      ]
+    },
+    {
+      "h": "Step by step",
+      "ol": [
+        "List every input with its value and source: quantities from invoices and meters, emission factors, allocation shares.",
+        "Pick a change for each, such as plus and minus 10%, or the realistic range (for example, last year's grid factor against this year's).",
+        "Recalculate the total with one input changed and all others fixed.",
+        "Record the change in kg and as a share of the total.",
+        "Rank the inputs. Set a cut-off you can defend, for example any input that moves the total by more than 2%, and treat those as key inputs."
+      ]
+    },
+    {
+      "h": "Test choices, not only numbers",
+      "ul": [
+        "Allocation: mass against economic allocation between co-products.",
+        "Factor source: a supplier's own figure against a database average.",
+        "Boundary: including or leaving out packaging or inbound freight.",
+        "Recycled content: the cut-off approach against another end-of-life method."
+      ],
+      "p": [
+        "Report each alternative result next to the main one, so a buyer can see how much the method matters."
+      ]
+    },
+    {
+      "h": "What to do with the result",
+      "p": [
+        "Spend effort where the total is sensitive. If a 10% change in one material factor moves the footprint by 7%, get primary data from that supplier before polishing a fuel figure that moves it by under 1%. Put the ranking and the tested ranges in the footprint report."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one production batch",
+    "lines": [
+      "Electricity: 50,000 kWh x 0.710 kg CO2 per kWh = 35,500 kg",
+      "Diesel: 4,000 L x 2.68 kg CO2 per L = 10,720 kg",
+      "Purchased material: 120,000 kg CO2e (supplier figure)",
+      "Total: 35,500 + 10,720 + 120,000 = 166,220 kg CO2e",
+      "Grid factor plus or minus 10%: plus or minus 3,550 kg, 2.1% of the total",
+      "Diesel litres plus or minus 10%: plus or minus 1,072 kg, 0.6% of the total",
+      "Material factor plus or minus 10%: plus or minus 12,000 kg, 7.2% of the total"
+    ],
+    "note": "The material figure includes gases other than CO2, so the total is stated as CO2e. Here the supplier's material factor is the input to improve first."
+  },
+  "senseible": "Senseible keeps each quantity tied to its source document and each factor to its published source, so you can see which inputs to vary and rerun the arithmetic. It does not run the sensitivity analysis for you or certify a product footprint to ISO 14067.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Uncertainty in a GHG inventory",
+      "to": "/answers/ghg-inventory-uncertainty-calculation"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006, Life cycle assessment, Requirements and guidelines, clause 4.5.3.3 (sensitivity check)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -63,6 +63,10 @@
     {
       "label": "Diesel emission factor",
       "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Are EV deliveries zero emission?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
     }
   ],
   "sources": [

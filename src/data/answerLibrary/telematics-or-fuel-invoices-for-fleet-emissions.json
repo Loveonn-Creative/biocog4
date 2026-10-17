@@ -1,0 +1,84 @@
+{
+  "slug": "telematics-or-fuel-invoices-for-fleet-emissions",
+  "q": "Should fleet emissions use telematics distance data or fuel invoices?",
+  "title": "Telematics km or fuel invoices for fleets?",
+  "short": "Use fuel invoices for fleet CO2 whenever you have litres. The GHG Protocol prefers the fuel-based method because CO2 depends on fuel burnt, not kilometres. Use telematics distance to check the litres, fill gaps and work out fuel economy, and to estimate methane and nitrous oxide.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs and transporters with owned trucks or vans",
+  "sections": [
+    {
+      "h": "Why litres beat kilometres for CO2",
+      "p": [
+        "Almost all the carbon in diesel ends up as CO2, so litres times a fuel factor gives a direct result: 2.68 kg CO2 per litre of diesel and 2.31 for petrol, the IPCC 2006 defaults.",
+        "A distance-based figure needs an assumed fuel economy or a km factor. Load, idling, hills, traffic and tyre condition all change real litres per km, so the assumption adds error that the fuel invoice does not have."
+      ]
+    },
+    {
+      "h": "When telematics distance is the better source",
+      "ul": [
+        "Fuel is bought on a shared card or by a driver in cash, so no invoice ties litres to a vehicle.",
+        "A hired or leased vehicle where the owner pays for fuel and you only have trip data.",
+        "Methane and nitrous oxide, which depend more on engine and distance than on fuel; the GHG Protocol mobile combustion tool works these out from distance.",
+        "Splitting one fleet total across customers, routes or products."
+      ]
+    },
+    {
+      "h": "How to reconcile the two each month",
+      "ol": [
+        "Total litres per vehicle from fuel slips and invoices.",
+        "Total km per vehicle from telematics or odometer readings.",
+        "Divide km by litres to get km per litre for each vehicle.",
+        "Compare with the vehicle's normal figure. A gap of more than about 10% (a working threshold, set your own) points to a missing slip, fuel used elsewhere, a duplicate invoice or a faulty tracker.",
+        "Fix the record, then report CO2 from litres and keep the km as the cross-check."
+      ]
+    },
+    {
+      "h": "What to write in your report",
+      "p": [
+        "Say that Scope 1 fleet CO2 is fuel-based, name the factors and their source, and list any vehicles estimated from distance with the fuel economy you assumed. Keep owned vehicles in Scope 1; fuel for a hired transporter's trucks belongs in Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three trucks, one month",
+    "lines": [
+      "Fuel invoices: 12,000 L diesel",
+      "Fuel-based CO2: 12,000 x 2.68 = 32,160 kg CO2, about 32.2 t",
+      "Telematics distance: 48,000 km, so actual economy is 48,000 / 12,000 = 4.0 km per litre",
+      "Distance-based with an assumed 4.5 km per litre: 48,000 / 4.5 = 10,667 L, so 10,667 x 2.68 = 28,588 kg CO2",
+      "Gap: 12,000 minus 10,667 = 1,333 L, about 11% of the litres bought, worth checking before you report"
+    ],
+    "note": "The 4.5 km per litre is an illustrative assumption. If the slips are complete, the fuel-based 32.2 t is the figure to report."
+  },
+  "senseible": "Senseible reads fuel slips and invoices and multiplies the litres by IPCC 2006 default factors (2.68 kg CO2 a litre of diesel, 2.31 of petrol). Telematics and other hardware feeds can be taken too: they are set up with the Senseible team for each customer, not as a self-serve integration.",
+  "links": [
+    {
+      "label": "Vehicle emissions from fuel spend",
+      "to": "/answers/vehicle-emissions-from-fuel-spend"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, with the GHG Protocol mobile combustion calculation tool",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 (mobile combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

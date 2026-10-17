@@ -56,6 +56,14 @@
     {
       "to": "/esg-reporting",
       "label": "Which ESG rules apply to you"
+    },
+    {
+      "label": "SB 253: who must report",
+      "to": "/answers/sb-253-who-must-report"
+    },
+    {
+      "label": "California SB 261 status",
+      "to": "/answers/california-sb-261-climate-risk-report-status"
     }
   ],
   "sources": [

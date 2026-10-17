@@ -1,0 +1,76 @@
+{
+  "slug": "waste-heat-recovery-power-which-scope",
+  "q": "Is electricity from a waste heat recovery system zero emission in my inventory?",
+  "title": "Waste heat recovery power: which scope?",
+  "short": "Yes, in effect: power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Cement, steel and sponge iron plants with WHRS power",
+  "sections": [
+    {
+      "h": "Why there is no separate figure for WHRS power",
+      "p": [
+        "Scope 2 covers purchased electricity. Power you generate and use yourself is not purchased, so the GHG Protocol Scope 2 Guidance gives it no Scope 2. The Corporate Standard counts emissions from your own generation in Scope 1. For a WHRS, the fuel was burnt for the process, and that CO2 is already in Scope 1. Counting it again against the electricity would double count."
+      ]
+    },
+    {
+      "h": "When it is not zero",
+      "ul": [
+        "Auxiliary firing: if coal, gas or oil is burnt to boost steam in the WHRS boiler, that fuel is extra Scope 1.",
+        "Blended plants: if the WHRS shares a turbine with a coal-fired captive boiler, split the output by steam source, or count all the fuel and treat the power as own generation.",
+        "Fugitive leaks from the cycle, such as refrigerants in an organic Rankine cycle unit, are Scope 1 in CO2e."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Total electricity consumed, split into grid purchase and own generation from waste heat.",
+        "Scope 2 on the grid kWh only, at 0.710 kg CO2 per kWh location-based for India.",
+        "The kiln or furnace fuel in Scope 1 as usual, with no deduction for the power made from its heat.",
+        "Units exported to the grid are not subtracted from Scope 1 or Scope 2."
+      ]
+    },
+    {
+      "h": "Carbon credits are a separate question",
+      "p": [
+        "Lower grid purchases from WHRS cut your Scope 2. Whether the project can also earn carbon credits depends on an approved methodology, additionality and a registry's rules. Do not assume it qualifies, and do not claim the same reduction in your inventory and as credits sold to someone else."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a cement plant for one year",
+    "lines": [
+      "Total electricity used: 10,000 MWh",
+      "From WHRS: 3,000 MWh; from the grid: 7,000 MWh",
+      "Scope 2: 7,000,000 kWh x 0.710 kg CO2 per kWh = 4,970,000 kg, 4,970 t CO2",
+      "If the WHRS power were wrongly treated as grid: 10,000,000 x 0.710 = 7,100 t CO2, an overstatement of 2,130 t"
+    ],
+    "note": "Factor: CEA CO2 Baseline Database, version 21.0. Keep WHRS generation meter readings as evidence for the split."
+  },
+  "senseible": "Senseible reports purchased grid kWh as Scope 2 from your electricity bills, so WHRS power consumed on site adds no Scope 2, and it reads fuel invoices for Scope 1. Its carbon credit eligibility signals are a first screen, not a ruling that a WHRS project can earn credits.",
+  "links": [
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Manufacturing Scope 2 emissions in India",
+      "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

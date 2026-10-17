@@ -55,6 +55,10 @@
     {
       "label": "Grid electricity factor for India",
       "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Renewable capacity per tonne of hydrogen",
+      "to": "/answers/renewable-capacity-per-tonne-green-hydrogen"
     }
   ],
   "sources": [

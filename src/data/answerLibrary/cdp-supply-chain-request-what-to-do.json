@@ -56,6 +56,14 @@
     {
       "label": "Do CDP and RE100 accept Indian RECs?",
       "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "CDP SME or full questionnaire?",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "How a CDP score is calculated",
+      "to": "/answers/how-is-cdp-score-calculated"
     }
   ],
   "sources": [

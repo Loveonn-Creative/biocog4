@@ -1,0 +1,78 @@
+{
+  "slug": "eudr-coffee-rubber-exporter-what-to-provide",
+  "q": "What must an Indian coffee or rubber exporter give an EU buyer under EUDR?",
+  "title": "EUDR data pack for coffee and rubber",
+  "short": "For each lot, give the HS code, net weight, harvest or tapping period, the plot list with coordinates for every grower whose produce is in the lot, and land and registration records showing legal production on land that was not forest after 31 December 2020. Keep traceable and untraceable produce apart.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian coffee curers, rubber processors and planters' cooperatives",
+  "sections": [
+    {
+      "h": "Which products and codes",
+      "ul": [
+        "Coffee: green, roasted and decaffeinated coffee, HS 0901. Delegated Regulation (EU) 2026/2102 adds soluble coffee (coffee extracts, essences and concentrates, HS 2101 11) from 30 December 2027.",
+        "Natural rubber: latex, sheets and block rubber under HS 4001, and listed products such as new tyres. The same act removed retreaded tyres and some vulcanised rubber articles, such as conveyor belts.",
+        "Tea and spices grown alongside coffee are not covered, so keep them out of the EUDR file."
+      ]
+    },
+    {
+      "h": "Where coffee and rubber chains break",
+      "p": [
+        "Both crops come mostly from smallholders through curing works, dealers and processing factories. The data breaks where lots are bulked. A curing works that mixes cherry from 300 growers must list all their plots on the lot, or keep EUDR lots separate. A rubber factory blending latex from dealers needs dealer records that name the growers, not only the dealer."
+      ]
+    },
+    {
+      "h": "The data pack for each lot",
+      "ol": [
+        "Lot ID, HS code, net weight and the period the coffee was harvested or the latex tapped.",
+        "Grower list for the lot, each with plot ID, area and coordinates, a point for plots up to 4 hectares and a polygon above.",
+        "Purchase receipts linking each grower's quantity to the lot.",
+        "Land records or lease for each plot, and Coffee Board or Rubber Board registration where the grower has one.",
+        "A note on deforestation checks done on the plots against the 31 December 2020 cut-off."
+      ]
+    },
+    {
+      "h": "Board traceability programmes",
+      "p": [
+        "The Coffee Board of India and the Rubber Board have announced traceability work aimed at EUDR. Rely only on their official notices for what a programme covers and whether a buyer will accept it as evidence, and keep your own grower and plot records either way."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one rubber lot from three growers",
+    "lines": [
+      "Lot R-104: 20,000 kg of block rubber",
+      "Receipts: Grower A 8,000 kg, Grower B 7,500 kg, Grower C 4,500 kg",
+      "Check: 8,000 + 7,500 + 4,500 = 20,000 kg, so every kilogram traces to a named grower",
+      "Plots: A 1.8 ha and B 3.2 ha as points; C 5.1 ha as a polygon"
+    ],
+    "note": "Figures are illustrative. If the receipts add up to less than the lot weight, the gap is produce of unknown origin and the lot fails."
+  },
+  "senseible": "Senseible does not collect plot coordinates or build EUDR data packs. Its supplier due diligence page screens whether EUDR applies to the coffee and rubber in your supply chain.",
+  "links": [
+    {
+      "label": "EUDR geolocation for smallholder farms",
+      "to": "/answers/eudr-geolocation-requirements-smallholders"
+    },
+    {
+      "label": "EUDR data your EU buyer needs",
+      "to": "/answers/eudr-due-diligence-statement-supplier-data"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Articles 9 and 10 and Annex I, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2026/2102 amending EUDR Annex I (soluble coffee added, some rubber articles removed), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Board traceability programmes and the EUDR product scope are still changing; check official Coffee Board and Rubber Board notices and the consolidated Annex I."
+}

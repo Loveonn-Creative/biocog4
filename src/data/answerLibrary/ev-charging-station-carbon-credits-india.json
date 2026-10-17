@@ -1,0 +1,85 @@
+{
+  "slug": "ev-charging-station-carbon-credits-india",
+  "q": "Can an EV charging station business earn carbon credits in India?",
+  "title": "Carbon credits for EV charging stations",
+  "short": "Possibly, through a voluntary methodology such as Verra's VM0038 for electric vehicle charging systems, which credits fuel displaced from petrol and diesel vehicles minus the grid electricity used. Whether you can depends on additionality, who owns the claim, and enough charging volume to cover validation and verification costs.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Charge point operators and fleet electrification startups in India",
+  "sections": [
+    {
+      "h": "How the reduction is worked out",
+      "p": [
+        "VM0038 compares the emissions of the fossil fuel vehicles that the electric vehicles replace with the emissions of the electricity delivered through the chargers. The baseline uses vehicle efficiency and fuel factors; the project side uses metered kWh and a grid factor worked out with Verra's tool VT0011, which version 1.1 adopted in August 2026. Metered energy data per charger is the base of the whole calculation."
+      ]
+    },
+    {
+      "h": "Four tests specific to charging",
+      "ol": [
+        "Ownership: the charge point operator, the fleet owner, the vehicle maker and the site host could each claim the same reduction. Settle in writing who holds the right before registering.",
+        "Additionality: version 1.1 uses a positive list, module VMD0049, built from each country's EV stock and sales shares, with Verra's tool VT0008 as the other route. Two and three wheelers are excluded from the list, which matters in India, where most EVs are two and three wheelers.",
+        "Double claiming: a fleet that reports the same switch in its own inventory or sells it as a separate claim reduces what you can credit.",
+        "Volume: credits per charger are modest, so grouped projects across many sites are the usual route."
+      ]
+    },
+    {
+      "h": "Programme status to check before you start",
+      "ul": [
+        "Verra: VM0038 version 1.1 and VMD0049 version 1.1 have been active since 19 August 2026; check whether India and your vehicle class are on the positive list.",
+        "ICVCM: check whether EV charging methodologies have been assessed for the Core Carbon Principles label; many buyers now ask for it.",
+        "India CCTS offset mechanism: BEE's approved methodologies did not include e-mobility when this page was reviewed, and transport methodologies had gone out for consultation; check the current list on beeindia.gov.in."
+      ]
+    },
+    {
+      "h": "How this differs from a factory project",
+      "p": [
+        "A factory fuel switch cuts its own Scope 1. A charging business earns a reduction that happens in other people's vehicles, so the evidence must show the vehicles are real, would otherwise run on fossil fuel, and are not claimed twice. That makes contracts with fleet customers as important as meter data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked estimate: ten chargers for car fleets",
+    "lines": [
+      "Energy delivered: 300,000 kWh a year; project emissions 300,000 x 0.710 = 213,000 kg CO2",
+      "At 0.15 kWh per km, that is 300,000 / 0.15 = 2,000,000 km",
+      "Diesel car baseline at 15 km per litre: 2,000,000 / 15 = 133,333 litres x 2.68 = 357,333 kg CO2",
+      "Reduction: 357,333 minus 213,000 = 144,333 kg, about 144 tonnes CO2 a year"
+    ],
+    "note": "Labelled estimate: vehicle efficiency and mileage are assumptions, 2.68 kg CO2 per litre is the IPCC 2006 diesel default and 0.710 is the CEA weighted average grid factor. The methodology may require a different grid factor, such as a combined margin."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from activity records such as charger electricity bills, with each figure traced back to its source file. It does not run a registry, validate projects or issue credits, and it cannot confirm whose vehicles the kWh went into.",
+  "links": [
+    {
+      "label": "Can a small factory earn carbon credits?",
+      "to": "/answers/can-a-small-business-generate-carbon-credits"
+    },
+    {
+      "label": "EV charging emissions: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Can an MSME earn CCTS offset credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VM0038 Methodology for Electric Vehicle Charging Systems v1.1, VMD0049 Positive List v1.1, and VCS Standard",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "ICVCM Assessment Framework and category decisions",
+      "url": "https://icvcm.org"
+    },
+    {
+      "label": "BEE, CCTS offset mechanism, approved methodologies",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "VM0038 v1.1 took effect in August 2026; ICVCM decisions on EV charging and the CCTS offset methodology list change often, so check all three before advising a project."
+}

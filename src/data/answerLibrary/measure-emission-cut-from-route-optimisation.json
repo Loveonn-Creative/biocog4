@@ -1,0 +1,82 @@
+{
+  "slug": "measure-emission-cut-from-route-optimisation",
+  "q": "How do I prove that route optimisation actually cut my freight emissions?",
+  "title": "Proving a route optimisation saving",
+  "short": "Compare emissions per tonne-km before and after, using diesel litres for emissions and a fixed distance per delivery for tonne-km. Then multiply the drop in intensity by the tonne-km you moved after the change. Using actual kilometres driven for tonne-km would hide the very saving you are trying to show.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Logistics heads and transporters reporting savings to buyers or lenders",
+  "sections": [
+    {
+      "h": "Why total diesel alone does not prove anything",
+      "p": [
+        "Diesel use moves with volume, season, payload and fleet mix. A slow month after the new routing software went live will show less diesel without any saving. You need an intensity, emissions per tonne-km, so the comparison holds when volumes change."
+      ]
+    },
+    {
+      "h": "Fix the distance basis first",
+      "p": [
+        "Route optimisation cuts kilometres. If tonne-km is calculated from kilometres actually driven, it falls along with the diesel and the intensity barely changes. The GLEC Framework and ISO 14083 describe transport activity on a reference distance, such as the shortest feasible distance between the pickup and the drop. Use the same reference distance for each delivery in both periods, so fewer kilometres driven shows up as fewer litres per tonne-km."
+      ]
+    },
+    {
+      "h": "Steps",
+      "ol": [
+        "Pick a baseline of at least three months before the change, and a comparison period of the same length and season after it.",
+        "Total diesel litres for the fleet from fuel slips or fuel card statements, and multiply by 2.68 kg CO2 per litre.",
+        "For each delivery, take shipment weight from the invoice or lorry receipt and multiply by the reference distance; add up tonne-km.",
+        "Intensity for each period = kg CO2 / tonne-km.",
+        "Saving = (baseline intensity minus new intensity) x tonne-km in the new period."
+      ]
+    },
+    {
+      "h": "Adjustments a reviewer will ask about",
+      "ul": [
+        "Payload: if trucks ran fuller after the change, part of the saving came from consolidation, not routing. Report average payload in both periods and say which change drove what.",
+        "Fleet changes: new or larger trucks in one period break the comparison. Compare like for like vehicles, or split by vehicle class.",
+        "Empty running: count return kilometres in the diesel, since they burn fuel, but not in the tonne-km.",
+        "Outsourced trips: include them only if you have their fuel or a carrier-specific intensity, and keep them separate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one fleet, before and after",
+    "lines": [
+      "Baseline: 42,000 litres x 2.68 = 1,12,560 kg CO2; 15,00,000 tonne-km; intensity 0.07504 kg CO2 per tonne-km (75.0 g)",
+      "After: 38,500 litres x 2.68 = 1,03,180 kg CO2; 15,60,000 tonne-km; intensity 0.06614 kg CO2 per tonne-km (66.1 g)",
+      "Saving: (0.07504 minus 0.06614) x 15,60,000 = about 13,880 kg CO2",
+      "Check: baseline intensity x new tonne-km = 1,17,062 kg; 1,17,062 minus 1,03,180 = 13,882 kg CO2, about 13.9 t"
+    ],
+    "note": "Tank-to-wheel CO2 from the IPCC 2006 diesel default. GLEC reports well-to-wheel CO2e, which is higher; use one basis throughout."
+  },
+  "senseible": "Senseible reads litres from fuel slips and weight and distance from freight bills where they are printed, which gives you both sides of the intensity calculation. Telematics or GPS feeds are not a self-serve integration; they are set up with the Senseible team for each customer. It does not plan routes.",
+  "links": [
+    {
+      "label": "Telematics or fuel invoices for fleets",
+      "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Measuring factory efficiency savings",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework v3 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

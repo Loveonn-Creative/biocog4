@@ -1,0 +1,68 @@
+{
+  "slug": "diesel-generator-specific-fuel-consumption",
+  "q": "How many units should a diesel generator produce per litre, and how do I check mine?",
+  "title": "Diesel generator kWh per litre",
+  "short": "A well-loaded diesel generator typically gives about 3 to 3.5 kWh per litre, an estimate based on engine data of roughly 240 to 280 g of diesel per kWh. Check yours by dividing the DG energy meter kWh by the litres used over the same period, and compare with the maker's curve at that load.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Facility managers running DG sets",
+  "sections": [
+    {
+      "h": "How to run the check",
+      "ol": [
+        "Fill the tank to a marked level, or note the flow meter reading, and note the DG energy meter kWh.",
+        "Run the set for at least a few hours at a steady load you record in kW or percent of rating.",
+        "Refill to the same mark and note the litres added, and read the kWh again.",
+        "kWh per litre = kWh generated / litres used. For a monthly figure, use the month's fuel slips and the month's meter readings.",
+        "Repeat at two or three load levels to see your own curve."
+      ]
+    },
+    {
+      "h": "Converting between kWh per litre and g/kWh",
+      "p": [
+        "Engine data sheets give specific fuel consumption in grams per kWh. With diesel at about 835 g per litre, a typical density, kWh per litre = 835 / SFC. So 250 g/kWh is about 3.3 kWh per litre and 300 g/kWh is about 2.8.",
+        "Ratings are in kVA. Real power in kW is kVA times the power factor, usually taken as 0.8, so a 250 kVA set is about 200 kW."
+      ]
+    },
+    {
+      "h": "Why your figure may be low",
+      "ul": [
+        "Light load. Engines burn more fuel per kWh at low load; a set running at 25 to 30 percent of rating can lose a large share of its efficiency. The BEE energy auditor guide recommends keeping DG sets well loaded.",
+        "Several sets running together where one would do.",
+        "Dirty air filters, worn injectors or poor fuel.",
+        "Fuel losses: leaks, pilferage or tank readings that do not match purchase slips.",
+        "Long idle running before and after outages."
+      ]
+    },
+    {
+      "h": "What CPCB IV+ does and does not tell you",
+      "p": [
+        "CPCB IV+ sets exhaust limits for new gensets: NOx, hydrocarbons, carbon monoxide and particulates. It is not an efficiency standard, so a compliant set can still give poor kWh per litre if it is badly loaded. CO2 depends only on the litres burnt."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a factory DG set",
+    "lines": [
+      "Diesel from fuel slips: 1,200 litres",
+      "DG energy meter: 3,600 kWh",
+      "kWh per litre = 3,600 / 1,200 = 3.0",
+      "Scope 1 = 1,200 x 2.68 = 3,216 kg CO2",
+      "Per unit generated = 3,216 / 3,600 = 0.893 kg CO2 per kWh, against 0.710 for the grid",
+      "At 3.5 kWh per litre the same 3,600 kWh needs 1,028.6 litres, saving 171.4 litres and about 459 kg CO2"
+    ],
+    "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel used by Senseible. The 3 to 3.5 kWh per litre range is an estimate; your OEM curve is the reference."
+  },
+  "senseible": "Senseible reads litres from your fuel slips and diesel invoices and gives the Scope 1 figure at 2.68 kg CO2 per litre. The DG energy meter reading comes from your log book, or from a meter feed set up with the Senseible team for your site, which is not self-serve.",
+  "links": [
+    { "label": "Diesel generator cost per kWh", "to": "/answers/diesel-generator-cost-per-kwh" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" },
+    { "label": "Is a diesel generator Scope 1 or Scope 2?", "to": "/answers/diesel-generator-scope-1-or-scope-2" }
+  ],
+  "sources": [
+    { "label": "BEE Energy Auditor Guide Book 3, Energy efficiency in electrical utilities, chapter on DG power generating systems", "url": "https://beeindia.gov.in" },
+    { "label": "CPCB, emission norms for diesel gensets (CPCB IV+)", "url": "https://cpcb.nic.in" },
+    { "label": "IPCC 2006 Guidelines, Volume 2: Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "csddd-contract-clause-from-eu-buyer",
+  "q": "My EU buyer sent a CSDDD contractual assurance clause. What am I agreeing to?",
+  "title": "EU buyer's CSDDD contract clause",
+  "short": "You are promising to follow your buyer's code of conduct and its plan for preventing human rights and environmental harm, usually to pass similar promises on to your own suppliers, and to let the buyer check. Read the audit, cost, data and termination terms before signing, and take legal advice.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian supplier owners and export managers",
+  "sections": [
+    {
+      "h": "Where the clause comes from",
+      "p": [
+        "The Corporate Sustainability Due Diligence Directive, Directive (EU) 2024/1760, tells in-scope companies to seek contractual assurances from their direct business partners. Article 10(2)(b) covers preventing potential harm and Article 11(3)(c) covers ending harm that has already happened.",
+        "The duty sits with the EU company, not with you. The clause is how it shows a regulator that it asked. Directive (EU) 2026/470 later narrowed who is covered and when, so many buyers are sending clauses well before their own obligations start."
+      ]
+    },
+    {
+      "h": "What you typically commit to",
+      "ul": [
+        "Comply with the buyer's code of conduct, which may cover labour, health and safety, pollution, waste and emissions.",
+        "Follow a prevention or corrective action plan if the buyer finds a risk in your operations.",
+        "Seek corresponding assurances from your own suppliers, which is called cascading.",
+        "Allow checks: questionnaires, document requests, site audits, industry schemes or third-party verification.",
+        "Accept remedies if a serious problem is not fixed, which can run up to suspending orders."
+      ]
+    },
+    {
+      "h": "Terms to check before you sign",
+      "ol": [
+        "Who pays for audits. The 2024 text says that where an SME is checked, the in-scope company bears the cost of independent third-party verification, and terms with SMEs must be fair, reasonable and non-discriminatory. Check the amended text your buyer relies on.",
+        "Liability and indemnity. A clause that makes you carry all of the buyer's legal risk goes beyond asking for assurances. Ask for liability limited to your own breach.",
+        "Data requests. Under the amended directive, an in-scope company should ask a business partner with fewer than 5,000 employees for information only when it cannot reasonably get it another way. Agree what data you send, how often, and that it stays confidential.",
+        "Cascading. Promise to request assurances from your suppliers, not to guarantee their conduct.",
+        "Exit. Look for a cure period and a clear process before any suspension or termination."
+      ]
+    },
+    {
+      "h": "The environmental part is usually the easiest to evidence",
+      "p": [
+        "Buyers commonly ask for energy use, Scope 1 and 2 emissions, waste and pollution permits. If you already keep bills, fuel invoices and consent orders in one place, answering these items is a records exercise. Human rights items such as wages, working hours and grievance channels need your HR and compliance records."
+      ]
+    },
+    {
+      "h": "Model clauses are coming",
+      "p": [
+        "Article 18 asks the European Commission to publish guidance on voluntary model contract clauses. Check the Commission's due diligence pages for whether it has been published. Once it is out, you can ask your buyer to align with it, which helps avoid one-sided drafting. Until then, negotiate the points above."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions, with the source file behind each figure, for the environmental items in a buyer's clause. If you must cascade the clause to your own suppliers, its supplier due diligence service runs screening, questionnaires and follow-up. It is not legal advice, and its reports are self-declared.",
+  "links": [
+    {
+      "label": "Does CSDDD still apply after Omnibus?",
+      "to": "/answers/does-csddd-still-apply-after-omnibus"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Germany's LkSG and Indian suppliers",
+      "to": "/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2024/1760, Corporate Sustainability Due Diligence, Articles 10, 11 and 18 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Directive (EU) 2026/470 (Omnibus I)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "Council of the EU, simplification of sustainability reporting and due diligence, February 2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Article numbers above follow the 2024 text; check the consolidated Directive (EU) 2024/1760 as amended by Directive (EU) 2026/470 on EUR-Lex, and whether the Article 18 model clause guidance has been published."
+}

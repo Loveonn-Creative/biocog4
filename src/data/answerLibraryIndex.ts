@@ -227,12 +227,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "can-carbon-credits-be-tokenised",
+  "q": "Can carbon credits be tokenised on a blockchain under Verra and Gold Standard rules?",
+  "title": "Can carbon credits be tokenised?",
+  "short": "Only on the registry's terms. Since May 2022 Verra has barred tokens made from retired credits, and Gold Standard's terms bar tokens from its credits without its written consent. A token is at most a claim on a credit held in a registry account, so check the registry rules and serial numbers before buying or selling one.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "can-carbon-credits-count-toward-sbti-target",
   "q": "Can carbon credits count toward my SBTi target?",
   "title": "Do carbon credits count toward SBTi targets?",
   "short": "No. Under the current SBTi criteria, credits cannot be counted as reductions toward a near-term or long-term science-based target. Your progress is measured on your own Scope 1, 2 and 3 inventory. Credits can be reported separately as beyond value chain mitigation, and permanent removals neutralise only residual emissions at net zero.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "can-gstr-2b-be-used-for-carbon-accounting",
+  "q": "Can GSTR-2B or the purchase register be used for carbon accounting?",
+  "title": "GSTR-2B for carbon accounting?",
+  "short": "Only as a checklist, not as the data. GSTR-2B gives invoice totals by supplier but no item lines or quantities, and it leaves out diesel, petrol and electricity, which sit outside GST. Use it to confirm no purchase is missed, then calculate from the invoices and bills themselves.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "can-guarantees-of-origin-cover-indian-factory",
+  "q": "Can my EU subsidiary's Guarantees of Origin cover electricity at our Indian factory?",
+  "title": "Can EU GOs cover an Indian factory?",
+  "short": "No. Guarantees of Origin are issued for electricity produced in Europe, and the GHG Protocol requires certificates to come from the same market where the power is used. The Indian grid is not connected to Europe's, so EU GOs cannot lower your Indian factory's market-based Scope 2.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "can-hsn-codes-be-used-for-scope-3",
@@ -329,6 +353,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Follow the year of whoever relies on the number most. BRSR and Indian lenders work on the April to March financial year. CBAM and many EU buyers work on the calendar year. The GHG Protocol accepts either if you keep it consistent. If you serve both, record data monthly and total it both ways.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "carbon-footprint-sensitivity-analysis",
+  "q": "How do I run a sensitivity analysis on a carbon footprint?",
+  "title": "Sensitivity analysis on a carbon footprint",
+  "short": "Change one input at a time, such as a factor, a quantity or an allocation choice, by a set amount like 10%, recalculate the total and record how much it moves. Inputs that move the total most are the ones to measure better and to explain in your report.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "carbon-pricing-mechanisms-in-india",
@@ -475,12 +507,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "chiller-efficiency-kw-per-tr",
+  "q": "What is a good chiller efficiency in kW per TR, and how do I measure it?",
+  "title": "Good chiller efficiency in kW per TR",
+  "short": "Lower is better. As a rough guide, a modern water-cooled centrifugal or screw chiller uses about 0.55 to 0.65 kW per TR of cooling at full load, and an air-cooled one about 1.0 to 1.2. Measure it by dividing the chiller's input kW by the cooling delivered in TR.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "climate-risk-assessment-for-small-business",
   "q": "How do I do a basic climate risk assessment for a small factory?",
   "title": "Climate risk assessment for a small factory",
   "short": "List what your factory depends on, then check two kinds of risk: physical risks such as flood, heat, cyclone and water shortage at your site, and transition risks such as carbon prices, CBAM, energy costs and buyer demands. Score each by likelihood and cost, act on the top three, and repeat yearly.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cloud-carbon-footprint-aws-azure-google-india",
+  "q": "How do I get Scope 3 emissions for my AWS, Azure or Google Cloud usage in India?",
+  "title": "Cloud emissions from AWS, Azure or Google",
+  "short": "Download the figure from each provider's carbon dashboard: the AWS Customer Carbon Footprint Tool, Microsoft's Emissions Impact Dashboard, or Google Cloud Carbon Footprint. Report it as Scope 3 Category 1, purchased services, and note whether it is location-based or market-based. Where no dashboard figure exists, estimate from usage and label it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "co2-per-tonne-of-clinker-calculation",
@@ -563,6 +611,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "csddd-contract-clause-from-eu-buyer",
+  "q": "My EU buyer sent a CSDDD contractual assurance clause. What am I agreeing to?",
+  "title": "EU buyer's CSDDD contract clause",
+  "short": "You are promising to follow your buyer's code of conduct and its plan for preventing human rights and environmental harm, usually to pass similar promises on to your own suppliers, and to let the buyer check. Read the audit, cost, data and termination terms before signing, and take legal advice.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "cupola-furnace-coke-emissions-per-tonne",
   "q": "How do I calculate CO2 from coke in a foundry cupola per tonne of castings?",
   "title": "Cupola coke CO2 per tonne of castings",
@@ -577,6 +633,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not always. On Indian grid power at 0.710 kg CO2 per kWh, an induction furnace using an estimated 550 to 700 kWh per tonne melted emits 0.39 to 0.50 t CO2. A cupola burning about 120 kg of coke per tonne emits about 0.38 t with blowers. Induction wins clearly only with renewable power or fewer kWh per tonne.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "dairy-enteric-methane-emissions-india",
+  "q": "How do I estimate enteric methane from dairy cattle and buffalo in India?",
+  "title": "Enteric methane from dairy cattle",
+  "short": "Multiply the average number of animals by a methane factor per head per year, then by methane's warming potential. With the IPCC 2006 Tier 1 factor for dairy cattle in the Indian subcontinent, 58 kg CH4 a year, times 27 under AR6, each cow comes to about 1.57 tonnes CO2e. Buffalo have their own factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "dg-set-emissions-per-kwh-vs-grid",
@@ -603,6 +667,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "diesel-generator-specific-fuel-consumption",
+  "q": "How many units should a diesel generator produce per litre, and how do I check mine?",
+  "title": "Diesel generator kWh per litre",
+  "short": "A well-loaded diesel generator typically gives about 3 to 3.5 kWh per litre, an estimate based on engine data of roughly 240 to 280 g of diesel per kWh. Check yours by dividing the DG energy meter kWh by the litres used over the same period, and compare with the maker's curve at that load.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "diesel-to-electric-van-emissions-saving-india",
   "q": "How much CO2 does switching a diesel delivery van to electric save in India?",
   "title": "Diesel to electric van: CO2 saved in India",
@@ -619,12 +691,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "do-i-need-smart-meters-for-carbon-reporting",
+  "q": "Do I need IoT or smart meters to report Scope 2 emissions?",
+  "title": "Do I need smart meters for Scope 2?",
+  "short": "No, your monthly electricity bills are enough to report Scope 2. The GHG Protocol accepts utility bills as activity data: add up the kWh for the year and multiply by the grid factor. IoT or smart meters help you find where power is wasted and split use between lines, but reporting does not require them.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "do-re100-and-cdp-accept-indian-recs",
   "q": "Do RE100 and CDP accept unbundled RECs from India?",
   "title": "Do RE100 and CDP accept Indian RECs?",
   "short": "Yes, if each certificate passes their tests. Neither rejects Indian RECs or I-RECs as a class. RE100 checks tracking, retirement in your name, vintage, market boundary and the age of the generating plant. CDP takes market-based Scope 2 figures that meet the GHG Protocol Scope 2 Quality Criteria.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "do-registries-accept-digital-mrv",
+  "q": "Do Verra and Gold Standard accept digital MRV data?",
+  "title": "Do registries accept digital MRV?",
+  "short": "Yes, as monitoring data, but not in place of verification. Verra and Gold Standard accept data gathered by meters, sensors, satellites or software if it meets the monitoring rules of the approved methodology and an accredited validation and verification body checks it. Credits are issued only after that verification.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "does-a-hash-prove-emissions-are-correct",
@@ -779,6 +867,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "emissions-saved-by-waste-heat-recovery",
+  "q": "How do I calculate the emissions saved by a waste heat recovery system?",
+  "title": "Emissions saved by waste heat recovery",
+  "short": "Measure the useful heat the system recovers in a year, divide by the efficiency of the boiler or furnace it replaces to get the fuel energy avoided, and multiply by the IPCC emission factor for that fuel. Then subtract the CO2 from any extra electricity the recovery system uses for fans and pumps.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "employee-commuting-emissions-survey",
   "q": "How do I calculate employee commuting emissions for a factory with 200 workers?",
   "title": "Employee commuting emissions for a factory",
@@ -851,12 +947,44 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "eu-taxonomy-dnsh-criteria-explained",
+  "q": "What does 'do no significant harm' mean in the EU Taxonomy, with an example?",
+  "title": "EU Taxonomy do no significant harm",
+  "short": "Do no significant harm (DNSH) means an activity that helps one environmental objective, such as cutting emissions, must not seriously damage any of the other five: climate adaptation, water, circular economy, pollution and biodiversity. Each activity has its own DNSH checklist, and failing any one item means the activity is not taxonomy aligned.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "eu-taxonomy-steel-substantial-contribution-threshold",
+  "q": "What emissions threshold does steel have to meet to be EU Taxonomy aligned?",
+  "title": "EU Taxonomy threshold for steel",
+  "short": "Under activity 3.9 of the EU Climate Delegated Act, each process step must stay below a fixed value per tonne of product: for example 1.331 t CO2e for hot metal and 0.209 t CO2e for EAF carbon steel. An electric arc furnace can pass instead with at least 90% scrap input, or 70% for high alloy steel.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "eudr-coffee-rubber-exporter-what-to-provide",
+  "q": "What must an Indian coffee or rubber exporter give an EU buyer under EUDR?",
+  "title": "EUDR data pack for coffee and rubber",
+  "short": "For each lot, give the HS code, net weight, harvest or tapping period, the plot list with coordinates for every grower whose produce is in the lot, and land and registration records showing legal production on land that was not forest after 31 December 2020. Keep traceable and untraceable produce apart.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "eudr-country-risk-category-india",
   "q": "Is India a low, standard or high risk country under EUDR, and what changes for my buyer?",
   "title": "India's EUDR risk category and your buyer",
   "short": "India is classified as low risk under the EU's 2025 country benchmarking (Implementing Regulation (EU) 2025/1093). Your EU buyer can use simplified due diligence and skip the formal risk assessment, but still needs plot geolocation, deforestation-free and legality evidence, and a due diligence statement for every placement.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "eudr-due-diligence-statement-supplier-data",
+  "q": "What does an Indian supplier need to give an EU importer for its EUDR due diligence statement?",
+  "title": "EUDR data your EU buyer needs from you",
+  "short": "Give your EU buyer the Article 9 data for each shipment: product description and HS code, quantity, country of production, geolocation of every plot, production date or range, your name and address, and proof that the plots were not cleared of forest after 31 December 2020 and the goods were produced legally in India.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "eudr-geolocation-polygon-or-point",
@@ -873,6 +1001,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "EUDR needs the location of every plot where the coffee, rubber or other commodity was grown: one latitude and longitude point for plots under 4 hectares, and a boundary polygon for larger plots. Each lot sold must trace back to its plots, with proof of no deforestation after 31 December 2020.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "eudr-leather-cattle-hides-india",
+  "q": "Does EUDR cover leather made from Indian cattle and buffalo hides?",
+  "title": "Does EUDR cover Indian leather?",
+  "short": "No. The original EUDR Annex I listed bovine hides, skins and leather, including buffalo, under HS 4101, 4104 and 4107. Delegated Regulation (EU) 2026/2102 deleted those entries with effect from 18 September 2026, before the EUDR starts applying. Finished bags and footwear were never listed.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "ev-charging-station-carbon-credits-india",
+  "q": "Can an EV charging station business earn carbon credits in India?",
+  "title": "Carbon credits for EV charging stations",
+  "short": "Possibly, through a voluntary methodology such as Verra's VM0038 for electric vehicle charging systems, which credits fuel displaced from petrol and diesel vehicles minus the grid electricity used. Whether you can depends on additionality, who owns the claim, and enough charging volume to cover validation and verification costs.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "ev-fleet-charging-emissions-which-scope",
@@ -947,6 +1091,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ghg-inventory-uncertainty-calculation",
+  "q": "How do I estimate uncertainty in a company GHG inventory?",
+  "title": "Estimating uncertainty in a GHG inventory",
+  "short": "Give each activity figure and each emission factor a percentage uncertainty, combine the two for each source by root-sum-square, then combine sources weighted by their emissions. This is IPCC Approach 1. The result is a plus or minus percentage for the whole inventory.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "ghg-inventory-vs-cbam-embedded-emissions",
   "q": "Can I use my GHG Protocol carbon footprint for CBAM, or is CBAM embedded emissions data different?",
   "title": "GHG inventory or CBAM embedded emissions?",
@@ -969,6 +1121,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A microscale project is a small Gold Standard project, generally one expected to deliver up to 10,000 tonnes CO2e of reductions a year, that follows simplified requirements and lower fees. It can cut costs for small activities such as efficient boilers or rooftop solar, but monitoring and audit steps still apply, so very small single sites may still not pay.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "green-ammonia-carbon-intensity-threshold",
+  "q": "How is the carbon intensity of green ammonia calculated in India?",
+  "title": "Carbon intensity of green ammonia",
+  "short": "Add the emissions of the hydrogen inside the ammonia, about 0.178 kg of hydrogen per kg, to the emissions from power and fuel used for air separation and synthesis, then divide by ammonia output. India's Green Ammonia Standard, notified in February 2026, caps this at 0.38 kg CO2e per kg, averaged over 12 months.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "green-bond-impact-reporting-metrics",
+  "q": "What impact metrics must a green bond issuer report, and how is CO2 avoided calculated?",
+  "title": "Green bond impact metrics and CO2 avoided",
+  "short": "Report, at least once a year, the energy and climate results of the projects the bond paid for: for renewable power, MWh generated, MW installed and tonnes CO2 avoided; for efficiency, MWh saved. CO2 avoided is the clean or saved energy times a stated baseline grid factor, counted for your financed share.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "green-climate-fund-for-small-businesses",
@@ -1071,6 +1239,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "How much productivity can Indian factories lose to extreme heat, and how do I estimate it?",
   "title": "Heat stress and lost factory hours",
   "short": "The ILO projects India will lose 5.8% of working hours to heat stress in 2030, about 34 million full-time jobs, assuming 1.5°C of warming by 2100, with most of it in farming and construction. For your factory, multiply hours above a safe heat limit by the rest share, workers and wage.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "hourly-grid-emission-factors-india",
+  "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
+  "title": "Hourly grid emission factors in India",
+  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -1275,6 +1451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "how-to-calculate-plastic-epr-obligation",
+  "q": "How do I calculate my plastic packaging EPR obligation in India?",
+  "title": "Calculating your plastic EPR obligation",
+  "short": "Take the average weight of plastic packaging you introduced in each category over the previous two financial years, adjust it as Schedule II of the Plastic Waste Management Rules sets for your role, and apply the year's target, 100% from 2023-24. Then meet the minimum recycling share of that figure with EPR certificates.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "how-to-calculate-recycled-content-percentage",
   "q": "How do I calculate the recycled content percentage of my product?",
   "title": "Calculating recycled content percentage",
@@ -1419,6 +1603,30 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ifrs-s1-vs-ifrs-s2-difference",
+  "q": "What does IFRS S1 cover that IFRS S2 does not?",
+  "title": "IFRS S1 vs IFRS S2: what S1 adds",
+  "short": "IFRS S1 covers every sustainability risk and opportunity that could affect a company's prospects, such as water, labour or supply chains, and sets the general rules for any sustainability report. IFRS S2 covers climate only. S2 adds the climate specifics: emissions by scope, scenario analysis, transition plans and climate metrics.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ifrs-s2-category-15-financed-emissions-relief",
+  "q": "What did the December 2025 IFRS S2 amendments change for banks' financed emissions?",
+  "title": "IFRS S2 2025 changes to financed emissions",
+  "short": "The December 2025 amendments let banks and other financial institutions limit Category 15 to financed emissions from loans and investments, leaving out derivatives, facilitated emissions and insurance-associated emissions, and drop the fixed GICS industry split. They apply from 1 January 2027, with earlier use permitted. Lending and investment emissions are still required.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "ifrs-s2-cross-industry-metrics-list",
+  "q": "Which cross-industry metrics does IFRS S2 require?",
+  "title": "IFRS S2 cross-industry metrics list",
+  "short": "IFRS S2 paragraph 29 requires seven cross-industry metrics: greenhouse gas emissions, assets or activities vulnerable to transition risk, the same for physical risk, those aligned with climate opportunities, capital deployed toward climate, internal carbon prices, and how climate links to executive pay. Every company applying IFRS S2 reports them, whatever its industry.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "ifrs-s2-vs-tcfd-difference",
   "q": "What is the difference between IFRS S2 and TCFD, and is TCFD still used?",
   "title": "IFRS S2 vs TCFD: the difference",
@@ -1451,6 +1659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "india-climate-finance-taxonomy-vs-eu-taxonomy",
+  "q": "What is India's climate finance taxonomy and how is it different from the EU Taxonomy?",
+  "title": "India's climate taxonomy vs the EU Taxonomy",
+  "short": "India's climate finance taxonomy is a Ministry of Finance draft from May 2025 that sorts activities into climate-supportive and transition-supportive, with sector rules still to come. The EU Taxonomy is law, sets numeric thresholds per activity, and adds do no significant harm and minimum safeguards tests.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "india-climate-finance-taxonomy-what-msmes-need",
   "q": "What does India's climate finance taxonomy mean for an MSME borrower?",
   "title": "India's climate taxonomy and MSMEs",
@@ -1475,12 +1691,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "india-hfc-phase-down-schedule-kigali",
+  "q": "What is India's HFC phase-down schedule under the Kigali Amendment, and what does it mean for chillers bought now?",
+  "title": "India's HFC phase-down under Kigali",
+  "short": "India freezes HFC consumption in 2028 at a baseline set from 2024 to 2026, then cuts it by 10% in 2032, 20% in 2037, 30% in 2042 and 85% in 2047. A chiller bought now will still need servicing gas through those cuts, so pick a lower GWP refrigerant.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "india-host-country-authorization-letter",
   "q": "How does a project get India's host country authorization for Article 6?",
   "title": "India's Article 6 host country authorisation",
   "short": "You apply to India's National Designated Authority for Article 6, a committee notified by the Ministry of Environment, Forest and Climate Change. It checks the activity against India's approved list, decides whether to authorise the credits, and states their permitted uses. Without that authorisation, credits cannot be used as ITMOs.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "india-ndc-targets-for-business",
+  "q": "What do India's NDC targets mean for an Indian business?",
+  "title": "India's NDC targets and your business",
+  "short": "India's NDC targets are national, not company targets. India has committed to cut the emissions intensity of its GDP 45 percent from 2005 levels by 2030 and 47 percent by 2035, and to reach net zero by 2070. Businesses feel them through carbon market intensity targets, a cleaner grid, disclosure rules and lending criteria.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "indian-coal-emissions-by-gcv",
@@ -1571,6 +1803,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "iso-14001-certification-cost-india",
+  "q": "How much does ISO 14001 certification cost an Indian MSME?",
+  "title": "ISO 14001 certification cost for MSMEs",
+  "short": "There is no fixed price. ISO 14001 certification cost is the audit days your certification body must spend, set by your headcount and environmental complexity, times its day rate, plus two surveillance audits and your own preparation time. Get two or three quotes in audit days, not a lump sum.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "iso-14064-vs-ghg-protocol",
   "q": "Is ISO 14064-1 the same as the GHG Protocol, and which one should my company follow?",
   "title": "ISO 14064-1 vs the GHG Protocol",
@@ -1585,6 +1825,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "ISO 14068-1:2023 requires a defined subject and boundary, a quantified carbon footprint, a carbon neutrality management plan with reduction targets, cutting emissions before offsetting, offsetting only the residual with quality credits that are retired, and a claim that states the subject, period and how it was checked.",
   "topic": "markets",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "iso-50001-vs-iso-14001-which-first",
+  "q": "Should an MSME get ISO 50001 or ISO 14001 first?",
+  "title": "ISO 50001 or ISO 14001 first?",
+  "short": "Get ISO 14001 first if buyers ask for an environmental management certificate, which is the common case for exporters. Get ISO 50001 first if energy is one of your biggest costs and the goal is to cut it or back a lender's energy-efficiency case. The second system is cheaper once one is running.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "issa-5000-vs-isae-3410-vs-iso-14064-3",
@@ -1603,12 +1851,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "land-use-change-emissions-in-scope-3",
+  "q": "Do I need to count land use change emissions from crops or timber I buy?",
+  "title": "Land use change in purchased crops and timber",
+  "short": "You need to count land use change emissions if a buyer with an SBTi FLAG target asks, if you publish a product carbon footprint where it is significant, or if land-based materials are a large part of your footprint. For a basic Scope 1 and 2 inventory you do not. It is a carbon question, separate from EUDR.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "lca-vs-product-carbon-footprint",
   "q": "What is the difference between an LCA and a product carbon footprint, and which one does my buyer actually need?",
   "title": "LCA or product carbon footprint?",
   "short": "A product carbon footprint measures one impact, climate change, in kg CO2e per unit. A full life cycle assessment covers many impacts, such as water use, acidification and eutrophication. If your buyer asks for a carbon footprint, PCF or Scope 3 data, a PCF is enough. An EPD or ecodesign request needs an LCA.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "leakage-when-old-equipment-is-reused",
+  "q": "Is it leakage if my replaced boiler or motor is sold and used elsewhere?",
+  "title": "Leakage when old equipment is reused",
+  "short": "Usually yes. If the boiler or motor you replaced keeps running somewhere else, its emissions have moved rather than stopped, so carbon methods treat it as leakage. CDM small-scale methods say leakage must be considered when replaced equipment goes to another activity, which is why most projects scrap the old unit with evidence.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "leased-factory-emissions-which-scope",
@@ -1627,6 +1891,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "low-gwp-refrigerant-choice-new-chiller",
+  "q": "Which refrigerant should a new chiller or cold room use to stay ahead of the HFC phase-down?",
+  "title": "Low GWP refrigerant for a new chiller",
+  "short": "For a large water-cooled chiller, look first at HFO-1234ze or an HFO blend such as R-513A. For industrial cold stores, ammonia is the long-standing choice; for smaller systems, CO2 or propane. Pick from what your service network can maintain safely, then compare GWP and running efficiency.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "machinery-purchase-scope-3-category-1-or-2",
   "q": "Does buying a new machine go in Scope 3 Category 1 or Category 2, and in which year?",
   "title": "New machine: Category 1 or 2?",
@@ -1640,6 +1912,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Match Indian HSN to the EU CN code",
   "short": "Match on the first six digits. They come from the World Customs Organization's Harmonized System and are the same in India and the EU. Then pick the EU 8 digit CN code under that subheading whose description fits your goods, and confirm it with your EU importer, who declares it.",
   "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "measure-emission-cut-from-route-optimisation",
+  "q": "How do I prove that route optimisation actually cut my freight emissions?",
+  "title": "Proving a route optimisation saving",
+  "short": "Compare emissions per tonne-km before and after, using diesel litres for emissions and a fixed distance per delivery for tonne-km. Then multiply the drop in intensity by the tonne-km you moved after the change. Using actual kilometres driven for tonne-km would hide the very saving you are trying to show.",
+  "topic": "accounting",
   "reviewed": "2026-10-16"
  },
  {
@@ -1763,6 +2043,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "process-vs-combustion-emissions-scope-1",
+  "q": "Are process emissions reported separately from fuel combustion in Scope 1?",
+  "title": "Process vs combustion emissions in Scope 1",
+  "short": "Both are Scope 1, and the GHG Protocol only requires the Scope 1 total. But you should keep them as separate lines. CBAM installation monitoring treats them as separate source streams, IPCC puts them in different volumes, and buyers and lenders need the split because a fuel switch cuts only the combustion part.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "pue-formula-and-good-pue",
+  "q": "How do I calculate PUE for a server room or data centre?",
+  "title": "PUE formula for a server room",
+  "short": "Divide the total energy used by the server room or data centre by the energy used by the IT equipment alone, over the same period, ideally a full year. PUE = total facility kWh / IT equipment kWh. A result of 1.0 is the floor; the further above it, the more goes to cooling and losses.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "rbi-climate-risk-disclosure-for-borrowers",
   "q": "What does RBI's climate risk disclosure framework mean for MSME borrowers?",
   "title": "RBI climate disclosure: what borrowers face",
@@ -1793,6 +2089,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Multiply the kilograms of gas charged into the equipment by that gas's 100-year global warming potential (GWP). For a blend such as R-410A, first work out its GWP from the component shares. The result is Scope 1 CO2e. State whether you used IPCC AR5 or AR6 values.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "renewable-capacity-per-tonne-green-hydrogen",
+  "q": "How much solar or wind capacity is needed per tonne of green hydrogen a year?",
+  "title": "Solar or wind MW per tonne of hydrogen",
+  "short": "Roughly 30 kW of solar or 20 kW of wind for each tonne of green hydrogen a year, before storage and curtailment. That assumes 52 kWh per kg for the electrolyser system and capacity factors of 20 percent for solar and 30 percent for wind. Capacity rises in step with consumption, so use your own figures.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "renewable-consumption-obligation-who-must-comply",
@@ -1891,12 +2195,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "selling-production-scrap-scope-3-category-5",
+  "q": "Can I claim a carbon credit for selling or recycling my production scrap?",
+  "title": "Carbon credit for selling scrap?",
+  "short": "No. Selling or recycling your production scrap does not earn a carbon credit and cannot be subtracted from your footprint. Credits come only from registered, verified projects, and the GHG Protocol keeps avoided emissions outside your inventory totals. The benefit of recycling is counted by whoever uses the recycled material.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "sfdr-pai-data-request-from-eu-investor",
   "q": "An EU fund under SFDR Article 8 asked my Indian company for PAI data. What do I send?",
   "title": "SFDR PAI data request: what to send",
   "short": "Send the raw figures behind the 14 mandatory principal adverse impact (PAI) indicators for investee companies: Scope 1, 2 and 3 emissions, revenue, energy use split into renewable and non-renewable, plus the waste, water, social and governance data points. The fund calculates the ratios, such as carbon footprint and GHG intensity, from what you send.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "sha-256-hash-vs-trusted-timestamp",
+  "q": "Does a SHA-256 hash prove when a document existed?",
+  "title": "SHA-256 hash or trusted timestamp?",
+  "short": "No. A SHA-256 hash proves a file has not changed since the hash was made, but it carries no date. To prove when a document existed you need the hash recorded somewhere independent at a known time, such as a trusted timestamp under RFC 3161, a digital signature, or a copy held by someone else.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "share-emissions-with-buyer-without-invoices",
@@ -1923,12 +2243,52 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "sidbi-energy-efficiency-loan-for-msme",
+  "q": "What energy efficiency loans does SIDBI offer MSMEs?",
+  "title": "SIDBI energy efficiency loans for MSMEs",
+  "short": "SIDBI's dedicated energy efficiency product is the 4E scheme, End to End Energy Efficiency: an energy audit and project report, then a SIDBI loan for the measures the audit recommends. SIDBI also ran the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Check current terms on sidbi.in.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "sll-kpi-verification-what-verifier-checks",
   "q": "What does a verifier check on a sustainability-linked loan KPI?",
   "title": "What an SLL KPI verifier checks",
   "short": "A verifier checks that your KPI figure was calculated exactly as the loan agreement defines it, that the underlying bills and invoices support it, that the method matches the baseline year, and whether the target was met. The result is a statement the lender uses to move the interest margin.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "smart-meter-data-vs-bills-for-carbon-reporting",
+  "q": "Can I use smart meter or sub-meter data instead of electricity bills for carbon reporting?",
+  "title": "Smart meter or sub-meter data vs bills",
+  "short": "Yes for a discom smart meter, because it is the revenue meter your bill comes from. Use your own sub-meters to split electricity between lines or products, not to set the total. The site total should match the discom meter, and any gap between the sub-meters and the bill needs to be explained.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "smart-prepaid-meter-no-bill-scope-2-data",
+  "q": "I have a smart prepaid meter and no monthly bill. Where do I get Scope 2 data?",
+  "title": "Scope 2 data from a smart prepaid meter",
+  "short": "Take the kWh from the meter itself. Download monthly consumption from your discom's app or consumer portal, or photograph the meter's cumulative kWh reading on the same date each month and subtract. Ask the discom for a monthly statement if you need a document. Do not turn recharge rupees into kWh.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "solar-diesel-microgrid-carbon-intensity",
+  "q": "How do I calculate the carbon intensity of a solar plus diesel microgrid?",
+  "title": "Carbon intensity of a solar and DG microgrid",
+  "short": "Add the CO2 from diesel burnt (litres x 2.68 kg) and from any grid power imported (kWh x 0.710 kg), then divide by all the kWh the site used from solar, DG and grid. On-site solar adds zero to the top line but counts in the kWh below it.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "solar-project-finance-financed-emissions",
+  "q": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
+  "title": "Financed emissions for a solar project loan",
+  "short": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "spend-based-scope-3-gst-inflation-currency",
@@ -1945,6 +2305,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Split the units in proportion to days. Count the days of the billing period that fall in each month or financial year, divide each count by the total days, and multiply by the units billed. Apply the grid factor to each part. If the bill has interim meter readings, use those instead.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "ssbj-japanese-buyers-supplier-emissions",
+  "q": "Will Japan's SSBJ standards make Japanese customers ask Indian suppliers for emissions?",
+  "title": "SSBJ and Japanese buyers' supplier data",
+  "short": "Yes, increasingly. Japan's SSBJ climate standard follows IFRS S2 and asks large listed companies to report Scope 3, which includes what they buy from suppliers. Estimates are allowed, so early requests may be light, but Japanese customers will want supplier figures they can defend as mandatory reporting phases in.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "staff-bus-scope-1-or-category-7",
@@ -1992,6 +2360,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "SLL KPI examples for MSMEs",
   "short": "For most MSMEs the best sustainability-linked loan KPIs are Scope 1 and 2 emissions per unit of output, energy used per unit of output, and the share of renewable electricity. Each must be core to the business, measured from bills and invoices, and checked by an outside verifier every year.",
   "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "telematics-or-fuel-invoices-for-fleet-emissions",
+  "q": "Should fleet emissions use telematics distance data or fuel invoices?",
+  "title": "Telematics km or fuel invoices for fleets?",
+  "short": "Use fuel invoices for fleet CO2 whenever you have litres. The GHG Protocol prefers the fuel-based method because CO2 depends on fuel burnt, not kilometres. Use telematics distance to check the litres, fill gaps and work out fuel economy, and to estimate methane and nitrous oxide.",
+  "topic": "accounting",
   "reviewed": "2026-10-16"
  },
  {
@@ -2089,6 +2465,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "VSME is EFRAG's Voluntary Sustainability Reporting Standard for non-listed SMEs, published in December 2024. No Indian company is required to use it, but it suits answers to EU customers: it is short, large EU companies are expected to accept it, and its Basic Module covers the energy and emissions figures buyers ask for most.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "waste-heat-recovery-power-which-scope",
+  "q": "Is electricity from a waste heat recovery system zero emission in my inventory?",
+  "title": "Waste heat recovery power: which scope?",
+  "short": "Yes, in effect: power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "well-to-tank-emissions-from-diesel-invoices",

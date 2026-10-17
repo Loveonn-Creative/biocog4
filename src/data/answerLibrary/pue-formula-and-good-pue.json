@@ -1,0 +1,84 @@
+{
+  "slug": "pue-formula-and-good-pue",
+  "q": "How do I calculate PUE for a server room or data centre?",
+  "title": "PUE formula for a server room",
+  "short": "Divide the total energy used by the server room or data centre by the energy used by the IT equipment alone, over the same period, ideally a full year. PUE = total facility kWh / IT equipment kWh. A result of 1.0 is the floor; the further above it, the more goes to cooling and losses.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "IT and facility teams in India",
+  "sections": [
+    {
+      "h": "What goes in each part",
+      "ul": [
+        "Total facility energy: everything serving the room, including IT load, cooling, UPS and transformer losses, lighting and any diesel generator output. ISO/IEC 30134-2 counts all energy sources, not only grid power.",
+        "IT equipment energy: servers, storage and network gear. Measure it at the UPS output, the PDU output or the equipment input; the further downstream you measure, the more accurate the figure.",
+        "Period: use 12 months. A single summer day or the design figure from the vendor will not match your annual result."
+      ]
+    },
+    {
+      "h": "Measuring it in an Indian office or factory",
+      "ol": [
+        "Fit a sub-meter on the feeder to the server room and its precision air conditioning, or use the incomer meter if the building is a dedicated data centre.",
+        "Read the IT load from the UPS output meter or smart PDUs.",
+        "If a DG set runs during outages, add its kWh from the DG energy meter to the total.",
+        "Record both meters on the same dates each month and add up 12 months."
+      ]
+    },
+    {
+      "h": "Reading the result",
+      "p": [
+        "ISO/IEC 30134-2 sets measurement categories by where IT energy is metered: category 1 at the UPS output, category 2 at the PDU output and category 3 at the IT equipment input. Always state the category with the number. Compare your PUE with your own past years rather than a published average from a different climate or size of site.",
+        "PUE does not measure whether the servers themselves are efficient. Consolidating idle servers cuts IT kWh and can make PUE look worse even though total energy falls, so track total kWh too."
+      ]
+    },
+    {
+      "h": "From PUE to emissions",
+      "p": [
+        "Emissions come from total facility energy, not from PUE. Multiply the grid kWh in that total by 0.710 kg CO2 per kWh, the CEA weighted average factor for India, and for generator output use diesel litres times 2.68 kg CO2 per litre instead of the grid factor. PUE then tells you how much of that is overhead you can cut."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year for a 35 kW server room",
+    "lines": [
+      "IT equipment (UPS output meter): 300,000 kWh",
+      "Total facility (server room sub-meter): 510,000 kWh",
+      "PUE = 510,000 / 300,000 = 1.70",
+      "Emissions = 510,000 x 0.710 = 362,100 kg CO2, about 362 tonnes",
+      "If cooling changes bring PUE to 1.50: 300,000 x 1.50 = 450,000 kWh, saving 60,000 kWh",
+      "Saving = 60,000 x 0.710 = 42,600 kg CO2, about 43 tonnes a year"
+    ],
+    "note": "Figures are illustrative. Grid electricity only; add generator fuel separately if the DG set ran."
+  },
+  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh, so the total energy and Scope 2 side of the calculation comes from invoices. The IT and sub-meter readings come from your own meters, or from a meter feed set up with the Senseible team for your site; it is not a self-serve integration.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO/IEC 30134-2, Data centres key performance indicators, Part 2: Power usage effectiveness (first edition 2016, revised edition 2026) (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, data centre energy efficiency guidance",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "ISO/IEC 30134-2 was revised in 2026; confirm the category definitions against the current edition."
+}

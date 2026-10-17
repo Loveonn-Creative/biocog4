@@ -62,6 +62,10 @@
     {
       "label": "Ceramics carbon accounting",
       "to": "/industries/ceramics"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
     }
   ],
   "sources": [

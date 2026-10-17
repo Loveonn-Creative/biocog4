@@ -1,0 +1,76 @@
+{
+  "slug": "do-registries-accept-digital-mrv",
+  "q": "Do Verra and Gold Standard accept digital MRV data?",
+  "title": "Do registries accept digital MRV?",
+  "short": "Yes, as monitoring data, but not in place of verification. Verra and Gold Standard accept data gathered by meters, sensors, satellites or software if it meets the monitoring rules of the approved methodology and an accredited validation and verification body checks it. Credits are issued only after that verification.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Developers and MSMEs considering dMRV tools",
+  "sections": [
+    {
+      "h": "What decides whether digital data is accepted",
+      "ul": [
+        "The methodology. Each approved methodology lists the parameters to monitor, how often, and the equipment and calibration required. Digital data must match those parameters.",
+        "The monitoring plan in the registered project description, which names the data source and procedures.",
+        "The verifier. An accredited validation and verification body (VVB) must be able to trace each figure back to its source and test the data system."
+      ],
+      "p": [
+        "A digital tool can make that trail faster to check. It does not change what the methodology asks for."
+      ]
+    },
+    {
+      "h": "Where the registries stand",
+      "p": [
+        "Verra runs a digital MRV pilot in the VCS Program. In February 2026 it approved the first credits under that pilot for high-frequency issuance, from a solar project using a CDM small-scale methodology. A validation and verification body checked the monitoring data entirely digitally; the project could request 80 percent of the approved credits, with the rest held until a full verification after a year of digital issuances.",
+        "Gold Standard runs its own dMRV pilot for projects already certified under Gold Standard for the Global Goals, and projects that fall short go back to conventional certification. Neither registry has dropped independent verification. The ICVCM Core Carbon Principles also require robust quantification and independent validation and verification."
+      ]
+    },
+    {
+      "h": "What a VVB will look for in digital data",
+      "ol": [
+        "Meter or sensor make, serial number and calibration certificates.",
+        "Raw data kept unchanged, with a record of any cleaning, gap filling or estimates.",
+        "Access controls and an audit log showing who changed what.",
+        "A way to tie each total back to raw readings or source documents, such as invoices.",
+        "Back-up data or a conservative default for periods when the device failed."
+      ]
+    },
+    {
+      "h": "Claims to treat with care",
+      "p": [
+        "Some platforms describe themselves as registry-approved or promise faster issuance. Ask which methodology the data serves, whether a VVB has accepted it in a real verification, and get that in writing. Registration and issuance timelines still depend on the registry and the verifier."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps a digital evidence trail: each uploaded invoice, bill or fuel slip carries a SHA-256 fingerprint, and the figure read from it can be traced back to the file. It is not a registry or a VVB and makes no claim about verification cost or time.",
+  "links": [
+    {
+      "label": "Digital MRV vs a traditional audit",
+      "to": "/climate-intelligence/mrv-vs-traditional-audit-carbon-verification-compared"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "How long carbon credit issuance takes",
+      "to": "/answers/how-long-to-get-carbon-credits-issued"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra, VCS Program rules and DMRV pilot, including first high-frequency issuance (February 2026)",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, pilot programme deploying dMRV solutions",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM, Core Carbon Principles",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Both registries are piloting digital MRV; check their current programme documents and pilot terms before relying on this page."
+}
