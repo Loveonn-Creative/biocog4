@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { SEOHead } from '@/components/SEOHead';
-import partnersOg from '@/assets/og/partners.jpg';
 import { MinimalNav } from '@/components/MinimalNav';
 import { Footer } from '@/components/Footer';
 import { CarbonParticles } from '@/components/CarbonParticles';
@@ -86,7 +85,6 @@ const Partners = () => {
         title="Partner Program | Carbon Buyers, Banks & ERP Integrations"
         description="Join Senseible's partner ecosystem. Access verified MSME carbon credits, enable green lending, or integrate carbon tracking into your platform."
         canonical="/partners"
-        image={`https://senseible.earth${partnersOg}`}
         keywords={[
           'carbon credit buyers',
           'green loans India',
