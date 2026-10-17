@@ -40,3 +40,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /reduction-signal (fuel switch and efficiency) | "Fuel switch and efficiency signal page" | `07bfa17` |
 | /grants (application as a letter) | "Grants: application as a fill-in letter" | `75519be` |
 | /white-paper (living paper, new page) | "White Paper page" | `67723b1` |
+| Footer (ledger horizon motion; `REVERT footer`) | "Footer: ledger horizon motion" | `7c25df3` |
