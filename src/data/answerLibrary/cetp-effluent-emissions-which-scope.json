@@ -27,7 +27,7 @@
     {
       "h": "If the CETP shares nothing",
       "p": [
-        "Estimate the methane from the COD you discharge with the IPCC 2006 Volume 5, Chapter 6 method: kg COD x 0.25 kg CH4 per kg COD x a methane correction factor from Table 6.8 that matches the CETP's process. Show a low and a high case, since the factor ranges from 0 for well managed aerobic treatment upwards. The textile page linked below works this through step by step, including sludge.",
+        "Estimate the methane from the COD you discharge with the IPCC 2006 Volume 5, Chapter 6 method: kg COD x 0.25 kg CH4 per kg COD x a methane correction factor from Table 6.8 that matches the CETP's process. Show a low and a high case, since the factor ranges from 0 for well managed aerobic treatment upwards. The wastewater methane page linked below works the method through step by step; the textile dyeing page adds ETP sludge and a full worked line.",
         "For nitrous oxide, the 2006 Guidelines gave no method for industrial wastewater; the 2019 Refinement added one. Say which edition you used."
       ]
     },
