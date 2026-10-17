@@ -1,222 +1,74 @@
+// Voice navigation on Biocog Intelligence (opt-in, off by default). Only a
+// short, exact command matches: every pattern is anchored to the whole
+// utterance, so a question that merely contains "sign out" or "log in" is
+// sent to the chat as a question, never acted on.
+
 export interface VoiceCommand {
   patterns: RegExp[];
-  action: string;
+  action: 'navigate' | 'signout';
   route?: string;
   description: string;
 }
 
+/** Longest utterance treated as a command; anything longer is a question. */
+export const MAX_COMMAND_WORDS = 6;
+
+const OPEN = '(?:go to|open|show(?: me)?|take me to|view)';
+
+const cmd = (sources: string[], rest: Omit<VoiceCommand, 'patterns'>): VoiceCommand => ({
+  patterns: sources.map((s) => new RegExp(`^(?:${s})$`, 'i')),
+  ...rest,
+});
+
 export const voiceCommands: VoiceCommand[] = [
-  {
-    patterns: [
-      /go to (the )?dashboard/i,
-      /show (me )?(my )?dashboard/i,
-      /open dashboard/i,
-    ],
-    action: 'navigate',
-    route: '/dashboard',
-    description: 'Go to Dashboard',
-  },
-  {
-    patterns: [
-      /upload (an? )?(invoice|document|bill)/i,
-      /scan (an? )?(invoice|document|bill)/i,
-      /go to upload/i,
-      /go home/i,
-    ],
-    action: 'navigate',
-    route: '/',
-    description: 'Upload Invoice',
-  },
-  {
-    patterns: [
-      /show (me )?(my )?emissions?/i,
-      /check (my )?carbon/i,
-      /view emissions?/i,
-    ],
-    action: 'navigate',
-    route: '/dashboard',
-    description: 'View Emissions',
-  },
-  {
-    patterns: [
-      /go to pricing/i,
-      /show (me )?pricing/i,
-      /check (the )?plans?/i,
-      /upgrade/i,
-    ],
-    action: 'navigate',
-    route: '/pricing',
-    description: 'View Pricing',
-  },
-  {
-    patterns: [
-      /generate (a )?report/i,
-      /create (a )?report/i,
-      /go to reports?/i,
-      /show (me )?(my )?reports?/i,
-    ],
-    action: 'navigate',
-    route: '/reports',
-    description: 'Generate Report',
-  },
-  {
-    patterns: [
-      /verify (my )?(carbon|emissions?|data)/i,
-      /go to verif(y|ication)/i,
-      /start verification/i,
-    ],
-    action: 'navigate',
-    route: '/verify',
-    description: 'Verify Carbon',
-  },
-  {
-    patterns: [
-      /monetize/i,
-      /carbon credits?/i,
-      /sell (my )?carbon/i,
-      /go to monetize/i,
-    ],
-    action: 'navigate',
-    route: '/monetize',
-    description: 'Monetize Carbon',
-  },
-  {
-    patterns: [
-      /go to (my )?profile/i,
-      /show (my )?profile/i,
-      /edit (my )?profile/i,
-    ],
-    action: 'navigate',
-    route: '/profile',
-    description: 'View Profile',
-  },
-  {
-    patterns: [
-      /go to settings?/i,
-      /open settings?/i,
-      /show settings?/i,
-    ],
-    action: 'navigate',
-    route: '/settings',
-    description: 'Open Settings',
-  },
-  {
-    patterns: [
-      /talk to (the )?ai/i,
-      /ask (the )?ai/i,
-      /go to intelligence/i,
-      /open (the )?chat/i,
-      /esg (head|advisor|assistant)/i,
-    ],
-    action: 'navigate',
-    route: '/intelligence',
-    description: 'AI ESG Head',
-  },
-  {
-    patterns: [
-      /mrv (dashboard)?/i,
-      /measurement reporting verification/i,
-      /show mrv/i,
-    ],
-    action: 'navigate',
-    route: '/mrv-dashboard',
-    description: 'MRV Dashboard',
-  },
-  {
-    patterns: [
-      /contact (us|support)?/i,
-      /get help/i,
-      /need help/i,
-      /support/i,
-    ],
-    action: 'navigate',
-    route: '/contact',
-    description: 'Contact Support',
-  },
-  {
-    patterns: [
-      /sign out/i,
-      /log ?out/i,
-      /logout/i,
-    ],
-    action: 'signout',
-    description: 'Sign Out',
-  },
-  {
-    patterns: [
-      /sign in/i,
-      /log ?in/i,
-      /login/i,
-    ],
-    action: 'navigate',
-    route: '/auth',
-    description: 'Sign In',
-  },
-  {
-    patterns: [
-      /(open |go to |show )?calculators?/i,
-      /carbon calculator/i,
-      /free calculator/i,
-    ],
-    action: 'navigate',
-    route: '/calculators',
-    description: 'Open Calculators',
-  },
-  {
-    patterns: [/product carbon footprint( calculator)?/i, /pcf calculator/i, /iso 14067/i],
-    action: 'navigate',
-    route: '/calculators/product-carbon-footprint',
-    description: 'PCF Calculator',
-  },
-  {
-    patterns: [/supplier (emissions?|risk|carbon)( calculator)?/i, /scope 3 supplier/i],
-    action: 'navigate',
-    route: '/calculators/supplier-emissions-risk',
-    description: 'Supplier Risk Calculator',
-  },
-  {
-    patterns: [/(solar|energy transition|renewable)( roi| savings| calculator)?/i],
-    action: 'navigate',
-    route: '/calculators/energy-transition-savings',
-    description: 'Energy Transition Calculator',
-  },
-  {
-    patterns: [/logistics( emissions?| calculator)?/i, /freight (emissions?|calculator)/i, /glec/i],
-    action: 'navigate',
-    route: '/calculators/logistics-emissions',
-    description: 'Logistics Calculator',
-  },
-  {
-    patterns: [/(carbon pricing|eu ets|ets price)( impact| calculator)?/i],
-    action: 'navigate',
-    route: '/calculators/carbon-pricing-impact',
-    description: 'Carbon Pricing Calculator',
-  },
+  cmd([`${OPEN}(?: my| the)? dashboard`], { action: 'navigate', route: '/dashboard', description: 'Go to Dashboard' }),
+  cmd(['(?:upload|scan)(?: an?)? (?:invoice|document|bill)', 'go to upload', 'go home'], { action: 'navigate', route: '/', description: 'Upload Invoice' }),
+  cmd([`(?:${OPEN}|check)(?: my)? (?:emissions?|carbon)`], { action: 'navigate', route: '/dashboard', description: 'View Emissions' }),
+  cmd([`${OPEN}(?: the)? (?:pricing|plans?)`, 'check(?: the)? plans?'], { action: 'navigate', route: '/pricing', description: 'View Pricing' }),
+  cmd(['(?:generate|create)(?: a)? report', `${OPEN}(?: my)? reports?`], { action: 'navigate', route: '/reports', description: 'Generate Report' }),
+  cmd(['verify(?: my)? (?:carbon|emissions?|data|records)', 'go to verif(?:y|ication)', 'start verification'], { action: 'navigate', route: '/verify', description: 'Verify Carbon' }),
+  cmd(['monetize', `${OPEN} monetiz(?:e|ation)`], { action: 'navigate', route: '/monetize', description: 'Monetize Carbon' }),
+  cmd([`(?:${OPEN}|edit)(?: my)? profile`], { action: 'navigate', route: '/profile', description: 'View Profile' }),
+  cmd([`${OPEN}(?: my| the)? settings?`], { action: 'navigate', route: '/settings', description: 'Open Settings' }),
+  cmd([`${OPEN}(?: the)? (?:intelligence|chat)`], { action: 'navigate', route: '/intelligence', description: 'Biocog Intelligence' }),
+  cmd([`${OPEN}(?: the)? mrv(?: dashboard)?`], { action: 'navigate', route: '/mrv-dashboard', description: 'MRV Dashboard' }),
+  cmd(['contact (?:us|support)', '(?:get|need) help'], { action: 'navigate', route: '/contact', description: 'Contact Support' }),
+  cmd(['sign ?out', 'log ?out'], { action: 'signout', description: 'Sign Out' }),
+  cmd(['sign ?in', 'log ?in'], { action: 'navigate', route: '/auth', description: 'Sign In' }),
+  cmd([`${OPEN}(?: the)?(?: carbon| free)? calculators?`], { action: 'navigate', route: '/calculators', description: 'Open Calculators' }),
+  cmd([`${OPEN}(?: the)? (?:product carbon footprint|pcf) calculator`], { action: 'navigate', route: '/calculators/product-carbon-footprint', description: 'PCF Calculator' }),
+  cmd([`${OPEN}(?: the)? supplier (?:emissions?|risk|carbon) calculator`], { action: 'navigate', route: '/calculators/supplier-emissions-risk', description: 'Supplier Risk Calculator' }),
+  cmd([`${OPEN}(?: the)? (?:solar|energy transition|renewable) calculator`], { action: 'navigate', route: '/calculators/energy-transition-savings', description: 'Energy Transition Calculator' }),
+  cmd([`${OPEN}(?: the)? (?:logistics|freight) calculator`], { action: 'navigate', route: '/calculators/logistics-emissions', description: 'Logistics Calculator' }),
+  cmd([`${OPEN}(?: the)? (?:carbon pricing|eu ets) calculator`], { action: 'navigate', route: '/calculators/carbon-pricing-impact', description: 'Carbon Pricing Calculator' }),
 ];
 
+/** The utterance as a command candidate: lower case, no end punctuation or "please". */
+export function normalizeUtterance(transcript: string): string {
+  return transcript
+    .toLowerCase()
+    .replace(/[.!?,;:]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^please /, '')
+    .replace(/ please$/, '');
+}
+
+/** The command the whole utterance names, or null (then it is a question for the chat). */
 export const matchVoiceCommand = (transcript: string): VoiceCommand | null => {
-  const normalized = transcript.toLowerCase().trim();
-  
+  const normalized = normalizeUtterance(transcript);
+  if (!normalized || normalized.split(' ').length > MAX_COMMAND_WORDS) return null;
   for (const command of voiceCommands) {
-    for (const pattern of command.patterns) {
-      if (pattern.test(normalized)) {
-        return command;
-      }
-    }
+    if (command.patterns.some((p) => p.test(normalized))) return command;
   }
-  
   return null;
 };
 
-export const getCommandSuggestions = (): string[] => {
-  return [
-    "Go to dashboard",
-    "Upload invoice",
-    "Show my emissions",
-    "Generate report",
-    "Talk to AI",
-    "Check pricing",
-    "Verify carbon",
-    "Monetize",
-  ];
-};
+export const getCommandSuggestions = (): string[] => [
+  'Go to dashboard',
+  'Upload invoice',
+  'Show my emissions',
+  'Generate report',
+  'Check plans',
+  'Verify carbon',
+];
