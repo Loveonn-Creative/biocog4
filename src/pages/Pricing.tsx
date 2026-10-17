@@ -323,7 +323,7 @@ const Pricing = () => {
         'Green Finance Access',
         '10 Team Members',
         'WhatsApp Chat + Email Support',
-        'AI ESG Head',
+        'Biocog Intelligence',
         'Biocog Superintelligence',
         'All Reporting Frameworks',
         'Eligible for add-ons and limited custom builds',

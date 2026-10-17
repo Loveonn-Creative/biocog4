@@ -527,3 +527,21 @@ describe('reads ledger', () => {
     expect(db.documents ?? []).toHaveLength(0);
   });
 });
+
+describe('new Gemini secret name', () => {
+  test('an invoice is read and counted with only Gemini_API_Key set', async () => {
+    const old = env.GEMINI_API_KEY;
+    delete env.GEMINI_API_KEY;
+    env.Gemini_API_Key = 'new-key';
+    try {
+      ocr = { ...diesel('25', 'INV-K1'), documentTitle: 'Tax Invoice' };
+      const r = await upload('key1');
+      expect(r.status).toBe(200);
+      expect(r.body.emissionIds).toHaveLength(1);
+      expect(db.emissions[0].activity_data).toBe(25);
+    } finally {
+      delete env.Gemini_API_Key;
+      env.GEMINI_API_KEY = old;
+    }
+  });
+});

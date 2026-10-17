@@ -124,13 +124,15 @@ describe('aiFetch Gemini cooldown', () => {
 });
 
 describe('Gemini key name', () => {
-  test('reads the key under GEMINI_API_KEY or Gemini_API_Key', async () => {
+  test('uses the new Gemini_API_Key first, GEMINI_API_KEY as fallback', async () => {
     const { geminiKey } = await import('../supabase/functions/_shared/aiFetch');
     const env = (globalThis as any).Deno.env;
     const orig = env.get;
     env.get = (k: string) => (k === 'Gemini_API_Key' ? ' new-key ' : undefined);
     expect(geminiKey()).toBe('new-key');
     env.get = (k: string) => (k === 'GEMINI_API_KEY' ? 'primary' : k === 'Gemini_API_Key' ? 'other' : undefined);
+    expect(geminiKey()).toBe('other');
+    env.get = (k: string) => (k === 'GEMINI_API_KEY' ? 'primary' : undefined);
     expect(geminiKey()).toBe('primary');
     env.get = orig;
   });

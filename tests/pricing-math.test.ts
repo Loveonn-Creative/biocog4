@@ -24,8 +24,8 @@ describe('pricing page arithmetic', () => {
   test('add-on totals split monthly and one-time, with the plan price per cycle', () => {
     const t = addonTotals('essential', 'yearly', { scans: 3, dashboard: 1, audit: 1, fasttrack: 2 });
     expect(t.planPerMonth).toBe(499);
-    expect(t.monthly).toBe(999);
-    expect(t.oneTime).toBe(3 * 79 + 7999 + 2 * 2999);
+    expect(t.monthly).toBe(3 * 79 + 999);
+    expect(t.oneTime).toBe(7999 + 2 * 2999);
     expect(addonTotals('pro', 'monthly', {}).planPerMonth).toBe(9999);
     expect(addonTotals('scale', 'yearly', {}).planPerMonth).toBeNull();
     expect(addonTotals('snapshot', 'yearly', { dashboard: -2 }).monthly).toBe(0);

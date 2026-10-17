@@ -27,12 +27,13 @@ export function toGatewayModel(model: unknown): string {
 }
 
 /**
- * The Gemini key from the edge-function secrets. Secret names are case
- * sensitive, so the owner's "Gemini_API_Key" is read too. Read here only;
- * never logged, returned or sent to a browser.
+ * The Gemini key from the edge-function secrets. The new key is stored as
+ * "Gemini_API_Key" (owner, October 2026) and is used first; the older
+ * GEMINI_API_KEY is only a fallback. Read here only; never logged, returned
+ * or sent to a browser.
  */
 export function geminiKey(): string | undefined {
-  return Deno.env.get('GEMINI_API_KEY')?.trim() || Deno.env.get('Gemini_API_Key')?.trim() || undefined;
+  return Deno.env.get('Gemini_API_Key')?.trim() || Deno.env.get('GEMINI_API_KEY')?.trim() || undefined;
 }
 
 /** True when at least one AI provider key is set. */
