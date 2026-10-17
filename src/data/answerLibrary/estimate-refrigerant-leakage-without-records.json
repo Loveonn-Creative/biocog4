@@ -11,23 +11,20 @@
       "h": "The screening formula",
       "p": [
         "Leakage (kg CO2e per year) = nameplate charge (kg) x annual leak rate (%) x GWP of the gas.",
-        "Do it unit by unit, or group identical units, and add the results. Only HFCs and other Kyoto gases go into Scope 1. Older units on R-22 leak an ozone-depleting gas that the GHG Protocol asks you to report separately, outside the Scope 1 total."
+        "Do it unit by unit, or group identical units, and add the results. Only HFCs and other Kyoto gases go into Scope 1. Older units on R-22 leak an ozone-depleting gas that the GHG Protocol lets you report separately, outside the Scope 1 total."
       ]
     },
     {
       "h": "Default operating leak rates by equipment type",
       "p": [
-        "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9 gives ranges of annual operating emissions as a share of the charge. Ranges as given in the table:"
+        "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9 gives ranges of annual operating emissions as a share of the charge. The 2019 Refinement kept these defaults for stationary equipment. Ranges for the common types:"
       ],
       "ul": [
-        "Domestic refrigerators: 0.1% to 0.5%",
-        "Stand-alone commercial units (bottle coolers, deep freezers): 1% to 15%",
-        "Medium and large commercial refrigeration (supermarket racks): 10% to 35%",
-        "Transport refrigeration (reefer trucks): 15% to 50%",
-        "Industrial refrigeration, including food processing and cold storage: 7% to 25%",
-        "Chillers: 2% to 15%",
         "Residential and commercial air conditioning, including split ACs and heat pumps: 1% to 10%",
-        "Mobile air conditioning in vehicles: 10% to 20%"
+        "Chillers: 2% to 15%",
+        "Medium and large commercial refrigeration (supermarket racks): 10% to 35%",
+        "Mobile air conditioning in vehicles: 10% to 20%",
+        "Domestic refrigerators, stand-alone commercial units (bottle coolers, deep freezers), transport refrigeration and industrial refrigeration including cold storage: read the range for each type from the same Table 7.9 before you use it."
       ]
     },
     {
@@ -62,9 +59,9 @@
       "Low: 400 x 0.02 x 1,530 = 12,240 kg CO2e. High: 400 x 0.15 x 1,530 = 91,800 kg CO2e",
       "Chiller at the 8.5% midpoint: 400 x 0.085 x 1,530 = 52,020 kg CO2e, about 52 t CO2e"
     ],
-    "note": "The 400 kg charge is illustrative; read the real figure off your nameplate. All figures are screening estimates and should be labelled as such."
+    "note": "The 1.2 kg and 400 kg charges are illustrative; read the real figures off your nameplates. All figures are screening estimates and should be labelled as such."
   },
-  "senseible": "Senseible reads invoices and bills, and calculates refrigerant leakage only when you supply measured data such as kg of gas charged on a service invoice. It does not apply default leak rates to equipment lists.",
+  "senseible": "Senseible calculates refrigerant leakage from measured data, such as the kg of gas charged on a service invoice, and keeps that invoice as the evidence for the Scope 1 line. Once your AMC vendor records top-ups, next year's figure comes straight from those invoices.",
   "links": [
     {
       "label": "Refrigerant top-up invoice to CO2e",
@@ -93,6 +90,6 @@
       "url": "https://www.epa.gov/climateleadership"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "Leak rate ranges are quoted from IPCC 2006 Table 7.9; recheck them against the table before relying on the exact bounds."
+  "reviewed": "2026-10-17",
+  "reviewNote": "Leak rate ranges checked against IPCC 2006 Table 7.9 (retained in the 2019 Refinement) and AR6 GWPs against Table 7.SM.7 (HFC-32 771, HFC-134a 1,530); recheck if the IPCC updates either table."
 }

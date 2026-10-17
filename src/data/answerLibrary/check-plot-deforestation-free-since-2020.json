@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "senseible": "Satellite checks sit outside Senseible's invoice and bill workflow; the plot evidence comes from the tools above. Senseible can keep the purchase invoices and supplier documents that go with each lot.",
+  "senseible": "Senseible keeps the purchase invoices and supplier documents for each lot, so the satellite evidence you file for a plot can be matched to the goods that came from it.",
   "links": [
     {
       "label": "EUDR geolocation: polygon or point",
@@ -66,6 +66,6 @@
       "url": "https://moef.gov.in"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "EUDR application dates and Commission guidance on the reference map have changed more than once; check the current position before relying on them."
 }

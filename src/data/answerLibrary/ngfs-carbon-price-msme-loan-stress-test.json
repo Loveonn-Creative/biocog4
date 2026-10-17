@@ -67,6 +67,10 @@
     {
       "label": "Climate risk assessment",
       "to": "/climate-risk"
+    },
+    {
+      "label": "CBAM exposure in a bank stress test",
+      "to": "/answers/cbam-exposure-in-bank-stress-test"
     }
   ],
   "sources": [

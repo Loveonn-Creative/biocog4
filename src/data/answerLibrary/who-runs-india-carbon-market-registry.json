@@ -10,7 +10,7 @@
     {
       "h": "The institutions and what each one does",
       "ul": [
-        "National Steering Committee for the Indian Carbon Market: sets the direction, chaired by the Secretary of the Ministry of Power with the Ministry of Environment.",
+        "National Steering Committee for the Indian Carbon Market: sets the direction. It is chaired by the Secretary, Ministry of Power, with the Secretary, Ministry of Environment, Forest and Climate Change, as co-chair.",
         "Bureau of Energy Efficiency (BEE): administrator. Proposes targets and trajectories, accredits carbon verification agencies, and recommends issuance of carbon credit certificates.",
         "Grid Controller of India Limited: registry. Holds accounts for registered entities, records issuance, transfers and surrender of certificates.",
         "Central Electricity Regulatory Commission (CERC): regulates trading and oversees market conduct.",
@@ -21,7 +21,7 @@
     {
       "h": "Where these roles are written down",
       "p": [
-        "The Carbon Credit Trading Scheme, 2023 was notified by the Ministry of Power as S.O. 2825(E) on 28 June 2023 under the Energy Conservation Act, 2001. A later amendment in 2023 added the voluntary offset mechanism. Detailed procedures for compliance and offsets are issued by BEE, and trading rules by CERC."
+        "The Carbon Credit Trading Scheme, 2023 was notified by the Ministry of Power as S.O. 2825(E) on 28 June 2023 under the Energy Conservation Act, 2001. An amendment notified in December 2023 added the offset mechanism; check its gazette number on powermin.gov.in if you need to cite it. Detailed procedures for compliance and offsets are issued by BEE, and trading rules by CERC."
       ]
     },
     {
@@ -39,7 +39,7 @@
       ]
     }
   ],
-  "senseible": "Senseible plays no part in the CCTS registry or in trading certificates. It keeps the fuel, electricity and production records a plant would hand to its carbon verification agency.",
+  "senseible": "Senseible keeps the fuel, electricity and production records a plant hands to its accredited carbon verification agency, so the emission intensity behind each certificate can be traced back to invoices and bills.",
   "links": [
     {
       "label": "India's carbon market and the EU price",
@@ -68,6 +68,6 @@
       "url": "https://beeindia.gov.in"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "CCTS procedures and CERC trading rules are still being issued and amended; check BEE and CERC for the current versions."
 }

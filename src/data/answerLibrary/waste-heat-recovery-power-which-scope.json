@@ -56,6 +56,10 @@
     {
       "label": "Manufacturing Scope 2 emissions in India",
       "to": "/climate-intelligence/manufacturing-scope-2-emissions-india"
+    },
+    {
+      "label": "CHP emissions allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
     }
   ],
   "sources": [

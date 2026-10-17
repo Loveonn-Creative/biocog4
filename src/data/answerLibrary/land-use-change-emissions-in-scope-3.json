@@ -59,6 +59,10 @@
     {
       "label": "Biogenic carbon for food and textiles",
       "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    },
+    {
+      "label": "Does my company need an SBTi FLAG target?",
+      "to": "/answers/does-my-company-need-sbti-flag-target"
     }
   ],
   "sources": [

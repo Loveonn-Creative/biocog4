@@ -72,6 +72,10 @@
     {
       "label": "ESG data management and audit-ready data",
       "to": "/esg-data-management"
+    },
+    {
+      "label": "Why an EU fund asks for PAI data",
+      "to": "/answers/why-eu-fund-asks-for-sfdr-pai-data"
     }
   ],
   "sources": [

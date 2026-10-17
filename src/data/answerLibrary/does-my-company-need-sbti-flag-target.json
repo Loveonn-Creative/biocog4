@@ -46,7 +46,7 @@
     ],
     "note": "Figures are illustrative. The FLAG share depends on the cotton emission factor you use; state its source."
   },
-  "senseible": "Senseible measures operational Scope 1 and 2 from your invoices and bills and keeps Scope 3 supplier evidence, which gives you the totals for the 20% test. It does not set or validate SBTi targets.",
+  "senseible": "Senseible measures operational Scope 1 and 2 from your invoices and bills and keeps Scope 3 supplier evidence, which gives you the totals for the 20% test. The target itself is set and validated through the SBTi.",
   "links": [
     {
       "label": "SBTi SME route eligibility",
@@ -71,6 +71,6 @@
       "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "SBTi is revising its standards; check the current FLAG Guidance version and the SME route's treatment of FLAG before applying."
 }

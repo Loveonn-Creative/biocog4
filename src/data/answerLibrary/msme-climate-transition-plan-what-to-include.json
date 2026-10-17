@@ -64,6 +64,10 @@
     {
       "label": "SBTi SME route eligibility",
       "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Writing a transition plan as a small company",
+      "to": "/answers/how-to-write-climate-transition-plan-small-company"
     }
   ],
   "sources": [

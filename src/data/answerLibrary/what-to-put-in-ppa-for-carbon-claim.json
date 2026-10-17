@@ -27,7 +27,7 @@
     {
       "h": "Points buyers and RE100 often check",
       "ul": [
-        "Plant age: the RE100 Technical Criteria set a limit on how old the plant can be, with exceptions. Check the current edition before signing.",
+        "Plant age: the RE100 Technical Criteria expect renewable electricity to come mainly from plants commissioned or repowered within the last 15 years, with set exceptions. If your plant is older, check the exceptions in the current edition before signing.",
         "Double claims on the grid side: open access green power can count towards a discom's or your own renewable obligation. The contract should say who uses it for that, and that no one else makes a voluntary claim on it.",
         "Carbon credits: a plant registered for carbon credits on the same output cannot also give you a zero-emission claim."
       ]
@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "senseible": "Senseible stores your PPA, energy accounts and power bills as evidence and reports market-based Scope 2 when instrument data is provided, alongside location-based figures. It does not review or draft contracts.",
+  "senseible": "Senseible stores your PPA, energy accounts and power bills together as evidence and reports market-based Scope 2 from the instrument data alongside location-based figures, so the contract and the numbers sit in one file.",
   "links": [
     {
       "label": "Do RE100 and CDP accept Indian RECs?",
@@ -63,10 +63,10 @@
       "url": "https://ghgprotocol.org/scope-2-guidance"
     },
     {
-      "label": "RE100 Technical Criteria (RE100 is run by Climate Group with CDP)",
+      "label": "RE100 Technical Criteria, current edition (there100.org; RE100 is run by Climate Group with CDP)",
       "url": "https://www.cdp.net"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "RE100 revises its Technical Criteria and the GHG Protocol is revising its Scope 2 Guidance; recheck both before finalising a contract."
 }

@@ -28,7 +28,7 @@
     {
       "h": "What EPR data tells you, and what it does not",
       "p": [
-        "Under the Plastic Waste Management Rules, 2016 and the 2022 EPR Guidelines for plastic packaging, producers and brand owners register the quantity of each plastic category they introduce. That quantity is good activity data for step 2. EPR certificates show that an equal quantity was recycled or sent to end-of-life disposal somewhere, not what happened to your packs. Certificates from co-processing or waste to energy mean that plastic was burnt, so treat that share as burning, not recycling."
+        "Under the Plastic Waste Management Rules, 2016 and the 2022 EPR Guidelines for plastic packaging, producers and brand owners register the quantity of each plastic category they introduce. That quantity is good activity data for step 2. EPR certificates show that plastic of that category was recycled or sent to end-of-life disposal somewhere against your obligation, not what happened to your packs. Certificates from co-processing or waste to energy mean that plastic was burnt, so treat that share as burning, not recycling."
       ]
     },
     {
@@ -78,6 +78,6 @@
       "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "The plastic EPR guidelines have been amended several times; check current categories and certificate types on the CPCB portal."
 }

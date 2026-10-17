@@ -71,6 +71,10 @@
     {
       "label": "Logistics emissions calculator",
       "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Actual or shortest distance",
+      "to": "/answers/actual-vs-shortest-distance-freight-emissions"
     }
   ],
   "sources": [

@@ -63,6 +63,10 @@
     {
       "label": "Product compliance",
       "to": "/product-compliance"
+    },
+    {
+      "label": "Packaging footprint of an export shipment",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
     }
   ],
   "sources": [

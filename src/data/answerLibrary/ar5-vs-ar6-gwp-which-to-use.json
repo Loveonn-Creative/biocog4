@@ -12,7 +12,7 @@
       "ul": [
         "Methane: AR5 28; AR6 29.8 for fossil methane and 27.0 for non-fossil methane.",
         "Nitrous oxide: AR5 265; AR6 273.",
-        "HFC-134a (R-134a refrigerant): AR5 1,300; AR6 1,526.",
+        "HFC-134a (R-134a refrigerant): AR5 1,300; AR6 1,530.",
         "Sulphur hexafluoride: AR5 23,500; AR6 25,200.",
         "CO2 is 1 in every set, so a CO2-only inventory does not change."
       ],
@@ -48,8 +48,8 @@
     "lines": [
       "Refrigerant added to replace leaks: 10 kg of R-134a",
       "AR5: 10 x 1,300 = 13,000 kg CO2e, 13.0 tonnes",
-      "AR6: 10 x 1,526 = 15,260 kg CO2e, about 15.3 tonnes",
-      "Difference: 2,260 kg CO2e, about 17% higher under AR6"
+      "AR6: 10 x 1,530 = 15,300 kg CO2e, about 15.3 tonnes",
+      "Difference: 2,300 kg CO2e, about 18% higher under AR6"
     ]
   },
   "senseible": "Senseible's fuel and grid factors are CO2 factors (for example 2.68 kg CO2 per litre of diesel and 0.710 kg CO2 per kWh), so the AR5 or AR6 choice does not change those lines. For refrigerants or methane, apply the GWP set your framework requires and record which one you used.",

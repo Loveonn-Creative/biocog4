@@ -64,6 +64,10 @@
     {
       "label": "Grid electricity factor for India",
       "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Power factor penalties and rebates",
+      "to": "/answers/power-factor-rebate-and-penalty"
     }
   ],
   "sources": [

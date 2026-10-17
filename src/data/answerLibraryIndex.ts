@@ -11,6 +11,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "actual-vs-shortest-distance-freight-emissions",
+  "q": "Should freight emissions use the actual route distance or the shortest distance?",
+  "title": "Freight: actual or shortest distance?",
+  "short": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework charge each shipment on the shortest feasible distance, with detours and empty running carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "afolu-non-permanence-risk-rating",
+  "q": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
+  "title": "How the AFOLU risk rating is scored",
+  "short": "Under Verra's AFOLU Non-Permanence Risk Tool, you score internal, external and natural risks from the tool's tables, take off points only for documented mitigation, and add the three into one rating. That rating is the percentage of each verified stock gain held in the buffer pool, never below the tool's minimum; above 60 the project cannot be credited.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "air-vs-sea-freight-emissions-export",
   "q": "How much more carbon does air freight emit than sea freight for an export order?",
   "title": "Air vs sea freight emissions for exports",
@@ -51,6 +67,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "api-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint per kg of an active pharmaceutical ingredient?",
+  "title": "Carbon footprint per kg of an API",
+  "short": "Add three parts per kg of API: plant energy allocated to the batch, purchased materials (starting materials, reagents and net solvent make-up) times their emission factors, and waste treatment. Process mass intensity, the kg of all inputs per kg of product, tells you which materials to chase first.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "ar5-vs-ar6-gwp-which-to-use",
   "q": "Should I use AR5 or AR6 GWP values for methane and other gases?",
   "title": "AR5 or AR6 GWP values: which to use",
@@ -65,6 +89,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. An electric delivery has no tailpipe emissions, but the electricity that charged the vehicle was generated somewhere, and in India most of it from coal. Your Scope 3 transport figure is the carrier's kWh times the grid factor, which is lower than diesel but not zero.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "article-8-vs-article-9-fund-investee-company",
+  "q": "What is the difference between an Article 8 and an Article 9 fund for the company it invests in?",
+  "title": "Article 8 vs Article 9 funds for investees",
+  "short": "An Article 8 fund promotes environmental or social traits and checks that you follow good governance. An Article 9 fund must treat almost every holding as a sustainable investment, so it has to show your company contributes to an environmental or social goal, does no significant harm and is well governed. Expect deeper diligence from Article 9.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "australia-climate-disclosure-scope-3-suppliers",
@@ -379,6 +411,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "category-3-for-captive-coal-power-plant",
+  "q": "If our steel or aluminium plant runs a captive coal power plant, what goes in Scope 1, Scope 2 and Category 3?",
+  "title": "Captive coal power: Scope 1, 2 or Category 3?",
+  "short": "Coal burnt in a captive power plant you control is Scope 1, and the power it makes for your own use is not Scope 2 because you did not buy it. Category 3 then holds the upstream emissions of that coal: mining, washing and transport to your plant. Only grid power you buy goes in Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "cbam-communication-template-for-suppliers",
   "q": "Is there an official template for sending CBAM emissions data to my EU buyer?",
   "title": "CBAM communication template for suppliers",
@@ -393,6 +433,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "With verified actual data, scrap-based EAF and gas-based DRI steel can owe little or no CBAM in 2026, while blast furnace steel pays on emissions above the benchmark. By 2034, when free allocation ends, EAF scrap steel costs roughly a fifth of BF-BOF. The saving only appears with verified actual emissions, not default values.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cbam-exposure-in-bank-stress-test",
+  "q": "How do Indian banks stress test MSME borrowers for CBAM and carbon price risk?",
+  "title": "CBAM shock in an MSME loan stress test",
+  "short": "A bank estimates the CBAM cost on the borrower's EU-bound goods each year: embedded emissions minus the free allocation adjustment, times a scenario certificate price. It then assumes how much of that cost the EU buyer pushes back through a lower price or lost orders, and tests the hit against EBITDA and the DSCR covenant.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "cbam-penalty-for-not-surrendering-certificates",
@@ -483,6 +531,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "cetp-effluent-emissions-which-scope",
+  "q": "Are emissions from sending effluent to a common effluent treatment plant (CETP) my Scope 3?",
+  "title": "Is effluent sent to a CETP my Scope 3?",
+  "short": "Yes, in most cases. Effluent you send to a common effluent treatment plant (CETP) that you do not own or control is Scope 3 Category 5, waste generated in operations, under the GHG Protocol. Your share is the CETP's methane and energy use attributable to your effluent. Treatment inside your own fence stays in Scope 1 and 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "cgtmse-collateral-free-loan-limit",
   "q": "How much can an MSME borrow without collateral in India?",
   "title": "Collateral-free MSME loan limit in India",
@@ -499,6 +555,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "check-flood-risk-for-factory-site-india",
+  "q": "How do I check flood risk for a factory site in India?",
+  "title": "Checking flood risk for a factory site",
+  "short": "Check four things: whether the site lies in a mapped flood hazard zone on NRSC's atlases and Bhuvan, the highest flood level recorded nearby, what future heavy rain projections show, and what the ground tells you on a site visit. Compare your plinth level with the likely flood depth before you buy or build.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "check-if-product-cn-code-covered-by-cbam",
   "q": "How do I check whether my product's CN or HS code is covered by CBAM?",
   "title": "Is my product's CN code covered by CBAM?",
@@ -507,10 +571,34 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "check-plot-deforestation-free-since-2020",
+  "q": "How can I check from satellite data that a farm plot was not deforested after 2020?",
+  "title": "Check a plot is deforestation-free since 2020",
+  "short": "Map the plot boundary, overlay it on the EU's Global Forest Cover 2020 map to see if it was forest on 31 December 2020, then check tree cover loss data and dated satellite images for any clearing since. Record each step with screenshots. The EU map is a reference, not legal proof.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "check-water-stress-at-supplier-location-india",
+  "q": "How do I check water stress at a supplier's location in India?",
+  "title": "Check water stress at a supplier's site",
+  "short": "Look up the supplier's exact location in WRI Aqueduct for baseline water stress, then check the Central Ground Water Board's groundwater category for its block. Combine both with the supplier's own water source: a groundwater-dependent unit in a high stress basin and an over-exploited block is your highest risk.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "chiller-efficiency-kw-per-tr",
   "q": "What is a good chiller efficiency in kW per TR, and how do I measure it?",
   "title": "Good chiller efficiency in kW per TR",
   "short": "Lower is better. As a rough guide, a modern water-cooled centrifugal or screw chiller uses about 0.55 to 0.65 kW per TR of cooling at full load, and an air-cooled one about 1.0 to 1.2. Measure it by dividing the chiller's input kW by the cooling delivered in TR.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "chp-emissions-allocation-electricity-and-steam",
+  "q": "How are emissions from a cogeneration (CHP) plant split between electricity and steam?",
+  "title": "Splitting CHP emissions: power and steam",
+  "short": "Use the efficiency method from the GHG Protocol CHP allocation guidance: divide each output by the efficiency of making it separately, and share the plant's total emissions in proportion. Steam gets less per MWh than power because heat is cheaper to make. Energy content and work potential methods exist but must be stated if used.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
  },
@@ -593,6 +681,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Divide the project's net cost over its life by the tonnes of CO2 it cuts over the same life. Net cost is capital plus running costs minus energy savings. A negative result means the project pays for itself and cuts emissions; rank projects from the most negative upward.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "cotton-vs-polyester-fabric-carbon-footprint",
+  "q": "Is cotton or polyester fabric lower carbon for garment exporters?",
+  "title": "Cotton or polyester: which is lower carbon?",
+  "short": "Neither wins by default. Per kg of fibre, published datasets for conventional cotton and virgin polyester overlap, and recycled polyester and organic cotton usually score lower than their virgin or conventional versions. For finished fabric, spinning, dyeing and finishing energy often outweighs the fibre choice, so your mills' fuel and power decide the answer.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "cradle-to-gate-or-cradle-to-grave",
@@ -835,6 +931,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "does-my-company-need-sbti-flag-target",
+  "q": "Does my company need an SBTi FLAG target?",
+  "title": "Do I need an SBTi FLAG target?",
+  "short": "You need an SBTi FLAG target if your company is in a sector the SBTi designates as FLAG, such as agricultural production, food processing, or forest and paper products, or if land-related emissions are 20% or more of your total emissions across scopes. Either trigger also requires a no-deforestation commitment.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "does-r22-count-in-scope-1",
   "q": "Does R-22 (HCFC-22) leakage count in my Scope 1 emissions?",
   "title": "Does R-22 leakage count in Scope 1?",
@@ -891,6 +995,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "estimate-refrigerant-leakage-without-records",
+  "q": "How do I estimate refrigerant leakage if I have no top-up records?",
+  "title": "Refrigerant leakage with no top-up records",
+  "short": "Use a screening estimate: take the refrigerant charge from each unit's nameplate, multiply by a default annual leak rate for that equipment type from IPCC 2006 Table 7.9, then by the gas's GWP. Label the result as an estimate and start keeping service records so next year uses actual top-ups.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "etp-sludge-and-wastewater-scope-3-textiles",
+  "q": "How do textile dyeing units count wastewater and ETP sludge sent to a common effluent treatment plant in Scope 3?",
+  "title": "CETP wastewater and sludge in Scope 3",
+  "short": "Effluent a dyeing unit sends to a common effluent treatment plant (CETP), and ETP sludge sent to a disposal facility, both go in Scope 3 Category 5. Build the line from three parts: methane from the COD you send, your share of the CETP's energy, and the sludge tonnes and trips on each disposal manifest.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "etp-wastewater-methane-emissions",
   "q": "How do I estimate methane from my effluent treatment plant?",
   "title": "Methane from an effluent treatment plant",
@@ -945,6 +1065,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Four, mostly through your EU customer rather than directly: the CSRD, through value chain data requests; the Batteries Regulation, which requires a carbon footprint for certain batteries; the Ecodesign for Sustainable Products Regulation, through product rules and digital passports; and the CSDDD, for the largest EU buyers. Omnibus I has narrowed the CSRD and CSDDD.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "eu-taxonomy-alignment-turnover-capex-opex",
+  "q": "How is EU Taxonomy alignment calculated as a share of turnover, CapEx and OpEx?",
+  "title": "EU Taxonomy turnover, CapEx and OpEx KPIs",
+  "short": "Each KPI is a fraction: the part of turnover, capital expenditure or operating expenditure that comes from Taxonomy-aligned activities, divided by the company's total for that item. An activity is aligned only if it is eligible, meets the substantial contribution criteria, does no significant harm and meets minimum safeguards.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "eu-taxonomy-dnsh-criteria-explained",
@@ -1067,6 +1195,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "free-climate-hazard-data-india-factory",
+  "q": "Where can I get free climate hazard data for a factory location in India?",
+  "title": "Free climate hazard data for Indian sites",
+  "short": "Start with IMD for heat, rain, cyclones and drought, NRSC's Bhuvan for flood hazard maps, India-WRIS and the Central Water Commission for river and groundwater data, and BMTPC's Vulnerability Atlas for earthquake, wind and flood zones. For future projections use the IPCC AR6 Interactive Atlas and WRI Aqueduct. All are free to view.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "free-grid-emission-factors-by-country",
   "q": "Are IEA emission factors free, and what can I use instead for grid electricity by country?",
   "title": "Free grid emission factors by country",
@@ -1081,6 +1217,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "First rebuild the missing numbers from other papers for the same shipment: weight from your sales or purchase invoice and packing list, distance from the e-way bill or the two pincodes. Then use tonne-km times a mode factor. Fall back to a spend-based estimate only when that fails, and label it as one.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "fuel-sellers-category-11-combustion-of-sold-fuel",
+  "q": "Do LPG, diesel or coal distributors report the combustion of the fuel they sell, and how big is it?",
+  "title": "Fuel distributors and sold fuel emissions",
+  "short": "Yes. A company that sells fuel reports the emissions from burning it in Scope 3 Category 11, use of sold products. Multiply the quantity sold by the fuel's emission factor. For a fuel dealer this figure is usually many times larger than its own Scope 1 and 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "furnace-oil-to-png-switch-emissions-saving",
@@ -1243,6 +1387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "higg-fem-energy-and-emissions-data",
+  "q": "What energy and emissions data does the Higg FEM ask textile suppliers for?",
+  "title": "Higg FEM energy and GHG data",
+  "short": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "hourly-grid-emission-factors-india",
   "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
   "title": "Hourly grid emission factors in India",
@@ -1353,6 +1505,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Article 10 of the CBAM Regulation lets a producer outside the EU ask to be registered in the CBAM Registry with its installations. Once registered, it can share its verified embedded emissions with every EU declarant that buys from it. It is worth doing if you sell to several EU importers and your actual emissions beat the default values.",
   "topic": "regulation",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "how-scrap-rate-affects-carbon-per-unit",
+  "q": "How does scrap rate change the carbon footprint per unit of product?",
+  "title": "How scrap rate changes carbon per unit",
+  "short": "Scrap raises the footprint of every good unit, because the material and energy spent on rejected parts and offcuts are shared over the good output only. Carbon per good unit equals total process emissions divided by good units, so a 5% reject rate adds about 5.3% to each good part.",
+  "topic": "product",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "how-to-add-carbon-criteria-to-supplier-selection",
@@ -1585,6 +1745,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Use two checks. A file fingerprint (SHA-256 hash) blocks the exact same file being uploaded again. A business key, the supplier's GSTIN plus invoice number and date, catches the same invoice arriving as a new scan, photo or email copy, which a file hash cannot. Review any match before deleting it.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "how-to-write-climate-transition-plan-small-company",
+  "q": "How does a small company write a credible climate transition plan?",
+  "title": "Writing a credible transition plan",
+  "short": "Write it in order: fix a measured baseline, choose a dated target, list actions with the tonnes and money behind each, check the actions add up to the target, state your assumptions and dependencies, then have the owner approve it and set a yearly review. Credibility comes from the numbers reconciling, not from length.",
+  "topic": "regulation",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "hsn-code-emission-factor-mapping",
@@ -1859,6 +2027,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "landlord-reporting-tenant-emissions-industrial-sheds",
+  "q": "If we lease out industrial sheds or warehouse space, do we report the tenants' electricity as Category 13?",
+  "title": "Landlords and tenant electricity: Category 13",
+  "short": "Usually yes. Under operational control, tenants run the sheds, so their electricity goes in your Scope 3 Category 13, downstream leased assets. Under financial control or equity share with an operating lease, it goes in your Scope 1 and 2. Electricity for common areas you run stays in your Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "lca-vs-product-carbon-footprint",
   "q": "What is the difference between an LCA and a product carbon footprint, and which one does my buyer actually need?",
   "title": "LCA or product carbon footprint?",
@@ -1912,6 +2088,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Match Indian HSN to the EU CN code",
   "short": "Match on the first six digits. They come from the World Customs Organization's Harmonized System and are the same in India and the EU. Then pick the EU 8 digit CN code under that subheading whose description fits your goods, and confirm it with your EU importer, who declares it.",
   "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "maximum-demand-charges-peak-shaving",
+  "q": "How are maximum demand charges calculated on an HT bill, and does peak shaving cut them?",
+  "title": "Maximum demand charges and peak shaving",
+  "short": "Your demand charge is the month's billing demand in kVA multiplied by the per kVA rate in your tariff. Billing demand is whichever is larger: the highest 15 or 30 minute average load recorded, or a fixed share of contract demand. Peak shaving saves money only above that floor and rarely cuts emissions.",
+  "topic": "accounting",
   "reviewed": "2026-10-16"
  },
  {
@@ -1987,6 +2171,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ocr-vs-ai-vision-invoice-extraction",
+  "q": "What is the difference between template OCR and AI vision for reading invoices?",
+  "title": "Template OCR or AI vision for invoices?",
+  "short": "Template OCR turns the page into text and pulls each field from a fixed position you set up per supplier layout. AI vision reads the whole page, layout and text together, and fills named fields without a template. Templates suit a few stable layouts; AI vision suits many suppliers and photos, if every value is checked.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "open-access-green-power-on-bill-scope-2",
   "q": "Open access green power shows on my HT bill. How do I report it in Scope 2?",
   "title": "Open access green power on an HT bill",
@@ -2001,6 +2193,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Most family groups should use operational control: count 100% of every unit the group runs day to day, and nothing from units it only invests in. Use equity share when partly owned units run by partners are a large part of the group and your buyers or lenders want emissions in line with ownership.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "packaging-carbon-footprint-export-shipment",
+  "q": "How do I calculate the carbon footprint of the packaging on my exports?",
+  "title": "Packaging footprint on export shipments",
+  "short": "Weigh each packaging material per shipment (cartons, film, pallets, labels, strapping), multiply each weight by a material emission factor in kg CO2e per kg, add them up and divide by the units shipped. Use your packaging supplier's own footprint where you have one, and say which factors you used.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "packaging-end-of-life-emissions-food-exporters",
+  "q": "How do food processors calculate end-of-life emissions of the packaging they sell, and does India's plastic EPR data help?",
+  "title": "End-of-life emissions of sold packaging",
+  "short": "Take the tonnes of each packaging material you put on the market, split them by how they are disposed of in the country of sale, and multiply each share by a factor for that route. Report it in Scope 3 Category 12. EPR data gives you tonnes placed on the market, not actual disposal routes.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "pact-pathfinder-framework-explained",
@@ -2019,11 +2227,27 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "physical-vs-virtual-ppa-india-scope-2",
+  "q": "Can an Indian company use a virtual PPA for market-based Scope 2?",
+  "title": "Virtual PPAs and Scope 2 in India",
+  "short": "Yes, through the RECs it delivers. A virtual PPA settles only the price difference, so no power reaches you; your market-based claim rests on the Indian RECs transferred to you and retired in your name. CERC issued guidelines for virtual PPAs on 24 December 2025, under which those RECs cannot be traded.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "plastic-epr-recycled-content-targets",
   "q": "What recycled plastic content must my packaging have under India's EPR rules?",
   "title": "Recycled content targets for plastic packaging",
   "short": "Rigid plastic packaging (Category I) must contain 30% recycled plastic in 2025-26, rising to 40%, 50% and then 60% from 2028-29, under Schedule II of India's Plastic Waste Management Rules. Flexible packaging starts at 10% and multilayer at 5%, rising later; confirm each year's figure in the current Schedule II.",
   "topic": "regulation",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "power-factor-rebate-and-penalty",
+  "q": "How do power factor penalties and rebates work on Indian electricity bills?",
+  "title": "Power factor penalties and rebates explained",
+  "short": "On kWh-billed tariffs, your state commission sets a power factor band: below a floor, often 0.90, the discom adds a surcharge, and above a higher mark, often 0.95, some states give a rebate. On kVAh-billed tariffs there is usually no separate charge, because a low power factor already raises the billed units.",
+  "topic": "accounting",
   "reviewed": "2026-10-16"
  },
  {
@@ -2048,6 +2272,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Process vs combustion emissions in Scope 1",
   "short": "Both are Scope 1, and the GHG Protocol only requires the Scope 1 total. But you should keep them as separate lines. CBAM installation monitoring treats them as separate source streams, IPCC puts them in different volumes, and buyers and lenders need the split because a fuel switch cuts only the combustion part.",
   "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "prove-additionality-energy-efficiency-project",
+  "q": "How do I prove additionality for an energy efficiency or fuel switch project?",
+  "title": "Proving additionality for a factory project",
+  "short": "Show four things with dated documents: you considered carbon credits before you committed money, no law required the change, the project is not financially attractive without credit revenue or faces real barriers, and similar plants nearby have not already made the same change. Small projects may qualify through a simplified route.",
+  "topic": "markets",
   "reviewed": "2026-10-16"
  },
  {
@@ -2155,6 +2387,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "saf-certificates-scope-3-business-travel",
+  "q": "Can SAF certificates (book and claim) reduce my Scope 3 business travel or air freight emissions?",
+  "title": "Do SAF certificates cut Scope 3 travel?",
+  "short": "Not inside your GHG Protocol inventory today. The Scope 3 Standard has no market-based method, so Category 6 travel and Category 4 or 9 air freight stay at their activity-based figure. You can report SAF certificate claims separately, next to the inventory, with full certificate details. Rules are under revision.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "sb-253-who-must-report",
   "q": "Does California SB 253 apply to an Indian company's US subsidiary?",
   "title": "Does SB 253 cover our US subsidiary?",
@@ -2179,12 +2419,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "scrap-sold-for-recycling-scope-3",
+  "q": "We sell steel or aluminium scrap to recyclers. What goes in our Scope 3 Category 5 line for it?",
+  "title": "Scrap sold for recycling in Category 5",
+  "short": "Scrap you sell to a recycler still sits in Category 5, but under the GHG Protocol's recycled content method your line covers only moving the scrap to the recycler, and only if you include waste transport. Recycling process emissions are zero in your inventory because they belong to whoever uses the recycled metal.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "sea-freight-emissions-per-container-india-to-europe",
   "q": "How do I calculate the emissions of one container shipped from India to Europe?",
   "title": "Emissions of one container, India to Europe",
   "short": "Multiply the cargo's gross weight in tonnes by the port to port sea distance in km, then by a well-to-wake container ship factor in kg CO2e per tonne-km. Add the truck or rail legs to and from the ports separately. If you only know the container count, use a per TEU-km factor and label it an estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "sec-climate-rule-indian-suppliers",
+  "q": "Does the US SEC climate disclosure rule apply to Indian suppliers?",
+  "title": "SEC climate rule and Indian suppliers",
+  "short": "No. The SEC climate disclosure rule never placed any duty on suppliers. It covered only companies that file reports with the SEC, it dropped Scope 3 before adoption, and it has been stayed since April 2024 without ever taking effect. An Indian supplier with no US listing has nothing to file under it.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "sec-climate-rule-status-us-buyers",
@@ -2199,6 +2455,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "q": "Can I claim a carbon credit for selling or recycling my production scrap?",
   "title": "Carbon credit for selling scrap?",
   "short": "No. Selling or recycling your production scrap does not earn a carbon credit and cannot be subtracted from your footprint. Credits come only from registered, verified projects, and the GHG Protocol keeps avoided emissions outside your inventory totals. The benefit of recycling is counted by whoever uses the recycled material.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "sf6-switchgear-leak-scope-1",
+  "q": "Do SF6 leaks from my factory's HT switchgear count in Scope 1, and how do I calculate them?",
+  "title": "SF6 switchgear leaks in Scope 1",
+  "short": "Yes. If you own or operate the 11 kV or 33 kV switchgear, SF6 that leaks from it is a Scope 1 fugitive emission. Calculate it as kilograms of SF6 lost times its GWP, using refill quantities from service reports, or nameplate charge times a leak rate when no refill data exists.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
  },
@@ -2251,6 +2515,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "singapore-climate-reporting-indian-subsidiaries",
+  "q": "Does Singapore's mandatory climate reporting apply to my Indian group's Singapore company?",
+  "title": "Singapore climate reporting for Indian groups",
+  "short": "Only if the Singapore company is listed on SGX, or is a large non-listed company with annual revenue of at least SGD 1 billion and total assets of at least SGD 500 million. Listed issuers report Scope 1 and Scope 2 from FY2025; in August 2025 the start for large non-listed companies was pushed back by several years.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "sll-kpi-verification-what-verifier-checks",
   "q": "What does a verifier check on a sustainability-linked loan KPI?",
   "title": "What an SLL KPI verifier checks",
@@ -2275,6 +2547,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "soil-carbon-baseline-sampling-depth",
+  "q": "How deep and how many samples do you need for a soil carbon baseline?",
+  "title": "Soil carbon baseline: depth and sample count",
+  "short": "Sample to at least 30 cm, the minimum depth Verra's VM0042 requires for soil carbon stock change and the IPCC default for mineral soils. The number of samples is not fixed: work it out per stratum from the variation found in a pilot round and the precision you need.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "soil-carbon-credits-india-farmers",
+  "q": "Can Indian farmers or agri companies earn soil carbon credits, and how is it measured?",
+  "title": "Soil carbon credits for Indian farmers",
+  "short": "Yes, but not one farm at a time. Soil carbon credits come from a project that changes practices on many farms, such as reduced tillage or cover crops, under a methodology like Verra's VM0042. Carbon gains are measured with soil samples, usually combined with a calibrated model, and cut for uncertainty and reversal risk.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "solar-diesel-microgrid-carbon-intensity",
   "q": "How do I calculate the carbon intensity of a solar plus diesel microgrid?",
   "title": "Carbon intensity of a solar and DG microgrid",
@@ -2289,6 +2577,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "solvent-incineration-emissions-pharma-api",
+  "q": "How do pharma API plants account for emissions from solvent incineration and recovery?",
+  "title": "Solvent incineration emissions at API plants",
+  "short": "Spent solvent burnt in your own incinerator is Scope 1: CO2 equals the mass burnt times its fossil carbon fraction times 44/12. Solvent sent to an outside incinerator or co-processor is Scope 3 Category 5. Solvent you recover and reuse is not burnt, so only the energy used to distil it counts.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "spend-based-scope-3-gst-inflation-currency",
@@ -2353,6 +2649,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. Scope 3 is built to overlap with other companies' Scope 1 and 2, and the GHG Protocol accepts that overlap between inventories. Double counting is a problem when you count the same emissions twice inside your own inventory, when two parties claim the same reduction or offset, or when company inventories are added together.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "sustainability-linked-bond-coupon-step-up",
+  "q": "How does a sustainability-linked bond coupon step-up work if a target is missed?",
+  "title": "SLB coupon step-up when a target is missed",
+  "short": "If the issuer misses its sustainability performance target on the observation date, the bond's coupon rises by a fixed margin, often quoted in basis points, from the next coupon period, usually until maturity. The money raised can be used for any purpose; the penalty is the only link to the target.",
+  "topic": "markets",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "sustainability-linked-loan-kpi-examples",
@@ -2467,11 +2771,35 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "warehouse-emissions-allocation-3pl",
+  "q": "How do I allocate a shared 3PL warehouse's emissions to my goods?",
+  "title": "Your share of a shared 3PL warehouse",
+  "short": "Work out the whole site's emissions from its electricity, diesel and refrigerant records, then take your share by tonnes handled, the default key for logistics hubs under the GLEC Framework and ISO 14083. Use pallet-days instead when goods sit for long periods. Report the result as Scope 3 Category 4.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "waste-emissions-scope-3-category-5",
+  "q": "How do I calculate emissions from my factory's waste for Scope 3 Category 5?",
+  "title": "Factory waste emissions for Category 5",
+  "short": "Weigh your waste by type and disposal route from weighbridge slips and contractor invoices, then multiply each tonnage by an emission factor for that type and route, and add them up. This is the GHG Protocol's waste-type-specific method. Landfilled organic waste usually dominates; recycled material carries only a small factor.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "waste-heat-recovery-power-which-scope",
   "q": "Is electricity from a waste heat recovery system zero emission in my inventory?",
   "title": "Waste heat recovery power: which scope?",
   "short": "Yes, in effect: power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
   "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "water-intensity-calculation-for-brsr",
+  "q": "How do I calculate water withdrawal, consumption and water intensity for BRSR?",
+  "title": "Water withdrawal and intensity for BRSR",
+  "short": "Add up all water drawn in the year by source, in kilolitres: that is withdrawal. Subtract water discharged to get consumption. Divide consumption by revenue from operations for intensity per rupee, and by revenue converted at the PPP rate for the BRSR Core figure. Report a physical output intensity too if it suits your sector.",
+  "topic": "regulation",
   "reviewed": "2026-10-16"
  },
  {
@@ -2627,6 +2955,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "what-to-include-in-a-sustainable-procurement-policy",
+  "q": "What should a sustainable procurement policy include for a mid-sized Indian company?",
+  "title": "What goes in a sustainable procurement policy",
+  "short": "A sustainable procurement policy should state its scope, your commitments on environment, labour and ethics, how priority categories are chosen, what suppliers must sign and share, how requirements enter tenders and contracts, the KPIs you will track, and who owns and reviews it. Two to four pages is enough for most mid-sized firms.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "what-to-put-in-ppa-for-carbon-claim",
+  "q": "What should a renewable PPA contract say so my buyer accepts the carbon claim?",
+  "title": "PPA clauses for a renewable power claim",
+  "short": "The PPA should name the generating plant, transfer all environmental attributes of each MWh to you alone, bar the generator from selling those attributes again, match delivery to your consumption period and grid, and give you the metering data and certificate retirement records. Without these, a buyer can reject the market-based Scope 2 claim.",
+  "topic": "markets",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "when-is-a-scope-3-target-required-sbti",
   "q": "When does SBTi require a Scope 3 target?",
   "title": "When SBTi requires a Scope 3 target",
@@ -2683,6 +3027,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "which-scope-3-categories-matter-for-it-services",
+  "q": "Which Scope 3 categories actually matter for an IT services or BPO company?",
+  "title": "Scope 3 categories for IT services and BPO",
+  "short": "For an IT services or BPO company, four Scope 3 categories usually carry most of the tonnes: purchased goods and services such as cloud and subcontractors (Category 1), laptops, servers and office fit-outs (Category 2), business travel (Category 6) and employee commuting (Category 7). Downstream categories rarely apply because you sell no physical product.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
+ },
+ {
   "slug": "which-steel-plant-upgrades-cut-cbam-most",
   "q": "Which upgrades cut a steel plant's CBAM cost the most per rupee spent?",
   "title": "Steel upgrades that cut CBAM cost most",
@@ -2697,6 +3049,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Start with the few suppliers behind most of your estimated Scope 3 emissions, not most of your spend. Rank purchases by spend or quantity times a rough factor, take the suppliers that make up about 80% of the total, then move up anyone selling CBAM goods or whom your buyer names.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "which-textile-tier-has-most-emissions",
+  "q": "Which stage of the textile supply chain has the most emissions: fibre, spinning, weaving or dyeing?",
+  "title": "Which textile stage has the most emissions?",
+  "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
+  "topic": "product",
+  "reviewed": "2026-10-16"
  },
  {
   "slug": "who-is-still-in-scope-of-csrd",
@@ -2715,12 +3075,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "who-runs-india-carbon-market-registry",
+  "q": "Who runs India's carbon market registry and trading platform?",
+  "title": "Who runs India's carbon market registry?",
+  "short": "Grid Controller of India Limited is the registry for India's Carbon Credit Trading Scheme. The Bureau of Energy Efficiency (BEE) administers the scheme, the Central Electricity Regulatory Commission (CERC) regulates trading, and carbon credit certificates trade on CERC-registered power exchanges. A national steering committee oversees it all.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "why-ai-gives-different-numbers-for-same-bill",
   "q": "Why does ChatGPT give different numbers each time I upload the same bill?",
   "title": "Why AI reads one bill two different ways",
   "short": "A general chat assistant samples its reply word by word with some randomness, and it has no fixed list of fields to fill or record of what it read last time. So the same bill can come back with different units, totals or line splits. For carbon figures you need fixed fields, stored results and a check on every number.",
   "topic": "product",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "why-eu-fund-asks-for-sfdr-pai-data",
+  "q": "Why is an EU investor asking my company for SFDR principal adverse impact data?",
+  "title": "Why EU funds ask for SFDR PAI data",
+  "short": "An EU fund asks for principal adverse impact (PAI) data because SFDR makes the fund report the harm its investments cause, such as emissions, using figures from each company it holds. Without your numbers it must use estimates and say so. The fund carries the legal duty; you supply the inputs.",
+  "topic": "regulation",
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "why-icvcm-rejected-renewable-energy-credits",
@@ -2739,11 +3115,27 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "why-two-tools-give-different-scope-3-numbers",
+  "q": "Why do two carbon tools give different Scope 3 totals for the same purchase data?",
+  "title": "Why two tools give different Scope 3 totals",
+  "short": "Two tools give different Scope 3 totals from the same purchases because they use different methods and factors: one may multiply rupee spend by an economic factor while the other multiplies tonnes by a material factor. Currency, GST, factor year, region and category mapping each move the result. Compare a sample of lines, not the totals.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "will-auditors-accept-ai-extracted-carbon-data",
   "q": "Will an auditor accept carbon data that was extracted by AI?",
   "title": "Do auditors accept AI-extracted data?",
   "short": "Yes, if the evidence holds up. An auditor or verifier does not approve or reject a tool. They test whether sampled figures trace to source documents, whether the calculation recomputes, and whether your process catches errors. AI extraction passes when every value links to its original file and the controls around it are documented.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "zld-plant-energy-and-carbon-per-kl",
+  "q": "How much energy and CO2 does a zero liquid discharge (ZLD) plant add per kilolitre?",
+  "title": "ZLD plant energy and CO2 per kilolitre",
+  "short": "It depends on how much reject goes to thermal evaporation and what fuel makes the steam, so measure it. CO2 per kL = (ZLD electricity in kWh x 0.710 + boiler fuel for ZLD steam x its fuel factor) / kL treated. Where a coal boiler makes the evaporator steam, steam often outweighs RO electricity.",
+  "topic": "accounting",
+  "reviewed": "2026-10-16"
  }
 ];

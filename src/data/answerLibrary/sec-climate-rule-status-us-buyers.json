@@ -48,6 +48,10 @@
     {
       "label": "Answering a CDP supply chain request",
       "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "Does the SEC rule apply to Indian suppliers?",
+      "to": "/answers/sec-climate-rule-indian-suppliers"
     }
   ],
   "sources": [

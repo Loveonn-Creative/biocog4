@@ -19,7 +19,7 @@
     {
       "h": "When power comes through your connection",
       "p": [
-        "Many estates take one HT connection and bill tenants by sub-meter. The kWh on tenants' sub-meters are their Scope 2 under operational control. Take them out of your own Scope 2 and report them in Category 13, so your Scope 2 covers only common areas and your own office. Keep the main meter, sub-meter totals and losses reconciled."
+        "Many estates take one HT connection and bill tenants by sub-meter. The kWh on tenants' sub-meters are their Scope 2 under operational control. Take them out of your own Scope 2 and report them in Category 13, so your Scope 2 covers only common areas and your own office. Keep the main meter, sub-meter totals and losses reconciled, and count each tenant kWh once: here in Category 13, not again as resold electricity in Category 3."
       ]
     },
     {
@@ -73,5 +73,5 @@
       "url": "https://ghgprotocol.org/corporate-standard"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

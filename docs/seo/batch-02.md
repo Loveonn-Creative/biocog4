@@ -7,6 +7,7 @@
 | A (priority 1, rows 1 to 50) | 50 | 50 | 2 (duplicates: dg-power-vs-grid-electricity-carbon-per-kwh, is-india-low-risk-under-eudr; in docs/seo/held/) | 48 |
 | B (rows 51 to 100) | 50 | 50 | 1 (duplicate: how-is-buffer-pool-contribution-calculated, folded into how-much-of-my-credits-go-to-buffer-pool; in docs/seo/held/) | 49 |
 | C (rows 101 to 150) | 50 | 50 | 2 (group-captive-solar-scope-2-reporting: same intent as live group-captive-solar-scope-2, its BRSR table and method note to be added there instead; rail-vs-road-freight-emissions-india: per tonne-km figures not checkable against GLEC tables; in docs/seo/held/) | 48 |
+| D (rows 151 to 200) | 49 | 49 | 1 not written (depreciation-on-solar-and-energy-saving-equipment: no allowed income tax source; Income-tax Act 2025 rates unconfirmed) | 49 |
 
 Each page is drafted, then independently reviewed for accuracy against primary sources, originality against the nearest live page, search intent, quality and duplication. Pages that cannot be made certain are held, not published. Links to batch 2 pages not yet live are deferred and added when those pages publish.
 

@@ -28,7 +28,7 @@
     {
       "h": "Which GWP to use",
       "p": [
-        "Under IPCC AR5 the 100-year GWP of SF6 is 23,500. AR6 gives a higher value; take it from AR6 WG1 Chapter 7, Table 7.SM.7. Use the same set as the rest of your inventory and state it. Small leaks matter: 1 kg of SF6 is 23.5 t CO2e under AR5."
+        "Under IPCC AR5 the 100-year GWP of SF6 is 23,500. Under AR6 it is 25,200 (WG1 Chapter 7, Table 7.SM.7). Use the same set as the rest of your inventory and state it. Small leaks matter: 1 kg of SF6 is 23.5 t CO2e under AR5 and 25.2 t CO2e under AR6."
       ]
     }
   ],
@@ -37,13 +37,13 @@
     "lines": [
       "Eight gas-insulated panels, nameplate SF6 total: 40 kg",
       "Screening, at an assumed 0.5% a year from the data sheet: 40 x 0.005 = 0.2 kg",
-      "0.2 x 23,500 (AR5) = 4,700 kg CO2e, about 4.7 t CO2e",
+      "0.2 x 23,500 (AR5) = 4,700 kg CO2e, about 4.7 t CO2e; 0.2 x 25,200 (AR6) = 5,040 kg CO2e",
       "Actual: service report shows 1.5 kg refilled in the year",
-      "1.5 x 23,500 = 35,250 kg CO2e, about 35.3 t CO2e"
+      "1.5 x 23,500 (AR5) = 35,250 kg CO2e, about 35.3 t CO2e; 1.5 x 25,200 (AR6) = 37,800 kg CO2e, about 37.8 t CO2e"
     ],
     "note": "The 0.5% rate is illustrative. When refill records exist, use them: here they give a figure seven and a half times the screening estimate."
   },
-  "senseible": "Senseible calculates fugitive emissions such as SF6 only when you supply measured data, for example kilograms refilled on a service report. It does not estimate leaks from equipment lists or nameplates.",
+  "senseible": "Senseible calculates fugitive emissions such as SF6 from measured data, for example the kilograms refilled on a service report, and keeps that report as the evidence behind the Scope 1 line.",
   "links": [
     {
       "label": "AR5 or AR6 GWP values",
@@ -72,5 +72,5 @@
       "url": "https://www.ipcc.ch/report/ar6/wg1/"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

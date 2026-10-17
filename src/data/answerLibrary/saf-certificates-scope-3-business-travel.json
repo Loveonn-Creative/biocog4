@@ -47,7 +47,7 @@
     ],
     "note": "Figures are illustrative. If a future method allows the deduction, the same records would support 200 minus 15 = 185 t CO2e."
   },
-  "senseible": "SAF certificate purchase and retirement sit outside Senseible's invoice workflow. Senseible keeps your travel and freight invoices and the certificate documents together as evidence, and keeps the Scope 3 lines at their activity-based figures.",
+  "senseible": "Senseible keeps your travel and freight invoices together with the SAF certificate and retirement documents, so the activity-based Scope 3 lines and the separate certificate claim rest on one evidence file.",
   "links": [
     {
       "label": "Flight emissions for business travel",
@@ -76,6 +76,6 @@
       "url": "https://www.smartfreightcentre.org"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "GHG Protocol and SBTi positions on certificates in Scope 3 are under revision; recheck before each reporting cycle."
 }
