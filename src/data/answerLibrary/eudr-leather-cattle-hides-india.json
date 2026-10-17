@@ -37,7 +37,7 @@
       ]
     }
   ],
-  "senseible": "Senseible's supplier due diligence screen lists \"Cattle, leather\" as one of its EUDR commodity groups, so treat a leather flag there as a prompt to confirm the current Annex I rather than as proof that EUDR applies. It does not collect origin data or file due diligence statements.",
+  "senseible": "Senseible's supplier due diligence screen treats cattle (live cattle and beef) as an EUDR commodity; hides and leather are no longer in Annex I. Senseible reads the HSN code on each supplier invoice line, so you can show which of your shipments fall outside the current Annex I.",
   "links": [
     {
       "label": "Does EUDR apply to my Indian exports?",
