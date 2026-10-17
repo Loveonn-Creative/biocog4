@@ -19,6 +19,7 @@ import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/work
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
 import { checkUploadPages } from '@/lib/pdfLimit';
+import { prepareImageForUpload } from '@/lib/imageUpload';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
@@ -553,8 +554,10 @@ const Index = () => {
           return;
         }
       }
-      const imageBase64 = await fileToBase64(file);
-      const mimeType = file.type || 'image/jpeg';
+      // Large photos are resized first, so the upload is quick on mobile networks.
+      const sendFile = await prepareImageForUpload(file);
+      const imageBase64 = await fileToBase64(sendFile);
+      const mimeType = sendFile.type || 'image/jpeg';
 
       
       // Pass sessionId to edge function for guest user data linking

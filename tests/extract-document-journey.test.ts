@@ -62,7 +62,7 @@ class Query {
 
 const client = {
   from: (t: string) => new Query(t),
-  rpc: async () => ({ data: null, error: { code: 'PGRST202', message: 'function not found' } }),
+  rpc: async (name: string, args: any) => rpcHandler(name, args),
   // Only the financial bucket accepts files in these tests (the invoice
   // source bucket is "not ready", as before its migration).
   storage: { from: (bucket: string) => ({
@@ -76,6 +76,10 @@ const client = {
 };
 
 let handler: (req: Request) => Promise<Response>;
+// RPC stand-in: "not found" (ledger not migrated) unless a test sets one.
+const notFound = async () => ({ data: null, error: { code: 'PGRST202', message: 'function not found' } });
+let rpcHandler: (name: string, args: any) => Promise<any> = notFound;
+const rpcCalls: Array<{ name: string; args: any }> = [];
 mock.module('https://deno.land/std@0.168.0/http/server.ts', () => ({ serve: (fn: any) => { handler = fn; } }));
 mock.module('https://esm.sh/@supabase/supabase-js@2', () => ({ createClient: () => client }));
 mock.module('https://esm.sh/pdf-lib@1.17.1', () => ({}));
@@ -115,7 +119,7 @@ const diesel = (qty: string | null, number = 'INV-118') => ({
   lineItems: [{ description: 'HSD Diesel', hsn_code: '2710', quantity: qty, unit: qty ? 'litre' : null, total: '4,690' }],
 });
 
-beforeEach(() => { for (const k of Object.keys(db)) delete db[k]; for (const k of Object.keys(stored)) delete stored[k]; seq = 0; });
+beforeEach(() => { rpcHandler = notFound; rpcCalls.length = 0; for (const k of Object.keys(db)) delete db[k]; for (const k of Object.keys(stored)) delete stored[k]; seq = 0; });
 
 describe('invoice to stored records, through the real handler', () => {
   test('a readable fuel invoice: document and emission row are created on the server', async () => {
@@ -471,5 +475,55 @@ describe('reading budget', () => {
     const body = JSON.parse(String(lastBody));
     expect(body.max_tokens).toBe(4096);
     expect(body.model).toContain('flash');
+  });
+});
+
+
+describe('reads ledger', () => {
+  const ledger = (reserve: any) => async (name: string, args: any) => {
+    rpcCalls.push({ name, args });
+    if (name === 'reserve_invoice_read') return { data: reserve, error: null };
+    if (!/_invoice_read$/.test(name)) return notFound();
+    return { data: true, error: null };
+  };
+  const settled = () => rpcCalls.filter((c) => /_invoice_read$/.test(c.name) && c.name !== 'reserve_invoice_read').map((c) => c.name);
+
+  test('a read is reserved with its page count and committed with the stored document', async () => {
+    rpcHandler = ledger({ ok: true, id: 'read-1', units: 1 });
+    ocr = { ...diesel('10', 'INV-L1'), documentTitle: 'Tax Invoice' };
+    const r = await upload('l1');
+    expect(r.status).toBe(200);
+    const reserve = rpcCalls.find((c) => c.name === 'reserve_invoice_read')!;
+    expect(reserve.args).toMatchObject({ p_pages: 1, p_plan_limit: 10 });
+    expect(settled()).toEqual(['commit_invoice_read']);
+    expect(rpcCalls.at(-1)!.args).toMatchObject({ p_id: 'read-1', p_document_id: db.documents[0].id });
+  });
+
+  test('the same invoice as another file is released, not counted', async () => {
+    ocr = { ...diesel('10', 'INV-L2'), documentTitle: 'Tax Invoice' };
+    await upload('l2');
+    rpcHandler = ledger({ ok: true, id: 'read-2', units: 1 });
+    const r = await upload('l3');
+    expect(r.body.duplicateReason).toBe('same_invoice');
+    expect(settled()).toEqual(['release_invoice_read']);
+  });
+
+  test('a failed read is released', async () => {
+    rpcHandler = ledger({ ok: true, id: 'read-3', units: 1 });
+    ocr = 500;
+    await upload('l4');
+    expect(settled()).toEqual(['release_invoice_read']);
+  });
+
+  test('over the limit with no credits: refused before the AI reads it, with a top-up hint', async () => {
+    rpcHandler = ledger({ ok: false, reason: 'limit', used: 10, credits: 0, units: 3 });
+    ocr = diesel('10', 'INV-L5');
+    lastBody = null;
+    const r = await upload('l5');
+    expect(r.status).toBe(429);
+    expect(r.body).toMatchObject({ code: 'monthly_limit', topUp: true });
+    expect(r.body.error).toContain('top up credits');
+    expect(lastBody).toBeNull(); // the AI was never called
+    expect(db.documents ?? []).toHaveLength(0);
   });
 });

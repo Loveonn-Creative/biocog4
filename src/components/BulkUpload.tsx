@@ -22,8 +22,8 @@ import { cn } from '@/lib/utils';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
 import { checkUploadPages, estimateReads, pageCountOf } from '@/lib/pdfLimit';
-import { usePremiumStatus } from '@/hooks/usePremiumStatus';
-import { monthStartIst } from '../../supabase/functions/_shared/planLimits';
+import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
+import { prepareImageForUpload } from '@/lib/imageUpload';
 import { splitPdf } from '@/lib/pdfSplit';
 import { offsetSourcePages } from '../../supabase/functions/_shared/extractionChecks';
 import { cacheGuestSource } from '@/lib/guestSourceCache';
@@ -56,26 +56,19 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
   const [files, setFiles] = useState<FileStatus[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
-  const { invoiceLimit } = usePremiumStatus();
-  // This month's reads, counted the way the server counts them (signed in only).
-  const [usedThisMonth, setUsedThisMonth] = useState<number | null>(null);
+  // This month's reads and credits, counted the way the server counts them (signed in only).
+  const allowance = useInvoiceAllowance();
+  const refreshUsed = allowance.refresh;
   const [estimate, setEstimate] = useState<{ reads: number; pages: number } | null>(null);
-  const refreshUsed = useCallback(async () => {
-    if (!user) { setUsedThisMonth(null); return; }
-    const { count, error } = await supabase.from('documents').select('id', { count: 'exact', head: true })
-      .eq('user_id', user.id).gte('created_at', monthStartIst());
-    setUsedThisMonth(error ? null : count ?? 0);
-  }, [user]);
-  useEffect(() => { void refreshUsed(); }, [refreshUsed]);
   // Estimate before upload, from the page count of each pending file.
   useEffect(() => {
     const pending = files.filter(f => f.status === 'pending' && f.fromPage === undefined).map(f => f.file);
     if (pending.length === 0) { setEstimate(null); return; }
     let live = true;
-    void Promise.all(pending.map(pageCountOf)).then(counts => { if (live) setEstimate(estimateReads(counts)); });
+    void Promise.all(pending.map(pageCountOf)).then(counts => { if (live) setEstimate(estimateReads(counts, allowance.pageCounting)); });
     return () => { live = false; };
-  }, [files]);
-  const remaining = usedThisMonth !== null ? Math.max(0, invoiceLimit - usedThisMonth) : null;
+  }, [files, allowance.pageCounting]);
+  const remaining = allowance.available;
   const overAllowance = !isProcessing && estimate !== null && remaining !== null && estimate.reads > remaining;
 
   const fileToBase64 = (file: File): Promise<string> => {
@@ -154,8 +147,9 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
       ));
 
       try {
-        const imageBase64 = await fileToBase64(fileStatus.file);
-        const mimeType = fileStatus.file.type || 'image/jpeg';
+        const sendFile = await prepareImageForUpload(fileStatus.file);
+        const imageBase64 = await fileToBase64(sendFile);
+        const mimeType = sendFile.type || 'image/jpeg';
 
         const { data, error } = await supabase.functions.invoke('extract-document', {
           body: { imageBase64, mimeType, sessionId, organizationId }
@@ -413,11 +407,11 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
             )}
 
             {/* Estimate before upload; the count after comes from the server's records. */}
-            {user && !isProcessing && (estimate || usedThisMonth !== null) && (
+            {user && !isProcessing && (estimate || remaining !== null) && (
               <p className={cn("pt-2 text-xs", overAllowance ? "text-destructive" : "text-muted-foreground")} role={overAllowance ? 'alert' : undefined}>
                 {estimate && pendingCount > 0 && `About ${estimate.reads} ${estimate.reads === 1 ? 'read' : 'reads'} (${estimate.pages} ${estimate.pages === 1 ? 'page' : 'pages'}). `}
-                {remaining !== null && `${remaining.toLocaleString('en-IN')} of ${invoiceLimit.toLocaleString('en-IN')} reads left this month.`}
-                {overAllowance && ' This batch needs more than you have left. Remove some files, upgrade on the Subscription page, or wait for the new month.'}
+                {remaining !== null && `${remaining.toLocaleString('en-IN')} reads left${allowance.credits ? ` (including ${allowance.credits.toLocaleString('en-IN')} credits)` : ' this month'}.`}
+                {overAllowance && <> Page limit reached for this batch. Remove some files, upgrade, wait until next month, or <a href="/profile#top-up" className="underline">top up credits now</a>.</>}
               </p>
             )}
 

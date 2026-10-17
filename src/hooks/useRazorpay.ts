@@ -7,7 +7,7 @@ import type { PaymentMethod } from '../../supabase/functions/_shared/checkoutTot
 
 const FN = (name: string) => `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/${name}`;
 
-async function authedPost(name: string, body: unknown): Promise<{ status: number; data: any }> {
+export async function authedPost(name: string, body: unknown): Promise<{ status: number; data: any }> {
   const { data: { session } } = await supabase.auth.getSession();
   const res = await fetch(FN(name), {
     method: 'POST',

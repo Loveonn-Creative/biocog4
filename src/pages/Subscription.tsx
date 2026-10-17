@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
+import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
@@ -42,7 +43,9 @@ const Subscription = () => {
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
   const { tier, isPremium } = usePremiumStatus();
   
-  const [usage, setUsage] = useState({ invoices: 0, reports: 0 });
+  const [usage, setUsage] = useState({ reports: 0 });
+  // Invoice reads from the reads ledger, as the server counts them; credits shown alongside.
+  const allowance = useInvoiceAllowance();
   const [isLoading, setIsLoading] = useState(true);
   const [subscriptions, setSubscriptions] = useState<any[]>([]);
 
@@ -61,12 +64,6 @@ const Subscription = () => {
       try {
         // This month's usage (India time), counted the way the server counts it.
         const since = monthStartIst();
-        const { count: docCount } = await supabase
-          .from('documents')
-          .select('*', { count: 'exact', head: true })
-          .eq('user_id', user.id)
-          .gte('created_at', since);
-
         const { count: reportCount } = await supabase
           .from('reports')
           .select('*', { count: 'exact', head: true })
@@ -80,10 +77,7 @@ const Subscription = () => {
           .eq('user_id', user.id)
           .order('created_at', { ascending: false });
 
-        setUsage({
-          invoices: docCount || 0,
-          reports: reportCount || 0,
-        });
+        setUsage({ reports: reportCount || 0 });
         setSubscriptions(subs || []);
       } catch (error) {
         console.error('Error fetching subscription data:', error);
@@ -179,10 +173,10 @@ const Subscription = () => {
                     Invoice Scans
                   </span>
                   <span className="font-medium">
-                    {usage.invoices} / {limits.invoices}
+                    {(allowance.used ?? 0)} / {limits.invoices}
                   </span>
                 </div>
-                <Progress value={(usage.invoices / limits.invoices) * 100} />
+                <Progress value={((allowance.used ?? 0) / limits.invoices) * 100} />
               </div>
 
               <div className="space-y-2">

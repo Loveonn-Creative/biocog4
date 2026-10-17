@@ -21,6 +21,8 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { activateOrder, revokeRefundedPayment } from "../_shared/razorpayActivation.ts";
 import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
+import { activateAddonOrder, refundAddonPayment } from "../_shared/addonActivation.ts";
+import { notifyServiceOrder } from "../_shared/addonNotify.ts";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
 const HANDLED = new Set(['payment.captured', 'order.paid']);
@@ -53,6 +55,8 @@ serve(async (req) => {
     if (!refundedPayment) return json({ ok: true, ignored: 'no payment' });
     try {
       const admin = createClient(SUPABASE_URL, SERVICE_KEY);
+      // Add-on purchases (credit packs, service orders) are marked refunded too.
+      try { await refundAddonPayment(admin, refundedPayment); } catch (e) { console.error('Add-on refund update failed:', e instanceof Error ? e.message : 'unknown'); }
       const r = await revokeRefundedPayment({ store: supabaseStore(admin), razorpay: razorpayApi(KEY_ID, KEY_SECRET) }, refundedPayment);
       console.log('Refund processed:', { payment: mask(refundedPayment), result: r.ok ? (r.revoked ? 'plan ended' : 'already ended') : r.code });
       return json({ ok: true, revoked: r.ok ? r.revoked : false, code: r.ok ? undefined : r.code });
@@ -73,6 +77,16 @@ serve(async (req) => {
       { store: supabaseStore(admin), razorpay: razorpayApi(KEY_ID, KEY_SECRET) },
       { orderId, paymentId },
     );
+    if (result.ok === false && result.code === 'order_missing') {
+      // Not a plan order: a profile purchase (credit pack or service order)?
+      const addon = await activateAddonOrder(admin, razorpayApi(KEY_ID, KEY_SECRET), { orderId, paymentId });
+      if (addon.ok) {
+        if (addon.activated && addon.table === 'service_orders') await notifyServiceOrder(admin, addon.rowId);
+        console.log('Webhook add-on processed:', { order: mask(orderId), activated: addon.activated });
+        return json({ ok: true, activated: addon.activated, addon: addon.kind });
+      }
+      if (addon.code === 'not_captured') return json({ error: 'Not captured yet' }, 500); // Razorpay retries
+    }
     if (result.ok === false) {
       // order_missing: not a Senseible plan order (or created elsewhere); acknowledged so Razorpay stops retrying.
       console.log('Webhook not activated:', result.code, { order: mask(orderId) });
