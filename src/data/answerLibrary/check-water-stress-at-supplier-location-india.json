@@ -42,21 +42,36 @@
   "example": {
     "title": "Worked example: reading a block's stage of extraction",
     "lines": [
-      "Block extraction: 1.20 billion cubic metres a year; annual extractable resource: 1.00 billion cubic metres (illustrative)",
-      "Stage of extraction: 1.20 / 1.00 = 120%, over-exploited",
+      "Block extraction: 12 million cubic metres a year; annual extractable resource: 10 million cubic metres (illustrative)",
+      "Stage of extraction: 12 / 10 = 120%, over-exploited",
       "Supplier draws 90% of its water from borewells and the basin is high stress in Aqueduct: rated High"
     ],
     "note": "Figures are illustrative; read the block's actual values from the latest CGWB assessment."
   },
   "senseible": "Senseible's climate risk service covers physical risks, including water stress at your own sites; for supplier locations, agree the scope with the Senseible team. Its supplier evidence trail lists who you buy from, which gives you the list of locations to screen.",
   "links": [
-    { "label": "Climate risk assessment", "to": "/climate-risk" },
-    { "label": "CDP water security for textile exporters", "to": "/answers/cdp-water-security-textile-exporter" },
-    { "label": "Supplier due diligence", "to": "/supplier-due-diligence" }
+    {
+      "label": "Climate risk assessment",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "CDP water security for textile exporters",
+      "to": "/answers/cdp-water-security-textile-exporter"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
   ],
   "sources": [
-    { "label": "CDP corporate questionnaire, water security module, water-stressed areas (cdp.net)", "url": "https://www.cdp.net" },
-    { "label": "ISO 14046:2014, Water footprint, water scarcity assessment (iso.org)", "url": "https://www.iso.org" }
+    {
+      "label": "CDP corporate questionnaire, water security module, water-stressed areas (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "ISO 14046:2014, Water footprint, water scarcity assessment (iso.org)",
+      "url": "https://www.iso.org"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "CGWB updates block categories with each new assessment and WRI revises Aqueduct; check the current editions."

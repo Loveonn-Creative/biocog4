@@ -19,7 +19,7 @@
     {
       "h": "Why fibre factors disagree",
       "p": [
-        "Fibre factors depend on the country, farm practice, allocation between cotton lint and cottonseed, the electricity mix at the polymer plant and the year of the data. Two respected databases can give the same fibre values that differ by a factor of two. A single number quoted without its dataset, edition and system boundary is not a fair basis for choosing a fibre.",
+        "Fibre factors depend on the country, farm practice, allocation between cotton lint and cottonseed, the electricity mix at the polymer plant and the year of the data. Two respected databases can give quite different values for the same fibre. A single number quoted without its dataset, edition and system boundary is not a fair basis for choosing a fibre.",
         "If a brand gives you its own fibre factors, use those for its questionnaire and say so. If not, pick one dataset for all fibres in the comparison and do not mix sources."
       ]
     },
@@ -52,16 +52,34 @@
     ],
     "note": "Coal is 84% of this dye house figure. Changing the boiler fuel can move the result more than changing the fibre."
   },
-  "senseible": "Senseible reads your mills' electricity bills and fuel invoices and applies the CEA grid factor and IPCC 2006 fuel factors, so the processing part of a fabric footprint rests on real bills. It does not hold fibre factors from textile datasets; you add those from the source your buyer accepts.",
+  "senseible": "Senseible reads your mills' electricity bills and fuel invoices and applies the CEA grid factor and IPCC 2006 fuel factors, so the processing part of a fabric footprint rests on real bills. You add the fibre factor from the dataset your buyer accepts, and the page above shows how to keep the comparison fair.",
   "links": [
-    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" },
-    { "label": "Which textile stage emits most", "to": "/answers/which-textile-tier-has-most-emissions" },
-    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+    {
+      "label": "Scope 3 for textile exporters in India",
+      "to": "/solutions/scope3-textile-india"
+    },
+    {
+      "label": "Which textile stage emits most",
+      "to": "/answers/which-textile-tier-has-most-emissions"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
   ],
   "sources": [
-    { "label": "ISO 14067:2018, Carbon footprint of products (iso.org)", "url": "https://www.iso.org" },
-    { "label": "2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
-    { "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method; apparel and footwear category rules in draft (eur-lex.europa.eu)", "url": "https://eur-lex.europa.eu" }
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method; check the status of the apparel and footwear category rules (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Fibre datasets and the EU apparel PEF category rules are revised often; check the edition your buyer names before comparing."

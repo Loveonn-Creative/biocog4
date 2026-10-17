@@ -2,7 +2,7 @@
   "slug": "which-textile-tier-has-most-emissions",
   "q": "Which stage of the textile supply chain has the most emissions: fibre, spinning, weaving or dyeing?",
   "title": "Which textile stage has the most emissions?",
-  "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Global studies put dyeing and finishing at roughly a third of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
+  "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
   "topic": "product",
   "intent": "explain",
   "audience": "Garment exporters prioritising supplier engagement",
@@ -47,19 +47,40 @@
       "Dye house (assumed 0.4 kWh and 0.6 kg coal per kg): 0.4 x 0.710 + 0.6 x 2.42 = 0.284 + 1.452 = 1.736 kg CO2",
       "Processing total: 2.485 + 0.355 + 1.736 = 4.576 kg CO2, about 4.58 kg per kg, of which the dye house is 38% and spinning 54%"
     ],
-    "note": "Energy use per kg is assumed for illustration. Replace each line with the supplier's own bills and output."
+    "note": "Energy use per kg is assumed for illustration. In this chain spinning comes out ahead of the dye house, which shows why your own suppliers' bills matter more than global shares. Replace each line with the supplier's own bills and output."
   },
-  "senseible": "A dye house or spinning mill can upload its own fuel and electricity bills to Senseible and get a document-backed Scope 1 and 2 figure to pass to you as measured supplier data. Senseible does not reach your tier 2 suppliers on your behalf or supply fibre factors.",
+  "senseible": "A dye house or spinning mill can upload its own fuel and electricity bills to Senseible and get a document-backed Scope 1 and 2 figure to pass to you as measured supplier data, which you can then rank by kg CO2 per kg fabric.",
   "links": [
-    { "label": "Which suppliers to engage first", "to": "/answers/which-suppliers-to-engage-first-on-scope-3" },
-    { "label": "Data from tier 2 suppliers", "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers" },
-    { "label": "Cotton or polyester fabric", "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint" },
-    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" }
+    {
+      "label": "Which suppliers to engage first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "Data from tier 2 suppliers",
+      "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers"
+    },
+    {
+      "label": "Cotton or polyester fabric",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Scope 3 for textile exporters in India",
+      "to": "/solutions/scope3-textile-india"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
-    { "label": "UNFCCC Fashion Industry Charter for Climate Action (unfccc.int)", "url": "https://unfccc.int" }
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "UNFCCC Fashion Industry Charter for Climate Action (unfccc.int)",
+      "url": "https://unfccc.int"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Stage shares are global averages from Quantis Measuring Fashion (2018); Indian chains may differ."

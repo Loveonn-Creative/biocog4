@@ -2,7 +2,7 @@
   "slug": "zld-plant-energy-and-carbon-per-kl",
   "q": "How much energy and CO2 does a zero liquid discharge (ZLD) plant add per kilolitre?",
   "title": "ZLD plant energy and CO2 per kilolitre",
-  "short": "It depends on how much reject goes to thermal evaporation and what fuel makes the steam, so measure it. CO2 per kL = (ZLD electricity in kWh x 0.710 + boiler fuel for ZLD steam x its fuel factor) / kL treated. Evaporator steam from a coal boiler usually outweighs RO electricity.",
+  "short": "It depends on how much reject goes to thermal evaporation and what fuel makes the steam, so measure it. CO2 per kL = (ZLD electricity in kWh x 0.710 + boiler fuel for ZLD steam x its fuel factor) / kL treated. Where a coal boiler makes the evaporator steam, steam often outweighs RO electricity.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Textile dyeing, pharma and tannery units under ZLD orders in Tamil Nadu, Gujarat and elsewhere",
@@ -53,15 +53,36 @@
   },
   "senseible": "Senseible reads the electricity bills and fuel invoices for your plant, including two meter readings in a photo of a sub-meter, whose difference it takes as units, and applies the CEA grid factor and IPCC 2006 fuel factors. Effluent and recovered water volumes come from your own flow meters.",
   "links": [
-    { "label": "Water and carbon for textile and leather MSMEs", "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather" },
-    { "label": "CO2 per tonne of steam", "to": "/answers/co2-per-tonne-of-steam" },
-    { "label": "Coal emission factor", "to": "/emission-factors/coal" },
-    { "label": "Effluent sent to a CETP", "to": "/answers/cetp-effluent-emissions-which-scope" }
+    {
+      "label": "Water and carbon for textile and leather MSMEs",
+      "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Effluent sent to a CETP",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    }
   ],
   "sources": [
-    { "label": "CPCB Guidelines on Techno-Economic Feasibility of Implementation of Zero Liquid Discharge for Water Polluting Industries, 2015 (cpcb.nic.in)", "url": "https://cpcb.nic.in" },
-    { "label": "2006 IPCC Guidelines, Volume 2 (stationary combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "CPCB Guidelines on Techno-Economic Feasibility of Implementation of Zero Liquid Discharge for Water Polluting Industries, 2015 (cpcb.nic.in)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (stationary combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
   "reviewed": "2026-10-16"
 }

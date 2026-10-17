@@ -25,7 +25,7 @@
     {
       "h": "Why kVAh billing changes the picture",
       "p": [
-        "Several states now bill industrial consumers in kVAh. Since kVAh = kWh / power factor, a poor power factor raises the units you pay for, which works as a built-in penalty, and unity power factor gives the lowest bill. Most such tariff orders drop the separate surcharge and rebate. Check your own order: the rate per kVAh and any leftover incentive differ by state."
+        "Several states now bill industrial consumers in kVAh. Since kVAh = kWh / power factor, a poor power factor raises the units you pay for, which works as a built-in penalty, and unity power factor gives the lowest bill. Many such tariff orders drop the separate surcharge and rebate. Check your own order: the rate per kVAh and any leftover incentive differ by state."
       ]
     },
     {
@@ -53,16 +53,34 @@
     ],
     "note": "The tariff rate is assumed. Use the rate and power factor rules in your state's current tariff order."
   },
-  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh. On a kVAh bill it uses the printed kWh, or kVAh times the printed power factor labelled as an estimate. It does not audit power factor surcharges or size capacitors.",
+  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh. On a kVAh bill it uses the printed kWh, or kVAh times the printed power factor labelled as an estimate.",
   "links": [
-    { "label": "Electricity bill in kVAh: emissions", "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions" },
-    { "label": "How to read an HT industrial bill", "to": "/answers/how-to-read-an-ht-industrial-electricity-bill" },
-    { "label": "Time of day tariffs for factories", "to": "/answers/time-of-day-electricity-tariff-for-factories" },
-    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" }
+    {
+      "label": "Electricity bill in kVAh: emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "How to read an HT industrial bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Time of day tariffs for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
   ],
   "sources": [
-    { "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 1 (beeindia.gov.in)", "url": "https://beeindia.gov.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 1 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Power factor bands and kVAh billing rules differ by state and change with each tariff order; check the current order."
