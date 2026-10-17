@@ -2,7 +2,7 @@
   "slug": "singapore-climate-reporting-indian-subsidiaries",
   "q": "Does Singapore's mandatory climate reporting apply to my Indian group's Singapore company?",
   "title": "Singapore climate reporting for Indian groups",
-  "short": "Only if the Singapore company is listed on SGX or is a large non-listed company with annual revenue of at least SGD 1 billion and total assets of at least SGD 500 million. Most holding companies miss the revenue test. Listed issuers report from FY2025; the non-listed start was deferred in August 2025.",
+  "short": "Only if the Singapore company is listed on SGX, or is a large non-listed company with annual revenue of at least SGD 1 billion and total assets of at least SGD 500 million. Listed issuers report Scope 1 and Scope 2 from FY2025; in August 2025 the start for large non-listed companies was pushed back by several years.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian groups with Singapore holding or trading companies",
@@ -10,15 +10,15 @@
     {
       "h": "Test your Singapore company in three steps",
       "ol": [
-        "Is it listed on SGX? Then it is in the listed issuer regime, reporting climate disclosures based on the ISSB standards, starting with Scope 1 and Scope 2 from FY2025.",
-        "If not listed, does it have revenue of at least SGD 1 billion and total assets of at least SGD 500 million? It must pass both. A holding company with large assets but dividend income only usually fails the revenue test; a commodity or trading company may pass.",
-        "If it passes, check whether an exemption applies, such as a parent that already publishes group climate disclosures covering it under ISSB standards or an equivalent framework."
+        "Is it listed on SGX? Then it is in the listed issuer regime: Scope 1 and Scope 2 from FY2025, with fuller ISSB-based disclosures and Scope 3 phased by size and index membership.",
+        "If not listed, does it have revenue of at least SGD 1 billion and total assets of at least SGD 500 million? It must pass both. Check on acra.gov.sg whether the test uses the company's own accounts or consolidated group accounts: a holding company earning only dividends fails on its own accounts, but may pass if group revenue from Indian subsidiaries counts.",
+        "If it passes, check whether an exemption applies, such as a parent that publishes climate disclosures covering it under ISSB standards or an equivalent framework. Read the exact conditions on acra.gov.sg before relying on one."
       ]
     },
     {
       "h": "What the 2025 deferral changed",
       "p": [
-        "ACRA and SGX RegCo first set FY2027 as the start for large non-listed companies and phased in Scope 3 later for everyone. In August 2025 they deferred Scope 3 and the non-listed timeline. Read the current ACRA dates for your financial year before planning, as these were revised once already."
+        "ACRA and SGX RegCo first set FY2027 as the start for large non-listed companies. In August 2025 they deferred that start by several years, made Scope 3 voluntary for most companies, and kept Scope 3 mandatory only for the largest listed issuers. Check the current financial year that applies to your company on acra.gov.sg, and the listed issuer phases on sgx.com, before planning."
       ]
     },
     {
@@ -34,7 +34,7 @@
       ]
     }
   ],
-  "senseible": "Senseible turns the fuel invoices and electricity bills of Indian sites into document-backed Scope 1 and Scope 2 figures that a Singapore parent can consolidate. It does not decide whether ACRA or SGX rules apply or prepare ISSB statements.",
+  "senseible": "Senseible turns the fuel invoices and electricity bills of Indian sites into document-backed Scope 1 and Scope 2 figures, with the factor and source on every line, that a Singapore parent can consolidate into its own report.",
   "links": [
     {
       "label": "Does CSRD apply to Indian companies?",
@@ -63,6 +63,6 @@
       "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "ACRA and SGX RegCo revised the timelines in August 2025; confirm current start dates, thresholds and exemptions on acra.gov.sg."
+  "reviewed": "2026-10-17",
+  "reviewNote": "ACRA and SGX RegCo revised the timelines in August 2025; confirm the current start year for large non-listed companies, the threshold basis and parent exemptions on acra.gov.sg."
 }

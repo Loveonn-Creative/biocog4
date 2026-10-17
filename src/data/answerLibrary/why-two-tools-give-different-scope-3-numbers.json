@@ -13,7 +13,7 @@
         "Method: spend-based (rupees x kg CO2e per unit of currency) against average-data (tonnes x kg CO2e per kg) against supplier-specific. On the same purchase these can differ by a factor of two or more.",
         "Factor database and region: a US or UK input-output factor applied to Indian purchases, against a multi-regional model such as EXIOBASE with an India region, against a material factor.",
         "Currency and price basis: the exchange rate used, the base year of the factor, and whether inflation since that year was removed.",
-        "Tax: whether GST was stripped before applying a spend factor. Leaving 18% GST in raises a spend-based figure by 18%.",
+        "Tax: whether GST was stripped before applying a spend factor. Leaving 18% GST in raises a spend-based figure by 18%; the linked page on GST, inflation and currency covers the fix.",
         "Category mapping: the same line placed in Category 1 by one tool and Category 2 or 4 by another, or counted in two places.",
         "Boundary and gases: whether factors are cradle-to-gate, include transport, and use AR5 or AR6 global warming potentials.",
         "Duplicates: the same invoice uploaded twice, or a credit note not netted off."
@@ -39,11 +39,11 @@
   "example": {
     "title": "Worked example: one steel purchase, three results",
     "lines": [
-      "Purchase: 12 t of steel sections, Rs 10,00,000 before GST",
-      "Tool A, spend-based, GST stripped: 10,00,000 / 85 Rs per USD = USD 11,765 x 0.8 kg CO2e per USD (illustrative) = 9,412 kg, about 9.4 t",
-      "Tool A, GST left in: 11,80,000 / 85 = USD 13,882 x 0.8 = 11,106 kg, about 11.1 t (18% higher)",
-      "Tool B, average-data: 12,000 kg x 2.0 kg CO2e per kg (illustrative) = 24,000 kg, 24 t",
-      "Same purchase: 9.4 t, 11.1 t or 24 t depending on method and tax treatment"
+      "Purchase: 15 t of steel sections, Rs 9,00,000 before GST",
+      "Tool A, spend-based, GST stripped: 9,00,000 / 88 Rs per USD = USD 10,227 x 0.8 kg CO2e per USD (illustrative) = 8,182 kg, about 8.2 t",
+      "Tool A, GST left in: 10,62,000 / 88 = USD 12,068 x 0.8 = 9,654 kg, about 9.7 t (18% higher)",
+      "Tool B, average-data: 15,000 kg x 2.0 kg CO2e per kg (illustrative) = 30,000 kg, 30 t",
+      "Same purchase: 8.2 t, 9.7 t or 30 t depending on method and tax treatment"
     ],
     "note": "The exchange rate and both factors are illustrative, chosen only to show how the gap opens. Real factors depend on the database, year and region."
   },
@@ -76,5 +76,5 @@
       "url": "https://www.epa.gov/climateleadership"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

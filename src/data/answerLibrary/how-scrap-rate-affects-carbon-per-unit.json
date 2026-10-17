@@ -31,7 +31,7 @@
     {
       "h": "Scrap you sell",
       "p": [
-        "Under the cut-off approach used for recycled content, scrap leaving your plant takes no emissions with it, so the full burden of the bought material stays on your good parts. You take no credit for the scrap sale. If your buyer's rules call for allocation to scrap as a co-product, ISO 14067 asks you to state the method and apply it consistently."
+        "Under the recycled content method in the GHG Protocol Product Standard, often called cut-off, scrap leaving your plant takes no emissions with it, so the full burden of the bought material stays on your good parts and you take no credit for the scrap sale. If a buyer asks for the closed loop approximation method instead, follow it for that buyer and state the method, since ISO 14067 requires the allocation procedure to be documented and applied consistently."
       ]
     }
   ],
@@ -48,7 +48,7 @@
     ],
     "note": "The steel factor is illustrative; use your supplier's figure or a sourced factor for the grade and route."
   },
-  "senseible": "Senseible reads the kWh from electricity bills and the quantities on material invoices, and its product carbon footprint calculator accepts your own material factor with a source label. Enter gross material bought per good part so scrap is reflected; the yield and reject figures come from your production records.",
+  "senseible": "Senseible reads the kWh from electricity bills and the quantities on material invoices, so the totals you divide by good output come from documents. Use gross material bought per good part so scrap is reflected; the yield and reject figures come from your production records.",
   "links": [
     {
       "label": "Product carbon footprint",
@@ -69,13 +69,9 @@
       "url": "https://www.iso.org"
     },
     {
-      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard, Chapter 9 (allocation)",
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard, Chapter 9 (allocation, recycled content and closed loop approximation methods)",
       "url": "https://ghgprotocol.org/standards"
-    },
-    {
-      "label": "PACT Methodology v3 (WBCSD)",
-      "url": "https://www.wbcsd.org"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

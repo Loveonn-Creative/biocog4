@@ -37,7 +37,7 @@
     {
       "h": "A pending change to the labels",
       "p": [
-        "The Commission's November 2025 proposal to revise SFDR would replace the Article 8 and 9 labels with new product categories tied to minimum shares of qualifying investments. Until it is agreed and applies, Articles 8 and 9 remain the law, and funds will keep asking for the same data."
+        "The Commission proposed on 20 November 2025 to replace the Article 8 and 9 labels with three product categories: sustainable, transition and ESG basics. The Council agreed its position on 24 June 2026, and talks with the Parliament were being prepared in October 2026. Until a final text is agreed and applies, Articles 8 and 9 remain the law, and funds will keep asking for the same data."
       ]
     }
   ],
@@ -66,10 +66,14 @@
       "url": "https://eur-lex.europa.eu"
     },
     {
-      "label": "European Commission answers on SFDR in the ESAs' consolidated questions and answers (JC 2023 18, April 2023)",
+      "label": "European Commission answers on SFDR questions (April 2023), in the ESAs' consolidated questions and answers on SFDR (JC 2023 18)",
+      "url": "https://finance.ec.europa.eu"
+    },
+    {
+      "label": "European Commission, proposal to revise SFDR (20 November 2025)",
       "url": "https://finance.ec.europa.eu"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "The November 2025 SFDR revision proposal would replace Articles 8 and 9 with new categories; check its status before relying on this page."
+  "reviewed": "2026-10-17",
+  "reviewNote": "SFDR revision trilogues were being prepared in October 2026; check whether the Article 8 and 9 labels have been replaced before relying on this page."
 }

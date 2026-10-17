@@ -11,8 +11,8 @@
       "h": "The duties that fall on the fund",
       "ul": [
         "Entity level (Article 4): a fund manager with more than 500 employees, or one that chooses to, publishes a yearly statement of principal adverse impacts across all its investments, built on the mandatory indicators in Delegated Regulation (EU) 2022/1288, Annex I.",
-        "Article 8 funds: they promote environmental or social characteristics and must explain in their reports whether and how they consider adverse impacts.",
-        "Article 9 funds, and Article 8 funds that claim a share of sustainable investments: they must show each such holding does no significant harm, and the PAI indicators are the test. A missing figure can mean your company cannot be counted as a sustainable investment."
+        "Product level (Article 7): each fund of a manager that considers adverse impacts must explain in its disclosures and periodic reports whether and how that fund considers them.",
+        "Article 9 funds, and Article 8 funds that claim sustainable investments: they use the PAI indicators to show each such holding does no significant harm, so a missing figure can mean your company is not counted as sustainable. The linked Article 8 vs Article 9 page covers that test."
       ]
     },
     {
@@ -45,7 +45,7 @@
     ],
     "note": "Figures are illustrative. The fund computes this; you supply the emissions and, if unlisted, the inputs it needs for enterprise value."
   },
-  "senseible": "Senseible prepares Scope 1 and Scope 2 and the underlying energy figures from your invoices and bills as a self-declared data pack, with Scope 3 shown where supplier evidence exists. It does not compute the fund's PAI ratios or prepare its SFDR statements.",
+  "senseible": "Senseible prepares Scope 1 and Scope 2 and the underlying energy figures from your invoices and bills as a self-declared data pack, with Scope 3 shown where supplier evidence exists, so the figures the fund reports about you start from your own documents.",
   "links": [
     {
       "label": "SFDR PAI data request: what to send",
@@ -62,7 +62,7 @@
   ],
   "sources": [
     {
-      "label": "Regulation (EU) 2019/2088 on sustainability-related disclosures (SFDR), Articles 4, 8 and 9 (eur-lex.europa.eu)",
+      "label": "Regulation (EU) 2019/2088 on sustainability-related disclosures (SFDR), Articles 4, 7, 8 and 9 (eur-lex.europa.eu)",
       "url": "https://eur-lex.europa.eu"
     },
     {
@@ -74,6 +74,6 @@
       "url": "https://finance.ec.europa.eu"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "The Commission's November 2025 SFDR proposal was under negotiation in October 2026 and may change entity level PAI duties and the Article 8 and 9 labels; recheck before relying on this page."
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Commission's November 2025 SFDR proposal was in Council and Parliament negotiations in October 2026 and may change entity level PAI duties and the Article 8 and 9 labels; recheck before relying on this page."
 }

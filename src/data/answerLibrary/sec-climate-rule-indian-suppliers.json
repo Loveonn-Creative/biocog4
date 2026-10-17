@@ -11,7 +11,7 @@
       "h": "Three Indian situations, three answers",
       "ul": [
         "Indian supplier with no US listing: never in scope. The rule had no supplier or value chain reporting duty.",
-        "Indian company with US listed shares that files annual reports with the SEC, for example on Form 20-F: it would have been a registrant itself, with its own risk disclosures and, if a large filer and material, its own Scope 1 and Scope 2. With the rule stayed and set for rescission, nothing applies today.",
+        "Indian company with US listed shares that files annual reports with the SEC on Form 20-F: it would have been a registrant itself, with its own climate risk disclosures and, if a large accelerated or accelerated filer and the figures were material, its own Scope 1 and Scope 2. Only Canadian issuers filing on Form 40-F were exempted. With the rule stayed and proposed for rescission, nothing applies today.",
         "Indian subsidiary of a US registrant: not a filer, but its sites sit inside the parent's consolidated Scope 1 and Scope 2, so the parent would have needed its fuel and electricity data."
       ]
     },
@@ -24,13 +24,13 @@
     {
       "h": "Where the rule stands",
       "p": [
-        "The SEC stayed the rule in April 2024 pending the Iowa v. SEC challenge in the Eighth Circuit, voted in March 2025 to stop defending it, and proposed rescinding it in May 2026. The step by step history is on the linked status page."
+        "The SEC stayed the rule in April 2024 pending the Iowa v. SEC challenge in the Eighth Circuit, voted in March 2025 to stop defending it, and on 29 May 2026 proposed rescinding it. A final vote is still needed. The step by step history is on the linked status page."
       ]
     },
     {
       "h": "If a US customer still asks you for data",
       "p": [
-        "The request comes from something else: the buyer's own targets, a CDP supply chain programme, California's SB 253 or EU rules on a European subsidiary. Ask which one, because it decides the year, scopes and format they need. Your reply is the same in each case: Scope 1 and Scope 2 by the GHG Protocol, with factors and sources."
+        "Ask which rule or programme the request serves, because that decides the year, scopes and format. The reasons US buyers ask are listed on the linked status page. In each case your reply is the same core: Scope 1 and Scope 2 by the GHG Protocol, with factors and sources, for a stated year."
       ]
     }
   ],
@@ -59,6 +59,6 @@
       "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "As of October 2026 the SEC's May 2026 rescission proposal awaited a final vote and Iowa v. SEC was on hold; confirm the status on sec.gov before relying on it."
 }

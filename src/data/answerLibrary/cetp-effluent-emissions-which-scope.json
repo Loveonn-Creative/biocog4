@@ -2,7 +2,7 @@
   "slug": "cetp-effluent-emissions-which-scope",
   "q": "Are emissions from sending effluent to a common effluent treatment plant (CETP) my Scope 3?",
   "title": "Is effluent sent to a CETP my Scope 3?",
-  "short": "Yes. Effluent you send to a common effluent treatment plant that you do not own or control is Scope 3 Category 5, waste generated in operations, under the GHG Protocol. Your share is the CETP's methane, and its energy use, attributable to the organic load (COD) in your effluent. Your own on-site ETP stays in Scope 1 and 2.",
+  "short": "Yes, in most cases. Effluent you send to a common effluent treatment plant (CETP) that you do not own or control is Scope 3 Category 5, waste generated in operations, under the GHG Protocol. Your share is the CETP's methane and energy use attributable to your effluent. Treatment inside your own fence stays in Scope 1 and 2.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Textile, chemical, pharma and leather units in Indian clusters",
@@ -11,22 +11,24 @@
       "h": "Where the line between scopes falls",
       "ul": [
         "Your own primary treatment or ETP: methane from it is Scope 1, its electricity Scope 2.",
-        "The CETP run by a cluster society or SPV that you do not control: its emissions from treating your effluent are your Category 5.",
-        "If your unit has an equity stake and you use the equity share approach, include your share of the CETP's Scope 1 and 2 instead, and do not count it twice in Category 5.",
-        "Sludge the CETP sends to a secured landfill or co-processing is the CETP's waste, part of the same treatment chain; include it in your Category 5 if the CETP reports it."
+        "A CETP run by a cluster society or SPV that you do not control: its emissions from treating your effluent are your Category 5.",
+        "Effluent to a municipal sewer and sewage treatment plant: also Category 5, since a third party treats it.",
+        "If you hold equity in the CETP SPV and report on the equity share approach, your share of the CETP's Scope 1 and 2 enters your own Scope 1 and 2; do not count the same emissions again in Category 5.",
+        "Sludge the CETP sends to a secured landfill or co-processing is part of the same treatment chain; include it in your Category 5 if the CETP reports it."
       ]
     },
     {
-      "h": "Best data: ask the CETP",
+      "h": "Splitting the CETP's own figures among members",
       "p": [
-        "Many CETPs bill members by volume and pollution load and already measure inlet COD, flow and power use. Ask for the plant's annual electricity, fuel and any biogas captured, plus total inlet COD. Allocate by your share of COD for methane and by your share of volume for pumping energy, then document the key."
+        "Many CETPs bill members by volume and pollution load, so they already measure inflow and inlet COD for each member. Ask the CETP for its annual electricity, any fuel, any biogas captured and its methane estimate, plus total inflow and total inlet COD.",
+        "Allocate methane by your share of COD, because methane comes from organic load. Allocate electricity and fuel by your share of volume, because pumping and aeration track flow. Write down both keys and keep them the same each year."
       ]
     },
     {
-      "h": "Fallback: the IPCC method on your discharge",
+      "h": "If the CETP shares nothing",
       "p": [
-        "Without CETP data, use the IPCC 2006 Volume 5, Chapter 6 method on the COD you discharge: kg COD a year x 0.25 kg CH4 per kg COD x a methane correction factor (MCF) from IPCC Table 6.8 for the CETP's process. Table 6.8 gives 0 for a well managed aerobic plant, 0.3 for an overloaded or poorly managed aerobic plant, 0.8 for an anaerobic reactor or deep lagoon and 0.2 for a shallow lagoon. Measure COD after your own pre-treatment, since that is what the CETP receives.",
-        "Carbon dioxide from aerobic treatment is biogenic and is not added. The 2006 IPCC Guidelines treat nitrous oxide from industrial effluent as minor and give no separate method for it."
+        "Estimate the methane from the COD you discharge with the IPCC 2006 Volume 5, Chapter 6 method: kg COD x 0.25 kg CH4 per kg COD x a methane correction factor from Table 6.8 that matches the CETP's process. Show a low and a high case, since the factor ranges from 0 for well managed aerobic treatment upwards. The textile page linked below works this through step by step, including sludge.",
+        "For nitrous oxide, the 2006 Guidelines gave no method for industrial wastewater; the 2019 Refinement added one. Say which edition you used."
       ]
     },
     {
@@ -34,32 +36,62 @@
       "ul": [
         "CETP membership agreement and monthly charge invoices showing volume.",
         "Your outlet flow meter log and COD test reports.",
-        "The CETP's process description, to justify the MCF.",
+        "The CETP's annual totals and process description, or a note that it declined to share them.",
         "The GWP edition used (IPCC AR5 or AR6) for converting methane to CO2e."
       ]
     }
   ],
   "example": {
-    "title": "Worked example: a dyeing unit's CETP share, IPCC fallback",
+    "title": "Worked example: allocating a CETP's reported totals (assumed figures)",
     "lines": [
-      "Discharge: 200 kL a day at 1,500 mg COD per litre (1.5 kg per kL) = 300 kg COD a day",
-      "Working days: 300; COD a year: 300 x 300 = 90,000 kg",
-      "CETP aerobic but overloaded, MCF 0.3: 90,000 x 0.25 x 0.3 = 6,750 kg CH4",
-      "CO2e at GWP 28 (IPCC AR5): 6,750 x 28 = 189,000 kg, about 189 t CO2e",
-      "If the CETP is a well managed aerobic plant, MCF 0 gives zero methane; only its energy use remains"
+      "CETP year: 15,00,000 kL inflow, 30,00,000 kg inlet COD, 45,00,000 kWh electricity, 50,000 kg CH4 estimated by the CETP",
+      "Your unit: 60,000 kL and 90,000 kg COD; volume share 60,000 / 15,00,000 = 4%; COD share 90,000 / 30,00,000 = 3%",
+      "Electricity: 45,00,000 x 0.710 = 31,95,000 kg CO2; your 4% = 1,27,800 kg CO2",
+      "Methane: 50,000 x 3% = 1,500 kg CH4; at GWP 27 (IPCC AR6, non-fossil methane) = 40,500 kg CO2e",
+      "Your Category 5 line: 1,27,800 + 40,500 = 1,68,300 kg CO2e, about 168 t CO2e"
     ],
-    "note": "The MCF choice moves the result from zero to hundreds of tonnes, so justify it with the CETP's own process description."
+    "note": "All CETP and unit figures are assumed for illustration. Use the CETP's own annual totals and your billed volume and COD."
   },
-  "senseible": "Senseible keeps CETP charge invoices in its separate Scope 3 evidence trail with the source file and SHA-256 fingerprint. The document reader gives no methane figure from a charge invoice alone, since that needs COD and the treatment type; where only the charge is known, a spend-based estimate labelled as such can be provided.",
+  "senseible": "Senseible keeps CETP charge invoices in its separate Scope 3 evidence trail with the source file and SHA-256 fingerprint, and reads the CETP's electricity and fuel bills if it shares them. Methane needs COD and the treatment type, which come from your lab reports and the CETP; where only the charge is known, a spend-based estimate labelled as such can be provided.",
   "links": [
-    { "label": "Methane from your own ETP", "to": "/answers/etp-wastewater-methane-emissions" },
-    { "label": "ETP sludge and wastewater in textiles", "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles" },
-    { "label": "AR5 or AR6 GWP: which to use", "to": "/answers/ar5-vs-ar6-gwp-which-to-use" }
+    {
+      "label": "ETP sludge and wastewater in textiles",
+      "to": "/answers/etp-sludge-and-wastewater-scope-3-textiles"
+    },
+    {
+      "label": "Methane from your own ETP",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Factory waste for Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 5", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
-    { "label": "2006 IPCC Guidelines, Volume 5, Chapter 6, Table 6.8 (MCF for industrial wastewater)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
-    { "label": "CPCB guidelines for common effluent treatment plants (cpcb.nic.in)", "url": "https://cpcb.nic.in" }
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 5",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, equity share and control approaches",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5, Chapter 6, Table 6.8 (MCF for industrial wastewater)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 5, Chapter 6 (N2O from industrial wastewater) (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
   "reviewed": "2026-10-16"
 }
