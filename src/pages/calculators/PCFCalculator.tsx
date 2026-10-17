@@ -203,7 +203,7 @@ const PCFCalculatorPage = () => {
           <div>
             <div className="flex items-center justify-between mb-2">
               <h3 className="font-semibold text-sm">Inbound transport</h3>
-              <Button size="sm" variant="ghost" onClick={() => setTransport([...transport, { id: uid(), factorId: 'truck-articulated', weightTonnes: 0, distanceKm: 0 }])}><Plus className="w-3 h-3 mr-1" /> Add</Button>
+              <Button size="sm" variant="ghost" onClick={() => setTransport([...transport, { id: uid(), factorId: 'road-hcv20-diesel', weightTonnes: 0, distanceKm: 0 }])}><Plus className="w-3 h-3 mr-1" /> Add</Button>
             </div>
             <div className="space-y-2">
               {transport.map(t => (

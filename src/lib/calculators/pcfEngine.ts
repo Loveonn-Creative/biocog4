@@ -5,6 +5,8 @@
  * Emission factor hierarchy: primary > secondary (DEFRA/Ecoinvent) > IPCC AR6 proxy
  */
 
+import { FREIGHT_FACTORS, getFreightFactor } from './freightFactors';
+
 export type AllocationMethod = 'mass' | 'energy' | 'economic' | 'none';
 export type SystemBoundary = 'cradle-to-gate' | 'gate-to-gate' | 'cradle-to-grave';
 export type EFTier = 'primary' | 'secondary' | 'proxy';
@@ -69,17 +71,11 @@ export const PCF_ENERGY: EnergyFactor[] = [
   { id: 'lpg', name: 'LPG (combustion)', kgCO2ePerKWh: 0.214, source: 'DEFRA 2024', tier: 'secondary' },
 ];
 
-// GLEC v3.0 / DEFRA 2024 transport factors
-export const PCF_TRANSPORT: TransportFactor[] = [
-  { id: 'truck-rigid', name: 'Truck (rigid, diesel)', kgCO2ePerTKm: 0.105, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'truck-articulated', name: 'Truck (articulated)', kgCO2ePerTKm: 0.062, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'rail-diesel', name: 'Rail (diesel freight)', kgCO2ePerTKm: 0.022, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'rail-electric', name: 'Rail (electric freight)', kgCO2ePerTKm: 0.010, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'sea-container', name: 'Sea (container ship)', kgCO2ePerTKm: 0.008, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'sea-bulk', name: 'Sea (bulk carrier)', kgCO2ePerTKm: 0.004, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'air-short', name: 'Air freight (short-haul)', kgCO2ePerTKm: 1.130, source: 'GLEC v3.0', tier: 'secondary' },
-  { id: 'air-long', name: 'Air freight (long-haul)', kgCO2ePerTKm: 0.602, source: 'GLEC v3.0', tier: 'secondary' },
-];
+// Freight intensities come from the shared table (WTW, average load incl.
+// empty running) so this calculator and the logistics calculator agree.
+export const PCF_TRANSPORT: TransportFactor[] = FREIGHT_FACTORS.map(f => ({
+  id: f.id, name: f.name, kgCO2ePerTKm: f.kgCO2ePerTKm, source: 'Default freight intensity (WTW)', tier: 'secondary',
+}));
 
 export interface MaterialLine {
   id: string;
@@ -173,7 +169,9 @@ export function calculatePCF(input: PCFInput): PCFResult {
 
   let transportTotal = 0;
   for (const line of input.transport) {
-    const factor = PCF_TRANSPORT.find(t => t.id === line.factorId);
+    // Accepts current ids and older ones (e.g. 'truck-articulated') from saved runs.
+    const shared = getFreightFactor(line.factorId);
+    const factor = shared ? PCF_TRANSPORT.find(t => t.id === shared.id) : undefined;
     if (!factor) continue;
     const kg = factor.kgCO2ePerTKm * (line.weightTonnes || 0) * (line.distanceKm || 0);
     transportTotal += kg;

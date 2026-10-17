@@ -1,39 +1,29 @@
 /**
  * Logistics & Transportation Emissions Engine
- * Standard: GLEC Framework v3.0 / ISO 14083
- * Method: kgCO2e = weight (tonnes) × distance (km) × mode EF, with load factor + empty-return uplift
+ * Method: ISO 14083:2023 / GLEC Framework. kgCO2e = tonnes × km × intensity.
+ * Intensities come from the shared table in ./freightFactors (WTW, average
+ * load including empty running), so no load-factor or empty-return uplift is
+ * applied on top of a default. A carrier's own factor is used as given.
  */
 
-export type TransportMode =
-  | 'road-rigid' | 'road-articulated' | 'road-van'
-  | 'rail-diesel' | 'rail-electric'
-  | 'sea-container' | 'sea-bulk' | 'sea-tanker'
-  | 'inland-waterway'
-  | 'air-short' | 'air-long'
-  | 'pipeline';
+import {
+  FREIGHT_FACTORS, getFreightFactor, resolveFreightFactor,
+  type FreightCategory, type FreightFactorId,
+} from './freightFactors';
+
+/** Current factor ids, plus older ids kept so saved runs still re-run. */
+export type TransportMode = FreightFactorId | string;
 
 export interface ModeFactor {
-  id: TransportMode;
+  id: FreightFactorId;
   name: string;
-  kgCO2ePerTKm: number; // WTW (well-to-wheel) GLEC v3.0
-  category: 'road' | 'rail' | 'sea' | 'air' | 'inland' | 'pipeline';
-  defaultLoadFactor: number; // typical
+  kgCO2ePerTKm: number; // WTW, average load incl. empty running
+  category: FreightCategory;
 }
 
-export const TRANSPORT_MODES: ModeFactor[] = [
-  { id: 'road-rigid',       name: 'Truck: rigid (7.5–17 t)',  kgCO2ePerTKm: 0.182, category: 'road', defaultLoadFactor: 0.55 },
-  { id: 'road-articulated', name: 'Truck: articulated (>17 t)', kgCO2ePerTKm: 0.062, category: 'road', defaultLoadFactor: 0.70 },
-  { id: 'road-van',         name: 'Light van / pickup',         kgCO2ePerTKm: 0.487, category: 'road', defaultLoadFactor: 0.40 },
-  { id: 'rail-diesel',      name: 'Rail: diesel freight',      kgCO2ePerTKm: 0.022, category: 'rail', defaultLoadFactor: 0.65 },
-  { id: 'rail-electric',    name: 'Rail: electric freight',    kgCO2ePerTKm: 0.010, category: 'rail', defaultLoadFactor: 0.65 },
-  { id: 'sea-container',    name: 'Sea: container ship',       kgCO2ePerTKm: 0.008, category: 'sea',  defaultLoadFactor: 0.70 },
-  { id: 'sea-bulk',         name: 'Sea: bulk carrier',         kgCO2ePerTKm: 0.004, category: 'sea',  defaultLoadFactor: 0.85 },
-  { id: 'sea-tanker',       name: 'Sea: oil tanker',           kgCO2ePerTKm: 0.005, category: 'sea',  defaultLoadFactor: 0.85 },
-  { id: 'inland-waterway',  name: 'Inland waterway / barge',    kgCO2ePerTKm: 0.031, category: 'inland', defaultLoadFactor: 0.70 },
-  { id: 'air-short',        name: 'Air freight: short-haul (<1500 km)', kgCO2ePerTKm: 1.130, category: 'air', defaultLoadFactor: 0.70 },
-  { id: 'air-long',         name: 'Air freight: long-haul (>1500 km)',  kgCO2ePerTKm: 0.602, category: 'air', defaultLoadFactor: 0.75 },
-  { id: 'pipeline',         name: 'Pipeline (gas/liquid)',      kgCO2ePerTKm: 0.005, category: 'pipeline', defaultLoadFactor: 1.0 },
-];
+export const TRANSPORT_MODES: ModeFactor[] = FREIGHT_FACTORS.map(f => ({
+  id: f.id, name: f.name, kgCO2ePerTKm: f.kgCO2ePerTKm, category: f.category,
+}));
 
 export interface FreightLeg {
   id: string;
@@ -43,9 +33,12 @@ export interface FreightLeg {
   mode: TransportMode;
   weightTonnes: number;
   distanceKm: number;
-  loadFactor?: number;     // override
-  emptyReturnFactor?: number; // 0-1 share of empty return distance, default 0
-  customEf?: number;       // override mode EF
+  /** Carrier's own intensity, kg CO2e per tonne-km; used as given. */
+  customEf?: number;
+  /** Kept for older saved runs; ignored, because defaults already include load and empty running. */
+  loadFactor?: number;
+  /** Kept for older saved runs; ignored, because defaults already include empty running. */
+  emptyReturnFactor?: number;
 }
 
 export interface LegResult {
@@ -56,8 +49,7 @@ export interface LegResult {
   distanceKm: number;
   effectiveEf: number;
   kgCO2e: number;
-  loadFactorUsed: number;
-  emptyReturnUplift: number;
+  basis: 'carrier' | 'default' | 'fallback';
 }
 
 export interface LogisticsResult {
@@ -67,44 +59,54 @@ export interface LogisticsResult {
   byMode: Record<string, number>;
   averageIntensity: number; // kgCO2e per t-km
   factorSources: string[];
-  methodologyVersion: 'LOGISTICS-v1.0 (GLEC v3.0 / ISO 14083)';
+  /** Plain-language caveats from the resolution step (fallbacks, skipped legs). */
+  notes: string[];
+  methodologyVersion: 'LOGISTICS-v2.0 (ISO 14083)';
 }
 
 const round = (v: number, d = 3) => Math.round(v * 10 ** d) / 10 ** d;
+const valid = (n: number) => Number.isFinite(n) && n > 0;
 
 export function calculateLogistics(legs: FreightLeg[]): LogisticsResult {
   const legResults: LegResult[] = [];
   const byMode: Record<string, number> = {};
+  const notes: string[] = [];
   let total = 0;
   let totalTKm = 0;
 
   for (const leg of legs) {
-    const mode = TRANSPORT_MODES.find(m => m.id === leg.mode);
-    if (!mode) continue;
-    const baseEf = leg.customEf ?? mode.kgCO2ePerTKm;
-    const loadFactor = leg.loadFactor ?? mode.defaultLoadFactor;
-    // Lower load factor → higher per-tonne intensity (inverse scaling vs default)
-    const loadAdjustment = mode.defaultLoadFactor / Math.max(0.1, loadFactor);
-    const emptyReturn = Math.max(0, Math.min(1, leg.emptyReturnFactor ?? 0));
-    const effectiveEf = baseEf * loadAdjustment * (1 + emptyReturn);
+    if (!valid(leg.weightTonnes) || !valid(leg.distanceKm)) continue;
+    if (leg.customEf !== undefined && !(leg.customEf > 0 && leg.customEf <= 5)) {
+      notes.push(`Carrier factor on ${leg.label || 'a leg'} looked wrong (expected kg CO2e per tonne-km), so the default was used.`);
+    }
+    const resolved = resolveFreightFactor({
+      mode: leg.mode, weightTonnes: leg.weightTonnes, distanceKm: leg.distanceKm, customEf: leg.customEf,
+    });
+    if (!resolved) {
+      notes.push(`${leg.label || 'One leg'} was left out: no reviewed factor for this mode yet. Enter the carrier's factor to include it.`);
+      continue;
+    }
+    if (resolved.note) notes.push(resolved.note);
 
-    const tkm = (leg.weightTonnes || 0) * (leg.distanceKm || 0);
-    const kg = effectiveEf * tkm;
+    const tkm = leg.weightTonnes * leg.distanceKm;
+    const kg = resolved.kgCO2ePerTKm * tkm;
+    const modeName = resolved.basis === 'carrier'
+      ? `${getFreightFactor(String(leg.mode))?.name ?? 'Freight'} (carrier factor)`
+      : resolved.factor?.name ?? 'Freight';
 
     total += kg;
     totalTKm += tkm;
-    byMode[mode.name] = round((byMode[mode.name] || 0) + kg);
+    byMode[modeName] = round((byMode[modeName] || 0) + kg);
 
     legResults.push({
       id: leg.id,
-      label: leg.label || `${leg.origin || ''} → ${leg.destination || ''}`.trim() || mode.name,
-      modeName: mode.name,
+      label: leg.label || `${leg.origin || ''} → ${leg.destination || ''}`.trim() || modeName,
+      modeName,
       weightTonnes: leg.weightTonnes,
       distanceKm: leg.distanceKm,
-      effectiveEf: round(effectiveEf, 4),
+      effectiveEf: round(resolved.kgCO2ePerTKm, 4),
       kgCO2e: round(kg),
-      loadFactorUsed: loadFactor,
-      emptyReturnUplift: emptyReturn,
+      basis: resolved.basis,
     });
   }
 
@@ -114,7 +116,8 @@ export function calculateLogistics(legs: FreightLeg[]): LogisticsResult {
     totalTonneKm: round(totalTKm),
     byMode,
     averageIntensity: totalTKm > 0 ? round(total / totalTKm, 4) : 0,
-    factorSources: ['GLEC Framework v3.0', 'ISO 14083:2023'],
-    methodologyVersion: 'LOGISTICS-v1.0 (GLEC v3.0 / ISO 14083)',
+    factorSources: ['Default freight intensities (well-to-wheel, average load)'],
+    notes: Array.from(new Set(notes)),
+    methodologyVersion: 'LOGISTICS-v2.0 (ISO 14083)',
   };
 }
