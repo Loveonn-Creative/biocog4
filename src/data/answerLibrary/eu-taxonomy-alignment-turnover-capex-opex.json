@@ -35,9 +35,9 @@
       ]
     },
     {
-      "h": "The 2025 simplification",
+      "h": "The 2025 simplification act",
       "p": [
-        "In July 2025 the European Commission adopted a delegated act simplifying these disclosures. It lets companies leave out activities that are not material, below 10 percent of turnover, CapEx or OpEx, and eases the OpEx KPI where OpEx is not material to the business. Check which version applies to your reporting year."
+        "The Commission adopted the simplification act on 4 July 2025; it was published as Delegated Regulation (EU) 2026/73 on 8 January 2026 and applies from 1 January 2026, with an option to use the old rules in full for financial year 2025. A company may skip assessing activities whose combined value is below 10 percent of a KPI's denominator, tested separately for turnover, CapEx and OpEx. If OpEx is not material to its business model, it can report only total OpEx instead of the OpEx KPI. Check the EUR-Lex text for your reporting year."
       ]
     }
   ],
@@ -50,16 +50,34 @@
     ],
     "note": "All figures are illustrative."
   },
-  "senseible": "Senseible does not calculate Taxonomy eligibility, alignment or the turnover, CapEx and OpEx ratios; those come from your financial accounts. It can supply invoice-backed Scope 1 and 2 figures that a parent or buyer may need when checking an emissions-based screening criterion.",
+  "senseible": "Senseible supplies invoice-backed Scope 1 and 2 figures, with the factor and source on each line, that a parent or buyer may need when checking an emissions-based screening criterion. The turnover, CapEx and OpEx ratios themselves come from your financial accounts.",
   "links": [
-    { "label": "EU Taxonomy DNSH criteria", "to": "/answers/eu-taxonomy-dnsh-criteria-explained" },
-    { "label": "EU Taxonomy steel threshold", "to": "/answers/eu-taxonomy-steel-substantial-contribution-threshold" },
-    { "label": "India climate finance taxonomy vs EU", "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy" },
-    { "label": "Who is still in scope of CSRD", "to": "/answers/who-is-still-in-scope-of-csrd" }
+    {
+      "label": "EU Taxonomy DNSH criteria",
+      "to": "/answers/eu-taxonomy-dnsh-criteria-explained"
+    },
+    {
+      "label": "EU Taxonomy steel threshold",
+      "to": "/answers/eu-taxonomy-steel-substantial-contribution-threshold"
+    },
+    {
+      "label": "India climate finance taxonomy vs EU",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
+    },
+    {
+      "label": "Who is still in scope of CSRD",
+      "to": "/answers/who-is-still-in-scope-of-csrd"
+    }
   ],
   "sources": [
-    { "label": "Regulation (EU) 2020/852, Article 8, and Delegated Regulation (EU) 2021/2178, Annex I (KPI definitions)", "url": "https://eur-lex.europa.eu" },
-    { "label": "European Commission, Taxonomy simplification delegated act (adopted July 2025)", "url": "https://finance.ec.europa.eu" }
+    {
+      "label": "Regulation (EU) 2020/852, Article 8, and Delegated Regulation (EU) 2021/2178, Annex I (KPI definitions)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2026/73 (Taxonomy simplification, adopted 4 July 2025)",
+      "url": "https://eur-lex.europa.eu"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The Taxonomy simplification and CSRD scope changes affect who reports and how; confirm the delegated act in force on EUR-Lex for each reporting year."

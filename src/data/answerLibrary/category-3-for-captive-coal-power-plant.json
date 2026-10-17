@@ -33,7 +33,7 @@
       "h": "Choosing an upstream factor for coal",
       "p": [
         "Upstream emissions of coal come mostly from methane released during mining and from diesel and power used to mine, wash and move it. The IPCC 2006 Guidelines, Volume 2, Chapter 4 treat mine methane separately for underground and surface mines, and underground mines release far more per tonne.",
-        "There is no widely published Indian or Indonesian well-to-tank factor for coal. Most companies use a published international well-to-tank factor and say it is not specific to their mines. If your coal moves a long way by rail or sea and you already report that freight in Category 4, check that the factor you chose does not count the same journey again."
+        "We could not find an official national well-to-tank factor for Indian or Indonesian coal, so check with your coal supplier and the latest national guidance first. Most companies use a published international well-to-tank factor, such as the UK government conversion factors, and say it is not specific to their mines. If your coal moves a long way by rail or sea and you already report that freight in Category 4, check that the factor you chose does not count the same journey again."
       ]
     }
   ],
@@ -48,7 +48,7 @@
     ],
     "note": "The 0.15 figure only shows the arithmetic; replace it with the published factor you choose and name its source. Indian coal varies widely in carbon content, so a factor based on your coal's GCV or tested carbon content will be closer than the IPCC default."
   },
-  "senseible": "Senseible reads coal invoices in kg and applies the IPCC 2006 default of 2.42 kg CO2 per kg for Scope 1, and reads grid electricity bills for Scope 2 at 0.710 kg CO2 per kWh, with the source shown on each line. The upstream coal factor for Category 3 is a choice you make and document; Senseible keeps the coal quantities it applies to.",
+  "senseible": "Senseible reads coal invoices in kg and applies the IPCC 2006 default of 2.42 kg CO2 per kg for Scope 1, and reads grid electricity bills for Scope 2 at 0.710 kg CO2 per kWh, with the source shown on each line. It keeps the coal quantities on file, so the upstream factor you choose and document for Category 3 is applied to the same tonnes.",
   "links": [
     {
       "label": "Category 3 for fuel and grid power",
@@ -79,8 +79,12 @@
     {
       "label": "IPCC 2006 Guidelines, Volume 2 Energy (Chapter 4, fugitive emissions from coal mining)",
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting (well-to-tank factors)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "Upstream coal factors are not specific to Indian or Indonesian mines; recheck if a national well-to-tank factor is published."
 }

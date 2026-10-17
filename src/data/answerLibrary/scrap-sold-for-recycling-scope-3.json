@@ -1,8 +1,8 @@
 {
   "slug": "scrap-sold-for-recycling-scope-3",
-  "q": "We sell steel or aluminium scrap to recyclers. Does that count in Category 5, and who gets the recycling credit?",
+  "q": "We sell steel or aluminium scrap to recyclers. What goes in our Scope 3 Category 5 line for it?",
   "title": "Scrap sold for recycling in Category 5",
-  "short": "Yes, scrap sent for recycling sits in Category 5, but under the GHG Protocol's recycled content method your line covers only moving the scrap to the recycler. The melting and reprocessing belong to whoever uses the recycled metal, and nobody deducts an avoided emissions credit from their inventory.",
+  "short": "Scrap you sell to a recycler still sits in Category 5, but under the GHG Protocol's recycled content method your line covers only moving the scrap to the recycler, and only if you include waste transport. Recycling process emissions are zero in your inventory because they belong to whoever uses the recycled metal.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Steel fabricators, auto parts makers and aluminium extruders",
@@ -19,10 +19,9 @@
       ]
     },
     {
-      "h": "Who gets the recycling benefit",
+      "h": "Where the recycling benefit goes",
       "p": [
-        "The company that buys recycled steel or aluminium gets it, through a lower factor on recycled input in its own Category 1 or product footprint. If you also cut your footprint for supplying the scrap, the same benefit would be counted twice along the chain.",
-        "Avoided emissions, such as the primary metal the scrap may replace, can be reported as a separate figure with its method. They never reduce your Scope 1, 2 or 3 totals."
+        "It goes to the company that buys the recycled steel or aluminium, through a lower factor on recycled input in its own Category 1 or product footprint. Your line stays at transport only and takes no deduction; why selling scrap earns no carbon credit is covered on the linked page."
       ]
     },
     {
@@ -52,7 +51,7 @@
     ],
     "note": "The fuel economy is an assumption; use the transporter's actual litres if you can get them."
   },
-  "senseible": "Senseible reads freight records for the trips that carry your scrap and keeps those lines in the Scope 3 evidence trail with the source file behind each figure. It does not deduct avoided emissions or recycling credits from your totals.",
+  "senseible": "Senseible reads freight records for the trips that carry your scrap and keeps those lines in the Scope 3 evidence trail with the source file behind each figure, so the transport part of your Category 5 line can be traced to each trip.",
   "links": [
     {
       "label": "Carbon credit for selling scrap?",
@@ -85,5 +84,5 @@
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

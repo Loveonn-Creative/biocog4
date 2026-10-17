@@ -22,13 +22,13 @@
     {
       "h": "What the higher levels ask for",
       "p": [
-        "The FEM is scored in levels. The first level is about tracking every energy source with good data. Higher levels ask whether you have set a baseline and a target, whether there is a reduction plan, and whether you can show actual reductions or growth in renewable share. Each answer needs evidence, not only a yes."
+        "Each FEM section is scored out of 100: 25 points for Level 1, 50 for Level 2 and 25 for Level 3, and Level 1 must be achieved before higher answers count. Level 1 is about compliance and tracking every energy source with good data. Level 2 asks for a baseline, a target and actual reductions. Level 3 covers leading practice, such as a large renewable share. Each answer needs evidence, not only a yes."
       ]
     },
     {
       "h": "What verifiers look at",
       "p": [
-        "In a verified FEM (vFEM), an approved verifier checks your entries against source documents. In recent cycles the verification scope covers the quantitative energy and GHG data. Expect them to compare monthly kWh with bills, fuel totals with invoices and stock registers, and production with dispatch records. Gaps or round numbers with no paper behind them are the usual reasons answers are marked down."
+        "In a verified FEM (vFEM), an approved verifier checks your entries against source documents. Cascale widened verification from a core set of questions in the FEM 2023 cycle to all Level 1 questions, including energy and GHG, in the FEM 2024 cycle; check the protocol for your cycle. Expect verifiers to compare monthly kWh with bills, fuel totals with invoices and stock registers, and production with dispatch records. Gaps or round numbers with no paper behind them are the usual reasons answers are marked down."
       ]
     },
     {
@@ -53,15 +53,36 @@
   },
   "senseible": "Senseible gives you fuel and electricity records with the source document and factor behind each line, which you can use when filling the FEM energy section. It is not part of the Higg platform and its records are not FEM-verified.",
   "links": [
-    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" },
-    { "label": "Textile industry", "to": "/industries/textile" },
-    { "label": "Biomass fuel supplier evidence", "to": "/answers/biomass-fuel-supplier-evidence" },
-    { "label": "Rooftop solar with net metering", "to": "/answers/rooftop-solar-net-metering-scope-2" }
+    {
+      "label": "Scope 3 for textile exporters in India",
+      "to": "/solutions/scope3-textile-india"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    },
+    {
+      "label": "Biomass fuel supplier evidence",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Rooftop solar with net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
-    { "label": "2006 IPCC Guidelines, Volume 2 (Energy)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "The Higg FEM question set and verification scope change each cycle; check the current Cascale and Worldly guidance before filling it."

@@ -43,26 +43,46 @@
     }
   ],
   "example": {
-    "title": "Worked example: the gap check",
+    "title": "Worked example: a gap check that allows for growth",
     "lines": [
       "Baseline FY 2024-25: Scope 1 600 t CO2 + Scope 2 1,400 t CO2 = 2,000 t CO2",
-      "Target: 40 percent cut by FY 2030-31, so 800 t CO2 to remove",
+      "Output expected to grow 30 percent by FY 2030-31; if emissions grow with it: 2,000 x 1.30 = 2,600 t CO2 (assumption)",
+      "Target: 40 percent below baseline, so 2,000 x 0.60 = 1,200 t CO2 in FY 2030-31",
+      "Cut needed against the growth case: 2,600 minus 1,200 = 1,400 t CO2, not the 800 t a flat baseline suggests",
       "Rooftop solar 500 kWp x 1,400 kWh per kWp a year (assumed yield) = 700,000 kWh x 0.710 kg CO2 per kWh = 497 t CO2",
       "Compressor and motor upgrades: 150,000 kWh saved x 0.710 = 106.5 t CO2",
-      "Total from actions: 497 + 106.5 = 603.5 t CO2; gap: 800 minus 603.5 = 196.5 t CO2 still to find"
+      "Total from actions: 497 + 106.5 = 603.5 t CO2; gap: 1,400 minus 603.5 = 796.5 t CO2 still to find"
     ],
-    "note": "The grid factor is held at 0.710 kg CO2 per kWh (CEA version 21.0); say so in the plan, since future editions will change it."
+    "note": "The plant, growth rate and target are illustrative. The grid factor is held at 0.710 kg CO2 per kWh (CEA version 21.0); say so in the plan, since future editions will change it."
   },
-  "senseible": "Senseible builds the Scope 1 and 2 baseline from your invoices and bills, with the factor and source on each line, and the decarbonize India page sets out reduction actions. The plan itself is self-declared; Senseible does not write, validate or sign it off.",
+  "senseible": "Senseible builds the Scope 1 and 2 baseline from your invoices and bills, with the factor and source on each line, and the decarbonize India page sets out reduction actions to test against your gap. The plan itself is self-declared and approved by you.",
   "links": [
-    { "label": "What a transition plan should include", "to": "/answers/msme-climate-transition-plan-what-to-include" },
-    { "label": "Answering a TCFD questionnaire", "to": "/answers/answer-tcfd-questionnaire-small-company" },
-    { "label": "MSME net zero roadmap in 12 months", "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants" },
-    { "label": "Decarbonize India", "to": "/decarbonize-india" }
+    {
+      "label": "What a transition plan should include",
+      "to": "/answers/msme-climate-transition-plan-what-to-include"
+    },
+    {
+      "label": "Answering a TCFD questionnaire",
+      "to": "/answers/answer-tcfd-questionnaire-small-company"
+    },
+    {
+      "label": "MSME net zero roadmap in 12 months",
+      "to": "/climate-intelligence/msme-net-zero-roadmap-12-months-no-consultants"
+    },
+    {
+      "label": "Decarbonize India",
+      "to": "/decarbonize-india"
+    }
   ],
   "sources": [
-    { "label": "Transition Plan Taskforce Disclosure Framework (October 2023) and IFRS S2, paragraph 14", "url": "https://www.ifrs.org" },
-    { "label": "TCFD Guidance on Metrics, Targets, and Transition Plans (October 2021)", "url": "https://www.fsb-tcfd.org" }
+    {
+      "label": "Transition Plan Taskforce Disclosure Framework (October 2023) and IFRS S2, paragraph 14",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "TCFD Guidance on Metrics, Targets, and Transition Plans (October 2021)",
+      "url": "https://www.fsb-tcfd.org"
+    }
   ],
   "reviewed": "2026-10-16"
 }

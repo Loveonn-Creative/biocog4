@@ -24,7 +24,7 @@
       "h": "Link it to what BRSR asks",
       "p": [
         "BRSR Principle 2 asks whether you have procedures for sustainable sourcing and what percentage of inputs were sourced sustainably. BRSR does not fix the definition, so the policy must. Write down which suppliers or inputs count, for example those that signed the code, passed an assessment, and share emissions data, so the percentage is the same each year.",
-        "BRSR also asks for the share of inputs from MSMEs and small producers, and large listed companies face value chain disclosure requests. Building those measures into the policy saves rework at reporting time."
+        "Under Principle 8, BRSR also asks for the share of input material sourced directly from MSMEs and small producers, and large listed companies face value chain disclosure requests. Building those measures into the policy saves rework at reporting time."
       ]
     },
     {
@@ -53,17 +53,38 @@
     ],
     "note": "Figures are illustrative."
   },
-  "senseible": "Senseible gives suppliers a way to produce invoice-based emissions evidence, with the source document behind each line, that a policy can request. It does not write procurement policies or rate suppliers against one.",
+  "senseible": "Senseible gives suppliers a way to produce invoice-based emissions evidence, with the source document behind each line, that a policy can request and a buyer can check.",
   "links": [
-    { "label": "Carbon criteria in supplier selection", "to": "/answers/how-to-add-carbon-criteria-to-supplier-selection" },
-    { "label": "BRSR value chain data request", "to": "/answers/brsr-value-chain-data-request-msme-supplier" },
-    { "label": "Supplier due diligence", "to": "/supplier-due-diligence" },
-    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+    {
+      "label": "Carbon criteria in supplier selection",
+      "to": "/answers/how-to-add-carbon-criteria-to-supplier-selection"
+    },
+    {
+      "label": "BRSR value chain data request",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
   ],
   "sources": [
-    { "label": "ISO 20400:2017, Sustainable procurement, Guidance", "url": "https://www.iso.org" },
-    { "label": "SEBI BRSR Core circular and updated BRSR format (July 2023)", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
-    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+    {
+      "label": "ISO 20400:2017, Sustainable procurement, Guidance",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI BRSR Core circular and updated BRSR format (July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
   ],
   "reviewed": "2026-10-16"
 }

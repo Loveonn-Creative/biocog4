@@ -50,16 +50,34 @@
     ],
     "note": "The 35 and 80 percent efficiencies are assumptions for illustration. Tell steam customers which method and efficiencies you used."
   },
-  "senseible": "Senseible reads the fuel invoices for a CHP unit, such as coal, furnace oil or PNG, and calculates Scope 1 with IPCC 2006 factors and the source on each line. It does not split CHP emissions between power and steam automatically; apply the allocation to its fuel totals.",
+  "senseible": "Senseible reads the fuel invoices for a CHP unit, such as coal, furnace oil or PNG, and calculates Scope 1 with IPCC 2006 factors and the source on each line. Those fuel totals are the starting figure you split between power and steam with your chosen method.",
   "links": [
-    { "label": "Emissions from purchased steam", "to": "/answers/how-to-calculate-emissions-from-purchased-steam" },
-    { "label": "CO2 per tonne of steam", "to": "/answers/co2-per-tonne-of-steam" },
-    { "label": "Biomass fuel in a boiler", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" }
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
   ],
   "sources": [
-    { "label": "GHG Protocol, Allocation of GHG Emissions from a Combined Heat and Power (CHP) Plant", "url": "https://ghgprotocol.org" },
-    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" },
-    { "label": "2006 IPCC Guidelines, Volume 2 (Energy)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "GHG Protocol, Allocation of GHG Emissions from a Combined Heat and Power (CHP) Plant",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-16"
 }

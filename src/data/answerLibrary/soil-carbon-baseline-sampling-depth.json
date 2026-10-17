@@ -25,14 +25,14 @@
       "h": "Measure bulk density, not only carbon percentage",
       "p": [
         "Carbon stock in tonnes per hectare = SOC percent / 100 x bulk density in g per cm3 x depth in cm x 100. A lab report giving only SOC percent cannot become a stock figure.",
-        "Tillage changes bulk density, so a fixed 30 cm layer can hold a different mass of soil at re-measurement. The equivalent soil mass approach compares the same mass of soil each time and removes that bias; the FAO GSOC MRV Protocol recommends it."
+        "Tillage changes bulk density, so a fixed 30 cm layer can hold a different mass of soil at re-measurement. The equivalent soil mass approach compares the same mass of soil each time and removes that bias; the FAO GSOC MRV Protocol (2020) sets out how to calculate it."
       ]
     },
     {
       "h": "Mistakes that weaken a baseline",
       "ul": [
         "Not recording GPS points, so the same locations cannot be re-sampled.",
-        "Changing lab or method between rounds. Many Indian labs use Walkley-Black wet oxidation; dry combustion is the reference method. Pick one and keep it.",
+        "Changing lab or method between rounds. Many Indian labs use Walkley-Black wet oxidation; dry combustion is the reference method. When ICVCM approved VM0042 v2.2 for the CCP label in October 2025, it limited the label to listed measurement methods such as dry combustion, so check the list before choosing a lab.",
         "Ignoring carbonates in calcareous soils, common in parts of north and west India. Dry combustion measures them as carbon unless they are removed or measured separately.",
         "Sampling at different seasons or right after fertiliser or residue application."
       ]
@@ -49,15 +49,34 @@
     ],
     "note": "SOC and CV figures are illustrative; use your own pilot data."
   },
-  "senseible": "Senseible does not design soil sampling plans, run soil carbon models or measure soil carbon. Its records cover fuel, electricity and purchase documents, such as diesel for farm machinery, which a project may need alongside its soil data.",
+  "senseible": "Senseible keeps the fuel, electricity and purchase records a soil carbon project often needs beside its soil data, such as diesel invoices for farm machinery, with the factor and source on each line.",
   "links": [
-    { "label": "Soil carbon credits for Indian farmers", "to": "/answers/soil-carbon-credits-india-farmers" },
-    { "label": "Years of data for a project baseline", "to": "/answers/how-many-years-of-data-for-carbon-project-baseline" },
-    { "label": "Carbon credits for MSMEs", "to": "/carbon-credits" }
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    },
+    {
+      "label": "Years of data for a project baseline",
+      "to": "/answers/how-many-years-of-data-for-carbon-project-baseline"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
   ],
   "sources": [
-    { "label": "Verra VM0042 Methodology for Improved Agricultural Land Management, and Verra notice on VM0042 depth requirements", "url": "https://verra.org" },
-    { "label": "2006 IPCC Guidelines, Volume 4 (AFOLU), 0 to 30 cm default soil depth", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" }
+    {
+      "label": "Verra VM0042 Methodology for Improved Agricultural Land Management, and Verra notice on VM0042 depth requirements",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 (AFOLU), 0 to 30 cm default soil depth",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ICVCM decision approving VM0042 v2.2 for the CCP label (October 2025), with measurement method conditions",
+      "url": "https://icvcm.org"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "VM0042 versions and Verra's soil sampling handbook are being updated; check the current version before designing a sampling plan."

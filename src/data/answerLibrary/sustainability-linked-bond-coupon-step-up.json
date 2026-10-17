@@ -27,7 +27,7 @@
     {
       "h": "What SEBI requires for Indian issues",
       "p": [
-        "SEBI's circular of 5 June 2025 set a framework for ESG debt securities other than green debt securities, covering social, sustainability and sustainability-linked bonds issued under the NCS Regulations. For sustainability-linked bonds the offer document must set out the KPIs, the targets and their rationale, and an independent third-party reviewer assesses them. Labels are expected to follow recognised standards such as the ICMA principles."
+        "SEBI's circular of 5 June 2025 set a framework for ESG debt securities other than green debt securities, covering social, sustainability and sustainability-linked bonds listed or proposed to be listed under the NCS Regulations. It sets initial and continuing disclosures, expects labels to follow a recognised standard such as the ICMA principles, and requires an independent third-party reviewer whose scope of review is stated in the offer document. Read the circular for the exact KPI and target disclosures your issue needs."
       ]
     },
     {
@@ -51,16 +51,31 @@
     ],
     "note": "The 25 basis point size is an assumption for illustration; the actual step-up is set in each bond's documents."
   },
-  "senseible": "Senseible does not structure, review or verify bonds. It keeps an invoice-backed record of Scope 1 and 2 emissions, with the factor and source on each line, that an issuer can use to track an emissions KPI during the year.",
+  "senseible": "Senseible keeps an invoice-backed record of Scope 1 and 2 emissions, with the factor and source document on each line, that an issuer can use to track an emissions KPI through the year and hand to its reviewer.",
   "links": [
-    { "label": "Sustainability-linked loan KPI examples", "to": "/answers/sustainability-linked-loan-kpi-examples" },
-    { "label": "What an SLL verifier checks", "to": "/answers/sll-kpi-verification-what-verifier-checks" },
-    { "label": "Climate finance instruments compared", "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026" }
+    {
+      "label": "Sustainability-linked loan KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "What an SLL verifier checks",
+      "to": "/answers/sll-kpi-verification-what-verifier-checks"
+    },
+    {
+      "label": "Climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    }
   ],
   "sources": [
-    { "label": "SEBI circular on framework for ESG debt securities (other than green debt securities), 5 June 2025", "url": "https://www.sebi.gov.in" },
-    { "label": "LMA Sustainability-Linked Loan Principles (loan counterpart of the ICMA Sustainability-Linked Bond Principles)", "url": "https://www.lma.eu.com" }
+    {
+      "label": "SEBI circular on framework for ESG debt securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "LMA Sustainability-Linked Loan Principles (loan counterpart of the ICMA Sustainability-Linked Bond Principles)",
+      "url": "https://www.lma.eu.com"
+    }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "SEBI's ESG debt framework took effect in June 2025; check for amendments and the current ICMA principles edition."
+  "reviewNote": "SEBI's ESG debt framework took effect in June 2025; check the NCS master circular for amendments and the current ICMA principles edition."
 }

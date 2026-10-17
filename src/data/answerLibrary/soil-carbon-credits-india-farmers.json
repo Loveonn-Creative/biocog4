@@ -17,7 +17,9 @@
         "Improved water management in rice, which cuts methane.",
         "Improved grazing on pasture."
       ],
-      "p": ["The change must be new for those fields and not required by law or already common practice in the area. Paying farmers to keep doing what they already do does not create credits."]
+      "p": [
+        "The change must be new for those fields and not required by law or already common practice in the area. Paying farmers to keep doing what they already do does not create credits."
+      ]
     },
     {
       "h": "How the carbon is measured",
@@ -39,21 +41,42 @@
       "h": "Decision rule for an agri company or food buyer",
       "p": [
         "Credits make sense when you can enrol a large area, fund sampling for years and keep field-level records. If your goal is to cut your own Scope 3, you may report the farm-level change in your inventory instead. Do not both count the removals in your Scope 3 and sell them as credits to someone else; that is double claiming.",
-        "Before choosing a methodology, check its current version on the Verra or Gold Standard site and whether ICVCM has approved it for the Core Carbon Principles label, which many buyers now ask for."
+        "Check the current methodology version on the Verra or Gold Standard site, and whether ICVCM has approved it for the Core Carbon Principles label, which many buyers now ask for. ICVCM approved VM0042 v2.2 in October 2025, but only with listed soil carbon measurement methods such as dry combustion and extra label criteria checked at verification; projects on older versions must move to v2.2 to get the label."
       ]
     }
   ],
-  "senseible": "Senseible's carbon credit eligibility signals are built on fuel and electricity records, not soil data. It does not measure soil carbon, run project models or validate projects; a programme such as Verra and an independent validator do that.",
+  "senseible": "Senseible gives carbon credit eligibility signals from fuel and electricity records, and keeps the fuel invoices for farm machinery and processing that a project's emission sources draw on. Credit issuance and project validation come from a programme such as Verra and an independent validator.",
   "links": [
-    { "label": "Can a small business generate carbon credits?", "to": "/answers/can-a-small-business-generate-carbon-credits" },
-    { "label": "Soil carbon baseline sampling", "to": "/answers/soil-carbon-baseline-sampling-depth" },
-    { "label": "How much goes to the buffer pool", "to": "/answers/how-much-of-my-credits-go-to-buffer-pool" },
-    { "label": "Grouped projects in Verra", "to": "/answers/what-is-a-grouped-project-in-verra" }
+    {
+      "label": "Can a small business generate carbon credits?",
+      "to": "/answers/can-a-small-business-generate-carbon-credits"
+    },
+    {
+      "label": "Soil carbon baseline sampling",
+      "to": "/answers/soil-carbon-baseline-sampling-depth"
+    },
+    {
+      "label": "How much goes to the buffer pool",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
+    },
+    {
+      "label": "Grouped projects in Verra",
+      "to": "/answers/what-is-a-grouped-project-in-verra"
+    }
   ],
   "sources": [
-    { "label": "Verra VM0042 Methodology for Improved Agricultural Land Management", "url": "https://verra.org" },
-    { "label": "Gold Standard Soil Organic Carbon Framework Methodology", "url": "https://www.goldstandard.org" },
-    { "label": "ICVCM Core Carbon Principles assessment decisions", "url": "https://icvcm.org" }
+    {
+      "label": "Verra VM0042 Methodology for Improved Agricultural Land Management",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard Soil Organic Carbon Framework Methodology",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles assessment decisions",
+      "url": "https://icvcm.org"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "Methodology versions, ICVCM approval status and buffer rules for agriculture change often; check before committing to a project."

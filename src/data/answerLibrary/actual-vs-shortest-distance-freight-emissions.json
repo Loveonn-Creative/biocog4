@@ -2,7 +2,7 @@
   "slug": "actual-vs-shortest-distance-freight-emissions",
   "q": "Should freight emissions use the actual route distance or the shortest distance?",
   "title": "Freight: actual or shortest distance?",
-  "short": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework calculate shipment emissions on the shortest feasible distance (great circle for air), with detours carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
+  "short": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework charge each shipment on the shortest feasible distance, with detours and empty running carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Logistics managers and exporters reporting route changes",
@@ -11,7 +11,7 @@
       "h": "How ISO 14083 handles distance",
       "p": [
         "ISO 14083:2023 works in two steps. First, a carrier's emission intensity for a type of transport operation is its total emissions divided by its total transport activity in tonne-km. Second, each shipment is charged that intensity x its weight x its distance.",
-        "For transport activity the standard uses the shortest feasible distance: the shortest route a vehicle can actually take, given road type, weight and height limits. For air it uses the great circle distance. The extra kilometres of real routes, empty running and detours are not lost; they are in the total fuel, so they raise the intensity."
+        "For transport activity the standard uses the shortest feasible distance: the shortest route a vehicle can actually take on that mode. Air and sea have their own distance rules, so check the standard and the GLEC tables for those modes. The extra kilometres of real routes, empty running and detours are not lost; they are in the total fuel, so they raise the intensity."
       ]
     },
     {
@@ -48,15 +48,36 @@
   },
   "senseible": "Senseible reads freight records and applies weight x distance x a mode factor, using the distance printed on the record; a record without weight or distance gets no figure. Where only the freight cost is known, it can provide a spend-based estimate, labelled as spend-based.",
   "links": [
-    { "label": "Freight bill with no weight or distance", "to": "/answers/freight-bill-has-no-weight-or-distance" },
-    { "label": "E-way bill distance for freight emissions", "to": "/answers/use-e-way-bill-distance-for-freight-emissions" },
-    { "label": "Measuring a route optimisation cut", "to": "/answers/measure-emission-cut-from-route-optimisation" },
-    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" }
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "E-way bill distance for freight emissions",
+      "to": "/answers/use-e-way-bill-distance-for-freight-emissions"
+    },
+    {
+      "label": "Measuring a route optimisation cut",
+      "to": "/answers/measure-emission-cut-from-route-optimisation"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
   ],
   "sources": [
-    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" },
-    { "label": "GLEC Framework (Smart Freight Centre), distance and distance adjustment factors", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
-    { "label": "GHG Protocol Scope 3 Technical Guidance, Category 4 distance-based method", "url": "https://ghgprotocol.org" }
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework (Smart Freight Centre), distance and distance adjustment factors",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Technical Guidance, Category 4 distance-based method",
+      "url": "https://ghgprotocol.org"
+    }
   ],
   "reviewed": "2026-10-16",
   "reviewNote": "GLEC distance adjustment factors differ by mode and version; take them from the current GLEC tables."
