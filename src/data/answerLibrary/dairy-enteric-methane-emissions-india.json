@@ -1,0 +1,60 @@
+{
+  "slug": "dairy-enteric-methane-emissions-india",
+  "q": "How do I estimate enteric methane from dairy cattle and buffalo in India?",
+  "title": "Enteric methane from dairy cattle",
+  "short": "Multiply the average number of animals by a methane factor per head per year, then by methane's warming potential. With IPCC 2006 Tier 1 factors for the Indian subcontinent, that is 58 kg CH4 per dairy cow and 55 kg per buffalo a year, times 27 under AR6, giving about 1.5 to 1.6 tonnes CO2e per animal.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dairy processors and milk-based exporters asked for Scope 3 FLAG data",
+  "sections": [
+    {
+      "h": "The Tier 1 method",
+      "ol": [
+        "Count average annual population by type: dairy cows, other cattle, buffalo. For animals present part of the year, use animals x days present / 365.",
+        "Apply the per-head factor. IPCC 2006 Volume 4, Chapter 10: Table 10.11 gives 58 kg CH4 a year for dairy cattle and 27 for other cattle in the Indian subcontinent; Table 10.10 gives 55 for buffalo.",
+        "Convert to CO2e with a GWP. AR6 gives 27 for methane of non-fossil origin; some programmes still ask for the AR5 value of 28, so use what your buyer or framework specifies and say which.",
+        "Divide by milk volume for an intensity per litre."
+      ]
+    },
+    {
+      "h": "When Tier 1 is too rough",
+      "p": [
+        "The Tier 1 dairy factor assumes a low yield per animal, around 900 kg of milk a year. Higher yielding cows eat more and emit more methane per head, though less per litre. If your herd yields well above that, or a buyer wants reduction tracking, move to Tier 2, which works from feed intake, digestibility, body weight and milk yield.",
+        "The IPCC 2019 Refinement revised enteric factors and groups them by productivity, and India's national inventory reported to the UNFCCC uses country-specific factors. These give different results from the 2006 tables, so name the edition and table you used and keep it the same each year."
+      ]
+    },
+    {
+      "h": "Where it sits in a dairy company's inventory",
+      "ul": [
+        "Your own herd, if you run farms: Scope 1, as land and livestock (FLAG) emissions.",
+        "Milk bought from farmers or cooperatives: Scope 3 Category 1, purchased goods.",
+        "Manure management methane and nitrous oxide, feed production and land use change are separate lines, not part of enteric fermentation.",
+        "SBTi's FLAG guidance asks companies with significant land-related emissions to set a separate FLAG target; check whether that applies to you."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a milk collection area with 350 animals",
+    "lines": [
+      "Dairy cows: 200 x 58 = 11,600 kg CH4",
+      "Buffalo: 150 x 55 = 8,250 kg CH4",
+      "Total = 19,850 kg CH4 x 27 = 535,950 kg CO2e, about 536 tonnes",
+      "Milk: 200 cows x 1,500 L + 150 buffalo x 1,800 L = 570,000 L",
+      "Intensity = 535,950 / 570,000 = 0.94 kg CO2e per litre, enteric methane only"
+    ],
+    "note": "Tier 1 factors from IPCC 2006; milk yields are assumptions for illustration. The result is CO2e because it is methane converted with a GWP."
+  },
+  "senseible": "Enteric methane is worked out from herd data as shown here, outside Senseible's document reader. Senseible reads the fuel invoices and electricity bills for chilling, processing and transport, so those Scope 1 and 2 lines sit in an invoice-backed record beside your herd estimate.",
+  "links": [
+    { "label": "Does my company need an SBTi FLAG target?", "to": "/answers/does-my-company-need-sbti-flag-target" },
+    { "label": "Agriculture Scope 1 emissions in India", "to": "/climate-intelligence/agriculture-scope-1-emissions-india" },
+    { "label": "Methane and black carbon vs CO2", "to": "/climate-intelligence/methane-black-carbon-reductions-vs-co2" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 4, Chapter 10, Tables 10.10 and 10.11", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (methane GWP)", "url": "https://www.ipcc.ch/report/ar6/wg1/" },
+    { "label": "SBTi, Forest, Land and Agriculture (FLAG) Guidance", "url": "https://sciencebasedtargets.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Factors differ between the IPCC 2006 tables and the 2019 Refinement; this page uses the 2006 Tier 1 values."
+}

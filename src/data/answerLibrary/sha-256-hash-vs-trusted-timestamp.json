@@ -1,0 +1,51 @@
+{
+  "slug": "sha-256-hash-vs-trusted-timestamp",
+  "q": "Does a SHA-256 hash prove when a document existed?",
+  "title": "SHA-256 hash or trusted timestamp?",
+  "short": "No. A SHA-256 hash proves a file has not changed since the hash was made, but it carries no date. To prove when a document existed you need the hash recorded somewhere independent at a known time, such as a trusted timestamp under RFC 3161, a digital signature, or a copy held by someone else.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Auditors, lenders and finance teams relying on digital evidence",
+  "sections": [
+    {
+      "h": "Integrity and time are separate questions",
+      "p": [
+        "SHA-256, defined in NIST FIPS 180-4, turns a file into a 64 character code. Anyone can recompute that code at any time, today or in five years, and get the same answer. That is why it proves the file is unchanged, and also why it says nothing about the date.",
+        "A date written next to a hash in your own system is only as trustworthy as whoever controls the system. Someone could create a file today and record yesterday's date beside its hash."
+      ]
+    },
+    {
+      "h": "Ways to fix the time",
+      "ul": [
+        "Trusted timestamp (RFC 3161). You send only the hash to a time-stamping authority, which returns a signed token binding that hash to its clock time. Anyone with the authority's certificate can check it later.",
+        "Digital signature. A signature under the Information Technology Act, 2000 (Sections 3 and 3A cover digital and electronic signatures) ties a document to a signer; with a trusted signing time it also supports the date.",
+        "Independent copy. Emailing a report or its hash to your auditor, lender or buyer leaves a dated record on their side that you cannot edit.",
+        "Publishing a hash. Placing the latest hash of a ledger somewhere public or with a third party fixes every earlier entry it covers."
+      ]
+    },
+    {
+      "h": "What a hash chain adds",
+      "p": [
+        "In a hash-chained ledger each entry includes the hash of the one before. Change an old entry and every later hash breaks, so the chain shows the order of entries and makes quiet edits visible. On its own it does not prove dates to an outsider, because the operator could rebuild the whole chain. Anchoring the newest hash with someone independent closes that gap."
+      ]
+    },
+    {
+      "h": "What to ask for when you rely on digital evidence",
+      "ol": [
+        "The original file and its SHA-256 value, so you can recompute it.",
+        "Evidence of time from outside the preparer: a timestamp token, a signed submission, or an email or filing that you or another party received.",
+        "For court use in India, the certificate for electronic records under Section 63 of the Bharatiya Sakshya Adhiniyam, 2023, which replaced Section 65B of the Evidence Act."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints each uploaded file with SHA-256, so an identical file is not counted twice, and hash-chains its ledger entries, with further hardening of the chain under way. These show a file is unchanged and the order of entries; to prove a date to an outsider, pair them with an independent record such as a trusted timestamp or a report sent to your auditor.",
+  "links": [
+    { "label": "How to verify a SHA-256 fingerprint", "to": "/answers/verify-sha-256-fingerprint-carbon-report" },
+    { "label": "Does a hash prove emissions are correct?", "to": "/answers/does-a-hash-prove-emissions-are-correct" },
+    { "label": "How auditors verify activity data", "to": "/answers/how-auditors-verify-activity-data" }
+  ],
+  "sources": [
+    { "label": "NIST FIPS 180-4, Secure Hash Standard (SHA-256)", "url": "https://csrc.nist.gov" }
+  ],
+  "reviewed": "2026-10-16"
+}

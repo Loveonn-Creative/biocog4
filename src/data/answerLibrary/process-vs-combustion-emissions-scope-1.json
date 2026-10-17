@@ -1,0 +1,85 @@
+{
+  "slug": "process-vs-combustion-emissions-scope-1",
+  "q": "Are process emissions reported separately from fuel combustion in Scope 1?",
+  "title": "Process vs combustion emissions in Scope 1",
+  "short": "Both are Scope 1, and the GHG Protocol only requires the Scope 1 total. But you should keep them as separate lines. CBAM installation monitoring treats them as separate source streams, IPCC puts them in different volumes, and buyers and lenders need the split because a fuel switch cuts only the combustion part.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Manufacturers filling BRSR, CBAM or buyer questionnaires",
+  "sections": [
+    {
+      "h": "What counts as each",
+      "ul": [
+        "Combustion: CO2 from burning fuel for heat or power, such as coal in a boiler, furnace oil in a reheating furnace or diesel in a generator.",
+        "Process: CO2 released by a chemical or physical change in materials, not by burning for energy. Examples are limestone calcination in cement and lime, carbonate fluxes in steel, soda ash in glass, and carbon anodes in aluminium smelting.",
+        "The GHG Protocol Corporate Standard lists four Scope 1 source types: stationary combustion, mobile combustion, process and fugitive emissions."
+      ]
+    },
+    {
+      "h": "Where each framework draws the line",
+      "ul": [
+        "GHG Protocol: one Scope 1 total is required; a breakdown by source type is optional information that adds transparency.",
+        "IPCC 2006 Guidelines: fuel combustion sits in Volume 2 (Energy); process emissions in Volume 3 (Industrial Processes and Product Use).",
+        "EU CBAM: installation monitoring uses source streams, with combustion and process emissions identified and monitored separately.",
+        "SEBI BRSR: asks for total Scope 1 in tonnes CO2e, so the split is not required in the form, but keep it in your working papers."
+      ]
+    },
+    {
+      "h": "The tricky case: fuel used as a raw material",
+      "p": [
+        "Coke used as a reductant in a blast furnace, or natural gas used as feedstock for ammonia, is not burnt mainly for heat. IPCC counts these under industrial processes, not energy. Do not count the same fuel twice: if the coke purchase is already in your process line, leave it out of combustion.",
+        "If a stack monitor measures total CO2 from a kiln, report that measured figure once and show the calculated split as a note."
+      ]
+    },
+    {
+      "h": "How to lay it out",
+      "ol": [
+        "One line per fuel for combustion, with quantity, factor and source.",
+        "One line per process input, such as tonnes of carbonate, purity and factor.",
+        "A Scope 1 total that is the sum of both.",
+        "Fugitive refrigerant or SF6 leaks on their own line, in CO2e, since they are not CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a lime kiln for one year",
+    "lines": [
+      "Process: 1,000 t of pure calcium carbonate calcined x 0.43971 t CO2 per t (IPCC 2006 Vol 3, Table 2.1) = 439.71 t CO2",
+      "Combustion: 150 t coal x 2.42 kg CO2 per kg (IPCC 2006 default) = 363 t CO2",
+      "Scope 1 total: 439.71 + 363 = 802.71 t CO2",
+      "Switching the kiln fuel to a lower-carbon one can only cut the 363 t combustion part"
+    ],
+    "note": "Purity and the coal factor vary by supplier; use your assay and fuel analysis where you have them."
+  },
+  "senseible": "Senseible calculates combustion emissions from your fuel invoices using IPCC 2006 factors. It does not calculate process emissions on its own: they are calculated only when you supply measured data, such as tonnes of carbonate fed and its assay.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Manufacturing Scope 1 emissions in India",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    },
+    {
+      "label": "CBAM default vs actual emissions",
+      "to": "/answers/cbam-default-vs-actual"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy) and Volume 3 (IPPU)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "CBAM monitoring rules, Implementing Regulation (EU) 2023/1773 and definitive-period acts",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CBAM monitoring rules for the definitive period were updated in 2025; check that the source stream split still applies as described."
+}

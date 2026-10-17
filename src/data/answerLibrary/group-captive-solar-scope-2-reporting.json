@@ -1,0 +1,63 @@
+{
+  "slug": "group-captive-solar-scope-2-reporting",
+  "q": "How do I disclose group captive or third-party solar in my Scope 2 report?",
+  "title": "Disclosing captive solar in Scope 2 reports",
+  "short": "Show two Scope 2 totals side by side, location-based and market-based, and say which one each headline figure uses. Report the solar as renewable electricity in MWh or GJ in your energy table, and add a short method note naming the contract, the units claimed and the factor used for the remaining grid power.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian factories with group captive or third-party solar PPAs",
+  "sections": [
+    {
+      "h": "Captive or third-party makes no difference to the disclosure",
+      "p": [
+        "Whether the solar comes from a group captive plant or a third-party open access PPA changes the charges on your bill, not the carbon reporting. Both are contractual instruments under the GHG Protocol Scope 2 Guidance. The disclosure below is the same for either; what matters is that the contract gives you the renewable attributes."
+      ]
+    },
+    {
+      "h": "The lines to show in a GHG inventory",
+      "ul": [
+        "Total electricity consumed, in MWh, split into grid-supplied and contracted solar.",
+        "Scope 2 location-based, in t CO2, with the CEA database version and factor.",
+        "Scope 2 market-based, in t CO2, with the solar MWh claimed and the factor used for the rest.",
+        "The instrument type for the solar (group captive agreement or third-party PPA) and the reporting year the units were adjusted in.",
+        "A statement that no RECs or carbon credits were sold for the claimed units."
+      ]
+    },
+    {
+      "h": "Putting it into BRSR",
+      "p": [
+        "The BRSR format published with SEBI's July 2023 circular asks for energy consumption split into renewable and non-renewable sources, in joules or multiples. Put the adjusted solar units under electricity from renewable sources and the grid units under non-renewable, converting at 3.6 GJ per MWh. BRSR asks for Scope 2 in t CO2e without naming a method, so state in the note whether your figure is location-based or market-based, and keep the same choice each year."
+      ]
+    },
+    {
+      "h": "A method note you can adapt",
+      "p": [
+        "\"Scope 2 is reported on both bases. Location-based applies the CEA CO2 Baseline Database version 21.0 weighted average of 0.710 kg CO2 per kWh to all electricity consumed. Market-based treats [X] MWh of solar, adjusted at our meter under a [group captive / third-party] agreement that assigns the renewable attributes to us, as zero, and applies the CEA grid average to the remaining [Y] MWh as a proxy, because India publishes no residual mix factor.\""
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the disclosure figures for one year",
+    "lines": [
+      "Consumption 2,400 MWh: 1,500 MWh contracted solar adjusted at the meter, 900 MWh from the grid",
+      "Location-based Scope 2: 2,400 x 0.710 t CO2 per MWh = 1,704 t CO2",
+      "Market-based Scope 2: 900 x 0.710 = 639 t CO2",
+      "BRSR energy table: renewable 1,500 x 3.6 = 5,400 GJ; non-renewable 900 x 3.6 = 3,240 GJ; renewable share 62.5 percent"
+    ],
+    "note": "Illustrative figures. The market-based total holds only if the contract passes the Scope 2 Quality Criteria."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from the kWh on your bills at 0.710 kg CO2 per kWh, and market-based Scope 2 once you add the solar contract or certificate data, and its BRSR draft reflects the data you uploaded. Drafts are self-declared; Senseible does not check your PPA's attribute clause.",
+  "links": [
+    { "label": "Group captive solar in Scope 2", "to": "/answers/group-captive-solar-scope-2" },
+    { "label": "When a captive PPA lowers Scope 2", "to": "/answers/group-captive-solar-ppa-scope-2-claim" },
+    { "label": "Rooftop solar and net metering", "to": "/answers/rooftop-solar-net-metering-scope-2" },
+    { "label": "BRSR reporting requirements", "to": "/climate-intelligence/brsr-reporting-requirements-india" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" },
+    { "label": "SEBI circular on BRSR Core and the updated BRSR format, July 2023", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "Electricity Rules, 2005, Rule 3, and Green Energy Open Access Rules, 2022, Ministry of Power", "url": "https://powermin.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance and SEBI revises the BRSR format from time to time; check both before each reporting cycle."
+}

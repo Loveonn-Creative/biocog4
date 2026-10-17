@@ -1,0 +1,66 @@
+{
+  "slug": "land-use-change-emissions-in-scope-3",
+  "q": "Do I need to count land use change emissions from crops or timber I buy?",
+  "title": "Land use change in purchased crops and timber",
+  "short": "You need to count land use change emissions if a buyer with an SBTi FLAG target asks, if you publish a product carbon footprint where it is significant, or if land-based materials are a large part of your footprint. For a basic Scope 1 and 2 inventory you do not. It is a carbon question, separate from EUDR.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Food, cotton textile and furniture exporters with EU or SBTi buyers",
+  "sections": [
+    {
+      "h": "When you have to include it",
+      "ul": [
+        "Your buyer has, or is setting, an SBTi FLAG target. SBTi requires a FLAG target from companies in land-intensive sectors and from others whose land-related emissions are 20 percent or more of their total, and FLAG emissions include land use change in the supply chain.",
+        "You publish a product carbon footprint under ISO 14067 or PAS 2050, which ask for direct land use change to be assessed and included where it is significant.",
+        "Your own Scope 3 Category 1 is dominated by crops, cotton, timber or leather, so leaving land use change out would understate it by a material amount."
+      ]
+    },
+    {
+      "h": "Direct versus statistical land use change",
+      "p": [
+        "Direct land use change applies when you know the farm or forest and can show whether it was converted from forest or grassland within the last 20 years. Statistical land use change applies when you only know the country: the emissions from land converted to that crop in that country over 20 years are spread across all of the crop's production. Most Indian exporters buying through traders will be on the statistical route, using a published country and crop dataset, labelled as such."
+      ]
+    },
+    {
+      "h": "How the 20 year amortisation works",
+      "p": [
+        "The carbon lost when land is cleared is not charged to one harvest. FLAG guidance and PAS 2050-1 spread it evenly over 20 years from the conversion. After 20 years, that land carries no land use change emissions. This is why land cleared long ago shows zero and recently cleared land shows a large figure per tonne."
+      ]
+    },
+    {
+      "h": "Not the same test as EUDR",
+      "p": [
+        "The EU Deforestation Regulation is a legal test: covered commodities must come from land not deforested after 31 December 2020, proven with geolocation. It covers cattle, cocoa, coffee, oil palm, rubber, soya and wood, but not cotton. Meeting EUDR does not give you a land use change figure, and a land use change figure does not prove EUDR compliance."
+      ]
+    },
+    {
+      "h": "Where the guidance stands",
+      "p": [
+        "The GHG Protocol's Land Sector and Removals Standard sets how companies report land emissions and removals, alongside SBTi FLAG. Its final text and effective date have moved over time, so check the current version before you write a methodology note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: amortising one hectare of cleared land",
+    "lines": [
+      "Carbon released when 1 ha is converted to cropland: 150 t CO2 (illustrative)",
+      "Spread over 20 years: 150 / 20 = 7.5 t CO2 per year",
+      "Crop yield on that hectare: 5 t a year",
+      "Land use change per tonne of crop: 7.5 / 5 = 1.5 t CO2 per t, for 20 years after clearing"
+    ],
+    "note": "All inputs are illustrative. In practice use a published country and crop land use change factor and name the dataset and version."
+  },
+  "senseible": "Senseible does not calculate land use change emissions. Invoices for purchased crops, cotton or timber go to its supplier evidence trail as Scope 3 lines, which gives you the quantities to multiply by a land use change factor.",
+  "links": [
+    { "label": "Does my company need an SBTi FLAG target?", "to": "/answers/does-my-company-need-sbti-flag-target" },
+    { "label": "Does EUDR apply to my exports?", "to": "/answers/does-eudr-apply-to-my-indian-exports" },
+    { "label": "Biogenic carbon for food and textiles", "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme" }
+  ],
+  "sources": [
+    { "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance", "url": "https://sciencebasedtargets.org" },
+    { "label": "GHG Protocol Land Sector and Removals Standard", "url": "https://ghgprotocol.org" },
+    { "label": "Regulation (EU) 2023/1115 on deforestation-free products (EUR-Lex)", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Land Sector and Removals Standard and SBTi FLAG rules are changing; check the current versions and their effective dates."
+}

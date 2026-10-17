@@ -1,0 +1,65 @@
+{
+  "slug": "iso-14001-certification-cost-india",
+  "q": "How much does ISO 14001 certification cost an Indian MSME?",
+  "title": "ISO 14001 certification cost for MSMEs",
+  "short": "There is no fixed price. ISO 14001 certification cost is the audit days your certification body must spend, set by your headcount and environmental complexity, times its day rate, plus two surveillance audits and your own preparation time. Get two or three quotes in audit days, not a lump sum.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "MSME owners deciding on ISO 14001",
+  "sections": [
+    {
+      "h": "What sets the number of audit days",
+      "p": [
+        "Accredited certification bodies follow the International Accreditation Forum document IAF MD 5, which gives a minimum audit time for environmental management systems from two inputs: the number of people working under the system, and the complexity of your environmental aspects (a plating or chemical unit sits higher than an assembly shop). Extra sites, shifts and outsourced processes add time. A body may adjust within limits but must justify cutting below the table."
+      ]
+    },
+    {
+      "h": "The three year cost cycle",
+      "ol": [
+        "Initial certification: a Stage 1 document and readiness review, then a Stage 2 audit on site. Together these are the initial audit days.",
+        "Surveillance audits in year 2 and year 3, each usually about one third of the initial audit time.",
+        "Recertification before the certificate expires at three years, usually about two thirds of the initial time, and the cycle restarts."
+      ]
+    },
+    {
+      "h": "Costs outside the certification body's quote",
+      "ul": [
+        "A consultant to build the system, if you use one. This is optional and often the largest single cost.",
+        "Staff time for aspect registers, legal register, training, internal audit and management review.",
+        "Compliance work the audit will test: valid consents from the State Pollution Control Board, hazardous waste returns, stack or effluent monitoring reports.",
+        "Auditor travel and stay, which some bodies bill separately."
+      ]
+    },
+    {
+      "h": "How to compare quotes fairly",
+      "ul": [
+        "Ask each body to state audit days for Stage 1, Stage 2, each surveillance and recertification, and its day rate.",
+        "Confirm the body is accredited for ISO 14001 by an IAF member, such as NABCB in India. An unaccredited certificate may not be accepted by buyers.",
+        "Be wary of a quote with far fewer days than others for the same headcount; it may not meet IAF MD 5.",
+        "Ask for a combined audit price if you also want ISO 9001 or ISO 50001."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: counting audit days over three years",
+    "lines": [
+      "Initial audit time quoted (Stage 1 plus Stage 2): 6 days",
+      "Surveillance in year 2 and year 3: about 6 / 3 = 2 days each",
+      "Audit days in the first cycle: 6 + 2 + 2 = 10 days",
+      "Three year certification body cost = 10 x quoted day rate + travel, before your own preparation costs"
+    ],
+    "note": "The 6 days is an illustrative input, not a figure from the IAF MD 5 table for any particular headcount. Use the days and day rate in your own quotes."
+  },
+  "senseible": "Senseible does not provide or price ISO 14001 certification. Its electricity and fuel records can supply the energy and emissions data your environmental management system needs to monitor.",
+  "links": [
+    { "label": "ISO 50001 or ISO 14001 first?", "to": "/answers/iso-50001-vs-iso-14001-which-first" },
+    { "label": "Does ISO 14001 require climate change?", "to": "/answers/does-iso-14001-require-climate-change" },
+    { "label": "ESG readiness assessment for MSMEs", "to": "/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026" }
+  ],
+  "sources": [
+    { "label": "ISO 14001:2015, Environmental management systems (iso.org)", "url": "https://www.iso.org" },
+    { "label": "ISO/IEC 17021-1:2015, Requirements for bodies providing audit and certification of management systems (iso.org)", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Audit time rules follow the current IAF MD 5 issue; check it and confirm prices only from written quotes."
+}

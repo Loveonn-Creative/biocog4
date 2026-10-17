@@ -1,0 +1,54 @@
+{
+  "slug": "ssbj-japanese-buyers-supplier-emissions",
+  "q": "Will Japan's SSBJ standards make Japanese customers ask Indian suppliers for emissions?",
+  "title": "SSBJ and Japanese buyers' supplier data",
+  "short": "Yes, increasingly. Japan's SSBJ climate standard follows IFRS S2 and asks large listed companies to report Scope 3, which includes what they buy from suppliers. Estimates are allowed, so early requests may be light, but Japanese customers will want supplier figures they can defend as mandatory reporting phases in.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian auto-component and electronics suppliers to Japanese OEMs",
+  "sections": [
+    {
+      "h": "What the SSBJ issued and who it applies to",
+      "p": [
+        "The Sustainability Standards Board of Japan issued its first standards on 5 March 2025: a Universal Standard, a General Disclosures standard and a Climate-related Disclosures standard, built to be equivalent to IFRS S1 and IFRS S2. Japan's Financial Services Agency plans to make them mandatory for Prime Market companies in phases by market capitalisation, starting with the largest companies for fiscal years ending March 2027, with smaller Prime companies following in later years."
+      ]
+    },
+    {
+      "h": "Why this reaches an Indian supplier",
+      "ul": [
+        "Scope 3 Category 1, purchased goods and services, is usually the largest part of a manufacturer's footprint, and your parts are in it.",
+        "Like IFRS S2, the SSBJ climate standard asks companies to prioritise direct data from the value chain where it is reasonably available, and to say how much of their Scope 3 rests on estimates.",
+        "Japanese OEMs with supplier reduction targets need supplier-specific figures, because spend-based estimates do not move when a supplier actually cuts emissions.",
+        "Assurance of disclosures is expected to follow mandatory reporting, which raises the bar on traceable supplier data."
+      ]
+    },
+    {
+      "h": "What you are likely to be asked for",
+      "ol": [
+        "Your Scope 1 and Scope 2 totals for the company or the plant, with the method and factors used.",
+        "An allocation of those emissions to the parts you supply, by mass, units or revenue.",
+        "Later, a product carbon footprint for key parts, including your own purchased materials.",
+        "Evidence behind the numbers: fuel and electricity invoices, the grid factor source, and production volumes."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "p": [
+        "Build a full year of Scope 1 and 2 from bills and fuel records, report location-based Scope 2 with the CEA factor, and keep production volumes by product line so an allocation is quick when the questionnaire arrives. A Japanese buyer's own supplier guideline will often specify the format; follow it over any generic template."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds your Scope 1 and 2 record from fuel slips and electricity bills, with the source document behind each line, which is the evidence a Japanese customer's supplier request needs. It does not prepare SSBJ disclosures for your customer or allocate emissions to parts automatically.",
+  "links": [
+    { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" },
+    { "label": "Share emissions without sending invoices", "to": "/answers/share-emissions-with-buyer-without-invoices" },
+    { "label": "Allocate emissions to a buyer's purchases", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+  ],
+  "sources": [
+    { "label": "IFRS S2 Climate-related Disclosures, the basis of the SSBJ Climate-related Disclosures standard (March 2025)", "url": "https://www.ifrs.org" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The mandatory timetable depends on FSA cabinet office ordinances; confirm the phase dates and market capitalisation thresholds before relying on them."
+}

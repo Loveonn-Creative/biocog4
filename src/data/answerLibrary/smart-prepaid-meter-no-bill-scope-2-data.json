@@ -1,0 +1,64 @@
+{
+  "slug": "smart-prepaid-meter-no-bill-scope-2-data",
+  "q": "I have a smart prepaid meter and no monthly bill. Where do I get Scope 2 data?",
+  "title": "Scope 2 data from a smart prepaid meter",
+  "short": "Take the kWh from the meter itself. Download monthly consumption from your discom's app or consumer portal, or photograph the meter's cumulative kWh reading on the same date each month and subtract. Ask the discom for a monthly statement if you need a document. Do not turn recharge rupees into kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian commercial and small industrial consumers moved to smart prepaid meters",
+  "sections": [
+    {
+      "h": "Sources of kWh, best first",
+      "ol": [
+        "Discom statement or energy statement for the month, downloaded or requested in writing. It carries the discom's name and is the strongest evidence.",
+        "Consumption history in the discom's smart meter app or portal, which usually shows daily or monthly kWh. Save a screenshot or export each month.",
+        "Meter register photos: the cumulative kWh reading on the first day of each month, with the meter number blanked out if you share it. Consumption is the difference between two readings.",
+        "Sub-meters you own, for splitting use between units or tenants."
+      ]
+    },
+    {
+      "h": "Why recharge amounts are not a substitute",
+      "p": [
+        "A prepaid recharge covers energy charges plus fixed or demand charges, electricity duty, and sometimes arrears or slab changes. Dividing rupees by an average tariff gives an estimate, not a reading. If that is all you have for a month, label it as an estimate and replace it once the discom data arrives."
+      ]
+    },
+    {
+      "h": "Points to check on the meter",
+      "ul": [
+        "Is the register kWh or kVAh? Commercial and industrial meters may bill in kVAh. Use the kWh register if the meter shows one, or kVAh times the recorded power factor, labelled an estimate.",
+        "Is it a net meter with rooftop solar? Use import units, not the net figure, and do not treat exported units as consumption.",
+        "Did the meter change mid-year? Keep the final reading of the old meter and the first of the new one."
+      ]
+    },
+    {
+      "h": "Rules behind smart prepaid metering",
+      "p": [
+        "Smart prepaid meters are being installed under the Ministry of Power's Revamped Distribution Sector Scheme (RDSS). The Electricity (Rights of Consumers) Rules, 2020, as amended, and CEA metering regulations cover how consumers get consumption data. What each discom shows, and whether it issues a monthly statement on request, varies, so check your discom's notices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month from meter photos",
+    "lines": [
+      "Cumulative reading on 1 April: 18,452.6 kWh",
+      "Cumulative reading on 1 May: 19,874.1 kWh",
+      "Consumption = 19,874.1 minus 18,452.6 = 1,421.5 kWh",
+      "Scope 2 = 1,421.5 x 0.710 = 1,009.3 kg CO2, about 1 tonne"
+    ],
+    "note": "0.710 kg CO2 per kWh is the CEA weighted average grid factor, version 21.0, for location-based Scope 2."
+  },
+  "senseible": "Senseible reads electricity bills, and a photo showing two meter readings gives the units as their difference, which suits prepaid meters. It also takes hardware and meter feeds, set up with the Senseible team for each customer rather than as a self-serve integration.",
+  "links": [
+    { "label": "Smart meter data or bills for reporting?", "to": "/answers/smart-meter-data-vs-bills-for-carbon-reporting" },
+    { "label": "Missing electricity bills", "to": "/answers/missing-electricity-bills-carbon-footprint" },
+    { "label": "Convert a kVAh bill to kWh", "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "Ministry of Power, Revamped Distribution Sector Scheme and Electricity (Rights of Consumers) Rules, 2020", "url": "https://powermin.gov.in" },
+    { "label": "CEA, Installation and Operation of Meters Regulations", "url": "https://cea.nic.in" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Consumer access to smart meter data and monthly statements varies by discom and may change with RDSS rollout notices."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "green-ammonia-carbon-intensity-threshold",
+  "q": "How is the carbon intensity of green ammonia calculated in India?",
+  "title": "Carbon intensity of green ammonia",
+  "short": "Add the emissions of the hydrogen inside the ammonia, about 0.178 kg of hydrogen per kg of ammonia, to the emissions from the power and fuel used for air separation and synthesis, then divide by ammonia output. India's green ammonia standard sets a limit of 0.38 kg CO2e per kg.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fertiliser and ammonia producers and exporters",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Hydrogen share: 3 hydrogen atoms in each ammonia molecule give 3 x 1.008 / 17.031 = 0.178 kg hydrogen per kg ammonia.",
+        "Hydrogen emissions per kg ammonia = hydrogen intensity (kg CO2e per kg H2) x 0.178.",
+        "Power emissions per kg ammonia = kWh per kg for air separation, compression and the synthesis loop x the emission factor of that power (zero for renewable power you can prove, the grid factor otherwise).",
+        "Add any fuel burnt on site, such as a diesel generator or a gas-fired start-up heater.",
+        "Sum and divide by ammonia produced over the period."
+      ]
+    },
+    {
+      "h": "Why grid power matters so much",
+      "p": [
+        "Hydrogen at 1.8 kg CO2e per kg, inside India's 2 kg green hydrogen limit, already gives 0.320 kg CO2e per kg of ammonia. That leaves 0.060 kg under a 0.38 limit. At 0.710 kg CO2 per kWh from the grid, the headroom is only about 0.085 kWh of grid power per kg of ammonia, so the synthesis and air separation plant must run almost entirely on renewable power."
+      ]
+    },
+    {
+      "h": "How CBAM looks at the same ammonia",
+      "p": [
+        "Ammonia (CN 2814) is a CBAM good under Annex I of Regulation (EU) 2023/956. CBAM counts direct emissions, indirect emissions from electricity for fertiliser goods, and the emissions embedded in hydrogen used as a precursor, reported in tonnes CO2e per tonne. It has its own monitoring rules, so a figure that passes India's standard still has to be recalculated to CBAM's method for an EU buyer."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "Hydrogen output and its certified or calculated intensity.",
+        "Metered kWh for each unit, with the source of each supply: grid, open access, captive renewable.",
+        "Fuel invoices for any on-site combustion.",
+        "Ammonia production by month, since threshold tests are averaged over a period."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of ammonia",
+    "lines": [
+      "Hydrogen: 1.8 kg CO2e per kg H2 x 0.178 = 0.320 kg CO2e",
+      "Synthesis and air separation: 0.5 kWh per kg (illustrative; use your metered figure)",
+      "All renewable: 0.320 + 0 = 0.320 kg CO2e per kg, within 0.38",
+      "All grid: 0.5 x 0.710 = 0.355 kg CO2; total 0.320 + 0.355 = 0.675 kg CO2e per kg, well over 0.38"
+    ],
+    "note": "The 0.5 kWh per kg is an assumption for illustration. Plant figures vary by technology and size."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies 0.710 kg CO2 per kWh and the IPCC fuel factors, which can feed the power and fuel part of this calculation, and its CBAM cost calculator covers fertilisers. It does not certify ammonia against India's standard.",
+  "links": [
+    {
+      "label": "CBAM cost for fertilisers",
+      "to": "/cbam-cost/fertilizers"
+    },
+    {
+      "label": "India's 2 kg green hydrogen threshold",
+      "to": "/answers/india-green-hydrogen-standard-2kg-threshold"
+    },
+    {
+      "label": "Grid-powered hydrogen intensity",
+      "to": "/answers/grid-electricity-hydrogen-carbon-intensity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MNRE, Green Ammonia Standard for India (well-to-gate limit of 0.38 kg CO2e per kg NH3); BEE runs the related green hydrogen certification scheme",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annex I and Annex II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 3 (chemical industry, ammonia production)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Confirm the current MNRE green ammonia notification, its 0.38 kg CO2e per kg limit and averaging period, and CBAM default values for ammonia before relying on this."
+}

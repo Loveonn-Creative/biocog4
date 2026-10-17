@@ -1,0 +1,86 @@
+{
+  "slug": "green-bond-impact-reporting-metrics",
+  "q": "What impact metrics must a green bond issuer report, and how is CO2 avoided calculated?",
+  "title": "Green bond impact metrics and CO2 avoided",
+  "short": "Report, at least once a year, the energy and climate results of the projects the bond paid for: for renewable power, MWh generated, MW installed and tonnes CO2 avoided; for efficiency, MWh saved. CO2 avoided is the clean or saved energy times a stated baseline grid factor, counted for your financed share.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian NBFCs and corporates issuing green debt; MSME borrowers asked for data",
+  "sections": [
+    {
+      "h": "What Indian issuers are asked to disclose",
+      "p": [
+        "SEBI's rules on green debt securities, now in its master circular for non-convertible securities, ask listed issuers to report how the proceeds were used and the environmental impact of the projects, with quantitative measures where feasible and the methods and assumptions behind them. Most issuers follow the ICMA Harmonised Framework for Impact Reporting (June 2024 edition) for the metrics themselves."
+      ]
+    },
+    {
+      "h": "Core metrics by project type",
+      "ul": [
+        "Renewable energy: annual generation in MWh, capacity added in MW, annual GHG emissions avoided in tonnes CO2 or CO2e.",
+        "Energy efficiency: annual energy saved in MWh or GJ, annual GHG emissions reduced.",
+        "Clean transport: vehicles financed, fuel or energy saved, emissions avoided.",
+        "Green buildings: energy use per square metre against a baseline, certification level."
+      ],
+      "p": [
+        "Report each project or a portfolio total, and say whether the figures are expected or actually measured."
+      ]
+    },
+    {
+      "h": "How CO2 avoided is calculated",
+      "ol": [
+        "Take the measured clean generation or energy saved for the year, in kWh.",
+        "Choose the baseline factor and name it: the CEA grid weighted average (0.710 kg CO2 per kWh, version 21.0) or the combined margin from the same CEA database, which many project methods use for new renewable capacity.",
+        "Multiply kWh by the factor to get kg CO2 avoided.",
+        "If the bond paid for only part of the project, report your pro rata share, by the bond's share of total project cost.",
+        "Keep avoided emissions separate from your own Scope 1, 2 and 3; they are not deducted from an inventory."
+      ]
+    },
+    {
+      "h": "What issuers need from MSME borrowers",
+      "p": [
+        "Lenders funding solar, efficiency or EV loans need each borrower's before and after energy figures: monthly electricity bills, generation meter readings and fuel invoices. Borrowers who keep these organised can answer the lender's yearly request without a site visit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a solar plant part funded by a green bond",
+    "lines": [
+      "Plant: 10 MW, measured generation 15,000 MWh in the year (15,000,000 kWh)",
+      "Avoided: 15,000,000 x 0.710 kg CO2 per kWh = 10,650,000 kg, 10,650 t CO2 (CEA weighted average baseline)",
+      "Bond share of project cost: 60%",
+      "Reported impact: 10,650 x 0.60 = 6,390 t CO2 avoided"
+    ],
+    "note": "Using a combined margin baseline would give a different figure; state which baseline you used."
+  },
+  "senseible": "Senseible keeps borrower-level energy and emission evidence from electricity bills and fuel invoices, month by month, which can feed an issuer's impact report. It does not prepare the issuer's impact report or provide an external review of the bond.",
+  "links": [
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "How to calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    },
+    {
+      "label": "CEA weighted average vs combined margin",
+      "to": "/answers/cea-weighted-average-vs-combined-margin"
+    },
+    {
+      "label": "Green finance",
+      "to": "/green-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for issue and listing of non-convertible securities, chapter on green debt securities",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SEBI updates its master circulars regularly; check the current green debt chapter before an issue."
+}

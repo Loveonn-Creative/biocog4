@@ -1,0 +1,81 @@
+{
+  "slug": "can-guarantees-of-origin-cover-indian-factory",
+  "q": "Can my EU subsidiary's Guarantees of Origin cover electricity at our Indian factory?",
+  "title": "Can EU GOs cover an Indian factory?",
+  "short": "No. Guarantees of Origin are issued for electricity produced in Europe, and the GHG Protocol requires certificates to come from the same market where the power is used. The Indian grid is not connected to Europe's, so EU GOs cannot lower your Indian factory's market-based Scope 2.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian groups with EU subsidiaries",
+  "sections": [
+    {
+      "h": "The market boundary rule",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance sets quality criteria for any certificate used in market-based reporting. One is that the certificate comes from the same market as the electricity it covers. RE100's technical criteria apply the same idea. India and the EU are separate grids with no physical exchange of power, so a GO cannot describe electricity your factory could have received."
+      ]
+    },
+    {
+      "h": "What the EU rules say about GOs",
+      "p": [
+        "GOs are issued under Article 19 of the Renewable Energy Directive, Directive (EU) 2018/2001, for renewable power produced in a member state, and the directive lets member states recognise third country GOs only where the EU has an agreement with that country and energy is directly imported or exported. Neither applies to India."
+      ]
+    },
+    {
+      "h": "What the Indian factory can use instead",
+      "ul": [
+        "India RECs under the CERC REC Regulations, 2022.",
+        "I-RECs issued for Indian generation.",
+        "A green tariff from your discom, or green open access power.",
+        "A captive or group captive renewable plant, or a PPA with the attributes kept with you."
+      ],
+      "p": [
+        "Each must be retired or contracted in the name of the Indian entity for the same reporting year."
+      ]
+    },
+    {
+      "h": "How to report the group",
+      "p": [
+        "Report market-based Scope 2 site by site. The EU subsidiary can apply its GOs to its own EU consumption. The Indian factory's uncovered kWh use the CEA grid factor, since India publishes no residual mix. Report location-based figures for every site as well."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 3,000 MWh Indian factory",
+    "lines": [
+      "Consumption: 3,000,000 kWh",
+      "GOs for 3,000 MWh bought by the EU subsidiary: not valid for India, so market-based = 3,000,000 x 0.710 = 2,130,000 kg, 2,130 t CO2",
+      "I-RECs or India RECs for 3,000 MWh of Indian generation, retired for the same year: market-based 0 t",
+      "Location-based in both cases: 2,130 t CO2, reported alongside"
+    ]
+  },
+  "senseible": "Senseible reports location-based Scope 2 per site from electricity bills, and a market-based figure when you supply the certificate data, such as instrument type, quantity and generation period. It does not buy, retire or validate certificates.",
+  "links": [
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Do RE100 and CDP accept Indian RECs",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Directive (EU) 2018/2001 (Renewable Energy Directive), Article 19, Guarantees of origin",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance, including market boundary and deliverability tests; recheck before each reporting cycle."
+}

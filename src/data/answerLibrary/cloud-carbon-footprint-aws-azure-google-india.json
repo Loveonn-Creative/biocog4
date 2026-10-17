@@ -1,0 +1,90 @@
+{
+  "slug": "cloud-carbon-footprint-aws-azure-google-india",
+  "q": "How do I get Scope 3 emissions for my AWS, Azure or Google Cloud usage in India?",
+  "title": "Cloud emissions from AWS, Azure or Google",
+  "short": "Download the figure from each provider's carbon dashboard: the AWS Customer Carbon Footprint Tool, Microsoft's Emissions Impact Dashboard, or Google Cloud Carbon Footprint. Report it as Scope 3 Category 1, purchased services, and note whether it is location-based or market-based. Where no dashboard figure exists, estimate from usage and label it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian software companies answering investor or customer questionnaires",
+  "sections": [
+    {
+      "h": "Why public cloud is Scope 3, not Scope 2",
+      "p": [
+        "You do not buy the electricity that runs the servers; the provider does. Their Scope 1 and 2 for the share of capacity you use becomes your Scope 3 Category 1, purchased goods and services, under the GHG Protocol Scope 3 Standard.",
+        "Servers you own in a colocation facility are different: if you pay for the power they draw, that electricity can be your Scope 2. Check your colocation contract before you choose the category."
+      ]
+    },
+    {
+      "h": "Where to find the number for each provider",
+      "ul": [
+        "AWS: the Customer Carbon Footprint Tool in the billing console. AWS reports market-based figures and revised its method in 2025; read the current methodology note for which scopes and regions it now covers.",
+        "Microsoft Azure: the Emissions Impact Dashboard, which needs a one-time connection to your tenant and reports by service and region.",
+        "Google Cloud: Carbon Footprint in the console, with location-based and market-based figures and an export to BigQuery for monthly detail."
+      ],
+      "p": [
+        "Export the same twelve months as your financial year. Most dashboards run calendar months with a lag, so April to March may need two downloads."
+      ]
+    },
+    {
+      "h": "Location-based or market-based",
+      "p": [
+        "Providers that buy renewable power or certificates show a lower market-based figure. Your questionnaire may ask for one or both. Report the basis next to each number, and do not add a market-based AWS figure to a location-based Google figure without saying so.",
+        "If a buyer wants a figure comparable with your own India Scope 2, a location-based number for an India region is the closer match."
+      ]
+    },
+    {
+      "h": "When there is no dashboard figure",
+      "ol": [
+        "Usage-based: vCPU hours, memory and storage times a published power figure per unit, times the data centre's power usage effectiveness (PUE), times the grid factor of the hosting region.",
+        "Spend-based: annual cloud spend times a spend-based factor for computer services, from a named database. Use it only when usage is not available, because it moves with price, not energy.",
+        "Label either result as an estimate, with the method, factors and assumptions written down."
+      ],
+      "p": [
+        "Indian resellers, smaller hosting firms and managed service bills often have no dashboard. Ask them for kWh or their own emissions per invoice before you fall back to spend."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: usage-based estimate for one month in an India region",
+    "lines": [
+      "Compute: 40 vCPUs running all month, 730 hours",
+      "Assumed average draw: 3 W per vCPU, including memory (assumption, label it)",
+      "40 x 730 x 3 = 87,600 Wh = 87.6 kWh at the server",
+      "Assumed PUE: 1.2, so 87.6 x 1.2 = 105.12 kWh at the facility",
+      "Location-based factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
+      "105.12 x 0.710 = 74.6 kg CO2 for the month, about 0.9 tonnes a year"
+    ],
+    "note": "This leaves out the embodied emissions of the hardware. Replace the assumed draw and PUE with provider figures where they are published."
+  },
+  "senseible": "Senseible's cloud and data centre emissions calculator gives a usage-based estimate by region, with location-based and market-based figures, when provider data is missing. It does not connect to AWS, Azure or Google dashboards.",
+  "links": [
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Provider carbon tools change method and scope coverage; check each methodology note before each reporting cycle."
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "hourly-grid-emission-factors-india",
+  "q": "Are hourly grid emission factors available for India, and will Scope 2 need them?",
+  "title": "Hourly grid emission factors in India",
+  "short": "No official hourly grid factors exist for India. The CEA publishes one annual factor, currently 0.710 kg CO2 per kWh, and the GHG Protocol accepts it. Hourly factors may matter later: the draft Scope 2 revision proposes hourly matching for market-based claims, but nothing is final.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Indian companies buying renewable power; data teams",
+  "sections": [
+    {
+      "h": "What India publishes today",
+      "p": [
+        "The CEA CO2 Baseline Database gives annual figures for the national grid: the weighted average, operating margin, build margin and combined margin. There are no official hourly, monthly or state factors. Grid-India publishes real-time generation by source, from which analysts build unofficial hourly estimates, but these are not a recognised reporting factor and methods differ."
+      ]
+    },
+    {
+      "h": "What the current Scope 2 rules require",
+      "p": [
+        "The 2015 GHG Protocol Scope 2 Guidance asks for the most precise location-based factor available. In India that is the annual CEA weighted average. Market-based claims today match certificates to consumption over the reporting year, not hour by hour."
+      ]
+    },
+    {
+      "h": "What the revision proposes",
+      "p": [
+        "The GHG Protocol consulted on a revised Scope 2 standard from October 2025 to January 2026. The draft proposes hourly matching of clean power to consumption for market-based claims, with deliverability tests, and more granular location-based factors where they exist. The final text and start dates are not set, and smaller reporters may get simpler options."
+      ]
+    },
+    {
+      "h": "What to do now",
+      "ul": [
+        "Keep reporting with the annual CEA factor and name the version.",
+        "Keep interval data where you have it: HT meters and time-of-day bills already record consumption by time block.",
+        "Ask solar PPA, captive or open access suppliers for hourly or 15-minute generation data, and write it into contracts.",
+        "Avoid long contracts that only promise annual certificate volumes without time data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: annual vs hourly matching (illustrative)",
+    "lines": [
+      "Factory use: 1,000 MWh a year, 40% of it at night",
+      "Solar PPA: 1,000 MWh a year, all generated in daylight",
+      "Annual matching: 1,000 of 1,000 MWh covered, market-based Scope 2 = 0 t",
+      "Hourly matching: at most the 600 MWh used in daylight is covered; 400 MWh uncovered",
+      "Uncovered: 400,000 kWh x 0.710 = 284,000 kg, 284 t CO2"
+    ],
+    "note": "In practice hourly coverage would be lower still on cloudy days and in low-sun months."
+  },
+  "senseible": "Senseible applies the annual CEA factor, 0.710 kg CO2 per kWh (version 21.0), for location-based Scope 2 and reports market-based separately when you supply instrument data. It does not produce hourly grid factors or apply hourly matching.",
+  "links": [
+    {
+      "label": "GHG Protocol revision: what is changing",
+      "to": "/answers/ghg-protocol-revision-what-is-changing"
+    },
+    {
+      "label": "Which CEA factor version for which year",
+      "to": "/answers/which-cea-grid-factor-version-for-which-year"
+    },
+    {
+      "label": "Time-of-day tariffs for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol, Scope 2 revision public consultation (October 2025 to January 2026)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Scope 2 revision is a proposal; check its final text and effective date before changing methods."
+}

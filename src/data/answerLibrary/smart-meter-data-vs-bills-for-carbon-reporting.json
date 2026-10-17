@@ -1,0 +1,82 @@
+{
+  "slug": "smart-meter-data-vs-bills-for-carbon-reporting",
+  "q": "Can I use smart meter or sub-meter data instead of electricity bills for carbon reporting?",
+  "title": "Smart meter or sub-meter data vs bills",
+  "short": "Yes for a discom smart meter, because it is the revenue meter your bill comes from. Use your own sub-meters to split electricity between lines or products, not to set the total. The site total should match the discom meter, and any gap between the sub-meters and the bill needs to be explained.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories with sub-meters or discom smart meters under RDSS",
+  "sections": [
+    {
+      "h": "Discom smart meters are billing-grade",
+      "p": [
+        "Smart meters fitted under the Revamped Distribution Sector Scheme replace the discom's revenue meter. Their readings are what you pay for, so they are as good as a bill for Scope 2. If you are on a prepaid smart meter and get no monthly bill, download the consumption statement from the discom's app or portal and keep it as your evidence."
+      ]
+    },
+    {
+      "h": "Your own sub-meters are for splitting, not totals",
+      "ul": [
+        "Sub-meters are often not calibrated to billing accuracy, and they miss losses, lighting and loads nobody metered.",
+        "Use them to allocate the bill to production lines, buildings or tenants, or to support a product footprint.",
+        "Keep calibration or test records, and note any meter replaced during the year."
+      ]
+    },
+    {
+      "h": "Reconcile before you report",
+      "ol": [
+        "Take the total kWh from the discom meter for each month.",
+        "Add up the sub-meters for the same period.",
+        "Treat the difference as losses and unmetered load, and spread it in proportion to each sub-meter, or show it as a separate line.",
+        "If the gap is large, look for a faulty sub-meter or an unmetered load before you report."
+      ]
+    },
+    {
+      "h": "What an auditor will ask",
+      "p": [
+        "Auditors trace the reported total to an external document, which is the discom bill or statement. Interval data from a sub-meter or an energy monitoring system is useful supporting evidence, but on its own it is your own record, not the supplier's. The GHG Protocol and ISO 14064-1 both expect you to describe data sources and manage this kind of uncertainty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: splitting one month across lines",
+    "lines": [
+      "Discom meter: 120,000 kWh; sub-meters add up to 112,800 kWh",
+      "Gap: 7,200 kWh (6% of the bill), spread in proportion",
+      "Line A sub-meter: 48,000 kWh, share 48,000 / 112,800 = 42.55%",
+      "Line A allocated: 48,000 / 112,800 x 120,000 = 51,064 kWh",
+      "Line A Scope 2: 51,064 x 0.710 = 36,255 kg CO2",
+      "Site Scope 2: 120,000 x 0.710 = 85,200 kg CO2"
+    ],
+    "note": "Factor: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database, version 21.0, location-based."
+  },
+  "senseible": "Senseible reads your electricity bills for the site total and applies the CEA grid factor. It also takes hardware and meter feeds, set up with the Senseible team for each customer rather than as a self-serve integration.",
+  "links": [
+    {
+      "label": "Smart prepaid meter with no bill",
+      "to": "/answers/smart-prepaid-meter-no-bill-scope-2-data"
+    },
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 6 and 7",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, Greenhouse gases, organization level (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Ministry of Power, Revamped Distribution Sector Scheme (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

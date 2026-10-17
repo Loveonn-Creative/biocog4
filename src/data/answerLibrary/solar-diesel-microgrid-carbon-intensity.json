@@ -1,0 +1,66 @@
+{
+  "slug": "solar-diesel-microgrid-carbon-intensity",
+  "q": "How do I calculate the carbon intensity of a solar plus diesel microgrid?",
+  "title": "Carbon intensity of a solar and DG microgrid",
+  "short": "Add the CO2 from diesel burnt (litres x 2.68 kg) and from any grid power imported (kWh x 0.710 kg), then divide by all the kWh the site used from solar, DG and grid. On-site solar adds zero to the top line but counts in the kWh below it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plants and sites running captive solar with DG backup",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Blended kg CO2 per kWh = (DG litres x 2.68 + grid kWh x 0.710) / (solar kWh used on site + DG kWh + grid kWh).",
+        "The diesel figure is the IPCC 2006 default for diesel combustion. The grid figure is the CEA CO2 Baseline Database version 21.0 weighted average. Both are CO2 only."
+      ]
+    },
+    {
+      "h": "Which meter readings to take",
+      "ul": [
+        "Solar: the inverter or generation meter, minus any units exported to the grid. Exported units leave the site and are not part of what you used.",
+        "DG: litres from fuel purchase records or the day tank log for the top line, and the DG energy meter for kWh. Never estimate DG emissions from its kVA rating.",
+        "Grid: units imported, from the import register on the discom bill, not the net billed units.",
+        "Battery: count energy at the point of use. Charging and discharging losses mean less energy reaches the load than the battery took in, so do not add battery output on top of the solar that charged it."
+      ]
+    },
+    {
+      "h": "How it splits by scope",
+      "p": [
+        "For your inventory, the same numbers split cleanly. DG diesel is Scope 1 if you own or run the set. Grid imports are location-based Scope 2. Solar from your own on-site plant has no Scope 2 emissions. The blended intensity is a performance figure for the site, useful for tracking month by month and for comparing sites, and it does not replace the scope totals."
+      ]
+    },
+    {
+      "h": "What moves the number most",
+      "ul": [
+        "DG loading: a lightly loaded DG set burns more litres per kWh, so the same DG hours give a higher intensity.",
+        "Solar share in the hours the site runs: night shifts lean on DG or grid.",
+        "Spill: solar curtailed when the battery is full and load is low adds nothing to the kWh used.",
+        "Grid availability: where grid is available, replacing DG hours with grid usually lowers CO2 per kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a remote plant",
+    "lines": [
+      "Solar used on site 30,000 kWh; DG 9,000 kWh from 2,700 litres (3.33 kWh per litre); grid imports 21,000 kWh",
+      "DG CO2: 2,700 x 2.68 = 7,236 kg (Scope 1)",
+      "Grid CO2: 21,000 x 0.710 = 14,910 kg (Scope 2, location-based)",
+      "Total: 7,236 + 14,910 = 22,146 kg CO2 for 60,000 kWh used",
+      "Blended intensity: 22,146 / 60,000 = 0.369 kg CO2 per kWh, about 48 percent below grid-only supply at 0.710"
+    ],
+    "note": "Illustrative monthly log. The DG part alone runs at 7,236 / 9,000 = 0.80 kg CO2 per kWh, above the grid factor."
+  },
+  "senseible": "Senseible reads diesel litres from fuel slips at 2.68 kg CO2 per litre and grid kWh from electricity bills at 0.710 kg CO2 per kWh, and does not count net-metered exports as consumption. Inverter and DG meter readings are not read from bills; meter feeds can be set up with the Senseible team, not as a self-serve integration.",
+  "links": [
+    { "label": "Diesel generator: Scope 1 or 2?", "to": "/answers/diesel-generator-scope-1-or-scope-2" },
+    { "label": "DG set emissions per kWh vs grid", "to": "/answers/dg-set-emissions-per-kwh-vs-grid" },
+    { "label": "Rooftop solar and net metering", "to": "/answers/rooftop-solar-net-metering-scope-2" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 2, Chapter 2 (Stationary Combustion)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-16"
+}

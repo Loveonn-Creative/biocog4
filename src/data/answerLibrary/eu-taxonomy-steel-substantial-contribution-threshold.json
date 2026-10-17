@@ -1,0 +1,90 @@
+{
+  "slug": "eu-taxonomy-steel-substantial-contribution-threshold",
+  "q": "What emissions threshold does steel have to meet to be EU Taxonomy aligned?",
+  "title": "EU Taxonomy threshold for steel",
+  "short": "Under activity 3.9 of the EU Climate Delegated Act, steel passes if each process step stays below fixed EU ETS benchmark values, such as 1.331 t CO2e per tonne of hot metal and 0.209 t CO2e per tonne of EAF carbon steel. An electric arc furnace can pass instead with at least 90% scrap input for carbon steel or 70% for high alloy steel.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian steel exporters and their EU buyers and financiers",
+  "sections": [
+    {
+      "h": "The values in activity 3.9",
+      "ul": [
+        "Hot metal: 1.331 t CO2e per tonne of product.",
+        "Sintered ore: 0.163 t CO2e per tonne.",
+        "EAF carbon steel: 0.209 t CO2e per tonne.",
+        "Coke, iron casting and EAF high alloy steel each have their own value in the same table.",
+        "Alternative for EAF: steel scrap input relative to product output of at least 90% for carbon steel or 70% for high alloy steel."
+      ],
+      "p": [
+        "The values match the EU ETS product benchmarks for 2021 to 2025 in Implementing Regulation (EU) 2021/447. Read the full table in Annex I, section 3.9, of Delegated Regulation (EU) 2021/2139 before you test a plant."
+      ]
+    },
+    {
+      "h": "Why most Indian plants do not pass on CO2",
+      "p": [
+        "The values are set at the level of the best performing EU installations. A blast furnace plant needs every step it runs below its value, not an average across the plant. Coal based DRI, common in India, has no value of its own in the table, so it is judged through the steel it feeds. Scrap based EAF plants are the most likely to pass, through either the emission value or the scrap share."
+      ]
+    },
+    {
+      "h": "Make the comparison on the same boundary",
+      "ol": [
+        "Use the EU ETS benchmark boundary for each product, which counts mainly direct emissions at the installation; check the benchmark definition before comparing a figure that includes purchased electricity.",
+        "Measure per tonne of the named product, not per tonne of finished steel or of all output.",
+        "Use one year of measured data, not design values.",
+        "Remember the threshold is only one test: the activity must also meet the DNSH criteria and minimum safeguards."
+      ]
+    },
+    {
+      "h": "How this differs from CBAM default values",
+      "p": [
+        "CBAM default values in Implementing Regulation (EU) 2025/2621 price the embedded emissions of an imported good when actual data is missing. They are a cost rule, not a pass or fail test. A plant can beat the CBAM default for India and still be far above the Taxonomy value."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a scrap based EAF plant making carbon steel",
+    "lines": [
+      "Crude steel output: 100,000 tonnes; scrap charged: 92,000 tonnes",
+      "Scrap share: 92,000 / 100,000 = 92%, above 90%, so the scrap route passes",
+      "Direct emissions on the benchmark boundary: 18,000 t CO2e; intensity 18,000 / 100,000 = 0.18 t CO2e per tonne, also below 0.209",
+      "Next: check DNSH and minimum safeguards before calling it aligned"
+    ],
+    "note": "Plant figures are illustrative. Threshold values as published in Annex I, section 3.9; check for amending acts."
+  },
+  "senseible": "Senseible computes Scope 1 fuel and Scope 2 electricity emissions from a supplier's invoices and bills, which with production tonnes give an intensity you can set against the published value. It does not decide Taxonomy alignment; for EU import cost, use the CBAM calculator.",
+  "links": [
+    {
+      "label": "Benchmarking a steel supplier's intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "EU Taxonomy do no significant harm",
+      "to": "/answers/eu-taxonomy-dnsh-criteria-explained"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Commission Delegated Regulation (EU) 2021/2139, Annex I, section 3.9 Manufacture of iron and steel, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2021/447, EU ETS benchmark values 2021 to 2025, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Commission consulted on revising the Taxonomy delegated acts in 2026, including ETS-based steel thresholds; recheck Annex I, section 3.9, for amendments."
+}

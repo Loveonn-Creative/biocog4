@@ -1,0 +1,64 @@
+{
+  "slug": "india-ndc-targets-for-business",
+  "q": "What do India's NDC targets mean for an Indian business?",
+  "title": "India's NDC targets and your business",
+  "short": "India's NDC targets are national, not company targets. India committed to cut the emissions intensity of its GDP 45 percent from 2005 levels by 2030 and reach net zero by 2070. Businesses feel them through carbon market intensity targets, a cleaner grid, disclosure rules and green finance criteria.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian MSMEs, exporters and lenders",
+  "sections": [
+    {
+      "h": "What India has committed to",
+      "ul": [
+        "Updated first NDC, submitted in August 2022: reduce the emissions intensity of GDP by 45 percent by 2030 from the 2005 level.",
+        "About 50 percent of cumulative installed electric power capacity from non-fossil sources by 2030.",
+        "An additional carbon sink of 2.5 to 3 billion tonnes of CO2 equivalent through forest and tree cover by 2030, carried over from the first NDC.",
+        "Net zero by 2070, set out in India's Long-Term Low Emission Development Strategy, submitted in November 2022."
+      ]
+    },
+    {
+      "h": "How the targets reach a company",
+      "ul": [
+        "Carbon Credit Trading Scheme: obligated entities in energy-intensive sectors get greenhouse gas intensity targets per tonne of product, with the first sector targets notified in 2025. Beating the target earns tradable credits; missing it means buying them.",
+        "The grid: as non-fossil capacity grows, the CEA grid factor should fall over time, which lowers location-based Scope 2 for every electricity user.",
+        "Disclosure: listed companies report emissions and intensity in BRSR, and their value chain partners are asked for data.",
+        "Finance: lenders and the draft India climate finance taxonomy steer credit toward activities that fit the national pathway."
+      ]
+    },
+    {
+      "h": "Intensity, not absolute",
+      "p": [
+        "The 2030 target is an intensity target: emissions per unit of GDP. The economy can grow and total emissions can rise while the target is met. The company equivalent is emissions per tonne of output or per crore of revenue, which is how CCTS targets and BRSR intensity figures are framed. An MSME tracking its own intensity is speaking the same language as the national target."
+      ]
+    },
+    {
+      "h": "What an MSME should do with this",
+      "p": [
+        "Nothing in the NDC places a direct legal duty on a small business. Use it as direction: build a yearly Scope 1 and 2 record with an intensity per unit of output, so you can answer buyers, lenders and any future sector target with figures you already hold."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a company intensity figure",
+    "lines": [
+      "Scope 1 and 2 for the year: 1,800 t CO2; revenue: 30 crore rupees",
+      "Intensity: 1,800 / 30 = 60 t CO2 per crore of revenue",
+      "For comparison only, a 45 percent lower intensity would be 60 x 0.55 = 33 t CO2 per crore"
+    ],
+    "note": "Illustrative. The 45 percent figure applies to India's GDP, not to any company, and revenue intensity also moves with prices."
+  },
+  "senseible": "Senseible reports your company's emissions and intensity from your own bills and invoices, which feed BRSR drafts and lender questions. It does not track India's national NDC progress.",
+  "links": [
+    { "label": "India CCTS sector targets", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" },
+    { "label": "BRSR emission intensity per rupee", "to": "/answers/brsr-emission-intensity-per-rupee-ppp" },
+    { "label": "Carbon pricing mechanisms in India", "to": "/answers/carbon-pricing-mechanisms-in-india" },
+    { "label": "India climate finance taxonomy", "to": "/answers/india-climate-finance-taxonomy-what-msmes-need" }
+  ],
+  "sources": [
+    { "label": "India's Updated First Nationally Determined Contribution (August 2022), UNFCCC NDC registry", "url": "https://unfccc.int" },
+    { "label": "India's Long-Term Low Emission Development Strategy (November 2022), UNFCCC", "url": "https://unfccc.int" },
+    { "label": "CEA installed capacity reports", "url": "https://cea.nic.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "India is due to submit a new NDC with 2035 targets; check the UNFCCC NDC registry for any newer submission."
+}

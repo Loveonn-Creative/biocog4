@@ -1,0 +1,79 @@
+{
+  "slug": "eudr-due-diligence-statement-supplier-data",
+  "q": "What does an Indian supplier need to give an EU importer for its EUDR due diligence statement?",
+  "title": "EUDR data your EU buyer needs from you",
+  "short": "Give your EU buyer the Article 9 data for each shipment: product description and HS code, quantity, country of production, geolocation of every plot, production date or range, your name and address, and evidence that the land was not deforested after 31 December 2020 and the goods were produced legally in India.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters whose EU customers file due diligence statements",
+  "sections": [
+    {
+      "h": "The Article 9 checklist, item by item",
+      "ol": [
+        "Product: trade name and type, and the HS code. For wood, the common and scientific species name.",
+        "Quantity: net mass in kg, and volume or number of units where relevant.",
+        "Country of production, and the region where needed.",
+        "Geolocation of all plots that produced the commodity, or of the establishments for cattle.",
+        "Date or time range of production, such as the harvest period.",
+        "Name, postal address and email of the supplier, and of the customer.",
+        "Information showing the product is deforestation-free.",
+        "Information showing it was produced legally under Indian law."
+      ]
+    },
+    {
+      "h": "What counts as legality evidence in India",
+      "p": [
+        "The regulation's list of relevant law covers land use rights, environmental and forest rules, labour and human rights, third party rights, tax, anti-corruption and trade rules in the country of production. In practice buyers ask for land ownership or lease records for the plots, plantation or grower registration where it exists, forest clearance where land was ever forest land, tax invoices and GST registration, and a statement on labour law compliance."
+      ]
+    },
+    {
+      "h": "How the data moves",
+      "ul": [
+        "The EU operator files the due diligence statement in the EU Information System under Article 33 and receives a reference number.",
+        "You do not file, but you should get the reference number back for your records, since the same shipment may be checked later.",
+        "Send plot data as a structured file, usually GeoJSON, not as a PDF table, so the buyer can upload it without retyping.",
+        "Expect the buyer to keep the file for five years and to come back with questions during that time."
+      ]
+    },
+    {
+      "h": "Mistakes that stop a shipment",
+      "ul": [
+        "One country of production declared when part of the raw material was bought from a neighbouring country.",
+        "A lot mixing traceable produce with produce of unknown origin.",
+        "Plot coordinates taken at the collection centre instead of at the plot.",
+        "Production dates that do not match the harvest season on the purchase receipts."
+      ]
+    }
+  ],
+  "senseible": "Senseible's supplier due diligence page flags which suppliers and commodities may be exposed to EUDR. It does not collect plot geolocation, check deforestation or file due diligence statements.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my Indian exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR: polygon or single point?",
+      "to": "/answers/eudr-geolocation-polygon-or-point"
+    },
+    {
+      "label": "India's EUDR risk category",
+      "to": "/answers/eudr-country-risk-category-india"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Articles 2, 9, 10, 11 and 33, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR (application dates), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The EUDR applies from 30 December 2026 for large and medium operators and 30 June 2027 for micro and small ones, and simplification amendments continue; recheck Article 9 duties before agreeing data terms."
+}

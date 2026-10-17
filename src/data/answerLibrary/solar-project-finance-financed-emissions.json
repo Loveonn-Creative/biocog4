@@ -1,0 +1,85 @@
+{
+  "slug": "solar-project-finance-financed-emissions",
+  "q": "How do lenders account for financed emissions on a solar project loan, and can they subtract avoided emissions?",
+  "title": "Financed emissions for a solar project loan",
+  "short": "Under PCAF, a lender takes its share of the project's own Scope 1 and 2 emissions, using outstanding loan divided by the project's total equity and debt. For a solar plant that figure is small. Avoided emissions from displacing grid power may be reported, but separately; they are never subtracted from financed emissions.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Banks, NBFCs and DFIs financing renewable projects in India, South Africa and Vietnam",
+  "sections": [
+    {
+      "h": "The project finance formula",
+      "ol": [
+        "Attribution factor = outstanding amount of the loan / total equity and debt of the project.",
+        "Project emissions = the project's Scope 1 and Scope 2 for the year. For an operating solar plant that is mostly grid electricity imported for auxiliaries at night, and any diesel used on site.",
+        "Financed emissions = attribution factor x project emissions, reported with a PCAF data quality score."
+      ],
+      "p": [
+        "This is the project finance asset class in the PCAF Global GHG Accounting and Reporting Standard, Part A (second edition, 2022). A general corporate loan to a solar developer falls under business loans instead, with attribution to the whole company."
+      ]
+    },
+    {
+      "h": "Why avoided emissions cannot be netted",
+      "p": [
+        "Financed emissions are an inventory of what the financed activity emits. Avoided emissions are a comparison with a scenario that did not happen. PCAF lets lenders report avoided emissions from renewable projects, but in a separate figure, with the baseline and method stated, so a portfolio full of solar loans cannot show negative emissions."
+      ]
+    },
+    {
+      "h": "Choices that change the number",
+      "ul": [
+        "Construction years: check how the current PCAF standard treats emissions during construction before the plant operates.",
+        "Data: metered auxiliary import and diesel invoices score better than an estimate per MW.",
+        "Grid factor: use the location-based factor for the country, and state its source and edition.",
+        "Denominator: keep total equity and debt as PCAF defines it, and do not switch to project value."
+      ]
+    },
+    {
+      "h": "What to put in the disclosure",
+      "p": [
+        "Show financed emissions for the project finance book as a total with its data quality score. Show avoided emissions on a separate line, with the generation basis, baseline grid factor, its source and the lender's share. Do not add or subtract the two."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 100 MW solar loan in India",
+    "lines": [
+      "Bank outstanding Rs 200 crore; project equity and debt Rs 500 crore; attribution 200 / 500 = 0.4",
+      "Auxiliary grid import: 600,000 kWh x 0.710 kg CO2 per kWh = 426,000 kg, 426 t CO2",
+      "Financed emissions: 0.4 x 426 = 170.4 t CO2",
+      "Separate line, avoided: 100 MW x 8,760 h x 18% = 157,680 MWh; 157,680 x 0.710 t per MWh = 111,952.8 t; bank share 0.4 x 111,952.8 = 44,781 t CO2",
+      "Reported: 170.4 t financed, and 44,781 t avoided shown apart, not netted"
+    ],
+    "note": "Labelled estimate: auxiliary import and the 18% capacity utilisation factor are assumptions; the grid factor is the CEA weighted average, version 21.0, used here for illustration. A published avoided figure should state its baseline factor and source."
+  },
+  "senseible": "Senseible does not calculate financed emissions for a loan book. It reads electricity bills and fuel invoices, so a project's auxiliary grid import and site diesel can be documented in kWh and litres rather than estimated.",
+  "links": [
+    {
+      "label": "Financed emissions for banks in India",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "How to calculate avoided emissions",
+      "to": "/answers/how-to-calculate-avoided-emissions"
+    },
+    {
+      "label": "Financed emissions for vehicle loans",
+      "to": "/answers/motor-vehicle-loan-financed-emissions"
+    },
+    {
+      "label": "Green bond impact reporting metrics",
+      "to": "/answers/green-bond-impact-reporting-metrics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard, Part A: Financed Emissions, second edition (2022), project finance",
+      "url": "https://carbonaccountingfinancials.com"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "PCAF is revising its standard; check for a newer edition and its treatment of construction-phase and avoided emissions."
+}

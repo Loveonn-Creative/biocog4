@@ -1,0 +1,67 @@
+{
+  "slug": "eudr-leather-cattle-hides-india",
+  "q": "Does EUDR cover leather made from Indian cattle and buffalo hides?",
+  "title": "Does EUDR cover Indian leather?",
+  "short": "Not once the July 2026 change takes effect. The original EUDR Annex I listed bovine hides, skins and leather, including buffalo, under HS 4101, 4104 and 4107. A Commission delegated act adopted on 13 July 2026 deletes those three codes. Finished bags and footwear were never listed.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Leather and footwear exporters in Kanpur, Agra, Chennai and Kolkata",
+  "sections": [
+    {
+      "h": "What was covered and why buffalo counted",
+      "p": [
+        "Annex I of Regulation (EU) 2023/1115 listed cattle products by HS code, including raw hides (4101), tanned or crust hides (4104) and finished leather (4107). The HS headings themselves read \"bovine (including buffalo)\", so buffalo hides, which make up much of Indian leather, were inside scope on the same terms as cow hides."
+      ]
+    },
+    {
+      "h": "What the July 2026 delegated act changes",
+      "ul": [
+        "It deletes HS 4101, 4104 and 4107 from Annex I.",
+        "It was sent to the European Parliament and Council for a two month scrutiny period and is meant to apply when the EUDR starts, 30 December 2026 for large and medium operators.",
+        "Live cattle and beef stay in scope.",
+        "Check on EUR-Lex that the act has been published in the Official Journal and is in force for your shipment date."
+      ]
+    },
+    {
+      "h": "Products that were never covered",
+      "ul": [
+        "Leather goods such as handbags, wallets and belts under HS 4202 and 4203.",
+        "Footwear under chapter 64, including leather uppers.",
+        "Goat and sheep leather, which falls under other headings, such as 4105, 4106 and 4112, not listed in Annex I."
+      ]
+    },
+    {
+      "h": "What EU buyers may still ask for",
+      "p": [
+        "Some EU brands will keep asking for hide origin and deforestation statements under their own sourcing policies or other due diligence laws. Keep slaughterhouse or hide merchant records and the state of origin for each lot, so you can answer without rebuilding the chain later."
+      ]
+    }
+  ],
+  "senseible": "Senseible's supplier due diligence screen still groups cattle and leather under its EUDR commodity check, so treat a leather flag there as a prompt to confirm the current Annex I. It does not collect origin data or file due diligence statements.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my Indian exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "EUDR data your EU buyer needs",
+      "to": "/answers/eudr-due-diligence-statement-supplier-data"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Annex I, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission delegated act amending EUDR Annex I (product scope), adopted 13 July 2026, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The leather removal depends on the July 2026 delegated act completing scrutiny and publication; confirm it is in force before telling buyers leather is out of scope."
+}

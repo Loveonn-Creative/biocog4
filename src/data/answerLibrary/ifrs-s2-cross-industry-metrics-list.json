@@ -1,0 +1,72 @@
+{
+  "slug": "ifrs-s2-cross-industry-metrics-list",
+  "q": "Which cross-industry metrics does IFRS S2 require?",
+  "title": "IFRS S2 cross-industry metrics list",
+  "short": "IFRS S2 paragraph 29 requires seven cross-industry metrics: greenhouse gas emissions, assets or activities vulnerable to transition risk, the same for physical risk, those aligned with climate opportunities, capital deployed toward climate, internal carbon prices, and how climate links to executive pay. Every company reports them, whatever its industry.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian listed companies preparing ISSB-aligned reports; lenders",
+  "sections": [
+    {
+      "h": "The seven metrics",
+      "ol": [
+        "Greenhouse gas emissions: absolute gross Scope 1, Scope 2 and Scope 3, in tonnes CO2 equivalent.",
+        "Transition risk: amount and percentage of assets or business activities vulnerable to climate-related transition risks.",
+        "Physical risk: amount and percentage of assets or business activities vulnerable to physical risks.",
+        "Climate opportunities: amount and percentage of assets or business activities aligned with climate-related opportunities.",
+        "Capital deployment: capital expenditure, financing or investment deployed toward climate risks and opportunities.",
+        "Internal carbon prices: whether and how you use one in decisions, and the price per tonne.",
+        "Remuneration: whether climate is factored into executive pay, and the percentage of current-period executive pay linked to it."
+      ]
+    },
+    {
+      "h": "What the emissions metric asks for in detail",
+      "ul": [
+        "Measure with the GHG Protocol Corporate Standard (2004), unless a regulator or exchange requires another method.",
+        "Split Scope 1 and 2 between the consolidated group and other investees, such as associates and joint ventures.",
+        "Give Scope 2 location-based, plus information on contractual instruments such as green tariffs or certificates.",
+        "List the Scope 3 categories included. Asset managers, banks and insurers add financed emissions under Category 15.",
+        "Explain the measurement approach, inputs and assumptions, and why you chose them."
+      ]
+    },
+    {
+      "h": "First-year reliefs that affect these metrics",
+      "p": [
+        "In the first annual reporting period, a company need not disclose Scope 3, and may keep using a measurement method other than the GHG Protocol if it already used one. Comparative figures are not needed in the first year. The December 2025 amendments added further reliefs, mainly for financial institutions, effective from 1 January 2027."
+      ]
+    },
+    {
+      "h": "Cross-industry metrics versus industry-based metrics",
+      "p": [
+        "The seven metrics apply to everyone. Industry-based metrics are extra and depend on your business model; IFRS S2 asks you to refer to its industry-based guidance, drawn from SASB, when choosing them. A steel maker, for example, would add sector metrics on top of the seven."
+      ]
+    }
+  ],
+  "senseible": "Senseible covers part of the first metric: Scope 1 and 2 emissions from your fuel invoices and electricity bills, with location-based and market-based Scope 2. The other six metrics, Scope 3 completeness and the report itself are outside Senseible.",
+  "links": [
+    {
+      "label": "IFRS S1 vs IFRS S2",
+      "to": "/answers/ifrs-s1-vs-ifrs-s2-difference"
+    },
+    {
+      "label": "IFRS S2 vs TCFD",
+      "to": "/answers/ifrs-s2-vs-tcfd-difference"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S2 Climate-related Disclosures, ISSB, June 2023, paragraph 29 and Appendix B (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "IFRS S2 was amended in December 2025; check ifrs.org for later amendments and local adoption in India."
+}

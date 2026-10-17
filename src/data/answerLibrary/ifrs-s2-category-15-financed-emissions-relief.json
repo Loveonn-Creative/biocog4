@@ -1,0 +1,65 @@
+{
+  "slug": "ifrs-s2-category-15-financed-emissions-relief",
+  "q": "What did the December 2025 IFRS S2 amendments change for banks' financed emissions?",
+  "title": "IFRS S2 2025 changes to financed emissions",
+  "short": "The December 2025 amendments let banks and other financial institutions leave derivatives, facilitated emissions and insurance-associated emissions out of their Category 15 financed emissions, and drop the fixed GICS industry split. They take effect on 1 January 2027, with earlier use permitted. Lending and investment emissions are still required.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian banks and NBFCs; MSME borrowers asked for data",
+  "sections": [
+    {
+      "h": "What changed for Category 15",
+      "ul": [
+        "Scope of financed emissions: a company may limit Category 15 to loans and investments, excluding emissions linked to derivatives, facilitated emissions (such as underwriting a bond issue) and insurance-associated emissions. It must say what it excluded.",
+        "Industry breakdown: banks no longer have to use the Global Industry Classification Standard (GICS) to split financed emissions by industry; they may use another classification, such as one a regulator already uses.",
+        "Measurement method: where a jurisdiction requires another method for measuring emissions, the relief from the GHG Protocol can apply to the parts of the group it covers.",
+        "Global warming potentials: a company may use the GWP values its jurisdiction requires instead of the latest IPCC assessment."
+      ]
+    },
+    {
+      "h": "What did not change",
+      "p": [
+        "Financed emissions from loans and investments stay in. Banks still disclose absolute gross financed emissions, split by industry and asset class, with the approach used. A business loan to an MSME is exactly the kind of exposure that remains in scope."
+      ]
+    },
+    {
+      "h": "Dates and status in India",
+      "p": [
+        "The amendments apply to annual periods beginning on or after 1 January 2027, and a company may apply them earlier. India has not made IFRS S2 mandatory for banks as of this review. The amendments matter to an Indian bank or NBFC that reports under IFRS S2 voluntarily, for a foreign parent, or for international investors."
+      ]
+    },
+    {
+      "h": "What this means for an MSME borrower",
+      "p": [
+        "Requests for your emissions will not stop. Banks commonly score financed emissions with PCAF data quality scores, where reported emissions from the borrower score better than estimates from revenue or loan size. Sending your own Scope 1 and 2 figure, with the bills behind it, moves your loan out of the estimated bucket."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives borrowers document-backed Scope 1 and 2 figures, each traced to its bill or invoice, that a bank can use as reported emissions in its PCAF scoring. It does not calculate a bank's portfolio emissions or prepare IFRS S2 disclosures.",
+  "links": [
+    {
+      "label": "Financed emissions for Indian banks",
+      "to": "/climate-intelligence/financed-emissions-banks-india"
+    },
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "IFRS S2 cross-industry metrics",
+      "to": "/answers/ifrs-s2-cross-industry-metrics-list"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Amendments to Greenhouse Gas Emissions Disclosures, Amendments to IFRS S2, ISSB, December 2025 (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "PCAF Global GHG Accounting and Reporting Standard for the Financial Industry",
+      "url": "https://carbonaccountingfinancials.com"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Confirm the final wording, scope and effective date of the December 2025 IFRS S2 amendments on ifrs.org, and any RBI climate disclosure rules for Indian banks."
+}

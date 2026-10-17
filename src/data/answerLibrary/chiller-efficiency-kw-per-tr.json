@@ -1,0 +1,94 @@
+{
+  "slug": "chiller-efficiency-kw-per-tr",
+  "q": "What is a good chiller efficiency in kW per TR, and how do I measure it?",
+  "title": "Good chiller efficiency in kW per TR",
+  "short": "Lower is better. As a rough guide, a modern water-cooled centrifugal or screw chiller uses about 0.55 to 0.65 kW per TR of cooling at full load, and an air-cooled one about 1.0 to 1.2. Measure it by dividing the chiller's input kW by the cooling delivered in TR.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Facility managers in factories, cold stores and commercial buildings",
+  "sections": [
+    {
+      "h": "The formulas",
+      "ul": [
+        "Cooling delivered (TR) = chilled water flow (m3 per hour) x 1,000 kg per m3 x 1 kcal per kg per degree C x temperature difference (degree C) / 3,024. One TR is 3,024 kcal per hour, or 3.517 kW of cooling.",
+        "kW per TR = chiller input power (kW) / cooling delivered (TR).",
+        "COP = 3.517 / kW per TR."
+      ],
+      "p": [
+        "The ranges in the short answer are typical figures for the compressor alone. Pumps and cooling towers add to plant kW per TR, so state which you measured."
+      ]
+    },
+    {
+      "h": "How to measure it in the field",
+      "ol": [
+        "Run the chiller at a steady load for at least 30 minutes.",
+        "Measure chilled water flow with a clamp-on ultrasonic meter on a straight pipe run.",
+        "Measure supply and return temperatures with calibrated sensors reading to 0.1 degree C; with a 5 degree difference, a 0.2 degree error shifts the result by 4%.",
+        "Log chiller input kW with a power analyser over the same interval.",
+        "Repeat at a few load levels, since efficiency changes with load and condenser water temperature."
+      ]
+    },
+    {
+      "h": "Full load is not the whole picture",
+      "p": [
+        "Most chillers spend most hours at part load. AHRI 550/590 rates part-load performance as IPLV, weighting efficiency at 100%, 75%, 50% and 25% load by 1%, 42%, 45% and 12%. Compare vendors on IPLV as well as full-load kW per TR. For buildings covered by ECBC, check the minimum COP and IPLV in its tables for your chiller type and size."
+      ]
+    },
+    {
+      "h": "Common reasons for a poor reading",
+      "ul": [
+        "Fouled condenser or evaporator tubes.",
+        "Chilled water set point lower than the process needs.",
+        "High condenser water temperature from a weak cooling tower.",
+        "Low refrigerant charge after a leak.",
+        "Several chillers running at low load instead of fewer at higher load."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: test and saving",
+    "lines": [
+      "Flow 180 m3 per hour; return 12 degrees C, supply 7 degrees C, so a 5 degree difference",
+      "Cooling: 180 x 1,000 x 5 / 3,024 = 297.6 TR",
+      "Input power 190 kW: 190 / 297.6 = 0.638 kW per TR, COP 3.517 / 0.638 = 5.51",
+      "After tube cleaning, 0.580 kW per TR at the same load: saving 0.058 x 297.6 = 17.26 kW",
+      "Over 4,000 hours: 17.26 x 4,000 = 69,040 kWh",
+      "Emissions saved: 69,040 x 0.710 kg CO2 per kWh = 49,018 kg, about 49 t CO2"
+    ],
+    "note": "Running hours and the post-cleaning figure are illustrative."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff category, sanctioned load, units) and applies 0.710 kg CO2 per kWh, so a chiller saving shows up in your Scope 2 figure month by month. It does not measure chiller efficiency itself; meter and sub-meter feeds are not self-serve and are set up with the Senseible team for each customer.",
+  "links": [
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    },
+    {
+      "label": "Measuring savings from efficiency projects",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Energy Auditor Guide Book 3, chapter on HVAC and refrigeration (kW per TR test); Energy Conservation Building Code 2017, chiller tables",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "AHRI Standard 550/590, part-load rating (IPLV), referenced in ECBC",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "low-gwp-refrigerant-choice-new-chiller",
+  "q": "Which refrigerant should a new chiller or cold room use to stay ahead of the HFC phase-down?",
+  "title": "Low GWP refrigerant for a new chiller",
+  "short": "For a large water-cooled chiller, look first at HFO-1234ze or an HFO blend such as R-513A. For industrial cold stores, ammonia is the long-standing choice; for smaller systems, CO2 or propane. Pick from what your service network can maintain safely, then compare GWP and running efficiency.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Factory and cold-store owners buying new HVAC and refrigeration",
+  "sections": [
+    {
+      "h": "GWP of common options (IPCC AR6, 100-year)",
+      "ul": [
+        "R-404A: about 4,728 (blend of R-125, R-143a, R-134a; computed)",
+        "R-410A: about 2,256 (blend of R-32 and R-125; computed)",
+        "R-134a: 1,530",
+        "HFC-32 (R-32): 771",
+        "R-513A: about 674 (56% R-1234yf, 44% R-134a; computed)",
+        "R-454B: about 531 (68.9% R-32, 31.1% R-1234yf; computed)",
+        "HFO-1234ze(E): 1.37; HFO-1234yf: 0.501",
+        "CO2 (R-744): 1; propane (R-290): 0.02; ammonia (R-717): no direct warming effect"
+      ],
+      "p": [
+        "Blend values are mass-weighted sums of the AR6 component values."
+      ]
+    },
+    {
+      "h": "Safety class decides where a gas can go",
+      "p": [
+        "ISO 817 classes refrigerants by toxicity (A lower, B higher) and flammability (1 none, 2L mildly flammable, 2, 3 highly flammable). R-134a, R-513A and CO2 are A1. R-32, R-454B and the HFOs are A2L. Propane is A3. Ammonia is B2L. ISO 5149 sets charge limits, machinery room and ventilation rules for each class, so a flammable or toxic gas may need a separate plant room or a smaller charge."
+      ]
+    },
+    {
+      "h": "A simple choice by application",
+      "ul": [
+        "Water-cooled centrifugal or screw chillers for process or building cooling: HFO-1234ze or R-513A.",
+        "Air-cooled chillers and large AC: R-32 or R-454B, where A2L rules can be met.",
+        "Industrial cold stores and food processing: ammonia, often with a CO2 or glycol secondary loop to keep ammonia out of occupied areas.",
+        "Retail and small cold rooms: CO2 systems, or propane in small sealed units."
+      ]
+    },
+    {
+      "h": "Do not judge on GWP alone",
+      "p": [
+        "Leaks are only part of the footprint. A chiller's electricity use usually dwarfs its refrigerant emissions, so a low GWP machine with poorer efficiency can increase total emissions. Compare the full-load and part-load kW per TR quoted by each vendor alongside GWP."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: leaks against electricity",
+    "lines": [
+      "Charge 300 kg, annual leak 5% = 15 kg (illustrative)",
+      "R-134a: 15 x 1,530 = 22,950 kg CO2e a year",
+      "R-513A: 15 x 673.5 = 10,103 kg CO2e a year",
+      "HFO-1234ze: 15 x 1.37 = 21 kg CO2e a year",
+      "Electricity: 500,000 kWh a year x 0.710 = 355,000 kg CO2",
+      "A 3% efficiency penalty: 15,000 kWh x 0.710 = 10,650 kg CO2, about the same as the whole R-513A leak"
+    ],
+    "note": "R-513A: 0.56 x 0.501 + 0.44 x 1,530 = 673.5. Leak rates and running hours are illustrative."
+  },
+  "senseible": "Senseible does not recommend equipment or refrigerants. It records refrigerant emissions when you supply the gas and kilograms charged, and calculates electricity emissions from your bills at 0.710 kg CO2 per kWh, so you can track both parts of a chiller's footprint after purchase.",
+  "links": [
+    {
+      "label": "India's HFC phase-down schedule",
+      "to": "/answers/india-hfc-phase-down-schedule-kigali"
+    },
+    {
+      "label": "Good chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "AR5 vs AR6 GWP",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "ISO 817 (refrigerant designation and safety classification) and ISO 5149 (refrigerating systems, safety and environmental requirements)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Kigali Amendment and India Cooling Action Plan, Ozone Cell, MoEFCC",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

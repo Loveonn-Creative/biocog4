@@ -1,0 +1,91 @@
+{
+  "slug": "india-hfc-phase-down-schedule-kigali",
+  "q": "What is India's HFC phase-down schedule under the Kigali Amendment, and what does it mean for chillers bought now?",
+  "title": "India's HFC phase-down under Kigali",
+  "short": "India freezes HFC consumption in 2028 at a baseline set from 2024 to 2026, then cuts it by 10% in 2032, 20% in 2037, 30% in 2042 and 85% in 2047. A chiller bought now will still need servicing gas through those cuts, so pick a lower GWP refrigerant.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Factory owners, cold-chain operators, HVAC buyers in India",
+  "sections": [
+    {
+      "h": "The schedule in the Kigali Amendment",
+      "p": [
+        "The Kigali Amendment (2016) to the Montreal Protocol puts India in the Article 5 Group 2 countries. The Union Cabinet approved India's ratification in August 2021."
+      ],
+      "ul": [
+        "Baseline: average HFC consumption in 2024, 2025 and 2026, plus 65% of the HCFC baseline, in CO2e.",
+        "2028: freeze at the baseline.",
+        "2032: 10% below baseline.",
+        "2037: 20% below.",
+        "2042: 30% below.",
+        "2047: 85% below."
+      ]
+    },
+    {
+      "h": "What it controls and what it does not",
+      "p": [
+        "The phase-down limits national production and import of HFCs, measured in CO2e. It does not ban running an existing chiller or AC. The effect on users comes through supply: as allowed volumes fall, high GWP gases such as R-404A and R-134a are likely to become harder and costlier to buy for servicing. That is a reasoned expectation, not a published price path."
+      ]
+    },
+    {
+      "h": "What it means for a chiller bought in 2026",
+      "ul": [
+        "A chiller often runs 15 to 20 years (a typical life, not a rule), so one bought now will still need top-ups after 2042.",
+        "Prefer a low GWP refrigerant the local service network can handle, and check the vendor's spares and gas supply commitment.",
+        "Ask for the factory charge in kg and a leak test record; a tight system needs less servicing gas.",
+        "Record every top-up in kg: under the GHG Protocol, gas charged to replace losses is Scope 1 CO2e."
+      ]
+    },
+    {
+      "h": "What to watch for",
+      "p": [
+        "MoEFCC's Ozone Cell runs India's Montreal Protocol work, and the India Cooling Action Plan (2019) sets the wider cooling strategy. Watch the Ozone Cell for HFC production and import rules ahead of the 2028 freeze, such as licensing or quotas."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: leak emissions from one R-134a chiller",
+    "lines": [
+      "Charge: 300 kg R-134a; annual top-ups of 30 kg (10% of charge, illustrative)",
+      "Yearly Scope 1: 30 x 1,530 (AR6 GWP100) = 45,900 kg CO2e, about 45.9 t",
+      "Over 15 years: 45.9 x 15 = 688.5 t CO2e",
+      "Same leak with HFO-1234ze: 30 x 1.37 = 41 kg CO2e a year"
+    ],
+    "note": "Leak rates vary widely with maintenance; use your own top-up records."
+  },
+  "senseible": "Senseible records refrigerant emissions as Scope 1 CO2e when you supply the gas and the kilograms charged, and keeps the service invoices as evidence. Tracking HFC quotas, licences or Kigali compliance is outside what it does.",
+  "links": [
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Does R-22 count in Scope 1?",
+      "to": "/answers/does-r22-count-in-scope-1"
+    },
+    {
+      "label": "Cold chain refrigerant leaks",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Kigali Amendment to the Montreal Protocol (2016), Article 5 Group 2 schedule; Ozone Cell, MoEFCC",
+      "url": "https://www.ozonecell.nic.in"
+    },
+    {
+      "label": "India Cooling Action Plan (MoEFCC, 2019)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check whether MoEFCC has notified HFC licensing or quota rules for the 2028 freeze."
+}

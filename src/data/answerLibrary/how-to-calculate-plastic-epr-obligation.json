@@ -1,0 +1,86 @@
+{
+  "slug": "how-to-calculate-plastic-epr-obligation",
+  "q": "How do I calculate my plastic packaging EPR obligation in India?",
+  "title": "Calculating your plastic EPR obligation",
+  "short": "Take the average weight of plastic packaging you introduced in each category over the previous two financial years, adjust it as Schedule II of the Plastic Waste Management Rules sets for your role, and apply the year's target, 100% from 2023-24. Then meet the minimum recycling share of that figure with EPR certificates.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Producers, importers and brand owners (PIBOs) of plastic packaging in India",
+  "sections": [
+    {
+      "h": "The base quantity, category by category",
+      "p": [
+        "Schedule II of the Plastic Waste Management (Amendment) Rules, 2022 works out the obligation separately for each packaging category: Category I rigid, Category II flexible single or multilayer of one plastic type, Category III multilayer with a non-plastic layer, and Category IV compostable. For each category the base is broadly the average weight of plastic packaging you introduced in the market in the previous two financial years.",
+        "The exact formula differs by role. A producer of packaging adjusts for packaging it supplied to brand owners who carry their own obligation, so the same tonne is not counted twice. An importer counts the packaging on goods it imports. Read the formula for your role in the current Schedule II."
+      ]
+    },
+    {
+      "h": "The target percentage and the recycling share",
+      "ul": [
+        "Overall EPR target: 25% of the base in 2021-22, 70% in 2022-23 and 100% from 2023-24 onwards.",
+        "Minimum recycling share for Category I: 50% in 2024-25, 60% in 2025-26, 70% in 2026-27 and 80% from 2027-28.",
+        "Categories II and III: 30% in 2024-25, rising by 10 points a year to 60% from 2027-28.",
+        "The part of the target not met by recycling can be met by the other routes Schedule II allows for that category, such as end-of-life processing for packaging that cannot be recycled."
+      ],
+      "p": [
+        "These figures are as first notified in 2022. Schedule II has been amended since, so confirm each year's percentages on the CPCB centralised EPR portal before you plan purchases."
+      ]
+    },
+    {
+      "h": "Where the tonnes come from in your books",
+      "ol": [
+        "Purchase invoices for packaging material and packed goods, with weight or a per-unit weight you can support.",
+        "Sales records showing what was placed on the Indian market, excluding exports, which do not carry an Indian obligation.",
+        "A per-SKU packaging weight sheet, signed off by production, so units sold can be converted to kilograms by category.",
+        "Records for the two prior years, since the base is an average of both."
+      ]
+    },
+    {
+      "h": "Edge cases that change the number",
+      "ul": [
+        "Micro and small units: relief has differed by role and has been amended; check the current text before assuming you are exempt.",
+        "Multilayer packaging with a paper or aluminium layer is Category III, not Category II, even if it looks like a flexible pouch.",
+        "A shortfall in one year is carried forward and can attract environmental compensation, so a lower estimate today usually costs more later.",
+        "The recycled content you must put into new packaging is a separate obligation, measured on what goes into your packs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a brand owner, Category I, 2026-27",
+    "lines": [
+      "Rigid packaging introduced: 120 tonnes in 2024-25, 140 tonnes in 2025-26",
+      "Base: (120 + 140) / 2 = 130 tonnes",
+      "EPR target at 100%: 130 tonnes",
+      "Minimum met through recycling in 2026-27, 70%: 130 x 0.70 = 91 tonnes of recycling certificates",
+      "Remaining 39 tonnes: met through the other routes Schedule II allows for Category I"
+    ],
+    "note": "Percentages as notified in Schedule II in 2022; check the current amendment before you file."
+  },
+  "senseible": "Senseible does not calculate plastic EPR obligations or buy EPR certificates. It can read the packaging purchase invoices you would keep as evidence for the tonnes you report.",
+  "links": [
+    {
+      "label": "Recycled content targets for plastic packaging",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Circular economy services",
+      "to": "/circular-economy"
+    },
+    {
+      "label": "How long to keep invoices",
+      "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Plastic Waste Management (Amendment) Rules, 2022, MoEFCC, Schedule II (EPR targets)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CPCB centralised EPR portal for plastic packaging, guidelines and EPR certificates",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Schedule II targets and relief for micro and small units have been amended since 2022; recheck the current MoEFCC notification before each filing year."
+}
