@@ -3,6 +3,8 @@ import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useEmissions } from '@/hooks/useEmissions';
+import { useDocuments } from '@/hooks/useDocuments';
+import { RecordCalculationLine } from '@/components/records/RecordCalculationLine';
 import { useOrganization } from '@/hooks/useOrganization';
 import { 
   CheckCircle, AlertTriangle, Shield, ArrowRight, Loader2, 
@@ -88,6 +90,8 @@ const Verify = () => {
   const canVerify = can('records.verify');
   const { activeContext } = useOrganization();
   const { emissions, refetch, isLoading: emissionsLoading, error: emissionsError } = useEmissions();
+  const { documents } = useDocuments();
+  const cachedByDocument = useMemo(() => new Map(documents.map((d) => [d.id, d.cached_result])), [documents]);
   const { isEnterprise } = useEnterpriseMode();
   const [isVerifying, setIsVerifying] = useState(false);
   const [includeIoT, setIncludeIoT] = useState(false);
@@ -273,21 +277,24 @@ const Verify = () => {
               </div>
             ) : pending.length > 0 ? (
               <>
-                <div className="space-y-2 mb-6 max-h-48 overflow-y-auto">
+                <div className="space-y-2 mb-6 max-h-72 overflow-y-auto">
                   {pending.map((e, idx) => (
                     <div 
                       key={e.id} 
-                      className="flex items-center justify-between p-3 rounded-lg bg-secondary/30 animate-fade-in"
+                      className="p-3 rounded-lg bg-secondary/30 animate-fade-in"
                       style={{ animationDelay: `${idx * 50}ms` }}
                     >
-                      <div className="flex items-center gap-3">
-                        <AlertTriangle className="h-4 w-4 text-warning" />
-                        <div>
-                          <span className="capitalize font-medium">{e.category}</span>
-                          <span className="text-xs text-muted-foreground ml-2">Scope {e.scope}</span>
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <AlertTriangle className="h-4 w-4 text-warning" />
+                          <div>
+                            <span className="capitalize font-medium">{e.category}</span>
+                            <span className="text-xs text-muted-foreground ml-2">Scope {e.scope}</span>
+                          </div>
                         </div>
+                        <span className="font-mono font-medium">{e.co2_kg.toFixed(1)} kg</span>
                       </div>
-                      <span className="font-mono font-medium">{e.co2_kg.toFixed(1)} kg</span>
+                      <div className="mt-1 pl-7"><RecordCalculationLine row={e} cachedResult={e.document_id ? cachedByDocument.get(e.document_id) : undefined} /></div>
                     </div>
                   ))}
                 </div>

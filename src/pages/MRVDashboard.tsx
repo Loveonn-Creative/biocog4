@@ -261,7 +261,7 @@ const MRVDashboard = () => {
           </div>
           <p className="text-muted-foreground">
             The operational workspace: capture evidence, resolve verification issues and keep the
-            record audit-ready. Trends, filters and period comparisons live on the{' '}
+            record linked to its evidence. Trends, filters and period comparisons live on the{' '}
             <Link to="/dashboard" className="text-primary hover:underline">Dashboard</Link>.
           </p>
         </div>

@@ -12,7 +12,7 @@ const REACHED = [120, 96, 96, 88, 88];
 
 /**
  * Press once and watch a supplier wave run from invitation to an
- * audit-ready report. Each stage carries its real status.
+ * evidence-linked report. Each stage carries its real status.
  */
 export const OneClickCollect = ({ onAsk }: { onAsk: (interest: string) => void }) => {
   const t = useT();
@@ -39,7 +39,7 @@ export const OneClickCollect = ({ onAsk }: { onAsk: (interest: string) => void }
           <p className="text-sm text-muted-foreground">{t("ent.wave.sub", "Illustration: one wave of 120 suppliers")}</p>
           <p className="text-lg font-medium mt-0.5" aria-live="polite">
             {step < 0 ? t("ent.wave.idle", "Ready when you are")
-              : done ? t("ent.wave.done", "Audit-ready. 8 records wait for a person.")
+              : done ? t("ent.wave.done2", "Evidence linked. 8 records wait for a person.")
               : t(`ent.stage.${pipelineStages[Math.min(step, 4)].key}`, pipelineStages[Math.min(step, 4)].label) + "…"}
           </p>
         </div>

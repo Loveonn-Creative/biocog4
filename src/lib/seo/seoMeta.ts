@@ -150,7 +150,7 @@ export const BANNED_CLAIMS: { pattern: RegExp; reason: string }[] = [
 export const STATIC_PAGE_META: Record<string, PageMeta> = {
   '/': {
     title: 'Senseible: Carbon MRV to Climate Finance for MSMEs',
-    description: 'Upload a bill or invoice for an audit-ready carbon report. MSMEs use the verified record for green loans, buyer and export requests, and carbon credits.',
+    description: 'Upload a bill or invoice for an evidence-linked carbon report. MSMEs use the verified record for green loans, buyer and export requests, and carbon credits.',
   },
   '/platform': {
     title: 'The Senseible Platform: Verified Climate Evidence',

@@ -234,8 +234,8 @@ const Enterprise = () => {
         <WhenNear minH={420}><LazySuiteDashboard onAsk={ask} /></WhenNear>
       </Beat>
 
-      {/* 03 Scope 3: one click from collection to audit-ready */}
-      <Beat id="ent-agents" n="03" title={t("ent.b1.title2", "Custom-built for Scope 3: one click from collection to audit-ready")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a source in the ledger at the top of the page, or pick an input below, to see the record it becomes.")}>
+      {/* 03 Scope 3: one click from collection to evidence-linked records */}
+      <Beat id="ent-agents" n="03" title={t("ent.b1.title3", "Custom-built for Scope 3: one click from collection to evidence-linked records")} line={t("ent.b1.line2", "Press run to watch a supplier wave move through each stage. Then tap a source in the ledger at the top of the page, or pick an input below, to see the record it becomes.")}>
         <WhenNear minH={460}><LazyOneClickCollect onAsk={ask} /></WhenNear>
         <div className="mt-10"><RecordTransform index={example} onChange={setExample} /></div>
       </Beat>

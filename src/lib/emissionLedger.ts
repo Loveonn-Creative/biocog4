@@ -1,6 +1,7 @@
 // Pure helpers for counting verified emissions and audit ledger rows once.
 // History, Verify and the audit ledger export read existing emission IDs; none
 // of these helpers create or mutate records.
+import { DOCUMENT_KIND_LABEL, isEvidenceOnlyKind, storedDocumentKind } from '../../supabase/functions/_shared/documentKind';
 
 export interface VerifiableEmissionRow {
   id: string;
@@ -161,6 +162,7 @@ export type DocumentEmissionStatus =
   | { kind: 'verified' }
   | { kind: 'pending'; count: number }
   | { kind: 'processing' }
+  | { kind: 'evidence'; label: string }
   | { kind: 'not_calculable'; reason: string };
 
 interface CachedLineItem { quantity?: unknown; unit?: unknown }
@@ -179,6 +181,9 @@ export function documentEmissionStatus(
     return pending === 0 ? { kind: 'verified' } : { kind: 'pending', count: pending };
   }
   if (!cachedResult || typeof cachedResult !== 'object') return { kind: 'processing' };
+  // Credit notes and purchase orders: kept as evidence, never counted.
+  const kind = storedDocumentKind(cachedResult);
+  if (isEvidenceOnlyKind(kind)) return { kind: 'evidence', label: DOCUMENT_KIND_LABEL[kind] };
   const items = (cachedResult as { lineItems?: unknown }).lineItems;
   const list: CachedLineItem[] = Array.isArray(items) ? items as CachedLineItem[] : [];
   const missingQty = list.some((i) => !(typeof i?.quantity === 'number' && i.quantity > 0));

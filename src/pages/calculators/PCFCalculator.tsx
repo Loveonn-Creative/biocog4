@@ -85,7 +85,7 @@ const PCFCalculatorPage = () => {
     <CalculatorShell
       slug="product-carbon-footprint"
       title="Product Carbon Footprint Calculator | ISO 14067 | Senseible"
-      description="Free PCF calculator following ISO 14067 and GHG Protocol Product Standard. Cradle-to-gate emissions per product unit with audit-ready breakdown."
+      description="Free PCF calculator following ISO 14067 and GHG Protocol Product Standard. Cradle-to-gate emissions per product unit, with each factor and input shown."
       keywords="PCF calculator, product carbon footprint, ISO 14067, cradle to gate, EU CBAM PCF, GHG Protocol product"
       h1="Product Carbon Footprint (PCF) Calculator"
       intro="Calculate cradle-to-gate emissions per product unit. Aligned with ISO 14067 and the GHG Protocol Product Standard."

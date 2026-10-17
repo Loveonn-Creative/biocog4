@@ -407,3 +407,59 @@ describe('electricity bill reader: kVAh, charges, handwritten bills and meter ph
     expect(r.body.data.validationFlags.join(' ')).toMatch(/not higher than the earlier/);
   });
 });
+
+describe('document kinds through the real handler', () => {
+  test('a tax invoice is labelled and counted as before, with its calculation trail stored', async () => {
+    ocr = { ...diesel('100', 'INV-900'), documentTitle: 'Tax Invoice' };
+    const r = await upload('k1');
+    expect(r.body.data.documentKind).toBe('tax_invoice');
+    expect(r.body.emissionIds).toHaveLength(1);
+    const notes = JSON.parse(db.emissions[0].verification_notes);
+    expect(notes.factorSetVersion).toBe(r.body.data.methodology.factorVersion);
+    expect(Array.isArray(notes.assumptions)).toBe(true);
+  });
+
+  test('a credit note is stored as evidence and never counted', async () => {
+    ocr = { ...diesel('100', 'CN-12'), documentType: 'Credit Note', documentTitle: 'Credit Note' };
+    const r = await upload('k2');
+    expect(r.status).toBe(200);
+    expect(r.body.data.documentKind).toBe('credit_note');
+    expect(r.body.serverSaved).toBe(true);
+    expect(r.body.emissionIds).toEqual([]);
+    expect(db.emissions ?? []).toHaveLength(0);
+    expect(db.documents).toHaveLength(1);
+    expect(r.body.data.totalCO2Kg).toBeUndefined();
+    expect(r.body.data.lineItems[0].co2Kg).toBeUndefined();
+    expect(r.body.data.lineItems[0].guidance.status).toBe('reference');
+  });
+
+  test('a credit note citing a counted invoice is not taken for that invoice', async () => {
+    ocr = { ...diesel('100', 'INV-950'), documentTitle: 'Tax Invoice' };
+    await upload('k3');
+    ocr = { ...diesel('100', 'INV-950'), documentTitle: 'Credit Note' };
+    const r = await upload('k4');
+    expect(r.body.isDuplicate).toBeUndefined();
+    expect(r.body.data.documentKind).toBe('credit_note');
+    expect(db.documents).toHaveLength(2);
+    expect(db.emissions).toHaveLength(1);
+  });
+
+  test('a purchase order is stored as evidence and never counted', async () => {
+    ocr = { ...diesel('500', 'PO-7'), documentType: 'Purchase Order', documentTitle: 'Purchase Order' };
+    const r = await upload('k5');
+    expect(r.body.data.documentKind).toBe('purchase_order');
+    expect(db.emissions ?? []).toHaveLength(0);
+  });
+
+  test('price check flags a mismatch and changes no figure', async () => {
+    ocr = { ...diesel('100', 'INV-960'), documentTitle: 'Tax Invoice' };
+    (ocr as any).lineItems[0].unitPrice = '92.50';
+    (ocr as any).lineItems[0].total = '925';
+    const r = await upload('k6');
+    const line = r.body.data.lineItems[0];
+    expect(line.priceCheck).toMatchObject({ expected: 9250, total: 925 });
+    expect(line.validationFlags.some((f: string) => f.startsWith('Price check'))).toBe(true);
+    expect(db.emissions[0].activity_data).toBe(100);
+    expect(line.guidance.status).toBe('counted');
+  });
+});

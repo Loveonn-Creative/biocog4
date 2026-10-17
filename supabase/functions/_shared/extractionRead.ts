@@ -38,6 +38,10 @@ export function normalizeDocumentType(t: unknown): string {
   const s = String(t ?? '').toLowerCase();
   if (!s) return 'unknown';
   if (/certificate|\brec\b|guarantee of origin/.test(s)) return 'certificate';
+  // Credit notes and purchase orders are stored as evidence (see
+  // documentKind.ts), so they are accepted rather than refused as unsupported.
+  if (/credit\s*(note|memo)|purchase\s*order/.test(s)) return 'invoice';
+  if (/consignment\s*note|\bbu?ilty\b|lorry/.test(s)) return 'receipt';
   if (/receipt|cash memo|slip/.test(s)) return 'receipt';
   if (/invoice|challan|e-?way/.test(s)) return 'invoice';
   if (/bill/.test(s)) return 'bill';

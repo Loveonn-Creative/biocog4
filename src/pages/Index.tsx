@@ -948,7 +948,7 @@ const Index = () => {
             )}
             
             <p className="-mt-2 text-sm text-muted-foreground text-center max-w-xs min-h-[2.75rem] flex items-center justify-center [text-wrap:balance]">
-              {t("home.hero.action", "Upload an invoice, get an audit-ready carbon report")}
+              {t("home.hero.action", "Upload an invoice, get an evidence-linked carbon report")}
             </p>
 
 
