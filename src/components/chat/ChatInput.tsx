@@ -12,6 +12,11 @@ interface ChatInputProps {
   isListening?: boolean;
   language: Language;
   placeholder?: string;
+  /** Controlled text (for example filled from a suggestion); omit to let the input keep its own. */
+  value?: string;
+  onValueChange?: (value: string) => void;
+  /** Shows the language above the input (default true). */
+  showLanguage?: boolean;
 }
 
 export const ChatInput = ({
@@ -21,9 +26,14 @@ export const ChatInput = ({
   isLoading = false,
   isListening = false,
   language,
-  placeholder = "Ask about your emissions, savings, or net-zero strategy..."
+  placeholder = "Ask about your emissions, savings, or net-zero strategy...",
+  value,
+  onValueChange,
+  showLanguage = true,
 }: ChatInputProps) => {
-  const [input, setInput] = useState('');
+  const [ownInput, setOwnInput] = useState('');
+  const input = value ?? ownInput;
+  const setInput = (v: string) => { if (value === undefined) setOwnInput(v); onValueChange?.(v); };
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-resize textarea
@@ -74,13 +84,11 @@ export const ChatInput = ({
               : "hover:bg-secondary text-muted-foreground hover:text-foreground"
           )}
           onClick={() => {
-            if (isListening) {
-              // Will be handled by parent
-            } else {
-              onVoiceStart?.();
-            }
+            if (isListening) onVoiceEnd?.('');
+            else onVoiceStart?.();
           }}
           disabled={isLoading}
+          aria-label={isListening ? 'Stop listening' : 'Ask by voice'}
         >
           {isListening ? (
             <div className="relative">
@@ -101,6 +109,7 @@ export const ChatInput = ({
           placeholder={isListening ? `Listening in ${language.name}...` : placeholder}
           disabled={isLoading || isListening}
           rows={1}
+          aria-label="Your question"
           className={cn(
             "flex-1 bg-transparent border-0 resize-none py-2.5 px-2 text-sm focus:outline-none focus:ring-0 placeholder:text-muted-foreground/60",
             "min-h-[40px] max-h-[120px]"
@@ -118,6 +127,7 @@ export const ChatInput = ({
               : "bg-secondary text-muted-foreground"
           )}
           disabled={!input.trim() || isLoading}
+          aria-label="Send question"
         >
           {isLoading ? (
             <Loader2 className="w-4 h-4 animate-spin" />
@@ -128,10 +138,10 @@ export const ChatInput = ({
       </div>
 
       {/* Language indicator */}
-      <div className="absolute -top-6 left-3 flex items-center gap-1.5 text-xs text-muted-foreground">
+      {showLanguage && <div className="absolute -top-6 left-3 flex items-center gap-1.5 text-xs text-muted-foreground">
         <span>{language.flag}</span>
         <span>{language.name}</span>
-      </div>
+      </div>}
     </form>
   );
 };

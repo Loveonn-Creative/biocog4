@@ -241,8 +241,8 @@ export const STATIC_PAGE_META: Record<string, PageMeta> = {
     description: 'Browse carbon credit listings from MSMEs with provenance details, verification status and evidence links. For buyers who need traceable supply.',
   },
   '/intelligence': {
-    title: 'Carbon Intelligence Assistant',
-    description: 'Ask questions about your emissions, CBAM exposure, Scope 3 suppliers or green finance readiness and get answers grounded in your verified records.',
+    title: 'Biocog Intelligence: ESG Intelligence',
+    description: 'Ask about Scope 1, 2 and 3, CBAM, ESG reporting and the platform. On Pro and Scale, answers come from your own records with the evidence behind each figure.',
   },
   '/calculators': {
     title: 'Free Carbon Calculators for MSMEs',

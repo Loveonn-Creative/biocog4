@@ -69,6 +69,18 @@ export function nextMonthlyResetIso(now = new Date()): string {
   return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1) - IST_OFFSET_MS).toISOString();
 }
 
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+/** The current pool's month and the day it resets, in India time: { month: 'October', resets: '1 November' }. */
+export function monthLabelsIst(now = new Date()): { month: string; resets: string } {
+  const m = istDate(now).getUTCMonth();
+  return { month: MONTH_NAMES[m], resets: `1 ${MONTH_NAMES[(m + 1) % 12]}` };
+}
+/** The limit-state sentence: "You've used 20 of 20 in October. Resets 1 November." */
+export function limitSentence(used: number, limit: number, now = new Date()): string {
+  const { month, resets } = monthLabelsIst(now);
+  return `You've used ${Math.min(used, limit).toLocaleString('en-IN')} of ${limit.toLocaleString('en-IN')} in ${month}. Resets ${resets}.`;
+}
+
 /** The next midnight in India, as an ISO instant. */
 export function nextDailyResetIso(now = new Date()): string {
   const d = istDate(now);
@@ -124,6 +136,17 @@ export interface RecordBrief {
   complete: boolean;
   /** The calculation behind the headline total, in words. */
   calculation: string;
+  /** The basis rows at a glance, for the page's context card. */
+  summary: {
+    kg: number;
+    records: number;
+    /** Distinct invoices behind the basis rows. */
+    documents: number;
+    firstMonth: string | null;
+    lastMonth: string | null;
+    /** The scope with the largest share of the basis total. */
+    topScope: { scope: 1 | 2 | 3; share: number } | null;
+  };
 }
 
 const num = (v: unknown): number => {
@@ -186,8 +209,20 @@ export function buildBrief(rows: EmissionRow[], opts: { complete: boolean }): Re
     ? 'No records yet.'
     : `${basis === 'verified' ? 'Verified' : 'Unverified'} total = sum of co2_kg over ${basisRows.length} record${basisRows.length === 1 ? '' : 's'} = ${round(basisKg)} kg CO2e. Each record's co2_kg is activity x emission factor, fixed when the invoice was read.`;
 
+  const basisByScope: Record<1 | 2 | 3, number> = { 1: 0, 2: 0, 3: 0 };
+  for (const r of basisRows) basisByScope[r.scope === 1 || r.scope === 2 ? r.scope : 3] += num(r.co2_kg);
+  const top = ([1, 2, 3] as const).reduce((a, b) => (basisByScope[b] > basisByScope[a] ? b : a), 1 as 1 | 2 | 3);
+  const summary: RecordBrief['summary'] = {
+    kg: round(basisKg),
+    records: basisRows.length,
+    documents: new Set(basisRows.map((r) => r.document_id || r.id)).size,
+    firstMonth: monthly[0]?.month ?? null,
+    lastMonth: monthly[monthly.length - 1]?.month ?? null,
+    topScope: basisKg > 0 ? { scope: top, share: round(basisByScope[top] / basisKg, 4) } : null,
+  };
+
   return {
-    basis,
+    basis, summary,
     verified: { records: verifiedRows.length, kg: round(verifiedKg), byScope: { 1: round(byScope[1]), 2: round(byScope[2]), 3: round(byScope[3]) } },
     unverified: { records: unverifiedRows.length, kg: round(unverifiedKg) },
     hotspots, monthly, complete: opts.complete, calculation,
@@ -290,7 +325,7 @@ export function projectTrend(monthly: MonthTotal[]): Projection | null {
     next12Kg: round(next12),
     lowKg: round(Math.max(0, next12 - band)),
     highKg: round(next12 + band),
-    method: `Straight-line trend through ${n} months with records, extended 12 months; range is about 80%.`,
+    method: `Straight-line trend through ${n} months with records, extended 12 months. The range is an 80% band based on how far past months varied from the trend.`,
     label: 'Projection',
   };
 }
