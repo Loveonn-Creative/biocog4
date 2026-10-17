@@ -1,0 +1,75 @@
+{
+  "slug": "ocr-vs-ai-vision-invoice-extraction",
+  "q": "What is the difference between template OCR and AI vision for reading invoices?",
+  "title": "Template OCR or AI vision for invoices?",
+  "short": "Template OCR turns the page into text and pulls each field from a fixed position you set up per supplier layout. AI vision reads the whole page, layout and text together, and fills named fields without a template. Templates suit a few stable layouts; AI vision suits many suppliers and photos, if every value is checked.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Finance and sustainability teams choosing invoice extraction tools",
+  "sections": [
+    {
+      "h": "How template OCR works",
+      "p": [
+        "An OCR engine converts the image into characters and their positions. Someone then draws zones or writes rules for each supplier format: the quantity sits in this column, the invoice date sits after this label. Once a template is built, the same layout is read the same way every time.",
+        "The weak point is change. A new supplier, a redesigned invoice, a skewed phone photo or a second page of line items can push values out of their zones, and the tool either misses them or reads the wrong cell without knowing it."
+      ]
+    },
+    {
+      "h": "How AI vision works",
+      "p": [
+        "A vision model looks at the image and uses the layout, labels and wording together to decide which number is the quantity and which is the rate. It needs no per supplier template, so a new format or a crumpled photo can still be read.",
+        "Its weak point is different: a model can misread a value or place a number in the wrong field with full confidence. Good practice is to fix the output to a schema of named fields, run at temperature 0 so the reading is not sampled at random, leave a field empty when it is not visible, and check every result with rules."
+      ]
+    },
+    {
+      "h": "Which to choose",
+      "ul": [
+        "Few suppliers, stable layouts, high volume of identical documents: template OCR is predictable and cheap to run once set up.",
+        "Many suppliers, mixed PDFs and photos, frequent new formats: AI vision avoids building and maintaining hundreds of templates.",
+        "Either way, carbon figures need unit checks, a recalculation of quantity times factor, and a link from every number back to its source file."
+      ]
+    },
+    {
+      "h": "How to test any tool on your own invoices",
+      "ol": [
+        "Pick 50 to 100 real documents, including photos, multi page PDFs and your messiest supplier.",
+        "Write down the correct quantity, unit, date and HSN code for each line yourself.",
+        "Compare field by field and count errors per field, not per document.",
+        "Check what the tool does when a field is missing: an empty field is safer than a guessed one.",
+        "Ask whether you can open the source file from any figure in the output."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative field check on 80 invoices",
+    "lines": [
+      "Lines checked: 400; fields checked per line: quantity, unit, date, HSN = 1,600 fields",
+      "Errors found: quantity 6, unit 10, date 2, HSN 4 = 22 errors",
+      "Field error rate: 22 / 1,600 = 1.4%",
+      "Unit errors are the biggest share: 10 / 22 = 45%, so unit checks matter most for this set"
+    ],
+    "note": "Numbers are illustrative. Run the same test on your own documents before relying on any tool."
+  },
+  "senseible": "Senseible reads invoices and bills with an AI vision model at temperature 0, a fixed schema and null for any field not clearly visible, then scores each line with rule checks, including penalties for a missing unit or low reading confidence. It publishes no accuracy rate, so test it on your own documents.",
+  "links": [
+    {
+      "label": "Can AI calculate a footprint accurately?",
+      "to": "/answers/can-ai-calculate-carbon-footprint-accurately"
+    },
+    {
+      "label": "Why AI gives different numbers",
+      "to": "/answers/why-ai-gives-different-numbers-for-same-bill"
+    },
+    {
+      "label": "Will auditors accept AI extracted data?",
+      "to": "/answers/will-auditors-accept-ai-extracted-carbon-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7 (managing inventory quality)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

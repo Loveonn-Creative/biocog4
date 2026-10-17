@@ -1,0 +1,60 @@
+{
+  "slug": "soil-carbon-credits-india-farmers",
+  "q": "Can Indian farmers or agri companies earn soil carbon credits, and how is it measured?",
+  "title": "Soil carbon credits for Indian farmers",
+  "short": "Yes, but not one farm at a time. Soil carbon credits come from a project that changes practices on many farms, such as reduced tillage or cover crops, under a methodology like Verra's VM0042. Carbon gains are measured with soil samples, usually combined with a calibrated model, and cut for uncertainty and reversal risk.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Agri input companies, FPOs and food buyers in India",
+  "sections": [
+    {
+      "h": "Which practice changes can count",
+      "ul": [
+        "Reduced or no tillage.",
+        "Cover crops and better crop rotations.",
+        "Keeping crop residue in the field instead of burning it.",
+        "Better fertiliser management, which mainly cuts nitrous oxide.",
+        "Improved water management in rice, which cuts methane.",
+        "Improved grazing on pasture."
+      ],
+      "p": ["The change must be new for those fields and not required by law or already common practice in the area. Paying farmers to keep doing what they already do does not create credits."]
+    },
+    {
+      "h": "How the carbon is measured",
+      "p": [
+        "VM0042 allows a measure and model approach: soil is sampled at baseline and at intervals, and a biogeochemical model, validated for the crops and soils, estimates the change on every field in between. A measure and re-measure approach uses direct sampling alone. Either way, sampling must reach at least 30 cm.",
+        "The calculated tonnes are reduced by an uncertainty deduction, and a share goes into a buffer pool to cover the risk that carbon is lost again if farmers return to ploughing. What is left is what can be issued."
+      ]
+    },
+    {
+      "h": "Why Indian projects are hard to run",
+      "ul": [
+        "Small, scattered holdings mean thousands of farmers per project, so an FPO, input company or developer has to aggregate them, usually as a grouped project.",
+        "Each field needs records of what was done each season: tillage, sowing, residue, inputs. Without them, practice change cannot be shown.",
+        "Soil carbon rises slowly, so tonnes per hectare per year are small while sampling and validation costs are fixed.",
+        "Farmers must agree to keep the practice for many years, and contracts must say how credit revenue is shared."
+      ]
+    },
+    {
+      "h": "Decision rule for an agri company or food buyer",
+      "p": [
+        "Credits make sense when you can enrol a large area, fund sampling for years and keep field-level records. If your goal is to cut your own Scope 3, you may report the farm-level change in your inventory instead. Do not both count the removals in your Scope 3 and sell them as credits to someone else; that is double claiming.",
+        "Before choosing a methodology, check its current version on the Verra or Gold Standard site and whether ICVCM has approved it for the Core Carbon Principles label, which many buyers now ask for."
+      ]
+    }
+  ],
+  "senseible": "Senseible's carbon credit eligibility signals are built on fuel and electricity records, not soil data. It does not measure soil carbon, run project models or validate projects; a programme such as Verra and an independent validator do that.",
+  "links": [
+    { "label": "Can a small business generate carbon credits?", "to": "/answers/can-a-small-business-generate-carbon-credits" },
+    { "label": "Soil carbon baseline sampling", "to": "/answers/soil-carbon-baseline-sampling-depth" },
+    { "label": "How much goes to the buffer pool", "to": "/answers/how-much-of-my-credits-go-to-buffer-pool" },
+    { "label": "Grouped projects in Verra", "to": "/answers/what-is-a-grouped-project-in-verra" }
+  ],
+  "sources": [
+    { "label": "Verra VM0042 Methodology for Improved Agricultural Land Management", "url": "https://verra.org" },
+    { "label": "Gold Standard Soil Organic Carbon Framework Methodology", "url": "https://www.goldstandard.org" },
+    { "label": "ICVCM Core Carbon Principles assessment decisions", "url": "https://icvcm.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Methodology versions, ICVCM approval status and buffer rules for agriculture change often; check before committing to a project."
+}

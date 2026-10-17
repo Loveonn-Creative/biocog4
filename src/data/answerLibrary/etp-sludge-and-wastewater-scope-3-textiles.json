@@ -1,0 +1,93 @@
+{
+  "slug": "etp-sludge-and-wastewater-scope-3-textiles",
+  "q": "How do textile dyeing units count wastewater and ETP sludge sent to a common effluent treatment plant in Scope 3?",
+  "title": "CETP wastewater and sludge in Scope 3",
+  "short": "Wastewater a dyeing unit sends to a common effluent treatment plant (CETP), and ETP sludge sent to a disposal facility, go in Scope 3 Category 5. Estimate methane from the COD you send and the CETP's treatment type, add the CETP's energy per kilolitre, and count sludge by the tonnes on each disposal manifest.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile processors in Tiruppur, Surat, Narayanganj and Faisalabad",
+  "sections": [
+    {
+      "h": "What belongs in Category 5 for a dyeing unit",
+      "ul": [
+        "Methane, and some nitrous oxide, from your effluent while the CETP treats it.",
+        "The CETP's own energy use for your share of the effluent, mainly electricity for aeration, pumping and, at zero liquid discharge plants, evaporators. The Scope 3 Standard puts a waste supplier's Scope 1 and Scope 2 in Category 5.",
+        "Emissions from treating or disposing of your ETP sludge at a disposal site or cement kiln.",
+        "Optionally, the tanker trips that carry sludge or effluent, if they are not already in another category."
+      ],
+      "p": [
+        "Anything treated inside your own fence, such as a primary ETP before the CETP line, is Scope 1 and Scope 2, not Category 5."
+      ]
+    },
+    {
+      "h": "Step by step for the effluent",
+      "ol": [
+        "Take the kilolitres sent each month from the CETP bill or your outlet flow meter.",
+        "Take the COD at your outlet, the point where it leaves your fence, from your lab or pollution control board returns. 1,000 mg per litre equals 1 kg per kL.",
+        "Organic load = kL x kg COD per kL.",
+        "Methane = organic load x 0.25 kg CH4 per kg COD (IPCC 2006 default) x the methane correction factor for the CETP's treatment: 0 for well run aerobic treatment, 0.3 if overloaded, 0.8 for anaerobic treatment without gas capture.",
+        "Convert to CO2e with one GWP set for the whole inventory, and add the CETP's energy: kL x kWh per kL x the grid factor."
+      ]
+    },
+    {
+      "h": "Counting ETP sludge",
+      "p": [
+        "Chemical sludge from textile ETPs is usually handled as hazardous waste under India's Hazardous and Other Wastes Rules, 2016, and goes to a treatment, storage and disposal facility (TSDF) or to a cement kiln for co-processing. Take the tonnes from each manifest. Chemical sludge holds little degradable organic carbon, so methane from a secure landfill is low; the larger items are often the transport and the disposal site's own energy. Use a factor for the specific waste type and route, and say where it comes from."
+      ]
+    },
+    {
+      "h": "When the CETP publishes nothing",
+      "p": [
+        "Most CETPs do not publish their treatment stages or energy per kL. Ask the CETP society for its treatment process and annual electricity use divided by total inflow. If they will not share it, state your assumed correction factor and energy use, and show the result at a low and a high assumption so a reader can see how much the answer depends on them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 200 kL a day to a CETP (assumed values)",
+    "lines": [
+      "Effluent: 200 kL a day x 300 working days = 60,000 kL a year",
+      "COD at outlet: 1,500 mg per litre = 1.5 kg per kL (assumed)",
+      "Organic load: 60,000 x 1.5 = 90,000 kg COD",
+      "Methane at an assumed correction factor of 0.3: 90,000 x 0.25 x 0.3 = 6,750 kg CH4",
+      "CO2e at GWP 27 (IPCC AR6, non-fossil methane): 6,750 x 27 = 182,250 kg, about 182 t CO2e",
+      "If the CETP is well run aerobic (factor 0): 0 t from methane",
+      "CETP energy at an assumed 5 kWh per kL: 60,000 x 5 = 300,000 kWh x 0.710 kg CO2 per kWh = 213,000 kg, 213 t CO2"
+    ],
+    "note": "COD, the correction factor and kWh per kL are all assumptions here. Replace them with your lab results and the CETP's figures, and report the range if you cannot."
+  },
+  "senseible": "Senseible keeps CETP bills that print kilolitres as evidence in the Scope 3 trail and reads your own ETP's electricity from your bills into Scope 2. The COD and methane arithmetic above is your own calculation from lab data.",
+  "links": [
+    {
+      "label": "Methane from an ETP you run yourself",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "CETP effluent: which scope?",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Hazardous waste emissions from a manifest",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    },
+    {
+      "label": "ZLD plant energy per kL",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 5",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5, Chapter 6 (wastewater treatment and discharge)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, global warming potentials",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The result depends on assumed CETP treatment and energy data; replace assumptions when the CETP publishes figures."
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "what-to-put-in-ppa-for-carbon-claim",
+  "q": "What should a renewable PPA contract say so my buyer accepts the carbon claim?",
+  "title": "PPA clauses for a renewable power claim",
+  "short": "The PPA should name the generating plant, transfer all environmental attributes of each MWh to you alone, bar the generator from selling those attributes again, match delivery to your consumption period and grid, and give you the metering data and certificate retirement records. Without these, a buyer can reject the market-based Scope 2 claim.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Exporters whose EU buyers ask for renewable electricity evidence",
+  "sections": [
+    {
+      "h": "Clauses to ask for",
+      "ol": [
+        "Plant identity: name, location, technology, capacity and commissioning date of each generating unit.",
+        "Attribute transfer: all environmental attributes of the contracted MWh pass to you, bundled with the power or by certificate.",
+        "Exclusivity: the generator will not sell, claim or register the same MWh for RECs, I-RECs, carbon credits or any other buyer's claim.",
+        "Certificates: who issues or obtains them, and that they are retired or cancelled in your name for your consumption period.",
+        "Data: monthly generation and delivered kWh from the SLDC or discom energy account, with the right to share it with your auditor and customers.",
+        "Change of law: what happens to the attributes if state rules on open access or RPO accounting change."
+      ]
+    },
+    {
+      "h": "Why each clause matters",
+      "p": [
+        "The GHG Protocol Scope 2 Quality Criteria say a contractual instrument must convey the attributes, be the only claim on them, be tracked and retired on your behalf, relate to the same period as your use, and come from the same market. Each clause above maps to one of those tests. CDP reviews market-based figures against the same criteria."
+      ]
+    },
+    {
+      "h": "Points buyers and RE100 often check",
+      "ul": [
+        "Plant age: the RE100 Technical Criteria set a limit on how old the plant can be, with exceptions. Check the current edition before signing.",
+        "Double claims on the grid side: open access green power can count towards a discom's or your own renewable obligation. The contract should say who uses it for that, and that no one else makes a voluntary claim on it.",
+        "Carbon credits: a plant registered for carbon credits on the same output cannot also give you a zero-emission claim."
+      ]
+    },
+    {
+      "h": "What to keep as evidence",
+      "ul": [
+        "The signed PPA and any attribute transfer letter",
+        "Monthly energy accounts showing delivered kWh",
+        "Certificate retirement statements in your name",
+        "Your own bills, so delivered kWh can be compared with consumption"
+      ]
+    }
+  ],
+  "senseible": "Senseible stores your PPA, energy accounts and power bills as evidence and reports market-based Scope 2 when instrument data is provided, alongside location-based figures. It does not review or draft contracts.",
+  "links": [
+    {
+      "label": "Do RE100 and CDP accept Indian RECs?",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Physical or virtual PPA for Scope 2",
+      "to": "/answers/physical-vs-virtual-ppa-india-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "RE100 Technical Criteria (RE100 is run by Climate Group with CDP)",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "RE100 revises its Technical Criteria and the GHG Protocol is revising its Scope 2 Guidance; recheck both before finalising a contract."
+}

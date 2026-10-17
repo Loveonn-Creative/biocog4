@@ -1,0 +1,81 @@
+{
+  "slug": "saf-certificates-scope-3-business-travel",
+  "q": "Can SAF certificates (book and claim) reduce my Scope 3 business travel or air freight emissions?",
+  "title": "Do SAF certificates cut Scope 3 travel?",
+  "short": "Not inside your GHG Protocol inventory today. The Scope 3 Standard has no market-based method, so Category 6 travel and Category 4 or 9 air freight stay at their activity-based figure. You can report SAF certificate claims separately, next to the inventory, with full certificate details. Rules are under revision.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Companies buying SAF certificates from airlines or freight forwarders",
+  "sections": [
+    {
+      "h": "What a book and claim certificate is",
+      "p": [
+        "Sustainable aviation fuel is blended into the fuel supply at some airport, usually not on your flight. The supplier issues a certificate for the lifecycle emission reduction of that fuel, and you buy the claim. A registry tracks the certificate so the same reduction is claimed once. The Roundtable on Sustainable Biomaterials Book and Claim Manual sets out one such system."
+      ]
+    },
+    {
+      "h": "How to report it now",
+      "ol": [
+        "Report Category 6 business travel and Category 4 or 9 air freight in full, from distance or spend as usual.",
+        "Show the SAF claim on a separate line outside the Scope 3 total, labelled as a certificate-based claim.",
+        "State the fuel volume, feedstock, lifecycle reduction per tonne, the registry, the certificate IDs and the retirement date.",
+        "Say whether the airline or forwarder also counts the same SAF, for example under an aviation scheme, so a reader can see any overlap."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "ul": [
+        "If you need a number to fit an SBTi or buyer target: do not subtract it yet; check the target-setter's current rules first.",
+        "If you want to show action to customers: buy certificates from a tracked registry, retire them in your name, and disclose separately.",
+        "If the forwarder offers a lower emission figure on the invoice because of SAF: ask for the certificate behind it before using it."
+      ]
+    },
+    {
+      "h": "Where the rules are heading",
+      "p": [
+        "The GHG Protocol is reviewing market instruments in Scope 3, and the SBTi draft Corporate Net-Zero Standard version 2 discusses limited use of environmental attribute certificates. For freight, the Smart Freight Centre's market-based accounting guidance for logistics already describes how such claims can be reported beside the inventory. None of these yet changes the Scope 3 Standard."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: how the report looks",
+    "lines": [
+      "Category 6 business travel, distance-based: 200 t CO2e",
+      "SAF certificates bought and retired: stated lifecycle reduction 15 t CO2e",
+      "Scope 3 Category 6 reported: 200 t CO2e (unchanged)",
+      "Separate disclosure: SAF certificate claim of 15 t CO2e, with registry and certificate IDs"
+    ],
+    "note": "Figures are illustrative. If a future method allows the deduction, the same records would support 200 minus 15 = 185 t CO2e."
+  },
+  "senseible": "SAF certificate purchase and retirement sit outside Senseible's invoice workflow. Senseible keeps your travel and freight invoices and the certificate documents together as evidence, and keeps the Scope 3 lines at their activity-based figures.",
+  "links": [
+    {
+      "label": "Flight emissions for business travel",
+      "to": "/answers/flight-emissions-business-travel-india"
+    },
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard version 2 (draft)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "Smart Freight Centre, market-based accounting and reporting guidance for logistics",
+      "url": "https://www.smartfreightcentre.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "GHG Protocol and SBTi positions on certificates in Scope 3 are under revision; recheck before each reporting cycle."
+}

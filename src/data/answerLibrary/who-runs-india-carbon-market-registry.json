@@ -1,0 +1,73 @@
+{
+  "slug": "who-runs-india-carbon-market-registry",
+  "q": "Who runs India's carbon market registry and trading platform?",
+  "title": "Who runs India's carbon market registry?",
+  "short": "Grid Controller of India Limited is the registry for India's Carbon Credit Trading Scheme. The Bureau of Energy Efficiency (BEE) administers the scheme, the Central Electricity Regulatory Commission (CERC) regulates trading, and carbon credit certificates trade on CERC-registered power exchanges. A national steering committee oversees it all.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "CCTS obligated entities and offset project developers",
+  "sections": [
+    {
+      "h": "The institutions and what each one does",
+      "ul": [
+        "National Steering Committee for the Indian Carbon Market: sets the direction, chaired by the Secretary of the Ministry of Power with the Ministry of Environment.",
+        "Bureau of Energy Efficiency (BEE): administrator. Proposes targets and trajectories, accredits carbon verification agencies, and recommends issuance of carbon credit certificates.",
+        "Grid Controller of India Limited: registry. Holds accounts for registered entities, records issuance, transfers and surrender of certificates.",
+        "Central Electricity Regulatory Commission (CERC): regulates trading and oversees market conduct.",
+        "Power exchanges registered with CERC: host the actual buying and selling.",
+        "Ministry of Environment, Forest and Climate Change: notifies the greenhouse gas emission intensity targets for obligated entities."
+      ]
+    },
+    {
+      "h": "Where these roles are written down",
+      "p": [
+        "The Carbon Credit Trading Scheme, 2023 was notified by the Ministry of Power as S.O. 2825(E) on 28 June 2023 under the Energy Conservation Act, 2001. A later amendment in 2023 added the voluntary offset mechanism. Detailed procedures for compliance and offsets are issued by BEE, and trading rules by CERC."
+      ]
+    },
+    {
+      "h": "What this means for an obligated plant",
+      "ol": [
+        "Register with the registry through the process BEE sets out.",
+        "Report verified emission intensity for each compliance year through an accredited carbon verification agency.",
+        "If you beat your target, certificates are issued into your registry account; if you miss it, you buy certificates on a power exchange and surrender them."
+      ]
+    },
+    {
+      "h": "What this means for an offset project developer",
+      "p": [
+        "Offset projects register under BEE's offset procedure and methodologies, are verified by an accredited agency, and receive certificates into a registry account. Credits from voluntary registries such as Verra or Gold Standard are separate units and do not sit in the Indian registry unless the rules later allow it."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not a registry or a trading platform and does not issue carbon credits. It keeps the fuel, electricity and production records a plant would hand to its verification agency.",
+  "links": [
+    {
+      "label": "India's carbon market and the EU price",
+      "to": "/climate-intelligence/trading-air-for-assets-india-carbon-markets-eu-price"
+    },
+    {
+      "label": "Carbon pricing mechanisms in India",
+      "to": "/answers/carbon-pricing-mechanisms-in-india"
+    },
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "CCTS sector targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power, Carbon Credit Trading Scheme, 2023 (S.O. 2825(E), 28 June 2023)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Indian Carbon Market procedures",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CCTS procedures and CERC trading rules are still being issued and amended; check BEE and CERC for the current versions."
+}

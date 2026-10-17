@@ -1,0 +1,89 @@
+{
+  "slug": "scrap-sold-for-recycling-scope-3",
+  "q": "We sell steel or aluminium scrap to recyclers. Does that count in Category 5, and who gets the recycling credit?",
+  "title": "Scrap sold for recycling in Category 5",
+  "short": "Yes, scrap sent for recycling sits in Category 5, but under the GHG Protocol's recycled content method your line covers only moving the scrap to the recycler. The melting and reprocessing belong to whoever uses the recycled metal, and nobody deducts an avoided emissions credit from their inventory.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Steel fabricators, auto parts makers and aluminium extruders",
+  "sections": [
+    {
+      "h": "What your Category 5 line contains",
+      "ul": [
+        "Recycling process emissions: zero in your inventory. The Scope 3 Technical Guidance assigns them to the user of the recycled material under the recycled content method.",
+        "Transport of the scrap to the dealer or recycler: include it if you pay for it. Transport of waste is an optional part of Category 5 in the Scope 3 Standard, so say whether you included it.",
+        "If the buyer collects the scrap in its own trucks, that trip is the buyer's emission, and your line can be close to zero."
+      ],
+      "p": [
+        "Selling scrap for money does not move it out of Category 5. The category covers waste from your operations sent for treatment, and recycling is one treatment route."
+      ]
+    },
+    {
+      "h": "Who gets the recycling benefit",
+      "p": [
+        "The company that buys recycled steel or aluminium gets it, through a lower factor on recycled input in its own Category 1 or product footprint. If you also cut your footprint for supplying the scrap, the same benefit would be counted twice along the chain.",
+        "Avoided emissions, such as the primary metal the scrap may replace, can be reported as a separate figure with its method. They never reduce your Scope 1, 2 or 3 totals."
+      ]
+    },
+    {
+      "h": "Category 1 does not shrink for metal that becomes scrap",
+      "p": [
+        "You bought the full coil, sheet or billet, so Category 1 counts all of it, including the offcuts and swarf you later sell. Scrap revenue does not reduce it either. The way to lower these emissions is to buy less metal per good part, which shows up in Category 1 the next year."
+      ]
+    },
+    {
+      "h": "Records to keep for each scrap sale",
+      "ol": [
+        "Weighbridge slip and scrap sale invoice with tonnes and grade.",
+        "Freight invoice or trip log if you paid for the transport, with distance and vehicle type, or the litres of diesel used.",
+        "A note of the method: recycled content method, transport included or excluded."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fabricator's yearly steel scrap",
+    "lines": [
+      "Scrap sold: 600 t in 30 truck trips of 20 t, 40 km each way, freight paid by you",
+      "Distance: 30 trips x 80 km round trip = 2,400 km",
+      "Diesel at an assumed 4 km per litre: 2,400 / 4 = 600 litres",
+      "Transport emissions: 600 x 2.68 kg CO2 per litre (IPCC 2006 default for diesel) = 1,608 kg, about 1.6 t CO2",
+      "Recycling process emissions in your inventory: 0",
+      "Category 5 line for scrap: about 1.6 t CO2, plus a note that the recycled content method was used"
+    ],
+    "note": "The fuel economy is an assumption; use the transporter's actual litres if you can get them."
+  },
+  "senseible": "Senseible reads freight records for the trips that carry your scrap and keeps those lines in the Scope 3 evidence trail with the source file behind each figure. It does not deduct avoided emissions or recycling credits from your totals.",
+  "links": [
+    {
+      "label": "Carbon credit for selling scrap?",
+      "to": "/answers/selling-production-scrap-scope-3-category-5"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Waste emissions in Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 5",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "cotton-vs-polyester-fabric-carbon-footprint",
+  "q": "Is cotton or polyester fabric lower carbon for garment exporters?",
+  "title": "Cotton or polyester: which is lower carbon?",
+  "short": "Neither wins by default. Per kg of fibre, published datasets for conventional cotton and virgin polyester overlap, and recycled polyester and organic cotton usually score lower than their virgin or conventional versions. For finished fabric, spinning, dyeing and finishing energy often outweighs the fibre choice, so your mills' fuel and power decide the answer.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Indian garment and home-textile exporters answering brand questionnaires",
+  "sections": [
+    {
+      "h": "Where each fibre's emissions come from",
+      "ul": [
+        "Cotton: nitrogen fertiliser, which releases nitrous oxide from the soil (IPCC 2006 Volume 4, Chapter 11), diesel or electric pumps for irrigation, field machinery and ginning. Rain-fed and irrigated cotton can differ a lot.",
+        "Polyester: crude oil or gas feedstock, then making PTA and MEG and melting them into polymer. Almost all of it is fossil energy and fossil carbon.",
+        "Recycled polyester: skips the virgin polymer step, but adds collection, sorting and either mechanical or chemical recycling.",
+        "Organic cotton: no synthetic fertiliser, but yields per hectare are often lower, which spreads field emissions over fewer kg."
+      ]
+    },
+    {
+      "h": "Why fibre factors disagree",
+      "p": [
+        "Fibre factors depend on the country, farm practice, allocation between cotton lint and cottonseed, the electricity mix at the polymer plant and the year of the data. Two respected databases can give the same fibre values that differ by a factor of two. A single number quoted without its dataset, edition and system boundary is not a fair basis for choosing a fibre.",
+        "If a brand gives you its own fibre factors, use those for its questionnaire and say so. If not, pick one dataset for all fibres in the comparison and do not mix sources."
+      ]
+    },
+    {
+      "h": "The processing stages often decide the result",
+      "p": [
+        "Polyester is usually dyed with disperse dyes at high temperature under pressure. Cotton is usually dyed with reactive dyes at lower temperature but with long liquor ratios, washing and drying. Both use a lot of steam, and in Indian clusters that steam often comes from coal or wood-fired boilers. Spinning cotton into yarn is electricity heavy; polyester filament is extruded from the melt with fewer steps.",
+        "So a polyester fabric dyed in a coal-fired dye house can end up higher than a cotton fabric processed with gas or solar heat, even if the fibre factor said the opposite."
+      ]
+    },
+    {
+      "h": "A fair way to compare two fabrics",
+      "ol": [
+        "Fix the unit: 1 kg of finished fabric, or 1 square metre at a stated GSM.",
+        "Set a cradle-to-gate boundary, as ISO 14067 allows, and keep it the same for both.",
+        "Use one fibre dataset for both fibres and add fibre lost as waste in spinning and cutting.",
+        "Add spinning, weaving or knitting, and dyeing and finishing from your mills' own electricity and fuel bills.",
+        "Report the result with its dataset and boundary, and note that use phase and end of life are excluded."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the dye house share of 1 kg fabric",
+    "lines": [
+      "Dye house month (figures assumed for this example): 40,000 kWh grid power, 60 t coal, 100 t fabric processed",
+      "Electricity: 40,000 x 0.710 kg CO2 per kWh = 28,400 kg CO2",
+      "Coal: 60,000 kg x 2.42 kg CO2 per kg = 145,200 kg CO2",
+      "Total: 28,400 + 145,200 = 173,600 kg CO2 for 100,000 kg fabric = 1.74 kg CO2 per kg fabric",
+      "Add the fibre factor from your chosen dataset, plus spinning and weaving or knitting, to get cradle-to-gate"
+    ],
+    "note": "Coal is 84% of this dye house figure. Changing the boiler fuel can move the result more than changing the fibre."
+  },
+  "senseible": "Senseible reads your mills' electricity bills and fuel invoices and applies the CEA grid factor and IPCC 2006 fuel factors, so the processing part of a fabric footprint rests on real bills. It does not hold fibre factors from textile datasets; you add those from the source your buyer accepts.",
+  "links": [
+    { "label": "Scope 3 for textile exporters in India", "to": "/solutions/scope3-textile-india" },
+    { "label": "Which textile stage emits most", "to": "/answers/which-textile-tier-has-most-emissions" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products (iso.org)", "url": "https://www.iso.org" },
+    { "label": "2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method; apparel and footwear category rules in draft (eur-lex.europa.eu)", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Fibre datasets and the EU apparel PEF category rules are revised often; check the edition your buyer names before comparing."
+}

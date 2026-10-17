@@ -1,0 +1,98 @@
+{
+  "slug": "estimate-refrigerant-leakage-without-records",
+  "q": "How do I estimate refrigerant leakage if I have no top-up records?",
+  "title": "Refrigerant leakage with no top-up records",
+  "short": "Use a screening estimate: take the refrigerant charge from each unit's nameplate, multiply by a default annual leak rate for that equipment type from IPCC 2006 Table 7.9, then by the gas's GWP. Label the result as an estimate and start keeping service records so next year uses actual top-ups.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "EHS managers and consultants preparing a first inventory",
+  "sections": [
+    {
+      "h": "The screening formula",
+      "p": [
+        "Leakage (kg CO2e per year) = nameplate charge (kg) x annual leak rate (%) x GWP of the gas.",
+        "Do it unit by unit, or group identical units, and add the results. Only HFCs and other Kyoto gases go into Scope 1. Older units on R-22 leak an ozone-depleting gas that the GHG Protocol asks you to report separately, outside the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Default operating leak rates by equipment type",
+      "p": [
+        "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9 gives ranges of annual operating emissions as a share of the charge. Ranges as given in the table:"
+      ],
+      "ul": [
+        "Domestic refrigerators: 0.1% to 0.5%",
+        "Stand-alone commercial units (bottle coolers, deep freezers): 1% to 15%",
+        "Medium and large commercial refrigeration (supermarket racks): 10% to 35%",
+        "Transport refrigeration (reefer trucks): 15% to 50%",
+        "Industrial refrigeration, including food processing and cold storage: 7% to 25%",
+        "Chillers: 2% to 15%",
+        "Residential and commercial air conditioning, including split ACs and heat pumps: 1% to 10%",
+        "Mobile air conditioning in vehicles: 10% to 20%"
+      ]
+    },
+    {
+      "h": "Picking a point in the range",
+      "ul": [
+        "Use the upper end for old equipment, units serviced only on breakdown, or long pipe runs.",
+        "Use the lower end only for new, factory-sealed units with a documented leak check.",
+        "If unsure, use the midpoint and say so. Whatever you pick, write it down and keep it for the base year."
+      ]
+    },
+    {
+      "h": "Where to find the charge",
+      "p": [
+        "The charge in kg and the gas type are printed on the outdoor unit or chiller nameplate. If a plate is missing, use the manufacturer's data sheet for that model. Do not guess the gas: R-32, R-410A and R-134a have very different GWPs."
+      ]
+    },
+    {
+      "h": "Moving off the estimate",
+      "ol": [
+        "Ask the AMC vendor to record kg of gas added at every service visit, by unit.",
+        "Keep those service reports with the invoice.",
+        "Next year, report top-ups as leakage; they are a better measure than a default rate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one split AC and one chiller",
+    "lines": [
+      "Split AC: 1.2 kg of R-32 (GWP 771, AR6). Range 1% to 10%",
+      "Low: 1.2 x 0.01 x 771 = 9.3 kg CO2e. High: 1.2 x 0.10 x 771 = 92.5 kg CO2e",
+      "Chiller, 300 TR, nameplate 400 kg of R-134a (GWP 1,530, AR6). Range 2% to 15%",
+      "Low: 400 x 0.02 x 1,530 = 12,240 kg CO2e. High: 400 x 0.15 x 1,530 = 91,800 kg CO2e",
+      "Chiller at the 8.5% midpoint: 400 x 0.085 x 1,530 = 52,020 kg CO2e, about 52 t CO2e"
+    ],
+    "note": "The 400 kg charge is illustrative; read the real figure off your nameplate. All figures are screening estimates and should be labelled as such."
+  },
+  "senseible": "Senseible reads invoices and bills, and calculates refrigerant leakage only when you supply measured data such as kg of gas charged on a service invoice. It does not apply default leak rates to equipment lists.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "AR5 or AR6 GWP values",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Cold chain refrigerant leaks",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 7, Table 7.9",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 supplementary Table 7.SM.7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, fugitive emissions guidance",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Leak rate ranges are quoted from IPCC 2006 Table 7.9; recheck them against the table before relying on the exact bounds."
+}
