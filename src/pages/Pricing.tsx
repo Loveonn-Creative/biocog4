@@ -320,7 +320,7 @@ const Pricing = () => {
         'Automated ESG Reports (PDF)',
         'Bank-grade Verification Ledger',
         'Predictive AI Models',
-        'Green Finance Access',
+        'Green Financing Readiness',
         '10 Team Members',
         'WhatsApp Chat + Email Support',
         'Biocog Intelligence',
@@ -342,6 +342,7 @@ const Pricing = () => {
       features: [
         'Everything in Pro',
         'Credit Monetization Setup',
+        'Financing Ecosystem Access',
         'Real-time MRV Pipeline',
         'Multi-entity Support',
         'Biocog Superintelligence',
@@ -356,7 +357,7 @@ const Pricing = () => {
 
   const comparisonFeatures = [
     { name: 'GST → Carbon Automation', snapshot: 'Limited', essential: true, pro: true, scale: true },
-    { name: 'Green Loan Signal', snapshot: false, essential: true, pro: 'Priority', scale: 'Priority' },
+    { name: 'Green Loan Signal', snapshot: false, essential: true, pro: 'Priority', scale: 'Financing ecosystem access' },
     { name: 'Government Incentives Finder', snapshot: false, essential: false, pro: true, scale: true },
     { name: 'ESG Score', snapshot: 'Basic', essential: 'Verified', pro: 'Verified', scale: 'Certified' },
     { name: 'Monetization Signal', snapshot: false, essential: false, pro: true, scale: true },
@@ -386,7 +387,7 @@ const Pricing = () => {
     },
     {
       q: 'What happens if I stay on the free plan?',
-      a: 'Snapshot is free forever. You get basic emission tracking and ESG scores. Upgrade when you are ready to unlock monetization.',
+      a: 'Snapshot is free forever. You get basic emission tracking and ESG scores. Upgrade for financing readiness on Pro, or monetization setup on Scale.',
     },
     {
       q: 'How is this different from hiring ESG consultants?',

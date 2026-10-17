@@ -41,6 +41,7 @@ const PaymentSuccess = () => {
     pro: [
       'Monetization Signal',
       'Government Incentives Finder',
+      'Green Financing Readiness',
       'WhatsApp Chat Support',
       'Biocog Intelligence',
       'AI ESG Head (Voice AI)',
@@ -49,6 +50,7 @@ const PaymentSuccess = () => {
     ],
     scale: [
       'Credit Monetization Setup',
+      'Financing Ecosystem Access',
       'Biocog Superintelligence',
       'Real-time MRV Pipeline',
       'API & Integrations',

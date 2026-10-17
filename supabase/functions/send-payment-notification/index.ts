@@ -86,6 +86,7 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
         <li>Everything in Essential, plus:</li>
         <li>Monetization Signal</li>
         <li>Government Incentives Finder</li>
+        <li>Green Financing Readiness</li>
         <li>WhatsApp Chat + Email Support</li>
         <li>Eligible for add-ons and limited custom builds</li>
         <li>Automated ESG Reports</li>
@@ -95,6 +96,7 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
       ` : `
         <li>Everything in Pro, plus:</li>
         <li>Credit Monetization Setup</li>
+        <li>Financing Ecosystem Access</li>
         <li>Biocog Superintelligence</li>
         <li>Real-time MRV Pipeline</li>
         <li>Multi-entity Support</li>
