@@ -20,6 +20,31 @@ export type ChatInputResult =
 // Anything else (instructions, punctuation, long text) falls back to English.
 const LANGUAGE_RE = /^[A-Za-z][A-Za-z ]{1,29}$/;
 
+// Data blocks only the server writes; a client copy of one is never trusted.
+const DATA_BLOCK_RE = /<\s*(records|resources|evidence|system|instructions)\b[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi;
+const DATA_TAG_RE = /<\s*\/?\s*(records|resources|evidence|system|instructions)\b[^>]*>/gi;
+const RECORD_ID_RE = /\[?\b[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}\b\]?|\[\s*[0-9a-f]{8}\s*\]/gi;
+
+/**
+ * An earlier answer as the client sends it back: plain text only. Evidence
+ * events, data blocks, record ID markers and evidence summaries are removed,
+ * so a client cannot claim records or figures the server never gave.
+ */
+export function stripClientEvidence(content: string): string {
+  return content
+    .replace(DATA_BLOCK_RE, ' ')
+    .replace(DATA_TAG_RE, ' ')
+    .split('\n')
+    .filter((l) => !/^\s*(event|data|id|retry)\s*:/i.test(l) && !/^\s*(evidence|basis|calculation|projection|records?)\s*[·:|-]/i.test(l))
+    .join('\n')
+    .replace(RECORD_ID_RE, '')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+}
+
+/** A question as typed: a pasted server data block is removed, the words kept. */
+const stripDataTags = (content: string) => content.replace(DATA_TAG_RE, ' ').replace(/[ \t]{2,}/g, ' ').trim();
+
 export function sanitizeChatInput(body: unknown): ChatInputResult {
   const b = (body && typeof body === 'object' ? body : {}) as Record<string, unknown>;
   const raw = Array.isArray(b.messages) ? b.messages : null;
@@ -32,7 +57,7 @@ export function sanitizeChatInput(body: unknown): ChatInputResult {
       return { ok: false, error: 'Only user and assistant messages are accepted' };
     }
     if (typeof msg.content !== 'string') return { ok: false, error: 'Message content must be text' };
-    const content = msg.content.trim();
+    const content = msg.role === 'assistant' ? stripClientEvidence(msg.content) : stripDataTags(msg.content);
     if (!content) continue;
     turns.push({ role: msg.role, content });
   }
