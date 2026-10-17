@@ -18,7 +18,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { analyticsEvents } from "@/lib/analytics";
 
 const uid = () => Math.random().toString(36).slice(2, 9);
-const newLeg = (): FreightLeg => ({ id: uid(), mode: 'road-articulated', weightTonnes: 0, distanceKm: 0, emptyReturnFactor: 0 });
+const newLeg = (): FreightLeg => ({ id: uid(), mode: 'road-hcv20-diesel', weightTonnes: 0, distanceKm: 0 });
 
 const LogisticsCalculator = () => {
   const [legs, setLegs] = useState<FreightLeg[]>([newLeg()]);
@@ -45,8 +45,8 @@ const LogisticsCalculator = () => {
   if (result) {
     const skipped = legs.length - usableLegs.length;
     if (skipped > 0) issues.push(`${skipped} leg${skipped > 1 ? "s" : ""} excluded for missing weight or distance.`);
-    if (usableLegs.some(l => l.loadFactor === undefined)) issues.push("Typical load factors used where none was entered.");
-    if (usableLegs.some(l => !l.emptyReturnFactor)) issues.push("Empty-return distance assumed to be zero where not specified.");
+    issues.push(...result.notes);
+    if (usableLegs.some(l => l.customEf === undefined)) issues.push("Default intensities used where no carrier factor was entered; they already include average load and empty running.");
   }
 
   const chartData = result ? Object.entries(result.byMode).map(([name, value]) => ({ name, value })) : [];
@@ -66,26 +66,26 @@ const LogisticsCalculator = () => {
   return (
     <CalculatorShell
       slug="logistics-emissions"
-      title="Freight & Logistics Emissions Calculator | GLEC v3.0 ISO 14083"
-      description="Calculate transport emissions across road, rail, sea and air. GLEC v3.0 / ISO 14083 aligned with load factor and empty-return adjustments."
+      title="Freight & Logistics Emissions Calculator | ISO 14083"
+      description="Calculate transport emissions across road, rail, sea and air, with Indian truck classes and rail. ISO 14083 method, per tonne-kilometre."
       keywords="logistics emissions calculator, freight carbon calculator, GLEC framework, ISO 14083, transport scope 3, multimodal shipping emissions"
       h1="Logistics & Transportation Emissions Calculator"
-      intro="Calculate freight emissions across road, rail, sea and air. Aligned with GLEC Framework v3.0 and ISO 14083."
+      intro="Calculate freight emissions across road, rail, sea and air, per tonne-kilometre, following ISO 14083."
       howToSteps={[
         'Add each transport leg of your shipment.',
-        'Pick the transport mode: articulated truck, container ship, rail, air, etc.',
+        'Pick the transport mode or truck class (by gross vehicle weight), rail, sea or air.',
         'Enter weight in tonnes and distance in kilometres.',
-        'Optionally adjust load factor (default per mode is set) and empty-return factor.',
+        'If your carrier gives its own intensity in kg CO₂e per tonne-km, enter it; it is used as given.',
         'Click Calculate to see total kgCO₂e, emissions per mode, and average intensity (kgCO₂e per tonne-km).',
         'Chain multiple legs for multimodal shipments (e.g. truck → ship → truck).',
       ]}
       faqs={[
         { q: 'What is a tonne-kilometre (t-km)?', a: 'The standard unit for freight emissions: 1 tonne moved over 1 kilometre. Total emissions = mode EF × tonnes × km.' },
-        { q: 'Should I include the empty return trip?', a: 'Yes for owned fleet or dedicated trucks. Set empty-return factor to 1.0 for full empty return, 0.5 for half-loaded return. Default is 0 (none added).' },
-        { q: 'Why are my truck emissions higher than the GLEC default?', a: 'Lower load factor increases per-tonne intensity. If you ship at 30% load, the calculator scales the EF up vs the default 70% load factor.' },
-        { q: 'Where do the emission factors come from?', a: 'GLEC Framework v3.0 published well-to-wheel intensities, validated against ISO 14083:2023.' },
+        { q: 'Should I add the empty return trip?', a: 'Not on top of the defaults. Default intensities already include average load and typical empty running, so adding an empty-return uplift would count it twice. If your carrier gives a factor based on its own loading and empty trips, enter that instead.' },
+        { q: 'What if I do not know the truck size?', a: 'Pick the closest class by gross vehicle weight. Larger trucks carry more per trip, so their emissions per tonne-km are lower.' },
+        { q: 'Can I use a factor quoted per ton-mile or per vehicle-mile?', a: 'Convert it first. A factor per short ton-mile divided by 1.46 gives kg per tonne-km. A factor per vehicle-mile or vehicle-km has no load in it, so it must be divided by the average tonnes carried before it can be used here.' },
       ]}
-      factorSources={['GLEC Framework v3.0', 'ISO 14083:2023']}
+      factorSources={['ISO 14083:2023']}
       related={[
         { href: '/calculators/product-carbon-footprint', label: 'Product Carbon Footprint →' },
         { href: '/calculators/supplier-emissions-risk', label: 'Supplier Risk →' },
@@ -117,8 +117,8 @@ const LogisticsCalculator = () => {
                 <Input type="number" value={l.distanceKm || ''} onChange={e => update(l.id, { distanceKm: parseFloat(e.target.value) || 0 })} />
               </div>
               <div className="col-span-4 sm:col-span-2">
-                <label className="text-xs text-muted-foreground">Empty return (0–1)</label>
-                <Input type="number" step="0.1" value={l.emptyReturnFactor ?? 0} onChange={e => update(l.id, { emptyReturnFactor: parseFloat(e.target.value) || 0 })} />
+                <label className="text-xs text-muted-foreground">Carrier factor (optional)</label>
+                <Input type="number" step="0.001" placeholder="kg CO₂e/tkm" value={l.customEf ?? ''} onChange={e => { const v = parseFloat(e.target.value); update(l.id, { customEf: Number.isFinite(v) && v > 0 ? v : undefined }); }} />
               </div>
               <div className="col-span-12 sm:col-span-1 flex justify-end">
                 <Button size="icon" variant="ghost" onClick={() => setLegs(legs.filter(x => x.id !== l.id))} disabled={legs.length === 1}><Trash2 className="w-4 h-4" /></Button>

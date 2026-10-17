@@ -29,8 +29,8 @@
     {
       "h": "Choosing a factor for each leg",
       "p": [
-        "Use one basis for all legs. GLEC Framework and ISO 14083 defaults are well-to-wheel CO2e per tonne-km. Take each default from the GLEC v3.0 tables with its load assumption, or from the carrier.",
-        "For sea, carriers and Clean Cargo trade lane factors are often given per TEU-km. Convert with the cargo weight per TEU stated by the source, or stay per TEU throughout. Electric rail factors depend on the grid behind them; India's grid is coal heavy, so a default built on another grid can understate an Indian electric train."
+        "Use one basis for all legs: well-to-wheel CO2e per tonne-km, at average load with typical empty running included. For road legs, pick the truck class that carried the box; a loaded container usually moves on a tractor-trailer. The default for India rail covers diesel and electric traction together. A carrier's own factor can replace any default.",
+        "For sea, carriers often give factors per TEU-km. Convert with the cargo weight per TEU stated by the source, or stay per TEU throughout."
       ]
     },
     {
@@ -39,23 +39,23 @@
         "Using one distance, port to port, for the whole chain.",
         "Leaving out the road legs because they are short. Per tonne-km they are the most carbon intensive part.",
         "Using the container's gross weight on one leg and cargo weight on another.",
-        "Adding empty container repositioning on top of defaults that already allow for it."
+        "Adding an empty return trip or empty container repositioning on top of defaults that already include typical empty running."
       ]
     }
   ],
   "example": {
     "title": "Worked example: 20 t of cargo, Ludhiana to Rotterdam via Mundra",
     "lines": [
-      "Road, factory to ICD: 20 t x 25 km = 500 tonne-km x 0.062 = 31.0 kg CO2e",
-      "Rail, ICD to Mundra: 20 t x 1,350 km = 27,000 tonne-km x 0.022 = 594.0 kg CO2e",
-      "Sea, Mundra to Rotterdam via Suez: 20 t x 11,500 km = 230,000 tonne-km x 0.008 = 1,840.0 kg CO2e",
-      "Road, Rotterdam to consignee: 20 t x 150 km = 3,000 tonne-km x 0.062 = 186.0 kg CO2e",
-      "Transport legs total: 31.0 + 594.0 + 1,840.0 + 186.0 = 2,651 kg CO2e, about 2.65 t",
-      "Hub operations at the ICD, Mundra and Rotterdam: add from terminal data or GLEC hub defaults"
+      "Road, factory to ICD: 20 t x 25 km = 500 tonne-km x 0.0551 = 27.55 kg CO2e",
+      "Rail, ICD to Mundra: 20 t x 1,350 km = 27,000 tonne-km x 0.0106 = 286.2 kg CO2e",
+      "Sea, Mundra to Rotterdam via Suez: 20 t x 11,500 km = 230,000 tonne-km x 0.0084 = 1,932.0 kg CO2e",
+      "Road, Rotterdam to consignee: 20 t x 150 km = 3,000 tonne-km x 0.0551 = 165.3 kg CO2e",
+      "Transport legs total: 27.55 + 286.2 + 1,932.0 + 165.3 = 2,411.05 kg CO2e, about 2.41 t",
+      "Hub operations at the ICD, Mundra and Rotterdam: add from terminal or carrier data"
     ],
-    "note": "Distances are illustrative. Factors are the defaults in Senseible's logistics calculator, which labels them GLEC v3.0 well-to-wheel: articulated truck 0.062, diesel rail 0.022, container ship 0.008 kg CO2e per tonne-km, each at the calculator's default load. Diesel rail is used as a cautious choice for the rail leg. Check each against the current GLEC tables or your carrier's figure before reporting."
+    "note": "Distances are illustrative. Factors are default intensities per tonne-km, well-to-wheel: tractor-trailer 0.0551, rail in India 0.0106, container ship 0.0084. Each already includes typical empty running, so no return trip is added. The Rotterdam road leg uses the Indian tractor-trailer default only to show the arithmetic; use the European carrier's factor for that leg."
   },
-  "senseible": "Senseible reads weight and distance from freight bills where they are printed; a leg gets a figure only with both and an approved factor for its mode, otherwise it is marked as needing data. Its logistics calculator adds legs by mode, but it has no hub or terminal factors, so terminal handling must come from your carrier or terminal.",
+  "senseible": "Senseible reads weight and distance from freight bills where they are printed; a leg gets a figure only with both and an approved factor for its mode, otherwise it is marked as needing data. Its logistics calculator adds legs per tonne-km by mode and Indian truck class, uses a carrier's factor as given and adds no extra empty return uplift. Terminal handling figures come from your carrier or terminal.",
   "links": [
     {
       "label": "Emissions from a freight bill",
@@ -76,7 +76,7 @@
   ],
   "sources": [
     {
-      "label": "GLEC Framework v3.0 (Smart Freight Centre)",
+      "label": "GLEC Framework, logistics emissions accounting method",
       "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
     },
     {
@@ -88,6 +88,6 @@
       "url": "https://www.smartfreightcentre.org"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "Default intensities in the example are taken from Senseible's calculator; confirm them against the current GLEC Framework tables."
+  "reviewed": "2026-10-17",
+  "reviewNote": "The default intensities, including the India road and rail defaults, are subject to revision; recheck them before each reporting year."
 }

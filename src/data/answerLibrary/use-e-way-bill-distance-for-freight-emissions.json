@@ -43,7 +43,7 @@
         "One e-way bill, several drops: the distance is to the billed address, not the full route. Use your trip sheet.",
         "Goods moved from transporter's godown to a second vehicle: Part B changes but the distance does not. The total is still one consignment.",
         "Consignments below the value limit have no e-way bill. Use the pincodes on the invoice.",
-        "Return trips and empty running are not on the e-way bill. GLEC style default factors are meant to cover typical empty running, so do not add it again unless your factor excludes it. Senseible's logistics calculator adds an empty return share only if you enter one."
+        "Return trips and empty running are not on the e-way bill. Default road factors already include typical empty running, so do not add the return trip again. Senseible's logistics calculator adds no empty return uplift to a default."
       ]
     }
   ],
@@ -52,13 +52,14 @@
     "lines": [
       "E-way bill approximate distance: 1,180 km",
       "Packing list gross weight: 8,000 kg, so 8 t",
+      "Vehicle, from the transporter: medium truck, 5 to 12 t GVW, diesel",
       "Activity: 8 x 1,180 = 9,440 tonne-km",
-      "Factor: 0.062 kg CO2e per tonne-km, the articulated truck (over 17 t) default in Senseible's logistics calculator, which labels it GLEC v3.0 well-to-wheel at a 70 percent default load",
-      "9,440 x 0.062 = 585.3 kg CO2e, about 0.59 t"
+      "Factor: 0.1400 kg CO2e per tonne-km, the default for India for a medium truck, well-to-wheel with typical empty running included",
+      "9,440 x 0.1400 = 1,321.6 kg CO2e, about 1.32 t"
     ],
-    "note": "The factor is a default that assumes a large truck at typical load. A part loaded rigid truck has a much higher factor per tonne-km; use your carrier's data where you have it."
+    "note": "The vehicle class matters: the same 9,440 tonne-km would be 520.1 kg CO2e at the tractor-trailer default of 0.0551, or 2,097.6 kg CO2e at the light truck default of 0.2222. Use your carrier's own factor where you have it."
   },
-  "senseible": "Senseible reads weight and distance from freight records; a line gets a figure only when both are printed and an approved factor matches the mode, otherwise it is marked as needing data. To use an e-way bill distance, enter it with the weight in the logistics calculator.",
+  "senseible": "Senseible reads weight and distance from freight records; a line gets a figure only when both are printed and an approved factor matches the mode, otherwise it is marked as needing data. To use an e-way bill distance, enter it with the weight in the logistics calculator, which works per tonne-km by mode and Indian truck class and uses a carrier's factor as given.",
   "links": [
     {
       "label": "Emissions from a freight bill",
@@ -79,7 +80,7 @@
   ],
   "sources": [
     {
-      "label": "GLEC Framework v3.0 (Smart Freight Centre)",
+      "label": "GLEC Framework, logistics emissions accounting method",
       "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
     },
     {
@@ -91,6 +92,6 @@
       "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "E-way bill thresholds and portal distance rules are set under the CGST Rules and can change by notification; check the current rule before relying on them."
 }

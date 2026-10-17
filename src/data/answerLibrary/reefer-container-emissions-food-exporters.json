@@ -39,14 +39,14 @@
   "example": {
     "title": "Worked example: 22 t of frozen shrimp, Nhava Sheva to Rotterdam (hypothetical uplift and leak)",
     "lines": [
-      "Sea leg as dry cargo: 22 t x 11,700 km = 2,57,400 tonne-km; x 0.008 kg CO2e per tonne-km = 2,059.2 kg CO2e",
-      "Hypothetical reefer uplift of 1.4 (replace with a carrier or Clean Cargo reefer figure): 2,059.2 x 1.4 = 2,882.9 kg CO2e",
+      "Sea leg as dry cargo: 22 t x 11,700 km = 2,57,400 tonne-km; x 0.0084 kg CO2e per tonne-km = 2,162.2 kg CO2e",
+      "Hypothetical reefer uplift of 1.4 (replace with a carrier or Clean Cargo reefer figure): 2,162.2 x 1.4 = 3,027.1 kg CO2e",
       "Hypothetical carrier report of 0.2 kg R-134a leaked for the voyage: 0.2 x 1,300 (AR5) = 260 kg CO2e",
-      "Sea leg total: 2,882.9 + 260 = 3,142.9 kg CO2e, about 3.1 t"
+      "Sea leg total: 3,027.1 + 260 = 3,287.1 kg CO2e, about 3.3 t"
     ],
-    "note": "The 0.008 factor is the container ship default in Senseible's logistics calculator, built on GLEC Framework v3.0, and 11,700 km is an approximate Suez routing. The 1.4 uplift and the leak are hypothetical, used only to show the arithmetic."
+    "note": "The 0.0084 factor is the default container ship intensity per tonne-km, well-to-wheel, and 11,700 km is an approximate Suez routing. The 1.4 uplift and the leak are hypothetical, used only to show the arithmetic."
   },
-  "senseible": "Senseible reads freight records, and its logistics calculator applies GLEC-based defaults by mode, distance and weight for the dry leg. It has no reefer uplift or refrigerant leakage figure, so add the reefer share from your carrier's data yourself.",
+  "senseible": "Senseible reads freight records, and its logistics calculator works out the dry leg per tonne-km by mode, distance and weight. A carrier's own reefer factor can be entered for the leg and is used as given; add refrigerant leakage from the carrier's report separately.",
   "links": [
     {
       "label": "Sea freight emissions per container",
@@ -67,7 +67,7 @@
   ],
   "sources": [
     {
-      "label": "GLEC Framework v3.0, Smart Freight Centre",
+      "label": "GLEC Framework, logistics emissions accounting method",
       "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
     },
     {
@@ -79,5 +79,5 @@
       "url": "https://www.iso.org"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

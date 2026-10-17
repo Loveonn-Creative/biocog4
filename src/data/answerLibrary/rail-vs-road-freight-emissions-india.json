@@ -1,0 +1,71 @@
+{
+  "slug": "rail-vs-road-freight-emissions-india",
+  "q": "Is rail freight lower carbon than trucking in India, and by how much per tonne-km?",
+  "title": "Rail vs road freight emissions in India",
+  "short": "Yes. On the default factors for India, rail freight is 0.0106 kg CO2e per tonne-km, against 0.0551 for a tractor-trailer and 0.0902 for a 12 to 20 t truck, so 81 to 88 percent lower. Door to door the gap narrows, because rail needs road legs at each end.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Indian manufacturers and exporters moving goods to ports",
+  "sections": [
+    {
+      "h": "Per tonne-km, mode against mode",
+      "ul": [
+        "Tractor-trailer, 30 to 60 t GVW: 0.0551 kg CO2e per tonne-km. Rail is about 81 percent lower.",
+        "Heavy truck, 30 to 50 t GVW: 0.0663. Rail is about 84 percent lower.",
+        "Heavy truck, 20 to 30 t GVW: 0.0823. Rail is about 87 percent lower.",
+        "Heavy truck, 12 to 20 t GVW: 0.0902. Rail is about 88 percent lower.",
+        "Medium truck, 5 to 12 t GVW: 0.1400, about 13 times rail.",
+        "Rail freight in India, diesel and electric traction together: 0.0106."
+      ],
+      "p": [
+        "All are well-to-wheel defaults at average load, with typical empty running already included, so do not add a return trip to either mode. The India defaults for road and rail are subject to revision; recheck them each reporting year."
+      ]
+    },
+    {
+      "h": "Electric and diesel traction",
+      "p": [
+        "Most Indian freight trains now run on electric traction, and the rail default already blends electric and diesel across the network. If a buyer asks for a figure for one specific train, build it from the operator's traction energy and net tonne-km: kWh per net tonne-km x 0.710 kg CO2 per kWh for electric, litres per net tonne-km x 2.68 for diesel. Label the result as your estimate and show it next to the default."
+      ]
+    },
+    {
+      "h": "Why door to door matters more than the mode factor",
+      "ul": [
+        "Road legs from the factory to the rail siding, and from the railhead onward, carry the truck factor. In the example below, 90 km of road legs make up a third of the rail option's emissions.",
+        "Rail distance between two points is often longer than the road distance; use each mode's real distance.",
+        "Loading and unloading at the siding or goods shed adds emissions that a direct truck avoids.",
+        "On short hauls the road legs become most of the rail option's total, so the saving shrinks. On long hauls rail wins clearly."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "p": [
+        "Compare the full chain, both options on the same well-to-wheel basis and the same cargo weight. If rail plus road legs comes out lower and the transit time works, switch, and keep the railway receipt and the road lorry receipts so each leg can be shown."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 40 t of steel coils to a customer 900 km away",
+    "lines": [
+      "All road, 900 km by tractor-trailer: 40 x 900 = 36,000 tonne-km x 0.0551 = 1,983.6 kg CO2e",
+      "Rail option, road leg plant to siding: 40 x 30 = 1,200 tonne-km x 0.0551 = 66.1 kg CO2e",
+      "Rail option, rail 950 km: 40 x 950 = 38,000 tonne-km x 0.0106 = 402.8 kg CO2e",
+      "Rail option, road leg railhead to customer: 40 x 60 = 2,400 tonne-km x 0.0551 = 132.2 kg CO2e",
+      "Rail option total: 66.1 + 402.8 + 132.2 = 601.1 kg CO2e, about 70 percent below all road",
+      "Handling at the siding and goods shed is extra on the rail option; add it from the operator's data"
+    ],
+    "note": "Distances are illustrative. Each factor already includes typical empty running, so no return trip is added on either option."
+  },
+  "senseible": "Senseible reads freight records and applies weight x distance x the mode factor; a record without weight or distance gets no figure and is marked as needing data. Its logistics calculator compares road and rail leg by leg, per tonne-km by mode and Indian truck class, uses a carrier's factor as given and adds no extra empty return uplift.",
+  "links": [
+    { "label": "Truck freight factor per tonne-km", "to": "/answers/truck-freight-emission-factor-india" },
+    { "label": "Truck, rail and ship container chains", "to": "/answers/intermodal-container-emissions-rail-road-sea" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" }
+  ],
+  "sources": [
+    { "label": "GLEC Framework, logistics emissions accounting method", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains (iso.org)", "url": "https://www.iso.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The default intensities for Indian road and rail are subject to revision; recheck them before each reporting year."
+}

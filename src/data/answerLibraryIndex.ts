@@ -30,9 +30,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "air-vs-sea-freight-emissions-export",
   "q": "How much more carbon does air freight emit than sea freight for an export order?",
   "title": "Air vs sea freight emissions for exports",
-  "short": "Per tonne-km, air cargo emits tens of times more than a container ship; with GLEC-based defaults of 0.602 and 0.008 kg CO2e per tonne-km the gap is about 75 times. For a whole order the gap is smaller, about 23 times in the Mumbai to Frankfurt example below, because the sea route is longer and needs extra road legs.",
+  "short": "Per tonne-km, a long-haul air freighter emits about 72 times more than a container ship: 0.608 against 0.0084 kg CO2e on default factors. For a whole order the gap is smaller, about 25 times in the Mumbai to Frankfurt example below, because the sea route is longer and needs a road leg.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "allocate-supplier-emissions-to-my-purchases",
@@ -1904,7 +1904,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Emissions for a truck, rail and ship container",
   "short": "Split the trip into legs, calculate each one as cargo weight x leg distance x that mode's factor, then add the legs and the terminal handling in between. ISO 14083 calls this a transport chain. Use the real route and the same factor basis, well-to-wheel, for every leg.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "invoice-unit-mismatch-litres-kg",
@@ -2291,6 +2291,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "rail-vs-road-freight-emissions-india",
+  "q": "Is rail freight lower carbon than trucking in India, and by how much per tonne-km?",
+  "title": "Rail vs road freight emissions in India",
+  "short": "Yes. On the default factors for India, rail freight is 0.0106 kg CO2e per tonne-km, against 0.0551 for a tractor-trailer and 0.0902 for a 12 to 20 t truck, so 81 to 88 percent lower. Door to door the gap narrows, because rail needs road legs at each end.",
+  "topic": "accounting",
+  "reviewed": "2026-10-17"
+ },
+ {
   "slug": "rbi-climate-risk-disclosure-for-borrowers",
   "q": "What does RBI's climate risk disclosure framework mean for MSME borrowers?",
   "title": "RBI climate disclosure: what borrowers face",
@@ -2312,7 +2320,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Adding reefer emissions to a shipment",
   "short": "Calculate the leg as if it were a dry container, then use a reefer-specific factor or apply a reefer uplift for the power the refrigeration unit draws. Add refrigerant leakage only if the carrier reports it, converted to CO2e with a stated GWP. Label any default uplift as an estimate.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "refrigerant-top-up-invoice-to-co2e",
@@ -2432,7 +2440,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "Emissions of one container, India to Europe",
   "short": "Multiply the cargo's gross weight in tonnes by the port to port sea distance in km, then by a well-to-wake container ship factor in kg CO2e per tonne-km. Add the truck or rail legs to and from the ports separately. If you only know the container count, use a per TEU-km factor and label it an estimate.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "sec-climate-rule-indian-suppliers",
@@ -2694,9 +2702,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "truck-freight-emission-factor-india",
   "q": "What emission factor per tonne-km should I use for road freight in India?",
   "title": "Truck freight factor per tonne-km, India",
-  "short": "Best is to build it from your own trips: fuel per km times 2.68 kg CO2 per litre of diesel, divided by the average payload, with empty running included. Without trip data, use a published default for the truck class, such as GLEC Framework values, and state the load factor it assumes.",
+  "short": "Use the default factor for India for your truck class, per tonne-km and well-to-wheel: from 0.3795 kg CO2e for a small pickup down to 0.0551 for a tractor-trailer. These defaults already include typical empty running, so do not add the return trip. A carrier's own factor, backed by fuel data, is better still.",
   "topic": "accounting",
-  "reviewed": "2026-10-15"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "urea-application-emissions-per-tonne",
@@ -2712,7 +2720,7 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "title": "E-way bill distance for freight emissions",
   "short": "Yes for distance, not for weight. The e-way bill records an approximate road distance for the consignment, which is a fair input for tonne-km. It does not record gross weight, so take the weight from the goods invoice or packing list, then multiply weight x distance x a road emission factor.",
   "topic": "accounting",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
  },
  {
   "slug": "use-of-sold-products-category-11-calculation",
