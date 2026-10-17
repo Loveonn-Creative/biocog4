@@ -128,11 +128,15 @@ export class IdScrubber {
 
   push(delta: string): string {
     this.pending += delta;
-    const m = /\[?[0-9a-f-]*$/i.exec(this.pending);
+    // Trailing spaces are held too, so a removed ID does not leave a gap before the next word or stop.
+    const m = /(\s*)(\[?[0-9a-f-]*)$/i.exec(this.pending)!;
+    const token = m[2];
+    const tokenStart = m.index + m[1].length;
     let hold = this.pending.length;
-    if (m && m[0].length > 0 && m[0].length <= 40) {
-      const before = this.pending[m.index - 1];
-      if (m[0].startsWith('[') || !before || !/[0-9a-z]/i.test(before)) hold = m.index;
+    if (!token) hold = m.index;
+    else if (token.length <= 40) {
+      const before = this.pending[tokenStart - 1];
+      if (token.startsWith('[') || !before || !/[0-9a-z]/i.test(before)) hold = m.index;
     }
     const out = this.pending.slice(0, hold);
     this.pending = this.pending.slice(hold);
@@ -356,9 +360,11 @@ export function textIndex(text: string): number {
 const STOP = new Set(('a an and are as at be by can could do does for from get got had has have how i if in into is it its me my of on or our should so that the their them then there these this to us was we what when where which who why will with would you your about any some much many more most than also just like need want tell explain please give'
 ).split(' '));
 
+/** Lower-case keywords, stop words dropped, a plural "s" removed ("bills" matches "bill"). */
 export function tokens(text: string): string[] {
   return text.toLowerCase().normalize('NFKD').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/)
-    .filter((w) => w && !STOP.has(w) && (w.length >= 3 || /\d/.test(w)));
+    .filter((w) => w && !STOP.has(w) && (w.length >= 3 || /\d/.test(w)))
+    .map((w) => (w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w));
 }
 
 interface Indexed { entry: LibraryEntry; title: Set<string>; text: Set<string> }

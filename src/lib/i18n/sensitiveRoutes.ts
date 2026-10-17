@@ -4,7 +4,7 @@
 export const SENSITIVE_PREFIXES = [
   '/verify', '/reports', '/mrv-dashboard', '/dashboard', '/history', '/monetize',
   '/cbam-calculator', '/calculators', '/net-zero', '/trust', '/legal', '/pricing',
-  '/billing', '/subscription', '/climate-intelligence', '/solutions',
+  '/billing', '/subscription', '/climate-intelligence', '/solutions', '/intelligence',
   '/carbon-credits', '/climate-finance', '/marketplace', '/partner-marketplace', '/enterprise',
   // Service lead pages carry regulatory statements and prices.
   '/carbon-accounting', '/esg-reporting', '/supplier-due-diligence', '/decarbonization', '/circular-economy',

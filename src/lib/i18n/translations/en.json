@@ -35,6 +35,8 @@
   "nav.history": "History",
   "nav.mrv": "MRV",
   "nav.intelligence": "Intelligence",
+  "intelligence.welcome.records": "Ask about your emissions, your records or what to do next. Each figure comes with the records behind it.",
+  "intelligence.welcome.general": "Ask about carbon accounting, ESG reporting, CBAM or how Senseible works.",
   "nav.verify": "Verify",
   "nav.monetize": "Monetize",
   "nav.reports": "Reports",
