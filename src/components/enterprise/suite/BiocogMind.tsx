@@ -76,6 +76,7 @@ export const BiocogMind = () => {
       </div>
 
       <div key={q.key} className="relative rounded-3xl border border-border p-5 sm:p-7">
+        <span className="absolute right-4 top-4 rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">{t("ent.mind.illustrative", "Illustrative")}</span>
         <ol className="relative space-y-6">
           <span className="absolute left-[0.6rem] top-3 bottom-3 w-px bg-border" aria-hidden="true" />
           {[

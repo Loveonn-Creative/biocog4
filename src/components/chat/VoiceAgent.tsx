@@ -19,15 +19,12 @@ export const VoiceAgent = ({ onTranscript, disabled, className }: VoiceAgentProp
 
   const conversation = useConversation({
     onConnect: () => {
-      console.log('Voice agent connected');
       toast.success('Voice AI ready - speak naturally');
     },
     onDisconnect: () => {
-      console.log('Voice agent disconnected');
       setLastTranscript('');
     },
     onMessage: (message: any) => {
-      console.log('Voice message:', message);
       
       // Handle different message types
       if (message?.type === 'user_transcript') {

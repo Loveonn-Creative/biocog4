@@ -1,7 +1,7 @@
 import { useDocuments } from '@/hooks/useDocuments';
 import { RecordsLoadError } from '@/components/RecordsLoadError';
 import { useEmissions } from '@/hooks/useEmissions';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Navigation } from '@/components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FileText, Calendar, Search, ShieldCheck, CheckCircle, TrendingUp, Filter, Download, Loader2, AlertTriangle, Trash2 } from 'lucide-react';
@@ -103,6 +103,20 @@ const History = () => {
   });
 
   const isLoading = docsLoading || emissionsLoading;
+
+  // ?record=<emission id> (from a Biocog Intelligence answer): highlight and
+  // scroll to the invoice that record came from. Nothing else changes.
+  const [searchParams] = useSearchParams();
+  const focusRecord = searchParams.get('record');
+  const focusDocId = useMemo(
+    () => (focusRecord ? emissions.find((e) => e.id === focusRecord)?.document_id ?? null : null),
+    [focusRecord, emissions],
+  );
+  useEffect(() => {
+    if (!focusDocId || isLoading) return;
+    const el = document.getElementById(`doc-${focusDocId}`);
+    el?.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }, [focusDocId, isLoading]);
 
   // Read-only consistency check: verified records with no verified audit
   // ledger entry (left by an interrupted verification). Checked only once the
@@ -372,7 +386,7 @@ const History = () => {
                   : `No emission record was stored because no line item could be calculated (${status.reason}). This is not a verification result.`;
                 
                 return (
-                  <Card key={doc.id} className="hover:bg-secondary/30 transition-colors">
+                  <Card key={doc.id} id={`doc-${doc.id}`} className={`hover:bg-secondary/30 transition-colors${doc.id === focusDocId ? ' ring-2 ring-primary' : ''}`} aria-current={doc.id === focusDocId ? 'true' : undefined}>
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
