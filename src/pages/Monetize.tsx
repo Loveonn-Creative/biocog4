@@ -24,6 +24,8 @@ import { toast } from 'sonner';
 import { CREDIT_VALUE_WITHHELD, sumVerifiedKgOncePerEmission } from '@/lib/carbonValue';
 
 import { useRecordsChanged } from '@/lib/recordsEvents';
+import { FinancingEstimate } from '@/components/finance/FinancingEstimate';
+import type { ApplicantEstimate } from '../../supabase/functions/_shared/financeApplication';
 interface EligibilityCheck {
   label: string;
   pass: boolean;
@@ -77,6 +79,20 @@ const Monetize = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [applyingPathway, setApplyingPathway] = useState<string | null>(null);
   const [pathwayStatuses, setPathwayStatuses] = useState<Record<string, string>>({});
+  // The same server-side Estimate the green loan application shows, from the
+  // latest submitted application. Null until one exists; never computed here.
+  const [loanEstimate, setLoanEstimate] = useState<ApplicantEstimate | null>(null);
+  useEffect(() => {
+    if (!user) return;
+    let live = true;
+    supabase.functions.invoke('finance-application', { body: { action: 'get' } })
+      .then(({ data }) => {
+        const latest = (data?.applications ?? []).find((a: { estimate?: ApplicantEstimate | null }) => a.estimate);
+        if (live) setLoanEstimate(latest?.estimate ?? null);
+      })
+      .catch(() => { /* applications not open yet: the card keeps its link */ });
+    return () => { live = false; };
+  }, [user]);
 
   // Route protection: redirect partners to their dashboard
   useEffect(() => {
@@ -237,7 +253,7 @@ const Monetize = () => {
       partner: 'SBI Green Finance',
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified carbon data', 'Business registration'],
-      timeline: '1-2 weeks approval',
+      timeline: 'First update within 1-2 weeks',
       checks: [
         { label: 'Verified carbon data', pass: verifications.length > 0 },
       ],
@@ -462,7 +478,7 @@ const Monetize = () => {
 
                     {/* Requirements with dynamic checks */}
                     <div className="mt-4 pt-4 border-t border-border/50">
-                      <p className="text-xs font-medium text-muted-foreground mb-2">Eligibility</p>
+                      <p className="text-xs font-medium text-muted-foreground mb-2">Evidence on file</p>
                       <div className="flex flex-wrap gap-2">
                         {(p.checks || []).map((check, ridx) => (
                           <span 
@@ -479,6 +495,19 @@ const Monetize = () => {
                         ))}
                       </div>
                     </div>
+                    {p.type === 'green_loan' && (
+                      <div className="mt-4">
+                        {loanEstimate ? (
+                          <FinancingEstimate estimate={loanEstimate} compact />
+                        ) : (
+                          <p className="text-sm text-muted-foreground">
+                            An estimate needs your turnover, profit and statements.{' '}
+                            <Link to="/green-loan" className="text-primary underline-offset-4 hover:underline">Complete the green loan application</Link>{' '}
+                            to see it.
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}

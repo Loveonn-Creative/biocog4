@@ -7,10 +7,12 @@
 // timeline and review without new infrastructure.
 //
 // Nothing here decides credit. The applicant sees readiness (what is provided
-// and what is missing) and status, never an eligibility figure. The internal
-// review summary (ratios, cross-checks, assumptions) is for the Senseible team
-// only and is labelled indicative: Senseible does not approve, provide or
-// disburse loans, grants or financing.
+// and what is missing), status and, after submission, an Estimate built only
+// from their own entered figures and the allow-listed figures on their own
+// documents (owner decision, October 2026). The Estimate shows derived values
+// and the assumptions behind them, never raw document figures, and never an
+// approval, offer or rate. The internal review summary stays Senseible-only.
+// Senseible does not approve, provide or disburse loans, grants or financing.
 
 export const DISCLOSURE = 'Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.';
 
@@ -276,5 +278,75 @@ export function reviewSummary(app: FinanceApplicationInput, figures: DocFigures[
     missing,
     assumptions,
     priority: opts.priority,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Applicant Estimate (shown after submission; same function for every entry point)
+// ---------------------------------------------------------------------------
+export const ESTIMATE_LABEL = 'Estimate, not an offer, eligibility decision or approval';
+
+export interface ApplicantEstimate {
+  label: string;
+  /** Indicative loan size: 2 to 3 times net profit (owner guidance), using the lower of entered and document profit. Null without a positive profit. */
+  rangeInr: [number, number] | null;
+  requestInr: number;
+  /** Where the request sits against that range. */
+  position: 'within' | 'below' | 'above' | null;
+  /** Monthly instalment at the applicant's own quoted rate and tenure. Null without a quoted rate. */
+  monthlyInstalmentInr: number | null;
+  /** Lowest debt-service coverage across entered and document figures. Null without a quoted rate or profit. */
+  coverage: number | null;
+  /** Request as a share of annual turnover, in percent. */
+  requestShareOfTurnoverPct: number;
+  /** True when allow-listed document figures were available and used. */
+  usedDocuments: boolean;
+  assumptions: string[];
+  warnings: string[];
+}
+
+/**
+ * Builds the applicant-facing Estimate from the same maths as the internal
+ * review, so the two never disagree. Never fills a gap with a default: a
+ * missing input removes the figure that needs it and adds a warning.
+ */
+export function applicantEstimate(app: FinanceApplicationInput, figures: DocFigures[], carbon?: { verifiedInvoices: number }): ApplicantEstimate {
+  const s = reviewSummary(app, figures, { priority: false });
+  // Latest document profit, chosen exactly as reviewSummary chooses it.
+  const docHit = figures.filter((f) => typeof f.net_profit_inr === 'number')
+    .sort((a, b) => String(b.financial_year ?? b.period_to ?? '').localeCompare(String(a.financial_year ?? a.period_to ?? '')))[0];
+  const docProfit = docHit ? (docHit.net_profit_inr as number) : null;
+  const profits = [app.netProfitInr, docProfit].filter((v): v is number => v !== null);
+  const basis = profits.length ? Math.min(...profits) : null;
+  const warnings: string[] = [];
+  const assumptions: string[] = [
+    'Indicative size is 2 to 3 times net profit, a common starting point for project loans; lenders decide on their own criteria.',
+  ];
+  let range: [number, number] | null = null;
+  if (basis === null) warnings.push('Net profit was not entered or readable from your documents, so no indicative size is shown. Add net profit or clearer financial statements.');
+  else if (basis <= 0) warnings.push('Your figures show a loss, so no indicative size is shown. Lenders usually look for positive profit or other repayment sources.');
+  else {
+    range = [Math.round(2 * basis), Math.round(3 * basis)];
+    assumptions.push(profits.length > 1 ? 'Uses the lower of the net profit you entered and the net profit on your documents.' : docProfit !== null ? 'Uses the net profit on your documents.' : 'Uses the net profit you entered; it was not readable from your documents.');
+  }
+  if (app.netProfitInr !== null && docProfit !== null && Math.abs(app.netProfitInr - docProfit) > 0.2 * Math.max(Math.abs(docProfit), 1)) {
+    warnings.push('The net profit you entered differs from your documents by more than 20%; the lower figure is used.');
+  }
+  if (app.quotedAnnualRatePct === null) warnings.push('No interest rate was quoted, so the monthly instalment and repayment coverage are not shown.');
+  else assumptions.push(`Instalment and coverage use the ${app.quotedAnnualRatePct}% rate you quoted over ${app.tenureMonths} months; a lender's rate may differ.`);
+  if (s.coverageRange) assumptions.push('Coverage = (net profit + depreciation + interest) ÷ yearly repayments, existing and new. Missing depreciation or interest counts as 0, which understates coverage.');
+  if (!figures.length) warnings.push('Your documents could not be read yet, so this uses only the figures you entered.');
+  if (carbon && carbon.verifiedInvoices === 0) warnings.push('No verified invoices yet: the size estimate does not depend on them, but green-loan lenders ask for a measured carbon baseline.');
+  return {
+    label: ESTIMATE_LABEL,
+    rangeInr: range,
+    requestInr: app.amountInr,
+    position: range ? (app.amountInr < range[0] ? 'below' : app.amountInr > range[1] ? 'above' : 'within') : null,
+    monthlyInstalmentInr: s.proposedEmi !== null ? Math.round(s.proposedEmi) : null,
+    coverage: s.coverageRange ? s.coverageRange[0] : null,
+    requestShareOfTurnoverPct: Math.round((app.amountInr / app.annualTurnoverInr) * 1000) / 10,
+    usedDocuments: figures.length > 0,
+    assumptions,
+    warnings,
   };
 }

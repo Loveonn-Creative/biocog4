@@ -148,6 +148,10 @@ export default function GreenLoanCheck() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 rounded-2xl border border-border p-4">
+              <p className="font-medium">Your estimate</p>
+              <p className="mt-1 text-sm text-muted-foreground">A loan size estimate needs your net profit, turnover and financial statements, so it is not shown from these quick answers. Submit the green loan application and your Estimate appears there, with every assumption listed.</p>
+            </div>
             {result.carbonNext ? (
               <div className="mt-6 rounded-2xl bg-primary/10 p-4">
                 <p className="font-medium">Your next plank: a measured carbon footprint</p>
