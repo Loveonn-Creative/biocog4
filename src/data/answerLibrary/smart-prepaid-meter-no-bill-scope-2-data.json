@@ -31,9 +31,10 @@
       ]
     },
     {
-      "h": "Rules behind smart prepaid metering",
+      "h": "What the consumer rules give you",
       "p": [
-        "Smart prepaid meters are being installed under the Ministry of Power's Revamped Distribution Sector Scheme (RDSS). The Electricity (Rights of Consumers) Rules, 2020, as amended, and CEA metering regulations cover how consumers get consumption data. What each discom shows, and whether it issues a monthly statement on request, varies, so check your discom's notices."
+        "Smart prepaid meters are being installed under the Ministry of Power's Revamped Distribution Sector Scheme (RDSS). The Electricity (Rights of Consumers) Amendment Rules, 2023 say smart meters are read remotely at least once a day and that consumers can see their consumption data on a website, mobile app or by SMS. Consumers with smart prepaid meters get their consumption and balance at least daily.",
+        "The rules do not set a common format for a downloadable monthly statement, so what each discom offers varies. Ask yours in writing and keep the reply with your records."
       ]
     }
   ],
@@ -49,16 +50,33 @@
   },
   "senseible": "Senseible reads electricity bills, and a photo showing two meter readings gives the units as their difference, which suits prepaid meters. It also takes hardware and meter feeds, set up with the Senseible team for each customer rather than as a self-serve integration.",
   "links": [
-    { "label": "Smart meter data or bills for reporting?", "to": "/answers/smart-meter-data-vs-bills-for-carbon-reporting" },
-    { "label": "Missing electricity bills", "to": "/answers/missing-electricity-bills-carbon-footprint" },
-    { "label": "Convert a kVAh bill to kWh", "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Smart meter data or bills for reporting?",
+      "to": "/answers/smart-meter-data-vs-bills-for-carbon-reporting"
+    },
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Convert a kVAh bill to kWh",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "Ministry of Power, Revamped Distribution Sector Scheme and Electricity (Rights of Consumers) Rules, 2020", "url": "https://powermin.gov.in" },
-    { "label": "CEA, Installation and Operation of Meters Regulations", "url": "https://cea.nic.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "Ministry of Power, Revamped Distribution Sector Scheme and Electricity (Rights of Consumers) Rules, 2020, as amended in 2023",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "Consumer access to smart meter data and monthly statements varies by discom and may change with RDSS rollout notices."
 }

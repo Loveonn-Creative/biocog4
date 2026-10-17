@@ -29,7 +29,7 @@
       "ol": [
         "Who pays for audits. The 2024 text says that where an SME is checked, the in-scope company bears the cost of independent third-party verification, and terms with SMEs must be fair, reasonable and non-discriminatory. Check the amended text your buyer relies on.",
         "Liability and indemnity. A clause that makes you carry all of the buyer's legal risk goes beyond asking for assurances. Ask for liability limited to your own breach.",
-        "Data requests. The Omnibus amendments limit how much information in-scope companies may demand from smaller business partners. Agree what data you send, how often, and that it stays confidential.",
+        "Data requests. Under the amended directive, an in-scope company should ask a business partner with fewer than 5,000 employees for information only when it cannot reasonably get it another way. Agree what data you send, how often, and that it stays confidential.",
         "Cascading. Promise to request assurances from your suppliers, not to guarantee their conduct.",
         "Exit. Look for a cure period and a clear process before any suspension or termination."
       ]
@@ -43,21 +43,39 @@
     {
       "h": "Model clauses are coming",
       "p": [
-        "Article 18 asks the European Commission to publish guidance on voluntary model contract clauses. Once it is out, you can ask your buyer to align with it, which helps avoid one-sided drafting. Until then, negotiate the points above."
+        "Article 18 asks the European Commission to publish guidance on voluntary model contract clauses. Check the Commission's due diligence pages for whether it has been published. Once it is out, you can ask your buyer to align with it, which helps avoid one-sided drafting. Until then, negotiate the points above."
       ]
     }
   ],
-  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions that you can share for the environmental items in a buyer's clause, with the source file behind each figure. It is not legal advice and does not cover labour or human rights due diligence; its reports are self-declared.",
+  "senseible": "Senseible keeps an invoice-backed record of your energy use and Scope 1 and 2 emissions, with the source file behind each figure, for the environmental items in a buyer's clause. If you must cascade the clause to your own suppliers, its supplier due diligence service runs screening, questionnaires and follow-up. It is not legal advice, and its reports are self-declared.",
   "links": [
-    { "label": "Does CSDDD still apply after Omnibus?", "to": "/answers/does-csddd-still-apply-after-omnibus" },
-    { "label": "Supplier due diligence", "to": "/supplier-due-diligence" },
-    { "label": "Germany's LkSG and Indian suppliers", "to": "/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers" }
+    {
+      "label": "Does CSDDD still apply after Omnibus?",
+      "to": "/answers/does-csddd-still-apply-after-omnibus"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Germany's LkSG and Indian suppliers",
+      "to": "/climate-intelligence/germany-supply-chain-act-lksg-indian-suppliers"
+    }
   ],
   "sources": [
-    { "label": "Directive (EU) 2024/1760, Corporate Sustainability Due Diligence, Articles 10, 11 and 18 (EUR-Lex)", "url": "https://eur-lex.europa.eu" },
-    { "label": "Directive (EU) 2026/470 (Omnibus I)", "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng" },
-    { "label": "Council of the EU, simplification of sustainability reporting and due diligence, February 2026", "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/" }
+    {
+      "label": "Directive (EU) 2024/1760, Corporate Sustainability Due Diligence, Articles 10, 11 and 18 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Directive (EU) 2026/470 (Omnibus I)",
+      "url": "https://eur-lex.europa.eu/eli/dir/2026/470/oj/eng"
+    },
+    {
+      "label": "Council of the EU, simplification of sustainability reporting and due diligence, February 2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/24/council-signs-off-simplification-of-sustainability-reporting-and-due-diligence-requirements-to-boost-eu-competitiveness/pdf/"
+    }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "Article numbers and SME protections may have moved under Directive (EU) 2026/470, and the Commission's model clause guidance was still due; check both before relying on this page."
+  "reviewed": "2026-10-17",
+  "reviewNote": "Article numbers above follow the 2024 text; check the consolidated Directive (EU) 2024/1760 as amended by Directive (EU) 2026/470 on EUR-Lex, and whether the Article 18 model clause guidance has been published."
 }

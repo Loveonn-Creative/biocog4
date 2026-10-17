@@ -10,7 +10,7 @@
     {
       "h": "Integrity and time are separate questions",
       "p": [
-        "SHA-256, defined in NIST FIPS 180-4, turns a file into a 64 character code. Anyone can recompute that code at any time, today or in five years, and get the same answer. That is why it proves the file is unchanged, and also why it says nothing about the date.",
+        "SHA-256 (NIST FIPS 180-4) reduces any file to a fixed 256-bit value, usually shown as 64 hexadecimal characters. Anyone can recompute that value at any time, today or in five years, and get the same answer. That is why it proves the file is unchanged, and also why it says nothing about the date.",
         "A date written next to a hash in your own system is only as trustworthy as whoever controls the system. Someone could create a file today and record yesterday's date beside its hash."
       ]
     },
@@ -26,7 +26,7 @@
     {
       "h": "What a hash chain adds",
       "p": [
-        "In a hash-chained ledger each entry includes the hash of the one before. Change an old entry and every later hash breaks, so the chain shows the order of entries and makes quiet edits visible. On its own it does not prove dates to an outsider, because the operator could rebuild the whole chain. Anchoring the newest hash with someone independent closes that gap."
+        "A hash-chained ledger stores, inside every entry, the hash of the entry before it. Editing any past entry breaks all the links after it, so the chain shows the order of entries and makes quiet edits visible. On its own it does not prove dates to an outsider, because the operator could rebuild the whole chain. Anchoring the newest hash with someone independent closes that gap."
       ]
     },
     {
@@ -38,14 +38,26 @@
       ]
     }
   ],
-  "senseible": "Senseible fingerprints each uploaded file with SHA-256, so an identical file is not counted twice, and hash-chains its ledger entries, with further hardening of the chain under way. These show a file is unchanged and the order of entries; to prove a date to an outsider, pair them with an independent record such as a trusted timestamp or a report sent to your auditor.",
+  "senseible": "Senseible fingerprints each uploaded file with SHA-256, which also stops the same file being counted twice, and links its ledger entries in a hash chain, with further hardening of the chain under way. Together these show a file is unchanged and the order of entries; to prove a date to an outsider, pair them with an independent record such as a trusted timestamp or a report sent to your auditor.",
   "links": [
-    { "label": "How to verify a SHA-256 fingerprint", "to": "/answers/verify-sha-256-fingerprint-carbon-report" },
-    { "label": "Does a hash prove emissions are correct?", "to": "/answers/does-a-hash-prove-emissions-are-correct" },
-    { "label": "How auditors verify activity data", "to": "/answers/how-auditors-verify-activity-data" }
+    {
+      "label": "How to verify a SHA-256 fingerprint",
+      "to": "/answers/verify-sha-256-fingerprint-carbon-report"
+    },
+    {
+      "label": "Does a hash prove emissions are correct?",
+      "to": "/answers/does-a-hash-prove-emissions-are-correct"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    }
   ],
   "sources": [
-    { "label": "NIST FIPS 180-4, Secure Hash Standard (SHA-256)", "url": "https://csrc.nist.gov" }
+    {
+      "label": "NIST FIPS 180-4, Secure Hash Standard (SHA-256)",
+      "url": "https://csrc.nist.gov"
+    }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

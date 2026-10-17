@@ -27,14 +27,14 @@
     {
       "h": "Reading the result",
       "p": [
-        "ISO/IEC 30134-2 groups measurements into categories by where IT energy is metered, so always state the category or meter point with the number. Compare your PUE with your own past years rather than a published average from a different climate or size of site.",
+        "ISO/IEC 30134-2 sets measurement categories by where IT energy is metered: category 1 at the UPS output, category 2 at the PDU output and category 3 at the IT equipment input. Always state the category with the number. Compare your PUE with your own past years rather than a published average from a different climate or size of site.",
         "PUE does not measure whether the servers themselves are efficient. Consolidating idle servers cuts IT kWh and can make PUE look worse even though total energy falls, so track total kWh too."
       ]
     },
     {
       "h": "From PUE to emissions",
       "p": [
-        "Emissions come from total facility energy, not from PUE. For grid power in India multiply total kWh by 0.710 kg CO2 per kWh, the CEA weighted average factor, and add diesel litres times 2.68 kg CO2 per litre for any generator fuel. PUE then tells you how much of that is overhead you can cut."
+        "Emissions come from total facility energy, not from PUE. Multiply the grid kWh in that total by 0.710 kg CO2 per kWh, the CEA weighted average factor for India, and for generator output use diesel litres times 2.68 kg CO2 per litre instead of the grid factor. PUE then tells you how much of that is overhead you can cut."
       ]
     }
   ],
@@ -52,14 +52,33 @@
   },
   "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh, so the total energy and Scope 2 side of the calculation comes from invoices. The IT and sub-meter readings come from your own meters, or from a meter feed set up with the Senseible team for your site; it is not a self-serve integration.",
   "links": [
-    { "label": "Cloud and data centre emissions calculator", "to": "/calculators/cloud-data-centre-emissions" },
-    { "label": "Colocation emissions with PUE", "to": "/answers/colocation-data-centre-emissions-with-pue" },
-    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+    {
+      "label": "Cloud and data centre emissions calculator",
+      "to": "/calculators/cloud-data-centre-emissions"
+    },
+    {
+      "label": "Colocation emissions with PUE",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
   ],
   "sources": [
-    { "label": "ISO/IEC 30134-2:2016, Data centres key performance indicators, Part 2: Power usage effectiveness (iso.org)", "url": "https://www.iso.org" },
-    { "label": "Bureau of Energy Efficiency, data centre energy efficiency guidance", "url": "https://beeindia.gov.in" },
-    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+    {
+      "label": "ISO/IEC 30134-2, Data centres key performance indicators, Part 2: Power usage effectiveness (first edition 2016, revised edition 2026) (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, data centre energy efficiency guidance",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17",
+  "reviewNote": "ISO/IEC 30134-2 was revised in 2026; confirm the category definitions against the current edition."
 }

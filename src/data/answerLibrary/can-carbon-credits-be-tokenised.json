@@ -2,7 +2,7 @@
   "slug": "can-carbon-credits-be-tokenised",
   "q": "Can carbon credits be tokenised on a blockchain under Verra and Gold Standard rules?",
   "title": "Can carbon credits be tokenised?",
-  "short": "Only on the registry's terms. In May 2022 Verra stopped tokens being made from retired credits, and both Verra and Gold Standard treat their own registry record as the credit. A token is at most a claim on a credit held in a registry account, so check the registry rules and serial numbers before buying or selling one.",
+  "short": "Only on the registry's terms. Since May 2022 Verra has barred tokens made from retired credits, and Gold Standard's terms bar tokens from its credits without its written consent. A token is at most a claim on a credit held in a registry account, so check the registry rules and serial numbers before buying or selling one.",
   "topic": "markets",
   "intent": "check",
   "audience": "Indian project developers and buyers approached by token platforms",
@@ -11,7 +11,7 @@
       "h": "What changed in 2022",
       "p": [
         "Some platforms had retired credits on registries and minted tokens against them. A retired credit has already been used for a claim, so trading a token based on it risks selling the same reduction twice. In May 2022 Verra said it would no longer allow retired credits to be used to create tokens and began consulting on approaches based on immobilising active credits instead.",
-        "Gold Standard also published its position on digital tokens and has kept the registry record as the authoritative one. Both positions have been revised since, so read the current statement on each registry's website."
+        "Gold Standard's terms of use already barred anyone from creating tokens or other digital instruments from its credits without express written consent. In 2022 it consulted on a consent process linked to its registry and began a readiness phase in 2023. Neither registry treats a token as the credit; read the current statement on each registry's website before acting."
       ]
     },
     {
@@ -41,16 +41,37 @@
   ],
   "senseible": "Senseible creates no tokens and no carbon credits and is not a registry. It shows carbon credit eligibility signals from your records, which a registered project developer and an accredited verifier would still have to take forward.",
   "links": [
-    { "label": "Blockchain carbon certificates", "to": "/answers/blockchain-carbon-certificate" },
-    { "label": "Carbon wallet or carbon tokens?", "to": "/answers/carbon-wallet-or-tokens" },
-    { "label": "How to check a credit's retirement", "to": "/answers/how-to-check-carbon-credit-retirement" },
-    { "label": "Vet a carbon credit platform", "to": "/climate-intelligence/how-to-vet-a-legitimate-carbon-credit-platform" }
+    {
+      "label": "Blockchain carbon certificates",
+      "to": "/answers/blockchain-carbon-certificate"
+    },
+    {
+      "label": "Carbon wallet or carbon tokens?",
+      "to": "/answers/carbon-wallet-or-tokens"
+    },
+    {
+      "label": "How to check a credit's retirement",
+      "to": "/answers/how-to-check-carbon-credit-retirement"
+    },
+    {
+      "label": "Vet a carbon credit platform",
+      "to": "/climate-intelligence/how-to-vet-a-legitimate-carbon-credit-platform"
+    }
   ],
   "sources": [
-    { "label": "Verra, statement on third-party crypto instruments and tokens (May 2022) and later updates", "url": "https://verra.org" },
-    { "label": "Gold Standard, statement on digital tokens and registry rules", "url": "https://www.goldstandard.org" },
-    { "label": "ICVCM, Core Carbon Principles and Assessment Framework", "url": "https://icvcm.org" }
+    {
+      "label": "Verra, statement on third-party crypto instruments and tokens (May 2022) and later updates",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard, tokenisation consultation (2022) and consent requirement in its terms of use",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM, Core Carbon Principles and Assessment Framework",
+      "url": "https://icvcm.org"
+    }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "Registry positions on tokenisation have changed several times since 2022; confirm the current Verra and Gold Standard text before acting."
 }
