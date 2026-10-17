@@ -51,8 +51,8 @@ export const template = {
   component: ResourceLead,
   subject: (data: Record<string, any>) => `[Report request] ${data.company || data.email || 'New lead'}${data.need ? `: ${data.need}` : ''}`,
   displayName: 'Gated resource lead',
-  // Fixed internal inbox; never shown to visitors.
-  to: 'biocog.v1@gmail.com',
+  // Sent to the internal inbox held in the INTERNAL_INBOX secret; never shown to visitors.
+  toInternal: true,
   previewData: { resource: 'Sample ESG Report 2026', source: 'form', name: 'Asha Rao', email: 'asha@example.com', company: 'Acme Forgings', industry: 'Steel, aluminium and metals', role: 'Founder, owner or CXO', need: 'A buyer asked for ESG or carbon data', mailbox: 'Work domain', marketing: false, stored: true, leadId: 'example' },
 } satisfies TemplateEntry
 

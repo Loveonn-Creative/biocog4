@@ -3,6 +3,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 import { z } from 'npm:zod@3.25.76';
 import { estimateCustomScope, formatScopeRupees, CUSTOM_WORK, type ScopeInput } from '../_shared/customScopeEstimate.ts';
 import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
+import { internalInbox } from '../_shared/internalInbox.ts';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -122,6 +123,11 @@ const handler = async (req: Request): Promise<Response> => {
       console.error("RESEND_API_KEY not configured");
       throw new Error("Email service not configured");
     }
+    const inbox = internalInbox();
+    if (!inbox) {
+      console.error("INTERNAL_INBOX not configured");
+      throw new Error("Email service not configured");
+    }
 
     const categoryLabel = categoryLabels[category] || category;
     
@@ -186,7 +192,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Senseible Contact <onboarding@resend.dev>",
-        to: ["biocog.v1@gmail.com"],
+        to: [inbox],
         reply_to: email,
         subject: `[${categoryLabel}] New inquiry from ${name}`,
         html: emailHtml,

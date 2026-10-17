@@ -49,3 +49,7 @@ Finish with a short report: migrations applied (and any already applied), the St
 
 - Upload the sample ESG report PDF to the private `gated-resources` bucket as `esg-report-sample-2026.pdf`. Lovable must not do this; the file is not in the repository.
 - GA4 Realtime and the Clarity dashboard should show visits within a few minutes of publishing.
+
+## Before the next edge-function redeploy (added 17 October 2026)
+
+Add the edge-function secret `INTERNAL_INBOX` (Supabase project, Edge Functions, Secrets) with the internal review inbox address. The address is no longer written in code. Without it, contact, report-request, story and finance review emails are not sent (the user-facing forms still answer, and leads are still stored where a table exists). Then redeploy: send-contact-notification, esg-report-access, finance-application, story-submit and any function using the transactional email templates.

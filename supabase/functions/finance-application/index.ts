@@ -18,6 +18,7 @@ import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // the AI model, with names, PAN, account numbers and transactions excluded;
 // the files are never returned to any browser.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { internalInbox } from '../_shared/internalInbox.ts';
 import {
   applicantEstimate, CONSENT_VERSION, DOC_TYPES, FIGURES_PROMPT, MAX_FILE_BYTES, MAX_FILES, PURPOSES, RETENTION_DAYS,
   cleanFigures, readiness, reviewSummary, sniffType, updateWindow, validateApplication,
@@ -34,7 +35,6 @@ const MISSING = new Set(['42P01', 'PGRST205']);
 const NOT_OPEN = { error: 'not_open' };
 const BUCKET = 'finance-documents';
 // Internal review copy. Fixed here, never taken from a request or shown in the app.
-const REVIEW_INBOX = 'biocog.v1@gmail.com';
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const EXT: Record<string, string> = { 'application/pdf': 'pdf', 'image/jpeg': 'jpg', 'image/png': 'png' };
 
@@ -281,7 +281,8 @@ Deno.serve(async (req) => {
 
       let emailStatus: 'sent' | 'failed' = 'failed';
       const resend = Deno.env.get('RESEND_API_KEY');
-      if (resend) {
+      const REVIEW_INBOX = internalInbox();
+      if (resend && REVIEW_INBOX) {
         const html = reviewEmail(app.id, v.value, summary, figures, (docs ?? []) as Array<{ doc_type: string; file_name: string; size_bytes: number }>, snapshot, plan, window, user.email ?? '');
         const res = await fetch('https://api.resend.com/emails', {
           method: 'POST',

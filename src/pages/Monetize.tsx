@@ -250,7 +250,7 @@ const Monetize = () => {
       title: 'Green Loans', 
       value: null,
       desc: 'Lenders set their own terms for green loans. No saving is estimated here.',
-      partner: 'SBI Green Finance',
+      partner: 'SBI Green Finance · IFC · ADB',
       status: (pathwayStatuses['green_loan'] as MonetizationPathway['status']) || 'available',
       requirements: ['Verified carbon data', 'Business registration'],
       timeline: 'First update within 1-2 weeks',

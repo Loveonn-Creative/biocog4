@@ -1,3 +1,4 @@
+import { internalInbox } from '../internalInbox.ts'
 import * as React from 'npm:react@18.3.1'
 import { renderAsync } from 'npm:@react-email/components@0.0.22'
 import { EmailAPIError, sendLovableEmail } from 'npm:@lovable.dev/email-js@0.1.0'
@@ -52,9 +53,9 @@ export async function sendTemplateEmail(
 
   // Template-level `to` takes precedence — notification templates always
   // send to their fixed address.
-  const recipient = template.to || to
+  const recipient = template.toInternal ? internalInbox() : (template.to || to)
   if (!recipient) {
-    throw new Error('Recipient is required (the template defines no fixed recipient)')
+    throw new Error(template.toInternal ? 'INTERNAL_INBOX secret is not configured' : 'Recipient is required (the template defines no fixed recipient)')
   }
 
   const templateData = options.templateData ?? {}
