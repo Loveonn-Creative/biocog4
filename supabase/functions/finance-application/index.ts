@@ -5,10 +5,12 @@ import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // higher; the plan is checked here, on the server.
 //
 // What the applicant gets: a stored application, private document storage,
-// a readiness checklist, a status timeline and an indicative 2 to 4 week
-// update window. What the applicant never gets: an eligibility figure, a
-// lender decision or the internal review. Senseible does not approve,
-// provide or disburse loans, grants or financing.
+// a readiness checklist, a status timeline, an indicative 2 to 4 week update
+// window and, after submission, an Estimate (applicantEstimate) derived from
+// their entered figures and the allow-listed document figures, with its
+// assumptions and missing-data warnings. Raw document figures, the internal
+// review and any lender decision are never returned. Senseible does not
+// approve, provide or disburse loans, grants or financing.
 //
 // Documents: PDF/JPEG/PNG up to 2 MB each, at most 6, identified by their
 // bytes. Stored in the private finance-documents bucket. On submission only
@@ -17,7 +19,7 @@ import { aiConfigured, aiFetch } from '../_shared/aiFetch.ts';
 // the files are never returned to any browser.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import {
-  CONSENT_VERSION, DOC_TYPES, FIGURES_PROMPT, MAX_FILE_BYTES, MAX_FILES, PURPOSES, RETENTION_DAYS,
+  applicantEstimate, CONSENT_VERSION, DOC_TYPES, FIGURES_PROMPT, MAX_FILE_BYTES, MAX_FILES, PURPOSES, RETENTION_DAYS,
   cleanFigures, readiness, reviewSummary, sniffType, updateWindow, validateApplication,
   type DocFigures, type FinanceApplicationInput,
 } from '../_shared/financeApplication.ts';
@@ -155,12 +157,14 @@ Deno.serve(async (req) => {
       const { data: apps, error } = await admin.from('finance_applications').select('id, kind, status, application, submitted_at, update_window_from, update_window_to, created_at').eq('user_id', user.id).order('created_at', { ascending: false }).limit(10);
       if (error) return MISSING.has(error.code ?? '') ? json(NOT_OPEN, 503) : json({ error: 'Could not load applications.' }, 500);
       const ids = (apps ?? []).map((a: { id: string }) => a.id);
-      const [{ data: events }, { data: docs }] = ids.length
+      const [{ data: events }, { data: docs }, { data: reviews }] = ids.length
         ? await Promise.all([
           admin.from('finance_application_events').select('application_id, status, note, created_at').in('application_id', ids).order('created_at'),
           admin.from('finance_application_documents').select('id, application_id, doc_type, file_name, size_bytes, uploaded_at').in('application_id', ids).order('uploaded_at'),
+          // Figures stay on the server: only the derived Estimate leaves this function.
+          admin.from('finance_application_reviews').select('application_id, figures').in('application_id', ids),
         ])
-        : [{ data: [] }, { data: [] }];
+        : [{ data: [] }, { data: [] }, { data: [] }];
       const c = await carbon();
       return json({
         plan,
@@ -174,6 +178,7 @@ Deno.serve(async (req) => {
             events: (events ?? []).filter((e: { application_id: string }) => e.application_id === a.id),
             documents: myDocs.map((d: Record<string, unknown>) => ({ id: d.id, docType: d.doc_type, fileName: d.file_name, sizeBytes: d.size_bytes, uploadedAt: d.uploaded_at })),
             readiness: readiness((a.application ?? {}) as Parameters<typeof readiness>[0], myDocs.map((d: { doc_type: string }) => ({ docType: d.doc_type })), c),
+            estimate: estimateFor(a, (reviews ?? []).find((r: { application_id: string }) => r.application_id === a.id)?.figures, c),
           };
         }),
       });
@@ -295,6 +300,15 @@ Deno.serve(async (req) => {
     return json({ error: 'Something went wrong. Nothing was lost; try again.' }, 500);
   }
 });
+
+/** Estimate for a submitted application only; drafts show readiness until they are complete. */
+function estimateFor(a: { status?: unknown; application: Record<string, unknown> | null }, rawFigures: unknown, carbon: { verifiedInvoices: number }) {
+  if (a.status === 'draft') return null;
+  const v = validateApplication(a.application ?? {});
+  if (!v.ok) return null;
+  const figures = Array.isArray(rawFigures) ? rawFigures.map(cleanFigures) : [];
+  return applicantEstimate(v.value, figures, carbon);
+}
 
 function reviewEmail(id: string, a: FinanceApplicationInput, s: ReturnType<typeof reviewSummary>, figures: DocFigures[], docs: Array<{ doc_type: string; file_name: string; size_bytes: number }>, carbon: { verifiedInvoices: number; latestVerification: { status: string; totalCo2Kg: number | null; greenScore: number | null } | null }, plan: string, window: { from: string; to: string }, applicantEmail: string): string {
   const row = (k: string, v: unknown) => `<tr><td style="padding:4px 8px;color:#555">${esc(k)}</td><td style="padding:4px 8px">${esc(v)}</td></tr>`;

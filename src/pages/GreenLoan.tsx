@@ -13,19 +13,22 @@ import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import {
   CONSENT_TEXT, DISCLOSURE, DOC_TYPES, MAX_FILES, PURPOSES, STATUS_LABEL, validateApplication,
-  type FieldErrors, type ReadinessItem, type Status,
+  type ApplicantEstimate, type FieldErrors, type ReadinessItem, type Status,
 } from '../../supabase/functions/_shared/financeApplication';
+import { FinancingEstimate } from '@/components/finance/FinancingEstimate';
 
 // Signed-in green loan application. Data goes only through the
 // finance-application edge function; documents never come back to the
-// browser. The applicant sees readiness and status, never an eligibility
-// figure: Senseible does not approve, provide or disburse financing.
+// browser. The applicant sees readiness, status and, after submission, an
+// Estimate built on the server from their own figures. It is never an offer
+// or approval: Senseible does not approve, provide or disburse financing.
 
 interface Doc { id: string; docType: string; fileName: string; sizeBytes: number }
 interface App {
   id: string; status: Status; application: Record<string, unknown>; submitted_at: string | null;
   update_window_from: string | null; update_window_to: string | null;
   events: Array<{ status: Status; note: string | null; created_at: string }>; documents: Doc[]; readiness: ReadinessItem[];
+  estimate?: ApplicantEstimate | null;
 }
 interface State { plan: string; canApply: boolean; prefill: Record<string, string>; carbon: { verifiedInvoices: number }; applications: App[] }
 
@@ -232,6 +235,7 @@ export default function GreenLoan() {
                 <p key={r.id} className="flex items-start gap-2 text-sm"><Check className={`mt-0.5 h-4 w-4 shrink-0 ${r.done ? 'text-primary' : 'text-muted-foreground/40'}`} />{r.label}{r.note && !r.done ? <span className="text-muted-foreground"> · {r.note}</span> : null}</p>
               ))}
             </div>
+            {a.estimate && <div className="mt-4"><FinancingEstimate estimate={a.estimate} /></div>}
           </section>
         ))}
       </div>,
@@ -318,7 +322,7 @@ export default function GreenLoan() {
           {step < 3 && <Button onClick={() => void next()} disabled={busy}>{step === 2 ? 'Save and add documents' : 'Continue'}<ArrowRight className="ml-1.5 h-4 w-4" /></Button>}
           {step === 3 && <><Button variant="ghost" onClick={() => setStep(2)}>Edit details</Button><Button onClick={() => void submit()} disabled={busy}>Submit application</Button></>}
         </div>
-        {step === 3 && <p className="mt-3 text-xs text-muted-foreground">After you submit, the Senseible team reviews the file and updates you here, usually within 2 to 4 weeks. You will not see a lender decision here; any financing decision is the lender's.</p>}
+        {step === 3 && <p className="mt-3 text-xs text-muted-foreground">After you submit, an Estimate built from your figures appears here, with its assumptions, and the Senseible team reviews the file and updates you, usually within 2 to 4 weeks. The Estimate is not a lender decision; any financing decision is the lender's.</p>}
       </div>
       <aside className="lg:sticky lg:top-24 lg:self-start"><CreditFile filled={filled} docs={draft?.documents.length ?? 0} carbon={state.carbon.verifiedInvoices} /></aside>
     </div>,

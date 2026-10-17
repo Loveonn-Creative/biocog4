@@ -57,10 +57,10 @@ export function useProfileIntelligence(profile: ProfileInput | null): {
       result.push({
         id: 'green_finance',
         type: 'finance',
-        title: 'Green Finance Eligibility',
+        title: 'Green Finance Readiness',
         message: profile.verifiedCount && profile.verifiedCount > 0
-          ? `With ${profile.verifiedCount} verified records, you may qualify for better loan rates. Connect with a lender.`
-          : 'Verify your emissions data to unlock green loan eligibility and better interest rates.',
+          ? `You have ${profile.verifiedCount} verified records, the carbon evidence green-loan lenders ask for. Lenders set their own terms.`
+          : 'Verify your emissions data: green-loan lenders ask for a measured carbon baseline.',
         severity: profile.verifiedCount && profile.verifiedCount > 0 ? 'success' : 'info',
         linkTo: '/partner-marketplace',
         linkLabel: 'Explore lenders',
