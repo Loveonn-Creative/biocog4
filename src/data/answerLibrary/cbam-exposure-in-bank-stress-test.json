@@ -1,0 +1,91 @@
+{
+  "slug": "cbam-exposure-in-bank-stress-test",
+  "q": "How do Indian banks stress test MSME borrowers for CBAM and carbon price risk?",
+  "title": "CBAM shock in an MSME loan stress test",
+  "short": "A bank estimates the CBAM cost on the borrower's EU-bound goods each year: embedded emissions minus the free allocation adjustment, times a scenario certificate price. It then assumes how much of that cost the EU buyer pushes back through a lower price or lost orders, and tests the hit against EBITDA and the DSCR covenant.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Credit officers and MSME exporters to the EU",
+  "sections": [
+    {
+      "h": "Why CBAM needs its own line in the test",
+      "p": [
+        "A domestic carbon price test applies a price to the borrower's own Scope 1 and 2 emissions. CBAM is different. It applies only to covered goods (iron and steel, aluminium, cement, fertilisers, hydrogen, electricity) shipped to the EU, it is paid by the EU importer, and it is charged on the embedded emissions of the product, which can include emissions from the borrower's suppliers of precursors.",
+        "The borrower does not pay the EU directly, so the credit risk shows up as a price discount, a lost buyer or a demand for verified data. The test should model those channels, not a tax bill."
+      ]
+    },
+    {
+      "h": "The calculation for one scenario year",
+      "ol": [
+        "Tonnes of covered goods sold to the EU in the year, from export invoices and CN codes.",
+        "Embedded emissions per tonne: the borrower's measured figure, or the EU default value with its mark-up (10% in 2026, 20% in 2027, 30% from 2028 for steel, aluminium, cement and hydrogen; 1% for fertilisers) if it has no data.",
+        "Certificates per tonne = embedded emissions minus the EU benchmark times the share of free allocation still given that year (Article 31): 97.5% in 2026, falling to 51.5% in 2030 and 0% from 2034.",
+        "Cost = certificates x scenario certificate price, less any carbon price effectively paid in India that the importer can claim.",
+        "Pass-back share: the part of that cost the borrower absorbs. Subtract it from EBITDA and recompute DSCR."
+      ]
+    },
+    {
+      "h": "Which price path to use",
+      "p": [
+        "The CBAM certificate price follows the EU ETS auction price (Article 21): a quarterly average for 2026 and a weekly average from 2027. For a stress test, take carbon price paths from the NGFS scenarios the bank already uses, convert them to euros per tonne for the EU, and state the source and phase. Run at least one disorderly path where the price jumps late, since that is when the free allocation share is also falling fast. If the RBI has issued final guidance on climate scenario analysis and stress testing by the time you run the test, follow its scenario set; check the notifications page on rbi.org.in."
+      ]
+    },
+    {
+      "h": "Borrower facts that change the result most",
+      "ul": [
+        "Share of revenue from EU buyers of covered goods. An exporter of garments or auto parts outside the covered CN codes has no direct CBAM cost today.",
+        "Whether the borrower has measured, verifiable emissions. Default values with mark-ups can make the shock much larger than actual data would.",
+        "Production route: a coal-based DRI or blast furnace route carries far more embedded emissions per tonne than scrap-based melting.",
+        "Contract terms that fix who bears CBAM cost.",
+        "Whether the EU importer falls under the 50 tonne annual de minimis, which applies per importer, not per exporter."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a steel exporter in 2030 (all inputs hypothetical)",
+    "lines": [
+      "EU sales: 2,000 t; measured embedded emissions 2.2 t CO2e per t",
+      "Benchmark assumed at 1.4 t per t for illustration (not an official value); free allocation share 2030: 51.5%",
+      "Certificates per t: 2.2 minus 1.4 x 0.515 = 2.2 minus 0.721 = 1.479; total 2,000 x 1.479 = 2,958",
+      "Scenario price €80 per t and ₹90 per euro (both assumed): 2,958 x 80 x 90 = ₹2,12,97,600",
+      "Borrower absorbs 50% through a price cut: ₹1,06,48,800, about ₹1.06 crore",
+      "EBITDA ₹6 crore, debt service ₹4 crore: DSCR falls from 1.50 to (6 minus 1.06) / 4 = 1.23"
+    ],
+    "note": "Use the CBAM calculator or the official benchmark tables for real benchmark values; this example only shows the arithmetic."
+  },
+  "senseible": "Senseible's CBAM cost calculator gives a borrower's 2026 to 2034 cost path, including the free allocation phase-out and default value mark-ups, and its invoice-backed Scope 1 and 2 figures support the measured emissions a bank asks for. Its green loan readiness check is a separate screen a borrower can run before applying.",
+  "links": [
+    {
+      "label": "NGFS carbon price stress test",
+      "to": "/answers/ngfs-carbon-price-msme-loan-stress-test"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    },
+    {
+      "label": "Which NGFS scenario to use",
+      "to": "/answers/which-ngfs-scenario-should-i-use"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Articles 9, 21 and 31",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values and mark-ups",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "RBI statements and notifications on climate scenario analysis and stress testing (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check rbi.org.in for whether RBI's climate stress testing guidance has been issued in final form, and recheck CBAM benchmarks and price rules, which may be amended."
+}

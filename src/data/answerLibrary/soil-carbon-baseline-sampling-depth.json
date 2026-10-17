@@ -1,0 +1,83 @@
+{
+  "slug": "soil-carbon-baseline-sampling-depth",
+  "q": "How deep and how many samples do you need for a soil carbon baseline?",
+  "title": "Soil carbon baseline: depth and sample count",
+  "short": "Sample to at least 30 cm, the minimum depth Verra's VM0042 requires for soil carbon stock change and the IPCC default for mineral soils. The number of samples is not fixed: work it out per stratum from the variation found in a pilot round and the precision you need.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Indian FPOs and agri project developers",
+  "sections": [
+    {
+      "h": "Depth: why 30 cm is the floor",
+      "p": [
+        "The top 30 cm is where tillage, residue and cover crops change carbon most, and it is the default depth in the 2006 IPCC Guidelines for mineral soils. Verra has reminded VM0042 projects that soil data used to quantify stock change must reach at least 30 cm. Shallower data can only feed model calibration if the model output still covers 30 cm.",
+        "Sampling deeper, to 50 or 100 cm, can show whether carbon has only moved down the profile, for example after a switch from ploughing to no-till. If you go deeper, keep the 0 to 30 cm layer as a separate measured increment."
+      ]
+    },
+    {
+      "h": "How many samples: the sample size rule",
+      "p": [
+        "Use n = (t x CV / E) squared, where CV is the coefficient of variation of carbon stock from a pilot round, E is the allowed error as a percentage of the mean, and t is about 1.645 for 90 percent confidence. Calculate it for each stratum, not for the whole project.",
+        "Stratify first by things that change soil carbon: soil type, irrigated or rainfed, crop system and past management. Good strata cut the variation and so the number of samples. At each point, take several cores and mix them into one composite sample."
+      ]
+    },
+    {
+      "h": "Measure bulk density, not only carbon percentage",
+      "p": [
+        "Carbon stock in tonnes per hectare = SOC percent / 100 x bulk density in g per cm3 x depth in cm x 100. A lab report giving only SOC percent cannot become a stock figure.",
+        "Tillage changes bulk density, so a fixed 30 cm layer can hold a different mass of soil at re-measurement. The equivalent soil mass approach compares the same mass of soil each time and removes that bias; the FAO GSOC MRV Protocol (2020) sets out how to calculate it."
+      ]
+    },
+    {
+      "h": "Mistakes that weaken a baseline",
+      "ul": [
+        "Not recording GPS points, so the same locations cannot be re-sampled.",
+        "Changing lab or method between rounds. Many Indian labs use Walkley-Black wet oxidation; dry combustion is the reference method. When ICVCM approved VM0042 v2.2 for the CCP label in October 2025, it limited the label to listed measurement methods such as dry combustion, so check the list before choosing a lab.",
+        "Ignoring carbonates in calcareous soils, common in parts of north and west India. Dry combustion measures them as carbon unless they are removed or measured separately.",
+        "Sampling at different seasons or right after fertiliser or residue application."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: samples and stock for one stratum",
+    "lines": [
+      "Pilot CV of carbon stock: 30 percent; allowed error: 10 percent of the mean; t = 1.645 (illustrative values)",
+      "n = (1.645 x 30 / 10) squared = 4.935 squared = 24.4, so 25 sampling points",
+      "Mean result: SOC 0.5 percent, bulk density 1.4 g per cm3, depth 30 cm",
+      "Stock = 0.5 / 100 x 1.4 x 30 x 100 = 21 tonnes carbon per hectare",
+      "As CO2: 21 x 44 / 12 = 77 tonnes CO2 per hectare"
+    ],
+    "note": "SOC and CV figures are illustrative; use your own pilot data."
+  },
+  "senseible": "Senseible keeps the fuel, electricity and purchase records a soil carbon project often needs beside its soil data, such as diesel invoices for farm machinery, with the factor and source on each line.",
+  "links": [
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    },
+    {
+      "label": "Years of data for a project baseline",
+      "to": "/answers/how-many-years-of-data-for-carbon-project-baseline"
+    },
+    {
+      "label": "Carbon credits for MSMEs",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VM0042 Methodology for Improved Agricultural Land Management, and Verra notice on VM0042 depth requirements",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4 (AFOLU), 0 to 30 cm default soil depth",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ICVCM decision approving VM0042 v2.2 for the CCP label (October 2025), with measurement method conditions",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "VM0042 versions and Verra's soil sampling handbook are being updated; check the current version before designing a sampling plan."
+}

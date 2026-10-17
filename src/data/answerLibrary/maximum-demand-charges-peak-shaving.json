@@ -1,0 +1,80 @@
+{
+  "slug": "maximum-demand-charges-peak-shaving",
+  "q": "How are maximum demand charges calculated on an HT bill, and does peak shaving cut them?",
+  "title": "Maximum demand charges and peak shaving",
+  "short": "Your demand charge is the month's billing demand in kVA multiplied by the per kVA rate in your tariff. Billing demand is whichever is larger: the highest 15 or 30 minute average load recorded, or a fixed share of contract demand. Peak shaving saves money only above that floor and rarely cuts emissions.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HT industrial consumers in India",
+  "sections": [
+    {
+      "h": "One spike sets the whole month",
+      "p": [
+        "The meter averages your load over each demand interval, commonly 15 or 30 minutes, and keeps the highest value of the month as recorded maximum demand. A single interval when the compressor, furnace and chillers all start together sets the demand charge for all 30 days, even if the plant runs well below it the rest of the time."
+      ]
+    },
+    {
+      "h": "The floor that limits savings",
+      "p": [
+        "Each state commission's tariff order puts a minimum on billing demand, set as a percentage of contract demand such as 75% or 85%; the figure varies by state and can change with each new order. Once your recorded peak falls to that minimum, more shaving saves nothing on the demand line. The next lever is applying to your discom to lower contract demand, under its own procedure."
+      ]
+    },
+    {
+      "h": "Ways to shave the peak",
+      "ul": [
+        "Stagger motor and furnace starts, and schedule batch loads outside each other's run times.",
+        "Fit a demand controller that sheds non-critical loads as the interval average nears a set limit.",
+        "Improve power factor: demand is in kVA, and kVA equals kW divided by power factor, so 800 kW at 0.87 is about 920 kVA but at 0.99 about 808 kVA.",
+        "Battery storage or a DG set can supply the peak, but each has its own cost and emissions effect."
+      ]
+    },
+    {
+      "h": "Effect on emissions",
+      "p": [
+        "Scope 2 emissions depend on kWh, not kVA. Moving a load to another time leaves kWh unchanged, so location-based emissions stay the same at 0.710 kg CO2 per kWh. A battery adds its round trip losses to grid kWh. Shaving with a diesel set moves emissions into Scope 1 at about 2.68 kg CO2 per litre, which can raise your total. Only measures that cut consumption, such as fixing leaks or efficient motors, cut both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month (not any one state's tariff)",
+    "lines": [
+      "Contract demand 1,000 kVA; floor 75% = 750 kVA; demand rate Rs 400 per kVA per month",
+      "Recorded maximum demand 920 kVA; after staggering starts 800 kVA",
+      "Saving: (920 minus 800) x 400 = Rs 48,000 a month, Rs 5.76 lakh a year",
+      "If the peak fell to 700 kVA, billing demand stays at the 750 kVA floor: saving (920 minus 750) x 400 = Rs 68,000, not Rs 88,000",
+      "kWh unchanged, so CO2 unchanged"
+    ],
+    "note": "Take the floor percentage, demand rate and any excess demand penalty from your own state commission's current tariff order."
+  },
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from your electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, so the carbon figure moves only when kWh does, not when a shaved peak lowers the demand line.",
+  "links": [
+    {
+      "label": "How to read an HT bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Time of day tariffs for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Does battery storage cut Scope 2?",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    },
+    {
+      "label": "Power factor rebate and penalty",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity Act, 2003, Section 62 (determination of tariff), Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Billing demand floors and demand rates differ by state and change with each tariff order."
+}

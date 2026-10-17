@@ -1,0 +1,76 @@
+{
+  "slug": "sf6-switchgear-leak-scope-1",
+  "q": "Do SF6 leaks from my factory's HT switchgear count in Scope 1, and how do I calculate them?",
+  "title": "SF6 switchgear leaks in Scope 1",
+  "short": "Yes. If you own or operate the 11 kV or 33 kV switchgear, SF6 that leaks from it is a Scope 1 fugitive emission. Calculate it as kilograms of SF6 lost times its GWP, using refill quantities from service reports, or nameplate charge times a leak rate when no refill data exists.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with their own 11 kV or 33 kV substations",
+  "sections": [
+    {
+      "h": "Why it is Scope 1",
+      "p": [
+        "SF6 is one of the seven greenhouse gases the GHG Protocol Corporate Standard covers. Gas escaping from equipment you control is a direct, fugitive emission. Equipment owned and run by the discom, even if it stands in your yard, is in the discom's inventory, not yours. Report SF6 as a separate gas line as well as inside the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Method 1: from refill records (preferred)",
+      "p": [
+        "The kilograms topped up during a service equal the kilograms that leaked since the last fill. Add all refills in the year. This is the mass balance approach the IPCC 2006 Guidelines describe for electrical equipment, Volume 3, Chapter 8.2. Also count gas vented when equipment is opened, repaired or scrapped without recovery."
+      ]
+    },
+    {
+      "h": "Method 2: from the nameplate (screening)",
+      "p": [
+        "Leak (kg per year) = SF6 charge on the nameplate x annual leak rate. Use the leak rate given in IPCC 2006 Volume 3, Chapter 8 for your equipment type (sealed-pressure or closed-pressure), or the rate guaranteed on the manufacturer's data sheet. Label the result as an estimate."
+      ]
+    },
+    {
+      "h": "Which GWP to use",
+      "p": [
+        "Under IPCC AR5 the 100-year GWP of SF6 is 23,500. Under AR6 it is 25,200 (WG1 Chapter 7, Table 7.SM.7). Use the same set as the rest of your inventory and state it. Small leaks matter: 1 kg of SF6 is 23.5 t CO2e under AR5 and 25.2 t CO2e under AR6."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 33 kV substation",
+    "lines": [
+      "Eight gas-insulated panels, nameplate SF6 total: 40 kg",
+      "Screening, at an assumed 0.5% a year from the data sheet: 40 x 0.005 = 0.2 kg",
+      "0.2 x 23,500 (AR5) = 4,700 kg CO2e, about 4.7 t CO2e; 0.2 x 25,200 (AR6) = 5,040 kg CO2e",
+      "Actual: service report shows 1.5 kg refilled in the year",
+      "1.5 x 23,500 (AR5) = 35,250 kg CO2e, about 35.3 t CO2e; 1.5 x 25,200 (AR6) = 37,800 kg CO2e, about 37.8 t CO2e"
+    ],
+    "note": "The 0.5% rate is illustrative. When refill records exist, use them: here they give a figure seven and a half times the screening estimate."
+  },
+  "senseible": "Senseible calculates fugitive emissions such as SF6 from measured data, for example the kilograms refilled on a service report, and keeps that report as the evidence behind the Scope 1 line.",
+  "links": [
+    {
+      "label": "AR5 or AR6 GWP values",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Scope 1 emissions in manufacturing",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 8.2, electrical equipment",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.SM.7",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

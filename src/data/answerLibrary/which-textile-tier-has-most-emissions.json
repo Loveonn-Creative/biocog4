@@ -1,0 +1,87 @@
+{
+  "slug": "which-textile-tier-has-most-emissions",
+  "q": "Which stage of the textile supply chain has the most emissions: fibre, spinning, weaving or dyeing?",
+  "title": "Which textile stage has the most emissions?",
+  "short": "Dyeing and finishing is usually the largest stage, followed by yarn preparation (spinning), then fibre production. Quantis's Measuring Fashion study put dyeing and finishing at about 36% of apparel's climate impact. In India, coal-fired boilers at dye houses and a coal-heavy grid can push the processing share higher still.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Garment exporters prioritising supplier engagement",
+  "sections": [
+    {
+      "h": "What global studies show",
+      "p": [
+        "The Quantis Measuring Fashion study (2018) found dyeing and finishing to be the biggest contributor to the apparel industry's climate impact, at about 36%, with yarn preparation at about 28% and fibre production at about 15%. Cutting, sewing and trims, the stage most exporters run themselves, was a small share.",
+        "These are global averages across fibres and countries. Treat them as a guide to where to look, not as your own split."
+      ]
+    },
+    {
+      "h": "Why the processing stages dominate",
+      "ul": [
+        "Dyeing and finishing: hot water and steam for scouring, bleaching, dyeing, washing, drying and stentering. Steam usually comes from coal, wood or furnace oil boilers, or thermic fluid heaters.",
+        "Spinning: ring frames, compressors and humidification run around the clock on grid electricity.",
+        "Weaving and knitting: mostly electricity, less than spinning per kg.",
+        "Fibre: fertiliser and irrigation for cotton, fossil feedstock and energy for polyester."
+      ]
+    },
+    {
+      "h": "What changes the split for an Indian supply chain",
+      "p": [
+        "Grid power in India carries 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0), which weighs on spinning. Many dye houses in Tiruppur, Surat, Ludhiana and Erode clusters burn coal or wood, and coal carries 2.42 kg CO2 per kg (IPCC 2006 default). A mill with rooftop solar or a gas boiler will look very different from its neighbour, so the stage ranking can flip between two suppliers in the same town."
+      ]
+    },
+    {
+      "h": "A decision rule for supplier engagement",
+      "ol": [
+        "Ask your fabric processors (dye houses, printers, finishers) for their fuel and electricity bills first; this is GHG Protocol Scope 3 Category 1 data for you.",
+        "Then ask spinners for their electricity bills and output in kg yarn.",
+        "Use a dataset value for fibre unless a brand asks for farm-level data.",
+        "Rank by kg CO2 per kg fabric, not by spend, and revisit after each year's bills."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one supply chain, per kg of knitted fabric",
+    "lines": [
+      "Spinning (assumed 3.5 kWh per kg yarn): 3.5 x 0.710 = 2.485 kg CO2",
+      "Knitting (assumed 0.5 kWh per kg): 0.5 x 0.710 = 0.355 kg CO2",
+      "Dye house (assumed 0.4 kWh and 0.6 kg coal per kg): 0.4 x 0.710 + 0.6 x 2.42 = 0.284 + 1.452 = 1.736 kg CO2",
+      "Processing total: 2.485 + 0.355 + 1.736 = 4.576 kg CO2, about 4.58 kg per kg, of which the dye house is 38% and spinning 54%"
+    ],
+    "note": "Energy use per kg is assumed for illustration. In this chain spinning comes out ahead of the dye house, which shows why your own suppliers' bills matter more than global shares. Replace each line with the supplier's own bills and output."
+  },
+  "senseible": "A dye house or spinning mill can upload its own fuel and electricity bills to Senseible and get a document-backed Scope 1 and 2 figure to pass to you as measured supplier data, which you can then rank by kg CO2 per kg fabric.",
+  "links": [
+    {
+      "label": "Which suppliers to engage first",
+      "to": "/answers/which-suppliers-to-engage-first-on-scope-3"
+    },
+    {
+      "label": "Data from tier 2 suppliers",
+      "to": "/answers/how-to-get-emissions-data-from-tier-2-suppliers"
+    },
+    {
+      "label": "Cotton or polyester fabric",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Scope 3 for textile exporters in India",
+      "to": "/solutions/scope3-textile-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "UNFCCC Fashion Industry Charter for Climate Action (unfccc.int)",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Stage shares are global averages from Quantis Measuring Fashion (2018); Indian chains may differ."
+}

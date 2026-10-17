@@ -52,6 +52,10 @@
     {
       "label": "Supplier due diligence screening",
       "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Check a plot is deforestation free since 2020",
+      "to": "/answers/check-plot-deforestation-free-since-2020"
     }
   ],
   "sources": [

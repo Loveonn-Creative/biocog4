@@ -1,0 +1,81 @@
+{
+  "slug": "sustainability-linked-bond-coupon-step-up",
+  "q": "How does a sustainability-linked bond coupon step-up work if a target is missed?",
+  "title": "SLB coupon step-up when a target is missed",
+  "short": "If the issuer misses its sustainability performance target on the observation date, the bond's coupon rises by a fixed margin, often quoted in basis points, from the next coupon period, usually until maturity. The money raised can be used for any purpose; the penalty is the only link to the target.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Indian corporate treasurers and lenders",
+  "sections": [
+    {
+      "h": "The parts of the mechanism",
+      "ul": [
+        "KPI: one or more metrics core to the business, such as Scope 1 and 2 tonnes or tonnes CO2 per tonne of product, with a stated baseline year.",
+        "Sustainability performance target (SPT): the level the KPI must reach, and the observation date on which it is tested.",
+        "Trigger event: the SPT is not met on the observation date, or the KPI is not reported and verified in time.",
+        "Step-up: the coupon increase, its size, and the coupon period from which it applies.",
+        "Verification: an independent reviewer checks KPI performance; the ICMA Sustainability-Linked Bond Principles call for this at least once a year and for any date that can change the bond's terms."
+      ]
+    },
+    {
+      "h": "When the higher coupon starts and stops",
+      "p": [
+        "The bond documents fix this, so read the term sheet. A common pattern is: the KPI is measured for a financial year, the verified result is published some months later, and the step-up applies from the first coupon period after that publication date to maturity. The step-up does not normally reverse if the issuer later catches up, unless the documents say so.",
+        "Some structures use a one-off premium payment at maturity or a higher redemption price instead of a coupon change. The principle is the same: missing the target costs the issuer money."
+      ]
+    },
+    {
+      "h": "What SEBI requires for Indian issues",
+      "p": [
+        "SEBI's circular of 5 June 2025 set a framework for ESG debt securities other than green debt securities, covering social, sustainability and sustainability-linked bonds listed or proposed to be listed under the NCS Regulations. It sets initial and continuing disclosures, expects labels to follow a recognised standard such as the ICMA principles, and requires an independent third-party reviewer whose scope of review is stated in the offer document. Read the circular for the exact KPI and target disclosures your issue needs."
+      ]
+    },
+    {
+      "h": "Checks before you sign up to a target",
+      "ol": [
+        "Can you measure the KPI every year from records an outside reviewer will accept, such as fuel invoices and electricity bills?",
+        "Is the baseline fixed, with a rule for recalculating it after an acquisition or a methodology change?",
+        "Is the target ambitious beyond business as usual? A soft target draws criticism and may fail the reviewer's assessment.",
+        "Have you modelled the cost of missing it over the remaining life of the bond?",
+        "What happens if data is late: most documents treat a missing verified report as a missed target."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 25 basis point step-up",
+    "lines": [
+      "Principal: Rs 500 crore, coupon 8.00 percent a year, five years to maturity (figures assumed for illustration)",
+      "Target missed; step-up of 25 basis points applies for the last three years",
+      "Extra interest each year: 500 crore x 0.25 percent = Rs 1.25 crore",
+      "Extra interest over three years: 1.25 x 3 = Rs 3.75 crore, with the coupon now 8.25 percent"
+    ],
+    "note": "The 25 basis point size is an assumption for illustration; the actual step-up is set in each bond's documents."
+  },
+  "senseible": "Senseible keeps an invoice-backed record of Scope 1 and 2 emissions, with the factor and source document on each line, that an issuer can use to track an emissions KPI through the year and hand to its reviewer.",
+  "links": [
+    {
+      "label": "Sustainability-linked loan KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "What an SLL verifier checks",
+      "to": "/answers/sll-kpi-verification-what-verifier-checks"
+    },
+    {
+      "label": "Climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular on framework for ESG debt securities (other than green debt securities), 5 June 2025",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "LMA Sustainability-Linked Loan Principles (loan counterpart of the ICMA Sustainability-Linked Bond Principles)",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SEBI's ESG debt framework took effect in June 2025; check the NCS master circular for amendments and the current ICMA principles edition."
+}

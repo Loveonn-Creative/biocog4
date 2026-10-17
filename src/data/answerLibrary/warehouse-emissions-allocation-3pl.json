@@ -1,0 +1,63 @@
+{
+  "slug": "warehouse-emissions-allocation-3pl",
+  "q": "How do I allocate a shared 3PL warehouse's emissions to my goods?",
+  "title": "Your share of a shared 3PL warehouse",
+  "short": "Work out the whole site's emissions from its electricity, diesel and refrigerant records, then take your share by tonnes handled, the default key for logistics hubs under the GLEC Framework and ISO 14083. Use pallet-days instead when goods sit for long periods. Report the result as Scope 3 Category 4.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Exporters and brands using third-party warehouses in India",
+  "sections": [
+    {
+      "h": "Step 1: get the site total",
+      "ul": [
+        "Grid electricity from the warehouse's discom bills, at 0.710 kg CO2 per kWh.",
+        "Diesel for DG sets and diesel forklifts, at 2.68 kg CO2 per litre (IPCC 2006 default); LPG forklifts at 2.98 kg CO2 per kg.",
+        "Refrigerant top-ups for cold rooms, in kg of gas times its GWP, reported as CO2e.",
+        "Rooftop solar used on site adds no grid emissions; exclude exported units."
+      ]
+    },
+    {
+      "h": "Step 2: choose the allocation key",
+      "p": [
+        "The GLEC Framework and ISO 14083 express hub emissions as an intensity per tonne handled, so throughput is the default key for cross-docks and fast-moving stock. For storage-heavy sites where your goods sit for weeks, pallet-days or occupied square metre-days follow the energy more closely, since lighting and cooling run whether goods move or not.",
+        "Split temperature-controlled and ambient areas first if the 3PL can sub-meter them, then allocate each pool separately. A cold room can use several times the energy of the same floor area at ambient."
+      ]
+    },
+    {
+      "h": "Step 3: when the 3PL shares nothing",
+      "p": [
+        "Use a default hub intensity from the GLEC Framework for the hub type (ambient warehouse, temperature-controlled, transhipment), multiply by your tonnes handled, and label it a default-based estimate. Ask for the site bills in the next contract renewal so the figure can move to primary data."
+      ]
+    },
+    {
+      "h": "Which scope it falls in",
+      "p": [
+        "Storage you buy from a 3PL is GHG Protocol Scope 3 Category 4, upstream transportation and distribution, whether it sits before or after a sale, as long as you pay for it. Storage of sold goods that your customer pays for is their concern, or your Category 9. If you lease and run a dedicated, separately metered space, it may be Scope 2 instead; the linked page on rented warehouses covers that decision."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a shared ambient warehouse, one year",
+    "lines": [
+      "Grid electricity: 6,00,000 kWh x 0.710 = 4,26,000 kg CO2",
+      "Diesel (DG and forklifts): 20,000 L x 2.68 = 53,600 kg CO2",
+      "Site total: 4,26,000 + 53,600 = 4,79,600 kg CO2",
+      "Throughput 50,000 t; intensity 4,79,600 / 50,000 = 9.592 kg CO2 per tonne handled",
+      "Your goods: 4,000 t x 9.592 = 38,368 kg CO2, about 38.4 t (8% of the site)",
+      "Pallet-day check: your 1,200 average pallets of 12,000 = 10%, giving 47,960 kg CO2"
+    ],
+    "note": "Pick one key, say which, and use it every year. A 25% gap between keys, as here, is normal."
+  },
+  "senseible": "If the 3PL shares its electricity bills and diesel invoices, Senseible reads them and applies the CEA grid factor and IPCC 2006 fuel factors to give the site total with the source file behind each line. Choosing the allocation key and applying your share is a step you take with that total.",
+  "links": [
+    { "label": "Rented warehouse: Scope 2 or 3", "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3" },
+    { "label": "Freight emissions calculator", "to": "/calculators/logistics-emissions" },
+    { "label": "Freight: Category 4 or 9", "to": "/answers/is-freight-scope-3-category-4-or-9" }
+  ],
+  "sources": [
+    { "label": "GLEC Framework v3, logistics hub emissions", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "ISO 14083:2023, Quantification of GHG emissions from transport chain operations (iso.org)", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 4", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-16"
+}

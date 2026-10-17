@@ -1,0 +1,90 @@
+{
+  "slug": "what-to-include-in-a-sustainable-procurement-policy",
+  "q": "What should a sustainable procurement policy include for a mid-sized Indian company?",
+  "title": "What goes in a sustainable procurement policy",
+  "short": "A sustainable procurement policy should state its scope, your commitments on environment, labour and ethics, how priority categories are chosen, what suppliers must sign and share, how requirements enter tenders and contracts, the KPIs you will track, and who owns and reviews it. Two to four pages is enough for most mid-sized firms.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Procurement heads and listed companies' value chains",
+  "sections": [
+    {
+      "h": "The sections, in order",
+      "ol": [
+        "Purpose and scope: which entities, plants and spend categories it covers, and any value threshold below which it does not apply.",
+        "Commitments: environment (emissions, water, waste, chemicals), labour and human rights, business ethics, and support for MSME and local suppliers.",
+        "Prioritisation: how you decide where to act first, based on spend and risk, and how often you redo that review.",
+        "Supplier code of conduct: the minimum standards every supplier signs, and what happens on a breach.",
+        "Requirements in the buying process: how criteria enter specifications, tenders, evaluation and contracts. Point to your detailed procedures rather than repeating them.",
+        "Data and evidence: what suppliers must report and how often, such as fuel and electricity use or emissions with source documents.",
+        "KPIs and reporting: the measures you will publish each year.",
+        "Governance: the policy owner, board or management approval with a date, training for buyers, a grievance channel, and an annual review."
+      ]
+    },
+    {
+      "h": "Link it to what BRSR asks",
+      "p": [
+        "BRSR Principle 2 asks whether you have procedures for sustainable sourcing and what percentage of inputs were sourced sustainably. BRSR does not fix the definition, so the policy must. Write down which suppliers or inputs count, for example those that signed the code, passed an assessment, and share emissions data, so the percentage is the same each year.",
+        "Under Principle 8, BRSR also asks for the share of input material sourced directly from MSMEs and small producers, and large listed companies face value chain disclosure requests. Building those measures into the policy saves rework at reporting time."
+      ]
+    },
+    {
+      "h": "What ISO 20400 adds",
+      "p": [
+        "ISO 20400:2017 is guidance, not a certifiable standard. It treats sustainable procurement in four layers: fundamentals and principles, policy and strategy, organising the procurement function, and the buying process itself. Use it as a checklist for gaps, for example whether buyers are trained or whether contract reviews check the commitments."
+      ]
+    },
+    {
+      "h": "Keep it workable for suppliers",
+      "ul": [
+        "Phase requirements: code signature first, data sharing next year, reduction plans after that.",
+        "Ask for data in a format small suppliers can produce from invoices and bills.",
+        "Do not demand certifications that cost more than the order is worth; accept documented evidence instead.",
+        "Say how you will help: training, longer contracts, or support with finance."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a sustainably sourced inputs KPI",
+    "lines": [
+      "Definition in the policy: inputs from suppliers who signed the code and shared a year of emissions data with source documents",
+      "Total inputs purchased in the year: Rs 120 crore",
+      "Inputs from suppliers meeting the definition: Rs 30 crore",
+      "KPI: 30 / 120 = 25 percent sustainably sourced, reported in BRSR Principle 2"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible gives suppliers a way to produce invoice-based emissions evidence, with the source document behind each line, that a policy can request and a buyer can check.",
+  "links": [
+    {
+      "label": "Carbon criteria in supplier selection",
+      "to": "/answers/how-to-add-carbon-criteria-to-supplier-selection"
+    },
+    {
+      "label": "BRSR value chain data request",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 20400:2017, Sustainable procurement, Guidance",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI BRSR Core circular and updated BRSR format (July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

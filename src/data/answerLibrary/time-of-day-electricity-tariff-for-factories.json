@@ -61,6 +61,10 @@
     {
       "label": "Hourly grid emission factors for India",
       "to": "/answers/hourly-grid-emission-factors-india"
+    },
+    {
+      "label": "Maximum demand charges and peak shaving",
+      "to": "/answers/maximum-demand-charges-peak-shaving"
     }
   ],
   "sources": [

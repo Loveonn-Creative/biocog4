@@ -1,0 +1,79 @@
+{
+  "slug": "article-8-vs-article-9-fund-investee-company",
+  "q": "What is the difference between an Article 8 and an Article 9 fund for the company it invests in?",
+  "title": "Article 8 vs Article 9 funds for investees",
+  "short": "An Article 8 fund promotes environmental or social traits and checks that you follow good governance. An Article 9 fund must treat almost every holding as a sustainable investment, so it has to show your company contributes to an environmental or social goal, does no significant harm and is well governed. Expect deeper diligence from Article 9.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian founders and CFOs raising from EU funds",
+  "sections": [
+    {
+      "h": "What each fund must prove about you",
+      "ul": [
+        "Article 8: that you meet the environmental or social characteristics the fund promotes, often exclusions or minimum ESG scores, and that you follow good governance practices.",
+        "Article 8 with a sustainable investment share: the same, plus the full sustainable investment test for the part of the fund it counts as sustainable.",
+        "Article 9: the full test for nearly every holding, apart from cash and hedging. A fund whose objective is cutting carbon is expected to track an EU Climate Transition or Paris-aligned Benchmark where one exists."
+      ]
+    },
+    {
+      "h": "The sustainable investment test in Article 2(17)",
+      "ol": [
+        "Contribution: your activity contributes to an environmental or social objective, measured by indicators such as emissions, energy, water or revenue from climate solutions.",
+        "Do no significant harm: you do not seriously harm other objectives. Funds apply this using the PAI indicators, so your emissions, fossil exposure, waste and controversies are checked.",
+        "Good governance: sound management structures, employee relations, staff pay and tax compliance."
+      ],
+      "p": [
+        "SFDR does not fix how a fund measures contribution. The Commission's answers published in April 2023 confirm each fund sets and discloses its own method, so two Article 9 funds can judge the same company differently."
+      ]
+    },
+    {
+      "h": "What changes for you in practice",
+      "ul": [
+        "Data: an Article 9 fund needs your PAI figures to clear the harm test, not just to report them.",
+        "Ongoing checks: if you fail the test later, an Article 9 fund may have to sell or stop counting you as sustainable. An Article 8 fund usually has more room.",
+        "Evidence: claims about climate contribution need numbers with sources, such as tonnes avoided or revenue share, not descriptions."
+      ]
+    },
+    {
+      "h": "A pending change to the labels",
+      "p": [
+        "The Commission proposed on 20 November 2025 to replace the Article 8 and 9 labels with three product categories: sustainable, transition and ESG basics. The Council agreed its position on 24 June 2026, and talks with the Parliament were being prepared in October 2026. Until a final text is agreed and applies, Articles 8 and 9 remain the law, and funds will keep asking for the same data."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the evidence behind the environmental figures a fund cites, such as emissions and energy use from your invoices and bills, as a self-declared record. It does not assess whether a fund or your company qualifies under Article 8 or 9.",
+  "links": [
+    {
+      "label": "Why EU funds ask for SFDR PAI data",
+      "to": "/answers/why-eu-fund-asks-for-sfdr-pai-data"
+    },
+    {
+      "label": "SFDR PAI data request: what to send",
+      "to": "/answers/sfdr-pai-data-request-from-eu-investor"
+    },
+    {
+      "label": "EU Taxonomy DNSH criteria explained",
+      "to": "/answers/eu-taxonomy-dnsh-criteria-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2019/2088 on sustainability-related disclosures (SFDR), Articles 2(17), 4, 8 and 9 (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Delegated Regulation (EU) 2022/1288, Annex I (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission answers on SFDR questions (April 2023), in the ESAs' consolidated questions and answers on SFDR (JC 2023 18)",
+      "url": "https://finance.ec.europa.eu"
+    },
+    {
+      "label": "European Commission, proposal to revise SFDR (20 November 2025)",
+      "url": "https://finance.ec.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "SFDR revision trilogues were being prepared in October 2026; check whether the Article 8 and 9 labels have been replaced before relying on this page."
+}

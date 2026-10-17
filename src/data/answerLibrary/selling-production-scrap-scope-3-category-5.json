@@ -51,6 +51,10 @@
     {
       "label": "Plastic EPR recycled content targets",
       "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Scrap sold for recycling in Scope 3",
+      "to": "/answers/scrap-sold-for-recycling-scope-3"
     }
   ],
   "sources": [

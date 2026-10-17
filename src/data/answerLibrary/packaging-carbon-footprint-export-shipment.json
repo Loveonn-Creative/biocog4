@@ -1,0 +1,89 @@
+{
+  "slug": "packaging-carbon-footprint-export-shipment",
+  "q": "How do I calculate the carbon footprint of the packaging on my exports?",
+  "title": "Packaging footprint on export shipments",
+  "short": "Weigh each packaging material per shipment (cartons, film, pallets, labels, strapping), multiply each weight by a material emission factor in kg CO2e per kg, add them up and divide by the units shipped. Use your packaging supplier's own footprint where you have one, and say which factors you used.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian exporters answering buyer packaging and PCF questions",
+  "sections": [
+    {
+      "h": "What counts as packaging",
+      "ul": [
+        "Primary: the pouch, bottle or wrap the buyer's customer sees.",
+        "Secondary: inner cartons and shrink packs.",
+        "Transport: master cartons, stretch film, strapping, pallets, corner boards, desiccants and labels.",
+        "ISO 14067 and the GHG Protocol Product Standard treat packaging as part of the product system, so a cradle to gate footprint includes making these materials. Disposal belongs in a cradle to grave figure."
+      ]
+    },
+    {
+      "h": "Where to get the weights",
+      "p": [
+        "Your packaging purchase invoices give total kg or number of cartons bought in a period. Divide by cartons used to get kg per carton, or weigh ten empty cartons and take the average. Film and strapping are easiest per pallet: weigh a roll before and after wrapping a few pallets."
+      ]
+    },
+    {
+      "h": "Which factor to use",
+      "ol": [
+        "A footprint from your packaging supplier for that exact product, with its method stated.",
+        "An Indian or regional figure from a named study, if one exists for that material.",
+        "The UK government (DESNZ) material use factors for paper and board or plastics. They are UK averages, so label them as such; a figure for Indian board may differ."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Recycled content: use the factor for recycled material only where the supplier documents the content.",
+        "Reusable pallets: divide the pallet's footprint by the trips you expect, and record that assumption.",
+        "Wooden pallets: report any biogenic carbon separately, not netted off the total.",
+        "Mixed loads: allocate packaging by units or mass in each carton, not by invoice value."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative shipment of 12,000 pieces",
+    "lines": [
+      "Master cartons: 1,000 x 0.6 kg corrugated board = 600 kg",
+      "Stretch film: 15 kg LDPE",
+      "Board: 600 kg x 1.0 kg CO2e per kg = 600 kg CO2e",
+      "Film: 15 kg x 2.5 kg CO2e per kg = 37.5 kg CO2e",
+      "Total: 637.5 kg CO2e; per piece: 637.5 / 12,000 = 0.053 kg, about 53 g CO2e"
+    ],
+    "note": "The factors 1.0 and 2.5 are illustrative round numbers, not DESNZ values. Replace them with the current DESNZ material use factors (UK averages) or your supplier's figures."
+  },
+  "senseible": "Senseible reads packaging purchase invoices for quantity and unit, and applies a material factor only where a sourced factor exists; a line without a printed quantity shows Needs Data. Where only spend is available, Senseible can provide a spend-based estimate, labelled as such with wider uncertainty. Weight per unit shipped and units counted come from your packing records.",
+  "links": [
+    {
+      "label": "Footprint from invoices",
+      "to": "/answers/how-to-calculate-carbon-footprint-from-invoices"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Counting recycled content",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "EU PPWR for Indian exporters",
+      "to": "/answers/eu-ppwr-requirements-for-indian-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UK government conversion factors for company reporting (DESNZ), material use tables",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "DESNZ publishes new factors each year; use the edition for your reporting year and note that they are UK averages."
+}

@@ -60,6 +60,10 @@
     {
       "label": "Does R-22 count in Scope 1?",
       "to": "/answers/does-r22-count-in-scope-1"
+    },
+    {
+      "label": "Estimate leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
     }
   ],
   "sources": [

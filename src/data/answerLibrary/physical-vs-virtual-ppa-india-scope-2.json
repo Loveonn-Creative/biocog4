@@ -1,0 +1,81 @@
+{
+  "slug": "physical-vs-virtual-ppa-india-scope-2",
+  "q": "Can an Indian company use a virtual PPA for market-based Scope 2?",
+  "title": "Virtual PPAs and Scope 2 in India",
+  "short": "Yes, through the RECs it delivers. A virtual PPA settles only the price difference, so no power reaches you; your market-based claim rests on the Indian RECs transferred to you and retired in your name. CERC issued guidelines for virtual PPAs on 24 December 2025, under which those RECs cannot be traded.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Large consumers and exporters seeking renewable energy claims",
+  "sections": [
+    {
+      "h": "What a virtual PPA is",
+      "p": [
+        "The generator sells its power into the market as usual. You and the generator agree a strike price: when the market price is below it you pay the difference, and when it is above the generator pays you. Alongside, the renewable attributes come to you as certificates. Your own electricity still comes from your discom or existing supply."
+      ]
+    },
+    {
+      "h": "Where it stands in India",
+      "p": [
+        "CERC issued Guidelines for Virtual Power Purchase Agreements on 24 December 2025. The generator, registered under the CERC REC Regulations, 2022, sells its power through a route allowed by the Electricity Act, 2003 or the Power Market Regulations, 2021, and that sale counts toward no one's renewable obligation. The RECs for the contracted output are transferred to you and cannot be traded, the contract runs for at least one year, and the gap between strike and market price is settled between the two parties.",
+        "Designated consumers can use these RECs toward their renewable consumption obligation. Enforceability, accounting and tax treatment of the price settlement still need your lawyer's and auditor's view before you sign."
+      ]
+    },
+    {
+      "h": "What makes the Scope 2 claim count",
+      "ol": [
+        "The contract must convey the attributes to you alone, and the certificates must be retired in your name.",
+        "Certificates must come from the same market as your consumption; for an Indian site, RECs issued under the CERC REC Regulations, 2022 meet this, and under the guidelines they come to you directly.",
+        "The vintage should be close to the period you report.",
+        "No one else, including the generator or the discom, may claim the same units.",
+        "Without certificates, the financial settlement alone supports no market-based claim."
+      ]
+    },
+    {
+      "h": "What to report",
+      "p": [
+        "Location-based Scope 2 does not change: all units you consume at the grid factor. Market-based Scope 2 counts the units covered by retired certificates at zero, and the rest at a residual mix factor or, where none is published, the grid average with a note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative year for a plant using 10,000 MWh",
+    "lines": [
+      "Location-based: 10,000,000 kWh x 0.710 = 7,100,000 kg CO2, 7,100 tonnes",
+      "RECs transferred and retired from the virtual PPA project: 6,000 (1 REC = 1 MWh)",
+      "Market-based: remaining 4,000,000 kWh x 0.710 = 2,840,000 kg CO2, 2,840 tonnes",
+      "Report both figures and name the certificate type and project"
+    ],
+    "note": "India has no published residual mix, so the grid average is used for the uncovered units and noted."
+  },
+  "senseible": "Senseible works out location-based Scope 2 from your electricity bills and market-based Scope 2 once you add the instrument data, such as the REC transfer and retirement records from the virtual PPA, so both figures sit next to their evidence.",
+  "links": [
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "What to put in a PPA for a carbon claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Check the CERC virtual PPA guidelines (24 December 2025) for amendments, and the GHG Protocol's Scope 2 revision, before relying on this."
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "chp-emissions-allocation-electricity-and-steam",
+  "q": "How are emissions from a cogeneration (CHP) plant split between electricity and steam?",
+  "title": "Splitting CHP emissions: power and steam",
+  "short": "Use the efficiency method from the GHG Protocol CHP allocation guidance: divide each output by the efficiency of making it separately, and share the plant's total emissions in proportion. Steam gets less per MWh than power because heat is cheaper to make. Energy content and work potential methods exist but must be stated if used.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sugar, paper and chemical plants with captive cogeneration, and their steam customers",
+  "sections": [
+    {
+      "h": "Who needs the split, and who does not",
+      "p": [
+        "The plant owner reports all fuel burnt in the CHP unit in Scope 1, whatever happens to the outputs. Selling steam or power does not reduce your Scope 1.",
+        "The split matters for the buyer of steam or power, who reports their share as Scope 2, and for the owner's own intensity figures, such as CO2 per tonne of paper, when part of the output goes to other units or customers."
+      ]
+    },
+    {
+      "h": "The three allocation methods",
+      "ul": [
+        "Efficiency method: share of emissions to heat = (H / eH) / (H / eH + P / eP), where H is heat output, P is power output, and eH and eP are reference efficiencies for making each separately. The GHG Protocol guidance prefers this method.",
+        "Energy content method: split by MWh of output. Simple, but it gives heat too much because a MWh of heat is worth less than a MWh of power.",
+        "Work potential (exergy) method: split by the useful work each output can do. Defensible for steam at known pressure and temperature, but needs steam tables."
+      ]
+    },
+    {
+      "h": "Getting the inputs right",
+      "ol": [
+        "Total emissions: each fuel quantity from invoices or weighbridge slips x its factor, such as 2.42 kg CO2 per kg of coal (IPCC 2006 default).",
+        "Power output: net export from the generator meter, after auxiliary consumption.",
+        "Heat output: net useful heat in MWh, that is steam enthalpy minus the enthalpy of condensate returned, not the gross steam flow.",
+        "Efficiencies: use your own measured figures where you have them, otherwise state the reference values you assumed."
+      ]
+    },
+    {
+      "h": "Bagasse and other biomass",
+      "p": [
+        "Sugar mills burning bagasse, and paper mills burning black liquor, report the CO2 from that biomass separately from the scopes as biogenic CO2. Methane and nitrous oxide from the same combustion stay in Scope 1. Allocate the fossil and non-CO2 part with the same method, and show the biogenic part beside it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: coal-fired CHP, efficiency method",
+    "lines": [
+      "Coal burnt: 4,000 t x 2.42 kg CO2 per kg = 9,680 t CO2",
+      "Outputs: power 20,000 MWh, net heat 60,000 MWh; assumed efficiencies: power 35 percent, heat 80 percent",
+      "Heat: 60,000 / 0.80 = 75,000; power: 20,000 / 0.35 = 57,143; total 132,143",
+      "Steam share: 75,000 / 132,143 = 56.8 percent, so 9,680 x 0.5676 = 5,494 t CO2, about 92 kg CO2 per MWh of heat",
+      "Power share: 43.2 percent, so 4,186 t CO2, about 209 kg CO2 per MWh",
+      "By energy content instead: steam 75 percent (7,260 t), power 25 percent (2,420 t)"
+    ],
+    "note": "The 35 and 80 percent efficiencies are assumptions for illustration. Tell steam customers which method and efficiencies you used."
+  },
+  "senseible": "Senseible reads the fuel invoices for a CHP unit, such as coal, furnace oil or PNG, and calculates Scope 1 with IPCC 2006 factors and the source on each line. Those fuel totals are the starting figure you split between power and steam with your chosen method.",
+  "links": [
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol, Allocation of GHG Emissions from a Combined Heat and Power (CHP) Plant",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

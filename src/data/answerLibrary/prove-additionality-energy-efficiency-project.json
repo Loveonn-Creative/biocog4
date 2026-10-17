@@ -1,0 +1,88 @@
+{
+  "slug": "prove-additionality-energy-efficiency-project",
+  "q": "How do I prove additionality for an energy efficiency or fuel switch project?",
+  "title": "Proving additionality for a factory project",
+  "short": "Show four things with dated documents: you considered carbon credits before you committed money, no law required the change, the project is not financially attractive without credit revenue or faces real barriers, and similar plants nearby have not already made the same change. Small projects may qualify through a simplified route.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Factory owners considering carbon credits for boiler, motor or fuel switch projects",
+  "sections": [
+    {
+      "h": "Prove you thought of credits before you started",
+      "p": [
+        "Validators check the project start date, usually the date you signed the purchase order or contract. They want evidence dated before it that carbon revenue was part of the decision: board minutes, a loan appraisal note, a consultant's proposal or an email to a project developer. Under CDM rules, projects also had to notify the host country authority and UNFCCC of their intent within 180 days of the start date. A project built first and pitched for credits later rarely passes."
+      ]
+    },
+    {
+      "h": "Show no law required it",
+      "p": [
+        "List every rule that touches the change: state pollution board consent conditions, boiler regulations, fuel bans in your city or region, and any energy saving obligation. If your plant is a designated consumer under the PAT scheme, explain how the project relates to your notified target. A change that a consent order already demands is not additional."
+      ]
+    },
+    {
+      "h": "Pass the investment or barrier test",
+      "ul": [
+        "Investment analysis (CDM Tool 27): build the cash flow from equipment quotes, installation invoices, energy savings worked out from past bills and current fuel prices. Show the return without credits falls below a benchmark and that the result holds if key inputs move about 10% either way.",
+        "A fuel switch where the new fuel is cheaper per unit of useful heat usually fails the investment test, so compare cost per useful kcal after boiler efficiency, not price per tonne.",
+        "Barrier analysis, used instead of or alongside: show a specific obstacle, such as a lender refusing to fund it or no reliable fuel supply, with letters or quotes, not general statements."
+      ]
+    },
+    {
+      "h": "Pass the common practice check",
+      "p": [
+        "Show the technology is not already normal among similar plants in your region. CDM Tool 24 gives a test: count comparable plants using the same measure without carbon credits; if they make up more than 20% of similar plants and number more than three, the measure is treated as common practice. Collect cluster association data, supplier sales lists or a state study as evidence."
+      ]
+    },
+    {
+      "h": "Simplified routes for small projects",
+      "p": [
+        "A small project can carry lighter paperwork. Under CDM rules, small-scale activities use Tool 21, where showing that at least one specific barrier, such as investment or technology, would have stopped the project can be enough, and some technologies and very small projects are deemed additional under conditions the tool sets. Your methodology, often AMS-II.D for industrial efficiency and fuel switching, decides which route you may use. Before you rely on any CDM tool, confirm that your programme, Verra or Gold Standard, currently accepts that methodology and tool."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative cost per useful heat for a coal to biomass switch",
+    "lines": [
+      "Coal: Rs 8,000 per tonne, 4,000 kcal per kg = Rs 2.00 per 1,000 kcal; boiler efficiency 75% gives Rs 2.00 / 0.75 = Rs 2.67 per 1,000 kcal of useful heat",
+      "Biomass briquettes: Rs 7,200 per tonne, 3,600 kcal per kg = Rs 2.00 per 1,000 kcal; efficiency 70% gives Rs 2.00 / 0.70 = Rs 2.86",
+      "Biomass costs (2.86 minus 2.67) / 2.67 = about 7% more per useful kcal, before the new burner capex",
+      "A higher running cost plus capex supports the investment test; if biomass were cheaper per useful kcal, you would need a barrier argument"
+    ],
+    "note": "Prices, calorific values and efficiencies are illustrative round numbers. Use your own quotes and measured boiler efficiency."
+  },
+  "senseible": "Senseible keeps your fuel and electricity bills as dated baseline evidence and gives carbon credit eligibility signals from that measured energy data. It does not test additionality, validate projects or issue credits; validation bodies and registries such as Verra and Gold Standard do that.",
+  "links": [
+    {
+      "label": "What is additionality?",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "The CDM investment analysis",
+      "to": "/answers/cdm-additionality-investment-analysis-explained"
+    },
+    {
+      "label": "Is a legally required project additional?",
+      "to": "/answers/is-a-legally-required-project-additional-india"
+    },
+    {
+      "label": "Coal to biomass boiler credits",
+      "to": "/answers/coal-to-biomass-boiler-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UNFCCC CDM Methodological Tools 01 (additionality), 21 (small-scale additionality), 24 (common practice) and 27 (investment analysis)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Verra VCS Standard, additionality requirements",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles (additionality)",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Verra and Gold Standard revise which CDM methodologies, tools and positive lists they accept; check the current versions before validation."
+}

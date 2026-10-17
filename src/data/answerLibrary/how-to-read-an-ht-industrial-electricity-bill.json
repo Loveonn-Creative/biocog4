@@ -59,6 +59,10 @@
     {
       "label": "kVAh bill to kWh for emissions",
       "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Maximum demand charges",
+      "to": "/answers/maximum-demand-charges-peak-shaving"
     }
   ],
   "sources": [

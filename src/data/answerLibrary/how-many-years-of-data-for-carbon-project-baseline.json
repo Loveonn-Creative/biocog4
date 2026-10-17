@@ -66,6 +66,10 @@
     {
       "label": "How long to keep invoices",
       "to": "/answers/how-long-to-keep-invoices-for-carbon-reporting"
+    },
+    {
+      "label": "Proving additionality for efficiency",
+      "to": "/answers/prove-additionality-energy-efficiency-project"
     }
   ],
   "sources": [

@@ -1,0 +1,77 @@
+{
+  "slug": "landlord-reporting-tenant-emissions-industrial-sheds",
+  "q": "If we lease out industrial sheds or warehouse space, do we report the tenants' electricity as Category 13?",
+  "title": "Landlords and tenant electricity: Category 13",
+  "short": "Usually yes. Under operational control, tenants run the sheds, so their electricity goes in your Scope 3 Category 13, downstream leased assets. Under financial control or equity share with an operating lease, it goes in your Scope 1 and 2. Electricity for common areas you run stays in your Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Owners of MSME estates, warehousing parks and commercial property in India",
+  "sections": [
+    {
+      "h": "Decision table for the lessor",
+      "ul": [
+        "Operating lease, operational control approach: tenant energy in Category 13.",
+        "Operating lease, financial control or equity share: tenant energy in your Scope 1 and 2.",
+        "Finance or capital lease, any approach: tenant energy in Category 13, because the tenant holds both control and the economic ownership.",
+        "Common areas you run (street lights, water pumps, security cabins, shared lifts): your Scope 1 and 2 under any approach."
+      ]
+    },
+    {
+      "h": "When power comes through your connection",
+      "p": [
+        "Many estates take one HT connection and bill tenants by sub-meter. The kWh on tenants' sub-meters are their Scope 2 under operational control. Take them out of your own Scope 2 and report them in Category 13, so your Scope 2 covers only common areas and your own office. Keep the main meter, sub-meter totals and losses reconciled, and count each tenant kWh once: here in Category 13, not again as resold electricity in Category 3."
+      ]
+    },
+    {
+      "h": "Is Category 13 required?",
+      "p": [
+        "Scope 3 categories are included when relevant. For a company whose business is leasing space, tenant energy is often its largest Scope 3 source, so leaving it out needs a written reason. Include tenant diesel generators and other fuel use where you can get the figures."
+      ]
+    },
+    {
+      "h": "When tenants will not share data",
+      "ol": [
+        "Use sub-meter readings you already hold.",
+        "Otherwise ask for discom bills, with names and account numbers hidden.",
+        "As a last resort, estimate from floor area x a kWh per square metre benchmark for that use, labelled as an estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an estate of 20 sheds",
+    "lines": [
+      "Tenants' sub-metered electricity: 1,800,000 kWh a year",
+      "Category 13: 1,800,000 x 0.710 = 1,278,000 kg, about 1,278 t CO2",
+      "Common areas on your connection: 120,000 kWh",
+      "Scope 2: 120,000 x 0.710 = 85,200 kg, about 85.2 t CO2",
+      "Tenant generators: 10,000 litres of diesel x 2.68 = 26,800 kg, about 26.8 t CO2, also in Category 13"
+    ],
+    "note": "Shown under the operational control approach with operating leases. Under financial control the 1,278 t and 26.8 t would move into your Scope 2 and Scope 1."
+  },
+  "senseible": "Senseible reads kWh from the electricity bills tenants share with you, and from your own bills, and applies the CEA factor of 0.710 kg CO2 per kWh. Your consolidation approach, and so the category, is a reporting choice you record.",
+  "links": [
+    {
+      "label": "Tenant side: rented warehouse electricity",
+      "to": "/answers/rented-warehouse-electricity-scope-2-or-scope-3"
+    },
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 13",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Revised Edition (2004), Appendix F on leased assets",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

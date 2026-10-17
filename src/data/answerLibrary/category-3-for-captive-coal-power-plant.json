@@ -1,0 +1,90 @@
+{
+  "slug": "category-3-for-captive-coal-power-plant",
+  "q": "If our steel or aluminium plant runs a captive coal power plant, what goes in Scope 1, Scope 2 and Category 3?",
+  "title": "Captive coal power: Scope 1, 2 or Category 3?",
+  "short": "Coal burnt in a captive power plant you control is Scope 1, and the power it makes for your own use is not Scope 2 because you did not buy it. Category 3 then holds the upstream emissions of that coal: mining, washing and transport to your plant. Only grid power you buy goes in Scope 2.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Steel, aluminium and ferroalloy producers with captive power in India and Indonesia",
+  "sections": [
+    {
+      "h": "Where each emission sits when you own the plant",
+      "ul": [
+        "Scope 1: CO2 from every tonne of coal burnt in the captive boilers, plus any diesel or furnace oil used for start-up and flame support.",
+        "Scope 2: only electricity bought from the grid or another company, such as top-up power during a boiler outage. Units your own plant generates and you consume are already counted in Scope 1, so they never appear in Scope 2.",
+        "Category 3, activity (a): upstream emissions of the coal and start-up fuels you bought, from extraction, processing and transport.",
+        "Category 3, activities (b) and (c): upstream emissions and transmission and distribution losses of the grid power you buy. These apply to the grid units only, never to self-generated units."
+      ]
+    },
+    {
+      "h": "If you sell surplus power to the grid or a neighbour",
+      "p": [
+        "The coal burnt to make the exported units stays in your Scope 1. The GHG Protocol Corporate Standard does not let you deduct emissions for electricity sold; you can report the exported MWh and their emissions as separate information next to the inventory. The buyer counts those units in its own Scope 2.",
+        "For an aluminium smelter or ferroalloy unit this matters because the plant may sell power in some months and buy in others. Keep the export and import meter readings for each month so both sides can be shown."
+      ]
+    },
+    {
+      "h": "When the captive plant is a separate company",
+      "p": [
+        "Some groups run the power plant through a separate company or a group captive arrangement. Whether its emissions are your Scope 1 or your Scope 2 depends on your consolidation approach. Under operational control, if your company runs the plant, its coal is your Scope 1. If another company controls it and you buy power under a supply agreement, those units are Scope 2 for you and its coal belongs to that company, so the coal's upstream emissions are not in your Category 3."
+      ]
+    },
+    {
+      "h": "Choosing an upstream factor for coal",
+      "p": [
+        "Upstream emissions of coal come mostly from methane released during mining and from diesel and power used to mine, wash and move it. The IPCC 2006 Guidelines, Volume 2, Chapter 4 treat mine methane separately for underground and surface mines, and underground mines release far more per tonne.",
+        "We could not find an official national well-to-tank factor for Indian or Indonesian coal, so check with your coal supplier and the latest national guidance first. Most companies use a published international well-to-tank factor, such as the UK government conversion factors, and say it is not specific to their mines. If your coal moves a long way by rail or sea and you already report that freight in Category 4, check that the factor you chose does not count the same journey again."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year at a steel plant with a captive power plant",
+    "lines": [
+      "Coal burnt in the captive plant: 200,000 t = 200,000,000 kg",
+      "Scope 1: 200,000,000 x 2.42 kg CO2 per kg (IPCC 2006 default) = 484,000,000 kg, 484,000 t CO2",
+      "Grid top-up during outages: 5,000,000 kWh x 0.710 kg CO2 per kWh = 3,550,000 kg, 3,550 t CO2 in Scope 2",
+      "Category 3 upstream coal: 200,000,000 x 0.15 kg CO2e per kg (illustrative only, not an official factor) = 30,000,000 kg, 30,000 t CO2e",
+      "Upstream coal as a share of Scope 1: 30,000 / 484,000 = about 6%"
+    ],
+    "note": "The 0.15 figure only shows the arithmetic; replace it with the published factor you choose and name its source. Indian coal varies widely in carbon content, so a factor based on your coal's GCV or tested carbon content will be closer than the IPCC default."
+  },
+  "senseible": "Senseible reads coal invoices in kg and applies the IPCC 2006 default of 2.42 kg CO2 per kg for Scope 1, and reads grid electricity bills for Scope 2 at 0.710 kg CO2 per kWh, with the source shown on each line. It keeps the coal quantities on file, so the upstream factor you choose and document for Category 3 is applied to the same tonnes.",
+  "links": [
+    {
+      "label": "Category 3 for fuel and grid power",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4 (operational boundaries)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 3",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy (Chapter 4, fugitive emissions from coal mining)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting (well-to-tank factors)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Upstream coal factors are not specific to Indian or Indonesian mines; recheck if a national well-to-tank factor is published."
+}

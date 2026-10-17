@@ -1,0 +1,76 @@
+{
+  "slug": "does-my-company-need-sbti-flag-target",
+  "q": "Does my company need an SBTi FLAG target?",
+  "title": "Do I need an SBTi FLAG target?",
+  "short": "You need an SBTi FLAG target if your company is in a sector the SBTi designates as FLAG, such as agricultural production, food processing, or forest and paper products, or if land-related emissions are 20% or more of your total emissions across scopes. Either trigger also requires a no-deforestation commitment.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Indian food, tea, spice, cotton and timber exporters setting SBTi targets",
+  "sections": [
+    {
+      "h": "The two triggers",
+      "ol": [
+        "Sector: the SBTi lists FLAG-designated sectors, including forest and paper products, agricultural production, animal-source food production, food and beverage processing, food and staples retailing, and tobacco. A tea estate, spice processor or timber mill usually falls in one of these.",
+        "Share: if you are not in a designated sector, add up your FLAG emissions. If they are 20% or more of total Scope 1, 2 and 3 emissions, a FLAG target is required."
+      ]
+    },
+    {
+      "h": "What counts as FLAG emissions",
+      "ul": [
+        "Land use change, such as clearing forest or grassland for farms, in your operations or supply chain.",
+        "Land management: fertiliser nitrous oxide, rice methane, enteric methane from cattle, manure, and on-farm machinery.",
+        "Removals and storage, such as trees on your land, reported separately and not netted off.",
+        "For a buyer of farm goods, most of this sits in Scope 3 Category 1, in the crops and fibre you purchase."
+      ]
+    },
+    {
+      "h": "What a FLAG target adds",
+      "p": [
+        "A FLAG target is set separately from your energy and industry target, using the SBTi FLAG pathway. It comes with a public commitment to no deforestation across your operations and supply chain. Your non-FLAG target still covers fuel, electricity and other emissions."
+      ]
+    },
+    {
+      "h": "Smaller companies",
+      "p": [
+        "Check how the SME route treats FLAG companies on the SBTi site before you apply; the SME route has its own rules and has changed over time. If you cannot apply as an SME, the full corporate route applies."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: cotton yarn exporter, not a designated sector",
+    "lines": [
+      "Total emissions, all scopes: 10,000 t CO2e",
+      "FLAG emissions in purchased raw cotton (fertiliser, field operations, land use change): 2,500 t CO2e",
+      "Share: 2,500 / 10,000 = 25%",
+      "25% is above the 20% threshold, so a FLAG target is required alongside the energy and industry target"
+    ],
+    "note": "Figures are illustrative. The FLAG share depends on the cotton emission factor you use; state its source."
+  },
+  "senseible": "Senseible measures operational Scope 1 and 2 from your invoices and bills and keeps Scope 3 supplier evidence, which gives you the totals for the 20% test. The target itself is set and validated through the SBTi.",
+  "links": [
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "Land use change in Scope 3",
+      "to": "/answers/land-use-change-emissions-in-scope-3"
+    },
+    {
+      "label": "When a Scope 3 target is required",
+      "to": "/answers/when-is-a-scope-3-target-required-sbti"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "SBTi is revising its standards; check the current FLAG Guidance version and the SME route's treatment of FLAG before applying."
+}

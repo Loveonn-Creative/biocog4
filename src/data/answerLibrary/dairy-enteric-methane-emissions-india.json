@@ -53,6 +53,10 @@
     {
       "label": "Methane and black carbon vs CO2",
       "to": "/climate-intelligence/methane-black-carbon-reductions-vs-co2"
+    },
+    {
+      "label": "Does my company need an SBTi FLAG target?",
+      "to": "/answers/does-my-company-need-sbti-flag-target"
     }
   ],
   "sources": [

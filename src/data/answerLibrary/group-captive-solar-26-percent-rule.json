@@ -54,6 +54,10 @@
     {
       "label": "Group captive solar in Scope 2",
       "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "What to put in a PPA for a carbon claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
     }
   ],
   "sources": [

@@ -1,0 +1,83 @@
+{
+  "slug": "packaging-end-of-life-emissions-food-exporters",
+  "q": "How do food processors calculate end-of-life emissions of the packaging they sell, and does India's plastic EPR data help?",
+  "title": "End-of-life emissions of sold packaging",
+  "short": "Take the tonnes of each packaging material you put on the market, split them by how they are disposed of in the country of sale, and multiply each share by a factor for that route. Report it in Scope 3 Category 12. EPR data gives you tonnes placed on the market, not actual disposal routes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Food processors and FMCG MSMEs in India, and exporters to the EU",
+  "sections": [
+    {
+      "h": "The method",
+      "ol": [
+        "List packaging sold with your products, by material: PE or PP film, multilayer laminate, PET, glass, carton board.",
+        "Get tonnes per material for the year, from packaging purchase invoices adjusted for stock.",
+        "Choose a disposal mix for each market of sale: landfill or dumping, burning (incineration, open burning, cement kiln co-processing), recycling.",
+        "Multiply tonnes x route share x route factor, and add up."
+      ]
+    },
+    {
+      "h": "Route factors that matter most",
+      "ul": [
+        "Burning plastic releases its fossil carbon. Polyethylene and polypropylene are about 85.7% carbon, so about 3.14 t CO2 per tonne burnt (0.857 x 44/12). PET is about 62.5% carbon, about 2.29 t CO2 per tonne.",
+        "Landfilled plastic barely degrades, so its landfill emissions are close to zero apart from transport.",
+        "Paper and board in landfill can produce methane; use a published waste factor such as the UK DESNZ conversion factors, current edition.",
+        "Recycling: under the GHG Protocol, emissions of the recycling process belong to the user of the recycled material, so count only collection and transport."
+      ]
+    },
+    {
+      "h": "What EPR data tells you, and what it does not",
+      "p": [
+        "Under the Plastic Waste Management Rules, 2016 and the 2022 EPR Guidelines for plastic packaging, producers and brand owners register the quantity of each plastic category they introduce. That quantity is good activity data for step 2. EPR certificates show that plastic of that category was recycled or sent to end-of-life disposal somewhere against your obligation, not what happened to your packs. Certificates from co-processing or waste to energy mean that plastic was burnt, so treat that share as burning, not recycling."
+      ]
+    },
+    {
+      "h": "Exports",
+      "p": [
+        "For goods sold in the EU, the disposal mix should come from the destination country's waste statistics, not India's. Keep a separate line per market."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50 t of PE-based laminate pouches sold in India",
+    "lines": [
+      "Assumed disposal mix (estimate): 60% landfill or dumped, 20% burnt, 20% recycled",
+      "Burnt: 50 x 0.20 = 10 t; 10 x 3.14 = 31.4 t CO2",
+      "Landfill: 50 x 0.60 = 30 t; about 0 t CO2 (plastic does not degrade meaningfully)",
+      "Recycled: 50 x 0.20 = 10 t; 0 t CO2 under the cut-off rule, apart from transport",
+      "Category 12: about 31.4 t CO2, plus collection and transport"
+    ],
+    "note": "The disposal mix is a labelled estimate. Multilayer laminates contain aluminium or PET layers, so treat 3.14 as an upper bound for the plastic share."
+  },
+  "senseible": "Senseible keeps your packaging purchase invoices as evidence of the mass you buy and place on the market. Category 12 disposal routes and factors are your inputs; record their sources.",
+  "links": [
+    {
+      "label": "Circular economy and EPR",
+      "to": "/circular-economy"
+    },
+    {
+      "label": "Packaging footprint of an export shipment",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "Waste emissions in Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 12",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Guidelines on Extended Producer Responsibility for Plastic Packaging, 2022 (CPCB)",
+      "url": "https://cpcb.nic.in"
+    },
+    {
+      "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting, waste disposal",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The plastic EPR guidelines have been amended several times; check current categories and certificate types on the CPCB portal."
+}

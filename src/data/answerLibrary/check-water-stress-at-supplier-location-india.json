@@ -1,0 +1,78 @@
+{
+  "slug": "check-water-stress-at-supplier-location-india",
+  "q": "How do I check water stress at a supplier's location in India?",
+  "title": "Check water stress at a supplier's site",
+  "short": "Look up the supplier's exact location in WRI Aqueduct for baseline water stress, then check the Central Ground Water Board's groundwater category for its block. Combine both with the supplier's own water source: a groundwater-dependent unit in a high stress basin and an over-exploited block is your highest risk.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Procurement and sustainability teams at exporters",
+  "sections": [
+    {
+      "h": "Step 1: baseline water stress from WRI Aqueduct",
+      "p": [
+        "Aqueduct 4.0 defines baseline water stress as total water withdrawals divided by available renewable surface and groundwater supply in the sub-basin. It groups results as low (below 10%), low to medium (10 to 20%), medium to high (20 to 40%), high (40 to 80%) and extremely high (above 80%), plus arid and low water use. Enter the supplier's coordinates, not just the city, because adjacent basins can differ. CDP's water security questions use the same idea of water-stressed areas."
+      ]
+    },
+    {
+      "h": "Step 2: groundwater category from CGWB",
+      "p": [
+        "The Central Ground Water Board's Dynamic Ground Water Resources assessment rates each block, mandal or taluka by stage of extraction: annual groundwater extraction divided by annual extractable resource. Up to 70% is safe, 70 to 90% semi-critical, 90 to 100% critical and above 100% over-exploited. Use the latest edition, since categories shift between assessments.",
+        "This matters more than Aqueduct for most Indian MSMEs, because they draw from borewells rather than rivers."
+      ]
+    },
+    {
+      "h": "Step 3: ask the supplier four questions",
+      "ol": [
+        "What are your water sources and annual volumes: borewell, municipal, tanker, surface?",
+        "Do you hold a groundwater abstraction NOC, and what volume does it allow?",
+        "Did you buy tanker water last summer, and for how many weeks?",
+        "Do you treat and reuse effluent, or run zero liquid discharge?"
+      ]
+    },
+    {
+      "h": "A simple rating rule",
+      "ul": [
+        "High: Aqueduct high or extremely high, or CGWB critical or over-exploited, and the supplier relies on groundwater or tankers.",
+        "Medium: one of the two maps flags stress, but the supplier has a secure municipal supply or substantial reuse.",
+        "Low: neither map flags stress.",
+        "Recheck high-rated suppliers each year and before placing a long contract."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: reading a block's stage of extraction",
+    "lines": [
+      "Block extraction: 12 million cubic metres a year; annual extractable resource: 10 million cubic metres (illustrative)",
+      "Stage of extraction: 12 / 10 = 120%, over-exploited",
+      "Supplier draws 90% of its water from borewells and the basin is high stress in Aqueduct: rated High"
+    ],
+    "note": "Figures are illustrative; read the block's actual values from the latest CGWB assessment."
+  },
+  "senseible": "Senseible's climate risk service covers physical risks, including water stress at your own sites; for supplier locations, agree the scope with the Senseible team. Its supplier evidence trail lists who you buy from, which gives you the list of locations to screen.",
+  "links": [
+    {
+      "label": "Climate risk assessment",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "CDP water security for textile exporters",
+      "to": "/answers/cdp-water-security-textile-exporter"
+    },
+    {
+      "label": "Supplier due diligence",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP corporate questionnaire, water security module, water-stressed areas (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "ISO 14046:2014, Water footprint, water scarcity assessment (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "CGWB updates block categories with each new assessment and WRI revises Aqueduct; check the current editions."
+}

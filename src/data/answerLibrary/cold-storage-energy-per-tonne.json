@@ -63,6 +63,10 @@
     {
       "label": "Footprint from an electricity bill",
       "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Estimate refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
     }
   ],
   "sources": [

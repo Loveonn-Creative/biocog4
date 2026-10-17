@@ -1,0 +1,71 @@
+{
+  "slug": "check-plot-deforestation-free-since-2020",
+  "q": "How can I check from satellite data that a farm plot was not deforested after 2020?",
+  "title": "Check a plot is deforestation-free since 2020",
+  "short": "Map the plot boundary, overlay it on the EU's Global Forest Cover 2020 map to see if it was forest on 31 December 2020, then check tree cover loss data and dated satellite images for any clearing since. Record each step with screenshots. The EU map is a reference, not legal proof.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Coffee, rubber and wood exporters preparing EUDR evidence",
+  "sections": [
+    {
+      "h": "What you are testing",
+      "p": [
+        "Under Regulation (EU) 2023/1115, the EUDR, the commodity must come from land that was not deforested after 31 December 2020. Deforestation means turning forest into agricultural use. Forest means land over 0.5 hectare with trees taller than 5 metres and canopy cover above 10%, excluding land mainly under agricultural or urban use.",
+        "Agricultural plantations, including rubber plantations and agroforestry where crops grow under tree cover, are not forest under this definition. A shaded coffee estate that has been coffee since before 2021 is usually not a deforestation case."
+      ]
+    },
+    {
+      "h": "Step by step",
+      "ol": [
+        "Get the plot geolocation: a polygon for plots over 4 hectares, a point is allowed below that.",
+        "Load it on the EU Observatory on deforestation and forest degradation and overlay the JRC Global Forest Cover 2020 map.",
+        "If the plot shows no forest in 2020, record that. If it shows forest, go to the next steps.",
+        "Check Global Forest Watch tree cover loss (the Hansen et al. dataset) for loss in 2021 or later inside the boundary.",
+        "Compare a cloud-free image from late 2020 with a recent one, for example free Sentinel-2 imagery, and note what you see.",
+        "Save screenshots with dates, coordinates and data source names in the plot file."
+      ]
+    },
+    {
+      "h": "Known traps",
+      "ul": [
+        "The JRC map is not legally binding and has known errors, often marking rubber, coffee and other tree crops as forest. Do not treat a forest pixel as proof of a problem, or a non-forest pixel as proof of compliance.",
+        "Tree cover loss is not deforestation. Replanting a rubber block or harvesting a timber plantation shows as loss.",
+        "Small plots and narrow strips fall below the resolution of 10 to 30 metre data; field photos and land records help.",
+        "For wood, the EUDR also covers forest degradation, which needs a different check."
+      ]
+    },
+    {
+      "h": "When the data disagree",
+      "p": [
+        "Add ground evidence: land records showing the plot was under cultivation before 2021, the date the crop was planted, dated photos, and India's State of Forest Report maps from the Forest Survey of India. Keep a short written reasoning in the file so the EU importer can see how you decided."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the purchase invoices and supplier documents for each lot, so the satellite evidence you file for a plot can be matched to the goods that came from it.",
+  "links": [
+    {
+      "label": "EUDR geolocation: polygon or point",
+      "to": "/answers/eudr-geolocation-polygon-or-point"
+    },
+    {
+      "label": "What coffee and rubber exporters provide",
+      "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide"
+    },
+    {
+      "label": "Does the EUDR apply to my exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 on deforestation-free products, Article 2 definitions",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Forest Survey of India, India State of Forest Report (Ministry of Environment, Forest and Climate Change)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "EUDR application dates and Commission guidance on the reference map have changed more than once; check the current position before relying on them."
+}

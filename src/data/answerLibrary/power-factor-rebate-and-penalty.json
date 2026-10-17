@@ -1,0 +1,87 @@
+{
+  "slug": "power-factor-rebate-and-penalty",
+  "q": "How do power factor penalties and rebates work on Indian electricity bills?",
+  "title": "Power factor penalties and rebates explained",
+  "short": "On kWh-billed tariffs, your state commission sets a power factor band: below a floor, often 0.90, the discom adds a surcharge, and above a higher mark, often 0.95, some states give a rebate. On kVAh-billed tariffs there is usually no separate charge, because a low power factor already raises the billed units.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "HT and LT industrial consumers",
+  "sections": [
+    {
+      "h": "What power factor measures",
+      "p": [
+        "Power factor is real power divided by apparent power: kW / kVA, or kWh / kVAh over a billing period. Motors, transformers and welding sets draw reactive power, which loads the discom's lines without doing useful work. A power factor of 0.80 means the network carries 1.25 kVA for every kW you use."
+      ]
+    },
+    {
+      "h": "How the surcharge and rebate are set",
+      "ul": [
+        "Each State Electricity Regulatory Commission fixes the bands, the percentage per step and which consumer categories they apply to in its tariff order. There is no single national slab.",
+        "A typical structure charges a percentage of the energy bill for each 0.01 the average power factor falls below the floor, and gives a smaller percentage rebate for each 0.01 above an upper mark.",
+        "Some orders treat a leading power factor (over-compensation with too many capacitors) as if it were lagging, so more capacitors are not always better.",
+        "Where demand is billed in kVA, a low power factor also raises the demand charge, since the same kW needs more kVA."
+      ]
+    },
+    {
+      "h": "Why kVAh billing changes the picture",
+      "p": [
+        "Several states now bill industrial consumers in kVAh. Since kVAh = kWh / power factor, a poor power factor raises the units you pay for, which works as a built-in penalty, and unity power factor gives the lowest bill. Many such tariff orders drop the separate surcharge and rebate. Check your own order: the rate per kVAh and any leftover incentive differ by state."
+      ]
+    },
+    {
+      "h": "Sizing capacitors to fix it",
+      "p": [
+        "The capacitor rating needed is kVAr = kW x (tan phi1 minus tan phi2), where phi1 is the angle at the present power factor and phi2 at the target. BEE's guide book on energy efficiency in electrical utilities explains placement: correction at large motors cuts losses inside the plant as well as the bill, while a single bank at the main incomer only fixes the bill."
+      ]
+    },
+    {
+      "h": "Does a better power factor cut your emissions?",
+      "p": [
+        "Very little. Scope 2 is based on kWh, the real energy used, and that does not change when you add capacitors. You may save a small amount of kWh from lower cable and transformer losses inside the plant. The bill can fall sharply, but the location-based emission figure stays almost the same."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 kW load, power factor 0.80 to 0.95",
+    "lines": [
+      "tan phi1 at 0.80 = 0.750; tan phi2 at 0.95 = 0.329",
+      "Capacitor size: 500 x (0.750 minus 0.329) = 500 x 0.421 = about 211 kVAr",
+      "Demand: 500 / 0.80 = 625 kVA before; 500 / 0.95 = about 526 kVA after",
+      "kVAh bill for 1,00,000 kWh: 1,25,000 kVAh at 0.80; about 1,05,263 kVAh at 0.95; 19,737 fewer units",
+      "At an assumed ₹8 per kVAh: 19,737 x 8 = ₹1,57,896 a month saved",
+      "Scope 2 either way: 1,00,000 kWh x 0.710 kg CO2 per kWh = 71,000 kg CO2"
+    ],
+    "note": "The tariff rate is assumed. Use the rate and power factor rules in your state's current tariff order."
+  },
+  "senseible": "Senseible reads the billing details on an electricity bill (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh. On a kVAh bill it uses the printed kWh, or kVAh times the printed power factor labelled as an estimate.",
+  "links": [
+    {
+      "label": "Electricity bill in kVAh: emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "How to read an HT industrial bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Time of day tariffs for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 1 (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Power factor bands and kVAh billing rules differ by state and change with each tariff order; check the current order."
+}
