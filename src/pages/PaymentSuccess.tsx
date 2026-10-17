@@ -42,12 +42,14 @@ const PaymentSuccess = () => {
       'Monetization Signal',
       'Government Incentives Finder',
       'WhatsApp Chat Support',
+      'Biocog Intelligence',
       'AI ESG Head (Voice AI)',
       'Automated Reports',
       '10 Team Members',
     ],
     scale: [
       'Credit Monetization Setup',
+      'Biocog Superintelligence',
       'Real-time MRV Pipeline',
       'API & Integrations',
       'Dedicated Support',
@@ -110,7 +112,7 @@ const PaymentSuccess = () => {
     },
     {
       icon: Brain,
-      title: 'Chat with AI ESG Head',
+      title: 'Ask Biocog Intelligence',
       description: 'Get personalized sustainability guidance',
       href: '/intelligence',
     },

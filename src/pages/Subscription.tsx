@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
+import { QuickPurchases } from '@/components/profile/QuickPurchases';
 import { useSession } from '@/hooks/useSession';
 import { usePremiumStatus } from '@/hooks/usePremiumStatus';
 import { supabase } from '@/integrations/supabase/client';
@@ -41,7 +42,7 @@ const usageLimits = (t: string) => {
 const Subscription = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
-  const { tier, isPremium } = usePremiumStatus();
+  const { tier, isPremium, expiresAt } = usePremiumStatus();
   
   const [usage, setUsage] = useState({ reports: 0 });
   // Invoice reads from the reads ledger, as the server counts them; credits shown alongside.
@@ -206,6 +207,9 @@ const Subscription = () => {
             </CardContent>
           </Card>
 
+          {/* Extra invoices, Fast-track Verification and the audit, paid here directly (UPI first). */}
+          <QuickPurchases planEnd={expiresAt ? expiresAt.toISOString() : null} />
+
           {/* Plan Features */}
           <Card>
             <CardHeader>
@@ -223,7 +227,9 @@ const Subscription = () => {
                   (tier === 'pro' || tier === 'scale') && 'Monetization Signal',
                   (tier === 'pro' || tier === 'scale') && 'Government Incentives Finder',
                   tier === 'scale' && 'Credit Monetization Setup',
+                  (tier === 'pro' || tier === 'scale') && 'Biocog Intelligence',
                   isPremium && 'AI ESG Head',
+                  tier === 'scale' && 'Biocog Superintelligence',
                   tier === 'scale' ? 'Dedicated Support' : tier === 'pro' ? 'WhatsApp Chat Support' : tier === 'essential' ? 'Email Support' : 'Help Center',
                 ].filter(Boolean).map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm">

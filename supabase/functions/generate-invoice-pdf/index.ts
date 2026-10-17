@@ -30,6 +30,8 @@ interface InvoiceData {
   tier: string;
   billingCycle?: string;
   subscriptionId?: string;
+  /** One-time add-on bought on the profile or Subscription page (invoice credits, Fast-track Verification, Expert Climate Audit). */
+  itemName?: string;
   periodStart?: string | null;
   periodEnd?: string | null;
   amount: number; // in paise
@@ -86,7 +88,11 @@ const formatDate = (iso: string | null | undefined) => {
   return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 };
 
+// What the invoice is for: the plan's subscription, or the named add-on.
+const itemTitle = (data: InvoiceData) => (data.itemName ? data.itemName : `${getTierName(data.tier)} Subscription`);
+
 const getLineDescription = (data: InvoiceData) => {
+  if (data.itemName) return 'One-time purchase - Carbon MRV & Intelligence Platform';
   const cycle = data.billingCycle === 'monthly' ? 'Monthly' : data.billingCycle === 'yearly' ? 'Annual' : '';
   const start = formatDate(data.periodStart);
   const end = formatDate(data.periodEnd);
@@ -206,7 +212,7 @@ const generateInvoiceHTML = (data: InvoiceData, invoiceNumber: string) => {
       <tbody>
         <tr>
           <td>
-            <div class="item-desc">${escapeHtml(getTierName(data.tier))} Subscription</div>
+            <div class="item-desc">${escapeHtml(itemTitle(data))}</div>
             <div class="item-sub">${escapeHtml(getLineDescription(data))}</div>
           </td>
           <td>998314</td>
@@ -309,14 +315,14 @@ const generateInvoiceEmailHTML = (data: InvoiceData, invoiceNumber: string) => {
   
   <p>Hi${data.userName || data.businessName ? ` ${escapeHtml(data.userName || data.businessName)}` : ''},</p>
   
-  <p>Thank you for your subscription to <strong>${escapeHtml(getTierName(data.tier))}</strong>. Your tax invoice is attached to this email.</p>
+  <p>Thank you for your ${data.itemName ? 'purchase of' : 'subscription to'} <strong>${escapeHtml(data.itemName || getTierName(data.tier))}</strong>. Your tax invoice is attached to this email.</p>
   
   <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin: 20px 0;">
     <h2 style="margin: 0 0 15px 0; color: #374151; font-size: 16px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px;">Invoice Summary</h2>
     <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
       <tr><td style="padding: 8px 0; color: #6b7280;">Invoice No:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${escapeHtml(invoiceNumber)}</td></tr>
       <tr><td style="padding: 8px 0; color: #6b7280;">Transaction ID:</td><td style="padding: 8px 0; text-align: right; font-family: monospace; font-size: 12px;">${escapeHtml(data.transactionId)}</td></tr>
-      <tr><td style="padding: 8px 0; color: #6b7280;">Plan:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${escapeHtml(getTierName(data.tier))}</td></tr>
+      <tr><td style="padding: 8px 0; color: #6b7280;">${data.itemName ? 'Item' : 'Plan'}:</td><td style="padding: 8px 0; text-align: right; font-weight: 600;">${escapeHtml(data.itemName || getTierName(data.tier))}</td></tr>
       <tr><td style="padding: 8px 0; color: #6b7280;">Date:</td><td style="padding: 8px 0; text-align: right;">${escapeHtml(new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }))}</td></tr>
       <tr style="border-top: 1px solid #e5e7eb;">
         <td style="padding: 12px 0 8px 0; color: #374151; font-weight: 600;">Amount Paid:</td>
@@ -402,7 +408,7 @@ serve(async (req) => {
     // Load the subscription row so the invoice states the actual tier, billing
     // cycle and service period, and links back via invoices.subscription_id.
     let subscription: { id: string; tier: string; billing_cycle: string | null; starts_at: string | null; expires_at: string | null } | null = null;
-    if (data.userId && (data.subscriptionId || data.orderId)) {
+    if (data.userId && !data.itemName && (data.subscriptionId || data.orderId)) {
       let query = supabase
         .from('subscriptions')
         .select('id, tier, billing_cycle, starts_at, expires_at')
@@ -490,7 +496,7 @@ serve(async (req) => {
       body: JSON.stringify({
         from: "Senseible Billing <billing@senseible.earth>",
         to: [data.email],
-        subject: `Invoice ${invoiceNumber} - ${getTierName(invoiceData.tier)} Subscription`,
+        subject: `Invoice ${invoiceNumber} - ${itemTitle(invoiceData)}`,
         html: emailHTML,
         attachments: [
           {

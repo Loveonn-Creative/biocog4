@@ -89,12 +89,13 @@ const getPaymentSuccessEmail = (data: PaymentNotificationRequest) => `
         <li>WhatsApp Chat + Email Support</li>
         <li>Eligible for add-ons and limited custom builds</li>
         <li>Automated ESG Reports</li>
+        <li>Biocog Intelligence</li>
         <li>AI ESG Head (Voice AI)</li>
-        <li>Biocog Superintelligence</li>
         <li>10 Team Members</li>
       ` : `
         <li>Everything in Pro, plus:</li>
         <li>Credit Monetization Setup</li>
+        <li>Biocog Superintelligence</li>
         <li>Real-time MRV Pipeline</li>
         <li>Multi-entity Support</li>
         <li>API & Integrations</li>

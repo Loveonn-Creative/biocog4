@@ -27,6 +27,17 @@ const preloadPrimaryFont = (): Plugin => ({
   },
 });
 
+// One id per build, compiled into the bundle and written to /version.json, so
+// an open tab can tell a newer build is live (src/lib/reliability/newBuild.ts).
+const BUILD_ID = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+const buildVersion = (): Plugin => ({
+  name: "senseible-build-version",
+  apply: "build",
+  generateBundle() {
+    this.emitFile({ type: "asset", fileName: "version.json", source: JSON.stringify({ build: BUILD_ID }) });
+  },
+});
+
 // Perf: keep stable, eagerly-needed vendor code in its own long-cacheable chunks
 // so routine app deploys do not invalidate them. Only libraries that the entry
 // already loads synchronously are grouped (and neither group imports app code),
@@ -48,7 +59,8 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), preloadPrimaryFont(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), preloadPrimaryFont(), buildVersion(), mode === "development" && componentTagger()].filter(Boolean),
+  define: { __BUILD_ID__: JSON.stringify(mode === "production" ? BUILD_ID : "dev") },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

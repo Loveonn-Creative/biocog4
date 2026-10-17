@@ -193,11 +193,11 @@ export const VoiceFallbackMessage = () => (
     <Sparkles className="h-10 w-10 mx-auto mb-3 text-primary/60" />
     <h3 className="font-semibold mb-2">Unlock Voice AI</h3>
     <p className="text-sm text-muted-foreground mb-4">
-      For real-time voice conversations with your AI ESG Head, upgrade to Pro. 
+      For real-time voice conversations with Biocog Intelligence, upgrade to Pro. 
       Upload more invoices to get personalized guidance based on your actual data.
     </p>
     <p className="text-xs text-muted-foreground italic">
-      "Your AI ESG Head learns from your reports to provide founder-level precision."
+      "Biocog Intelligence learns from your reports to provide founder-level precision."
     </p>
   </div>
 );

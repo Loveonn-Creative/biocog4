@@ -22,7 +22,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { activateOrder, revokeRefundedPayment } from "../_shared/razorpayActivation.ts";
 import { afterActivation, hmacSha256Hex, mask, razorpayApi, supabaseStore, timingSafeEqual } from "../_shared/razorpayServer.ts";
 import { activateAddonOrder, refundAddonPayment } from "../_shared/addonActivation.ts";
-import { notifyServiceOrder } from "../_shared/addonNotify.ts";
+import { notifyServiceOrder, sendAddonInvoice } from "../_shared/addonNotify.ts";
 
 const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
 const HANDLED = new Set(['payment.captured', 'order.paid']);
@@ -82,6 +82,7 @@ serve(async (req) => {
       const addon = await activateAddonOrder(admin, razorpayApi(KEY_ID, KEY_SECRET), { orderId, paymentId });
       if (addon.ok) {
         if (addon.activated && addon.table === 'service_orders') await notifyServiceOrder(admin, addon.rowId);
+        if (addon.activated) await sendAddonInvoice(admin, { supabaseUrl: SUPABASE_URL, serviceKey: SERVICE_KEY }, { table: addon.table, rowId: addon.rowId });
         console.log('Webhook add-on processed:', { order: mask(orderId), activated: addon.activated });
         return json({ ok: true, activated: addon.activated, addon: addon.kind });
       }
