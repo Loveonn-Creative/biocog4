@@ -1,0 +1,84 @@
+{
+  "slug": "which-scope-3-categories-matter-for-it-services",
+  "q": "Which Scope 3 categories actually matter for an IT services or BPO company?",
+  "title": "Scope 3 categories for IT services and BPO",
+  "short": "For an IT services or BPO company, four Scope 3 categories usually carry most of the tonnes: purchased goods and services such as cloud and subcontractors (Category 1), laptops, servers and office fit-outs (Category 2), business travel (Category 6) and employee commuting (Category 7). Downstream categories rarely apply because you sell no physical product.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "IT and BPO firms in India, the Philippines and Vietnam answering client questionnaires",
+  "sections": [
+    {
+      "h": "The categories that usually matter, and what drives each",
+      "ul": [
+        "Category 1, purchased goods and services: cloud hosting and colocation, software subscriptions, subcontracted delivery teams, facility management, security, housekeeping and catering.",
+        "Category 2, capital goods: laptops, desktops, servers, network gear and office fit-outs, counted in full in the year you buy them, not spread over depreciation.",
+        "Category 6, business travel: flights and hotel nights for client visits and onsite assignments.",
+        "Category 7, employee commuting: often large for 24x7 delivery centres. Cabs run by vendors you hire are Category 7; vehicles you own or control are Scope 1. Work from home emissions may optionally be added here."
+      ]
+    },
+    {
+      "h": "The smaller ones you should still screen",
+      "ul": [
+        "Category 3: transmission losses on office electricity and upstream emissions of diesel for backup generators.",
+        "Category 5: office waste and e-waste sent for recycling.",
+        "Category 8: leased offices only if their electricity is not already in your Scope 2. Most tenants who control their floor report it in Scope 2.",
+        "Category 15: only if you hold equity stakes or project finance outside your consolidated group."
+      ]
+    },
+    {
+      "h": "Why downstream categories rarely apply",
+      "p": [
+        "Categories 9 to 12 are about physical products you sell: their transport, processing, use and disposal. A services firm sells hours and outcomes, so these are usually not applicable rather than excluded. Software you build does run on client hardware, but its use phase electricity is indirect and optional under the Scope 3 Standard. Category 13 applies only if you sublet space, and Category 14 only if you franchise."
+      ]
+    },
+    {
+      "h": "How to show your screening to a client",
+      "ol": [
+        "List all 15 categories and mark each as relevant, not applicable or excluded.",
+        "For the relevant ones, give a rough estimate with its method, using the Scope 3 Standard's tests: size, influence, risk, client interest and outsourcing. A BPO that subcontracts part of its delivery should weigh the outsourcing test heavily.",
+        "Name the data source for each: cloud provider carbon reports, travel agency statements, asset purchase register, commute survey."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: rough screening for a 2,000 person delivery centre",
+    "lines": [
+      "Scope 2 for comparison: 3,000,000 kWh x 0.710 kg CO2 per kWh = 2,130,000 kg, 2,130 t CO2",
+      "Commuting: 1,500 staff x 24 km a day x 250 days = 9,000,000 passenger km x 0.1 kg CO2e (illustrative) = 900 t CO2e",
+      "Air travel: 1,000,000 passenger km x 0.15 kg CO2e (illustrative) = 150 t CO2e",
+      "New laptops: 500 a year x 250 kg CO2e each (illustrative) = 125 t CO2e",
+      "Commuting alone is 900 / 2,130 = about 42% of Scope 2, so it clearly needs measuring"
+    ],
+    "note": "The 0.1, 0.15 and 250 figures are placeholders to show the arithmetic, not sourced factors. Use published factors, the maker's product footprint for laptops and your cloud provider's own report."
+  },
+  "senseible": "Senseible reads office electricity bills for Scope 2 and keeps supplier invoices, such as cloud, travel and laptop purchases, in the Scope 3 evidence trail; where only spend is known it gives a spend-based estimate labelled with its wider uncertainty. It does not decide for you which categories are relevant.",
+  "links": [
+    {
+      "label": "Can we exclude a Scope 3 category?",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Night shift cabs: Scope 1 or Scope 3?",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "Cloud footprint for AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 1, 2, 6 and 7",
+      "url": "https://ghgprotocol.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

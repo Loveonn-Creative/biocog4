@@ -1,0 +1,66 @@
+{
+  "slug": "eu-taxonomy-alignment-turnover-capex-opex",
+  "q": "How is EU Taxonomy alignment calculated as a share of turnover, CapEx and OpEx?",
+  "title": "EU Taxonomy turnover, CapEx and OpEx KPIs",
+  "short": "Each KPI is a fraction: the part of turnover, capital expenditure or operating expenditure that comes from Taxonomy-aligned activities, divided by the company's total for that item. An activity is aligned only if it is eligible, meets the substantial contribution criteria, does no significant harm and meets minimum safeguards.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "EU subsidiaries of Indian groups; Indian suppliers asked for taxonomy inputs",
+  "sections": [
+    {
+      "h": "Turnover KPI",
+      "p": [
+        "Numerator: net turnover from products or services of aligned activities. Denominator: total net turnover as in the consolidated income statement. Count each euro once, even if an activity contributes to more than one environmental objective."
+      ]
+    },
+    {
+      "h": "CapEx KPI",
+      "p": [
+        "Denominator: additions to tangible and intangible assets in the year, before depreciation, amortisation and remeasurement, including assets from acquisitions and right-of-use assets under leases.",
+        "Numerator: the part of those additions that relates to aligned activities, plus CapEx under a plan to expand an aligned activity or make an eligible one aligned within a set period, plus purchases of output from aligned activities and individual measures such as building insulation or solar panels."
+      ]
+    },
+    {
+      "h": "OpEx KPI",
+      "p": [
+        "The denominator is narrow, not total operating cost. It covers only direct non-capitalised costs for research and development, building renovation, short-term leases, maintenance and repair, and other day-to-day servicing of property, plant and equipment. The numerator is the part of these costs linked to aligned activities."
+      ]
+    },
+    {
+      "h": "Where Indian suppliers come in",
+      "ul": [
+        "An EU parent or customer may ask whether your product or plant meets a technical screening criterion, such as an emissions intensity threshold for steel or aluminium.",
+        "They may ask for evidence on do no significant harm, such as pollution permits or water management.",
+        "Your answers only affect their KPIs if the activity is theirs; your own turnover is not in their denominator."
+      ]
+    },
+    {
+      "h": "The 2025 simplification",
+      "p": [
+        "In July 2025 the European Commission adopted a delegated act simplifying these disclosures. It lets companies leave out activities that are not material, below 10 percent of turnover, CapEx or OpEx, and eases the OpEx KPI where OpEx is not material to the business. Check which version applies to your reporting year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: an EU subsidiary",
+    "lines": [
+      "Turnover: total EUR 50 m, aligned EUR 12 m; 12 / 50 = 24 percent",
+      "CapEx: total additions EUR 8 m; aligned EUR 3 m plus EUR 1 m under a CapEx plan; 4 / 8 = 50 percent",
+      "OpEx: restricted denominator EUR 2 m (maintenance 1.5, short-term leases 0.3, R and D 0.2); aligned EUR 0.6 m; 0.6 / 2 = 30 percent"
+    ],
+    "note": "All figures are illustrative."
+  },
+  "senseible": "Senseible does not calculate Taxonomy eligibility, alignment or the turnover, CapEx and OpEx ratios; those come from your financial accounts. It can supply invoice-backed Scope 1 and 2 figures that a parent or buyer may need when checking an emissions-based screening criterion.",
+  "links": [
+    { "label": "EU Taxonomy DNSH criteria", "to": "/answers/eu-taxonomy-dnsh-criteria-explained" },
+    { "label": "EU Taxonomy steel threshold", "to": "/answers/eu-taxonomy-steel-substantial-contribution-threshold" },
+    { "label": "India climate finance taxonomy vs EU", "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy" },
+    { "label": "Who is still in scope of CSRD", "to": "/answers/who-is-still-in-scope-of-csrd" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2020/852, Article 8, and Delegated Regulation (EU) 2021/2178, Annex I (KPI definitions)", "url": "https://eur-lex.europa.eu" },
+    { "label": "European Commission, Taxonomy simplification delegated act (adopted July 2025)", "url": "https://finance.ec.europa.eu" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Taxonomy simplification and CSRD scope changes affect who reports and how; confirm the delegated act in force on EUR-Lex for each reporting year."
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "why-two-tools-give-different-scope-3-numbers",
+  "q": "Why do two carbon tools give different Scope 3 totals for the same purchase data?",
+  "title": "Why two tools give different Scope 3 totals",
+  "short": "Two tools give different Scope 3 totals from the same purchases because they use different methods and factors: one may multiply rupee spend by an economic factor while the other multiplies tonnes by a material factor. Currency, GST, factor year, region and category mapping each move the result. Compare a sample of lines, not the totals.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Procurement leads comparing vendor outputs; consultants",
+  "sections": [
+    {
+      "h": "The usual causes, largest first",
+      "ul": [
+        "Method: spend-based (rupees x kg CO2e per unit of currency) against average-data (tonnes x kg CO2e per kg) against supplier-specific. On the same purchase these can differ by a factor of two or more.",
+        "Factor database and region: a US or UK input-output factor applied to Indian purchases, against a multi-regional model such as EXIOBASE with an India region, against a material factor.",
+        "Currency and price basis: the exchange rate used, the base year of the factor, and whether inflation since that year was removed.",
+        "Tax: whether GST was stripped before applying a spend factor. Leaving 18% GST in raises a spend-based figure by 18%.",
+        "Category mapping: the same line placed in Category 1 by one tool and Category 2 or 4 by another, or counted in two places.",
+        "Boundary and gases: whether factors are cradle-to-gate, include transport, and use AR5 or AR6 global warming potentials.",
+        "Duplicates: the same invoice uploaded twice, or a credit note not netted off."
+      ]
+    },
+    {
+      "h": "How to reconcile two outputs",
+      "ol": [
+        "Export both at line level, not as category totals.",
+        "Pick the 20 largest lines by emissions in either tool.",
+        "For each line compare five things: quantity or spend, unit, factor value, factor unit and source, and category.",
+        "Mark which difference explains the gap: method, factor, currency, tax, category or duplicate.",
+        "Agree one rule for each cause and apply it to the full dataset."
+      ]
+    },
+    {
+      "h": "Which number to trust",
+      "p": [
+        "Neither total is right by default. Prefer the line that uses a physical quantity with a factor for that material and country over a spend-based line, and a supplier's own verified figure over both. A spend-based figure is still a fair estimate when it is the only data you have, as long as it is labelled as spend-based with wider uncertainty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one steel purchase, three results",
+    "lines": [
+      "Purchase: 12 t of steel sections, Rs 10,00,000 before GST",
+      "Tool A, spend-based, GST stripped: 10,00,000 / 85 Rs per USD = USD 11,765 x 0.8 kg CO2e per USD (illustrative) = 9,412 kg, about 9.4 t",
+      "Tool A, GST left in: 11,80,000 / 85 = USD 13,882 x 0.8 = 11,106 kg, about 11.1 t (18% higher)",
+      "Tool B, average-data: 12,000 kg x 2.0 kg CO2e per kg (illustrative) = 24,000 kg, 24 t",
+      "Same purchase: 9.4 t, 11.1 t or 24 t depending on method and tax treatment"
+    ],
+    "note": "The exchange rate and both factors are illustrative, chosen only to show how the gap opens. Real factors depend on the database, year and region."
+  },
+  "senseible": "Senseible shows the quantity, factor and source behind every line, and labels spend-based estimates as spend-based with wider uncertainty, so its figures can be lined up against another tool's line by line. It does not audit or adjust another vendor's output.",
+  "links": [
+    {
+      "label": "Spend-based vs activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "How to spot a wrong emission factor",
+      "to": "/answers/how-to-spot-a-wrong-emission-factor"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 1",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "UK DESNZ Greenhouse gas reporting: conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    },
+    {
+      "label": "US EPA Supply Chain Greenhouse Gas Emission Factors for US Industries and Commodities, v1.3",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

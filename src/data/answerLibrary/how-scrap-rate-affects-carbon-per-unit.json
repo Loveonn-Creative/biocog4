@@ -1,0 +1,81 @@
+{
+  "slug": "how-scrap-rate-affects-carbon-per-unit",
+  "q": "How does scrap rate change the carbon footprint per unit of product?",
+  "title": "How scrap rate changes carbon per unit",
+  "short": "Scrap raises the footprint of every good unit, because the material and energy spent on rejected parts and offcuts are shared over the good output only. Carbon per good unit equals total process emissions divided by good units, so a 5% reject rate adds about 5.3% to each good part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Auto component, forging, casting and moulding suppliers",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "ul": [
+        "Per good unit = total emissions of the run / good units made.",
+        "Equivalently, per good unit = emissions per unit started / (1 minus reject rate). At 5% rejects that is 1 / 0.95 = 1.053, so 5.3% more.",
+        "Material per good unit = net weight of the part / material yield. A 2.0 kg forging with 80% yield needs 2.5 kg of steel bought."
+      ]
+    },
+    {
+      "h": "Two kinds of scrap, counted differently",
+      "ul": [
+        "Process loss: flash, sprue, runners, swarf and trim that every part produces. It shows up in yield, so use gross material bought per part, not finished weight.",
+        "Rejects: whole parts that fail inspection. They carry all the material and energy of a good part, so divide by good output, not by parts started."
+      ]
+    },
+    {
+      "h": "Scrap you remelt or regrind in house",
+      "p": [
+        "In a foundry or moulding shop, returns and regrind go back into the next charge. Count only the fresh metal or resin you bought plus the energy to remelt or regrind. Do not add the returns as new material, or the same kilogram is counted twice."
+      ]
+    },
+    {
+      "h": "Scrap you sell",
+      "p": [
+        "Under the cut-off approach used for recycled content, scrap leaving your plant takes no emissions with it, so the full burden of the bought material stays on your good parts. You take no credit for the scrap sale. If your buyer's rules call for allocation to scrap as a co-product, ISO 14067 asks you to state the method and apply it consistently."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a forged part at 5% rejects",
+    "lines": [
+      "Parts forged: 100,000; good parts after inspection: 95,000",
+      "Steel bought: 100,000 x 2.5 kg = 250,000 kg x 2.0 kg CO2e per kg (illustrative) = 500,000 kg CO2e",
+      "Electricity: 300,000 kWh x 0.710 kg CO2 per kWh = 213,000 kg CO2",
+      "Total: 500,000 + 213,000 = 713,000 kg CO2e",
+      "Per good part: 713,000 / 95,000 = 7.51 kg CO2e",
+      "If all 100,000 parts were good: 713,000 / 100,000 = 7.13 kg CO2e",
+      "Check: 7.13 / 0.95 = 7.51, so rejects add 0.38 kg CO2e to each good part"
+    ],
+    "note": "The steel factor is illustrative; use your supplier's figure or a sourced factor for the grade and route."
+  },
+  "senseible": "Senseible reads the kWh from electricity bills and the quantities on material invoices, and its product carbon footprint calculator accepts your own material factor with a source label. Enter gross material bought per good part so scrap is reflected; the yield and reject figures come from your production records.",
+  "links": [
+    {
+      "label": "Product carbon footprint",
+      "to": "/answers/product-carbon-footprint"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard, Chapter 9 (allocation)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "PACT Methodology v3 (WBCSD)",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

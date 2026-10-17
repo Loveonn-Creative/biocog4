@@ -1,0 +1,97 @@
+{
+  "slug": "afolu-non-permanence-risk-rating",
+  "q": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
+  "title": "How the AFOLU risk rating is scored",
+  "short": "Under Verra's AFOLU Non-Permanence Risk Tool, you score internal, external and natural risk factors from set tables, subtract points for documented mitigation, and add the three results into one rating. The rating is the percentage of each verified carbon stock gain sent to the buffer pool, subject to a minimum, and above 60 the project fails.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Indian agroforestry and ARR project developers",
+  "sections": [
+    {
+      "h": "Internal risk: the project itself",
+      "ul": [
+        "Project management: track record of the team, how much of the area is actually under its control, and whether a management plan with monitoring is in place.",
+        "Financial viability: how long until the project breaks even and how much of the funding is already secured.",
+        "Opportunity cost: how the project's returns compare with the most profitable other use of the land, such as a cash crop. A large gap scores high risk unless landholders are bound by agreement.",
+        "Project longevity: how many years the landholders legally commit to keep the carbon in place. Short or unenforceable commitments score worst."
+      ]
+    },
+    {
+      "h": "External risk: land, people and government",
+      "ul": [
+        "Land and resource tenure: who holds title and use rights, whether rights are disputed, and whether agreements run for the full project life.",
+        "Community engagement: whether affected households were consulted and share in benefits.",
+        "Political risk: scored from country governance indicators, so Indian projects share the same starting point and differ mainly on tenure and community factors."
+      ]
+    },
+    {
+      "h": "Natural risk: hazards at the site",
+      "p": [
+        "For each hazard type, such as fire, pests and disease, extreme weather and geological events, the tool asks how often a damaging event happens (likelihood) and how much carbon it would destroy (significance). The two combine into a score per hazard, reduced where you show prevention, such as fire lines, grazing control or species mix, then summed."
+      ]
+    },
+    {
+      "h": "From scores to a buffer",
+      "ol": [
+        "Add internal, external and natural scores to get the overall rating.",
+        "If it falls below the tool's minimum, use the minimum; take the minimum from the current tool version.",
+        "A rating above 60 fails, and the project cannot issue until it lowers its risks.",
+        "Apply the rating as a percentage of the net carbon stock change at each verification, and redo the assessment at each verification as conditions change."
+      ]
+    },
+    {
+      "h": "Evidence that lowers an Indian project's score",
+      "ul": [
+        "Record of Rights extracts or lease deeds for every parcel, matched to the project map.",
+        "Signed farmer agreements that run for the full project longevity, with benefit sharing written down.",
+        "Fire history from forest department or satellite fire data, with a fire plan.",
+        "Audited accounts or a funding letter showing the project can pay for monitoring through its life."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative effect of better tenure records",
+    "lines": [
+      "Before: internal 8 + external 6 + natural 4 = 18, so 18% to the buffer",
+      "After documented land rights and longer farmer agreements: internal 6 + external 2 + natural 4 = 12, so 12% to the buffer",
+      "On a verified stock gain of 10,000 t CO2e: buffer falls from 1,800 to 1,200 credits",
+      "Credits issued rise from 8,200 to 8,800"
+    ],
+    "note": "Scores are illustrative, not taken from the tool's tables. Your rating comes from the current tool version and the validation body's review."
+  },
+  "senseible": "Senseible does not score non-permanence risk or hold buffer credits. Its carbon credit eligibility signals show whether your records look ready for a methodology; they are not credits, and issuance belongs to registries such as Verra.",
+  "links": [
+    {
+      "label": "How much goes to the buffer pool",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
+    },
+    {
+      "label": "How buffer contribution is calculated",
+      "to": "/answers/how-is-buffer-pool-contribution-calculated"
+    },
+    {
+      "label": "Soil carbon credits for Indian farmers",
+      "to": "/answers/soil-carbon-credits-india-farmers"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra, VCS AFOLU Non-Permanence Risk Tool (current version)",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard, Land Use and Forests requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles (permanence)",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Verra revises the AFOLU Non-Permanence Risk Tool, including its factor tables and minimum rating; check the current version before scoring."
+}

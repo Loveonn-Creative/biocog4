@@ -1,0 +1,71 @@
+{
+  "slug": "free-climate-hazard-data-india-factory",
+  "q": "Where can I get free climate hazard data for a factory location in India?",
+  "title": "Free climate hazard data for Indian sites",
+  "short": "Start with IMD for heat, rain, cyclones and drought, NRSC's Bhuvan for flood hazard maps, India-WRIS and the Central Water Commission for river and groundwater data, and BMTPC's Vulnerability Atlas for flood, wind and earthquake zones. For future projections use the IPCC AR6 Interactive Atlas and WRI Aqueduct. All are free to view.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "MSME owners, lenders and insurers",
+  "sections": [
+    {
+      "h": "Sources by hazard",
+      "ul": [
+        "Heat and rainfall: India Meteorological Department (IMD) gridded daily rainfall and temperature data, and its Climate Hazards and Vulnerability Atlas of India with district maps of heat waves, cold waves, heavy rain, cyclones, drought and lightning.",
+        "Floods: NRSC Bhuvan flood hazard atlases for flood-prone states; Central Water Commission flood forecasts and river levels.",
+        "Water stress and groundwater: India-WRIS for river basins, reservoirs and groundwater levels; WRI Aqueduct for water stress and drought risk scores.",
+        "Cyclone, wind and earthquake zones: BMTPC Vulnerability Atlas of India, by district.",
+        "Future change: IPCC AR6 Working Group I Interactive Atlas for projected heat and rainfall extremes under different warming levels."
+      ]
+    },
+    {
+      "h": "Match the data to the question",
+      "p": [
+        "Historical data tells you what has happened at or near the site: past floods, heat wave days, cyclone tracks. Projections tell you how those may change over the life of a loan or building. A lender usually wants both: a record of past events and one projection, with the scenario named."
+      ]
+    },
+    {
+      "h": "Know the limits",
+      "ul": [
+        "District atlases describe a whole district; a plot on high ground can be safe in a flood-prone district.",
+        "Global models such as Aqueduct work at coarse resolution and may miss local drains and embankments.",
+        "Projections depend on the scenario or warming level chosen; state which one you used.",
+        "Check each portal's terms before you put its maps in a report you share."
+      ]
+    },
+    {
+      "h": "How to record what you found",
+      "ol": [
+        "Note the latitude and longitude of the site.",
+        "For each hazard, write the dataset name, version or year, and the date you looked.",
+        "Save a screenshot of each map with the site marked.",
+        "Give each hazard a simple rating, low, medium or high, with one line of reason."
+      ]
+    }
+  ],
+  "senseible": "Senseible's climate risk page frames the questions lenders ask about physical risk. The hazard data itself comes from the public sources above; keep your screenshots and dataset names with your other evidence.",
+  "links": [
+    {
+      "label": "Climate risk assessment for a small business",
+      "to": "/answers/climate-risk-assessment-for-small-business"
+    },
+    {
+      "label": "Checking flood risk for a factory site",
+      "to": "/answers/check-flood-risk-for-factory-site-india"
+    },
+    {
+      "label": "Heat stress and lost hours",
+      "to": "/answers/heat-stress-factory-productivity-loss-india"
+    },
+    {
+      "label": "Water stress at a supplier location",
+      "to": "/answers/check-water-stress-at-supplier-location-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, including the Interactive Atlas",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

@@ -2,7 +2,7 @@
   "slug": "soil-carbon-baseline-sampling-depth",
   "q": "How deep and how many samples do you need for a soil carbon baseline?",
   "title": "Soil carbon baseline: depth and sample count",
-  "short": "Sample to at least 30 cm, the minimum depth Verra's VM0042 requires for soil carbon stock change and the IPCC default for mineral soils. The number of samples is not fixed: work it out per stratum from the variation in a pilot round and the precision you need, which often means 20 to 40 points per stratum.",
+  "short": "Sample to at least 30 cm, the minimum depth Verra's VM0042 requires for soil carbon stock change and the IPCC default for mineral soils. The number of samples is not fixed: work it out per stratum from the variation found in a pilot round and the precision you need.",
   "topic": "markets",
   "intent": "how-to",
   "audience": "Indian FPOs and agri project developers",

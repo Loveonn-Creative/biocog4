@@ -1,0 +1,87 @@
+{
+  "slug": "api-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint per kg of an active pharmaceutical ingredient?",
+  "title": "Carbon footprint per kg of an API",
+  "short": "Add three parts per kg of API: plant energy allocated to the batch, purchased materials (starting materials, reagents and net solvent make-up) times their emission factors, and waste treatment. Process mass intensity, the kg of all inputs per kg of product, tells you which materials to chase first.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian API exporters asked for product carbon footprints by EU and UK buyers",
+  "sections": [
+    {
+      "h": "Set the boundary",
+      "p": [
+        "Most buyers want cradle to gate: everything up to the API leaving your plant, in kg CO2e per kg, following ISO 14067 or the GHG Protocol Product Standard. Include all synthesis steps you run, plus purchased key starting materials and intermediates. State the batch or year the figure covers."
+      ]
+    },
+    {
+      "h": "Use process mass intensity to find the big items",
+      "p": [
+        "Process mass intensity (PMI), a metric from the ACS Green Chemistry Institute Pharmaceutical Roundtable, is total mass of inputs, including solvents and water, divided by mass of API. API routes often have PMIs in the hundreds, and solvents usually make up most of that mass. Break PMI into starting materials, reagents, solvents and water, and rank them by mass times factor."
+      ]
+    },
+    {
+      "h": "Allocate plant energy to the product",
+      "ol": [
+        "Take the plant's electricity and fuel for the period from bills.",
+        "Choose a documented key, such as reactor or batch hours, because multi-product plants share utilities.",
+        "Give the campaign its share and convert: kWh x 0.710 kg CO2 per kWh, fuel x its IPCC factor.",
+        "Divide by kg of API released in that campaign."
+      ]
+    },
+    {
+      "h": "Materials, solvents and waste",
+      "ul": [
+        "Use net solvent make-up, the fresh solvent bought to replace losses, not gross solvent use, because recovered solvent is reused.",
+        "Ask suppliers of key starting materials for their own product footprints; they are often the largest single item.",
+        "Generic factor sets, such as those in the PMI-LCA tool, are averages; label them and replace them with supplier data as it arrives.",
+        "Add incineration of spent solvent and residues, on site or off site."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative campaign of 500 kg API",
+    "lines": [
+      "Electricity: 2,40,000 kWh plant month x 25% batch-hour share = 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Coal for steam: 80,000 kg x 25% = 20,000 kg x 2.42 = 48,400 kg CO2",
+      "Energy per kg API: (42,600 + 48,400) / 500 = 182 kg CO2",
+      "Net solvent make-up: 40 kg per kg API x 2 kg CO2e per kg (illustrative) = 80 kg CO2e",
+      "Reagents and starting materials: 8 kg per kg API x 5 kg CO2e per kg (illustrative) = 40 kg CO2e",
+      "Total before waste treatment: 182 + 80 + 40 = 302 kg CO2e per kg API"
+    ],
+    "note": "Material factors and the 25% share are illustrative. Use supplier footprints or a named database, and document your allocation key."
+  },
+  "senseible": "Senseible reads plant electricity and fuel bills and gives the energy totals with their factors, which you can allocate per kg using a documented key. Material factors for starting materials and solvents come from your suppliers or a named database, and need quantities in kg.",
+  "links": [
+    {
+      "label": "What to send when a buyer asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Solvent incineration emissions",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

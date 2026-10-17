@@ -1,0 +1,88 @@
+{
+  "slug": "solvent-incineration-emissions-pharma-api",
+  "q": "How do pharma API plants account for emissions from solvent incineration and recovery?",
+  "title": "Solvent incineration emissions at API plants",
+  "short": "Spent solvent burnt in your own incinerator is Scope 1: CO2 equals the mass burnt times its fossil carbon fraction times 44/12. Solvent sent to an outside incinerator or co-processor is Scope 3 Category 5. Solvent you recover and reuse is not burnt, so only the energy used to distil it counts.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "API and intermediate manufacturers in Hyderabad, Vizag and Gujarat",
+  "sections": [
+    {
+      "h": "Which scope each route falls in",
+      "ul": [
+        "On site incinerator or thermic fluid heater burning spent solvent: Scope 1, under the GHG Protocol Corporate Standard.",
+        "Spent solvent sent to a common hazardous waste incinerator or a cement kiln for co-processing: Scope 3 Category 5, waste generated in operations, because the burning happens at someone else's facility.",
+        "In house distillation and reuse: the steam and power used are already in your Scope 1 and 2 fuel and electricity; the recovered solvent itself adds nothing.",
+        "Support fuel burnt in the incinerator, such as diesel or gas: Scope 1, calculated separately with its own fuel factor."
+      ]
+    },
+    {
+      "h": "The carbon content method",
+      "p": [
+        "The 2006 IPCC Guidelines, Volume 5, Chapter 5, estimate CO2 from incinerating hazardous waste from its carbon content. CO2 = mass burnt x carbon fraction x fossil share x oxidation factor x 44/12. The IPCC default oxidation factor for hazardous waste incineration is 100%. The 44/12 converts carbon to CO2.",
+        "For a pure solvent, take the carbon fraction from its formula: toluene (C7H8) is about 91.2% carbon, methanol (CH3OH) about 37.5%. For a mixed stream, use lab analysis of total carbon on a sample of each batch, or your solvent mass balance."
+      ]
+    },
+    {
+      "h": "Where the quantities come from",
+      "ul": [
+        "Incinerator feed logs in kg, by solvent or waste stream.",
+        "Solvent mass balance per product: fresh purchase plus recovered in, minus recovered out, minus losses.",
+        "For off site disposal, the quantities on the Form 10 manifests required under the Hazardous and Other Wastes Rules, 2016.",
+        "Water content: if the stream is part water, apply the carbon fraction to the wet mass only when the lab result is on a wet basis."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Bio-based ethanol, common in India from molasses, gives biogenic CO2: report it separately, not in Scope 1 totals.",
+        "Fugitive solvent losses to air are VOC emissions, not CO2; track them for your consent, not the carbon inventory, unless a solvent is itself a greenhouse gas.",
+        "Halogenated solvents such as dichloromethane contain less carbon per kg; use their own formula."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month of on site incineration",
+    "lines": [
+      "Toluene residue: 8,000 kg x 0.912 = 7,296 kg carbon; x 44/12 = 26,752 kg CO2",
+      "Methanol residue: 2,000 kg x 0.375 = 750 kg carbon; x 44/12 = 2,750 kg CO2",
+      "Total Scope 1 from solvent burning: 29,502 kg CO2, about 29.5 tonnes (oxidation factor 100%)",
+      "Recovered solvent of 27,000 kg is not counted, because it was not burnt"
+    ],
+    "note": "Assumes pure, fossil-derived solvents. Add the incinerator's support fuel separately."
+  },
+  "senseible": "Senseible reads your fuel and power invoices, so the energy used for distillation and any incinerator support fuel are covered. The CO2 from burning solvent itself needs your solvent mass and carbon content, which come from feed logs and manifests rather than invoices.",
+  "links": [
+    {
+      "label": "NHS carbon plan for Indian pharma",
+      "to": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india"
+    },
+    {
+      "label": "Carbon footprint per kg of API",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "Waste emissions, Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 5 Waste, Chapter 5 Incineration and open burning of waste",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard and Scope 3 Standard (Category 5)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 (CPCB)",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

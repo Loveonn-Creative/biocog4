@@ -1,0 +1,63 @@
+{
+  "slug": "actual-vs-shortest-distance-freight-emissions",
+  "q": "Should freight emissions use the actual route distance or the shortest distance?",
+  "title": "Freight: actual or shortest distance?",
+  "short": "Use the distance basis your emission factor was built on. ISO 14083 and the GLEC Framework calculate shipment emissions on the shortest feasible distance (great circle for air), with detours carried inside the carrier's intensity. With a generic per tonne-km default, use actual distance where you know it, or the shortest distance with GLEC's adjustment.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Logistics managers and exporters reporting route changes",
+  "sections": [
+    {
+      "h": "How ISO 14083 handles distance",
+      "p": [
+        "ISO 14083:2023 works in two steps. First, a carrier's emission intensity for a type of transport operation is its total emissions divided by its total transport activity in tonne-km. Second, each shipment is charged that intensity x its weight x its distance.",
+        "For transport activity the standard uses the shortest feasible distance: the shortest route a vehicle can actually take, given road type, weight and height limits. For air it uses the great circle distance. The extra kilometres of real routes, empty running and detours are not lost; they are in the total fuel, so they raise the intensity."
+      ]
+    },
+    {
+      "h": "Why mixing bases gives wrong answers",
+      "p": [
+        "If an intensity was built from actual kilometres and you apply it to shortest distances, you undercount. If it was built on shortest distances and you apply it to actual kilometres, you count detours twice. Check how your carrier or default source defines distance before you multiply."
+      ]
+    },
+    {
+      "h": "Which distance to use in common cases",
+      "ul": [
+        "Carrier gives an ISO 14083 intensity: use the shortest feasible distance between pickup and delivery, as the carrier does.",
+        "You have the carrier's fuel for your dedicated trips: skip tonne-km and use fuel x factor; distance does not matter.",
+        "You use a generic per tonne-km default factor: use the actual distance if a trip sheet or GPS log gives it. If you only have origin and destination, use the shortest route and apply the distance adjustment factor from the GLEC Framework tables for that mode.",
+        "Only an e-way bill: its distance is an approximate road route; treat it as actual distance and use one source per lane."
+      ]
+    },
+    {
+      "h": "Reporting a route change",
+      "p": [
+        "With shortest-distance accounting, a longer route, for example around a closed sea lane, does not change your figure unless the carrier's intensity changes. If buyers want to see the effect of the detour, report the actual distance case beside it and say which basis each figure uses. To claim savings from route optimisation, measured fuel is the stronger evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how much the distance basis moves the figure",
+    "lines": [
+      "Shipment: 10 tonnes; shortest feasible road distance 1,000 km; actual route 1,150 km",
+      "Tonne-km on shortest distance: 10 x 1,000 = 10,000 tkm",
+      "Tonne-km on actual route: 10 x 1,150 = 11,500 tkm",
+      "With the same per tonne-km factor, the actual route gives 15 percent more emissions (11,500 / 10,000 = 1.15)"
+    ],
+    "note": "No default factor is applied here; take one from a named public source and record its distance basis."
+  },
+  "senseible": "Senseible reads freight records and applies weight x distance x a mode factor, using the distance printed on the record; a record without weight or distance gets no figure. Where only the freight cost is known, it can provide a spend-based estimate, labelled as spend-based.",
+  "links": [
+    { "label": "Freight bill with no weight or distance", "to": "/answers/freight-bill-has-no-weight-or-distance" },
+    { "label": "E-way bill distance for freight emissions", "to": "/answers/use-e-way-bill-distance-for-freight-emissions" },
+    { "label": "Measuring a route optimisation cut", "to": "/answers/measure-emission-cut-from-route-optimisation" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" }
+  ],
+  "sources": [
+    { "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations", "url": "https://www.iso.org" },
+    { "label": "GLEC Framework (Smart Freight Centre), distance and distance adjustment factors", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
+    { "label": "GHG Protocol Scope 3 Technical Guidance, Category 4 distance-based method", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "GLEC distance adjustment factors differ by mode and version; take them from the current GLEC tables."
+}

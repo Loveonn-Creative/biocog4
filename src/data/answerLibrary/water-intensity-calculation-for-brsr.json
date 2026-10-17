@@ -1,0 +1,71 @@
+{
+  "slug": "water-intensity-calculation-for-brsr",
+  "q": "How do I calculate water withdrawal, consumption and water intensity for BRSR?",
+  "title": "Water withdrawal and intensity for BRSR",
+  "short": "Add up all water drawn in the year by source, in kilolitres: that is withdrawal. Subtract water discharged to get consumption. Divide consumption by revenue from operations for intensity per rupee, and by revenue converted at the PPP rate for the BRSR Core figure. Report a physical output intensity too if it suits your sector.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Listed companies and their value-chain suppliers in India",
+  "sections": [
+    {
+      "h": "Withdrawal: what goes in each source line",
+      "ul": [
+        "Surface water: drawn from a river, lake or canal under your own permission.",
+        "Groundwater: borewells and open wells on your premises, from flow meter readings.",
+        "Third party water: municipal supply, industrial estate supply and tanker water.",
+        "Seawater or desalinated water.",
+        "Others: any source that fits none of the above; say what it is."
+      ],
+      "p": ["Report every figure in kilolitres for the financial year. Water recycled inside the plant through your ETP or RO is not new withdrawal; count it once, when it first comes in."]
+    },
+    {
+      "h": "Consumption and discharge",
+      "p": [
+        "BRSR treats consumption as withdrawal minus discharge. Discharge is reported by destination (surface water, groundwater, seawater, third parties such as a CETP or sewer) and by level of treatment. A unit with zero liquid discharge reports little or no discharge, so its consumption is close to its withdrawal.",
+        "Water that leaves in product or evaporates in cooling towers and evaporators is consumed."
+      ]
+    },
+    {
+      "h": "The intensity figures",
+      "ol": [
+        "Per rupee of turnover: total consumption in kL / revenue from operations in rupees. Many companies also show it per crore for readability.",
+        "BRSR Core: consumption / revenue from operations adjusted for purchasing power parity, using the PPP conversion rate for India, so it can be compared across countries.",
+        "Physical output: kL per tonne, per piece or per unit of product, where the company chooses a relevant metric and states it."
+      ]
+    },
+    {
+      "h": "What makes the numbers assurable",
+      "ul": [
+        "Calibrated flow meters on each borewell and incoming line, with monthly logs.",
+        "Municipal and estate water bills, and tanker delivery slips with volumes.",
+        "Outlet meter readings and CETP or sewer charge invoices for discharge.",
+        "The revenue figure used, matched to the annual report, and the PPP rate with its source and year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a mid-size listed manufacturer",
+    "lines": [
+      "Withdrawal: groundwater 80,000 kL + third party 40,000 kL = 1,20,000 kL",
+      "Discharge to CETP: 30,000 kL; consumption: 1,20,000 minus 30,000 = 90,000 kL",
+      "Revenue from operations: ₹300 crore; intensity: 90,000 / 300 = 300 kL per crore, or 0.00003 kL per rupee",
+      "PPP rate (illustrative): 20.5 rupees per international dollar; revenue = ₹3,00,00,00,000 / 20.5 = about 146.3 million PPP dollars",
+      "BRSR Core intensity: 90,000 / 146.3 = about 615 kL per million PPP dollars"
+    ],
+    "note": "The PPP rate is illustrative. Use the rate for the reporting year from the source your assurance provider accepts."
+  },
+  "senseible": "Senseible's document reader is built for invoices, electricity bills, fuel slips and freight records, and it totals the energy and emissions side of BRSR Principle 6. Collecting water figures from your meter logs and water bills can be set up with the Senseible team.",
+  "links": [
+    { "label": "BRSR reporting requirements in India", "to": "/climate-intelligence/brsr-reporting-requirements-india" },
+    { "label": "BRSR emission intensity per rupee and PPP", "to": "/answers/brsr-emission-intensity-per-rupee-ppp" },
+    { "label": "BRSR Core's nine attributes", "to": "/answers/brsr-core-nine-attributes-explained" },
+    { "label": "CDP water security for textile exporters", "to": "/answers/cdp-water-security-textile-exporter" }
+  ],
+  "sources": [
+    { "label": "SEBI circular on BRSR Core, 12 July 2023 (water attributes)", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "SEBI circular on Business Responsibility and Sustainability Reporting, 10 May 2021, Principle 6 (sebi.gov.in)", "url": "https://www.sebi.gov.in" },
+    { "label": "ISO 14046:2014, Water footprint (iso.org)", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "SEBI has amended the BRSR format and BRSR Core more than once; check the current format before filing."
+}

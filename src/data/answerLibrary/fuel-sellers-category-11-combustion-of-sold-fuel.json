@@ -1,0 +1,75 @@
+{
+  "slug": "fuel-sellers-category-11-combustion-of-sold-fuel",
+  "q": "Do LPG, diesel or coal distributors report the combustion of the fuel they sell, and how big is it?",
+  "title": "Fuel distributors and sold fuel emissions",
+  "short": "Yes. A company that sells fuel reports the emissions from burning it in Scope 3 Category 11, use of sold products. Multiply the quantity sold by the fuel's emission factor. For a fuel dealer this figure is usually many times larger than its own Scope 1 and 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fuel distributors and dealers in India and similar markets",
+  "sections": [
+    {
+      "h": "Why distributors report it too",
+      "p": [
+        "The GHG Protocol Scope 3 Technical Guidance treats combustion of sold fuels as direct use-phase emissions, the minimum required in Category 11. It applies to every company that sells the fuel: refiner, distributor and retailer. The same tonne of CO2 then appears in several companies' Scope 3. That overlap is expected; Scope 3 shows exposure, not a share to be added up across companies."
+      ]
+    },
+    {
+      "h": "What goes where",
+      "ul": [
+        "Fuel sold to customers: Category 11.",
+        "Fuel you burn yourself in delivery trucks, forklifts or generators: Scope 1, and leave it out of Category 11.",
+        "Fuel sold as a feedstock that is not burnt, such as naphtha to a chemical plant: not combustion; disclose it separately.",
+        "Upstream emissions of producing the fuel you buy: Category 3 for fuel you burn, not Category 11."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "p": [
+        "Category 11 = quantity sold in the year x emission factor per unit. Use the IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg, coal 2.42 kg CO2 per kg) unless you have a better factor, such as coal by its tested gross calorific value. These are CO2 only; methane and nitrous oxide from combustion add a small amount."
+      ]
+    },
+    {
+      "h": "How big it is",
+      "p": [
+        "For a petrol pump or gas agency, own emissions are mostly electricity and a few vehicles. Sold fuel is usually two orders of magnitude larger. Report both, and do not let the Category 11 figure hide progress on your own Scope 1 and 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three distributors",
+    "lines": [
+      "LPG agency: 100,000 cylinders of 14.2 kg = 1,420,000 kg = 1,420 t; 1,420,000 x 2.98 = 4,231,600 kg, about 4,232 t CO2",
+      "Diesel dealer: 2,000,000 litres x 2.68 = 5,360,000 kg, about 5,360 t CO2",
+      "Coal trader: 50,000 t x 2.42 = 121,000 t CO2",
+      "Diesel dealer's own electricity: 60,000 kWh x 0.710 = 42,600 kg, about 42.6 t CO2",
+      "Sold fuel versus own electricity: 5,360 / 42.6 = about 126 times"
+    ],
+    "note": "Coal factors vary widely with grade; replace 2.42 with a factor from tested GCV where you have it."
+  },
+  "senseible": "Senseible applies the same IPCC 2006 fuel factors it uses for Scope 1 (LPG 2.98 kg per kg, diesel 2.68 kg per litre, coal 2.42 kg per kg), so sold quantities from your sales invoices can be multiplied on the same basis. Keep sold fuel apart from fuel you burn, so it stays out of your Scope 1.",
+  "links": [
+    {
+      "label": "Category 11 for energy-using products",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 11",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

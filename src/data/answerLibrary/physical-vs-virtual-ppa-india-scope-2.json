@@ -1,0 +1,80 @@
+{
+  "slug": "physical-vs-virtual-ppa-india-scope-2",
+  "q": "Can an Indian company use a virtual PPA for market-based Scope 2?",
+  "title": "Virtual PPAs and Scope 2 in India",
+  "short": "Only through the certificates it delivers. A virtual PPA is a financial contract, so no power reaches you; the market-based claim rests on Indian RECs or I-RECs from the project, retired for you and meeting GHG Protocol quality criteria. India has no settled framework for corporate virtual PPAs, so take legal advice first.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Large consumers and exporters seeking renewable energy claims",
+  "sections": [
+    {
+      "h": "What a virtual PPA is",
+      "p": [
+        "The generator sells its power into the market as usual. You and the generator agree a strike price: when the market price is below it you pay the difference, and when it is above the generator pays you. Alongside, the generator transfers the renewable attributes to you as certificates. Your own electricity still comes from your discom or existing supply."
+      ]
+    },
+    {
+      "h": "Where it stands in India",
+      "p": [
+        "Indian corporate renewable deals are mostly physical: green energy open access under the 2022 rules, group captive projects, discom green tariffs, and RECs. A bilateral contract for differences on power prices has no dedicated framework, and power derivatives sit between CERC and SEBI oversight. Before signing, get a legal view on whether the contract is enforceable and how it is taxed."
+      ]
+    },
+    {
+      "h": "What makes the Scope 2 claim count",
+      "ol": [
+        "The contract must convey the attributes to you alone, and the certificates must be retired in your name.",
+        "Certificates must come from the same market as your consumption; for an Indian site that means Indian projects, through RECs under the CERC REC Regulations, 2022, or I-RECs.",
+        "The vintage should be close to the period you report.",
+        "No one else, including the generator or the discom, may claim the same units.",
+        "Without certificates, the financial hedge alone supports no market-based claim."
+      ]
+    },
+    {
+      "h": "What to report",
+      "p": [
+        "Location-based Scope 2 does not change: all units you consume at the grid factor. Market-based Scope 2 counts the units covered by retired certificates at zero, and the rest at a residual mix factor or, where none is published, the grid average with a note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative year for a plant using 10,000 MWh",
+    "lines": [
+      "Location-based: 10,000,000 kWh x 0.710 = 7,100,000 kg CO2, 7,100 tonnes",
+      "Certificates retired from the virtual PPA project: 6,000 (1 certificate = 1 MWh)",
+      "Market-based: remaining 4,000,000 kWh x 0.710 = 2,840,000 kg CO2, 2,840 tonnes",
+      "Report both figures and name the certificate type and project"
+    ],
+    "note": "India has no published residual mix, so the grid average is used for the uncovered units and noted."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from your bills and market-based Scope 2 when you supply the instrument data, such as retired certificate records. The legal and tax review of the contract sits with your advisers.",
+  "links": [
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "What to put in a PPA for a carbon claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The legal status of financial power contracts in India is unsettled, and the GHG Protocol is revising its Scope 2 guidance; check both before relying on this."
+}
