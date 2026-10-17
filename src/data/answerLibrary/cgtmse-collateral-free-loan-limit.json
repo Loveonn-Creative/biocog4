@@ -49,6 +49,14 @@
     {
       "label": "Green loans with carbon data",
       "to": "/climate-intelligence/how-to-get-green-loans-india-carbon-data"
+    },
+    {
+      "label": "Credit cover for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
     }
   ],
   "sources": [

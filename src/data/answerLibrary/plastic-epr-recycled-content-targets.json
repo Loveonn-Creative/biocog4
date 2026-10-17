@@ -59,6 +59,14 @@
     {
       "to": "/answers",
       "label": "More answers on reporting rules"
+    },
+    {
+      "label": "How to calculate your plastic EPR obligation",
+      "to": "/answers/how-to-calculate-plastic-epr-obligation"
+    },
+    {
+      "label": "How to calculate recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
     }
   ],
   "sources": [

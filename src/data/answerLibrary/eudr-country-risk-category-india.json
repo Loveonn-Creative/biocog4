@@ -57,6 +57,10 @@
     {
       "label": "Supplier due diligence",
       "to": "/supplier-due-diligence"
+    },
+    {
+      "label": "Due diligence statement: supplier data",
+      "to": "/answers/eudr-due-diligence-statement-supplier-data"
     }
   ],
   "sources": [

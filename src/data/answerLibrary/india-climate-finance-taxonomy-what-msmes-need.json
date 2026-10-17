@@ -52,6 +52,10 @@
     {
       "label": "Green loan readiness check",
       "to": "/green-loan-check"
+    },
+    {
+      "label": "India vs EU taxonomy",
+      "to": "/answers/india-climate-finance-taxonomy-vs-eu-taxonomy"
     }
   ],
   "sources": [

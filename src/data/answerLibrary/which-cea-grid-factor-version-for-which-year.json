@@ -61,6 +61,10 @@
     {
       "label": "Vietnam grid emission factor",
       "to": "/climate-intelligence/vietnam-grid-emission-factor"
+    },
+    {
+      "label": "Recalculate past years when the factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
     }
   ],
   "sources": [

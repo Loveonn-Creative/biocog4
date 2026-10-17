@@ -57,6 +57,10 @@
     {
       "label": "Energy transition savings calculator",
       "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Hourly grid emission factors for India",
+      "to": "/answers/hourly-grid-emission-factors-india"
     }
   ],
   "sources": [

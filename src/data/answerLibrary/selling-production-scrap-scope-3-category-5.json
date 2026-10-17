@@ -41,10 +41,6 @@
   "senseible": "Senseible reads the freight records for trips that move your scrap and keeps those lines in the Scope 3 evidence trail, with the source file behind each figure. It issues no carbon credits, so it will not turn scrap sales into one.",
   "links": [
     {
-      "label": "Scrap sold for recycling in Scope 3",
-      "to": "/answers/scrap-sold-for-recycling-scope-3"
-    },
-    {
       "label": "Recycled content in a product footprint",
       "to": "/answers/how-to-count-recycled-content-in-product-footprint"
     },

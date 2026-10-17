@@ -58,6 +58,14 @@
     {
       "label": "Grid electricity factor for India",
       "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "PUE formula and what good looks like",
+      "to": "/answers/pue-formula-and-good-pue"
+    },
+    {
+      "label": "Cloud carbon footprint for AWS, Azure, Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
     }
   ],
   "sources": [

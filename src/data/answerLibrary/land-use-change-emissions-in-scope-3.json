@@ -53,10 +53,6 @@
   "senseible": "Senseible's document reader puts invoices for purchased crops, cotton or timber into its supplier evidence trail as Scope 3 lines with their quantities; it applies no land use change factor on its own, so you multiply those quantities by a named country and crop factor.",
   "links": [
     {
-      "label": "Does my company need an SBTi FLAG target?",
-      "to": "/answers/does-my-company-need-sbti-flag-target"
-    },
-    {
       "label": "Does EUDR apply to my exports?",
       "to": "/answers/does-eudr-apply-to-my-indian-exports"
     },

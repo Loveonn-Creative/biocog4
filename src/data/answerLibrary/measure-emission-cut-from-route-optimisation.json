@@ -51,15 +51,32 @@
   },
   "senseible": "Senseible reads litres from fuel slips and weight and distance from freight bills where they are printed, which gives you both sides of the intensity calculation. Telematics or GPS feeds are not a self-serve integration; they are set up with the Senseible team for each customer. It does not plan routes.",
   "links": [
-    { "label": "Actual or shortest distance for freight", "to": "/answers/actual-vs-shortest-distance-freight-emissions" },
-    { "label": "Telematics or fuel invoices for fleets", "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions" },
-    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" },
-    { "label": "Measuring factory efficiency savings", "to": "/answers/how-to-measure-savings-from-energy-efficiency-project" }
+    {
+      "label": "Telematics or fuel invoices for fleets",
+      "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Measuring factory efficiency savings",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    }
   ],
   "sources": [
-    { "label": "GLEC Framework v3 (Smart Freight Centre, 2023)", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" },
-    { "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains (iso.org)", "url": "https://www.iso.org" },
-    { "label": "IPCC 2006 Guidelines, Volume 2 (Energy)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+    {
+      "label": "GLEC Framework v3 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions from transport chains (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
   ],
   "reviewed": "2026-10-16"
 }

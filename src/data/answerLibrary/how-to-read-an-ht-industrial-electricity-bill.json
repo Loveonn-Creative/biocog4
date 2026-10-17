@@ -55,6 +55,10 @@
     {
       "label": "Footprint from electricity bills",
       "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "kVAh bill to kWh for emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
     }
   ],
   "sources": [

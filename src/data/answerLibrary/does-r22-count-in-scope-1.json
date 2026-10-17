@@ -53,6 +53,14 @@
     {
       "label": "Cold chain refrigerant leaks and carbon",
       "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    },
+    {
+      "label": "India's HFC phase-down schedule",
+      "to": "/answers/india-hfc-phase-down-schedule-kigali"
+    },
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
     }
   ],
   "sources": [

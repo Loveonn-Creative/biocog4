@@ -47,10 +47,6 @@
   "senseible": "Enteric methane is worked out from herd data as shown here, outside Senseible's document reader. Senseible reads the fuel invoices and electricity bills for chilling, processing and transport, so those Scope 1 and 2 lines sit in an invoice-backed record beside your herd estimate.",
   "links": [
     {
-      "label": "Does my company need an SBTi FLAG target?",
-      "to": "/answers/does-my-company-need-sbti-flag-target"
-    },
-    {
       "label": "Agriculture Scope 1 emissions in India",
       "to": "/climate-intelligence/agriculture-scope-1-emissions-india"
     },
