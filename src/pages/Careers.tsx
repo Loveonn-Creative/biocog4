@@ -21,7 +21,6 @@ import {
   type CareerRole,
 } from "@/data/careersRoles";
 import { useTranslation } from "@/lib/i18n/useTranslation";
-import careersOg from "@/assets/og/careers.jpg";
 
 const ALL = "all";
 const SURFACE_KINDS = ["mrv", "finance", "ai", "trust"] as const;
@@ -290,7 +289,6 @@ const Careers = () => {
           "We're removing what stands between small businesses and the green economy. If you want difficult, meaningful work, this is the door."
         )}
         canonical="/careers"
-        image={`https://senseible.earth${careersOg}`}
         keywords={[
           "Climate Tech Careers",
           "Carbon Market Jobs",

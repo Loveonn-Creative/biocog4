@@ -3,7 +3,6 @@ import { Footer } from "@/components/Footer";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
-import missionOg from "@/assets/og/mission.jpg";
 import { MissionField, DrawnUnderline, RiseIn } from "@/components/mission/MissionVisuals";
 
 const Mission = () => {
@@ -14,7 +13,6 @@ const Mission = () => {
         description="Why Senseible exists: Making carbon verification infrastructure accessible to MSMEs excluded from global climate finance."
         keywords={["senseible mission", "MSME carbon", "climate finance inclusion", "carbon verification infrastructure"]}
         canonical="/mission"
-        image={`https://senseible.earth${missionOg}`}
       />
       <MinimalNav />
       

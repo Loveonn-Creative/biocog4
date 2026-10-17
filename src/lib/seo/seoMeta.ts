@@ -27,6 +27,31 @@ const OG_IMAGES: Record<string, { slug: string; alt: string }> = {
   '/climate-finance': { slug: 'climate-finance', alt: 'Verified data lenders can underwrite' },
   '/industries': { slug: 'industries', alt: 'Carbon, sector by sector' },
   '/net-zero': { slug: 'net-zero', alt: 'A baseline becomes a roadmap' },
+  '/careers': { slug: 'careers', alt: 'Careers at Senseible: build climate infrastructure for small businesses, with roles in engineering, applied AI, climate research, design and growth' },
+  '/mission': { slug: 'mission', alt: 'Our mission: carbon accounting every MSME can use' },
+  '/partners': { slug: 'partners', alt: 'Partner with Senseible: verified MSME emission data for banks, auditors, carbon credit buyers and ERP providers' },
+  // CBAM cluster
+  '/cbam-cost': { slug: 'cbam', alt: 'CBAM cost per tonne by sector, 2026 to 2034' },
+  '/climate-intelligence/eu-cbam-explained-emerging-market-exporters': { slug: 'cbam', alt: 'EU CBAM explained for exporters: the 2026 rules' },
+  '/answers/cbam-definitive-period': { slug: 'cbam', alt: 'The CBAM definitive period from 2026, and how it differs from the transitional phase' },
+  '/answers/how-to-calculate-cbam-cost': { slug: 'cbam', alt: 'How to calculate CBAM cost, with a worked example' },
+  // Green finance cluster
+  '/green-finance': { slug: 'green-finance', alt: 'Green loans, sustainability-linked loans and green bonds backed by verified emissions' },
+  '/green-loan-check': { slug: 'green-finance', alt: 'Green loan check for MSMEs: see what a lender will ask for' },
+  // Carbon accounting and scopes
+  '/carbon-accounting': { slug: 'carbon-accounting', alt: 'Carbon accounting: a Scope 1, 2 and 3 GHG inventory from your bills and invoices' },
+  '/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business': { slug: 'carbon-accounting', alt: 'Scope 1, 2 and 3 emissions: a small business guide' },
+  // Factors and calculators
+  '/emission-factors': { slug: 'calculators', alt: 'Emission factors for Indian invoices: fuels and grid electricity' },
+  '/calculators': { slug: 'calculators', alt: 'Free carbon calculators for MSMEs' },
+  '/calculators/product-carbon-footprint': { slug: 'calculators', alt: 'Product carbon footprint calculator: cradle-to-gate emissions per product unit' },
+  // Hubs
+  '/climate-intelligence': { slug: 'guides', alt: 'Climate Intelligence: guides on CBAM, Scope 3, BRSR and green finance' },
+  '/answers': { slug: 'guides', alt: 'Answers: straight answers about Senseible, carbon data and CBAM' },
+  '/enterprise': { slug: 'enterprise', alt: 'Every supplier’s emissions in one record: Scope 3 for enterprise buyers' },
+  '/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026': { slug: 'credit-pricing', alt: 'How carbon credits are actually priced in 2026, voluntary and compliance markets' },
+  '/marketplace': { slug: 'marketplace', alt: 'Carbon credit marketplace: MSME credit listings with provenance and verification status' },
+  '/white-paper': { slug: 'white-paper', alt: 'Senseible white paper: how an invoice becomes an emission figure' },
 };
 
 /** The preview image and its alt text for a path; the shared default when the page has none. */

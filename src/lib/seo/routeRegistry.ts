@@ -47,6 +47,8 @@ export type RouteSection = 'core' | 'tool' | 'guide' | 'solution' | 'compare' | 
 export interface SeoRoute {
   path: string;
   section: RouteSection;
+  /** og:type; defaults to "article" for guides and "website" otherwise. */
+  ogType?: 'website' | 'article';
   title: string;
   description: string;
   h1: string;
@@ -407,7 +409,7 @@ function competitorRoutes(): SeoRoute[] {
 function answerRoutes(): SeoRoute[] {
   const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'Answers', path: '/answers' }];
   const hub: SeoRoute = {
-    path: '/answers', section: 'guide', ...STATIC_PAGE_META['/answers'], h1: 'Answers',
+    path: '/answers', section: 'guide', ogType: 'website', ...STATIC_PAGE_META['/answers'], h1: 'Answers',
     blocks: (Object.keys(ANSWER_TOPICS) as (keyof typeof ANSWER_TOPICS)[]).flatMap(t => [
       { h2: ANSWER_TOPICS[t].label } as Block,
       { ul: answers.filter(a => a.topic === t).map(a => `[${a.q}](/answers/${a.slug})`) } as Block,

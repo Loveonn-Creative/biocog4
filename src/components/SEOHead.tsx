@@ -13,6 +13,7 @@ interface SEOHeadProps {
   description: string;
   canonical?: string;
   type?: 'website' | 'article' | 'product';
+  /** Ignored: previews come from ogImageFor() so every image is 1200x630 with alt text. */
   image?: string;
   keywords?: string[];
   article?: {
@@ -34,7 +35,6 @@ export const SEOHead = ({
   description,
   canonical,
   type = 'website',
-  image,
   keywords = [],
   article,
   noIndex = false,
@@ -52,10 +52,11 @@ export const SEOHead = ({
     description = registered.description;
   }
   const fullTitle = fitTitle(title);
-  // Pages with their own preview always use it, so the live head matches the
-  // prerendered HTML that link previewers read; others may pass an image.
+  // The preview always comes from ogImageFor (the page's mapped image or the
+  // shared default), so the live head matches the prerendered HTML that link
+  // previewers read and always carries its size and alt text.
   const og = ogImageFor(canonical ?? pathname);
-  const previewImage = og.specific || !image ? og.url : image;
+  const previewImage = og.url;
   const siteUrl = SITE_URL;
   // Without an explicit canonical, RouteSEO supplies one from the current path.
   const canonicalUrl = canonical
@@ -140,9 +141,9 @@ export const SEOHead = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={previewImage} />
-      {previewImage === og.url && <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />}
-      {previewImage === og.url && <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />}
-      {previewImage === og.url && <meta property="og:image:alt" content={og.alt} />}
+      <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
+      <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+      <meta property="og:image:alt" content={og.alt} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:site_name" content="Senseible" />
       
@@ -151,7 +152,7 @@ export const SEOHead = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={previewImage} />
-      {previewImage === og.url && <meta name="twitter:image:alt" content={og.alt} />}
+      <meta name="twitter:image:alt" content={og.alt} />
       
       {article?.publishedTime && (
         <meta property="article:published_time" content={article.publishedTime} />

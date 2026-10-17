@@ -1,6 +1,8 @@
 /**
  * Renders the link-preview images (1200x630 JPEG) in public/og/.
- * Run by hand after changing a preview: `node scripts/og/render-og.mjs`.
+ * Run by hand after changing a preview: `node scripts/og/render-og.mjs`, or
+ * `node scripts/og/render-og.mjs careers mission` to render only those slugs
+ * (the version hash always covers every image in public/og/).
  * Uses the pre-installed Chromium; the images are committed, so the build
  * does not depend on this script.
  *
@@ -36,6 +38,8 @@ body { width: 1200px; height: 630px; font-family: SG, sans-serif; background: #F
 .eyebrow { margin-top: 64px; font-size: 20px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: ${INK}; }
 h1 { margin-top: 16px; font-size: ${p.size ?? 64}px; line-height: 1.05; font-weight: 600; letter-spacing: -1.5px; }
 .sub { margin-top: 22px; font-size: 26px; line-height: 1.35; color: #5b5b5b; }
+.chips { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 18px; font-weight: 500; color: ${INK}; border: 2px solid #1F513A55; background: #fff; padding: 6px 13px; border-radius: 999px; }
 .cta { margin-top: auto; display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; background: ${INK}; color: #fff; font-size: 24px; font-weight: 500; padding: 14px 26px; border-radius: 999px; }
 .url { position: absolute; right: 64px; bottom: 54px; font-size: 20px; color: #7a7a7a; }
 .art { position: absolute; right: 56px; top: 80px; width: 420px; height: 420px; }
@@ -51,6 +55,7 @@ h1 { margin-top: 16px; font-size: ${p.size ?? 64}px; line-height: 1.05; font-wei
   <div class="eyebrow">${p.eyebrow}</div>
   <h1>${p.title}</h1>
   <div class="sub">${p.sub}</div>
+  ${p.chips ? `<div class="chips">${p.chips.map(c => `<span class="chip">${c}</span>`).join('')}</div>` : ''}
   <div class="cta">${p.cta} <svg width="22" height="22" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 </div>
 <svg class="art" viewBox="0 0 400 400">${p.art}</svg>
@@ -60,7 +65,8 @@ h1 { margin-top: 16px; font-size: ${p.size ?? 64}px; line-height: 1.05; font-wei
 fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ executablePath: fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
-for (const p of OG_PAGES) {
+const only = process.argv.slice(2);
+for (const p of OG_PAGES.filter(x => !only.length || only.includes(x.slug))) {
   await page.setContent(html(p), { waitUntil: 'load' });
   await page.evaluate(() => document.fonts.ready);
   const file = path.join(OUT, `${p.slug}.jpg`);

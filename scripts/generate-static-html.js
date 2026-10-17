@@ -39,7 +39,7 @@ function headTags(route, R) {
     `<link rel="canonical" href="${url}" data-rh="true" />`,
     `<link rel="alternate" hreflang="x-default" href="${url}" data-rh="true" />`,
     `<link rel="alternate" type="text/markdown" href="${R.SITE_URL}${mdPathFor(route.path)}" />`,
-    `<meta property="og:type" content="${route.section === 'guide' ? 'article' : 'website'}" data-rh="true" />`,
+    `<meta property="og:type" content="${route.ogType ?? (route.section === 'guide' ? 'article' : 'website')}"data-rh="true" />`,
     `<meta property="og:site_name" content="Senseible" data-rh="true" />`,
     `<meta property="og:url" content="${url}" data-rh="true" />`,
     `<meta property="og:title" content="${e(route.title)}" data-rh="true" />`,
