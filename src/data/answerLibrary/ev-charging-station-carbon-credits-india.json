@@ -43,7 +43,7 @@
       "Energy delivered: 300,000 kWh a year; project emissions 300,000 x 0.710 = 213,000 kg CO2",
       "At 0.15 kWh per km, that is 300,000 / 0.15 = 2,000,000 km",
       "Diesel car baseline at 15 km per litre: 2,000,000 / 15 = 133,333 litres x 2.68 = 357,333 kg CO2",
-      "Reduction: 357,333 to 213,000 = 144,333 kg, about 144 tonnes CO2 a year"
+      "Reduction: 357,333 minus 213,000 = 144,333 kg, about 144 tonnes CO2 a year"
     ],
     "note": "Labelled estimate: vehicle efficiency and mileage are assumptions, 2.68 kg CO2 per litre is the IPCC 2006 diesel default and 0.710 is the CEA weighted average grid factor. The methodology may require a different grid factor, such as a combined margin."
   },

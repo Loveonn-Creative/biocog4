@@ -2,7 +2,7 @@
   "slug": "eu-taxonomy-steel-substantial-contribution-threshold",
   "q": "What emissions threshold does steel have to meet to be EU Taxonomy aligned?",
   "title": "EU Taxonomy threshold for steel",
-  "short": "Under activity 3.9 of the EU Climate Delegated Act, steel passes if each process step stays below fixed EU ETS benchmark values, such as 1.331 t CO2e per tonne of hot metal and 0.209 t CO2e per tonne of EAF carbon steel. An electric arc furnace can pass instead with at least 90% scrap input for carbon steel or 70% for high alloy steel.",
+  "short": "Under activity 3.9 of the EU Climate Delegated Act, each process step must stay below a fixed EU ETS benchmark value, such as 1.331 t CO2e per tonne of hot metal or 0.209 t CO2e per tonne of EAF carbon steel. An electric arc furnace can instead pass with at least 90% scrap input, or 70% for high alloy steel.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian steel exporters and their EU buyers and financiers",
