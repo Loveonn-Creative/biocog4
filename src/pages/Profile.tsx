@@ -32,6 +32,7 @@ import { Link } from 'react-router-dom';
 import { EnterpriseModeCard } from '@/components/enterprise/EnterpriseModeCard';
 import { Scope3FullTrailCard } from '@/components/scope3/Scope3FullTrailCard';
 import { ChangePasswordCard } from '@/components/settings/ChangePasswordCard';
+import { QuickPurchases } from '@/components/profile/QuickPurchases';
 
 const tierIcons = {
   snapshot: Sparkles,
@@ -79,7 +80,7 @@ interface ProfileData {
 const Profile = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated, isLoading: sessionLoading } = useSession();
-  const { tier, isPremium } = usePremiumStatus();
+  const { tier, isPremium, expiresAt } = usePremiumStatus();
   const { hasOrganization } = useOrganization();
   
   const [profile, setProfile] = useState<ProfileData>({
@@ -285,6 +286,9 @@ const Profile = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Invoice credits, Fast-track Verification, Expert Climate Audit */}
+          <QuickPurchases planEnd={expiresAt ? expiresAt.toISOString() : null} />
 
           {/* Account Info */}
           <Card>

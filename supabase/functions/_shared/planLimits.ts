@@ -65,8 +65,9 @@ export function monthStartIst(now = new Date()): string {
   return new Date(startIstAsUtc - 330 * 60_000).toISOString();
 }
 
-export function monthlyLimitMessage(limit: number): string {
-  return `You have used this month's ${limit} invoice reads on your plan. Already stored invoices still open as usual. Upgrade on the Subscription page, or wait for the new month.`;
+/** Shown when the plan's reads and any credits are used up (owner wording, October 2026). */
+export function monthlyLimitMessage(_limit: number): string {
+  return 'Page limit reached. Upgrade, wait until next month, or top up credits now on your profile.';
 }
 
 const PLAN_RANK: Record<PlanTier, number> = { snapshot: 0, essential: 1, pro: 2, scale: 3 };

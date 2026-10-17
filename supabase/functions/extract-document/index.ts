@@ -4,6 +4,7 @@ import { createClient, type SupabaseClient } from "https://esm.sh/@supabase/supa
 import { countPdfPages, isPdf, MAX_PDF_PAGES, pageLimitMessage } from '../_shared/pdfPages.ts';
 import { checkedSourcePage, INCOMPLETE_EXTRACTION_MESSAGE, isTruncatedFinish, UNKNOWN_PAGE_COUNT_MESSAGE } from '../_shared/extractionChecks.ts';
 import { effectivePlanTier, invoiceScanLimit, monthlyLimitMessage, monthStartIst, strongerPlan, strongestRow } from '../_shared/planLimits.ts';
+import { pageCountingFrom } from '../_shared/addonPurchases.ts';
 import { clientIp, guestSubject, readUse, takeUse } from '../_shared/intelligenceUsage.ts';
 import { dayIst } from '../_shared/intelligence.ts';
 import { GUEST_DAILY_SCANS, GUEST_IP_DAILY_SCANS, guestFileCheck } from '../_shared/guestScan.ts';
@@ -527,7 +528,32 @@ async function createEmissionRows(
   }
 }
 
+// The read reserved for this request (signed-in uploads). It is committed
+// when the read produced something and released (nothing counted, credits
+// back) when it failed, was empty or was a duplicate; see the invoice_reads
+// migration. Settled once, after the response is built.
+interface ReadCtx { id: string | null; commit: boolean; documentId: string | null }
+async function settleRead(read: ReadCtx) {
+  if (!read.id) return;
+  const url = Deno.env.get('SUPABASE_URL'); const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  if (!url || !key) return;
+  try {
+    const db = createClient(url, key);
+    const { error } = read.commit
+      ? await db.rpc('commit_invoice_read', { p_id: read.id, p_document_id: read.documentId })
+      : await db.rpc('release_invoice_read', { p_id: read.id });
+    if (error) console.error('Read settle failed:', error.code);
+  } catch (e) {
+    console.error('Read settle failed:', (e as Error)?.name ?? 'error');
+  }
+}
+
 serve(async (req) => {
+  const read: ReadCtx = { id: null, commit: false, documentId: null };
+  try { return await handleRequest(req, read); } finally { await settleRead(read); }
+});
+
+async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -632,6 +658,8 @@ serve(async (req) => {
     let profileLocation: string | null = null;
     let userTier = 'guest';
     let scanLimit: number | null = null; // signed-in users only
+    let planCycle: 'monthly' | 'yearly' | null = null;
+    let planExpiresAt: string | null = null;
     let sourcePath: string | null = null; // stored original file (signed-in only)
     const authHeader = req.headers.get('Authorization');
     const bearer = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
@@ -680,10 +708,12 @@ serve(async (req) => {
         // failed to update after payment cannot cut a paying customer's limit.
         const { data: activeRows } = await supabase
           .from('subscriptions')
-          .select('tier, expires_at')
+          .select('tier, expires_at, billing_cycle')
           .eq('user_id', userId)
           .eq('status', 'active');
         const activeSub = strongestRow(activeRows ?? []);
+        planCycle = activeSub ? (activeSub.billing_cycle === 'monthly' ? 'monthly' : 'yearly') : null;
+        planExpiresAt = activeSub?.expires_at ?? null;
         const plan = strongerPlan(
           { tier: profile?.subscription_tier, expiresAt: profile?.subscription_expires_at },
           { tier: activeSub?.tier, expiresAt: activeSub?.expires_at },
@@ -752,23 +782,43 @@ serve(async (req) => {
         console.error('Profile or duplicate lookup failed:', (lookupError as { code?: string })?.code ?? 'error');
       }
 
-      // ============= MONTHLY PLAN ALLOWANCE =============
-      // New reads this calendar month (India time), counted from the
-      // invoices this user stored. Stored invoices returned above are free.
-      // A failed count does not block the upload (quota, not access control).
+      // ============= MONTHLY PLAN ALLOWANCE (reads ledger) =============
+      // Each PDF page and each image is one invoice (from the account's next
+      // period; until then a file counts as one). Reserved now, so parallel
+      // uploads cannot pass the limit together; committed only when the read
+      // produces something. Deleting a document never gives a read back.
+      // Plan reads run out first, then purchased credits.
       if (scanLimit !== null && !rereadDocId) {
-        const { count, error: countError } = await authClient
-          .from('documents')
-          .select('id', { count: 'exact', head: true })
-          .eq('user_id', userId)
-          .gte('created_at', monthStartIst());
-        if (countError) {
-          console.error('Monthly allowance count failed:', countError.code);
-        } else if ((count ?? 0) >= scanLimit) {
+        const { data: r, error: rErr } = await authClient.rpc('reserve_invoice_read', {
+          p_user: userId, p_org: organizationId || null, p_hash: documentHash, p_pages: pdfPageCount ?? 1,
+          p_plan_limit: scanLimit, p_period_start: monthStartIst(),
+          p_page_counting_from: pageCountingFrom({ cycle: planCycle, expiresAt: planExpiresAt }),
+        });
+        if (rErr && (rErr.code === 'PGRST202' || rErr.code === '42883')) {
+          // Ledger not migrated yet: count stored documents, as before.
+          const { count, error: countError } = await authClient
+            .from('documents')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', userId)
+            .gte('created_at', monthStartIst());
+          if (countError) {
+            console.error('Monthly allowance count failed:', countError.code);
+          } else if ((count ?? 0) >= scanLimit) {
+            return new Response(
+              JSON.stringify({ error: monthlyLimitMessage(scanLimit), code: 'monthly_limit', limit: scanLimit, used: count, tier: userTier }),
+              { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+            );
+          }
+        } else if (rErr) {
+          // A failed check does not block the upload (quota, not access control).
+          console.error('Read reservation failed:', rErr.code);
+        } else if (r && r.ok === false) {
           return new Response(
-            JSON.stringify({ error: monthlyLimitMessage(scanLimit), code: 'monthly_limit', limit: scanLimit, used: count, tier: userTier }),
+            JSON.stringify({ error: monthlyLimitMessage(scanLimit), code: 'monthly_limit', limit: scanLimit, used: r.used, credits: r.credits, needed: r.units, tier: userTier, topUp: true }),
             { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
           );
+        } else if (r?.id) {
+          read.id = r.id;
         }
       }
     }
@@ -960,6 +1010,7 @@ serve(async (req) => {
         if (!alreadyThere) await admin.storage.from(FINANCIAL_BUCKET).remove([path]);
         return unavailable();
       }
+      read.commit = true;
       return reply({ success: true, financialDocument: true, stored: true, alreadyStored: rowError?.code === '23505', error: FINANCIAL_STORED_MESSAGE, message: FINANCIAL_STORED_MESSAGE });
     }
 
@@ -967,6 +1018,7 @@ serve(async (req) => {
     const relevanceCheck = isDocumentRelevant(ocrData);
     if (!relevanceCheck.relevant) {
       await countGuestRead(); // the AI did read it
+      read.commit = true; // a non-invoice photo still used a read (abuse guard)
       return new Response(
         JSON.stringify({ success: false, error: relevanceCheck.message, isIrrelevant: true }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -1413,6 +1465,9 @@ serve(async (req) => {
           console.log('Result cached for deterministic retrieval');
           if (savedDoc?.id) {
             savedDocumentId = savedDoc.id;
+            // Counted once read and stored with content; an empty read is not counted.
+            read.documentId = savedDoc.id;
+            read.commit = (extractedData.lineItems?.length ?? 0) > 0 || !!extractedData.electricityBill;
             savedEmissionIds = await createEmissionRows(supabase, extractedData, { documentId: savedDoc.id, userId, organizationId: organizationId || null });
           }
           // Scope 3 trail: seal the OCR fields and record each line. No-op
@@ -1473,4 +1528,4 @@ serve(async (req) => {
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
-});
+}

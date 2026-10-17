@@ -26,9 +26,18 @@ export function toGatewayModel(model: unknown): string {
   return 'google/gemini-2.5-flash';
 }
 
+/**
+ * The Gemini key from the edge-function secrets. Secret names are case
+ * sensitive, so the owner's "Gemini_API_Key" is read too. Read here only;
+ * never logged, returned or sent to a browser.
+ */
+export function geminiKey(): string | undefined {
+  return Deno.env.get('GEMINI_API_KEY')?.trim() || Deno.env.get('Gemini_API_Key')?.trim() || undefined;
+}
+
 /** True when at least one AI provider key is set. */
 export function aiConfigured(): boolean {
-  return Boolean(Deno.env.get('GEMINI_API_KEY') || Deno.env.get('LOVABLE_API_KEY'));
+  return Boolean(geminiKey() || Deno.env.get('LOVABLE_API_KEY'));
 }
 
 /** Safe user-facing message for a failed AI response status. */
@@ -73,7 +82,7 @@ export function resetAiFallbackState(): void { geminiSkipUntil = 0; }
 export async function aiFetch(init: RequestInit): Promise<Response> {
   let body: Record<string, unknown>;
   try { body = JSON.parse(String(init.body ?? '{}')); } catch { return json(400, 'Invalid AI request'); }
-  const gemini = Deno.env.get('GEMINI_API_KEY');
+  const gemini = geminiKey();
   const lovable = Deno.env.get('LOVABLE_API_KEY');
   if (!gemini && !lovable) return json(503, 'AI is not configured');
 

@@ -26,16 +26,17 @@ export async function pageCountOf(file: File): Promise<number> {
 }
 
 /**
- * Reads a batch is expected to use, counted as the server counts them today:
- * one per file, and one per part of up to MAX_PDF_PAGES pages for a longer
- * PDF. An estimate: repeat uploads of a stored invoice are free.
+ * Reads a batch is expected to use, counted as the server counts them: with
+ * page counting, every PDF page and every image is one; before an account's
+ * switch, one per file and one per part of up to MAX_PDF_PAGES pages. An
+ * estimate: repeat uploads of a stored invoice are free.
  */
-export function estimateReads(pageCounts: number[]): { reads: number; pages: number } {
+export function estimateReads(pageCounts: number[], pageCounting = false): { reads: number; pages: number } {
   let reads = 0, pages = 0;
   for (const n of pageCounts) {
     const p = Math.max(1, n);
     pages += p;
-    reads += p > MAX_PDF_PAGES ? Math.ceil(p / MAX_PDF_PAGES) : 1;
+    reads += pageCounting ? p : p > MAX_PDF_PAGES ? Math.ceil(p / MAX_PDF_PAGES) : 1;
   }
   return { reads, pages };
 }

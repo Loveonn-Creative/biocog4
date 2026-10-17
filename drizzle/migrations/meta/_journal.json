@@ -190,6 +190,13 @@
       "when": 1792154845196,
       "tag": "0026_commit_verification_safeupdate_where",
       "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1792155445196,
+      "tag": "0027_invoice_reads_and_purchases",
+      "breakpoints": true
     }
   ]
 }

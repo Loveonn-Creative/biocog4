@@ -8,8 +8,10 @@ const NAMES: Record<PlanTier, string> = { snapshot: 'Snapshot', essential: 'Esse
 
 /**
  * Add-ons as tokens you drop onto a receipt. Prices are the published ones;
- * totals are worked out here for planning. Add-ons are arranged with our team,
- * so the button opens a filled-in request, and nothing is charged on this page.
+ * totals are worked out here for planning. Scan packs, Fast-track Verification
+ * and the Expert Climate Audit are bought on the profile; the other add-ons are
+ * arranged with our team, so the button opens a filled-in request. Nothing is
+ * charged on this page.
  */
 export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCycle }) {
   const [qty, setQty] = useState<Record<string, number>>({});
@@ -49,6 +51,7 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
                 )}
               </div>
               {countable && <p className="mt-2 text-xs text-muted-foreground">{a.unit}</p>}
+              {a.buyOnProfile && <Link to="/profile#top-up" className="mt-2 inline-block text-xs font-medium text-primary hover:underline">Buy now on your profile</Link>}
             </li>
           );
         })}
@@ -64,7 +67,7 @@ export function AddonBuilder({ plan, cycle }: { plan: PlanTier; cycle: BillingCy
         <div className="my-3 border-t border-dashed border-border" />
         <div className="flex justify-between gap-3 font-semibold"><span>Every month</span><span>{totals.planPerMonth === null ? `Quote + ${inr(totals.monthly)}` : inr(totals.planPerMonth + totals.monthly)}</span></div>
         {totals.oneTime > 0 && <div className="mt-1 flex justify-between gap-3 font-semibold"><span>One-time</span><span>{inr(totals.oneTime)}</span></div>}
-        <p className="mt-3 font-sans text-xs text-muted-foreground">An estimate for planning. Add-ons are set up with our team; nothing is charged on this page.</p>
+        <p className="mt-3 font-sans text-xs text-muted-foreground">An estimate for planning; nothing is charged on this page. Scan packs, Fast-track Verification and the audit are bought on your profile with UPI; other add-ons are set up with our team.</p>
         <Link to={contactHref} className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2.5 font-sans text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 aria-disabled:pointer-events-none aria-disabled:opacity-50"
           aria-disabled={totals.lines.length === 0}>
           {totals.lines.length ? 'Ask for these add-ons' : 'Pick an add-on to continue'}
