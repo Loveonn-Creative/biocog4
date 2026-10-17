@@ -113,7 +113,7 @@ export const servicePages: ServiceConfig[] = [
     faqs: [
       { q: 'Who must comply with Germany\'s Supply Chain Act (LkSG)?', a: 'Companies with at least 1,000 employees in Germany. Their suppliers, including Indian ones, are asked for evidence.' },
       { q: 'What counts as conflict minerals?', a: 'Tin, tantalum, tungsten and gold (3TG). Many buyers also screen cobalt and mica.' },
-      { q: 'Which commodities does EUDR cover?', a: 'Cattle, cocoa, coffee, oil palm, rubber, soya and wood, and products made from them.' },
+      { q: 'Which commodities does EUDR cover?', a: 'Cattle, cocoa, coffee, oil palm, rubber, soya and wood, and the products listed in its Annex I. Cattle hides and leather were taken off the list in 2026; live cattle and beef are still covered.' },
     ],
     contactTopic: 'enterprise',
   },
