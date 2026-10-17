@@ -1,0 +1,67 @@
+{
+  "slug": "morbi-coal-gasifier-vs-natural-gas-emissions",
+  "q": "How much CO2 did ceramic units save by moving from coal gasifiers to natural gas?",
+  "title": "Coal gasifier to natural gas: CO2 saved",
+  "short": "Roughly 55 to 60 percent of fuel CO2 for the same kiln heat. Coal fed through a gasifier gives about 126 to 135 kg CO2 per GJ of fuel gas reaching the kiln, assuming 70 to 75 percent gasifier efficiency, against 56 kg for natural gas. Confirm with your own fuel per square metre before and after.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Morbi and Thangadh ceramic manufacturers and their lenders",
+  "sections": [
+    {
+      "h": "Why the gasifier step matters",
+      "p": [
+        "A coal gasifier turns coal into producer gas, and part of the coal's energy is lost on the way, in ash, tar and heat. The kiln then burns that gas much as it would burn natural gas. So the fair comparison is CO2 per GJ of gas delivered to the kiln, not CO2 per kg of fuel.",
+        "Coal: 94.6 kg CO2 per GJ (IPCC 2006 default for bituminous coal) divided by gasifier efficiency. Natural gas: 56.1 kg CO2 per GJ, fired directly with no conversion loss."
+      ]
+    },
+    {
+      "h": "The comparison per GJ of kiln gas",
+      "ul": [
+        "Coal gasifier at 70 percent efficiency: 94.6 / 0.70 = 135 kg CO2 per GJ, so gas saves 58 percent.",
+        "Coal gasifier at 75 percent efficiency: 94.6 / 0.75 = 126 kg CO2 per GJ, so gas saves 56 percent.",
+        "Natural gas: 56.1 kg CO2 per GJ.",
+        "The efficiency is an assumption. Older or poorly run gasifiers do worse, which makes the saving larger."
+      ]
+    },
+    {
+      "h": "Using your own plant data instead",
+      "ol": [
+        "Take 12 months of coal invoices from the gasifier period and 12 months of gas bills after the switch.",
+        "Convert each to CO2: coal at 2.42 kg CO2 per kg, PNG at 2.05 kg CO2 per scm, or your supplier's measured calorific value.",
+        "Divide each by square metres of tile produced in the same months, for the same product mix.",
+        "The difference per square metre is your measured saving. Kiln upgrades made at the same time will be mixed in; note them."
+      ]
+    },
+    {
+      "h": "What this means for a lender or buyer",
+      "p": [
+        "After the 2019 National Green Tribunal order against coal gasifiers in Morbi, units were pushed onto piped natural gas. Where the switch is done, a lender will look for the next step: kiln efficiency, waste heat recovery, rooftop solar for grinding and pressing power. Keep the before and after fuel records anyway; they show the trend and the baseline. If a unit later moved to propane or LPG, use 2.98 kg CO2 per kg for those months."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the same kiln heat, two fuels",
+    "lines": [
+      "Before: 1,000 t of coal a month x 2.42 kg CO2 per kg = 2,420 t CO2",
+      "Coal energy implied by those factors: 2.42 / 94.6 x 1,000 = 25.6 GJ per t, so 25,581 GJ a month",
+      "Gas delivered to the kiln at 70 percent gasifier efficiency: 25,581 x 0.70 = 17,907 GJ",
+      "After: the same 17,907 GJ as PNG, at about 0.0365 GJ per scm (2.05 / 56.1) = 4,90,040 scm",
+      "4,90,040 scm x 2.05 kg CO2 per scm = 1,005 t CO2",
+      "Saving: 2,420 minus 1,005 = 1,415 t CO2 a month, about 58 percent"
+    ],
+    "note": "Gasifier efficiency and coal quality are assumptions here. Imported coal with a higher calorific value changes the tonnes but not the percentage much."
+  },
+  "senseible": "Senseible reads coal and gas invoices into Scope 1 lines, so the before and after totals rest on documents. The green loan readiness check uses those records.",
+  "links": [
+    { "label": "Tile carbon footprint per square metre", "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre" },
+    { "label": "Coal, PNG or biomass boiler emissions", "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions" },
+    { "label": "Green loan for a Morbi ceramic factory", "to": "/climate-intelligence/green-loan-ceramic-factory-morbi" },
+    { "label": "Ceramics industry", "to": "/industries/ceramics" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Table 2.2", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "BEE, energy use in the Morbi ceramic cluster (SME cluster programme)", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewNote": "Gasifier efficiency is an assumption; replace it with plant records where they exist.",
+  "reviewed": "2026-10-17"
+}

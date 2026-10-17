@@ -1,0 +1,70 @@
+{
+  "slug": "uk-cbam-vs-eu-cbam-differences",
+  "q": "What is the difference between the UK CBAM and the EU CBAM for an exporter?",
+  "title": "UK CBAM vs EU CBAM for exporters",
+  "short": "The EU CBAM applies from 2026: an authorised declarant buys certificates for embedded emissions, above 50 tonnes of covered goods a year. The UK CBAM starts on 1 January 2027 as a tax the UK importer pays to HMRC once its CBAM imports reach £50,000 in 12 months. Both need the same plant emissions data from you.",
+  "topic": "regulation",
+  "intent": "comparison",
+  "audience": "Indian exporters selling the same goods into the EU and UK",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Start: EU definitive period from 1 January 2026, after a reporting-only transitional period from October 2023 to December 2025. UK from 1 January 2027.",
+        "Form: EU certificates bought and surrendered by an authorised CBAM declarant. UK a tax returned and paid to HMRC by the importer.",
+        "Threshold: EU 50 tonnes a year of covered goods per importer, by mass, under Regulation (EU) 2025/2083. UK £50,000 of CBAM goods by customs value, tested over the previous 12 months and on imports expected in the next 30 days.",
+        "Price: EU certificate price follows EU ETS auction prices. UK rate is set from UK ETS prices.",
+        "Goods: EU covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity. UK covers aluminium, cement, fertiliser, hydrogen, and iron and steel; electricity, glass and ceramics are not in the UK scheme."
+      ]
+    },
+    {
+      "h": "What stays the same for you",
+      "p": [
+        "Both schemes charge on the embedded emissions of the goods, so both need the same installation data: direct emissions, the electricity used, and the inputs, per tonne of product. Build one data set to the EU's monitoring rules, keep its evidence, and it should serve both buyers. Each scheme lets the importer deduct a carbon price actually paid in the country of origin."
+      ]
+    },
+    {
+      "h": "What differs in practice",
+      "ul": [
+        "Your EU buyer needs an authorised declarant before importing covered goods above the threshold; your UK buyer registers with HMRC.",
+        "UK buyers below £50,000 of CBAM goods in 12 months are outside the UK scheme, while a small EU buyer can be caught if it imports more than 50 tonnes.",
+        "Default values and verification rules are set separately in each scheme, so a figure accepted in one may need different support in the other."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator covers the EU scheme from 2026 to 2034. The installation data behind it, fuel and electricity read from your invoices, is the same evidence a UK importer will ask for.",
+  "links": [
+    {
+      "label": "EU ETS and CBAM: the difference",
+      "to": "/answers/eu-ets-vs-cbam-difference"
+    },
+    {
+      "label": "CBAM 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    },
+    {
+      "label": "Become a CBAM authorised declarant",
+      "to": "/climate-intelligence/become-cbam-authorised-declarant"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 (CBAM simplification, 50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewNote": "UK facts checked against HMRC guidance on GOV.UK ('Check if you'll need to register for CBAM' and the CBAM policy summary). HMRC publishes UK CBAM rates and default values before 2027; recheck them, and recheck any UK and EU ETS linking agreement, which could exempt UK and EU goods from each other's CBAM but does not change goods from India.",
+  "reviewed": "2026-10-17"
+}

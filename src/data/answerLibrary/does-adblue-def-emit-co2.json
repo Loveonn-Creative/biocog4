@@ -1,0 +1,75 @@
+{
+  "slug": "does-adblue-def-emit-co2",
+  "q": "Does AdBlue or DEF used in BS-VI trucks add to CO2 emissions?",
+  "title": "Does AdBlue (DEF) add to CO2?",
+  "short": "Yes, a little. The urea in AdBlue (DEF) breaks down in the exhaust and releases about 0.26 kg CO2 per litre. At a typical dose of a few litres per 100 litres of diesel it adds well under 1% to a truck's CO2, so you can report it or record it as immaterial.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fleet owners and logistics MSMEs running BS-VI diesel trucks",
+  "sections": [
+    {
+      "h": "Why a urea solution releases CO2",
+      "p": [
+        "BS-VI trucks use selective catalytic reduction to cut NOx. DEF is 32.5% urea in water, the AUS 32 specification in ISO 22241. In the hot exhaust, each urea molecule gives up its one carbon atom as CO2 while the ammonia part reduces NOx.",
+        "The IPCC 2006 Guidelines treat this as a mobile combustion source (Volume 2, Chapter 3, Equation 3.2.2): CO2 = kg of additive x 12/60 x urea fraction x 44/12. It sits in Scope 1 with the trucks' diesel when you own or control the fleet."
+      ]
+    },
+    {
+      "h": "The factor per litre and per kg",
+      "ul": [
+        "Per kg of DEF: 0.325 x 12/60 x 44/12 = 0.238 kg CO2",
+        "Per litre of DEF, at a density of about 1.09 kg per litre: 1.09 x 0.238 = 0.26 kg CO2",
+        "Compare diesel: 2.68 kg CO2 per litre, about ten times more per litre and burnt in far larger volumes"
+      ]
+    },
+    {
+      "h": "Report it or call it immaterial",
+      "p": [
+        "If DEF use is about 4% of diesel by volume, it adds about 0.4% to fleet CO2. Many fleets report it anyway because the invoices are already there. If you leave it out, write that DEF was assessed and excluded as below 1%, and keep the calculation.",
+        "Do not count DEF if your trucks are hired from a transporter; then both the diesel and the DEF are in the transporter's Scope 1 and your Scope 3 freight."
+      ]
+    },
+    {
+      "h": "What DEF does not change",
+      "p": [
+        "DEF lowers NOx, not CO2. A truck running correctly on DEF emits the same CO2 from diesel as before. If a supplier markets DEF as a carbon saving, that claim is about air pollution, not greenhouse gases."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a 10 truck fleet",
+    "lines": [
+      "Diesel: 50,000 litres x 2.68 = 1,34,000 kg CO2",
+      "DEF: 2,000 litres (4% of diesel) x 0.26 = 520 kg CO2",
+      "Fleet total: 1,34,000 + 520 = 1,34,520 kg CO2",
+      "DEF share: 520 / 1,34,520 = 0.39%"
+    ],
+    "note": "Use the DEF litres from your purchase invoices; the dose differs by engine and load."
+  },
+  "senseible": "Senseible reads diesel invoices and applies 2.68 kg CO2 per litre as Scope 1. DEF lines are read with their litres; with no factor for DEF in its fuel list they show no figure, so record the 0.26 kg per litre calculation yourself or note DEF as immaterial.",
+  "links": [
+    {
+      "label": "Methane and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Telematics or fuel invoices for fleets",
+      "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions"
+    },
+    {
+      "label": "Logistics Scope 1 emissions",
+      "to": "/climate-intelligence/logistics-scope-1-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 Mobile Combustion, Equation 3.2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 22241, Diesel engines, NOx reduction agent AUS 32",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

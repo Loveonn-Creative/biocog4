@@ -1,0 +1,77 @@
+{
+  "slug": "purchased-co2-gas-scope-1",
+  "q": "Does CO2 gas we buy for welding, carbonation or dry ice count in Scope 1?",
+  "title": "Purchased CO2 gas: is it Scope 1?",
+  "short": "Usually yes. CO2 you buy and release at your own site, as welding shield gas, from dry ice you pack or as carbonation gas lost in your process, is a direct release you control. Report the kilograms used as kg CO2 in Scope 1, one for one, and state the basis.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Welding shops, beverage and food processors, cold-chain shippers using dry ice",
+  "sections": [
+    {
+      "h": "Why it is a direct emission",
+      "p": [
+        "The GHG Protocol Corporate Standard puts emissions from sources you own or control in Scope 1. A CO2 cylinder or dry ice block is in your control until the gas escapes, and almost all of it escapes at your site or in your shipment. US EPA inventory guidance on fugitive emissions also counts the purchase and release of industrial gases as direct emissions, estimated from purchases and stock changes.",
+        "The emission factor is simply 1: each kg of CO2 released is 1 kg CO2. No GWP conversion is needed."
+      ]
+    },
+    {
+      "h": "How the common uses are treated",
+      "ul": [
+        "MIG and MAG welding: the shield gas, pure CO2 or the CO2 share of an argon mix, is released at the weld. Scope 1.",
+        "Dry ice you buy to pack shipments: it sublimes in the box. Treating it as your Scope 1 is the cautious reading, because you bought it and released it, even if it escapes on the road; note this choice.",
+        "Carbonated drinks: the CO2 leaves in the product and is released when the customer opens it. Some companies count all purchased carbonation CO2 in Scope 1; others count only process losses at the plant. There is no single rule. Either way, write down which you did.",
+        "Fire extinguisher refills with CO2: the refilled mass is what was discharged or leaked. Scope 1."
+      ]
+    },
+    {
+      "h": "Quantity to use",
+      "p": [
+        "Use the kilograms consumed in the year: purchases, plus opening stock, minus closing stock and minus gas returned in cylinders. Industrial gas invoices often show cylinder counts; multiply by the net gas weight per cylinder, not the gross cylinder weight. For argon and CO2 mixes, take only the CO2 share by mass."
+      ]
+    },
+    {
+      "h": "Recovered and biogenic CO2",
+      "p": [
+        "Much merchant CO2 in India is recovered from fertiliser, refinery or fermentation plants. If it would have been released anyway, some reporters argue the release is not a new emission. The GHG Protocol does not give a firm rule for purchased CO2. The safer course is to report the gas in Scope 1 and add a note on its origin, rather than leave it out. CO2 from your own fermentation, as in a brewery, is biogenic and is reported separately from the scopes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fabrication shop and a food exporter",
+    "lines": [
+      "Fabrication shop: 60 CO2 cylinders a year at 20 kg net gas each = 1,200 kg",
+      "Scope 1: 1,200 kg x 1 = 1,200 kg CO2, about 1.2 t",
+      "Food exporter: dry ice bought 8,000 kg, opening stock 200 kg, closing stock 400 kg",
+      "Used: 8,000 + 200 minus 400 = 7,800 kg; Scope 1: 7.8 t CO2",
+      "For scale: 7.8 t equals the CO2 from about 2,910 litres of diesel at 2.68 kg per litre"
+    ],
+    "note": "Cylinder sizes vary; take the net weight from the gas supplier's challan."
+  },
+  "senseible": "Senseible reads industrial gas invoices, including the quantity and HSN code (2811 for carbon dioxide), and keeps them as evidence, so the kilograms behind this Scope 1 line are traceable. Talk to the Senseible team about how the line is treated in your report before you disclose it.",
+  "links": [
+    {
+      "label": "Scope 1 emissions in manufacturing",
+      "to": "/climate-intelligence/manufacturing-scope-1-emissions-india"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Greenhouse gases beyond CO2",
+      "to": "/climate-intelligence/ghg-gases-warming-impact-beyond-co2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, Direct Fugitive Emissions from Refrigeration, Air Conditioning, Fire Suppression, and Industrial Gases",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewNote": "Practice on recovered and biogenic merchant CO2 is not settled; disclose the basis and recheck GHG Protocol updates.",
+  "reviewed": "2026-10-17"
+}

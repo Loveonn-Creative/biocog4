@@ -1,0 +1,82 @@
+{
+  "slug": "are-steel-forgings-covered-by-cbam",
+  "q": "Are steel forgings and flanges covered by CBAM?",
+  "title": "Are steel forgings and flanges in CBAM?",
+  "short": "Mostly yes. Flanges and pipe fittings under CN 7307, forged articles under 7326 and forged bars in Chapter 72 are iron and steel goods in CBAM Annex I. Forgings machined into recognisable machine or vehicle parts, such as crankshafts and gears under 8483 or vehicle parts under 8708, are not covered today.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Forging and flange exporters in Rajkot, Ludhiana and Pune",
+  "sections": [
+    {
+      "h": "Covered: what Annex I lists",
+      "ul": [
+        "7307: tube or pipe fittings of iron or steel, including flanges, elbows, tees and couplings, forged or cast.",
+        "7326: other articles of iron or steel, including those forged or stamped but not further worked, and machined articles that have no more specific heading.",
+        "Chapter 72 forged products, such as forged bars of alloy or stainless steel.",
+        "7318: bolts, nuts, studs and washers, often made by forgers as well."
+      ]
+    },
+    {
+      "h": "Not covered today: parts classified by function",
+      "ul": [
+        "8483: crankshafts, camshafts, transmission shafts, gears and bearing housings.",
+        "8708: parts of motor vehicles, such as steering knuckles and axle components.",
+        "8481: valve bodies and parts of valves.",
+        "Chapter 84 parts of specific machines."
+      ],
+      "p": [
+        "Once a forging is machined into a part that the tariff classifies by its function, it leaves Chapter 72 and 73, and CBAM does not reach it under the current Annex I."
+      ]
+    },
+    {
+      "h": "How to decide for your product",
+      "ol": [
+        "Take the 8 digit code from your shipping bill and check the first 4 digits against Annex I.",
+        "Confirm the full CN code with your EU importer, who files the declaration.",
+        "If a part sits on the border between 7326 and a functional heading, the importer's customs classification decides, not your own description.",
+        "If covered, prepare embedded emissions per tonne: your furnace and forging energy plus the emissions of the billets or bars you bought."
+      ]
+    },
+    {
+      "h": "What may change",
+      "p": [
+        "The Commission proposed in December 2025 to bring many steel and aluminium intensive downstream products into CBAM from 2028. As of October 2026 it is still being negotiated between the Parliament and the Council and is not law. If adopted, some machined parts now outside the scheme could come in. Separately, importers below 50 tonnes of covered goods a year are exempt under the 2025 simplification, which affects small buyers, not the coverage of your product."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost for covered steel goods from 2026 to 2034, using the free allocation phase-out and default value mark-ups. It reads the HSN code on each invoice line; the CN classification for a declaration is your importer's.",
+  "links": [
+    {
+      "label": "Check if a CN code is in CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "CBAM for fastener exporters",
+      "to": "/climate-intelligence/cbam-fastener-exporters-india"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 (CBAM simplification, 50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The downstream extension proposed in December 2025 could change coverage of machined parts; recheck Annex I before each export season.",
+  "reviewed": "2026-10-17"
+}

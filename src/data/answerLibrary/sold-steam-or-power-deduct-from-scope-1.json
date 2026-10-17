@@ -1,0 +1,75 @@
+{
+  "slug": "sold-steam-or-power-deduct-from-scope-1",
+  "q": "Can I deduct steam or electricity I sell to a neighbour from my Scope 1?",
+  "title": "Can sold steam be deducted from Scope 1?",
+  "short": "No. If your boiler or captive power plant burns the fuel, all of its emissions stay in your Scope 1, even the share that makes steam or power you sell. You may report the emissions linked to sold energy as a separate, optional figure, and use that split for your product intensity.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Chemical park and textile park units with a captive boiler or power plant selling surplus",
+  "sections": [
+    {
+      "h": "Why the GHG Protocol does not allow netting",
+      "p": [
+        "Scope 1 counts emissions from sources you own or control. The fuel burns in your boiler, so the emissions are yours, whoever uses the steam. The GHG Protocol Corporate Standard says emissions from generating electricity or heat sold to another organisation are not deducted from Scope 1. It suggests reporting them as optional information, so readers can see how much of your Scope 1 serves others."
+      ]
+    },
+    {
+      "h": "What the buyer reports",
+      "p": [
+        "Your neighbour reports the steam or electricity it buys from you as its Scope 2. The same tonnes appear in your Scope 1 and its Scope 2. That is expected and is not double counting within one company's inventory. Give the buyer an emission factor per tonne of steam or per MWh so its figure matches your split."
+      ]
+    },
+    {
+      "h": "How to work out the share for sold energy",
+      "ul": [
+        "Steam only boiler: share by tonnes or by energy of steam sold over steam generated, using the meter at the battery limit.",
+        "Combined heat and power: use the efficiency method to split total emissions between power and heat first, then take the sold part of each.",
+        "Losses in the line to the neighbour stay with the side that owns the pipe or cable up to the meter; say where the meter is.",
+        "Keep the split method the same each year so trends are comparable."
+      ]
+    },
+    {
+      "h": "Where the split does change your numbers",
+      "p": [
+        "Product footprints work differently. Under ISO 14067:2018, steam or power sold is a co-product, so emissions allocated to it leave your product's footprint. Your emissions per tonne of product therefore use only the share kept for your own production, while the Scope 1 total in BRSR or a buyer questionnaire stays whole."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a coal boiler selling 30 percent of its steam",
+    "lines": [
+      "Coal burnt: 10,000 t x 2.42 kg CO2 per kg = 24,200 t CO2",
+      "Steam metered: 70 percent used in-house, 30 percent sold to a neighbour",
+      "Scope 1 reported: 24,200 t CO2, unchanged",
+      "Optional disclosure, attributable to steam sold: 24,200 x 0.30 = 7,260 t CO2",
+      "Emissions for your own product intensity: 24,200 minus 7,260 = 16,940 t CO2"
+    ],
+    "note": "If the steam is sold at a different pressure than the steam used in-house, share by energy content rather than by tonnes, and state it."
+  },
+  "senseible": "Senseible reads coal and gas invoices into Scope 1 lines, so the fuel total behind the boiler is on documents. The split for sold steam or power, and any optional disclosure, is a calculation you make and record.",
+  "links": [
+    {
+      "label": "Splitting CHP emissions",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

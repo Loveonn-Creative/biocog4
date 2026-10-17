@@ -1,0 +1,85 @@
+{
+  "slug": "sanitaryware-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a sanitaryware piece for an export buyer?",
+  "title": "Sanitaryware carbon footprint per piece",
+  "short": "Work out kiln fuel and power emissions per kilogram of good fired ware, multiply by the piece's fired weight, then add clay, glaze and packaging for a cradle to gate figure. Divide by good output, not by everything loaded into the kiln, so refiring and rejects are carried by the pieces you sell.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sanitaryware makers in Morbi and Gujarat exporting to the EU, UK and Middle East",
+  "sections": [
+    {
+      "h": "Why per kilogram first, then per piece",
+      "p": [
+        "Tiles are compared per square metre. Sanitaryware is fired by weight: a 20 kg one piece WC and a 7 kg wash basin go through the same tunnel kiln. Working per kilogram of fired ware and then multiplying by each model's weight gives every product a fair share of kiln energy without metering each piece."
+      ]
+    },
+    {
+      "h": "Handling refiring and rejects",
+      "p": [
+        "Pieces with glaze faults are often refired in a shuttle kiln, and some are scrapped after firing. All that energy is on the month's gas and power bills. Dividing total energy by the weight of good pieces dispatched puts it on the saleable output. If you divide by everything loaded, including refires, 10% extra weight through the kiln from refires understates the figure by about 9%."
+      ]
+    },
+    {
+      "h": "What to add for cradle to gate",
+      "ul": [
+        "Raw materials: ball clay, kaolin, feldspar, quartz, from supplier data or a database factor, per kg in the body recipe.",
+        "Glaze and frit, which can carry more per kg than the body because frit is itself fired.",
+        "Plaster moulds, spread over the casts each mould gives.",
+        "Packaging: cartons, foam, pallets.",
+        "Inbound transport of clay and feldspar."
+      ]
+    },
+    {
+      "h": "What an export buyer usually asks for",
+      "p": [
+        "European building product buyers often want an EPD to EN 15804, which declares results per piece or per kg with a third party verified report. A cradle to gate footprint to ISO 14067 is the step before that. Sanitaryware is not a CBAM good, so this is a buyer request, not an EU border charge."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: kiln and plant energy for a 20 kg WC",
+    "lines": [
+      "Month's PNG: 90,000 scm x 2.05 = 184,500 kg CO2",
+      "Month's electricity: 250,000 kWh x 0.710 = 177,500 kg CO2",
+      "Total: 362,000 kg CO2; good ware dispatched: 600,000 kg",
+      "Per kg good ware: 362,000 / 600,000 = 0.6033 kg CO2",
+      "20 kg WC: 20 x 0.6033 = 12.07 kg CO2 from plant energy",
+      "If divided by 660,000 kg loaded including refires: 0.5485 kg per kg, about 9% too low"
+    ],
+    "note": "Materials and packaging are added on top of this energy figure for the full cradle to gate result."
+  },
+  "senseible": "Senseible reads the tunnel and shuttle kiln gas invoices and the plant electricity bills, converts each with its stated factor (2.05 kg CO2 per scm of PNG, 0.710 kg CO2 per kWh) and keeps every bill as evidence. Clay, glaze and packaging purchases go to the supplier evidence trail; piece weights and dispatch figures come from your production records.",
+  "links": [
+    {
+      "label": "Ceramic tile footprint per m2",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    },
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

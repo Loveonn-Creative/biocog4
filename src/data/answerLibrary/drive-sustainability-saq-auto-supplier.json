@@ -1,0 +1,79 @@
+{
+  "slug": "drive-sustainability-saq-auto-supplier",
+  "q": "How do auto component suppliers answer the climate section of the Drive Sustainability SAQ?",
+  "title": "Drive Sustainability SAQ climate answers",
+  "short": "Answer only what you can evidence: your environmental management system and ISO 14001 status, Scope 1 and 2 totals with year and method, the share of renewable electricity, any reduction target, and the documents behind each answer. A short honest 'not yet' scores better than an unsupported 'yes'.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian auto component suppliers to European OEMs",
+  "sections": [
+    {
+      "h": "What the environment section looks for",
+      "ul": [
+        "A written environmental policy signed by management.",
+        "An environmental management system, and certification such as ISO 14001:2026, with the certificate and its scope.",
+        "Energy use and greenhouse gas emissions measured, with the year, boundary and method.",
+        "A reduction target and the actions behind it.",
+        "Renewable electricity: the share and how it is evidenced.",
+        "Related topics in the same section, such as water, waste, air emissions and chemicals."
+      ]
+    },
+    {
+      "h": "Preparing the climate figures",
+      "ol": [
+        "Fix the year and boundary: the sites the SAQ covers, under operational control.",
+        "Scope 1: fuels burnt on site, such as diesel, LPG, PNG and furnace oil, from invoices, with IPCC factors.",
+        "Scope 2: grid kWh from bills at the CEA factor, location-based, and market-based if you hold RECs, open access green power or a green tariff.",
+        "Scope 3: give the categories you have measured and say which you have not. Do not present a partial Scope 3 as complete.",
+        "Write the method in one paragraph: GHG Protocol Corporate Standard, factor sources and editions."
+      ]
+    },
+    {
+      "h": "Evidence that gets accepted",
+      "p": [
+        "Upload the document that proves each yes: the ISO certificate, the policy, a one-page emissions summary with the factor table, and for renewable power the REC retirement statements or the green tariff bill. A yes that the reviewer cannot match to a document may be treated as unsupported, so it can count for less than you expect."
+      ]
+    },
+    {
+      "h": "Keeping it consistent",
+      "p": [
+        "European OEMs may also send a product footprint request or a CDP questionnaire. Use the same totals and the same year everywhere. If you update a number later, update every place you reported it, and keep the earlier version with the reason for the change."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel invoices and electricity bills into a Scope 1, 2 and 3 record with the source document behind each line, which gives you figures and attachments for the SAQ. The questionnaire itself is filled on the OEM's or platform's site.",
+  "links": [
+    {
+      "label": "Answer a Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "CDP SME questionnaire or the full one",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Automobile industry",
+      "to": "/industries/automobile"
+    },
+    {
+      "label": "Scope 1, 2 and 3 for small business",
+      "to": "/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO 14001:2026, Environmental management systems",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "SAQ 5.0 is the current version (with the 2025 modular update); Drive Sustainability has announced SAQ 6 for early 2027. Check the version your customer sent.",
+  "reviewed": "2026-10-17"
+}

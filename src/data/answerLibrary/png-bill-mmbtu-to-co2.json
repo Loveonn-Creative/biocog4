@@ -1,0 +1,87 @@
+{
+  "slug": "png-bill-mmbtu-to-co2",
+  "q": "How do I convert an industrial PNG bill in SCM or MMBtu to CO2?",
+  "title": "PNG bill in MMBtu or SCM to CO2",
+  "short": "Billed in MMBtu: multiply by 1.055 to get GJ, by 0.90 to move from gross to net calorific value, then by 56.1 kg CO2 per GJ. That is about 53.3 kg CO2 per MMBtu. Billed in SCM: multiply by 2.05 kg CO2 per scm, or convert using the GCV printed on the bill.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories on city gas or GAIL industrial PNG connections",
+  "sections": [
+    {
+      "h": "Why industrial gas bills are in MMBtu",
+      "p": [
+        "Large industrial gas contracts are priced on energy, not volume. The bill shows the volume measured at the meter in standard cubic metres (SCM) and the gross calorific value (GCV) of the gas that month, then multiplies them to get the energy billed in MMBtu. Smaller city gas connections often bill only in SCM.",
+        "Both numbers describe the same gas. You can calculate CO2 from either, and the two answers should agree within a few percent."
+      ]
+    },
+    {
+      "h": "The GCV and NCV trap",
+      "p": [
+        "Industrial gas bills in India normally state energy on a gross calorific value basis (check that the bill says GCV), which includes the heat in the water vapour formed when gas burns. The IPCC default factor for natural gas, 56,100 kg CO2 per TJ (56.1 kg per GJ), is set on a net calorific value (NCV) basis, which leaves that heat out.",
+        "The IPCC Guidelines note that NCV for natural gas is about 10% below GCV, so the default ratio is 0.90. If you multiply GCV energy straight by 56.1, you overstate CO2 by about 11%: 1.055 x 56.1 gives 59.2 kg per MMBtu instead of 53.3."
+      ]
+    },
+    {
+      "h": "Converting step by step",
+      "ol": [
+        "MMBtu to GJ: multiply by 1.055 (1 MMBtu is 1.055 GJ).",
+        "GCV to NCV: multiply by 0.90, unless the bill or supplier gives the actual NCV.",
+        "GJ to CO2: multiply by 56.1 kg CO2 per GJ.",
+        "For an SCM bill with GCV in kcal per scm: SCM x GCV x 4.1868 / 1,000,000 gives GJ on a GCV basis, then apply steps 2 and 3.",
+        "Record which route you used, the GCV on the bill and the 0.90 ratio, so an auditor can repeat it."
+      ]
+    },
+    {
+      "h": "Checks before you report",
+      "ul": [
+        "Use the energy for the billing period you are reporting, not cumulative or contract quantities. Take-or-pay charges for gas you did not draw are not emissions.",
+        "If CBG is blended into your supply, the biogenic share is reported outside Scope 1; ask the supplier for the blend in writing.",
+        "Compare the two routes each quarter. A gap of more than about 5% usually means a units error, a GCV typed in the wrong unit or a missing month.",
+        "PNG burnt in your boilers, furnaces or gensets is Scope 1. Gas resold to a tenant is not yours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on an MMBtu bill, checked against SCM",
+    "lines": [
+      "Energy billed: 3,500 MMBtu (GCV basis)",
+      "3,500 x 1.055 = 3,692.5 GJ GCV; x 0.90 = 3,323.3 GJ NCV",
+      "3,323.3 x 56.1 = 186,434 kg CO2, about 186.4 t for the month",
+      "Check on another bill in SCM: 10,000 scm at a printed GCV of 9,500 kcal per scm",
+      "10,000 x 9,500 x 4.1868 / 1,000,000 = 397.7 GJ GCV; x 0.90 x 56.1 = 20,082 kg CO2",
+      "Same bill at 2.05 kg per scm: 10,000 x 2.05 = 20,500 kg CO2, about 2% higher, within normal GCV variation"
+    ],
+    "note": "The 0.90 NCV to GCV ratio is the IPCC default for natural gas. Use the supplier's measured NCV if they provide it."
+  },
+  "senseible": "Senseible reads PNG bills and applies 2.05 kg CO2 per scm to the billed standard cubic metres as Scope 1, showing the factor on the line. Keep the GCV printed on each bill with the record so the energy-based check above can be repeated.",
+  "links": [
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Invoice in kg, factor in litres",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    },
+    {
+      "label": "Does CBG blended PNG lower Scope 1",
+      "to": "/answers/does-cbg-blended-png-lower-scope-1"
+    },
+    {
+      "label": "Furnace oil to PNG switch saving",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2, Chapter 1 (net and gross calorific values)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewNote": "The 0.90 NCV to GCV ratio is a default; check the GCV and any NCV printed on your supplier's bill.",
+  "reviewed": "2026-10-17"
+}

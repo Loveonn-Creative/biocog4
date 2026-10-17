@@ -1,0 +1,61 @@
+{
+  "slug": "do-lubricants-count-in-scope-1",
+  "q": "Do lubricating oils count in Scope 1 emissions?",
+  "title": "Do lubricating oils count in Scope 1?",
+  "short": "Only the small share of lubricating oil that oxidises inside your own engines and machines counts, and it is Scope 1. IPCC assumes 20 percent of lube oil oxidises in use, which works out to about 0.59 tonnes of CO2 per tonne bought. For most plants this is small enough to exclude, if you say so.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Workshops, fleets and auto component plants buying lube oil in bulk",
+  "sections": [
+    {
+      "h": "Why lube oil is not treated like fuel",
+      "p": [
+        "Lubricants are bought to reduce friction, not to burn. Most of the oil drains out as used oil and goes to a recycler or re-refiner. The IPCC 2006 Guidelines, Volume 3 Chapter 5, treat lubricants as a non-energy product and count only the part oxidised during use, through an oxidised during use (ODU) factor."
+      ]
+    },
+    {
+      "h": "The IPCC method in one line",
+      "p": [
+        "CO2 = tonnes of lubricant x net calorific value x carbon content x ODU x 44/12.",
+        "With the IPCC defaults for lubricating oil (40.2 GJ per tonne, 20.0 kg carbon per GJ, ODU 0.2): 40.2 x 20.0 x 0.2 x 44/12 = 589.6 kg CO2 per tonne. For grease the default ODU is lower, 0.05, so about a quarter of that per tonne."
+      ]
+    },
+    {
+      "h": "Cases that change the answer",
+      "ul": [
+        "Two-stroke oil mixed into petrol is burnt with the fuel. Count it as combustion along with the fuel, not with the 0.2 factor.",
+        "Used oil you burn in your own furnace or boiler is fuel combustion and belongs in Scope 1 at full combustion.",
+        "Used oil sold to an authorised recycler leaves your boundary; its later fate is not your Scope 1.",
+        "Lube oil used in a contractor's or transporter's vehicles is in their Scope 1, not yours.",
+        "Quenching and cutting oils in machining are process oils. Count them only if they burn or evaporate in your equipment, and say which basis you used."
+      ]
+    },
+    {
+      "h": "Include or exclude: a decision rule",
+      "p": [
+        "The GHG Protocol Corporate Standard allows you to leave out sources that are not material, provided you disclose and justify the exclusion. Work out the figure once from a year of lube oil purchases. If it is below your stated exclusion threshold, list lubricants as an excluded source with the number. If you run a large fleet or many heavy machines, or a buyer asks for a complete inventory, include it as a separate Scope 1 line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of bulk lube oil",
+    "lines": [
+      "Purchases: 2,000 litres of engine and hydraulic oil",
+      "Density about 0.88 kg per litre (check the product data sheet): 2,000 x 0.88 = 1,760 kg, so 1.76 t",
+      "1.76 t x 589.6 kg CO2 per t = 1,038 kg CO2, about 1.0 t CO2",
+      "Plant Scope 1 from fuels: 850 t CO2, so lubricants add about 0.12 percent"
+    ],
+    "note": "At 0.12 percent this plant can exclude lubricants with a one-line justification. Recheck if lube volumes or the rest of Scope 1 change."
+  },
+  "senseible": "Senseible reads lube oil invoice lines with their quantity, so the litres you need for this calculation are on record. It applies combustion factors to fuels that are burnt, and you decide whether to add the small oxidation figure.",
+  "links": [
+    { "label": "HSN codes that mean Scope 1 fuel", "to": "/answers/hsn-codes-for-fuels-scope-1" },
+    { "label": "Carbon footprint exclusion threshold", "to": "/answers/carbon-footprint-exclusion-threshold" },
+    { "label": "Process vs combustion emissions", "to": "/answers/process-vs-combustion-emissions-scope-1" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 3 IPPU, Chapter 5 Non-energy products from fuels and solvent use", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "GHG Protocol Corporate Standard, Chapter 7", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-17"
+}

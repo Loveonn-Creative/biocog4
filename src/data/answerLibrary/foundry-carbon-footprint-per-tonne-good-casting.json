@@ -1,0 +1,80 @@
+{
+  "slug": "foundry-carbon-footprint-per-tonne-good-casting",
+  "q": "How do I calculate carbon per tonne of good castings in a foundry?",
+  "title": "Carbon per tonne of good castings",
+  "short": "Total the month's CO2 from electricity, coke and fuels, then divide by tonnes of good castings dispatched, not tonnes melted. Equivalently, divide CO2 per tonne of liquid metal by casting yield: at 65% yield every good tonne carries the melting of about 1.54 tonnes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Grey and SG iron foundries in Kolhapur, Coimbatore, Rajkot and Belgaum",
+  "sections": [
+    {
+      "h": "Why good castings is the right denominator",
+      "p": [
+        "Buyers pay for good castings. Runners, risers, spillage and rejects go back to the furnace and are melted again, so the energy for that extra metal is spent but sold nowhere. Dividing by tonnes melted hides that loss and makes a poor-yield foundry look as good as a careful one.",
+        "Casting yield is good castings divided by metal melted, over the same period. Typical yields vary widely by part design, so use your own register."
+      ]
+    },
+    {
+      "h": "Sources to include",
+      "ul": [
+        "Melting: induction furnace kWh at 0.710 kg CO2 per kWh, or cupola coke by mass times the coke factor.",
+        "Rest of the plant: sand plant, moulding machines, shot blasting, fettling, compressors and lighting from the same electricity bill.",
+        "Heat treatment furnaces and ladle heating: furnace oil at 2.97 kg per litre, LPG at 2.98 kg per kg or PNG at 2.05 kg per scm.",
+        "DG diesel at 2.68 kg per litre.",
+        "Pig iron, scrap, ferroalloys, bentonite and resin are Scope 3 inputs. Add them only for a cradle-to-gate product figure, and keep them separate."
+      ]
+    },
+    {
+      "h": "Reducing the number honestly",
+      "p": [
+        "Better yield cuts CO2 per good tonne without touching the furnace: moving from 60% to 70% yield reduces melting CO2 per good tonne by about 14%. Lower rejection, smaller risers, furnace lid discipline and shorter holding times all show up directly in this metric, and they are easy to evidence with melt logs."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at an induction foundry",
+    "lines": [
+      "Metal melted 400 t; good castings 260 t; yield 260 / 400 = 65%",
+      "Melting: 650 kWh per t x 400 t = 260,000 kWh; other plant: 60,000 kWh",
+      "Electricity: 320,000 x 0.710 = 227,200 kg CO2",
+      "DG diesel: 3,000 L x 2.68 = 8,040 kg CO2; heat treatment LPG: 4,000 kg x 2.98 = 11,920 kg CO2",
+      "Total: 227,200 + 8,040 + 11,920 = 247,160 kg CO2 / 260 t = 951 kg CO2 per t of good castings",
+      "Melting share alone: 260,000 x 0.710 / 260 = 710 kg, the same as 650 / 0.65 x 0.710"
+    ],
+    "note": "Illustrative figures. Excludes pig iron, scrap and other purchased inputs."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices for the foundry and applies its published factors to give Scope 1 and 2 totals with the source on each line. Tonnes melted and good castings come from your own melt and dispatch registers.",
+  "links": [
+    {
+      "label": "Cupola or induction furnace emissions",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Cupola coke CO2 per tonne",
+      "to": "/answers/cupola-furnace-coke-emissions-per-tonne"
+    },
+    {
+      "label": "Green loan for a foundry in Kolhapur",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy), Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE SME Programme, foundry cluster energy reports",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

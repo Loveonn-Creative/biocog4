@@ -1,0 +1,58 @@
+{
+  "slug": "bank-esg-exclusion-list-msme-loan",
+  "q": "What is on a bank's ESG exclusion list for MSME loans?",
+  "title": "Bank ESG exclusion lists for MSME loans",
+  "short": "An exclusion list names activities a lender will not finance at all. Lists used for MSME loans, especially credit lines funded by development banks, usually exclude forced or harmful child labour, illegal products, banned chemicals and pesticides, ozone-depleting substances, unbonded asbestos, trade in protected wildlife, weapons, tobacco and gambling. Many now restrict new coal power.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs seeking loans from banks and NBFCs with development finance lines",
+  "sections": [
+    {
+      "h": "Where the lists come from",
+      "p": [
+        "There is no single Indian exclusion list for all lenders. Credit lines funded by development finance institutions, such as those passed through SIDBI or a bank from the World Bank group, ADB or KfW, carry the funder's environmental and social conditions. Many are built on the IFC Exclusion List of 2007. Each bank or NBFC then adds its own policy, so read the list in your sanction letter or the lender's environmental and social policy."
+      ]
+    },
+    {
+      "h": "Items that appear on most lists",
+      "ul": [
+        "Forced labour and harmful or exploitative child labour.",
+        "Products or activities illegal under Indian law or international conventions.",
+        "Pesticides, chemicals and pharmaceuticals under international phase-outs or bans, and PCBs.",
+        "Ozone-depleting substances being phased out under the Montreal Protocol.",
+        "Unbonded asbestos fibres.",
+        "Trade in wildlife or wildlife products regulated under CITES, and logging in primary tropical forest.",
+        "Weapons and munitions, tobacco, gambling and casinos, and spirits, on many lists.",
+        "Radioactive materials, with exceptions for medical and measuring equipment."
+      ]
+    },
+    {
+      "h": "Exclusions are only the first screen",
+      "p": [
+        "Passing the exclusion list does not mean the loan is approved. The lender then sorts the project by environmental and social risk and checks compliance: consent to establish and consent to operate from the State Pollution Control Board, hazardous waste authorisation, fire and factory licences, and labour law records. Keep these current; an expired consent can hold up an application even when no activity is excluded."
+      ]
+    },
+    {
+      "h": "What to do before you apply",
+      "ol": [
+        "Ask the lender for its exclusion list and environmental and social policy.",
+        "Check every product line, not only the main one; a small side business can trigger an exclusion.",
+        "Put current consents, authorisations and licences in one folder with expiry dates.",
+        "For a green loan, add your energy and emissions records, because the lender will want a baseline for the project."
+      ]
+    }
+  ],
+  "senseible": "Senseible's green loan readiness check uses your emissions and energy records, which helps with the baseline a lender asks for. Exclusion and social screening is done by the lender against its own list.",
+  "links": [
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Green Loan Principles explained", "to": "/answers/green-loan-principles-explained" },
+    { "label": "Green loan rejection reasons", "to": "/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them" },
+    { "label": "Credit guarantee for MSME green loans", "to": "/answers/credit-guarantee-for-msme-green-loans-india" }
+  ],
+  "sources": [
+    { "label": "RBI, draft disclosure framework on climate-related financial risks (2024)", "url": "https://www.rbi.org.in" },
+    { "label": "Montreal Protocol phase-out of ozone-depleting substances, Ozone Cell, MoEFCC", "url": "https://www.ozonecell.nic.in" }
+  ],
+  "reviewNote": "Exclusion lists differ by lender and funding line and are revised; check the lender's current policy.",
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "dairy-biogas-plant-carbon-credits",
+  "q": "Can a dairy biogas plant earn carbon credits in India?",
+  "title": "Dairy biogas plant carbon credits",
+  "short": "Yes, if it fits an approved methodology and the reductions are real against the baseline. Credits come from two places: methane avoided from manure that would otherwise rot in pits or lagoons, and fossil fuel displaced by the biogas. For dung that was dried as cakes, most of the credit comes from displaced LPG, diesel or firewood.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Dairy cooperatives, gaushalas and biogas developers",
+  "sections": [
+    {
+      "h": "Where the reductions come from",
+      "ul": [
+        "Avoided methane: only where the baseline manure system emits methane, such as liquid slurry, open pits or lagoons. Dung spread daily or dried as cakes emits little methane, so there is little to avoid.",
+        "Fuel displacement: biogas or slurry that replaces LPG, diesel, furnace oil or non-renewable firewood in a boiler, kitchen or generator.",
+        "Project emissions are deducted: methane leaking from the digester, flaring losses and electricity used by the plant."
+      ]
+    },
+    {
+      "h": "Methodologies that fit",
+      "ul": [
+        "CDM AMS-III.D: methane recovery in animal manure management systems.",
+        "CDM AMS-I.C: renewable thermal energy for the user, where biogas replaces fossil fuel for heat.",
+        "CDM AMS-I.E: switch from non-renewable biomass for thermal use, where biogas replaces firewood.",
+        "Gold Standard runs its own requirements for biogas projects; India's CCTS offset mechanism accepts only methodologies BEE has approved, so check its current list."
+      ]
+    },
+    {
+      "h": "What decides whether it is worth it",
+      "ul": [
+        "Size: validation and verification have fixed costs, so small plants often join a grouped programme run by a developer.",
+        "Additionality: the plant must need the credit revenue, or face a barrier that credits overcome.",
+        "Ownership: if the gas is sold, agree in writing who holds the reduction so the same tonnes are not claimed twice by you and the buyer.",
+        "Monitoring: gas flow meters, methane content and fuel records for each crediting period."
+      ]
+    },
+    {
+      "h": "Timelines to expect",
+      "p": [
+        "Registration, the first monitoring period and the first verification take time before any credit is issued. Plan cash flow on the biogas savings, and treat credits as upside."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: LPG displaced at a dairy plant",
+    "lines": [
+      "Biogas replaces 200,000 kg of LPG a year in the plant boiler",
+      "Fossil CO2 avoided: 200,000 x 2.98 = 596,000 kg, about 596 t CO2",
+      "Gross potential: about 596 credits a year, before project emissions, leakage and any buffer"
+    ],
+    "note": "This is the fuel displacement part only. Avoided methane depends on the baseline manure system and the methodology's equations."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals from your fuel and energy records and keeps the LPG or diesel invoices that show the baseline fuel use. It does not issue or register carbon credits; a project developer and an accredited verifier handle that.",
+  "links": [
+    {
+      "label": "Does CBG blended PNG lower Scope 1?",
+      "to": "/answers/does-cbg-blended-png-lower-scope-1"
+    },
+    {
+      "label": "What is additionality",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "How long until credits are issued",
+      "to": "/answers/how-long-to-get-carbon-credits-issued"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UNFCCC CDM methodologies AMS-III.D, AMS-I.C and AMS-I.E",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, methodology requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "BEE, CCTS offset mechanism approved methodologies",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "Methodology versions and the BEE approved list change; a project developer should confirm eligibility and additionality.",
+  "reviewed": "2026-10-17"
+}

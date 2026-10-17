@@ -1,0 +1,61 @@
+{
+  "slug": "are-aluminium-castings-covered-by-cbam",
+  "q": "Are aluminium die castings covered by CBAM?",
+  "title": "Are aluminium die castings under CBAM?",
+  "short": "It depends on the CN code. Aluminium castings declared under heading 7616, other articles of aluminium, are covered by EU CBAM. Castings classified as parts of a vehicle, engine, pump or electrical machine, in Chapters 84, 85 or 87, are not covered today. The code your EU importer declares decides.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Aluminium die casters and exporters of aluminium parts to the EU",
+  "sections": [
+    {
+      "h": "What Annex I covers for aluminium",
+      "p": [
+        "Annex I of Regulation (EU) 2023/956 lists aluminium goods from heading 7601 (unwrought aluminium) through to 7616 (other articles of aluminium), including bars and profiles, wire, plates, foil, tubes, structures and containers. Two headings are left out: 7602 (scrap) and 7615 (table, kitchen and household articles). A die casting that is not a recognisable part of a particular machine usually falls in 7616, so it is covered."
+      ]
+    },
+    {
+      "h": "Why the same casting can be in or out",
+      "ul": [
+        "Customs classifies a part by what it is for. A casting made solely or principally for a specific machine or vehicle is normally classified with that machine: gearbox housings and brackets under 8708, engine parts under 8409, pump bodies under 8413, motor end shields under 8503.",
+        "A rough casting that already has the shape and essential character of the finished part is classified as that part, even before machining.",
+        "Parts of general use, and articles with no specific machine, stay in Chapter 76.",
+        "If you and your importer disagree, a binding tariff information ruling from an EU customs authority settles it for that product."
+      ]
+    },
+    {
+      "h": "If your castings are covered",
+      "p": [
+        "From 2026 the EU importer must be an authorised CBAM declarant, and for 2026 imports it buys and surrenders certificates in 2027. Importers bringing in 50 tonnes or less a year in total of iron and steel, aluminium, cement and fertiliser goods are exempt under the 2025 simplification. The embedded emissions of an aluminium casting are mostly the unwrought aluminium you melt, so ask your ingot or alloy supplier for its figure, and add your own melting and holding furnace fuel."
+      ]
+    },
+    {
+      "h": "What could change from 2028",
+      "p": [
+        "In December 2025 the Commission proposed extending CBAM to a list of steel and aluminium intensive downstream goods from 2028. If adopted, some parts now outside Annex I could come in. The proposal is not law yet, so check your exact CN code against its annex and against the adopted text when it is published."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two castings from one die shop",
+    "lines": [
+      "Casting A: a generic aluminium housing sold to a distributor, declared under 7616 99: covered by CBAM",
+      "Casting B: a gearbox housing for a passenger car, declared under 8708 40: not in Annex I today",
+      "Same alloy, same furnace, different CBAM status, because the CN code differs"
+    ],
+    "note": "Confirm the full 8 digit CN code with each importer before you build CBAM data for a part."
+  },
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost for covered aluminium goods, and its CBAM pages explain default values. The CN classification itself is set by your importer and customs.",
+  "links": [
+    { "label": "Is my product's CN code covered by CBAM?", "to": "/answers/check-if-product-cn-code-covered-by-cbam" },
+    { "label": "CBAM cost for aluminium", "to": "/cbam-cost/aluminium" },
+    { "label": "CBAM for aluminium exporters in India", "to": "/climate-intelligence/cbam-aluminium-exporter-india" },
+    { "label": "CBAM downstream products from 2028", "to": "/climate-intelligence/cbam-downstream-products-2028" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Regulation (EU) 2025/2083 (CBAM simplification, 50 tonne threshold)", "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj" },
+    { "label": "European Commission proposal COM(2025) 989 (downstream goods), and the Combined Nomenclature, Regulation (EEC) 2658/87", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewNote": "The downstream extension proposed in December 2025 could add parts from 2028; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "paddy-straw-carbon-credits-punjab",
+  "q": "Can paddy straw collection or pellets earn carbon credits?",
+  "title": "Can paddy straw earn carbon credits?",
+  "short": "Possibly, but not just for selling pellets. Supplying straw pellets to a coal plant that must co-fire biomass by policy is hard to prove additional. A project where straw replaces coal or oil at a user with no mandate has a better case, under an approved methodology with monitoring.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Biomass aggregators, pellet plants and farmer producer organisations in Punjab and Haryana",
+  "sections": [
+    {
+      "h": "Why the co-firing mandate is a problem",
+      "p": [
+        "The Ministry of Power requires coal-based thermal plants to co-fire a share of biomass: 5% under its current policy, notified in late 2025, with a higher blend for plants around Delhi. Carbon standards such as the Verra VCS Standard and CDM rules ask whether the activity goes beyond what law already requires. Pellets bought to meet a legal mandate usually fail that test, so the emission cut is credited to policy, not to a project."
+      ]
+    },
+    {
+      "h": "Projects with a stronger case",
+      "ul": [
+        "A boiler or furnace at a factory switching from coal, furnace oil or diesel to straw pellets, with no legal requirement to do so.",
+        "Power from straw at a plant not covered by a mandate, under a biomass power methodology such as ACM0018.",
+        "Straw used for biochar or compressed biogas, which have their own methodologies."
+      ]
+    },
+    {
+      "h": "What avoided burning does and does not earn",
+      "p": [
+        "Open burning of straw releases biogenic CO2, which carbon methods do not count as a fossil emission, plus methane, nitrous oxide and black carbon. Credits rest mainly on the fossil fuel displaced. Some methodologies also count methane avoided, but only with strong evidence of what would otherwise have happened to the straw. Do not plan revenue on avoided burning alone."
+      ]
+    },
+    {
+      "h": "What a developer will ask for",
+      "ol": [
+        "Proof of fuel displaced: the user's fuel records before and after.",
+        "Straw sourcing records showing it is surplus residue.",
+        "Additionality: no mandate, and a financial or other barrier.",
+        "Monitoring: tonnes delivered, moisture, and fuel use at the user, for every year credited."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives carbon credit eligibility signals from fuel and energy records, such as a factory's coal or oil use before a switch to biomass. It does not issue or register carbon credits.",
+  "links": [
+    {
+      "label": "Coal to biomass boiler carbon credits",
+      "to": "/answers/coal-to-biomass-boiler-carbon-credits"
+    },
+    {
+      "label": "What is additionality",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "Biochar carbon credits in India",
+      "to": "/answers/biochar-carbon-credits-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power, policy on biomass co-firing in coal-based thermal power plants",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Verra VCS Standard, additionality requirements",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "UNFCCC CDM methodologies, including ACM0018",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewNote": "Additionality of mandated co-firing is contested. Check the current co-firing share on powermin.gov.in (the late 2025 policy replaced the 2021 and 2023 guidelines) and the methodology's additionality clause before investing.",
+  "reviewed": "2026-10-17"
+}

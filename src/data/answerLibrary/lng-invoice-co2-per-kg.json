@@ -1,0 +1,62 @@
+{
+  "slug": "lng-invoice-co2-per-kg",
+  "q": "How do I calculate CO2 from an LNG tanker invoice in tonnes or MMBtu?",
+  "title": "CO2 from an LNG tanker invoice",
+  "short": "Multiply the LNG delivered by about 2.69 kg CO2 per kg, so one tonne of LNG gives about 2.69 tonnes of CO2. If the invoice is in MMBtu, use about 53.3 kg CO2 per MMBtu on a gross calorific value basis. Both come from the IPCC 2006 default for natural gas.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Off-pipeline ceramic, glass and food plants supplied LNG by road tanker",
+  "sections": [
+    {
+      "h": "Where the 2.69 kg per kg comes from",
+      "p": [
+        "LNG is natural gas cooled to a liquid, so it burns with the same carbon content as piped gas or CNG. The IPCC 2006 default for natural gas is 56,100 kg CO2 per terajoule, and its default net calorific value is 48.0 TJ per thousand tonnes, which is 48.0 GJ per tonne.",
+        "48.0 GJ x 56.1 kg CO2 per GJ = 2,693 kg CO2 per tonne, about 2.69 kg CO2 per kg. This is a CO2 figure; the small methane and nitrous oxide amounts from combustion are added separately if you report CO2e."
+      ]
+    },
+    {
+      "h": "When the invoice is billed in MMBtu",
+      "p": [
+        "Indian gas suppliers usually bill heat in MMBtu on a gross calorific value (GCV) basis, while IPCC factors are on a net (NCV) basis. For natural gas the IPCC guidelines take NCV as about 10 percent lower than GCV.",
+        "1 MMBtu = 1.055 GJ GCV, so about 0.95 GJ NCV. 0.95 x 56.1 = about 53.3 kg CO2 per MMBtu GCV. If the invoice says the MMBtu are on an NCV basis, use 1.055 x 56.1 = 59.2 kg CO2 per MMBtu instead. Check the basis on the invoice or the supply contract before you pick."
+      ]
+    },
+    {
+      "h": "Which quantity to count",
+      "ul": [
+        "Use the quantity delivered on each invoice, taken from the weighbridge slip or the tanker's flow meter, not the quantity ordered.",
+        "Gas left in your storage tank at year end has not been burnt. Adjust with the opening and closing stock: delivered plus opening stock minus closing stock.",
+        "Boil-off gas that your vaporiser plant vents to air is unburnt methane, not CO2. If you vent it, estimate the kilograms and report them as methane in CO2e. If the boil-off is sent to the burner, it is already in the delivered quantity.",
+        "Heel left in the tanker after unloading is not yours if it is not billed. If the invoice bills it, include it and treat the next delivery the same way."
+      ]
+    },
+    {
+      "h": "What sits outside Scope 1",
+      "p": [
+        "Combustion at your plant is Scope 1. Emissions from producing, liquefying, shipping and trucking the LNG to you are upstream fuel emissions, reported in Scope 3 Category 3, not added to the Scope 1 figure. Keep them as a separate line if a buyer asks for well-to-wheel or cradle-to-gate numbers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of LNG deliveries",
+    "lines": [
+      "Invoices for the month: 18 tonnes of LNG delivered by two tankers",
+      "Opening stock 4 t, closing stock 3 t, so LNG burnt: 18 + 4 minus 3 = 19 t",
+      "19,000 kg x 2.69 kg CO2 per kg = 51,110 kg CO2, about 51.1 t",
+      "Same month billed in heat: 960 MMBtu GCV x 53.3 kg CO2 per MMBtu = 51,168 kg CO2, about 51.2 t"
+    ],
+    "note": "The two methods agree within rounding because one tonne of LNG holds about 50.6 MMBtu GCV. If your supplier's certificate gives a measured calorific value, use it in place of the default."
+  },
+  "senseible": "Senseible reads the LNG invoice as an image or PDF, classifies the line by HSN code as a Scope 1 fuel and multiplies the printed quantity by a published factor. A line without a factor shows no figure rather than a guess, and stock adjustments are yours to record.",
+  "links": [
+    { "label": "Coal, PNG or biomass boiler emissions", "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions" },
+    { "label": "HSN codes that mean Scope 1 fuel", "to": "/answers/hsn-codes-for-fuels-scope-1" },
+    { "label": "CNG emission factor", "to": "/emission-factors/cng" },
+    { "label": "PNG emission factor", "to": "/emission-factors/png" }
+  ],
+  "sources": [
+    { "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 1 Table 1.2 and Chapter 2 Table 2.2", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-17"
+}

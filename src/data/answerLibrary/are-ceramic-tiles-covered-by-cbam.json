@@ -1,0 +1,62 @@
+{
+  "slug": "are-ceramic-tiles-covered-by-cbam",
+  "q": "Are ceramic tiles and sanitaryware covered by EU or UK CBAM?",
+  "title": "Are ceramic tiles covered by CBAM?",
+  "short": "No. Ceramic tiles (HS 6907) and sanitaryware (HS 6910) are not in Annex I of the EU CBAM Regulation, and the UK dropped ceramics from its CBAM before the 2027 start. No CBAM is due on Morbi tiles today, though buyers may still ask for a product footprint.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Morbi ceramic exporters and their EU and UK importers",
+  "sections": [
+    {
+      "h": "What the EU list covers",
+      "p": [
+        "EU CBAM covers cement, iron and steel, aluminium, fertilisers, hydrogen and electricity, with the product codes listed in Annex I. No Chapter 69 ceramic product is on it: not tiles under 6907, not sanitaryware under 6910."
+      ]
+    },
+    {
+      "h": "One edge case: clay",
+      "p": [
+        "Annex I's cement group includes code 2507 00 80, other kaolinic clays. If you export clay itself, calcined or not, check that code and the Commission's guidance with your importer. Finished tiles and sanitaryware made from clay are not covered."
+      ]
+    },
+    {
+      "h": "The UK position",
+      "p": [
+        "The UK first named ceramics and glass among its CBAM sectors in 2024, then said in its October 2024 policy update that neither would be in scope from 2027. The UK scheme starting on 1 January 2027 covers aluminium, cement, fertiliser, hydrogen, and iron and steel, set out in Part 5 of the Finance Act 2026. Check the UK goods list on gov.uk."
+      ]
+    },
+    {
+      "h": "Why buyers still ask for carbon data",
+      "p": [
+        "EU retailers and distributors report their own Scope 3, and some public building projects ask for product declarations. A per square metre footprint answers those requests even with no CBAM charge. Both CBAM lists can also be widened, so a footprint you already hold is useful if that happens."
+      ]
+    }
+  ],
+  "senseible": "Senseible's tile footprint answer and ceramics industry page show how to build a per square metre figure from kiln fuel and power bills that Senseible reads; there is no CBAM charge to calculate for tiles.",
+  "links": [
+    {
+      "label": "Check if your CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Ceramic tile footprint per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "Both the EU and UK scopes can be extended; recheck Annex I of Regulation (EU) 2023/956 and the UK CBAM goods lists on gov.uk (HMRC 'check which goods are in scope') before relying on this.",
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "uk-carbon-reduction-plan-for-indian-suppliers",
+  "q": "Do Indian suppliers to UK government contracts need a Carbon Reduction Plan?",
+  "title": "UK Carbon Reduction Plan for Indian firms",
+  "short": "Yes, if you bid for an in scope UK central government contract. Under PPN 006, which replaced PPN 06/21 for procurements started from 24 February 2025, contracts above 5 million pounds a year require a Carbon Reduction Plan wherever the supplier is based. It covers Scope 1, Scope 2 and five Scope 3 categories, with net zero by 2050.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian IT, BPO and engineering firms bidding for UK public sector work",
+  "sections": [
+    {
+      "h": "Who asks for it",
+      "p": [
+        "Central government departments, their executive agencies and non departmental public bodies apply PPN 006 to contracts with an expected value above 5 million pounds a year, including VAT, where it is relevant and proportionate. Under the Procurement Act 2023 the plan is checked as a pass or fail condition of participation, before the rest of the bid is read. Procurements started before 24 February 2025 still follow PPN 06/21. The NHS has its own supplier roadmap, so read the tender to see which applies. The requirement attaches to the contract, not to where the supplier is incorporated.",
+        "PPN 016, issued at the same time, is a separate optional contract schedule for reporting and cutting emissions on a specific contract. It adds to the plan; it does not replace it."
+      ]
+    },
+    {
+      "h": "What the plan must contain",
+      "ul": [
+        "A commitment to reach net zero by 2050 at the latest.",
+        "Baseline year emissions and current emissions in tonnes CO2e.",
+        "Scope 1 and Scope 2.",
+        "Scope 3 Category 4 (upstream transport), 5 (waste), 6 (business travel), 7 (employee commuting) and 9 (downstream transport).",
+        "The reduction measures in place and planned.",
+        "Sign off by a director or equivalent, publication on your website, and an update at least each year."
+      ]
+    },
+    {
+      "h": "Boundary questions for an Indian firm",
+      "p": [
+        "The standard sets UK operations as the minimum boundary. A firm that delivers mostly from India should ask the contracting authority what it expects; reporting the whole delivery operation, including Indian offices, is the safer reading and is what most buyers will compare. For IT and BPO firms, Category 7 commuting, including night shift cabs, and Category 6 travel are usually the largest items in scope."
+      ]
+    },
+    {
+      "h": "Indian data in the plan",
+      "p": [
+        "Use the CEA factor for Indian electricity (0.710 kg CO2 per kWh in version 21.0) and say so. The UK government conversion factors suit UK activity. Keep the method note short: factor sources, GWP edition, and what is estimated."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices for Scope 1 and 2 and keeps selected Scope 3 lines, such as freight, in the supplier evidence trail. Its reports are self-declared drafts that reflect uploaded data, a starting point for the plan your director signs.",
+  "links": [
+    {
+      "label": "NHS Carbon Reduction Plan for pharma",
+      "to": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india"
+    },
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Night shift cabs: Scope 1 or 3",
+      "to": "/answers/night-shift-cab-emissions-scope-1-or-scope-3"
+    },
+    {
+      "label": "Freight: Category 4 or 9",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (categories named in the Carbon Reduction Plan technical standard)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "UK government GHG conversion factors for company reporting",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewNote": "UK procurement notes change; check PPN 006, the Carbon Reduction Plan technical standard and the threshold on gov.uk, and the note named in each tender.",
+  "reviewed": "2026-10-17"
+}

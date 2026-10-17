@@ -1,0 +1,70 @@
+{
+  "slug": "are-kitchen-utensils-covered-by-cbam",
+  "q": "Are steel and aluminium kitchenware and handicrafts covered by CBAM?",
+  "title": "Is kitchenware covered by CBAM?",
+  "short": "No, not today. Steel table and kitchen articles (heading 7323) and aluminium ones (7615) are not in Annex I of the CBAM Regulation. But other articles of steel (7326) and aluminium (7616) are covered, so a steel or aluminium item classified there pays CBAM. Brass artware (chapter 74) is not covered.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Utensil and artware exporters in Moradabad, Jagadhri and Mumbai",
+  "sections": [
+    {
+      "h": "Headings that matter for this trade",
+      "ul": [
+        "7323, table, kitchen or other household articles of iron or steel, such as stainless steel tiffins, plates and pressure cooker bodies: not in Annex I.",
+        "7615, table, kitchen or household articles and sanitary ware of aluminium, such as aluminium pots and kadais: not in Annex I.",
+        "7326, other articles of iron or steel: in Annex I, so covered.",
+        "7616, other articles of aluminium: in Annex I, so covered.",
+        "8306, statuettes and other ornaments of base metal, and chapter 74 copper and brass articles: not in Annex I."
+      ]
+    },
+    {
+      "h": "Where exporters get caught",
+      "p": [
+        "Gift and home decor ranges mix kitchen items with hooks, stands, racks, planters and wire articles. Some of these fall under 7326 or 7616, not 7323 or 7615. If your EU buyer declares them under a covered code, the import needs CBAM data and, from 2026, certificates. Steel or aluminium sheet, circles and coils you import or export as material are covered too."
+      ]
+    },
+    {
+      "h": "Who decides the code",
+      "p": [
+        "The EU importer declares the CN code, following the Combined Nomenclature and its explanatory notes, and EU customs can reclassify. Choosing a code to avoid CBAM is not an option. Agree the classification with your buyer for each item before shipment, using the 8 digit code from your shipping bill as the starting point."
+      ]
+    },
+    {
+      "h": "Could this change",
+      "p": [
+        "The European Commission proposed in December 2025 to extend CBAM to certain downstream products made from covered steel and aluminium. Household articles could be affected if that proposal is adopted. Until then, coverage is what Annex I says today."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM pages explain coverage, and the CBAM cost calculator estimates exposure for goods that are covered. Senseible does not classify goods; your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "CBAM 50 tonne exemption",
+      "to": "/climate-intelligence/cbam-50-tonne-exemption"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add household articles; recheck Annex I before each season.",
+  "reviewed": "2026-10-17"
+}

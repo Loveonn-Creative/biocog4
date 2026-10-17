@@ -1,0 +1,83 @@
+{
+  "slug": "pharma-formulation-carbon-footprint-per-1000-tablets",
+  "q": "How do I calculate the carbon footprint per 1,000 tablets for a formulation plant?",
+  "title": "Carbon footprint per 1,000 tablets",
+  "short": "Add the plant's electricity, DG diesel and boiler fuel emissions for a period, share them across products, and divide by thousands of tablets made. A plant using 4 million kWh a year for 2 billion tablets has 2 kWh per 1,000 tablets, which is 1.42 kg CO2 from grid power, before the API.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Oral solid dosage manufacturers answering NHS, EU and US buyer requests",
+  "sections": [
+    {
+      "h": "Energy emissions for the plant",
+      "ul": [
+        "Grid electricity: kWh x 0.710 kg CO2 per kWh.",
+        "DG diesel: litres x 2.68 kg CO2.",
+        "Boiler fuel for steam and hot water: PNG at 2.05 kg CO2 per scm, furnace oil at 2.97 kg per litre, or coal at 2.42 kg per kg."
+      ]
+    },
+    {
+      "h": "Sharing energy in a multi-product plant",
+      "p": [
+        "Clean room air handling runs all day whatever is on the line, so a plain split by tablet count can mislead. Where blocks are metered, give each block's energy to the products it made. Otherwise share by machine hours on compression, coating and packing, and spread common HVAC by floor area or by hours each product occupied the suite.",
+        "ISO 14067 and the GHG Protocol Product Standard both prefer a physical basis such as hours or mass over rupees. State the basis you chose."
+      ]
+    },
+    {
+      "h": "What else goes into a cradle to gate figure",
+      "ul": [
+        "API per tablet: mg of API x the API footprint per kg. For many products this outweighs plant energy.",
+        "Excipients and coating materials, by kg.",
+        "Primary packaging: PVC or PVDC film and aluminium foil per blister, and the carton.",
+        "Rejects and batch losses: divide by tablets released, not tablets compressed."
+      ]
+    },
+    {
+      "h": "Reporting it to a buyer",
+      "p": [
+        "Give the figure per 1,000 tablets for each strength, with the year, the grid factor and its source, the allocation basis and what is excluded. NHS and EU buyers often compare suppliers on a like for like basis, so keep the same boundary across products."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: plant energy for one year",
+    "lines": [
+      "Electricity: 40,00,000 kWh x 0.710 = 28,40,000 kg CO2",
+      "DG diesel: 20,000 litres x 2.68 = 53,600 kg CO2",
+      "Boiler PNG: 1,50,000 scm x 2.05 = 3,07,500 kg CO2",
+      "Total: 28,40,000 + 53,600 + 3,07,500 = 32,01,100 kg CO2",
+      "Tablets released: 200 crore = 20,00,000 thousand",
+      "Per 1,000 tablets: 32,01,100 / 20,00,000 = 1.60 kg CO2, plant energy only"
+    ],
+    "note": "A single product plant is assumed; share by machine hours or metered blocks if several products run."
+  },
+  "senseible": "Senseible reads plant power bills, DG diesel and boiler fuel invoices into Scope 1 and 2 with the factor on each line. API, excipient and packaging purchases go to the supplier evidence trail, where a supplier's footprint can be kept with the invoice.",
+  "links": [
+    {
+      "label": "API carbon footprint per kg",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    },
+    {
+      "label": "NHS carbon reduction plan for pharma",
+      "to": "/climate-intelligence/nhs-carbon-reduction-plan-pharma-india"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

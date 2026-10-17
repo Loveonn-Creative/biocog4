@@ -1,0 +1,82 @@
+{
+  "slug": "tea-factory-carbon-footprint-per-kg-made-tea",
+  "q": "What is the carbon footprint per kg of made tea from an Indian tea factory?",
+  "title": "Carbon footprint per kg of made tea",
+  "short": "Add up the factory's fuel and electricity emissions for the season and divide by kg of made tea. In formula: (coal kg x 2.42 + gas scm x 2.05 + kWh x 0.710 + DG diesel litres x 2.68) / kg made tea. Report firewood CO2 separately as biogenic, and add green leaf if you buy it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tea estates and bought-leaf factories in Assam, West Bengal and Nilgiris selling to UK and EU",
+  "sections": [
+    {
+      "h": "Where a tea factory's emissions come from",
+      "ul": [
+        "Dryers, fired by coal, natural gas, oil or firewood through hot air furnaces or thermic fluid heaters. This is usually the largest line.",
+        "Withering fans, rolling, CTC machines, sorting and packing, all on electricity.",
+        "DG sets during grid power cuts.",
+        "Transport of green leaf from the field or from bought-leaf suppliers to the factory."
+      ]
+    },
+    {
+      "h": "Firewood and other biomass",
+      "p": [
+        "CO2 from burning firewood, tea prunings or briquettes is biogenic. Under the GHG Protocol it is reported separately, outside the scope totals, while the small methane and nitrous oxide from burning it stay in Scope 1. Keep a record of where the wood comes from; a buyer may ask whether it is from sustainably managed sources. A factory that mixes coal and wood should split the two by invoice."
+      ]
+    },
+    {
+      "h": "Estate leaf versus bought leaf",
+      "p": [
+        "For an estate with its own factory, field emissions such as nitrogen fertiliser, diesel in tractors and irrigation pumps are your Scope 1 and 2, and belong in a cradle-to-gate footprint. For a bought-leaf factory, the green leaf is a purchased input in Scope 3 Category 1, and its footprint comes from the growers. Record kg of green leaf bought and the made tea outturn so the leaf share can be added per kg of made tea."
+      ]
+    },
+    {
+      "h": "Getting the number right",
+      "ul": [
+        "Use a full season, because output and fuel use swing between first flush, peak season and the tail.",
+        "Coal quality in the north east varies; if you have a lab report of calorific value, compute the factor from it and state that you did.",
+        "Count made tea despatched plus closing stock, minus opening stock, not green leaf.",
+        "If the factory also processes orthodox and CTC, share dryer fuel by kg through each line if you can meter it; otherwise state a single average."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one season at a coal-fired CTC factory",
+    "lines": [
+      "Coal: 1,50,000 kg x 2.42 = 363,000 kg CO2",
+      "Electricity: 1,20,000 kWh x 0.710 = 85,200 kg CO2",
+      "DG diesel: 8,000 L x 2.68 = 21,440 kg CO2",
+      "Total: 469,640 kg CO2 for 2,50,000 kg of made tea",
+      "Factory footprint: 469,640 / 250,000 = about 1.88 kg CO2 per kg of made tea, before green leaf"
+    ],
+    "note": "These inputs are illustrative, not a sector figure. A gas-fired factory would replace the coal line with scm x 2.05, which usually lowers the result."
+  },
+  "senseible": "Senseible reads coal, gas, diesel and electricity invoices into Scope 1 and 2 lines for the factory. A firewood line without a published factor shows no figure rather than a guess, so record its biogenic CO2 separately from the scope totals.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Processed food carbon footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

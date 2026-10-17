@@ -1,0 +1,73 @@
+{
+  "slug": "goods-bought-from-trader-scope-3",
+  "q": "Which emission factor applies when I buy steel or chemicals from a trader, not the mill?",
+  "title": "Emission factor for goods bought via a trader",
+  "short": "Use the factor of the producer that made the goods, not the trader. A trader adds little beyond storage and transport. Find the mill or plant from the mill test certificate or the trader's purchase records, then multiply your quantity by that producer's per tonne factor.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "MSMEs buying raw materials through stockists and distributors",
+  "sections": [
+    {
+      "h": "Why the trader is not the source of the emissions",
+      "p": [
+        "Scope 3 Category 1 covers the cradle to gate emissions of what you buy. For steel or a chemical, almost all of that happens at the mill or plant that produced it. The trader's warehouse and trucks are a small addition. So the factor you want belongs to the producer, and the trader is just the route to finding out who that is."
+      ]
+    },
+    {
+      "h": "How to find the producer behind a trader invoice",
+      "ol": [
+        "Ask for the mill test certificate or test certificate with each lot. For steel bars and plates it normally names the producing mill and the heat number.",
+        "For chemicals, ask for the manufacturer's certificate of analysis or the original manufacturer's invoice reference.",
+        "Record the producer and its production route (for steel, blast furnace, DRI or electric furnace) against your purchase.",
+        "Ask the producer, directly or through the trader, for a per tonne footprint. If it gives one, use it with its boundary and year."
+      ]
+    },
+    {
+      "h": "If the producer cannot be traced",
+      "ul": [
+        "Use an average factor for the material and route, labelled as secondary data.",
+        "Use quantity, not rupees, wherever you have tonnes or kg on the invoice.",
+        "Use a spend-based factor only when there is no quantity, and label it as spend-based with wider uncertainty."
+      ]
+    },
+    {
+      "h": "Why spend-based factors overstate trader purchases",
+      "p": [
+        "A spend factor converts rupees to emissions using a typical price. A trader's price includes its margin, freight and holding cost, so the same tonne costs more and the spend method gives more emissions for the same steel. When prices swing, the error grows. Tonnes times a producer factor avoids both problems."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 tonnes of TMT bars from a stockist",
+    "lines": [
+      "Producer's declared footprint (illustrative): 2.2 t CO2e per tonne",
+      "Quantity method: 100 x 2.2 = 220 t CO2e",
+      "Mill price ₹55,000 per tonne implies a spend factor of 2,200 / 55,000 = 0.04 kg CO2e per rupee",
+      "Trader invoice: 100 t at ₹60,000 = ₹60,00,000; 60,00,000 x 0.04 = 2,40,000 kg = 240 t CO2e",
+      "Spend method overstates by 20 t, about 9%, purely from the trader margin"
+    ],
+    "note": "The 2.2 t figure is illustrative; use the footprint the producer gives you."
+  },
+  "senseible": "Senseible reads trader invoices by HSN code and quantity into the supplier evidence trail, and the mill test certificate can be kept with them as evidence of the producer. Where only spend is known, Senseible provides a spend-based estimate labelled with its wider uncertainty.",
+  "links": [
+    {
+      "label": "Allocate supplier emissions to purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "Steel supplier carbon intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapters 5 and 7",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

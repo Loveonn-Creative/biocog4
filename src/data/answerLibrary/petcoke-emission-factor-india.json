@@ -1,0 +1,79 @@
+{
+  "slug": "petcoke-emission-factor-india",
+  "q": "What is the CO2 emission factor for pet coke used in kilns in India?",
+  "title": "Pet coke emission factor for Indian kilns",
+  "short": "Pet coke gives about 3.17 tonnes of CO2 per tonne burnt, using the IPCC 2006 defaults of 32.5 GJ per tonne and 97.5 kg CO2 per GJ. That is roughly 30% more than Indian coal per tonne. If your lab reports a calorific value for your own lots, use it instead.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Cement, lime kiln and calcium carbide units permitted to burn pet coke",
+  "sections": [
+    {
+      "h": "How the 3.17 figure is built",
+      "p": [
+        "Fuel CO2 is energy times carbon per unit of energy. The IPCC 2006 Guidelines give petroleum coke a default net calorific value (NCV) of 32.5 TJ per Gg, which is 32.5 GJ per tonne, and a default emission factor of 97,500 kg CO2 per TJ, which is 97.5 kg CO2 per GJ.",
+        "32.5 x 97.5 = 3,168.75 kg CO2 per tonne, about 3.17 t CO2 per tonne of pet coke. The IPCC default assumes all carbon is oxidised, which is a fair assumption in a cement or lime kiln."
+      ]
+    },
+    {
+      "h": "Using your own calorific value",
+      "ol": [
+        "Take the NCV from the supplier's certificate of analysis or your own lab, in kcal per kg or MJ per kg.",
+        "Convert kcal per kg to GJ per tonne by multiplying by 0.0041868. For example, 8,100 kcal per kg x 0.0041868 = 33.9 GJ per tonne.",
+        "If the report gives only gross calorific value (GCV), reduce it to NCV. For low hydrogen solid fuels the gap is small, a few percent, but state the method.",
+        "Multiply NCV by 97.5 kg CO2 per GJ: 33.9 x 97.5 = 3,305 kg CO2 per tonne.",
+        "Keep the lab report with the invoice for each lot so the figure can be traced."
+      ]
+    },
+    {
+      "h": "Why pet coke is higher than coal per tonne",
+      "p": [
+        "Pet coke is a refinery residue that is mostly carbon, with little ash or moisture. Indian thermal coal carries a lot of ash, so a tonne of it holds less carbon. On an energy basis the gap is smaller: pet coke is 97.5 kg CO2 per GJ against 94.6 for other bituminous coal under the same IPCC tables. Per tonne, pet coke is about 3.17 t CO2 against the 2.42 t default for coal, about 31% more.",
+        "Pet coke also carries high sulphur. That is an air pollution issue, not a greenhouse gas one, and it does not change the CO2 factor."
+      ]
+    },
+    {
+      "h": "Who may burn it in India",
+      "p": [
+        "Since 2018, following Supreme Court orders, DGFT has restricted imports of pet coke to cement, lime kiln, calcium carbide and gasification users, for use as feedstock or in their own process. Some states restrict its use as fuel further. Check the current DGFT notification and your state pollution control board consent before you plan around it.",
+        "In a cement plant, kiln fuel CO2 is part of Scope 1 and sits beside process CO2 from limestone. For cement exported to the EU, both count in CBAM embedded emissions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of kiln fuel",
+    "lines": [
+      "Pet coke burnt: 400 t (from invoices and stock change)",
+      "Default factor: 32.5 GJ/t x 97.5 kg CO2/GJ = 3,168.75 kg CO2/t",
+      "400 x 3,168.75 = 1,267,500 kg CO2, about 1,267.5 t CO2",
+      "With a lab NCV of 33.9 GJ/t: 400 x 3,305 = 1,322,000 kg, about 1,322 t CO2"
+    ],
+    "note": "Use quantity burnt, not quantity bought, when stock moves a lot between months."
+  },
+  "senseible": "Senseible reads the tonnes and the HSN code (2713 for petroleum coke) from the fuel invoice, image or PDF, and classifies the line as Scope 1. It applies a published factor only where one is set for that fuel. Where none is set, the line carries no emissions figure, so record this IPCC calculation and its source beside the invoice.",
+  "links": [
+    {
+      "label": "Coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "HSN codes that mean Scope 1 fuel",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 Table 1.2 (NCV) and Ch. 2 Table 2.2 (stationary combustion factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "Pet coke import and use rules are set by DGFT notifications, court orders and state boards and can change; recheck before relying on them.",
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "job-work-emissions-which-scope",
+  "q": "How do I count emissions from job work under GST in my carbon footprint?",
+  "title": "Job work emissions: which scope?",
+  "short": "If you are the principal, the job worker's fuel and power used on your goods are Scope 3 Category 1, purchased services. The material you sent stays counted once, at its purchase. If you are the job worker, the same energy is your own Scope 1 and Scope 2. The GST challan does not change either answer.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Principal manufacturers and job workers in textiles, auto components and engineering",
+  "sections": [
+    {
+      "h": "Why ownership of the goods does not decide the scope",
+      "p": [
+        "The CGST Act defines job work as processing goods that belong to another registered person (Section 2(68)), and Section 143 lets the principal send inputs on a challan without paying tax. The job worker bills only for the processing, usually under SAC 9988. Carbon accounting follows control of the operation, not ownership of the goods. Under the GHG Protocol Corporate Standard, emissions sit in Scope 1 and 2 of whoever controls the furnace, boiler or machine.",
+        "So the job worker reports its fuel and electricity in its own Scope 1 and 2, even when every kilogram it processes belongs to someone else."
+      ]
+    },
+    {
+      "h": "The principal's side",
+      "ul": [
+        "Job work charges are a purchased service, which the Scope 3 Standard places in Category 1, purchased goods and services.",
+        "Do not count the material again. The yarn, steel or castings you sent were counted when you bought them.",
+        "Transport to and from the job worker that you pay for is Category 4, upstream transportation.",
+        "Exception: if the job worker operates inside your premises on your power connection, that electricity is on your bill and is your Scope 2."
+      ]
+    },
+    {
+      "h": "Getting a quantity based figure",
+      "ol": [
+        "Ask the job worker for its monthly fuel and kWh, and its total output in tonnes, metres or pieces.",
+        "Work out its emissions per unit: (kWh x 0.710 + fuel x factor) / total output.",
+        "Multiply by the quantity processed for you, from your challans or its invoices.",
+        "If it will not share data, use a spend-based estimate on the job work value, label it, and replace it later."
+      ]
+    },
+    {
+      "h": "The job worker's side",
+      "p": [
+        "A job worker can give each principal a per unit figure from the same arithmetic. That answers buyer questionnaires without disclosing the full energy bill, and it is the number the principal needs for Category 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: dyeing done on job work",
+    "lines": [
+      "Job worker's month: 120,000 kWh and 180 t coal, 300 t fabric processed in total",
+      "Electricity: 120,000 x 0.710 = 85,200 kg CO2",
+      "Coal: 180,000 kg x 2.42 = 435,600 kg CO2",
+      "Per tonne: (85,200 + 435,600) / 300 = 1,736 kg CO2 per tonne",
+      "Your 50 t on job work: 50 x 1,736 = 86,800 kg, about 86.8 t CO2 in your Category 1"
+    ],
+    "note": "Illustrative figures for the arithmetic, not a typical dye house value. For the job worker, the 520.8 t is its own Scope 1 and 2 for the month."
+  },
+  "senseible": "Senseible reads job work invoices (SAC 9988) into the supplier evidence trail, with the quantity where it is printed; where only the rupee value is known, it provides a spend-based estimate labelled as such. For a job worker, the same software reads its own fuel invoices and electricity bills as Scope 1 and 2.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Supplier Scope 1 in your Scope 3",
+      "to": "/answers/supplier-scope-1-double-counted-in-scope-3"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 3 (operational control)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}
