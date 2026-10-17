@@ -20,7 +20,7 @@
       "ul": [
         "GHG Protocol: one Scope 1 total is required; a breakdown by source type is optional information that adds transparency.",
         "IPCC 2006 Guidelines: fuel combustion sits in Volume 2 (Energy); process emissions in Volume 3 (Industrial Processes and Product Use).",
-        "EU CBAM: installation monitoring uses source streams, with combustion and process emissions identified and monitored separately.",
+        "EU CBAM: installation monitoring calculates emissions source stream by source stream, each fuel or process input with its own activity data and factors, so combustion and process inputs sit on separate lines.",
         "SEBI BRSR: asks for total Scope 1 in tonnes CO2e, so the split is not required in the form, but keep it in your working papers."
       ]
     },
@@ -51,7 +51,7 @@
     ],
     "note": "Purity and the coal factor vary by supplier; use your assay and fuel analysis where you have them."
   },
-  "senseible": "Senseible calculates combustion emissions from your fuel invoices using IPCC 2006 factors. It does not calculate process emissions on its own: they are calculated only when you supply measured data, such as tonnes of carbonate fed and its assay.",
+  "senseible": "Senseible calculates combustion emissions from your fuel invoices using IPCC 2006 factors. Process emissions are calculated when you supply measured data, such as tonnes of carbonate fed and its assay, and sit on their own line.",
   "links": [
     {
       "label": "Process CO2 from limestone calcination",

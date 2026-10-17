@@ -10,7 +10,7 @@
     {
       "h": "Legal status",
       "ul": [
-        "India: the Department of Economic Affairs published a Draft Framework of India's Climate Finance Taxonomy on 7 May 2025. Sector annexures with activity lists and thresholds were to follow.",
+        "India: a Ministry of Finance draft framework, released by the Department of Economic Affairs in May 2025 for public comment. It sets principles and two categories; the sector annexures that would name activities and thresholds had not been issued, and the framework was not final, at this page's review date.",
         "EU: Regulation (EU) 2020/852 is in force, and the Climate Delegated Act (EU) 2021/2139 has set technical screening criteria for climate activities since 2022."
       ]
     },
@@ -30,7 +30,7 @@
     {
       "h": "Disclosure and bonds",
       "ul": [
-        "EU: large companies in scope report the share of turnover, capital expenditure and operating expenditure that is taxonomy aligned. The EU Green Bond Standard, Regulation (EU) 2023/2631, ties proceeds to aligned activities.",
+        "EU: companies in scope of Article 8 report the share of turnover, capital expenditure and operating expenditure that is taxonomy aligned. The EU Green Bond Standard, Regulation (EU) 2023/2631, ties proceeds to aligned activities.",
         "India: the draft is a classification framework. Any reporting duty would come through regulators. Green bonds in India today follow SEBI's framework for green debt securities, and banks raising green deposits follow the RBI list.",
         "An Indian exporter with EU owners or EU lenders may need to answer against the EU Taxonomy anyway, whatever the Indian status."
       ]
@@ -69,6 +69,6 @@
       "url": "https://www.rbi.org.in"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "India's taxonomy was a May 2025 draft when reviewed, and the EU simplified Taxonomy reporting in 2025 and 2026; check dea.gov.in and EUR-Lex for the current texts."
 }

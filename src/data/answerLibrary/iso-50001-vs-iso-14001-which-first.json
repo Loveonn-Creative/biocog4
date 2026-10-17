@@ -10,8 +10,8 @@
     {
       "h": "What each standard actually covers",
       "ul": [
-        "ISO 14001:2015 is an environmental management system. It covers all your significant environmental aspects: waste, effluent, air emissions, chemicals, energy and your legal compliance obligations. Since the 2024 amendment it also asks whether climate change is a relevant issue for you.",
-        "ISO 50001:2018 is an energy management system. It goes deeper on one thing: an energy review, your significant energy uses, an energy baseline and energy performance indicators (EnPIs), and it expects you to show measured improvement in energy performance over time."
+        "ISO 14001 is an environmental management system. It covers all your significant environmental aspects: waste, effluent, air emissions, chemicals, energy and your legal compliance obligations. The current edition, ISO 14001:2026 (published April 2026), keeps the requirement added by the 2024 climate amendment to decide whether climate change is a relevant issue for you.",
+        "ISO 50001:2018 (with its 2024 climate amendment) is an energy management system. It goes deeper on one thing: an energy review, your significant energy uses, an energy baseline and energy performance indicators (EnPIs), and it expects you to show measured improvement in energy performance over time."
       ]
     },
     {
@@ -51,15 +51,33 @@
   },
   "senseible": "Senseible reads your electricity bills and fuel slips into a monthly energy and emissions record that can serve as the baseline data for either system. It is not a certification body and does not run or sign off ISO audits.",
   "links": [
-    { "label": "Does ISO 14001 require climate change?", "to": "/answers/does-iso-14001-require-climate-change" },
-    { "label": "Specific energy consumption", "to": "/answers/how-to-calculate-specific-energy-consumption" },
-    { "label": "Energy audit for MSMEs in India", "to": "/climate-intelligence/energy-audit-for-msme-india" },
-    { "label": "ISO 14001 certification cost", "to": "/answers/iso-14001-certification-cost-india" }
+    {
+      "label": "Does ISO 14001 require climate change?",
+      "to": "/answers/does-iso-14001-require-climate-change"
+    },
+    {
+      "label": "Specific energy consumption",
+      "to": "/answers/how-to-calculate-specific-energy-consumption"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "ISO 14001 certification cost",
+      "to": "/answers/iso-14001-certification-cost-india"
+    }
   ],
   "sources": [
-    { "label": "ISO 50001:2018, Energy management systems (iso.org)", "url": "https://www.iso.org" },
-    { "label": "ISO 14001:2015 and Amendment 1:2024, Environmental management systems (iso.org)", "url": "https://www.iso.org" }
+    {
+      "label": "ISO 50001:2018 and Amendment 1:2024, Energy management systems (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14001:2026, Environmental management systems (iso.org)",
+      "url": "https://www.iso.org"
+    }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "ISO 14001 is under revision; check which edition your certification body audits against."
+  "reviewed": "2026-10-17",
+  "reviewNote": "ISO 14001:2015 certificates move to the 2026 edition over a transition of about three years; confirm the deadline and the edition you will be audited against with your certification body."
 }

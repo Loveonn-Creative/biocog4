@@ -14,10 +14,10 @@
         "R-410A: about 2,256 (blend of R-32 and R-125; computed)",
         "R-134a: 1,530",
         "HFC-32 (R-32): 771",
-        "R-513A: about 674 (56% R-1234yf, 44% R-134a; computed)",
+        "R-513A: about 673.5 (56% R-1234yf, 44% R-134a; computed)",
         "R-454B: about 531 (68.9% R-32, 31.1% R-1234yf; computed)",
         "HFO-1234ze(E): 1.37; HFO-1234yf: 0.501",
-        "CO2 (R-744): 1; propane (R-290): 0.02; ammonia (R-717): no direct warming effect"
+        "CO2 (R-744): 1; propane (R-290) and ammonia (R-717): negligible next to any HFC"
       ],
       "p": [
         "Blend values are mass-weighted sums of the AR6 component values."
@@ -55,7 +55,7 @@
       "Electricity: 500,000 kWh a year x 0.710 = 355,000 kg CO2",
       "A 3% efficiency penalty: 15,000 kWh x 0.710 = 10,650 kg CO2, about the same as the whole R-513A leak"
     ],
-    "note": "R-513A: 0.56 x 0.501 + 0.44 x 1,530 = 673.5. Leak rates and running hours are illustrative."
+    "note": "R-513A: 0.56 x 0.501 + 0.44 x 1,530 = 673.48, rounded to 673.5. Leak rates and running hours are illustrative."
   },
   "senseible": "Senseible does not recommend equipment or refrigerants. It records refrigerant emissions when you supply the gas and kilograms charged, and calculates electricity emissions from your bills at 0.710 kg CO2 per kWh, so you can track both parts of a chiller's footprint after purchase.",
   "links": [

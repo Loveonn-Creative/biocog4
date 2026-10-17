@@ -2,7 +2,7 @@
   "slug": "ifrs-s2-cross-industry-metrics-list",
   "q": "Which cross-industry metrics does IFRS S2 require?",
   "title": "IFRS S2 cross-industry metrics list",
-  "short": "IFRS S2 paragraph 29 requires seven cross-industry metrics: greenhouse gas emissions, assets or activities vulnerable to transition risk, the same for physical risk, those aligned with climate opportunities, capital deployed toward climate, internal carbon prices, and how climate links to executive pay. Every company reports them, whatever its industry.",
+  "short": "IFRS S2 paragraph 29 requires seven cross-industry metrics: greenhouse gas emissions, assets or activities vulnerable to transition risk, the same for physical risk, those aligned with climate opportunities, capital deployed toward climate, internal carbon prices, and how climate links to executive pay. Every company applying IFRS S2 reports them, whatever its industry.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian listed companies preparing ISSB-aligned reports; lenders",
@@ -32,7 +32,7 @@
     {
       "h": "First-year reliefs that affect these metrics",
       "p": [
-        "In the first annual reporting period, a company need not disclose Scope 3, and may keep using a measurement method other than the GHG Protocol if it already used one. Comparative figures are not needed in the first year. The December 2025 amendments added further reliefs, mainly for financial institutions, effective from 1 January 2027."
+        "In the first annual reporting period, a company need not disclose Scope 3, and may keep using a measurement method other than the GHG Protocol if it used one in the year before. Comparative figures are not needed in the first year. The December 2025 amendments, effective from 1 January 2027, added reliefs on Category 15 financed emissions, the industry classification used to split them, jurisdiction-required measurement methods and global warming potential values."
       ]
     },
     {
@@ -42,7 +42,7 @@
       ]
     }
   ],
-  "senseible": "Senseible covers part of the first metric: Scope 1 and 2 emissions from your fuel invoices and electricity bills, with location-based and market-based Scope 2. The other six metrics, Scope 3 completeness and the report itself are outside Senseible.",
+  "senseible": "Senseible supplies the Scope 1 and 2 part of the first metric from your fuel invoices and electricity bills, with location-based and market-based Scope 2, and drafts an IFRS S2 output from your uploaded data. Scenario analysis, transition plans and risk exposure figures are written by your company.",
   "links": [
     {
       "label": "IFRS S1 vs IFRS S2",

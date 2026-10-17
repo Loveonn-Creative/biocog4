@@ -11,7 +11,7 @@
       "h": "What only IFRS S1 does",
       "ul": [
         "Requires disclosure on all sustainability-related risks and opportunities that could reasonably be expected to affect cash flows, access to finance or cost of capital, not just climate.",
-        "Tells you how to find those topics: refer to the SASB Standards, and you may consider other sources such as CDSB guidance or GRI standards.",
+        "Tells you how to find those topics: consider the SASB Standards, and you may also look at CDSB guidance, the GRI Standards or ESRS.",
         "Sets the core content for any topic: governance, strategy, risk management, and metrics and targets."
       ]
     },
@@ -41,11 +41,11 @@
     {
       "h": "The climate-first relief",
       "p": [
-        "In the first annual reporting period, IFRS S1 Appendix E lets a company report only on climate, applying S2, and leave other sustainability topics for later. Many first-time reporters use it. From the second year the full S1 scope applies, so a company should know by then which non-climate topics are material."
+        "In the first annual reporting period, IFRS S1 Appendix E (paragraph E5) lets a company report only on climate, applying S2, and leave other sustainability topics for later. In the second year the full S1 scope applies, though comparative figures for the non-climate topics are not required that year. So a company using the relief should know by the end of year one which non-climate topics are material."
       ]
     }
   ],
-  "senseible": "Senseible does not prepare IFRS S1 or S2 reports. It supplies document-backed Scope 1 and 2 figures from your invoices and bills, which feed the emissions part of IFRS S2.",
+  "senseible": "Senseible drafts IFRS S1 and S2 outputs from your uploaded data, as self-declared drafts: the metrics part, built from document-backed Scope 1 and 2 figures from your invoices and bills. Governance, strategy and risk management narratives are written by your company.",
   "links": [
     {
       "label": "IFRS S2 vs TCFD",

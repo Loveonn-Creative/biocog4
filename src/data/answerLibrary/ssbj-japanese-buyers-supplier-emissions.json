@@ -10,7 +10,7 @@
     {
       "h": "What the SSBJ issued and who it applies to",
       "p": [
-        "The Sustainability Standards Board of Japan issued its first standards on 5 March 2025: a Universal Standard, a General Disclosures standard and a Climate-related Disclosures standard, built to be equivalent to IFRS S1 and IFRS S2. Japan's Financial Services Agency plans to make them mandatory for Prime Market companies in phases by market capitalisation, starting with the largest companies for fiscal years ending March 2027, with smaller Prime companies following in later years."
+        "The Sustainability Standards Board of Japan issued its first standards on 5 March 2025: a Universal Standard, a General Disclosures standard and a Climate-related Disclosures standard, built to be equivalent to IFRS S1 and IFRS S2. In February 2026 Japan amended the Cabinet Office Ordinance on Disclosure of Corporate Affairs to make them mandatory in annual securities reports, in phases by market capitalisation. Prime Market companies worth 3 trillion yen or more go first, for fiscal years ending March 2027; smaller Prime companies follow in later years on the Financial Services Agency's roadmap."
       ]
     },
     {
@@ -19,7 +19,7 @@
         "Scope 3 Category 1, purchased goods and services, is usually the largest part of a manufacturer's footprint, and your parts are in it.",
         "Like IFRS S2, the SSBJ climate standard asks companies to prioritise direct data from the value chain where it is reasonably available, and to say how much of their Scope 3 rests on estimates.",
         "Japanese OEMs with supplier reduction targets need supplier-specific figures, because spend-based estimates do not move when a supplier actually cuts emissions.",
-        "Assurance of disclosures is expected to follow mandatory reporting, which raises the bar on traceable supplier data."
+        "The FSA roadmap adds mandatory third-party assurance from one year after mandatory reporting starts, which raises the bar on traceable supplier data."
       ]
     },
     {
@@ -40,15 +40,37 @@
   ],
   "senseible": "Senseible builds your Scope 1 and 2 record from fuel slips and electricity bills, with the source document behind each line, which is the evidence a Japanese customer's supplier request needs. It does not prepare SSBJ disclosures for your customer or allocate emissions to parts automatically.",
   "links": [
-    { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" },
-    { "label": "Share emissions without sending invoices", "to": "/answers/share-emissions-with-buyer-without-invoices" },
-    { "label": "Allocate emissions to a buyer's purchases", "to": "/answers/allocate-supplier-emissions-to-my-purchases" },
-    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" }
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "Share emissions without sending invoices",
+      "to": "/answers/share-emissions-with-buyer-without-invoices"
+    },
+    {
+      "label": "Allocate emissions to a buyer's purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
   ],
   "sources": [
-    { "label": "IFRS S2 Climate-related Disclosures, the basis of the SSBJ Climate-related Disclosures standard (March 2025)", "url": "https://www.ifrs.org" },
-    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+    {
+      "label": "IFRS S2 Climate-related Disclosures, the basis of the SSBJ Climate-related Disclosures standard (March 2025)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "IFRS Foundation jurisdiction profile: Japan (Cabinet Office Ordinance amendment, February 2026)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "The mandatory timetable depends on FSA cabinet office ordinances; confirm the phase dates and market capitalisation thresholds before relying on them."
+  "reviewed": "2026-10-17",
+  "reviewNote": "Re-check the later phase thresholds and dates on the FSA roadmap each year; only the 3 trillion yen first phase is fixed here."
 }

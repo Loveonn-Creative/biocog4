@@ -51,7 +51,7 @@
     ],
     "note": "The 4.5 km per litre is an illustrative assumption. If the slips are complete, the fuel-based 32.2 t is the figure to report."
   },
-  "senseible": "Senseible reads fuel slips and invoices and applies the IPCC 2006 defaults, 2.68 kg CO2 per litre for diesel and 2.31 for petrol. Telematics and other hardware feeds are not a self-serve integration; they are set up with the Senseible team for each customer.",
+  "senseible": "Senseible reads fuel slips and invoices and multiplies the litres by IPCC 2006 default factors (2.68 kg CO2 a litre of diesel, 2.31 of petrol). Telematics and other hardware feeds can be taken too: they are set up with the Senseible team for each customer, not as a self-serve integration.",
   "links": [
     {
       "label": "Vehicle emissions from fuel spend",

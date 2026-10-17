@@ -2,7 +2,7 @@
   "slug": "do-i-need-smart-meters-for-carbon-reporting",
   "q": "Do I need IoT or smart meters to report Scope 2 emissions?",
   "title": "Do I need smart meters for Scope 2?",
-  "short": "No. Your monthly electricity bills are enough to report Scope 2. The GHG Protocol accepts utility bills as activity data: add up the kWh for the year and multiply by the grid factor. IoT or smart meters help you find where power is wasted and split use between lines, but reporting does not require them.",
+  "short": "No, your monthly electricity bills are enough to report Scope 2. The GHG Protocol accepts utility bills as activity data: add up the kWh for the year and multiply by the grid factor. IoT or smart meters help you find where power is wasted and split use between lines, but reporting does not require them.",
   "topic": "accounting",
   "intent": "decision",
   "audience": "MSME owners pitched IoT energy monitoring",
@@ -49,7 +49,7 @@
       "300,000 x 0.710 = 213,000 kg CO2, 213 tonnes location-based Scope 2"
     ]
   },
-  "senseible": "Senseible reads kWh from your electricity bills and calculates location-based Scope 2, so bills alone are enough to start. It also takes hardware and meter feeds, set up with the Senseible team for each customer, not as a self-serve integration.",
+  "senseible": "Senseible reads kWh from your electricity bills and calculates location-based Scope 2, so bills alone are enough to start. If you later add meters, Senseible can take hardware and meter feeds, set up with its team for your site rather than self-serve.",
   "links": [
     {
       "label": "Smart meter data vs bills",

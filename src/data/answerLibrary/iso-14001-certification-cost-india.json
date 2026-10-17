@@ -10,7 +10,7 @@
     {
       "h": "What sets the number of audit days",
       "p": [
-        "Accredited certification bodies follow the International Accreditation Forum document IAF MD 5, which gives a minimum audit time for environmental management systems from two inputs: the number of people working under the system, and the complexity of your environmental aspects (a plating or chemical unit sits higher than an assembly shop). Extra sites, shifts and outsourced processes add time. A body may adjust within limits but must justify cutting below the table."
+        "Accredited certification bodies follow IAF MD 5, the accreditation network's mandatory document on audit time (the International Accreditation Forum merged into Global Accreditation Cooperation in January 2026). It gives a minimum audit time for environmental management systems from two inputs: the number of people working under the system, and the complexity of your environmental aspects (a plating or chemical unit sits higher than an assembly shop). Extra sites, shifts and outsourced processes add time. A body may adjust within limits but must justify cutting below the table."
       ]
     },
     {
@@ -34,8 +34,9 @@
       "h": "How to compare quotes fairly",
       "ul": [
         "Ask each body to state audit days for Stage 1, Stage 2, each surveillance and recertification, and its day rate.",
-        "Confirm the body is accredited for ISO 14001 by an IAF member, such as NABCB in India. An unaccredited certificate may not be accepted by buyers.",
+        "Confirm the body is accredited for ISO 14001 by a recognised accreditation body, such as NABCB in India. An unaccredited certificate may not be accepted by buyers.",
         "Be wary of a quote with far fewer days than others for the same headcount; it may not meet IAF MD 5.",
+        "Ask which edition the quote covers. ISO 14001:2026 was published in April 2026, and existing 2015 certificates move to it over a transition of about three years, often at a surveillance or recertification audit.",
         "Ask for a combined audit price if you also want ISO 9001 or ISO 50001."
       ]
     }
@@ -52,14 +53,29 @@
   },
   "senseible": "Senseible does not provide or price ISO 14001 certification. Its electricity and fuel records can supply the energy and emissions data your environmental management system needs to monitor.",
   "links": [
-    { "label": "ISO 50001 or ISO 14001 first?", "to": "/answers/iso-50001-vs-iso-14001-which-first" },
-    { "label": "Does ISO 14001 require climate change?", "to": "/answers/does-iso-14001-require-climate-change" },
-    { "label": "ESG readiness assessment for MSMEs", "to": "/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026" }
+    {
+      "label": "ISO 50001 or ISO 14001 first?",
+      "to": "/answers/iso-50001-vs-iso-14001-which-first"
+    },
+    {
+      "label": "Does ISO 14001 require climate change?",
+      "to": "/answers/does-iso-14001-require-climate-change"
+    },
+    {
+      "label": "ESG readiness assessment for MSMEs",
+      "to": "/climate-intelligence/esg-readiness-assessment-msme-step-by-step-2026"
+    }
   ],
   "sources": [
-    { "label": "ISO 14001:2015, Environmental management systems (iso.org)", "url": "https://www.iso.org" },
-    { "label": "ISO/IEC 17021-1:2015, Requirements for bodies providing audit and certification of management systems (iso.org)", "url": "https://www.iso.org" }
+    {
+      "label": "ISO 14001:2026, Environmental management systems (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO/IEC 17021-1:2015, Requirements for bodies providing audit and certification of management systems (iso.org)",
+      "url": "https://www.iso.org"
+    }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "Audit time rules follow the current IAF MD 5 issue; check it and confirm prices only from written quotes."
+  "reviewed": "2026-10-17",
+  "reviewNote": "Audit time rules follow the current MD 5 issue, now maintained by Global Accreditation Cooperation; check it, and confirm prices only from written quotes."
 }

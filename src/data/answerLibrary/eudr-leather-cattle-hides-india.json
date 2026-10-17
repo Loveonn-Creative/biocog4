@@ -2,7 +2,7 @@
   "slug": "eudr-leather-cattle-hides-india",
   "q": "Does EUDR cover leather made from Indian cattle and buffalo hides?",
   "title": "Does EUDR cover Indian leather?",
-  "short": "Not once the July 2026 change takes effect. The original EUDR Annex I listed bovine hides, skins and leather, including buffalo, under HS 4101, 4104 and 4107. A Commission delegated act adopted on 13 July 2026 deletes those three codes. Finished bags and footwear were never listed.",
+  "short": "No. The original EUDR Annex I listed bovine hides, skins and leather, including buffalo, under HS 4101, 4104 and 4107. Delegated Regulation (EU) 2026/2102 deleted those entries with effect from 18 September 2026, before the EUDR starts applying. Finished bags and footwear were never listed.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Leather and footwear exporters in Kanpur, Agra, Chennai and Kolkata",
@@ -14,12 +14,12 @@
       ]
     },
     {
-      "h": "What the July 2026 delegated act changes",
+      "h": "What Delegated Regulation (EU) 2026/2102 changed",
       "ul": [
-        "It deletes HS 4101, 4104 and 4107 from Annex I.",
-        "It was sent to the European Parliament and Council for a two month scrutiny period and is meant to apply when the EUDR starts, 30 December 2026 for large and medium operators.",
+        "The Commission adopted it on 13 July 2026; it was published in the Official Journal on 17 September 2026 and entered into force the next day.",
+        "It deletes the cattle entries ex 4101, ex 4104 and ex 4107 from Annex I, so the EUDR obligations, which apply from 30 December 2026 for large and medium operators, never reach these hides and leather.",
         "Live cattle and beef stay in scope.",
-        "Check on EUR-Lex that the act has been published in the Official Journal and is in force for your shipment date."
+        "The act's recitals point to a later review of the product scope that includes hides and leather, so read the consolidated Annex I on EUR-Lex before each new buyer contract."
       ]
     },
     {
@@ -37,7 +37,7 @@
       ]
     }
   ],
-  "senseible": "Senseible's supplier due diligence screen still groups cattle and leather under its EUDR commodity check, so treat a leather flag there as a prompt to confirm the current Annex I. It does not collect origin data or file due diligence statements.",
+  "senseible": "Senseible's supplier due diligence screen lists \"Cattle, leather\" as one of its EUDR commodity groups, so treat a leather flag there as a prompt to confirm the current Annex I rather than as proof that EUDR applies. It does not collect origin data or file due diligence statements.",
   "links": [
     {
       "label": "Does EUDR apply to my Indian exports?",
@@ -58,10 +58,10 @@
       "url": "https://eur-lex.europa.eu"
     },
     {
-      "label": "Commission delegated act amending EUDR Annex I (product scope), adopted 13 July 2026, on EUR-Lex",
+      "label": "Commission Delegated Regulation (EU) 2026/2102 of 13 July 2026 amending Annex I to Regulation (EU) 2023/1115, on EUR-Lex",
       "url": "https://eur-lex.europa.eu"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "The leather removal depends on the July 2026 delegated act completing scrutiny and publication; confirm it is in force before telling buyers leather is out of scope."
+  "reviewed": "2026-10-17",
+  "reviewNote": "Leather was removed by Delegated Regulation (EU) 2026/2102, in force from 18 September 2026; check the consolidated Annex I for any later change, especially after the EUDR general review."
 }

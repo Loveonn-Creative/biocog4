@@ -27,7 +27,7 @@
       "h": "When the purchase register is better",
       "p": [
         "A purchase register in Tally or another ERP is better than GSTR-2B if stock items are kept with quantity and unit. Then each line already has an item, quantity and often an HSN code, and you can apply a factor per unit.",
-        "If the register is kept at ledger level, as rupee amounts per supplier, it supports only a spend-based estimate. Under the GHG Protocol Scope 3 Standard that is the least precise method for Category 1, and it should be labelled so. E-invoices from suppliers above the e-invoicing turnover threshold do carry HSN, quantity and unit per line, so they are a good source where available."
+        "If the register is kept at ledger level, as rupee amounts per supplier, it supports only a spend-based estimate. Under the GHG Protocol Scope 3 Standard that is the least precise method for Category 1, and it should be labelled so. E-invoices from suppliers above the e-invoicing turnover threshold carry an HSN code on every line, and usually quantity and unit, so they are a good source where available."
       ]
     },
     {
@@ -82,5 +82,5 @@
       "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
     }
   ],
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-17"
 }

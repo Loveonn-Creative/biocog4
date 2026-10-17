@@ -2,7 +2,7 @@
   "slug": "eudr-due-diligence-statement-supplier-data",
   "q": "What does an Indian supplier need to give an EU importer for its EUDR due diligence statement?",
   "title": "EUDR data your EU buyer needs from you",
-  "short": "Give your EU buyer the Article 9 data for each shipment: product description and HS code, quantity, country of production, geolocation of every plot, production date or range, your name and address, and evidence that the land was not deforested after 31 December 2020 and the goods were produced legally in India.",
+  "short": "Give your EU buyer the Article 9 data for each shipment: product description and HS code, quantity, country of production, geolocation of every plot, production date or range, your name and address, and proof that the plots were not cleared of forest after 31 December 2020 and the goods were produced legally in India.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "Indian exporters whose EU customers file due diligence statements",
@@ -74,6 +74,6 @@
       "url": "https://eur-lex.europa.eu"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "The EUDR applies from 30 December 2026 for large and medium operators and 30 June 2027 for micro and small ones, and simplification amendments continue; recheck Article 9 duties before agreeing data terms."
 }

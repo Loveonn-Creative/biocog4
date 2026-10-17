@@ -2,7 +2,7 @@
   "slug": "sidbi-energy-efficiency-loan-for-msme",
   "q": "What energy efficiency loans does SIDBI offer MSMEs?",
   "title": "SIDBI energy efficiency loans for MSMEs",
-  "short": "SIDBI's main route is the 4E scheme, End to End Energy Efficiency: an energy audit, a project report and help with implementation, followed by a loan for the measures the audit recommends. SIDBI has also run the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Terms change, so confirm with SIDBI.",
+  "short": "SIDBI's dedicated energy efficiency product is the 4E scheme, End to End Energy Efficiency: an energy audit and project report, then a SIDBI loan for the measures the audit recommends. SIDBI also ran the Partial Risk Sharing Facility, which guarantees part of other lenders' energy efficiency loans. Check current terms on sidbi.in.",
   "topic": "markets",
   "intent": "check",
   "audience": "MSMEs planning energy efficiency upgrades",
@@ -10,7 +10,7 @@
     {
       "h": "The 4E scheme",
       "p": [
-        "4E pairs technical help with a direct SIDBI loan. The usual sequence is a walk-through audit, a detailed energy audit, a bankable project report, implementation support, and then finance for the measures the audit identified, such as efficient motors, compressors, furnaces or waste heat recovery. Ask SIDBI for the current minimum loan, rate and margin, as these are set in its scheme terms and revised from time to time."
+        "4E pairs technical help with a direct SIDBI loan. An energy audit identifies the measures, such as efficient motors, compressors, furnaces or waste heat recovery, a project report sets out the cost and saving, and SIDBI finances the measures. Check on sidbi.in or with your SIDBI branch whether 4E is open, and its current minimum loan, rate and margin, as these sit in its scheme terms and are revised from time to time."
       ]
     },
     {
@@ -22,7 +22,7 @@
     {
       "h": "How these differ from ADEETIE",
       "p": [
-        "ADEETIE is a BEE scheme, not a SIDBI loan. It pays interest subvention, 5 percent for micro and small and 3 percent for medium enterprises, on loans for energy-efficient technology from participating lenders, in notified clusters. A unit may be able to combine an audit under one programme with finance from another; check each scheme's rules before assuming they stack."
+        "ADEETIE is a Ministry of Power scheme run by BEE, not a SIDBI loan. It pays interest subvention, 5 percent for micro and small and 3 percent for medium enterprises, on loans for energy-efficient technology from participating lenders, for Udyam-registered units in 60 identified clusters. A unit may be able to combine an audit under one programme with finance from another; check each scheme's rules before assuming they stack."
       ]
     },
     {
@@ -56,7 +56,7 @@
   ],
   "sources": [
     {
-      "label": "BEE, ADEETIE scheme for energy efficiency in MSMEs (beeindia.gov.in)",
+      "label": "BEE, ADEETIE scheme: 5% and 3% interest subvention, 60 clusters (beeindia.gov.in)",
       "url": "https://beeindia.gov.in"
     },
     {

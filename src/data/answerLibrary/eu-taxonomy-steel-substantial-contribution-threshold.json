@@ -2,7 +2,7 @@
   "slug": "eu-taxonomy-steel-substantial-contribution-threshold",
   "q": "What emissions threshold does steel have to meet to be EU Taxonomy aligned?",
   "title": "EU Taxonomy threshold for steel",
-  "short": "Under activity 3.9 of the EU Climate Delegated Act, each process step must stay below a fixed EU ETS benchmark value, such as 1.331 t CO2e per tonne of hot metal or 0.209 t CO2e per tonne of EAF carbon steel. An electric arc furnace can instead pass with at least 90% scrap input, or 70% for high alloy steel.",
+  "short": "Under activity 3.9 of the EU Climate Delegated Act, each process step must stay below a fixed value per tonne of product: for example 1.331 t CO2e for hot metal and 0.209 t CO2e for EAF carbon steel. An electric arc furnace can pass instead with at least 90% scrap input, or 70% for high alloy steel.",
   "topic": "regulation",
   "intent": "check",
   "audience": "Indian steel exporters and their EU buyers and financiers",
@@ -12,24 +12,25 @@
       "ul": [
         "Hot metal: 1.331 t CO2e per tonne of product.",
         "Sintered ore: 0.163 t CO2e per tonne.",
-        "EAF carbon steel: 0.209 t CO2e per tonne.",
-        "Coke, iron casting and EAF high alloy steel each have their own value in the same table.",
+        "Coke, excluding lignite coke: 0.144 t CO2e per tonne.",
+        "Iron casting: 0.299 t CO2e per tonne.",
+        "EAF high alloy steel: 0.266 t CO2e per tonne; EAF carbon steel: 0.209 t CO2e per tonne.",
         "Alternative for EAF: steel scrap input relative to product output of at least 90% for carbon steel or 70% for high alloy steel."
       ],
       "p": [
-        "The values match the EU ETS product benchmarks for 2021 to 2025 in Implementing Regulation (EU) 2021/447. Read the full table in Annex I, section 3.9, of Delegated Regulation (EU) 2021/2139 before you test a plant."
+        "These are the values in the consolidated text of Delegated Regulation (EU) 2021/2139, Annex I, section 3.9, as checked in October 2026. Earlier versions of the act carried different figures, so test a plant against the version that applies to your reporting year."
       ]
     },
     {
       "h": "Why most Indian plants do not pass on CO2",
       "p": [
-        "The values are set at the level of the best performing EU installations. A blast furnace plant needs every step it runs below its value, not an average across the plant. Coal based DRI, common in India, has no value of its own in the table, so it is judged through the steel it feeds. Scrap based EAF plants are the most likely to pass, through either the emission value or the scrap share."
+        "The values are set at the level of the best performing EU installations. A blast furnace plant needs every step it runs below its value, not an average across the plant. Coal based DRI, common in India, has no value of its own in the table, so agree with the buyer or financier how a DRI and EAF route will be assessed before you run numbers. Scrap based EAF plants are the most likely to pass, through either the emission value or the scrap share."
       ]
     },
     {
       "h": "Make the comparison on the same boundary",
       "ol": [
-        "Use the EU ETS benchmark boundary for each product, which counts mainly direct emissions at the installation; check the benchmark definition before comparing a figure that includes purchased electricity.",
+        "Use the boundary the values are built on, the EU ETS product benchmark definition for each product; check it before comparing a figure that includes purchased electricity.",
         "Measure per tonne of the named product, not per tonne of finished steel or of all output.",
         "Use one year of measured data, not design values.",
         "Remember the threshold is only one test: the activity must also meet the DNSH criteria and minimum safeguards."
@@ -50,7 +51,7 @@
       "Direct emissions on the benchmark boundary: 18,000 t CO2e; intensity 18,000 / 100,000 = 0.18 t CO2e per tonne, also below 0.209",
       "Next: check DNSH and minimum safeguards before calling it aligned"
     ],
-    "note": "Plant figures are illustrative. Threshold values as published in Annex I, section 3.9; check for amending acts."
+    "note": "Plant figures are illustrative. Threshold values from Annex I, section 3.9, as consolidated in October 2026; check for amending acts."
   },
   "senseible": "Senseible computes Scope 1 fuel and Scope 2 electricity emissions from a supplier's invoices and bills, which with production tonnes give an intensity you can set against the published value. It does not decide Taxonomy alignment; for EU import cost, use the CBAM calculator.",
   "links": [
@@ -77,14 +78,10 @@
       "url": "https://eur-lex.europa.eu"
     },
     {
-      "label": "Commission Implementing Regulation (EU) 2021/447, EU ETS benchmark values 2021 to 2025, on EUR-Lex",
-      "url": "https://eur-lex.europa.eu"
-    },
-    {
       "label": "Implementing Regulation (EU) 2025/2621 (CBAM default values)",
       "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "The Commission consulted on revising the Taxonomy delegated acts in 2026, including ETS-based steel thresholds; recheck Annex I, section 3.9, for amendments."
 }

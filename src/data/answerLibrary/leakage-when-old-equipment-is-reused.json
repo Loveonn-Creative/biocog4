@@ -2,7 +2,7 @@
   "slug": "leakage-when-old-equipment-is-reused",
   "q": "Is it leakage if my replaced boiler or motor is sold and used elsewhere?",
   "title": "Leakage when old equipment is reused",
-  "short": "Usually yes. If the boiler or motor you replaced keeps running somewhere else, carbon methods treat that as leakage, because its emissions have moved rather than stopped. Most small-scale methods expect the old unit to be scrapped with evidence, or the transfer to be counted and deducted from your credits.",
+  "short": "Usually yes. If the boiler or motor you replaced keeps running somewhere else, its emissions have moved rather than stopped, so carbon methods treat it as leakage. CDM small-scale methods say leakage must be considered when replaced equipment goes to another activity, which is why most projects scrap the old unit with evidence.",
   "topic": "markets",
   "intent": "check",
   "audience": "Indian factories planning energy efficiency or fuel switch credits",
@@ -10,15 +10,15 @@
     {
       "h": "Why reuse counts against you",
       "p": [
-        "An efficiency or fuel switch credit pays for emissions that no longer happen. If your inefficient boiler is sold to another unit and fired there, the emissions you claimed to avoid partly continue, outside your project boundary. That shift is leakage. Verra's VCS Standard requires leakage to be assessed and deducted, and CDM small-scale methods for equipment replacement handle it by requiring the old equipment to be taken out of use."
+        "An efficiency or fuel switch credit pays for emissions that no longer happen. If your inefficient boiler is sold to another unit and fired there, the emissions you claimed to avoid partly continue, outside your project boundary. That shift is leakage. Verra's VCS Standard requires leakage to be assessed and deducted. CDM small-scale Type II methods for efficiency and fuel switching, such as AMS-II.C and AMS-II.D, say leakage is to be considered when equipment is transferred to or from another activity, and some methods require independent monitoring that replaced equipment was scrapped."
       ]
     },
     {
       "h": "What counts as taking it out of use",
       "ul": [
         "Scrapped and destroyed: cut up and sold as metal scrap. This is not leakage.",
-        "Kept on site as cold standby, sealed and logged, with no running hours. Allowed in some methods, but expect the verifier to check meters and fuel records.",
-        "Sold or transferred as working equipment to another factory: leakage, unless the method lets you show it replaces an even less efficient unit there, which is hard to prove.",
+        "Kept on site as standby, sealed and logged, with no running hours. Whether this is accepted depends on the method version; where it is, expect the verifier to check meters and fuel records.",
+        "Sold or transferred as working equipment to another factory: leakage that has to be assessed and deducted, which needs data from a site you do not control.",
         "Moved to another line in your own plant: it stays inside your boundary only if that line is in the project; otherwise treat it as leakage."
       ]
     },
@@ -41,15 +41,33 @@
   ],
   "senseible": "Senseible shows carbon credit eligibility signals and keeps the purchase and scrap invoices you upload as evidence. It does not calculate leakage deductions or decide methodology compliance; that sits with the project developer, the verifier and the registry.",
   "links": [
-    { "label": "Energy efficiency credits for factories", "to": "/answers/energy-efficiency-carbon-credits-for-factories" },
-    { "label": "Who owns credits from equipment?", "to": "/answers/who-owns-carbon-credits-from-equipment" },
-    { "label": "Additionality in carbon credits", "to": "/answers/what-is-additionality-in-carbon-credits" },
-    { "label": "Carbon credits", "to": "/carbon-credits" }
+    {
+      "label": "Energy efficiency credits for factories",
+      "to": "/answers/energy-efficiency-carbon-credits-for-factories"
+    },
+    {
+      "label": "Who owns credits from equipment?",
+      "to": "/answers/who-owns-carbon-credits-from-equipment"
+    },
+    {
+      "label": "Additionality in carbon credits",
+      "to": "/answers/what-is-additionality-in-carbon-credits"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
   ],
   "sources": [
-    { "label": "CDM Methodological Tool 10, remaining lifetime of equipment, and small-scale methodologies AMS-II.C and AMS-II.D (UNFCCC)", "url": "https://unfccc.int" },
-    { "label": "Verra VCS Standard, leakage requirements", "url": "https://verra.org" }
+    {
+      "label": "CDM Methodological Tool 10, remaining lifetime of equipment, and small-scale methodologies AMS-II.C and AMS-II.D (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Verra VCS Standard, leakage requirements",
+      "url": "https://verra.org"
+    }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "CDM methods are being carried into the Article 6.4 mechanism; check the version of the methodology your project registers under."
 }

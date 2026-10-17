@@ -19,7 +19,7 @@
     {
       "h": "Count only heat that displaces fuel",
       "p": [
-        "The saving is real only if the recovered heat replaces fuel you would otherwise burn. Heat that preheats combustion air, feed water or a dryer that already ran on fuel counts. Heat dumped because the process cannot use it does not. If production changes, use the heat you actually used, not the design rating of the unit."
+        "The saving is real only if the recovered heat replaces fuel you would otherwise burn. Heat that preheats combustion air, feed water or a dryer that already ran on fuel counts. Heat dumped because the process cannot use it does not. If production changes, use the heat you actually used, not the design rating of the unit. If the recovered heat makes electricity instead, the saving is in grid purchases, which is a Scope 2 question covered separately."
       ]
     },
     {
@@ -40,20 +40,24 @@
     "lines": [
       "Recovered heat: 500 kW average x 6,000 hours = 3,000,000 kWh = 10,800 GJ",
       "Assumed boiler efficiency: 85% (assumption, label it)",
-      "Fuel energy avoided: 10,800 / 0.85 = 12,705.9 GJ = 12.706 TJ",
+      "Fuel energy avoided: 10,800 / 0.85 = 12,705.9 GJ, or 12.7059 TJ",
       "Furnace oil factor: 77,400 kg CO2 per TJ (IPCC 2006 default for residual fuel oil)",
-      "CO2 avoided: 12.706 x 77,400 = 983,444 kg, about 983.4 t CO2",
+      "CO2 avoided: 12.7059 x 77,400 = 983,435 kg, about 983.4 t CO2",
       "Furnace oil avoided: 12,705.9 GJ / 40.4 GJ per t (IPCC default net calorific value) = 314.5 t",
       "Extra power for pumps and fans: 15 kW x 6,000 h = 90,000 kWh x 0.710 kg CO2 per kWh = 63.9 t CO2",
       "Net saving: 983.4 minus 63.9 = 919.5 t CO2 a year"
     ],
     "note": "Use your heat meter reading, your measured efficiency and your own fuel analysis where you have them."
   },
-  "senseible": "Senseible calculates Scope 1 from your actual fuel invoices, so a working recovery system shows as lower litres or kilograms in later periods, each tied to its invoice. It does not model the heat balance or calculate the avoided emissions for you.",
+  "senseible": "Senseible calculates Scope 1 from your actual fuel invoices, so a working recovery system shows as lower litres or kilograms in later periods, each tied to its invoice. Keep the heat balance and avoided-emissions calculation as your project record alongside it.",
   "links": [
     {
       "label": "Measuring energy efficiency savings",
       "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Waste heat recovery power: which scope?",
+      "to": "/answers/waste-heat-recovery-power-which-scope"
     },
     {
       "label": "Boiler efficiency: direct and indirect method",

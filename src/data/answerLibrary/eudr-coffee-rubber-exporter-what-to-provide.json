@@ -10,8 +10,8 @@
     {
       "h": "Which products and codes",
       "ul": [
-        "Coffee: green, roasted and decaffeinated coffee, HS 0901. Soluble coffee is being added by the July 2026 delegated act, applying from 30 December 2027.",
-        "Natural rubber: latex, sheets and block rubber under HS 4001, and listed products such as new tyres.",
+        "Coffee: green, roasted and decaffeinated coffee, HS 0901. Delegated Regulation (EU) 2026/2102 adds soluble coffee (coffee extracts, essences and concentrates, HS 2101 11) from 30 December 2027.",
+        "Natural rubber: latex, sheets and block rubber under HS 4001, and listed products such as new tyres. The same act removed retreaded tyres and some vulcanised rubber articles, such as conveyor belts.",
         "Tea and spices grown alongside coffee are not covered, so keep them out of the EUDR file."
       ]
     },
@@ -69,10 +69,10 @@
       "url": "https://eur-lex.europa.eu"
     },
     {
-      "label": "Commission delegated act amending EUDR Annex I (soluble coffee added), adopted 13 July 2026, on EUR-Lex",
+      "label": "Commission Delegated Regulation (EU) 2026/2102 amending EUDR Annex I (soluble coffee added, some rubber articles removed), on EUR-Lex",
       "url": "https://eur-lex.europa.eu"
     }
   ],
-  "reviewed": "2026-10-16",
+  "reviewed": "2026-10-17",
   "reviewNote": "Board traceability programmes and the EUDR product scope are still changing; check official Coffee Board and Rubber Board notices and the consolidated Annex I."
 }

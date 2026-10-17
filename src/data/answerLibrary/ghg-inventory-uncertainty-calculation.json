@@ -29,7 +29,7 @@
     {
       "h": "Limits of the simple method",
       "p": [
-        "Approach 1 assumes errors are independent and roughly symmetric. IPCC says it works best when uncertainties are modest, below about 30% of the value. For large or one-sided ranges, or inputs that move together, use Monte Carlo simulation (IPCC Approach 2). Uncertainty is not the same as an error: a duplicated invoice is a mistake to fix, not a range to report."
+        "Approach 1 assumes errors are independent and roughly symmetric. IPCC notes the equations hold well while the standard deviation stays under about 30% of the mean, which is roughly plus or minus 60% on the 95% range used here. For large or one-sided ranges, or inputs that move together, use Monte Carlo simulation (IPCC Approach 2). Uncertainty is not the same as an error: a duplicated invoice is a mistake to fix, not a range to report."
       ]
     },
     {

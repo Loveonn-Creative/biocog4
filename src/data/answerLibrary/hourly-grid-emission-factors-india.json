@@ -22,7 +22,7 @@
     {
       "h": "What the revision proposes",
       "p": [
-        "The GHG Protocol consulted on a revised Scope 2 standard from October 2025 to January 2026. The draft proposes hourly matching of clean power to consumption for market-based claims, with deliverability tests, and more granular location-based factors where they exist. The final text and start dates are not set, and smaller reporters may get simpler options."
+        "The GHG Protocol consulted on a revised Scope 2 standard from October 2025 to January 2026. The draft proposes hourly matching of clean power to consumption for market-based claims, with deliverability tests, and more granular location-based factors where they exist. It published a summary of the feedback in July 2026. The final text and start dates are not set, and smaller reporters may get simpler options."
       ]
     },
     {
@@ -46,7 +46,7 @@
     ],
     "note": "In practice hourly coverage would be lower still on cloudy days and in low-sun months."
   },
-  "senseible": "Senseible applies the annual CEA factor, 0.710 kg CO2 per kWh (version 21.0), for location-based Scope 2 and reports market-based separately when you supply instrument data. It does not produce hourly grid factors or apply hourly matching.",
+  "senseible": "Senseible uses the annual CEA weighted average (0.710 kg CO2 per kWh, database version 21.0) for location-based Scope 2, and shows market-based Scope 2 separately once you add instrument data. No official hourly Indian factors exist for it to apply, and it does not run hourly matching.",
   "links": [
     {
       "label": "GHG Protocol revision: what is changing",

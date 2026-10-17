@@ -10,14 +10,14 @@
     {
       "h": "How the reduction is worked out",
       "p": [
-        "VM0038 compares the emissions of the fossil fuel vehicles that the electric vehicles replace with the emissions of the electricity delivered through the chargers. The baseline uses vehicle efficiency and fuel factors; the project side uses metered kWh and a grid factor set by the methodology. Metered energy data per charger is the base of the whole calculation."
+        "VM0038 compares the emissions of the fossil fuel vehicles that the electric vehicles replace with the emissions of the electricity delivered through the chargers. The baseline uses vehicle efficiency and fuel factors; the project side uses metered kWh and a grid factor worked out with Verra's tool VT0011, which version 1.1 adopted in August 2026. Metered energy data per charger is the base of the whole calculation."
       ]
     },
     {
       "h": "Four tests specific to charging",
       "ol": [
         "Ownership: the charge point operator, the fleet owner, the vehicle maker and the site host could each claim the same reduction. Settle in writing who holds the right before registering.",
-        "Additionality: the methodology sets its own test. A network that is profitable on charging fees alone, or required by a concession or tender, may fail it.",
+        "Additionality: version 1.1 uses a positive list, module VMD0049, built from each country's EV stock and sales shares, with Verra's tool VT0008 as the other route. Two and three wheelers are excluded from the list, which matters in India, where most EVs are two and three wheelers.",
         "Double claiming: a fleet that reports the same switch in its own inventory or sells it as a separate claim reduces what you can credit.",
         "Volume: credits per charger are modest, so grouped projects across many sites are the usual route."
       ]
@@ -25,9 +25,9 @@
     {
       "h": "Programme status to check before you start",
       "ul": [
-        "Verra: confirm the current version of VM0038 and any rules on India.",
+        "Verra: VM0038 version 1.1 and VMD0049 version 1.1 have been active since 19 August 2026; check whether India and your vehicle class are on the positive list.",
         "ICVCM: check whether EV charging methodologies have been assessed for the Core Carbon Principles label; many buyers now ask for it.",
-        "India CCTS offset mechanism: check whether BEE's list of approved offset methodologies includes e-mobility before planning around it."
+        "India CCTS offset mechanism: BEE's approved methodologies did not include e-mobility when this page was reviewed, and transport methodologies had gone out for consultation; check the current list on beeindia.gov.in."
       ]
     },
     {
@@ -47,7 +47,7 @@
     ],
     "note": "Labelled estimate: vehicle efficiency and mileage are assumptions, 2.68 kg CO2 per litre is the IPCC 2006 diesel default and 0.710 is the CEA weighted average grid factor. The methodology may require a different grid factor, such as a combined margin."
   },
-  "senseible": "Senseible shows carbon credit eligibility signals from activity records such as electricity bills and fuel invoices, and keeps that evidence traceable. It is not a registry and plays no part in validation or issuance.",
+  "senseible": "Senseible gives carbon credit eligibility signals from activity records such as charger electricity bills, with each figure traced back to its source file. It does not run a registry, validate projects or issue credits, and it cannot confirm whose vehicles the kWh went into.",
   "links": [
     {
       "label": "Can a small factory earn carbon credits?",
@@ -68,7 +68,7 @@
   ],
   "sources": [
     {
-      "label": "Verra VM0038 Methodology for Electric Vehicle Charging Systems, and VCS Standard",
+      "label": "Verra VM0038 Methodology for Electric Vehicle Charging Systems v1.1, VMD0049 Positive List v1.1, and VCS Standard",
       "url": "https://verra.org"
     },
     {
@@ -80,6 +80,6 @@
       "url": "https://beeindia.gov.in"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "ICVCM decisions on EV charging methodologies and the CCTS offset methodology list change often; check both before advising a project."
+  "reviewed": "2026-10-17",
+  "reviewNote": "VM0038 v1.1 took effect in August 2026; ICVCM decisions on EV charging and the CCTS offset methodology list change often, so check all three before advising a project."
 }

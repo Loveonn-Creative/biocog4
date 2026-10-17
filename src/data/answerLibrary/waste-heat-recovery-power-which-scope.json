@@ -2,7 +2,7 @@
   "slug": "waste-heat-recovery-power-which-scope",
   "q": "Is electricity from a waste heat recovery system zero emission in my inventory?",
   "title": "Waste heat recovery power: which scope?",
-  "short": "Yes, in effect. Power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
+  "short": "Yes, in effect: power from a waste heat recovery system that you use on site adds no Scope 2, because you did not buy it, and adds no new Scope 1 unless you burn extra fuel to run it. The emissions behind the heat are already in Scope 1, from the kiln or furnace fuel.",
   "topic": "accounting",
   "intent": "explain",
   "audience": "Cement, steel and sponge iron plants with WHRS power",
@@ -47,7 +47,7 @@
     ],
     "note": "Factor: CEA CO2 Baseline Database, version 21.0. Keep WHRS generation meter readings as evidence for the split."
   },
-  "senseible": "Senseible reports purchased grid kWh as Scope 2 from your electricity bills, so WHRS power consumed on site adds no Scope 2. It reads fuel invoices for Scope 1, and does not assess whether a WHRS project can earn carbon credits beyond eligibility signals.",
+  "senseible": "Senseible reports purchased grid kWh as Scope 2 from your electricity bills, so WHRS power consumed on site adds no Scope 2, and it reads fuel invoices for Scope 1. Its carbon credit eligibility signals are a first screen, not a ruling that a WHRS project can earn credits.",
   "links": [
     {
       "label": "Emissions saved by waste heat recovery",

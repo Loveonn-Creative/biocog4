@@ -10,7 +10,7 @@
     {
       "h": "The market boundary rule",
       "p": [
-        "The GHG Protocol Scope 2 Guidance sets quality criteria for any certificate used in market-based reporting. One is that the certificate comes from the same market as the electricity it covers. RE100's technical criteria apply the same idea. India and the EU are separate grids with no physical exchange of power, so a GO cannot describe electricity your factory could have received."
+        "Among the Scope 2 Quality Criteria in the GHG Protocol guidance, one decides this case: a certificate must be sourced from the market where the covered electricity is consumed. RE100's technical criteria apply the same idea. India and the EU are separate grids with no physical exchange of power, so a GO cannot describe electricity your factory could have received."
       ]
     },
     {
@@ -47,7 +47,7 @@
       "Location-based in both cases: 2,130 t CO2, reported alongside"
     ]
   },
-  "senseible": "Senseible reports location-based Scope 2 per site from electricity bills, and a market-based figure when you supply the certificate data, such as instrument type, quantity and generation period. It does not buy, retire or validate certificates.",
+  "senseible": "Senseible works out location-based Scope 2 for each site from its electricity bills. Give it the instrument type, quantity and generation period and it adds a market-based figure per site. Buying, retiring and validating certificates stays with you and the registry.",
   "links": [
     {
       "label": "I-REC vs India REC",

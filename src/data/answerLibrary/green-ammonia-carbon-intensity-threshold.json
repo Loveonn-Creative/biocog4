@@ -2,7 +2,7 @@
   "slug": "green-ammonia-carbon-intensity-threshold",
   "q": "How is the carbon intensity of green ammonia calculated in India?",
   "title": "Carbon intensity of green ammonia",
-  "short": "Add the emissions of the hydrogen inside the ammonia, about 0.178 kg of hydrogen per kg of ammonia, to the emissions from the power and fuel used for air separation and synthesis, then divide by ammonia output. India's green ammonia standard sets a limit of 0.38 kg CO2e per kg.",
+  "short": "Add the emissions of the hydrogen inside the ammonia, about 0.178 kg of hydrogen per kg, to the emissions from power and fuel used for air separation and synthesis, then divide by ammonia output. India's Green Ammonia Standard, notified in February 2026, caps this at 0.38 kg CO2e per kg, averaged over 12 months.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "Fertiliser and ammonia producers and exporters",
@@ -35,7 +35,7 @@
         "Hydrogen output and its certified or calculated intensity.",
         "Metered kWh for each unit, with the source of each supply: grid, open access, captive renewable.",
         "Fuel invoices for any on-site combustion.",
-        "Ammonia production by month, since threshold tests are averaged over a period."
+        "Ammonia production by month, since India's limit is tested as an average over the preceding 12 months."
       ]
     }
   ],
@@ -66,7 +66,7 @@
   ],
   "sources": [
     {
-      "label": "MNRE, Green Ammonia Standard for India (well-to-gate limit of 0.38 kg CO2e per kg NH3); BEE runs the related green hydrogen certification scheme",
+      "label": "MNRE, Green Ammonia Standard for India, notified 27 February 2026 (PIB release, 7 March 2026): 0.38 kg CO2e per kg NH3, non-biogenic emissions from hydrogen production to on-site storage, 12-month average; detailed measurement and certification methods to follow from MNRE",
       "url": "https://beeindia.gov.in"
     },
     {
@@ -79,5 +79,5 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "Confirm the current MNRE green ammonia notification, its 0.38 kg CO2e per kg limit and averaging period, and CBAM default values for ammonia before relying on this."
+  "reviewNote": "MNRE is to issue the measurement, reporting, verification and certification methodology for the Green Ammonia Standard separately; check it, and CBAM default values for ammonia, before relying on this."
 }

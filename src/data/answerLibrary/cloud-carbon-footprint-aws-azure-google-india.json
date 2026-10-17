@@ -17,7 +17,7 @@
     {
       "h": "Where to find the number for each provider",
       "ul": [
-        "AWS: the Customer Carbon Footprint Tool in the billing console. AWS reports market-based figures and revised its method in 2025; read the current methodology note for which scopes and regions it now covers.",
+        "AWS: the Customer Carbon Footprint Tool in the billing console. AWS revised its method in 2025 and now shows location-based and market-based figures and some Scope 3 categories, such as server hardware; read the current methodology note for exactly which scopes and categories are in.",
         "Microsoft Azure: the Emissions Impact Dashboard, which needs a one-time connection to your tenant and reports by service and region.",
         "Google Cloud: Carbon Footprint in the console, with location-based and market-based figures and an export to BigQuery for monthly detail."
       ],
@@ -48,7 +48,7 @@
     "title": "Worked example: usage-based estimate for one month in an India region",
     "lines": [
       "Compute: 40 vCPUs running all month, 730 hours",
-      "Assumed average draw: 3 W per vCPU, including memory (assumption, label it)",
+      "Assumed average draw: 3 W per vCPU, including memory (illustrative assumption, label it)",
       "40 x 730 x 3 = 87,600 Wh = 87.6 kWh at the server",
       "Assumed PUE: 1.2, so 87.6 x 1.2 = 105.12 kWh at the facility",
       "Location-based factor: 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0)",
@@ -56,7 +56,7 @@
     ],
     "note": "This leaves out the embodied emissions of the hardware. Replace the assumed draw and PUE with provider figures where they are published."
   },
-  "senseible": "Senseible's cloud and data centre emissions calculator gives a usage-based estimate by region, with location-based and market-based figures, when provider data is missing. It does not connect to AWS, Azure or Google dashboards.",
+  "senseible": "Senseible's cloud and data centre emissions calculator turns usage from your billing export, such as vCPU-hours, memory, storage and network transfer, into kWh and location-based and market-based figures by hosting region, for when provider data is missing.",
   "links": [
     {
       "label": "Cloud and data centre emissions calculator",
