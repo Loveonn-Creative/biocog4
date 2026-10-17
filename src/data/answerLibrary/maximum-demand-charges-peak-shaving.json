@@ -2,7 +2,7 @@
   "slug": "maximum-demand-charges-peak-shaving",
   "q": "How are maximum demand charges calculated on an HT bill, and does peak shaving cut them?",
   "title": "Maximum demand charges and peak shaving",
-  "short": "The demand charge is billing demand in kVA times a rupee rate per kVA per month. Billing demand is usually the higher of your highest 15 or 30 minute average load in the month and a set share of contract demand. Peak shaving cuts the charge only down to that floor, and it rarely cuts emissions.",
+  "short": "Your demand charge is the month's billing demand in kVA multiplied by the per kVA rate in your tariff. Billing demand is whichever is larger: the highest 15 or 30 minute average load recorded, or a fixed share of contract demand. Peak shaving saves money only above that floor and rarely cuts emissions.",
   "topic": "accounting",
   "intent": "how-to",
   "audience": "HT industrial consumers in India",
@@ -16,7 +16,7 @@
     {
       "h": "The floor that limits savings",
       "p": [
-        "Your state commission's tariff order sets billing demand as the higher of recorded maximum demand and a percentage of contract demand, such as 75% or 85%, depending on the state and year. Once your peak is at that floor, shaving further saves nothing on the demand line. To go lower you would need to reduce contract demand, through your discom's procedure."
+        "Each state commission's tariff order puts a minimum on billing demand, set as a percentage of contract demand such as 75% or 85%; the figure varies by state and can change with each new order. Once your recorded peak falls to that minimum, more shaving saves nothing on the demand line. The next lever is applying to your discom to lower contract demand, under its own procedure."
       ]
     },
     {
@@ -46,7 +46,7 @@
     ],
     "note": "Take the floor percentage, demand rate and any excess demand penalty from your own state commission's current tariff order."
   },
-  "senseible": "Senseible reads the billing details on an electricity bill, including billing period, tariff category, sanctioned load and units, and applies the CEA grid factor of 0.710 kg CO2 per kWh to kWh. Demand charges and a peak shaving plan are worked out from your tariff order and load data, separately from the carbon figure.",
+  "senseible": "Senseible reads billing period, tariff category, sanctioned load and units from your electricity bill and applies the CEA grid factor of 0.710 kg CO2 per kWh to the kWh, so the carbon figure moves only when kWh does, not when a shaved peak lowers the demand line.",
   "links": [
     {
       "label": "How to read an HT bill",

@@ -41,16 +41,16 @@
     }
   ],
   "example": {
-    "title": "Illustrative field check on 80 invoices",
+    "title": "Illustrative template upkeep for a mixed supplier base",
     "lines": [
-      "Lines checked: 400; fields checked per line: quantity, unit, date, HSN = 1,600 fields",
-      "Errors found: quantity 6, unit 10, date 2, HSN 4 = 22 errors",
-      "Field error rate: 22 / 1,600 = 1.4%",
-      "Unit errors are the biggest share: 10 / 22 = 45%, so unit checks matter most for this set"
+      "Suppliers: 120, of which 30 send two invoice layouts = 150 templates to build",
+      "Each quarter: 10 new suppliers + 5 redesigned layouts = 15 more templates to build or fix",
+      "Over a year: 15 x 4 = 60 template changes on top of the first 150",
+      "An AI vision reader needs none of these, but every extracted value still goes through the same rule checks"
     ],
-    "note": "Numbers are illustrative. Run the same test on your own documents before relying on any tool."
+    "note": "Supplier and layout counts are illustrative. Count your own suppliers and layouts before choosing an approach."
   },
-  "senseible": "Senseible reads invoices and bills with an AI vision model at temperature 0, a fixed schema and null for any field not clearly visible, then scores each line with rule checks, including penalties for a missing unit or low reading confidence. It publishes no accuracy rate, so test it on your own documents.",
+  "senseible": "Senseible reads tax invoices, electricity bills, fuel slips and freight records, as images or PDFs, with an AI vision model at temperature 0 and a fixed schema, leaving absent fields null. Each line then goes through rule checks, with penalties for a missing quantity, unit or factor and for low OCR confidence.",
   "links": [
     {
       "label": "Can AI calculate a footprint accurately?",

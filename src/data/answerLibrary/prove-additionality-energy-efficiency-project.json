@@ -23,7 +23,7 @@
       "h": "Pass the investment or barrier test",
       "ul": [
         "Investment analysis (CDM Tool 27): build the cash flow from equipment quotes, installation invoices, energy savings worked out from past bills and current fuel prices. Show the return without credits falls below a benchmark and that the result holds if key inputs move about 10% either way.",
-        "Fuel switch projects often fail on cost when the new fuel is cheaper per unit of useful heat, so compare cost per useful kcal after boiler efficiency, not price per tonne.",
+        "A fuel switch where the new fuel is cheaper per unit of useful heat usually fails the investment test, so compare cost per useful kcal after boiler efficiency, not price per tonne.",
         "Barrier analysis, used instead of or alongside: show a specific obstacle, such as a lender refusing to fund it or no reliable fuel supply, with letters or quotes, not general statements."
       ]
     },
@@ -36,7 +36,7 @@
     {
       "h": "Simplified routes for small projects",
       "p": [
-        "CDM Tool 21 sets out simpler additionality for small-scale projects, and some measures sit on positive lists that are treated as additional without an investment test. The methodology you pick, such as AMS-II.D for industrial efficiency, states which route applies. Check the current Verra or Gold Standard rules, since both now restrict which older CDM routes they accept."
+        "A small project can carry lighter paperwork. Under CDM rules, small-scale activities use Tool 21, where showing that at least one specific barrier, such as investment or technology, would have stopped the project can be enough, and some technologies and very small projects are deemed additional under conditions the tool sets. Your methodology, often AMS-II.D for industrial efficiency and fuel switching, decides which route you may use. Before you rely on any CDM tool, confirm that your programme, Verra or Gold Standard, currently accepts that methodology and tool."
       ]
     }
   ],
@@ -84,5 +84,5 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "Verra and Gold Standard revise which CDM tools and positive lists they accept; check the current versions before validation."
+  "reviewNote": "Verra and Gold Standard revise which CDM methodologies, tools and positive lists they accept; check the current versions before validation."
 }

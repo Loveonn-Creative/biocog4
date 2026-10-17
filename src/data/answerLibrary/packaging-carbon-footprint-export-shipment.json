@@ -27,7 +27,7 @@
       "ol": [
         "A footprint from your packaging supplier for that exact product, with its method stated.",
         "An Indian or regional figure from a named study, if one exists for that material.",
-        "The UK government (DESNZ) material use factors for paper and board or plastics. They are UK averages, so label them as such; Indian board made with more coal power may be higher."
+        "The UK government (DESNZ) material use factors for paper and board or plastics. They are UK averages, so label them as such; a figure for Indian board may differ."
       ]
     },
     {
@@ -51,7 +51,7 @@
     ],
     "note": "The factors 1.0 and 2.5 are illustrative round numbers, not DESNZ values. Replace them with the current DESNZ material use factors (UK averages) or your supplier's figures."
   },
-  "senseible": "Senseible reads packaging purchase invoices for quantity and unit, and applies a material factor only where a sourced factor exists; a line without a printed quantity shows Needs Data. The weight per unit shipped and the units count come from your own packing records.",
+  "senseible": "Senseible reads packaging purchase invoices for quantity and unit, and applies a material factor only where a sourced factor exists; a line without a printed quantity shows Needs Data. Where only spend is available, Senseible can provide a spend-based estimate, labelled as such with wider uncertainty. Weight per unit shipped and units counted come from your packing records.",
   "links": [
     {
       "label": "Footprint from invoices",

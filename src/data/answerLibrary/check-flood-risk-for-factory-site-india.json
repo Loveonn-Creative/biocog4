@@ -2,7 +2,7 @@
   "slug": "check-flood-risk-for-factory-site-india",
   "q": "How do I check flood risk for a factory site in India?",
   "title": "Checking flood risk for a factory site",
-  "short": "Check four things: whether the site falls in a mapped flood hazard zone on NRSC's Bhuvan atlases, the highest flood level recorded nearby, what future heavy rain projections show, and what the ground tells you on a site visit. Compare your plinth level with the likely flood depth before you buy or build.",
+  "short": "Check four things: whether the site lies in a mapped flood hazard zone on NRSC's atlases and Bhuvan, the highest flood level recorded nearby, what future heavy rain projections show, and what the ground tells you on a site visit. Compare your plinth level with the likely flood depth before you buy or build.",
   "topic": "regulation",
   "intent": "how-to",
   "audience": "MSMEs buying land or answering lender climate risk questions",
@@ -10,7 +10,7 @@
     {
       "h": "Step 1: mapped hazard zones",
       "p": [
-        "NRSC, part of ISRO, publishes flood hazard atlases for flood-prone states on its Bhuvan portal, built from years of satellite images of inundation. Enter the site coordinates and note whether the plot was flooded in past events and how often. For coastal sites, also check storm surge and cyclone maps."
+        "NRSC, part of ISRO, has published flood hazard atlases for flood-prone states such as Assam and Odisha, built from years of satellite images of inundation, and its flood layers can be viewed on the Bhuvan portal. Locate the site and note whether the plot was flooded in past events and how often. For coastal sites, also check storm surge and cyclone maps."
       ]
     },
     {
@@ -46,7 +46,7 @@
     ],
     "note": "Depth, margin and damage share are illustrative. A 1 in 100 year flood has about a 1% chance each year, and about a 26% chance over 30 years."
   },
-  "senseible": "Senseible's climate risk page sets out the physical and transition risk questions lenders ask. For the flood screening itself, use the public maps above and keep the screenshots and dates as evidence.",
+  "senseible": "Senseible turns your fuel and electricity invoices into Scope 1 and 2 figures linked to their source files, the transition side of a lender's climate risk review, and its climate risk page frames the physical risk questions. Keep your flood screenshots, coordinates and dates with those records.",
   "links": [
     {
       "label": "Climate risk assessment for a small business",

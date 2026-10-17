@@ -2,7 +2,7 @@
   "slug": "afolu-non-permanence-risk-rating",
   "q": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
   "title": "How the AFOLU risk rating is scored",
-  "short": "Under Verra's AFOLU Non-Permanence Risk Tool, you score internal, external and natural risk factors from set tables, subtract points for documented mitigation, and add the three results into one rating. The rating is the percentage of each verified carbon stock gain sent to the buffer pool, subject to a minimum, and above 60 the project fails.",
+  "short": "Under Verra's AFOLU Non-Permanence Risk Tool, you score internal, external and natural risks from the tool's tables, take off points only for documented mitigation, and add the three into one rating. That rating is the percentage of each verified stock gain held in the buffer pool, never below the tool's minimum; above 60 the project cannot be credited.",
   "topic": "markets",
   "intent": "explain",
   "audience": "Indian agroforestry and ARR project developers",
@@ -27,15 +27,15 @@
     {
       "h": "Natural risk: hazards at the site",
       "p": [
-        "For each hazard type, such as fire, pests and disease, extreme weather and geological events, the tool asks how often a damaging event happens (likelihood) and how much carbon it would destroy (significance). The two combine into a score per hazard, reduced where you show prevention, such as fire lines, grazing control or species mix, then summed."
+        "For each hazard type, such as fire, pests and disease, extreme weather and geological events, the tool asks how often a damaging event happens (likelihood) and how much carbon it would destroy (significance). The two combine into a score per hazard, reduced where you show prevention, such as fire lines, grazing control or species mix, then summed. Since version 4.2 the natural risk assessment also takes in projected climate change and, for coastal sites, sea-level rise."
       ]
     },
     {
       "h": "From scores to a buffer",
       "ol": [
         "Add internal, external and natural scores to get the overall rating.",
-        "If it falls below the tool's minimum, use the minimum; take the minimum from the current tool version.",
-        "A rating above 60 fails, and the project cannot issue until it lowers its risks.",
+        "If it falls below the tool's minimum, use the minimum; take the minimum from the version that applies to you.",
+        "A rating above 60 must be brought down to 60 or less, by reducing documented risks, before the project can be credited.",
         "Apply the rating as a percentage of the net carbon stock change at each verification, and redo the assessment at each verification as conditions change."
       ]
     },
@@ -52,14 +52,14 @@
   "example": {
     "title": "Illustrative effect of better tenure records",
     "lines": [
-      "Before: internal 8 + external 6 + natural 4 = 18, so 18% to the buffer",
-      "After documented land rights and longer farmer agreements: internal 6 + external 2 + natural 4 = 12, so 12% to the buffer",
-      "On a verified stock gain of 10,000 t CO2e: buffer falls from 1,800 to 1,200 credits",
-      "Credits issued rise from 8,200 to 8,800"
+      "Before: internal 12 + external 8 + natural 10 = 30, so 30% to the buffer",
+      "After documented land rights and longer farmer agreements: internal 9 + external 3 + natural 10 = 22, so 22% to the buffer",
+      "On a verified stock gain of 10,000 t CO2e: buffer falls from 3,000 to 2,200 credits",
+      "Credits issued rise from 7,000 to 7,800"
     ],
-    "note": "Scores are illustrative, not taken from the tool's tables. Your rating comes from the current tool version and the validation body's review."
+    "note": "Scores are illustrative, not taken from the tool's tables. Your rating comes from the version of the tool that applies to you and the validation body's review; if it is below the current minimum, the minimum applies."
   },
-  "senseible": "Senseible does not score non-permanence risk or hold buffer credits. Its carbon credit eligibility signals show whether your records look ready for a methodology; they are not credits, and issuance belongs to registries such as Verra.",
+  "senseible": "Senseible's carbon credit eligibility signals, drawn from your measured records, show whether a project looks ready for a methodology. They are not credits or a risk rating: the rating comes from Verra's tool and the validation body's review, and Senseible does not issue credits.",
   "links": [
     {
       "label": "How much goes to the buffer pool",
@@ -80,7 +80,7 @@
   ],
   "sources": [
     {
-      "label": "Verra, VCS AFOLU Non-Permanence Risk Tool (current version)",
+      "label": "Verra, Procedure for Applying the AFOLU Non-Permanence Risk Tool v5.0 (16 December 2025), and AFOLU Non-Permanence Risk Tool v4.2 (12 October 2023)",
       "url": "https://verra.org"
     },
     {
@@ -93,5 +93,5 @@
     }
   ],
   "reviewed": "2026-10-16",
-  "reviewNote": "Verra revises the AFOLU Non-Permanence Risk Tool, including its factor tables and minimum rating; check the current version before scoring."
+  "reviewNote": "Verra moved the tool to a v5.0 procedure under VCS Version 5 in December 2025; check its factor tables, category limits and minimum rating, and which version applies to your next verification."
 }

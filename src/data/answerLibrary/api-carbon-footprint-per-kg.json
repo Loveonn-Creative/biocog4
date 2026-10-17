@@ -16,7 +16,7 @@
     {
       "h": "Use process mass intensity to find the big items",
       "p": [
-        "Process mass intensity (PMI), a metric from the ACS Green Chemistry Institute Pharmaceutical Roundtable, is total mass of inputs, including solvents and water, divided by mass of API. API routes often have PMIs in the hundreds, and solvents usually make up most of that mass. Break PMI into starting materials, reagents, solvents and water, and rank them by mass times factor."
+        "Process mass intensity (PMI), a metric from the ACS Green Chemistry Institute Pharmaceutical Roundtable, is total mass of inputs, including solvents and water, divided by mass of API. API routes often have PMIs in the hundreds, and solvents and water usually make up most of that mass. Break PMI into starting materials, reagents, solvents and water, and rank them by mass times factor."
       ]
     },
     {
