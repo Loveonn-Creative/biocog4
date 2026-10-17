@@ -1,0 +1,71 @@
+{
+  "slug": "tnfd-leap-for-indian-manufacturer",
+  "q": "How would an Indian textile or food manufacturer apply TNFD's LEAP approach?",
+  "title": "TNFD LEAP for an Indian manufacturer",
+  "short": "Work through the four LEAP steps one site and one key raw material at a time: Locate where you touch nature, Evaluate what you depend on and affect, Assess the risks and opportunities, then Prepare your response and disclosure. For a textile or food unit, start with water at the plant and the farms behind cotton or crops.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian exporters asked about nature risk by EU buyers or investors",
+  "sections": [
+    {
+      "h": "Before you start: set the scope",
+      "p": [
+        "Decide which sites and supply chains to cover in the first round. A sensible first pass is your own plants plus the one or two raw materials that make up most of your purchases, such as cotton for a spinner or garment exporter, or rice, spices or fruit for a food processor. Write down what you leave out and why."
+      ]
+    },
+    {
+      "h": "Locate: where you meet nature",
+      "ul": [
+        "List each plant with its coordinates and the river basin it draws water from.",
+        "Check whether it sits in or near an ecologically sensitive area, such as a wildlife sanctuary, wetland or coastal regulation zone, and whether the basin is water-stressed. Public tools such as WRI Aqueduct for water stress and protected area maps help here.",
+        "For raw materials, map sourcing regions at least to district or state, such as the cotton belt of Gujarat and Maharashtra.",
+        "Mark the priority locations: sensitive areas, water-stressed basins, and places where you are a large user."
+      ]
+    },
+    {
+      "h": "Evaluate: dependencies and impacts",
+      "p": [
+        "Dependencies are what your business needs from nature; impacts are what it does to nature. Measure what you can from existing records."
+      ],
+      "ul": [
+        "Textile dyeing and processing: depends on steady fresh water; impacts are water withdrawal, wastewater and sludge, and chemicals discharged. Cotton farming adds land use, pesticide use and irrigation water.",
+        "Food processing: depends on water, pollination and soil quality at the farms; impacts are water use, organic load in effluent, packaging waste, and fertiliser runoff upstream.",
+        "Use your BRSR water, waste and effluent figures and consent to operate data as the starting numbers."
+      ]
+    },
+    {
+      "h": "Assess and Prepare: from findings to disclosure",
+      "ol": [
+        "Assess: turn each dependency or impact into a business risk or opportunity. A water-stressed basin means risk of supply cuts or tighter discharge limits; a ZLD plant or water recycling is an opportunity a buyer may value.",
+        "Rank them by likelihood and size, and fold the top few into your existing risk register.",
+        "Prepare: set actions and, where it makes sense, targets, such as kilolitres of fresh water per tonne of product.",
+        "Report against the TNFD recommended disclosures, including core metrics such as water withdrawal and consumption from areas of water scarcity, wastewater discharged and waste generated, and say which locations the assessment covered.",
+        "Check the TNFD additional sector guidance for apparel, accessories and footwear or for food and agriculture, published on tnfd.global, for extra metrics expected in your sector."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: water metric for one dye house in a stressed basin",
+    "lines": [
+      "Fresh water drawn: 400 kilolitres a day, 300 working days",
+      "Annual withdrawal: 400 x 300 = 120,000 kilolitres, all from a water-stressed area",
+      "Output: 6,000 tonnes of processed fabric a year",
+      "Intensity: 120,000 / 6,000 = 20 kilolitres per tonne of fabric, the baseline for a reduction target"
+    ],
+    "note": "Figures are illustrative. Use metered withdrawal from your water records, and the basin's stress rating from the tool you name in the disclosure."
+  },
+  "senseible": "Senseible keeps the electricity and fuel records and emissions for each site, which form the climate part of a combined climate and nature report. Water, effluent and sourcing location data for LEAP come from your plant and procurement records.",
+  "links": [
+    { "label": "Does TNFD apply to Indian companies?", "to": "/answers/does-tnfd-apply-to-indian-companies" },
+    { "label": "Check water stress at a supplier site", "to": "/answers/check-water-stress-at-supplier-location-india" },
+    { "label": "Water intensity for BRSR", "to": "/answers/water-intensity-calculation-for-brsr" },
+    { "label": "ZLD plant energy and carbon per KL", "to": "/answers/zld-plant-energy-and-carbon-per-kl" }
+  ],
+  "sources": [
+    { "label": "IFRS Foundation: ISSB nature-related disclosures work, building on the TNFD Recommendations and the LEAP approach guidance (v1.1, 2023)", "url": "https://www.ifrs.org" },
+    { "label": "GRI 101: Biodiversity 2024 (location-level biodiversity impacts)", "url": "https://www.globalreporting.org" },
+    { "label": "SEBI circular, July 2023: BRSR Core and the updated BRSR format (Principle 6 indicators)", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "TNFD guidance and the ISSB's nature-related work are still developing; re-check the sector guidance and core metrics before each disclosure."
+}

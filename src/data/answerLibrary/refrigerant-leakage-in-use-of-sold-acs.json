@@ -1,0 +1,91 @@
+{
+  "slug": "refrigerant-leakage-in-use-of-sold-acs",
+  "q": "Do AC and refrigeration equipment makers report refrigerant leakage during customers' use, and how?",
+  "title": "Refrigerant leaks from ACs you sell",
+  "short": "Yes. Refrigerant that leaks from ACs and refrigeration units while customers use them is a direct use-phase emission, so the maker reports it in Scope 3 Category 11. Estimate it as units sold x refrigerant charge x annual leak rate x lifetime years x the gas's GWP, in kg CO2e.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HVAC, cold-chain equipment and appliance makers",
+  "sections": [
+    {
+      "h": "Where each refrigerant release goes in the maker's inventory",
+      "ul": [
+        "Leaks and spills while charging units in your own factory: your Scope 1.",
+        "Leaks during the customer's years of use: Scope 3 Category 11, use of sold products. The GHG Protocol Technical Guidance counts gases released from products in use as direct use-phase emissions, which are the required minimum for this category.",
+        "Gas released when the unit is scrapped and not recovered: Scope 3 Category 12, end-of-life treatment of sold products.",
+        "Electricity the unit draws over its life: also Category 11, calculated separately in kg CO2."
+      ]
+    },
+    {
+      "h": "The inputs and where to get them",
+      "ul": [
+        "Units sold in the reporting year, by model.",
+        "Factory charge per unit in kg and the refrigerant type, from the nameplate or bill of materials.",
+        "Annual leak rate: field service data on top-ups if you have it. Otherwise the IPCC 2006 Guidelines give default operating emission ranges of 1 to 10% of charge a year for residential and commercial air conditioning.",
+        "Lifetime in years: design life or replacement data. The same IPCC table gives 10 to 20 years for this equipment.",
+        "GWP-100 from IPCC AR6: HFC-32 (R-32) is 771. For a blend such as R-410A, a 50:50 mix of HFC-32 and HFC-125 (3,740), weight by mass: 0.5 x 771 + 0.5 x 3,740 = about 2,256."
+      ]
+    },
+    {
+      "h": "Rules that trip makers up",
+      "ul": [
+        "Report the whole lifetime of units sold this year in this year's inventory. Do not spread it over future years.",
+        "Leaks that service technicians top up still count: the gas left the unit.",
+        "Use one GWP set, AR6 or the one your buyer specifies, for every gas in the inventory and name it.",
+        "Hydrocarbon units, such as R-290, have a GWP close to zero, so their leakage line is negligible; say so rather than leaving it blank."
+      ]
+    },
+    {
+      "h": "What to disclose",
+      "p": [
+        "State the charge, leak rate, lifetime and GWP used for each product family, and whether the leak rate is from your field data or an IPCC default. Show refrigerant and electricity as two lines, because buyers and investors compare them when you switch to a lower GWP gas or a more efficient compressor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 split ACs on R-32 sold in India (assumptions labelled)",
+    "lines": [
+      "Charge 1.0 kg, leak rate 4% a year, life 10 years (assumed, inside the IPCC ranges)",
+      "Refrigerant leaked: 10,000 x 1.0 x 0.04 x 10 = 4,000 kg of R-32",
+      "Leakage emissions: 4,000 x 771 = 3,084,000 kg CO2e, about 3,084 t CO2e",
+      "Electricity, for comparison: 1.2 kW x 1,200 hours a year x 10 years = 14,400 kWh per unit; x 0.710 = 10,224 kg CO2 per unit; x 10,000 = about 102,240 t CO2",
+      "Leakage is about 3% of this model's use-phase total; on R-410A the leakage line would be about 2.9 times larger"
+    ],
+    "note": "Charge, leak rate, running hours and life are illustrative. Use your nameplate data and field service records."
+  },
+  "senseible": "For your own sites, Senseible reads electricity bills and fuel slips and keeps the refrigerant purchase invoices you upload as evidence. The use-phase estimate for products you sell is built from your sales and product data, as in the example above.",
+  "links": [
+    {
+      "label": "Use-phase emissions of sold products",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Estimate refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Cold chain refrigerant leaks",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 11 and 12",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP-100 values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 7 (refrigeration and air conditioning emission factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Leak rates are IPCC default ranges and GWPs are AR6 values; confirm the GWP set your buyers ask for."
+}

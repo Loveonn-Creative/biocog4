@@ -1,0 +1,78 @@
+{
+  "slug": "downstream-warehousing-category-9",
+  "q": "Do I have to count my distributor's warehouse and retail storage in my Scope 3?",
+  "title": "Distributor storage in Scope 3 Category 9",
+  "short": "Yes, when it is relevant. Category 9 covers storage of your sold products in warehouses, distribution centres and shops you do not own, control or pay for. Storage you pay a third party for goes in Category 4 instead. It matters most for chilled and frozen products that sit in refrigerated rooms and coolers.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "FMCG and food MSMEs",
+  "sections": [
+    {
+      "h": "Category 4 or Category 9: who pays decides",
+      "ul": [
+        "Your own depot or godown: Scope 1 and 2, not Scope 3.",
+        "A C&F agent or 3PL warehouse you pay for: Category 4, upstream transportation and distribution.",
+        "A distributor that buys your goods and stores them at its own cost: Category 9.",
+        "Retailers' back rooms, shelves and refrigerators: Category 9.",
+        "Coolers you own and place in shops, with the shop paying the electricity: a leased or lent asset, usually Category 13, not Category 9."
+      ]
+    },
+    {
+      "h": "What the Category 9 boundary covers",
+      "p": [
+        "The minimum boundary is the Scope 1 and 2 emissions of the distribution centres and retailers that can be attributed to your products: electricity, fuel and refrigerant leaks. Emissions from building the facilities are optional. Transport legs after the sale also sit in Category 9, but they are counted separately from storage."
+      ]
+    },
+    {
+      "h": "How to estimate without distributor data",
+      "ol": [
+        "Ask a few large distributors for annual electricity use and the share of their space or pallet positions your goods take.",
+        "Multiply the site's emissions by your share, then scale to all distributors by the volume each one buys.",
+        "For shops, use your share of shelf or cooler space in a typical outlet, with chilled and frozen space weighted much higher than ambient shelves.",
+        "Label every scaled figure as an estimate and keep the sample data."
+      ]
+    },
+    {
+      "h": "When you can leave it out",
+      "p": [
+        "Scope 3 categories are reported when relevant, judged by size against your total, buyer or investor interest and your influence. For ambient packaged goods held for short periods, storage after sale may be small next to raw materials and transport. If you exclude it, write down why and roughly how large you expect it to be."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ambient goods held by distributors",
+    "lines": [
+      "Sample distributor warehouse: 60,000 kWh of grid electricity a year",
+      "Your goods take an average 15% of its pallet positions: 60,000 x 15% = 9,000 kWh",
+      "9,000 x 0.710 kg CO2 per kWh = 6,390 kg CO2 for this distributor",
+      "40 distributors of similar size and volume: 6,390 x 40 = 2,55,600 kg CO2, about 256 tonnes, in Category 9"
+    ],
+    "note": "Figures are illustrative. Scaling by count assumes similar sites; scale by the volume each distributor buys where it differs. 0.710 kg CO2 per kWh is the CEA grid factor, version 21.0."
+  },
+  "senseible": "Storage figures after the sale come from your distributors and retailers. Senseible keeps your own freight and supplier documents in its Scope 3 evidence trail, and splitting a distributor's total down to your goods is a step you do with the allocation key you choose.",
+  "links": [
+    {
+      "label": "Freight: Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Shared 3PL warehouse allocation",
+      "to": "/answers/warehouse-emissions-allocation-3pl"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category?",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Table 5.4, and Technical Guidance (2013), Category 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

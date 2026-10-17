@@ -1,0 +1,71 @@
+{
+  "slug": "brsr-sustainability-committee-question",
+  "q": "Does BRSR require a board sustainability committee?",
+  "title": "BRSR and a board sustainability committee",
+  "short": "No. BRSR does not make a board sustainability committee mandatory. It asks you to name the highest authority responsible for your business responsibility policies and to answer Yes or No on whether a board committee or director is responsible for sustainability decisions, with details if Yes. A No is allowed, but investors will see it.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Listed companies and company secretaries",
+  "sections": [
+    {
+      "h": "The governance questions in BRSR Section B",
+      "ul": [
+        "Question 8: details of the highest authority responsible for implementing and overseeing the business responsibility policies.",
+        "Question 9: whether the company has a specified committee of the board, or a director, responsible for decision making on sustainability issues. Yes or No, with details if Yes.",
+        "Question 10: how the company reviews its performance against the nine NGRBC principles, whether that review is done by a director, a board committee or another committee, and how often."
+      ]
+    },
+    {
+      "h": "Who has to file BRSR",
+      "p": [
+        "Regulation 34(2)(f) of the SEBI LODR Regulations requires the top 1,000 listed entities by market capitalisation to include a BRSR in their annual report. Other listed companies may file one voluntarily. Unlisted companies are not covered, though they may receive value chain questions from listed customers."
+      ]
+    },
+    {
+      "h": "Board rules that do touch sustainability",
+      "ul": [
+        "Risk management committee: LODR Regulation 21 requires one for the top 1,000 listed entities, and its role in Schedule II includes identifying sustainability risks, in particular ESG related risks.",
+        "CSR committee under Section 135 of the Companies Act, 2013: it oversees CSR policy and spending. It is not a sustainability committee unless its charter says so."
+      ]
+    },
+    {
+      "h": "Ways companies answer Question 9",
+      "ul": [
+        "A dedicated ESG or sustainability committee of the board, with its own charter.",
+        "An existing committee, often risk management or CSR, whose charter has been widened to cover sustainability decisions.",
+        "A named director given responsibility for sustainability.",
+        "No committee, with the highest authority and review frequency disclosed under Questions 8 and 10."
+      ],
+      "p": [
+        "Whichever applies, answer from what the board charter and minutes support, because investors and assurance providers may ask to see them."
+      ]
+    }
+  ],
+  "senseible": "Senseible's BRSR output is a self-declared draft built from your uploaded bills and invoices, with energy and emissions figures traced to their source documents. Governance answers such as Section B come from your board records and are completed by your company secretary.",
+  "links": [
+    {
+      "label": "BRSR requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    },
+    {
+      "label": "BRSR reports with Senseible",
+      "to": "/answers/brsr-report-senseible"
+    },
+    {
+      "label": "BRSR Core: the nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122, 12 July 2023, with the updated BRSR format",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, Regulations 21 and 34(2)(f)",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "SEBI amends the BRSR format and the LODR Regulations from time to time; check the current text before filing."
+}

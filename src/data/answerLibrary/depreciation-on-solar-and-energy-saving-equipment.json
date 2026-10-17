@@ -1,0 +1,68 @@
+{
+  "slug": "depreciation-on-solar-and-energy-saving-equipment",
+  "q": "What depreciation can an Indian business claim on rooftop solar and energy-saving equipment?",
+  "title": "Depreciation on solar and energy savers",
+  "short": "Under the Income-tax Rules, 1962 depreciation table, rooftop solar and listed energy-saving devices are depreciated at 40% a year on written down value, against 15% for general plant. Manufacturers on the old regime could add 20% additional depreciation in year one. For assets bought from April 2026, confirm both in the Income-tax Act, 2025 schedule.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners and CFOs in India",
+  "sections": [
+    {
+      "h": "Which equipment gets the 40% rate",
+      "p": [
+        "The depreciation table in the Income-tax Rules has two special lines inside the plant and machinery block: renewable energy devices and energy saving devices. Both have been at 40% since assessment year 2018-19; before that the rate was 80%."
+      ],
+      "ul": [
+        "Renewable energy devices include solar power generating systems, solar water heaters and solar thermal collectors, solar pumps, windmills and wind generators, biogas plants and biogas engines, and devices that turn farm or municipal waste into energy.",
+        "Energy saving devices include waste heat recovery equipment, co-generation systems, fluidised bed boilers and other specialised boilers and furnaces, energy monitoring instruments, and listed electrical equipment such as capacitors, power factor controllers, automatic voltage controllers and motor speed controllers.",
+        "Electrically operated vehicles, including battery powered ones, are also in the renewable energy devices list.",
+        "Equipment not named in either list, such as ordinary LED fittings or a standard motor, stays at the general 15% rate even if it saves energy."
+      ]
+    },
+    {
+      "h": "What goes into the 40% block and what does not",
+      "p": [
+        "Panels, inverters, module mounting structures and cabling installed as part of the solar system can be capitalised together as the solar power generating system. Civil work such as a new roof slab or a shed built to carry the panels is building, which goes in the building block at the lower building rate. Keep the vendor's invoice split by item so the classification can be shown.",
+        "GST paid on the equipment is part of the cost only if you could not take input tax credit on it. Any capital subsidy received reduces the actual cost on which depreciation is claimed."
+      ]
+    },
+    {
+      "h": "Additional depreciation and the half-year rule",
+      "ul": [
+        "Additional depreciation is 20% of the actual cost of new plant and machinery installed by a business that manufactures or produces goods, or generates power. It is not available for second-hand equipment or to a pure trading or services business.",
+        "Companies that opt for the lower concessional corporate tax rate, and individuals or HUFs on the new personal tax regime, give up additional depreciation.",
+        "If the asset is put to use for less than 180 days in the year, both normal and additional depreciation are halved that year. The unclaimed half of the additional depreciation is allowed in the next year.",
+        "Normal depreciation is on the written down value of the whole block, so after the first year you claim 40% of what is left, not of the original cost."
+      ]
+    },
+    {
+      "h": "What changed on 1 April 2026",
+      "p": [
+        "The Income-tax Act, 2025 replaced the 1961 Act from 1 April 2026, with tax years in place of previous and assessment years. Section numbers and the layout of the depreciation schedule changed. Before you file for tax year 2026-27, confirm with your tax adviser that the 40% lines and the additional depreciation rule carry over unchanged in the new schedule."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ₹50 lakh rooftop solar at a factory on the old regime",
+    "lines": [
+      "Put to use in June, so more than 180 days in the year: full rates apply",
+      "Normal depreciation, year 1: 50,00,000 x 40% = ₹20,00,000",
+      "Additional depreciation, year 1: 50,00,000 x 20% = ₹10,00,000",
+      "Total claim, year 1: ₹30,00,000; written down value carried forward: 50,00,000 minus 30,00,000 = ₹20,00,000",
+      "Year 2 normal depreciation: 20,00,000 x 40% = ₹8,00,000",
+      "If it had been put to use in November instead: year 1 normal ₹10,00,000 and additional ₹5,00,000, with the other ₹5,00,000 of additional depreciation claimed in year 2"
+    ],
+    "note": "Both normal and additional depreciation reduce the written down value carried forward. Illustrative only, not tax advice; the asset sits in the block with any other 40% assets you own."
+  },
+  "senseible": "Senseible does not compute tax depreciation. It reads the electricity bills before and after the solar or efficiency project, so the change in units and the emissions avoided at 0.710 kg CO2 per kWh are on record for a lender or buyer.",
+  "links": [
+    { "label": "Rooftop solar payback for a factory", "to": "/answers/rooftop-solar-payback-for-a-factory" },
+    { "label": "Energy transition savings calculator", "to": "/calculators/energy-transition-savings" },
+    { "label": "Solar loans for MSMEs in India", "to": "/climate-intelligence/solar-loan-for-msme-india" }
+  ],
+  "sources": [
+    { "label": "Income-tax Rules, 1962, New Appendix I (depreciation rates), and the Income-tax Act, 2025: read both on the Income Tax Department's website; Bureau of Energy Efficiency for energy audit evidence on energy saving devices", "url": "https://beeindia.gov.in" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Income-tax Act, 2025 applies from 1 April 2026; confirm the block names, the 40% rate and additional depreciation in its schedule before relying on this page."
+}

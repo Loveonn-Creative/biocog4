@@ -1,0 +1,81 @@
+{
+  "slug": "senseible-multiple-plants-or-gstins",
+  "q": "Can one Senseible account cover several plants, GSTINs or group companies?",
+  "title": "Several plants or GSTINs in Senseible",
+  "short": "Yes. One Senseible account can hold invoices from several plants, and team members can work in it together. For separate GSTINs or group companies, Senseible sells Multi-entity Support as an add-on at ₹1,999 a month before GST on Pro, and includes it in the Scale plan, which is quoted for your entities and team.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSME groups and family businesses with several units or GSTINs",
+  "sections": [
+    {
+      "h": "Which plan fits which set-up",
+      "ul": [
+        "One unit, one GSTIN: any plan. Pick by invoices read per month: Snapshot 10, Essential 100, Pro 1,000, Scale 10,000.",
+        "Several units you want to see apart: Pro with the Multi-entity Support add-on, or Scale.",
+        "A group with many companies, larger teams or integrations: Scale, where team seats, entities and integrations are set in the quote.",
+        "Team members by plan: Snapshot 1, Essential 3, Pro 10, Scale per quote. The owner's plan sets the seats.",
+        "Give each person a role that fits the work: an Analyst at each plant adds invoices, a Data manager or Carbon auditor at head office verifies them, and a Viewer only reads. The Analyst cannot verify, so a second person checks the numbers."
+      ]
+    },
+    {
+      "h": "Decide the boundary before you upload",
+      "p": [
+        "The tool does not decide which companies belong in your footprint. Choose operational control or equity share for the group, list every entity and site inside it, and keep that list with the report. A unit you control is in at 100% under operational control even if a relative owns part of it."
+      ]
+    },
+    {
+      "h": "Avoid double counting between your own units",
+      "ul": [
+        "Steam, power or compressed air one unit supplies to another: at group level count the fuel once, where it is burnt. Do not add the receiving unit's purchase on top.",
+        "Goods sold between group companies are not Scope 3 for the group, only for each entity's own report.",
+        "Shared sites with one electricity meter: split by sub-meter or by a stated key such as floor area, and write the key down."
+      ]
+    },
+    {
+      "h": "What to send when you ask for a quote",
+      "ol": [
+        "Number of entities and GSTINs, and which ones need separate reports.",
+        "Rough invoices per month across all units.",
+        "How many people need access and who verifies the numbers.",
+        "Any meter feeds or systems you want connected, which the Senseible team sets up for each customer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a boiler at Unit A supplies steam to Unit B",
+    "lines": [
+      "Unit A burns 500 t coal: 500 x 2.42 = 1,210 t CO2, Scope 1 for Unit A",
+      "Unit A sends 25% of the steam to Unit B, a separate GSTIN",
+      "Unit B's own report: 1,210 x 0.25 = 302.5 t CO2 as purchased steam (Scope 2)",
+      "Group report under operational control: 1,210 t CO2, not 1,210 + 302.5 = 1,512.5 t"
+    ],
+    "note": "Coal factor 2.42 kg CO2 per kg is the IPCC 2006 default Senseible uses; your coal's own test certificate may give a different value. The 25% split is illustrative."
+  },
+  "senseible": "Senseible lets you work in one account with team members, sells Multi-entity Support as a monthly add-on on Pro and includes it in Scale. How entities are arranged is set up with the Senseible team as part of the add-on or the Scale quote.",
+  "links": [
+    {
+      "label": "Operational control or equity share",
+      "to": "/answers/operational-control-vs-equity-share"
+    },
+    {
+      "label": "Senseible pricing",
+      "to": "/answers/senseible-pricing"
+    },
+    {
+      "label": "Plans and add-ons",
+      "to": "/pricing"
+    },
+    {
+      "label": "Senseible for larger teams",
+      "to": "/enterprise"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 3: Setting organizational boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Add-on prices and plan allowances can change; re-check against the live pricing page."
+}

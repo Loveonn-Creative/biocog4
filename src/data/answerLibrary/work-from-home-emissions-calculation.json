@@ -1,0 +1,64 @@
+{
+  "slug": "work-from-home-emissions-calculation",
+  "q": "Do I have to report work-from-home emissions for hybrid staff in India, and how do I estimate them?",
+  "title": "Estimate work-from-home emissions in India",
+  "short": "Usually not: the GHG Protocol treats teleworking as optional, so you report it by choice or because a client asks. To estimate it, multiply remote working days by the extra electricity used per day at home, then by the grid factor of 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "IT, BPO and services firms with hybrid staff",
+  "sections": [
+    {
+      "h": "Step 1: count remote days",
+      "ol": [
+        "Take remote days from attendance or the hybrid roster, not from policy. A policy of three office days often turns into two in practice.",
+        "Remote days = staff on hybrid terms x remote days per week x working weeks.",
+        "Leave out leave, holidays and days at a client site; those are not home office days."
+      ]
+    },
+    {
+      "h": "Step 2: estimate kWh per home office day",
+      "ul": [
+        "Laptop about 50 W, external monitor about 25 W, ceiling fan about 60 W, LED light about 10 W: about 145 W, or 1.16 kWh over 8 hours.",
+        "A 1.5 tonne split AC draws roughly 1.2 kW while running. Six hours adds about 7.2 kWh, which is six times the rest of the desk.",
+        "So AC days decide the total. Ask in a short survey what share of remote days use AC, or assume summer months only and say so."
+      ],
+      "p": [
+        "These wattages are typical nameplate values and are assumptions. Replace them with survey answers if you have them."
+      ]
+    },
+    {
+      "h": "Step 3: decide what counts as extra",
+      "p": [
+        "Some of the fan, light and AC would run at home anyway if another family member is there. You can count the full load during working hours, which is simpler and conservative, or only the share added by work. Pick one, write it in the method note and keep it each year."
+      ]
+    },
+    {
+      "h": "Step 4: apply the grid factor and label it",
+      "p": [
+        "Multiply total kWh by 0.710 kg CO2 per kWh, the CEA grid factor, version 21.0. Use the grid factor even if some staff have rooftop solar, unless you collect their solar share. Report the figure inside Category 7 next to commuting, marked as an estimate built from assumed wattage and hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 hybrid staff, 2 remote days a week (estimate)",
+    "lines": [
+      "Remote days: 500 x 2 x 46 weeks = 46,000 days",
+      "Desk load: 46,000 x 1.16 kWh = 53,360 kWh",
+      "AC on 30% of remote days (assumed): 46,000 x 0.30 x 7.2 kWh = 99,360 kWh",
+      "Total: 53,360 + 99,360 = 152,720 kWh",
+      "Emissions: 152,720 x 0.710 = 108,431 kg CO2, about 108 tonnes a year"
+    ],
+    "note": "Wattages, AC hours and the 30% AC share are assumptions; a one-question survey on AC use improves the figure more than anything else."
+  },
+  "senseible": "Senseible reads the electricity bills of your offices and applies 0.710 kg CO2 per kWh, so you can see whether office units fell as hybrid work grew. Home electricity of staff is outside those bills, so this estimate is one you add yourself.",
+  "links": [
+    { "label": "Work from home in Scope 3 Category 7", "to": "/answers/work-from-home-emissions-category-7" },
+    { "label": "Commuting emissions from a staff survey", "to": "/answers/employee-commuting-emissions-survey" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 7 (teleworking optional)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "equity-stake-in-joint-venture-scope-3",
+  "q": "We hold a 26% stake in a joint venture we don't control. How do we report its emissions?",
+  "title": "Reporting a 26% stake in a joint venture",
+  "short": "If your group uses a control approach, report 26% of the joint venture's Scope 1 and 2 emissions in Scope 3 Category 15, investments. If your group uses the equity share approach, the same 26% goes into your own Scope 1 and 2 instead. Never count it in both places.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian business groups and mid-caps with joint venture or associate holdings",
+  "sections": [
+    {
+      "h": "Where the stake goes under each approach",
+      "ul": [
+        "Operational control: you do not run the venture, so none of it is in your Scope 1 and 2. Your 26% share of its Scope 1 and 2 goes in Category 15.",
+        "Financial control: an associate where you have influence but no control is treated the same way, in Category 15. If the partners share financial control jointly, the GHG Protocol Corporate Standard has you take your equity share into Scope 1 and 2 instead; check the shareholder agreement.",
+        "Equity share: 26% of the venture's Scope 1 and 2 sits in your own Scope 1 and 2, so nothing more goes in Category 15 for those emissions."
+      ]
+    },
+    {
+      "h": "What Category 15 requires and what is optional",
+      "p": [
+        "For equity investments, the Scope 3 Standard requires your proportional share of the investee's Scope 1 and 2 emissions for the reporting year. Your share of its Scope 3 is optional; include it when the venture's value chain is large, for example a trading or assembly venture, and report it as a separate line."
+      ]
+    },
+    {
+      "h": "Getting the data from the venture",
+      "ol": [
+        "Ask the venture for its Scope 1 and 2 inventory for the same financial year, with the factors and boundary used.",
+        "If it has none, ask for a year of electricity bills and fuel invoices and calculate Scope 1 and 2 yourself.",
+        "If neither is available, estimate from its output or revenue with a sector intensity, label it an estimate and say which intensity you used.",
+        "Use the shareholding at year end, or a time-weighted share if it changed during the year, and note which."
+      ]
+    },
+    {
+      "h": "Two checks before you publish",
+      "ul": [
+        "If you also buy from the venture, part of its emissions can reach your Scope 3 twice: in Category 1 through the footprint of the goods you buy, and in Category 15 through your 26% share. Keep each in its category, and disclose the overlap and its rough size so readers do not add the two together.",
+        "State the consolidation approach in the report and apply it to every unit, as set out when you chose between operational control and equity share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 26% stake, group on operational control",
+    "lines": [
+      "Joint venture Scope 1: 6,500 t CO2e; Scope 2: 3,500 t CO2e; total 10,000 t CO2e",
+      "Your share: 10,000 x 26% = 2,600 t CO2e, reported in Scope 3 Category 15",
+      "Your Scope 1 and 2: unchanged by the venture",
+      "If the group used equity share instead: 6,500 x 26% = 1,690 t in Scope 1 and 3,500 x 26% = 910 t in Scope 2, and 0 for these emissions in Category 15"
+    ],
+    "note": "The venture's figures are illustrative."
+  },
+  "senseible": "Senseible counts the bills and invoices uploaded to an account. If the venture shares its electricity bills and fuel invoices, they can be read into a separate account to build its Scope 1 and 2, and you apply the 26% share in your own report.",
+  "links": [
+    { "label": "Operational control vs equity share", "to": "/answers/operational-control-vs-equity-share" },
+    { "label": "Supplier Scope 1 double counted in Scope 3", "to": "/answers/supplier-scope-1-double-counted-in-scope-3" },
+    { "label": "Carbon accounting", "to": "/carbon-accounting" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 15, investments", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "GHG Protocol Corporate Accounting and Reporting Standard, Revised Edition (2004), Chapter 3, organisational boundaries", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-17"
+}

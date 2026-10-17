@@ -1,0 +1,94 @@
+{
+  "slug": "multi-page-ht-electricity-bill-carbon",
+  "q": "My HT electricity bill runs to several pages with ToD slabs, demand charges and solar adjustments. Which numbers go into the carbon calculation?",
+  "title": "Multi-page HT bill: which numbers count",
+  "short": "Only the electricity you consumed, in kWh, goes into the carbon calculation: the units recorded at your meter for the month, including any open access or captive units adjusted against it. Demand in kVA, time of day rates, power factor, fuel adjustment and duty change the rupee total, not the CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HT consumers in India: factories, hospitals, cold storages",
+  "sections": [
+    {
+      "h": "Where the units sit on a long HT bill",
+      "ul": [
+        "Summary page: often shows net units billed by the discom, which can be smaller than what you consumed. Do not take this figure on trust.",
+        "Meter reading page: opening and closing readings for the kWh register and the multiplying factor (MF) of the metering set. Recorded units = (closing minus opening) x MF.",
+        "Time of day table: the same recorded units split into blocks such as peak, normal and solar hours.",
+        "Solar or net metering table: import and export readings, shown separately.",
+        "Open access or captive statement: green units adjusted against your consumption for the month, and banked units drawn."
+      ]
+    },
+    {
+      "h": "How to use time of day slabs without double counting",
+      "p": [
+        "Time of day blocks are a split of your recorded units, not extra units. If the bill prints a total, use the total and check that the blocks add up to it. If it prints only blocks, add them. A peak surcharge or solar hour rebate is a rupee adjustment on those same units, so it never adds or removes kWh."
+      ]
+    },
+    {
+      "h": "Solar, open access and captive adjustments",
+      "ul": [
+        "Rooftop solar on net metering: use the import reading, not import minus export. Exports do not reduce Scope 2.",
+        "Open access or group captive power: add the adjusted units back to the discom units for location-based Scope 2, because that power reached you over the grid.",
+        "Market-based Scope 2: count adjusted green units at zero only if your contract and green certificate pass the renewable attributes to you."
+      ]
+    },
+    {
+      "h": "Lines that look like units but are not consumption",
+      "ul": [
+        "Billing demand and contract demand in kVA: they set the demand charge and carry no kWh.",
+        "Minimum billing or units charged under a minimum guarantee: use the metered units, not the billed minimum.",
+        "Assessed or average units when the meter was faulty: an estimate; label it and replace it when the discom revises the bill.",
+        "Arrears or supplementary bills: assign their units to the months they cover, not the month you paid.",
+        "kVAh energy charge: use the kWh reading printed on the bill, or convert kVAh with the printed power factor and label it an estimate."
+      ]
+    },
+    {
+      "h": "A three way check before you record the month",
+      "p": [
+        "Recorded units from the meter readings should equal the sum of the time of day blocks, and both should equal discom units plus open access or captive units adjusted. If any of the three disagree by more than rounding, find the reason before you report, and keep a note of it with the bill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a 30 page HT bill",
+    "lines": [
+      "kWh register: opening 61,420, closing 63,220, MF 50, so (63,220 minus 61,420) x 50 = 90,000 kWh recorded",
+      "Time of day blocks: peak 22,000 + normal 50,000 + solar hours 18,000 = 90,000 kWh, which matches",
+      "Open access units adjusted: 30,000 kWh; net units billed by the discom: 60,000 kWh; 60,000 + 30,000 = 90,000, which matches",
+      "Location-based Scope 2: 90,000 x 0.710 = 63,900 kg CO2, about 63.9 tonnes",
+      "Using only the billed 60,000 kWh would give 42,600 kg CO2 and understate the month by 21,300 kg",
+      "Market-based, if you hold the attributes for the 30,000 green units: 60,000 x 0.710 = 42,600 kg CO2, with the discom units at the grid factor where no supplier-specific factor is available"
+    ],
+    "note": "Readings and units are illustrative. 0.710 kg CO2 per kWh is the CEA CO2 Baseline Database version 21.0 grid factor."
+  },
+  "senseible": "Senseible reads the billing period, tariff category, sanctioned load and units from an electricity bill, and reads PDFs over 10 pages in parts. On a kVAh bill it uses the printed kWh, otherwise kVAh times the printed power factor labelled as an estimate, and it does not treat net-metered units as consumption.",
+  "links": [
+    {
+      "label": "How to read an HT industrial power bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Footprint from electricity bills",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    },
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Rooftop solar and net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Bill layouts and time of day blocks follow each state commission's tariff order and can change every year."
+}

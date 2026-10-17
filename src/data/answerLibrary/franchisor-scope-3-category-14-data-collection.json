@@ -1,0 +1,65 @@
+{
+  "slug": "franchisor-scope-3-category-14-data-collection",
+  "q": "How does a franchisor collect franchisee electricity and fuel data for Category 14 without seeing their accounts?",
+  "title": "Franchisee energy data for Category 14",
+  "short": "Ask each franchisee for activity figures only: kWh from electricity bills and litres or kilograms of fuel, by month and outlet. You do not need their ledgers, costs or bank records. Where some outlets do not report, estimate them from the average of those that did, and label that part as estimated.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Food, retail and education franchisors in India",
+  "sections": [
+    {
+      "h": "What Category 14 covers",
+      "p": [
+        "Category 14 of the GHG Protocol Scope 3 Standard is for a franchisor: it reports the Scope 1 and Scope 2 emissions of franchise outlets it does not own or control. That means electricity, DG set diesel, LPG or PNG in kitchens, and fuel in outlet vehicles. Outlets the franchisor owns or operates itself are not Category 14; they go in its own Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "The data to ask for, and what to leave out",
+      "ul": [
+        "Electricity: billing period and units in kWh per outlet, from the discom bill. If a bill shows kVAh only, ask for the power factor printed on it.",
+        "Fuel: litres of diesel for the DG set, kilograms of LPG (number of cylinders times cylinder size), standard cubic metres of PNG.",
+        "Refrigerant top-ups in kg, if the outlet services its own ACs or cold rooms.",
+        "Not needed: the franchisee's profit and loss, rupee amounts, bank statements, or the consumer name and account number on the bill. Asking only for quantities makes it easier for franchisees to agree."
+      ]
+    },
+    {
+      "h": "Getting franchisees to send it",
+      "ol": [
+        "Add a clause to new and renewed franchise agreements asking for quarterly energy figures in a set format.",
+        "Give a one-page template: outlet code, month, kWh, litres, kg. Collect it through the same channel as the royalty statement.",
+        "Start with the largest outlets or a regional sample in year one; expand coverage each year.",
+        "Check outliers: an outlet reporting half the kWh of similar outlets has probably missed a meter or a month."
+      ]
+    },
+    {
+      "h": "Two methods, and when to mix them",
+      "p": [
+        "The franchise-specific method sums the actual Scope 1 and 2 of each outlet. The average-data method estimates outlets that did not report, from average energy per outlet or per square metre of similar outlets. Most networks use both: actuals where they have them, averages for the rest. Report the share of outlets on actual data, and aim to raise it each year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a courier franchise network of 50 outlets",
+    "lines": [
+      "20 outlets report electricity: 96,000 kWh in the year, so 96,000 / 20 = 4,800 kWh per outlet",
+      "30 outlets estimated: 30 x 4,800 = 144,000 kWh; network total 96,000 + 144,000 = 240,000 kWh",
+      "Electricity: 240,000 x 0.710 = 170,400 kg CO2, about 170.4 t",
+      "Pickup vans at the 20 reporting outlets: 6,000 L diesel, 300 L per outlet; 30 x 300 = 9,000 L estimated; total 15,000 L",
+      "Diesel: 15,000 x 2.68 = 40,200 kg CO2, about 40.2 t",
+      "Category 14 total: 170.4 + 40.2 = 210.6 t CO2, of which 60% of the outlets are estimated"
+    ],
+    "note": "Outlet figures are illustrative. The estimated share assumes non-reporting outlets look like reporting ones. If the reporting outlets are larger or busier, scale the average by floor area or parcels handled instead."
+  },
+  "senseible": "A franchisee can read its own electricity bills and fuel slips in Senseible; the bill reader takes the billing period, tariff, sanctioned load and units, and does not extract the consumer name, address or account numbers. The franchisee can then pass on just the kWh and litre totals to the franchisor.",
+  "links": [
+    { "label": "What electricity bill details to share", "to": "/answers/what-electricity-bill-details-to-share-for-carbon" },
+    { "label": "Filling gaps in Scope 3 data", "to": "/answers/how-to-fill-gaps-in-scope-3-data" },
+    { "label": "Landlord reporting tenant emissions", "to": "/answers/landlord-reporting-tenant-emissions-industrial-sheds" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 14", "url": "https://ghgprotocol.org/standards" },
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-17"
+}

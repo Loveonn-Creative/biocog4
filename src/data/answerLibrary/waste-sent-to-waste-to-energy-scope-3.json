@@ -1,0 +1,86 @@
+{
+  "slug": "waste-sent-to-waste-to-energy-scope-3",
+  "q": "How do I account for emissions when my factory waste goes to a waste-to-energy plant?",
+  "title": "Factory waste sent to waste-to-energy",
+  "short": "Report it in Scope 3 Category 5. Count the fossil CO2, methane and nitrous oxide released when your waste is burnt, add transport if you choose to, and do not subtract anything for the electricity or steam the plant makes. That avoided energy can be described separately, never netted from your total.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Sustainability leads and EHS managers sending non-hazardous waste to a waste-to-energy or RDF plant",
+  "sections": [
+    {
+      "h": "Why the burn sits in your Category 5",
+      "p": [
+        "The GHG Protocol Scope 3 Standard lists waste-to-energy as one of the treatment routes inside Category 5, waste generated in operations. The minimum boundary for the category is the Scope 1 and Scope 2 emissions of the waste company while it treats your waste; transport of the waste is optional. Burning your waste is that company's Scope 1, so it lands in your Category 5.",
+        "Some published factor sets, such as the UK DESNZ conversion factors for waste sent to combustion, show only collection and transport, because they assign the burn to the energy produced. If you use such a factor, say so in your method note so a reader knows the combustion is not in your figure.",
+        "This may change. In 2026 the GHG Protocol's Scope 3 working group discussed a draft that would move the combustion out of Category 5 and into the Scope 2 of whoever uses the energy. Until a revised standard is published, the 2011 Scope 3 Standard applies, and the burn stays in your Category 5."
+      ]
+    },
+    {
+      "h": "Fossil carbon counts, biogenic carbon is reported apart",
+      "ul": [
+        "Plastics, synthetic textiles and rubber carry fossil carbon. Their CO2 when burnt goes into the Category 5 total.",
+        "Paper, cardboard, wood, cotton and food carry biogenic carbon. Their CO2 is reported separately, outside the scopes, as the GHG Protocol asks for biogenic CO2.",
+        "Methane and nitrous oxide from the furnace count whatever the material, but they are small next to fossil CO2 for most mixed factory waste.",
+        "Formula for the fossil part: tonnes of each material x carbon content x fossil share x oxidation factor x 44/12, following IPCC 2006 Volume 5, Chapter 5."
+      ]
+    },
+    {
+      "h": "The energy recovered is not a deduction",
+      "p": [
+        "The plant's electricity may replace grid power somewhere, but that is an avoided emission. The Scope 3 Standard keeps avoided emissions out of the inventory. You may describe them in a separate note with their own method, but your Category 5 figure stays gross.",
+        "This is also why waste-to-energy does not make your waste zero carbon. Sending plastic to a furnace usually gives a higher Category 5 figure than sending it to a landfill, where plastic barely breaks down."
+      ]
+    },
+    {
+      "h": "Data to ask the waste company for",
+      "ol": [
+        "Weighbridge slips or a monthly statement of tonnes received from you, by waste stream.",
+        "A composition or acceptance analysis: plastic share, moisture, calorific value or carbon content.",
+        "Whether your waste is burnt directly or first made into refuse-derived fuel and sent on, for example to a cement kiln. Either way it is burnt; record the route you were told.",
+        "Haul distance, if you include transport in Category 5."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of mixed packaging waste in a year",
+    "lines": [
+      "Assumed composition (from a contractor analysis, illustrative): 15 t PE film, 40 t paper and board, 45 t other mostly inert material",
+      "PE film: 85.7% carbon, all fossil, oxidation factor 1.0",
+      "15 x 0.857 x 1.0 x 44/12 = 47.1 t CO2, reported in Category 5",
+      "Paper and board: biogenic CO2, reported separately outside the scopes",
+      "Electricity the plant generates: no deduction; Category 5 stays at about 47.1 t CO2 plus methane, nitrous oxide and transport"
+    ],
+    "note": "The composition is illustrative. Use the analysis your waste company gives you, and keep it with the weighbridge records."
+  },
+  "senseible": "Senseible keeps your waste contractor invoices in its separate Scope 3 supplier evidence trail, each file fingerprinted so it is not counted twice. A line gets a figure only where its quantity and unit match an approved factor; otherwise it shows Needs Data, and where only the disposal cost is known a spend-based estimate, labelled as such, can be provided.",
+  "links": [
+    {
+      "label": "Waste emissions for Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Hazardous waste from manifests",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    },
+    {
+      "label": "Scope 3 for manufacturers in India",
+      "to": "/climate-intelligence/manufacturing-scope-3-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 5",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Technical Working Group, meeting of 21 May 2026 (discussion draft on waste-to-energy)",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 (Waste), Chapter 5: Incineration and open burning",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "A 2026 GHG Protocol Scope 3 working group draft would move waste-to-energy combustion to the energy users' Scope 2; re-check Category 5 when the revised Scope 3 Standard is published."
+}

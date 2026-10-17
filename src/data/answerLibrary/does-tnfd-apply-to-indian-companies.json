@@ -1,0 +1,58 @@
+{
+  "slug": "does-tnfd-apply-to-indian-companies",
+  "q": "Does TNFD apply to Indian companies, and how does it relate to BRSR?",
+  "title": "Does TNFD apply to Indian companies?",
+  "short": "No Indian law or SEBI rule makes TNFD mandatory today. It reaches Indian companies through investors and buyers who have adopted it and ask for nature data. A listed company filing BRSR already reports several of the same facts, such as sites near ecologically sensitive areas, water withdrawal and waste.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Listed Indian companies and suppliers to TNFD adopters",
+  "sections": [
+    {
+      "h": "What TNFD is",
+      "p": [
+        "The Taskforce on Nature-related Financial Disclosures published its recommendations in September 2023. They follow the four pillars of the climate disclosures companies already know: governance, strategy, risk and impact management, and metrics and targets, with 14 recommended disclosures. It is a voluntary framework. Companies choose to adopt it, and its LEAP approach is the suggested way to find and assess nature-related issues."
+      ]
+    },
+    {
+      "h": "Who in India actually meets it",
+      "ul": [
+        "Listed companies whose institutional investors have adopted TNFD and ask portfolio companies for nature data.",
+        "Exporters of food, cotton, textiles, leather and other land and water heavy goods, whose buyers have adopted TNFD and send supplier questionnaires.",
+        "Indian companies that choose to adopt TNFD themselves, often groups with global listings or customers.",
+        "Suppliers to large EU groups, which report biodiversity under the EU sustainability reporting standards. That is an EU legal duty for the EU group, separate from TNFD, but it asks for similar data."
+      ]
+    },
+    {
+      "h": "Where BRSR already overlaps",
+      "p": [
+        "The BRSR format asks, under Principle 6, about the environment in ways that cover part of a nature disclosure:"
+      ],
+      "ul": [
+        "Operations or offices in or around ecologically sensitive areas, such as national parks, wildlife sanctuaries, biosphere reserves, wetlands and coastal regulation zones, where clearances are needed.",
+        "Environmental impact assessments of projects.",
+        "Water withdrawal by source, water consumption and discharge, and in leadership indicators, water in water-stressed areas.",
+        "Waste generated and how it is handled, and air emissions other than greenhouse gases.",
+        "What BRSR does not ask for: dependencies on nature, nature-related financial risks, or a structured location-by-location assessment. Those are the parts TNFD adds."
+      ]
+    },
+    {
+      "h": "Where it is heading",
+      "p": [
+        "The ISSB, which issued the IFRS S2 climate standard, moved nature-related disclosure from research to standard-setting in late 2025, building on the TNFD recommendations, metrics and LEAP approach, and planned to put its proposals out for consultation around October 2026. Check ifrs.org for where that draft stands. If the ISSB finalises nature requirements and Indian rules later adopt them, nature reporting could become required for listed companies. Until then, the practical step is to answer buyer and investor requests from data you already collect for BRSR."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity, fuel and freight records and the emissions worked out from them, which feed the climate side of a BRSR or nature disclosure. Location-specific nature metrics, such as land footprint near sensitive areas, come from site and sourcing records.",
+  "links": [
+    { "label": "Does CSRD apply to Indian companies?", "to": "/answers/does-csrd-apply-to-indian-companies" },
+    { "label": "Applying TNFD's LEAP approach", "to": "/answers/tnfd-leap-for-indian-manufacturer" },
+    { "label": "Does IFRS S2 apply in India?", "to": "/answers/does-ifrs-s2-apply-in-india" },
+    { "label": "BRSR reporting requirements", "to": "/climate-intelligence/brsr-reporting-requirements-india" }
+  ],
+  "sources": [
+    { "label": "SEBI circular, July 2023: BRSR Core and the updated BRSR format (Principle 6 indicators)", "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf" },
+    { "label": "IFRS Foundation: ISSB nature-related standard-setting (decided late 2025, consultation planned for October 2026), building on the TNFD Recommendations (September 2023)", "url": "https://www.ifrs.org" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The ISSB's nature-related standard-setting is in progress; check its status and any SEBI move on nature disclosure before each update."
+}

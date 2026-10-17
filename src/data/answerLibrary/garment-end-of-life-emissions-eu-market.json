@@ -1,0 +1,70 @@
+{
+  "slug": "garment-end-of-life-emissions-eu-market",
+  "q": "How should a garment exporter estimate end-of-life emissions for clothing sold in the EU?",
+  "title": "End-of-life emissions of garments in the EU",
+  "short": "Take the tonnes of garments you ship to the EU, split them by fibre, apply an EU disposal mix (incineration, landfill, collection for reuse or recycling), and multiply each share by a route factor. Report it as Scope 3 Category 12 and label the disposal mix as an estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Garment exporters in India, Bangladesh, Pakistan, Vietnam and Turkey selling to EU brands",
+  "sections": [
+    {
+      "h": "Start from mass and fibre, not pieces",
+      "p": [
+        "Category 12 works on the weight of product sold. Use shipped net weight from packing lists or the GSM and size of each style, then split by fibre from the fabric specification: polyester, cotton, viscose, elastane and blends.",
+        "Leave out the packaging here, or treat it as its own line. Hangers, polybags and cartons have their own disposal routes."
+      ]
+    },
+    {
+      "h": "What each route does to each fibre",
+      "ul": [
+        "Polyester burnt: fossil CO2. Polyester (PET) is 62.5% carbon by mass, so about 2.29 t CO2 per tonne burnt (0.625 x 44/12).",
+        "Cotton and viscose burnt: biogenic CO2, reported separately outside the scopes, not in the Category 12 total.",
+        "Landfill: synthetic fibres barely degrade, so close to zero apart from transport. Cotton and viscose can rot and form methane, so use a published landfill factor for textiles and label its source.",
+        "Collected for reuse or recycling: under the cut-off approach the processing belongs to whoever uses the recovered material; count collection and transport only."
+      ]
+    },
+    {
+      "h": "Choosing the EU disposal mix",
+      "p": [
+        "Use EU waste treatment statistics for the countries you sell into, or a mix your buyer gives you. Keep one line per market if your volumes differ a lot between, say, Germany and Spain.",
+        "The mix is moving. Under the EU Waste Framework Directive, member states had to set up separate collection of textiles from 1 January 2025, so more garments go to sorting and less to residual waste. Re-check the mix every reporting year and say which year's data you used."
+      ]
+    },
+    {
+      "h": "What to tell the buyer",
+      "ol": [
+        "The mass basis and fibre split.",
+        "The disposal mix, its source and year, labelled as an estimate.",
+        "The route factors and how you treated biogenic carbon.",
+        "That reuse and recycling were counted on the cut-off basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 t of garments sold in the EU in a year",
+    "lines": [
+      "Fibre split: 60 t polyester, 40 t cotton",
+      "Assumed EU disposal mix (labelled estimate): 50% incinerated, 30% landfilled, 20% collected for reuse or recycling",
+      "Polyester incinerated: 60 x 0.50 = 30 t; 30 x 2.29 = 68.7 t CO2 (fossil)",
+      "Cotton incinerated: 40 x 0.50 = 20 t; biogenic CO2, reported separately",
+      "Polyester landfilled: 60 x 0.30 = 18 t; about 0 t CO2",
+      "Cotton landfilled: 40 x 0.30 = 12 t; multiply by a published textile landfill factor, labelled",
+      "Collected: 20 t; collection and transport only",
+      "Category 12: about 68.7 t CO2 plus cotton landfill methane and transport"
+    ],
+    "note": "The disposal mix is a placeholder to show the arithmetic. Polyester dominates because it carries fossil carbon; a higher polyester share raises the figure."
+  },
+  "senseible": "Senseible reads your fuel and electricity invoices for Scope 1 and 2 and keeps purchase invoices, such as fabric and trims, as evidence of the mass you buy. Category 12 disposal mixes and route factors are something you supply and document yourself.",
+  "links": [
+    { "label": "Digital product passport for textiles", "to": "/climate-intelligence/digital-product-passport-textile-exporters" },
+    { "label": "Cotton vs polyester fabric footprint", "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint" },
+    { "label": "End-of-life emissions of sold packaging", "to": "/answers/packaging-end-of-life-emissions-food-exporters" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 12", "url": "https://ghgprotocol.org" },
+    { "label": "2006 IPCC Guidelines, Volume 5 (Waste), Chapters 3 and 5", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "Directive 2008/98/EC (Waste Framework Directive), as amended by Directive (EU) 2018/851", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "EU textile waste rules are changing after separate collection began in 2025; refresh the disposal mix each reporting year."
+}
