@@ -56,7 +56,20 @@
     <style>
       html,body{margin:0;padding:0;background:#ffffff;color:#0a0a0a;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
       #root{min-height:100vh;display:flex;flex-direction:column}
+      /* Slow networks: the prerendered page text (scripts/generate-static-html.js)
+         shows if the app has not started within 1.2 s; the app replaces it. */
+      .ssr-shell{box-sizing:border-box;width:100%;max-width:860px;margin:0 auto;padding:1.5rem 1rem 3rem;line-height:1.6;opacity:0;animation:ssr-in .25s ease-out 1.2s forwards}
+      .ssr-shell h1{font-size:1.75rem;line-height:1.25;margin:.75rem 0 1rem;letter-spacing:-.01em}
+      .ssr-shell h2{font-size:1.2rem;margin:1.75rem 0 .5rem}
+      .ssr-shell a{color:#15803d;text-underline-offset:2px}
+      .ssr-shell nav{font-size:.875rem;color:#525252}
+      .ssr-shell .ssr-brand{font-weight:700;font-size:1.05rem;color:#0a0a0a;text-decoration:none}
+      .ssr-shell hr{border:0;border-top:1px solid #e5e5e5;margin:2rem 0 1rem}
+      @keyframes ssr-in{to{opacity:1}}
+      @media (prefers-reduced-motion:reduce){.ssr-shell{animation-duration:.01s}}
+      @media (prefers-color-scheme:dark){.ssr-shell .ssr-brand{color:inherit}}
     </style>
+    <noscript><style>.ssr-shell{opacity:1;animation:none}</style></noscript>
   </head>
 
   <body>

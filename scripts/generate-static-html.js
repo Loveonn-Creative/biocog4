@@ -4,7 +4,7 @@
  * Reads every indexable route from src/lib/seo/routeRegistry.ts (which derives
  * them from the data files) and writes, into dist/:
  *   - {route}/index.html  per-route title, description, canonical, Open Graph,
- *                         JSON-LD and indexable body copy (inside <noscript>)
+ *                         JSON-LD and indexable body copy (inside #root, replaced by the app)
  *   - sitemap.xml         every indexable route, real lastmod dates only
  *   - llms.txt            an index of the site for AI assistants
  *   - md/{route}.md       a Markdown mirror of every route
@@ -79,12 +79,16 @@ function bodyHtml(route, R) {
   const crumbs = route.breadcrumbs
     .map(c => `<a href="${R.canonicalUrl(c.path)}">${R.escapeHtml(c.name)}</a>`)
     .join(' › ');
-  return `<noscript><main style="padding:1.5rem;max-width:860px;margin:0 auto;font-family:system-ui,sans-serif;line-height:1.6">
+  // Rendered inside #root: crawlers and visitors without JavaScript read it,
+  // visitors on slow networks see it after 1.2 s (index.html .ssr-shell), and
+  // the app replaces it as soon as it starts.
+  return `<main class="ssr-shell">
+<a class="ssr-brand" href="${R.SITE_URL}/">Senseible</a>
 <nav aria-label="Breadcrumb">${crumbs}</nav>
 <h1>${R.escapeHtml(route.h1)}</h1>
 ${R.blocksToHtml(route.blocks)}
 <hr/><nav aria-label="Topics"><p>${PILLARS.map(([p, n]) => `<a href="${R.SITE_URL}${p}">${n}</a>`).join(' · ')}</p></nav>
-</main></noscript>`;
+</main>`;
 }
 
 // The page's own code chunks, fetched in parallel with the main bundle.
@@ -102,7 +106,7 @@ function renderPage(template, route, R, chunks = []) {
   if (start === -1 || end === -1) throw new Error('index.html is missing the <!--seo:head--> markers');
   let html = template.slice(0, start + HEAD_START.length) + '\n    ' + headTags(route, R) + '\n    ' + template.slice(end);
   if (!html.includes('<div id="root"></div>')) throw new Error('index.html is missing <div id="root"></div>');
-  html = html.replace('<div id="root"></div>', `<div id="root"></div>\n${bodyHtml(route, R)}`);
+  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml(route, R)}</div>`);
   return withPreloads(html, chunks);
 }
 
