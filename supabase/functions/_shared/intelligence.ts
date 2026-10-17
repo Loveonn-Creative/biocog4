@@ -325,7 +325,7 @@ export function projectTrend(monthly: MonthTotal[]): Projection | null {
     next12Kg: round(next12),
     lowKg: round(Math.max(0, next12 - band)),
     highKg: round(next12 + band),
-    method: `Straight-line trend through ${n} months with records, extended 12 months; range is about 80%.`,
+    method: `Straight-line trend through ${n} months with records, extended 12 months. The range is an 80% band based on how far past months varied from the trend.`,
     label: 'Projection',
   };
 }
