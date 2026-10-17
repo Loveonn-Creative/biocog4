@@ -1,0 +1,1 @@
+COMMENT ON TABLE public.invoice_reads IS 'Append-only invoice read ledger; written only by edge functions.';

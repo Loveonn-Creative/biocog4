@@ -1547,6 +1547,141 @@ export type Database = {
         }
         Relationships: []
       }
+      invoice_credit_packs: {
+        Row: {
+          amount_paise: number
+          base_paise: number
+          created_at: string
+          credits: number
+          expires_at: string | null
+          id: string
+          packs: number
+          paid_at: string | null
+          razorpay_order_id: string
+          razorpay_payment_id: string | null
+          status: string
+          used: number
+          user_id: string
+          validity: string
+        }
+        Insert: {
+          amount_paise: number
+          base_paise: number
+          created_at?: string
+          credits: number
+          expires_at?: string | null
+          id?: string
+          packs: number
+          paid_at?: string | null
+          razorpay_order_id: string
+          razorpay_payment_id?: string | null
+          status?: string
+          used?: number
+          user_id: string
+          validity: string
+        }
+        Update: {
+          amount_paise?: number
+          base_paise?: number
+          created_at?: string
+          credits?: number
+          expires_at?: string | null
+          id?: string
+          packs?: number
+          paid_at?: string | null
+          razorpay_order_id?: string
+          razorpay_payment_id?: string | null
+          status?: string
+          used?: number
+          user_id?: string
+          validity?: string
+        }
+        Relationships: []
+      }
+      invoice_read_counting: {
+        Row: {
+          created_at: string
+          page_counting_from: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          page_counting_from: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          page_counting_from?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      invoice_read_settings: {
+        Row: {
+          id: boolean
+          ledger_started_at: string
+        }
+        Insert: {
+          id?: boolean
+          ledger_started_at?: string
+        }
+        Update: {
+          id?: boolean
+          ledger_started_at?: string
+        }
+        Relationships: []
+      }
+      invoice_reads: {
+        Row: {
+          counting: string
+          created_at: string
+          credit_allocations: Json
+          credit_units: number
+          document_hash: string | null
+          document_id: string | null
+          id: string
+          organization_id: string | null
+          pages: number
+          plan_units: number
+          settled_at: string | null
+          status: string
+          units: number
+          user_id: string
+        }
+        Insert: {
+          counting: string
+          created_at?: string
+          credit_allocations?: Json
+          credit_units?: number
+          document_hash?: string | null
+          document_id?: string | null
+          id?: string
+          organization_id?: string | null
+          pages: number
+          plan_units?: number
+          settled_at?: string | null
+          status?: string
+          units: number
+          user_id: string
+        }
+        Update: {
+          counting?: string
+          created_at?: string
+          credit_allocations?: Json
+          credit_units?: number
+          document_hash?: string | null
+          document_id?: string | null
+          id?: string
+          organization_id?: string | null
+          pages?: number
+          plan_units?: number
+          settled_at?: string | null
+          status?: string
+          units?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
       invoices: {
         Row: {
           amount: number
@@ -2989,6 +3124,54 @@ export type Database = {
         }
         Relationships: []
       }
+      service_orders: {
+        Row: {
+          amount_paise: number
+          base_paise: number
+          created_at: string
+          delivered_at: string | null
+          due_at: string | null
+          id: string
+          kind: string
+          paid_at: string | null
+          quantity: number
+          razorpay_order_id: string
+          razorpay_payment_id: string | null
+          status: string
+          user_id: string
+        }
+        Insert: {
+          amount_paise: number
+          base_paise: number
+          created_at?: string
+          delivered_at?: string | null
+          due_at?: string | null
+          id?: string
+          kind: string
+          paid_at?: string | null
+          quantity?: number
+          razorpay_order_id: string
+          razorpay_payment_id?: string | null
+          status?: string
+          user_id: string
+        }
+        Update: {
+          amount_paise?: number
+          base_paise?: number
+          created_at?: string
+          delivered_at?: string | null
+          due_at?: string | null
+          id?: string
+          kind?: string
+          paid_at?: string | null
+          quantity?: number
+          razorpay_order_id?: string
+          razorpay_payment_id?: string | null
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       sessions: {
         Row: {
           created_at: string | null
@@ -3533,6 +3716,10 @@ export type Database = {
       }
     }
     Functions: {
+      commit_invoice_read: {
+        Args: { p_document_id?: string; p_id: string }
+        Returns: boolean
+      }
       commit_verification: { Args: { p: Json }; Returns: Json }
       create_organization: {
         Args: { p_name: string }
@@ -3622,6 +3809,13 @@ export type Database = {
         }
         Returns: number
       }
+      invoice_pack_usable_until: {
+        Args: {
+          p_pack: Database["public"]["Tables"]["invoice_credit_packs"]["Row"]
+          p_plan_end: string
+        }
+        Returns: string
+      }
       invoice_source_storage_ready: { Args: never; Returns: boolean }
       is_org_admin: {
         Args: { _org_id: string; _user_id: string }
@@ -3666,9 +3860,23 @@ export type Database = {
         Args: { fingerprint: string; session_uuid: string }
         Returns: boolean
       }
+      release_invoice_read: { Args: { p_id: string }; Returns: boolean }
       remove_member: {
         Args: { p_organization_id: string; p_user_id: string }
         Returns: undefined
+      }
+      reserve_invoice_read: {
+        Args: {
+          p_hash: string
+          p_now?: string
+          p_org: string
+          p_page_counting_from: string
+          p_pages: number
+          p_period_start: string
+          p_plan_limit: number
+          p_user: string
+        }
+        Returns: Json
       }
       scope2_record: { Args: { p: Json }; Returns: Json }
       scope3_record_document: { Args: { p: Json }; Returns: Json }
