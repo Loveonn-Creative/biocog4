@@ -39,6 +39,7 @@ import { useProfileIntelligence } from '@/hooks/useProfileIntelligence';
 import { AlertTriangle, Info, CheckCircle2, Sparkles } from 'lucide-react';
 import { DashboardFilterBar } from '@/components/dashboard/DashboardFilterBar';
 import { DashboardIntelligence } from '@/components/dashboard/DashboardIntelligence';
+import { RecordInsights } from '@/components/insights/RecordInsights';
 import { useRecordsChanged } from '@/lib/recordsEvents';
 import {
   defaultFilters,
@@ -415,6 +416,7 @@ const Dashboard = () => {
               )}
 
               <TrendChart data={analytics.series.length > 0 ? analytics.series : summary.monthlyTrend} />
+              <RecordInsights emissions={emissions} documents={documents} />
             </div>
 
             {/* Right Column - Actions & Recent */}

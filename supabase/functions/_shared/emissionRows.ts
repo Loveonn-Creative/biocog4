@@ -6,6 +6,7 @@
 // handwritten and meter-reading quantities are stored one data-quality level
 // below a printed reading, and the basis travels in the provenance notes.
 import { LOWER_QUALITY_BASES } from './electricityBill.ts';
+import { isEvidenceOnlyKind } from './documentKind.ts';
 export interface PersistableLineItem {
   description: string;
   hsn_code?: string;
@@ -20,10 +21,17 @@ export interface PersistableLineItem {
   /** read_from_bill | estimated_kvah_pf | handwritten | meter_readings | entered_by_you */
   basis?: string;
   basisLabel?: string;
+  /** Page of the source document the line was read from. */
+  sourcePage?: number;
+  /** Plain statements behind the figure (conversions, grid country, basis). */
+  assumptions?: string[];
 }
 
 export interface PersistableExtraction {
   documentType?: string;
+  /** documentKind.ts; credit notes and purchase orders never make rows. */
+  documentKind?: string;
+  methodology?: { factorVersion?: string };
   vendor?: string;
   date?: string;
   invoiceNumber?: string;
@@ -86,10 +94,15 @@ export interface StoredProvenance {
   /** How the quantity was obtained, and its plain label (absent on rows written before this field). */
   basis?: string;
   basisLabel?: string;
+  /** Written from October 2026; older rows show "not recorded". */
+  factorSetVersion?: string;
+  sourcePage?: number;
+  assumptions?: string[];
 }
 
 export function encodeEmissionProvenance(
   item: PersistableLineItem & { factorSource: string; classificationMethod: 'HSN' | 'KEYWORD' },
+  factorSetVersion?: string,
 ): string {
   return JSON.stringify({
     factorSource: item.factorSource,
@@ -98,6 +111,9 @@ export function encodeEmissionProvenance(
     sourceDescription: item.description,
     ...(item.basis ? { basis: item.basis } : {}),
     ...(item.basis && item.basisLabel ? { basisLabel: item.basisLabel } : {}),
+    ...(factorSetVersion ? { factorSetVersion } : {}),
+    ...(typeof item.sourcePage === 'number' ? { sourcePage: item.sourcePage } : {}),
+    ...(Array.isArray(item.assumptions) ? { assumptions: item.assumptions.slice(0, 8).map((a) => String(a).slice(0, 200)) } : {}),
   } satisfies StoredProvenance);
 }
 
@@ -111,6 +127,9 @@ export function buildEmissionRows(
       ? 'medium'
       : 'low';
 
+  // Credit notes and purchase orders are evidence only (owner rule).
+  if (isEvidenceOnlyKind(extractedData.documentKind)) return [];
+  const factorSetVersion = extractedData.methodology?.factorVersion;
   return (extractedData.lineItems || []).flatMap((item) => {
     const classificationMethod = item.classificationMethod;
     const factorSource = item.factorSource;
@@ -140,7 +159,7 @@ export function buildEmissionRows(
       activity_unit: item.unit,
       emission_factor: item.emissionFactor,
       data_quality: lower ? (dataQuality === 'high' ? 'medium' : 'low') : dataQuality,
-      verification_notes: encodeEmissionProvenance({ ...item, factorSource, classificationMethod }),
+      verification_notes: encodeEmissionProvenance({ ...item, factorSource, classificationMethod }, factorSetVersion),
       verified: false,
     }];
   });

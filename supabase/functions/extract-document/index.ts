@@ -17,6 +17,8 @@ import { gridCountryFor } from '../_shared/electricity.ts';
 import { shadowWaterRun } from '../_shared/water/shadow.ts';
 import { orgCan, UUID_RE } from '../_shared/workspaceAccess.ts';
 import { buildEmissionRows } from '../_shared/emissionRows.ts';
+import { documentKind, isEvidenceOnlyKind, DOCUMENT_KIND_LABEL, EVIDENCE_ONLY_NOTE, type DocumentKind } from '../_shared/documentKind.ts';
+import { priceCheck, type PriceCheck } from '../_shared/priceCheck.ts';
 import { financialKind, financialPath, readFinancialFigures, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
 import { cylinderToKg, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
@@ -288,6 +290,10 @@ interface LineItem {
   sourcePage?: number;
   sourceText?: string;
   validationFlags?: string[];
+  /** Warning only: quantity × unit price differs from the printed line total. */
+  priceCheck?: PriceCheck;
+  /** Plain statements behind a counted figure (conversions, grid country, basis). */
+  assumptions?: string[];
   /** Why the line was or was not counted, and the next step. */
   guidance?: LineGuidance;
   /** Counted lines: how the quantity was obtained, and its plain label. */
@@ -303,6 +309,10 @@ interface LineItem {
 
 interface ExtractedData {
   documentType: 'invoice' | 'bill' | 'certificate' | 'receipt' | 'unknown';
+  /** Rules-library label (documentKind.ts); credit notes and purchase orders are evidence only. */
+  documentKind: DocumentKind;
+  /** The heading as printed, when read. */
+  documentTitle?: string;
   vendor?: string;
   date?: string;
   invoiceNumber?: string;
@@ -348,6 +358,9 @@ async function extractWithAI(imageBase64: string, mimeType: string, apiKey: stri
 CRITICAL EXTRACTION RULES:
 1. Extract ONLY these fields - do NOT calculate or estimate anything else:
    - documentType: invoice/bill/receipt/certificate/unknown
+   - documentTitle: the document's main heading exactly as printed (e.g. "Tax Invoice",
+     "Credit Note", "Purchase Order", "E-Way Bill", "Lorry Receipt", "Consignment Note",
+     "Cash Memo", "Bill of Supply"), else null
    - vendor: Company name on the document
    - date: Invoice/bill date (normalize to YYYY-MM-DD)
    - invoiceNumber: Invoice/bill number
@@ -896,6 +909,9 @@ serve(async (req) => {
     }
     // Model wording varies ("Tax Invoice", "Electricity Bill", "₹12,345"):
     // normalise the type and read money fields as numbers, never guessing.
+    // The kind is read from the heading and type as printed, before normalising.
+    const printedTitle = typeof ocrData.documentTitle === 'string' ? ocrData.documentTitle.slice(0, 80) : undefined;
+    const printedType = ocrData.documentType;
     ocrData.documentType = normalizeDocumentType(ocrData.documentType);
     // A photo of an electricity meter with readings is evidence for a bill.
     const capture = documentCaptureOf(ocrData);
@@ -962,11 +978,11 @@ serve(async (req) => {
     const utilityBill = ocrData.unitsConsumedKwh != null || electricityBillMeta(ocrData) !== null
       || (capture === 'meter_photo' && isElectricityBill(ocrData))
       || (Array.isArray(ocrData.lineItems) && ocrData.lineItems.some((l: { hsn_code?: unknown }) => String(l?.hsn_code ?? '').startsWith('2716')));
-    const sealed = utilityBill || !['invoice', 'bill', 'receipt'].includes(String(ocrData.documentType || '').toLowerCase())
+    let sealed = utilityBill || !['invoice', 'bill', 'receipt'].includes(String(ocrData.documentType || '').toLowerCase())
       ? null : sealExtraction(ocrData, pdfPageCount);
     // Scope 2 engine: the bill's billing details as printed (period, units,
     // vendor, currency, lines), before any line is rewritten. No personal data.
-    const billForScope2 = utilityBill ? {
+    let billForScope2 = utilityBill ? {
       vendor: ocrData.vendor ?? null, currency: ocrData.currency ?? null,
       unitsConsumedKwh: ocrData.unitsConsumedKwh ?? null, unitsConsumedText: ocrData.unitsConsumedText ?? null, unitsConsumedUnit: ocrData.unitsConsumedUnit ?? null,
       activeEnergyKwh: ocrData.activeEnergyKwh ?? null, activeEnergyText: ocrData.activeEnergyText ?? null,
@@ -1031,6 +1047,11 @@ serve(async (req) => {
       // energy), and a line kept only for its printed kVAh is evidence: neither
       // is an unrecognised item or a missing factor.
       const billCharge = elecBill && (!classifiedItem.quantity || !!classifiedItem.referenceNote);
+      // Quantity × price against the printed line total, on the figures as
+      // printed (before any unit conversion). A flag only; nothing changes.
+      // Not on electricity bills: slab tariffs price units at several rates.
+      const pc = elecBill ? null : priceCheck(classifiedItem.quantity, classifiedItem.unitPrice, classifiedItem.total);
+      if (pc) { classifiedItem.priceCheck = pc; classifiedItem.validationFlags!.push(pc.message); }
 
       // Cylinders with their size printed on the line ("LPG cylinder 19 kg",
       // 2 Nos) are converted to kg from that printed size; nothing else is.
@@ -1177,6 +1198,36 @@ serve(async (req) => {
         delete item.basis;
       }
     }
+    // What each counted figure assumes, stored with its record.
+    for (const item of classifiedItems) {
+      if (typeof item.co2Kg !== 'number') continue;
+      const a: string[] = [];
+      if (item.originalQuantity !== undefined) a.push(`Converted ${item.originalQuantity} ${item.originalUnit ?? ''} to ${item.quantity} ${item.unit ?? ''}`.replace(/\s+/g, ' ').trim());
+      for (const f of item.validationFlags ?? []) if (/^Converted .* cylinder size/.test(f)) a.push(f);
+      if (item.productCategory === 'ELECTRICITY') a.push(supply.source === 'unknown' ? 'India grid factor: no country set in Settings' : `Grid factor for ${gridCountry}`);
+      if (item.basisLabel && item.basis !== 'read_from_bill') a.push(item.basisLabel);
+      if (!item.hsn_code && item.classificationMethod === 'KEYWORD') a.push('Classified from the line description (no HSN code printed)');
+      item.assumptions = a;
+    }
+
+    // Document kind from the rules library. Credit notes and purchase orders
+    // are kept as evidence and never counted (owner rule, October 2026).
+    const kind = documentKind({
+      documentTitle: printedTitle, documentType: printedType, utilityBill,
+      lineCategories: classifiedItems.map((i) => i.productCategory),
+    });
+    if (isEvidenceOnlyKind(kind)) {
+      const note = `${DOCUMENT_KIND_LABEL[kind]}: ${EVIDENCE_ONLY_NOTE.toLowerCase()}`;
+      for (const item of classifiedItems) {
+        delete item.co2Kg; delete item.emissionFactor; delete item.avoidedCo2Kg; delete item.avoidedFactor;
+        delete item.basis; delete item.basisLabel; delete item.assumptions;
+        item.referenceNote = note;
+      }
+      validationFlags.push(`${note} as emissions`);
+      sealed = null;
+      billForScope2 = null;
+    }
+
     const guideCtx = { electricityBill: elecBill, blocker: prepared.blocker };
     for (const item of classifiedItems) item.guidance = guideLine(item, guideCtx);
 
@@ -1241,6 +1292,8 @@ serve(async (req) => {
 
     const extractedData: ExtractedData = {
       documentType: ocrData.documentType || 'unknown',
+      documentKind: kind,
+      ...(printedTitle ? { documentTitle: printedTitle } : {}),
       vendor: ocrData.vendor,
       date: ocrData.date,
       invoiceNumber: ocrData.invoiceNumber,
@@ -1262,11 +1315,12 @@ serve(async (req) => {
       electricityBill: electricityBillMeta(ocrData) ?? undefined,
       guidance: guideDocument(classifiedItems, guideCtx),
       documentCapture: capture,
-      invoiceKey: invoiceIdentity({
+      // A credit note or order never matches the invoice it refers to.
+      invoiceKey: ((k) => (k && isEvidenceOnlyKind(kind) ? `${kind}|${k}` : k))(invoiceIdentity({
         supplierGstin: ocrData.supplierGstin, vendor: ocrData.vendor, invoiceNumber: ocrData.invoiceNumber,
         date: parseInvoiceDate(ocrData.date) ?? undefined, billingPeriodStart: ocrData.billingPeriodStart,
         billingPeriodEnd: ocrData.billingPeriodEnd, unitsConsumedKwh: ocrData.unitsConsumedKwh, amount: ocrData.amount,
-      }) ?? undefined,
+      })) ?? undefined,
     };
 
     // ============= SAME INVOICE, DIFFERENT FILE =============

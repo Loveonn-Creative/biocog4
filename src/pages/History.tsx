@@ -29,6 +29,9 @@ import { documentEmissionStatus, ledgerEvidenceGaps, verifiedEmissionsOnce, veri
 import { applyScope } from '@/lib/workspaceScope';
 import { cachedGuestHashes, getGuestSource } from '@/lib/guestSourceCache';
 import { isSourceFilePath } from '../../supabase/functions/_shared/sourceFiles';
+import { documentKindLabel } from '../../supabase/functions/_shared/documentKind';
+import { RecordInsights } from '@/components/insights/RecordInsights';
+import { RecordCalculationLine } from '@/components/records/RecordCalculationLine';
 
 const History = () => {
   const navigate = useNavigate();
@@ -342,6 +345,8 @@ const History = () => {
           </Card>
         )}
 
+        <RecordInsights emissions={emissions} documents={documents} />
+
         {/* Date Range Indicator */}
         {(dateRange.from || dateRange.to) && (
           <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
@@ -377,12 +382,14 @@ const History = () => {
             <div className="space-y-3">
               {filtered.map(doc => {
                 const hasHash = !!doc.document_hash;
+                const kindLabel = documentKindLabel(doc.cached_result, doc.document_type);
                 const documentRows = emissionsByDocument.get(doc.id) || [];
                 const status = documentEmissionStatus(documentRows, doc.cached_result);
                 const tooltipText =
                   status.kind === 'verified' ? 'Stored emission records are verified'
                   : status.kind === 'pending' ? `${status.count} stored emission ${status.count === 1 ? 'record needs' : 'records need'} verification`
                   : status.kind === 'processing' ? 'This invoice is still being processed. Refresh in a moment.'
+                  : status.kind === 'evidence' ? `${status.label}: kept as evidence and never counted as emissions.`
                   : `No emission record was stored because no line item could be calculated (${status.reason}). This is not a verification result.`;
                 
                 return (
@@ -402,6 +409,11 @@ const History = () => {
                                 <Badge variant="outline" className="text-xs bg-warning/10 border-warning/20 text-warning py-0 h-5 shrink-0">
                                   <CheckCircle className="h-3 w-3 mr-1" />
                                   Pending verification
+                                </Badge>
+                              ) : status.kind === 'evidence' ? (
+                                <Badge variant="outline" className="text-xs bg-secondary border-border text-muted-foreground py-0 h-5 shrink-0">
+                                  <FileText className="h-3 w-3 mr-1" />
+                                  Evidence, not counted
                                 </Badge>
                               ) : status.kind === 'processing' ? (
                                 <Badge variant="outline" className="text-xs bg-secondary border-border text-muted-foreground py-0 h-5 shrink-0">
@@ -427,7 +439,7 @@ const History = () => {
                         </div>
                         <div className="text-sm text-muted-foreground flex items-center gap-2">
                           <Calendar className="h-3 w-3" />
-                          {formatDate(doc.created_at)}
+                          {doc.invoice_date ? `Invoice date ${formatDate(doc.invoice_date)}` : `Uploaded ${formatDate(doc.created_at)}, invoice date not read`}
                           {doc.invoice_number && (
                             <span className="text-xs">• #{doc.invoice_number}</span>
                           )}
@@ -435,7 +447,7 @@ const History = () => {
                       </div>
                       <div className="text-right shrink-0">
                         <div className="font-medium">{formatAmount(doc.amount)}</div>
-                      <div className="text-xs text-muted-foreground capitalize">{doc.document_type}</div>
+                      <div className="text-xs text-muted-foreground">{kindLabel}</div>
                       </div>
                       {canViewSource(doc) && (
                         <Button size="sm" variant="ghost" onClick={() => { void openSource(doc); }} disabled={openingSource === doc.id} aria-label={`View the original file for ${doc.vendor || doc.document_type || 'this invoice'}`}>
@@ -474,6 +486,21 @@ const History = () => {
                         </div>
                       )}
                     </CardContent>
+                    {documentRows.length > 0 && (
+                      <details className="px-4 pb-3" open={doc.id === focusDocId}>
+                        <summary className="cursor-pointer text-xs text-muted-foreground">
+                          Calculation ({documentRows.length} {documentRows.length === 1 ? 'record' : 'records'})
+                        </summary>
+                        <ul className="mt-2 space-y-2">
+                          {documentRows.map((r) => (
+                            <li key={r.id} className={`rounded-md bg-secondary/30 p-2${r.id === focusRecord ? ' ring-1 ring-primary' : ''}`}>
+                              <p className="text-xs font-medium capitalize">{r.category} · Scope {r.scope}{r.verified ? ' · verified' : ''}</p>
+                              <RecordCalculationLine row={r} cachedResult={doc.cached_result} />
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    )}
                   </Card>
                 );
               })}

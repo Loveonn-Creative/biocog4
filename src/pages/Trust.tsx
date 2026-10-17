@@ -176,7 +176,7 @@ const faqs = [
     a: "Six structural defenses: universal SHA-256 deduplication, immutable pre-processing stubs, methodology and factor pinning per output, deterministic failure when inputs are missing, an additionality lock on credit-eligible records, and cross-MSME peer challenge before disclosure. Verification you can challenge, and that holds up when challenged.",
   },
   {
-    q: "Are reporting outputs audit-ready?",
+    q: "Can an auditor trace a reported figure to its evidence?",
     a: "Framework outputs (CBAM, BRSR, GHG Protocol, ISSB, TCFD, GRI, CSRD) are produced from the same scope ledger with the methodology version and factor source attached. Auditors can trace any figure back to its evidence hash.",
   },
   {
@@ -383,7 +383,7 @@ const Trust = () => {
                   body: "Sector-aware reduction levers (energy, logistics, supplier swap, green-tariff) are ranked by tCO₂e impact per unit of spend, so the next action is always the one with the largest measurable return.",
                 },
                 {
-                  title: "Audit-ready by default",
+                  title: "Evidence-linked by default",
                   body: "Methodology version, factor source, and evidence hash lock at write time. Disclosures compound credibility instead of depreciating between audit cycles.",
                 },
               ].map(b => (

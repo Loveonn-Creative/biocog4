@@ -99,6 +99,7 @@ export interface EmissionRow {
   activity_data?: number | string | null;
   activity_unit?: string | null;
   document_id?: string | null;
+  data_quality?: string | null;
   created_at: string;
   /** documents.invoice_date when joined. */
   invoice_date?: string | null;

@@ -28,7 +28,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
   '/': {
     h1: 'Senseible: from your bills to climate finance',
     blocks: [
-      { p: 'Upload an invoice, get an audit-ready carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
+      { p: 'Upload an invoice, get an evidence-linked carbon report. Senseible turns the invoices, electricity bills and fuel slips an MSME already keeps into Scope 1, 2 and 3 emission records, with the emission factor and source shown against every line, ready to take to a lender, a buyer or a carbon credit check.' },
       { h2: 'How it works' },
       { ol: [
         'Upload a document, take a photo or speak the data point.',
@@ -67,7 +67,7 @@ export const STATIC_CONTENT: Record<string, { h1: string; blocks: Block[] }> = {
       { p: 'Supply chains and enterprise systems produce data in every shape: bills in several languages, photos, ERP exports, meter files and spend lines. Each becomes one record with its scope, kgCO2e, the factor used, a confidence score and the hash of its source, and the ledger ranks what to act on first.' },
       { h2: 'The full suite, on one verified ledger' },
       capList(suiteModules),
-      { h2: 'Custom-built for Scope 3: one click from collection to audit-ready' },
+      { h2: 'Custom-built for Scope 3: one click from collection to evidence-linked records' },
       { p: 'Invite, collect, clean, verify, report. Most suppliers start from documents and estimates; sensors upgrade the data later.' },
       capList(pipelineStages),
       { h2: 'Agents, sensors, satellite and a live feed' },

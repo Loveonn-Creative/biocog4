@@ -91,7 +91,7 @@ export const tradeFaqs: SEOFaq[] = [
   {
     id: 'trade-3',
     question: 'How can Senseible help with UK-India FTA carbon compliance requirements?',
-    answer: 'Senseible tracks Scope 1, 2, 3 emissions and generates audit-ready reports aligned with GHG Protocol. This prepares MSMEs for carbon disclosure requirements in UK-India trade agreements.',
+    answer: 'Senseible tracks Scope 1, 2, 3 emissions and generates evidence-linked reports aligned with GHG Protocol. This prepares MSMEs for carbon disclosure requirements in UK-India trade agreements.',
     category: 'trade',
     tags: ['UK-India FTA', 'carbon compliance', 'GHG Protocol'],
     priority: 'high'
@@ -258,10 +258,10 @@ export const complianceFaqs: SEOFaq[] = [
   },
   {
     id: 'compliance-2',
-    question: 'What is the Senseible Audit-Ready guarantee for EU-CBAM exporters?',
-    answer: 'Senseible provides traceable data lineage from invoice to emission calculation. Every number links back to source documents, meeting third-party verification standards.',
+    question: 'How does Senseible support EU-CBAM exporters with evidence?',
+    answer: 'Senseible keeps a traceable line from each invoice to its emission calculation. Every figure links back to its source document, quantity, emission factor and method, so a third-party verifier can check it.',
     category: 'compliance',
-    tags: ['audit-ready', 'CBAM', 'verification'],
+    tags: ['evidence', 'CBAM', 'verification'],
     priority: 'high'
   },
   {

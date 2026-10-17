@@ -23,8 +23,9 @@ import { aiConfigured, aiFetch, aiErrorMessage } from '../_shared/aiFetch.ts';
 
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { sanitizeChatInput } from "../_shared/chatInput.ts";
+import { monthOnMonth, type MonthOnMonth } from "../_shared/recordInsights.ts";
 import {
-  accessFor, buildBrief, cleanText, MONTHLY_MESSAGES, dayIst, limitSentence, looksLikePromptLeak, nextMonthlyResetIso, projectTrend, PROMPT_CANARY,
+  accessFor, buildBrief, cleanText, MONTHLY_MESSAGES, recordMonth, dayIst, limitSentence, looksLikePromptLeak, nextMonthlyResetIso, projectTrend, PROMPT_CANARY,
   SAMPLE_BRIEF, savingsInsights, VOICE_MINUTES_PER_MONTH, VOICE_SESSION_MAX_MINUTES, voiceSessionsPerMonth,
   type Audience, type DocumentRow, type EmissionRow,
 } from "../_shared/intelligence.ts";
@@ -128,7 +129,7 @@ type Scope = { kind: "personal"; userId: string } | { kind: "organization"; orga
 /** Every emission row in the workspace, read with the caller's token, up to MAX_ROWS. */
 async function readRows(db: any, scope: Scope): Promise<{ rows: EmissionRow[]; complete: boolean }> {
   const base = () => db.from("emissions")
-    .select("id, scope, category, co2_kg, verified, activity_data, activity_unit, document_id, created_at, documents(invoice_date)")
+    .select("id, scope, category, co2_kg, verified, activity_data, activity_unit, document_id, data_quality, created_at, documents(invoice_date)")
     .order("created_at", { ascending: true });
   let personalExcludesOrg = true;
   const rows: EmissionRow[] = [];
@@ -163,6 +164,8 @@ interface Facts {
   citable?: CitableRecord[];
   insights?: ReturnType<typeof savingsInsights>;
   projection?: ReturnType<typeof projectTrend>;
+  /** Month-on-month change by category, worked out by the insight rules. */
+  monthOnMonth?: { latestMonth: string | null; rows: MonthOnMonth[] };
 }
 
 async function factsFor(db: any, scope: Scope, audience: Audience): Promise<Facts> {
@@ -174,7 +177,8 @@ async function factsFor(db: any, scope: Scope, audience: Audience): Promise<Fact
   const docIds = [...new Set(rows.filter((r) => hotspotIds.has(`${r.scope ?? 3}|${(r.category || "other").toLowerCase()}`)).map((r) => r.document_id).filter((x): x is string => !!x))];
   const insights = savingsInsights(brief, rows, await readDocs(db, docIds));
   if (!access.ownRecords) return { insights };
-  return { brief, insights, projection: projectTrend(brief.monthly), citable: citableRecords(brief, rows) };
+  const mom = monthOnMonth(rows.map((r) => ({ ...r, date: recordMonth(r) })), { complete });
+  return { brief, insights, projection: projectTrend(brief.monthly), citable: citableRecords(brief, rows), monthOnMonth: { latestMonth: mom.latestMonth, rows: mom.rows } };
 }
 
 function recordsBlock(audience: Audience, facts: Facts, profile: { sector?: string; location?: string; business_name?: string } | null): string {
@@ -219,10 +223,20 @@ Do not produce any figures for them.`;
     monthly: b.monthly.slice(-12),
     savingsInsights: (facts.insights ?? []).map((i) => ({ finding: cleanText(i.finding, 300), label: i.label, next: i.next.path })),
     projection: facts.projection ?? "needs at least 4 months with records",
+    monthOnMonth: (facts.monthOnMonth?.rows ?? []).slice(0, 8).map((m) => ({
+      category: cleanText(m.category), scope: m.scope, month: m.month, previousMonth: m.previousMonth,
+      kg: m.kg, previousKg: m.previousKg, changeKg: m.changeKg, changePct: m.changePct,
+      quality: m.quality.level, qualityReasons: m.quality.reasons,
+      citable: (facts.citable ?? []).filter((r) => m.recordIds.includes(r.id)).map((r) => r.id.slice(0, 8)),
+    })),
   };
   return `# USER DATA (this user's own records only)
 ${who}
 Figures are kg CO2e. Record IDs are the first 8 characters; cite them in square brackets.
+Month-on-month changes are already worked out in "monthOnMonth" (change % = (this month − previous
+month) ÷ previous month × 100). Quote those figures as given, with their quality note when it is not
+"good". Never calculate a change, percentage or difference between months yourself; if a change is
+not listed (changePct null), say it cannot be worked out from the records.
 <records>${JSON.stringify(data)}</records>`;
 }
 
