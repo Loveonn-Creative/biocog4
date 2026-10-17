@@ -1,0 +1,73 @@
+{
+  "slug": "try-senseible-without-an-account",
+  "q": "Can I try Senseible on a bill without signing up, and what happens to the file?",
+  "title": "Try Senseible without an account",
+  "short": "Yes. You can upload an invoice or electricity bill from the Senseible home page without an account. The file is read, but nothing is stored on Senseible's servers: no file, record or result. Your results stay only in your own browser for 24 hours, and then they expire and are removed.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "First-time visitors, privacy-conscious MSME owners",
+  "sections": [
+    {
+      "h": "Limits without an account",
+      "ul": [
+        "Up to 30 invoices or bills per device per day, counted on India time. Only reads that succeed count towards it.",
+        "One network address, such as a shared office connection, has a separate cap of 300 reads a day.",
+        "Up to 10 MB per file.",
+        "PDF, JPEG, PNG, WebP or HEIC files, such as a phone photo of a bill.",
+        "These limits are checked on the server and can change."
+      ]
+    },
+    {
+      "h": "What happens to your file",
+      "p": [
+        "The file is sent to be read and the line items come back to your browser. Senseible keeps no copy of the file, no document record, no emission record and no saved result for a signed-out visitor. The daily counter holds no content from your bills.",
+        "Your browser keeps the results for 24 hours, along with the original files of your most recent uploads (up to 30 files) so you can view them again. Signing out or signing in with another account clears them, and so does answering the question you get when you sign in. In a private window or a browser that blocks storage, nothing is kept at all."
+      ]
+    },
+    {
+      "h": "What Verify does for a guest",
+      "p": [
+        "Verify runs the rule checks, such as missing quantity, unit or factor, and shows the result as a preview. It records nothing, so a guest result has no saved verification history."
+      ]
+    },
+    {
+      "h": "If you sign in later",
+      "p": [
+        "When you sign in on the same device within 24 hours, Senseible asks whether the uploads are yours. If you say yes, each file still in your browser is read again under your account, and the records are built from that new reading, not from the browser copy. Your plan allowance and duplicate checks apply, so the same bill is not counted twice. If you choose Not mine, nothing is added and the browser copy is cleared."
+      ]
+    },
+    {
+      "h": "Financial documents",
+      "p": [
+        "If a signed-out visitor uploads a financial document instead of a bill, it is not kept."
+      ]
+    }
+  ],
+  "senseible": "This page describes Senseible's own guest flow. Results from a guest upload are a preview held in your browser, not records an auditor or lender can trace; for that, sign in so the files are read and kept under your account.",
+  "links": [
+    {
+      "label": "Where to sign in to Senseible",
+      "to": "/answers/senseible-login"
+    },
+    {
+      "label": "How Senseible protects your data",
+      "to": "/answers/senseible-data-protection"
+    },
+    {
+      "label": "Senseible free plan",
+      "to": "/answers/senseible-free-plan"
+    },
+    {
+      "label": "Privacy policy",
+      "to": "/legal/privacy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (method behind the calculations)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Guest limits are server-side settings that can change; recheck the daily, network and file size limits in guestScan.ts and the 24-hour browser copy in guestResults.ts and guestSourceCache.ts before republishing."
+}

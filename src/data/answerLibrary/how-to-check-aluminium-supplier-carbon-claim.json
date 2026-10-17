@@ -1,0 +1,86 @@
+{
+  "slug": "how-to-check-aluminium-supplier-carbon-claim",
+  "q": "How do I check whether an aluminium supplier's low-carbon claim is credible?",
+  "title": "Checking an aluminium low-carbon claim",
+  "short": "Ask what the number covers and what powers the smelter. A credible low-carbon claim gives t CO2e per tonne of primary metal on a named boundary, shows the smelter's electricity source with contracts or certificates, and comes with an independent verification. Then check it against International Aluminium Institute regional averages.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "EU buyers, auto parts and extrusion firms",
+  "sections": [
+    {
+      "h": "Start with the smelter's electricity",
+      "p": [
+        "Smelting takes roughly 14 to 15 MWh of electricity per tonne of metal, and that varies far less between plants than the power source does. The power source therefore decides most of the footprint. Coal power at about 1 t CO2 per MWh puts roughly 14 to 15 t CO2 into every tonne; hydro or other renewable power puts in close to nothing.",
+        "So the first question is simple: what generated the smelter's electricity in the year of the claim, and in what shares. A low figure from a smelter that runs on coal needs an explanation."
+      ]
+    },
+    {
+      "h": "Test the electricity claim",
+      "ul": [
+        "Captive coal or gas plant owned by the producer: its emissions are the producer's own direct emissions. Certificates bought elsewhere cannot cancel them.",
+        "Own hydro or a contract with physical delivery: ask for the contract, the delivered MWh and the share of total smelter use.",
+        "Certificates: under the GHG Protocol Scope 2 Guidance they must come from the same market, cover the same period, and be retired for that smelter's use. Ask for retirement records.",
+        "Ask whether the claim uses a location-based or market-based figure, and for both if they have them."
+      ]
+    },
+    {
+      "h": "Check the boundary and the product",
+      "ul": [
+        "Smelting only (electrolysis and anodes), or cradle to gate including bauxite mining and alumina refining. Alumina refining adds a material amount.",
+        "CO2 only, or CO2e including perfluorocarbons from anode effects.",
+        "Primary ingot, or your finished extrusion or sheet, which adds casting and processing energy and yield losses.",
+        "Recycled content: a low figure that comes from scrap is real, but it is a recycled content claim, not low-carbon primary metal. Ask whether scrap is pre-consumer or post-consumer and how it is tracked."
+      ]
+    },
+    {
+      "h": "Evidence that makes a claim usable",
+      "ol": [
+        "A verification statement from an independent body, naming the plant, year, standard and boundary.",
+        "The calculation basis: electricity MWh by source, anode consumption, and factors used.",
+        "For EU imports, a match with the supplier's CBAM data, remembering that CBAM covers only direct emissions for aluminium for now.",
+        "Under the Scope 3 Standard, record this as supplier-specific data and rate its quality; if the evidence is thin, fall back to an average factor and say so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: does the arithmetic hold?",
+    "lines": [
+      "Claim: 4.0 t CO2e per tonne of primary aluminium, smelting only, smelter on captive coal",
+      "Smelting power: 14.5 MWh x about 1.0 t CO2 per MWh = 14.5 t CO2",
+      "Direct anode and PFC emissions: about 1.5 to 2 t CO2e (estimate)",
+      "Expected: about 16 to 16.5 t CO2e, so the claim is roughly a quarter of what the power source implies"
+    ],
+    "note": "Estimates for illustration. A gap this size means the claim rests on something else, such as certificates, scrap or a narrower boundary; ask which."
+  },
+  "senseible": "Senseible keeps supplier documents in its separate Scope 3 evidence trail and flags lines with a missing quantity, unit or factor, so the quantity you multiply a supplier's claimed figure by is traceable. Judging whether the claim itself holds is the job of the supplier's independent verifier.",
+  "links": [
+    {
+      "label": "Why Indian aluminium is carbon-intensive",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "CBAM for Indian aluminium exporters",
+      "to": "/climate-intelligence/cbam-aluminium-exporter-india"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Supplier emissions risk calculator",
+      "to": "/calculators/supplier-emissions-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "International Aluminium Institute benchmark figures update every year; use the latest edition for the check range."
+}

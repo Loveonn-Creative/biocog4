@@ -1,0 +1,86 @@
+{
+  "slug": "ammonia-vs-hfc-cold-storage-refrigerant",
+  "q": "Ammonia or HFC refrigeration for a new cold storage: what is the carbon difference?",
+  "title": "Ammonia or HFC for a new cold store",
+  "short": "Ammonia leaks add no CO2e, while every kilogram of R-404A that leaks adds about 4.7 tonnes of CO2e. A 500 kg R-404A charge losing 10% a year adds about 236 tonnes of CO2e a year. Electricity is the other half, so compare both systems' annual kWh before deciding.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Cold storage investors and agri processors",
+  "sections": [
+    {
+      "h": "Where the carbon difference comes from",
+      "ul": [
+        "Leaks: refrigerant lost through joints, valves and servicing is a direct Scope 1 emission, counted as kilograms lost x the gas's GWP.",
+        "Electricity: compressors, fans and pumps run all year, and their kWh are Scope 2 at 0.710 kg CO2 per kWh on the Indian grid.",
+        "Ammonia (R-717) is not a Kyoto gas and IPCC AR6 gives it no GWP, so its leaks count as zero CO2e. The choice then turns on electricity."
+      ]
+    },
+    {
+      "h": "How the R-404A figure is worked out",
+      "p": [
+        "R-404A is a blend, so its GWP is the mass-weighted sum of its parts, using IPCC AR6 100-year values: 44% HFC-125 at 3,740, 52% HFC-143a at 5,810 and 4% HFC-134a at 1,530. That gives 0.44 x 3,740 + 0.52 x 5,810 + 0.04 x 1,530 = 1,645.6 + 3,021.2 + 61.2 = 4,728. Lower-GWP HFC and HFO blends sold as R-404A replacements cut this, but not to zero; work out their GWP the same way from the supplier's composition."
+      ]
+    },
+    {
+      "h": "Why the HFC phase-down matters for a 20-year asset",
+      "p": [
+        "Under the Kigali Amendment India, an Article 5 Group 2 country, freezes HFC consumption in 2028 and then steps it down until 2047, when it reaches 15% of the baseline. A cold store commissioned now will still need top-up gas in the 2040s, when far less HFC can be sold in India. Ammonia sits outside the phase-down. The full step-by-step schedule is on our Kigali page linked below."
+      ]
+    },
+    {
+      "h": "How to compare two quotes fairly",
+      "ol": [
+        "Ask each vendor for the refrigerant, charge in kg and expected annual kWh at your design load and ambient temperature.",
+        "Estimate leaks as charge x an annual leak rate. Use your own service history if you have it; otherwise label it an estimate.",
+        "Add pump energy for any glycol or CO2 secondary loop used with ammonia; it is part of the ammonia system's kWh.",
+        "Compare total annual CO2e: leak kg x GWP plus kWh x 0.710."
+      ],
+      "p": [
+        "Ammonia is toxic, so plant room design, trained operators and local safety approvals are part of the decision. They are outside this carbon comparison."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 kg R-404A charge against ammonia",
+    "lines": [
+      "R-404A charge 500 kg, annual leak 10% (illustrative) = 50 kg",
+      "Leak emissions: 50 x 4,728 = 236,400 kg, about 236.4 t CO2e a year",
+      "Electricity, both systems assumed at 1,000,000 kWh a year: 1,000,000 x 0.710 = 710,000 kg, 710 t CO2",
+      "HFC system: 236.4 + 710 = 946.4 t CO2e a year; ammonia system: 710 t",
+      "If the ammonia system used 10% more electricity: 1,100,000 x 0.710 = 781 t, still 165.4 t a year lower",
+      "Break-even: the ammonia system could use 236,400 / 0.710 = 332,958 kWh more a year, about 33% more here, before the HFC system has the lower total"
+    ],
+    "note": "Leak rate and electricity use are assumptions for the arithmetic. Industrial refrigeration leak rates vary widely with design and maintenance; use your vendors' figures."
+  },
+  "senseible": "Senseible turns a refrigerant top-up invoice into Scope 1 CO2e once the gas and the kilograms charged are given, and counts the cold store's grid power in Scope 2 at 0.710 kg CO2 per kWh, so after commissioning you can see whether leaks or electricity drive the footprint. The comparison before purchase uses your vendors' own figures.",
+  "links": [
+    {
+      "label": "Low GWP refrigerant for a new chiller",
+      "to": "/answers/low-gwp-refrigerant-choice-new-chiller"
+    },
+    {
+      "label": "Refrigerant leaks in cold chain footprints",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    },
+    {
+      "label": "Cold storage electricity per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "India's HFC phase-down schedule",
+      "to": "/answers/india-hfc-phase-down-schedule-kigali"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "Kigali Amendment schedule for India and India Cooling Action Plan (MoEFCC, 2019), Ozone Cell",
+      "url": "https://www.ozonecell.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "R-404A GWP is computed from AR6 component values; recheck if a buyer or programme requires AR5 values."
+}

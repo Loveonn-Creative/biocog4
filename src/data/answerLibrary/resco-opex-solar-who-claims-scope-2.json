@@ -1,0 +1,81 @@
+{
+  "slug": "resco-opex-solar-who-claims-scope-2",
+  "q": "If a developer owns the rooftop solar on my factory under a RESCO or OPEX model, can I claim the solar in my Scope 2?",
+  "title": "RESCO rooftop solar: can I claim it?",
+  "short": "Yes, if your PPA gives you the plant's renewable attributes and nobody else sells them. Solar you buy from a developer-owned rooftop plant is purchased electricity, so it sits in your Scope 2. Claim it at zero in market-based Scope 2 only when the contract conveys the attributes and no RECs or carbon credits are sold from those units.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs with third-party-owned rooftop solar under a PPA",
+  "sections": [
+    {
+      "h": "Why a RESCO plant is Scope 2, not Scope 1",
+      "p": [
+        "Under a RESCO or OPEX model the developer builds, owns and maintains the plant on your roof and sells you the units at a fixed tariff per kWh. You pay for electricity, not for a machine. The GHG Protocol treats electricity bought from a generator owned by someone else as purchased electricity, so it belongs in your Scope 2 even though the panels sit on your building.",
+        "Under a CAPEX model you own the plant, its output is your own generation with no fuel burnt, and there is no Scope 2 on those units. A lease can go either way: if you operate the plant and carry its risks, treat it as owned; if the lessor runs it and bills per unit, treat it as RESCO."
+      ]
+    },
+    {
+      "h": "What makes the zero claim valid",
+      "ul": [
+        "The PPA states that the environmental attributes of the solar units you consume are transferred to you, or retained for you, and are not sold to anyone else.",
+        "The developer does not register the plant for RECs or carbon credits, or, if it does, the units issued are not the units you claim.",
+        "You have monthly generation data from the plant's meter, so the claimed kWh match what was actually delivered to you in the reporting year."
+      ],
+      "p": [
+        "If the contract is silent on attributes, ask for a side letter before you claim. A silent contract leaves the claim open to challenge."
+      ]
+    },
+    {
+      "h": "When you cannot claim the solar",
+      "p": [
+        "If the developer sells RECs or carbon credits from the plant, the buyer of those instruments owns the renewable claim, not you. Report your solar units in market-based Scope 2 at 0.710 kg CO2 per kWh, the national grid average, and say in a note that you used it because no residual mix factor is published for India. Claiming zero as well would count the same clean power twice."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "ol": [
+        "Grid imports from the discom bill, at 0.710 kg CO2 per kWh, in both location-based and market-based Scope 2.",
+        "Solar units bought from the developer, on a separate line with the PPA and generation data as evidence.",
+        "In market-based Scope 2, those solar units at zero when the attribute tests pass, or at the grid average when they do not.",
+        "A note naming the ownership model, the PPA date and who holds the attributes."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory with a RESCO rooftop plant",
+    "lines": [
+      "Annual use: 6,00,000 kWh, of which 1,80,000 kWh from the RESCO plant and 4,20,000 kWh imported from the grid",
+      "Attributes conveyed to you: market-based Scope 2 = 4,20,000 x 0.710 = 2,98,200 kg CO2, about 298.2 t",
+      "Developer sells RECs from the plant: 6,00,000 x 0.710 = 4,26,000 kg CO2, about 426 t",
+      "Difference: 1,80,000 x 0.710 = 1,27,800 kg CO2, about 127.8 t, decided by one clause in the PPA"
+    ],
+    "note": "Illustrative figures. Use the plant's metered generation and your discom import units."
+  },
+  "senseible": "Senseible reads the grid import units from your discom bill and applies 0.710 kg CO2 per kWh for location-based Scope 2. Market-based Scope 2 needs instrument data, so you add the solar units bought under the PPA with the contract as evidence; Senseible does not read the developer's meter or judge the PPA clause.",
+  "links": [
+    {
+      "label": "Rooftop solar and net metering in Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "PPA clauses for a renewable power claim",
+      "to": "/answers/what-to-put-in-ppa-for-carbon-claim"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapters 6 and 7",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4 Setting Operational Boundaries",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance; recheck the market-based rules for on-site PPAs when the revision is final."
+}

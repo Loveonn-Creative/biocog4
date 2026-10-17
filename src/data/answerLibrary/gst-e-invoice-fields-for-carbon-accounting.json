@@ -1,0 +1,90 @@
+{
+  "slug": "gst-e-invoice-fields-for-carbon-accounting",
+  "q": "Does a GST e-invoice contain everything needed to calculate emissions, and which fields matter?",
+  "title": "GST e-invoice fields for carbon accounting",
+  "short": "Nearly, for goods. A GST e-invoice carries an HSN code on every line and usually a description, quantity and unit, which is most of what an activity-based calculation needs. It never gives the emission factor, and diesel, petrol, natural gas and grid electricity are outside GST, so their bills are not e-invoices.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Finance teams and accountants of Indian MSMEs and their buyers",
+  "sections": [
+    {
+      "h": "The fields that matter, line by line",
+      "ul": [
+        "HSN code (HsnCd): narrows the line to a material or fuel family and decides the likely scope. Mandatory on every e-invoice line.",
+        "Product description (PrdDesc): picks the exact item within the HSN heading, such as LPG against natural gas under 2711.",
+        "Quantity (Qty) and unit (Unit, a GST Unique Quantity Code such as KGS, LTR, MTS or NOS): the activity data the factor multiplies.",
+        "Taxable value (AssAmt): the rupee amount before GST, used only for a spend-based estimate when no quantity exists.",
+        "Document date: puts the purchase in the right month and reporting year.",
+        "Seller GSTIN: identifies the supplier for a Scope 3 supplier trail.",
+        "IRN: a unique reference per invoice, useful to stop the same invoice being counted twice."
+      ]
+    },
+    {
+      "h": "What an e-invoice does not tell you",
+      "ul": [
+        "The emission factor. You still choose a published factor that matches the item and unit.",
+        "Whether fuel was burnt, stocked or resold. A purchase is not the same as consumption.",
+        "Mass, when the unit is NOS, PCS, BOX or OTH. Ten LPG cylinders in NOS need the cylinder size to become kg.",
+        "Anything about services beyond a SAC code and an amount, so services stay spend-based."
+      ]
+    },
+    {
+      "h": "Which purchases never come as e-invoices",
+      "p": [
+        "Petrol, diesel, aviation turbine fuel and natural gas are outside GST, and grid electricity is exempt. Their bills carry no IRN and often no HSN code. These are usually the biggest Scope 1 and Scope 2 lines for an MSME, so they must come from pump slips, gas bills and discom bills.",
+        "LPG, coal, furnace oil and petroleum coke are under GST, so a supplier above the e-invoicing turnover threshold (aggregate turnover over Rs 5 crore) issues them as e-invoices. Small suppliers below the threshold issue ordinary tax invoices."
+      ]
+    },
+    {
+      "h": "A practical rule for finance teams",
+      "ol": [
+        "Use e-invoices for goods purchases: take HSN, description, quantity and unit from each line.",
+        "Convert counts to mass or volume with a documented size, such as kg per cylinder or bag.",
+        "Take fuel and electricity from the source bills, since they sit outside the e-invoice system.",
+        "Use taxable value only for lines with no physical quantity, and label those spend-based."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two fuel lines on one e-invoice",
+    "lines": [
+      "Line 1: HSN 2711, commercial LPG, Qty 10, Unit NOS (19 kg cylinders)",
+      "10 x 19 kg = 190 kg; 190 x 2.98 kg CO2 per kg = 566.2 kg CO2",
+      "Line 2: HSN 2710, furnace oil, Qty 5,000, Unit LTR",
+      "5,000 x 2.97 kg CO2 per litre = 14,850 kg CO2",
+      "Total: 566.2 + 14,850 = 15,416.2 kg CO2, about 15.4 t, Scope 1 if burnt on site"
+    ],
+    "note": "Factors are IPCC 2006 defaults (furnace oil at an assumed 0.95 kg per litre). The cylinder size came from the description, not from the unit field."
+  },
+  "senseible": "Senseible reads tax invoices, including e-invoices, as PDFs or photos, and returns each line's HSN code, description, quantity and unit, leaving absent fields empty rather than guessed. It classifies by HSN first and applies a factor only when the unit fits. Where only spend is known, it can give a spend-based estimate, labelled as such.",
+  "links": [
+    {
+      "label": "Carbon footprint from invoices",
+      "to": "/answers/how-to-calculate-carbon-footprint-from-invoices"
+    },
+    {
+      "label": "GSTR-2B for carbon accounting?",
+      "to": "/answers/can-gstr-2b-be-used-for-carbon-accounting"
+    },
+    {
+      "label": "Invoice in litres, factor in kg",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    },
+    {
+      "label": "Stop the same invoice counting twice",
+      "to": "/answers/how-to-stop-same-invoice-counted-twice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 1",
+      "url": "https://ghgprotocol.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The e-invoice schema (INV-01), the turnover threshold and the list of goods outside GST are set by GSTN and the GST Council; recheck them each year."
+}

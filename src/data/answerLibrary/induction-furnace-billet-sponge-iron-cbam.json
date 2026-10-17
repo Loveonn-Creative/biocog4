@@ -1,0 +1,96 @@
+{
+  "slug": "induction-furnace-billet-sponge-iron-cbam",
+  "q": "How are CBAM embedded emissions worked out for steel billets made in an induction furnace from coal-based sponge iron?",
+  "title": "CBAM for induction furnace billets",
+  "short": "Add the embedded emissions of the sponge iron, pig iron and ferroalloys charged to the shop's own direct emissions, then divide by tonnes of billets. The induction furnace's electricity is not counted for steel. Because coal-based sponge iron is carbon intensive, its value usually makes up most of the billet figure.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Induction furnace and re-rolling units in Raipur, Ludhiana, Mandi Gobindgarh and Jalna",
+  "sections": [
+    {
+      "h": "The formula for a billet",
+      "p": [
+        "Billet embedded emissions per tonne = (tonnes of each precursor charged x its embedded emissions per tonne + direct emissions of the melt shop and caster) / tonnes of billets produced.",
+        "Billets (CN 7207) fall in the crude steel category. Under the transitional rules in Implementing Regulation (EU) 2023/1773, the relevant precursors for crude steel were pig iron, DRI (sponge iron), ferro-manganese, ferro-chrome, ferro-nickel and crude steel from another plant. Scrap was not a precursor, so it entered with zero embedded emissions. The EU has proposed counting pre-consumer scrap, so confirm the precursor and scrap rules in Implementing Regulation (EU) 2025/2547, as amended, for the year you export."
+      ]
+    },
+    {
+      "h": "Bought sponge iron or your own kiln",
+      "ul": [
+        "Bought sponge iron: use the supplier's verified actual embedded emissions per tonne if they give them; otherwise the EU default value for DRI from India applies to that precursor.",
+        "Own coal-based kiln on the same site: the kiln is a separate production process. Calculate its DRI embedded emissions from the coal burnt and the carbon balance of the kiln, then carry that value into the melt shop as a precursor.",
+        "Coal-based sponge iron carries far more CO2 per tonne than scrap, which is why the DRI share of the charge decides most of the result. Do not borrow a figure from a report; use your own kiln data, the supplier's verified value or the EU default."
+      ]
+    },
+    {
+      "h": "What counts as the melt shop's direct emissions",
+      "ul": [
+        "Fuel for ladle and tundish preheating, such as LPG or furnace oil.",
+        "CO2 from carbon in the charge that is oxidised in melting, worked out from a carbon mass balance of charge, carburiser, steel and slag.",
+        "Not counted for steel: induction furnace electricity, caster and crane power, even from a captive power plant, since CBAM counts direct emissions only for iron and steel."
+      ]
+    },
+    {
+      "h": "How a unit can lower the number",
+      "ul": [
+        "More scrap and less sponge iron in the charge: under the current rules scrap carries zero embedded emissions.",
+        "Sponge iron from a supplier with verified actual data below the EU default value.",
+        "Better metallic yield, so fewer tonnes of DRI per tonne of billet.",
+        "If billets go on to your own rolling mill, the billet figure becomes the precursor for the bars or sections exported, so errors carry through."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at an induction furnace shop (illustrative)",
+    "lines": [
+      "Billets produced: 5,000 t",
+      "Sponge iron charged: 4,200 t x 2.70 t CO2 per t (assumed supplier value) = 11,340 t CO2",
+      "Steel scrap charged: 1,300 t x 0 = 0 t CO2 (zero under the current rules)",
+      "Ferro-manganese: 50 t x 2.00 t CO2 per t (assumed) = 100 t CO2",
+      "Ladle preheating LPG: 20,000 kg x 2.98 kg CO2 per kg = 59.6 t CO2",
+      "Carbon oxidised in melting, from the mass balance (assumed): 150 t CO2",
+      "Total: 11,340 + 0 + 100 + 59.6 + 150 = 11,649.6 t CO2",
+      "Per tonne of billet: 11,649.6 / 5,000 = 2.33 t CO2; sponge iron is 97% of it"
+    ],
+    "note": "Precursor values and the carbon balance are assumptions for the arithmetic, not defaults. The LPG factor is the IPCC 2006 default. Furnace electricity is left out because CBAM does not count it for steel."
+  },
+  "senseible": "Senseible reads the unit's coal, LPG, furnace oil and electricity bills and keeps them as documented records (coal 2.42 kg CO2 per kg, LPG 2.98 kg per kg). The precursor values, charge mix and carbon balance come from the plant and its suppliers; verification of actual emissions and the CBAM declaration stay with your accredited verifier and EU importer.",
+  "links": [
+    {
+      "label": "CBAM cost: BF, EAF and DRI steel",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Embedded emissions per tonne of steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Does scrap count as zero for CBAM?",
+      "to": "/answers/does-scrap-count-as-zero-emissions-cbam"
+    },
+    {
+      "label": "Green loans for Ludhiana and Raipur steel",
+      "to": "/climate-intelligence/green-loan-steel-msme-ludhiana-raipur"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2023/1773, Annex II (crude steel and its relevant precursors)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/2547 (methods for calculating embedded emissions, definitive period)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Recheck the crude steel precursor list and the scrap rule in Implementing Regulation (EU) 2025/2547 and any amendment, and the DRI default value for India in 2025/2621, before each declaration."
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "eu-taxonomy-dnsh-climate-risk-assessment",
+  "q": "How do I do the climate risk and vulnerability assessment for EU Taxonomy DNSH adaptation?",
+  "title": "EU Taxonomy DNSH climate risk assessment",
+  "short": "Follow Appendix A of the Climate Delegated Act: screen the activity against the EU list of climate hazards, assess the material ones with climate projections that match the asset's lifetime, then pick adaptation solutions and plan them, within five years for existing assets or before operation for new ones. Document each step.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "Indian plants owned by EU groups, and lenders applying EU-style criteria",
+  "sections": [
+    {
+      "h": "The three steps Appendix A requires",
+      "ol": [
+        "Screening: identify which physical climate risks from the Appendix A hazard list may affect the activity's performance during its expected lifetime.",
+        "Assessment: where the activity is at risk, carry out a climate risk and vulnerability assessment to judge how material each risk is.",
+        "Adaptation: assess adaptation solutions that reduce the risks found, and choose those that address the most important ones."
+      ]
+    },
+    {
+      "h": "The hazard list to screen against",
+      "ul": [
+        "Temperature: changing temperature, heat stress, temperature variability and permafrost thaw (chronic); heat waves, cold waves and wildfire (acute).",
+        "Wind: changing wind patterns (chronic); cyclones, storms and tornadoes (acute).",
+        "Water: changing rainfall, rainfall variability, ocean acidification, saline intrusion, sea level rise and water stress (chronic); drought, heavy rainfall, glacial lake outburst, and coastal, river, surface water and groundwater flooding (acute).",
+        "Solid mass: coastal erosion, soil degradation, soil erosion and solifluction (chronic); avalanche, landslide and subsidence (acute)."
+      ],
+      "p": [
+        "Go through every hazard and write down why it is or is not relevant to the site. Reviewers look for the reasoning, not only the hazards you kept."
+      ]
+    },
+    {
+      "h": "Which climate data is good enough",
+      "p": [
+        "The assessment must be proportionate to the scale and lifespan of the activity. For an expected lifespan under 10 years, climate projections at the smallest appropriate scale are the minimum. For longer-lived activities, use the highest available resolution, state-of-the-art projections across the existing range of future scenarios over the asset's lifetime, including at least 10 to 30 year projections for major investments. The IPCC AR6 Working Group I Interactive Atlas gives free regional projections by scenario and is a common starting point; site studies add flood depth or drainage detail."
+      ]
+    },
+    {
+      "h": "What counts as adaptation, and by when",
+      "ul": [
+        "Existing activities and new activities using existing assets: physical and non-physical solutions implemented over a period of up to five years, with an adaptation plan for doing so.",
+        "New activities, and existing activities using newly built assets: solutions built into the design and construction and in place before operations start.",
+        "Solutions must not harm others' adaptation, for example by moving flood water onto a neighbour, and should be consistent with local, regional or national adaptation plans, with nature-based solutions considered where possible."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Example: a coastal textile processing plant in Gujarat, 25-year life",
+    "lines": [
+      "Screening: heat stress, water stress, cyclone, surface water flooding and saline intrusion kept; permafrost, avalanche and glacial hazards ruled out, with reasons",
+      "Assessment: projections from the IPCC AR6 Interactive Atlas under a middle and a high emissions scenario to 2050, plus a site drainage study",
+      "Material risks: monsoon surface water flooding of the dye house and groundwater salinity affecting process water",
+      "Adaptation plan within five years: raise the plinth of critical equipment, upgrade storm drains, increase effluent recycling to cut groundwater use",
+      "Evidence: screening table, data sources and scenarios used, risk scores, plan with dates and owners"
+    ],
+    "note": "The hazards and solutions are illustrative. Each activity's own DNSH table in the Climate Delegated Act points to Appendix A; read it for any activity-specific wording."
+  },
+  "senseible": "Senseible's climate risk service looks at physical risks such as floods, heat and water stress at your sites, scoped with you on a call; whether a given assessment meets Appendix A for your activity is for your group's Taxonomy team to confirm. Separately, the platform keeps the plant's fuel and electricity emissions traced to invoices and bills, which a mitigation claim for the same activity needs.",
+  "links": [
+    {
+      "label": "EU Taxonomy do no significant harm",
+      "to": "/answers/eu-taxonomy-dnsh-criteria-explained"
+    },
+    {
+      "label": "Climate risk assessment for a small factory",
+      "to": "/answers/climate-risk-assessment-for-small-business"
+    },
+    {
+      "label": "Free climate hazard data for a factory",
+      "to": "/answers/free-climate-hazard-data-india-factory"
+    },
+    {
+      "label": "Climate risk",
+      "to": "/climate-risk"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Commission Delegated Regulation (EU) 2021/2139 (Climate Delegated Act), Appendix A, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, including the Interactive Atlas",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Commission was reviewing the Taxonomy delegated acts in 2026, including DNSH criteria; check the current consolidated text of Appendix A."
+}

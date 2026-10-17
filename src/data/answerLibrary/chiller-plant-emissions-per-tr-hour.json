@@ -1,0 +1,78 @@
+{
+  "slug": "chiller-plant-emissions-per-tr-hour",
+  "q": "How do I calculate a chiller plant's CO2 per ton of refrigeration hour, including refrigerant top-ups?",
+  "title": "Chiller plant CO2e per TR-hour",
+  "short": "Multiply the plant's kW per TR, including pumps and cooling tower fans, by the grid factor to get kg CO2 per TR-hour from power. Then add the year's refrigerant top-ups in kg times the gas's GWP, divided by the year's TR-hours. At an assumed 0.7 kW/TR, power alone is about 0.50 kg CO2 per TR-hour.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "HVAC and utilities managers in pharma, food, IT parks and hospitals in India",
+  "sections": [
+    {
+      "h": "Measure TR-hours delivered",
+      "p": [
+        "Cooling delivered in TR is chilled water flow in m3 per hour times the temperature difference between return and supply water in degrees C, divided by 3.024, because one TR equals 3,024 kcal per hour. Log it hourly from a flow meter and two temperature sensors, or use the BMS. Sum the hours for the year to get TR-hours."
+      ]
+    },
+    {
+      "h": "Power part: plant kW per TR",
+      "p": [
+        "Use the whole plant, not the chiller nameplate: chiller compressor, primary and secondary chilled water pumps, condenser water pumps and cooling tower fans. Plant kW/TR is total kWh of these meters divided by TR-hours. Then kg CO2 per TR-hour = plant kW/TR x 0.710, the CEA grid factor in kg CO2 per kWh. If part of the power comes from a diesel generator, apply the diesel factor to that share."
+      ]
+    },
+    {
+      "h": "Refrigerant part",
+      "p": [
+        "If the plant's charge stayed the same, every kg of refrigerant added during the year replaced a kg that leaked. Multiply kg topped up by the gas's 100-year GWP (HFC-134a is 1,530 in IPCC AR6) to get kg CO2e, then divide by the year's TR-hours. This is Scope 1, while the power part is Scope 2, so report them separately as well as combined. The combined figure is CO2e, because it includes an HFC."
+      ]
+    },
+    {
+      "h": "Reading the result",
+      "ul": [
+        "Track the figure monthly; a rise in power per TR-hour points to fouled condensers, low chilled water delta T or pumps running at part load.",
+        "A jump in the refrigerant part points to a leak; find it before the next top-up.",
+        "Compare like with like: air-cooled and water-cooled plants, and plants with different supply temperatures, are not directly comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one year of a 500 TR water-cooled plant",
+    "lines": [
+      "Average load 350 TR x 6,000 h = 2,100,000 TR-hours",
+      "Plant energy at 0.7 kW/TR: 2,100,000 x 0.7 = 1,470,000 kWh",
+      "Power: 1,470,000 x 0.710 = 1,043,700 kg CO2, which is 0.7 x 0.710 = 0.497 kg CO2 per TR-hour",
+      "Refrigerant: 60 kg HFC-134a x 1,530 = 91,800 kg CO2e, so 91,800 / 2,100,000 = 0.044 kg CO2e per TR-hour",
+      "Total: (1,043,700 + 91,800) / 2,100,000 = 0.541 kg CO2e per TR-hour; refrigerant is about 8 percent"
+    ],
+    "note": "Load, hours, 0.7 kW/TR and the 60 kg top-up are illustrative; use your measured figures. Grid factor: CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "Senseible reads plant kWh from electricity bills, and from meter feeds where these are set up with the Senseible team, and applies the CEA factor of 0.710 kg CO2 per kWh for Scope 2. It keeps refrigerant service invoices as evidence and calculates their CO2e when you give the gas and kilograms charged; TR-hours come from your plant logs.",
+  "links": [
+    {
+      "label": "Good chiller kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Efficiency Guide Book 3, Refrigeration and Air Conditioning chapter",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, GWP-100 values",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

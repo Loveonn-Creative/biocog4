@@ -1,0 +1,65 @@
+{
+  "slug": "biogenic-carbon-in-timber-building-materials",
+  "q": "How is stored carbon in timber or bamboo building materials counted?",
+  "title": "Stored carbon in timber and bamboo",
+  "short": "Under EN 15804+A2 the carbon in timber or bamboo is counted as a removal when the material enters the product, shown as negative biogenic GWP, and as an emission of the same amount when it leaves at end of life. Over the full life cycle it nets to zero. Storage alone earns no lasting credit.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Construction product makers and specifiers",
+  "sections": [
+    {
+      "h": "How much CO2 a piece of wood holds",
+      "p": [
+        "Dry wood is about half carbon by mass. The common method, set out in EN 16449 for wood, is: CO2 stored = 44/12 x carbon fraction x oven-dry mass. The carbon fraction is taken as 0.5 and 44/12 converts carbon to CO2, so each kilogram of oven-dry wood holds about 1.83 kg of CO2.",
+        "Use oven-dry mass, not the mass at delivery, because moisture adds weight but no carbon. EN 16449 covers wood only. For bamboo and engineered bamboo, use a measured carbon content, or 0.5 labelled as an estimate."
+      ]
+    },
+    {
+      "h": "The minus one, plus one rule in an EPD",
+      "ul": [
+        "Module A1: CO2 taken up by the plant and carried into the product is reported as negative GWP-biogenic (minus one).",
+        "Modules C3 and C4: the same CO2 is reported as positive GWP-biogenic when the product is burnt, landfilled or passed on to another product system (plus one).",
+        "Biogenic carbon in packaging follows the same rule and usually leaves in module A5, on site.",
+        "EN 15804+A2 also asks for the biogenic carbon content of the product and of its packaging, in kg C, as separate information."
+      ]
+    },
+    {
+      "h": "How ISO 14067 and ISO 21930 treat it",
+      "p": [
+        "ISO 21930, the construction products standard, uses the same approach as EN 15804. ISO 14067 includes biogenic removals and emissions in a product carbon footprint but asks for them to be documented separately from fossil emissions. Neither standard lets you subtract stored carbon as a permanent benefit in the headline figure. Timing effects from storing carbon for decades may be reported only as additional information."
+      ]
+    },
+    {
+      "h": "Mistakes that make timber look better than it is",
+      "ul": [
+        "Quoting A1 to A3 only, where timber shows a negative total, against a steel or concrete figure for the same modules. Compare A1 to C4.",
+        "Counting stored carbon in packaging or offcuts that are burnt soon after delivery.",
+        "Claiming storage for timber from unknown sources. Buyers increasingly ask for chain of custody evidence such as FSC or PEFC certificates.",
+        "Adding the minus figure for stored carbon on top of a GWP-total that already includes it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 m3 of timber and 1 m3 of bamboo board",
+    "lines": [
+      "Cross-laminated timber, oven-dry mass 450 kg per m3 (illustrative)",
+      "Carbon: 0.5 x 450 = 225 kg C; CO2: 225 x 44/12 = 825 kg CO2",
+      "A1 GWP-biogenic: minus 825 kg CO2e; C3 or C4 GWP-biogenic at end of life: plus 825 kg CO2e; net zero",
+      "Bamboo board, oven-dry mass 600 kg per m3 (illustrative), carbon fraction 0.5 (estimate)",
+      "Carbon: 0.5 x 600 = 300 kg C; CO2: 300 x 44/12 = 1,100 kg CO2 stored"
+    ],
+    "note": "Densities are illustrative. Use the oven-dry density of the actual product and its measured carbon content where available."
+  },
+  "senseible": "Senseible does not calculate biogenic carbon storage or prepare EPDs. It records the fuel and electricity a plant buys, which feed the fossil part of a product footprint, with each figure traced to its invoice or bill.",
+  "links": [
+    { "label": "Reading GWP figures on an EPD", "to": "/answers/how-to-read-gwp-on-an-epd" },
+    { "label": "Biogenic carbon for food and textile MSMEs", "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme" },
+    { "label": "What is embodied carbon A1 to A3?", "to": "/answers/what-is-embodied-carbon-a1-a3" },
+    { "label": "Construction industry", "to": "/industries/construction" }
+  ],
+  "sources": [
+    { "label": "EN 15804:2012+A2:2019 core rules for construction products, and EN 16449:2014 (biogenic carbon content of wood)", "url": "https://www.iso.org" },
+    { "label": "ISO 21930:2017 (environmental declarations of construction products) and ISO 14067:2018 (carbon footprint of products)", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-16"
+}

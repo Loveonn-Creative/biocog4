@@ -1,0 +1,78 @@
+{
+  "slug": "does-electricity-tariff-category-change-emissions",
+  "q": "Does my electricity tariff category (HT industrial, LT commercial, time-of-day or green tariff) change my carbon footprint?",
+  "title": "Does tariff category change emissions?",
+  "short": "No for location-based Scope 2: it is kWh x the grid factor, whatever your tariff category, voltage or time-of-day slab. Only a green tariff can lower your footprint, and only in market-based Scope 2 with documented renewable units. What changes the number is the kWh you use and how it is metered.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME owners reading discom bills",
+  "sections": [
+    {
+      "h": "Why the category does not change the factor",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance builds location-based Scope 2 from the average emission intensity of the grid where you use the power. In India that is one national figure, 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0. A unit billed under HT industrial, LT commercial or a peak-hour slab comes from the same grid, so it carries the same factor. Tariff categories set prices, not the source of the power."
+      ]
+    },
+    {
+      "h": "Category by category",
+      "ul": [
+        "HT industrial or LT commercial: same factor. Only the kWh differs.",
+        "Time of day: peak, normal and solar-hour units all take 0.710. Shifting load lowers the bill, not reported Scope 2.",
+        "kVAh billing: the factor applies to kWh, so convert kVAh using the printed power factor, or use printed kWh.",
+        "Green tariff: location-based is unchanged; market-based can drop for the green units, if the attributes are documented as yours.",
+        "Open access or captive renewable power: not a tariff category, but it can lower market-based Scope 2 with the right evidence."
+      ]
+    },
+    {
+      "h": "The one metering effect worth knowing",
+      "p": [
+        "HT consumers are usually metered on the high-voltage side, before their own transformer, so billed units include transformer losses. An LT consumer is metered after the discom's transformer. Moving from LT to HT supply can therefore raise billed kWh slightly for the same load. Those extra units are real consumption on your side of the meter and are counted."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50,000 kWh under different tariffs",
+    "lines": [
+      "LT commercial: 50,000 x 0.710 = 35,500 kg CO2",
+      "HT industrial, same 50,000 kWh: 35,500 kg CO2",
+      "Time of day, 15,000 peak + 35,000 other units: 50,000 x 0.710 = 35,500 kg CO2",
+      "Green tariff covering 20,000 kWh with documented attributes: location-based 35,500 kg; market-based 30,000 x 0.710 = 21,300 kg CO2"
+    ],
+    "note": "The market-based line applies the grid factor to the 30,000 kWh not covered by the green tariff. Where no residual mix factor is published, say in the report which factor you used for those units."
+  },
+  "senseible": "Senseible reads the tariff category and units from your bill and calculates location-based Scope 2 as kWh x 0.710 kg CO2 per kWh, whatever the tariff. A green tariff shows only in market-based Scope 2, when you record it as an instrument with its quantity, period and evidence.",
+  "links": [
+    {
+      "label": "Green tariff and zero Scope 2",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Time of day tariff for Indian factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "How to read an HT industrial power bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance; recheck how tariff-based and hourly claims are treated once the revision is published."
+}

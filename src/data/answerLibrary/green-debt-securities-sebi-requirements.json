@@ -1,0 +1,80 @@
+{
+  "slug": "green-debt-securities-sebi-requirements",
+  "q": "What does SEBI require to issue green debt securities in India?",
+  "title": "SEBI rules for green debt securities",
+  "short": "SEBI requires a listed green debt security to fund an eligible green category, and the issuer to appoint an independent reviewer and disclose its environmental objectives, project selection, proceeds tracking and the review's scope in the offer document, then report use of proceeds and impact every year.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Listed companies and NBFCs considering green bonds",
+  "sections": [
+    {
+      "h": "Which rules apply",
+      "p": [
+        "Green debt securities are defined in the SEBI (Issue and Listing of Non-Convertible Securities) Regulations, 2021, and the detailed disclosure rules sit in the green debt chapter of SEBI's master circular for non-convertible securities. A revised circular in February 2023 aligned them with the updated international Green Bond Principles. They apply to green debt that is listed or proposed to be listed, whether issued publicly or by private placement.",
+        "Social, sustainability and sustainability-linked bonds are covered by a separate SEBI framework for ESG debt securities issued on 5 June 2025, and the February 2026 changes brought the reviewer rules for green debt in line with it."
+      ]
+    },
+    {
+      "h": "What the money can fund",
+      "p": [
+        "The proceeds must go to an eligible green category. The regulations list areas such as renewable and sustainable energy, clean transportation, climate change adaptation, energy efficiency, sustainable waste management, sustainable land use, biodiversity conservation, green buildings, pollution prevention and sustainable water management. The 2023 revision added labels for sub-types: blue bonds for water and oceans, yellow bonds for solar, and transition bonds for moving to a lower-carbon process, which need the issuer's transition plan to be disclosed."
+      ]
+    },
+    {
+      "h": "What goes in the offer document",
+      "ul": [
+        "The environmental objectives of the issue and the eligible project categories.",
+        "The decision process for choosing projects and the environmental and social risks considered.",
+        "How the proceeds will be tracked and where unallocated money will be parked meanwhile.",
+        "Whether any proceeds refinance existing projects, and how much.",
+        "The independent third-party reviewer or certifier appointed, and the scope of its review, such as a second party opinion, verification, certification or rating."
+      ]
+    },
+    {
+      "h": "What must be reported after issue",
+      "ul": [
+        "Use of proceeds, the list of projects funded and amounts allocated, and any unutilised balance, in the annual report and with financial results.",
+        "The environmental impact of the projects, with quantitative indicators where feasible and the method and assumptions behind them.",
+        "Any change in the projects funded."
+      ],
+      "p": [
+        "SEBI's dos and don'ts for issuers warn against misleading green labels, selective data and impact claims that cannot be backed. Keep the evidence for every impact figure you publish."
+      ]
+    },
+    {
+      "h": "Practical checks before you file",
+      "ol": [
+        "Confirm each project fits a listed category and that you can keep its spend separate in your books.",
+        "Line up the independent reviewer early. Since SEBI's circular of 27 February 2026 an issuer of green debt securities must appoint one that is independent of the issuer and its management, paid without conflicts of interest and has ESG expertise.",
+        "Set up impact measurement now, such as MWh generated or saved and tonnes CO2 avoided, so the first annual report is not built from estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible's verified energy and fuel records for financed projects can feed the impact figures in your annual green bond report. It is not an external reviewer or certifier and does not structure or file the issue.",
+  "links": [
+    {
+      "label": "Green bond impact reporting metrics",
+      "to": "/answers/green-bond-impact-reporting-metrics"
+    },
+    {
+      "label": "Green loans, SLLs and green bonds",
+      "to": "/green-finance"
+    },
+    {
+      "label": "SLLs vs green bonds for MSMEs",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI Master Circular for issue and listing of non-convertible securities, chapter on green debt securities (incl. revised disclosure requirements, February 2023)",
+      "url": "https://www.sebi.gov.in"
+    },
+    {
+      "label": "SEBI (Issue and Listing of Non-Convertible Securities) Regulations, 2021",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "SEBI updates the master circular for non-convertible securities regularly; check the current green debt chapter and the reviewer conditions before an issue."
+}

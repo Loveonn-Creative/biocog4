@@ -1,0 +1,79 @@
+{
+  "slug": "cold-storage-emissions-per-tonne",
+  "q": "How do I calculate the carbon footprint of a cold storage per tonne stored, including refrigerant leaks?",
+  "title": "Cold storage CO2e per tonne, with leaks",
+  "short": "Add three things for the year: grid kWh x 0.710 kg CO2, DG diesel litres x 2.68 kg CO2, and refrigerant kg topped up x the gas's GWP. Divide the total by tonne-months stored, or by tonnes handled if you charge per load. Refrigerant matters in an HFC plant and adds almost nothing in an ammonia plant.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Cold storage owners, agri exporters and 3PLs",
+  "sections": [
+    {
+      "h": "The three sources and their scopes",
+      "ul": [
+        "Grid electricity for compressors, evaporator fans, lights and ripening chambers: Scope 2, from discom bills.",
+        "Diesel for the backup generator: Scope 1, from fuel invoices or the DG log.",
+        "Refrigerant leaks: Scope 1 when you control the plant, measured as kilograms charged during servicing, from AMC or gas supplier invoices. Leave out the first charge of new equipment and gas kept in stock."
+      ]
+    },
+    {
+      "h": "Which GWP to use for the refrigerant",
+      "p": [
+        "Multiply the kilograms topped up by the gas's 100-year GWP from one IPCC report, and name it. In IPCC AR6 R-134a is 1,530. Blends such as R-404A or R-410A take the mass-weighted GWP of their components. Ammonia (R-717) is not a greenhouse gas under the GHG Protocol, so an ammonia plant's leaks add nothing to CO2e, although they remain a safety matter. R-22 and other HCFCs are reported outside the Scope 1 total."
+      ]
+    },
+    {
+      "h": "Choosing the denominator",
+      "p": [
+        "Tonne-months stored, the average stock in the register each month added up over the year, suits a store that rents space by time. Tonnes handled, inward plus outward or inward only, suits a pack house or 3PL that charges per load. Pick one, state it, and keep it the same each year, because the two give very different numbers for the same store."
+      ]
+    },
+    {
+      "h": "Why the per-tonne figure moves",
+      "p": [
+        "A half-empty store still runs its compressors, so emissions per tonne rise when occupancy falls even if nothing is wrong. A single large leak can also make one year look much worse. Show the three sources separately next to the per-tonne figure so a buyer or lender can see which one changed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year at a 5,000 tonne HFC store (illustrative figures)",
+    "lines": [
+      "Electricity: 12,00,000 kWh x 0.710 = 8,52,000 kg CO2",
+      "DG diesel: 15,000 L x 2.68 = 40,200 kg CO2",
+      "Refrigerant top-ups: 40 kg R-134a x 1,530 (AR6) = 61,200 kg CO2e",
+      "Total: 8,52,000 + 40,200 + 61,200 = 9,53,400 kg CO2e, refrigerant about 6.4% of it",
+      "Average stock 3,000 t over 12 months = 36,000 tonne-months; 9,53,400 / 36,000 = 26.5 kg CO2e per tonne-month",
+      "Or per tonne handled: 15,000 t inward; 9,53,400 / 15,000 = 63.6 kg CO2e per tonne"
+    ],
+    "note": "The total is CO2e because it includes the refrigerant; the electricity and diesel lines are CO2 only."
+  },
+  "senseible": "Senseible reads the kWh from electricity bills at 0.710 kg CO2 per kWh and diesel invoices at 2.68 kg CO2 per litre, with the factor on each line. Refrigerant is calculated when you supply the gas and the kilograms charged; a gas purchase invoice alone is kept as evidence, not treated as a leak. Tonnes stored come from your own register.",
+  "links": [
+    {
+      "label": "Refrigerant leaks in the cold chain",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    },
+    {
+      "label": "Cold storage electricity per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4 (HFCs in Scope 1)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 Supplementary Material, Table 7.SM.7 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "dual-fuel-dg-set-gas-kit-emissions-saving",
+  "q": "Does converting a diesel generator to dual fuel with a gas kit cut CO2, and by how much?",
+  "title": "Dual-fuel DG set: how much CO2 it saves",
+  "short": "Yes, but only for the share of diesel the gas replaces. Natural gas emits about 24% less CO2 than diesel per unit of fuel energy, so a kit that replaces 60% of the diesel energy cuts CO2 by about 15%, less any efficiency loss. Methane slip from the engine can eat into that.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories and commercial sites in Delhi NCR facing DG set restrictions",
+  "sections": [
+    {
+      "h": "Where the 24% comes from",
+      "p": [
+        "The IPCC 2006 default for diesel is 74.1 kg CO2 per GJ of fuel energy, and for natural gas 56.1 kg CO2 per GJ. Gas emits (74.1 minus 56.1) / 74.1 = 24.3% less per GJ. Total saving = substitution share x 24.3%, where the substitution share is the fraction of fuel energy that now comes from gas, not the fraction of litres or cubic metres."
+      ]
+    },
+    {
+      "h": "What decides the real saving",
+      "ul": [
+        "Substitution share: comes from the kit supplier's test data and falls at low load, where many kits run mostly on diesel.",
+        "Efficiency: if the engine burns more total fuel energy per kWh in dual-fuel mode, part of the saving is lost.",
+        "Methane slip: some gas passes through unburnt. CO2-only factors do not count it, and methane has a much higher GWP, so ask the supplier for unburnt hydrocarbon or methane test results.",
+        "Running hours: a DG set that runs only during outages saves little in absolute terms, however good the kit."
+      ]
+    },
+    {
+      "h": "Why NCR sites are converting",
+      "p": [
+        "The Commission for Air Quality Management in NCR regulates diesel generator use through Direction No. 76 of 29 September 2023, amended in February 2024. It sets conditions by generator size, such as conversion to dual fuel and retrofitted emission control devices, for sets to keep running, including during GRAP restrictions. These rules are about air pollution, mainly particulates and NOx, not CO2. Check the direction in force for your set's kW rating on caqm.nic.in before relying on it."
+      ]
+    },
+    {
+      "h": "How to evidence the saving",
+      "ol": [
+        "Keep 6 to 12 months of diesel invoices and DG kWh readings before the retrofit.",
+        "After the retrofit, keep diesel invoices and PNG or CNG bills for the DG set, with kWh readings for the same months.",
+        "Compare kg CO2 per kWh generated before and after, not total CO2, so changes in outage hours do not distort the result.",
+        "Keep the kit supplier's test report with the records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 litres of diesel a month",
+    "lines": [
+      "Before: 10,000 L x 2.68 kg CO2 per L = 26,800 kg CO2; fuel energy = 26,800 / 74.1 = 361.7 GJ",
+      "After, 60% of energy from gas at the same efficiency: diesel 4,000 L x 2.68 = 10,720 kg CO2",
+      "Gas: 0.6 x 361.7 = 217.0 GJ x 56.1 = 12,174 kg CO2, about 5,939 scm of PNG at 2.05 kg CO2 per scm",
+      "Total after: 10,720 + 12,174 = 22,894 kg CO2; saving 3,906 kg, 14.6% (0.6 x 24.3%)",
+      "With a 5% efficiency loss: 22,894 x 1.05 = 24,039 kg; saving 2,761 kg, 10.3%"
+    ],
+    "note": "The 60% substitution and 5% efficiency loss are assumptions for the arithmetic. Methane slip is not included."
+  },
+  "senseible": "Senseible counts diesel litres and PNG scm from your invoices in Scope 1 at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, PNG 2.05 kg CO2 per scm), so months before and after the retrofit show the shift in fuel. The substitution share and methane slip come from the kit supplier's tests.",
+  "links": [
+    {
+      "label": "Furnace oil to PNG: emissions saving",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "DG set emissions per kWh vs the grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Diesel generator kWh per litre",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion (default CO2 factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Commission for Air Quality Management in NCR and Adjoining Areas, Direction No. 76 (29 September 2023, as amended) on DG sets (caqm.nic.in)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "CAQM directions on DG sets are revised from time to time; confirm Direction No. 76 is still the one in force and the size bands it sets."
+}

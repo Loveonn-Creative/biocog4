@@ -1,0 +1,90 @@
+{
+  "slug": "hsn-codes-for-fuels-scope-1",
+  "q": "Which HSN codes on an invoice mean fuel for Scope 1, such as coal, coke, diesel, LPG and natural gas?",
+  "title": "HSN codes that mean Scope 1 fuel",
+  "short": "Most combustion fuels sit in HSN Chapter 27: 2701 coal, 2702 lignite, 2704 coke, 2710 diesel, petrol, kerosene and furnace oil, 2711 LPG and natural gas, and 2713 petroleum coke. Fuel wood is 4401. The code only shows the family; the line counts as Scope 1 only if you burn it in equipment you own or control.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Accountants and carbon analysts classifying purchase registers",
+  "sections": [
+    {
+      "h": "The headings that usually mean fuel",
+      "ul": [
+        "2701: coal, including steam coal, anthracite and briquettes. IPCC factors depend on the coal grade.",
+        "2702: lignite. About 1.20 kg CO2 per kg at the IPCC 2006 default calorific value.",
+        "2704: coke and semi-coke of coal. About 3.02 kg CO2 per kg for coke oven coke (IPCC 2006 default).",
+        "2710: liquid petroleum fuels, such as diesel (HSD), petrol, kerosene, furnace oil and LDO. The description decides which.",
+        "2711: petroleum gases, such as LPG, propane and butane, and natural gas as PNG, CNG or LNG.",
+        "2713: petroleum coke. About 3.17 kg CO2 per kg at the IPCC 2006 default calorific value.",
+        "4401: fuel wood, wood chips, sawdust and pellets. 4402: charcoal."
+      ]
+    },
+    {
+      "h": "Lines under fuel headings that are not combustion",
+      "ul": [
+        "Lubricating oils and greases under 2710: not burnt, so no combustion factor.",
+        "Bitumen under 2713 and paraffin wax under 2712: used as materials, not fuel.",
+        "Calcined petroleum coke under 2713 bought for anodes or as a carburiser: its CO2 is process emissions, calculated from the carbon used, not with a fuel factor.",
+        "Naphtha or natural gas used as chemical feedstock: some carbon ends in the product, so a simple combustion factor overstates.",
+        "2716 is electricity, in Chapter 27 but Scope 2, not Scope 1."
+      ]
+    },
+    {
+      "h": "When a fuel line is not your Scope 1",
+      "ul": [
+        "Fuel bought for resale, as by a dealer or trader: not burnt by you. A fuel seller reports the end use under Scope 3 Category 11.",
+        "Fuel in hired trucks or a contractor's machines, paid inside a freight or service bill: the operator's Scope 1, your Scope 3.",
+        "Fuel still in the tank or yard at year end: count what was consumed, not what was bought.",
+        "Biomass under 4401: its CO2 is biogenic and reported separately from the scopes; only its methane and nitrous oxide go into Scope 1."
+      ]
+    },
+    {
+      "h": "Pump slips often have no HSN code",
+      "p": [
+        "Petrol, diesel and natural gas are outside GST, so fuel pump and gas supplier bills often carry no HSN code at all. Classify them from the description and the unit instead: litres of HSD at a pump, or scm on a PNG bill, are clear enough to classify without a code."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: five purchase register lines",
+    "lines": [
+      "HSN 2701, steam coal, 50 t: 50,000 kg x 2.42 kg CO2 per kg = 121,000 kg CO2, Scope 1",
+      "HSN 2711, LPG, 1,900 kg: 1,900 x 2.98 = 5,662 kg CO2, Scope 1",
+      "HSN 2710, lubricating oil, 400 litres: not burnt, no combustion factor",
+      "HSN 2713, bitumen for road repair, 2 t: a material, no combustion factor",
+      "HSN 4401, fuel wood, 10 t: biogenic CO2, reported outside the scopes",
+      "Scope 1 CO2 from these lines: 121,000 + 5,662 = 126,662 kg, about 126.7 t"
+    ],
+    "note": "Coal and LPG factors are the IPCC 2006 based defaults Senseible uses. Lignite, coke and petroleum coke values above are calculated from IPCC 2006 default carbon content and calorific values; lab analysis of your own fuel is more precise."
+  },
+  "senseible": "Senseible classifies Chapter 27 lines as Scope 1 fuel and 2716 as Scope 2, then takes the factor from the description and unit: diesel 2.68 kg CO2 per litre, petrol 2.31 per litre, LPG 2.98 per kg, PNG 2.05 per scm, coal 2.42 per kg, furnace oil 2.97 per litre. Lines such as coke, lignite, petroleum coke or a lubricant show Needs Data rather than a guessed figure.",
+  "links": [
+    {
+      "label": "Mapping HSN codes to emission factors",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Invoice without an HSN code",
+      "to": "/answers/invoice-without-hsn-code-carbon-classification"
+    },
+    {
+      "label": "Fuel sellers and Category 11",
+      "to": "/answers/fuel-sellers-category-11-combustion-of-sold-fuel"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 (Tables 1.2 and 1.4)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

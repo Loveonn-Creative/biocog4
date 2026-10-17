@@ -1,0 +1,82 @@
+{
+  "slug": "steam-pipe-insulation-heat-loss",
+  "q": "How much fuel do uninsulated steam pipes waste?",
+  "title": "Fuel lost from bare steam pipes",
+  "short": "A lot. In an illustrative case, 50 metres of bare 80 mm steam pipe at about 170 C wastes roughly 33 tonnes of furnace oil over 8,000 hours a year, about 105 tonnes of CO2. In the same example, 50 mm of insulation cuts that loss by about 80 percent.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers in steam-using MSMEs",
+  "sections": [
+    {
+      "h": "The BEE surface heat loss formula",
+      "p": [
+        "The Bureau of Energy Efficiency's guide book for energy auditors gives a quick formula for heat lost from a hot surface:",
+        "S = [10 + (Ts minus Ta) / 20] x (Ts minus Ta), in kcal per hour per square metre, where Ts is the surface temperature and Ta the ambient temperature in degrees C.",
+        "Total loss per hour is S times the surface area. Fuel wasted per year is that loss times operating hours, divided by (the fuel's calorific value times boiler efficiency). It is an estimate meant for surfaces up to about 200 C; above that, use a detailed method."
+      ]
+    },
+    {
+      "h": "What to measure on site",
+      "ul": [
+        "Surface temperature with an infrared thermometer at several points, while steam is flowing.",
+        "Ambient air temperature near the pipe, not outdoors in the sun.",
+        "Pipe outer diameter and length for each line; area per metre is pi times the outer diameter.",
+        "Bare valves, flanges and strainers, which have more surface than the same length of pipe; measure and add them.",
+        "Annual hours the line is under steam, and the boiler's fuel and efficiency."
+      ]
+    },
+    {
+      "h": "Turning fuel into CO2",
+      "p": [
+        "Multiply the fuel wasted by its emission factor: 2.97 kg CO2 per litre of furnace oil, 2.42 kg CO2 per kg of coal or 2.05 kg CO2 per scm of PNG (IPCC 2006 defaults). The saving from insulating is a Scope 1 reduction, because the boiler burns less fuel. If you buy steam from a park boiler, the saving shows in your purchased steam instead."
+      ]
+    },
+    {
+      "h": "Edge cases",
+      "ul": [
+        "Wet or damaged insulation can lose nearly as much as a bare pipe; check cladding after leaks and monsoon.",
+        "Condensate return lines carry useful heat too and are often left bare.",
+        "Insulation thickness has an economic optimum, set by fuel price against insulation cost; apply and finish it to IS 14164, the Indian code of practice for industrial thermal insulation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 50 m of bare 80 mm pipe, furnace oil boiler",
+    "lines": [
+      "Pipe outer diameter 88.9 mm; area = 3.1416 x 0.0889 x 50 = 13.96 m2",
+      "Ts 170 C, Ta 30 C, difference 140: S = (10 + 140/20) x 140 = 17 x 140 = 2,380 kcal/h per m2",
+      "Loss = 2,380 x 13.96 = 33,225 kcal/h",
+      "Per year at 8,000 h: 33,225 x 8,000 = 265.8 million kcal",
+      "Fuel = 265.8 million / (10,000 kcal/kg x 0.80 efficiency) = 33,225 kg furnace oil",
+      "At 0.94 kg/L (assumed density): 33,225 / 0.94 = about 35,350 L; x 2.97 = about 105,000 kg CO2",
+      "With 50 mm insulation, outer diameter 188.9 mm, area 29.67 m2, surface 50 C: S = (10 + 1) x 20 = 220; loss = 6,527 kcal/h, about 80 percent less"
+    ],
+    "note": "Calorific value 10,000 kcal/kg, 80 percent efficiency and 0.94 kg/L density are assumptions; use your fuel test report and boiler efficiency. The saving here is about 26,700 kg of furnace oil and 84 tonnes of CO2 a year."
+  },
+  "senseible": "Senseible reads your boiler fuel invoices and gives Scope 1 emissions from the fuel bought, so the effect of insulation shows up as lower fuel per period. The heat loss figure itself comes from the site measurements above.",
+  "links": [
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Boiler efficiency: direct and indirect",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Energy Auditor Guide Book 2, Energy Efficiency in Thermal Utilities, chapter on insulation and refractories",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

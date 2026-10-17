@@ -1,0 +1,84 @@
+{
+  "slug": "injection-moulding-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of an injection moulded plastic part, and how do I calculate it?",
+  "title": "Carbon per kg of a moulded plastic part",
+  "short": "Calculate it as resin used per kg of good parts times the resin's cradle-to-gate factor, plus the electricity per kg of good parts times the grid factor. The resin usually makes up most of the total, so the polymer grade, runner waste and reject rate matter more than the machine.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Plastic component makers supplying auto, appliance and FMCG buyers",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Footprint per kg of good parts = (resin kg per kg of good parts x resin factor) + (kWh per kg of good parts x grid factor) + other materials such as masterbatch, inserts and packaging.",
+        "Resin per kg of good parts = (part weight + runner weight) / part weight / (1 minus reject rate). If runners and rejects are reground and fed back into the same job, count only the share that leaves as waste."
+      ]
+    },
+    {
+      "h": "Where the resin factor comes from",
+      "p": [
+        "Use a cradle-to-gate factor for the exact polymer, in kg CO2e per kg: from your resin supplier's product footprint or EPD, or from a published industry eco-profile for that polymer, with its edition and region. PP, ABS, PA66 and PC differ a lot, and glass-filled or flame-retardant grades differ again.",
+        "Do not use one generic plastic factor for every grade. A buyer under ISO 14067 will ask which dataset each material line came from."
+      ]
+    },
+    {
+      "h": "How to get kWh per kg of parts",
+      "ol": [
+        "Best: a sub-meter on the moulding machine for a production run, divided by kg of good parts from that run.",
+        "Next: machine hours for the job times average measured power, not nameplate power. Nameplate rating overstates use on servo machines.",
+        "Add a share of shared loads, such as chillers, dryers, compressors and the mould temperature controller, by machine hours or by kg.",
+        "Check the sum of all jobs against the month's electricity bill so nothing is missed or counted twice."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "p": [
+        "Give the footprint per kg and per part, cradle to gate, with the resin grade and its data source, the reject and runner loss used, the kWh per kg and the grid factor and edition. Report resin and electricity as separate lines, since the buyer may hold better data on one of them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 50 g part with a 5 g cold runner",
+    "lines": [
+      "Resin per good part: 55 g / 0.98 (2% rejects) = 56.12 g",
+      "Resin per kg of good parts: 56.12 / 50 = 1.122 kg",
+      "Resin factor: 2.0 kg CO2e per kg (placeholder for the arithmetic, not a published value)",
+      "Resin line: 1.122 x 2.0 = 2.244 kg CO2e",
+      "Machine: 1,200 kWh for 1,500 kg of good parts = 0.80 kWh per kg",
+      "Shared chiller, dryer and compressor: 300 kWh / 1,500 kg = 0.20 kWh per kg",
+      "Electricity line: 1.00 kWh x 0.710 kg CO2 per kWh = 0.710 kg CO2",
+      "Total: 2.244 + 0.710 = 2.954 kg CO2e per kg of good parts, so 0.148 kg per 50 g part"
+    ],
+    "note": "Replace the placeholder with your resin's sourced factor. The grid factor is CEA CO2 Baseline Database version 21.0 and covers CO2 only; the resin factor is CO2e. Masterbatch, inserts, packaging and transport are left out here."
+  },
+  "senseible": "Senseible reads resin purchase quantities from invoices and kWh from electricity bills, applying 0.710 kg CO2 per kWh. Resin lines show Needs Data until a sourced factor for that polymer is added, and the split of kWh across machines and parts comes from your own meter or machine data.",
+  "links": [
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "What to send for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

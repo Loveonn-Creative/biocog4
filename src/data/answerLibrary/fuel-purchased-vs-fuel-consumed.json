@@ -1,0 +1,80 @@
+{
+  "slug": "fuel-purchased-vs-fuel-consumed",
+  "q": "Should I count fuel when it is bought or when it is used, if I hold diesel stock?",
+  "title": "Fuel bought or fuel used: which to count?",
+  "short": "Count fuel when it is used, not when it is bought. Emissions happen when diesel burns, so take the year's purchases, add opening stock and subtract closing stock. If stock barely changes, purchases are an acceptable stand-in, but say so in your method note.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Plant accountants and auditors",
+  "sections": [
+    {
+      "h": "The formula and where each number comes from",
+      "ul": [
+        "Fuel used = purchases + opening stock minus closing stock, all in litres.",
+        "Purchases: the fuel invoices dated inside the reporting period.",
+        "Opening and closing stock: the store register or a dip reading of each tank on the first and last day, signed by whoever took it.",
+        "Use the same tanks and the same day every year, so one year's closing stock is the next year's opening stock."
+      ]
+    },
+    {
+      "h": "When purchases alone are good enough",
+      "p": [
+        "If you keep little stock, or the level at year end is close to the level at the start, the difference is small and purchases give nearly the same answer. Many small units report purchases for that reason.",
+        "Write it in the method note: \"Diesel is reported on a purchase basis; stock change is small.\" Over several years the timing differences cancel out, as long as you use the same basis every year."
+      ]
+    },
+    {
+      "h": "Cases that change the answer",
+      "ul": [
+        "A large bulk purchase just before year end: purchases overstate the year, and the next year looks too low.",
+        "Fuel moved to another site: count it at the site that burns it, not the one that bought it.",
+        "Fuel sold or given to another company: take it out of your figure.",
+        "Diesel issued to a contractor's machines on your site: who counts it depends on which party has operational control of the equipment. Decide once and record it.",
+        "Monthly or quarterly reporting: apply the same stock adjustment to each period."
+      ]
+    },
+    {
+      "h": "What an auditor will look for",
+      "p": [
+        "A verifier will reconcile invoices to the purchase ledger, then purchases to use through the stock register. A missing or unsigned closing stock reading is a common finding. If you switch from purchase basis to use basis, restate the previous year or explain the change, so the trend stays comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a plant with a diesel tank",
+    "lines": [
+      "Purchases in the year: 40,000 L; opening stock 2,500 L; closing stock 8,000 L",
+      "Diesel used: 40,000 + 2,500 minus 8,000 = 34,500 L",
+      "Use basis: 34,500 x 2.68 kg CO2 per L = 92,460 kg, about 92.5 t CO2",
+      "Purchase basis: 40,000 x 2.68 = 107,200 kg, about 107.2 t CO2",
+      "Purchase basis overstates the year by 14.7 t, about 16%"
+    ],
+    "note": "Diesel factor is the IPCC 2006 default. The 14.7 t is not lost; it shows up when that closing stock is burnt next year."
+  },
+  "senseible": "Senseible reads the date and quantity from each fuel purchase invoice and applies the IPCC 2006 factor, for example 2.68 kg CO2 per litre of diesel. Opening and closing stock come from your store register rather than an invoice, so keep that register with the invoices as evidence for the adjustment.",
+  "links": [
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Documents needed for carbon verification",
+      "to": "/climate-intelligence/documents-needed-carbon-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapters 6 and 7",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-3:2019, verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

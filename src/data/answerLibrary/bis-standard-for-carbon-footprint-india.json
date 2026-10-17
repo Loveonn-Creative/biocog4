@@ -1,0 +1,67 @@
+{
+  "slug": "bis-standard-for-carbon-footprint-india",
+  "q": "Is there a BIS (Bureau of Indian Standards) standard for calculating a company's or product's carbon footprint?",
+  "title": "Is there a BIS carbon footprint standard?",
+  "short": "BIS has no separate method of its own. For a company's greenhouse gas inventory it has adopted ISO 14064-1 as IS/ISO 14064-1, identical to ISO 14064-1:2018. For products, ISO 14067 is the reference; check the BIS portal for its Indian adoption. No BIS carbon footprint certification mark is known.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian manufacturers asked for a BIS carbon standard",
+  "sections": [
+    {
+      "h": "What BIS has adopted",
+      "ul": [
+        "Organisation inventory: IS/ISO 14064-1:2018, an identical adoption of ISO 14064-1:2018. It replaced IS/ISO 14064-1:2009, the Indian adoption of the 2006 edition.",
+        "Verification: IS/ISO 14064-3:2019 is also adopted, for validating and verifying a greenhouse gas statement.",
+        "Product footprint: BIS circulated a draft Indian standard in October 2023 on quantifying the carbon footprint of products, in line with ISO 14067, and its committee later finalised it for printing. Check the BIS catalogue for the published number before quoting it."
+      ]
+    },
+    {
+      "h": "What identical adoption means for you",
+      "p": [
+        "The Indian standard carries the same text as the ISO standard under a dual number. If you prepared your inventory to ISO 14064-1:2018, you have prepared it to IS/ISO 14064-1. You do not need a second calculation.",
+        "When a tender or buyer asks for a \"BIS carbon standard\", answer with the exact standard number, the reporting year and the boundary you used."
+      ]
+    },
+    {
+      "h": "What it does not mean",
+      "ul": [
+        "Adoption does not make the standard mandatory for any company.",
+        "BIS does not license or certify carbon footprints the way it certifies products under its marks.",
+        "Independent checking of an inventory is done by a verification body under ISO 14064-3. A footprint without such a check is self-declared."
+      ]
+    },
+    {
+      "h": "How it fits with the GHG Protocol and BRSR",
+      "p": [
+        "ISO 14064-1 and the GHG Protocol Corporate Standard are built on the same principles and produce compatible Scope 1 and 2 figures. BRSR asks listed companies for Scope 1 and 2 in its own format, without naming a BIS standard. Choose one method, name it in your report, and do not switch between years without restating."
+      ]
+    }
+  ],
+  "senseible": "Senseible's reports are self-declared drafts that follow the GHG Protocol, built from your invoices and bills, so you can name your method and point to the document behind every line. They are not a BIS output.",
+  "links": [
+    {
+      "label": "ISO 14064 vs the GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "Is ISO 14067 certification mandatory?",
+      "to": "/answers/is-iso-14067-certification-mandatory"
+    },
+    {
+      "label": "ISO 14067 vs GHG Protocol product standard",
+      "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, adopted in India as IS/ISO 14064-1; ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The Indian adoption of ISO 14067 (draft CHD 34/18443, October 2023) was finalised for printing in 2024; confirm the published number in the BIS catalogue. The BIS committee has since been renamed EED 01."
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "brsr-green-credits-disclosure",
+  "q": "What is the voluntary green credits disclosure in BRSR, and what counts?",
+  "title": "Green credits disclosure in BRSR",
+  "short": "It is a voluntary BRSR line, added by SEBI in March 2025, where a listed company reports Green Credits generated or procured by itself and by its top ten value chain partners. Only Green Credits under MoEFCC's Green Credit Rules, 2023 count; carbon credits and RECs do not.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian listed-company sustainability lead",
+  "sections": [
+    {
+      "h": "What SEBI added",
+      "p": [
+        "SEBI's circular of 28 March 2025 (SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42) is better known for easing BRSR Core assurance and value chain reporting. Tucked into it is a new leadership indicator under Principle 6 of BRSR: a voluntary count of green credits, meant to draw listed companies into the government's Green Credit Programme. It applies from the FY 2024-25 BRSR onwards.",
+        "The indicator asks for the number of credits generated or procured by the listed entity, and by its top ten value chain partners, ranked by value of purchases and of sales. Leadership indicators are voluntary, so leaving it blank is not a breach."
+      ]
+    },
+    {
+      "h": "What counts as a green credit here",
+      "ul": [
+        "Counts: Green Credits awarded under the Green Credit Rules, 2023 (G.S.R. 761(E), 12 October 2023), recorded on the programme's registry.",
+        "Does not count: carbon credits from Verra, Gold Standard or India's Carbon Credit Trading Scheme, renewable energy certificates, Energy Saving Certificates under PAT, or plastic EPR certificates.",
+        "Does not count: saplings planted or money paid to a plantation scheme where no Green Credit has yet been awarded."
+      ]
+    },
+    {
+      "h": "How to prepare the figures",
+      "ol": [
+        "List credits your company holds on the Green Credit registry, split into generated and procured, with the activity type, such as tree plantation.",
+        "Note any credits already exchanged against a compensatory afforestation, CSR or other legal obligation.",
+        "Ask your top ten suppliers and top ten customers by value whether they hold Green Credits, and record nil where they say none.",
+        "Keep the registry records behind each number in case the BRSR is assessed or assured."
+      ]
+    },
+    {
+      "h": "How it relates to your GHG figures",
+      "p": [
+        "A Green Credit is not a tonne of CO2e. Report it in its own line and do not subtract it from the Scope 1, 2 or 3 emissions you disclose under BRSR Core. Mixing the two would overstate your progress and is the kind of claim a reviewer will question."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the Scope 1 and 2 records and supplier evidence behind your BRSR emissions figures. Green Credits come from the Green Credit registry and stay in their own line, separate from those figures.",
+  "links": [
+    {
+      "label": "Green Credit vs carbon credit",
+      "to": "/answers/green-credit-vs-carbon-credit-india"
+    },
+    {
+      "label": "BRSR Core nine attributes",
+      "to": "/answers/brsr-core-nine-attributes-explained"
+    },
+    {
+      "label": "BRSR requirements in India",
+      "to": "/climate-intelligence/brsr-reporting-requirements-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SEBI circular SEBI/HO/CFD/CFD-PoD-1/P/CIR/2025/42, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "MoEFCC, Green Credit Rules, 2023 (G.S.R. 761(E), 12 October 2023)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The Green Credit Rules have been amended since 2023 and SEBI may revise the BRSR format; re-check the disclosure wording each reporting year."
+}

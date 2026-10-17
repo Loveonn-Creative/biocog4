@@ -1,0 +1,83 @@
+{
+  "slug": "durable-removals-vs-nature-based-for-net-zero",
+  "q": "Do I need permanent carbon removals for net zero, or will tree planting do?",
+  "title": "Durable removals or trees for net zero?",
+  "short": "For the residual CO2 left at your net zero year, yes: SBTi's Corporate Net-Zero Standard expects durable, long-lived removals to neutralise it. Tree planting stores carbon that fire, pests or felling can release, so it alone will not cover that residual. It still fits before then, as climate action beyond your value chain.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Indian companies with net zero targets",
+  "sections": [
+    {
+      "h": "Where removals fit in a net zero target",
+      "p": [
+        "Net zero is reached by cutting your own Scope 1, 2 and 3 emissions first; under version 1 of the SBTi Corporate Net-Zero Standard that meant at least 90 percent for most sectors. Removals are only for the residual that cannot be cut, and they never count as progress toward your reduction targets. Credits bought before the net zero year sit outside the target, as climate action beyond your value chain."
+      ]
+    },
+    {
+      "h": "Durable and nature-based removals compared",
+      "ul": [
+        "Nature-based: trees, mangroves, soil carbon. Lower cost per tonne and co-benefits, but storage can reverse; programmes manage this with buffer pools and monitoring for a set period, often decades.",
+        "Durable: biochar, enhanced rock weathering, direct air capture or bioenergy with geological storage. Storage from centuries to thousands of years, with higher prices and limited supply today.",
+        "Avoided emissions credits, such as renewable energy or cookstoves, are not removals at all and cannot neutralise residual emissions."
+      ]
+    },
+    {
+      "h": "What the main guidance says",
+      "ul": [
+        "SBTi Corporate Net-Zero Standard: version 2.0 was published in June 2026 and replaces version 1 for new target submissions after a transition period. It matches durability to the gas: residual emissions of long-lived gases such as CO2 need long-lived removals, while other residuals can use short-lived removals such as trees, or a mix. It also phases in removal expectations before net zero for the largest companies; check the start year, percentages and which companies are covered on sciencebasedtargets.org.",
+        "Oxford Offsetting Principles (2024 revision): shift a portfolio over time toward removals, and toward long-lived storage.",
+        "ISO 14068-1:2023: a carbon neutrality claim, not a net zero target, but it also requires you to address the risk that stored carbon is released again."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Size your residual: your base year emissions times the share the standard lets remain at the target year.",
+        "Split the residual by gas: plan to cover the long-lived part, mostly CO2, with durable removals at the target year, and budget for it now, since supply is thin.",
+        "Use nature-based removals for any short-lived residual and, before the target year, as climate action beyond your value chain, from projects with buffer pools and long monitoring periods.",
+        "Never report either kind as a reduction in your inventory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative sizing of a residual",
+    "lines": [
+      "Base year Scope 1, 2 and 3: 20,000 t CO2e",
+      "Residual at the net zero year, assuming a 90 percent cut: 20,000 x 0.10 = 2,000 t CO2e",
+      "If, say, 1,800 t of that residual is CO2: about 1,800 t of durable removals a year from the target year",
+      "The other 200 t, for example methane, can be covered by short-lived or durable removals"
+    ],
+    "note": "The 90 percent cut and the 1,800 t CO2 share are assumptions for illustration; your sector pathway and gas mix set the real figures."
+  },
+  "senseible": "Senseible keeps the Scope 1, 2 and 3 inventory that your base year and residual are measured from. Which removals qualify is decided by the standard and confirmed by your target validator or verifier.",
+  "links": [
+    {
+      "label": "Can credits count toward an SBTi target?",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    },
+    {
+      "label": "Net zero vs carbon neutral",
+      "to": "/answers/net-zero-vs-carbon-neutral"
+    },
+    {
+      "label": "CO2 removed by a tonne of biochar",
+      "to": "/answers/how-much-co2-does-a-tonne-of-biochar-remove"
+    },
+    {
+      "label": "Net zero roadmap builder",
+      "to": "/net-zero"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Net-Zero Standard, version 2.0 (June 2026)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "ISO 14068-1:2023, Carbon neutrality (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "SBTi Corporate Net-Zero Standard version 2.0 has a transition period from version 1; re-check its effective dates and removal percentages before setting or resubmitting a target."
+}
