@@ -1,5 +1,6 @@
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import { sendTemplateEmail } from '../_shared/transactional-email-templates/send-email.ts';
+import { internalInbox } from '../_shared/internalInbox.ts';
 import { RESOURCE, type DnsAnswer } from '../_shared/resourceLead.ts';
 import { createHandler } from './handler.ts';
 
@@ -28,14 +29,15 @@ async function dnsJson(url: string): Promise<DnsAnswer | null> {
 // Team notification fallback: the same inbox the contact form uses.
 async function notifyFallback(subject: string, lines: string[]): Promise<boolean> {
   const key = Deno.env.get('RESEND_API_KEY');
-  if (!key) return false;
+  const inbox = internalInbox();
+  if (!key || !inbox) return false;
   const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       from: 'Senseible Leads <onboarding@resend.dev>',
-      to: ['biocog.v1@gmail.com'],
+      to: [inbox],
       subject,
       html: `<p>${lines.map(esc).join('<br>')}</p>`,
     }),

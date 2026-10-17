@@ -14,6 +14,8 @@ export interface TemplateEntry {
   previewData?: Record<string, any>
   /** Fixed recipient — overrides caller-provided recipientEmail when set. */
   to?: string
+  /** Send to the internal inbox from the INTERNAL_INBOX secret (never in code). */
+  toInternal?: boolean
 }
 
 /**

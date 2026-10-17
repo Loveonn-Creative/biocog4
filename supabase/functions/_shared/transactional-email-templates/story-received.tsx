@@ -37,8 +37,8 @@ export const template = {
   component: StoryReceived,
   subject: (d: Record<string, any>) => `[Customer story] ${d.publish ? 'Review' : 'Private feedback'}: ${d.hook || d.industry || 'new submission'}`,
   displayName: 'Customer story received',
-  // Fixed internal inbox; never shown to visitors.
-  to: 'biocog.v1@gmail.com',
+  // Sent to the internal inbox held in the INTERNAL_INBOX secret; never shown to visitors.
+  toInternal: true,
   previewData: { id: 'example', publish: true, buyer: 'msme', industry: 'Textiles and apparel', attribution: 'anonymous', hook: 'A buyer asked for carbon data. There was nothing to send.', dek: 'How a textiles manufacturer…', chapters: [{ title: 'The problem', text: 'Before Senseible…' }], email: 'owner@example.com', name: 'Not given', company: 'Not given', reviewUrl: 'https://senseible.earth/admin/stories' },
 } satisfies TemplateEntry
 

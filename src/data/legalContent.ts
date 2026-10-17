@@ -1,5 +1,5 @@
 // Legal documents content - Senseible
-// Note: All references to "Biocog" are displayed as "Senseible" and biocog.v1@gmail.com as impact@senseible.earth
+// Note: All references to "Biocog" are displayed as "Senseible"; the public contact is impact@senseible.earth
 
 export interface LegalDocument {
   id: string;
