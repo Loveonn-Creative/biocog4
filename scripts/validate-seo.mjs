@@ -81,7 +81,7 @@ async function main() {
 
     if (/name="robots" content="[^"]*noindex/.test(html)) fail(where, 'indexable route is marked noindex');
 
-    const body = html.slice(html.indexOf('<noscript>'));
+    const body = html.slice(html.indexOf('<div id="root">'));
     const h1s = (body.match(/<h1[\s>]/g) || []).length;
     if (h1s !== 1) fail(where, `expected 1 <h1> in body, found ${h1s}`);
 

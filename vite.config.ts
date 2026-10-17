@@ -27,6 +27,24 @@ const preloadPrimaryFont = (): Plugin => ({
   },
 });
 
+// Slow networks: the main stylesheet no longer blocks the first paint, so the
+// prerendered page text (inline-styled .ssr-shell) can show while CSS and JS
+// download. src/main.tsx starts the app only once this stylesheet has loaded,
+// so the app never renders unstyled.
+const nonBlockingCss = (): Plugin => ({
+  name: "senseible-non-blocking-css",
+  apply: "build",
+  transformIndexHtml: {
+    order: "post",
+    handler(html) {
+      return html.replace(
+        /<link rel="stylesheet" crossorigin href="(\/assets\/index-[\w-]+\.css)">/,
+        (_m, href) => `<link rel="preload" as="style" crossorigin href="${href}" id="app-css" onload="this.onload=null;this.rel='stylesheet'">\n    <noscript><link rel="stylesheet" crossorigin href="${href}"></noscript>`,
+      );
+    },
+  },
+});
+
 // One id per build, compiled into the bundle and written to /version.json, so
 // an open tab can tell a newer build is live (src/lib/reliability/newBuild.ts).
 const BUILD_ID = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
@@ -59,7 +77,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), preloadPrimaryFont(), buildVersion(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), preloadPrimaryFont(), nonBlockingCss(), buildVersion(), mode === "development" && componentTagger()].filter(Boolean),
   define: { __BUILD_ID__: JSON.stringify(mode === "production" ? BUILD_ID : "dev") },
   resolve: {
     alias: {
