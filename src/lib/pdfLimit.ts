@@ -3,7 +3,17 @@ import { exactPageCount } from './pdfSplit';
 import { UNKNOWN_PAGE_COUNT_MESSAGE } from '../../supabase/functions/_shared/extractionChecks';
 
 /** Checks a picked file before upload. Images always pass. */
-export async function checkUploadPages(file: File): Promise<{ ok: boolean; reason?: 'too_many_pages' | 'unknown_page_count'; message?: string }> {
+/**
+ * Pages per part when a PDF is split in the browser. With page counting each
+ * page is one invoice whatever the part size, so parts are 5 pages (read two
+ * at a time, so a long PDF finishes sooner). Before an account's switch a
+ * part counts as one read, so parts stay at the server's 10-page limit and
+ * nobody is charged more for the same PDF.
+ */
+export const CHUNK_PAGES = 5;
+export const chunkPagesFor = (pageCounting: boolean): number => (pageCounting ? CHUNK_PAGES : MAX_PDF_PAGES);
+
+export async function checkUploadPages(file: File, maxPages = MAX_PDF_PAGES): Promise<{ ok: boolean; reason?: 'too_many_pages' | 'unknown_page_count'; message?: string }> {
   if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) return { ok: true };
   const bytes = new Uint8Array(await file.arrayBuffer());
   if (!isPdf(bytes)) return { ok: true };
@@ -13,7 +23,7 @@ export async function checkUploadPages(file: File): Promise<{ ok: boolean; reaso
   if (pages === 0) pages = await exactPageCount(bytes);
   // Without a page count nothing can confirm the whole file was read.
   if (pages < 1) return { ok: false, reason: 'unknown_page_count', message: UNKNOWN_PAGE_COUNT_MESSAGE };
-  return pages > MAX_PDF_PAGES ? { ok: false, reason: 'too_many_pages', message: pageLimitMessage(pages) } : { ok: true };
+  return pages > maxPages ? { ok: false, reason: 'too_many_pages', message: pageLimitMessage(pages) } : { ok: true };
 }
 
 /** Pages in a picked file: a PDF's page count (0 when unknown), 1 for an image. */
@@ -32,6 +42,7 @@ export async function pageCountOf(file: File): Promise<number> {
  * estimate: repeat uploads of a stored invoice are free.
  */
 export function estimateReads(pageCounts: number[], pageCounting = false): { reads: number; pages: number } {
+  // Page counting: every page is one; before the switch, one per 10-page part.
   let reads = 0, pages = 0;
   for (const n of pageCounts) {
     const p = Math.max(1, n);

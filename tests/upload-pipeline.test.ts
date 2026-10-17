@@ -38,3 +38,14 @@ describe("upload batch", () => {
     expect(skipped.length).toBeGreaterThan(0);
   });
 });
+
+describe("chunk size", () => {
+  it("uses 5-page parts with page counting and 10 before an account's switch", async () => {
+    const { chunkPagesFor } = await import("../src/lib/pdfLimit");
+    const { pageRanges } = await import("../src/lib/pdfSplit");
+    expect(chunkPagesFor(true)).toBe(5);
+    expect(chunkPagesFor(false)).toBe(10);
+    expect(pageRanges(23, chunkPagesFor(true))).toEqual([[1, 5], [6, 10], [11, 15], [16, 20], [21, 23]]);
+    expect(pageRanges(23, chunkPagesFor(false))).toEqual([[1, 10], [11, 20], [21, 23]]);
+  });
+});

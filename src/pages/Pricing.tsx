@@ -320,7 +320,7 @@ const Pricing = () => {
         'Automated ESG Reports (PDF)',
         'Bank-grade Verification Ledger',
         'Predictive AI Models',
-        'Priority Green Finance Access',
+        'Green Finance Access',
         '10 Team Members',
         'WhatsApp Chat + Email Support',
         'AI ESG Head',
