@@ -1,0 +1,87 @@
+{
+  "slug": "ceramic-tile-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of ceramic or vitrified tiles per square metre for an export buyer?",
+  "title": "Tile carbon footprint per square metre",
+  "short": "Add up a month's fuel and electricity emissions for the plant, divide by square metres produced, then add raw materials and packaging for a cradle-to-gate figure. State the tile thickness and mass per m2 with the result, because a buyer compares tiles of different weights and a heavier tile carries more kiln energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Morbi tile makers exporting to the EU, Gulf and US",
+  "sections": [
+    {
+      "h": "Step 1: energy emissions for the plant",
+      "ul": [
+        "Natural gas (PNG) for spray dryers and kilns: scm x 2.05 kg CO2 per scm.",
+        "LPG, if used: kg x 2.98 kg CO2 per kg. If the bill says propane rather than LPG, use a propane factor from the IPCC 2006 defaults and name it.",
+        "Coal, if any is still fired: kg x 2.42 kg CO2 per kg.",
+        "Grid electricity for ball mills, presses, glazing lines and polishing: kWh x 0.710 kg CO2 per kWh.",
+        "Diesel for forklifts and the DG set: litres x 2.68 kg CO2 per litre."
+      ],
+      "p": [
+        "Use the same period for energy and production, ideally a full year, so kiln shutdowns and seasonal gas price switches average out."
+      ]
+    },
+    {
+      "h": "Step 2: share the energy across products",
+      "p": [
+        "If the plant makes only one product, divide by square metres produced. If it makes wall tiles, floor tiles and vitrified slabs, split the energy by fired mass first, because spray drying and firing scale with tonnes, not with square metres. Then convert each product to m2 using its mass per m2 from the specification sheet. Polishing energy for polished vitrified tiles can be assigned to those lines only, if a sub-meter shows it."
+      ]
+    },
+    {
+      "h": "Step 3: add materials, packaging and transport in",
+      "p": [
+        "Energy alone is a gate-to-gate figure. A cradle-to-gate footprint under ISO 14067 also counts clay, feldspar, quartz, frits and glazes, the cartons, pallets and strapping, and inbound transport to the plant. These are CO2e, because supplier and database figures for materials include other gases. Report the energy and material parts separately so the buyer can see what drives the total."
+      ]
+    },
+    {
+      "h": "What the buyer may actually want",
+      "p": [
+        "A product carbon footprint to ISO 14067 per m2 is enough for most questionnaires. European building projects often ask instead for an Environmental Product Declaration to EN 15804 under the ceramic tile product category rules, EN 17160. Tile EPDs are declared per 1 m2, cover more impact categories than carbon, and are published through an EPD programme after independent verification. Ask which one is wanted before you start, because an EPD costs far more. Check the current edition of EN 17160 with the programme operator, as the standard is being revised."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a vitrified tile plant (illustrative figures)",
+    "lines": [
+      "PNG: 9,00,000 scm x 2.05 = 18,45,000 kg CO2",
+      "Electricity: 20,00,000 kWh x 0.710 = 14,20,000 kg CO2",
+      "Energy total: 18,45,000 + 14,20,000 = 32,65,000 kg CO2",
+      "Production: 4,00,000 m2 of 600 x 600 mm tiles at about 20 kg per m2",
+      "Energy footprint: 32,65,000 / 4,00,000 = 8.16 kg CO2 per m2, or 8.16 / 20 = 0.41 kg CO2 per kg of tile"
+    ],
+    "note": "Illustrative inputs. Add raw materials and packaging, in kg CO2e, before you call it cradle-to-gate."
+  },
+  "senseible": "Senseible reads PNG, LPG, coal and diesel invoices and electricity bills, applies the IPCC 2006 defaults and 0.710 kg CO2 per kWh, and shows the factor on each line. Dividing by square metres needs your production figures and tile mass, which you supply; Senseible does not issue an EPD or verify one.",
+  "links": [
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

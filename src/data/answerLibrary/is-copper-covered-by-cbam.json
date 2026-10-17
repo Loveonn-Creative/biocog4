@@ -1,0 +1,74 @@
+{
+  "slug": "is-copper-covered-by-cbam",
+  "q": "Is copper wire rod or copper cathode covered by EU CBAM, and will it be?",
+  "title": "Is copper covered by EU CBAM?",
+  "short": "No. Copper is not in Annex I of the CBAM Regulation, so copper cathode (heading 7403), copper wire rod and wire (7408) and other Chapter 74 goods carry no CBAM obligation today. CBAM covers cement, electricity, fertilisers, iron and steel, aluminium and hydrogen. Copper could be added only by amending the regulation.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian copper rod, wire and cable exporters",
+  "sections": [
+    {
+      "h": "What Annex I covers today",
+      "p": [
+        "Annex I of Regulation (EU) 2023/956 lists goods by CN code under six sectors: cement, electricity, fertilisers, iron and steel, aluminium and hydrogen. No heading from Chapter 74 (copper and articles of copper) appears in it. Refined copper cathodes, copper alloys such as brass, copper wire rod, drawn wire, strip and foil are therefore outside CBAM, and your EU importer files nothing for them."
+      ]
+    },
+    {
+      "h": "Where cable makers can still be caught",
+      "ul": [
+        "Aluminium wire (heading 7605) and stranded aluminium wire and cables that are not electrically insulated (7614) are in Annex I. An AAC or ACSR conductor shipment is covered.",
+        "Steel wire under Chapter 72, such as heading 7217, is covered, which matters for armouring wire sold on its own.",
+        "Insulated wire and cable under heading 8544 is not in Annex I today, whether the conductor is copper or aluminium. The downstream proposal described below does list some 8544 lines, limited to goods containing steel or aluminium.",
+        "A mixed shipment is judged line by line by CN code, so check each code on the shipping bill."
+      ]
+    },
+    {
+      "h": "Will copper be added",
+      "p": [
+        "Article 30 of the regulation requires the Commission to review the scope and assess extending it to other goods at risk of carbon leakage. On 17 December 2025 the Commission proposed, in COM(2025) 989, adding about 180 downstream goods from 2028. They are steel and aluminium intensive goods, including some insulated wire and cable lines under 8544 that contain steel or aluminium. No Chapter 74 copper heading is reported in it. The proposal is not law yet: the Parliament and the Council still have to agree it.",
+        "If you ship copper cable with steel armour or aluminium parts, read the 8544 entries in the proposal's annex on EUR-Lex against your exact CN code, and watch for the adopted text."
+      ]
+    },
+    {
+      "h": "Footprint requests outside CBAM",
+      "p": [
+        "Large EU buyers often ask copper suppliers for a product carbon footprint for their own Scope 3 reporting, outside CBAM. That request is voluntary, but answering it from metered electricity and fuel records keeps you ready if the scope ever widens."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator covers the Annex I sectors, so there is nothing to price for copper today. For buyers who ask for a footprint, it keeps your Scope 1 and 2 records from fuel invoices and electricity bills, each line tied to its source document.",
+  "links": [
+    {
+      "label": "Check if your CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "Map an Indian HSN code to the EU CN code",
+      "to": "/answers/map-indian-hsn-code-to-eu-cn-code"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I and Article 30",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    },
+    {
+      "label": "European Commission proposal COM(2025) 989 of 17 December 2025 amending Regulation (EU) 2023/956 (downstream goods), with annexes",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The downstream extension (COM(2025) 989) is in trilogue; recheck its final annex for 8544 lines and any copper heading, and Annex I, when it is adopted."
+}

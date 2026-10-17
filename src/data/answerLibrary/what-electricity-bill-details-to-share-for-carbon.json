@@ -1,0 +1,79 @@
+{
+  "slug": "what-electricity-bill-details-to-share-for-carbon",
+  "q": "Which electricity bill details are needed for a carbon report, and which should I not share?",
+  "title": "Electricity bill details to share",
+  "short": "A carbon report needs only the units consumed in kWh and the billing period, plus a site label you choose. You do not need to share your name, address, phone number, consumer or account number, meter number, or payment and bank details. Mask those before sending a bill to a consultant, buyer or software tool.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSME owners concerned about privacy",
+  "sections": [
+    {
+      "h": "The fields the calculation uses",
+      "ul": [
+        "kWh units for the period. Scope 2 is these units multiplied by a grid factor, so nothing else on the bill changes the figure.",
+        "The from and to dates of the bill, so each month and financial year gets the right units and no two bills overlap.",
+        "On a kVAh bill, the kVAh and the printed power factor, or the kWh if the bill shows it.",
+        "With rooftop solar on net metering, import and export units shown separately, so exports are not counted as use.",
+        "With a green tariff, the green units billed, if you report market-based Scope 2."
+      ]
+    },
+    {
+      "h": "Useful context that is not personal",
+      "p": [
+        "Tariff category and sanctioned or contract load let a reviewer sanity-check the units, for example a small LT shop billed for HT-scale consumption. Neither one names a person or a connection, so you can leave them visible."
+      ]
+    },
+    {
+      "h": "What to mask before sharing",
+      "ul": [
+        "Consumer or proprietor name, billing address and phone number.",
+        "Consumer number, account number and meter number. These identify the connection and let anyone look up your bill on the discom's portal.",
+        "Bank details, payment history, arrears and security deposit.",
+        "GSTIN or PAN where printed on the bill.",
+        "Rupee amounts and rates, if you consider them commercially sensitive. Carbon needs units, not rupees."
+      ]
+    },
+    {
+      "h": "How to share safely and still pass an audit",
+      "ol": [
+        "Give each connection your own label, such as Plant 2 or Godown, instead of the consumer number.",
+        "Send a masked copy, and keep the full original bill on file.",
+        "If an auditor needs to trace units to the original, show it to them directly rather than emailing it around.",
+        "Share only with people who need it for the report. India's Digital Personal Data Protection Act, 2023 expects personal data to be limited to what the stated purpose needs, and a carbon report needs none."
+      ]
+    }
+  ],
+  "example": {
+    "title": "What a minimal bill record looks like",
+    "lines": [
+      "Site: Plant 2 (your label)",
+      "Period: 1 June to 30 June",
+      "Tariff category: HT industrial; contract demand 300 kVA",
+      "Units: 36,500 kWh",
+      "Scope 2, location-based: 36,500 x 0.710 = 25,915 kg CO2, about 25.9 t"
+    ],
+    "note": "Nothing in this record identifies a person or the connection."
+  },
+  "senseible": "Senseible reads only the billing period, tariff category, sanctioned load and units from an electricity bill. It never extracts consumer name, address, phone, or consumer, account or meter numbers, so those fields do not enter your carbon records even if the bill you upload shows them.",
+  "links": [
+    {
+      "label": "Can AI read an electricity bill accurately?",
+      "to": "/answers/can-ai-read-my-electricity-bill-accurately"
+    },
+    {
+      "label": "How Senseible protects your data",
+      "to": "/answers/senseible-data-protection"
+    },
+    {
+      "label": "Electricity bill in kVAh: emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

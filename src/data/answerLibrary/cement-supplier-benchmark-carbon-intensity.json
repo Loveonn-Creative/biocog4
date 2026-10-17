@@ -1,0 +1,86 @@
+{
+  "slug": "cement-supplier-benchmark-carbon-intensity",
+  "q": "How do I compare cement suppliers on carbon: per tonne of clinker or per tonne of cement, and what range is normal?",
+  "title": "Comparing cement suppliers on carbon",
+  "short": "Compare cement suppliers per tonne of cement, for the same cement type, and use the per tonne of clinker figure only to judge the kiln. Clinker usually sits around 0.8 to 0.9 t CO2 per tonne, so a cement's figure depends mostly on how much clinker it contains.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Construction firms and precast makers buying cement",
+  "sections": [
+    {
+      "h": "Which figure answers which question",
+      "ul": [
+        "Per tonne of clinker: tells you how efficient the supplier's kiln is and what fuel it burns. Useful for comparing plants, not bags.",
+        "Per tonne of cement: what you actually buy. Use it to compare offers of the same cement type, OPC against OPC, PPC against PPC.",
+        "Per tonne of cementitious material: the basis industry databases use, covering cement plus clinker substitutes sold separately. Do not mix it with per tonne of cement.",
+        "Per cubic metre of concrete: the fair basis when you are choosing between cement types for the same mix strength."
+      ]
+    },
+    {
+      "h": "Why a good kiln can still lose on cement",
+      "p": [
+        "The cement figure is roughly clinker share times clinker intensity, plus the electricity used for grinding and the rest of the plant. Clinker share moves the result far more than kiln efficiency does. A plant with an average kiln that sells PPC will usually beat an efficient plant selling OPC on a per tonne basis.",
+        "So rank suppliers within a cement type first, then decide separately whether a blended cement suits your use."
+      ]
+    },
+    {
+      "h": "What to ask each supplier for",
+      "ol": [
+        "Plant name and reporting year, not a group average across many plants.",
+        "Actual clinker share of the product you buy, not the range the standard allows.",
+        "Gross CO2 per tonne of clinker and per tonne of cement. Some reports also give a net figure that removes CO2 from waste-derived fuels; ask for gross so suppliers line up.",
+        "Whether purchased and captive electricity is included, and which grid factor was used.",
+        "An EPD under EN 15804 or ISO 14025 with the A1 to A3 result, if they have one."
+      ]
+    },
+    {
+      "h": "Signs a number needs a second look",
+      "ul": [
+        "A per tonne figure with no statement of whether it is clinker, cement or cementitious.",
+        "An OPC figure well below 0.8 t CO2 per tonne with no explanation such as alternative fuels or a narrow boundary.",
+        "Only a net figure, or a figure that leaves out calcination CO2, which is roughly 0.5 t per tonne of clinker on its own.",
+        "A year far older than the offer you are evaluating."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two suppliers, estimated figures",
+    "lines": [
+      "Supplier A, OPC: 0.84 t CO2 per t clinker x 94% clinker = 0.790 t; power 80 kWh x 0.710 kg = 0.057 t; total about 0.85 t CO2 per t cement",
+      "Supplier B, PPC: 0.88 t CO2 per t clinker x 68% clinker = 0.598 t; power 85 kWh x 0.710 kg = 0.060 t; total about 0.66 t CO2 per t cement",
+      "B has the less efficient kiln but its cement is about 22% lower per tonne (0.66 / 0.85 = 0.78)"
+    ],
+    "note": "Illustrative figures. Clinker intensity of about 0.8 to 0.9 t CO2 per tonne is an estimate: about 0.52 t from calcination (the IPCC default) plus about 0.3 t from kiln fuel in a modern dry kiln."
+  },
+  "senseible": "Each cement invoice line, with its tonnes and unit, goes into Senseible's Scope 3 supplier evidence trail, linked to the bill it came from. Multiply those tonnes by the per tonne figure each supplier gives you, and the comparison sits next to the purchase records it rests on.",
+  "links": [
+    {
+      "label": "Benchmarking a steel supplier",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "PPC or PSC vs OPC footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "CO2 per tonne of clinker",
+      "to": "/answers/co2-per-tonne-of-clinker-calculation"
+    },
+    {
+      "label": "Cement industry",
+      "to": "/industries/cement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GCCA and WBCSD Cement CO2 and Energy Protocol; GCCA Getting the Numbers Right database",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 3, Chapter 2 (clinker default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "The ranges are labelled estimates; industry database coverage of India and Vietnam is partial, so prefer plant EPDs and recheck figures each year."
+}

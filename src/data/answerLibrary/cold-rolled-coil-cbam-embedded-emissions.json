@@ -1,0 +1,98 @@
+{
+  "slug": "cold-rolled-coil-cbam-embedded-emissions",
+  "q": "Does cold rolling add CBAM embedded emissions on top of the hot-rolled coil it is made from?",
+  "title": "CBAM emissions for cold-rolled coil",
+  "short": "Yes, but only a little. Cold-rolled coil carries the embedded emissions of all the hot-rolled coil consumed, plus the direct emissions of the cold mill, such as gas or oil burnt in annealing and galvanising furnaces. Electricity for the rolling stands is not counted for steel under CBAM.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian cold-rolling mills and CRC, GP and GC exporters (CN 7209, 7210)",
+  "sections": [
+    {
+      "h": "How a re-roller's figure is built",
+      "p": [
+        "Annex IV of the CBAM Regulation builds the figure per tonne from two parts: the mill's own attributed direct emissions, and the embedded emissions of every precursor it consumed, divided by the tonnes it produced. For a cold mill that buys hot-rolled coil, the HRC is the precursor and the mill's own furnaces give the direct part.",
+        "Cold-rolled sheet (CN 7209) and coated sheet such as galvanised or colour-coated coil (CN 7210) are iron or steel products. Iron and steel goods are listed in Annex II of the Regulation, so only direct emissions count, both for the coil you ship and for the HRC inside it.",
+        "Under the transitional rules (Implementing Regulation (EU) 2023/1773, Annex II), iron or steel products used in the process were a relevant precursor of iron or steel products. From 2026 the calculation methods sit in Implementing Regulation (EU) 2025/2547; confirm the precursor list there before your importer files."
+      ]
+    },
+    {
+      "h": "What counts as direct emissions in a cold mill",
+      "ul": [
+        "Fuel burnt in batch (bell) or continuous annealing furnaces: PNG, LPG or furnace oil.",
+        "Fuel burnt to heat a galvanising or zinc bath, or a paint-curing oven on a colour-coating line.",
+        "Fuel burnt in a boiler whose steam heats pickling acid or other process tanks.",
+        "Not counted for steel: electricity for the rolling stands, pickling line drives, cranes and electric annealing furnaces, even from a captive plant."
+      ]
+    },
+    {
+      "h": "Why the HRC dominates, and where its number comes from",
+      "p": [
+        "Cold rolling burns little fuel compared with making the steel. So the CRC figure is set mostly by the HRC value and by how much HRC goes in per tonne of CRC out.",
+        "Use the HRC producer's verified actual embedded emissions if they give them. If not, the HRC precursor is valued at the EU default value for its CN code (7208) and country of origin, from the annex to Implementing Regulation (EU) 2025/2621. Ask your HRC supplier for their figure in writing at the time of purchase."
+      ]
+    },
+    {
+      "h": "Yield loss is charged to the product",
+      "p": [
+        "The precursor term is the tonnes of HRC consumed, not the tonnes that end up in the coil. Edge trim, crop ends and rejected coils are part of that input. A mill using 1.06 t of HRC per tonne of CRC carries 6% more precursor emissions than the HRC figure alone. Better yield lowers the CRC number directly."
+      ]
+    },
+    {
+      "h": "When to use the CRC default value instead",
+      "p": [
+        "Your EU importer can use the default value for CN 7209 or 7210 from India instead of your actual figure. Actual data only helps if your total, HRC included, comes out below that default plus the year's mark-up, and it needs monitoring and verification under the definitive-period rules. Compare both before you commit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a cold-rolling mill (illustrative)",
+    "lines": [
+      "HRC consumed: 10,600 t; CRC produced: 10,000 t",
+      "HRC embedded emissions from the supplier: 2.30 t CO2 per t (assumed)",
+      "Precursor: 10,600 x 2.30 = 24,380 t CO2",
+      "Annealing furnace PNG: 300,000 scm x 2.05 kg CO2 per scm = 615,000 kg, so 615 t CO2",
+      "Total: 24,380 + 615 = 24,995 t CO2",
+      "Per tonne of CRC: 24,995 / 10,000 = 2.50 t CO2 per t"
+    ],
+    "note": "The HRC value and fuel use are assumptions for the arithmetic. The PNG factor is the IPCC 2006 natural gas default converted to scm. Mill electricity is left out because CBAM counts direct emissions only for steel."
+  },
+  "senseible": "Senseible reads the mill's PNG, LPG and furnace oil invoices and turns them into documented direct emissions (PNG 2.05 kg CO2 per scm, LPG 2.98 kg per kg, furnace oil 2.97 kg per litre). The HRC precursor value comes from your HRC supplier; verification of actual emissions and the CBAM declaration stay with your accredited verifier and EU importer.",
+  "links": [
+    {
+      "label": "Embedded emissions per tonne of steel",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Finding official CBAM default values",
+      "to": "/answers/where-to-find-official-cbam-default-values"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes I, II and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2023/1773, Annex II (aggregated goods categories and relevant precursors)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/2547 (methods for calculating embedded emissions, definitive period)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Recheck the relevant precursors for iron or steel products in Implementing Regulation (EU) 2025/2547, and the CN 7208, 7209 and 7210 default values for India in 2025/2621, before each declaration."
+}

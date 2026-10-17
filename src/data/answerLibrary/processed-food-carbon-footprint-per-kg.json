@@ -1,0 +1,97 @@
+{
+  "slug": "processed-food-carbon-footprint-per-kg",
+  "q": "What drives the carbon footprint of a processed food product for an export buyer, and how do I calculate kg CO2e per kg?",
+  "title": "Processed food footprint per kg",
+  "short": "For most processed foods the farm ingredients drive the footprint, often more than the factory. Calculate kg CO2e per kg by adding three parts per kg of finished product: each ingredient's mass times its cradle-to-gate factor, the plant's fuel and electricity per kg, and the packaging.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Spice, snack, frozen food and dairy processors exporting to the EU, UK and Gulf",
+  "sections": [
+    {
+      "h": "Why plant energy alone understates a food footprint",
+      "p": [
+        "Growing crops and raising animals releases nitrous oxide from fertilised soil, methane from cattle and paddy, and CO2 from farm diesel and fertiliser manufacture. These arrive in your product through the ingredients you buy. A spice grinder or snack maker that reports only its own electricity and boiler fuel can miss half or more of the cradle-to-gate figure; for dairy, meat and rice products the farm share is usually higher still.",
+        "Buyers who ask for a product footprint under ISO 14067 or the GHG Protocol Product Standard expect the ingredients to be inside the boundary."
+      ]
+    },
+    {
+      "h": "The formula per kg of finished product",
+      "ol": [
+        "Ingredients: for each ingredient, kg used per kg of finished product times its cradle-to-gate factor in kg CO2e per kg. Use the input mass, not the recipe mass on the label, so drying, peeling, frying and trimming losses are counted.",
+        "Plant energy: kWh per kg times the grid factor, plus fuel per kg (PNG, LPG, furnace oil, coal or biomass) times its fuel factor. Include freezing, cold rooms and the boiler.",
+        "Refrigerant top-ups in cold rooms, as kg of gas times its GWP, shared over the year's output.",
+        "Packaging: kg of each material per kg of product times its factor.",
+        "Inbound freight of the main ingredients, if your stated boundary includes it."
+      ]
+    },
+    {
+      "h": "Where ingredient factors come from",
+      "p": [
+        "Ingredient factors come from life cycle databases, most of which are licensed and differ by country and farming system. Name the database and its edition next to every factor, and prefer a factor for the country the crop was grown in. If a supplier gives you a verified footprint for its ingredient, that primary figure replaces the database value.",
+        "If you farm or contract-farm, you can build the farm stage yourself. Direct nitrous oxide from fertiliser is kg of nitrogen applied times 0.01 (the IPCC 2006 default) times 44/28, giving kg N2O, which you then multiply by its GWP (273 in IPCC AR6)."
+      ]
+    },
+    {
+      "h": "Biogenic carbon in food",
+      "p": [
+        "The carbon inside food was taken from the air by the plant and is released again when the food is eaten or decomposes, usually within a year. ISO 14067 asks you to report biogenic emissions and removals separately and to state how you treated them. Do not subtract the carbon stored in the food from your total unless the method you follow says so, and say what you did in the report."
+      ]
+    },
+    {
+      "h": "What to send the buyer",
+      "ul": [
+        "One figure in kg CO2e per kg (or per pack), cradle-to-gate, with the reference year.",
+        "The split: ingredients, plant energy, packaging, other.",
+        "The standard followed and the database and edition for each ingredient factor.",
+        "The share of the result that comes from your own measured data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 1 kg of a frozen fried snack",
+    "lines": [
+      "Potato: 2.0 kg per kg of product x 0.20 kg CO2e/kg (illustrative factor) = 0.400",
+      "Vegetable oil: 0.15 kg x 3.0 kg CO2e/kg (illustrative factor) = 0.450",
+      "Plant electricity incl. freezing: 0.9 kWh x 0.710 kg CO2/kWh = 0.639",
+      "PNG for the fryer: 0.08 scm x 2.05 kg CO2/scm = 0.164",
+      "LDPE pack: 0.03 kg x 2.5 kg CO2e/kg (illustrative factor) = 0.075",
+      "Total: 0.400 + 0.450 + 0.639 + 0.164 + 0.075 = 1.728, about 1.73 kg CO2e per kg; ingredients are 0.85, about 49 percent"
+    ],
+    "note": "The ingredient and packaging factors here are placeholders to show the arithmetic. Replace them with factors from a named database and edition. The plant energy lines are CO2 only, which is how the grid and fuel factors are published."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices and gives the plant's own energy and fuel emissions per period, which you divide by output for the plant-energy part of the footprint. Ingredient and packaging factors come from a named life cycle database or from your suppliers' own footprints.",
+  "links": [
+    {
+      "label": "What to send when a buyer asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Food processing carbon accounting",
+      "to": "/industries/food-processing"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Biogenic carbon for food MSMEs",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 4, Chapter 11, N2O emissions from managed soils",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Ingredient factors depend on the licensed database and edition used; re-check factors when the database releases a new edition."
+}

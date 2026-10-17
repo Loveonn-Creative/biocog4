@@ -1,0 +1,64 @@
+{
+  "slug": "how-to-benchmark-plant-energy-against-sector",
+  "q": "How do I benchmark my plant's energy use against others in my sector in India?",
+  "title": "Benchmark plant energy against your sector",
+  "short": "Compare your specific energy consumption (SEC), energy per tonne of product, with a published figure for the same product and process. In India the main public sources are BEE's PAT notifications for large plants and BEE's SME cluster studies. Match the boundary, product mix and conversion factors before you compare, or the gap means little.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant heads and MSME owners",
+  "sections": [
+    {
+      "h": "Where Indian benchmarks come from",
+      "ul": [
+        "PAT scheme: under the Energy Conservation Act, 2001, BEE notifies a baseline SEC and a target for each designated consumer in the covered sectors, such as cement, iron and steel, aluminium, textiles, pulp and paper, fertiliser and chlor-alkali. These show the spread between plants in a sector.",
+        "BEE SME programme cluster studies: energy mapping reports for MSME clusters, such as foundries, brick kilns, ceramics and textile processing, with typical energy use per unit of output and common equipment.",
+        "Equipment benchmarks: where no sector figure exists, compare equipment instead: boiler efficiency, chiller kW per TR, furnace kWh per tonne melted, compressed air kW per cfm.",
+        "Industry associations and energy auditors working in your cluster often hold unpublished peer data."
+      ]
+    },
+    {
+      "h": "Where public data is missing",
+      "p": [
+        "Public MSME benchmarks are patchy. Many clusters have no study, and older cluster reports can be ten or more years old, before newer equipment spread. If you cannot find a figure for your product and process, say so, benchmark your own plant month on month, and benchmark your largest energy users against equipment norms. An old or mismatched benchmark is worse than none."
+      ]
+    },
+    {
+      "h": "How to make the comparison fair",
+      "ol": [
+        "Same boundary: include or exclude captive power, colony and offices exactly as the benchmark does.",
+        "Same product: compare per tonne of the same product, or convert to an equivalent product as PAT normalisation does.",
+        "Same conversions: use the calorific values and electricity conversion the benchmark used, for example 860 kcal per kWh, or recompute the benchmark with yours.",
+        "Similar load: a plant at 50% capacity has a higher SEC than the same plant at 90%. Note your capacity utilisation next to the result.",
+        "Same year basis: a full financial year, so seasonal swings cancel out."
+      ]
+    },
+    {
+      "h": "What to do with the result",
+      "p": [
+        "A gap of a few percent is often explained by product mix or load. A gap of 10% or more on a fair comparison is worth an energy audit focused on the biggest users. Treat the benchmark as a pointer to where to look, not a verdict."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative comparison: 50,000 t a year plant",
+    "lines": [
+      "Your SEC: 0.090 toe per tonne; benchmark for the same product and boundary: 0.080 toe per tonne",
+      "Gap: (0.090 minus 0.080) / 0.080 = 12.5%",
+      "Excess energy: 0.010 x 50,000 = 500 toe a year",
+      "Capacity utilisation: yours 55%, benchmark plants about 75%, so part of the gap is load, not equipment"
+    ],
+    "note": "Figures are illustrative. Use the benchmark's own boundary and conversion factors."
+  },
+  "senseible": "Senseible gives your plant's own fuel and electricity use and emissions month by month from your invoices and bills, which is the energy side of your SEC. The sector benchmark itself comes from BEE notifications, cluster studies or your auditor.",
+  "links": [
+    { "label": "How to calculate specific energy consumption", "to": "/answers/how-to-calculate-specific-energy-consumption" },
+    { "label": "Is my factory a BEE designated consumer?", "to": "/answers/is-my-factory-bee-designated-consumer" },
+    { "label": "Energy audits for MSMEs in India", "to": "/climate-intelligence/energy-audit-for-msme-india" }
+  ],
+  "sources": [
+    { "label": "BEE Perform, Achieve and Trade scheme notifications and SME programme cluster energy mapping reports (beeindia.gov.in)", "url": "https://beeindia.gov.in" },
+    { "label": "Energy Conservation Act, 2001, and Energy Conservation (Energy Consumption Norms and Standards for Designated Consumers) Rules (powermin.gov.in)", "url": "https://powermin.gov.in" }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "PAT is being folded into the Carbon Credit Trading Scheme, where emission intensity targets replace SEC targets for covered sectors; check which applies to a given plant."
+}

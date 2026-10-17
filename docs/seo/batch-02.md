@@ -8,6 +8,7 @@
 | B (rows 51 to 100) | 50 | 50 | 1 (duplicate: how-is-buffer-pool-contribution-calculated, folded into how-much-of-my-credits-go-to-buffer-pool; in docs/seo/held/) | 49 |
 | C (rows 101 to 150) | 50 | 50 | 1 (group-captive-solar-scope-2-reporting: same intent as live group-captive-solar-scope-2, its BRSR table and method note to be added there instead; in docs/seo/held/). rail-vs-road-freight-emissions-india was held, then rebuilt on the India default freight factors and published (October 2026) | 49 |
 | D (rows 151 to 200) | 49 | 49 | 1 not written (depreciation-on-solar-and-energy-saving-equipment: no allowed income tax source; Income-tax Act 2025 rates unconfirmed) | 49 |
+| E (batch 3 start: 50 rows from the batch 2 "later" list plus the last product row) | 40 | 40 | 10 not written: 8 duplicates of live pages (compressed-air, CSDDD textile, multi-page HT bill, limestone calcination, R-22, SLL KPIs, VM0042, purchased steam); 2 unverifiable figures (CBAM CN 7208 India default, Bangladesh grid factor) | 40 |
 
 Each page is drafted, then independently reviewed for accuracy against primary sources, originality against the nearest live page, search intent, quality and duplication. Pages that cannot be made certain are held, not published. Links to batch 2 pages not yet live are deferred and added when those pages publish.
 

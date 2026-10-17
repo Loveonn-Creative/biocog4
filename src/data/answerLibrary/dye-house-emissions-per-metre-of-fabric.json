@@ -1,0 +1,95 @@
+{
+  "slug": "dye-house-emissions-per-metre-of-fabric",
+  "q": "How does a textile dyeing and processing unit calculate emissions per metre or per kg of fabric?",
+  "title": "Dye house emissions per metre of fabric",
+  "short": "Add up a month's boiler fuel and electricity, multiply each by its emission factor, and divide by the metres of fabric processed that month. To get a per kg figure, convert metres to kilograms with GSM times width. Where processes differ, split the steam and power first.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Processing houses supplying textile exporters",
+  "sections": [
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Boiler and thermic fluid heater fuel: coal, lignite, PNG, furnace oil, or biomass such as wood and briquettes.",
+        "Diesel for generator sets.",
+        "Grid electricity from the discom bill, and any steam bought from a common supplier.",
+        "Effluent treatment plant power if it is inside the unit and metered with it.",
+        "Dyes and chemicals sit upstream in Scope 3; leave them out of a gate-to-gate energy figure, or add them separately and say so."
+      ]
+    },
+    {
+      "h": "The steps, month by month",
+      "ol": [
+        "Take fuel quantities from purchase invoices adjusted for stock, and kWh from the electricity bill, for the same month.",
+        "Multiply each by its factor and add them up, in kg CO2.",
+        "Take finished metres dispatched or processed that month from the production register, not greige metres received, because fabric shrinks.",
+        "Divide total CO2 by metres. Use at least twelve months so seasonal swings in shade mix even out."
+      ]
+    },
+    {
+      "h": "Converting metres to kilograms",
+      "p": [
+        "Fabric weight per metre in kg equals GSM times width in metres divided by 1,000. A 120 GSM fabric at 1.5 m width weighs 0.18 kg per metre. Use the finished GSM and the width the GSM is measured on.",
+        "Buyers often want per kg because yarn and fibre footprints are quoted that way. Per metre suits woven job work billed by length."
+      ]
+    },
+    {
+      "h": "When products need separate figures",
+      "p": [
+        "A single average hides big differences. Polyester dyed at high temperature, dark shades with long cycles, and printing with steaming use more steam per metre than light cotton shades.",
+        "Split boiler fuel by steam use per process, from steam flow meters or batch logs. Split electricity by machine kW times running hours on jets, stenters and dryers. Then divide each share by the metres that went through it."
+      ]
+    },
+    {
+      "h": "Biomass boilers",
+      "p": [
+        "CO2 from burning wood, briquettes or agricultural residue is biogenic. Report it separately, outside the Scope 1 total, and keep supplier records showing what the fuel was. Coal mixed into a biomass boiler is still fossil and counts in full."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a dye house (illustrative)",
+    "lines": [
+      "Coal: 300 t x 2.42 kg CO2 per kg = 726.0 t CO2",
+      "Electricity: 180,000 kWh x 0.710 kg CO2 per kWh = 127.8 t CO2",
+      "Total: 853.8 t CO2 for 1,500,000 finished metres = 0.569 kg CO2 per metre",
+      "Weight: 120 GSM x 1.5 m / 1,000 = 0.18 kg per metre, so 270,000 kg of fabric",
+      "Per kg: 853,800 kg / 270,000 kg = 3.16 kg CO2 per kg of fabric"
+    ],
+    "note": "Coal factor is the IPCC 2006 default; your coal grade may differ. Grid factor is the CEA CO2 Baseline Database, version 21.0."
+  },
+  "senseible": "Senseible reads litres or kg from diesel, LPG, PNG, coal and other fuel invoices and multiplies them by IPCC 2006 defaults, and reads kWh from electricity bills at the CEA factor of 0.710 kg CO2 per kWh, with the factor and source shown on every line. Biomass fuel lines carry a zero factor labelled biogenic, so they add nothing to the totals. The split by process and the division by metres come from your production records.",
+  "links": [
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

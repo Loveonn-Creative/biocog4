@@ -1,0 +1,90 @@
+{
+  "slug": "zigzag-kiln-conversion-carbon-credits",
+  "q": "Can a brick kiln earn carbon credits for converting to zigzag firing or switching fuel?",
+  "title": "Carbon credits for a zigzag kiln?",
+  "short": "Usually not for a zigzag conversion. Since 2022, Indian rules require brick kilns to use zigzag, vertical shaft or PNG firing, so a conversion the law requires fails the regulatory surplus test that most carbon standards apply. Only measured savings beyond the legal requirement may qualify, and one kiln's volume is small.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Brick kiln owners and cluster associations",
+  "sections": [
+    {
+      "h": "What the 2022 rule requires",
+      "p": [
+        "The brick kiln standards MoEFCC notified on 22 February 2022 (G.S.R. 143(E)) allow new kilns only with zigzag, vertical shaft or piped gas firing. Existing kilns got one year to convert within 10 km of non-attainment cities and two years elsewhere, and may burn only PNG, coal, firewood or agricultural residue. Later notifications have moved the deadlines; your state pollution control board enforces them."
+      ]
+    },
+    {
+      "h": "Why the conversion rarely earns credits",
+      "p": [
+        "A methodology for brick making exists: the CDM small-scale method AMS-III.Z covers fuel switching, process improvement and energy efficiency in brick manufacture. Fitting a methodology is not enough. The project must also be additional, and an action the law requires is treated as not additional, because it would happen anyway. ICVCM's Assessment Framework applies the same regulatory surplus test to high-integrity credits.",
+        "A few programmes make an exception where a law goes widely ignored, but the developer must show that with enforcement data, and buyers paying for quality credits usually steer clear."
+      ]
+    },
+    {
+      "h": "What might still qualify",
+      "ul": [
+        "Savings that go beyond what the rule requires, measured against the compliant kiln as the baseline, not against the old one.",
+        "Replacing part of the coal with agricultural residue the rule permits but does not require, if the residue is not taken away from another use.",
+        "Products that need less fired clay per wall area, such as hollow or perforated bricks, where the methodology allows it.",
+        "Grouping many kilns through a cluster association into one programme, so monitoring and validation costs are shared."
+      ]
+    },
+    {
+      "h": "Records to keep either way",
+      "ul": [
+        "Coal purchase invoices for each firing season, before and after the change.",
+        "Bricks fired per season from the production register, to get coal per lakh bricks.",
+        "Fuel analysis or supplier certificates for coal and any biomass.",
+        "The consent to operate and the date the kiln met the 2022 standard."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what is creditable after conversion (illustrative)",
+    "lines": [
+      "A converted kiln fires 600 t of coal a season; the conversion itself earns 0 credits where the law requires it",
+      "It replaces 25% of that coal with surplus rice husk: 150 t x 2.42 t CO2 per t coal = 363 t CO2 a season, before baseline, leakage and uncertainty deductions",
+      "One kiln at 363 t a season rarely covers validation and verification costs; 40 kilns grouped by a cluster association: 40 x 363 = 14,520 t CO2 a season"
+    ],
+    "note": "The 600 t, 25% and 40 kilns are assumptions for illustration. The coal factor is the IPCC 2006 default per kg of coal. To work out CO2 per 1,000 bricks before and after conversion, see the brick kiln calculation page."
+  },
+  "senseible": "Senseible reads coal purchase invoices at 2.42 kg CO2 per kg and shows carbon credit eligibility signals from documented coal savings. It does not issue or register credits or decide additionality.",
+  "links": [
+    {
+      "label": "Is a legally required project additional?",
+      "to": "/answers/is-a-legally-required-project-additional-india"
+    },
+    {
+      "label": "CO2 per 1,000 bricks from a coal kiln",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    },
+    {
+      "label": "Energy efficiency carbon credits",
+      "to": "/answers/energy-efficiency-carbon-credits-for-factories"
+    },
+    {
+      "label": "Coal to biomass boiler credits",
+      "to": "/answers/coal-to-biomass-boiler-carbon-credits"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MoEFCC notification G.S.R. 143(E), February 2022 (brick kiln standards)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CDM small-scale methodology AMS-III.Z, brick manufacture",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles Assessment Framework",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "Conversion deadlines and enforcement of the 2022 brick kiln rule vary by state; check with the state pollution control board."
+}

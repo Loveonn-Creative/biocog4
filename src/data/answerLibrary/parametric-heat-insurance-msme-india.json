@@ -1,0 +1,76 @@
+{
+  "slug": "parametric-heat-insurance-msme-india",
+  "q": "How does parametric heat or rainfall insurance work for Indian MSMEs and workers?",
+  "title": "Parametric heat and rain insurance",
+  "short": "Parametric insurance pays a fixed amount when a measured index, such as temperature or rainfall at a named weather station, crosses a set trigger, without a loss survey. Payouts can come within days. The catch is basis risk: you can suffer a loss without the index triggering, or be paid without a loss.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, cooperatives and lenders in heat and flood exposed regions",
+  "sections": [
+    {
+      "h": "How a parametric cover is built",
+      "ul": [
+        "Index: the measured variable, such as daily maximum temperature, rainfall over 24 hours or a flood depth, from a named source such as IMD stations or satellite data.",
+        "Trigger: the level and duration that starts a payout, for example 43 C or more on three days in a row.",
+        "Payout: a fixed sum per trigger event, often stepped up for more severe readings, with an annual cap.",
+        "Policyholder: often a group, such as a cooperative, a state government or a lender's borrower pool, rather than one small firm."
+      ]
+    },
+    {
+      "h": "Where it has been used in India",
+      "ul": [
+        "Crop insurance: the government's Restructured Weather Based Crop Insurance Scheme pays farmers on weather indices rather than assessed crop loss.",
+        "Heat: SEWA, with Climate Resilience for All and Blue Marble, launched a heat cover for women informal workers in Gujarat in May 2023, designed to pay when temperatures stayed above a set threshold for several days.",
+        "Disasters: Nagaland signed a state-wide parametric disaster cover with SBI General Insurance in August 2024, reported as the first by an Indian state, with the state paying the premium."
+      ]
+    },
+    {
+      "h": "What an MSME should check before buying",
+      "ol": [
+        "Which station or data source is used, and how far it is from your site. Distance is the main source of basis risk.",
+        "Whether the trigger matches when your work actually stops, for example the temperature at which you cut shifts.",
+        "The payout per event and the annual cap, against your lost wages or output per day.",
+        "That the insurer is a general insurer registered with IRDAI, and how quickly it pays after a trigger."
+      ]
+    },
+    {
+      "h": "How lenders and buyers use it",
+      "p": [
+        "A lender can bundle a parametric cover with working capital loans in a flood or heat zone so a bad week does not become a default. A buyer can fund cover for workers in its supply chain. In both cases the payout supports cash flow; it does not replace cooling, drainage or other measures that reduce the loss itself."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative structure for a 40-worker unit",
+    "lines": [
+      "Trigger: daily maximum of 43 C or more for three consecutive days at the nearest IMD station",
+      "Payout: three days' wage per worker per event, 3 x Rs 500 = Rs 1,500",
+      "Per event: 40 workers x Rs 1,500 = Rs 60,000",
+      "Annual cap of two events: 2 x Rs 60,000 = Rs 1,20,000"
+    ],
+    "note": "This is a made-up structure to show how the terms fit together, not a real product or price."
+  },
+  "senseible": "Senseible's climate risk work frames the physical heat and flood risk at a site, which is the starting point for deciding whether a parametric cover is worth buying. The cover itself is priced and sold by an IRDAI-registered insurer.",
+  "links": [
+    {
+      "label": "Climate risk and resilience",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "Heat stress and factory output",
+      "to": "/answers/heat-stress-factory-productivity-loss-india"
+    },
+    {
+      "label": "Free climate hazard data for a site",
+      "to": "/answers/free-climate-hazard-data-india-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group II, Climate Change 2022: Impacts, Adaptation and Vulnerability (risk transfer and index insurance)",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Products, triggers and payouts change each season; check the insurer's current policy wording before buying."
+}

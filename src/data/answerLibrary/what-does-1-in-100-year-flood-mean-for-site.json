@@ -1,0 +1,77 @@
+{
+  "slug": "what-does-1-in-100-year-flood-mean-for-site",
+  "q": "What does a '1-in-100-year flood' zone mean for my plant, and how does climate change shift it?",
+  "title": "What a 1-in-100-year flood zone means",
+  "short": "A 1-in-100-year flood zone is land that a flood of that size has a 1% chance of reaching in any single year. It does not mean once a century: over a 20-year loan the chance of at least one such flood is about 18%, and climate change can make that flood more frequent.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners reading lender or insurer risk reports",
+  "sections": [
+    {
+      "h": "What a return period actually measures",
+      "p": [
+        "A return period T is another way of writing an annual probability of 1 in T. A 1-in-100-year flood has a 1% chance each year, a 1-in-50-year flood 2%, a 1-in-10-year flood 10%. Each year is a fresh draw, so two 100-year floods can come in consecutive years.",
+        "The figure is estimated from past river levels and rainfall. Where records are short, or the catchment has changed through new building, embankments or dams, the estimate carries wide uncertainty."
+      ]
+    },
+    {
+      "h": "The chance over the life of your plant or loan",
+      "p": [
+        "The chance of at least one flood of return period T in n years is 1 minus (1 minus 1/T) to the power n. For a 1-in-100-year flood that gives:"
+      ],
+      "ul": [
+        "10 years: about 10%",
+        "20 years: about 18%",
+        "30 years: about 26%",
+        "50 years: about 40%"
+      ]
+    },
+    {
+      "h": "How climate change shifts it",
+      "p": [
+        "The IPCC Sixth Assessment Report finds that heavy rainfall has become more frequent and more intense over most land regions, and will keep doing so with each step of warming. Its summary puts a heavy one-day rainfall that came once in ten years before industrialisation at about 1.3 times as often at 1 degree C of warming, roughly today's level, about 1.7 times at 2 degrees C and about 2.7 times at 4 degrees C.",
+        "Rainfall is not the same as flooding; drainage, upstream reservoirs and paved surfaces matter too. On the coast, sea level rise lifts every storm surge. The practical effect is that a level mapped as 1-in-100 on past data may be reached more often over the life of a new plant, which is why lender reports quote a scenario and a future year."
+      ]
+    },
+    {
+      "h": "What to do with the number",
+      "ol": [
+        "Ask the report which return period, which climate scenario and which year it uses.",
+        "Compare your plinth and the height of critical equipment, such as transformers, panels, boilers and stores, with the flood level for that return period, plus a safety margin.",
+        "Raise or move what sits below that level, and keep records of the work for the lender or insurer.",
+        "Check that your insurance cover matches the stock and equipment actually at risk."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 20-year term loan",
+    "lines": [
+      "Today: 1-in-100 flood, chance over 20 years = 1 minus 0.99^20 = 1 minus 0.818 = 0.182, about 18%",
+      "If the same flood level becomes a 1-in-50 event: 1 minus 0.98^20 = 1 minus 0.668 = 0.332, about 33%",
+      "The flood level has not moved, but the chance of facing it during the loan has nearly doubled"
+    ],
+    "note": "The shift from 1-in-100 to 1-in-50 is illustrative, not a forecast for any site."
+  },
+  "senseible": "Lenders review flood exposure next to your carbon numbers. Senseible covers the carbon half: Scope 1 and 2 figures read from your fuel and power bills, each tied to its file. File your plinth survey, flood reports and the return period the lender used in the same folder, so one set of records answers both.",
+  "links": [
+    {
+      "label": "Check flood risk for a factory site",
+      "to": "/answers/check-flood-risk-for-factory-site-india"
+    },
+    {
+      "label": "Climate risk",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "Physical vs transition climate risk",
+      "to": "/climate-intelligence/physical-vs-transition-climate-risk-financial-institutions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR6 Working Group I, Summary for Policymakers and Chapter 11",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-16"
+}

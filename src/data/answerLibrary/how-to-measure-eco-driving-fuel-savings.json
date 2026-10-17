@@ -1,0 +1,68 @@
+{
+  "slug": "how-to-measure-eco-driving-fuel-savings",
+  "q": "How do I prove fuel savings from eco-driving training?",
+  "title": "Proving eco-driving fuel savings",
+  "short": "Set a per-vehicle baseline in litres per kilometre from 3 to 6 months of fuel slips and odometer readings before training, then compare the same vehicles after training on similar routes and loads. Adjust for anything else that changed, ideally using an untrained comparison group. Litres saved x 2.68 gives kg CO2 for diesel.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fleet owners seeking credit for efficiency in reports or loans",
+  "sections": [
+    {
+      "h": "Build the baseline per vehicle, not per fleet",
+      "ol": [
+        "Pick vehicles that will stay in the same duty for the whole period.",
+        "For each, record every fill with litres and odometer reading. Fill to full each time, so litres between two fills equal fuel used over that distance.",
+        "Collect 3 to 6 months before training. Shorter periods are swamped by route and load changes.",
+        "Calculate litres per km for each vehicle. Litres per km adds up cleanly; km per litre does not."
+      ]
+    },
+    {
+      "h": "Normalise for load, route and season",
+      "ul": [
+        "Load: for goods vehicles, compare litres per tonne-km where you have trip weights, because a full truck uses more fuel than an empty one.",
+        "Route: city, highway and hill routes differ widely. Compare like with like, or keep drivers on the same routes.",
+        "Season: monsoon roads, summer AC use and festival traffic move fuel economy. A baseline covering the same months as the reporting period avoids this.",
+        "Vehicle changes: tyres, servicing, a new vehicle or a new fuel blend all change economy. Log them."
+      ]
+    },
+    {
+      "h": "Use a comparison group to strip out other effects",
+      "p": [
+        "Leave some drivers untrained for the first few months. Any change they show, from fuel quality, weather or traffic, also affected the trained group. Subtract it from the trained group's change, so only the training effect remains. This is the same baseline and adjustment logic used to verify energy savings in plants."
+      ]
+    },
+    {
+      "h": "What a lender or report reader will want to see",
+      "ul": [
+        "Fuel invoices or slips and odometer logs for every vehicle in both periods.",
+        "The baseline method, adjustments and any vehicles left out, with reasons.",
+        "Telematics data, if you have it, as a check on distance and idling.",
+        "A follow-up after 6 to 12 months. Training effects often fade without coaching, so a one-month result is weak evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 trucks, 6,00,000 km a year after training",
+    "lines": [
+      "Baseline: 4.0 km per litre = 0.2500 L per km",
+      "After training: 4.3 km per litre = 0.2326 L per km",
+      "Unadjusted saving: (0.2500 minus 0.2326) x 6,00,000 = 10,465 L; 10,465 x 2.68 = 28,046 kg CO2",
+      "Untrained group improved 2% over the same period, so adjusted baseline = 0.2500 x 0.98 = 0.2450 L per km",
+      "Adjusted saving: (0.2450 minus 0.2326) x 6,00,000 = 7,465 L; 7,465 x 2.68 = 20,006 kg CO2, about 20.0 t"
+    ],
+    "note": "L per km values are shown rounded; the arithmetic uses 1 / 4.3 = 0.232558. The 2% comparison-group change is illustrative."
+  },
+  "senseible": "Senseible reads fuel slips and invoices and applies IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, petrol 2.31 kg CO2 per litre), so monthly fuel and CO2 before and after training are on record and traced to each slip. Odometer readings and the comparison-group adjustment sit in your own fleet records.",
+  "links": [
+    { "label": "Telematics km or fuel invoices for fleets?", "to": "/answers/telematics-or-fuel-invoices-for-fleet-emissions" },
+    { "label": "Measuring savings from an efficiency project", "to": "/answers/how-to-measure-savings-from-energy-efficiency-project" },
+    { "label": "Proving energy savings to a lender", "to": "/answers/how-to-prove-energy-savings-to-a-lender" },
+    { "label": "Diesel emission factor", "to": "/emission-factors/diesel" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 Mobile Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "ISO 50015:2014, Measurement and verification of energy performance of organizations", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol calculation tool for mobile combustion", "url": "https://ghgprotocol.org" }
+  ],
+  "reviewed": "2026-10-16"
+}

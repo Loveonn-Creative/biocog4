@@ -1,0 +1,94 @@
+{
+  "slug": "brick-kiln-emissions-per-1000-bricks",
+  "q": "How do I calculate CO2 per 1,000 bricks for a coal-fired brick kiln, and how much does a zigzag kiln reduce it?",
+  "title": "CO2 per 1,000 bricks from a coal kiln",
+  "short": "Divide the season's coal use by bricks fired, then multiply by the coal factor: kg coal per 1,000 bricks x 2.42 kg CO2 per kg (IPCC 2006 default) gives kg CO2 per 1,000 bricks. A zigzag kiln cuts this only as far as it cuts your coal per brick, so measure coal per lakh bricks before and after conversion.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Brick kiln owners and builders asked for embodied carbon",
+  "sections": [
+    {
+      "h": "The inputs you need for one firing season",
+      "ul": [
+        "Coal bought for the season, in kg or tonnes, from purchase invoices or weighbridge slips. Adjust for stock left at the start and end of the season.",
+        "Bricks fired, from your production register or sales records. Count fired bricks, not green bricks moulded.",
+        "Any biomass, such as rice husk, mustard stalk or wood, in kg. Keep it on a separate line.",
+        "Diesel for the generator or tractors and electricity for fans, if you want the full kiln figure rather than firing alone."
+      ]
+    },
+    {
+      "h": "The formula",
+      "ol": [
+        "Coal per 1,000 bricks (kg) = coal used (kg) / bricks fired x 1,000.",
+        "CO2 per 1,000 bricks (kg) = coal per 1,000 bricks x 2.42 kg CO2 per kg.",
+        "If your coal supplier gives a gross calorific value (GCV), a factor built from that GCV is more precise than the 2.42 default for Indian coal, which varies widely in quality.",
+        "Add diesel at 2.68 kg CO2 per litre and grid electricity at 0.710 kg CO2 per kWh, divided by the same bricks, if they are in scope."
+      ],
+      "p": [
+        "Coal combustion is Scope 1 for the kiln owner. For a builder buying the bricks, the same figure is part of the bricks' embodied carbon in Scope 3."
+      ]
+    },
+    {
+      "h": "Why a zigzag kiln uses less coal",
+      "p": [
+        "In a zigzag kiln the hot gases follow a zigzag path through the brick stack, driven by a fan or a tall chimney. Heat passes to the bricks more evenly and combustion is more complete, so less coal is needed per brick and less black smoke leaves the stack. The saving varies with how well the kiln is set and fired, so measure it from your own coal and production records rather than quoting a single industry figure.",
+        "Most of the visible benefit is lower particulate and black carbon. Black carbon is not counted in a CO2 inventory, so report the CO2 saving from coal on its own."
+      ]
+    },
+    {
+      "h": "Rules that apply to brick kilns",
+      "p": [
+        "MoEFCC notification G.S.R. 143(E) of 22 February 2022, an amendment to the Environment (Protection) Rules, 1986, allows new kilns only with zigzag or vertical shaft technology or PNG firing. Existing kilns were given one year to convert if within 10 km of a non-attainment city and two years elsewhere. Approved fuels are PNG, coal, firewood and agricultural residues; pet coke, tyres, plastic and hazardous waste are banned.",
+        "Deadlines have since been revised by later notifications and state boards, so confirm the date that applies to your kiln with your State Pollution Control Board."
+      ]
+    },
+    {
+      "h": "Biomass and mixed firing",
+      "p": [
+        "CO2 from rice husk, wood or crop residue is biogenic. Report it separately and leave it out of the fossil Scope 1 total. A kiln that replaces part of its coal with biomass lowers its fossil CO2 per 1,000 bricks in direct proportion to the coal it no longer buys."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one kiln before and after zigzag conversion (illustrative figures)",
+    "lines": [
+      "Before: 50 lakh bricks fired, 1,000 t coal; coal per 1,000 bricks = 10,00,000 kg / 50,00,000 x 1,000 = 200 kg",
+      "CO2 per 1,000 bricks: 200 x 2.42 = 484 kg",
+      "After conversion: 50 lakh bricks fired, 800 t coal; coal per 1,000 bricks = 8,00,000 / 50,00,000 x 1,000 = 160 kg",
+      "CO2 per 1,000 bricks: 160 x 2.42 = 387.2 kg",
+      "Saving: 484 minus 387.2 = 96.8 kg per 1,000 bricks, 20%; for the season 200 t coal x 2.42 = 484 t CO2"
+    ],
+    "note": "The coal figures are illustrative, not benchmarks. Use your own purchase and production records for both seasons."
+  },
+  "senseible": "Senseible reads kilograms from coal invoices and litres from diesel invoices, applies the IPCC 2006 defaults (coal 2.42 kg CO2 per kg, diesel 2.68 kg CO2 per litre) and shows the factor on each line, with biomass reported as biogenic. Dividing by bricks fired needs your production figure, which it does not read from a register.",
+  "links": [
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Biomass or waste fuel in Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Carbon credits for a zigzag kiln",
+      "to": "/answers/zigzag-kiln-conversion-carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "MoEFCC, G.S.R. 143(E), 22 February 2022, Environment (Protection) Amendment Rules for brick kilns",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Brick kiln conversion deadlines and fuel rules are set by notification and state boards; recheck the 2022 rules and any amendments."
+}

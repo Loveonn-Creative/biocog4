@@ -1,0 +1,79 @@
+{
+  "slug": "diesel-forklift-vs-electric-forklift-emissions",
+  "q": "How do I calculate emissions from diesel forklifts, and how much does switching to electric forklifts save in India?",
+  "title": "Diesel vs electric forklift emissions",
+  "short": "Multiply the diesel your forklifts burn by 2.68 kg CO2 per litre; that is Scope 1. For an electric forklift, multiply the charging kWh by the grid factor of 0.710 kg CO2 per kWh; that is Scope 2. The saving is the difference, and on India's grid it is usually large but well short of 100%.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Warehouse, logistics and factory managers",
+  "sections": [
+    {
+      "h": "Diesel forklifts are Scope 1",
+      "p": [
+        "A forklift you own or lease and run is off-road mobile combustion in equipment you control, so its fuel goes in Scope 1. Take litres from diesel invoices or the fuel issue register, not from engine hours times a brochure rate. LPG forklifts work the same way at 2.98 kg CO2 per kg of LPG.",
+        "If a contractor supplies forklifts with operators and buys the diesel, that fuel is the contractor's Scope 1 and sits in your Scope 3."
+      ]
+    },
+    {
+      "h": "Electric forklifts move the emissions to Scope 2",
+      "p": [
+        "Charging electricity drawn from your own meter is part of your Scope 2. Measure kWh at the charger supply, on the wall side, so charger and battery losses are included. A sub-meter on the charging bay is the cleanest record; without one, use the charger rating times charging hours and label it an estimate."
+      ]
+    },
+    {
+      "h": "How to compare the two fairly",
+      "ol": [
+        "Use the same working hours and the same loads for both, ideally a month of real data from one diesel unit and one electric trial unit.",
+        "Diesel: litres x 2.68 kg CO2 per litre.",
+        "Electric: charging kWh x 0.710 kg CO2 per kWh, or less for units charged from your own rooftop solar.",
+        "Report the saving in tonnes a year per forklift, then multiply by the fleet."
+      ]
+    },
+    {
+      "h": "What else changes when you switch",
+      "p": [
+        "Diesel exhaust inside a warehouse is a health issue as well as a carbon one, so indoor use often decides the switch before the carbon figure does. Electric units add a charging load to your sanctioned demand, so check it before buying several at once. The CO2 saving grows as the grid gets cleaner or as more charging moves to solar hours."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 3 tonne forklift for a year (illustrative consumption rates)",
+    "lines": [
+      "Diesel: about 2.5 L an hour x 2,000 hours = 5,000 L; 5,000 x 2.68 = 13,400 kg CO2, 13.4 t",
+      "Electric: about 5 kWh an hour at the charger x 2,000 hours = 10,000 kWh; 10,000 x 0.710 = 7,100 kg CO2, 7.1 t",
+      "Saving: 13,400 minus 7,100 = 6,300 kg CO2 a year, about 47%",
+      "Fleet of 10 forklifts: about 63 t CO2 a year"
+    ],
+    "note": "The hourly rates are illustrative. Replace them with your fuel log and charger meter readings."
+  },
+  "senseible": "Senseible reads litres from diesel invoices and kilograms from LPG invoices at the IPCC 2006 defaults, and kWh from electricity bills at 0.710 kg CO2 per kWh, with the factor shown on every line. Charging sub-meter readings can be entered by you, or a meter feed can be set up with the Senseible team.",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Diesel to electric van savings",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 4 (mobile combustion in owned equipment)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 Energy, Chapter 3 Mobile Combustion (off-road)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-17"
+}

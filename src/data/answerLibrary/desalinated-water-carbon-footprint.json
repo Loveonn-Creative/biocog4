@@ -1,0 +1,83 @@
+{
+  "slug": "desalinated-water-carbon-footprint",
+  "q": "What is the carbon footprint of using desalinated water in a factory?",
+  "title": "Carbon footprint of desalinated water",
+  "short": "Large seawater reverse osmosis plants use about 3.5 to 5 kWh of electricity per kilolitre, so on the Indian grid desalinated water carries about 2.5 to 3.6 kg CO2 per kL. If you run the plant, that electricity is already in your Scope 2. If you buy the water, it belongs in Scope 3 Category 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Coastal plants in Gujarat and Tamil Nadu buying or producing desalinated water",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "kg CO2 per kL = specific energy in kWh per kL x grid factor. One kilolitre is one cubic metre. With the India grid factor of 0.710 kg CO2 per kWh, 3.5 kWh per kL gives 2.485 kg CO2 and 5 kWh per kL gives 3.55 kg CO2.",
+        "The 3.5 to 5 kWh range is the IRENA and IEA-ETSAP figure for large-scale seawater RO, published in 2012. Plants built since then with newer membranes and energy recovery can run below it, and long pipelines to your site add pumping energy, so treat the range as an estimate until you have a metered figure. Brackish water RO needs less energy because the feed is less salty; thermal desalination needs far more."
+      ]
+    },
+    {
+      "h": "Which scope it goes in",
+      "ul": [
+        "Your own RO plant on grid power: its kWh are on your electricity bill, so they are already in Scope 2. Do not add them again as water.",
+        "Your own plant on a DG set: the diesel is Scope 1.",
+        "Water bought from a desalination plant, an industrial park or a tanker supplier: Scope 3 Category 1, purchased goods and services, under the GHG Protocol Scope 3 Standard."
+      ]
+    },
+    {
+      "h": "Getting a better number than the typical range",
+      "ol": [
+        "For your own plant, submeter it and divide monthly kWh by kL produced.",
+        "For bought water, ask the supplier for kWh per kL, or their total kWh and kL for the year.",
+        "If neither is possible, use the 3.5 to 5 kWh range, label it an estimate and state the basis.",
+        "Chemicals, membranes and brine disposal add a little more; most footprints leave them out as minor and say so."
+      ]
+    },
+    {
+      "h": "Why the figure matters for water decisions",
+      "p": [
+        "Recycling effluent through your own RO or ZLD system and buying desalinated water both cost energy per kL. Comparing them on kWh per kL, as well as rupees per kL, shows which one adds less to your footprint for the same water."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 kL a day of bought desalinated water",
+    "lines": [
+      "Use: 500 kL a day x 330 operating days = 1,65,000 kL a year",
+      "Supplier figure: 3.5 kWh per kL (assumed for the arithmetic, the low end of the published range)",
+      "Electricity: 1,65,000 x 3.5 = 5,77,500 kWh",
+      "CO2: 5,77,500 x 0.710 = 4,10,025 kg, about 410 t CO2 a year, reported in Scope 3 Category 1",
+      "Per kL: 3.5 x 0.710 = 2.485 kg CO2"
+    ],
+    "note": "If the same water came from your own grid-powered RO plant, these 410 t would already sit in your Scope 2 through the electricity bill."
+  },
+  "senseible": "Senseible reads your electricity bills (period, tariff category, sanctioned load, units) and applies the CEA grid factor of 0.710 kg CO2 per kWh, so an in-house RO plant's power is counted in Scope 2. Invoices for bought water go to the Scope 3 supplier evidence trail, where a supplier's kWh per kL figure gives a firmer number than a spend-based estimate.",
+  "links": [
+    {
+      "label": "ZLD plant energy and carbon per kL",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "Water withdrawal and intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IRENA and IEA-ETSAP, Water Desalination Using Renewable Energy, Technology Brief I12 (2012), energy use of large-scale RO (irena.org)",
+      "url": "https://www.irena.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "The 3.5 to 5 kWh per kL range is a labelled 2012 estimate for large seawater RO; replace it with plant or supplier data where available."
+}

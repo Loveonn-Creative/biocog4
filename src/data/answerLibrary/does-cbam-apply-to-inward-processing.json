@@ -1,0 +1,98 @@
+{
+  "slug": "does-cbam-apply-to-inward-processing",
+  "q": "Does CBAM apply to steel or aluminium imported under inward processing and then re-exported?",
+  "title": "CBAM and inward processing",
+  "short": "No, not for the share that leaves the EU. CBAM applies to goods released for free circulation, and goods under inward processing are not released while they stay in the procedure. If the steel or aluminium, or products made from it, are later released into the EU market, CBAM applies to the input quantity behind that release.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "EU importers, customs brokers and Indian steel and aluminium exporters",
+  "sections": [
+    {
+      "h": "Why re-exported goods fall outside CBAM",
+      "p": [
+        "The CBAM Regulation, (EU) 2023/956, defines import as release for free circulation under the Union Customs Code. Inward processing, under Articles 256 to 258 of the Union Customs Code, (EU) No 952/2013, lets a company bring in non-EU goods, process them and send the products out again without paying import duty. While the goods stay in the procedure they are not released for free circulation, so there is no CBAM import, no embedded emissions to declare and no certificates to surrender for them."
+      ]
+    },
+    {
+      "h": "What happens when processed products are sold inside the EU",
+      "p": [
+        "Article 2(1) of the CBAM Regulation brings in processed products made from CBAM goods under the inward processing procedure in Article 256 of the Union Customs Code. When those processed products are released for free circulation, the declarant reports the quantity of CBAM goods that were placed under inward processing to make them, with their embedded emissions, not the finished products. This applies even when the finished product is not itself a CBAM good, for example a machine part made from imported steel plate."
+      ],
+      "ul": [
+        "Steel coil processed into brackets, all re-exported: no CBAM.",
+        "Same coil, part of the brackets sold in Germany: CBAM on the coil quantity used for the German share.",
+        "Coil released unchanged from inward processing into free circulation: CBAM on the coil, as for a normal import."
+      ]
+    },
+    {
+      "h": "How to work out the quantity",
+      "ol": [
+        "Take the rate of yield from the inward processing authorisation: how many tonnes of product come from each tonne of input.",
+        "Find the quantity of processed products released for free circulation in the year, from the discharge records.",
+        "Convert it back to input tonnes of CBAM goods, by CN code.",
+        "Apply the embedded emissions per tonne of those inputs, from the producer's actual data or the EU default values."
+      ]
+    },
+    {
+      "h": "Points customs teams often miss",
+      "ul": [
+        "Only an authorised CBAM declarant can release CBAM goods for free circulation in the definitive period, which started on 1 January 2026. Inward processing does not change that once goods are released.",
+        "Regulation (EU) 2025/2083 exempts importers whose CBAM goods total 50 tonnes net mass or less in a calendar year; the threshold does not apply to electricity or hydrogen. Once an importer passes 50 tonnes, the whole year's imports are covered.",
+        "The importer cannot tell in advance which share will be released, so EU buyers often ask Indian suppliers for emissions data on every shipment.",
+        "For goods released in 2026, certificates go on sale from 1 February 2027 and the declaration and surrender are due by 30 September 2027.",
+        "Keep the authorisation, rate of yield and discharge records with the CBAM file. They are the evidence that the re-exported share was rightly left out."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative year: hot-rolled coil processed in the EU",
+    "lines": [
+      "Placed under inward processing: 1,000 t of Indian hot-rolled coil",
+      "Rate of yield 90%, so 900 t of fabricated parts",
+      "Re-exported: 600 t of parts; released for free circulation: 300 t",
+      "Coil behind the released parts: 300 / 900 x 1,000 = 333.3 t",
+      "Embedded emissions, assumed 2.2 t CO2e per t of coil: 333.3 x 2.2 = 733.3 t CO2e to declare",
+      "The 666.7 t of coil behind re-exported parts carry no CBAM obligation"
+    ],
+    "note": "The 2.2 t CO2e per tonne is an assumption for the arithmetic, not a default value. Use the producer's verified figure or the official default for the CN code."
+  },
+  "senseible": "Senseible does not handle customs procedures or decide which share of a shipment was released. Its CBAM cost calculator and CBAM data reports help an Indian producer prepare the embedded emissions figures an EU importer asks for, whichever customs route the goods take.",
+  "links": [
+    {
+      "label": "CBAM definitive period",
+      "to": "/answers/cbam-definitive-period"
+    },
+    {
+      "label": "Check if a CN code is covered",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Default values or actual emissions",
+      "to": "/answers/cbam-default-vs-actual"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), consolidated text, Articles 2 and 3",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083 amending the CBAM Regulation (50 tonne threshold, certificate dates)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "Regulation (EU) No 952/2013 (Union Customs Code), Articles 256 to 258, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Customs treatment of special procedures under CBAM may be clarified by implementing acts in the definitive period; check the consolidated CBAM Regulation and Commission guidance before relying on this for a filing."
+}

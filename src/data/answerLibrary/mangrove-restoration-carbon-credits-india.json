@@ -1,0 +1,83 @@
+{
+  "slug": "mangrove-restoration-carbon-credits-india",
+  "q": "How do mangrove restoration projects in India earn blue carbon credits?",
+  "title": "Mangrove blue carbon credits in India",
+  "short": "A mangrove project earns blue carbon credits by restoring mangroves on degraded tidal land, measuring the extra carbon stored in trees and soil against what would have happened without the project, and having it verified under a methodology such as Verra's VM0033. Land rights, survival and buffer deductions decide how many credits remain.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Coastal agencies, CSR teams and project developers",
+  "sections": [
+    {
+      "h": "Where the carbon is counted",
+      "ul": [
+        "Trees: above-ground and below-ground biomass, measured in sample plots as the stand grows.",
+        "Soil: organic carbon that builds up in waterlogged tidal soils, often the largest store in a mature mangrove.",
+        "Deductions: methane and nitrous oxide from the soils where conditions favour them, and fuel used by the project, such as boats.",
+        "The credit is the project's net carbon gain minus the baseline, the carbon the site would have held anyway as a mudflat, salt pan or abandoned pond."
+      ]
+    },
+    {
+      "h": "How a project gets from planting to credits",
+      "ol": [
+        "Secure the land: most coastal land is government or forest land, so agreements with the state forest department, coastal regulation clearances and community consent come first, including who owns the credits.",
+        "Fix the hydrology: mangroves survive where tidal flow returns. Planting without it often fails.",
+        "Describe the baseline and prove additionality, then register under a programme and pass validation.",
+        "Monitor plots and soil cores over years, then get each period verified before credits issue.",
+        "Lose a share to the buffer pool for reversal risk such as cyclones and clearing."
+      ]
+    },
+    {
+      "h": "Indian points to settle early",
+      "p": [
+        "MISHTI, announced in the Union Budget 2023 and run by MoEFCC, funds mangrove planting along the coast and on salt pan land through existing schemes. Planting already paid for by a public programme is hard to call additional, and the same area must not be claimed twice.",
+        "India's own Carbon Credit Trading Scheme has a route too. In March 2025 BEE issued an offset methodology for afforestation and reforestation of degraded mangrove habitats (BM FR05.001), so a project can seek Indian carbon credit certificates instead of, or before, a Verra listing. Pick one registry per area and year.",
+        "Mangrove restoration was not on India's February 2023 list of activities for Article 6.2 transfers. Credits can still be sold for voluntary claims, but a buyer wanting them to count toward another country's target would need India's authorisation and a corresponding adjustment. Check the current list on moef.gov.in, since it has been reissued."
+      ]
+    },
+    {
+      "h": "How it differs from other removal credits",
+      "p": [
+        "Mangrove credits come slowly, since carbon builds as trees grow, and they carry reversal risk from storms and land use change. Engineered removals such as biochar are counted once, at production, against a durability test. Mangroves also bring coastal protection and fisheries benefits that some buyers pay more for, but those benefits do not add tonnes."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows carbon credit eligibility signals and can keep the dated fuel and purchase invoices a project records as evidence. It does not measure biomass or soil carbon, validate projects or issue credits.",
+  "links": [
+    {
+      "label": "Biochar carbon credits in India",
+      "to": "/answers/biochar-carbon-credits-india"
+    },
+    {
+      "label": "How much goes to the buffer pool",
+      "to": "/answers/how-much-of-my-credits-go-to-buffer-pool"
+    },
+    {
+      "label": "India's Article 6.2 activity list",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VM0033, Methodology for Tidal Wetland and Seagrass Restoration",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "IPCC 2013 Wetlands Supplement, Chapter 4 (coastal wetlands)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "MoEFCC, MISHTI (Mangrove Initiative for Shoreline Habitats and Tangible Incomes)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "BEE, BM FR05.001 v1.0 (27 March 2025), Afforestation and reforestation of degraded mangrove habitats, CCTS Offset Mechanism",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-16",
+  "reviewNote": "India's host-country authorisation and corresponding adjustment rules are changing; check current MoEFCC notifications."
+}

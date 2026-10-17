@@ -1,0 +1,83 @@
+{
+  "slug": "can-senseible-calculate-freight-emissions",
+  "q": "Does Senseible calculate emissions from freight bills and lorry receipts?",
+  "title": "Does Senseible calculate freight emissions?",
+  "short": "Yes, when the paperwork carries the numbers. Senseible reads freight bills and lorry receipts and files transport lines under Scope 3 Category 4. A line is calculated only from printed weight, distance and mode, times an approved factor for that mode. If any of these is missing, the line stays as evidence marked Needs Data.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters and logistics buyers uploading freight invoices",
+  "sections": [
+    {
+      "h": "How a freight line is recognised",
+      "p": [
+        "The reader looks at the tax code first. SAC 9965 (goods transport), 9967 (cargo handling and other supporting transport services) and 9968 (courier) put a line in Scope 3 Category 4, upstream transportation. Without a code, words such as freight, cartage, lorry hire or haulage in the description do the same.",
+        "The mode is taken from the printed mode field or the description: road (truck, lorry, trailer, FTL, PTL), rail, air or sea. If no mode is printed, the line waits for it."
+      ]
+    },
+    {
+      "h": "What a line needs before it gets a figure",
+      "ol": [
+        "Activity data printed on the document: weight in kg and distance in km, or tonne-km printed directly. Activity is weight in tonnes times distance.",
+        "A transport mode.",
+        "A valid supplier GSTIN, so the carrier is identified and the same invoice is not counted twice.",
+        "An approved factor for that mode, looked up in order: the carrier's own figure, then a factor for India. Air and sea freight alone may then fall back to a global default. An air line is matched to a short haul factor below 1,500 km or a long haul factor from 1,500 km, the GLEC Framework distance bands.",
+        "Invoice checks that pass, such as line totals agreeing with the invoice total."
+      ]
+    },
+    {
+      "h": "What happens when something is missing",
+      "p": [
+        "The line stays in the evidence trail with its source page, but it is not totalled. The screen says what is missing and what to upload: the lorry receipt or bill of lading for weight, the transport document for distance or mode.",
+        "A rupee amount is never converted into emissions by the reader. If cost is all you have, ask for a spend-based estimate: Senseible provides one, marked spend-based with a wider uncertainty band and reported apart from the lines built on weight and distance."
+      ]
+    },
+    {
+      "h": "The logistics calculator is a separate route",
+      "p": [
+        "The logistics emissions calculator is for planning, or for a shipment whose weight and distance you know from other papers. You choose the mode, and for road the Indian truck class, and it multiplies tonne-km by a default intensity for that choice. Those defaults already include typical empty running, so it adds nothing for the return trip; if your carrier gives its own factor, that figure is applied unchanged. Treat the result as your estimate, since nothing in it was read from a document."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one lorry receipt, two outcomes",
+    "lines": [
+      "LR prints weight 8,000 kg, distance 1,150 km, mode road, carrier GSTIN valid",
+      "Activity: 8,000 kg / 1,000 x 1,150 km = 9,200 tonne-km",
+      "Emissions: 9,200 tonne-km x the approved factor for road freight in India, if one is in the factor registry; the line shows the factor and its source",
+      "No approved road factor for India yet: the line shows Needs Data (no factor) and adds nothing to the total",
+      "Same LR with no weight printed: the line shows \"Freight weight is not printed\", asks for the lorry receipt or bill of lading that shows it, and adds nothing to the total"
+    ],
+    "note": "Many freight bills print a charged weight that is higher than the actual weight. The reader takes the weight printed on the document, so check which one the line shows against the LR."
+  },
+  "senseible": "Senseible keeps every freight line as Scope 3 evidence with its source page and calculates it only from printed weight, distance and mode times an approved factor. It does not estimate weight or distance from the amount, and a Verified status means its rule checks passed, not an outside audit.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill or LR",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "E-way bill distance for freight emissions",
+      "to": "/answers/use-e-way-bill-distance-for-freight-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 4",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-17",
+  "reviewNote": "Approved freight factors are added by mode and geography over time; check which modes have a live factor before relying on a computed line."
+}
