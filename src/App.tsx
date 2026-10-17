@@ -28,6 +28,8 @@ import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
 import { serviceNav } from "@/data/services/nav";
 import { AppErrorBoundary } from "./components/AppErrorBoundary";
 import { installChunkRecovery } from "@/lib/reliability/chunkRecovery";
+import { installNewBuildCheck } from "@/lib/reliability/newBuild";
+import { NewBuildReload } from "./components/NewBuildReload";
 import { RoutePrefetcher } from "./components/RoutePrefetcher";
 import { ScrollManager } from "./components/ScrollManager";
 import { AuthLinkRouter } from "./components/AuthLinkRouter";
@@ -120,6 +122,7 @@ const PageLoader = () => (
 );
 
 installChunkRecovery();
+installNewBuildCheck();
 
 
 /** Error boundary that resets on navigation. */
@@ -153,6 +156,7 @@ const App = () => (
           <ScrollManager />
           <AnalyticsTracker />
           <AutoVerifyGate />
+          <NewBuildReload />
           <RouteSEO />
           <TranslationScope />
           <RoutedBoundary>

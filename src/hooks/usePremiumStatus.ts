@@ -148,7 +148,7 @@ const TIER_FEATURES: Record<PremiumTier, PremiumFeatures> = {
     priorityGreenFinance: true,
     phoneSupport: true,
     aiEsgHead: true,
-    biocogSuperintelligence: true,
+    biocogSuperintelligence: false, // Scale only (owner, October 2026)
     reportingFrameworks: true,
     realtimeMrvPipeline: false,
     multiEntitySupport: false,

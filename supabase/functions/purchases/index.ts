@@ -14,7 +14,7 @@ import { basePaiseFor, creditValidity, CREDIT_PACK_INVOICES, parsePurchase, purc
 import { activateAddonOrder } from "../_shared/addonActivation.ts";
 import { checkoutTotal, isPaymentMethod } from "../_shared/checkoutTotals.ts";
 import { hmacSha256Hex, mask, razorpayApi, timingSafeEqual } from "../_shared/razorpayServer.ts";
-import { notifyServiceOrder } from "../_shared/addonNotify.ts";
+import { notifyServiceOrder, sendAddonInvoice } from "../_shared/addonNotify.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -54,6 +54,7 @@ serve(async (req) => {
         return json({ error: msg, code: r.code }, r.code === 'not_captured' ? 202 : 400);
       }
       if (r.activated && r.table === 'service_orders') await notifyServiceOrder(admin, r.rowId);
+      if (r.activated) await sendAddonInvoice(admin, { supabaseUrl: SUPABASE_URL, serviceKey: SERVICE_KEY }, { table: r.table, rowId: r.rowId });
       return json({ success: true, kind: r.kind, alreadyProcessed: !r.activated });
     }
 
