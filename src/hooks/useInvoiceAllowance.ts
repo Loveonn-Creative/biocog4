@@ -58,3 +58,16 @@ export function useInvoiceAllowance() {
     pageCounting: Date.now() >= Date.parse(pageCountingFrom),
   };
 }
+
+/**
+ * Whether this account counts each page yet, read once at upload time (no
+ * hook, so the home page does not load usage on every visit). Guests have no
+ * plan allowance, so page counting (5-page parts) applies.
+ */
+export async function pageCountingActive(userId: string | null | undefined): Promise<boolean> {
+  if (!userId) return true;
+  const db = supabase as unknown as { from: (t: string) => any };
+  const { data, error } = await db.from('invoice_read_counting').select('page_counting_from').eq('user_id', userId).maybeSingle();
+  const from = !error && data?.page_counting_from ? data.page_counting_from : PAGE_COUNTING_STARTS;
+  return Date.now() >= Date.parse(from);
+}

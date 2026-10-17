@@ -18,7 +18,8 @@ import { IDENTITY_CHANGED_EVENT } from "@/lib/identity";
 import { CAPABILITY_REASON, ownerColumns, type WorkspaceScope } from "@/lib/workspaceScope";
 
 import { emitRecordsChanged } from '@/lib/recordsEvents';
-import { checkUploadPages } from '@/lib/pdfLimit';
+import { checkUploadPages, chunkPagesFor } from '@/lib/pdfLimit';
+import { pageCountingActive } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
 import { functionErrorStatus, getFunctionErrorMessage, runPool, stopsBatch } from '@/lib/functionErrors';
 import { splitPdf } from '@/lib/pdfSplit';
@@ -431,14 +432,14 @@ const Index = () => {
     }
   };
 
-  // A PDF over the page limit is split in the browser into parts of up to 10
-  // pages. Each part is read in full and saved as its own document; the
+  // A longer PDF is split in the browser into parts of 5 pages (10 before an
+  // account's page counting starts) and read two at a time. Each part is read in full and saved as its own document; the
   // result screen shows all parts together.
-  const processLongPdf = async (file: File) => {
+  const processLongPdf = async (file: File, chunk: number) => {
     if (!(await prepareWorkspace())) return;
     setState("processing");
     setDocumentType("Splitting a long PDF into parts...");
-    const split = await splitPdf(file);
+    const split = await splitPdf(file, chunk);
     if (!split.ok || !split.parts) {
       toast.error(split.message || 'This PDF could not be split.', { duration: 8000 });
       setState("idle");
@@ -517,13 +518,14 @@ const Index = () => {
       toast.error(`This file is ${(file.size / 1048576).toFixed(1)} MB; the limit is 15 MB. Take a photo of the page, or save the PDF at a lower quality.`, { duration: 7000 });
       return;
     }
-    const pageCheck = await checkUploadPages(file);
+    const chunk = chunkPagesFor(await pageCountingActive(user?.id));
+    const pageCheck = await checkUploadPages(file, chunk);
     if (!pageCheck.ok && pageCheck.reason === 'unknown_page_count') {
       toast.error(pageCheck.message, { duration: 8000 });
       return;
     }
     if (!pageCheck.ok) {
-      await processLongPdf(file);
+      await processLongPdf(file, chunk);
       return;
     }
     if (!(await prepareWorkspace())) return;

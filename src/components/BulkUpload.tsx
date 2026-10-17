@@ -21,7 +21,7 @@ import {
 import { cn } from '@/lib/utils';
 import { buildEmissionRows, type PersistableExtraction } from '@/lib/mrvPersistence';
 
-import { checkUploadPages, estimateReads, pageCountOf } from '@/lib/pdfLimit';
+import { checkUploadPages, chunkPagesFor, estimateReads, pageCountOf } from '@/lib/pdfLimit';
 import { useInvoiceAllowance } from '@/hooks/useInvoiceAllowance';
 import { prepareImageForUpload } from '@/lib/imageUpload';
 import { splitPdf } from '@/lib/pdfSplit';
@@ -117,15 +117,16 @@ export function BulkUpload({ onComplete, maxFiles = 10 }: BulkUploadProps) {
 
     const results = { processed: 0, duplicates: 0, errors: 0 };
 
-    // PDFs over the page limit are split into parts (up to 10 pages each) and
-    // each part is processed as its own document, so nothing is cut off.
+    // Longer PDFs are split into parts (5 pages each with page counting, else
+    // 10) and each part is processed as its own document, so nothing is cut off.
     const queue: FileStatus[] = [];
     for (const f of files) {
       if (f.status !== 'pending') { queue.push(f); continue; }
-      const check = await checkUploadPages(f.file);
+      const chunk = user ? chunkPagesFor(allowance.pageCounting) : chunkPagesFor(true);
+      const check = await checkUploadPages(f.file, chunk);
       if (check.ok) { queue.push(f); continue; }
       if (check.reason === 'unknown_page_count') { queue.push({ ...f, status: 'error' as const, message: check.message }); continue; }
-      const split = await splitPdf(f.file);
+      const split = await splitPdf(f.file, chunk);
       if (split.ok && split.parts) queue.push(...split.parts.map(p => ({ file: p.file, status: 'pending' as const, fromPage: p.fromPage, toPage: p.toPage, totalPages: p.totalPages })));
       else queue.push({ ...f, status: 'error' as const, message: split.message });
     }
