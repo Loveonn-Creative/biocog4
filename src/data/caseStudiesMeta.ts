@@ -5,7 +5,7 @@ export const CASE_STUDIES_META = {
   title: 'Carbon Data Case Studies from Indian Businesses',
   description: 'Indian exporters, enterprise teams and lenders on the carbon data problem they had, what changed, and the proof they can show now.',
   h1: 'What changed for businesses like yours.',
-  intro: 'Real customers, in their own words. Every number shows where it came from.',
+  intro: 'A buyer asks for carbon numbers. A bank asks for proof. See what businesses sent, what happened next, and where every number came from.',
 };
 
 /** Where each reader goes next after a story, by who the story is about. */
