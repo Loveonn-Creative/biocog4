@@ -1,0 +1,79 @@
+{
+  "slug": "battery-swapping-emissions-which-scope",
+  "q": "If my electric fleet uses battery swapping stations, are those emissions Scope 2 or Scope 3?",
+  "title": "Battery swapping: Scope 2 or Scope 3?",
+  "short": "Usually Scope 3. With battery swapping you buy a charged battery as a service; the operator owns the batteries and stations and buys the electricity, so it is the operator's Scope 2. Report your share as a purchased service in Scope 3 Category 1, state the choice, and keep it consistent year to year.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Two- and three-wheeler EV fleet operators",
+  "sections": [
+    {
+      "h": "Why it is not your Scope 2",
+      "p": [
+        "Scope 2 under the GHG Protocol is electricity purchased and consumed by equipment you own or control. In a swap model you do not buy electricity from a discom or charge on your own meter. The operator does, at its station, and sells you charged batteries per swap or per month. That energy-as-a-service arrangement falls in your Scope 3."
+      ]
+    },
+    {
+      "h": "The other reading, and how to handle it",
+      "p": [
+        "Some fleets report swap energy as Scope 2 because the electricity ends up driving their own vehicles, the same way public charging of company EVs is sometimes treated. Either way the tonnes are the same. Pick one treatment, write it in your methodology note, and never count the same kWh in both Scope 2 and Scope 3."
+      ]
+    },
+    {
+      "h": "How to calculate the figure",
+      "ol": [
+        "Ask the operator for metered kWh delivered to your batteries each month. This is the best data.",
+        "If not available, use swaps x kWh delivered per swap. A swap rarely starts from an empty battery, so use state of charge data from the app where possible.",
+        "Add a charging loss allowance and label it.",
+        "Multiply by 0.710 kg CO2 per kWh, the CEA grid average factor."
+      ]
+    },
+    {
+      "h": "What stays out",
+      "p": [
+        "Manufacturing the swap batteries and building the stations are the operator's capital goods, not yours. If the operator buys renewable power with certificates, you may use its supplier-specific figure for a market-based view, with the certificate evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 40 electric three-wheelers",
+    "lines": [
+      "Swaps: 40 vehicles x 2 a day x 300 days = 24,000 swaps",
+      "Energy per swap: 2.5 kWh delivered (assumed from app state of charge data)",
+      "24,000 x 2.5 = 60,000 kWh; with an assumed 10% charging loss, 66,000 kWh",
+      "CO2: 66,000 x 0.710 = 46,860 kg, about 46.9 t a year in Scope 3 Category 1"
+    ],
+    "note": "Replace the per-swap figure with the operator's metered kWh when you get it."
+  },
+  "senseible": "Senseible applies the CEA grid factor of 0.710 kg CO2 per kWh to electricity, and swap service invoices sit in the Scope 3 supplier evidence trail. The kWh per swap needs to come from the operator or your own log.",
+  "links": [
+    {
+      "label": "EV charging: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Are EV deliveries zero emission?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
+    },
+    {
+      "label": "GHG Protocol revision: what is changing",
+      "to": "/answers/ghg-protocol-revision-what-is-changing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "The GHG Protocol Scope 2 revision is in progress and may clarify how energy bought as a service is treated.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "pm-e-drive-subsidy-delivery-fleet",
+  "q": "Can a delivery business get PM E-DRIVE incentives on electric two- and three-wheelers?",
+  "title": "PM E-DRIVE incentives for delivery fleets",
+  "short": "Possibly, if the vehicles are eligible models and bought while that part of the scheme is open. PM E-DRIVE incentives are not paid to you as a cheque; the price is reduced at purchase and the maker claims it back. Categories, rates and end dates have been revised, so check the current Ministry of Heavy Industries notification first.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Delivery, logistics and e-commerce fleets",
+  "sections": [
+    {
+      "h": "How the incentive reaches a buyer",
+      "p": [
+        "The Ministry of Heavy Industries notified the PM Electric Drive Revolution in Innovative Vehicle Enhancement (PM E-DRIVE) scheme in 2024. Demand incentives are given as a reduction in the vehicle price at the dealer, using an e-voucher generated at sale, and the manufacturer claims the amount from the government. Only models registered under the scheme by their makers qualify."
+      ]
+    },
+    {
+      "h": "What a fleet buyer should check",
+      "ol": [
+        "Is the e-2W or e-3W component still open on the date of purchase? Incentive levels have stepped down by year.",
+        "Is the exact model and variant on the ministry's eligible list?",
+        "Does the buyer type qualify, and are there limits on vehicles per buyer?",
+        "Is the vehicle registered in the category the scheme names, such as L5 for three-wheelers?",
+        "What documents does the dealer need to generate the e-voucher?"
+      ]
+    },
+    {
+      "h": "How the incentive is usually calculated",
+      "p": [
+        "The notification sets a rate per kWh of battery capacity with a cap per vehicle. The incentive is the lower of rate x kWh and the cap. Confirm the dealer has deducted it on the invoice."
+      ]
+    },
+    {
+      "h": "The emissions side of the switch",
+      "p": [
+        "The incentive changes the cost, not the accounting. Petrol or diesel you stop buying leaves Scope 1 (or Scope 3 if riders own the vehicles), and charging on your own meter adds Scope 2 at 0.710 kg CO2 per kWh. Keep the purchase invoices showing the incentive with your fleet records."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: incentive and CO2 on one electric two-wheeler",
+    "lines": [
+      "Rate and cap (illustrative; take them from the current notification): Rs 2,500 per kWh, cap Rs 5,000",
+      "Battery 3 kWh: 3 x 2,500 = Rs 7,500, so the cap applies; incentive Rs 5,000",
+      "Petrol replaced: 25,000 km a year / 45 km per litre (assumed) = 555.6 litres x 2.31 = 1,283 kg CO2",
+      "Charging: 25,000 km x 0.035 kWh per km (assumed) = 875 kWh x 0.710 = 621 kg CO2",
+      "Saving: about 0.66 t CO2 a year per vehicle"
+    ]
+  },
+  "senseible": "Senseible reads fuel slips and electricity bills and applies 2.31 kg CO2 per litre of petrol and 0.710 kg CO2 per kWh, so the fuel you stop buying and the charging units you add show in your records from the documents.",
+  "links": [
+    {
+      "label": "Diesel to electric van CO2 saving",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "EV charging: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Climate finance for MSMEs",
+      "to": "/climate-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), default CO2 factor for motor gasoline",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "PM E-DRIVE categories, incentive levels and end dates have changed since notification; verify on heavyindustries.gov.in before relying on this page.",
+  "reviewed": "2026-10-18"
+}

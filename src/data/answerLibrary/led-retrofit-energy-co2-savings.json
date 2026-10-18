@@ -1,0 +1,74 @@
+{
+  "slug": "led-retrofit-energy-co2-savings",
+  "q": "How do I calculate the electricity and CO2 saved by an LED lighting retrofit in a factory or warehouse?",
+  "title": "LED retrofit: kWh and CO2 saved",
+  "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME owners and facility managers",
+  "sections": [
+    {
+      "h": "Get the old wattage right",
+      "p": [
+        "Metal halide, sodium vapour and old tube lights draw more than the lamp rating because the ballast or choke uses power too. Measure one fitting of each type with a clamp meter, or add the ballast loss from the maker's data. Using lamp watts alone understates the saving."
+      ]
+    },
+    {
+      "h": "Burning hours",
+      "p": [
+        "Use actual hours per day and days per year for each area, not the factory's working hours. Stores, corridors and yard lights often run longer than production halls. If you add occupancy sensors or daylight controls at the same time, count the hours reduction separately so each measure can be checked."
+      ]
+    },
+    {
+      "h": "Checking the saving afterwards",
+      "p": [
+        "Lighting is usually a small share of a factory bill, so the whole-factory units will not show the saving clearly. The retrofit isolation approach in IPMVP fits better: measure the wattage of old and new fittings once, log hours on a sample, and calculate. A lighting sub-meter, if you have one, gives the before and after directly."
+      ]
+    },
+    {
+      "h": "Side effects to count",
+      "ul": [
+        "Air-conditioned areas: less heat from lights means a small extra cooling saving.",
+        "Light levels: check lux at the work plane after the change; fewer, brighter fittings can leave dark spots.",
+        "Old fittings: dispose of mercury lamps as hazardous waste, not with scrap."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: warehouse high bays",
+    "lines": [
+      "Old: 200 metal halide fittings, 250 W lamp + 30 W ballast = 280 W each (measured)",
+      "New: 120 W LED high bays",
+      "Hours: 12 h x 330 days = 3,960 h a year",
+      "kWh saved: (280 minus 120) x 200 x 3,960 / 1,000 = 1,26,720 kWh",
+      "CO2: 1,26,720 x 0.710 = 89,971 kg, about 90 t a year",
+      "Money at Rs 8 per kWh (assumed): Rs 10,13,760 a year"
+    ]
+  },
+  "senseible": "Senseible reads the units on your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, so before and after periods can be compared from documents. The fitting count, wattages and saving claim stay your own records.",
+  "links": [
+    {
+      "label": "Measuring energy efficiency savings",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Proving savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Lighting System chapter (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

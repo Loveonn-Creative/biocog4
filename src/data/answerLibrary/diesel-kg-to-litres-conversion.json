@@ -1,0 +1,74 @@
+{
+  "slug": "diesel-kg-to-litres-conversion",
+  "q": "How do I convert diesel, LDO or furnace oil from kg to litres for emissions?",
+  "title": "Convert diesel or furnace oil kg to litres",
+  "short": "Divide the mass in kg by the density in kg per litre at 15 C: litres = kg / density. Take the density from the supplier's test certificate or invoice. Or skip the conversion and use a per-kg factor: about 3.19 kg CO2 per kg of diesel and 3.13 per kg of furnace oil, from IPCC 2006 defaults.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with fuel invoices in kg, kL or litres",
+  "sections": [
+    {
+      "h": "Where to find the density",
+      "ul": [
+        "Bulk tanker invoices and test certificates from oil companies usually print density at 15 C. Use that figure for that delivery.",
+        "For diesel, IS 1460:2017 sets the allowed density range at 15 C. Use the middle of the range only if nothing is printed, and label it.",
+        "Furnace oil and LDO densities vary more by refinery and grade. Ask the supplier for the test certificate rather than assuming."
+      ]
+    },
+    {
+      "h": "Why temperature matters",
+      "p": [
+        "Oil expands when warm. A litre delivered at 35 C holds less fuel than a litre at 15 C. Invoices for bulk fuel often state volume corrected to 15 C; if yours states both, use the corrected volume with the 15 C density. Mixing an ambient volume with a 15 C density adds a small error of about 1 to 2 percent."
+      ]
+    },
+    {
+      "h": "Per-litre or per-kg factor, pick one route",
+      "p": [
+        "The IPCC 2006 defaults are by energy, and convert to 74,100 kg CO2 per TJ x 43.0 GJ per t = about 3.19 kg CO2 per kg for diesel, and 77,400 x 40.4 = about 3.13 kg CO2 per kg for residual fuel oil. The per-litre figures, 2.68 kg CO2 per litre for diesel and 2.97 for furnace oil, assume an average density. Results from the two routes differ by under 1 percent; use one route for the year and note it."
+      ]
+    },
+    {
+      "h": "LDO and other units",
+      "p": [
+        "LDO is a distillate, so most inventories use the IPCC gas or diesel oil factor for it, by mass with the certificate density. 1 kL = 1,000 litres, and 1 MT = 1,000 kg. Check whether the invoice quantity is at 15 C or ambient before converting."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two fuel invoices",
+    "lines": [
+      "Furnace oil: 12,500 kg, density 0.950 kg per litre at 15 C (test certificate)",
+      "12,500 / 0.950 = 13,157.9 litres x 2.97 = 39,079 kg CO2",
+      "Per-kg route: 12.5 t x 3.127 = 39.09 t CO2, the same to within rounding",
+      "Diesel: 5,000 kg, density 0.835 kg per litre at 15 C",
+      "5,000 / 0.835 = 5,988 litres x 2.68 = 16,048 kg CO2",
+      "Per-kg route: 5 t x 3.186 = 15.93 t CO2, about 0.7% lower"
+    ]
+  },
+  "senseible": "Senseible reads fuel invoices and slips and applies the IPCC 2006 defaults, such as diesel 2.68 kg CO2 per litre and furnace oil 2.97 kg CO2 per litre, with electricity at the CEA factor of 0.710. A line without a printed quantity shows Needs Data rather than a guess.",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    },
+    {
+      "label": "HSN codes for fuels in Scope 1",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    },
+    {
+      "label": "Fuel purchased vs fuel consumed",
+      "to": "/answers/fuel-purchased-vs-fuel-consumed"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2, default net calorific values and CO2 factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

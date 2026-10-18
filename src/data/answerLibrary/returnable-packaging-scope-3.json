@@ -1,0 +1,82 @@
+{
+  "slug": "returnable-packaging-scope-3",
+  "q": "How do I account for returnable pallets, crates and drums in Scope 3?",
+  "title": "Returnable pallets and crates in Scope 3",
+  "short": "Count the packaging's production emissions once, in the year you buy it: Category 2 if you capitalise it, Category 1 if you expense it. Do not spread it over trips in your inventory. Return trips you pay for go in Category 4, washing or repair bought in goes in Category 1, and disposal goes in Category 5.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Auto component, FMCG and chemical suppliers using returnable packaging",
+  "sections": [
+    {
+      "h": "Purchase: Category 1 or Category 2",
+      "p": [
+        "Follow your accounts. Pallet pools and crate fleets that are capitalised as fixed assets go in Category 2, capital goods, with their full cradle-to-gate emissions in the year of purchase. Packaging you expense goes in Category 1. Use mass x material factor, for example kg of HDPE x an HDPE resin factor plus a moulding allowance, or the supplier's own footprint."
+      ]
+    },
+    {
+      "h": "Return trips and handling",
+      "ul": [
+        "Return transport you pay for: Category 4, from weight, distance and a freight factor.",
+        "Return transport your customer pays for: not yours; it sits in your customer's inventory.",
+        "Washing, reconditioning or drum cleaning bought from a vendor: Category 1 services.",
+        "Washing in your own plant: already in your Scope 1 and 2 through fuel and electricity."
+      ]
+    },
+    {
+      "h": "End of life",
+      "p": [
+        "When you scrap crates or drums, the waste treatment emissions go in Category 5, waste generated in operations. If you sell them as scrap for recycling, follow the same treatment you use for other scrap."
+      ]
+    },
+    {
+      "h": "Why product footprints are different",
+      "p": [
+        "A product carbon footprint under ISO 14067 shares the packaging's production emissions over its expected number of trips. That is right for a footprint per unit sold, but in a yearly inventory the full purchase sits in the year you bought it. Keep the two methods apart, and do not use the per trip share in your Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a crate fleet and its returns",
+    "lines": [
+      "Purchase: 2,000 HDPE crates x 2 kg = 4,000 kg; x 1.8 kg CO2e per kg (illustrative proxy) = 7,200 kg CO2e, Category 2 if capitalised",
+      "Returns you pay for: 100 trips x 1.5 t x 300 km = 45,000 tonne-km",
+      "Light truck 3 to 5 t GVW, 0.2222 kg CO2e per tonne-km: 45,000 x 0.2222 = 9,999 kg CO2e, Category 4",
+      "For a product footprint only: 2 kg x 1.8 / 50 trips = 0.072 kg CO2e per crate trip"
+    ],
+    "note": "The HDPE factor and trip count are illustrative inputs. Empty crates fill a truck by volume, not weight, so if returns run in a dedicated vehicle, a per vehicle-km calculation can be more accurate than tonne-km."
+  },
+  "senseible": "Senseible reads packaging purchase invoices and freight records, files Scope 3 lines in a separate supplier evidence trail, and labels spend-based estimates as such. You confirm from your accounts whether returnable packaging was capitalised.",
+  "links": [
+    {
+      "label": "Machinery: Category 1 or 2?",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "HSN codes for packaging materials",
+      "to": "/answers/hsn-codes-for-packaging-materials-scope-3"
+    },
+    {
+      "label": "Polymer resin emission factors",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Freight: Category 4 or Category 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011) and Technical Guidance (2013)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "category-9-unknown-final-destination",
+  "q": "How do I estimate Category 9 when I do not know where my distributors send the goods?",
+  "title": "Category 9 when destinations are unknown",
+  "short": "Estimate it with the average-data method: take tonnes sold by state or region, assume an average distributor to retailer distance for each, multiply by a road freight factor per tonne-km, and label the result as an estimate. Then replace the assumptions with a sample of real distributor trips each year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "FMCG, building-material and consumer goods makers selling through distributors",
+  "sections": [
+    {
+      "h": "Which legs belong in Category 9",
+      "ul": [
+        "Transport of sold products that you do not pay for: distributor to retailer, retailer to a customer's site, and any leg your distributor arranges.",
+        "Legs you pay for, such as factory to distributor on your freight contract, are Category 4, not Category 9.",
+        "Customers travelling to shops is an optional part of Category 9 in the Scope 3 Standard. Most manufacturers leave it out and say so."
+      ]
+    },
+    {
+      "h": "Building the estimate step by step",
+      "ol": [
+        "Group sales by region using your GST invoices or distributor billing addresses, in tonnes shipped, including packaging.",
+        "For each region, set an average onward distance from distributor to retail. A dense city market is shorter than a rural district served from one depot.",
+        "Pick the vehicle class distributors usually use, often a light or small truck, and apply its default factor per tonne-km.",
+        "Multiply tonnes x distance x factor for each region and add them up.",
+        "Write down every assumption, its basis and the year, so the next estimate can be compared."
+      ]
+    },
+    {
+      "h": "Improving the data without chasing every distributor",
+      "p": [
+        "Ask your five to ten largest distributors for one month of dispatch data: delivery towns and vehicle type. Use it to replace the assumed distance for their regions and keep the assumption elsewhere. Distributor e-way bills already carry approximate distances, so a cooperative distributor can share a summary without new paperwork.",
+        "Run a simple sensitivity check. If doubling the assumed distance does not change your total Scope 3 by more than a few percent, the estimate is good enough and effort is better spent on Category 1."
+      ]
+    },
+    {
+      "h": "What to disclose",
+      "p": [
+        "State that Category 9 uses the average-data method with assumed distances, give the factors and their source, and say which regions use distributor data. Do not present an estimate as measured. A buyer or assessor will accept a clear estimate more readily than a precise number with no basis."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: 2,400 tonnes sold through distributors",
+    "lines": [
+      "Region A, city market: 1,500 t x 50 km assumed = 75,000 tonne-km",
+      "Region B, rural districts: 900 t x 120 km assumed = 1,08,000 tonne-km",
+      "Total: 75,000 + 1,08,000 = 1,83,000 tonne-km",
+      "Factor: light truck 3 to 5 t GVW, 0.2222 kg CO2e per tonne-km, well-to-wheel",
+      "1,83,000 x 0.2222 = 40,662.6 kg CO2e, about 40.7 t in Category 9",
+      "Sensitivity: with both distances doubled the figure is about 81.3 t"
+    ],
+    "note": "Distances are assumptions for illustration. Default factors include typical empty running, so no return trip is added."
+  },
+  "senseible": "Senseible reads freight records where you have them and its freight calculator applies default intensities by mode and Indian truck class, so the distributor legs you estimate are kept apart from measured legs and labelled as estimates.",
+  "links": [
+    {
+      "label": "Downstream warehousing in Category 9",
+      "to": "/answers/downstream-warehousing-category-9"
+    },
+    {
+      "label": "Freight: Category 4 or Category 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Filling gaps in Scope 3 data",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011) and Technical Guidance (2013)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, GHG emissions from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

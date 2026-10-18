@@ -1,0 +1,78 @@
+{
+  "slug": "compressed-air-pressure-reduction-savings",
+  "q": "How much energy does lowering compressed air pressure save, and how do I work out the CO2?",
+  "title": "Lower compressor pressure: energy and CO2",
+  "short": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for grid electricity.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers in engineering, textile and plastics units",
+  "sections": [
+    {
+      "h": "Why pressure costs energy",
+      "p": [
+        "A compressor works harder to squeeze air to a higher pressure, so every extra bar at the set point costs power for every hour the compressor is loaded. Higher pressure also pushes more air out of every leak and every open blow-off, so the network uses more air for the same work."
+      ]
+    },
+    {
+      "h": "Find the pressure you really need",
+      "ol": [
+        "List the machines on the network and the minimum working pressure each maker specifies.",
+        "Measure the pressure at the most demanding machine while it runs, not only at the receiver.",
+        "Measure the drop across dryers, filters and long pipe runs. A choked filter can waste close to a bar on its own.",
+        "Set the compressor at the highest machine need plus the measured drop, and lower it in small steps while watching production.",
+        "If one machine needs much more than the rest, consider a small booster or a separate compressor for it instead of running the whole plant high."
+      ]
+    },
+    {
+      "h": "How to get the kWh baseline",
+      "ul": [
+        "Best: a sub-meter on the compressor, read for a normal month before and after the change.",
+        "Next: input kW at load from a power analyser, times loaded hours from the compressor controller.",
+        "Last resort: rated motor kW times loaded hours, labelled an estimate, since motors rarely draw exactly their rating."
+      ]
+    },
+    {
+      "h": "Report it as measured, not as a rule of thumb",
+      "p": [
+        "The 6 to 10 percent per bar figure is for planning. Once the change is made, report the saving from metered kWh before and after, adjusted for production, and keep the pressure log. If the compressor runs on load and unload control, part of its power is drawn while unloaded, so the real saving can differ from the rule."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: set point cut from 7.5 to 6.5 bar (illustrative)",
+    "lines": [
+      "Compressor energy from its sub-meter: 3,00,000 kWh a year",
+      "Low end, 6 percent: 3,00,000 x 0.06 = 18,000 kWh; CO2 = 18,000 x 0.710 = 12,780 kg",
+      "High end, 8 percent: 3,00,000 x 0.08 = 24,000 kWh; CO2 = 24,000 x 0.710 = 17,040 kg",
+      "At Rs 8 per kWh (assumed): Rs 1,44,000 to Rs 1,92,000 a year",
+      "Expected range: about 12.8 to 17.0 tonnes CO2 a year, to be confirmed by metering"
+    ],
+    "note": "Both cases sit inside the BEE 6 to 10 percent band; 8 percent is used as the upper case to stay cautious. Metered kWh decides the figure you report."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "links": [
+    {
+      "label": "Compressed air leaks: cost and CO2",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Build a MACC for a factory",
+      "to": "/answers/how-to-build-a-macc-for-a-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 3, Compressed Air System",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

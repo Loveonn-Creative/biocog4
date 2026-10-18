@@ -1,0 +1,76 @@
+{
+  "slug": "state-subsidies-msme-energy-efficiency",
+  "q": "How do I find state government subsidies for MSME energy efficiency and solar in India?",
+  "title": "Finding state MSME energy subsidies",
+  "short": "Start with three offices in your state: the industries department's current MSME or industrial policy, the state designated agency for energy conservation, and the state renewable energy agency or discom for rooftop solar. Read the scheme notification itself, check eligibility and timing before you buy, and keep audit reports and invoices ready.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME owners in Gujarat, Maharashtra, Tamil Nadu, Karnataka and other states",
+  "sections": [
+    {
+      "h": "Where state support usually sits",
+      "ul": [
+        "State industrial or MSME policy, from the industries department: capital subsidies, interest subvention or reimbursement for technology upgrades, energy audits and sometimes solar.",
+        "State designated agency under the Energy Conservation Act, 2001: energy audit support, efficiency programmes and awareness schemes. BEE lists the agency for each state.",
+        "State renewable energy development agency and the discom: rooftop solar programmes, net metering rules and any state top-up on central support.",
+        "District Industries Centre: the local office that often receives and checks MSME applications."
+      ]
+    },
+    {
+      "h": "A method that works in any state",
+      "ol": [
+        "Get your Udyam registration in order; most MSME schemes need it.",
+        "Download the current policy or scheme notification from the official state website, not a summary from a vendor.",
+        "Note the eligibility terms: enterprise size, sector, location, new or existing unit, and the list of eligible equipment.",
+        "Check the timing: many schemes need an application or in-principle approval before you buy or commission the equipment.",
+        "Ask the MSME Development and Facilitation Office of the Ministry of MSME for your region about central schemes that can stack with the state one."
+      ]
+    },
+    {
+      "h": "Documents that are usually asked for",
+      "ul": [
+        "An energy audit report or detailed project report showing the expected saving.",
+        "Quotations, then purchase invoices and installation certificates.",
+        "Electricity bills and fuel invoices before and after, to show the saving.",
+        "Bank and loan papers if the support is an interest subvention."
+      ]
+    },
+    {
+      "h": "Pitfalls",
+      "p": [
+        "State schemes change with each new policy, and budgets run out. A subsidy amount quoted by a supplier may come from an expired policy. Confirm the scheme is open on the date you apply, and keep the notification you relied on with your file."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns your electricity bills and fuel invoices into a summary of energy use and emissions with each figure traced to its source document, which supports an application or a before and after comparison. Filing the subsidy application is done by you with the state office.",
+  "links": [
+    {
+      "label": "Tamil Nadu MSME state incentives",
+      "to": "/climate-intelligence/tamil-nadu-msme-decarbonisation-state-incentives"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "ADEETIE scheme",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, State Designated Agencies under the Energy Conservation Act, 2001",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Ministry of Power, Energy Conservation Act, 2001",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "State schemes change often; this page gives the method and offices, not amounts, and should be rechecked when state policies are renewed."
+}

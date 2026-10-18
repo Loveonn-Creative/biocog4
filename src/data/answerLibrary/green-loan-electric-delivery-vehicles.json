@@ -1,0 +1,83 @@
+{
+  "slug": "green-loan-electric-delivery-vehicles",
+  "q": "What evidence does a lender want for a green loan to buy electric delivery vehicles?",
+  "title": "Green loan for electric delivery vehicles",
+  "short": "A lender will want proof the vehicles are fully electric, a quotation and later the invoices, registration certificates showing electric fuel type, the fuel records of the vehicles they replace as a baseline, a charging plan, and a yearly report of kilometres, kWh and CO2 avoided. Clean transport is an eligible green loan category.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Logistics MSMEs and fleet operators",
+  "sections": [
+    {
+      "h": "Why EVs qualify",
+      "p": [
+        "Clean transportation is one of the eligible project categories in the Green Loan Principles, and the RBI Framework for Acceptance of Green Deposits (April 2023) lists clean transportation among the activities banks may fund with green deposits. A loan for battery-electric delivery vehicles fits both, which makes it easy for a bank to label."
+      ]
+    },
+    {
+      "h": "Before sanction",
+      "ul": [
+        "Quotation or proforma invoice from the maker or dealer, with model, battery capacity and price.",
+        "Specification sheet showing the vehicle is battery-electric.",
+        "Twelve months of fuel invoices or fuel card statements for the vehicles being replaced, with their kilometres, as the baseline.",
+        "Charging plan: chargers at your premises with a sub-meter, public charging or battery swapping.",
+        "A short note on expected impact: kilometres a year, kWh per km, and CO2 before and after, with the factors named."
+      ]
+    },
+    {
+      "h": "After disbursement",
+      "ul": [
+        "Tax invoices for the vehicles and chargers, matching the loan amount.",
+        "Registration certificates showing electric as the fuel type.",
+        "Bank statements or a proceeds tracker showing the money paid the suppliers.",
+        "Evidence the old vehicles were sold, scrapped or moved, if the impact claim assumes they stopped running."
+      ]
+    },
+    {
+      "h": "Yearly reporting",
+      "p": [
+        "Report kilometres run, kWh charged from the sub-meter or operator statements, and CO2 avoided against the baseline, while the loan is outstanding. Use the measured figures from the second year onwards, not the projection in the application. If the vehicles also earn a government purchase subsidy, show the cost net of it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative impact figure: 20 electric cargo three-wheelers",
+    "lines": [
+      "Replaced: diesel three-wheelers at 25 km per litre (assumed), 30,000 km a year each = 1,200 L; x 2.68 = 3,216 kg CO2",
+      "Electric at 0.10 kWh per km at the plug (assumed): 30,000 x 0.10 = 3,000 kWh; x 0.710 = 2,130 kg CO2",
+      "Saving per vehicle: 3,216 minus 2,130 = 1,086 kg CO2 a year",
+      "Fleet: 1,086 x 20 = 21,720 kg, about 21.7 tonnes CO2 a year, location-based"
+    ],
+    "note": "Mileage and kWh per km are assumptions for the application; report measured figures once the vehicles run."
+  },
+  "senseible": "Senseible's green loan readiness check shows how ready your records are for a lender, and Senseible reads the fuel invoices for the baseline and the electricity bills for charging, applying 2.68 kg CO2 per litre of diesel and 0.710 kg CO2 per kWh. The lender makes the credit decision.",
+  "links": [
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "What RBI green deposits can finance",
+      "to": "/climate-intelligence/rbi-green-deposits-what-banks-finance"
+    },
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Green Loan Principles (2023)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "RBI Framework for Acceptance of Green Deposits (April 2023)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "EV purchase subsidies and bank green loan concessions change often; check current scheme terms with the lender.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "reverse-logistics-customer-returns-emissions",
+  "q": "How do I count emissions from customer returns and reverse logistics?",
+  "title": "Emissions from customer returns",
+  "short": "Count the return trip like any other shipment: weight times distance times a factor for the mode. Returns you pay to transport go in Scope 3 Category 4; returns the customer pays for go in Category 9. Returned goods you scrap are your waste, so they go in Category 5, not Category 12.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "E-commerce sellers and exporters handling returns",
+  "sections": [
+    {
+      "h": "The three flows to count",
+      "ul": [
+        "Customer returns: the parcel coming back from the buyer to your warehouse.",
+        "Return to origin (RTO): undelivered or refused parcels, often cash on delivery, that travel back. The outbound leg is already in your outbound transport; add only the return leg.",
+        "Onward movement: returned stock sent on to a refurbisher, liquidator or scrap dealer."
+      ]
+    },
+    {
+      "h": "Which category each one goes in",
+      "ul": [
+        "Return transport you pay for, directly or through a marketplace's fee: Category 4.",
+        "Return transport the customer arranges and pays for: Category 9.",
+        "Returned goods you scrap or send for disposal: Category 5, waste generated in operations.",
+        "New packaging to repack returned stock: Category 1, purchased goods."
+      ]
+    },
+    {
+      "h": "Avoid counting the same product twice",
+      "p": [
+        "If you report Category 11 or 12 for sold products, base them on units sold net of returns. A returned unit you scrap is then in Category 5 only. A unit you refurbish and sell again is counted once more as a sale in the year you resell it."
+      ]
+    },
+    {
+      "h": "Where the data sits",
+      "p": [
+        "Marketplace return reports and courier invoices give the count, the weight and the pin codes. RTO lines are usually marked separately on courier invoices. Use actual weight, not the volumetric weight the courier charged on."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for an online seller",
+    "lines": [
+      "Customer returns: 1,500 parcels x 1.2 kg x 800 km average = 1.8 t x 800 = 1,440 tonne-km",
+      "RTO return legs: 300 parcels x 1.2 kg x 800 km = 0.36 t x 800 = 288 tonne-km",
+      "Total: 1,728 tonne-km x 0.10 kg CO2e per tonne-km (illustrative road factor) = 172.8 kg CO2e in Category 4",
+      "Scrapped: 20% of returns, 300 x 1.2 kg = 360 kg to Category 5 with a waste factor for its disposal route"
+    ],
+    "note": "The road factor is a placeholder; parcel vans usually have higher factors per tonne-km than full trucks."
+  },
+  "senseible": "Senseible reads freight records and courier invoices into a separate Scope 3 supplier evidence trail, and spend-based estimates are labelled as such. Return counts and weights come from your marketplace or courier reports.",
+  "links": [
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Waste emissions in Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Categories 4, 5, 9 and 12",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 4 and 5",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Smart Freight Centre, GLEC Framework v3.0 (2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

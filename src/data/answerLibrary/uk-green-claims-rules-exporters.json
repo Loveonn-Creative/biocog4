@@ -1,0 +1,77 @@
+{
+  "slug": "uk-green-claims-rules-exporters",
+  "q": "What rules apply to green or carbon claims on products an Indian exporter sells in the UK?",
+  "title": "UK green claims rules for exporters",
+  "short": "UK consumer law, explained in the CMA's Green Claims Code, applies: an environmental or carbon claim must be true, clear, complete and backed by evidence. Since April 2025 the CMA can fine businesses directly for misleading claims under the Digital Markets, Competition and Consumers Act 2024, so UK retailers now check suppliers' claims closely.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters of consumer goods to UK retailers",
+  "sections": [
+    {
+      "h": "The six principles of the Green Claims Code",
+      "ol": [
+        "Claims must be truthful and accurate.",
+        "Claims must be clear and unambiguous.",
+        "Claims must not omit or hide important information.",
+        "Comparisons must be fair and meaningful.",
+        "Claims must consider the full life cycle of the product.",
+        "Claims must be substantiated."
+      ]
+    },
+    {
+      "h": "Who is responsible when you sell through a UK retailer",
+      "p": [
+        "Responsibility is shared. The CMA's January 2026 guidance on green claims across the supply chain says a retailer that repeats a manufacturer's claim can be liable alongside the manufacturer, and that retailers must take reasonable steps to check claims rather than rely on supplier assurances. Suppliers are expected to supply the evidence and tell buyers when materials change. If you sell direct to UK consumers online, you are the trader."
+      ]
+    },
+    {
+      "h": "Claims that draw the most scrutiny",
+      "ul": [
+        "Broad words such as eco-friendly, green or sustainable without a specific, provable meaning.",
+        "Carbon neutral or net zero product claims that rely on offsets without saying so.",
+        "Recycled content percentages without a mass balance or batch record behind them.",
+        "Claims about one part of the product, such as the packaging, that read as if they cover the whole product."
+      ]
+    },
+    {
+      "h": "Evidence to keep for each claim",
+      "ul": [
+        "The exact wording, where it appears and the products it covers.",
+        "The data behind it: a product carbon footprint to ISO 14067, recycled content records, or test reports.",
+        "For offset-based claims: the credits, their registry retirement records and the share of emissions they cover.",
+        "The date and the person who checked it, and a date to review it."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the invoices and bills behind your emission figures and drafts self-declared reports from them, which you can use as evidence for a claim. Those reports are not a certification or third-party verification of the claim.",
+  "links": [
+    {
+      "label": "Greenwashing self-audit checklist",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    },
+    {
+      "label": "UK carbon reduction plan for Indian suppliers",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    },
+    {
+      "label": "Recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021:2016, Self-declared environmental claims (Type II environmental labelling)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CMA guidance and enforcement practice under the Digital Markets, Competition and Consumers Act 2024 are evolving; check the Green Claims Code and the January 2026 supply chain guidance on gov.uk for the current text."
+}

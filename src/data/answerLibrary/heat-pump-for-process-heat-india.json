@@ -1,0 +1,97 @@
+{
+  "slug": "heat-pump-for-process-heat-india",
+  "q": "Can an industrial heat pump replace my boiler for process heat below 90 C, and how much CO2 does it save on India's grid?",
+  "title": "Heat pump vs boiler for process heat in India",
+  "short": "Often yes for hot water and low-temperature process heat below 90 C. On India's grid factor of 0.710 kg CO2 per kWh, a heat pump beats a diesel, furnace oil or coal boiler at a coefficient of performance (COP) above about 2.3, but needs a COP above about 3.1 to beat an efficient PNG boiler.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Food, dairy, pharma and textile processors",
+  "sections": [
+    {
+      "h": "The two formulas, per kWh of useful heat",
+      "ul": [
+        "Heat pump: 0.710 / COP kg CO2. At COP 2 that is 0.355, at COP 3 0.237, at COP 4 0.178.",
+        "Boiler: fuel CO2 per kWh of fuel / boiler efficiency. Using IPCC 2006 defaults per unit of energy: diesel 0.267, furnace oil 0.279, LPG 0.227, natural gas 0.202 and bituminous coal 0.341 kg CO2 per kWh of fuel."
+      ]
+    },
+    {
+      "h": "Break-even COP by fuel",
+      "p": [
+        "Divide 0.710 by the boiler figure per kWh of heat. With labelled efficiency estimates:"
+      ],
+      "ul": [
+        "Coal boiler at 72 percent: 0.473 per kWh of heat, break-even COP 1.5",
+        "Furnace oil at 85 percent: 0.328, break-even COP 2.2",
+        "Diesel at 85 percent: 0.314, break-even COP 2.3",
+        "LPG at 85 percent: 0.267, break-even COP 2.7",
+        "PNG at 88 percent: 0.230, break-even COP 3.1"
+      ]
+    },
+    {
+      "h": "What sets the COP",
+      "p": [
+        "COP falls as the temperature lift grows, the gap between the heat source and the delivery temperature. Lifting waste heat at 35 to 40 C, such as chiller condenser heat or warm effluent, to 70 to 80 C gives a far better COP than taking heat from outdoor air and delivering it at 90 C. Ask the supplier for the COP at your source and delivery temperatures, not a headline rating.",
+        "If the same unit also gives you useful cooling, such as for a dairy's chilling, the combined benefit is larger than the heating figure alone."
+      ]
+    },
+    {
+      "h": "Where a heat pump does not fit",
+      "ul": [
+        "Steam above about 100 C, unless you add a steam booster stage, which lowers the COP.",
+        "Plants with no steady hot water demand; heat pumps work best running long hours at constant load.",
+        "Sites where the electrical connection would need a large sanctioned load increase. Check that cost early."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "p": [
+        "Replace coal, furnace oil or diesel heat for duties below 90 C when the supplier's COP at your temperatures is above about 2.5. Against PNG, look for a COP above 3.5 or a waste heat source, or plan on renewable electricity for the heat pump. Check the result from bills after a full season."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500,000 kWh of hot water heat a year",
+    "lines": [
+      "Diesel boiler at 85 percent: 500,000 / 0.85 = 588,235 kWh of fuel, about 58,550 litres; 58,550 x 2.68 = 156,900 kg CO2",
+      "Heat pump at COP 3: 500,000 / 3 = 166,667 kWh x 0.710 = 118,333 kg CO2, saving about 38.6 t (25 percent)",
+      "Heat pump at COP 4: 125,000 kWh x 0.710 = 88,750 kg CO2, saving about 68.2 t (43 percent)",
+      "PNG boiler at 88 percent for comparison: 114,750 kg CO2, lower than the heat pump at COP 3"
+    ],
+    "note": "Boiler efficiencies and COPs are labelled estimates. Diesel at about 10.05 kWh per litre is derived from 2.68 kg CO2 per litre and the IPCC default of 74,100 kg CO2 per TJ. Factors are CO2 only."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA factor of 0.710 kg CO2 per kWh and IPCC 2006 fuel defaults, so you can compare before and after periods from your own documents. Savings claims stay your own.",
+  "links": [
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boiler emissions",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IEA Heat Pumping Technologies TCP, Annex 58: High-Temperature Heat Pumps",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The CEA grid factor is revised each year; break-even COPs fall as the grid gets cleaner."
+}

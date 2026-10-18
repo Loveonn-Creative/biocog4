@@ -1,0 +1,81 @@
+{
+  "slug": "reheating-furnace-insulation-fuel-savings",
+  "q": "How much fuel does better furnace insulation or ceramic fibre lining save in a reheating or heat-treatment furnace?",
+  "title": "Furnace insulation: fuel saved",
+  "short": "Work it out from the furnace's outer wall temperature before and after. Wall heat loss falls sharply as the surface cools: in an illustrative 40 m2 furnace, cutting the casing from 120 C to 70 C saves about 38 tonnes of furnace oil a year. Batch furnaces also save the heat a heavy lining soaks up each cycle.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Forging, rolling and heat-treatment MSMEs",
+  "sections": [
+    {
+      "h": "Wall loss: the BEE surface formula",
+      "p": [
+        "The BEE guide book on thermal utilities estimates heat lost from a hot surface as S = [10 + (Ts minus Ta) / 20] x (Ts minus Ta) kcal per hour per m2, where Ts is the casing temperature and Ta the surrounding air, both in C. Multiply by the casing area and operating hours for heat lost a year.",
+        "To turn heat into fuel, divide by the fuel's calorific value and by the share of fuel heat that stays in the furnace after flue gas losses. Dividing by overall furnace efficiency instead would overstate the saving."
+      ]
+    },
+    {
+      "h": "Storage loss in batch furnaces",
+      "p": [
+        "A furnace that heats up and cools down every shift or batch also heats its own lining each time. That heat is mass of lining x specific heat x temperature rise, and it is lost on every cycle. Ceramic fibre is far lighter than firebrick, so it stores much less heat; this is often the larger saving for bogie hearth and heat-treatment furnaces that cycle daily.",
+        "A continuous reheating furnace running round the clock gains little on storage loss; its saving is mostly wall loss."
+      ]
+    },
+    {
+      "h": "What to measure",
+      "ul": [
+        "Casing temperature with an infrared gun on a grid of points on each wall, roof and door, while the furnace is at working temperature.",
+        "Casing area of each face, and annual hours at temperature.",
+        "Fuel use from invoices, and flue gas temperature and oxygen to judge how much fuel heat stays in the furnace.",
+        "For batch furnaces, lining weight and the number of heat-up cycles a year."
+      ]
+    },
+    {
+      "h": "Losses insulation does not fix",
+      "p": [
+        "Open doors and gaps radiate heat directly from inside the furnace, and poor air to fuel ratio sends heat up the stack. Fix door seals, keep doors shut between charges and tune the burner before or alongside relining, and measure the result with fuel per tonne heated, not the formula alone."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 40 m2 of furnace casing, furnace oil fired",
+    "lines": [
+      "Before: casing 120 C, air 35 C, difference 85: S = (10 + 85/20) x 85 = 1,211.25 kcal/h per m2; x 40 = 48,450 kcal/h",
+      "After a ceramic fibre veneer: casing 70 C, difference 35: S = (10 + 35/20) x 35 = 411.25; x 40 = 16,450 kcal/h",
+      "Saved: 32,000 kcal/h x 6,000 h = 192 million kcal a year",
+      "Fuel: 192 million / (10,000 kcal/kg x 0.50 heat retained) = 38,400 kg of furnace oil",
+      "At 0.94 kg/L (assumed): about 40,851 L; x 2.97 = about 1,21,300 kg, roughly 121 tonnes CO2 a year"
+    ],
+    "note": "Calorific value, the 50 percent heat retained, density, hours and temperatures are assumptions for illustration. Confirm the saving from fuel per tonne heated before and after."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "links": [
+    {
+      "label": "Heat treatment emissions per tonne",
+      "to": "/answers/heat-treatment-emissions-per-tonne"
+    },
+    {
+      "label": "Forging carbon footprint per tonne",
+      "to": "/answers/forging-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Steam pipe insulation heat loss",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, furnaces and insulation and refractories chapters",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

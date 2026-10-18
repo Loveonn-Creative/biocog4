@@ -1,0 +1,89 @@
+{
+  "slug": "it-hardware-laptops-category-2-emissions",
+  "q": "How do I estimate Category 2 emissions for laptops, servers and other IT hardware we buy?",
+  "title": "Category 2 emissions for laptops and servers",
+  "short": "Take the manufacturing share of each model's product carbon footprint sheet, multiply by the units you capitalised this year, and report the total in Category 2 for the year of purchase. Where no sheet exists, use a labelled spend-based estimate on the GST-exclusive invoice value.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "IT services firms, offices and exporters answering buyer questionnaires",
+  "sections": [
+    {
+      "h": "Category 1 or Category 2 depends on your fixed asset policy",
+      "p": [
+        "The GHG Protocol leaves the line to your accounts. Laptops and servers booked into your fixed asset register belong in Category 2, capital goods. Items you expense, such as a mouse, a keyboard or a laptop below your capitalisation threshold, go in Category 1, purchased goods.",
+        "Ask finance for the year's additions to the computer and IT equipment block. That list, with model numbers and quantities, is your activity data."
+      ]
+    },
+    {
+      "h": "Take only the manufacturing share from a footprint sheet",
+      "p": [
+        "Most large laptop, desktop and server makers publish a product carbon footprint sheet per model, often prepared under ISO 14067 or the PAIA method. The headline figure usually covers the whole life: manufacturing, transport, years of use and end of life.",
+        "For Category 2 you want the cradle-to-gate part: manufacturing, and transport to you if the sheet splits it out. Multiply the headline total by the manufacturing percentage the sheet shows. Leave out the use phase, because the electricity your devices use is already in your own Scope 2."
+      ],
+      "ul": [
+        "Servers: the use phase often dominates the headline figure, so taking the total by mistake can inflate Category 2 several times over.",
+        "A sheet for a close sibling model is acceptable if you say so. Note the model and the sheet's date."
+      ]
+    },
+    {
+      "h": "When there is no sheet: a labelled spend-based estimate",
+      "p": [
+        "Multiply the invoice value before GST by an environmentally extended input-output factor for computer equipment, converted to rupees in the factor's base year. Label the line spend-based and expect a wide error band. Use it for monitors, networking gear and small items, and keep model-level sheets for the big-ticket servers and laptop fleets."
+      ]
+    },
+    {
+      "h": "Timing and edge cases",
+      "ul": [
+        "Report the full cradle-to-gate figure in the year you acquire the asset. Do not spread it over the depreciation life.",
+        "A large server refresh will spike one year. Say so in your method note rather than smoothing it.",
+        "Rented laptops are not capital goods you acquired, so keep them out of Category 2. Treat the rental as a purchased service in Category 1 and state that choice in your method note.",
+        "Disposal of old hardware belongs in Category 5, waste, in the year you dispose of it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of IT additions (illustrative figures)",
+    "lines": [
+      "50 laptops: footprint sheet total 320 kg CO2e, manufacturing share 70 percent, so 224 kg CO2e each",
+      "50 x 224 = 11,200 kg CO2e",
+      "4 servers: manufacturing share taken from the sheet as 1,500 kg CO2e each, so 4 x 1,500 = 6,000 kg CO2e",
+      "Category 2 total: 11,200 + 6,000 = 17,200 kg CO2e, about 17.2 tonnes"
+    ],
+    "note": "The sheet values are illustrative. Use the sheet for your exact model and configuration; footprints are CO2e because they include gases other than CO2."
+  },
+  "senseible": "Senseible reads hardware purchase invoices and places those lines in the supplier evidence trail, so each Category 2 figure links back to the invoice and quantity. Where only spend is available it provides a spend-based estimate, labelled as such.",
+  "links": [
+    {
+      "label": "Machinery: Category 1 or Category 2?",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "Cloud carbon footprint for AWS, Azure and Google",
+      "to": "/answers/cloud-carbon-footprint-aws-azure-google-india"
+    },
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Spend-based vs activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Categories 1 and 2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 2",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Manufacturer footprint sheets are revised by model and year; re-check the sheet when you buy a new model."
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "ie2-to-ie4-motor-replacement-savings",
+  "q": "Is replacing an IE2 motor with an IE3 or IE4 motor worth it, and how much CO2 does it save?",
+  "title": "IE2 to IE4 motor: is it worth it?",
+  "short": "It pays when the motor runs long hours near full load. Work out input power at your load with each efficiency (output divided by efficiency); the difference times running hours is kWh saved. Price it at your tariff and multiply by 0.710 kg CO2 per kWh. Lightly used motors are better replaced at failure.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Maintenance heads and MSME owners",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Shaft output in kW = rated kW x load factor.",
+        "Input with old motor = output / old efficiency; input with new motor = output / new efficiency.",
+        "kW saved x running hours a year = kWh saved.",
+        "kWh saved x tariff = rupees saved; kWh saved x 0.710 = kg CO2 saved.",
+        "Payback in years = extra cost / rupees saved a year."
+      ]
+    },
+    {
+      "h": "Where the efficiency figures come from",
+      "p": [
+        "IE classes are set in IEC 60034-30-1 and in India in IS 12615. Efficiency depends on rating and number of poles, so read both values from the nameplates or the standard's table for the same kW and poles. Use efficiency at your actual load if the maker publishes part-load values, because many motors run at 50 to 75 percent of rating."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ul": [
+        "Working motor, long hours (around 6,000 hours a year or more) and steady load: replacement can pay on its own; compare the full motor cost with the saving.",
+        "Working motor, short hours or light load: wait. Replace at failure, when you compare only the price difference between a new IE3 or IE4 and the alternative.",
+        "Failed motor: rewinding is cheaper, but BEE notes that poor rewinding lowers efficiency, so price that loss in.",
+        "Oversized or variable load: right-sizing or a variable speed drive often saves more than a higher IE class."
+      ]
+    },
+    {
+      "h": "Proving the saving afterwards",
+      "p": [
+        "Log kWh on a sub-meter for a few weeks before and after, at similar production. A whole-factory bill rarely shows a single motor's saving clearly, so keep the sub-meter readings with the purchase invoice and the two nameplates."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 15 kW motor at 75% load, 6,000 hours a year",
+    "lines": [
+      "Output: 15 x 0.75 = 11.25 kW",
+      "Efficiencies (illustrative; read yours from the nameplates): IE2 90.5%, IE4 93.5%",
+      "Input: 11.25 / 0.905 = 12.431 kW; 11.25 / 0.935 = 12.032 kW; saving 0.399 kW",
+      "Energy: 0.399 x 6,000 = 2,393 kWh a year",
+      "CO2: 2,393 x 0.710 = 1,699 kg, about 1.7 t a year",
+      "Money at Rs 8 per kWh (assumed): 2,393 x 8 = Rs 19,144 a year",
+      "Replacing a working motor at an assumed Rs 1,20,000: payback 1,20,000 / 19,144 = 6.3 years",
+      "Replacing at failure, premium of an assumed Rs 30,000 over the alternative: payback 1.6 years"
+    ],
+    "note": "Prices, tariff and efficiencies are assumptions for the arithmetic."
+  },
+  "senseible": "Senseible reads the units on your electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, so before and after periods can be compared from documents. The motor saving estimate and any claim based on it stay your own.",
+  "links": [
+    {
+      "label": "Measuring energy efficiency savings",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Energy audit for MSMEs",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Electric Motors chapter (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Minimum motor efficiency classes required in India under BIS and ministry orders may change; check the current order.",
+  "reviewed": "2026-10-18"
+}

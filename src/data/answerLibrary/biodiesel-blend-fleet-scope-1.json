@@ -1,0 +1,81 @@
+{
+  "slug": "biodiesel-blend-fleet-scope-1",
+  "q": "How do I report biodiesel blends (B7, B20, B100) in my fleet's Scope 1?",
+  "title": "Reporting biodiesel blends in Scope 1",
+  "short": "Split the litres by blend. The fossil diesel share goes in Scope 1 at 2.68 kg CO2 per litre. The CO2 from the biodiesel share is biogenic and reported separately, outside the scopes. Methane and nitrous oxide from burning the whole blend stay in Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Fleet operators and gensets using biodiesel",
+  "sections": [
+    {
+      "h": "Splitting the blend",
+      "ul": [
+        "B7: 7% biodiesel, 93% fossil diesel by volume.",
+        "B20: 20% biodiesel, 80% fossil diesel.",
+        "B100: all biodiesel, so no fossil CO2 from the fuel itself."
+      ],
+      "p": [
+        "Take the blend from the supplier's invoice or delivery note. If the invoice does not state it, treat the fuel as fossil diesel. Assuming a blend you cannot prove understates Scope 1."
+      ]
+    },
+    {
+      "h": "Calculating each part",
+      "ol": [
+        "Fossil CO2, Scope 1: fossil litres x 2.68 kg CO2 per litre.",
+        "Biogenic CO2, reported separately: biodiesel litres x density x NCV x the IPCC default of 70.8 kg CO2 per GJ. With an assumed density of 0.88 kg per litre and the IPCC default NCV of 27 MJ per kg, that is about 1.68 kg CO2 per litre.",
+        "CH4 and N2O, Scope 1: energy of the whole blend x the IPCC road transport defaults, converted with the GWP set you use."
+      ]
+    },
+    {
+      "h": "What to show in the report",
+      "ul": [
+        "Scope 1 total, with the fossil CO2 and the CH4 and N2O from all fuel.",
+        "Biogenic CO2 as its own line, not added to Scope 1 and not shown as zero without a note.",
+        "Litres by blend, the source of the blend percentage and the factors used."
+      ]
+    },
+    {
+      "h": "Claims to avoid",
+      "p": [
+        "Do not call a B20 fleet 20% lower carbon in a lifecycle sense; that depends on the feedstock and how it was grown and processed, which Scope 1 does not cover. Report the Scope 1 change, and keep any lifecycle claim for a feedstock you can document."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 litres of B20 in trucks",
+    "lines": [
+      "Fossil share: 8,000 L x 2.68 = 21,440 kg CO2, Scope 1",
+      "Biodiesel share: 2,000 L x 0.88 = 1,760 kg = 47.5 GJ at 27 MJ per kg",
+      "Biogenic CO2: 47.5 GJ x 70.8 = 3,364 kg CO2, reported separately",
+      "CH4 and N2O on all fuel: 0.337 TJ x 1,143 kg CO2e per TJ = 385 kg CO2e, Scope 1",
+      "Scope 1: 21,440 + 385 = 21,825 kg CO2e, against 27,213 kg CO2e for 10,000 L of fossil diesel"
+    ],
+    "note": "Uses IPCC 2006 defaults and AR5 GWPs (CH4 28, N2O 265). Applying the road diesel CH4 and N2O defaults to the biodiesel share is an assumption; the densities of 0.88 kg per litre for biodiesel and 0.84 kg per litre for diesel (used for the energy of the whole blend, with the IPCC NCV of 43 MJ per kg) are also assumed."
+  },
+  "senseible": "Senseible reports biomass and biogenic CO2 separately from Scope 1 and uses IPCC 2006 defaults for the fossil share, at 2.68 kg CO2 per litre of diesel. Keep the supplier's blend statement with the invoice so the split can be checked.",
+  "links": [
+    {
+      "label": "CH4 and N2O from diesel",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapters 2 and 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

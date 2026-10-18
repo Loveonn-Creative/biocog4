@@ -1,0 +1,73 @@
+{
+  "slug": "us-ftc-green-guides-carbon-claims",
+  "q": "What carbon or eco-friendly claims can an Indian exporter make on products sold in the US?",
+  "title": "Carbon claims on products sold in the US",
+  "short": "Specific, measured claims you can prove, such as a stated product footprint with its boundary and year. The US FTC Green Guides (16 CFR Part 260) warn against unqualified claims like eco-friendly, require offset claims to be backed by reliable evidence, and hold the seller responsible for every reasonable reading of a claim.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Exporters of consumer goods to US retailers",
+  "sections": [
+    {
+      "h": "How the Green Guides work",
+      "p": [
+        "The Green Guides are the Federal Trade Commission's guidance on environmental marketing. They are not a law on their own, but the FTC uses them to decide whether a claim is deceptive under the FTC Act, and they apply to anyone marketing in the US, including a foreign supplier whose label or listing makes the claim. Many US retailers pass this duty to suppliers in their contracts."
+      ]
+    },
+    {
+      "h": "Claims that cause trouble",
+      "ul": [
+        "General claims such as eco-friendly, green or sustainable without a clear, specific qualifier (section 260.4).",
+        "Carbon neutral or offset claims without reliable evidence and proper accounting to avoid double counting, or that hide that the offset reductions will not happen for two years or more (section 260.5).",
+        "Made with renewable energy, unless all or virtually all significant manufacturing processes run on it or are matched with certificates (section 260.15).",
+        "Recyclable, recycled content or compostable claims that do not match what is actually available to US buyers."
+      ]
+    },
+    {
+      "h": "How to word a carbon claim that holds up",
+      "ol": [
+        "State the number and unit: kg CO2e per unit or per kg of product.",
+        "State the boundary: cradle to gate, or including transport to the US.",
+        "Name the standard, such as ISO 14067, and the year of the data.",
+        "If you used offsets, say so, name the type and keep the retirement records.",
+        "Keep the evidence file ready before the product ships."
+      ]
+    },
+    {
+      "h": "State rules add to the federal ones",
+      "p": [
+        "Some states go further. California, for example, requires companies making carbon neutral or net zero claims in the state to publish details of how the claim is met and of any offsets used. Check the rules of the states your buyer sells in, and your buyer's own claim policy."
+      ]
+    }
+  ],
+  "senseible": "Senseible produces a self-declared footprint from your electricity bills and fuel invoices, with the document and factor behind each line, which can substantiate a specific, scoped figure. It does not approve marketing claims, and its Verified status means rule checks passed, not third-party verification.",
+  "links": [
+    {
+      "label": "Can lab-grown diamonds be called sustainable?",
+      "to": "/answers/can-lab-grown-diamonds-be-called-sustainable"
+    },
+    {
+      "label": "Can I call my export product carbon neutral?",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    },
+    {
+      "label": "CCPA greenwashing guidelines in India",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Greenwashing self-audit checklist",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14021:2016, Self-declared environmental claims (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "The FTC's review of the Green Guides is ongoing and state laws such as California's are being added; recheck before relying on this page.",
+  "reviewed": "2026-10-18"
+}

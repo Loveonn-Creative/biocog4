@@ -1,0 +1,90 @@
+{
+  "slug": "new-truck-or-ev-purchase-category-2",
+  "q": "Does buying a new truck, van or electric vehicle add Scope 3 Category 2 emissions, and how do I estimate them?",
+  "title": "New truck or EV in Scope 3 Category 2",
+  "short": "Yes. A truck, van or electric vehicle you capitalise is a capital good, so its full cradle-to-gate manufacturing emissions go in Scope 3 Category 2 in the year you buy it. Use the maker's vehicle footprint if published; otherwise estimate from body materials plus battery kWh, and label the estimate.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Logistics MSMEs and manufacturers buying fleet vehicles",
+  "sections": [
+    {
+      "h": "Which vehicles count, and in which year",
+      "p": [
+        "Follow your fixed asset register. A vehicle you own and capitalise goes in Category 2 with all its manufacturing emissions in the year of acquisition, not spread over its life like depreciation. A vehicle on an operating lease or a hired truck is not your capital good, so it does not go in Category 2.",
+        "Its fuel or charging is separate. Diesel burnt by an owned truck is Scope 1 and grid electricity used to charge an owned EV is Scope 2, every year it runs."
+      ]
+    },
+    {
+      "h": "Why an EV makes the purchase year look worse",
+      "p": [
+        "The traction battery adds manufacturing emissions that a diesel vehicle of the same size does not have, so the year you buy an electric fleet usually shows a jump in Category 2. The fuel saving arrives later, year by year, in Scope 1 and 2. Explain this in your report so a reader does not mistake the spike for a step backwards, and show the operating saving alongside it."
+      ]
+    },
+    {
+      "h": "Estimating a vehicle you cannot get a maker figure for",
+      "ol": [
+        "Ask the dealer or maker for a vehicle LCA or product carbon footprint, ideally to ISO 14067, and note its boundary and data year. Some passenger and commercial vehicle makers now publish these.",
+        "Without one, split kerb mass from the spec sheet into steel, aluminium and other, and apply a published factor to each, plus a labelled allowance for tyres, electronics and assembly.",
+        "For an EV, estimate the traction battery separately: pack kWh from the registration papers times a per-kWh manufacturing factor from one named study. Published figures vary widely by cell chemistry, plant location and year, so carry a range rather than a single number.",
+        "If only the price is known, a spend-based estimate for motor vehicles, labelled as spend-based with wider uncertainty."
+      ]
+    },
+    {
+      "h": "What to keep for an auditor",
+      "ul": [
+        "Purchase invoice, registration certificate and the asset register line showing the vehicle was capitalised.",
+        "Kerb mass, battery kWh and chemistry from the spec sheet.",
+        "Each factor's publisher, table and edition, and which of the methods above you used.",
+        "The operating comparison you show next to the purchase-year figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: diesel or electric light goods vehicle",
+    "lines": [
+      "Body and chassis steel, both versions: 1.0 t x about 1.9 t CO2 per t (worldsteel global average) = 1.9 t CO2",
+      "Other materials, parts and assembly: allowance of 1.0 to 2.0 t CO2e (assumption)",
+      "Diesel version in Category 2: 2.9 to 3.9 t CO2e",
+      "EV battery: 30 kWh x 60 to 120 kg CO2e per kWh (illustrative range; replace with a named study) = 1.8 to 3.6 t CO2e, so the EV shows 4.7 to 7.5 t CO2e",
+      "Running 20,000 km a year (assumed): diesel at 10 km per litre = 2,000 litres x 2.68 = 5,360 kg CO2 in Scope 1",
+      "EV at 0.15 kWh per km (assumed) = 3,000 kWh x 0.710 = 2,130 kg CO2 in Scope 2",
+      "Operating saving: 5,360 minus 2,130 = 3,230 kg a year, so the extra 1.8 to 3.6 t from the battery is matched in about 0.6 to 1.1 years"
+    ],
+    "note": "The battery range, allowance and running figures are placeholders for the arithmetic, not recommended values. Use the maker's figure and your own fuel and charging records when you have them."
+  },
+  "senseible": "Senseible keeps the vehicle invoice in the Scope 3 supplier evidence trail with a SHA-256 fingerprint, and where only the price is known it provides a spend-based estimate labelled as spend-based. The diesel slips and charging units that follow are read into Scope 1 and 2 from your documents.",
+  "links": [
+    {
+      "label": "Counting a new machine in Scope 3",
+      "to": "/answers/how-to-count-a-new-machine-in-scope-3"
+    },
+    {
+      "label": "Machine purchase: Category 1 or 2",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "Diesel to electric van CO2 saving",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Emission factor for imported Li-ion cells",
+      "to": "/answers/carbon-footprint-of-imported-lithium-ion-cells"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 2",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "Battery manufacturing footprints change quickly with chemistry and grid mix; recheck the study you cite each year.",
+  "reviewed": "2026-10-18"
+}

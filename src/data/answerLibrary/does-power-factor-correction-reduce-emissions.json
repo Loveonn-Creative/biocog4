@@ -1,0 +1,84 @@
+{
+  "slug": "does-power-factor-correction-reduce-emissions",
+  "q": "Does improving power factor with capacitors reduce my Scope 2 emissions?",
+  "title": "Does power factor correction cut emissions?",
+  "short": "Only slightly. Scope 2 is calculated on kWh, and capacitors leave the real energy your machines use unchanged. The only cut comes from lower current losses in your own cables and transformer, often under one percent of kWh, and only if the capacitors sit close to the loads.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factory owners on kVAh or kVA-demand tariffs",
+  "sections": [
+    {
+      "h": "Where the kWh saving actually comes from",
+      "p": [
+        "Capacitors supply reactive power locally, so less current flows from the point of correction back to the meter. Losses in a conductor are proportional to the square of the current, I squared R. Lower current means lower losses in the cables and in the load (copper) losses of your transformer.",
+        "Transformer core losses do not change, and the motors draw the same real power."
+      ]
+    },
+    {
+      "h": "Where you put the capacitors decides the saving",
+      "ul": [
+        "An automatic panel at the main incomer fixes the power factor seen by the discom, but current in your internal cables stays the same, so your kWh barely moves.",
+        "Capacitors at large motors or at each distribution board cut current in the cables between them and the incomer, which is where the small kWh saving comes from.",
+        "Losses saved on the discom's side of the meter are not in your Scope 2; transmission and distribution losses sit in Category 3."
+      ]
+    },
+    {
+      "h": "kVAh bills can make the saving look bigger than it is",
+      "p": [
+        "On a kVAh tariff, billed units fall when power factor improves, because kVAh equals kWh divided by power factor. That is a saving in rupees, not in energy. Emissions must be worked out on kWh. If you calculate from kVAh, multiply by the power factor printed for the same period, so the figure follows real energy."
+      ]
+    },
+    {
+      "h": "How to estimate the saving honestly",
+      "ol": [
+        "Estimate present internal distribution losses from cable lengths, sizes and currents, or from an energy audit.",
+        "Scale them by (old power factor / new power factor) squared for the sections where current falls.",
+        "Multiply the kWh saved by 0.710 kg CO2 per kWh, and label it an engineering estimate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: correcting at the loads from 0.80 to 0.98",
+    "lines": [
+      "Annual consumption: 500,000 kWh; internal cable and transformer load losses estimated at 2 percent, so 10,000 kWh",
+      "Current falls to 0.80 / 0.98 = 0.816 of its old value; losses scale with its square, 0.666",
+      "New losses: 10,000 x 0.666 = 6,664 kWh, so 3,336 kWh saved, about 0.67 percent of consumption",
+      "CO2 saved: 3,336 x 0.710 = 2,369 kg, about 2.4 tonnes a year"
+    ],
+    "note": "The 2 percent loss figure is an assumption for illustration; measure or calculate your own."
+  },
+  "senseible": "On kVAh bills Senseible uses the printed kWh, and otherwise kVAh times the printed power factor labelled an estimate, so a better power factor does not show up as lower consumption that never happened. The CEA grid factor of 0.710 kg CO2 per kWh is applied to the kWh.",
+  "links": [
+    {
+      "label": "Power factor rebate and penalty",
+      "to": "/answers/power-factor-rebate-and-penalty"
+    },
+    {
+      "label": "Transmission losses in Category 3",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (power factor improvement and distribution losses)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

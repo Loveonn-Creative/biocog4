@@ -1,0 +1,86 @@
+{
+  "slug": "two-wheeler-delivery-fleet-emissions",
+  "q": "How do I calculate emissions for a petrol two-wheeler delivery fleet per km and per order?",
+  "title": "Two-wheeler delivery fleet: CO2 per order",
+  "short": "Add up the petrol litres on your fuel invoices or slips for the period and multiply by 2.31 kg CO2 per litre. Divide that total by kilometres ridden for CO2 per km, and by orders delivered for CO2 per order. Use fuel data where you have it; estimate from kilometres only where you do not.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Quick commerce, food delivery, pharmacy and courier operators",
+  "sections": [
+    {
+      "h": "Whose emissions are they",
+      "ul": [
+        "Bikes your company owns or leases and runs: Scope 1, from the fuel burnt.",
+        "Riders who own their bikes and buy their own fuel, paid per order or per km: Scope 3, because you do not own or control the vehicles. Paid delivery partners are usually reported as purchased transport in Category 4; state the category you chose.",
+        "A mixed fleet needs two lines, with the same method, so per order figures can be compared."
+      ]
+    },
+    {
+      "h": "Fuel-based first, distance-based as a fallback",
+      "p": [
+        "The GHG Protocol treats fuel actually bought as better data than distance times an average, because it captures idling, traffic and riding style. For company bikes, use fuel cards, pump slips or fuel invoices for the month.",
+        "Where only kilometres exist, as with many partner riders, convert them to litres using a fleet-average mileage from a sample: total km divided by total litres over a month for 10 to 20 riders whose fuel you can see. Do not use the maker's claimed mileage, which is measured under test conditions."
+      ]
+    },
+    {
+      "h": "Getting per order right",
+      "ul": [
+        "Use orders delivered in the same period and the same area as the fuel.",
+        "Include empty runs back to the store, failed attempts and returns in the fuel; they are part of delivering the orders that succeeded.",
+        "For multi-drop trips, the per order figure is an average; do not try to allocate by individual address unless a buyer asks.",
+        "Report per km too, since it shows riding efficiency separately from order density."
+      ]
+    },
+    {
+      "h": "Petrol blends",
+      "p": [
+        "The 2.31 kg CO2 per litre figure is the IPCC 2006 default for motor petrol. Most pumps in India now sell ethanol-blended petrol; the E20 answer explains how to treat the ethanol share and why the reduction is smaller than the blend percentage suggests."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 40 company bikes for one month (illustrative)",
+    "lines": [
+      "Petrol on fuel slips: 6,000 L",
+      "CO2: 6,000 x 2.31 = 13,860 kg",
+      "Distance from the delivery app: 2,40,000 km, a fleet average of 40 km per litre",
+      "Per km: 13,860 / 2,40,000 = 0.058 kg CO2, about 58 g",
+      "Orders delivered: 90,000; per order: 13,860 / 90,000 = 0.154 kg CO2, about 154 g"
+    ],
+    "note": "Partner riders' kilometres can be added the same way: km divided by the sampled km per litre, times 2.31, reported in Scope 3."
+  },
+  "senseible": "Senseible reads fuel invoices and pump slips and applies the IPCC 2006 default of 2.31 kg CO2 per litre of petrol to each line with a printed quantity; a slip without litres shows Needs Data. Dividing the total by your orders or kilometres uses your own delivery data.",
+  "links": [
+    {
+      "label": "Logistics Scope 1 emissions in India",
+      "to": "/climate-intelligence/logistics-scope-1-emissions-india"
+    },
+    {
+      "label": "Petrol emission factor",
+      "to": "/emission-factors/petrol"
+    },
+    {
+      "label": "Does E20 petrol lower Scope 1?",
+      "to": "/answers/does-e20-petrol-lower-scope-1"
+    },
+    {
+      "label": "Measuring eco-driving fuel savings",
+      "to": "/answers/how-to-measure-eco-driving-fuel-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy, Chapter 3 Mobile Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

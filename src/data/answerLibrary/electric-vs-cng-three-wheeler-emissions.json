@@ -1,0 +1,77 @@
+{
+  "slug": "electric-vs-cng-three-wheeler-emissions",
+  "q": "Is an electric three-wheeler lower carbon than a CNG three-wheeler at India's grid factor?",
+  "title": "Electric vs CNG three-wheeler emissions",
+  "short": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Fleet owners choosing between e-3W and CNG",
+  "sections": [
+    {
+      "h": "The two formulas",
+      "ul": [
+        "Electric: kWh per km measured at the charger, including charging losses, x 0.710 kg CO2 per kWh.",
+        "CNG: kg of CNG per km x 2.69 kg CO2 per kg, the IPCC 2006 default."
+      ],
+      "p": [
+        "Use kWh from the charger meter or the electricity bill, not the battery rating or the dashboard reading, which leave out charging losses."
+      ]
+    },
+    {
+      "h": "The break-even point",
+      "p": [
+        "With CNG at 30 km per kg, the CNG vehicle emits 2.69 / 30 = 0.0897 kg CO2 per km. The electric vehicle stays lower as long as it uses less than 0.0897 / 0.710 = 0.126 kWh per km at the charger. Heavier loads, hills and old batteries push consumption up, so check your own logs before claiming a saving."
+      ]
+    },
+    {
+      "h": "Which scope each sits in",
+      "ul": [
+        "Your own CNG three-wheelers: Scope 1.",
+        "Your own e-3Ws charged on your premises: Scope 2, location-based at the grid factor.",
+        "Vehicles run by a delivery contractor: Scope 3 Category 4 or 9 for you, whatever the fuel."
+      ]
+    },
+    {
+      "h": "What the comparison leaves out",
+      "p": [
+        "Both figures cover energy use only. Battery manufacture adds embodied emissions to the electric vehicle, and gas supply adds upstream emissions to CNG; neither is in a Scope 1 or 2 figure. If you charge from rooftop solar you consume on site, the units you self-consume carry no Scope 2, which widens the gap."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one vehicle, 120 km a day for 300 days",
+    "lines": [
+      "Distance: 120 x 300 = 36,000 km",
+      "Electric at 0.10 kWh per km (assumed): 3,600 kWh x 0.710 = 2,556 kg CO2",
+      "CNG at 30 km per kg (assumed): 36,000 / 30 = 1,200 kg CNG x 2.69 = 3,228 kg CO2",
+      "Difference: 3,228 minus 2,556 = 672 kg CO2 a year, about 21% lower for the electric vehicle"
+    ],
+    "note": "Consumption figures are assumptions. Replace them with your charger kWh and CNG fill logs."
+  },
+  "senseible": "Senseible reads charging electricity bills at 0.710 kg CO2 per kWh and CNG invoices at 2.69 kg CO2 per kg, so you can compare the two fleets on your own fuel and power records.",
+  "links": [
+    {
+      "label": "Are EV deliveries zero emission?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
+    },
+    {
+      "label": "EV charging: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "CNG emission factor",
+      "to": "/emission-factors/cng"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapters 2 and 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

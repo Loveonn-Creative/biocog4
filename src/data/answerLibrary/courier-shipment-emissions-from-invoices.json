@@ -1,0 +1,83 @@
+{
+  "slug": "courier-shipment-emissions-from-invoices",
+  "q": "How do I calculate emissions from courier and express parcel shipments using courier invoices?",
+  "title": "Courier parcel emissions from invoices",
+  "short": "For each shipment on the courier invoice, multiply actual weight in tonnes by the distance and by a factor for the mode: road for surface services, air for express and international. Use the courier's own figures instead if they state the method, such as ISO 14083 or the GLEC Framework.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "D2C brands, sample-shipping exporters and e-commerce sellers",
+  "sections": [
+    {
+      "h": "What to take from a courier invoice",
+      "ul": [
+        "Airway bill number and date, to match each line.",
+        "Actual weight. Couriers often charge on volumetric weight (length x width x height divided by a divisor such as 5,000); emissions use actual weight.",
+        "Origin and destination pin codes or the zone, for distance.",
+        "Service type: surface, air express or international priority, which tells you the mode."
+      ]
+    },
+    {
+      "h": "Distance for each mode",
+      "p": [
+        "For domestic surface parcels, use road distance between the two cities. Parcels go through hubs, so the real route is longer than the direct road; ISO 14083 and GLEC allow a distance adjustment, which you should note. For air services, use great-circle distance between the airports and add the road legs at each end. If the invoice gives only a zone, use a typical distance for that zone and label it."
+      ]
+    },
+    {
+      "h": "Factors",
+      "p": [
+        "Parcels travel in vans and small trucks that carry less per trip than full truckloads, and express parcels often fly. Per tonne-km, air is far higher than road. Take factors from one named source for each mode and use the same source all year."
+      ]
+    },
+    {
+      "h": "Which category",
+      "p": [
+        "Courier shipments you pay for, inbound or outbound, are Scope 3 Category 4. Shipments your customer pays the courier for directly are Category 9. Samples sent to buyers are still your Category 4 if you pay."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of courier invoices",
+    "lines": [
+      "Domestic surface: 1,200 parcels x 2 kg actual = 2.4 t; average 900 km",
+      "2.4 x 900 = 2,160 tonne-km x 0.10 kg CO2e per tonne-km (illustrative road factor) = 216 kg CO2e",
+      "International air samples: 150 parcels x 3 kg = 0.45 t; Delhi to Frankfurt about 6,100 km great-circle",
+      "0.45 x 6,100 = 2,745 tonne-km x 1.0 kg CO2e per tonne-km (illustrative air factor) = 2,745 kg CO2e",
+      "Total: about 2.96 t CO2e, of which over 90% from the air samples"
+    ],
+    "note": "Both factors are placeholders for the arithmetic. Use factors from your chosen source, with its edition."
+  },
+  "senseible": "Senseible reads courier and freight invoices into the Scope 3 trail, and a line gets a figure when weight, distance and mode are on the document; otherwise it shows Needs Data. The logistics calculator applies default intensities per tonne-km by mode, and a carrier's own factor is used as given.",
+  "links": [
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Air vs sea freight for exports",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework v3.0 (2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions arising from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

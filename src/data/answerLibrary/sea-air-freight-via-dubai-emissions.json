@@ -1,0 +1,81 @@
+{
+  "slug": "sea-air-freight-via-dubai-emissions",
+  "q": "Is sea-air freight via Dubai much lower carbon than direct air freight to Europe?",
+  "title": "Sea-air via Dubai vs direct air freight",
+  "short": "Only somewhat. Shipping to Dubai by sea and flying on from there cuts about a quarter of the emissions of flying direct from Mumbai to Frankfurt, because the air leg is still most of the distance. It remains close to 20 times the emissions of sending the same cargo by sea all the way.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Exporters balancing urgency and emissions on Europe shipments",
+  "sections": [
+    {
+      "h": "Calculate leg by leg",
+      "ol": [
+        "Sea leg, for example Nhava Sheva or Mundra to Jebel Ali: tonnes x sea distance x container ship factor.",
+        "Transfer from port to airport in Dubai: tonnes x road distance x truck factor.",
+        "Air leg, Dubai to the European airport: tonnes x great circle distance plus 95 km x air factor.",
+        "Hub handling at the transfer point, if your carrier reports it.",
+        "Add the legs. ISO 14083 and the GLEC Framework both work this way."
+      ]
+    },
+    {
+      "h": "Why the saving is limited",
+      "p": [
+        "Per tonne-km, air freight emits roughly 70 times more than a container ship. Sea-air replaces only the first part of the route with sea, about a quarter of the flying distance from India, while the long air leg from the Gulf to Europe remains. The total falls by roughly the share of air kilometres you remove."
+      ]
+    },
+    {
+      "h": "Factors to check",
+      "ul": [
+        "Freighter or passenger belly: belly cargo factors differ from dedicated freighters; ask the carrier which aircraft carried the goods.",
+        "Chargeable weight: use actual gross weight, not volumetric weight, for tonne-km.",
+        "Basis: keep every leg well-to-wheel or every leg tank-to-wheel, not a mix.",
+        "Feeder vessels on the Gulf leg are smaller than deep sea ships and have higher factors; the sea leg is small either way."
+      ]
+    },
+    {
+      "h": "When sea-air makes sense",
+      "p": [
+        "Use it when sea transit is too slow and the saving of about a quarter matters for a buyer report. For shipments that can wait, full sea freight is the large reduction. Report the method and legs, so the buyer sees which part of the route was flown."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 0.5 tonne, Mumbai region to Frankfurt",
+    "lines": [
+      "Direct air: 0.5 t x 6,665 km = 3,332.5 tonne-km x 0.608 = 2,026.2 kg CO2e",
+      "Sea-air, sea leg Nhava Sheva to Jebel Ali, about 2,200 km: 0.5 x 2,200 = 1,100 tonne-km x 0.0084 = 9.2 kg CO2e",
+      "Sea-air, truck Jebel Ali to Dubai airport, about 50 km: 0.5 x 50 = 25 tonne-km x 0.1400 = 3.5 kg CO2e",
+      "Sea-air, air leg Dubai to Frankfurt, about 4,843 + 95 = 4,938 km: 0.5 x 4,938 = 2,469 tonne-km x 0.608 = 1,501.2 kg CO2e",
+      "Sea-air total: 9.2 + 3.5 + 1,501.2 = 1,513.9 kg CO2e, 25% below direct air",
+      "All sea, about 11,700 km Nhava Sheva to Rotterdam via Suez plus about 460 km by medium truck to Frankfurt (both approximate): 0.5 x 11,700 x 0.0084 = 49.1 plus 0.5 x 460 x 0.1400 = 32.2, total 81.3 kg CO2e, so sea-air is about 19 times higher"
+    ],
+    "note": "Factors are default well-to-wheel intensities per tonne-km: long-haul air freighter 0.608, container ship 0.0084, medium truck 0.1400. Distances are approximate and hub handling is left out."
+  },
+  "senseible": "Senseible reads freight records and invoices into the Scope 3 evidence trail, and its freight calculator applies default intensities per tonne-km by mode, so each leg of a sea-air shipment can be entered and added up.",
+  "links": [
+    {
+      "label": "Air vs sea freight for exporters",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Sea freight per container to Europe",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, GHG emissions from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The air and sea intensities are GLEC default values; confirm them against the current GLEC Framework tables, and use carrier-specific figures where the carrier provides them."
+}

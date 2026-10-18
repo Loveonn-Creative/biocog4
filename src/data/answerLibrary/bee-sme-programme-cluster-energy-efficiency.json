@@ -1,0 +1,82 @@
+{
+  "slug": "bee-sme-programme-cluster-energy-efficiency",
+  "q": "What is BEE's SME energy efficiency programme, and does my industrial cluster qualify?",
+  "title": "BEE SME energy efficiency programme",
+  "short": "BEE's SME programme works at cluster level in energy-intensive MSME clusters, such as foundries, brass, ceramics, forging and textiles, through energy mapping, audits, project reports and local capacity building. For individual units, BEE's ADEETIE scheme offers interest subvention to Udyam-registered MSMEs in 60 identified clusters.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs in foundry, brass, ceramic, forging, textile and other clusters",
+  "sections": [
+    {
+      "h": "What the programme does",
+      "ul": [
+        "Maps energy use and technology gaps in selected clusters and publishes cluster energy profiles.",
+        "Runs energy audits and prepares detailed project reports for common technology upgrades.",
+        "Trains local service providers, equipment suppliers and bankers in the cluster.",
+        "Links units to finance and demonstration projects, often with partner agencies."
+      ],
+      "p": [
+        "It is not a subsidy you apply for as a single unit. Support flows through cluster associations and BEE's partners."
+      ]
+    },
+    {
+      "h": "How to check whether your cluster is covered",
+      "ol": [
+        "Look for your cluster's energy profile or technology report on beeindia.gov.in.",
+        "Check the ADEETIE cluster list; it covers 60 energy-intensive clusters across 14 sectors.",
+        "Ask your industry association whether a BEE or partner project is running locally.",
+        "Check your state's energy audit or efficiency scheme, which may cover units outside BEE clusters."
+      ]
+    },
+    {
+      "h": "What qualifying usually needs",
+      "ul": [
+        "Udyam registration.",
+        "Twelve months of electricity bills and fuel invoices with monthly production, to set specific energy consumption per tonne or per piece.",
+        "An investment-grade audit by a BEE-empanelled auditor where the scheme requires one.",
+        "For ADEETIE, a project that achieves and keeps at least 10 percent energy savings, financed by a loan of Rs 10 lakh to Rs 15 crore; the interest subvention is 5 percent for micro and small units and 3 percent for medium units."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a foundry's baseline and a 10 percent target",
+    "lines": [
+      "Last 12 months: 1,800,000 kWh for 1,200 t of castings = 1,500 kWh per tonne",
+      "Grid CO2 per tonne: 1,500 x 0.710 = 1,065 kg CO2",
+      "10 percent saving: 150 kWh per tonne, or 180,000 kWh a year at the same output",
+      "CO2 avoided: 180,000 x 0.710 = 127,800 kg, about 128 t a year"
+    ],
+    "note": "Add furnace fuel the same way, from fuel invoices, if the foundry also burns coke, oil or gas."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices and gives monthly kWh, fuel and emissions, each linked to its source document, which is the energy baseline a cluster programme or auditor asks for.",
+  "links": [
+    {
+      "label": "The ADEETIE scheme explained",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, SME programme and cluster energy profiles",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, ADEETIE scheme guidelines",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Programme phases, ADEETIE clusters and terms change; check beeindia.gov.in before you plan around them."
+}

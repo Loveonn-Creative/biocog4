@@ -1,0 +1,90 @@
+{
+  "slug": "common-carbon-accounting-mistakes-smes",
+  "q": "What are the most common carbon accounting mistakes Indian SMEs make?",
+  "title": "Common carbon accounting mistakes",
+  "short": "The most common mistakes are using kVAh as kWh, counting the same bill twice, putting GST-inclusive amounts into spend-based factors, mixing up billing date and consumption period, putting diesel generators and rented space in the wrong scope, and using a grid factor without naming its source and edition.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME owners and first-time reporters",
+  "sections": [
+    {
+      "h": "Electricity mistakes",
+      "ul": [
+        "Treating kVAh on an HT bill as kWh. kVAh is higher whenever the power factor is below 1, so it overstates Scope 2.",
+        "Counting units exported under net metering as consumption, or subtracting solar you generated from units you bought twice.",
+        "Assigning a bill to the month it was issued, not the period it covers, which breaks month to month comparison and year-end cut-off.",
+        "Using a combined margin or an old grid factor instead of the CEA weighted average for the edition you report against."
+      ]
+    },
+    {
+      "h": "Fuel and scope mistakes",
+      "ul": [
+        "Putting diesel for a generator in Scope 2 because it makes electricity. Fuel you burn is Scope 1.",
+        "Counting fuel bought in the year as fuel burnt, without allowing for a large stock change in the tank or yard.",
+        "Converting LPG in litres when the invoice is in kg, or PNG in kg when it is in scm. Match the factor's unit to the invoice.",
+        "Leaving out small sources such as forklifts, canteen LPG or company cars, without saying they were excluded."
+      ]
+    },
+    {
+      "h": "Data and evidence mistakes",
+      "ul": [
+        "The same invoice uploaded twice, once as a scan and once as an email PDF, both counted.",
+        "Spend-based Scope 3 on amounts that include GST, which inflates the figure by the tax rate.",
+        "No record of which factor, source and edition were used, so the figure cannot be checked next year.",
+        "Mixing CO2 and CO2e totals without saying which gases are included."
+      ]
+    },
+    {
+      "h": "A quick self-check before you send figures",
+      "ol": [
+        "Do monthly kWh and fuel quantities trace to a bill for every month and every meter?",
+        "Is every factor written with its source, edition and unit?",
+        "Is each source in one scope only, and listed exclusions stated?",
+        "Does the total move by month in line with production, or is there an unexplained spike?"
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: how three mistakes add up for one factory",
+    "lines": [
+      "kVAh used as kWh: 1,00,000 kVAh at power factor 0.95 is 95,000 kWh; overstated by 5,000 kWh x 0.710 = 3,550 kg CO2",
+      "One month's bill counted twice: 42,000 kWh x 0.710 = 29,820 kg CO2 added",
+      "Generator diesel moved from Scope 2 to Scope 1: the total stays the same, but the scope split changes",
+      "Errors in the total: 3,550 + 29,820 = 33,370 kg, about 33.4 tonnes CO2 too high"
+    ]
+  },
+  "senseible": "Senseible fingerprints every file with SHA-256 so an identical file is not counted twice, uses printed kWh on kVAh bills, and runs rule checks for missing quantity, unit or factor, abnormal quantity and low OCR confidence; a line without a quantity shows Needs Data. Status Verified means these checks passed, not third-party assurance.",
+  "links": [
+    {
+      "label": "kVAh bill: convert to kWh for emissions",
+      "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions"
+    },
+    {
+      "label": "Duplicate invoices and double counting",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    },
+    {
+      "label": "Spend-based Scope 3: GST, inflation, currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    },
+    {
+      "label": "Split an electricity bill across months",
+      "to": "/answers/split-electricity-bill-across-months-for-carbon"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

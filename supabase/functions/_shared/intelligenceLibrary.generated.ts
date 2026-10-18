@@ -89,6 +89,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much energy and CO2 does setting ACs to 24 C save in an office or factory?",
+  "text": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2 per kWh and call it an estimate until bills confirm it.",
+  "url": "https://senseible.earth/answers/ac-temperature-setpoint-24-savings"
+ },
+ {
+  "kind": "answer",
   "title": "How big an error is acceptable in a carbon audit? What materiality threshold do verifiers use?",
   "text": "Under the EU ETS verification rules, a misstatement is material at 5% of reported emissions for most installations and 2% for the largest emitters. Under ISO 14064-3, the verifier and the user of the report agree the threshold. Below the threshold, errors still have to be corrected or explained.",
   "url": "https://senseible.earth/answers/acceptable-error-in-carbon-audit-materiality"
@@ -110,6 +116,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
   "text": "Under Verra's AFOLU Non-Permanence Risk Tool, you score internal, external and natural risks from the tool's tables, take off points only for documented mitigation, and add the three into one rating. That rating is the percentage of each verified stock gain held in the buffer pool, never below the tool's minimum; above 60 the project cannot be credited.",
   "url": "https://senseible.earth/answers/afolu-non-permanence-risk-rating"
+ },
+ {
+  "kind": "answer",
+  "title": "How much fuel can I save by recovering heat from an air compressor, and how do I calculate the CO2?",
+  "text": "Most of a compressor's electricity ends up as heat. Recovered heat in kWh is compressor input kWh times the recoverable fraction times the share of time you can use it. Divide by the efficiency of the heater it replaces and by the fuel's calorific value to get fuel saved, then multiply by that fuel's emission factor.",
+  "url": "https://senseible.earth/answers/air-compressor-heat-recovery-savings"
+ },
+ {
+  "kind": "answer",
+  "title": "Should air freight emissions use actual weight or chargeable (volumetric) weight?",
+  "text": "Use the actual gross weight from the air waybill, not the chargeable weight. Air freight emission factors are per tonne-km of cargo actually carried, so a volumetric weight overstates emissions for light, bulky shipments, sometimes by more than double. Note the weight basis in your method note.",
+  "url": "https://senseible.earth/answers/air-freight-actual-or-chargeable-weight"
  },
  {
   "kind": "answer",
@@ -167,6 +185,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do appliance and electronics makers estimate Category 12 end-of-life emissions in India, and does E-Waste Rules EPR data help?",
+  "text": "Take the mass of products sold in the year, split it by material, assign each material a share for formal recycling, landfill and informal burning, and multiply by route factors. Add refrigerant released at scrapping for cooling products. EPR data under the E-Waste Rules helps with tonnages, not with real disposal routes.",
+  "url": "https://senseible.earth/answers/appliance-end-of-life-emissions-e-waste-india"
+ },
+ {
+  "kind": "answer",
   "title": "Should I use AR5 or AR6 GWP values for methane and other gases?",
   "text": "Use the GWP set your reporting framework names. UNFCCC national inventories under the Paris rules use AR5 100-year values. The GHG Protocol asks for the most recent IPCC values, now AR6. If nobody specifies, use AR6 100-year values, say so, and keep one set for the whole inventory and its base year.",
   "url": "https://senseible.earth/answers/ar5-vs-ar6-gwp-which-to-use"
@@ -221,6 +245,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "If my electric fleet uses battery swapping stations, are those emissions Scope 2 or Scope 3?",
+  "text": "Usually Scope 3. With battery swapping you buy a charged battery as a service; the operator owns the batteries and stations and buys the electricity, so it is the operator's Scope 2. Report your share as a purchased service in Scope 3 Category 1, state the choice, and keep it consistent year to year.",
+  "url": "https://senseible.earth/answers/battery-swapping-emissions-which-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "What is BEE's SME energy efficiency programme, and does my industrial cluster qualify?",
+  "text": "BEE's SME programme works at cluster level in energy-intensive MSME clusters, such as foundries, brass, ceramics, forging and textiles, through energy mapping, audits, project reports and local capacity building. For individual units, BEE's ADEETIE scheme offers interest subvention to Udyam-registered MSMEs in 60 identified clusters.",
+  "url": "https://senseible.earth/answers/bee-sme-programme-cluster-energy-efficiency"
+ },
+ {
+  "kind": "answer",
   "title": "How does the BEE star rating for office buildings work?",
   "text": "The BEE star rating gives an existing office building one to five stars based on its Energy Performance Index (EPI): annual kWh divided by built-up area. Fewer kWh per square metre earns more stars. The bands differ by climate zone and by how much of the building is air-conditioned.",
   "url": "https://senseible.earth/answers/bee-star-rating-for-commercial-buildings"
@@ -236,6 +272,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can I earn carbon removal credits from biochar in India, and under which methodology?",
   "text": "Yes. Indian producers can register biochar projects in the voluntary market, for example under Verra's VM0044 methodology for biochar used in soil and non-soil applications. Credits depend on waste biomass feedstock, controlled pyrolysis, lab-tested carbon stability and proof of where the biochar ended up. Expect validation and verification costs before any credit is issued.",
   "url": "https://senseible.earth/answers/biochar-carbon-credits-india"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I report biodiesel blends (B7, B20, B100) in my fleet's Scope 1?",
+  "text": "Split the litres by blend. The fossil diesel share goes in Scope 1 at 2.68 kg CO2 per litre. The CO2 from the biodiesel share is biogenic and reported separately, outside the scopes. Methane and nitrous oxide from burning the whole blend stay in Scope 1.",
+  "url": "https://senseible.earth/answers/biodiesel-blend-fleet-scope-1"
  },
  {
   "kind": "answer",
@@ -263,15 +305,33 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What is blended finance, and can an Indian MSME benefit from it?",
+  "text": "Blended finance is public or development money used to make a project cheaper or safer for private lenders, through concessional loans, first-loss cover or grants. An Indian MSME rarely deals with it directly; it benefits through a bank or SIDBI loan that carries a lower rate, longer tenor or easier collateral because of it.",
+  "url": "https://senseible.earth/answers/blended-finance-for-msmes"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint of blown film per kg?",
   "text": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
   "url": "https://senseible.earth/answers/blown-film-extrusion-carbon-footprint-per-kg"
  },
  {
   "kind": "answer",
+  "title": "How much fuel does a boiler economiser save, and how do I calculate the CO2 reduction?",
+  "text": "Roughly 1 percent of boiler fuel for every 22 C the economiser takes off the flue gas temperature, a BEE guide book figure. Divide the stack temperature drop by 22 for the percent saved, apply it to the year's fuel from your invoices, then multiply by the fuel's emission factor for tonnes of CO2.",
+  "url": "https://senseible.earth/answers/boiler-economiser-fuel-saving"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate boiler efficiency by the direct and indirect methods?",
   "text": "Direct method: efficiency = steam output x (steam enthalpy minus feedwater enthalpy) / (fuel burnt x fuel GCV) x 100. Indirect method: efficiency = 100 minus the sum of measured heat losses, such as dry flue gas, moisture, unburnt carbon and radiation. The indirect method shows where the losses are.",
   "url": "https://senseible.earth/answers/boiler-efficiency-direct-and-indirect-method"
+ },
+ {
+  "kind": "answer",
+  "title": "How much electricity and CO2 does pumping groundwater from a borewell take per kilolitre?",
+  "text": "kWh per kL = 9.81 x total head in metres / (3,600 x pump and motor efficiency). Lifting water 50 m at 40 percent efficiency takes about 0.34 kWh per kL, or about 0.24 kg CO2 per kL at India's grid factor of 0.710. Deeper water and worn pumps raise it.",
+  "url": "https://senseible.earth/answers/borewell-pumping-energy-per-kl"
  },
  {
   "kind": "answer",
@@ -356,6 +416,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is fuel for company cars, employee-owned cars and taxis Scope 1 or Scope 3?",
   "text": "It depends on who owns or controls the vehicle. Fuel burnt in cars your company owns or leases and controls is Scope 1. Business trips in employees' own cars, taxis, app cabs and rental cars are Scope 3 Category 6, business travel. Daily travel between home and work is Category 7, commuting.",
   "url": "https://senseible.earth/answers/business-car-travel-which-scope"
+ },
+ {
+  "kind": "answer",
+  "title": "Does Buy Clean California require an EPD for Indian steel or glass used in Californian public projects?",
+  "text": "Yes, on contracts covered by the Act. Buy Clean California requires the winning contractor to submit a facility-specific environmental product declaration for each eligible material, including structural steel, rebar and flat glass, and the GWP must not exceed the limit set by the state. Indian mills supplying these projects need their own plant-level EPD.",
+  "url": "https://senseible.earth/answers/buy-clean-california-epd-steel"
+ },
+ {
+  "kind": "answer",
+  "title": "Will my buyer accept a self-declared carbon footprint, or do I need third-party verification?",
+  "text": "Most buyers accept a self-declared footprint for supplier questionnaires and Scope 3 data requests, if it shows its method, factors and evidence. You need third-party verification when a rule or contract demands it, most clearly for actual emissions in EU CBAM declarations from 2026, or when the buyer's programme names an assurance level.",
+  "url": "https://senseible.earth/answers/buyer-accept-self-declared-carbon-footprint"
  },
  {
   "kind": "answer",
@@ -563,6 +635,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I estimate Category 9 when I do not know where my distributors send the goods?",
+  "text": "Estimate it with the average-data method: take tonnes sold by state or region, assume an average distributor to retailer distance for each, multiply by a road freight factor per tonne-km, and label the result as an estimate. Then replace the assumptions with a sample of real distributor trips each year.",
+  "url": "https://senseible.earth/answers/category-9-unknown-final-destination"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint per tonne of caustic soda made in India?",
   "text": "It depends mostly on where the cell power comes from. Multiply electrolysis kWh per tonne of chlorine by your grid or captive plant factor, add steam fuel for concentration, then share the total by mass across chlorine, caustic soda and hydrogen. On grid power at 0.710 the figure is usually lower than on a captive coal plant.",
   "url": "https://senseible.earth/answers/caustic-soda-carbon-footprint-per-tonne"
@@ -755,6 +833,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate emissions for CNG three-wheeler cargo vehicles from CNG bills in kg?",
+  "text": "Add up the kg of CNG on your station bills and multiply by 2.69 kg CO2 per kg, the IPCC 2006 default for natural gas. Where a slip shows only rupees, divide by the price per kg printed on it first. Vehicles you own or operate are Scope 1.",
+  "url": "https://senseible.earth/answers/cng-three-wheeler-cargo-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate CO2 per tonne of clinker?",
   "text": "Add two parts. Calcination CO2 comes from the lime in the clinker: CaO fraction x 44/56 plus MgO fraction x 44/40.3, in tonnes CO2 per tonne clinker. Kiln fuel CO2 is fuel burnt per tonne clinker times its emission factor. Then correct for kiln dust that leaves the system.",
   "url": "https://senseible.earth/answers/co2-per-tonne-of-clinker-calculation"
@@ -815,9 +899,27 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What are the most common carbon accounting mistakes Indian SMEs make?",
+  "text": "The most common mistakes are using kVAh as kWh, counting the same bill twice, putting GST-inclusive amounts into spend-based factors, mixing up billing date and consumption period, putting diesel generators and rented space in the wrong scope, and using a grid factor without naming its source and edition.",
+  "url": "https://senseible.earth/answers/common-carbon-accounting-mistakes-smes"
+ },
+ {
+  "kind": "answer",
   "title": "How much do compressed air leaks cost in electricity and CO2?",
   "text": "Measure leakage with a load and unload test when production is stopped: leakage share equals load time divided by load plus unload time. Multiply that share by compressor power and running hours to get wasted kWh, then by your tariff for rupees and by 0.710 kg CO2 per kWh for emissions.",
   "url": "https://senseible.earth/answers/compressed-air-leak-cost-and-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "How much energy does lowering compressed air pressure save, and how do I work out the CO2?",
+  "text": "Lowering compressor delivery pressure by 1 bar cuts compressor power by roughly 6 to 10 percent, according to the BEE guide book on electrical utilities. Multiply your compressor's annual kWh by that share for the saving, then by 0.710 kg CO2 per kWh for grid electricity.",
+  "url": "https://senseible.earth/answers/compressed-air-pressure-reduction-savings"
+ },
+ {
+  "kind": "answer",
+  "title": "How much fuel and CO2 does returning steam condensate to the boiler save?",
+  "text": "Returning hot condensate raises boiler feed water temperature, and the BEE rule of thumb is about 1 percent fuel saved for every 6 C rise. Returning 60 percent of condensate at 80 C to a 30 C make-up tank saves roughly 5 percent of boiler fuel, before counting water and treatment savings.",
+  "url": "https://senseible.earth/answers/condensate-recovery-fuel-co2-savings"
  },
  {
   "kind": "answer",
@@ -836,6 +938,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Is cotton or polyester fabric lower carbon for garment exporters?",
   "text": "Neither wins by default. Per kg of fibre, published datasets for conventional cotton and virgin polyester overlap, and recycled polyester and organic cotton usually score lower than their virgin or conventional versions. For finished fabric, spinning, dyeing and finishing energy often outweighs the fibre choice, so your mills' fuel and power decide the answer.",
   "url": "https://senseible.earth/answers/cotton-vs-polyester-fabric-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate emissions from courier and express parcel shipments using courier invoices?",
+  "text": "For each shipment on the courier invoice, multiply actual weight in tonnes by the distance and by a factor for the mode: road for surface services, air for express and international. Use the courier's own figures instead if they state the method, such as ISO 14083 or the GLEC Framework.",
+  "url": "https://senseible.earth/answers/courier-shipment-emissions-from-invoices"
  },
  {
   "kind": "answer",
@@ -887,6 +995,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can I deduct carbon credits I bought from my Scope 1 and 2 totals in BRSR or for a buyer?",
+  "text": "No. Report Scope 1 and Scope 2 gross, as emitted, and show carbon credits you bought and retired as a separate line. The GHG Protocol keeps offsets outside the inventory, BRSR asks for gross emissions, and a buyer adding your figures to its Scope 3 needs gross figures too.",
+  "url": "https://senseible.earth/answers/deduct-carbon-credits-from-scope-1-brsr"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint of dehydrated onion or garlic flakes per kg?",
   "text": "There is no single published figure; you calculate it from your own unit. Per kg of flakes, add dryer fuel and electricity, the fresh onion or garlic it took (often several kg), and packaging. Dryer fuel usually dominates the factory share, so a coal-fired unit and a biomass unit give very different results.",
   "url": "https://senseible.earth/answers/dehydrated-onion-carbon-footprint-per-kg"
@@ -908,6 +1022,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the carbon footprint of using desalinated water in a factory?",
   "text": "Large seawater reverse osmosis plants use about 3.5 to 5 kWh of electricity per kilolitre, so on the Indian grid desalinated water carries about 2.5 to 3.6 kg CO2 per kL. If you run the plant, that electricity is already in your Scope 2. If you buy the water, it belongs in Scope 3 Category 1.",
   "url": "https://senseible.earth/answers/desalinated-water-carbon-footprint"
+ },
+ {
+  "kind": "answer",
+  "title": "My DG diesel is on fuel invoices and DG units are in a log. Which do I count?",
+  "text": "Count the diesel. Litres burnt x 2.68 kg CO2 per litre is your Scope 1 figure for the generator. Do not also multiply the DG units in your log by a grid factor; that counts the same emissions twice. Use the kWh log only for energy intensity and to cross-check the litres.",
+  "url": "https://senseible.earth/answers/dg-diesel-and-dg-units-double-counting"
  },
  {
   "kind": "answer",
@@ -938,6 +1058,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How many units should a diesel generator produce per litre, and how do I check mine?",
   "text": "A well-loaded diesel generator typically gives about 3 to 3.5 kWh per litre, an estimate based on engine data of roughly 240 to 280 g of diesel per kWh. Check yours by dividing the DG energy meter kWh by the litres used over the same period, and compare with the maker's curve at that load.",
   "url": "https://senseible.earth/answers/diesel-generator-specific-fuel-consumption"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I convert diesel, LDO or furnace oil from kg to litres for emissions?",
+  "text": "Divide the mass in kg by the density in kg per litre at 15 C: litres = kg / density. Take the density from the supplier's test certificate or invoice. Or skip the conversion and use a per-kg factor: about 3.19 kg CO2 per kg of diesel and 3.13 per kg of furnace oil, from IPCC 2006 defaults.",
+  "url": "https://senseible.earth/answers/diesel-kg-to-litres-conversion"
  },
  {
   "kind": "answer",
@@ -1091,6 +1217,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does improving power factor with capacitors reduce my Scope 2 emissions?",
+  "text": "Only slightly. Scope 2 is calculated on kWh, and capacitors leave the real energy your machines use unchanged. The only cut comes from lower current losses in your own cables and transformer, often under one percent of kWh, and only if the capacitors sit close to the loads.",
+  "url": "https://senseible.earth/answers/does-power-factor-correction-reduce-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "Does R-22 (HCFC-22) leakage count in my Scope 1 emissions?",
   "text": "No, not in the Scope 1 total. R-22 is an HCFC controlled by the Montreal Protocol, not one of the Kyoto gases the GHG Protocol counts in scopes. Report its leakage separately, as kilograms of gas and its CO2e, next to your inventory. Replacement gases such as R-32, R-410A and R-407C do go into Scope 1.",
   "url": "https://senseible.earth/answers/does-r22-count-in-scope-1"
@@ -1181,6 +1313,24 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is an electric boiler lower carbon than a PNG or diesel boiler in India?",
+  "text": "Not on India's grid average. Per kWh of useful heat, an electric boiler emits about 0.72 kg CO2, against about 0.22 kg for PNG and 0.32 kg for diesel. An electric boiler comes out lower only when renewable electricity backed by certificates or a green tariff covers most of its units.",
+  "url": "https://senseible.earth/answers/electric-boiler-vs-gas-boiler-emissions-india"
+ },
+ {
+  "kind": "answer",
+  "title": "Is an electric or LNG truck lower carbon than a diesel truck for Indian freight, per tonne-km?",
+  "text": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2 per kWh comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
+  "url": "https://senseible.earth/answers/electric-or-lng-truck-vs-diesel-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Is an electric three-wheeler lower carbon than a CNG three-wheeler at India's grid factor?",
+  "text": "Usually yes, but by less than people expect. At 0.10 kWh per km at the charger and 0.710 kg CO2 per kWh, an e-rickshaw or e-cargo three-wheeler emits about 0.071 kg CO2 per km, against about 0.090 kg for a CNG three-wheeler doing 30 km per kg. That is roughly a fifth lower.",
+  "url": "https://senseible.earth/answers/electric-vs-cng-three-wheeler-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "Our total emissions fell but emission intensity rose. How do we explain it to a buyer?",
   "text": "Explain that output fell faster than emissions, because part of your energy use is fixed and does not drop when production does. Show both figures, split the change into an output effect and an efficiency effect, and say what you are doing about the fixed load.",
   "url": "https://senseible.earth/answers/emissions-fell-but-intensity-rose"
@@ -1226,6 +1376,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "We hold a 26% stake in a joint venture we don't control. How do we report its emissions?",
   "text": "If your group uses a control approach, report 26% of the joint venture's Scope 1 and 2 emissions in Scope 3 Category 15, investments. If your group uses the equity share approach, the same 26% goes into your own Scope 1 and 2 instead. Never count it in both places.",
   "url": "https://senseible.earth/answers/equity-stake-in-joint-venture-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "How does an ESCO shared-savings contract work for an MSME efficiency project, and who reports the savings?",
+  "text": "In a shared-savings contract the ESCO pays for and installs the efficiency equipment, and you share the measured rupee savings with it for a fixed period, after which the savings are yours. You, the plant using less energy, report the lower Scope 2 or Scope 1. The ESCO does not report your emissions.",
+  "url": "https://senseible.earth/answers/esco-shared-savings-model-msme"
  },
  {
   "kind": "answer",
@@ -1463,6 +1619,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can I use my freight forwarder's emissions report for Category 4 or 9?",
+  "text": "Yes, if the report states its method (ISO 14083 or the GLEC Framework), the weight and distance basis, the factors used and which shipments it covers, and a sample of shipments recomputes close to its figures. Then it is better data than your own default estimate. Put each shipment in Category 4 or 9 by who paid for it.",
+  "url": "https://senseible.earth/answers/freight-forwarder-emissions-report-scope-3"
+ },
+ {
+  "kind": "answer",
   "title": "Should I count fuel when it is bought or when it is used, if I hold diesel stock?",
   "text": "Count fuel when it is used, not when it is bought. Emissions happen when diesel burns, so take the year's purchases, add opening stock and subtract closing stock. If stock barely changes, purchases are an acceptable stand-in, but say so in your method note.",
   "url": "https://senseible.earth/answers/fuel-purchased-vs-fuel-consumed"
@@ -1523,6 +1685,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Are delivery riders' own two-wheelers part of my Scope 3, and in which category?",
+  "text": "Yes. Riders' own two-wheelers are not your Scope 1 because you neither own nor control them. Deliveries you pay riders for are a purchased transport service, so they go in Scope 3 Category 4. Deliveries a customer pays for separately belong in Category 9. Estimate from trips, distance and a per-km factor.",
+  "url": "https://senseible.earth/answers/gig-delivery-riders-emissions-which-scope"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate the carbon footprint per tonne of container glass, including soda ash and limestone in the batch?",
   "text": "Add three parts and divide by tonnes of good glass: CO2 released from carbonates in the batch (soda ash, limestone, dolomite), CO2 from the fuel burnt in the furnace and lehrs, and CO2 from the electricity used. More cullet in the batch lowers both the carbonate CO2 and the melting fuel.",
   "url": "https://senseible.earth/answers/glass-container-furnace-emissions-per-tonne"
@@ -1580,6 +1748,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What does SEBI require to issue green debt securities in India?",
   "text": "SEBI requires a listed green debt security to fund an eligible green category, and the issuer to appoint an independent reviewer and disclose its environmental objectives, project selection, proceeds tracking and the review's scope in the offer document, then report use of proceeds and impact every year.",
   "url": "https://senseible.earth/answers/green-debt-securities-sebi-requirements"
+ },
+ {
+  "kind": "answer",
+  "title": "What evidence does a lender want for a green loan to buy electric delivery vehicles?",
+  "text": "A lender will want proof the vehicles are fully electric, a quotation and later the invoices, registration certificates showing electric fuel type, the fuel records of the vehicles they replace as a baseline, a charging plan, and a yearly report of kilometres, kWh and CO2 avoided. Clean transport is an eligible green loan category.",
+  "url": "https://senseible.earth/answers/green-loan-electric-delivery-vehicles"
  },
  {
   "kind": "answer",
@@ -1673,6 +1847,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can an industrial heat pump replace my boiler for process heat below 90 C, and how much CO2 does it save on India's grid?",
+  "text": "Often yes for hot water and low-temperature process heat below 90 C. On India's grid factor of 0.710 kg CO2 per kWh, a heat pump beats a diesel, furnace oil or coal boiler at a coefficient of performance (COP) above about 2.3, but needs a COP above about 3.1 to beat an efficient PNG boiler.",
+  "url": "https://senseible.earth/answers/heat-pump-for-process-heat-india"
+ },
+ {
+  "kind": "answer",
   "title": "How much productivity can Indian factories lose to extreme heat, and how do I estimate it?",
   "text": "The ILO projects India will lose 5.8% of working hours to heat stress in 2030, about 34 million full-time jobs, assuming 1.5°C of warming by 2100, with most of it in farming and construction. For your factory, multiply hours above a safe heat limit by the rest share, workers and wage.",
   "url": "https://senseible.earth/answers/heat-stress-factory-productivity-loss-india"
@@ -1688,6 +1868,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What energy and emissions data does the Higg FEM ask textile suppliers for?",
   "text": "The Higg FEM energy and GHG section asks for a full year of energy use by source: purchased electricity, on-site renewables, and every fuel for boilers, generators and vehicles, with the documents behind each. The module turns this into emissions, then asks about baselines, targets and reduction actions at higher levels.",
   "url": "https://senseible.earth/answers/higg-fem-energy-and-emissions-data"
+ },
+ {
+  "kind": "answer",
+  "title": "Are trucks we hire with drivers from a transporter Scope 1 or Scope 3?",
+  "text": "Scope 3. A truck hired with its driver from a transporter is operated by the transporter, so its fuel is Scope 3, Category 4 when you pay for the transport. That holds for long-term attached trucks too. Only trucks you own, or lease and run yourself, are Scope 1.",
+  "url": "https://senseible.earth/answers/hired-trucks-scope-1-or-scope-3"
  },
  {
   "kind": "answer",
@@ -2039,6 +2225,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Is replacing an IE2 motor with an IE3 or IE4 motor worth it, and how much CO2 does it save?",
+  "text": "It pays when the motor runs long hours near full load. Work out input power at your load with each efficiency (output divided by efficiency); the difference times running hours is kWh saved. Price it at your tariff and multiply by 0.710 kg CO2 per kWh. Lightly used motors are better replaced at failure.",
+  "url": "https://senseible.earth/answers/ie2-to-ie4-motor-replacement-savings"
+ },
+ {
+  "kind": "answer",
   "title": "What does IFRS S1 cover that IFRS S2 does not?",
   "text": "IFRS S1 covers every sustainability risk and opportunity that could affect a company's prospects, such as water, labour or supply chains, and sets the general rules for any sustainability report. IFRS S2 covers climate only. S2 adds the climate specifics: emissions by scope, scenario analysis, transition plans and climate metrics.",
   "url": "https://senseible.earth/answers/ifrs-s1-vs-ifrs-s2-difference"
@@ -2123,6 +2315,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does the India-UK trade agreement exempt Indian exporters from the UK CBAM?",
+  "text": "No. The India-UK Comprehensive Economic and Trade Agreement, signed in July 2025 and in force since 15 July 2026, cuts UK duties on most Indian goods but gives no exemption from the UK CBAM. From 1 January 2027, UK importers of covered Indian aluminium, cement, fertiliser, hydrogen, and iron and steel still pay the CBAM.",
+  "url": "https://senseible.earth/answers/india-uk-trade-deal-uk-cbam"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate emissions from Indian coal when my bill shows grade or GCV, not tonnes of standard coal?",
   "text": "Convert the coal's calorific value into energy, then multiply by an IPCC CO2 factor per terajoule. Take GCV from the lab report or the grade's band, convert kcal/kg to MJ/kg, reduce GCV to NCV, and apply the IPCC default for the coal type, such as 94.6 t CO2 per TJ for other bituminous coal.",
   "url": "https://senseible.earth/answers/indian-coal-emissions-by-gcv"
@@ -2135,9 +2333,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do I have to report indirect use-phase emissions, such as the hot water used to wash garments I sell?",
+  "text": "No. Under the GHG Protocol Scope 3 Standard, indirect use-phase emissions, like the power a washing machine draws to heat water for your shirts or the gas used to cook your pasta, are optional in Category 11. Only direct use-phase emissions are required. If you include indirect ones, show them separately with the use scenario you assumed.",
+  "url": "https://senseible.earth/answers/indirect-use-phase-emissions-optional"
+ },
+ {
+  "kind": "answer",
   "title": "How are CBAM embedded emissions worked out for steel billets made in an induction furnace from coal-based sponge iron?",
   "text": "Add the embedded emissions of the sponge iron, pig iron and ferroalloys charged to the shop's own direct emissions, then divide by tonnes of billets. The induction furnace's electricity is not counted for steel. Because coal-based sponge iron is carbon intensive, its value usually makes up most of the billet figure.",
   "url": "https://senseible.earth/answers/induction-furnace-billet-sponge-iron-cbam"
+ },
+ {
+  "kind": "answer",
+  "title": "Is induction cooking lower carbon than LPG in a factory canteen or hotel kitchen in India?",
+  "text": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
+  "url": "https://senseible.earth/answers/induction-vs-lpg-canteen-kitchen-emissions"
  },
  {
   "kind": "answer",
@@ -2249,6 +2459,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I estimate Category 2 emissions for laptops, servers and other IT hardware we buy?",
+  "text": "Take the manufacturing share of each model's product carbon footprint sheet, multiply by the units you capitalised this year, and report the total in Category 2 for the year of purchase. Where no sheet exists, use a labelled spend-based estimate on the GST-exclusive invoice value.",
+  "url": "https://senseible.earth/answers/it-hardware-laptops-category-2-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "What do Japanese buyers mean when they ask for a product carbon footprint under the METI guidelines?",
   "text": "They want a product carbon footprint calculated the way Japan's government guidance describes: the Carbon Footprint Guidelines issued by METI and the Ministry of the Environment in March 2023. The guidelines build on ISO 14067 and the GHG Protocol Product Standard and ask suppliers for primary data from their own processes.",
   "url": "https://senseible.earth/answers/japan-carbon-footprint-guideline-supplier-request"
@@ -2333,6 +2549,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I calculate the electricity and CO2 saved by an LED lighting retrofit in a factory or warehouse?",
+  "text": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
+  "url": "https://senseible.earth/answers/led-retrofit-energy-co2-savings"
+ },
+ {
+  "kind": "answer",
   "title": "Limited vs reasonable assurance on emissions data: what is the difference and which do I need?",
   "text": "Limited assurance means the assurer found nothing suggesting your emissions are materially wrong. Reasonable assurance is a positive opinion that they are fairly stated, backed by far more testing. You need whichever your regulator, lender or buyer names: CSRD asks for limited, SEBI's BRSR Core asks large listed companies for reasonable assurance or an assessment.",
   "url": "https://senseible.earth/answers/limited-vs-reasonable-assurance-emissions"
@@ -2363,6 +2585,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Will Malaysia's ISSB-based reporting make Malaysian buyers ask Indian suppliers for Scope 3 data?",
+  "text": "Probably, once their Scope 3 relief ends. Malaysia's National Sustainability Reporting Framework phases in IFRS S2 for Bursa listed issuers and large non-listed companies, and IFRS S2 requires Scope 3. Buyers that report will then need your Scope 1 and 2 emissions and a per unit figure for the goods you sell them.",
+  "url": "https://senseible.earth/answers/malaysia-nsrf-supplier-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "How do mangrove restoration projects in India earn blue carbon credits?",
   "text": "A mangrove project earns blue carbon credits by restoring mangroves on degraded tidal land, measuring the extra carbon stored in trees and soil against what would have happened without the project, and having it verified under a methodology such as Verra's VM0033. Land rights, survival and buffer deductions decide how many credits remain.",
   "url": "https://senseible.earth/answers/mangrove-restoration-carbon-credits-india"
@@ -2384,6 +2612,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do I prove that route optimisation actually cut my freight emissions?",
   "text": "Compare emissions per tonne-km before and after, using diesel litres for emissions and a fixed distance per delivery for tonne-km. Then multiply the drop in intensity by the tonne-km you moved after the change. Using actual kilometres driven for tonne-km would hide the very saving you are trying to show.",
   "url": "https://senseible.earth/answers/measure-emission-cut-from-route-optimisation"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I estimate Category 12 for steel or aluminium products I sell, when most of the metal is recycled?",
+  "text": "Multiply the tonnes of metal products you sold this year by an end-of-life split between recycling and landfill. Count collection and transport, and landfill of the non-recycled share, which is usually small. Recycling process emissions belong to whoever uses the scrap, and no avoided-emission credit is subtracted from your total.",
+  "url": "https://senseible.earth/answers/metal-products-end-of-life-category-12"
  },
  {
   "kind": "answer",
@@ -2429,6 +2663,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Does buying a new truck, van or electric vehicle add Scope 3 Category 2 emissions, and how do I estimate them?",
+  "text": "Yes. A truck, van or electric vehicle you capitalise is a capital good, so its full cradle-to-gate manufacturing emissions go in Scope 3 Category 2 in the year you buy it. Use the maker's vehicle footprint if published; otherwise estimate from body materials plus battery kWh, and label the estimate.",
+  "url": "https://senseible.earth/answers/new-truck-or-ev-purchase-category-2"
+ },
+ {
+  "kind": "answer",
   "title": "How does a lender apply an NGFS carbon price to an MSME borrower?",
   "text": "Multiply the borrower's annual Scope 1 and 2 emissions in tonnes by the scenario's carbon price for a given year, adjust for how much of the cost the borrower can pass on, and subtract the result from EBITDA. Then recompute the debt service coverage ratio and compare it with your covenant.",
   "url": "https://senseible.earth/answers/ngfs-carbon-price-msme-loan-stress-test"
@@ -2450,6 +2690,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What is the difference between template OCR and AI vision for reading invoices?",
   "text": "Template OCR turns the page into text and pulls each field from a fixed position you set up per supplier layout. AI vision reads the whole page, layout and text together, and fills named fields without a template. Templates suit a few stable layouts; AI vision suits many suppliers and photos, if every value is checked.",
   "url": "https://senseible.earth/answers/ocr-vs-ai-vision-invoice-extraction"
+ },
+ {
+  "kind": "answer",
+  "title": "How much electricity and CO2 does replacing old office ACs with 5-star inverter ACs save?",
+  "text": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2 per kWh. The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
+  "url": "https://senseible.earth/answers/office-ac-replacement-co2-savings"
  },
  {
   "kind": "answer",
@@ -2567,6 +2813,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Can a delivery business get PM E-DRIVE incentives on electric two- and three-wheelers?",
+  "text": "Possibly, if the vehicles are eligible models and bought while that part of the scheme is open. PM E-DRIVE incentives are not paid to you as a cheque; the price is reduced at purchase and the maker claims it back. Categories, rates and end dates have been revised, so check the current Ministry of Heavy Industries notification first.",
+  "url": "https://senseible.earth/answers/pm-e-drive-subsidy-delivery-fleet"
+ },
+ {
+  "kind": "answer",
   "title": "How do I convert an industrial PNG bill in SCM or MMBtu to CO2?",
   "text": "Billed in MMBtu: multiply by 1.055 to get GJ, by 0.90 to move from gross to net calorific value, then by 56.1 kg CO2 per GJ. That is about 53.3 kg CO2 per MMBtu. Billed in SCM: multiply by 2.05 kg CO2 per scm, or convert using the GCV printed on the bill.",
   "url": "https://senseible.earth/answers/png-bill-mmbtu-to-co2"
@@ -2576,6 +2828,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What emission factor should I use for purchased PP, HDPE and PVC resin in Scope 3?",
   "text": "Use your resin supplier's cradle-to-gate product footprint for the exact grade first. If you do not have one, use a published industry-average eco-profile for that polymer as a labelled proxy, and cite its edition and region. Never mix virgin and recycled resin factors.",
   "url": "https://senseible.earth/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+ },
+ {
+  "kind": "answer",
+  "title": "Can many small MSMEs pool energy-efficiency projects into one carbon credit programme?",
+  "text": "Yes. Registries allow it through grouped projects (Verra's VCS) or programmes of activities (the CDM and Gold Standard), where one coordinator registers the programme and brings in further sites under the same rules. Every site keeps its own baseline, monitoring and a contract that hands its credit rights to the coordinator.",
+  "url": "https://senseible.earth/answers/pool-msme-efficiency-projects-carbon-credits"
  },
  {
   "kind": "answer",
@@ -2651,6 +2909,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What emission factor should I use for municipal, MIDC or tanker water I buy?",
+  "text": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
+  "url": "https://senseible.earth/answers/purchased-water-emission-factor"
+ },
+ {
+  "kind": "answer",
   "title": "Is rail freight lower carbon than trucking in India, and by how much per tonne-km?",
   "text": "Yes. On the default factors for India, rail freight is 0.0106 kg CO2e per tonne-km, against 0.0551 for a tractor-trailer and 0.0902 for a 12 to 20 t truck, so 81 to 88 percent lower. Door to door the gap narrows, because rail needs road legs at each end.",
   "url": "https://senseible.earth/answers/rail-vs-road-freight-emissions-india"
@@ -2699,6 +2963,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much fuel does better furnace insulation or ceramic fibre lining save in a reheating or heat-treatment furnace?",
+  "text": "Work it out from the furnace's outer wall temperature before and after. Wall heat loss falls sharply as the surface cools: in an illustrative 40 m2 furnace, cutting the casing from 120 C to 70 C saves about 38 tonnes of furnace oil a year. Batch furnaces also save the heat a heavy lining soaks up each cycle.",
+  "url": "https://senseible.earth/answers/reheating-furnace-insulation-fuel-savings"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I count remanufactured or refurbished parts I buy in Scope 3?",
+  "text": "Count them in Category 1, or Category 2 if you capitalise them, using the remanufacturer's own footprint for the part where you can get it. Otherwise estimate the remanufacturing energy plus the new components fitted. Do not use a new-part factor, which overstates them, and do not count them as zero.",
+  "url": "https://senseible.earth/answers/remanufactured-parts-scope-3"
+ },
+ {
+  "kind": "answer",
   "title": "How much solar or wind capacity is needed per tonne of green hydrogen a year?",
   "text": "Roughly 30 kW of solar or 20 kW of wind for each tonne of green hydrogen a year, before storage and curtailment. That assumes 52 kWh per kg for the electrolyser system and capacity factors of 20 percent for solar and 30 percent for wind. Capacity rises in step with consumption, so use your own figures.",
   "url": "https://senseible.earth/answers/renewable-capacity-per-tonne-green-hydrogen"
@@ -2741,6 +3017,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I account for returnable pallets, crates and drums in Scope 3?",
+  "text": "Count the packaging's production emissions once, in the year you buy it: Category 2 if you capitalise it, Category 1 if you expense it. Do not spread it over trips in your inventory. Return trips you pay for go in Category 4, washing or repair bought in goes in Category 1, and disposal goes in Category 5.",
+  "url": "https://senseible.earth/answers/returnable-packaging-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I count emissions from customer returns and reverse logistics?",
+  "text": "Count the return trip like any other shipment: weight times distance times a factor for the mode. Returns you pay to transport go in Scope 3 Category 4; returns the customer pays for go in Category 9. Returned goods you scrap are your waste, so they go in Category 5, not Category 12.",
+  "url": "https://senseible.earth/answers/reverse-logistics-customer-returns-emissions"
+ },
+ {
+  "kind": "answer",
   "title": "What is the carbon footprint per tonne of rice from a rice mill?",
   "text": "At the mill, add grid electricity, DG diesel and the non-CO2 gases from any husk boiler, then divide by tonnes of paddy or rice. Milling at an assumed 25 kWh per tonne of paddy gives about 18 kg CO2 per tonne of paddy, or about 27 kg per tonne of rice at 65% outturn.",
   "url": "https://senseible.earth/answers/rice-mill-carbon-footprint-per-tonne-paddy"
@@ -2750,6 +3038,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "How do rice exporters estimate Scope 3 emissions from rice bought from farmers?",
   "text": "Rice exporters estimate it per tonne of paddy: work out methane from flooded fields and nitrous oxide from fertiliser per hectare using IPCC methods, divide by the paddy yield per hectare, then multiply by the tonnes bought. It is GHG Protocol Scope 3 Category 1, and methane usually dominates.",
   "url": "https://senseible.earth/answers/rice-procurement-scope-3-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Can my factory's rooftop solar earn carbon credits?",
+  "text": "In practice, rarely. Verra no longer registers new grid-connected renewable power projects outside least developed countries, Gold Standard restricts them in a similar way, and the ICVCM has rejected the main renewable methods. India's CCTS offset route works only where BEE has approved a fitting methodology. The dependable benefit is a lower Scope 2.",
+  "url": "https://senseible.earth/answers/rooftop-solar-carbon-credits-msme"
  },
  {
   "kind": "answer",
@@ -2816,6 +3110,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "We sell steel or aluminium scrap to recyclers. What goes in our Scope 3 Category 5 line for it?",
   "text": "Scrap you sell to a recycler still sits in Category 5, but under the GHG Protocol's recycled content method your line covers only moving the scrap to the recycler, and only if you include waste transport. Recycling process emissions are zero in your inventory because they belong to whoever uses the recycled metal.",
   "url": "https://senseible.earth/answers/scrap-sold-for-recycling-scope-3"
+ },
+ {
+  "kind": "answer",
+  "title": "Is sea-air freight via Dubai much lower carbon than direct air freight to Europe?",
+  "text": "Only somewhat. Shipping to Dubai by sea and flying on from there cuts about a quarter of the emissions of flying direct from Mumbai to Frankfurt, because the air leg is still most of the distance. It remains close to 20 times the emissions of sending the same cargo by sea all the way.",
+  "url": "https://senseible.earth/answers/sea-air-freight-via-dubai-emissions"
  },
  {
   "kind": "answer",
@@ -2963,6 +3263,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How much fuel and CO2 does a solar water heater save in a factory, hostel or hotel?",
+  "text": "Work it out from the heat delivered: litres per day x 4.186 kJ per kg per degree C x temperature rise x sunny days. Divide by the replaced heater's efficiency, convert to fuel or kWh, and apply the fuel or grid factor. A 2,000 litre system replacing electric geysers saves about 18 t CO2 a year.",
+  "url": "https://senseible.earth/answers/solar-water-heater-factory-co2-savings"
+ },
+ {
+  "kind": "answer",
   "title": "Can I deduct steam or electricity I sell to a neighbour from my Scope 1?",
   "text": "No. If your boiler or captive power plant burns the fuel, all of its emissions stay in your Scope 1, even the share that makes steam or power you sell. You may report the emissions linked to sold energy as a separate, optional figure, and use that split for your product intensity.",
   "url": "https://senseible.earth/answers/sold-steam-or-power-deduct-from-scope-1"
@@ -3017,6 +3323,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "How do I find state government subsidies for MSME energy efficiency and solar in India?",
+  "text": "Start with three offices in your state: the industries department's current MSME or industrial policy, the state designated agency for energy conservation, and the state renewable energy agency or discom for rooftop solar. Read the scheme notification itself, check eligibility and timing before you buy, and keep audit reports and invoices ready.",
+  "url": "https://senseible.earth/answers/state-subsidies-msme-energy-efficiency"
+ },
+ {
+  "kind": "answer",
   "title": "Is there a state-wise grid emission factor in India, and can I use a lower one for my state?",
   "text": "No. The CEA, which publishes India's official grid factor, gives one all-India figure, because the country runs a single synchronised grid. For location-based Scope 2 use that national factor even if your state has a lot of solar or wind. To report lower Scope 2, use market-based reporting with renewable energy you actually buy.",
   "url": "https://senseible.earth/answers/state-wise-grid-emission-factor-india"
@@ -3047,6 +3359,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "My supplier's price includes delivery to my factory. Do I still count that transport in Category 4?",
+  "text": "Yes. Transport of purchased goods from a tier 1 supplier to your site, in vehicles you do not own, is Category 4 even when the freight is built into a delivered price and never invoiced separately. The only exception is when the supplier footprint you already use in Category 1 includes delivery to your site.",
+  "url": "https://senseible.earth/answers/supplier-price-includes-delivery-category-4"
+ },
+ {
+  "kind": "answer",
   "title": "Is it double counting if my supplier's Scope 1 also appears in my Scope 3?",
   "text": "No. Scope 3 is built to overlap with other companies' Scope 1 and 2, and the GHG Protocol accepts that overlap between inventories. Double counting is a problem when you count the same emissions twice inside your own inventory, when two parties claim the same reduction or offset, or when company inventories are added together.",
   "url": "https://senseible.earth/answers/supplier-scope-1-double-counted-in-scope-3"
@@ -3068,6 +3386,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "What KPIs work in a sustainability-linked loan for an MSME?",
   "text": "For most MSMEs the best sustainability-linked loan KPIs are Scope 1 and 2 emissions per unit of output, energy used per unit of output, and the share of renewable electricity. Each must be core to the business, measured from bills and invoices, and checked by an outside verifier every year.",
   "url": "https://senseible.earth/answers/sustainability-linked-loan-kpi-examples"
+ },
+ {
+  "kind": "answer",
+  "title": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
+  "text": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
+  "url": "https://senseible.earth/answers/switch-delivery-fleet-to-electric-two-wheelers"
  },
  {
   "kind": "answer",
@@ -3107,6 +3431,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "Do transformer losses count in my Scope 2 if I am an HT consumer?",
+  "text": "Yes. Losses in your own transformer are electricity you bought and consumed, so they belong in Scope 2. If your meter is on the HT side, the billed kWh already include them. If it is on the LT side, add the transformer loss units your discom prints on the bill.",
+  "url": "https://senseible.earth/answers/transformer-losses-in-scope-2"
+ },
+ {
+  "kind": "answer",
   "title": "How do I calculate T&D loss emissions for Scope 3 Category 3 in India, and should I use T&D losses or AT&C losses?",
   "text": "Multiply the grid electricity you consumed by India's transmission and distribution (T&D) loss rate from the CEA, then by the CEA grid factor. Use the T&D loss figure, not AT&C losses: AT&C adds unpaid bills, which is a money measure, not electricity that was generated and lost.",
   "url": "https://senseible.earth/answers/transmission-and-distribution-losses-india-scope-3"
@@ -3122,6 +3452,18 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Can I try Senseible on a bill without signing up, and what happens to the file?",
   "text": "Yes. You can upload an invoice or electricity bill from the Senseible home page without an account. The file is read, but nothing is stored on Senseible's servers: no file, record or result. Your results stay only in your own browser for 24 hours, and then they expire and are removed.",
   "url": "https://senseible.earth/answers/try-senseible-without-an-account"
+ },
+ {
+  "kind": "answer",
+  "title": "How do I calculate emissions for a petrol two-wheeler delivery fleet per km and per order?",
+  "text": "Add up the petrol litres on your fuel invoices or slips for the period and multiply by 2.31 kg CO2 per litre. Divide that total by kilometres ridden for CO2 per km, and by orders delivered for CO2 per order. Use fuel data where you have it; estimate from kilometres only where you do not.",
+  "url": "https://senseible.earth/answers/two-wheeler-delivery-fleet-emissions"
+ },
+ {
+  "kind": "answer",
+  "title": "Will the UAE climate law make UAE customers ask Indian suppliers for emissions data?",
+  "text": "Not directly, as the law reads today. The UAE's Federal Decree-Law No. 11 of 2024 puts measuring and reporting duties on entities in the UAE for their own emissions. But UAE buyers that set reduction plans, report to group parents or sell into the EU will ask suppliers for data, so prepare Scope 1 and 2 figures anyway.",
+  "url": "https://senseible.earth/answers/uae-climate-law-supplier-emissions"
  },
  {
   "kind": "answer",
@@ -3143,9 +3485,21 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
  },
  {
   "kind": "answer",
+  "title": "What rules apply to green or carbon claims on products an Indian exporter sells in the UK?",
+  "text": "UK consumer law, explained in the CMA's Green Claims Code, applies: an environmental or carbon claim must be true, clear, complete and backed by evidence. Since April 2025 the CMA can fine businesses directly for misleading claims under the Digital Markets, Competition and Consumers Act 2024, so UK retailers now check suppliers' claims closely.",
+  "url": "https://senseible.earth/answers/uk-green-claims-rules-exporters"
+ },
+ {
+  "kind": "answer",
   "title": "What are the emissions from applying a tonne of urea on farms?",
   "text": "Applying one tonne of urea on a field emits about 0.73 t CO2 from the urea itself plus about 1.97 t CO2e of direct nitrous oxide, using IPCC defaults and the AR6 GWP. Adding indirect nitrous oxide takes it to about 3.35 t CO2e. Making the urea is extra.",
   "url": "https://senseible.earth/answers/urea-application-emissions-per-tonne"
+ },
+ {
+  "kind": "answer",
+  "title": "What carbon or eco-friendly claims can an Indian exporter make on products sold in the US?",
+  "text": "Specific, measured claims you can prove, such as a stated product footprint with its boundary and year. The US FTC Green Guides (16 CFR Part 260) warn against unqualified claims like eco-friendly, require offset claims to be backed by reliable evidence, and hold the seller responsible for every reasonable reading of a claim.",
+  "url": "https://senseible.earth/answers/us-ftc-green-guides-carbon-claims"
  },
  {
   "kind": "answer",
@@ -3194,6 +3548,12 @@ export const INTELLIGENCE_LIBRARY: LibraryEntry[] = [
   "title": "Verra or Gold Standard: which registry should a small project choose?",
   "text": "Choose the standard that has an approved methodology for your activity and that your likely buyers prefer. Verra's VCS has the widest range of methods and the largest market. Gold Standard requires proof of sustainable development benefits and suits community projects such as cookstoves, water and small energy. Fees and eligibility rules change, so check both.",
   "url": "https://senseible.earth/answers/verra-or-gold-standard-which-to-choose"
+ },
+ {
+  "kind": "answer",
+  "title": "How much electricity and CO2 does a VFD on a pump or fan save, and how do I calculate it?",
+  "text": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh.",
+  "url": "https://senseible.earth/answers/vfd-pump-fan-energy-co2-savings"
  },
  {
   "kind": "answer",

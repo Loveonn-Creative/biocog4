@@ -1,0 +1,83 @@
+{
+  "slug": "vfd-pump-fan-energy-co2-savings",
+  "q": "How much electricity and CO2 does a VFD on a pump or fan save, and how do I calculate it?",
+  "title": "VFD on a pump or fan: kWh and CO2 saved",
+  "short": "A VFD saves electricity when a centrifugal pump or fan runs below full flow for long hours. Power falls roughly with the cube of speed, so 80 percent speed needs about half the power. Saving equals present measured kW minus predicted kW at the lower speed, times hours, times 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers and MSME owners",
+  "sections": [
+    {
+      "h": "The affinity laws behind the saving",
+      "p": [
+        "For centrifugal pumps and fans, flow varies with speed, pressure with the square of speed, and power with the cube of speed. The BEE guide book on electrical utilities uses these laws to explain why speed control beats a throttle valve or damper, which wastes energy across the restriction while the motor keeps running at full speed.",
+        "At 90 percent speed the ideal power is 0.9 x 0.9 x 0.9 = 73 percent. At 70 percent speed it is 34 percent."
+      ]
+    },
+    {
+      "h": "When the cube law overstates the saving",
+      "ul": [
+        "Static head: a pump lifting water to an overhead tank must always overcome the height difference. Power does not fall with the cube of speed there; use the pump curve and system curve instead.",
+        "Drive losses: a VFD itself loses a few percent. Add them to the predicted kW.",
+        "Load already near full: if the pump runs at full flow most of the time, a VFD saves little and adds its own losses.",
+        "Minimum speed: below a certain speed a pump may not deliver against the head, and a fan motor may overheat. Check with the maker."
+      ]
+    },
+    {
+      "h": "What to measure before you buy",
+      "ol": [
+        "Measure input kW with a power analyser at the present duty, with the valve or damper as it normally runs.",
+        "Record hours at each typical flow over a normal week, since a load that varies through the day saves more than one fixed point.",
+        "Find the speed that gives the needed flow, from the fan or pump curve, and predict kW at that speed.",
+        "After installation, meter the drive and compare with the baseline, adjusted for production."
+      ]
+    },
+    {
+      "h": "Turning kWh into CO2 and rupees",
+      "p": [
+        "CO2 saved is kWh saved times 0.710 kg CO2 per kWh, the CEA grid factor, for grid power. If the motor runs on a diesel generator, convert the kWh saved into litres at the generator's measured kWh per litre and multiply by 2.68 kg CO2 per litre. Rupees saved are kWh times your energy charge, including fuel adjustment and duty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a cooling tower fan (illustrative)",
+    "lines": [
+      "Present: damper throttled to give 80 percent airflow, measured 28 kW, 6,000 hours a year",
+      "Full speed with damper open: 30 kW (from measurement or fan curve)",
+      "VFD at 80 percent speed: 30 x 0.512 = 15.36 kW; add about 3 percent drive loss (assumed): 15.36 / 0.97 = 15.84 kW",
+      "Saving: 28 minus 15.84 = 12.16 kW; x 6,000 h = 72,960 kWh a year",
+      "CO2: 72,960 x 0.710 = 51,801.6 kg, about 51.8 tonnes a year"
+    ],
+    "note": "Fans have almost no static head, so the cube law fits well. For a pump with static head, expect a smaller saving and use the system curve."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "links": [
+    {
+      "label": "Measuring savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Cost per tonne of CO2 abated",
+      "to": "/answers/cost-per-tonne-of-co2-abated"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (pumps, fans and variable speed drives)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

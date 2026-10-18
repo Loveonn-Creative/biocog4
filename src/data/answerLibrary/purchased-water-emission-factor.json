@@ -1,0 +1,81 @@
+{
+  "slug": "purchased-water-emission-factor",
+  "q": "What emission factor should I use for municipal, MIDC or tanker water I buy?",
+  "title": "Emission factor for purchased water",
+  "short": "There is no official Indian emission factor for supplied water, so build one from energy. For utility water, multiply kilolitres by the supplier's kWh per kL and by 0.710 kg CO2 per kWh. For tanker water, use diesel per trip times 2.68 kg CO2 per litre, divided by kL delivered. Label both as estimates.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories reporting BRSR water and Scope 3",
+  "sections": [
+    {
+      "h": "Where it goes in your inventory",
+      "p": [
+        "Water bought from a municipality, an industrial development corporation such as MIDC, or a tanker supplier is a purchased good, so its emissions go in Scope 3 Category 1. Water you pump from your own borewell is different: the pump's electricity is already in your Scope 2, or diesel in Scope 1 if a generator runs it."
+      ]
+    },
+    {
+      "h": "Utility water",
+      "ol": [
+        "Ask the supplier for its pumping and treatment energy in kWh per kL. Some utilities report it; others can give total kWh and total kL supplied.",
+        "Multiply your kL by that figure and by 0.710 kg CO2 per kWh.",
+        "If you cannot get a supplier figure, use an assumed value with its basis written down, and replace it when you can."
+      ]
+    },
+    {
+      "h": "Tanker water",
+      "ol": [
+        "Note the round-trip distance from source to your gate and the tanker's diesel use per km.",
+        "Diesel per trip x 2.68 kg CO2 per litre = CO2 per trip.",
+        "Divide by kL delivered per trip for a factor per kL.",
+        "Add the source's pumping electricity if the supplier can give it."
+      ]
+    },
+    {
+      "h": "Factors to avoid using as is",
+      "p": [
+        "UK government conversion factors include a water supply figure, but it reflects UK utilities and the UK grid, so it does not suit Indian water. A spend-based factor for water supply is a last resort, labelled as spend-based with wider uncertainty."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a factory using MIDC and tanker water",
+    "lines": [
+      "MIDC water: 50,000 kL x 0.5 kWh per kL (assumed; ask the supplier) = 25,000 kWh x 0.710 = 17,750 kg CO2",
+      "Tanker: 10 kL per trip, 30 km round trip at 4 km per litre: 7.5 litres x 2.68 = 20.1 kg CO2 per trip",
+      "Per kL: 20.1 / 10 = 2.01 kg CO2; for 6,000 kL: 600 trips x 20.1 = 12,060 kg CO2",
+      "Total Category 1 from water: 17,750 + 12,060 = 29,810 kg, about 29.8 t CO2"
+    ],
+    "note": "Tanker water here carries more than five times the CO2 per kL of piped water (2.01 against 0.355 kg), because of the diesel."
+  },
+  "senseible": "Water invoices sit in Senseible's Scope 3 supplier evidence trail; where only spend is known, Senseible provides a spend-based estimate labelled as spend-based with wider uncertainty, and a supplier's kWh per kL gives a firmer activity figure.",
+  "links": [
+    {
+      "label": "Water withdrawal and intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    },
+    {
+      "label": "Carbon footprint of desalinated water",
+      "to": "/answers/desalinated-water-carbon-footprint"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), default CO2 factor for diesel",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "No official Indian factor for supplied water exists; the figures here are labelled estimates.",
+  "reviewed": "2026-10-18"
+}

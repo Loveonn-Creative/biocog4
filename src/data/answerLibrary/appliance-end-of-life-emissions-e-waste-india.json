@@ -1,0 +1,83 @@
+{
+  "slug": "appliance-end-of-life-emissions-e-waste-india",
+  "q": "How do appliance and electronics makers estimate Category 12 end-of-life emissions in India, and does E-Waste Rules EPR data help?",
+  "title": "End-of-life emissions for appliances",
+  "short": "Take the mass of products sold in the year, split it by material, assign each material a share for formal recycling, landfill and informal burning, and multiply by route factors. Add refrigerant released at scrapping for cooling products. EPR data under the E-Waste Rules helps with tonnages, not with real disposal routes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian appliance, lighting and electronics manufacturers",
+  "sections": [
+    {
+      "h": "Start from mass by material",
+      "p": [
+        "Category 12 covers the end of life of everything you sold in the reporting year, counted in that year. Multiply units sold by unit mass from the bill of materials, then split into metals, plastics, glass, printed circuit boards and other. Metals and glass sent to landfill or recycling release almost no direct CO2; plastics that are burnt do, because their carbon is fossil."
+      ]
+    },
+    {
+      "h": "Assign disposal routes, and say they are assumptions",
+      "ul": [
+        "Formal recycling through registered recyclers: under the GHG Protocol cut-off approach the recycling process belongs to the recycler, so you count transport and little else.",
+        "Informal dismantling with open burning of cables, plastics and boards: count fossil CO2 from the burnt plastic share, using IPCC 2006 Volume 5 defaults for carbon content and the lower oxidation of open burning.",
+        "Landfill: plastics and metals barely degrade, so direct emissions are close to zero.",
+        "State the informal share as an assumption with its basis, because no official figure gives it for your products."
+      ]
+    },
+    {
+      "h": "Refrigerant in ACs, fridges and water coolers",
+      "p": [
+        "For cooling products, gas left in the unit when it is scrapped and not recovered is released. Estimate it as charge per unit in kg times the share not recovered times the gas's global warming potential, and report it as CO2e. This line can be larger than the materials line, so do not leave it out."
+      ]
+    },
+    {
+      "h": "What EPR data under the E-Waste Rules tells you",
+      "p": [
+        "The E-Waste (Management) Rules, 2022 make producers register on the CPCB EPR portal, report quantities placed on the market and meet yearly recycling targets by buying EPR certificates from registered recyclers. That gives you sales tonnage by product code and the tonnes recycled through the formal channel on your behalf.",
+        "It does not show what happened to your own units. Certificates can come from any eligible e-waste, so treat the EPR share as a floor for formal recycling across the market, not proof of your products' fate."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 tonnes of small appliances sold",
+    "lines": [
+      "Material split: 50 t metals, 35 t plastics, 10 t circuit boards, 5 t other",
+      "Plastics routes (assumed): 50% formal recycling, 30% informal open burning, 20% landfill",
+      "Plastic burnt: 35 x 0.30 = 10.5 t",
+      "Factor: 0.75 fossil carbon x 44/12 x 0.58 oxidation in open burning (IPCC 2006 Volume 5 defaults) = 1.595 t CO2 per t",
+      "10.5 x 1.595 = 16.7 t CO2",
+      "Metals, glass and landfilled plastic: about 0 t direct CO2; recycled share: transport only",
+      "Category 12: about 16.7 t CO2 plus circuit board burning, transport and any refrigerant"
+    ],
+    "note": "The route shares are labelled assumptions. Replace them with survey or take-back data when you have it."
+  },
+  "senseible": "Senseible keeps your component and material purchase invoices as evidence of what goes into the products you sell, and reports built from your data are self-declared drafts. Category 12 disposal shares and route factors are your inputs; record their sources.",
+  "links": [
+    {
+      "label": "End-of-life emissions of sold packaging",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Use-phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Circular economy and EPR",
+      "to": "/circular-economy"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard and Technical Guidance, Category 12",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 (Waste), Chapters 2 and 5",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "E-Waste (Management) Rules, 2022 (moef.gov.in)",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewNote": "EPR recycling targets under the E-Waste Rules rise year by year and the rules have been amended; check the current CPCB schedule.",
+  "reviewed": "2026-10-18"
+}

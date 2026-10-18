@@ -1,0 +1,86 @@
+{
+  "slug": "electric-boiler-vs-gas-boiler-emissions-india",
+  "q": "Is an electric boiler lower carbon than a PNG or diesel boiler in India?",
+  "title": "Electric boiler vs PNG or diesel boiler",
+  "short": "Not on India's grid average. Per kWh of useful heat, an electric boiler emits about 0.72 kg CO2, against about 0.22 kg for PNG and 0.32 kg for diesel. An electric boiler comes out lower only when renewable electricity backed by certificates or a green tariff covers most of its units.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Plant owners considering electrification of steam or hot water",
+  "sections": [
+    {
+      "h": "Compare per unit of heat delivered",
+      "ul": [
+        "Electric resistance boiler: 0.710 / 0.98 efficiency = 0.72 kg CO2 per kWh of heat.",
+        "PNG boiler: 2.05 kg per scm / (about 10.15 kWh per scm x 0.90 efficiency) = 0.22 kg CO2 per kWh of heat.",
+        "Diesel boiler: 2.68 kg per litre / (about 10.0 kWh per litre x 0.85 efficiency) = 0.32 kg CO2 per kWh of heat."
+      ],
+      "p": [
+        "Efficiencies are typical estimates; use your boiler's tested figure. The PNG energy content of about 36.5 MJ per scm is the one implied by 2.05 kg per scm and the IPCC default of 56.1 kg CO2 per GJ."
+      ]
+    },
+    {
+      "h": "The break-even grid factor",
+      "p": [
+        "An electric boiler matches PNG only when the electricity behind it is below about 0.22 kg CO2 per kWh, under a third of the grid average. That is why electrification on its own raises reported emissions today, and why it pays off in carbon terms only alongside renewable supply."
+      ]
+    },
+    {
+      "h": "How renewable supply changes the picture",
+      "ul": [
+        "Location-based Scope 2 always uses the grid factor, so the electric boiler looks worse there whatever you buy.",
+        "Market-based Scope 2 can be near zero for units covered by RECs, a green tariff or a qualifying PPA, with evidence for each unit.",
+        "Report both figures. Moving a boiler from Scope 1 to Scope 2 does not reduce emissions by itself."
+      ]
+    },
+    {
+      "h": "Heat pumps change the arithmetic",
+      "p": [
+        "For low temperature hot water, a heat pump delivers several units of heat per unit of electricity. At an assumed coefficient of performance of 3, it emits about 0.24 kg CO2 per kWh of heat on grid power, close to PNG, and less with renewable supply. Steam at process pressures usually needs a boiler."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 5,00,000 kWh of useful heat a year",
+    "lines": [
+      "Electric at 98%: 5,00,000 / 0.98 = 5,10,204 kWh; x 0.710 = 3,62,245 kg CO2, about 362.2 t",
+      "PNG at 90%: 5,00,000 / (10.15 x 0.90) = 54,735 scm; x 2.05 = 1,12,206 kg CO2, about 112.2 t",
+      "Diesel at 85%: 5,00,000 / (10.0 x 0.85) = 58,824 litres; x 2.68 = 1,57,647 kg CO2, about 157.6 t",
+      "Electric with 70% of units on a documented green tariff: market-based 3,62,245 x 0.30 = 1,08,673 kg CO2, about 108.7 t; location-based stays 362.2 t"
+    ],
+    "note": "Efficiencies and energy contents are estimates. Uncovered units take the grid factor in the market-based figure, as India has no published residual mix."
+  },
+  "senseible": "Senseible applies the CEA factor of 0.710 to electricity bills and IPCC 2006 defaults to PNG and diesel invoices, and reports Scope 2 both location-based and market-based. The market-based figure needs your instrument data, such as green tariff statements or REC retirements.",
+  "links": [
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapters 2 and 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

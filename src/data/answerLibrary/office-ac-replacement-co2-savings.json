@@ -1,0 +1,84 @@
+{
+  "slug": "office-ac-replacement-co2-savings",
+  "q": "How much electricity and CO2 does replacing old office ACs with 5-star inverter ACs save?",
+  "title": "CO2 saved by replacing old office ACs",
+  "short": "Work it out as cooling delivered divided by the old unit's efficiency, minus cooling divided by the new unit's ISEER, then multiply the kWh saved by 0.710 kg CO2 per kWh. The saving depends on the old unit's real efficiency and the ISEER on the new unit's label; in the worked example below it is about 44 percent.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Office managers, IT and BPO firms, retailers",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Cooling delivered per AC = rated capacity in kW x hours used a year x average load share. One ton of refrigeration is 3.517 kW.",
+        "Old kWh = cooling / the old unit's real efficiency (its EER, reduced for age if it has not been serviced).",
+        "New kWh = cooling / the new unit's ISEER, printed on the BEE star label.",
+        "CO2 saved = (old kWh minus new kWh) x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Reading the BEE label",
+      "p": [
+        "ISEER, the Indian Seasonal Energy Efficiency Ratio, is the cooling a unit delivers over a standard Indian cooling season divided by the electricity it uses. It includes the part-load benefit of inverter units, so it is fairer than a single-point EER. The label also shows annual kWh at a standard number of hours; scale that to your actual hours.",
+        "BEE revises the star bands periodically, so a 5-star unit bought today has a higher ISEER than a 5-star unit from some years back. Use the ISEER on your unit's label, not the star count."
+      ]
+    },
+    {
+      "h": "Measure rather than assume",
+      "ul": [
+        "Put a sub-meter on one AC circuit for a month before and after, at similar outdoor temperatures.",
+        "Or compare the same months year on year from the electricity bill, noting changes in headcount, hours and floor area.",
+        "Set points matter: each degree lower adds load, so a new AC run at 18 C can erase much of the saving."
+      ]
+    },
+    {
+      "h": "Old refrigerant is a separate CO2e item",
+      "p": [
+        "Older units often hold R-22, an HCFC, and newer ones R-32 or R-410A. When you scrap the old units, have the gas recovered by the service company and keep their note. Leaks and top-ups of HFCs such as R-32 or R-410A are Scope 1, reported in CO2e. R-22 is an HCFC controlled under the Montreal Protocol, which the GHG Protocol keeps out of the Scope 1 total; report it separately if at all."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 split ACs of 1.5 ton (labelled assumptions)",
+    "lines": [
+      "Capacity: 1.5 x 3.517 = 5.28 kW; use 10 hours a day, 250 days, 60 percent average load",
+      "Cooling per AC: 5.28 x 2,500 x 0.6 = 7,920 kWh of cooling a year",
+      "Old unit at an effective EER of 2.8: 7,920 / 2.8 = 2,829 kWh",
+      "New unit at ISEER 5.0 from its label: 7,920 / 5.0 = 1,584 kWh",
+      "Saving: 2,829 minus 1,584 = 1,245 kWh per AC; 20 x 1,245 = 24,900 kWh a year, 44 percent",
+      "CO2 saved: 24,900 x 0.710 = 17,679 kg, about 17.7 tonnes a year"
+    ],
+    "note": "The old EER, hours, load share and ISEER are assumptions; use the label on the unit you buy and your own hours."
+  },
+  "senseible": "Senseible reads electricity bills and applies the CEA grid factor of 0.710 kg CO2 per kWh, so before and after periods can be compared from your documents. Savings claims stay your own.",
+  "links": [
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "BEE star rating for commercial buildings",
+      "to": "/answers/bee-star-rating-for-commercial-buildings"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    },
+    {
+      "label": "Refrigerant leaks and carbon",
+      "to": "/climate-intelligence/msme-cold-chain-refrigerant-leak-carbon-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Standards and Labelling programme, room air conditioners (ISEER star rating schedule)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "BEE star bands for room ACs are revised periodically; check the schedule in force when you buy."
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "india-uk-trade-deal-uk-cbam",
+  "q": "Does the India-UK trade agreement exempt Indian exporters from the UK CBAM?",
+  "title": "Does the India-UK deal exempt UK CBAM?",
+  "short": "No. The India-UK Comprehensive Economic and Trade Agreement, signed in July 2025 and in force since 15 July 2026, cuts UK duties on most Indian goods but gives no exemption from the UK CBAM. From 1 January 2027, UK importers of covered Indian aluminium, cement, fertiliser, hydrogen, and iron and steel still pay the CBAM.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel, aluminium, fertiliser and ceramic exporters to the UK",
+  "sections": [
+    {
+      "h": "Why a tariff cut does not remove CBAM",
+      "p": [
+        "Customs duty and the UK CBAM are separate charges. The trade agreement removes or lowers the duty on goods of Indian origin. The CBAM is a UK domestic tax on the carbon embedded in certain imports, paid by the UK importer through returns to HMRC, whatever the duty rate. A steel section that enters duty free under the agreement can still carry a CBAM charge."
+      ]
+    },
+    {
+      "h": "India's stated position",
+      "p": [
+        "After signing, India's commerce minister said publicly that India would respond, or rebalance concessions, if the UK CBAM hurt its exports. Reports at entry into force describe only a process for the two governments to consult and review how the UK CBAM affects trade. That is a talking channel, not an exemption. Plan as if the full UK CBAM applies, and check the agreement text on the commerce ministry site."
+      ]
+    },
+    {
+      "h": "What could reduce the charge",
+      "ul": [
+        "Actual data: verified embedded emissions per tonne below the UK default values lower the importer's bill.",
+        "Carbon price paid in India: the UK scheme allows relief for an effective carbon price paid in the country of origin. Check HMRC guidance on whether and how payments under India's carbon market would count.",
+        "The £50,000 threshold: a UK buyer whose covered imports stay under £50,000 in 12 months does not register or pay."
+      ]
+    },
+    {
+      "h": "Ceramic and glass exporters",
+      "p": [
+        "Ceramics and glass were proposed for the UK CBAM earlier and then removed in the October 2024 policy update. Covered goods are aluminium, cement, fertiliser, hydrogen, and iron and steel. Check the exact commodity codes with your importer."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares CBAM data reports from your uploaded fuel, electricity and production records as self-declared drafts, and keeps the documents behind each per tonne figure for your UK buyer or verifier. Its CBAM cost calculator covers the EU scheme.",
+  "links": [
+    {
+      "label": "UK CBAM for Indian exporters",
+      "to": "/answers/uk-cbam-indian-exporters"
+    },
+    {
+      "label": "UK CBAM vs EU CBAM",
+      "to": "/answers/uk-cbam-vs-eu-cbam-differences"
+    },
+    {
+      "label": "CBAM compliance for Indian exporters",
+      "to": "/climate-intelligence/cbam-compliance-indian-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (EU CBAM), for comparison: its Annex III exemptions come from linked carbon pricing, not trade agreements",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (EU scheme, for comparison with the UK CBAM)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "UK facts (start 1 January 2027, the five sectors, the £50,000 threshold, the October 2024 removal of ceramics and glass) follow HM Treasury and HMRC's UK CBAM policy summary on gov.uk; the CETA entry into force on 15 July 2026 follows the Indian commerce ministry's release. Recheck HMRC guidance on overseas carbon price relief and any CETA consultation outcome before 1 January 2027.",
+  "reviewed": "2026-10-18"
+}

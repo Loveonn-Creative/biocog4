@@ -1,0 +1,77 @@
+{
+  "slug": "dg-diesel-and-dg-units-double-counting",
+  "q": "My DG diesel is on fuel invoices and DG units are in a log. Which do I count?",
+  "title": "DG diesel or DG units: which to count?",
+  "short": "Count the diesel. Litres burnt x 2.68 kg CO2 per litre is your Scope 1 figure for the generator. Do not also multiply the DG units in your log by a grid factor; that counts the same emissions twice. Use the kWh log only for energy intensity and to cross-check the litres.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and offices running diesel generators",
+  "sections": [
+    {
+      "h": "Why adding both is double counting",
+      "p": [
+        "The DG units are the electricity made from that diesel. The emissions happened once, when the fuel burnt. The GHG Protocol counts fuel combusted in Scope 1 and does not add self-generated electricity again in Scope 2. Scope 2 is only for electricity you buy from someone else."
+      ]
+    },
+    {
+      "h": "Get litres burnt, not litres bought",
+      "ul": [
+        "Litres burnt = opening tank stock + purchases minus closing stock.",
+        "Remove diesel used elsewhere, such as forklifts or vehicles, if it came from the same purchases, and report it separately.",
+        "Use the DG's own log only where fuel cannot be separated."
+      ]
+    },
+    {
+      "h": "Use the kWh log as a check",
+      "p": [
+        "Divide DG kWh by litres burnt. A healthy set at reasonable load gives roughly 3.0 to 3.5 kWh per litre, a labelled estimate; check the maker's curve for yours. A result far outside that range suggests missing invoices, diesel diverted elsewhere, or a faulty meter."
+      ]
+    },
+    {
+      "h": "Energy figures for BRSR",
+      "p": [
+        "Report the diesel's energy as fuel consumed. Do not add DG electricity to total energy as well, for the same reason. Some formats ask for self-generated electricity as a separate line for information; keep it out of the total."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of DG records",
+    "lines": [
+      "Diesel: opening 1,000 L + purchases 24,000 L minus closing 2,000 L = 23,000 L burnt",
+      "Scope 1: 23,000 x 2.68 = 61,640 kg CO2",
+      "DG log: 73,600 kWh, so 73,600 / 23,000 = 3.2 kWh per litre, inside the expected range",
+      "Wrong method: 61,640 + 73,600 x 0.710 (52,256) = 113,896 kg, overstated by 85 percent"
+    ],
+    "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible reads diesel quantities from fuel invoices and slips at 2.68 kg CO2 per litre for Scope 1, and discom electricity bills at 0.710 kg CO2 per kWh for Scope 2, so DG power stays in Scope 1 through its fuel. Keep the DG log alongside as supporting evidence.",
+  "links": [
+    {
+      "label": "Diesel generator: Scope 1 or Scope 2",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "DG set emissions per kWh vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Estimate DG diesel from run hours",
+      "to": "/answers/estimate-dg-diesel-from-run-hours"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapter 4",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
