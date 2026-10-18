@@ -41,3 +41,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /grants (application as a letter) | "Grants: application as a fill-in letter" | `75519be` |
 | /white-paper (living paper, new page) | "White Paper page" | `67723b1` |
 | 404 page (reader; `REVERT 404`) | "404: address reader" | `761882f` |
+| Footer (delivery truck story; `REVERT footer`) | "Footer: one delivery, made visible" | `755cad5` |

@@ -760,3 +760,32 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 @keyframes nf-scan { 0% { opacity: 1; top: -10px; } 100% { opacity: 0; top: calc(100% - 26px); } }
 .nf-foot { color: #a29b8b; font-size: 10.5px; margin-top: 10px; border-top: 1px dashed #ddd5c2; padding-top: 8px; }
 @media (prefers-reduced-motion: reduce) { .nf-slip, .nf-slip * { animation: none !important; transition: none !important; } .nf-stamp.is-on { opacity: .85; transform: rotate(-12deg); } }
+
+/* Footer delivery story (src/components/FooterDelivery.tsx) */
+.fd-band { margin: 0 0 4px; }
+.fd-band svg { display: block; width: 100%; height: auto; overflow: visible; }
+.fd-band text { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.fd-road { stroke: hsl(var(--border)); }
+.fd-place { stroke: hsl(var(--muted-foreground) / 0.45); }
+.fd-tag { font-size: 11px; fill: hsl(var(--muted-foreground)); }
+.fd-haze { stroke: hsl(var(--muted-foreground) / 0.4); }
+.fd-puff { fill: hsl(var(--muted-foreground)); }
+.fd-box { fill: #1f5139; }
+.fd-cab { fill: #2c6b4c; }
+.fd-count { font-size: 13px; font-weight: 600; fill: hsl(var(--primary)); }
+.fd-note { font-size: 11px; fill: hsl(var(--muted-foreground)); opacity: 0; transition: opacity .6s; }
+.fd-tick { stroke-dasharray: 24; stroke-dashoffset: 24; }
+.fd-band.is-done .fd-note { opacity: 1; }
+.fd-band.is-done .fd-tick { stroke-dashoffset: 0; transition: stroke-dashoffset .4s ease-out; }
+@media (prefers-reduced-motion: reduce) { .fd-band .fd-note, .fd-band .fd-tick { transition: none; } }
+/* Phones: the band runs edge to edge and its labels scale up to stay readable. */
+@media (max-width: 767px) {
+  .fd-band { margin-left: -1.5rem; margin-right: -1.5rem; }
+  .fd-tag, .fd-note { font-size: 22px; }
+  .fd-count { font-size: 26px; }
+  .fd-tick { display: none; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fd-tag, .fd-note { font-size: 16px; }
+  .fd-count { font-size: 19px; }
+}
