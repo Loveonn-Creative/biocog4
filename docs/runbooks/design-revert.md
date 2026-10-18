@@ -40,5 +40,4 @@ No restyling, no partial keep, no follow-up edits in the same PR. If something f
 | /reduction-signal (fuel switch and efficiency) | "Fuel switch and efficiency signal page" | `07bfa17` |
 | /grants (application as a letter) | "Grants: application as a fill-in letter" | `75519be` |
 | /white-paper (living paper, new page) | "White Paper page" | `67723b1` |
-| Footer (live India sky; `REVERT footer`) | "Footer: live India sky" | `5e8bbe5` |
 | 404 page (reader; `REVERT 404`) | "404: address reader" | `761882f` |

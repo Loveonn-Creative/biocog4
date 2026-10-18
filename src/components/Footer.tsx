@@ -3,7 +3,6 @@ import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { SkyStars, TownBand, useFooterRef, useIndiaSky } from "@/components/FooterSky";
 
 const socialLinks = [
   { 
@@ -63,8 +62,6 @@ const footerLinks = {
 export const Footer = () => {
   const { isAuthenticated, isLoading, user } = useSession();
   const [isPartner, setIsPartner] = useState(false);
-  const footerRef = useFooterRef();
-  const sky = useIndiaSky(footerRef);
 
   // Check if user is a partner
   useEffect(() => {
@@ -109,10 +106,9 @@ export const Footer = () => {
   };
 
   return (
-    <footer ref={footerRef} className={`ftr-sky${sky.playing ? " is-playing" : ""}`} style={sky.style}>
-      <SkyStars sky={sky} />
-      <div className="ftr-content container max-w-6xl mx-auto px-6 pt-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <footer className="border-t border-border bg-background">
+      <div className="container max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-semibold text-foreground">
@@ -130,7 +126,7 @@ export const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ftr-chip w-8 h-8 flex items-center justify-center rounded-full transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-4 h-4" />
@@ -207,13 +203,9 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
-
-      <TownBand sky={sky} />
-
-      {/* Bottom */}
-      <div className="ftr-sky-ground">
-        <div className="container max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        
+        {/* Bottom */}
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
             {new Date().getFullYear()} Senseible. All rights reserved.
           </p>
