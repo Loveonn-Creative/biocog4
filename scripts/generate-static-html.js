@@ -222,6 +222,8 @@ async function main() {
     writeFile(path.join(DIST_DIR, r.path, 'index.html'), html);
   }
   writeSupportFiles(DIST_DIR, routes, R);
+  // Path and title of every page, for the 404 page's "you meant" match.
+  writeFile(path.join(DIST_DIR, 'route-index.json'), JSON.stringify(routes.map(r => ({ p: r.path, t: r.title.replace(/ \| Senseible$/, '') }))));
 
   // App routes without params that are not prerendered for search.
   const seo = new Set(routes.map(r => r.path));
