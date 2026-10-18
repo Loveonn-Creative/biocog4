@@ -150,7 +150,7 @@ const NotFound = () => {
 
         <div className="flex flex-wrap gap-2.5 justify-center mt-7">
           <Link to="/" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Upload an invoice</Link>
-          <Link to="/green-loan-check" className="px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">See how close you are to a green loan</Link>
+          <Link to="/platform" className="px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">Show me what my business can gain</Link>
         </div>
       </main>
     </div>
