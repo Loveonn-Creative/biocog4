@@ -1,0 +1,69 @@
+{
+  "slug": "sasb-metrics-for-apparel-exporters",
+  "q": "Which SASB industry metrics would an apparel or footwear exporter report under IFRS S2?",
+  "title": "SASB metrics for apparel exporters",
+  "short": "Under IFRS S2, the apparel industry guidance, drawn from the SASB Apparel, Accessories and Footwear Standard, centres on raw materials sourcing: which priority materials a brand buys, the climate risks to them and how much is certified. Brands also report cross-industry emissions metrics, so they ask exporters for fibre volumes, certificates and Scope 1 and 2 data.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Tiruppur, Ludhiana and Kanpur exporters asked for ISSB-aligned data",
+  "sections": [
+    {
+      "h": "How SASB metrics enter IFRS S2",
+      "p": [
+        "IFRS S2 has two layers of metrics. Seven cross-industry metrics, led by Scope 1, 2 and 3 emissions, apply to every reporting company. On top, a company must refer to and consider the industry-based metrics in the IFRS S2 Industry-based Guidance, which was drawn from the SASB Standards. The apparel volume of that guidance carries raw materials sourcing, the topic with a clear climate link. The full SASB standard also covers chemicals, environmental impacts in the supply chain and labour, which a brand applying IFRS S1 may also use."
+      ]
+    },
+    {
+      "h": "Topics in the full SASB apparel standard",
+      "ul": [
+        "Management of chemicals in products.",
+        "Environmental impacts in the supply chain: how many Tier 1 and beyond Tier 1 supplier facilities meet wastewater requirements and have completed an environmental data assessment.",
+        "Labour conditions in the supply chain.",
+        "Raw materials sourcing, the topic carried into IFRS S2: which priority raw materials the brand buys, the climate and environmental risks they carry, and how much is certified to a standard.",
+        "Activity metric: number of Tier 1 suppliers and suppliers beyond Tier 1."
+      ]
+    },
+    {
+      "h": "What a brand will ask an exporter for",
+      "ul": [
+        "Facility energy use and Scope 1 and 2 emissions, for the brand's Scope 3 and its supply chain metrics.",
+        "Results of a facility environmental assessment, where the brand uses one.",
+        "Wastewater discharge permits and test results, for wet processing units.",
+        "Fibre and material volumes by type, and certificates for any certified share."
+      ]
+    },
+    {
+      "h": "If your own company reports under IFRS S2",
+      "p": [
+        "An exporter that itself applies IFRS S2 reports the seven cross-industry metrics and considers the apparel industry metrics for its own operations and suppliers. In India IFRS S2 is not mandatory for listed companies today, so most exporters meet these requests as suppliers to a brand that reports."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your fuel and electricity bills into Scope 1 and 2 emissions and energy figures, which you can share with a brand for its environmental metrics.",
+  "links": [
+    {
+      "label": "IFRS S2 cross-industry metrics",
+      "to": "/answers/ifrs-s2-cross-industry-metrics-list"
+    },
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "Scope 3 for Indian textile exporters",
+      "to": "/solutions/scope3-textile-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SASB Standards, Apparel, Accessories and Footwear Standard (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "IFRS S2 Climate-related Disclosures and its Industry-based Guidance (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The ISSB amends the SASB Standards and the IFRS S2 Industry-based Guidance from time to time; recheck which apparel topics the guidance carries, and the metric wording, on ifrs.org."
+}

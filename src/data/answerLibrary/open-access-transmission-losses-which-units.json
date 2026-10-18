@@ -1,0 +1,83 @@
+{
+  "slug": "open-access-transmission-losses-which-units",
+  "q": "Under open access, do I count units injected at the generator or units drawn at my factory for Scope 2?",
+  "title": "Open access losses: injected or drawn units",
+  "short": "Use units drawn at your factory. Location-based Scope 2 is everything your meter recorded, times the grid factor. The renewable claim in market-based Scope 2 covers only the units delivered to you after transmission and wheeling losses, as shown in the energy account. The units lost on the way are not your Scope 2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Open access and group captive consumers",
+  "sections": [
+    {
+      "h": "Where the lost units go",
+      "p": [
+        "The state load despatch centre's energy account deducts transmission and wheeling losses, at rates set by the state commission, from the units the plant injected. What is left is credited at your meter. The lost units never reached you, so they are not part of your consumption. Under the GHG Protocol, losses on the grid belong to Scope 2 of whoever owns the network, and a consumer may report the generation of lost electricity in Scope 3 Category 3."
+      ]
+    },
+    {
+      "h": "Three numbers to keep apart",
+      "ul": [
+        "Injected: units the generator sent into the grid. Use this only to reconcile with the generator's invoice.",
+        "Adjusted at your meter: injected minus losses, and minus any banking charge taken in kind. This is the most your renewable claim can cover.",
+        "Recorded at your meter: all units consumed, from open access and the discom together. This is the base for location-based Scope 2."
+      ]
+    },
+    {
+      "h": "When the open access units fall short",
+      "p": [
+        "If you contracted enough generation for all your load but losses cut what was delivered, the gap was supplied by the discom. Those units carry the CEA grid factor, 0.710 kg CO2 per kWh, in market-based Scope 2 as well, because India does not publish a residual mix. Paying for the injected units does not change that."
+      ]
+    },
+    {
+      "h": "Category 3 for the losses on your own consumption",
+      "p": [
+        "Separately from the open access deduction, the grid loses power delivering all your units. Category 3 T&D losses are worked out from your total consumption times the national T&D loss rate and the grid factor. Report it in Scope 3, not Scope 2, and name the CEA editions used."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of wheeled solar (illustrative)",
+    "lines": [
+      "Injected by the plant: 1,00,000 kWh; losses at an assumed 7%: 7,000 kWh; adjusted at meter: 93,000 kWh",
+      "Recorded at meter: 1,50,000 kWh, so discom supply is 57,000 kWh",
+      "Location-based: 1,50,000 x 0.710 = 1,06,500 kg CO2",
+      "Market-based: 57,000 x 0.710 = 40,470 kg CO2",
+      "Wrong claim on injected units: 1,00,000 at zero would leave 50,000 discom units, understating by 7,000 x 0.710 = 4,970 kg CO2"
+    ],
+    "note": "The 7% loss rate is an assumption; use the rate in your energy account. The market-based figure assumes the attributes are contractually yours and no RECs were sold for these units."
+  },
+  "senseible": "Senseible reads the adjusted open access units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh, with market-based when you record the energy account and contract evidence.",
+  "links": [
+    {
+      "label": "Open access green power on an HT bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Category 3 T&D losses",
+      "to": "/answers/scope-3-category-3-transmission-losses"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Transformer losses in Scope 2",
+      "to": "/answers/transformer-losses-in-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapters 6 and 7",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 3 fuel and energy related activities",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "Loss rates and banking charges are set by each state commission; the GHG Protocol is also revising its Scope 2 guidance.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "football-carbon-footprint-per-ball",
+  "q": "How do I calculate the carbon footprint of a football or other inflatable ball for a sports retailer?",
+  "title": "Football carbon footprint per ball",
+  "short": "Weigh each material that goes into one ball, as cut including waste: outer PU or PVC panels, backing fabric layers, the latex or butyl bladder, thread, adhesive and valve. Multiply each by its emission factor, then add factory electricity and fuel per ball and the packaging. Materials usually dominate a ball's footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Jalandhar and Meerut sports goods exporters",
+  "sections": [
+    {
+      "h": "The materials in one ball",
+      "ul": [
+        "Outer cover: PU or PVC synthetic leather, by sheet mass used per ball, including the panel cutting waste.",
+        "Backing: layers of polyester or cotton fabric laminated to the cover with latex or adhesive.",
+        "Bladder: natural latex or butyl rubber, plus the valve.",
+        "Thread for hand or machine stitching, or the adhesive film for thermo-bonded balls.",
+        "Print inks and the outer pack: polybag, inflation needle, carton share."
+      ]
+    },
+    {
+      "h": "Factory energy per ball",
+      "p": [
+        "Take a month's electricity and fuel for lamination, cutting, printing, bladder moulding and thermo-bonding. Multiply by the factors (0.710 kg CO2 per kWh for grid power, 2.98 kg CO2 per kg of LPG, 2.68 kg CO2 per litre of diesel) and divide by balls made. If you make size 5 match balls and size 1 minis, divide by kg of output instead."
+      ]
+    },
+    {
+      "h": "Hand-stitched balls and outworkers",
+      "p": [
+        "Hand stitching uses little energy, but panels and finished balls travel between the factory and stitching centres or homes. Count that transport as part of the product's footprint, by tonne-km or fuel used, and count the stitching centre's electricity if it is your unit. Leaving it out understates a hand-stitched ball."
+      ]
+    },
+    {
+      "h": "What the retailer usually asks for",
+      "p": [
+        "A cradle to gate figure per ball of a stated model and size, made under ISO 14067 or the GHG Protocol Product Standard, with each factor's source. Say whether packaging is in, and give the material masses so the buyer can see what drives the result."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one 430 g machine-stitched ball",
+    "lines": [
+      "PU cover sheet used: 0.19 kg x 4.0 = 0.76 kg CO2e",
+      "Backing fabric layers: 0.15 kg x 5.0 = 0.75 kg CO2e",
+      "Latex bladder: 0.12 kg x 2.0 = 0.24 kg CO2e",
+      "Thread 0.02 kg x 5.0 = 0.10; adhesive 0.02 kg x 3.0 = 0.06 kg CO2e; materials total 1.91 kg CO2e",
+      "Electricity: 9,000 kWh for 30,000 balls = 0.3 kWh, x 0.710 = 0.213 kg CO2",
+      "LPG for bladder curing: 300 kg for 30,000 balls = 0.01 kg, x 2.98 = 0.030 kg CO2",
+      "Total before packaging: 1.91 + 0.213 + 0.030 = 2.15 kg CO2e per ball"
+    ],
+    "note": "Material factors (kg CO2e per kg) are placeholders to show the arithmetic. Use supplier figures or a named dataset for PU, PVC, latex and fabric."
+  },
+  "senseible": "Senseible reads your factory's electricity, LPG and diesel bills into Scope 1 and 2 totals for the per-ball energy share. Material factors come from your suppliers or published datasets.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Rubber moulded part footprint per kg",
+      "to": "/answers/rubber-moulded-part-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Artisan supply chain footprint",
+      "to": "/answers/handicraft-exporter-carbon-footprint-artisan-supply-chain"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

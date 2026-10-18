@@ -1,0 +1,87 @@
+{
+  "slug": "gri-305-5-reduction-of-emissions",
+  "q": "How do I report GHG emission reductions under GRI 305-5 as a small company?",
+  "title": "Reporting reductions under GRI 305-5",
+  "short": "Report the tonnes of CO2e you cut through specific initiatives, such as a VFD or a fuel switch, measured against a stated base year or baseline. Name the gases, the scopes where the cuts happened and the method. Leave out reductions from lower output, outsourcing or purchased carbon credits.",
+  "topic": "regulation",
+  "intent": "how-to",
+  "audience": "SMEs preparing GRI-referenced reports",
+  "sections": [
+    {
+      "h": "What 305-5 asks you to disclose",
+      "ul": [
+        "GHG emissions reduced as a direct result of reduction initiatives, in metric tonnes of CO2e.",
+        "Gases included in the calculation.",
+        "Base year or baseline, and why you chose it.",
+        "Scopes in which the reductions took place: Scope 1, Scope 2 or Scope 3.",
+        "Standards, methods, assumptions and calculation tools used."
+      ]
+    },
+    {
+      "h": "Inventory method or project method",
+      "p": [
+        "With the inventory method you compare this year's emissions with the base year inventory and attribute the change to named initiatives. With the project method you compare each initiative with what would have happened without it. For a small plant with a few clear projects, the project method on metered data is usually easier to defend: one compressor, one boiler, one rooftop system, each with its own before and after."
+      ]
+    },
+    {
+      "h": "What does not count",
+      "ul": [
+        "Lower emissions because you produced less, closed a line or outsourced work.",
+        "Purchased carbon credits or RECs bought for other claims: GRI asks for gross emissions, and credits are not a result of your own initiative.",
+        "A fall caused only by a new edition of the grid factor. Use the same factor for both periods when calculating a project's saving."
+      ]
+    },
+    {
+      "h": "Timing of the standard",
+      "p": [
+        "GRI 102: Climate Change 2025 takes over the GRI 305 disclosures, including 305-5, for reports published on or after 1 January 2027, and early use is allowed. The trigger is the publication date, not the reporting period: a FY 2025-26 report published before 2027 can still use 305-5, while one published in 2027 or later reports under GRI 102."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a VFD on the main compressor",
+    "lines": [
+      "Base year: 120,000 kWh for 1,000 tonnes of output = 120 kWh per tonne",
+      "This year: 100,000 kWh for 1,100 tonnes = 90.9 kWh per tonne",
+      "Expected at base year intensity: 1,100 x 120 = 132,000 kWh",
+      "Saving: 132,000 minus 100,000 = 32,000 kWh",
+      "Reduction: 32,000 x 0.710 = 22,720 kg CO2, about 22.7 tonnes, Scope 2, project method"
+    ],
+    "note": "Normalising for output keeps a production increase from hiding the saving, and a fall in output from inflating it."
+  },
+  "senseible": "Senseible gives Scope 1 and 2 by month and year from your fuel invoices and electricity bills, with the factor and source on each line, which supports the before and after figures for 305-5. Choosing the initiatives and baseline is your judgement.",
+  "links": [
+    {
+      "label": "What GRI 305 asks for",
+      "to": "/answers/what-gri-305-asks-for-emissions"
+    },
+    {
+      "label": "GRI 102 climate standard changes",
+      "to": "/answers/gri-102-climate-change-standard-changes"
+    },
+    {
+      "label": "Recalculate when the grid factor changes",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "ESG reporting",
+      "to": "/esg-reporting"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GRI 305: Emissions 2016, Disclosure 305-5",
+      "url": "https://www.globalreporting.org"
+    },
+    {
+      "label": "GRI 102: Climate Change 2025",
+      "url": "https://www.globalreporting.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapters 5 and 11",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "GRI 102 is effective for reports published on or after 1 January 2027; check GRI's transition guidance before switching.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "senseible-needs-data-on-invoice-line",
+  "q": "Why does Senseible show Needs Data on an invoice or bill line, and how do I fix it?",
+  "title": "Why a line shows Needs Data in Senseible",
+  "short": "Needs Data means the line is missing something the calculation cannot run without: usually a printed quantity, a unit, the fuel type, or kWh on a kVAh bill. Senseible does not guess it. Fix it by uploading the page or bill that prints the missing figure, or by entering kWh where the screen asks for it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "New Senseible users reviewing their first uploads",
+  "sections": [
+    {
+      "h": "What each reason asks for, and the fix",
+      "ul": [
+        "Litres or kg: a fuel line with only a rupee amount. Upload the fuel slip or pump bill that prints litres, or kg for gas.",
+        "Units (kWh): an electricity line with no units. Upload the bill page that prints units consumed.",
+        "Quantity: any other line priced in rupees only. Ask the supplier for an invoice that prints the quantity.",
+        "Unit: a number with no unit beside it. Upload a bill, or ask for an invoice, that prints the unit with the quantity.",
+        "Fuel type: a fuel line that does not name the fuel. Upload a bill that says diesel, petrol, LPG, CNG or coal.",
+        "A unit we can convert: the printed unit cannot be turned into litres, kg or kWh. Upload a bill in one of those units."
+      ]
+    },
+    {
+      "h": "Electricity bills: three cases of their own",
+      "ul": [
+        "kVAh bill with no kWh and no power factor printed: type the kWh from the bill, usually near the meter readings. It is saved and labelled \"Entered by you\".",
+        "Net-metered bill showing only net units: upload the page that shows import units. Net units are not consumption.",
+        "A photo with one meter reading: add the previous reading or the bill for that period, because units are the difference between two readings."
+      ],
+      "p": [
+        "These blockers are printed on the document itself, so uploading the same file again will not clear them."
+      ]
+    },
+    {
+      "h": "What Needs Data is not",
+      "ul": [
+        "Purchased goods and services lines go to the Scope 3 supplier evidence trail; they are kept as evidence, not flagged as errors.",
+        "Charges on an electricity bill, such as demand charges, duty and fuel adjustment, are costs on the bill, not separate activities.",
+        "Items that are neither fuel nor electricity, such as stationery, need nothing from you."
+      ]
+    },
+    {
+      "h": "Why the figure is left blank rather than estimated",
+      "p": [
+        "Every number Senseible shows is activity x a published factor, and the activity must come from a document. A guessed quantity would not trace back to anything an auditor can check. The rule checks also mark the gap: a missing quantity costs 20 points and a missing unit 15, out of 100, and a record passes at 80.",
+        "Where a supplier can only give spend, Senseible provides a spend-based estimate for Scope 3, labelled spend-based with wider uncertainty. The document reader does not apply it on its own, so keep such estimates apart from document-based figures and replace them when a quantity arrives."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a diesel invoice with no litres",
+    "lines": [
+      "Invoice line: High speed diesel, ₹45,000, no quantity printed: Needs Data (Litres or kg)",
+      "Pump slip for the same purchase uploaded: 480 litres",
+      "480 x 2.68 kg CO2 per litre = 1,286.4 kg CO2, counted in Scope 1"
+    ],
+    "note": "The slip, not the rupee amount, sets the figure. Keep both files: the invoice proves the purchase, the slip proves the quantity."
+  },
+  "senseible": "Senseible names the missing item and one next step on every Needs Data line, and labels any kWh you type as \"Entered by you\". The line counts once the missing figure comes from a document or your entry.",
+  "links": [
+    { "label": "Convert a kVAh bill to kWh", "to": "/answers/kvah-electricity-bill-convert-to-kwh-for-emissions" },
+    { "label": "Invoice unit mismatch: litres or kg", "to": "/answers/invoice-unit-mismatch-litres-kg" },
+    { "label": "Writing an estimation note for a verifier", "to": "/answers/estimation-note-for-verifier" },
+    { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard", "url": "https://ghgprotocol.org/corporate-standard" },
+    { "label": "GHG Protocol Scope 3 Standard (spend-based method and data quality)", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" }
+  ],
+  "reviewed": "2026-10-18"
+}

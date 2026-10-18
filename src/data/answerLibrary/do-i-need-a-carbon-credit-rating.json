@@ -1,0 +1,62 @@
+{
+  "slug": "do-i-need-a-carbon-credit-rating",
+  "q": "Do I need a carbon credit rating from an agency before buying credits?",
+  "title": "Do I need a carbon credit rating?",
+  "short": "No rule requires one. A carbon credit rating is a paid, independent opinion on a project's quality, useful for large or multi-year purchases, nature-based credits and deals signed before credits are issued. For small purchases, a registry check, an ICVCM CCP label and a clear fit with your claim usually do the job.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Corporate buyers and exporters buying credits",
+  "sections": [
+    {
+      "h": "What a rating is, and what it is not",
+      "p": [
+        "Agencies such as BeZero, Sylvera, Calyx Global and MSCI assess projects against their own published methods and give a grade. It is a commercial opinion. It is not a registry entry, not a certification, and not the ICVCM CCP label. Two agencies can grade the same project differently, because they weigh additionality, baselines and permanence differently."
+      ]
+    },
+    {
+      "h": "When paying for one makes sense",
+      "ul": [
+        "Large volumes, or an offtake running several years.",
+        "Forward purchases before credits are issued, where you carry the delivery risk.",
+        "Nature-based credits, where baseline and reversal risk are harder to judge yourself.",
+        "Credits you will name in public claims or annual reports.",
+        "A board, investor or lender asks for an independent view."
+      ]
+    },
+    {
+      "h": "When you can do without one",
+      "ul": [
+        "Small volumes bought for a contribution claim.",
+        "Credits that already carry a CCP label and come from a well-documented method.",
+        "Purchases where you can run the basic checks yourself: registry, serial numbers, vintage, method and retirement."
+      ]
+    },
+    {
+      "h": "How to use a rating if you buy one",
+      "ol": [
+        "Read the rationale, not just the grade, and note the risks it names.",
+        "Record the date and method version; ratings are updated and can fall.",
+        "For a large deal, compare two agencies and look into any big gap.",
+        "Check the licence terms before quoting a grade in public; some ratings cannot be shared."
+      ]
+    },
+    {
+      "h": "What your claim still needs",
+      "p": [
+        "A good rating does not replace proof of retirement in your name, or wording that matches what the credits can support. In India, the 2024 greenwashing guidelines require environmental claims to rest on verifiable evidence, so keep the retirement records with any rating you cite."
+      ]
+    }
+  ],
+  "senseible": "Senseible lists credits on its marketplace and gives carbon credit eligibility signals for your own activity. Whether to pay for an agency rating is the buyer's call.",
+  "links": [
+    { "label": "What to check before buying carbon credits", "to": "/answers/what-to-check-before-buying-carbon-credits" },
+    { "label": "ICVCM Core Carbon Principles", "to": "/answers/what-are-icvcm-core-carbon-principles" },
+    { "label": "CCPA greenwashing guidelines in India", "to": "/answers/ccpa-greenwashing-guidelines-india" },
+    { "label": "How to vet a carbon credit platform", "to": "/climate-intelligence/how-to-vet-a-legitimate-carbon-credit-platform" }
+  ],
+  "sources": [
+    { "label": "ICVCM Core Carbon Principles and CCP label", "url": "https://icvcm.org" },
+    { "label": "VCMI Claims Code of Practice", "url": "https://vcmintegrity.org" }
+  ],
+  "reviewed": "2026-10-18"
+}

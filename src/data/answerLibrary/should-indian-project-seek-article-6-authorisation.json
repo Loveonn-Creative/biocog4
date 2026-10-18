@@ -1,0 +1,74 @@
+{
+  "slug": "should-indian-project-seek-article-6-authorisation",
+  "q": "Should an Indian carbon project seek Article 6 authorisation or stay in the voluntary market?",
+  "title": "Article 6 authorisation or voluntary market?",
+  "short": "Seek authorisation only if your activity is on India's approved Article 6.2 list and your likely buyer is a country or an airline under CORSIA that needs authorised units. Otherwise stay in the voluntary market, where corporate buyers accept credits without a corresponding adjustment, the process is shorter, and India's NDC is untouched.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Indian developers of renewable-plus-storage, biogas and green hydrogen projects",
+  "sections": [
+    {
+      "h": "What authorisation gives you",
+      "ul": [
+        "Credits that can be used as ITMOs toward another country's NDC or for international mitigation purposes such as CORSIA.",
+        "A corresponding adjustment by India, so the same tonne is not also counted in India's own balance.",
+        "Access to buyers who must have authorised units, typically sovereign buyers and airlines meeting CORSIA's first phase rules."
+      ]
+    },
+    {
+      "h": "What it costs you",
+      "ul": [
+        "Eligibility: India authorises only activity types on its published list, first issued in February 2023 and revised in 2025, which favours newer technologies over reductions India expects to make anyway.",
+        "Time and paperwork: an application to the National Designated Authority, on top of the registry's own validation and verification.",
+        "Conditions: the authorisation can limit quantity, vintages and uses, and India's practice on shares and fees is still developing.",
+        "Exposure to policy change: future revisions of the list or the terms apply to new requests."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Not on India's list: stay voluntary, or look at the CCTS offset mechanism for a domestic route.",
+        "On the list, buyers are corporates making voluntary claims: stay voluntary unless they will pay more for adjusted credits and say so in writing.",
+        "On the list, buyers are a country under a bilateral deal or CORSIA airlines: seek authorisation before you sign the offtake, and make the price conditional on it.",
+        "Unsure who the buyer is: register in the voluntary market first and apply for authorisation for later vintages if a qualifying buyer appears."
+      ]
+    },
+    {
+      "h": "Do not sell the same tonne twice",
+      "p": [
+        "Once units are authorised and first transferred, the matching tonnes leave India's account. Keep vintage and quantity records so that authorised and unauthorised credits from the same project cannot overlap, and say clearly in each sales contract which kind the buyer gets."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows carbon credit eligibility signals from a project's energy data and keeps the invoices behind them; the authorisation decision and application sit with the developer and India's National Designated Authority.",
+  "links": [
+    {
+      "label": "India's host country authorisation letter",
+      "to": "/answers/india-host-country-authorization-letter"
+    },
+    {
+      "label": "India's approved Article 6.2 activities",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "What is a corresponding adjustment",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "Carbon credit offtake agreement",
+      "to": "/answers/carbon-credit-offtake-agreement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Decision 2/CMA.3, guidance on cooperative approaches under Article 6.2 (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "MoEFCC list of activities for Article 6 (February 2023, revised 2025) and National Designated Authority (NDAIAPA) notification",
+      "url": "https://moef.gov.in"
+    }
+  ],
+  "reviewNote": "India's Article 6 activity list was revised in 2025 and authorisation practice, fees and share requirements are evolving; recheck MoEFCC and NDAIAPA notices before applying.",
+  "reviewed": "2026-10-18"
+}

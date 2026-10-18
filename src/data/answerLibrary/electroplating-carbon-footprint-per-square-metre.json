@@ -1,0 +1,84 @@
+{
+  "slug": "electroplating-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of electroplating per square metre or per part?",
+  "title": "Electroplating carbon footprint per m2",
+  "short": "Add a month's rectifier, bath heating, extraction and pump energy, convert with 0.710 kg CO2 per kWh and the fuel factors, and divide by square metres plated. Then add the anode metal consumed per square metre times the metal's footprint. Multiply by a part's plated area to get the figure per part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Moradabad, Ludhiana and Rajkot platers and their buyers",
+  "sections": [
+    {
+      "h": "What goes in",
+      "ul": [
+        "Rectifier electricity, the DC current that deposits the metal: from a sub-meter on the rectifiers.",
+        "Bath heating: electric heaters, or LPG at 2.98 kg CO2 per kg or PNG at 2.05 kg per scm for a boiler.",
+        "Fume extraction, filtration pumps, agitation, drying ovens and the ETP's power.",
+        "Anode metal consumed: nickel, zinc, copper or tin, from stock records, times the supplier's footprint per kg.",
+        "Chemicals (salts, acids, brighteners) and sludge disposal: Scope 3 items for a full product figure; usually smaller but worth noting."
+      ]
+    },
+    {
+      "h": "Faraday's law as a check on the meter",
+      "p": [
+        "The current needed per square metre follows from the metal deposited: Ah per m2 = grams per m2 x n x 26.8 / (molar mass x cathode efficiency), where n is the charge on the metal ion and 26.8 is the Faraday constant in Ah per mole. Multiply by the tank voltage and divide by the rectifier efficiency to get kWh.",
+        "If the metered kWh is far above this, the plant is losing energy to idle running, poor contacts or an old rectifier. Chromium baths work at low cathode efficiency, often under 25 percent, so they need several times more current per gram than nickel or zinc."
+      ]
+    },
+    {
+      "h": "Per square metre or per part",
+      "p": [
+        "Platers charge by area, rack or kg, but energy follows plated area and thickness. Record square metres from job cards using each part's plated surface area. For a part figure, multiply the per m2 figure by the part's area. If you plate very different thicknesses, allocate by ampere hours per job rather than by area alone."
+      ]
+    },
+    {
+      "h": "Metal consumed, not metal on the part",
+      "p": [
+        "Some metal leaves with drag-out, rinsing and sludge. Use anode purchases plus opening stock minus closing stock for the month, not the theoretical deposit. Recovering drag-out reduces both cost and the metal line of the footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a month on a bright nickel line (illustrative)",
+    "lines": [
+      "Rectifier 6,000 kWh + extraction and pumps 1,500 kWh = 7,500 kWh x 0.710 = 5,325 kg CO2",
+      "Bath heating: 300 kg LPG x 2.98 = 894 kg CO2",
+      "Energy total: 5,325 + 894 = 6,219 kg CO2 over 4,000 m2 = 1.555 kg CO2 per m2",
+      "Nickel consumed: 550 kg / 4,000 m2 = 0.1375 kg per m2",
+      "Nickel footprint 13 kg CO2e per kg (illustrative, use your supplier's figure): 0.1375 x 13 = 1.788 kg CO2e per m2",
+      "Total: 1.555 + 1.788 = 3.343 kg CO2e per m2",
+      "Part with 0.05 m2 plated area: 3.343 x 0.05 = 0.167 kg CO2e per part",
+      "Faraday check, if all 137.5 g were deposited: 137.5 g x 2 x 26.8 / (58.69 x 0.95) = 132 Ah per m2; at 8 V and 80 percent rectifier efficiency, 132 x 8 / 0.8 / 1,000 = 1.32 kWh per m2, against 1.5 kWh metered on the rectifiers"
+    ],
+    "note": "Inputs are illustrative, including the 95 percent cathode efficiency and 8 V tank voltage. Some of the nickel consumed leaves as drag-out, so the true deposit and the Faraday figure are a little lower. The metal line is CO2e from the supplier; the energy lines are CO2."
+  },
+  "senseible": "Senseible reads the plating shop's electricity bills and LPG, PNG or diesel invoices and applies its published factors line by line. Square metres plated and anode stock come from your own job cards and stores records.",
+  "links": [
+    {
+      "label": "Powder coating emissions per square metre",
+      "to": "/answers/powder-coating-line-emissions-per-square-metre"
+    },
+    {
+      "label": "Hot-dip galvanizing footprint per tonne",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

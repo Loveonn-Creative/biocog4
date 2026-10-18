@@ -1,0 +1,76 @@
+{
+  "slug": "are-metal-handicrafts-covered-by-cbam",
+  "q": "Are brass, aluminium and iron handicrafts from Moradabad covered by the EU CBAM?",
+  "title": "Are metal handicrafts covered by CBAM?",
+  "short": "Brass handicrafts are not covered, and neither are base metal ornaments and statuettes under heading 8306. Iron and aluminium handicrafts are covered only when they are declared as other articles of steel (7326) or of aluminium (7616), which Annex I of the CBAM Regulation lists. The code the importer declares decides.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Moradabad metal handicraft exporters",
+  "sections": [
+    {
+      "h": "How the decor headings sort out",
+      "ul": [
+        "7419, other articles of copper, which includes most brass artware: not in Annex I.",
+        "8306, bells, gongs, statuettes and other ornaments of base metal, and photo frames and mirrors of base metal: not in Annex I.",
+        "7326, other articles of iron or steel, often used for hooks, brackets, wire baskets, racks and stands: covered.",
+        "7616, other articles of aluminium, used for similar functional aluminium items: covered.",
+        "9403 and 9405, metal furniture and lamps or lanterns: not in Annex I."
+      ]
+    },
+    {
+      "h": "Ornament or article: the line that matters",
+      "p": [
+        "Under the Harmonized System, an item whose main purpose is decoration, such as a figurine or a wall ornament, generally goes to 8306 whatever base metal it is made of. An item that serves a use, such as a coat hook, a bottle rack or a hanging basket, goes to the article heading for its metal, 7326 or 7616, and those two are covered. The same iron design can fall either side depending on whether it is sold as decor or as a holder, so describe the product's use clearly on the invoice."
+      ]
+    },
+    {
+      "h": "Mixed materials",
+      "p": [
+        "Many Moradabad pieces combine metal with wood, glass, marble or resin. Customs classifies a composite item by the material that gives it its essential character. An iron stand with a glass bowl may be classified by the iron or by the glass, so agree it with the buyer item by item."
+      ]
+    },
+    {
+      "h": "Who decides and what to send",
+      "p": [
+        "The EU importer declares the CN code and EU customs can reclassify it. For lines you both agree are under 7326 or 7616, the importer needs embedded emissions data or will use EU default values. For brass and 8306 lines, CBAM does not apply, though a buyer may still ask for a product footprint."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "The European Commission proposed in December 2025 to add about 180 downstream steel and aluminium products to CBAM from 1 January 2028. The Council agreed its position in June 2026 (about 200 products) and the Parliament its mandate in September 2026 (about 450 products), and the three are now negotiating the final list. The proposal reaches into chapter 83 as well as chapter 73 and other chapters, so check your exact codes, including any under 8306, against the adopted list before each buying season."
+      ]
+    }
+  ],
+  "senseible": "For handicrafts declared under 7326 or 7616, Senseible's CBAM cost calculator estimates exposure and its CBAM data drafts use your fuel, electricity and metal purchase invoices. Your EU importer confirms the code.",
+  "links": [
+    {
+      "label": "Is kitchenware covered by CBAM",
+      "to": "/answers/are-kitchen-utensils-covered-by-cbam"
+    },
+    {
+      "label": "Is copper covered by CBAM",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The downstream extension (proposal COM(2025) 989) was in trilogue in October 2026 and may add steel and aluminium articles from 2028; recheck the adopted list. Classification of decorative items rests with the importer and EU customs.",
+  "reviewed": "2026-10-18"
+}

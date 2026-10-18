@@ -1,0 +1,65 @@
+{
+  "slug": "weaving-electricity-per-metre-of-fabric",
+  "q": "How much electricity and CO2 does weaving one metre of fabric take on water-jet, air-jet and rapier looms?",
+  "title": "Electricity and CO2 per metre of weaving",
+  "short": "There is no single figure: it depends on loom type, speed, pick density and width, so measure it. Divide a month's weaving kWh by metres woven, then multiply by 0.710 kg CO2 per kWh. Sub-meter each loom group, and the compressor for air-jets, to compare loom types fairly.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Surat and Bhiwandi weavers",
+  "sections": [
+    {
+      "h": "Why loom type changes the number",
+      "ul": [
+        "Air-jet: compressed air carries the weft, so the air compressor is a large load. Its kWh belongs to the air-jet looms, even when it sits in a separate room on the same meter.",
+        "Water-jet: a water jet carries the weft, and is used mostly for synthetic filament yarn. Add the water pumps and any treatment of the water.",
+        "Rapier: the weft is carried mechanically, so there is no compressor or water system to add.",
+        "All sheds share humidification, lighting and fans, which must be divided between loom groups."
+      ]
+    },
+    {
+      "h": "How to measure it",
+      "ol": [
+        "Fit a sub-meter on each loom group, or at least on the compressor, and read it on the same day as the main meter.",
+        "Take metres woven per loom group for the same month from loom counters or the production register.",
+        "Divide shared loads by metres woven or by loom running hours, and say which.",
+        "Add diesel used by the DG set during power cuts: litres x 2.68 kg CO2 per litre.",
+        "kWh per metre = group kWh / metres woven; CO2 per metre = kWh per metre x 0.710."
+      ]
+    },
+    {
+      "h": "Compare like with like",
+      "p": [
+        "A dense, wide quality takes more picks per metre, so it takes more electricity per metre on any loom. Before comparing loom types, or your shed with another, compare the same quality, or express the figure per million picks: kWh / (metres woven x picks per metre / 1,000,000). That removes most of the difference that comes from the fabric rather than the loom."
+      ]
+    },
+    {
+      "h": "Where the figure goes next",
+      "p": [
+        "The weaving figure is grey fabric only. A product footprint adds the yarn, sizing, and processing in the dye house, and a buyer comparing suppliers will ask which of these you included."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative sub-meter month: one shed, two loom groups",
+    "lines": [
+      "Air-jet group, compressor included: 18,000 kWh; 1,20,000 metres",
+      "Rapier group: 5,000 kWh; 40,000 metres",
+      "Shared humidification and lighting: 4,000 kWh, split by metres: 3,000 to air-jet, 1,000 to rapier",
+      "Air-jet: 21,000 / 1,20,000 = 0.175 kWh per metre x 0.710 = 0.124 kg CO2 per metre",
+      "Rapier: 6,000 / 40,000 = 0.150 kWh per metre x 0.710 = 0.107 kg CO2 per metre"
+    ],
+    "note": "Readings are illustrative, not benchmarks, and the two groups weave different qualities. Use your own sub-meter data before drawing any conclusion about loom type."
+  },
+  "senseible": "Senseible turns the weaving shed's electricity bills into location-based Scope 2 at 0.710 kg CO2 per kWh, and DG diesel invoices into Scope 1. Metres woven and sub-meter splits come from your own records.",
+  "links": [
+    { "label": "Allocate factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "Dye house emissions per metre of fabric", "to": "/answers/dye-house-emissions-per-metre-of-fabric" },
+    { "label": "Textile industry", "to": "/industries/textile" },
+    { "label": "Grid electricity factor for India", "to": "/emission-factors/grid-electricity" }
+  ],
+  "sources": [
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "GHG Protocol Scope 2 Guidance", "url": "https://ghgprotocol.org/scope-2-guidance" }
+  ],
+  "reviewed": "2026-10-18"
+}

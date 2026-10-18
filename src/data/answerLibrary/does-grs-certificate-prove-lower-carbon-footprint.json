@@ -1,0 +1,77 @@
+{
+  "slug": "does-grs-certificate-prove-lower-carbon-footprint",
+  "q": "Does a GRS or RCS certificate prove my recycled yarn has a lower carbon footprint?",
+  "title": "Does GRS prove a lower carbon footprint?",
+  "short": "No. A GRS or RCS certificate proves how much recycled material your yarn contains and that it was tracked through the supply chain. It does not measure greenhouse gas emissions. To say your yarn has a lower carbon footprint, you need a product footprint under ISO 14067, compared on the same basis with the yarn it replaces.",
+  "topic": "product",
+  "intent": "decision",
+  "audience": "Recycled yarn sellers and textile buyers",
+  "sections": [
+    {
+      "h": "What the certificates cover",
+      "ul": [
+        "Recycled Claim Standard (RCS): recycled content and chain of custody, from the recycler to the final seller.",
+        "Global Recycled Standard (GRS): the same, plus social, environmental and chemical requirements at certified sites, such as wastewater and chemical restrictions.",
+        "Neither standard calculates kg CO2e per kg of yarn, sets a footprint limit, or compares your yarn with virgin yarn.",
+        "Textile Exchange is moving the recycled scope of GRS and RCS into its new Materials Matter Standard, effective 31 December 2026 and mandatory from 31 December 2027. Check what your certificate's standard covers when you quote it."
+      ]
+    },
+    {
+      "h": "Why recycled content alone does not settle the footprint",
+      "p": [
+        "Recycled fibre usually avoids the burden of making virgin fibre, but the recycling process still uses energy: sorting, shredding, opening, and in Panipat often open-end spinning on grid power with DG backup. A mill with high electricity use per kg can end up with a footprint closer to virgin yarn than its buyers expect. Only a calculation with your own energy data shows where you stand."
+      ]
+    },
+    {
+      "h": "What a defensible lower carbon claim needs",
+      "ol": [
+        "A cradle-to-gate footprint per kg of yarn under ISO 14067, with the cut-off approach for recycled input stated.",
+        "Your own fuel and electricity for the year, and the waste fibre's transport and sorting.",
+        "A comparison with a named virgin yarn figure that uses the same boundary, unit and method.",
+        "The GRS or RCS transaction certificate as evidence of the recycled share used in the calculation.",
+        "For a public comparative claim, an independent review of the study."
+      ]
+    },
+    {
+      "h": "Claims in the EU market",
+      "p": [
+        "Directive (EU) 2024/825, empowering consumers for the green transition, applies in EU member states from 27 September 2026. It bans generic environmental claims such as eco-friendly without proof of recognised excellent environmental performance, and claims that a product has reduced or neutral impact because of offsets. A brand repeating your recycled claim will want the certificate for the content and a footprint for any carbon wording."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your mill's electricity bills and fuel invoices and applies its published factors, which gives the energy part of an ISO 14067 style footprint that a GRS certificate does not provide. Your GRS or RCS transaction certificates stay the evidence for recycled content.",
+  "links": [
+    {
+      "label": "Count recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "How to calculate recycled content percentage",
+      "to": "/answers/how-to-calculate-recycled-content-percentage"
+    },
+    {
+      "label": "Green finance for textile recycling in Panipat",
+      "to": "/climate-intelligence/green-finance-textile-recycling-panipat"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Directive (EU) 2024/825 on empowering consumers for the green transition (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "Textile Exchange's Materials Matter Standard replaces the recycled scope of GRS and RCS (effective 31 December 2026, mandatory 31 December 2027); recheck its requirements before quoting the certificate's scope.",
+  "reviewed": "2026-10-18"
+}

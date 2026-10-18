@@ -1,0 +1,84 @@
+{
+  "slug": "induction-furnace-kwh-per-tonne-benchmark",
+  "q": "How many kWh per tonne of molten iron should a foundry induction furnace use, and how do I benchmark mine?",
+  "title": "Induction furnace kWh per tonne benchmark",
+  "short": "Divide the furnace's own metered kWh by tonnes of liquid metal tapped in the same period, then compare it with a measured range from a BEE foundry study and with the physical minimum, roughly 350 to 400 kWh per tonne, which is an estimate from the heat needed to melt iron. The gap shows your losses.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Coimbatore and Rajkot foundry owners",
+  "sections": [
+    {
+      "h": "Measure it the same way every month",
+      "ul": [
+        "kWh: from a sub-meter on the furnace panel, not the whole HT bill. The bill also carries sand plant, moulding, fettling, compressors and lighting.",
+        "Tonnes: liquid metal tapped, from the melt log or ladle weighments. Not tonnes charged, which include losses, and not good castings, which depend on yield.",
+        "Period: a full month, so holding at weekends and cold starts are averaged in.",
+        "Note grade and tapping temperature. Ductile iron and steel tapped hotter need more kWh than grey iron."
+      ]
+    },
+    {
+      "h": "What to compare against",
+      "p": [
+        "BEE has published energy mapping work for the MSME foundry sector, including its Foundry Sector Energy Mapping Report and foundry pages on its SIDHIEE portal, and SAMEEEKSHA carries foundry cluster studies. Where one prints a measured range of kWh per tonne for your cluster or furnace type, use that range, name the report and its year, and check the boundary it used matches yours. This page quotes no range because none was confirmed for Coimbatore or Rajkot.",
+        "The physical floor is the heat content of molten iron. Raising iron from room temperature to about 1,500°C and melting it takes roughly 350 to 400 kWh per tonne. Dividing that by your figure gives a rough furnace efficiency."
+      ]
+    },
+    {
+      "h": "Where the extra kWh usually go",
+      "ul": [
+        "Holding metal hot while moulds are not ready.",
+        "Open lids during charging and slagging, which lose heat by radiation.",
+        "Wet, rusty or sandy scrap, and charging in small batches.",
+        "Old thyristor or coil systems and poor cooling water upkeep.",
+        "Melting more metal than needed because of rejects and heavy risers."
+      ]
+    },
+    {
+      "h": "Turning the benchmark into CO2",
+      "p": [
+        "Multiply kWh per tonne by 0.710 kg CO2 per kWh, the CEA grid factor, for location-based Scope 2. Every 50 kWh per tonne you save cuts 35.5 kg CO2 per tonne of liquid metal."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a grey iron foundry (illustrative)",
+    "lines": [
+      "Furnace sub-meter: 3,52,000 kWh; liquid metal tapped: 550 t",
+      "Specific energy: 3,52,000 / 550 = 640 kWh per tonne",
+      "Rough efficiency: 375 / 640 = 59%",
+      "CO2: 640 x 0.710 = 454.4 kg CO2 per tonne of liquid metal",
+      "Wrong method: whole HT bill 5,00,000 kWh / 550 t = 909 kWh per tonne, which overstates the furnace by 42%"
+    ],
+    "note": "Meter readings and tonnage are illustrative. The 375 kWh per tonne floor is an estimate of the heat content of molten iron, not a cluster benchmark."
+  },
+  "senseible": "Senseible reads the monthly kWh from your HT bills and gives location-based Scope 2. You add the furnace sub-meter readings and tonnes tapped to get kWh per tonne.",
+  "links": [
+    {
+      "label": "Cupola vs induction furnace emissions",
+      "to": "/answers/cupola-vs-induction-furnace-emissions"
+    },
+    {
+      "label": "Foundry CO2 per tonne of good castings",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Benchmark plant energy against a sector",
+      "to": "/answers/how-to-benchmark-plant-energy-against-sector"
+    },
+    {
+      "label": "Green loan for a foundry",
+      "to": "/climate-intelligence/green-loan-foundry-kolhapur"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Foundry Sector Energy Mapping Report and SIDHIEE foundry pages; SAMEEEKSHA foundry cluster studies",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

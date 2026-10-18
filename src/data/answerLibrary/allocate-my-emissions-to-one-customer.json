@@ -1,0 +1,90 @@
+{
+  "slug": "allocate-my-emissions-to-one-customer",
+  "q": "A customer asks for the emissions linked to what I sold them. How do I allocate my footprint to one customer?",
+  "title": "Allocate my footprint to one customer",
+  "short": "Take your Scope 1 and 2 for the same period and multiply by the customer's share of your output, measured in tonnes, pieces or metres. Use machine hours when products take very different energy per unit, and revenue only when nothing physical works. If you can meter their product's line, allocate from that line.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSME suppliers answering CDP Supply Chain and buyer requests",
+  "sections": [
+    {
+      "h": "The steps",
+      "ol": [
+        "Fix the period. Use the customer's reporting year if you can, or your financial year with a note.",
+        "Total your Scope 1 and Scope 2 for that period from fuel invoices and electricity bills.",
+        "If the customer's product runs on its own line or machines with a sub-meter, start from that line's energy instead of the whole plant.",
+        "Pick an allocation key and work out the customer's share.",
+        "Multiply, and send the result with the key, the period and the factors used."
+      ]
+    },
+    {
+      "h": "Choosing the key",
+      "ul": [
+        "Physical output, such as tonnes, pieces or metres: the default when your products take similar energy per unit.",
+        "Machine hours or energy-weighted output: when one product takes far longer on the furnace or machine than another.",
+        "Revenue: only when nothing physical works. It puts more emissions on customers who pay a higher price per unit, which has nothing to do with energy used."
+      ]
+    },
+    {
+      "h": "Scope 1 and 2 only, or a product footprint",
+      "p": [
+        "CDP Supply Chain asks suppliers to allocate their Scope 1 and 2 to the customer. A product footprint, such as one built to the PACT Methodology, goes further: it adds the raw materials and parts you bought, per unit of product. Ask which one the customer wants and label your answer, because the two can differ several times over."
+      ]
+    },
+    {
+      "h": "What to send with the number",
+      "ul": [
+        "The allocation key and the customer's share, with the period.",
+        "Emission factors and their sources, for example 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0.",
+        "What is left out, such as Scope 3 or a plant you did not include.",
+        "A note that the figure is self-declared, unless someone independent has checked it. Keep the same method next year so changes are real."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one customer, two keys",
+    "lines": [
+      "Your year: Scope 1 = 300 t CO2, Scope 2 = 900 t CO2, total 1,200 t CO2",
+      "Output: 4,000 t; sold to this customer: 500 t, which is 12.5%",
+      "By tonnes: 1,200 x 500 / 4,000 = 150 t CO2",
+      "Revenue: ₹12 crore of ₹60 crore from this customer, which is 20%",
+      "By revenue: 1,200 x 0.20 = 240 t CO2",
+      "The customer pays more per tonne, so revenue would put 90 t more on them for the same goods"
+    ],
+    "note": "Figures are illustrative. Use tonnes unless their products take more energy per tonne than the rest."
+  },
+  "senseible": "Senseible gives your Scope 1 and 2 for a period from your bills and invoices, with the factor on every line. The allocation key and the customer's share are your own figures, so present them as self-declared.",
+  "links": [
+    {
+      "label": "Allocate supplier emissions to my purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "What to do with a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "Share emissions with a buyer without invoices",
+      "to": "/answers/share-emissions-with-buyer-without-invoices"
+    },
+    {
+      "label": "PACT Pathfinder Framework explained",
+      "to": "/answers/pact-pathfinder-framework-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapter 8 Allocating emissions",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CDP Supply Chain programme",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "ifrs-s2-scope-3-measurement-framework",
+  "q": "What is the IFRS S2 Scope 3 measurement framework, and what supplier data will customers prefer?",
+  "title": "IFRS S2 Scope 3 measurement framework",
+  "short": "It is the framework in IFRS S2 paragraph B40 for choosing Scope 3 inputs: prefer data from direct measurement, from specific activities in the value chain, timely data that fits the place and technology, and verified data. Customers reporting under IFRS S2 will prefer supplier figures built from measured quantities over spend-based estimates.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Suppliers to customers reporting under IFRS S2 or national standards based on it",
+  "sections": [
+    {
+      "h": "The four characteristics in plain words",
+      "ul": [
+        "Direct measurement: emissions or energy read from a meter, a weighbridge or a fuel slip, not modelled.",
+        "Specific activities in the value chain: data about your plant and your product, not an industry average or a spend ratio.",
+        "Timely and representative: a recent period, and factors that fit where and how the activity happened, such as the Indian grid factor for a plant in India.",
+        "Verified: checked by someone, internally or externally. IFRS S2 allows either."
+      ],
+      "p": [
+        "The reporting company weighs these together. A measured figure that is three years old may lose to a newer one built from specific activity data."
+      ]
+    },
+    {
+      "h": "How a customer is likely to rank what you send",
+      "ol": [
+        "A product-level figure built from your measured fuel and electricity, allocated by physical output, with evidence behind it.",
+        "Your site-level Scope 1 and 2, with an allocation the customer applies itself.",
+        "An industry average for your product or sector.",
+        "A spend-based estimate from what the customer paid you, which is what they use if you send nothing."
+      ]
+    },
+    {
+      "h": "What the customer has to disclose about your data",
+      "p": [
+        "IFRS S2 asks reporters to explain how they measured Scope 3, including the inputs and assumptions, and how far the result rests on data from specific value chain activities and on verified data. Your figures, with their period, factors and evidence, let a customer say more of its Scope 3 is supplier-specific. That is why customers chase them."
+      ]
+    },
+    {
+      "h": "Describing verification honestly",
+      "p": [
+        "Say exactly who checked the data and how. Internal checks, automated rule checks and third-party assurance are different things, and a customer has to describe them accurately in its own report. If no third party has reviewed your figures, say so."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds Scope 1 and 2 from your bills and invoices, which is data from specific activities rather than a spend estimate. Its Verified status means rule checks passed; describe it that way to customers, not as third-party assurance.",
+  "links": [
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "IFRS S2 cross-industry metrics",
+      "to": "/answers/ifrs-s2-cross-industry-metrics-list"
+    },
+    {
+      "label": "Allocate my footprint to one customer",
+      "to": "/answers/allocate-my-emissions-to-one-customer"
+    },
+    {
+      "label": "Scope 3 data quality tiers",
+      "to": "/climate-intelligence/scope-3-data-quality-tiers-software-buyer-guide-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S2 Climate-related Disclosures (June 2023), paragraphs 29(a) and B38 to B57, including B40",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The ISSB amended some IFRS S2 greenhouse gas requirements in December 2025, and each country adopts the standard on its own timetable; recheck the paragraph references against the current text."
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "does-reuploading-an-invoice-use-senseible-allowance",
+  "q": "If I upload the same invoice again, does Senseible charge it to my monthly allowance or count its emissions twice?",
+  "title": "Does a re-upload use a Senseible read?",
+  "short": "No. Uploading the identical file again uses no new invoice read and adds no emissions: Senseible recognises the file by its SHA-256 fingerprint and shows the result saved the first time. A new photo or PDF of the same invoice is a different file, so Senseible reads it and then checks the printed invoice details.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Teams where several people upload the same bills",
+  "sections": [
+    {
+      "h": "Exactly the same file",
+      "p": [
+        "Every file gets a SHA-256 fingerprint, worked out from its exact bytes. When the same file arrives again on your account, Senseible finds the stored record before any reading starts, shows the result saved on the first upload with the date it was uploaded, and creates no new emission lines. Nothing is taken from your monthly invoice reads."
+      ]
+    },
+    {
+      "h": "A new photo, scan or PDF of the same invoice",
+      "p": [
+        "A fresh phone photo, a rescan or a PDF exported again has different bytes, so its fingerprint is different. Senseible reads it like any new file. It then compares the printed details with invoices already in your records: supplier GSTIN (or supplier name), invoice number and date, or for an electricity bill the supplier, billing period, units and amount.",
+        "If a match is found and the earlier copy already has emissions, Senseible shows the stored result, says the invoice is already in your records, and counts it once. That upload does not use a read from your allowance. Matching is done on these printed fields, not by comparing images."
+      ]
+    },
+    {
+      "h": "When a second copy is counted as a new read",
+      "ul": [
+        "The earlier copy produced no emissions, for example because the photo was too blurred. The clearer copy is read and saved normally, which uses a read.",
+        "The invoice number, date or supplier could not be read on one of the copies, so the two cannot be matched. Check such lines yourself before reporting.",
+        "The document is a credit note or an order for the same supply. It is a different document and never matches the invoice it refers to."
+      ]
+    },
+    {
+      "h": "How reads are counted per page",
+      "p": [
+        "From 1 November 2026 for yearly and free plans, from the next billing date for monthly plans, and for all accounts by 1 December 2026, each PDF page or photo counts as one read. A three page PDF of a new invoice therefore uses three reads, while the identical file uploaded again still uses none."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints every file with SHA-256 and matches invoices on supplier GSTIN or name, invoice number and date, so the same invoice is counted once and an identical re-upload uses no read. Where those printed details are unreadable on a copy, review that line yourself.",
+  "links": [
+    {
+      "label": "Stop double counting in a footprint",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    },
+    {
+      "label": "Which Senseible plan do I need",
+      "to": "/answers/which-senseible-plan-do-i-need"
+    },
+    {
+      "label": "Does a hash prove emissions are correct",
+      "to": "/answers/does-a-hash-prove-emissions-are-correct"
+    },
+    {
+      "label": "Pricing",
+      "to": "/pricing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7 Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

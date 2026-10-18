@@ -40,7 +40,7 @@
     {
       "h": "GRI 305 is being replaced for climate",
       "p": [
-        "GRI 102: Climate Change 2025 replaces the climate disclosures of GRI 305 for reports covering periods from 1 January 2027, and adds transition plan and target requirements. Reports for earlier periods still use GRI 305. Check GRI's current text for which other GRI 305 disclosures, such as 305-6 and 305-7, remain in force after that date."
+        "GRI 102: Climate Change 2025 replaces the climate disclosures of GRI 305 for reports published on or after 1 January 2027 (earlier use is allowed), and adds transition plan and target requirements. Reports published before then still use GRI 305. Check GRI's current text for which other GRI 305 disclosures, such as 305-6 and 305-7, remain in force after that date."
       ]
     }
   ],
@@ -84,5 +84,5 @@
     }
   ],
   "reviewed": "2026-10-15",
-  "reviewNote": "GRI 102 takes effect for periods from 1 January 2027; check which GRI 305 disclosures, such as 305-6 and 305-7, remain in force."
+  "reviewNote": "GRI 102 takes effect for reports published on or after 1 January 2027; check which GRI 305 disclosures, such as 305-6 and 305-7, remain in force."
 }

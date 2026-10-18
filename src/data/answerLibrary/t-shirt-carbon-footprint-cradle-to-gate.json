@@ -1,0 +1,93 @@
+{
+  "slug": "t-shirt-carbon-footprint-cradle-to-gate",
+  "q": "How do I add up the cradle-to-gate carbon footprint of a cotton T-shirt made in Tiruppur?",
+  "title": "Cradle-to-gate footprint of a T-shirt",
+  "short": "Work out how many kg of fabric go into one T-shirt including cutting waste, multiply by the footprint per kg of fabric (fibre, spinning, knitting, dyeing and finishing), then add stitching per piece and packaging. Each stage's figure comes from that unit's own fuel and electricity, or from a published factor where you have no data.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tiruppur garment exporters answering EU and UK brands",
+  "sections": [
+    {
+      "h": "The stages inside the boundary",
+      "ol": [
+        "Cotton fibre: growing and ginning, from your yarn supplier's data or a published dataset, per kg of fibre.",
+        "Spinning: electricity per kg of yarn from the mill's bills, converted at 0.710 kg CO2 per kWh, plus any DG diesel.",
+        "Knitting: the knitting unit's kWh per kg of fabric.",
+        "Dyeing and finishing: boiler fuel for steam and hot water, plus electricity, per kg of fabric. Among the factory stages this is often the largest, because of the heat it needs.",
+        "Cutting, stitching and packing: your own unit's energy per piece.",
+        "Packaging and the transport between stages, which are usually small but belong inside a cradle-to-gate figure."
+      ]
+    },
+    {
+      "h": "Carry the waste back up the chain",
+      "p": [
+        "Each stage loses material, so the earlier stages must make more than the T-shirt contains. If 20 percent of fabric is lost in cutting, a 180 g T-shirt needs 225 g of fabric. Apply the same logic upstream: a spinning mill uses more than 1 kg of cotton per kg of yarn because of comber noil and other waste, and processing loses some fabric weight. Use each supplier's own yield where you can get it.",
+        "Cutting waste sold as rags or to a recycler is a co-product. ISO 14067 asks you to avoid splitting the burden where you can, and otherwise to share it on a physical basis such as mass, or on economic value. Write down the method you used and do not change it between seasons."
+      ]
+    },
+    {
+      "h": "Where the numbers come from",
+      "ul": [
+        "Your own unit and any job workers you control: bills and fuel invoices, so primary data.",
+        "Spinning mills, knitters and processors: ask for kWh, fuel and output for the same year, or their own per kg figure with its basis.",
+        "Fibre: a supplier figure where available; otherwise a published dataset, named in your method note.",
+        "Do not mix a buyer's default with your own data for the same stage."
+      ]
+    },
+    {
+      "h": "CO2 and CO2e in the same total",
+      "p": [
+        "Fuel and electricity factors are CO2 factors, while fibre figures usually include methane and nitrous oxide from farming and are given in CO2e. A product footprint under ISO 14067 is reported in CO2e, so say which stages include only CO2 and treat the total as a CO2e figure with that note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one 180 g cotton T-shirt (illustrative inputs)",
+    "lines": [
+      "Fabric per piece: 180 g / (1 minus 0.20 cutting waste) = 225 g = 0.225 kg",
+      "Fibre: 1.0 kg CO2e per kg (illustrative, use your supplier's figure)",
+      "Spinning: 3.2 kWh per kg (illustrative) x 0.710 = 2.272 kg CO2 per kg",
+      "Knitting: 0.5 kWh per kg x 0.710 = 0.355 kg CO2 per kg",
+      "Dyeing and finishing: 2.0 kg coal x 2.42 = 4.840, plus 1.5 kWh x 0.710 = 1.065, total 5.905 kg CO2 per kg",
+      "Per kg of fabric: 1.0 + 2.272 + 0.355 + 5.905 = 9.532 kg",
+      "Fabric stages per piece: 0.225 x 9.532 = 2.145 kg",
+      "Stitching: 0.160 kg per piece; packaging: 0.050 kg per piece (illustrative)",
+      "Total: 2.145 + 0.160 + 0.050 = 2.355 kg CO2e per T-shirt, about 2.4 kg"
+    ],
+    "note": "All stage inputs are illustrative, not sector benchmarks. For simplicity the example applies one waste factor; a real study also scales fibre and spinning for their own yields."
+  },
+  "senseible": "Senseible reads your own unit's electricity bills and fuel invoices and applies its published factors, which gives the stitching stage and, for processors who use it, their own stage. Fibre and other suppliers' stages come from their data or a published factor that you add.",
+  "links": [
+    {
+      "label": "Emissions per garment in a CMT unit",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Spinning mill footprint per kg of yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    },
+    {
+      "label": "Dye house emissions per metre of fabric",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "machine-tool-carbon-footprint-per-unit",
+  "q": "How do I estimate the carbon footprint of a lathe or CNC machine I export?",
+  "title": "Lathe or CNC machine footprint per unit",
+  "short": "Add the castings and steel by mass times their factors, the bought-in motors, drives, controller and other parts from supplier figures or by mass, and your assembly and test energy per machine. For most machine tools the castings and bought-in electronics carry most of the cradle to gate footprint.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Rajkot and Bengaluru machine tool makers",
+  "sections": [
+    {
+      "h": "Castings and steel",
+      "p": [
+        "Beds, columns, saddles and tailstocks are usually grey or SG iron castings bought from a foundry. Use the foundry's figure per tonne of good casting if it has one, since a coke-fired cupola and an induction furnace give very different results. Add steel for spindles, guideways, sheet metal guards and fasteners, by mass bought."
+      ]
+    },
+    {
+      "h": "Bought-in parts",
+      "ul": [
+        "Spindle motor, servo motors and drives: supplier product figures if available, otherwise mass by material.",
+        "CNC controller and electronics: ask the supplier. Electronics are heavy in footprint for their weight, so a mass-only estimate tends to understate them; say how you estimated.",
+        "Ball screws, linear guides, bearings, hydraulics, coolant pump: supplier figures or mass by material.",
+        "Wooden crate and packing: by mass, if the buyer asks for packed product."
+      ]
+    },
+    {
+      "h": "Assembly, scraping and testing energy",
+      "p": [
+        "Machine tools are built in small numbers, so do not divide a month's power by machines shipped. Divide by assembly hours instead: each machine's share is its hours over total hours worked that month. Include machining of castings, painting, the test run and any accuracy checks."
+      ]
+    },
+    {
+      "h": "Use phase is a separate figure",
+      "p": [
+        "A machine's electricity over its life usually dwarfs its manufacturing footprint. Buyers may ask how its energy use was evaluated under the ISO 14955 series: Part 1 covers design methodology for energy-efficient machine tools, and Part 2 covers measuring the energy a machine and its components take. Report that alongside the cradle to gate figure, not inside it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 3 tonne CNC lathe",
+    "lines": [
+      "Castings 2,000 kg x 1.5 = 3,000 kg CO2e",
+      "Steel parts 600 kg x 2.0 = 1,200 kg CO2e",
+      "Motors and drives 120 kg x 5.0 = 600 kg CO2e",
+      "Controller and electronics: supplier figure 400 kg CO2e",
+      "Assembly: 400 of 4,000 shop hours in a 25,000 kWh month = 2,500 kWh, x 0.710 = 1,775 kg CO2",
+      "Total: 3,000 + 1,200 + 600 + 400 + 1,775 = 6,975 kg CO2e, about 7.0 tonnes per machine"
+    ],
+    "note": "Material factors (kg CO2e per kg) and the controller figure are placeholders to show the arithmetic. Use your foundry's, steel mill's and suppliers' own figures."
+  },
+  "senseible": "Senseible reads your workshop's electricity and fuel bills into Scope 1 and 2 totals, which you share across machines by assembly hours. Casting and component factors come from your suppliers or published data.",
+  "links": [
+    {
+      "label": "CNC machined part footprint",
+      "to": "/answers/cnc-machined-part-carbon-footprint"
+    },
+    {
+      "label": "Foundry footprint per tonne of casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "How to count a new machine in Scope 3",
+      "to": "/answers/how-to-count-a-new-machine-in-scope-3"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14955-1, Machine tools: environmental evaluation of machine tools, design methodology for energy-efficient machine tools (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14955-2, Machine tools: environmental evaluation of machine tools, methods for measuring energy supplied to machine tools and machine tool components (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

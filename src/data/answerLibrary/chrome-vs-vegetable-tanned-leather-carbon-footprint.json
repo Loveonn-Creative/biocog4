@@ -1,0 +1,56 @@
+{
+  "slug": "chrome-vs-vegetable-tanned-leather-carbon-footprint",
+  "q": "Is vegetable-tanned leather lower carbon than chrome-tanned leather?",
+  "title": "Chrome or vegetable tanned: lower carbon?",
+  "short": "Not reliably. Published comparisons point both ways, because the tanning agent is usually a smaller part of leather's footprint than the share of the animal given to the hide and the tannery's energy. Compare the two only per square metre of finished leather, with the same allocation rule and boundary, using each tannery's own fuel, power and chemical data.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Leather exporters and buyers choosing tannage",
+  "sections": [
+    {
+      "h": "Where a leather footprint comes from",
+      "ul": [
+        "The hide: whether it carries part of the cattle's emissions depends on the allocation rule chosen, and that choice can outweigh everything done in the tannery.",
+        "Tannery energy: boiler fuel for hot water and drying, electricity for drums, pumps and finishing machines.",
+        "Chemicals: the tanning agent, plus fat liquors, dyes and finishes.",
+        "Effluent treatment and sludge handling."
+      ]
+    },
+    {
+      "h": "What actually differs between the two tannages",
+      "ul": [
+        "Chrome: basic chromium sulphate, made from chromite ore in energy-using steps, in a short drum process. Effluent needs chrome recovery and treatment to meet CPCB discharge limits for chromium.",
+        "Vegetable: tannin extracts from bark or wood, such as wattle, mimosa, quebracho or chestnut, used in larger amounts per hide. Making and shipping the extract carries its own footprint, and pit tanning ties up the hides for weeks.",
+        "Product mix: vegetable tannage is often used for thicker leathers, so per square metre and per kg results can rank the two differently."
+      ]
+    },
+    {
+      "h": "Why studies disagree",
+      "p": [
+        "Studies use different boundaries, functional units (kg or square metre), hide allocation rules, energy mixes and chemical data. Footprint data for tannin extracts is thin, so results often lean on assumptions. A result from a tannery in another country, on another grid, says little about yours."
+      ]
+    },
+    {
+      "h": "How to make a claim you can defend",
+      "ol": [
+        "Calculate both per square metre of finished leather of the same thickness and use.",
+        "Use the same hide allocation rule, the same year and the same boundary for both.",
+        "Use each tannery's own fuel, electricity and chemical purchases, with supplier footprints for the tanning agents.",
+        "State the result as a number with its method. A label such as \"eco-friendly vegetable tanned\" without numbers risks breaching India's 2024 greenwashing guidelines, which require claims to be backed by verifiable evidence."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the tannery's electricity bills and fuel invoices, which give the energy part of either tannage. Footprints for tanning chemicals and the hide allocation come from supplier data and your chosen method.",
+  "links": [
+    { "label": "Tannery footprint per square foot", "to": "/answers/leather-tannery-carbon-footprint-per-square-foot" },
+    { "label": "Leather footwear footprint per pair", "to": "/answers/leather-footwear-carbon-footprint-per-pair" },
+    { "label": "CCPA greenwashing guidelines in India", "to": "/answers/ccpa-greenwashing-guidelines-india" },
+    { "label": "Water and carbon in textiles and leather", "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (allocation)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "CPCB effluent discharge standards for tanneries (chromium)", "url": "https://cpcb.nic.in" }
+  ],
+  "reviewed": "2026-10-18"
+}

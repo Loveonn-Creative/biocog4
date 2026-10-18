@@ -1,0 +1,65 @@
+{
+  "slug": "is-glassware-covered-by-cbam",
+  "q": "Is glassware or glass from Firozabad covered by the EU CBAM?",
+  "title": "Is glassware covered by EU CBAM?",
+  "short": "No. Glass and glassware, including tableware, bangles, beads, lamps and containers in chapter 70, are not in Annex I of the CBAM Regulation, so EU importers pay no CBAM on them. CBAM covers only cement, iron and steel, aluminium, fertilisers, hydrogen and electricity, plus listed products made from them.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Glass exporters in Firozabad and other clusters",
+  "sections": [
+    {
+      "h": "Where glass sits in the tariff",
+      "ul": [
+        "7010, glass bottles, jars and containers: not covered.",
+        "7013, glassware for table, kitchen, office and decoration: not covered.",
+        "7018, glass beads and small glassware, the heading used for many bangles and beads: not covered.",
+        "9405, lamps and lighting fittings, including glass chandeliers: not covered."
+      ]
+    },
+    {
+      "h": "When part of the shipment can be covered",
+      "p": [
+        "A piece that is mainly iron or aluminium with a glass part, such as a metal lantern frame or a stand, can be classified by its metal. If it is declared as an other article of steel (7326) or of aluminium (7616), CBAM applies to it. Customs classifies composite goods by the material that gives the essential character, so agree the code with your buyer for each mixed item."
+      ]
+    },
+    {
+      "h": "Could glass be added later",
+      "p": [
+        "Article 30 of the CBAM Regulation asks the Commission to review the scope, including whether other goods at risk of carbon leakage should be added. No amendment adding glass had been adopted when this page was reviewed, and the downstream extension being negotiated in 2026 covers products made of steel and aluminium, not glass. Any addition would need a change to the Regulation and a lead time, so you would have notice."
+      ]
+    },
+    {
+      "h": "What EU buyers ask glass suppliers instead",
+      "p": [
+        "Retailers and brands increasingly ask for a product carbon footprint per piece or per tonne for their Scope 3 reporting. For a glass unit that means three parts: CO2 released from soda ash and limestone in the batch, fuel burnt in the furnace and lehr, and electricity. Recording gas, electricity and batch purchases month by month now gives you a figure you can defend."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your PNG, fuel and electricity invoices and applies its published factors, which gives the energy part of a glass product footprint for an EU buyer. CBAM does not apply to glassware today, so no CBAM report is needed.",
+  "links": [
+    {
+      "label": "Glass furnace emissions per tonne",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "Financing a glass furnace in Firozabad",
+      "to": "/climate-intelligence/finance-glass-furnace-firozabad"
+    },
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The Article 30 scope review could add sectors; recheck Annex I for chapter 70 before relying on this answer.",
+  "reviewed": "2026-10-18"
+}

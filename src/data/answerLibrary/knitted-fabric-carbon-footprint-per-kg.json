@@ -1,0 +1,70 @@
+{
+  "slug": "knitted-fabric-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of knitted fabric from a Tiruppur knitting and dyeing unit?",
+  "title": "Carbon footprint per kg of knitted fabric",
+  "short": "Add three parts per kg of finished fabric: the yarn's footprint, scaled up for knitting and dyeing losses; electricity for knitting, dyeing and the ZLD plant at 0.710 kg CO2 per kWh; and the boiler fuel. With firewood, report its CO2 separately as biogenic and count only methane and nitrous oxide in Scope 1.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Tiruppur knitters, dyers and their buyers",
+  "sections": [
+    {
+      "h": "Collect figures from every unit that touched the fabric",
+      "p": [
+        "In Tiruppur the work is often split: one unit knits, another dyes, a third compacts, and job workers fill gaps. Ask each for the same months' kWh, fuel bought and kg processed, or for its own per kg figure with the basis written down. A figure for your fabric is only as complete as the least complete unit in that chain."
+      ]
+    },
+    {
+      "h": "Yarn is usually the biggest part, so get the loss right",
+      "p": [
+        "You buy more yarn than the fabric you sell, because of knitting waste and weight lost in scouring and dyeing. Use your own records: kg of yarn issued divided by kg of finished fabric delivered for the same lots. Multiply the spinning mill's footprint per kg of yarn by that ratio, not by one."
+      ]
+    },
+    {
+      "h": "Dyeing steam on firewood or other fuel",
+      "ul": [
+        "Firewood: its CO2 is biogenic and goes in a separate line outside the scopes. Methane and nitrous oxide from burning it count in Scope 1.",
+        "IPCC 2006 defaults for wood in industrial boilers: net calorific value 15.6 TJ per thousand tonnes, 30 kg CH4 and 4 kg N2O per TJ, and 112,000 kg of biogenic CO2 per TJ.",
+        "Coal: 2.42 kg CO2 per kg, the IPCC 2006 default, all of it Scope 1.",
+        "Use a fuel test for calorific value where you have one; wet wood gives less energy per tonne."
+      ]
+    },
+    {
+      "h": "ZLD and the rest of the electricity",
+      "p": [
+        "Dyeing units in Tiruppur run zero liquid discharge plants, as the Tamil Nadu Pollution Control Board requires. Their RO and evaporator power, and any steam the evaporators use, belong in the dyeing figure. Spread them over kg of fabric dyed in the same period. If the unit also dyes woven fabric or yarn, split by kg processed."
+      ]
+    },
+    {
+      "h": "Say what the figure leaves out",
+      "p": [
+        "The method above gives a cradle to gate figure for energy and yarn. Dyes, chemicals, packaging and transport are left out unless you add them from supplier data. Name the boundary, the period and the factors next to the number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: knit and dye unit, 80,000 kg finished fabric",
+    "lines": [
+      "Electricity: 25,000 kWh knitting + 40,000 kWh dyeing and finishing + 30,000 kWh ZLD = 95,000 kWh x 0.710 = 67,450 kg CO2",
+      "Firewood: 120 t x 15.6 TJ per thousand tonnes = 1.872 TJ",
+      "CH4: 1.872 x 30 = 56.16 kg x 28 (AR5 GWP) = 1,572.5 kg CO2e; N2O: 1.872 x 4 = 7.488 kg x 265 = 1,984.3 kg CO2e",
+      "Unit's own figure: (67,450 + 1,572.5 + 1,984.3) / 80,000 = 0.888 kg CO2e per kg fabric",
+      "Yarn: 86,000 kg issued x 3.5 kg CO2e per kg (illustrative mill figure) = 301,000 kg, or 3.763 kg per kg fabric",
+      "Cradle to gate, energy and yarn: 3.763 + 0.888 = 4.65 kg CO2e per kg fabric",
+      "Biogenic CO2, reported separately: 1.872 x 112,000 = 209,664 kg"
+    ],
+    "note": "All quantities and the yarn footprint are illustrative. Replace them with your own bills, production register and the mill's figure."
+  },
+  "senseible": "Senseible reads the unit's electricity bills and fuel invoices and turns kWh, litres and kg into emissions with the factor shown on each line. The yarn footprint, the yield ratio and the kg of fabric produced are your inputs.",
+  "links": [
+    { "label": "Spinning mill footprint per kg of yarn", "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn" },
+    { "label": "Dye house emissions per metre of fabric", "to": "/answers/dye-house-emissions-per-metre-of-fabric" },
+    { "label": "ZLD plant energy and carbon per kL", "to": "/answers/zld-plant-energy-and-carbon-per-kl" },
+    { "label": "Biomass fuel in a boiler and Scope 1", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard", "url": "https://ghgprotocol.org/standards" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1 Table 1.2 and Ch. 2 Table 2.3 (wood)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

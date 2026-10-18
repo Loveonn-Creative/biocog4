@@ -1,0 +1,82 @@
+{
+  "slug": "textile-printing-emissions-per-metre",
+  "q": "How do I calculate CO2 per metre of printed fabric for rotary screen versus digital printing?",
+  "title": "CO2 per metre: rotary vs digital printing",
+  "short": "Work out each print line separately: add the fuel for drying, steaming and curing on that line and its electricity at 0.710 kg CO2 per kWh, then divide by metres printed on that line in the same month. Split shared heaters and boilers by sub-meter or machine hours. Neither process is lower by default.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Surat, Jaipur and Ahmedabad textile printers",
+  "sections": [
+    {
+      "h": "What belongs to each line",
+      "ul": [
+        "Rotary screen: printing machine drives, the drying chamber after printing, steamer or curing, and washing after printing.",
+        "Digital: pre-treatment padding and drying, the inkjet printer itself, steaming or curing, and washing.",
+        "Shared by both: the thermic fluid heater or boiler, compressors, effluent treatment and lighting. These need a split rule."
+      ]
+    },
+    {
+      "h": "Splitting a shared thermic fluid heater or boiler",
+      "p": [
+        "Fit a heat meter or at least a run-hour meter on each line's loop if you can. Without one, split fuel by the hours each consuming machine ran, weighted by its rated heat load. Write the rule down and keep it the same every month, so a change in the figure means a change in the process, not in your arithmetic."
+      ]
+    },
+    {
+      "h": "Why speed changes the answer",
+      "p": [
+        "A rotary line can print tens of metres a minute, while most digital printers run much slower. Standby losses of a heater, dryer or steamer run whether one metre or a thousand pass through, so a slow line spreads them over fewer metres. Digital printing avoids screen making and uses less print paste, which saves elsewhere. Only your own meters tell you which is lower for your mix."
+      ]
+    },
+    {
+      "h": "What the per metre figure leaves out",
+      "p": [
+        "This is a gate to gate figure for the print house. Greige or prepared fabric, dyes, pigments, inks, thickeners and chemicals are purchased goods with their own footprints. Add them only if the buyer asks for a cradle to gate fabric figure, and state which stages are in."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month, two lines in Surat",
+    "lines": [
+      "Thermic fluid heater coal: 30,000 kg x 2.42 = 72,600 kg CO2, split 80% rotary, 20% digital by weighted run hours",
+      "Rotary: 58,080 kg (coal) + 24,000 kWh x 0.710 = 17,040 kg, total 75,120 kg CO2",
+      "Rotary metres: 300,000, so 75,120 / 300,000 = 0.25 kg CO2 per metre",
+      "Digital: 14,520 kg (coal) + 15,000 kWh x 0.710 = 10,650 kg, total 25,170 kg CO2",
+      "Digital metres: 60,000, so 25,170 / 60,000 = 0.42 kg CO2 per metre"
+    ],
+    "note": "Figures are illustrative to show the arithmetic. In this example the digital line's low output spreads its heat and power over fewer metres; a busier digital line could come out lower."
+  },
+  "senseible": "Senseible reads your coal, PNG and electricity bills into monthly Scope 1 and 2 figures. You then split them by line with your sub-meter or run-hour records and divide by metres printed.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre of fabric",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Thermic fluid heater emissions",
+      "to": "/answers/thermic-fluid-heater-emissions-scope-1"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC 2006 Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

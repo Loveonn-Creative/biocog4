@@ -1,0 +1,73 @@
+{
+  "slug": "does-shifting-load-to-solar-hours-cut-emissions",
+  "q": "Does moving production to daytime or off-peak hours lower my reported Scope 2 in India?",
+  "title": "Shifting load hours and reported Scope 2",
+  "short": "No, not under current reporting rules. Location-based Scope 2 in India uses one annual CEA grid factor, so the same kWh gives the same CO2 at any hour. Shifting load lowers your bill under time of day tariffs, and it lowers market-based Scope 2 only if it lets more contracted renewable units cover your consumption.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Factories on time of day tariffs",
+  "sections": [
+    {
+      "h": "What changes and what does not",
+      "ul": [
+        "Location-based Scope 2: unchanged. Total kWh x 0.710 kg CO2 per kWh, whatever the hour.",
+        "Electricity bill: lower if you move load into cheaper slots.",
+        "Market-based Scope 2: lower only where it changes how many units your renewable contract or certificates cover.",
+        "Real grid emissions: may fall when midday supply is solar heavy, but no official Indian factor captures that today."
+      ]
+    },
+    {
+      "h": "When shifting does cut market-based Scope 2",
+      "p": [
+        "If you take open access or group captive solar and part of the solar is lost or banked because your load was low at midday, moving load into solar hours lets more units be adjusted in the same month. Those extra adjusted units count at zero in market-based Scope 2, if the contract gives you their attributes. Without a renewable contract, shifting hours does nothing for either Scope 2 figure."
+      ]
+    },
+    {
+      "h": "How to describe it in a report",
+      "p": [
+        "Report the cost saving as an energy measure, not an emissions cut. If you want to show its likely effect on grid emissions, put it in a separate narrative note labelled as an estimate, with the method and data source, and keep it out of your Scope 2 totals."
+      ]
+    },
+    {
+      "h": "Why it may matter later",
+      "p": [
+        "The GHG Protocol's Scope 2 revision has consulted on hourly matching for market-based claims. If that is adopted, solar-hour load matched to solar supply would count for more. Keep 15-minute or hourly meter data and the generator's hourly output now, so you can show the match later without rebuilding old records."
+      ]
+    }
+  ],
+  "senseible": "Senseible applies the annual CEA grid factor, 0.710 kg CO2 per kWh, to the kWh on your bills, so moving production hours changes your cost but not your location-based Scope 2. Market-based results follow the renewable units you record.",
+  "links": [
+    {
+      "label": "Time of day tariff for factories",
+      "to": "/answers/time-of-day-electricity-tariff-for-factories"
+    },
+    {
+      "label": "Hourly grid emission factors in India",
+      "to": "/answers/hourly-grid-emission-factors-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    },
+    {
+      "label": "Does battery storage reduce Scope 2?",
+      "to": "/answers/does-battery-storage-reduce-scope-2-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol, Scope 2 revision public consultation (hourly matching)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewNote": "The GHG Protocol Scope 2 revision may introduce hourly matching; check its status before the next report.",
+  "reviewed": "2026-10-18"
+}

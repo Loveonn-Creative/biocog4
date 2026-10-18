@@ -1,0 +1,89 @@
+{
+  "slug": "submersible-pump-carbon-footprint-per-unit",
+  "q": "How do I calculate the cradle-to-gate carbon footprint of a submersible pump for an export buyer?",
+  "title": "Submersible pump footprint per unit",
+  "short": "Weigh each material in the pump's bill of materials, as bought including scrap, and multiply by its emission factor: copper winding, stainless steel, cast iron, electrical steel, plastics and cable. Then add your factory's fuel and electricity per pump. Materials usually make up most of a cradle to gate figure; use phase is reported separately.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coimbatore and Rajkot pump and motor makers",
+  "sections": [
+    {
+      "h": "What cradle to gate covers for a pump",
+      "p": [
+        "Cradle to gate stops when the packed pump leaves your factory. It covers raw materials, bought-in parts, their transport to you, your own fuel and electricity, packaging and production waste. The electricity the pump uses over its life is a separate figure, Scope 3 Category 11 for your inventory, and should not be added into the product footprint you quote per unit."
+      ]
+    },
+    {
+      "h": "Build it from the bill of materials",
+      "ol": [
+        "List every material by mass for one model: copper winding wire, stainless steel shaft and impellers, cast iron bowls or motor body, electrical steel laminations, plastics such as impellers or diffusers, cable if it ships with the pump.",
+        "Use mass bought, not mass in the product. Machining chips and stamping skeletons from laminations are part of the input.",
+        "Take factors from your suppliers first, such as a wire maker's or steel mill's product figure. Otherwise use a named published dataset for copper cathode, stainless or electrical steel, and state its year.",
+        "Bought-in parts such as bearings, capacitors or control panels: use supplier figures, or estimate by material mass and say so."
+      ]
+    },
+    {
+      "h": "Your factory energy per pump",
+      "p": [
+        "Take a month's electricity and fuel, multiply by their factors (0.710 kg CO2 per kWh for grid power, 2.68 kg CO2 per litre of diesel), and divide by pumps made. If you make 0.5 HP and 10 HP models on the same lines, divide by kg of pump produced or by machine hours instead, so the big models carry more. Include winding, varnish curing ovens, machining and the test tank."
+      ]
+    },
+    {
+      "h": "What an export buyer will check",
+      "ul": [
+        "The functional unit, such as one pump of a stated model and rating.",
+        "The source and year of each material factor.",
+        "How factory energy was divided between models.",
+        "Whether cable, packaging and the control panel are in or out."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: an 18 kg submersible pump set",
+    "lines": [
+      "Copper winding 2.0 kg x 4.0 = 8.0 kg CO2e",
+      "Stainless steel 4.0 kg x 6.0 = 24.0 kg CO2e",
+      "Cast iron 6.0 kg x 1.5 = 9.0 kg CO2e",
+      "Electrical steel 5.0 kg x 2.5 = 12.5 kg CO2e",
+      "Plastics 1.0 kg x 3.0 = 3.0 kg CO2e; materials total 56.5 kg CO2e",
+      "Factory: 60,000 kWh for 4,000 pumps = 15 kWh, x 0.710 = 10.65 kg CO2",
+      "DG diesel: 800 litres for 4,000 pumps = 0.2 litre, x 2.68 = 0.536 kg CO2",
+      "Total: 56.5 + 10.65 + 0.536 = 67.7 kg CO2e per pump"
+    ],
+    "note": "Material factors here are placeholders in kg CO2e per kg, chosen only to show the arithmetic. Replace each with a supplier or named dataset figure before sending to a buyer."
+  },
+  "senseible": "Senseible reads your factory's electricity, diesel and other fuel bills into Scope 1 and 2 totals, which you divide across pumps. Material factors come from your suppliers or published datasets.",
+  "links": [
+    {
+      "label": "Use phase emissions for pumps and motors",
+      "to": "/answers/use-phase-emissions-for-pumps-and-motors"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Foundry footprint per tonne of casting",
+      "to": "/answers/foundry-carbon-footprint-per-tonne-good-casting"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "worldsteel life cycle inventory data for steel products",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

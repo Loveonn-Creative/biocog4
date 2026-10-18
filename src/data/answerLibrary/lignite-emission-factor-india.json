@@ -1,0 +1,84 @@
+{
+  "slug": "lignite-emission-factor-india",
+  "q": "What emission factor should I use for lignite burned in a boiler or thermic fluid heater in India?",
+  "title": "Emission factor for lignite in India",
+  "short": "Build it from the lignite's own calorific value: kg CO2 per kg = net calorific value in TJ per kg x 101,000, the IPCC 2006 default for lignite. With the IPCC default of 11.9 TJ per thousand tonnes, that gives about 1.20 kg CO2 per kg. Never apply a coal factor to lignite tonnes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Gujarat and Tamil Nadu units burning lignite in boilers and heaters",
+  "sections": [
+    {
+      "h": "The formula, step by step",
+      "ol": [
+        "Take the gross calorific value (GCV) from the supplier's test report, in kcal per kg.",
+        "Convert to MJ per kg: kcal per kg x 4.1868 / 1,000.",
+        "Convert GCV to net calorific value (NCV), as below.",
+        "Multiply NCV in MJ per kg by 0.101 kg CO2 per MJ, which is 101,000 kg per TJ.",
+        "Multiply by tonnes burnt, from weighbridge slips or stock records, not tonnes invoiced if stock changed."
+      ]
+    },
+    {
+      "h": "Getting from GCV to NCV for wet lignite",
+      "p": [
+        "NCV leaves out the heat spent turning water in the fuel into steam, and lignite holds a lot of water. The best figure is an NCV your lab reports directly. Otherwise, the net value formulae in ISO 1928 (adopted in India as IS 1350 Part 2) reduce, for an as-received sample, to approximately NCV = GCV minus 0.212 x hydrogen % minus 0.0244 x moisture %, in MJ per kg.",
+        "Here hydrogen is the fuel's own hydrogen, not the hydrogen in its moisture, and GCV, hydrogen and moisture must all be on the same as-received basis from the same test. The formula drops a small oxygen and nitrogen term, so treat the result as an estimate and say so."
+      ]
+    },
+    {
+      "h": "Why the coal factor gets lignite wrong",
+      "p": [
+        "Per unit of energy, lignite releases more CO2 than bituminous coal: 101,000 against 94,600 kg per TJ in the IPCC defaults. Per kg it releases much less, because each kg carries less energy. A coal factor per kg, such as 2.42 kg CO2 per kg, applied to lignite tonnes can more than double the result."
+      ]
+    },
+    {
+      "h": "What to keep as evidence",
+      "ul": [
+        "The supplier's test report for each lot, from GMDC, NLC India or your trader, showing GCV, moisture and the basis.",
+        "Weighbridge or stock records for tonnes burnt.",
+        "If you have no test, the IPCC default NCV with a note that it is a default, so the figure can be replaced later."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 tonnes in a month",
+    "lines": [
+      "Test report (illustrative): GCV 2,800 kcal per kg, moisture 45%, hydrogen 2.5%, as received",
+      "GCV: 2,800 x 4.1868 / 1,000 = 11.723 MJ per kg",
+      "NCV: 11.723 minus (0.212 x 2.5 = 0.530) minus (0.0244 x 45 = 1.098) = 10.095 MJ per kg",
+      "Factor: 10.095 x 0.101 = 1.0196, about 1.02 kg CO2 per kg",
+      "Emissions: 500,000 kg x 1.0196 = 509,800 kg, about 509.8 t CO2",
+      "Wrong way, coal factor: 500,000 x 2.42 = 1,210 t CO2, more than twice as much"
+    ],
+    "note": "Test values are illustrative. Use the figures on your own lot's report."
+  },
+  "senseible": "Senseible's published fuel factors include coal at 2.42 kg CO2 per kg, which is built for coal. For a lignite line, use a lignite factor worked out from your supplier's calorific value test as above, and keep the test report with the invoice.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    },
+    {
+      "label": "Coal, PNG or biomass boiler emissions",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "How to choose emission factors",
+      "to": "/climate-intelligence/emission-factors-selection-guidance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 1, Tables 1.2 (NCV) and 1.4 (CO2 per TJ)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 1928, Coal and coke: determination of gross calorific value (with net calorific value formulae; IS 1350 Part 2 in India)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
