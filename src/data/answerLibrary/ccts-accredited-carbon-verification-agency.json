@@ -1,0 +1,72 @@
+{
+  "slug": "ccts-accredited-carbon-verification-agency",
+  "q": "Who can verify a CCTS project or compliance report in India, and how does an agency get accredited?",
+  "title": "Who can verify under CCTS in India",
+  "short": "Only an Accredited Carbon Verification Agency, accredited by the Bureau of Energy Efficiency, can verify a compliance report or an offset project under India's Carbon Credit Trading Scheme. An agency applies to BEE under its accreditation procedure, showing sector competence, impartiality and quality systems, and verifies only within the scope it is accredited for.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Consultants, verifiers and obligated entities",
+  "sections": [
+    {
+      "h": "Who may verify",
+      "p": [
+        "Under the Carbon Credit Trading Scheme, 2023, BEE administers the scheme and accredits carbon verification agencies. An obligated entity's yearly emission intensity report and an offset project's validation and verification must be done by an agency on BEE's list, within its accredited sectors. A consultant, energy auditor or software provider that is not accredited cannot sign off."
+      ]
+    },
+    {
+      "h": "How an agency gets accredited",
+      "ol": [
+        "Read BEE's Accreditation Procedure and Eligibility Criteria for Accredited Carbon Verification Agency (first issued in July 2024) in its latest version.",
+        "Apply to BEE with proof of legal standing, the sectors applied for, and qualified lead verifiers and technical experts for each sector.",
+        "Show impartiality and conflict of interest controls, and a documented quality system for verification work, the same ground ISO 14065 covers.",
+        "BEE assesses the application, has published provisionally eligible agencies for stakeholder comment, and then lists the agency for the sectors it is accredited for."
+      ]
+    },
+    {
+      "h": "Checking an agency before you appoint it",
+      "ul": [
+        "It appears on BEE's published list of accredited agencies.",
+        "Its accreditation covers your sector and is current on the date of verification.",
+        "It did not prepare your report or advise on it, which would be a conflict of interest.",
+        "Its team includes someone who knows your process, for example cement kilns or textile wet processing."
+      ]
+    },
+    {
+      "h": "What the verifier will want from you",
+      "p": [
+        "Monitoring data by BEE's detailed procedure: fuel and electricity by source, production, and the evidence behind each figure, such as invoices, meter logs and lab reports. Records that tie each number to a document cut the verifier's sampling time."
+      ]
+    }
+  ],
+  "senseible": "Senseible is not a verification agency. Its records link each fuel and electricity figure to the source invoice, which you can share with your accredited verifier.",
+  "links": [
+    {
+      "label": "CCTS monitoring and verification",
+      "to": "/answers/ccts-monitoring-verification-requirements"
+    },
+    {
+      "label": "Can an MSME earn CCTS offset credits?",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Carbon Credit Trading Scheme, 2023, S.O. 2825(E), Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "BEE, Accreditation Procedure and Eligibility Criteria for Accredited Carbon Verification Agency (July 2024)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "ISO 14065:2020, Requirements for bodies validating and verifying environmental information (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "BEE is still issuing accreditation criteria and the list of accredited agencies; recheck both before relying on this page."
+}

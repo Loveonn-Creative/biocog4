@@ -1,0 +1,83 @@
+{
+  "slug": "natural-diamond-polishing-carbon-per-carat",
+  "q": "What is the carbon footprint of cutting and polishing a natural diamond per carat in Surat?",
+  "title": "Natural diamond polishing CO2 per carat",
+  "short": "Work it out in two parts: your cutting and polishing energy per polished carat, from electricity and DG fuel divided by polished carats, plus the mining footprint of the rough you used, from the miner's published figure per carat recovered, scaled up for the weight lost in cutting.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Surat diamond manufacturers answering jewellery retailer requests",
+  "sections": [
+    {
+      "h": "Your factory part: energy per polished carat",
+      "ol": [
+        "Take a full month of electricity bills for the unit, plus DG diesel during outages.",
+        "Multiply kWh by 0.710 kg CO2 per kWh and diesel litres by 2.68 kg CO2 per litre.",
+        "Include planning, laser sawing, bruting, polishing wheels, air conditioning and compressors, since all serve the stones.",
+        "Divide by polished carats finished in the same month. Job work done for other firms should be split out by carats or machine hours first."
+      ]
+    },
+    {
+      "h": "The rough part: from the miner",
+      "p": [
+        "Large miners publish emissions per carat recovered in their sustainability reports, and these figures differ by mine, by year and by method. Use the figure for the miner and year your rough came from, quote the report edition, and say the figure is self-reported. For mixed parcels bought through traders, the source is often unknown; then use a stated average and label it as an estimate.",
+        "A Kimberley Process certificate tells you the country of origin of a parcel. It does not give a carbon figure."
+      ]
+    },
+    {
+      "h": "Scale the rough for weight loss",
+      "p": [
+        "Most of the rough's weight is cut away. Rough per polished carat = rough carats used / polished carats produced. Multiply the miner's per carat figure by that ratio, so the mining emissions of the lost weight sit on the stone you sell."
+      ]
+    },
+    {
+      "h": "What to tell the retailer",
+      "ul": [
+        "Report the factory part and the rough part separately, each with its source.",
+        "State the yield used and the period.",
+        "Avoid a single blended figure on a tag; India's CCPA guidelines on greenwashing expect claims to be specific and backed by evidence."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a polishing unit (illustrative)",
+    "lines": [
+      "Electricity: 40,000 kWh x 0.710 = 28,400 kg CO2; DG diesel: 500 L x 2.68 = 1,340 kg CO2",
+      "Factory total: 29,740 kg CO2 for 2,000 polished carats = 14.87 kg CO2 per polished carat",
+      "Rough used: 5,000 carats, so 2.5 rough carats per polished carat",
+      "Rough figure: 50 kg CO2e per carat recovered (placeholder) x 2.5 = 125 kg CO2e",
+      "Total: 14.87 + 125 = 139.87 kg CO2e per polished carat"
+    ],
+    "note": "The 50 kg per carat is a placeholder, not any miner's figure; use the published figure for your source. Energy use and yield are illustrative."
+  },
+  "senseible": "Senseible reads the polishing unit's electricity bills and DG diesel invoices and gives Scope 1 and 2 that you divide per polished carat. The rough stage comes from the miner's published figure.",
+  "links": [
+    {
+      "label": "Lab-grown diamond CO2 per carat",
+      "to": "/answers/lab-grown-diamond-carbon-footprint-per-carat"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Using your supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1 purchased goods",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Miner per carat figures are self-reported and change each year; cite the report edition you used.",
+  "reviewed": "2026-10-18"
+}

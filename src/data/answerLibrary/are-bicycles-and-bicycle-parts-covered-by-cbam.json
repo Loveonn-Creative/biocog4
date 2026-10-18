@@ -1,0 +1,77 @@
+{
+  "slug": "are-bicycles-and-bicycle-parts-covered-by-cbam",
+  "q": "Are bicycles and bicycle parts exported from Ludhiana covered by the EU CBAM?",
+  "title": "Are bicycles covered by EU CBAM?",
+  "short": "No, not today. Bicycles (CN heading 8712) and bicycle parts and accessories (8714) are not listed in Annex I of the CBAM Regulation, so an EU importer pays no CBAM on them even though they are mostly steel or aluminium. Some items a Ludhiana firm also ships, such as steel tubes and bolts, are covered.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Ludhiana bicycle and cycle-parts exporters",
+  "sections": [
+    {
+      "h": "Codes a cycle exporter is likely to ship",
+      "ul": [
+        "8712, bicycles and other cycles, not motorised: not in Annex I.",
+        "8714, parts and accessories of cycles, such as frames, forks, rims, hubs, spokes, handlebars and pedals classified there: not in Annex I.",
+        "7315, chain of iron or steel, the heading usually used for cycle chain: not in Annex I.",
+        "7304 to 7306, steel tubes and pipes, sold as tube: covered.",
+        "7318, screws, bolts, nuts and washers sold on their own: covered, because parts of general use are classified in their own heading, not as cycle parts.",
+        "7326 and 7616, other articles of steel and of aluminium: covered."
+      ]
+    },
+    {
+      "h": "Why the steel inside a bicycle does not count",
+      "p": [
+        "CBAM applies to the goods named in Annex I, by CN code. A finished bicycle is classified in chapter 87, so the steel tube or aluminium in its frame is not declared separately when the bicycle is imported. Coverage changes only if the item itself is declared under a covered code, for example a consignment of loose frame tubes or a box of fasteners sold as spares."
+      ]
+    },
+    {
+      "h": "Who decides the code",
+      "p": [
+        "Your buyer in the EU makes the customs declaration, so the CN code is theirs to declare and EU customs has the final word. Share the ITC-HS code printed on your shipping bill and settle the code line by line before the goods leave, above all when one container mixes complete cycles, loose parts, fasteners and tools."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "The European Commission proposed in December 2025 to add about 180 downstream steel and aluminium products to CBAM from 1 January 2028. The Council agreed its position in June 2026 (about 200 products) and the Parliament its mandate in September 2026 (about 450 products), and the three are now negotiating the final list. The proposal covers goods in several chapters, including 87, so check whether your exact 8 digit codes for 8712 and 8714 appear in the adopted text before you tell a buyer CBAM will never apply. Until an amendment is adopted and in force, Annex I as it stands decides."
+      ]
+    },
+    {
+      "h": "What EU buyers are more likely to ask for",
+      "p": [
+        "For goods outside CBAM, a buyer's request is usually a product carbon footprint for its own Scope 3 reporting: the steel and aluminium bought in, the factory's electricity and fuel, and paint or plating. That uses the same plant data a CBAM report would, so collecting it now also prepares you if the scope widens."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator and CBAM data drafts apply to covered goods; for bicycles it reads your electricity, fuel and material invoices to build the energy part of a product footprint for your buyer. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "CBAM for fastener exporters",
+      "to": "/climate-intelligence/cbam-fastener-exporters-india"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The downstream extension (proposal COM(2025) 989) was in trilogue in October 2026; recheck whether headings 8712 and 8714 are in the adopted Annex I list, expected to apply from 2028.",
+  "reviewed": "2026-10-18"
+}

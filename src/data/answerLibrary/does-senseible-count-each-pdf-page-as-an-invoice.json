@@ -1,0 +1,65 @@
+{
+  "slug": "does-senseible-count-each-pdf-page-as-an-invoice",
+  "q": "Does Senseible count each page of a PDF as a separate invoice against my monthly allowance?",
+  "title": "Does each PDF page count as one invoice?",
+  "short": "Yes, from your account's next period. Each PDF page and each photo counts as one invoice read: from 1 November 2026 for yearly and free plans, from the next billing date for monthly plans, and for every account by 1 December 2026. Until your date, each file counts as one.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Users uploading multi-page bills or scanned bundles",
+  "sections": [
+    {
+      "h": "When page counting reaches your account",
+      "ul": [
+        "Snapshot (free) and yearly plans: from 1 November 2026, India time.",
+        "Monthly plans: from your next billing date, and not before 1 November 2026.",
+        "Every account: by 1 December 2026, even if your next billing date falls later.",
+        "Before your date: a PDF counts as one read however many pages it has."
+      ]
+    },
+    {
+      "h": "How to work out the reads you will need",
+      "p": [
+        "Count pages, not documents. Reads a month = (PDF invoices a month x average pages per PDF) + photos a month. A three-page HT electricity bill uses three reads, and a 24-page scanned bundle of fuel slips uses 24.",
+        "Compare the total with your plan's invoice reads per calendar month: Snapshot 10, Essential 100, Pro 1,000 and Scale 10,000. Add a margin for your busiest month, such as year end."
+      ]
+    },
+    {
+      "h": "Ways to use fewer pages",
+      "ul": [
+        "Remove blank pages, covering letters, terms and conditions and advertisement pages before you scan.",
+        "For a long bill, keep the pages that show the billing period, tariff and units consumed, and check nothing you need sits on the pages you drop.",
+        "Scan at a readable resolution the first time, so you do not upload the same pages again as a new file."
+      ]
+    },
+    {
+      "h": "If you run out in a month",
+      "p": [
+        "Your plan's reads are used first, then any credits you bought. Extra invoice credits cost ₹79 per 100 invoices before GST and are bought on your profile with UPI. Credits bought on a yearly plan last 12 months; on a monthly or free plan they last 30 days. Otherwise, the plan's reads start again next calendar month."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one factory's month",
+    "lines": [
+      "40 single-page purchase invoices: 40 reads",
+      "6 electricity bills of 3 pages each: 6 x 3 = 18 reads",
+      "1 scanned bundle of fuel slips, 24 pages: 24 reads",
+      "10 photos of delivery challans: 10 reads",
+      "Total with page counting: 40 + 18 + 24 + 10 = 92 reads, inside Essential's 100",
+      "Before page counting the same month was 40 + 6 + 1 + 10 = 57 files, so 57 reads"
+    ],
+    "note": "Illustrative volumes. If a busy month reaches 120 reads on Essential, one pack of 100 credits at ₹79 covers the extra 20."
+  },
+  "senseible": "This page describes Senseible's own counting rule, which is applied on the server for each account. PDFs over 10 pages are read in parts, and each page still counts once.",
+  "links": [
+    { "label": "Which Senseible plan do I need?", "to": "/answers/which-senseible-plan-do-i-need" },
+    { "label": "Senseible pricing", "to": "/pricing" },
+    { "label": "What happens when a plan expires", "to": "/answers/what-happens-when-senseible-plan-expires" },
+    { "label": "Reading a multi-page HT bill", "to": "/answers/multi-page-ht-electricity-bill-carbon" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Standard (method behind the calculations)", "url": "https://ghgprotocol.org/corporate-standard" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Page counting switches on between 1 November and 1 December 2026; recheck dates, allowances and credit prices against the pricing page."
+}

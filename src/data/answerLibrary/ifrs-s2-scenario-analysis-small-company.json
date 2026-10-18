@@ -1,0 +1,83 @@
+{
+  "slug": "ifrs-s2-scenario-analysis-small-company",
+  "q": "How much climate scenario analysis does IFRS S2 expect from a small or first-time reporter?",
+  "title": "IFRS S2 scenario analysis for small firms",
+  "short": "IFRS S2 expects scenario analysis proportionate to your circumstances: use reasonable and supportable information you can get without undue cost or effort, and match the approach to your skills, capabilities and resources. A small or first-time reporter can start qualitatively or with simple single-variable tests, but it must still assess resilience and disclose how.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian subsidiaries and suppliers of IFRS S2 reporters",
+  "sections": [
+    {
+      "h": "The two factors that set your approach",
+      "p": [
+        "IFRS S2's application guidance (paragraphs B1 to B18) asks you to weigh two things. First, your exposure to climate-related risks and opportunities: high exposure calls for more quantitative analysis. Second, the skills, capabilities and resources you have: a company without modelling staff is not expected to build models. As exposure or capability grows, the analysis is expected to deepen over time."
+      ]
+    },
+    {
+      "h": "What every reporter still has to disclose",
+      "ul": [
+        "Your assessment of climate resilience at the reporting date (paragraph 22).",
+        "Which scenarios you used and where they came from.",
+        "Whether one of them is aligned with the latest international agreement on climate change.",
+        "The time horizons, the key assumptions and the main inputs.",
+        "Why you judged the scenarios you chose relevant to your climate risks."
+      ]
+    },
+    {
+      "h": "A proportionate first year",
+      "ol": [
+        "List your sites, main products and main markets.",
+        "Pick two contrasting published scenarios, one orderly transition and one high warming, and write a short narrative of what each means for costs, demand and sites.",
+        "Run one or two simple quantitative tests: a carbon price on your Scope 1 and 2 emissions, and the main physical hazard at each site.",
+        "Write down limitations and what you will add next year."
+      ]
+    },
+    {
+      "h": "Status in India",
+      "p": [
+        "India has not made IFRS S2 mandatory as of this review; listed companies report through SEBI's BRSR. The question arises for Indian subsidiaries of groups reporting under IFRS S2 or a local version of it, and for companies reporting voluntarily. A parent may impose its own method; follow it where it does."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one carbon price test (illustrative)",
+    "lines": [
+      "Scope 1 and 2: 2,000 t CO2 a year",
+      "Assumed carbon price in an orderly scenario by 2030: ₹2,000 per t",
+      "Cost if fully borne: 2,000 x 2,000 = ₹40,00,000 a year",
+      "Against an EBITDA of ₹4 crore, that is 10% of EBITDA"
+    ],
+    "note": "The price and EBITDA are assumptions for illustration. Take the carbon price path from the scenario you name and state its source."
+  },
+  "senseible": "Senseible does not run climate scenario analysis. Its Scope 1 and 2 figures from your bills are the base emissions you would apply a scenario carbon price to.",
+  "links": [
+    {
+      "label": "Which NGFS scenario should I use?",
+      "to": "/answers/which-ngfs-scenario-should-i-use"
+    },
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "Climate risk",
+      "to": "/climate-risk"
+    },
+    {
+      "label": "Carbon pricing impact calculator",
+      "to": "/calculators/carbon-pricing-impact"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S2 Climate-related Disclosures (2023), paragraph 22 and paragraphs B1 to B18 (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "ISSB educational material on climate-related scenario analysis (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    }
+  ],
+  "reviewNote": "India has not mandated IFRS S2 at this review; check for any adoption by Indian regulators.",
+  "reviewed": "2026-10-18"
+}

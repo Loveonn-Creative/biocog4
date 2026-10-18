@@ -1,0 +1,87 @@
+{
+  "slug": "green-tariff-vs-recs-cheaper-scope-2",
+  "q": "Is a DISCOM green tariff or buying RECs the cheaper way to lower market-based Scope 2 in India?",
+  "title": "Green tariff or RECs: which costs less?",
+  "short": "Compare the two on rupees per kWh. A green tariff costs its premium per kWh over your normal tariff, set by your state commission. A REC costs its exchange clearing price per MWh divided by 1,000, plus fees. Whichever is lower for your units is cheaper, as long as it meets your buyer's quality rules.",
+  "topic": "markets",
+  "intent": "comparison",
+  "audience": "Factories that cannot install solar or use open access",
+  "sections": [
+    {
+      "h": "The formula",
+      "ul": [
+        "Green tariff cost per kWh = the green premium in your SERC order (rupees per kWh above your normal tariff), plus any extra charges the order adds.",
+        "REC cost per kWh = clearing price per MWh / 1,000, plus exchange and trader fees per certificate / 1,000.",
+        "Cost per tonne of market-based Scope 2 avoided = cost per kWh / 0.710 x 1,000, using the grid factor that applies to uncovered units."
+      ]
+    },
+    {
+      "h": "Costs the headline price leaves out",
+      "ul": [
+        "Green tariff: the minimum term and share of consumption set by your state's order, and whether you can step down if production falls.",
+        "RECs: trading only on exchange sessions, the need for a trading account through a member or trader, and price moves between sessions.",
+        "Both: the time spent collecting evidence each year, which is small for a green tariff shown on the bill and larger for RECs bought in several lots."
+      ]
+    },
+    {
+      "h": "Quality, not only price",
+      "p": [
+        "Either instrument lowers market-based Scope 2 only if it meets the GHG Protocol Quality Criteria: the renewable attribute is yours alone, for the stated kWh, for your reporting year, from the Indian market. A green tariff shows on the discom's bill, and the Green Energy Open Access Rules provide for a green certificate to the consumer. For RECs, keep the exchange trade record and the registry record of the certificates redeemed for you. Some buyers prefer power supplied through your own connection; ask before choosing on price."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Get your SERC's current green tariff order and the last few REC trading results from the power exchanges.",
+        "Work out both costs per kWh for next year's expected units.",
+        "If the gap is small, pick the green tariff for simpler evidence; if RECs are clearly cheaper and your buyer accepts them, buy RECs matched to the reporting year.",
+        "Recheck before each financial year, since both prices change."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500,000 kWh a year (illustrative prices, not current quotes)",
+    "lines": [
+      "Green tariff: premium of Rs 0.66 per kWh x 500,000 = Rs 3,30,000",
+      "RECs: 500 MWh x (Rs 300 clearing price + Rs 20 fees) = Rs 1,60,000",
+      "Market-based Scope 2 avoided either way: 500,000 x 0.710 = 355,000 kg CO2, 355 tonnes",
+      "Cost per tonne: green tariff Rs 3,30,000 / 355 = about Rs 930; RECs Rs 1,60,000 / 355 = about Rs 451"
+    ],
+    "note": "Prices are illustrative. Use your state's order and the latest exchange results."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from your bills at 0.710 kg CO2 per kWh and a market-based figure when you supply the green tariff or REC details. Comparing tariff and certificate prices is a calculation you make from your SERC order and exchange results.",
+  "links": [
+    {
+      "label": "Does a green tariff make Scope 2 zero",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "I-REC or India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022 (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "Green tariff premiums are set by each SERC and REC prices move every trading session; refresh both before deciding.",
+  "reviewed": "2026-10-18"
+}

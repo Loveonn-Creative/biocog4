@@ -1,0 +1,82 @@
+{
+  "slug": "fuel-surcharge-on-electricity-bill-emissions",
+  "q": "My electricity bill shows a fuel and power purchase adjustment surcharge. Does that change my emissions?",
+  "title": "Does a fuel surcharge on my bill raise CO2?",
+  "short": "No. The fuel and power purchase adjustment surcharge (called FPPCA, FPPAS or FAC depending on the state) changes what you pay per unit, not the units you used. Scope 2 is kWh x 0.710 kg CO2 per kWh, so your emissions stay the same. It matters only if you work kWh back from rupees.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSME owners reading HT and LT bills",
+  "sections": [
+    {
+      "h": "What the surcharge is",
+      "p": [
+        "When a discom pays more or less than planned for fuel and for power it buys, it passes the difference to consumers as a charge per unit, worked out by a formula the state electricity regulatory commission approves. Rule 14 of the Electricity Rules, 2005, inserted by the Electricity (Amendment) Rules, 2022 in December 2022, provides for this pass-through to happen automatically, month by month; each state applies it through its own commission's regulations. On the bill it appears as paise or rupees per kWh multiplied by your units."
+      ]
+    },
+    {
+      "h": "It does not mean the grid got dirtier",
+      "p": [
+        "A high surcharge usually reflects costlier coal, imported coal or expensive power bought on the market. It says nothing reliable about the grid's average emissions in that month. Your location-based factor stays the CEA weighted average for the edition you use for the year, whatever the surcharge does."
+      ]
+    },
+    {
+      "h": "The one trap: estimating kWh from the bill amount",
+      "p": [
+        "If a bill is missing and you only know what you paid, dividing the total by the energy rate overstates units, because the total also holds the surcharge, fixed or demand charges and duty. Strip those out first, or better, get a duplicate bill from the discom portal with the units printed."
+      ]
+    },
+    {
+      "h": "What to record",
+      "ul": [
+        "Units consumed in kWh for each billing period, from the bill.",
+        "The factor and its source: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0.",
+        "Surcharge, duty and other charge lines only in your cost records, not in the emissions calculation."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: same units, with and without the surcharge",
+    "lines": [
+      "Units: 20,000 kWh; energy charge ₹7.50 per kWh = ₹1,50,000",
+      "Fuel and power purchase surcharge: ₹0.40 per kWh = ₹8,000",
+      "Emissions: 20,000 x 0.710 = 14,200 kg CO2, with or without the surcharge",
+      "Wrong way: ₹1,58,000 / ₹7.50 = 21,067 kWh x 0.710 = 14,957 kg CO2",
+      "Overstatement: 757 kg CO2, about 5.3%"
+    ],
+    "note": "Rates are illustrative. Your state's surcharge changes month to month."
+  },
+  "senseible": "Senseible calculates from the units printed on the bill, not the rupee amount. It treats charge lines such as fuel adjustment, demand charges and duty as costs on the bill, not separate activities.",
+  "links": [
+    {
+      "label": "Does tariff category change emissions?",
+      "to": "/answers/does-electricity-tariff-category-change-emissions"
+    },
+    {
+      "label": "Multi-page HT bill and carbon",
+      "to": "/answers/multi-page-ht-electricity-bill-carbon"
+    },
+    {
+      "label": "How to read an HT industrial bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Amendment) Rules, 2022, Rule 14: automatic pass-through of fuel and power purchase cost (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

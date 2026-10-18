@@ -1,0 +1,80 @@
+{
+  "slug": "article-6-4-share-of-proceeds-and-omge",
+  "q": "How much of an Article 6.4 project's credits go to the share of proceeds and overall mitigation?",
+  "title": "Article 6.4 share of proceeds and OMGE",
+  "short": "At issuance, 5% of an Article 6.4 project's credits go to the Adaptation Fund as the share of proceeds, and at least 2% are cancelled for overall mitigation in global emissions. So a developer receives at most 93 of every 100 credits issued, before any buffer contribution, and also pays administration fees in money.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Indian developers of CDM-transition and new 6.4 projects",
+  "sections": [
+    {
+      "h": "The two deductions",
+      "ul": [
+        "Share of proceeds for adaptation: 5% of the credits issued, transferred to the Adaptation Fund's account in the mechanism registry.",
+        "Overall mitigation in global emissions (OMGE): at least 2% of the credits issued, moved to a cancellation account. These credits cannot be used by anyone, toward any country's target or any company's claim.",
+        "Both are taken when credits are issued, before any reach the developer's account."
+      ]
+    },
+    {
+      "h": "The monetary share of proceeds",
+      "p": [
+        "Separately, the mechanism charges fees in money to cover its administration, for example on registration and issuance. The Supervisory Body sets these in its standard on the share of proceeds and fees; check the current version, because the amounts are revised."
+      ]
+    },
+    {
+      "h": "Other things that reduce saleable credits",
+      "ul": [
+        "Removal projects contribute to a buffer pool against reversals, under the Supervisory Body's standard on non-permanence.",
+        "Credits authorised by India for international use carry a corresponding adjustment. That does not reduce the number of credits, but it affects price and who may claim them.",
+        "Check any conditions India attaches to its host country approval or authorisation separately; they are not part of the mechanism's deductions."
+      ]
+    },
+    {
+      "h": "Why OMGE exists",
+      "p": [
+        "Under the old CDM, credits only offset emissions elsewhere, so the net effect on the atmosphere was zero at best. Cancelling at least 2% of every issuance means each 6.4 project delivers some reduction that no one counts against their own emissions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100,000 credits issued",
+    "lines": [
+      "Share of proceeds: 100,000 x 0.05 = 5,000 credits to the Adaptation Fund",
+      "OMGE: 100,000 x 0.02 = 2,000 credits cancelled",
+      "To the developer: 100,000 x (1 minus 0.05 minus 0.02) = 93,000 credits",
+      "Monetary fees and any buffer contribution come on top"
+    ],
+    "note": "2% is the minimum OMGE cancellation set by the rules."
+  },
+  "senseible": "Article 6.4 credits are issued only through the mechanism's registry. Senseible shows carbon credit eligibility signals from your own records.",
+  "links": [
+    {
+      "label": "CDM projects moving to Article 6.4",
+      "to": "/answers/cdm-projects-transition-to-article-6-4"
+    },
+    {
+      "label": "What is a corresponding adjustment?",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "India's approved Article 6.2 activities",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "Carbon credit pricing explained",
+      "to": "/climate-intelligence/carbon-credit-pricing-explained-vcm-compliance-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Decision 3/CMA.3, Annex: rules, modalities and procedures for the Article 6.4 mechanism (share of proceeds and OMGE)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "Article 6.4 Supervisory Body standards on share of proceeds, fees and non-permanence",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Supervisory Body fee standards are revised from time to time; recheck the monetary share of proceeds before budgeting."
+}

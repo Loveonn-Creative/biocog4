@@ -1,0 +1,75 @@
+{
+  "slug": "can-a-company-buy-ccts-credits-voluntarily",
+  "q": "Can a company that is not obligated under CCTS buy Indian carbon credit certificates for its own claims?",
+  "title": "Can I buy CCTS credits voluntarily?",
+  "short": "Yes, in principle. CERC's 2026 regulations on buying and selling carbon credit certificates let registered non-obligated entities buy them on CERC-registered power exchanges, with an Indian Carbon Market registry account. Check BEE's procedures for registering and for cancelling certificates against a voluntary claim, and whether trading has actually started, before you plan on it.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Corporates and exporters seeking Indian credits",
+  "sections": [
+    {
+      "h": "What the scheme already provides",
+      "ul": [
+        "Targets for notified sectors: obligated entities have greenhouse gas intensity targets, receive certificates when they do better and must buy them when they fall short.",
+        "An offset mechanism, added in December 2023: non-obligated entities can register projects under BEE-approved methodologies and earn certificates.",
+        "The CERC (Terms and Conditions for Purchase and Sale of Carbon Credit Certificates) Regulations, 2026, notified on 27 February 2026: trading on CERC-registered power exchanges, between a floor and a forbearance price approved by CERC on BEE's recommendation, by obligated and registered non-obligated entities.",
+        "A registry run by Grid Controller of India, which moves certificates between accounts when an exchange trade settles."
+      ]
+    },
+    {
+      "h": "What a voluntary buyer has to set up and check",
+      "ol": [
+        "Registration with BEE as a non-obligated entity and an account on the Indian Carbon Market registry.",
+        "An account with a power exchange that lists carbon credit certificates, through the route the exchange offers your entity type.",
+        "Whether trading sessions are running: the rules were in place in 2026, but check the exchanges for actual trades and prices.",
+        "How certificates are cancelled or retired for a voluntary purpose, with a record in your name, under BEE's detailed procedure.",
+        "What the certificate can be used for, since domestic certificates are not authorised for use abroad under Article 6 unless India authorises them."
+      ]
+    },
+    {
+      "h": "How to report it if you do buy",
+      "p": [
+        "Keep gross Scope 1 and 2 as calculated. Show any certificates you cancel separately, with quantity, vintage, project and registry record. Do not subtract them from your inventory, and avoid wording such as carbon neutral product unless the claim rules you sell under allow it."
+      ]
+    },
+    {
+      "h": "Alternatives if trading is not yet open to you",
+      "ul": [
+        "Reduce your own emissions and report the reduction.",
+        "Buy credits from an international registry with a clear retirement process, and check their quality.",
+        "Develop or co-fund a project under the CCTS offset mechanism, which is the route the scheme already sets out for non-obligated entities."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates your Scope 1 and 2 from invoices and bills and shows carbon credit eligibility signals for your own projects; buying and cancelling certificates happens through the CCTS registry and power exchanges.",
+  "links": [
+    {
+      "label": "Who runs India's carbon market registry",
+      "to": "/answers/who-runs-india-carbon-market-registry"
+    },
+    {
+      "label": "CCTS offset mechanism for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Deduct carbon credits from Scope 1 in BRSR",
+      "to": "/answers/deduct-carbon-credits-from-scope-1-brsr"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power, Carbon Credit Trading Scheme, 2023 (S.O. 2825(E)) and December 2023 amendment",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, Indian Carbon Market procedures",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "Check BEE's detailed procedures for non-obligated buyers (registration, retirement for voluntary claims) and whether certificate trading has started on the power exchanges; recheck the floor and forbearance prices.",
+  "reviewed": "2026-10-18"
+}

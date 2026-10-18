@@ -1,0 +1,54 @@
+{
+  "slug": "can-ccts-carbon-credits-be-sold-abroad",
+  "q": "Can carbon credit certificates issued under India's CCTS be sold to foreign buyers?",
+  "title": "Can CCTS carbon credits be sold abroad?",
+  "short": "Not under the rules published as of October 2026. Carbon credit certificates under India's Carbon Credit Trading Scheme are issued to entities registered in India and traded on Indian power exchanges for the domestic scheme. A transfer abroad would need India's authorisation under Article 6 of the Paris Agreement, and the published rules set out no such route yet.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian project developers and foreign buyers",
+  "sections": [
+    {
+      "h": "How the CCTS market is built",
+      "ul": [
+        "Compliance mechanism: obligated entities in notified sectors get greenhouse gas intensity targets, earn certificates for beating them and must buy certificates if they miss.",
+        "Offset mechanism: non-obligated entities can register projects under approved methodologies and earn certificates.",
+        "One certificate stands for one tonne of CO2e. BEE administers the scheme, Grid Controller of India acts as registry, and trading happens on power exchanges regulated by CERC.",
+        "Participants register in India; the design serves India's own emission intensity goals."
+      ]
+    },
+    {
+      "h": "What a sale abroad would need",
+      "p": [
+        "If a foreign buyer or another country used an Indian reduction, India would have to authorise it and make a corresponding adjustment, adding the tonne back to its own balance. MoEFCC has set up a National Designated Authority for the Implementation of Article 6 (NDAIAPA) for these decisions, and has published a list of activities it would consider for Article 6.2 trades. No published rule turns a CCTS certificate into an authorised, exportable unit."
+      ]
+    },
+    {
+      "h": "What foreign buyers can do instead",
+      "ul": [
+        "Buy authorised credits from Indian projects through a bilateral Article 6.2 arrangement, for activities on India's list, with a letter of authorisation.",
+        "Buy voluntary market credits from Indian projects, and check whether they carry authorisation for the claim you plan to make.",
+        "Fund or invest in Indian projects directly, with the credit rights agreed in the contract."
+      ]
+    },
+    {
+      "h": "What to watch",
+      "p": [
+        "India is still writing parts of the scheme, including how the offset mechanism links to Article 6. Before signing any deal that relies on exporting certificates, check the latest MoEFCC and BEE notifications and ask for the authorisation in writing."
+      ]
+    }
+  ],
+  "senseible": "Senseible's carbon credit eligibility signals show whether your documented activity might support a project. Trading rules for CCTS certificates are set by the government, BEE and the power exchanges.",
+  "links": [
+    { "label": "India's Article 6.2 approved activities", "to": "/answers/india-article-6-2-approved-activities" },
+    { "label": "Can an MSME earn CCTS offset credits?", "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits" },
+    { "label": "What is a corresponding adjustment?", "to": "/answers/what-is-a-corresponding-adjustment" },
+    { "label": "India's CCTS targets", "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets" }
+  ],
+  "sources": [
+    { "label": "Carbon Credit Trading Scheme, 2023, as amended (MoEFCC and Ministry of Power notifications)", "url": "https://moef.gov.in" },
+    { "label": "BEE, Carbon Credit Trading Scheme procedures", "url": "https://beeindia.gov.in" },
+    { "label": "Paris Agreement Article 6.2 and decision 2/CMA.3 (UNFCCC)", "url": "https://unfccc.int" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Policy on international transfer of CCTS certificates is not settled; recheck MoEFCC and BEE notices before relying on this page."
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "bicycle-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of one bicycle for a European buyer?",
+  "title": "Carbon footprint of one bicycle",
+  "short": "Add three parts and express them per bicycle: the materials in it (steel or aluminium tube, rims, spokes, chain, tyres, plastics) times their emission factors, your factory's electricity and fuel divided by bicycles built, and the packaging. That gives a cradle-to-gate footprint in kg CO2e per bicycle under ISO 14067.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ludhiana bicycle makers answering EU retailer footprint requests",
+  "sections": [
+    {
+      "h": "Set the unit and boundary first",
+      "ul": [
+        "Declared unit: one finished bicycle of a named model, with its weight. A 26 inch roadster and an aluminium MTB give very different results, so report per model.",
+        "Boundary: cradle to factory gate is the usual ask. Add sea freight to the EU port only if the buyer asks for cradle to customer.",
+        "Exclude the use phase and end of life unless the buyer requests them, and say so in the report."
+      ]
+    },
+    {
+      "h": "Materials: the largest part",
+      "p": [
+        "List every part by mass from the bill of materials, using the mass bought, not the mass in the finished cycle. Tube cutting, mitring and pressing make scrap, and that steel was still made for you. Bought-in components such as freewheels, chains, saddles and tyres count too."
+      ],
+      "ul": [
+        "Steel and aluminium: best is the supplier's EPD or product footprint for that grade. Otherwise use a published average such as worldsteel LCI data or International Aluminium Institute data, and name it.",
+        "Rubber, plastics and paint: use a supplier figure or one consistent database.",
+        "Scrap you sell to a recycler leaves the boundary; do not subtract a credit for it under the cut-off method."
+      ]
+    },
+    {
+      "h": "Factory energy per bicycle",
+      "p": [
+        "Take a full month or year of electricity bills, DG diesel and paint oven fuel. Multiply kWh by 0.710 kg CO2 per kWh (CEA grid factor) and each fuel by its IPCC 2006 default, add them, and divide by bicycles built in the same period. If you also make parts for other assemblers, split energy by machine hours or mass before dividing."
+      ]
+    },
+    {
+      "h": "What the European buyer usually checks",
+      "ol": [
+        "The declared unit, boundary and period.",
+        "The share of the result from supplier-specific data versus averages.",
+        "The source and edition of each material factor.",
+        "That CO2e is used for materials and the grid and fuel figures are CO2 factors, stated as such."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one steel roadster (illustrative factors)",
+    "lines": [
+      "Steel bought per bicycle: 14 kg x 2.3 kg CO2e per kg (assumed) = 32.2 kg CO2e",
+      "Rubber and plastic parts: 2 kg x 3.0 kg CO2e per kg (assumed) = 6.0 kg CO2e",
+      "Factory month: 60,000 kWh x 0.710 = 42,600 kg; LPG 3,000 kg x 2.98 = 8,940 kg; diesel 1,000 L x 2.68 = 2,680 kg; total 54,220 kg CO2",
+      "Per bicycle: 54,220 / 10,000 bicycles = 5.42 kg CO2",
+      "Carton: 2 kg x 1.0 kg CO2e per kg (assumed) = 2.0 kg CO2e",
+      "Cradle to gate: 32.2 + 6.0 + 5.42 + 2.0 = 45.62 kg CO2e per bicycle"
+    ],
+    "note": "Material masses and factors are placeholders for the arithmetic, not published values. Replace them with your bill of materials and supplier or database factors. Inbound transport is left out here."
+  },
+  "senseible": "Senseible reads your electricity bills, DG diesel and LPG invoices and gives factory Scope 1 and 2 that you divide per bicycle. Material factors come from your suppliers or a published database you choose.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Using your supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "worldsteel, life cycle inventory data for steel products",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

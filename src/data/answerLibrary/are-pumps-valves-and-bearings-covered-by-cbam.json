@@ -1,0 +1,75 @@
+{
+  "slug": "are-pumps-valves-and-bearings-covered-by-cbam",
+  "q": "Are pumps, valves and bearings from Indian engineering clusters covered by the EU CBAM?",
+  "title": "Are pumps, valves and bearings under CBAM?",
+  "short": "No, not today. Pumps (CN 8413), taps and valves (8481) and ball or roller bearings (8482) are machinery in chapter 84, which Annex I of the CBAM Regulation does not list. Flanges and pipe fittings (7307), fasteners (7318) and other steel or aluminium articles (7326, 7616) shipped on their own are covered. Some pumps could be added from 2028.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rajkot, Coimbatore and Ahmedabad engineering exporters",
+  "sections": [
+    {
+      "h": "Heading by heading",
+      "ul": [
+        "8413, pumps for liquids, including monoblock, submersible and centrifugal pumps, and their parts classified under 8413: not covered.",
+        "8481, taps, cocks and valves for pipes, boilers and tanks, and their parts: not covered.",
+        "8482, ball and roller bearings, and balls, needles and rollers classified there: not covered.",
+        "7307, tube or pipe fittings of iron or steel, including flanges, elbows and couplings: covered.",
+        "7318, bolts, nuts, screws and washers sold separately: covered.",
+        "7326 and 7616, other articles of steel and aluminium, including steel forgings that are not further worked: covered."
+      ]
+    },
+    {
+      "h": "Where engineering exporters get caught",
+      "p": [
+        "A valve maker often ships flanges and fittings in the same order, and a pump maker may sell spare fasteners or fabricated base frames. Those lines can fall under covered steel headings even though the pump or valve does not. A casting shipped rough, before it is recognisable as a pump or valve part, may also be classified as a steel or aluminium article rather than a machine part. List every line of the commercial invoice with its code before assuming the whole consignment is outside CBAM."
+      ]
+    },
+    {
+      "h": "The importer's 50 tonne threshold",
+      "p": [
+        "Since the 2025 simplification, an EU importer that brings in no more than 50 tonnes a year in total of covered iron and steel, aluminium, fertiliser and cement goods is exempt. A small buyer importing a few tonnes of flanges may fall under it, but the test is the importer's total for the year, not your shipment, so ask before relying on it."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "The European Commission proposed in December 2025 to add about 180 downstream steel and aluminium products to CBAM from 1 January 2028. The Council agreed its position in June 2026 (about 200 products) and the Parliament its mandate in September 2026 (about 450 products), and the three are now negotiating the final list. The Commission's list already includes some pump subheadings within 8413, and the Parliament's longer list adds many more chapter 84 machines. Check your exact 8 digit codes for pumps, valves and bearings against the adopted list, and put a CBAM cost clause in any contract that runs past 2027."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator and CBAM data drafts cover goods in Annex I, such as flanges and fasteners; for pumps, valves and bearings it reads your plant's fuel, electricity and material invoices to support a product footprint for the buyer. Your EU importer confirms the CN code.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Are aluminium castings covered by CBAM",
+      "to": "/answers/are-aluminium-castings-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification (50 tonne threshold)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The downstream extension (proposal COM(2025) 989) was in trilogue in October 2026; the Commission list includes some 8413 subheadings. Recheck the adopted list for 8413, 8481 and 8482.",
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "acrylic-sweater-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of an acrylic or woollen sweater made in Ludhiana?",
+  "title": "Acrylic or wool sweater footprint per piece",
+  "short": "There is no single figure; you calculate it per style. Multiply the yarn each sweater really uses, including knitting and linking waste, by the yarn's footprint per kg, then add knitting and finishing electricity at 0.710 kg CO2 per kWh and dyeing fuel. Yarn usually dominates, and for wool the farm stage decides most of it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Ludhiana hosiery and knitwear exporters",
+  "sections": [
+    {
+      "h": "Start from yarn bought, not garment weight",
+      "p": [
+        "Weigh the yarn issued for a lot and divide by good pieces packed. That figure includes flat knitting waste, linking and trimming losses and rejects, so it is higher than the finished sweater's weight. Use it, not the label weight, as the mass you multiply by the yarn factor."
+      ]
+    },
+    {
+      "h": "Acrylic yarn: where the factor comes from",
+      "p": [
+        "Acrylic fibre is made from acrylonitrile, a fossil chemical, so most of its footprint sits in fibre production before it reaches your spinner. Ask the yarn supplier for a cradle to gate figure per kg of dyed or grey yarn, made under ISO 14067. If they have none, use a published life cycle dataset for acrylic fibre plus the spinner's own energy, and name the dataset and year."
+      ]
+    },
+    {
+      "h": "Wool: the farm stage and the allocation choice",
+      "p": [
+        "Most of a wool yarn's footprint comes from the sheep: methane from digestion and nitrous oxide from manure and pasture, which is why wool figures are in CO2e, not CO2. Sheep give both wool and meat, so the farm's emissions must be split between them. Splitting by mass, by economic value or by biophysical need can change the wool figure several times over.",
+        "Pick one method, use the same one for every style, and write it on the footprint you send. Add scouring, combing and spinning energy on top."
+      ]
+    },
+    {
+      "h": "Your factory's share per piece",
+      "ul": [
+        "Electricity for flat knitting, linking, mending, pressing and checking: monthly kWh x 0.710, divided by pieces, or by knitting minutes where styles differ a lot.",
+        "Dyeing and washing: boiler fuel x its factor, for example PNG at 2.05 kg CO2 per scm or coal at 2.42 kg CO2 per kg, split to the lots dyed.",
+        "DG diesel at 2.68 kg CO2 per litre if you ran the generator.",
+        "Polybag, tags and carton share, if the buyer asks for packed product."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a 450 g acrylic sweater",
+    "lines": [
+      "Yarn issued per good piece: 0.50 kg (finished weight 0.45 kg)",
+      "Yarn factor, illustrative placeholder: 8.0 kg CO2e per kg, so 0.50 x 8.0 = 4.00 kg CO2e",
+      "Knitting and finishing: 18,000 kWh for 12,000 pieces = 1.5 kWh, x 0.710 = 1.065 kg CO2",
+      "Yarn dyeing: 0.6 scm PNG per kg yarn x 0.50 kg = 0.30 scm, x 2.05 = 0.615 kg CO2",
+      "Total: 4.00 + 1.065 + 0.615 = 5.68 kg CO2e per sweater, before packaging"
+    ],
+    "note": "The 8.0 yarn factor is a placeholder to show the arithmetic, not a published value for acrylic. Replace it with your supplier's or a named dataset's figure. A wool sweater uses the same steps with a wool yarn factor and its allocation method stated."
+  },
+  "senseible": "Senseible reads your electricity, PNG, coal and diesel bills into Scope 1 and 2 figures for the factory, which give the per-piece energy share. The yarn factor comes from your supplier's data or a published dataset.",
+  "links": [
+    {
+      "label": "Garment stitching emissions per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Spinning mill footprint per kg of yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 10, Emissions from livestock and manure management",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

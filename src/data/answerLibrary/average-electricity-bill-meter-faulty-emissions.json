@@ -1,0 +1,82 @@
+{
+  "slug": "average-electricity-bill-meter-faulty-emissions",
+  "q": "My electricity bill was raised on average units because the meter was faulty. What do I use for emissions?",
+  "title": "Average units on a faulty meter bill",
+  "short": "Use the assessed units printed on the bill for those months, mark them as an estimate, and correct them when the discom revises the account after the meter is replaced. Put any revision back into the months it relates to, not the month the adjustment appears on your bill.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with provisional or average bills",
+  "sections": [
+    {
+      "h": "How to spot an assessed bill",
+      "p": [
+        "The meter status or reading column shows a code or word such as defective, average, provisional or assessed instead of two readings, or the present and past readings are the same while units are still charged. Your state's electricity supply code sets how the discom assesses units while a meter is defective and how it settles the account later."
+      ]
+    },
+    {
+      "h": "Check the assessed units against production",
+      "p": [
+        "Compare the assessed kWh with your output in those months. If production rose sharply, the average understates your use; if a line was shut, it overstates it. You can report the assessed figure, but write the reason in your estimation note and say whether you think it is high or low."
+      ]
+    },
+    {
+      "h": "When the revision arrives",
+      "ol": [
+        "Ask the discom for the meter test report and the revised assessment, and keep both with the bills.",
+        "Spread the revised units over the months they cover, in the same way the discom calculated them.",
+        "Leave the month in which the debit or credit was billed with only its own metered units.",
+        "If your report for that year is already published, correct it under your recalculation policy when the change is material."
+      ]
+    },
+    {
+      "h": "If no revision ever comes",
+      "p": [
+        "Keep the assessed units, labelled as an estimate based on the discom's assessment. A check meter or sub-meter readings for the same period, if you have them, are better evidence than the average and can be used instead, with the reason stated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three assessed months, then a revision",
+    "lines": [
+      "April to June assessed at 10,000 kWh each: 30,000 x 0.710 = 21,300 kg CO2",
+      "New meter fitted; discom revises the three months to 11,200 kWh each and debits 3,600 kWh on the August bill",
+      "Corrected April to June: 33,600 x 0.710 = 23,856 kg CO2, an increase of 2,556 kg",
+      "August keeps only its own metered units; the 3,600 kWh debit is not added to August"
+    ],
+    "note": "Numbers are illustrative. Factor: 0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0."
+  },
+  "senseible": "Senseible records the units printed on each bill, so the assessed months carry the discom's figure. Keep the revision bill as evidence and update the affected periods.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Split a bill across months",
+      "to": "/answers/split-electricity-bill-across-months-for-carbon"
+    },
+    {
+      "label": "Write an estimation note for a verifier",
+      "to": "/answers/estimation-note-for-verifier"
+    },
+    {
+      "label": "Footprint from an electricity bill",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA (Installation and Operation of Meters) Regulations, 2006",
+      "url": "https://cea.nic.in"
+    },
+    {
+      "label": "Electricity Act, 2003, section 55 (use of meters), Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

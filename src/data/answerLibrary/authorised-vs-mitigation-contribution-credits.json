@@ -1,0 +1,77 @@
+{
+  "slug": "authorised-vs-mitigation-contribution-credits",
+  "q": "What is the difference between an authorised Article 6 credit and a mitigation contribution unit?",
+  "title": "Authorised vs mitigation contribution units",
+  "short": "An authorised Article 6 credit is one the host country lets a buyer count toward another country's target or a scheme such as CORSIA, and the host makes a corresponding adjustment. A mitigation contribution unit is not authorised: the reduction stays in the host's own total, so the buyer can claim it financed climate action, not an offset.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Buyers and Indian project developers",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Host country authorisation: authorised units have a letter of authorisation; mitigation contribution units do not.",
+        "Corresponding adjustment: made for authorised units; not made for mitigation contribution units.",
+        "Who counts the reduction: the buyer's country or scheme for authorised units; the host country, toward its own NDC, for mitigation contribution units.",
+        "Uses: national targets, CORSIA and compliance schemes need authorised units. Mitigation contribution units support results-based finance and contribution claims."
+      ]
+    },
+    {
+      "h": "Where the terms come from",
+      "p": [
+        "The Article 6.4 crediting mechanism was set up by decision 3/CMA.3. Decision 7/CMA.4 then split issued A6.4ERs into two kinds: those authorised for use toward NDCs or other international mitigation purposes, and mitigation contribution A6.4ERs, which are not authorised. The mechanism registry records each unit's authorisation status at issuance. Under Article 6.2, authorised units are traded between countries as ITMOs. Voluntary standards can also tag credits that carry host authorisation, and ICVCM can show authorisation as an attribute of CCP-labelled credits."
+      ]
+    },
+    {
+      "h": "Which claim each unit supports",
+      "ul": [
+        "Counting toward a country's target or CORSIA: authorised units only.",
+        "A corporate offset claim against your own emissions: many buyers now prefer authorised units so the same tonne is not also counted in the host's NDC. Whatever you buy, state its authorisation status in the claim.",
+        "A contribution claim, saying you paid for reductions that help the host meet its own target: a mitigation contribution unit is enough."
+      ]
+    },
+    {
+      "h": "What an Indian developer should settle first",
+      "ol": [
+        "Check whether the activity is on India's list for Article 6 trades.",
+        "Apply to the national authority for authorisation before promising authorised units in a contract.",
+        "Write in the contract what happens to price and delivery if authorisation is not given, so the buyer can take mitigation contribution units or walk away."
+      ]
+    }
+  ],
+  "senseible": "Senseible's carbon credit eligibility signals show whether your documented activity might support a project. Authorisation decisions are made by the host government.",
+  "links": [
+    {
+      "label": "What is a corresponding adjustment?",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "India's host country authorisation letter",
+      "to": "/answers/india-host-country-authorization-letter"
+    },
+    {
+      "label": "CDM projects moving to Article 6.4",
+      "to": "/answers/cdm-projects-transition-to-article-6-4"
+    },
+    {
+      "label": "VCMI Claims Code: Silver, Gold, Platinum",
+      "to": "/answers/vcmi-claims-code-silver-gold-platinum"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Paris Agreement Article 6.4: decision 3/CMA.3 and decision 7/CMA.4 (mitigation contribution A6.4ERs), UNFCCC",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles and CCP attributes",
+      "url": "https://icvcm.org"
+    },
+    {
+      "label": "VCMI Claims Code of Practice",
+      "url": "https://vcmintegrity.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Article 6 rules and India's authorisation process are still developing; recheck UNFCCC decisions and MoEFCC notices."
+}

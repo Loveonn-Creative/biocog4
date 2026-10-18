@@ -1,0 +1,83 @@
+{
+  "slug": "renewable-banking-units-which-month-scope-2",
+  "q": "Wind or solar units banked with the DISCOM: in which month and year do I count them in Scope 2?",
+  "title": "Banked wind or solar units in Scope 2",
+  "short": "Count banked units in the month they are drawn back and set off against your consumption, not the month they were generated. Units still in the bank at year end belong to the next reporting year if they are drawn later, and units that lapse are never claimed. Keep the generation month on record.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Tiruppur and Coimbatore mills with captive windmills; open access buyers",
+  "sections": [
+    {
+      "h": "Why the drawal month decides",
+      "p": [
+        "Market-based Scope 2 is about the electricity you consumed in the period and the instruments that cover it. Banked units are a credit held by the discom. They cover your consumption only when the discom adjusts them against your load on a bill. Until then they cover nothing, whatever month the turbine produced them in."
+      ]
+    },
+    {
+      "h": "Units still banked at 31 March",
+      "ul": [
+        "Banked units not drawn by the end of your reporting year stay out of that year's market-based figure.",
+        "If they are drawn in April or later, count them in the new year and note in the report that they were generated in the earlier year. The GHG Protocol quality criteria ask for instruments as close as possible to the period of consumption.",
+        "If the state rules make unused units lapse or get paid out at a set rate at the end of the banking cycle, those units were never set off against your load, so claim none of them."
+      ]
+    },
+    {
+      "h": "Banking charges and limits shrink usable units",
+      "p": [
+        "Under the Green Energy Open Access Rules, 2022, banking runs on at least a monthly cycle, and the state commission sets the banking limit and charge; check the current limit in your state's order and the Rules on powermin.gov.in. The charge is set by the commission, and some states take it in kind as a share of the units deposited. Older captive wind arrangements may still follow earlier state orders with their own banking periods. In each case, claim only the units the discom's statement shows as adjusted against your consumption."
+      ]
+    },
+    {
+      "h": "Location-based Scope 2 is not affected",
+      "p": [
+        "Location-based Scope 2 uses all electricity recorded at your meter for the month times 0.710 kg CO2 per kWh. Banking moves units between months on paper; it does not change what your meter recorded, so the location-based figure for each month stays the same."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: March, the last month of the year (illustrative)",
+    "lines": [
+      "Recorded at meter in March: 3,00,000 kWh",
+      "Wind adjusted from March generation: 1,00,000 kWh; drawn from bank: 40,000 kWh; discom units: 1,60,000 kWh",
+      "Location-based: 3,00,000 x 0.710 = 2,13,000 kg CO2",
+      "Market-based: 1,60,000 x 0.710 = 1,13,600 kg CO2, with 1,40,000 kWh of wind at zero",
+      "Still in the bank on 31 March: 25,000 kWh, left out of this year; claimed next year only if drawn"
+    ],
+    "note": "Figures are illustrative. The market-based result assumes the renewable attributes are yours and no RECs were sold for these units; the grid average stands in for a residual mix India does not publish."
+  },
+  "senseible": "Senseible reads the units and adjusted or banked units printed on the bill and reports location-based Scope 2 at 0.710 kg CO2 per kWh. Market-based Scope 2 needs the generation and banking statements you record as instrument data.",
+  "links": [
+    {
+      "label": "Open access green power on an HT bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Group captive solar in Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Residual mix factor for India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, banking provisions (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "Banking periods, caps and charges are set and revised by state commission orders; check your state's current order and the Scope 2 revision.",
+  "reviewed": "2026-10-18"
+}

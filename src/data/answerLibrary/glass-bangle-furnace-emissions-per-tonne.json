@@ -1,0 +1,64 @@
+{
+  "slug": "glass-bangle-furnace-emissions-per-tonne",
+  "q": "How do I calculate CO2 per tonne of glass from a natural gas pot or tank furnace in Firozabad?",
+  "title": "CO2 per tonne of glass from a pot furnace",
+  "short": "Add gas, power and batch CO2, then divide by tonnes of good glass: PNG in scm x 2.05 kg CO2, plus kWh x 0.710 kg CO2, plus soda ash, limestone and dolomite in the raw batch x their carbonate factors. Count gas burnt while the furnace idles, and leave cullet out of the carbonate part.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Firozabad bangle, bead and glassware units",
+  "sections": [
+    {
+      "h": "What a Firozabad pot or small tank unit adds up",
+      "ul": [
+        "Natural gas for the melting furnace. Since the Supreme Court's Taj Trapezium orders, Firozabad furnaces run mostly on gas, so the gas bill is the main input.",
+        "Gas or LPG for annealing lehrs and for muffle furnaces used in decoration, if they are on separate meters or cylinders.",
+        "Electricity for blowers, compressors, grinding and lighting.",
+        "Diesel for the DG set: litres x 2.68 kg CO2 per litre."
+      ]
+    },
+    {
+      "h": "Batch carbonate CO2, and why cullet matters",
+      "p": [
+        "Carbonates release CO2 when they melt: 0.41492 t CO2 per tonne of soda ash, 0.43971 per tonne of limestone and 0.47732 per tonne of dolomite, the IPCC 2006 factors. Only the raw batch counts. Cullet has already released its CO2, so a unit that melts only cullet or bought glass has no carbonate CO2 at all, and every tonne of cullet that replaces batch cuts this part."
+      ]
+    },
+    {
+      "h": "Divide by good glass, not glass melted",
+      "p": [
+        "Breakage and rejected pieces go back into the pot as cullet, so tonnes melted are higher than tonnes sold. Divide by good glass packed or sold in the period. For a per piece figure, divide the per tonne result by pieces per tonne: a 10 gram bangle gives 100,000 pieces a tonne."
+      ]
+    },
+    {
+      "h": "Idle firing and holidays",
+      "p": [
+        "A pot furnace is kept hot through holidays and slow weeks, burning gas with little or no output. That gas is part of your footprint. Use a full year of gas and a full year of output, rather than picking busy months, or your per tonne figure will look better than it is."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: pot furnace unit, 200 t of good glass",
+    "lines": [
+      "PNG: 60,000 scm x 2.05 = 123,000 kg CO2",
+      "Electricity: 15,000 kWh x 0.710 = 10,650 kg CO2",
+      "Soda ash: 30 t x 0.41492 = 12.448 t, or 12,448 kg CO2",
+      "Limestone: 15 t x 0.43971 = 6.596 t, or 6,596 kg CO2",
+      "Total: 123,000 + 10,650 + 12,448 + 6,596 = 152,694 kg CO2",
+      "Per tonne of good glass: 152,694 / 200 = 763 kg CO2",
+      "Per 10 gram bangle: 763 / 100,000 = 0.0076 kg, about 7.6 g CO2"
+    ],
+    "note": "Quantities are illustrative. Use your gas bills, electricity bills and batch register for the same months."
+  },
+  "senseible": "Senseible reads gas bills in scm at 2.05 kg CO2 per scm and electricity bills at 0.710 kg CO2 per kWh. Batch carbonate CO2 comes from your batch records and is added to those figures.",
+  "links": [
+    { "label": "Container glass furnace CO2 per tonne", "to": "/answers/glass-container-furnace-emissions-per-tonne" },
+    { "label": "Financing a glass furnace in Firozabad", "to": "/climate-intelligence/finance-glass-furnace-firozabad" },
+    { "label": "PNG bill in MMBtu to CO2", "to": "/answers/png-bill-mmbtu-to-co2" },
+    { "label": "PNG emission factor", "to": "/emission-factors/png" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Vol. 3, Ch. 2 Mineral Industry Emissions (Table 2.1, section 2.4 Glass production)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

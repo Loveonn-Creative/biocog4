@@ -1,0 +1,86 @@
+{
+  "slug": "polyester-blanket-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a polyester mink blanket made in Panipat?",
+  "title": "Polyester mink blanket carbon footprint",
+  "short": "Calculate it per kg of finished blanket: polyester yarn bought per kg times its fibre factor (virgin or recycled), plus your factory's electricity and boiler or thermic fluid heater fuel per kg produced, plus packaging. Multiply by the blanket's weight for a per piece figure, cradle to gate under ISO 14067.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Panipat home textile exporters",
+  "sections": [
+    {
+      "h": "Fibre: virgin or recycled polyester",
+      "p": [
+        "Use the yarn bought per kg of finished blanket, which is more than 1 kg because of knitting, shearing and cutting waste. Take the factor from your yarn supplier's footprint declaration if it has one. Otherwise use one published dataset, such as Textile Exchange or a commercial LCA database, for both virgin and recycled polyester, and name it with its year.",
+        "Recycled polyester from bottle flakes usually carries a lower factor than virgin, but claim it only with a supplier declaration or chain of custody certificate for the recycled share."
+      ]
+    },
+    {
+      "h": "Process energy in a mink blanket line",
+      "ul": [
+        "Electricity: raschel knitting, raising and brushing, shearing, cutting and stitching, compressors and lighting. Multiply kWh by 0.710 kg CO2 per kWh.",
+        "Heat: printing, drying and heat setting usually run on a thermic fluid heater or boiler burning coal, wood, briquettes or PNG. Multiply each fuel by its factor, for example coal at 2.42 kg CO2 per kg or PNG at 2.05 kg CO2 per scm.",
+        "DG diesel during outages at 2.68 kg CO2 per litre.",
+        "Biomass such as wood or briquettes: report its biogenic CO2 separately rather than adding it to fossil CO2."
+      ]
+    },
+    {
+      "h": "Dividing energy fairly",
+      "p": [
+        "Divide the month's process CO2 by kg of finished blankets packed in the same month. If the unit also makes curtains, bedsheets or yarn, split energy by machine hours or by kg through each line before dividing. Job work done for others comes out first."
+      ]
+    },
+    {
+      "h": "Packaging and what to leave out",
+      "p": [
+        "Add PVC or PP bags, cartons and inserts by mass and factor. Printing inks and chemicals are usually small but list them if your buyer asks. Leave out washing at home and end of life unless the buyer wants a full life cycle, and state the boundary."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 4 kg double-ply blanket (illustrative factors)",
+    "lines": [
+      "Yarn bought: 1.05 kg per kg of blanket",
+      "Virgin fibre: 1.05 x 3.0 kg CO2e per kg (assumed) = 3.15 kg CO2e; recycled: 1.05 x 1.5 (assumed) = 1.575 kg CO2e",
+      "Factory month: 2,50,000 kWh x 0.710 = 1,77,500 kg; coal 60,000 kg x 2.42 = 1,45,200 kg; diesel 2,000 L x 2.68 = 5,360 kg; total 3,28,060 kg CO2",
+      "Per kg: 3,28,060 / 1,00,000 kg packed = 3.28 kg CO2",
+      "Packaging: 0.15 kg x 2.0 kg CO2e per kg (assumed) = 0.30 kg CO2e",
+      "Per kg: virgin 3.15 + 3.28 + 0.30 = 6.73; recycled 1.575 + 3.28 + 0.30 = 5.155 kg CO2e",
+      "Per 4 kg blanket: virgin 26.92 kg CO2e; recycled 20.62 kg CO2e"
+    ],
+    "note": "Fibre and packaging factors are placeholders, not published values; use your supplier's or one named dataset. Energy and output are illustrative."
+  },
+  "senseible": "Senseible reads your electricity bills and coal, PNG and diesel invoices and gives the factory's Scope 1 and 2 to divide per kg of blanket. Fibre factors come from your yarn supplier or a dataset you choose.",
+  "links": [
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Green finance for Panipat recyclers",
+      "to": "/climate-intelligence/green-finance-textile-recycling-panipat"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

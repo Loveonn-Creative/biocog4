@@ -1,0 +1,70 @@
+{
+  "slug": "corsia-eligible-credits-from-indian-projects",
+  "q": "Can carbon credits from Indian projects be used for CORSIA in its first phase?",
+  "title": "Indian credits for CORSIA first phase",
+  "short": "Only if the project's units are on ICAO's eligible list and India has authorised them for CORSIA. For the first phase, 2024 to 2026, units must come from an ICAO approved programme such as Verra or Gold Standard, from emission reductions in 2021 to 2026, with a host country letter of authorisation and a corresponding adjustment.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Indian developers and airline buyers",
+  "sections": [
+    {
+      "h": "The first phase tests",
+      "ul": [
+        "Programme: the units must be issued by a programme ICAO approved for the first phase, within that programme's scope of eligibility. Verra's VCS and Gold Standard are among them, but not every unit they issue qualifies.",
+        "Dates: the project's first crediting period must start on or after 1 January 2016, and the reductions must take place from 1 January 2021 to 31 December 2026.",
+        "Authorisation: the host country must authorise the units for use in CORSIA and attest that it will apply a corresponding adjustment, so the tonnes are not also counted toward its own target.",
+        "Label: the programme marks the units as CORSIA eligible in its registry once these conditions are met."
+      ]
+    },
+    {
+      "h": "What this means for an Indian project",
+      "p": [
+        "The authorisation step decides it. India grants authorisation project by project through its national designated authority for Article 6, and its published list of activities favours technologies such as renewable energy with storage and green hydrogen. Ordinary grid-connected solar or wind projects are not on that list. A project without India's letter of authorisation and attestation cannot supply first phase units, even if it is registered with an approved programme."
+      ]
+    },
+    {
+      "h": "Checks before you sign a deal",
+      "ol": [
+        "Find the current edition of ICAO's CORSIA Eligible Emissions Units document and confirm the programme and unit type.",
+        "Check the vintage of each unit falls in 2021 to 2026.",
+        "Ask for India's letter of authorisation naming CORSIA, and check the registry shows the CORSIA label.",
+        "Agree in the contract who bears the risk if authorisation is delayed or withdrawn."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not issue, label or register credits, and it does not handle Article 6 authorisations. Its records from fuel and electricity bills can support a project's baseline data.",
+  "links": [
+    {
+      "label": "India host country authorisation letter",
+      "to": "/answers/india-host-country-authorization-letter"
+    },
+    {
+      "label": "India's Article 6.2 activity list",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "What is a corresponding adjustment?",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    },
+    {
+      "label": "CDM projects moving to Article 6.4",
+      "to": "/answers/cdm-projects-transition-to-article-6-4"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Gold Standard, Eligibility of Gold Standard VERs for use under CORSIA, following ICAO's CORSIA Eligible Emissions Units document",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "Verra, CORSIA label and Article 6 guidance",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Paris Agreement Article 6.2 and decision 2/CMA.3 (UNFCCC)",
+      "url": "https://unfccc.int"
+    }
+  ],
+  "reviewNote": "ICAO's eligible programme list and India's Article 6 authorisations change; check the current ICAO document and India's NDA decisions.",
+  "reviewed": "2026-10-18"
+}

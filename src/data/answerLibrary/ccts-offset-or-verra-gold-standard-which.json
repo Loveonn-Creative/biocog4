@@ -1,0 +1,76 @@
+{
+  "slug": "ccts-offset-or-verra-gold-standard-which",
+  "q": "Should an Indian project register under the CCTS offset mechanism or with Verra or Gold Standard?",
+  "title": "CCTS offsets or Verra and Gold Standard",
+  "short": "Choose by buyer and methodology. Register under the CCTS offset mechanism if your buyers are in India and BEE has approved a method for your activity. Choose Verra or Gold Standard if your buyers are international voluntary buyers and the standard still accepts your project type in India. Register the same reductions in only one.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Indian project developers and MSME clusters",
+  "sections": [
+    {
+      "h": "How the routes differ",
+      "ul": [
+        "CCTS offset mechanism: run by BEE under the Carbon Credit Trading Scheme, 2023, with Grid Controller of India as registry and trading on power exchanges. Certificates are priced in rupees and sold to buyers in India.",
+        "Verra (VCS) and Gold Standard: international voluntary programmes with their own registries, sold mainly to companies abroad for voluntary claims.",
+        "Credits used toward another country's target, or for CORSIA, also need India's authorisation under Article 6 and a corresponding adjustment, whichever registry issues them."
+      ]
+    },
+    {
+      "h": "Questions that decide it",
+      "ol": [
+        "Is there an approved methodology for your activity in each programme? If only one has it, the choice is made.",
+        "Is the project type eligible? Verra and Gold Standard restrict new grid-connected renewable power in countries like India; CCTS has its own start date and eligibility rules.",
+        "Who will buy, and in which currency? Domestic demand depends on how the compliance market develops; voluntary buyers abroad often look for the ICVCM label.",
+        "Do you need an Article 6 authorisation? If so, check the activity is on India's approved list first.",
+        "What will validation, verification and registry fees cost against your expected tonnes?"
+      ]
+    },
+    {
+      "h": "Can a project switch later",
+      "p": [
+        "Moving between programmes means deregistering or cancelling under one before issuance under the other, under each programme's rules, so that no tonne is issued twice. Plan the choice before the first verification, since credits already issued cannot move."
+      ]
+    },
+    {
+      "h": "A practical rule",
+      "p": [
+        "For a domestic MSME cluster project with Indian buyers and a matching BEE method, the CCTS route keeps costs in rupees and buyers close. For a community project with clear co-benefits, Gold Standard is the usual fit; for an industrial or land project with a VCS method and foreign buyers, Verra."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives eligibility signals from your document data and records that support a baseline. It does not issue or register credits in any programme.",
+  "links": [
+    {
+      "label": "Verra or Gold Standard?",
+      "to": "/answers/verra-or-gold-standard-which-to-choose"
+    },
+    {
+      "label": "CCTS offsets for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "India's Article 6.2 activity list",
+      "to": "/answers/india-article-6-2-approved-activities"
+    },
+    {
+      "label": "What is a corresponding adjustment?",
+      "to": "/answers/what-is-a-corresponding-adjustment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, Detailed Procedure for the Offset Mechanism under CCTS (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Verra, VCS Program Guide and VCS Standard",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, Principles & Requirements",
+      "url": "https://www.goldstandard.org"
+    }
+  ],
+  "reviewNote": "CCTS methodologies, eligibility and demand are still forming; recheck BEE, Verra and Gold Standard rules before registering.",
+  "reviewed": "2026-10-18"
+}

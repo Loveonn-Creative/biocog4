@@ -1,0 +1,75 @@
+{
+  "slug": "are-hand-tools-covered-by-cbam",
+  "q": "Are hand tools such as spanners, pliers and hammers from Jalandhar covered by CBAM?",
+  "title": "Are hand tools covered by CBAM?",
+  "short": "No, not today. Hand tools in chapter 82 of the Combined Nomenclature, headings 8201 to 8205, which include spades, saws, files, pliers, spanners, wrenches and hammers, are not in Annex I of the EU CBAM Regulation. Steel inputs and some forged or other steel articles are covered, and a December 2025 proposal may extend CBAM to downstream goods.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Jalandhar and Ludhiana hand tool exporters",
+  "sections": [
+    {
+      "h": "The chapter 82 headings and their status",
+      "ul": [
+        "8201: spades, shovels, picks, hoes, forks, rakes, axes and similar hand tools: not in Annex I.",
+        "8202: hand saws and saw blades: not in Annex I.",
+        "8203: files, rasps, pliers, pincers, tweezers and metal cutting shears: not in Annex I.",
+        "8204: hand-operated spanners and wrenches, and interchangeable sockets: not in Annex I.",
+        "8205: hand tools not elsewhere specified, such as hammers, screwdrivers, vices and clamps: not in Annex I."
+      ],
+      "p": [
+        "Annex I covers iron and steel in chapter 72 and listed chapter 73 headings, such as 7318 screws and bolts and 7326 other articles of iron or steel."
+      ]
+    },
+    {
+      "h": "Where a tool maker can still be pulled in",
+      "ul": [
+        "Unfinished forgings or blanks shipped to an EU finisher may be classified under 7326, which is covered.",
+        "Bolts, nuts and fasteners packed with a tool kit can fall under 7318 if declared separately.",
+        "Steel bar or sheet you buy is covered when imported into the EU, though that matters to you only if you also export the material."
+      ]
+    },
+    {
+      "h": "Who settles the code",
+      "p": [
+        "The EU importer declares the 8 digit CN code and EU customs can reclassify it. Start from the HSN code on your shipping bill, confirm the CN code with the buyer before shipment, and keep the agreed code on the invoice. A tool set in a case is usually classified under 8206, also outside Annex I, but confirm it."
+      ]
+    },
+    {
+      "h": "Could this change",
+      "p": [
+        "In December 2025 the European Commission proposed extending CBAM to a list of downstream goods made largely of steel and aluminium. Whether any chapter 82 headings are on that list, and from when, depends on the proposal and on what the EU finally adopts. Until then, coverage is what Annex I says. Keep a record of the steel mass and its supplier for each tool range so you can answer quickly if it changes."
+      ]
+    }
+  ],
+  "senseible": "Senseible helps answer buyer requests for product footprint data from your bills and invoices. Its CBAM data and cost calculator matter for these tools only if their headings are added to CBAM.",
+  "links": [
+    {
+      "label": "Check if a CN code is covered by CBAM",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "CBAM downstream products from 2028",
+      "to": "/climate-intelligence/cbam-downstream-products-2028"
+    },
+    {
+      "label": "Map an HSN code to an EU CN code",
+      "to": "/answers/map-indian-hsn-code-to-eu-cn-code"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956, consolidated text with Annex I",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance (including the downstream extension proposal)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewNote": "The December 2025 downstream extension proposal may add steel-intensive tools; recheck Annex I and the adopted text.",
+  "reviewed": "2026-10-18"
+}

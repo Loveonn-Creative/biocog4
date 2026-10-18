@@ -1,0 +1,79 @@
+{
+  "slug": "senseible-fast-track-verification",
+  "q": "What is Senseible's Fast-track Verification add-on, what does it cost and how fast are results?",
+  "title": "Senseible Fast-track Verification",
+  "short": "Fast-track Verification is a paid Senseible add-on priced at ₹2,999 per report before GST, with results in 24 to 72 hours. You buy it on your profile, up to 20 reports in one purchase, and each order is due within 72 hours of payment.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Paying Senseible users with a buyer or lender deadline",
+  "sections": [
+    {
+      "h": "What you pay at checkout",
+      "ul": [
+        "List price: ₹2,999 per report, before GST.",
+        "Paying with UPI: the list price plus 18% GST, with no platform fee.",
+        "Paying by card, netbanking or wallet: a 4% platform fee is added to the list price, then 18% GST on the price and fee together.",
+        "Quantity: 1 to 20 reports in one purchase, priced per report."
+      ]
+    },
+    {
+      "h": "How fast results come back",
+      "p": [
+        "The stated turnaround is 24 to 72 hours. The clock starts when payment is confirmed, and each order carries a due time 72 hours after that. Your profile lists each order with its status (Booked, In progress, Delivered) and the due time until it is delivered.",
+        "If your buyer or lender deadline is less than three days away, plan for the 72 hour end of the range, not the 24 hour end."
+      ]
+    },
+    {
+      "h": "How to buy it",
+      "ol": [
+        "Sign in and open your profile.",
+        "In Top up and services, choose UPI or card, netbanking or wallet.",
+        "Set the number of reports under Fast-track Verification.",
+        "Pay. The order appears on your profile with its due time."
+      ]
+    },
+    {
+      "h": "What it does not change",
+      "p": [
+        "Verified in Senseible means a record passed Senseible's rule checks. Buying Fast-track Verification does not turn that status into third-party assurance or a certificate. If a lender or buyer asks for limited or reasonable assurance, that comes from an independent verification body. For the exact scope of the fast-track review, ask the Senseible team before you buy."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what one and three reports cost",
+    "lines": [
+      "One report by UPI: ₹2,999 + 18% GST (₹539.82) = ₹3,538.82",
+      "One report by card: ₹2,999 + 4% fee (₹119.96) = ₹3,118.96; + 18% GST (₹561.41) = ₹3,680.37",
+      "Three reports by UPI: ₹8,997 + 18% GST (₹1,619.46) = ₹10,616.46",
+      "UPI saves ₹141.55 per report against card"
+    ],
+    "note": "Prices as set in the live checkout on 18 October 2026. Check the price shown on your profile before you pay."
+  },
+  "senseible": "This page describes Senseible's own add-on: its price, turnaround and how to buy it. The Verified status still means Senseible's rule checks passed, whichever way a report is verified.",
+  "links": [
+    {
+      "label": "Verified vs unverified data",
+      "to": "/answers/verified-vs-unverified-data"
+    },
+    {
+      "label": "Which Senseible plan fits my volume",
+      "to": "/answers/which-senseible-plan-do-i-need"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "Senseible pricing",
+      "to": "/pricing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (verification and record keeping)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewNote": "Price, quantity limit and turnaround match the live checkout on 18 October 2026; recheck whenever the pricing page changes.",
+  "reviewed": "2026-10-18"
+}

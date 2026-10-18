@@ -1,0 +1,68 @@
+{
+  "slug": "is-a-glass-unit-covered-by-ccts",
+  "q": "Is a glass or glassware unit an obligated entity under India's Carbon Credit Trading Scheme?",
+  "title": "Is a glass unit covered by CCTS?",
+  "short": "Not as of this review. Glass is not one of the sectors notified so far under the CCTS emission intensity target rules, so a glass or glassware unit in Firozabad or elsewhere has no CCTS target or obligation. It can still register a project under the CCTS offset mechanism if a BEE approved methodology fits.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Firozabad and other glass manufacturers",
+  "sections": [
+    {
+      "h": "Which sectors are in so far",
+      "p": [
+        "The Greenhouse Gases Emission Intensity Target Rules, notified by MoEFCC in 2025, set targets for named plants in aluminium, cement, chlor-alkali and pulp and paper. An amendment notified in January 2026 added petroleum refineries, petrochemicals, textiles and secondary aluminium. Glass does not appear in these lists. Other sectors can be added by later notifications, so check the latest target rules before relying on this."
+      ]
+    },
+    {
+      "h": "How you would know if that changes",
+      "ul": [
+        "Coverage comes plant by plant. A new sector notification names each obligated entity with its baseline year and target intensity.",
+        "Watch MoEFCC gazette notifications and BEE's CCTS pages for a glass or ceramics notification.",
+        "If glass is added, the first step is a baseline: energy and emissions per tonne of glass for the named base year. Keeping yearly fuel, power and production records ready makes that easy."
+      ]
+    },
+    {
+      "h": "What still applies to a glass unit",
+      "ul": [
+        "Offset mechanism: as a non-obligated entity you can earn carbon credit certificates from a project, such as a furnace efficiency or fuel switch, only if BEE has approved a methodology that fits it.",
+        "Buyers and exporters: customers in obligated sectors and EU buyers may still ask for your energy and CO2 per tonne.",
+        "Process CO2 from soda ash, limestone and dolomite is part of a glass unit's Scope 1 and would matter for any future target."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives the unit's Scope 1 and 2 from fuel and electricity bills, which is useful for an offset project baseline or buyer data. Process CO2 from batch carbonates is not on a bill; work it out from your batch records.",
+  "links": [
+    {
+      "label": "Is my textile mill covered by CCTS?",
+      "to": "/answers/is-my-textile-mill-covered-by-ccts"
+    },
+    {
+      "label": "Glass furnace emissions per tonne",
+      "to": "/answers/glass-container-furnace-emissions-per-tonne"
+    },
+    {
+      "label": "India CCTS targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "CCTS offsets for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "PIB, GHG emission intensity targets notified for more industrial sectors, January 2026",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2217239"
+    },
+    {
+      "label": "Greenhouse Gases Emission Intensity Target Rules, 2025, and amendments, MoEFCC",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023 (S.O. 2825(E)) and amendments, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "The obligated sector list is expanding by notification; check the latest MoEFCC target rules for glass before relying on this.",
+  "reviewed": "2026-10-18"
+}

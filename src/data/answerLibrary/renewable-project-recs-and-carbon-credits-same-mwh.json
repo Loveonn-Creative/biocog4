@@ -1,0 +1,86 @@
+{
+  "slug": "renewable-project-recs-and-carbon-credits-same-mwh",
+  "q": "Can a renewable project sell both RECs and carbon credits for the same electricity, and how does a buyer check?",
+  "title": "RECs and carbon credits for the same MWh",
+  "short": "No. A REC and a carbon credit from the same MWh are two claims on the same clean electricity, which is double claiming. Carbon standards such as Verra's require a project to show that output it credits has not also been sold as certificates. A buyer checks by matching the project's metered MWh against both registries.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Credit buyers and renewable developers",
+  "sections": [
+    {
+      "h": "Why one MWh cannot back both",
+      "p": [
+        "A REC lets its holder claim the renewable attribute of one MWh, for a renewable obligation or a market-based Scope 2 figure. A carbon credit from the same MWh claims the emissions that MWh avoided on the grid. If both are sold, two parties count the same benefit. The ICVCM Core Carbon Principles treat this as double counting, and carbon standards require projects to disclose other environmental credits and keep them apart."
+      ]
+    },
+    {
+      "h": "What a project can do",
+      "ul": [
+        "Split output by period or by MWh: certificates for some units, carbon credits for the rest, with no overlap.",
+        "Follow each standard's rule on other environmental credits, which may require proof that no certificate was issued, or that any issued was cancelled, for the units credited.",
+        "Check the REC rules too: under the CERC REC Regulations, 2022, eligibility depends on how the power is sold and used, and RECs for captive solar units consumed on site are not eligible for sale."
+      ]
+    },
+    {
+      "h": "How a buyer checks",
+      "ol": [
+        "Get the project ID, capacity, location and commissioning date, and find it in the carbon registry.",
+        "Search the India REC registry and I-REC registry for the same plant by name, capacity and location.",
+        "For the crediting period, compare metered MWh injected with MWh credited plus MWh certified. The sum must not exceed what was metered.",
+        "Ask for a signed attestation of no double issuance and the registry statements behind it."
+      ]
+    },
+    {
+      "h": "Separate registries, and the CCP label",
+      "p": [
+        "REC and carbon credit registries are separate systems, so the overlap check falls to the buyer. Even where there is no overlap, the ICVCM has found the main grid-connected renewable methods do not meet its additionality test, so these credits cannot carry the CCP label."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 30 MW solar plant, one year",
+    "lines": [
+      "Metered injection: 50,000 MWh",
+      "RECs issued for the year: 20,000 MWh",
+      "Carbon credit monitoring report claims: 48,000 MWh",
+      "Credited plus certified: 48,000 + 20,000 = 68,000 MWh, against 50,000 metered",
+      "Overlap: 68,000 minus 50,000 = 18,000 MWh claimed twice; at most 30,000 MWh could support credits"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible works on the buyer's own Scope 2: when you provide REC or green power instrument data, it reports market-based Scope 2 alongside location-based.",
+  "links": [
+    {
+      "label": "Why ICVCM rejected renewable energy credits",
+      "to": "/answers/why-icvcm-rejected-renewable-energy-credits"
+    },
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "I-REC vs India REC",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "Prove REC retirement to a buyer",
+      "to": "/answers/prove-rec-retirement-to-buyer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VCS Standard v4, rules on participation in other programs and other forms of environmental credit",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles and Assessment Framework (no double counting)",
+      "url": "https://icvcm.org"
+    },
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates for Renewable Energy Generation) Regulations, 2022, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Standards' rules on other environmental credits and the REC regulations are amended from time to time; recheck before relying on a split-output arrangement."
+}

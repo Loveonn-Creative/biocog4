@@ -1,0 +1,64 @@
+{
+  "slug": "recycled-cotton-yarn-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of mechanically recycled cotton or shoddy yarn from textile waste?",
+  "title": "Carbon footprint of recycled cotton yarn",
+  "short": "Under the cut-off method, textile waste arrives with no production burden, so count only what happens from collection on: transport of the waste, sorting and cutting, shredding or garnetting, open-end spinning power, and any virgin fibre blended in at its own footprint. Divide by kg of yarn produced, not kg of waste bought.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Panipat recyclers and their export buyers",
+  "sections": [
+    {
+      "h": "Why the waste carries no cotton footprint",
+      "p": [
+        "Growing the cotton and making the original fabric belong to the first product's footprint. Under the cut-off approach in ISO 14067 and the GHG Protocol Product Standard, your recycled input carries only the steps after it became waste. The same rule means you cannot also subtract the virgin cotton you avoided from your yarn figure."
+      ]
+    },
+    {
+      "h": "What goes into the figure",
+      "ul": [
+        "Inbound transport of the waste, from freight bills: tonne-km by mode.",
+        "Sorting, cutting and shredding or garnetting: electricity.",
+        "Carding and open-end spinning: electricity, usually the largest part you control.",
+        "Virgin fibre blended in for strength, such as polyester or virgin cotton, at its supplier's footprint per kg.",
+        "DG diesel, packing material and any dyeing. If you sort waste by colour and skip dyeing, there is no dyeing energy to add."
+      ]
+    },
+    {
+      "h": "Yield and the fibre you sell on",
+      "p": [
+        "More fibre goes in than yarn comes out. Put all the inputs on the yarn unless you sell a by-product, such as hard waste or fly, to another user for money. Then you may share the inputs by mass between yarn and that by-product. Fibre thrown away carries nothing, and its disposal belongs in your figure."
+      ]
+    },
+    {
+      "h": "A GRS certificate shows content, not carbon",
+      "p": [
+        "The Global Recycled Standard confirms the recycled share and the chain of custody. It does not give a footprint per kg. Buyers who ask for both need two documents: the certificate for content and your calculation for carbon."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: 2,00,000 kg of recycled blend yarn",
+    "lines": [
+      "Fibre in: 1,90,000 kg cotton waste + 40,000 kg virgin polyester = 2,30,000 kg",
+      "Electricity, shredding to spinning: 3,00,000 kWh x 0.710 = 2,13,000 kg CO2",
+      "Inbound waste freight: 8,000 kg CO2e (from your freight calculation)",
+      "Virgin polyester: 40,000 kg x 3.0 kg CO2e per kg (illustrative supplier figure) = 1,20,000 kg CO2e",
+      "Total: 2,13,000 + 8,000 + 1,20,000 = 3,41,000 kg CO2e",
+      "Per kg of yarn: 3,41,000 / 2,00,000 = 1.71 kg CO2e"
+    ],
+    "note": "All quantities and the polyester figure are illustrative. The waste itself is counted at zero under the cut-off method."
+  },
+  "senseible": "Senseible reads the electricity bills for shredding, carding and spinning and gives Scope 2 at 0.710 kg CO2 per kWh. The blend ratio, yield and virgin fibre footprint come from your production records and suppliers.",
+  "links": [
+    { "label": "Counting recycled content in a product footprint", "to": "/answers/how-to-count-recycled-content-in-product-footprint" },
+    { "label": "Green finance for textile recycling in Panipat", "to": "/climate-intelligence/green-finance-textile-recycling-panipat" },
+    { "label": "Recycled content percentage", "to": "/answers/how-to-calculate-recycled-content-percentage" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (allocation and recycling)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "CEA CO2 Baseline Database, version 21.0", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

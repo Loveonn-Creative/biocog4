@@ -1,0 +1,82 @@
+{
+  "slug": "polyester-texturising-electricity-per-kg-yarn",
+  "q": "How much electricity does texturising POY into DTY polyester yarn use per kg, and what is the CO2?",
+  "title": "Texturising power and CO2 per kg of DTY",
+  "short": "Measure it on your own machines: divide the texturising section's kWh for a month by kg of DTY packed, then multiply by 0.710 kg CO2 per kWh. For the yarn's full footprint, add the POY supplier's footprint per kg, scaled up for your waste. kWh per kg varies a lot with denier and machine speed.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Surat texturisers and polyester yarn buyers",
+  "sections": [
+    {
+      "h": "What to meter",
+      "ul": [
+        "Texturising machines: heaters, drives, winders and suction, ideally on a sub-meter per machine or per line.",
+        "Compressed air for air jets and intermingling, from the compressor's own meter.",
+        "Humidification, lighting and the share of common loads such as the transformer losses on your HT bill.",
+        "DG diesel during power cuts, at 2.68 kg CO2 per litre.",
+        "Output: kg of DTY packed in the same month, from the packing register."
+      ]
+    },
+    {
+      "h": "Why kWh per kg differs between units",
+      "p": [
+        "A texturising machine draws heater and motor power for every hour it runs, while output in kg depends on denier and speed. Finer deniers give fewer kg per machine hour, so they carry more kWh per kg. Heavy use of air intermingling adds compressor load. Idle time, warm-up after power cuts and frequent count changes also raise the figure. Report kWh per kg by denier group if you make a wide range, not one average for the plant."
+      ]
+    },
+    {
+      "h": "The footprint of DTY per kg",
+      "p": [
+        "DTY footprint per kg = POY footprint per kg x (1 + waste fraction) + texturising kWh per kg x 0.710 + any DG and other fuel per kg.",
+        "The POY figure should come from your spinner's product footprint or environmental product declaration. Polymer and POY spinning are normally the larger part, so a texturiser's own electricity is only one piece of what a buyer will compare. Recycled POY has a different footprint from virgin POY; use the figure for the grade you actually bought."
+      ]
+    },
+    {
+      "h": "Waste and by-products",
+      "p": [
+        "POY issued minus DTY packed gives your process waste. If the waste is sold for recycling and you use the cut-off approach, a common choice in product footprints, you take no credit for it and the recycler receives it with no upstream burden. State the approach in your method note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a texturising line (illustrative)",
+    "lines": [
+      "Texturising and compressor kWh: 30,000 kWh; DTY packed: 25,000 kg",
+      "30,000 / 25,000 = 1.2 kWh per kg; 1.2 x 0.710 = 0.852 kg CO2 per kg",
+      "POY issued: 25,750 kg, so waste = 750 / 25,000 = 3 percent",
+      "POY footprint: 3.0 kg CO2e per kg (illustrative, take your supplier's figure)",
+      "3.0 x 1.03 = 3.090 kg CO2e per kg",
+      "DTY total: 3.090 + 0.852 = 3.942 kg CO2e per kg, about 3.9 kg"
+    ],
+    "note": "The kWh, waste and POY figures are illustrative, not sector values. Measure your own."
+  },
+  "senseible": "Senseible reads your HT electricity bills and DG diesel invoices and applies 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre, giving the energy side of the calculation. Output in kg and the POY supplier's footprint come from your own records.",
+  "links": [
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Spinning mill footprint per kg of yarn",
+      "to": "/answers/spinning-mill-carbon-footprint-per-kg-yarn"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

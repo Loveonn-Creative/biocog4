@@ -1,0 +1,72 @@
+{
+  "slug": "cdp-supply-chain-who-sees-my-response",
+  "q": "If I answer a CDP Supply Chain request, who can see my response?",
+  "title": "Who sees my CDP supply chain response?",
+  "short": "You choose when you submit. A non-public response goes to the customers who requested it through CDP and is not publicly accessible. A public response also goes to them and is made available more widely, including to CDP's data users such as investment researchers and ratings firms. Your requesting customers see your answers and score either way.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSME suppliers asked through CDP",
+  "sections": [
+    {
+      "h": "Public or non-public: what changes",
+      "ul": [
+        "Non-public: your requesting customers receive the full response and score. It is not publicly accessible, apart from the uses set out in CDP's terms of disclosure.",
+        "Public: your requesters receive it, and it is also made available publicly and to CDP's data users, which some suppliers use to answer several customers and investors at once.",
+        "Score: if only supply chain members and other non-investor requesters asked for your data, CDP keeps the score private even when the response is public; your requesting customers still see it.",
+        "CDP and its scoring partners see every response, public or not, to score it."
+      ]
+    },
+    {
+      "h": "Which customers see it",
+      "p": [
+        "The customers that sent you a request in that cycle are the ones who receive a non-public response. A customer that did not request you does not get it automatically. If a new customer asks later, check in the CDP portal whether you can share the existing response with them or need to wait for the next cycle."
+      ]
+    },
+    {
+      "h": "Before you choose",
+      "ol": [
+        "Read the disclosure terms shown in the portal for the current cycle; CDP sets the sharing options there.",
+        "Check what you are disclosing: plant names, energy use, supplier names, targets and any figures your customer contracts treat as confidential.",
+        "Agree the choice with your management, since a public response stays visible.",
+        "If you answer customer-specific questions, such as emissions allocated to one buyer, confirm in the portal that only that buyer sees them."
+      ]
+    },
+    {
+      "h": "What a customer may do with it",
+      "p": [
+        "A requesting customer can use your figures in its own Scope 3 reporting and supplier reviews. If you want limits on that use, put them in your supply contract, since CDP's settings control who receives the response, not what the customer does with it afterwards."
+      ]
+    }
+  ],
+  "senseible": "Senseible prepares Scope 1 and 2 figures from your fuel invoices and electricity bills, with factors and sources, that you can enter in a CDP response. Sharing settings are chosen in CDP's own portal.",
+  "links": [
+    {
+      "label": "What to do with a CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    },
+    {
+      "label": "CDP SME or full questionnaire",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    },
+    {
+      "label": "Share emissions with a buyer without invoices",
+      "to": "/answers/share-emissions-with-buyer-without-invoices"
+    },
+    {
+      "label": "CDP and ESG ratings support",
+      "to": "/esg-ratings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CDP Help Center, Understanding response and score privacy (cdp.net)",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "CDP Supply Chain programme, guidance for suppliers and terms of disclosure (cdp.net)",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewNote": "CDP can change sharing options each disclosure cycle; confirm the current terms in the CDP portal before submitting.",
+  "reviewed": "2026-10-18"
+}

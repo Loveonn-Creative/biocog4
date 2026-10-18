@@ -1,0 +1,72 @@
+{
+  "slug": "are-cast-iron-castings-covered-by-cbam",
+  "q": "Are grey and ductile iron castings exported to the EU covered by CBAM?",
+  "title": "Are iron castings covered by EU CBAM?",
+  "short": "Mostly not. Grey and ductile iron castings declared under CN 7325, other cast articles of iron or steel, are not in CBAM Annex I, and castings classified as pump, valve or machine parts are not covered either. Cast iron pipes under 7303 and cast pipe fittings under 7307 are covered. Your EU importer's CN code decides.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Rajkot, Coimbatore and Kolhapur foundries",
+  "sections": [
+    {
+      "h": "Cast iron goods that are in Annex I",
+      "ul": [
+        "7303: tubes, pipes and hollow profiles of cast iron, which includes ductile iron pipes.",
+        "7307: tube or pipe fittings of iron or steel, including fittings of non-malleable and other cast iron.",
+        "Chapter 72: pig iron and other primary iron, if you sell it rather than cast it."
+      ]
+    },
+    {
+      "h": "Cast iron goods that are outside it today",
+      "ul": [
+        "7325: other cast articles of iron or steel, such as manhole covers, gratings, counterweights and grinding balls.",
+        "7324: sanitary ware of cast iron, such as baths.",
+        "8413: parts of pumps, such as pump casings and impellers.",
+        "8481: valve bodies and other parts of valves.",
+        "8483: bearing housings, pulleys and similar transmission parts.",
+        "8708: parts of motor vehicles, such as brake drums."
+      ],
+      "p": [
+        "A casting made for a specific machine is normally classified with that machine, even as a rough casting, once it has the shape and essential character of the finished part. That takes it out of Chapter 73 and outside CBAM under the current Annex I."
+      ]
+    },
+    {
+      "h": "How to confirm for each casting you ship",
+      "ol": [
+        "Take the 8 digit code from your shipping bill and check the first 4 digits against Annex I.",
+        "Ask your EU importer which CN code it declares. Its declaration, not your invoice description, is what counts.",
+        "Where a casting could sit in 7325 or in a machine heading, the importer can ask an EU customs authority for a binding tariff information ruling.",
+        "If a product is covered, prepare embedded emissions per tonne: melting energy, whether cupola coke or induction furnace electricity, plus the emissions of the pig iron you charge."
+      ]
+    },
+    {
+      "h": "What could change",
+      "p": [
+        "In December 2025 the Commission proposed extending CBAM to many steel and aluminium intensive downstream products from 2028. As of October 2026 it is not law. Check whether 7325 and your machine-part codes appear in its annex and in the text finally adopted. Separately, importers bringing in 50 tonnes or less of covered goods a year are exempt under Regulation (EU) 2025/2083; that changes who declares, not which goods are covered."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three products from one foundry",
+    "lines": [
+      "Ductile iron pipe fitting declared under 7307 19: covered, embedded emissions needed",
+      "Grey iron manhole cover declared under 7325 10: not in Annex I today",
+      "Pump casing for a centrifugal pump declared under 8413 91: not in Annex I today",
+      "Same metal and furnace, three different answers, because the CN code differs"
+    ],
+    "note": "Codes are examples; confirm the full CN code for each product with the importer."
+  },
+  "senseible": "Senseible's CBAM cost calculator estimates certificate cost from 2026 to 2034 for iron and steel goods that are covered, and Senseible reads the HSN code on each invoice line. The CN code on the declaration is your importer's.",
+  "links": [
+    { "label": "Is my product's CN code in CBAM?", "to": "/answers/check-if-product-cn-code-covered-by-cbam" },
+    { "label": "Are steel forgings and flanges in CBAM?", "to": "/answers/are-steel-forgings-covered-by-cbam" },
+    { "label": "CBAM downstream products from 2028", "to": "/climate-intelligence/cbam-downstream-products-2028" },
+    { "label": "CBAM cost calculator", "to": "/cbam-calculator" }
+  ],
+  "sources": [
+    { "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annex I", "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20" },
+    { "label": "Regulation (EU) 2025/2083 (CBAM simplification, 50 tonne threshold)", "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj" },
+    { "label": "European Commission, CBAM legislation and guidance", "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The December 2025 downstream proposal could bring 7325 or cast machine parts into CBAM from 2028; recheck Annex I and the adopted text."
+}

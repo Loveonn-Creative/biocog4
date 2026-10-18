@@ -1,0 +1,76 @@
+{
+  "slug": "cookstove-carbon-credits-over-crediting",
+  "q": "Are cookstove carbon credits from India over-credited, and what should a buyer check?",
+  "title": "Are cookstove credits over-credited?",
+  "short": "Many older cookstove credits were. A 2024 Nature Sustainability study by Gill-Wiehl, Kammen and Haya estimated that a sample of 51 cookstove projects was over-credited about 9 times, mainly from overstated stove use, wood savings and non-renewable biomass shares. Buy only after checking the methodology, its version and how use was measured.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Buyers of cookstove credits",
+  "sections": [
+    {
+      "h": "Where the over-crediting comes from",
+      "ul": [
+        "Fraction of non-renewable biomass (fNRB): the share of wood counted as unsustainably harvested. Older default values were high, and every credit scales with it.",
+        "Stove use: surveys that assume the new stove is used every day, for every meal.",
+        "Stacking: households keep cooking on the old chulha alongside the new stove.",
+        "Baseline fuel use: wood consumption per household set too high.",
+        "Rebound: cheaper cooking leading to more cooking."
+      ]
+    },
+    {
+      "h": "What to ask the seller",
+      "ol": [
+        "Methodology and version used for each vintage, and whether it carries an ICVCM CCP label.",
+        "How stove use is measured: sensors or metered energy, or only surveys.",
+        "The fNRB value, its source and date.",
+        "How stacking is deducted.",
+        "Where the households are, how many stoves are in use now, and the dates of the latest monitoring.",
+        "Whether households also received LPG connections under government schemes, which changes the baseline."
+      ]
+    },
+    {
+      "h": "Which credits stand up better",
+      "p": [
+        "The same study found the Gold Standard methodology for metered and measured energy cooking devices, which monitors the energy actually used by electric, LPG and similar devices, closest to its own estimates, at about 1.5 times over-credited, against about 9 times for the sample overall.",
+        "In March 2025 ICVCM approved three cookstove methodologies for the CCP label, two from Gold Standard, including the metered and measured one, and Verra's VM0050, on conditions: fNRB from the MoFuSS model (the CDM default of 0.3 allowed for a limited time) and fuel use from kitchen performance or controlled cooking tests. It found other improved cookstove methodologies did not meet its quantification rules. Later decisions added more method versions, so check the current list and which vintages carry the label."
+      ]
+    },
+    {
+      "h": "Matching the credit to your claim",
+      "p": [
+        "If you use cookstove credits, report them separately from your gross emissions and describe the claim as a contribution or offset in line with the code you follow. A price far below other credits from the same methodology is a signal to look harder, not a bargain."
+      ]
+    }
+  ],
+  "senseible": "Senseible works on your own emissions from invoices and bills. Checks on a cookstove project's methodology, fNRB and monitoring are made with the project's registry documents.",
+  "links": [
+    {
+      "label": "What to check before buying carbon credits",
+      "to": "/answers/what-to-check-before-buying-carbon-credits"
+    },
+    {
+      "label": "ICVCM Core Carbon Principles",
+      "to": "/answers/what-are-icvcm-core-carbon-principles"
+    },
+    {
+      "label": "How to check carbon credit retirement",
+      "to": "/answers/how-to-check-carbon-credit-retirement"
+    },
+    {
+      "label": "VCMI claims code tiers",
+      "to": "/answers/vcmi-claims-code-silver-gold-platinum"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ICVCM, Integrity Council approves three cookstove methodologies (March 2025)",
+      "url": "https://icvcm.org"
+    },
+    {
+      "label": "Gold Standard, Methodology for Metered and Measured Energy Cooking Devices",
+      "url": "https://www.goldstandard.org"
+    }
+  ],
+  "reviewNote": "ICVCM's March 2025 decision and later method-version approvals decide which cookstove credits can carry the CCP label; recheck the list and fNRB conditions before buying.",
+  "reviewed": "2026-10-18"
+}

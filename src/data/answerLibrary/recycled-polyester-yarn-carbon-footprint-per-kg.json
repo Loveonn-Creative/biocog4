@@ -1,0 +1,84 @@
+{
+  "slug": "recycled-polyester-yarn-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint per kg of recycled polyester yarn made from PET bottles?",
+  "title": "Recycled polyester yarn footprint per kg",
+  "short": "It depends on your plant's energy, so calculate it rather than borrow a number. Under the cut-off method the bottles arrive with no burden, and each kg of yarn carries bale transport, washing, flaking, extrusion and spinning energy, plus process losses. That is usually lower than virgin polyester, which carries PTA and MEG production.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Panipat and Surat yarn makers and buyers of rPET",
+  "sections": [
+    {
+      "h": "Why the bottle comes in with no burden",
+      "p": [
+        "Under the cut-off, or recycled content, method the emissions of making the PET bottle stay with the drink it held. Your yarn starts at collection. This is the usual approach for recycled inputs under ISO 14067 and the GHG Protocol Product Standard, but you must say you used it, and you cannot also claim an end of life credit."
+      ]
+    },
+    {
+      "h": "Stages to add up",
+      "ol": [
+        "Collection, baling and transport of bottle bales to your plant.",
+        "Sorting, label and cap removal, hot washing (often with steam from a boiler), flaking and drying.",
+        "Melting and extrusion to chips or direct to fibre, and solid state polymerisation where filament grade needs it.",
+        "Spinning, texturising and twisting to yarn.",
+        "Disposal of rejects: labels, dirt and unusable flake sent to landfill or incineration."
+      ]
+    },
+    {
+      "h": "Losses change the per kg figure",
+      "p": [
+        "Bales contain caps, labels, glue and dirt, so more than one kg of bottles goes into each kg of yarn. Divide total emissions by kg of saleable yarn, not by kg of bales bought. Caps sold as PP scrap leave your boundary; waste landfilled stays in."
+      ]
+    },
+    {
+      "h": "Comparing with virgin polyester",
+      "p": [
+        "Virgin polyester carries the footprint of making PTA and MEG from oil and gas and polymerising them, which recycled yarn skips. Published datasets therefore usually show recycled polyester lower per kg. A buyer comparing your figure with a virgin dataset should check both use the same boundary, for example cradle to gate yarn, and the same grid assumptions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month at a Panipat unit",
+    "lines": [
+      "Bales in: 500 tonnes; saleable yarn out: 380 tonnes",
+      "Electricity for washing, extrusion and spinning: 760,000 kWh x 0.710 = 539,600 kg CO2",
+      "Coal for the wash line boiler: 120,000 kg x 2.42 = 290,400 kg CO2",
+      "Total: 539,600 + 290,400 = 830,000 kg CO2",
+      "Per kg of yarn: 830,000 / 380,000 = 2.18 kg CO2, before bale transport and waste disposal"
+    ],
+    "note": "Quantities are illustrative. Add inbound bale transport and landfilled waste to complete the figure."
+  },
+  "senseible": "Senseible reads your electricity, coal and other fuel bills into Scope 1 and 2 totals for the plant. You divide them by saleable yarn and add bale transport and waste from your own records.",
+  "links": [
+    {
+      "label": "Counting recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Cotton vs polyester fabric footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    },
+    {
+      "label": "Green finance for Panipat textile recyclers",
+      "to": "/climate-intelligence/green-finance-textile-recycling-panipat"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

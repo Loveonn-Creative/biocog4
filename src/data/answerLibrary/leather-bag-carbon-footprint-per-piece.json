@@ -1,0 +1,85 @@
+{
+  "slug": "leather-bag-carbon-footprint-per-piece",
+  "q": "How do I calculate the carbon footprint of a leather bag, including cutting waste?",
+  "title": "Leather bag footprint per piece",
+  "short": "Divide the leather area in the finished bag by your cutting yield to get the area really used, and multiply by the tannery's footprint per square foot. Add linings, hardware, zips and adhesives by mass, then workshop energy per bag. Cutting yield is where bags differ most from shoes, because large panels waste more hide.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Kanpur, Kolkata and Chennai leather goods exporters",
+  "sections": [
+    {
+      "h": "Measure your cutting yield per style",
+      "p": [
+        "Yield is net leather area in the cut pieces divided by the hide area issued for them. Measure it from the cutting register for a full lot, since hide defects and grain direction vary. Large tote panels often yield worse than small pieces, so measure each style family rather than using a factory average."
+      ]
+    },
+    {
+      "h": "Offcuts used for small leather goods",
+      "p": [
+        "If offcuts become wallets, key rings or patches, the bag need not carry all of that leather. Allocate by area: the bag carries the area it used plus the waste nobody uses, and the small goods carry the offcut area they consume. If offcuts are thrown away or sold as waste, the bag carries all of it."
+      ]
+    },
+    {
+      "h": "Everything else in the bag",
+      "ul": [
+        "Lining fabric, reinforcement boards and foam by mass.",
+        "Metal hardware such as buckles, rings and feet, and the zip, by mass and metal type.",
+        "Adhesives, edge paint and thread, which are small but should be named.",
+        "Workshop electricity at 0.710 kg CO2 per kWh and any DG diesel at 2.68 kg CO2 per litre, divided by bags made or by labour minutes.",
+        "Dust bag, tissue and carton, if the buyer asks for packed product."
+      ]
+    },
+    {
+      "h": "Which tannery figure to use",
+      "p": [
+        "Ask your tannery for its footprint per square foot of finished leather and the allocation rule for hides. Whether the cattle's emissions are counted changes the figure a great deal, so the rule must travel with the number into your bag footprint."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: a tote bag",
+    "lines": [
+      "Net leather in the bag: 6.0 sq ft; cutting yield 75%: 6.0 / 0.75 = 8.0 sq ft issued",
+      "Tannery figure, illustrative: 1.5 kg CO2e per sq ft, so 8.0 x 1.5 = 12.0 kg CO2e",
+      "If 1.0 sq ft of the 2.0 sq ft offcut goes into wallets: 7.0 x 1.5 = 10.5 kg CO2e for the bag",
+      "Lining 0.25 kg x 5.0 = 1.25; hardware 0.15 kg x 4.0 = 0.60; zip 0.05 kg x 5.0 = 0.25 kg CO2e",
+      "Workshop: 6,000 kWh for 3,000 bags = 2 kWh, x 0.710 = 1.42 kg CO2",
+      "Total with offcuts used: 10.5 + 1.25 + 0.60 + 0.25 + 1.42 = 14.02 kg CO2e per bag"
+    ],
+    "note": "The tannery and material factors are placeholders to show the arithmetic. Without the offcut allocation the total would be 15.52 kg CO2e."
+  },
+  "senseible": "Senseible reads your workshop's electricity and diesel bills into Scope 1 and 2 totals for the per-bag energy share. The leather figure comes from your tannery.",
+  "links": [
+    {
+      "label": "Leather footwear footprint per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Tannery footprint per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "EUDR and leather from cattle hides",
+      "to": "/answers/eudr-leather-cattle-hides-india"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint methods, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}
