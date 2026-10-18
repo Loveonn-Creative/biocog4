@@ -1,0 +1,87 @@
+{
+  "slug": "air-freight-actual-or-chargeable-weight",
+  "q": "Should air freight emissions use actual weight or chargeable (volumetric) weight?",
+  "title": "Air freight CO2: actual or chargeable weight?",
+  "short": "Use the actual gross weight from the air waybill, not the chargeable weight. Air freight emission factors are per tonne-km of cargo actually carried, so a volumetric weight overstates emissions for light, bulky shipments, sometimes by more than double. Note the weight basis in your method note.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Exporters of garments, pharma, perishables and electronics",
+  "sections": [
+    {
+      "h": "What chargeable weight is",
+      "p": [
+        "Airlines bill the higher of actual gross weight and volumetric weight. Under the common IATA convention, volumetric weight is length x width x height in cm divided by 6,000, so one cubic metre counts as about 166.7 kg. It is a pricing rule that charges for space in the hold, not a measure of mass."
+      ]
+    },
+    {
+      "h": "Why mass is the right basis",
+      "p": [
+        "ISO 14083 and the GLEC Framework express freight transport activity in tonne-km of the cargo's mass, and published air factors are built per tonne of cargo carried. IATA Recommended Practice 1678, the airline method for CO2 per air waybill, defines shipment weight as the mass of the cargo carried as recorded on the master air waybill, including packaging. Multiplying a per tonne factor by a volumetric weight applies it to kilograms that never flew. For dense cargo, such as machine parts, actual and chargeable weight are the same and the choice does not matter."
+      ]
+    },
+    {
+      "h": "Shipments where it changes the answer",
+      "ul": [
+        "Garments and home textiles packed in cartons.",
+        "Fresh produce and flowers in ventilated boxes.",
+        "Electronics and medical devices with protective packaging.",
+        "Any shipment where the waybill's chargeable weight is clearly above the gross weight."
+      ]
+    },
+    {
+      "h": "What to ask your forwarder",
+      "ol": [
+        "Which weight their emissions report uses. Some calculators take the billed weight by default.",
+        "The distance basis: great circle plus a routing uplift, or actual flight distance.",
+        "Whether belly cargo on passenger flights and freighters are treated differently.",
+        "If they used chargeable weight, ask them to restate on actual gross weight, or recalculate it yourself from the waybill."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10 cartons of garments, Mumbai to Frankfurt",
+    "lines": [
+      "Each carton 60 x 50 x 40 cm, 8 kg; total actual gross weight 80 kg",
+      "Volume 1.2 m3; volumetric weight 1,20,00,000 cm3 / 6,000 = 200 kg, so chargeable weight is 200 kg",
+      "Distance: about 6,570 km great circle + 95 km (the GLEC air uplift) = 6,665 km",
+      "On actual weight: 0.08 t x 6,665 = 533.2 tonne-km; x 0.60 kg CO2e per tonne-km (assumed) = 319.9 kg CO2e",
+      "On chargeable weight: 0.2 t x 6,665 = 1,333 tonne-km; x 0.60 = 799.8 kg CO2e, 2.5 times higher"
+    ],
+    "note": "0.60 kg CO2e per tonne-km is an assumed round figure to show the arithmetic, not a published default. Take the current long-haul air cargo factor from the GLEC Framework or the UK government conversion factors, and say whether it includes high-altitude effects. The 2.5 times gap holds whatever factor you use."
+  },
+  "senseible": "Senseible's logistics calculator works in tonne-km by mode, including air, so enter the actual gross weight from the waybill. Freight bills Senseible reads are kept as Scope 3 evidence and calculated from the weight, distance and mode printed on them.",
+  "links": [
+    {
+      "label": "Air vs sea freight emissions for exporters",
+      "to": "/answers/air-vs-sea-freight-emissions-export"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Emissions from a freight bill",
+      "to": "/answers/how-to-calculate-emissions-from-a-freight-bill"
+    },
+    {
+      "label": "GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "UK government GHG conversion factors for company reporting, freighting goods (air freight factors)",
+      "url": "https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting"
+    }
+  ],
+  "reviewNote": "Check the current GLEC Framework and IATA Recommended Practice 1678 wording on the weight basis for air cargo before relying on this for a buyer report.",
+  "reviewed": "2026-10-18"
+}

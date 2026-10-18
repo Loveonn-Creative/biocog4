@@ -1,0 +1,80 @@
+{
+  "slug": "gig-delivery-riders-emissions-which-scope",
+  "q": "Are delivery riders' own two-wheelers part of my Scope 3, and in which category?",
+  "title": "Gig riders' two-wheelers: which scope?",
+  "short": "Yes. Riders' own two-wheelers are not your Scope 1 because you neither own nor control them. Deliveries you pay riders for are a purchased transport service, so they go in Scope 3 Category 4. Deliveries a customer pays for separately belong in Category 9. Estimate from trips, distance and a per-km factor.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Delivery platforms, e-commerce sellers and restaurants using gig riders",
+  "sections": [
+    {
+      "h": "Why not Scope 1",
+      "p": [
+        "Scope 1 covers vehicles you own or control. A rider who owns the scooter, buys the petrol and is paid per delivery is a supplier of transport services, even if your app assigns the orders. Company-owned or leased bikes that you fuel would be Scope 1."
+      ]
+    },
+    {
+      "h": "Category 4 or Category 9",
+      "ul": [
+        "You pay the rider or the delivery partner for outbound delivery of your sold goods: Category 4, upstream transportation and distribution, which includes outbound transport the company pays for.",
+        "The customer pays a delivery platform directly and you do not buy the service: Category 9 for you as the seller, which is downstream transport.",
+        "A delivery platform buying rides from riders to fulfil its own service: Category 4 for the platform.",
+        "Riders delivering to you, such as inbound parcels paid by you: also Category 4."
+      ]
+    },
+    {
+      "h": "How to estimate it",
+      "ol": [
+        "Take the number of deliveries and the average distance per delivery, including the pickup leg, from app or GPS logs.",
+        "Total km x a per-km factor for the vehicle type. For a petrol two-wheeler, the factor is 2.31 kg CO2 per litre divided by km per litre.",
+        "For electric two-wheelers, use kWh per km x 0.710 kg CO2 per kWh.",
+        "Count only trips made for you. A rider working for several platforms is shared."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of outbound deliveries",
+    "lines": [
+      "Deliveries: 30,000; average 7 km each including pickup leg (from app logs)",
+      "Distance: 30,000 x 7 = 2,10,000 km",
+      "Petrol at 45 km per litre (assumed fleet average): 2,10,000 / 45 = 4,666.7 litres",
+      "CO2: 4,666.7 x 2.31 = 10,780 kg, about 10.8 t for the month in Category 4",
+      "Per delivery: 10,780 / 30,000 = 0.36 kg CO2"
+    ],
+    "note": "Survey a sample of riders for mileage and the petrol versus electric split; record it as an assumption."
+  },
+  "senseible": "Senseible keeps transport invoices in the Scope 3 supplier evidence trail and, where only payout spend is known, provides a spend-based estimate labelled as spend-based with wider uncertainty. A trip-and-distance estimate like the one above is firmer and stays your own calculation.",
+  "links": [
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Are EV deliveries zero emission?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Petrol emission factor",
+      "to": "/emission-factors/petrol"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 3 Standard (2011), Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 4",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), mobile combustion defaults",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

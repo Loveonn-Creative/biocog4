@@ -1,0 +1,94 @@
+{
+  "slug": "pool-msme-efficiency-projects-carbon-credits",
+  "q": "Can many small MSMEs pool energy-efficiency projects into one carbon credit programme?",
+  "title": "Pooling MSME efficiency projects for credits",
+  "short": "Yes. Registries allow it through grouped projects (Verra's VCS) or programmes of activities (the CDM and Gold Standard), where one coordinator registers the programme and brings in further sites under the same rules. Every site keeps its own baseline, monitoring and a contract that hands its credit rights to the coordinator.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME clusters, associations and ESCOs",
+  "sections": [
+    {
+      "h": "Two ways to pool",
+      "ul": [
+        "Grouped project (Verra VCS): one project is validated with eligibility criteria, and new sites that meet those criteria are added at later verifications without a fresh validation.",
+        "Programme of activities (CDM and Gold Standard): a coordinating entity registers the programme, and each component project or site is included under it once it passes the programme's inclusion checks."
+      ],
+      "p": [
+        "In both, the methodology, baseline approach and monitoring plan are fixed once, which spreads the fixed costs over many units."
+      ]
+    },
+    {
+      "h": "What each MSME must provide",
+      "ul": [
+        "Twelve months or more of electricity bills or fuel invoices before the upgrade, matched to production.",
+        "Equipment details and installation date, with invoices.",
+        "Metering or bills after the upgrade, for every monitoring period.",
+        "A signed agreement that transfers the right to the credits to the coordinator, and a declaration that the same saving is not claimed elsewhere."
+      ]
+    },
+    {
+      "h": "Size limits and methods",
+      "p": [
+        "CDM small-scale methods such as AMS-II.C and AMS-II.D cover energy efficiency activities that save up to the equivalent of 60 GWh a year each, which suits MSME sites. Credit methods use the CEA combined margin for grid electricity savings, not the weighted average used for Scope 2 reporting."
+      ]
+    },
+    {
+      "h": "Double counting risks to settle first",
+      "ul": [
+        "An MSME cannot sit in two programmes for the same equipment.",
+        "Units that are obligated entities under India's Carbon Credit Trading Scheme, or that claim the same saving under another scheme, need a clear rule on which claim stands.",
+        "A buyer who funds the equipment may claim the credits; settle ownership in writing before inclusion."
+      ]
+    },
+    {
+      "h": "Under India's CCTS offset mechanism",
+      "p": [
+        "The offset mechanism lets non-obligated entities register projects under BEE-approved methodologies. Check BEE's current procedures for whether and how sites can be grouped before you design the programme."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: why pooling matters (illustrative)",
+    "lines": [
+      "One MSME saves 50,000 kWh a year: 50,000 x 0.710 = 35.5 t CO2 a year",
+      "40 MSMEs with similar savings: 40 x 35.5 = 1,420 t CO2 a year",
+      "One validation and one monitoring plan now cover 1,420 t instead of 35.5 t"
+    ],
+    "note": "0.710 kg CO2 per kWh is the CEA weighted average, used here only for scale. Credit calculations use the methodology's own baseline factor, usually the combined margin."
+  },
+  "senseible": "Senseible reads each unit's electricity bills and fuel invoices, keeps them as dated evidence for the baseline and monitoring periods, and shows carbon credit eligibility signals. It is not a registry and does not issue credits.",
+  "links": [
+    {
+      "label": "Energy efficiency carbon credits for factories",
+      "to": "/answers/energy-efficiency-carbon-credits-for-factories"
+    },
+    {
+      "label": "CCTS offset mechanism for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Who owns credits from equipment",
+      "to": "/answers/who-owns-carbon-credits-from-equipment"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra VCS Standard v4 (grouped projects)",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "CDM Standard for programmes of activities and small-scale methodologies AMS-II.C and AMS-II.D (UNFCCC)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "BEE Detailed Procedure for the Offset Mechanism under the Carbon Credit Trading Scheme",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Registry rules and CCTS offset methodologies are being revised; check current versions before designing a programme."
+}

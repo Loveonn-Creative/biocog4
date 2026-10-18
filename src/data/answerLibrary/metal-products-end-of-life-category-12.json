@@ -1,0 +1,90 @@
+{
+  "slug": "metal-products-end-of-life-category-12",
+  "q": "How do I estimate Category 12 for steel or aluminium products I sell, when most of the metal is recycled?",
+  "title": "Category 12 for recycled steel and aluminium",
+  "short": "Multiply the tonnes of metal products you sold this year by an end-of-life split between recycling and landfill. Count collection and transport, and landfill of the non-recycled share, which is usually small. Recycling process emissions belong to whoever uses the scrap, and no avoided-emission credit is subtracted from your total.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Metal fabricators, utensil, fastener and hardware exporters",
+  "sections": [
+    {
+      "h": "What the Category 12 line covers",
+      "p": [
+        "Category 12 covers the expected disposal and treatment of every product you sold in the reporting year, over its whole life. A steel utensil sold in 2026 that is scrapped in 2040 still goes in your 2026 line.",
+        "Under the GHG Protocol's recycled content method, the emissions of melting and reprocessing scrap are counted by the company that uses the recycled metal. So your line holds transport to the scrapyard or landfill, and the landfill treatment itself."
+      ]
+    },
+    {
+      "h": "Why the number is small for metals",
+      "ul": [
+        "Steel and aluminium do not rot, so landfilled metal gives off almost no methane.",
+        "Recycling process emissions are zero in your inventory.",
+        "What remains is mostly truck diesel for collection and the small share of non-metal parts, such as plastic handles, rubber seals or wooden packing."
+      ]
+    },
+    {
+      "h": "Do not net the recycling benefit",
+      "p": [
+        "Recycled steel and aluminium avoid primary production elsewhere, but the Scope 3 Standard does not let you subtract that from your inventory. If a buyer wants it, report avoided emissions as a separate figure, with its method, outside the Scope 1, 2 and 3 totals. A product footprint that uses an end-of-life credit, such as Module D under EN 15804, is a different exercise from this corporate line."
+      ]
+    },
+    {
+      "h": "Choosing the end-of-life split",
+      "p": [
+        "Use a published recycling rate for the product type and market, such as the end-of-life recycling rates worldsteel uses in its life cycle inventory method, or a rate from the destination country's waste statistics. Label it an estimate. Do not assume 100 percent recycling; some metal goes to landfill mixed with household waste."
+      ]
+    },
+    {
+      "h": "Do not forget the other materials",
+      "p": [
+        "Packaging you ship with the product is part of Category 12 too. Plastic parts and films that are burned give fossil CO2, which can be larger than the metal's own end-of-life line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 t of steel utensils sold in a year",
+    "lines": [
+      "Assumed split (labelled estimate): 85 percent recycled, 15 percent landfilled",
+      "Recycled: 425 t, recycling process emissions in your inventory 0",
+      "Landfilled: 75 t, methane from steel close to 0",
+      "Collection of all 500 t: 25 trips of 20 t, 50 km each way, so 25 x 100 km = 2,500 km",
+      "Diesel at an assumed 4 km per litre: 2,500 / 4 = 625 litres; 625 x 2.68 kg CO2 per litre = 1,675 kg CO2",
+      "Category 12 for the metal: about 1.7 t CO2, plus packaging and non-metal parts"
+    ],
+    "note": "The split, distances and fuel economy are assumptions to show the arithmetic. 2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible reads your sales and freight invoices and keeps them as dated evidence of the tonnes you shipped. The end-of-life split and route factors are assumptions you choose and document yourself.",
+  "links": [
+    {
+      "label": "Scrap sold for recycling in Scope 3",
+      "to": "/answers/scrap-sold-for-recycling-scope-3"
+    },
+    {
+      "label": "Packaging end-of-life emissions",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Aluminium recycling and Scope 3",
+      "to": "/climate-intelligence/msme-aluminium-recycling-scope-3-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 12 and avoided emissions",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 12",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "worldsteel Life Cycle Inventory methodology report",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

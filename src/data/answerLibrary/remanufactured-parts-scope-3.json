@@ -1,0 +1,80 @@
+{
+  "slug": "remanufactured-parts-scope-3",
+  "q": "How do I count remanufactured or refurbished parts I buy in Scope 3?",
+  "title": "Remanufactured parts in Scope 3",
+  "short": "Count them in Category 1, or Category 2 if you capitalise them, using the remanufacturer's own footprint for the part where you can get it. Otherwise estimate the remanufacturing energy plus the new components fitted. Do not use a new-part factor, which overstates them, and do not count them as zero.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fleet operators, OEM service networks and machinery users",
+  "sections": [
+    {
+      "h": "Which category",
+      "p": [
+        "Spare parts, reconditioned engines, gearboxes and pumps bought for maintenance are purchased goods, Category 1. A remanufactured machine or major assembly you record as a fixed asset goes in Category 2, capital goods, in the year you buy it, the same as a new one. The category follows how you account for the purchase, not whether the part is new."
+      ]
+    },
+    {
+      "h": "The order of data to use",
+      "ol": [
+        "A product footprint from the remanufacturer for that part, cradle to its gate, ideally to ISO 14067.",
+        "Supplier-specific activity data: electricity and fuel used to strip, clean, machine and test the core, plus the footprint of new components fitted.",
+        "A spend-based estimate, labelled as such. Spend factors are built from new goods, so check whether a cheaper remanufactured part over or understates the result, and say so."
+      ]
+    },
+    {
+      "h": "What a remanufacturer footprint should cover",
+      "ul": [
+        "Energy and consumables used in the remanufacturing plant.",
+        "New components that replace worn ones, such as bearings, seals and gaskets.",
+        "Transport of the old core to the plant, if the supplier arranges it.",
+        "It should not carry the emissions of making the original part; those belong to the first life."
+      ]
+    },
+    {
+      "h": "Do not net off the saving",
+      "p": [
+        "The difference between a new part's footprint and a remanufactured one is an avoided emission. You may report it separately to show the benefit, but your Category 1 total should carry the remanufactured part's actual footprint, not the new-part figure minus a credit. If you pay to send old cores back, that freight is in Category 4."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: 40 remanufactured engines for a fleet",
+    "lines": [
+      "Remanufacturing electricity reported by the supplier: 150 kWh per engine; x 0.710 = 106.5 kg CO2",
+      "New components fitted, from the supplier's footprint: 60 kg CO2e per engine (illustrative)",
+      "Per engine: 106.5 + 60 = 166.5 kg CO2e",
+      "Fleet purchase: 166.5 x 40 = 6,660 kg, about 6.7 tonnes CO2e in Category 1"
+    ],
+    "note": "The component figure is CO2e because it covers several gases; the electricity part is CO2 only. Figures are illustrative; use the supplier's data."
+  },
+  "senseible": "Senseible keeps supplier invoices for these purchases in a separate supplier evidence trail, and where only spend is known it gives a spend-based estimate labelled with its wider uncertainty.",
+  "links": [
+    {
+      "label": "Using a supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Machinery purchase: Category 1 or 2?",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 1 and 2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

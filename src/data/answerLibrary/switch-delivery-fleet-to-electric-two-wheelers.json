@@ -1,0 +1,84 @@
+{
+  "slug": "switch-delivery-fleet-to-electric-two-wheelers",
+  "q": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
+  "title": "Petrol to electric scooters: CO2 saved",
+  "short": "On India's grid average of 0.710 kg CO2 per kWh, an electric delivery scooter can emit roughly half the CO2 of a petrol one per km. In the illustrative case below, 50 scooters riding 78,000 km a month save about 1.8 tonnes of CO2 a month. Use your real mileage and metered charging kWh.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Delivery and service fleets planning an EV switch",
+  "sections": [
+    {
+      "h": "The before and after formulas",
+      "ul": [
+        "Before: petrol litres a year x 2.31 kg CO2 per litre (IPCC 2006 default). Use a full year of fuel records to cover seasons.",
+        "After: electricity used for charging, measured at the charger or the meter, x 0.710 kg CO2 per kWh (CEA grid average, version 21.0).",
+        "Saving: before minus after, for the same kilometres. If the fleet grows after the switch, compare per km, not totals."
+      ]
+    },
+    {
+      "h": "Measure charging kWh at the plug",
+      "p": [
+        "The battery's capacity understates use, because charging loses some energy as heat. Read kWh from a sub-meter on the charging point or from the charger's own log. For battery swapping, ask the swap operator for kWh delivered per month; a count of swaps alone cannot be converted reliably."
+      ]
+    },
+    {
+      "h": "Where the emissions move",
+      "p": [
+        "Petrol burnt in company scooters is Scope 1. After the switch, electricity for charging at your premises is Scope 2. Charging at a public point or a swap station needs a stated choice, as the EV fleet scope answer explains. Partner riders who switch their own scooters reduce your Scope 3, not your Scope 1 or 2."
+      ]
+    },
+    {
+      "h": "Market-based and what is left out",
+      "ul": [
+        "Report the location-based figure at 0.710 always. Show a lower market-based figure only if you hold renewable instruments, such as RECs or a green tariff, for the charging kWh.",
+        "This comparison covers fuel and electricity in use. Making the scooters and their batteries sits in Scope 3 Category 2 and is outside it.",
+        "The grid factor changes with each CEA edition. Recalculate the after figure with the edition for each year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50 delivery scooters (illustrative)",
+    "lines": [
+      "Distance: 50 scooters x 60 km a day x 26 days = 78,000 km a month",
+      "Petrol at 45 km per litre (assumed): 78,000 / 45 = 1,733.3 L; x 2.31 = 4,004 kg CO2",
+      "Electric at 0.04 kWh per km at the plug (assumed, including charging losses): 78,000 x 0.04 = 3,120 kWh; x 0.710 = 2,215.2 kg CO2",
+      "Saving: 4,004 minus 2,215.2 = 1,788.8 kg a month, about 45 percent",
+      "Per year: 1,788.8 x 12 = 21,465.6 kg, about 21.5 tonnes CO2"
+    ],
+    "note": "Mileage and kWh per km are assumptions; use your fuel records and charger meter readings."
+  },
+  "senseible": "Senseible reads the fuel invoices for the petrol period and the electricity bills for the charging period, applying 2.31 kg CO2 per litre and 0.710 kg CO2 per kWh, and reports location-based and market-based Scope 2 separately. A market-based figure needs your renewable instrument data.",
+  "links": [
+    {
+      "label": "EV fleet charging: which scope?",
+      "to": "/answers/ev-fleet-charging-emissions-which-scope"
+    },
+    {
+      "label": "Diesel to electric van: CO2 saved",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Are EV deliveries zero in Scope 3?",
+      "to": "/answers/are-ev-deliveries-zero-emission-scope-3"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy (petrol CO2 default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

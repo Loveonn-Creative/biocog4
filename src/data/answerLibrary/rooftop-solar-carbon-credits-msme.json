@@ -1,0 +1,77 @@
+{
+  "slug": "rooftop-solar-carbon-credits-msme",
+  "q": "Can my factory's rooftop solar earn carbon credits?",
+  "title": "Can rooftop solar earn carbon credits?",
+  "short": "In practice, rarely. Verra no longer registers new grid-connected renewable power projects outside least developed countries, Gold Standard restricts them in a similar way, and the ICVCM has rejected the main renewable methods. India's CCTS offset route works only where BEE has approved a fitting methodology. The dependable benefit is a lower Scope 2.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSMEs with rooftop or captive solar",
+  "sections": [
+    {
+      "h": "Why the voluntary registries say no",
+      "ul": [
+        "Verra's VCS Standard excludes grid-connected renewable electricity projects, except in least developed countries. India is not one.",
+        "Gold Standard limits eligibility for grid-connected renewable projects in a similar way; check its current eligibility rules for your project size and type.",
+        "The ICVCM decided in 2024 that the main grid-connected renewable methodologies do not meet its additionality test, so such credits cannot carry the Core Carbon Principles label."
+      ]
+    },
+    {
+      "h": "The Indian carbon market route",
+      "p": [
+        "The offset mechanism under the Carbon Credit Trading Scheme lets non-obligated entities register projects, but only under methodologies BEE has approved. Check BEE's current list before assuming rooftop solar qualifies. Even where a method fits, validation and verification costs are fixed, and a small rooftop system earns few tonnes."
+      ]
+    },
+    {
+      "h": "What rooftop solar does give you",
+      "ul": [
+        "Lower Scope 2: solar units you generate and use on site carry no Scope 2, and you report only units imported from the grid.",
+        "Lower bills, which is usually the real return.",
+        "A clear story for buyers and lenders, backed by generation data and bills."
+      ],
+      "p": [
+        "Renewable energy certificates are not a way round this for self-consumed units. Under the CERC REC Regulations, 2022, RECs issued for captive or self-consumed renewable energy are not eligible for sale."
+      ]
+    },
+    {
+      "h": "Before you sign with a credit aggregator",
+      "p": [
+        "Ask which registry and methodology they will use, whether new projects are being registered under it today, what share of revenue you keep, and who pays for verification. If the answers are vague, treat projected credit income as zero in your solar business case."
+      ]
+    }
+  ],
+  "senseible": "Senseible shows carbon credit eligibility signals from your records; registries, not Senseible, handle credit issuance. For rooftop solar, it reports the lower Scope 2 from the grid units on your bills.",
+  "links": [
+    {
+      "label": "Rooftop solar net metering and Scope 2",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Why ICVCM rejected renewable credits",
+      "to": "/answers/why-icvcm-rejected-renewable-energy-credits"
+    },
+    {
+      "label": "CCTS offsets for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Rooftop solar payback for a factory",
+      "to": "/answers/rooftop-solar-payback-for-a-factory"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Verra, VCS Standard v4 (eligibility of grid-connected renewable energy projects)",
+      "url": "https://verra.org"
+    },
+    {
+      "label": "Gold Standard for the Global Goals, renewable energy eligibility requirements",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "label": "ICVCM, assessment of renewable energy methodologies (2024)",
+      "url": "https://icvcm.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Registry eligibility lists and BEE's approved CCTS offset methodologies change; recheck Verra, Gold Standard and BEE before relying on this."
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "malaysia-nsrf-supplier-emissions",
+  "q": "Will Malaysia's ISSB-based reporting make Malaysian buyers ask Indian suppliers for Scope 3 data?",
+  "title": "Malaysia's NSRF and Indian suppliers",
+  "short": "Probably, once their Scope 3 relief ends. Malaysia's National Sustainability Reporting Framework phases in IFRS S2 for Bursa listed issuers and large non-listed companies, and IFRS S2 requires Scope 3. Buyers that report will then need your Scope 1 and 2 emissions and a per unit figure for the goods you sell them.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to Malaysia",
+  "sections": [
+    {
+      "h": "What the NSRF requires",
+      "p": [
+        "The Securities Commission Malaysia issued the National Sustainability Reporting Framework in 2024. It adopts the ISSB standards, IFRS S1 and IFRS S2, for companies listed on Bursa Malaysia in groups, starting with the largest Main Market issuers, followed by other Main Market issuers, then ACE Market issuers and large non-listed companies. The framework includes transition relief, including time before Scope 3 must be reported."
+      ]
+    },
+    {
+      "h": "Why it reaches Indian suppliers",
+      "p": [
+        "IFRS S2 asks for Scope 3 measured with the GHG Protocol, and it prefers primary data from suppliers over spend-based estimates. For a Malaysian manufacturer, purchased goods are often the largest Scope 3 category, so suppliers of steel, chemicals, components and food ingredients are likely to be asked first."
+      ]
+    },
+    {
+      "h": "What a Malaysian buyer is likely to ask for",
+      "ol": [
+        "Your plant's Scope 1 and Scope 2 for the buyer's reporting year, showing Scope 2 both location-based and market-based.",
+        "A figure per tonne or per piece of what you ship to them, which they multiply by the quantity they bought.",
+        "Your method: boundary, emission factors, and the Indian grid factor you applied.",
+        "Whether the figures have been checked by anyone."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "p": [
+        "Build one clean Scope 1 and 2 inventory from your fuel and electricity records and a simple product allocation. The same data answers BRSR value chain requests, EU buyers and IFRS S2 based customers in Singapore, Japan or Australia, so you do not need a separate exercise for Malaysia."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds Scope 1 and 2 records from your invoices and bills and produces self-declared draft reports a buyer can request, with each figure traced to its source document. It does not provide third-party assurance.",
+  "links": [
+    {
+      "label": "Does IFRS S2 apply in India?",
+      "to": "/answers/does-ifrs-s2-apply-in-india"
+    },
+    {
+      "label": "Allocating your emissions to a buyer",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    },
+    {
+      "label": "Singapore climate reporting",
+      "to": "/answers/singapore-climate-reporting-indian-subsidiaries"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S2 Climate-related Disclosures (ifrs.org)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011) and Technical Guidance (2013)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Phase-in dates and the length of Scope 3 relief under the NSRF may change; check the Securities Commission Malaysia and Bursa Malaysia updates."
+}

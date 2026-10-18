@@ -1,0 +1,87 @@
+{
+  "slug": "induction-vs-lpg-canteen-kitchen-emissions",
+  "q": "Is induction cooking lower carbon than LPG in a factory canteen or hotel kitchen in India?",
+  "title": "Induction vs LPG in a canteen kitchen",
+  "short": "Not on India's grid average today. Per unit of heat reaching the pan, induction at 0.710 kg CO2 per kWh emits roughly one and a half to two times the CO2 of an LPG burner. Induction becomes the lower carbon choice when the electricity comes from rooftop solar or another renewable supply.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Hotels, institutional kitchens and factories with canteens",
+  "sections": [
+    {
+      "h": "Compare per MJ of useful heat",
+      "ul": [
+        "LPG: 2.98 kg CO2 per kg / (47.3 MJ per kg x stove efficiency). At 55 percent efficiency that is 0.115 kg CO2 per MJ in the pan; at 40 percent, 0.158.",
+        "Induction: 0.710 / 3.6 MJ per kWh / induction efficiency. At 85 percent that is 0.232 kg CO2 per MJ."
+      ],
+      "p": [
+        "Stove efficiencies here are labelled estimates. Large commercial burners and open flames sit at the low end; well-maintained burners with the right pan size do better."
+      ]
+    },
+    {
+      "h": "The grid factor at which induction wins",
+      "p": [
+        "Induction matches a 55 percent efficient LPG burner when electricity carries about 0.35 kg CO2 per kWh, and a 40 percent burner at about 0.48. The CEA average is 0.710, so induction loses on location-based accounting. Power from your own rooftop solar, or renewable power backed by certificates under market-based Scope 2, can bring it below those figures."
+      ]
+    },
+    {
+      "h": "How the switch shows in your inventory",
+      "ul": [
+        "LPG burnt in your kitchen is Scope 1.",
+        "Electricity for induction is Scope 2, reported location-based, and market-based if you hold renewable instruments.",
+        "Do not report a cut in Scope 1 as a saving without adding the new Scope 2."
+      ]
+    },
+    {
+      "h": "Reasons to switch other than CO2",
+      "p": [
+        "Kitchens move to induction for indoor air quality, cooler working conditions, cylinder safety and supply risk. Those can be good reasons. Just do not claim a carbon saving unless the electricity is cleaner than about 0.35 to 0.48 kg CO2 per kWh."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a hotel kitchen using 1,000 kg of LPG a month",
+    "lines": [
+      "LPG: 1,000 x 2.98 = 2,980 kg CO2",
+      "Heat in the pan at 55 percent: 1,000 x 47.3 x 0.55 = 26,015 MJ",
+      "Same heat by induction at 85 percent: 26,015 / 0.85 / 3.6 = 8,502 kWh x 0.710 = 6,036 kg CO2",
+      "If the LPG burners were only 40 percent efficient: 18,920 MJ, so 6,183 kWh x 0.710 = 4,390 kg CO2",
+      "Either way induction on grid power emits more; on rooftop solar the Scope 2 figure falls toward zero"
+    ],
+    "note": "Efficiencies are labelled estimates; measure your own with a water-boiling test. LPG 2.98 kg CO2 per kg and NCV 47.3 MJ per kg are IPCC 2006 defaults."
+  },
+  "senseible": "Senseible reads LPG invoices at 2.98 kg CO2 per kg and electricity bills at 0.710 kg CO2 per kWh, so the canteen's Scope 1 and Scope 2 before and after a switch come from your own documents.",
+  "links": [
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    },
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "Staff quarters and canteen electricity",
+      "to": "/answers/staff-quarters-electricity-in-carbon-footprint"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapters 1 and 2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The answer depends on the CEA grid factor, which is revised each year."
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "deduct-carbon-credits-from-scope-1-brsr",
+  "q": "Can I deduct carbon credits I bought from my Scope 1 and 2 totals in BRSR or for a buyer?",
+  "title": "Can carbon credits reduce my Scope 1 and 2?",
+  "short": "No. Report Scope 1 and Scope 2 gross, as emitted, and show carbon credits you bought and retired as a separate line. The GHG Protocol keeps offsets outside the inventory, BRSR asks for gross emissions, and a buyer adding your figures to its Scope 3 needs gross figures too.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Listed companies, their value chain and exporters",
+  "sections": [
+    {
+      "h": "What the GHG Protocol says",
+      "p": [
+        "The Corporate Standard treats offsets as outside the inventory. A company can report credits it has bought or retired, but as separate information, not subtracted from Scope 1, 2 or 3. The inventory describes what your operations emitted; a credit describes a reduction somewhere else."
+      ]
+    },
+    {
+      "h": "How it looks in BRSR",
+      "ul": [
+        "Principle 6 asks for total Scope 1 and Scope 2 emissions and intensity. Enter gross figures.",
+        "SEBI's March 2025 circular added a voluntary leadership indicator for Green Credits under the Green Credit Rules, 2023. That is a count of Green Credits, not carbon credits, and it is not netted against emissions either.",
+        "If you retired carbon credits, describe them in a note: registry, project, vintage, quantity and retirement serial numbers."
+      ]
+    },
+    {
+      "h": "What a buyer needs",
+      "p": [
+        "A buyer uses your Scope 1 and 2 to build its own Scope 3. If you send a net figure, its inventory understates what was emitted. Send gross figures and, if you want, add a note on credits retired. Net claims such as carbon neutral are a separate, governed claim and need their own evidence."
+      ]
+    },
+    {
+      "h": "The one look-alike that is allowed",
+      "p": [
+        "Renewable energy instruments are different from carbon credits. RECs, a green tariff or a qualifying PPA can lower your market-based Scope 2, because they describe the electricity you bought, under the Scope 2 Guidance. Report location-based Scope 2 alongside. A carbon credit can never be used this way."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how to present it",
+    "lines": [
+      "Scope 1: 300 t CO2e; Scope 2 location-based: 200 t CO2; total 500 t, reported gross",
+      "Carbon credits retired for the year: 200 t CO2e, shown separately with registry and serial numbers",
+      "Wrong: reporting 300 t as Scope 1 and 2 after deducting credits",
+      "Right: 500 t gross, plus a separate line for 200 credits retired"
+    ]
+  },
+  "senseible": "Senseible reports gross emissions from your documents and does not net carbon credits against them. Credits you hold sit apart from the inventory.",
+  "links": [
+    {
+      "label": "How many carbon credits do I need?",
+      "to": "/answers/how-many-carbon-credits-do-i-need"
+    },
+    {
+      "label": "BRSR Green Credits disclosure",
+      "to": "/answers/brsr-green-credits-disclosure"
+    },
+    {
+      "label": "Checking carbon credit retirement",
+      "to": "/answers/how-to-check-carbon-credit-retirement"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI BRSR format (July 2023)",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    },
+    {
+      "label": "SEBI circular, 28 March 2025, value chain and voluntary green credit disclosure",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

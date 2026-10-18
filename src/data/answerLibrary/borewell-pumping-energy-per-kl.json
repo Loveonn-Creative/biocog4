@@ -1,0 +1,77 @@
+{
+  "slug": "borewell-pumping-energy-per-kl",
+  "q": "How much electricity and CO2 does pumping groundwater from a borewell take per kilolitre?",
+  "title": "Borewell pumping energy and CO2 per kL",
+  "short": "kWh per kL = 9.81 x total head in metres / (3,600 x pump and motor efficiency). Lifting water 50 m at 40 percent efficiency takes about 0.34 kWh per kL, or about 0.24 kg CO2 per kL at India's grid factor of 0.710. Deeper water and worn pumps raise it.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories and campuses on borewell water",
+  "sections": [
+    {
+      "h": "Where the formula comes from",
+      "p": [
+        "Lifting 1 kL (1,000 kg) of water by 1 m takes 1,000 x 9.81 = 9,810 joules, or 0.002725 kWh. Multiply by the total head and divide by the wire-to-water efficiency of the pump and motor together."
+      ]
+    },
+    {
+      "h": "Total head is more than the borewell depth",
+      "ul": [
+        "Pumping water level: the level while the pump runs, below the resting level because of drawdown.",
+        "Delivery height: from ground up to the overhead tank inlet.",
+        "Friction in the rising main and pipes, often a few metres; more in long or narrow pipes."
+      ]
+    },
+    {
+      "h": "Efficiency of the pump set",
+      "p": [
+        "Submersible pump sets lose energy in the motor, the pump and the cable. A worn or oversized set can fall below 40 percent wire-to-water. Measure it from input kW against flow and head, or ask an energy auditor. A correctly sized, efficient set can reach well above that, which cuts kWh per kL in proportion."
+      ]
+    },
+    {
+      "h": "Measure it on site",
+      "ol": [
+        "Fit a flow meter on the borewell outlet if there is none.",
+        "Read the pump's energy sub-meter and the flow meter at the start and end of a week.",
+        "kWh per kL = kWh used / kL pumped; multiply by 0.710 for kg CO2 per kL.",
+        "Repeat in summer, when the water table drops and head rises."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a campus pumping 100 kL a day",
+    "lines": [
+      "Total head: 60 m pumping level + 15 m to the tank + 5 m friction = 80 m; pump set efficiency 40 percent",
+      "kWh per kL: 0.002725 x 80 / 0.40 = 0.545 kWh",
+      "Per day: 100 x 0.545 = 54.5 kWh, so 54.5 x 0.710 = 38.7 kg CO2",
+      "Per year: 54.5 x 365 = 19,893 kWh and 14,124 kg CO2, about 14.1 t",
+      "A new set at 55 percent: 0.002725 x 80 / 0.55 = 0.396 kWh per kL, 27 percent less"
+    ],
+    "note": "Head and efficiency are assumptions; use your own levels and measured efficiency."
+  },
+  "senseible": "Senseible reads your electricity bills, and two readings of a pump sub-meter in a photo give the units as their difference, with the CEA factor of 0.710 kg CO2 per kWh applied. Water volumes come from your own flow meter.",
+  "links": [
+    {
+      "label": "ZLD plant energy and carbon per kL",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "Water intensity for BRSR",
+      "to": "/answers/water-intensity-calculation-for-brsr"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities (pumps and pumping systems)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

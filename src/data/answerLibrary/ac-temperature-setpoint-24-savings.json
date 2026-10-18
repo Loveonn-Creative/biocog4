@@ -1,0 +1,82 @@
+{
+  "slug": "ac-temperature-setpoint-24-savings",
+  "q": "How much energy and CO2 does setting ACs to 24 C save in an office or factory?",
+  "title": "AC at 24 C: energy and CO2 saved",
+  "short": "Roughly 6% of air conditioner electricity for each degree you raise the setpoint, according to the Ministry of Power and BEE. Moving an office from 20 C to 24 C can cut AC units by a fifth to a quarter. Multiply the kWh saved by 0.710 kg CO2 per kWh and call it an estimate until bills confirm it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Facility managers and office administrators",
+  "sections": [
+    {
+      "h": "Where the 24 C default comes from",
+      "p": [
+        "A Ministry of Power notification of October 2019, made with BEE, requires all star labelled room air conditioners from 1 January 2020 to ship with a default temperature setting of 24 C. Users can still change it, which is why a setpoint policy and remote locks matter in offices.",
+        "The per degree saving is an estimate for typical conditions. Actual savings depend on the outdoor temperature, insulation, occupancy and whether the unit is inverter type."
+      ]
+    },
+    {
+      "h": "How to estimate your saving",
+      "ol": [
+        "Find the AC share of electricity: a sub-meter is best; otherwise compare summer and winter bills, or add up rated power x hours for each unit and label it an estimate.",
+        "Count the degrees raised, for example from 20 C to 24 C is 4 degrees.",
+        "Apply about 6% per degree. BEE's own example puts 20 C to 24 C at 24%. Compounding the saving (1 minus 0.94 to the power 4) gives about 22%, which is the more cautious figure.",
+        "Multiply the kWh saved by 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "What it does not cover",
+      "ul": [
+        "Central chillers: the saving comes through a higher chilled water temperature and a lower load, and is better measured in kW per TR at the plant.",
+        "Process cooling, server rooms and cleanrooms, where the setpoint is fixed by product or equipment needs.",
+        "Refrigerant leaks, which are Scope 1 and unaffected by the setpoint."
+      ]
+    },
+    {
+      "h": "Confirming it on bills",
+      "p": [
+        "Compare the AC sub-meter, or the whole bill, for the same months before and after the change, and note any changes in occupancy or working hours. Report the measured figure once you have it, and keep the estimate only as the planning number."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: an office using 8,000 kWh a month on ACs",
+    "lines": [
+      "Setpoint raised from 20 C to 24 C: 4 degrees x 6% = 24%",
+      "8,000 x 0.24 = 1,920 kWh saved a month",
+      "1,920 x 0.710 = 1,363.2 kg CO2 a month",
+      "Cautious, compounded: 8,000 x 0.2193 = 1,754.4 kWh; x 0.710 = 1,245.6 kg CO2 a month"
+    ],
+    "note": "The 6% per degree figure is an estimate. The AC share of 8,000 kWh is an assumed input; use your sub-meter."
+  },
+  "senseible": "Senseible reads your monthly electricity bills and applies the CEA factor of 0.710 kg CO2 per kWh, so periods before and after a setpoint change can be compared from documents. The saving estimate and its assumptions stay yours.",
+  "links": [
+    {
+      "label": "Measuring savings from a project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, room air conditioner labelling with 24 C default setting (2020)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Ministry of Power, default temperature setting for room air conditioners",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The 6% per degree saving is the Ministry of Power and BEE planning estimate, not a measured figure for any site."
+}

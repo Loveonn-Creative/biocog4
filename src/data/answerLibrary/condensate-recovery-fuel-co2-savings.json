@@ -1,0 +1,83 @@
+{
+  "slug": "condensate-recovery-fuel-co2-savings",
+  "q": "How much fuel and CO2 does returning steam condensate to the boiler save?",
+  "title": "Condensate recovery: fuel and CO2 saved",
+  "short": "Returning hot condensate raises boiler feed water temperature, and the BEE rule of thumb is about 1 percent fuel saved for every 6 C rise. Returning 60 percent of condensate at 80 C to a 30 C make-up tank saves roughly 5 percent of boiler fuel, before counting water and treatment savings.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler operators in textile, food and chemical plants",
+  "sections": [
+    {
+      "h": "Work out the new feed water temperature",
+      "p": [
+        "Mix the returned condensate with cold make-up water by mass: feed temperature = (condensate share x condensate temperature) + (make-up share x make-up temperature). Measure condensate temperature where it enters the feed tank, not at the trap, because it cools on the way and loses flash steam if the tank is vented.",
+        "Then divide the temperature rise by 6 C to get the approximate percent of fuel saved, from the BEE guide book on thermal utilities."
+      ]
+    },
+    {
+      "h": "From percent saved to CO2",
+      "ul": [
+        "Take annual boiler fuel from your fuel invoices: litres of furnace oil, kg of coal or scm of PNG.",
+        "Fuel saved = annual fuel x percent saved.",
+        "CO2 saved = fuel saved x its IPCC 2006 default factor, matched to the invoice unit: per litre for furnace oil (2.97 kg), per kg for coal (2.42 kg), per scm for PNG (2.05 kg).",
+        "Report it in Scope 1, since it is your own boiler fuel that falls."
+      ]
+    },
+    {
+      "h": "What else the return line saves",
+      "p": [
+        "Condensate is distilled water. Returning it cuts fresh water drawn, softener or RO regeneration and blowdown, since less dissolved solids come in. These savings are real but they are separate from the fuel figure; do not add them into the CO2 unless you also count the electricity of the water treatment you avoid."
+      ]
+    },
+    {
+      "h": "Checks before you pipe it back",
+      "ul": [
+        "Contamination: condensate from heat exchangers that could leak product or oil needs a conductivity or oil monitor and a dump valve.",
+        "Feed pump: very hot feed water can make a pump cavitate. Confirm the pump and tank height suit the new temperature.",
+        "Insulate the return line and the feed tank, or much of the gain is lost on the way.",
+        "Flash steam from high pressure condensate can be used in a flash vessel for low pressure heating instead of being vented."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: furnace oil boiler (illustrative)",
+    "lines": [
+      "Before: feed water at 30 C (all make-up)",
+      "After: 60 percent condensate at 80 C, 40 percent make-up at 30 C: 0.6 x 80 + 0.4 x 30 = 60 C",
+      "Rise 30 C; 30 / 6 = about 5 percent fuel saved",
+      "Annual furnace oil from invoices: 3,00,000 L; saved: 3,00,000 x 0.05 = 15,000 L",
+      "CO2: 15,000 x 2.97 = 44,550 kg, about 44.6 tonnes a year"
+    ],
+    "note": "The 1 percent per 6 C figure is a rule of thumb. Confirm with fuel per tonne of steam before and after."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh, version 21.0) and IPCC 2006 fuel defaults, so you can compare the months before and after a project from your own documents. The saving you claim, and the engineering behind it, stay your own figures.",
+  "links": [
+    {
+      "label": "Steam pipe insulation heat loss",
+      "to": "/answers/steam-pipe-insulation-heat-loss"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Boiler efficiency: direct and indirect",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, steam system chapter",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Energy (fuel CO2 defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

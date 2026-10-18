@@ -1,0 +1,93 @@
+{
+  "slug": "esco-shared-savings-model-msme",
+  "q": "How does an ESCO shared-savings contract work for an MSME efficiency project, and who reports the savings?",
+  "title": "ESCO shared savings: how it works",
+  "short": "In a shared-savings contract the ESCO pays for and installs the efficiency equipment, and you share the measured rupee savings with it for a fixed period, after which the savings are yours. You, the plant using less energy, report the lower Scope 2 or Scope 1. The ESCO does not report your emissions.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners and plant heads",
+  "sections": [
+    {
+      "h": "How the money flows",
+      "ol": [
+        "The ESCO audits the plant and proposes measures, such as efficient motors, VFDs, compressors or heat recovery.",
+        "It funds and installs them, and usually maintains them during the contract.",
+        "Both sides agree a baseline and a measurement method before installation.",
+        "Each period, measured savings are valued at your tariff and split in the agreed ratio. Your share starts on day one; the ESCO recovers its investment and margin from its share.",
+        "At the end of the term, ownership of the equipment usually passes to you, and all savings stay with you."
+      ]
+    },
+    {
+      "h": "Shared savings or guaranteed savings",
+      "p": [
+        "In shared savings the ESCO carries the finance and the performance risk; if savings fall short, its share falls. In a guaranteed savings contract you borrow and pay for the equipment, and the ESCO guarantees a minimum saving and pays the shortfall. Shared savings suits an MSME without spare credit lines; guaranteed savings usually leaves more of the saving with you."
+      ]
+    },
+    {
+      "h": "The baseline is the contract",
+      "p": [
+        "Most disputes are about what the plant would have used without the project. Write the baseline period, the production or hours variable it is adjusted for, the meters used and how one-off events are handled into the contract. The IPMVP protocol from the Efficiency Valuation Organization is the usual reference for this measurement and verification plan."
+      ]
+    },
+    {
+      "h": "Who reports what",
+      "ul": [
+        "Equipment on your site drawing power on your electricity bill: the lower consumption is your Scope 2, whoever owns the equipment during the contract.",
+        "If the ESCO owns a boiler or plant and sells you steam or heat, you report purchased steam in Scope 2 and the ESCO reports the fuel it burns in its Scope 1.",
+        "Carbon credits: agree in the contract who may claim or sell any credits from the project. Selling them does not change your metered Scope 2, but you may not also present those reductions as offsets of your own."
+      ]
+    },
+    {
+      "h": "Public support to check",
+      "p": [
+        "The Bureau of Energy Efficiency has empanelled ESCOs and set up guarantee schemes, such as the Partial Risk Guarantee Fund for Energy Efficiency, to make lenders more willing to fund ESCO projects. Scheme terms and status change; ask the ESCO and your bank which ones are active now."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of a shared-savings contract (illustrative)",
+    "lines": [
+      "Baseline: 4,80,000 kWh for 2,000 t = 240 kWh per tonne",
+      "This year: 2,200 t produced, 4,40,000 kWh metered; adjusted baseline 2,200 x 240 = 5,28,000 kWh",
+      "Saving: 5,28,000 minus 4,40,000 = 88,000 kWh; at Rs 8 per kWh = Rs 7,04,000",
+      "Split 80:20 (assumed) ESCO to plant: Rs 5,63,200 to the ESCO, Rs 1,40,800 to you",
+      "CO2 avoided, in your Scope 2: 88,000 x 0.710 = 62,480 kg, about 62.5 tonnes"
+    ],
+    "note": "The split, tariff and production figures are illustrative. A flat kWh per tonne assumes no fixed load; check with a regression first."
+  },
+  "senseible": "Senseible reads electricity bills and fuel invoices and applies the CEA grid factor (0.710 kg CO2 per kWh) and IPCC 2006 fuel defaults, so before and after periods can be compared from documents. The baseline model, the savings split and any claim made from it stay yours and the ESCO's.",
+  "links": [
+    {
+      "label": "RESCO rooftop solar: who claims it?",
+      "to": "/answers/resco-opex-solar-who-claims-scope-2"
+    },
+    {
+      "label": "Measuring savings from an efficiency project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Will energy savings pay the loan EMI?",
+      "to": "/answers/energy-efficiency-loan-emi-vs-savings"
+    },
+    {
+      "label": "Emissions from purchased steam",
+      "to": "/answers/how-to-calculate-emissions-from-purchased-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, ESCO empanelment and the Partial Risk Guarantee Fund for Energy Efficiency",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewNote": "BEE guarantee schemes and ESCO empanelment change; confirm which are active before quoting them to a lender.",
+  "reviewed": "2026-10-18"
+}

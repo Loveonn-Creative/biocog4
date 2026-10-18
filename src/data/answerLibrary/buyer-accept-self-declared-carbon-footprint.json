@@ -1,0 +1,81 @@
+{
+  "slug": "buyer-accept-self-declared-carbon-footprint",
+  "q": "Will my buyer accept a self-declared carbon footprint, or do I need third-party verification?",
+  "title": "Self-declared footprint or verified?",
+  "short": "Most buyers accept a self-declared footprint for supplier questionnaires and Scope 3 data requests, if it shows its method, factors and evidence. You need third-party verification when a rule or contract demands it, most clearly for actual emissions in EU CBAM declarations from 2026, or when the buyer's programme names an assurance level.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Exporters and tier 2 suppliers",
+  "sections": [
+    {
+      "h": "Where self-declared data is normally enough",
+      "ul": [
+        "Customer Scope 3 data requests and supplier questionnaires, including CDP's supply chain questions, which ask whether figures are verified but accept unverified answers.",
+        "BRSR value chain requests from a listed customer. Since SEBI's March 2025 circular, value chain disclosure is voluntary for the top 250 listed companies, and assessment or assurance of it is voluntary from FY 2026-27.",
+        "Early-stage buyer conversations about a product footprint, before it is used in a public claim."
+      ]
+    },
+    {
+      "h": "Where verification is required",
+      "ul": [
+        "EU CBAM: from 1 January 2026, actual embedded emissions used in the importer's declaration must be verified by an accredited verifier (Article 8 of the CBAM Regulation, with the verification rules in Implementing Regulation (EU) 2025/2546). Without verification the importer uses default values.",
+        "A contract, supplier code or sustainability-linked loan that names verification and a standard, such as ISO 14064-3.",
+        "A public product claim, such as a carbon label, where the scheme sets its own verification rules."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Ask the buyer in writing what they will do with the figure and which programme or rule it feeds.",
+        "If they name a rule or standard that requires verification, budget for it and get quotes.",
+        "If not, send a self-declared figure with its method, factors, period and boundary, and offer the source documents for inspection.",
+        "Agree up front that you will move to verified figures if their requirement changes."
+      ]
+    },
+    {
+      "h": "Making self-declared data credible",
+      "p": [
+        "A buyer trusts a self-declared figure more when each line traces to an invoice or bill, the factors and their editions are named, estimates are labelled, and exclusions are listed. That evidence file is also what a verifier will ask for later, so building it now is not wasted."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the evidence trail a buyer or an independent verifier asks to see: each figure traces to its invoice or bill, with the factor and edition named. Its Verified status means the rule checks passed with that evidence attached. For a deeper review before you send figures, Senseible offers paid Fast-track Verification and an Expert Climate Audit.",
+  "links": [
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "GHG inventory verification cost in India",
+      "to": "/answers/ghg-inventory-verification-cost-india"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    },
+    {
+      "label": "BRSR value chain request for MSME suppliers",
+      "to": "/answers/brsr-value-chain-data-request-msme-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Validation and verification of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "SEBI circular on assurance or assessment and value chain disclosures, 28 March 2025",
+      "url": "https://www.sebi.gov.in/legal/circulars/mar-2025/measures-to-facilitate-ease-of-doing-business-with-respect-to-framework-for-assurance-or-assessment-esg-disclosures-for-value-chain-and-introduction-of-voluntary-disclosure-on-green-credits_93102.html"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Article 8 verification of embedded emissions",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/2546, CBAM verification principles (eur-lex.europa.eu)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewNote": "Buyer programmes, SEBI value chain rules and CBAM verification rules change; check the specific programme named in each request.",
+  "reviewed": "2026-10-18"
+}

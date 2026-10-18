@@ -1,0 +1,80 @@
+{
+  "slug": "supplier-price-includes-delivery-category-4",
+  "q": "My supplier's price includes delivery to my factory. Do I still count that transport in Category 4?",
+  "title": "Delivered price: is the freight Category 4?",
+  "short": "Yes. Transport of purchased goods from a tier 1 supplier to your site, in vehicles you do not own, is Category 4 even when the freight is built into a delivered price and never invoiced separately. The only exception is when the supplier footprint you already use in Category 1 includes delivery to your site.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Purchase and sustainability teams at Indian manufacturers",
+  "sections": [
+    {
+      "h": "Why the invoice format does not change the category",
+      "p": [
+        "The Scope 3 Standard defines inbound Category 4 by the physical leg, from your tier 1 supplier to your own operations, not by how the cost reaches you. A FOR destination price, a delivered rate per tonne, or a separate freight line on the same invoice all describe the same truck journey, so the emissions land in the same place.",
+        "What the delivered price does change is your data. You no longer see a lorry receipt or freight bill, so you have to build the figure from weight and distance yourself."
+      ]
+    },
+    {
+      "h": "Where to find weight and distance without a freight bill",
+      "ul": [
+        "Weight: the quantity on the tax invoice for bulk goods such as steel, cement, resin or chemicals, converted to tonnes. For counted goods, use the packing list or the gross weight on the e-way bill.",
+        "Distance: the approximate distance printed on the e-way bill, or the road distance from the supplier's dispatch PIN code to your plant.",
+        "Vehicle: the vehicle number on the e-way bill lets you check whether it was a small pickup or a heavy truck, which decides the factor; ask the supplier if you are unsure."
+      ]
+    },
+    {
+      "h": "The double counting check with Category 1",
+      "p": [
+        "Before you add a Category 4 figure, read the boundary of any supplier data you already use in Category 1. A cradle-to-gate product footprint stops at the supplier's gate and leaves delivery for you to add. Some supplier declarations are cradle to customer gate and include delivery. If the transport is already inside that number, do not add it again; note in your method that Category 4 for this supplier is included in Category 1.",
+        "Spend-based Category 1 factors applied to a delivered price can also carry part of the freight cost. Where you have both the spend estimate and a transport figure, say which one covers the delivery so a reviewer can see it is counted once."
+      ]
+    },
+    {
+      "h": "When the supplier's own trucks deliver",
+      "p": [
+        "It is still your Category 4. The truck's diesel is the supplier's Scope 1, and it is your Scope 3 because the leg serves your purchase. Both counts are correct within each company's own inventory; the GHG Protocol expects this overlap between companies, not within one inventory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: steel coil bought at a delivered price",
+    "lines": [
+      "Invoice quantity: 12 tonnes of HR coil, price FOR your plant",
+      "Distance from the e-way bill: about 900 km (assumed for this example)",
+      "Tonne-km: 12 x 900 = 10,800",
+      "Factor: heavy truck 20 to 30 t GVW, 0.0823 kg CO2e per tonne-km, well-to-wheel",
+      "10,800 x 0.0823 = 888.8 kg CO2e, about 0.89 t in Category 4"
+    ],
+    "note": "The default factor already includes typical empty running, so no return trip is added. If the mill's product footprint states it includes delivery to you, leave this figure out."
+  },
+  "senseible": "Senseible reads freight lines as separate Scope 3 evidence where they are printed, and its freight calculator applies default intensities per tonne-km by mode and Indian truck class to the weight and distance you give it. For a delivered price with no freight line, you supply the weight and distance from the invoice and e-way bill.",
+  "links": [
+    {
+      "label": "Freight: Category 4 or Category 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Incoterms and Scope 3 freight",
+      "to": "/answers/incoterms-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "E-way bill distance for freight",
+      "to": "/answers/use-e-way-bill-distance-for-freight-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011) and Technical Guidance (2013)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

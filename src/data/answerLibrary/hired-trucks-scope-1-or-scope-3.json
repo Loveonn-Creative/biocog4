@@ -1,0 +1,80 @@
+{
+  "slug": "hired-trucks-scope-1-or-scope-3",
+  "q": "Are trucks we hire with drivers from a transporter Scope 1 or Scope 3?",
+  "title": "Hired trucks with drivers: Scope 1 or 3?",
+  "short": "Scope 3. A truck hired with its driver from a transporter is operated by the transporter, so its fuel is Scope 3, Category 4 when you pay for the transport. That holds for long-term attached trucks too. Only trucks you own, or lease and run yourself, are Scope 1.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Manufacturers and traders using hired or attached vehicles",
+  "sections": [
+    {
+      "h": "The test is operational control",
+      "p": [
+        "Under the operational control approach, which most small companies choose, a source is Scope 1 if you have full authority to set its operating policies: you employ or direct the driver, decide maintenance and run the vehicle day to day. When the transporter supplies the driver, maintains the truck and is responsible for it, the truck is in the transporter's Scope 1 and in your Scope 3."
+      ]
+    },
+    {
+      "h": "Case by case",
+      "ul": [
+        "Your own trucks and your drivers: Scope 1.",
+        "A truck leased without a driver, driven and maintained by you: Scope 1 under operational control. Under the financial control approach an operating lease goes in Category 8 instead.",
+        "Trucks hired per trip from a transporter or GTA: Scope 3, Category 4 if you pay; Category 9 if the customer arranges and pays for delivery.",
+        "Attached trucks on a monthly contract, exclusive to you, with the owner's driver: Scope 3, Category 4. Exclusivity alone does not give you control.",
+        "Your own drivers in a transporter's truck: rare; follow who runs the vehicle and say how you decided."
+      ]
+    },
+    {
+      "h": "If you buy the diesel for hired trucks",
+      "p": [
+        "Paying for fuel does not by itself move the truck into Scope 1. Keep it in Category 4, but use your litres as the activity data, because that is better than a tonne-km estimate. Make sure the same diesel is not also counted in Scope 1 from your fuel invoices, and note the treatment in your method note."
+      ]
+    },
+    {
+      "h": "What to record for each hired vehicle",
+      "ul": [
+        "The contract or hire terms showing who supplies the driver and maintenance.",
+        "Litres where you pay for fuel; otherwise weight and distance from the consignment note.",
+        "Whether the movement is inbound or outbound, which sets Category 4 or 9."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three attached trucks, fuel paid by you",
+    "lines": [
+      "Diesel bought for the attached trucks in the year: 9,000 litres",
+      "9,000 x 2.68 kg CO2 per litre = 24,120 kg CO2, about 24.1 t",
+      "Reported in Scope 3, Category 4, and removed from the Scope 1 diesel total"
+    ],
+    "note": "2.68 kg CO2 per litre is the IPCC 2006 default for diesel."
+  },
+  "senseible": "Senseible reads freight records and invoices; Scope 3 lines go to a separate supplier evidence trail, and spend-based estimates are labelled as such. The control judgement for each hired vehicle comes from your contracts.",
+  "links": [
+    {
+      "label": "GTA reverse charge and freight emissions",
+      "to": "/answers/gta-reverse-charge-freight-emissions"
+    },
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Leased factory emissions: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Rented diesel generator: Scope 1 or 3",
+      "to": "/answers/rented-diesel-generator-scope-1-or-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004), Chapters 3 and 4 and Appendix F",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "air-compressor-heat-recovery-savings",
+  "q": "How much fuel can I save by recovering heat from an air compressor, and how do I calculate the CO2?",
+  "title": "Compressor heat recovery: fuel and CO2",
+  "short": "Most of a compressor's electricity ends up as heat. Recovered heat in kWh is compressor input kWh times the recoverable fraction times the share of time you can use it. Divide by the efficiency of the heater it replaces and by the fuel's calorific value to get fuel saved, then multiply by that fuel's emission factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories with screw compressors and hot water or boiler feed needs",
+  "sections": [
+    {
+      "h": "How much heat is there",
+      "p": [
+        "The US Department of Energy's compressed air sourcebook says that as much as 80 to 93 percent of the electricity an industrial compressor uses becomes heat, and a well designed recovery unit can recover 50 to 90 percent of that. Oil-injected screw compressors suit hot water recovery from the oil circuit; air-cooled units can duct warm air to drying or space heating."
+      ]
+    },
+    {
+      "h": "The calculation, step by step",
+      "ol": [
+        "Compressor input kWh a year, from a sub-meter or rated input kW x loaded hours.",
+        "Recoverable heat kWh = input kWh x recoverable fraction x utilisation, where utilisation is the share of that heat you can use at the time it is produced.",
+        "Convert to GJ: kWh x 0.0036.",
+        "Fuel energy avoided = recovered GJ / efficiency of the boiler or heater it replaces.",
+        "Fuel quantity = fuel energy / net calorific value; CO2 = fuel quantity x emission factor.",
+        "Subtract the electricity for any extra pump or fan, x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Utilisation is where estimates go wrong",
+      "p": [
+        "Heat recovery saves fuel only when there is a matching heat demand at the same time, such as boiler feed water, process wash water or canteen hot water. If the compressor runs at night and the hot water is needed by day, you need storage or the saving shrinks. Use a utilisation figure you can defend from your shift pattern, not 100 percent."
+      ]
+    },
+    {
+      "h": "Which scope the saving shows in",
+      "p": [
+        "The compressor's electricity does not change, so Scope 2 stays the same. The saving appears in Scope 1 as less LPG, diesel or furnace oil bought for the heater. If the recovered heat replaces an electric heater instead, the saving is in Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 75 kW screw compressor feeding boiler make-up water",
+    "lines": [
+      "Compressor input: 75 kW x 6,000 loaded hours = 4,50,000 kWh a year",
+      "Recoverable fraction 0.6 and utilisation 0.8 (both assumptions): 4,50,000 x 0.6 x 0.8 = 2,16,000 kWh",
+      "In GJ: 2,16,000 x 0.0036 = 777.6 GJ",
+      "LPG-fired heater at an assumed 85% efficiency: 777.6 / 0.85 = 914.8 GJ of fuel avoided",
+      "LPG: 914.8 / 47.3 GJ per t (IPCC 2006 default NCV) = 19.34 t",
+      "CO2: 19,340 kg x 2.98 = 57,633 kg, about 57.6 t",
+      "Extra pump: 1.5 kW x 4,800 hours = 7,200 kWh x 0.710 = 5,112 kg",
+      "Net saving: 57.6 minus 5.1 = about 52.5 t CO2 a year"
+    ],
+    "note": "The pump runs only while heat is used: 6,000 x 0.8 = 4,800 hours."
+  },
+  "senseible": "Senseible reads your fuel invoices and electricity bills and applies the IPCC 2006 fuel defaults and the CEA factor of 0.710 kg CO2 per kWh, so the drop in LPG or oil bought after the retrofit shows in documents. The heat balance and the saving claim stay your own records.",
+  "links": [
+    {
+      "label": "Emissions saved by waste heat recovery",
+      "to": "/answers/emissions-saved-by-waste-heat-recovery"
+    },
+    {
+      "label": "Compressed air leak cost and emissions",
+      "to": "/answers/compressed-air-leak-cost-and-emissions"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2, default net calorific values and CO2 factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Compressed Air System chapter (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

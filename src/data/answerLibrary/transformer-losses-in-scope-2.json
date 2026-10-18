@@ -1,0 +1,79 @@
+{
+  "slug": "transformer-losses-in-scope-2",
+  "q": "Do transformer losses count in my Scope 2 if I am an HT consumer?",
+  "title": "Transformer losses in Scope 2 for HT users",
+  "short": "Yes. Losses in your own transformer are electricity you bought and consumed, so they belong in Scope 2. If your meter is on the HT side, the billed kWh already include them. If it is on the LT side, add the transformer loss units your discom prints on the bill.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "HT industrial consumers with their own transformers",
+  "sections": [
+    {
+      "h": "Why the losses are your consumption",
+      "p": [
+        "Scope 2 covers electricity that is purchased and consumed by equipment you own or control. A transformer you own is part of your installation. Its iron losses run whenever it is energised, even on a Sunday with the plant shut, and its copper losses rise with load. That energy passes your point of supply and is paid for by you, so it is consumption, not a grid loss."
+      ]
+    },
+    {
+      "h": "How metering decides what to do",
+      "ul": [
+        "HT-side metering: the meter sits before your transformer, so billed kWh already include its losses. Use the billed units as they are and add nothing.",
+        "LT-side metering: the meter sits after the transformer and misses its losses. State supply codes generally let the discom add loss units to the bill, by a formula or a fixed percentage. Those added units are billed consumption, so include them.",
+        "Check the bill: look for a line such as transformer loss units or LT metering loss, and confirm whether the total kWh shown includes it."
+      ]
+    },
+    {
+      "h": "Do not confuse this with grid losses",
+      "p": [
+        "Losses in the transmission and distribution network before your point of supply are a different item. For an end user they sit in Scope 3 Category 3, not in Scope 2. Your transformer's losses are inside your fence; grid losses are outside it. Keep the two apart so neither is counted twice."
+      ]
+    },
+    {
+      "h": "Cutting them",
+      "p": [
+        "Because they are part of your Scope 2, lower transformer losses show up directly in your figure. Switching off an idle transformer at times of no load, sizing transformers to the real load, and replacing an old unit with a low loss one all reduce billed units. Measure the change from bills over a comparable period."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an LT-metered month",
+    "lines": [
+      "Units recorded on the LT meter: 1,20,000 kWh",
+      "Transformer loss units added on the bill: 3,000 kWh (as printed)",
+      "Scope 2 units: 1,20,000 + 3,000 = 1,23,000 kWh",
+      "1,23,000 x 0.710 kg CO2 per kWh = 87,330 kg CO2, about 87.3 t",
+      "Share from transformer losses: 3,000 x 0.710 = 2,130 kg CO2"
+    ],
+    "note": "The loss units are taken as printed. The method for adding them differs by state supply code, so read your own bill rather than applying another state's percentage."
+  },
+  "senseible": "Senseible reads the billed units from your electricity bill and applies the CEA factor of 0.710 kg CO2 per kWh. Where loss units are printed as a separate line, check that the kWh it shows include them, and enter the total yourself if they do not; the line is then marked Entered by you.",
+  "links": [
+    {
+      "label": "Reading an HT industrial bill",
+      "to": "/answers/how-to-read-an-ht-industrial-electricity-bill"
+    },
+    {
+      "label": "Grid T&D losses in Scope 3",
+      "to": "/answers/transmission-and-distribution-losses-india-scope-3"
+    },
+    {
+      "label": "Grid electricity factor for India",
+      "to": "/emission-factors/grid-electricity"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Rules for adding transformer losses to LT-metered HT bills are set in each state's electricity supply code and can change; check your SERC's current code."
+}

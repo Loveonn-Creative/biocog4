@@ -1,0 +1,81 @@
+{
+  "slug": "solar-water-heater-factory-co2-savings",
+  "q": "How much fuel and CO2 does a solar water heater save in a factory, hostel or hotel?",
+  "title": "Solar water heater fuel and CO2 savings",
+  "short": "Work it out from the heat delivered: litres per day x 4.186 kJ per kg per degree C x temperature rise x sunny days. Divide by the replaced heater's efficiency, convert to fuel or kWh, and apply the fuel or grid factor. A 2,000 litre system replacing electric geysers saves about 18 t CO2 a year.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs, hotels and factories with hot water demand",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Heat needed per day, in kJ = litres per day x 4.186 x (hot water temperature minus cold water temperature). One litre of water is about 1 kg.",
+        "Convert to kWh by dividing by 3,600.",
+        "Multiply by the days the solar system actually carries the load, which depends on your site and season.",
+        "Divide by the efficiency of the heater it replaces, then by the fuel's energy content, to get fuel saved.",
+        "Multiply by the emission factor of that fuel or of grid electricity."
+      ]
+    },
+    {
+      "h": "Energy content to use",
+      "ul": [
+        "Electricity: 1 kWh is 3,600 kJ; use the heater's efficiency, close to 95% for an electric geyser (estimate).",
+        "Diesel: about 10.0 kWh per litre, from the IPCC default NCV of 43 MJ per kg and an assumed 0.84 kg per litre.",
+        "LPG: about 13.1 kWh per kg, from the IPCC default NCV of 47.3 MJ per kg."
+      ]
+    },
+    {
+      "h": "What lowers real savings",
+      "ul": [
+        "Cloudy and monsoon days, when the backup heater does part or all of the work.",
+        "Standing losses from the storage tank and long pipe runs.",
+        "Pumps on forced circulation systems, which use electricity; subtract their kWh.",
+        "Oversizing: litres the system heats but nobody uses save nothing."
+      ]
+    },
+    {
+      "h": "Proving the saving afterwards",
+      "p": [
+        "The formula gives a design estimate. To report a saving, compare electricity bills or fuel invoices for the same months before and after, adjusted for occupancy or production. A hostel that filled more rooms after installing the system can show higher bills even though the system works, so normalise per guest night or per tonne."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Labelled estimate: 2,000 litres a day heated from 25 to 60 C",
+    "lines": [
+      "Heat per day: 2,000 x 4.186 x 35 = 2,93,020 kJ = 81.4 kWh",
+      "Solar carries the load on 300 days (assumed): 81.4 x 300 = 24,418 kWh of heat a year",
+      "Replacing electric geysers at 95%: 24,418 / 0.95 = 25,704 kWh; x 0.710 = 18,249 kg CO2, about 18.2 t",
+      "Replacing a diesel boiler at 80%: 24,418 / 0.80 / 10.0 = 3,052 litres; x 2.68 = 8,180 kg CO2",
+      "Replacing LPG at 85%: 24,418 / 0.85 / 13.14 = 2,186 kg; x 2.98 = 6,515 kg CO2"
+    ],
+    "note": "Temperatures, sunny days and efficiencies are assumptions. Electric heating saves the most CO2 per unit of heat because India's grid factor is high."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices and applies the CEA grid factor of 0.710 and IPCC 2006 fuel defaults, so you can compare emissions for periods before and after the system went in from your own documents. The saving claim and its assumptions stay yours.",
+  "links": [
+    {
+      "label": "Measuring savings from a project",
+      "to": "/answers/how-to-measure-savings-from-energy-efficiency-project"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapters 2 and 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

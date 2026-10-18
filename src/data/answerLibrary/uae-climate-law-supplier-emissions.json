@@ -1,0 +1,72 @@
+{
+  "slug": "uae-climate-law-supplier-emissions",
+  "q": "Will the UAE climate law make UAE customers ask Indian suppliers for emissions data?",
+  "title": "UAE climate law and Indian suppliers",
+  "short": "Not directly, as the law reads today. The UAE's Federal Decree-Law No. 11 of 2024 puts measuring and reporting duties on entities in the UAE for their own emissions. But UAE buyers that set reduction plans, report to group parents or sell into the EU will ask suppliers for data, so prepare Scope 1 and 2 figures anyway.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian exporters to the UAE and Gulf",
+  "sections": [
+    {
+      "h": "What the law does",
+      "p": [
+        "Federal Decree-Law No. 11 of 2024 on the Reduction of Climate Change Effects came into force in 2025. It requires public and private entities in the UAE to measure and report their greenhouse gas emissions, keep records, and take steps to reduce them, in line with the UAE's national targets. The Ministry of Climate Change and Environment issues the implementing regulations, which set out who reports, how and from when."
+      ]
+    },
+    {
+      "h": "Why supplier requests still come",
+      "ul": [
+        "A UAE company planning reductions finds that much of its footprint sits in purchased goods, which it cannot cut without supplier data.",
+        "Many UAE buyers are subsidiaries of groups that report Scope 3 under their home rules.",
+        "UAE traders that re-export to Europe may need product data for EU rules such as CBAM.",
+        "Listed companies report under their exchange's ESG disclosure guidance."
+      ]
+    },
+    {
+      "h": "What to have ready",
+      "ol": [
+        "Scope 1 and Scope 2 for your last financial year, with fuel and electricity records behind them.",
+        "A per unit figure for the products you sell them, such as kg CO2 per tonne or per piece, with the allocation explained.",
+        "The factors you used: the CEA grid factor for Indian electricity and IPCC defaults for fuels.",
+        "A short method note naming the GHG Protocol and the boundary."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "p": [
+        "Do not promise compliance with the UAE law; it applies to entities in the UAE, not to Indian suppliers. Do not send a single company-wide total as a product figure. If a buyer sends its own template, fill it from the same records so the numbers match across customers."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds emission records from your invoices and bills and drafts self-declared reports from them, which you can share with a UAE buyer. Each figure links to its source document.",
+  "links": [
+    {
+      "label": "Scope 1, 2 and 3 for small businesses",
+      "to": "/climate-intelligence/scope-1-2-3-emissions-simple-guide-small-business"
+    },
+    {
+      "label": "Supplier emissions data playbook",
+      "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    },
+    {
+      "label": "UK carbon reduction plan for Indian suppliers",
+      "to": "/answers/uk-carbon-reduction-plan-for-indian-suppliers"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, revised edition (2004)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "UAE implementing regulations and reporting thresholds under Decree-Law No. 11 of 2024 are still being issued; check the Ministry of Climate Change and Environment for the current position."
+}

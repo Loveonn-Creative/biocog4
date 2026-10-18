@@ -1,0 +1,78 @@
+{
+  "slug": "boiler-economiser-fuel-saving",
+  "q": "How much fuel does a boiler economiser save, and how do I calculate the CO2 reduction?",
+  "title": "Boiler economiser: fuel and CO2 saved",
+  "short": "Roughly 1 percent of boiler fuel for every 22 C the economiser takes off the flue gas temperature, a BEE guide book figure. Divide the stack temperature drop by 22 for the percent saved, apply it to the year's fuel from your invoices, then multiply by the fuel's emission factor for tonnes of CO2.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler owners and energy managers",
+  "sections": [
+    {
+      "h": "Two ways to estimate the saving",
+      "ul": [
+        "Flue gas side: about 1 percent fuel saving for every 22 C reduction in stack temperature.",
+        "Feed water side: about 1 percent fuel saving for every 6 C rise in feed water temperature through the economiser.",
+        "Both are BEE rules of thumb. Work out both; if they disagree badly, check the readings."
+      ]
+    },
+    {
+      "h": "How low the flue gas can go",
+      "p": [
+        "Do not design the economiser to cool flue gas below its acid dew point, or sulphur in the fuel condenses as acid and corrodes the tubes and stack. The limit is higher for furnace oil and high-sulphur coal than for natural gas, so the possible saving is larger on gas-fired boilers. Your boiler or economiser supplier should state the minimum exit temperature for your fuel."
+      ]
+    },
+    {
+      "h": "Readings to take before and after",
+      "ol": [
+        "Flue gas temperature at the boiler exit and after the economiser, at the same load.",
+        "Feed water temperature in and out of the economiser.",
+        "Oxygen in flue gas, because a change in excess air also changes efficiency and can hide or inflate the economiser effect.",
+        "Fuel bought and steam produced for a few comparable months either side."
+      ]
+    },
+    {
+      "h": "From percent to tonnes of CO2",
+      "p": [
+        "Fuel saved = annual fuel from invoices x percent saving. CO2 saved = fuel saved x the IPCC 2006 factor: 2.97 kg CO2 per litre of furnace oil, 2.42 kg per kg of coal, 2.05 kg per scm of PNG or 2.68 kg per litre of diesel. The saving then shows as lower fuel purchases in Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: furnace oil boiler",
+    "lines": [
+      "Flue gas: 260 C before, 170 C after the economiser; drop 90 C",
+      "Approximate fuel saving: 90 / 22 = 4.09%",
+      "Cross-check: feed water rises from 80 C to 105 C, 25 / 6 = 4.2%, close enough",
+      "Furnace oil from invoices: 6,00,000 litres a year",
+      "Saved: 6,00,000 x 90 / 2,200 = 24,545 litres",
+      "CO2: 24,545 x 2.97 = 72,899 kg, about 72.9 t a year"
+    ],
+    "note": "Temperatures are illustrative. Confirm the saving afterwards from fuel invoices at similar steam output."
+  },
+  "senseible": "Senseible reads fuel invoices and applies the IPCC 2006 defaults, such as 2.97 kg CO2 per litre of furnace oil, so before and after periods can be compared from documents. Flue gas readings and the saving claim stay your own records.",
+  "links": [
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "CO2 per tonne of steam",
+      "to": "/answers/co2-per-tonne-of-steam"
+    },
+    {
+      "label": "Furnace oil emission factor",
+      "to": "/emission-factors/furnace-oil"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Boilers chapter (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapters 2 and 3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "freight-forwarder-emissions-report-scope-3",
+  "q": "Can I use my freight forwarder's emissions report for Category 4 or 9?",
+  "title": "Using a forwarder's emissions report",
+  "short": "Yes, if the report states its method (ISO 14083 or the GLEC Framework), the weight and distance basis, the factors used and which shipments it covers, and a sample of shipments recomputes close to its figures. Then it is better data than your own default estimate. Put each shipment in Category 4 or 9 by who paid for it.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters and importers using forwarders",
+  "sections": [
+    {
+      "h": "Six things the report must show",
+      "ol": [
+        "Method: ISO 14083 or the GLEC Framework, named with its version.",
+        "Basis: well-to-wheel, which includes producing the fuel, or tank-to-wheel only. ISO 14083 and GLEC require the well-to-wheel figure; a tank-to-wheel figure alone is lower.",
+        "Weight: actual gross weight, not chargeable or volumetric weight.",
+        "Distance: actual route, or great circle or shortest feasible distance with an uplift, stated per mode.",
+        "Factors: carrier-specific data or default intensities, with their source.",
+        "Coverage: every leg, including first-mile trucking, port or airport handling and hubs, listed by shipment so you can match it to your invoices."
+      ]
+    },
+    {
+      "h": "Recompute a sample before you accept it",
+      "p": [
+        "Pick five to ten shipments across modes. Multiply the stated weight by the stated distance by a published default factor for the mode, and compare. Differences of a few percent come from factor sets and fuel basis. A gap of 30 percent or more needs an explanation, such as a missing road leg or chargeable weight."
+      ]
+    },
+    {
+      "h": "Category 4 or 9 depends on who paid",
+      "p": [
+        "The forwarder's report gives emissions per shipment, not your category. Transport you pay for, inbound or outbound, goes in Category 4. Outbound transport your customer pays for, for example under FOB terms, goes in Category 9. Split the report's lines using your invoices and Incoterms."
+      ]
+    },
+    {
+      "h": "Recording data quality",
+      "ul": [
+        "Shipments calculated from the carrier's own fuel data are higher quality than modelled defaults; note which is which.",
+        "Keep the report, its method note and your sample check together as evidence for an auditor.",
+        "Reconcile the shipment count against your freight invoices for the year, so none are missing or counted twice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Sample check: one sea shipment (illustrative)",
+    "lines": [
+      "Forwarder line: 3.2 t, Nhava Sheva to Rotterdam, 11,700 km, 330 kg CO2e",
+      "Your check: 3.2 x 11,700 = 37,440 tonne-km; x 0.0085 kg CO2e per tonne-km (assumed container ship factor) = 318.2 kg CO2e",
+      "Difference: 330 / 318.2 = about 4 percent higher",
+      "Within what different factor sets explain; accept the line and note your check"
+    ],
+    "note": "The 0.0085 factor is assumed to show the arithmetic. For a real check, use the current container ship default from the GLEC Framework or the UK government conversion factors for the trade lane and ship size. The forwarder's own carrier data, if it is stated, takes precedence."
+  },
+  "senseible": "Senseible reads freight bills and keeps every Scope 3 transport line in a separate supplier evidence trail, calculated from printed weight, distance and mode; lines missing those show Needs Data. Spend-based estimates, where used, are labelled as such.",
+  "links": [
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "GLEC Framework explained",
+      "to": "/climate-intelligence/glec-framework-explained-msme-freight-emissions"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of greenhouse gas emissions arising from transport chain operations",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

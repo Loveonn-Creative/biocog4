@@ -1,0 +1,85 @@
+{
+  "slug": "indirect-use-phase-emissions-optional",
+  "q": "Do I have to report indirect use-phase emissions, such as the hot water used to wash garments I sell?",
+  "title": "Indirect use-phase emissions: required?",
+  "short": "No. Under the GHG Protocol Scope 3 Standard, indirect use-phase emissions, like the power a washing machine draws to heat water for your shirts or the gas used to cook your pasta, are optional in Category 11. Only direct use-phase emissions are required. If you include indirect ones, show them separately with the use scenario you assumed.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Garment, detergent, cookware and food exporters",
+  "sections": [
+    {
+      "h": "Direct and indirect use-phase: the difference",
+      "p": [
+        "Direct use-phase emissions come from the product itself while it is used: a motor drawing power, an engine burning fuel, an air conditioner leaking refrigerant. Indirect use-phase emissions come from energy the product needs from something else during use, set by how the customer behaves.",
+        "A shirt uses no energy, but a washing machine heats water and a dryer runs to clean it. A packet of pasta needs a stove. A detergent needs warm water. A non-stick pan needs a burner. These are the textbook indirect cases."
+      ]
+    },
+    {
+      "h": "When it is still worth reporting",
+      "ul": [
+        "A buyer or brand asks for a full life cycle view of your product, for example in a product footprint that covers the use stage.",
+        "Use is the largest part of the product's life cycle impact and you can influence it, for example with a cold-wash fabric or a quick-cook product.",
+        "You plan to make a claim about lower use-stage energy and need a baseline to show it.",
+        "If none of these applies, leaving indirect use-phase out is acceptable. Say in your method note that it was excluded as optional."
+      ]
+    },
+    {
+      "h": "How to estimate it if you include it",
+      "ol": [
+        "Define a use scenario: number of uses over the product's life, energy per use and the share of that energy belonging to your product.",
+        "Take the scenario from a published standard, an industry study or a consumer survey for the market where the product is used, and cite it.",
+        "Multiply uses by energy per use by the product's share, then by the electricity or fuel factor of the country where it is used.",
+        "Report the result as a separate line, not inside the required Category 11 total, and label it scenario-based."
+      ]
+    },
+    {
+      "h": "Edge cases to watch",
+      "ul": [
+        "Exports: a garment washed in Germany uses the German grid factor, not India's.",
+        "Washing and drying are separate steps. Say whether tumble drying is in the scenario, since many markets line dry.",
+        "Intermediate products: if you sell fabric rather than finished garments, washing depends on what your customer makes, and the Scope 3 rules on intermediate products may let you leave the use stage out with a stated reason."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: T-shirts sold in India (assumptions labelled)",
+    "lines": [
+      "Garments sold: 1,00,000 T-shirts",
+      "Assumed scenario: 50 warm washes over life; one machine load uses 1 kWh; each T-shirt is 1/25 of a load",
+      "Energy: 1,00,000 x 50 / 25 = 2,00,000 kWh",
+      "Emissions at the India grid factor: 2,00,000 x 0.710 = 1,42,000 kg CO2, about 142 tonnes",
+      "Report as optional indirect use-phase, separate from the required Category 11 total"
+    ],
+    "note": "Washes, kWh per load and garment share are illustrative. Use a cited scenario for your market, and the grid factor of the country where the garment is washed."
+  },
+  "senseible": "Senseible keeps your own fuel and electricity records, calculated with the CEA grid factor and IPCC 2006 defaults, which form the operational part of any footprint you send a buyer. A use-stage scenario you add stays your own labelled assumption, reported apart from those document-based figures.",
+  "links": [
+    {
+      "label": "Category 11: use of sold products",
+      "to": "/answers/use-of-sold-products-category-11-calculation"
+    },
+    {
+      "label": "Downstream categories for intermediate products",
+      "to": "/answers/exclude-downstream-scope-3-intermediate-products"
+    },
+    {
+      "label": "Manufacturing Scope 3 in India",
+      "to": "/climate-intelligence/manufacturing-scope-3-emissions-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 11 minimum boundary",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Category 11",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

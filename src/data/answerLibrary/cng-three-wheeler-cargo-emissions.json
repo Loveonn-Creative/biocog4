@@ -1,0 +1,80 @@
+{
+  "slug": "cng-three-wheeler-cargo-emissions",
+  "q": "How do I calculate emissions for CNG three-wheeler cargo vehicles from CNG bills in kg?",
+  "title": "CNG three-wheeler cargo emissions from bills",
+  "short": "Add up the kg of CNG on your station bills and multiply by 2.69 kg CO2 per kg, the IPCC 2006 default for natural gas. Where a slip shows only rupees, divide by the price per kg printed on it first. Vehicles you own or operate are Scope 1.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Last-mile logistics, dairy and FMCG distributors",
+  "sections": [
+    {
+      "h": "Step by step",
+      "ol": [
+        "Collect every CNG slip and monthly fuel card statement for the vehicles.",
+        "Read the quantity in kg. CNG in India is sold by mass, so the slip shows kg.",
+        "Where only a rupee amount is printed, divide it by the price per kg on the same slip, or the station's price on that date, and label the result derived.",
+        "Total the kg by month and multiply by 2.69."
+      ]
+    },
+    {
+      "h": "Which scope",
+      "ul": [
+        "Three-wheelers you own, or lease and run with your own drivers: Scope 1.",
+        "Three-wheelers hired per trip or per month with the owner's driver: Scope 3, Category 4 for transport you buy, or Category 9 for delivery to customers paid by them.",
+        "Do not count the same CNG twice when you reimburse a hired driver's fuel."
+      ]
+    },
+    {
+      "h": "Methane and nitrous oxide from CNG engines",
+      "p": [
+        "The 2.69 figure is CO2 only. IPCC 2006 road transport defaults for natural gas vehicles are 92 kg CH4 and 3 kg N2O per TJ. One kg of CNG holds about 0.048 GJ, so these add about 0.12 kg CO2e of methane and 0.04 kg CO2e of N2O per kg at AR5 warming potentials, together about 6 percent on top of the CO2. The methane default has a wide uncertainty range, so state whether you included it."
+      ]
+    },
+    {
+      "h": "Per km and per delivery figures",
+      "p": [
+        "Divide the monthly CO2 by odometer km for kg CO2 per km, or by drops for kg per delivery. Buyers who ask for transport data usually want one of these, with the fuel total behind it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a fleet of 10 cargo three-wheelers, one month",
+    "lines": [
+      "CNG on slips: 1,800 kg; 1,800 x 2.69 = 4,842 kg CO2",
+      "One slip in that total showed only Rs 4,560 at a printed Rs 76 per kg: 4,560 / 76 = 60 kg; 60 x 2.69 = 161.4 kg CO2",
+      "Odometer total 45,000 km: 4,842 / 45,000 = 0.108 kg CO2 per km",
+      "With CH4 and N2O: 1,800 x (2.69 + 0.124 + 0.038) = 1,800 x 2.852 = 5,134 kg CO2e"
+    ],
+    "note": "The price per kg is illustrative; use the price on your own slip."
+  },
+  "senseible": "Senseible reads CNG slips and invoices at 2.69 kg CO2 per kg, the IPCC 2006 default, and shows the factor on each line. A slip with no printed quantity shows Needs Data until you add the kg.",
+  "links": [
+    {
+      "label": "CNG emission factor",
+      "to": "/emission-factors/cng"
+    },
+    {
+      "label": "Methane and N2O from diesel combustion",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 Mobile Combustion (Table 3.2.2)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC Fifth Assessment Report (AR5), Working Group I, Chapter 8 (100-year GWPs: CH4 28, N2O 265)",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

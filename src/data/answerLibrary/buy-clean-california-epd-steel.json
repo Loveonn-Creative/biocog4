@@ -1,0 +1,67 @@
+{
+  "slug": "buy-clean-california-epd-steel",
+  "q": "Does Buy Clean California require an EPD for Indian steel or glass used in Californian public projects?",
+  "title": "Buy Clean California EPDs for Indian steel",
+  "short": "Yes, on contracts covered by the Act. Buy Clean California requires the winning contractor to submit a facility-specific environmental product declaration for each eligible material, including structural steel, rebar and flat glass, and the GWP must not exceed the limit set by the state. Indian mills supplying these projects need their own plant-level EPD.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Steel, rebar and flat glass exporters to the US",
+  "sections": [
+    {
+      "h": "What the Act covers",
+      "ul": [
+        "Eligible materials: structural steel, concrete reinforcing steel, flat glass and mineral wool board insulation. A 2024 amendment widened the insulation category, so check the current list with DGS.",
+        "Covered contracts: public works awarded by the bodies named in the Act, which are state agencies, the University of California and the California State University, not every public project in California. City and county projects follow their own rules.",
+        "The test is the material, not where it was made: an Indian mill's steel needs the same facility-specific EPD and must meet the same GWP limit as a US mill's."
+      ]
+    },
+    {
+      "h": "Why the EPD must be facility-specific",
+      "p": [
+        "An industry-average EPD does not meet the Act. The declaration has to describe the plant that made the material, so an Indian mill needs a Type III EPD built on its own production data and published through a programme operator. A trader cannot use a different mill's EPD for the same grade."
+      ]
+    },
+    {
+      "h": "How the GWP limit works",
+      "p": [
+        "The California Department of General Services publishes a maximum acceptable global warming potential for each eligible material and reviews it periodically. The contractor compares the GWP in your EPD with that limit for the product category. If your figure is above it, the material cannot be used on that contract, however good the price."
+      ]
+    },
+    {
+      "h": "What an Indian exporter should do",
+      "ol": [
+        "Ask your US importer or contractor whether the project falls under Buy Clean California and which product category applies.",
+        "Check the current DGS limit for that category against a realistic estimate of your plant's GWP.",
+        "Commission a facility-specific EPD to the product category rules the programme operator uses, verified by an independent verifier.",
+        "Keep production and energy records for the EPD period, since the verifier will sample them."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps your plant's fuel and electricity invoices with their source documents and SHA-256 fingerprints, which are part of the plant data an EPD practitioner and verifier ask for. The EPD itself is prepared by an LCA practitioner and published through a programme operator.",
+  "links": [
+    {
+      "label": "Getting an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Reading GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Will the US have a carbon border tax?",
+      "to": "/answers/will-us-have-a-carbon-border-tax"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14025:2006, Type III environmental declarations (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 21930:2017, EPDs for construction products (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "DGS revises the GWP limits periodically (it reviews them every three years) and is adding insulation subcategories after SB 1207 (2024); check the current limits and eligible materials on the DGS Buy Clean California Act page before quoting."
+}

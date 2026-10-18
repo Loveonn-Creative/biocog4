@@ -1,0 +1,82 @@
+{
+  "slug": "blended-finance-for-msmes",
+  "q": "What is blended finance, and can an Indian MSME benefit from it?",
+  "title": "Blended finance for MSMEs explained",
+  "short": "Blended finance is public or development money used to make a project cheaper or safer for private lenders, through concessional loans, first-loss cover or grants. An Indian MSME rarely deals with it directly; it benefits through a bank or SIDBI loan that carries a lower rate, longer tenor or easier collateral because of it.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME owners, CFOs and lenders",
+  "sections": [
+    {
+      "h": "What the term means",
+      "p": [
+        "The OECD defines blended finance as the strategic use of development finance to mobilise additional finance for sustainable development in developing countries. In plain terms, a development bank, donor or government puts in money on softer terms so that commercial money will come in alongside it."
+      ]
+    },
+    {
+      "h": "The common structures",
+      "ul": [
+        "Concessional credit lines: a development bank lends to SIDBI or a commercial bank at a low rate for a long term, to be lent on for a defined purpose such as energy efficient equipment.",
+        "First-loss or risk-sharing cover: public money absorbs the first part of any losses, so the lender asks for less collateral or lends to smaller firms.",
+        "Technical assistance grants: pay for energy audits, project reports or lender training, so the loan is easier to appraise.",
+        "Interest subvention: a government pays part of the interest, as in some energy efficiency schemes."
+      ]
+    },
+    {
+      "h": "How it reaches an MSME in India",
+      "p": [
+        "Through the lender. SIDBI has run energy efficiency lines funded by development partners such as JICA, KfW and the World Bank, and banks take part in risk-sharing facilities. The MSME applies for an ordinary loan; the blended part shows up as better terms, an eligible equipment list and reporting duties after disbursement."
+      ]
+    },
+    {
+      "h": "What you need to qualify",
+      "ol": [
+        "A project that fits the line's purpose, often listed equipment or a measured energy saving.",
+        "An energy audit or detailed project report showing the expected saving.",
+        "Clean financial records and the usual KYC.",
+        "A way to report results after the loan, such as energy and CO2 saved."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustration: how a blended line lowers the lender's cost",
+    "lines": [
+      "Loan: Rs 1 crore for energy efficient equipment",
+      "Lender's own funds: Rs 60 lakh at 10%; concessional line: Rs 40 lakh at 6% (illustrative rates)",
+      "Blended cost: 0.6 x 10% + 0.4 x 6% = 8.4%",
+      "First-year interest at 8.4%: Rs 8.4 lakh, against Rs 10 lakh at 10%, a saving of Rs 1.6 lakh"
+    ],
+    "note": "Rates are illustrative. The rate you are offered is the lender's decision; ask what concessional lines it holds."
+  },
+  "senseible": "Senseible's green loan readiness check and finance application put your energy and emissions records, read from bills and invoices, into the form a lender appraising a green project asks for. Loan terms and scheme eligibility are decided by the lender.",
+  "links": [
+    {
+      "label": "Credit guarantees for MSME green loans",
+      "to": "/answers/credit-guarantee-for-msme-green-loans-india"
+    },
+    {
+      "label": "SIDBI energy efficiency loans",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, energy efficiency financing for MSMEs (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "RBI Master Direction, Lending to Micro, Small and Medium Enterprises Sector (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Credit lines and risk-sharing programmes open and close; check sidbi.in for the ones available now.",
+  "reviewed": "2026-10-18"
+}

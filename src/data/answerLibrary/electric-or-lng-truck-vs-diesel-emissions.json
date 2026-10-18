@@ -1,0 +1,89 @@
+{
+  "slug": "electric-or-lng-truck-vs-diesel-emissions",
+  "q": "Is an electric or LNG truck lower carbon than a diesel truck for Indian freight, per tonne-km?",
+  "title": "Electric or LNG truck vs diesel per tonne-km",
+  "short": "Not by much on India's grid average. On labelled estimates, an electric truck charged at 0.710 kg CO2 per kWh comes out level with diesel to about 30 percent higher per tonne-km, and clearly lower only with renewable power. An LNG truck cuts tailpipe CO2 by roughly 10 to 15 percent, but methane slip can cancel much of that.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Logistics companies and shippers considering new truck types",
+  "sections": [
+    {
+      "h": "The formula for each truck",
+      "ul": [
+        "Diesel: litres per km x 2.68 kg CO2 per litre / payload in tonnes.",
+        "LNG: kg per km x 2.69 kg CO2 per kg (the natural gas value) / payload, plus methane slip x 28.",
+        "Electric: kWh per km at the charger, including charging losses, x 0.710 / payload. Battery weight can reduce payload, which raises the per tonne-km figure."
+      ],
+      "p": [
+        "Use the same basis for all three. The diesel and gas factors are combustion CO2 and the CEA factor is power plant CO2; none includes upstream fuel production."
+      ]
+    },
+    {
+      "h": "Why the electric truck does not win on today's grid",
+      "p": [
+        "An electric truck uses less than half the energy of a diesel truck per km, but India's grid emits more per kWh than diesel does per kWh of fuel (0.710 against about 0.267). The two effects nearly cancel. Each 10 percent cut in kWh per km, and any renewable share in the charging power, tips the result toward the electric truck."
+      ]
+    },
+    {
+      "h": "Methane slip decides the LNG case",
+      "p": [
+        "Spark-ignited gas engines use somewhat more energy per km than diesel engines, so the CO2 saving is smaller than the fuel's chemistry suggests. Unburnt methane from the engine and boil-off from the tank add to that. Each 1 percent of fuel lost as methane adds 0.28 kg CO2e per kg of LNG, about 10 percent of its CO2. Slip varies widely by engine type, so ask the maker for measured data."
+      ]
+    },
+    {
+      "h": "Data you need before deciding",
+      "ul": [
+        "Fuel or kWh per km from a trial on your routes, loaded and empty.",
+        "Real payload for each truck type.",
+        "Where you will charge, and whether that power is grid, solar or a renewable contract.",
+        "Your empty running share, applied the same way to all three trucks."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per tonne-km, loaded running only (labelled assumptions)",
+    "lines": [
+      "Diesel at 3.0 km per litre, 25 t payload: 0.333 x 2.68 = 0.893 kg CO2 per km / 25 = 0.0357 kg CO2 per tonne-km",
+      "LNG using 15 percent more energy than diesel: 0.289 kg LNG per km x 2.69 = 0.778 kg / 25 = 0.0311, or 0.0343 kg CO2e with 1 percent slip",
+      "Electric at 1.3 kWh per km plus 10 percent charging loss, 22 t payload: 1.43 x 0.710 = 1.015 kg / 22 = 0.0462 kg CO2 per tonne-km",
+      "Electric at 1.0 kWh per km: 1.1 x 0.710 = 0.781 kg / 22 = 0.0355, level with diesel",
+      "Electric at 1.3 kWh per km, half charged from solar: about 0.0231, 35 percent below diesel"
+    ],
+    "note": "Fuel economy, kWh per km, payloads and slip are assumptions; replace them with your own trial data."
+  },
+  "senseible": "Senseible's logistics calculator gives per tonne-km figures by mode and Indian truck class from default factors, and uses a carrier's own factor as given, so you can compare a trial truck's measured factor against the default.",
+  "links": [
+    {
+      "label": "Truck freight emission factor for India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Rail vs road freight emissions",
+      "to": "/answers/rail-vs-road-freight-emissions-india"
+    },
+    {
+      "label": "Diesel to electric van savings",
+      "to": "/answers/diesel-to-electric-van-emissions-saving-india"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GLEC Framework for Logistics Emissions Accounting and Reporting v3.0 (Smart Freight Centre, 2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 3 Mobile Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database for the Indian Power Sector, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Indian trial data for electric and LNG trucks is limited and changing; the efficiency figures here are labelled estimates."
+}
