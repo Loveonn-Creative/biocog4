@@ -3,7 +3,6 @@ import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useSession } from "@/hooks/useSession";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { FooterHorizon, type FooterColumn } from "@/components/FooterHorizon";
 
 const socialLinks = [
   { 
@@ -63,14 +62,6 @@ const footerLinks = {
 export const Footer = () => {
   const { isAuthenticated, isLoading, user } = useSession();
   const [isPartner, setIsPartner] = useState(false);
-  const [activeCol, setActiveCol] = useState<FooterColumn | null>(null);
-  // Hover or keyboard focus on a column lights its unit on the horizon line.
-  const colProps = (col: FooterColumn) => ({
-    onMouseEnter: () => setActiveCol(col),
-    onMouseLeave: () => setActiveCol(null),
-    onFocus: () => setActiveCol(col),
-    onBlur: () => setActiveCol(null),
-  });
 
   // Check if user is a partner
   useEffect(() => {
@@ -117,7 +108,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-background">
       <div className="container max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-semibold text-foreground">
@@ -135,7 +126,7 @@ export const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ftr-social w-8 h-8 flex items-center justify-center rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="w-4 h-4" />
@@ -145,7 +136,7 @@ export const Footer = () => {
           </div>
           
           {/* Platform - Auth-aware */}
-          <div {...colProps("platform")}>
+          <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Platform</h4>
             <ul className="space-y-2">
               {getAuthAwareLinks().map((link) => (
@@ -162,7 +153,7 @@ export const Footer = () => {
           </div>
           
           {/* Solutions */}
-          <div {...colProps("solutions")}>
+          <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Solutions</h4>
             <ul className="space-y-2">
               {footerLinks.solutions.map((link) => (
@@ -179,7 +170,7 @@ export const Footer = () => {
           </div>
           
           {/* Company */}
-          <div {...colProps("company")}>
+          <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -196,7 +187,7 @@ export const Footer = () => {
           </div>
           
           {/* Legal */}
-          <div {...colProps("legal")}>
+          <div>
             <h4 className="text-sm font-medium text-foreground mb-4">Legal</h4>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
@@ -212,8 +203,6 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-
-        <FooterHorizon active={activeCol} />
         
         {/* Bottom */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
