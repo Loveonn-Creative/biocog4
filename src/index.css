@@ -761,31 +761,40 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .nf-foot { color: #a29b8b; font-size: 10.5px; margin-top: 10px; border-top: 1px dashed #ddd5c2; padding-top: 8px; }
 @media (prefers-reduced-motion: reduce) { .nf-slip, .nf-slip * { animation: none !important; transition: none !important; } .nf-stamp.is-on { opacity: .85; transform: rotate(-12deg); } }
 
-/* Footer delivery story (src/components/FooterDelivery.tsx) */
-.fd-band { margin: 0 0 4px; }
+/* Footer shipment routes (src/components/FooterDelivery.tsx) */
+.fd-band { margin: 0 0 6px; }
 .fd-band svg { display: block; width: 100%; height: auto; overflow: visible; }
 .fd-band text { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 .fd-road { stroke: hsl(var(--border)); }
 .fd-place { stroke: hsl(var(--muted-foreground) / 0.45); }
 .fd-tag { font-size: 11px; fill: hsl(var(--muted-foreground)); }
 .fd-haze { stroke: hsl(var(--muted-foreground) / 0.4); }
-.fd-puff { fill: hsl(var(--muted-foreground)); }
-.fd-box { fill: #1f5139; }
-.fd-cab { fill: #2c6b4c; }
 .fd-count { font-size: 13px; font-weight: 600; fill: hsl(var(--primary)); }
-.fd-note { font-size: 11px; fill: hsl(var(--muted-foreground)); opacity: 0; transition: opacity .6s; }
-.fd-tick { stroke-dasharray: 24; stroke-dashoffset: 24; }
-.fd-band.is-done .fd-note { opacity: 1; }
-.fd-band.is-done .fd-tick { stroke-dashoffset: 0; transition: stroke-dashoffset .4s ease-out; }
-@media (prefers-reduced-motion: reduce) { .fd-band .fd-note, .fd-band .fd-tick { transition: none; } }
-/* Phones: the band runs edge to edge and its labels scale up to stay readable. */
+.fd-badge { font-size: 11px; font-weight: 600; }
+.fd-ground { transition: opacity .6s ease; }
+.fd-ledger { display: flex; gap: 6px; justify-content: flex-end; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+.fd-saved { font: 600 11px 'JetBrains Mono', ui-monospace, monospace; color: #15803d; margin-right: auto; }
+.fd-saved b { font-size: 13px; }
+.fd-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid hsl(var(--border)); background: hsl(var(--background)); border-radius: 999px; padding: 3px 9px 3px 6px; font: 600 11px 'JetBrains Mono', ui-monospace, monospace; color: hsl(var(--muted-foreground)); cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
+.fd-chip svg { width: 18px; height: 12px; }
+.fd-chip:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+.fd-bar { width: 26px; height: 4px; border-radius: 2px; background: hsl(var(--secondary)); overflow: hidden; }
+.fd-bar i { display: block; height: 100%; width: 0; border-radius: 2px; transition: width .6s ease; }
+.fd-chip.is-now { border-color: hsl(var(--primary)); color: hsl(var(--primary)); }
+.fd-chip.is-next { background: hsl(var(--primary) / 0.08); }
 @media (max-width: 767px) {
   .fd-band { margin-left: -1.5rem; margin-right: -1.5rem; }
-  .fd-tag, .fd-note { font-size: 22px; }
-  .fd-count { font-size: 26px; }
-  .fd-tick { display: none; }
+  .fd-tag { font-size: 22px; }
+  .fd-count { font-size: 24px; }
+  .fd-badge { font-size: 20px; }
+  .fd-ledger { padding: 0 1.5rem; justify-content: center; }
+  .fd-saved { width: 100%; text-align: center; margin: 0 0 2px; }
+  .fd-chip { padding: 3px 7px 3px 5px; gap: 4px; }
+  .fd-bar { width: 14px; }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .fd-tag, .fd-note { font-size: 16px; }
+  .fd-tag { font-size: 16px; }
   .fd-count { font-size: 19px; }
+  .fd-badge { font-size: 15px; }
 }
+
