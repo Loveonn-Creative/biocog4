@@ -731,3 +731,34 @@ h1, h2, h3, h4, h5, h6, p, a, button, label, span {
 .lt-signoff { margin-top: 18px; }
 .lt-signature { display: block; min-height: 1.6em; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.35em; color: hsl(var(--primary)); }
 @media (prefers-reduced-motion: reduce) { .lt-ink > span, .lt-blank, .lt-area { transition: none; } }
+
+/* Footer live India sky (src/components/FooterSky.tsx) */
+.ftr-sky { position: relative; overflow: hidden; color: var(--sky-fg); background: linear-gradient(var(--sky-top), var(--sky-mid) 70%, var(--sky-low)); border-top: 0; }
+.ftr-sky .text-foreground { color: var(--sky-fg); }
+.ftr-sky .text-muted-foreground { color: var(--sky-muted); }
+.ftr-sky a.text-muted-foreground:hover, .ftr-sky a.text-muted-foreground:focus-visible { color: var(--sky-fg); }
+.ftr-sky .ftr-chip { background: var(--sky-chip); color: var(--sky-fg); }
+.ftr-sky .ftr-chip:hover, .ftr-sky .ftr-chip:focus-visible { background: var(--sky-chip-hover); color: var(--sky-fg); }
+.ftr-sky .ftr-content { position: relative; z-index: 1; }
+.ftr-sky-stars { position: absolute; inset: 0; pointer-events: none; transition: opacity 2s; }
+.ftr-sky-stars svg { width: 100%; height: 100%; display: block; }
+.ftr-sky-band { position: relative; z-index: 1; height: 200px; pointer-events: none; }
+.ftr-sky-band svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ftr-sky-ground { position: relative; z-index: 1; background: var(--sky-ground); }
+.ftr-smoke { fill: var(--sky-smoke); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.ftr-truck { transform: translateX(-140px); }
+@media (max-width: 767px) { .ftr-sky-band { height: 130px; } }
+.ftr-sky.is-playing .ftr-smoke { animation: ftr-drift 14s linear infinite; }
+.ftr-sky.is-playing .ftr-s2 { animation-delay: -5s; }
+.ftr-sky.is-playing .ftr-s3 { animation-delay: -10s; }
+.ftr-sky.is-playing .ftr-truck { animation: ftr-drive 38s linear infinite; }
+.ftr-sky.is-playing .ftr-star { animation: ftr-twinkle 4s ease-in-out infinite; }
+.ftr-sky.is-playing .ftr-flicker { animation: ftr-flicker 7s steps(1) infinite; }
+@keyframes ftr-drift { 0% { transform: translate(0, 0) scale(.6); opacity: 0; } 15% { opacity: var(--sky-smoke-o); } 100% { transform: translate(60px, -70px) scale(1.8); opacity: 0; } }
+@keyframes ftr-drive { from { transform: translateX(-140px); } to { transform: translateX(1580px); } }
+@keyframes ftr-twinkle { 50% { opacity: .25; } }
+@keyframes ftr-flicker { 0%, 92% { opacity: 1; } 93% { opacity: .55; } 95% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .ftr-sky * { animation: none !important; }
+  .ftr-sky .ftr-smoke { opacity: 0; }
+}
