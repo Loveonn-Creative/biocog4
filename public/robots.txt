@@ -42,5 +42,6 @@ Disallow: /accept-invite
 Disallow: /admin
 Disallow: /cms-admin
 Disallow: /calculators/history
+Disallow: /beta/
 
 Sitemap: https://senseible.earth/sitemap.xml

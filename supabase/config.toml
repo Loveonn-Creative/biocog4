@@ -53,6 +53,8 @@ project_id = "kobsfphgfvyjozjwkuhp"
     verify_jwt = false
   [functions.solar-signal]
     verify_jwt = false
+  [functions.machinery-beta]
+    verify_jwt = false
   [functions.reduction-signal]
     verify_jwt = false
   [functions.scope3-trail]
