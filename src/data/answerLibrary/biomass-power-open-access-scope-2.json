@@ -1,0 +1,79 @@
+{
+  "slug": "biomass-power-open-access-scope-2",
+  "q": "What emission factor do I use for biomass power bought via open access?",
+  "title": "Scope 2 factor for open access biomass power",
+  "short": "For location-based Scope 2, use the grid factor, 0.710 kg CO2 per kWh, on all units consumed, including the biomass units. For market-based, the biomass units carry only their methane and nitrous oxide, about 27 g CO2e per kWh in the example below. The plant's biogenic CO2 is reported separately, outside the scopes.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories buying open access biomass power",
+  "sections": [
+    {
+      "h": "Why biomass is treated differently from solar or wind",
+      "p": [
+        "Solar and wind units carry zero emissions in a market-based figure. Burning biomass releases CO2 at the plant, but that carbon was recently taken up by plants, so the GHG Protocol Scope 2 Guidance reports it as biogenic CO2, separate from the scope totals. The methane and nitrous oxide from combustion are not netted off by regrowth, so they stay in market-based Scope 2."
+      ]
+    },
+    {
+      "h": "Working out the market-based factor",
+      "ul": [
+        "Ask the generator for its fuel use and net generation for the period, or its heat rate in GJ per MWh.",
+        "CH4 and N2O: multiply the fuel energy per MWh by the IPCC 2006 defaults for wood and other primary solid biomass in energy industries, 30 kg CH4 and 4 kg N2O per TJ, then by a named GWP set.",
+        "Biogenic CO2: fuel energy per MWh times the IPCC default, 112,000 kg CO2 per TJ for wood and wood waste or 100,000 kg CO2 per TJ for other primary solid biomass such as rice husk or other farm residues, reported separately.",
+        "If the plant fires any coal or other fossil fuel, the CO2 from that share goes into your market-based Scope 2. Ask for the monthly fuel mix."
+      ]
+    },
+    {
+      "h": "What you need before claiming it",
+      "p": [
+        "A contract or open access arrangement that passes the renewable attributes to you, the units adjusted against your meter each month, and confirmation that no RECs or other certificates were sold for the same units. The units that remain from the discom take the grid average, as India does not publish a residual mix. Without those records, report location-based only."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month with biomass open access",
+    "lines": [
+      "Recorded at meter: 3,00,000 kWh; biomass units adjusted: 1,80,000 kWh; discom units: 1,20,000 kWh",
+      "Location-based: 3,00,000 x 0.710 = 2,13,000 kg, 213 t CO2",
+      "Plant heat rate: 14.4 GJ per MWh (25% efficiency, assumed) = 0.0144 TJ per MWh",
+      "CH4: 30 x 0.0144 = 0.432 kg x 28 (AR5) = 12.1 kg CO2e per MWh; N2O: 4 x 0.0144 = 0.0576 kg x 265 (AR5) = 15.3 kg CO2e per MWh; together 27.4 kg CO2e per MWh",
+      "Market-based: 180 MWh x 27.4 = 4,932 kg, plus 1,20,000 x 0.710 = 85,200 kg, total 90,132 kg, about 90.1 t CO2e",
+      "Biogenic CO2, reported outside the scopes: 112,000 x 0.0144 = 1,612.8 kg per MWh x 180 = 290,304 kg, about 290 t"
+    ],
+    "note": "The heat rate and the wood fuel are assumptions; use the generator's figures. GWPs are IPCC AR5 100-year values; with AR6 the CH4 and N2O figures change slightly."
+  },
+  "senseible": "Senseible reads the units on your electricity bill and reports location-based Scope 2 at the CEA factor of 0.710 kg CO2 per kWh. Market-based Scope 2 uses the open access contract and energy account as instrument data, which you add.",
+  "links": [
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Residual mix factor in India",
+      "to": "/answers/residual-mix-factor-india-market-based-scope-2"
+    },
+    {
+      "label": "Renewable power through open access",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), market-based method and biogenic emissions",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 Table 1.4 (biomass CO2) and Chapter 2 Table 2.2 (stationary combustion in energy industries)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The GHG Protocol is revising its Scope 2 Guidance; check whether the market-based rules for biomass have changed."
+}

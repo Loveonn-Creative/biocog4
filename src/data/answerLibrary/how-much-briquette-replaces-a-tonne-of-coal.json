@@ -1,0 +1,90 @@
+{
+  "slug": "how-much-briquette-replaces-a-tonne-of-coal",
+  "q": "How many tonnes of biomass briquettes replace one tonne of coal in a boiler, and what CO2 is saved?",
+  "title": "Briquettes needed to replace a tonne of coal",
+  "short": "Briquette tonnes = coal tonnes x coal GCV x coal-firing efficiency / (briquette GCV x briquette-firing efficiency). With illustrative inputs of 4,500 kcal/kg coal at 75% and 3,800 kcal/kg briquettes at 70%, about 1.27 tonnes replace one tonne. The coal's fossil CO2 is saved; the briquettes add a little methane and nitrous oxide.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Boiler operators in textiles, food and chemicals switching to briquettes or pellets",
+  "sections": [
+    {
+      "h": "The replacement ratio, step by step",
+      "ol": [
+        "Take the GCV of each fuel from the test certificate for each lot, on an as-received basis, so moisture is included.",
+        "Measure boiler efficiency on each fuel, by the direct method (steam out against fuel in) or the indirect heat loss method in BEE's boiler guide book.",
+        "Ratio = (coal GCV x coal efficiency) / (briquette GCV x briquette efficiency).",
+        "Multiply by the tonnes of coal you burn to get the tonnes of briquettes to buy."
+      ]
+    },
+    {
+      "h": "What CO2 the switch saves",
+      "ul": [
+        "Saved: the fossil CO2 of the coal. Work it out from the coal's GCV, or use a flat factor per kg, but use the same basis before and after.",
+        "Biogenic CO2 from the briquettes is reported separately, outside Scope 1, 2 and 3.",
+        "Added to Scope 1: methane and nitrous oxide from burning biomass, 30 kg CH4 and 4 kg N2O per TJ by the IPCC 2006 defaults.",
+        "Added to Scope 3: trucking the briquettes, which matters when they come from far away."
+      ]
+    },
+    {
+      "h": "Why moisture and firing change the ratio",
+      "p": [
+        "Wet briquettes carry less heat per tonne and burn less efficiently, so a lot at 15% moisture can need noticeably more tonnes than a dry one. A grate built for coal may also run below its rated efficiency on biomass until the air and feed settings are changed. Run a trial week and measure before signing a supply contract."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "ul": [
+        "GCV test certificates for every lot of coal and briquettes.",
+        "Weighbridge slips for fuel received and the stock at month end.",
+        "The boiler log with steam output, so efficiency can be checked.",
+        "The briquette maker's statement of the raw material, such as agro-residue or sawdust, because the low figure holds only for residues or sustainably grown biomass."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: replacing one tonne of coal",
+    "lines": [
+      "Coal: lab GCV 4,500 kcal/kg, efficiency 75%; briquettes: lab GCV 3,800 kcal/kg, efficiency 70% (all illustrative)",
+      "Ratio: (4,500 x 0.75) / (3,800 x 0.70) = 3,375 / 2,660 = 1.27 t of briquettes",
+      "Coal CO2: 4,500 x 4.1868 / 1,000 = 18.84 MJ/kg; NCV taken as 5% below GCV, as IPCC suggests for coal: 18.84 x 0.95 = 17.90 MJ/kg; 17.90 GJ x 94.6 kg per GJ (IPCC default, other bituminous coal) = 1,693 kg CO2",
+      "Briquette energy: 3,800 x 4.1868 / 1,000 = 15.91 GJ per t; 1.27 x 15.91 = 20.2 GJ",
+      "CH4: 0.0202 TJ x 30 = 0.606 kg x 27 = 16.4 kg CO2e; N2O: 0.0202 x 4 = 0.081 kg x 273 = 22.1 kg CO2e (AR6 GWPs)",
+      "Net Scope 1 saving: 1,693 minus 38.5 = about 1,655 kg CO2e per tonne of coal replaced"
+    ],
+    "note": "Briquette CH4 and N2O are worked on GCV, which slightly overstates them, since IPCC factors are per TJ of NCV. On the flat factor of 2.42 kg CO2 per kg coal, the saving shows as about 2,420 minus 38.5 = 2,382 kg; keep one basis for before and after."
+  },
+  "senseible": "Senseible reads coal invoices and applies 2.42 kg CO2 per kg, so the fall in coal tonnes shows directly in Scope 1 after the switch. GCVs, boiler efficiency and the briquettes' methane and nitrous oxide come from your test certificates and boiler log.",
+  "links": [
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Indian coal emissions from GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 (NCV, CO2 per TJ) and Chapter 2, Table 2.3",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities (boiler efficiency)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

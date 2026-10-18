@@ -1,0 +1,83 @@
+{
+  "slug": "what-goes-in-an-iso-14064-1-ghg-report",
+  "q": "What must an ISO 14064-1 GHG report contain?",
+  "title": "What goes in an ISO 14064-1 GHG report",
+  "short": "An ISO 14064-1 report must describe the organisation, period and boundaries, give direct emissions by gas in tonnes CO2e, biogenic CO2 and removals separately, indirect emissions by category, the base year, methods and factors, uncertainty, exclusions, and say whether it was verified. It also names the GWP values used.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads preparing for ISO 14064-3 verification",
+  "sections": [
+    {
+      "h": "Who, when and what boundary",
+      "ul": [
+        "The reporting organisation and the person responsible for the report.",
+        "The reporting period covered.",
+        "The organisational boundary and the consolidation approach: control or equity share.",
+        "The reporting boundary: which indirect emission categories are included, and the criteria you used to decide which are significant."
+      ]
+    },
+    {
+      "h": "The numbers, shown in parts",
+      "ul": [
+        "Direct (Category 1) emissions in tonnes CO2e, with each gas shown separately: CO2, CH4, N2O, NF3, SF6, and HFC and PFC groups.",
+        "Biogenic CO2 from burning biomass, and direct removals, reported separately from the totals.",
+        "Indirect emissions by ISO category 2 to 6, for the ones you judged significant.",
+        "Any significant sources excluded, with the reason."
+      ]
+    },
+    {
+      "h": "Method and history",
+      "ul": [
+        "The base year, its emissions, and any recalculation with the reason.",
+        "The quantification methods, and any change from the last report.",
+        "The emission and removal factors used, or a reference to them, and the GWP values with their IPCC source.",
+        "The effect of uncertainty on the accuracy of the results."
+      ]
+    },
+    {
+      "h": "Statements a verifier will look for",
+      "p": [
+        "The report must state that it was prepared in line with ISO 14064-1, and whether it has been verified, with the type of verification and level of assurance. Behind it, a verifier working to ISO 14064-3 will want the records that support each figure: bills, invoices, meter readings and the calculation sheets. Check clause wording against your purchased copy, because the standard also lists recommended items, such as reduction initiatives, that are optional."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Category 1 shown by gas",
+    "lines": [
+      "Diesel: 50,000 litres x 2.68 kg CO2 per litre = 134,000 kg, 134.0 t CO2",
+      "R-32 top-ups: 10 kg x 677 (AR5) = 6,770 kg, 6.77 t CO2e as HFCs",
+      "Category 1 total: 134.0 + 6.77 = 140.77 t CO2e, reported as 134.0 t CO2 and 6.77 t CO2e HFCs, GWP basis IPCC AR5"
+    ]
+  },
+  "senseible": "Senseible builds draft inventory reports from your uploaded bills and invoices, with Scope 1 and 2 lines tied to their documents. These are self-declared drafts; ISO 14064-3 verification is done by an independent verifier.",
+  "links": [
+    {
+      "label": "ISO 14064 vs the GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "ISSA 5000, ISAE 3410 or ISO 14064-3",
+      "to": "/answers/issa-5000-vs-isae-3410-vs-iso-14064-3"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, GHG inventories at organisation level, clause 9 (GHG report)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Contents are summarised from ISO 14064-1:2018; confirm clause wording against the purchased standard and any revision."
+}

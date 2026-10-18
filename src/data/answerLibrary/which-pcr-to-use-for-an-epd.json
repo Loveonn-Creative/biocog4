@@ -1,0 +1,67 @@
+{
+  "slug": "which-pcr-to-use-for-an-epd",
+  "q": "Which product category rules should I use for an EPD, and what if none fits?",
+  "title": "Which PCR to use for an EPD",
+  "short": "Use the product category rules published by the programme operator your buyers accept, for your exact product group, and check they are still valid. For construction products the core rules are EN 15804+A2 plus the operator's PCR. If none fits, use the operator's general PCR or ask it to start a new one.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Building product and component makers preparing EPDs",
+  "sections": [
+    {
+      "h": "Why the PCR matters",
+      "p": [
+        "ISO 14025 requires every Type III declaration to follow product category rules, so that EPDs for the same product group are made the same way. The PCR fixes the declared or functional unit, system boundary, modules, allocation rules, data quality and cut-off. Two EPDs can only be compared if they follow the same PCR."
+      ]
+    },
+    {
+      "h": "How to choose, in order",
+      "ol": [
+        "Pick the programme operator first, from your buyers or the market's building rating tools. Each operator keeps its own PCR library.",
+        "Search that library by product classification, such as the UN CPC code, and by product name.",
+        "Check the PCR's validity date and version. An expired PCR may be under revision; ask the operator which version to use.",
+        "For construction products, confirm the PCR applies EN 15804+A2, and see whether a complementary PCR for your product type sits on top of the general construction PCR."
+      ]
+    },
+    {
+      "h": "When no PCR fits",
+      "ul": [
+        "Use a broader PCR that covers your product group, if the operator agrees it applies.",
+        "Ask the operator to start a new PCR. This usually needs a PCR committee and an open consultation, so it takes months.",
+        "Check whether another operator has a PCR for your product and whether your buyer accepts that operator. Some operators recognise each other's PCRs.",
+        "Do not write your own rules and call the result an EPD. A footprint to ISO 14067 is the honest alternative while a PCR is developed."
+      ]
+    },
+    {
+      "h": "What to tell your LCA practitioner",
+      "p": [
+        "Name the operator, the PCR and its version, the declared unit, and the modules you will declare. Settle these before collecting data, since a change of PCR can change the unit and the allocation rules your data must follow."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives plant activity data for an EPD draft: electricity, fuel and material quantities read from bills and invoices, each traceable to its file. The EPD itself is verified and published through a programme operator.",
+  "links": [
+    {
+      "label": "How to get an EPD for exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Reading GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "LCA vs product carbon footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14025:2006, Type III environmental declarations, clause 6.7 product category rules",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 21930:2017, core rules for EPDs of construction products (iso.org); EN 15804+A2 is the European counterpart published by CEN",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

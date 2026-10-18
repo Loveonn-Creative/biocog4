@@ -1,0 +1,77 @@
+{
+  "slug": "cbam-monitoring-methodology-documentation-for-operators",
+  "q": "What monitoring methodology documentation must a non-EU CBAM installation keep?",
+  "title": "CBAM monitoring plan for a non-EU plant",
+  "short": "A non-EU installation reporting actual emissions in the CBAM definitive period needs a written monitoring plan, in English, covering at least the elements in Annex II, point A.5 of Implementing Regulation (EU) 2025/2547: the installation, goods by CN code, boundaries, source streams, methods, precursors and data controls. Keep every version.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian CBAM installation operators",
+  "sections": [
+    {
+      "h": "What the plan must cover",
+      "ul": [
+        "The installation and its production processes, with goods identified by CN code and production route.",
+        "System boundaries for each production process, and any non-CBAM goods made on site.",
+        "Emission sources and source streams, and the monitoring method for each: calculation, mass balance or measurement.",
+        "Calculation factors and where they come from, such as lab analyses or default values.",
+        "Precursors used in each process and where their embedded emissions data come from.",
+        "Data quality controls. Read Annex II, point A.5 line by line, since it is the checklist your plan is built on and the verifier tests."
+      ]
+    },
+    {
+      "h": "Procedures and control activities",
+      "p": [
+        "The plan has to be clear enough that an independent person with some knowledge of emissions monitoring understands the method, and detailed enough to work as instructions for your staff. In practice that means written procedures for who reads each meter, how instruments are calibrated, how data flow from invoice or meter to the calculation, who reviews the result, how errors are corrected and how IT records are protected."
+      ]
+    },
+    {
+      "h": "Keeping it current",
+      "ul": [
+        "Update the plan when a process, fuel, meter or product changes, and log each version with its date.",
+        "Check it each reporting period against what actually happened, and record any better data source you move to.",
+        "The verifier checks that you followed the plan and that the report is free of material misstatement, under the verification principles in Implementing Regulation (EU) 2025/2546. The verifier must be accredited under Delegated Regulation (EU) 2025/2551, which sets the accreditation rules. Departures from the plan become findings."
+      ]
+    },
+    {
+      "h": "How this differs from the transitional period",
+      "p": [
+        "From October 2023 to December 2025, Implementing Regulation (EU) 2023/1773 already asked for monitoring methodology documentation, but reported values were not verified. From 2026, an EU declarant can use your actual emissions only if they are verified, and verification starts from the plan. Without a plan and verification, your buyer falls back on default values."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator and CBAM data drafts work from the fuel and electricity invoices you upload, which are the evidence a monitoring plan points to. Writing the plan is the operator's job, and checking it is the accredited verifier's.",
+  "links": [
+    {
+      "label": "How long to keep CBAM records",
+      "to": "/answers/how-long-to-keep-cbam-records"
+    },
+    {
+      "label": "CBAM verification for non-EU producers",
+      "to": "/climate-intelligence/cbam-verification-non-eu-producer"
+    },
+    {
+      "label": "CBAM installation boundary for two units",
+      "to": "/answers/cbam-installation-boundary-two-units"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annex IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2547, Annex II point A.5 (monitoring plan)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "European Commission, CBAM legislation and guidance, including Implementing Regulation (EU) 2025/2546 (verification principles) and Delegated Regulation (EU) 2025/2551 (accreditation of verifiers)",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026: Article 5 of Implementing Regulation (EU) 2025/2547 requires a plan with at least the Annex II point A.5 elements, submitted in English; verification principles are in Implementing Regulation (EU) 2025/2546 and verifier accreditation in Delegated Regulation (EU) 2025/2551. EUR-Lex could not be opened directly; recheck these acts and any amendments there."
+}

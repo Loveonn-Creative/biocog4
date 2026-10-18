@@ -1,0 +1,77 @@
+{
+  "slug": "rba-code-energy-and-ghg-requirements",
+  "q": "What energy and GHG data does the RBA Code of Conduct require from an electronics supplier?",
+  "title": "RBA Code: energy and GHG data needed",
+  "short": "The RBA Code of Conduct, version 8.0, requires an absolute company-wide greenhouse gas reduction goal, with energy use, Scope 1 and 2 emissions and your significant Scope 3 categories tracked, documented and publicly reported against it. You must also look for ways to cut energy use and emissions, and an audit checks the records behind each figure.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Electronics manufacturers and EMS suppliers",
+  "sections": [
+    {
+      "h": "What the energy and GHG clause asks for",
+      "ul": [
+        "An absolute, company-wide greenhouse gas reduction goal, not only an intensity target.",
+        "Energy consumption tracked, documented and publicly reported.",
+        "All Scope 1 and 2 emissions tracked, documented and publicly reported against the goal.",
+        "Significant Scope 3 categories, chosen through a documented materiality or similar process, tracked and reported too. RBA's published criteria say these must include at least category 1, purchased goods and services.",
+        "Efforts to improve energy efficiency and reduce energy use and emissions."
+      ],
+      "p": [
+        "The clause, Energy Consumption and Greenhouse Gas Emissions, sits in the Environment section. Version 8.0 took effect on 1 January 2024. It tightened version 7.0, which asked for a reduction goal without the word absolute and covered Scope 1 and 2 only."
+      ]
+    },
+    {
+      "h": "What an auditor will ask to see",
+      "p": [
+        "An audit under the RBA Validated Assessment Program samples evidence. For this clause expect requests for the goal and who approved it, a year of electricity bills and fuel invoices, the calculation with factor sources, meter or sub-meter records for large loads, the Scope 3 materiality note, and the public report where the figures appear. A goal with no tracking, or totals with no documents behind them, is a typical finding."
+      ]
+    },
+    {
+      "h": "Building the figures for an Indian plant",
+      "ol": [
+        "Set the boundary: every site under your operational control that the customer's programme covers.",
+        "Scope 1: diesel for DG sets, LPG or PNG for reflow or canteens, and refrigerant top-ups, each from invoices or service records.",
+        "Scope 2: units from each month's electricity bill times the CEA grid factor for the location-based figure; a market-based figure needs certificates or a green tariff contract.",
+        "Scope 3: start with purchased goods from your purchase ledger, then any other category your materiality review marks significant.",
+        "Pick a base year and state the goal as an absolute cut in tonnes by a date, and publish progress each year, for example in a sustainability report, on your website or through CDP."
+      ]
+    },
+    {
+      "h": "How it connects to other customer requests",
+      "p": [
+        "Brands that use the RBA Code often also send CDP supply chain requests or ask for product footprints. Use the same year, boundary and totals in each. If a figure changes after recalculation, update it everywhere and keep the earlier version with the reason."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds monthly Scope 1 and 2 records from your fuel invoices and electricity bills, each figure traced to its document, and keeps purchase lines in a separate supplier evidence trail for Scope 3. That is the kind of evidence an RBA auditor samples; the audit itself is carried out by an RBA-approved audit firm.",
+  "links": [
+    {
+      "label": "Drive Sustainability SAQ for auto suppliers",
+      "to": "/answers/drive-sustainability-saq-auto-supplier"
+    },
+    {
+      "label": "PCB assembly carbon per board",
+      "to": "/answers/pcb-assembly-carbon-footprint-per-board"
+    },
+    {
+      "label": "CDP SME questionnaire vs full",
+      "to": "/answers/cdp-sme-questionnaire-vs-full"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Responsible Business Alliance Code of Conduct, version 8.0 (effective 1 January 2024), Section C Environment, Energy Consumption and Greenhouse Gas Emissions (responsiblebusiness.org); figures calculated with the GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard (category 1, purchased goods and services)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18 against RBA Code version 8.0 (effective 1 January 2024). The Code is reviewed periodically; confirm the version your customer cites."
+}

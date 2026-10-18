@@ -1,0 +1,85 @@
+{
+  "slug": "powerloom-vs-airjet-loom-energy-per-metre",
+  "q": "Is a shuttle powerloom or an airjet loom lower carbon per metre of fabric?",
+  "title": "Shuttle powerloom or airjet: CO2 per metre",
+  "short": "Neither wins by default. An airjet loom draws much more power per hour, mostly for compressed air, but it also weaves far more metres an hour, so per metre the gap can be small or reversed. Compare kWh per metre of the same fabric, compressor included, then multiply by 0.710 kg CO2 per kWh.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Weavers in Bhiwandi, Malegaon, Erode and Komarapalayam, fabric buyers",
+  "sections": [
+    {
+      "h": "Where each loom uses its power",
+      "ul": [
+        "Shuttle powerloom: a small main motor running at low speed. Each metre takes a long time, so the shed's lights, fans and humidification are shared over few metres.",
+        "Airjet loom: a larger main motor plus compressed air to carry the weft. The compressor can be a large share of the shed's load, so meter it, and leaks in the air lines waste power around the clock.",
+        "Both: DG diesel during power cuts, which is Scope 1 at 2.68 kg CO2 per litre and must be added to the loom group that used it."
+      ]
+    },
+    {
+      "h": "Why per metre alone can mislead",
+      "p": [
+        "Airjets often weave wider widths and different qualities from the narrow grey cloth common on shuttle looms. Express the result per square metre, or per kg of fabric, as well as per metre.",
+        "Count first-quality metres sold, not metres woven. A loom that makes more defects needs more weaving for each saleable metre, and that extra power belongs to the good metres."
+      ]
+    },
+    {
+      "h": "How to run a fair comparison",
+      "ol": [
+        "Sub-meter each loom group, and the compressor, and read them on the same day.",
+        "Record first-quality metres, width and GSM for each group for the same month.",
+        "Divide shared shed loads by metres or loom hours, and say which you used.",
+        "Use kWh, not kVAh, for CO2. A low power factor raises a kVAh bill, but the emissions follow the energy used."
+      ]
+    },
+    {
+      "h": "What else decides a loom upgrade",
+      "p": [
+        "CO2 per metre is one input. Output per worker, fabric quality, and what your buyers will accept usually weigh more. If you already run airjets, a variable speed compressor and a leak repair programme can lower kWh per metre without changing a single loom."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: two sheds",
+    "lines": [
+      "Shuttle shed: 18,000 kWh; 60,000 metres of 0.91 m wide fabric = 54,600 m2",
+      "Shuttle: 18,000 / 60,000 = 0.30 kWh per metre x 0.710 = 0.213 kg CO2 per metre; 18,000 / 54,600 = 0.33 kWh per m2",
+      "Airjet shed, compressor included: 20,000 kWh; 1,00,000 metres of 1.6 m wide fabric = 1,60,000 m2",
+      "Airjet: 20,000 / 1,00,000 = 0.20 kWh per metre x 0.710 = 0.142 kg CO2 per metre; 20,000 / 1,60,000 = 0.125 kWh per m2"
+    ],
+    "note": "Readings are illustrative, not benchmarks. A shed with a leaking compressor or a heavier quality can reverse the result, so use your own sub-meter data."
+  },
+  "senseible": "Senseible reads loom-shed electricity bills, using the printed kWh on kVAh bills or kVAh times the printed power factor as a labelled estimate, and turns them into Scope 2 at 0.710 kg CO2 per kWh. Metres woven and sub-meter splits come from your own registers.",
+  "links": [
+    {
+      "label": "Electricity and CO2 per metre of weaving",
+      "to": "/answers/weaving-electricity-per-metre-of-fabric"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE SME Programme, cluster energy profiles for textile clusters",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

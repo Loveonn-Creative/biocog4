@@ -1,0 +1,81 @@
+{
+  "slug": "synthetic-footwear-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of PU, PVC or EVA shoes for an export buyer?",
+  "title": "PU, PVC or EVA shoe footprint per pair",
+  "short": "Weigh the material in each part of the pair (coated upper, sole compound, linings, adhesive, box), including cutting and moulding scrap, and multiply each by its material factor. Then add moulding and stitching electricity per pair from your bills and output. Label every database factor with its source and version.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Non-leather footwear makers (Agra, Bahadurgarh, Chennai)",
+  "sections": [
+    {
+      "h": "Coated uppers: area, yield and coating weight",
+      "p": [
+        "PU and PVC synthetic leathers are a polymer coating on a textile base, sold by the metre. Take the net area of the upper pieces for the size run, divide by your cutting yield, and multiply by the material's weight per square metre from the supplier's data sheet. That gives kg per pair, which you multiply by a factor for the coated fabric. If the supplier gives a footprint per square metre, use the area directly and skip the weight step. Mesh and knitted uppers follow the same steps with a textile factor."
+      ]
+    },
+    {
+      "h": "Soles: count the compound you buy, not the finished sole",
+      "ul": [
+        "EVA injection or compression moulding: kg of compound issued per month divided by pairs moulded. This includes sprues, flash and rejects. Subtract only the scrap you regrind and reuse.",
+        "PVC or TPR direct injection on the upper: same method, from the compound issued to each machine.",
+        "Two-part PU pouring: kg of polyol and isocyanate drawn by the mixing machine divided by pairs, with a factor for each part.",
+        "Rubber outsoles bought ready-made: weight per pair times the supplier's factor."
+      ]
+    },
+    {
+      "h": "Moulding and assembly energy per pair",
+      "p": [
+        "If you can, read a sub-meter on the moulding section and divide by pairs moulded. Otherwise divide the whole bill by pairs made and say so. Multiply kWh by 0.710 kg CO2 per kWh. Add DG diesel at 2.68 kg CO2 per litre and LPG for heat setting or drying at 2.98 kg CO2 per kg, each divided by the same pairs."
+      ]
+    },
+    {
+      "h": "Which method the buyer expects",
+      "p": [
+        "Most export buyers accept a cradle to gate footprint to ISO 14067. Some EU brands use the Product Environmental Footprint method, and footwear has been one of the product groups worked on under it. Ask which method and boundary the buyer wants before you start, and label every database factor as secondary data with its source and version."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one pair with a PU coated upper and an EVA sole",
+    "lines": [
+      "Upper: 0.12 m2 net / 0.80 cutting yield = 0.15 m2 x 0.6 kg per m2 = 0.09 kg x 6.0 kg CO2e per kg (assumed) = 0.54 kg CO2e",
+      "EVA sole: 0.30 kg compound per pair, sprue included x 3.0 kg CO2e per kg (assumed) = 0.90 kg CO2e",
+      "Adhesive and primer: 600 kg / 40,000 pairs = 0.015 kg x 4.0 kg CO2e per kg (assumed) = 0.06 kg CO2e",
+      "Electricity: 30,000 kWh / 40,000 pairs = 0.75 kWh x 0.710 = 0.53 kg CO2",
+      "Shoe box: 0.2 kg x 1.0 kg CO2e per kg (assumed) = 0.20 kg CO2e",
+      "Total: 0.54 + 0.90 + 0.06 + 0.53 + 0.20 = 2.23 kg CO2e per pair"
+    ],
+    "note": "The material factors, weights, yield and monthly kWh are illustrative inputs, not published figures. Replace them with your suppliers' figures or a named database version before sharing."
+  },
+  "senseible": "Senseible reads compound, adhesive, fuel and packaging invoices and electricity bills, computes Scope 1 and 2 from the printed quantities with IPCC 2006 fuel factors and the CEA grid factor, and keeps material lines in the Scope 3 supplier evidence trail. A per pair figure built from them is a self-declared draft for the buyer.",
+  "links": [
+    {
+      "label": "Leather footwear footprint per pair",
+      "to": "/answers/leather-footwear-carbon-footprint-per-pair"
+    },
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Resin factors for PP, HDPE and PVC",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint methods, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Footwear category rules under the EU Product Environmental Footprint method were still in development when this was written; check their status before citing them."
+}

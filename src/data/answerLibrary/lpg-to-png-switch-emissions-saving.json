@@ -1,0 +1,81 @@
+{
+  "slug": "lpg-to-png-switch-emissions-saving",
+  "q": "How much CO2 does a factory save by switching from LPG to PNG for the same heat?",
+  "title": "LPG to PNG switch: CO2 saved",
+  "short": "About 11 percent less CO2 for the same heat at the same burner efficiency. The IPCC 2006 defaults are 63.1 kg CO2 per GJ for LPG and 56.1 kg for natural gas, and 56.1 / 63.1 = 0.889. A burner that runs more efficiently on gas saves a little more.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSME owners moving LPG-fired furnaces or ovens to city gas",
+  "sections": [
+    {
+      "h": "Why the saving is smaller than from oil or coal",
+      "p": [
+        "LPG is already a light gas with a low carbon content per unit of energy, so moving to natural gas cuts less than a switch from furnace oil or coal does. The gap comes only from the fuel's chemistry: natural gas is mostly methane, which has more hydrogen per carbon atom than propane and butane."
+      ]
+    },
+    {
+      "h": "Convert both fuels to energy before comparing",
+      "ol": [
+        "LPG energy: kg x 47.3 MJ per kg, the IPCC default net calorific value.",
+        "PNG energy: scm x the gross calorific value printed on the bill, converted to MJ and multiplied by 0.90 to get net calorific value.",
+        "CO2: GJ of LPG x 63.1, and GJ of PNG x 56.1.",
+        "Compare per tonne of product, so a change in output does not distort the saving."
+      ],
+      "p": [
+        "Comparing 2.98 kg CO2 per kg of LPG with 2.05 kg CO2 per scm of PNG directly is meaningless, because a kg and an scm hold different energy."
+      ]
+    },
+    {
+      "h": "What changes the real figure",
+      "ul": [
+        "Burner efficiency: a well-tuned gas burner with proper air control may run a little more efficiently than old LPG burners, which adds to the saving. Measure fuel per tonne before and after rather than assuming it.",
+        "Vaporisers: large LPG installations often heat the liquid with electricity or hot water. Gas from the pipeline needs no vaporiser, so that electricity drops out.",
+        "Calorific value: city gas supply varies month to month; use the GCV on each bill.",
+        "CBG blending: if your gas supplier blends compressed biogas, the biogenic part is reported outside Scope 1. Ask for the blend in writing."
+      ]
+    },
+    {
+      "h": "Evidence to keep",
+      "p": [
+        "Keep 12 months of LPG invoices in kg with production records, then the PNG bills with their printed GCV for the months after. Calculate Scope 1 for both periods with named factors. If you also replaced burners, record the date, because part of the saving is efficiency, not fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 kg of LPG a month",
+    "lines": [
+      "LPG CO2: 10,000 kg x 2.98 = 29,800 kg CO2",
+      "LPG energy: 10,000 x 47.3 MJ = 473 GJ (net basis)",
+      "Same heat from PNG: 473 GJ x 56.1 kg = 26,535 kg CO2",
+      "Saving: 29,800 minus 26,535 = 3,265 kg CO2 a month, about 11 percent, or about 39 t a year",
+      "Gas needed at a printed GCV of 9,500 kcal per scm: 9,500 x 4.1868 / 10,00,000 x 0.90 = 0.0358 GJ per scm; 473 / 0.0358 = about 13,200 scm a month"
+    ],
+    "note": "Assumes the same burner efficiency on both fuels. The 47.3 MJ per kg and the 0.90 net to gross ratio for natural gas are IPCC 2006 defaults; use your supplier's figures where you have them."
+  },
+  "senseible": "Senseible reads LPG invoices at 2.98 kg CO2 per kg and PNG bills at 2.05 kg CO2 per scm, so Scope 1 for the months before and after the switch sits side by side, each line traced to its invoice. Those records can also support a green loan readiness check.",
+  "links": [
+    {
+      "label": "Furnace oil to PNG switch saving",
+      "to": "/answers/furnace-oil-to-png-switch-emissions-saving"
+    },
+    {
+      "label": "CO2 from a 19 kg LPG cylinder",
+      "to": "/answers/lpg-19-kg-cylinder-co2"
+    },
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1 Table 1.2 (NCV) and Chapter 2 Table 2.2 (LPG 63,100 and natural gas 56,100 kg CO2 per TJ)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

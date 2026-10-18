@@ -1,0 +1,78 @@
+{
+  "slug": "do-voc-emissions-count-in-ghg-inventory",
+  "q": "Do solvent VOC emissions count in my greenhouse gas inventory?",
+  "title": "Do solvent VOCs count as GHG emissions?",
+  "short": "No. Volatile organic compounds are not among the seven greenhouse gases the GHG Protocol requires, so evaporated solvent does not go into Scope 1. You may report the CO2 they form later in air as a separate memo item, and you still report VOCs as air pollutants under BRSR and your consent.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Paint, printing, coating and chemical units",
+  "sections": [
+    {
+      "h": "Which gases the inventory covers",
+      "p": [
+        "The GHG Protocol Corporate Standard covers carbon dioxide, methane, nitrous oxide, HFCs, PFCs, sulphur hexafluoride and nitrogen trifluoride. Toluene, xylene, MEK, ethyl acetate and other common solvents are none of these. Their vapour harms air quality and forms ground-level ozone, but it is not counted in Scope 1."
+      ]
+    },
+    {
+      "h": "The exceptions to watch for",
+      "ul": [
+        "Solvents that are greenhouse gases themselves, such as some HFC-based cleaning and degreasing fluids. These count in Scope 1 by mass lost times their GWP.",
+        "Solvent you burn, in a thermal oxidiser, incinerator or thermic fluid heater. That CO2 is Scope 1, worked out from carbon content.",
+        "Methane is not a VOC in this sense. If a process vents methane, count it."
+      ]
+    },
+    {
+      "h": "Indirect CO2 from VOCs: optional and separate",
+      "p": [
+        "Over hours to months, depending on the compound, VOCs in the air oxidise to CO2. The IPCC 2006 Guidelines describe how to estimate this indirect CO2 from the carbon in the solvent, and national inventories may report it. For a company inventory it is optional. If you include it, use mass of solvent lost x carbon fraction x 44/12, and show it as a memo line outside your Scope 1 total so it is not mistaken for direct emissions."
+      ]
+    },
+    {
+      "h": "Where VOCs are reported instead",
+      "p": [
+        "BRSR Principle 6 asks for air emissions other than greenhouse gases, and VOCs are listed there with NOx, SOx and particulate matter. Your state pollution control board consent may also set VOC limits or monitoring. Track solvent purchases, recovery and stock so the same mass balance serves both the air emission figure and any memo CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 kg of toluene lost to air in a year",
+    "lines": [
+      "Carbon fraction of toluene (C7H8): about 0.912",
+      "Carbon: 10,000 x 0.912 = 9,120 kg",
+      "Indirect CO2, memo only: 9,120 x 44/12 = 33,440 kg, about 33.4 t CO2",
+      "Scope 1 from the toluene: 0, because it was not burnt and is not a Kyoto gas",
+      "BRSR air emissions: 10 t VOC, reported with your other non-GHG air emissions"
+    ],
+    "note": "Solvent lost = purchased minus recovered minus change in stock minus solvent leaving in product or waste."
+  },
+  "senseible": "Senseible reports greenhouse gases from fuel, electricity and other invoices; VOCs are not converted to CO2e. Solvent purchase invoices are kept with their quantities, which you can use for your own solvent mass balance.",
+  "links": [
+    {
+      "label": "Solvent incineration in pharma APIs",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "Chemical industry",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard, Chapter 4 (the seven greenhouse gases)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 1 Chapter 7 (indirect CO2 from NMVOC) and Volume 3 Chapter 5",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "SEBI Business Responsibility and Sustainability Report format, Principle 6 Essential Indicators",
+      "url": "https://www.sebi.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

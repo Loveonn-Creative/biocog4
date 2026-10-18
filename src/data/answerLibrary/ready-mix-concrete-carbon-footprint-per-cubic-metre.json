@@ -1,0 +1,88 @@
+{
+  "slug": "ready-mix-concrete-carbon-footprint-per-cubic-metre",
+  "q": "How do I calculate the carbon footprint per cubic metre of ready-mix concrete?",
+  "title": "Ready-mix concrete carbon per cubic metre",
+  "short": "Take the mix design in kg per cubic metre, multiply each ingredient by its cradle-to-gate factor, then add batching plant electricity and transit mixer diesel divided by cubic metres delivered. Cement dominates, so the cement factor and the share replaced by fly ash or GGBS decide most of the result.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "RMC producers and contractors",
+  "sections": [
+    {
+      "h": "Start from the mix design, per grade",
+      "p": [
+        "Each grade, such as M25 or M40, has a mix design under IS 10262 that gives kg per m3 of cement, fly ash or GGBS, fine and coarse aggregate, water and admixture. Work out one footprint per mix, not one average for the plant, because a high-strength OPC mix and a blended M25 can differ a lot. Use batch records to confirm what was actually dosed, since plants often adjust for moisture and slump."
+      ]
+    },
+    {
+      "h": "Factors for each ingredient",
+      "ul": [
+        "Cement: your cement supplier's EPD or declared intensity for that product. OPC carries far more than PPC or PSC, because clinker is the main source.",
+        "Fly ash and GGBS: industrial by-products. Under the common cut-off approach they carry only processing and transport, but state the approach you used.",
+        "Aggregates and admixtures: small per kg, from supplier EPDs or a named database.",
+        "Water: negligible, but include it if your boundary covers pumping or treatment."
+      ],
+      "p": [
+        "These are CO2e, because cement and material data include other gases. Do not add the cement again if a customer also counts it separately."
+      ]
+    },
+    {
+      "h": "Plant energy and delivery",
+      "p": [
+        "Divide the month's batching plant electricity and loader diesel by cubic metres produced. Transit mixer diesel, from fuel invoices or logs, divided by cubic metres delivered gives module A4 if you report delivery to site. Under EN 15804 the plant and materials are modules A1 to A3; keep A4 separate so buyers can compare like with like."
+      ]
+    },
+    {
+      "h": "Comparing OPC and blended mixes fairly",
+      "p": [
+        "Compare mixes that meet the same grade, exposure and durability requirements under IS 456. A blended mix that needs more binder, or gains strength more slowly, may need adjusting before the saving is real. Show OPC and blended options side by side, per m3 and per MPa if the customer asks."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: M30, OPC mix and a 30 percent fly ash mix",
+    "lines": [
+      "OPC mix: cement 380 kg x 0.85 kg CO2e per kg (illustrative input) = 323.0",
+      "Aggregates 1,850 kg x 0.005 (illustrative input) = 9.25; admixture 3.8 kg x 1.9 (illustrative input) = 7.22",
+      "Plant electricity: 30,000 kWh x 0.710 = 21,300 kg CO2 over 15,000 m3 = 1.42 per m3",
+      "OPC mix, A1 to A3: 323.0 + 9.25 + 7.22 + 1.42 = 340.89, about 341 kg CO2e per m3",
+      "Fly ash mix, A1 to A3: cement 266 kg x 0.85 = 226.1, fly ash 114 kg at 0 (cut-off), other lines as above: 243.99, about 244 kg CO2e per m3",
+      "Saving at the plant gate: 340.89 minus 243.99 = 96.9 kg per m3, about 28 percent",
+      "A4 delivery, reported separately: 25,000 L transit mixer diesel x 2.68 = 67,000 kg CO2 over 15,000 m3 = 4.47 per m3"
+    ],
+    "note": "Cement, aggregate and admixture factors are illustrative inputs for the arithmetic, not published values. Replace each with your supplier's EPD value; fly ash transport is left out here and should be added."
+  },
+  "senseible": "Senseible reads cement, fly ash, GGBS and diesel invoices and plant electricity bills; diesel and electricity go into Scope 1 and 2 at 2.68 kg CO2 per litre and 0.710 kg CO2 per kWh, and material purchases go to the Scope 3 supplier evidence trail. Mix designs and cubic metres delivered come from your batch records.",
+  "links": [
+    {
+      "label": "Embodied carbon from quantities",
+      "to": "/answers/how-to-calculate-embodied-carbon-from-quantities"
+    },
+    {
+      "label": "PPC vs OPC cement footprint",
+      "to": "/answers/ppc-vs-opc-cement-carbon-footprint"
+    },
+    {
+      "label": "Cement supplier benchmark intensity",
+      "to": "/answers/cement-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Construction industry",
+      "to": "/industries/construction"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 21930:2017, Core rules for EPDs of construction products (counterpart to EN 15804+A2, modules A1 to A3)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel CO2 default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

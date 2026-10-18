@@ -1,0 +1,88 @@
+{
+  "slug": "merchant-exporter-carbon-footprint-without-factory",
+  "q": "How does a merchant exporter without a factory calculate a product carbon footprint?",
+  "title": "Product footprint for a merchant exporter",
+  "short": "A merchant exporter starts from the manufacturer's cradle-to-gate footprint per unit, then adds what it adds: freight to its warehouse, repacking and labelling, warehouse energy and export packaging. If the maker gives no figure, use a material-weight or spend-based estimate, labelled as such. You can make the claim without owning a factory.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Merchant exporters and sourcing agents",
+  "sections": [
+    {
+      "h": "Whose emissions are in a traded product",
+      "p": [
+        "Almost all of a traded product's footprint sits with the manufacturer and its suppliers: materials, energy and processing. The exporter's part is smaller but real: transport legs, packaging and storage. A product footprint under ISO 14067 or the GHG Protocol Product Standard covers the product's life cycle, whoever reports it, so the maker's figure is your starting point."
+      ]
+    },
+    {
+      "h": "Getting the manufacturer's figure",
+      "ul": [
+        "Ask for kg CO2e per unit, cradle to gate, with the boundary, year, standard used and the share of primary data.",
+        "Check it is for the exact item, size and material you buy, not a factory average.",
+        "If your buyer uses the PACT data exchange format, ask the maker for its fields, or fill them yourself from what the maker sends.",
+        "Where the maker has only bills, help it allocate its fuel and electricity to your order by units or machine hours."
+      ]
+    },
+    {
+      "h": "When the maker cannot give data",
+      "ol": [
+        "Material weights: weigh each material in one unit and apply a secondary factor per kg, with its source.",
+        "Spend-based: only if there is no weight, using the maker's price, not your selling price, and labelled as spend-based with wider uncertainty.",
+        "Mark the result as secondary data, and ask the maker again next year."
+      ]
+    },
+    {
+      "h": "What you add, and what you may leave out",
+      "ul": [
+        "Inbound freight: tonnes x km x a factor for the mode and truck class.",
+        "Repacking and export packaging: kg of each material x its factor.",
+        "Warehouse electricity: allocate by units or volume handled, x 0.710 kg CO2 per kWh.",
+        "Office overhead: the GHG Protocol Product Standard does not require non-attributable processes such as administration. Say whether you included it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: 1,000 cotton shirts",
+    "lines": [
+      "Manufacturer's cradle-to-gate figure: 5.0 kg CO2e per shirt (illustrative)",
+      "Inbound truck: 2 t x 400 km = 800 tonne-km x an illustrative 0.1 kg CO2e = 80 kg; 0.08 kg per shirt",
+      "Polybags and cartons: 0.05 kg CO2e per shirt (illustrative)",
+      "Warehouse share: 60 kWh x 0.710 = 42.6 kg; 0.043 kg per shirt",
+      "Total to the exporter's gate: 5.0 + 0.08 + 0.05 + 0.043 = 5.17 kg CO2e per shirt"
+    ],
+    "note": "All factors except the grid factor are illustrative. The maker's figure decides most of the result, so its quality matters most."
+  },
+  "senseible": "Senseible keeps manufacturers' invoices, and any footprint they send, in the Scope 3 supplier evidence trail, and provides spend-based estimates labelled with wider uncertainty where no supplier data exist. Its logistics calculator estimates freight from tonnes, distance and mode.",
+  "links": [
+    {
+      "label": "Goods bought from a trader",
+      "to": "/answers/goods-bought-from-trader-scope-3"
+    },
+    {
+      "label": "Can I use my supplier's product footprint?",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Buyer asked for a product footprint",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "WBCSD PACT Methodology, version 3",
+      "url": "https://www.wbcsd.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

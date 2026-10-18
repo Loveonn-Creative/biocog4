@@ -1,0 +1,90 @@
+{
+  "slug": "green-shipping-book-and-claim-scope-3",
+  "q": "Can an exporter count green shipping certificates in Scope 3?",
+  "title": "Green shipping certificates in Scope 3",
+  "short": "Not inside the Scope 3 total today. Report Category 4 or 9 sea freight at its activity-based figure, from weight, distance and a mode factor, and show the green shipping certificate claim as a separate line with its registry details. The GHG Protocol has no settled rule for book and claim in Scope 3 yet.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Exporters offered green shipping products",
+  "sections": [
+    {
+      "h": "How a green shipping product works",
+      "p": [
+        "The carrier burns biofuel or another lower carbon fuel somewhere in its fleet, often not on the ship carrying your cargo, and sells you a claim to the emission reduction. This is book and claim: the physical fuel and the claim travel separately, and a registry or the carrier's records should make sure only one customer claims each tonne."
+      ]
+    },
+    {
+      "h": "How to report it now",
+      "ul": [
+        "Calculate sea freight from tonnes, distance and a mode factor, following the GLEC Framework or ISO 14083, in Category 4 if you pay for the freight and Category 9 if the buyer does.",
+        "Keep that figure as your Scope 3 number.",
+        "Show the certificate claim as a separate line, with the volume, fuel type, well to wake reduction, registry or certificate ID, and the retirement in your name.",
+        "Say whether the reduction is stated well to wake or tank to wake, since figures differ."
+      ]
+    },
+    {
+      "h": "Checks before you pay for a claim",
+      "ul": [
+        "Who else claims the same reduction: the carrier in its own reporting, a forwarder, or your buyer.",
+        "Whether the fuel's feedstock and lifecycle reduction are certified by a recognised scheme.",
+        "Whether your buyer or target-setter will accept the claim at all. Many will want it disclosed but not deducted.",
+        "Whether the surcharge on your freight invoice is for the green product or for the EU ETS cost, which is a different thing."
+      ]
+    },
+    {
+      "h": "Where the rules are heading",
+      "p": [
+        "The Smart Freight Centre published a voluntary market-based measures framework for logistics emissions accounting in 2023, and its GLEC programme now approves verification bodies for such claims. The GHG Protocol is still reviewing market instruments in Scope 3, and SBTi's Corporate Net-Zero Standard version 2 addresses when such instruments may count towards Scope 3 targets; check its current text and effective date. Until the GHG Protocol rule is final and your buyer or target-setter confirms it accepts the claim, separate disclosure is the safe choice."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year of export sea freight",
+    "lines": [
+      "Category 4 sea freight, activity-based: 120 t CO2e",
+      "Green shipping certificates bought and retired: 30 t CO2e stated well to wake reduction",
+      "Scope 3 Category 4 reported: 120 t CO2e (unchanged)",
+      "Separate disclosure: certificate claim of 30 t CO2e with registry and certificate IDs; 90 t is not reported as the Category 4 figure"
+    ],
+    "note": "Figures are illustrative."
+  },
+  "senseible": "Senseible's freight calculator works out freight emissions from weight and distance using default intensities per tonne-km by mode, and a carrier's own factor is used as given. A green shipping certificate is kept as attached evidence and reported apart from the activity-based figure.",
+  "links": [
+    {
+      "label": "SAF certificates and business travel",
+      "to": "/answers/saf-certificates-scope-3-business-travel"
+    },
+    {
+      "label": "Sea freight emissions per container",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework v3 (2023) and Voluntary Market-Based Measures Framework for Logistics Emissions Accounting and Reporting (2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification of greenhouse gas emissions from transport chains",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard version 2 (sciencebasedtargets.org)",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewNote": "Checked October 2026: no settled GHG Protocol rule on book and claim in Scope 3; SBTi Corporate Net-Zero Standard v2 text and effective date to be rechecked on sciencebasedtargets.org before relying on it for targets.",
+  "reviewed": "2026-10-18"
+}

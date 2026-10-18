@@ -1,0 +1,73 @@
+{
+  "slug": "ccts-offset-approved-methodologies",
+  "q": "Which methodologies has BEE approved under India's CCTS offset mechanism?",
+  "title": "BEE approved CCTS offset methodologies",
+  "short": "BEE lists 12 approved methodologies under the CCTS offset mechanism, across energy, industries, waste, agriculture and forestry (list updated 7 July 2026). For factories and MSMEs the key one is BM IN02.001, energy efficiency and fuel switching in industrial facilities. BEE adds methods by notice, so check the date before you plan.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Project developers and MSMEs considering CCTS offsets",
+  "sections": [
+    {
+      "h": "The approved list",
+      "ul": [
+        "Energy: BM EN01.001 grid-connected renewable electricity; BM EN01.002 hydrogen from electrolysis of water; BM EN01.003 electricity and heat from biomass.",
+        "Industries: BM IN02.001 energy efficiency and fuel switching in industrial facilities; BM IN02.002 hydrogen from biogas methane.",
+        "Waste handling and disposal: BM WA03.001 landfill methane recovery; BM WA03.002 flaring or use of landfill gas; BM WA03.003 compressed biogas (CBG).",
+        "Agriculture: BM AG04.001 methane recovery from livestock and manure at households and small farms; BM AG04.002 improved practices in rice cultivation.",
+        "Forestry: BM FR05.001 mangrove afforestation and reforestation; BM FR05.002 afforestation and reforestation of lands except wetlands."
+      ]
+    },
+    {
+      "h": "Which one fits a factory",
+      "p": [
+        "Most industrial projects sit under BM IN02.001: a more efficient boiler, furnace, motor or compressor, waste heat recovery, or a switch from coal or furnace oil to a lower-carbon fuel. A plant that makes its own power or heat from biomass looks at BM EN01.003 instead, and rooftop or open access renewable projects at BM EN01.001.",
+        "Each method comes with approved tools, such as BM-T-001 for the baseline and additionality test, BM-T-002 for fossil fuel emissions, BM-T-003 for electricity and BM-T-006 for baseline efficiency of thermal and electricity systems."
+      ]
+    },
+    {
+      "h": "How to read a methodology for your project",
+      "ul": [
+        "Check the applicability conditions: technology, size, new plant or retrofit, and start date.",
+        "Read the baseline and monitoring rules. They decide which meters and records you need from day one.",
+        "Note the version and notice date you relied on, since a revised version can change the rules for new registrations."
+      ]
+    },
+    {
+      "h": "What approval does not settle",
+      "p": [
+        "An approved methodology does not make a project additional or registered. The project still needs its design document under BEE's Detailed Procedure for the Offset Mechanism, validation and verification by an accredited agency, and registration before certificates are issued. Do not register the same reductions in two programmes."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel and electricity bills into a dated record of consumption before and after a change, the kind of baseline and monitoring data a BM IN02.001 efficiency or fuel switch project needs.",
+  "links": [
+    {
+      "label": "CCTS offsets for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Find the right carbon methodology",
+      "to": "/answers/how-to-find-the-right-carbon-methodology"
+    },
+    {
+      "label": "India CCTS targets",
+      "to": "/climate-intelligence/india-carbon-credit-trading-scheme-targets"
+    },
+    {
+      "label": "India CCTS vs EU ETS",
+      "to": "/answers/india-ccts-vs-eu-ets-difference"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE, approved methodologies and Detailed Procedure for the Offset Mechanism under CCTS (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Carbon Credit Trading Scheme, 2023 as amended December 2023, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewNote": "List checked against BEE's Approved Methodologies under Offset Mechanism page (last updated 7 July 2026), provided by the owner on 18 October 2026. BEE adds methods by notice.",
+  "reviewed": "2026-10-18"
+}

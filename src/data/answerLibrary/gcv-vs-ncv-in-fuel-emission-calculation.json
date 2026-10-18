@@ -1,0 +1,84 @@
+{
+  "slug": "gcv-vs-ncv-in-fuel-emission-calculation",
+  "q": "Should I use GCV or NCV when calculating CO2 from coal, gas or oil?",
+  "title": "GCV or NCV for fuel CO2?",
+  "short": "Use the calorific basis that matches your emission factor. IPCC 2006 factors per TJ are on net calorific value (NCV), so convert any gross (GCV) energy first: multiply by 0.95 for coal and oil, or 0.90 for natural gas. Skipping this overstates CO2 by about 5 percent for coal and oil and 11 percent for gas.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Energy managers, auditors, CCTS and CBAM data preparers",
+  "sections": [
+    {
+      "h": "What the two values mean",
+      "p": [
+        "Gross calorific value counts all the heat from burning a fuel, including the heat recovered when the water vapour in the flue gas condenses. Net calorific value leaves that heat out, because most boilers and furnaces send the vapour up the stack. The difference is larger for fuels rich in hydrogen, which is why natural gas has a wider gap than coal.",
+        "Indian coal grades, gas supplier bills and most fuel lab reports quote GCV. The IPCC tables and the EU's CBAM and ETS monitoring rules work on NCV."
+      ]
+    },
+    {
+      "h": "The rule in one line",
+      "p": [
+        "CO2 = energy on a GCV basis x the NCV to GCV ratio x a factor per unit of NCV energy. The IPCC 2006 Guidelines give default ratios of 0.95 for coal and oil and 0.90 for natural gas. A lab or supplier NCV is better than the default where you have one, as long as it is on the same moisture basis as the tonnes you burnt."
+      ]
+    },
+    {
+      "h": "Where the mismatch slips in",
+      "ul": [
+        "A gas bill in MMBtu or a coal lab report in kcal per kg multiplied straight by an IPCC factor per GJ.",
+        "Mixing a factor set built on GCV, such as US EPA factors, which are per unit of higher heating value, with energy figures on NCV, or the reverse.",
+        "A CBAM or CCTS template that asks for NCV, filled with the GCV from an invoice.",
+        "Moisture: an NCV measured on dry coal applied to wet, as-received tonnes."
+      ]
+    },
+    {
+      "h": "When you do not need to convert at all",
+      "p": [
+        "If you calculate from physical quantities with a per-unit factor, such as kg CO2 per litre, per kg or per scm, the calorific basis is already built into the factor. The conversion matters only when you work through energy, which is what you need for precise coal by grade, CBAM declarations, or comparing fuels for a switch."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 tonnes of coal with a lab GCV of 4,500 kcal per kg",
+    "lines": [
+      "GCV: 4,500 x 4.1868 / 1,000 = 18.8406 MJ per kg; energy 100 t x 18.8406 = 1,884.06 GJ (GCV)",
+      "NCV energy: 1,884.06 x 0.95 = 1,789.86 GJ",
+      "Correct: 1,789.86 GJ x 94.6 kg CO2 per GJ = 1,69,321 kg, about 169.3 t CO2",
+      "Wrong, GCV energy with the NCV factor: 1,884.06 x 94.6 = 1,78,232 kg, about 178.2 t",
+      "Overstatement: 8.9 t, which is 1 / 0.95 minus 1 = 5.3 percent; for gas it would be 1 / 0.90 minus 1 = 11.1 percent"
+    ],
+    "note": "94.6 kg CO2 per GJ is the IPCC 2006 default for other bituminous coal. A lab NCV on an as-received basis replaces the 0.95 default."
+  },
+  "senseible": "Senseible applies per-unit IPCC 2006 factors to the quantity on the bill (for example 2.42 kg CO2 per kg of coal and 2.05 kg CO2 per scm of PNG), so ordinary fuel invoices need no GCV to NCV conversion. Keep lab GCV reports with your records where a buyer or regulator asks for an energy-based figure.",
+  "links": [
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "PNG bill in MMBtu to CO2",
+      "to": "/answers/png-bill-mmbtu-to-co2"
+    },
+    {
+      "label": "Choosing emission factors",
+      "to": "/climate-intelligence/emission-factors-selection-guidance"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 1, section 1.4.1.2 (net and gross calorific values) and Table 1.4",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2023/1773, Annex III (CBAM monitoring on a net calorific value basis), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "US EPA GHG Emission Factors Hub (factors per unit of higher heating value)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

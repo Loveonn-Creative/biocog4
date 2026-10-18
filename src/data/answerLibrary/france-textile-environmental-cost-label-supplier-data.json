@@ -1,0 +1,69 @@
+{
+  "slug": "france-textile-environmental-cost-label-supplier-data",
+  "q": "What data will a French brand ask me for its textile environmental cost label?",
+  "title": "French textile eco-cost label: supplier data",
+  "short": "Mainly where each step was done and what the product is made of: product mass, fibre composition, the countries of weaving or knitting, dyeing and finishing, and making up, the spinning country if known, and how much went by air. The brand enters these into the French government's Ecobalyse tool to get a score in points.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Garment and fabric exporters to France",
+  "sections": [
+    {
+      "h": "What the label is",
+      "p": [
+        "France's Climate and Resilience Law of 2021 set up environmental labelling for consumer products. Decree No. 2025-957 of 6 September 2025 and its order applied it to clothing from 1 October 2025. A brand that displays the label must calculate an environmental cost in points with the official method, run through the government's Ecobalyse tool, and show it per product and per 100 g. The method builds on the EU Product Environmental Footprint and adjusts for durability and microfibre release."
+      ]
+    },
+    {
+      "h": "The data a brand will ask you for",
+      "ul": [
+        "Product mass and fibre composition by percentage, including recycled shares with their certificates.",
+        "The country of weaving or knitting, of dyeing and finishing, and of garment making. These three are mandatory in Ecobalyse.",
+        "The country of spinning, which is optional; if it is left blank the tool applies a default.",
+        "Transport: the share of the product that moved by air. Without it, Ecobalyse assumes a high air share for garments made outside Europe and Turkey.",
+        "Proof for each answer, such as purchase orders, transaction certificates or mill names, so the brand can justify what it declares."
+      ]
+    },
+    {
+      "h": "Why the countries matter so much",
+      "p": [
+        "Ecobalyse applies default energy and impact data by country for each step. A step done in a country with a coal-heavy grid scores worse than the same step done elsewhere, so an accurate, documented country for each step moves the score more than detail about your own machines. Missing optional data is filled with deliberately unfavourable defaults, so a brand that cannot trace a step to you may end up with a worse score than the real one. If you do several steps in India, say which ones."
+      ]
+    },
+    {
+      "h": "What to prepare now",
+      "ol": [
+        "A one-page traceability sheet per style: fibre, yarn, fabric and garment suppliers with their countries.",
+        "Certificates for recycled or organic fibre claims.",
+        "Shipping records showing sea or air for each consignment, so the brand can enter a real air share.",
+        "Your own energy and fuel records by site, which answer the buyer's other carbon questions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your mill's electricity bills and boiler fuel invoices and turns them into Scope 1 and 2 records traced to each document, which answers the carbon questions French and other EU brands send alongside the label data. The label score itself is calculated by the brand in Ecobalyse.",
+  "links": [
+    {
+      "label": "PEF vs ISO 14067 for EU buyers",
+      "to": "/answers/pef-vs-iso-14067-for-eu-buyers"
+    },
+    {
+      "label": "Garment end-of-life emissions in the EU",
+      "to": "/answers/garment-end-of-life-emissions-eu-market"
+    },
+    {
+      "label": "Digital product passport for textiles",
+      "to": "/climate-intelligence/digital-product-passport-textile-exporters"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Décret n° 2025-957 du 6 septembre 2025 on the textile environmental cost (Légifrance) and the Ecobalyse methodology (ADEME), which builds on Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18 against Decree 2025-957 and the Ecobalyse textile inputs. The method and the rules on publication by third parties change; recheck the decree, its order and the Ecobalyse version before relying on this page."
+}

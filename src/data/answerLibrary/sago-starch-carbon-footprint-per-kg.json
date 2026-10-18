@@ -1,0 +1,88 @@
+{
+  "slug": "sago-starch-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of sago or tapioca starch from a Salem unit?",
+  "title": "Carbon footprint per kg of sago or starch",
+  "short": "Per kg of sago or starch, add the tapioca roots' farm footprint, the drying fuel and electricity, and the methane from the effluent, each divided by kg produced. Effluent methane = kg COD x 0.25 kg CH4 per kg COD x a methane correction factor, less any biogas captured. An open anaerobic effluent pit can be the largest single item.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sago and starch units in Salem and Namakkal, food and textile-sizing buyers",
+  "sections": [
+    {
+      "h": "The four parts of the figure",
+      "ul": [
+        "Roots: kg of tapioca root per kg of product, from your purchase and production registers, x a farm footprint for the roots. This is Scope 3 purchased goods.",
+        "Drying: firewood, coal or husk for the dryers or roasting pans. Coal is fossil CO2; wood and husk CO2 is biogenic and reported separately, while their methane and nitrous oxide count.",
+        "Electricity: rasping, pumps, centrifuges, sieves and the flash dryer fans.",
+        "Effluent: the starchy wash water carries a heavy organic load, which turns into methane wherever it sits without oxygen."
+      ]
+    },
+    {
+      "h": "Effluent methane, step by step",
+      "ol": [
+        "Organic load in kg COD = wastewater m3 x COD in kg per m3, from your own lab tests.",
+        "With no data, IPCC 2006 Volume 5, Table 6.9 gives defaults for starch production: 9 m3 of wastewater per tonne of product and 10 kg COD per m3. Label the result as an estimate.",
+        "Methane = (kg COD minus COD removed as sludge) x 0.25 x MCF, minus methane recovered.",
+        "MCF for how the water is treated: 0.8 for a deep anaerobic lagoon over 2 m or an anaerobic reactor without gas capture, 0.2 for a shallow lagoon, 0 for a well run aerobic plant, 0.1 for untreated discharge to a river.",
+        "Convert to CO2e with a GWP and name it, for example 27 for non-fossil methane under IPCC AR6."
+      ]
+    },
+    {
+      "h": "What a biogas plant changes",
+      "p": [
+        "A covered lagoon or digester that captures the gas and burns it in the dryer or a flare cuts the methane term by the amount recovered. Fit a gas flow meter, because a recovery figure without a meter reading will not hold up. The biogas may also replace coal or wood in the dryer, which lowers the drying term too."
+      ]
+    },
+    {
+      "h": "What to send a buyer",
+      "p": [
+        "State the figure per kg of starch or sago, the year, whether roots are included, the effluent method (lab COD or IPCC default) and the GWP set. Report biogenic CO2 from wood or husk on its own line. ISO 14067 expects each of these choices to be written down."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 300 tonnes of starch",
+    "lines": [
+      "Effluent by IPCC defaults: 300 x 9 = 2,700 m3; 2,700 x 10 = 27,000 kg COD",
+      "Deep open lagoon, MCF 0.8: 27,000 x 0.25 x 0.8 = 5,400 kg CH4; x 27 (AR6, non-fossil) = 1,45,800 kg CO2e",
+      "Dryer coal: 45,000 kg x 2.42 = 1,08,900 kg CO2",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Plant total: 1,45,800 + 1,08,900 + 42,600 = 2,97,300 kg; per kg: 2,97,300 / 3,00,000 = 0.99 kg CO2e, before the roots",
+      "With 4,000 kg of methane captured and burnt: (5,400 minus 4,000) x 27 = 37,800 kg CO2e, a cut of 1,08,000 kg"
+    ],
+    "note": "Coal and electricity quantities are illustrative, and the COD uses IPCC defaults; your own lab COD will give a better figure."
+  },
+  "senseible": "Senseible reads electricity and coal invoices into Scope 1 and 2 with the CEA grid factor and IPCC 2006 fuel factors, and keeps root purchase invoices in the Scope 3 supplier evidence trail. Effluent COD, methane captured and root yields come from your lab and production registers.",
+  "links": [
+    {
+      "label": "ETP wastewater methane",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 Waste, Chapter 6, Equation 6.4 and Tables 6.8 and 6.9",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (coal factor)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "pvc-pipe-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of PVC pipe, including filler and extrusion?",
+  "title": "PVC pipe carbon footprint per kg",
+  "short": "Multiply each ingredient's share of the compound by its factor (PVC resin, calcium carbonate filler, stabiliser, lubricants, pigment), adjust for materials lost as scrap you do not regrind, then add extrusion and mixing electricity per kg of good pipe times the grid factor. Resin is usually the largest line.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "PVC pipe makers, EPC and infrastructure buyers",
+  "sections": [
+    {
+      "h": "Start from the compound recipe",
+      "p": [
+        "Write the dry blend recipe in parts per hundred resin, then convert to kg per kg of compound. Each ingredient gets its own factor: PVC resin from the resin supplier or an industry eco-profile, calcium carbonate filler from the mineral supplier, and stabilisers, lubricants and titanium dioxide from their makers or a labelled proxy.",
+        "Filler has a much lower footprint than resin, so a higher filler share lowers the figure per kg. It may also raise the weight per metre needed for the same pressure class, which is why buyers often compare per metre."
+      ]
+    },
+    {
+      "h": "Regrind and scrap",
+      "ul": [
+        "In-house rejects and start-up scrap that are ground and fed back are counted once: use total materials consumed in the month divided by kg of good pipe despatched.",
+        "Scrap sold out leaves your boundary with no credit under the cut-off approach, but the resin you bought to make it stays in your figure.",
+        "Bought-in recycled PVC needs its own factor and evidence of the recycled source."
+      ]
+    },
+    {
+      "h": "Extrusion energy",
+      "p": [
+        "Count the high speed mixer and cooler, extruders, vacuum sizing tanks, haul-offs, cutters, the chiller and the compressor. A month of plant kWh divided by kg of good pipe is a fair start; a sub-meter per line is better when pipe sizes differ a lot. Multiply by 0.710 kg CO2 per kWh, and add diesel for DG sets at 2.68 kg CO2 per litre if they ran."
+      ]
+    },
+    {
+      "h": "When a buyer asks for an EPD",
+      "p": [
+        "Infrastructure and building buyers may ask for an EPD to EN 15804+A2 rather than a simple footprint. The same recipe and energy data feed it, but an EPD follows product category rules, covers more impact categories and modules, and needs independent verification before publication."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per kg of good pipe (illustrative inputs)",
+    "lines": [
+      "PVC resin: 0.80 kg x 2.0 kg CO2e per kg (illustrative) = 1.600 kg CO2e",
+      "Calcium carbonate: 0.15 kg x 0.05 kg CO2e per kg (illustrative) = 0.0075 kg CO2e",
+      "Stabiliser, lubricants and TiO2: 0.05 kg x 3.0 kg CO2e per kg (illustrative) = 0.150 kg CO2e",
+      "Electricity: 0.35 kWh x 0.710 = 0.2485 kg CO2",
+      "Total: 1.600 + 0.0075 + 0.150 + 0.2485 = 2.006 kg CO2e per kg",
+      "For a pipe weighing 1.5 kg per metre: 2.006 x 1.5 = 3.009, about 3.0 kg CO2e per metre"
+    ],
+    "note": "All material factors and the pipe weight are illustrative. Use the edition of the eco-profile you cite or your supplier's footprint."
+  },
+  "senseible": "Senseible reads resin, filler, additive and electricity invoices, calculates plant Scope 2 at 0.710 kg CO2 per kWh, and classifies resin lines under HSN chapter 39 into the Scope 3 evidence trail with quantities. Product reports are self-declared drafts built from your recipe and output data.",
+  "links": [
+    {
+      "label": "Resin emission factors: PP, HDPE, PVC",
+      "to": "/answers/polymer-resin-emission-factors-pp-hdpe-pvc"
+    },
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "How to get an EPD for exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14025:2006, Type III environmental declarations (iso.org); EN 15804+A2 is published by CEN",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

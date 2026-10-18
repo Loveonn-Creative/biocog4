@@ -1,0 +1,91 @@
+{
+  "slug": "nitric-acid-plant-n2o-emissions",
+  "q": "How do I calculate N2O emissions from a nitric acid plant?",
+  "title": "N2O emissions from a nitric acid plant",
+  "short": "For a first estimate, multiply tonnes of nitric acid produced (100 percent basis) by the IPCC 2006 default for your plant type, from 2 to 9 kg N2O per tonne, then by the GWP of N2O. For CBAM and serious reporting, measure N2O in the tail gas continuously instead.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical and fertiliser plants making nitric acid, CBAM exporters",
+  "sections": [
+    {
+      "h": "Where the N2O comes from",
+      "p": [
+        "Nitric acid is made by burning ammonia over a platinum and rhodium gauze. Most of the ammonia becomes nitric oxide, but a small share forms nitrous oxide, which leaves with the tail gas unless it is destroyed. This is a process emission in Scope 1, separate from the fuel you burn and from N2O released when fertiliser is spread on fields."
+      ]
+    },
+    {
+      "h": "IPCC 2006 Tier 1 defaults by plant type",
+      "ul": [
+        "Plants with non-selective catalytic reduction (NSCR): 2 kg N2O per tonne of nitric acid.",
+        "Plants with process-integrated or tail gas N2O destruction: 2.5 kg.",
+        "Atmospheric pressure plants: 5 kg.",
+        "Medium pressure plants: 7 kg.",
+        "High pressure plants: 9 kg."
+      ],
+      "p": [
+        "Tonnes are on a 100 percent acid basis, so convert weak acid production by its strength: 1,000 t of 60 percent acid is 600 t. Real plants vary widely with gauze age, pressure and temperature, which is why these defaults are for screening only. The 2019 Refinement to the IPCC Guidelines revised this table and added a much higher default for plants built before 1975; use it if your inventory follows the 2019 Refinement."
+      ]
+    },
+    {
+      "h": "Measured emissions: what CBAM expects",
+      "p": [
+        "Nitric acid (CN 2808) is a CBAM fertiliser good, and N2O is one of its covered gases. The definitive-period CBAM monitoring rules, Implementing Regulation (EU) 2025/2547, require N2O to be determined with a measurement-based method, which in practice means analysers measuring N2O concentration and tail gas flow at each emission point. Ammonia is a precursor, so its embedded emissions are added to the nitric acid's. If you export to the EU, plan the analyser and its calibration before relying on default values, because defaults carry mark-ups."
+      ]
+    },
+    {
+      "h": "Converting to CO2e",
+      "p": [
+        "Multiply tonnes of N2O by its 100-year GWP and name the edition: 273 under IPCC AR6 or 265 under AR5. Use the same edition across your whole inventory. For a CBAM report, use the GWP listed in the Annex of Implementing Regulation (EU) 2025/2547 rather than either figure from memory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50,000 t of nitric acid a year (100 percent basis)",
+    "lines": [
+      "Medium pressure plant, no abatement: 50,000 x 7 kg = 3,50,000 kg = 350 t N2O",
+      "CO2e with AR6 GWP 273: 350 x 273 = 95,550 t CO2e (with AR5 GWP 265: 92,750 t)",
+      "With tail gas N2O destruction, default 2.5 kg: 50,000 x 2.5 = 125 t N2O x 273 = 34,125 t CO2e",
+      "Difference: 95,550 minus 34,125 = 61,425 t CO2e a year"
+    ],
+    "note": "Tier 1 IPCC 2006 defaults for screening. Measured tail gas data replaces them for any regulated report."
+  },
+  "senseible": "Senseible's CBAM cost calculator shows the cost exposure for fertiliser goods, including nitric acid, from 2026 to 2034. Process N2O comes from your plant's own monitoring data; Senseible's document reader covers the fuel and electricity on your invoices and bills.",
+  "links": [
+    {
+      "label": "Fertiliser N2O in the field",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Fertiliser industry and CBAM",
+      "to": "/industries/fertiliser"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3 IPPU, Chapter 3.3 Nitric acid production, Table 3.3 (2 to 9 kg N2O per tonne)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annex I (CN 2808 nitric acid; CO2 and N2O)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/2547 of 10 December 2025, CBAM definitive-period monitoring (measurement-based method for N2O), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, Chapter 7, Table 7.15 (GWP100 of N2O)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18 against Implementing Regulation (EU) 2025/2547 (measurement-based N2O). Recheck the Regulation's GWP table and any amendment before each CBAM reporting year."
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "ac-decommissioning-refrigerant-recovery-emissions",
+  "q": "Do I report emissions when an old AC or chiller is scrapped, and how much if the gas was not recovered?",
+  "title": "Refrigerant emissions when an AC is scrapped",
+  "short": "Yes. Refrigerant released when an AC or chiller is scrapped is an emission in the year of disposal. Emission = kg of gas left in the unit minus kg recovered, times the gas's GWP. With no recovery record, assume nothing was recovered: a full 400 kg R-134a chiller charge is about 612 t CO2e on AR6 values.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Facility managers replacing ACs and chillers, cold store operators",
+  "sections": [
+    {
+      "h": "Which scope the disposal falls in",
+      "ul": [
+        "Gas released at your site while you or your contractor dismantle the unit: Scope 1, if the gas is an HFC such as R-32, R-410A or R-134a.",
+        "Unit handed to a scrap dealer with the gas still inside: the release happens at a third party, so on our reading of the GHG Protocol Scope 3 Standard it belongs in Scope 3, Category 5 (waste generated in operations), not Scope 1. Estimate it with the same formula and state the method.",
+        "Working unit sold for reuse with its charge intact: no disposal emission is yours.",
+        "R-22 and other HCFCs: report the kg and CO2e separately, outside the Scope 1 total."
+      ]
+    },
+    {
+      "h": "The disposal formula",
+      "p": [
+        "Disposal emission (kg CO2e) = (kg of refrigerant in the unit at disposal minus kg recovered) x GWP.",
+        "Kg in the unit is the nameplate charge if the unit was topped up recently, or less if it had been leaking since its last service. IPCC 2006 Volume 3, Chapter 7 gives default ranges for the share of charge left at end of life and for recovery efficiency by equipment type. Use those only as a screening estimate when you have no records."
+      ]
+    },
+    {
+      "h": "What counts as proof of recovery",
+      "ul": [
+        "A recovery note from the technician giving kg recovered per unit.",
+        "Cylinder weights before and after recovery.",
+        "The reclaimer's or recycler's receipt for the recovered gas.",
+        "Without any of these, report zero recovery. The India Cooling Action Plan (2019) promotes recovery, recycling and reclamation by trained technicians, so ask your AMC vendor for these papers up front."
+      ]
+    },
+    {
+      "h": "Avoid counting the same gas twice",
+      "p": [
+        "If you already reported that year's leakage with a default leak rate, the gas left at disposal is the nameplate charge less that leakage, not the full charge again. The gas charged into the replacement unit at installation is a separate line: count only what later leaks from it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a chiller and a split AC scrapped",
+    "lines": [
+      "Chiller: 400 kg of R-134a, topped up to full at the last service; GWP 1,530 (AR6)",
+      "No recovery record: 400 x 1,530 = 6,12,000 kg CO2e, about 612 t",
+      "Contractor recovers 360 kg, weighed into cylinders: (400 minus 360) x 1,530 = 61,200 kg CO2e",
+      "Split AC: 1.2 kg of R-32 vented, GWP 771 (AR6): 1.2 x 771 = 925 kg CO2e",
+      "For scale: 612 t CO2e equals the grid emissions of about 8.6 lakh kWh at 0.710 kg CO2 per kWh"
+    ],
+    "note": "Charges are illustrative; read the real figures from the nameplates and service records. AR5 values would give lower results, so state which set you used."
+  },
+  "senseible": "Senseible keeps refrigerant service invoices and the scrap or recovery note with the Scope 1 line, so the charge and the kg recovered can be traced. The disposal figure itself rests on your recovery records.",
+  "links": [
+    {
+      "label": "Refrigerant leakage with no records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Does R-22 count in Scope 1?",
+      "to": "/answers/does-r22-count-in-scope-1"
+    },
+    {
+      "label": "AR5 or AR6 GWP values",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 7 (refrigeration and air conditioning, disposal emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 supplementary Table 7.SM.7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "MoEFCC Ozone Cell, India Cooling Action Plan (2019)",
+      "url": "https://www.ozonecell.nic.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 5 (waste generated in operations)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

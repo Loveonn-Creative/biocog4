@@ -1,0 +1,84 @@
+{
+  "slug": "fashion-brands-coal-boiler-phase-out-suppliers",
+  "q": "Will fashion brands stop buying from mills that still burn coal in boilers?",
+  "title": "Will fashion brands drop coal-fired mills?",
+  "short": "Many will push you to stop, and some may move orders. Brands that signed the UN Fashion Industry Charter committed to phase coal out of their tier 1 and tier 2 suppliers' sites as soon as possible and by 2030 at the latest. It is a voluntary commitment, not law, so each brand's timing differs.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "Dyeing and processing mills in Tiruppur, Erode, Surat and Ludhiana",
+  "sections": [
+    {
+      "h": "What the Charter commits brands to",
+      "ul": [
+        "The Fashion Industry Charter for Climate Action, run under UN Climate Change, was renewed at COP26 in November 2021.",
+        "Signatories commit to phase out coal at owned sites and at supplier sites, tier 1 and tier 2 for brands, as soon as possible and by 2030 at the latest.",
+        "No new coal power at those sites from January 2023.",
+        "Signatories also commit to give suppliers incentives to make the change. Ask what support your buyer offers."
+      ]
+    },
+    {
+      "h": "Why processing mills are in the spotlight",
+      "p": [
+        "Dyeing, printing and finishing need steam, and a coal boiler is often the largest emission source in a processing mill. These mills are usually tier 2 for a brand, and their boiler fuel sits in the brand's Scope 3 purchased goods. A coal phase-out promise cannot be met without changing your boiler."
+      ]
+    },
+    {
+      "h": "What buyers are likely to ask for",
+      "ul": [
+        "Monthly fuel use by type, with invoices.",
+        "A dated plan for the boiler: fuel chosen, investment, and the year coal stops.",
+        "After the switch, evidence that it happened, such as fuel bills and test certificates for biomass lots.",
+        "Read your buyer's own climate transition plan, because the Charter sets the latest date, not each brand's date."
+      ]
+    },
+    {
+      "h": "How to answer with a plan, not a promise",
+      "ol": [
+        "Measure this year's coal tonnes and Scope 1 as the baseline.",
+        "Compare PNG, biomass and electric options on cost per unit of useful heat.",
+        "Pick a target year before 2030 and the finance route.",
+        "Send the plan before the buyer asks; it is easier to keep orders with a dated plan than with a vague intention."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how much of a mill's footprint is coal",
+    "lines": [
+      "Coal: 6,000 t a year x 2.42 kg CO2 per kg = 14,520 t CO2",
+      "Grid electricity: 30,00,000 kWh x 0.710 = 2,130 t CO2",
+      "Coal share of Scope 1 and 2: 14,520 / (14,520 + 2,130) = 87%"
+    ],
+    "note": "Quantities are illustrative. The coal figure uses a flat IPCC-based factor; a GCV-based figure for lower grade coal would be lower."
+  },
+  "senseible": "Senseible shows boiler fuel Scope 1 from coal invoices month by month, so you can show a buyer the baseline and the fall after a switch. Its green loan readiness check helps prepare the finance file for a new boiler.",
+  "links": [
+    {
+      "label": "Coal, PNG or biomass boiler",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    },
+    {
+      "label": "Green loans for Tamil Nadu textile mills",
+      "to": "/climate-intelligence/green-loan-textile-mill-tamil-nadu"
+    },
+    {
+      "label": "Textile industry",
+      "to": "/industries/textile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "UN Climate Change, Fashion Industry Charter for Climate Action (renewed November 2021)",
+      "url": "https://unfccc.int"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Charter commitments are voluntary and brand dates change; recheck the current Charter text on unfccc.int and each buyer's transition plan (checked October 2026)."
+}

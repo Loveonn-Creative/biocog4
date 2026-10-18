@@ -1,0 +1,77 @@
+{
+  "slug": "microsoft-supplier-carbon-free-electricity-requirement",
+  "q": "What does Microsoft's supplier requirement for carbon-free electricity mean for an Indian IT or hardware supplier?",
+  "title": "Microsoft's carbon-free electricity rule",
+  "short": "Microsoft's Supplier Code of Conduct asks suppliers to move the goods and services they deliver to Microsoft onto 100% carbon-free electricity by 2030. For an Indian supplier, that means near zero market-based Scope 2 for the Microsoft share of your work, backed by solar, open access or green tariff evidence that Microsoft's guidance accepts.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "IT services and hardware suppliers with Microsoft contracts",
+  "sections": [
+    {
+      "h": "Who it applies to",
+      "p": [
+        "Microsoft's supplier code page lists the sustainability requirements: transition to and maintain 100% carbon-free electricity for Microsoft-delivered goods and services by 2030, plan to cut absolute greenhouse gas emissions from those goods and services by at least 55% by 2030, and use sustainable aviation fuel for Microsoft business flights where possible.",
+        "Microsoft says each supplier's reporting, targets and timelines are set in its contract or in written communication from Microsoft. So read your contract and any Microsoft request first; if neither mentions it, ask your Microsoft contact whether it applies to you yet."
+      ]
+    },
+    {
+      "h": "What carbon-free electricity means in your accounts",
+      "ul": [
+        "It is a market-based Scope 2 claim under the GHG Protocol Scope 2 Guidance, so each kWh needs a contract or certificate behind it.",
+        "Options in India: rooftop solar you consume, green energy open access, a discom green tariff, or renewable energy certificates.",
+        "Microsoft publishes a Supplier CFE Guidance document that sets which purchases count. Read it, and confirm with your Microsoft contact, before you buy any instrument; do not assume unbundled certificates will be accepted."
+      ]
+    },
+    {
+      "h": "Working out the Microsoft share",
+      "ol": [
+        "IT services: take office and data-centre kWh and allocate by billable hours or headcount on Microsoft work.",
+        "Hardware: take kWh per unit for the product line and multiply by units shipped to Microsoft.",
+        "Write the allocation key down and keep it the same each year, so the claim can be checked."
+      ]
+    },
+    {
+      "h": "Location-based still gets reported",
+      "p": [
+        "Even with full coverage, report location-based Scope 2 alongside the market-based figure, as the Scope 2 Guidance requires both. The location-based figure shows the grid you actually draw from; the market-based figure shows the contracts you bought."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a Pune IT services office",
+    "lines": [
+      "Office electricity: 3,00,000 kWh a year; 25% of billable hours on Microsoft work",
+      "Microsoft share: 3,00,000 x 0.25 = 75,000 kWh",
+      "Location-based: 75,000 x 0.710 = 53,250 kg CO2, about 53.3 t",
+      "Instruments needed for 100% coverage: 75,000 kWh, for example rooftop solar or a green open access contract on that share, of a type the Supplier CFE Guidance accepts"
+    ],
+    "note": "Office load and share are illustrative. Check the instrument type against Microsoft's Supplier CFE Guidance before buying."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from office and data-centre bills, and market-based Scope 2 where you add REC, green tariff or PPA evidence. The share allocated to Microsoft work follows your own allocation key.",
+  "links": [
+    {
+      "label": "Scope 3 categories for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "How the India REC mechanism works",
+      "to": "/answers/how-does-the-india-rec-mechanism-work"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), market-based method and quality criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against Microsoft's Supplier Code of Conduct page (microsoft.com/en-us/procurement/supplier-conduct): 100% carbon-free electricity for Microsoft-delivered goods and services and at least 55% absolute reduction by 2030, terms set per supplier contract. Recheck that page and the Supplier CFE Guidance for changes."
+}

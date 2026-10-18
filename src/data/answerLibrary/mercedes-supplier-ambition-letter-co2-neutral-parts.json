@@ -1,0 +1,71 @@
+{
+  "slug": "mercedes-supplier-ambition-letter-co2-neutral-parts",
+  "q": "What does signing a car maker's CO2 ambition letter commit an auto parts supplier to?",
+  "title": "Car maker CO2 ambition letter for suppliers",
+  "short": "Signing Mercedes-Benz's Ambition Letter commits a supplier to deliver only CO2 neutral production materials to Mercedes-Benz by 2039 at the latest. Mercedes-Benz says suppliers that decline to sign will not be awarded new contracts, so the letter decides eligibility now, while detailed terms arrive through purchase contracts.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Auto component suppliers to German OEMs",
+  "sections": [
+    {
+      "h": "What the letter asks for",
+      "p": [
+        "Under its Ambition 2039 goal of a CO2 neutral new vehicle fleet across the value chain, Mercedes-Benz asked suppliers to sign an Ambition Letter. Signatories agree to supply only CO2 neutral parts to Mercedes-Benz by 2039 at the latest. Mercedes-Benz reports that suppliers covering 84 percent of its annual purchasing volume had signed by 2023, and that suppliers who decline will not get new contracts."
+      ]
+    },
+    {
+      "h": "Where it bites first",
+      "ul": [
+        "Mercedes-Benz names battery cells, steel and aluminium as its priority materials until 2039, since they cause most of the supply chain CO2 of an electric car.",
+        "Battery cell makers have already been held to renewable electricity: Mercedes-Benz cites CATL and Farasis commitments, and BMW announced in 2020 that the makers of its fifth generation battery cells are contractually bound to use green power.",
+        "For other parts, binding terms such as a renewable electricity share or product footprint delivery through Catena-X come in purchase contracts and supplier standards. Read each nomination letter and contract for them."
+      ]
+    },
+    {
+      "h": "What CO2 neutral will need to mean",
+      "p": [
+        "Buyers expect reductions first: energy efficiency, renewable electricity and lower carbon materials, with credits only for what remains. ISO 14068-1:2023 sets out how a carbon neutrality claim must be made, with a reduction plan and offsets only for residual emissions. Ask your buyer which definition its contracts use."
+      ]
+    },
+    {
+      "h": "First steps for an Indian supplier",
+      "ol": [
+        "Build a Scope 1 and 2 baseline per plant, from a year of electricity bills and fuel invoices.",
+        "Report Scope 2 both location-based and market-based. Renewable electricity counts only with evidence: rooftop solar generation, group captive or open access contracts with the supplier's documents, or certificates.",
+        "Prepare product footprints for the part families the OEM buys, since contracts move to per part figures.",
+        "Set a reduction target with a base year, and keep invoices behind every number."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates Scope 2 per plant from electricity bills, location-based at 0.710 kg CO2 per kWh and market-based where you add instrument data, and prepares self-declared product footprint drafts from uploaded data.",
+  "links": [
+    {
+      "label": "Answer a Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "ISO 14068 carbon neutral requirements",
+      "to": "/answers/iso-14068-carbon-neutral-requirements"
+    },
+    {
+      "label": "Group captive solar and Scope 2",
+      "to": "/answers/group-captive-solar-ppa-scope-2-claim"
+    },
+    {
+      "label": "Automobile sector",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (market-based method and quality criteria)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "ISO 14068-1:2023, Climate change management, transition to net zero, carbon neutrality",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewNote": "Checked October 2026 against Mercedes-Benz Group's Ambition 2039 page (84 percent of purchasing volume signed in 2023, priority materials) and BMW Group's 30 June 2020 announcement on green power for fifth generation battery cells; OEM requirements change, so quote only current public documents and your own contract.",
+  "reviewed": "2026-10-18"
+}

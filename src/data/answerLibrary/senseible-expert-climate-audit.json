@@ -1,0 +1,94 @@
+{
+  "slug": "senseible-expert-climate-audit",
+  "q": "What does Senseible's Expert Climate Audit cover, and when do I still need an accredited verifier?",
+  "title": "Senseible Expert Climate Audit explained",
+  "short": "The Expert Climate Audit is a one-time expert review of your climate reports by the Senseible team: emissions reporting, green finance reports, CBAM, BRSR, net-zero, decarbonisation and green transition reports. It costs ₹7,999 before GST, booked from your profile. Where a rule names an accredited verifier, as CCTS and BRSR Core assurance do, you still appoint one.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "MSME owners deciding whether to pay for expert review",
+  "sections": [
+    {
+      "h": "What the audit covers",
+      "ul": [
+        "Emissions reporting: your Scope 1, 2 and 3 records and the reports built from them.",
+        "Green finance reports: what you send a bank or lender for a green or sustainability-linked loan.",
+        "CBAM: the embedded emissions data an EU importer asks you for.",
+        "BRSR: the environment indicators in your Business Responsibility and Sustainability Report.",
+        "Net-zero and decarbonisation: your baseline, targets and reduction plan.",
+        "Green transition and similar climate reports."
+      ],
+      "p": [
+        "The review is done independently by Senseible, with expert guidance. After payment the team contacts you to agree which report is in scope."
+      ]
+    },
+    {
+      "h": "Price and how to book it",
+      "ul": [
+        "Price: ₹7,999 one-time, before GST. One audit per purchase.",
+        "Where: the Top up and services card on your profile, next to invoice credits and Fast-track Verification.",
+        "Payment: UPI adds 18% GST. Card, netbanking or wallet through Razorpay adds a 4% platform fee, then 18% GST on the price plus fee.",
+        "The order shows on your profile as Booked, then In progress, then Delivered."
+      ]
+    },
+    {
+      "h": "When you need an accredited verifier as well",
+      "ul": [
+        "Your buyer or lender asks for limited or reasonable assurance on your Scope 1 and 2 figures.",
+        "You report BRSR Core indicators that need assurance or assessment under SEBI's framework.",
+        "Your plant is an obligated entity under India's Carbon Credit Trading Scheme, where only a BEE accredited agency can verify.",
+        "You want to call a product footprint verified under ISO 14067."
+      ],
+      "p": [
+        "In these cases the rule names who may sign, so appoint an accredited body. An audited, traceable record still cuts the verifier's time and the number of questions they send back."
+      ]
+    },
+    {
+      "h": "Expert Climate Audit or Fast-track Verification",
+      "p": [
+        "Both are bought on the profile. Fast-track Verification is priced per report at ₹2,999 before GST, with results in 24 to 72 hours, and you can buy up to 20 in one go. It speeds up the Verify step for a deadline. The Expert Climate Audit is a single one-time purchase at ₹7,999 before GST for an expert review of a whole report."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: what you pay at checkout",
+    "lines": [
+      "List price: ₹7,999",
+      "UPI: 7,999 + 18% GST (₹1,439.82) = ₹9,438.82",
+      "Card through Razorpay: 4% fee = ₹319.96, so 7,999 + 319.96 = ₹8,318.96",
+      "GST at 18% on ₹8,318.96 = ₹1,497.41, total ₹9,816.37",
+      "Paying by UPI saves ₹377.55"
+    ],
+    "note": "Prices as set in Senseible's checkout on 18 October 2026; check the profile before you pay."
+  },
+  "senseible": "Book the Expert Climate Audit from the Top up and services card on your profile; the Senseible team contacts you after payment to agree the report in scope. Your records and audit trail can then go to an accredited verifier where one is required.",
+  "links": [
+    {
+      "label": "Is Senseible an auditor or registry?",
+      "to": "/answers/is-senseible-a-certifier"
+    },
+    {
+      "label": "What auditors see in Senseible reports",
+      "to": "/answers/auditors-and-senseible-reports"
+    },
+    {
+      "label": "What auditors check in GHG assurance",
+      "to": "/answers/what-auditors-check-in-ghg-assurance"
+    },
+    {
+      "label": "Plans and add-ons",
+      "to": "/pricing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of greenhouse gas statements (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 10, verification of GHG emissions",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Scope confirmed by the owner, 18 October 2026. Add-on prices and checkout fees can change; recheck against the profile and pricing page."
+}

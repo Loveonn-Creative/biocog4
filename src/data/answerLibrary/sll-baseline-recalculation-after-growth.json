@@ -1,0 +1,90 @@
+{
+  "slug": "sll-baseline-recalculation-after-growth",
+  "q": "What happens to my sustainability-linked loan KPI if production grows or I buy a new plant?",
+  "title": "SLL baseline after growth or a new plant",
+  "short": "Organic growth does not change the baseline; an intensity KPI absorbs it. Buying an existing plant is a structural change: if it moves base-year emissions past the significance threshold in your loan agreement, the baseline and target are restated to include that plant's base-year emissions. A plant you build yourself counts as growth.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSME borrowers and relationship managers",
+  "sections": [
+    {
+      "h": "Which changes trigger a recalculation",
+      "ul": [
+        "Acquiring or divesting an operation that existed in the base year.",
+        "Outsourcing or insourcing an activity, such as moving heat treatment to a job worker.",
+        "A change in calculation method or emission factor source that moves the total materially.",
+        "Finding a significant error in the base-year data."
+      ],
+      "p": [
+        "The GHG Protocol Corporate Standard, Chapter 5, sets these rules for base years. It does not recalculate for organic growth or decline, such as more orders, a new shift or a plant you build that did not exist in the base year."
+      ]
+    },
+    {
+      "h": "The threshold and the clause",
+      "p": [
+        "The GHG Protocol asks you to set a significance threshold and disclose it. Loan agreements write their own; 5 percent of base-year emissions, the threshold the SBTi criteria use for target recalculation, is a frequent choice, but yours may differ. The Sustainability-Linked Loan Principles expect the loan documents to say in advance how the baseline and targets will be adjusted for events like these, and that the verifier checks any adjustment. Read your facility agreement for the threshold, who approves a restatement and whether the margin terms change."
+      ]
+    },
+    {
+      "h": "Absolute or intensity KPI",
+      "p": [
+        "With an absolute KPI, such as total tonnes of CO2, an acquisition without a restatement looks like a missed target. With an intensity KPI, such as tonnes of CO2 per tonne of output, growth on the same process is already absorbed. An acquired plant with a different product mix can still shift intensity, so the recalculation clause matters for both."
+      ]
+    },
+    {
+      "h": "What to give the lender and verifier",
+      "ol": [
+        "The acquired plant's base-year emissions, built with the same method and factors as yours.",
+        "The share of your original baseline it represents, against the threshold.",
+        "The restated baseline and restated targets for each test date.",
+        "The bills and invoices behind the acquired plant's base-year figures, or a clear note on what was estimated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: an acquisition and a growth year",
+    "lines": [
+      "Baseline: 3,000 t CO2. Target: 10% lower, 2,700 t",
+      "Acquired plant's base-year emissions: 450 t; 450 / 3,000 = 15%, above a 5% threshold",
+      "Restated baseline: 3,000 + 450 = 3,450 t; restated target: 3,450 x 0.90 = 3,105 t",
+      "Year with the new plant: 3,300 t, which is 4.3% below the restated baseline; without restatement it would show as 10% above the old one",
+      "Separate case, organic growth only: 3,000 t / 10,000 t output = 0.300; later 3,300 t / 11,500 t = 0.287, about 4.3% better, no restatement needed"
+    ],
+    "note": "Figures are illustrative. The threshold and the targets come from your own loan agreement."
+  },
+  "senseible": "Senseible keeps the baseline year and each later year with every line tied to its bill or invoice, and can show intensity per unit of output, so a restatement can be traced document by document.",
+  "links": [
+    {
+      "label": "Sustainability-linked loan KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "What an SLL verifier checks",
+      "to": "/answers/sll-kpi-verification-what-verifier-checks"
+    },
+    {
+      "label": "Factory acquired mid-year",
+      "to": "/answers/factory-acquired-mid-year-carbon-inventory"
+    },
+    {
+      "label": "Keeping carbon data comparable",
+      "to": "/climate-intelligence/maintain-historical-carbon-data-methodology-changes"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 5 Tracking emissions over time",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles and Guidance (March 2025 edition)",
+      "url": "https://www.lma.eu.com"
+    },
+    {
+      "label": "SBTi Corporate Net-Zero Standard and target validation criteria (recalculation of targets)",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The Sustainability-Linked Loan Principles were updated in March 2025; check the current edition and your facility agreement for recalculation wording."
+}
