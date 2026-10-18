@@ -1,0 +1,79 @@
+{
+  "slug": "asi-certification-aluminium-carbon-threshold",
+  "q": "What carbon threshold does Aluminium Stewardship Initiative certification set, and does it matter to an extruder?",
+  "title": "ASI carbon threshold and extruders",
+  "short": "The ASI Performance Standard requires certified smelters to keep Scope 1 and 2 emissions below 8 t CO2e per tonne of aluminium: at once for smelters that started after 2020, and by 2030 for older ones. An extruder is not held to that limit, but the smelter's figure drives the footprint of the metal you buy.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Aluminium extruders and casters, buyers checking supplier claims",
+  "sections": [
+    {
+      "h": "What ASI certifies",
+      "ul": [
+        "The Performance Standard covers environmental, social and governance practice at each certified site, from bauxite mines and smelters to extruders and product makers.",
+        "The Chain of Custody Standard lets certified entities pass on 'ASI Aluminium' through the supply chain, usually on a mass balance basis.",
+        "Certification is site by site and audited by accredited third parties. It is not a carbon footprint label."
+      ]
+    },
+    {
+      "h": "The smelter threshold",
+      "p": [
+        "Version 3 of the Performance Standard, published in May 2022 and still the version used for certification, sets the smelter limit in criterion 5.2: direct and indirect (Scope 1 and 2) emissions below 8 t CO2e per tonne of aluminium. Smelters that started production after 2020 must meet it now; smelters in production up to and including 2020 must meet it by 2030. ASI published a first consultation draft of Version 4 in February 2026, so check whether the final text changes the limit or dates."
+      ]
+    },
+    {
+      "h": "What applies to an extruder's own site",
+      "p": [
+        "An extruder certified to the Performance Standard is expected to measure and disclose its own greenhouse gas emissions and work on reducing them, but the smelter intensity limit is not its test. Your own Scope 1 and 2 come from billet heating fuel, ageing ovens, presses and anodising lines, and are usually small next to the metal you buy."
+      ]
+    },
+    {
+      "h": "Why it still matters to you",
+      "p": [
+        "Under the GHG Protocol Scope 3 Standard, purchased billet or ingot is Category 1, and for most extruders it is the largest line. Metal from a smelter that meets a low intensity limit lowers your product footprint far more than any change at your plant. But 'ASI Aluminium' under mass balance does not by itself prove a low carbon figure for your batch. Ask the supplier for a footprint per tonne with its boundary, its electricity source and any verification."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: own emissions vs purchased metal (illustrative)",
+    "lines": [
+      "Extruder output: 1,000 t; billet consumed: 1,050 t (process scrap returned to the supplier)",
+      "Electricity: 6,00,000 kWh x 0.710 = 426 t CO2; PNG for billet heating: 1,50,000 scm x 2.05 = 307.5 t CO2",
+      "Own Scope 1 and 2: 426 + 307.5 = 733.5 t, 0.73 t per tonne extruded",
+      "Billet at 7.5 t CO2e per t (assumed low-carbon supplier): 1,050 x 7.5 = 7,875 t, 7.9 t per tonne",
+      "Billet at 16 t CO2e per t (assumed coal-powered supplier): 1,050 x 16 = 16,800 t, 16.8 t per tonne"
+    ],
+    "note": "The billet figures are assumptions for illustration, not ASI or industry values. Use your supplier's verified figure."
+  },
+  "senseible": "Senseible reads aluminium billet and ingot purchase invoices and keeps them in the Scope 3 supplier evidence trail, and computes your plant's Scope 1 and 2 from fuel invoices and electricity bills.",
+  "links": [
+    {
+      "label": "Check an aluminium supplier's carbon claim",
+      "to": "/answers/how-to-check-aluminium-supplier-carbon-claim"
+    },
+    {
+      "label": "Aluminium extrusion footprint per kg",
+      "to": "/answers/aluminium-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Mass balance vs segregation",
+      "to": "/answers/chain-of-custody-mass-balance-vs-segregation"
+    },
+    {
+      "label": "CBAM cost per tonne of aluminium",
+      "to": "/cbam-cost/aluminium"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (smelter electricity claims)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against ASI's published description of Performance Standard V3 criterion 5.2 and the V4 first consultation draft (February 2026). Recheck when V4 is adopted."
+}

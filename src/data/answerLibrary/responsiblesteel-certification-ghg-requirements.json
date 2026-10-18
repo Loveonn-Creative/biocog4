@@ -1,0 +1,70 @@
+{
+  "slug": "responsiblesteel-certification-ghg-requirements",
+  "q": "What GHG requirements must an Indian steel mill meet for ResponsibleSteel certification?",
+  "title": "ResponsibleSteel GHG requirements",
+  "short": "Under Principle 10 of the ResponsibleSteel standard, a certified site must calculate its greenhouse gas emissions with the standard's method, set reduction targets and a plan, and disclose its emissions. To sell certified steel, the site's crude steel intensity is also rated against decarbonisation progress levels 1 to 4, set on a sliding scale by scrap share.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Steel mills supplying auto and construction buyers",
+  "sections": [
+    {
+      "h": "Two levels: the site and the steel",
+      "p": [
+        "Site certification covers how the mill is run, across principles from governance and labour to the environment. Climate change and greenhouse gas emissions is one of these principles. Certified steel is a further step: once the site is certified, steel products can be certified if the mill also meets the standard's requirements on sourcing of input materials and on GHG intensity."
+      ]
+    },
+    {
+      "h": "What the climate principle asks of a site",
+      "ul": [
+        "Calculate the site's crude steel GHG emissions and intensity with ResponsibleSteel's own GHG accounting rules.",
+        "Have the figures checked as part of the certification audit.",
+        "Set site-level reduction targets and a plan to meet them.",
+        "Disclose and report GHG emissions.",
+        "At company level, the owner commits to the Paris Agreement goals and is expected to have a climate transition plan."
+      ]
+    },
+    {
+      "h": "How progress levels work for certified steel",
+      "p": [
+        "The intensity of crude steel, in t CO2e per tonne, is compared with thresholds that move with scrap input. A mill using mostly scrap in an electric arc furnace faces a lower threshold than a blast furnace mill using mostly iron ore, so each route is judged against what is achievable for it. Meeting a stricter threshold earns a higher progress level, from 1 to 4; level 4 is designed to match the International Energy Agency's near-zero emission steel threshold. Read the thresholds in the current version of the standard; they are not reproduced here because they are being revised."
+      ]
+    },
+    {
+      "h": "What an Indian mill should prepare",
+      "ol": [
+        "A full year of fuel, coal, coke, electricity, lime, oxygen and ferroalloy purchases by plant unit.",
+        "Production and scrap input records, since the scrap share sets your threshold.",
+        "Electricity split between captive generation, grid and any renewable purchases with certificates.",
+        "A boundary map showing which upstream steps, such as pellets, sinter or DRI, are in or bought in.",
+        "The same fuel, power and production records feed your CBAM reports, so keep one set of source data for both."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the site's Scope 1 and 2 records traced to each fuel invoice and electricity bill, and its CBAM cost calculator covers steel. The audit and the progress level come from ResponsibleSteel's own process and its approved auditors.",
+  "links": [
+    {
+      "label": "Steel supplier benchmark intensity",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "CBAM cost: blast furnace, EAF or DRI",
+      "to": "/answers/cbam-cost-blast-furnace-vs-eaf-vs-dri-steel"
+    },
+    {
+      "label": "Steel industry",
+      "to": "/industries/steel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IEA near-zero emission steel definitions, which ResponsibleSteel Progress Level 4 is designed to match (ResponsibleSteel International Production Standard V2.1.1, Principle 10)",
+      "url": "https://www.iea.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), for the steel emission data exporters also report",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 2026-10-18 against ResponsibleSteel Production Standard V2.1.1. Principle 10 (targets, disclosure and progress levels) is under revision; confirm the version in force before relying on this page."
+}

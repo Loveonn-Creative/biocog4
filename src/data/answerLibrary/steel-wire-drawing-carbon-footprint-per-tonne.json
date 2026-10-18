@@ -1,0 +1,87 @@
+{
+  "slug": "steel-wire-drawing-carbon-footprint-per-tonne",
+  "q": "How do I calculate the carbon footprint per tonne of drawn steel wire, including annealing and pickling?",
+  "title": "Carbon footprint per tonne of drawn wire",
+  "short": "Per tonne of drawn wire, add the wire rod used per tonne of wire times the rod's footprint, then the drawing electricity, annealing fuel and pickling inputs divided by tonnes of wire. The rod usually decides most of it. For an EU CBAM figure, leave out electricity, since CBAM counts only direct emissions, yours and the rod's, for steel goods.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Wire drawing units and fastener wire suppliers in Ludhiana, Jamshedpur and Raipur",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Footprint per tonne wire = (tonnes rod consumed / tonnes good wire) x rod factor + (annealing fuel emissions + drawing and auxiliary electricity emissions + pickling inputs) / tonnes good wire.",
+        "Take rod consumed and good wire from the same month's stock and production registers. Scale removed in pickling, crop ends and broken coils are the yield loss, and they belong in the rod term."
+      ]
+    },
+    {
+      "h": "Annealing and pickling",
+      "ul": [
+        "Annealing furnaces burn PNG, LPG or furnace oil, or run on electricity. Fuel x its factor is Scope 1; furnace kWh goes with the rest of the power.",
+        "Protective gas made from LPG or ammonia in a gas generator is also fuel; count what the generator burns or cracks.",
+        "Pickling acid (hydrochloric or sulphuric) causes no CO2 in the tank. Its footprint is in making the acid, a Scope 3 purchase, plus any fuel or steam used to heat the tanks.",
+        "Phosphate coating, lime and drawing soap are small. Note them, and include them when a buyer asks for a full cradle-to-gate figure."
+      ]
+    },
+    {
+      "h": "Drawing electricity by wire size",
+      "p": [
+        "Finer wire needs more passes through the dies, so kWh per tonne rises as the diameter falls. If your mix ranges from thick fastener wire to fine wire, sub-meter the drawing machines or split kWh by tonnes x number of passes, and give a figure for each size band rather than one plant average."
+      ]
+    },
+    {
+      "h": "What CBAM counts for wire",
+      "p": [
+        "Wire of iron or non-alloy steel (CN 7217) is in Annex I of the CBAM Regulation. Wire rod is itself an iron or steel product, so it enters as the precursor: tonnes of rod x the rod's embedded emissions per tonne, from the rod mill's verified actual data or the EU default value.",
+        "Add the drawing unit's direct emissions, such as annealing fuel. Electricity is not counted for iron and steel goods under CBAM, so the CBAM figure is lower than your product footprint. Galvanised wire also carries the galvanising kettle's fuel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, 1,000 tonnes of wire",
+    "lines": [
+      "Rod consumed: 1,030 t for 1,000 t of good wire",
+      "Rod at an illustrative 2.0 t CO2e per tonne: 1,030 x 2.0 = 2,060 t CO2e",
+      "Drawing and auxiliaries: 1,20,000 kWh x 0.710 = 85,200 kg, 85.2 t CO2",
+      "Annealing PNG: 25,000 scm x 2.05 = 51,250 kg, 51.25 t CO2",
+      "Product footprint: 2,060 + 85.2 + 51.25 = 2,196.45 t; per tonne of wire: 2.20 t CO2e",
+      "CBAM basis, without electricity: 2,060 + 51.25 = 2,111.25 t; per tonne: 2.11 t CO2e"
+    ],
+    "note": "The rod factor is illustrative; use the rod mill's figure. Pickling acid is left out here and should be added with its supplier's factor."
+  },
+  "senseible": "Senseible reads wire rod, fuel and electricity invoices, puts annealing fuel in Scope 1 and power in Scope 2, and its CBAM cost calculator estimates certificate cost for steel goods. The rod's embedded emissions come from the rod producer or the EU default value.",
+  "links": [
+    {
+      "label": "Hot-dip galvanizing per tonne",
+      "to": "/answers/hot-dip-galvanizing-carbon-footprint-per-tonne"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annex I and Annex IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2621, CBAM default values",
+      "url": "https://eur-lex.europa.eu/eli/reg_impl/2025/2621/oj/eng"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (fuel factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBAM precursor rules and default values are set by implementing acts that are being amended; recheck Implementing Regulation (EU) 2025/2547 and 2025/2621 before each declaration."
+}

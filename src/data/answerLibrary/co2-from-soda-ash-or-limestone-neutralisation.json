@@ -1,0 +1,78 @@
+{
+  "slug": "co2-from-soda-ash-or-limestone-neutralisation",
+  "q": "Does neutralising acid with soda ash or limestone in my ETP release CO2, and how much?",
+  "title": "CO2 from soda ash or limestone in an ETP",
+  "short": "Yes. When soda ash or limestone neutralises acid, the carbonate releases its carbon as CO2: about 0.415 kg CO2 per kg of pure soda ash and 0.440 kg per kg of pure calcium carbonate. Multiply the quantity used by its purity and that factor. Hydrated lime and caustic soda release none at your site.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical, dye and plating units with effluent treatment",
+  "sections": [
+    {
+      "h": "The chemistry behind the number",
+      "p": [
+        "Calcium carbonate reacting with sulphuric acid gives calcium sulphate, water and CO2. Soda ash reacting with hydrochloric acid gives sodium chloride, water and CO2. One molecule of CO2 leaves for every carbonate molecule used, so the factors are fixed by molecular weights: 0.43971 t CO2 per tonne of CaCO3 and 0.41492 per tonne of Na2CO3, the values in Table 2.1 of the IPCC 2006 Guidelines."
+      ]
+    },
+    {
+      "h": "The formula and where the inputs come from",
+      "ul": [
+        "CO2 (kg) = carbonate used (kg) x purity x factor.",
+        "Quantity: purchases adjusted for opening and closing stock, or the dosing log. Count only what went into neutralisation, not soda ash used elsewhere in the process.",
+        "Purity: the supplier's certificate of analysis, such as percent Na2CO3 or percent CaCO3.",
+        "Some CO2 can stay dissolved as bicarbonate in the treated water. Assuming full release is the conservative default unless you can show otherwise."
+      ]
+    },
+    {
+      "h": "Which reagents give no CO2 at your site",
+      "p": [
+        "Hydrated lime, quicklime and caustic soda contain no carbonate, so neutralising with them releases no process CO2 at your plant. The CO2 did not vanish: lime makers release it when they calcine limestone. Neutralising 1 kg of sulphuric acid needs 1.02 kg of CaCO3, releasing 0.449 kg CO2 at your ETP, or 0.755 kg of hydrated lime, whose maker released the same 0.449 kg CO2. A switch moves that CO2 into your Scope 3 purchased goods, plus the lime kiln's fuel."
+      ]
+    },
+    {
+      "h": "How to report it",
+      "p": [
+        "Report it as Scope 1 process emissions, on its own line, separate from boiler fuel and from any methane the ETP releases. If effluent goes to a common treatment plant that does the neutralising, the CO2 sits with that plant, and your emissions from it fall under Scope 3 Category 5."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at an ETP",
+    "lines": [
+      "Soda ash: 2,000 kg x 0.99 purity x 0.41492 = 821.5 kg CO2",
+      "Limestone: 5,000 kg x 0.90 CaCO3 x 0.43971 = 1,978.7 kg CO2",
+      "Total: 821.5 + 1,978.7 = 2,800.2 kg, about 2.8 t CO2 for the month",
+      "Over a year at the same rate: 2.8 x 12 = 33.6 t CO2, Scope 1 process emissions"
+    ],
+    "note": "Purities are illustrative; use the supplier's certificate for each lot."
+  },
+  "senseible": "Senseible reads soda ash and limestone purchase invoices with their quantities. The process CO2 line is calculated from the tonnes you confirm went into neutralisation and their purity, kept separate from fuel combustion.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "ETP wastewater methane",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Chemical industry emissions",
+      "to": "/industries/chemical"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 2 Mineral Industry Emissions, Table 2.1",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (process emissions in Scope 1)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

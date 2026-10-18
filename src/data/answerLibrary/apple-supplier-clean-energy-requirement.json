@@ -1,0 +1,84 @@
+{
+  "slug": "apple-supplier-clean-energy-requirement",
+  "q": "What does Apple's supplier clean energy requirement mean for an Indian component supplier?",
+  "title": "Apple's supplier clean energy requirement",
+  "short": "It means Apple expects the electricity used to make its parts to be renewable, and you will be asked to measure that electricity and show how it is covered. Apple's Supplier Code of Conduct asks direct manufacturing suppliers to reach 100 percent renewable electricity for Apple production before 2030. Check the edition you signed.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Electronics and component suppliers in Hosur, Chennai, Bengaluru and Noida",
+  "sections": [
+    {
+      "h": "What Apple has said publicly",
+      "p": [
+        "Apple has run a Supplier Clean Energy Program since 2015 and has a goal of carbon neutrality across its value chain by 2030. In October 2022 it called on its manufacturing suppliers to decarbonise Apple-related operations by 2030, including running that production on renewable electricity, and its Supplier Code of Conduct now asks direct manufacturing suppliers to reach 100 percent renewable electricity for Apple production before 2030. The annual Environmental Progress Report reports progress. Terms change, so read the edition Apple's team sends you rather than a summary."
+      ]
+    },
+    {
+      "h": "First, measure the Apple share of your electricity",
+      "p": [
+        "Most Indian suppliers serve more than one customer. Split the plant's kWh to Apple lines by sub-meter where you have one, or by machine hours or units produced. Write down the method and keep it the same each year. Use kWh from the bill; on kVAh bills convert with the printed power factor. This figure, times 0.710 kg CO2 per kWh, is the location-based Scope 2 for Apple production."
+      ]
+    },
+    {
+      "h": "Renewable options open to an Indian plant",
+      "ul": [
+        "Rooftop or ground-mounted solar at the site, used on site.",
+        "Group captive solar or wind, where you hold equity in the generator under the captive rules.",
+        "Green energy open access from a third-party generator, with the units adjusted on your bill.",
+        "A green tariff from your discom, where your state offers one.",
+        "Renewable energy certificates. Confirm with Apple whether, and in what share, it accepts unbundled certificates before relying on them."
+      ]
+    },
+    {
+      "h": "What makes the claim hold up",
+      "p": [
+        "Under the GHG Protocol Scope 2 Guidance, a market-based claim needs an instrument that carries the renewable attributes, is retired or cancelled for you, comes from the same market, and matches the reporting period. Keep the contract, the monthly energy account or adjusted units, and any certificates for each year. Report location-based and market-based figures side by side so the buyer can see both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: covering the Apple share",
+    "lines": [
+      "Plant use: 6,00,000 kWh a year; Apple lines take 40% by machine hours = 2,40,000 kWh",
+      "Location-based Scope 2 for the Apple share: 2,40,000 x 0.710 = 1,70,400 kg, 170.4 t CO2",
+      "Group captive solar adjusted on the bill: 1,00,000 kWh; discom green tariff: 1,40,000 kWh",
+      "Covered: 1,00,000 + 1,40,000 = 2,40,000 kWh, so market-based Scope 2 for the Apple share is zero, if both instruments pass the quality criteria"
+    ],
+    "note": "Allocation and volumes are illustrative. The location-based figure stays at 170.4 t whatever you buy."
+  },
+  "senseible": "Senseible reads your electricity bills and reports location-based Scope 2 at the CEA factor and market-based Scope 2 where you add instrument data, showing the renewable share. You can copy those figures into the buyer's supplier portal with the bills behind them.",
+  "links": [
+    {
+      "label": "Group captive solar and Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    },
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Green tariff or RECs: which is cheaper",
+      "to": "/answers/green-tariff-vs-recs-cheaper-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against Apple's published Supplier Code of Conduct wording and its 2025 Environmental Progress Report. Apple revises both each year; check the current editions before quoting a requirement."
+}

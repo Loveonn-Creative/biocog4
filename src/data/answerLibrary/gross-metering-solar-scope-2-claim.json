@@ -1,0 +1,77 @@
+{
+  "slug": "gross-metering-solar-scope-2-claim",
+  "q": "Can I claim solar under gross metering in my Scope 2?",
+  "title": "Gross-metered solar and Scope 2",
+  "short": "No, not in location-based Scope 2. With a gross meter you sell every solar unit to the discom and buy every unit you use, so Scope 2 is all units consumed times the grid factor. Market-based Scope 2 can count the solar only if your agreement leaves its renewable attributes with you.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories with gross-metered rooftop solar",
+  "sections": [
+    {
+      "h": "Why gross-metered solar is not your consumption",
+      "p": [
+        "A gross meter records everything the panels generate and sends it to the grid, and your consumption is metered separately as if the panels were not there. Physically and contractually, you sell the solar and buy grid power. The GHG Protocol Scope 2 Guidance does not let you subtract electricity you sell from electricity you buy, so the exported units cannot reduce your location-based figure."
+      ]
+    },
+    {
+      "h": "The market-based question: who owns the attributes",
+      "p": [
+        "Market-based Scope 2 lets you claim renewable electricity only with a contractual instrument that carries its attributes, meets the Guidance's quality criteria and is not claimed by anyone else. When a discom buys gross-metered solar at a feed-in tariff, it can count that energy towards its renewable purchase obligation, so the attribute normally goes with the sale. Read your agreement. Unless it says you keep the attributes and nobody else claims them, report market-based Scope 2 on your grid purchases with your supplier or residual factor."
+      ]
+    },
+    {
+      "h": "What you can report instead",
+      "ul": [
+        "Solar generated and exported in kWh, as a separate note outside the Scope 2 total.",
+        "The revenue or bill credit from the feed-in tariff, if your report covers energy costs.",
+        "A plan to move to net metering or captive use where your state rules allow, if claiming the solar matters to your buyers."
+      ]
+    },
+    {
+      "h": "Check which scheme you are really on",
+      "p": [
+        "Names vary by state. Some agreements called gross metering are in fact net billing, where you consume solar on site first and only the surplus is exported. Then self-consumed solar is outside Scope 2 and imports are counted. Your connection agreement and the state regulator's rooftop regulations, under the Electricity (Rights of Consumers) Rules, 2020 as amended, decide which applies."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, gross-metered plant",
+    "lines": [
+      "Consumption from the grid: 40,000 kWh; solar exported through the gross meter: 15,000 kWh",
+      "Location-based Scope 2: 40,000 x 0.710 = 28,400 kg CO2",
+      "Wrong, netting off the export: (40,000 minus 15,000) x 0.710 = 17,750 kg CO2, understated by 10,650 kg",
+      "Note outside Scope 2: 15,000 kWh of solar generated and sold to the discom"
+    ]
+  },
+  "senseible": "Senseible reads the consumption units on your electricity bill and applies 0.710 kg CO2 per kWh for location-based Scope 2; exported units are not subtracted. Market-based Scope 2 needs your instrument data, such as an agreement that keeps the solar attributes with you.",
+  "links": [
+    {
+      "label": "Rooftop solar with net metering",
+      "to": "/answers/rooftop-solar-net-metering-scope-2"
+    },
+    {
+      "label": "Does a green tariff make Scope 2 zero?",
+      "to": "/answers/green-tariff-zero-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "Electricity (Rights of Consumers) Rules, 2020 and amendments, Ministry of Power",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Rooftop solar metering rules differ by state and are amended often; check your state regulator's current regulations."
+}

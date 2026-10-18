@@ -1,0 +1,83 @@
+{
+  "slug": "schneider-zero-carbon-project-suppliers",
+  "q": "What did Schneider Electric's Zero Carbon Project ask of suppliers, and what comes next?",
+  "title": "Schneider Electric's Zero Carbon Project",
+  "short": "Schneider Electric's Zero Carbon Project, launched in 2021, asked its top 1,000 suppliers to halve operational CO2 by 2025; Schneider reported an average cut of 56%. Its successor, The Zero Carbon Pathway, aims for 1,500 suppliers by 2030 that measure Scope 1 and 2, set reduction targets and calculate Scope 3 or product footprints.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "Indian suppliers to Schneider Electric and similar electrical OEMs",
+  "sections": [
+    {
+      "h": "What the project asked",
+      "ul": [
+        "Who: Schneider's top 1,000 suppliers, which it said account for about 70% of its upstream carbon emissions.",
+        "Target: cut each supplier's operational CO2, broadly Scope 1 and 2, by 50% by 2025 against its own baseline.",
+        "How: Schneider gave suppliers digital tools to measure emissions, training, and guidance on energy efficiency and renewable electricity.",
+        "It was part of Schneider's Sustainability Impact programme for 2021 to 2025."
+      ]
+    },
+    {
+      "h": "How it ended",
+      "p": [
+        "Schneider reported a 53% average cut across participating suppliers in its third quarter 2025 update, and 56% in its year-end 2025 results. These are Schneider's own reported figures, averaged across suppliers, so any one supplier may sit well above or below them."
+      ]
+    },
+    {
+      "h": "What comes next: The Zero Carbon Pathway",
+      "p": [
+        "Under its Impact 2030 programme, Schneider replaced the project with The Zero Carbon Pathway. It widens the group to 1,500 suppliers and adds indirect emissions. A supplier qualifies by doing three things: quantify its operational emissions (Scope 1 and 2), adopt emission reduction targets, and compute indirect emissions through company Scope 3 or a product carbon footprint.",
+        "Schneider reported 15 qualifying suppliers at the end of the first half of 2026 and 135 at the end of the third quarter, against its 1,500 ambition for 2030. If you are a Schneider supplier, expect a request for targets and a Scope 3 or product footprint figure, not only Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "What to keep ready as a supplier",
+      "ol": [
+        "A baseline year of Scope 1 and 2, built from fuel and electricity bills.",
+        "The same calculation each year with the factor source named.",
+        "Evidence for renewable electricity, such as solar generation records, green tariff bills or certificates.",
+        "A short list of the actions behind each year's change.",
+        "A product carbon footprint or a first Scope 3 estimate for the parts you supply, with its method stated."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a supplier's 2021 to 2025 change",
+    "lines": [
+      "2021: 20,00,000 kWh grid x 0.710 = 14,20,000 kg; diesel 40,000 L x 2.68 = 1,07,200 kg; total 1,527 t CO2",
+      "2025: 12,00,000 kWh grid x 0.710 = 8,52,000 kg (8,00,000 kWh now from rooftop solar); diesel 10,000 L x 2.68 = 26,800 kg; total 879 t CO2",
+      "Change: (1,527 minus 879) / 1,527 = 42% lower"
+    ],
+    "note": "Illustrative figures; the same grid factor is used in both years so the change reflects the plant's actions. State the factor edition in each year's report."
+  },
+  "senseible": "Senseible builds Scope 1 and 2 from bills for each year, so a supplier can show a baseline and a yearly comparison, and keeps purchase invoices in the Scope 3 supplier evidence trail as the starting point for a Scope 3 or product footprint. You share the resulting report with Schneider in the format its team asks for.",
+  "links": [
+    {
+      "label": "Supplier emissions data playbook",
+      "to": "/climate-intelligence/supplier-emissions-data-collection-playbook-msme"
+    },
+    {
+      "label": "Do buyers pay more for low-carbon suppliers?",
+      "to": "/answers/do-buyers-pay-more-for-low-carbon-suppliers"
+    },
+    {
+      "label": "Can I report only Scope 1 and 2?",
+      "to": "/answers/can-i-report-only-scope-1-and-2"
+    },
+    {
+      "label": "Solar loans for MSMEs",
+      "to": "/climate-intelligence/solar-loan-for-msme-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Near-Term Criteria (supplier engagement targets)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026 against Schneider Electric's own releases (se.com): Zero Carbon Project 56% average cut at end 2025; The Zero Carbon Pathway, 1,500 qualifying suppliers by 2030, 135 qualified at end Q3 2026 (release of 16 October 2026). Recheck Schneider's latest quarterly Impact 2030 release."
+}

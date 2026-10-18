@@ -1,0 +1,80 @@
+{
+  "slug": "magnesite-calcination-co2-per-tonne",
+  "q": "How much process CO2 comes from calcining magnesite to make magnesia?",
+  "title": "Magnesite calcination CO2 per tonne",
+  "short": "Calcining pure magnesite releases 0.522 tonnes of CO2 per tonne of magnesium carbonate, about 1.09 tonnes per tonne of magnesia formed. Multiply tonnes calcined by the MgCO3 share and the fraction actually calcined, add any calcium carbonate at 0.440, then add kiln fuel separately.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Magnesite and refractory producers, refractory buyers in steel and cement",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Process CO2 (t) = raw magnesite calcined (t) x MgCO3 fraction x 0.52197 x fraction calcined. The 0.52197 factor, from Table 2.1 of the IPCC 2006 Guidelines Volume 3, comes from molecular weights: MgCO3 at 84.31 gives MgO at 40.30 and CO2 at 44.01. Working from output instead, each tonne of MgO formed released 44.01 / 40.30 = 1.092 t CO2."
+      ]
+    },
+    {
+      "h": "Impurities and partial calcination",
+      "ul": [
+        "Indian magnesite often carries calcium carbonate and dolomite. Count CaCO3 at 0.43971 and dolomite at 0.47732 t CO2 per tonne, from your assay.",
+        "Silica and iron oxide release no CO2.",
+        "Caustic calcined magnesia is fired at lower temperature and keeps some CO2, shown as loss on ignition in the product. Use a fraction calcined below 1, worked out from the LOI of raw feed and product.",
+        "Dead burnt magnesia is fully calcined and then sintered, so its fraction calcined is close to 1, but its kiln fuel per tonne is much higher."
+      ]
+    },
+    {
+      "h": "Kiln fuel is a separate line",
+      "p": [
+        "Coal, petcoke, furnace oil or producer gas burnt in shaft or rotary kilns is Scope 1 combustion, from fuel invoices: coal at 2.42 kg CO2 per kg and furnace oil at 2.97 kg CO2 per litre. Keep it apart from the process CO2. A fuel switch cuts only the combustion part; the process part changes only with less carbonate."
+      ]
+    },
+    {
+      "h": "What refractory buyers need",
+      "p": [
+        "Steel and cement plants report bought refractories in Scope 3 Category 1. Give them CO2 per tonne of product with process and fuel shown separately, the product grade, and the period. Magnesia is not a CBAM good, but a steel buyer's own product footprint may include it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year at a calcining plant",
+    "lines": [
+      "Raw magnesite calcined: 10,000 t, assay 92% MgCO3 and 3% CaCO3",
+      "MgCO3: 10,000 x 0.92 x 0.52197 = 4,802.12 t CO2",
+      "CaCO3: 10,000 x 0.03 x 0.43971 = 131.91 t CO2",
+      "At 97% calcined: (4,802.12 + 131.91) x 0.97 = 4,786.01 t process CO2",
+      "Kiln coal: 1,800 t x 2.42 t CO2 per t = 4,356 t CO2",
+      "Total Scope 1: 4,786.01 + 4,356 = 9,142.01 t CO2"
+    ],
+    "note": "The assay, fraction calcined and coal use are illustrative; use your lab results and fuel records."
+  },
+  "senseible": "Senseible reads kiln fuel invoices and calculates Scope 1 combustion with the IPCC 2006 factors. The process CO2 line is calculated from the tonnes calcined, assay and fraction calcined that you provide, kept separate from fuel.",
+  "links": [
+    {
+      "label": "Process CO2 from limestone calcination",
+      "to": "/answers/process-co2-from-limestone-calcination"
+    },
+    {
+      "label": "Process vs combustion emissions",
+      "to": "/answers/process-vs-combustion-emissions-scope-1"
+    },
+    {
+      "label": "Ceramics and refractories",
+      "to": "/industries/ceramics"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 2 Mineral Industry Emissions, Table 2.1",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

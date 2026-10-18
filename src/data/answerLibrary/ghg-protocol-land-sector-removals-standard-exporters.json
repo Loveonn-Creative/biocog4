@@ -1,0 +1,73 @@
+{
+  "slug": "ghg-protocol-land-sector-removals-standard-exporters",
+  "q": "What does the GHG Protocol Land Sector and Removals Standard change for agri exporters?",
+  "title": "Land Sector and Removals Standard: exporters",
+  "short": "It makes land emissions, such as land use change and soil carbon loss, part of a company's inventory where land is in its operations or supply chain, and lets removals be reported only with traceability, monitoring and a plan for reversals. Tea, coffee, spice and cashew exporters will be asked for sourcing data, not just factory bills.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Tea, coffee, spice and cashew exporters asked by EU buyers for land data",
+  "sections": [
+    {
+      "h": "Status and timing",
+      "p": [
+        "The GHG Protocol published the Land Sector and Removals Standard in January 2026, with version 1.1 in June 2026, effective from 1 January 2027. It supplements the Corporate and Scope 3 Standards. Buyers with SBTi FLAG targets already ask for land data under the SBTi FLAG Guidance of 2022, so requests may come before 2027."
+      ]
+    },
+    {
+      "h": "What changes for an estate owner",
+      "ul": [
+        "Land you own or manage, such as a tea or coffee estate, brings land emissions into Scope 1: land use change, soil carbon loss, and emissions from fertiliser and other land management.",
+        "Carbon taken up by shade trees, hedgerows or soil can be reported as removals, kept separate from emissions, not netted inside the total.",
+        "Removals need ongoing monitoring of the stored carbon, and any later loss, such as trees cut, is reported as a reversal."
+      ]
+    },
+    {
+      "h": "What changes for a processor or trader",
+      "ul": [
+        "Green leaf, raw nuts, cherry coffee or spices you buy carry land emissions in Scope 3 Category 1.",
+        "Land use change is assessed over 20 years. If you can trace to the farm, use direct land use change; if you know only the region or country, use a statistical estimate.",
+        "Claiming removals from suppliers' land needs traceability to that land and proof the carbon stays stored. A general sourcing claim is not enough."
+      ]
+    },
+    {
+      "h": "What to start collecting",
+      "ol": [
+        "Supplier lists by village, district or estate, with the quantities bought from each.",
+        "Whether each estate or plot was converted from forest or other land in the last 20 years.",
+        "Fertiliser use per hectare, where suppliers keep it.",
+        "Factory fuel and electricity per kg of product, which most exporters can already show from bills."
+      ]
+    }
+  ],
+  "senseible": "Senseible calculates the processing part, factory fuel and electricity, from bills and keeps purchase invoices for raw produce in the Scope 3 evidence trail. Land emissions and removals are calculated from farm and sourcing data using the Standard's methods.",
+  "links": [
+    {
+      "label": "Land use change in Scope 3",
+      "to": "/answers/land-use-change-emissions-in-scope-3"
+    },
+    {
+      "label": "Does my company need an SBTi FLAG target?",
+      "to": "/answers/does-my-company-need-sbti-flag-target"
+    },
+    {
+      "label": "Tea factory footprint per kg",
+      "to": "/answers/tea-factory-carbon-footprint-per-kg-made-tea"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Land Sector and Removals Standard v1.1 (June 2026, effective 1 January 2027)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "SBTi Forest, Land and Agriculture (FLAG) Guidance (2022)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Checked October 2026: Land Sector and Removals Standard v1.1, effective 1 January 2027; check for later versions and SBTi FLAG updates.",
+  "reviewed": "2026-10-18"
+}

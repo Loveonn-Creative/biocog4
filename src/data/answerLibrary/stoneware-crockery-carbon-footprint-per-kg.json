@@ -1,0 +1,86 @@
+{
+  "slug": "stoneware-crockery-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of ceramic crockery or pottery fired in a gas or coal kiln?",
+  "title": "Crockery and pottery carbon per kg",
+  "short": "Add every kiln firing's fuel and the plant's electricity for a period, convert them to CO2, and divide by the kilograms of saleable ware despatched in that period. Then add clay, glaze and packaging, and carbonate CO2 if the body recipe contains calcite or dolomite.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pottery and crockery makers, EU homeware buyers",
+  "sections": [
+    {
+      "h": "Count every firing",
+      "p": [
+        "Much tableware is fired more than once: a biscuit firing, a glaze firing, and sometimes a decoration firing for decals or gold lines. All of these burn fuel. Use the period's total fuel invoices rather than one firing's log, so that refires, kiln warm-ups and part loads are included."
+      ],
+      "ul": [
+        "PNG: scm x 2.05 kg CO2 per scm.",
+        "LPG: kg x 2.98 kg CO2 per kg.",
+        "Coal: kg x 2.42 kg CO2 per kg.",
+        "Grid electricity for pug mills, jiggering, spray glazing and electric kilns: kWh x 0.710 kg CO2 per kWh."
+      ]
+    },
+    {
+      "h": "Divide by saleable ware, after breakage and seconds",
+      "p": [
+        "Shuttle kilns loaded with cups and plates lose pieces to cracking, warping and glaze faults. The energy for those pieces is already on the bills, so divide by the weight of good ware despatched. Seconds that you sell count as output; pieces crushed or thrown away do not. If you sell seconds at a big discount, you may split by value instead of mass, but say so."
+      ]
+    },
+    {
+      "h": "Carbonate CO2 from the clay body",
+      "p": [
+        "Some bodies contain calcite (calcium carbonate) or dolomite as a flux. On firing these release CO2 that is not from fuel. Under the IPCC 2006 Guidelines this is about 0.440 t CO2 per tonne of calcite and 0.477 t per tonne of dolomite. Take the carbonate share from the body recipe or the supplier's analysis. Many stoneware and porcelain bodies have little or none, so check before adding it."
+      ]
+    },
+    {
+      "h": "Materials and packaging for cradle to gate",
+      "p": [
+        "Fuel, power and carbonate CO2 cover only what happens inside your gate. For a cradle-to-gate figure under ISO 14067, add clay, feldspar, quartz, glazes, frits and decals, plaster moulds spread over their casts, cartons and inserts, and inbound transport. These are CO2e, because material figures include other gases. Show the energy and material parts separately for the buyer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one month at a gas-fired crockery unit",
+    "lines": [
+      "PNG for biscuit and glaze firings: 60,000 scm x 2.05 = 1,23,000 kg CO2",
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Body fired: 1,60,000 kg with 2 percent calcite = 3,200 kg calcite x 0.440 = 1,408 kg CO2",
+      "Total: 1,23,000 + 56,800 + 1,408 = 1,81,208 kg CO2",
+      "Saleable ware despatched: 1,50,000 kg, so 1,81,208 / 1,50,000 = about 1.21 kg CO2 per kg"
+    ],
+    "note": "Inputs are illustrative. Dividing by the 1,60,000 kg fired instead of the 1,50,000 kg sold would understate the figure by about 6 percent. Add materials and packaging, in CO2e, for cradle to gate."
+  },
+  "senseible": "Senseible reads PNG, LPG and coal invoices and electricity bills, applies 2.05 kg CO2 per scm, 2.98 kg per kg, 2.42 kg per kg and 0.710 kg per kWh, and shows the factor on each line. Saleable output, the body recipe and the carbonate share come from your own records.",
+  "links": [
+    {
+      "label": "Ceramic tile carbon per square metre",
+      "to": "/answers/ceramic-tile-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Sanitaryware carbon per piece",
+      "to": "/answers/sanitaryware-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Ceramics industry",
+      "to": "/industries/ceramics"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 Stationary Combustion",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 2.5 (other process uses of carbonates)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

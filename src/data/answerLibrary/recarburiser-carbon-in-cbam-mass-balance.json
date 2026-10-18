@@ -1,0 +1,88 @@
+{
+  "slug": "recarburiser-carbon-in-cbam-mass-balance",
+  "q": "Do I count recarburiser and ferroalloy carbon in an induction furnace's CBAM emissions?",
+  "title": "Recarburiser carbon in CBAM steel emissions",
+  "short": "Yes. Carbon added as recarburiser, and carbon in ferroalloys, pig iron, sponge iron and scrap, enters the melt shop's carbon mass balance. Carbon that does not leave in the steel, slag or dust counts as CO2: (carbon in minus carbon out) x 3.664. Induction furnace electricity stays out for steel goods.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Induction furnace and foundry exporters of CBAM steel goods in Raipur, Mandi Gobindgarh and Kolhapur",
+  "sections": [
+    {
+      "h": "Why carbon in the charge counts",
+      "p": [
+        "An induction furnace burns no fuel in the melt, but carbon in the charge oxidises and leaves as CO2. For iron and steel, CBAM counts the installation's direct emissions, and that oxidised carbon is a direct process emission. The definitive-period monitoring rules in Implementing Regulation (EU) 2025/2547, Annex III, keep a mass balance method for this: you track carbon in every input and output stream rather than measuring the stack."
+      ]
+    },
+    {
+      "h": "The mass balance, step by step",
+      "ol": [
+        "List each input stream: recarburiser (petcoke, anthracite or graphite), pig iron, sponge iron, scrap and ferroalloys.",
+        "Multiply each input's tonnes by its carbon content: the fixed carbon on the supplier certificate, or your own lab analysis.",
+        "Do the same for outputs: billets or castings from the spectrometer readings, slag and dust from lab tests.",
+        "CO2 = (total carbon in minus total carbon out) x 3.664, which is 44/12, the mass ratio of CO2 to carbon."
+      ]
+    },
+    {
+      "h": "Ferroalloys: carbon content and precursor are two separate things",
+      "p": [
+        "Ferro-manganese, ferro-chrome and ferro-nickel are relevant precursors for steel, so their embedded emissions are added separately: tonnes used x embedded emissions per tonne. Their carbon content still goes into the mass balance, because that carbon is released in your furnace, not at the ferroalloy plant.",
+        "Silico-manganese and ferro-silicon are not in the CBAM goods list (under heading 7202, Annex I covers only ferro-manganese, ferro-chromium and ferro-nickel), so they are not precursors under the current rules, but any carbon they carry still enters your balance."
+      ]
+    },
+    {
+      "h": "Evidence a verifier will ask for",
+      "ul": [
+        "Supplier certificates with fixed carbon per lot of recarburiser, and analyses for ferroalloys and pig iron.",
+        "Weighbridge and charge records per heat, matched to tonnes of good output.",
+        "Spectrometer records for steel carbon, and the sampling frequency for slag.",
+        "The written method for each stream in your monitoring plan."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative month: 4,600 tonnes of billets",
+    "lines": [
+      "Carbon in: recarburiser 20 t x 98% = 19.6 t; pig iron 500 t x 4.0% = 20.0 t; sponge iron 3,000 t x 0.15% = 4.5 t; scrap 1,500 t x 0.20% = 3.0 t; high-carbon FeMn 40 t x 7% = 2.8 t",
+      "Total carbon in: 19.6 + 20.0 + 4.5 + 3.0 + 2.8 = 49.9 t",
+      "Carbon out: billets 4,600 t x 0.20% = 9.2 t; slag 400 t x 0.5% = 2.0 t; total 11.2 t",
+      "CO2: (49.9 minus 11.2) x 3.664 = 38.7 x 3.664 = 141.8 t CO2",
+      "Per tonne of billet: 141.8 / 4,600 = 0.031 t CO2, before precursors and ladle preheating fuel"
+    ],
+    "note": "Carbon contents are illustrative; use certificates and lab results. Precursor emissions for sponge iron, pig iron and FeMn are added on top."
+  },
+  "senseible": "Senseible reads recarburiser, ferroalloy and electricity invoices, and its CBAM cost calculator estimates certificate cost for steel goods. Carbon contents come from supplier certificates and your lab, and the mass balance is checked by an accredited CBAM verifier.",
+  "links": [
+    {
+      "label": "Induction furnace billets and sponge iron",
+      "to": "/answers/induction-furnace-billet-sponge-iron-cbam"
+    },
+    {
+      "label": "Does CBAM count electricity for steel?",
+      "to": "/answers/does-cbam-count-electricity-emissions-steel"
+    },
+    {
+      "label": "CBAM verification for non-EU producers",
+      "to": "/climate-intelligence/cbam-verification-non-eu-producer"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM Regulation), Annexes I and IV",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    },
+    {
+      "label": "Implementing Regulation (EU) 2025/2547, methods for calculating embedded emissions (definitive period)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 4.2 (iron and steel)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Checked 18 October 2026: mass balance kept in Annex III of Implementing Regulation (EU) 2025/2547; SiMn and FeSi outside Annex I of Regulation (EU) 2023/956. EUR-Lex could not be opened directly, so recheck the Annex texts and any amendment to the precursor list before each declaration."
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "gst-on-sale-of-carbon-credits-india",
+  "q": "Is GST payable when an Indian company sells carbon credits, and at what rate?",
+  "title": "GST on selling carbon credits in India",
+  "short": "It is not settled. As of 18 October 2026 there is no CBIC circular, rate notification or GST Council decision that names carbon credits, so advisers differ: some treat a sale as a taxable supply at 18%, others as outside GST. Exports may be zero-rated. Get a written opinion or an advance ruling before your first sale.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Project owners and MSMEs selling voluntary market or CCTS credits",
+  "sections": [
+    {
+      "h": "Why the answer is unsettled",
+      "p": [
+        "GST applies to a supply of goods or services for consideration in the course of business, under section 7 of the CGST Act, 2017. A carbon credit is a unit in a registry account. It is not obviously movable property, and it is not obviously a service either, so its place in the Act's definitions is open to argument.",
+        "Credits issued under India's Carbon Credit Trading Scheme raise the same question. The one advance ruling we found that involved carbon credit trading (Andhra Pradesh AAR No. 02/AP/GST/2024, Archipel India Foundation, upheld on appeal in April 2024) decided only that the project's activities were not support services to agriculture or forestry; it did not settle the GST on a credit sale. Until the GST Council or CBIC addresses carbon credits by name, any position is an interpretation."
+      ]
+    },
+    {
+      "h": "The positions advisers take",
+      "ul": [
+        "A service: the transfer of a right, taxed under the residual entry for services not elsewhere classified, at 18%.",
+        "Goods: a tradable scrip, by analogy with renewable energy certificates, which CBIC Circular 46/20/2018 placed under HSN heading 4907. The rate for that heading has changed since 2018, so check the current rate schedule if you take this view.",
+        "Outside GST: the argument that a registry transfer is not a supply of goods or services at all.",
+        "Each position changes your invoice, your input tax credit and your exposure if a later clarification goes the other way."
+      ]
+    },
+    {
+      "h": "Selling to a foreign buyer",
+      "p": [
+        "If the sale is treated as a service and meets the export of services conditions in section 2(6) of the IGST Act (supplier in India, recipient outside India, place of supply outside India, payment in convertible foreign exchange, and the buyer is not just another establishment of your own company), it is a zero-rated supply under section 16 of the IGST Act. You can then export under a letter of undertaking without paying IGST. Keep the registry transfer record and the bank realisation certificate."
+      ]
+    },
+    {
+      "h": "What to do before the first sale",
+      "ol": [
+        "Get a written opinion from a GST practitioner on your type of credit and buyer.",
+        "For a large or repeat programme, consider an advance ruling under section 97 of the CGST Act; it binds only you and your jurisdictional officer.",
+        "Write the price as exclusive of GST and say who bears any tax that applies later.",
+        "Keep the registry transfer, invoice and bank receipt together for each sale."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: what the clause protects",
+    "lines": [
+      "Sale: 10,000 credits at ₹800 = ₹80,00,000",
+      "If 18% GST is later held to apply: 80,00,000 x 0.18 = ₹14,40,000",
+      "With a price exclusive of GST and a tax clause, the buyer pays this; without one, it can come out of your margin"
+    ],
+    "note": "The 18% rate is the service view; check the current rate schedule for any other view. This page is not tax advice."
+  },
+  "senseible": "Senseible gives carbon credit eligibility signals and keeps the project records behind them, such as fuel and power invoices. The tax treatment of a sale is for your GST adviser.",
+  "links": [
+    {
+      "label": "How carbon credits are taxed in India",
+      "to": "/answers/how-are-carbon-credits-taxed-in-india"
+    },
+    {
+      "label": "Carbon credit offtake agreements",
+      "to": "/answers/carbon-credit-offtake-agreement"
+    },
+    {
+      "label": "CCTS offset mechanism for MSMEs",
+      "to": "/answers/ccts-offset-mechanism-can-msme-earn-credits"
+    },
+    {
+      "label": "Carbon credits",
+      "to": "/carbon-credits"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Carbon Credit Trading Scheme, 2023 (scheme administrator)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "As of 18 October 2026 we found no CBIC circular, GST rate notification or GST Council decision naming carbon credits (the 57th GST Council meeting of 8 October 2026 did not address them). Recheck CBIC circulars, GST Council decisions and new advance rulings before relying on this page."
+}

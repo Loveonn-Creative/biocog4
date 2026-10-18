@@ -1,0 +1,83 @@
+{
+  "slug": "copper-cable-carbon-footprint-per-km",
+  "q": "How do I calculate the carbon footprint of copper cable per km from conductor size and insulation?",
+  "title": "Copper cable carbon footprint per km",
+  "short": "Work out the copper mass per km from the cross-section (1 mm2 of copper over 1 km weighs 8.96 kg), times cores and a stranding allowance. Add insulation and sheath compound per km from your consumption records. Multiply each by its material factor, then add drawing, extrusion and annealing electricity per km.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cable and wire makers, EPC buyers asking for footprints or EPDs",
+  "sections": [
+    {
+      "h": "Copper mass per km from the conductor size",
+      "p": [
+        "Copper has a density of 8.96 g per cm3. One square millimetre of cross-section over 1,000 metres is 1,000 cm3, so it weighs 8.96 kg. Multiply by the nominal cross-section and the number of cores, then add a small allowance for stranding, because the lay of the wires makes each wire slightly longer than the cable. Take that allowance from your own stranding process sheet; the 2 percent in the example below is an assumption for illustration.",
+        "IEC 60228 defines conductor classes by maximum resistance, not exact area, so a real conductor can carry a little less copper than the nominal size suggests. Where you have it, use the copper weighed per km from your bill of materials or production records instead of the calculated figure."
+      ]
+    },
+    {
+      "h": "Insulation, sheath and fillers per km",
+      "ul": [
+        "Take the kg of PVC, XLPE or other compound used in a month on each extrusion line and divide by the km produced on that line. This captures start-up and changeover scrap that a drawing calculation misses.",
+        "If you only have drawings, the insulation mass per km is the ring area, pi / 4 x (outer diameter squared minus inner diameter squared) in mm2, times the compound density in g per cm3. The answer comes out in kg per km.",
+        "Count fillers, tapes, armour wire and the drum or coil packaging as separate lines, each with its own factor."
+      ]
+    },
+    {
+      "h": "Electricity per km, by process",
+      "p": [
+        "Rod breakdown, wire drawing and annealing use power in proportion to copper mass. Extrusion and cabling use power in proportion to length and line speed. If the plant has sub-meters, take kWh per tonne of copper drawn and kWh per km extruded separately. If it has one meter, split the bill by machine hours or by copper mass, and say which you used. Multiply by 0.710 kg CO2 per kWh for grid power, and add DG diesel at 2.68 kg CO2 per litre if you run one."
+      ]
+    },
+    {
+      "h": "Material factors and what a buyer will accept",
+      "p": [
+        "In the example below copper rod and compound are about 87 percent of the total, so check those two factors first. Ask your rod supplier for a supplier-specific figure with its boundary. Otherwise use a published industry average, such as the International Copper Association's life cycle data, name the edition, and mark it as secondary data. If the buyer wants an EPD rather than a product footprint, it must follow ISO 14025 and the product category rules of the programme it is registered with."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 km of 3 core 2.5 mm2 PVC cable",
+    "lines": [
+      "Copper: 2.5 x 8.96 x 3 cores x 1.02 stranding (assumed) = 68.54 kg per km",
+      "Copper rod: 68.54 kg x 4.0 kg CO2e per kg (assumed for illustration) = 274.2 kg CO2e",
+      "PVC insulation and sheath: 45 kg per km from compound records x 2.5 kg CO2e per kg (assumed) = 112.5 kg CO2e",
+      "Electricity: 1,20,000 kWh for 1,500 km in the month = 80 kWh per km x 0.710 = 56.8 kg CO2",
+      "Total: 274.2 + 112.5 + 56.8 = 443.5 kg CO2e per km, about 0.44 kg per metre"
+    ],
+    "note": "The copper and PVC factors, the stranding allowance, the compound mass and the monthly kWh are illustrative inputs, not published figures. Replace them with your suppliers' data or a named database before you send a number to a buyer."
+  },
+  "senseible": "Senseible reads copper rod, compound and fuel invoices and electricity bills, and computes plant Scope 1 and 2 at IPCC 2006 defaults and 0.710 kg CO2 per kWh, with rod and compound purchases kept in the Scope 3 evidence trail. A per km product figure built from these records is a self-declared draft.",
+  "links": [
+    {
+      "label": "Is copper covered by CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Allocate factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Getting an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

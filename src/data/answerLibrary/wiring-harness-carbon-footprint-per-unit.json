@@ -1,0 +1,100 @@
+{
+  "slug": "wiring-harness-carbon-footprint-per-unit",
+  "q": "How do I calculate the carbon footprint of a wiring harness for an auto or EV customer?",
+  "title": "Wiring harness carbon footprint per unit",
+  "short": "Weigh each material in one harness from the bill of materials, multiply each mass by a cradle-to-gate factor for that material, then add your plant's electricity and fuel per harness. Copper conductor is often the largest share, so the copper figure and the wire you scrap decide most of the result.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Harness makers supplying two-wheeler, car and EV OEMs",
+  "sections": [
+    {
+      "h": "Break the harness into material masses",
+      "p": [
+        "Start from the bill of materials for one part number and turn every line into kilograms. Wire is usually listed in metres by cross-section, so convert it with the cable maker's mass per metre, and split each cable into copper conductor and insulation."
+      ],
+      "ul": [
+        "Copper conductor, by cross-section and length.",
+        "Insulation and sheathing: PVC, XLPE or other compounds.",
+        "Connector housings, often PA66 or PBT.",
+        "Terminals, usually brass or tin-plated copper alloy.",
+        "Tape, conduit, grommets, clips and labels, grouped as one line if they are small."
+      ]
+    },
+    {
+      "h": "Count the copper you buy, not only the copper you ship",
+      "p": [
+        "Cutting, stripping and rework leave copper offcuts. Measure the ratio of wire purchased to wire in finished harnesses over a quarter from purchase and despatch records, and apply it to the conductor line. Selling the scrap to a recycler does not reduce your figure unless you state a method that allows a credit and apply it consistently."
+      ]
+    },
+    {
+      "h": "Choose a factor for each material",
+      "ol": [
+        "Supplier-specific data first: a product footprint from your wire or cable maker, which captures whether its copper rod is primary or recycled.",
+        "Industry association data next, such as copper cathode and wire rod life cycle data, or polymer eco-profiles for PVC and PA66.",
+        "A licensed database last, with its name and version recorded. Check the licence before sending line-level figures to a customer."
+      ],
+      "p": [
+        "These figures are kg CO2e, because material data covers all greenhouse gases. Keep the source of each factor next to the line."
+      ]
+    },
+    {
+      "h": "Add assembly energy and divide by harnesses produced",
+      "p": [
+        "Take the period's electricity bills and any DG diesel, multiply by their factors, and divide by harnesses produced in the same period. If small and large harnesses share a line, allocate by labour or line hours rather than by count, and state the rule. Assembly energy is usually small next to materials, so a simple, stated allocation is enough."
+      ]
+    },
+    {
+      "h": "What an OEM will ask you to report",
+      "p": [
+        "Most OEMs want kg CO2e per part number, cradle to your gate, with the share of primary supplier data. German OEMs on Catena-X also want it calculated to the Catena-X PCF Rulebook and sent through their network. Keep the material mass table, the factor sources and the energy bills together, because the customer's reviewer will ask for all three."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one two-wheeler main harness",
+    "lines": [
+      "Copper conductor: 0.80 kg x 4.0 kg CO2e per kg (illustrative input) = 3.20 kg CO2e",
+      "PVC insulation: 0.30 kg x 2.0 (illustrative input) = 0.60 kg CO2e",
+      "PA66 connector housings: 0.15 kg x 7.0 (illustrative input) = 1.05 kg CO2e",
+      "Brass terminals: 0.05 kg x 3.0 (illustrative input) = 0.15 kg CO2e",
+      "Materials total: 3.20 + 0.60 + 1.05 + 0.15 = 5.00 kg CO2e",
+      "Plant electricity: 50,000 kWh x 0.710 = 35,500 kg CO2 over 1,00,000 harnesses = 0.355 kg CO2 each",
+      "Total: 5.00 + 0.355 = about 5.36 kg CO2e per harness; copper is 3.20 / 5.355 = about 60 percent"
+    ],
+    "note": "The material factors are illustrative inputs for the arithmetic, not published values. Replace each with your supplier's figure or a named database value, and apply your copper scrap ratio to the conductor line."
+  },
+  "senseible": "Senseible reads your electricity bills and fuel invoices into Scope 1 and 2 with the factor shown on each line, which gives the assembly energy per harness. Copper wire, connector and terminal purchases go to the supplier evidence trail, where each supplier's footprint statement can be kept with its invoice.",
+  "links": [
+    {
+      "label": "Answer a Catena-X PCF request",
+      "to": "/answers/answer-a-catena-x-pcf-request-auto-parts"
+    },
+    {
+      "label": "Is copper covered by CBAM?",
+      "to": "/answers/is-copper-covered-by-cbam"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Automobile components",
+      "to": "/industries/automobile"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "WBCSD PACT Methodology, the basis of the Catena-X PCF Rulebook",
+      "url": "https://www.wbcsd.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

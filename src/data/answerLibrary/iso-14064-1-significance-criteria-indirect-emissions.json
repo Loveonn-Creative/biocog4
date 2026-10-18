@@ -1,0 +1,83 @@
+{
+  "slug": "iso-14064-1-significance-criteria-indirect-emissions",
+  "q": "How do I set significance criteria for indirect emissions under ISO 14064-1?",
+  "title": "Significance criteria under ISO 14064-1",
+  "short": "ISO 14064-1:2018 lets you set your own criteria, but you must define them in advance, document them and apply them to every indirect category. Common criteria are magnitude, your influence over the source, risk or opportunity, sector guidance and outsourcing. Screen each source, include the significant ones and justify each exclusion.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Companies reporting under ISO 14064-1",
+  "sections": [
+    {
+      "h": "What the standard asks",
+      "p": [
+        "Clause 5.2.3 asks the organisation to identify its indirect emissions, define and explain predetermined criteria for which ones are significant, considering the intended use of the inventory, and quantify the significant ones. Annex H gives guidance on the process. Direct emissions are not subject to this test; they are all reported.",
+        "In ISO 14064-1 the indirect emissions sit in categories 2 to 6: imported energy, transportation, products the organisation uses, use of its products, and other sources."
+      ]
+    },
+    {
+      "h": "Criteria to choose from",
+      "ul": [
+        "Magnitude: the estimated size of the source, against a threshold you set.",
+        "Level of influence: whether you can monitor and reduce it.",
+        "Risk or opportunity: financial, regulatory, supply chain or reputational exposure tied to it.",
+        "Sector guidance: what your sector's guidance or buyers treat as significant.",
+        "Outsourcing: activities that used to be in-house, so moving them out does not hide emissions.",
+        "Employee engagement: sources such as commuting that matter for staff programmes."
+      ]
+    },
+    {
+      "h": "Setting a magnitude threshold",
+      "p": [
+        "The standard sets no percentage. You might, for example, treat any source above 1% of the total as significant and keep all excluded sources together well under 5%. These are your own choices, not ISO requirements, so write down why you chose them. A rough screening estimate, including a spend-based one labelled as such, is enough to test each source against the threshold."
+      ]
+    },
+    {
+      "h": "How to document it",
+      "p": [
+        "Keep one table: category, source, screening estimate and method, criteria met, included or excluded, and the reason. Review it when the business changes, such as a new plant or product. A verifier working to ISO 14064-3 will ask for this table first."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative screening for a fabrication unit",
+    "lines": [
+      "Category 1 direct: 2,000 t; Category 2 imported electricity: 3,000 t",
+      "Screening estimates: purchased steel 8,000 t (spend-based); inbound freight 600 t; employee commuting 150 t; waste disposal 40 t; business travel 30 t",
+      "Total: 2,000 + 3,000 + 8,000 + 600 + 150 + 40 + 30 = 13,820 t; 1% threshold = 138 t",
+      "Significant by magnitude: steel, freight, commuting",
+      "Below threshold: waste and travel, 70 t together, 0.5% of the total; include waste anyway if a buyer treats it as a risk"
+    ],
+    "note": "Figures are illustrative; the 1% threshold is an example choice, not set by ISO 14064-1."
+  },
+  "senseible": "Senseible provides spend-based estimates, labelled with wider uncertainty, which suit a first screening of indirect sources, and calculates fuel and electricity emissions from bills. The significance criteria and decisions are yours to document.",
+  "links": [
+    {
+      "label": "Is there an exclusion threshold?",
+      "to": "/answers/carbon-footprint-exclusion-threshold"
+    },
+    {
+      "label": "ISO 14064 vs GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "Can we exclude a Scope 3 category?",
+      "to": "/answers/can-we-exclude-a-scope-3-category"
+    },
+    {
+      "label": "Spend-based or activity-based Scope 3",
+      "to": "/climate-intelligence/spend-based-vs-activity-based-scope-3-method-choice"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, clause 5.2.3 and Annex H (significant indirect emissions)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019, verification of GHG statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Annex H criteria (magnitude, level of influence, risk or opportunity, sector-specific guidance, outsourcing, employee engagement) checked 18 October 2026 against published summaries of ISO 14064-1:2018; the standard itself is paywalled on iso.org."
+}

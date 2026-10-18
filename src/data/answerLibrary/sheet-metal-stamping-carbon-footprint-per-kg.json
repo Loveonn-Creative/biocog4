@@ -1,0 +1,88 @@
+{
+  "slug": "sheet-metal-stamping-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a stamped sheet metal part, and does CBAM cover it?",
+  "title": "Stamped sheet metal part footprint",
+  "short": "Divide the coil you consume by the kg of good parts, multiply by the coil supplier's footprint, then add press, welding and paint shop energy per kg. CBAM covers stamped parts classed under CN 7326 or 7308, but not stamped parts classed as vehicle or machine parts, such as 8708.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Press shop and auto component suppliers, exporters of HS 7326 parts",
+  "sections": [
+    {
+      "h": "Coil yield decides most of the answer",
+      "p": [
+        "A blanking and stamping line turns part of every coil into offcuts and skeleton scrap. The material term must use the coil consumed, not the finished weight. Coil per kg of good parts = 1 / material yield, where yield = finished part weight / coil weight issued.",
+        "Take yield from a month of coil issued against good parts despatched, so trial hits, setting scrap and rejects are inside it. Nesting several parts on one strip, or selling the skeleton to a smaller press shop, changes the figure, so recheck it when the die layout changes."
+      ]
+    },
+    {
+      "h": "Which steel factor to use",
+      "ul": [
+        "Best: the cradle-to-gate footprint from the mill or service centre for the grade you buy, with its year and method. Hot rolled, cold rolled and galvanised coil carry different figures, because each extra step adds energy.",
+        "Next: a published industry dataset for that product, such as worldsteel life cycle inventory data, named with its edition and labelled as an average.",
+        "Keep blast furnace and scrap based electric furnace steel apart. Their footprints can differ several times over, so the mill's route matters more than your press tonnage."
+      ]
+    },
+    {
+      "h": "What happens to the offcuts",
+      "p": [
+        "Under the cut-off approach used in most product rules, skeleton scrap sold to a dealer or foundry leaves your boundary with no credit and no burden. You still carry the steel you bought to make it, which is why a better nesting layout cuts the footprint per part.",
+        "If a buyer asks for a recycled content or end of life approach instead, state the method and keep the cut-off figure alongside."
+      ]
+    },
+    {
+      "h": "Is your stamped part a CBAM good?",
+      "p": [
+        "Annex I of the CBAM Regulation lists iron and steel goods by CN code. Heading 7326 (other articles of iron or steel, including those stamped but not further worked) and 7308 (structures and parts of structures) are covered. A stamping that the tariff classifies by its function, such as a body panel or bracket under 8708 (parts of motor vehicles), is not covered under the current Annex I. Your EU importer's customs classification decides.",
+        "For a covered article, the CBAM figure counts direct emissions at your plant plus the embedded emissions of the coil consumed. Electricity is not counted for iron and steel goods in the definitive period, though it stays in your product footprint. The Commission proposed in December 2025 to add downstream steel and aluminium products from 2028; as of October 2026 there is no final agreement, so recheck before you quote a code."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per kg of good stamped parts",
+    "lines": [
+      "Yield 70%: coil per kg of parts = 1 / 0.70 = 1.4286 kg",
+      "Steel: 1.4286 x 2.3 kg CO2e per kg (illustrative coil figure) = 3.286 kg CO2e",
+      "Press shop electricity: 0.20 kWh x 0.710 kg CO2 per kWh = 0.142 kg CO2",
+      "Paint oven PNG: 0.02 scm x 2.05 kg CO2 per scm = 0.041 kg CO2",
+      "Paint shop electricity: 0.10 kWh x 0.710 = 0.071 kg CO2",
+      "Total: 3.286 + 0.142 + 0.041 + 0.071 = 3.540 kg CO2e per kg of parts",
+      "At 80% yield the steel line falls to 1.25 x 2.3 = 2.875 kg CO2e, a cut of 0.411 kg per kg"
+    ],
+    "note": "The coil factor, yield and energy per kg are illustrative. Use your mill's figure and a month of your own issue, despatch and meter records."
+  },
+  "senseible": "Senseible reads coil purchase invoices into the Scope 3 evidence trail and press shop electricity and fuel bills at 0.710 kg CO2 per kWh and the IPCC 2006 fuel factors. Its CBAM cost calculator estimates certificate cost for covered steel goods from 2026 to 2034; the CN classification and declaration sit with your EU importer.",
+  "links": [
+    {
+      "label": "Are steel forgings covered by CBAM?",
+      "to": "/answers/are-steel-forgings-covered-by-cbam"
+    },
+    {
+      "label": "Machined part footprint",
+      "to": "/answers/cnc-machined-part-carbon-footprint"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annexes I and II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "worldsteel life cycle inventory methodology",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewNote": "Checked October 2026: 7308 and 7326 in Annex I, 8708 not; the December 2025 downstream proposal (COM(2025) 989) was still in trilogue. Recheck Annex I before each export season.",
+  "reviewed": "2026-10-18"
+}

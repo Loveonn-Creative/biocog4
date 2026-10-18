@@ -1,0 +1,76 @@
+{
+  "slug": "who-can-verify-records-in-senseible",
+  "q": "Who on my team can upload, verify and manage records in a Senseible organisation workspace?",
+  "title": "Who can verify records in Senseible",
+  "short": "In a Senseible organisation workspace, the owner, admins, data managers and carbon auditors can verify records. Analysts can upload invoices and build reports but cannot verify, viewers only read, and only the owner and admins can invite members or change roles. Splitting upload and verify means a second person checks the numbers.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Owners setting up a team on Essential, Pro or Scale",
+  "sections": [
+    {
+      "h": "What each role can do",
+      "ul": [
+        "Owner: everything, including the team and organisation profile. The owner's plan sets the seats.",
+        "Admin: invites members, sets roles, edits the organisation profile, uploads, manages and verifies records. An admin cannot change other admins.",
+        "Data manager: adds, corrects and removes unverified invoices, verifies them and builds reports.",
+        "Analyst: adds invoices and builds reports. Cannot verify.",
+        "Carbon auditor: views and verifies records and builds reports. Cannot add or change invoices.",
+        "Viewer: reads records and reports and changes nothing."
+      ],
+      "p": [
+        "The owner decides each member's role, and access follows the role, much like cloud access controls: a member sees and does only what the role allows."
+      ]
+    },
+    {
+      "h": "Why the person who uploads should not verify",
+      "p": [
+        "This is the maker-checker rule finance teams already use for payments. If one person enters a bill and also approves it, a wrong unit or a duplicate invoice has no second pair of eyes. Giving data entry to an Analyst and the Verify step to a Data manager or Carbon auditor builds that check into the workflow, and the record shows who did each step.",
+        "Verification in Senseible means the rule checks passed and the evidence is in place. It is an internal control, not third-party assurance."
+      ]
+    },
+    {
+      "h": "Who can remove records and manage the team",
+      "ul": [
+        "Removing records: only the owner, admins and data managers.",
+        "Inviting, removing or changing members: only the owner and admins.",
+        "Seats by plan: Snapshot 1, Essential 3, Pro 10, Scale as quoted. The owner takes one seat."
+      ]
+    },
+    {
+      "h": "A simple set-up for a small factory",
+      "ol": [
+        "The owner keeps the Owner role and pays for the plan.",
+        "The accounts executive who files the bills gets Analyst.",
+        "The plant head or finance manager who checks them gets Data manager, or Carbon auditor if they should not edit invoices.",
+        "An outside reviewer, if any, gets Viewer for the review period."
+      ]
+    }
+  ],
+  "senseible": "This page describes Senseible's team roles. The Team page in your account shows the role of each member and the plan's seats.",
+  "links": [
+    {
+      "label": "Give your auditor access to Senseible",
+      "to": "/answers/can-my-auditor-get-access-to-senseible"
+    },
+    {
+      "label": "Several plants or GSTINs in Senseible",
+      "to": "/answers/senseible-multiple-plants-or-gstins"
+    },
+    {
+      "label": "Which Senseible plan fits my volume",
+      "to": "/answers/which-senseible-plan-do-i-need"
+    },
+    {
+      "label": "Plans and team seats",
+      "to": "/pricing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Roles confirmed by the owner, 18 October 2026, and match the Team page. Recheck if roles change."
+}
