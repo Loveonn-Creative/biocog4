@@ -1,31 +1,44 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
-import { Camera, Check, Loader2, MapPin, Mic, Upload, X } from 'lucide-react';
+import { Camera, Check, Loader2, MapPin, Mic, Upload } from 'lucide-react';
 import { Navigation } from '@/components/Navigation';
 import { loadSupabase } from '@/integrations/supabase/lazyClient';
 import { getFunctionErrorMessage } from '@/lib/functionErrors';
 import {
-  checkEvidence, parseMachineSpeech, readExifGps, writeExifGps, FUELS, FUEL_LABELS, MAX_ACCURACY_M, MAX_FIX_AGE_MS, MAX_PHOTO_BYTES, POWER_UNITS, PROBLEM_TEXT,
-  type LiveFix, type MachineFields, type PhotoTags,
+  checkEvidence, parseMachineSpeech, readExifGps, readRawExif, writeExifGps,
+  FUELS, FUEL_LABELS, MAX_ACCURACY_M, MAX_FIX_AGE_MS, MAX_PHOTO_BYTES, MAX_PHOTO_KB, POWER_UNITS, PROBLEM_TEXT,
+  type LiveFix, type MachineFields, type PhotoTags, type RawPhotoTags,
 } from '../../supabase/functions/_shared/machineryBeta';
 
-type Photo = { bytes: Uint8Array; url: string; tags: PhotoTags | null; source: 'photo_exif' | 'app_capture' };
+type Photo = { bytes: Uint8Array; url: string; raw: RawPhotoTags | null; tags: PhotoTags | null };
 type Entry = { id: string; machine_type: string; make_model: string; rated_power: number | null; power_unit: string | null; fuel: string | null; hours_per_day: number | null; distance_m: number; status: string; created_at: string };
 
 const EMPTY: MachineFields = { machineType: '', makeModel: '', ratedPower: null, powerUnit: null, fuel: null, hoursPerDay: null };
 const tzOffsetMin = () => -new Date().getTimezoneOffset();
 const toB64 = (bytes: Uint8Array) => { let s = ''; for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000)); return btoa(s); };
+const sizeLabel = (n: number) => (n >= 1024 * 1024 ? `${(n / 1024 / 1024).toFixed(1)} MB` : `${Math.ceil(n / 1024)} KB`);
 const field = 'w-full min-w-0 rounded-lg border border-border bg-background px-3 py-2 text-sm';
 
-/** Re-encodes a large photo to fit the limit, keeping its original geo tag. */
-async function shrink(bytes: Uint8Array, tags: PhotoTags): Promise<Uint8Array> {
+/**
+ * Re-encodes a photo in the browser until it fits under the cap, then writes
+ * its original GPS position and date/time back in, so nothing is lost.
+ */
+async function reducePhoto(bytes: Uint8Array, raw: RawPhotoTags): Promise<Uint8Array> {
   const bmp = await createImageBitmap(new Blob([bytes], { type: 'image/jpeg' }));
-  const scale = Math.min(1, 2000 / Math.max(bmp.width, bmp.height));
-  const c = document.createElement('canvas'); c.width = Math.round(bmp.width * scale); c.height = Math.round(bmp.height * scale);
-  c.getContext('2d')!.drawImage(bmp, 0, 0, c.width, c.height);
-  const blob = await new Promise<Blob>((res, rej) => c.toBlob((b) => (b ? res(b) : rej(new Error('encode'))), 'image/jpeg', 0.85));
-  return writeExifGps(new Uint8Array(await blob.arrayBuffer()), { lat: tags.lat, lng: tags.lng, at: new Date(tags.takenAt ?? Date.now()) });
+  const target = MAX_PHOTO_BYTES - 2048; // room for the tags
+  let maxDim = Math.min(2000, Math.max(bmp.width, bmp.height));
+  let quality = 0.82;
+  for (let attempt = 0; attempt < 16; attempt++) {
+    const scale = maxDim / Math.max(bmp.width, bmp.height);
+    const c = document.createElement('canvas');
+    c.width = Math.max(1, Math.round(bmp.width * scale)); c.height = Math.max(1, Math.round(bmp.height * scale));
+    c.getContext('2d')!.drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise<Blob | null>((res) => c.toBlob(res, 'image/jpeg', quality));
+    if (blob && blob.size <= target) return writeExifGps(new Uint8Array(await blob.arrayBuffer()), raw);
+    if (quality > 0.55) quality -= 0.1; else maxDim = Math.round(maxDim * 0.8);
+  }
+  throw new Error('Could not reduce this photo.');
 }
 
 function Step({ n, icon: Icon, label, done, children }: { n: number; icon: typeof MapPin; label: string; done: boolean; children: React.ReactNode }) {
@@ -46,8 +59,7 @@ export default function MachineryBeta() {
   const [live, setLive] = useState<LiveFix | null>(null);
   const [geoError, setGeoError] = useState('');
   const [photo, setPhoto] = useState<Photo | null>(null);
-  const [camera, setCamera] = useState(false);
-  const [camReady, setCamReady] = useState(false);
+  const [reducing, setReducing] = useState(false);
   const [listening, setListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [fields, setFields] = useState<MachineFields>(EMPTY);
@@ -56,8 +68,6 @@ export default function MachineryBeta() {
   const [saving, setSaving] = useState(false);
   const [now, setNow] = useState(() => new Date());
   const watchId = useRef<number | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const streamRef = useRef<MediaStream | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const speechSupported = typeof window !== 'undefined' && !!((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition);
 
@@ -81,44 +91,25 @@ export default function MachineryBeta() {
       { enableHighAccuracy: true, maximumAge: 0, timeout: 20000 },
     );
   };
-  useEffect(() => () => {
-    if (watchId.current !== null) navigator.geolocation.clearWatch(watchId.current);
-    streamRef.current?.getTracks().forEach((t) => t.stop());
-  }, []);
+  useEffect(() => () => { if (watchId.current !== null) navigator.geolocation.clearWatch(watchId.current); }, []);
 
-  const setPhotoBytes = (bytes: Uint8Array, source: Photo['source']) => {
-    if (photo) URL.revokeObjectURL(photo.url);
-    setPhoto({ bytes, source, tags: readExifGps(bytes, tzOffsetMin()), url: URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' })) });
-  };
-
-  const openCamera = async () => {
-    if (!live) { toast.error(PROBLEM_TEXT.no_location); return; }
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
-      streamRef.current = stream; setCamera(true);
-      requestAnimationFrame(() => { if (videoRef.current) { videoRef.current.srcObject = stream; videoRef.current.play().catch(() => {}); } });
-    } catch { toast.error('Allow the camera, or upload a photo.'); }
-  };
-  const closeCamera = () => { streamRef.current?.getTracks().forEach((t) => t.stop()); streamRef.current = null; setCamera(false); setCamReady(false); };
-  const capture = async () => {
-    const v = videoRef.current;
-    if (!v || !live || !v.videoWidth) return;
-    const scale = Math.min(1, 2000 / Math.max(v.videoWidth, v.videoHeight));
-    const c = document.createElement('canvas'); c.width = Math.round(v.videoWidth * scale); c.height = Math.round(v.videoHeight * scale);
-    c.getContext('2d')!.drawImage(v, 0, 0, c.width, c.height);
-    const blob = await new Promise<Blob | null>((res) => c.toBlob(res, 'image/jpeg', 0.85));
-    closeCamera();
-    if (!blob) return;
-    setPhotoBytes(writeExifGps(new Uint8Array(await blob.arrayBuffer()), { lat: live.lat, lng: live.lng, at: new Date() }), 'app_capture');
+  const showPhoto = (bytes: Uint8Array) => {
+    setPhoto((old) => {
+      if (old) URL.revokeObjectURL(old.url);
+      return { bytes, raw: readRawExif(bytes), tags: readExifGps(bytes, tzOffsetMin()), url: URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' })) };
+    });
   };
   const onFile = async (file: File | undefined) => {
     if (!file) return;
     if (!/jpe?g$/i.test(file.type) && !/\.jpe?g$/i.test(file.name)) { toast.error('Use a JPEG photo.'); return; }
-    let bytes = new Uint8Array(await file.arrayBuffer());
-    const tags = readExifGps(bytes, tzOffsetMin());
-    if (bytes.length > MAX_PHOTO_BYTES && tags) bytes = await shrink(bytes, tags);
-    if (bytes.length > MAX_PHOTO_BYTES) { toast.error('Photo must be under 5 MB.'); return; }
-    setPhotoBytes(bytes, 'photo_exif');
+    showPhoto(new Uint8Array(await file.arrayBuffer()));
+  };
+  const reduce = async () => {
+    if (!photo?.raw) return;
+    setReducing(true);
+    try { showPhoto(await reducePhoto(photo.bytes, photo.raw)); }
+    catch { toast.error('Could not reduce this photo. Try another.'); }
+    finally { setReducing(false); }
   };
 
   const speak = () => {
@@ -143,12 +134,16 @@ export default function MachineryBeta() {
     r.start();
   };
 
-  const evidence = useMemo(() => (photo ? checkEvidence(photo.tags, live, now) : null), [photo, live, now]);
   const fixFresh = !!live && now.getTime() - Date.parse(live.at) <= MAX_FIX_AGE_MS;
   const fixPrecise = !!live && live.accuracy <= MAX_ACCURACY_M;
   const locationOk = fixFresh && fixPrecise;
+  const evidence = useMemo(() => (photo ? checkEvidence(photo.tags, live, now) : null), [photo, live, now]);
+  const tooBig = !!photo && photo.bytes.length > MAX_PHOTO_BYTES;
+  // Without live location the distance can't be checked yet; show the photo's own problems only.
+  const photoProblems = evidence?.problems.filter((p) => live || !p.endsWith('location')) ?? [];
+  const photoOk = !!evidence?.ok && !tooBig;
   const voiceOk = transcript.split(' ').filter(Boolean).length >= 3;
-  const ready = locationOk && !!evidence?.ok && voiceOk && fields.machineType.trim().length >= 2 && !closed;
+  const ready = locationOk && photoOk && voiceOk && fields.machineType.trim().length >= 2 && !closed;
 
   const save = async () => {
     if (!ready || !photo || !live) return;
@@ -156,7 +151,7 @@ export default function MachineryBeta() {
     try {
       const supabase = await loadSupabase();
       const { data, error } = await supabase.functions.invoke('machinery-beta', {
-        body: { action: 'save', fields, transcript, live, photo: toB64(photo.bytes), geoSource: photo.source, tzOffsetMin: tzOffsetMin() },
+        body: { action: 'save', fields, transcript, live, photo: toB64(photo.bytes), tzOffsetMin: tzOffsetMin() },
       });
       if (error) { toast.error(await getFunctionErrorMessage(error, 'Could not save. Try again.')); return; }
       if (data?.entry) setEntries((e) => [data.entry, ...e]);
@@ -178,35 +173,44 @@ export default function MachineryBeta() {
         {closed && <p className="mt-4 rounded-xl border border-warning/40 bg-warning/10 p-3 text-sm">This beta is closed.</p>}
 
         <ol className="mt-6 grid gap-3">
-          <Step n={1} icon={MapPin} label="Location" done={locationOk}>
+          <Step n={1} icon={MapPin} label="Your location" done={locationOk}>
             {live ? (
               <p className="text-sm text-muted-foreground">{locationOk ? `On · ±${Math.round(live.accuracy)} m` : PROBLEM_TEXT[fixPrecise ? 'stale_location' : 'weak_location']}</p>
             ) : (
               <button type="button" onClick={startLocation} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
-                <MapPin className="h-4 w-4" aria-hidden /> Turn on
+                <MapPin className="h-4 w-4" aria-hidden /> Turn on location
               </button>
             )}
             {geoError && <p className="mt-1 text-sm text-destructive">{geoError}</p>}
           </Step>
 
-          <Step n={2} icon={Camera} label="Photo of the machine" done={!!evidence?.ok}>
-            <div className="flex flex-wrap gap-2">
-              <button type="button" onClick={openCamera} disabled={!live} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground disabled:opacity-50">
-                <Camera className="h-4 w-4" aria-hidden /> Take photo
-              </button>
-              <button type="button" onClick={() => fileRef.current?.click()} className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm">
-                <Upload className="h-4 w-4" aria-hidden /> Upload
-              </button>
-              <input ref={fileRef} type="file" accept="image/jpeg" capture="environment" className="hidden" onChange={(e) => { onFile(e.target.files?.[0]); e.target.value = ''; }} />
-            </div>
+          <Step n={2} icon={Camera} label="Photo of the machine" done={photoOk}>
+            <button type="button" onClick={() => fileRef.current?.click()} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground">
+              <Upload className="h-4 w-4" aria-hidden /> Upload photo
+            </button>
+            <input ref={fileRef} type="file" accept="image/jpeg" className="hidden" aria-label="Photo of the machine" onChange={(e) => { onFile(e.target.files?.[0]); e.target.value = ''; }} />
+            <p className="mt-2 text-xs text-muted-foreground">Use a GPS camera app photo: it shows date, time and location.</p>
             {photo && (
-              <div className="mt-3 flex min-w-0 items-center gap-3">
+              <div className="mt-3 flex min-w-0 items-start gap-3">
                 <img src={photo.url} alt="Machine" className="h-16 w-16 shrink-0 rounded-lg object-cover" />
-                <p className={`min-w-0 text-sm ${evidence?.ok ? 'text-foreground' : 'text-destructive'}`}>
-                  {evidence?.ok
-                    ? `${evidence.distanceM} m from you · ${Math.max(0, Math.round(evidence.photoAgeMin ?? 0))} min ago`
-                    : evidence?.problems.map((p) => PROBLEM_TEXT[p]).join(' ')}
-                </p>
+                <div className="min-w-0 text-sm">
+                  {photoProblems.length > 0
+                    ? <p className="text-destructive">{photoProblems.map((p) => PROBLEM_TEXT[p]).join(' ')}</p>
+                    : evidence?.distanceM !== null && evidence?.distanceM !== undefined
+                      ? <p>{evidence.distanceM} m from you · {Math.max(0, Math.round(evidence.photoAgeMin ?? 0))} min ago</p>
+                      : <p className="text-muted-foreground">Turn on location to check the photo.</p>}
+                  {tooBig && (
+                    <p className="mt-1">
+                      <span className="text-destructive">{sizeLabel(photo.bytes.length)}. Limit is {MAX_PHOTO_KB} KB.</span>{' '}
+                      {photo.raw && (
+                        <button type="button" onClick={reduce} disabled={reducing} className="font-medium text-primary underline underline-offset-2 disabled:opacity-60">
+                          {reducing ? 'Reducing…' : 'Reduce size'}
+                        </button>
+                      )}
+                    </p>
+                  )}
+                  {!tooBig && photo.raw && <p className="mt-1 text-xs text-muted-foreground">{sizeLabel(photo.bytes.length)}</p>}
+                </div>
               </div>
             )}
           </Step>
@@ -217,7 +221,7 @@ export default function MachineryBeta() {
                 {listening ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Mic className="h-4 w-4" aria-hidden />} {listening ? 'Listening' : 'Speak'}
               </button>
             ) : <p className="text-sm text-muted-foreground">Voice needs Chrome or Edge.</p>}
-            <p className="mt-2 text-xs text-muted-foreground">e.g. “Diesel generator, make Kirloskar, 125 kVA, 6 hours a day”</p>
+            <p className="mt-2 text-xs text-muted-foreground">Say it like: “Diesel generator, make Kirloskar, 125 kVA, 6 hours a day.”</p>
             {transcript && <p className="mt-2 break-words rounded-lg bg-muted px-3 py-2 text-sm">“{transcript}”</p>}
           </Step>
         </ol>
@@ -259,16 +263,6 @@ export default function MachineryBeta() {
           </section>
         )}
       </main>
-
-      {camera && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-black" role="dialog" aria-label="Camera">
-          <video ref={videoRef} playsInline muted onLoadedData={() => setCamReady(true)} className="min-h-0 flex-1 object-contain" />
-          <div className="flex items-center justify-center gap-6 p-4">
-            <button type="button" onClick={closeCamera} className="grid h-12 w-12 place-items-center rounded-full bg-white/15 text-white" aria-label="Close camera"><X className="h-5 w-5" /></button>
-            <button type="button" onClick={capture} disabled={!camReady} className="h-16 w-16 rounded-full border-4 border-white bg-white/30 disabled:opacity-40" aria-label="Take photo" />
-          </div>
-        </div>
-      )}
     </div>
   );
 }

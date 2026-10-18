@@ -22,7 +22,7 @@ SET ROLE service_role;
 INSERT INTO public.machinery_entries (user_id, machine_type, make_model, rated_power, power_unit, fuel, hours_per_day, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source)
 SELECT * FROM good;
 INSERT INTO public.machinery_entries (user_id, machine_type, make_model, rated_power, power_unit, fuel, hours_per_day, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source)
-SELECT '00000000-0000-4000-8000-00000000bb02', machine_type, make_model, rated_power, power_unit, fuel, hours_per_day, voice_transcript, 'u/b.jpg', repeat('b', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, 'app_capture' FROM good;
+SELECT '00000000-0000-4000-8000-00000000bb02', machine_type, make_model, rated_power, power_unit, fuel, hours_per_day, voice_transcript, 'u/b.jpg', repeat('b', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, 'photo_exif' FROM good;
 RESET ROLE;
 SELECT pg_temp.check((SELECT count(*) = 2 FROM public.machinery_entries), 'the edge function (service role) stores entries');
 SELECT pg_temp.check((SELECT bool_and(status = 'unverified' AND verification_source IS NULL) FROM public.machinery_entries), 'new entries are unverified');
@@ -35,7 +35,8 @@ SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, ma
 SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/e.jpg', repeat('a', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source FROM good$q$, 'the same photo cannot be saved twice by one user');
 SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/f.jpg', 'nothex', photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source FROM good$q$, 'the photo hash must be a SHA-256');
 SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/g.jpg', repeat('e', 64), photo_taken_at, 95, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source FROM good$q$, 'coordinates must be on Earth');
-SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/h.jpg', repeat('f', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, 'manual' FROM good$q$, 'the geo source is photo EXIF or in-app capture only');
+SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/h.jpg', repeat('f', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, 'manual' FROM good$q$, 'the geo source is the photo''s own EXIF only');
+SELECT pg_temp.expect_error($q$INSERT INTO public.machinery_entries (user_id, machine_type, voice_transcript, photo_path, photo_sha256, photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, geo_source) SELECT user_id, machine_type, voice_transcript, 'u/i.jpg', repeat('7', 64), photo_taken_at, photo_lat, photo_lng, live_lat, live_lng, live_accuracy_m, live_at, distance_m, 'app_capture' FROM good$q$, 'an in-app camera photo is not accepted');
 RESET ROLE;
 
 SELECT pg_temp.check((SELECT relrowsecurity FROM pg_class WHERE relname = 'machinery_entries'), 'row level security is on');
@@ -56,7 +57,7 @@ SET ROLE anon;
 SELECT pg_temp.expect_error($q$SELECT * FROM public.machinery_entries$q$, 'an anonymous session is refused');
 RESET ROLE;
 
-SELECT pg_temp.check((SELECT NOT public AND allowed_mime_types = ARRAY['image/jpeg'] AND file_size_limit = 5242880 FROM storage.buckets WHERE id = 'machinery-photos'), 'the photo bucket is private, JPEG only, 5 MB');
+SELECT pg_temp.check((SELECT NOT public AND allowed_mime_types = ARRAY['image/jpeg'] AND file_size_limit = 409600 FROM storage.buckets WHERE id = 'machinery-photos'), 'the photo bucket is private, JPEG only, 400 KB');
 SELECT pg_temp.check(NOT EXISTS (SELECT 1 FROM pg_policy p JOIN pg_class c ON c.oid = p.polrelid WHERE c.relname = 'objects' AND (pg_get_expr(p.polqual, p.polrelid) ILIKE '%machinery-photos%' OR pg_get_expr(p.polwithcheck, p.polrelid) ILIKE '%machinery-photos%')), 'no storage policy opens the photo bucket');
 
 -- Deleting the account removes its entries.

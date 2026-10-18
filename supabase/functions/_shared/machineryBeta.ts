@@ -1,6 +1,7 @@
 // Machinery beta (test only): a signed-in user adds a machine's details with
-// live location on, a geo-tagged photo of the machine taken now, and voice
-// input. Shared by the page (src/pages/MachineryBeta.tsx) and the
+// live location on, a photo of the machine from a GPS camera app (EXIF GPS
+// latitude/longitude and DateTimeOriginal) taken in the last 30 minutes, and
+// voice input. Shared by the page (src/pages/MachineryBeta.tsx) and the
 // machinery-beta edge function, which repeats every check on the server.
 // Entries are always Unverified; only a matching document or an IoT, sensor
 // or live feed could verify one later, and nothing here can.
@@ -10,7 +11,9 @@ export const MAX_DISTANCE_M = 150;
 export const MAX_PHOTO_AGE_MIN = 30;
 export const MAX_FIX_AGE_MS = 2 * 60 * 1000;
 export const MAX_ACCURACY_M = 100;
-export const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
+/** Photo size cap, to protect storage. Larger photos are reduced in the browser, keeping their tags. */
+export const MAX_PHOTO_KB = 400;
+export const MAX_PHOTO_BYTES = MAX_PHOTO_KB * 1024;
 export const MAX_ENTRIES_PER_DAY = 20;
 
 export const POWER_UNITS = ['kW', 'HP', 'kVA', 'TR'] as const;
@@ -49,6 +52,8 @@ export function distanceM(a: GeoPoint, b: GeoPoint): number {
 // ---------- EXIF (JPEG APP1) ----------
 
 const TAG_EXIF_IFD = 0x8769, TAG_GPS_IFD = 0x8825, TAG_DATETIME_ORIGINAL = 0x9003, TAG_OFFSET_ORIGINAL = 0x9011;
+const DTO_RE = /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})$/;
+const OFFSET_RE = /^([+-])(\d{2}):(\d{2})$/;
 
 function findExif(bytes: Uint8Array): number | null {
   if (bytes.length < 4 || bytes[0] !== 0xff || bytes[1] !== 0xd8) return null;
@@ -68,21 +73,24 @@ function findExif(bytes: Uint8Array): number | null {
   return null;
 }
 
-/**
- * Reads GPS position and capture time from a JPEG's EXIF. Capture time comes
- * from the GPS UTC stamp, else DateTimeOriginal with its offset, else
- * DateTimeOriginal read with `fallbackOffsetMin` (the device's offset from
- * UTC, minutes east). Returns null when the photo has no usable GPS tags.
- */
-export function readExifGps(bytes: Uint8Array, fallbackOffsetMin: number | null = null): PhotoTags | null {
+/** The tags a GPS camera app writes, as stored in the photo. */
+export interface RawPhotoTags extends GeoPoint {
+  /** DateTimeOriginal, "YYYY:MM:DD HH:MM:SS" in the camera's local time. */
+  dateTimeOriginal: string | null;
+  /** OffsetTimeOriginal, e.g. "+05:30", when the camera wrote it. */
+  offsetTime: string | null;
+}
+
+/** Reads GPS latitude/longitude, DateTimeOriginal and its offset from a JPEG. Null without GPS tags. */
+export function readRawExif(bytes: Uint8Array): RawPhotoTags | null {
   const t = findExif(bytes);
   if (t === null || t + 8 > bytes.length) return null;
   const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
   const le = bytes[t] === 0x49 && bytes[t + 1] === 0x49;
   if (!le && !(bytes[t] === 0x4d && bytes[t + 1] === 0x4d)) return null;
+  const inRange = (o: number, n: number) => o >= 0 && t + o + n <= bytes.length;
   const u16 = (o: number) => view.getUint16(t + o, le);
   const u32 = (o: number) => view.getUint32(t + o, le);
-  const inRange = (o: number, n: number) => o >= 0 && t + o + n <= bytes.length;
   if (u16(2) !== 42) return null;
 
   type Entry = { type: number; count: number; valueOff: number };
@@ -95,8 +103,7 @@ export function readExifGps(bytes: Uint8Array, fallbackOffsetMin: number | null 
       const e = off + 2 + k * 12;
       const type = u16(e + 2), count = u32(e + 4);
       const size = ({ 1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 7: 1, 9: 4, 10: 8 } as Record<number, number>)[type] ?? 0;
-      const valueOff = size * count <= 4 ? e + 8 : u32(e + 8);
-      m.set(u16(e), { type, count, valueOff });
+      m.set(u16(e), { type, count, valueOff: size * count <= 4 ? e + 8 : u32(e + 8) });
     }
     return m;
   };
@@ -104,7 +111,7 @@ export function readExifGps(bytes: Uint8Array, fallbackOffsetMin: number | null 
     if (!e || e.type !== 2 || !inRange(e.valueOff, e.count)) return null;
     let s = '';
     for (let k = 0; k < e.count; k++) { const c = bytes[t + e.valueOff + k]; if (!c) break; s += String.fromCharCode(c); }
-    return s;
+    return s.trim();
   };
   const rationals = (e: Entry | undefined, n: number) => {
     if (!e || e.type !== 5 || e.count < n || !inRange(e.valueOff, n * 8)) return null;
@@ -129,72 +136,89 @@ export function readExifGps(bytes: Uint8Array, fallbackOffsetMin: number | null 
   const point = { lat: dms(lat) * (latRef.toUpperCase() === 'S' ? -1 : 1), lng: dms(lng) * (lngRef.toUpperCase() === 'W' ? -1 : 1) };
   if (!validPoint(point)) return null;
 
-  let takenAt: string | null = null;
-  const gDate = ascii(gps.get(0x1d)), gTime = rationals(gps.get(0x07), 3);
-  const dm = gDate?.match(/^(\d{4}):(\d{2}):(\d{2})$/);
-  if (dm && gTime) {
-    const ms = Date.UTC(+dm[1], +dm[2] - 1, +dm[3], gTime[0], gTime[1], 0) + Math.round(gTime[2] * 1000);
-    if (Number.isFinite(ms)) takenAt = new Date(ms).toISOString();
-  }
-  if (!takenAt) {
-    const exifPtr = ifd0.get(TAG_EXIF_IFD);
-    const exif = exifPtr ? ifd(u32(exifPtr.valueOff)) : null;
-    const dto = ascii(exif?.get(TAG_DATETIME_ORIGINAL))?.match(/^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})/);
-    const off = ascii(exif?.get(TAG_OFFSET_ORIGINAL))?.match(/^([+-])(\d{2}):(\d{2})$/);
-    const offsetMin = off ? (off[1] === '-' ? -1 : 1) * (+off[2] * 60 + +off[3]) : fallbackOffsetMin;
-    if (dto && offsetMin !== null && Number.isFinite(offsetMin)) {
-      const ms = Date.UTC(+dto[1], +dto[2] - 1, +dto[3], +dto[4], +dto[5], +dto[6]) - offsetMin * 60000;
-      if (Number.isFinite(ms)) takenAt = new Date(ms).toISOString();
-    }
-  }
-  return { ...point, takenAt };
+  const exifPtr = ifd0.get(TAG_EXIF_IFD);
+  const exif = exifPtr ? ifd(u32(exifPtr.valueOff)) : null;
+  const dto = ascii(exif?.get(TAG_DATETIME_ORIGINAL));
+  const off = ascii(exif?.get(TAG_OFFSET_ORIGINAL));
+  return { ...point, dateTimeOriginal: dto && DTO_RE.test(dto) ? dto : null, offsetTime: off && OFFSET_RE.test(off) ? off : null };
 }
 
 /**
- * Adds an EXIF block (GPS position and UTC time) to a JPEG with no EXIF, as
- * made by an in-page camera capture, so the saved photo carries its own geo
- * tag. Little-endian TIFF. Any existing APP1 Exif segment is replaced.
+ * GPS position and capture time of a photo. The time is DateTimeOriginal,
+ * read with OffsetTimeOriginal or, when the camera wrote none, the device's
+ * offset from UTC (`fallbackOffsetMin`, minutes east). takenAt is null when
+ * DateTimeOriginal is missing. Null when the photo has no GPS tags.
  */
-export function writeExifGps(jpeg: Uint8Array, tag: GeoPoint & { at: Date }): Uint8Array {
+export function readExifGps(bytes: Uint8Array, fallbackOffsetMin: number | null = null): PhotoTags | null {
+  const raw = readRawExif(bytes);
+  if (!raw) return null;
+  let takenAt: string | null = null;
+  const d = raw.dateTimeOriginal?.match(DTO_RE);
+  const o = raw.offsetTime?.match(OFFSET_RE);
+  const offsetMin = o ? (o[1] === '-' ? -1 : 1) * (+o[2] * 60 + +o[3]) : fallbackOffsetMin;
+  if (d && offsetMin !== null && Number.isFinite(offsetMin)) {
+    const ms = Date.UTC(+d[1], +d[2] - 1, +d[3], +d[4], +d[5], +d[6]) - offsetMin * 60000;
+    if (Number.isFinite(ms)) takenAt = new Date(ms).toISOString();
+  }
+  return { lat: raw.lat, lng: raw.lng, takenAt };
+}
+
+/**
+ * Writes a photo's original tags (GPS latitude/longitude, DateTimeOriginal and
+ * its offset) into a JPEG, as after "Reduce size" re-encodes it in the
+ * browser, so the location and time are not lost. Little-endian TIFF. Any
+ * existing APP1 Exif segment is replaced.
+ */
+export function writeExifGps(jpeg: Uint8Array, tag: RawPhotoTags): Uint8Array {
   if (jpeg[0] !== 0xff || jpeg[1] !== 0xd8) throw new Error('not a JPEG');
-  const ifd0Count = 1, gpsCount = 7;
-  const ifd0Off = 8, gpsOff = ifd0Off + 2 + ifd0Count * 12 + 4;
-  const dataOff = gpsOff + 2 + gpsCount * 12 + 4;
-  const tiff = new Uint8Array(dataOff + 3 * 8 * 3 + 11);
+  const enc = (s: string) => Array.from(`${s}\0`, (c) => c.charCodeAt(0));
+  const dto = tag.dateTimeOriginal && DTO_RE.test(tag.dateTimeOriginal) ? enc(tag.dateTimeOriginal) : null;
+  const ofs = tag.offsetTime && OFFSET_RE.test(tag.offsetTime) ? enc(tag.offsetTime) : null;
+  const exifCount = (dto ? 1 : 0) + (ofs ? 1 : 0);
+  const ifd0Count = exifCount ? 2 : 1, gpsCount = 5;
+  const ifd0Off = 8;
+  const gpsOff = ifd0Off + 2 + ifd0Count * 12 + 4;
+  const exifOff = gpsOff + 2 + gpsCount * 12 + 4;
+  const dataOff = exifOff + (exifCount ? 2 + exifCount * 12 + 4 : 0);
+  const tiff = new Uint8Array(dataOff + 48 + (dto?.length ?? 0) + (ofs?.length ?? 0));
   const v = new DataView(tiff.buffer);
   tiff.set([0x49, 0x49]); v.setUint16(2, 42, true); v.setUint32(4, ifd0Off, true);
-  v.setUint16(ifd0Off, ifd0Count, true);
-  const entry = (at: number, id: number, type: number, count: number, value: number, inline = false, bytes?: number[]) => {
+  const entry = (at: number, id: number, type: number, count: number, value: number, inline?: number[]) => {
     v.setUint16(at, id, true); v.setUint16(at + 2, type, true); v.setUint32(at + 4, count, true);
-    if (inline && bytes) bytes.forEach((b, k) => { tiff[at + 8 + k] = b; }); else v.setUint32(at + 8, value, true);
+    if (inline) inline.forEach((b, k) => { tiff[at + 8 + k] = b; }); else v.setUint32(at + 8, value, true);
   };
-  entry(ifd0Off + 2, TAG_GPS_IFD, 4, 1, gpsOff);
-  v.setUint32(ifd0Off + 2 + 12, 0, true);
-  const dmsOf = (x: number) => { const a = Math.abs(x), d = Math.floor(a), m = Math.floor((a - d) * 60); return [d, m, (a - d - m / 60) * 3600]; };
+  // IFD0 pointers in ascending tag order (Exif 0x8769 before GPS 0x8825).
+  v.setUint16(ifd0Off, ifd0Count, true);
+  let e = ifd0Off + 2;
+  if (exifCount) { entry(e, TAG_EXIF_IFD, 4, 1, exifOff); e += 12; }
+  entry(e, TAG_GPS_IFD, 4, 1, gpsOff); e += 12;
+  v.setUint32(e, 0, true);
+
   let p = dataOff;
-  const rat = (vals: number[], dens: number[]) => {
+  const put = (bytes: number[]) => { const at = p; tiff.set(bytes, p); p += bytes.length; return at; };
+  const rat = (x: number) => {
+    const a = Math.abs(x), d = Math.floor(a), m = Math.floor((a - d) * 60), s = (a - d - m / 60) * 3600;
     const at = p;
-    vals.forEach((x, k) => { v.setUint32(p, Math.round(x * dens[k]), true); v.setUint32(p + 4, dens[k], true); p += 8; });
+    for (const [num, den] of [[d, 1], [m, 1], [Math.round(s * 10000), 10000]]) { v.setUint32(p, num, true); v.setUint32(p + 4, den, true); p += 8; }
     return at;
   };
-  const latAt = rat(dmsOf(tag.lat), [1, 1, 10000]);
-  const lngAt = rat(dmsOf(tag.lng), [1, 1, 10000]);
-  const d = tag.at;
-  const timeAt = rat([d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds()], [1, 1, 1]);
-  const dateAt = p;
-  const ds = `${d.getUTCFullYear()}:${String(d.getUTCMonth() + 1).padStart(2, '0')}:${String(d.getUTCDate()).padStart(2, '0')}\0`;
-  for (let k = 0; k < ds.length; k++) tiff[p + k] = ds.charCodeAt(k);
-  let g = gpsOff + 2;
+  const latAt = rat(tag.lat), lngAt = rat(tag.lng);
   v.setUint16(gpsOff, gpsCount, true);
-  const ch = (s: string) => [s.charCodeAt(0), 0, 0, 0];
-  entry(g, 0, 1, 4, 0, true, [2, 3, 0, 0]); g += 12; // GPSVersionID 2.3
-  entry(g, 1, 2, 2, 0, true, ch(tag.lat < 0 ? 'S' : 'N')); g += 12;
+  let g = gpsOff + 2;
+  entry(g, 0, 1, 4, 0, [2, 3, 0, 0]); g += 12; // GPSVersionID 2.3
+  entry(g, 1, 2, 2, 0, [tag.lat < 0 ? 0x53 : 0x4e, 0, 0, 0]); g += 12;
   entry(g, 2, 5, 3, latAt); g += 12;
-  entry(g, 3, 2, 2, 0, true, ch(tag.lng < 0 ? 'W' : 'E')); g += 12;
+  entry(g, 3, 2, 2, 0, [tag.lng < 0 ? 0x57 : 0x45, 0, 0, 0]); g += 12;
   entry(g, 4, 5, 3, lngAt); g += 12;
-  entry(g, 7, 5, 3, timeAt); g += 12;
-  entry(g, 0x1d, 2, 11, dateAt); g += 12;
   v.setUint32(g, 0, true);
+
+  if (exifCount) {
+    v.setUint16(exifOff, exifCount, true);
+    let x = exifOff + 2;
+    if (dto) { entry(x, TAG_DATETIME_ORIGINAL, 2, dto.length, put(dto)); x += 12; }
+    if (ofs) { entry(x, TAG_OFFSET_ORIGINAL, 2, ofs.length, put(ofs)); x += 12; }
+    v.setUint32(x, 0, true);
+  }
 
   // Drop an existing Exif APP1, keep everything else.
   const rest: Uint8Array[] = [];
@@ -210,8 +234,7 @@ export function writeExifGps(jpeg: Uint8Array, tag: GeoPoint & { at: Date }): Ui
   const app1 = new Uint8Array(2 + segLen);
   app1.set([0xff, 0xe1, segLen >> 8, segLen & 0xff, 0x45, 0x78, 0x69, 0x66, 0, 0]);
   app1.set(tiff, 10);
-  const total = 2 + app1.length + rest.reduce((n, r) => n + r.length, 0);
-  const out = new Uint8Array(total);
+  const out = new Uint8Array(2 + app1.length + rest.reduce((n, r) => n + r.length, 0));
   out.set([0xff, 0xd8]); let o = 2;
   out.set(app1, o); o += app1.length;
   for (const r of rest) { out.set(r, o); o += r.length; }
@@ -256,8 +279,8 @@ export const PROBLEM_TEXT: Record<EvidenceProblem, string> = {
   no_location: 'Turn on location.',
   stale_location: 'Location is old. Refresh it.',
   weak_location: `Location is not precise enough (needs ${MAX_ACCURACY_M} m or better).`,
-  no_photo_gps: 'Photo has no location tag.',
-  no_photo_time: 'Photo has no time tag.',
+  no_photo_gps: 'This photo has no location. Use a GPS camera app.',
+  no_photo_time: 'This photo has no date and time. Use a GPS camera app.',
   old_photo: `Photo is older than ${MAX_PHOTO_AGE_MIN} minutes.`,
   future_photo: 'Photo time is ahead of now.',
   too_far: `Photo was taken more than ${MAX_DISTANCE_M} m from you.`,

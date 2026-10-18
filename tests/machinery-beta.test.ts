@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import {
-  checkEvidence, distanceM, parseMachineSpeech, readExifGps, validateFields, writeExifGps,
+  checkEvidence, distanceM, parseMachineSpeech, readExifGps, readRawExif, validateFields, writeExifGps,
   MAX_DISTANCE_M, MAX_PHOTO_AGE_MIN,
 } from '../supabase/functions/_shared/machineryBeta';
 
@@ -17,6 +17,7 @@ describe('EXIF GPS reader', () => {
     expect(tags.lat).toBeCloseTo(28.4595, 6);
     expect(tags.lng).toBeCloseTo(77.0266, 6);
     expect(tags.takenAt).toBe('2026-10-18T12:35:00.000Z');
+    expect(readRawExif(fixture)).toMatchObject({ dateTimeOriginal: '2026:10:18 18:05:00', offsetTime: '+05:30' });
   });
 
   test('returns null when the photo has no EXIF', () => {
@@ -24,22 +25,39 @@ describe('EXIF GPS reader', () => {
     expect(readExifGps(new Uint8Array([1, 2, 3]))).toBeNull();
   });
 
-  test('little-endian writer round-trips position and UTC time, south and west', () => {
-    const at = new Date('2026-10-18T09:41:27Z');
-    const out = writeExifGps(bareJpeg, { lat: -33.8688, lng: -151.2093, at });
+  test('carries GPS, DateTimeOriginal and offset into a re-encoded JPEG, south and west', () => {
+    const raw = { lat: -33.8688, lng: -151.2093, dateTimeOriginal: '2026:10:18 09:41:27', offsetTime: '-03:00' };
+    const out = writeExifGps(bareJpeg, raw);
+    expect(readRawExif(out)!.dateTimeOriginal).toBe(raw.dateTimeOriginal);
     const tags = readExifGps(out)!;
     expect(tags.lat).toBeCloseTo(-33.8688, 5);
     expect(tags.lng).toBeCloseTo(-151.2093, 5);
-    expect(tags.takenAt).toBe(at.toISOString());
+    expect(tags.takenAt).toBe('2026-10-18T12:41:27.000Z');
     // The image data after the metadata is kept.
     expect(Array.from(out.slice(-8))).toEqual(Array.from(bareJpeg.slice(-8)));
   });
 
+  test('a photo read from a GPS camera app survives a rewrite unchanged', () => {
+    const raw = readRawExif(fixture)!;
+    const again = readRawExif(writeExifGps(bareJpeg, raw))!;
+    expect(again.lat).toBeCloseTo(raw.lat, 6);
+    expect(again.lng).toBeCloseTo(raw.lng, 6);
+    expect(again.dateTimeOriginal).toBe(raw.dateTimeOriginal);
+    expect(again.offsetTime).toBe(raw.offsetTime);
+  });
+
+  test('without an offset tag the device offset is used; without DateTimeOriginal there is no time', () => {
+    const noOffset = writeExifGps(bareJpeg, { lat: 19.076, lng: 72.8777, dateTimeOriginal: '2026:10:18 18:05:00', offsetTime: null });
+    expect(readExifGps(noOffset, 330)!.takenAt).toBe('2026-10-18T12:35:00.000Z');
+    expect(readExifGps(noOffset, null)!.takenAt).toBeNull();
+    const noTime = writeExifGps(bareJpeg, { lat: 19.076, lng: 72.8777, dateTimeOriginal: null, offsetTime: null });
+    expect(readExifGps(noTime, 330)).toMatchObject({ lat: expect.any(Number), takenAt: null });
+  });
+
   test('writer replaces an existing Exif block', () => {
-    const at = new Date('2026-10-18T10:00:00Z');
-    const tags = readExifGps(writeExifGps(fixture, { lat: 19.076, lng: 72.8777, at }))!;
+    const tags = readExifGps(writeExifGps(fixture, { lat: 19.076, lng: 72.8777, dateTimeOriginal: '2026:10:18 10:00:00', offsetTime: '+00:00' }))!;
     expect(tags.lat).toBeCloseTo(19.076, 5);
-    expect(tags.takenAt).toBe(at.toISOString());
+    expect(tags.takenAt).toBe('2026-10-18T10:00:00.000Z');
   });
 
   test('survives a truncated file', () => {

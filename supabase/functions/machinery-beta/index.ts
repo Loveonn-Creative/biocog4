@@ -2,16 +2,17 @@
 // writer of machinery_entries and the private machinery-photos bucket.
 // Switched off unless the MACHINERY_BETA_ENABLED secret is 'true'.
 //
-// save: needs a fresh, precise live location, a JPEG of the machine whose own
-// GPS tags put it within MAX_DISTANCE_M of that location and whose capture
-// time is within MAX_PHOTO_AGE_MIN, and a voice description. All checks run
-// again here from the photo's bytes (_shared/machineryBeta.ts). Entries are
+// save: needs a fresh, precise live location, a JPEG of the machine from a GPS
+// camera app (at most MAX_PHOTO_KB) whose EXIF GPS position is within
+// MAX_DISTANCE_M of that location and whose DateTimeOriginal is within
+// MAX_PHOTO_AGE_MIN, and a voice description. All checks run again here from
+// the photo's bytes (_shared/machineryBeta.ts). Entries are
 // stored Unverified and nothing here can change that.
 // list: the caller's own entries, without coordinates or photo paths.
 // Coordinates are never logged.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import {
-  checkEvidence, readExifGps, validateFields, MAX_ENTRIES_PER_DAY, MAX_PHOTO_BYTES, PROBLEM_TEXT, type LiveFix,
+  checkEvidence, readExifGps, validateFields, MAX_ENTRIES_PER_DAY, MAX_PHOTO_BYTES, MAX_PHOTO_KB, PROBLEM_TEXT, type LiveFix,
 } from '../_shared/machineryBeta.ts';
 
 const corsHeaders = {
@@ -23,7 +24,7 @@ const json = (body: unknown, status = 200) =>
 const MISSING = new Set(['42P01', 'PGRST205']);
 const NOT_OPEN = { error: 'This beta is closed.', code: 'not_open' };
 const BUCKET = 'machinery-photos';
-const GEO_SOURCES = new Set(['photo_exif', 'app_capture']);
+const TOO_BIG = { error: `Photo must be a JPEG under ${MAX_PHOTO_KB} KB.` };
 const PUBLIC_COLUMNS = 'id, machine_type, make_model, rated_power, power_unit, fuel, hours_per_day, distance_m, geo_source, status, created_at';
 
 function b64ToBytes(b64: string): Uint8Array | null {
@@ -60,18 +61,15 @@ Deno.serve(async (req) => {
     // ---- save ----
     const v = validateFields({ ...(body?.fields ?? {}), transcript: body?.transcript });
     if (!v.ok) return json({ error: v.error }, 400);
-    const geoSource = GEO_SOURCES.has(body?.geoSource) ? body.geoSource as string : null;
-    if (!geoSource) return json({ error: 'Take or choose a photo of the machine.' }, 400);
-
     const l = body?.live ?? {};
     const live: LiveFix | null = [l.lat, l.lng, l.accuracy].every((x) => typeof x === 'number') && typeof l.at === 'string'
       ? { lat: l.lat, lng: l.lng, accuracy: l.accuracy, at: l.at } : null;
 
-    if (typeof body?.photo !== 'string' || body.photo.length > Math.ceil(MAX_PHOTO_BYTES * 1.37) + 64) return json({ error: 'Photo must be a JPEG under 5 MB.' }, 400);
+    if (typeof body?.photo !== 'string' || !body.photo) return json({ error: 'Upload a photo of the machine.' }, 400);
+    if (body.photo.length > Math.ceil(MAX_PHOTO_BYTES * 4 / 3) + 64) return json(TOO_BIG, 413);
     const bytes = b64ToBytes(body.photo);
-    if (!bytes || bytes.length === 0 || bytes.length > MAX_PHOTO_BYTES || bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes[2] !== 0xff) {
-      return json({ error: 'Photo must be a JPEG under 5 MB.' }, 400);
-    }
+    if (bytes && bytes.length > MAX_PHOTO_BYTES) return json(TOO_BIG, 413);
+    if (!bytes || bytes.length < 4 || bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes[2] !== 0xff) return json({ error: 'Use a JPEG photo.' }, 400);
     const tz = Number(body?.tzOffsetMin);
     const tags = readExifGps(bytes, Number.isFinite(tz) && Math.abs(tz) <= 14 * 60 ? tz : null);
     const evidence = checkEvidence(tags, live, new Date());
@@ -85,7 +83,7 @@ Deno.serve(async (req) => {
     if (countError) return json({ error: 'Could not save. Try again.' }, 500);
     if ((count ?? 0) >= MAX_ENTRIES_PER_DAY) return json({ error: `Up to ${MAX_ENTRIES_PER_DAY} machines a day in the beta.` }, 429);
 
-    const sha = hex(await crypto.subtle.digest('SHA-256', bytes));
+    const sha = hex(await crypto.subtle.digest('SHA-256', new Uint8Array(bytes)));
     const path = `${user.id}/${crypto.randomUUID()}.jpg`;
     const { error: upError } = await admin.storage.from(BUCKET).upload(path, bytes, { contentType: 'image/jpeg', upsert: false });
     if (upError) { console.error('machinery-beta: photo upload failed'); return json({ error: 'Could not save the photo. Try again.' }, 500); }
@@ -96,7 +94,7 @@ Deno.serve(async (req) => {
       fuel: f.fuel, hours_per_day: f.hoursPerDay, voice_transcript: v.transcript,
       photo_path: path, photo_sha256: sha, photo_taken_at: tags.takenAt, photo_lat: tags.lat, photo_lng: tags.lng,
       live_lat: live.lat, live_lng: live.lng, live_accuracy_m: live.accuracy, live_at: live.at,
-      distance_m: evidence.distanceM, geo_source: geoSource,
+      distance_m: evidence.distanceM, geo_source: 'photo_exif',
     }).select(PUBLIC_COLUMNS).single();
     if (insError) {
       await admin.storage.from(BUCKET).remove([path]);

@@ -2,8 +2,9 @@
 -- PENDING (NOT APPLIED). Machinery beta (test only).
 -- Rollback: rollback/20261031100000_machinery_beta.rollback.sql
 --
--- A signed-in user adds a machine's details with live location on, a
--- geo-tagged photo of the machine taken now, and a voice description. The
+-- A signed-in user adds a machine's details with live location on, a photo
+-- of the machine from a GPS camera app (EXIF GPS position and DateTimeOriginal,
+-- taken in the last 30 minutes, at most 400 KB), and a voice description. The
 -- machinery-beta edge function (service role) repeats the location and photo
 -- checks and is the only writer. Purely additive: no existing table, policy or
 -- function changes, and these rows never enter emission totals.
@@ -36,7 +37,7 @@ CREATE TABLE public.machinery_entries (
   live_accuracy_m numeric NOT NULL CHECK (live_accuracy_m > 0),
   live_at timestamptz NOT NULL,
   distance_m numeric NOT NULL CHECK (distance_m >= 0),
-  geo_source text NOT NULL CHECK (geo_source IN ('photo_exif', 'app_capture')),
+  geo_source text NOT NULL DEFAULT 'photo_exif' CHECK (geo_source = 'photo_exif'),
   status text NOT NULL DEFAULT 'unverified' CHECK (status = 'unverified'),
   verification_source text CHECK (verification_source IS NULL),
   created_at timestamptz NOT NULL DEFAULT now(),
@@ -56,7 +57,7 @@ COMMENT ON TABLE public.machinery_entries IS 'Machinery beta (test only): machin
 
 -- Private bucket: no storage.objects policy, so only the service role reaches it.
 INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
-VALUES ('machinery-photos', 'machinery-photos', false, 5242880, ARRAY['image/jpeg'])
+VALUES ('machinery-photos', 'machinery-photos', false, 409600, ARRAY['image/jpeg'])
 ON CONFLICT (id) DO NOTHING;
 
 COMMIT;
