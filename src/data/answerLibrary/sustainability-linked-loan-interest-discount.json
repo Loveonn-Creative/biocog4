@@ -1,0 +1,73 @@
+{
+  "slug": "sustainability-linked-loan-interest-discount",
+  "q": "How much interest discount does a sustainability-linked loan give, and is it worth it for an MSME?",
+  "title": "Sustainability-linked loan interest discount",
+  "short": "There is no standard discount: the lender sets a margin step for each loan, and it is usually small. It is worth it for an MSME only when loan size times the step clearly exceeds the yearly cost of measuring, verifying and reporting the KPIs, or when you would measure anyway.",
+  "topic": "markets",
+  "intent": "decision",
+  "audience": "MSME CFOs offered sustainability-linked loans by banks",
+  "sections": [
+    {
+      "h": "How the margin step works",
+      "p": [
+        "Under the LMA, APLMA and LSTA Sustainability-Linked Loan Principles, the interest margin moves with performance against agreed targets. Meet the target for the year and the margin drops by the agreed step. Many loans are two-way: miss it and the margin rises. The Principles do not set the size of the step; it is negotiated. Indian MSME terms are not published in a way that gives a reliable benchmark, so treat any range you hear as indicative."
+      ]
+    },
+    {
+      "h": "The value in rupees",
+      "p": [
+        "Annual saving = outstanding loan x margin step. Ten basis points is 0.10 percent. On large loans this is meaningful; on small ones it can be smaller than the cost of the yearly verification. Work it out on the average balance over the year, not the sanctioned amount, if the loan amortises."
+      ]
+    },
+    {
+      "h": "Costs to set against it",
+      "ul": [
+        "Independent verification of performance against each target, which the Principles require where the result can change the margin. The 2025 edition no longer asks for a second check of data already verified in your public annual reporting.",
+        "Staff time to collect data and prepare the annual report to the lender.",
+        "The step-up if you miss the target on a two-way loan.",
+        "Any extra fees in the facility agreement."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Yes, if loan x step exceeds verification plus reporting cost by a clear margin, and the targets are within reach.",
+        "Yes, even if the saving is small, if a buyer or investor already requires you to measure and verify the same KPIs, because the cost is sunk.",
+        "Think twice if the targets depend on things you do not control, such as grid factor changes or an output fall.",
+        "No, if the step-up on a miss would hurt cash flow more than the discount helps."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two loan sizes at a 10 basis point step",
+    "lines": [
+      "Rs 10 crore x 0.10% = Rs 1,00,000 a year if targets are met",
+      "Rs 50 lakh x 0.10% = Rs 5,000 a year",
+      "If annual KPI verification costs Rs 75,000, the first loan nets Rs 25,000; the second loses Rs 70,000"
+    ],
+    "note": "The step and the verification cost are illustrative. Use the lender's term sheet and an actual verifier quote."
+  },
+  "senseible": "Senseible's bill-based records can supply KPI baselines and annual figures, such as Scope 1 and 2 emissions per unit of output, with the source documents attached. The yearly KPI verification the lender asks for is done by an external verifier.",
+  "links": [
+    {
+      "label": "Sustainability-linked loan KPI examples",
+      "to": "/answers/sustainability-linked-loan-kpi-examples"
+    },
+    {
+      "label": "Green Loan Principles explained",
+      "to": "/answers/green-loan-principles-explained"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "LMA, APLMA and LSTA Sustainability-Linked Loan Principles and Guidance (March 2025 edition)",
+      "url": "https://www.lma.eu.com"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Bank pricing for sustainability-linked loans changes with market conditions; use current term sheets."
+}

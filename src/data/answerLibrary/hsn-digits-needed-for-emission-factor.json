@@ -1,0 +1,78 @@
+{
+  "slug": "hsn-digits-needed-for-emission-factor",
+  "q": "How many HSN digits do I need to match an emission factor to an invoice line?",
+  "title": "HSN digits needed for an emission factor",
+  "short": "Four digits are usually enough to identify the material family, such as steel or aluminium, but often not the exact material, so read the description too. Six digits sometimes separate alloy from non-alloy or one polymer from another. Eight digits, the Indian tariff line, rarely add anything a factor depends on, such as recycled content.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Accountants and analysts mapping invoices to emission factors",
+  "sections": [
+    {
+      "h": "How many digits you will see on an invoice",
+      "p": [
+        "Under Notification 78/2020-Central Tax, from 1 April 2021, businesses with aggregate turnover up to Rs 5 crore must show at least 4-digit HSN on B2B invoices, and those above Rs 5 crore must show 6 digits on all invoices. Imports and exports use the 8-digit Indian tariff line from the Customs Tariff. So a domestic purchase from a small supplier will often show only 4 digits."
+      ]
+    },
+    {
+      "h": "What each level can tell you",
+      "ul": [
+        "2 digits, chapter: broad family, such as 72 iron and steel, 39 plastics, 76 aluminium. Not enough for a factor.",
+        "4 digits, heading: usually the material and form, such as 7208 hot-rolled flat steel or 3901 polyethylene in primary form. Enough for many material factors.",
+        "6 digits, subheading: the international HS level. Can separate HDPE from LDPE within 3901, or unalloyed from alloyed aluminium within 7601.",
+        "8 digits, Indian tariff item: finer trade detail, such as size or grade, that rarely changes the emission factor."
+      ]
+    },
+    {
+      "h": "Where no number of digits is enough",
+      "ul": [
+        "Primary versus recycled material: aluminium ingot under 7601 does not say whether it was smelted or remelted from scrap, and the factor can differ many times over. Ask the supplier.",
+        "Articles of mixed or unstated material: 3923 plastic packing articles and 3926 other plastic articles do not name the polymer.",
+        "Steel route: blast furnace and scrap-based electric furnace steel share the same codes.",
+        "Fuels: 2710 covers diesel, furnace oil and lubricants, which take different factors or none."
+      ],
+      "p": [
+        "In these cases the description, the unit and supplier information decide the factor. The code only narrows the shortlist."
+      ]
+    },
+    {
+      "h": "A practical rule",
+      "ol": [
+        "Use the code to choose the Scope 3 category and the material family.",
+        "Use the description to choose the exact material.",
+        "Check that the invoice unit matches the factor's unit, kg against kg or litre against litre.",
+        "If code and description together still do not identify the material, leave the line unmatched and ask, rather than guessing a factor."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three invoice lines",
+    "lines": [
+      "HSN 3901, 'LDPE granules', 2,000 kg: heading says polyethylene; description says LDPE; use an LDPE factor per kg",
+      "HSN 3923, 'poly bags', 500 kg: heading says plastic packing article, polymer unknown; ask the supplier or check the spec sheet",
+      "HSN 7601, 'aluminium alloy ingot', 1,000 kg: 6 digits would show alloy, but not primary or secondary; ask for the recycled share before choosing a factor"
+    ]
+  },
+  "senseible": "Senseible uses the HSN code first and checks the unit before matching a factor. A code too broad to identify the material leaves the line at Needs Data until the material is clear.",
+  "links": [
+    {
+      "label": "Mapping HSN codes to emission factors",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Can HSN codes be used for Scope 3?",
+      "to": "/answers/can-hsn-codes-be-used-for-scope-3"
+    },
+    {
+      "label": "Mapping an Indian HSN code to an EU CN code",
+      "to": "/answers/map-indian-hsn-code-to-eu-cn-code"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (material-specific factors)",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "HSN reporting rules on invoices and in GST returns have changed in phases; check the current CBIC notifications."
+}

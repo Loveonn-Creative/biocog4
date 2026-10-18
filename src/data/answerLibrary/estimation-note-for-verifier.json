@@ -1,0 +1,81 @@
+{
+  "slug": "estimation-note-for-verifier",
+  "q": "What should an estimation note say so a verifier accepts an estimated emission figure?",
+  "title": "Writing an estimation note for a verifier",
+  "short": "A verifier accepts an estimate when the note states what data is missing and why, the method used, every input and its source, the period, the estimate's share of the total, an uncertainty range, and who approved it. It should let someone else repeat the calculation and get the same number.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs filling data gaps with estimates before assurance",
+  "sections": [
+    {
+      "h": "The eight lines every note needs",
+      "ol": [
+        "Gap: which source, site and months are missing, and why (bill lost, meter faulty, supplier did not reply).",
+        "Effort to recover: what you tried, such as duplicate bills from the discom or the supplier's ledger.",
+        "Method: the approach, for example run hours times fuel rate, or the average of the months either side.",
+        "Inputs and sources: each number with the document it came from.",
+        "Calculation: the arithmetic, with the emission factor and its source.",
+        "Materiality: the estimate's share of the scope total and of the inventory.",
+        "Uncertainty: a low and high case, and what drives the range.",
+        "Approval: who prepared it, who approved it, and the date."
+      ]
+    },
+    {
+      "h": "What verifiers test",
+      "p": [
+        "Under ISO 14064-3 the verifier gathers evidence and checks that the method is reasonable, applied consistently and documented. They will re-perform the calculation, compare it with nearby actual months, and check that the inputs exist. An estimate with no stated basis is treated as an unsupported figure, and if large it can lead to a qualified opinion."
+      ]
+    },
+    {
+      "h": "Keeping estimates under control",
+      "ul": [
+        "Label estimated lines in the inventory itself, not only in the note.",
+        "Replace an estimate when the real document turns up, and record the change.",
+        "Use the same method for the same kind of gap every year.",
+        "Track the estimated share; if it grows, fix the data collection, not the note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two months of DG diesel with no invoices",
+    "lines": [
+      "Gap: August and September diesel invoices missing; DG run-hour log kept",
+      "Run hours: 310; fuel rate 18 litres per hour from the DG maker's sheet at the logged load",
+      "Estimate: 310 x 18 = 5,580 litres x 2.68 = 14,954 kg CO2",
+      "Range: 16 to 20 litres per hour gives 4,960 to 6,200 litres, so 13,293 to 16,616 kg CO2",
+      "Materiality: 14.95 t of a 120 t Scope 1 total = 12.5%",
+      "Approved by the plant head and the finance manager, with the date"
+    ],
+    "note": "Run hours, fuel rate and the Scope 1 total are illustrative."
+  },
+  "senseible": "Senseible labels figures by where they came from, such as read from a document, an estimate, or entered by you, so an estimation note can point to the exact lines. The note itself, and the choice of method, are yours.",
+  "links": [
+    {
+      "label": "Missing electricity bills",
+      "to": "/answers/missing-electricity-bills-carbon-footprint"
+    },
+    {
+      "label": "Filling gaps in Scope 3 data",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    },
+    {
+      "label": "Audit-grade carbon data",
+      "to": "/climate-intelligence/audit-grade-carbon-data-what-it-actually-means"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7, Managing inventory quality",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, Organisation-level GHG inventories",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "shrimp-farm-emissions-feed-and-aerators",
+  "q": "How much do feed and aerators add to the carbon footprint of farmed shrimp?",
+  "title": "Shrimp farm footprint: feed and aerators",
+  "short": "Feed adds the feed conversion ratio times the feed's footprint per kg, and aerators add kWh per kg of shrimp times 0.710 kg CO2, or diesel litres times 2.68 kg CO2. Take both from your own farm and feed mill records, not generic averages.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Shrimp exporters in Andhra Pradesh, Odisha and Gujarat answering buyer Scope 3 requests",
+  "sections": [
+    {
+      "h": "The feed part",
+      "p": [
+        "Feed per kg of shrimp is the feed conversion ratio (FCR): kg of feed given divided by kg of shrimp harvested. Multiply it by the feed's cradle-to-gate footprint per kg, which should come from the feed mill. Fishmeal, soy and other ingredients drive that figure, so ask the mill for a product footprint rather than a generic number.",
+        "A poor crop raises FCR. Mortality, overfeeding and disease mean more feed for each kg harvested, so the feed line moves with farm management, not only with the feed brand."
+      ]
+    },
+    {
+      "h": "The aerator part",
+      "p": [
+        "Aerator kWh per kg = number of aerators x kW each x hours run per day x days of culture / kg harvested. Paddle wheel aerators are usually rated in HP; 1 HP is 0.746 kW. Multiply by 0.710 kg CO2 per kWh for grid power. Where aerators run on diesel engines or a DG set, use litres x 2.68 kg CO2 per litre instead. Night and late-crop aeration is often the largest block of hours."
+      ]
+    },
+    {
+      "h": "What else sits in the farm stage",
+      "ul": [
+        "Seed from the hatchery, with its own power and feed.",
+        "Pumping for water exchange, and lime, minerals and probiotics.",
+        "Diesel for pumps and vehicles at the farm.",
+        "Ponds built on converted mangrove or farmland: land use change can be large and needs separate treatment under ISO 14067.",
+        "Pond sediment emissions: these are hard to measure, so state whether they are included."
+      ]
+    },
+    {
+      "h": "Getting farm data as an exporter",
+      "p": [
+        "Most exporters buy from many farms. Collect, per crop: kg harvested, kg of feed by brand, aerator count and rating with hours, kWh from the farm's bill, and diesel bought. Start with your largest suppliers by volume. Report the farm figure per kg of live shrimp at harvest, then convert to your product with the processing yield."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one crop on one farm (illustrative figures)",
+    "lines": [
+      "Harvest 8,000 kg; feed used 11,200 kg, so FCR = 11,200 / 8,000 = 1.4",
+      "Feed footprint from the mill: 1.5 kg CO2e per kg feed; feed per kg shrimp 1.4 x 1.5 = 2.1 kg CO2e",
+      "Aerators: 12 x 1.5 kW x 18 h x 100 days = 32,400 kWh; 32,400 / 8,000 = 4.05 kWh per kg",
+      "Aerator emissions per kg: 4.05 x 0.710 = 2.88 kg CO2",
+      "Feed plus aerators: 2.1 + 2.88 = 4.98 kg CO2e per kg live shrimp, before seed, pumping and processing"
+    ],
+    "note": "The feed factor, aerator rating and hours are illustrative. Use the feed mill's figure and the farm's own records."
+  },
+  "senseible": "Senseible reads feed purchase invoices into the Scope 3 evidence trail and electricity or diesel bills for aerators at 0.710 kg CO2 per kWh and 2.68 kg CO2 per litre. A farm-level footprint also needs the harvest and feed records the exporter collects from farms.",
+  "links": [
+    {
+      "label": "Shrimp processing footprint per kg",
+      "to": "/answers/shrimp-processing-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Using a supplier's product footprint",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Food processing industry",
+      "to": "/industries/food-processing"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

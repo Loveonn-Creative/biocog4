@@ -1,0 +1,82 @@
+{
+  "slug": "hsn-codes-for-refrigerant-gases",
+  "q": "Which HSN codes identify refrigerant gas purchases for Scope 1?",
+  "title": "HSN codes for refrigerant gases",
+  "short": "Single refrigerant gases such as R-32, R-134a and R-22 sit under HSN heading 2903. Blends such as R-404A and R-410A sit under heading 3827 since HS 2022, and under 3824 78 on older invoices. Read the gas name and net kg from the line too.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Factories and cold chains classifying refrigerant top-up invoices",
+  "sections": [
+    {
+      "h": "Headings that usually mean refrigerant",
+      "ul": [
+        "2903: halogenated hydrocarbons, the single gases. HFCs such as R-32 and R-134a, HFOs such as R-1234yf, and HCFCs such as R-22.",
+        "3827: mixtures of halogenated hydrocarbons, added in HS 2022. R-404A, R-407C, R-410A and R-507A fall here.",
+        "3824 78: where HFC blends were classed before HS 2022; older invoices and stock may still show it.",
+        "2814: ammonia (R-717). Not a GHG Protocol gas, so no Scope 1 entry.",
+        "2811: carbon dioxide (R-744). GWP of 1, so small amounts matter little."
+      ]
+    },
+    {
+      "h": "Lines that look like refrigerant but are not Scope 1",
+      "ul": [
+        "Propane (R-290) and isobutane (R-600a) can be billed under 2711, the same heading as LPG fuel. Read the description: refrigerant charge is not combustion.",
+        "Gas bought for stock or for a new installation's first charge is not leakage.",
+        "Gas recovered and returned to the supplier is not an emission.",
+        "R-22 and other HCFCs are reported outside the Scope 1 total, under the GHG Protocol's treatment of Montreal Protocol gases."
+      ]
+    },
+    {
+      "h": "When the gas hides in a service bill",
+      "p": [
+        "An AMC or repair invoice is billed under a service code (SAC heading 9987 for maintenance and repair), with the gas inside the job description. GST invoices often show only four or six digits too, which is not enough to tell one HFC from another. Ask the service provider to list the gas name and kilograms charged on every invoice. Without both, you cannot convert to CO2e."
+      ]
+    },
+    {
+      "h": "From the line to CO2e",
+      "p": [
+        "Multiply the net kilograms charged by the gas's 100-year GWP, using one IPCC report for the whole inventory, and state which one. For a blend, the GWP is the mass-weighted average of its components."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one service invoice",
+    "lines": [
+      "Line: R-410A, HSN 3827, 10 kg charged into split ACs",
+      "GWP (AR5): 0.5 x 677 + 0.5 x 3,170 = 1,923.5",
+      "10 x 1,923.5 = 19,235 kg CO2e, about 19.2 t CO2e in Scope 1"
+    ],
+    "note": "With AR6 values the same 10 kg is 10 x 2,255.5 = 22,555 kg CO2e. State the GWP set you used."
+  },
+  "senseible": "Senseible classifies invoice lines by HSN code first and reads the gas name and quantity printed on the line. A refrigerant figure needs the gas type and net kilograms to apply a GWP.",
+  "links": [
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "HSN codes for fuels",
+      "to": "/answers/hsn-codes-for-fuels-scope-1"
+    },
+    {
+      "label": "Does R-22 count in Scope 1?",
+      "to": "/answers/does-r22-count-in-scope-1"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IPCC AR5 WG1, Chapter 8, Appendix 8.A, Table 8.A.1 (GWP100)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "Ozone Cell, MoEFCC (HCFC phase-out and HFC phase-down in India)",
+      "url": "https://www.ozonecell.nic.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Customs tariff subheadings change with HS revisions; check the current First Schedule for 2903 and 3827."
+}

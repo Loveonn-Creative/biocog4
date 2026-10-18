@@ -1,0 +1,85 @@
+{
+  "slug": "thermic-fluid-heater-emissions-scope-1",
+  "q": "How do I calculate emissions from a thermic fluid heater?",
+  "title": "Thermic fluid heater emissions",
+  "short": "Calculate them from the fuel the heater burns, not from the hot oil it circulates: fuel quantity times the fuel's emission factor gives Scope 1 CO2. An electric thermic fluid heater has no Scope 1; its kWh go into Scope 2 at the grid factor.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Chemical, textile processing and food units using thermic fluid (hot oil) heaters",
+  "sections": [
+    {
+      "h": "Factors for the usual fuels",
+      "ul": [
+        "Coal: 2.42 kg CO2 per kg (IPCC 2006 based default; real coal varies by grade).",
+        "Furnace oil: 2.97 kg CO2 per litre.",
+        "PNG: 2.05 kg CO2 per standard cubic metre.",
+        "Diesel or LDO: 2.68 kg CO2 per litre for diesel.",
+        "Wood, briquettes or husk: the CO2 is biogenic and reported separately; only methane and nitrous oxide count in Scope 1."
+      ],
+      "p": [
+        "Take the quantity from fuel invoices, adjusted for stock at the start and end of the year."
+      ]
+    },
+    {
+      "h": "When the heater shares fuel with a boiler",
+      "p": [
+        "If one coal yard or one gas meter feeds both a steam boiler and a thermic fluid heater, the total Scope 1 is the same either way. Split it only if you need emissions per unit or per product. Use separate gas sub-meters, coal weighment per day, or the heat duty method below to share the fuel."
+      ]
+    },
+    {
+      "h": "Estimating fuel from heat duty",
+      "p": [
+        "Fuel used = heat delivered / (fuel calorific value x heater efficiency). Heat delivered is the heater's rated kcal per hour x average load x hours run. Use the gross calorific value on your coal test report or supplier bill, and a measured efficiency if you have one; thermic fluid heaters often run at about 75 to 85 percent. Treat the result as an estimate and reconcile it with purchases."
+      ]
+    },
+    {
+      "h": "What does not count as combustion",
+      "ul": [
+        "Thermic fluid top-ups: the oil is not burnt, so it adds no combustion emissions. It is a purchased material for Scope 3.",
+        "Spent thermic fluid sent for disposal: a hazardous waste stream for Scope 3, not Scope 1, unless you burn it on site.",
+        "Electricity for the circulation pumps: Scope 2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month for a coal-fired heater",
+    "lines": [
+      "Rating 10,00,000 kcal/h; average load 60%; 500 hours run",
+      "Heat delivered: 10,00,000 x 0.6 x 500 = 30,00,00,000 kcal",
+      "Coal GCV 4,000 kcal/kg, efficiency 75%: 30,00,00,000 / (4,000 x 0.75) = 1,00,000 kg coal",
+      "Scope 1: 1,00,000 x 2.42 = 2,42,000 kg CO2, about 242 t",
+      "Check: coal received minus stock change in the month should be close to 100 t"
+    ],
+    "note": "The calorific value and efficiency are illustrative. Use your coal test report and a measured efficiency; the coal invoices remain the primary evidence."
+  },
+  "senseible": "Senseible reads coal, wood, furnace oil, PNG and diesel invoices as Scope 1 at IPCC 2006 defaults, and electricity bills as Scope 2 for electric heaters. A heat duty estimate is your own working, kept beside those invoices.",
+  "links": [
+    {
+      "label": "Boiler efficiency: direct and indirect",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Coal vs PNG vs biomass boilers",
+      "to": "/answers/coal-vs-png-vs-biomass-boiler-emissions"
+    },
+    {
+      "label": "Coal emission factor",
+      "to": "/emission-factors/coal"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (stationary combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 2, Energy efficiency in thermal utilities (fuels, combustion, efficiency)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

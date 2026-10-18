@@ -1,0 +1,73 @@
+{
+  "slug": "sedex-smeta-environment-carbon-questions",
+  "q": "What carbon and energy evidence does a SMETA audit ask for under the environment pillar?",
+  "title": "SMETA environment pillar: carbon evidence",
+  "short": "In a 4-pillar SMETA audit, the auditor checks that you hold your environmental permits, have an environmental policy and someone responsible for it, and track energy, water, waste and emissions with records. For carbon, that means a year of electricity bills and fuel invoices, a Scope 1 and 2 total, and any targets or actions you claim.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Garment, home textile, food and handicraft exporters audited for UK and EU retailers",
+  "sections": [
+    {
+      "h": "How the environment pillar works",
+      "p": [
+        "SMETA is an audit methodology, not a certificate. A 2-pillar audit covers labour standards and health and safety; the 4-pillar version adds business ethics and environment. The auditor records findings against local law and the audit's measurement criteria, and the buyer reads the report on Sedex.",
+        "On environment, the auditor starts with legal compliance: Consent to Establish and Consent to Operate from the State Pollution Control Board, hazardous waste authorisation where needed, and groundwater or effluent permits. A missing or expired consent is a non-compliance, whatever your carbon data looks like."
+      ]
+    },
+    {
+      "h": "The energy and carbon records to have ready",
+      "ul": [
+        "Electricity bills for the last 12 months, with kWh, for every connection on site.",
+        "Diesel invoices and DG run logs, and boiler fuel invoices (coal, briquettes, PNG, LPG, furnace oil).",
+        "Any rooftop solar generation records, open access or green tariff invoices.",
+        "A Scope 1 and Scope 2 calculation with the factors and their sources, even a simple one.",
+        "Refrigerant top-up records for air conditioning and cold rooms."
+      ]
+    },
+    {
+      "h": "What makes the environment section stronger",
+      "ul": [
+        "A written environmental policy signed by management, with a named person responsible.",
+        "Monthly monitoring, not just a total at audit time, and someone who can explain the trend.",
+        "A target, such as kWh per piece or per kg, and the actions taken towards it with dates and invoices.",
+        "Records the auditor can trace from the reported total back to the bills."
+      ]
+    },
+    {
+      "h": "Where sites lose marks",
+      "ul": [
+        "Totals typed into a spreadsheet with no bills behind them.",
+        "DG diesel missing because it was bought in cash or by a contractor.",
+        "Energy figures for the main unit only, while a second building or a jobwork unit is left out.",
+        "Claims of renewable power with no generation meter reading or certificate."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads electricity bills and fuel invoices into Scope 1 and 2 records with a SHA-256 fingerprint and the factor on each line, which you can show the auditor as the trail behind your totals. The SMETA audit itself is run by Sedex-approved audit companies.",
+  "links": [
+    {
+      "label": "EcoVadis carbon questions and evidence",
+      "to": "/answers/ecovadis-carbon-questions-what-evidence"
+    },
+    {
+      "label": "Higg FEM energy and emissions data",
+      "to": "/answers/higg-fem-energy-and-emissions-data"
+    },
+    {
+      "label": "Documents needed for carbon verification",
+      "to": "/climate-intelligence/documents-needed-carbon-verification"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Consent to Establish and Consent to Operate under the Water and Air Acts, Central Pollution Control Board",
+      "url": "https://cpcb.nic.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Sedex published SMETA 7.0 with a revised 4-pillar environment assessment; confirm the current environment requirements in the SMETA methodology on sedex.com before the audit."
+}

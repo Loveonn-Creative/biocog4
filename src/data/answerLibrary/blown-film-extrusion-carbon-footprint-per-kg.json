@@ -1,0 +1,80 @@
+{
+  "slug": "blown-film-extrusion-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of blown film per kg?",
+  "title": "Blown film carbon footprint per kg",
+  "short": "Per kg of good film, multiply the resin bought per kg of good film by the resin's footprint, add extruder and plant electricity per kg at 0.710 kg CO2 per kWh, and add masterbatch, cores and packing. Resin is usually most of the total, so the resin factor and your scrap rate matter most.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Film extruders making packaging film for exporters and brands",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "kg CO2e per kg film = (resin kg per kg good film x resin factor) + (masterbatch and additives kg x their factors) + (kWh per kg good film x 0.710) + (fuel per kg x its factor) + packing and cores."
+      ]
+    },
+    {
+      "h": "Count resin bought, not resin in the roll",
+      "p": [
+        "Edge trim, start-up scrap and off-spec rolls all used resin. Divide total resin issued in the month by kg of good film dispatched.",
+        "Trim fed straight back into the extruder is not new resin, so it lowers the ratio. Scrap sold to a recycler leaves your product with no credit under the usual cut-off approach."
+      ]
+    },
+    {
+      "h": "Where the resin factor comes from",
+      "ul": [
+        "Best: a cradle-to-gate figure from the resin maker for the grade you buy.",
+        "Next: an industry eco-profile for that polymer, such as the PlasticsEurope eco-profiles for LDPE, LLDPE or HDPE, named with its year.",
+        "For recycled resin, use the recycler's figure and state the recycled share; do not assume zero."
+      ]
+    },
+    {
+      "h": "Getting kWh per kg right",
+      "p": [
+        "kWh per kg varies a lot by line, gauge and layer count. Use the line's energy meter, or the plant bill shared by machine hours if lines are not metered, and include chillers, air compressors and the corona treater.",
+        "Printing and lamination are separate steps. Add them as their own lines if the buyer asks for printed or laminated film."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month of LDPE film",
+    "lines": [
+      "Resin issued: 210,000 kg for 200,000 kg good film, so 1.05 kg per kg",
+      "Resin at an illustrative 1.8 kg CO2e per kg: 210,000 x 1.8 = 378,000 kg CO2e",
+      "Electricity: 120,000 kWh x 0.710 = 85,200 kg CO2",
+      "Total: 378,000 + 85,200 = 463,200 kg; per kg good film: 463,200 / 200,000 = 2.32 kg CO2e",
+      "Resin share: 378,000 / 463,200 = 82%"
+    ],
+    "note": "The resin factor is illustrative; replace it with your supplier's or an eco-profile figure for the grade."
+  },
+  "senseible": "Senseible reads the electricity bills and fuel invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps resin purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "ISO 14067 vs GHG Protocol Product Standard",
+      "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

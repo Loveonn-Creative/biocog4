@@ -1,0 +1,73 @@
+{
+  "slug": "pef-vs-iso-14067-for-eu-buyers",
+  "q": "My EU buyer asks for a PEF instead of an ISO 14067 footprint. What is the difference?",
+  "title": "PEF or ISO 14067: what is the difference?",
+  "short": "ISO 14067 measures one impact, climate change, in kg CO2e per unit, with some method choices left to you. A PEF, under Commission Recommendation (EU) 2021/2279, measures 16 environmental impacts with fixed rules, set datasets and product-specific category rules. A PEF needs much more data, but your ISO 14067 work feeds its climate indicator.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Textile, footwear, food and packaging exporters to the EU",
+  "sections": [
+    {
+      "h": "Side by side",
+      "ul": [
+        "Scope: ISO 14067 covers climate change only. PEF covers 16 impact categories, including water use, land use, acidification, eutrophication, particulate matter and resource use.",
+        "Rules: ISO 14067 sets principles and lets you choose allocation and data within them. PEF fixes most choices, and a Product Environmental Footprint Category Rule (PEFCR) for your product group fixes more.",
+        "Data: ISO 14067 accepts any documented dataset. PEF expects EF-compliant secondary datasets and scores data quality with a set formula.",
+        "Recycling: PEF uses its Circular Footprint Formula; ISO 14067 leaves the end-of-life method to you or the product rule.",
+        "Output: ISO 14067 gives one number in kg CO2e. PEF gives 16 results, which can be normalised and weighted into a single score."
+      ]
+    },
+    {
+      "h": "Why an EU buyer may ask for PEF",
+      "p": [
+        "The EU has built PEF as its common method for environmental footprints, and the Ecodesign for Sustainable Products Regulation, (EU) 2024/1781, can require footprint information through product-specific delegated acts. Brands that sell in many EU countries want one method that will hold up. Some buyers say PEF when they only need the climate indicator, so ask which indicators they actually need."
+      ]
+    },
+    {
+      "h": "Check whether a PEFCR exists for your product",
+      "p": [
+        "A full PEF for a product group with no published PEFCR leaves many choices open, which defeats its purpose. Ask the buyer which PEFCR they want you to follow, and its version. If it is still a draft, agree in writing which version applies."
+      ]
+    },
+    {
+      "h": "How to get from ISO 14067 to PEF",
+      "ol": [
+        "Keep your ISO 14067 activity data: materials, energy, transport and waste per unit.",
+        "Map each input to an EF-compliant dataset and rerun with the PEF characterisation factors; climate change will be close to, but not always equal to, your ISO 14067 result, and is split into fossil, biogenic and land use parts.",
+        "Add the data for the other 15 impacts, such as water use at your dyeing or processing stage.",
+        "Apply the PEFCR's allocation, cut-off and Circular Footprint Formula rules."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the activity data behind a footprint, such as fuel, electricity and freight from invoices. It does not run a 16-impact PEF study.",
+  "links": [
+    {
+      "label": "LCA vs product carbon footprint",
+      "to": "/answers/lca-vs-product-carbon-footprint"
+    },
+    {
+      "label": "What goes in an ISO 14067 report",
+      "to": "/answers/what-goes-in-an-iso-14067-report"
+    },
+    {
+      "label": "Digital product passports for textiles",
+      "to": "/climate-intelligence/digital-product-passport-textile-exporters"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2024/1781, Ecodesign for Sustainable Products, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "PEFCRs for apparel, footwear and other groups and the ESPR delegated acts are still being developed; check their status for your product."
+}

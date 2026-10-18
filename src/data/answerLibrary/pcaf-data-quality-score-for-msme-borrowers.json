@@ -1,0 +1,54 @@
+{
+  "slug": "pcaf-data-quality-score-for-msme-borrowers",
+  "q": "Why does my bank want my own emissions figure, and how does it change its PCAF data quality score?",
+  "title": "Your emissions and your bank's PCAF score",
+  "short": "Your bank has to estimate the emissions of its loans, and the PCAF standard scores that estimate from 1 (best) to 5. Without your data it guesses from your sector and revenue, which scores 4 or 5. Your own figure from energy bills moves your loan to score 2, and verified emissions to score 1.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME borrowers asked by banks and NBFCs for emissions data",
+  "sections": [
+    {
+      "h": "Why the bank is counting your emissions",
+      "p": [
+        "Lenders measure financed emissions: their share of each borrower's emissions, usually the loan amount divided by the borrower's total equity and debt, times the borrower's emissions. Banks that report climate risk, or that have set targets for their loan book, need a number for every borrower. Most use the PCAF Global GHG Accounting and Reporting Standard to do it."
+      ]
+    },
+    {
+      "h": "The score ladder for business loans",
+      "ul": [
+        "Score 1: emissions reported by the borrower and verified by a third party.",
+        "Score 2: emissions reported by the borrower but not verified, or calculated from the borrower's own energy use with matching emission factors.",
+        "Score 3: calculated from the borrower's production volume with a factor per unit of output.",
+        "Score 4: estimated from the borrower's revenue with a sector factor per rupee of revenue.",
+        "Score 5: estimated from the loan or asset amount with a sector factor, when even revenue is not known."
+      ]
+    },
+    {
+      "h": "What it means for you",
+      "ul": [
+        "Sector averages often overstate a well-run plant. Your own figure replaces a guess with your actual fuel and power use.",
+        "A bank improving its average score will find it easier to lend to borrowers who give data, and green loan products usually need it anyway.",
+        "Your figure must be traceable. Expect questions on boundary, period and emission factors, and keep the bills.",
+        "If you later get your inventory verified, tell the bank: it moves your loan from score 2 to score 1."
+      ]
+    },
+    {
+      "h": "What regulators are asking of Indian lenders",
+      "p": [
+        "The Reserve Bank of India issued a draft Disclosure framework on climate-related financial risks in February 2024, and in November 2025 it issued Climate Finance and Management of Climate Change Risks Directions for commercial banks. Check rbi.org.in for whether and from when your lender must disclose financed emissions. Banks that have started measuring already ask borrowers directly rather than relying on sector estimates."
+      ]
+    }
+  ],
+  "senseible": "Senseible produces your Scope 1 and 2 from fuel and electricity bills with the source files kept, which a lender would treat as reported data from your own energy use. Its Verified status means rule checks passed; it is not third-party verification.",
+  "links": [
+    { "label": "Financed emissions at Indian banks", "to": "/climate-intelligence/financed-emissions-banks-india" },
+    { "label": "Green loan readiness check", "to": "/green-loan-check" },
+    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-emissions" }
+  ],
+  "sources": [
+    { "label": "PCAF Global GHG Accounting and Reporting Standard, Part A Financed Emissions, 3rd edition (December 2025; business loan score tables as in the 2nd edition, December 2022)", "url": "https://carbonaccountingfinancials.com" },
+    { "label": "RBI draft Disclosure framework on Climate-related Financial Risks (February 2024) and Commercial Banks, Climate Finance and Management of Climate Change Risks Directions, 2025", "url": "https://www.rbi.org.in" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "RBI issued the climate disclosure framework as a draft in February 2024 and climate finance and risk directions for commercial banks in November 2025; check rbi.org.in for final disclosure rules, financed emissions requirements and timelines. Re-check the PCAF score table if a new edition changes it."
+}

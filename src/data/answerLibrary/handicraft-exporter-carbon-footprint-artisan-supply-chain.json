@@ -1,0 +1,70 @@
+{
+  "slug": "handicraft-exporter-carbon-footprint-artisan-supply-chain",
+  "q": "How does a handicraft exporter estimate a carbon footprint when products are made by home-based artisans?",
+  "title": "Handicraft footprint with artisan makers",
+  "short": "Sample a few artisan workshops for each product type, record the fuel, power and materials they use per piece, and apply that average to the pieces you buy. Add your own workshop, packaging and freight from your bills. Label the artisan share as a sampled estimate and say how many units you visited.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Handicraft exporters sourcing from artisan clusters (terracotta, textiles, wood, metal)",
+  "sections": [
+    {
+      "h": "Where the emissions sit",
+      "ul": [
+        "Artisan production you buy is your Scope 3 Category 1, purchased goods. It is the artisan's own Scope 1 and 2.",
+        "Your finishing unit, warehouse and office are your Scope 1 and 2, from your own bills.",
+        "Freight from cluster to your unit and on to the port is Scope 3 Category 4 if you pay for it.",
+        "Raw material you supply to artisans on job work, such as brass, yarn or timber, is your purchase too; count it once."
+      ]
+    },
+    {
+      "h": "How to sample when there are no bills",
+      "ol": [
+        "Group products by process: kiln-fired, metal cast and polished, hand-woven, carved.",
+        "Visit a few workshops in each group, picked to cover small and large makers.",
+        "Over a normal week, note fuel used (firewood kg, LPG cylinders, charcoal), electricity if metered, and pieces made.",
+        "Work out fuel and kWh per piece for each workshop, then average across the sample.",
+        "Repeat each year or when the cluster changes fuel, for example from wood kilns to gas kilns."
+      ]
+    },
+    {
+      "h": "Fuels artisans use",
+      "ul": [
+        "LPG for brazing, soldering and gas kilns: kg x 2.98 kg CO2.",
+        "Grid power for polishing motors and lights: kWh x 0.710 kg CO2.",
+        "Firewood and dung cakes in pottery kilns: the CO2 is biogenic and reported separately; CH4 and N2O from burning still count in CO2e.",
+        "Coal in some metal clusters: kg x 2.42 kg CO2."
+      ]
+    },
+    {
+      "h": "What to tell the buyer",
+      "p": [
+        "Give the per piece figure with three notes: which part is measured from your bills, which part is a sampled estimate and from how many workshops, and which materials factors you used. A buyer can work with an honest estimate; they cannot use a figure with no method behind it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: brass decor pieces from a metal cluster",
+    "lines": [
+      "Sampled 6 workshops: average LPG 0.08 kg per piece x 2.98 = 0.2384 kg CO2",
+      "Average polishing power: 0.25 kWh per piece x 0.710 = 0.1775 kg CO2",
+      "Artisan energy per piece: 0.2384 + 0.1775 = 0.4159 kg CO2",
+      "Pieces bought in the year: 10,000",
+      "Artisan energy total: 10,000 x 0.4159 = 4,159 kg CO2, about 4.2 t",
+      "Add brass by weight x a metal factor, packaging and freight"
+    ],
+    "note": "Per piece values are illustrative. Label the artisan share as a sampled estimate and keep the visit records."
+  },
+  "senseible": "Senseible reads your own invoices and the supplier bills that exist, and keeps purchases in a Scope 3 evidence trail. Artisan estimates from your sampling are entered by you and labelled as such.",
+  "links": [
+    { "label": "Scope 3 data as a small supplier", "to": "/answers/small-vendor-scope-3" },
+    { "label": "Biomass fuel and biogenic CO2", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "Scope 3 supplier evidence", "to": "/scope-3-supplier-evidence" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Chapter 7, collecting data", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-18"
+}

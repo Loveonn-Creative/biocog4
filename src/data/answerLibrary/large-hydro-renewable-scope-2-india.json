@@ -1,0 +1,84 @@
+{
+  "slug": "large-hydro-renewable-scope-2-india",
+  "q": "Does large hydro power count as renewable for Scope 2 and RE100 in India?",
+  "title": "Does large hydro count as renewable in India?",
+  "short": "Yes for Indian policy: since the Ministry of Power order of 8 March 2019, hydro plants above 25 MW are renewable energy. For Scope 2 it only matters in the market-based figure, and only if you hold the contract or certificate for that hydro power. RE100 accepts hydro, subject to its own plant and claim tests.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories in hydro-heavy states or buying hydro power through open access",
+  "sections": [
+    {
+      "h": "What the 2019 order changed",
+      "p": [
+        "Before March 2019 only hydro plants up to 25 MW counted as renewable in India. The Ministry of Power order of 8 March 2019 declared large hydro projects renewable as well and created a separate hydro purchase obligation for discoms within the non-solar renewable purchase obligation, for large hydro commissioned after the order.",
+        "That makes large hydro count towards Indian renewable obligations. It does not, by itself, change how a company reports its own electricity emissions."
+      ]
+    },
+    {
+      "h": "A hydro-heavy state does not lower location-based Scope 2",
+      "p": [
+        "Location-based Scope 2 uses the average factor of the grid you draw from. In India that is the national grid factor in the CEA CO2 Baseline Database, currently 0.710 kg CO2 per kWh in version 21.0. A factory in Himachal Pradesh or Uttarakhand uses the same factor as one in Gujarat, because the state's hydro output flows into one national grid and is already inside the average.",
+        "Do not build your own state factor from the state's generation mix and report it as location-based. An auditor will ask where the factor was published."
+      ]
+    },
+    {
+      "h": "When hydro power gives you a lower market-based figure",
+      "ul": [
+        "You buy hydro power through green energy open access and the discom or trader allocates those units to you on the bill or settlement statement.",
+        "You hold certificates, such as RECs or I-RECs, issued for hydro generation and retired in your name for the reporting year.",
+        "You are on a discom green tariff whose supply mix is backed by renewable attributes, including hydro.",
+        "In each case the units must not also be claimed by someone else, for example the discom counting them towards its own obligation and selling the same attribute again."
+      ],
+      "p": [
+        "Without one of these instruments, buying from a state where hydro is common gives you no market-based claim."
+      ]
+    },
+    {
+      "h": "RE100: extra checks for hydro",
+      "p": [
+        "RE100 lists hydropower among eligible technologies, so large hydro is not excluded as a class. Its technical criteria add tests that hydro claims often fail: the plant's commissioning or repowering date must fall within a set age limit for most purchases, the certificate must be retired for your consumption in the same market, and members are expected to consider the sustainability of large projects. Many large Indian hydro stations were built decades ago, so check the plant age before you sign."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100,000 kWh of open access hydro",
+    "lines": [
+      "Units consumed in the year: 100,000 kWh, all allocated as hydro open access units on the settlement statement",
+      "Location-based: 100,000 x 0.710 kg CO2 per kWh (CEA version 21.0) = 71,000 kg CO2, 71 tonnes",
+      "Market-based: 100,000 kWh backed by the hydro allocation x 0 = 0 kg CO2",
+      "Report both figures; the location-based 71 tonnes does not change because the power was hydro"
+    ],
+    "note": "If only 60,000 kWh were allocated as hydro, the other 40,000 kWh take the residual or grid factor in the market-based figure."
+  },
+  "senseible": "Senseible's location-based Scope 2 applies the CEA grid factor, 0.710 kg CO2 per kWh (version 21.0), to the kWh on your bills whatever your state's hydro share. A lower market-based figure needs the open access allocation or certificate data for the hydro units.",
+  "links": [
+    {
+      "label": "Do RE100 and CDP accept Indian RECs?",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Open access green power on your bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Ministry of Power order of 8 March 2019 on measures to promote hydro power (large hydro declared renewable)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "RE100's technical criteria, including the plant age limit and its expectations for large hydro, are revised from time to time; check the current edition before making a claim."
+}

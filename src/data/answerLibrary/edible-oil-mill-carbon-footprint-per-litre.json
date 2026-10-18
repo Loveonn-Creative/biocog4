@@ -1,0 +1,81 @@
+{
+  "slug": "edible-oil-mill-carbon-footprint-per-litre",
+  "q": "How do I calculate the carbon footprint per litre of refined edible oil?",
+  "title": "Carbon footprint per litre of edible oil",
+  "short": "Work per kg first, then convert. Add the seed or crude oil's upstream footprint, your boiler fuel and electricity for extraction and refining, and purchased inputs, all per kg of refined oil. Allocate shared emissions between oil and de-oiled cake, then multiply by the oil's density, about 0.91 to 0.92 kg per litre.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Solvent extraction plants, refiners and food brands buying from them",
+  "sections": [
+    {
+      "h": "Start from what you buy",
+      "p": [
+        "For a refiner the largest part is usually the crude oil itself; for an integrated mill it is the seed. Ask the supplier for a cradle-to-gate figure per kg. Without one, use a published dataset and say which, including whether it counts land use change. For imported palm and soy oil, land use change can be larger than everything else, and datasets disagree widely, so name the dataset and its year."
+      ]
+    },
+    {
+      "h": "Your plant: extraction and refining",
+      "ul": [
+        "Boiler fuel for steam used in solvent extraction, desolventising, deodorisation and physical refining. Coal, furnace oil and PNG take their combustion factors; rice husk or other biomass CO2 is reported as biogenic.",
+        "Electricity for expellers, pumps, vacuum systems and filling.",
+        "Hexane make-up, bleaching earth, activated carbon and acids as purchased inputs with upstream factors.",
+        "Refining loss: if 1.03 kg of crude oil gives 1 kg of refined oil, count 1.03 kg of crude."
+      ]
+    },
+    {
+      "h": "Splitting emissions between oil and cake",
+      "p": [
+        "Extraction makes oil and de-oiled cake from the same seed. Shared emissions up to that split are allocated. Economic allocation uses each product's share of sales value; mass allocation uses each product's share of weight. The choice changes the result a lot, so state it and keep it the same every year.",
+        "Example of the difference: 1 tonne of seed gives 180 kg oil worth Rs 100 per kg (Rs 18,000) and 800 kg cake worth Rs 35 per kg (Rs 28,000). Economic share for oil: 18,000 / 46,000 = 39.1 percent. Mass share: 180 / 980 = 18.4 percent. Prices and yields here are illustrative. Refining steps after the split belong to the oil alone."
+      ]
+    },
+    {
+      "h": "From per kg to per litre",
+      "p": [
+        "Edible oils weigh about 0.91 to 0.92 kg per litre at room temperature. Use the density on your product specification and state the temperature basis. Report packaging, such as PET bottles, tins or pouches, as a separate line per pack so the buyer can compare bulk and packed oil."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a refiner buying crude soybean oil",
+    "lines": [
+      "Crude oil: 1,030 kg per tonne refined x 2.0 kg CO2e per kg (illustrative supplier figure) = 2,060 kg CO2e",
+      "Coal for steam: 60 kg x 2.42 kg CO2 per kg (IPCC 2006 default) = 145.2 kg CO2",
+      "Electricity: 50 kWh x 0.710 kg CO2 per kWh = 35.5 kg CO2",
+      "Total per tonne refined oil: 2,060 + 145.2 + 35.5 = 2,240.7 kg CO2e, so 2.241 kg CO2e per kg",
+      "Per litre at 0.915 kg per litre: 2.2407 x 0.915 = 2.05 kg CO2e per litre, before packaging"
+    ],
+    "note": "Coal and power quantities are illustrative. Add bleaching earth, hexane and packaging with their own factors when you have them."
+  },
+  "senseible": "Senseible reads the boiler fuel, electricity and freight invoices behind the plant stage, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps crude oil and seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Land use change factors for imported palm and soy oil differ between datasets and are revised; cite the dataset and year you use."
+}

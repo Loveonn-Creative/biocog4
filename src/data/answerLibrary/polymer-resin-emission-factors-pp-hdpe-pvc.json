@@ -1,0 +1,84 @@
+{
+  "slug": "polymer-resin-emission-factors-pp-hdpe-pvc",
+  "q": "What emission factor should I use for purchased PP, HDPE and PVC resin in Scope 3?",
+  "title": "Emission factors for PP, HDPE and PVC resin",
+  "short": "Use your resin supplier's cradle-to-gate product footprint for the exact grade first. If you do not have one, use a published industry-average eco-profile for that polymer as a labelled proxy, and cite its edition and region. Never mix virgin and recycled resin factors.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Plastic moulders, film and pipe makers reporting Category 1",
+  "sections": [
+    {
+      "h": "The order of preference",
+      "ol": [
+        "Supplier-specific: a cradle-to-gate footprint from the polymer producer for the grade you buy, with its year and method.",
+        "Product-specific database value for the same polymer and region, with the dataset name and edition.",
+        "Industry-average eco-profile from another region, labelled as a proxy.",
+        "Spend-based estimate, only when you have no quantities, labelled with wider uncertainty."
+      ],
+      "p": [
+        "The GHG Protocol Scope 3 Standard prefers supplier-specific data for Category 1 and asks you to describe the data quality of every factor you use."
+      ]
+    },
+    {
+      "h": "Why a European figure is only a proxy",
+      "p": [
+        "Most widely used polymer eco-profiles describe European production. Indian polymers are made from different feedstocks and on a grid with a different factor, and PVC needs chlorine, made by electrolysis, so its figure moves with the electricity behind it. Use a European profile when nothing better exists, take the cradle-to-gate GWP per kg from the current PlasticsEurope eco-profile report for that exact polymer, write the edition year, and mark it as a proxy for Indian resin."
+      ]
+    },
+    {
+      "h": "Finding resin lines in your purchases",
+      "ul": [
+        "HSN 3901: polymers of ethylene in primary forms; HDPE is 3901 20.",
+        "HSN 3902: polymers of propylene; PP is 3902 10.",
+        "HSN 3904: polymers of vinyl chloride; PVC is 3904 10.",
+        "Masterbatch, additives and recycled granules sit under other codes or descriptions; give them their own factors."
+      ]
+    },
+    {
+      "h": "Checks before you apply a factor",
+      "ul": [
+        "Units: kg CO2e per kg of resin, cradle-to-gate. Do not use a figure that includes end of life.",
+        "Quantity: resin bought in the year for Category 1, not resin used in production.",
+        "Recycled resin: use a recycled-content factor only with evidence of the recycled share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a moulder's annual resin purchases (illustrative inputs)",
+    "lines": [
+      "PP 100 t at an illustrative proxy of 1.6 kg CO2e/kg = 160 t CO2e",
+      "HDPE 50 t at an illustrative proxy of 1.8 kg CO2e/kg = 90 t CO2e",
+      "PVC 30 t at an illustrative proxy of 2.0 kg CO2e/kg = 60 t CO2e",
+      "Category 1 resin total: 160 + 90 + 60 = 310 t CO2e, all proxy-based",
+      "If the PP supplier provides 1.4 kg CO2e/kg: 140 + 90 + 60 = 290 t CO2e, with 48% of the total now supplier-specific"
+    ],
+    "note": "All four factors are illustrative inputs to show the arithmetic, not quoted eco-profile values. Replace them with the figures from the edition you cite or your supplier's footprint."
+  },
+  "senseible": "Senseible classifies resin purchase lines by HSN chapter 39 into the Scope 3 evidence trail, with quantities and suppliers. A figure needs a factor you approve for that material, a supplier footprint, or a labelled spend-based estimate.",
+  "links": [
+    {
+      "label": "Injection moulding footprint per kg",
+      "to": "/answers/injection-moulding-carbon-footprint-per-kg"
+    },
+    {
+      "label": "No emission factor for a material",
+      "to": "/answers/no-emission-factor-for-material"
+    },
+    {
+      "label": "Recycled content in a product footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (data quality)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Eco-profile editions are revised every few years; check the current PlasticsEurope eco-profile for PP, HDPE and PVC, cite its edition, and look for an Indian producer footprint."
+}

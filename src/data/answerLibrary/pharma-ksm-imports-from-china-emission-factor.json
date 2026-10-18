@@ -1,0 +1,84 @@
+{
+  "slug": "pharma-ksm-imports-from-china-emission-factor",
+  "q": "What emission factor should I use for key starting materials imported from China?",
+  "title": "Emission factors for KSMs imported from China",
+  "short": "Ask the Chinese supplier for a cradle-to-gate product footprint per kg of each key starting material. Where none exists, use a China-specific chemical dataset for that molecule or a close proxy, and only then a labelled spend-based estimate. Count freight you pay for in Category 4.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Indian API makers reporting Scope 3 Category 1 for PSCI, CDP or EU buyers",
+  "sections": [
+    {
+      "h": "What to ask the supplier for",
+      "ul": [
+        "kg CO2e per kg of the KSM or intermediate, cradle-to-gate, with the year it covers.",
+        "The method: ISO 14067, the GHG Protocol Product Standard or the TfS PCF Guideline for chemicals.",
+        "How they allocated the plant's emissions to your product, and whether solvent recovery and waste treatment are included.",
+        "The electricity basis: the Chinese grid factor and its year, or renewable instruments for market-based figures.",
+        "Whether anyone reviewed the figure."
+      ],
+      "p": [
+        "A one-line figure with no method is weak evidence. A figure with these five answers can be used and compared year to year."
+      ]
+    },
+    {
+      "h": "When the supplier cannot give a figure",
+      "ol": [
+        "Look for a dataset value for the same molecule produced in China, from a life cycle database you can name and cite.",
+        "If the molecule is not covered, use a documented proxy: a chemical with similar synthesis steps and energy use, labelled as a proxy.",
+        "If you have only rupee values from the bill of entry, use a spend-based estimate after removing customs duty and IGST, labelled with its wider uncertainty."
+      ],
+      "p": [
+        "Do not use an Indian or European factor for Chinese production without saying so. The grid behind the plant and the route chosen can change the figure a lot."
+      ]
+    },
+    {
+      "h": "Freight from China",
+      "p": [
+        "Sea or air freight that you pay for, under FOB or EXW terms, goes in Category 4 as a separate line: tonne-km by mode times a mode factor. Air freight per tonne-km is many times higher than sea, so a few urgent air shipments can show up clearly. Under CIF or DDP terms the supplier arranged it; record it in Category 4 if you can estimate it, and say how."
+      ]
+    },
+    {
+      "h": "Prioritise by weight and value",
+      "p": [
+        "Rank your KSMs and intermediates by kg bought and by the estimated footprint. Chase supplier figures for the few that make up most of the total, and accept proxies for the rest. Report the share of Category 1 that is supplier-specific; buyers asking through PSCI or CDP often look for that number rising each year."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two imported KSMs (illustrative figures)",
+    "lines": [
+      "KSM A: 20 t with a supplier footprint of 12 kg CO2e/kg = 20,000 x 12 = 2,40,000 kg CO2e",
+      "KSM B: 5 t, no supplier figure; documented proxy of 8 kg CO2e/kg = 5,000 x 8 = 40,000 kg CO2e",
+      "Category 1 from these lines: 2,40,000 + 40,000 = 2,80,000 kg CO2e, about 280 t",
+      "Supplier-specific share: 240 / 280 = 86%"
+    ],
+    "note": "Both factors are illustrative. Record the source, method and year next to each figure."
+  },
+  "senseible": "Senseible reads bills of entry and supplier invoices into the Scope 3 evidence trail with quantities, values and suppliers. A figure needs a supplier footprint, a factor you approve for the material, or a spend-based estimate labelled as spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "API carbon footprint per kg",
+      "to": "/answers/api-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Bills of entry for imported materials",
+      "to": "/answers/bill-of-entry-imported-materials-scope-3"
+    },
+    {
+      "label": "PSCI questionnaire for pharma suppliers",
+      "to": "/answers/psci-questionnaire-pharma-supplier-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 1 and 4",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "China's national grid factor is revised periodically; check which year the supplier used."
+}

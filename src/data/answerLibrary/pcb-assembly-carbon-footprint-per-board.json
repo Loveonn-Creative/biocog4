@@ -1,0 +1,81 @@
+{
+  "slug": "pcb-assembly-carbon-footprint-per-board",
+  "q": "How do I calculate the carbon footprint of an assembled PCB for an electronics buyer?",
+  "title": "Carbon footprint of an assembled PCB",
+  "short": "Add three parts per board: the components, where integrated circuits usually dominate, from supplier data or a licensed database; the bare board by area and layer count; and your assembly energy, plant kWh and DG diesel per board times their factors. Assembly is usually a small share, so component data decides the result.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Indian EMS and PCB assembly firms supplying global electronics brands",
+  "sections": [
+    {
+      "h": "Components: the bill of materials does most of the work",
+      "p": [
+        "Take the bill of materials with part numbers and quantities. Integrated circuits, memory and large passive parts carry most of the footprint, mainly from wafer fabrication. Ask the component makers for product carbon data first. Where they have none, use a life cycle database and record its name and version.",
+        "Database licences often stop you publishing their figures line by line. Share the total per board and the method, and check the licence before sending component-level numbers to a buyer."
+      ]
+    },
+    {
+      "h": "Bare board",
+      "p": [
+        "Bare board emissions scale with area, layer count and copper weight. Get the figure from your board supplier per square metre for that build, or use a database value for the layer count, and multiply by the panel area per board including the panel waste that is cut away."
+      ]
+    },
+    {
+      "h": "Your assembly energy",
+      "ul": [
+        "Electricity for SMT lines, reflow and wave soldering ovens, AOI, testing, air conditioning and clean rooms, from the bills.",
+        "DG diesel during outages, from the fuel invoices or logbook.",
+        "Nitrogen for reflow: on-site generation is already inside your electricity; liquid nitrogen bought in carries its own upstream factor.",
+        "Divide by boards produced in the same period, or allocate by line-hours if products differ a lot in size."
+      ]
+    },
+    {
+      "h": "What the buyer usually wants",
+      "p": [
+        "Electronics brands generally ask for kg CO2e per board, cradle to your gate, with the share from components, bare board and assembly shown separately, plus the data source for each. A materials declaration in the IPC-1752A format answers a different question, substances and mass, but the same bill of materials feeds both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one board, a month of production",
+    "lines": [
+      "Boards produced: 400,000",
+      "Electricity: 120,000 kWh / 400,000 = 0.30 kWh per board x 0.710 = 0.213 kg CO2",
+      "DG diesel: 2,000 litres x 2.68 kg CO2 per litre = 5,360 kg / 400,000 = 0.0134 kg CO2 per board",
+      "Components: 4.0 kg CO2e per board (illustrative database total)",
+      "Bare board: 0.5 kg CO2e per board (illustrative, 4-layer)",
+      "Total: 4.0 + 0.5 + 0.213 + 0.0134 = 4.726, about 4.7 kg CO2e per board; assembly is 0.226, about 5 percent"
+    ],
+    "note": "All figures are illustrative. Component and bare board figures depend on the parts used and the database; take boards, kWh and diesel from your own records."
+  },
+  "senseible": "Senseible reads the plant's electricity, DG fuel and freight invoices for the assembly share, at the CEA grid factor of 0.710 kg CO2 per kWh and IPCC 2006 fuel factors. Component-level factors come from your suppliers or a licensed database.",
+  "links": [
+    {
+      "label": "What to send a buyer who asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

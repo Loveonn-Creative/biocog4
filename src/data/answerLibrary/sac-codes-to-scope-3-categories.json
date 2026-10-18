@@ -1,0 +1,75 @@
+{
+  "slug": "sac-codes-to-scope-3-categories",
+  "q": "Which Scope 3 category does each GST SAC service code belong to?",
+  "title": "SAC service codes to Scope 3 categories",
+  "short": "Most SAC headings map to Scope 3 Category 1, purchased services. The main exceptions are 9965, 9967 and 9968 (freight, warehousing and courier) to Category 4, 9963 hotel stays and 9964 passenger transport to Category 6 or 7, 9994 waste services to Category 5, 9973 leasing and rental to Category 8, and capitalised 9954 construction to Category 2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Accountants mapping purchase registers to Scope 3",
+  "sections": [
+    {
+      "h": "Headings that are not Category 1",
+      "ul": [
+        "9954 construction services: Category 2, capital goods, when the work is capitalised; Category 1 for routine repairs that are expensed.",
+        "9963 accommodation, food and beverage: hotel stays on business trips go to Category 6, which the Scope 3 Standard lists as optional; office catering and canteen contracts go to Category 1.",
+        "9964 passenger transport: flights, trains, taxis and buses for business trips go to Category 6; a hired bus for staff commuting goes to Category 7.",
+        "9965 goods transport, 9967 cargo handling and warehousing, 9968 courier: Category 4 when you pay for it. Transport paid by your customer after sale belongs in Category 9.",
+        "9966 rental of vehicles with operator: Category 4 for goods, Category 6 or 7 for people.",
+        "9973 leasing or rental of machinery and other assets: Category 8 for leased assets whose energy is not already in your Scope 1 and 2; if you control and fuel the asset, its fuel is Scope 1 and nothing goes to Category 8.",
+        "9994 sewage, waste collection and treatment: Category 5."
+      ]
+    },
+    {
+      "h": "Headings that are usually Category 1",
+      "p": [
+        "Financial services (9971), telecom and IT supply (9984), legal and accounting (9982), consulting, engineering and other professional services (9983), security, cleaning and manpower (9985), maintenance and repair (9987), job work on your materials (9988), printing (9989), education and training (9992) and membership fees (9995) are purchased services in Category 1. Real estate services (9972) are usually Category 1, except rent for premises you lease, which follows the leased asset rules above."
+      ]
+    },
+    {
+      "h": "Where the code is not enough",
+      "ul": [
+        "The same SAC can sit in two categories depending on who pays and why, as with freight before or after sale, or travel versus commuting. Use the purpose of the expense, not only the code.",
+        "Electricity is goods, not a service, even when a utility bill shows other charges; it stays in Scope 2.",
+        "Reverse charge entries in the purchase register still represent purchases and should be mapped.",
+        "Check that the SAC on the invoice matches the description; wrong codes are common on service invoices."
+      ]
+    },
+    {
+      "h": "Turning mapped lines into emissions",
+      "p": [
+        "Most service invoices have no physical quantity, so a spend-based factor is the usual method, labelled as an estimate with wider uncertainty. Freight with tonnes and distance, hotel nights and flight sectors can use activity-based factors, which are more accurate. Keep the mapping table with your method note so an auditor can follow it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: mapping four purchase register lines",
+    "lines": [
+      "SAC 9965, road freight on raw material, paid by you: Category 4; use tonnes and km from the LR if shown",
+      "SAC 9963, hotel stay for a sales visit: Category 6; use the number of nights",
+      "SAC 9983, IT consulting retainer: Category 1; spend-based estimate",
+      "SAC 9994, hazardous waste disposal: Category 5; use the tonnes on the manifest"
+    ]
+  },
+  "senseible": "Senseible classifies invoice lines by HSN or SAC code first. Service lines without a printed quantity show Needs Data, or take a spend-based estimate labelled as such.",
+  "links": [
+    {
+      "label": "Mapping HSN codes to emission factors",
+      "to": "/answers/hsn-code-emission-factor-mapping"
+    },
+    {
+      "label": "Is freight Category 4 or 9?",
+      "to": "/answers/is-freight-scope-3-category-4-or-9"
+    },
+    {
+      "label": "Spend-based Category 1",
+      "to": "/answers/scope-3-category-1-spend-based"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Chapter 5 category definitions",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

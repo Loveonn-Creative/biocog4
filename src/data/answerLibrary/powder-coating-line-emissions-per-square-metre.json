@@ -1,0 +1,65 @@
+{
+  "slug": "powder-coating-line-emissions-per-square-metre",
+  "q": "How much CO2 does a powder coating line emit per square metre coated?",
+  "title": "Powder coating CO2 per square metre",
+  "short": "Work it out from your own line: add a month's oven and pretreatment fuel (LPG kg x 2.98 or PNG scm x 2.05) and the line's kWh x 0.710, then divide by square metres coated. Add the powder's own footprint per square metre for a product figure. Oven loading drives the result.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Fabricators and component makers with in-house powder coating ovens",
+  "sections": [
+    {
+      "h": "What to measure on the line",
+      "ul": [
+        "Fuel for the curing oven, drying oven and any heated pretreatment tanks: LPG in kg, PNG in scm or diesel in litres.",
+        "Electricity for booth fans, cyclone recovery, conveyor, compressors and pretreatment pumps. A sub-meter on the line is best; otherwise allocate from the plant meter by connected load and running hours.",
+        "Square metres coated: from the job cards or dispatch records, using the coated surface area of each part, not its footprint on the floor."
+      ]
+    },
+    {
+      "h": "The formula",
+      "p": [
+        "kg CO2 per m2 = (LPG kg x 2.98 + PNG scm x 2.05 + diesel litres x 2.68 + line kWh x 0.710) / m2 coated.",
+        "For a product footprint add powder per m2 x the powder's footprint per kg, from the powder supplier. Powder per m2 is powder issued minus reclaimed powder, divided by m2 coated."
+      ]
+    },
+    {
+      "h": "Why the figure moves from month to month",
+      "ul": [
+        "Oven loading: an oven at temperature with a half-empty conveyor burns nearly the same fuel for fewer square metres.",
+        "Start-up and idle time: heating up for a short run adds fuel with no output.",
+        "Part mass: heavy castings take more heat to reach curing temperature than thin sheet of the same area.",
+        "Tracking the figure by shift or by job shows which of these is costing you."
+      ]
+    },
+    {
+      "h": "Square metres, kilograms or pieces",
+      "p": [
+        "Job coaters usually charge per square metre, so per m2 is the natural unit. A component maker answering a buyer may need per piece: multiply the per m2 figure by the coated area of that part. State the unit and whether powder material is included."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on an LPG-fired line",
+    "lines": [
+      "LPG for oven and pretreatment: 3,000 kg x 2.98 = 8,940 kg CO2",
+      "Line electricity: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "Energy total: 8,940 + 12,780 = 21,720 kg CO2",
+      "Area coated: 40,000 m2",
+      "Energy per m2: 21,720 / 40,000 = 0.543 kg CO2 per m2",
+      "Powder used: 6,000 kg net of reclaim / 40,000 m2 = 0.15 kg per m2, times the supplier's factor"
+    ],
+    "note": "Quantities are illustrative. Replace them with your month's bills and job records."
+  },
+  "senseible": "Senseible reads the LPG, PNG, diesel and electricity invoices for the line (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps powder purchases in a Scope 3 evidence trail. Square metres coated come from your own job records, and product reports are self-declared drafts.",
+  "links": [
+    { "label": "Allocating factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "LPG emission factor", "to": "/emission-factors/lpg" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-18"
+}

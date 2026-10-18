@@ -1,0 +1,55 @@
+{
+  "slug": "japan-carbon-footprint-guideline-supplier-request",
+  "q": "What do Japanese buyers mean when they ask for a product carbon footprint under the METI guidelines?",
+  "title": "Japanese buyer PCF requests under METI",
+  "short": "They want a product carbon footprint calculated the way Japan's government guidance describes: the Carbon Footprint Guidelines issued by METI and the Ministry of the Environment in March 2023. The guidelines build on ISO 14067 and the GHG Protocol Product Standard and ask suppliers for primary data from their own processes.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Indian auto component, chemical and steel suppliers to Japanese companies",
+  "sections": [
+    {
+      "h": "What the guidelines are",
+      "p": [
+        "Japan's Ministry of Economy, Trade and Industry (METI) and Ministry of the Environment published Carbon Footprint Guidelines in March 2023, with a separate practical guide on how to carry them out. They are guidance, not law. They give Japanese companies a common way to ask for and calculate product footprints so figures from different suppliers can be compared.",
+        "They do not replace ISO 14067. They point to it and to the GHG Protocol Product Standard, and set out which choices a company should make and disclose."
+      ]
+    },
+    {
+      "h": "What this means for your submission",
+      "ul": [
+        "Primary data for your own processes: your fuel, electricity and material use per unit, not an industry average.",
+        "A clear boundary: usually cradle to gate for components and materials, ending when the product leaves your factory.",
+        "A declared unit, such as per kg or per piece, matched to what the buyer purchases.",
+        "Disclosure of the method: the standards followed, allocation rules, emission factor sources and the data period.",
+        "Secondary data only where you cannot measure, named by source."
+      ]
+    },
+    {
+      "h": "How it differs from a corporate request",
+      "p": [
+        "A Japanese customer reporting under the SSBJ standards asks about your company's Scope 1, 2 and 3. A carbon footprint request under the METI guidelines asks about one product. You need plant data allocated to that product line, and the material inputs bought for it. Answer the question you were asked; a company total divided by revenue is not a product footprint."
+      ]
+    },
+    {
+      "h": "Before you reply",
+      "ol": [
+        "Ask the buyer for their template and which edition of the guidelines they follow, because Japanese guidance is updated.",
+        "Confirm the product, the unit and the reporting year.",
+        "Ask whether they expect third-party verification. Some buyers request it for their own claims, so agree this before you start.",
+        "Keep the invoices and meter records behind every number, so you can answer follow-up questions."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads the fuel, electricity and freight records behind a product footprint and keeps a fingerprinted evidence trail of the source files. The footprint report is a self-declared draft; it is not ISO 14067 verification.",
+  "links": [
+    { "label": "Japanese buyers and SSBJ supplier emissions", "to": "/answers/ssbj-japanese-buyers-supplier-emissions" },
+    { "label": "ISO 14067 vs GHG Protocol Product Standard", "to": "/climate-intelligence/iso-14067-vs-ghg-protocol-product-standard-explained" },
+    { "label": "Buyer asked for a product footprint", "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "METI and Ministry of the Environment Carbon Footprint Guidelines (March 2023) may be revised; ask the buyer which edition they follow."
+}

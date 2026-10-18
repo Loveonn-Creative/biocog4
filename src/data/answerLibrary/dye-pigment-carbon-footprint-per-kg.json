@@ -1,0 +1,81 @@
+{
+  "slug": "dye-pigment-carbon-footprint-per-kg",
+  "q": "How does a dye or pigment maker calculate carbon footprint per kg of product?",
+  "title": "Dye and pigment footprint per kg",
+  "short": "Add three parts per kg of dye: the footprint of the intermediates and raw materials used per kg, your plant's steam, spray-drying and power shared to that product, and any process CO2, such as from soda ash. Intermediates usually dominate, so supplier figures for them matter more than plant energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dye and pigment makers in Vapi, Ankleshwar and Ahmedabad selling to textile mills and EU buyers",
+  "sections": [
+    {
+      "h": "Raw materials and intermediates",
+      "p": [
+        "Take the bill of materials for one batch: kg of each intermediate, acid, alkali, salt and solvent per kg of finished dye at your actual yield, not the theoretical one.",
+        "Multiply each by a cradle-to-gate factor from the supplier or a named database. Intermediates from benzene or naphthalene chains are usually the largest part. Note which inputs used database figures, because buyers score supplier-specific data higher."
+      ]
+    },
+    {
+      "h": "Sharing plant energy between products",
+      "ul": [
+        "Reactor and evaporator steam: share boiler fuel by steam metered per batch, or by batch hours if steam is not metered.",
+        "Spray dryer: share dryer fuel by water evaporated or dryer hours, since liquid and press-cake products skip it.",
+        "ETP and ZLD power: share by effluent volume per product if you track it; otherwise by output mass, and say so.",
+        "Whatever is left (lighting, offices, utilities) by output mass."
+      ]
+    },
+    {
+      "h": "Process CO2 that is easy to miss",
+      "p": [
+        "When soda ash neutralises acid it releases CO2: 44/106, about 0.415 kg CO2 per kg of soda ash used that way. Solvents incinerated on site and thermal oxidisers burning process gases are also direct emissions. These are small next to intermediates but buyers' reviewers look for them."
+      ]
+    },
+    {
+      "h": "Standardised versus concentrated dye",
+      "p": [
+        "The same dye is sold at different strengths, cut with salt or other diluents. Calculate the footprint for the concentrated product first, then scale for each standardised grade by its share of active dye, so one product does not end up with two inconsistent figures."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one product in a month",
+    "lines": [
+      "Plant energy: coal 40,000 kg x 2.42 = 96,800 kg CO2; spray dryer PNG 15,000 scm x 2.05 = 30,750 kg CO2; electricity 150,000 kWh x 0.710 = 106,500 kg CO2",
+      "Plant total: 96,800 + 30,750 + 106,500 = 234,050 kg CO2",
+      "Product X: 40,000 kg of 200,000 kg output, a 20% mass share, so 46,810 kg, which is 1.17 kg CO2 per kg",
+      "Intermediates: 1.3 kg per kg at an illustrative 4.0 kg CO2e per kg = 5.2 kg CO2e",
+      "Soda ash used to neutralise acid: 0.5 kg per kg x 0.415 = 0.21 kg CO2",
+      "Total: 5.2 + 1.17 + 0.21 = 6.58 kg CO2e per kg, cradle to gate"
+    ],
+    "note": "Mass-share allocation of all plant energy is the simplest case; split dryer and ETP energy separately where products differ."
+  },
+  "senseible": "Senseible reads the coal, PNG, diesel and electricity invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps intermediate and chemical purchases in the Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certified footprints, and the batch allocation comes from your records.",
+  "links": [
+    {
+      "label": "Answering a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Scope 3 for Indian chemical makers",
+      "to": "/solutions/scope3-chemicals-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

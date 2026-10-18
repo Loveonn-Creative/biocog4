@@ -1,0 +1,68 @@
+{
+  "slug": "korean-buyer-supplier-emissions-request",
+  "q": "Why are Korean customers asking Indian suppliers for emissions data, and what should I send?",
+  "title": "Korean buyers asking for emissions data",
+  "short": "Korean customers ask because their own pressures now reach suppliers: EU rules on their exports such as CBAM and the Battery Regulation, Korea's new ISSB-based disclosure standards, and their net zero commitments. Send your Scope 1 and 2 totals with factors and sources, a per-product figure for what you sell them, and a short method note.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "Indian suppliers to Korean auto, steel, electronics and battery companies",
+  "sections": [
+    {
+      "h": "What is driving the requests",
+      "ul": [
+        "EU market rules: Korean steel and aluminium exporters face EU CBAM, and battery makers face the EU Battery Regulation's carbon footprint declaration, both of which need input emissions.",
+        "Korean disclosure: the Korea Sustainability Standards Board issued its first Korean Sustainability Disclosure Standards, based on IFRS S1 and S2, in February 2026, and the Financial Services Commission has set out a roadmap for mandatory climate reporting by the largest KOSPI-listed companies from 2028, on 2027 data.",
+        "Customer targets: Korean groups with net zero or science-based targets need Scope 3 data to show progress, and global brands they supply ask them the same questions.",
+        "Supply chain ESG checks: the K-ESG guideline issued by the Ministry of Trade, Industry and Energy in 2021 includes supply chain items that buyers use in supplier assessments."
+      ]
+    },
+    {
+      "h": "Why mandatory dates are not the main issue",
+      "p": [
+        "Korea's mandatory reporting still needs changes to its capital markets law, starts with the largest listed groups, and phases Scope 3 in later than Scope 1 and 2. That does not slow down requests linked to EU exports or customer targets, which already apply. Treat the request as a commercial condition, not a legal one, and answer it on that basis."
+      ]
+    },
+    {
+      "h": "What to send",
+      "ol": [
+        "Scope 1 and Scope 2 for the last full year, with the activity data, factors and sources, for example India grid 0.710 kg CO2 per kWh from the CEA database.",
+        "A per-unit figure for the parts or materials you sell them, with the allocation method.",
+        "The boundary and period, and which figures are measured and which are estimated.",
+        "For steel, aluminium or battery materials, the plant-level data their EU reporting needs, such as direct and indirect embedded emissions."
+      ]
+    },
+    {
+      "h": "Format and follow-up",
+      "p": [
+        "Many Korean groups send their own templates or supplier portals. Fill them from one master dataset, so figures in different forms agree. Expect yearly updates and questions on reduction plans once the first figure is accepted."
+      ]
+    }
+  ],
+  "senseible": "Senseible produces Scope 1 and 2 from your invoices and bills, and product-level allocations, as self-declared drafts you can share with a Korean customer.",
+  "links": [
+    {
+      "label": "Japanese buyers and SSBJ supplier data",
+      "to": "/answers/ssbj-japanese-buyers-supplier-emissions"
+    },
+    {
+      "label": "What to send a buyer who asks for a PCF",
+      "to": "/answers/buyer-asked-for-product-carbon-footprint-what-to-send"
+    },
+    {
+      "label": "Allocating your emissions to a customer",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    }
+  ],
+  "sources": [
+    {
+      "label": "IFRS S1 and S2 (basis of the Korean Sustainability Disclosure Standards)",
+      "url": "https://www.ifrs.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Korea's mandatory reporting depends on amendments to the capital markets law; check the Financial Services Commission's current roadmap, company thresholds and Scope 3 dates before stating them."
+}

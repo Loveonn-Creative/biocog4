@@ -1,0 +1,85 @@
+{
+  "slug": "fishing-vessel-fuel-emissions-per-tonne-catch",
+  "q": "How do I calculate emissions per tonne of wild-caught fish from vessel fuel?",
+  "title": "Fishing boat CO2 per tonne of catch",
+  "short": "Divide the diesel burnt on the trips by the tonnes landed, then multiply by 2.68 kg CO2 per litre. Six thousand litres for 12 tonnes landed is 1,340 kg CO2 per tonne. Do it per trip or per season from the boat's fuel records, and add ice, refrigerant and processing separately.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Seafood exporters buying from trawler fleets in Gujarat, Kerala and Tamil Nadu",
+  "sections": [
+    {
+      "h": "The data you need from each boat",
+      "ul": [
+        "Diesel bought per trip or per month, from fuel bills or the boat's log.",
+        "Landed weight per trip by species, from the landing or auction record.",
+        "Ice taken on board, if the exporter or boat owner buys it.",
+        "Refrigerant top-ups on vessels with on-board chilling or freezing."
+      ]
+    },
+    {
+      "h": "Mixed catch: share the fuel fairly",
+      "p": [
+        "A trawl brings in high-value shrimp or cephalopods along with lower-value fish. Dividing fuel by total tonnes gives every species the same figure. Sharing by landed value instead gives more of the fuel to the species the trip was made for.",
+        "The GHG Protocol Product Standard prefers physical allocation such as mass, and allows economic allocation where mass does not reflect why the trip was made; state which you chose and why. Use the same method for every boat and season so the trend means something."
+      ]
+    },
+    {
+      "h": "Which scope the fuel is",
+      "p": [
+        "If you own or control the vessels, their diesel is your Scope 1. If you buy from independent boat owners, it is part of the footprint of purchased fish, Scope 3 Category 1, and the boat owner's fuel records are your evidence.",
+        "Per tonne landed is not per tonne of product. Divide by your processing yield to get per tonne of headless shrimp or fillet, then add plant electricity and freight."
+      ]
+    },
+    {
+      "h": "What changes the figure most",
+      "ul": [
+        "Gear: bottom trawling uses far more fuel per tonne than gillnets or ring seines.",
+        "Trip length and distance to the grounds.",
+        "Catch rate on the trip. A poor trip spreads the same fuel over fewer tonnes.",
+        "Refrigerant leaks, which are CO2e and can be large on boats with freezer plants."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one multi-day trawl trip",
+    "lines": [
+      "Diesel: 6,000 litres x 2.68 = 16,080 kg CO2",
+      "Landed: 12 t, so 16,080 / 12 = 1,340 kg CO2 per tonne by mass",
+      "By value: shrimp 3 t worth ₹12 lakh, other fish 9 t worth ₹9 lakh, total ₹21 lakh (assumed prices)",
+      "Shrimp: 16,080 x 12 / 21 = 9,189 kg, so 3,063 kg CO2 per tonne",
+      "Other fish: 16,080 x 9 / 21 = 6,891 kg, so 766 kg CO2 per tonne",
+      "Check: 9,189 + 6,891 = 16,080 kg"
+    ],
+    "note": "Fuel, catch and prices are illustrative; use each boat's fuel bills and landing records."
+  },
+  "senseible": "Senseible reads diesel invoices at 2.68 kg CO2 per litre with the source on each line and keeps purchased catch in the supplier evidence trail. Landing weights and the choice of allocation come from the exporter or the boat owners.",
+  "links": [
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Estimating refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Scope 3 supplier evidence",
+      "to": "/scope-3-supplier-evidence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 3, Mobile Combustion (navigation)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

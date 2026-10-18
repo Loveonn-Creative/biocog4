@@ -1,0 +1,79 @@
+{
+  "slug": "emissions-fell-but-intensity-rose",
+  "q": "Our total emissions fell but emission intensity rose. How do we explain it to a buyer?",
+  "title": "Emissions fell but intensity rose",
+  "short": "Explain that output fell faster than emissions, because part of your energy use is fixed and does not drop when production does. Show both figures, split the change into an output effect and an efficiency effect, and say what you are doing about the fixed load.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Exporters and BRSR reporters with falling output",
+  "sections": [
+    {
+      "h": "Why the two can move apart",
+      "ul": [
+        "Fixed loads: lighting, compressors left running, HVAC, boiler standing losses and utilities run whatever the output.",
+        "Low utilisation: machines on part load use more energy per unit.",
+        "Product mix: a shift to heavier or more processed products raises energy per unit.",
+        "Insourcing: bringing a step in-house moves emissions from Scope 3 into your Scope 1 and 2.",
+        "Revenue-based intensity: falling prices raise emissions per rupee even if nothing changed in the plant."
+      ]
+    },
+    {
+      "h": "Split the change into two parts",
+      "p": [
+        "Output effect = what emissions would have been at last year's intensity and this year's output, minus last year's emissions. Efficiency effect = actual emissions minus that figure. The two add up to the total change. This shows the buyer how much of the drop came from making less, and how much intensity worsened."
+      ]
+    },
+    {
+      "h": "What to send the buyer",
+      "ol": [
+        "Absolute emissions for both years, and intensity on the metric they use.",
+        "Output for both years, so they can check the arithmetic.",
+        "The split into output and efficiency effects.",
+        "The cause, in one or two lines, and the actions under way, such as shutting idle compressors or consolidating shifts."
+      ]
+    },
+    {
+      "h": "What not to do",
+      "p": [
+        "Do not present the fall in absolute emissions as a reduction achievement when it came from lower output. Do not switch intensity metric this year to hide the rise; if you change metric, show both for the change year. Buyers comparing suppliers by intensity will find the change anyway."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a year of lower orders",
+    "lines": [
+      "Last year: 1,000 t for 10,000 units = 0.10 t per unit",
+      "This year: 900 t for 7,500 units = 0.12 t per unit",
+      "Absolute: down 10%. Intensity: up 20%",
+      "Output effect: 7,500 x 0.10 = 750 t; 750 minus 1,000 = minus 250 t",
+      "Efficiency effect: 900 minus 750 = plus 150 t",
+      "Check: minus 250 plus 150 = minus 100 t, the actual change"
+    ]
+  },
+  "senseible": "Senseible reports emission totals by scope and period from your bills and invoices, and you relate them to your output figures. It does not record production volumes from documents on its own.",
+  "links": [
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "BRSR intensity per rupee adjusted for PPP",
+      "to": "/answers/brsr-emission-intensity-per-rupee-ppp"
+    },
+    {
+      "label": "Your MSME carbon number",
+      "to": "/msme-carbon-number"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 9 (ratio indicators)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "SEBI BRSR Core circular (July 2023), intensity metrics",
+      "url": "https://www.sebi.gov.in/sebi_data/attachdocs/jul-2023/1689087475880.pdf"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

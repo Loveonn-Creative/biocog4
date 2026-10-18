@@ -1,0 +1,65 @@
+{
+  "slug": "coffee-carbon-footprint-per-kg-green-coffee",
+  "q": "How do I calculate the carbon footprint of Indian green coffee per kg for an export buyer?",
+  "title": "Green coffee carbon footprint per kg",
+  "short": "Add four parts for a season and divide by kg of green coffee: nitrous oxide from fertiliser on the estate, methane from wet-processing wastewater, fuel and power for drying and curing, and freight. For washed coffee, fertiliser N2O and lagoon methane usually outweigh the curing works energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Coffee estates and curing works in Karnataka, Kerala and Tamil Nadu",
+  "sections": [
+    {
+      "h": "Fertiliser nitrous oxide on the estate",
+      "p": [
+        "Direct N2O = kg of nitrogen applied x 0.01 x 44/28, using the IPCC default emission factor of 0.01 kg N2O-N per kg N. The 2019 Refinement gives 0.016 for synthetic nitrogen in wet climates, which fits much of the Western Ghats; say which you used. Multiply kg N2O by 273 (IPCC AR6) for CO2e.",
+        "Count nitrogen from urea, complex fertilisers and compost. Indirect N2O from leaching and volatilisation is estimated separately, and urea also releases CO2 when applied. Making the fertiliser is a further input, taken from the supplier or a database."
+      ]
+    },
+    {
+      "h": "Wastewater methane from pulping and washing",
+      "p": [
+        "Washed (parchment) coffee produces wastewater rich in organic matter. Methane = kg COD entering treatment x 0.25 x MCF, where 0.25 kg CH4 per kg COD is the IPCC default and MCF is 0.8 for a deep anaerobic lagoon (over 2 m), 0.2 for a shallow one, and 0 for well-run aerobic treatment. Use AR6 GWP 27 for this non-fossil methane.",
+        "Natural (cherry) and monsooned coffee use little water, so this term is small for them. Measure COD from your own lab or pollution control board returns."
+      ]
+    },
+    {
+      "h": "Drying, curing and transport",
+      "ul": [
+        "Grid power for hulling, grading and colour sorting: kWh x 0.710 kg CO2.",
+        "DG sets and vehicles on the estate: diesel litres x 2.68 kg CO2.",
+        "Mechanical dryers: the fuel they burn. Wood or husk is biogenic CO2, reported separately.",
+        "Freight from estate to curing works to port, by tonne-km."
+      ]
+    },
+    {
+      "h": "Shade trees: do not net them silently",
+      "p": [
+        "Indian coffee grows under shade, and those trees store carbon. Counting that storage as a removal needs a land sector method, with monitoring and a permanence argument. Report any removals on a separate line under the GHG Protocol land sector guidance, never subtracted from the emissions total without saying so."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one season, 10,000 kg of washed green coffee",
+    "lines": [
+      "Fertiliser: 1,400 kg N x 0.01 x 44/28 = 22.0 kg N2O; 22.0 x 273 = 6,006 kg CO2e",
+      "Wastewater: 4,000 kg COD x 0.25 x 0.8 = 800 kg CH4; 800 x 27 = 21,600 kg CO2e",
+      "Curing works power: 6,000 kWh x 0.710 = 4,260 kg CO2",
+      "Diesel: 500 litres x 2.68 = 1,340 kg CO2",
+      "Total: 6,006 + 21,600 + 4,260 + 1,340 = 33,206 kg CO2e",
+      "Per kg green coffee: 33,206 / 10,000 = 3.3 kg CO2e"
+    ],
+    "note": "All inputs are illustrative. Fertiliser manufacture, indirect N2O and freight are left out here and belong in a full cradle to gate figure. The result includes methane and N2O, so it is in CO2e."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind the processing share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps fertiliser and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    { "label": "EUDR data for coffee and rubber exporters", "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide" },
+    { "label": "Wastewater methane from an ETP", "to": "/answers/etp-wastewater-methane-emissions" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "2006 IPCC Guidelines, Vol. 4 Ch. 11 (N2O from managed soils) and Vol. 5 Ch. 6 (wastewater)", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/" },
+    { "label": "2019 Refinement to the 2006 IPCC Guidelines, Vol. 4 Ch. 11 and Vol. 5 Ch. 6", "url": "https://www.ipcc.ch" },
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Shade tree removals fall under the GHG Protocol Land Sector and Removals guidance; check its current status before reporting any removals."
+}

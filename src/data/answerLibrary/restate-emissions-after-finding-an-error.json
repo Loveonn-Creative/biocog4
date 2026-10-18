@@ -1,0 +1,77 @@
+{
+  "slug": "restate-emissions-after-finding-an-error",
+  "q": "We found an error in last year's carbon footprint. Do we have to restate it?",
+  "title": "Restating a footprint after an error",
+  "short": "Restate it if the error is significant against the threshold you set, often 5 percent of the affected total, or if several small errors add up to that much. Below the threshold, correct it in the current year and note it. Either way, tell anyone who received the old figure.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs and exporters that have already shared a footprint with buyers or in BRSR",
+  "sections": [
+    {
+      "h": "What the GHG Protocol says",
+      "p": [
+        "The GHG Protocol Corporate Standard lists the discovery of significant errors, or of several errors that together are significant, as a reason to recalculate base year emissions. The Standard does not fix the threshold; your company chooses it, and it should be written into your recalculation policy before you need it, then applied the same way every year. ISO 14064-1 has a similar base year rule. Many companies use 5 percent; a stricter buyer or verifier may use less."
+      ]
+    },
+    {
+      "h": "How to test significance",
+      "ol": [
+        "Size the error: the missing, double-counted or misread tonnes.",
+        "Divide by the total it affects: the scope total or the whole inventory, as your policy says.",
+        "Add other errors found for the same year, in both directions, if your policy counts them together.",
+        "Compare with your threshold."
+      ]
+    },
+    {
+      "h": "If you restate",
+      "ul": [
+        "Correct the year with the error and every later year that carried it, plus the base year if it was affected.",
+        "Show the old figure, the new figure, and one line on the cause.",
+        "Send the corrected figure to buyers who received the old one, and correct BRSR in the next filing with a note.",
+        "Keep the evidence: the document that was missed or misread, and the corrected calculation."
+      ]
+    },
+    {
+      "h": "If the error is below the threshold",
+      "p": [
+        "You do not have to reissue past figures. Correct the data at its source so the error does not repeat, include the correction in the current year where it belongs, and record the decision with its size. An honest note to a buyer still builds more trust than silence, especially if they used the figure in their own Scope 3."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a missed diesel supplier",
+    "lines": [
+      "Reported inventory: 600 t CO2",
+      "Missed: one diesel supplier's invoices, 14,925 L x 2.68 = 39,999 kg, about 40 t CO2",
+      "Error share: 40 / 600 = 6.7%",
+      "Policy threshold: 5%; 6.7% is above it, so restate: 640 t CO2, with a note on the cause"
+    ],
+    "note": "Had the miss been 20 t, the share would be 3.3%, below the threshold: fix the source data and note it in the current year."
+  },
+  "senseible": "Senseible keeps each source file with a SHA-256 fingerprint and records every line read from it, so a corrected figure can be traced back to the document that was misread or missing. The decision to restate and the disclosure are yours.",
+  "links": [
+    {
+      "label": "Recalculating past years for a new grid factor",
+      "to": "/answers/recalculate-past-years-when-grid-factor-changes"
+    },
+    {
+      "label": "Acceptable error and materiality",
+      "to": "/answers/acceptable-error-in-carbon-audit-materiality"
+    },
+    {
+      "label": "Duplicate invoices and double counting",
+      "to": "/answers/duplicate-invoices-double-counting-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 5 (tracking emissions over time)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "ISO 14064-1:2018, clause 6.4 (base year)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

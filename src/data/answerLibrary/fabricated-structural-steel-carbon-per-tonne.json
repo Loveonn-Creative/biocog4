@@ -1,0 +1,86 @@
+{
+  "slug": "fabricated-structural-steel-carbon-per-tonne",
+  "q": "What is the carbon footprint of fabricated structural steel per tonne?",
+  "title": "Fabricated structural steel footprint per t",
+  "short": "Start with the steel you buy per tonne of finished structure, including offcuts, times your mill's emission factor. Then add fabrication power, cutting gases, shielding gas and coatings. The steel usually dominates, so the mill's figure matters far more than your shop's energy.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Steel fabricators and EPC suppliers exporting structures or supplying infrastructure projects",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Steel input per tonne of output = tonnes of sections, plates and pipes bought / tonnes of fabricated structure dispatched.",
+        "Steel = steel input x the mill's factor in t CO2e per tonne of that product.",
+        "Fabrication electricity = kWh per tonne x 0.710 kg CO2.",
+        "Gases: LPG for cutting at 2.98 kg CO2 per kg; acetylene and CO2 shielding gas from their quantities.",
+        "Coatings: paint, primer and zinc for galvanising, from supplier figures."
+      ]
+    },
+    {
+      "h": "Where the mill factor comes from",
+      "p": [
+        "Ask each mill for an environmental product declaration or a product footprint for the section or plate, and note its route: blast furnace, coal-based DRI or scrap-based electric arc furnace give very different figures. If a supplier has none, use a documented benchmark for that route and label it. Blend factors by the tonnes bought from each mill."
+      ]
+    },
+    {
+      "h": "Offcuts and scrap",
+      "p": [
+        "Offcuts, drillings and rejects are steel you bought but did not ship, so they raise steel input per tonne. Selling the scrap does not let you subtract its emissions unless the method you follow allows a recycling credit; under a cut-off approach, the scrap leaves your boundary with no credit. Reducing offcut loss is often the cheapest cut you can make."
+      ]
+    },
+    {
+      "h": "If the structures go to the EU",
+      "p": [
+        "Structures of iron or steel under CN 7308 are listed in Annex I of the CBAM Regulation, so an EU importer needs their embedded emissions. CBAM uses its own boundary and method, which differs from a product footprint, so prepare that figure separately. Check your exact code before assuming coverage either way."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one tonne of fabricated structure (illustrative figures)",
+    "lines": [
+      "Steel bought: 1.08 t per t dispatched (8% offcut and reject loss)",
+      "Mill factor: 2.5 t CO2e per t of section; 1.08 x 2.5 = 2.70 t CO2e",
+      "Electricity: 150 kWh x 0.710 = 106.5 kg CO2",
+      "LPG for cutting: 8 kg x 2.98 = 23.8 kg CO2",
+      "Total before coatings: 2,700 + 106.5 + 23.8 = 2,830.3 kg CO2e, about 2.83 t",
+      "Fabrication share: (106.5 + 23.8) / 2,830.3 = 4.6%"
+    ],
+    "note": "The mill factor, loss rate and energy use are illustrative. Replace them with your mill's declaration and your own bills, then add paint or galvanising."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps steel purchase lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    {
+      "label": "Benchmarking a steel supplier",
+      "to": "/answers/steel-supplier-benchmark-carbon-intensity"
+    },
+    {
+      "label": "Is my CN code covered by CBAM?",
+      "to": "/answers/check-if-product-cn-code-covered-by-cbam"
+    },
+    {
+      "label": "Acetylene cylinders and CO2",
+      "to": "/answers/acetylene-gas-cylinder-co2"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), Annex I, consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "worldsteel Sustainability Indicators report (annual)",
+      "url": "https://worldsteel.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBAM goods lists and default values can be amended; check the current Annex I and your CN code."
+}

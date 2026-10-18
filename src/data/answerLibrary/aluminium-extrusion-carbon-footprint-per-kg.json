@@ -1,0 +1,86 @@
+{
+  "slug": "aluminium-extrusion-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of an aluminium extrusion per kg?",
+  "title": "Aluminium extrusion footprint per kg",
+  "short": "Per kg of good extrusion, multiply the billet bought per kg of good profile by the billet's footprint from your supplier, then add press, oven and finishing energy per kg. The billet usually makes up most of the result, so whether it is primary or recycled metal changes the answer more than anything you do in the plant.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Aluminium extruders supplying windows, auto, solar frames and EU buyers",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "kg CO2e per kg extrusion = (billet kg per kg good extrusion x billet factor) + (billet heater and ageing oven fuel per kg x fuel factor) + (press, puller and utilities kWh per kg x 0.710) + anodising or powder coating per kg + packing."
+      ]
+    },
+    {
+      "h": "Recovery and scrap",
+      "p": [
+        "Butt ends, front and back cuts and rejected lengths mean you buy more billet than you ship. Recovery of good profile from billet is often 80 to 90%, so billet per kg of good extrusion is 1.1 to 1.25 kg.",
+        "Charging all billet to good product is the simple, conservative choice. If your scrap goes back to the billet supplier and is credited against new billet, you may count net metal instead, but say so in the method note."
+      ]
+    },
+    {
+      "h": "Getting a billet factor you can defend",
+      "ul": [
+        "Ask the billet supplier for kg CO2e per kg for the batch, with its smelter or remelt source and recycled share.",
+        "Primary billet from coal-powered smelters carries a very high figure; billet with a high share of post-consumer scrap carries a far lower one.",
+        "Keep the supplier's statement with the purchase invoice for each lot, because buyers and CBAM declarants ask for it per shipment period."
+      ]
+    },
+    {
+      "h": "A product footprint is not your CBAM number",
+      "p": [
+        "Extruded bars, rods and profiles (CN 7604) are CBAM goods. Under the CBAM Regulation only direct emissions count for aluminium goods: the embedded direct emissions of the unwrought aluminium you used plus your own site's direct emissions. Your purchased electricity is left out of the CBAM figure but stays in the product footprint a buyer asks for.",
+        "So keep two numbers from the same records: a cradle-to-gate footprint for buyers, and the CBAM embedded emissions calculated by the CBAM method."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at an extrusion plant",
+    "lines": [
+      "Billet bought: 115,000 kg for 100,000 kg good extrusion (recovery 87%)",
+      "Primary billet at an illustrative 16 kg CO2e per kg: 115,000 x 16 = 1,840,000 kg CO2e",
+      "Billet heater and ageing oven PNG: 6,000 scm x 2.05 = 12,300 kg CO2",
+      "Electricity: 80,000 kWh x 0.710 = 56,800 kg CO2",
+      "Total: 1,840,000 + 12,300 + 56,800 = 1,909,100 kg; per kg: 19.1 kg CO2e",
+      "Same plant on billet at an illustrative 4 kg CO2e per kg: (460,000 + 69,100) / 100,000 = 5.3 kg CO2e per kg"
+    ],
+    "note": "Billet factors are illustrative only; use the supplier's figure for each lot."
+  },
+  "senseible": "Senseible reads the PNG, diesel and electricity bills behind an extrusion footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps billet purchases in the Scope 3 evidence trail by HSN code and kg. Product reports are self-declared drafts, and its CBAM cost calculator works from the embedded emissions you enter.",
+  "links": [
+    {
+      "label": "Why Indian aluminium is carbon-intensive",
+      "to": "/answers/why-indian-aluminium-carbon-intensity-is-high"
+    },
+    {
+      "label": "Checking an aluminium supplier's carbon claim",
+      "to": "/answers/how-to-check-aluminium-supplier-carbon-claim"
+    },
+    {
+      "label": "CBAM cost for aluminium",
+      "to": "/cbam-cost/aluminium"
+    },
+    {
+      "label": "CBAM for Indian aluminium exporters",
+      "to": "/climate-intelligence/cbam-aluminium-exporter-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text, Annexes I and II",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CBAM rules for aluminium and its downstream products are being amended; check the current Regulation and implementing acts."
+}

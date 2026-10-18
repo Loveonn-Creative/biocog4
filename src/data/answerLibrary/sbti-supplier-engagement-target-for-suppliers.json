@@ -1,0 +1,66 @@
+{
+  "slug": "sbti-supplier-engagement-target-for-suppliers",
+  "q": "My customer has an SBTi supplier engagement target. What does it require from my company?",
+  "title": "A buyer's SBTi supplier engagement target",
+  "short": "Your customer has promised that suppliers covering a set share of its emissions or spend will have their own science-based targets within five years. So it will ask you to measure your emissions and set a target, often through SBTi's SME route, and to share progress each year.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME suppliers to companies with validated science-based targets",
+  "sections": [
+    {
+      "h": "Why your customer is asking",
+      "p": [
+        "Under SBTi's corporate near-term criteria, a company can cover part of its Scope 3 with a supplier engagement target instead of an absolute reduction target. The target states the share of its relevant Scope 3 emissions, or of its procurement spend where emissions data is missing, that will come from suppliers with science-based targets, and the deadline can be no more than five years after submission. Each supplier that sets one moves the customer closer to its own commitment, so large suppliers by emissions are asked first."
+      ]
+    },
+    {
+      "h": "What the customer will usually ask for",
+      "ol": [
+        "Your Scope 1 and Scope 2 emissions for a base year, from fuel and electricity records.",
+        "A screen of your Scope 3, at least the main categories.",
+        "A commitment to set a science-based target, and then the validated target itself.",
+        "Annual updates through a supplier portal or CDP supply chain questionnaire."
+      ],
+      "p": [
+        "Ask the customer which targets it counts: some accept only targets validated by SBTi, which is the safest to plan for."
+      ]
+    },
+    {
+      "h": "The route most MSMEs can take",
+      "p": [
+        "SBTi's SME route is a simpler, lower cost path for smaller companies. It sets near-term Scope 1 and 2 targets from a fixed menu and asks you to measure and reduce Scope 3 rather than set a Scope 3 target. Check the current eligibility tests before applying."
+      ]
+    },
+    {
+      "h": "What it does not require",
+      "ul": [
+        "It does not require you to buy carbon credits; credits do not count toward science-based targets.",
+        "It does not, by itself, require third-party assurance of your figures, though the customer may ask for it.",
+        "It does not bind you to the customer's own target year or reduction rate."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds the baseline a supplier needs before setting a target: Scope 1 and 2 from fuel and electricity bills, and a Scope 3 evidence trail from supplier invoices. It does not submit or validate targets with SBTi.",
+  "links": [
+    {
+      "label": "SBTi SME route eligibility",
+      "to": "/answers/sbti-sme-route-eligibility"
+    },
+    {
+      "label": "When is a Scope 3 target required?",
+      "to": "/answers/when-is-a-scope-3-target-required-sbti"
+    },
+    {
+      "label": "Can carbon credits count toward SBTi?",
+      "to": "/answers/can-carbon-credits-count-toward-sbti-target"
+    }
+  ],
+  "sources": [
+    {
+      "label": "SBTi Corporate Near-Term Criteria (supplier engagement targets) and SME target route",
+      "url": "https://sciencebasedtargets.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "SBTi's Corporate Net-Zero Standard V2 changes how supplier engagement is treated; check which version your customer's target is under."
+}
