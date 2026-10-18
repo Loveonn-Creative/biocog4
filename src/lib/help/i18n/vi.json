@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "hubTitle": "Chúng tôi có thể giúp gì cho bạn?",
+    "hubLead": "Hỏi như bạn vẫn nói, hoặc chọn một chủ đề.",
+    "askPlaceholder": "vd: đã thanh toán nhưng gói chưa kích hoạt",
+    "askLabel": "Hỏi hoặc tìm kiếm",
+    "speak": "Nói câu hỏi của bạn",
+    "listening": "Đang nghe…",
+    "ask": "Hỏi",
+    "answer": "Câu trả lời",
+    "fromArticle": "Từ",
+    "related": "Xem thêm",
+    "noMatch": "Chúng tôi chưa có câu trả lời cho câu này. Hãy nhắn cho chúng tôi, chúng tôi sẽ giúp.",
+    "aiThinking": "Đang tìm câu trả lời…",
+    "aiNotCovered": "Các bài trợ giúp chưa nói về điều này. Hãy nhắn cho chúng tôi, chúng tôi sẽ giúp.",
+    "aiLimit": "Bạn đã dùng hết câu hỏi trợ giúp hôm nay. Hãy tìm trong các bài viết hoặc nhắn cho chúng tôi.",
+    "aiError": "Hiện chưa thể trả lời. Hãy tìm trong các bài viết hoặc nhắn cho chúng tôi.",
+    "askAnswerCta": "Nhận câu trả lời trực tiếp",
+    "messageUs": "Nhắn cho chúng tôi",
+    "stillStuck": "Vẫn chưa giải quyết được?",
+    "stillStuckLead": "Gửi tin nhắn cho chúng tôi. Chủ đề đã được điền sẵn.",
+    "fixTitle": "Dán thông báo bạn đã thấy",
+    "fixLead": "Sao chép dòng trên màn hình, chúng tôi sẽ cho bạn biết cần làm gì.",
+    "fixPlaceholder": "vd: Page limit reached",
+    "fixLabel": "Dán thông báo",
+    "whatToDo": "Cần làm gì",
+    "more": "Xem thêm",
+    "fixUnknown": "Chúng tôi chưa biết thông báo này. Hãy gửi cho chúng tôi để kiểm tra.",
+    "sendIt": "Gửi cho chúng tôi",
+    "somethingWrong": "Có lỗi xảy ra",
+    "somethingWrongBlurb": "Dán thông báo, nhận cách khắc phục",
+    "allTopics": "Tất cả chủ đề",
+    "helpful": "Bài này có trả lời được không?",
+    "yes": "Có",
+    "no": "Không, nhắn cho chúng tôi",
+    "thanks": "Cảm ơn bạn. Rất vui vì đã giúp được.",
+    "forThisPage": "Cho trang này",
+    "openHelp": "Trợ giúp",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "helpCenter": "Trung tâm trợ giúp",
+    "example": "Ví dụ: 100 lượt hóa đơn (₹79)",
+    "upi": "UPI",
+    "card": "Thẻ, ngân hàng trực tuyến hoặc ví",
+    "price": "Giá",
+    "fee": "Phí thanh toán 4%",
+    "gst": "GST 18%",
+    "total": "Tổng",
+    "quantity": "Số lượng trên hóa đơn",
+    "factor": "Hệ số phát thải",
+    "result": "kg CO₂",
+    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "scoreStart": "Bắt đầu từ 100",
+    "scorePass": "Đạt ở 80",
+    "scoreGaps": "Thiếu sót bị trừ điểm",
+    "splitWhole": "Cả tệp PDF",
+    "splitParts": "Đọc từng phần"
+  },
+  "sections": {
+    "start": { "title": "Bắt đầu", "blurb": "Dùng thử, gói, giọng nói, dữ liệu" },
+    "upload": { "title": "Tải hóa đơn lên", "blurb": "Tệp, PDF dài, tải lại" },
+    "numbers": { "title": "Số liệu và Verify", "blurb": "Số liệu được tính thế nào" },
+    "billing": { "title": "Gói và thanh toán", "blurb": "Lượt đọc, tín dụng, GST, biên lai" }
+  },
+  "articles": {
+    "try-without-an-account": {
+      "q": "Tôi có thể dùng thử mà không cần tài khoản không?",
+      "a": "Có. Tải hóa đơn lên trang chủ và xem kết quả ngay.",
+      "facts": [["Không có tài khoản", "30 hóa đơn mỗi ngày trên một thiết bị"], ["Kết quả của bạn", "Lưu trong trình duyệt này 24 giờ"]],
+      "steps": ["Đăng nhập miễn phí để giữ kết quả. Chúng tôi sẽ đọc lại tệp trong tài khoản của bạn."],
+      "cta": "Tải hóa đơn lên",
+      "keywords": ["không tài khoản", "miễn phí", "dùng thử", "đăng ký"]
+    },
+    "is-senseible-free": {
+      "q": "Senseible có miễn phí không?",
+      "a": "Có. Gói Snapshot miễn phí mãi mãi.",
+      "facts": [["Lượt đọc hóa đơn", "10 mỗi tháng"], ["Chỗ trong nhóm", "1"]],
+      "steps": ["Gói trả phí cho bạn nhiều lượt đọc và tính năng hơn."],
+      "cta": "Xem các gói",
+      "keywords": ["miễn phí", "giá", "chi phí"]
+    },
+    "ask-by-voice": {
+      "q": "Tôi có thể hỏi bằng giọng nói không?",
+      "a": "Có. Chạm vào micro trên trang chủ, đặt câu hỏi và nghe câu trả lời.",
+      "steps": ["Giọng nói hoạt động trên Chrome hoặc Edge. Hãy cho phép micro khi trình duyệt hỏi.", "Gói Pro và Scale còn có trò chuyện bằng giọng nói trực tiếp trong Biocog Intelligence."],
+      "cta": "Về trang chủ",
+      "keywords": ["giọng nói", "micro", "nói"]
+    },
+    "how-long-is-my-data-kept": {
+      "q": "Dữ liệu của tôi được lưu bao lâu?",
+      "a": "Tối đa 3 tháng nếu không có tài khoản, và tối đa 18 tháng với tài khoản đã đăng nhập hoặc trả phí.",
+      "steps": ["Đây là thời hạn tiêu chuẩn trong Chính sách quyền riêng tư của chúng tôi.", "Thời hạn có thể dài hơn khi luật pháp, kiểm toán hoặc tranh chấp yêu cầu."],
+      "cta": "Đọc Chính sách quyền riêng tư",
+      "keywords": ["dữ liệu", "quyền riêng tư", "xóa", "bao lâu"]
+    },
+    "what-can-i-upload": {
+      "q": "Tôi có thể tải lên những gì?",
+      "a": "Tệp PDF hoặc ảnh chụp hóa đơn.",
+      "facts": [["Loại tệp", "PDF, JPG, PNG, WEBP, HEIC"], ["Dung lượng", "10 MB khi chưa có tài khoản, 15 MB khi đã đăng nhập"], ["Cùng lúc", "Tối đa 10 tệp"]],
+      "steps": ["Hóa đơn thuế, hóa đơn tiền điện, phiếu nhiên liệu và chứng từ vận chuyển hàng hóa đều được đọc.", "Tài liệu khác sẽ nhận một thông báo và không tốn lượt đọc."],
+      "cta": "Tải hóa đơn lên",
+      "keywords": ["tệp", "ảnh", "dung lượng", "định dạng"]
+    },
+    "long-pdfs": {
+      "q": "PDF dài được đọc như thế nào?",
+      "a": "Hãy tải lên cả tệp. Trình duyệt chia tệp thành nhiều phần và chúng tôi đọc lần lượt từng phần.",
+      "facts": [["Bắt đầu tính theo trang", "1/11/2026 với gói năm và gói miễn phí"], ["Gói tháng", "Vào ngày thanh toán tiếp theo, muộn nhất 1/12/2026"]],
+      "steps": ["Mỗi phần được lưu riêng, nên một trang mờ không làm chậm các phần còn lại.", "Từ ngày bắt đầu tính theo trang, mỗi trang PDF và mỗi ảnh được tính là một lượt đọc."],
+      "keywords": ["trang", "PDF dài", "tệp lớn"]
+    },
+    "same-invoice-twice": {
+      "q": "Nếu tôi tải cùng một hóa đơn hai lần thì sao?",
+      "a": "Hóa đơn chỉ được tính một lần.",
+      "steps": ["Chúng tôi nhận ra cùng một tệp và hiển thị kết quả của lần đầu.", "Cùng hóa đơn nhưng lưu ở tệp khác cũng được phát hiện.", "Hóa đơn đã có trong hồ sơ của bạn không tốn lượt đọc."],
+      "keywords": ["trùng", "hai lần", "lặp lại"]
+    },
+    "blurry-or-handwritten-bill": {
+      "q": "Hóa đơn của tôi bị mờ hoặc viết tay",
+      "a": "Số liệu không rõ sẽ được đánh dấu, không bao giờ đoán.",
+      "steps": ["Chụp lại ảnh khi đủ sáng và thấy toàn bộ trang, hoặc tải lên tệp PDF gốc.", "Số lượng viết tay được đánh dấu và có điểm thấp hơn trong Verify."],
+      "cta": "Tải lên lại",
+      "keywords": ["mờ", "viết tay", "không rõ"]
+    },
+    "electricity-bill": {
+      "q": "Bạn đọc những gì từ hóa đơn tiền điện của tôi?",
+      "a": "Chỉ thông tin tính tiền: kỳ hóa đơn, loại biểu giá, công suất đăng ký và số điện.",
+      "steps": ["Tên, địa chỉ, điện thoại, mã khách hàng, số tài khoản và số công tơ của bạn không bao giờ được lấy.", "Nếu hóa đơn chỉ ghi kVAh, chúng tôi dùng kWh in trên hóa đơn, hoặc kVAh × hệ số công suất in trên hóa đơn (đánh dấu là ước tính), hoặc kWh bạn nhập."],
+      "keywords": ["tiền điện", "số điện", "công tơ", "biểu giá"]
+    },
+    "how-is-my-number-worked-out": {
+      "q": "Số liệu của tôi được tính thế nào?",
+      "a": "Số lượng trên hóa đơn × một hệ số phát thải đã công bố.",
+      "facts": [["Điện lưới, Ấn Độ", "0.710 kg CO₂ mỗi kWh (CEA)"]],
+      "steps": ["Mỗi dòng đều ghi hệ số đã dùng để bạn kiểm tra.", "Không có số lượng trên hóa đơn thì không có số liệu. Chỗ trống không bao giờ được điền bằng phỏng đoán."],
+      "keywords": ["tính toán", "công thức", "carbon", "phát thải"]
+    },
+    "needs-data": {
+      "q": "\"Needs Data\" nghĩa là gì?",
+      "a": "Thiếu một thông tin cần để tính: số lượng, đơn vị, phương thức vận chuyển hoặc hệ số.",
+      "steps": ["Dòng đó vẫn nằm trong hồ sơ nhưng không được cộng vào tổng.", "Màn hình cho biết còn thiếu gì. Hãy bổ sung hoặc tải lên bản rõ hơn."],
+      "keywords": ["thiếu", "chưa đủ", "không cộng"]
+    },
+    "what-verified-means": {
+      "q": "\"Verified\" nghĩa là gì?",
+      "a": "Hồ sơ của bạn đã qua kiểm tra của chúng tôi: được Senseible xem xét độc lập, với hướng dẫn của chuyên gia.",
+      "steps": ["Mỗi hồ sơ bắt đầu với 100 điểm và bị trừ điểm khi có thiếu sót: thiếu số lượng, đơn vị hoặc hệ số, số lượng bất thường, đọc không rõ, hoặc giá trị ước tính hay viết tay.", "Hồ sơ đạt ở mức 80.", "Hồ sơ đã xác minh được giữ trong lịch sử kiểm toán và không thể xóa."],
+      "cta": "Mở Verify",
+      "keywords": ["xác minh", "điểm", "kiểm toán", "kiểm tra"]
+    },
+    "monthly-reads": {
+      "q": "Mỗi tháng tôi có bao nhiêu lượt đọc?",
+      "a": "Tùy theo gói của bạn. Lượt đọc được làm mới vào ngày 1 hằng tháng, theo giờ Ấn Độ.",
+      "facts": [["Snapshot (miễn phí)", "10"], ["Essential", "100"], ["Pro", "1,000"], ["Scale", "10,000"]],
+      "steps": ["Hóa đơn đã có trong hồ sơ của bạn không tốn lượt đọc."],
+      "cta": "Xem các gói",
+      "keywords": ["lượt đọc", "giới hạn", "hằng tháng", "bao nhiêu"]
+    },
+    "hit-my-limit": {
+      "q": "Tôi đã hết giới hạn. Giờ làm gì?",
+      "a": "Nạp thêm tín dụng, chờ đến ngày 1, hoặc chuyển sang gói lớn hơn.",
+      "facts": [["Tín dụng hóa đơn", "₹79 cho 100 hóa đơn"], ["Thời hạn tín dụng", "12 tháng với gói năm, 30 ngày với gói khác"]],
+      "steps": ["Mua tín dụng trong hồ sơ cá nhân. Tín dụng được dùng sau khi hết lượt đọc trong tháng.", "Hoặc chờ đến ngày 1 tháng sau, khi lượt đọc được làm mới."],
+      "cta": "Nạp ngay",
+      "keywords": ["giới hạn", "nạp", "tín dụng", "hết lượt"]
+    },
+    "do-prices-include-gst": {
+      "q": "Giá đã gồm GST chưa?",
+      "a": "Chưa. Giá trên trang là giá trước GST.",
+      "facts": [["UPI", "Giá + 18% GST"], ["Thẻ, ngân hàng trực tuyến hoặc ví", "Giá + phí thanh toán 4%, sau đó 18% GST"]],
+      "keywords": ["thuế", "phí", "tổng"]
+    },
+    "paid-but-plan-not-active": {
+      "q": "Tôi đã thanh toán nhưng gói chưa kích hoạt",
+      "a": "Xin đừng thanh toán lại. Gói của bạn được kích hoạt ngay khi thanh toán được xác nhận.",
+      "steps": ["Tải lại trang hồ sơ sau vài phút.", "Nếu tiền đã bị trừ mà gói vẫn chưa bật, hãy nhắn cho chúng tôi kèm mã tham chiếu trên màn hình thanh toán."],
+      "cta": "Nhắn về thanh toán",
+      "keywords": ["thanh toán", "bị trừ tiền", "chưa kích hoạt"]
+    },
+    "where-are-my-receipts": {
+      "q": "Biên lai của tôi ở đâu?",
+      "a": "Trên trang Billing, mục \"Download your payment receipts\".",
+      "cta": "Mở Billing",
+      "keywords": ["biên lai", "hóa đơn", "tải về"]
+    },
+    "cancel-or-refund": {
+      "q": "Tôi có thể hủy hoặc được hoàn tiền không?",
+      "a": "Không có hoàn tiền. Nếu bạn hủy, gói sẽ không gia hạn.",
+      "steps": ["Những gì bạn đã trả vẫn thuộc về bạn cho đến khi hết hạn.", "Dịch vụ đã mua không được hoàn tiền.", "Để hủy, hãy nhắn cho chúng tôi."],
+      "cta": "Nhắn để hủy",
+      "keywords": ["hoàn tiền", "hủy", "gia hạn"]
+    },
+    "feature-not-in-the-app": {
+      "q": "Tôi thấy một tính năng trên Pricing nhưng không tìm thấy trong ứng dụng",
+      "a": "Một số tính năng trên Pricing và trong điều khoản của chúng tôi được xây dựng theo yêu cầu, với chi phí bổ sung.",
+      "steps": ["Cho chúng tôi biết bạn cần gì.", "Chúng tôi sẽ báo cần những gì và chi phí bao nhiêu."],
+      "cta": "Cho chúng tôi biết bạn cần gì",
+      "keywords": ["tính năng", "theo yêu cầu", "không thấy"]
+    }
+  },
+  "fixes": {
+    "page limit reached": "Bạn đã hết lượt đọc trong tháng. Mua tín dụng trong hồ sơ (₹79 cho 100 hóa đơn), chờ đến ngày 1, hoặc chuyển sang gói lớn hơn.",
+    "busy right now": "Phía chúng tôi đang bận đọc. Chờ một phút rồi thử lại. Không có gì bị tính.",
+    "paused on our side": "Việc đọc đang tạm dừng phía chúng tôi. Tài khoản của bạn vẫn ổn. Hãy thử lại sau. Không có gì bị tính.",
+    "taking too long": "Thử lại, hoặc chỉ tải lên ảnh trang có số tổng. Không có gì bị tính.",
+    "could not read this file": "Chụp ảnh rõ hơn và thấy toàn bộ trang, hoặc tải lên tệp PDF gốc.",
+    "not supported for carbon accounting": "Hãy tải lên hóa đơn, hóa đơn tiền điện, phiếu nhiên liệu hoặc chứng từ vận chuyển hàng hóa.",
+    "invoices today without an account": "Đó là giới hạn mỗi ngày khi chưa có tài khoản. Đăng nhập miễn phí để tiếp tục và lưu kết quả.",
+    "the limit is 10 mb": "Khi chưa có tài khoản, tệp tối đa 10 MB. Hãy chụp ảnh trang, hoặc đăng nhập để dùng 15 MB.",
+    "the limit is 15 mb": "Chụp ảnh trang, hoặc lưu PDF với chất lượng thấp hơn.",
+    "already in your records": "Không cần làm gì. Hóa đơn đó đã được lưu và chỉ tính một lần.",
+    "session has expired": "Đăng nhập lại rồi thử lại.",
+    "team role cannot add invoices": "Vai trò của bạn trong nhóm này không thể thêm hóa đơn. Hãy nhờ chủ sở hữu hoặc quản trị viên đổi vai trò.",
+    "payment gateway could not load": "Có thể trình chặn quảng cáo đang chặn thanh toán. Cho phép checkout.razorpay.com rồi thử lại.",
+    "could not confirm it yet": "Đừng thanh toán lại. Gói của bạn sẽ bật khi thanh toán được xác nhận.",
+    "microphone access": "Cho phép micro cho trang này trong cài đặt trình duyệt, rồi thử lại.",
+    "not supported in your browser": "Giọng nói cần Chrome hoặc Edge.",
+    "cannot be deleted": "Điều này là bình thường. Hồ sơ đã xác minh được giữ trong lịch sử kiểm toán."
+  }
+}

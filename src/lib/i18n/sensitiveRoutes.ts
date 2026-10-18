@@ -6,6 +6,8 @@ export const SENSITIVE_PREFIXES = [
   '/cbam-calculator', '/calculators', '/net-zero', '/trust', '/legal', '/pricing',
   '/billing', '/subscription', '/climate-intelligence', '/solutions', '/intelligence',
   '/carbon-credits', '/climate-finance', '/marketplace', '/partner-marketplace', '/enterprise',
+  // Help Center carries prices and plan terms; it ships its own reviewed language bundles.
+  '/help',
   // Service lead pages carry regulatory statements and prices.
   '/carbon-accounting', '/esg-reporting', '/supplier-due-diligence', '/decarbonization', '/circular-economy',
   '/climate-risk', '/esg-data-management', '/ehs-social', '/product-compliance', '/esg-ratings', '/green-finance',

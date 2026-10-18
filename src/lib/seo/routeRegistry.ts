@@ -20,6 +20,8 @@ import * as di from '@/data/decarbonizeIndia';
 import { WP_PATH, WP_PUBLISHED } from '@/data/whitePaper';
 import { ESG_SAMPLE_META, ESG_SAMPLE_OBJECTIONS } from '@/data/esgReportSample';
 import { ORGANIZATION, ORG_REF, entityJsonLd } from './entity';
+import { HELP_ARTICLES, HELP_SECTIONS } from '../../../supabase/functions/_shared/helpArticles';
+import { HELP_HUB_META, helpArticleMeta } from '@/lib/help/meta';
 import { FACTOR_HUB_ANSWER, FACTOR_HUB_META, FACTOR_HUB_PATH, FACTOR_PAGES, factorAnswer, factorFaqs, factorMeta, factorPath } from '@/data/factorLibrary';
 import { CBAM_HUB_ANSWER, CBAM_HUB_META, CBAM_HUB_PATH, CBAM_PRICE, CBAM_SECTOR_COSTS, CBAM_YEARS, cbamAnswer, cbamFaqs, cbamSectorMeta, cbamSectorPath, CBAM_SECTOR_PAGES, sectorHref } from '@/data/cbamSectorCosts';
 import {
@@ -569,6 +571,41 @@ function cbamCostRoutes(): SeoRoute[] {
   })];
 }
 
+function helpRoutes(): SeoRoute[] {
+  const hubCrumbs = [{ name: 'Home', path: '/' }, { name: 'Help Center', path: '/help' }];
+  const hub: SeoRoute = {
+    path: '/help', section: 'core', ogType: 'website', ...HELP_HUB_META, h1: 'How can we help?',
+    blocks: [
+      { p: 'Ask the way you’d say it, or pick a topic.' },
+      ...HELP_SECTIONS.flatMap(s => [
+        { h2: s.title } as Block,
+        { ul: HELP_ARTICLES.filter(a => a.section === s.id).map(a => `[${a.q}](/help/${a.slug}): ${a.a}`) } as Block,
+      ]),
+      { p: 'Still stuck? [Message us](/contact).' },
+    ],
+    breadcrumbs: hubCrumbs,
+    jsonLd: [breadcrumbLd(hubCrumbs), faqLd(HELP_ARTICLES.map(a => ({ question: a.q, answer: a.a })))],
+    priority: 0.6, changefreq: 'monthly',
+  };
+  return [hub, ...HELP_ARTICLES.map(a => {
+    const path = `/help/${a.slug}`;
+    const crumbs = [...hubCrumbs, { name: a.q, path }];
+    return {
+      path, section: 'guide' as const, ...helpArticleMeta(a), h1: a.q,
+      blocks: [
+        { p: a.a } as Block,
+        ...(a.facts?.length ? [{ ul: a.facts.map(([k, v]) => `${k}: ${v}`) } as Block] : []),
+        ...(a.steps?.length ? [{ ol: a.steps } as Block] : []),
+        ...(a.cta ? [{ p: `[${a.cta.label}](${a.cta.to})` } as Block] : []),
+        { p: '[All help topics](/help) · [Message us](/contact)' } as Block,
+      ],
+      breadcrumbs: crumbs,
+      jsonLd: [breadcrumbLd(crumbs), faqLd([{ question: a.q, answer: [a.a, ...(a.steps ?? [])].join(' ') }])],
+      priority: 0.5, changefreq: 'monthly' as const,
+    };
+  })];
+}
+
 function legalRoutes(): SeoRoute[] {
   return legalDocuments.map(d => {
     const path = `/legal/${d.slug}`;
@@ -599,6 +636,7 @@ export function getSeoRoutes(): SeoRoute[] {
     ...competitorRoutes(),
     ...industryRoutes(),
     ...answerRoutes(),
+    ...helpRoutes(),
     ...factorRoutes(),
     ...cbamCostRoutes(),
     ...legalRoutes(),

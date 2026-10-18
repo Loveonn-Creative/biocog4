@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "hubTitle": "Paano kami makakatulong?",
+    "hubLead": "Itanong kung paano mo ito sasabihin, o pumili ng paksa.",
+    "askPlaceholder": "hal. nagbayad na pero hindi aktibo ang plan",
+    "askLabel": "Magtanong o maghanap",
+    "speak": "Sabihin ang tanong mo",
+    "listening": "Nakikinig…",
+    "ask": "Magtanong",
+    "answer": "Sagot",
+    "fromArticle": "Mula sa",
+    "related": "Tingnan din",
+    "noMatch": "Wala pa kaming sagot dito. Mag-message sa amin at tutulong kami.",
+    "aiThinking": "Hinahanap ang sagot mo…",
+    "aiNotCovered": "Hindi pa ito sakop ng aming mga help article. Mag-message sa amin at tutulong kami.",
+    "aiLimit": "Naubos mo na ang mga tanong sa help ngayong araw. Maghanap sa mga article, o mag-message sa amin.",
+    "aiError": "Hindi pa makasagot ngayon. Maghanap sa mga article, o mag-message sa amin.",
+    "askAnswerCta": "Kumuha ng direktang sagot",
+    "messageUs": "Mag-message sa amin",
+    "stillStuck": "May problema pa rin?",
+    "stillStuckLead": "Padalhan kami ng message. Nakalagay na ang paksa.",
+    "fixTitle": "I-paste ang message na nakita mo",
+    "fixLead": "Kopyahin ang linya sa screen mo at sasabihin namin ang gagawin.",
+    "fixPlaceholder": "hal. Page limit reached",
+    "fixLabel": "Mag-paste ng message",
+    "whatToDo": "Gagawin",
+    "more": "Higit pa",
+    "fixUnknown": "Hindi pa namin kilala ang message na ito. Ipadala sa amin at titingnan namin.",
+    "sendIt": "Ipadala sa amin",
+    "somethingWrong": "May nagkaproblema",
+    "somethingWrongBlurb": "I-paste ang message, kunin ang solusyon",
+    "allTopics": "Lahat ng paksa",
+    "helpful": "Nasagot ba nito?",
+    "yes": "Oo",
+    "no": "Hindi, mag-message",
+    "thanks": "Salamat. Natutuwa kaming nakatulong.",
+    "forThisPage": "Para sa page na ito",
+    "openHelp": "Tulong",
+    "close": "Isara",
+    "back": "Bumalik",
+    "helpCenter": "Help Center",
+    "example": "Halimbawa: 100 invoice credit (₹79)",
+    "upi": "UPI",
+    "card": "Card, netbanking o wallet",
+    "price": "Presyo",
+    "fee": "Bayad sa payment 4%",
+    "gst": "GST 18%",
+    "total": "Kabuuan",
+    "quantity": "Dami sa bill mo",
+    "factor": "Emission factor",
+    "result": "kg CO₂",
+    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "scoreStart": "Nagsisimula sa 100",
+    "scorePass": "Pasado sa 80",
+    "scoreGaps": "Nababawasan ng puntos ang kulang",
+    "splitWhole": "Buong PDF",
+    "splitParts": "Binabasa nang paisa-isang bahagi"
+  },
+  "sections": {
+    "start": { "title": "Magsimula", "blurb": "Subukan, mga plan, boses, data mo" },
+    "upload": { "title": "Mag-upload ng bill", "blurb": "Mga file, mahabang PDF, ulit na upload" },
+    "numbers": { "title": "Mga numero ko at Verify", "blurb": "Paano kinukuwenta ang numero" },
+    "billing": { "title": "Mga plan at bayad", "blurb": "Reads, credits, GST, resibo" }
+  },
+  "articles": {
+    "try-without-an-account": {
+      "q": "Puwede ko bang subukan nang walang account?",
+      "a": "Oo. Mag-upload ng bill sa home page at makikita mo agad ang resulta.",
+      "facts": [["Walang account", "30 invoice kada araw sa isang device"], ["Mga resulta mo", "Nakatago sa browser na ito nang 24 oras"]],
+      "steps": ["Mag-sign in nang libre para maitago ang mga resulta mo. Babasahin ulit ang mga file mo sa account mo."],
+      "cta": "Mag-upload ng bill",
+      "keywords": ["walang account", "libre", "subok", "mag-sign up"]
+    },
+    "is-senseible-free": {
+      "q": "Libre ba ang Senseible?",
+      "a": "Oo. Libre ang Snapshot plan, habambuhay.",
+      "facts": [["Invoice reads", "10 kada buwan"], ["Team seats", "1"]],
+      "steps": ["Mas maraming reads at features ang mga bayad na plan."],
+      "cta": "Tingnan ang mga plan",
+      "keywords": ["libre", "presyo", "bayad"]
+    },
+    "ask-by-voice": {
+      "q": "Puwede ba akong magtanong gamit ang boses?",
+      "a": "Oo. Pindutin ang mic sa home page, magtanong, at pakinggan ang sagot.",
+      "steps": ["Gumagana ang boses sa Chrome o Edge. Payagan ang mic kapag nagtanong ang browser.", "May live na usapan gamit ang boses din sa Biocog Intelligence ang Pro at Scale plan."],
+      "cta": "Pumunta sa home page",
+      "keywords": ["boses", "mic", "magsalita"]
+    },
+    "how-long-is-my-data-kept": {
+      "q": "Gaano katagal itinatago ang data ko?",
+      "a": "Hanggang 3 buwan kung walang account, at hanggang 18 buwan para sa naka-sign in o bayad na account.",
+      "steps": ["Ito ang karaniwang tagal sa aming Privacy Policy.", "Puwede itong humaba kapag kailangan ng batas, audit o hindi pagkakasundo."],
+      "cta": "Basahin ang Privacy Policy",
+      "keywords": ["data", "privacy", "burahin", "gaano katagal"]
+    },
+    "what-can-i-upload": {
+      "q": "Ano ang puwede kong i-upload?",
+      "a": "PDF o litrato ng bill mo.",
+      "facts": [["Uri ng file", "PDF, JPG, PNG, WEBP, HEIC"], ["Laki ng file", "10 MB kung walang account, 15 MB kung naka-sign in"], ["Sabay-sabay", "Hanggang 10 file"]],
+      "steps": ["Binabasa ang mga tax invoice, bill sa kuryente, resibo ng gasolina at record ng padala ng kargamento.", "Ang ibang dokumento ay makakatanggap ng message at hindi gagamit ng read."],
+      "cta": "Mag-upload ng bill",
+      "keywords": ["file", "litrato", "laki"]
+    },
+    "long-pdfs": {
+      "q": "Paano binabasa ang mahahabang PDF?",
+      "a": "I-upload ang buong file. Hinahati ito ng browser mo sa mga bahagi, at binabasa namin isa-isa.",
+      "facts": [["Simula ng pagbilang kada page", "1 Nobyembre 2026 sa taunan at libreng plan"], ["Buwanang plan", "Sa susunod na billing date, hanggang 1 Disyembre 2026"]],
+      "steps": ["Hiwalay na naise-save ang bawat bahagi, kaya hindi napipigilan ng isang malabong page ang iba.", "Mula sa petsa ng pagbilang kada page, bawat page ng PDF at bawat litrato ay bilang na isang read."],
+      "keywords": ["pages", "mahabang PDF", "malaking file"]
+    },
+    "same-invoice-twice": {
+      "q": "Paano kung dalawang beses kong i-upload ang parehong invoice?",
+      "a": "Isang beses lang itong bibilangin.",
+      "steps": ["Nakikilala namin ang parehong file at ipinapakita ang resulta mula sa una.", "Nahuhuli rin ang parehong invoice na naka-save sa ibang file.", "Hindi gagamit ng read ang invoice na nasa records mo na."],
+      "keywords": ["duplicate", "dalawang beses", "ulit"]
+    },
+    "blurry-or-handwritten-bill": {
+      "q": "Malabo o sulat-kamay ang bill ko",
+      "a": "Minamarkahan ang malalabong numero, hindi kailanman hinuhulaan.",
+      "steps": ["Kumuha ulit ng litrato na maliwanag at kita ang buong page, o i-upload ang orihinal na PDF.", "Minamarkahan ang mga dami na sulat-kamay, at mas mababa ang score nila sa Verify."],
+      "cta": "I-upload ulit",
+      "keywords": ["malabo", "sulat-kamay", "hindi mabasa"]
+    },
+    "electricity-bill": {
+      "q": "Ano ang binabasa ninyo sa bill ko sa kuryente?",
+      "a": "Mga detalye lang ng billing: ang period, tariff category, sanctioned load at units.",
+      "steps": ["Hindi kailanman kinukuha ang pangalan, address, telepono, consumer, account o meter number mo.", "Kung kVAh lang ang nasa bill, ginagamit namin ang naka-print na kWh, o kVAh × ang naka-print na power factor (minarkahang tantiya), o ang kWh na ita-type mo."],
+      "keywords": ["kuryente", "units", "metro", "tariff"]
+    },
+    "how-is-my-number-worked-out": {
+      "q": "Paano kinukuwenta ang numero ko?",
+      "a": "Ang dami sa bill mo × isang nailathalang emission factor.",
+      "facts": [["Kuryente mula sa grid, India", "0.710 kg CO₂ kada kWh (CEA)"]],
+      "steps": ["Ipinapakita ng bawat linya ang factor na ginamit, para masuri mo.", "Walang dami sa bill, walang numero. Hindi kailanman pinupunan ng hula ang kulang."],
+      "keywords": ["kuwenta", "formula", "carbon", "emissions"]
+    },
+    "needs-data": {
+      "q": "Ano ang ibig sabihin ng \"Needs Data\"?",
+      "a": "May kulang na kailangan para sa numero: dami, unit, paraan ng transportasyon o factor.",
+      "steps": ["Nananatili ang linya sa records mo pero hindi idinadagdag sa kabuuan.", "Sasabihin ng screen kung ano ang kulang. Idagdag ito, o mag-upload ng mas malinaw na kopya."],
+      "keywords": ["kulang", "hindi kumpleto", "hindi nadagdag"]
+    },
+    "what-verified-means": {
+      "q": "Ano ang ibig sabihin ng \"Verified\"?",
+      "a": "Pumasa ang record mo sa aming pagsusuri: sinuri nang independiyente ng Senseible, sa gabay ng mga eksperto.",
+      "steps": ["Nagsisimula ang bawat record sa 100 puntos at nababawasan kapag may kulang: walang dami, unit o factor, kakaibang dami, malabong pagbasa, o tantiya o sulat-kamay na halaga.", "Pumapasa ang record sa 80.", "Nananatili ang mga Verified record sa audit trail mo at hindi mabubura."],
+      "cta": "Buksan ang Verify",
+      "keywords": ["verified", "score", "audit", "suri"]
+    },
+    "monthly-reads": {
+      "q": "Ilang reads ang nakukuha ko kada buwan?",
+      "a": "Depende sa plan mo. Nagre-reset ang reads tuwing ika-1 ng buwan, oras sa India.",
+      "facts": [["Snapshot (libre)", "10"], ["Essential", "100"], ["Pro", "1,000"], ["Scale", "10,000"]],
+      "steps": ["Hindi gagamit ng read ang invoice na nasa records mo na."],
+      "cta": "Tingnan ang mga plan",
+      "keywords": ["reads", "limit", "buwanan", "ilan"]
+    },
+    "hit-my-limit": {
+      "q": "Naabot ko na ang limit. Ano na?",
+      "a": "Mag-top up ng credits, hintayin ang ika-1, o lumipat sa mas malaking plan.",
+      "facts": [["Invoice credits", "₹79 para sa 100 invoice"], ["Tagal ng credits", "12 buwan sa taunang plan, 30 araw sa iba"]],
+      "steps": ["Bumili ng credits sa profile mo. Ginagamit ang mga ito kapag ubos na ang buwanang reads mo.", "O hintayin ang ika-1 ng susunod na buwan, kapag nag-reset ang reads mo."],
+      "cta": "Mag-top up ngayon",
+      "keywords": ["limit", "top up", "credits", "ubos"]
+    },
+    "do-prices-include-gst": {
+      "q": "Kasama na ba ang GST sa presyo?",
+      "a": "Hindi pa. Ang mga presyo sa site ay bago ang GST.",
+      "facts": [["UPI", "Presyo + 18% GST"], ["Card, netbanking o wallet", "Presyo + 4% bayad sa payment, saka 18% GST"]],
+      "keywords": ["buwis", "bayad", "kabuuan"]
+    },
+    "paid-but-plan-not-active": {
+      "q": "Nagbayad ako, pero hindi aktibo ang plan ko",
+      "a": "Pakiusap, huwag nang magbayad ulit. Magiging aktibo ang plan mo kapag nakumpirma ang bayad.",
+      "steps": ["I-refresh ang profile mo pagkalipas ng ilang minuto.", "Kung nabawasan na ang account mo at hindi pa rin aktibo ang plan, mag-message sa amin kasama ang payment reference mula sa payment screen."],
+      "cta": "Mag-message tungkol sa bayad",
+      "keywords": ["bayad", "nabawasan", "hindi aktibo"]
+    },
+    "where-are-my-receipts": {
+      "q": "Nasaan ang mga resibo ko?",
+      "a": "Sa Billing page, sa ilalim ng \"Download your payment receipts\".",
+      "cta": "Buksan ang Billing",
+      "keywords": ["resibo", "invoice", "i-download"]
+    },
+    "cancel-or-refund": {
+      "q": "Puwede ba akong mag-cancel o mag-refund?",
+      "a": "Walang refund. Kapag nag-cancel ka, hindi na magre-renew ang plan mo.",
+      "steps": ["Sa iyo pa rin ang nabayaran mo hanggang matapos ito.", "Hindi nire-refund ang serbisyong nabili mo na.", "Para mag-cancel, mag-message sa amin."],
+      "cta": "Mag-message para mag-cancel",
+      "keywords": ["refund", "ibalik ang pera", "cancel", "renew"]
+    },
+    "feature-not-in-the-app": {
+      "q": "May nakita akong feature sa Pricing na hindi ko makita sa app",
+      "a": "Ang ilang feature sa Pricing at sa aming terms ay ginagawa para sa iyo kapag hiniling, may dagdag na bayad.",
+      "steps": ["Sabihin sa amin ang kailangan mo.", "Sasabihin namin kung ano ang kailangan at magkano ang gastos."],
+      "cta": "Sabihin ang kailangan mo",
+      "keywords": ["feature", "custom", "hindi makita"]
+    }
+  },
+  "fixes": {
+    "page limit reached": "Ubos na ang buwanang reads mo. Bumili ng credits sa profile mo (₹79 para sa 100 invoice), hintayin ang ika-1, o lumipat sa mas malaking plan.",
+    "busy right now": "Abala ang pagbasa sa panig namin. Maghintay ng isang minuto at subukan ulit. Walang nabilang.",
+    "paused on our side": "Naka-pause ang pagbasa sa panig namin. Maayos ang account mo. Subukan ulit mamaya. Walang nabilang.",
+    "taking too long": "Subukan ulit, o i-upload ang litrato ng page na may kabuuan lang. Walang nabilang.",
+    "could not read this file": "Kumuha ng mas malinaw na litrato na kita ang buong page, o i-upload ang orihinal na PDF.",
+    "not supported for carbon accounting": "Mag-upload ng invoice, bill sa kuryente, resibo ng gasolina o record ng padala ng kargamento.",
+    "invoices today without an account": "Iyan ang araw-araw na limit kung walang account. Mag-sign in nang libre para magpatuloy at maitago ang mga resulta mo.",
+    "the limit is 10 mb": "Kung walang account, hanggang 10 MB ang file. Kunan ng litrato ang page, o mag-sign in para sa 15 MB.",
+    "the limit is 15 mb": "Kunan ng litrato ang page, o i-save ang PDF sa mas mababang kalidad.",
+    "already in your records": "Wala kang kailangang gawin. Naka-save na ang invoice na iyan at isang beses lang bibilangin.",
+    "session has expired": "Mag-sign in ulit, saka subukan ulit.",
+    "team role cannot add invoices": "Hindi makakapagdagdag ng invoice ang role mo sa team na ito. Hilingin sa may-ari o admin na palitan ito.",
+    "payment gateway could not load": "Baka hinaharangan ng ad blocker ang checkout. Payagan ang checkout.razorpay.com at subukan ulit.",
+    "could not confirm it yet": "Huwag nang magbayad ulit. Magiging aktibo ang plan mo kapag nakumpirma ang bayad.",
+    "microphone access": "Payagan ang mic para sa site na ito sa settings ng browser, saka subukan ulit.",
+    "not supported in your browser": "Kailangan ng Chrome o Edge para sa boses.",
+    "cannot be deleted": "Normal ito. Nananatili ang mga Verified record sa audit trail mo."
+  }
+}

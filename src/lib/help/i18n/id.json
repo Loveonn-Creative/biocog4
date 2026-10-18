@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "hubTitle": "Ada yang bisa kami bantu?",
+    "hubLead": "Tanyakan seperti biasa Anda bicara, atau pilih topik.",
+    "askPlaceholder": "mis. sudah bayar tapi paket belum aktif",
+    "askLabel": "Tanya atau cari",
+    "speak": "Ucapkan pertanyaan Anda",
+    "listening": "Mendengarkan…",
+    "ask": "Tanya",
+    "answer": "Jawaban",
+    "fromArticle": "Dari",
+    "related": "Lihat juga",
+    "noMatch": "Kami belum punya jawaban untuk ini. Kirim pesan dan kami bantu.",
+    "aiThinking": "Mencari jawaban Anda…",
+    "aiNotCovered": "Artikel bantuan kami belum membahas ini. Kirim pesan dan kami bantu.",
+    "aiLimit": "Jatah pertanyaan bantuan hari ini sudah habis. Cari di artikel, atau kirim pesan.",
+    "aiError": "Jawaban sedang tidak tersedia. Cari di artikel, atau kirim pesan.",
+    "askAnswerCta": "Dapatkan jawaban langsung",
+    "messageUs": "Kirim pesan",
+    "stillStuck": "Masih bingung?",
+    "stillStuckLead": "Kirim pesan ke kami. Topiknya sudah terisi.",
+    "fixTitle": "Tempel pesan yang Anda lihat",
+    "fixLead": "Salin baris dari layar Anda, kami beri tahu apa yang harus dilakukan.",
+    "fixPlaceholder": "mis. Page limit reached",
+    "fixLabel": "Tempel pesan",
+    "whatToDo": "Yang perlu dilakukan",
+    "more": "Selengkapnya",
+    "fixUnknown": "Kami belum mengenal pesan ini. Kirim ke kami dan akan kami periksa.",
+    "sendIt": "Kirim ke kami",
+    "somethingWrong": "Ada yang salah",
+    "somethingWrongBlurb": "Tempel pesannya, dapatkan solusinya",
+    "allTopics": "Semua topik",
+    "helpful": "Apakah ini menjawab?",
+    "yes": "Ya",
+    "no": "Tidak, kirim pesan",
+    "thanks": "Terima kasih. Senang bisa membantu.",
+    "forThisPage": "Untuk halaman ini",
+    "openHelp": "Bantuan",
+    "close": "Tutup",
+    "back": "Kembali",
+    "helpCenter": "Pusat Bantuan",
+    "example": "Contoh: 100 kredit faktur (₹79)",
+    "upi": "UPI",
+    "card": "Kartu, netbanking, atau dompet digital",
+    "price": "Harga",
+    "fee": "Biaya pembayaran 4%",
+    "gst": "GST 18%",
+    "total": "Total",
+    "quantity": "Jumlah di tagihan Anda",
+    "factor": "Faktor emisi",
+    "result": "kg CO₂",
+    "formulaExample": "1,000 kWh × 0.710 = 710 kg CO₂",
+    "scoreStart": "Mulai dari 100",
+    "scorePass": "Lulus di 80",
+    "scoreGaps": "Kekurangan mengurangi poin",
+    "splitWhole": "PDF utuh",
+    "splitParts": "Dibaca per bagian"
+  },
+  "sections": {
+    "start": { "title": "Mulai", "blurb": "Coba, paket, suara, data Anda" },
+    "upload": { "title": "Unggah tagihan", "blurb": "File, PDF panjang, unggahan ulang" },
+    "numbers": { "title": "Angka saya dan Verify", "blurb": "Cara angka dihitung" },
+    "billing": { "title": "Paket dan pembayaran", "blurb": "Bacaan, kredit, GST, kuitansi" }
+  },
+  "articles": {
+    "try-without-an-account": {
+      "q": "Bisakah saya mencoba tanpa akun?",
+      "a": "Bisa. Unggah tagihan di halaman utama dan lihat hasilnya saat itu juga.",
+      "facts": [["Tanpa akun", "30 faktur sehari di satu perangkat"], ["Hasil Anda", "Disimpan di browser ini selama 24 jam"]],
+      "steps": ["Masuk gratis untuk menyimpan hasil Anda. File Anda dibaca ulang di akun Anda."],
+      "cta": "Unggah tagihan",
+      "keywords": ["tanpa akun", "gratis", "coba", "daftar"]
+    },
+    "is-senseible-free": {
+      "q": "Apakah Senseible gratis?",
+      "a": "Ya. Paket Snapshot gratis, selamanya.",
+      "facts": [["Bacaan faktur", "10 per bulan"], ["Kursi tim", "1"]],
+      "steps": ["Paket berbayar memberi lebih banyak bacaan dan fitur."],
+      "cta": "Lihat paket",
+      "keywords": ["gratis", "harga", "biaya"]
+    },
+    "ask-by-voice": {
+      "q": "Bisakah saya bertanya dengan suara?",
+      "a": "Bisa. Ketuk mikrofon di halaman utama, ajukan pertanyaan, dan dengarkan jawabannya.",
+      "steps": ["Suara berfungsi di Chrome atau Edge. Izinkan mikrofon saat browser memintanya.", "Paket Pro dan Scale juga mendapat percakapan suara langsung di Biocog Intelligence."],
+      "cta": "Ke halaman utama",
+      "keywords": ["suara", "mikrofon", "bicara"]
+    },
+    "how-long-is-my-data-kept": {
+      "q": "Berapa lama data saya disimpan?",
+      "a": "Hingga 3 bulan tanpa akun, dan hingga 18 bulan untuk akun yang masuk atau berbayar.",
+      "steps": ["Ini periode standar dalam Kebijakan Privasi kami.", "Bisa lebih lama jika diperlukan oleh hukum, audit, atau sengketa."],
+      "cta": "Baca Kebijakan Privasi",
+      "keywords": ["data", "privasi", "hapus", "berapa lama"]
+    },
+    "what-can-i-upload": {
+      "q": "Apa saja yang bisa saya unggah?",
+      "a": "PDF atau foto tagihan Anda.",
+      "facts": [["Jenis file", "PDF, JPG, PNG, WEBP, HEIC"], ["Ukuran file", "10 MB tanpa akun, 15 MB jika masuk"], ["Sekaligus", "Hingga 10 file"]],
+      "steps": ["Faktur pajak, tagihan listrik, struk bahan bakar, dan catatan pengiriman barang dapat dibaca.", "Dokumen lain mendapat pesan dan tidak memakai bacaan."],
+      "cta": "Unggah tagihan",
+      "keywords": ["file", "foto", "ukuran", "format"]
+    },
+    "long-pdfs": {
+      "q": "Bagaimana PDF panjang dibaca?",
+      "a": "Unggah file utuhnya. Browser Anda membaginya menjadi beberapa bagian, lalu kami membacanya satu per satu.",
+      "facts": [["Penghitungan per halaman mulai", "1 November 2026 untuk paket tahunan dan gratis"], ["Paket bulanan", "Pada tanggal tagihan berikutnya, paling lambat 1 Desember 2026"]],
+      "steps": ["Setiap bagian disimpan sendiri, jadi satu halaman yang buram tidak menahan yang lain.", "Sejak tanggal penghitungan per halaman Anda, setiap halaman PDF dan setiap foto dihitung satu bacaan."],
+      "keywords": ["halaman", "PDF panjang", "file besar"]
+    },
+    "same-invoice-twice": {
+      "q": "Bagaimana jika saya mengunggah faktur yang sama dua kali?",
+      "a": "Faktur itu dihitung sekali.",
+      "steps": ["Kami mengenali file yang sama dan menampilkan hasil dari unggahan pertama.", "Faktur yang sama dalam file berbeda juga terdeteksi.", "Faktur yang sudah ada di catatan Anda tidak memakai bacaan."],
+      "keywords": ["duplikat", "dua kali", "ulang"]
+    },
+    "blurry-or-handwritten-bill": {
+      "q": "Tagihan saya buram atau ditulis tangan",
+      "a": "Angka yang tidak jelas ditandai, tidak pernah ditebak.",
+      "steps": ["Foto ulang dengan cahaya cukup dan seluruh halaman terlihat, atau unggah PDF aslinya.", "Jumlah yang ditulis tangan diberi tanda dan nilainya lebih rendah di Verify."],
+      "cta": "Unggah ulang",
+      "keywords": ["buram", "tulisan tangan", "tidak jelas"]
+    },
+    "electricity-bill": {
+      "q": "Apa yang Anda baca dari tagihan listrik saya?",
+      "a": "Hanya rincian tagihan: periode, golongan tarif, daya tersambung, dan jumlah unit.",
+      "steps": ["Nama, alamat, telepon, serta nomor pelanggan, rekening, dan meteran Anda tidak pernah diambil.", "Jika tagihan hanya menunjukkan kVAh, kami memakai kWh yang tercetak, atau kVAh × faktor daya yang tercetak (ditandai sebagai perkiraan), atau kWh yang Anda ketik."],
+      "keywords": ["listrik", "unit", "meteran", "tarif"]
+    },
+    "how-is-my-number-worked-out": {
+      "q": "Bagaimana angka saya dihitung?",
+      "a": "Jumlah di tagihan Anda × faktor emisi yang dipublikasikan.",
+      "facts": [["Listrik jaringan, India", "0.710 kg CO₂ per kWh (CEA)"]],
+      "steps": ["Setiap baris menampilkan faktor yang dipakai, jadi Anda bisa memeriksanya.", "Tanpa jumlah di tagihan, tidak ada angka. Kekosongan tidak pernah diisi dengan tebakan."],
+      "keywords": ["hitung", "rumus", "karbon", "emisi"]
+    },
+    "needs-data": {
+      "q": "Apa arti \"Needs Data\"?",
+      "a": "Ada yang kurang untuk menghitung angkanya: jumlah, satuan, moda transportasi, atau faktor.",
+      "steps": ["Baris itu tetap ada di catatan Anda, tetapi tidak ditambahkan ke total.", "Layar menunjukkan apa yang kurang. Tambahkan, atau unggah salinan yang lebih jelas."],
+      "keywords": ["kurang", "tidak lengkap", "tidak dihitung"]
+    },
+    "what-verified-means": {
+      "q": "Apa arti \"Verified\"?",
+      "a": "Catatan Anda lolos pemeriksaan kami: ditinjau secara independen oleh Senseible, dengan panduan ahli.",
+      "steps": ["Setiap catatan mulai dari 100 poin dan berkurang karena kekurangan: jumlah, satuan, atau faktor yang tidak ada, jumlah yang tidak wajar, bacaan yang kurang jelas, atau nilai perkiraan atau tulisan tangan.", "Catatan lulus di 80.", "Catatan terverifikasi tetap ada di jejak audit Anda dan tidak bisa dihapus."],
+      "cta": "Buka Verify",
+      "keywords": ["verifikasi", "skor", "audit", "periksa"]
+    },
+    "monthly-reads": {
+      "q": "Berapa bacaan yang saya dapat setiap bulan?",
+      "a": "Tergantung paket Anda. Bacaan direset setiap tanggal 1, waktu India.",
+      "facts": [["Snapshot (gratis)", "10"], ["Essential", "100"], ["Pro", "1,000"], ["Scale", "10,000"]],
+      "steps": ["Faktur yang sudah ada di catatan Anda tidak memakai bacaan."],
+      "cta": "Lihat paket",
+      "keywords": ["bacaan", "batas", "bulanan", "berapa"]
+    },
+    "hit-my-limit": {
+      "q": "Batas saya habis. Lalu bagaimana?",
+      "a": "Isi ulang kredit, tunggu tanggal 1, atau pindah ke paket yang lebih besar.",
+      "facts": [["Kredit faktur", "₹79 untuk 100 faktur"], ["Masa berlaku kredit", "12 bulan di paket tahunan, 30 hari di paket lain"]],
+      "steps": ["Beli kredit di profil Anda. Kredit dipakai setelah bacaan bulanan habis.", "Atau tunggu tanggal 1 bulan depan, saat bacaan direset."],
+      "cta": "Isi ulang sekarang",
+      "keywords": ["batas", "isi ulang", "kredit", "habis"]
+    },
+    "do-prices-include-gst": {
+      "q": "Apakah harga sudah termasuk GST?",
+      "a": "Belum. Harga di situs adalah harga sebelum GST.",
+      "facts": [["UPI", "Harga + 18% GST"], ["Kartu, netbanking, atau dompet digital", "Harga + biaya pembayaran 4%, lalu 18% GST"]],
+      "keywords": ["pajak", "biaya", "total"]
+    },
+    "paid-but-plan-not-active": {
+      "q": "Saya sudah bayar, tapi paket saya belum aktif",
+      "a": "Mohon jangan bayar lagi. Paket Anda aktif begitu pembayaran dikonfirmasi.",
+      "steps": ["Muat ulang profil Anda setelah beberapa menit.", "Jika uang sudah keluar dari rekening dan paket masih belum aktif, kirim pesan dengan referensi pembayaran dari layar pembayaran."],
+      "cta": "Kirim pesan soal pembayaran",
+      "keywords": ["bayar", "terpotong", "belum aktif"]
+    },
+    "where-are-my-receipts": {
+      "q": "Di mana kuitansi saya?",
+      "a": "Di halaman Billing, pada \"Download your payment receipts\".",
+      "cta": "Buka Billing",
+      "keywords": ["kuitansi", "faktur", "unduh"]
+    },
+    "cancel-or-refund": {
+      "q": "Bisakah saya membatalkan atau meminta pengembalian dana?",
+      "a": "Tidak ada pengembalian dana. Jika Anda membatalkan, paket Anda tidak diperpanjang.",
+      "steps": ["Apa yang sudah Anda bayar tetap milik Anda sampai masanya habis.", "Layanan yang sudah dibeli tidak dikembalikan dananya.", "Untuk membatalkan, kirim pesan ke kami."],
+      "cta": "Kirim pesan untuk membatalkan",
+      "keywords": ["refund", "uang kembali", "batal", "perpanjang"]
+    },
+    "feature-not-in-the-app": {
+      "q": "Saya melihat fitur di Pricing yang tidak ada di aplikasi",
+      "a": "Beberapa fitur di Pricing dan dalam ketentuan kami dibuat khusus untuk Anda sesuai permintaan, dengan biaya tambahan.",
+      "steps": ["Beri tahu kami apa yang Anda butuhkan.", "Kami akan menyampaikan apa saja yang diperlukan dan berapa biayanya."],
+      "cta": "Beri tahu kebutuhan Anda",
+      "keywords": ["fitur", "khusus", "tidak ada"]
+    }
+  },
+  "fixes": {
+    "page limit reached": "Bacaan bulanan Anda sudah habis. Beli kredit di profil (₹79 untuk 100 faktur), tunggu tanggal 1, atau pindah ke paket yang lebih besar.",
+    "busy right now": "Pembacaan sedang sibuk di pihak kami. Tunggu sebentar lalu coba lagi. Tidak ada yang dihitung.",
+    "paused on our side": "Pembacaan sedang dijeda di pihak kami. Akun Anda baik-baik saja. Coba lagi nanti. Tidak ada yang dihitung.",
+    "taking too long": "Coba lagi, atau unggah foto halaman yang berisi totalnya saja. Tidak ada yang dihitung.",
+    "could not read this file": "Ambil foto yang lebih tajam dengan seluruh halaman terlihat, atau unggah PDF aslinya.",
+    "not supported for carbon accounting": "Unggah faktur, tagihan listrik, struk bahan bakar, atau catatan pengiriman barang.",
+    "invoices today without an account": "Itu batas harian tanpa akun. Masuk gratis untuk melanjutkan dan menyimpan hasil Anda.",
+    "the limit is 10 mb": "Tanpa akun, file bisa sampai 10 MB. Foto halamannya, atau masuk untuk 15 MB.",
+    "the limit is 15 mb": "Foto halamannya, atau simpan PDF dengan kualitas lebih rendah.",
+    "already in your records": "Tidak perlu apa-apa. Faktur itu sudah tersimpan dan dihitung sekali.",
+    "session has expired": "Masuk lagi, lalu coba kembali.",
+    "team role cannot add invoices": "Peran Anda di tim ini tidak bisa menambah faktur. Minta pemilik atau admin untuk mengubahnya.",
+    "payment gateway could not load": "Mungkin pemblokir iklan menghalangi pembayaran. Izinkan checkout.razorpay.com lalu coba lagi.",
+    "could not confirm it yet": "Jangan bayar lagi. Paket Anda aktif begitu pembayaran dikonfirmasi.",
+    "microphone access": "Izinkan mikrofon untuk situs ini di pengaturan browser, lalu coba lagi.",
+    "not supported in your browser": "Suara memerlukan Chrome atau Edge.",
+    "cannot be deleted": "Ini memang begitu. Catatan terverifikasi tetap ada di jejak audit Anda."
+  }
+}
