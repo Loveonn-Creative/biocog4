@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { closestRoutes, normalisePath, type RouteEntry, type RouteMatch } from "@/lib/routeMatch";
@@ -39,7 +39,6 @@ const loadIndex = () =>
 
 const NotFound = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const asked = normalisePath(location.pathname);
   const [routes, setRoutes] = useState<RouteEntry[]>(CORE);
   const [read, setRead] = useState(false);
@@ -151,7 +150,7 @@ const NotFound = () => {
 
         <div className="flex flex-wrap gap-2.5 justify-center mt-7">
           <Link to="/" className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">Upload an invoice</Link>
-          <button type="button" onClick={() => navigate(-1)} className="px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">Go back</button>
+          <Link to="/green-loan-check" className="px-5 py-2.5 rounded-full border border-border text-sm hover:bg-secondary transition-colors">See how close you are to a green loan</Link>
         </div>
       </main>
     </div>
