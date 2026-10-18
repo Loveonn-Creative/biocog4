@@ -1,0 +1,89 @@
+{
+  "slug": "prove-rec-retirement-to-buyer",
+  "q": "What proof does an export buyer accept that my RECs were retired for my factory?",
+  "title": "Proving REC retirement to a buyer",
+  "short": "Send the registry's redemption or retirement statement, not a broker's certificate. It must name your company and factory as beneficiary, list the certificate IDs and MWh, show the generation period, and match your consumption period. Add the electricity bills it covers and a one-page reconciliation of MWh retired against kWh used.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "Exporters reporting renewable electricity to EU and US buyers or CDP",
+  "sections": [
+    {
+      "h": "The fields the redemption statement must show",
+      "ul": [
+        "Beneficiary: your legal entity name and, where the registry allows it, the factory or site the claim is for. A statement in the trader's name proves nothing for you.",
+        "Certificate identifiers or serial number range, so the buyer can see each MWh is counted once.",
+        "Quantity in MWh. One India REC and one I-REC each stand for 1 MWh.",
+        "Generation period and the generating plant, its technology and its location.",
+        "Consumption or reporting period the redemption is for, and the date of redemption.",
+        "Status shown as redeemed, retired or cancelled, not merely held or transferred."
+      ]
+    },
+    {
+      "h": "Why a broker's PDF is not enough",
+      "p": [
+        "The GHG Protocol Scope 2 Guidance accepts a certificate only if it is a unique claim and is retired by or on behalf of the reporting company. Only the registry record shows both. A seller's letter or a certificate image can be copied or reused.",
+        "Ask the trader to redeem in your name, then download the statement yourself from the registry account, or ask for the registry's own statement with a reference the buyer can look up. For India RECs the registry is run by Grid Controller of India (Grid-India); I-RECs are redeemed in the I-REC registry, which issues a redemption statement naming the beneficiary."
+      ]
+    },
+    {
+      "h": "The reconciliation page buyers ask for",
+      "ol": [
+        "List each site's kWh by month from the electricity bills for the reporting year.",
+        "List each redemption: statement reference, MWh, generation period, beneficiary site.",
+        "Match them: MWh redeemed per site against MWh used per site in the same year. Most buyers will not let surplus at one site cover another unless the statement names both.",
+        "Report location-based Scope 2 on all kWh, and market-based Scope 2 with the covered MWh at zero and the rest at your residual or grid figure, stating which."
+      ]
+    },
+    {
+      "h": "Where evidence packs get rejected",
+      "ul": [
+        "Generation period from a much earlier year than the consumption being claimed.",
+        "Beneficiary is a trading company, or the group parent with no site named where the buyer asks for site-level claims.",
+        "Same MWh also claimed under a green tariff or a captive PPA for the same site.",
+        "Certificates bought for a renewable purchase obligation and then reused for a voluntary claim to the buyer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one factory, one year",
+    "lines": [
+      "Bills, April 2025 to March 2026: 1,800,000 kWh, which is 1,800 MWh",
+      "Redemption statement: 1,500 India RECs, beneficiary named as the company and this factory, generation within FY 2025-26",
+      "Covered: 1,500 MWh; uncovered: 300 MWh, which is 300,000 kWh",
+      "Location-based Scope 2: 1,800,000 x 0.710 = 1,278,000 kg CO2, about 1,278 tonnes",
+      "Market-based Scope 2: 300,000 x 0.710 = 213,000 kg CO2, about 213 tonnes, using the grid figure for the uncovered part as stated in the note"
+    ],
+    "note": "If the buyer's method asks for a residual mix factor for the uncovered part, use theirs and say so."
+  },
+  "senseible": "Senseible reads the kWh from each electricity bill for location-based Scope 2 and reports a market-based figure when you add the certificate quantity and period, keeping the redemption statement with the bills. It does not buy, redeem or check certificates in any registry.",
+  "links": [
+    {
+      "label": "Do RE100 and CDP accept Indian RECs?",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "I-REC or India REC?",
+      "to": "/answers/i-rec-vs-india-rec"
+    },
+    {
+      "label": "How to buy RECs in India",
+      "to": "/answers/how-to-buy-recs-in-india"
+    },
+    {
+      "label": "Market vs location-based Scope 2",
+      "to": "/climate-intelligence/scope-2-market-based-vs-location-based-msme-guide"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "CERC (Terms and Conditions for Renewable Energy Certificates) Regulations, 2022; India REC mechanism policy (Ministry of Power)",
+      "url": "https://powermin.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Registry operators and statement formats change; check the current India REC registry run by Grid-India and the current I-REC registry statement fields before sending the pack."
+}

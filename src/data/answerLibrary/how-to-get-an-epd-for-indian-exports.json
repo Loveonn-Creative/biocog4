@@ -1,0 +1,60 @@
+{
+  "slug": "how-to-get-an-epd-for-indian-exports",
+  "q": "How does an Indian manufacturer get an EPD for a building product sold abroad?",
+  "title": "Getting an EPD for an export product",
+  "short": "Choose a programme operator your buyers accept, find the product category rules for your product, collect a year of plant data, commission an LCA to EN 15804, have it checked by an independent verifier, then publish through the operator. The EPD is usually valid for five years.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Makers of tiles, steel sections, aluminium profiles, cement, pipes and insulation selling to EU, UK and Gulf projects",
+  "sections": [
+    {
+      "h": "Step 1: pick the programme operator",
+      "p": [
+        "An EPD is a Type III declaration under ISO 14025, published by a programme operator that sets the rules and keeps the register. The International EPD System is widely used for exports; some markets favour their national operator. Ask your target buyers or the project's sustainability consultant which registers they accept before you spend anything."
+      ]
+    },
+    {
+      "h": "Step 2: find the product category rules",
+      "p": [
+        "For construction products in Europe the core rules are EN 15804:2012+A2:2019, and the operator adds product category rules (PCR) or complementary rules for your product type. They fix the declared unit, the modules to report and the allocation rules. Under EN 15804+A2, most products must declare modules A1 to A3, C1 to C4 and D. ISO 21930 plays a similar role outside Europe."
+      ]
+    },
+    {
+      "h": "Step 3: collect plant data",
+      "ul": [
+        "Twelve months of production, raw materials by supplier and grade, fuel, electricity, water, packaging and waste.",
+        "Transport distances and modes for raw materials coming in.",
+        "Supplier EPDs or footprints for major inputs such as clinker, billets, aluminium ingot or resin.",
+        "The same invoices and meter records your verifier will sample."
+      ]
+    },
+    {
+      "h": "Step 4: LCA, verification and publication",
+      "ol": [
+        "An LCA practitioner builds the model to ISO 14044 and the PCR and writes the background report.",
+        "An independent verifier approved by the operator checks the report and the data. Programme operators such as the International EPD System require this check before they publish.",
+        "You fix the findings, the operator registers the EPD, and it goes on the public register.",
+        "Plan updates: an EPD is normally valid for five years, and a big change in process or energy supply can mean an earlier revision."
+      ]
+    },
+    {
+      "h": "Where the time goes",
+      "p": [
+        "Data collection is usually the slowest part, especially chasing supplier data for raw materials. Fees for the operator, the LCA and the verifier vary by operator and scope, so get current quotes rather than relying on a published figure."
+      ]
+    }
+  ],
+  "senseible": "Senseible can supply plant-level activity data read from your fuel, electricity and freight invoices as input to the LCA, with the source files kept. It does not prepare or verify EPDs.",
+  "links": [
+    { "label": "Reading GWP on an EPD", "to": "/answers/how-to-read-gwp-on-an-epd" },
+    { "label": "Does an LCA need a critical review", "to": "/answers/does-an-lca-need-a-critical-review" },
+    { "label": "The four stages of an LCA", "to": "/answers/what-are-the-four-stages-of-an-lca" },
+    { "label": "Construction sector emissions", "to": "/industries/construction" }
+  ],
+  "sources": [
+    { "label": "ISO 14025:2006 (Type III environmental declarations) and ISO 21930:2017, with EN 15804:2012+A2:2019 core rules", "url": "https://www.iso.org" },
+    { "label": "ISO 14044:2006, Life cycle assessment, requirements and guidelines", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Programme operator rules, fees and PCR editions change; check the operator's current general programme instructions."
+}

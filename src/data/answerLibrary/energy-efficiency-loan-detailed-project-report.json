@@ -1,0 +1,89 @@
+{
+  "slug": "energy-efficiency-loan-detailed-project-report",
+  "q": "What should a detailed project report contain for an MSME energy efficiency loan?",
+  "title": "DPR for an MSME energy efficiency loan",
+  "short": "A lender-ready DPR shows a 12-month energy baseline from bills tied to production, the measures and equipment with vendor quotes, the expected kWh and fuel savings and how they were worked out, cost and simple payback, the CO2 reduction, and a plan for measuring savings after commissioning.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs applying for SIDBI or bank energy efficiency loans",
+  "sections": [
+    {
+      "h": "The sections, in the order lenders read them",
+      "ol": [
+        "Unit profile: products, capacity, shifts, connected load and main energy users.",
+        "Baseline: 12 months of electricity bills and fuel invoices with monthly production, and specific energy consumption such as kWh per tonne.",
+        "Energy audit findings: measured losses, for example compressor leaks, motor loading, furnace flue temperature.",
+        "Proposed measures: equipment, ratings, vendor quotations, installation schedule.",
+        "Savings: kWh and fuel saved a year, with the formula and assumptions on hours and load.",
+        "Financials: project cost, means of finance, savings in rupees, simple payback, and repayment from savings.",
+        "CO2 reduction: kWh saved x 0.710 plus fuel saved x its factor, with sources.",
+        "Measurement plan: meters, baseline adjustment for production, and reporting dates after commissioning."
+      ]
+    },
+    {
+      "h": "Building a baseline the lender trusts",
+      "p": [
+        "Use bills, not the electrician's estimate. Express energy per unit of output so that a busy year does not hide the saving or a slow year fake one. Note anything unusual in the baseline year, such as a long shutdown or a new product line.",
+        "If one meter feeds several sections, record a short logged measurement on the equipment being replaced, so the saving is tied to that load."
+      ]
+    },
+    {
+      "h": "Choosing how savings will be measured",
+      "p": [
+        "The IPMVP framework from the Efficiency Valuation Organization gives the common options: measure the key parameter of one retrofit (Option A), measure all parameters of the retrofit (Option B), or compare the whole-facility bill before and after (Option C). A motor or compressor swap usually fits A or B; Option C works when the saving is large relative to the whole bill.",
+        "Write the choice into the DPR so the lender knows what evidence will follow."
+      ]
+    },
+    {
+      "h": "What gets a DPR sent back",
+      "ul": [
+        "Savings taken from the vendor brochure with no site measurement.",
+        "No production data, so savings cannot be separated from output changes.",
+        "Payback calculated on a tariff that ignores fixed and demand charges.",
+        "Equipment quotes older than the lender accepts, or missing GST."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: compressor and furnace measures",
+    "lines": [
+      "Baseline: 600,000 kWh a year for 2,400 t output, so 250 kWh per tonne",
+      "Electricity saved: 90,000 kWh a year x ₹8 (assumed tariff) = ₹7,20,000",
+      "Furnace oil saved: 15,000 litres a year x ₹55 (assumed price) = ₹8,25,000",
+      "Total saving ₹15,45,000 a year on a project cost of ₹30,00,000: payback 30,00,000 / 15,45,000 = 1.9 years",
+      "CO2: 90,000 x 0.710 = 63,900 kg plus 15,000 x 2.97 = 44,550 kg, total 108,450 kg, about 108 t a year"
+    ],
+    "note": "Use your own tariff, fuel price and measured savings."
+  },
+  "senseible": "Senseible reads 12 months of electricity bills and fuel invoices into a dated, fingerprinted record with the factor on each line, which gives the DPR its baseline, and its green loan readiness check organises the evidence lenders ask for. The DPR itself is prepared by you or your energy auditor.",
+  "links": [
+    {
+      "label": "SIDBI energy efficiency loans for MSMEs",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    },
+    {
+      "label": "Proving energy savings to a lender",
+      "to": "/answers/how-to-prove-energy-savings-to-a-lender"
+    },
+    {
+      "label": "Energy audit for MSMEs in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, SME programme cluster energy profiles",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Scheme names and lender terms change; check the bank's or SIDBI's current DPR format before submission."
+}

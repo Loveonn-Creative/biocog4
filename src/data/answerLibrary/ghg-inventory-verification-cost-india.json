@@ -1,0 +1,67 @@
+{
+  "slug": "ghg-inventory-verification-cost-india",
+  "q": "How much does third-party verification of a GHG inventory cost in India?",
+  "title": "GHG inventory verification cost in India",
+  "short": "There is no published price list. The cost of verifying a GHG inventory in India is the number of verifier days the job needs, times the verification body's day rate, plus travel. Sites, emission sources, Scope 3 coverage and assurance level set the days. Get at least two written quotes.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs asked by buyers or lenders for a verified footprint",
+  "sections": [
+    {
+      "h": "What sets the number of days",
+      "ul": [
+        "Number of sites the verifier must visit, and how far apart they are.",
+        "Number and type of emission sources: a plant with only grid power and a DG set is quicker than one with boilers, furnaces, refrigerants and process emissions.",
+        "Scope: Scope 1 and 2 only, or Scope 3 categories as well.",
+        "Level: limited assurance needs fewer tests than reasonable assurance.",
+        "State of your records: missing bills and unclear boundaries add days."
+      ]
+    },
+    {
+      "h": "The parts of a verification you pay for",
+      "ol": [
+        "Planning and risk assessment, including a review of your inventory and method.",
+        "Site visit to see meters, fuel stores and processes.",
+        "Testing a sample of activity data against invoices and meter readings, and recalculating.",
+        "Findings, your corrections, and the verification statement under ISO 14064-3."
+      ]
+    },
+    {
+      "h": "Who can verify",
+      "p": [
+        "Verification bodies are accredited to ISO 14065 by an accreditation body; in India that is NABCB, which lists accredited GHG validation and verification bodies. Many buyers and lenders accept bodies accredited elsewhere too. Ask the requester which accreditation they need before you take quotes."
+      ]
+    },
+    {
+      "h": "How to compare quotes",
+      "ul": [
+        "Ask each body for days by stage and the day rate, not a lump sum.",
+        "Check the standard (ISO 14064-3), the level of assurance and the scopes are the same in each quote.",
+        "Confirm whether travel and re-verification after corrections are included.",
+        "Send the same inventory and site list to each, so the quotes are comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: building the day count for a single-site plant",
+    "lines": [
+      "Planning and document review: 1 day",
+      "Site visit: 1 day",
+      "Sampling and recalculation: 1.5 days",
+      "Reporting and statement: 0.5 day",
+      "Total: 1 + 1 + 1.5 + 0.5 = 4 verifier days, times the quoted day rate, plus travel"
+    ],
+    "note": "The day split is illustrative. Day rates are not published; use written quotes."
+  },
+  "senseible": "In Senseible, Verified means its rule checks passed; it is not an ISO 14064-3 verification statement. It keeps each source file with a SHA-256 fingerprint and a line-by-line calculation, which gives a verifier the documents to sample.",
+  "links": [
+    { "label": "What auditors check in GHG assurance", "to": "/answers/what-auditors-check-in-ghg-assurance" },
+    { "label": "Limited vs reasonable assurance", "to": "/answers/limited-vs-reasonable-assurance-emissions" },
+    { "label": "Documents needed for carbon verification", "to": "/climate-intelligence/documents-needed-carbon-verification" },
+    { "label": "Carbon project validation cost", "to": "/answers/carbon-project-validation-cost" }
+  ],
+  "sources": [
+    { "label": "ISO 14064-3:2019, Validation and verification of GHG statements; ISO 14065:2020, requirements for verification bodies", "url": "https://www.iso.org" }
+  ],
+  "reviewed": "2026-10-18"
+}

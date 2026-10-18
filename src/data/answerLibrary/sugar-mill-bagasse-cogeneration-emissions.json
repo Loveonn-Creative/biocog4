@@ -1,0 +1,85 @@
+{
+  "slug": "sugar-mill-bagasse-cogeneration-emissions",
+  "q": "Is a sugar mill's bagasse cogeneration carbon neutral, and what should the mill report?",
+  "title": "Is bagasse cogeneration carbon neutral?",
+  "short": "Not fully. The CO2 from burning bagasse is biogenic and is reported outside the scopes, but the methane and nitrous oxide from the boiler count in Scope 1, and so does any coal or diesel burnt. Power exported to the grid does not reduce the mill's Scope 1.",
+  "topic": "accounting",
+  "intent": "explain",
+  "audience": "Sugar mills with bagasse cogeneration and their buyers (food and beverage brands)",
+  "sections": [
+    {
+      "h": "What a sugar mill reports, line by line",
+      "ul": [
+        "Scope 1: CH4 and N2O from bagasse combustion, plus all CO2 from coal, furnace oil or diesel used off-season or for start-up, and from vehicles and DG sets.",
+        "Scope 2: grid power bought, usually in the off-season.",
+        "Biogenic CO2 from bagasse: a separate figure, outside the scopes.",
+        "Scope 3: cane growing (fertiliser and field emissions), cane haulage, chemicals and lime."
+      ]
+    },
+    {
+      "h": "Exported power is a separate disclosure",
+      "p": [
+        "Many mills sell surplus power to the discom. The GHG Protocol does not let a company subtract this from Scope 1, and the mill cannot count avoided grid emissions as a reduction in its own inventory.",
+        "The mill may disclose the electricity exported and the emissions attributable to it as additional information. Those emissions are mostly biogenic in a bagasse plant, so the Scope 1 share attributable to exported power is small."
+      ]
+    },
+    {
+      "h": "Splitting the footprint between sugar, molasses and power",
+      "p": [
+        "A buyer asking for kg CO2e per kg of sugar needs the mill's emissions shared among its outputs: sugar, molasses, surplus bagasse and exported power. The GHG Protocol Product Standard prefers avoiding allocation by subdividing processes, then physical allocation, then economic allocation.",
+        "Economic allocation by revenue is common for sugar and molasses because their masses do not reflect their value. Whichever method you use, state it, because it can shift the figure for molasses a lot."
+      ]
+    },
+    {
+      "h": "Why buyers still ask",
+      "p": [
+        "Food and drink brands report purchased sugar in their Scope 3 and want mill-specific figures instead of a generic one. Some also ask for performance against the Bonsucro Production Standard. A mill that keeps fuel, power and cane records by season can answer both."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one crushing season",
+    "lines": [
+      "Bagasse burnt: 300,000 t; NCV 11.6 GJ per t, the IPCC default for other primary solid biomass, so 3,480 TJ",
+      "CH4: 3,480 TJ x 30 kg per TJ = 104,400 kg; x 28 (AR5 GWP) = 2,923 t CO2e",
+      "N2O: 3,480 TJ x 4 kg per TJ = 13,920 kg; x 265 (AR5 GWP) = 3,689 t CO2e",
+      "Scope 1 from bagasse: 2,923 + 3,689 = 6,612 t CO2e, before any coal or diesel",
+      "Biogenic CO2, reported separately: 3,480 TJ x 100,000 kg per TJ = 348,000 t"
+    ],
+    "note": "Default factors with AR5 GWPs. With AR6 values (27 for non-fossil methane, 273 for N2O) the bagasse Scope 1 is 2,819 + 3,800 = 6,619 t CO2e; state which set you use. A measured bagasse NCV (wet bagasse is often near 50% moisture) changes the energy figure."
+  },
+  "senseible": "Senseible reads the coal, diesel, furnace oil and electricity invoices behind a mill's footprint, with Scope 1 at IPCC 2006 defaults and Scope 2 at 0.710 kg CO2 per kWh, and keeps cane and chemical purchases in a Scope 3 evidence trail. Bagasse is not on its fuel factor list, so the boiler CH4 and N2O, the biogenic CO2 and the product allocation are calculations you add.",
+  "links": [
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Sold steam or power and Scope 1",
+      "to": "/answers/sold-steam-or-power-deduct-from-scope-1"
+    },
+    {
+      "label": "CHP allocation between power and steam",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    },
+    {
+      "label": "Biogenic carbon accounting",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2, Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

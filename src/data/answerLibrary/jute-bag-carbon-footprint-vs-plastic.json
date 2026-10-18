@@ -1,0 +1,83 @@
+{
+  "slug": "jute-bag-carbon-footprint-vs-plastic",
+  "q": "Is a jute bag really lower carbon than a plastic bag, and what can an exporter claim?",
+  "title": "Jute bag vs plastic bag: carbon and claims",
+  "short": "Usually not per bag, but often per use: a jute bag carries a larger footprint to make, so it beats a single-use plastic bag only after enough reuses. An exporter can safely state its own measured footprint per bag; a comparative claim needs a like-for-like study.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Jute product exporters in West Bengal and buyers making packaging claims",
+  "sections": [
+    {
+      "h": "Compare per use, not per bag",
+      "p": [
+        "Footprint per use = footprint to make the bag / the number of times it is used. Break-even uses = jute bag footprint / footprint of the bag it replaces. A heavy reusable bag can lose to a thin plastic carrier if it is used only a few times, and win clearly if it is used for years.",
+        "Life cycle studies of carrier bags, such as the 2011 UK Environment Agency study, used this reuse count method. Check whether a study you want to cite actually covered jute before quoting it; many compared paper, cotton and plastic bags only."
+      ]
+    },
+    {
+      "h": "Building your own jute bag figure",
+      "ul": [
+        "Raw jute: farming inputs and retting, from supplier or published farm data.",
+        "Mill electricity for spinning, weaving and finishing: kWh x 0.710 kg CO2.",
+        "Boiler or DG fuel at the mill: fuel quantity x its factor.",
+        "Batching oil, sizing, dyes, printing, handles and lamination: purchased materials.",
+        "Divide by the number of finished bags, or by kg if the buyer prefers."
+      ],
+      "p": [
+        "Jute fibre holds biogenic carbon; report it separately and do not net it against fossil emissions."
+      ]
+    },
+    {
+      "h": "Carbon is not the only impact",
+      "p": [
+        "A carbon comparison says nothing about litter, marine plastic or biodegradability, where jute can perform well. If you want to make those points, make them as separate claims, each with its own evidence, rather than folding them into a carbon claim."
+      ]
+    },
+    {
+      "h": "What an exporter can claim",
+      "ul": [
+        "Safe: \"Cradle-to-gate footprint of this bag: X kg CO2e, calculated by us under ISO 14067, not externally verified.\"",
+        "Needs a published like-for-like study and stated reuse count: \"Lower carbon than a plastic bag after N uses.\"",
+        "Avoid: \"carbon neutral\", \"zero carbon\" or a bare \"eco-friendly\".",
+        "India's CCPA greenwashing guidelines (2024) require specific, evidence-backed claims, and the EU's Directive (EU) 2024/825 restricts generic environmental claims to consumers. Get claims for EU retail packs reviewed."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: break-even uses (illustrative figures)",
+    "lines": [
+      "Jute bag, cradle-to-gate: 1.2 kg CO2e (your own figure would replace this)",
+      "Single-use plastic carrier it replaces: 0.04 kg CO2e",
+      "Break-even uses: 1.2 / 0.04 = 30",
+      "Used 60 times: 1.2 / 60 = 0.02 kg CO2e per use, half the plastic bag's 0.04"
+    ],
+    "note": "Both footprints are illustrative, not measured values. A real comparison needs both figures on the same boundary and a realistic reuse count."
+  },
+  "senseible": "Senseible can compute the jute mill's own emissions from its fuel and electricity bills, which feed a cradle-to-gate bag figure. It does not review or approve comparative claims.",
+  "links": [
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Can I call my export product carbon neutral?",
+      "to": "/answers/can-i-call-my-export-product-carbon-neutral"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14021 self-declared environmental claims",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Directive (EU) 2024/825 on consumers and the green transition",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "Directive (EU) 2024/825 rules apply from September 2026 and CCPA guidance may be updated; check before printing claims."
+}

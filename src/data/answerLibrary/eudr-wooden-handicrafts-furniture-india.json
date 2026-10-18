@@ -1,0 +1,78 @@
+{
+  "slug": "eudr-wooden-handicrafts-furniture-india",
+  "q": "Does EUDR apply to Indian wooden handicrafts and furniture, and what must I give the EU buyer?",
+  "title": "EUDR for wooden handicrafts and furniture",
+  "short": "Yes, for most of them. Annex I of the EUDR covers wooden articles under HS 4420 and 4421 and wooden furniture under 9403, whatever the species, including mango wood, sheesham and acacia. Your EU buyer files the due diligence statement, but needs from you the species, quantity, harvest dates and geolocation of the plots where the trees grew.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Wooden handicraft and furniture exporters in Saharanpur, Jodhpur, Hoshiarpur and similar clusters",
+  "sections": [
+    {
+      "h": "Which wooden products are listed",
+      "ul": [
+        "4420: wood marquetry and inlaid wood, caskets and boxes for jewellery or cutlery, statuettes and other ornaments of wood.",
+        "4421: other articles of wood, such as hangers, tool handles, trays and kitchen articles not covered elsewhere.",
+        "9403: wooden furniture for offices, kitchens, bedrooms and other uses, and parts of wooden furniture.",
+        "Wooden seats and parts of seats under 9401 are also listed; a Commission delegated act adopted in July 2026 narrows 9401 to wooden seats and drops motor vehicle and aircraft seats. Check the exact subheading for mixed products, such as a wooden table with a metal base."
+      ],
+      "p": [
+        "Species does not matter. Farm-grown mango wood, sheesham and acacia are covered in the same way as forest timber. Products made wholly from recovered or recycled wood are excluded, as is packaging used only to protect another product, but confirm both against the current Annex I text."
+      ]
+    },
+    {
+      "h": "What the buyer needs from you, specific to wood",
+      "ol": [
+        "Common and scientific name of each species, for example sheesham (Dalbergia sissoo) or mango (Mangifera indica).",
+        "Quantity in kg and, where relevant, volume or number of pieces.",
+        "Geolocation of every plot where the trees were felled, with a polygon for plots over 4 hectares.",
+        "Date or period of felling.",
+        "Name and address of the timber supplier.",
+        "Evidence that felling was legal in India: felling and transit permits where the state requires them, or the state rule that exempts the species, and the purchase invoices."
+      ]
+    },
+    {
+      "h": "The hard part: wood bought at a depot or mandi",
+      "p": [
+        "Most handicraft units buy logs or sawn planks from traders who mix wood from many farms. That breaks the link to the plot. Start now by asking traders to keep the farm location for each lot, buying directly from known growers where you can, and keeping lots of traced wood physically separate. A lot that mixes traced and untraced wood cannot be declared."
+      ]
+    },
+    {
+      "h": "When it applies",
+      "p": [
+        "Under the December 2025 amendment, Regulation (EU) 2025/2650, large and medium operators must comply from 30 December 2026. Micro and small operators get until 30 June 2027 only for products that were not already covered by the old EU Timber Regulation; wooden furniture under 9403 was covered, so for furniture the date is 30 December 2026 whatever the buyer's size. Check whether your other codes were on that list.",
+        "India is rated low risk under the Commission's 2025 country benchmarking, which means simpler checks for your buyer, not less data from you: geolocation, harvest dates and legality evidence are still required."
+      ]
+    }
+  ],
+  "senseible": "Senseible does not prepare EUDR due diligence statements or collect plot geolocation. Its supplier due diligence screening shows which supply chain laws apply to your products and markets, and it keeps supplier documents alongside your carbon records.",
+  "links": [
+    {
+      "label": "Does EUDR apply to my Indian exports?",
+      "to": "/answers/does-eudr-apply-to-my-indian-exports"
+    },
+    {
+      "label": "Supplier data for the due diligence statement",
+      "to": "/answers/eudr-due-diligence-statement-supplier-data"
+    },
+    {
+      "label": "Supplier due diligence screening",
+      "to": "/supplier-due-diligence"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/1115 (EUDR), Annex I and Article 9, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/2650 amending the EUDR (application dates), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Commission Implementing Regulation (EU) 2025/1093 (country benchmarking), on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "EUDR dates have been postponed twice, and a July 2026 delegated act amending Annex I (including 9401) was under Parliament and Council scrutiny at review; check the consolidated Annex I, the packaging and recycled wood exclusions, the timber date for micro and small operators, and the 2026 country benchmarking review before relying on this page."
+}

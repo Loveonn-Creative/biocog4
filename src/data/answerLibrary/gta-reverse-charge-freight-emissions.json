@@ -1,0 +1,64 @@
+{
+  "slug": "gta-reverse-charge-freight-emissions",
+  "q": "How do I calculate emissions from GTA freight billed under reverse charge?",
+  "title": "GTA reverse charge freight emissions",
+  "short": "Do not calculate from the reverse charge entry; it only records the freight amount and the GST you paid. Match each entry to the GTA's consignment note, which gives weight, origin and destination, then multiply tonnes by km by a road freight factor. Use a spend-based estimate only for entries with no consignment note.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Indian factories paying goods transport agencies under GST reverse charge",
+  "sections": [
+    {
+      "h": "Why the reverse charge record has no activity data",
+      "p": [
+        "When a goods transport agency (GTA) supplies road freight to a factory or other specified recipient, Notification 13/2017-Central Tax (Rate) can put the GST on the recipient. You then pay the tax yourself, and where the GTA is unregistered you raise a self-invoice under section 31(3)(f) of the CGST Act. These documents exist for tax. They show the amount, the service code and the tax, but no weight or distance.",
+        "The tax treatment does not change the emissions. The same truck trip emits the same CO2 whether GST is paid forward or under reverse charge."
+      ]
+    },
+    {
+      "h": "Where to find weight and distance",
+      "ul": [
+        "The consignment note (lorry receipt, LR or bilty). Under GST, a GTA is a road transporter that issues one, so every genuine GTA trip should have it. It shows actual weight, from and to, and the vehicle number.",
+        "The e-way bill for the same goods: approximate distance in km and vehicle number.",
+        "Your own sales or purchase invoice: weight of goods, if the LR shows only a charged weight.",
+        "Match on LR number, date and vehicle number. Keep the match in your freight register."
+      ]
+    },
+    {
+      "h": "The calculation and the scope",
+      "p": [
+        "Emissions = tonnes x km x factor per tonne-km for the truck class. Use the carrier's own factor if they can show its basis; otherwise a default factor for the Indian truck class.",
+        "Freight you pay for on inbound purchases or outbound sales is Scope 3 Category 4, upstream transportation. Trucks you own or lease and run yourself are Scope 1 from their diesel instead."
+      ]
+    },
+    {
+      "h": "When there is no consignment note",
+      "p": [
+        "Use the freight amount excluding GST with a spend-based road freight factor, and label the result as spend-based with wider uncertainty. Keep it on a separate line so you can replace it when the LR turns up. Do not mix the reverse charge GST into the spend; it is tax, not freight."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one RCM entry matched to its LR",
+    "lines": [
+      "RCM entry: freight amount for one trip, no weight or distance",
+      "Matched LR: actual weight 14 t, Ludhiana to Delhi; e-way bill distance 320 km",
+      "Activity: 14 x 320 = 4,480 tonne-km",
+      "Factor: heavy truck 20 to 30 t GVW, 0.0823 kg CO2e per tonne-km, well-to-wheel",
+      "Emissions: 4,480 x 0.0823 = 368.7 kg CO2e, Scope 3 Category 4"
+    ],
+    "note": "The trip details are illustrative. The factor is the Indian default for that truck class and includes typical empty running, so add no extra uplift."
+  },
+  "senseible": "Senseible reads freight records such as lorry receipts and freight bills for weight, distance and mode, and its freight calculator applies default factors per tonne-km by mode and Indian truck class. Where only the spend from a self-invoice is available, it provides a spend-based estimate, labelled as such.",
+  "links": [
+    { "label": "Emissions from a freight bill", "to": "/answers/how-to-calculate-emissions-from-a-freight-bill" },
+    { "label": "Freight bill with no weight or distance", "to": "/answers/freight-bill-has-no-weight-or-distance" },
+    { "label": "Truck freight emission factors for India", "to": "/answers/truck-freight-emission-factor-india" },
+    { "label": "Logistics emissions calculator", "to": "/calculators/logistics-emissions" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 4 Upstream transportation", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "Smart Freight Centre, GLEC Framework", "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "GTA tax options were changed in 2022 and again in the 2025 GST rate rationalisation; confirm the current notification before relying on the reverse charge position."
+}

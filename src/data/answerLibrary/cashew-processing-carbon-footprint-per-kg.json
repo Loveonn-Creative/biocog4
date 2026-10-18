@@ -1,0 +1,84 @@
+{
+  "slug": "cashew-processing-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of cashew kernels when the boilers burn cashew shells?",
+  "title": "Cashew kernel footprint with shell boilers",
+  "short": "Add the plant's grid power, diesel and the methane and nitrous oxide from burning shells, then the raw nuts and their freight, and divide by kg of kernels after allocating a share to cashew nut shell liquid. The CO2 from the shells is biogenic and is reported separately.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Cashew processors in Kollam, Mangaluru and Panruti exporting kernels",
+  "sections": [
+    {
+      "h": "What goes into a kernel footprint",
+      "ul": [
+        "Raw cashew nuts, often imported from West Africa: the farm stage, from the supplier or a database, usually the largest item.",
+        "Freight of raw nuts: sea freight to the Indian port and trucking to the factory.",
+        "Factory electricity for cutting, peeling, drying, grading and packing: kWh x 0.710 kg CO2.",
+        "Diesel for DG sets and forklifts: litres x 2.68 kg CO2.",
+        "Shell-fired boilers and roasters: methane and nitrous oxide only.",
+        "Packing material: tins, pouches and cartons, from supplier figures."
+      ]
+    },
+    {
+      "h": "How to treat shell burning",
+      "p": [
+        "Cashew shells and de-oiled shell cake are biomass. Their CO2 came from the air while the tree grew, so ISO 14067 and the GHG Protocol report it as biogenic CO2, separately from the fossil total.",
+        "The methane and nitrous oxide from burning do count. Using IPCC 2006 defaults for other primary solid biomass, that is 30 kg CH4 and 4 kg N2O per TJ of fuel. Convert tonnes of shell to TJ with a net calorific value, ideally from a lab test of your shells; the IPCC default for this fuel class is 11.6 GJ per tonne."
+      ]
+    },
+    {
+      "h": "Sharing emissions between kernels and CNSL",
+      "p": [
+        "Cashew nut shell liquid is a saleable co-product. Split the shared factory emissions between kernels and CNSL by economic value (revenue share) or by mass, and state the choice. Value allocation puts most of the burden on kernels because they earn most of the revenue. If you sell shell cake as fuel, it is a co-product too. Whatever you pick, use it every year."
+      ]
+    },
+    {
+      "h": "Per kg of what",
+      "p": [
+        "Divide by kg of packed kernels sold, all grades together, unless a buyer wants a figure for one grade. Raw nut input per kg of kernel comes from your outturn: if 1 kg of raw nuts gives 0.22 kg of kernels, each kg of kernel needs 4.55 kg of raw nuts, so the raw nut factor counts 4.55 times."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, factory stage only (illustrative figures)",
+    "lines": [
+      "Kernels packed: 110 t. Shells burnt: 100 t",
+      "Electricity: 60,000 kWh x 0.710 = 42,600 kg CO2",
+      "Diesel: 2,000 L x 2.68 = 5,360 kg CO2",
+      "Shells: 100 t x 11.6 GJ/t = 1,160 GJ = 1.16 TJ; CH4 1.16 x 30 = 34.8 kg; N2O 1.16 x 4 = 4.64 kg",
+      "In CO2e (AR5 GWP 28 and 265): 34.8 x 28 + 4.64 x 265 = 974 + 1,230 = 2,204 kg CO2e",
+      "Factory total: 42,600 + 5,360 + 2,204 = 50,164 kg CO2e; per kg kernel 50,164 / 1,10,000 = 0.46 kg CO2e before CNSL allocation",
+      "Biogenic CO2 from shells, reported separately: 1.16 TJ x 1,00,000 kg/TJ = 1,16,000 kg"
+    ],
+    "note": "Add the raw nut and freight figures from suppliers on top. The calorific value is the IPCC default; a lab value for your shells is better."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a product footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Table 1.2 and Table 2.2",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

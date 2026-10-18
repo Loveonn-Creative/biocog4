@@ -1,0 +1,81 @@
+{
+  "slug": "how-many-invoices-does-a-verifier-sample",
+  "q": "How many invoices and bills will a GHG verifier sample?",
+  "title": "How many invoices a GHG verifier samples",
+  "short": "There is no fixed number. Under ISO 14064-3 the verifier sets a sampling plan from the level of assurance, the materiality threshold and the risk of error in each emission source. Large sources and high-value documents are often checked in full, the rest by sample, and reasonable assurance needs larger samples than limited assurance.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "MSMEs preparing for limited or reasonable assurance of a GHG inventory",
+  "sections": [
+    {
+      "h": "What sets the sample size",
+      "ul": [
+        "Level of assurance: reasonable assurance needs more evidence, and so larger samples, than limited assurance. ISAE 3410, used by accounting firms, works the same way.",
+        "Materiality: the size of error that would change a reader's view, often set at 5 percent of the total by the programme or the verifier. A lower threshold means more testing.",
+        "Risk: sources with manual data, estimates, many small documents or past errors get more testing.",
+        "Controls: if your process has checks the verifier can test and rely on, such as approvals and reconciliations, it may sample fewer documents.",
+        "Population: how many documents there are and how much each one contributes."
+      ]
+    },
+    {
+      "h": "How verifiers usually split the population",
+      "p": [
+        "They often test every item above a set size, such as the few fuel invoices or bills that make up most of a source, and then sample the many smaller ones at random or by a structured method. A source with 12 monthly electricity bills may be checked in full, while a source with thousands of small fuel slips is sampled. The verifier records the plan and the reasons for it."
+      ]
+    },
+    {
+      "h": "What makes a sample go badly",
+      "ul": [
+        "A sampled document cannot be found, or the figure in it does not match the inventory.",
+        "Errors found in the sample are projected to the whole population, so a few small errors can add up to a material one.",
+        "Documents are photos with no link to the line they support, so each one takes time to trace.",
+        "When errors appear, the verifier widens the sample, which adds cost and time."
+      ]
+    },
+    {
+      "h": "How to prepare",
+      "ol": [
+        "Keep every source document, indexed to the inventory line it supports.",
+        "Reconcile each source to an independent record, such as fuel to the purchase ledger and electricity to paid bills.",
+        "Fix known errors before the verification starts and note the corrections.",
+        "Ask the verifier for its sampling approach at planning, so you know which periods and sources to have ready."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: how a fuel source might be split",
+    "lines": [
+      "Diesel for the year: 500,000 litres x 2.68 kg CO2 per litre = 1,340 t CO2",
+      "Materiality at 5 percent of a 1,340 t source: 67 t CO2",
+      "40 invoices over 5,000 litres each total 300,000 litres, 804 t CO2, 60 percent: a verifier may test all of them",
+      "The other 200,000 litres, 536 t CO2, spread over many small invoices: tested by sample under the verifier's plan"
+    ],
+    "note": "Illustrative only. The verifier decides the split, the threshold and the sample, and none of these numbers is a rule."
+  },
+  "senseible": "Senseible keeps each source file fingerprinted and linked to the line it supports, so sampled items can be pulled quickly. Third-party verification is done by an independent verifier.",
+  "links": [
+    {
+      "label": "How auditors verify activity data",
+      "to": "/answers/how-auditors-verify-activity-data"
+    },
+    {
+      "label": "Materiality in GHG verification",
+      "to": "/answers/what-is-materiality-in-ghg-verification"
+    },
+    {
+      "label": "Limited vs reasonable assurance",
+      "to": "/answers/limited-vs-reasonable-assurance-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Specification with guidance for the verification and validation of greenhouse gas statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "ISO 14065:2020, Requirements for bodies validating and verifying environmental information",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

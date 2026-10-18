@@ -1,0 +1,82 @@
+{
+  "slug": "green-day-ahead-market-power-scope-2",
+  "q": "Does power bought on the Green Day-Ahead Market count as renewable in market-based Scope 2?",
+  "title": "Green Day-Ahead Market power and Scope 2",
+  "short": "It can, but only if you hold evidence that the renewable attribute of those exact MWh went to you alone and was not also sold as a REC or used by anyone else. Exchange trades are pooled and anonymous, so check the documents before you report G-DAM units at zero.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Large HT consumers buying power on IEX green segments",
+  "sections": [
+    {
+      "h": "What G-DAM and G-TAM are",
+      "p": [
+        "The Green Term-Ahead Market (G-TAM) and Green Day-Ahead Market (G-DAM) are exchange segments where only renewable generators sell. CERC approved G-TAM on IEX in August 2020 and G-DAM in October 2021, and they run under the CERC (Power Market) Regulations, 2021. A consumer buys through open access, and the units are scheduled and adjusted on its discom bill like other open access power.",
+        "The exchange clears buyers and sellers in a common pool. You get a volume of green energy at a cleared price, not a contract with a named wind or solar plant."
+      ]
+    },
+    {
+      "h": "The tests from the GHG Protocol Scope 2 Guidance",
+      "ul": [
+        "The instrument conveys the renewable attribute of the energy, and that attribute is claimed only once.",
+        "It is retired or redeemed by you or on your behalf, with a record you can show.",
+        "It comes from the same market as your consumption, India here.",
+        "It relates to the same period as the electricity you claim, normally the same reporting year."
+      ],
+      "p": [
+        "Exchange green power usually passes the market and vintage tests. The open question is exclusivity: whether the paperwork shows that the attribute was transferred to you and that no REC or other certificate was issued for the same units."
+      ]
+    },
+    {
+      "h": "A decision rule you can apply now",
+      "ol": [
+        "Location-based Scope 2: count every unit you consumed, G-DAM units included, at the CEA grid factor. Nothing changes here.",
+        "Market-based Scope 2: report G-DAM units at zero only if you hold the exchange or trader documents that tie the units to renewable generators and confirm no separate certificate was sold for them.",
+        "If you cannot get that confirmation, treat the units as grid power in market-based Scope 2, or buy and retire RECs for the same MWh and claim on the RECs.",
+        "Write down which route you took and keep the monthly scheduling statements with the bill."
+      ]
+    },
+    {
+      "h": "RE100 and CDP",
+      "p": [
+        "Neither body has published an India-specific ruling on exchange-cleared green power that this page can point to. RE100 applies its Technical Criteria to every claim, so read the current version before counting G-DAM units toward an RE100 target, and disclose the instrument type in CDP. If a buyer or rating body asks, show the documents rather than relying on the market name."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year for an HT consumer",
+    "lines": [
+      "Total consumption at the meter: 12,00,000 kWh, of which 4,00,000 kWh bought on G-DAM",
+      "Location-based: 12,00,000 x 0.710 = 8,52,000 kg CO2, about 852 t",
+      "Market-based with exclusive evidence: 8,00,000 x 0.710 = 5,68,000 kg CO2, about 568 t",
+      "Market-based without it: the same 852 t, or 568 t if 400 MWh of RECs are retired in your name"
+    ],
+    "note": "India has no published residual mix, so remaining grid units use the CEA grid average; say so in your methodology note."
+  },
+  "senseible": "Senseible reports location-based Scope 2 from the kWh on your bills at 0.710 kg CO2 per kWh, and market-based Scope 2 where you provide the instrument data. It does not check exchange contracts or confirm that an attribute is exclusive.",
+  "links": [
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "Do RE100 and CDP accept Indian RECs?",
+      "to": "/answers/do-re100-and-cdp-accept-indian-recs"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance, Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "RE100 Technical Criteria (RE100 is led by Climate Group in partnership with CDP)",
+      "url": "https://www.cdp.net"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "The GHG Protocol Scope 2 revision is in consultation and RE100 criteria are updated periodically; re-check how exchange green power is treated."
+}

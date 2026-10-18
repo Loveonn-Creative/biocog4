@@ -1,0 +1,82 @@
+{
+  "slug": "lab-grown-diamond-carbon-footprint-per-carat",
+  "q": "How do I calculate the carbon footprint of a lab-grown diamond per carat?",
+  "title": "Lab-grown diamond footprint per carat",
+  "short": "Divide the metered electricity used by your growth reactors in a period by the rough carats grown, multiply by 0.710 kg CO2 per kWh, then divide by your rough-to-polished yield and add cutting and polishing energy. Reactor electricity drives the result, so use metered data, not published averages.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "CVD and HPHT growers and polishers in Surat and Mumbai",
+  "sections": [
+    {
+      "h": "Step by step",
+      "ol": [
+        "Meter the reactors or presses separately, or take the share of the plant meter they use.",
+        "Add the shared loads that keep them running: chillers, compressors, vacuum pumps and clean room air handling.",
+        "kWh per rough carat = growth kWh for the period / rough carats harvested in the same period.",
+        "Per rough carat CO2 = kWh per rough carat x 0.710 kg CO2 for grid power.",
+        "Per polished carat = per rough carat figure / yield (polished carats per rough carat), plus polishing kWh per polished carat x 0.710."
+      ]
+    },
+    {
+      "h": "Other inputs to include",
+      "ul": [
+        "Hydrogen and methane gas for CVD, and graphite and catalyst for HPHT: purchased materials, from supplier figures.",
+        "Seed plates bought from others.",
+        "DG diesel during outages: litres x 2.68 kg CO2.",
+        "Failed runs: their energy belongs to the carats that did come out, so do not exclude them."
+      ]
+    },
+    {
+      "h": "Renewable power and market-based figures",
+      "p": [
+        "A grower on open access solar, a group captive plant or a green tariff can report a lower market-based figure, but only for units backed by a contract or certificate that meets the GHG Protocol Scope 2 Quality Criteria. Report the location-based figure as well. A rooftop plant's own units count at zero only if you have not sold their certificates."
+      ]
+    },
+    {
+      "h": "Before you put a number on a certificate or tag",
+      "p": [
+        "Published kWh per carat figures vary widely and are rarely sourced, so use only your own metered data. India's CCPA greenwashing guidelines require environmental claims to be specific and backed by evidence. Words like sustainable or carbon neutral on a stone need far more than a per carat figure."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a CVD unit (illustrative figures)",
+    "lines": [
+      "Growth kWh including chillers: 2,00,000 kWh; rough carats harvested: 2,000",
+      "kWh per rough carat: 2,00,000 / 2,000 = 100 kWh",
+      "Per rough carat: 100 x 0.710 = 71 kg CO2",
+      "Yield 35%: 71 / 0.35 = 202.9 kg CO2 per polished carat, about 200 kg before polishing energy"
+    ],
+    "note": "kWh per carat and yield are illustrative and vary by process and stone size. Use your own meter readings and yield records."
+  },
+  "senseible": "Senseible reads the grower's electricity bills and reports location-based Scope 2 at 0.710 kg CO2 per kWh, plus market-based Scope 2 where you provide the contract or certificate data. Splitting the plant meter between growth and polishing uses your own sub-meter readings.",
+  "links": [
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Open access green power on the bill",
+      "to": "/answers/open-access-green-power-on-bill-scope-2"
+    },
+    {
+      "label": "CCPA greenwashing guidelines",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (market-based method)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

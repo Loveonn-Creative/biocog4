@@ -1,0 +1,64 @@
+{
+  "slug": "rubber-moulded-part-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a moulded rubber auto part per kg?",
+  "title": "Moulded rubber part footprint per kg",
+  "short": "Multiply each ingredient in the compound recipe by its share and its emission factor, scale up for flash and scrap, then add mixing, moulding and curing energy per kg of good parts. Carbon black and synthetic rubber usually carry the highest factors, so the recipe decides most of the answer.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Rubber component makers (hoses, seals, bushes) supplying OEMs",
+  "sections": [
+    {
+      "h": "Start from the compound recipe",
+      "p": [
+        "Your recipe sheet lists natural rubber, synthetic rubbers such as SBR or EPDM, carbon black, process oil, fillers, and curing chemicals in parts per hundred rubber. Convert each to a mass share of one kg of compound. Then compound factor = sum of (share x that material's factor).",
+        "Take material factors from your suppliers first. Carbon black and synthetic rubber makers increasingly publish product footprints; ask for the boundary and year. Where you use a database value, name it."
+      ]
+    },
+    {
+      "h": "Scrap and flash raise material per good part",
+      "p": [
+        "Compression and transfer moulding leave flash, and some parts fail inspection. Compound needed per kg of good parts = 1 / (1 minus scrap share). At 8 percent scrap that is 1.087 kg of compound for each kg shipped.",
+        "Vulcanised scrap sold or sent for disposal leaves your boundary; its treatment is a separate waste line, not a deduction from the part."
+      ]
+    },
+    {
+      "h": "Energy for mixing, moulding and curing",
+      "ul": [
+        "Internal mixer, mill, extruders and presses: kWh per kg from sub-meters, or plant kWh split by machine hours. Multiply by 0.710 kg CO2 per kWh.",
+        "Steam for autoclaves or press platens: boiler fuel per kg. PNG at 2.05 kg CO2 per scm, coal at 2.42 per kg, furnace oil at 2.97 per litre.",
+        "Metal inserts in bushes and mounts: their own mass x the metal's factor. Do not count them as rubber."
+      ]
+    },
+    {
+      "h": "Natural rubber and EUDR",
+      "p": [
+        "Natural rubber and certain rubber articles are in scope of the EU Deforestation Regulation, which is about traceability and deforestation-free origin, not carbon. An EU customer may ask for both. Keep the plot data for EUDR and the footprint as separate submissions."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: energy and scrap for 1 kg of good parts",
+    "lines": [
+      "Scrap and flash: 8 percent, so compound needed = 1 / 0.92 = 1.087 kg",
+      "Materials: 1.087 x compound factor from the recipe",
+      "Mixing, moulding and curing power: 1.5 kWh x 0.710 = 1.065 kg CO2",
+      "Autoclave steam: 0.1 scm PNG x 2.05 = 0.205 kg CO2",
+      "Energy per kg of good parts: 1.065 + 0.205 = 1.27 kg CO2, plus materials"
+    ],
+    "note": "Energy and scrap figures are illustrative. The materials line is often larger than energy, so get supplier factors for carbon black and synthetic rubber first."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a part footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps rubber, carbon black and chemical purchases in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    { "label": "EUDR data for coffee and rubber exporters", "to": "/answers/eudr-coffee-rubber-exporter-what-to-provide" },
+    { "label": "Scrap sold for recycling in Scope 3", "to": "/answers/scrap-sold-for-recycling-scope-3" },
+    { "label": "Automobile sector emissions", "to": "/industries/automobile" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "Regulation (EU) 2023/1115 (EUDR), Annex I, on EUR-Lex", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "EUDR application dates and the list of covered rubber articles have been amended; check the current text before advising a customer."
+}

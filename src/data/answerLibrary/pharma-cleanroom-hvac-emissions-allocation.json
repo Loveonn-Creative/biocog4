@@ -1,0 +1,64 @@
+{
+  "slug": "pharma-cleanroom-hvac-emissions-allocation",
+  "q": "How do I allocate cleanroom HVAC energy to products in a pharma plant footprint?",
+  "title": "Allocating cleanroom HVAC to products",
+  "short": "Meter the air handling units if you can. If not, split HVAC energy between suites by the air each one needs, room volume times design air changes per hour, then split each suite's share between products by the hours each product occupied it. Grade B suites take far more air than Grade D.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Formulation and API plants answering PSCI or buyer PCF requests",
+  "sections": [
+    {
+      "h": "Why HVAC needs its own step",
+      "p": [
+        "In a formulation plant the cleanroom air system runs around the clock whether a suite is busy or idle, and cleaner grades need much more filtered air. Splitting plant energy by tablets or kg made would hand the HVAC load to high-volume products even when a low-volume product sits in the cleanest suite. A separate HVAC step fixes that."
+      ]
+    },
+    {
+      "h": "Step 1: get HVAC energy out of the plant total",
+      "ul": [
+        "Best: energy meters on each AHU and on the chiller plant, read monthly.",
+        "Next: a meter on the HVAC panel, with chillers shared across AHUs by cooling load.",
+        "Last resort: rated power x running hours for each AHU, chiller and pump, checked against the plant bill.",
+        "Steam or gas for reheat and humidity control belongs here too, at its fuel factor."
+      ]
+    },
+    {
+      "h": "Step 2: split between suites by air volume",
+      "p": [
+        "Air needed per suite in m3 per hour = floor area x ceiling height x design air changes per hour. Take the design ACH for each classified area from your HVAC design and qualification documents, the same records a GMP inspector under Revised Schedule M would review. Each suite's share of HVAC energy = its air volume / total air volume.",
+        "Where a suite has its own AHU with a meter, use the meter and leave it out of the split."
+      ]
+    },
+    {
+      "h": "Step 3: split each suite between products",
+      "p": [
+        "Use the hours each product occupied the suite, from batch records or the equipment log, including cleaning and changeover time for that product. Idle hours can be shared over all products in that suite in proportion to their use. Write the rule down so next year's figure is comparable."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 600,000 kWh of HVAC power across three suites",
+    "lines": [
+      "Suite A, Grade B: 150 m2 x 3 m x 40 ACH = 18,000 m3 per hour",
+      "Suite B, Grade C: 300 m2 x 3 m x 20 ACH = 18,000 m3 per hour",
+      "Suite C, Grade D: 500 m2 x 3 m x 10 ACH = 15,000 m3 per hour",
+      "Total air: 51,000 m3 per hour",
+      "Suite A share: 600,000 x 18,000 / 51,000 = 211,765 kWh",
+      "Product X used Suite A for 60 percent of its hours: 211,765 x 0.6 = 127,059 kWh",
+      "127,059 x 0.710 = 90,212 kg CO2, about 90 t CO2 for Product X from Suite A"
+    ],
+    "note": "Areas and air change rates are illustrative. Use your own design documents; HVAC's share of plant energy varies widely between plants."
+  },
+  "senseible": "Senseible reads the plant's electricity and fuel bills and applies 0.710 kg CO2 per kWh and IPCC 2006 fuel factors. Sub-meter readings and the split between suites and products are entered by you and labelled as such.",
+  "links": [
+    { "label": "Pharma footprint per 1,000 tablets", "to": "/answers/pharma-formulation-carbon-footprint-per-1000-tablets" },
+    { "label": "Allocating factory electricity to products", "to": "/answers/how-to-allocate-factory-electricity-to-products" },
+    { "label": "PSCI questionnaire for pharma suppliers", "to": "/answers/psci-questionnaire-pharma-supplier-emissions" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011), allocation chapter", "url": "https://ghgprotocol.org/standards" },
+    { "label": "ISO 14067:2018 and ISO 14044:2006, allocation procedure", "url": "https://www.iso.org" },
+    { "label": "CEA CO2 Baseline Database", "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en" }
+  ],
+  "reviewed": "2026-10-18"
+}

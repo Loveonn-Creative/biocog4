@@ -1,0 +1,88 @@
+{
+  "slug": "spice-processing-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint per kg of an exported spice such as chilli, turmeric or cumin?",
+  "title": "Carbon footprint per kg of an exported spice",
+  "short": "Add two parts per kg of finished spice: the farm stage, mainly nitrous oxide from fertiliser nitrogen divided by yield, and the processing stage, the fuel and electricity for drying, sterilisation and grinding divided by kg dispatched. Allow for cleaning and grinding losses. The farm stage is usually the larger part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Spice processors and exporters asked by EU and US buyers",
+  "sections": [
+    {
+      "h": "Farm stage: nitrogen, yield and losses",
+      "p": [
+        "Most of a spice's farm footprint comes from the nitrogen applied to the field. Direct nitrous oxide is kg N per hectare x 0.01 (the IPCC default share emitted as N2O-N) x 44/28 (to convert N2O-N to N2O) x 273 (the 100-year GWP of N2O in IPCC AR6). Divide by the dried yield in kg per hectare.",
+        "Add indirect N2O from leaching and volatilisation, the CO2 released when urea is applied, the emissions from making the fertiliser, and diesel or electricity for irrigation pumps where the grower records it. Use averages from your procurement area if you cannot get per-farm data, and label them as averages."
+      ]
+    },
+    {
+      "h": "Processing stage: drying, steam sterilisation and grinding",
+      "ul": [
+        "Mechanical drying: the fuel used by the dryer, such as LPG, diesel or biomass. Sun drying has no fuel to count.",
+        "Steam sterilisation: the boiler fuel. Biomass CO2 is reported separately as biogenic; fossil fuel uses its combustion factor.",
+        "Cleaning, grinding, sieving and cold storage: the plant's electricity.",
+        "Packaging: the mass of each pack material times its factor."
+      ],
+      "p": [
+        "Take a full month or year of fuel and power invoices and divide by kg dispatched in the same period, so seasonal swings in throughput even out."
+      ]
+    },
+    {
+      "h": "Spice-specific traps",
+      "ul": [
+        "Turmeric is boiled before drying; the boiling fuel belongs to the farm or primary processor stage and is easy to miss.",
+        "Whole and ground spice from the same plant need their own figures, because grinding and losses apply only to the ground product.",
+        "Raw material bought through traders often has no farm data; state the farm stage as an estimate and name its basis.",
+        "Do not divide plant energy by kg of raw spice received when the buyer wants kg of finished product."
+      ]
+    },
+    {
+      "h": "What to give the buyer",
+      "p": [
+        "Send the kg CO2e per kg of finished spice, the boundary (farm to your gate, or including transport), the period, the factors and their sources, and which parts are measured and which are estimated. Split farm and processing so the buyer can see where the emissions sit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: ground chilli, farm to factory gate",
+    "lines": [
+      "Farm: 150 kg N per ha x 0.01 x 44/28 = 2.357 kg N2O x 273 = 643.5 kg CO2e per ha",
+      "Dried chilli yield 3,000 kg per ha: 643.5 / 3,000 = 0.2145 kg CO2e per kg dried chilli",
+      "Fertiliser manufacture: 150 kg N x 4.0 kg CO2e per kg N (illustrative factor) = 600 / 3,000 = 0.200 kg CO2e per kg",
+      "Farm stage: 0.2145 + 0.200 = 0.4145; at 1.05 kg dried chilli per kg powder = 0.435 kg CO2e per kg powder",
+      "Plant for the month: 18,000 kWh x 0.710 = 12,780 kg CO2; LPG for the steam unit 1,200 kg x 2.98 = 3,576 kg CO2",
+      "Processing: (12,780 + 3,576) / 60,000 kg powder dispatched = 0.273 kg CO2 per kg",
+      "Total: 0.435 + 0.273 = 0.708 kg CO2e per kg of powder, before packaging and transport"
+    ],
+    "note": "Nitrogen rate, yield, the fertiliser manufacture factor, the powder ratio and the plant's energy and output are illustrative; replace them with your own figures. Indirect N2O and urea CO2 would add to the farm stage."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind the processing stage, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts; the farm stage needs your grower or procurement data.",
+  "links": [
+    {
+      "label": "Processed food footprint per kg",
+      "to": "/answers/processed-food-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

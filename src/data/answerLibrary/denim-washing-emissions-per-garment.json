@@ -1,0 +1,81 @@
+{
+  "slug": "denim-washing-emissions-per-garment",
+  "q": "How much CO2 does denim washing add per garment?",
+  "title": "Denim washing CO2 per garment",
+  "short": "Add the laundry's boiler fuel, dryer fuel and electricity for a month, multiply each by its emission factor, and divide by the pieces washed. Heavy stone and enzyme washes take far more heat and machine time than a rinse, so split by wash recipe where you can. Dryers often use most of the heat.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Denim laundries and garment exporters in Bengaluru, Ahmedabad and Tiruppur",
+  "sections": [
+    {
+      "h": "What goes into a laundry's figure",
+      "ul": [
+        "Boiler fuel for hot water and steam: PNG, LPG, coal, briquettes or furnace oil.",
+        "Tumble dryer fuel, if dryers are gas-fired rather than steam-heated.",
+        "Electricity for washers, extractors, dryers, laser and ozone machines, compressors and the ETP.",
+        "Chemicals, enzymes and pumice are Scope 3 purchased goods; add them if the buyer asks for a cradle-to-gate figure."
+      ]
+    },
+    {
+      "h": "Splitting by wash recipe",
+      "p": [
+        "Pieces washed is a fair divisor only when recipes are similar. Otherwise give each recipe a weight from metered steam or gas per batch, or from machine minutes times load, and share the month's emissions by weighted pieces.",
+        "Re-measure the weights when you change a recipe, for example when ozone fading replaces a bleach step."
+      ]
+    },
+    {
+      "h": "Laser and ozone: what changes",
+      "p": [
+        "Laser and ozone finishing replace hand scraping, potassium permanganate spray and some bleaching baths. They cut water, chemicals and hot rinse steps, but they add electricity. Count both sides: lower boiler fuel per piece, higher kWh per piece at 0.710 kg CO2 each."
+      ]
+    },
+    {
+      "h": "Keeping washing separate from stitching",
+      "p": [
+        "Report laundry per piece as its own stage. Buyers add it to fabric, stitching and freight, and a combined factory figure hides where the heat goes. If the laundry is a jobworker, it is your Scope 3; ask for its monthly bills and wash counts."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a denim laundry",
+    "lines": [
+      "Boiler PNG: 8,000 scm x 2.05 = 16,400 kg CO2",
+      "Dryer LPG: 6,000 kg x 2.98 = 17,880 kg CO2",
+      "Electricity: 50,000 kWh x 0.710 = 35,500 kg CO2",
+      "Total: 69,780 kg CO2 for 100,000 pieces = 0.70 kg CO2 per piece on average",
+      "By recipe: 40,000 stone and enzyme washes at weight 3, 60,000 rinses at weight 1, so 180,000 weighted pieces",
+      "69,780 / 180,000 = 0.388 kg per weighted piece; stone wash 1.16 kg, rinse 0.39 kg per piece"
+    ],
+    "note": "Recipe weights are illustrative; take them from your own batch metering."
+  },
+  "senseible": "Senseible reads the laundry's PNG, LPG, coal and electricity invoices (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps chemical purchases in the Scope 3 evidence trail. Product reports are self-declared drafts; wash counts and recipe weights come from your production register.",
+  "links": [
+    {
+      "label": "Garment stitching emissions per piece",
+      "to": "/answers/garment-stitching-emissions-per-piece"
+    },
+    {
+      "label": "Dye house emissions per metre of fabric",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "LPG emission factor",
+      "to": "/emission-factors/lpg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

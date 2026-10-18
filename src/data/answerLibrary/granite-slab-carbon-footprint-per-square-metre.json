@@ -1,0 +1,81 @@
+{
+  "slug": "granite-slab-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of granite slabs per square metre?",
+  "title": "Granite slab carbon footprint per m2",
+  "short": "Add quarry diesel per cubic metre of block, block transport, and your plant's electricity, resin and consumables for sawing, polishing and finishing, then divide by square metres of slab dispatched, not square metres sawn. Breakage and trimming losses raise the figure for every good square metre. State the slab thickness, usually 20 mm or 30 mm.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Granite and stone processors exporting slabs to EU and US buyers",
+  "sections": [
+    {
+      "h": "Quarry stage per cubic metre of block",
+      "p": [
+        "Quarrying uses diesel for excavators, loaders, compressors and wire saws, and sometimes explosives. Ask the quarry for diesel per cubic metre of saleable block, or calculate it from its fuel invoices and block output. If you own the quarry, that diesel is your Scope 1. If you buy blocks, it is part of your purchased goods."
+      ]
+    },
+    {
+      "h": "Processing stage",
+      "ul": [
+        "Gang saws or multi-wire saws: the largest electricity use. Block cutters and edge cutters add more.",
+        "Polishing, flaming, leathering and calibrating lines.",
+        "Epoxy or polyester resin for filling and reinforcing slabs, with an upstream factor per kg.",
+        "Abrasives, diamond wire and blades, usually small.",
+        "DG diesel during power cuts, and forklift and crane fuel."
+      ]
+    },
+    {
+      "h": "From cubic metre to square metre",
+      "p": [
+        "A cubic metre of block gives a set number of square metres of slab, depending on thickness and saw kerf. Take the real figure from your production records: square metres of good slab dispatched per cubic metre of block processed over a month or year. Divide all emissions by good square metres, so breakage, trimming and rejects are shared over what you sell. Granite weighs about 2.6 to 2.7 tonnes per cubic metre, so a 20 mm slab is roughly 52 to 54 kg per square metre, which matters when freight is counted per tonne."
+      ]
+    },
+    {
+      "h": "What a buyer or EPD expects",
+      "p": [
+        "Construction product buyers in Europe often ask for an Environmental Product Declaration under EN 15804, which uses a declared unit such as one square metre of a given thickness or one tonne. Keep your figure in the same unit, state the thickness and finish, and show quarry, transport and processing separately."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 mm polished slab, one month",
+    "lines": [
+      "Blocks processed: 400 m3; slab sawn: 11,200 m2; good slab dispatched after 5 percent breakage: 10,640 m2",
+      "Quarry diesel: 400 m3 x 6 litres per m3 (quarry figure, illustrative) x 2.68 = 6,432 kg CO2",
+      "Plant electricity: 120,000 kWh x 0.710 = 85,200 kg CO2",
+      "Resin: 3,360 kg x 6 kg CO2e per kg (illustrative factor) = 20,160 kg CO2e",
+      "Total: 6,432 + 85,200 + 20,160 = 111,792 kg CO2e",
+      "Per good m2: 111,792 / 10,640 = 10.5 kg CO2e per m2, before block transport and export freight"
+    ],
+    "note": "All quantities, the diesel per m3 and the resin factor are illustrative. Dividing by the 11,200 m2 sawn instead would understate the figure by 5 percent."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a slab footprint, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps block and resin purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Reading GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), diesel default",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

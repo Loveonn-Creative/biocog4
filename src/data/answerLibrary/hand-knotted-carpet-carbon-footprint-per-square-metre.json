@@ -1,0 +1,81 @@
+{
+  "slug": "hand-knotted-carpet-carbon-footprint-per-square-metre",
+  "q": "How do I calculate the carbon footprint of a hand-knotted carpet per square metre?",
+  "title": "Hand-knotted carpet footprint per m2",
+  "short": "Per square metre, multiply the kg of each yarn issued to the loom by its fibre footprint, add dyeing fuel and power per kg of yarn, add washing and finishing per square metre, then freight. Knotting by hand uses almost no energy, so wool fibre usually decides the result, and the wool allocation method you choose changes it a lot.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Carpet exporters in Bhadohi, Mirzapur, Panipat and Jaipur",
+  "sections": [
+    {
+      "h": "Use yarn issued, not yarn in the finished rug",
+      "p": [
+        "Clipping and shearing the pile removes a share of the yarn, and weavers' leftovers add more. Take the kg of pile and foundation yarn issued per order from your issue register and divide by the square metres received, so the waste is inside the figure."
+      ]
+    },
+    {
+      "h": "Fibre factors and the wool allocation problem",
+      "p": [
+        "Sheep give both wool and meat, so the farm emissions must be shared between them. Allocation by mass, by economic value or by biophysical need gives very different wool figures. Wool LCA guidance from the International Wool Textile Organisation (IWTO) sets out how to do this.",
+        "Pick one method, name it and its source in the report, and do not compare your figure with a competitor's unless both used the same method. Silk, viscose and cotton need their own factors."
+      ]
+    },
+    {
+      "h": "Dyeing, washing and finishing",
+      "ul": [
+        "Dyeing: fuel and power for the month at the dye house divided by kg of yarn dyed, applied to the kg of dyed yarn per square metre.",
+        "Washing: power, diesel or other fuel at the washing unit divided by square metres washed.",
+        "Finishing: stretching, drying and binding, usually small; include it if it is metered.",
+        "Jobwork dye houses and washers are Scope 3 for you; ask for their monthly bills and output."
+      ]
+    },
+    {
+      "h": "What to state with the figure",
+      "p": [
+        "Report kg CO2e per square metre with the pile height and knot count, the yarn mix, the wool allocation method, and whether freight to the buyer is included. A buyer comparing two designs needs those to make sense of the numbers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a wool carpet with cotton foundation (illustrative)",
+    "lines": [
+      "Yarn issued per m2: 3.0 kg wool, 0.8 kg cotton",
+      "Wool at an illustrative 20 kg CO2e per kg: 3.0 x 20 = 60.0 kg CO2e",
+      "Cotton at an illustrative 3 kg CO2e per kg: 0.8 x 3 = 2.4 kg CO2e",
+      "Dye house month: PNG 6,000 scm x 2.05 = 12,300 kg CO2; power 8,000 kWh x 0.710 = 5,680 kg CO2; 17,980 kg for 10,000 kg yarn = 1.80 kg per kg; for 3.0 kg wool: 5.4 kg",
+      "Washing month: power 3,000 kWh x 0.710 = 2,130 kg; diesel 200 L x 2.68 = 536 kg; 2,666 kg for 2,000 m2 = 1.33 kg per m2",
+      "Total: 60.0 + 2.4 + 5.4 + 1.33 = about 69.1 kg CO2e per m2, before freight"
+    ],
+    "note": "The fibre factors are placeholders to show the arithmetic; use figures from your yarn supplier or a named study, with the allocation method stated."
+  },
+  "senseible": "Senseible reads the dye house and washing unit fuel and electricity invoices (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps yarn purchases in the Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certified footprints.",
+  "links": [
+    {
+      "label": "Dye house emissions per metre of fabric",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Biogenic carbon for food and textiles",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

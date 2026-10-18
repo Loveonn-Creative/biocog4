@@ -1,0 +1,63 @@
+{
+  "slug": "leather-footwear-carbon-footprint-per-pair",
+  "q": "How do I calculate the carbon footprint of a pair of leather shoes for an export buyer?",
+  "title": "Leather shoe carbon footprint per pair",
+  "short": "Add the leather area each pair really uses, including cutting waste, times the tannery's footprint per square foot, then soles, linings, adhesives, factory energy per pair and the shoe box. Leather usually dominates, so the cutting yield and the tannery's figure matter most.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Footwear exporters in Agra, Ambur, Chennai and Kanpur",
+  "sections": [
+    {
+      "h": "Leather area per pair, with cutting yield",
+      "p": [
+        "Take the net area of the upper pattern pieces for the size run from your costing sheet, then divide by the cutting yield. If the pieces need 1.65 sq ft and your clicking room averages 75 percent yield, each pair uses 1.65 / 0.75 = 2.2 sq ft of leather.",
+        "Multiply by the tannery's footprint per sq ft for that article. Ask the tannery for it with its boundary; buying finished leather means the tanning stage is their figure, not yours."
+      ]
+    },
+    {
+      "h": "The other materials",
+      "ul": [
+        "Soles: weight per pair x factor for the material (rubber, PU, TPR, leather board).",
+        "Linings, insoles, toe puffs and counters: weight per pair x factor.",
+        "Adhesives and finishes: kg used per month divided by pairs made.",
+        "Shoe box, tissue and carton: weight per pair x paper factor."
+      ]
+    },
+    {
+      "h": "Factory energy per pair",
+      "p": [
+        "Divide a month's electricity by pairs made and multiply by 0.710 kg CO2 per kWh. Add DG diesel at 2.68 kg CO2 per litre and any boiler or heat setting fuel. If the factory also makes uppers for others, split energy by production hours before dividing."
+      ]
+    },
+    {
+      "h": "Methods EU buyers mention",
+      "p": [
+        "Most buyers accept ISO 14067. Some EU brands work with the Product Environmental Footprint method (Commission Recommendation (EU) 2021/2279), which covers more impact categories than climate. Ask which one the buyer uses before you start, because the rules for allocation at the tannery and for end of life differ."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one pair of leather derby shoes",
+    "lines": [
+      "Leather: 2.2 sq ft x 1.0 kg CO2e per sq ft (assumed tannery figure) = 2.2 kg CO2e",
+      "Rubber sole: 0.4 kg x 3.0 kg CO2e per kg (assumed) = 1.2 kg CO2e",
+      "Box and tissue: 0.25 kg x 1.0 kg CO2e per kg (assumed) = 0.25 kg CO2e",
+      "Factory power: 40,000 kWh / 20,000 pairs = 2 kWh x 0.710 = 1.42 kg CO2",
+      "DG diesel: 1,000 litres x 2.68 / 20,000 pairs = 0.134 kg CO2",
+      "Total: 2.2 + 1.2 + 0.25 + 1.42 + 0.134 = 5.2 kg CO2e per pair"
+    ],
+    "note": "The material factors are assumptions for illustration only. Replace them with your tannery's and suppliers' figures before sending anything to a buyer."
+  },
+  "senseible": "Senseible reads the fuel, electricity and freight invoices behind a shoe footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps leather, sole and packaging purchases in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    { "label": "Tannery footprint per square foot", "to": "/answers/leather-tannery-carbon-footprint-per-square-foot" },
+    { "label": "EUDR and cattle hides from India", "to": "/answers/eudr-leather-cattle-hides-india" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint methods, on EUR-Lex", "url": "https://eur-lex.europa.eu" }
+  ],
+  "reviewed": "2026-10-18"
+}

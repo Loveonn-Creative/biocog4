@@ -1,0 +1,80 @@
+{
+  "slug": "castor-oil-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of castor oil and its derivatives for an export buyer?",
+  "title": "Carbon footprint of castor oil per kg",
+  "short": "Calculate the farm stage per kg of castor seed, from fertiliser N2O and irrigation pumping, then add crushing, solvent extraction and steam per tonne of seed. Split the total between oil and meal, usually by economic value, and divide by kg of oil. Report the oil's biogenic carbon content separately; do not subtract it.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Castor crushers and derivative makers supplying bio-based polymer and chemical buyers",
+  "sections": [
+    {
+      "h": "Farm stage per kg of seed",
+      "p": [
+        "Direct N2O is kg N per hectare x 0.01 x 44/28 x 273 (N2O's GWP in IPCC AR6), divided by seed yield per hectare. Add indirect N2O, fertiliser manufacture and irrigation pumping. Castor is often irrigated with electric pumps on farm connections that are not metered, so pumping energy is usually an estimate from pump size and hours; label it."
+      ]
+    },
+    {
+      "h": "Crushing and extraction",
+      "ul": [
+        "Expeller electricity, boiler fuel for solvent extraction and desolventising, and hexane make-up, per tonne of seed processed.",
+        "Oil and meal yields per tonne of seed from your production records.",
+        "Allocation: castor meal is worth far less than the oil, so economic allocation puts most of the burden on the oil; mass allocation spreads it more. State the choice and the prices used."
+      ]
+    },
+    {
+      "h": "Biogenic carbon in castor oil",
+      "p": [
+        "Castor oil is mostly the triglyceride of ricinoleic acid, about 73 percent carbon by mass, which is roughly 2.7 kg of CO2 taken from the air per kg of oil. ISO 14067 asks for biogenic carbon to be documented separately from fossil emissions, and a cradle-to-gate figure should state the product's biogenic carbon content. Do not net it off the footprint unless the buyer's method, for example an EN 16760 bio-based product study, sets out how it is handled at end of life."
+      ]
+    },
+    {
+      "h": "Derivatives",
+      "p": [
+        "For hydrogenated castor oil, 12-hydroxystearic acid or sebacic acid, start from the oil figure and add each step's energy, hydrogen, catalysts and chemicals. Sebacic acid production also yields 2-octanol and glycerine streams, so allocate between them with the same rule you used for oil and meal, and write it down."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: castor oil, farm to crusher gate",
+    "lines": [
+      "Farm N2O: 100 kg N per ha x 0.01 x 44/28 x 273 = 429.0 kg CO2e per ha; / 2,000 kg seed per ha = 0.2145 kg per kg seed",
+      "Pumping: 400 kWh per ha (estimate) x 0.710 = 284 kg CO2 / 2,000 = 0.142 kg per kg seed",
+      "Farm stage per tonne of seed: (0.2145 + 0.142) x 1,000 = 356.5 kg CO2e",
+      "Crushing per tonne of seed: 60 kWh x 0.710 = 42.6, plus coal 40 kg x 2.42 = 96.8; total 139.4 kg CO2",
+      "Total per tonne of seed: 356.5 + 139.4 = 495.9 kg CO2e",
+      "Allocation: 470 kg oil x Rs 130 = Rs 61,100; 500 kg meal x Rs 8 = Rs 4,000; oil share 61,100 / 65,100 = 93.9 percent",
+      "Per kg oil: 495.9 x 0.939 / 470 = 0.99 kg CO2e, plus about 2.7 kg biogenic CO2 per kg reported separately"
+    ],
+    "note": "Nitrogen rate, yields, energy use and prices are illustrative, and fertiliser manufacture is left out; use your own records."
+  },
+  "senseible": "Senseible reads the crusher's fuel, electricity and freight invoices, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps seed purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; farm data come from your growers or procurement records.",
+  "links": [
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Answering a TfS PCF request",
+      "to": "/answers/answer-a-tfs-pcf-request-chemical-supplier"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11 (N2O from managed soils)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

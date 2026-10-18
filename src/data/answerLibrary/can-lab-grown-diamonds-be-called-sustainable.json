@@ -1,0 +1,77 @@
+{
+  "slug": "can-lab-grown-diamonds-be-called-sustainable",
+  "q": "Can I call lab-grown diamonds sustainable or eco-friendly when selling to the US or EU?",
+  "title": "Calling lab-grown diamonds sustainable",
+  "short": "Not on its own. In the EU, generic words like eco-friendly or sustainable are banned from 27 September 2026 unless backed by recognised excellent environmental performance. In the US, the FTC treats unqualified environmental claims as hard to substantiate. Make a specific, measured claim instead, and always call the stones laboratory-grown.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Lab-grown diamond exporters and jewellery brands",
+  "sections": [
+    {
+      "h": "United States: two sets of FTC rules",
+      "ul": [
+        "Jewelry Guides (16 CFR Part 23, revised 2018): a lab-grown stone may be called a diamond only with a clear qualifier placed right before the name, such as laboratory-grown, laboratory-created or [maker]-created. Avoid using cultured on its own; FTC warning letters said mixing it with lab-grown can suggest mined stones.",
+        "Green Guides (16 CFR Part 260): broad claims such as eco-friendly or sustainable imply benefits few products can prove. Qualify them with the specific benefit and have evidence for it.",
+        "Mined diamonds are not a fair comparison basis unless you can substantiate the comparison with like-for-like data."
+      ]
+    },
+    {
+      "h": "European Union: generic claims are banned",
+      "p": [
+        "Directive (EU) 2024/825 amends EU consumer law so that, from 27 September 2026, a generic environmental claim such as green, eco or environmentally friendly counts as an unfair practice unless the seller can demonstrate recognised excellent environmental performance relevant to the claim. It also bans claims that a product is climate neutral because of offsets, and sustainability labels not based on a certification scheme or set by a public authority.",
+        "Each member state enforces its own transposing law, so the brand selling in that market carries the risk, and will pass the evidence request back to you."
+      ]
+    },
+    {
+      "h": "Why the claim is hard to back for lab-grown",
+      "p": [
+        "CVD and HPHT growing use a lot of electricity per carat, and most Indian growers draw from the grid or captive power. The footprint per carat depends mainly on that power and its source, so a stone grown on grid power can carry a substantial footprint. Saying no mining is involved is true, but it does not make the product sustainable."
+      ]
+    },
+    {
+      "h": "Claims that hold up better",
+      "ol": [
+        "A measured figure with its scope: kg CO2 per polished carat, cradle to gate, from metered electricity, with the factor named.",
+        "A specific energy claim: grown with a stated share of renewable electricity, backed by retired certificates or a PPA for that period.",
+        "Third-party verified figures where a buyer or market demands them.",
+        "No offsets-based neutral claims at product level in the EU."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: the basis for a specific claim (illustrative)",
+    "lines": [
+      "Grow room electricity for the month: 120,000 kWh for 2,000 carats rough grown, so 60 kWh per rough carat",
+      "60 x 0.710 = 42.6 kg CO2 per rough carat from grid power",
+      "At an assumed 35% rough-to-polished yield: 42.6 / 0.35 = 121.7 kg CO2 per polished carat, before cutting and polishing energy"
+    ],
+    "note": "Use your own metered kWh and yield; this shows the method, not an industry figure."
+  },
+  "senseible": "Senseible can produce a self-declared footprint from your electricity bills and fuel invoices, which is evidence for a specific, scoped claim. It does not approve or vouch for marketing claims, and its Verified status means rule checks passed.",
+  "links": [
+    {
+      "label": "CCPA greenwashing guidelines in India",
+      "to": "/answers/ccpa-greenwashing-guidelines-india"
+    },
+    {
+      "label": "Lab-grown diamond footprint per carat",
+      "to": "/answers/lab-grown-diamond-carbon-footprint-per-carat"
+    },
+    {
+      "label": "Greenwashing self-audit checklist",
+      "to": "/climate-intelligence/msme-greenwashing-self-audit-checklist-2026"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Directive (EU) 2024/825, empowering consumers for the green transition",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14021:2016, Self-declared environmental claims",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "EU member state transposition and FTC guidance on environmental claims may change; check the current 16 CFR Part 23 and Part 260 text and the national law of each EU market, and take legal advice before a campaign."
+}

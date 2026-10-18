@@ -1,0 +1,64 @@
+{
+  "slug": "corrugated-box-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of a corrugated box per kg, and how does a box maker calculate it?",
+  "title": "Corrugated box footprint per kg",
+  "short": "A box maker calculates it as kraft paper used per kg of boxes, including trim waste, times the paper's footprint, plus corrugator steam fuel, starch, inks and electricity per kg dispatched. Kraft paper is usually the largest part, so the paper mill's own figure matters more than anything else.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Corrugated box makers supplying exporters and FMCG brands",
+  "sections": [
+    {
+      "h": "Paper in, boxes out",
+      "p": [
+        "Take a month or a year of kraft paper consumption in kg and divide by kg of boxes dispatched. The ratio is above 1 because of trim, setup waste and rejects. Use issue records from the reel store, not purchases, so stock changes do not distort it.",
+        "Trim waste sold to a mill leaves your boundary. Do not subtract a credit for it from the box figure; report it separately if a buyer asks."
+      ]
+    },
+    {
+      "h": "Which paper factor to use",
+      "ul": [
+        "Best: your kraft mill's own footprint per kg, with its boundary and year. Ask each mill you buy from.",
+        "Recycled kraft from waste paper usually has a lower factor than virgin kraft, so keep the grades apart.",
+        "If you borrow a database value such as the FEFCO and Cepi European corrugated board data, label it as a European proxy. It does not represent Indian kraft mills, which differ in fibre, fuel and grid."
+      ]
+    },
+    {
+      "h": "Energy at your own plant",
+      "ul": [
+        "Corrugator steam: boiler fuel per kg of boxes. Coal at 2.42 kg CO2 per kg, PNG at 2.05 per scm, furnace oil at 2.97 per litre. Biomass CO2 is biogenic and reported separately.",
+        "Electricity for the corrugator, printer slotters, stitching and gluing: kWh x 0.710 kg CO2 per kWh.",
+        "Starch, inks, stitching wire and strapping per kg, each with a supplier or database factor."
+      ]
+    },
+    {
+      "h": "Per kg or per box",
+      "p": [
+        "Buyers usually want a figure per box. Multiply the per kg footprint by the box weight from your specification sheet. A 3 ply and a 5 ply box of the same size can differ a lot in weight, so quote per kg alongside the box weight and ply."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of 5 ply boxes",
+    "lines": [
+      "Kraft paper: 1.08 kg per kg boxes (8 percent trim and waste)",
+      "Paper: 1.08 x 0.9 kg CO2e per kg (assumed mill figure) = 0.972 kg CO2e",
+      "Corrugator boiler coal: 0.15 kg x 2.42 = 0.363 kg CO2",
+      "Electricity: 0.12 kWh x 0.710 = 0.0852 kg CO2",
+      "Total before starch and inks: 0.972 + 0.363 + 0.0852 = 1.42 kg CO2e per kg box"
+    ],
+    "note": "The 0.9 paper factor is an assumption for illustration only. Replace it with your mill's figure; it moves the result more than any other input."
+  },
+  "senseible": "Senseible reads the fuel, electricity, paper and freight invoices behind a box footprint (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps kraft and other supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    { "label": "Packaging footprint for an export shipment", "to": "/answers/packaging-carbon-footprint-export-shipment" },
+    { "label": "Recycled content in a product footprint", "to": "/answers/how-to-count-recycled-content-in-product-footprint" },
+    { "label": "Paper industry emissions", "to": "/industries/paper" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-18"
+}

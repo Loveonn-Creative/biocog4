@@ -1,0 +1,73 @@
+{
+  "slug": "verify-e-invoice-irn-for-carbon-evidence",
+  "q": "Can I use the e-invoice IRN and QR code to prove a supplier invoice is genuine for a carbon audit?",
+  "title": "Using the e-invoice IRN as audit evidence",
+  "short": "Yes, partly. A valid IRN and signed QR code prove the invoice was registered on the GST Invoice Registration Portal with that number, date, value and main HSN. They do not prove the goods were delivered, the quantity was used, or that a credit note did not later reduce it, so pair them with receipt records.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Exporters and MSMEs preparing evidence for verifiers or lenders",
+  "sections": [
+    {
+      "h": "What the IRN and signed QR code contain",
+      "p": [
+        "Under CGST Rule 48(4), businesses above the e-invoicing turnover threshold (aggregate turnover above ₹5 crore in any year from 2017-18, applying since 1 August 2023 under Notification 10/2023-Central Tax) report B2B invoices to the Invoice Registration Portal. The portal returns an Invoice Reference Number (IRN), a hash of the supplier GSTIN, financial year, document type and number, and a QR code digitally signed by the portal.",
+        "The QR code carries the supplier and buyer GSTINs, invoice number, type and date, invoice value, number of line items, HSN code of the main item, the IRN and its date."
+      ]
+    },
+    {
+      "h": "How to check it",
+      "ol": [
+        "Scan the QR code with the official e-invoice QR verification app or the e-invoice portal's signed QR check.",
+        "Confirm the signature is valid and the GSTINs, number, date and value match the invoice in your records.",
+        "Check that the invoice appears in your GSTR-2B for that period, which shows the supplier reported it.",
+        "Look for credit notes against the same invoice before using its quantity."
+      ]
+    },
+    {
+      "h": "What the IRN does not prove",
+      "ul": [
+        "Quantity per line: the QR shows the number of items and the main HSN, not each line's quantity.",
+        "Delivery and use: you still need the goods receipt note, weighbridge slip or stock entry.",
+        "Final status: an IRN can be cancelled on the portal within 24 hours, and later corrections go through credit notes.",
+        "Fuel and power bills: pump diesel, petrol and piped gas are outside GST and grid power is exempt, so these bills have no IRN to check; trace them to the discom or supplier account instead."
+      ]
+    },
+    {
+      "h": "How a verifier will use it",
+      "p": [
+        "ISO 14064-3 asks verifiers to collect sufficient, appropriate evidence. A checked IRN is good evidence that an invoice is authentic, so it can reduce how many documents need deeper testing. Verify the IRN on the largest invoices by emissions first, and record the check date and result next to each one."
+      ]
+    }
+  ],
+  "senseible": "Senseible fingerprints each uploaded file with SHA-256 and counts an identical file once, and it reads the invoice lines with their HSN codes and quantities. Checking an IRN against the GST portal is a separate step that you or your verifier carry out.",
+  "links": [
+    {
+      "label": "GST e-invoice fields for carbon accounting",
+      "to": "/answers/gst-e-invoice-fields-for-carbon-accounting"
+    },
+    {
+      "label": "Stopping the same invoice counted twice",
+      "to": "/answers/how-to-stop-same-invoice-counted-twice"
+    },
+    {
+      "label": "Does a hash prove emissions are correct?",
+      "to": "/answers/does-a-hash-prove-emissions-are-correct"
+    },
+    {
+      "label": "Tracing emission data to source",
+      "to": "/climate-intelligence/how-to-trace-emission-data-to-source"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-3:2019, Verification and validation of GHG statements",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "E-invoicing thresholds and portal rules have changed over time; check the current GST notification before relying on them."
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "paper-mill-carbon-footprint-per-tonne",
+  "q": "How do I calculate a paper mill's carbon footprint per tonne of paper?",
+  "title": "Paper mill carbon footprint per tonne",
+  "short": "Add a year's fossil fuel emissions from boilers and captive power, purchased electricity, and any process emissions, then divide by tonnes of saleable paper made in that year. Report CO2 from black liquor, rice husk and other biomass separately as biogenic. For a product footprint, also add fibre, chemicals and transport upstream.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Agro-residue, recycled-fibre and wood-based paper mills",
+  "sections": [
+    {
+      "h": "The gate-to-gate figure",
+      "ol": [
+        "Fossil fuel for the year: coal, pet coke, furnace oil or gas in boilers and captive power plants, times the combustion factor.",
+        "Purchased electricity: kWh from the discom or open access, times the grid factor for location-based reporting.",
+        "Mobile fuel inside the mill: diesel for loaders and yard vehicles.",
+        "Divide the total by saleable paper in air-dry tonnes for the same year."
+      ],
+      "p": [
+        "If coal fires a cogeneration plant that makes both steam and power for the mill, all of that coal is Scope 1 and the captive power adds nothing to Scope 2. Power exported to the grid should be handled with a stated allocation, not ignored."
+      ]
+    },
+    {
+      "h": "Biogenic CO2: report it, do not add it in",
+      "p": [
+        "Black liquor burned in a recovery boiler, bagasse, rice husk and wood waste release biogenic CO2. The GHG Protocol asks you to report it outside the scopes. The methane and nitrous oxide from burning biomass still count in Scope 1. Keep fossil and biogenic totals side by side, so a buyer sees both."
+      ]
+    },
+    {
+      "h": "Fibre source changes the upstream part",
+      "ul": [
+        "Recycled fibre mills: the upstream burden is the collection and transport of waste paper, plus deinking chemicals.",
+        "Agro-residue mills: bagasse, wheat straw or rice straw; state how you treat residue that would otherwise be burnt or used as fuel.",
+        "Wood-based mills: plantation wood and any purchased pulp, which carry their own cradle-to-gate factors.",
+        "State the fibre mix by percentage, because two mills with the same energy use can have very different product footprints."
+      ]
+    },
+    {
+      "h": "Where your figure is checked",
+      "p": [
+        "Pulp and paper is a designated consumer sector under BEE's Perform, Achieve and Trade scheme and a sector under India's Carbon Credit Trading Scheme, so larger mills already report energy and production to BEE. Use the same production and fuel numbers in your carbon figure, or explain the difference, because a buyer or verifier may compare them."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a recycled-fibre mill, one year",
+    "lines": [
+      "Saleable paper: 30,000 air-dry tonnes",
+      "Coal: 21,000 t x 2.42 t CO2 per t (IPCC 2006 default) = 50,820 t CO2",
+      "Purchased power: 12,000,000 kWh x 0.710 kg CO2 per kWh = 8,520 t CO2",
+      "Yard diesel: 60,000 litres x 2.68 kg CO2 per litre = 160.8 t CO2",
+      "Fossil total: 50,820 + 8,520 + 160.8 = 59,500.8 t CO2",
+      "Per tonne: 59,500.8 / 30,000 = 1.98 t CO2 per tonne of paper, gate to gate",
+      "Rice husk burnt: reported separately as biogenic CO2"
+    ],
+    "note": "Quantities are illustrative. Add waste paper collection, chemicals and starch for a cradle-to-gate product figure."
+  },
+  "senseible": "Senseible reads the coal, fuel, electricity and freight invoices behind a mill's Scope 1 and 2, at IPCC 2006 fuel factors and the CEA grid factor of 0.710 kg CO2 per kWh, and keeps fibre and chemical purchases in a Scope 3 evidence trail. Product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Paper and packaging carbon guide",
+      "to": "/industries/paper"
+    },
+    {
+      "label": "Biomass or waste fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Cogeneration: steam and power allocation",
+      "to": "/answers/chp-emissions-allocation-electricity-and-steam"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Perform, Achieve and Trade scheme, pulp and paper sector",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-18",
+  "reviewNote": "CCTS obligated entities and targets for pulp and paper are notified and revised by the government; check the current notification."
+}

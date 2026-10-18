@@ -1,0 +1,84 @@
+{
+  "slug": "estimate-dg-diesel-from-run-hours",
+  "q": "My DG set has no fuel log. How do I estimate diesel use from run hours?",
+  "title": "Estimate DG diesel from run hours",
+  "short": "Multiply run hours by the set's kVA rating, a 0.8 power factor and the average load share to get kWh, then divide by 3.0 to 3.5 kWh per litre. Label the result an estimate and check it against the diesel you bought in the same period.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "MSMEs with diesel generators and patchy fuel records",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "kWh generated = run hours x kVA rating x 0.8 (power factor) x average load as a share of rating.",
+        "Litres = kWh generated / kWh per litre. Use the maker's figure at your load if you have it; otherwise 3.0 to 3.5 kWh per litre is a working range for a well-loaded set.",
+        "Scope 1 CO2 = litres x 2.68 kg CO2 per litre (IPCC 2006 default for diesel)."
+      ],
+      "p": [
+        "If the DG panel has an energy meter, skip step 1 and use its kWh. That removes the biggest guess."
+      ]
+    },
+    {
+      "h": "Getting the load share right",
+      "ul": [
+        "Best: the DG energy meter, or kW readings logged at the panel during runs.",
+        "Next: phase currents from a clamp meter on a typical day. kW is about 1.732 x voltage x average current x power factor / 1,000 for a three-phase set.",
+        "Last resort: the connected load that runs during outages, as a share of the set's kW rating.",
+        "Below about 30 percent load, engines give fewer kWh per litre, so use the lower end of the range or the maker's part-load figure."
+      ]
+    },
+    {
+      "h": "A second method: litres per hour from the data sheet",
+      "p": [
+        "Many DG data sheets list fuel use in litres per hour at 25, 50, 75 and 100 percent load. Multiply that figure by run hours at the matching load. It is often more reliable than the kWh route for small sets, and it is a good cross-check when both are available."
+      ]
+    },
+    {
+      "h": "Reconcile with purchases before you report",
+      "p": [
+        "Diesel used should be close to diesel bought plus opening stock minus closing stock. Add up the year's diesel invoices or pump slips and compare. If purchases are higher, find out why: other users such as forklifts or vehicles, losses, or stock. Report from purchases where you can trace them, and keep the run-hour estimate as support. Start a simple fuel log from now on: date, litres filled, hour-meter reading."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one year for a 125 kVA set",
+    "lines": [
+      "Hour meter: 250 hours in the year; average load about 50 percent",
+      "kWh = 250 x 125 x 0.8 x 0.5 = 12,500 kWh",
+      "Litres at 3.2 kWh per litre = 12,500 / 3.2 = 3,906 L, about 3,900 L",
+      "CO2 = 3,906 x 2.68 = 10,468 kg, about 10.5 t",
+      "Range: 3,571 L (3.5 kWh/L) to 4,167 L (3.0 kWh/L), so 9.6 t to 11.2 t CO2"
+    ],
+    "note": "The kWh per litre range is an estimate; the maker's curve or a measured tank test is better. Diesel bought in the year should be close to 3,900 L."
+  },
+  "senseible": "Senseible reads diesel invoices and fuel slips as Scope 1 at 2.68 kg CO2 per litre, which is the evidence an auditor prefers. Keep a run-hour estimate and its workings alongside, labelled as an estimate.",
+  "links": [
+    {
+      "label": "DG specific fuel consumption check",
+      "to": "/answers/diesel-generator-specific-fuel-consumption"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    },
+    {
+      "label": "Is a DG set Scope 1 or Scope 2?",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Chapter 2 (stationary combustion)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Energy Auditor Guide Book 3, chapter on DG power generating systems",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 7 (managing inventory quality)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

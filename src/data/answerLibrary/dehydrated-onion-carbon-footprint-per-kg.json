@@ -1,0 +1,64 @@
+{
+  "slug": "dehydrated-onion-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of dehydrated onion or garlic flakes per kg?",
+  "title": "Dehydrated onion footprint per kg",
+  "short": "There is no single published figure; you calculate it from your own unit. Per kg of flakes, add dryer fuel and electricity, the fresh onion or garlic it took (often several kg), and packaging. Dryer fuel usually dominates the factory share, so a coal-fired unit and a biomass unit give very different results.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Dehydration units in Mahuva and other Gujarat clusters exporting to EU and US food makers",
+  "sections": [
+    {
+      "h": "The formula per kg of flakes",
+      "p": [
+        "kg CO2e per kg flakes = (fresh bulbs per kg flakes x farm factor) + (dryer fuel per kg flakes x fuel factor) + (kWh per kg flakes x 0.710) + packaging and inbound freight per kg.",
+        "Work out each term over a season or a month, not one batch, so moisture swings and dryer downtime average out. Divide by kg of finished product dispatched, after sorting losses."
+      ]
+    },
+    {
+      "h": "Getting the fresh-to-dry ratio right",
+      "p": [
+        "Onion and garlic lose most of their weight as water, so the farm stage is multiplied by the kg of fresh bulbs behind each kg of flakes. The ratio changes with variety, harvest moisture and how much peel and root is trimmed. Use your own batch records: fresh kg received at the gate divided by finished kg packed. Do not borrow a ratio from another unit."
+      ]
+    },
+    {
+      "h": "Dryer fuel: coal, gas or biomass",
+      "ul": [
+        "Coal: kg burnt x 2.42 kg CO2 per kg (IPCC 2006 default). Weigh what goes into the furnace, not what was bought.",
+        "PNG: scm x 2.05 kg CO2 per scm. LPG: kg x 2.98.",
+        "Biomass such as groundnut shell, briquettes or wood: the CO2 is biogenic and is reported separately, not added to the fossil total. The small CH4 and N2O from burning it are still counted in Scope 1, in CO2e.",
+        "Electric heating or heat pumps: kWh x 0.710 kg CO2 per kWh, the CEA grid factor."
+      ]
+    },
+    {
+      "h": "What a buyer will check",
+      "ul": [
+        "The boundary: cradle to gate (farm plus factory) or gate to gate (factory only). Say which.",
+        "That biogenic CO2 from biomass dryers is shown on its own line.",
+        "Where the farm factor came from, and that it fits Indian onion or garlic, not a generic vegetable.",
+        "The period and output volume used, so the per kg figure can be traced back."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a coal-fired belt dryer, factory share only",
+    "lines": [
+      "Coal: 1.2 kg per kg flakes x 2.42 = 2.904 kg CO2",
+      "Electricity for fans, conveyors and milling: 0.8 kWh per kg x 0.710 = 0.568 kg CO2",
+      "Factory energy total: 2.904 + 0.568 = 3.472 kg CO2 per kg flakes, about 3.5",
+      "Farm stage: kg fresh bulbs per kg flakes from batch records x a sourced farm factor, added on top"
+    ],
+    "note": "The coal and kWh rates are illustrative. Use your own season totals divided by kg packed."
+  },
+  "senseible": "Senseible reads the coal, gas, electricity and freight invoices behind the factory share (Scope 1 at IPCC 2006 defaults, Scope 2 at 0.710 kg CO2 per kWh) and keeps supplier lines in a Scope 3 evidence trail. Product reports are self-declared drafts, not ISO 14067 certification.",
+  "links": [
+    { "label": "Processed food footprint per kg", "to": "/answers/processed-food-carbon-footprint-per-kg" },
+    { "label": "Biomass fuel in a boiler or dryer", "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1" },
+    { "label": "Product carbon footprint calculator", "to": "/calculators/product-carbon-footprint" }
+  ],
+  "sources": [
+    { "label": "ISO 14067:2018, Carbon footprint of products", "url": "https://www.iso.org" },
+    { "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)", "url": "https://ghgprotocol.org/standards" },
+    { "label": "2006 IPCC Guidelines, Vol. 2 Energy, Ch. 2 Stationary Combustion", "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html" }
+  ],
+  "reviewed": "2026-10-18"
+}

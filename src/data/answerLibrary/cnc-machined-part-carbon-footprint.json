@@ -1,0 +1,82 @@
+{
+  "slug": "cnc-machined-part-carbon-footprint",
+  "q": "How do I calculate the carbon footprint of a CNC machined part?",
+  "title": "Carbon footprint of a CNC machined part",
+  "short": "Multiply the mass of bar or billet you start with, finished part plus chips, by the material's emission factor. Add machine energy, kW x hours x load factor x the grid factor, then heat treatment, plating and coolant where used. Material usually dominates, so the input mass matters more than cycle time.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Precision engineering and machining job shops supplying OEMs and exporters",
+  "sections": [
+    {
+      "h": "Material: count what you cut, not what you ship",
+      "p": [
+        "A part that weighs 1.0 kg after machining may start as a 1.6 kg bar. The 0.6 kg of chips was made, bought and paid for, so the material term uses 1.6 kg. Take the input mass from the cutting length and bar size on the routing sheet, or from bar consumed divided by good parts over a month.",
+        "Use your steel or aluminium supplier's cradle-to-gate figure where you have it. Steel made from scrap in an electric furnace and steel from a blast furnace can differ several times over, so a global average is only a placeholder."
+      ]
+    },
+    {
+      "h": "Machine energy per part",
+      "ul": [
+        "Machine power: from the nameplate or, better, a clamp meter reading during a cycle.",
+        "Load factor: machines rarely run at full rated power; a measured average is best.",
+        "Cycle time per part, including setup time shared over the batch.",
+        "Shared loads such as compressors, chillers and lighting: allocate by machine-hours or leave them in a plant overhead line, but say which."
+      ],
+      "p": [
+        "A simpler cross-check is the plant's monthly kWh divided by machine-hours, times the hours for this part."
+      ]
+    },
+    {
+      "h": "Chips and other processes",
+      "p": [
+        "Chips sold to a scrap dealer leave your boundary. Under the cut-off approach most product rules use, you do not subtract a credit for them. Heat treatment, induction hardening, plating, painting and outside job work each add their own energy or supplier figure. Coolant and cutting oil are usually small but count if a buyer wants a full figure."
+      ]
+    },
+    {
+      "h": "What to send an OEM",
+      "p": [
+        "Send kg CO2e per part, the input mass and material factor with its source, the energy per part and how you measured it, and the boundary, usually raw material to your gate. Give the scrap rate if rejected parts are significant."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a steel shaft",
+    "lines": [
+      "Bar input: 1.6 kg (1.0 kg finished + 0.6 kg chips) x 2.5 kg CO2e per kg (illustrative steel factor) = 4.000 kg CO2e",
+      "Machining: 10 kW x 0.6 load x 0.5 h = 3.0 kWh x 0.710 kg CO2 per kWh = 2.130 kg CO2",
+      "Heat treatment: 1.0 kg x 0.5 kWh per kg = 0.5 kWh x 0.710 = 0.355 kg CO2",
+      "Total: 4.000 + 2.130 + 0.355 = 6.485, about 6.5 kg CO2e per part"
+    ],
+    "note": "The steel factor, machine power, load, cycle time and heat treatment energy are illustrative; use the mill's figure and your own measurements. Material is about 62 percent of this part's footprint, so cutting chip mass by a better bar size helps more than shaving cycle time."
+  },
+  "senseible": "Senseible reads the electricity, fuel and freight invoices behind the machine energy, at the CEA grid factor of 0.710 kg CO2 per kWh, and keeps bar and billet purchases in a Scope 3 evidence trail. Product reports are self-declared drafts; the input mass per part comes from your routing data.",
+  "links": [
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Allocating factory electricity to products",
+      "to": "/answers/how-to-allocate-factory-electricity-to-products"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "worldsteel life cycle inventory methodology",
+      "url": "https://worldsteel.org"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

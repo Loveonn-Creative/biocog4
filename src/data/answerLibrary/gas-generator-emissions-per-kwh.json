@@ -1,0 +1,78 @@
+{
+  "slug": "gas-generator-emissions-per-kwh",
+  "q": "How much CO2 does a gas generator emit per kWh compared with a diesel genset and the grid?",
+  "title": "Gas genset CO2 per kWh vs diesel and grid",
+  "short": "A natural gas genset at 35 to 38% electrical efficiency emits about 0.53 to 0.58 kg CO2 per kWh, against roughly 0.8 to 0.9 kg for a diesel genset and 0.710 kg for the India grid. Efficiency falls at part load, and methane slip adds a little on a CO2e basis.",
+  "topic": "accounting",
+  "intent": "comparison",
+  "audience": "Factories on PNG or CNG considering a gas genset or dual-fuel conversion",
+  "sections": [
+    {
+      "h": "Where the figures come from",
+      "p": [
+        "Natural gas carries 56,100 kg CO2 per TJ and diesel 74,100 kg CO2 per TJ (IPCC 2006 defaults on a net calorific basis). That is 0.0561 kg CO2 per MJ for gas.",
+        "One kWh of electricity is 3.6 MJ. At 38% electrical efficiency a gas engine burns 3.6 / 0.38 = 9.47 MJ of gas per kWh, which is 9.47 x 0.0561 = 0.53 kg CO2 per kWh. At 35% it is 0.58 kg, at 30% it is 0.67 kg.",
+        "A diesel genset producing 3.0 to 3.3 kWh per litre emits 2.68 / 3.3 = 0.81 to 2.68 / 3.0 = 0.89 kg CO2 per kWh.",
+        "The bill route agrees with this. At 0.0561 kg CO2 per MJ, 2.05 kg CO2 per scm corresponds to about 36.5 MJ per scm on a net calorific basis, so one scm at 38% efficiency gives about 3.9 kWh."
+      ]
+    },
+    {
+      "h": "How to work out your own genset from bills",
+      "ol": [
+        "Take the month's PNG bill in scm for the genset (sub-meter it if the boiler shares the supply).",
+        "Multiply by 2.05 kg CO2 per scm to get kg CO2.",
+        "Divide by the kWh on the genset's energy meter for the same month.",
+        "Compare with 0.710 kg CO2 per kWh for the same kWh drawn from the grid."
+      ]
+    },
+    {
+      "h": "Methane slip and part load",
+      "p": [
+        "Lean-burn gas engines let a small share of unburnt methane out of the exhaust. Methane is a much stronger greenhouse gas than CO2, so on a CO2e basis the real figure is somewhat above the combustion CO2 alone. Ask the engine maker for the methane emission figure at your load and add it as a separate line if you have it.",
+        "Gas engines lose efficiency at low load, like diesel ones. If light loading drags electrical efficiency down towards 30%, the figure rises to about 0.67 kg CO2 per kWh, close to the grid."
+      ]
+    },
+    {
+      "h": "Which scope it lands in",
+      "p": [
+        "Gas burnt in your own genset is Scope 1. Grid electricity is Scope 2. Moving load from grid to a gas genset raises Scope 1 and lowers Scope 2, so show both when you explain the change to a buyer or lender."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month on a gas genset",
+    "lines": [
+      "PNG to the genset: 20,000 scm x 2.05 kg CO2 per scm = 41,000 kg CO2",
+      "Genset output: 75,000 kWh, so 41,000 / 75,000 = 0.547 kg CO2 per kWh",
+      "Same 75,000 kWh from a diesel set at 3.2 kWh per litre: 23,438 litres x 2.68 = 62,813 kg CO2, 0.838 kg per kWh",
+      "Same 75,000 kWh from the grid: 75,000 x 0.710 = 53,250 kg CO2"
+    ],
+    "note": "The diesel and output figures are illustrative; use your own meter readings."
+  },
+  "senseible": "Senseible reads PNG bills in scm at 2.05 kg CO2 per scm and diesel invoices at 2.68 kg CO2 per litre as Scope 1, and grid bills at 0.710 kg CO2 per kWh as Scope 2, with the factor shown on each line. The kg per kWh of a genset needs your genset meter reading.",
+  "links": [
+    {
+      "label": "DG set emissions per kWh vs grid",
+      "to": "/answers/dg-set-emissions-per-kwh-vs-grid"
+    },
+    {
+      "label": "Dual-fuel gas kit emissions saving",
+      "to": "/answers/dual-fuel-dg-set-gas-kit-emissions-saving"
+    },
+    {
+      "label": "PNG emission factor",
+      "to": "/emission-factors/png"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2: Energy",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-18"
+}

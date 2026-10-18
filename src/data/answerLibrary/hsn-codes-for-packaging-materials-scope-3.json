@@ -1,0 +1,71 @@
+{
+  "slug": "hsn-codes-for-packaging-materials-scope-3",
+  "q": "Which HSN codes show packaging purchases, and where do they go in Scope 3?",
+  "title": "HSN codes for packaging in Scope 3",
+  "short": "Packaging usually shows up under HSN 4819 (paper cartons and boxes), 4808 (corrugated paper), 3923 (plastic bags, bottles and caps), 3920 (plastic film), 4415 (wooden pallets and cases), 7310 (steel drums) and 6305 (sacks). Packaging you buy goes in Scope 3 Category 1, purchased goods.",
+  "topic": "product",
+  "intent": "check",
+  "audience": "Manufacturers and exporters tracking packaging emissions and EPR",
+  "sections": [
+    {
+      "h": "Common packaging headings on Indian invoices",
+      "ul": [
+        "4819: cartons, boxes and cases of paper or paperboard, including corrugated boxes.",
+        "4808: corrugated paper and paperboard in rolls or sheets, if you make boxes in-house.",
+        "4821: paper and paperboard labels.",
+        "3923: plastic articles for packing, such as bags, sacks, bottles, jars, caps and closures.",
+        "3920: plastic sheet and film, such as stretch and shrink film.",
+        "3919: self-adhesive plastic tape.",
+        "6305: sacks and bags for packing, including jute and woven polypropylene.",
+        "4415: wooden packing cases, crates, drums and pallets.",
+        "7310: steel drums, cans and similar containers. 7612 is the aluminium equivalent; 7010 covers glass bottles and jars."
+      ]
+    },
+    {
+      "h": "Where packaging goes in Scope 3",
+      "ul": [
+        "Packaging you buy and use for your products: Category 1, purchased goods.",
+        "Reusable crates and pallets with a long life that you capitalise: Category 2, capital goods.",
+        "Disposal of packaging waste at your own site: Category 5, waste generated in operations.",
+        "End of life of packaging that leaves with your sold products: Category 12."
+      ]
+    },
+    {
+      "h": "Watch for these traps",
+      "ul": [
+        "Same heading, different use: 3923 bottles bought as packaging go in packaging, but plastic parts built into your product are a component.",
+        "Pieces, not kilograms: cartons are often invoiced per piece. Get the weight per piece from the supplier specification before applying a factor per kg.",
+        "Packaging that arrives with your raw materials is part of the supplier's product. Do not add it again from your own records.",
+        "HSN tells you the material, not the footprint. Recycled and virgin board share a heading but have different factors."
+      ]
+    },
+    {
+      "h": "The same data serves plastic EPR",
+      "p": [
+        "Under the Plastic Waste Management Rules, 2016, as amended in 2022 with Extended Producer Responsibility guidelines for plastic packaging, producers, importers and brand owners report plastic packaging quantities by category. The weights you collect for carbon accounting under 3923, 3920 and 3919 can feed that return too, so collect them once, in kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: turning a month of packaging invoices into weights",
+    "lines": [
+      "HSN 4819, 5,000 corrugated cartons at 0.45 kg each (supplier spec): 5,000 x 0.45 = 2,250 kg board",
+      "HSN 3920, stretch film: 400 kg as invoiced",
+      "HSN 4415, 120 wooden pallets at 18 kg each: 120 x 18 = 2,160 kg wood",
+      "Each weight then takes a material factor per kg, from the supplier or a named database"
+    ],
+    "note": "Quantities are illustrative. Keep board, film and wood on separate lines because their factors differ."
+  },
+  "senseible": "Senseible classifies invoice lines by HSN code first and puts packaging purchases into the Scope 3 evidence trail. Packaging bought by weight can take a material factor; cartons bought in pieces need a weight per piece before a figure is produced.",
+  "links": [
+    { "label": "Packaging footprint for an export shipment", "to": "/answers/packaging-carbon-footprint-export-shipment" },
+    { "label": "Can HSN codes be used for Scope 3", "to": "/answers/can-hsn-codes-be-used-for-scope-3" },
+    { "label": "Mapping HSN codes to emission factors", "to": "/answers/hsn-code-emission-factor-mapping" },
+    { "label": "Plastic EPR recycled content targets", "to": "/answers/plastic-epr-recycled-content-targets" }
+  ],
+  "sources": [
+    { "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Categories 1, 2, 5 and 12", "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard" },
+    { "label": "Plastic Waste Management Rules, 2016 and EPR Guidelines for Plastic Packaging (2022), Central Pollution Control Board", "url": "https://cpcb.nic.in" }
+  ],
+  "reviewed": "2026-10-18"
+}
