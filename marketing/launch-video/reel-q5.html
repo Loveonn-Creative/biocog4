@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Myth ka postmortem</title>
+<!--
+  MYTH KA POSTMORTEM #01 — "CBAM sirf badi companies ke liye." (31 s, 1080x1920, deterministic window.render(t))
+  FACTS (verified 19 Oct 2026; network fetch to EUR-Lex was blocked, confirmed via EU-domain pages in search):
+  1) Goods in scope = Annex I of Regulation (EU) 2023/956: cement, iron and steel, aluminium, fertilisers,
+     electricity and hydrogen (incl. some precursors/downstream products), identified by CN code. Obligation sits with
+     the importer / authorised CBAM declarant and is based on embedded emissions of the goods. No provision keys
+     scope to the size of the third-country producer or exporter.
+     - EU Commission, CBAM page: https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en
+     - EU Commission, CBAM definitive regime: https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en
+     - Guidance doc for installation operators outside the EU (Annex I goods, CN codes):
+       https://taxation-customs.ec.europa.eu/system/files/2023-12/Guidance%20document%20on%20CBAM%20implementation%20for%20installation%20operators%20outside%20the%20EU.pdf
+  2) Regulation (EU) 2025/2083 (CBAM simplification, published OJ Oct 2025) replaces the EUR 150/consignment exemption
+     with a single mass-based threshold: 50 tonnes net mass, cumulative PER IMPORTER PER CALENDAR YEAR, for iron & steel,
+     aluminium, fertilisers and cement (not electricity or hydrogen). Importers at or under it are exempt; once exceeded,
+     obligations apply to the importer's imports that year. ~90% of importers exempt, ~99% of embedded emissions stay in scope.
+     - EU Commission news "Officially published: Simplifications for the CBAM" (20 Oct 2025):
+       https://taxation-customs.ec.europa.eu/news/officially-published-simplifications-carbon-border-adjustment-mechanism-cbam-2025-10-20_en
+     - Council press release 29 Sep 2025: https://www.consilium.europa.eu/en/press/press-releases/2025/09/29/cbam-council-signs-off-simplification-to-the-eu-carbon-leakage-instrument/
+     - Council/Parliament deal 18 Jun 2025: https://www.consilium.europa.eu/en/press/press-releases/2025/06/18/carbon-border-adjustment-mechanism-cbam-council-and-parliament-strike-a-deal-on-its-simplification/
+  Wording kept deliberately safe: we do NOT say the supplier pays; we say the 50 t exemption is the importer's yearly total,
+  so a small supplier's goods sold to an importer above 50 t are "in scope".
+  Group, members, times are fictional. Chat UI is a generic hand-drawn chat, no third-party branding.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --ink: #16181d; --night: #14161b; --saffron: #ef8a25; --green: #1f5139; --red: #c8372d; --mute: #8b8f99; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--paper); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+.layer { position: absolute; inset: 0; }
+svg { overflow: visible; }
+.ink path, .ink line, .ink rect, .ink circle, .ink ellipse, .ink polyline { fill: none; stroke: var(--ink); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* chat */
+#chat { background: #15181e; }
+#wall { opacity: .09; }
+#hdr { position: absolute; left: 0; right: 0; top: 250px; height: 140px; background: #1d2028; border-bottom: 2px solid #262a33; }
+#hdr .av { position: absolute; left: 70px; top: 26px; width: 88px; height: 88px; border-radius: 50%; background: #2c313b; }
+#hdr .nm { position: absolute; left: 186px; top: 30px; font-size: 44px; font-weight: 600; color: #eef0f3; letter-spacing: -.01em; display: flex; align-items: center; gap: 14px; }
+#hdr .sub { position: absolute; left: 188px; top: 86px; font-size: 26px; color: var(--mute); }
+#hdr .back { position: absolute; left: 22px; top: 50px; }
+.bub { position: absolute; left: 80px; top: 760px; width: 700px; padding: 26px 34px 22px; background: #2a2e37; border-radius: 30px; transform-origin: 50% 60%; color: #f1f2f4; }
+.bub:before { content: ''; position: absolute; left: -14px; top: 0; border-top: 26px solid #2a2e37; border-left: 26px solid transparent; }
+.bub .fw { display: flex; align-items: center; gap: 12px; font-size: 30px; font-style: italic; color: #a6abb6; }
+.bub .fw b { font-style: normal; font-weight: 600; font-family: 'JetBrains Mono'; font-size: 26px; color: #c9ccd3; margin-left: auto; }
+.bub .tx { font-size: 68px; font-weight: 600; line-height: 1.08; letter-spacing: -.02em; margin-top: 14px; }
+.bub .tm { text-align: right; font-family: 'JetBrains Mono'; font-size: 24px; color: var(--mute); margin-top: 10px; }
+.shine { position: absolute; left: 9%; top: 10%; width: 22%; height: 26%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,255,255,.35), rgba(255,255,255,0)); }
+#knot { position: absolute; }
+.frag { position: absolute; background: #2a2e37; }
+.fword { position: absolute; font-size: 68px; font-weight: 600; letter-spacing: -.02em; color: #f1f2f4; white-space: nowrap; }
+
+/* paper */
+#paper { background: var(--paper); color: var(--ink); }
+#grain { opacity: .5; mix-blend-mode: multiply; }
+#tag { position: absolute; left: 80px; top: 272px; font-family: 'JetBrains Mono'; font-weight: 700; font-size: 30px; letter-spacing: .06em; color: var(--ink); padding: 10px 18px; }
+#tag svg { position: absolute; left: 0; top: 0; }
+.head { position: absolute; left: 80px; width: 860px; font-weight: 700; letter-spacing: -.035em; line-height: 1.02; color: var(--ink); }
+.w { display: inline-block; white-space: pre; }
+.lbl { position: absolute; font-family: 'Hand'; font-size: 50px; color: var(--ink); white-space: nowrap; transform: translateX(-50%); }
+.crate { position: absolute; border: 6px solid var(--ink); border-radius: 6px; background: #e3d8c4; }
+.crate:after { content: ''; position: absolute; inset: 10px; border: 3px solid rgba(22,24,29,.35); border-radius: 2px; }
+.crate.me { background: var(--saffron); }
+#scope { position: absolute; left: 150px; top: 1150px; font-weight: 700; font-size: 92px; color: var(--red); border: 9px solid var(--red); border-radius: 14px; padding: 4px 26px; letter-spacing: -.02em; transform-origin: 50% 50%; background: rgba(244,237,225,.6); }
+#fifty { position: absolute; font-family: 'JetBrains Mono'; font-weight: 800; color: var(--ink); letter-spacing: -.04em; }
+#wm { position: absolute; left: 80px; top: 760px; font-weight: 700; font-size: 150px; letter-spacing: -.05em; color: var(--ink); }
+#wm i { font-style: normal; color: var(--saffron); }
+#sl1 { position: absolute; left: 86px; top: 950px; font-size: 56px; font-weight: 500; color: var(--ink); letter-spacing: -.01em; }
+#sl2 { position: absolute; left: 86px; top: 1080px; font-family: 'Hand'; font-size: 78px; color: #c96612; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ============ PAPER WORLD (revealed by the pop) ============ -->
+  <div id="paper" class="layer">
+    <svg id="grain" class="layer" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .2  0 0 0 .22 0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
+
+    <div id="tag">MYTH KA POSTMORTEM #01<svg class="ink" width="470" height="70"><path id="tagbox" pathLength="1" d="M4 8 C120 2 330 4 462 9 C466 25 465 45 461 62 C320 66 140 67 6 61 C2 44 3 25 6 6" style="stroke:var(--red);stroke-width:4"/></svg></div>
+
+    <!-- T1 -->
+    <div id="t1" class="head" style="top:640px;font-size:118px"></div>
+    <svg id="strike" class="layer" width="1080" height="1920" style="pointer-events:none"><path id="strikeP" pathLength="1" d="" style="fill:none;stroke:var(--red);stroke-width:14;stroke-linecap:round"/></svg>
+
+    <!-- T2: goods on two belts -->
+    <div id="t2" class="head" style="top:440px;font-size:96px"></div>
+    <div id="goods" class="layer">
+      <svg class="ink layer" width="1080" height="1920" id="belts">
+        <path id="belt1" pathLength="1" d="M70 1030 C300 1034 640 1026 930 1032"/>
+        <path id="belt2" pathLength="1" d="M70 1360 C300 1356 640 1364 930 1358"/>
+        <g id="rollers"></g>
+        <!-- iron & steel: I-beam -->
+        <g id="g0"><path pathLength="1" d="M-80 -150 L80 -150 L80 -128 L18 -128 L18 -22 L80 -22 L80 0 L-80 0 L-80 -22 L-18 -22 L-18 -128 L-80 -128 Z"/><path pathLength="1" d="M80 -150 L104 -164 L104 -142 L80 -128 M80 -22 L104 -36 L104 -14 L80 0"/></g>
+        <!-- aluminium: two ingots -->
+        <g id="g1"><path pathLength="1" d="M-90 0 L90 0 L72 -48 L-72 -48 Z"/><path pathLength="1" d="M-70 -54 L70 -54 L54 -100 L-54 -100 Z"/><path pathLength="1" d="M-40 -78 L20 -78"/></g>
+        <!-- cement: bag -->
+        <g id="g2"><path pathLength="1" d="M-80 0 C-92 -50 -92 -100 -78 -138 C-30 -146 30 -146 78 -138 C92 -100 92 -50 80 0 C30 8 -30 8 -80 0 Z"/><path pathLength="1" d="M-70 -120 L70 -120 M-40 -70 C-14 -80 14 -60 40 -70"/></g>
+        <!-- fertiliser: tied sack with granules -->
+        <g id="g3"><path pathLength="1" d="M-70 0 C-96 -60 -70 -130 -22 -150 L-30 -172 C-10 -166 10 -166 30 -172 L22 -150 C70 -130 96 -60 70 0 C26 8 -26 8 -70 0 Z"/><path pathLength="1" d="M-24 -150 C-8 -144 8 -144 24 -150"/><circle cx="-24" cy="-60" r="4"/><circle cx="12" cy="-82" r="4"/><circle cx="30" cy="-40" r="4"/><circle cx="-6" cy="-30" r="4"/></g>
+        <!-- hydrogen: gas cylinder -->
+        <g id="g4"><path pathLength="1" d="M-46 0 L-46 -130 C-46 -160 46 -160 46 -130 L46 0 Z"/><path pathLength="1" d="M-14 -152 L-14 -172 L14 -172 L14 -152 M-24 -178 L24 -178"/><path pathLength="1" d="M-46 -40 L46 -40"/></g>
+        <!-- electricity: plug + cord -->
+        <g id="g5"><path pathLength="1" d="M-50 -60 L50 -60 L50 -110 C50 -130 -50 -130 -50 -110 Z"/><path pathLength="1" d="M-24 -126 L-24 -160 M24 -126 L24 -160"/><path pathLength="1" d="M0 -60 C0 -20 -70 -30 -80 0 C-86 14 -60 22 -40 8"/></g>
+      </svg>
+      <div class="lbl" id="l0">Iron &amp; steel</div><div class="lbl" id="l1">Aluminium</div><div class="lbl" id="l2">Cement</div>
+      <div class="lbl" id="l3">Fertiliser</div><div class="lbl" id="l4">Hydrogen</div><div class="lbl" id="l5">Bijli</div>
+    </div>
+
+    <!-- T3: the importer's year -->
+    <div id="t3a" class="head" style="top:440px;font-size:104px"></div>
+    <div id="t3b" class="head" style="top:440px;font-size:96px"></div>
+    <div id="fifty" style="left:80px;top:430px;font-size:200px"></div>
+    <div id="binwrap" class="layer">
+      <svg class="ink layer" width="1080" height="1920">
+        <path id="bin" pathLength="1" d="M100 930 L140 1390 L580 1390 L620 930"/>
+        <path id="gauge" pathLength="1" d="M770 700 L770 1390 L850 1390 L850 700 C850 675 770 675 770 700"/>
+        <rect id="gfill" x="780" y="1380" width="60" height="0" style="fill:#d4c8b3;stroke:none"/>
+        <path id="line50" pathLength="1" d="M740 980 L880 980" style="stroke-dasharray:14 12"/>
+        <path id="mearrow" pathLength="1" d=""/>
+      </svg>
+      <div id="crates"></div>
+      <div class="lbl" id="binl" style="left:360px;top:1400px;font-size:54px">EU importer</div>
+      <div class="lbl mono" id="g50" style="left:690px;top:940px;font-family:'JetBrains Mono';font-size:38px;font-weight:700">50 t</div>
+      <div class="lbl" id="mel" style="font-size:62px;color:#c96612">aap</div>
+      <div id="scope">In scope</div>
+    </div>
+
+    <!-- payoff -->
+    <div id="p1" class="head" style="top:520px;font-size:96px"></div>
+    <div id="p2" class="head" style="top:790px;font-size:260px;line-height:.95;letter-spacing:-.05em"></div>
+    <svg class="layer ink" width="1080" height="1920"><path id="pu" pathLength="1" d="M88 1330 C300 1312 560 1326 800 1306" style="stroke:var(--red);stroke-width:14"/>
+      <g id="pcr"><rect x="0" y="0" width="70" height="56" rx="5" style="fill:var(--saffron)"/><path d="M12 12 L58 44 M58 12 L12 44" style="stroke-width:3;opacity:.5"/></g></svg>
+
+    <!-- sign-off -->
+    <div id="wm">Senseible<i>.</i></div>
+    <div id="sl1">Carbon, in plain words.</div>
+    <div id="sl2">Forward this one instead.</div>
+    <svg class="layer ink" width="1080" height="1920"><path id="fwa" pathLength="1" d="M640 1220 C700 1200 760 1200 800 1236 M800 1236 L770 1196 M800 1236 L756 1246" style="stroke:#c96612;stroke-width:7"/></svg>
+  </div>
+
+  <!-- ============ CHAT WORLD ============ -->
+  <div id="chat" class="layer">
+    <svg id="wall" class="layer" width="1080" height="1920">
+      <defs><pattern id="dood" width="260" height="260" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round">
+          <path d="M30 40 c10 -14 26 -14 30 0 s20 14 30 0"/><circle cx="190" cy="60" r="18"/><path d="M200 170 l20 20 m0 -20 l-20 20"/>
+          <path d="M60 180 c0 -20 30 -20 30 0 c0 20 -30 20 -30 40"/><path d="M140 120 l16 -10 l16 10"/></g></pattern></defs>
+      <rect width="1080" height="1920" fill="url(#dood)"/></svg>
+    <div id="hdr">
+      <svg class="back" width="30" height="40"><path d="M24 4 L6 20 L24 36" fill="none" stroke="#c9ccd3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="av"><svg width="88" height="88"><g fill="none" stroke="#e7c9a3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M44 18 C34 30 30 48 34 66 L44 70 L54 66 C58 48 54 30 44 18 Z"/><path d="M44 22 L44 68"/><path d="M28 72 L60 72"/></g></svg></div>
+      <div class="nm">Exporters Association
+        <!-- folded-hands doodle instead of an emoji glyph -->
+        <svg width="40" height="44"><g fill="none" stroke="#e7c9a3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 C12 12 9 24 11 36 L20 40 L29 36 C31 24 28 12 20 4 Z"/><path d="M20 8 L20 38"/><path d="M5 10 l4 4 M35 10 l-4 4 M20 -2 l0 0"/></g></svg>
+      </div>
+      <!-- hidden detail: the group has almost as many admins as members -->
+      <div class="sub">312 members, 311 admins</div>
+    </div>
+    <div id="bub" class="bub">
+      <div class="shine" id="shine"></div>
+      <div class="fw"><svg width="34" height="26"><path d="M20 3 L32 13 L20 23 M32 13 C18 12 8 15 2 24" fill="none" stroke="#a6abb6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Forwarded many times<b id="cnt"></b></div>
+      <div class="tx" id="mtx">CBAM sirf badi companies ke liye.</div>
+      <div class="tm" id="tm">4:58 AM</div>
+    </div>
+    <svg id="knot" width="80" height="260" style="left:0;top:0"><path d="M30 0 L50 0 L58 18 L22 18 Z" fill="#2a2e37"/><path id="string" pathLength="1" d="M40 18 C20 60 60 100 40 140 C20 180 56 220 40 258" fill="none" stroke="#6b707b" stroke-width="4" stroke-linecap="round"/></svg>
+    <svg id="arrows" class="layer" width="1080" height="1920"></svg>
+    <div id="frags" class="layer"></div>
+    <svg id="burst" class="layer" width="1080" height="1920"></svg>
+  </div>
+
+  <!-- the pin: drawn above everything -->
+  <svg id="pin" class="layer" width="1080" height="1920"><g id="pinG"><line x1="0" y1="0" x2="250" y2="0" stroke="#d9dbe0" stroke-width="7" stroke-linecap="round"/><path d="M0 0 L-22 -5 L-22 5 Z" fill="#d9dbe0"/><circle cx="262" cy="0" r="26" fill="var(--red)" stroke="#16181d" stroke-width="5"/><circle cx="254" cy="-8" r="7" fill="#fff" opacity=".6"/></g></svg>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3);
+const eio = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3)/2;
+const back = x => { const c = 1.7; return 1 + (c + 1)*Math.pow(x - 1, 3) + c*Math.pow(x - 1, 2); };
+const bounce = x => { const n = 7.5625, d = 2.75; if (x < 1/d) return n*x*x; if (x < 2/d) return n*(x -= 1.5/d)*x + .75; if (x < 2.5/d) return n*(x -= 2.25/d)*x + .9375; return n*(x -= 2.625/d)*x + .984375; };
+const lerp = (a, b, k) => a + (b - a)*k;
+const draw = (el, p) => { el.style.strokeDasharray = '1 1'; el.style.strokeDashoffset = 1 - cl(p); };
+
+// word-rise helper
+function words(el, html) { el.innerHTML = html.split(' ').map(w => `<span class="w">${w} </span>`).join(''); return [...el.children]; }
+function rise(ws, t, t0, step = .12, out = 1e9) {
+  const vo = 1 - seg(t, out, out + .3);
+  ws.forEach((w, i) => { const k = eo(seg(t, t0 + i*step, t0 + i*step + .4));
+    w.style.opacity = k*vo; w.style.transform = `translateY(${(1 - k)*60 - (1 - vo)*40}px)`; });
+}
+const T1 = words($('t1'), 'CBAM company ka size nahi dekhta.'); T1[3].id = 'sz'; T1[3].innerHTML = '<b style="font-weight:700">size</b> '; 
+const T2 = words($('t2'), 'Maal ka carbon dekhta hai.');
+const T3a = words($('t3a'), '50 tonne ki chhoot?'); T3a[0].classList.add('mono'); T3a[0].style.color = 'var(--ink)';
+const T3b = words($('t3b'), 'Importer ka saal&nbsp;bhar ka total.');
+const P1 = words($('p1'), 'Company chhoti ho sakti hai.');
+const P2 = words($('p2'), 'Rule nahi.');
+
+// goods layout
+const G = [[220, 1024], [505, 1024], [790, 1024], [220, 1354], [505, 1354], [790, 1354]];
+G.forEach(([x, y], i) => { const l = $('l' + i); l.style.left = x + 'px'; l.style.top = (y + 40) + 'px'; });
+$('rollers').innerHTML = [1030, 1360].map(y => [0,1,2,3,4,5,6,7].map(k => `<circle class="rol" cx="${110 + k*110}" cy="${y + 22}" r="13" pathLength="1"/>`).join('')).join('');
+
+// crates: [x, restY, w, h, me]
+const C = [[148, 1300, 140, 84], [295, 1300, 140, 84], [442, 1300, 130, 84], [160, 1210, 130, 84], [298, 1210, 150, 84],
+           [455, 1210, 110, 84], [200, 1120, 150, 84], [362, 1148, 66, 56, true], [438, 1120, 130, 84]];
+$('crates').innerHTML = C.map((c, i) => `<div class="crate${c[4] ? ' me' : ''}" id="c${i}" style="left:${c[0]}px;width:${c[2]}px;height:${c[3]}px"></div>`).join('');
+
+// arrows flying out of the forward
+$('arrows').innerHTML = Array.from({length: 9}, (_, i) => `<path id="a${i}" d="M0 -12 L16 0 L0 12 M16 0 C4 -2 -10 2 -20 12" fill="none" stroke="#a6abb6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+// pop fragments + flying words
+const FR = Array.from({length: 12}, (_, i) => { const a = i/12*Math.PI*2 + .3; return { a, v: 900 + (i*137 % 5)*160, r: (i*71 % 7 - 3)*120, w: 60 + (i*53 % 4)*30, h: 40 + (i*29 % 3)*26 }; });
+$('frags').innerHTML = FR.map((f, i) => `<div class="frag" id="f${i}" style="width:${f.w}px;height:${f.h}px;border-radius:${10 + i % 3 * 8}px ${4 + i % 2 * 20}px"></div>`).join('') +
+  'CBAM sirf badi companies ke liye.'.split(' ').map((w, i) => `<div class="fword" id="fw${i}">${w}</div>`).join('');
+$('burst').innerHTML = Array.from({length: 14}, (_, i) => `<path id="b${i}" pathLength="1" fill="none" stroke="#f4ede1" stroke-width="${6 + i % 3*3}" stroke-linecap="round"/>`).join('');
+
+const POP = 6.3, PX = 505, PY = 900;
+const DUR = 31;
+
+function bubbleArrive(el, dt) {   // pop-in of an incoming message
+  const k = back(seg(dt, 0, .45)); el.style.opacity = cl(dt/.12);
+  return { s: lerp(.6, 1, k), y: (1 - eo(seg(dt, 0, .45)))*90 };
+}
+
+window.render = function (t) {
+  // ---------------- CHAT ----------------
+  const loop = t > 29.4;
+  const chatIn = loop ? 1 - eio(seg(t, 29.5, 30.2)) : 0;   // chat sliding back up (1 = below screen)
+  const chat = $('chat'), bub = $('bub'), knot = $('knot');
+  chat.style.display = (t < POP + .9 || loop) ? 'block' : 'none';
+  chat.style.transform = `translateY(${chatIn*1920}px)`;
+  chat.style.clipPath = (!loop && t > POP + .1) ? `circle(${Math.max(0, 1500 - eio(seg(t, POP + .12, POP + .85))*1500)}px at ${PX}px ${PY}px)` : 'none';
+  // reverse: we want the paper to grow FROM the pop point, so clip the chat as a ring: use inverse via paper on top instead
+  chat.style.clipPath = 'none';
+
+  if (!loop) {
+    const a = bubbleArrive(bub, t + .25);
+    // inflation 1.4 → POP: bubble grows into a balloon, drifts to centre, wobbles
+    const inf = eio(seg(t, 1.4, 6.1));
+    const s = a.s*(1 + .15*inf + .03*Math.sin(t*7)*inf);
+    const cx = lerp(0, 505 - 350 - 80, inf);  // move from left-aligned to centred
+    const rot = Math.sin(t*2.3)*3*inf;
+    const rad = lerp(30, 340, inf);
+    bub.style.borderRadius = `${rad}px ${rad}px ${rad}px ${rad}px / ${rad*1.05}px ${rad*1.05}px ${rad*1.2}px ${rad*1.2}px`;
+    bub.style.width = '700px';
+    bub.style.padding = `${lerp(26, 130, inf)}px ${lerp(34, 90, inf)}px ${lerp(22, 150, inf)}px`;
+    bub.style.left = (80 + cx) + 'px';
+    bub.style.top = (760 - inf*90) + 'px';
+    bub.style.transform = `translateY(${a.y}px) rotate(${rot}deg) scale(${s})`;
+    bub.style.background = `rgb(${lerp(42, 58, inf)},${lerp(46, 63, inf)},${lerp(55, 76, inf)})`;
+    bub.style.setProperty('--x', 0);
+    bub.style.boxShadow = `0 ${30*inf}px ${60*inf}px -20px rgba(0,0,0,.7)`;
+    $('shine').style.opacity = inf;
+    bub.style.textAlign = inf > .5 ? 'center' : 'left';
+    $('tm').style.opacity = 1 - seg(t, 1.6, 2.2);
+    const steps = [[1.6, '×2'], [2.3, '×17'], [3.0, '×248'], [3.7, '×1,024'], [4.4, '×9,999+']];
+    let c = ''; steps.forEach(([at, v]) => { if (t >= at) c = v; }); $('cnt').textContent = c;
+    // knot + string under the balloon
+    const r = bub.getBoundingClientRect();
+    knot.style.opacity = seg(inf, .35, .6);
+    knot.style.transform = `translate(${r.left + r.width/2 - 40}px, ${r.bottom - 6}px) rotate(${rot*.6}deg)`;
+    draw($('string'), seg(inf, .4, 1));
+    bub.style.display = t < POP ? 'block' : 'none'; knot.style.display = t < POP ? 'block' : 'none';
+    // forward arrows streaming off to the right with each forward
+    for (let i = 0; i < 9; i++) { const at = 1.6 + i*.5, k = seg(t, at, at + .9), el = $('a' + i);
+      el.style.opacity = k > 0 && k < 1 ? Math.sin(k*Math.PI) : 0;
+      el.setAttribute('transform', `translate(${lerp(760, 1140, eo(k))}, ${lerp(700 + (i % 3)*90, 560 + (i % 4)*120, k)}) rotate(${-12 + (i % 3)*10})`); }
+    $('tm').textContent = '4:58 AM';
+    $('mtx').style.fontSize = '68px';
+  } else {
+    // a new forward arrives (loop) — same state as frame 0 when t hits 31
+    const LA = DUR - .25; bub.style.display = t > LA ? 'block' : 'none';
+    const aa = bubbleArrive(bub, t - LA);
+    bub.style.borderRadius = '30px'; bub.style.width = '700px'; bub.style.padding = '26px 34px 22px'; bub.style.left = '80px'; bub.style.top = '760px';
+    bub.style.background = 'rgb(42,46,55)'; bub.style.boxShadow = 'none'; bub.style.textAlign = 'left';
+    bub.style.transform = `translateY(${aa.y}px) scale(${aa.s})`;
+    $('shine').style.opacity = 0; $('tm').style.opacity = 1; $('tm').textContent = '4:59 AM'; $('cnt').textContent = '';
+    knot.style.display = 'none';
+    for (let i = 0; i < 9; i++) $('a' + i).style.opacity = 0;
+  }
+
+  // ---------------- PIN + POP ----------------
+  const pin = $('pinG');
+  const pk = seg(t, 5.55, POP);   // flies in from upper right
+  const tipX = lerp(1250, PX + 300, eio(pk)), tipY = lerp(380, PY - 120, eio(pk));
+  const pinOut = seg(t, POP + .15, POP + .9);
+  pin.style.opacity = (t > 5.5 && t < POP + .9 && !loop) ? 1 - pinOut : 0;
+  pin.setAttribute('transform', `translate(${tipX + pinOut*120}, ${tipY - pinOut*200}) rotate(${-32 - pinOut*20})`);
+
+  const pp = t - POP;
+  for (let i = 0; i < 12; i++) { const f = FR[i], el = $('f' + i), k = cl(pp/1.4);
+    el.style.display = (pp > 0 && pp < 1.4 && !loop) ? 'block' : 'none';
+    const x = PX + Math.cos(f.a)*f.v*k*.7, y = PY + Math.sin(f.a)*f.v*k*.55 + 1400*k*k;
+    el.style.transform = `translate(${x - f.w/2}px, ${y}px) rotate(${f.r*k}deg) scale(${1 - k*.4})`; el.style.opacity = 1 - k; }
+  for (let i = 0; i < 6; i++) { const el = $('fw' + i), k = cl(pp/1.6);
+    el.style.display = (pp > 0 && pp < 1.6 && !loop) ? 'block' : 'none';
+    const sx = 200 + (i % 3)*240, sy = 800 + Math.floor(i/3)*90;
+    const vx = (i % 3 - 1)*320 + (i % 2 ? 80 : -60), vy = -500 - (i*97 % 3)*120;
+    el.style.transform = `translate(${sx + vx*k}px, ${sy + vy*k + 2200*k*k}px) rotate(${(i % 2 ? 1 : -1)*200*k}deg)`; el.style.opacity = 1 - seg(k, .6, 1); }
+  for (let i = 0; i < 14; i++) { const a = i/14*Math.PI*2, r0 = 260 + (i % 3)*40, r1 = r0 + 140 + (i % 2)*80, el = $('b' + i);
+    el.setAttribute('d', `M${PX + Math.cos(a)*r0} ${PY + Math.sin(a)*r0} L${PX + Math.cos(a)*r1} ${PY + Math.sin(a)*r1}`);
+    const k = seg(pp, 0, .25), o = 1 - seg(pp, .25, .55); draw(el, k); el.style.opacity = pp > 0 && !loop ? o : 0; }
+
+  // ---------------- PAPER (revealed as a circle from the pop) ----------------
+  const paper = $('paper');
+  const rev = eio(seg(t, POP + .05, POP + .75));
+  paper.style.zIndex = loop ? 0 : 2;
+  $('chat').style.zIndex = loop ? 3 : 1;
+  $('pin').style.zIndex = 4;
+  if (!loop) { paper.style.display = t > POP ? 'block' : 'none'; paper.style.clipPath = `circle(${rev*2300}px at ${PX}px ${PY}px)`; }
+  else { paper.style.display = 'block'; paper.style.clipPath = 'none'; }
+  // burst lines over paper too
+  $('burst').style.zIndex = 5;
+
+  // tag
+  const tagK = seg(t, 6.9, 7.5), tagOut = seg(t, 25.9, 26.3);
+  $('tag').style.opacity = cl(tagK*3)*(1 - tagOut);
+  draw($('tagbox'), tagK);
+
+  // T1  7.2 – 10.2
+  rise(T1, t, 7.2, .14, 10.1);
+  const sz = $('sz').firstChild.getBoundingClientRect();
+  $('strikeP').setAttribute('d', `M${sz.left - 10} ${sz.top + sz.height*.56} C${sz.left + sz.width*.4} ${sz.top + sz.height*.5} ${sz.left + sz.width*.7} ${sz.top + sz.height*.6} ${sz.right + 14} ${sz.top + sz.height*.5}`);
+  draw($('strikeP'), seg(t, 8.6, 9.0)); $('strikeP').style.opacity = 1 - seg(t, 10.1, 10.4);
+
+  // T2  10.4 – 15.0 : goods arrive on belts
+  rise(T2, t, 10.4, .12, 14.8);
+  const gOut = seg(t, 14.8, 15.1);
+  $('goods').style.opacity = 1 - gOut;
+  $('goods').style.display = t > 10 && t < 15.2 ? 'block' : 'none';
+  draw($('belt1'), seg(t, 10.6, 11.2)); draw($('belt2'), seg(t, 10.8, 11.4));
+  document.querySelectorAll('.rol').forEach((r, i) => draw(r, seg(t, 10.9 + (i % 8)*.04, 11.3 + (i % 8)*.04)));
+  for (let i = 0; i < 6; i++) { const at = 11.3 + i*.42, k = seg(t, at, at + .7), g = $('g' + i);
+    const [x, y] = G[i]; const sl = (1 - eo(k))*-260;
+    g.setAttribute('transform', `translate(${x + sl}, ${y - 4})`);
+    g.querySelectorAll('path,circle').forEach(p => { p.setAttribute('pathLength', 1); draw(p, seg(k, 0, .9)); });
+    const l = $('l' + i); l.style.opacity = seg(t, at + .45, at + .75); l.style.transform = `translateX(-50%) translateY(${(1 - seg(t, at + .45, at + .75))*20}px) rotate(${(i % 2 ? 2 : -2)}deg)`; }
+
+  // T3  15.1 – 22.0
+  const showT3 = t > 15 && t < 22.4;
+  $('binwrap').style.display = showT3 ? 'block' : 'none';
+  rise(T3a, t, 15.2, .12, 16.9);
+  $('fifty').style.display = 'none'; T3a[0].textContent = String(Math.round(eo(seg(t, 15.2, 16.0))*50)).padStart(2, '0') + ' ';
+  rise(T3b, t, 17.2, .12, 22.0);
+  $('binwrap').style.opacity = 1 - seg(t, 21.9, 22.3);
+  draw($('bin'), seg(t, 15.4, 16.1)); draw($('gauge'), seg(t, 15.6, 16.2)); draw($('line50'), seg(t, 16.0, 16.4));
+  $('binl').style.opacity = seg(t, 16.1, 16.5); $('g50').style.opacity = seg(t, 16.2, 16.6);
+  let landed = 0;
+  C.forEach((c, i) => { const at = 17.3 + i*.36, k = seg(t, at, at + .55), el = $('c' + i);
+    const y = lerp(560, c[1], bounce(k)); el.style.top = y + 'px'; el.style.opacity = k > 0 ? 1 : 0;
+    el.style.transform = `rotate(${(1 - k)*(i % 2 ? 8 : -8)}deg)`; if (k >= .55) landed++; });
+  const level = cl(landed/9*1.12 + .0);
+  const fillH = eo(cl(landed/9))*600 + seg(t, 21, 21.6)*0; // 9 crates → past the 50 t line
+  const gf = $('gfill'); gf.setAttribute('height', fillH); gf.setAttribute('y', 1380 - fillH);
+  const crossed = fillH > 400;
+  gf.style.fill = crossed ? '#e9b9a5' : '#d4c8b3';
+  $('line50').style.stroke = crossed ? 'var(--red)' : 'var(--ink)';
+  // the saffron "aap" crate gets a hand arrow
+  const me = C[7], meK = seg(t, 20.0, 20.5);
+  $('mearrow').setAttribute('d', `M${me[0] - 90} ${me[1] - 92} C${me[0] - 50} ${me[1] - 90} ${me[0] - 10} ${me[1] - 60} ${me[0] + 8} ${me[1] - 10} M${me[0] + 8} ${me[1] - 10} L${me[0] - 22} ${me[1] - 32} M${me[0] + 8} ${me[1] - 10} L${me[0] + 18} ${me[1] - 46}`);
+  draw($('mearrow'), meK); $('mearrow').style.stroke = '#c96612';
+  const mel = $('mel'); mel.style.left = (me[0] - 140) + 'px'; mel.style.top = (me[1] - 175) + 'px'; mel.style.opacity = seg(t, 20.3, 20.6);
+  const st = seg(t, 20.9, 21.15), sc = $('scope');
+  sc.style.opacity = st > 0 ? 1 : 0; sc.style.transform = `rotate(-9deg) scale(${lerp(1.8, 1, eo(st))})`;
+  sc.style.left = '96px'; sc.style.top = '760px';
+
+  // payoff 22.4 – 26.2
+  rise(P1, t, 22.5, .14, 26.1);
+  rise(P2, t, 23.9, .22, 26.1);
+  draw($('pu'), seg(t, 24.6, 25.1)); $('pu').style.opacity = 1 - seg(t, 26.1, 26.4);
+  const cr = seg(t, 22.9, 23.4);
+  $('pcr').setAttribute('transform', `translate(700, ${lerp(480, 632, bounce(cr))})`);
+  $('pcr').style.opacity = (cr > 0 ? 1 : 0)*(1 - seg(t, 26.1, 26.4));
+
+  // sign-off 26.4 – 29.5
+  const so = (el, a) => { const k = eo(seg(t, a, a + .5)); el.style.opacity = k*(1 - seg(t, 29.2, 29.5)); el.style.transform = `translateY(${(1 - k)*40}px)`; };
+  so($('wm'), 26.4); so($('sl1'), 27.0); so($('sl2'), 27.7);
+  draw($('fwa'), seg(t, 28.2, 28.7)); $('fwa').style.opacity = 1 - seg(t, 29.2, 29.5);
+
+  // reduced motion is not applicable to a rendered video; final states hold still.
+};
+window.render(0);
+</script>
+</body>
+</html>

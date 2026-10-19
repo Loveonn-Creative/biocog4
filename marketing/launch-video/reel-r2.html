@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Europe ka andaaza</title>
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 600; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --night: #14161b; --ink: #16181d; --saffron: #ef8a25; --blue: #2b49b5; --red: #d9473a; --bulb: #ffe3a0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--paper); -webkit-font-smoothing: antialiased; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.hand { font-family: 'Hand', cursive; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+svg#scene { position: absolute; left: 0; top: 0; }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+#dim { background: radial-gradient(circle at 650px 1130px, rgba(10,11,14,0) 210px, rgba(10,11,14,.78) 470px); }
+#scrim { background: linear-gradient(180deg, rgba(14,15,19,.9) 0, rgba(14,15,19,.82) 760px, rgba(14,15,19,0) 900px); }
+#grain { opacity: .08; mix-blend-mode: overlay; z-index: 80; width: 1080px; height: 1920px; }
+
+#ep { position: absolute; left: 80px; top: 258px; font-family: 'JetBrains Mono'; font-size: 24px; font-weight: 600; letter-spacing: .14em; color: var(--paper); opacity: .72; z-index: 70; }
+#ep b { color: var(--saffron); font-weight: 600; }
+
+.cap { position: absolute; left: 80px; width: 880px; font-size: 88px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; z-index: 60; }
+.cap .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.cap .w > span { display: inline-block; }
+.cap.hand { font-size: 100px; font-weight: 600; letter-spacing: 0; line-height: 1; }
+.cap .s { color: var(--saffron); }
+.cap .r { color: var(--red); }
+#cH1 { top: 318px; } #cH2 { top: 410px; }
+#cB { top: 318px; }
+#cR { top: 318px; color: var(--saffron); }
+#cP { top: 318px; } #cQ { top: 530px; color: var(--saffron); }
+#und { position: absolute; left: 0; top: 0; overflow: visible; z-index: 61; }
+
+#hero { position: absolute; left: 80px; top: 316px; z-index: 60; }
+#hero .lb { font-family: 'JetBrains Mono'; font-size: 30px; letter-spacing: .08em; color: var(--paper); opacity: .85; }
+#hero .lb b { font-weight: 600; color: var(--paper); }
+#hero .num { font-family: 'JetBrains Mono'; font-size: 138px; font-weight: 600; letter-spacing: -0.03em; color: var(--red); line-height: 1.05; white-space: nowrap; display: flex; }
+#hero .num span { display: inline-block; width: .6em; text-align: center; }
+#hero .num span.c { width: .6em; }
+
+#mk { position: absolute; left: 80px; top: 548px; z-index: 60; }
+#mk .a { font-size: 44px; font-weight: 500; letter-spacing: -0.01em; }
+#mk .b { font-family: 'JetBrains Mono'; font-size: 60px; font-weight: 600; color: var(--red); margin-top: 6px; letter-spacing: -0.02em; }
+#mk .c { font-family: 'JetBrains Mono'; font-size: 22px; letter-spacing: .14em; opacity: .7; margin-top: 8px; }
+
+#end { position: absolute; inset: 0; z-index: 65; background: var(--night); }
+#endT { position: absolute; left: 0; right: 0; top: 1060px; text-align: center; }
+#eL1 { font-size: 132px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+#eL1 i { font-style: normal; color: var(--saffron); }
+#eL2 { margin-top: 70px; font-size: 50px; font-weight: 500; letter-spacing: -0.015em; }
+#eL3 { margin-top: 16px; font-family: 'JetBrains Mono'; font-size: 34px; color: var(--saffron); }
+#endBill { position: absolute; left: 0; top: 0; overflow: visible; }
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="scene" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <filter id="boil" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence id="boilN" type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+    <radialGradient id="warm" cx="650" cy="930" r="620" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a2f22" stop-opacity=".9"/><stop offset=".55" stop-color="#211d1c" stop-opacity=".6"/><stop offset="1" stop-color="#14161b" stop-opacity="0"/></radialGradient>
+    <clipPath id="asliClip"><rect id="asliRect" x="690" y="985" width="0" height="70"/></clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="#14161b"/>
+  <g id="cam" transform="translate(560 520) scale(1.08) translate(-560 -520)">
+  <!-- distant fair: faint bulb strings -->
+  <g id="far" opacity=".35"></g>
+  <rect x="380" y="560" width="680" height="860" fill="#1b1d25"/>
+  <g opacity=".5"><path d="M380 560 V1420 M1040 560 V1420" stroke="#2a2d38" stroke-width="18"/></g>
+  <rect width="1080" height="1920" fill="url(#warm)"/>
+  <!-- festoon over the barker -->
+  <path d="M0 610 Q 190 690 380 600" stroke="#5b5346" stroke-width="3" fill="none"/>
+  <g id="fest"></g>
+  <!-- floor -->
+  <rect x="0" y="1420" width="1080" height="500" fill="#101216"/>
+  <path d="M0 1421 H1080" stroke="#3a3a40" stroke-width="3"/>
+  <g id="dust" fill="#3b3830"></g>
+
+  <g filter="url(#boil)">
+    <!-- awning -->
+    <g id="awning"></g>
+    <!-- sign -->
+    <g id="sign">
+      <rect x="430" y="640" width="500" height="86" rx="8" fill="#f4ede1" stroke="#16181d" stroke-width="5"/>
+      <text x="456" y="700" font-family="Space Grotesk" font-weight="700" font-size="38" fill="#16181d" letter-spacing="1">GUESS YOUR</text>
+      <text x="712" y="684" font-family="Space Grotesk" font-weight="700" font-size="24" fill="#16181d" opacity=".6" letter-spacing="1">WEIGHT</text>
+      <path d="M706 676 L800 668" stroke="#d9473a" stroke-width="5" stroke-linecap="round"/>
+      <text x="726" y="716" font-family="Hand" font-weight="600" font-size="58" fill="#d9473a" transform="rotate(-4 790 700)">CARBON</text>
+    </g>
+    <!-- column + platform -->
+    <rect x="628" y="1080" width="44" height="314" fill="#2b49b5" stroke="#f4ede1" stroke-width="3"/>
+    <path d="M628 1140 L672 1120 M628 1200 L672 1180 M628 1260 L672 1240 M628 1320 L672 1300 M628 1380 L672 1360" stroke="#f4ede1" stroke-width="3" opacity=".7"/>
+    <rect x="450" y="1390" width="400" height="26" rx="6" fill="#f4ede1" stroke="#16181d" stroke-width="4"/>
+    <!-- dial -->
+    <g id="dialBulbs"></g>
+    <circle cx="650" cy="930" r="155" fill="#f4ede1" stroke="#16181d" stroke-width="6"/>
+    <circle cx="650" cy="930" r="143" fill="none" stroke="#16181d" stroke-width="2" opacity=".4"/>
+    <g id="ticks"></g>
+    <path id="wedge" fill="#d9473a"/>
+    <path d="M650 930 m 148.5 13 l -26 -2.3" stroke="#d9473a" stroke-width="8" stroke-linecap="round"/>
+    <text id="defLbl" x="774" y="986" text-anchor="end" font-family="JetBrains Mono" font-weight="600" font-size="21" fill="#d9473a">EU DEFAULT</text>
+    <path id="strike" d="M636 979 C 680 974, 730 982, 782 974" stroke="#ef8a25" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <text clip-path="url(#asliClip)" x="702" y="1034" font-family="Hand" font-weight="600" font-size="48" fill="#ef8a25">asli</text>
+    <!-- crank -->
+    <circle cx="462" cy="990" r="12" fill="#16181d" stroke="#f4ede1" stroke-width="3"/>
+    <path id="crankArm" stroke="#f4ede1" stroke-width="7" stroke-linecap="round"/>
+    <circle id="crankKnob" r="11" fill="#d9473a" stroke="#16181d" stroke-width="3"/>
+    <g id="needle">
+      <path d="M650 965 L650 802" stroke="#16181d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M638 812 L650 786 L662 812 Z" fill="#16181d"/>
+      <circle cx="650" cy="972" r="11" fill="#16181d"/>
+    </g>
+    <circle cx="650" cy="930" r="15" fill="#16181d"/><circle cx="650" cy="930" r="5" fill="#f4ede1"/>
+
+    <!-- crate -->
+    <g id="crate">
+      <rect x="542" y="1222" width="20" height="44" rx="9" fill="#8d939d" stroke="#16181d" stroke-width="3" transform="rotate(-8 552 1240)"/>
+      <rect x="586" y="1214" width="20" height="52" rx="9" fill="#a2a8b2" stroke="#16181d" stroke-width="3" transform="rotate(4 596 1240)"/>
+      <rect x="628" y="1226" width="20" height="40" rx="9" fill="#8d939d" stroke="#16181d" stroke-width="3" transform="rotate(10 638 1240)"/>
+      <rect x="510" y="1250" width="280" height="142" fill="#d6be93" stroke="#16181d" stroke-width="5"/>
+      <path d="M510 1298 H790 M510 1346 H790" stroke="#16181d" stroke-width="2.5" opacity=".45"/>
+      <path d="M526 1250 V1392 M774 1250 V1392" stroke="#16181d" stroke-width="3" opacity=".6"/>
+      <text x="650" y="1316" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="32" fill="#16181d" letter-spacing="1">100 t STEEL</text>
+      <text x="650" y="1366" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="26" fill="#b35a0b" letter-spacing="6">INDIA</text>
+    </g>
+
+    <!-- tag -->
+    <g id="tagG">
+      <path id="tagStr" d="M786 1256 Q 820 1262 860 1306" stroke="#f4ede1" stroke-width="3" fill="none"/>
+      <g id="tagBody">
+        <path id="tagShape" fill="#f4ede1" stroke="#16181d" stroke-width="4"/>
+        <circle cx="860" cy="1318" r="7" fill="#1b1d25" stroke="#16181d" stroke-width="3"/>
+        <text x="860" y="1352" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="16" fill="#16181d" letter-spacing="1">MARK-UP</text>
+        <g id="st1" class="stp"><rect x="-44" y="-15" width="88" height="30" rx="4" fill="none" stroke="#d9473a" stroke-width="3.5"/><text y="9" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="22" fill="#d9473a">+10%</text></g>
+        <g id="st2" class="stp"><rect x="-44" y="-15" width="88" height="30" rx="4" fill="none" stroke="#d9473a" stroke-width="3.5"/><text y="9" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="22" fill="#d9473a">+20%</text></g>
+        <g id="st3" class="stp"><rect x="-44" y="-15" width="88" height="30" rx="4" fill="none" stroke="#d9473a" stroke-width="3.5"/><text y="9" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="22" fill="#d9473a">+30%</text></g>
+      </g>
+    </g>
+
+    <!-- barker -->
+    <g id="barker">
+      <path d="M195 1268 L182 1414" stroke="#f4ede1" stroke-width="9" stroke-linecap="round"/>
+      <path d="M258 1268 Q 350 1300 458 1388" stroke="#f4ede1" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <ellipse cx="170" cy="1416" rx="28" ry="10" fill="#16181d" stroke="#f4ede1" stroke-width="3"/>
+      <ellipse cx="462" cy="1386" rx="20" ry="8" fill="#16181d" stroke="#f4ede1" stroke-width="3" transform="rotate(30 462 1386)"/>
+      <path id="armL" stroke="#f4ede1" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle id="handL" r="13" fill="#f4ede1" stroke="#16181d" stroke-width="3"/>
+      <path d="M152 958 L310 958 L334 1276 L128 1276 Z" fill="#f4ede1" stroke="#16181d" stroke-width="5"/>
+      <path d="M150 1000 L178 960 L216 958 L334 1236 L328 1270 L300 1270 Z" fill="#2b49b5" stroke="#16181d" stroke-width="4"/>
+      <text x="236" y="1120" font-family="Hand" font-weight="600" font-size="44" fill="#f4ede1" transform="rotate(64 246 1110)">EU</text>
+      <path d="M210 958 L230 990 L250 958" stroke="#16181d" stroke-width="4" fill="#d9473a"/>
+      <g id="head">
+        <circle cx="230" cy="884" r="62" fill="#f4ede1" stroke="#16181d" stroke-width="5"/>
+        <circle id="eL" cx="208" cy="874" r="6" fill="#16181d"/><circle id="eR" cx="252" cy="874" r="6" fill="#16181d"/>
+        <path id="brows" d="M196 856 L218 852 M242 852 L264 856" stroke="#16181d" stroke-width="4" stroke-linecap="round"/>
+        <g id="stache"><path d="M230 902 C 214 892 192 896 186 912 C 182 924 196 926 198 916 C 208 914 220 914 230 908 C 240 914 252 914 262 916 C 264 926 278 924 274 912 C 268 896 246 892 230 902 Z" fill="#16181d"/></g>
+        <path id="bMouthB" d="M216 932 Q 230 940 244 932" stroke="#16181d" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <g id="hat">
+          <rect x="182" y="728" width="96" height="100" fill="#16181d" stroke="#f4ede1" stroke-width="3"/>
+          <rect x="182" y="796" width="96" height="18" fill="#2b49b5"/>
+          <rect x="250" y="776" width="24" height="30" fill="#f4ede1" transform="rotate(10 262 790)"/>
+          <text x="262" y="796" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="9" fill="#d9473a" transform="rotate(10 262 790)">+30%</text>
+          <ellipse cx="230" cy="828" rx="80" ry="12" fill="#16181d" stroke="#f4ede1" stroke-width="3"/>
+        </g>
+      </g>
+      <path id="armR" stroke="#f4ede1" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <circle id="handR" r="13" fill="#f4ede1" stroke="#16181d" stroke-width="3"/>
+    </g>
+
+    <!-- the bill -->
+    <g id="billG"></g>
+  </g>
+  </g>
+</svg>
+<div class="layer" id="dim"></div>
+<div class="layer" id="scrim"></div>
+
+<div id="ep">BILL BOLTA HAI <b>#02</b></div>
+<div class="cap" id="cH1">Number nahi bheja?</div>
+<div class="cap" id="cH2">Europe <span class="r">guess</span> karega.</div>
+<div class="cap hand" id="cB">Hmm… India? Zyada hi hoga.</div>
+<div id="hero"><div class="lb" id="hLb"></div><div class="num" id="hNum"></div></div>
+<div class="cap" id="cR">Ruko. <span data-at="17.5">Asli hisaab mujhse shuru.</span></div>
+<div class="cap" id="cP">Europe guess karta hai.</div>
+<div class="cap" id="cQ">Aapke bills jaante hain.</div>
+<div id="mk"><div class="a">Mark-up alone, from 2028:</div><div class="b">€5,186 / 100 t</div><div class="c">ESTIMATE</div></div>
+
+<div id="end">
+  <svg id="endBill" width="1080" height="1920"><g filter="url(#boil)"><g id="billE"></g></g></svg>
+  <div id="endT"><div id="eL1">Bill <i>bolta</i> hai.</div><div id="eL2">Free CBAM calculator</div><div id="eL3">senseible.earth/cbam-calculator</div></div>
+</div>
+<svg class="layer" id="grain"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="12"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+
+<script>
+// FACTS (all from reels/BRIEF.md, reproduced by src/lib/cbamEngine.ts and live senseible.earth/cbam-calculator):
+//  Iron & steel, BF-BOF, India, 100 t, EU default 2.10 tCO2/t, certificate €82.32 (Q3 2026).
+//  Mark-up on default values: 10% (2026), 20% (2027), 30% from 2028.
+//  2026: (2.10*1.10 - 1.52*0.975) * 82.32 * 100 = €6,816.  2034: 2.10*1.30*82.32*100 = €22,473.
+//  Mark-up alone from 2028: 2.10*0.30*82.32*100 = €5,186 per 100 t.  Only these three amounts are shown legibly;
+//  the reel between 2027 and 2033 spins blurred so no unsourced intermediate value is displayed.
+//  Actual (verified) emissions data replaces the default and removes the default-value mark-up; it may be higher or
+//  lower than the default, so the needle returns to the same mark rather than claiming a lower number.
+//  Senseible does not provide CBAM verification; bills are where the actual maths starts.
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { o3: x => 1 - Math.pow(1 - x, 3), o5: x => 1 - Math.pow(1 - x, 5), io: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  in2: x => x * x, back: x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); } };
+const p = (t, s, d, e = E.o3) => e(clamp((t - s) / d));
+const lerp = (a, b, k) => a + (b - a) * k;
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+const DUR = 33;
+
+// ---------- static scenery ----------
+const aw = $('awning');
+for (let i = 0; i < 12; i++) { const x = 380 + i * 57; const c = i % 2 ? '#f4ede1' : '#2b49b5';
+  el('rect', { x, y: 520, width: 57.5, height: 46, fill: c }, aw);
+  el('path', { d: `M${x} 566 Q ${x + 28.5} 610 ${x + 57} 566 Z`, fill: c, stroke: '#16181d', 'stroke-width': 3 }, aw); }
+el('path', { d: 'M380 520 H1064 M380 566 H1064', stroke: '#16181d', 'stroke-width': 4 }, aw);
+const bulbs = [];
+function bulb(x, y, r, parent) { const g = el('g', {}, parent); const h = el('circle', { cx: x, cy: y, r: r * 2.2, filter: 'url(#glow)' }, g);
+  const c = el('circle', { cx: x, cy: y, r, stroke: '#16181d', 'stroke-width': 2 }, g); bulbs.push({ h, c }); }
+for (let i = 0; i < 12; i++) bulb(380 + i * 57 + 28.5, 592, 9, aw);
+for (let i = 0; i < 8; i++) { const x = 20 + i * 48, k = x / 380, y = (1 - k) * (1 - k) * 610 + 2 * (1 - k) * k * 690 + k * k * 600; bulb(x, y + 8, 8, $('fest')); }
+const DB0 = bulbs.length;
+for (let i = 0; i < 20; i++) { const a = i / 20 * Math.PI * 2; bulb(650 + Math.sin(a) * 172, 930 - Math.cos(a) * 172, 8, $('dialBulbs')); }
+for (let i = 0; i < 26; i++) { const x = (i * 197) % 1080, y = 300 + (i * 131) % 300; el('circle', { cx: x, cy: y, r: 2.5, fill: '#ffe3a0' }, $('far')); }
+for (let i = 0; i < 70; i++) el('circle', { cx: (i * 233) % 1080, cy: 1430 + (i * 97) % 470, r: 1.5 + (i % 3) }, $('dust'));
+const tk = $('ticks');
+for (let i = 0; i <= 18; i++) { const a = (-135 + i * 15) * Math.PI / 180, long = i % 3 === 0, r1 = 148, r2 = long ? 122 : 134;
+  el('path', { d: `M${650 + Math.sin(a) * r1} ${930 - Math.cos(a) * r1} L${650 + Math.sin(a) * r2} ${930 - Math.cos(a) * r2}`, stroke: '#16181d', 'stroke-width': long ? 5 : 3, 'stroke-linecap': 'round' }, tk); }
+
+// ---------- the bill (series character) ----------
+function makeBill(parent, pre) {
+  parent.innerHTML = `
+  <g id="${pre}arm2"><path id="${pre}armA" stroke="#f4ede1" stroke-width="7" stroke-linecap="round" fill="none"/></g>
+  <path d="M-30 -32 L-36 -2 M30 -32 L36 -2" stroke="#f4ede1" stroke-width="7" stroke-linecap="round"/>
+  <path d="M-50 -2 H-26 M26 -2 H50" stroke="#f4ede1" stroke-width="7" stroke-linecap="round"/>
+  <path d="M-80 -232 H52 L80 -204 V-32 H-80 Z" fill="#f4ede1" stroke="#16181d" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M52 -232 V-204 H80" fill="#e2d6c1" stroke="#16181d" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="-66" y="-218" width="100" height="16" fill="#ef8a25"/>
+  <path d="M-66 -190 H40 M-66 -176 H10" stroke="#16181d" stroke-width="4" opacity=".25"/>
+  <g id="${pre}eyes"><circle cx="-26" cy="-138" r="9" fill="#16181d"/><circle cx="26" cy="-138" r="9" fill="#16181d"/></g>
+  <circle cx="-48" cy="-110" r="8" fill="#ef8a25" opacity=".5"/><circle cx="48" cy="-110" r="8" fill="#ef8a25" opacity=".5"/>
+  <path id="${pre}mouth" fill="#16181d" stroke="#16181d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M-66 -70 H66 M-66 -54 H30" stroke="#16181d" stroke-width="4" opacity=".25"/>
+  <path id="${pre}armB" stroke="#f4ede1" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M-80 -120 Q -104 -104 -110 -80" stroke="#f4ede1" stroke-width="7" stroke-linecap="round" fill="none"/>`;
+}
+makeBill($('billG'), 'b'); makeBill($('billE'), 'e');
+function billPose(pre, g, x, y, { sx = 1, sy = 1, rot = 0, talk = 0, blink = 0, arm = null, t = 0 }) {
+  g.setAttribute('transform', `translate(${x} ${y}) rotate(${rot}) scale(${sx} ${sy})`);
+  $(pre + 'eyes').setAttribute('transform', `translate(0 ${-138 * (1 - (1 - blink * .9))}) scale(1 ${1 - blink * .9})`);
+  const o = talk; // 0 closed smile, 1 open
+  $(pre + 'mouth').setAttribute('d', o > .05 ? `M-20 -100 Q 0 ${-100 + 34 * o} 20 -100 Q 0 ${-100 + 6 * o} -20 -100 Z` : 'M-20 -102 Q 0 -86 20 -102 Q 0 -94 -20 -102 Z');
+  // right arm: rest or reaching to a world point (given in local coords)
+  const s = { x: 80, y: -120 };
+  const tgt = arm || { x: 108, y: -84 };
+  const mx = (s.x + tgt.x) / 2 + 18, my = (s.y + tgt.y) / 2 + 24;
+  $(pre + 'armB').setAttribute('d', `M${s.x} ${s.y} Q ${mx} ${my} ${tgt.x} ${tgt.y}`);
+}
+
+// ---------- captions: words rise from a mask ----------
+const caps = ['cH1', 'cH2', 'cB', 'cR', 'cP', 'cQ'];
+caps.forEach(id => { const root = $(id); const walk = (n, at) => { [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const f = document.createDocumentFragment();
+  c.textContent.split(/(\s+)/).forEach(s => { if (!s) return; if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(' ')); else { const w = document.createElement('span'); w.className = 'w'; if (at) w.dataset.at = at; w.innerHTML = `<span>${s}</span>`; f.appendChild(w); } });
+  n.replaceChild(f, c); } else if (c.nodeType === 1 && !c.classList.contains('w')) walk(c, c.dataset.at || at); }); }; walk(root, null); });
+function cap(id, t, tin, tout, st = .07) { const e = $(id), o = tout == null ? 1 : 1 - p(t, tout, .3, E.io);
+  e.style.opacity = o; e.style.visibility = t >= tin - .02 && o > 0 ? 'visible' : 'hidden'; let i = 0, last = null;
+  e.querySelectorAll('.w').forEach(w => { const base = w.dataset.at ? +w.dataset.at : tin; if (base !== last) { i = 0; last = base; }
+    const k = base <= -1 ? 1 : p(t, base + i * st, .5, E.o5); w.firstChild.style.transform = `translateY(${(1 - k) * 115}%)`; i++; }); }
+const show = (e, o, dy = 0) => { e.style.opacity = o; e.style.visibility = o > .001 ? 'visible' : 'hidden'; e.style.transform = `translateY(${dy}px)`; };
+
+// ---------- motion ----------
+const aSwing = t => 15 + 72 * Math.sin(2.4 * t + 0.5);
+const wedgeW = t => (12 * p(t, 8.0, .28, E.back) + 12 * p(t, 9.2, .28, E.back) + 12 * p(t, 10.2, .28, E.back)) * (1 - p(t, 18.6, .5, E.io));
+function needleA(t) {
+  if (t >= 32.3) return aSwing(t - DUR);
+  if (t < 4.4) return aSwing(t);
+  if (t < 6.8) { const a0 = aSwing(4.4); return lerp(a0, 95 + 720, E.io(clamp((t - 4.4) / 2.4))); }
+  let a = 95 + wedgeW(t);
+  if (t < 7.8) a += 7 * Math.sin((t - 6.8) * 30) * Math.exp(-(t - 6.8) * 6);
+  for (const s of [8.0, 9.2, 10.2]) if (t > s) a += 3 * Math.sin((t - s) * 34) * Math.exp(-(t - s) * 8);
+  if (t > 19.0) a -= 6 * Math.sin((t - 19.0) * 22) * Math.exp(-(t - 19.0) * 5);
+  return a;
+}
+function arcPath(a0, a1, r0, r1) { const P = (a, r) => [650 + Math.sin(a * Math.PI / 180) * r, 930 - Math.cos(a * Math.PI / 180) * r];
+  const [x0, y0] = P(a0, r1), [x1, y1] = P(a1, r1), [x2, y2] = P(a1, r0), [x3, y3] = P(a0, r0), lg = a1 - a0 > 180 ? 1 : 0;
+  return `M${x0} ${y0} A${r1} ${r1} 0 ${lg} 1 ${x1} ${y1} L${x2} ${y2} A${r0} ${r0} 0 ${lg} 0 ${x3} ${y3} Z`; }
+
+const FIN = '€22,473';
+function heroNum(t) {
+  // 7.3–8.1 count up to €6,816; 9.2–12.7 blurred reel; lands on €22,473 column by column
+  if (t < 9.2) { const v = Math.round(6816 * p(t, 7.3, .8, E.o3)); return { txt: '€' + v.toLocaleString('en-US'), blur: [] }; }
+  const chars = FIN.split(''); const out = [], blur = [];
+  chars.forEach((c, i) => { const stop = 11.6 + i * .16; if (t >= stop || c === '€' || c === ',') out.push(c);
+    else { out.push(String(Math.floor((t * 37 + i * 7) % 10))); blur.push(i); } });
+  return { txt: out.join(''), blur };
+}
+function render(t) {
+  $('boilN').setAttribute('seed', 1 + Math.floor(t * 8) % 4);
+  // bulbs: chase, red flash on landing, steady later
+  const chase = Math.floor(t * 6), flash = t >= 6.8 && t < 7.8;
+  bulbs.forEach((b, i) => { let on = (i + chase) % 3 !== 0, col = '#ffe3a0';
+    if (flash) { on = Math.floor(t * 10) % 2 === (i % 2); col = '#ff5a45'; }
+    else if (t >= 15.8 && t < 32.3) { on = true; col = i >= DB0 ? '#ffd27a' : '#ffe3a0'; }
+    b.c.setAttribute('fill', on ? col : '#4a4133'); b.h.setAttribute('fill', col); b.h.setAttribute('opacity', on ? .55 : 0); });
+
+  // needle + crank + red mark-up wedge
+  const a = needleA(t);
+  $('needle').setAttribute('transform', `rotate(${a} 650 930)`);
+  const w = wedgeW(t); $('wedge').setAttribute('d', w > .3 ? arcPath(95, 95 + w, 120, 152) : '');
+  const ca = a * Math.PI / 180, kx = 462 + Math.sin(ca) * 32, ky = 990 - Math.cos(ca) * 32;
+  $('crankArm').setAttribute('d', `M462 990 L${kx} ${ky}`); $('crankKnob').setAttribute('cx', kx); $('crankKnob').setAttribute('cy', ky);
+  const live = t < 32.3 ? 1 : 0;
+  $('strike').style.strokeDashoffset = 1 - p(t, 19.0, .4, E.io) * live;
+  $('asliRect').setAttribute('width', 140 * p(t, 19.4, .5, E.io) * live);
+
+  // barker: hand on the crank, the other on the hip, then a shrug
+  const bob = Math.sin(t * 5) * 3 * (t < 15.8 ? 1 : .3);
+  const surprise = p(t, 17.25, .15) * (1 - p(t, 18.4, .4)), shrug = p(t, 22.4, .5, E.back) * (1 - p(t, 28.6, .4));
+  $('head').setAttribute('transform', `translate(0 ${bob - shrug * 8}) rotate(${shrug * -6} 230 884)`);
+  $('hat').setAttribute('transform', `translate(0 ${-46 * Math.sin(Math.PI * p(t, 17.25, .5))})`);
+  $('eL').setAttribute('r', 6 + 4 * surprise); $('eR').setAttribute('r', 6 + 4 * surprise);
+  $('brows').setAttribute('transform', `translate(0 ${-10 * surprise - 6 * shrug})`);
+  $('stache').setAttribute('transform', `translate(0 ${4 * shrug}) scale(1 ${1 + .1 * shrug})`); $('stache').style.transformOrigin = '230px 905px';
+  $('bMouthB').setAttribute('d', shrug > .1 ? 'M216 938 Q 230 928 244 938' : (t > 4.4 && t < 7 ? `M216 930 Q 230 ${938 + 10 * Math.abs(Math.sin(t * 13))} 244 930` : 'M216 932 Q 230 940 244 932'));
+  $('armR').setAttribute('d', `M300 990 Q ${(300 + kx) / 2} ${(990 + ky) / 2 + 60} ${kx} ${ky}`);
+  $('handR').setAttribute('cx', kx); $('handR').setAttribute('cy', ky);
+  const hl = { x: lerp(118, 70, shrug), y: lerp(1120, 990, shrug) };
+  $('armL').setAttribute('d', `M160 990 Q ${lerp(90, 60, shrug)} ${lerp(1060, 1010, shrug)} ${hl.x} ${hl.y}`);
+  $('handL').setAttribute('cx', hl.x); $('handL').setAttribute('cy', hl.y);
+
+  // tag: drops 7.2, grows with each stamp, ripped by the bill at 18.0
+  const drop = p(t, 7.2, .5, E.back), nSt = [8.0, 9.2, 10.2].map(s => p(t, s, .22, E.o5));
+  const h = 70 + 35 * (nSt[0] + nSt[1] + nSt[2]);
+  $('tagShape').setAttribute('d', `M818 1300 H902 L918 1316 V${1300 + h} H802 V1316 Z`);
+  const rip = p(t, 18.0, .9, E.in2), sway = Math.sin(t * 3) * 2;
+  $('tagBody').setAttribute('transform', `translate(${rip * 60} ${(1 - drop) * -420 + rip * 700}) rotate(${sway + rip * 50} 860 1306)`);
+  $('tagStr').setAttribute('d', t < 18.0 ? `M786 1256 Q 820 ${1262 - (1 - drop) * 200} 860 ${1306 - (1 - drop) * 420}` : `M786 1256 Q 800 1262 ${806 - p(t, 18, .3) * 10} ${1290 + p(t, 18, .3) * 10}`);
+  $('tagG').style.opacity = (t < 7.2 || t > 19.2) ? 0 : 1;
+  [1, 2, 3].forEach(i => { const k = nSt[i - 1], g = $('st' + i), s = lerp(2.2, 1, k);
+    g.setAttribute('transform', `translate(860 ${1350 + 35 * i}) rotate(${-7 + i * 3}) scale(${s})`); g.style.opacity = k > 0 ? Math.min(1, k * 3) : 0; });
+
+  // the bill: walks in, hops onto the crate, rips the tag, fixes the dial
+  const bG = $('billG');
+  if (t < 15.9 || t >= 32.3) bG.style.visibility = 'hidden';
+  else {
+    bG.style.visibility = 'visible';
+    let x, y, rot = 0, sx = 1, sy = 1;
+    const wk = p(t, 15.9, .8, E.o3);
+    if (t < 16.75) { x = lerp(1190, 925, wk); y = 1420 - Math.abs(Math.sin(t * 16)) * 14; rot = Math.sin(t * 16) * 4; }
+    else if (t < 17.25) { const k = clamp((t - 16.75) / .5); x = lerp(925, 650, E.io(k)); y = lerp(1420, 1250, k) - 190 * Math.sin(Math.PI * k); rot = lerp(-14, 0, k); sy = 1 + .1 * Math.sin(Math.PI * k); sx = 2 - sy; }
+    else { x = 650; y = 1250; const k = clamp((t - 17.25) / .3); sy = 1 - .16 * Math.sin(Math.PI * k); sx = 1 + .12 * Math.sin(Math.PI * k); }
+    const talk = (t > 16.4 && t < 16.9) || (t > 17.5 && t < 19.0) ? Math.abs(Math.sin(t * 15)) : 0;
+    const bl = (t % 3.1) < .12 ? 1 : 0;
+    let arm = null;
+    if (t >= 17.55 && t < 20.4) { // local coords relative to (650,1250)
+      const toTag = p(t, 17.55, .4, E.o3), toDial = p(t, 18.3, .5, E.io), back = p(t, 19.9, .4, E.io);
+      const tag = { x: 208, y: 56 }, dial = { x: 128, y: -268 }, rest = { x: 108, y: -84 };
+      let pt = { x: lerp(rest.x, tag.x, toTag), y: lerp(rest.y, tag.y, toTag) };
+      pt = { x: lerp(pt.x, dial.x, toDial), y: lerp(pt.y, dial.y, toDial) };
+      if (t > 19.0 && t < 19.4) pt.x += lerp(-60, 0, p(t, 19.0, .4, E.io)) + 60 * 0; // wipe across
+      pt = { x: lerp(pt.x, rest.x, back), y: lerp(pt.y, rest.y, back) };
+      arm = pt;
+    }
+    billPose('b', bG, x, y, { sx, sy, rot, talk, blink: bl, arm });
+  }
+
+  // captions
+  cap('cH1', t, t >= 32.3 ? 32.45 : -1, t >= 32.3 ? null : 4.3); if (t >= 32.3) cap('cH1', t, 32.45, null);
+  cap('cH2', t, 1.0, 4.3); if (t >= 32.3) $('cH2').style.visibility = 'hidden';
+  cap('cB', t, 4.6, 7.0);
+  cap('cR', t, 16.4, 21.4);
+  cap('cP', t, 22.4, 25.4);
+  cap('cQ', t, 24.4, 28.6); $('cQ').style.top = lerp(530, 318, p(t, 25.5, .5, E.io)) + 'px';
+  show($('mk'), p(t, 26.1, .5, E.o5) * (1 - p(t, 28.6, .3)), (1 - p(t, 26.1, .5, E.o5)) * 24);
+  show($('scrim'), p(t, 25.5, .5, E.io) * (1 - p(t, 28.6, .4)));
+  show($('dim'), p(t, 21.6, .6, E.io) * (1 - p(t, 28.6, .4)));
+
+  // hero number
+  const hv = p(t, 7.3, .35) * (1 - p(t, 15.3, .35));
+  show($('hero'), hv);
+  if (hv > 0) {
+    const yr = t < 9.2 ? 2026 : t < 10.2 ? 2027 : t < 11.0 ? 2028 : Math.min(2034, 2029 + Math.floor((t - 11.0) / .26));
+    const landed = t >= 12.7;
+    $('hLb').innerHTML = `<b>${yr}</b> · EU DEFAULT · ESTIMATE`;
+    const { txt, blur } = heroNum(t);
+    $('hNum').innerHTML = txt.split('').map((c, i) => `<span class="${c === ',' ? 'c' : ''}" style="${blur.includes(i) ? `filter:blur(10px);opacity:.55;transform:translateY(${((t * 900 + i * 40) % 60) - 30}px)` : ''}">${c}</span>`).join('');
+    $('hNum').style.transform = `scale(${1 + .05 * Math.sin(Math.PI * p(t, 12.7, .3))})`; $('hNum').style.transformOrigin = 'left center';
+  }
+
+  // end card + loop
+  const end = $('end'); const eo = p(t, 28.8, .5, E.io) * (1 - p(t, 32.3, .6, E.io));
+  end.style.opacity = eo; end.style.visibility = eo > .001 ? 'visible' : 'hidden';
+  const talkE = (t > 29.4 && t < 30.4) ? Math.abs(Math.sin(t * 14)) : 0, blE = (t > 31.0 && t < 31.13) ? 1 : 0;
+  billPose('e', $('billE'), 540, 960 + 6 * Math.sin(t * 3), { sx: 1.35, sy: 1.35, talk: talkE, blink: blE });
+  [['eL1', 29.3], ['eL2', 30.3], ['eL3', 30.6]].forEach(([id, s]) => { const k = p(t, s, .6, E.o5); show($(id), k, (1 - k) * 26); });
+}
+window.render = render;
+render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>

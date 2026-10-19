@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ek tonne</title>
+<!--
+ONE NUMBER #01 · "Ek tonne CO2 kitna bada hota hai?"  (Senseible reel, batch 2, MSME / Hinglish, 28 s)
+
+FACTS AND SOURCES
+1) Density of CO2 gas = 1.977 kg/m3 at 0 °C and 1 atm (101.325 kPa).
+   Source: CRC Handbook of Chemistry and Physics (gas density table), as listed by the NIST Chemistry WebBook
+   fluid data for carbon dioxide (webbook.nist.gov/chemistry/fluid), Wikipedia "Carbon dioxide" infobox,
+   Engineering ToolBox "Carbon dioxide - density and specific weight".
+   Volume of 1,000 kg = 1000 / 1.977 = 505.8 m3  -> cube side = 505.8^(1/3) = 7.97 m.
+   At ~20 °C, 1 atm: 1.842 kg/m3 -> 543 m3 -> 8.16 m.   At 25 °C, 1 atm: ~1.81 kg/m3 -> ~553 m3 -> ~8.2 m.
+   (The brief's "1.84 at 25 °C" is the 20 °C value; 25 °C is ~1.81. Either way the side is about 8 m.)
+   On screen: "about 8 m", conditions in small type.
+2) Height comparison: typical floor-to-floor height of a storey ~3.0-3.3 m; 7.97 / 3.2 = 2.5 storeys
+   -> "lagbhag dhai manzil" (roughly a 2.5-storey building). The lane's sheds are drawn 6.2-7.0 m (two storeys).
+3) CBAM: Regulation (EU) 2023/956. Definitive period from 1 Jan 2026. Authorised declarants importing covered goods
+   (iron & steel, aluminium, cement, fertilisers, hydrogen, electricity; Annex I) surrender CBAM certificates;
+   one CBAM certificate corresponds to one tonne of CO2e of embedded emissions (Art. 3 definitions; Art. 22).
+   European Commission, Taxation and Customs Union: taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en
+   Hence: "Europe now asks for an account of every such cube" is limited, in small type, to covered goods.
+Hidden detail: the shop sign "HAWA-HAWAI TRADERS · EST. 1.977" (CO2's density as a founding year; hawa-hawai = vanished
+into thin air). The wires hum at 50 Hz, the Indian grid frequency.
+-->
+<style>
+@font-face { font-family: 'Space Grotesk'; font-weight: 300 700; src: url('node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400 800; src: url('node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Hand'; font-weight: 600; src: url('node_modules/@fontsource/caveat/files/caveat-latin-600-normal.woff2') format('woff2'); }
+:root { --paper: #f4ede1; --ink: #16181d; --night: #14161b; --saffron: #ef8a25; --green: #1f5139; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--paper); -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  background: radial-gradient(120% 60% at 50% 38%, #1d2029 0%, #15171d 55%, #101116 100%); }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+svg.layer { width: 1080px; height: 1920px; }
+#grain { opacity: .07; mix-blend-mode: overlay; z-index: 80; }
+#tag { position: absolute; left: 70px; top: 262px; font-family: 'JetBrains Mono'; font-weight: 600; font-size: 28px; letter-spacing: .12em; color: rgba(244,237,225,.62); z-index: 50; }
+#tag b { color: var(--saffron); font-weight: 700; }
+.cap { position: absolute; left: 70px; width: 860px; top: 330px; font-size: 100px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.02; z-index: 40; opacity: 0; }
+.cap .w { display: inline-block; will-change: transform; }
+.cap .s { color: var(--saffron); }
+.cap.sm { font-size: 84px; }
+#lab { position: absolute; left: 70px; width: 860px; top: 330px; z-index: 40; opacity: 0; }
+#lab .a { font-size: 116px; font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+#lab .a sub { font-size: .55em; }
+#lab .b { margin-top: 20px; font-size: 60px; font-weight: 600; letter-spacing: -.02em; color: rgba(244,237,225,.9); }
+#lab .b .m { font-family: 'JetBrains Mono'; font-weight: 700; color: var(--saffron); }
+.fine { position: absolute; left: 70px; width: 860px; top: 1400px; text-shadow: 0 0 8px #101116, 0 0 3px #101116; padding: 14px 18px; margin-left: -18px; border-radius: 10px; background: rgba(16,17,22,.86); font-family: 'JetBrains Mono'; font-size: 25px; line-height: 1.45; color: rgba(244,237,225,.62); z-index: 40; opacity: 0; }
+#end { z-index: 60; opacity: 0; background: rgba(12,13,17,.72); }
+#endIn { position: absolute; left: 70px; top: 640px; width: 860px; }
+#wm { font-size: 150px; font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+#wm i { font-style: normal; color: var(--saffron); }
+#tl { margin-top: 26px; font-size: 62px; font-weight: 500; letter-spacing: -.02em; }
+#fl { margin-top: 70px; font-family: 'Hand'; font-size: 62px; color: rgba(244,237,225,.8); }
+#hand { z-index: 30; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg class="layer" id="scene" viewBox="0 0 1080 1920">
+    <defs>
+      <filter id="glowF" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+      <filter id="glowS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+      <radialGradient id="lampG"><stop offset="0" stop-color="#ffd9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <g id="world"></g>
+    <g id="cubeFace"></g>
+    <g id="cubeGlow" filter="url(#glowF)"></g>
+    <g id="cubeInk"></g>
+    <g id="over"></g>
+  </svg>
+  <div class="layer" style="z-index:25;background:linear-gradient(180deg, rgba(16,17,22,.0) 0, rgba(16,17,22,.62) 230px, rgba(16,17,22,.55) 640px, rgba(16,17,22,0) 820px)"></div>
+  <svg class="layer" id="hand" viewBox="0 0 1080 1920"><g id="handG"></g></svg>
+
+  <div id="tag">ONE NUMBER · <b>#01</b></div>
+  <div class="cap" id="c1">Ek tonne CO₂ <span class="s">kitna bada?</span></div>
+  <div class="cap" id="c2">Sab tonne mein baat karte hain.</div>
+  <div class="cap" id="c3">Dekha <span class="s">kisi ne?</span></div>
+  <div class="cap" id="c4">Yeh raha.</div>
+  <div id="lab"><div class="a">1 tonne CO<sub>2</sub></div><div class="b">≈ ek cube, har side <span class="m">~8 m</span></div></div>
+  <div class="cap" id="c5">Lagbhag <span class="s">dhai manzil</span> ooncha.</div>
+  <div class="cap sm" id="c6">Aur Europe ab har aise cube ka <span class="s">hisaab</span> maangta hai.</div>
+  <div class="fine" id="f1">CO₂ gas at 0 °C, 1 atm: 1.977 kg/m³<br>1,000 kg → 506 m³ → side 7.97 m (≈ 8.2 m at 25 °C)</div>
+  <div class="fine" id="f2">One storey ≈ 3.2 m · 7.97 m ≈ 2.5 storeys</div>
+  <div class="fine" id="f3">EU CBAM, from 1 Jan 2026: importers of covered goods<br>(steel, aluminium, cement, fertilisers, hydrogen,<br>electricity) surrender 1 certificate per tonne CO₂e embedded.</div>
+
+  <div class="layer" id="end"><div id="endIn">
+    <div id="wm">Senseible<i>.</i></div>
+    <div id="tl">Carbon, in plain words.</div>
+    <div id="fl">Follow for the next number.</div>
+  </div></div>
+  <svg class="layer" id="grain"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="5"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#gn)"/></svg>
+</div>
+<script>
+const DUR = 28;
+const $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const io = k => k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3) / 2;
+const oc = k => 1 - Math.pow(1 - k, 3);
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const V = (x, y, z) => [x, y, z];
+const add3 = (a, b) => [a[0]+b[0], a[1]+b[1], a[2]+b[2]];
+const sub3 = (a, b) => [a[0]-b[0], a[1]-b[1], a[2]-b[2]];
+const mul3 = (a, k) => [a[0]*k, a[1]*k, a[2]*k];
+const dot3 = (a, b) => a[0]*b[0] + a[1]*b[1] + a[2]*b[2];
+const cross3 = (a, b) => [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+const norm3 = a => mul3(a, 1 / Math.hypot(a[0], a[1], a[2]));
+const L3 = (a, b, k) => [lerp(a[0], b[0], k), lerp(a[1], b[1], k), lerp(a[2], b[2], k)];
+function hash(n) { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+
+// ---------- camera ----------
+let CAM = null;
+const F = 1650, CX = 540, CY = 1020, NEAR = .25;
+function setCam(pos, tgt) {
+  const f = norm3(sub3(tgt, pos)), r = norm3(cross3([0,1,0], f)), u = cross3(f, r);
+  CAM = { pos, f, r, u };
+}
+const toCam = p => { const d = sub3(p, CAM.pos); return [dot3(d, CAM.r), dot3(d, CAM.u), dot3(d, CAM.f)]; };
+const proj = c => [CX + F * c[0] / c[2], CY - F * c[1] / c[2]];
+let BOIL = 0;
+function jit(id, i, amp) {
+  if (!amp) return [0, 0];
+  const h = id * 31.7 + i * 7.13 + BOIL * 1.931;
+  return [(hash(h) - .5) * amp, (hash(h + 5.5) - .5) * amp];
+}
+// polyline in world -> path string (near-clipped, subdivided, wobbled)
+function pathOf(pts, id = 1, amp = 1.6, closed = false) {
+  const P = closed ? pts.concat([pts[0]]) : pts;
+  let d = '', pen = false, k = 0;
+  for (let i = 0; i < P.length - 1; i++) {
+    let a = toCam(P[i]), b = toCam(P[i + 1]);
+    if (a[2] < NEAR && b[2] < NEAR) { pen = false; continue; }
+    if (a[2] < NEAR) { a = L3(a, b, (NEAR - a[2]) / (b[2] - a[2])); pen = false; }
+    let cut = false;
+    if (b[2] < NEAR) { b = L3(a, b, (NEAR - a[2]) / (b[2] - a[2])); cut = true; }
+    const pa = proj(a), pb = proj(b), len = Math.hypot(pb[0]-pa[0], pb[1]-pa[1]);
+    const n = Math.max(1, Math.min(14, Math.round(len / 90)));
+    for (let j = (pen ? 1 : 0); j <= n; j++) {
+      const q = proj(L3(a, b, j / n)), w = jit(id, k++, amp);
+      d += (j === 0 && !pen ? 'M' : 'L') + (q[0] + w[0]).toFixed(1) + ' ' + (q[1] + w[1]).toFixed(1);
+    }
+    pen = !cut;
+  }
+  return d;
+}
+// polygon in world -> clipped screen polygon string
+function polyOf(pts) {
+  const C = pts.map(toCam), out = [];
+  for (let i = 0; i < C.length; i++) {
+    const a = C[i], b = C[(i + 1) % C.length], ia = a[2] >= NEAR, ib = b[2] >= NEAR;
+    if (ia) out.push(a);
+    if (ia !== ib) out.push(L3(a, b, (NEAR - a[2]) / (b[2] - a[2])));
+  }
+  if (out.length < 3) return '';
+  return 'M' + out.map(c => { const p = proj(c); return p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join('L') + 'Z';
+}
+
+// ---------- the lane (metres; x across, y up, z down the lane) ----------
+const FACES = [];   // {pts, n, fill, stroke, det:[{pts,w,o,closed}], txt:[...] }
+let uid = 10;
+function face(pts, n, fill, extra = {}) { const f = Object.assign({ pts, n, fill, det: [], txt: [], id: uid++ }, extra); FACES.push(f); return f; }
+function box(x0, x1, y0, y1, z0, z1, fills, which = 'nsewt') {
+  const r = {};
+  if (which.includes('n')) r.n = face([V(x0,y0,z0), V(x1,y0,z0), V(x1,y1,z0), V(x0,y1,z0)], [0,0,-1], fills.n || fills.s);   // facing camera (-z)
+  if (which.includes('s')) r.s = face([V(x0,y0,z1), V(x0,y1,z1), V(x1,y1,z1), V(x1,y0,z1)], [0,0,1], fills.s);
+  if (which.includes('w')) r.w = face([V(x0,y0,z0), V(x0,y1,z0), V(x0,y1,z1), V(x0,y0,z1)], [-1,0,0], fills.w || fills.s);
+  if (which.includes('e')) r.e = face([V(x1,y0,z0), V(x1,y0,z1), V(x1,y1,z1), V(x1,y1,z0)], [1,0,0], fills.e || fills.s);
+  if (which.includes('t')) r.t = face([V(x0,y1,z0), V(x1,y1,z0), V(x1,y1,z1), V(x0,y1,z1)], [0,1,0], fills.t || '#23262e');
+  return r;
+}
+const WALL = '#1a1d24', WALL2 = '#1d2028', SIDE = '#16181e', TOP = '#24272f';
+// facade detail on a wall at x = X facing direction sx (+1 east-facing, -1 west), from z0..z1, height h
+function shed(side, z0, z1, h, opts = {}) {
+  const X = side < 0 ? -3.6 : 3.6, back = side < 0 ? -11 : 11;
+  const b = side < 0 ? box(back, X, 0, h, z0, z1, { s: SIDE, e: opts.fill || WALL, w: SIDE, n: SIDE }, 'net')
+                     : box(X, back, 0, h, z0, z1, { s: SIDE, w: opts.fill || WALL2, e: SIDE, n: SIDE }, 'nwt');
+  const fc = side < 0 ? b.e : b.w;
+  const at = (z, y) => V(X + side * 0.0, y, z);
+  // parapet + floor line
+  fc.det.push({ pts: [at(z0, h - .45), at(z1, h - .45)], o: .5 });
+  fc.det.push({ pts: [at(z0, 3.3), at(z1, 3.3)], o: .45 });
+  // shutter(s)
+  const sh = opts.shutters || [[z0 + .7, z1 - .7]];
+  for (const [a, c] of sh) {
+    const open = opts.open && opts.open[0] === a;
+    const y1 = open ? 2.85 : 2.85, y0 = open ? 2.3 : 0;
+    fc.det.push({ pts: [at(a, 0), at(a, 2.95), at(c, 2.95), at(c, 0)], o: .85, w: 3.2 });
+    for (let y = y0 + .22; y < y1; y += .24) fc.det.push({ pts: [at(a + .05, y), at(c - .05, y)], o: .26, w: 1.6 });
+    fc.det.push({ pts: [at(lerp(a, c, .5) - .18, .35), at(lerp(a, c, .5) + .18, .35)], o: .6, w: 3 });  // handle
+    if (open) fc.lit = [at(a, 0), at(a, 2.3), at(c, 2.3), at(c, 0)];
+  }
+  // upper windows
+  const nw = opts.win || 2;
+  for (let i = 0; i < nw; i++) {
+    const a = lerp(z0, z1, (i + .5) / nw) - .7, c = a + 1.4;
+    fc.det.push({ pts: [at(a, 4.1), at(c, 4.1), at(c, 5.3), at(a, 5.3)], o: .7, w: 2.4, closed: true,
+      fill: (opts.lit && opts.lit.includes(i)) ? 'rgba(255,214,160,.16)' : 'rgba(0,0,0,.25)' });
+    fc.det.push({ pts: [at(lerp(a, c, .5), 4.1), at(lerp(a, c, .5), 5.3)], o: .4, w: 1.6 });
+  }
+  if (opts.sign) fc.txt.push(Object.assign({ origin: at(opts.sign.z, opts.sign.y), dz: side < 0 ? 1 : -1, X }, opts.sign));
+  return b;
+}
+// left side
+shed(-1, 0, 8.6, 6.6, { shutters: [[.6, 4.0], [4.6, 8.0]], lit: [1] });
+shed(-1, 9.0, 17.2, 6.4, { win: 3, sign: { z: 10.0, y: 3.05, w: 4.4, h: .8, text: 'SHREE LAXMI FORGINGS', bg: '#2a2d36', fg: '#f4ede1' } });
+shed(-1, 17.6, 26.0, 7.0, { shutters: [[18.3, 25.3]], open: [18.3], lit: [0] });
+// right side
+shed(1, 0, 8.0, 6.8, { lit: [0] });
+shed(1, 8.4, 18.0, 6.2, { shutters: [[9.0, 13.0], [13.4, 17.4]], win: 3, sign: { z: 17.4, y: 3.05, w: 4.6, h: .8, text: 'MAHAVIR ROADLINES', bg: '#2a2d36', fg: '#f4ede1' } });
+shed(1, 18.4, 26.0, 6.2, { lit: [1] });
+// the far building across the plot (two storeys, 6.5 m)
+{
+  const b = box(-14, 14, 0, 6.5, 37.5, 45, { n: '#1b1e25', s: SIDE }, 'nt');
+  const fc = b.n, at = (x, y) => V(x, y, 37.5);
+  fc.det.push({ pts: [at(-14, 6.05), at(14, 6.05)], o: .5 }); fc.det.push({ pts: [at(-14, 3.3), at(14, 3.3)], o: .45 });
+  for (const [a, c] of [[-11, -6.5], [-5.6, -1.2], [1.2, 5.6], [6.5, 11]]) {
+    fc.det.push({ pts: [at(a, 0), at(a, 2.95), at(c, 2.95), at(c, 0)], o: .8, w: 3 });
+    for (let y = .22; y < 2.85; y += .24) fc.det.push({ pts: [at(a + .05, y), at(c - .05, y)], o: .24, w: 1.5 });
+  }
+  fc.txt.push({ origin: V(-3.3, 4.02, 37.5), axis: 'x', w: 3.6, h: .62, text: 'HAWA-HAWAI TRADERS', sub: 'EST. 1.977', bg: '#e9dfcc', fg: '#16181d' });
+  for (let i = 0; i < 7; i++) { const a = -12 + i * 3.8; fc.det.push({ pts: [at(a, 4.1), at(a + 1.5, 4.1), at(a + 1.5, 5.3), at(a, 5.3)], o: .65, w: 2.2, closed: true, fill: i === 4 ? 'rgba(255,214,160,.14)' : 'rgba(0,0,0,.25)' }); }
+}
+// low boundary walls of the plot
+box(-14, -3.6, 0, 1.4, 26.0, 26.4, { n: '#1c1f26', s: SIDE }, 'nt');
+box(3.6, 14, 0, 1.4, 26.0, 26.4, { n: '#1c1f26', s: SIDE }, 'nt');
+// the truck (parked left), cargo + cab
+{
+  const tf = { n: '#262a33', s: '#262a33', e: '#22262e', w: '#1d2027', t: '#2b2f39' };
+  const c = box(-3.2, -1.0, 1.0, 3.5, 10.0, 15.7, tf, 'net');
+  // tailgate: HORN OK PLEASE
+  c.n.txt.push({ origin: V(-3.05, 2.6, 10.0), axis: 'x', w: 1.9, h: .55, text: 'HORN OK PLEASE', bg: '#d9a33a', fg: '#16181d' });
+  c.n.det.push({ pts: [V(-3.2, 1.5, 10), V(-1.0, 1.5, 10)], o: .4 });
+  for (let z = 10.6; z < 15.6; z += .55) c.e.det.push({ pts: [V(-1, 1.05, z), V(-1, 3.45, z)], o: .22, w: 1.6 });
+  const k = box(-3.15, -1.05, .9, 3.05, 15.85, 17.6, { n: '#2f343e', s: '#2f343e', e: '#2a2e37', t: '#30343e' }, 'et');
+  k.e.det.push({ pts: [V(-1.05, 2.0, 16.0), V(-1.05, 2.0, 17.3), V(-1.05, 2.85, 17.3), V(-1.05, 2.85, 16.4)], o: .7, w: 2.4, closed: true, fill: 'rgba(160,190,220,.12)' });
+  box(-3.0, -1.2, .15, 1.0, 10.4, 17.4, { n: '#0c0d10', s: '#0c0d10', e: '#0c0d10', t: '#0c0d10' }, 'ne');
+  if (false) for (const [z, id] of [[11.0, 1], [14.6, 2], [16.85, 3]]) {
+    const ring = []; for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2; ring.push(V(-.98, .5 + .48 * Math.sin(a), z + .48 * Math.cos(a))); }
+    face(ring, [1, 0, 0], '#0d0e12', { stroke: .8, bias: -.4 });
+  }
+}
+// chai stall at the plot corner
+const STALL = { x0: 1.3, x1: 3.3, z0: 27.6, z1: 29.3 };
+{
+  const s = box(STALL.x0, STALL.x1, 0, 1.0, STALL.z0, STALL.z1, { n: '#3a2f25', s: '#2b241e', w: '#30281f', t: '#4a3b2c' }, 'nwt');
+  s.n.det.push({ pts: [V(1.3, .5, 27.6), V(3.3, .5, 27.6)], o: .35 });
+  s.n.txt.push({ origin: V(1.55, .78, 27.6), axis: 'x', w: 1.5, h: .4, text: 'GARAM CHAI · ₹10', bg: 'none', fg: '#f4ede1' });
+  // awning (slanted)
+  face([V(1.1, 2.55, 27.3), V(3.5, 2.55, 27.3), V(3.5, 2.85, 29.5), V(1.1, 2.85, 29.5)], [0, .99, -.13], '#8a4a1f', { stroke: .9,
+    det: [{ pts: [V(1.7, 2.6, 27.35), V(1.7, 2.82, 29.45)], o: .35, w: 1.5 }, { pts: [V(2.3, 2.6, 27.35), V(2.3, 2.82, 29.45)], o: .35, w: 1.5 }, { pts: [V(2.9, 2.6, 27.35), V(2.9, 2.82, 29.45)], o: .35, w: 1.5 }], txt: [] });
+  // kettle on the counter
+  face([V(2.15, 1.0, 28.1), V(2.55, 1.0, 28.1), V(2.5, 1.35, 28.1), V(2.2, 1.35, 28.1)], [0, 0, -1], '#5a5f69', { stroke: .9, bias: -.6,
+    det: [{ pts: [V(2.55, 1.2, 28.1), V(2.75, 1.38, 28.1)], o: .8, w: 3 }, { pts: [V(2.25, 1.35, 28.1), V(2.35, 1.48, 28.1), V(2.45, 1.35, 28.1)], o: .6, w: 2 }], txt: [] });
+  // glasses
+  for (const x of [1.6, 1.75, 1.9]) face([V(x, 1.0, 27.9), V(x + .08, 1.0, 27.9), V(x + .09, 1.14, 27.9), V(x - .01, 1.14, 27.9)], [0, 0, -1], '#c58b4a', { stroke: .7, bias: -.6, txt: [], det: [] });
+  // bench
+  box(-.6, 1.0, .42, .5, 28.0, 28.45, { n: '#2c2620', s: '#2c2620', t: '#3a3128' }, 'nt');
+}
+// poles + wires (drawn on top of the faces)
+const POLES = [[-3.4, 3.5], [3.4, 11.5], [-3.4, 19.5], [3.4, 25.5]];
+const WIRES = [];
+for (let i = 0; i < POLES.length - 1; i++) {
+  const [ax, az] = POLES[i], [bx, bz] = POLES[i + 1];
+  for (const [h, sag] of [[7.6, .45], [7.25, .55], [6.9, .5]]) {
+    const pts = []; for (let k = 0; k <= 16; k++) { const u = k / 16; pts.push(V(lerp(ax, bx, u), h - sag * 4 * u * (1 - u), lerp(az, bz, u))); }
+    WIRES.push(pts);
+  }
+}
+// sagging long wire along the left side + a tangle near the stall
+{
+  const pts = []; for (let k = 0; k <= 24; k++) { const u = k / 24; pts.push(V(-3.4, 8.0 - .7 * 4 * u * (1 - u) - .2 * Math.sin(u * 9), lerp(3.5, 27.5, u))); } WIRES.push(pts);
+  const p2 = []; for (let k = 0; k <= 16; k++) { const u = k / 16; p2.push(V(lerp(3.4, 3.3, u), lerp(7.2, 2.9, u) - .5 * Math.sin(u * Math.PI), lerp(25.5, 27.6, u))); } WIRES.push(p2);
+}
+
+// ---------- cube geometry ----------
+const P0 = V(2.35, 1.95, 28.1);            // spawn point: above the kettle
+const S_END = 7.97, C_END = V(0, S_END / 2, 31.4);
+function cubeAt(g) {
+  const s = lerp(.32, S_END, g), c = L3(add3(P0, V(0, .16, 0)), C_END, g), h = s / 2;
+  const v = [];
+  for (const [x, y, z] of [[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1],[-1,1,-1],[1,1,-1],[1,1,1],[-1,1,1]]) v.push(V(c[0] + x*h, c[1] + y*h, c[2] + z*h));
+  return { v, s, c };
+}
+const EDGES = [[0,1],[1,2],[2,3],[3,0],[0,4],[1,5],[2,6],[3,7],[4,5],[5,6],[6,7],[7,4]];
+const CFACES = [[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7],[4,5,6,7],[0,1,2,3]];
+
+// ---------- timeline ----------
+// camera keyframes [t, pos, target]
+const KEYS = [
+  [0,    V(.7, 2.5, 20.0), V(1.7, 2.0, 28.3)],
+  [7.6,  V(.5, 2.55, 19.4), V(1.6, 2.15, 28.3)],
+  [12.8, V(.2, 1.7, 4.5), V(0, 4.6, 31.4)],
+  [19.6, V(.7, 1.72, 5.4), V(0, 4.55, 31.4)],
+  [23.6, V(1.0, 1.75, 6.0), V(0, 4.5, 31.4)],
+  [25.4, V(.7, 2.5, 20.0), V(1.7, 2.0, 28.3)],
+  [28,   V(.68, 2.5, 19.8), V(1.7, 2.0, 28.3)],
+];
+function camAt(t) {
+  for (let i = 0; i < KEYS.length - 1; i++) {
+    const [t0, p0, q0] = KEYS[i], [t1, p1, q1] = KEYS[i + 1];
+    if (t <= t1 || i === KEYS.length - 2) { const k = io(clamp((t - t0) / (t1 - t0))); return [L3(p0, p1, k), L3(q0, q1, k)]; }
+  }
+}
+// cube state: g = size (0 tiny .. 1 full), d = draw progress of the 12 edges
+function cubeState(t) {
+  let g = 0, d = 0;
+  if (t < 3.0) d = lerp(.22, 1, oc(seg(t, 0, 2.8)));
+  else d = 1;
+  if (t >= 7.6) g = io(seg(t, 7.8, 12.6));
+  if (t >= 23.6) { g = 1 - io(seg(t, 23.6, 25.2)); }
+  if (t >= 24.6) d = 1 - oc(seg(t, 24.6, 25.4));
+  return { g, d };
+}
+function capShow(el, t, t0, t1) {
+  const words = el._w;
+  const on = t >= t0 - .05 && t <= t1 + .4;
+  if (!on) { el.style.opacity = 0; return; }
+  const out = clamp((t - t1) / .35);
+  el.style.opacity = 1 - out;
+  words.forEach((w, i) => {
+    const k = oc(clamp((t - t0 - i * .07) / .38));
+    w.style.transform = `translateY(${(1 - k) * 46 - out * 20}px)`; w.style.opacity = k;
+  });
+}
+function wrapWords(el) {
+  const walk = n => {
+    for (const c of [...n.childNodes]) {
+      if (c.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(p => { if (!p) return; if (/^\s+$/.test(p)) frag.appendChild(document.createTextNode(p)); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = p; frag.appendChild(s); } });
+        n.replaceChild(frag, c);
+      } else if (c.nodeType === 1 && !c.classList.contains('w')) walk(c);
+    }
+  };
+  walk(el); el._w = [...el.querySelectorAll('.w')];
+}
+['c1','c2','c3','c4','c5','c6'].forEach(id => wrapWords($(id)));
+const fade = (el, t, a, b, d = .35) => { el.style.opacity = Math.min(clamp((t - a) / d), 1 - clamp((t - b) / d)); };
+
+// ---------- draw ----------
+const SVGNS = 'http://www.w3.org/2000/svg';
+const INK = '#ece4d6';
+function txtOnFace(T) {
+  // affine-map a w x h text box onto the face plane via three projected corners
+  let o = T.origin, ex, ey;
+  if (T.axis === 'x') { ex = V(T.w, 0, 0); ey = V(0, -T.h, 0); }
+  else { ex = V(0, 0, T.w * T.dz); ey = V(0, -T.h, 0); }
+  const A = toCam(o), B = toCam(add3(o, ex)), C = toCam(add3(o, ey));
+  if (A[2] < NEAR || B[2] < NEAR || C[2] < NEAR) return '';
+  const a = proj(A), b = proj(B), c = proj(C);
+  const W = 600, H = W * T.h / T.w;
+  const m = [(b[0]-a[0])/W, (b[1]-a[1])/W, (c[0]-a[0])/H, (c[1]-a[1])/H, a[0], a[1]];
+  const fs = T.sub ? H * .5 : H * .7;
+  let s = `<g transform="matrix(${m.map(x => x.toFixed(4)).join(' ')})">`;
+  if (T.bg !== 'none') s += `<rect x="0" y="0" width="${W}" height="${H}" rx="${H*.08}" fill="${T.bg}"/>`;
+  s += `<text x="${W/2}" y="${T.sub ? H*.52 : H*.72}" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="${fs}" letter-spacing="${fs*.02}" fill="${T.fg}" textLength="${W*.9}" lengthAdjust="spacingAndGlyphs">${T.text}</text>`;
+  if (T.sub) s += `<text x="${W/2}" y="${H*.86}" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="${H*.24}" fill="${T.fg}" opacity=".75">${T.sub}</text>`;
+  return s + '</g>';
+}
+function render(t) {
+  BOIL = Math.floor(t * 8);
+  const [cp, ct] = camAt(t);
+  // a breath of handheld drift
+  setCam(add3(cp, V(Math.sin(t * .7) * .04, Math.sin(t * .9 + 1) * .03, 0)), ct);
+  let s = '';
+  // sky glow + ground
+  s += polyOf([V(-60, 0, -40), V(60, 0, -40), V(60, 0, 120), V(-60, 0, 120)]).replace(/^/, '<path fill="#121318" d="') + '"/>';
+  // lane floor marks: drains + patches
+  s += `<path d="${pathOf([V(-3.1, 0, 0), V(-3.1, 0, 26)], 3)} ${pathOf([V(3.1, 0, 0), V(3.1, 0, 26)], 4)}" stroke="${INK}" stroke-opacity=".28" stroke-width="2.2" fill="none"/>`;
+  for (let i = 0; i < 9; i++) { const z = 2 + i * 2.8, x = (hash(i) - .5) * 4; s += `<path d="${pathOf([V(x, 0, z), V(x + .6, 0, z + .1), V(x + .9, 0, z + .4)], 40 + i)}" stroke="${INK}" stroke-opacity=".16" stroke-width="2" fill="none"/>`; }
+  // faces sorted back to front, backface-culled
+  const vis = [];
+  for (const f of FACES) {
+    const c = mul3(f.pts.reduce((a, p) => add3(a, p), V(0,0,0)), 1 / f.pts.length);
+    if (dot3(f.n, sub3(CAM.pos, c)) <= 0) continue;
+    const cc = toCam(c); vis.push([Math.hypot(...sub3(c, CAM.pos)) + (f.bias || 0), f]);
+  }
+  vis.sort((a, b) => b[0] - a[0]);
+  for (const [, f] of vis) {
+    const d = polyOf(f.pts); if (!d) continue;
+    s += `<path d="${d}" fill="${f.fill}"/>`;
+    if (f.lit) s += `<path d="${polyOf(f.lit)}" fill="rgba(255,205,140,.10)"/>`;
+    for (const q of f.det) {
+      if (q.fill) s += `<path d="${polyOf(q.pts)}" fill="${q.fill}"/>`;
+      s += `<path d="${pathOf(q.pts, f.id * 13 + q.pts.length, 1.2, q.closed)}" stroke="${INK}" stroke-opacity="${q.o}" stroke-width="${q.w || 2.4}" fill="none" stroke-linejoin="round" stroke-linecap="round"/>`;
+    }
+    for (const T of f.txt) s += txtOnFace(T);
+    s += `<path d="${pathOf(f.pts, f.id, 1.6, true)}" stroke="${INK}" stroke-opacity="${f.stroke || .72}" stroke-width="2.6" fill="none" stroke-linejoin="round"/>`;
+  }
+  // stall lamp glow
+  { const c = toCam(V(2.3, 2.45, 27.6)); if (c[2] > NEAR) { const p = proj(c), r = F * 1.6 / c[2]; s += `<circle cx="${p[0]}" cy="${p[1]}" r="${r}" fill="url(#lampG)"/>`; const r2 = F * .07 / c[2]; s += `<circle cx="${p[0]}" cy="${p[1]}" r="${r2}" fill="#ffe2b8"/>`; } }
+  // steam from the kettle
+  for (let k = 0; k < 3; k++) {
+    const pts = []; for (let i = 0; i <= 10; i++) { const u = i / 10; pts.push(V(2.72 + k * .05 + Math.sin(u * 6 + t * 2.2 + k * 2) * .05 * (1 + u), 1.42 + u * .55, 28.1)); }
+    s += `<path d="${pathOf(pts, 70 + k, .8)}" stroke="${INK}" stroke-opacity="${.32 - k * .07}" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+  }
+  // poles
+  for (const [x, z] of POLES) s += `<path d="${pathOf([V(x, 0, z), V(x, 8.4, z)], 90 + z, 1.2)}" stroke="${INK}" stroke-opacity=".75" stroke-width="4" fill="none"/><path d="${pathOf([V(x - .5 * Math.sign(-x), 8.1, z), V(x + .5 * Math.sign(-x), 8.1, z)], 95 + z, 1)}" stroke="${INK}" stroke-opacity=".7" stroke-width="3.2" fill="none"/>`;
+  $('world').innerHTML = s;
+
+  // ---------- the cube ----------
+  const { g, d } = cubeState(t);
+  const cb = cubeAt(g);
+  let fi = '', gl = '', ink = '', ov = '';
+  // faces fill once the cube is drawn
+  const fillA = .06 * clamp((d - .92) / .08) * (1 + .5 * Math.sin(t * 2.1) * .3);
+  if (fillA > 0) for (const q of CFACES) { const pd = polyOf(q.map(i => cb.v[i])); if (pd) fi += `<path d="${pd}" fill="#ef8a25" fill-opacity="${fillA.toFixed(3)}"/>`; }
+  // edges
+  for (let e = 0; e < 12; e++) {
+    const k = clamp(d * 12 - e); if (k <= 0) continue;
+    const a = cb.v[EDGES[e][0]], b = cb.v[EDGES[e][1]];
+    const pd = pathOf([a, L3(a, b, k)], 300 + e, 1.4);
+    if (!pd) continue;
+    ink += `<path d="${pd}" stroke="#ffd29a" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+    gl += `<path d="${pd}" stroke="#ef8a25" stroke-width="14" stroke-opacity=".8" fill="none" stroke-linecap="round"/>`;
+    // pen tip spark on the edge being drawn
+    if (k < 1) { const c = toCam(L3(a, b, k)); if (c[2] > NEAR) { const p = proj(c); ink += `<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#fff3df"/>`; gl += `<circle cx="${p[0]}" cy="${p[1]}" r="22" fill="#ef8a25"/>`; } }
+  }
+  // the point (loop seed): visible when cube is folded
+  if (d < .3) { const c = toCam(add3(P0, V(0, .16, 0))); if (c[2] > NEAR) { const p = proj(c); ink += `<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="#fff3df"/>`; gl += `<circle cx="${p[0]}" cy="${p[1]}" r="20" fill="#ef8a25"/>`; } }
+  $('cubeFace').innerHTML = fi; $('cubeGlow').innerHTML = gl; $('cubeInk').innerHTML = ink;
+
+  // wires drawn in front of the cube (they are nearer the camera)
+  for (let i = 0; i < WIRES.length; i++) {
+    const sway = WIRES[i].map((p, k) => add3(p, V(0, Math.sin(t * 1.3 + i) * .03 * Math.sin(k / (WIRES[i].length - 1) * Math.PI), 0)));
+    ov += `<path d="${pathOf(sway, 500 + i, 1)}" stroke="#0b0c0f" stroke-width="5.5" fill="none" stroke-linecap="round"/><path d="${pathOf(sway, 500 + i, 1)}" stroke="${INK}" stroke-opacity=".55" stroke-width="2" fill="none"/>`;
+  }
+  $('over').innerHTML = ov;
+
+  // ---------- hand-drawn annotations on the big cube ----------
+  let hd = '';
+  const C2 = (p) => { const c = toCam(p); return c[2] > NEAR ? proj(c) : null; };
+  // dimension line + counter (growth and label)
+  const dimA = Math.min(seg(t, 8.2, 8.6), 1 - seg(t, 16.0, 16.4));
+  if (dimA > 0) {
+    const a = cb.v[0], b = cb.v[4], o = V(-.5, 0, 0);
+    const pa = C2(add3(a, o)), pb = C2(add3(b, o));
+    if (pa && pb) {
+      const val = (g >= .999 ? S_END : cb.s).toFixed(2);
+      hd += `<g opacity="${dimA}"><path d="M${pa[0]} ${pa[1]} L${pb[0]} ${pb[1]} M${pa[0]-14} ${pa[1]} L${pa[0]+14} ${pa[1]} M${pb[0]-14} ${pb[1]} L${pb[0]+14} ${pb[1]}" stroke="${INK}" stroke-width="3" fill="none"/>`;
+      const ins = cb.s > 3; hd += `<text x="${ins ? pa[0] + 92 : pa[0] - 26}" text-anchor="${ins ? 'start' : 'end'}" y="${(pa[1] + pb[1]) / 2 + 18}" font-family="JetBrains Mono" font-weight="700" font-size="54" fill="#ffd29a">${val} m</text></g>`;
+    }
+  }
+  // storey ruler on the left front edge
+  const rA = Math.min(seg(t, 16.2, 16.6), 1 - seg(t, 19.4, 19.8));
+  if (rA > 0) {
+    const base = cb.v[0], o = V(-.25, 0, 0);
+    const pb = C2(add3(base, o)), pt = C2(add3(cb.v[4], o));
+    if (pb && pt) {
+      const k = oc(seg(t, 16.4, 17.6));
+      const py = lerp(pb[1], pt[1], k), px = lerp(pb[0], pt[0], k);
+      hd += `<g opacity="${rA}"><path d="M${pb[0]} ${pb[1]} L${px} ${py}" stroke="${INK}" stroke-width="3.4" fill="none"/>`;
+      [[3.2, 'manzil 1'], [6.4, 'manzil 2'], [7.97, '+ aadhi']].forEach(([h, lbl], i) => {
+        if (k * S_END < h - .05) return;
+        const p = C2(add3(add3(base, o), V(0, h, 0))); if (!p) return;
+        const pp = oc(seg(t, 16.6 + i * .35, 17.0 + i * .35));
+        hd += `<path d="M${p[0] - 26} ${p[1]} L${p[0] + 26 * pp} ${p[1]}" stroke="${INK}" stroke-width="3.4"/>`;
+        hd += `<text x="${p[0] + 38}" y="${p[1] + 14}" font-family="Hand" font-size="46" fill="${INK}" opacity="${pp}">${lbl}</text>`;
+      });
+      hd += '</g>';
+    }
+  }
+  // the CBAM tag: a paper luggage tag tied to the top corner
+  const tA = Math.min(seg(t, 21.0, 21.4), 1 - seg(t, 23.4, 23.8));
+  if (tA > 0) {
+    const p = C2(cb.v[6]) ; const q = C2(cb.v[5]);
+    if (p && q) {
+      const ax = q[0], ay = q[1], sw = Math.sin(t * 3) * 3;
+      const k = oc(seg(t, 21.0, 21.6));
+      const tx = ax + 30, ty = ay + 70 + (1 - k) * -40;
+      hd += `<g opacity="${tA}"><path d="M${ax} ${ay} Q ${ax + 26} ${ay + 30} ${tx + 20} ${ty}" stroke="${INK}" stroke-width="2.6" fill="none"/>`;
+      hd += `<g transform="translate(${tx} ${ty}) rotate(${-8 + sw})"><path d="M0 0 L 230 0 L 260 34 L 230 68 L 0 68 Z" fill="#f4ede1"/><circle cx="232" cy="34" r="7" fill="#14161b"/>`;
+      hd += `<text x="16" y="47" font-family="Hand" font-size="44" fill="#16181d">1 certificate</text></g></g>`;
+    }
+  }
+  $('handG').innerHTML = hd;
+
+  // ---------- type ----------
+  capShow($('c1'), t, .0, 2.85); if (t < .06) { $('c1').style.opacity = 1; $('c1')._w.forEach(w => { w.style.transform = 'none'; w.style.opacity = 1; }); }
+  capShow($('c2'), t, 3.1, 5.5);
+  capShow($('c3'), t, 5.8, 7.4);
+  capShow($('c4'), t, 7.75, 9.3);
+  { const L = $('lab'), k = oc(seg(t, 12.7, 13.2)), out = seg(t, 15.8, 16.1); L.style.opacity = k * (1 - out); L.style.transform = `translateY(${(1 - k) * 40}px) scale(${lerp(1.06, 1, k)})`; L.style.transformOrigin = '0 0'; }
+  fade($('f1'), t, 13.3, 15.9);
+  capShow($('c5'), t, 16.3, 19.3);
+  fade($('f2'), t, 16.9, 19.3);
+  capShow($('c6'), t, 19.7, 23.5);
+  fade($('f3'), t, 20.6, 23.5);
+  $('tag').style.opacity = 1 - seg(t, 25.0, 25.4) + seg(t, 27.6, 27.95);
+  // end card
+  const e = Math.min(seg(t, 25.0, 25.6), 1 - seg(t, 27.65, 28.0));
+  $('end').style.opacity = e;
+  [$('wm'), $('tl'), $('fl')].forEach((el, i) => { const k = oc(seg(t, 25.15 + i * .35, 25.65 + i * .35)); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 36}px)`; });
+}
+window.render = render;
+window.render(Number(new URLSearchParams(location.search).get('t') || 0));
+</script>
+</body>
+</html>
