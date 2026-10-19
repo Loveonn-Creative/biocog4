@@ -30,6 +30,7 @@ function InAppHelpGate() {
   return <Suspense fallback={null}><InAppHelp /></Suspense>;
 }
 import { RequireAuth } from "./components/RequireAuth";
+import { MACHINERY_BETA } from "./lib/betaFlags";
 import { RouteSEO } from "./components/RouteSEO";
 import { TranslationScope } from "./components/TranslationScope";
 import { STATIC_PAGE_META } from "@/lib/seo/seoMeta";
@@ -74,6 +75,7 @@ const History = lazy(() => import("./pages/History"));
 const Verify = lazy(() => import("./pages/Verify"));
 const Monetize = lazy(() => import("./pages/Monetize"));
 const SolarSignal = lazy(() => import("./pages/SolarSignal"));
+const MachineryBeta = lazy(() => import("./pages/MachineryBeta"));
 const ReductionSignal = lazy(() => import("./pages/ReductionSignal"));
 const Reports = lazy(() => import("./pages/Reports"));
 const MRVDashboard = lazy(() => import("./pages/MRVDashboard"));
@@ -185,6 +187,7 @@ const App = () => (
               <Route path="/verify" element={<Verify />} />
               <Route path="/monetize" element={<Monetize />} />
               <Route path="/solar-signal" element={<SolarSignal />} />
+              {MACHINERY_BETA && <Route path="/beta/machinery" element={<RequireAuth><MachineryBeta /></RequireAuth>} />}
               <Route path="/reduction-signal" element={<ReductionSignal />} />
               <Route path="/reports" element={<RequireAuth><Reports /></RequireAuth>} />
               <Route path="/mrv-dashboard" element={<RequireAuth><MRVDashboard /></RequireAuth>} />
