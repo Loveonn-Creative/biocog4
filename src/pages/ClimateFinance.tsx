@@ -58,10 +58,10 @@ const ClimateFinance = () => {
         <article className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-foreground mb-6">Climate Finance</h1>
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl">
-            Verified Senseible data is the primitive lenders, factors, and incentive desks consume.
+            Lenders, invoice factors and incentive desks use verified Senseible data to price climate-linked finance.
           </p>
           <p className="text-sm text-muted-foreground mb-16 max-w-2xl">
-            Senseible is not a lender, factor, or registry. It is the verification layer each of those institutions trusts when they price climate-linked risk.
+            Senseible is not a lender, factor or registry. It checks the emissions data those institutions rely on when they price climate-linked risk.
           </p>
           <p className="text-xs text-muted-foreground -mt-12 mb-16 max-w-2xl">
             Senseible provides data infrastructure to support sustainable-finance applications; it does not itself approve, provide or disburse loans, grants or financing.
@@ -78,7 +78,7 @@ const ClimateFinance = () => {
           {/* 2. Where it gets consumed: route one record to each desk */}
           <section className="mb-20">
             <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Where the verified ledger gets consumed</p>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Three concrete pipelines</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Three kinds of finance it feeds</h2>
             <RouteRecord pipelines={useCases} />
             <p className="text-xs text-muted-foreground mt-4">
               The same verified ledger maps to government incentive schemes: SIDBI, IREDA and MNRE in India, with equivalent programmes wired through country config across every supported market.
@@ -87,11 +87,11 @@ const ClimateFinance = () => {
 
           {/* 3. Opportunity cards — region-neutral, no guaranteed-rate claims */}
           <section className="mb-20">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Opportunities this unlocks for MSMEs</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground mb-6">Where verified data helps your business</h2>
             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
               {[
                 { d: "loan" as const, t: "Green loans", b: "A documented emissions baseline is the evidence banks ask for when assessing green working-capital and sustainability-linked lines.", n: "Rates and approval are the lender's decision." },
-                { d: "incentive" as const, t: "Government incentives", b: "Qualify for state and central schemes with documented emission reductions, across SIDBI/IREDA in India and equivalents wired through country config elsewhere.", n: "Multiple schemes per market." },
+                { d: "incentive" as const, t: "Government incentives", b: "Apply for state and central schemes with documented emission cuts: SIDBI and IREDA in India, and their equivalents elsewhere.", n: "Multiple schemes per market." },
                 { d: "export" as const, t: "Export compliance", b: "Meet EU CBAM requirements with verified actuals before defaults apply. Position for international buyers who require carbon disclosure.", n: "Export-access protection." },
                 { d: "linked" as const, t: "Sustainability-Linked Credit", b: "Access emerging credit facilities tied to verified sustainability KPIs: early positioning for TCFD- and ISSB-aligned financing.", n: "Aligned with global standards." },
               ].map(o => (
@@ -112,7 +112,7 @@ const ClimateFinance = () => {
             <h2 className="text-xl font-semibold text-foreground mb-6">What MSMEs are missing without verified data</h2>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">Global trade access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to the EU Green Deal, Brazil's CBIO market, and Southeast Asia's carbon-pricing pilots, verified sustainability data is becoming table stakes for trade access worldwide.
+                <span className="font-medium text-foreground">Global trade access:</span> From India's FTAs (UAE, Australia, EU/UK negotiations) to the EU Green Deal, Brazil's CBIO market, and Southeast Asia's carbon-pricing pilots, more and more trade partners expect verified sustainability data.
               </p>
               <p className="text-muted-foreground">
                 <span className="font-medium text-foreground">CBAM &amp; border adjustments:</span> Since 1 January 2026, EU importers pay for the carbon embedded in steel, cement, aluminium, fertilisers and related goods. Exporters without verified data are priced at EU default values with mark-ups. Similar mechanisms are emerging in the UK, Canada, and Australia.
@@ -126,10 +126,10 @@ const ClimateFinance = () => {
 
           {/* CTA */}
           <div className="p-8 rounded-2xl bg-primary text-primary-foreground text-center">
-            <h3 className="text-xl font-medium mb-3">Unlock your climate finance eligibility</h3>
-            <p className="text-primary-foreground/80 mb-6">One document. Instant assessment. No consultants needed.</p>
+            <h3 className="text-xl font-medium mb-3">Check your climate finance eligibility</h3>
+            <p className="text-primary-foreground/80 mb-6">Start with one bill. No consultant needed.</p>
             <Link to="/" className="inline-flex items-center gap-2 px-6 py-3 bg-background text-foreground rounded-full font-medium hover:bg-background/90 transition-colors">
-              Start Now <ArrowRight className="w-4 h-4" />
+              Upload a bill <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </article>

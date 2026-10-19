@@ -415,7 +415,7 @@ const Index = () => {
         console.error('[MRV] Emission save error:', emissionError);
         if (emissionError.message?.includes('row-level security')) {
           console.error('[MRV] RLS violation - check session_id:', sessionId, 'user_id:', user?.id);
-          toast.error('Permission denied. Please try refreshing the page.');
+          toast.error('We could not save this to your account. Refresh the page and try again.');
         }
         return null;
       }
@@ -577,7 +577,7 @@ const Index = () => {
 
       if (error) {
         console.error("OCR Error:", error);
-        toast.error(await getFunctionErrorMessage(error, "Failed to process document. Please try again."));
+        toast.error(await getFunctionErrorMessage(error, "We could not read this file. Try again, or upload a clear photo of the page."));
         setState("idle");
         return;
       }
@@ -828,7 +828,7 @@ const Index = () => {
     } catch (error) {
       console.error("Voice processing error:", error);
       setState("idle");
-      toast.error("Voice processing unavailable. Please upload a document.");
+      toast.error("Voice is unavailable right now. Upload a bill instead.");
     }
   };
 
@@ -943,7 +943,7 @@ const Index = () => {
                       setDocumentType(formatDocumentType(extractedData.documentType, emissionCat));
                       setState("result");
                     } else {
-                      toast.error('Save failed again. Please try uploading a new document.');
+                      toast.error('Still could not save. Upload the bill again.');
                       setState("idle");
                     }
                   }}

@@ -24,7 +24,7 @@ const audiences = [
   { key: "msme", label: "MSMEs & exporters", line: "Turn invoices into a verified emission record, no consultant required." },
   { key: "enterprise", label: "Enterprises", line: "Get Scope 3 supplier data that holds up under CBAM, ISSB and CSRD." },
   { key: "lender", label: "Banks & lenders", line: "Underwrite against hash-pinned figures, not borrower self-declarations." },
-  { key: "policy", label: "Policy & regulators", line: "Read decision-grade signals tied to a methodology version you can audit." },
+  { key: "policy", label: "Policy & regulators", line: "See emissions data with the exact method behind it, so you can check it yourself." },
   { key: "buyer", label: "Carbon credit buyers", line: "Source MSME-origin credits that clear additionality and evidence linkage." },
   { key: "partner", label: "Ecosystem partners", line: "Plug verified MSME climate data into your own product surface." },
 ];
@@ -38,14 +38,14 @@ const outcomes = [
 
 const steps = [
   { n: "01", key: "capture", tone: "accent", title: "Capture", body: "Drop a document, take a photo, or speak the data point. The first response arrives in under two seconds." },
-  { n: "02", key: "verify", tone: "verified", title: "Verify", body: "Every document is hashed, parsed, classified deterministically, and reconciled against country grid factors." },
+  { n: "02", key: "verify", tone: "verified", title: "Verify", body: "Every file gets a fingerprint, each line is sorted into Scope 1, 2 or 3 by fixed rules, and power is checked against your country's grid factor." },
   { n: "03", key: "use", tone: "primary", title: "Use", body: "The verified record feeds your disclosure, your lender, your reduction roadmap, and, when eligible, your credits." },
 ];
 
 const proofMetrics = [
-  { value: "29", label: "clusters", body: "Where the platform has been piloted." },
+  { value: "29", label: "clusters", body: "Industrial clusters where we have run pilots." },
   { value: "11", label: "countries piloted", body: "Pilot reach across emerging markets." },
-  { value: "92%", label: "benchmarking accuracy", body: "The confirmed benchmarking result." },
+  { value: "92%", label: "benchmarking accuracy", body: "Accuracy against benchmark figures in pilots." },
 ];
 
 const proofPaths = [
@@ -108,7 +108,7 @@ const Platform = () => {
                 {t("platform.hero.title", "Climate evidence, in the time it takes to read this line.")}
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-[34rem] mx-auto lg:mx-0 leading-relaxed">
-                {t("platform.hero.sub", "Senseible turns any business document into a verified emission record, one that a lender can underwrite, a regulator can audit, and a buyer can rely on.")}
+                {t("platform.hero.sub", "Senseible turns your invoices, bills and fuel slips into a verified emission record that a lender can underwrite, a regulator can audit and a buyer can rely on.")}
               </p>
               <div className="mt-8 flex justify-center lg:justify-start">
                 <Button asChild size="lg" className="group rounded-full px-6">
@@ -137,7 +137,7 @@ const Platform = () => {
               {
                 key: "positioning",
                 eyebrow: t("platform.positioning.eyebrow", "Built into Senseible"),
-                title: t("platform.positioning.title", "An agent automating Scope 3 compliance for enterprises."),
+                title: t("platform.positioning.title", "Scope 3 supplier data, collected and checked for you."),
                 body: <>
                   <p>{t("platform.positioning.body", "For an enterprise, that means seeing which suppliers have usable evidence, where the gaps are, and what is ready for Scope 3 reporting.")}</p>
                   <p className="mt-4 border-l-2 border-primary/30 pl-4 text-[15px]">{t("platform.positioning.note", "Start with the document. Keep the evidence attached as the record moves into reporting, supplier decisions, or finance.")}</p>
@@ -147,15 +147,15 @@ const Platform = () => {
                 key: "what",
                 eyebrow: t("platform.what.eyebrow", "What is Senseible?"),
                 title: t("platform.what.title", "A verification layer for climate data."),
-                body: <p>{t("platform.what.body", "Most climate numbers are self-reported. Senseible replaces the self-report with a chain of evidence (a hash, a methodology, a confidence band) that anyone downstream can independently check. It works on the documents a business already produces, in the language and the country the business already operates in.")}</p>,
+                body: <p>{t("platform.what.body", "Most climate numbers are self-reported. Senseible ties each one to its document fingerprint, the method used and a confidence range, so your lender or buyer can check it themselves. It works on the documents you already have, in your language and your country.")}</p>,
               },
               {
                 key: "problem",
                 eyebrow: t("platform.problem.eyebrow", "What problem does it solve?"),
-                title: t("platform.problem.title", "The verification gap in emerging-market climate data."),
+                title: t("platform.problem.title", "The verification gap in emerging-market climate data. Buyers, lenders and regulators want proof small suppliers rarely have."),
                 body: <>
                   <p>{t("platform.problem.p1", "Emerging-market supply chains carry most of the world's industrial emissions, and almost none of the verified data. Regulators ask for primary numbers. Buyers ask for primary numbers. Lenders ask for primary numbers. Without them, the default values apply, and the cost lands on the smallest producer.")}</p>
-                  <p className="mt-4">{t("platform.problem.p2", "Senseible closes that gap by making verification cheap enough to do at the speed of business, in the language and identifier system of every market it touches.")}</p>
+                  <p className="mt-4">{t("platform.problem.p2", "Senseible makes that proof cheap and quick to produce, in your language and with your country's tax ID.")}</p>
                 </>,
               },
             ]} />
@@ -190,7 +190,7 @@ const Platform = () => {
               ))}
             </ol>
             <Link to="/trust" className="group mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-              {t("platform.how.cta", "Read the technical depth")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              {t("platform.how.cta", "See how verification works")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>
 
             <div className="mt-20 md:mt-24">
@@ -223,8 +223,8 @@ const Platform = () => {
           <div className="container max-w-5xl mx-auto px-6">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
               <div>
-                <SectionHead className="mb-6" eyebrow={t("platform.proof.eyebrow", "What we have proven")} title={t("platform.proof.title", "The numbers are real. So is the work behind them.")} />
-                <p className="text-muted-foreground leading-relaxed">{t("platform.proof.body", "Senseible has been piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy. Each number comes from the work of turning everyday business records into usable climate evidence.")}</p>
+                <SectionHead className="mb-6" eyebrow={t("platform.proof.eyebrow", "What we have proven")} title={t("platform.proof.title", "What the pilots showed")} />
+                <p className="text-muted-foreground leading-relaxed">{t("platform.proof.body", "Senseible has been piloted across 29 clusters and 11 countries, with 92% benchmarking accuracy.")}</p>
               </div>
               <dl className="grid grid-cols-3 divide-x divide-border border-y border-border" aria-label={t("platform.proof.metrics.label", "Platform proof metrics")}>
                 {proofMetrics.map(metric => (
@@ -288,7 +288,7 @@ const Platform = () => {
             <div className="mt-14 grid gap-10 md:grid-cols-2">
               <div>
                 <div className="text-xs uppercase tracking-[0.14em] text-primary mb-3">{t("platform.industries.eyebrow", "Industries")}</div>
-                <h3 className="text-xl font-semibold tracking-tight">{t("platform.industries.title", "Built for the sectors that need it most.")}</h3>
+                <h3 className="text-xl font-semibold tracking-tight">{t("platform.industries.title", "Pick your sector.")}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["textile", "steel", "chemical", "logistics", "automobile", "construction"].map(s => (
                     <Link key={s} to={`/industries/${s}`} className="px-3.5 py-1.5 rounded-full border border-border text-sm text-foreground/80 hover:border-primary/40 hover:text-primary transition-colors capitalize">
@@ -349,7 +349,7 @@ const Platform = () => {
             <div className="mt-20 rounded-3xl bg-foreground px-6 py-14 text-center text-background md:py-16">
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">{t("platform.cta.title", "Two ways to start.")}</h2>
               <p className="text-background/70 mb-8 max-w-xl mx-auto">
-                {t("platform.cta.body", "Try the verification surface with your own document. Or talk to the team about embedding it in yours.")}
+                {t("platform.cta.body", "Upload one of your own bills and see the result. Or talk to us about adding Senseible to your product.")}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg" className="rounded-full px-6">

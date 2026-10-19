@@ -28,8 +28,7 @@ const chapters: Chapter[] = [
           </div>
         </div>
         <p className="text-muted-foreground mt-6 leading-relaxed">
-          Banks and buyers globally price risk differently for businesses with verified sustainability data.
-          The gap between "has data" and "doesn't have data" is now a competitive moat, from Mumbai to São Paulo to Jakarta.
+          Banks and buyers treat a business with verified data differently from one without. From Mumbai to São Paulo to Jakarta, having the numbers is now an edge.
         </p>
       </>
     ),
@@ -67,7 +66,7 @@ const chapters: Chapter[] = [
           <BecomesLine doc="receipt" from="A receipt" to="revenue from climate finance" />
         </ul>
         <p className="text-muted-foreground mt-6">
-          No forms. No consultants. No waiting.
+          No forms, no consultant, no waiting for a site visit.
         </p>
       </>
     ),
@@ -81,14 +80,14 @@ const chapters: Chapter[] = [
             <span className="font-medium">Vision-language models</span> can now read documents the way experts do.
           </p>
           <p className="text-foreground leading-relaxed">
-            <span className="font-medium">Carbon accounting standards</span> have matured enough to be codified.
+            <span className="font-medium">Carbon accounting rules</span> are settled enough to turn into software.
           </p>
           <p className="text-foreground leading-relaxed">
-            <span className="font-medium">Regulatory pressure</span> has created genuine demand.
+            <span className="font-medium">New rules</span> mean buyers and banks now actually ask for the carbon numbers.
           </p>
         </div>
         <p className="text-lg text-muted-foreground mt-6 leading-relaxed">
-          The infrastructure layer that was missing can now be built.
+          So the tool small businesses never had can finally exist.
         </p>
       </>
     ),

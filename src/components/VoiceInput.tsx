@@ -42,7 +42,7 @@ export const VoiceInput = ({ onVoiceInput, isProcessing }: VoiceInputProps) => {
       setIsListening(false);
       
       if (event.error === 'not-allowed') {
-        toast.error('Microphone access denied. Please enable microphone permissions.');
+        toast.error('Allow microphone access in your browser to use voice.');
       } else if (event.error === 'no-speech') {
         toast.info('No speech detected. Please try again.');
       } else if (event.error !== 'aborted') {

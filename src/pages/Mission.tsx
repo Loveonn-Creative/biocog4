@@ -41,14 +41,10 @@ const Mission = () => {
               What We Observed
             </h2>
             <p className="text-xl sm:text-2xl text-foreground/90 leading-relaxed mb-6">
-              Micro, small, and medium enterprises across emerging markets are excluded from global trade, 
-              climate finance, and regulatory clarity.
+              Small businesses across emerging markets are shut out of global trade and climate finance, and left guessing about the rules.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              This exclusion is not by choice. It exists because carbon measurement, verification, 
-              and compliance infrastructure was never designed for scale. It was designed for large 
-              enterprises with dedicated compliance teams, sophisticated software, and direct 
-              relationships with regulators.
+              They did not choose this. Carbon measurement and verification were built for large companies with compliance teams, expensive software and a direct line to regulators, not for millions of small ones.
             </p>
           </section>
           
@@ -58,12 +54,10 @@ const Mission = () => {
               Our Constraint
             </h2>
             <p className="text-lg text-foreground leading-relaxed mb-4">
-              We deliberately chose to build infrastructure, not products. Not dashboards. Not consulting. 
-              Not another platform that requires setup, training, and ongoing maintenance.
+              We chose not to build another dashboard, consultancy or platform that needs setup, training and upkeep.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Infrastructure means: you bring an invoice, we return verified carbon data. 
-              You bring a receipt, we return a monetization pathway. The complexity is ours to carry.
+              You bring an invoice, we return verified carbon data. You bring a receipt, we show you how it could earn. The hard part is ours.
             </p>
             <div className="mt-6 grid grid-cols-[auto_1fr_auto] items-center gap-3 text-xs text-muted-foreground" aria-hidden="true">
               <span className="rounded-lg border border-border bg-background px-3 py-1.5">Invoice</span>
@@ -104,9 +98,8 @@ const Mission = () => {
           {/* Founder's Statement - Key Quote */}
           <section className="mb-12 p-8 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl border border-primary/10">
             <p className="text-xl sm:text-2xl text-foreground leading-relaxed font-medium">
-              <span className="text-muted-foreground">Senseible exists to replace that infrastructure.</span>{' '}
-              To turn everyday business documents (<DrawnUnderline>invoices, bills, receipts</DrawnUnderline>) into verified carbon signals.{' '}
-              To make compliance automatic. To make <DrawnUnderline>revenue from carbon</DrawnUnderline> accessible to every business, not just large ones.
+              <span className="text-muted-foreground">Senseible exists to change that:</span>{' '}
+              to turn <DrawnUnderline>invoices, bills and receipts</DrawnUnderline> into verified carbon data, to take the manual work out of compliance, and to open <DrawnUnderline>carbon revenue</DrawnUnderline> to every business, not just large ones.
             </p>
             <p className="text-sm text-muted-foreground mt-6 italic">Founder's Note</p>
           </section>
@@ -114,12 +107,10 @@ const Mission = () => {
           {/* Founder's Voice */}
           <section className="mb-12">
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              We measure in seconds, not months. We convert documents into decisions. 
-              We make regulatory fear irrelevant.
+              We measure in seconds, not months. You upload a bill; you get a number you can act on, and one less rule to worry about.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              If you're building something that touches climate, trade, or MSME finance, and you see 
-              the same infrastructure gap we do, we should talk.
+              If you work in climate, trade or MSME finance and see the same gap, write to us.
             </p>
           </section>
         </article>
