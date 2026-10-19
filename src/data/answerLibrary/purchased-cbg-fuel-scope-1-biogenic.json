@@ -1,0 +1,82 @@
+{
+  "slug": "purchased-cbg-fuel-scope-1-biogenic",
+  "q": "How do I report compressed biogas (CBG) I buy as boiler or vehicle fuel?",
+  "title": "Reporting purchased CBG as a fuel",
+  "short": "Report the CO2 from burning CBG as biogenic, in a separate line outside the scopes. Only the methane and nitrous oxide from combustion go into Scope 1, which is a small number. Keep the supplier's invoices in kg and its gas test certificate as evidence.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories and fleets buying CBG under SATAT",
+  "sections": [
+    {
+      "h": "Why the CO2 sits outside Scope 1",
+      "p": [
+        "CBG is upgraded biogas from crop residue, press mud, dung or food waste. The carbon in it was taken from the air recently, so the GHG Protocol Corporate Standard asks you to report CO2 from burning it separately from the scopes. Methane and nitrous oxide from the same combustion are counted in Scope 1, because they add warming that the plants did not take out."
+      ]
+    },
+    {
+      "h": "The calculation",
+      "ol": [
+        "Energy in TJ = kg of CBG x net calorific value in MJ per kg / 1,000,000. Take the calorific value from the supplier's test report; IS 16087 sets the CBG specification, including a minimum methane content.",
+        "Biogenic CO2 = TJ x 54,600 kg per TJ, the IPCC 2006 default for biogas.",
+        "Scope 1 CH4 and N2O, stationary use = TJ x 1 kg CH4 and 0.1 kg N2O per TJ (IPCC 2006 defaults for biogas). Convert with one named GWP set, for example AR5: CH4 28, N2O 265.",
+        "For vehicles, use IPCC mobile combustion factors for gas vehicles and state which ones you applied."
+      ]
+    },
+    {
+      "h": "Evidence to keep",
+      "ul": [
+        "Invoices showing kg of CBG, the plant and the period.",
+        "The supplier's composition or calorific value report for the batches you bought.",
+        "A note that the gas is not blended with fossil CNG; if it is, split the volume by the stated share and treat the fossil part at 2.69 kg CO2 per kg of CNG."
+      ]
+    },
+    {
+      "h": "Do not double claim",
+      "p": [
+        "If the CBG plant sells carbon credits for the same gas under a scheme that counts the fossil fuel it displaces, ask how it avoids counting your use twice. Reporting biogenic CO2 outside your scopes is normal inventory practice; claiming a credit on top of it is not."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 10,000 kg of CBG in a boiler",
+    "lines": [
+      "Calorific value: 45 MJ per kg (an assumed value; use your supplier's report)",
+      "Energy: 10,000 x 45 = 4,50,000 MJ = 0.45 TJ",
+      "Biogenic CO2, reported separately: 0.45 x 54,600 = 24,570 kg",
+      "Scope 1 CH4: 0.45 x 1 = 0.45 kg x 28 = 12.6 kg CO2e (AR5)",
+      "Scope 1 N2O: 0.45 x 0.1 = 0.045 kg x 265 = 11.9 kg CO2e (AR5)",
+      "Scope 1 total: 12.6 + 11.9 = 24.5 kg CO2e",
+      "Same 10,000 kg as fossil CNG: 10,000 x 2.69 = 26,900 kg CO2 in Scope 1"
+    ]
+  },
+  "senseible": "Senseible classifies invoice lines named biogas or biomethane as green purchases, not fossil gas, so they add no fossil CO2 to Scope 1, and any avoided emissions it shows are kept separate and never netted. Add the biogenic CO2 line and the small CH4 and N2O figure with the method on this page.",
+  "links": [
+    {
+      "label": "Does CBG blended PNG lower Scope 1?",
+      "to": "/answers/does-cbg-blended-png-lower-scope-1"
+    },
+    {
+      "label": "Biomass and waste boilers in Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Biogenic carbon accounting",
+      "to": "/climate-intelligence/biogenic-carbon-accounting-food-textile-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately from the scopes)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 2 Stationary Combustion, Tables 2.2 and 2.3 (biogas)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC AR5 Working Group I, Chapter 8 (100-year GWP values)",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

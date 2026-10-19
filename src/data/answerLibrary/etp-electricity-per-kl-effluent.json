@@ -1,0 +1,91 @@
+{
+  "slug": "etp-electricity-per-kl-effluent",
+  "q": "How much electricity does an effluent treatment plant use per kilolitre, and how do I work out mine?",
+  "title": "ETP electricity per kilolitre treated",
+  "short": "It varies too much by effluent and design for one figure, so measure it. Electricity per kL = the ETP's daily kWh, from a sub-meter or motor kW x running hours, divided by the kL treated that day from the flow log. Multiply by 0.710 for kg CO2 per kL.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Textile, dyeing, food and chemical units running their own ETP",
+  "sections": [
+    {
+      "h": "Where the power goes in a conventional ETP",
+      "ul": [
+        "Aeration blowers or surface aerators in the biological tank, usually the largest load.",
+        "Pumps: raw effluent lift, equalisation transfer, sludge recirculation and treated water discharge.",
+        "Mixers and agitators in equalisation, flash mixing and flocculation tanks.",
+        "Dosing pumps, clarifier drives and sludge handling such as a filter press or screw press.",
+        "Tertiary steps like pressure sand and carbon filters. RO, evaporators and dryers belong to a ZLD stage and are better tracked separately."
+      ]
+    },
+    {
+      "h": "Getting daily kWh",
+      "p": [
+        "A sub-meter on the ETP panel is the best source. Read it at the same time each day.",
+        "Without one, list each motor's rated kW, its running hours from the log, and a load factor. Rated kW x hours alone overstates use because most motors run below full load; a clamp meter reading on the big blowers and pumps gives a better load factor than a guess."
+      ]
+    },
+    {
+      "h": "Getting kL treated",
+      "p": [
+        "Use the inlet or outlet flow meter reading over the same 24 hours. 1 kL is 1 cubic metre. If you only have a pump running hour log, flow = pump rated flow x hours is a rough estimate; label it as one.",
+        "Divide kWh by kL for the same period. A low flow day with blowers running flat out will show a high kWh per kL, which is a real signal, not an error."
+      ]
+    },
+    {
+      "h": "Turning it into CO2",
+      "p": [
+        "Grid electricity: kWh x 0.710 kg CO2 per kWh, the CEA weighted average factor. Power from your DG set during outages is Scope 1: litres of diesel x 2.68 kg CO2 per litre.",
+        "Methane from anaerobic zones and sludge is a separate source with its own method. Keep it out of the electricity figure."
+      ]
+    },
+    {
+      "h": "Where savings usually come from",
+      "p": [
+        "Because aeration is the biggest load, dissolved oxygen control on the blowers, fine bubble diffusers and VFDs on pumps that run against throttled valves are the first things to check. Measure kWh per kL for a month before and after any change, at similar flow."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one day at a dyeing unit's ETP (motor list method)",
+    "lines": [
+      "Aeration blower: 30 kW x 20 h x 0.8 load = 480 kWh",
+      "Pumps and mixers: 18 kW x 16 h x 0.7 load = 201.6 kWh",
+      "Clarifier drive, dosing and filter press: 7.5 kW x 8 h x 0.6 load = 36 kWh",
+      "Total: 480 + 201.6 + 36 = 717.6 kWh",
+      "Treated flow from the outlet meter: 600 kL",
+      "717.6 / 600 = 1.196 kWh per kL",
+      "1.196 x 0.710 = 0.849 kg CO2 per kL, or 717.6 x 0.710 = 509.5 kg CO2 for the day"
+    ],
+    "note": "The motor ratings, hours and load factors are illustrative; use your own log or, better, a sub-meter."
+  },
+  "senseible": "Senseible reads your electricity bills for billing period, tariff category and units, and applies 0.710 kg CO2 per kWh for location-based Scope 2. It also reads two meter readings in a photo of an ETP sub-meter and takes their difference as units; the flow figures come from your own log.",
+  "links": [
+    {
+      "label": "ZLD plant energy and CO2 per kilolitre",
+      "to": "/answers/zld-plant-energy-and-carbon-per-kl"
+    },
+    {
+      "label": "Methane from ETP wastewater",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "VFD savings on pumps and fans",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "BEE Guide Books for the National Certification Examination for Energy Managers and Energy Auditors (pumps, fans and blowers)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (stationary combustion, diesel)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

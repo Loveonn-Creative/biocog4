@@ -1,0 +1,87 @@
+{
+  "slug": "aerobic-stp-methane-nitrous-oxide",
+  "q": "Does my factory's aerobic STP emit methane or nitrous oxide that I need to report?",
+  "title": "Aerobic STP methane and nitrous oxide",
+  "short": "Yes, a little of both, and nitrous oxide is usually the bigger of the two. An aerobic sewage treatment plant you operate is a Scope 1 source. Estimate N2O from the nitrogen load and CH4 from the organic load with IPCC factors, and report the STP's electricity separately in Scope 2.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Facility managers with on-site aerobic STPs",
+  "sections": [
+    {
+      "h": "Why an aerobic plant still emits",
+      "p": [
+        "Aeration keeps most of the tank oxygen-rich, so little methane forms. Pockets of low oxygen in sludge, clarifiers and overloaded tanks still produce some. Nitrous oxide forms during nitrification and denitrification of the ammonia in sewage, which is exactly what an aerobic plant is built to do.",
+        "The IPCC 2006 Guidelines gave a methane correction factor (MCF) of 0 for a well managed centralised aerobic plant and 0.3 for an overloaded one. The 2019 Refinement drops that split, uses 0.03 for all centralised aerobic plants, and replaces the old per person N2O factor with 0.016 kg N2O-N per kg of nitrogen entering the plant."
+      ]
+    },
+    {
+      "h": "The two formulas",
+      "ul": [
+        "N2O (kg) = nitrogen in influent (kg N a year) x 0.016 x 44/28",
+        "CH4 (kg) = BOD in influent (kg a year) x 0.6 kg CH4 per kg BOD x MCF, minus any methane recovered",
+        "CO2e = N2O x 273 + CH4 x 27.0, using IPCC AR6 100-year GWPs (27.0 is the AR6 value for non-fossil methane)"
+      ],
+      "p": [
+        "Nitrogen and BOD loads come from flow x concentration. Use the monthly inlet test reports your pollution control board consent already asks for: flow in kL a day, TKN and BOD in mg per litre. One mg per litre over one kL is one gram."
+      ]
+    },
+    {
+      "h": "Which scope, and when it is someone else's",
+      "ul": [
+        "STP you own or run on site: CH4 and N2O are Scope 1, the plant's electricity is Scope 2.",
+        "STP run by an O&M contractor on your premises under your control: still yours under operational control.",
+        "Sewage sent to a municipal sewer or a common plant: Scope 3 Category 5, waste generated in operations.",
+        "Treated water you discharge carries nitrogen that emits later; the 2019 Refinement gives a separate default of 0.005 kg N2O-N per kg N for discharge to rivers, lakes or the sea."
+      ]
+    },
+    {
+      "h": "Is it material",
+      "p": [
+        "Compare it with the plant's electricity before deciding how much effort to spend. For a small colony STP it is often a few tonnes a year. Report it rather than leave it out: a verifier will ask how you treated the STP, and a short calculation with test reports answers that."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 100 kL a day STP for a factory and staff colony",
+    "lines": [
+      "Inlet TKN 40 mg per litre: 100 kL x 40 g = 4 kg N a day; x 330 days = 1,320 kg N",
+      "N2O: 1,320 x 0.016 x 44/28 = 33.19 kg; x 273 = 9,060 kg CO2e",
+      "Inlet BOD 200 mg per litre: 20 kg a day; x 330 = 6,600 kg BOD",
+      "CH4: 6,600 x 0.6 x 0.03 = 118.8 kg; x 27.0 = 3,208 kg CO2e",
+      "Electricity, from the STP sub-meter (assumed here 16,500 kWh): 16,500 x 0.710 = 11,715 kg CO2",
+      "Scope 1 from the STP: 9,060 + 3,208 = 12,268 kg CO2e, about 12.3 t"
+    ],
+    "note": "Concentrations and the electricity figure are illustrative; use your own test reports and meter. CO2e figures include methane and nitrous oxide."
+  },
+  "senseible": "Senseible reads the electricity bill or sub-meter units for the STP into Scope 2 at 0.710 kg CO2 per kWh. Process CH4 and N2O from treatment are worked out from your lab reports, as above.",
+  "links": [
+    {
+      "label": "Methane from an effluent treatment plant",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "CETP effluent: which scope",
+      "to": "/answers/cetp-effluent-emissions-which-scope"
+    },
+    {
+      "label": "Waste in Scope 3 Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 5, Chapter 6, Wastewater treatment and discharge (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5, Chapter 6",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7, Table 7.15 (GWP100)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Factors from the 2019 Refinement, Volume 5, Chapter 6 (MCF 0.03, plant N2O 0.016, discharge 0.005) and AR6 GWPs; checked 2026-10-19."
+}

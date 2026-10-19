@@ -1,0 +1,82 @@
+{
+  "slug": "how-drawing-power-is-calculated-cash-credit",
+  "q": "How does a bank calculate drawing power on my cash credit, and why did it drop?",
+  "title": "How drawing power on cash credit is set",
+  "short": "Drawing power is the value of your stock less unpaid suppliers, minus the bank's margin, plus eligible debtors minus their margin, capped at your sanctioned limit. It drops when stock falls, creditors rise, debtors age past the bank's cut-off, or your stock statement is late.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSMEs on cash credit or overdraft against stock and debtors",
+  "sections": [
+    {
+      "h": "The usual formula",
+      "ul": [
+        "Paid stock = stock value at cost or market, whichever is lower, minus sundry creditors for goods",
+        "Stock drawing power = paid stock x (1 minus stock margin)",
+        "Debtor drawing power = debtors within the bank's age limit, often 90 days, x (1 minus debtor margin)",
+        "Drawing power = stock DP + debtor DP, and you can draw the lower of drawing power and the sanctioned limit"
+      ],
+      "p": [
+        "Margins and the debtor age limit are in your sanction letter. They are the bank's choice, not set by RBI."
+      ]
+    },
+    {
+      "h": "Why it dropped",
+      "ul": [
+        "Debtors crossed the age limit and fell out of the calculation.",
+        "Creditors went up, often after a large raw material purchase on credit.",
+        "Stock fell, or the stock auditor valued slow-moving or obsolete stock lower or excluded it.",
+        "Debtors from related parties or disputed bills were excluded.",
+        "Your stock statement was late, and the bank stopped counting it."
+      ]
+    },
+    {
+      "h": "The three month rule",
+      "p": [
+        "Under RBI's prudential norms, drawing power must be based on a current stock statement, and statements older than three months make the outstanding irregular. If the balance stays above drawing power or the limit continuously for 90 days, the account is treated as out of order and can become a non-performing asset. File the monthly statement on time even when the numbers look bad."
+      ]
+    },
+    {
+      "h": "How to protect it",
+      "ol": [
+        "Collect or resolve debtors before they cross the age limit.",
+        "Time large credit purchases against expected collections.",
+        "Clear or write down dead stock yourself, with reasons, before the stock audit.",
+        "If your business has a longer credit cycle, ask the bank at renewal to revisit the age limit or margin."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month's stock statement",
+    "lines": [
+      "Stock Rs 80 lakh, unpaid creditors Rs 20 lakh: paid stock Rs 60 lakh",
+      "Stock margin 25 percent: 60 x 0.75 = Rs 45 lakh",
+      "Debtors under 90 days Rs 40 lakh, margin 40 percent: 40 x 0.60 = Rs 24 lakh",
+      "Drawing power: 45 + 24 = Rs 69 lakh; sanctioned limit Rs 60 lakh, so you can draw Rs 60 lakh",
+      "Next month Rs 15 lakh of debtors pass 90 days: debtor DP 25 x 0.60 = Rs 15 lakh; drawing power 45 + 15 = Rs 60 lakh"
+    ],
+    "note": "Margins and the 90 day cut-off are illustrative; use those in your sanction letter."
+  },
+  "senseible": "Senseible reads purchase and energy invoices into dated carbon records, and its green loan readiness check organises them for green loan and buyer requests.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Buyer sustainable supply chain finance",
+      "to": "/answers/buyer-sustainable-supply-chain-finance"
+    },
+    {
+      "label": "Climate finance for MSMEs",
+      "to": "/climate-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Master Circular, Prudential norms on Income Recognition, Asset Classification and Provisioning pertaining to Advances, 1 October 2021, as updated (drawing power from stock statements; out of order accounts) (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Three month stock statement rule and 90 day out of order test from RBI's prudential norms; margins and debtor age limits are set by each bank. Checked 2026-10-19."
+}

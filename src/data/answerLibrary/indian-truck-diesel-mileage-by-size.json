@@ -1,0 +1,85 @@
+{
+  "slug": "indian-truck-diesel-mileage-by-size",
+  "q": "How many km per litre should a loaded Indian truck give by size, and how do I check a transporter's diesel claim?",
+  "title": "Check a transporter's truck diesel claim",
+  "short": "There is no single official km per litre for a loaded truck; it depends on gross weight, load, route, speed and driving. Check a claim by working out km per litre from full-tank fills and odometer readings, then comparing it with your own trips on the same lane in the same truck class.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Logistics managers verifying freight emissions and fuel surcharges",
+  "sections": [
+    {
+      "h": "Measure km per litre properly",
+      "ol": [
+        "Fill the tank full at the start and note the odometer.",
+        "At the end, fill full again at the same pump if possible and note the odometer.",
+        "km per litre = km between fills / litres put in at the second fill.",
+        "Repeat over several trips. One trip can mislead because of traffic, ghats, loading delays or a half-full tank."
+      ]
+    },
+    {
+      "h": "What moves the number",
+      "ul": [
+        "Gross vehicle weight and load: a loaded trip uses more diesel than the empty return.",
+        "Route: hill sections, city stretches and bad roads cut km per litre.",
+        "Speed and idling: long waits at gates and tolls with the engine running burn diesel for zero km.",
+        "Vehicle: axle configuration, tyre pressure, engine age and whether it is BS IV or BS VI."
+      ]
+    },
+    {
+      "h": "Red flags in a diesel claim",
+      "ul": [
+        "Litres billed that imply a much lower km per litre than your history for the same lane and class.",
+        "Distance that exceeds the e-way bill or GPS route by a wide margin.",
+        "Round-number litres on every trip, or fills with no pump receipt.",
+        "Identical claims for loaded and empty legs."
+      ]
+    },
+    {
+      "h": "A cross-check through CO2",
+      "p": [
+        "Litres x 2.68 kg CO2 per litre gives tank-to-wheel CO2. Divide by tonnes x km for kg CO2 per tonne-km. The default per tonne-km factors for India are well-to-wheel CO2e and include fuel production and typical empty running, so a tank-to-wheel figure from a fair claim should sit below the default for that truck class. A result well above it is worth questioning; a result below it does not prove the claim is right."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 1,450 km lane in a tractor-trailer carrying 25 t",
+    "lines": [
+      "Transporter claims 580 litres: 1,450 / 580 = 2.5 km per litre",
+      "Your last ten trips on this lane in the same class averaged 3.4 km per litre (your records)",
+      "Expected litres: 1,450 / 3.4 = 426 litres, so the claim is 580 / 426 = 1.36, or 36 percent higher",
+      "CO2 at the claim: 580 x 2.68 = 1,554 kg; at your average: 426 x 2.68 = 1,142 kg",
+      "Per tonne-km at the claim: 1,554 / (25 x 1,450) = 0.043 kg CO2, below the 0.0551 kg CO2e well-to-wheel default for a tractor-trailer"
+    ],
+    "note": "The CO2 cross-check passes here, yet the claim is still 36 percent above your own history. Your lane history is the stronger test."
+  },
+  "senseible": "Senseible reads diesel invoices and fuel slips at 2.68 kg CO2 per litre, and a quantity that looks abnormal costs 25 points in its rule checks, so the line does not pass as Verified without review. Its logistics calculator gives per tonne-km figures by Indian truck class for comparison.",
+  "links": [
+    {
+      "label": "Truck freight factor per tonne-km, India",
+      "to": "/answers/truck-freight-emission-factor-india"
+    },
+    {
+      "label": "Use e-way bill distance for freight",
+      "to": "/answers/use-e-way-bill-distance-for-freight-emissions"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 3 Mobile Combustion (diesel default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GLEC Framework, logistics emissions accounting method",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

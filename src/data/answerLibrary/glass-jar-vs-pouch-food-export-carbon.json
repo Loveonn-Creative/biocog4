@@ -1,0 +1,81 @@
+{
+  "slug": "glass-jar-vs-pouch-food-export-carbon",
+  "q": "Glass jar or retort pouch for pickles and sauces: how much carbon does the switch change per unit shipped?",
+  "title": "Glass jar or retort pouch: carbon per unit",
+  "short": "Switching from a glass jar to a retort pouch usually cuts packaging carbon per unit by most of the jar's footprint, because a pouch weighs a few grams against a jar's few hundred. Work it out as pack mass x material factor, plus the pack's own share of road and sea freight, for each option.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Food processors exporting pickles, sauces, chutneys and ready meals",
+  "sections": [
+    {
+      "h": "What to include for each pack",
+      "ul": [
+        "Primary pack: jar and lid, or pouch, by weighed mass per unit.",
+        "Secondary pack: cartons and dividers. Glass often needs heavier cartons and partitions, so weigh those too.",
+        "Freight of the pack itself: pack mass x tonne-km x factor for each leg, factory to port, sea, port to buyer. The food weighs the same in both, so it cancels out.",
+        "Process differences: retort steam per batch if it differs between the two packs. Measure it rather than assume.",
+        "Losses: breakage in glass and pouch leaks both waste product, which carries its own footprint."
+      ]
+    },
+    {
+      "h": "Why glass mass dominates",
+      "p": [
+        "A jar for a 500 g pickle weighs far more than the pouch for the same fill. Even though a multilayer laminate has a higher footprint per kg than glass, its mass per unit is so much smaller that the jar almost always comes out higher. Sea freight per tonne-km is low, so freight usually adds less than the material itself; on air freight, the gap widens sharply."
+      ]
+    },
+    {
+      "h": "What the pouch costs you elsewhere",
+      "p": [
+        "Glass is widely recycled and can be refilled; most retort laminates of PET, aluminium foil and polypropylene are not recyclable in practice. If your buyer asks for end-of-life emissions or recyclability, report them alongside the cradle-to-gate result rather than hide the trade-off."
+      ]
+    },
+    {
+      "h": "Making a public claim",
+      "p": [
+        "If you plan to tell customers that the pouch has a lower footprint, ISO 14044 treats that as a comparative assertion. Both packs need the same functional unit, such as 500 g of product delivered to the buyer's warehouse, the same boundary and data quality, and a public comparison needs an independent critical review panel."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 500 g of pickle, India to a European port (factors assumed)",
+    "lines": [
+      "Glass: jar 250 g at an assumed 1.0 kg CO2e per kg = 0.25 kg; steel lug cap 20 g at an assumed 2.0 = 0.04 kg; pack total 0.29 kg CO2e",
+      "Glass freight: 0.00027 t x 500 km road x 0.0902 = 0.012 kg; 0.00027 t x 11,000 km sea x an assumed 0.01 = 0.030 kg",
+      "Glass total: 0.29 + 0.012 + 0.030 = 0.33 kg CO2e per unit",
+      "Pouch: 12 g at an assumed 8.0 kg CO2e per kg = 0.096 kg; freight 0.0005 + 0.0013 = 0.002 kg; total 0.098 kg CO2e",
+      "Saving: 0.33 minus 0.098 = about 0.23 kg CO2e per unit",
+      "On a 20,000 unit container: 20,000 x 0.234 = about 4,680 kg CO2e"
+    ],
+    "note": "The road factor is the Smart Freight Centre India default for a 12 to 20 t truck; the material and sea factors and the sea distance are placeholders. Use your supplier footprints and your forwarder's lane factor."
+  },
+  "senseible": "Senseible reads the packaging purchase invoices and freight bills you would use for the weights and distances, and keeps them as evidence for the comparison.",
+  "links": [
+    {
+      "label": "Packaging footprint on export shipments",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "Packaging end of life for food exporters",
+      "to": "/answers/packaging-end-of-life-emissions-food-exporters"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006, Life cycle assessment, requirements and guidelines (comparative assertions) (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Smart Freight Centre, India Default GHG Emission Values V1.0 (May 2025), road table; GLEC Framework v3.0",
+      "url": "https://www.smartfreightcentre.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

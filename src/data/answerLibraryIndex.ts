@@ -59,6 +59,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "aerobic-stp-methane-nitrous-oxide",
+  "q": "Does my factory's aerobic STP emit methane or nitrous oxide that I need to report?",
+  "title": "Aerobic STP methane and nitrous oxide",
+  "short": "Yes, a little of both, and nitrous oxide is usually the bigger of the two. An aerobic sewage treatment plant you operate is a Scope 1 source. Estimate N2O from the nitrogen load and CH4 from the organic load with IPCC factors, and report the STP's electricity separately in Scope 2.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "afolu-non-permanence-risk-rating",
   "q": "How is the non-permanence risk rating for a forestry or agroforestry project scored?",
   "title": "How the AFOLU risk rating is scored",
@@ -345,6 +353,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "An exclusion list names activities a lender will not finance at all. Lists used for MSME loans, especially credit lines funded by development banks, usually exclude forced or harmful child labour, illegal products, banned chemicals and pesticides, ozone-depleting substances, unbonded asbestos, trade in protected wildlife, weapons, tobacco and gambling. Many now restrict new coal power.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "bank-rejected-msme-loan-reason",
+  "q": "Does a bank have to tell me why it rejected my MSME loan, and can I appeal?",
+  "title": "Bank rejected my MSME loan: your rights",
+  "short": "Yes. RBI's fair practices rules require lenders to give the main reasons for rejecting any loan application in writing. You can complain to the bank first and, if it does not reply within 30 days or you are unhappy with the reply, go to the RBI Ombudsman, which handles service failures but not the lending decision itself.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "baseline-boiler-efficiency-ccts-bm-t-006",
@@ -651,6 +667,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "bulk-diesel-invoice-kilolitres-15c",
+  "q": "My bulk diesel invoice is in kilolitres at 15 C. How do I get the right litres and CO2?",
+  "title": "Bulk diesel invoice in kL at 15 C",
+  "short": "Multiply the kilolitres by 1,000 to get litres, and use that 15 C volume as printed. Then multiply by 2.68 kg CO2 per litre, or for more precision multiply litres by the printed density to get kg and use 3.19 kg CO2 per kg. Do not swap in your tank dip at ambient temperature.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "bulk-milk-cooler-electricity-per-litre",
+  "q": "How much electricity does a bulk milk cooler use per litre chilled, and what CO2 is that?",
+  "title": "Bulk milk cooler power and CO2 per litre",
+  "short": "Work it out from the heat removed: litres x 1.03 kg per litre x 3.93 kJ per kg per degree x the temperature drop, divided by the COP and by 3,600 for kWh. Chilling 1,000 litres from 35 C to 4 C at a COP of 2.5 takes about 14 kWh, or about 9.9 kg CO2 on grid power.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "business-car-travel-which-scope",
   "q": "Is fuel for company cars, employee-owned cars and taxis Scope 1 or Scope 3?",
   "title": "Company cars, own cars, taxis: which scope?",
@@ -955,6 +987,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "carbon-vs-co2-tonnes-conversion",
+  "q": "My supplier reported tonnes of carbon, not CO2. How do I convert it?",
+  "title": "Convert tonnes of carbon to CO2",
+  "short": "Multiply tonnes of carbon by 44/12, which is 3.667, to get tonnes of CO2. The 44 and 12 are the molecular weight of CO2 and the atomic weight of carbon. To go back, multiply tonnes of CO2 by 12/44, or 0.273. First confirm the supplier really meant carbon.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "cashew-processing-carbon-footprint-per-kg",
   "q": "How do I calculate the carbon footprint of cashew kernels when the boilers burn cashew shells?",
   "title": "Cashew kernel footprint with shell boilers",
@@ -1230,9 +1270,9 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "slug": "cgtmse-collateral-free-loan-limit",
   "q": "How much can an MSME borrow without collateral in India?",
   "title": "Collateral-free MSME loan limit in India",
-  "short": "A micro or small enterprise can borrow up to Rs 10 lakh without collateral under RBI rules, and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under the CGTMSE scheme. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
+  "short": "A micro or small enterprise can borrow up to Rs 20 lakh without collateral under RBI rules (loans sanctioned from 1 April 2026), and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under CGTMSE. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
   "topic": "markets",
-  "reviewed": "2026-10-16"
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "chain-of-custody-mass-balance-vs-segregation",
@@ -1305,6 +1345,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not reliably. Published comparisons point both ways, because the tanning agent is usually a smaller part of leather's footprint than the share of the animal given to the hide and the tannery's energy. Compare the two only per square metre of finished leather, with the same allocation rule and boundary, using each tannery's own fuel, power and chemical data.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "cibil-msme-rank-cmr-explained",
+  "q": "What is the CIBIL MSME Rank (CMR), and what score do banks look for?",
+  "title": "CIBIL MSME Rank (CMR) explained",
+  "short": "The CIBIL MSME Rank is a rating from CMR-1 to CMR-10 that TransUnion CIBIL gives a business from its credit record. CMR-1 is the least risky, CMR-10 the most likely to turn into a bad loan within a year. No single cut-off applies: each bank sets its own, usually alongside the promoter's personal CIBIL score.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "climate-risk-assessment-for-small-business",
@@ -1499,6 +1547,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "cooling-tower-energy-savings-factory",
+  "q": "How much electricity do cooling tower fans and pumps use, and which fixes save the most?",
+  "title": "Cooling tower fans and pumps: what to fix",
+  "short": "Measure it: cooling tower energy is fan kW plus pump kW, times running hours. The circulating pump is usually the bigger load. The fixes that save most are removing throttling on the pump, switching fans by cold water temperature instead of running them all the time, and keeping fill and nozzles clean.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "copper-cable-carbon-footprint-per-km",
   "q": "How do I calculate the carbon footprint of copper cable per km from conductor size and insulation?",
   "title": "Copper cable carbon footprint per km",
@@ -1619,6 +1675,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "dedicated-freight-corridor-emissions-saving",
+  "q": "Does shifting freight to the Dedicated Freight Corridor cut emissions, and how do I calculate the saving?",
+  "title": "Dedicated Freight Corridor: the CO2 saving",
+  "short": "Yes. Trains on the Dedicated Freight Corridors run on electric traction, so the corridor leg emits roughly the electricity it uses times the grid factor, well below a truck per tonne-km. Calculate it as corridor tonne-km x kWh per tonne-km x 0.710, plus the truck legs, and compare with all-road.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "deduct-carbon-credits-from-scope-1-brsr",
   "q": "Can I deduct carbon credits I bought from my Scope 1 and 2 totals in BRSR or for a buyer?",
   "title": "Can carbon credits reduce my Scope 1 and 2?",
@@ -1715,6 +1779,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "diesel-or-kerosene-as-cleaning-solvent",
+  "q": "We use diesel or kerosene to wash parts, not to burn. Does it count in Scope 1?",
+  "title": "Diesel or kerosene used to wash parts",
+  "short": "No combustion emissions arise if you never burn it, so diesel or kerosene used only to wash parts is not Scope 1 fuel combustion. Take it out of your fuel total. The part that evaporates oxidises to CO2 later; most inventories leave that out of Scope 1 or show it as a separate memo line.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "diesel-pump-to-solar-pump-co2-saving",
   "q": "How much CO2 does replacing a diesel pump set with a solar pump save under PM-KUSUM?",
   "title": "Diesel to solar pump: CO2 saved",
@@ -1785,6 +1857,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "No. Volatile organic compounds are not among the seven greenhouse gases the GHG Protocol requires, so evaporated solvent does not go into Scope 1. You may report the CO2 they form later in air as a separate memo item, and you still report VOCs as air pollutants under BRSR and your consent.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "documents-for-msme-machinery-term-loan",
+  "q": "What documents will a bank ask for an MSME term loan to buy new machinery?",
+  "title": "Documents for an MSME machinery loan",
+  "short": "Expect four sets: identity and registration papers (KYC, Udyam, GST), financial records (audited accounts, tax returns and bank statements for two to three years), the project file (machinery quotations, project report, projected financials) and security papers if the bank asks for them. Each bank's checklist decides the final list.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "does-a-green-loan-need-external-review",
@@ -2067,6 +2147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "dscr-banks-want-msme-term-loan",
+  "q": "What debt service coverage ratio does a bank want for an MSME term loan?",
+  "title": "DSCR a bank wants for an MSME term loan",
+  "short": "Most Indian banks look for an average debt service coverage ratio of about 1.25 to 1.5 over the loan period. That is lender practice, not an RBI rule: each bank sets its own threshold in its credit policy and may ask more of a new unit or a volatile sector.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "dual-fuel-dg-set-gas-kit-emissions-saving",
   "q": "Does converting a diesel generator to dual fuel with a gas kit cut CO2, and by how much?",
   "title": "Dual-fuel DG set: how much CO2 it saves",
@@ -2163,6 +2251,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "emissions-form-unit-mistakes-kg-tonnes-co2e",
+  "q": "My buyer's emissions form wants metric tonnes CO2e. What unit mistakes should I avoid?",
+  "title": "Unit mistakes on a buyer's emissions form",
+  "short": "Divide kilograms by 1,000 to get metric tonnes, never enter kg in a tonnes field, and check whether the form means metric tonnes or US short tons. Say whether your figure is CO2 or CO2e. Watch for lakh-style commas, MtCO2e meaning million tonnes, and a reporting year that differs from yours.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "emissions-saved-by-waste-heat-recovery",
   "q": "How do I calculate the emissions saved by a waste heat recovery system?",
   "title": "Emissions saved by waste heat recovery",
@@ -2177,6 +2273,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Run a short survey asking each worker's usual mode and one-way distance, scale the answers up to all 200 workers, then multiply kilometres per mode by working days and a per-km factor. This is the distance-based method for Scope 3 Category 7. Label the result as a survey-based estimate.",
   "topic": "accounting",
   "reviewed": "2026-10-15"
+ },
+ {
+  "slug": "energize-pharma-supplier-renewable-electricity",
+  "q": "My pharma customer invited us to the Energize programme. What is it and what do I commit to?",
+  "title": "Energize programme for pharma suppliers",
+  "short": "Energize is a programme run by Schneider Electric with large pharmaceutical companies, launched in November 2021, to help their suppliers buy renewable electricity. It offers education and access to individual or group renewable power deals. Joining is free for suppliers of the sponsoring companies; read the participation terms before you sign.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "energy-efficiency-carbon-credits-for-factories",
@@ -2201,6 +2305,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Compare the annual EMI with the measured annual saving in rupees. A saving of at least 1.3 times the EMI, our rule of thumb rather than a bank norm, leaves room for a bad year. Use your own before and after bills, not the vendor's estimate, and test a 30% shortfall.",
   "topic": "markets",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "eps-thermocol-vs-moulded-pulp-packaging-carbon",
+  "q": "Is moulded pulp lower carbon than EPS (thermocol) for protective export packaging?",
+  "title": "Moulded pulp or EPS: which is lower carbon?",
+  "short": "Not always. Moulded pulp is lower carbon only if the pulp part is not much heavier than the EPS part and the drying energy is modest. Compare per protective insert, not per kg: insert weight x material factor, plus drying fuel and power for pulp, plus the extra weight you ship.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "equipment-lessor-category-13",
@@ -2257,6 +2369,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "A verifier accepts an estimate when the note states what data is missing and why, the method used, every input and its source, the period, the estimate's share of the total, an uncertainty range, and who approved it. It should let someone else repeat the calculation and get the same number.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "etp-electricity-per-kl-effluent",
+  "q": "How much electricity does an effluent treatment plant use per kilolitre, and how do I work out mine?",
+  "title": "ETP electricity per kilolitre treated",
+  "short": "It varies too much by effluent and design for one figure, so measure it. Electricity per kL = the ETP's daily kWh, from a sub-meter or motor kW x running hours, divided by the kL treated that day from the flow log. Multiply by 0.710 for kg CO2 per kL.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "etp-sludge-and-wastewater-scope-3-textiles",
@@ -2539,6 +2659,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "fastag-statement-freight-distance-evidence",
+  "q": "Can I use FASTag toll statements to prove the distance my trucks travelled for freight emissions?",
+  "title": "FASTag statements as freight distance proof",
+  "short": "Yes, as evidence of the route, not as a distance on its own. A FASTag statement shows which toll plazas the truck crossed and when. Measure the map distance through those plazas, add the legs before the first and after the last, and cross-check the total with the e-way bill or trip sheet.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "ferrochrome-co2-per-tonne-cbam",
   "q": "What are the embedded emissions of ferrochrome or ferromanganese per tonne under CBAM?",
   "title": "Ferrochrome and ferromanganese CBAM CO2",
@@ -2561,6 +2689,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes, when the refill replaces gas that was released. The kilograms refilled after a discharge or leak are a Scope 1 fugitive emission. CO2 extinguishers count kg for kg. HFC agents such as HFC-227ea (FM-200) count at their GWP and can be material. Dry powder, water, foam and FK-5-1-12 add nothing material.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "firewood-by-quintal-emissions",
+  "q": "How do I calculate emissions from firewood bought by the quintal or tractor-load?",
+  "title": "Firewood by the quintal: emissions maths",
+  "short": "Convert quintals to kg (1 quintal = 100 kg), multiply by the wood's calorific value to get energy, then apply IPCC factors. The CO2 from wood is biogenic and reported separately; only the methane and nitrous oxide go into Scope 1. For a tractor-load, weigh it at a weighbridge rather than guess.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "fishing-vessel-fuel-emissions-per-tonne-catch",
@@ -2795,6 +2931,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "glass-jar-vs-pouch-food-export-carbon",
+  "q": "Glass jar or retort pouch for pickles and sauces: how much carbon does the switch change per unit shipped?",
+  "title": "Glass jar or retort pouch: carbon per unit",
+  "short": "Switching from a glass jar to a retort pouch usually cuts packaging carbon per unit by most of the jar's footprint, because a pouch weighs a few grams against a jar's few hundred. Work it out as pack mass x material factor, plus the pack's own share of road and sea freight, for each option.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "gold-standard-microscale-projects",
   "q": "What is a Gold Standard microscale project and does it cut costs for small emitters?",
   "title": "Gold Standard microscale projects",
@@ -2923,6 +3067,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "green-open-access-charges-india",
+  "q": "What charges do I pay on green energy open access power: wheeling, cross-subsidy surcharge, additional surcharge and banking?",
+  "title": "Green open access charges, line by line",
+  "short": "On green open access power you pay the generator's tariff plus transmission and wheeling charges, losses deducted in units, the cross-subsidy surcharge, an additional surcharge unless you already pay the discom's fixed charges, and a banking charge on units you bank. Your state commission sets each value, usually in its yearly tariff order.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "green-shipping-book-and-claim-scope-3",
   "q": "Can an exporter count green shipping certificates in Scope 3?",
   "title": "Green shipping certificates in Scope 3",
@@ -3043,6 +3195,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "gujarat-discom-green-tariff-industries",
+  "q": "How does the green power tariff work for factories on DGVCL, MGVCL, PGVCL or UGVCL in Gujarat?",
+  "title": "Gujarat discom green power tariff",
+  "short": "You give your discom one month's written notice, then pay a green power tariff of Rs 0.75 per kWh on top of your normal tariff for the units you take as green. GERC set that rate for 2026 to 27 for EHV, HT and LT consumers of DGVCL, MGVCL, PGVCL and UGVCL. Your connection and meter stay the same.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "hand-knotted-carpet-carbon-footprint-per-square-metre",
   "q": "How do I calculate the carbon footprint of a hand-knotted carpet per square metre?",
   "title": "Hand-knotted carpet footprint per m2",
@@ -3123,6 +3283,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "hot-water-saved-co2-per-kl",
+  "q": "How much fuel and CO2 do I save for every kilolitre of hot process water I stop using?",
+  "title": "Fuel and CO2 saved per kL of hot water",
+  "short": "Each kilolitre heated by 45 degrees C needs about 188 MJ of heat. On an LPG boiler at 85 percent efficiency that is about 4.7 kg of LPG and 14 kg of CO2 saved per kL. Work it out from kL x 4.186 x temperature rise, divided by boiler efficiency and the fuel's energy content.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "hotel-stay-emissions-per-night",
   "q": "How do I calculate emissions from hotel stays on business trips?",
   "title": "Hotel stay emissions per room night",
@@ -3171,12 +3339,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "how-drawing-power-is-calculated-cash-credit",
+  "q": "How does a bank calculate drawing power on my cash credit, and why did it drop?",
+  "title": "How drawing power on cash credit is set",
+  "short": "Drawing power is the value of your stock less unpaid suppliers, minus the bank's margin, plus eligible debtors minus their margin, capped at your sanctioned limit. It drops when stock falls, creditors rise, debtors age past the bank's cut-off, or your stock statement is late.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "how-is-cdp-score-calculated",
   "q": "How is a CDP climate score calculated, from D to A?",
   "title": "How a CDP climate score is calculated",
   "short": "CDP scores each answer at four levels: Disclosure (D), Awareness (C), Management (B) and Leadership (A). Your points at each level are turned into a percentage, you must pass one level to be scored on the next, and an A also needs essential criteria such as third-party verification of emissions.",
   "topic": "regulation",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "how-long-should-bank-take-msme-loan",
+  "q": "How long can a bank take to decide on my MSME loan application?",
+  "title": "How long a bank can take on an MSME loan",
+  "short": "There is no single legal deadline. RBI tells banks to set timelines for deciding MSME loan applications, disclose them and monitor applications pending beyond them. Many banks publish two weeks for limits up to Rs 5 lakh, three weeks up to Rs 25 lakh and six weeks above, counted from a complete application.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "how-long-to-get-carbon-credits-issued",
@@ -3257,6 +3441,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Under Verra, a land-based project puts a share of each verification's carbon stock gain into a shared buffer pool, equal to its non-permanence risk rating; a project rated above 60 percent fails. The buffer exists because trees, soil and mangroves can lose stored carbon later, through fire, drought or land clearing.",
   "topic": "markets",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "how-much-solar-power-can-i-bank-with-discom",
+  "q": "How much of my open access or captive renewable power can I bank with the discom, and for how long?",
+  "title": "How much renewable power can you bank?",
+  "short": "Under the Green Energy Open Access Rules, 2022, the discom must let you bank at least 30 percent of the electricity you buy from it each month. Banked units are settled within a banking cycle your state commission sets, and the commission also sets the banking charge. Your state regulation decides the exact limit.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "how-non-eu-producer-registers-cbam-registry",
@@ -3547,6 +3739,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "how-treds-invoice-discounting-works",
+  "q": "How does TReDS invoice discounting work for an MSME supplier, and what does it cost?",
+  "title": "How TReDS invoice discounting works",
+  "short": "On TReDS, you upload an invoice, your buyer accepts it online, and banks and NBFCs bid to pay you early at a discount. You get the money without recourse to you, and the buyer pays the financier on the due date. Your cost is the discount plus platform fees.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "hsn-code-emission-factor-mapping",
   "q": "Can I use HSN codes on invoices to assign emission factors?",
   "title": "Mapping HSN codes to emission factors",
@@ -3667,6 +3867,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ikea-supplier-climate-requirements-renewable-electricity",
+  "q": "What does IKEA require from suppliers on renewable electricity and coal, and what do I need to show?",
+  "title": "IKEA supplier renewable electricity and coal",
+  "short": "IKEA's supplier code, IWAY, sets 100 percent renewable electricity as an Advanced criterion, which IKEA said in 2021 would become a minimum later. For Indian textile suppliers it has also called for coal and oil fuels on site to go by 2030 at the latest. Be ready to show electricity, fuel use and renewable supply evidence.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "incoterms-freight-scope-3-category-4-or-9",
   "q": "Who reports freight emissions under FOB, CIF or ex-works: Category 4 or Category 9?",
   "title": "Incoterms and freight: Category 4 or 9?",
@@ -3771,6 +3979,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "indian-truck-diesel-mileage-by-size",
+  "q": "How many km per litre should a loaded Indian truck give by size, and how do I check a transporter's diesel claim?",
+  "title": "Check a transporter's truck diesel claim",
+  "short": "There is no single official km per litre for a loaded truck; it depends on gross weight, load, route, speed and driving. Check a claim by working out km per litre from full-tank fills and odometer readings, then comparing it with your own trips on the same lane in the same truck class.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "indirect-use-phase-emissions-optional",
   "q": "Do I have to report indirect use-phase emissions, such as the hot water used to wash garments I sell?",
   "title": "Indirect use-phase emissions: required?",
@@ -3825,6 +4041,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Calculate it as resin used per kg of good parts times the resin's cradle-to-gate factor, plus the electricity per kg of good parts times the grid factor. The resin usually makes up most of the total, so the polymer grade, runner waste and reject rate matter more than the machine.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "inland-waterway-vs-road-freight-emissions-india",
+  "q": "Is moving cargo on National Waterway 1 lower carbon than trucking it, and how do I calculate it?",
+  "title": "National Waterway 1 or road: which emits less?",
+  "short": "Usually yes for full bulk loads, but check your lane. A barge emits far less per tonne-km than a truck, while the river route on the Ganga is longer than the highway and trucks still run to and from the terminals. Add up every leg in tonne-km x factor and compare.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "intermodal-container-emissions-rail-road-sea",
@@ -4003,6 +4227,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "ists-charge-waiver-green-open-access",
+  "q": "Is the ISTS charge waiver still available if I buy renewable power from another state?",
+  "title": "ISTS charge waiver for inter-state green power",
+  "short": "Only in part. Solar and wind projects commissioned by 30 June 2025 keep the full waiver of inter-state transmission (ISTS) charges for 25 years. Projects commissioned from 1 July 2025 pay a rising share: 25 percent in the first year, 50 percent in the second, 75 percent in the third, and full charges from 1 July 2028.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "it-hardware-laptops-category-2-emissions",
   "q": "How do I estimate Category 2 emissions for laptops, servers and other IT hardware we buy?",
   "title": "Category 2 emissions for laptops and servers",
@@ -4035,12 +4267,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "karnataka-green-tariff-bescom-factories",
+  "q": "Can a factory on BESCOM or another Karnataka discom buy power at the green tariff, and what does it add to the bill?",
+  "title": "Karnataka green tariff for factories",
+  "short": "Yes, if you are an HT industrial or HT commercial consumer. KERC lets HT consumers of BESCOM, MESCOM, HESCOM, GESCOM and CESC opt for green power at an extra charge per kWh over the normal tariff, 50 paise in its orders up to FY2024-25. The extra cost is green units times that charge.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "key-facts-statement-msme-loan",
+  "q": "What is the Key Facts Statement my bank must give for an MSME loan, and what should I check on it?",
+  "title": "Key Facts Statement for an MSME loan",
+  "short": "A Key Facts Statement is a standard summary RBI requires lenders to give before you sign a retail or MSME term loan sanctioned from 1 October 2024. It shows the annual percentage rate, all fees, the repayment schedule and grievance contacts. Check the APR, the fee list and the EMI table first.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "knitted-fabric-carbon-footprint-per-kg",
   "q": "What is the carbon footprint per kg of knitted fabric from a Tiruppur knitting and dyeing unit?",
   "title": "Carbon footprint per kg of knitted fabric",
   "short": "Add three parts per kg of finished fabric: the yarn's footprint, scaled up for knitting and dyeing losses; electricity for knitting, dyeing and the ZLD plant at 0.710 kg CO2 per kWh; and the boiler fuel. With firewood, report its CO2 separately as biogenic and count only methane and nitrous oxide in Scope 1.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "konkan-railway-ro-ro-truck-emissions",
+  "q": "Does putting loaded trucks on Konkan Railway's Ro-Ro train cut freight emissions, and by how much?",
+  "title": "Konkan Railway Ro-Ro: CO2 saved per truck",
+  "short": "Yes. On the rail section the truck's engine is off, and the Konkan route is fully electrified, so you swap diesel for a share of grid electricity. The saving per trip is the diesel the truck would have burnt on that stretch x 2.68 kg CO2 per litre, minus its share of the train's electricity x 0.710.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "korean-buyer-supplier-emissions-request",
@@ -4147,12 +4403,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "leather-working-group-audit-energy-carbon",
+  "q": "What energy and carbon data does a Leather Working Group audit check at a tannery?",
+  "title": "LWG audit: energy data a tannery needs",
+  "short": "The LWG audit protocol has an energy consumption section that scores your energy use per unit produced, usually per square metre of leather, over the last 24 months. It counts all energy on site, subcontracted operations and effluent treatment, and credits renewable energy generated on site. Have two years of fuel invoices, bills and production records ready.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "led-retrofit-energy-co2-savings",
   "q": "How do I calculate the electricity and CO2 saved by an LED lighting retrofit in a factory or warehouse?",
   "title": "LED retrofit: kWh and CO2 saved",
   "short": "kWh saved = (old fitting watts including ballast minus new LED watts) x number of fittings x burning hours a year / 1,000. Multiply kWh saved by 0.710 kg CO2 per kWh for location-based Scope 2 and by your tariff for rupees. Measure the old system watts, not just the lamp rating.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "lidl-supplier-science-based-target-requirement",
+  "q": "Lidl wants its suppliers to set science-based targets. Does that apply to an Indian food or textile supplier?",
+  "title": "Lidl's supplier climate targets and India",
+  "short": "It applies if Lidl, its buying office or your importer asks you. Lidl expects the suppliers behind 75% of its product-related Scope 3 emissions to have SBTi-aligned targets by the end of its 2026 financial year, so the largest emitters are asked first. Small suppliers can usually use SBTi's SME route, starting from a Scope 1 and 2 baseline.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "lignite-emission-factor-india",
@@ -4267,6 +4539,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "marketplace-logistics-order-emissions",
+  "q": "How do I estimate emissions for orders shipped through Amazon, Flipkart or a 3PL marketplace logistics service?",
+  "title": "Emissions from marketplace-shipped orders",
+  "short": "Multiply each order's weight in tonnes by the distance for its delivery zone and by a road freight factor per tonne-km, then add up the month. Take weight and zone from the marketplace settlement report. If you only have the fees, use a spend-based estimate and label it, because it is much less precise.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "maximum-demand-charges-peak-shaving",
   "q": "How are maximum demand charges calculated on an HT bill, and does peak shaving cut them?",
   "title": "Maximum demand charges and peak shaving",
@@ -4347,6 +4627,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "msedcl-green-power-tariff-how-to-apply",
+  "q": "How do I opt for MSEDCL's green power tariff, and what extra do I pay per unit?",
+  "title": "MSEDCL green power tariff: how to opt in",
+  "short": "Apply on MSEDCL's online green power portal, choosing 25, 50, 75 or 100 percent of your consumption for at least a year. You pay a premium per kWh on top of your normal tariff. MERC's 2025 tariff order cut it from Rs 0.66 to Rs 0.25 per kWh; confirm the rate on your bill.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "msme-climate-transition-plan-what-to-include",
   "q": "What should a supplier's climate transition plan include when a buyer asks for one?",
   "title": "Supplier transition plan: what to include",
@@ -4355,12 +4643,36 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "msme-loan-rate-linked-to-repo-rate",
+  "q": "Why is my MSME loan rate linked to the repo rate, and when should it fall after an RBI rate cut?",
+  "title": "Repo-linked MSME loans after a rate cut",
+  "short": "RBI requires banks to link new floating rate loans to micro and small enterprises to an external benchmark, most often the repo rate, so rate changes pass through. After a cut, your rate falls on your loan's next reset date, which must come at least once every three months.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "msme-working-capital-20-percent-turnover",
+  "q": "How much working capital can an MSME get from a bank: is it 20 percent of turnover?",
+  "title": "MSME working capital: 20% of turnover?",
+  "short": "Often, yes. For micro and small enterprises needing fund-based working capital up to Rs 5 crore, banks assess the limit at a minimum of 20 percent of projected annual turnover, with you bringing 5 percent as margin. Above that, or if your operating cycle needs more, banks use other methods.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "multi-page-ht-electricity-bill-carbon",
   "q": "My HT electricity bill runs to several pages with ToD slabs, demand charges and solar adjustments. Which numbers go into the carbon calculation?",
   "title": "Multi-page HT bill: which numbers count",
   "short": "Only the electricity you consumed, in kWh, goes into the carbon calculation: the units recorded at your meter for the month, including any open access or captive units adjusted against it. Demand in kVA, time of day rates, power factor, fuel adjustment and duty change the rupee total, not the CO2.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "multilayer-flexible-pouch-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a multilayer laminated pouch per kg or per thousand pouches?",
+  "title": "Multilayer pouch carbon footprint",
+  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "multiple-air-compressors-sequencing-savings",
@@ -4377,6 +4689,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work it out in two parts: your cutting and polishing energy per polished carat, from electricity and DG fuel divided by polished carats, plus the mining footprint of the rough you used, from the miner's published figure per carat recovered, scaled up for the weight lost in cutting.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "natural-gas-scm-vs-nm3-conversion",
+  "q": "My gas invoice says SCM but the factor is per Nm3. Does the difference matter?",
+  "title": "Gas bill in SCM, factor per Nm3",
+  "short": "Yes, by about 5.5 percent. Indian gas bills state SCM at about 15 degrees C, while Nm3 is at 0 degrees C, so one SCM is about 0.947 Nm3. Convert the volume, or convert the factor, before you multiply. Using a per Nm3 factor on SCM volumes overstates CO2 by 5.5 to 5.7 percent.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "natural-rubber-sheet-carbon-footprint-per-kg",
@@ -4563,6 +4883,22 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "penal-charges-msme-loan-rbi-rule",
+  "q": "Can my bank charge penal interest on my MSME loan, and how much?",
+  "title": "Penal charges on MSME loans: RBI rule",
+  "short": "Not as penal interest. Since RBI's 2023 rule on penal charges, a bank may levy a penal charge for a default or missed condition, but it cannot add it to your interest rate or charge interest on it. RBI sets no cap; the amount must be reasonable, set by board policy and disclosed in your Key Facts Statement.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
+  "slug": "pet-preform-bottle-carbon-footprint",
+  "q": "What is the carbon footprint of a PET preform or bottle per kg, and how much does recycled PET cut it?",
+  "title": "PET preform footprint per kg and per bottle",
+  "short": "A PET preform's footprint per kg is the resin's footprint, weighted by its virgin and recycled shares and grossed up for scrap, plus moulding electricity at 0.710 kg CO2 per kWh. Recycled PET cuts it because, under the cut-off method, it carries only collection and reprocessing, not the oil-based chemistry of virgin resin.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "petcoke-emission-factor-india",
   "q": "What is the CO2 emission factor for pet coke used in kilns in India?",
   "title": "Pet coke emission factor for Indian kilns",
@@ -4577,6 +4913,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Meter the air handling units if you can. If not, split HVAC energy between suites by the air each one needs, room volume times design air changes per hour, then split each suite's share between products by the hours each product occupied it. Grade B suites take far more air than Grade D.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "pharma-cold-chain-passive-shipper-emissions",
+  "q": "How do I count insulated shippers, gel packs and dry ice in the footprint of a pharma export shipment?",
+  "title": "Passive shippers in a pharma export footprint",
+  "short": "Count three things: the shipper's own materials (insulation, cartons, gel packs or PCM bricks), the extra air freight from their weight, and the dry ice, which releases its full mass as CO2. Add them to the product's freight. On air shipments the extra weight usually matters more than the materials themselves.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "pharma-formulation-carbon-footprint-per-1000-tablets",
@@ -4707,12 +5051,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "pp-woven-sack-carbon-footprint-vs-jute",
+  "q": "What is the carbon footprint of a PP woven sack, and is a jute sack lower for rice, sugar or fertiliser?",
+  "title": "PP woven sack vs jute sack footprint",
+  "short": "Work it out per tonne packed, not per sack. PP sack footprint = sack mass x PP factor + tape line and loom electricity. A jute sack weighs several times more, so it comes out lower only if jute's per kg factor is small enough to cover that extra mass, or the sack is reused.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "ppc-vs-opc-cement-carbon-footprint",
   "q": "How much lower is the carbon footprint of PPC or PSC cement than OPC?",
   "title": "PPC and PSC vs OPC: carbon footprint",
   "short": "As a rough guide, PPC has about 20 to 30% lower CO2 per tonne than OPC, and PSC about 40 to 55% lower, because they contain less clinker. The real gap depends on the plant's clinker share, kiln fuel and power, so compare plant EPDs where you can.",
   "topic": "product",
   "reviewed": "2026-10-16"
+ },
+ {
+  "slug": "prepayment-charges-msme-floating-rate-loan",
+  "q": "Can a bank charge me for closing my MSME floating rate loan early?",
+  "title": "Prepayment charges on MSME floating loans",
+  "short": "For floating rate business loans to micro and small enterprises sanctioned or renewed from 1 January 2026, most commercial banks cannot charge for prepayment, full or partial. Small finance banks, regional rural banks, some co-operative banks and mid-layer NBFCs cannot charge on loans up to Rs 50 lakh.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "process-co2-from-limestone-calcination",
@@ -4787,6 +5147,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-17"
  },
  {
+  "slug": "purchased-cbg-fuel-scope-1-biogenic",
+  "q": "How do I report compressed biogas (CBG) I buy as boiler or vehicle fuel?",
+  "title": "Reporting purchased CBG as a fuel",
+  "short": "Report the CO2 from burning CBG as biogenic, in a separate line outside the scopes. Only the methane and nitrous oxide from combustion go into Scope 1, which is a small number. Keep the supplier's invoices in kg and its gas test certificate as evidence.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "purchased-co2-gas-scope-1",
   "q": "Does CO2 gas we buy for welding, carbonation or dry ice count in Scope 1?",
   "title": "Purchased CO2 gas: is it Scope 1?",
@@ -4825,6 +5193,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Yes. On the default factors for India, rail freight is 0.0106 kg CO2e per tonne-km, against 0.0551 for a tractor-trailer and 0.0902 for a 12 to 20 t truck, so 81 to 88 percent lower. Door to door the gap narrows, because rail needs road legs at each end.",
   "topic": "accounting",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "railway-receipt-freight-emissions",
+  "q": "How do I calculate emissions from an Indian Railways Railway Receipt for a rake or wagon load?",
+  "title": "Freight emissions from a Railway Receipt",
+  "short": "Take the weight and the distance from the Railway Receipt, multiply them for tonne-km, then multiply by a rail factor per tonne-km. Use actual weight rather than chargeable weight where the RR shows both, and add the road legs to and from the siding as separate lines.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "rba-code-energy-and-ghg-requirements",
@@ -5075,6 +5451,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "ro-plant-electricity-per-kl-process-water",
+  "q": "How much electricity does an RO plant use per kilolitre of process water, and how do I check mine?",
+  "title": "RO plant electricity per kL of permeate",
+  "short": "Divide the RO skid's electricity by the permeate it produced. An RO on borewell or municipal water running at 15 bar and 75% recovery, with pumps about 65% efficient, uses about 1 kWh per kL of permeate, or about 0.74 kg CO2 per kL on the Indian grid. Feed pressure, recovery and pump efficiency set the number.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "rooftop-solar-carbon-credits-msme",
   "q": "Can my factory's rooftop solar earn carbon credits?",
   "title": "Can rooftop solar earn carbon credits?",
@@ -5243,6 +5627,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "section-43b-h-msme-payment-45-days",
+  "q": "Under Section 43B(h), when must my buyer pay my MSME invoice, and what happens if they are late?",
+  "title": "Section 43B(h): the 45-day MSME rule",
+  "short": "Within the agreed credit period, which cannot exceed 45 days from acceptance, or within 15 days if there is no written agreement. If a buyer still owes a registered micro or small supplier past that date at its year end, Section 43B(h), now section 37(2)(g), stops it deducting the expense until it pays, and the MSMED Act adds interest.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "sedex-smeta-environment-carbon-questions",
   "q": "What carbon and energy evidence does a SMETA audit ask for under the environment pillar?",
   "title": "SMETA environment pillar: carbon evidence",
@@ -5299,12 +5691,28 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-18"
  },
  {
+  "slug": "septic-tank-methane-scope-1",
+  "q": "Does a septic tank at my factory count as a Scope 1 methane source, and how big is it?",
+  "title": "Septic tank methane in Scope 1",
+  "short": "Yes. A septic tank you own on your site releases methane, and that is a Scope 1 emission. It is small: our worked example for 200 workers on one shift comes to about 5.5 tonnes CO2e a year. Most factories can disclose it as an immaterial, excluded source with the estimate, unless a buyer wants every source.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "servo-vs-hydraulic-injection-moulding-energy",
   "q": "How much electricity and CO2 does a servo injection moulding machine save over a fixed-pump hydraulic one?",
   "title": "Servo vs hydraulic moulding machine energy",
   "short": "There is no fixed figure; it depends on your cycle. Measure kWh per kg of good parts on the same mould for a week on each machine, take the difference, multiply by annual output, then by 0.710 kg CO2 per kWh. Savings are biggest on long cycles with long cooling or holding times.",
   "topic": "accounting",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "sewage-treatment-plant-electricity-per-kl",
+  "q": "How much electricity does a factory or township sewage treatment plant use per kilolitre, and what CO2 is that?",
+  "title": "STP electricity and CO2 per kilolitre",
+  "short": "Divide the STP's electricity for a period by the kilolitres it treated, then multiply by 0.710 kg CO2 per kWh. At 0.5 kWh per kL, for example, that is about 0.36 kg CO2 per kL. Technology, load and blower control drive the number, so measure your own plant rather than borrow a figure.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "sez-or-industrial-park-electricity-emission-factor",
@@ -5699,6 +6107,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "sustainable-rice-platform-ghg-requirements",
+  "q": "What does the Sustainable Rice Platform standard ask basmati exporters on methane and emissions?",
+  "title": "SRP standard: rice methane rules",
+  "short": "The SRP standard scores farm practices that drive methane and nitrous oxide: water management such as mid-season drainage or alternate wetting and drying, handling straw and stubble instead of burning it, and fertiliser use. Its greenhouse gas performance indicator then estimates methane from those practices, adding nitrous oxide at its advanced level.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "switch-delivery-fleet-to-electric-two-wheelers",
   "q": "How much CO2 does switching a delivery fleet from petrol to electric two-wheelers save in India?",
   "title": "Petrol to electric scooters: CO2 saved",
@@ -5739,6 +6155,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-16"
  },
  {
+  "slug": "temporary-construction-power-scope-2",
+  "q": "Does electricity on a temporary connection for building our new plant count in our Scope 2?",
+  "title": "Temporary construction power and Scope 2",
+  "short": "Yes, if the temporary connection is in your name, or you pay the bill and control the site. That electricity is purchased power you consume, so it is Scope 2 like any other bill. If your EPC contractor holds the connection and pays for it, it falls in your Scope 3 instead.",
+  "topic": "accounting",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "textile-printing-emissions-per-metre",
   "q": "How do I calculate CO2 per metre of printed fabric for rotary screen versus digital printing?",
   "title": "CO2 per metre: rotary vs digital printing",
@@ -5777,6 +6201,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Work through the four LEAP steps one site and one key raw material at a time: Locate where you touch nature, Evaluate what you depend on and affect, Assess the risks and opportunities, then Prepare your response and disclosure. For a textile or food unit, start with water at the plant and the farms behind cotton or crops.",
   "topic": "regulation",
   "reviewed": "2026-10-17"
+ },
+ {
+  "slug": "toyota-green-purchasing-guidelines-suppliers",
+  "q": "What do Toyota's Green Purchasing Guidelines ask auto-component suppliers to do on CO2?",
+  "title": "Toyota green purchasing: CO2 for suppliers",
+  "short": "They ask suppliers to cut CO2 towards carbon neutrality, report it, and run a certified environmental management system such as ISO 14001. Toyota's global guidelines were revised in January 2026; the reduction figure is set by each Toyota region and your contract, so ask Toyota Kirloskar Motor which one applies to you.",
+  "topic": "regulation",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "train-travel-emissions-factor-india",
@@ -5841,6 +6273,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Not directly, as the law reads today. The UAE's Federal Decree-Law No. 11 of 2024 puts measuring and reporting duties on entities in the UAE for their own emissions. But UAE buyers that set reduction plans, report to group parents or sell into the EU will ask suppliers for data, so prepare Scope 1 and 2 figures anyway.",
   "topic": "regulation",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "udyam-registration-needed-for-bank-loan",
+  "q": "Do I need Udyam registration to get MSME benefits on a bank loan?",
+  "title": "Udyam registration for MSME loan benefits",
+  "short": "Yes. A bank can lend to you without it, but to classify your loan as an MSME loan, and so give you MSME benefits such as priority sector treatment and credit guarantee cover, it needs your Udyam Registration Certificate. Registration is free and online, using Aadhaar, PAN and GST details.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "uk-carbon-reduction-plan-for-indian-suppliers",
@@ -6163,6 +6603,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "reviewed": "2026-10-15"
  },
  {
+  "slug": "what-is-a-cma-report-bank-loan",
+  "q": "What is a CMA report, and why does my bank want one for a loan?",
+  "title": "What a CMA report is and why banks ask",
+  "short": "A CMA report is a set of tables, built from your past accounts and projections, that a bank uses to work out how much working capital or term loan you can carry. The name comes from RBI's Credit Monitoring Arrangement. Banks ask for it when your limit is above what they assess on turnover alone.",
+  "topic": "markets",
+  "reviewed": "2026-10-19"
+ },
+ {
   "slug": "what-is-a-corresponding-adjustment",
   "q": "What is a corresponding adjustment, and do Indian carbon credits need one?",
   "title": "Corresponding adjustments explained",
@@ -6449,6 +6897,14 @@ export const answerLibraryIndex: LibraryIndexEntry[] = [
   "short": "Weigh each material in one harness from the bill of materials, multiply each mass by a cradle-to-gate factor for that material, then add your plant's electricity and fuel per harness. Copper conductor is often the largest share, so the copper figure and the wire you scrap decide most of the result.",
   "topic": "product",
   "reviewed": "2026-10-18"
+ },
+ {
+  "slug": "wooden-vs-plastic-pallet-carbon-footprint",
+  "q": "Wooden or plastic pallets for exports: which has the lower carbon footprint per trip?",
+  "title": "Wooden or plastic pallet: CO2 per trip",
+  "short": "On one-way export shipments, a wooden pallet usually has the lower footprint per trip, because a plastic pallet's higher production emissions fall on a single trip. Plastic can come out ahead only in a closed loop where your records show it makes many trips. Compare production CO2e divided by real trips, plus freight for the pallet's own weight.",
+  "topic": "product",
+  "reviewed": "2026-10-19"
  },
  {
   "slug": "work-from-home-emissions-calculation",

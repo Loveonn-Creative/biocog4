@@ -1,0 +1,87 @@
+{
+  "slug": "hot-water-saved-co2-per-kl",
+  "q": "How much fuel and CO2 do I save for every kilolitre of hot process water I stop using?",
+  "title": "Fuel and CO2 saved per kL of hot water",
+  "short": "Each kilolitre heated by 45 degrees C needs about 188 MJ of heat. On an LPG boiler at 85 percent efficiency that is about 4.7 kg of LPG and 14 kg of CO2 saved per kL. Work it out from kL x 4.186 x temperature rise, divided by boiler efficiency and the fuel's energy content.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Dyeing, food processing, laundry and hotel operators",
+  "sections": [
+    {
+      "h": "The formula",
+      "ol": [
+        "Heat (MJ) = kL x 1,000 kg x 4.186 kJ per kg per degree C x temperature rise / 1,000",
+        "Fuel energy (MJ) = heat / boiler efficiency",
+        "Fuel (kg or litres) = fuel energy / the fuel's net calorific value",
+        "CO2 = fuel x its emission factor"
+      ],
+      "p": [
+        "Temperature rise is outlet minus the cold water temperature at the boiler or heater inlet, not ambient air. Measure both: a dyehouse in winter may start at 18 degrees C, in May at 32."
+      ]
+    },
+    {
+      "h": "Energy content and efficiency to use",
+      "ul": [
+        "LPG: net calorific value 47.3 MJ per kg (IPCC 2006 default), factor 2.98 kg CO2 per kg.",
+        "Coal: use the gross calorific value on your coal supplier's test certificate, since Indian coals vary widely, and an efficiency on the same basis.",
+        "Electric heaters: 1 kWh = 3.6 MJ, efficiency 95 percent or as measured, grid factor 0.710 kg CO2 per kWh.",
+        "Boiler efficiency: from your last efficiency test by the direct or indirect method; BEE's guide book on boilers explains both."
+      ]
+    },
+    {
+      "h": "Why real savings are often higher",
+      "p": [
+        "The boiler also heats water lost in pipes, tanks and overflows. Cutting one kL at the machine can cut more than one kL at the boiler if the loop runs at lower load. Blowdown and standing losses fall a little too. Count only what you can show on the fuel record, and treat the formula as a floor."
+      ]
+    },
+    {
+      "h": "When the saving is not fuel",
+      "p": [
+        "If the water was heated by waste heat, such as condensate or flue gas recovery or a solar heater, cutting it saves water but little fuel. Check what actually heats the stream you cut before you claim CO2."
+      ]
+    },
+    {
+      "h": "Proving the saving",
+      "p": [
+        "Keep fuel invoices and hot water meter readings for a few months before and after the change, with production volumes. Fuel per tonne of fabric or per batch, before and after, is the evidence a buyer or lender will accept."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 8 kL a day less hot water, heated 25 to 70 degrees C",
+    "lines": [
+      "Heat per kL: 1,000 x 4.186 x 45 = 188,370 kJ = 188.37 MJ",
+      "LPG boiler at 85 percent: 188.37 / 0.85 / 47.3 = 4.685 kg LPG per kL",
+      "CO2 per kL: 4.685 x 2.98 = 13.96 kg CO2",
+      "Per year, 8 kL a day for 300 days = 2,400 kL: 2,400 x 4.685 = 11,245 kg LPG, 33,509 kg CO2, about 33.5 t",
+      "Same kL on an electric heater at 95 percent: 188.37 / 3.6 / 0.95 = 55.08 kWh; x 0.710 = 39.1 kg CO2 per kL"
+    ],
+    "note": "Efficiencies are assumed for the example; use your boiler's tested figure."
+  },
+  "senseible": "Senseible reads your LPG, coal, fuel oil and electricity invoices into dated records with IPCC 2006 fuel factors and the CEA grid factor, so the before and after fuel use behind a saving claim is on record.",
+  "links": [
+    {
+      "label": "Boiler efficiency: direct and indirect method",
+      "to": "/answers/boiler-efficiency-direct-and-indirect-method"
+    },
+    {
+      "label": "Solar water heater fuel and CO2 savings",
+      "to": "/answers/solar-water-heater-factory-co2-savings"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 1, Tables 1.2 and 1.4",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "BEE Guide Book 2, Energy Efficiency in Thermal Utilities, Chapter 2 Boilers (beeindia.gov.in)",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

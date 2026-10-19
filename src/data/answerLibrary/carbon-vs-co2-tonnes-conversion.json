@@ -1,0 +1,75 @@
+{
+  "slug": "carbon-vs-co2-tonnes-conversion",
+  "q": "My supplier reported tonnes of carbon, not CO2. How do I convert it?",
+  "title": "Convert tonnes of carbon to CO2",
+  "short": "Multiply tonnes of carbon by 44/12, which is 3.667, to get tonnes of CO2. The 44 and 12 are the molecular weight of CO2 and the atomic weight of carbon. To go back, multiply tonnes of CO2 by 12/44, or 0.273. First confirm the supplier really meant carbon.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Sustainability leads reading supplier data, EPDs and older reports",
+  "sections": [
+    {
+      "h": "Why the factor is 44/12",
+      "p": [
+        "One tonne of carbon, fully burnt, combines with oxygen to make 44/12 tonnes of CO2. The IPCC 2006 Guidelines use the same ratio to turn a fuel's carbon content into CO2. Nothing else changes in the conversion: no GWP, no oxidation factor, just the ratio of masses."
+      ]
+    },
+    {
+      "h": "How to tell which unit you were given",
+      "ul": [
+        "Labels like tC, t C, tonnes carbon or carbon equivalent (CE) mean carbon.",
+        "Labels like tCO2, tCO2e or tonnes CO2 equivalent mean CO2.",
+        "Forestry, soil and biochar studies often report carbon stock in tC; energy and corporate reports usually use CO2 or CO2e.",
+        "A supplier footprint that is about 3.7 times smaller than similar suppliers is a sign it is in carbon."
+      ]
+    },
+    {
+      "h": "Carbon equivalent of other gases",
+      "p": [
+        "Some older reports give all gases as tonnes of carbon equivalent. Multiply by 44/12 to get tonnes of CO2e; the GWP weighting is already inside the number. Ask which GWP set was used, AR4, AR5 or AR6, and note it next to your converted figure.",
+        "Watch for methane reported as CH4-C or nitrous oxide as N2O-N in agriculture and wastewater data. Those are masses of the carbon or nitrogen inside the gas: CH4 = CH4-C x 16/12, and N2O = N2O-N x 44/28, before any GWP is applied."
+      ]
+    },
+    {
+      "h": "Record the conversion",
+      "p": [
+        "Keep the supplier's original figure and unit, the factor you applied and the result side by side. If the supplier corrects its report later, you can trace and redo the line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a supplier's 120 t",
+    "lines": [
+      "Supplier reports 120 t of carbon for the year",
+      "120 x 44 / 12 = 440 t CO2",
+      "Mistake to avoid: entering 120 as tCO2 understates the supplier by 440 / 120 = 3.67 times",
+      "Reverse check: 440 x 12 / 44 = 120 t carbon"
+    ],
+    "note": "If the supplier's figure includes other gases as carbon equivalent, the result is t CO2e, not t CO2."
+  },
+  "senseible": "Senseible calculates CO2 directly from activity data such as litres, kg and kWh, so its own figures need no carbon conversion. A supplier report you hold in carbon units should be converted and labelled before it goes into your Scope 3 records.",
+  "links": [
+    {
+      "label": "AR5 or AR6 GWP: which to use",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    },
+    {
+      "label": "Can I use my supplier's product footprint?",
+      "to": "/answers/can-i-use-my-suppliers-product-footprint"
+    },
+    {
+      "label": "Invoice unit mismatch: litres or kg",
+      "to": "/answers/invoice-unit-mismatch-litres-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2, Chapter 1 (CO2 from carbon content, 44/12)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

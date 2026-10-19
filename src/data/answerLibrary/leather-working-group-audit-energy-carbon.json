@@ -1,0 +1,76 @@
+{
+  "slug": "leather-working-group-audit-energy-carbon",
+  "q": "What energy and carbon data does a Leather Working Group audit check at a tannery?",
+  "title": "LWG audit: energy data a tannery needs",
+  "short": "The LWG audit protocol has an energy consumption section that scores your energy use per unit produced, usually per square metre of leather, over the last 24 months. It counts all energy on site, subcontracted operations and effluent treatment, and credits renewable energy generated on site. Have two years of fuel invoices, bills and production records ready.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Tanneries in Kanpur, Vellore, Ambur and Kolkata",
+  "sections": [
+    {
+      "h": "What the auditor asks to see",
+      "ul": [
+        "Energy use by source for the whole site over the assessment period: grid electricity, DG diesel, boiler fuel (coal, wood, briquettes, furnace oil, PNG), LPG and any on-site solar.",
+        "Production for the same period, as area of leather or, for some types of operation, tonnes of hides and skins processed.",
+        "Energy for operations you subcontract and for effluent treatment done elsewhere, which the protocol includes.",
+        "Energy intensity, worked out from the two, in MJ per unit produced.",
+        "The bills, fuel invoices, meter logs and production registers behind every number."
+      ],
+      "p": [
+        "Residential areas can be left out only if they are on separate meters."
+      ]
+    },
+    {
+      "h": "Converting your bills to MJ",
+      "ul": [
+        "Electricity: kWh x 3.6 = MJ.",
+        "Diesel: litres x density x net calorific value; IPCC 2006 gives 43.0 MJ per kg.",
+        "Coal and biomass: kg x the calorific value on the supplier's test certificate.",
+        "Keep the conversion factors in one sheet so the auditor can repeat the sum."
+      ]
+    },
+    {
+      "h": "Where carbon comes in",
+      "p": [
+        "Protocol 7 scores energy, not carbon. LWG is replacing it with the LWG Sustainability System, which adds a Decarbonisation Framework with a Site Carbon Metric; ask your auditor which version applies on your audit date.",
+        "Brands already ask many LWG tanneries for Scope 1 and 2 CO2. The same records give both: fuel x its emission factor for Scope 1 and kWh x the grid factor for Scope 2, so one data set serves the audit and the buyer questionnaire."
+      ]
+    },
+    {
+      "h": "Common reasons for lost points",
+      "ul": [
+        "Missing months, or fuel bought in bulk and not allocated to the months it was burnt.",
+        "Production recorded in a unit the protocol does not use for your type of operation.",
+        "Subcontracted processing or off-site effluent treatment left out of the energy total.",
+        "DG diesel or wood bought for cash with no invoice."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads fuel invoices and electricity bills into dated monthly records with units and emission factors, which you can use as the energy and Scope 1 and 2 evidence for an LWG audit or buyer request.",
+  "links": [
+    {
+      "label": "Tannery carbon footprint per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Chrome or vegetable tanned leather footprint",
+      "to": "/answers/chrome-vs-vegetable-tanned-leather-carbon-footprint"
+    },
+    {
+      "label": "Water and carbon for textile and leather",
+      "to": "/climate-intelligence/msme-water-carbon-nexus-textile-leather"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard (Scope 1 and 2 from the same energy records)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), Chapter 1, net calorific values",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Based on LWG Leather Manufacturer Audit Protocol 7.0, energy consumption section (24 months of operations), and LWG's announced move to the LWG Sustainability System, timing not fixed; checked 2026-10-19. Check the version in force for your audit date."
+}

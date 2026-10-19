@@ -1,0 +1,84 @@
+{
+  "slug": "septic-tank-methane-scope-1",
+  "q": "Does a septic tank at my factory count as a Scope 1 methane source, and how big is it?",
+  "title": "Septic tank methane in Scope 1",
+  "short": "Yes. A septic tank you own on your site releases methane, and that is a Scope 1 emission. It is small: our worked example for 200 workers on one shift comes to about 5.5 tonnes CO2e a year. Most factories can disclose it as an immaterial, excluded source with the estimate, unless a buyer wants every source.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Factories and warehouses in areas without a sewer connection",
+  "sections": [
+    {
+      "h": "Why a septic tank makes methane",
+      "p": [
+        "Toilet and canteen wastewater sits in a closed tank without oxygen, and bacteria break down the organic matter into methane, which escapes through the vent. The IPCC 2006 Guidelines, Volume 5 Chapter 6, treat septic systems as a domestic wastewater source with their own methane correction factor. A tank on your premises is under your control, so its methane is Scope 1 under the GHG Protocol."
+      ]
+    },
+    {
+      "h": "The formula",
+      "ul": [
+        "Organic load (kg BOD a year) = workers x BOD per person per day x share of the day's load generated on site x days on site / 1,000.",
+        "BOD per person: take the India value from IPCC 2006 Volume 5, Table 6.4, or a measured figure for your site. The example below uses 34 g per person per day as an assumed input.",
+        "Methane (kg CH4) = organic load x Bo x MCF, where Bo = 0.6 kg CH4 per kg BOD and MCF = 0.5 for septic systems (IPCC 2006 defaults).",
+        "CO2e = kg CH4 x GWP. Use one GWP set for the whole inventory: AR6 gives 27.0 for non-fossil methane, AR5 gives 28.",
+        "If you know the organic load removed when a tanker empties the tank, IPCC lets you subtract it. Most sites do not have that figure, which keeps the estimate on the safe side."
+      ]
+    },
+    {
+      "h": "When it is immaterial, and when it is not",
+      "p": [
+        "Compare the result with the rest of Scope 1 and 2. A factory using diesel, fuel or grid power usually finds septic methane well under 1 percent of its total. List it as an excluded source with the estimate and your exclusion threshold, rather than inflating it with a precise-looking figure.",
+        "It matters more for an office or warehouse with low energy use and many staff, for a site with a large residential labour colony using its septic tanks, or where the tank also takes process effluent. Process effluent belongs in an industrial wastewater calculation, not this one."
+      ]
+    },
+    {
+      "h": "Where it does not apply",
+      "ul": [
+        "Toilets connected to a municipal sewer: the methane, if any, arises at the city's plant and is not your Scope 1.",
+        "An aerobic sewage treatment plant that is well run: its methane correction factor is near zero, so treat it with the STP method instead.",
+        "Septage hauled away by a contractor is no longer in your tank; its later treatment is outside your Scope 1."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 200 workers, one shift",
+    "lines": [
+      "Assumed share of a day's load generated on site for an 8 hour shift: one third",
+      "Organic load at an assumed 34 g BOD per person per day: 200 x 34 g x 1/3 x 300 days = 680,000 g, so 680 kg BOD a year",
+      "Methane: 680 x 0.6 x 0.5 = 204 kg CH4",
+      "CO2e at AR6 non-fossil methane GWP 27.0: 204 x 27 = 5,508 kg, about 5.5 t CO2e",
+      "Against Scope 1 and 2 of 2,000 t CO2e: 5.5 / 2,000 = 0.28 percent"
+    ],
+    "note": "The 34 g full-day BOD load and the one third share for an 8 hour shift are assumed inputs; replace the 34 g with the India value in IPCC Table 6.4 and state both next to the number. Field studies often find septic MCF below the 0.5 default, so this errs high."
+  },
+  "senseible": "Senseible builds your fuel and electricity records from invoices and bills. Add this septic estimate beside them as its own Scope 1 line, or as a disclosed exclusion with the number, so the whole Scope 1 picture sits in one place.",
+  "links": [
+    {
+      "label": "Methane from an effluent treatment plant",
+      "to": "/answers/etp-wastewater-methane-emissions"
+    },
+    {
+      "label": "Carbon footprint exclusion threshold",
+      "to": "/answers/carbon-footprint-exclusion-threshold"
+    },
+    {
+      "label": "AR5 or AR6 GWP values",
+      "to": "/answers/ar5-vs-ar6-gwp-which-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 5, Chapter 6 Wastewater Treatment and Discharge, Tables 6.3 and 6.4",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1 (2021), Chapter 7, Table 7.15",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Bo 0.6 kg CH4/kg BOD and septic MCF 0.5 confirmed as IPCC 2006 defaults; the per-person BOD for India was not confirmed against Table 6.4 and is shown as an assumed input (checked 19 October 2026)."
+}

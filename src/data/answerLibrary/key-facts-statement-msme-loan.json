@@ -1,0 +1,76 @@
+{
+  "slug": "key-facts-statement-msme-loan",
+  "q": "What is the Key Facts Statement my bank must give for an MSME loan, and what should I check on it?",
+  "title": "Key Facts Statement for an MSME loan",
+  "short": "A Key Facts Statement is a standard summary RBI requires lenders to give before you sign a retail or MSME term loan sanctioned from 1 October 2024. It shows the annual percentage rate, all fees, the repayment schedule and grievance contacts. Check the APR, the fee list and the EMI table first.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME borrowers comparing loan offers",
+  "sections": [
+    {
+      "h": "What the KFS must contain",
+      "ul": [
+        "Loan amount, tenure, interest rate and whether it is fixed or floating, with the benchmark and spread.",
+        "The annual percentage rate (APR): the all-in yearly cost, including processing fees and third-party charges the lender collects, such as insurance or legal fees.",
+        "A full list of fees and charges. A charge not in the KFS cannot be levied later without your explicit consent.",
+        "A repayment schedule showing each instalment split into principal and interest.",
+        "Details on recovery agents, the grievance redressal officer and any cooling-off or look-up period."
+      ]
+    },
+    {
+      "h": "How long you have to read it",
+      "p": [
+        "The KFS must stay valid for at least three working days for loans with a tenure of seven days or more, and one working day for shorter loans. Use that time to compare offers. It should be in a language you understand."
+      ]
+    },
+    {
+      "h": "What to check, in order",
+      "ol": [
+        "APR, not the headline rate. Two loans at the same interest rate can have different APRs because of fees.",
+        "Fees for processing, documentation, valuation, legal checks and insurance, and whether GST is included.",
+        "Prepayment and foreclosure charges, and whether the loan is floating rate.",
+        "The EMI table: the number of instalments and the total amount repaid.",
+        "Whether the sanction letter and agreement match the KFS. If they differ, ask before you sign."
+      ]
+    },
+    {
+      "h": "Where it does not apply",
+      "p": [
+        "Credit card dues are outside the KFS rule. Working capital limits such as cash credit and overdraft are not term loans, so ask the bank for the same cost details in writing anyway."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: why APR is higher than the rate",
+    "lines": [
+      "Loan: Rs 10,00,000 at 12 percent a year for 36 months",
+      "EMI: Rs 33,214; total repaid: 36 x 33,214 = about Rs 11,95,700",
+      "Fees deducted upfront: processing Rs 10,000 and documentation Rs 5,000, so you receive Rs 9,85,000",
+      "APR: the rate at which 36 payments of Rs 33,214 equal Rs 9,85,000, about 13.05 percent a year"
+    ],
+    "note": "The fees are illustrative. The KFS annex shows the lender's own APR calculation; check it matches."
+  },
+  "senseible": "For a green or energy loan, Senseible's finance application, for signed-in users, organises your bill-backed carbon evidence for the lender reviewing it. Compare the lender's KFS on the checks above; the lender sets the terms.",
+  "links": [
+    {
+      "label": "Prepayment charges on MSME floating loans",
+      "to": "/answers/prepayment-charges-msme-floating-rate-loan"
+    },
+    {
+      "label": "Energy efficiency loan: EMI vs savings",
+      "to": "/answers/energy-efficiency-loan-emi-vs-savings"
+    },
+    {
+      "label": "Green loan vs traditional loan cost",
+      "to": "/climate-intelligence/green-loan-vs-traditional-loan-real-cost-comparison"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular, Key Facts Statement (KFS) for Loans and Advances, 15 April 2024",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Based on the RBI KFS circular of 15 April 2024; RBI is consolidating circulars into Master Directions, so check the current reference (checked 2026-10-19).",
+  "reviewed": "2026-10-19"
+}

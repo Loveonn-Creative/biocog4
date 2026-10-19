@@ -1,0 +1,67 @@
+{
+  "slug": "bank-rejected-msme-loan-reason",
+  "q": "Does a bank have to tell me why it rejected my MSME loan, and can I appeal?",
+  "title": "Bank rejected my MSME loan: your rights",
+  "short": "Yes. RBI's fair practices rules require lenders to give the main reasons for rejecting any loan application in writing. You can complain to the bank first and, if it does not reply within 30 days or you are unhappy with the reply, go to the RBI Ombudsman, which handles service failures but not the lending decision itself.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME owners after a loan rejection",
+  "sections": [
+    {
+      "h": "What the bank must tell you",
+      "p": [
+        "Under the Fair Practices Code for lenders, a bank must convey in writing the main reasons for rejecting a loan application, for every category of loan and every loan size. A verbal no at the branch is not enough. Ask for the letter and keep it.",
+        "The reason may be general, such as weak cash flow, a low credit score or insufficient security. You are entitled to the reason, not to the bank's full internal appraisal."
+      ]
+    },
+    {
+      "h": "Fix what you can before you reapply",
+      "ul": [
+        "Pull your credit reports. Credit information companies must give you one free full credit report a year; check it for wrong overdue entries and dispute them.",
+        "Match the reason to a document: audited accounts, GST returns, bank statements, a project report or a quotation the bank found missing.",
+        "Ask whether the loan could qualify for a CGTMSE guarantee, which lowers the bank's need for collateral."
+      ]
+    },
+    {
+      "h": "How to escalate",
+      "ol": [
+        "Write to the branch manager, then to the bank's grievance redressal officer or principal nodal officer named on its website.",
+        "If the bank rejects your complaint, gives a reply you are unhappy with, or does not reply within 30 days, file with the RBI Ombudsman on the RBI complaint portal. Under the Integrated Ombudsman Scheme, 2026, in force from 1 July 2026, file within 90 days of the bank's reply or of the 30 days running out.",
+        "The Ombudsman can act on deficiencies in service, such as not giving reasons, not acknowledging the application or not following the bank's own policy. Complaints about a lender's commercial decisions, such as whether to lend or at what rate, are outside its scope."
+      ]
+    },
+    {
+      "h": "Where the lender decides",
+      "p": [
+        "Whether to lend, how much, and on what security stays the bank's decision under its board-approved credit policy. The rules protect your right to a reason and a fair process. Another bank or a SIDBI scheme may assess the same file differently, so a rejection at one lender is not the last word."
+      ]
+    }
+  ],
+  "senseible": "For an energy or green loan, Senseible's green loan readiness check organises the bill-backed energy and emissions evidence a lender reviews, so you can close evidence gaps before you reapply. The lender still makes the decision.",
+  "links": [
+    {
+      "label": "Green loan rejection reasons and fixes",
+      "to": "/climate-intelligence/green-loan-rejection-reasons-and-how-to-fix-them"
+    },
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Responsible Business Conduct Directions, 2025, for each lender type (fair practices code: reasons for rejection in writing)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Reserve Bank Integrated Ombudsman Scheme, 2026 (in force 1 July 2026) and RBI FAQs on the Scheme",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Integrated Ombudsman Scheme, 2026 replaced the 2021 Scheme from 1 July 2026 (30-day wait, 90-day filing window, commercial decisions excluded). Fair practices code now sits in RBI's Responsible Business Conduct Directions, 2025. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

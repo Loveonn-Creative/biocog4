@@ -1,0 +1,77 @@
+{
+  "slug": "how-treds-invoice-discounting-works",
+  "q": "How does TReDS invoice discounting work for an MSME supplier, and what does it cost?",
+  "title": "How TReDS invoice discounting works",
+  "short": "On TReDS, you upload an invoice, your buyer accepts it online, and banks and NBFCs bid to pay you early at a discount. You get the money without recourse to you, and the buyer pays the financier on the due date. Your cost is the discount plus platform fees.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSE suppliers to large companies and PSUs",
+  "sections": [
+    {
+      "h": "Who is involved",
+      "ul": [
+        "The MSME seller, the only party that can sell invoices on TReDS.",
+        "The buyer: a company, PSU or government department that accepts the invoice and pays on the due date.",
+        "Financiers: banks, NBFC factors and other RBI-permitted institutions that bid.",
+        "The platform: an RBI-authorised TReDS operator such as RXIL, Invoicemart (A.TReDS) or M1xchange."
+      ]
+    },
+    {
+      "h": "The steps",
+      "ol": [
+        "Register on a platform with KYC, GST and bank details, and an Udyam registration.",
+        "Upload the invoice, or the buyer uploads it, as a factoring unit.",
+        "The buyer accepts it online, confirming the amount and due date.",
+        "Financiers quote discount rates; you accept the best bid.",
+        "Funds reach your account, and on the due date the buyer pays the financier through the platform. The financier has no claim back on you if the buyer delays."
+      ]
+    },
+    {
+      "h": "Working out the cost",
+      "p": [
+        "Discount = invoice amount x annual discount rate x days to due date / 365. Add the platform's fees, which can include a registration fee and a per-transaction fee; read the platform's rulebook or fee schedule. Compare the result with your cash credit interest for the same days.",
+        "Your rate depends mostly on the buyer's credit standing, not yours, which is why invoices on strong buyers clear cheaply."
+      ]
+    },
+    {
+      "h": "Which buyers must be on TReDS",
+      "p": [
+        "A Central Government notification under section 9 of the MSMED Act, 2006 (S.O. 4845(E), 7 November 2024) requires companies with turnover above Rs 250 crore and central public sector enterprises to be on TReDS; it replaced the earlier Rs 500 crore threshold and set 31 March 2025 for onboarding. Ask your buyer which platform it uses.",
+        "Under the MSMED Act, a buyer must still pay within the agreed period, capped at 45 days. TReDS helps you get paid early; it does not extend that limit."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one invoice",
+    "lines": [
+      "Invoice accepted by the buyer: Rs 10,00,000, due in 60 days",
+      "Winning bid: 8 percent a year (illustrative)",
+      "Discount: 10,00,000 x 0.08 x 60 / 365 = Rs 13,151",
+      "You receive about Rs 9,86,849, less the platform's transaction fee"
+    ],
+    "note": "Rates and fees vary by buyer, platform and date; check the bid and fee schedule on the day."
+  },
+  "senseible": "TReDS runs on your invoice and the buyer's acceptance, with no carbon data involved. If you also want a green or energy-efficiency loan, Senseible's green loan readiness check organises the bill-backed evidence a lender reviews.",
+  "links": [
+    {
+      "label": "Sustainable supply chain finance for suppliers",
+      "to": "/answers/buyer-sustainable-supply-chain-finance"
+    },
+    {
+      "label": "Climate finance instruments compared",
+      "to": "/climate-intelligence/msme-climate-finance-instruments-comparison-2026"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI Guidelines for setting up and operating the Trade Receivables Discounting System (TReDS), 2014, as revised",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewNote": "Buyer onboarding threshold from Ministry of MSME notification S.O. 4845(E) of 7 November 2024 under section 9 of the MSMED Act (turnover above Rs 250 crore and CPSEs, by 31 March 2025; msme.gov.in); check for any later notification. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "how-much-solar-power-can-i-bank-with-discom",
+  "q": "How much of my open access or captive renewable power can I bank with the discom, and for how long?",
+  "title": "How much renewable power can you bank?",
+  "short": "Under the Green Energy Open Access Rules, 2022, the discom must let you bank at least 30 percent of the electricity you buy from it each month. Banked units are settled within a banking cycle your state commission sets, and the commission also sets the banking charge. Your state regulation decides the exact limit.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "Factories with captive or open access solar and wind",
+  "sections": [
+    {
+      "h": "The national floor and what it is measured against",
+      "p": [
+        "The Rules, notified by the Ministry of Power on 6 June 2022, oblige the discom to offer banking for at least 30 percent of a consumer's monthly consumption from the discom. The Ministry has clarified that the 30 percent is worked out on energy bought from the discom only, not on units you already receive through open access or captive supply.",
+        "It is a floor. A state commission may allow more, and older captive wind and solar agreements may still run on earlier state orders until they expire."
+      ]
+    },
+    {
+      "h": "How long banked units last",
+      "ul": [
+        "The Amendment Rules, 2023, notified on 27 January 2023, changed the settlement period from a month to a banking cycle, so each state can set its own cycle length.",
+        "Banked units are settled within the cycle. Draw them back inside it; most state regulations do not let credits roll into the next cycle.",
+        "What happens to units left at the end of a cycle, lapse or payment at a set rate, is in your state's regulation. Read that clause before you size the plant.",
+        "Many states also restrict drawal by time of day, for example solar banked by day cannot be drawn in evening peak hours. Check your state's time-block rules."
+      ]
+    },
+    {
+      "h": "What banking costs",
+      "p": [
+        "The state commission sets banking charges to cover the discom's extra cost. Some states take the charge in kind, as a share of the units deposited, and some in rupees per unit. Standby charges may also apply where you use the discom as backup. The charge is in the state's green energy open access or banking regulation, and states have been rewriting these to align with the 2022 Rules."
+      ]
+    },
+    {
+      "h": "Sizing rule before you add capacity",
+      "ol": [
+        "Take your monthly discom purchase and find the state banking limit for it.",
+        "Estimate monthly renewable generation not used at the time it is produced.",
+        "If that surplus is above the limit, or falls in a season you cannot draw it back in the same cycle, the extra units earn you little. Size the plant to the units you can use or bank.",
+        "Deduct the banking charge from banked units before you count savings."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a sunny month (illustrative state terms)",
+    "lines": [
+      "Bought from the discom this month: 5,00,000 kWh",
+      "Bankable at the 30 percent floor: 5,00,000 x 0.30 = 1,50,000 kWh",
+      "Solar surplus not used in real time: 1,80,000 kWh, so 30,000 kWh exceed the limit",
+      "Banking charge in kind at an assumed 8 percent: 1,50,000 x 0.92 = 1,38,000 kWh available to draw",
+      "Units you can count on: 1,38,000 kWh, drawn within the same cycle"
+    ],
+    "note": "The 8 percent charge is an assumption for illustration. Use your state's limit and charge; a state allowing more than 30 percent changes the result."
+  },
+  "senseible": "Senseible reads your electricity bill for billing period, tariff and units, and does not count net-metered units as consumption. Banked units drawn back show on the discom's bill or energy account, which is the evidence you keep for market-based Scope 2.",
+  "links": [
+    {
+      "label": "Which month to report banked units",
+      "to": "/answers/renewable-banking-units-which-month-scope-2"
+    },
+    {
+      "label": "Open access losses: which units count",
+      "to": "/answers/open-access-transmission-losses-which-units"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Electricity (Promoting Renewable Energy Through Green Energy Open Access) Rules, 2022, and Amendment Rules, 2023 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "GHG Protocol Scope 2 Guidance (2015), Chapter 7 Scope 2 Quality Criteria",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    }
+  ],
+  "reviewNote": "30 percent floor from the GEOA Rules (6 June 2022) and the Ministry of Power clarification that it applies to discom purchases only; month changed to cycle by the Amendment Rules of 27 January 2023. States keep revising banking charges (Gujarat, for example, amended its GEOA banking charge again in 2026); check your state commission's current limit, cycle and charge (checked 19 October 2026).",
+  "reviewed": "2026-10-19"
+}

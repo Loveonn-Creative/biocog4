@@ -1,0 +1,88 @@
+{
+  "slug": "pet-preform-bottle-carbon-footprint",
+  "q": "What is the carbon footprint of a PET preform or bottle per kg, and how much does recycled PET cut it?",
+  "title": "PET preform footprint per kg and per bottle",
+  "short": "A PET preform's footprint per kg is the resin's footprint, weighted by its virgin and recycled shares and grossed up for scrap, plus moulding electricity at 0.710 kg CO2 per kWh. Recycled PET cuts it because, under the cut-off method, it carries only collection and reprocessing, not the oil-based chemistry of virgin resin.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Preform moulders and beverage, pharma and FMCG bottle buyers",
+  "sections": [
+    {
+      "h": "The formula per kg and per bottle",
+      "ul": [
+        "Resin per kg of good preforms = (virgin share x virgin factor + recycled share x recycled factor) / (1 minus scrap rate), unless scrap is reground and fed back.",
+        "Moulding = kWh per kg of preforms x 0.710 kg CO2 per kWh. Include the chiller, dryer and compressor, not only the injection machine.",
+        "Per kg = resin + moulding. Per preform = per kg x preform weight in kg.",
+        "Per bottle = per preform + the blower's electricity per bottle at the filler, which is often large because stretch blow moulding uses high-pressure air."
+      ]
+    },
+    {
+      "h": "Where the resin factors come from",
+      "p": [
+        "Ask your resin supplier for a product footprint or EPD for the grade you buy, with its standard (ISO 14067) and system boundary. Failing that, use a published industry eco-profile for bottle-grade PET and name it. For recycled PET, ask the recycler for washing, flaking, decontamination and pelletising energy per kg of output, including yield losses.",
+        "Keep both factors cradle-to-gate, in kg CO2e, from the same type of source. Mixing a supplier figure for one and an old database value for the other skews the comparison."
+      ]
+    },
+    {
+      "h": "How much recycled content really lowers it",
+      "p": [
+        "The saving scales with the recycled share and with the gap between the two factors. If virgin resin is about twice the recycled figure, swapping 30% of the resin removes roughly 15% of the resin footprint. Moulding energy does not change with recycled content, so the per kg saving is a little smaller than the resin saving.",
+        "Count only recycled content you can prove: recycler certificates for the batch, and the mass you received. A mass balance claim is not the same as physical content; say which one you are reporting."
+      ]
+    },
+    {
+      "h": "Rules that set the recycled share",
+      "p": [
+        "PET bottles are Category I rigid packaging under the Plastic Waste Management Rules: brand owners need at least 40% recycled content in 2026-27, 50% in 2027-28 and 60% from 2028-29. Where FSSAI or drug rules restrict recycled plastic, that packaging is exempt, so food and pharma bottles need rPET those regulators permit. Check the current notification before you plan a recycled share."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 20 g preform with 30% rPET (factors assumed for the arithmetic)",
+    "lines": [
+      "Assumed virgin PET factor: 2.2 kg CO2e per kg; assumed rPET factor: 0.9 kg CO2e per kg",
+      "Resin blend: 0.7 x 2.2 + 0.3 x 0.9 = 1.54 + 0.27 = 1.81 kg CO2e per kg",
+      "Scrap 2%: 1.81 / 0.98 = 1.85 kg CO2e per kg of good preforms",
+      "Moulding: 0.7 kWh per kg x 0.710 = 0.50 kg CO2 per kg",
+      "Per kg of preforms: 1.85 + 0.50 = 2.35 kg CO2e",
+      "Per preform: 2.35 x 0.020 = 0.047 kg, about 47 g CO2e",
+      "Same preform with 0% rPET: 2.2 / 0.98 + 0.50 = 2.74 kg CO2e per kg, so 30% rPET cuts about 14%"
+    ],
+    "note": "The two resin factors and the kWh per kg are placeholders, not published values. Replace them with your supplier's figures and your own meter data."
+  },
+  "senseible": "Senseible reads your resin invoices for quantity and your electricity bills for kWh, and keeps them as evidence for the footprint. The product figure you build from them is a self-declared estimate.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Counting recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Recycled content targets for plastic packaging",
+      "to": "/answers/plastic-epr-recycled-content-targets"
+    },
+    {
+      "label": "Recycled polyester yarn footprint per kg",
+      "to": "/answers/recycled-polyester-yarn-carbon-footprint-per-kg"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Plastic Waste Management Rules, 2016, Schedule II as amended in 2022 and by G.S.R. 237(E), 31 March 2026: recycled content for Category I rigid plastic packaging (MoEFCC)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Recycled content steps (40% in 2026-27) are from the 2026 amendment as reported; confirm against the gazette text and recheck each April (checked 19 October 2026)."
+}

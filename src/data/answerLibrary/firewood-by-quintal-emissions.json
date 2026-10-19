@@ -1,0 +1,88 @@
+{
+  "slug": "firewood-by-quintal-emissions",
+  "q": "How do I calculate emissions from firewood bought by the quintal or tractor-load?",
+  "title": "Firewood by the quintal: emissions maths",
+  "short": "Convert quintals to kg (1 quintal = 100 kg), multiply by the wood's calorific value to get energy, then apply IPCC factors. The CO2 from wood is biogenic and reported separately; only the methane and nitrous oxide go into Scope 1. For a tractor-load, weigh it at a weighbridge rather than guess.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Rice mills, jaggery units, brick kilns, dhabas and small boilers",
+  "sections": [
+    {
+      "h": "Getting from quintals or loads to kg",
+      "ul": [
+        "Quintal: 100 kg. Ten quintals make one tonne.",
+        "Tractor-load or truck-load: no standard weight. Use the weighbridge slip, gross minus tare. If you buy many similar loads, weigh a few and use their average, and write that down.",
+        "Stacked volume, such as a cubic metre of logs: convert only with a measured weight, because air gaps and wood species change it a lot."
+      ]
+    },
+    {
+      "h": "Energy from mass, and why moisture matters",
+      "p": [
+        "The IPCC 2006 default net calorific value for wood is 15.6 MJ per kg. Fresh-cut firewood holds much more water than seasoned wood and gives less heat per kg, because part of the fire's energy goes into boiling that water off.",
+        "If you know the moisture on a wet basis, NCV of wet wood = NCV of dry wood x (1 minus moisture) minus 2.44 x moisture, in MJ per kg. For example, if a lab reports 19 MJ per kg on a dry basis and 20% moisture, the wood gives 19 x 0.8 minus 2.44 x 0.2 = 14.7 MJ per kg as burned. Without a test, use the IPCC default."
+      ]
+    },
+    {
+      "h": "Which factors to apply",
+      "ul": [
+        "CO2: 112,000 kg per TJ (IPCC 2006 default for wood). Biogenic: report it in a separate line, outside Scope 1.",
+        "Boilers, kilns and furnaces in a factory (IPCC Table 2.3): CH4 30 kg per TJ and N2O 4 kg per TJ.",
+        "Commercial cooking, such as a dhaba or hotel kitchen (IPCC Table 2.4): CH4 300 kg per TJ and N2O 4 kg per TJ, because open stoves burn less completely.",
+        "Convert CH4 and N2O to CO2e with one named GWP set. With IPCC AR5 values, CH4 is 28 and N2O is 265."
+      ]
+    },
+    {
+      "h": "Records to keep",
+      "p": [
+        "Keep the supplier bills in quintals, the weighbridge slips for loads, any moisture test and the factor table you used. If the wood comes from land being cleared rather than from waste or managed plantations, say so in your report: the biogenic treatment assumes the carbon is regrown."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 50 quintals in a rice mill boiler",
+    "lines": [
+      "Mass: 50 x 100 = 5,000 kg",
+      "Energy: 5,000 x 15.6 MJ = 78,000 MJ = 0.078 TJ",
+      "Biogenic CO2: 0.078 x 112,000 = 8,736 kg, reported separately",
+      "CH4: 0.078 x 30 = 2.34 kg; x 28 = 65.5 kg CO2e",
+      "N2O: 0.078 x 4 = 0.312 kg; x 265 = 82.7 kg CO2e",
+      "Scope 1: 65.5 + 82.7 = 148.2 kg CO2e",
+      "Same wood in a dhaba stove: CH4 0.078 x 300 = 23.4 kg x 28 = 655.2; plus 82.7 = 737.9 kg CO2e"
+    ],
+    "note": "Uses the IPCC 2006 default NCV. Wetter wood would mean more kg for the same heat, so measured moisture gives a better figure."
+  },
+  "senseible": "Senseible reads firewood bills for the quantity bought and keeps them, with your weighbridge slips, as the evidence behind this calculation.",
+  "links": [
+    {
+      "label": "Biomass and waste boilers in Scope 1",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Evidence for biomass fuel suppliers",
+      "to": "/answers/biomass-fuel-supplier-evidence"
+    },
+    {
+      "label": "Rice mill footprint per tonne of paddy",
+      "to": "/answers/rice-mill-carbon-footprint-per-tonne-paddy"
+    },
+    {
+      "label": "Brick kiln emissions per 1,000 bricks",
+      "to": "/answers/brick-kiln-emissions-per-1000-bricks"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy, Table 1.2 (wood NCV) and Tables 2.3 and 2.4 (stationary combustion CH4 and N2O)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Corporate Standard (biogenic CO2 reported separately)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "IPCC AR5 Working Group I, global warming potentials",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

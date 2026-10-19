@@ -1,0 +1,82 @@
+{
+  "slug": "fastag-statement-freight-distance-evidence",
+  "q": "Can I use FASTag toll statements to prove the distance my trucks travelled for freight emissions?",
+  "title": "FASTag statements as freight distance proof",
+  "short": "Yes, as evidence of the route, not as a distance on its own. A FASTag statement shows which toll plazas the truck crossed and when. Measure the map distance through those plazas, add the legs before the first and after the last, and cross-check the total with the e-way bill or trip sheet.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Fleet owners and shippers with own trucks",
+  "sections": [
+    {
+      "h": "What the statement holds",
+      "ul": [
+        "Vehicle registration number and the FASTag account it is linked to.",
+        "Each toll plaza crossed, with its name or code, date, time, transaction ID and the amount charged for the vehicle class.",
+        "It does not show distance, load, fuel or the start and end points of the trip."
+      ]
+    },
+    {
+      "h": "Turning plazas into distance",
+      "ol": [
+        "Group the plaza entries by trip, using dates, times and the trip sheet.",
+        "Take the road distance from origin to the first plaza, between plazas in order, and from the last plaza to the destination, on a map service.",
+        "Add them for the trip distance; record which map service and date you used.",
+        "Compare with the e-way bill distance for the same consignment. A gap of more than about 10 percent needs a reason, such as a detour or a second drop."
+      ]
+    },
+    {
+      "h": "Why it strengthens your data, and one catch",
+      "p": [
+        "Toll records are a third-party, time-stamped trace of the route actually driven, and proof the trip happened. For own trucks, the best evidence is still the fuel record: litres bought per trip x 2.68 kg CO2 per litre gives Scope 1 directly, and the FASTag route checks that the fuel matches the trip.",
+        "The catch: if you report tonne-km under ISO 14083 or the GLEC Framework, both base transport activity on the shortest feasible distance from a route planner, not the distance actually driven. Use the FASTag route to explain the gap between the two, not to replace the planned figure."
+      ]
+    },
+    {
+      "h": "Where it falls short",
+      "ul": [
+        "Routes without toll plazas, city roads and state roads without FASTag leave gaps.",
+        "Empty return trips show on FASTag too; keep them, they are real emissions, but label them as empty.",
+        "Weight still comes from the invoice, packing list or weighbridge slip."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: Ahmedabad to Pune, 9 tonnes",
+    "lines": [
+      "Map distance origin to first plaza, plaza to plaza, last plaza to destination: 612 km in total",
+      "E-way bill distance: 640 km; gap 28 km, 4.6 percent, within tolerance",
+      "Tonne-km for a shipper's Category 4 calculation: 9 x 612 = 5,508 tonne-km"
+    ],
+    "note": "If you own the truck, use the trip's diesel litres for Scope 1 and keep the tonne-km for intensity reporting. For an ISO 14083 or GLEC report, take tonne-km from the shortest feasible distance in your routing tool instead."
+  },
+  "senseible": "Senseible reads freight records and diesel invoices into dated, fingerprinted entries. Toll statements are kept as supporting evidence alongside them.",
+  "links": [
+    {
+      "label": "E-way bill distance for freight emissions",
+      "to": "/answers/use-e-way-bill-distance-for-freight-emissions"
+    },
+    {
+      "label": "Freight bill with no weight or distance",
+      "to": "/answers/freight-bill-has-no-weight-or-distance"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions arising from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GLEC Framework v3, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 4 and data quality",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

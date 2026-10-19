@@ -1,0 +1,76 @@
+{
+  "slug": "msme-loan-rate-linked-to-repo-rate",
+  "q": "Why is my MSME loan rate linked to the repo rate, and when should it fall after an RBI rate cut?",
+  "title": "Repo-linked MSME loans after a rate cut",
+  "short": "RBI requires banks to link new floating rate loans to micro and small enterprises to an external benchmark, most often the repo rate, so rate changes pass through. After a cut, your rate falls on your loan's next reset date, which must come at least once every three months.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "MSME borrowers on floating rate loans",
+  "sections": [
+    {
+      "h": "Where the rule comes from",
+      "p": [
+        "RBI's circular of 4 September 2019 made banks link all new floating rate loans to micro and small enterprises, from 1 October 2019, to an external benchmark: the RBI repo rate, a government Treasury bill yield published by FBIL, or another FBIL benchmark. Floating rate loans to medium enterprises followed from 1 April 2020. Each bank picks the benchmark, but must use one benchmark within a loan category."
+      ]
+    },
+    {
+      "h": "How your rate is built",
+      "ul": [
+        "Your rate = benchmark + spread. With a repo-linked loan, the benchmark moves only when RBI changes the repo rate.",
+        "Reset: the rate must be reset at least once every three months. Your sanction letter states the reset dates.",
+        "Credit risk premium: can change only if your credit assessment changes substantially, as agreed in the loan contract.",
+        "Other parts of the spread: can be raised only once in three years. Since 1 October 2025 a bank may cut them sooner in the borrower's favour, under its board-approved policy."
+      ]
+    },
+    {
+      "h": "When a cut reaches you",
+      "p": [
+        "On the first reset date after the repo cut. If your loan resets quarterly and the cut came just after a reset, you may wait close to three months. The bank may keep your EMI and shorten the tenure, or cut the EMI; ask which, and ask for the revised repayment schedule in writing. Some banks also offer a switch to a fixed rate at reset, at their discretion."
+      ]
+    },
+    {
+      "h": "Loans that do not follow the repo rate",
+      "ul": [
+        "Older loans on MCLR or base rate reset on their own schedule, often yearly, and pass on cuts more slowly. You can ask to switch to the external benchmark; the bank may charge a fee and the new spread is agreed between you.",
+        "Fixed rate loans do not change.",
+        "Loans from NBFCs: the external benchmark rule was issued to banks, so an NBFC loan moves as its agreement says. Read the reset clause before you sign."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 25 basis point cut (rates assumed)",
+    "lines": [
+      "Outstanding term loan: ₹50,00,000; repo 5.50% + spread 3.50% = 9.00%",
+      "RBI cuts repo by 0.25%: new rate 5.25% + 3.50% = 8.75% from the next reset",
+      "Interest saved in a year on the same balance: 50,00,000 x 0.25% = ₹12,500"
+    ],
+    "note": "Repo and spread are illustrative, not the current rates. Your saving depends on the balance outstanding and the reset date."
+  },
+  "senseible": "Your loan rate is set by your bank under RBI rules. If the loan is a green loan with sustainability reporting, Senseible keeps the bill-backed emission records the lender may ask for after disbursement.",
+  "links": [
+    {
+      "label": "Sustainability-linked loan interest discount",
+      "to": "/answers/sustainability-linked-loan-interest-discount"
+    },
+    {
+      "label": "Energy efficiency loan: EMI vs savings",
+      "to": "/answers/energy-efficiency-loan-emi-vs-savings"
+    },
+    {
+      "label": "Green loan vs traditional loan cost",
+      "to": "/climate-intelligence/green-loan-vs-traditional-loan-real-cost-comparison"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular, External benchmark based lending, 4 September 2019 (micro and small enterprises from 1 October 2019), and circular of 26 February 2020 (medium enterprises from 1 April 2020)",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "RBI amendment on interest rate on advances effective 1 October 2025 (earlier spread reduction, fixed rate switch at reset), now in RBI's consolidated Directions on interest rates on advances, 28 November 2025",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "RBI consolidated its interest rate rules for banks in Directions of 28 November 2025; recheck the three-month reset and spread rules there before relying on them (checked 19 October 2026)."
+}

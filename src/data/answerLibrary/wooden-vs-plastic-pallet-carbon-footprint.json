@@ -1,0 +1,76 @@
+{
+  "slug": "wooden-vs-plastic-pallet-carbon-footprint",
+  "q": "Wooden or plastic pallets for exports: which has the lower carbon footprint per trip?",
+  "title": "Wooden or plastic pallet: CO2 per trip",
+  "short": "On one-way export shipments, a wooden pallet usually has the lower footprint per trip, because a plastic pallet's higher production emissions fall on a single trip. Plastic can come out ahead only in a closed loop where your records show it makes many trips. Compare production CO2e divided by real trips, plus freight for the pallet's own weight.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Exporters and warehouse operators choosing pallets",
+  "sections": [
+    {
+      "h": "The per trip formula",
+      "ul": [
+        "Per trip CO2e = pallet cradle-to-gate CO2e / trips it actually makes + freight for the pallet's weight on that trip + its end of life share",
+        "Trips is the number you can show, not the rated life. A pallet that leaves with the container and never returns makes one trip.",
+        "Freight for the pallet = pallet weight in tonnes x distance x the mode's factor per tonne-km."
+      ]
+    },
+    {
+      "h": "What changes for export pallets",
+      "p": [
+        "Under ISPM 15, wooden packaging crossing borders must be treated and marked, most often by heat treatment that holds the whole cross-section at 56 degrees C or more for 30 minutes, or by dielectric heating. The kiln energy is part of the wooden pallet's footprint; ask your supplier for it or add it from their fuel use. Plastic and pressed wood pallets are outside ISPM 15 and need no treatment.",
+        "ISPM 15 also lists methyl bromide fumigation, an ozone-depleting substance; ask for heat treated pallets."
+      ]
+    },
+    {
+      "h": "Biogenic carbon in wood",
+      "p": [
+        "Wood stores carbon absorbed while the tree grew. Under the GHG Protocol and ISO 14067, that stored carbon is reported separately and not netted against the pallet's fossil emissions. Do not claim a wooden pallet as carbon negative because of it."
+      ]
+    },
+    {
+      "h": "Decision rule",
+      "ul": [
+        "One-way export, pallet not returned: wood, heat treated, from a nearby sawmill.",
+        "Closed loop with a buyer or your own warehouses, with a return or pooling system: plastic, if your records show enough trips to cover its higher production emissions.",
+        "Pallet pooling: use the pool operator's per trip figure, which already spreads production over the fleet."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: per trip footprint, illustrative inputs",
+    "lines": [
+      "Wooden pallet: production and heat treatment 20 kg CO2e (supplier figure, illustrative), 1 trip: 20.0 kg CO2e per trip",
+      "Plastic pallet: production 75 kg CO2e (supplier figure, illustrative), 50 trips: 75 / 50 = 1.5 kg CO2e per trip",
+      "Plastic pallet sent one way, 1 trip: 75 kg CO2e per trip",
+      "Freight for a 22 kg pallet on 500 km by medium truck: 0.022 x 500 = 11 tonne-km x 0.1400 = 1.54 kg CO2e"
+    ],
+    "note": "Production figures are placeholders to show the arithmetic; replace them with your suppliers' declared footprints. The truck factor is the freight calculator's default for an Indian medium truck."
+  },
+  "senseible": "Senseible reads pallet purchase invoices into your Scope 3 supplier trail and freight records into Category 4. A per trip product comparison like this one uses supplier footprint data you add.",
+  "links": [
+    {
+      "label": "Returnable pallets and crates in Scope 3",
+      "to": "/answers/returnable-packaging-scope-3"
+    },
+    {
+      "label": "Does EUDR apply to export pallets",
+      "to": "/answers/does-eudr-apply-to-export-packaging-pallets"
+    },
+    {
+      "label": "Packaging footprint for an export shipment",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products, and ISO 14044:2006 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Standard, biogenic carbon reporting",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "what-is-a-cma-report-bank-loan",
+  "q": "What is a CMA report, and why does my bank want one for a loan?",
+  "title": "What a CMA report is and why banks ask",
+  "short": "A CMA report is a set of tables, built from your past accounts and projections, that a bank uses to work out how much working capital or term loan you can carry. The name comes from RBI's Credit Monitoring Arrangement. Banks ask for it when your limit is above what they assess on turnover alone.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "First-time borrowers above the simplified working capital limit",
+  "sections": [
+    {
+      "h": "What is inside a CMA report",
+      "ul": [
+        "Existing and proposed credit limits.",
+        "Operating statement: sales, costs and profit for two to three past years, the current year estimate and one or more projected years.",
+        "Analysis of the balance sheet for the same years.",
+        "Current assets and current liabilities in detail: stock, debtors, creditors, with holding periods in days.",
+        "Working capital gap and the maximum permissible bank finance.",
+        "Fund flow statement, and for term loans a repayment schedule with the debt service coverage ratio."
+      ]
+    },
+    {
+      "h": "How the bank sizes your limit from it",
+      "p": [
+        "The Tandon Committee methods, still used by many banks, take the gap between current assets and current liabilities other than bank borrowing. Under the second method, you fund 25% of current assets from long-term money and the bank funds the rest of the gap.",
+        "For micro and small enterprises, RBI guidelines based on the Nayak Committee let banks size fund-based working capital limits up to ₹5 crore on projected turnover instead: working capital taken as 25% of projected annual turnover, of which at least 20% is bank finance and 5% is your margin. Above that, or when a bank prefers, it asks for CMA data."
+      ]
+    },
+    {
+      "h": "What lenders look at closely",
+      "ul": [
+        "Whether projected sales growth matches your order book and past trend.",
+        "Debtor and stock days: long holding periods raise the working capital you need and flag collection problems.",
+        "Current ratio, often expected around 1.33 under the second Tandon method.",
+        "Whether the projections tie back to audited figures and GST returns.",
+        "The final decision, limit and terms are the lender's; a CMA report supports the request, it does not settle it."
+      ]
+    },
+    {
+      "h": "Who prepares it",
+      "p": [
+        "Usually your chartered accountant, in the bank's own format. Give them audited accounts, the latest provisional figures, a stock and debtor ageing, and realistic projections you can defend in a credit interview."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: three ways to size a working capital limit (figures assumed)",
+    "lines": [
+      "Projected current assets: ₹4.00 crore; current liabilities other than bank borrowing: ₹1.20 crore",
+      "Tandon method I: 75% x (4.00 minus 1.20) = ₹2.10 crore",
+      "Tandon method II: 75% x 4.00 minus 1.20 = 3.00 minus 1.20 = ₹1.80 crore",
+      "Turnover method for an MSE, projected turnover ₹12 crore: bank finance 20% = ₹2.40 crore; your margin 5% = ₹0.60 crore"
+    ],
+    "note": "Banks apply their own board-approved policy and may assess a lower limit than any of these."
+  },
+  "senseible": "Your CA prepares the CMA report from your accounts. If the loan funds a green project, Senseible's green loan readiness check and bill-backed emission records can go into the same application.",
+  "links": [
+    {
+      "label": "Collateral-free MSME loan limit",
+      "to": "/answers/cgtmse-collateral-free-loan-limit"
+    },
+    {
+      "label": "Detailed project report for an efficiency loan",
+      "to": "/answers/energy-efficiency-loan-detailed-project-report"
+    },
+    {
+      "label": "Green loan readiness check",
+      "to": "/green-loan-check"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI guidelines on working capital assessment for micro and small enterprises (turnover method for limits up to ₹5 crore, following the Nayak Committee), in RBI's MSME lending directions",
+      "url": "https://www.rbi.org.in"
+    },
+    {
+      "label": "Report of the Study Group to Frame Guidelines for Follow-up of Bank Credit (Tandon Committee), RBI, 1975",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Working capital assessment limits for MSEs are set in RBI's MSME Master Direction; recheck the ₹5 crore turnover-method ceiling (checked 19 October 2026)."
+}

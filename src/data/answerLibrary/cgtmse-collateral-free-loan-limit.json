@@ -2,7 +2,7 @@
   "slug": "cgtmse-collateral-free-loan-limit",
   "q": "How much can an MSME borrow without collateral in India?",
   "title": "Collateral-free MSME loan limit in India",
-  "short": "A micro or small enterprise can borrow up to Rs 10 lakh without collateral under RBI rules, and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under the CGTMSE scheme. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
+  "short": "A micro or small enterprise can borrow up to Rs 20 lakh without collateral under RBI rules (loans sanctioned from 1 April 2026), and up to Rs 10 crore without collateral or a third-party guarantee when the lender covers the loan under CGTMSE. Taking CGTMSE cover is the lender's choice, not the borrower's right.",
   "topic": "markets",
   "intent": "check",
   "audience": "Micro and small enterprises seeking loans",
@@ -10,7 +10,7 @@
     {
       "h": "The two limits and how they differ",
       "ul": [
-        "Up to Rs 10 lakh: RBI's Master Direction on lending to the MSME sector tells banks not to take collateral for loans to micro and small enterprises up to this amount.",
+        "Up to Rs 20 lakh: RBI's directions on lending to the MSME sector, as amended in February 2026, tell banks not to take collateral for loans to micro and small enterprises up to this amount, for loans sanctioned or renewed from 1 April 2026.",
         "Up to Rs 10 crore: the Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) covers loans up to this ceiling, raised from Rs 5 crore with effect from 1 April 2025 after the Union Budget 2025-26. The bank takes CGTMSE cover instead of property or a personal guarantor."
       ],
       "p": [
@@ -36,7 +36,7 @@
       "ol": [
         "Tell the branch at the start that you want the loan covered under CGTMSE and do not want to offer collateral.",
         "Keep Udyam registration, GST returns, the financial records your bank lists and a project or working capital plan ready for the bank's appraisal.",
-        "If the bank asks for collateral on a loan up to Rs 10 lakh, refer to the RBI Master Direction and escalate to the bank's grievance officer if needed."
+        "If the bank asks for collateral on a loan up to Rs 20 lakh, refer to the RBI Master Direction and escalate to the bank's grievance officer if needed."
       ]
     }
   ],
@@ -65,6 +65,6 @@
       "url": "https://www.rbi.org.in"
     }
   ],
-  "reviewed": "2026-10-16",
-  "reviewNote": "CGTMSE fees, cover ratios and ceilings are revised from time to time; check the current ceiling and fee schedule on cgtmse.in. The Rs 10 crore ceiling applies from 1 April 2025."
+  "reviewed": "2026-10-19",
+  "reviewNote": "CGTMSE fees, cover ratios and ceilings are revised from time to time; check the current ceiling and fee schedule on cgtmse.in. The Rs 10 crore ceiling applies from 1 April 2025. Collateral-free limit raised to Rs 20 lakh by the RBI amendment of 9 February 2026, for loans sanctioned or renewed from 1 April 2026."
 }

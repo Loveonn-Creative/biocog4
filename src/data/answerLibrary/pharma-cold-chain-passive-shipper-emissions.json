@@ -1,0 +1,87 @@
+{
+  "slug": "pharma-cold-chain-passive-shipper-emissions",
+  "q": "How do I count insulated shippers, gel packs and dry ice in the footprint of a pharma export shipment?",
+  "title": "Passive shippers in a pharma export footprint",
+  "short": "Count three things: the shipper's own materials (insulation, cartons, gel packs or PCM bricks), the extra air freight from their weight, and the dry ice, which releases its full mass as CO2. Add them to the product's freight. On air shipments the extra weight usually matters more than the materials themselves.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Pharma exporters and cold chain forwarders",
+  "sections": [
+    {
+      "h": "Materials of the shipper",
+      "ul": [
+        "Single-use shippers you buy (EPS or PUR boxes, cartons, gel packs): weigh each material and apply a material factor. These are Category 1 purchased goods.",
+        "Vacuum insulated panel shippers rented from a provider: the rental is a purchased service. Ask the provider for a footprint per trip, which should include its return logistics and refurbishment.",
+        "Reusable shippers you own: spread their material footprint over the trips you expect, and add the return freight each time.",
+        "Conditioning gel packs in your cold room: that electricity is already in your Scope 2."
+      ]
+    },
+    {
+      "h": "Extra weight on the air waybill",
+      "p": [
+        "Freight emissions follow actual gross mass, not chargeable weight. Work out the product's freight and the shipper's freight separately: shipper mass in tonnes x air distance x air factor. A heavy passive shipper can add a large share of the shipment's freight emissions, which is why lighter shippers cut carbon on air lanes."
+      ]
+    },
+    {
+      "h": "Dry ice",
+      "p": [
+        "Every kg of dry ice sublimes into one kg of CO2. If you buy and pack it, count every kg as 1 kg CO2 in your Scope 1, even though most of it escapes on the way, and note that choice. If the forwarder or the shipper provider adds it, ask them for the kg used per shipment."
+      ]
+    },
+    {
+      "h": "Which category each piece goes in",
+      "ul": [
+        "Shipper materials and rented shippers: Category 1.",
+        "Freight you pay for, including the shipper's weight: Category 4.",
+        "Dry ice you pack: Scope 1, as a direct release.",
+        "Freight your customer pays for: Category 9, if you report it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 kg of product by air, Mumbai to Frankfurt (factors assumed)",
+    "lines": [
+      "Shipper load: EPS 8 kg, cartons 7 kg, gel packs 30 kg, dry ice 15 kg, total 60 kg; gross 160 kg",
+      "Materials: 8 x an assumed 3.5 + 7 x an assumed 1.0 + 30 x an assumed 0.2 = 28 + 7 + 6 = 41 kg CO2e",
+      "Dry ice: 15 kg CO2",
+      "Freight: 0.160 t x 6,500 km x an assumed 0.8 kg CO2e per tonne-km = 832 kg CO2e, of which the shipper's 0.060 t is 312 kg",
+      "Shipment total: 41 + 15 + 832 = 888 kg CO2e",
+      "Due to the shipper: 41 + 15 + 312 = 368 kg CO2e, about 41% of the total"
+    ],
+    "note": "Material factors, the air factor and the distance are placeholders. Use supplier footprints and your forwarder's lane data."
+  },
+  "senseible": "Senseible reads the shipper, gel pack and dry ice invoices and the freight bills for quantities, and keeps each file as evidence for the shipment's footprint.",
+  "links": [
+    {
+      "label": "Purchased CO2 and dry ice in Scope 1",
+      "to": "/answers/purchased-co2-gas-scope-1"
+    },
+    {
+      "label": "Air freight: actual or chargeable weight",
+      "to": "/answers/air-freight-actual-or-chargeable-weight"
+    },
+    {
+      "label": "Returnable packaging in Scope 3",
+      "to": "/answers/returnable-packaging-scope-3"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Smart Freight Centre, GLEC Framework v3.0 (2023)",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Categories 1, 4 and 9",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "ISO 14083:2023, Quantification and reporting of GHG emissions arising from transport chain operations (iso.org)",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

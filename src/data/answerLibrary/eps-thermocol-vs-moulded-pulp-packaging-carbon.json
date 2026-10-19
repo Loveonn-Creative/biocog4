@@ -1,0 +1,86 @@
+{
+  "slug": "eps-thermocol-vs-moulded-pulp-packaging-carbon",
+  "q": "Is moulded pulp lower carbon than EPS (thermocol) for protective export packaging?",
+  "title": "Moulded pulp or EPS: which is lower carbon?",
+  "short": "Not always. Moulded pulp is lower carbon only if the pulp part is not much heavier than the EPS part and the drying energy is modest. Compare per protective insert, not per kg: insert weight x material factor, plus drying fuel and power for pulp, plus the extra weight you ship.",
+  "topic": "product",
+  "intent": "comparison",
+  "audience": "Electronics, appliance, glassware and handicraft exporters",
+  "sections": [
+    {
+      "h": "Compare the same job, not the same kilogram",
+      "p": [
+        "EPS is mostly air, so an insert that protects a product weighs little. A pulp insert doing the same job is often two to three times heavier. Per kg, pulp from recovered paper usually has a lower factor than EPS; per insert, the extra mass can cancel that. Set the functional unit as one insert that passes the same drop test for the same product."
+      ]
+    },
+    {
+      "h": "What to count on each side",
+      "ul": [
+        "EPS: insert mass x a cradle to gate factor for EPS, such as the industry eco-profile or your moulder's own data, plus moulding steam and power if not included.",
+        "Moulded pulp: fibre (recovered or virgin) plus forming electricity plus drying. Drying wet parts in ovens takes most of the energy, so ask the maker for fuel and kWh per tonne of dry parts.",
+        "Freight: the extra kilograms per carton x tonne-km x the mode factor, since you ship the packaging with the goods.",
+        "End of life, if the buyer wants cradle to grave: pulp is widely recycled or composted; EPS is often landfilled or burned where the goods land."
+      ]
+    },
+    {
+      "h": "Rules for telling a buyer which is better",
+      "p": [
+        "ISO 14044 sets extra rules for comparative assertions disclosed to the public, including a critical review by a panel. For an internal choice you do not need that, but for marketing claims you do. In the EU, Directive (EU) 2024/825 on empowering consumers for the green transition applies from 27 September 2026 and bans generic environmental claims that cannot be substantiated, so avoid words like eco-friendly on the pack and give the number with its basis instead.",
+        "The EU Packaging and Packaging Waste Regulation also pushes exporters to cut packaging weight and empty space, which favours whichever insert is lighter for the job."
+      ]
+    },
+    {
+      "h": "A decision rule",
+      "ol": [
+        "Get the weight of both inserts that pass your drop test.",
+        "Get the maker's energy per tonne for each, or a named factor, and label any assumption.",
+        "Add freight for the weight difference.",
+        "Pick the lower total, and recheck if the pulp supplier changes drying fuel, because a move from PNG or coal to biomass or solar heat changes the result most."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative comparison for one insert (assumed factors, not published values)",
+    "lines": [
+      "EPS insert: 150 g x 3.3 kg CO2e per kg (assumed) = 0.495 kg CO2e",
+      "Pulp insert for the same protection: 400 g",
+      "Pulp fibre, recovered paper: 0.4 kg x 0.4 kg CO2e per kg (assumed) = 0.160 kg",
+      "Drying with PNG at 0.25 scm per kg (assumed): 0.1 scm x 2.05 = 0.205 kg CO2",
+      "Forming power at 0.6 kWh per kg (assumed): 0.24 kWh x 0.710 = 0.170 kg CO2",
+      "Extra 250 g shipped 8,000 km by sea at 0.01 kg per tonne-km (assumed): 0.00025 x 8,000 x 0.01 = 0.020 kg",
+      "Pulp total: 0.160 + 0.205 + 0.170 + 0.020 = 0.555 kg, about 12 percent above EPS here"
+    ],
+    "note": "Every factor and mass here is an assumption chosen to show the method. A lighter pulp design or a biomass dryer would flip the result. Replace each with supplier data."
+  },
+  "senseible": "Senseible reads your packaging purchase invoices into supplier evidence for Scope 3, with weights where the invoice prints them. The insert comparison itself needs your drop test weights and the makers' energy data.",
+  "links": [
+    {
+      "label": "Packaging footprint on export shipments",
+      "to": "/answers/packaging-carbon-footprint-export-shipment"
+    },
+    {
+      "label": "EU PPWR rules for Indian exporters",
+      "to": "/answers/eu-ppwr-requirements-for-indian-exporters"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006, Life cycle assessment, requirements and guidelines (comparative assertions)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Directive (EU) 2024/825, empowering consumers for the green transition, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "Regulation (EU) 2025/40 on packaging and packaging waste, on EUR-Lex",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "EU green claims rules are moving: Directive (EU) 2024/825 applies from 27 September 2026 and the separate Green Claims proposal is unresolved; recheck before making any comparative claim to EU buyers."
+}

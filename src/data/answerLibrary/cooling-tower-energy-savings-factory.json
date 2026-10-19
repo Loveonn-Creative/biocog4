@@ -1,0 +1,84 @@
+{
+  "slug": "cooling-tower-energy-savings-factory",
+  "q": "How much electricity do cooling tower fans and pumps use, and which fixes save the most?",
+  "title": "Cooling tower fans and pumps: what to fix",
+  "short": "Measure it: cooling tower energy is fan kW plus pump kW, times running hours. The circulating pump is usually the bigger load. The fixes that save most are removing throttling on the pump, switching fans by cold water temperature instead of running them all the time, and keeping fill and nozzles clean.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Plant engineers in plastics, chemicals, pharma and HVAC-heavy sites",
+  "sections": [
+    {
+      "h": "Measure before you choose a fix",
+      "ul": [
+        "Input kW of each fan and pump motor, with a power analyser, at normal running.",
+        "Hours each motor runs, and whether fans run even when the water is already cold enough.",
+        "Hot water in, cold water out and wet bulb temperature, at the same time.",
+        "Pump discharge valve position. A valve half closed means the pump is bigger than the duty."
+      ]
+    },
+    {
+      "h": "Range, approach and effectiveness",
+      "p": [
+        "The BEE guide book on electrical utilities rates a tower with three numbers. Range = hot water in minus cold water out. Approach = cold water out minus wet bulb. Effectiveness = range / (range + approach). Hot water at 37 C, cold water at 32 C and wet bulb at 28 C give a range of 5, an approach of 4 and effectiveness of 5 / 9 = 56 percent.",
+        "A widening approach over months points to fouled fill, blocked nozzles or poor airflow. It costs twice: fans work harder, and any chiller or process cooled by the water runs warmer and uses more power."
+      ]
+    },
+    {
+      "h": "Fixes, roughly in order of what they save",
+      "ol": [
+        "Pump throttling: if the discharge valve is partly closed, trim the impeller or fit a correctly sized pump, so the motor stops pushing against a valve.",
+        "Fan control by temperature: switch fans off, or slow them, when cold water is below the set point, instead of running every cell all day and night.",
+        "Fill and nozzle cleaning, and drift eliminator repair, so the tower meets its approach with fewer fans running.",
+        "Fan blades: swapping metal blades for FRP blades of a better profile is a common audit measure; ask the vendor for a measured kW comparison at your airflow before you buy.",
+        "Variable speed drives where the load varies through the day, sized on measured hours at each load."
+      ]
+    },
+    {
+      "h": "Turning the saving into kWh and CO2",
+      "p": [
+        "kWh saved = (kW before minus kW after) x hours at that condition, for each motor. CO2 saved = kWh saved x 0.710 kg CO2 per kWh, the CEA grid factor, for grid power. Re-measure after the change at similar weather and load, because wet bulb swings with the season."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: two fan cells and one pump (illustrative measurements)",
+    "lines": [
+      "Running hours: 24 x 330 days = 7,920 h a year",
+      "Fan control: one 13 kW fan can be off 40 percent of hours (from a week of logged cold water temperature): 13 x 0.40 x 7,920 = 41,184 kWh",
+      "Pump: 45 kW with the valve throttled, 34 kW after impeller trim, same flow: 11 x 7,920 = 87,120 kWh",
+      "Total: 41,184 + 87,120 = 1,28,304 kWh a year",
+      "CO2: 1,28,304 x 0.710 = 91,095.8 kg, about 91.1 t a year"
+    ],
+    "note": "All kW, hours and the 40 percent off time are illustrative. Use your own measured values before and after."
+  },
+  "senseible": "Senseible reads the units on your electricity bills and applies 0.710 kg CO2 per kWh, so a saving shows up month by month in your Scope 2 record. The kW measurements on the tower itself come from your power analyser or energy auditor.",
+  "links": [
+    {
+      "label": "VFD on a pump or fan: kWh and CO2 saved",
+      "to": "/answers/vfd-pump-fan-energy-co2-savings"
+    },
+    {
+      "label": "Pump efficiency test and replacement",
+      "to": "/answers/pump-efficiency-test-and-replacement-savings"
+    },
+    {
+      "label": "Chiller efficiency in kW per TR",
+      "to": "/answers/chiller-efficiency-kw-per-tr"
+    },
+    {
+      "label": "Energy transition savings calculator",
+      "to": "/calculators/energy-transition-savings"
+    }
+  ],
+  "sources": [
+    {
+      "label": "BEE Guide Book 3, Energy Efficiency in Electrical Utilities, Chapter 7 Cooling Towers",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "energize-pharma-supplier-renewable-electricity",
+  "q": "My pharma customer invited us to the Energize programme. What is it and what do I commit to?",
+  "title": "Energize programme for pharma suppliers",
+  "short": "Energize is a programme run by Schneider Electric with large pharmaceutical companies, launched in November 2021, to help their suppliers buy renewable electricity. It offers education and access to individual or group renewable power deals. Joining is free for suppliers of the sponsoring companies; read the participation terms before you sign.",
+  "topic": "markets",
+  "intent": "explain",
+  "audience": "API and formulation suppliers to global pharma",
+  "sections": [
+    {
+      "h": "Why your customer is asking",
+      "p": [
+        "For a pharma company, the electricity its suppliers use is part of its Scope 3. Moving suppliers to renewable power is one of the few ways to cut that figure at scale, so customers invite suppliers to programmes like Energize and ask them to report progress."
+      ]
+    },
+    {
+      "h": "What to confirm before joining",
+      "ol": [
+        "Ask your customer for the participation terms in writing and read what reporting, targets or timelines they include.",
+        "Ask whether a group renewable power deal is open in India and in which states. The programme started with suppliers' load in Europe and North America, and any power purchase agreement is a separate contract with its own terms.",
+        "Ask what data your customer will see and how often, and whether it overlaps with the PSCI or other questionnaires you already answer."
+      ]
+    },
+    {
+      "h": "Data you will need either way",
+      "ul": [
+        "Twelve months of electricity bills for each site, with units, tariff category and sanctioned load.",
+        "DG set diesel, since a renewable share target usually covers grid power, not your own generation.",
+        "Location-based Scope 2 at the CEA grid factor, and market-based Scope 2 if you already hold RECs, a green tariff or open access power.",
+        "Your current renewable share: renewable kWh you can document divided by total kWh."
+      ]
+    },
+    {
+      "h": "Indian routes to renewable power",
+      "p": [
+        "If a group deal is not available, the usual Indian options are a discom green tariff, green energy open access, group captive solar or wind, rooftop solar, and RECs. Each has different cost, contract length and evidence for a Scope 2 claim, so choose with your customer's reporting rules in view."
+      ]
+    }
+  ],
+  "senseible": "Senseible gives you the per-site electricity baseline from your bills, location-based Scope 2 at 0.710 kg CO2 per kWh, and market-based Scope 2 when you record the green tariff, open access or REC evidence.",
+  "links": [
+    {
+      "label": "PSCI questionnaire: emissions data to give",
+      "to": "/answers/psci-questionnaire-pharma-supplier-emissions"
+    },
+    {
+      "label": "Green energy open access in India",
+      "to": "/climate-intelligence/green-energy-open-access-india"
+    },
+    {
+      "label": "Group captive solar and Scope 2",
+      "to": "/answers/group-captive-solar-scope-2"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Scope 2 Guidance (market-based method and quality criteria)",
+      "url": "https://ghgprotocol.org/scope-2-guidance"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Programme facts (launched November 2021, free for suppliers of sponsors, initial focus Europe and North America) from Schneider Electric's Energize pages (perspectives.se.com, hub.zeigo.com/Energize); membership, markets and terms change, so confirm with your customer. Checked 2026-10-19.",
+  "reviewed": "2026-10-19"
+}

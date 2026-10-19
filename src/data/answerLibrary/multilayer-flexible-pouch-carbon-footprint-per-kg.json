@@ -1,0 +1,84 @@
+{
+  "slug": "multilayer-flexible-pouch-carbon-footprint-per-kg",
+  "q": "How do I calculate the carbon footprint of a multilayer laminated pouch per kg or per thousand pouches?",
+  "title": "Multilayer pouch carbon footprint",
+  "short": "Split the laminate into layers by mass, multiply each layer's share by that material's per kg factor, then add adhesive, ink, converting electricity at 0.710 kg CO2 per kWh and your scrap. For a thousand pouches, multiply the per kg figure by the weight of a thousand pouches.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Flexible packaging converters and food brands asked by buyers",
+  "sections": [
+    {
+      "h": "Get layer masses from the specification",
+      "p": [
+        "Each film layer's grammage in g per m2 is thickness in microns x density in g per cm3. Typical densities: PET about 1.39, LDPE about 0.92, BOPP about 0.91, aluminium foil 2.70. Adhesive and ink are given as dry g per m2 on your lamination and print records.",
+        "Add the layers for the laminate's total g per m2, then work out each layer's share of the mass."
+      ]
+    },
+    {
+      "h": "Which layers drive the total",
+      "p": [
+        "The material terms are usually most of a pouch footprint. Aluminium foil carries a much higher per kg factor than the plastic layers, so a 7 to 9 micron foil layer can dominate a PET/foil/PE structure. A metallised film has only a very thin metal coat, so its metal mass is close to zero and the base film carries the weight.",
+        "Take each material factor from your supplier's product footprint where you have one, or from a named database, and record the source and year next to it."
+      ]
+    },
+    {
+      "h": "Converting energy, solvents and scrap",
+      "ul": [
+        "Printing, lamination, curing, slitting and pouch making: kWh per kg of good output from a sub-meter or a month of bills, times 0.710 kg CO2 per kWh.",
+        "Boiler or thermic fluid heater fuel for drying: litres or kg x the IPCC 2006 factor for that fuel.",
+        "Solvent: evaporated VOCs are not among the GHG Protocol gases, but solvent burnt in an incinerator gives fossil CO2 that counts in Scope 1.",
+        "Scrap: divide inputs by good output, so trims, setup waste and rejects are carried by the pouches you sell."
+      ]
+    },
+    {
+      "h": "Per kg and per thousand pouches",
+      "p": [
+        "Pouch mass = flat area of both faces, plus gussets and seals, x laminate g per m2. Footprint per 1,000 pouches = footprint per kg x mass of 1,000 pouches in kg.",
+        "For EPR, a laminate with a non-plastic layer such as foil falls in Category III under the plastic packaging EPR guidelines; an all-plastic laminate does not. That changes your EPR filing, not the carbon arithmetic."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: PET 12 micron / ink / adhesive / LDPE 50 micron, 150 x 200 mm pouch",
+    "lines": [
+      "PET: 12 x 1.39 = 16.68 g/m2; LDPE: 50 x 0.92 = 46.0 g/m2; adhesive 3.0 g/m2 and ink 2.0 g/m2 (from your records)",
+      "Total: 16.68 + 46.0 + 3.0 + 2.0 = 67.68 g/m2",
+      "Mass shares: PET 24.6%, LDPE 68.0%, adhesive 4.4%, ink 3.0%",
+      "Materials per kg = 0.246 x PET factor + 0.680 x LDPE factor + 0.044 x adhesive factor + 0.030 x ink factor",
+      "Converting: 1.2 kWh per kg (assumed meter figure) x 0.710 = 0.852 kg CO2 per kg",
+      "Pouch area: 2 x 0.15 m x 0.20 m = 0.06 m2; mass = 0.06 x 67.68 = 4.06 g, so 1,000 pouches weigh 4.06 kg",
+      "Converting share per 1,000 pouches: 4.06 x 0.852 = 3.46 kg CO2, before material terms and scrap"
+    ],
+    "note": "Densities are typical values and the kWh figure is assumed; material factors are left as terms because they must come from your supplier or a named database."
+  },
+  "senseible": "Senseible reads resin, film and foil purchase invoices into the Scope 3 evidence trail and turns converting electricity and fuel bills into Scope 1 and 2 records. A cradle-to-gate pouch figure built on them is a self-declared draft.",
+  "links": [
+    {
+      "label": "Blown film carbon footprint per kg",
+      "to": "/answers/blown-film-extrusion-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "HSN codes for packaging in Scope 3",
+      "to": "/answers/hsn-codes-for-packaging-materials-scope-3"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "Plastic Waste Management (Amendment) Rules, 2022, Guidelines on Extended Producer Responsibility for Plastic Packaging (MoEFCC)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

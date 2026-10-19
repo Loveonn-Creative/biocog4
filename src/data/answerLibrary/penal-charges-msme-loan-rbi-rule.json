@@ -1,0 +1,74 @@
+{
+  "slug": "penal-charges-msme-loan-rbi-rule",
+  "q": "Can my bank charge penal interest on my MSME loan, and how much?",
+  "title": "Penal charges on MSME loans: RBI rule",
+  "short": "Not as penal interest. Since RBI's 2023 rule on penal charges, a bank may levy a penal charge for a default or missed condition, but it cannot add it to your interest rate or charge interest on it. RBI sets no cap; the amount must be reasonable, set by board policy and disclosed in your Key Facts Statement.",
+  "topic": "markets",
+  "intent": "check",
+  "audience": "MSME borrowers with a missed covenant or late payment",
+  "sections": [
+    {
+      "h": "What the rule says",
+      "ul": [
+        "Penalties for non-compliance with loan terms are penal charges, not penal interest, and are not added to the rate of interest.",
+        "Penal charges are not capitalised: no interest is computed on them.",
+        "The bank must have a board-approved policy, and the amount must be reasonable and in proportion to the non-compliance, without discrimination within a loan product.",
+        "The quantum and the reason must be in the loan agreement and the Key Facts Statement, and on the bank's website.",
+        "Whenever a reminder for non-compliance is sent, the bank must say which penal charge applies, and each levy must be communicated with the reason."
+      ]
+    },
+    {
+      "h": "When it applies",
+      "p": [
+        "RBI issued the circular on 18 August 2023. After a three month extension (circular of 29 December 2023) it applied to fresh loans from 1 April 2024, and existing loans moved to the new regime at their next review or renewal on or after that date, and no later than 30 June 2024. It covers banks, NBFCs and other regulated lenders. Credit cards, external commercial borrowings, trade credits and structured obligations are outside it."
+      ]
+    },
+    {
+      "h": "What is not a penal charge",
+      "p": [
+        "Normal interest at the contract rate keeps running on the amount outstanding, including overdue amounts. That is interest, not a penalty. What the bank cannot do is raise the rate by, say, 2 percent for a late stock statement."
+      ]
+    },
+    {
+      "h": "What to do if you were charged",
+      "ol": [
+        "Ask the branch for the penal charge policy and the Key Facts Statement for your loan.",
+        "Check the reason and the amount against both.",
+        "If the charge was added to your rate, compounded, or never disclosed, write to the branch and then the grievance redressal officer; after 30 days without a fair reply you can go to the RBI Ombudsman."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative: how a flat penal charge differs from penal interest",
+    "lines": [
+      "Overdue instalment: Rs 5,00,000 for 30 days",
+      "Penal charge in the bank's schedule, illustrative: 1 percent a year on the overdue amount: 5,00,000 x 1% x 30 / 365 = Rs 411",
+      "Allowed: Rs 411 levied once, no interest on it",
+      "Not allowed: the loan rate raised from 10 percent to 11 percent on the whole outstanding"
+    ],
+    "note": "The 1 percent rate is an example only; your bank's schedule sets the actual charge."
+  },
+  "senseible": "For green or energy loans, Senseible's green loan readiness check organises the energy and carbon records lenders ask for, so the figures behind green loan reporting covenants are ready when the bank asks.",
+  "links": [
+    {
+      "label": "Sustainability-linked loan interest discount",
+      "to": "/answers/sustainability-linked-loan-interest-discount"
+    },
+    {
+      "label": "Green loan reporting after disbursement",
+      "to": "/answers/green-loan-reporting-after-disbursement"
+    },
+    {
+      "label": "Green finance for MSMEs",
+      "to": "/green-finance"
+    }
+  ],
+  "sources": [
+    {
+      "label": "RBI circular, Fair Lending Practice, Penal Charges in Loan Accounts, 18 August 2023 (rbi.org.in)",
+      "url": "https://www.rbi.org.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Based on the RBI penal charges circular of 18 August 2023 and the extension circular of 29 December 2023; checked 2026-10-19. Check rbi.org.in for later amendments."
+}
