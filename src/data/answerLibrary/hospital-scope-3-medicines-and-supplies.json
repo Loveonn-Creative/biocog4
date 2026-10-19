@@ -1,0 +1,80 @@
+{
+  "slug": "hospital-scope-3-medicines-and-supplies",
+  "q": "How do hospitals estimate Scope 3 from medicines, consumables and medical equipment?",
+  "title": "Hospital Scope 3: medicines and supplies",
+  "short": "Start spend-based: group the year's purchases into medicines, consumables and equipment, take values before GST, and multiply each group by a matching EEIO factor. Medicines and consumables go in Category 1, equipment in Category 2. Then replace the biggest suppliers' lines with their own emissions data.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hospital groups preparing BRSR or lender ESG data",
+  "sections": [
+    {
+      "h": "Why supplies matter for a hospital",
+      "p": [
+        "Health Care Without Harm's 2019 report, Health care's climate footprint, put about 71% of the sector's global emissions in the supply chain, and the rest in facilities' own fuel and purchased energy. Your hospital's split depends on what it buys and how it is powered, which is why the estimate below is worth doing."
+      ]
+    },
+    {
+      "h": "Sort the purchase register into three groups",
+      "ul": [
+        "Medicines and IV fluids: Category 1, purchased goods.",
+        "Consumables: gloves, syringes, catheters, drapes, dressings, lab reagents. Category 1.",
+        "Medical equipment: monitors, ventilators, imaging machines. Category 2, capital goods, counted in full in the year bought, not depreciated."
+      ]
+    },
+    {
+      "h": "Keep these out of the supplies figure",
+      "ul": [
+        "Anaesthetic gases released in theatres: nitrous oxide is Scope 1; sevoflurane and desflurane are outside the seven GHG Protocol gases, so report them beside Scope 1 as a separate line.",
+        "Biomedical waste sent to a common treatment facility: Category 5.",
+        "Outsourced laundry, catering and housekeeping: Category 1, but as services, with their own factors."
+      ]
+    },
+    {
+      "h": "Replace the top lines with supplier data",
+      "p": [
+        "Rank suppliers by spend. For the top ten, ask for Scope 1 and 2 and revenue from their annual or BRSR report. Their emissions divided by revenue, times your spend with them, is a supplier-specific factor, better than an industry average. Label which lines are spend-based and which use supplier data."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 400 bed hospital, one year (illustrative factors)",
+    "lines": [
+      "Medicines: Rs 40 crore / Rs 85 per USD = USD 4,705,882 x 0.3 kg CO2e per USD = 1,412 t CO2e",
+      "Consumables: Rs 15 crore / 85 = USD 1,764,706 x 0.4 = 706 t CO2e",
+      "Equipment (Category 2): Rs 10 crore / 85 = USD 1,176,471 x 0.25 = 294 t CO2e",
+      "Supplies total: 1,412 + 706 + 294 = 2,412 t CO2e",
+      "For scale, Scope 2: 6,000,000 kWh x 0.710 = 4,260 t CO2"
+    ],
+    "note": "Values are before GST. The three factors are assumptions; use a named EEIO database deflated to its base year."
+  },
+  "senseible": "Senseible reads purchase invoices and gives a spend-based estimate where only spend exists, labelled spend-based with wider uncertainty; lines with a printed quantity use activity data. It also reads the hospital's electricity bills and fuel invoices for Scope 1 and 2.",
+  "links": [
+    {
+      "label": "Scope 3 Category 1, spend-based",
+      "to": "/answers/scope-3-category-1-spend-based"
+    },
+    {
+      "label": "Machinery purchase: Category 1 or 2?",
+      "to": "/answers/machinery-purchase-scope-3-category-1-or-2"
+    },
+    {
+      "label": "How to fill gaps in Scope 3 data",
+      "to": "/answers/how-to-fill-gaps-in-scope-3-data"
+    },
+    {
+      "label": "Spend-based Scope 3: GST and currency",
+      "to": "/answers/spend-based-scope-3-gst-inflation-currency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard and Technical Guidance (2013), Categories 1 and 2",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "US EPA Supply Chain GHG Emission Factors for US Commodities and Industries (USEEIO)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

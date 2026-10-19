@@ -1,0 +1,87 @@
+{
+  "slug": "leather-jacket-carbon-footprint-per-piece",
+  "q": "What is the carbon footprint of a leather jacket per piece, and which part should I measure first?",
+  "title": "Leather jacket footprint per piece",
+  "short": "There is no single figure: it depends mostly on how much leather the jacket consumes and the tannery's footprint per square foot. Measure that first, as leather area issued per jacket times the tannery figure with its hide allocation rule. Lining, zips, trims, factory power and packaging come after and are usually a small share.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Leather garment exporters in Delhi NCR, Chennai and Kolkata",
+  "sections": [
+    {
+      "h": "Start with leather area issued, not area in the garment",
+      "p": [
+        "A jacket has many panels, sleeves and facings, and skins have holes, scars and stretch. Take the leather issued for a cutting lot from your store register and divide by jackets cut. That issued area, not the pattern area, is what the jacket carries. Measure it per style and per leather type, because lamb nappa and buffalo skins cut very differently."
+      ]
+    },
+    {
+      "h": "The hide allocation rule changes the answer",
+      "p": [
+        "Skins and hides are a by-product of meat. If the tannery's figure gives hides part of the animal's farming emissions, it can be many times higher than one that starts at the slaughterhouse gate. The EU's Product Environmental Footprint category rules for leather (2018) use economic allocation at the slaughterhouse, which gives hides a small share of the animal's impact because hides earn little of its value. Tanners have argued for zero allocation, so you will see both. Whatever rule your tannery used, write it next to the number."
+      ]
+    },
+    {
+      "h": "What else goes in",
+      "ul": [
+        "Lining, quilting and interlining by mass and fibre.",
+        "Zips, press studs and buckles by mass and metal.",
+        "Factory electricity and DG diesel per jacket, split by pieces made or by standard minutes.",
+        "Hanger, polybag and carton if the buyer wants the packed product."
+      ]
+    },
+    {
+      "h": "Mistakes buyers send back",
+      "ul": [
+        "Using a tannery figure per square metre as if it were per square foot (1 m2 is 10.764 sq ft).",
+        "Pattern area instead of issued area: at a 72% cutting yield that understates the leather by 28%.",
+        "A tannery figure with no boundary or allocation note."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one lambskin jacket",
+    "lines": [
+      "Leather in cut panels 36 sq ft; cutting yield 72%: 36 / 0.72 = 50 sq ft issued",
+      "Tannery figure, assumed 1.4 kg CO2e per sq ft (economic allocation, cradle to tannery gate): 50 x 1.4 = 70.0 kg CO2e",
+      "Lining 0.4 kg x 5.0 = 2.0; zips and trims 0.15 kg x 5.0 = 0.75 kg CO2e (assumed factors)",
+      "Factory: 8 kWh per jacket x 0.710 = 5.68 kg CO2",
+      "Packaging 0.3 kg x 1.2 = 0.36 kg CO2e (assumed)",
+      "Total: 70.0 + 2.0 + 0.75 + 5.68 + 0.36 = 78.79 kg CO2e per jacket; leather is about 89%"
+    ],
+    "note": "Factors other than the grid factor are placeholders. Replace the tannery figure with your supplier's, with its allocation rule."
+  },
+  "senseible": "Senseible reads your factory's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and diesel invoices (IPCC 2006 default, 2.68 kg CO2 per litre) into a fingerprinted Scope 1 and 2 record for the per jacket factory share. Reports are self-declared drafts; the leather figure comes from your tannery.",
+  "links": [
+    {
+      "label": "Tannery footprint per square foot",
+      "to": "/answers/leather-tannery-carbon-footprint-per-square-foot"
+    },
+    {
+      "label": "Leather bag footprint per piece",
+      "to": "/answers/leather-bag-carbon-footprint-per-piece"
+    },
+    {
+      "label": "Chrome vs vegetable tanned leather",
+      "to": "/answers/chrome-vs-vegetable-tanned-leather-carbon-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on Product Environmental Footprint methods; PEFCR Leather (2018)",
+      "url": "https://eur-lex.europa.eu"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "PEFCR Leather (2018) default hide allocation checked via secondary sources (Journal of Industrial Ecology 2024 review); confirm against the PEFCR text if a buyer asks for the exact share."
+}

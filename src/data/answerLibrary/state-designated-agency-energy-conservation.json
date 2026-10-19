@@ -1,0 +1,72 @@
+{
+  "slug": "state-designated-agency-energy-conservation",
+  "q": "What is a State Designated Agency for energy conservation, and when should my factory contact it?",
+  "title": "What a State Designated Agency does",
+  "short": "A State Designated Agency is the body your state government names under Section 15 of the Energy Conservation Act, 2001 to coordinate, regulate and enforce the Act in the state. Contact it if you are a designated consumer, if your building must meet the state energy code, or if you want a state energy efficiency programme.",
+  "topic": "regulation",
+  "intent": "explain",
+  "audience": "MSMEs and plant managers",
+  "sections": [
+    {
+      "h": "Who it is in your state",
+      "p": [
+        "Each state picks its own agency. Often it is the state renewable energy development agency, an energy management centre or the electrical inspectorate. BEE's list names, for example, MEDA in Maharashtra, KREDL in Karnataka and the Energy Management Centre in Kerala. Check the Bureau of Energy Efficiency (BEE) website for the current list and contacts."
+      ]
+    },
+    {
+      "h": "What it does",
+      "ul": [
+        "Works with BEE on designated consumers in the state, including their energy reports and compliance.",
+        "Takes up the building energy code for commercial buildings where the state has notified it.",
+        "Runs state energy efficiency programmes: audits, demonstration projects, training and awareness.",
+        "Supports BEE programmes for MSME clusters and runs state energy conservation awards."
+      ]
+    },
+    {
+      "h": "When your factory should contact it",
+      "ol": [
+        "You are a designated consumer, or your energy use is close to your sector's threshold.",
+        "You are building or extending a commercial building that may fall under the state's energy code.",
+        "You plan an energy audit or efficiency project and want to know whether a state programme supports it. Get the terms in writing before you buy equipment.",
+        "You want to apply for a state energy conservation award."
+      ]
+    },
+    {
+      "h": "What it is not",
+      "p": [
+        "It is not your discom, and it is not usually where MSME capital subsidies sit; those come from the state industries department."
+      ]
+    }
+  ],
+  "senseible": "Senseible turns fuel invoices and electricity bills into a dated record of each energy source, which is the first thing an energy audit, scheme form or energy report asks for. Filings with the agency are made by you.",
+  "links": [
+    {
+      "label": "Is my factory a BEE designated consumer?",
+      "to": "/answers/is-my-factory-bee-designated-consumer"
+    },
+    {
+      "label": "State subsidies for energy efficiency",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    },
+    {
+      "label": "Does ECBC apply to my building?",
+      "to": "/answers/does-ecbc-apply-to-my-building"
+    },
+    {
+      "label": "BEE SME programme for clusters",
+      "to": "/answers/bee-sme-programme-cluster-energy-efficiency"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Energy Conservation Act, 2001, Section 15, as amended by the Energy Conservation (Amendment) Act, 2022 (powermin.gov.in)",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, list of State Designated Agencies",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "State agencies and their programmes change; check BEE's current list of State Designated Agencies (checked 2026-10-19)."
+}

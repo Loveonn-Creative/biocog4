@@ -1,0 +1,85 @@
+{
+  "slug": "quartz-engineered-stone-carbon-footprint-per-square-metre",
+  "q": "What is the carbon footprint of an engineered quartz slab per square metre, and what does a US buyer expect to see?",
+  "title": "Engineered quartz slab footprint per m2",
+  "short": "Work it out from your batch recipe and plant bills: kg of quartz grit and polyester resin per square metre times their factors, plus press, curing and polishing energy per square metre dispatched. Resin weighs little but carries a high factor. A US buyer will want the figure as an independently verified EPD under ISO 21930.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Engineered quartz surface makers in Gujarat, Rajasthan and Telangana exporting to the US",
+  "sections": [
+    {
+      "h": "What goes into one square metre",
+      "p": [
+        "Engineered quartz is mostly quartz grit and quartz powder held together by a small share of polyester resin, with pigments, a curing agent and a bonding agent. Take each kg per square metre from your batch recipe and the weight of finished slabs at each thickness, usually 20 mm or 30 mm. Resin is a small share of the weight but has a far higher factor per kg than quartz, so measure it carefully."
+      ]
+    },
+    {
+      "h": "Plant energy per good square metre",
+      "ul": [
+        "Mixers, the vacuum vibro-compression press and conveyors.",
+        "The curing oven, heated by a thermic fluid heater on gas or by electricity.",
+        "Calibrating and polishing lines, edge cutting, water recycling and the filter press.",
+        "DG diesel during power cuts, and forklift fuel.",
+        "Divide the month's total by good square metres dispatched, not slabs pressed, so rejects are carried by what you sell."
+      ]
+    },
+    {
+      "h": "Where the material factors come from",
+      "p": [
+        "Ask your resin supplier for a product carbon footprint; otherwise use a named life cycle database and record its version. If you crush quartz in-house, that energy is already in your bills. If you buy grit, use the supplier's figure or a database value for crushed quartz. Keep one database per study so the factors are consistent."
+      ]
+    },
+    {
+      "h": "What a US buyer expects to see",
+      "p": [
+        "US architects and specifiers usually ask for an Environmental Product Declaration (EPD), because product-specific EPDs count towards LEED credits for building product disclosure. That means a study under ISO 14025 and ISO 21930, following the product category rules the programme operator names, checked by an independent verifier and published. The declared unit is one square metre at a stated thickness, with at least the A1 to A3 stages. A spreadsheet footprint is the starting point, not the EPD."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 mm slab, one month",
+    "lines": [
+      "Slab weight: about 48 kg per m2 (assumed 2,400 kg per m3 x 0.02 m)",
+      "Resin: 8 percent of 48 kg = 3.84 kg x 4.0 kg CO2e per kg (assumed factor) = 15.36 kg CO2e",
+      "Quartz grit: 44.16 kg x 0.03 kg CO2e per kg (assumed factor for bought grit) = 1.32 kg CO2e",
+      "Electricity: 300,000 kWh / 25,000 m2 dispatched = 12 kWh per m2 x 0.710 = 8.52 kg CO2",
+      "Curing heater: 10,000 scm PNG x 2.05 = 20,500 kg CO2 / 25,000 m2 = 0.82 kg CO2",
+      "Total: 15.36 + 1.32 + 8.52 + 0.82 = 26.02, about 26 kg CO2e per m2, cradle to gate before packaging and freight"
+    ],
+    "note": "The resin share, both material factors and the plant figures are illustrative; your recipe, supplier data and bills replace them."
+  },
+  "senseible": "Senseible reads the plant's electricity bills at 0.710 kg CO2 per kWh and fuel invoices at IPCC 2006 defaults, such as PNG at 2.05 kg CO2 per scm, into a fingerprinted Scope 1 and 2 record that gives the energy part of a per square metre figure. Resin and grit purchases sit in the Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "How to get an EPD for Indian exports",
+      "to": "/answers/how-to-get-an-epd-for-indian-exports"
+    },
+    {
+      "label": "Which PCR to use for an EPD",
+      "to": "/answers/which-pcr-to-use-for-an-epd"
+    },
+    {
+      "label": "Granite slab footprint per m2",
+      "to": "/answers/granite-slab-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 21930:2017, Sustainability in buildings and civil engineering works, core rules for EPDs of construction products, and ISO 14025:2006 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), default fuel factors",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

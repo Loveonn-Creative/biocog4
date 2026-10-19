@@ -1,0 +1,91 @@
+{
+  "slug": "hospital-carbon-footprint-per-bed",
+  "q": "How do I calculate a hospital's carbon footprint per bed, and what drives it?",
+  "title": "Hospital carbon footprint per bed",
+  "short": "Add Scope 1 (DG diesel, boiler and kitchen fuel, anaesthetic gases, refrigerant leaks) and Scope 2 (grid electricity from your bills) for a year, then divide by beds and by occupied bed-days. Report both. Start with the electricity bills: air conditioning, operating theatres and imaging run day and night.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Private and trust hospitals, nursing homes",
+  "sections": [
+    {
+      "h": "What goes in Scope 1 and Scope 2",
+      "ul": [
+        "Scope 1: diesel for DG sets, fuel for boilers and laundry, LPG or PNG for kitchens, nitrous oxide used in anaesthesia, and refrigerant top-ups for chillers and ACs.",
+        "Scope 2: electricity bought from the discom or through open access, from twelve months of bills.",
+        "Anaesthetic agents such as desflurane, sevoflurane and isoflurane are strong greenhouse gases but are not among the seven gases the GHG Protocol Corporate Standard requires. Report them as a separate line and say so; desflurane has by far the highest warming effect of the three."
+      ]
+    },
+    {
+      "h": "Which denominator to use",
+      "ul": [
+        "Per bed: easy to compare across years, but use the same bed count every time, either sanctioned or operational, and name it.",
+        "Per occupied bed-day: beds x 365 x occupancy. It reflects how busy you were, so it falls when occupancy rises.",
+        "Per square metre of floor area: useful for comparing buildings.",
+        "A hospital with large outpatient, dialysis or diagnostic volumes will look worse per bed than one without; say what services you run."
+      ]
+    },
+    {
+      "h": "What usually drives the number",
+      "ul": [
+        "Air conditioning and chillers running all day for theatres, ICUs and wards.",
+        "DG run hours where supply is unreliable.",
+        "Imaging equipment and sterilisation.",
+        "Nitrous oxide piped from a central manifold, which can leak even when unused.",
+        "Scope 3: medicines, devices and consumables bought. Across the global health sector, Health Care Without Harm and Arup (Health care's climate footprint, 2019) put 71% of emissions in the supply chain. Estimating yours needs purchase data."
+      ]
+    },
+    {
+      "h": "Do not compare with foreign benchmarks blindly",
+      "p": [
+        "Per bed figures from other countries reflect different climates, grids and service mixes. Track your own figure year on year and compare like with like."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 200-bed hospital for one year (illustrative)",
+    "lines": [
+      "Grid electricity: 3,000,000 kWh x 0.710 = 2,130,000 kg CO2",
+      "DG diesel: 60,000 L x 2.68 = 160,800 kg CO2",
+      "Kitchen LPG: 12,000 kg x 2.98 = 35,760 kg CO2",
+      "Nitrous oxide: 500 kg x 273 (AR6 GWP) = 136,500 kg CO2e",
+      "Total: 2,463,060 kg CO2e, about 2,463 t",
+      "Per bed: 2,463 / 200 = 12.3 t CO2e",
+      "Occupied bed-days at 75%: 200 x 365 x 0.75 = 54,750; 2,463,060 / 54,750 = 45.0 kg CO2e per bed-day"
+    ],
+    "note": "All quantities are illustrative. Refrigerants and volatile anaesthetic agents are left out of this example; add them from service invoices and purchase records."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units; CEA grid factor 0.710 kg CO2 per kWh, version 21.0) and fuel invoices (IPCC 2006 defaults: diesel 2.68 kg per litre, LPG 2.98 kg per kg) into Scope 1 and 2, and reads refrigerant top-up invoices too.",
+  "links": [
+    {
+      "label": "Diesel generator: Scope 1 or 2",
+      "to": "/answers/diesel-generator-scope-1-or-scope-2"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Which intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    },
+    {
+      "label": "Footprint from electricity bills",
+      "to": "/climate-intelligence/how-to-calculate-carbon-footprint-electricity-bills"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel and LPG defaults)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

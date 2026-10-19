@@ -1,0 +1,79 @@
+{
+  "slug": "outsourced-hotel-laundry-emissions",
+  "q": "Our hotel outsources laundry. Does it go in Scope 3, and how do we estimate it?",
+  "title": "Outsourced hotel laundry emissions",
+  "short": "Yes. Laundry done by an outside vendor is a purchased service, Scope 3 Category 1. Estimate it from the kg of linen you send, multiplied by the vendor's energy emissions per kg, which you work out from their electricity and fuel bills. If the vendor will not share data, use a labelled spend-based estimate.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Hotels, hospitals and serviced apartments",
+  "sections": [
+    {
+      "h": "Why it is Category 1",
+      "p": [
+        "The washing, drying and ironing happen in equipment the vendor owns and runs, so the energy is in the vendor's Scope 1 and 2, and in your Scope 3 as a purchased service. If the laundry machines are in your building and on your meter, even if a contractor's staff run them, the energy is already in your Scope 1 and 2."
+      ]
+    },
+    {
+      "h": "Why it is worth counting",
+      "p": [
+        "Commercial laundries use steam or hot water from boilers, tumble dryers and flatwork ironers, all energy heavy. A hotel that outsources laundry looks better per room night than one that washes in-house, unless the outsourced part is added back. That is why the Hotel Carbon Measurement Initiative (HCMI) methodology covers the hotel's own Scope 1 and 2 plus, where it applies, outsourced laundry, as its one Scope 3 item. Check the current HCMI version with the Sustainable Hospitality Alliance."
+      ]
+    },
+    {
+      "h": "What to ask the vendor for",
+      "ol": [
+        "Total kg of linen processed in the period, for all clients.",
+        "Their electricity units and fuel used (PNG, LPG, diesel, briquettes) for the same period.",
+        "Delivery vehicle fuel, if you want transport included.",
+        "Your kg, from their delivery challans or invoices, which usually list pieces or kg."
+      ]
+    },
+    {
+      "h": "If you only have the invoice amount",
+      "p": [
+        "Use a spend-based factor for laundry or cleaning services on the GST-exclusive amount, and label it spend-based. If the invoice lists pieces, convert to kg with an average weight per piece (a bath towel or a double sheet), and use the vendor's per kg figure once you have it."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month, vendor data shared",
+    "lines": [
+      "Vendor month: 18,000 kWh x 0.710 = 12,780 kg CO2",
+      "Vendor PNG: 4,000 scm x 2.05 = 8,200 kg CO2",
+      "Vendor total: 20,980 kg CO2 for 120,000 kg of linen, so 0.175 kg CO2 per kg",
+      "Your share: 9,000 kg of linen, 9,000 / 120,000 = 7.5%",
+      "20,980 x 0.075 = 1,573.5 kg CO2, about 1.6 t for the month, in Category 1"
+    ],
+    "note": "Quantities are illustrative. Water, detergents and delivery transport are left out."
+  },
+  "senseible": "Senseible reads purchase invoices and, where only spend is available, gives a spend-based estimate labelled as spend-based with wider uncertainty; lines with a printed quantity use activity data instead.",
+  "links": [
+    {
+      "label": "Hotel stay emissions per night",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Spend-based Category 1",
+      "to": "/answers/scope-3-category-1-spend-based"
+    },
+    {
+      "label": "Allocate supplier emissions to purchases",
+      "to": "/answers/allocate-supplier-emissions-to-my-purchases"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (natural gas default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

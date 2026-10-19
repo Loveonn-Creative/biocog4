@@ -1,0 +1,80 @@
+{
+  "slug": "student-commuting-scope-3-school",
+  "q": "Do school buses and student commuting count in a school's carbon footprint?",
+  "title": "School buses and student commuting",
+  "short": "School buses the school owns or runs with its own fuel are Scope 1, and must be counted. Buses run by a contractor the school pays are Scope 3, a purchased service. Students' own travel by parents' cars, vans or public transport is not a required category, because Category 7 covers employees only; report it as an optional extra line.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Schools and colleges with bus fleets",
+  "sections": [
+    {
+      "h": "Four set-ups and where each goes",
+      "ul": [
+        "School-owned buses, school drivers, school buys the diesel: Scope 1, from fuel bills.",
+        "Buses leased by the school but fuelled and run by it: also Scope 1 under operational control.",
+        "Contractor supplies bus, driver and fuel, and the school pays the contractor: Scope 3 Category 1, purchased services, from the contractor's fuel data or distance.",
+        "Parents hire a van or drive themselves, and pay directly: students' own travel, outside the required categories."
+      ]
+    },
+    {
+      "h": "Why students are not Category 7",
+      "p": [
+        "The GHG Protocol Scope 3 Standard defines Category 7 as employees travelling between home and work. Students are not employees. Teachers' and staff commuting is Category 7. Student travel can still be reported, but as an optional other indirect line, clearly labelled, and not mixed into the staff figure."
+      ]
+    },
+    {
+      "h": "Is optional student travel worth measuring",
+      "p": [
+        "Parents' car trips are the part of a day school's footprint that changes when it adds bus routes or a car-free zone. Measure it if you plan to act on it. A one-week survey of how each student travels and how far, done once a year, is enough."
+      ]
+    },
+    {
+      "h": "How to calculate each part",
+      "ul": [
+        "Owned buses: litres of diesel x 2.68 kg CO2 per litre.",
+        "Contracted buses: ask for monthly litres or kilometres per route; otherwise use a spend-based estimate on the contract value, labelled.",
+        "Student survey: students by mode x round-trip km x school days x a factor per passenger km or vehicle km from a named source."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: owned bus fleet",
+    "lines": [
+      "Diesel bought for 10 school buses in a year: 60,000 L",
+      "60,000 x 2.68 = 160,800 kg CO2, about 161 t, in Scope 1",
+      "Students who ride the buses: 1,200",
+      "160,800 / 1,200 = 134 kg CO2 per bus student per year"
+    ],
+    "note": "Quantities are illustrative. Use fuel bought for the buses only; generator diesel is a separate Scope 1 line."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units; CEA grid factor 0.710 kg CO2 per kWh, version 21.0) and fuel invoices (IPCC 2006 defaults: diesel 2.68 kg per litre, LPG 2.98 kg per kg) into Scope 1 and 2, so a school's bus diesel bills become its Scope 1 transport line.",
+  "links": [
+    {
+      "label": "Staff bus: Scope 1 or Category 7",
+      "to": "/answers/staff-bus-scope-1-or-category-7"
+    },
+    {
+      "label": "Employee commuting survey",
+      "to": "/answers/employee-commuting-emissions-survey"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard (operational control)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 7 and optional emissions",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

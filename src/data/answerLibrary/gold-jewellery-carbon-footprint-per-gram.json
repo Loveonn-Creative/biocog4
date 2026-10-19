@@ -1,0 +1,90 @@
+{
+  "slug": "gold-jewellery-carbon-footprint-per-gram",
+  "q": "What is the carbon footprint of gold jewellery per gram, and how much depends on mined versus recycled gold?",
+  "title": "Gold jewellery carbon footprint per gram",
+  "short": "Multiply grams of fine gold by a mined or recycled gold factor from a named dataset, then add casting, refining and polishing energy per gram. For mined gold the metal is almost the whole figure. For recycled gold, which carries only collection and refining, your workshop energy can be the bigger part.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Gold jewellery exporters in Mumbai, Jaipur and Surat selling to US and UAE retailers",
+  "sections": [
+    {
+      "h": "Karat decides how much gold you are counting",
+      "p": [
+        "Count grams of fine gold, not grams of jewellery. 22 karat is 91.6 percent gold, 18 karat is 75 percent and 14 karat is 58.5 percent. The rest is silver, copper or zinc alloy, which has its own factor and is a small share of the total."
+      ]
+    },
+    {
+      "h": "Why mined and recycled gold give such different numbers",
+      "p": [
+        "Mined gold carries the diesel, explosives and power used to dig, haul, crush and process tonnes of ore for each gram, plus refining. That varies widely by mine, ore grade and the local grid. Recycled gold from old jewellery, scrap and refiners' sweeps carries only collection and refining, because under the usual cut-off approach the first life bears the mining.",
+        "Take the factor from a published life cycle dataset or your refiner's own figure, and write down its name and year. A number quoted in a news story is not a source."
+      ]
+    },
+    {
+      "h": "A recycled claim needs a paper trail",
+      "ul": [
+        "A refiner's statement that the bar is recycled, or the recycled share of a mixed lot.",
+        "Bar or lot numbers that match your purchase invoices.",
+        "A chain of custody scheme, such as the Responsible Jewellery Council Chain of Custody standard, if the buyer asks for one.",
+        "Gold bought from a bank or bullion dealer usually has no origin split. Treat it as mined unless the refiner says otherwise."
+      ]
+    },
+    {
+      "h": "Workshop energy per gram",
+      "p": [
+        "Add a month's electricity for melting, casting, rolling, polishing and extraction fans, and LPG or gas for torches and refining. Divide by grams of finished jewellery dispatched. Gold recovered from sweeps and filings goes back into production, so do not count it as a new purchase a second time."
+      ]
+    },
+    {
+      "h": "What to send a retailer",
+      "ol": [
+        "Footprint per gram of finished piece, with the karat stated.",
+        "Mined and recycled shares of the gold, with the evidence.",
+        "The gold factor's dataset and year, and the boundary, usually cradle to gate.",
+        "The period your workshop energy covers."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 10 g, 22 karat chain",
+    "lines": [
+      "Fine gold: 10 g x 91.6 percent = 9.16 g",
+      "Workshop month: 3,000 kWh x 0.710 = 2,130 kg CO2; LPG 60 kg x 2.98 = 178.8 kg CO2; total 2,308.8 kg CO2 over 20,000 g dispatched = 0.115 kg CO2 per g",
+      "Workshop share for the chain: 10 g x 0.115 = 1.15 kg CO2",
+      "If the gold is mined, at an assumed 20 kg CO2e per g: 9.16 x 20 = 183.2 kg CO2e, so about 184.4 kg CO2e in total",
+      "If the gold is recycled, at an assumed 0.1 kg CO2e per g: 9.16 x 0.1 = 0.92 kg CO2e, so about 2.1 kg CO2e in total"
+    ],
+    "note": "Both gold factors are placeholders to show the method. Replace them with your dataset's or refiner's figures and their year. The 0.84 g of alloy metal is left out because it is small."
+  },
+  "senseible": "Senseible reads the workshop's electricity bills at the CEA grid factor of 0.710 kg CO2 per kWh and LPG invoices at the IPCC 2006 default of 2.98 kg CO2 per kg, giving the Scope 1 and 2 total you divide by grams dispatched. Gold purchase invoices sit in its Scope 3 supplier evidence trail; product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Counting recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Lab-grown diamond footprint per carat",
+      "to": "/answers/lab-grown-diamond-carbon-footprint-per-carat"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Mined gold intensity varies by mine and year; update the factor when your dataset or refiner publishes a newer figure."
+}

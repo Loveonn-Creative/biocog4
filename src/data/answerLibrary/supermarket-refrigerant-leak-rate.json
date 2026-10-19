@@ -1,0 +1,81 @@
+{
+  "slug": "supermarket-refrigerant-leak-rate",
+  "q": "How much refrigerant does a supermarket's display cases leak each year, and how do I report it?",
+  "title": "Supermarket refrigerant leak rate",
+  "short": "Supermarket systems with central racks feeding display cases are among the leakiest refrigeration equipment: IPCC 2006 gives 10% to 35% of the charge a year for medium and large commercial refrigeration. Report the kg of gas topped up each year times its GWP as Scope 1, and use the default rate only when you have no service records.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Supermarket and grocery chains, dark stores",
+  "sections": [
+    {
+      "h": "Why supermarkets leak so much",
+      "p": [
+        "A central rack in the plant room feeds chilled and frozen cases across the sales floor through long pipe runs, with many joints, valves and case connections. Each joint is a leak path, and a slow leak can run for weeks before cases warm up. Plug-in cases with their own sealed compressor leak far less: IPCC 2006 gives 1% to 15% a year for stand-alone commercial units. Many now use propane (R-290), whose GWP is negligible next to any HFC."
+      ]
+    },
+    {
+      "h": "Measured leakage from service records",
+      "p": [
+        "The best figure is a simple mass balance for the year, per store:",
+        "Leakage (kg) = gas added during servicing + (full charge of equipment retired minus gas recovered from it) + (gas bought for new equipment minus that equipment's full charge).",
+        "For a store with no new or retired equipment, that is just the kg topped up. Multiply by the GWP of the gas from one IPCC report, and name it. R-404A, common in older supermarket racks, is 4,728 under AR6."
+      ]
+    },
+    {
+      "h": "Screening estimate when records are missing",
+      "p": [
+        "Multiply the system charge from the rack nameplate by a leak rate in the IPCC range of 10% to 35% for medium and large commercial refrigeration. Use the upper end for old racks with long pipe runs, and label the result an estimate. For stand-alone cases use their own range, 1% to 15%."
+      ]
+    },
+    {
+      "h": "Reporting it",
+      "ul": [
+        "Scope 1, as fugitive emissions, per store and in total.",
+        "State the GWP source (AR5 or AR6) and keep it the same every year.",
+        "If you lease the store but own and run the refrigeration, it is still yours.",
+        "HCFC R-22 in very old systems is reported outside the Scope 1 total, as a separate line."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one store with a 150 kg R-404A rack",
+    "lines": [
+      "Top-ups on service invoices this year: 30 kg",
+      "30 x 4,728 = 141,840 kg CO2e, about 142 t, in Scope 1",
+      "Screening range for comparison: 150 x 10% = 15 kg to 150 x 35% = 52.5 kg",
+      "15 x 4,728 = 70,920 kg CO2e; 52.5 x 4,728 = 248,220 kg CO2e",
+      "Store electricity for comparison: 400,000 kWh x 0.710 = 284,000 kg CO2"
+    ],
+    "note": "Charge, top-ups and electricity are illustrative. At this leak rate the refrigerant line is half the size of the store's electricity line."
+  },
+  "senseible": "Senseible reads refrigerant top-up invoices and converts the kg charged to CO2e with the gas's GWP, keeping each invoice as the evidence for the store's Scope 1 line.",
+  "links": [
+    {
+      "label": "Refrigerant leakage without records",
+      "to": "/answers/estimate-refrigerant-leakage-without-records"
+    },
+    {
+      "label": "Refrigerant top-up invoice to CO2e",
+      "to": "/answers/refrigerant-top-up-invoice-to-co2e"
+    },
+    {
+      "label": "Ammonia vs HFC refrigerant",
+      "to": "/answers/ammonia-vs-hfc-cold-storage-refrigerant"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 7, Table 7.9 (medium and large commercial 10% to 35%, stand-alone commercial 1% to 15% of charge a year)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 supplementary Table 7.SM.7 (GWP values)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    },
+    {
+      "label": "US EPA Center for Corporate Climate Leadership, fugitive emissions (material balance method)",
+      "url": "https://www.epa.gov/climateleadership"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

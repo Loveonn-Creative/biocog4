@@ -1,0 +1,68 @@
+{
+  "slug": "us-federal-supplier-climate-rule-status",
+  "q": "Will US federal contracts require Indian suppliers to disclose emissions?",
+  "title": "US federal supplier climate rule status",
+  "short": "Not under any rule in force. The proposed Federal Acquisition Regulation rule that would have made large US federal contractors disclose emissions and set targets was withdrawn on 13 January 2025, and the case was closed. Indian subcontractors may still get emissions requests from US primes for their own targets or CDP reporting.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian IT and engineering firms with US federal subcontracts",
+  "sections": [
+    {
+      "h": "What was proposed",
+      "p": [
+        "FAR Case 2021-015, 'Disclosure of Greenhouse Gas Emissions and Climate-Related Financial Risk', was published in the Federal Register on 14 November 2022 (87 FR 68312). It would have required significant federal contractors (roughly USD 7.5 million to 50 million in annual federal obligations) to report Scope 1 and 2 emissions, and major contractors (above USD 50 million) to also report relevant Scope 3 categories through CDP, publish a climate risk disclosure and set targets validated by the Science Based Targets initiative. Small businesses and some others were exempt."
+      ]
+    },
+    {
+      "h": "What happened to it",
+      "p": [
+        "The FAR Council (Defense Department, GSA and NASA) withdrew the proposed rule in a Federal Register notice dated 13 January 2025 and closed the FAR case. It said it would keep watching industry practice and other domestic and international rules. Nothing replaced it."
+      ]
+    },
+    {
+      "h": "What this means for an Indian subcontractor",
+      "ul": [
+        "The rule never placed duties directly on foreign subcontractors. It would have reached you only through a major contractor's Scope 3 reporting.",
+        "There is no current federal procurement rule asking you for emissions data.",
+        "US primes may still ask, because of their own net zero targets, CDP supply chain requests, California's SB 253 for large companies doing business there, or EU rules that apply to their European operations."
+      ]
+    },
+    {
+      "h": "What to keep ready",
+      "p": [
+        "A Scope 1 and 2 figure for the last financial year with the bills behind it, the factor sources, and a short method note. That answers most prime contractor and CDP requests whatever the rule status."
+      ]
+    }
+  ],
+  "senseible": "Senseible keeps the electricity bills and fuel invoices behind your Scope 1 and 2 figures, with the factor and source on each line, which is what a US prime contractor's supplier request usually asks for.",
+  "links": [
+    {
+      "label": "SEC climate rule status",
+      "to": "/answers/sec-climate-rule-status-us-buyers"
+    },
+    {
+      "label": "California SB 253 supplier data",
+      "to": "/answers/california-sb-253-indian-suppliers-data"
+    },
+    {
+      "label": "CDP supply chain request",
+      "to": "/answers/cdp-supply-chain-request-what-to-do"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Proposed FAR rule, FAR Case 2021-015 (87 FR 68312, 14 November 2022) and withdrawal notice (90 FR, 13 January 2025, document 2024-30621); the proposal relied on CDP reporting",
+      "url": "https://www.cdp.net"
+    },
+    {
+      "label": "Science Based Targets initiative (validated targets the proposal would have required)",
+      "url": "https://sciencebasedtargets.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewNote": "Checked 19 October 2026 against the Federal Register withdrawal notice of 13 January 2025 (document 2024-30621); US federal policy can change, so recheck federalregister.gov before relying on this.",
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "tractor-diesel-emissions-per-acre",
+  "q": "How do I calculate tractor and harvester diesel emissions per acre for a farm footprint?",
+  "title": "Tractor diesel emissions per acre",
+  "short": "Total the diesel used for field work in a season, from fuel invoices or litres per acre for each operation, multiply by 2.68 kg CO2 per litre, and divide by acres worked. Add methane and nitrous oxide at the IPCC off-road defaults, which add roughly a tenth for farm machinery.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Estates, contract farming exporters and FPOs",
+  "sections": [
+    {
+      "h": "Two ways to get the litres",
+      "ul": [
+        "Top down: all diesel bought for tractors and harvesters in the season, from invoices and fuel slips, divided by acres. Best when the farm has one fuel store.",
+        "Bottom up: litres per acre for each operation, such as tillage, rotavator, sowing, spraying, harvesting and haulage, times the number of passes. Measure a few acres by filling the tank before and after."
+      ]
+    },
+    {
+      "h": "Why off-road diesel needs CH4 and N2O",
+      "p": [
+        "IPCC 2006 Vol. 2 Ch. 3, Table 3.3.1, gives off-road diesel defaults of 4.15 kg CH4 and 28.6 kg N2O per TJ. The N2O factor is far higher than for stationary engines, so for farm machinery these gases add about 10% to the CO2. Convert with a named GWP, such as IPCC AR5 (28 and 265)."
+      ]
+    },
+    {
+      "h": "Whose scope it is",
+      "ul": [
+        "Your own tractors on diesel you buy: Scope 1.",
+        "A custom hire harvester paid per acre, with the operator buying fuel: the contractor's emissions, your Scope 3 Category 1.",
+        "Diesel irrigation pumps: also Scope 1, but report them as a separate line from field operations."
+      ]
+    },
+    {
+      "h": "Per acre or per hectare",
+      "p": [
+        "One hectare is 2.471 acres. Buyers abroad usually want per hectare and per tonne of crop, so give all three: per acre for your own tracking, per hectare and per tonne for the buyer."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 acres of wheat (assumed litres per operation)",
+    "lines": [
+      "Per acre: cultivator 4 L, rotavator 5 L, sowing 2 L, spraying 1 L, combine 6 L, haulage 2 L = 20 L",
+      "Season: 20 x 100 = 2,000 L x 2.68 = 5,360 kg CO2",
+      "Energy: 5,360 / 74,100 kg CO2 per TJ = 0.0723 TJ",
+      "CH4: 0.0723 x 4.15 = 0.30 kg x 28 = 8.4 kg CO2e; N2O: 0.0723 x 28.6 = 2.07 kg x 265 = 548 kg CO2e",
+      "Total: 5,360 + 8.4 + 548 = 5,917 kg CO2e, 59.2 kg CO2e per acre, 146 kg CO2e per hectare",
+      "At 1.8 t wheat per acre: 59.2 / 1.8 = 32.9 kg CO2e per tonne"
+    ],
+    "note": "Litres per operation and yield are assumptions. GWP values are IPCC AR5."
+  },
+  "senseible": "Senseible reads diesel invoices and fuel slips and applies the IPCC 2006 default of 2.68 kg CO2 per litre, keeping each slip as evidence with a SHA-256 fingerprint. Acres worked and yields come from your farm records.",
+  "links": [
+    {
+      "label": "Methane and N2O from diesel combustion",
+      "to": "/answers/methane-n2o-from-diesel-combustion"
+    },
+    {
+      "label": "Excavator diesel consumption per hour",
+      "to": "/answers/excavator-diesel-consumption-per-hour"
+    },
+    {
+      "label": "Agriculture Scope 1 emissions in India",
+      "to": "/climate-intelligence/agriculture-scope-1-emissions-india"
+    },
+    {
+      "label": "Diesel emission factor",
+      "to": "/emission-factors/diesel"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Vol. 2, Ch. 3.3 Off-road mobile combustion, Table 3.3.1",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "IPCC Fifth Assessment Report (AR5), GWP100 values",
+      "url": "https://www.ipcc.ch"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

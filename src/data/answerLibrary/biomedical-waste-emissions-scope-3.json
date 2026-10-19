@@ -1,0 +1,78 @@
+{
+  "slug": "biomedical-waste-emissions-scope-3",
+  "q": "How do I calculate emissions from biomedical waste sent to a common treatment facility?",
+  "title": "Biomedical waste emissions from a CBWTF",
+  "short": "Take the kg by colour category from your CBWTF receipts or annual report, apply a factor for each treatment route, and report the total in Scope 3 Category 5. Yellow waste is incinerated, so its fossil carbon gives most of the emissions. Red, white and blue waste are disinfected, then shredded or recycled, which emits far less.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hospitals, clinics and diagnostic labs",
+  "sections": [
+    {
+      "h": "Where the kilograms come from",
+      "p": [
+        "Under the Bio-Medical Waste Management Rules, 2016, the common biomedical waste treatment facility (CBWTF) collects bar-coded bags by colour and records their weight. Its monthly invoice or collection record gives kg per category. Your annual report to the State Pollution Control Board, in Form IV, gives the yearly totals and is a good check."
+      ]
+    },
+    {
+      "h": "Treatment route by colour",
+      "ul": [
+        "Yellow: anatomical waste, soiled dressings, expired medicines, chemical waste and discarded linen. Incinerated, or treated by plasma pyrolysis.",
+        "Red: contaminated recyclable plastics such as tubing, bottles, IV sets, catheters and gloves. Autoclaved or microwaved, shredded and sent to recyclers.",
+        "White: sharps such as needles and blades. Autoclaved or sterilised, then shredded or encapsulated.",
+        "Blue: glassware and metal implants. Disinfected, then recycled."
+      ]
+    },
+    {
+      "h": "Incineration: count the fossil carbon",
+      "p": [
+        "CO2 = kg of waste x dry matter share x carbon share of dry matter x fossil share of that carbon x oxidation factor x 44/12. Take the four parameters from the clinical waste defaults in IPCC 2006 Volume 5, Chapter 5, Table 5.2, or better, from a composition study by your CBWTF. The biogenic part, from cotton, paper and tissue, is reported separately and kept out of the total. Plastic-heavy yellow waste has a higher fossil share than paper-heavy waste, so the mix matters."
+      ]
+    },
+    {
+      "h": "Which scope it lands in",
+      "p": [
+        "Waste treated by a CBWTF is Scope 3 Category 5, waste generated in operations. If your hospital runs its own incinerator, which is now rare, the fossil CO2 is your Scope 1. Do not subtract anything for plastics that get recycled; that benefit belongs to the recycler's users."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a 150-bed hospital",
+    "lines": [
+      "Yellow, incinerated: 1.2 t x 0.65 x 0.60 x 0.40 x 1.0 x 44/12 = 0.686 t CO2 (dry matter, carbon, fossil share and oxidation are placeholder values)",
+      "Red, autoclaved and shredded: 800 kg x 0.3 kWh per kg (assumed operator figure) x 0.710 = 170.4 kg CO2",
+      "White and blue: small, left out unless the CBWTF gives a figure",
+      "Total: 686.4 + 170.4 = 856.8 kg CO2, about 0.86 tonnes for the month"
+    ],
+    "note": "The four incineration parameters are placeholders to show the arithmetic; replace them with the clinical waste values in IPCC 2006 Volume 5, Chapter 5, Table 5.2 or measured composition. The autoclave kWh per kg is an assumption."
+  },
+  "senseible": "Senseible keeps CBWTF invoices in its Scope 3 supplier evidence trail, each file with a SHA-256 fingerprint so it is never counted twice. Where an invoice shows only the fee, Senseible provides a spend-based estimate, labelled spend-based with wider uncertainty.",
+  "links": [
+    {
+      "label": "Hazardous waste emissions from manifests",
+      "to": "/answers/hazardous-waste-emissions-from-manifest-india"
+    },
+    {
+      "label": "Waste emissions in Scope 3 Category 5",
+      "to": "/answers/waste-emissions-scope-3-category-5"
+    },
+    {
+      "label": "Solvent incineration emissions",
+      "to": "/answers/solvent-incineration-emissions-pharma-api"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bio-Medical Waste Management Rules, 2016 (moef.gov.in)",
+      "url": "https://moef.gov.in"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 5 (Waste), Chapter 5, Incineration and Open Burning",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 5",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

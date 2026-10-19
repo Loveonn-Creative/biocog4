@@ -1,0 +1,93 @@
+{
+  "slug": "terry-towel-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of a cotton terry towel per kg, and how do I calculate it for a UK or EU buyer?",
+  "title": "Terry towel carbon footprint per kg",
+  "short": "There is no official figure per kg of terry towel; you calculate your own. Add the cotton yarn issued per kg of good towels times the yarn's footprint, then your mill's electricity, boiler fuel and packaging per kg. Yarn and wet processing usually make up most of the total.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Terry towel exporters in Solapur, Karur and Panipat",
+  "sections": [
+    {
+      "h": "Why terry needs its own calculation",
+      "ul": [
+        "Pile weaving uses two warps, ground and pile, so a towel carries far more yarn per square metre than flat fabric. At high GSM, weight drives the per piece figure.",
+        "The loops hold water. Desizing, scouring, bleaching, dyeing and rinsing take more liquor and more steam per kg than most woven cloth, and drying a dense towel takes more heat again.",
+        "Hemming, cutting and folding are light on energy. If your figure is high, look at yarn and steam first."
+      ]
+    },
+    {
+      "h": "The stages inside a cradle to gate boundary",
+      "ol": [
+        "Cotton fibre and spinning: from your spinner's footprint for the yarn, or a cited dataset if the spinner has none.",
+        "Sizing and terry weaving: loom and compressor electricity.",
+        "Wet processing: boiler fuel for steam, thermic fluid heater fuel for dryers and stenters, ETP and ZLD electricity.",
+        "Cutting, stitching and packing: electricity, plus cartons and polybags by weight.",
+        "Stop at your factory gate. Shipping to the UK or EU is a separate stage the buyer adds."
+      ]
+    },
+    {
+      "h": "Getting the yarn loss right",
+      "p": [
+        "Divide yarn issued by kg of good towels shipped in the same period. Waste from weaving, shrinkage in processing, cutting losses and rejected pieces all sit in that ratio. A mill that issues 115 kg of yarn for 100 kg of towels carries 1.15 kg of yarn footprint in every kg it sells.",
+        "If you sell seconds or reuse waste yarn, say how you handled it, because the buyer will ask."
+      ]
+    },
+    {
+      "h": "What a UK or EU buyer will check",
+      "ul": [
+        "The declared unit: per kg of finished towel and per piece, with the GSM and size of the piece.",
+        "The method named, usually ISO 14067 or the GHG Protocol Product Standard. Some EU buyers ask for PEF rules from Commission Recommendation (EU) 2021/2279.",
+        "The source and year of the yarn footprint, and whether it is your spinner's data or a database value.",
+        "If the boiler burns wood or briquettes, biogenic CO2 shown separately from fossil CO2."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one month at a terry mill (illustrative inputs)",
+    "lines": [
+      "Good towels shipped: 100,000 kg; yarn issued: 115,000 kg",
+      "Yarn: 115,000 x 4.0 kg CO2e per kg (assumed spinner figure) = 460,000 kg CO2e",
+      "Electricity, weaving to packing: 180,000 kWh x 0.710 = 127,800 kg CO2",
+      "Boiler coal: 150,000 kg x 2.42 = 363,000 kg CO2",
+      "DG diesel: 5,000 L x 2.68 = 13,400 kg CO2",
+      "Cartons: 3,000 kg x 1.0 kg CO2e per kg (assumed) = 3,000 kg CO2e",
+      "Total: 460,000 + 127,800 + 363,000 + 13,400 + 3,000 = 967,200 kg, so 9.67 kg CO2e per kg of towel",
+      "A 70 x 140 cm bath towel at 500 GSM weighs 0.49 kg: 0.49 x 9.672 = 4.74 kg CO2e per piece"
+    ],
+    "note": "The yarn factor, carton factor and quantities are assumptions for illustration. Use your spinner's figure and your own bills."
+  },
+  "senseible": "Senseible reads the mill's electricity bills at 0.710 kg CO2 per kWh (CEA CO2 Baseline Database, version 21.0) and fuel invoices at IPCC 2006 defaults into a fingerprinted Scope 1 and 2 record, the plant-level input to a per kg figure. Yarn footprint and output are your inputs, and product reports are self-declared drafts.",
+  "links": [
+    {
+      "label": "Carbon footprint of knitted fabric per kg",
+      "to": "/answers/knitted-fabric-carbon-footprint-per-kg"
+    },
+    {
+      "label": "Dye house emissions per metre",
+      "to": "/answers/dye-house-emissions-per-metre-of-fabric"
+    },
+    {
+      "label": "T-shirt footprint, cradle to gate",
+      "to": "/answers/t-shirt-carbon-footprint-cradle-to-gate"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

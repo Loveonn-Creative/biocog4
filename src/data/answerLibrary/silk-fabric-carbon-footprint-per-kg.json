@@ -1,0 +1,93 @@
+{
+  "slug": "silk-fabric-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint of silk fabric per kg, from cocoon to woven fabric?",
+  "title": "Silk fabric carbon footprint per kg",
+  "short": "Work backwards from 1 kg of fabric. Find how much raw silk it takes after degumming and weaving waste, how many kg of cocoons that raw silk took, then add farm, reeling, twisting, weaving and dyeing emissions at each step. Report firewood CO2 from reeling separately as biogenic, and label the result an estimate.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Silk weavers and exporters in Karnataka, Varanasi and Bhagalpur",
+  "sections": [
+    {
+      "h": "The chain of yields decides most of the answer",
+      "p": [
+        "Silk loses weight at every step, so each stage's emissions get multiplied by the material it took to make one kg of fabric.",
+        "Renditta is the kg of cocoons reeled per kg of raw silk. It varies with cocoon quality and race, so take it from your reeler's records or the Central Silk Board figures for the season rather than a single national number.",
+        "Degumming removes sericin, the gum on the raw thread, and the fabric weighs noticeably less than the raw silk that went into it. Weigh a degummed batch and use your own loss figure."
+      ]
+    },
+    {
+      "h": "What to count at each stage",
+      "ul": [
+        "Mulberry farm: nitrous oxide from nitrogen fertiliser (IPCC direct emission factor 0.01 kg N2O-N per kg N applied), plus fertiliser production if you have a factor for it.",
+        "Rearing: electricity for rearing houses, where metered.",
+        "Reeling: fuel for the cooking and reeling basins and electricity for the machines.",
+        "Twisting, weaving, degumming and dyeing: electricity, LPG or PNG, and boiler fuel, from your own bills.",
+        "Transport between stages if the distances are large."
+      ]
+    },
+    {
+      "h": "Firewood in reeling basins",
+      "p": [
+        "Many cottage reeling units burn firewood. The CO2 from wood is biogenic: report it as a separate line, not in the fossil total. The small methane and nitrous oxide from burning wood do count; IPCC 2006 Volume 2 gives default factors per TJ of wood. If reelers use LPG or coal instead, that CO2 is fossil and goes in the total."
+      ]
+    },
+    {
+      "h": "How to present the number",
+      "ul": [
+        "State the boundary: cocoon farm to woven or dyed fabric at your gate.",
+        "List every yield and factor you assumed, and which are your own records.",
+        "Give a range if the farm data come from a survey of a few farmers.",
+        "Published silk datasets are scarce and vary widely, so call it an estimate and say what it is based on."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of dyed silk fabric (illustrative)",
+    "lines": [
+      "Farm: 300 kg N per hectare a year, 1,000 kg cocoons per hectare (both assumptions)",
+      "N2O: 300 x 0.01 x 44/28 = 4.714 kg N2O; x 273 (AR6 GWP) = 1,287 kg CO2e per hectare, so 1.29 kg CO2e per kg cocoon",
+      "Raw silk: renditta 8 kg cocoons per kg (assumption), so 8 x 1.29 = 10.32 kg CO2e per kg raw silk from the farm",
+      "Reeling electricity: 10 kWh per kg raw silk (assumption) x 0.710 = 7.10 kg CO2",
+      "Raw silk total: 10.32 + 7.10 = 17.42 kg CO2e per kg",
+      "Degumming loss 25% (assumption): 1 / 0.75 = 1.333 kg raw silk per kg fabric, so 1.333 x 17.42 = 23.23 kg CO2e",
+      "Weaving, degumming and dyeing: 15 kWh x 0.710 = 10.65 kg CO2, plus 1 kg LPG x 2.98 = 2.98 kg CO2",
+      "Fabric total: 23.23 + 10.65 + 2.98 = 36.86 kg CO2e per kg, about 37 kg, firewood CO2 reported separately"
+    ],
+    "note": "Every yield, fertiliser rate and energy figure here is an assumption for illustration. Fertiliser manufacture, rearing-house electricity, firewood methane and nitrous oxide, and transport are left out. Replace each with your own records before sending a figure to a buyer."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input you divide into a per-unit figure. Its reports are self-declared drafts; a product footprint for a buyer still needs your material data and your own sign-off.",
+  "links": [
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Biomass fuel in a boiler",
+      "to": "/answers/biomass-or-waste-fuel-in-boiler-scope-1"
+    },
+    {
+      "label": "Cotton vs polyester footprint",
+      "to": "/answers/cotton-vs-polyester-fabric-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (wood combustion) and Volume 4 Chapter 11 (direct N2O from managed soils)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "IPCC AR6 WG1, Chapter 7 (GWP of N2O, 273)",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewNote": "Silk yields and farm data vary widely by region and season; the example uses assumptions only.",
+  "reviewed": "2026-10-19"
+}

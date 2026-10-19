@@ -1,0 +1,85 @@
+{
+  "slug": "hotel-carbon-per-occupied-room-hcmi",
+  "q": "How does a hotel calculate carbon per occupied room night for corporate clients?",
+  "title": "Hotel carbon per occupied room night",
+  "short": "Total the hotel's Scope 1 and 2 emissions for the year, take out the share that belongs to meeting and event space by floor area, and divide what is left by occupied room nights. That is the Hotel Carbon Measurement Initiative (HCMI) approach corporate travel buyers ask for, and it lets clients compare hotels on one basis.",
+  "topic": "accounting",
+  "intent": "how-to",
+  "audience": "Hotel owners and operators in India answering corporate travel RFPs",
+  "sections": [
+    {
+      "h": "What goes into the hotel total",
+      "ul": [
+        "Grid electricity from discom bills, net of any units you export.",
+        "DG diesel, kitchen LPG or PNG, and boiler fuel.",
+        "Purchased chilled water or steam, if the hotel buys them.",
+        "Laundry sent outside: HCMI includes outsourced laundry, as Scope 3, using the laundry's energy and the tonnage you send, so hotels with in-house and outsourced laundry compare fairly.",
+        "Refrigerant top-ups, if you have the records; say whether they are in."
+      ]
+    },
+    {
+      "h": "Splitting rooms from meeting space",
+      "p": [
+        "A conference hotel's ballrooms use a lot of energy that has nothing to do with a guest's night. HCMI apportions the building total between guest rooms, meeting space and the rest of the building by floor area, and reports meeting space separately per square metre per hour. Take the areas from your building drawings and keep them fixed until you renovate. HCMI version 3.0 was published by the Sustainable Hospitality Alliance in 2026; check it for exactly which areas count on each side."
+      ]
+    },
+    {
+      "h": "Occupied room nights, not guests",
+      "p": [
+        "Divide by rooms sold or occupied, including complimentary rooms, for the same twelve months. Do not divide by guest nights: two people in one room are one room night, and corporate clients multiply your figure by the nights they book."
+      ]
+    },
+    {
+      "h": "What a corporate client will check",
+      "ol": [
+        "The period, ideally the latest full year.",
+        "Grid factor and source, here 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database.",
+        "Whether rooftop solar or green tariff power was netted out, and on what basis.",
+        "That the figure is per occupied room night and follows HCMI."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: a 150-room hotel, one year",
+    "lines": [
+      "Electricity: 2,400,000 kWh x 0.710 = 1,704,000 kg CO2",
+      "DG diesel: 20,000 litres x 2.68 = 53,600 kg CO2; kitchen LPG: 60,000 kg x 2.98 = 178,800 kg CO2",
+      "Hotel total: 1,704,000 + 53,600 + 178,800 = 1,936,400 kg CO2",
+      "Meeting space share under the HCMI area split, assumed 10%: 193,640 kg; rooms share 1,742,760 kg",
+      "Occupied room nights: 150 x 365 x 72% occupancy = 39,420",
+      "Per occupied room night: 1,742,760 / 39,420 = 44.2 kg CO2"
+    ],
+    "note": "Areas and consumption are invented for the arithmetic. Add outsourced laundry and refrigerants before you publish your own figure."
+  },
+  "senseible": "Senseible reads electricity bills (period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh from the CEA CO2 Baseline Database version 21.0, and fuel invoices at IPCC 2006 defaults (diesel 2.68 kg CO2 per litre, LPG 2.98 kg CO2 per kg), into Scope 1 and 2 with a fingerprint on every file. That gives the hotel total; the meeting space split and room nights come from your own records.",
+  "links": [
+    {
+      "label": "Hotel stay emissions per night (traveller)",
+      "to": "/answers/hotel-stay-emissions-per-night"
+    },
+    {
+      "label": "Chiller plant emissions per TR-hour",
+      "to": "/answers/chiller-plant-emissions-per-tr-hour"
+    },
+    {
+      "label": "Which carbon intensity metric to use",
+      "to": "/answers/which-carbon-intensity-metric-to-use"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "HCMI area and laundry rules from the Sustainable Hospitality Alliance HCMI pages (v3.0 process flow, April 2026); recheck the current version before each RFP season."
+}

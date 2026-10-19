@@ -1,0 +1,80 @@
+{
+  "slug": "coworking-space-emissions-scope-2-or-category-8",
+  "q": "We rent desks in a co-working space with no meter. Is that Scope 2 or Scope 3?",
+  "title": "Co-working desks: Scope 2 or Scope 3?",
+  "short": "For most desk members it is Scope 3. You buy a service and the operator controls the building, its meters and its power, so that electricity is the operator's Scope 2. Report your share in Category 8, upstream leased assets, using an allocation by seats or floor area, and label it estimated.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "Startups and small service firms in co-working spaces",
+  "sections": [
+    {
+      "h": "The control test decides",
+      "ul": [
+        "Hot desks, dedicated desks and day passes: the operator sets the hours, the air conditioning and the power supply. You have no operational control, so it is Scope 3.",
+        "A private cabin on a lease where you run your own air conditioning and set its use: you may have operational control. Treat it like a leased office and report the electricity as Scope 2, using an allocation if there is no meter.",
+        "Write down which case applies and keep the same rule every year."
+      ]
+    },
+    {
+      "h": "Category 8 or Category 1",
+      "p": [
+        "Rented space you do not control usually goes in Category 8, upstream leased assets. If your agreement is a bundled membership with no defined space, some firms report it in Category 1, purchased services. Either is defensible. Pick one, say which, and do not count it in both."
+      ]
+    },
+    {
+      "h": "Getting a number without a meter",
+      "ol": [
+        "Ask the operator for the centre's yearly kWh, including DG units, and its total seats or carpet area.",
+        "Work out your share: your seats over total seats, or your area over total area.",
+        "Multiply your share of kWh by the grid factor. If the operator gives DG diesel in litres, add your share at the diesel factor.",
+        "If the operator will not share data, use kWh per seat from a comparable office and label it estimated."
+      ]
+    },
+    {
+      "h": "The operator counts it too, and that is fine",
+      "p": [
+        "The operator reports the building's power as its Scope 2. Your Category 8 figure is part of that same electricity. Overlap between one company's Scope 2 and another's Scope 3 is how value chain reporting works; it is not double counting inside your own inventory."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 seats in a 500-seat centre",
+    "lines": [
+      "Centre electricity: 600,000 kWh a year (operator figure)",
+      "Your share: 20 / 500 = 4 percent, so 24,000 kWh x 0.710 = 17,040 kg CO2",
+      "Centre DG diesel: 6,000 L x 2.68 = 16,080 kg CO2 x 4 percent = 643.2 kg CO2",
+      "Total: 17,040 + 643.2 = 17,683.2 kg CO2, about 17.7 tonnes, labelled estimated by seat share"
+    ],
+    "note": "Allocating by floor area instead of seats can give a different answer; state the basis."
+  },
+  "senseible": "Senseible reads an operator invoice that prints kWh and applies the CEA factor of 0.710 kg CO2 per kWh. For an all-inclusive desk fee, enter your allocated kWh and the line is marked Entered by you.",
+  "links": [
+    {
+      "label": "Leased factory: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Sub-metered electricity in a rented unit",
+      "to": "/answers/sub-metered-electricity-rented-unit"
+    },
+    {
+      "label": "Work from home in Category 7",
+      "to": "/answers/work-from-home-emissions-category-7"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Standard, Chapter 3 and Appendix F (leased assets)",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 8 upstream leased assets",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "CEA CO2 Baseline Database, version 21.0",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

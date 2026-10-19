@@ -1,0 +1,83 @@
+{
+  "slug": "silver-jewellery-carbon-footprint-per-kg",
+  "q": "How do I estimate the carbon footprint of silver jewellery when most silver is a by-product of lead, zinc and copper mining?",
+  "title": "Silver jewellery footprint per kg",
+  "short": "Multiply the silver in your jewellery by a per kg silver factor whose allocation method is stated, then add workshop electricity and casting fuel per kg. Because most mined silver comes out alongside lead, zinc, copper or gold, mass allocation gives silver a tiny share and economic allocation a large one. Name the method next to the number.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Silver jewellery exporters in Jaipur and Agra",
+  "sections": [
+    {
+      "h": "Why the allocation choice dominates",
+      "p": [
+        "The Silver Institute's World Silver Survey reports that most mined silver comes from mines whose main metal is lead and zinc, copper or gold. A mine and smelter's emissions then have to be split between the metals. Silver is a small share of the mass and a large share of the revenue, so the two common methods give very different results: in the invented example below, about 200 times apart.",
+        "ISO 14044 prefers avoiding allocation, then physical relationships, then economic value. For by-product metals many datasets use economic allocation because mass does not reflect why the mine operates. Either way, the method must be written beside the factor."
+      ]
+    },
+    {
+      "h": "Mined, refined or recycled silver",
+      "ul": [
+        "Recycled silver from scrap, old jewellery or industrial waste usually carries only collection and refining emissions under the cut-off approach.",
+        "Silver bought as bullion often mixes mined and recycled sources; ask the refiner what share is recycled.",
+        "Your own casting and filing scrap, sent back for refining and reused, is not new silver. Count the net metal that leaves as product plus true losses."
+      ]
+    },
+    {
+      "h": "The workshop part",
+      "p": [
+        "Electricity for casting furnaces, rolling, polishing and plating, and LPG for torches and annealing, divided by kg of finished jewellery. In a small Jaipur or Agra workshop this is usually far smaller than the silver factor under economic allocation, and can be larger than the silver under mass allocation."
+      ]
+    },
+    {
+      "h": "What to write for a buyer",
+      "ol": [
+        "Silver per kg of product, with the source dataset, year and allocation method.",
+        "Share of recycled silver and how you know it, such as refiner certificates.",
+        "Workshop energy per kg from your own bills.",
+        "Plating metals such as rhodium, if used, listed separately because their factors are very high per kg."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Illustrative example: one mine, two allocation methods",
+    "lines": [
+      "Mine and smelter emissions for a period: 10,000 t CO2e; outputs zinc 4,000 t, lead 1,000 t, silver 10 t",
+      "Mass allocation: silver 10 / 5,010 = 0.20%, so 19.96 t CO2e over 10,000 kg = 2.0 kg CO2e per kg silver",
+      "Economic allocation at assumed prices (zinc ₹2.6 lakh/t, lead ₹1.9 lakh/t, silver ₹9 crore/t): revenue ₹104 crore, ₹19 crore and ₹90 crore",
+      "Silver share 90 / 213 = 42.3%, so 4,225 t CO2e over 10,000 kg = 422.5 kg CO2e per kg silver",
+      "Workshop per kg of jewellery, assumed 120 kWh and 3 kg LPG: 120 x 0.710 = 85.2 kg CO2, plus 3 x 2.98 = 8.9 kg CO2"
+    ],
+    "note": "All mine figures, prices and workshop inputs are invented to show the arithmetic. Use a published silver dataset and copy its stated method."
+  },
+  "senseible": "Senseible reads your workshop's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and LPG invoices (IPCC 2006 default, 2.98 kg CO2 per kg) into a fingerprinted Scope 1 and 2 record for the per kg workshop share. Reports are self-declared drafts; the silver factor comes from the dataset you choose.",
+  "links": [
+    {
+      "label": "Allocating emissions between co-products",
+      "to": "/answers/how-to-allocate-emissions-between-co-products"
+    },
+    {
+      "label": "Counting recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14044:2006, Life cycle assessment, clause 4.3.4 allocation (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011)",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "CEA CO2 Baseline Database",
+      "url": "https://cea.nic.in/cdm-co2-baseline-database/?lang=en"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Silver supply by source metal is from the Silver Institute World Silver Survey; recheck the current edition and the silver dataset's stated allocation method when either is updated."
+}

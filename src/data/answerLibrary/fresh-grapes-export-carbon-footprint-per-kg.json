@@ -1,0 +1,85 @@
+{
+  "slug": "fresh-grapes-export-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of table grapes exported from Nashik to the EU per kg?",
+  "title": "Nashik grapes to the EU: carbon per kg",
+  "short": "There is no single published figure; you build it from your own records. Add farm emissions per kg (fertiliser nitrous oxide, diesel, pump electricity), pack-house pre-cooling and cold store power, packaging, and reefer road and sea freight to the EU port. A worked example with stated assumptions comes to about 0.64 kg CO2e per kg.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Grape exporters and pack houses in Nashik and Sangli",
+  "sections": [
+    {
+      "h": "Farm stage per kg",
+      "ul": [
+        "Nitrous oxide from nitrogen applied: kg N x EF1 x 44/28 x the GWP of N2O. The IPCC 2019 Refinement sets EF1 by climate: 0.005 in dry climates, and 0.016 for synthetic fertiliser in wet ones. In the tropics, under 1,000 mm of rain a year on the long-term average counts as dry, so check your taluka's rainfall; irrigation does not change the class.",
+        "Diesel for tractors and sprayers, from fuel bills.",
+        "Pump electricity. Farm connections are often unmetered or on flat tariffs, so estimate kWh from pump rating times running hours and label it estimated.",
+        "Making the fertiliser is a separate, upstream figure; add it if the buyer wants cradle to gate."
+      ]
+    },
+    {
+      "h": "Export grade, domestic grade and rejects",
+      "p": [
+        "One vineyard sells export fruit, domestic fruit and raisin grade. ISO 14067 asks you to avoid allocation where you can, then split by a physical measure, and use economic value only when that fails. Splitting farm emissions by mass gives every kg the same figure. Whatever you choose, state it, because it changes the export number."
+      ]
+    },
+    {
+      "h": "Pack house and cold chain",
+      "p": [
+        "Grapes are pre-cooled soon after harvest and held in cold stores before loading. Take the pack house's electricity for the season and divide by kg packed. Add DG diesel used during cuts, refrigerant top-ups converted to CO2e with a stated GWP, and packaging: cartons, liners, punnets and sulphur dioxide pads."
+      ]
+    },
+    {
+      "h": "Freight to the EU port",
+      "p": [
+        "Count the reefer truck from Nashik to Nhava Sheva and the reefer container voyage, in tonne-km on gross weight including packaging. Use the carrier's reefer factor if it gives one, or a GLEC Framework default, and name it. A voyage routed round the Cape of Good Hope instead of through Suez is much longer, so record the route."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of export grapes",
+    "lines": [
+      "Farm, per hectare per season: 200 kg N x 0.005 x 44/28 x 273 = 429 kg CO2e (IPCC 2019 Refinement EF1, assuming a dry climate; AR6 GWP for N2O)",
+      "Diesel: 150 L x 2.68 = 402 kg CO2; pump electricity: 4,000 kWh x 0.710 = 2,840 kg CO2 (estimated from pump rating and hours)",
+      "Farm total: 3,671 kg CO2e over 20,000 kg harvested, by mass = 0.184 kg CO2e per kg",
+      "Pack house: 0.15 kWh per kg x 0.710 = 0.107 kg CO2; packaging: 0.10 kg CO2e per kg (assumed)",
+      "Reefer truck to Nhava Sheva: 0.001 t x 200 km x 0.1 kg per tonne-km (assumed) = 0.02 kg",
+      "Reefer sea leg: 0.001 t x 11,500 km x 0.02 kg per tonne-km (assumed) = 0.23 kg",
+      "Total: 0.184 + 0.107 + 0.10 + 0.02 + 0.23 = 0.641, about 0.64 kg CO2e per kg at the EU port"
+    ],
+    "note": "Yield, kWh per kg, packaging, distances and both freight factors are illustrative. A farm in a wet climate would use 0.016, giving 1,373 kg CO2e of direct N2O and 0.231 kg CO2e per kg at the farm; the older 2006 single default of 0.01 gives 858 kg. Indirect N2O and fertiliser manufacture are not included; adding them raises the farm stage."
+  },
+  "senseible": "Senseible reads the pack house's electricity bills (billing period, tariff, sanctioned load, units) at 0.710 kg CO2 per kWh and diesel invoices at 2.68 kg CO2 per litre, so the pack-house stage comes from dated bills. Its logistics calculator works out road and sea legs per tonne-km by mode, and a carrier's reefer factor can be used as given.",
+  "links": [
+    {
+      "label": "Reefer container emissions",
+      "to": "/answers/reefer-container-emissions-food-exporters"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Cold storage energy per tonne",
+      "to": "/answers/cold-storage-energy-per-tonne"
+    },
+    {
+      "label": "Logistics emissions calculator",
+      "to": "/calculators/logistics-emissions"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11, Table 11.1 (EF1 by climate) (ipcc.ch)",
+      "url": "https://www.ipcc.ch"
+    },
+    {
+      "label": "GLEC Framework, Smart Freight Centre",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    },
+    {
+      "label": "IPCC AR6 Working Group I, GWP100 of N2O",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

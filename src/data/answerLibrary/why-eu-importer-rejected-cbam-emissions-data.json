@@ -1,0 +1,77 @@
+{
+  "slug": "why-eu-importer-rejected-cbam-emissions-data",
+  "q": "Why did my EU importer reject our CBAM emissions data?",
+  "title": "Why EU importers reject CBAM data",
+  "short": "Usually because the data is at company level instead of per installation and good, covers the wrong period, leaves out precursors such as purchased billets or coil, has no monitoring method behind it, or has not been verified. From 2026 an importer can only use actual emissions that an accredited verifier has checked; otherwise it falls back on default values.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "Indian steel, aluminium and fastener exporters",
+  "sections": [
+    {
+      "h": "The common reasons, and the fix for each",
+      "ul": [
+        "Company-wide figure: CBAM wants emissions per tonne of each good from a named installation and production route. Split your plant totals by process.",
+        "Divided by total output: dividing all emissions by all tonnes, including goods not covered, understates the CBAM goods. Allocate to the covered goods only.",
+        "Precursors missing: a fastener or pipe made from bought wire rod or coil carries that material's embedded emissions. Get them from your steel supplier or use the default.",
+        "Wrong period: your importer declares by calendar year, while your books run April to March. Rebuild the figures for January to December unless the current rules and your verifier accept your fiscal year.",
+        "Wrong CN code or production route on the form, which makes the numbers impossible to compare with defaults."
+      ]
+    },
+    {
+      "h": "Verification is now the deciding point",
+      "p": [
+        "During the transitional period, 1 October 2023 to 31 December 2025, importers could pass on supplier figures with few checks. In the definitive period from 1 January 2026, embedded emissions in a CBAM declaration must be verified by an accredited verifier if the importer uses actual values. An importer facing that rule will refuse figures that no verifier can trace back to meters, invoices and a written monitoring method."
+      ]
+    },
+    {
+      "h": "Carbon price claims without proof",
+      "p": [
+        "If you claim a carbon price was paid in India, the importer needs evidence that it was actually paid and not rebated. CBAM counts a price paid under a carbon emissions reduction scheme; a general tax such as GST on fuel does not qualify just because it raises the fuel price. Leave the field empty rather than claim something you cannot document."
+      ]
+    },
+    {
+      "h": "Before you resend",
+      "ol": [
+        "Use the Commission's communication template for installation data.",
+        "Attach your monitoring method: boundaries, meters, factors and how you allocate.",
+        "Give figures per good, per installation, for the calendar year.",
+        "Say whether the figures are verified, and by whom, or label them unverified."
+      ]
+    }
+  ],
+  "senseible": "Senseible's CBAM cost calculator estimates your buyer's CBAM cost from 2026 to 2034, including default value mark-ups, and its plant Scope 1 and 2 record, built from fingerprinted bills and fuel invoices, gives a verifier the source documents behind your direct and electricity figures.",
+  "links": [
+    {
+      "label": "Embedded emissions for steel under CBAM",
+      "to": "/answers/how-to-calculate-embedded-emissions-steel-cbam"
+    },
+    {
+      "label": "CBAM communication template for suppliers",
+      "to": "/answers/cbam-communication-template-for-suppliers"
+    },
+    {
+      "label": "Indian fiscal year vs CBAM period",
+      "to": "/answers/indian-fiscal-year-vs-cbam-reporting-period"
+    },
+    {
+      "label": "CBAM cost calculator",
+      "to": "/cbam-calculator"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM), consolidated text",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/2025-10-20"
+    },
+    {
+      "label": "Regulation (EU) 2025/2083, CBAM simplification",
+      "url": "https://eur-lex.europa.eu/eli/reg/2025/2083/oj"
+    },
+    {
+      "label": "European Commission, CBAM definitive regime",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Definitive-period implementing acts on verification and default values are still being issued; check the Commission's CBAM guidance page."
+}

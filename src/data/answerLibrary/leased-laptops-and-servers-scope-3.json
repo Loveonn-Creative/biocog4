@@ -1,0 +1,78 @@
+{
+  "slug": "leased-laptops-and-servers-scope-3",
+  "q": "We lease laptops and servers instead of buying them. Which Scope 3 category do they go in?",
+  "title": "Leased laptops and servers: which category",
+  "short": "The electricity leased laptops and servers use is usually already in your Scope 2, because they run on your office meter. Making them is not Category 2, which covers capital goods you buy. The GHG Protocol lists manufacturing of leased assets as optional in Category 8; if you count rental spend in Category 1 instead, say so.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "IT services companies and startups leasing devices",
+  "sections": [
+    {
+      "h": "Electricity: check where the meter is",
+      "ul": [
+        "Laptops and servers in your own office or server room: their power is on your electricity bill, so it is already Scope 2. Do not count it again in Scope 3.",
+        "Servers in a colocation facility where you pay a power charge: report that power as Scope 2 if you pay for metered kWh, and say so.",
+        "Leased servers you run in a colocation rack where power is bundled into the fee: the power is not on a bill of yours; Category 8 covers the operation of leased assets not already in your Scope 1 or 2. If the provider runs the servers for you as a hosting service, it is Category 1. State which.",
+        "Laptops used at home: optional, and covered under employee commuting if you report home working."
+      ]
+    },
+    {
+      "h": "Making the devices: Category 1 or Category 8",
+      "p": [
+        "Category 2, capital goods, is for assets you buy and capitalise. A device you rent on an operating lease is not your capital good. Under the GHG Protocol Scope 3 Standard, the minimum boundary of Category 8 is the operation of leased assets; the manufacturing emissions of leased assets are an optional addition there.",
+        "Some companies instead report rental spend in Category 1 as a purchased service, with a spend-based factor for computer equipment rental. That is a reporting choice, not a GHG Protocol rule. Whichever you choose, use it every year and never count the same devices in Category 2 as well."
+      ]
+    },
+    {
+      "h": "Finance leases are different",
+      "p": [
+        "The GHG Protocol treats a finance lease as giving you ownership for boundary purposes. If your accounts capitalise the devices, treating them as your capital goods and reporting their manufacturing in Category 2 in the year the lease starts is consistent with that. It is your choice of method, so follow the rule you use for leased buildings and vehicles and write it in your method note."
+      ]
+    },
+    {
+      "h": "Better data than spend",
+      "p": [
+        "Ask the leasing company for model numbers, then look for the maker's product carbon footprint for each model; the big laptop and server brands publish them. You can spread the manufacturing share over the device's expected life, or count it in the year the lease starts, but state which."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 leased laptops in an office",
+    "lines": [
+      "Average draw 30 W (assumption), 2,000 hours a year: 100 x 0.030 kW x 2,000 h = 6,000 kWh",
+      "6,000 x 0.710 = 4,260 kg CO2, already inside your Scope 2 from the office bill",
+      "Lease rental: reported in Category 1 with a spend-based factor on the GST-exclusive rental, labelled spend-based"
+    ],
+    "note": "The 30 W figure is an illustrative assumption. The Scope 2 part is not added again in Scope 3."
+  },
+  "senseible": "Senseible reads purchase invoices and, where only spend is available, gives a spend-based estimate labelled as spend-based with wider uncertainty; lines with a printed quantity use activity data instead.",
+  "links": [
+    {
+      "label": "Bought laptops: Category 2",
+      "to": "/answers/it-hardware-laptops-category-2-emissions"
+    },
+    {
+      "label": "Leased factory: which scope",
+      "to": "/answers/leased-factory-emissions-which-scope"
+    },
+    {
+      "label": "Colocation data centre emissions",
+      "to": "/answers/colocation-data-centre-emissions-with-pue"
+    },
+    {
+      "label": "Work from home in Category 7",
+      "to": "/answers/work-from-home-emissions-category-7"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Corporate Value Chain (Scope 3) Standard (2011), Category 8 boundary",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    },
+    {
+      "label": "GHG Protocol Technical Guidance for Calculating Scope 3 Emissions (2013), Categories 1, 2 and 8",
+      "url": "https://ghgprotocol.org/standards"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "co2-performance-ladder-for-indian-companies",
+  "q": "What is the Dutch CO2 Performance Ladder, and do Indian IT or engineering firms bidding in the Netherlands need it?",
+  "title": "CO2 Performance Ladder for Indian firms",
+  "short": "The CO2 Performance Ladder is a Dutch certification, run by the foundation SKAO, that rates how a company measures and cuts its carbon. It is not a legal requirement. Dutch public buyers such as ProRail and Rijkswaterstaat use it in tenders as an award advantage, so you need it only if the tenders you chase give one.",
+  "topic": "regulation",
+  "intent": "decision",
+  "audience": "Indian IT services and engineering firms bidding for Dutch public contracts",
+  "sections": [
+    {
+      "h": "How the Ladder works in a tender",
+      "p": [
+        "The buyer applies a notional discount to your bid price for the Ladder level you commit to, so a certified bidder can win at a higher actual price. Each tender sets the discount per level. You can bid without a certificate; you just compete without that discount. A bidder that claims a level must show it meets it within one year of award, and the tender sets the sanction if it does not."
+      ]
+    },
+    {
+      "h": "Levels and steps",
+      "ul": [
+        "Handbook 3.1 has five levels, from a measured footprint of your own energy use and travel up to supply chain (Scope 3) work and sector initiatives.",
+        "Handbook 4.0, published 14 January 2025, replaces them with steps: internal emissions first, then supply chain engagement, then long-term climate leadership. Three steps are in use and a fourth is being developed.",
+        "Certification to version 4.0 has been possible since 14 July 2025; version 3.1 certificates can be issued until 14 January 2027.",
+        "The exact requirements sit in SKAO's current handbook."
+      ]
+    },
+    {
+      "h": "Is it worth it for an Indian firm",
+      "ol": [
+        "List the Dutch tenders you bid for and check how many give a Ladder award advantage.",
+        "Decide the organisational boundary: the Dutch entity alone, or Indian delivery centres too, since certification covers what you put inside it.",
+        "Price the work: a footprint to the handbook's standard, reduction plans, and an annual audit by a certifying body accredited for the Ladder.",
+        "Compare that cost with the discount you would earn on bids you expect to win."
+      ]
+    },
+    {
+      "h": "What you can prepare now",
+      "p": [
+        "Every level starts with a credible Scope 1 and 2 footprint: electricity, DG diesel, company cars and business travel, with source documents. Building that from your bills and travel records is useful for the Ladder and for any other client asking for carbon data."
+      ]
+    }
+  ],
+  "senseible": "Senseible builds a Scope 1 and 2 record from your electricity bills and fuel invoices, with a fingerprint on each file, which you can use as the footprint the Ladder starts from. Ladder certificates are issued by SKAO-accredited certifying bodies after their own audit.",
+  "links": [
+    {
+      "label": "ISO 14064 vs GHG Protocol",
+      "to": "/answers/iso-14064-vs-ghg-protocol"
+    },
+    {
+      "label": "Which Scope 3 categories matter for IT services",
+      "to": "/answers/which-scope-3-categories-matter-for-it-services"
+    },
+    {
+      "label": "Business car travel: which scope?",
+      "to": "/answers/business-car-travel-which-scope"
+    }
+  ],
+  "sources": [
+    {
+      "label": "ISO 14064-1:2018, organisation-level GHG inventories (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Ladder facts from SKAO (Handbook 4.0, 14 January 2025; Procurement Guide 4.0) and certifier notices; version 3.1 ends 14 January 2027. Recheck the handbook and the tender documents."
+}

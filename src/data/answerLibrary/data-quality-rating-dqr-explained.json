@@ -1,0 +1,80 @@
+{
+  "slug": "data-quality-rating-dqr-explained",
+  "q": "What does the data quality rating (DQR) on a PEF or EPD mean?",
+  "title": "Data quality rating (DQR) explained",
+  "short": "The DQR is a score for how well the data behind a footprint fits the product. Under the EU PEF method it is the average of four ratings, technological, geographical and time representativeness and precision, each from 1 (best) to 5 (worst). Lower is better, and the category rules for your product set the maximum score they accept.",
+  "topic": "product",
+  "intent": "explain",
+  "audience": "Exporters to the EU receiving PEF-style data requests",
+  "sections": [
+    {
+      "h": "The formula",
+      "p": [
+        "Commission Recommendation (EU) 2021/2279 sets DQR = (TeR + GeR + TiR + P) / 4. Each criterion gets a rating from 1 to 5 for a dataset. The result maps to quality levels from excellent to poor, and the PEF category rules (PEFCR) for a product set the maximum DQR allowed for each kind of data. Check the PEFCR your buyer uses."
+      ]
+    },
+    {
+      "h": "What each rating asks",
+      "ul": [
+        "TeR, technological: does the data describe your actual process and machines, or a generic one?",
+        "GeR, geographical: is it from your country and grid, or another region?",
+        "TiR, time: how close is the data year to the reference year of the study?",
+        "P, precision: was it measured or calculated from records, or estimated?"
+      ]
+    },
+    {
+      "h": "How an Indian supplier improves its score",
+      "ol": [
+        "Use your own metered kWh and fuel invoices for the year studied: better TiR and P.",
+        "Use the Indian grid factor, such as the CEA CO2 Baseline Database, not a European average: better GeR.",
+        "Describe your real process route, for example induction furnace or coal-fired boiler: better TeR.",
+        "Ask key suppliers for their own data instead of database averages."
+      ]
+    },
+    {
+      "h": "PEF and EPD are not the same scale",
+      "p": [
+        "The four-part DQR formula is a PEF rule. An EPD under EN 15804+A2 carries its own data quality assessment, and other programmes use their own scales. Read which method a buyer means before comparing scores."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: one dataset, before and after",
+    "lines": [
+      "Before: TeR 2, GeR 3 (European grid average), TiR 1, P 2",
+      "DQR = (2 + 3 + 1 + 2) / 4 = 2.0",
+      "After switching to the Indian grid factor: GeR 1",
+      "DQR = (2 + 1 + 1 + 2) / 4 = 1.5, a better score from one change"
+    ]
+  },
+  "senseible": "Senseible's records come from your own bills and invoices, with the billing period and the factor edition on each line, the facts behind good time, geographical and precision ratings.",
+  "links": [
+    {
+      "label": "PEF vs ISO 14067 for EU buyers",
+      "to": "/answers/pef-vs-iso-14067-for-eu-buyers"
+    },
+    {
+      "label": "What primary data share means",
+      "to": "/answers/primary-data-share-meaning"
+    },
+    {
+      "label": "How to read GWP on an EPD",
+      "to": "/answers/how-to-read-gwp-on-an-epd"
+    },
+    {
+      "label": "Tier 1 vs Tier 2 emission factors",
+      "to": "/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Commission Recommendation (EU) 2021/2279 on the Product Environmental Footprint method, Annex I, data quality requirements (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu"
+    },
+    {
+      "label": "ISO 14025:2006, Type III environmental declarations (iso.org); EN 15804+A2 is published by CEN",
+      "url": "https://www.iso.org"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

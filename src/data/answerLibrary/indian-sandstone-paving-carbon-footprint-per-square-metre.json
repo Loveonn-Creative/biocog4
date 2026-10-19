@@ -1,0 +1,89 @@
+{
+  "slug": "indian-sandstone-paving-carbon-footprint-per-square-metre",
+  "q": "What is the carbon footprint of Indian sandstone paving per square metre for UK buyers?",
+  "title": "Sandstone paving footprint per m2",
+  "short": "Work it out per tonne of finished paving, then convert to square metres using the stone's thickness and density. Add quarry diesel, block transport and cutting power (modules A1 to A3), then road freight to the Indian port and sea freight to the UK (A4). Check transport carefully: in the worked example below, sea freight is the largest single part.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Sandstone quarry owners and exporters in Rajasthan shipping to UK merchants",
+  "sections": [
+    {
+      "h": "Why sandstone differs from granite",
+      "p": [
+        "Most Indian paving sandstone, such as Kandla grey and Raj green, is split along its natural bedding and only sawn or calibrated at the edges and back. There are no gang saws running for days or polishing lines, so processing energy per square metre is lower than for polished granite slab. Transport, by contrast, is a much bigger share because the stone is heavy, low value and travels about 12,000 km by sea."
+      ]
+    },
+    {
+      "h": "From tonnes to square metres",
+      "p": [
+        "kg per m2 = thickness in metres x density in kg per m3. Weigh a packed crate and count its square metres to get your own figure; it also captures real thickness variation in hand-split stone.",
+        "Spread quarry and processing energy over the tonnes you actually dispatch, not the tonnes you quarry. Split offcuts and rejected stone raise the figure for every good square metre."
+      ]
+    },
+    {
+      "h": "The EN 15804 modules a UK merchant expects",
+      "ul": [
+        "A1: quarrying, mostly diesel for excavators, compressors and loaders.",
+        "A2: block transport from quarry to the processing yard.",
+        "A3: splitting, calibrating, edge cutting, packing crates and pallets.",
+        "A4: road to the Indian port, sea freight, and any UK road leg you agree to include. State where A4 ends, for example at the UK port."
+      ]
+    },
+    {
+      "h": "What to check before sending the figure",
+      "ul": [
+        "Use the thickness the buyer is ordering; a 35 mm product carries about 40% more stone per square metre than a 25 mm one.",
+        "Name the factors: IPCC diesel default, CEA grid factor, and the freight intensities with their basis (well-to-wheel CO2e).",
+        "Do not quote a UK importer's published figure as yours unless you have checked its basis and boundary."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 m2 of 25 mm sandstone, Kota region to a UK port (illustrative)",
+    "lines": [
+      "Weight: 0.025 m x 2,300 kg per m3 (assumed density) = 57.5 kg = 0.0575 t",
+      "A1 quarry: 4 L diesel per tonne dispatched (assumption) x 2.68 = 10.72 kg CO2 per t; x 0.0575 = 0.62 kg CO2",
+      "A2 block transport: 50 km x 0.0551 kg CO2e per tonne-km = 2.755 kg per t; x 0.0575 = 0.16 kg CO2e",
+      "A3 processing: 25 kWh per t (assumption) x 0.710 = 17.75 kg CO2 per t; x 0.0575 = 1.02 kg CO2",
+      "A1 to A3: 0.62 + 0.16 + 1.02 = 1.80 kg CO2e per m2",
+      "A4 road to Mundra: 0.0575 t x 850 km = 48.9 tonne-km x 0.0551 = 2.69 kg CO2e",
+      "A4 sea to the UK via Suez: 0.0575 t x 12,000 km = 690 tonne-km x 0.0084 = 5.80 kg CO2e",
+      "Total to the UK port: 1.80 + 2.69 + 5.80 = 10.29 kg CO2e per m2"
+    ],
+    "note": "Density, diesel and electricity per tonne are assumptions; distances are approximate. The freight intensities (0.0551 kg CO2e per tonne-km by truck, 0.0084 by container ship) are also illustrative assumptions; replace them with GLEC Framework defaults or your carrier's figures. Crates and pallets are left out."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input you divide into a per-unit figure. Its reports are self-declared drafts; a product footprint for a buyer still needs your material data and your own sign-off.",
+  "links": [
+    {
+      "label": "Granite slab footprint per m2",
+      "to": "/answers/granite-slab-carbon-footprint-per-square-metre"
+    },
+    {
+      "label": "Sea freight India to Europe",
+      "to": "/answers/sea-freight-emissions-per-container-india-to-europe"
+    },
+    {
+      "label": "Embodied carbon A1 to A3",
+      "to": "/answers/what-is-embodied-carbon-a1-a3"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "EN 15804:2012+A2:2019 and ISO 14067:2018 (iso.org)",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (diesel default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GLEC Framework for logistics emissions accounting",
+      "url": "https://www.smartfreightcentre.org/en/our-programs/emissions-accounting/global-logistics-emissions-council/"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

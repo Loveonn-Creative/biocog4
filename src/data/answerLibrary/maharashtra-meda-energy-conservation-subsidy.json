@@ -1,0 +1,75 @@
+{
+  "slug": "maharashtra-meda-energy-conservation-subsidy",
+  "q": "What energy audit and efficiency subsidy does MEDA give Maharashtra industries, and how do I apply?",
+  "title": "MEDA energy conservation support",
+  "short": "MEDA, Maharashtra's designated agency under the Energy Conservation Act, has run schemes that pay towards energy audits for industries, such as a walk-through audit scheme for SMEs from 2010 to 2013. The current cover, ceiling, eligible units and window are set by the Government Resolution in force, so read that before you spend.",
+  "topic": "markets",
+  "intent": "how-to",
+  "audience": "MSMEs and factories in Maharashtra",
+  "sections": [
+    {
+      "h": "Who MEDA is and why it runs this",
+      "p": [
+        "Every state names a State Designated Agency to enforce and promote the Energy Conservation Act 2001 locally. In Maharashtra that is the Maharashtra Energy Development Agency, MEDA. Its energy conservation support is defined through state Government Resolutions, so amounts and eligible applicants change from one policy period to the next. Its 2010 to 2013 walk-through energy audit scheme, for example, paid MEDA empanelled consultants ₹3,000 per audit for eligible SMEs; that scheme has ended."
+      ]
+    },
+    {
+      "h": "How to apply, step by step",
+      "ol": [
+        "Find the current energy conservation scheme and its Government Resolution on MEDA's website, with its date, and check whether it covers only the audit or also the measures it recommends.",
+        "Check that your unit type, size and location are eligible, and whether the audit must be done by a MEDA empanelled or BEE accredited auditor.",
+        "Apply before you commission the audit or buy equipment if the scheme asks for prior approval; spending first can make you ineligible.",
+        "Submit the audit report, the measures chosen and quotations, then invoices and proof of installation for the implementation part.",
+        "Keep a year of bills from before and after, because measured savings may be checked."
+      ]
+    },
+    {
+      "h": "Documents to have ready",
+      "ul": [
+        "Udyam registration or factory licence, and GST registration.",
+        "Twelve months of electricity bills and fuel invoices for the baseline.",
+        "The energy audit report with recommended measures and expected savings.",
+        "Quotations, purchase invoices and commissioning certificates for equipment."
+      ]
+    },
+    {
+      "h": "Pitfalls",
+      "ul": [
+        "Relying on an amount quoted by a vendor or an old news item instead of the Government Resolution itself.",
+        "Buying equipment before approval when prior approval is required.",
+        "Claiming the same equipment under a central scheme and the state scheme without checking whether both allow it."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads your past electricity bills and fuel invoices into a dated, fingerprinted baseline of units, fuel and CO2 that an energy auditor can start from, and the same record later shows the change after the measures go in.",
+  "links": [
+    {
+      "label": "Finding state energy efficiency subsidies",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    },
+    {
+      "label": "Energy audit for an MSME in India",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "ADEETIE scheme",
+      "to": "/climate-intelligence/adeetie-scheme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Bureau of Energy Efficiency, Energy Conservation Act 2001 and the list of State Designated Agencies (MEDA for Maharashtra)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Ministry of Power, Energy Conservation Act 2001",
+      "url": "https://powermin.gov.in"
+    },
+    {
+      "label": "IEA Policies database, Walk-through Energy Audit (WTEA) scheme for SMEs in Maharashtra (2010 to 2013)",
+      "url": "https://www.iea.org"
+    }
+  ],
+  "reviewed": "2026-10-19",
+  "reviewNote": "Assistance amounts and windows are set by Maharashtra Government Resolution; quote the current GR and its date before relying on this page."
+}

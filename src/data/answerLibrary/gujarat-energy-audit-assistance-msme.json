@@ -1,0 +1,74 @@
+{
+  "slug": "gujarat-energy-audit-assistance-msme",
+  "q": "Does Gujarat reimburse MSMEs for energy and water audits, and what does it cover?",
+  "title": "Gujarat energy audit help for MSMEs",
+  "short": "Yes. Under the Aatmanirbhar Gujarat Scheme for Assistance to MSMEs, the state reimburses 75% of the cost of an energy or water audit, up to Rs 50,000, and offers 25% of the cost of equipment the audit recommends, up to Rs 20 lakh. Confirm the current terms with your District Industries Centre before you book the audit.",
+  "topic": "regulation",
+  "intent": "check",
+  "audience": "MSMEs in Gujarat clusters such as Morbi, Surat, Rajkot and Vapi",
+  "sections": [
+    {
+      "h": "What the scheme covers",
+      "ul": [
+        "Audit: 75% of the cost of an energy audit or a water audit, capped at Rs 50,000, paid as a reimbursement.",
+        "Equipment: 25% of the cost of energy or water saving equipment the auditor recommended, capped at Rs 20 lakh.",
+        "The scheme is run by the Industries and Mines Department through the Industries Commissionerate and District Industries Centres. The government's myScheme portal lists it as valid from 5 October 2022 to 4 October 2027."
+      ]
+    },
+    {
+      "h": "Conditions to check before you start",
+      "ul": [
+        "The audit must be done by an institution or consultant the scheme recognises. Ask the District Industries Centre which ones qualify before you sign the auditor.",
+        "Ask whether the equipment help needs a minimum measured saving after installation, and how you prove it.",
+        "Check the time limit for filing a claim after the audit and after the equipment purchase.",
+        "Ask how many times a unit can claim during the scheme period, and whether help from another scheme for the same equipment reduces the claim."
+      ]
+    },
+    {
+      "h": "Evidence that makes the claim easier",
+      "ol": [
+        "Udyam registration and the unit's location in Gujarat.",
+        "Twelve months of electricity bills and fuel invoices before the audit, as the baseline.",
+        "The audit report, the auditor's invoice and proof of payment.",
+        "Equipment invoices, installation proof, and bills for the months after installation showing the saving."
+      ]
+    },
+    {
+      "h": "Combine it with central help",
+      "p": [
+        "The audit report also supports a SIDBI or bank energy efficiency loan, and the central ADEETIE scheme for MSMEs in selected clusters. Check each scheme's rule on stacking before you claim from more than one."
+      ]
+    }
+  ],
+  "senseible": "Senseible reads past electricity bills and fuel invoices into a dated, fingerprinted baseline an auditor can use, and the same records later show the saving after new equipment goes in.",
+  "links": [
+    {
+      "label": "State subsidies for energy efficiency",
+      "to": "/answers/state-subsidies-msme-energy-efficiency"
+    },
+    {
+      "label": "Energy audit for MSMEs",
+      "to": "/climate-intelligence/energy-audit-for-msme-india"
+    },
+    {
+      "label": "ADEETIE scheme",
+      "to": "/climate-intelligence/adeetie-scheme"
+    },
+    {
+      "label": "SIDBI energy efficiency loan",
+      "to": "/answers/sidbi-energy-efficiency-loan-for-msme"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Aatmanirbhar Gujarat Scheme for Assistance to MSMEs, Industries and Mines Department, Government of Gujarat, effective 5 October 2022 (assistance for saving in consumption of energy and water; listed on myScheme)",
+      "url": "https://beeindia.gov.in"
+    },
+    {
+      "label": "Bureau of Energy Efficiency, energy auditor accreditation and State Designated Agencies",
+      "url": "https://beeindia.gov.in"
+    }
+  ],
+  "reviewNote": "Rates, caps and the 5 Oct 2022 to 4 Oct 2027 validity are from the official myScheme listing, checked 19 October 2026; the GR and operational guidelines could not be opened. Confirm the clause, auditor eligibility and any minimum saving with the Industries Commissionerate (ic.gujarat.gov.in) before claiming.",
+  "reviewed": "2026-10-19"
+}

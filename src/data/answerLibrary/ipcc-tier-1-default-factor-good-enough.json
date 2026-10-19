@@ -1,0 +1,87 @@
+{
+  "slug": "ipcc-tier-1-default-factor-good-enough",
+  "q": "My report says IPCC Tier 1 default factors. Will a buyer or verifier accept that?",
+  "title": "Are IPCC Tier 1 default factors enough?",
+  "short": "Usually yes for diesel, petrol, LPG and natural gas, because their carbon content barely varies, so a named IPCC default is hard to fault. Expect questions for coal, biomass and other fuels whose quality varies, and for large process emissions. There, a factor from your own fuel analysis (Tier 2) is safer.",
+  "topic": "accounting",
+  "intent": "decision",
+  "audience": "MSMEs reading their carbon report",
+  "sections": [
+    {
+      "h": "What the tiers mean",
+      "ul": [
+        "Tier 1: activity data (litres, kg) times an IPCC default factor for the fuel type. Simple and published.",
+        "Tier 2: the same arithmetic with a country-specific or fuel-specific factor, for example from your coal's lab report of calorific value and carbon content.",
+        "Tier 3: detailed plant measurement or modelling, such as continuous monitoring or carbon balance of each fuel lot.",
+        "Volume 1 of the IPCC 2006 Guidelines defines these tiers and recommends higher tiers for key categories, the sources that make up most of an inventory."
+      ]
+    },
+    {
+      "h": "When Tier 1 is fine",
+      "ul": [
+        "Liquid and gaseous fossil fuels bought on invoices: diesel, petrol, LPG, PNG, CNG, furnace oil. Their carbon per unit is stable, so a fuel analysis would change the figure only slightly.",
+        "Small sources that add little to the total.",
+        "Supplier questionnaires, BRSR and buyer requests, provided you name the default and its source."
+      ]
+    },
+    {
+      "h": "When it is not enough",
+      "ul": [
+        "Coal: Indian coal quality ranges widely by grade, so a per kg default can be far off. Use the GCV from your lab report or the supplier's grade, as in the example.",
+        "Biomass, briquettes, and waste fuels, where moisture and composition vary.",
+        "CBAM: embedded emissions of covered goods are calculated under Implementing Regulation (EU) 2025/2547, from installation-level data for each fuel and material (source stream). Read its rules for your source streams before relying on an IPCC default; the label 'IPCC Tier 1' does not by itself meet them.",
+        "A verifier sampling a source that is a large share of your total may ask why you did not use available fuel test data."
+      ]
+    },
+    {
+      "h": "What to write in your report",
+      "p": [
+        "Name the factor, its unit and source for each fuel, for example 'diesel 2.68 kg CO2 per litre, IPCC 2006 default'. Where you have fuel test reports, use them for the large fuels and keep the reports with the invoices."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 20 tonnes of G11 grade coal",
+    "lines": [
+      "Tier 1 per kg default: 20,000 kg x 2.42 = 48,400 kg CO2",
+      "From the grade's calorific value: G11 midpoint 4,150 kcal/kg GCV = 17.4 MJ/kg, about 16.5 MJ/kg NCV (assuming NCV about 5% below GCV)",
+      "20 t x 16.5 MJ/kg = 0.330 TJ x 94.6 t CO2 per TJ = 31.2 t CO2",
+      "The per kg default is about 55% higher than the figure from this low-grade coal's energy content"
+    ],
+    "note": "The calorific value route uses the grade midpoint and the IPCC default of 94.6 t CO2 per TJ for other bituminous coal; a lab NCV would shift it by a few percent."
+  },
+  "senseible": "Senseible uses IPCC 2006 default fuel factors (Tier 1) and the CEA grid factor, and shows the factor and its source on every line, so a buyer or verifier can see exactly what was applied.",
+  "links": [
+    {
+      "label": "Tier 1 vs Tier 2 emission factors",
+      "to": "/climate-intelligence/msme-data-quality-tier-1-vs-tier-2-emission-factors"
+    },
+    {
+      "label": "Indian coal emissions by GCV",
+      "to": "/answers/indian-coal-emissions-by-gcv"
+    },
+    {
+      "label": "CBAM default vs actual",
+      "to": "/answers/cbam-default-vs-actual"
+    },
+    {
+      "label": "Emission factors",
+      "to": "/emission-factors"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 1 Chapter 1 (tiers) and Volume 2 Energy (default factors)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "GHG Protocol Corporate Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/corporate-standard"
+    },
+    {
+      "label": "Regulation (EU) 2023/956 (CBAM) and Implementing Regulation (EU) 2025/2547 (methods for calculating embedded emissions)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/956/oj"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

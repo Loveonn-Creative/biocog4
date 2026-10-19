@@ -1,0 +1,85 @@
+{
+  "slug": "emission-factor-for-purchased-urea-and-dap",
+  "q": "What emission factor should I use for urea and DAP we buy, before they reach the field?",
+  "title": "Emission factor for bought urea and DAP",
+  "short": "Use a cradle to gate production factor per tonne of product, from the manufacturer or a named dataset, and report it in Scope 3 Category 1. For urea, take the plant's natural gas emissions and subtract the 0.733 t CO2 per tonne bound into the urea, because that CO2 is counted when the urea is applied.",
+  "topic": "accounting",
+  "intent": "check",
+  "audience": "Agri exporters, tea and coffee estates, FPOs answering buyer Scope 3 questions",
+  "sections": [
+    {
+      "h": "Making it and spreading it are two different emissions",
+      "p": [
+        "Making fertiliser burns natural gas to produce ammonia, then combines ammonia with CO2 to make urea. For the buyer of the fertiliser that is Scope 3 Category 1. The CO2 and nitrous oxide released on the field are the farm's own emissions. Keep the two figures apart so nothing is counted twice."
+      ]
+    },
+    {
+      "h": "Urea: the 0.733 rule",
+      "p": [
+        "Each tonne of urea holds 0.20 tonnes of carbon, which is 0.733 tonnes of CO2, captured from the ammonia plant. IPCC methods subtract it at the plant and count it when the urea is applied. If your field calculation already adds 0.733 t CO2 per tonne, the production factor must be net of it. If a supplier's figure is gross, do not add the field CO2 again. Ask which one you have."
+      ]
+    },
+    {
+      "h": "DAP: ammonia plus phosphoric acid",
+      "p": [
+        "DAP (18-46-0) is made from ammonia and phosphoric acid, which comes from rock phosphate and sulphuric acid. Its 18 percent nitrogen means about 0.219 tonnes of ammonia per tonne of DAP. India imports much of its DAP, so take the factor for the country and plant of manufacture from the supplier or a named life cycle dataset."
+      ]
+    },
+    {
+      "h": "Why spend-based factors fail for fertiliser",
+      "p": [
+        "Urea sells at a fixed, heavily subsidised price, and DAP is under the nutrient-based subsidy, so rupee spend says little about tonnes. Use quantities from invoices: urea comes in 45 kg bags and DAP in 50 kg bags."
+      ]
+    },
+    {
+      "h": "Nitrate fertilisers are different",
+      "p": [
+        "Calcium ammonium nitrate, ammonium nitrate and some complex fertilisers are made with nitric acid, which releases nitrous oxide at the plant. Their production factor can be much higher than urea's unless the plant abates that N2O. Ask the supplier."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 100 tonnes of urea bought",
+    "lines": [
+      "Plant energy: 5.5 Gcal of natural gas per tonne of urea (assumed, the tightest of the New Urea Policy 2015 energy norms of 5.5, 6.2 and 6.5; use the plant's figure) = 5.5 x 4.1868 = 23.0 GJ",
+      "Gas CO2: 23.0 GJ x 0.0561 t CO2 per GJ (IPCC 2006 default, 56,100 kg per TJ) = 1.29 t CO2 per tonne",
+      "Less CO2 bound in the urea: 1.29 minus 0.733 = about 0.56 t CO2 per tonne, cradle to gate",
+      "100 t x 0.56 = 56 t CO2 in Category 1"
+    ],
+    "note": "This covers gas burnt and used as feedstock at the plant only. Gas supply upstream and power drawn from the grid are left out. A published product footprint from the manufacturer replaces this estimate."
+  },
+  "senseible": "Senseible reads fertiliser purchase invoices and keeps the tonnes or bags printed on each line in its Scope 3 supplier evidence trail. Where only spend is known, Senseible provides a spend-based estimate labelled with its wider uncertainty, though for subsidised fertiliser the printed quantity is the better basis.",
+  "links": [
+    {
+      "label": "Urea application emissions per tonne",
+      "to": "/answers/urea-application-emissions-per-tonne"
+    },
+    {
+      "label": "Fertiliser N2O calculation",
+      "to": "/answers/fertiliser-n2o-emissions-calculation"
+    },
+    {
+      "label": "Nitric acid plant N2O emissions",
+      "to": "/answers/nitric-acid-plant-n2o-emissions"
+    },
+    {
+      "label": "Fertiliser industry",
+      "to": "/industries/fertiliser"
+    }
+  ],
+  "sources": [
+    {
+      "label": "2006 IPCC Guidelines, Volume 3, Chapter 3 (ammonia production) and Volume 4, Chapter 11 (urea application)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 (Energy), natural gas default",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    },
+    {
+      "label": "GHG Protocol Scope 3 Standard, Category 1",
+      "url": "https://ghgprotocol.org/corporate-value-chain-scope-3-standard"
+    }
+  ],
+  "reviewed": "2026-10-19"
+}

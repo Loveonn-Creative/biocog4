@@ -1,0 +1,86 @@
+{
+  "slug": "stainless-steel-utensils-carbon-footprint-per-kg",
+  "q": "What is the carbon footprint of stainless steel kitchen utensils per kg?",
+  "title": "Stainless steel utensils footprint per kg",
+  "short": "Multiply the kg of stainless sheet bought per kg of finished utensils by a footprint factor for that grade, then add your own pressing, annealing and polishing energy per kg. The sheet usually dominates, so the grade, its nickel content and your mill's own figure matter more than anything in your factory.",
+  "topic": "product",
+  "intent": "how-to",
+  "audience": "Stainless steel utensil exporters in Delhi, Mumbai and Jagadhri",
+  "sections": [
+    {
+      "h": "Start with sheet bought per kg finished",
+      "p": [
+        "Deep drawing and trimming leave scrap. Divide a year's sheet purchases by the kg of finished utensils dispatched to get your yield. If you buy 1,250 kg of sheet for 1,000 kg of finished goods, every kg of product carries 1.25 kg of sheet.",
+        "Scrap you sell to a recycler leaves with no burden and no credit under the usual cut-off approach. Do not subtract it from the sheet."
+      ]
+    },
+    {
+      "h": "Pick a factor for the grade, not for steel in general",
+      "ul": [
+        "Grade 304 carries nickel, which adds a lot to its footprint. The 200 series grades common in Indian utensils use less nickel and more manganese, so their footprint differs.",
+        "Best: the footprint figure from your sheet supplier or mill for that grade and route.",
+        "Next: a published life cycle dataset for that grade, such as the worldstainless (ISSF) life cycle inventory, with its edition named.",
+        "Do not use a carbon steel factor for stainless sheet."
+      ]
+    },
+    {
+      "h": "Your own energy per kg",
+      "p": [
+        "Add electricity for presses, polishing and buffing lines, and fuel for annealing furnaces, over the same period as your production. Divide by kg dispatched. If you make other products on the same lines, allocate by kg or machine hours and say which."
+      ]
+    },
+    {
+      "h": "What buyers ask for, and what to send",
+      "p": [
+        "Buyers in the EU and UK usually want kg CO2e per kg or per piece, cradle to gate, with the grade, recycled content and factor source stated. Kitchen articles of steel under heading 7323 are outside CBAM today, so this number is for buyers' Scope 3 and product claims, not a CBAM declaration."
+      ]
+    }
+  ],
+  "example": {
+    "title": "Worked example: 1 kg of finished 304 cookware (illustrative)",
+    "lines": [
+      "Sheet bought: 1.25 kg per kg finished (yield 80%)",
+      "Sheet factor: 5.0 kg CO2e per kg (placeholder only; use your mill's figure for the grade)",
+      "Sheet: 1.25 x 5.0 = 6.25 kg CO2e",
+      "Pressing and polishing: 1.5 kWh per kg (assumption) x 0.710 = 1.07 kg CO2",
+      "Annealing: 0.1 kg LPG per kg (assumption) x 2.98 = 0.30 kg CO2",
+      "Total: 6.25 + 1.07 + 0.30 = 7.62 kg CO2e per kg, of which the sheet is about 82%"
+    ],
+    "note": "The 5.0 sheet factor is a labelled placeholder for the arithmetic only, not a published value. Real figures vary with grade, nickel content and the mill's route and recycled content."
+  },
+  "senseible": "Senseible reads your plant's electricity bills (0.710 kg CO2 per kWh, CEA CO2 Baseline Database version 21.0) and fuel invoices (IPCC 2006 defaults) into a fingerprinted Scope 1 and 2 record, the plant-level input you divide into a per-unit figure. Its reports are self-declared drafts; a product footprint for a buyer still needs your material data and your own sign-off.",
+  "links": [
+    {
+      "label": "Are kitchen utensils covered by CBAM",
+      "to": "/answers/are-kitchen-utensils-covered-by-cbam"
+    },
+    {
+      "label": "How scrap rate affects carbon per unit",
+      "to": "/answers/how-scrap-rate-affects-carbon-per-unit"
+    },
+    {
+      "label": "Recycled content in a footprint",
+      "to": "/answers/how-to-count-recycled-content-in-product-footprint"
+    },
+    {
+      "label": "Product carbon footprint calculator",
+      "to": "/calculators/product-carbon-footprint"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GHG Protocol Product Life Cycle Accounting and Reporting Standard",
+      "url": "https://ghgprotocol.org/standards"
+    },
+    {
+      "label": "ISO 14067:2018, Carbon footprint of products",
+      "url": "https://www.iso.org"
+    },
+    {
+      "label": "2006 IPCC Guidelines, Volume 2 Energy (LPG default)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html"
+    }
+  ],
+  "reviewNote": "CBAM scope checked 19 October 2026: heading 7323 is not in Annex I to Regulation (EU) 2023/956. Recheck Annex I if the downstream extension proposed in December 2025 is adopted.",
+  "reviewed": "2026-10-19"
+}
