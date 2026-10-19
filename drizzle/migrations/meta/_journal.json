@@ -204,6 +204,13 @@
       "when": 1792238205449,
       "tag": "0028_invoice_reads_comment",
       "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1792434798632,
+      "tag": "0029_invoice_read_settings_rpc",
+      "breakpoints": true
     }
   ]
 }
