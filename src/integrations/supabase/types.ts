@@ -3809,6 +3809,7 @@ export type Database = {
         }
         Returns: number
       }
+      invoice_ledger_started_at: { Args: never; Returns: string }
       invoice_pack_usable_until: {
         Args: {
           p_pack: Database["public"]["Tables"]["invoice_credit_packs"]["Row"]
