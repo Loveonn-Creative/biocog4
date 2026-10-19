@@ -21,7 +21,7 @@ import { buildEmissionRows } from '../_shared/emissionRows.ts';
 import { documentKind, isEvidenceOnlyKind, DOCUMENT_KIND_LABEL, EVIDENCE_ONLY_NOTE, type DocumentKind } from '../_shared/documentKind.ts';
 import { priceCheck, type PriceCheck } from '../_shared/priceCheck.ts';
 import { financialKind, financialPath, readFinancialFigures, FINANCIAL_BUCKET, FINANCIAL_GUEST_MESSAGE, FINANCIAL_STORED_MESSAGE, FINANCIAL_UNAVAILABLE_MESSAGE } from '../_shared/financialDocuments.ts';
-import { cylinderToKg, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
+import { cylinderToKg, electricityBillIdentity, fileCheck, guideDocument, guideLine, invoiceIdentity, normalizeDocumentType, parseAiJson, parseAmount, parseQuantity, providerFailure, type LineGuidance } from '../_shared/extractionRead.ts';
 import {
   calculateEmissions,
   classifyByHSN,
@@ -1376,6 +1376,12 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
         date: parseInvoiceDate(ocrData.date) ?? undefined, billingPeriodStart: ocrData.billingPeriodStart,
         billingPeriodEnd: ocrData.billingPeriodEnd, unitsConsumedKwh: ocrData.unitsConsumedKwh, amount: ocrData.amount,
       })) ?? undefined,
+      // Electricity bills only: supplier + period + units, so a second photo
+      // with a misread amount or bill number still matches (kept in cached_result).
+      billKey: (electricityBillMeta(ocrData) && !isEvidenceOnlyKind(kind) ? electricityBillIdentity({
+        supplierGstin: ocrData.supplierGstin, vendor: ocrData.vendor, billingPeriodStart: ocrData.billingPeriodStart,
+        billingPeriodEnd: ocrData.billingPeriodEnd, unitsConsumedKwh: ocrData.unitsConsumedKwh,
+      }) : null) ?? undefined,
     };
 
     // ============= SAME INVOICE, DIFFERENT FILE =============
@@ -1383,13 +1389,20 @@ async function handleRequest(req: Request, read: ReadCtx): Promise<Response> {
     // invoice: when that copy already has emissions, return its stored result
     // (and its file hash, so the browser links to the stored document and its
     // emissions) and store nothing.
-    if (supabaseUrl && supabaseKey && isAuthenticated && userId && extractedData.invoiceKey && !rereadDocId) {
+    if (supabaseUrl && supabaseKey && isAuthenticated && userId && (extractedData.invoiceKey || extractedData.billKey) && !rereadDocId) {
       try {
         const db = createClient(supabaseUrl, supabaseKey);
         const owned = (q: any) => (organizationId ? q.eq('organization_id', organizationId) : q.eq('user_id', userId));
         const cols = 'id, document_hash, created_at, cached_result';
-        const byKey = await owned(db.from('documents').select(cols).eq('cached_result->>invoiceKey', extractedData.invoiceKey).neq('document_hash', documentHash)).limit(1);
-        let twin = (byKey.data ?? [])[0] ?? null;
+        let twin: any = null;
+        if (extractedData.invoiceKey) {
+          const byKey = await owned(db.from('documents').select(cols).eq('cached_result->>invoiceKey', extractedData.invoiceKey).neq('document_hash', documentHash)).limit(1);
+          twin = (byKey.data ?? [])[0] ?? null;
+        }
+        if (!twin && extractedData.billKey) {
+          const byBill = await owned(db.from('documents').select(cols).eq('cached_result->>billKey', extractedData.billKey).neq('document_hash', documentHash)).limit(1);
+          twin = (byBill.data ?? [])[0] ?? null;
+        }
         // Invoices stored before invoiceKey existed: match number and date, then compare identities.
         if (!twin && extractedData.invoiceNumber && parseInvoiceDate(extractedData.date)) {
           const byNumber = await owned(db.from('documents').select(cols).eq('invoice_number', extractedData.invoiceNumber).eq('invoice_date', parseInvoiceDate(extractedData.date)).neq('document_hash', documentHash)).limit(5);

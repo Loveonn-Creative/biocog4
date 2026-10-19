@@ -78,6 +78,24 @@ export function invoiceIdentity(o: {
   return null;
 }
 
+/**
+ * An electricity bill's identity from what does not change between photos
+ * of it: supplier, billing period and billed units. The amount and bill
+ * number are left out because a re-photographed bill is the likeliest to
+ * have one of them misread. Null when any part is missing.
+ */
+export function electricityBillIdentity(o: {
+  supplierGstin?: unknown; vendor?: unknown; billingPeriodStart?: unknown; billingPeriodEnd?: unknown; unitsConsumedKwh?: unknown;
+}): string | null {
+  const gstin = norm(o.supplierGstin);
+  const supplier = GSTIN_RE.test(gstin) ? `G:${gstin}` : norm(o.vendor).length >= 4 ? `V:${norm(o.vendor)}` : null;
+  const start = typeof o.billingPeriodStart === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(o.billingPeriodStart) ? o.billingPeriodStart : null;
+  const end = typeof o.billingPeriodEnd === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(o.billingPeriodEnd) ? o.billingPeriodEnd : null;
+  const units = parseAmount(o.unitsConsumedKwh);
+  if (!supplier || !start || !end || units === null || units <= 0) return null;
+  return `elec|${supplier}|${start}|${end}|${units}`;
+}
+
 /** Signed-in uploads: same types as guests, larger cap (inline AI requests top out near 20 MB). */
 export const SIGNED_IN_MAX_BYTES = 15 * 1024 * 1024;
 export const ACCEPTED_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
@@ -137,6 +155,14 @@ export interface GuideContext {
 
 export const BILL_CHARGE_GUIDANCE = 'Part of this electricity bill: a cost, not a separate activity.';
 const POWER_OR_REACTIVE_UNIT = /^(kw|kva|kvar|kvarh|mw|mva|hp)$/i;
+// Bill totals, balances and arrears restate charges already listed; the
+// energy charge is the money for units counted from the units line. Neither
+// is a separate bill charge, so the charge count does not depend on whether
+// the AI printed the total or put the units on the energy charge line.
+const BILL_TOTAL_LINE = /\b(total|net amount|amount payable|net payable|payable|bill amount|arrears?|previous (balance|dues?)|balance|outstanding|round(ing)?[ -]?off|amount due|due amount)\b/i;
+const ENERGY_CHARGE_LINE = /\benergy charges?\b/i;
+export const BILL_TOTAL_GUIDANCE = 'A bill total or balance, not a separate charge.';
+export const ENERGY_CHARGE_GUIDANCE = 'The money for the units used; the units are counted from the units line.';
 
 const isFuel = (l: LineLike) => l.productCategory === 'FUEL';
 const isPower = (l: LineLike) => ['ELECTRICITY', 'SOLAR_ENERGY', 'WIND_ENERGY'].includes(String(l.productCategory));
@@ -156,6 +182,12 @@ export function guideLine(l: LineLike, ctx: GuideContext = {}): LineGuidance {
   if (twice) return { status: 'reference', need: null, nextStep: twice };
   // On an electricity bill a line with no quantity (demand, wheeling, FAC,
   // duty, rebates) or a demand / reactive figure is money, not energy used.
+  if (ctx.electricityBill && !l.quantity && BILL_TOTAL_LINE.test(String(l.description ?? ''))) {
+    return { status: 'reference', need: null, nextStep: BILL_TOTAL_GUIDANCE };
+  }
+  if (ctx.electricityBill && !l.quantity && ENERGY_CHARGE_LINE.test(String(l.description ?? ''))) {
+    return { status: 'reference', need: null, nextStep: ENERGY_CHARGE_GUIDANCE };
+  }
   if (ctx.electricityBill && (!l.quantity || POWER_OR_REACTIVE_UNIT.test(String(l.unit ?? '').trim()))) {
     return { status: 'bill_charge', need: null, nextStep: BILL_CHARGE_GUIDANCE };
   }

@@ -25,5 +25,6 @@ Owner rule (October 2026): no feature change, code change, schema migration or d
 - Same file again: answered from the stored result before any read is reserved (no count, no new rows).
 - Same invoice as another file: released after the read; counted once.
 - Reads are reserved before the AI read and settled afterwards; a crashed read stops counting after 15 minutes.
-- AI provider order: Gemini (`Gemini_API_Key`, then `GEMINI_API_KEY`), then the Lovable gateway; with neither, a clear "nothing was counted" message.
+- AI provider order: Gemini (`GEMINI_API_KEY`, then `Gemini_API_Key`), then the Lovable gateway; with none, a clear "nothing was counted" message.
+- Electricity bills: a second photo is matched on supplier + billing period + units (`billKey` in cached_result), so a misread amount or bill number does not count it twice. Totals, arrears and the energy charge line are not bill charges. The Checks count leaves out notes on how a value was read; missing GSTIN, invoice number and date stay checks.
 - Stale browser tabs load the newest build on their next page change (`/version.json`).
